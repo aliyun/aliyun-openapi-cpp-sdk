@@ -1,0 +1,53 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_CORE_HTTPREQUEST_H_
+#define ALIBABACLOUD_CORE_HTTPREQUEST_H_
+
+#include <string>
+#include "HttpMessage.h"
+#include "Url.h"
+
+namespace AlibabaCloud
+{
+	class ALIBABACLOUD_CORE_EXPORT HttpRequest : public HttpMessage
+	{
+		public:
+			enum Method
+			{
+				Get,
+				Head,
+				Post,
+				Put,
+				Delete,
+				Connect,
+				Options,
+				Patch,
+				Trace
+			};
+			explicit HttpRequest(const Url &url = Url(), Method method = Get);
+			~HttpRequest();
+
+			Method method()const;
+			void setMethod(Method method);
+			void setUrl(const Url &url);
+			Url url()const;
+		private:
+			Method method_;
+			Url url_;
+	};
+}
+#endif
