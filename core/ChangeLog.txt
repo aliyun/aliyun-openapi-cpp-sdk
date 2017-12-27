@@ -1,0 +1,3 @@
+2017-12-27 Version: 1.0.0
+1, Fix build failed on linux
+

@@ -16,6 +16,7 @@
 
 #include <alibabacloud/core/CommonClient.h>
 #include <ctime>
+#include <algorithm>
 #include <iomanip>
 #include <sstream>
 #include <alibabacloud/core/location/LocationClient.h>
