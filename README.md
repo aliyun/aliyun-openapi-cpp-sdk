@@ -22,19 +22,19 @@
 
 ## 从源代码构建 SDK
 
-1. 从 GitHub 下载或 Git 克隆 [alibaba-cloud-sdk-cpp](https://github.com/aliyun/alibaba-cloud-sdk-cpp)
+1. 从 GitHub 下载或 Git 克隆 [aliyun-openapi-cpp-sdk](https://github.com/aliyun/aliyun-openapi-cpp-sdk)
 
-* 直接下载 https://github.com/aliyun/alibaba-cloud-sdk-cpp/archive/master.zip
+* 直接下载 https://github.com/aliyun/aliyun-openapi-cpp-sdk/archive/master.zip
 * 使用 Git 命令获取
 
 ```
-git clone https://github.com/aliyun/alibaba-cloud-sdk-cpp.git
+git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
 ```
 
 2. 安装 cmake 3.0 或以上版本，进入 SDK 创建生成必要的构建文件
 
 ```
-cd <path/to/alibaba-cloud-sdk-cpp>
+cd <path/to/aliyun-openapi-cpp-sdk>
 mkdir sdk_build
 cd sdk_build
 cmake ..
