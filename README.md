@@ -95,7 +95,7 @@ int main(int argc, char** argv)
 
 	// 创建API请求并设置参数
 	Model::DescribeInstancesRequest request;
-	request.setPageSize("10");
+	request.setPageSize(10);
 
 	auto outcome = client.describeInstances(request);
 	if (!outcome.isSuccess()) 
@@ -106,7 +106,7 @@ int main(int argc, char** argv)
 		return -1;
 	}
 	
-	std::cout << "totalCount: " << outcome.result().totalCount() << std::endl;
+	std::cout << "totalCount: " << outcome.result().getTotalCount() << std::endl;
 
 	// 关闭 SDK
 	AlibabaCloud::ShutdownSdk();
