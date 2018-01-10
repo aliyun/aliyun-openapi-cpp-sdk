@@ -41,7 +41,6 @@ endif()
 
 ExternalProject_Add(catch
 	URL https://github.com/catchorg/Catch2/releases/download/v2.0.1/catch.hpp
-	TIMEOUT 10
 	DOWNLOAD_NO_EXTRACT 1
 	CONFIGURE_COMMAND ""
 	BUILD_COMMAND ""
