@@ -1,0 +1,127 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/slb/model/DescribeVServerGroupAttributeRequest.h>
+
+using namespace AlibabaCloud::Slb;
+using namespace AlibabaCloud::Slb::Model;
+
+DescribeVServerGroupAttributeRequest::DescribeVServerGroupAttributeRequest() :
+	SlbRequest("DescribeVServerGroupAttribute")
+{}
+
+DescribeVServerGroupAttributeRequest::~DescribeVServerGroupAttributeRequest()
+{}
+
+std::string DescribeVServerGroupAttributeRequest::getAccess_key_id()const
+{
+	return access_key_id_;
+}
+
+void DescribeVServerGroupAttributeRequest::setAccess_key_id(const std::string& access_key_id)
+{
+	access_key_id_ = access_key_id;
+	setParameter("Access_key_id", access_key_id);
+}
+
+std::string DescribeVServerGroupAttributeRequest::getVServerGroupId()const
+{
+	return vServerGroupId_;
+}
+
+void DescribeVServerGroupAttributeRequest::setVServerGroupId(const std::string& vServerGroupId)
+{
+	vServerGroupId_ = vServerGroupId;
+	setParameter("VServerGroupId", vServerGroupId);
+}
+
+long DescribeVServerGroupAttributeRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void DescribeVServerGroupAttributeRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DescribeVServerGroupAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeVServerGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeVServerGroupAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeVServerGroupAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string DescribeVServerGroupAttributeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeVServerGroupAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeVServerGroupAttributeRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeVServerGroupAttributeRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeVServerGroupAttributeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeVServerGroupAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeVServerGroupAttributeRequest::getTags()const
+{
+	return tags_;
+}
+
+void DescribeVServerGroupAttributeRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", tags);
+}
+
