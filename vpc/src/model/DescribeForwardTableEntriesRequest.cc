@@ -1,0 +1,127 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/vpc/model/DescribeForwardTableEntriesRequest.h>
+
+using namespace AlibabaCloud::Vpc;
+using namespace AlibabaCloud::Vpc::Model;
+
+DescribeForwardTableEntriesRequest::DescribeForwardTableEntriesRequest() :
+	VpcRequest("DescribeForwardTableEntries")
+{}
+
+DescribeForwardTableEntriesRequest::~DescribeForwardTableEntriesRequest()
+{}
+
+long DescribeForwardTableEntriesRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void DescribeForwardTableEntriesRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DescribeForwardTableEntriesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeForwardTableEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeForwardTableEntriesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeForwardTableEntriesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string DescribeForwardTableEntriesRequest::getForwardEntryId()const
+{
+	return forwardEntryId_;
+}
+
+void DescribeForwardTableEntriesRequest::setForwardEntryId(const std::string& forwardEntryId)
+{
+	forwardEntryId_ = forwardEntryId;
+	setParameter("ForwardEntryId", forwardEntryId);
+}
+
+std::string DescribeForwardTableEntriesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeForwardTableEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeForwardTableEntriesRequest::getForwardTableId()const
+{
+	return forwardTableId_;
+}
+
+void DescribeForwardTableEntriesRequest::setForwardTableId(const std::string& forwardTableId)
+{
+	forwardTableId_ = forwardTableId;
+	setParameter("ForwardTableId", forwardTableId);
+}
+
+int DescribeForwardTableEntriesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeForwardTableEntriesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+long DescribeForwardTableEntriesRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeForwardTableEntriesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+int DescribeForwardTableEntriesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeForwardTableEntriesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+

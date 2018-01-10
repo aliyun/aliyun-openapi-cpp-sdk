@@ -1,0 +1,116 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/vpc/model/ModifyNatGatewaySpecRequest.h>
+
+using namespace AlibabaCloud::Vpc;
+using namespace AlibabaCloud::Vpc::Model;
+
+ModifyNatGatewaySpecRequest::ModifyNatGatewaySpecRequest() :
+	VpcRequest("ModifyNatGatewaySpec")
+{}
+
+ModifyNatGatewaySpecRequest::~ModifyNatGatewaySpecRequest()
+{}
+
+long ModifyNatGatewaySpecRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void ModifyNatGatewaySpecRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ModifyNatGatewaySpecRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyNatGatewaySpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyNatGatewaySpecRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyNatGatewaySpecRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string ModifyNatGatewaySpecRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void ModifyNatGatewaySpecRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
+std::string ModifyNatGatewaySpecRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyNatGatewaySpecRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
+}
+
+std::string ModifyNatGatewaySpecRequest::getNatGatewayId()const
+{
+	return natGatewayId_;
+}
+
+void ModifyNatGatewaySpecRequest::setNatGatewayId(const std::string& natGatewayId)
+{
+	natGatewayId_ = natGatewayId;
+	setParameter("NatGatewayId", natGatewayId);
+}
+
+long ModifyNatGatewaySpecRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyNatGatewaySpecRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyNatGatewaySpecRequest::getSpec()const
+{
+	return spec_;
+}
+
+void ModifyNatGatewaySpecRequest::setSpec(const std::string& spec)
+{
+	spec_ = spec;
+	setParameter("Spec", spec);
+}
+
