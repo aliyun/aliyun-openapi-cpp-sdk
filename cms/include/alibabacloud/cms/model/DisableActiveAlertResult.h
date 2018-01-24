@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CMS_MODEL_GETNOTIFYPOLICYRESULT_H_
-#define ALIBABACLOUD_CMS_MODEL_GETNOTIFYPOLICYRESULT_H_
+#ifndef ALIBABACLOUD_CMS_MODEL_DISABLEACTIVEALERTRESULT_H_
+#define ALIBABACLOUD_CMS_MODEL_DISABLEACTIVEALERTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CMS_EXPORT GetNotifyPolicyResult : public ServiceResult
+			class ALIBABACLOUD_CMS_EXPORT DisableActiveAlertResult : public ServiceResult
 			{
 			public:
-				struct Result
-				{
-					std::string type;
-					std::string alertName;
-					long endTime;
-					long startTime;
-					std::string dimensions;
-					std::string id;
-				};
 
 
-				GetNotifyPolicyResult();
-				explicit GetNotifyPolicyResult(const std::string &payload);
-				~GetNotifyPolicyResult();
+				DisableActiveAlertResult();
+				explicit DisableActiveAlertResult(const std::string &payload);
+				~DisableActiveAlertResult();
 				std::string getMessage()const;
-				std::string getTraceId()const;
 				std::string getCode()const;
-				std::string getSuccess()const;
-				std::vector<Result> getResult()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string traceId_;
 				std::string code_;
-				std::string success_;
-				std::vector<Result> result_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CMS_MODEL_GETNOTIFYPOLICYRESULT_H_
+#endif // !ALIBABACLOUD_CMS_MODEL_DISABLEACTIVEALERTRESULT_H_

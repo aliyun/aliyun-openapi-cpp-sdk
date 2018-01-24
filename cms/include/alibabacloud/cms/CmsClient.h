@@ -28,8 +28,6 @@
 #include "model/ListProductOfActiceAlertResult.h"
 #include "model/DeleteCustomMetricRequest.h"
 #include "model/DeleteCustomMetricResult.h"
-#include "model/GetNotifyPolicyRequest.h"
-#include "model/GetNotifyPolicyResult.h"
 #include "model/NodeUninstallRequest.h"
 #include "model/NodeUninstallResult.h"
 #include "model/QueryCustomEventCountRequest.h"
@@ -42,6 +40,8 @@
 #include "model/PutSystemEventResult.h"
 #include "model/QueryCustomMetricListRequest.h"
 #include "model/QueryCustomMetricListResult.h"
+#include "model/EnableActiveAlertRequest.h"
+#include "model/EnableActiveAlertResult.h"
 #include "model/QuerySystemEventDetailRequest.h"
 #include "model/QuerySystemEventDetailResult.h"
 #include "model/CreateNotifyPolicyRequest.h"
@@ -74,6 +74,8 @@
 #include "model/NodeStatusResult.h"
 #include "model/DeleteMyGroupInstancesRequest.h"
 #include "model/DeleteMyGroupInstancesResult.h"
+#include "model/ListProductOfActiveAlertRequest.h"
+#include "model/ListProductOfActiveAlertResult.h"
 #include "model/CreateMyGroupsRequest.h"
 #include "model/CreateMyGroupsResult.h"
 #include "model/CreateAlarmRequest.h"
@@ -100,6 +102,8 @@
 #include "model/EnableActiceAlertResult.h"
 #include "model/PutMetricDataRequest.h"
 #include "model/PutMetricDataResult.h"
+#include "model/DisableActiveAlertRequest.h"
+#include "model/DisableActiveAlertResult.h"
 #include "model/DisableActiceAlertRequest.h"
 #include "model/DisableActiceAlertResult.h"
 #include "model/ListAlarmRequest.h"
@@ -146,9 +150,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCustomMetricResult> DeleteCustomMetricOutcome;			
 			typedef std::future<DeleteCustomMetricOutcome> DeleteCustomMetricOutcomeCallable;			
 			typedef std::function<void(const CmsClient*, const Model::DeleteCustomMetricRequest&, const DeleteCustomMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomMetricAsyncHandler;
-			typedef Outcome<Error, Model::GetNotifyPolicyResult> GetNotifyPolicyOutcome;			
-			typedef std::future<GetNotifyPolicyOutcome> GetNotifyPolicyOutcomeCallable;			
-			typedef std::function<void(const CmsClient*, const Model::GetNotifyPolicyRequest&, const GetNotifyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNotifyPolicyAsyncHandler;
 			typedef Outcome<Error, Model::NodeUninstallResult> NodeUninstallOutcome;			
 			typedef std::future<NodeUninstallOutcome> NodeUninstallOutcomeCallable;			
 			typedef std::function<void(const CmsClient*, const Model::NodeUninstallRequest&, const NodeUninstallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NodeUninstallAsyncHandler;
@@ -167,6 +168,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryCustomMetricListResult> QueryCustomMetricListOutcome;			
 			typedef std::future<QueryCustomMetricListOutcome> QueryCustomMetricListOutcomeCallable;			
 			typedef std::function<void(const CmsClient*, const Model::QueryCustomMetricListRequest&, const QueryCustomMetricListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomMetricListAsyncHandler;
+			typedef Outcome<Error, Model::EnableActiveAlertResult> EnableActiveAlertOutcome;			
+			typedef std::future<EnableActiveAlertOutcome> EnableActiveAlertOutcomeCallable;			
+			typedef std::function<void(const CmsClient*, const Model::EnableActiveAlertRequest&, const EnableActiveAlertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableActiveAlertAsyncHandler;
 			typedef Outcome<Error, Model::QuerySystemEventDetailResult> QuerySystemEventDetailOutcome;			
 			typedef std::future<QuerySystemEventDetailOutcome> QuerySystemEventDetailOutcomeCallable;			
 			typedef std::function<void(const CmsClient*, const Model::QuerySystemEventDetailRequest&, const QuerySystemEventDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySystemEventDetailAsyncHandler;
@@ -215,6 +219,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteMyGroupInstancesResult> DeleteMyGroupInstancesOutcome;			
 			typedef std::future<DeleteMyGroupInstancesOutcome> DeleteMyGroupInstancesOutcomeCallable;			
 			typedef std::function<void(const CmsClient*, const Model::DeleteMyGroupInstancesRequest&, const DeleteMyGroupInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMyGroupInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListProductOfActiveAlertResult> ListProductOfActiveAlertOutcome;			
+			typedef std::future<ListProductOfActiveAlertOutcome> ListProductOfActiveAlertOutcomeCallable;			
+			typedef std::function<void(const CmsClient*, const Model::ListProductOfActiveAlertRequest&, const ListProductOfActiveAlertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProductOfActiveAlertAsyncHandler;
 			typedef Outcome<Error, Model::CreateMyGroupsResult> CreateMyGroupsOutcome;			
 			typedef std::future<CreateMyGroupsOutcome> CreateMyGroupsOutcomeCallable;			
 			typedef std::function<void(const CmsClient*, const Model::CreateMyGroupsRequest&, const CreateMyGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMyGroupsAsyncHandler;
@@ -254,6 +261,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PutMetricDataResult> PutMetricDataOutcome;			
 			typedef std::future<PutMetricDataOutcome> PutMetricDataOutcomeCallable;			
 			typedef std::function<void(const CmsClient*, const Model::PutMetricDataRequest&, const PutMetricDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutMetricDataAsyncHandler;
+			typedef Outcome<Error, Model::DisableActiveAlertResult> DisableActiveAlertOutcome;			
+			typedef std::future<DisableActiveAlertOutcome> DisableActiveAlertOutcomeCallable;			
+			typedef std::function<void(const CmsClient*, const Model::DisableActiveAlertRequest&, const DisableActiveAlertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableActiveAlertAsyncHandler;
 			typedef Outcome<Error, Model::DisableActiceAlertResult> DisableActiceAlertOutcome;			
 			typedef std::future<DisableActiceAlertOutcome> DisableActiceAlertOutcomeCallable;			
 			typedef std::function<void(const CmsClient*, const Model::DisableActiceAlertRequest&, const DisableActiceAlertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableActiceAlertAsyncHandler;
@@ -312,9 +322,6 @@ namespace AlibabaCloud
             DeleteCustomMetricOutcome deleteCustomMetric(const Model::DeleteCustomMetricRequest &request)const;
             void deleteCustomMetricAsync(const Model::DeleteCustomMetricRequest& request, const DeleteCustomMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             DeleteCustomMetricOutcomeCallable deleteCustomMetricCallable(const Model::DeleteCustomMetricRequest& request) const;
-            GetNotifyPolicyOutcome getNotifyPolicy(const Model::GetNotifyPolicyRequest &request)const;
-            void getNotifyPolicyAsync(const Model::GetNotifyPolicyRequest& request, const GetNotifyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-            GetNotifyPolicyOutcomeCallable getNotifyPolicyCallable(const Model::GetNotifyPolicyRequest& request) const;
             NodeUninstallOutcome nodeUninstall(const Model::NodeUninstallRequest &request)const;
             void nodeUninstallAsync(const Model::NodeUninstallRequest& request, const NodeUninstallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             NodeUninstallOutcomeCallable nodeUninstallCallable(const Model::NodeUninstallRequest& request) const;
@@ -333,6 +340,9 @@ namespace AlibabaCloud
             QueryCustomMetricListOutcome queryCustomMetricList(const Model::QueryCustomMetricListRequest &request)const;
             void queryCustomMetricListAsync(const Model::QueryCustomMetricListRequest& request, const QueryCustomMetricListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             QueryCustomMetricListOutcomeCallable queryCustomMetricListCallable(const Model::QueryCustomMetricListRequest& request) const;
+            EnableActiveAlertOutcome enableActiveAlert(const Model::EnableActiveAlertRequest &request)const;
+            void enableActiveAlertAsync(const Model::EnableActiveAlertRequest& request, const EnableActiveAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+            EnableActiveAlertOutcomeCallable enableActiveAlertCallable(const Model::EnableActiveAlertRequest& request) const;
             QuerySystemEventDetailOutcome querySystemEventDetail(const Model::QuerySystemEventDetailRequest &request)const;
             void querySystemEventDetailAsync(const Model::QuerySystemEventDetailRequest& request, const QuerySystemEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             QuerySystemEventDetailOutcomeCallable querySystemEventDetailCallable(const Model::QuerySystemEventDetailRequest& request) const;
@@ -381,6 +391,9 @@ namespace AlibabaCloud
             DeleteMyGroupInstancesOutcome deleteMyGroupInstances(const Model::DeleteMyGroupInstancesRequest &request)const;
             void deleteMyGroupInstancesAsync(const Model::DeleteMyGroupInstancesRequest& request, const DeleteMyGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             DeleteMyGroupInstancesOutcomeCallable deleteMyGroupInstancesCallable(const Model::DeleteMyGroupInstancesRequest& request) const;
+            ListProductOfActiveAlertOutcome listProductOfActiveAlert(const Model::ListProductOfActiveAlertRequest &request)const;
+            void listProductOfActiveAlertAsync(const Model::ListProductOfActiveAlertRequest& request, const ListProductOfActiveAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+            ListProductOfActiveAlertOutcomeCallable listProductOfActiveAlertCallable(const Model::ListProductOfActiveAlertRequest& request) const;
             CreateMyGroupsOutcome createMyGroups(const Model::CreateMyGroupsRequest &request)const;
             void createMyGroupsAsync(const Model::CreateMyGroupsRequest& request, const CreateMyGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             CreateMyGroupsOutcomeCallable createMyGroupsCallable(const Model::CreateMyGroupsRequest& request) const;
@@ -420,6 +433,9 @@ namespace AlibabaCloud
             PutMetricDataOutcome putMetricData(const Model::PutMetricDataRequest &request)const;
             void putMetricDataAsync(const Model::PutMetricDataRequest& request, const PutMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             PutMetricDataOutcomeCallable putMetricDataCallable(const Model::PutMetricDataRequest& request) const;
+            DisableActiveAlertOutcome disableActiveAlert(const Model::DisableActiveAlertRequest &request)const;
+            void disableActiveAlertAsync(const Model::DisableActiveAlertRequest& request, const DisableActiveAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+            DisableActiveAlertOutcomeCallable disableActiveAlertCallable(const Model::DisableActiveAlertRequest& request) const;
             DisableActiceAlertOutcome disableActiceAlert(const Model::DisableActiceAlertRequest &request)const;
             void disableActiceAlertAsync(const Model::DisableActiceAlertRequest& request, const DisableActiceAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             DisableActiceAlertOutcomeCallable disableActiceAlertCallable(const Model::DisableActiceAlertRequest& request) const;

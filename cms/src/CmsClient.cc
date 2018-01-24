@@ -167,42 +167,6 @@ CmsClient::DeleteCustomMetricOutcomeCallable CmsClient::deleteCustomMetricCallab
 	return task->get_future();
 }
 
-CmsClient::GetNotifyPolicyOutcome CmsClient::getNotifyPolicy(const GetNotifyPolicyRequest &request) const
-{
-	auto endpointOutcome = endpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetNotifyPolicyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetNotifyPolicyOutcome(GetNotifyPolicyResult(outcome.result()));
-	else
-		return GetNotifyPolicyOutcome(outcome.error());
-}
-
-void CmsClient::getNotifyPolicyAsync(const GetNotifyPolicyRequest& request, const GetNotifyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getNotifyPolicy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CmsClient::GetNotifyPolicyOutcomeCallable CmsClient::getNotifyPolicyCallable(const GetNotifyPolicyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetNotifyPolicyOutcome()>>(
-			[this, request]()
-			{
-			return this->getNotifyPolicy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CmsClient::NodeUninstallOutcome CmsClient::nodeUninstall(const NodeUninstallRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -413,6 +377,42 @@ CmsClient::QueryCustomMetricListOutcomeCallable CmsClient::queryCustomMetricList
 			[this, request]()
 			{
 			return this->queryCustomMetricList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::EnableActiveAlertOutcome CmsClient::enableActiveAlert(const EnableActiveAlertRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableActiveAlertOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableActiveAlertOutcome(EnableActiveAlertResult(outcome.result()));
+	else
+		return EnableActiveAlertOutcome(outcome.error());
+}
+
+void CmsClient::enableActiveAlertAsync(const EnableActiveAlertRequest& request, const EnableActiveAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableActiveAlert(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::EnableActiveAlertOutcomeCallable CmsClient::enableActiveAlertCallable(const EnableActiveAlertRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableActiveAlertOutcome()>>(
+			[this, request]()
+			{
+			return this->enableActiveAlert(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -995,6 +995,42 @@ CmsClient::DeleteMyGroupInstancesOutcomeCallable CmsClient::deleteMyGroupInstanc
 	return task->get_future();
 }
 
+CmsClient::ListProductOfActiveAlertOutcome CmsClient::listProductOfActiveAlert(const ListProductOfActiveAlertRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProductOfActiveAlertOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProductOfActiveAlertOutcome(ListProductOfActiveAlertResult(outcome.result()));
+	else
+		return ListProductOfActiveAlertOutcome(outcome.error());
+}
+
+void CmsClient::listProductOfActiveAlertAsync(const ListProductOfActiveAlertRequest& request, const ListProductOfActiveAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProductOfActiveAlert(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::ListProductOfActiveAlertOutcomeCallable CmsClient::listProductOfActiveAlertCallable(const ListProductOfActiveAlertRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProductOfActiveAlertOutcome()>>(
+			[this, request]()
+			{
+			return this->listProductOfActiveAlert(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CmsClient::CreateMyGroupsOutcome CmsClient::createMyGroups(const CreateMyGroupsRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -1457,6 +1493,42 @@ CmsClient::PutMetricDataOutcomeCallable CmsClient::putMetricDataCallable(const P
 			[this, request]()
 			{
 			return this->putMetricData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DisableActiveAlertOutcome CmsClient::disableActiveAlert(const DisableActiveAlertRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableActiveAlertOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableActiveAlertOutcome(DisableActiveAlertResult(outcome.result()));
+	else
+		return DisableActiveAlertOutcome(outcome.error());
+}
+
+void CmsClient::disableActiveAlertAsync(const DisableActiveAlertRequest& request, const DisableActiveAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableActiveAlert(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DisableActiveAlertOutcomeCallable CmsClient::disableActiveAlertCallable(const DisableActiveAlertRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableActiveAlertOutcome()>>(
+			[this, request]()
+			{
+			return this->disableActiveAlert(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

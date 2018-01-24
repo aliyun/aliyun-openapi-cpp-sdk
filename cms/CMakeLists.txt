@@ -22,8 +22,6 @@ set(cms_public_header
 	include/alibabacloud/cms/model/ListProductOfActiceAlertResult.h
 	include/alibabacloud/cms/model/DeleteCustomMetricRequest.h
 	include/alibabacloud/cms/model/DeleteCustomMetricResult.h
-	include/alibabacloud/cms/model/GetNotifyPolicyRequest.h
-	include/alibabacloud/cms/model/GetNotifyPolicyResult.h
 	include/alibabacloud/cms/model/NodeUninstallRequest.h
 	include/alibabacloud/cms/model/NodeUninstallResult.h
 	include/alibabacloud/cms/model/QueryCustomEventCountRequest.h
@@ -36,6 +34,8 @@ set(cms_public_header
 	include/alibabacloud/cms/model/PutSystemEventResult.h
 	include/alibabacloud/cms/model/QueryCustomMetricListRequest.h
 	include/alibabacloud/cms/model/QueryCustomMetricListResult.h
+	include/alibabacloud/cms/model/EnableActiveAlertRequest.h
+	include/alibabacloud/cms/model/EnableActiveAlertResult.h
 	include/alibabacloud/cms/model/QuerySystemEventDetailRequest.h
 	include/alibabacloud/cms/model/QuerySystemEventDetailResult.h
 	include/alibabacloud/cms/model/CreateNotifyPolicyRequest.h
@@ -68,6 +68,8 @@ set(cms_public_header
 	include/alibabacloud/cms/model/NodeStatusResult.h
 	include/alibabacloud/cms/model/DeleteMyGroupInstancesRequest.h
 	include/alibabacloud/cms/model/DeleteMyGroupInstancesResult.h
+	include/alibabacloud/cms/model/ListProductOfActiveAlertRequest.h
+	include/alibabacloud/cms/model/ListProductOfActiveAlertResult.h
 	include/alibabacloud/cms/model/CreateMyGroupsRequest.h
 	include/alibabacloud/cms/model/CreateMyGroupsResult.h
 	include/alibabacloud/cms/model/CreateAlarmRequest.h
@@ -94,6 +96,8 @@ set(cms_public_header
 	include/alibabacloud/cms/model/EnableActiceAlertResult.h
 	include/alibabacloud/cms/model/PutMetricDataRequest.h
 	include/alibabacloud/cms/model/PutMetricDataResult.h
+	include/alibabacloud/cms/model/DisableActiveAlertRequest.h
+	include/alibabacloud/cms/model/DisableActiveAlertResult.h
 	include/alibabacloud/cms/model/DisableActiceAlertRequest.h
 	include/alibabacloud/cms/model/DisableActiceAlertResult.h
 	include/alibabacloud/cms/model/ListAlarmRequest.h
@@ -134,8 +138,6 @@ set(cms_src
 	src/model/ListProductOfActiceAlertResult.cc
 	src/model/DeleteCustomMetricRequest.cc
 	src/model/DeleteCustomMetricResult.cc
-	src/model/GetNotifyPolicyRequest.cc
-	src/model/GetNotifyPolicyResult.cc
 	src/model/NodeUninstallRequest.cc
 	src/model/NodeUninstallResult.cc
 	src/model/QueryCustomEventCountRequest.cc
@@ -148,6 +150,8 @@ set(cms_src
 	src/model/PutSystemEventResult.cc
 	src/model/QueryCustomMetricListRequest.cc
 	src/model/QueryCustomMetricListResult.cc
+	src/model/EnableActiveAlertRequest.cc
+	src/model/EnableActiveAlertResult.cc
 	src/model/QuerySystemEventDetailRequest.cc
 	src/model/QuerySystemEventDetailResult.cc
 	src/model/CreateNotifyPolicyRequest.cc
@@ -180,6 +184,8 @@ set(cms_src
 	src/model/NodeStatusResult.cc
 	src/model/DeleteMyGroupInstancesRequest.cc
 	src/model/DeleteMyGroupInstancesResult.cc
+	src/model/ListProductOfActiveAlertRequest.cc
+	src/model/ListProductOfActiveAlertResult.cc
 	src/model/CreateMyGroupsRequest.cc
 	src/model/CreateMyGroupsResult.cc
 	src/model/CreateAlarmRequest.cc
@@ -206,6 +212,8 @@ set(cms_src
 	src/model/EnableActiceAlertResult.cc
 	src/model/PutMetricDataRequest.cc
 	src/model/PutMetricDataResult.cc
+	src/model/DisableActiveAlertRequest.cc
+	src/model/DisableActiveAlertResult.cc
 	src/model/DisableActiceAlertRequest.cc
 	src/model/DisableActiceAlertResult.cc
 	src/model/ListAlarmRequest.cc
