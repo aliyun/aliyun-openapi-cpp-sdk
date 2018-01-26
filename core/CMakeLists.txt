@@ -28,7 +28,6 @@ set(core_public_header
 	include/alibabacloud/core/CoreExport.h
 	include/alibabacloud/core/Credentials.h
 	include/alibabacloud/core/CredentialsProvider.h
-	include/alibabacloud/core/EcsInstanceProfileConfigLoader.h
 	include/alibabacloud/core/EndpointProvider.h
 	include/alibabacloud/core/Error.h
 	include/alibabacloud/core/Global.h
@@ -37,11 +36,9 @@ set(core_public_header
 	include/alibabacloud/core/HttpMessage.h
 	include/alibabacloud/core/HttpResponse.h
 	include/alibabacloud/core/HttpRequest.h
-	include/alibabacloud/core/InstanceProfileConfigLoader.h
 	include/alibabacloud/core/InstanceProfileCredentialsProvider.h
 	include/alibabacloud/core/NetworkProxy.h
 	include/alibabacloud/core/Outcome.h
-	include/alibabacloud/core/Profile.h
 	include/alibabacloud/core/Runnable.h
 	include/alibabacloud/core/RoaServiceClient.h
 	include/alibabacloud/core/RoaServiceRequest.h
@@ -77,9 +74,8 @@ set(core_src
 	src/CredentialsProvider.cc
 	src/CurlHttpClient.h
 	src/CurlHttpClient.cc
-	src/EcsInstanceProfileConfigLoader.cc
-	src/EcsMetadataClient.h
-	src/EcsMetadataClient.cc
+	src/EcsMetadataFetcher.cc
+	src/EcsMetadataFetcher.h
 	src/EndpointProvider.cc
 	src/Error.cc
 	src/Executor.cc
@@ -89,11 +85,9 @@ set(core_src
 	src/HttpMessage.cc
 	src/HttpResponse.cc
 	src/HttpRequest.cc
-	src/InstanceProfileConfigLoader.cc
 	src/InstanceProfileCredentialsProvider.cc
 	src/NetworkProxy.cc
 	src/Outcome.cc
-	src/Profile.cc
 	src/Runnable.cc
 	src/RoaServiceClient.cc
 	src/RoaServiceRequest.cc

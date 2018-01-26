@@ -20,28 +20,31 @@
 #include <chrono>
 #include <mutex>
 #include <memory>
+#include <string>
 #include "CredentialsProvider.h"
 #include "Credentials.h"
 
 namespace AlibabaCloud
-{	
-	class EcsInstanceProfileConfigLoader;
-	class InstanceProfileConfigLoader;
+{
+	class EcsMetadataFetcher;
 	class ALIBABACLOUD_CORE_EXPORT InstanceProfileCredentialsProvider : public CredentialsProvider
 	{
 	public:
-		InstanceProfileCredentialsProvider(size_t refreshRateMs = (1000 * 60 * 10));
-		InstanceProfileCredentialsProvider(const std::shared_ptr<EcsInstanceProfileConfigLoader>&, size_t refreshRateMs = (1000 * 60 * 10));
+		InstanceProfileCredentialsProvider(const std::string &roleName, int durationSeconds = 3600);
+		~InstanceProfileCredentialsProvider();
 
+		std::string roleName()const;
 		virtual Credentials getCredentials() override;
+
 	private:
-		void refreshIfExpired();
-		virtual bool isTimeToRefresh(long reloadFrequency);
-		 
-		std::chrono::system_clock::time_point lastLoaded_;
-		std::shared_ptr<InstanceProfileConfigLoader> metadataConfigLoader_;
-		size_t loadFrequencyMs_;
-		mutable std::mutex m_reloadMutex;
+		void loadCredentials();
+		bool checkExpiry()const;
+
+		std::mutex cachedMutex_;
+		Credentials cachedCredentials_;
+		int durationSeconds_;
+		std::chrono::system_clock::time_point expiry_;
+		EcsMetadataFetcher *fetcher_;
 	};
 }
 #endif

@@ -15,64 +15,93 @@
  */
 
 #include <alibabacloud/core/InstanceProfileCredentialsProvider.h>
-#include <alibabacloud/core/EcsInstanceProfileConfigLoader.h>
-#include <alibabacloud/core/Profile.h>
 #include <chrono>
 #include <iomanip>
 #include <chrono>
 #include <mutex>
+#include <sstream>
+#include <json/json.h>
+#include "EcsMetadataFetcher.h"
 
 using namespace AlibabaCloud;
 
-namespace
+InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std::string & roleName, int durationSeconds):
+	CredentialsProvider(),
+	durationSeconds_(durationSeconds),
+	cachedMutex_(),
+	cachedCredentials_("", ""),
+	fetcher_(new EcsMetadataFetcher),
+	expiry_()
 {
-	const char* const INSTANCE_PROFILE_KEY = "InstanceProfile";
+	fetcher_->setRoleName(roleName);
 }
 
-InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(size_t refreshRateMs) :
-	metadataConfigLoader_(std::make_shared<EcsInstanceProfileConfigLoader>()),
-	loadFrequencyMs_(refreshRateMs),
-	lastLoaded_()
+InstanceProfileCredentialsProvider::~InstanceProfileCredentialsProvider()
 {
+	delete fetcher_;
 }
 
-InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std::shared_ptr<EcsInstanceProfileConfigLoader>& loader, size_t refreshRateMs) :
-	metadataConfigLoader_(loader),
-	loadFrequencyMs_(refreshRateMs),
-	lastLoaded_()
+std::string InstanceProfileCredentialsProvider::roleName()const
 {
+	return fetcher_->roleName();
 }
 
 Credentials InstanceProfileCredentialsProvider::getCredentials()
 {
-	refreshIfExpired();
-
-	auto profileIter = metadataConfigLoader_->allProfiles().find(INSTANCE_PROFILE_KEY);
-	if (profileIter != metadataConfigLoader_->allProfiles().end())
-	{
-		return profileIter->second.credentials();
-	}
-
-	return Credentials("","");
+	loadCredentials();
+	std::lock_guard<std::mutex> locker(cachedMutex_);
+	return cachedCredentials_;
 }
 
-bool InstanceProfileCredentialsProvider::isTimeToRefresh(long reloadFrequency)
+bool InstanceProfileCredentialsProvider::checkExpiry()const
 {
 	auto now = std::chrono::system_clock::now();
-	auto diff = std::chrono::duration_cast<std::chrono::seconds>(now - lastLoaded_).count();
-	
-	if(diff > reloadFrequency)
-	{
-		lastLoaded_ = now;
-		return true;
-	}
+	auto diff = std::chrono::duration_cast<std::chrono::seconds>(now - expiry_).count();
 
-	return false;
+	return (diff > 0 - 60);
 }
 
-void InstanceProfileCredentialsProvider::refreshIfExpired()
+void InstanceProfileCredentialsProvider::loadCredentials()
 {
-	std::lock_guard<std::mutex> locker(m_reloadMutex);
-	if (isTimeToRefresh(loadFrequencyMs_))
-		metadataConfigLoader_->load();	
+	if (checkExpiry())
+	{
+		std::lock_guard<std::mutex> locker(cachedMutex_);
+		if (checkExpiry())
+		{
+			auto outcome = fetcher_->getMetadata();
+			Json::Value value;
+			Json::Reader reader;
+			if (reader.parse(outcome, value))
+			{
+				if (value["Code"] == nullptr
+					&&value["AccessKeyId"] == nullptr
+					&&value["AccessKeySecret"] == nullptr
+					&&value["SecurityToken"] == nullptr
+					&&value["Expiration"] == nullptr)
+				{
+					cachedCredentials_ = Credentials("","");
+					return;
+				}
+
+				auto code = value["Code"].asString();
+				auto accessKeyId = value["AccessKeyId"].asString();
+				auto accessKeySecret = value["AccessKeySecret"].asString();
+				auto securityToken = value["SecurityToken"].asString();
+				auto expiration = value["Expiration"].asString();
+
+				cachedCredentials_ = Credentials(accessKeyId,
+					accessKeySecret,
+					securityToken);
+
+				std::tm tm = {};
+#if defined(__GNUG__) && __GNUC__ < 5
+				strptime(expiration.c_str(), "%Y-%m-%dT%H:%M:%SZ", &tm);
+#else			
+				std::stringstream ss(expiration);
+				ss >> std::get_time(&tm, "%Y-%m-%dT%H:%M:%SZ");
+#endif
+				expiry_ = std::chrono::system_clock::from_time_t(std::mktime(&tm));
+			}
+		}
+	}
 }

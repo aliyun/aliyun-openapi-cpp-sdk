@@ -27,7 +27,13 @@ namespace AlibabaCloud
 	class ALIBABACLOUD_CORE_EXPORT CommonRequest : public ServiceRequest
 	{
 	public:
-		CommonRequest();
+		enum RequestPattern
+		{
+			RpcPattern,
+			RoaPattern
+		};
+
+		explicit CommonRequest(RequestPattern pattern = RpcPattern);
 		~CommonRequest();
 
 		std::string domain()const;
@@ -42,15 +48,15 @@ namespace AlibabaCloud
 		void setHttpMethod(HttpRequest::Method method);
 		void setQueryParameter(const ParameterNameType &name, const ParameterValueType &value);
 		using ServiceRequest::setResourcePath;
-		void setUriPattern(const std::string &uriPattern);
+		void setRequestPattern(RequestPattern pattern);
 		using ServiceRequest::setVersion;
-		std::string uriPattern()const;
+		RequestPattern requestPattern()const;
 	protected:
 		using ServiceRequest::product;
 
 	private:
 		std::string domain_;
-		std::string uriPattern_;
+		RequestPattern requestPattern_;
 		ParameterCollection queryParams_;
 		ParameterCollection headerParams_;
 		HttpRequest::Method httpMethod_;

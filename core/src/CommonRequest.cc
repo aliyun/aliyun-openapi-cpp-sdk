@@ -18,12 +18,12 @@
 
 using namespace AlibabaCloud;
 
-CommonRequest::CommonRequest():
+CommonRequest::CommonRequest(RequestPattern pattern):
 	ServiceRequest("",""),
 	domain_(),
 	queryParams_(),
 	httpMethod_(HttpRequest::Get),
-	uriPattern_("rpc")
+	requestPattern_(pattern)
 {
 }
 
@@ -40,14 +40,14 @@ void CommonRequest::setDomain(const std::string &domain)
 	domain_ = domain;
 }
 
-std::string CommonRequest::uriPattern() const
+CommonRequest::RequestPattern CommonRequest::requestPattern() const
 {
-	return uriPattern_;
+	return requestPattern_;
 }
 
-void CommonRequest::setUriPattern(const std::string & uriPattern)
+void CommonRequest::setRequestPattern(RequestPattern pattern)
 {
-	uriPattern_ = uriPattern;
+	requestPattern_ = pattern;
 }
 
 void CommonRequest::setHttpMethod(HttpRequest::Method method)

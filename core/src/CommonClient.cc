@@ -121,8 +121,7 @@ HttpRequest CommonClient::buildHttpRequest(const std::string & endpoint, const S
 
 HttpRequest CommonClient::buildHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const
 {
-	if (msg.uriPattern().empty() ||
-		(strcasecmp(msg.uriPattern().c_str(),"rpc") == 0))
+	if (msg.requestPattern() == CommonRequest::RpcPattern)
 		return buildRpcHttpRequest(endpoint, msg, method);
 	else
 		return buildRoaHttpRequest(endpoint, msg, method);
@@ -207,7 +206,8 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, cons
 	request.setHeader("Host", url.host());
 	request.setHeader("x-sdk-client", std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
 	request.setHeader("x-acs-region-id", configuration().regionId());
-	request.setHeader("x-acs-security-token", credentials.sessionToken());
+	if (!credentials.sessionToken().empty())
+		request.setHeader("x-acs-security-token", credentials.sessionToken());
 	request.setHeader("x-acs-signature-method", signer_->name());
 	request.setHeader("x-acs-signature-nonce", GenerateUuid());
 	request.setHeader("x-acs-signature-version", signer_->version());
