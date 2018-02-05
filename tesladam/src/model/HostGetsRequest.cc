@@ -16,11 +16,10 @@
 
 #include <alibabacloud/tesladam/model/HostGetsRequest.h>
 
-using namespace AlibabaCloud::TeslaDam;
-using namespace AlibabaCloud::TeslaDam::Model;
+using AlibabaCloud::TeslaDam::Model::HostGetsRequest;
 
 HostGetsRequest::HostGetsRequest() :
-	TeslaDamRequest("HostGets")
+	RpcServiceRequest("tesladam", "2018-01-18", "HostGets")
 {}
 
 HostGetsRequest::~HostGetsRequest()

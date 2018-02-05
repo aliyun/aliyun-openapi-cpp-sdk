@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/tesladam/TeslaDamRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/tesladam/TeslaDamExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_TESLADAM_EXPORT ActionDiskRmaRequest : public TeslaDamRequest
+			class ALIBABACLOUD_TESLADAM_EXPORT ActionDiskRmaRequest : public RpcServiceRequest
 			{
 
 			public:

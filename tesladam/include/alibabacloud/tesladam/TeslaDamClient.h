@@ -52,12 +52,10 @@ namespace AlibabaCloud
 			typedef std::future<HostGetsOutcome> HostGetsOutcomeCallable;			
 			typedef std::function<void(const TeslaDamClient*, const Model::HostGetsRequest&, const HostGetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> HostGetsAsyncHandler;
 
-
 			TeslaDamClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			TeslaDamClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			TeslaDamClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~TeslaDamClient();
-
             ActionDiskRmaOutcome actionDiskRma(const Model::ActionDiskRmaRequest &request)const;
             void actionDiskRmaAsync(const Model::ActionDiskRmaRequest& request, const ActionDiskRmaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             ActionDiskRmaOutcomeCallable actionDiskRmaCallable(const Model::ActionDiskRmaRequest& request) const;

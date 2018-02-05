@@ -16,11 +16,10 @@
 
 #include <alibabacloud/tesladam/model/ActionDiskRmaRequest.h>
 
-using namespace AlibabaCloud::TeslaDam;
-using namespace AlibabaCloud::TeslaDam::Model;
+using AlibabaCloud::TeslaDam::Model::ActionDiskRmaRequest;
 
 ActionDiskRmaRequest::ActionDiskRmaRequest() :
-	TeslaDamRequest("ActionDiskRma")
+	RpcServiceRequest("tesladam", "2018-01-18", "ActionDiskRma")
 {}
 
 ActionDiskRmaRequest::~ActionDiskRmaRequest()

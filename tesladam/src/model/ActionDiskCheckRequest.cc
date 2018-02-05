@@ -16,11 +16,10 @@
 
 #include <alibabacloud/tesladam/model/ActionDiskCheckRequest.h>
 
-using namespace AlibabaCloud::TeslaDam;
-using namespace AlibabaCloud::TeslaDam::Model;
+using AlibabaCloud::TeslaDam::Model::ActionDiskCheckRequest;
 
 ActionDiskCheckRequest::ActionDiskCheckRequest() :
-	TeslaDamRequest("ActionDiskCheck")
+	RpcServiceRequest("tesladam", "2018-01-18", "ActionDiskCheck")
 {}
 
 ActionDiskCheckRequest::~ActionDiskCheckRequest()

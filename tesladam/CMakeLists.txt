@@ -15,7 +15,12 @@
 #
 
 set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
-set(tesladam_public_header
+
+set(tesladam_public_header 
+	include/alibabacloud/tesladam/TeslaDamClient.h
+	include/alibabacloud/tesladam/TeslaDamExport.h )
+
+set(tesladam_public_header_model 
 	include/alibabacloud/tesladam/model/ActionDiskRmaRequest.h
 	include/alibabacloud/tesladam/model/ActionDiskRmaResult.h
 	include/alibabacloud/tesladam/model/ActionDiskMaskRequest.h
@@ -23,13 +28,10 @@ set(tesladam_public_header
 	include/alibabacloud/tesladam/model/ActionDiskCheckRequest.h
 	include/alibabacloud/tesladam/model/ActionDiskCheckResult.h
 	include/alibabacloud/tesladam/model/HostGetsRequest.h
-	include/alibabacloud/tesladam/model/HostGetsResult.h
-	include/alibabacloud/tesladam/TeslaDamClient.h
-	include/alibabacloud/tesladam/TeslaDamExport.h
-	include/alibabacloud/tesladam/TeslaDamRequest.h
-	)
+	include/alibabacloud/tesladam/model/HostGetsResult.h )
 
-set(tesladam_src
+set(tesladam_src 
+	src/TeslaDamClient.cc
 	src/model/ActionDiskRmaRequest.cc
 	src/model/ActionDiskRmaResult.cc
 	src/model/ActionDiskMaskRequest.cc
@@ -37,12 +39,12 @@ set(tesladam_src
 	src/model/ActionDiskCheckRequest.cc
 	src/model/ActionDiskCheckResult.cc
 	src/model/HostGetsRequest.cc
-	src/model/HostGetsResult.cc
-	src/TeslaDamClient.cc
-	src/TeslaDamRequest.cc
-	)
+	src/model/HostGetsResult.cc )
 
-add_library(tesladam ${LIB_TYPE} ${tesladam_public_header} ${tesladam_src})
+add_library(tesladam ${LIB_TYPE}
+	${tesladam_public_header}
+	${tesladam_public_header_model}
+	${tesladam_src})
 
 set_target_properties(tesladam
 	PROPERTIES
@@ -51,7 +53,6 @@ set_target_properties(tesladam
 	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}tesladam
-	PUBLIC_HEADER "${tesladam_public_header}"
 	)
 
 if(${LIB_TYPE} STREQUAL "SHARED")
@@ -86,9 +87,12 @@ else()
 		jsoncpp)
 endif()
 
+install(FILES ${tesladam_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/tesladam)
+install(FILES ${tesladam_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/tesladam/model)
 install(TARGETS tesladam
 	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/tesladam
 	)

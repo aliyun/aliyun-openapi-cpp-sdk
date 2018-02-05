@@ -16,11 +16,10 @@
 
 #include <alibabacloud/tesladam/model/ActionDiskMaskRequest.h>
 
-using namespace AlibabaCloud::TeslaDam;
-using namespace AlibabaCloud::TeslaDam::Model;
+using AlibabaCloud::TeslaDam::Model::ActionDiskMaskRequest;
 
 ActionDiskMaskRequest::ActionDiskMaskRequest() :
-	TeslaDamRequest("ActionDiskMask")
+	RpcServiceRequest("tesladam", "2018-01-18", "ActionDiskMask")
 {}
 
 ActionDiskMaskRequest::~ActionDiskMaskRequest()
