@@ -74,6 +74,7 @@ namespace AlibabaCloud
 					std::string connectionMode;
 					std::string connectionString;
 					std::string expireTime;
+					std::string advancedFeatures;
 					int dBMaxQuantity;
 					std::string category;
 					std::string dBInstanceNetType;
@@ -100,7 +101,6 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceAttributeResult(const std::string &payload);
 				~DescribeDBInstanceAttributeResult();
 				std::vector<DBInstanceAttribute> getItems()const;
-				void setItems(const std::vector<DBInstanceAttribute>& items);
 
 			protected:
 				void parse(const std::string &payload);

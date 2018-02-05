@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit ModifyDBInstanceNetworkTypeResult(const std::string &payload);
 				~ModifyDBInstanceNetworkTypeResult();
 				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 
 			protected:
 				void parse(const std::string &payload);

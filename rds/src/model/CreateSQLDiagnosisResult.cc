@@ -40,17 +40,13 @@ void CreateSQLDiagnosisResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	sQLDiagId_ = value["SQLDiagId"].asString();
+	if(!value["SQLDiagId"].isNull())
+		sQLDiagId_ = value["SQLDiagId"].asString();
 
 }
 
 std::string CreateSQLDiagnosisResult::getSQLDiagId()const
 {
 	return sQLDiagId_;
-}
-
-void CreateSQLDiagnosisResult::setSQLDiagId(const std::string& sQLDiagId)
-{
-	sQLDiagId_ = sQLDiagId;
 }
 

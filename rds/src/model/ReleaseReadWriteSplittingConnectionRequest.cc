@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ReleaseReadWriteSplittingConnectionRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ReleaseReadWriteSplittingConnectionRequest;
 
 ReleaseReadWriteSplittingConnectionRequest::ReleaseReadWriteSplittingConnectionRequest() :
-	RdsRequest("ReleaseReadWriteSplittingConnection")
+	RpcServiceRequest("rds", "2014-08-15", "ReleaseReadWriteSplittingConnection")
 {}
 
 ReleaseReadWriteSplittingConnectionRequest::~ReleaseReadWriteSplittingConnectionRequest()

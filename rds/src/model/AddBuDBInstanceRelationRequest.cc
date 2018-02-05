@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/AddBuDBInstanceRelationRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::AddBuDBInstanceRelationRequest;
 
 AddBuDBInstanceRelationRequest::AddBuDBInstanceRelationRequest() :
-	RdsRequest("AddBuDBInstanceRelation")
+	RpcServiceRequest("rds", "2014-08-15", "AddBuDBInstanceRelation")
 {}
 
 AddBuDBInstanceRelationRequest::~AddBuDBInstanceRelationRequest()

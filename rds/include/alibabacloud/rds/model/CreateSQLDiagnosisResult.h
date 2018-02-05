@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateSQLDiagnosisResult(const std::string &payload);
 				~CreateSQLDiagnosisResult();
 				std::string getSQLDiagId()const;
-				void setSQLDiagId(const std::string& sQLDiagId);
 
 			protected:
 				void parse(const std::string &payload);

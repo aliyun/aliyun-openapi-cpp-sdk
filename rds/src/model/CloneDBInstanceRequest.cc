@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CloneDBInstanceRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CloneDBInstanceRequest;
 
 CloneDBInstanceRequest::CloneDBInstanceRequest() :
-	RdsRequest("CloneDBInstance")
+	RpcServiceRequest("rds", "2014-08-15", "CloneDBInstance")
 {}
 
 CloneDBInstanceRequest::~CloneDBInstanceRequest()

@@ -67,9 +67,7 @@ namespace AlibabaCloud
 				explicit QueryPriceForBuyResult(const std::string &payload);
 				~QueryPriceForBuyResult();
 				std::vector<Rule> getRules()const;
-				void setRules(const std::vector<Rule>& rules);
 				std::vector<PriceInfo> getPriceInfo()const;
-				void setPriceInfo(const std::vector<PriceInfo>& priceInfo);
 
 			protected:
 				void parse(const std::string &payload);

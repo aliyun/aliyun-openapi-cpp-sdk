@@ -40,9 +40,12 @@ void DescribeOperatorPermissionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	privileges_ = value["Privileges"].asString();
-	createdTime_ = value["CreatedTime"].asString();
-	expiredTime_ = value["ExpiredTime"].asString();
+	if(!value["Privileges"].isNull())
+		privileges_ = value["Privileges"].asString();
+	if(!value["CreatedTime"].isNull())
+		createdTime_ = value["CreatedTime"].asString();
+	if(!value["ExpiredTime"].isNull())
+		expiredTime_ = value["ExpiredTime"].asString();
 
 }
 
@@ -51,28 +54,13 @@ std::string DescribeOperatorPermissionResult::getCreatedTime()const
 	return createdTime_;
 }
 
-void DescribeOperatorPermissionResult::setCreatedTime(const std::string& createdTime)
-{
-	createdTime_ = createdTime;
-}
-
 std::string DescribeOperatorPermissionResult::getPrivileges()const
 {
 	return privileges_;
 }
 
-void DescribeOperatorPermissionResult::setPrivileges(const std::string& privileges)
-{
-	privileges_ = privileges;
-}
-
 std::string DescribeOperatorPermissionResult::getExpiredTime()const
 {
 	return expiredTime_;
-}
-
-void DescribeOperatorPermissionResult::setExpiredTime(const std::string& expiredTime)
-{
-	expiredTime_ = expiredTime;
 }
 

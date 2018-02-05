@@ -43,13 +43,17 @@ void CheckResourceResult::parse(const std::string &payload)
 	auto allResources = value["Resources"]["Resource"];
 	for (auto value : allResources)
 	{
-		Resource resourceObject;
-		resourceObject.dBInstanceAvailable = value["DBInstanceAvailable"].asString();
-		resourceObject.engine = value["Engine"].asString();
-		resourceObject.engineVersion = value["EngineVersion"].asString();
-		resources_.push_back(resourceObject);
+		Resource resourcesObject;
+		if(!value["DBInstanceAvailable"].isNull())
+			resourcesObject.dBInstanceAvailable = value["DBInstanceAvailable"].asString();
+		if(!value["Engine"].isNull())
+			resourcesObject.engine = value["Engine"].asString();
+		if(!value["EngineVersion"].isNull())
+			resourcesObject.engineVersion = value["EngineVersion"].asString();
+		resources_.push_back(resourcesObject);
 	}
-	specifyCount_ = value["SpecifyCount"].asString();
+	if(!value["SpecifyCount"].isNull())
+		specifyCount_ = value["SpecifyCount"].asString();
 
 }
 
@@ -58,8 +62,8 @@ std::string CheckResourceResult::getSpecifyCount()const
 	return specifyCount_;
 }
 
-void CheckResourceResult::setSpecifyCount(const std::string& specifyCount)
+std::vector<CheckResourceResult::Resource> CheckResourceResult::getResources()const
 {
-	specifyCount_ = specifyCount;
+	return resources_;
 }
 

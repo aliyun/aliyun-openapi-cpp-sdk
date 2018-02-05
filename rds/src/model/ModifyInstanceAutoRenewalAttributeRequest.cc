@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifyInstanceAutoRenewalAttributeRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifyInstanceAutoRenewalAttributeRequest;
 
 ModifyInstanceAutoRenewalAttributeRequest::ModifyInstanceAutoRenewalAttributeRequest() :
-	RdsRequest("ModifyInstanceAutoRenewalAttribute")
+	RpcServiceRequest("rds", "2014-08-15", "ModifyInstanceAutoRenewalAttribute")
 {}
 
 ModifyInstanceAutoRenewalAttributeRequest::~ModifyInstanceAutoRenewalAttributeRequest()

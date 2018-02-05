@@ -49,11 +49,8 @@ namespace AlibabaCloud
 				explicit DescribeOssDownloadsForSQLServerResult(const std::string &payload);
 				~DescribeOssDownloadsForSQLServerResult();
 				std::vector<OssDownload> getItems()const;
-				void setItems(const std::vector<OssDownload>& items);
 				std::string getMigrateIaskId()const;
-				void setMigrateIaskId(const std::string& migrateIaskId);
 				std::string getDBInstanceName()const;
-				void setDBInstanceName(const std::string& dBInstanceName);
 
 			protected:
 				void parse(const std::string &payload);

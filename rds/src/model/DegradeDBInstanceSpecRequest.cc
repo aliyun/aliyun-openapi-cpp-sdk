@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DegradeDBInstanceSpecRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DegradeDBInstanceSpecRequest;
 
 DegradeDBInstanceSpecRequest::DegradeDBInstanceSpecRequest() :
-	RdsRequest("DegradeDBInstanceSpec")
+	RpcServiceRequest("rds", "2014-08-15", "DegradeDBInstanceSpec")
 {}
 
 DegradeDBInstanceSpecRequest::~DegradeDBInstanceSpecRequest()

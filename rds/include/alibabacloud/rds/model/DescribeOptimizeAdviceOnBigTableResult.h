@@ -46,13 +46,9 @@ namespace AlibabaCloud
 				explicit DescribeOptimizeAdviceOnBigTableResult(const std::string &payload);
 				~DescribeOptimizeAdviceOnBigTableResult();
 				int getTotalRecordsCount()const;
-				void setTotalRecordsCount(int totalRecordsCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<AdviceOnBigTable> getItems()const;
-				void setItems(const std::vector<AdviceOnBigTable>& items);
 
 			protected:
 				void parse(const std::string &payload);

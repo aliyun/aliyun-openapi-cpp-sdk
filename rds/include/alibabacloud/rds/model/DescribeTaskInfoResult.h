@@ -38,29 +38,17 @@ namespace AlibabaCloud
 				explicit DescribeTaskInfoResult(const std::string &payload);
 				~DescribeTaskInfoResult();
 				std::string getExpectedFinishTime()const;
-				void setExpectedFinishTime(const std::string& expectedFinishTime);
 				std::string getStatus()const;
-				void setStatus(const std::string& status);
 				std::string getProgress()const;
-				void setProgress(const std::string& progress);
 				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 				std::string getFinishTime()const;
-				void setFinishTime(const std::string& finishTime);
 				std::string getTaskAction()const;
-				void setTaskAction(const std::string& taskAction);
 				std::string getCreateTime()const;
-				void setCreateTime(const std::string& createTime);
 				std::string getProgressInfo()const;
-				void setProgressInfo(const std::string& progressInfo);
 				std::string getBeginTime()const;
-				void setBeginTime(const std::string& beginTime);
 				std::string getDBName()const;
-				void setDBName(const std::string& dBName);
 				std::string getTaskErrorCode()const;
-				void setTaskErrorCode(const std::string& taskErrorCode);
 				std::string getTaskErrorMessage()const;
-				void setTaskErrorMessage(const std::string& taskErrorMessage);
 
 			protected:
 				void parse(const std::string &payload);

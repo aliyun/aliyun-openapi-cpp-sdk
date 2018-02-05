@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CreateReadOnlyDBInstanceRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CreateReadOnlyDBInstanceRequest;
 
 CreateReadOnlyDBInstanceRequest::CreateReadOnlyDBInstanceRequest() :
-	RdsRequest("CreateReadOnlyDBInstance")
+	RpcServiceRequest("rds", "2014-08-15", "CreateReadOnlyDBInstance")
 {}
 
 CreateReadOnlyDBInstanceRequest::~CreateReadOnlyDBInstanceRequest()

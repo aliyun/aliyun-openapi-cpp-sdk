@@ -43,23 +43,36 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 	auto allDatabases = value["Databases"]["Database"];
 	for (auto value : allDatabases)
 	{
-		Database databaseObject;
-		databaseObject.dBName = value["DBName"].asString();
-		databaseObject.dBInstanceId = value["DBInstanceId"].asString();
-		databaseObject.engine = value["Engine"].asString();
-		databaseObject.dBStatus = value["DBStatus"].asString();
-		databaseObject.characterSetName = value["CharacterSetName"].asString();
-		databaseObject.dBDescription = value["DBDescription"].asString();
+		Database databasesObject;
+		if(!value["DBName"].isNull())
+			databasesObject.dBName = value["DBName"].asString();
+		if(!value["DBInstanceId"].isNull())
+			databasesObject.dBInstanceId = value["DBInstanceId"].asString();
+		if(!value["Engine"].isNull())
+			databasesObject.engine = value["Engine"].asString();
+		if(!value["DBStatus"].isNull())
+			databasesObject.dBStatus = value["DBStatus"].asString();
+		if(!value["CharacterSetName"].isNull())
+			databasesObject.characterSetName = value["CharacterSetName"].asString();
+		if(!value["DBDescription"].isNull())
+			databasesObject.dBDescription = value["DBDescription"].asString();
 		auto allAccounts = value["Accounts"]["AccountPrivilegeInfo"];
 		for (auto value : allAccounts)
 		{
-			Database::AccountPrivilegeInfo accountPrivilegeInfoObject;
-			accountPrivilegeInfoObject.account = value["Account"].asString();
-			accountPrivilegeInfoObject.accountPrivilege = value["AccountPrivilege"].asString();
-			databaseObject.accounts.push_back(accountPrivilegeInfoObject);
+			Database::AccountPrivilegeInfo accountsObject;
+			if(!value["Account"].isNull())
+				accountsObject.account = value["Account"].asString();
+			if(!value["AccountPrivilege"].isNull())
+				accountsObject.accountPrivilege = value["AccountPrivilege"].asString();
+			databasesObject.accounts.push_back(accountsObject);
 		}
-		databases_.push_back(databaseObject);
+		databases_.push_back(databasesObject);
 	}
 
+}
+
+std::vector<DescribeDatabasesResult::Database> DescribeDatabasesResult::getDatabases()const
+{
+	return databases_;
 }
 

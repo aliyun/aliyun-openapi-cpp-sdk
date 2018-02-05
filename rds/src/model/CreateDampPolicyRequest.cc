@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CreateDampPolicyRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CreateDampPolicyRequest;
 
 CreateDampPolicyRequest::CreateDampPolicyRequest() :
-	RdsRequest("CreateDampPolicy")
+	RpcServiceRequest("rds", "2014-08-15", "CreateDampPolicy")
 {}
 
 CreateDampPolicyRequest::~CreateDampPolicyRequest()

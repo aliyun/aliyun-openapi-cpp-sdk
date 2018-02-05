@@ -43,17 +43,25 @@ void DescibeImportsFromDatabaseResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["ImportResultFromDB"];
 	for (auto value : allItems)
 	{
-		ImportResultFromDB importResultFromDBObject;
-		importResultFromDBObject.importId = std::stoi(value["ImportId"].asString());
-		importResultFromDBObject.importDataType = value["ImportDataType"].asString();
-		importResultFromDBObject.importDataStatus = value["ImportDataStatus"].asString();
-		importResultFromDBObject.importDataStatusDescription = value["ImportDataStatusDescription"].asString();
-		importResultFromDBObject.incrementalImportingTime = value["IncrementalImportingTime"].asString();
-		items_.push_back(importResultFromDBObject);
+		ImportResultFromDB itemsObject;
+		if(!value["ImportId"].isNull())
+			itemsObject.importId = std::stoi(value["ImportId"].asString());
+		if(!value["ImportDataType"].isNull())
+			itemsObject.importDataType = value["ImportDataType"].asString();
+		if(!value["ImportDataStatus"].isNull())
+			itemsObject.importDataStatus = value["ImportDataStatus"].asString();
+		if(!value["ImportDataStatusDescription"].isNull())
+			itemsObject.importDataStatusDescription = value["ImportDataStatusDescription"].asString();
+		if(!value["IncrementalImportingTime"].isNull())
+			itemsObject.incrementalImportingTime = value["IncrementalImportingTime"].asString();
+		items_.push_back(itemsObject);
 	}
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -62,19 +70,9 @@ int DescibeImportsFromDatabaseResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescibeImportsFromDatabaseResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescibeImportsFromDatabaseResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescibeImportsFromDatabaseResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescibeImportsFromDatabaseResult::getPageNumber()const
@@ -82,8 +80,8 @@ int DescibeImportsFromDatabaseResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescibeImportsFromDatabaseResult::setPageNumber(int pageNumber)
+std::vector<DescibeImportsFromDatabaseResult::ImportResultFromDB> DescibeImportsFromDatabaseResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

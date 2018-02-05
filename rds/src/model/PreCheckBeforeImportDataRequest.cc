@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/PreCheckBeforeImportDataRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::PreCheckBeforeImportDataRequest;
 
 PreCheckBeforeImportDataRequest::PreCheckBeforeImportDataRequest() :
-	RdsRequest("PreCheckBeforeImportData")
+	RpcServiceRequest("rds", "2014-08-15", "PreCheckBeforeImportData")
 {}
 
 PreCheckBeforeImportDataRequest::~PreCheckBeforeImportDataRequest()

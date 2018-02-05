@@ -45,15 +45,10 @@ namespace AlibabaCloud
 				explicit DescribeRealtimeDiagnosesResult(const std::string &payload);
 				~DescribeRealtimeDiagnosesResult();
 				int getTotalRecordCount()const;
-				void setTotalRecordCount(int totalRecordCount);
 				std::vector<RealtimeDiagnoseTasks> getTasks()const;
-				void setTasks(const std::vector<RealtimeDiagnoseTasks>& tasks);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getEngine()const;
-				void setEngine(const std::string& engine);
 
 			protected:
 				void parse(const std::string &payload);

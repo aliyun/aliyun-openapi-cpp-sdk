@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/PurgeDBInstanceLogRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::PurgeDBInstanceLogRequest;
 
 PurgeDBInstanceLogRequest::PurgeDBInstanceLogRequest() :
-	RdsRequest("PurgeDBInstanceLog")
+	RpcServiceRequest("rds", "2014-08-15", "PurgeDBInstanceLog")
 {}
 
 PurgeDBInstanceLogRequest::~PurgeDBInstanceLogRequest()

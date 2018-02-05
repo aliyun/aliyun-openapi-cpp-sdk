@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeDBInstancesAsCsvRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeDBInstancesAsCsvRequest;
 
 DescribeDBInstancesAsCsvRequest::DescribeDBInstancesAsCsvRequest() :
-	RdsRequest("DescribeDBInstancesAsCsv")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstancesAsCsv")
 {}
 
 DescribeDBInstancesAsCsvRequest::~DescribeDBInstancesAsCsvRequest()

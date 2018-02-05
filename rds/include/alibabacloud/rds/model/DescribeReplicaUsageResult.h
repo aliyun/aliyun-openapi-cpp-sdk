@@ -58,13 +58,9 @@ namespace AlibabaCloud
 				explicit DescribeReplicaUsageResult(const std::string &payload);
 				~DescribeReplicaUsageResult();
 				std::vector<PerformanceKeys> getPerformanceKeys()const;
-				void setPerformanceKeys(const std::vector<PerformanceKeys>& performanceKeys);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::string getReplicaId()const;
-				void setReplicaId(const std::string& replicaId);
 
 			protected:
 				void parse(const std::string &payload);

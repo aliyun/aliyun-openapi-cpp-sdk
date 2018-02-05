@@ -43,22 +43,34 @@ void DescribeAccountsResult::parse(const std::string &payload)
 	auto allAccounts = value["Accounts"]["DBInstanceAccount"];
 	for (auto value : allAccounts)
 	{
-		DBInstanceAccount dBInstanceAccountObject;
-		dBInstanceAccountObject.dBInstanceId = value["DBInstanceId"].asString();
-		dBInstanceAccountObject.accountName = value["AccountName"].asString();
-		dBInstanceAccountObject.accountStatus = value["AccountStatus"].asString();
-		dBInstanceAccountObject.accountType = value["AccountType"].asString();
-		dBInstanceAccountObject.accountDescription = value["AccountDescription"].asString();
+		DBInstanceAccount accountsObject;
+		if(!value["DBInstanceId"].isNull())
+			accountsObject.dBInstanceId = value["DBInstanceId"].asString();
+		if(!value["AccountName"].isNull())
+			accountsObject.accountName = value["AccountName"].asString();
+		if(!value["AccountStatus"].isNull())
+			accountsObject.accountStatus = value["AccountStatus"].asString();
+		if(!value["AccountType"].isNull())
+			accountsObject.accountType = value["AccountType"].asString();
+		if(!value["AccountDescription"].isNull())
+			accountsObject.accountDescription = value["AccountDescription"].asString();
 		auto allDatabasePrivileges = value["DatabasePrivileges"]["DatabasePrivilege"];
 		for (auto value : allDatabasePrivileges)
 		{
-			DBInstanceAccount::DatabasePrivilege databasePrivilegeObject;
-			databasePrivilegeObject.dBName = value["DBName"].asString();
-			databasePrivilegeObject.accountPrivilege = value["AccountPrivilege"].asString();
-			dBInstanceAccountObject.databasePrivileges.push_back(databasePrivilegeObject);
+			DBInstanceAccount::DatabasePrivilege databasePrivilegesObject;
+			if(!value["DBName"].isNull())
+				databasePrivilegesObject.dBName = value["DBName"].asString();
+			if(!value["AccountPrivilege"].isNull())
+				databasePrivilegesObject.accountPrivilege = value["AccountPrivilege"].asString();
+			accountsObject.databasePrivileges.push_back(databasePrivilegesObject);
 		}
-		accounts_.push_back(dBInstanceAccountObject);
+		accounts_.push_back(accountsObject);
 	}
 
+}
+
+std::vector<DescribeAccountsResult::DBInstanceAccount> DescribeAccountsResult::getAccounts()const
+{
+	return accounts_;
 }
 

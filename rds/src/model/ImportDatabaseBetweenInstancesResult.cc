@@ -40,17 +40,13 @@ void ImportDatabaseBetweenInstancesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	importId_ = value["ImportId"].asString();
+	if(!value["ImportId"].isNull())
+		importId_ = value["ImportId"].asString();
 
 }
 
 std::string ImportDatabaseBetweenInstancesResult::getImportId()const
 {
 	return importId_;
-}
-
-void ImportDatabaseBetweenInstancesResult::setImportId(const std::string& importId)
-{
-	importId_ = importId;
 }
 

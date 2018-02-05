@@ -43,17 +43,25 @@ void DescribeRealtimeDiagnosesResult::parse(const std::string &payload)
 	auto allTasks = value["Tasks"]["RealtimeDiagnoseTasks"];
 	for (auto value : allTasks)
 	{
-		RealtimeDiagnoseTasks realtimeDiagnoseTasksObject;
-		realtimeDiagnoseTasksObject.createTime = value["CreateTime"].asString();
-		realtimeDiagnoseTasksObject.taskId = value["TaskId"].asString();
-		realtimeDiagnoseTasksObject.healthScore = value["HealthScore"].asString();
-		realtimeDiagnoseTasksObject.status = value["Status"].asString();
-		tasks_.push_back(realtimeDiagnoseTasksObject);
+		RealtimeDiagnoseTasks tasksObject;
+		if(!value["CreateTime"].isNull())
+			tasksObject.createTime = value["CreateTime"].asString();
+		if(!value["TaskId"].isNull())
+			tasksObject.taskId = value["TaskId"].asString();
+		if(!value["HealthScore"].isNull())
+			tasksObject.healthScore = value["HealthScore"].asString();
+		if(!value["Status"].isNull())
+			tasksObject.status = value["Status"].asString();
+		tasks_.push_back(tasksObject);
 	}
-	engine_ = value["Engine"].asString();
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -62,9 +70,9 @@ int DescribeRealtimeDiagnosesResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeRealtimeDiagnosesResult::setTotalRecordCount(int totalRecordCount)
+std::vector<DescribeRealtimeDiagnosesResult::RealtimeDiagnoseTasks> DescribeRealtimeDiagnosesResult::getTasks()const
 {
-	totalRecordCount_ = totalRecordCount;
+	return tasks_;
 }
 
 int DescribeRealtimeDiagnosesResult::getPageRecordCount()const
@@ -72,28 +80,13 @@ int DescribeRealtimeDiagnosesResult::getPageRecordCount()const
 	return pageRecordCount_;
 }
 
-void DescribeRealtimeDiagnosesResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
-}
-
 int DescribeRealtimeDiagnosesResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeRealtimeDiagnosesResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-}
-
 std::string DescribeRealtimeDiagnosesResult::getEngine()const
 {
 	return engine_;
-}
-
-void DescribeRealtimeDiagnosesResult::setEngine(const std::string& engine)
-{
-	engine_ = engine;
 }
 

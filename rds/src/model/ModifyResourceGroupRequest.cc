@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifyResourceGroupRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifyResourceGroupRequest;
 
 ModifyResourceGroupRequest::ModifyResourceGroupRequest() :
-	RdsRequest("ModifyResourceGroup")
+	RpcServiceRequest("rds", "2014-08-15", "ModifyResourceGroup")
 {}
 
 ModifyResourceGroupRequest::~ModifyResourceGroupRequest()

@@ -43,15 +43,21 @@ void DescribeOptimizeAdviceOnExcessIndexResult::parse(const std::string &payload
 	auto allItems = value["Items"]["AdviceOnExcessIndex"];
 	for (auto value : allItems)
 	{
-		AdviceOnExcessIndex adviceOnExcessIndexObject;
-		adviceOnExcessIndexObject.dBName = value["DBName"].asString();
-		adviceOnExcessIndexObject.tableName = value["TableName"].asString();
-		adviceOnExcessIndexObject.indexCount = std::stol(value["IndexCount"].asString());
-		items_.push_back(adviceOnExcessIndexObject);
+		AdviceOnExcessIndex itemsObject;
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["TableName"].isNull())
+			itemsObject.tableName = value["TableName"].asString();
+		if(!value["IndexCount"].isNull())
+			itemsObject.indexCount = std::stol(value["IndexCount"].asString());
+		items_.push_back(itemsObject);
 	}
-	totalRecordsCount_ = std::stoi(value["TotalRecordsCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordsCount"].isNull())
+		totalRecordsCount_ = std::stoi(value["TotalRecordsCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -60,19 +66,9 @@ int DescribeOptimizeAdviceOnExcessIndexResult::getTotalRecordsCount()const
 	return totalRecordsCount_;
 }
 
-void DescribeOptimizeAdviceOnExcessIndexResult::setTotalRecordsCount(int totalRecordsCount)
-{
-	totalRecordsCount_ = totalRecordsCount;
-}
-
 int DescribeOptimizeAdviceOnExcessIndexResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeOptimizeAdviceOnExcessIndexResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeOptimizeAdviceOnExcessIndexResult::getPageNumber()const
@@ -80,8 +76,8 @@ int DescribeOptimizeAdviceOnExcessIndexResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeOptimizeAdviceOnExcessIndexResult::setPageNumber(int pageNumber)
+std::vector<DescribeOptimizeAdviceOnExcessIndexResult::AdviceOnExcessIndex> DescribeOptimizeAdviceOnExcessIndexResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/SwitchDBInstanceNetTypeRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::SwitchDBInstanceNetTypeRequest;
 
 SwitchDBInstanceNetTypeRequest::SwitchDBInstanceNetTypeRequest() :
-	RdsRequest("SwitchDBInstanceNetType")
+	RpcServiceRequest("rds", "2014-08-15", "SwitchDBInstanceNetType")
 {}
 
 SwitchDBInstanceNetTypeRequest::~SwitchDBInstanceNetTypeRequest()

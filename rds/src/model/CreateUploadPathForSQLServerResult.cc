@@ -40,13 +40,20 @@ void CreateUploadPathForSQLServerResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	internetFtpServer_ = value["InternetFtpServer"].asString();
-	internetPort_ = std::stoi(value["InternetPort"].asString());
-	intranetFtpserver_ = value["IntranetFtpserver"].asString();
-	intranetport_ = std::stoi(value["Intranetport"].asString());
-	userName_ = value["UserName"].asString();
-	password_ = value["Password"].asString();
-	fileName_ = value["FileName"].asString();
+	if(!value["InternetFtpServer"].isNull())
+		internetFtpServer_ = value["InternetFtpServer"].asString();
+	if(!value["InternetPort"].isNull())
+		internetPort_ = std::stoi(value["InternetPort"].asString());
+	if(!value["IntranetFtpserver"].isNull())
+		intranetFtpserver_ = value["IntranetFtpserver"].asString();
+	if(!value["Intranetport"].isNull())
+		intranetport_ = std::stoi(value["Intranetport"].asString());
+	if(!value["UserName"].isNull())
+		userName_ = value["UserName"].asString();
+	if(!value["Password"].isNull())
+		password_ = value["Password"].asString();
+	if(!value["FileName"].isNull())
+		fileName_ = value["FileName"].asString();
 
 }
 
@@ -55,19 +62,9 @@ std::string CreateUploadPathForSQLServerResult::getIntranetFtpserver()const
 	return intranetFtpserver_;
 }
 
-void CreateUploadPathForSQLServerResult::setIntranetFtpserver(const std::string& intranetFtpserver)
-{
-	intranetFtpserver_ = intranetFtpserver;
-}
-
 std::string CreateUploadPathForSQLServerResult::getUserName()const
 {
 	return userName_;
-}
-
-void CreateUploadPathForSQLServerResult::setUserName(const std::string& userName)
-{
-	userName_ = userName;
 }
 
 std::string CreateUploadPathForSQLServerResult::getFileName()const
@@ -75,19 +72,9 @@ std::string CreateUploadPathForSQLServerResult::getFileName()const
 	return fileName_;
 }
 
-void CreateUploadPathForSQLServerResult::setFileName(const std::string& fileName)
-{
-	fileName_ = fileName;
-}
-
 int CreateUploadPathForSQLServerResult::getInternetPort()const
 {
 	return internetPort_;
-}
-
-void CreateUploadPathForSQLServerResult::setInternetPort(int internetPort)
-{
-	internetPort_ = internetPort;
 }
 
 std::string CreateUploadPathForSQLServerResult::getInternetFtpServer()const
@@ -95,28 +82,13 @@ std::string CreateUploadPathForSQLServerResult::getInternetFtpServer()const
 	return internetFtpServer_;
 }
 
-void CreateUploadPathForSQLServerResult::setInternetFtpServer(const std::string& internetFtpServer)
-{
-	internetFtpServer_ = internetFtpServer;
-}
-
 int CreateUploadPathForSQLServerResult::getIntranetport()const
 {
 	return intranetport_;
 }
 
-void CreateUploadPathForSQLServerResult::setIntranetport(int intranetport)
-{
-	intranetport_ = intranetport;
-}
-
 std::string CreateUploadPathForSQLServerResult::getPassword()const
 {
 	return password_;
-}
-
-void CreateUploadPathForSQLServerResult::setPassword(const std::string& password)
-{
-	password_ = password;
 }
 

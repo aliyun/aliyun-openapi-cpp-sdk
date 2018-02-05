@@ -43,18 +43,27 @@ void DescribeParameterTemplatesResult::parse(const std::string &payload)
 	auto allParameters = value["Parameters"]["TemplateRecord"];
 	for (auto value : allParameters)
 	{
-		TemplateRecord templateRecordObject;
-		templateRecordObject.parameterName = value["ParameterName"].asString();
-		templateRecordObject.parameterValue = value["ParameterValue"].asString();
-		templateRecordObject.forceModify = value["ForceModify"].asString();
-		templateRecordObject.forceRestart = value["ForceRestart"].asString();
-		templateRecordObject.checkingCode = value["CheckingCode"].asString();
-		templateRecordObject.parameterDescription = value["ParameterDescription"].asString();
-		parameters_.push_back(templateRecordObject);
+		TemplateRecord parametersObject;
+		if(!value["ParameterName"].isNull())
+			parametersObject.parameterName = value["ParameterName"].asString();
+		if(!value["ParameterValue"].isNull())
+			parametersObject.parameterValue = value["ParameterValue"].asString();
+		if(!value["ForceModify"].isNull())
+			parametersObject.forceModify = value["ForceModify"].asString();
+		if(!value["ForceRestart"].isNull())
+			parametersObject.forceRestart = value["ForceRestart"].asString();
+		if(!value["CheckingCode"].isNull())
+			parametersObject.checkingCode = value["CheckingCode"].asString();
+		if(!value["ParameterDescription"].isNull())
+			parametersObject.parameterDescription = value["ParameterDescription"].asString();
+		parameters_.push_back(parametersObject);
 	}
-	engine_ = value["Engine"].asString();
-	engineVersion_ = value["EngineVersion"].asString();
-	parameterCount_ = value["ParameterCount"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["EngineVersion"].isNull())
+		engineVersion_ = value["EngineVersion"].asString();
+	if(!value["ParameterCount"].isNull())
+		parameterCount_ = value["ParameterCount"].asString();
 
 }
 
@@ -63,9 +72,9 @@ std::string DescribeParameterTemplatesResult::getParameterCount()const
 	return parameterCount_;
 }
 
-void DescribeParameterTemplatesResult::setParameterCount(const std::string& parameterCount)
+std::vector<DescribeParameterTemplatesResult::TemplateRecord> DescribeParameterTemplatesResult::getParameters()const
 {
-	parameterCount_ = parameterCount;
+	return parameters_;
 }
 
 std::string DescribeParameterTemplatesResult::getEngineVersion()const
@@ -73,18 +82,8 @@ std::string DescribeParameterTemplatesResult::getEngineVersion()const
 	return engineVersion_;
 }
 
-void DescribeParameterTemplatesResult::setEngineVersion(const std::string& engineVersion)
-{
-	engineVersion_ = engineVersion;
-}
-
 std::string DescribeParameterTemplatesResult::getEngine()const
 {
 	return engine_;
-}
-
-void DescribeParameterTemplatesResult::setEngine(const std::string& engine)
-{
-	engine_ = engine;
 }
 

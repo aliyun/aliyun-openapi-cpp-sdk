@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/AllocateInstancePrivateConnectionRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::AllocateInstancePrivateConnectionRequest;
 
 AllocateInstancePrivateConnectionRequest::AllocateInstancePrivateConnectionRequest() :
-	RdsRequest("AllocateInstancePrivateConnection")
+	RpcServiceRequest("rds", "2014-08-15", "AllocateInstancePrivateConnection")
 {}
 
 AllocateInstancePrivateConnectionRequest::~AllocateInstancePrivateConnectionRequest()

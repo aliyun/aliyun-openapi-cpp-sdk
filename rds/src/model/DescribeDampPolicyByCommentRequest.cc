@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeDampPolicyByCommentRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeDampPolicyByCommentRequest;
 
 DescribeDampPolicyByCommentRequest::DescribeDampPolicyByCommentRequest() :
-	RdsRequest("DescribeDampPolicyByComment")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeDampPolicyByComment")
 {}
 
 DescribeDampPolicyByCommentRequest::~DescribeDampPolicyByCommentRequest()

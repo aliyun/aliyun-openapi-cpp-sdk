@@ -40,8 +40,10 @@ void StartDBInstanceDiagnoseResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	dBInstanceName_ = value["DBInstanceName"].asString();
-	dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
 
 }
 
@@ -50,18 +52,8 @@ std::string StartDBInstanceDiagnoseResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void StartDBInstanceDiagnoseResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-}
-
 std::string StartDBInstanceDiagnoseResult::getDBInstanceName()const
 {
 	return dBInstanceName_;
-}
-
-void StartDBInstanceDiagnoseResult::setDBInstanceName(const std::string& dBInstanceName)
-{
-	dBInstanceName_ = dBInstanceName;
 }
 

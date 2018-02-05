@@ -43,25 +43,41 @@ void DescribeFilesForSQLServerResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["SQLServerUploadFile"];
 	for (auto value : allItems)
 	{
-		SQLServerUploadFile sQLServerUploadFileObject;
-		sQLServerUploadFileObject.dBName = value["DBName"].asString();
-		sQLServerUploadFileObject.fileName = value["FileName"].asString();
-		sQLServerUploadFileObject.fileSize = std::stol(value["FileSize"].asString());
-		sQLServerUploadFileObject.internetFtpServer = value["InternetFtpServer"].asString();
-		sQLServerUploadFileObject.internetPort = std::stoi(value["InternetPort"].asString());
-		sQLServerUploadFileObject.intranetFtpserver = value["IntranetFtpserver"].asString();
-		sQLServerUploadFileObject.intranetport = std::stoi(value["Intranetport"].asString());
-		sQLServerUploadFileObject.userName = value["UserName"].asString();
-		sQLServerUploadFileObject.password = value["Password"].asString();
-		sQLServerUploadFileObject.fileStatus = value["FileStatus"].asString();
-		sQLServerUploadFileObject.description = value["Description"].asString();
-		sQLServerUploadFileObject.creationTime = value["CreationTime"].asString();
-		items_.push_back(sQLServerUploadFileObject);
+		SQLServerUploadFile itemsObject;
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["FileName"].isNull())
+			itemsObject.fileName = value["FileName"].asString();
+		if(!value["FileSize"].isNull())
+			itemsObject.fileSize = std::stol(value["FileSize"].asString());
+		if(!value["InternetFtpServer"].isNull())
+			itemsObject.internetFtpServer = value["InternetFtpServer"].asString();
+		if(!value["InternetPort"].isNull())
+			itemsObject.internetPort = std::stoi(value["InternetPort"].asString());
+		if(!value["IntranetFtpserver"].isNull())
+			itemsObject.intranetFtpserver = value["IntranetFtpserver"].asString();
+		if(!value["Intranetport"].isNull())
+			itemsObject.intranetport = std::stoi(value["Intranetport"].asString());
+		if(!value["UserName"].isNull())
+			itemsObject.userName = value["UserName"].asString();
+		if(!value["Password"].isNull())
+			itemsObject.password = value["Password"].asString();
+		if(!value["FileStatus"].isNull())
+			itemsObject.fileStatus = value["FileStatus"].asString();
+		if(!value["Description"].isNull())
+			itemsObject.description = value["Description"].asString();
+		if(!value["CreationTime"].isNull())
+			itemsObject.creationTime = value["CreationTime"].asString();
+		items_.push_back(itemsObject);
 	}
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -70,19 +86,9 @@ int DescribeFilesForSQLServerResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeFilesForSQLServerResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeFilesForSQLServerResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeFilesForSQLServerResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 std::string DescribeFilesForSQLServerResult::getDBInstanceId()const
@@ -90,18 +96,13 @@ std::string DescribeFilesForSQLServerResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void DescribeFilesForSQLServerResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-}
-
 int DescribeFilesForSQLServerResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeFilesForSQLServerResult::setPageNumber(int pageNumber)
+std::vector<DescribeFilesForSQLServerResult::SQLServerUploadFile> DescribeFilesForSQLServerResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

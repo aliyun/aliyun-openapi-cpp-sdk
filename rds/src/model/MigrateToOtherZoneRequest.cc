@@ -16,15 +16,25 @@
 
 #include <alibabacloud/rds/model/MigrateToOtherZoneRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::MigrateToOtherZoneRequest;
 
 MigrateToOtherZoneRequest::MigrateToOtherZoneRequest() :
-	RdsRequest("MigrateToOtherZone")
+	RpcServiceRequest("rds", "2014-08-15", "MigrateToOtherZone")
 {}
 
 MigrateToOtherZoneRequest::~MigrateToOtherZoneRequest()
 {}
+
+std::string MigrateToOtherZoneRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void MigrateToOtherZoneRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setParameter("VSwitchId", vSwitchId);
+}
 
 long MigrateToOtherZoneRequest::getResourceOwnerId()const
 {

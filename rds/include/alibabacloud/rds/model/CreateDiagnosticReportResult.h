@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateDiagnosticReportResult(const std::string &payload);
 				~CreateDiagnosticReportResult();
 				std::string getReportId()const;
-				void setReportId(const std::string& reportId);
 
 			protected:
 				void parse(const std::string &payload);

@@ -40,17 +40,13 @@ void ModifySecurityIpsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	taskId_ = value["TaskId"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
 }
 
 std::string ModifySecurityIpsResult::getTaskId()const
 {
 	return taskId_;
-}
-
-void ModifySecurityIpsResult::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
 }
 

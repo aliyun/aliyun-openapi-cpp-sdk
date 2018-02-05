@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeDBInstancesByPerformanceRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeDBInstancesByPerformanceRequest;
 
 DescribeDBInstancesByPerformanceRequest::DescribeDBInstancesByPerformanceRequest() :
-	RdsRequest("DescribeDBInstancesByPerformance")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstancesByPerformance")
 {}
 
 DescribeDBInstancesByPerformanceRequest::~DescribeDBInstancesByPerformanceRequest()

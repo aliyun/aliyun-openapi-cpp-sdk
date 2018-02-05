@@ -43,13 +43,9 @@ namespace AlibabaCloud
 				explicit DescribeOptimizeAdviceOnMissPKResult(const std::string &payload);
 				~DescribeOptimizeAdviceOnMissPKResult();
 				int getTotalRecordsCount()const;
-				void setTotalRecordsCount(int totalRecordsCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<AdviceOnMissPK> getItems()const;
-				void setItems(const std::vector<AdviceOnMissPK>& items);
 
 			protected:
 				void parse(const std::string &payload);

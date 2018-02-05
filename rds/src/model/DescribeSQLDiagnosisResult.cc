@@ -51,8 +51,3 @@ std::vector<std::string> DescribeSQLDiagnosisResult::getSQLList()const
 	return sQLList_;
 }
 
-void DescribeSQLDiagnosisResult::setSQLList(const std::vector<std::string>& sQLList)
-{
-	sQLList_ = sQLList;
-}
-

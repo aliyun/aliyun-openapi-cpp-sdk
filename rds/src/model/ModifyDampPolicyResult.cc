@@ -40,8 +40,10 @@ void ModifyDampPolicyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	policyId_ = value["PolicyId"].asString();
-	policyName_ = value["PolicyName"].asString();
+	if(!value["PolicyId"].isNull())
+		policyId_ = value["PolicyId"].asString();
+	if(!value["PolicyName"].isNull())
+		policyName_ = value["PolicyName"].asString();
 
 }
 
@@ -50,18 +52,8 @@ std::string ModifyDampPolicyResult::getPolicyName()const
 	return policyName_;
 }
 
-void ModifyDampPolicyResult::setPolicyName(const std::string& policyName)
-{
-	policyName_ = policyName;
-}
-
 std::string ModifyDampPolicyResult::getPolicyId()const
 {
 	return policyId_;
-}
-
-void ModifyDampPolicyResult::setPolicyId(const std::string& policyId)
-{
-	policyId_ = policyId;
 }
 

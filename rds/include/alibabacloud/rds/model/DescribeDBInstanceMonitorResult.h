@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceMonitorResult(const std::string &payload);
 				~DescribeDBInstanceMonitorResult();
 				std::string getPeriod()const;
-				void setPeriod(const std::string& period);
 
 			protected:
 				void parse(const std::string &payload);

@@ -43,12 +43,15 @@ void DescribeDBInstanceTDEResult::parse(const std::string &payload)
 	auto allDatabases = value["Databases"]["Database"];
 	for (auto value : allDatabases)
 	{
-		Database databaseObject;
-		databaseObject.dBName = value["DBName"].asString();
-		databaseObject.tDEStatus = value["TDEStatus"].asString();
-		databases_.push_back(databaseObject);
+		Database databasesObject;
+		if(!value["DBName"].isNull())
+			databasesObject.dBName = value["DBName"].asString();
+		if(!value["TDEStatus"].isNull())
+			databasesObject.tDEStatus = value["TDEStatus"].asString();
+		databases_.push_back(databasesObject);
 	}
-	tDEStatus_ = value["TDEStatus"].asString();
+	if(!value["TDEStatus"].isNull())
+		tDEStatus_ = value["TDEStatus"].asString();
 
 }
 
@@ -57,8 +60,8 @@ std::string DescribeDBInstanceTDEResult::getTDEStatus()const
 	return tDEStatus_;
 }
 
-void DescribeDBInstanceTDEResult::setTDEStatus(const std::string& tDEStatus)
+std::vector<DescribeDBInstanceTDEResult::Database> DescribeDBInstanceTDEResult::getDatabases()const
 {
-	tDEStatus_ = tDEStatus;
+	return databases_;
 }
 

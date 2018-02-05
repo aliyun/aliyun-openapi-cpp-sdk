@@ -43,18 +43,27 @@ void DescribeDBInstancesByPerformanceResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["DBInstancePerformance"];
 	for (auto value : allItems)
 	{
-		DBInstancePerformance dBInstancePerformanceObject;
-		dBInstancePerformanceObject.cPUUsage = value["CPUUsage"].asString();
-		dBInstancePerformanceObject.iOPSUsage = value["IOPSUsage"].asString();
-		dBInstancePerformanceObject.diskUsage = value["DiskUsage"].asString();
-		dBInstancePerformanceObject.sessionUsage = value["SessionUsage"].asString();
-		dBInstancePerformanceObject.dBInstanceId = value["DBInstanceId"].asString();
-		dBInstancePerformanceObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-		items_.push_back(dBInstancePerformanceObject);
+		DBInstancePerformance itemsObject;
+		if(!value["CPUUsage"].isNull())
+			itemsObject.cPUUsage = value["CPUUsage"].asString();
+		if(!value["IOPSUsage"].isNull())
+			itemsObject.iOPSUsage = value["IOPSUsage"].asString();
+		if(!value["DiskUsage"].isNull())
+			itemsObject.diskUsage = value["DiskUsage"].asString();
+		if(!value["SessionUsage"].isNull())
+			itemsObject.sessionUsage = value["SessionUsage"].asString();
+		if(!value["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
+		if(!value["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
+		items_.push_back(itemsObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -63,19 +72,9 @@ int DescribeDBInstancesByPerformanceResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeDBInstancesByPerformanceResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeDBInstancesByPerformanceResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeDBInstancesByPerformanceResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeDBInstancesByPerformanceResult::getPageNumber()const
@@ -83,8 +82,8 @@ int DescribeDBInstancesByPerformanceResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeDBInstancesByPerformanceResult::setPageNumber(int pageNumber)
+std::vector<DescribeDBInstancesByPerformanceResult::DBInstancePerformance> DescribeDBInstancesByPerformanceResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeDBInstanceIPArrayListRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeDBInstanceIPArrayListRequest;
 
 DescribeDBInstanceIPArrayListRequest::DescribeDBInstanceIPArrayListRequest() :
-	RdsRequest("DescribeDBInstanceIPArrayList")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstanceIPArrayList")
 {}
 
 DescribeDBInstanceIPArrayListRequest::~DescribeDBInstanceIPArrayListRequest()

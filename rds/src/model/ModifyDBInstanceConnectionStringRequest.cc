@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifyDBInstanceConnectionStringRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifyDBInstanceConnectionStringRequest;
 
 ModifyDBInstanceConnectionStringRequest::ModifyDBInstanceConnectionStringRequest() :
-	RdsRequest("ModifyDBInstanceConnectionString")
+	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceConnectionString")
 {}
 
 ModifyDBInstanceConnectionStringRequest::~ModifyDBInstanceConnectionStringRequest()

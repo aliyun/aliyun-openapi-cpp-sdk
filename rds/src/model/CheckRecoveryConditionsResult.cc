@@ -40,8 +40,10 @@ void CheckRecoveryConditionsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	recoveryStatus_ = value["RecoveryStatus"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["RecoveryStatus"].isNull())
+		recoveryStatus_ = value["RecoveryStatus"].asString();
 
 }
 
@@ -50,18 +52,8 @@ std::string CheckRecoveryConditionsResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void CheckRecoveryConditionsResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-}
-
 std::string CheckRecoveryConditionsResult::getRecoveryStatus()const
 {
 	return recoveryStatus_;
-}
-
-void CheckRecoveryConditionsResult::setRecoveryStatus(const std::string& recoveryStatus)
-{
-	recoveryStatus_ = recoveryStatus;
 }
 

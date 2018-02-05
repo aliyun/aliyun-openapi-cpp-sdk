@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CopyDatabaseRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CopyDatabaseRequest;
 
 CopyDatabaseRequest::CopyDatabaseRequest() :
-	RdsRequest("CopyDatabase")
+	RpcServiceRequest("rds", "2014-08-15", "CopyDatabase")
 {}
 
 CopyDatabaseRequest::~CopyDatabaseRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/UpgradeDBInstanceEngineVersionRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::UpgradeDBInstanceEngineVersionRequest;
 
 UpgradeDBInstanceEngineVersionRequest::UpgradeDBInstanceEngineVersionRequest() :
-	RdsRequest("UpgradeDBInstanceEngineVersion")
+	RpcServiceRequest("rds", "2014-08-15", "UpgradeDBInstanceEngineVersion")
 {}
 
 UpgradeDBInstanceEngineVersionRequest::~UpgradeDBInstanceEngineVersionRequest()

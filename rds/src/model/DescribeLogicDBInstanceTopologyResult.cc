@@ -43,26 +43,43 @@ void DescribeLogicDBInstanceTopologyResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["LogicDBInstanceParameter"];
 	for (auto value : allItems)
 	{
-		LogicDBInstanceParameter logicDBInstanceParameterObject;
-		logicDBInstanceParameterObject.dBInstanceID = std::stoi(value["DBInstanceID"].asString());
-		logicDBInstanceParameterObject.dBInstanceName = value["DBInstanceName"].asString();
-		logicDBInstanceParameterObject.dBInstanceStatus = std::stoi(value["DBInstanceStatus"].asString());
-		logicDBInstanceParameterObject.dBInstanceStatusDesc = value["DBInstanceStatusDesc"].asString();
-		logicDBInstanceParameterObject.dBInstanceConnType = value["DBInstanceConnType"].asString();
-		logicDBInstanceParameterObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-		logicDBInstanceParameterObject.engine = value["Engine"].asString();
-		logicDBInstanceParameterObject.engineVersion = value["EngineVersion"].asString();
-		logicDBInstanceParameterObject.characterType = value["CharacterType"].asString();
-		items_.push_back(logicDBInstanceParameterObject);
+		LogicDBInstanceParameter itemsObject;
+		if(!value["DBInstanceID"].isNull())
+			itemsObject.dBInstanceID = std::stoi(value["DBInstanceID"].asString());
+		if(!value["DBInstanceName"].isNull())
+			itemsObject.dBInstanceName = value["DBInstanceName"].asString();
+		if(!value["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = std::stoi(value["DBInstanceStatus"].asString());
+		if(!value["DBInstanceStatusDesc"].isNull())
+			itemsObject.dBInstanceStatusDesc = value["DBInstanceStatusDesc"].asString();
+		if(!value["DBInstanceConnType"].isNull())
+			itemsObject.dBInstanceConnType = value["DBInstanceConnType"].asString();
+		if(!value["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
+		if(!value["Engine"].isNull())
+			itemsObject.engine = value["Engine"].asString();
+		if(!value["EngineVersion"].isNull())
+			itemsObject.engineVersion = value["EngineVersion"].asString();
+		if(!value["CharacterType"].isNull())
+			itemsObject.characterType = value["CharacterType"].asString();
+		items_.push_back(itemsObject);
 	}
-	dBInstanceId_ = std::stoi(value["DBInstanceId"].asString());
-	dBInstanceName_ = value["DBInstanceName"].asString();
-	dBInstanceStatus_ = std::stoi(value["DBInstanceStatus"].asString());
-	dBInstanceStatusDesc_ = value["DBInstanceStatusDesc"].asString();
-	dBInstanceConnType_ = value["DBInstanceConnType"].asString();
-	dBInstanceDescription_ = value["DBInstanceDescription"].asString();
-	engine_ = value["Engine"].asString();
-	engineVersion_ = value["EngineVersion"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = std::stoi(value["DBInstanceId"].asString());
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["DBInstanceStatus"].isNull())
+		dBInstanceStatus_ = std::stoi(value["DBInstanceStatus"].asString());
+	if(!value["DBInstanceStatusDesc"].isNull())
+		dBInstanceStatusDesc_ = value["DBInstanceStatusDesc"].asString();
+	if(!value["DBInstanceConnType"].isNull())
+		dBInstanceConnType_ = value["DBInstanceConnType"].asString();
+	if(!value["DBInstanceDescription"].isNull())
+		dBInstanceDescription_ = value["DBInstanceDescription"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["EngineVersion"].isNull())
+		engineVersion_ = value["EngineVersion"].asString();
 
 }
 
@@ -71,19 +88,9 @@ std::string DescribeLogicDBInstanceTopologyResult::getEngineVersion()const
 	return engineVersion_;
 }
 
-void DescribeLogicDBInstanceTopologyResult::setEngineVersion(const std::string& engineVersion)
-{
-	engineVersion_ = engineVersion;
-}
-
 int DescribeLogicDBInstanceTopologyResult::getDBInstanceStatus()const
 {
 	return dBInstanceStatus_;
-}
-
-void DescribeLogicDBInstanceTopologyResult::setDBInstanceStatus(int dBInstanceStatus)
-{
-	dBInstanceStatus_ = dBInstanceStatus;
 }
 
 int DescribeLogicDBInstanceTopologyResult::getDBInstanceId()const
@@ -91,9 +98,9 @@ int DescribeLogicDBInstanceTopologyResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void DescribeLogicDBInstanceTopologyResult::setDBInstanceId(int dBInstanceId)
+std::vector<DescribeLogicDBInstanceTopologyResult::LogicDBInstanceParameter> DescribeLogicDBInstanceTopologyResult::getItems()const
 {
-	dBInstanceId_ = dBInstanceId;
+	return items_;
 }
 
 std::string DescribeLogicDBInstanceTopologyResult::getDBInstanceStatusDesc()const
@@ -101,19 +108,9 @@ std::string DescribeLogicDBInstanceTopologyResult::getDBInstanceStatusDesc()cons
 	return dBInstanceStatusDesc_;
 }
 
-void DescribeLogicDBInstanceTopologyResult::setDBInstanceStatusDesc(const std::string& dBInstanceStatusDesc)
-{
-	dBInstanceStatusDesc_ = dBInstanceStatusDesc;
-}
-
 std::string DescribeLogicDBInstanceTopologyResult::getDBInstanceConnType()const
 {
 	return dBInstanceConnType_;
-}
-
-void DescribeLogicDBInstanceTopologyResult::setDBInstanceConnType(const std::string& dBInstanceConnType)
-{
-	dBInstanceConnType_ = dBInstanceConnType;
 }
 
 std::string DescribeLogicDBInstanceTopologyResult::getDBInstanceDescription()const
@@ -121,28 +118,13 @@ std::string DescribeLogicDBInstanceTopologyResult::getDBInstanceDescription()con
 	return dBInstanceDescription_;
 }
 
-void DescribeLogicDBInstanceTopologyResult::setDBInstanceDescription(const std::string& dBInstanceDescription)
-{
-	dBInstanceDescription_ = dBInstanceDescription;
-}
-
 std::string DescribeLogicDBInstanceTopologyResult::getEngine()const
 {
 	return engine_;
 }
 
-void DescribeLogicDBInstanceTopologyResult::setEngine(const std::string& engine)
-{
-	engine_ = engine;
-}
-
 std::string DescribeLogicDBInstanceTopologyResult::getDBInstanceName()const
 {
 	return dBInstanceName_;
-}
-
-void DescribeLogicDBInstanceTopologyResult::setDBInstanceName(const std::string& dBInstanceName)
-{
-	dBInstanceName_ = dBInstanceName;
 }
 

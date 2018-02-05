@@ -45,7 +45,6 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceIPArrayListResult(const std::string &payload);
 				~DescribeDBInstanceIPArrayListResult();
 				std::vector<DBInstanceIPArray> getItems()const;
-				void setItems(const std::vector<DBInstanceIPArray>& items);
 
 			protected:
 				void parse(const std::string &payload);

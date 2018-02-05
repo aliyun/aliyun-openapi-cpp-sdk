@@ -38,23 +38,14 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceExtendAttributeResult(const std::string &payload);
 				~DescribeDBInstanceExtendAttributeResult();
 				std::string getTempUpgradeRecoveryMaxIOPS()const;
-				void setTempUpgradeRecoveryMaxIOPS(const std::string& tempUpgradeRecoveryMaxIOPS);
 				int getTempUpgradeRecoveryMemory()const;
-				void setTempUpgradeRecoveryMemory(int tempUpgradeRecoveryMemory);
 				std::string getTempUpgradeRecoveryTime()const;
-				void setTempUpgradeRecoveryTime(const std::string& tempUpgradeRecoveryTime);
 				std::string getTempUpgradeRecoveryMaxConnections()const;
-				void setTempUpgradeRecoveryMaxConnections(const std::string& tempUpgradeRecoveryMaxConnections);
 				int getTempUpgradeRecoveryCpu()const;
-				void setTempUpgradeRecoveryCpu(int tempUpgradeRecoveryCpu);
 				std::string getTempUpgradeTimeStart()const;
-				void setTempUpgradeTimeStart(const std::string& tempUpgradeTimeStart);
 				std::string getTempUpgradeTimeEnd()const;
-				void setTempUpgradeTimeEnd(const std::string& tempUpgradeTimeEnd);
 				bool getCanTempUpgrade()const;
-				void setCanTempUpgrade(bool canTempUpgrade);
 				std::string getTempUpgradeRecoveryClass()const;
-				void setTempUpgradeRecoveryClass(const std::string& tempUpgradeRecoveryClass);
 
 			protected:
 				void parse(const std::string &payload);

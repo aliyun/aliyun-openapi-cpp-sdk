@@ -43,20 +43,31 @@ void DescribeSQLLogRecordsResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["SQLRecord"];
 	for (auto value : allItems)
 	{
-		SQLRecord sQLRecordObject;
-		sQLRecordObject.dBName = value["DBName"].asString();
-		sQLRecordObject.accountName = value["AccountName"].asString();
-		sQLRecordObject.hostAddress = value["HostAddress"].asString();
-		sQLRecordObject.sQLText = value["SQLText"].asString();
-		sQLRecordObject.totalExecutionTimes = std::stol(value["TotalExecutionTimes"].asString());
-		sQLRecordObject.returnRowCounts = std::stol(value["ReturnRowCounts"].asString());
-		sQLRecordObject.executeTime = value["ExecuteTime"].asString();
-		sQLRecordObject.threadID = value["ThreadID"].asString();
-		items_.push_back(sQLRecordObject);
+		SQLRecord itemsObject;
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["AccountName"].isNull())
+			itemsObject.accountName = value["AccountName"].asString();
+		if(!value["HostAddress"].isNull())
+			itemsObject.hostAddress = value["HostAddress"].asString();
+		if(!value["SQLText"].isNull())
+			itemsObject.sQLText = value["SQLText"].asString();
+		if(!value["TotalExecutionTimes"].isNull())
+			itemsObject.totalExecutionTimes = std::stol(value["TotalExecutionTimes"].asString());
+		if(!value["ReturnRowCounts"].isNull())
+			itemsObject.returnRowCounts = std::stol(value["ReturnRowCounts"].asString());
+		if(!value["ExecuteTime"].isNull())
+			itemsObject.executeTime = value["ExecuteTime"].asString();
+		if(!value["ThreadID"].isNull())
+			itemsObject.threadID = value["ThreadID"].asString();
+		items_.push_back(itemsObject);
 	}
-	totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -65,19 +76,9 @@ long DescribeSQLLogRecordsResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeSQLLogRecordsResult::setTotalRecordCount(long totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeSQLLogRecordsResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeSQLLogRecordsResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeSQLLogRecordsResult::getPageNumber()const
@@ -85,8 +86,8 @@ int DescribeSQLLogRecordsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeSQLLogRecordsResult::setPageNumber(int pageNumber)
+std::vector<DescribeSQLLogRecordsResult::SQLRecord> DescribeSQLLogRecordsResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

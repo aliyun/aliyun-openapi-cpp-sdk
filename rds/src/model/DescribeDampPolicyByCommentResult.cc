@@ -40,11 +40,16 @@ void DescribeDampPolicyByCommentResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	policy_ = value["Policy"].asString();
-	timeRules_ = value["TimeRules"].asString();
-	actionRules_ = value["ActionRules"].asString();
-	sourceRules_ = value["SourceRules"].asString();
-	handler_ = value["Handler"].asString();
+	if(!value["Policy"].isNull())
+		policy_ = value["Policy"].asString();
+	if(!value["TimeRules"].isNull())
+		timeRules_ = value["TimeRules"].asString();
+	if(!value["ActionRules"].isNull())
+		actionRules_ = value["ActionRules"].asString();
+	if(!value["SourceRules"].isNull())
+		sourceRules_ = value["SourceRules"].asString();
+	if(!value["Handler"].isNull())
+		handler_ = value["Handler"].asString();
 
 }
 
@@ -53,19 +58,9 @@ std::string DescribeDampPolicyByCommentResult::getPolicy()const
 	return policy_;
 }
 
-void DescribeDampPolicyByCommentResult::setPolicy(const std::string& policy)
-{
-	policy_ = policy;
-}
-
 std::string DescribeDampPolicyByCommentResult::getTimeRules()const
 {
 	return timeRules_;
-}
-
-void DescribeDampPolicyByCommentResult::setTimeRules(const std::string& timeRules)
-{
-	timeRules_ = timeRules;
 }
 
 std::string DescribeDampPolicyByCommentResult::getActionRules()const
@@ -73,28 +68,13 @@ std::string DescribeDampPolicyByCommentResult::getActionRules()const
 	return actionRules_;
 }
 
-void DescribeDampPolicyByCommentResult::setActionRules(const std::string& actionRules)
-{
-	actionRules_ = actionRules;
-}
-
 std::string DescribeDampPolicyByCommentResult::getHandler()const
 {
 	return handler_;
 }
 
-void DescribeDampPolicyByCommentResult::setHandler(const std::string& handler)
-{
-	handler_ = handler;
-}
-
 std::string DescribeDampPolicyByCommentResult::getSourceRules()const
 {
 	return sourceRules_;
-}
-
-void DescribeDampPolicyByCommentResult::setSourceRules(const std::string& sourceRules)
-{
-	sourceRules_ = sourceRules;
 }
 

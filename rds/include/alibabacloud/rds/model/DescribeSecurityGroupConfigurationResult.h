@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEDBINSTANCEECSSGRELATIONRESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEDBINSTANCEECSSGRELATIONRESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBESECURITYGROUPCONFIGURATIONRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBESECURITYGROUPCONFIGURATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeDBInstanceECSSGRelationResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT DescribeSecurityGroupConfigurationResult : public ServiceResult
 			{
 			public:
-				struct RdsEcsSecurityGroupRel
+				struct EcsSecurityGroupRelation
 				{
+					std::string networkType;
 					std::string securityGroupId;
 					std::string regionId;
-					std::string netType;
 				};
 
 
-				DescribeDBInstanceECSSGRelationResult();
-				explicit DescribeDBInstanceECSSGRelationResult(const std::string &payload);
-				~DescribeDBInstanceECSSGRelationResult();
-				std::vector<RdsEcsSecurityGroupRel> getItems()const;
-				void setItems(const std::vector<RdsEcsSecurityGroupRel>& items);
+				DescribeSecurityGroupConfigurationResult();
+				explicit DescribeSecurityGroupConfigurationResult(const std::string &payload);
+				~DescribeSecurityGroupConfigurationResult();
+				std::vector<EcsSecurityGroupRelation> getItems()const;
 				std::string getDBInstanceName()const;
-				void setDBInstanceName(const std::string& dBInstanceName);
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<RdsEcsSecurityGroupRel> items_;
+				std::vector<EcsSecurityGroupRelation> items_;
 				std::string dBInstanceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEDBINSTANCEECSSGRELATIONRESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBESECURITYGROUPCONFIGURATIONRESULT_H_

@@ -53,7 +53,6 @@ namespace AlibabaCloud
 				explicit DescribeDatabasesResult(const std::string &payload);
 				~DescribeDatabasesResult();
 				std::vector<Database> getDatabases()const;
-				void setDatabases(const std::vector<Database>& databases);
 
 			protected:
 				void parse(const std::string &payload);

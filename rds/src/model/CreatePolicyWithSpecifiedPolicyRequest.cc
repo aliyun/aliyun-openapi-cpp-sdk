@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CreatePolicyWithSpecifiedPolicyRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CreatePolicyWithSpecifiedPolicyRequest;
 
 CreatePolicyWithSpecifiedPolicyRequest::CreatePolicyWithSpecifiedPolicyRequest() :
-	RdsRequest("CreatePolicyWithSpecifiedPolicy")
+	RpcServiceRequest("rds", "2014-08-15", "CreatePolicyWithSpecifiedPolicy")
 {}
 
 CreatePolicyWithSpecifiedPolicyRequest::~CreatePolicyWithSpecifiedPolicyRequest()

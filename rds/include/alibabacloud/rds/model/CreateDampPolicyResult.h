@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit CreateDampPolicyResult(const std::string &payload);
 				~CreateDampPolicyResult();
 				std::string getPolicyName()const;
-				void setPolicyName(const std::string& policyName);
 				std::string getPolicyId()const;
-				void setPolicyId(const std::string& policyId);
 
 			protected:
 				void parse(const std::string &payload);

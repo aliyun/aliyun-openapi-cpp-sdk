@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeReplicaUsageRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeReplicaUsageRequest;
 
 DescribeReplicaUsageRequest::DescribeReplicaUsageRequest() :
-	RdsRequest("DescribeReplicaUsage")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeReplicaUsage")
 {}
 
 DescribeReplicaUsageRequest::~DescribeReplicaUsageRequest()

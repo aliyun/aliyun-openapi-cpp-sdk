@@ -43,13 +43,22 @@ void CalculateDBInstanceWeightResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["DBInstanceWeight"];
 	for (auto value : allItems)
 	{
-		DBInstanceWeight dBInstanceWeightObject;
-		dBInstanceWeightObject.dBInstanceId = value["DBInstanceId"].asString();
-		dBInstanceWeightObject.dBInstanceType = value["DBInstanceType"].asString();
-		dBInstanceWeightObject.availability = value["Availability"].asString();
-		dBInstanceWeightObject.weight = value["Weight"].asString();
-		items_.push_back(dBInstanceWeightObject);
+		DBInstanceWeight itemsObject;
+		if(!value["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
+		if(!value["DBInstanceType"].isNull())
+			itemsObject.dBInstanceType = value["DBInstanceType"].asString();
+		if(!value["Availability"].isNull())
+			itemsObject.availability = value["Availability"].asString();
+		if(!value["Weight"].isNull())
+			itemsObject.weight = value["Weight"].asString();
+		items_.push_back(itemsObject);
 	}
 
+}
+
+std::vector<CalculateDBInstanceWeightResult::DBInstanceWeight> CalculateDBInstanceWeightResult::getItems()const
+{
+	return items_;
 }
 

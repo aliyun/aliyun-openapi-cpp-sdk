@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifySecurityIpsRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifySecurityIpsRequest;
 
 ModifySecurityIpsRequest::ModifySecurityIpsRequest() :
-	RdsRequest("ModifySecurityIps")
+	RpcServiceRequest("rds", "2014-08-15", "ModifySecurityIps")
 {}
 
 ModifySecurityIpsRequest::~ModifySecurityIpsRequest()
@@ -103,6 +102,17 @@ void ModifySecurityIpsRequest::setSecurityIps(const std::string& securityIps)
 	setParameter("SecurityIps", securityIps);
 }
 
+std::string ModifySecurityIpsRequest::getSecurityGroupId()const
+{
+	return securityGroupId_;
+}
+
+void ModifySecurityIpsRequest::setSecurityGroupId(const std::string& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	setParameter("SecurityGroupId", securityGroupId);
+}
+
 long ModifySecurityIpsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -112,17 +122,6 @@ void ModifySecurityIpsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifySecurityIpsRequest::getSecurityGroupName()const
-{
-	return securityGroupName_;
-}
-
-void ModifySecurityIpsRequest::setSecurityGroupName(const std::string& securityGroupName)
-{
-	securityGroupName_ = securityGroupName;
-	setParameter("SecurityGroupName", securityGroupName);
 }
 
 std::string ModifySecurityIpsRequest::getAccessKeyId()const
@@ -136,15 +135,15 @@ void ModifySecurityIpsRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string ModifySecurityIpsRequest::getWhitelistNetType()const
+std::string ModifySecurityIpsRequest::getWhitelistNetworkType()const
 {
-	return whitelistNetType_;
+	return whitelistNetworkType_;
 }
 
-void ModifySecurityIpsRequest::setWhitelistNetType(const std::string& whitelistNetType)
+void ModifySecurityIpsRequest::setWhitelistNetworkType(const std::string& whitelistNetworkType)
 {
-	whitelistNetType_ = whitelistNetType;
-	setParameter("WhitelistNetType", whitelistNetType);
+	whitelistNetworkType_ = whitelistNetworkType;
+	setParameter("WhitelistNetworkType", whitelistNetworkType);
 }
 
 std::string ModifySecurityIpsRequest::getDBInstanceIPArrayAttribute()const

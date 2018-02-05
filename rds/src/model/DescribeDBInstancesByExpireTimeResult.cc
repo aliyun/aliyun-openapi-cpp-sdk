@@ -43,17 +43,25 @@ void DescribeDBInstancesByExpireTimeResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["DBInstanceExpireTime"];
 	for (auto value : allItems)
 	{
-		DBInstanceExpireTime dBInstanceExpireTimeObject;
-		dBInstanceExpireTimeObject.dBInstanceId = value["DBInstanceId"].asString();
-		dBInstanceExpireTimeObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-		dBInstanceExpireTimeObject.expireTime = value["ExpireTime"].asString();
-		dBInstanceExpireTimeObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
-		dBInstanceExpireTimeObject.lockMode = value["LockMode"].asString();
-		items_.push_back(dBInstanceExpireTimeObject);
+		DBInstanceExpireTime itemsObject;
+		if(!value["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
+		if(!value["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
+		if(!value["ExpireTime"].isNull())
+			itemsObject.expireTime = value["ExpireTime"].asString();
+		if(!value["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
+		if(!value["LockMode"].isNull())
+			itemsObject.lockMode = value["LockMode"].asString();
+		items_.push_back(itemsObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -62,19 +70,9 @@ int DescribeDBInstancesByExpireTimeResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeDBInstancesByExpireTimeResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeDBInstancesByExpireTimeResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeDBInstancesByExpireTimeResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeDBInstancesByExpireTimeResult::getPageNumber()const
@@ -82,8 +80,8 @@ int DescribeDBInstancesByExpireTimeResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeDBInstancesByExpireTimeResult::setPageNumber(int pageNumber)
+std::vector<DescribeDBInstancesByExpireTimeResult::DBInstanceExpireTime> DescribeDBInstancesByExpireTimeResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

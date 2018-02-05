@@ -43,30 +43,39 @@ void DescribeSQLReportsResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["Item"];
 	for (auto value : allItems)
 	{
-		Item itemObject;
-		itemObject.reportTime = value["ReportTime"].asString();
+		Item itemsObject;
+		if(!value["ReportTime"].isNull())
+			itemsObject.reportTime = value["ReportTime"].asString();
 		auto allLatencyTopNItems = value["LatencyTopNItems"]["LatencyTopNItem"];
 		for (auto value : allLatencyTopNItems)
 		{
-			Item::LatencyTopNItem latencyTopNItemObject;
-			latencyTopNItemObject.sQLText = value["SQLText"].asString();
-			latencyTopNItemObject.avgLatency = std::stol(value["AvgLatency"].asString());
-			latencyTopNItemObject.sQLExecuteTimes = std::stol(value["SQLExecuteTimes"].asString());
-			itemObject.latencyTopNItems.push_back(latencyTopNItemObject);
+			Item::LatencyTopNItem latencyTopNItemsObject;
+			if(!value["SQLText"].isNull())
+				latencyTopNItemsObject.sQLText = value["SQLText"].asString();
+			if(!value["AvgLatency"].isNull())
+				latencyTopNItemsObject.avgLatency = std::stol(value["AvgLatency"].asString());
+			if(!value["SQLExecuteTimes"].isNull())
+				latencyTopNItemsObject.sQLExecuteTimes = std::stol(value["SQLExecuteTimes"].asString());
+			itemsObject.latencyTopNItems.push_back(latencyTopNItemsObject);
 		}
 		auto allQPSTopNItems = value["QPSTopNItems"]["QPSTopNItem"];
 		for (auto value : allQPSTopNItems)
 		{
-			Item::QPSTopNItem qPSTopNItemObject;
-			qPSTopNItemObject.sQLText = value["SQLText"].asString();
-			qPSTopNItemObject.sQLExecuteTimes = std::stol(value["SQLExecuteTimes"].asString());
-			itemObject.qPSTopNItems.push_back(qPSTopNItemObject);
+			Item::QPSTopNItem qPSTopNItemsObject;
+			if(!value["SQLText"].isNull())
+				qPSTopNItemsObject.sQLText = value["SQLText"].asString();
+			if(!value["SQLExecuteTimes"].isNull())
+				qPSTopNItemsObject.sQLExecuteTimes = std::stol(value["SQLExecuteTimes"].asString());
+			itemsObject.qPSTopNItems.push_back(qPSTopNItemsObject);
 		}
-		items_.push_back(itemObject);
+		items_.push_back(itemsObject);
 	}
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -75,19 +84,9 @@ int DescribeSQLReportsResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeSQLReportsResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeSQLReportsResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeSQLReportsResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeSQLReportsResult::getPageNumber()const
@@ -95,8 +94,8 @@ int DescribeSQLReportsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeSQLReportsResult::setPageNumber(int pageNumber)
+std::vector<DescribeSQLReportsResult::Item> DescribeSQLReportsResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

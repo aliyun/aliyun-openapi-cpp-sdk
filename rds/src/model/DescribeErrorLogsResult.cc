@@ -43,14 +43,19 @@ void DescribeErrorLogsResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["ErrorLog"];
 	for (auto value : allItems)
 	{
-		ErrorLog errorLogObject;
-		errorLogObject.errorInfo = value["ErrorInfo"].asString();
-		errorLogObject.createTime = value["CreateTime"].asString();
-		items_.push_back(errorLogObject);
+		ErrorLog itemsObject;
+		if(!value["ErrorInfo"].isNull())
+			itemsObject.errorInfo = value["ErrorInfo"].asString();
+		if(!value["CreateTime"].isNull())
+			itemsObject.createTime = value["CreateTime"].asString();
+		items_.push_back(itemsObject);
 	}
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -59,19 +64,9 @@ int DescribeErrorLogsResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeErrorLogsResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeErrorLogsResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeErrorLogsResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeErrorLogsResult::getPageNumber()const
@@ -79,8 +74,8 @@ int DescribeErrorLogsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeErrorLogsResult::setPageNumber(int pageNumber)
+std::vector<DescribeErrorLogsResult::ErrorLog> DescribeErrorLogsResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

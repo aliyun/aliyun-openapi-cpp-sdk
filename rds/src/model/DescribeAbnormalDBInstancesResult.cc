@@ -43,29 +43,40 @@ void DescribeAbnormalDBInstancesResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["InstanceResult"];
 	for (auto value : allItems)
 	{
-		InstanceResult instanceResultObject;
-		instanceResultObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-		instanceResultObject.dBInstanceId = value["DBInstanceId"].asString();
+		InstanceResult itemsObject;
+		if(!value["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
+		if(!value["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
 		auto allAbnormalItems = value["AbnormalItems"]["AbnormalItem"];
 		for (auto value : allAbnormalItems)
 		{
-			InstanceResult::AbnormalItem abnormalItemObject;
-			abnormalItemObject.checkTime = value["CheckTime"].asString();
-			abnormalItemObject.checkItem = value["CheckItem"].asString();
-			abnormalItemObject.abnormalReason = value["AbnormalReason"].asString();
-			abnormalItemObject.abnormalValue = value["AbnormalValue"].asString();
-			abnormalItemObject.abnormalDetail = value["AbnormalDetail"].asString();
-			abnormalItemObject.adviceKey = value["AdviceKey"].asString();
+			InstanceResult::AbnormalItem abnormalItemsObject;
+			if(!value["CheckTime"].isNull())
+				abnormalItemsObject.checkTime = value["CheckTime"].asString();
+			if(!value["CheckItem"].isNull())
+				abnormalItemsObject.checkItem = value["CheckItem"].asString();
+			if(!value["AbnormalReason"].isNull())
+				abnormalItemsObject.abnormalReason = value["AbnormalReason"].asString();
+			if(!value["AbnormalValue"].isNull())
+				abnormalItemsObject.abnormalValue = value["AbnormalValue"].asString();
+			if(!value["AbnormalDetail"].isNull())
+				abnormalItemsObject.abnormalDetail = value["AbnormalDetail"].asString();
+			if(!value["AdviceKey"].isNull())
+				abnormalItemsObject.adviceKey = value["AdviceKey"].asString();
 			auto allAdviseValue = value["AdviseValue"]["String"];
 			for (auto value : allAdviseValue)
-				abnormalItemObject.adviseValue.push_back(value.asString());
-			instanceResultObject.abnormalItems.push_back(abnormalItemObject);
+				abnormalItemsObject.adviseValue.push_back(value.asString());
+			itemsObject.abnormalItems.push_back(abnormalItemsObject);
 		}
-		items_.push_back(instanceResultObject);
+		items_.push_back(itemsObject);
 	}
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -74,19 +85,9 @@ int DescribeAbnormalDBInstancesResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeAbnormalDBInstancesResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeAbnormalDBInstancesResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeAbnormalDBInstancesResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeAbnormalDBInstancesResult::getPageNumber()const
@@ -94,8 +95,8 @@ int DescribeAbnormalDBInstancesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeAbnormalDBInstancesResult::setPageNumber(int pageNumber)
+std::vector<DescribeAbnormalDBInstancesResult::InstanceResult> DescribeAbnormalDBInstancesResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

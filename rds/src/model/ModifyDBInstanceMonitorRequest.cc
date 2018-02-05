@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifyDBInstanceMonitorRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifyDBInstanceMonitorRequest;
 
 ModifyDBInstanceMonitorRequest::ModifyDBInstanceMonitorRequest() :
-	RdsRequest("ModifyDBInstanceMonitor")
+	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceMonitor")
 {}
 
 ModifyDBInstanceMonitorRequest::~ModifyDBInstanceMonitorRequest()

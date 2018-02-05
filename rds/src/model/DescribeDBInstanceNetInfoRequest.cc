@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeDBInstanceNetInfoRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeDBInstanceNetInfoRequest;
 
 DescribeDBInstanceNetInfoRequest::DescribeDBInstanceNetInfoRequest() :
-	RdsRequest("DescribeDBInstanceNetInfo")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstanceNetInfo")
 {}
 
 DescribeDBInstanceNetInfoRequest::~DescribeDBInstanceNetInfoRequest()

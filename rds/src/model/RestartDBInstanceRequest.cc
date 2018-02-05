@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/RestartDBInstanceRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::RestartDBInstanceRequest;
 
 RestartDBInstanceRequest::RestartDBInstanceRequest() :
-	RdsRequest("RestartDBInstance")
+	RpcServiceRequest("rds", "2014-08-15", "RestartDBInstance")
 {}
 
 RestartDBInstanceRequest::~RestartDBInstanceRequest()

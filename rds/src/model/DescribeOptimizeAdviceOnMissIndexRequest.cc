@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeOptimizeAdviceOnMissIndexRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeOptimizeAdviceOnMissIndexRequest;
 
 DescribeOptimizeAdviceOnMissIndexRequest::DescribeOptimizeAdviceOnMissIndexRequest() :
-	RdsRequest("DescribeOptimizeAdviceOnMissIndex")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeOptimizeAdviceOnMissIndex")
 {}
 
 DescribeOptimizeAdviceOnMissIndexRequest::~DescribeOptimizeAdviceOnMissIndexRequest()

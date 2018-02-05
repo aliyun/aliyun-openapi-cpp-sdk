@@ -52,7 +52,6 @@ namespace AlibabaCloud
 				explicit DescribeAccountsResult(const std::string &payload);
 				~DescribeAccountsResult();
 				std::vector<DBInstanceAccount> getAccounts()const;
-				void setAccounts(const std::vector<DBInstanceAccount>& accounts);
 
 			protected:
 				void parse(const std::string &payload);

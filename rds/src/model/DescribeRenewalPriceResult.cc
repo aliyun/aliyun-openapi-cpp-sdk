@@ -43,37 +43,51 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 	auto allRules = value["Rules"]["Rule"];
 	for (auto value : allRules)
 	{
-		Rule ruleObject;
-		ruleObject.ruleId = std::stol(value["RuleId"].asString());
-		ruleObject.name = value["Name"].asString();
-		ruleObject.description = value["Description"].asString();
-		rules_.push_back(ruleObject);
+		Rule rulesObject;
+		if(!value["RuleId"].isNull())
+			rulesObject.ruleId = std::stol(value["RuleId"].asString());
+		if(!value["Name"].isNull())
+			rulesObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			rulesObject.description = value["Description"].asString();
+		rules_.push_back(rulesObject);
 	}
 	auto allPriceInfo = value["PriceInfo"];
 	for (auto value : allPriceInfo)
 	{
 		PriceInfo priceInfoObject;
-		priceInfoObject.currency = value["Currency"].asString();
-		priceInfoObject.originalPrice = std::stof(value["OriginalPrice"].asString());
-		priceInfoObject.tradePrice = std::stof(value["TradePrice"].asString());
-		priceInfoObject.discountPrice = std::stof(value["DiscountPrice"].asString());
+		if(!value["Currency"].isNull())
+			priceInfoObject.currency = value["Currency"].asString();
+		if(!value["OriginalPrice"].isNull())
+			priceInfoObject.originalPrice = std::stof(value["OriginalPrice"].asString());
+		if(!value["TradePrice"].isNull())
+			priceInfoObject.tradePrice = std::stof(value["TradePrice"].asString());
+		if(!value["DiscountPrice"].isNull())
+			priceInfoObject.discountPrice = std::stof(value["DiscountPrice"].asString());
 		auto allCoupons = value["Coupons"]["Coupon"];
 		for (auto value : allCoupons)
 		{
 			PriceInfo::Coupon couponObject;
-			couponObject.couponNo = value["CouponNo"].asString();
-			couponObject.name = value["Name"].asString();
-			couponObject.description = value["Description"].asString();
-			couponObject.isSelected = value["IsSelected"].asString();
+			if(!value["CouponNo"].isNull())
+				couponObject.couponNo = value["CouponNo"].asString();
+			if(!value["Name"].isNull())
+				couponObject.name = value["Name"].asString();
+			if(!value["Description"].isNull())
+				couponObject.description = value["Description"].asString();
+			if(!value["IsSelected"].isNull())
+				couponObject.isSelected = value["IsSelected"].asString();
 			priceInfoObject.coupons.push_back(couponObject);
 		}
 		auto allActivityInfo = value["ActivityInfo"];
 		for (auto value : allActivityInfo)
 		{
 			PriceInfo::ActivityInfo activityInfoObject;
-			activityInfoObject.checkErrMsg = value["CheckErrMsg"].asString();
-			activityInfoObject.errorCode = value["ErrorCode"].asString();
-			activityInfoObject.success = value["Success"].asString();
+			if(!value["CheckErrMsg"].isNull())
+				activityInfoObject.checkErrMsg = value["CheckErrMsg"].asString();
+			if(!value["ErrorCode"].isNull())
+				activityInfoObject.errorCode = value["ErrorCode"].asString();
+			if(!value["Success"].isNull())
+				activityInfoObject.success = value["Success"].asString();
 			priceInfoObject.activityInfo.push_back(activityInfoObject);
 		}
 		auto allRuleIds = value["RuleIds"]["RuleId"];
@@ -82,5 +96,15 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 		priceInfo_.push_back(priceInfoObject);
 	}
 
+}
+
+std::vector<DescribeRenewalPriceResult::Rule> DescribeRenewalPriceResult::getRules()const
+{
+	return rules_;
+}
+
+std::vector<DescribeRenewalPriceResult::PriceInfo> DescribeRenewalPriceResult::getPriceInfo()const
+{
+	return priceInfo_;
 }
 

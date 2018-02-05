@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/LoginDBInstancefromCloudDBARequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::LoginDBInstancefromCloudDBARequest;
 
 LoginDBInstancefromCloudDBARequest::LoginDBInstancefromCloudDBARequest() :
-	RdsRequest("LoginDBInstancefromCloudDBA")
+	RpcServiceRequest("rds", "2014-08-15", "LoginDBInstancefromCloudDBA")
 {}
 
 LoginDBInstancefromCloudDBARequest::~LoginDBInstancefromCloudDBARequest()

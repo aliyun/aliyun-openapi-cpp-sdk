@@ -43,13 +43,22 @@ void DescribeDBInstanceIPArrayListResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["DBInstanceIPArray"];
 	for (auto value : allItems)
 	{
-		DBInstanceIPArray dBInstanceIPArrayObject;
-		dBInstanceIPArrayObject.dBInstanceIPArrayName = value["DBInstanceIPArrayName"].asString();
-		dBInstanceIPArrayObject.dBInstanceIPArrayAttribute = value["DBInstanceIPArrayAttribute"].asString();
-		dBInstanceIPArrayObject.securityIPList = value["SecurityIPList"].asString();
-		dBInstanceIPArrayObject.whitelistNetType = value["WhitelistNetType"].asString();
-		items_.push_back(dBInstanceIPArrayObject);
+		DBInstanceIPArray itemsObject;
+		if(!value["DBInstanceIPArrayName"].isNull())
+			itemsObject.dBInstanceIPArrayName = value["DBInstanceIPArrayName"].asString();
+		if(!value["DBInstanceIPArrayAttribute"].isNull())
+			itemsObject.dBInstanceIPArrayAttribute = value["DBInstanceIPArrayAttribute"].asString();
+		if(!value["SecurityIPList"].isNull())
+			itemsObject.securityIPList = value["SecurityIPList"].asString();
+		if(!value["WhitelistNetType"].isNull())
+			itemsObject.whitelistNetType = value["WhitelistNetType"].asString();
+		items_.push_back(itemsObject);
 	}
 
+}
+
+std::vector<DescribeDBInstanceIPArrayListResult::DBInstanceIPArray> DescribeDBInstanceIPArrayListResult::getItems()const
+{
+	return items_;
 }
 

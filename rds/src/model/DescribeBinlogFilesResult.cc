@@ -43,21 +43,33 @@ void DescribeBinlogFilesResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["BinLogFile"];
 	for (auto value : allItems)
 	{
-		BinLogFile binLogFileObject;
-		binLogFileObject.fileSize = std::stol(value["FileSize"].asString());
-		binLogFileObject.logBeginTime = value["LogBeginTime"].asString();
-		binLogFileObject.logEndTime = value["LogEndTime"].asString();
-		binLogFileObject.downloadLink = value["DownloadLink"].asString();
-		binLogFileObject.intranetDownloadLink = value["IntranetDownloadLink"].asString();
-		binLogFileObject.linkExpiredTime = value["LinkExpiredTime"].asString();
-		binLogFileObject.checksum = value["Checksum"].asString();
-		binLogFileObject.hostInstanceID = value["HostInstanceID"].asString();
-		items_.push_back(binLogFileObject);
+		BinLogFile itemsObject;
+		if(!value["FileSize"].isNull())
+			itemsObject.fileSize = std::stol(value["FileSize"].asString());
+		if(!value["LogBeginTime"].isNull())
+			itemsObject.logBeginTime = value["LogBeginTime"].asString();
+		if(!value["LogEndTime"].isNull())
+			itemsObject.logEndTime = value["LogEndTime"].asString();
+		if(!value["DownloadLink"].isNull())
+			itemsObject.downloadLink = value["DownloadLink"].asString();
+		if(!value["IntranetDownloadLink"].isNull())
+			itemsObject.intranetDownloadLink = value["IntranetDownloadLink"].asString();
+		if(!value["LinkExpiredTime"].isNull())
+			itemsObject.linkExpiredTime = value["LinkExpiredTime"].asString();
+		if(!value["Checksum"].isNull())
+			itemsObject.checksum = value["Checksum"].asString();
+		if(!value["HostInstanceID"].isNull())
+			itemsObject.hostInstanceID = value["HostInstanceID"].asString();
+		items_.push_back(itemsObject);
 	}
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
-	totalFileSize_ = std::stol(value["TotalFileSize"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalFileSize"].isNull())
+		totalFileSize_ = std::stol(value["TotalFileSize"].asString());
 
 }
 
@@ -66,19 +78,9 @@ int DescribeBinlogFilesResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeBinlogFilesResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeBinlogFilesResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeBinlogFilesResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeBinlogFilesResult::getPageNumber()const
@@ -86,18 +88,13 @@ int DescribeBinlogFilesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeBinlogFilesResult::setPageNumber(int pageNumber)
+std::vector<DescribeBinlogFilesResult::BinLogFile> DescribeBinlogFilesResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 
 long DescribeBinlogFilesResult::getTotalFileSize()const
 {
 	return totalFileSize_;
-}
-
-void DescribeBinlogFilesResult::setTotalFileSize(long totalFileSize)
-{
-	totalFileSize_ = totalFileSize;
 }
 

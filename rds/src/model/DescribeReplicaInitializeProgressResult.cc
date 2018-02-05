@@ -43,14 +43,24 @@ void DescribeReplicaInitializeProgressResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["ItemsItem"];
 	for (auto value : allItems)
 	{
-		ItemsItem itemsItemObject;
-		itemsItemObject.replicaId = value["ReplicaId"].asString();
-		itemsItemObject.status = value["Status"].asString();
-		itemsItemObject.progress = value["Progress"].asString();
-		itemsItemObject.finishTime = value["FinishTime"].asString();
-		itemsItemObject.currentStep = value["CurrentStep"].asString();
-		items_.push_back(itemsItemObject);
+		ItemsItem itemsObject;
+		if(!value["ReplicaId"].isNull())
+			itemsObject.replicaId = value["ReplicaId"].asString();
+		if(!value["Status"].isNull())
+			itemsObject.status = value["Status"].asString();
+		if(!value["Progress"].isNull())
+			itemsObject.progress = value["Progress"].asString();
+		if(!value["FinishTime"].isNull())
+			itemsObject.finishTime = value["FinishTime"].asString();
+		if(!value["CurrentStep"].isNull())
+			itemsObject.currentStep = value["CurrentStep"].asString();
+		items_.push_back(itemsObject);
 	}
 
+}
+
+std::vector<DescribeReplicaInitializeProgressResult::ItemsItem> DescribeReplicaInitializeProgressResult::getItems()const
+{
+	return items_;
 }
 

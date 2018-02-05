@@ -43,18 +43,27 @@ void DescribeSQLLogFilesResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["LogFile"];
 	for (auto value : allItems)
 	{
-		LogFile logFileObject;
-		logFileObject.fileID = value["FileID"].asString();
-		logFileObject.logStatus = value["LogStatus"].asString();
-		logFileObject.logDownloadURL = value["LogDownloadURL"].asString();
-		logFileObject.logSize = value["LogSize"].asString();
-		logFileObject.logStartTime = value["LogStartTime"].asString();
-		logFileObject.logEndTime = value["LogEndTime"].asString();
-		items_.push_back(logFileObject);
+		LogFile itemsObject;
+		if(!value["FileID"].isNull())
+			itemsObject.fileID = value["FileID"].asString();
+		if(!value["LogStatus"].isNull())
+			itemsObject.logStatus = value["LogStatus"].asString();
+		if(!value["LogDownloadURL"].isNull())
+			itemsObject.logDownloadURL = value["LogDownloadURL"].asString();
+		if(!value["LogSize"].isNull())
+			itemsObject.logSize = value["LogSize"].asString();
+		if(!value["LogStartTime"].isNull())
+			itemsObject.logStartTime = value["LogStartTime"].asString();
+		if(!value["LogEndTime"].isNull())
+			itemsObject.logEndTime = value["LogEndTime"].asString();
+		items_.push_back(itemsObject);
 	}
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -63,19 +72,9 @@ int DescribeSQLLogFilesResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeSQLLogFilesResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeSQLLogFilesResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeSQLLogFilesResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeSQLLogFilesResult::getPageNumber()const
@@ -83,8 +82,8 @@ int DescribeSQLLogFilesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeSQLLogFilesResult::setPageNumber(int pageNumber)
+std::vector<DescribeSQLLogFilesResult::LogFile> DescribeSQLLogFilesResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

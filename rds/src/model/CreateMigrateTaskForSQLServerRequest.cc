@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CreateMigrateTaskForSQLServerRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CreateMigrateTaskForSQLServerRequest;
 
 CreateMigrateTaskForSQLServerRequest::CreateMigrateTaskForSQLServerRequest() :
-	RdsRequest("CreateMigrateTaskForSQLServer")
+	RpcServiceRequest("rds", "2014-08-15", "CreateMigrateTaskForSQLServer")
 {}
 
 CreateMigrateTaskForSQLServerRequest::~CreateMigrateTaskForSQLServerRequest()

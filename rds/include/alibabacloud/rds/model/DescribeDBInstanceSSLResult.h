@@ -38,13 +38,9 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceSSLResult(const std::string &payload);
 				~DescribeDBInstanceSSLResult();
 				std::string getSSLExpireTime()const;
-				void setSSLExpireTime(const std::string& sSLExpireTime);
 				std::string getRequireUpdateReason()const;
-				void setRequireUpdateReason(const std::string& requireUpdateReason);
 				std::string getConnectionString()const;
-				void setConnectionString(const std::string& connectionString);
 				std::string getRequireUpdate()const;
-				void setRequireUpdate(const std::string& requireUpdate);
 
 			protected:
 				void parse(const std::string &payload);

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifyDBInstanceSSLRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifyDBInstanceSSLRequest;
 
 ModifyDBInstanceSSLRequest::ModifyDBInstanceSSLRequest() :
-	RdsRequest("ModifyDBInstanceSSL")
+	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceSSL")
 {}
 
 ModifyDBInstanceSSLRequest::~ModifyDBInstanceSSLRequest()

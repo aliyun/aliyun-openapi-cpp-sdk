@@ -48,9 +48,12 @@ void DescribeReplicaUsageResult::parse(const std::string &payload)
 		for (auto value : allPerformanceKey)
 		{
 			PerformanceKeys::PerformanceKeyItem performanceKeyItemObject;
-			performanceKeyItemObject.key = value["Key"].asString();
-			performanceKeyItemObject.unit = value["Unit"].asString();
-			performanceKeyItemObject.valueFormat = value["ValueFormat"].asString();
+			if(!value["Key"].isNull())
+				performanceKeyItemObject.key = value["Key"].asString();
+			if(!value["Unit"].isNull())
+				performanceKeyItemObject.unit = value["Unit"].asString();
+			if(!value["ValueFormat"].isNull())
+				performanceKeyItemObject.valueFormat = value["ValueFormat"].asString();
 			auto allPerformanceValues = value["PerformanceValues"];
 			for (auto value : allPerformanceValues)
 			{
@@ -59,8 +62,10 @@ void DescribeReplicaUsageResult::parse(const std::string &payload)
 				for (auto value : allPerformanceValue)
 				{
 					PerformanceKeys::PerformanceKeyItem::PerformanceValues::PerformanceValueItem performanceValueItemObject;
-					performanceValueItemObject.value = value["Value"].asString();
-					performanceValueItemObject.date = value["Date"].asString();
+					if(!value["Value"].isNull())
+						performanceValueItemObject.value = value["Value"].asString();
+					if(!value["Date"].isNull())
+						performanceValueItemObject.date = value["Date"].asString();
 					performanceValuesObject.performanceValue.push_back(performanceValueItemObject);
 				}
 				performanceKeyItemObject.performanceValues.push_back(performanceValuesObject);
@@ -69,10 +74,18 @@ void DescribeReplicaUsageResult::parse(const std::string &payload)
 		}
 		performanceKeys_.push_back(performanceKeysObject);
 	}
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
-	replicaId_ = value["ReplicaId"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["ReplicaId"].isNull())
+		replicaId_ = value["ReplicaId"].asString();
 
+}
+
+std::vector<DescribeReplicaUsageResult::PerformanceKeys> DescribeReplicaUsageResult::getPerformanceKeys()const
+{
+	return performanceKeys_;
 }
 
 std::string DescribeReplicaUsageResult::getEndTime()const
@@ -80,28 +93,13 @@ std::string DescribeReplicaUsageResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeReplicaUsageResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeReplicaUsageResult::getStartTime()const
 {
 	return startTime_;
 }
 
-void DescribeReplicaUsageResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-}
-
 std::string DescribeReplicaUsageResult::getReplicaId()const
 {
 	return replicaId_;
-}
-
-void DescribeReplicaUsageResult::setReplicaId(const std::string& replicaId)
-{
-	replicaId_ = replicaId;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/RevokeOperatorPermissionRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::RevokeOperatorPermissionRequest;
 
 RevokeOperatorPermissionRequest::RevokeOperatorPermissionRequest() :
-	RdsRequest("RevokeOperatorPermission")
+	RpcServiceRequest("rds", "2014-08-15", "RevokeOperatorPermission")
 {}
 
 RevokeOperatorPermissionRequest::~RevokeOperatorPermissionRequest()

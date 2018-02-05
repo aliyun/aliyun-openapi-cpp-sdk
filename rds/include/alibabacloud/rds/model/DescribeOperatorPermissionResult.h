@@ -38,11 +38,8 @@ namespace AlibabaCloud
 				explicit DescribeOperatorPermissionResult(const std::string &payload);
 				~DescribeOperatorPermissionResult();
 				std::string getCreatedTime()const;
-				void setCreatedTime(const std::string& createdTime);
 				std::string getPrivileges()const;
-				void setPrivileges(const std::string& privileges);
 				std::string getExpiredTime()const;
-				void setExpiredTime(const std::string& expiredTime);
 
 			protected:
 				void parse(const std::string &payload);

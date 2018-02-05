@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/RemoveTagsFromResourceRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::RemoveTagsFromResourceRequest;
 
 RemoveTagsFromResourceRequest::RemoveTagsFromResourceRequest() :
-	RdsRequest("RemoveTagsFromResource")
+	RpcServiceRequest("rds", "2014-08-15", "RemoveTagsFromResource")
 {}
 
 RemoveTagsFromResourceRequest::~RemoveTagsFromResourceRequest()

@@ -54,13 +54,9 @@ namespace AlibabaCloud
 				explicit DescribeAbnormalDBInstancesResult(const std::string &payload);
 				~DescribeAbnormalDBInstancesResult();
 				int getTotalRecordCount()const;
-				void setTotalRecordCount(int totalRecordCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<InstanceResult> getItems()const;
-				void setItems(const std::vector<InstanceResult>& items);
 
 			protected:
 				void parse(const std::string &payload);

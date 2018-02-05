@@ -38,15 +38,10 @@ namespace AlibabaCloud
 				explicit CreateMigrateTaskResult(const std::string &payload);
 				~CreateMigrateTaskResult();
 				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getBackupMode()const;
-				void setBackupMode(const std::string& backupMode);
 				std::string getDBName()const;
-				void setDBName(const std::string& dBName);
 				std::string getMigrateIaskId()const;
-				void setMigrateIaskId(const std::string& migrateIaskId);
 
 			protected:
 				void parse(const std::string &payload);

@@ -45,7 +45,6 @@ namespace AlibabaCloud
 				explicit CalculateDBInstanceWeightResult(const std::string &payload);
 				~CalculateDBInstanceWeightResult();
 				std::vector<DBInstanceWeight> getItems()const;
-				void setItems(const std::vector<DBInstanceWeight>& items);
 
 			protected:
 				void parse(const std::string &payload);

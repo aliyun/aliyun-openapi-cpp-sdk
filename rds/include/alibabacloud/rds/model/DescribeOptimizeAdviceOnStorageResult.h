@@ -45,15 +45,10 @@ namespace AlibabaCloud
 				explicit DescribeOptimizeAdviceOnStorageResult(const std::string &payload);
 				~DescribeOptimizeAdviceOnStorageResult();
 				int getTotalRecordsCount()const;
-				void setTotalRecordsCount(int totalRecordsCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<AdviceOnStorage> getItems()const;
-				void setItems(const std::vector<AdviceOnStorage>& items);
 
 			protected:
 				void parse(const std::string &payload);

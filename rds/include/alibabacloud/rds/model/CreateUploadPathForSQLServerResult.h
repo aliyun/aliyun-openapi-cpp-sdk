@@ -38,19 +38,12 @@ namespace AlibabaCloud
 				explicit CreateUploadPathForSQLServerResult(const std::string &payload);
 				~CreateUploadPathForSQLServerResult();
 				std::string getIntranetFtpserver()const;
-				void setIntranetFtpserver(const std::string& intranetFtpserver);
 				std::string getUserName()const;
-				void setUserName(const std::string& userName);
 				std::string getFileName()const;
-				void setFileName(const std::string& fileName);
 				int getInternetPort()const;
-				void setInternetPort(int internetPort);
 				std::string getInternetFtpServer()const;
-				void setInternetFtpServer(const std::string& internetFtpServer);
 				int getIntranetport()const;
-				void setIntranetport(int intranetport);
 				std::string getPassword()const;
-				void setPassword(const std::string& password);
 
 			protected:
 				void parse(const std::string &payload);

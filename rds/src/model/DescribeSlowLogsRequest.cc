@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeSlowLogsRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeSlowLogsRequest;
 
 DescribeSlowLogsRequest::DescribeSlowLogsRequest() :
-	RdsRequest("DescribeSlowLogs")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeSlowLogs")
 {}
 
 DescribeSlowLogsRequest::~DescribeSlowLogsRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifyAccountDescriptionRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifyAccountDescriptionRequest;
 
 ModifyAccountDescriptionRequest::ModifyAccountDescriptionRequest() :
-	RdsRequest("ModifyAccountDescription")
+	RpcServiceRequest("rds", "2014-08-15", "ModifyAccountDescription")
 {}
 
 ModifyAccountDescriptionRequest::~ModifyAccountDescriptionRequest()

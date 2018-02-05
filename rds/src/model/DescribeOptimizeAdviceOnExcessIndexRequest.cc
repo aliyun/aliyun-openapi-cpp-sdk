@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeOptimizeAdviceOnExcessIndexRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeOptimizeAdviceOnExcessIndexRequest;
 
 DescribeOptimizeAdviceOnExcessIndexRequest::DescribeOptimizeAdviceOnExcessIndexRequest() :
-	RdsRequest("DescribeOptimizeAdviceOnExcessIndex")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeOptimizeAdviceOnExcessIndex")
 {}
 
 DescribeOptimizeAdviceOnExcessIndexRequest::~DescribeOptimizeAdviceOnExcessIndexRequest()

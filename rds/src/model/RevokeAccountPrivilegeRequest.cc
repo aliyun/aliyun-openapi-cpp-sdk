@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/RevokeAccountPrivilegeRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::RevokeAccountPrivilegeRequest;
 
 RevokeAccountPrivilegeRequest::RevokeAccountPrivilegeRequest() :
-	RdsRequest("RevokeAccountPrivilege")
+	RpcServiceRequest("rds", "2014-08-15", "RevokeAccountPrivilege")
 {}
 
 RevokeAccountPrivilegeRequest::~RevokeAccountPrivilegeRequest()

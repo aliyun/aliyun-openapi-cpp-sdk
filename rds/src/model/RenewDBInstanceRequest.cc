@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/RenewDBInstanceRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::RenewDBInstanceRequest;
 
 RenewDBInstanceRequest::RenewDBInstanceRequest() :
-	RdsRequest("RenewDBInstance")
+	RpcServiceRequest("rds", "2014-08-15", "RenewDBInstance")
 {}
 
 RenewDBInstanceRequest::~RenewDBInstanceRequest()

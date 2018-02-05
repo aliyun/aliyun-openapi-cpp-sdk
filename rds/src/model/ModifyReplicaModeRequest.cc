@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifyReplicaModeRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifyReplicaModeRequest;
 
 ModifyReplicaModeRequest::ModifyReplicaModeRequest() :
-	RdsRequest("ModifyReplicaMode")
+	RpcServiceRequest("rds", "2014-08-15", "ModifyReplicaMode")
 {}
 
 ModifyReplicaModeRequest::~ModifyReplicaModeRequest()

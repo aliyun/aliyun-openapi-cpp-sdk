@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeBinlogFilesRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeBinlogFilesRequest;
 
 DescribeBinlogFilesRequest::DescribeBinlogFilesRequest() :
-	RdsRequest("DescribeBinlogFiles")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeBinlogFiles")
 {}
 
 DescribeBinlogFilesRequest::~DescribeBinlogFilesRequest()

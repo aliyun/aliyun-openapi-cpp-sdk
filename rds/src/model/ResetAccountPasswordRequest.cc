@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ResetAccountPasswordRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ResetAccountPasswordRequest;
 
 ResetAccountPasswordRequest::ResetAccountPasswordRequest() :
-	RdsRequest("ResetAccountPassword")
+	RpcServiceRequest("rds", "2014-08-15", "ResetAccountPassword")
 {}
 
 ResetAccountPasswordRequest::~ResetAccountPasswordRequest()

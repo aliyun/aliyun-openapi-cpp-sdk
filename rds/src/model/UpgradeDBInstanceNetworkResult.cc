@@ -40,17 +40,13 @@ void UpgradeDBInstanceNetworkResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
 
 }
 
 std::string UpgradeDBInstanceNetworkResult::getDBInstanceName()const
 {
 	return dBInstanceName_;
-}
-
-void UpgradeDBInstanceNetworkResult::setDBInstanceName(const std::string& dBInstanceName)
-{
-	dBInstanceName_ = dBInstanceName;
 }
 

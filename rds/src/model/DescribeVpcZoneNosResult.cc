@@ -43,12 +43,20 @@ void DescribeVpcZoneNosResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["VpcZoneId"];
 	for (auto value : allItems)
 	{
-		VpcZoneId vpcZoneIdObject;
-		vpcZoneIdObject.zoneId = value["ZoneId"].asString();
-		vpcZoneIdObject.region = value["Region"].asString();
-		vpcZoneIdObject.subDomain = value["SubDomain"].asString();
-		items_.push_back(vpcZoneIdObject);
+		VpcZoneId itemsObject;
+		if(!value["ZoneId"].isNull())
+			itemsObject.zoneId = value["ZoneId"].asString();
+		if(!value["Region"].isNull())
+			itemsObject.region = value["Region"].asString();
+		if(!value["SubDomain"].isNull())
+			itemsObject.subDomain = value["SubDomain"].asString();
+		items_.push_back(itemsObject);
 	}
 
+}
+
+std::vector<DescribeVpcZoneNosResult::VpcZoneId> DescribeVpcZoneNosResult::getItems()const
+{
+	return items_;
 }
 

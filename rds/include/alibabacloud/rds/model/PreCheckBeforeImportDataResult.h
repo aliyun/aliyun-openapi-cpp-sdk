@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit PreCheckBeforeImportDataResult(const std::string &payload);
 				~PreCheckBeforeImportDataResult();
 				std::string getPreCheckId()const;
-				void setPreCheckId(const std::string& preCheckId);
 
 			protected:
 				void parse(const std::string &payload);

@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeCharacterSetNameResult(const std::string &payload);
 				~DescribeCharacterSetNameResult();
 				std::vector<std::string> getCharacterSetNameItems()const;
-				void setCharacterSetNameItems(const std::vector<std::string>& characterSetNameItems);
 				std::string getEngine()const;
-				void setEngine(const std::string& engine);
 
 			protected:
 				void parse(const std::string &payload);

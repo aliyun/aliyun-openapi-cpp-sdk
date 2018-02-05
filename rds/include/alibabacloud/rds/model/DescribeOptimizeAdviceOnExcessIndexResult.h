@@ -44,13 +44,9 @@ namespace AlibabaCloud
 				explicit DescribeOptimizeAdviceOnExcessIndexResult(const std::string &payload);
 				~DescribeOptimizeAdviceOnExcessIndexResult();
 				int getTotalRecordsCount()const;
-				void setTotalRecordsCount(int totalRecordsCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<AdviceOnExcessIndex> getItems()const;
-				void setItems(const std::vector<AdviceOnExcessIndex>& items);
 
 			protected:
 				void parse(const std::string &payload);

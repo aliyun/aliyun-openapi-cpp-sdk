@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/UpgradeDBInstanceNetworkRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::UpgradeDBInstanceNetworkRequest;
 
 UpgradeDBInstanceNetworkRequest::UpgradeDBInstanceNetworkRequest() :
-	RdsRequest("UpgradeDBInstanceNetwork")
+	RpcServiceRequest("rds", "2014-08-15", "UpgradeDBInstanceNetwork")
 {}
 
 UpgradeDBInstanceNetworkRequest::~UpgradeDBInstanceNetworkRequest()

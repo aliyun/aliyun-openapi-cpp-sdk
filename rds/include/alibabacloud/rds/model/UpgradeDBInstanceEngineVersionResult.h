@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit UpgradeDBInstanceEngineVersionResult(const std::string &payload);
 				~UpgradeDBInstanceEngineVersionResult();
 				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 
 			protected:
 				void parse(const std::string &payload);

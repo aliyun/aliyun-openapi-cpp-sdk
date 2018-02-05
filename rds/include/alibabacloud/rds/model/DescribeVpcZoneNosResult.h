@@ -44,7 +44,6 @@ namespace AlibabaCloud
 				explicit DescribeVpcZoneNosResult(const std::string &payload);
 				~DescribeVpcZoneNosResult();
 				std::vector<VpcZoneId> getItems()const;
-				void setItems(const std::vector<VpcZoneId>& items);
 
 			protected:
 				void parse(const std::string &payload);

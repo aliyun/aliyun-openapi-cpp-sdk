@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeDBInstanceTDERequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeDBInstanceTDERequest;
 
 DescribeDBInstanceTDERequest::DescribeDBInstanceTDERequest() :
-	RdsRequest("DescribeDBInstanceTDE")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstanceTDE")
 {}
 
 DescribeDBInstanceTDERequest::~DescribeDBInstanceTDERequest()

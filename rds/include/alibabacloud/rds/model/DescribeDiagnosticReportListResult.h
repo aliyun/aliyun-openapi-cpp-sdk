@@ -46,7 +46,6 @@ namespace AlibabaCloud
 				explicit DescribeDiagnosticReportListResult(const std::string &payload);
 				~DescribeDiagnosticReportListResult();
 				std::vector<Report> getReportList()const;
-				void setReportList(const std::vector<Report>& reportList);
 
 			protected:
 				void parse(const std::string &payload);

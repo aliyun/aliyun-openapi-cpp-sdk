@@ -43,13 +43,9 @@ namespace AlibabaCloud
 				explicit DescribeErrorLogsResult(const std::string &payload);
 				~DescribeErrorLogsResult();
 				int getTotalRecordCount()const;
-				void setTotalRecordCount(int totalRecordCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<ErrorLog> getItems()const;
-				void setItems(const std::vector<ErrorLog>& items);
 
 			protected:
 				void parse(const std::string &payload);

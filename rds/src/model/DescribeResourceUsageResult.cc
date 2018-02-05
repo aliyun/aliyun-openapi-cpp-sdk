@@ -40,14 +40,22 @@ void DescribeResourceUsageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	engine_ = value["Engine"].asString();
-	diskUsed_ = std::stol(value["DiskUsed"].asString());
-	dataSize_ = std::stol(value["DataSize"].asString());
-	logSize_ = std::stol(value["LogSize"].asString());
-	backupSize_ = std::stol(value["BackupSize"].asString());
-	sQLSize_ = std::stol(value["SQLSize"].asString());
-	coldBackupSize_ = std::stol(value["ColdBackupSize"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["DiskUsed"].isNull())
+		diskUsed_ = std::stol(value["DiskUsed"].asString());
+	if(!value["DataSize"].isNull())
+		dataSize_ = std::stol(value["DataSize"].asString());
+	if(!value["LogSize"].isNull())
+		logSize_ = std::stol(value["LogSize"].asString());
+	if(!value["BackupSize"].isNull())
+		backupSize_ = std::stol(value["BackupSize"].asString());
+	if(!value["SQLSize"].isNull())
+		sQLSize_ = std::stol(value["SQLSize"].asString());
+	if(!value["ColdBackupSize"].isNull())
+		coldBackupSize_ = std::stol(value["ColdBackupSize"].asString());
 
 }
 
@@ -56,19 +64,9 @@ long DescribeResourceUsageResult::getLogSize()const
 	return logSize_;
 }
 
-void DescribeResourceUsageResult::setLogSize(long logSize)
-{
-	logSize_ = logSize;
-}
-
 std::string DescribeResourceUsageResult::getDBInstanceId()const
 {
 	return dBInstanceId_;
-}
-
-void DescribeResourceUsageResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
 }
 
 long DescribeResourceUsageResult::getDataSize()const
@@ -76,19 +74,9 @@ long DescribeResourceUsageResult::getDataSize()const
 	return dataSize_;
 }
 
-void DescribeResourceUsageResult::setDataSize(long dataSize)
-{
-	dataSize_ = dataSize;
-}
-
 long DescribeResourceUsageResult::getBackupSize()const
 {
 	return backupSize_;
-}
-
-void DescribeResourceUsageResult::setBackupSize(long backupSize)
-{
-	backupSize_ = backupSize;
 }
 
 long DescribeResourceUsageResult::getSQLSize()const
@@ -96,19 +84,9 @@ long DescribeResourceUsageResult::getSQLSize()const
 	return sQLSize_;
 }
 
-void DescribeResourceUsageResult::setSQLSize(long sQLSize)
-{
-	sQLSize_ = sQLSize;
-}
-
 long DescribeResourceUsageResult::getDiskUsed()const
 {
 	return diskUsed_;
-}
-
-void DescribeResourceUsageResult::setDiskUsed(long diskUsed)
-{
-	diskUsed_ = diskUsed;
 }
 
 std::string DescribeResourceUsageResult::getEngine()const
@@ -116,18 +94,8 @@ std::string DescribeResourceUsageResult::getEngine()const
 	return engine_;
 }
 
-void DescribeResourceUsageResult::setEngine(const std::string& engine)
-{
-	engine_ = engine;
-}
-
 long DescribeResourceUsageResult::getColdBackupSize()const
 {
 	return coldBackupSize_;
-}
-
-void DescribeResourceUsageResult::setColdBackupSize(long coldBackupSize)
-{
-	coldBackupSize_ = coldBackupSize;
 }
 

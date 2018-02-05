@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeSQLCollectorPolicyResult(const std::string &payload);
 				~DescribeSQLCollectorPolicyResult();
 				int getStoragePeriod()const;
-				void setStoragePeriod(int storagePeriod);
 				std::string getSQLCollectorStatus()const;
-				void setSQLCollectorStatus(const std::string& sQLCollectorStatus);
 
 			protected:
 				void parse(const std::string &payload);

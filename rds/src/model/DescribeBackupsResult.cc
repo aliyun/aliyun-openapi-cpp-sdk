@@ -43,31 +43,53 @@ void DescribeBackupsResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["Backup"];
 	for (auto value : allItems)
 	{
-		Backup backupObject;
-		backupObject.backupId = value["BackupId"].asString();
-		backupObject.dBInstanceId = value["DBInstanceId"].asString();
-		backupObject.backupStatus = value["BackupStatus"].asString();
-		backupObject.backupStartTime = value["BackupStartTime"].asString();
-		backupObject.backupEndTime = value["BackupEndTime"].asString();
-		backupObject.backupType = value["BackupType"].asString();
-		backupObject.backupMode = value["BackupMode"].asString();
-		backupObject.backupMethod = value["BackupMethod"].asString();
-		backupObject.backupDownloadURL = value["BackupDownloadURL"].asString();
-		backupObject.backupIntranetDownloadURL = value["BackupIntranetDownloadURL"].asString();
-		backupObject.backupLocation = value["BackupLocation"].asString();
-		backupObject.backupExtractionStatus = value["BackupExtractionStatus"].asString();
-		backupObject.backupScale = value["BackupScale"].asString();
-		backupObject.backupDBNames = value["BackupDBNames"].asString();
-		backupObject.totalBackupSize = std::stol(value["TotalBackupSize"].asString());
-		backupObject.backupSize = std::stol(value["BackupSize"].asString());
-		backupObject.hostInstanceID = value["HostInstanceID"].asString();
-		backupObject.storeStatus = value["StoreStatus"].asString();
-		items_.push_back(backupObject);
+		Backup itemsObject;
+		if(!value["BackupId"].isNull())
+			itemsObject.backupId = value["BackupId"].asString();
+		if(!value["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
+		if(!value["BackupStatus"].isNull())
+			itemsObject.backupStatus = value["BackupStatus"].asString();
+		if(!value["BackupStartTime"].isNull())
+			itemsObject.backupStartTime = value["BackupStartTime"].asString();
+		if(!value["BackupEndTime"].isNull())
+			itemsObject.backupEndTime = value["BackupEndTime"].asString();
+		if(!value["BackupType"].isNull())
+			itemsObject.backupType = value["BackupType"].asString();
+		if(!value["BackupMode"].isNull())
+			itemsObject.backupMode = value["BackupMode"].asString();
+		if(!value["BackupMethod"].isNull())
+			itemsObject.backupMethod = value["BackupMethod"].asString();
+		if(!value["BackupDownloadURL"].isNull())
+			itemsObject.backupDownloadURL = value["BackupDownloadURL"].asString();
+		if(!value["BackupIntranetDownloadURL"].isNull())
+			itemsObject.backupIntranetDownloadURL = value["BackupIntranetDownloadURL"].asString();
+		if(!value["BackupLocation"].isNull())
+			itemsObject.backupLocation = value["BackupLocation"].asString();
+		if(!value["BackupExtractionStatus"].isNull())
+			itemsObject.backupExtractionStatus = value["BackupExtractionStatus"].asString();
+		if(!value["BackupScale"].isNull())
+			itemsObject.backupScale = value["BackupScale"].asString();
+		if(!value["BackupDBNames"].isNull())
+			itemsObject.backupDBNames = value["BackupDBNames"].asString();
+		if(!value["TotalBackupSize"].isNull())
+			itemsObject.totalBackupSize = std::stol(value["TotalBackupSize"].asString());
+		if(!value["BackupSize"].isNull())
+			itemsObject.backupSize = std::stol(value["BackupSize"].asString());
+		if(!value["HostInstanceID"].isNull())
+			itemsObject.hostInstanceID = value["HostInstanceID"].asString();
+		if(!value["StoreStatus"].isNull())
+			itemsObject.storeStatus = value["StoreStatus"].asString();
+		items_.push_back(itemsObject);
 	}
-	totalRecordCount_ = value["TotalRecordCount"].asString();
-	pageNumber_ = value["PageNumber"].asString();
-	pageRecordCount_ = value["PageRecordCount"].asString();
-	totalBackupSize_ = std::stol(value["TotalBackupSize"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = value["TotalRecordCount"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = value["PageRecordCount"].asString();
+	if(!value["TotalBackupSize"].isNull())
+		totalBackupSize_ = std::stol(value["TotalBackupSize"].asString());
 
 }
 
@@ -76,19 +98,9 @@ std::string DescribeBackupsResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeBackupsResult::setTotalRecordCount(const std::string& totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 std::string DescribeBackupsResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeBackupsResult::setPageRecordCount(const std::string& pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 std::string DescribeBackupsResult::getPageNumber()const
@@ -96,18 +108,13 @@ std::string DescribeBackupsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeBackupsResult::setPageNumber(const std::string& pageNumber)
+std::vector<DescribeBackupsResult::Backup> DescribeBackupsResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 
 long DescribeBackupsResult::getTotalBackupSize()const
 {
 	return totalBackupSize_;
-}
-
-void DescribeBackupsResult::setTotalBackupSize(long totalBackupSize)
-{
-	totalBackupSize_ = totalBackupSize;
 }
 

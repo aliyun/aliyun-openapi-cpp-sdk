@@ -44,9 +44,7 @@ namespace AlibabaCloud
 				explicit CheckResourceResult(const std::string &payload);
 				~CheckResourceResult();
 				std::string getSpecifyCount()const;
-				void setSpecifyCount(const std::string& specifyCount);
 				std::vector<Resource> getResources()const;
-				void setResources(const std::vector<Resource>& resources);
 
 			protected:
 				void parse(const std::string &payload);

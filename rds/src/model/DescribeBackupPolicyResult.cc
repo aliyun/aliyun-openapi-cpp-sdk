@@ -40,12 +40,18 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	backupRetentionPeriod_ = std::stoi(value["BackupRetentionPeriod"].asString());
-	preferredNextBackupTime_ = value["PreferredNextBackupTime"].asString();
-	preferredBackupTime_ = value["PreferredBackupTime"].asString();
-	preferredBackupPeriod_ = value["PreferredBackupPeriod"].asString();
-	backupLog_ = value["BackupLog"].asString();
-	logBackupRetentionPeriod_ = std::stoi(value["LogBackupRetentionPeriod"].asString());
+	if(!value["BackupRetentionPeriod"].isNull())
+		backupRetentionPeriod_ = std::stoi(value["BackupRetentionPeriod"].asString());
+	if(!value["PreferredNextBackupTime"].isNull())
+		preferredNextBackupTime_ = value["PreferredNextBackupTime"].asString();
+	if(!value["PreferredBackupTime"].isNull())
+		preferredBackupTime_ = value["PreferredBackupTime"].asString();
+	if(!value["PreferredBackupPeriod"].isNull())
+		preferredBackupPeriod_ = value["PreferredBackupPeriod"].asString();
+	if(!value["BackupLog"].isNull())
+		backupLog_ = value["BackupLog"].asString();
+	if(!value["LogBackupRetentionPeriod"].isNull())
+		logBackupRetentionPeriod_ = std::stoi(value["LogBackupRetentionPeriod"].asString());
 
 }
 
@@ -54,19 +60,9 @@ std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
 	return preferredBackupPeriod_;
 }
 
-void DescribeBackupPolicyResult::setPreferredBackupPeriod(const std::string& preferredBackupPeriod)
-{
-	preferredBackupPeriod_ = preferredBackupPeriod;
-}
-
 int DescribeBackupPolicyResult::getLogBackupRetentionPeriod()const
 {
 	return logBackupRetentionPeriod_;
-}
-
-void DescribeBackupPolicyResult::setLogBackupRetentionPeriod(int logBackupRetentionPeriod)
-{
-	logBackupRetentionPeriod_ = logBackupRetentionPeriod;
 }
 
 std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
@@ -74,19 +70,9 @@ std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
 	return preferredBackupTime_;
 }
 
-void DescribeBackupPolicyResult::setPreferredBackupTime(const std::string& preferredBackupTime)
-{
-	preferredBackupTime_ = preferredBackupTime;
-}
-
 std::string DescribeBackupPolicyResult::getBackupLog()const
 {
 	return backupLog_;
-}
-
-void DescribeBackupPolicyResult::setBackupLog(const std::string& backupLog)
-{
-	backupLog_ = backupLog;
 }
 
 int DescribeBackupPolicyResult::getBackupRetentionPeriod()const
@@ -94,18 +80,8 @@ int DescribeBackupPolicyResult::getBackupRetentionPeriod()const
 	return backupRetentionPeriod_;
 }
 
-void DescribeBackupPolicyResult::setBackupRetentionPeriod(int backupRetentionPeriod)
-{
-	backupRetentionPeriod_ = backupRetentionPeriod;
-}
-
 std::string DescribeBackupPolicyResult::getPreferredNextBackupTime()const
 {
 	return preferredNextBackupTime_;
-}
-
-void DescribeBackupPolicyResult::setPreferredNextBackupTime(const std::string& preferredNextBackupTime)
-{
-	preferredNextBackupTime_ = preferredNextBackupTime;
 }
 

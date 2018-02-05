@@ -40,10 +40,14 @@ void CreateDBInstanceReplicaResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	orderId_ = std::stol(value["OrderId"].asString());
-	replicaId_ = value["ReplicaId"].asString();
-	workflowId_ = value["WorkflowId"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["ReplicaId"].isNull())
+		replicaId_ = value["ReplicaId"].asString();
+	if(!value["WorkflowId"].isNull())
+		workflowId_ = value["WorkflowId"].asString();
 
 }
 
@@ -52,19 +56,9 @@ std::string CreateDBInstanceReplicaResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void CreateDBInstanceReplicaResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-}
-
 long CreateDBInstanceReplicaResult::getOrderId()const
 {
 	return orderId_;
-}
-
-void CreateDBInstanceReplicaResult::setOrderId(long orderId)
-{
-	orderId_ = orderId;
 }
 
 std::string CreateDBInstanceReplicaResult::getWorkflowId()const
@@ -72,18 +66,8 @@ std::string CreateDBInstanceReplicaResult::getWorkflowId()const
 	return workflowId_;
 }
 
-void CreateDBInstanceReplicaResult::setWorkflowId(const std::string& workflowId)
-{
-	workflowId_ = workflowId;
-}
-
 std::string CreateDBInstanceReplicaResult::getReplicaId()const
 {
 	return replicaId_;
-}
-
-void CreateDBInstanceReplicaResult::setReplicaId(const std::string& replicaId)
-{
-	replicaId_ = replicaId;
 }
 

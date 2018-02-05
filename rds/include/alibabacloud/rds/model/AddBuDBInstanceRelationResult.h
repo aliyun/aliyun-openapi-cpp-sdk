@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit AddBuDBInstanceRelationResult(const std::string &payload);
 				~AddBuDBInstanceRelationResult();
 				std::string getBusinessUnit()const;
-				void setBusinessUnit(const std::string& businessUnit);
 				std::string getDBInstanceName()const;
-				void setDBInstanceName(const std::string& dBInstanceName);
 
 			protected:
 				void parse(const std::string &payload);

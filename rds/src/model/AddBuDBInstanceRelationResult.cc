@@ -40,8 +40,10 @@ void AddBuDBInstanceRelationResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	businessUnit_ = value["BusinessUnit"].asString();
-	dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["BusinessUnit"].isNull())
+		businessUnit_ = value["BusinessUnit"].asString();
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
 
 }
 
@@ -50,18 +52,8 @@ std::string AddBuDBInstanceRelationResult::getBusinessUnit()const
 	return businessUnit_;
 }
 
-void AddBuDBInstanceRelationResult::setBusinessUnit(const std::string& businessUnit)
-{
-	businessUnit_ = businessUnit;
-}
-
 std::string AddBuDBInstanceRelationResult::getDBInstanceName()const
 {
 	return dBInstanceName_;
-}
-
-void AddBuDBInstanceRelationResult::setDBInstanceName(const std::string& dBInstanceName)
-{
-	dBInstanceName_ = dBInstanceName;
 }
 

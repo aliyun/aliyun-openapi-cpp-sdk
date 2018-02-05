@@ -43,14 +43,24 @@ void DescribeBackupTasksResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["BackupJob"];
 	for (auto value : allItems)
 	{
-		BackupJob backupJobObject;
-		backupJobObject.backupProgressStatus = value["BackupProgressStatus"].asString();
-		backupJobObject.jobMode = value["JobMode"].asString();
-		backupJobObject.process = value["Process"].asString();
-		backupJobObject.taskAction = value["TaskAction"].asString();
-		backupJobObject.backupjobId = value["BackupjobId"].asString();
-		items_.push_back(backupJobObject);
+		BackupJob itemsObject;
+		if(!value["BackupProgressStatus"].isNull())
+			itemsObject.backupProgressStatus = value["BackupProgressStatus"].asString();
+		if(!value["JobMode"].isNull())
+			itemsObject.jobMode = value["JobMode"].asString();
+		if(!value["Process"].isNull())
+			itemsObject.process = value["Process"].asString();
+		if(!value["TaskAction"].isNull())
+			itemsObject.taskAction = value["TaskAction"].asString();
+		if(!value["BackupjobId"].isNull())
+			itemsObject.backupjobId = value["BackupjobId"].asString();
+		items_.push_back(itemsObject);
 	}
 
+}
+
+std::vector<DescribeBackupTasksResult::BackupJob> DescribeBackupTasksResult::getItems()const
+{
+	return items_;
 }
 

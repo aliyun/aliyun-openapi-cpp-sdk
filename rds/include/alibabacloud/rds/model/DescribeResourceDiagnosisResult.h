@@ -38,19 +38,12 @@ namespace AlibabaCloud
 				explicit DescribeResourceDiagnosisResult(const std::string &payload);
 				~DescribeResourceDiagnosisResult();
 				std::vector<std::string> getStorage()const;
-				void setStorage(const std::vector<std::string>& storage);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::vector<std::string> getMemory()const;
-				void setMemory(const std::vector<std::string>& memory);
 				std::vector<std::string> getConnection()const;
-				void setConnection(const std::vector<std::string>& connection);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::vector<std::string> getCPU()const;
-				void setCPU(const std::vector<std::string>& cPU);
 				std::vector<std::string> getIOPS()const;
-				void setIOPS(const std::vector<std::string>& iOPS);
 
 			protected:
 				void parse(const std::string &payload);

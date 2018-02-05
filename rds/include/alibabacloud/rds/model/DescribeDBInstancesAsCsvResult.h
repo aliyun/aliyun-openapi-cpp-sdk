@@ -84,7 +84,6 @@ namespace AlibabaCloud
 				explicit DescribeDBInstancesAsCsvResult(const std::string &payload);
 				~DescribeDBInstancesAsCsvResult();
 				std::vector<DBInstanceAttribute> getItems()const;
-				void setItems(const std::vector<DBInstanceAttribute>& items);
 
 			protected:
 				void parse(const std::string &payload);

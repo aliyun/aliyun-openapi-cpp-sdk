@@ -59,15 +59,10 @@ namespace AlibabaCloud
 				explicit DescribeBackupsForSecurityResult(const std::string &payload);
 				~DescribeBackupsForSecurityResult();
 				std::string getTotalRecordCount()const;
-				void setTotalRecordCount(const std::string& totalRecordCount);
 				std::string getPageRecordCount()const;
-				void setPageRecordCount(const std::string& pageRecordCount);
 				std::string getPageNumber()const;
-				void setPageNumber(const std::string& pageNumber);
 				std::vector<Backup> getItems()const;
-				void setItems(const std::vector<Backup>& items);
 				long getTotalBackupSize()const;
-				void setTotalBackupSize(long totalBackupSize);
 
 			protected:
 				void parse(const std::string &payload);

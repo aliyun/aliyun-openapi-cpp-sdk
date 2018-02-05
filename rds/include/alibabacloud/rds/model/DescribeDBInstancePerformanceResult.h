@@ -50,15 +50,10 @@ namespace AlibabaCloud
 				explicit DescribeDBInstancePerformanceResult(const std::string &payload);
 				~DescribeDBInstancePerformanceResult();
 				std::vector<PerformanceKey> getPerformanceKeys()const;
-				void setPerformanceKeys(const std::vector<PerformanceKey>& performanceKeys);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::string getEngine()const;
-				void setEngine(const std::string& engine);
 
 			protected:
 				void parse(const std::string &payload);

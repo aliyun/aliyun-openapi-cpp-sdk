@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/rds/RdsRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/rds/RdsExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,13 +28,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT MigrateToOtherZoneRequest : public RdsRequest
+			class ALIBABACLOUD_RDS_EXPORT MigrateToOtherZoneRequest : public RpcServiceRequest
 			{
 
 			public:
 				MigrateToOtherZoneRequest();
 				~MigrateToOtherZoneRequest();
 
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
@@ -52,6 +55,7 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string vSwitchId_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string effectiveTime_;

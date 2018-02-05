@@ -43,11 +43,18 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	auto allRegions = value["Regions"]["RDSRegion"];
 	for (auto value : allRegions)
 	{
-		RDSRegion rDSRegionObject;
-		rDSRegionObject.regionId = value["RegionId"].asString();
-		rDSRegionObject.zoneId = value["ZoneId"].asString();
-		regions_.push_back(rDSRegionObject);
+		RDSRegion regionsObject;
+		if(!value["RegionId"].isNull())
+			regionsObject.regionId = value["RegionId"].asString();
+		if(!value["ZoneId"].isNull())
+			regionsObject.zoneId = value["ZoneId"].asString();
+		regions_.push_back(regionsObject);
 	}
 
+}
+
+std::vector<DescribeRegionsResult::RDSRegion> DescribeRegionsResult::getRegions()const
+{
+	return regions_;
 }
 

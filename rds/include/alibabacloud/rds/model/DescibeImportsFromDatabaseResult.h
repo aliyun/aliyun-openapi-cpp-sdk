@@ -46,13 +46,9 @@ namespace AlibabaCloud
 				explicit DescibeImportsFromDatabaseResult(const std::string &payload);
 				~DescibeImportsFromDatabaseResult();
 				int getTotalRecordCount()const;
-				void setTotalRecordCount(int totalRecordCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<ImportResultFromDB> getItems()const;
-				void setItems(const std::vector<ImportResultFromDB>& items);
 
 			protected:
 				void parse(const std::string &payload);

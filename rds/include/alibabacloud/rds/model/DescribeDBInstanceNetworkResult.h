@@ -48,13 +48,9 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceNetworkResult(const std::string &payload);
 				~DescribeDBInstanceNetworkResult();
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::vector<TopologyItem> getTopology()const;
-				void setTopology(const std::vector<TopologyItem>& topology);
 
 			protected:
 				void parse(const std::string &payload);

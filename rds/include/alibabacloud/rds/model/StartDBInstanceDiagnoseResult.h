@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit StartDBInstanceDiagnoseResult(const std::string &payload);
 				~StartDBInstanceDiagnoseResult();
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getDBInstanceName()const;
-				void setDBInstanceName(const std::string& dBInstanceName);
 
 			protected:
 				void parse(const std::string &payload);

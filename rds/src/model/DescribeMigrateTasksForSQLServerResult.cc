@@ -43,24 +43,39 @@ void DescribeMigrateTasksForSQLServerResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["MigrateTask"];
 	for (auto value : allItems)
 	{
-		MigrateTask migrateTaskObject;
-		migrateTaskObject.dBName = value["DBName"].asString();
-		migrateTaskObject.migrateIaskId = value["MigrateIaskId"].asString();
-		migrateTaskObject.createTime = value["CreateTime"].asString();
-		migrateTaskObject.endTime = value["EndTime"].asString();
-		migrateTaskObject.taskType = value["TaskType"].asString();
-		migrateTaskObject.status = value["Status"].asString();
-		migrateTaskObject.isDBReplaced = value["IsDBReplaced"].asString();
-		migrateTaskObject.desc = value["Desc"].asString();
-		items_.push_back(migrateTaskObject);
+		MigrateTask itemsObject;
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["MigrateIaskId"].isNull())
+			itemsObject.migrateIaskId = value["MigrateIaskId"].asString();
+		if(!value["CreateTime"].isNull())
+			itemsObject.createTime = value["CreateTime"].asString();
+		if(!value["EndTime"].isNull())
+			itemsObject.endTime = value["EndTime"].asString();
+		if(!value["TaskType"].isNull())
+			itemsObject.taskType = value["TaskType"].asString();
+		if(!value["Status"].isNull())
+			itemsObject.status = value["Status"].asString();
+		if(!value["IsDBReplaced"].isNull())
+			itemsObject.isDBReplaced = value["IsDBReplaced"].asString();
+		if(!value["Desc"].isNull())
+			itemsObject.desc = value["Desc"].asString();
+		items_.push_back(itemsObject);
 	}
-	dBInstanceID_ = value["DBInstanceID"].asString();
-	dBInstanceName_ = value["DBInstanceName"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["DBInstanceID"].isNull())
+		dBInstanceID_ = value["DBInstanceID"].asString();
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -69,19 +84,9 @@ int DescribeMigrateTasksForSQLServerResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeMigrateTasksForSQLServerResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeMigrateTasksForSQLServerResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeMigrateTasksForSQLServerResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 std::string DescribeMigrateTasksForSQLServerResult::getEndTime()const
@@ -89,19 +94,9 @@ std::string DescribeMigrateTasksForSQLServerResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeMigrateTasksForSQLServerResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeMigrateTasksForSQLServerResult::getDBInstanceID()const
 {
 	return dBInstanceID_;
-}
-
-void DescribeMigrateTasksForSQLServerResult::setDBInstanceID(const std::string& dBInstanceID)
-{
-	dBInstanceID_ = dBInstanceID;
 }
 
 int DescribeMigrateTasksForSQLServerResult::getPageNumber()const
@@ -109,28 +104,18 @@ int DescribeMigrateTasksForSQLServerResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeMigrateTasksForSQLServerResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-}
-
 std::string DescribeMigrateTasksForSQLServerResult::getStartTime()const
 {
 	return startTime_;
 }
 
-void DescribeMigrateTasksForSQLServerResult::setStartTime(const std::string& startTime)
+std::vector<DescribeMigrateTasksForSQLServerResult::MigrateTask> DescribeMigrateTasksForSQLServerResult::getItems()const
 {
-	startTime_ = startTime;
+	return items_;
 }
 
 std::string DescribeMigrateTasksForSQLServerResult::getDBInstanceName()const
 {
 	return dBInstanceName_;
-}
-
-void DescribeMigrateTasksForSQLServerResult::setDBInstanceName(const std::string& dBInstanceName)
-{
-	dBInstanceName_ = dBInstanceName;
 }
 

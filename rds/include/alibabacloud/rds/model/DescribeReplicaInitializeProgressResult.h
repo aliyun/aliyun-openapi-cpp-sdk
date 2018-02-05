@@ -46,7 +46,6 @@ namespace AlibabaCloud
 				explicit DescribeReplicaInitializeProgressResult(const std::string &payload);
 				~DescribeReplicaInitializeProgressResult();
 				std::vector<ItemsItem> getItems()const;
-				void setItems(const std::vector<ItemsItem>& items);
 
 			protected:
 				void parse(const std::string &payload);

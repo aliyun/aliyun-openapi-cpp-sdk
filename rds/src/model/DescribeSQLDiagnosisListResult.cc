@@ -43,14 +43,24 @@ void DescribeSQLDiagnosisListResult::parse(const std::string &payload)
 	auto allSQLDiagList = value["SQLDiagList"]["SQLDiag"];
 	for (auto value : allSQLDiagList)
 	{
-		SQLDiag sQLDiagObject;
-		sQLDiagObject.sQLDiagId = value["SQLDiagId"].asString();
-		sQLDiagObject.startTime = value["StartTime"].asString();
-		sQLDiagObject.endTime = value["EndTime"].asString();
-		sQLDiagObject.status = std::stoi(value["Status"].asString());
-		sQLDiagObject.progress = std::stoi(value["Progress"].asString());
-		sQLDiagList_.push_back(sQLDiagObject);
+		SQLDiag sQLDiagListObject;
+		if(!value["SQLDiagId"].isNull())
+			sQLDiagListObject.sQLDiagId = value["SQLDiagId"].asString();
+		if(!value["StartTime"].isNull())
+			sQLDiagListObject.startTime = value["StartTime"].asString();
+		if(!value["EndTime"].isNull())
+			sQLDiagListObject.endTime = value["EndTime"].asString();
+		if(!value["Status"].isNull())
+			sQLDiagListObject.status = std::stoi(value["Status"].asString());
+		if(!value["Progress"].isNull())
+			sQLDiagListObject.progress = std::stoi(value["Progress"].asString());
+		sQLDiagList_.push_back(sQLDiagListObject);
 	}
 
+}
+
+std::vector<DescribeSQLDiagnosisListResult::SQLDiag> DescribeSQLDiagnosisListResult::getSQLDiagList()const
+{
+	return sQLDiagList_;
 }
 

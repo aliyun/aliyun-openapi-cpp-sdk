@@ -40,17 +40,13 @@ void ImportDataFromDatabaseResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	importId_ = std::stoi(value["ImportId"].asString());
+	if(!value["ImportId"].isNull())
+		importId_ = std::stoi(value["ImportId"].asString());
 
 }
 
 int ImportDataFromDatabaseResult::getImportId()const
 {
 	return importId_;
-}
-
-void ImportDataFromDatabaseResult::setImportId(int importId)
-{
-	importId_ = importId;
 }
 

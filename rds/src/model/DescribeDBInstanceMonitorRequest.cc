@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeDBInstanceMonitorRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeDBInstanceMonitorRequest;
 
 DescribeDBInstanceMonitorRequest::DescribeDBInstanceMonitorRequest() :
-	RdsRequest("DescribeDBInstanceMonitor")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstanceMonitor")
 {}
 
 DescribeDBInstanceMonitorRequest::~DescribeDBInstanceMonitorRequest()

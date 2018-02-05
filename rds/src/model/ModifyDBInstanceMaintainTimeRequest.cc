@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifyDBInstanceMaintainTimeRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifyDBInstanceMaintainTimeRequest;
 
 ModifyDBInstanceMaintainTimeRequest::ModifyDBInstanceMaintainTimeRequest() :
-	RdsRequest("ModifyDBInstanceMaintainTime")
+	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceMaintainTime")
 {}
 
 ModifyDBInstanceMaintainTimeRequest::~ModifyDBInstanceMaintainTimeRequest()

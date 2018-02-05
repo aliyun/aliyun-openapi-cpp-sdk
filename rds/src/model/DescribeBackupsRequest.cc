@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeBackupsRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeBackupsRequest;
 
 DescribeBackupsRequest::DescribeBackupsRequest() :
-	RdsRequest("DescribeBackups")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeBackups")
 {}
 
 DescribeBackupsRequest::~DescribeBackupsRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifyDBInstanceNetworkTypeRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifyDBInstanceNetworkTypeRequest;
 
 ModifyDBInstanceNetworkTypeRequest::ModifyDBInstanceNetworkTypeRequest() :
-	RdsRequest("ModifyDBInstanceNetworkType")
+	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceNetworkType")
 {}
 
 ModifyDBInstanceNetworkTypeRequest::~ModifyDBInstanceNetworkTypeRequest()

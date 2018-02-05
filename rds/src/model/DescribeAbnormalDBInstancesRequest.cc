@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeAbnormalDBInstancesRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeAbnormalDBInstancesRequest;
 
 DescribeAbnormalDBInstancesRequest::DescribeAbnormalDBInstancesRequest() :
-	RdsRequest("DescribeAbnormalDBInstances")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeAbnormalDBInstances")
 {}
 
 DescribeAbnormalDBInstancesRequest::~DescribeAbnormalDBInstancesRequest()

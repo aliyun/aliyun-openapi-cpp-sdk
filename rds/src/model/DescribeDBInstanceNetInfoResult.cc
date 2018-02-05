@@ -43,49 +43,67 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 	auto allDBInstanceNetInfos = value["DBInstanceNetInfos"]["DBInstanceNetInfo"];
 	for (auto value : allDBInstanceNetInfos)
 	{
-		DBInstanceNetInfo dBInstanceNetInfoObject;
-		dBInstanceNetInfoObject.upgradeable = value["Upgradeable"].asString();
-		dBInstanceNetInfoObject.expiredTime = value["ExpiredTime"].asString();
-		dBInstanceNetInfoObject.connectionString = value["ConnectionString"].asString();
-		dBInstanceNetInfoObject.iPAddress = value["IPAddress"].asString();
-		dBInstanceNetInfoObject.iPType = value["IPType"].asString();
-		dBInstanceNetInfoObject.port = value["Port"].asString();
-		dBInstanceNetInfoObject.vPCId = value["VPCId"].asString();
-		dBInstanceNetInfoObject.vSwitchId = value["VSwitchId"].asString();
-		dBInstanceNetInfoObject.connectionStringType = value["ConnectionStringType"].asString();
-		dBInstanceNetInfoObject.maxDelayTime = value["MaxDelayTime"].asString();
-		dBInstanceNetInfoObject.distributionType = value["DistributionType"].asString();
+		DBInstanceNetInfo dBInstanceNetInfosObject;
+		if(!value["Upgradeable"].isNull())
+			dBInstanceNetInfosObject.upgradeable = value["Upgradeable"].asString();
+		if(!value["ExpiredTime"].isNull())
+			dBInstanceNetInfosObject.expiredTime = value["ExpiredTime"].asString();
+		if(!value["ConnectionString"].isNull())
+			dBInstanceNetInfosObject.connectionString = value["ConnectionString"].asString();
+		if(!value["IPAddress"].isNull())
+			dBInstanceNetInfosObject.iPAddress = value["IPAddress"].asString();
+		if(!value["IPType"].isNull())
+			dBInstanceNetInfosObject.iPType = value["IPType"].asString();
+		if(!value["Port"].isNull())
+			dBInstanceNetInfosObject.port = value["Port"].asString();
+		if(!value["VPCId"].isNull())
+			dBInstanceNetInfosObject.vPCId = value["VPCId"].asString();
+		if(!value["VSwitchId"].isNull())
+			dBInstanceNetInfosObject.vSwitchId = value["VSwitchId"].asString();
+		if(!value["ConnectionStringType"].isNull())
+			dBInstanceNetInfosObject.connectionStringType = value["ConnectionStringType"].asString();
+		if(!value["MaxDelayTime"].isNull())
+			dBInstanceNetInfosObject.maxDelayTime = value["MaxDelayTime"].asString();
+		if(!value["DistributionType"].isNull())
+			dBInstanceNetInfosObject.distributionType = value["DistributionType"].asString();
 		auto allSecurityIPGroups = value["SecurityIPGroups"]["securityIPGroup"];
 		for (auto value : allSecurityIPGroups)
 		{
-			DBInstanceNetInfo::securityIPGroup securityIPGroupObject;
-			securityIPGroupObject.securityIPGroupName = value["SecurityIPGroupName"].asString();
-			securityIPGroupObject.securityIPs = value["SecurityIPs"].asString();
-			dBInstanceNetInfoObject.securityIPGroups.push_back(securityIPGroupObject);
+			DBInstanceNetInfo::SecurityIPGroup securityIPGroupsObject;
+			if(!value["SecurityIPGroupName"].isNull())
+				securityIPGroupsObject.securityIPGroupName = value["SecurityIPGroupName"].asString();
+			if(!value["SecurityIPs"].isNull())
+				securityIPGroupsObject.securityIPs = value["SecurityIPs"].asString();
+			dBInstanceNetInfosObject.securityIPGroups.push_back(securityIPGroupsObject);
 		}
 		auto allDBInstanceWeights = value["DBInstanceWeights"]["DBInstanceWeight"];
 		for (auto value : allDBInstanceWeights)
 		{
-			DBInstanceNetInfo::DBInstanceWeight dBInstanceWeightObject;
-			dBInstanceWeightObject.dBInstanceId = value["DBInstanceId"].asString();
-			dBInstanceWeightObject.dBInstanceType = value["DBInstanceType"].asString();
-			dBInstanceWeightObject.availability = value["Availability"].asString();
-			dBInstanceWeightObject.weight = value["Weight"].asString();
-			dBInstanceNetInfoObject.dBInstanceWeights.push_back(dBInstanceWeightObject);
+			DBInstanceNetInfo::DBInstanceWeight dBInstanceWeightsObject;
+			if(!value["DBInstanceId"].isNull())
+				dBInstanceWeightsObject.dBInstanceId = value["DBInstanceId"].asString();
+			if(!value["DBInstanceType"].isNull())
+				dBInstanceWeightsObject.dBInstanceType = value["DBInstanceType"].asString();
+			if(!value["Availability"].isNull())
+				dBInstanceWeightsObject.availability = value["Availability"].asString();
+			if(!value["Weight"].isNull())
+				dBInstanceWeightsObject.weight = value["Weight"].asString();
+			dBInstanceNetInfosObject.dBInstanceWeights.push_back(dBInstanceWeightsObject);
 		}
-		dBInstanceNetInfos_.push_back(dBInstanceNetInfoObject);
+		dBInstanceNetInfos_.push_back(dBInstanceNetInfosObject);
 	}
-	instanceNetworkType_ = value["InstanceNetworkType"].asString();
+	if(!value["InstanceNetworkType"].isNull())
+		instanceNetworkType_ = value["InstanceNetworkType"].asString();
 
+}
+
+std::vector<DescribeDBInstanceNetInfoResult::DBInstanceNetInfo> DescribeDBInstanceNetInfoResult::getDBInstanceNetInfos()const
+{
+	return dBInstanceNetInfos_;
 }
 
 std::string DescribeDBInstanceNetInfoResult::getInstanceNetworkType()const
 {
 	return instanceNetworkType_;
-}
-
-void DescribeDBInstanceNetInfoResult::setInstanceNetworkType(const std::string& instanceNetworkType)
-{
-	instanceNetworkType_ = instanceNetworkType;
 }
 

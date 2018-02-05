@@ -46,13 +46,9 @@ namespace AlibabaCloud
 				explicit DescribeImportsForSQLServerResult(const std::string &payload);
 				~DescribeImportsForSQLServerResult();
 				int getTotalRecordCounts()const;
-				void setTotalRecordCounts(int totalRecordCounts);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<SQLServerImport> getItems()const;
-				void setItems(const std::vector<SQLServerImport>& items);
 				int getSQLItemsCounts()const;
-				void setSQLItemsCounts(int sQLItemsCounts);
 
 			protected:
 				void parse(const std::string &payload);

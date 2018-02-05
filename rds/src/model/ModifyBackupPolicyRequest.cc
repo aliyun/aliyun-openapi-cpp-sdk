@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifyBackupPolicyRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifyBackupPolicyRequest;
 
 ModifyBackupPolicyRequest::ModifyBackupPolicyRequest() :
-	RdsRequest("ModifyBackupPolicy")
+	RpcServiceRequest("rds", "2014-08-15", "ModifyBackupPolicy")
 {}
 
 ModifyBackupPolicyRequest::~ModifyBackupPolicyRequest()

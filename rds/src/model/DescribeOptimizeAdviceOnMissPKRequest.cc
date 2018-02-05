@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeOptimizeAdviceOnMissPKRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeOptimizeAdviceOnMissPKRequest;
 
 DescribeOptimizeAdviceOnMissPKRequest::DescribeOptimizeAdviceOnMissPKRequest() :
-	RdsRequest("DescribeOptimizeAdviceOnMissPK")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeOptimizeAdviceOnMissPK")
 {}
 
 DescribeOptimizeAdviceOnMissPKRequest::~DescribeOptimizeAdviceOnMissPKRequest()

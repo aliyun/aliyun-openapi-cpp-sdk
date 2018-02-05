@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeOptimizeAdviceOnStorageRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeOptimizeAdviceOnStorageRequest;
 
 DescribeOptimizeAdviceOnStorageRequest::DescribeOptimizeAdviceOnStorageRequest() :
-	RdsRequest("DescribeOptimizeAdviceOnStorage")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeOptimizeAdviceOnStorage")
 {}
 
 DescribeOptimizeAdviceOnStorageRequest::~DescribeOptimizeAdviceOnStorageRequest()

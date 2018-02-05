@@ -43,17 +43,25 @@ void DescribeInstanceAutoRenewalAttributeResult::parse(const std::string &payloa
 	auto allItems = value["Items"]["Item"];
 	for (auto value : allItems)
 	{
-		Item itemObject;
-		itemObject.dBInstanceId = value["DBInstanceId"].asString();
-		itemObject.regionId = value["RegionId"].asString();
-		itemObject.duration = std::stoi(value["Duration"].asString());
-		itemObject.status = value["Status"].asString();
-		itemObject.autoRenew = value["AutoRenew"].asString();
-		items_.push_back(itemObject);
+		Item itemsObject;
+		if(!value["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
+		if(!value["RegionId"].isNull())
+			itemsObject.regionId = value["RegionId"].asString();
+		if(!value["Duration"].isNull())
+			itemsObject.duration = std::stoi(value["Duration"].asString());
+		if(!value["Status"].isNull())
+			itemsObject.status = value["Status"].asString();
+		if(!value["AutoRenew"].isNull())
+			itemsObject.autoRenew = value["AutoRenew"].asString();
+		items_.push_back(itemsObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -62,19 +70,9 @@ int DescribeInstanceAutoRenewalAttributeResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeInstanceAutoRenewalAttributeResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeInstanceAutoRenewalAttributeResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeInstanceAutoRenewalAttributeResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeInstanceAutoRenewalAttributeResult::getPageNumber()const
@@ -82,8 +80,8 @@ int DescribeInstanceAutoRenewalAttributeResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeInstanceAutoRenewalAttributeResult::setPageNumber(int pageNumber)
+std::vector<DescribeInstanceAutoRenewalAttributeResult::Item> DescribeInstanceAutoRenewalAttributeResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

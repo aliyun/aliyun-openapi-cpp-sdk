@@ -40,17 +40,13 @@ void PreCheckBeforeImportDataResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	preCheckId_ = value["PreCheckId"].asString();
+	if(!value["PreCheckId"].isNull())
+		preCheckId_ = value["PreCheckId"].asString();
 
 }
 
 std::string PreCheckBeforeImportDataResult::getPreCheckId()const
 {
 	return preCheckId_;
-}
-
-void PreCheckBeforeImportDataResult::setPreCheckId(const std::string& preCheckId)
-{
-	preCheckId_ = preCheckId;
 }
 

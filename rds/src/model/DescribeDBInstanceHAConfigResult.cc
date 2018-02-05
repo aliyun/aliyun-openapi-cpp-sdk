@@ -43,19 +43,29 @@ void DescribeDBInstanceHAConfigResult::parse(const std::string &payload)
 	auto allHostInstanceInfos = value["HostInstanceInfos"]["NodeInfo"];
 	for (auto value : allHostInstanceInfos)
 	{
-		NodeInfo nodeInfoObject;
-		nodeInfoObject.nodeId = value["NodeId"].asString();
-		nodeInfoObject.regionId = value["RegionId"].asString();
-		nodeInfoObject.logSyncTime = value["LogSyncTime"].asString();
-		nodeInfoObject.dataSyncTime = value["DataSyncTime"].asString();
-		nodeInfoObject.nodeType = value["NodeType"].asString();
-		nodeInfoObject.zoneId = value["ZoneId"].asString();
-		nodeInfoObject.syncStatus = value["SyncStatus"].asString();
-		hostInstanceInfos_.push_back(nodeInfoObject);
+		NodeInfo hostInstanceInfosObject;
+		if(!value["NodeId"].isNull())
+			hostInstanceInfosObject.nodeId = value["NodeId"].asString();
+		if(!value["RegionId"].isNull())
+			hostInstanceInfosObject.regionId = value["RegionId"].asString();
+		if(!value["LogSyncTime"].isNull())
+			hostInstanceInfosObject.logSyncTime = value["LogSyncTime"].asString();
+		if(!value["DataSyncTime"].isNull())
+			hostInstanceInfosObject.dataSyncTime = value["DataSyncTime"].asString();
+		if(!value["NodeType"].isNull())
+			hostInstanceInfosObject.nodeType = value["NodeType"].asString();
+		if(!value["ZoneId"].isNull())
+			hostInstanceInfosObject.zoneId = value["ZoneId"].asString();
+		if(!value["SyncStatus"].isNull())
+			hostInstanceInfosObject.syncStatus = value["SyncStatus"].asString();
+		hostInstanceInfos_.push_back(hostInstanceInfosObject);
 	}
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	syncMode_ = value["SyncMode"].asString();
-	hAMode_ = value["HAMode"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["SyncMode"].isNull())
+		syncMode_ = value["SyncMode"].asString();
+	if(!value["HAMode"].isNull())
+		hAMode_ = value["HAMode"].asString();
 
 }
 
@@ -64,28 +74,18 @@ std::string DescribeDBInstanceHAConfigResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void DescribeDBInstanceHAConfigResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-}
-
 std::string DescribeDBInstanceHAConfigResult::getHAMode()const
 {
 	return hAMode_;
 }
 
-void DescribeDBInstanceHAConfigResult::setHAMode(const std::string& hAMode)
+std::vector<DescribeDBInstanceHAConfigResult::NodeInfo> DescribeDBInstanceHAConfigResult::getHostInstanceInfos()const
 {
-	hAMode_ = hAMode;
+	return hostInstanceInfos_;
 }
 
 std::string DescribeDBInstanceHAConfigResult::getSyncMode()const
 {
 	return syncMode_;
-}
-
-void DescribeDBInstanceHAConfigResult::setSyncMode(const std::string& syncMode)
-{
-	syncMode_ = syncMode;
 }
 

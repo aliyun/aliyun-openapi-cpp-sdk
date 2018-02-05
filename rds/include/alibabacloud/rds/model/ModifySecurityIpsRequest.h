@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/rds/RdsRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/rds/RdsExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT ModifySecurityIpsRequest : public RdsRequest
+			class ALIBABACLOUD_RDS_EXPORT ModifySecurityIpsRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -48,14 +49,14 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getSecurityIps()const;
 				void setSecurityIps(const std::string& securityIps);
+				std::string getSecurityGroupId()const;
+				void setSecurityGroupId(const std::string& securityGroupId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityGroupName()const;
-				void setSecurityGroupName(const std::string& securityGroupName);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getWhitelistNetType()const;
-				void setWhitelistNetType(const std::string& whitelistNetType);
+				std::string getWhitelistNetworkType()const;
+				void setWhitelistNetworkType(const std::string& whitelistNetworkType);
 				std::string getDBInstanceIPArrayAttribute()const;
 				void setDBInstanceIPArrayAttribute(const std::string& dBInstanceIPArrayAttribute);
 				std::string getDBInstanceId()const;
@@ -69,10 +70,10 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string ownerAccount_;
 				std::string securityIps_;
+				std::string securityGroupId_;
 				long ownerId_;
-				std::string securityGroupName_;
 				std::string accessKeyId_;
-				std::string whitelistNetType_;
+				std::string whitelistNetworkType_;
 				std::string dBInstanceIPArrayAttribute_;
 				std::string dBInstanceId_;
 

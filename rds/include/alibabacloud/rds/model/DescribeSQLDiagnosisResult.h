@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit DescribeSQLDiagnosisResult(const std::string &payload);
 				~DescribeSQLDiagnosisResult();
 				std::vector<std::string> getSQLList()const;
-				void setSQLList(const std::vector<std::string>& sQLList);
 
 			protected:
 				void parse(const std::string &payload);

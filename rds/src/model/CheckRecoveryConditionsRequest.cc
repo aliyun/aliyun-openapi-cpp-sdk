@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CheckRecoveryConditionsRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CheckRecoveryConditionsRequest;
 
 CheckRecoveryConditionsRequest::CheckRecoveryConditionsRequest() :
-	RdsRequest("CheckRecoveryConditions")
+	RpcServiceRequest("rds", "2014-08-15", "CheckRecoveryConditions")
 {}
 
 CheckRecoveryConditionsRequest::~CheckRecoveryConditionsRequest()

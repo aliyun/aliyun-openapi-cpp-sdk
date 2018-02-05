@@ -38,11 +38,8 @@ namespace AlibabaCloud
 				explicit CopyDatabaseResult(const std::string &payload);
 				~CopyDatabaseResult();
 				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 				std::string getDBName()const;
-				void setDBName(const std::string& dBName);
 				std::string getDBStatus()const;
-				void setDBStatus(const std::string& dBStatus);
 
 			protected:
 				void parse(const std::string &payload);

@@ -46,7 +46,6 @@ namespace AlibabaCloud
 				explicit DescribeBackupTasksResult(const std::string &payload);
 				~DescribeBackupTasksResult();
 				std::vector<BackupJob> getItems()const;
-				void setItems(const std::vector<BackupJob>& items);
 
 			protected:
 				void parse(const std::string &payload);

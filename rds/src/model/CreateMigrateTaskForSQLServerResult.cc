@@ -40,12 +40,18 @@ void CreateMigrateTaskForSQLServerResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	dBInstanceName_ = value["DBInstanceName"].asString();
-	taskId_ = value["TaskId"].asString();
-	dBName_ = value["DBName"].asString();
-	migrateIaskId_ = value["MigrateIaskId"].asString();
-	taskType_ = value["TaskType"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
+	if(!value["DBName"].isNull())
+		dBName_ = value["DBName"].asString();
+	if(!value["MigrateIaskId"].isNull())
+		migrateIaskId_ = value["MigrateIaskId"].asString();
+	if(!value["TaskType"].isNull())
+		taskType_ = value["TaskType"].asString();
 
 }
 
@@ -54,19 +60,9 @@ std::string CreateMigrateTaskForSQLServerResult::getTaskId()const
 	return taskId_;
 }
 
-void CreateMigrateTaskForSQLServerResult::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-}
-
 std::string CreateMigrateTaskForSQLServerResult::getDBInstanceId()const
 {
 	return dBInstanceId_;
-}
-
-void CreateMigrateTaskForSQLServerResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
 }
 
 std::string CreateMigrateTaskForSQLServerResult::getTaskType()const
@@ -74,19 +70,9 @@ std::string CreateMigrateTaskForSQLServerResult::getTaskType()const
 	return taskType_;
 }
 
-void CreateMigrateTaskForSQLServerResult::setTaskType(const std::string& taskType)
-{
-	taskType_ = taskType;
-}
-
 std::string CreateMigrateTaskForSQLServerResult::getDBName()const
 {
 	return dBName_;
-}
-
-void CreateMigrateTaskForSQLServerResult::setDBName(const std::string& dBName)
-{
-	dBName_ = dBName;
 }
 
 std::string CreateMigrateTaskForSQLServerResult::getMigrateIaskId()const
@@ -94,18 +80,8 @@ std::string CreateMigrateTaskForSQLServerResult::getMigrateIaskId()const
 	return migrateIaskId_;
 }
 
-void CreateMigrateTaskForSQLServerResult::setMigrateIaskId(const std::string& migrateIaskId)
-{
-	migrateIaskId_ = migrateIaskId;
-}
-
 std::string CreateMigrateTaskForSQLServerResult::getDBInstanceName()const
 {
 	return dBInstanceName_;
-}
-
-void CreateMigrateTaskForSQLServerResult::setDBInstanceName(const std::string& dBInstanceName)
-{
-	dBInstanceName_ = dBInstanceName;
 }
 

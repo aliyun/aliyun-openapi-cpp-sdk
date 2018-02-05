@@ -43,20 +43,31 @@ void DescribeSQLInjectionInfosResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["SQLInjectionInfo"];
 	for (auto value : allItems)
 	{
-		SQLInjectionInfo sQLInjectionInfoObject;
-		sQLInjectionInfoObject.dBName = value["DBName"].asString();
-		sQLInjectionInfoObject.sQLText = value["SQLText"].asString();
-		sQLInjectionInfoObject.latencyTime = value["LatencyTime"].asString();
-		sQLInjectionInfoObject.hostAddress = value["HostAddress"].asString();
-		sQLInjectionInfoObject.executeTime = value["ExecuteTime"].asString();
-		sQLInjectionInfoObject.accountName = value["AccountName"].asString();
-		sQLInjectionInfoObject.effectRowCount = value["EffectRowCount"].asString();
-		items_.push_back(sQLInjectionInfoObject);
+		SQLInjectionInfo itemsObject;
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["SQLText"].isNull())
+			itemsObject.sQLText = value["SQLText"].asString();
+		if(!value["LatencyTime"].isNull())
+			itemsObject.latencyTime = value["LatencyTime"].asString();
+		if(!value["HostAddress"].isNull())
+			itemsObject.hostAddress = value["HostAddress"].asString();
+		if(!value["ExecuteTime"].isNull())
+			itemsObject.executeTime = value["ExecuteTime"].asString();
+		if(!value["AccountName"].isNull())
+			itemsObject.accountName = value["AccountName"].asString();
+		if(!value["EffectRowCount"].isNull())
+			itemsObject.effectRowCount = value["EffectRowCount"].asString();
+		items_.push_back(itemsObject);
 	}
-	engine_ = value["Engine"].asString();
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -65,19 +76,9 @@ int DescribeSQLInjectionInfosResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeSQLInjectionInfosResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeSQLInjectionInfosResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeSQLInjectionInfosResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeSQLInjectionInfosResult::getPageNumber()const
@@ -85,18 +86,13 @@ int DescribeSQLInjectionInfosResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeSQLInjectionInfosResult::setPageNumber(int pageNumber)
+std::vector<DescribeSQLInjectionInfosResult::SQLInjectionInfo> DescribeSQLInjectionInfosResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 
 std::string DescribeSQLInjectionInfosResult::getEngine()const
 {
 	return engine_;
-}
-
-void DescribeSQLInjectionInfosResult::setEngine(const std::string& engine)
-{
-	engine_ = engine;
 }
 

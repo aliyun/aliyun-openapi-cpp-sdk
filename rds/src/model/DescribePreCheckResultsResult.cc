@@ -43,14 +43,19 @@ void DescribePreCheckResultsResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["PreCheckResult"];
 	for (auto value : allItems)
 	{
-		PreCheckResult preCheckResultObject;
-		preCheckResultObject.preCheckName = value["PreCheckName"].asString();
-		preCheckResultObject.preCheckResult = value["PreCheckResult"].asString();
-		preCheckResultObject.failReasion = value["FailReasion"].asString();
-		preCheckResultObject.repairMethod = value["RepairMethod"].asString();
-		items_.push_back(preCheckResultObject);
+		PreCheckResult itemsObject;
+		if(!value["PreCheckName"].isNull())
+			itemsObject.preCheckName = value["PreCheckName"].asString();
+		if(!value["PreCheckResult"].isNull())
+			itemsObject.preCheckResult = value["PreCheckResult"].asString();
+		if(!value["FailReasion"].isNull())
+			itemsObject.failReasion = value["FailReasion"].asString();
+		if(!value["RepairMethod"].isNull())
+			itemsObject.repairMethod = value["RepairMethod"].asString();
+		items_.push_back(itemsObject);
 	}
-	dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
 
 }
 
@@ -59,8 +64,8 @@ std::string DescribePreCheckResultsResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void DescribePreCheckResultsResult::setDBInstanceId(const std::string& dBInstanceId)
+std::vector<DescribePreCheckResultsResult::PreCheckResult> DescribePreCheckResultsResult::getItems()const
 {
-	dBInstanceId_ = dBInstanceId;
+	return items_;
 }
 

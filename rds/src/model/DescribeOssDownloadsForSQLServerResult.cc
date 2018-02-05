@@ -43,20 +43,35 @@ void DescribeOssDownloadsForSQLServerResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["OssDownload"];
 	for (auto value : allItems)
 	{
-		OssDownload ossDownloadObject;
-		ossDownloadObject.fileName = value["FileName"].asString();
-		ossDownloadObject.createTime = value["CreateTime"].asString();
-		ossDownloadObject.createTime1 = value["CreateTime"].asString();
-		ossDownloadObject.bakType = value["BakType"].asString();
-		ossDownloadObject.fileSize = value["FileSize"].asString();
-		ossDownloadObject.status = value["Status"].asString();
-		ossDownloadObject.isAvail = value["IsAvail"].asString();
-		ossDownloadObject.desc = value["Desc"].asString();
-		items_.push_back(ossDownloadObject);
+		OssDownload itemsObject;
+		if(!value["FileName"].isNull())
+			itemsObject.fileName = value["FileName"].asString();
+		if(!value["CreateTime"].isNull())
+			itemsObject.createTime = value["CreateTime"].asString();
+		if(!value["CreateTime"].isNull())
+			itemsObject.createTime1 = value["CreateTime"].asString();
+		if(!value["BakType"].isNull())
+			itemsObject.bakType = value["BakType"].asString();
+		if(!value["FileSize"].isNull())
+			itemsObject.fileSize = value["FileSize"].asString();
+		if(!value["Status"].isNull())
+			itemsObject.status = value["Status"].asString();
+		if(!value["IsAvail"].isNull())
+			itemsObject.isAvail = value["IsAvail"].asString();
+		if(!value["Desc"].isNull())
+			itemsObject.desc = value["Desc"].asString();
+		items_.push_back(itemsObject);
 	}
-	dBInstanceName_ = value["DBInstanceName"].asString();
-	migrateIaskId_ = value["MigrateIaskId"].asString();
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["MigrateIaskId"].isNull())
+		migrateIaskId_ = value["MigrateIaskId"].asString();
 
+}
+
+std::vector<DescribeOssDownloadsForSQLServerResult::OssDownload> DescribeOssDownloadsForSQLServerResult::getItems()const
+{
+	return items_;
 }
 
 std::string DescribeOssDownloadsForSQLServerResult::getMigrateIaskId()const
@@ -64,18 +79,8 @@ std::string DescribeOssDownloadsForSQLServerResult::getMigrateIaskId()const
 	return migrateIaskId_;
 }
 
-void DescribeOssDownloadsForSQLServerResult::setMigrateIaskId(const std::string& migrateIaskId)
-{
-	migrateIaskId_ = migrateIaskId;
-}
-
 std::string DescribeOssDownloadsForSQLServerResult::getDBInstanceName()const
 {
 	return dBInstanceName_;
-}
-
-void DescribeOssDownloadsForSQLServerResult::setDBInstanceName(const std::string& dBInstanceName)
-{
-	dBInstanceName_ = dBInstanceName;
 }
 

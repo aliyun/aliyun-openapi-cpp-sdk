@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeVpcZoneNosRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeVpcZoneNosRequest;
 
 DescribeVpcZoneNosRequest::DescribeVpcZoneNosRequest() :
-	RdsRequest("DescribeVpcZoneNos")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeVpcZoneNos")
 {}
 
 DescribeVpcZoneNosRequest::~DescribeVpcZoneNosRequest()

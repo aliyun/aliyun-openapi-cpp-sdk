@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CheckAccountNameAvailableRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CheckAccountNameAvailableRequest;
 
 CheckAccountNameAvailableRequest::CheckAccountNameAvailableRequest() :
-	RdsRequest("CheckAccountNameAvailable")
+	RpcServiceRequest("rds", "2014-08-15", "CheckAccountNameAvailable")
 {}
 
 CheckAccountNameAvailableRequest::~CheckAccountNameAvailableRequest()

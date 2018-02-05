@@ -49,13 +49,9 @@ namespace AlibabaCloud
 				explicit DescribeSQLLogRecordsResult(const std::string &payload);
 				~DescribeSQLLogRecordsResult();
 				long getTotalRecordCount()const;
-				void setTotalRecordCount(long totalRecordCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<SQLRecord> getItems()const;
-				void setItems(const std::vector<SQLRecord>& items);
 
 			protected:
 				void parse(const std::string &payload);

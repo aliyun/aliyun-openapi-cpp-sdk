@@ -43,19 +43,29 @@ void DescribeDBInstanceNetworkResult::parse(const std::string &payload)
 	auto allTopology = value["Topology"]["TopologyItem"];
 	for (auto value : allTopology)
 	{
-		TopologyItem topologyItemObject;
-		topologyItemObject.startPoint = value["StartPoint"].asString();
-		topologyItemObject.endPoint = value["EndPoint"].asString();
-		topologyItemObject.networkTrafficIn = value["NetworkTrafficIn"].asString();
-		topologyItemObject.networkTrafficOut = value["NetworkTrafficOut"].asString();
-		topologyItemObject.networkLatency = value["NetworkLatency"].asString();
-		topologyItemObject.backendLatency = value["BackendLatency"].asString();
-		topologyItemObject.networkErrors = value["NetworkErrors"].asString();
-		topology_.push_back(topologyItemObject);
+		TopologyItem topologyObject;
+		if(!value["StartPoint"].isNull())
+			topologyObject.startPoint = value["StartPoint"].asString();
+		if(!value["EndPoint"].isNull())
+			topologyObject.endPoint = value["EndPoint"].asString();
+		if(!value["NetworkTrafficIn"].isNull())
+			topologyObject.networkTrafficIn = value["NetworkTrafficIn"].asString();
+		if(!value["NetworkTrafficOut"].isNull())
+			topologyObject.networkTrafficOut = value["NetworkTrafficOut"].asString();
+		if(!value["NetworkLatency"].isNull())
+			topologyObject.networkLatency = value["NetworkLatency"].asString();
+		if(!value["BackendLatency"].isNull())
+			topologyObject.backendLatency = value["BackendLatency"].asString();
+		if(!value["NetworkErrors"].isNull())
+			topologyObject.networkErrors = value["NetworkErrors"].asString();
+		topology_.push_back(topologyObject);
 	}
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -64,19 +74,9 @@ std::string DescribeDBInstanceNetworkResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDBInstanceNetworkResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDBInstanceNetworkResult::getDBInstanceId()const
 {
 	return dBInstanceId_;
-}
-
-void DescribeDBInstanceNetworkResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
 }
 
 std::string DescribeDBInstanceNetworkResult::getStartTime()const
@@ -84,8 +84,8 @@ std::string DescribeDBInstanceNetworkResult::getStartTime()const
 	return startTime_;
 }
 
-void DescribeDBInstanceNetworkResult::setStartTime(const std::string& startTime)
+std::vector<DescribeDBInstanceNetworkResult::TopologyItem> DescribeDBInstanceNetworkResult::getTopology()const
 {
-	startTime_ = startTime;
+	return topology_;
 }
 

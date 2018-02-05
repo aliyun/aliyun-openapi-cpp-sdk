@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/rds/RdsRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/rds/RdsExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeOptimizeAdviceOnMissPKRequest : public RdsRequest
+			class ALIBABACLOUD_RDS_EXPORT DescribeOptimizeAdviceOnMissPKRequest : public RpcServiceRequest
 			{
 
 			public:

@@ -46,13 +46,9 @@ namespace AlibabaCloud
 				explicit DescribeDBInstancesByExpireTimeResult(const std::string &payload);
 				~DescribeDBInstancesByExpireTimeResult();
 				int getTotalRecordCount()const;
-				void setTotalRecordCount(int totalRecordCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<DBInstanceExpireTime> getItems()const;
-				void setItems(const std::vector<DBInstanceExpireTime>& items);
 
 			protected:
 				void parse(const std::string &payload);

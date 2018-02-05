@@ -43,31 +43,47 @@ void DescribeDBInstanceNetworkDetailResult::parse(const std::string &payload)
 	auto allNetworkDetail = value["NetworkDetail"]["NetworkKey"];
 	for (auto value : allNetworkDetail)
 	{
-		NetworkKey networkKeyObject;
-		networkKeyObject.key = value["Key"].asString();
-		networkKeyObject.unit = value["Unit"].asString();
+		NetworkKey networkDetailObject;
+		if(!value["Key"].isNull())
+			networkDetailObject.key = value["Key"].asString();
+		if(!value["Unit"].isNull())
+			networkDetailObject.unit = value["Unit"].asString();
 		auto allValues = value["Values"]["NetworkValue"];
 		for (auto value : allValues)
 		{
-			NetworkKey::NetworkValue networkValueObject;
-			networkValueObject.value = value["Value"].asString();
-			networkValueObject.dateTime = value["DateTime"].asString();
-			networkKeyObject.values.push_back(networkValueObject);
+			NetworkKey::NetworkValue valuesObject;
+			if(!value["Value"].isNull())
+				valuesObject.value = value["Value"].asString();
+			if(!value["DateTime"].isNull())
+				valuesObject.dateTime = value["DateTime"].asString();
+			networkDetailObject.values.push_back(valuesObject);
 		}
-		networkDetail_.push_back(networkKeyObject);
+		networkDetail_.push_back(networkDetailObject);
 	}
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
-	newConnection_ = value["NewConnection"].asString();
-	activeConnection_ = value["ActiveConnection"].asString();
-	abortedConnection_ = value["AbortedConnection"].asString();
-	networkRequest_ = value["NetworkRequest"].asString();
-	networkTrafficIn_ = value["NetworkTrafficIn"].asString();
-	networkTrafficOut_ = value["NetworkTrafficOut"].asString();
-	networkLatency_ = value["NetworkLatency"].asString();
-	backendLatency_ = value["BackendLatency"].asString();
-	networkErrors_ = value["NetworkErrors"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["NewConnection"].isNull())
+		newConnection_ = value["NewConnection"].asString();
+	if(!value["ActiveConnection"].isNull())
+		activeConnection_ = value["ActiveConnection"].asString();
+	if(!value["AbortedConnection"].isNull())
+		abortedConnection_ = value["AbortedConnection"].asString();
+	if(!value["NetworkRequest"].isNull())
+		networkRequest_ = value["NetworkRequest"].asString();
+	if(!value["NetworkTrafficIn"].isNull())
+		networkTrafficIn_ = value["NetworkTrafficIn"].asString();
+	if(!value["NetworkTrafficOut"].isNull())
+		networkTrafficOut_ = value["NetworkTrafficOut"].asString();
+	if(!value["NetworkLatency"].isNull())
+		networkLatency_ = value["NetworkLatency"].asString();
+	if(!value["BackendLatency"].isNull())
+		backendLatency_ = value["BackendLatency"].asString();
+	if(!value["NetworkErrors"].isNull())
+		networkErrors_ = value["NetworkErrors"].asString();
 
 }
 
@@ -76,29 +92,9 @@ std::string DescribeDBInstanceNetworkDetailResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDBInstanceNetworkDetailResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDBInstanceNetworkDetailResult::getNetworkLatency()const
 {
 	return networkLatency_;
-}
-
-void DescribeDBInstanceNetworkDetailResult::setNetworkLatency(const std::string& networkLatency)
-{
-	networkLatency_ = networkLatency;
-}
-
-std::string DescribeDBInstanceNetworkDetailResult::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeDBInstanceNetworkDetailResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
 }
 
 std::string DescribeDBInstanceNetworkDetailResult::getNetworkTrafficOut()const
@@ -106,39 +102,9 @@ std::string DescribeDBInstanceNetworkDetailResult::getNetworkTrafficOut()const
 	return networkTrafficOut_;
 }
 
-void DescribeDBInstanceNetworkDetailResult::setNetworkTrafficOut(const std::string& networkTrafficOut)
-{
-	networkTrafficOut_ = networkTrafficOut;
-}
-
-std::string DescribeDBInstanceNetworkDetailResult::getActiveConnection()const
-{
-	return activeConnection_;
-}
-
-void DescribeDBInstanceNetworkDetailResult::setActiveConnection(const std::string& activeConnection)
-{
-	activeConnection_ = activeConnection;
-}
-
-std::string DescribeDBInstanceNetworkDetailResult::getNetworkErrors()const
-{
-	return networkErrors_;
-}
-
-void DescribeDBInstanceNetworkDetailResult::setNetworkErrors(const std::string& networkErrors)
-{
-	networkErrors_ = networkErrors;
-}
-
 std::string DescribeDBInstanceNetworkDetailResult::getStartTime()const
 {
 	return startTime_;
-}
-
-void DescribeDBInstanceNetworkDetailResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
 }
 
 std::string DescribeDBInstanceNetworkDetailResult::getNetworkRequest()const
@@ -146,39 +112,9 @@ std::string DescribeDBInstanceNetworkDetailResult::getNetworkRequest()const
 	return networkRequest_;
 }
 
-void DescribeDBInstanceNetworkDetailResult::setNetworkRequest(const std::string& networkRequest)
-{
-	networkRequest_ = networkRequest;
-}
-
-std::string DescribeDBInstanceNetworkDetailResult::getNewConnection()const
-{
-	return newConnection_;
-}
-
-void DescribeDBInstanceNetworkDetailResult::setNewConnection(const std::string& newConnection)
-{
-	newConnection_ = newConnection;
-}
-
-std::string DescribeDBInstanceNetworkDetailResult::getNetworkTrafficIn()const
-{
-	return networkTrafficIn_;
-}
-
-void DescribeDBInstanceNetworkDetailResult::setNetworkTrafficIn(const std::string& networkTrafficIn)
-{
-	networkTrafficIn_ = networkTrafficIn;
-}
-
 std::string DescribeDBInstanceNetworkDetailResult::getAbortedConnection()const
 {
 	return abortedConnection_;
-}
-
-void DescribeDBInstanceNetworkDetailResult::setAbortedConnection(const std::string& abortedConnection)
-{
-	abortedConnection_ = abortedConnection;
 }
 
 std::string DescribeDBInstanceNetworkDetailResult::getBackendLatency()const
@@ -186,8 +122,33 @@ std::string DescribeDBInstanceNetworkDetailResult::getBackendLatency()const
 	return backendLatency_;
 }
 
-void DescribeDBInstanceNetworkDetailResult::setBackendLatency(const std::string& backendLatency)
+std::string DescribeDBInstanceNetworkDetailResult::getDBInstanceId()const
 {
-	backendLatency_ = backendLatency;
+	return dBInstanceId_;
+}
+
+std::string DescribeDBInstanceNetworkDetailResult::getActiveConnection()const
+{
+	return activeConnection_;
+}
+
+std::string DescribeDBInstanceNetworkDetailResult::getNetworkErrors()const
+{
+	return networkErrors_;
+}
+
+std::string DescribeDBInstanceNetworkDetailResult::getNewConnection()const
+{
+	return newConnection_;
+}
+
+std::string DescribeDBInstanceNetworkDetailResult::getNetworkTrafficIn()const
+{
+	return networkTrafficIn_;
+}
+
+std::vector<DescribeDBInstanceNetworkDetailResult::NetworkKey> DescribeDBInstanceNetworkDetailResult::getNetworkDetail()const
+{
+	return networkDetail_;
 }
 

@@ -43,25 +43,39 @@ void DescribeDBInstancePerformanceResult::parse(const std::string &payload)
 	auto allPerformanceKeys = value["PerformanceKeys"]["PerformanceKey"];
 	for (auto value : allPerformanceKeys)
 	{
-		PerformanceKey performanceKeyObject;
-		performanceKeyObject.key = value["Key"].asString();
-		performanceKeyObject.unit = value["Unit"].asString();
-		performanceKeyObject.valueFormat = value["ValueFormat"].asString();
+		PerformanceKey performanceKeysObject;
+		if(!value["Key"].isNull())
+			performanceKeysObject.key = value["Key"].asString();
+		if(!value["Unit"].isNull())
+			performanceKeysObject.unit = value["Unit"].asString();
+		if(!value["ValueFormat"].isNull())
+			performanceKeysObject.valueFormat = value["ValueFormat"].asString();
 		auto allValues = value["Values"]["PerformanceValue"];
 		for (auto value : allValues)
 		{
-			PerformanceKey::PerformanceValue performanceValueObject;
-			performanceValueObject.value = value["Value"].asString();
-			performanceValueObject.date = value["Date"].asString();
-			performanceKeyObject.values.push_back(performanceValueObject);
+			PerformanceKey::PerformanceValue valuesObject;
+			if(!value["Value"].isNull())
+				valuesObject.value = value["Value"].asString();
+			if(!value["Date"].isNull())
+				valuesObject.date = value["Date"].asString();
+			performanceKeysObject.values.push_back(valuesObject);
 		}
-		performanceKeys_.push_back(performanceKeyObject);
+		performanceKeys_.push_back(performanceKeysObject);
 	}
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	engine_ = value["Engine"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
+}
+
+std::vector<DescribeDBInstancePerformanceResult::PerformanceKey> DescribeDBInstancePerformanceResult::getPerformanceKeys()const
+{
+	return performanceKeys_;
 }
 
 std::string DescribeDBInstancePerformanceResult::getEndTime()const
@@ -69,19 +83,9 @@ std::string DescribeDBInstancePerformanceResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDBInstancePerformanceResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDBInstancePerformanceResult::getDBInstanceId()const
 {
 	return dBInstanceId_;
-}
-
-void DescribeDBInstancePerformanceResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
 }
 
 std::string DescribeDBInstancePerformanceResult::getStartTime()const
@@ -89,18 +93,8 @@ std::string DescribeDBInstancePerformanceResult::getStartTime()const
 	return startTime_;
 }
 
-void DescribeDBInstancePerformanceResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-}
-
 std::string DescribeDBInstancePerformanceResult::getEngine()const
 {
 	return engine_;
-}
-
-void DescribeDBInstancePerformanceResult::setEngine(const std::string& engine)
-{
-	engine_ = engine;
 }
 

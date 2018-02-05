@@ -43,45 +43,75 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["DBInstance"];
 	for (auto value : allItems)
 	{
-		DBInstance dBInstanceObject;
-		dBInstanceObject.insId = std::stoi(value["InsId"].asString());
-		dBInstanceObject.dBInstanceId = value["DBInstanceId"].asString();
-		dBInstanceObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-		dBInstanceObject.payType = value["PayType"].asString();
-		dBInstanceObject.dBInstanceType = value["DBInstanceType"].asString();
-		dBInstanceObject.regionId = value["RegionId"].asString();
-		dBInstanceObject.expireTime = value["ExpireTime"].asString();
-		dBInstanceObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
-		dBInstanceObject.engine = value["Engine"].asString();
-		dBInstanceObject.dBInstanceNetType = value["DBInstanceNetType"].asString();
-		dBInstanceObject.connectionMode = value["ConnectionMode"].asString();
-		dBInstanceObject.lockMode = value["LockMode"].asString();
-		dBInstanceObject.dBInstanceClass = value["DBInstanceClass"].asString();
-		dBInstanceObject.instanceNetworkType = value["InstanceNetworkType"].asString();
-		dBInstanceObject.lockReason = value["LockReason"].asString();
-		dBInstanceObject.zoneId = value["ZoneId"].asString();
-		dBInstanceObject.mutriORsignle = std::stoi(value["MutriORsignle"].asString());
-		dBInstanceObject.createTime = value["CreateTime"].asString();
-		dBInstanceObject.engineVersion = value["EngineVersion"].asString();
-		dBInstanceObject.guardDBInstanceId = value["GuardDBInstanceId"].asString();
-		dBInstanceObject.tempDBInstanceId = value["TempDBInstanceId"].asString();
-		dBInstanceObject.masterInstanceId = value["MasterInstanceId"].asString();
-		dBInstanceObject.vpcId = value["VpcId"].asString();
-		dBInstanceObject.vSwitchId = value["VSwitchId"].asString();
-		dBInstanceObject.replicateId = value["ReplicateId"].asString();
-		dBInstanceObject.resourceGroupId = value["ResourceGroupId"].asString();
+		DBInstance itemsObject;
+		if(!value["InsId"].isNull())
+			itemsObject.insId = std::stoi(value["InsId"].asString());
+		if(!value["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
+		if(!value["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
+		if(!value["PayType"].isNull())
+			itemsObject.payType = value["PayType"].asString();
+		if(!value["DBInstanceType"].isNull())
+			itemsObject.dBInstanceType = value["DBInstanceType"].asString();
+		if(!value["RegionId"].isNull())
+			itemsObject.regionId = value["RegionId"].asString();
+		if(!value["ExpireTime"].isNull())
+			itemsObject.expireTime = value["ExpireTime"].asString();
+		if(!value["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
+		if(!value["Engine"].isNull())
+			itemsObject.engine = value["Engine"].asString();
+		if(!value["DBInstanceNetType"].isNull())
+			itemsObject.dBInstanceNetType = value["DBInstanceNetType"].asString();
+		if(!value["ConnectionMode"].isNull())
+			itemsObject.connectionMode = value["ConnectionMode"].asString();
+		if(!value["LockMode"].isNull())
+			itemsObject.lockMode = value["LockMode"].asString();
+		if(!value["DBInstanceClass"].isNull())
+			itemsObject.dBInstanceClass = value["DBInstanceClass"].asString();
+		if(!value["InstanceNetworkType"].isNull())
+			itemsObject.instanceNetworkType = value["InstanceNetworkType"].asString();
+		if(!value["LockReason"].isNull())
+			itemsObject.lockReason = value["LockReason"].asString();
+		if(!value["ZoneId"].isNull())
+			itemsObject.zoneId = value["ZoneId"].asString();
+		if(!value["MutriORsignle"].isNull())
+			itemsObject.mutriORsignle = value["MutriORsignle"].asString() == "true";
+		if(!value["CreateTime"].isNull())
+			itemsObject.createTime = value["CreateTime"].asString();
+		if(!value["EngineVersion"].isNull())
+			itemsObject.engineVersion = value["EngineVersion"].asString();
+		if(!value["GuardDBInstanceId"].isNull())
+			itemsObject.guardDBInstanceId = value["GuardDBInstanceId"].asString();
+		if(!value["TempDBInstanceId"].isNull())
+			itemsObject.tempDBInstanceId = value["TempDBInstanceId"].asString();
+		if(!value["MasterInstanceId"].isNull())
+			itemsObject.masterInstanceId = value["MasterInstanceId"].asString();
+		if(!value["VpcId"].isNull())
+			itemsObject.vpcId = value["VpcId"].asString();
+		if(!value["VSwitchId"].isNull())
+			itemsObject.vSwitchId = value["VSwitchId"].asString();
+		if(!value["ReplicateId"].isNull())
+			itemsObject.replicateId = value["ReplicateId"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			itemsObject.resourceGroupId = value["ResourceGroupId"].asString();
 		auto allReadOnlyDBInstanceIds = value["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto value : allReadOnlyDBInstanceIds)
 		{
-			DBInstance::ReadOnlyDBInstanceId readOnlyDBInstanceIdObject;
-			readOnlyDBInstanceIdObject.dBInstanceId = value["DBInstanceId"].asString();
-			dBInstanceObject.readOnlyDBInstanceIds.push_back(readOnlyDBInstanceIdObject);
+			DBInstance::ReadOnlyDBInstanceId readOnlyDBInstanceIdsObject;
+			if(!value["DBInstanceId"].isNull())
+				readOnlyDBInstanceIdsObject.dBInstanceId = value["DBInstanceId"].asString();
+			itemsObject.readOnlyDBInstanceIds.push_back(readOnlyDBInstanceIdsObject);
 		}
-		items_.push_back(dBInstanceObject);
+		items_.push_back(itemsObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -90,19 +120,9 @@ int DescribeDBInstancesResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeDBInstancesResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeDBInstancesResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeDBInstancesResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeDBInstancesResult::getPageNumber()const
@@ -110,8 +130,8 @@ int DescribeDBInstancesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeDBInstancesResult::setPageNumber(int pageNumber)
+std::vector<DescribeDBInstancesResult::DBInstance> DescribeDBInstancesResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

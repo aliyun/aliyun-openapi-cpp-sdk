@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit ImportDataFromDatabaseResult(const std::string &payload);
 				~ImportDataFromDatabaseResult();
 				int getImportId()const;
-				void setImportId(int importId);
 
 			protected:
 				void parse(const std::string &payload);

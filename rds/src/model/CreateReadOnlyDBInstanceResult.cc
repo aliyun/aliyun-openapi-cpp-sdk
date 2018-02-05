@@ -40,10 +40,14 @@ void CreateReadOnlyDBInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	orderId_ = value["OrderId"].asString();
-	connectionString_ = value["ConnectionString"].asString();
-	port_ = value["Port"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
+	if(!value["ConnectionString"].isNull())
+		connectionString_ = value["ConnectionString"].asString();
+	if(!value["Port"].isNull())
+		port_ = value["Port"].asString();
 
 }
 
@@ -52,19 +56,9 @@ std::string CreateReadOnlyDBInstanceResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void CreateReadOnlyDBInstanceResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-}
-
 std::string CreateReadOnlyDBInstanceResult::getPort()const
 {
 	return port_;
-}
-
-void CreateReadOnlyDBInstanceResult::setPort(const std::string& port)
-{
-	port_ = port;
 }
 
 std::string CreateReadOnlyDBInstanceResult::getOrderId()const
@@ -72,18 +66,8 @@ std::string CreateReadOnlyDBInstanceResult::getOrderId()const
 	return orderId_;
 }
 
-void CreateReadOnlyDBInstanceResult::setOrderId(const std::string& orderId)
-{
-	orderId_ = orderId;
-}
-
 std::string CreateReadOnlyDBInstanceResult::getConnectionString()const
 {
 	return connectionString_;
-}
-
-void CreateReadOnlyDBInstanceResult::setConnectionString(const std::string& connectionString)
-{
-	connectionString_ = connectionString;
 }
 

@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit DescribeDatabaseLockDiagnosisResult(const std::string &payload);
 				~DescribeDatabaseLockDiagnosisResult();
 				std::vector<std::string> getDeadLockList()const;
-				void setDeadLockList(const std::vector<std::string>& deadLockList);
 
 			protected:
 				void parse(const std::string &payload);

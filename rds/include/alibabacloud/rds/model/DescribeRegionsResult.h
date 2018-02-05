@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit DescribeRegionsResult(const std::string &payload);
 				~DescribeRegionsResult();
 				std::vector<RDSRegion> getRegions()const;
-				void setRegions(const std::vector<RDSRegion>& regions);
 
 			protected:
 				void parse(const std::string &payload);

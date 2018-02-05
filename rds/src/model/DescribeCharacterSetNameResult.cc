@@ -43,7 +43,8 @@ void DescribeCharacterSetNameResult::parse(const std::string &payload)
 	auto allCharacterSetNameItems = value["CharacterSetNameItems"]["CharacterSetName"];
 	for (const auto &item : allCharacterSetNameItems)
 		characterSetNameItems_.push_back(item.asString());
-	engine_ = value["Engine"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
 
 }
 
@@ -52,18 +53,8 @@ std::vector<std::string> DescribeCharacterSetNameResult::getCharacterSetNameItem
 	return characterSetNameItems_;
 }
 
-void DescribeCharacterSetNameResult::setCharacterSetNameItems(const std::vector<std::string>& characterSetNameItems)
-{
-	characterSetNameItems_ = characterSetNameItems;
-}
-
 std::string DescribeCharacterSetNameResult::getEngine()const
 {
 	return engine_;
-}
-
-void DescribeCharacterSetNameResult::setEngine(const std::string& engine)
-{
-	engine_ = engine;
 }
 

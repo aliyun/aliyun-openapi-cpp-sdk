@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CreateDBInstanceReplicaRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CreateDBInstanceReplicaRequest;
 
 CreateDBInstanceReplicaRequest::CreateDBInstanceReplicaRequest() :
-	RdsRequest("CreateDBInstanceReplica")
+	RpcServiceRequest("rds", "2014-08-15", "CreateDBInstanceReplica")
 {}
 
 CreateDBInstanceReplicaRequest::~CreateDBInstanceReplicaRequest()

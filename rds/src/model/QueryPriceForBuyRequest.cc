@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/QueryPriceForBuyRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::QueryPriceForBuyRequest;
 
 QueryPriceForBuyRequest::QueryPriceForBuyRequest() :
-	RdsRequest("QueryPriceForBuy")
+	RpcServiceRequest("rds", "2014-08-15", "QueryPriceForBuy")
 {}
 
 QueryPriceForBuyRequest::~QueryPriceForBuyRequest()

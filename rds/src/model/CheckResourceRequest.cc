@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CheckResourceRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CheckResourceRequest;
 
 CheckResourceRequest::CheckResourceRequest() :
-	RdsRequest("CheckResource")
+	RpcServiceRequest("rds", "2014-08-15", "CheckResource")
 {}
 
 CheckResourceRequest::~CheckResourceRequest()

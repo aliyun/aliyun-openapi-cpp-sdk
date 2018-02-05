@@ -43,17 +43,25 @@ void DescribeOptimizeAdviceOnStorageResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["AdviceOnStorage"];
 	for (auto value : allItems)
 	{
-		AdviceOnStorage adviceOnStorageObject;
-		adviceOnStorageObject.dBName = value["DBName"].asString();
-		adviceOnStorageObject.tableName = value["TableName"].asString();
-		adviceOnStorageObject.currentEngine = value["CurrentEngine"].asString();
-		adviceOnStorageObject.adviseEngine = value["AdviseEngine"].asString();
-		items_.push_back(adviceOnStorageObject);
+		AdviceOnStorage itemsObject;
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["TableName"].isNull())
+			itemsObject.tableName = value["TableName"].asString();
+		if(!value["CurrentEngine"].isNull())
+			itemsObject.currentEngine = value["CurrentEngine"].asString();
+		if(!value["AdviseEngine"].isNull())
+			itemsObject.adviseEngine = value["AdviseEngine"].asString();
+		items_.push_back(itemsObject);
 	}
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	totalRecordsCount_ = std::stoi(value["TotalRecordsCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["TotalRecordsCount"].isNull())
+		totalRecordsCount_ = std::stoi(value["TotalRecordsCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -62,19 +70,9 @@ int DescribeOptimizeAdviceOnStorageResult::getTotalRecordsCount()const
 	return totalRecordsCount_;
 }
 
-void DescribeOptimizeAdviceOnStorageResult::setTotalRecordsCount(int totalRecordsCount)
-{
-	totalRecordsCount_ = totalRecordsCount;
-}
-
 int DescribeOptimizeAdviceOnStorageResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeOptimizeAdviceOnStorageResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 std::string DescribeOptimizeAdviceOnStorageResult::getDBInstanceId()const
@@ -82,18 +80,13 @@ std::string DescribeOptimizeAdviceOnStorageResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void DescribeOptimizeAdviceOnStorageResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-}
-
 int DescribeOptimizeAdviceOnStorageResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeOptimizeAdviceOnStorageResult::setPageNumber(int pageNumber)
+std::vector<DescribeOptimizeAdviceOnStorageResult::AdviceOnStorage> DescribeOptimizeAdviceOnStorageResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

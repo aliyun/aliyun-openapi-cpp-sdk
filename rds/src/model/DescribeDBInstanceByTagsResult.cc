@@ -43,21 +43,27 @@ void DescribeDBInstanceByTagsResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["DBInstanceTag"];
 	for (auto value : allItems)
 	{
-		DBInstanceTag dBInstanceTagObject;
-		dBInstanceTagObject.dBInstanceId = value["DBInstanceId"].asString();
+		DBInstanceTag itemsObject;
+		if(!value["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{
-			DBInstanceTag::Tag tagObject;
-			tagObject.tagKey = value["TagKey"].asString();
-			tagObject.tagValue = value["TagValue"].asString();
-			dBInstanceTagObject.tags.push_back(tagObject);
+			DBInstanceTag::Tag tagsObject;
+			if(!value["TagKey"].isNull())
+				tagsObject.tagKey = value["TagKey"].asString();
+			if(!value["TagValue"].isNull())
+				tagsObject.tagValue = value["TagValue"].asString();
+			itemsObject.tags.push_back(tagsObject);
 		}
-		items_.push_back(dBInstanceTagObject);
+		items_.push_back(itemsObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 
@@ -66,19 +72,9 @@ int DescribeDBInstanceByTagsResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeDBInstanceByTagsResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeDBInstanceByTagsResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeDBInstanceByTagsResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeDBInstanceByTagsResult::getPageNumber()const
@@ -86,8 +82,8 @@ int DescribeDBInstanceByTagsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeDBInstanceByTagsResult::setPageNumber(int pageNumber)
+std::vector<DescribeDBInstanceByTagsResult::DBInstanceTag> DescribeDBInstanceByTagsResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

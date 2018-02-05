@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeOssDownloadsForSQLServerRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeOssDownloadsForSQLServerRequest;
 
 DescribeOssDownloadsForSQLServerRequest::DescribeOssDownloadsForSQLServerRequest() :
-	RdsRequest("DescribeOssDownloadsForSQLServer")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeOssDownloadsForSQLServer")
 {}
 
 DescribeOssDownloadsForSQLServerRequest::~DescribeOssDownloadsForSQLServerRequest()

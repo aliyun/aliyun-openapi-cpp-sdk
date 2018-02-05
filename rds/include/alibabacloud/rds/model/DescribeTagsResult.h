@@ -44,7 +44,6 @@ namespace AlibabaCloud
 				explicit DescribeTagsResult(const std::string &payload);
 				~DescribeTagsResult();
 				std::vector<TagInfos> getItems()const;
-				void setItems(const std::vector<TagInfos>& items);
 
 			protected:
 				void parse(const std::string &payload);

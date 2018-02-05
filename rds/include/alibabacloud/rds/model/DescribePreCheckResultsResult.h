@@ -45,9 +45,7 @@ namespace AlibabaCloud
 				explicit DescribePreCheckResultsResult(const std::string &payload);
 				~DescribePreCheckResultsResult();
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::vector<PreCheckResult> getItems()const;
-				void setItems(const std::vector<PreCheckResult>& items);
 
 			protected:
 				void parse(const std::string &payload);

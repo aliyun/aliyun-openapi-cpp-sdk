@@ -48,13 +48,9 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceHAConfigResult(const std::string &payload);
 				~DescribeDBInstanceHAConfigResult();
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getHAMode()const;
-				void setHAMode(const std::string& hAMode);
 				std::vector<NodeInfo> getHostInstanceInfos()const;
-				void setHostInstanceInfos(const std::vector<NodeInfo>& hostInstanceInfos);
 				std::string getSyncMode()const;
-				void setSyncMode(const std::string& syncMode);
 
 			protected:
 				void parse(const std::string &payload);

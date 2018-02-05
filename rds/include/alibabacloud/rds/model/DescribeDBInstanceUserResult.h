@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceUserResult(const std::string &payload);
 				~DescribeDBInstanceUserResult();
 				std::string getInternalDBFlag()const;
-				void setInternalDBFlag(const std::string& internalDBFlag);
 				std::string getDBInstanceName()const;
-				void setDBInstanceName(const std::string& dBInstanceName);
 
 			protected:
 				void parse(const std::string &payload);

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeOperatorPermissionRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeOperatorPermissionRequest;
 
 DescribeOperatorPermissionRequest::DescribeOperatorPermissionRequest() :
-	RdsRequest("DescribeOperatorPermission")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeOperatorPermission")
 {}
 
 DescribeOperatorPermissionRequest::~DescribeOperatorPermissionRequest()

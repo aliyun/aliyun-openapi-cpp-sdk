@@ -50,23 +50,14 @@ namespace AlibabaCloud
 				explicit DescribeLogicDBInstanceTopologyResult(const std::string &payload);
 				~DescribeLogicDBInstanceTopologyResult();
 				std::string getEngineVersion()const;
-				void setEngineVersion(const std::string& engineVersion);
 				int getDBInstanceStatus()const;
-				void setDBInstanceStatus(int dBInstanceStatus);
 				int getDBInstanceId()const;
-				void setDBInstanceId(int dBInstanceId);
 				std::vector<LogicDBInstanceParameter> getItems()const;
-				void setItems(const std::vector<LogicDBInstanceParameter>& items);
 				std::string getDBInstanceStatusDesc()const;
-				void setDBInstanceStatusDesc(const std::string& dBInstanceStatusDesc);
 				std::string getDBInstanceConnType()const;
-				void setDBInstanceConnType(const std::string& dBInstanceConnType);
 				std::string getDBInstanceDescription()const;
-				void setDBInstanceDescription(const std::string& dBInstanceDescription);
 				std::string getEngine()const;
-				void setEngine(const std::string& engine);
 				std::string getDBInstanceName()const;
-				void setDBInstanceName(const std::string& dBInstanceName);
 
 			protected:
 				void parse(const std::string &payload);

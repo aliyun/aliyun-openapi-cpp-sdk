@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeParameterTemplatesRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeParameterTemplatesRequest;
 
 DescribeParameterTemplatesRequest::DescribeParameterTemplatesRequest() :
-	RdsRequest("DescribeParameterTemplates")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeParameterTemplates")
 {}
 
 DescribeParameterTemplatesRequest::~DescribeParameterTemplatesRequest()

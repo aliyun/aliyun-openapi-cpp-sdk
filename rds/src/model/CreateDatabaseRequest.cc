@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CreateDatabaseRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CreateDatabaseRequest;
 
 CreateDatabaseRequest::CreateDatabaseRequest() :
-	RdsRequest("CreateDatabase")
+	RpcServiceRequest("rds", "2014-08-15", "CreateDatabase")
 {}
 
 CreateDatabaseRequest::~CreateDatabaseRequest()

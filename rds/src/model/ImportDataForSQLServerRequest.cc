@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ImportDataForSQLServerRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ImportDataForSQLServerRequest;
 
 ImportDataForSQLServerRequest::ImportDataForSQLServerRequest() :
-	RdsRequest("ImportDataForSQLServer")
+	RpcServiceRequest("rds", "2014-08-15", "ImportDataForSQLServer")
 {}
 
 ImportDataForSQLServerRequest::~ImportDataForSQLServerRequest()

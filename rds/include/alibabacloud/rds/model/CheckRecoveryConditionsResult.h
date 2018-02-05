@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit CheckRecoveryConditionsResult(const std::string &payload);
 				~CheckRecoveryConditionsResult();
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getRecoveryStatus()const;
-				void setRecoveryStatus(const std::string& recoveryStatus);
 
 			protected:
 				void parse(const std::string &payload);

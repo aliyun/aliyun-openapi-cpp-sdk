@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeCharacterSetNameRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeCharacterSetNameRequest;
 
 DescribeCharacterSetNameRequest::DescribeCharacterSetNameRequest() :
-	RdsRequest("DescribeCharacterSetName")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeCharacterSetName")
 {}
 
 DescribeCharacterSetNameRequest::~DescribeCharacterSetNameRequest()

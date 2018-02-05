@@ -43,35 +43,61 @@ void DescribeSlowLogsResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["SQLSlowLog"];
 	for (auto value : allItems)
 	{
-		SQLSlowLog sQLSlowLogObject;
-		sQLSlowLogObject.slowLogId = std::stol(value["SlowLogId"].asString());
-		sQLSlowLogObject.sQLId = std::stol(value["SQLId"].asString());
-		sQLSlowLogObject.dBName = value["DBName"].asString();
-		sQLSlowLogObject.sQLText = value["SQLText"].asString();
-		sQLSlowLogObject.mySQLTotalExecutionCounts = std::stol(value["MySQLTotalExecutionCounts"].asString());
-		sQLSlowLogObject.mySQLTotalExecutionTimes = std::stol(value["MySQLTotalExecutionTimes"].asString());
-		sQLSlowLogObject.totalLockTimes = std::stol(value["TotalLockTimes"].asString());
-		sQLSlowLogObject.maxLockTime = std::stol(value["MaxLockTime"].asString());
-		sQLSlowLogObject.parseTotalRowCounts = std::stol(value["ParseTotalRowCounts"].asString());
-		sQLSlowLogObject.parseMaxRowCount = std::stol(value["ParseMaxRowCount"].asString());
-		sQLSlowLogObject.returnTotalRowCounts = std::stol(value["ReturnTotalRowCounts"].asString());
-		sQLSlowLogObject.returnMaxRowCount = std::stol(value["ReturnMaxRowCount"].asString());
-		sQLSlowLogObject.createTime = value["CreateTime"].asString();
-		sQLSlowLogObject.sQLServerTotalExecutionCounts = std::stol(value["SQLServerTotalExecutionCounts"].asString());
-		sQLSlowLogObject.sQLServerTotalExecutionTimes = std::stol(value["SQLServerTotalExecutionTimes"].asString());
-		sQLSlowLogObject.totalLogicalReadCounts = std::stol(value["TotalLogicalReadCounts"].asString());
-		sQLSlowLogObject.totalPhysicalReadCounts = std::stol(value["TotalPhysicalReadCounts"].asString());
-		sQLSlowLogObject.reportTime = value["ReportTime"].asString();
-		sQLSlowLogObject.maxExecutionTime = std::stol(value["MaxExecutionTime"].asString());
-		sQLSlowLogObject.avgExecutionTime = std::stol(value["AvgExecutionTime"].asString());
-		items_.push_back(sQLSlowLogObject);
+		SQLSlowLog itemsObject;
+		if(!value["SlowLogId"].isNull())
+			itemsObject.slowLogId = std::stol(value["SlowLogId"].asString());
+		if(!value["SQLId"].isNull())
+			itemsObject.sQLId = std::stol(value["SQLId"].asString());
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["SQLText"].isNull())
+			itemsObject.sQLText = value["SQLText"].asString();
+		if(!value["MySQLTotalExecutionCounts"].isNull())
+			itemsObject.mySQLTotalExecutionCounts = std::stol(value["MySQLTotalExecutionCounts"].asString());
+		if(!value["MySQLTotalExecutionTimes"].isNull())
+			itemsObject.mySQLTotalExecutionTimes = std::stol(value["MySQLTotalExecutionTimes"].asString());
+		if(!value["TotalLockTimes"].isNull())
+			itemsObject.totalLockTimes = std::stol(value["TotalLockTimes"].asString());
+		if(!value["MaxLockTime"].isNull())
+			itemsObject.maxLockTime = std::stol(value["MaxLockTime"].asString());
+		if(!value["ParseTotalRowCounts"].isNull())
+			itemsObject.parseTotalRowCounts = std::stol(value["ParseTotalRowCounts"].asString());
+		if(!value["ParseMaxRowCount"].isNull())
+			itemsObject.parseMaxRowCount = std::stol(value["ParseMaxRowCount"].asString());
+		if(!value["ReturnTotalRowCounts"].isNull())
+			itemsObject.returnTotalRowCounts = std::stol(value["ReturnTotalRowCounts"].asString());
+		if(!value["ReturnMaxRowCount"].isNull())
+			itemsObject.returnMaxRowCount = std::stol(value["ReturnMaxRowCount"].asString());
+		if(!value["CreateTime"].isNull())
+			itemsObject.createTime = value["CreateTime"].asString();
+		if(!value["SQLServerTotalExecutionCounts"].isNull())
+			itemsObject.sQLServerTotalExecutionCounts = std::stol(value["SQLServerTotalExecutionCounts"].asString());
+		if(!value["SQLServerTotalExecutionTimes"].isNull())
+			itemsObject.sQLServerTotalExecutionTimes = std::stol(value["SQLServerTotalExecutionTimes"].asString());
+		if(!value["TotalLogicalReadCounts"].isNull())
+			itemsObject.totalLogicalReadCounts = std::stol(value["TotalLogicalReadCounts"].asString());
+		if(!value["TotalPhysicalReadCounts"].isNull())
+			itemsObject.totalPhysicalReadCounts = std::stol(value["TotalPhysicalReadCounts"].asString());
+		if(!value["ReportTime"].isNull())
+			itemsObject.reportTime = value["ReportTime"].asString();
+		if(!value["MaxExecutionTime"].isNull())
+			itemsObject.maxExecutionTime = std::stol(value["MaxExecutionTime"].asString());
+		if(!value["AvgExecutionTime"].isNull())
+			itemsObject.avgExecutionTime = std::stol(value["AvgExecutionTime"].asString());
+		items_.push_back(itemsObject);
 	}
-	engine_ = value["Engine"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -80,19 +106,9 @@ int DescribeSlowLogsResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeSlowLogsResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeSlowLogsResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeSlowLogsResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 std::string DescribeSlowLogsResult::getEndTime()const
@@ -100,19 +116,9 @@ std::string DescribeSlowLogsResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeSlowLogsResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 int DescribeSlowLogsResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeSlowLogsResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 
 std::string DescribeSlowLogsResult::getStartTime()const
@@ -120,18 +126,13 @@ std::string DescribeSlowLogsResult::getStartTime()const
 	return startTime_;
 }
 
-void DescribeSlowLogsResult::setStartTime(const std::string& startTime)
+std::vector<DescribeSlowLogsResult::SQLSlowLog> DescribeSlowLogsResult::getItems()const
 {
-	startTime_ = startTime;
+	return items_;
 }
 
 std::string DescribeSlowLogsResult::getEngine()const
 {
 	return engine_;
-}
-
-void DescribeSlowLogsResult::setEngine(const std::string& engine)
-{
-	engine_ = engine;
 }
 

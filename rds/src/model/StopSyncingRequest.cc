@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/StopSyncingRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::StopSyncingRequest;
 
 StopSyncingRequest::StopSyncingRequest() :
-	RdsRequest("StopSyncing")
+	RpcServiceRequest("rds", "2014-08-15", "StopSyncing")
 {}
 
 StopSyncingRequest::~StopSyncingRequest()

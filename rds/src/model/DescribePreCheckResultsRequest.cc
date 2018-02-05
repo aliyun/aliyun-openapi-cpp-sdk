@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribePreCheckResultsRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribePreCheckResultsRequest;
 
 DescribePreCheckResultsRequest::DescribePreCheckResultsRequest() :
-	RdsRequest("DescribePreCheckResults")
+	RpcServiceRequest("rds", "2014-08-15", "DescribePreCheckResults")
 {}
 
 DescribePreCheckResultsRequest::~DescribePreCheckResultsRequest()

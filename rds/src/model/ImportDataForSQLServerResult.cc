@@ -40,17 +40,13 @@ void ImportDataForSQLServerResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	importID_ = std::stoi(value["ImportID"].asString());
+	if(!value["ImportID"].isNull())
+		importID_ = std::stoi(value["ImportID"].asString());
 
 }
 
 int ImportDataForSQLServerResult::getImportID()const
 {
 	return importID_;
-}
-
-void ImportDataForSQLServerResult::setImportID(int importID)
-{
-	importID_ = importID;
 }
 

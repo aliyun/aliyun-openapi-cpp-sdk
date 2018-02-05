@@ -43,9 +43,7 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceTDEResult(const std::string &payload);
 				~DescribeDBInstanceTDEResult();
 				std::string getTDEStatus()const;
-				void setTDEStatus(const std::string& tDEStatus);
 				std::vector<Database> getDatabases()const;
-				void setDatabases(const std::vector<Database>& databases);
 
 			protected:
 				void parse(const std::string &payload);

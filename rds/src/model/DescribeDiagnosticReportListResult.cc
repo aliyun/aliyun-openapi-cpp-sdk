@@ -43,14 +43,24 @@ void DescribeDiagnosticReportListResult::parse(const std::string &payload)
 	auto allReportList = value["ReportList"]["Report"];
 	for (auto value : allReportList)
 	{
-		Report reportObject;
-		reportObject.diagnosticTime = value["DiagnosticTime"].asString();
-		reportObject.score = std::stoi(value["Score"].asString());
-		reportObject.startTime = value["StartTime"].asString();
-		reportObject.endTime = value["EndTime"].asString();
-		reportObject.downloadURL = value["DownloadURL"].asString();
-		reportList_.push_back(reportObject);
+		Report reportListObject;
+		if(!value["DiagnosticTime"].isNull())
+			reportListObject.diagnosticTime = value["DiagnosticTime"].asString();
+		if(!value["Score"].isNull())
+			reportListObject.score = std::stoi(value["Score"].asString());
+		if(!value["StartTime"].isNull())
+			reportListObject.startTime = value["StartTime"].asString();
+		if(!value["EndTime"].isNull())
+			reportListObject.endTime = value["EndTime"].asString();
+		if(!value["DownloadURL"].isNull())
+			reportListObject.downloadURL = value["DownloadURL"].asString();
+		reportList_.push_back(reportListObject);
 	}
 
+}
+
+std::vector<DescribeDiagnosticReportListResult::Report> DescribeDiagnosticReportListResult::getReportList()const
+{
+	return reportList_;
 }
 

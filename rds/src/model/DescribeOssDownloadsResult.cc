@@ -43,18 +43,27 @@ void DescribeOssDownloadsResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["OssDownload"];
 	for (auto value : allItems)
 	{
-		OssDownload ossDownloadObject;
-		ossDownloadObject.fileName = value["FileName"].asString();
-		ossDownloadObject.createTime = value["CreateTime"].asString();
-		ossDownloadObject.backupMode = value["BackupMode"].asString();
-		ossDownloadObject.fileSize = value["FileSize"].asString();
-		ossDownloadObject.status = value["Status"].asString();
-		ossDownloadObject.isAvailable = value["IsAvailable"].asString();
-		ossDownloadObject.description = value["Description"].asString();
-		items_.push_back(ossDownloadObject);
+		OssDownload itemsObject;
+		if(!value["FileName"].isNull())
+			itemsObject.fileName = value["FileName"].asString();
+		if(!value["CreateTime"].isNull())
+			itemsObject.createTime = value["CreateTime"].asString();
+		if(!value["BackupMode"].isNull())
+			itemsObject.backupMode = value["BackupMode"].asString();
+		if(!value["FileSize"].isNull())
+			itemsObject.fileSize = value["FileSize"].asString();
+		if(!value["Status"].isNull())
+			itemsObject.status = value["Status"].asString();
+		if(!value["IsAvailable"].isNull())
+			itemsObject.isAvailable = value["IsAvailable"].asString();
+		if(!value["Description"].isNull())
+			itemsObject.description = value["Description"].asString();
+		items_.push_back(itemsObject);
 	}
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	migrateTaskId_ = value["MigrateTaskId"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["MigrateTaskId"].isNull())
+		migrateTaskId_ = value["MigrateTaskId"].asString();
 
 }
 
@@ -63,18 +72,13 @@ std::string DescribeOssDownloadsResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void DescribeOssDownloadsResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-}
-
 std::string DescribeOssDownloadsResult::getMigrateTaskId()const
 {
 	return migrateTaskId_;
 }
 
-void DescribeOssDownloadsResult::setMigrateTaskId(const std::string& migrateTaskId)
+std::vector<DescribeOssDownloadsResult::OssDownload> DescribeOssDownloadsResult::getItems()const
 {
-	migrateTaskId_ = migrateTaskId;
+	return items_;
 }
 

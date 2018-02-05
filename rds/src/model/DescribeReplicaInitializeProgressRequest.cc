@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeReplicaInitializeProgressRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeReplicaInitializeProgressRequest;
 
 DescribeReplicaInitializeProgressRequest::DescribeReplicaInitializeProgressRequest() :
-	RdsRequest("DescribeReplicaInitializeProgress")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeReplicaInitializeProgress")
 {}
 
 DescribeReplicaInitializeProgressRequest::~DescribeReplicaInitializeProgressRequest()

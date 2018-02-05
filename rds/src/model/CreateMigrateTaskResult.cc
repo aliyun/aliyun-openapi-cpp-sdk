@@ -40,11 +40,16 @@ void CreateMigrateTaskResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	taskId_ = value["TaskId"].asString();
-	dBName_ = value["DBName"].asString();
-	migrateIaskId_ = value["MigrateIaskId"].asString();
-	backupMode_ = value["BackupMode"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
+	if(!value["DBName"].isNull())
+		dBName_ = value["DBName"].asString();
+	if(!value["MigrateIaskId"].isNull())
+		migrateIaskId_ = value["MigrateIaskId"].asString();
+	if(!value["BackupMode"].isNull())
+		backupMode_ = value["BackupMode"].asString();
 
 }
 
@@ -53,19 +58,9 @@ std::string CreateMigrateTaskResult::getTaskId()const
 	return taskId_;
 }
 
-void CreateMigrateTaskResult::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-}
-
 std::string CreateMigrateTaskResult::getDBInstanceId()const
 {
 	return dBInstanceId_;
-}
-
-void CreateMigrateTaskResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
 }
 
 std::string CreateMigrateTaskResult::getBackupMode()const
@@ -73,28 +68,13 @@ std::string CreateMigrateTaskResult::getBackupMode()const
 	return backupMode_;
 }
 
-void CreateMigrateTaskResult::setBackupMode(const std::string& backupMode)
-{
-	backupMode_ = backupMode;
-}
-
 std::string CreateMigrateTaskResult::getDBName()const
 {
 	return dBName_;
 }
 
-void CreateMigrateTaskResult::setDBName(const std::string& dBName)
-{
-	dBName_ = dBName;
-}
-
 std::string CreateMigrateTaskResult::getMigrateIaskId()const
 {
 	return migrateIaskId_;
-}
-
-void CreateMigrateTaskResult::setMigrateIaskId(const std::string& migrateIaskId)
-{
-	migrateIaskId_ = migrateIaskId;
 }
 

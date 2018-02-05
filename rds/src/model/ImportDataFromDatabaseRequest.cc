@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ImportDataFromDatabaseRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ImportDataFromDatabaseRequest;
 
 ImportDataFromDatabaseRequest::ImportDataFromDatabaseRequest() :
-	RdsRequest("ImportDataFromDatabase")
+	RpcServiceRequest("rds", "2014-08-15", "ImportDataFromDatabase")
 {}
 
 ImportDataFromDatabaseRequest::~ImportDataFromDatabaseRequest()

@@ -40,8 +40,10 @@ void DescribeSQLCollectorPolicyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	sQLCollectorStatus_ = value["SQLCollectorStatus"].asString();
-	storagePeriod_ = std::stoi(value["StoragePeriod"].asString());
+	if(!value["SQLCollectorStatus"].isNull())
+		sQLCollectorStatus_ = value["SQLCollectorStatus"].asString();
+	if(!value["StoragePeriod"].isNull())
+		storagePeriod_ = std::stoi(value["StoragePeriod"].asString());
 
 }
 
@@ -50,18 +52,8 @@ int DescribeSQLCollectorPolicyResult::getStoragePeriod()const
 	return storagePeriod_;
 }
 
-void DescribeSQLCollectorPolicyResult::setStoragePeriod(int storagePeriod)
-{
-	storagePeriod_ = storagePeriod;
-}
-
 std::string DescribeSQLCollectorPolicyResult::getSQLCollectorStatus()const
 {
 	return sQLCollectorStatus_;
-}
-
-void DescribeSQLCollectorPolicyResult::setSQLCollectorStatus(const std::string& sQLCollectorStatus)
-{
-	sQLCollectorStatus_ = sQLCollectorStatus;
 }
 

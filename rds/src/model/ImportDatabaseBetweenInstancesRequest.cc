@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ImportDatabaseBetweenInstancesRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ImportDatabaseBetweenInstancesRequest;
 
 ImportDatabaseBetweenInstancesRequest::ImportDatabaseBetweenInstancesRequest() :
-	RdsRequest("ImportDatabaseBetweenInstances")
+	RpcServiceRequest("rds", "2014-08-15", "ImportDatabaseBetweenInstances")
 {}
 
 ImportDatabaseBetweenInstancesRequest::~ImportDatabaseBetweenInstancesRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescibeImportsFromDatabaseRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescibeImportsFromDatabaseRequest;
 
 DescibeImportsFromDatabaseRequest::DescibeImportsFromDatabaseRequest() :
-	RdsRequest("DescibeImportsFromDatabase")
+	RpcServiceRequest("rds", "2014-08-15", "DescibeImportsFromDatabase")
 {}
 
 DescibeImportsFromDatabaseRequest::~DescibeImportsFromDatabaseRequest()

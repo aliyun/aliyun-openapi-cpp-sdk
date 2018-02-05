@@ -43,17 +43,25 @@ void DescribeOptimizeAdviceOnBigTableResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["AdviceOnBigTable"];
 	for (auto value : allItems)
 	{
-		AdviceOnBigTable adviceOnBigTableObject;
-		adviceOnBigTableObject.dBName = value["DBName"].asString();
-		adviceOnBigTableObject.tableName = value["TableName"].asString();
-		adviceOnBigTableObject.tableSize = std::stol(value["TableSize"].asString());
-		adviceOnBigTableObject.dataSize = std::stol(value["DataSize"].asString());
-		adviceOnBigTableObject.indexSize = std::stol(value["IndexSize"].asString());
-		items_.push_back(adviceOnBigTableObject);
+		AdviceOnBigTable itemsObject;
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["TableName"].isNull())
+			itemsObject.tableName = value["TableName"].asString();
+		if(!value["TableSize"].isNull())
+			itemsObject.tableSize = std::stol(value["TableSize"].asString());
+		if(!value["DataSize"].isNull())
+			itemsObject.dataSize = std::stol(value["DataSize"].asString());
+		if(!value["IndexSize"].isNull())
+			itemsObject.indexSize = std::stol(value["IndexSize"].asString());
+		items_.push_back(itemsObject);
 	}
-	totalRecordsCount_ = std::stoi(value["TotalRecordsCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordsCount"].isNull())
+		totalRecordsCount_ = std::stoi(value["TotalRecordsCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -62,19 +70,9 @@ int DescribeOptimizeAdviceOnBigTableResult::getTotalRecordsCount()const
 	return totalRecordsCount_;
 }
 
-void DescribeOptimizeAdviceOnBigTableResult::setTotalRecordsCount(int totalRecordsCount)
-{
-	totalRecordsCount_ = totalRecordsCount;
-}
-
 int DescribeOptimizeAdviceOnBigTableResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeOptimizeAdviceOnBigTableResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeOptimizeAdviceOnBigTableResult::getPageNumber()const
@@ -82,8 +80,8 @@ int DescribeOptimizeAdviceOnBigTableResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeOptimizeAdviceOnBigTableResult::setPageNumber(int pageNumber)
+std::vector<DescribeOptimizeAdviceOnBigTableResult::AdviceOnBigTable> DescribeOptimizeAdviceOnBigTableResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

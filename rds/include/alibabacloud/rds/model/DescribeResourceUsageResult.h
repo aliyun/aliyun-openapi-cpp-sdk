@@ -38,21 +38,13 @@ namespace AlibabaCloud
 				explicit DescribeResourceUsageResult(const std::string &payload);
 				~DescribeResourceUsageResult();
 				long getLogSize()const;
-				void setLogSize(long logSize);
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				long getDataSize()const;
-				void setDataSize(long dataSize);
 				long getBackupSize()const;
-				void setBackupSize(long backupSize);
 				long getSQLSize()const;
-				void setSQLSize(long sQLSize);
 				long getDiskUsed()const;
-				void setDiskUsed(long diskUsed);
 				std::string getEngine()const;
-				void setEngine(const std::string& engine);
 				long getColdBackupSize()const;
-				void setColdBackupSize(long coldBackupSize);
 
 			protected:
 				void parse(const std::string &payload);

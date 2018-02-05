@@ -38,15 +38,10 @@ namespace AlibabaCloud
 				explicit DescribeDampPolicyByCommentResult(const std::string &payload);
 				~DescribeDampPolicyByCommentResult();
 				std::string getPolicy()const;
-				void setPolicy(const std::string& policy);
 				std::string getTimeRules()const;
-				void setTimeRules(const std::string& timeRules);
 				std::string getActionRules()const;
-				void setActionRules(const std::string& actionRules);
 				std::string getHandler()const;
-				void setHandler(const std::string& handler);
 				std::string getSourceRules()const;
-				void setSourceRules(const std::string& sourceRules);
 
 			protected:
 				void parse(const std::string &payload);

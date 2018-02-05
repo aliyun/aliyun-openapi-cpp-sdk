@@ -40,17 +40,13 @@ void DescribeDBInstanceMonitorResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	period_ = value["Period"].asString();
+	if(!value["Period"].isNull())
+		period_ = value["Period"].asString();
 
 }
 
 std::string DescribeDBInstanceMonitorResult::getPeriod()const
 {
 	return period_;
-}
-
-void DescribeDBInstanceMonitorResult::setPeriod(const std::string& period)
-{
-	period_ = period;
 }
 

@@ -43,17 +43,25 @@ void DescribeImportsForSQLServerResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["SQLServerImport"];
 	for (auto value : allItems)
 	{
-		SQLServerImport sQLServerImportObject;
-		sQLServerImportObject.importId = std::stoi(value["ImportId"].asString());
-		sQLServerImportObject.fileName = value["FileName"].asString();
-		sQLServerImportObject.dBName = value["DBName"].asString();
-		sQLServerImportObject.importStatus = value["ImportStatus"].asString();
-		sQLServerImportObject.startTime = value["StartTime"].asString();
-		items_.push_back(sQLServerImportObject);
+		SQLServerImport itemsObject;
+		if(!value["ImportId"].isNull())
+			itemsObject.importId = std::stoi(value["ImportId"].asString());
+		if(!value["FileName"].isNull())
+			itemsObject.fileName = value["FileName"].asString();
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["ImportStatus"].isNull())
+			itemsObject.importStatus = value["ImportStatus"].asString();
+		if(!value["StartTime"].isNull())
+			itemsObject.startTime = value["StartTime"].asString();
+		items_.push_back(itemsObject);
 	}
-	totalRecordCounts_ = std::stoi(value["TotalRecordCounts"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	sQLItemsCounts_ = std::stoi(value["SQLItemsCounts"].asString());
+	if(!value["TotalRecordCounts"].isNull())
+		totalRecordCounts_ = std::stoi(value["TotalRecordCounts"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["SQLItemsCounts"].isNull())
+		sQLItemsCounts_ = std::stoi(value["SQLItemsCounts"].asString());
 
 }
 
@@ -62,28 +70,18 @@ int DescribeImportsForSQLServerResult::getTotalRecordCounts()const
 	return totalRecordCounts_;
 }
 
-void DescribeImportsForSQLServerResult::setTotalRecordCounts(int totalRecordCounts)
-{
-	totalRecordCounts_ = totalRecordCounts;
-}
-
 int DescribeImportsForSQLServerResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeImportsForSQLServerResult::setPageNumber(int pageNumber)
+std::vector<DescribeImportsForSQLServerResult::SQLServerImport> DescribeImportsForSQLServerResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 
 int DescribeImportsForSQLServerResult::getSQLItemsCounts()const
 {
 	return sQLItemsCounts_;
-}
-
-void DescribeImportsForSQLServerResult::setSQLItemsCounts(int sQLItemsCounts)
-{
-	sQLItemsCounts_ = sQLItemsCounts;
 }
 

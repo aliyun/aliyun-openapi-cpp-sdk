@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit ModifySecurityIpsResult(const std::string &payload);
 				~ModifySecurityIpsResult();
 				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 
 			protected:
 				void parse(const std::string &payload);

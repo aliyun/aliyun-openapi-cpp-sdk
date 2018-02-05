@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CalculateDBInstanceWeightRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CalculateDBInstanceWeightRequest;
 
 CalculateDBInstanceWeightRequest::CalculateDBInstanceWeightRequest() :
-	RdsRequest("CalculateDBInstanceWeight")
+	RpcServiceRequest("rds", "2014-08-15", "CalculateDBInstanceWeight")
 {}
 
 CalculateDBInstanceWeightRequest::~CalculateDBInstanceWeightRequest()

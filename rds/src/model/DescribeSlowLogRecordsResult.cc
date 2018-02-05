@@ -43,21 +43,33 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["SQLSlowRecord"];
 	for (auto value : allItems)
 	{
-		SQLSlowRecord sQLSlowRecordObject;
-		sQLSlowRecordObject.hostAddress = value["HostAddress"].asString();
-		sQLSlowRecordObject.dBName = value["DBName"].asString();
-		sQLSlowRecordObject.sQLText = value["SQLText"].asString();
-		sQLSlowRecordObject.queryTimes = std::stol(value["QueryTimes"].asString());
-		sQLSlowRecordObject.lockTimes = std::stol(value["LockTimes"].asString());
-		sQLSlowRecordObject.parseRowCounts = std::stol(value["ParseRowCounts"].asString());
-		sQLSlowRecordObject.returnRowCounts = std::stol(value["ReturnRowCounts"].asString());
-		sQLSlowRecordObject.executionStartTime = value["ExecutionStartTime"].asString();
-		items_.push_back(sQLSlowRecordObject);
+		SQLSlowRecord itemsObject;
+		if(!value["HostAddress"].isNull())
+			itemsObject.hostAddress = value["HostAddress"].asString();
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["SQLText"].isNull())
+			itemsObject.sQLText = value["SQLText"].asString();
+		if(!value["QueryTimes"].isNull())
+			itemsObject.queryTimes = std::stol(value["QueryTimes"].asString());
+		if(!value["LockTimes"].isNull())
+			itemsObject.lockTimes = std::stol(value["LockTimes"].asString());
+		if(!value["ParseRowCounts"].isNull())
+			itemsObject.parseRowCounts = std::stol(value["ParseRowCounts"].asString());
+		if(!value["ReturnRowCounts"].isNull())
+			itemsObject.returnRowCounts = std::stol(value["ReturnRowCounts"].asString());
+		if(!value["ExecutionStartTime"].isNull())
+			itemsObject.executionStartTime = value["ExecutionStartTime"].asString();
+		items_.push_back(itemsObject);
 	}
-	engine_ = value["Engine"].asString();
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -66,19 +78,9 @@ int DescribeSlowLogRecordsResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeSlowLogRecordsResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeSlowLogRecordsResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeSlowLogRecordsResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeSlowLogRecordsResult::getPageNumber()const
@@ -86,18 +88,13 @@ int DescribeSlowLogRecordsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeSlowLogRecordsResult::setPageNumber(int pageNumber)
+std::vector<DescribeSlowLogRecordsResult::SQLSlowRecord> DescribeSlowLogRecordsResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 
 std::string DescribeSlowLogRecordsResult::getEngine()const
 {
 	return engine_;
-}
-
-void DescribeSlowLogRecordsResult::setEngine(const std::string& engine)
-{
-	engine_ = engine;
 }
 

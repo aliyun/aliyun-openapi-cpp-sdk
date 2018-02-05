@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/AddTagsToResourceRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::AddTagsToResourceRequest;
 
 AddTagsToResourceRequest::AddTagsToResourceRequest() :
-	RdsRequest("AddTagsToResource")
+	RpcServiceRequest("rds", "2014-08-15", "AddTagsToResource")
 {}
 
 AddTagsToResourceRequest::~AddTagsToResourceRequest()

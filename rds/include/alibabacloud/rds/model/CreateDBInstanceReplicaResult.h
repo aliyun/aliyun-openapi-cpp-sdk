@@ -38,13 +38,9 @@ namespace AlibabaCloud
 				explicit CreateDBInstanceReplicaResult(const std::string &payload);
 				~CreateDBInstanceReplicaResult();
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				long getOrderId()const;
-				void setOrderId(long orderId);
 				std::string getWorkflowId()const;
-				void setWorkflowId(const std::string& workflowId);
 				std::string getReplicaId()const;
-				void setReplicaId(const std::string& replicaId);
 
 			protected:
 				void parse(const std::string &payload);

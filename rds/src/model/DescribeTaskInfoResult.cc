@@ -40,18 +40,30 @@ void DescribeTaskInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	taskId_ = value["TaskId"].asString();
-	beginTime_ = value["BeginTime"].asString();
-	finishTime_ = value["FinishTime"].asString();
-	createTime_ = value["CreateTime"].asString();
-	taskAction_ = value["TaskAction"].asString();
-	dBName_ = value["DBName"].asString();
-	taskErrorCode_ = value["TaskErrorCode"].asString();
-	progress_ = value["Progress"].asString();
-	expectedFinishTime_ = value["ExpectedFinishTime"].asString();
-	taskErrorMessage_ = value["TaskErrorMessage"].asString();
-	progressInfo_ = value["ProgressInfo"].asString();
-	status_ = value["Status"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
+	if(!value["BeginTime"].isNull())
+		beginTime_ = value["BeginTime"].asString();
+	if(!value["FinishTime"].isNull())
+		finishTime_ = value["FinishTime"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["TaskAction"].isNull())
+		taskAction_ = value["TaskAction"].asString();
+	if(!value["DBName"].isNull())
+		dBName_ = value["DBName"].asString();
+	if(!value["TaskErrorCode"].isNull())
+		taskErrorCode_ = value["TaskErrorCode"].asString();
+	if(!value["Progress"].isNull())
+		progress_ = value["Progress"].asString();
+	if(!value["ExpectedFinishTime"].isNull())
+		expectedFinishTime_ = value["ExpectedFinishTime"].asString();
+	if(!value["TaskErrorMessage"].isNull())
+		taskErrorMessage_ = value["TaskErrorMessage"].asString();
+	if(!value["ProgressInfo"].isNull())
+		progressInfo_ = value["ProgressInfo"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 
 }
 
@@ -60,19 +72,9 @@ std::string DescribeTaskInfoResult::getExpectedFinishTime()const
 	return expectedFinishTime_;
 }
 
-void DescribeTaskInfoResult::setExpectedFinishTime(const std::string& expectedFinishTime)
-{
-	expectedFinishTime_ = expectedFinishTime;
-}
-
 std::string DescribeTaskInfoResult::getStatus()const
 {
 	return status_;
-}
-
-void DescribeTaskInfoResult::setStatus(const std::string& status)
-{
-	status_ = status;
 }
 
 std::string DescribeTaskInfoResult::getProgress()const
@@ -80,19 +82,9 @@ std::string DescribeTaskInfoResult::getProgress()const
 	return progress_;
 }
 
-void DescribeTaskInfoResult::setProgress(const std::string& progress)
-{
-	progress_ = progress;
-}
-
 std::string DescribeTaskInfoResult::getTaskId()const
 {
 	return taskId_;
-}
-
-void DescribeTaskInfoResult::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
 }
 
 std::string DescribeTaskInfoResult::getFinishTime()const
@@ -100,19 +92,9 @@ std::string DescribeTaskInfoResult::getFinishTime()const
 	return finishTime_;
 }
 
-void DescribeTaskInfoResult::setFinishTime(const std::string& finishTime)
-{
-	finishTime_ = finishTime;
-}
-
 std::string DescribeTaskInfoResult::getTaskAction()const
 {
 	return taskAction_;
-}
-
-void DescribeTaskInfoResult::setTaskAction(const std::string& taskAction)
-{
-	taskAction_ = taskAction;
 }
 
 std::string DescribeTaskInfoResult::getCreateTime()const
@@ -120,19 +102,9 @@ std::string DescribeTaskInfoResult::getCreateTime()const
 	return createTime_;
 }
 
-void DescribeTaskInfoResult::setCreateTime(const std::string& createTime)
-{
-	createTime_ = createTime;
-}
-
 std::string DescribeTaskInfoResult::getProgressInfo()const
 {
 	return progressInfo_;
-}
-
-void DescribeTaskInfoResult::setProgressInfo(const std::string& progressInfo)
-{
-	progressInfo_ = progressInfo;
 }
 
 std::string DescribeTaskInfoResult::getBeginTime()const
@@ -140,19 +112,9 @@ std::string DescribeTaskInfoResult::getBeginTime()const
 	return beginTime_;
 }
 
-void DescribeTaskInfoResult::setBeginTime(const std::string& beginTime)
-{
-	beginTime_ = beginTime;
-}
-
 std::string DescribeTaskInfoResult::getDBName()const
 {
 	return dBName_;
-}
-
-void DescribeTaskInfoResult::setDBName(const std::string& dBName)
-{
-	dBName_ = dBName;
 }
 
 std::string DescribeTaskInfoResult::getTaskErrorCode()const
@@ -160,18 +122,8 @@ std::string DescribeTaskInfoResult::getTaskErrorCode()const
 	return taskErrorCode_;
 }
 
-void DescribeTaskInfoResult::setTaskErrorCode(const std::string& taskErrorCode)
-{
-	taskErrorCode_ = taskErrorCode;
-}
-
 std::string DescribeTaskInfoResult::getTaskErrorMessage()const
 {
 	return taskErrorMessage_;
-}
-
-void DescribeTaskInfoResult::setTaskErrorMessage(const std::string& taskErrorMessage)
-{
-	taskErrorMessage_ = taskErrorMessage;
 }
 

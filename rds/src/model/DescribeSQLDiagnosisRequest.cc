@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeSQLDiagnosisRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeSQLDiagnosisRequest;
 
 DescribeSQLDiagnosisRequest::DescribeSQLDiagnosisRequest() :
-	RdsRequest("DescribeSQLDiagnosis")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeSQLDiagnosis")
 {}
 
 DescribeSQLDiagnosisRequest::~DescribeSQLDiagnosisRequest()

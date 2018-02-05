@@ -40,8 +40,10 @@ void DescribeDBInstanceUserResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	dBInstanceName_ = value["DBInstanceName"].asString();
-	internalDBFlag_ = value["InternalDBFlag"].asString();
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["InternalDBFlag"].isNull())
+		internalDBFlag_ = value["InternalDBFlag"].asString();
 
 }
 
@@ -50,18 +52,8 @@ std::string DescribeDBInstanceUserResult::getInternalDBFlag()const
 	return internalDBFlag_;
 }
 
-void DescribeDBInstanceUserResult::setInternalDBFlag(const std::string& internalDBFlag)
-{
-	internalDBFlag_ = internalDBFlag;
-}
-
 std::string DescribeDBInstanceUserResult::getDBInstanceName()const
 {
 	return dBInstanceName_;
-}
-
-void DescribeDBInstanceUserResult::setDBInstanceName(const std::string& dBInstanceName)
-{
-	dBInstanceName_ = dBInstanceName;
 }
 

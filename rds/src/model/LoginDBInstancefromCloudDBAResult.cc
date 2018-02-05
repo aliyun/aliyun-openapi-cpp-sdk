@@ -40,8 +40,10 @@ void LoginDBInstancefromCloudDBAResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	listData_ = value["ListData"].asString();
-	attrData_ = value["AttrData"].asString();
+	if(!value["ListData"].isNull())
+		listData_ = value["ListData"].asString();
+	if(!value["AttrData"].isNull())
+		attrData_ = value["AttrData"].asString();
 
 }
 
@@ -50,18 +52,8 @@ std::string LoginDBInstancefromCloudDBAResult::getAttrData()const
 	return attrData_;
 }
 
-void LoginDBInstancefromCloudDBAResult::setAttrData(const std::string& attrData)
-{
-	attrData_ = attrData;
-}
-
 std::string LoginDBInstancefromCloudDBAResult::getListData()const
 {
 	return listData_;
-}
-
-void LoginDBInstancefromCloudDBAResult::setListData(const std::string& listData)
-{
-	listData_ = listData;
 }
 

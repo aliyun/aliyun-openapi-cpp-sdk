@@ -43,21 +43,33 @@ void DescribeMigrateTasksResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["MigrateTask"];
 	for (auto value : allItems)
 	{
-		MigrateTask migrateTaskObject;
-		migrateTaskObject.dBName = value["DBName"].asString();
-		migrateTaskObject.migrateTaskId = value["MigrateTaskId"].asString();
-		migrateTaskObject.createTime = value["CreateTime"].asString();
-		migrateTaskObject.endTime = value["EndTime"].asString();
-		migrateTaskObject.backupMode = value["BackupMode"].asString();
-		migrateTaskObject.status = value["Status"].asString();
-		migrateTaskObject.isDBReplaced = value["IsDBReplaced"].asString();
-		migrateTaskObject.description = value["Description"].asString();
-		items_.push_back(migrateTaskObject);
+		MigrateTask itemsObject;
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["MigrateTaskId"].isNull())
+			itemsObject.migrateTaskId = value["MigrateTaskId"].asString();
+		if(!value["CreateTime"].isNull())
+			itemsObject.createTime = value["CreateTime"].asString();
+		if(!value["EndTime"].isNull())
+			itemsObject.endTime = value["EndTime"].asString();
+		if(!value["BackupMode"].isNull())
+			itemsObject.backupMode = value["BackupMode"].asString();
+		if(!value["Status"].isNull())
+			itemsObject.status = value["Status"].asString();
+		if(!value["IsDBReplaced"].isNull())
+			itemsObject.isDBReplaced = value["IsDBReplaced"].asString();
+		if(!value["Description"].isNull())
+			itemsObject.description = value["Description"].asString();
+		items_.push_back(itemsObject);
 	}
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -66,19 +78,9 @@ int DescribeMigrateTasksResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-void DescribeMigrateTasksResult::setTotalRecordCount(int totalRecordCount)
-{
-	totalRecordCount_ = totalRecordCount;
-}
-
 int DescribeMigrateTasksResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeMigrateTasksResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 std::string DescribeMigrateTasksResult::getDBInstanceId()const
@@ -86,18 +88,13 @@ std::string DescribeMigrateTasksResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void DescribeMigrateTasksResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-}
-
 int DescribeMigrateTasksResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeMigrateTasksResult::setPageNumber(int pageNumber)
+std::vector<DescribeMigrateTasksResult::MigrateTask> DescribeMigrateTasksResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

@@ -49,31 +49,18 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceNetworkDetailResult(const std::string &payload);
 				~DescribeDBInstanceNetworkDetailResult();
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getNetworkLatency()const;
-				void setNetworkLatency(const std::string& networkLatency);
 				std::string getNetworkTrafficOut()const;
-				void setNetworkTrafficOut(const std::string& networkTrafficOut);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::string getNetworkRequest()const;
-				void setNetworkRequest(const std::string& networkRequest);
 				std::string getAbortedConnection()const;
-				void setAbortedConnection(const std::string& abortedConnection);
 				std::string getBackendLatency()const;
-				void setBackendLatency(const std::string& backendLatency);
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getActiveConnection()const;
-				void setActiveConnection(const std::string& activeConnection);
 				std::string getNetworkErrors()const;
-				void setNetworkErrors(const std::string& networkErrors);
 				std::string getNewConnection()const;
-				void setNewConnection(const std::string& newConnection);
 				std::string getNetworkTrafficIn()const;
-				void setNetworkTrafficIn(const std::string& networkTrafficIn);
 				std::vector<NetworkKey> getNetworkDetail()const;
-				void setNetworkDetail(const std::vector<NetworkKey>& networkDetail);
 
 			protected:
 				void parse(const std::string &payload);

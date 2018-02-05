@@ -47,13 +47,9 @@ namespace AlibabaCloud
 				explicit DescribeDBInstancesByPerformanceResult(const std::string &payload);
 				~DescribeDBInstancesByPerformanceResult();
 				int getTotalRecordCount()const;
-				void setTotalRecordCount(int totalRecordCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<DBInstancePerformance> getItems()const;
-				void setItems(const std::vector<DBInstancePerformance>& items);
 
 			protected:
 				void parse(const std::string &payload);

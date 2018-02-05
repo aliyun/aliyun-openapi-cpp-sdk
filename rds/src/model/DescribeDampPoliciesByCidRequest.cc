@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeDampPoliciesByCidRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeDampPoliciesByCidRequest;
 
 DescribeDampPoliciesByCidRequest::DescribeDampPoliciesByCidRequest() :
-	RdsRequest("DescribeDampPoliciesByCid")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeDampPoliciesByCid")
 {}
 
 DescribeDampPoliciesByCidRequest::~DescribeDampPoliciesByCidRequest()

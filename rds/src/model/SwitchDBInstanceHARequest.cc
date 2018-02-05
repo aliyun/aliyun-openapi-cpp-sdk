@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/SwitchDBInstanceHARequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::SwitchDBInstanceHARequest;
 
 SwitchDBInstanceHARequest::SwitchDBInstanceHARequest() :
-	RdsRequest("SwitchDBInstanceHA")
+	RpcServiceRequest("rds", "2014-08-15", "SwitchDBInstanceHA")
 {}
 
 SwitchDBInstanceHARequest::~SwitchDBInstanceHARequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeRenewalPriceRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeRenewalPriceRequest;
 
 DescribeRenewalPriceRequest::DescribeRenewalPriceRequest() :
-	RdsRequest("DescribeRenewalPrice")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeRenewalPrice")
 {}
 
 DescribeRenewalPriceRequest::~DescribeRenewalPriceRequest()

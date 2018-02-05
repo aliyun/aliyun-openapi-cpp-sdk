@@ -40,17 +40,13 @@ void CreateDiagnosticReportResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	reportId_ = value["ReportId"].asString();
+	if(!value["ReportId"].isNull())
+		reportId_ = value["ReportId"].asString();
 
 }
 
 std::string CreateDiagnosticReportResult::getReportId()const
 {
 	return reportId_;
-}
-
-void CreateDiagnosticReportResult::setReportId(const std::string& reportId)
-{
-	reportId_ = reportId;
 }
 

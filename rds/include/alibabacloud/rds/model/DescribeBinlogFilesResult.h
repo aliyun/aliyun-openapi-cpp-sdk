@@ -49,15 +49,10 @@ namespace AlibabaCloud
 				explicit DescribeBinlogFilesResult(const std::string &payload);
 				~DescribeBinlogFilesResult();
 				int getTotalRecordCount()const;
-				void setTotalRecordCount(int totalRecordCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<BinLogFile> getItems()const;
-				void setItems(const std::vector<BinLogFile>& items);
 				long getTotalFileSize()const;
-				void setTotalFileSize(long totalFileSize);
 
 			protected:
 				void parse(const std::string &payload);

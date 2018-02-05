@@ -40,15 +40,24 @@ void DescribeDBInstanceExtendAttributeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	canTempUpgrade_ = std::stoi(value["CanTempUpgrade"].asString());
-	tempUpgradeTimeStart_ = value["TempUpgradeTimeStart"].asString();
-	tempUpgradeTimeEnd_ = value["TempUpgradeTimeEnd"].asString();
-	tempUpgradeRecoveryTime_ = value["TempUpgradeRecoveryTime"].asString();
-	tempUpgradeRecoveryClass_ = value["TempUpgradeRecoveryClass"].asString();
-	tempUpgradeRecoveryCpu_ = std::stoi(value["TempUpgradeRecoveryCpu"].asString());
-	tempUpgradeRecoveryMemory_ = std::stoi(value["TempUpgradeRecoveryMemory"].asString());
-	tempUpgradeRecoveryMaxIOPS_ = value["TempUpgradeRecoveryMaxIOPS"].asString();
-	tempUpgradeRecoveryMaxConnections_ = value["TempUpgradeRecoveryMaxConnections"].asString();
+	if(!value["CanTempUpgrade"].isNull())
+		canTempUpgrade_ = value["CanTempUpgrade"].asString() == "true";
+	if(!value["TempUpgradeTimeStart"].isNull())
+		tempUpgradeTimeStart_ = value["TempUpgradeTimeStart"].asString();
+	if(!value["TempUpgradeTimeEnd"].isNull())
+		tempUpgradeTimeEnd_ = value["TempUpgradeTimeEnd"].asString();
+	if(!value["TempUpgradeRecoveryTime"].isNull())
+		tempUpgradeRecoveryTime_ = value["TempUpgradeRecoveryTime"].asString();
+	if(!value["TempUpgradeRecoveryClass"].isNull())
+		tempUpgradeRecoveryClass_ = value["TempUpgradeRecoveryClass"].asString();
+	if(!value["TempUpgradeRecoveryCpu"].isNull())
+		tempUpgradeRecoveryCpu_ = std::stoi(value["TempUpgradeRecoveryCpu"].asString());
+	if(!value["TempUpgradeRecoveryMemory"].isNull())
+		tempUpgradeRecoveryMemory_ = std::stoi(value["TempUpgradeRecoveryMemory"].asString());
+	if(!value["TempUpgradeRecoveryMaxIOPS"].isNull())
+		tempUpgradeRecoveryMaxIOPS_ = value["TempUpgradeRecoveryMaxIOPS"].asString();
+	if(!value["TempUpgradeRecoveryMaxConnections"].isNull())
+		tempUpgradeRecoveryMaxConnections_ = value["TempUpgradeRecoveryMaxConnections"].asString();
 
 }
 
@@ -57,19 +66,9 @@ std::string DescribeDBInstanceExtendAttributeResult::getTempUpgradeRecoveryMaxIO
 	return tempUpgradeRecoveryMaxIOPS_;
 }
 
-void DescribeDBInstanceExtendAttributeResult::setTempUpgradeRecoveryMaxIOPS(const std::string& tempUpgradeRecoveryMaxIOPS)
-{
-	tempUpgradeRecoveryMaxIOPS_ = tempUpgradeRecoveryMaxIOPS;
-}
-
 int DescribeDBInstanceExtendAttributeResult::getTempUpgradeRecoveryMemory()const
 {
 	return tempUpgradeRecoveryMemory_;
-}
-
-void DescribeDBInstanceExtendAttributeResult::setTempUpgradeRecoveryMemory(int tempUpgradeRecoveryMemory)
-{
-	tempUpgradeRecoveryMemory_ = tempUpgradeRecoveryMemory;
 }
 
 std::string DescribeDBInstanceExtendAttributeResult::getTempUpgradeRecoveryTime()const
@@ -77,19 +76,9 @@ std::string DescribeDBInstanceExtendAttributeResult::getTempUpgradeRecoveryTime(
 	return tempUpgradeRecoveryTime_;
 }
 
-void DescribeDBInstanceExtendAttributeResult::setTempUpgradeRecoveryTime(const std::string& tempUpgradeRecoveryTime)
-{
-	tempUpgradeRecoveryTime_ = tempUpgradeRecoveryTime;
-}
-
 std::string DescribeDBInstanceExtendAttributeResult::getTempUpgradeRecoveryMaxConnections()const
 {
 	return tempUpgradeRecoveryMaxConnections_;
-}
-
-void DescribeDBInstanceExtendAttributeResult::setTempUpgradeRecoveryMaxConnections(const std::string& tempUpgradeRecoveryMaxConnections)
-{
-	tempUpgradeRecoveryMaxConnections_ = tempUpgradeRecoveryMaxConnections;
 }
 
 int DescribeDBInstanceExtendAttributeResult::getTempUpgradeRecoveryCpu()const
@@ -97,19 +86,9 @@ int DescribeDBInstanceExtendAttributeResult::getTempUpgradeRecoveryCpu()const
 	return tempUpgradeRecoveryCpu_;
 }
 
-void DescribeDBInstanceExtendAttributeResult::setTempUpgradeRecoveryCpu(int tempUpgradeRecoveryCpu)
-{
-	tempUpgradeRecoveryCpu_ = tempUpgradeRecoveryCpu;
-}
-
 std::string DescribeDBInstanceExtendAttributeResult::getTempUpgradeTimeStart()const
 {
 	return tempUpgradeTimeStart_;
-}
-
-void DescribeDBInstanceExtendAttributeResult::setTempUpgradeTimeStart(const std::string& tempUpgradeTimeStart)
-{
-	tempUpgradeTimeStart_ = tempUpgradeTimeStart;
 }
 
 std::string DescribeDBInstanceExtendAttributeResult::getTempUpgradeTimeEnd()const
@@ -117,28 +96,13 @@ std::string DescribeDBInstanceExtendAttributeResult::getTempUpgradeTimeEnd()cons
 	return tempUpgradeTimeEnd_;
 }
 
-void DescribeDBInstanceExtendAttributeResult::setTempUpgradeTimeEnd(const std::string& tempUpgradeTimeEnd)
-{
-	tempUpgradeTimeEnd_ = tempUpgradeTimeEnd;
-}
-
 bool DescribeDBInstanceExtendAttributeResult::getCanTempUpgrade()const
 {
 	return canTempUpgrade_;
 }
 
-void DescribeDBInstanceExtendAttributeResult::setCanTempUpgrade(bool canTempUpgrade)
-{
-	canTempUpgrade_ = canTempUpgrade;
-}
-
 std::string DescribeDBInstanceExtendAttributeResult::getTempUpgradeRecoveryClass()const
 {
 	return tempUpgradeRecoveryClass_;
-}
-
-void DescribeDBInstanceExtendAttributeResult::setTempUpgradeRecoveryClass(const std::string& tempUpgradeRecoveryClass)
-{
-	tempUpgradeRecoveryClass_ = tempUpgradeRecoveryClass;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/StartDBInstanceDiagnoseRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::StartDBInstanceDiagnoseRequest;
 
 StartDBInstanceDiagnoseRequest::StartDBInstanceDiagnoseRequest() :
-	RdsRequest("StartDBInstanceDiagnose")
+	RpcServiceRequest("rds", "2014-08-15", "StartDBInstanceDiagnose")
 {}
 
 StartDBInstanceDiagnoseRequest::~StartDBInstanceDiagnoseRequest()

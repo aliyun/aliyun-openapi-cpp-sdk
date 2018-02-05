@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeDBInstanceByTagsRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeDBInstanceByTagsRequest;
 
 DescribeDBInstanceByTagsRequest::DescribeDBInstanceByTagsRequest() :
-	RdsRequest("DescribeDBInstanceByTags")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstanceByTags")
 {}
 
 DescribeDBInstanceByTagsRequest::~DescribeDBInstanceByTagsRequest()

@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateTempDBInstanceResult(const std::string &payload);
 				~CreateTempDBInstanceResult();
 				std::string getTempDBInstanceId()const;
-				void setTempDBInstanceId(const std::string& tempDBInstanceId);
 
 			protected:
 				void parse(const std::string &payload);

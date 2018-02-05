@@ -46,19 +46,12 @@ namespace AlibabaCloud
 				explicit DescribeModifyParameterLogResult(const std::string &payload);
 				~DescribeModifyParameterLogResult();
 				int getTotalRecordCount()const;
-				void setTotalRecordCount(int totalRecordCount);
 				std::string getEngineVersion()const;
-				void setEngineVersion(const std::string& engineVersion);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<ParameterChangeLog> getItems()const;
-				void setItems(const std::vector<ParameterChangeLog>& items);
 				std::string getEngine()const;
-				void setEngine(const std::string& engine);
 
 			protected:
 				void parse(const std::string &payload);

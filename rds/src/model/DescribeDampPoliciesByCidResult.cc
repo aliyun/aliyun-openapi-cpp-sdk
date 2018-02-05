@@ -43,11 +43,18 @@ void DescribeDampPoliciesByCidResult::parse(const std::string &payload)
 	auto allPolicies = value["Policies"]["Policy"];
 	for (auto value : allPolicies)
 	{
-		Policy policyObject;
-		policyObject.policyName = value["PolicyName"].asString();
-		policyObject.comment = value["Comment"].asString();
-		policies_.push_back(policyObject);
+		Policy policiesObject;
+		if(!value["PolicyName"].isNull())
+			policiesObject.policyName = value["PolicyName"].asString();
+		if(!value["Comment"].isNull())
+			policiesObject.comment = value["Comment"].asString();
+		policies_.push_back(policiesObject);
 	}
 
+}
+
+std::vector<DescribeDampPoliciesByCidResult::Policy> DescribeDampPoliciesByCidResult::getPolicies()const
+{
+	return policies_;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/CreateBackupRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::CreateBackupRequest;
 
 CreateBackupRequest::CreateBackupRequest() :
-	RdsRequest("CreateBackup")
+	RpcServiceRequest("rds", "2014-08-15", "CreateBackup")
 {}
 
 CreateBackupRequest::~CreateBackupRequest()

@@ -51,8 +51,3 @@ std::vector<std::string> DescribeDatabaseLockDiagnosisResult::getDeadLockList()c
 	return deadLockList_;
 }
 
-void DescribeDatabaseLockDiagnosisResult::setDeadLockList(const std::vector<std::string>& deadLockList)
-{
-	deadLockList_ = deadLockList;
-}
-

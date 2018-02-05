@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit LoginDBInstancefromCloudDBAResult(const std::string &payload);
 				~LoginDBInstancefromCloudDBAResult();
 				std::string getAttrData()const;
-				void setAttrData(const std::string& attrData);
 				std::string getListData()const;
-				void setListData(const std::string& listData);
 
 			protected:
 				void parse(const std::string &payload);

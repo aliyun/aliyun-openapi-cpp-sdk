@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/StartArchiveSQLLogRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::StartArchiveSQLLogRequest;
 
 StartArchiveSQLLogRequest::StartArchiveSQLLogRequest() :
-	RdsRequest("StartArchiveSQLLog")
+	RpcServiceRequest("rds", "2014-08-15", "StartArchiveSQLLog")
 {}
 
 StartArchiveSQLLogRequest::~StartArchiveSQLLogRequest()

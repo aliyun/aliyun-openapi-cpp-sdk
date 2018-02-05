@@ -43,14 +43,21 @@ void DescribeTagsResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["TagInfos"];
 	for (auto value : allItems)
 	{
-		TagInfos tagInfosObject;
-		tagInfosObject.tagKey = value["TagKey"].asString();
-		tagInfosObject.tagValue = value["TagValue"].asString();
+		TagInfos itemsObject;
+		if(!value["TagKey"].isNull())
+			itemsObject.tagKey = value["TagKey"].asString();
+		if(!value["TagValue"].isNull())
+			itemsObject.tagValue = value["TagValue"].asString();
 		auto allDBInstanceIds = value["DBInstanceIds"]["DBInstanceIds"];
 		for (auto value : allDBInstanceIds)
-			tagInfosObject.dBInstanceIds.push_back(value.asString());
-		items_.push_back(tagInfosObject);
+			itemsObject.dBInstanceIds.push_back(value.asString());
+		items_.push_back(itemsObject);
 	}
 
+}
+
+std::vector<DescribeTagsResult::TagInfos> DescribeTagsResult::getItems()const
+{
+	return items_;
 }
 

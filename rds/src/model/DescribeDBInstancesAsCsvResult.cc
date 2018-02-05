@@ -43,52 +43,100 @@ void DescribeDBInstancesAsCsvResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["DBInstanceAttribute"];
 	for (auto value : allItems)
 	{
-		DBInstanceAttribute dBInstanceAttributeObject;
-		dBInstanceAttributeObject.insId = std::stoi(value["InsId"].asString());
-		dBInstanceAttributeObject.dBInstanceId = value["DBInstanceId"].asString();
-		dBInstanceAttributeObject.dBInstanceName = value["DBInstanceName"].asString();
-		dBInstanceAttributeObject.payType = value["PayType"].asString();
-		dBInstanceAttributeObject.dBInstanceClassType = value["DBInstanceClassType"].asString();
-		dBInstanceAttributeObject.dBInstanceType = value["DBInstanceType"].asString();
-		dBInstanceAttributeObject.regionId = value["RegionId"].asString();
-		dBInstanceAttributeObject.connectionString = value["ConnectionString"].asString();
-		dBInstanceAttributeObject.port = value["Port"].asString();
-		dBInstanceAttributeObject.engine = value["Engine"].asString();
-		dBInstanceAttributeObject.engineVersion = value["EngineVersion"].asString();
-		dBInstanceAttributeObject.dBInstanceClass = value["DBInstanceClass"].asString();
-		dBInstanceAttributeObject.dBInstanceMemory = std::stol(value["DBInstanceMemory"].asString());
-		dBInstanceAttributeObject.dBInstanceStorage = std::stoi(value["DBInstanceStorage"].asString());
-		dBInstanceAttributeObject.dBInstanceNetType = value["DBInstanceNetType"].asString();
-		dBInstanceAttributeObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
-		dBInstanceAttributeObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-		dBInstanceAttributeObject.lockMode = value["LockMode"].asString();
-		dBInstanceAttributeObject.lockReason = value["LockReason"].asString();
-		dBInstanceAttributeObject.readDelayTime = value["ReadDelayTime"].asString();
-		dBInstanceAttributeObject.dBMaxQuantity = std::stoi(value["DBMaxQuantity"].asString());
-		dBInstanceAttributeObject.accountMaxQuantity = std::stoi(value["AccountMaxQuantity"].asString());
-		dBInstanceAttributeObject.creationTime = value["CreationTime"].asString();
-		dBInstanceAttributeObject.expireTime = value["ExpireTime"].asString();
-		dBInstanceAttributeObject.maintainTime = value["MaintainTime"].asString();
-		dBInstanceAttributeObject.availabilityValue = value["AvailabilityValue"].asString();
-		dBInstanceAttributeObject.maxIOPS = std::stoi(value["MaxIOPS"].asString());
-		dBInstanceAttributeObject.maxConnections = std::stoi(value["MaxConnections"].asString());
-		dBInstanceAttributeObject.masterInstanceId = value["MasterInstanceId"].asString();
-		dBInstanceAttributeObject.dBInstanceCPU = value["DBInstanceCPU"].asString();
-		dBInstanceAttributeObject.incrementSourceDBInstanceId = value["IncrementSourceDBInstanceId"].asString();
-		dBInstanceAttributeObject.guardDBInstanceId = value["GuardDBInstanceId"].asString();
-		dBInstanceAttributeObject.tempDBInstanceId = value["TempDBInstanceId"].asString();
-		dBInstanceAttributeObject.securityIPList = value["SecurityIPList"].asString();
-		dBInstanceAttributeObject.zoneId = value["ZoneId"].asString();
-		dBInstanceAttributeObject.instanceNetworkType = value["InstanceNetworkType"].asString();
-		dBInstanceAttributeObject.category = value["Category"].asString();
-		dBInstanceAttributeObject.accountType = value["AccountType"].asString();
-		dBInstanceAttributeObject.supportUpgradeAccountType = value["SupportUpgradeAccountType"].asString();
-		dBInstanceAttributeObject.vpcId = value["VpcId"].asString();
-		dBInstanceAttributeObject.vSwitchId = value["VSwitchId"].asString();
-		dBInstanceAttributeObject.connectionMode = value["ConnectionMode"].asString();
-		dBInstanceAttributeObject.tags = value["Tags"].asString();
-		items_.push_back(dBInstanceAttributeObject);
+		DBInstanceAttribute itemsObject;
+		if(!value["InsId"].isNull())
+			itemsObject.insId = std::stoi(value["InsId"].asString());
+		if(!value["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
+		if(!value["DBInstanceName"].isNull())
+			itemsObject.dBInstanceName = value["DBInstanceName"].asString();
+		if(!value["PayType"].isNull())
+			itemsObject.payType = value["PayType"].asString();
+		if(!value["DBInstanceClassType"].isNull())
+			itemsObject.dBInstanceClassType = value["DBInstanceClassType"].asString();
+		if(!value["DBInstanceType"].isNull())
+			itemsObject.dBInstanceType = value["DBInstanceType"].asString();
+		if(!value["RegionId"].isNull())
+			itemsObject.regionId = value["RegionId"].asString();
+		if(!value["ConnectionString"].isNull())
+			itemsObject.connectionString = value["ConnectionString"].asString();
+		if(!value["Port"].isNull())
+			itemsObject.port = value["Port"].asString();
+		if(!value["Engine"].isNull())
+			itemsObject.engine = value["Engine"].asString();
+		if(!value["EngineVersion"].isNull())
+			itemsObject.engineVersion = value["EngineVersion"].asString();
+		if(!value["DBInstanceClass"].isNull())
+			itemsObject.dBInstanceClass = value["DBInstanceClass"].asString();
+		if(!value["DBInstanceMemory"].isNull())
+			itemsObject.dBInstanceMemory = std::stol(value["DBInstanceMemory"].asString());
+		if(!value["DBInstanceStorage"].isNull())
+			itemsObject.dBInstanceStorage = std::stoi(value["DBInstanceStorage"].asString());
+		if(!value["DBInstanceNetType"].isNull())
+			itemsObject.dBInstanceNetType = value["DBInstanceNetType"].asString();
+		if(!value["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
+		if(!value["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
+		if(!value["LockMode"].isNull())
+			itemsObject.lockMode = value["LockMode"].asString();
+		if(!value["LockReason"].isNull())
+			itemsObject.lockReason = value["LockReason"].asString();
+		if(!value["ReadDelayTime"].isNull())
+			itemsObject.readDelayTime = value["ReadDelayTime"].asString();
+		if(!value["DBMaxQuantity"].isNull())
+			itemsObject.dBMaxQuantity = std::stoi(value["DBMaxQuantity"].asString());
+		if(!value["AccountMaxQuantity"].isNull())
+			itemsObject.accountMaxQuantity = std::stoi(value["AccountMaxQuantity"].asString());
+		if(!value["CreationTime"].isNull())
+			itemsObject.creationTime = value["CreationTime"].asString();
+		if(!value["ExpireTime"].isNull())
+			itemsObject.expireTime = value["ExpireTime"].asString();
+		if(!value["MaintainTime"].isNull())
+			itemsObject.maintainTime = value["MaintainTime"].asString();
+		if(!value["AvailabilityValue"].isNull())
+			itemsObject.availabilityValue = value["AvailabilityValue"].asString();
+		if(!value["MaxIOPS"].isNull())
+			itemsObject.maxIOPS = std::stoi(value["MaxIOPS"].asString());
+		if(!value["MaxConnections"].isNull())
+			itemsObject.maxConnections = std::stoi(value["MaxConnections"].asString());
+		if(!value["MasterInstanceId"].isNull())
+			itemsObject.masterInstanceId = value["MasterInstanceId"].asString();
+		if(!value["DBInstanceCPU"].isNull())
+			itemsObject.dBInstanceCPU = value["DBInstanceCPU"].asString();
+		if(!value["IncrementSourceDBInstanceId"].isNull())
+			itemsObject.incrementSourceDBInstanceId = value["IncrementSourceDBInstanceId"].asString();
+		if(!value["GuardDBInstanceId"].isNull())
+			itemsObject.guardDBInstanceId = value["GuardDBInstanceId"].asString();
+		if(!value["TempDBInstanceId"].isNull())
+			itemsObject.tempDBInstanceId = value["TempDBInstanceId"].asString();
+		if(!value["SecurityIPList"].isNull())
+			itemsObject.securityIPList = value["SecurityIPList"].asString();
+		if(!value["ZoneId"].isNull())
+			itemsObject.zoneId = value["ZoneId"].asString();
+		if(!value["InstanceNetworkType"].isNull())
+			itemsObject.instanceNetworkType = value["InstanceNetworkType"].asString();
+		if(!value["Category"].isNull())
+			itemsObject.category = value["Category"].asString();
+		if(!value["AccountType"].isNull())
+			itemsObject.accountType = value["AccountType"].asString();
+		if(!value["SupportUpgradeAccountType"].isNull())
+			itemsObject.supportUpgradeAccountType = value["SupportUpgradeAccountType"].asString();
+		if(!value["VpcId"].isNull())
+			itemsObject.vpcId = value["VpcId"].asString();
+		if(!value["VSwitchId"].isNull())
+			itemsObject.vSwitchId = value["VSwitchId"].asString();
+		if(!value["ConnectionMode"].isNull())
+			itemsObject.connectionMode = value["ConnectionMode"].asString();
+		if(!value["Tags"].isNull())
+			itemsObject.tags = value["Tags"].asString();
+		items_.push_back(itemsObject);
 	}
 
+}
+
+std::vector<DescribeDBInstancesAsCsvResult::DBInstanceAttribute> DescribeDBInstancesAsCsvResult::getItems()const
+{
+	return items_;
 }
 

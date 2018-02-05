@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/ModifyDBInstanceTDERequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::ModifyDBInstanceTDERequest;
 
 ModifyDBInstanceTDERequest::ModifyDBInstanceTDERequest() :
-	RdsRequest("ModifyDBInstanceTDE")
+	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceTDE")
 {}
 
 ModifyDBInstanceTDERequest::~ModifyDBInstanceTDERequest()

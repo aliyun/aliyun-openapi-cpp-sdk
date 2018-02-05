@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DescribeModifyParameterLogRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DescribeModifyParameterLogRequest;
 
 DescribeModifyParameterLogRequest::DescribeModifyParameterLogRequest() :
-	RdsRequest("DescribeModifyParameterLog")
+	RpcServiceRequest("rds", "2014-08-15", "DescribeModifyParameterLog")
 {}
 
 DescribeModifyParameterLogRequest::~DescribeModifyParameterLogRequest()

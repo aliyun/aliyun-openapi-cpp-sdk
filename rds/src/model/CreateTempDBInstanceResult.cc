@@ -40,17 +40,13 @@ void CreateTempDBInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	tempDBInstanceId_ = value["TempDBInstanceId"].asString();
+	if(!value["TempDBInstanceId"].isNull())
+		tempDBInstanceId_ = value["TempDBInstanceId"].asString();
 
 }
 
 std::string CreateTempDBInstanceResult::getTempDBInstanceId()const
 {
 	return tempDBInstanceId_;
-}
-
-void CreateTempDBInstanceResult::setTempDBInstanceId(const std::string& tempDBInstanceId)
-{
-	tempDBInstanceId_ = tempDBInstanceId;
 }
 

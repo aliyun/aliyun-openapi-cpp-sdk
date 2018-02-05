@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/DeleteBackupRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::DeleteBackupRequest;
 
 DeleteBackupRequest::DeleteBackupRequest() :
-	RdsRequest("DeleteBackup")
+	RpcServiceRequest("rds", "2014-08-15", "DeleteBackup")
 {}
 
 DeleteBackupRequest::~DeleteBackupRequest()

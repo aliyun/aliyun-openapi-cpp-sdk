@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/GrantAccountPrivilegeRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::GrantAccountPrivilegeRequest;
 
 GrantAccountPrivilegeRequest::GrantAccountPrivilegeRequest() :
-	RdsRequest("GrantAccountPrivilege")
+	RpcServiceRequest("rds", "2014-08-15", "GrantAccountPrivilege")
 {}
 
 GrantAccountPrivilegeRequest::~GrantAccountPrivilegeRequest()

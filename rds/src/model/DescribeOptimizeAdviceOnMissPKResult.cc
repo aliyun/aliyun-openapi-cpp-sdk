@@ -43,14 +43,19 @@ void DescribeOptimizeAdviceOnMissPKResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["AdviceOnMissPK"];
 	for (auto value : allItems)
 	{
-		AdviceOnMissPK adviceOnMissPKObject;
-		adviceOnMissPKObject.dBName = value["DBName"].asString();
-		adviceOnMissPKObject.tableName = value["TableName"].asString();
-		items_.push_back(adviceOnMissPKObject);
+		AdviceOnMissPK itemsObject;
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["TableName"].isNull())
+			itemsObject.tableName = value["TableName"].asString();
+		items_.push_back(itemsObject);
 	}
-	totalRecordsCount_ = std::stoi(value["TotalRecordsCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordsCount"].isNull())
+		totalRecordsCount_ = std::stoi(value["TotalRecordsCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -59,19 +64,9 @@ int DescribeOptimizeAdviceOnMissPKResult::getTotalRecordsCount()const
 	return totalRecordsCount_;
 }
 
-void DescribeOptimizeAdviceOnMissPKResult::setTotalRecordsCount(int totalRecordsCount)
-{
-	totalRecordsCount_ = totalRecordsCount;
-}
-
 int DescribeOptimizeAdviceOnMissPKResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeOptimizeAdviceOnMissPKResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 int DescribeOptimizeAdviceOnMissPKResult::getPageNumber()const
@@ -79,8 +74,8 @@ int DescribeOptimizeAdviceOnMissPKResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeOptimizeAdviceOnMissPKResult::setPageNumber(int pageNumber)
+std::vector<DescribeOptimizeAdviceOnMissPKResult::AdviceOnMissPK> DescribeOptimizeAdviceOnMissPKResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

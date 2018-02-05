@@ -43,17 +43,25 @@ void DescribeOptimizeAdviceOnMissIndexResult::parse(const std::string &payload)
 	auto allItems = value["Items"]["AdviceOnMissIndex"];
 	for (auto value : allItems)
 	{
-		AdviceOnMissIndex adviceOnMissIndexObject;
-		adviceOnMissIndexObject.dBName = value["DBName"].asString();
-		adviceOnMissIndexObject.tableName = value["TableName"].asString();
-		adviceOnMissIndexObject.queryColumn = value["QueryColumn"].asString();
-		adviceOnMissIndexObject.sQLText = value["SQLText"].asString();
-		items_.push_back(adviceOnMissIndexObject);
+		AdviceOnMissIndex itemsObject;
+		if(!value["DBName"].isNull())
+			itemsObject.dBName = value["DBName"].asString();
+		if(!value["TableName"].isNull())
+			itemsObject.tableName = value["TableName"].asString();
+		if(!value["QueryColumn"].isNull())
+			itemsObject.queryColumn = value["QueryColumn"].asString();
+		if(!value["SQLText"].isNull())
+			itemsObject.sQLText = value["SQLText"].asString();
+		items_.push_back(itemsObject);
 	}
-	dBInstanceId_ = value["DBInstanceId"].asString();
-	totalRecordsCount_ = std::stoi(value["TotalRecordsCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["TotalRecordsCount"].isNull())
+		totalRecordsCount_ = std::stoi(value["TotalRecordsCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
@@ -62,19 +70,9 @@ int DescribeOptimizeAdviceOnMissIndexResult::getTotalRecordsCount()const
 	return totalRecordsCount_;
 }
 
-void DescribeOptimizeAdviceOnMissIndexResult::setTotalRecordsCount(int totalRecordsCount)
-{
-	totalRecordsCount_ = totalRecordsCount;
-}
-
 int DescribeOptimizeAdviceOnMissIndexResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-void DescribeOptimizeAdviceOnMissIndexResult::setPageRecordCount(int pageRecordCount)
-{
-	pageRecordCount_ = pageRecordCount;
 }
 
 std::string DescribeOptimizeAdviceOnMissIndexResult::getDBInstanceId()const
@@ -82,18 +80,13 @@ std::string DescribeOptimizeAdviceOnMissIndexResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
-void DescribeOptimizeAdviceOnMissIndexResult::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-}
-
 int DescribeOptimizeAdviceOnMissIndexResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeOptimizeAdviceOnMissIndexResult::setPageNumber(int pageNumber)
+std::vector<DescribeOptimizeAdviceOnMissIndexResult::AdviceOnMissIndex> DescribeOptimizeAdviceOnMissIndexResult::getItems()const
 {
-	pageNumber_ = pageNumber;
+	return items_;
 }
 

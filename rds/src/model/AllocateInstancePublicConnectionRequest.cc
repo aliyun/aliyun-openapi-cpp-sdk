@@ -16,11 +16,10 @@
 
 #include <alibabacloud/rds/model/AllocateInstancePublicConnectionRequest.h>
 
-using namespace AlibabaCloud::Rds;
-using namespace AlibabaCloud::Rds::Model;
+using AlibabaCloud::Rds::Model::AllocateInstancePublicConnectionRequest;
 
 AllocateInstancePublicConnectionRequest::AllocateInstancePublicConnectionRequest() :
-	RdsRequest("AllocateInstancePublicConnection")
+	RpcServiceRequest("rds", "2014-08-15", "AllocateInstancePublicConnection")
 {}
 
 AllocateInstancePublicConnectionRequest::~AllocateInstancePublicConnectionRequest()

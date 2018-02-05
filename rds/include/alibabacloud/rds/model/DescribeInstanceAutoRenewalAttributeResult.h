@@ -46,13 +46,9 @@ namespace AlibabaCloud
 				explicit DescribeInstanceAutoRenewalAttributeResult(const std::string &payload);
 				~DescribeInstanceAutoRenewalAttributeResult();
 				int getTotalRecordCount()const;
-				void setTotalRecordCount(int totalRecordCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<Item> getItems()const;
-				void setItems(const std::vector<Item>& items);
 
 			protected:
 				void parse(const std::string &payload);

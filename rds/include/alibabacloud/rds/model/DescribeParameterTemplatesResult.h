@@ -47,13 +47,9 @@ namespace AlibabaCloud
 				explicit DescribeParameterTemplatesResult(const std::string &payload);
 				~DescribeParameterTemplatesResult();
 				std::string getParameterCount()const;
-				void setParameterCount(const std::string& parameterCount);
 				std::vector<TemplateRecord> getParameters()const;
-				void setParameters(const std::vector<TemplateRecord>& parameters);
 				std::string getEngineVersion()const;
-				void setEngineVersion(const std::string& engineVersion);
 				std::string getEngine()const;
-				void setEngine(const std::string& engine);
 
 			protected:
 				void parse(const std::string &payload);

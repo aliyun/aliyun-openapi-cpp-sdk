@@ -49,21 +49,13 @@ namespace AlibabaCloud
 				explicit DescribeMigrateTasksForSQLServerResult(const std::string &payload);
 				~DescribeMigrateTasksForSQLServerResult();
 				int getTotalRecordCount()const;
-				void setTotalRecordCount(int totalRecordCount);
 				int getPageRecordCount()const;
-				void setPageRecordCount(int pageRecordCount);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDBInstanceID()const;
-				void setDBInstanceID(const std::string& dBInstanceID);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::vector<MigrateTask> getItems()const;
-				void setItems(const std::vector<MigrateTask>& items);
 				std::string getDBInstanceName()const;
-				void setDBInstanceName(const std::string& dBInstanceName);
 
 			protected:
 				void parse(const std::string &payload);

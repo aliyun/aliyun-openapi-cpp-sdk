@@ -40,10 +40,14 @@ void DescribeDBInstanceSSLResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	connectionString_ = value["ConnectionString"].asString();
-	sSLExpireTime_ = value["SSLExpireTime"].asString();
-	requireUpdate_ = value["RequireUpdate"].asString();
-	requireUpdateReason_ = value["RequireUpdateReason"].asString();
+	if(!value["ConnectionString"].isNull())
+		connectionString_ = value["ConnectionString"].asString();
+	if(!value["SSLExpireTime"].isNull())
+		sSLExpireTime_ = value["SSLExpireTime"].asString();
+	if(!value["RequireUpdate"].isNull())
+		requireUpdate_ = value["RequireUpdate"].asString();
+	if(!value["RequireUpdateReason"].isNull())
+		requireUpdateReason_ = value["RequireUpdateReason"].asString();
 
 }
 
@@ -52,19 +56,9 @@ std::string DescribeDBInstanceSSLResult::getSSLExpireTime()const
 	return sSLExpireTime_;
 }
 
-void DescribeDBInstanceSSLResult::setSSLExpireTime(const std::string& sSLExpireTime)
-{
-	sSLExpireTime_ = sSLExpireTime;
-}
-
 std::string DescribeDBInstanceSSLResult::getRequireUpdateReason()const
 {
 	return requireUpdateReason_;
-}
-
-void DescribeDBInstanceSSLResult::setRequireUpdateReason(const std::string& requireUpdateReason)
-{
-	requireUpdateReason_ = requireUpdateReason;
 }
 
 std::string DescribeDBInstanceSSLResult::getConnectionString()const
@@ -72,18 +66,8 @@ std::string DescribeDBInstanceSSLResult::getConnectionString()const
 	return connectionString_;
 }
 
-void DescribeDBInstanceSSLResult::setConnectionString(const std::string& connectionString)
-{
-	connectionString_ = connectionString;
-}
-
 std::string DescribeDBInstanceSSLResult::getRequireUpdate()const
 {
 	return requireUpdate_;
-}
-
-void DescribeDBInstanceSSLResult::setRequireUpdate(const std::string& requireUpdate)
-{
-	requireUpdate_ = requireUpdate;
 }
 

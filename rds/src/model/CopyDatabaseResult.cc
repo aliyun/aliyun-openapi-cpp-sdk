@@ -40,9 +40,12 @@ void CopyDatabaseResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	dBName_ = value["DBName"].asString();
-	dBStatus_ = value["DBStatus"].asString();
-	taskId_ = value["TaskId"].asString();
+	if(!value["DBName"].isNull())
+		dBName_ = value["DBName"].asString();
+	if(!value["DBStatus"].isNull())
+		dBStatus_ = value["DBStatus"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
 }
 
@@ -51,28 +54,13 @@ std::string CopyDatabaseResult::getTaskId()const
 	return taskId_;
 }
 
-void CopyDatabaseResult::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-}
-
 std::string CopyDatabaseResult::getDBName()const
 {
 	return dBName_;
 }
 
-void CopyDatabaseResult::setDBName(const std::string& dBName)
-{
-	dBName_ = dBName;
-}
-
 std::string CopyDatabaseResult::getDBStatus()const
 {
 	return dBStatus_;
-}
-
-void CopyDatabaseResult::setDBStatus(const std::string& dBStatus)
-{
-	dBStatus_ = dBStatus;
 }
 

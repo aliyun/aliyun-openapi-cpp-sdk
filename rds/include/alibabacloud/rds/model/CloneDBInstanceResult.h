@@ -38,13 +38,9 @@ namespace AlibabaCloud
 				explicit CloneDBInstanceResult(const std::string &payload);
 				~CloneDBInstanceResult();
 				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getPort()const;
-				void setPort(const std::string& port);
 				std::string getOrderId()const;
-				void setOrderId(const std::string& orderId);
 				std::string getConnectionString()const;
-				void setConnectionString(const std::string& connectionString);
 
 			protected:
 				void parse(const std::string &payload);

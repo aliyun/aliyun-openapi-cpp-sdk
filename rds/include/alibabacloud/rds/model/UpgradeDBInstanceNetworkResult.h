@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit UpgradeDBInstanceNetworkResult(const std::string &payload);
 				~UpgradeDBInstanceNetworkResult();
 				std::string getDBInstanceName()const;
-				void setDBInstanceName(const std::string& dBInstanceName);
 
 			protected:
 				void parse(const std::string &payload);

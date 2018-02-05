@@ -55,8 +55,10 @@ void DescribeResourceDiagnosisResult::parse(const std::string &payload)
 	auto allConnection = value["Connection"]["Detail"];
 	for (const auto &item : allConnection)
 		connection_.push_back(item.asString());
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -65,19 +67,9 @@ std::vector<std::string> DescribeResourceDiagnosisResult::getStorage()const
 	return storage_;
 }
 
-void DescribeResourceDiagnosisResult::setStorage(const std::vector<std::string>& storage)
-{
-	storage_ = storage;
-}
-
 std::string DescribeResourceDiagnosisResult::getEndTime()const
 {
 	return endTime_;
-}
-
-void DescribeResourceDiagnosisResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
 }
 
 std::vector<std::string> DescribeResourceDiagnosisResult::getMemory()const
@@ -85,19 +77,9 @@ std::vector<std::string> DescribeResourceDiagnosisResult::getMemory()const
 	return memory_;
 }
 
-void DescribeResourceDiagnosisResult::setMemory(const std::vector<std::string>& memory)
-{
-	memory_ = memory;
-}
-
 std::vector<std::string> DescribeResourceDiagnosisResult::getConnection()const
 {
 	return connection_;
-}
-
-void DescribeResourceDiagnosisResult::setConnection(const std::vector<std::string>& connection)
-{
-	connection_ = connection;
 }
 
 std::string DescribeResourceDiagnosisResult::getStartTime()const
@@ -105,28 +87,13 @@ std::string DescribeResourceDiagnosisResult::getStartTime()const
 	return startTime_;
 }
 
-void DescribeResourceDiagnosisResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-}
-
 std::vector<std::string> DescribeResourceDiagnosisResult::getCPU()const
 {
 	return cPU_;
 }
 
-void DescribeResourceDiagnosisResult::setCPU(const std::vector<std::string>& cPU)
-{
-	cPU_ = cPU;
-}
-
 std::vector<std::string> DescribeResourceDiagnosisResult::getIOPS()const
 {
 	return iOPS_;
-}
-
-void DescribeResourceDiagnosisResult::setIOPS(const std::vector<std::string>& iOPS)
-{
-	iOPS_ = iOPS;
 }
 
