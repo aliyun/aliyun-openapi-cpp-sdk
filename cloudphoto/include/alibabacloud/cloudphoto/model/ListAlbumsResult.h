@@ -62,17 +62,11 @@ namespace AlibabaCloud
 				explicit ListAlbumsResult(const std::string &payload);
 				~ListAlbumsResult();
 				std::string getNextCursor()const;
-				void setNextCursor(const std::string& nextCursor);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getAction()const;
-				void setAction(const std::string& action);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 				std::vector<Album> getAlbums()const;
-				void setAlbums(const std::vector<Album>& albums);
 
 			protected:
 				void parse(const std::string &payload);

@@ -38,13 +38,9 @@ namespace AlibabaCloud
 				explicit GetThumbnailResult(const std::string &payload);
 				~GetThumbnailResult();
 				std::string getAction()const;
-				void setAction(const std::string& action);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::string getThumbnailUrl()const;
-				void setThumbnailUrl(const std::string& thumbnailUrl);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 
 			protected:
 				void parse(const std::string &payload);

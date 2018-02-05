@@ -44,26 +44,44 @@ void RegisterPhotoResult::parse(const std::string &payload)
 	for (auto value : allPhoto)
 	{
 		Photo photoObject;
-		photoObject.id = std::stol(value["Id"].asString());
-		photoObject.title = value["Title"].asString();
-		photoObject.location = value["Location"].asString();
-		photoObject.fileId = value["FileId"].asString();
-		photoObject.state = value["State"].asString();
-		photoObject.md5 = value["Md5"].asString();
-		photoObject.isVideo = std::stoi(value["IsVideo"].asString());
-		photoObject.size = std::stol(value["Size"].asString());
-		photoObject.remark = value["Remark"].asString();
-		photoObject.width = std::stol(value["Width"].asString());
-		photoObject.height = std::stol(value["Height"].asString());
-		photoObject.ctime = std::stol(value["Ctime"].asString());
-		photoObject.mtime = std::stol(value["Mtime"].asString());
-		photoObject.takenAt = std::stol(value["TakenAt"].asString());
-		photoObject.shareExpireTime = std::stol(value["ShareExpireTime"].asString());
+		if(!value["Id"].isNull())
+			photoObject.id = std::stol(value["Id"].asString());
+		if(!value["Title"].isNull())
+			photoObject.title = value["Title"].asString();
+		if(!value["Location"].isNull())
+			photoObject.location = value["Location"].asString();
+		if(!value["FileId"].isNull())
+			photoObject.fileId = value["FileId"].asString();
+		if(!value["State"].isNull())
+			photoObject.state = value["State"].asString();
+		if(!value["Md5"].isNull())
+			photoObject.md5 = value["Md5"].asString();
+		if(!value["IsVideo"].isNull())
+			photoObject.isVideo = value["IsVideo"].asString() == "true";
+		if(!value["Size"].isNull())
+			photoObject.size = std::stol(value["Size"].asString());
+		if(!value["Remark"].isNull())
+			photoObject.remark = value["Remark"].asString();
+		if(!value["Width"].isNull())
+			photoObject.width = std::stol(value["Width"].asString());
+		if(!value["Height"].isNull())
+			photoObject.height = std::stol(value["Height"].asString());
+		if(!value["Ctime"].isNull())
+			photoObject.ctime = std::stol(value["Ctime"].asString());
+		if(!value["Mtime"].isNull())
+			photoObject.mtime = std::stol(value["Mtime"].asString());
+		if(!value["TakenAt"].isNull())
+			photoObject.takenAt = std::stol(value["TakenAt"].asString());
+		if(!value["ShareExpireTime"].isNull())
+			photoObject.shareExpireTime = std::stol(value["ShareExpireTime"].asString());
 		photo_.push_back(photoObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -72,28 +90,18 @@ std::string RegisterPhotoResult::getAction()const
 	return action_;
 }
 
-void RegisterPhotoResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string RegisterPhotoResult::getMessage()const
 {
 	return message_;
 }
 
-void RegisterPhotoResult::setMessage(const std::string& message)
+std::vector<RegisterPhotoResult::Photo> RegisterPhotoResult::getPhoto()const
 {
-	message_ = message;
+	return photo_;
 }
 
 std::string RegisterPhotoResult::getCode()const
 {
 	return code_;
-}
-
-void RegisterPhotoResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

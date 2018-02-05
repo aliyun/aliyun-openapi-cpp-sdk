@@ -44,16 +44,24 @@ void GetQuotaResult::parse(const std::string &payload)
 	for (auto value : allQuota)
 	{
 		Quota quotaObject;
-		quotaObject.totalQuota = std::stol(value["TotalQuota"].asString());
-		quotaObject.facesCount = std::stoi(value["FacesCount"].asString());
-		quotaObject.photosCount = std::stoi(value["PhotosCount"].asString());
-		quotaObject.usedQuota = std::stol(value["UsedQuota"].asString());
-		quotaObject.videosCount = std::stoi(value["VideosCount"].asString());
+		if(!value["TotalQuota"].isNull())
+			quotaObject.totalQuota = std::stol(value["TotalQuota"].asString());
+		if(!value["FacesCount"].isNull())
+			quotaObject.facesCount = std::stoi(value["FacesCount"].asString());
+		if(!value["PhotosCount"].isNull())
+			quotaObject.photosCount = std::stoi(value["PhotosCount"].asString());
+		if(!value["UsedQuota"].isNull())
+			quotaObject.usedQuota = std::stol(value["UsedQuota"].asString());
+		if(!value["VideosCount"].isNull())
+			quotaObject.videosCount = std::stoi(value["VideosCount"].asString());
 		quota_.push_back(quotaObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -62,9 +70,9 @@ std::string GetQuotaResult::getAction()const
 	return action_;
 }
 
-void GetQuotaResult::setAction(const std::string& action)
+std::vector<GetQuotaResult::Quota> GetQuotaResult::getQuota()const
 {
-	action_ = action;
+	return quota_;
 }
 
 std::string GetQuotaResult::getMessage()const
@@ -72,18 +80,8 @@ std::string GetQuotaResult::getMessage()const
 	return message_;
 }
 
-void GetQuotaResult::setMessage(const std::string& message)
-{
-	message_ = message;
-}
-
 std::string GetQuotaResult::getCode()const
 {
 	return code_;
-}
-
-void GetQuotaResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

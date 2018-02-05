@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/GetThumbnailsRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::GetThumbnailsRequest;
 
 GetThumbnailsRequest::GetThumbnailsRequest() :
-	CloudPhotoRequest("GetThumbnails")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "GetThumbnails")
 {}
 
 GetThumbnailsRequest::~GetThumbnailsRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/EditPhotosRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::EditPhotosRequest;
 
 EditPhotosRequest::EditPhotosRequest() :
-	CloudPhotoRequest("EditPhotos")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "EditPhotos")
 {}
 
 EditPhotosRequest::~EditPhotosRequest()

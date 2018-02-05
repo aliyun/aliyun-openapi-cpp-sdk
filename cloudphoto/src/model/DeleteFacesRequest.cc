@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/DeleteFacesRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::DeleteFacesRequest;
 
 DeleteFacesRequest::DeleteFacesRequest() :
-	CloudPhotoRequest("DeleteFaces")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "DeleteFaces")
 {}
 
 DeleteFacesRequest::~DeleteFacesRequest()

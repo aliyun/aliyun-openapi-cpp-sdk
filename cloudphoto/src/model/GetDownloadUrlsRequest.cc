@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/GetDownloadUrlsRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::GetDownloadUrlsRequest;
 
 GetDownloadUrlsRequest::GetDownloadUrlsRequest() :
-	CloudPhotoRequest("GetDownloadUrls")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "GetDownloadUrls")
 {}
 
 GetDownloadUrlsRequest::~GetDownloadUrlsRequest()

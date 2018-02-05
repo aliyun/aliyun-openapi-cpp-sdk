@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/GetPhotosByMd5sRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::GetPhotosByMd5sRequest;
 
 GetPhotosByMd5sRequest::GetPhotosByMd5sRequest() :
-	CloudPhotoRequest("GetPhotosByMd5s")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "GetPhotosByMd5s")
 {}
 
 GetPhotosByMd5sRequest::~GetPhotosByMd5sRequest()

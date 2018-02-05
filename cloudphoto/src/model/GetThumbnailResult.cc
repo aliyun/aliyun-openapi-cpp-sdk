@@ -40,10 +40,14 @@ void GetThumbnailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	thumbnailUrl_ = value["ThumbnailUrl"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["ThumbnailUrl"].isNull())
+		thumbnailUrl_ = value["ThumbnailUrl"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -52,19 +56,9 @@ std::string GetThumbnailResult::getAction()const
 	return action_;
 }
 
-void GetThumbnailResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string GetThumbnailResult::getMessage()const
 {
 	return message_;
-}
-
-void GetThumbnailResult::setMessage(const std::string& message)
-{
-	message_ = message;
 }
 
 std::string GetThumbnailResult::getThumbnailUrl()const
@@ -72,18 +66,8 @@ std::string GetThumbnailResult::getThumbnailUrl()const
 	return thumbnailUrl_;
 }
 
-void GetThumbnailResult::setThumbnailUrl(const std::string& thumbnailUrl)
-{
-	thumbnailUrl_ = thumbnailUrl;
-}
-
 std::string GetThumbnailResult::getCode()const
 {
 	return code_;
-}
-
-void GetThumbnailResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

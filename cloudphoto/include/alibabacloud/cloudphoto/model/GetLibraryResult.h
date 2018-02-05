@@ -59,13 +59,9 @@ namespace AlibabaCloud
 				explicit GetLibraryResult(const std::string &payload);
 				~GetLibraryResult();
 				std::string getAction()const;
-				void setAction(const std::string& action);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::vector<Library> getLibrary()const;
-				void setLibrary(const std::vector<Library>& library);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 
 			protected:
 				void parse(const std::string &payload);

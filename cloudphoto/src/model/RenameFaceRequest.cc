@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/RenameFaceRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::RenameFaceRequest;
 
 RenameFaceRequest::RenameFaceRequest() :
-	CloudPhotoRequest("RenameFace")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "RenameFace")
 {}
 
 RenameFaceRequest::~RenameFaceRequest()

@@ -44,13 +44,9 @@ namespace AlibabaCloud
 				explicit ListPhotoFacesResult(const std::string &payload);
 				~ListPhotoFacesResult();
 				std::string getAction()const;
-				void setAction(const std::string& action);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 				std::vector<Face> getFaces()const;
-				void setFaces(const std::vector<Face>& faces);
 
 			protected:
 				void parse(const std::string &payload);

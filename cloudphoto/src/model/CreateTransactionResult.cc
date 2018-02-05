@@ -48,21 +48,32 @@ void CreateTransactionResult::parse(const std::string &payload)
 		for (auto value : allUpload)
 		{
 			Transaction::Upload uploadObject;
-			uploadObject.bucket = value["Bucket"].asString();
-			uploadObject.fileId = value["FileId"].asString();
-			uploadObject.ossEndpoint = value["OssEndpoint"].asString();
-			uploadObject.objectKey = value["ObjectKey"].asString();
-			uploadObject.sessionId = value["SessionId"].asString();
-			uploadObject.accessKeyId = value["AccessKeyId"].asString();
-			uploadObject.accessKeySecret = value["AccessKeySecret"].asString();
-			uploadObject.stsToken = value["StsToken"].asString();
+			if(!value["Bucket"].isNull())
+				uploadObject.bucket = value["Bucket"].asString();
+			if(!value["FileId"].isNull())
+				uploadObject.fileId = value["FileId"].asString();
+			if(!value["OssEndpoint"].isNull())
+				uploadObject.ossEndpoint = value["OssEndpoint"].asString();
+			if(!value["ObjectKey"].isNull())
+				uploadObject.objectKey = value["ObjectKey"].asString();
+			if(!value["SessionId"].isNull())
+				uploadObject.sessionId = value["SessionId"].asString();
+			if(!value["AccessKeyId"].isNull())
+				uploadObject.accessKeyId = value["AccessKeyId"].asString();
+			if(!value["AccessKeySecret"].isNull())
+				uploadObject.accessKeySecret = value["AccessKeySecret"].asString();
+			if(!value["StsToken"].isNull())
+				uploadObject.stsToken = value["StsToken"].asString();
 			transactionObject.upload.push_back(uploadObject);
 		}
 		transaction_.push_back(transactionObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -71,9 +82,9 @@ std::string CreateTransactionResult::getAction()const
 	return action_;
 }
 
-void CreateTransactionResult::setAction(const std::string& action)
+std::vector<CreateTransactionResult::Transaction> CreateTransactionResult::getTransaction()const
 {
-	action_ = action;
+	return transaction_;
 }
 
 std::string CreateTransactionResult::getMessage()const
@@ -81,18 +92,8 @@ std::string CreateTransactionResult::getMessage()const
 	return message_;
 }
 
-void CreateTransactionResult::setMessage(const std::string& message)
-{
-	message_ = message;
-}
-
 std::string CreateTransactionResult::getCode()const
 {
 	return code_;
-}
-
-void CreateTransactionResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

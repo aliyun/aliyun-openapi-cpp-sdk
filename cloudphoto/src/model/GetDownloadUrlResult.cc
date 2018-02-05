@@ -40,10 +40,14 @@ void GetDownloadUrlResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	downloadUrl_ = value["DownloadUrl"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["DownloadUrl"].isNull())
+		downloadUrl_ = value["DownloadUrl"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -52,19 +56,9 @@ std::string GetDownloadUrlResult::getAction()const
 	return action_;
 }
 
-void GetDownloadUrlResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string GetDownloadUrlResult::getMessage()const
 {
 	return message_;
-}
-
-void GetDownloadUrlResult::setMessage(const std::string& message)
-{
-	message_ = message;
 }
 
 std::string GetDownloadUrlResult::getCode()const
@@ -72,18 +66,8 @@ std::string GetDownloadUrlResult::getCode()const
 	return code_;
 }
 
-void GetDownloadUrlResult::setCode(const std::string& code)
-{
-	code_ = code;
-}
-
 std::string GetDownloadUrlResult::getDownloadUrl()const
 {
 	return downloadUrl_;
-}
-
-void GetDownloadUrlResult::setDownloadUrl(const std::string& downloadUrl)
-{
-	downloadUrl_ = downloadUrl;
 }
 

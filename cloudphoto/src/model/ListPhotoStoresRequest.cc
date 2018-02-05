@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/ListPhotoStoresRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::ListPhotoStoresRequest;
 
 ListPhotoStoresRequest::ListPhotoStoresRequest() :
-	CloudPhotoRequest("ListPhotoStores")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "ListPhotoStores")
 {}
 
 ListPhotoStoresRequest::~ListPhotoStoresRequest()

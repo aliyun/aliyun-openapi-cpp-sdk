@@ -40,9 +40,12 @@ void CreatePhotoStoreResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -51,28 +54,13 @@ std::string CreatePhotoStoreResult::getAction()const
 	return action_;
 }
 
-void CreatePhotoStoreResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string CreatePhotoStoreResult::getMessage()const
 {
 	return message_;
 }
 
-void CreatePhotoStoreResult::setMessage(const std::string& message)
-{
-	message_ = message;
-}
-
 std::string CreatePhotoStoreResult::getCode()const
 {
 	return code_;
-}
-
-void CreatePhotoStoreResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

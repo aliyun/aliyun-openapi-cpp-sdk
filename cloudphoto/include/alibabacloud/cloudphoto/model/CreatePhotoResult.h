@@ -56,13 +56,9 @@ namespace AlibabaCloud
 				explicit CreatePhotoResult(const std::string &payload);
 				~CreatePhotoResult();
 				std::string getAction()const;
-				void setAction(const std::string& action);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::vector<Photo> getPhoto()const;
-				void setPhoto(const std::vector<Photo>& photo);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 
 			protected:
 				void parse(const std::string &payload);

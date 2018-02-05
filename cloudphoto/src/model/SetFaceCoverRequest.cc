@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/SetFaceCoverRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::SetFaceCoverRequest;
 
 SetFaceCoverRequest::SetFaceCoverRequest() :
-	CloudPhotoRequest("SetFaceCover")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "SetFaceCover")
 {}
 
 SetFaceCoverRequest::~SetFaceCoverRequest()

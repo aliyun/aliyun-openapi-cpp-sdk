@@ -43,33 +43,51 @@ void ListTagsResult::parse(const std::string &payload)
 	auto allTags = value["Tags"]["Tag"];
 	for (auto value : allTags)
 	{
-		Tag tagObject;
-		tagObject.id = std::stol(value["Id"].asString());
-		tagObject.name = value["Name"].asString();
-		tagObject.isSubTag = std::stoi(value["IsSubTag"].asString());
-		tagObject.parentTag = value["ParentTag"].asString();
+		Tag tagsObject;
+		if(!value["Id"].isNull())
+			tagsObject.id = std::stol(value["Id"].asString());
+		if(!value["Name"].isNull())
+			tagsObject.name = value["Name"].asString();
+		if(!value["IsSubTag"].isNull())
+			tagsObject.isSubTag = value["IsSubTag"].asString() == "true";
+		if(!value["ParentTag"].isNull())
+			tagsObject.parentTag = value["ParentTag"].asString();
 		auto allCover = value["Cover"];
 		for (auto value : allCover)
 		{
 			Tag::Cover coverObject;
-			coverObject.id = std::stol(value["Id"].asString());
-			coverObject.title = value["Title"].asString();
-			coverObject.fileId = value["FileId"].asString();
-			coverObject.state = value["State"].asString();
-			coverObject.md5 = value["Md5"].asString();
-			coverObject.isVideo = std::stoi(value["IsVideo"].asString());
-			coverObject.remark = value["Remark"].asString();
-			coverObject.width = std::stol(value["Width"].asString());
-			coverObject.height = std::stol(value["Height"].asString());
-			coverObject.ctime = std::stol(value["Ctime"].asString());
-			coverObject.mtime = std::stol(value["Mtime"].asString());
-			tagObject.cover.push_back(coverObject);
+			if(!value["Id"].isNull())
+				coverObject.id = std::stol(value["Id"].asString());
+			if(!value["Title"].isNull())
+				coverObject.title = value["Title"].asString();
+			if(!value["FileId"].isNull())
+				coverObject.fileId = value["FileId"].asString();
+			if(!value["State"].isNull())
+				coverObject.state = value["State"].asString();
+			if(!value["Md5"].isNull())
+				coverObject.md5 = value["Md5"].asString();
+			if(!value["IsVideo"].isNull())
+				coverObject.isVideo = value["IsVideo"].asString() == "true";
+			if(!value["Remark"].isNull())
+				coverObject.remark = value["Remark"].asString();
+			if(!value["Width"].isNull())
+				coverObject.width = std::stol(value["Width"].asString());
+			if(!value["Height"].isNull())
+				coverObject.height = std::stol(value["Height"].asString());
+			if(!value["Ctime"].isNull())
+				coverObject.ctime = std::stol(value["Ctime"].asString());
+			if(!value["Mtime"].isNull())
+				coverObject.mtime = std::stol(value["Mtime"].asString());
+			tagsObject.cover.push_back(coverObject);
 		}
-		tags_.push_back(tagObject);
+		tags_.push_back(tagsObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -78,19 +96,9 @@ std::string ListTagsResult::getAction()const
 	return action_;
 }
 
-void ListTagsResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string ListTagsResult::getMessage()const
 {
 	return message_;
-}
-
-void ListTagsResult::setMessage(const std::string& message)
-{
-	message_ = message;
 }
 
 std::string ListTagsResult::getCode()const
@@ -98,8 +106,8 @@ std::string ListTagsResult::getCode()const
 	return code_;
 }
 
-void ListTagsResult::setCode(const std::string& code)
+std::vector<ListTagsResult::Tag> ListTagsResult::getTags()const
 {
-	code_ = code;
+	return tags_;
 }
 

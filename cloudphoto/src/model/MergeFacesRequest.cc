@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/MergeFacesRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::MergeFacesRequest;
 
 MergeFacesRequest::MergeFacesRequest() :
-	CloudPhotoRequest("MergeFaces")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "MergeFaces")
 {}
 
 MergeFacesRequest::~MergeFacesRequest()

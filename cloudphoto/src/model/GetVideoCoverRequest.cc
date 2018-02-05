@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/GetVideoCoverRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::GetVideoCoverRequest;
 
 GetVideoCoverRequest::GetVideoCoverRequest() :
-	CloudPhotoRequest("GetVideoCover")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "GetVideoCover")
 {}
 
 GetVideoCoverRequest::~GetVideoCoverRequest()

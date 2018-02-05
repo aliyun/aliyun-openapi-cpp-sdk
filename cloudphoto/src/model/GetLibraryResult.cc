@@ -48,29 +48,42 @@ void GetLibraryResult::parse(const std::string &payload)
 		for (auto value : allQuota)
 		{
 			Library::Quota quotaObject;
-			quotaObject.totalQuota = std::stol(value["TotalQuota"].asString());
-			quotaObject.totalTrashQuota = std::stol(value["TotalTrashQuota"].asString());
-			quotaObject.facesCount = std::stoi(value["FacesCount"].asString());
-			quotaObject.photosCount = std::stoi(value["PhotosCount"].asString());
-			quotaObject.usedQuota = std::stol(value["UsedQuota"].asString());
-			quotaObject.videosCount = std::stoi(value["VideosCount"].asString());
-			quotaObject.activeSize = std::stol(value["ActiveSize"].asString());
-			quotaObject.inactiveSize = std::stol(value["InactiveSize"].asString());
+			if(!value["TotalQuota"].isNull())
+				quotaObject.totalQuota = std::stol(value["TotalQuota"].asString());
+			if(!value["TotalTrashQuota"].isNull())
+				quotaObject.totalTrashQuota = std::stol(value["TotalTrashQuota"].asString());
+			if(!value["FacesCount"].isNull())
+				quotaObject.facesCount = std::stoi(value["FacesCount"].asString());
+			if(!value["PhotosCount"].isNull())
+				quotaObject.photosCount = std::stoi(value["PhotosCount"].asString());
+			if(!value["UsedQuota"].isNull())
+				quotaObject.usedQuota = std::stol(value["UsedQuota"].asString());
+			if(!value["VideosCount"].isNull())
+				quotaObject.videosCount = std::stoi(value["VideosCount"].asString());
+			if(!value["ActiveSize"].isNull())
+				quotaObject.activeSize = std::stol(value["ActiveSize"].asString());
+			if(!value["InactiveSize"].isNull())
+				quotaObject.inactiveSize = std::stol(value["InactiveSize"].asString());
 			libraryObject.quota.push_back(quotaObject);
 		}
 		auto allAutoCleanConfig = value["AutoCleanConfig"];
 		for (auto value : allAutoCleanConfig)
 		{
 			Library::AutoCleanConfig autoCleanConfigObject;
-			autoCleanConfigObject.autoCleanEnabled = std::stoi(value["AutoCleanEnabled"].asString());
-			autoCleanConfigObject.autoCleanDays = std::stoi(value["AutoCleanDays"].asString());
+			if(!value["AutoCleanEnabled"].isNull())
+				autoCleanConfigObject.autoCleanEnabled = value["AutoCleanEnabled"].asString() == "true";
+			if(!value["AutoCleanDays"].isNull())
+				autoCleanConfigObject.autoCleanDays = std::stoi(value["AutoCleanDays"].asString());
 			libraryObject.autoCleanConfig.push_back(autoCleanConfigObject);
 		}
 		library_.push_back(libraryObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -79,28 +92,18 @@ std::string GetLibraryResult::getAction()const
 	return action_;
 }
 
-void GetLibraryResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string GetLibraryResult::getMessage()const
 {
 	return message_;
 }
 
-void GetLibraryResult::setMessage(const std::string& message)
+std::vector<GetLibraryResult::Library> GetLibraryResult::getLibrary()const
 {
-	message_ = message;
+	return library_;
 }
 
 std::string GetLibraryResult::getCode()const
 {
 	return code_;
-}
-
-void GetLibraryResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

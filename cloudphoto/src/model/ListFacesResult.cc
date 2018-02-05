@@ -43,41 +43,64 @@ void ListFacesResult::parse(const std::string &payload)
 	auto allFaces = value["Faces"]["Face"];
 	for (auto value : allFaces)
 	{
-		Face faceObject;
-		faceObject.id = std::stol(value["Id"].asString());
-		faceObject.name = value["Name"].asString();
-		faceObject.photosCount = std::stoi(value["PhotosCount"].asString());
-		faceObject.state = value["State"].asString();
-		faceObject.isMe = std::stoi(value["IsMe"].asString());
-		faceObject.ctime = std::stol(value["Ctime"].asString());
-		faceObject.mtime = std::stol(value["Mtime"].asString());
+		Face facesObject;
+		if(!value["Id"].isNull())
+			facesObject.id = std::stol(value["Id"].asString());
+		if(!value["Name"].isNull())
+			facesObject.name = value["Name"].asString();
+		if(!value["PhotosCount"].isNull())
+			facesObject.photosCount = std::stoi(value["PhotosCount"].asString());
+		if(!value["State"].isNull())
+			facesObject.state = value["State"].asString();
+		if(!value["IsMe"].isNull())
+			facesObject.isMe = value["IsMe"].asString() == "true";
+		if(!value["Ctime"].isNull())
+			facesObject.ctime = std::stol(value["Ctime"].asString());
+		if(!value["Mtime"].isNull())
+			facesObject.mtime = std::stol(value["Mtime"].asString());
 		auto allCover = value["Cover"];
 		for (auto value : allCover)
 		{
 			Face::Cover coverObject;
-			coverObject.id = std::stol(value["Id"].asString());
-			coverObject.title = value["Title"].asString();
-			coverObject.fileId = value["FileId"].asString();
-			coverObject.state = value["State"].asString();
-			coverObject.md5 = value["Md5"].asString();
-			coverObject.isVideo = std::stoi(value["IsVideo"].asString());
-			coverObject.width = std::stol(value["Width"].asString());
-			coverObject.height = std::stol(value["Height"].asString());
-			coverObject.ctime = std::stol(value["Ctime"].asString());
-			coverObject.mtime = std::stol(value["Mtime"].asString());
-			coverObject.remark = value["Remark"].asString();
-			faceObject.cover.push_back(coverObject);
+			if(!value["Id"].isNull())
+				coverObject.id = std::stol(value["Id"].asString());
+			if(!value["Title"].isNull())
+				coverObject.title = value["Title"].asString();
+			if(!value["FileId"].isNull())
+				coverObject.fileId = value["FileId"].asString();
+			if(!value["State"].isNull())
+				coverObject.state = value["State"].asString();
+			if(!value["Md5"].isNull())
+				coverObject.md5 = value["Md5"].asString();
+			if(!value["IsVideo"].isNull())
+				coverObject.isVideo = value["IsVideo"].asString() == "true";
+			if(!value["Width"].isNull())
+				coverObject.width = std::stol(value["Width"].asString());
+			if(!value["Height"].isNull())
+				coverObject.height = std::stol(value["Height"].asString());
+			if(!value["Ctime"].isNull())
+				coverObject.ctime = std::stol(value["Ctime"].asString());
+			if(!value["Mtime"].isNull())
+				coverObject.mtime = std::stol(value["Mtime"].asString());
+			if(!value["Remark"].isNull())
+				coverObject.remark = value["Remark"].asString();
+			facesObject.cover.push_back(coverObject);
 		}
 		auto allAxis = value["Axis"]["Axis"];
 		for (auto value : allAxis)
-			faceObject.axis.push_back(value.asString());
-		faces_.push_back(faceObject);
+			facesObject.axis.push_back(value.asString());
+		faces_.push_back(facesObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	nextCursor_ = value["NextCursor"].asString();
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["NextCursor"].isNull())
+		nextCursor_ = value["NextCursor"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -86,19 +109,9 @@ std::string ListFacesResult::getNextCursor()const
 	return nextCursor_;
 }
 
-void ListFacesResult::setNextCursor(const std::string& nextCursor)
-{
-	nextCursor_ = nextCursor;
-}
-
 int ListFacesResult::getTotalCount()const
 {
 	return totalCount_;
-}
-
-void ListFacesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
 }
 
 std::string ListFacesResult::getAction()const
@@ -106,19 +119,9 @@ std::string ListFacesResult::getAction()const
 	return action_;
 }
 
-void ListFacesResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string ListFacesResult::getMessage()const
 {
 	return message_;
-}
-
-void ListFacesResult::setMessage(const std::string& message)
-{
-	message_ = message;
 }
 
 std::string ListFacesResult::getCode()const
@@ -126,8 +129,8 @@ std::string ListFacesResult::getCode()const
 	return code_;
 }
 
-void ListFacesResult::setCode(const std::string& code)
+std::vector<ListFacesResult::Face> ListFacesResult::getFaces()const
 {
-	code_ = code;
+	return faces_;
 }
 

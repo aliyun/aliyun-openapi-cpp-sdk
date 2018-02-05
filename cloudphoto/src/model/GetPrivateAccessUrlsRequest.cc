@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/GetPrivateAccessUrlsRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::GetPrivateAccessUrlsRequest;
 
 GetPrivateAccessUrlsRequest::GetPrivateAccessUrlsRequest() :
-	CloudPhotoRequest("GetPrivateAccessUrls")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "GetPrivateAccessUrls")
 {}
 
 GetPrivateAccessUrlsRequest::~GetPrivateAccessUrlsRequest()

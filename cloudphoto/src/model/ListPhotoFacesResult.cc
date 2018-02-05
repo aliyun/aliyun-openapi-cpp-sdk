@@ -43,17 +43,22 @@ void ListPhotoFacesResult::parse(const std::string &payload)
 	auto allFaces = value["Faces"]["Face"];
 	for (auto value : allFaces)
 	{
-		Face faceObject;
-		faceObject.faceId = std::stol(value["FaceId"].asString());
-		faceObject.faceName = value["FaceName"].asString();
+		Face facesObject;
+		if(!value["FaceId"].isNull())
+			facesObject.faceId = std::stol(value["FaceId"].asString());
+		if(!value["FaceName"].isNull())
+			facesObject.faceName = value["FaceName"].asString();
 		auto allAxis = value["Axis"]["Axis"];
 		for (auto value : allAxis)
-			faceObject.axis.push_back(value.asString());
-		faces_.push_back(faceObject);
+			facesObject.axis.push_back(value.asString());
+		faces_.push_back(facesObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -62,19 +67,9 @@ std::string ListPhotoFacesResult::getAction()const
 	return action_;
 }
 
-void ListPhotoFacesResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string ListPhotoFacesResult::getMessage()const
 {
 	return message_;
-}
-
-void ListPhotoFacesResult::setMessage(const std::string& message)
-{
-	message_ = message;
 }
 
 std::string ListPhotoFacesResult::getCode()const
@@ -82,8 +77,8 @@ std::string ListPhotoFacesResult::getCode()const
 	return code_;
 }
 
-void ListPhotoFacesResult::setCode(const std::string& code)
+std::vector<ListPhotoFacesResult::Face> ListPhotoFacesResult::getFaces()const
 {
-	code_ = code;
+	return faces_;
 }
 

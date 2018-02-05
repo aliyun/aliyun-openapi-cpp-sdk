@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/InactivatePhotosRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::InactivatePhotosRequest;
 
 InactivatePhotosRequest::InactivatePhotosRequest() :
-	CloudPhotoRequest("InactivatePhotos")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "InactivatePhotos")
 {}
 
 InactivatePhotosRequest::~InactivatePhotosRequest()

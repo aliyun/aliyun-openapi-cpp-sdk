@@ -43,16 +43,23 @@ void ListFacePhotosResult::parse(const std::string &payload)
 	auto allResults = value["Results"]["Result"];
 	for (auto value : allResults)
 	{
-		Result resultObject;
-		resultObject.photoId = std::stol(value["PhotoId"].asString());
-		resultObject.state = value["State"].asString();
-		results_.push_back(resultObject);
+		Result resultsObject;
+		if(!value["PhotoId"].isNull())
+			resultsObject.photoId = std::stol(value["PhotoId"].asString());
+		if(!value["State"].isNull())
+			resultsObject.state = value["State"].asString();
+		results_.push_back(resultsObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	nextCursor_ = value["NextCursor"].asString();
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["NextCursor"].isNull())
+		nextCursor_ = value["NextCursor"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -61,19 +68,9 @@ std::string ListFacePhotosResult::getNextCursor()const
 	return nextCursor_;
 }
 
-void ListFacePhotosResult::setNextCursor(const std::string& nextCursor)
-{
-	nextCursor_ = nextCursor;
-}
-
 int ListFacePhotosResult::getTotalCount()const
 {
 	return totalCount_;
-}
-
-void ListFacePhotosResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
 }
 
 std::string ListFacePhotosResult::getAction()const
@@ -81,28 +78,18 @@ std::string ListFacePhotosResult::getAction()const
 	return action_;
 }
 
-void ListFacePhotosResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string ListFacePhotosResult::getMessage()const
 {
 	return message_;
 }
 
-void ListFacePhotosResult::setMessage(const std::string& message)
+std::vector<ListFacePhotosResult::Result> ListFacePhotosResult::getResults()const
 {
-	message_ = message;
+	return results_;
 }
 
 std::string ListFacePhotosResult::getCode()const
 {
 	return code_;
-}
-
-void ListFacePhotosResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

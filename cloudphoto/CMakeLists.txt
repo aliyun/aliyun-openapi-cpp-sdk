@@ -15,7 +15,12 @@
 #
 
 set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
-set(cloudphoto_public_header
+
+set(cloudphoto_public_header 
+	include/alibabacloud/cloudphoto/CloudPhotoClient.h
+	include/alibabacloud/cloudphoto/CloudPhotoExport.h )
+
+set(cloudphoto_public_header_model 
 	include/alibabacloud/cloudphoto/model/RemoveFacePhotosRequest.h
 	include/alibabacloud/cloudphoto/model/RemoveFacePhotosResult.h
 	include/alibabacloud/cloudphoto/model/ReactivatePhotosRequest.h
@@ -135,13 +140,10 @@ set(cloudphoto_public_header
 	include/alibabacloud/cloudphoto/model/ListTagsRequest.h
 	include/alibabacloud/cloudphoto/model/ListTagsResult.h
 	include/alibabacloud/cloudphoto/model/ListFacePhotosRequest.h
-	include/alibabacloud/cloudphoto/model/ListFacePhotosResult.h
-	include/alibabacloud/cloudphoto/CloudPhotoClient.h
-	include/alibabacloud/cloudphoto/CloudPhotoExport.h
-	include/alibabacloud/cloudphoto/CloudPhotoRequest.h
-	)
+	include/alibabacloud/cloudphoto/model/ListFacePhotosResult.h )
 
-set(cloudphoto_src
+set(cloudphoto_src 
+	src/CloudPhotoClient.cc
 	src/model/RemoveFacePhotosRequest.cc
 	src/model/RemoveFacePhotosResult.cc
 	src/model/ReactivatePhotosRequest.cc
@@ -261,12 +263,12 @@ set(cloudphoto_src
 	src/model/ListTagsRequest.cc
 	src/model/ListTagsResult.cc
 	src/model/ListFacePhotosRequest.cc
-	src/model/ListFacePhotosResult.cc
-	src/CloudPhotoClient.cc
-	src/CloudPhotoRequest.cc
-	)
+	src/model/ListFacePhotosResult.cc )
 
-add_library(cloudphoto ${LIB_TYPE} ${cloudphoto_public_header} ${cloudphoto_src})
+add_library(cloudphoto ${LIB_TYPE}
+	${cloudphoto_public_header}
+	${cloudphoto_public_header_model}
+	${cloudphoto_src})
 
 set_target_properties(cloudphoto
 	PROPERTIES
@@ -275,7 +277,6 @@ set_target_properties(cloudphoto
 	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}cloudphoto
-	PUBLIC_HEADER "${cloudphoto_public_header}"
 	)
 
 if(${LIB_TYPE} STREQUAL "SHARED")
@@ -310,9 +311,12 @@ else()
 		jsoncpp)
 endif()
 
+install(FILES ${cloudphoto_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/cloudphoto)
+install(FILES ${cloudphoto_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/cloudphoto/model)
 install(TARGETS cloudphoto
 	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/cloudphoto
 	)

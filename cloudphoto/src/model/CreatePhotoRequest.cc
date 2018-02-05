@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/CreatePhotoRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::CreatePhotoRequest;
 
 CreatePhotoRequest::CreatePhotoRequest() :
-	CloudPhotoRequest("CreatePhoto")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "CreatePhoto")
 {}
 
 CreatePhotoRequest::~CreatePhotoRequest()

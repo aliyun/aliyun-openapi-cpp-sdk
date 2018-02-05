@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/AddAlbumPhotosRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::AddAlbumPhotosRequest;
 
 AddAlbumPhotosRequest::AddAlbumPhotosRequest() :
-	CloudPhotoRequest("AddAlbumPhotos")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "AddAlbumPhotos")
 {}
 
 AddAlbumPhotosRequest::~AddAlbumPhotosRequest()

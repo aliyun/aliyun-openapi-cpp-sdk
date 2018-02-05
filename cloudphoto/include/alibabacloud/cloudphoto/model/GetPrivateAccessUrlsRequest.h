@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/cloudphoto/CloudPhotoRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/cloudphoto/CloudPhotoExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDPHOTO_EXPORT GetPrivateAccessUrlsRequest : public CloudPhotoRequest
+			class ALIBABACLOUD_CLOUDPHOTO_EXPORT GetPrivateAccessUrlsRequest : public RpcServiceRequest
 			{
 
 			public:

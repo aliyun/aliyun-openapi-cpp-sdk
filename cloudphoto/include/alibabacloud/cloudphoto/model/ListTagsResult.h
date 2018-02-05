@@ -60,13 +60,9 @@ namespace AlibabaCloud
 				explicit ListTagsResult(const std::string &payload);
 				~ListTagsResult();
 				std::string getAction()const;
-				void setAction(const std::string& action);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 				std::vector<Tag> getTags()const;
-				void setTags(const std::vector<Tag>& tags);
 
 			protected:
 				void parse(const std::string &payload);

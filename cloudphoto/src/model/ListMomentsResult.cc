@@ -43,21 +43,33 @@ void ListMomentsResult::parse(const std::string &payload)
 	auto allMoments = value["Moments"]["Moment"];
 	for (auto value : allMoments)
 	{
-		Moment momentObject;
-		momentObject.id = std::stol(value["Id"].asString());
-		momentObject.locationName = value["LocationName"].asString();
-		momentObject.photosCount = std::stoi(value["PhotosCount"].asString());
-		momentObject.state = value["State"].asString();
-		momentObject.takenAt = std::stol(value["TakenAt"].asString());
-		momentObject.ctime = std::stol(value["Ctime"].asString());
-		momentObject.mtime = std::stol(value["Mtime"].asString());
-		moments_.push_back(momentObject);
+		Moment momentsObject;
+		if(!value["Id"].isNull())
+			momentsObject.id = std::stol(value["Id"].asString());
+		if(!value["LocationName"].isNull())
+			momentsObject.locationName = value["LocationName"].asString();
+		if(!value["PhotosCount"].isNull())
+			momentsObject.photosCount = std::stoi(value["PhotosCount"].asString());
+		if(!value["State"].isNull())
+			momentsObject.state = value["State"].asString();
+		if(!value["TakenAt"].isNull())
+			momentsObject.takenAt = std::stol(value["TakenAt"].asString());
+		if(!value["Ctime"].isNull())
+			momentsObject.ctime = std::stol(value["Ctime"].asString());
+		if(!value["Mtime"].isNull())
+			momentsObject.mtime = std::stol(value["Mtime"].asString());
+		moments_.push_back(momentsObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	nextCursor_ = value["NextCursor"].asString();
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["NextCursor"].isNull())
+		nextCursor_ = value["NextCursor"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -66,19 +78,9 @@ std::string ListMomentsResult::getNextCursor()const
 	return nextCursor_;
 }
 
-void ListMomentsResult::setNextCursor(const std::string& nextCursor)
-{
-	nextCursor_ = nextCursor;
-}
-
 int ListMomentsResult::getTotalCount()const
 {
 	return totalCount_;
-}
-
-void ListMomentsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
 }
 
 std::string ListMomentsResult::getAction()const
@@ -86,28 +88,18 @@ std::string ListMomentsResult::getAction()const
 	return action_;
 }
 
-void ListMomentsResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string ListMomentsResult::getMessage()const
 {
 	return message_;
 }
 
-void ListMomentsResult::setMessage(const std::string& message)
+std::vector<ListMomentsResult::Moment> ListMomentsResult::getMoments()const
 {
-	message_ = message;
+	return moments_;
 }
 
 std::string ListMomentsResult::getCode()const
 {
 	return code_;
-}
-
-void ListMomentsResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

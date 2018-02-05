@@ -43,29 +43,43 @@ void ListPhotoStoresResult::parse(const std::string &payload)
 	auto allPhotoStores = value["PhotoStores"]["PhotoStore"];
 	for (auto value : allPhotoStores)
 	{
-		PhotoStore photoStoreObject;
-		photoStoreObject.id = std::stol(value["Id"].asString());
-		photoStoreObject.name = value["Name"].asString();
-		photoStoreObject.remark = value["Remark"].asString();
-		photoStoreObject.autoCleanEnabled = std::stoi(value["AutoCleanEnabled"].asString());
-		photoStoreObject.autoCleanDays = std::stoi(value["AutoCleanDays"].asString());
-		photoStoreObject.defaultQuota = std::stol(value["DefaultQuota"].asString());
-		photoStoreObject.ctime = std::stol(value["Ctime"].asString());
-		photoStoreObject.mtime = std::stol(value["Mtime"].asString());
+		PhotoStore photoStoresObject;
+		if(!value["Id"].isNull())
+			photoStoresObject.id = std::stol(value["Id"].asString());
+		if(!value["Name"].isNull())
+			photoStoresObject.name = value["Name"].asString();
+		if(!value["Remark"].isNull())
+			photoStoresObject.remark = value["Remark"].asString();
+		if(!value["AutoCleanEnabled"].isNull())
+			photoStoresObject.autoCleanEnabled = value["AutoCleanEnabled"].asString() == "true";
+		if(!value["AutoCleanDays"].isNull())
+			photoStoresObject.autoCleanDays = std::stoi(value["AutoCleanDays"].asString());
+		if(!value["DefaultQuota"].isNull())
+			photoStoresObject.defaultQuota = std::stol(value["DefaultQuota"].asString());
+		if(!value["Ctime"].isNull())
+			photoStoresObject.ctime = std::stol(value["Ctime"].asString());
+		if(!value["Mtime"].isNull())
+			photoStoresObject.mtime = std::stol(value["Mtime"].asString());
 		auto allBuckets = value["Buckets"]["Bucket"];
 		for (auto value : allBuckets)
 		{
-			PhotoStore::Bucket bucketObject;
-			bucketObject.name = value["Name"].asString();
-			bucketObject.region = value["Region"].asString();
-			bucketObject.state = value["State"].asString();
-			photoStoreObject.buckets.push_back(bucketObject);
+			PhotoStore::Bucket bucketsObject;
+			if(!value["Name"].isNull())
+				bucketsObject.name = value["Name"].asString();
+			if(!value["Region"].isNull())
+				bucketsObject.region = value["Region"].asString();
+			if(!value["State"].isNull())
+				bucketsObject.state = value["State"].asString();
+			photoStoresObject.buckets.push_back(bucketsObject);
 		}
-		photoStores_.push_back(photoStoreObject);
+		photoStores_.push_back(photoStoresObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -74,28 +88,18 @@ std::string ListPhotoStoresResult::getAction()const
 	return action_;
 }
 
-void ListPhotoStoresResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string ListPhotoStoresResult::getMessage()const
 {
 	return message_;
 }
 
-void ListPhotoStoresResult::setMessage(const std::string& message)
+std::vector<ListPhotoStoresResult::PhotoStore> ListPhotoStoresResult::getPhotoStores()const
 {
-	message_ = message;
+	return photoStores_;
 }
 
 std::string ListPhotoStoresResult::getCode()const
 {
 	return code_;
-}
-
-void ListPhotoStoresResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

@@ -40,10 +40,14 @@ void GetVideoCoverResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	videoCoverUrl_ = value["VideoCoverUrl"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["VideoCoverUrl"].isNull())
+		videoCoverUrl_ = value["VideoCoverUrl"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -52,19 +56,9 @@ std::string GetVideoCoverResult::getAction()const
 	return action_;
 }
 
-void GetVideoCoverResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string GetVideoCoverResult::getMessage()const
 {
 	return message_;
-}
-
-void GetVideoCoverResult::setMessage(const std::string& message)
-{
-	message_ = message;
 }
 
 std::string GetVideoCoverResult::getVideoCoverUrl()const
@@ -72,18 +66,8 @@ std::string GetVideoCoverResult::getVideoCoverUrl()const
 	return videoCoverUrl_;
 }
 
-void GetVideoCoverResult::setVideoCoverUrl(const std::string& videoCoverUrl)
-{
-	videoCoverUrl_ = videoCoverUrl;
-}
-
 std::string GetVideoCoverResult::getCode()const
 {
 	return code_;
-}
-
-void GetVideoCoverResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

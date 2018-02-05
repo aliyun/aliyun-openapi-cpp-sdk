@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/SetQuotaRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::SetQuotaRequest;
 
 SetQuotaRequest::SetQuotaRequest() :
-	CloudPhotoRequest("SetQuota")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "SetQuota")
 {}
 
 SetQuotaRequest::~SetQuotaRequest()

@@ -43,16 +43,23 @@ void GetPrivateAccessUrlsResult::parse(const std::string &payload)
 	auto allResults = value["Results"]["Result"];
 	for (auto value : allResults)
 	{
-		Result resultObject;
-		resultObject.code = value["Code"].asString();
-		resultObject.message = value["Message"].asString();
-		resultObject.photoId = std::stol(value["PhotoId"].asString());
-		resultObject.accessUrl = value["AccessUrl"].asString();
-		results_.push_back(resultObject);
+		Result resultsObject;
+		if(!value["Code"].isNull())
+			resultsObject.code = value["Code"].asString();
+		if(!value["Message"].isNull())
+			resultsObject.message = value["Message"].asString();
+		if(!value["PhotoId"].isNull())
+			resultsObject.photoId = std::stol(value["PhotoId"].asString());
+		if(!value["AccessUrl"].isNull())
+			resultsObject.accessUrl = value["AccessUrl"].asString();
+		results_.push_back(resultsObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -61,28 +68,18 @@ std::string GetPrivateAccessUrlsResult::getAction()const
 	return action_;
 }
 
-void GetPrivateAccessUrlsResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string GetPrivateAccessUrlsResult::getMessage()const
 {
 	return message_;
 }
 
-void GetPrivateAccessUrlsResult::setMessage(const std::string& message)
+std::vector<GetPrivateAccessUrlsResult::Result> GetPrivateAccessUrlsResult::getResults()const
 {
-	message_ = message;
+	return results_;
 }
 
 std::string GetPrivateAccessUrlsResult::getCode()const
 {
 	return code_;
-}
-
-void GetPrivateAccessUrlsResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

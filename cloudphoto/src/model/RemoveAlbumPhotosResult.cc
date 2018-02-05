@@ -43,15 +43,21 @@ void RemoveAlbumPhotosResult::parse(const std::string &payload)
 	auto allResults = value["Results"]["Result"];
 	for (auto value : allResults)
 	{
-		Result resultObject;
-		resultObject.id = std::stol(value["Id"].asString());
-		resultObject.code = value["Code"].asString();
-		resultObject.message = value["Message"].asString();
-		results_.push_back(resultObject);
+		Result resultsObject;
+		if(!value["Id"].isNull())
+			resultsObject.id = std::stol(value["Id"].asString());
+		if(!value["Code"].isNull())
+			resultsObject.code = value["Code"].asString();
+		if(!value["Message"].isNull())
+			resultsObject.message = value["Message"].asString();
+		results_.push_back(resultsObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -60,28 +66,18 @@ std::string RemoveAlbumPhotosResult::getAction()const
 	return action_;
 }
 
-void RemoveAlbumPhotosResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string RemoveAlbumPhotosResult::getMessage()const
 {
 	return message_;
 }
 
-void RemoveAlbumPhotosResult::setMessage(const std::string& message)
+std::vector<RemoveAlbumPhotosResult::Result> RemoveAlbumPhotosResult::getResults()const
 {
-	message_ = message;
+	return results_;
 }
 
 std::string RemoveAlbumPhotosResult::getCode()const
 {
 	return code_;
-}
-
-void RemoveAlbumPhotosResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

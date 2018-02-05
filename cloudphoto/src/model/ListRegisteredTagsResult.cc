@@ -43,21 +43,27 @@ void ListRegisteredTagsResult::parse(const std::string &payload)
 	auto allRegisteredTags = value["RegisteredTags"]["RegisteredTag"];
 	for (auto value : allRegisteredTags)
 	{
-		RegisteredTag registeredTagObject;
-		registeredTagObject.tagKey = value["TagKey"].asString();
+		RegisteredTag registeredTagsObject;
+		if(!value["TagKey"].isNull())
+			registeredTagsObject.tagKey = value["TagKey"].asString();
 		auto allTagValues = value["TagValues"]["TagValue"];
 		for (auto value : allTagValues)
 		{
-			RegisteredTag::TagValue tagValueObject;
-			tagValueObject.lang = value["Lang"].asString();
-			tagValueObject.text = value["Text"].asString();
-			registeredTagObject.tagValues.push_back(tagValueObject);
+			RegisteredTag::TagValue tagValuesObject;
+			if(!value["Lang"].isNull())
+				tagValuesObject.lang = value["Lang"].asString();
+			if(!value["Text"].isNull())
+				tagValuesObject.text = value["Text"].asString();
+			registeredTagsObject.tagValues.push_back(tagValuesObject);
 		}
-		registeredTags_.push_back(registeredTagObject);
+		registeredTags_.push_back(registeredTagsObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -66,28 +72,18 @@ std::string ListRegisteredTagsResult::getAction()const
 	return action_;
 }
 
-void ListRegisteredTagsResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string ListRegisteredTagsResult::getMessage()const
 {
 	return message_;
 }
 
-void ListRegisteredTagsResult::setMessage(const std::string& message)
+std::vector<ListRegisteredTagsResult::RegisteredTag> ListRegisteredTagsResult::getRegisteredTags()const
 {
-	message_ = message;
+	return registeredTags_;
 }
 
 std::string ListRegisteredTagsResult::getCode()const
 {
 	return code_;
-}
-
-void ListRegisteredTagsResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

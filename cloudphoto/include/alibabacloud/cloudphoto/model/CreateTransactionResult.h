@@ -53,13 +53,9 @@ namespace AlibabaCloud
 				explicit CreateTransactionResult(const std::string &payload);
 				~CreateTransactionResult();
 				std::string getAction()const;
-				void setAction(const std::string& action);
 				std::vector<Transaction> getTransaction()const;
-				void setTransaction(const std::vector<Transaction>& transaction);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 
 			protected:
 				void parse(const std::string &payload);

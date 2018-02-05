@@ -57,15 +57,10 @@ namespace AlibabaCloud
 				explicit ListTimeLinePhotosResult(const std::string &payload);
 				~ListTimeLinePhotosResult();
 				std::vector<Photo> getPhotos()const;
-				void setPhotos(const std::vector<Photo>& photos);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getAction()const;
-				void setAction(const std::string& action);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 
 			protected:
 				void parse(const std::string &payload);

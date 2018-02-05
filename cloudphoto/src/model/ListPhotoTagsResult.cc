@@ -43,16 +43,23 @@ void ListPhotoTagsResult::parse(const std::string &payload)
 	auto allTags = value["Tags"]["Tag"];
 	for (auto value : allTags)
 	{
-		Tag tagObject;
-		tagObject.id = std::stol(value["Id"].asString());
-		tagObject.isSubTag = std::stoi(value["IsSubTag"].asString());
-		tagObject.name = value["Name"].asString();
-		tagObject.parentTag = value["ParentTag"].asString();
-		tags_.push_back(tagObject);
+		Tag tagsObject;
+		if(!value["Id"].isNull())
+			tagsObject.id = std::stol(value["Id"].asString());
+		if(!value["IsSubTag"].isNull())
+			tagsObject.isSubTag = value["IsSubTag"].asString() == "true";
+		if(!value["Name"].isNull())
+			tagsObject.name = value["Name"].asString();
+		if(!value["ParentTag"].isNull())
+			tagsObject.parentTag = value["ParentTag"].asString();
+		tags_.push_back(tagsObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
 }
 
@@ -61,19 +68,9 @@ std::string ListPhotoTagsResult::getAction()const
 	return action_;
 }
 
-void ListPhotoTagsResult::setAction(const std::string& action)
-{
-	action_ = action;
-}
-
 std::string ListPhotoTagsResult::getMessage()const
 {
 	return message_;
-}
-
-void ListPhotoTagsResult::setMessage(const std::string& message)
-{
-	message_ = message;
 }
 
 std::string ListPhotoTagsResult::getCode()const
@@ -81,8 +78,8 @@ std::string ListPhotoTagsResult::getCode()const
 	return code_;
 }
 
-void ListPhotoTagsResult::setCode(const std::string& code)
+std::vector<ListPhotoTagsResult::Tag> ListPhotoTagsResult::getTags()const
 {
-	code_ = code;
+	return tags_;
 }
 

@@ -38,13 +38,9 @@ namespace AlibabaCloud
 				explicit GetDownloadUrlResult(const std::string &payload);
 				~GetDownloadUrlResult();
 				std::string getAction()const;
-				void setAction(const std::string& action);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 				std::string getDownloadUrl()const;
-				void setDownloadUrl(const std::string& downloadUrl);
 
 			protected:
 				void parse(const std::string &payload);

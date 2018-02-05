@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cloudphoto/model/GetQuotaRequest.h>
 
-using namespace AlibabaCloud::CloudPhoto;
-using namespace AlibabaCloud::CloudPhoto::Model;
+using AlibabaCloud::CloudPhoto::Model::GetQuotaRequest;
 
 GetQuotaRequest::GetQuotaRequest() :
-	CloudPhotoRequest("GetQuota")
+	RpcServiceRequest("cloudphoto", "2017-07-11", "GetQuota")
 {}
 
 GetQuotaRequest::~GetQuotaRequest()

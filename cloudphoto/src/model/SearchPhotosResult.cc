@@ -43,28 +43,51 @@ void SearchPhotosResult::parse(const std::string &payload)
 	auto allPhotos = value["Photos"]["Photo"];
 	for (auto value : allPhotos)
 	{
-		Photo photoObject;
-		photoObject.id = std::stol(value["Id"].asString());
-		photoObject.title = value["Title"].asString();
-		photoObject.fileId = value["FileId"].asString();
-		photoObject.location = value["Location"].asString();
-		photoObject.state = value["State"].asString();
-		photoObject.md5 = value["Md5"].asString();
-		photoObject.isVideo = std::stoi(value["IsVideo"].asString());
-		photoObject.size = std::stol(value["Size"].asString());
-		photoObject.width = std::stol(value["Width"].asString());
-		photoObject.height = std::stol(value["Height"].asString());
-		photoObject.ctime = std::stol(value["Ctime"].asString());
-		photoObject.mtime = std::stol(value["Mtime"].asString());
-		photoObject.takenAt = std::stol(value["TakenAt"].asString());
-		photoObject.shareExpireTime = std::stol(value["ShareExpireTime"].asString());
-		photos_.push_back(photoObject);
+		Photo photosObject;
+		if(!value["Id"].isNull())
+			photosObject.id = std::stol(value["Id"].asString());
+		if(!value["Title"].isNull())
+			photosObject.title = value["Title"].asString();
+		if(!value["FileId"].isNull())
+			photosObject.fileId = value["FileId"].asString();
+		if(!value["Location"].isNull())
+			photosObject.location = value["Location"].asString();
+		if(!value["State"].isNull())
+			photosObject.state = value["State"].asString();
+		if(!value["Md5"].isNull())
+			photosObject.md5 = value["Md5"].asString();
+		if(!value["IsVideo"].isNull())
+			photosObject.isVideo = value["IsVideo"].asString() == "true";
+		if(!value["Size"].isNull())
+			photosObject.size = std::stol(value["Size"].asString());
+		if(!value["Width"].isNull())
+			photosObject.width = std::stol(value["Width"].asString());
+		if(!value["Height"].isNull())
+			photosObject.height = std::stol(value["Height"].asString());
+		if(!value["Ctime"].isNull())
+			photosObject.ctime = std::stol(value["Ctime"].asString());
+		if(!value["Mtime"].isNull())
+			photosObject.mtime = std::stol(value["Mtime"].asString());
+		if(!value["TakenAt"].isNull())
+			photosObject.takenAt = std::stol(value["TakenAt"].asString());
+		if(!value["ShareExpireTime"].isNull())
+			photosObject.shareExpireTime = std::stol(value["ShareExpireTime"].asString());
+		photos_.push_back(photosObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	action_ = value["Action"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["Action"].isNull())
+		action_ = value["Action"].asString();
 
+}
+
+std::vector<SearchPhotosResult::Photo> SearchPhotosResult::getPhotos()const
+{
+	return photos_;
 }
 
 int SearchPhotosResult::getTotalCount()const
@@ -72,19 +95,9 @@ int SearchPhotosResult::getTotalCount()const
 	return totalCount_;
 }
 
-void SearchPhotosResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 std::string SearchPhotosResult::getAction()const
 {
 	return action_;
-}
-
-void SearchPhotosResult::setAction(const std::string& action)
-{
-	action_ = action;
 }
 
 std::string SearchPhotosResult::getMessage()const
@@ -92,18 +105,8 @@ std::string SearchPhotosResult::getMessage()const
 	return message_;
 }
 
-void SearchPhotosResult::setMessage(const std::string& message)
-{
-	message_ = message;
-}
-
 std::string SearchPhotosResult::getCode()const
 {
 	return code_;
-}
-
-void SearchPhotosResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 
