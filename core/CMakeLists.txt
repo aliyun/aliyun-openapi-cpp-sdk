@@ -50,12 +50,24 @@ set(core_public_header
 	include/alibabacloud/core/SimpleCredentialsProvider.h
 	include/alibabacloud/core/StsAssumeRoleCredentialsProvider.h
 	include/alibabacloud/core/Url.h
+	)
+
+set(core_public_header_location
 	include/alibabacloud/core/location/LocationClient.h
 	include/alibabacloud/core/location/LocationRequest.h
+	)
+
+set(core_public_header_location_model
 	include/alibabacloud/core/location/model/DescribeEndpointsRequest.h
 	include/alibabacloud/core/location/model/DescribeEndpointsResult.h
+	)
+
+set(core_public_header_sts
 	include/alibabacloud/core/sts/StsClient.h
 	include/alibabacloud/core/sts/StsRequest.h
+	)
+
+set(core_public_header_sts_model
 	include/alibabacloud/core/sts/model/AssumeRoleRequest.h
 	include/alibabacloud/core/sts/model/AssumeRoleResult.h
 	include/alibabacloud/core/sts/model/GetCallerIdentityRequest.h
@@ -113,7 +125,13 @@ set(core_src
 	src/sts/model/GetCallerIdentityResult.cc
 	)
 
-add_library(core ${LIB_TYPE} ${core_public_header} ${core_src})
+add_library(core ${LIB_TYPE}
+	${core_public_header}
+	${core_public_header_location}
+	${core_public_header_location_model}
+	${core_public_header_sts}
+	${core_public_header_sts_model}
+	${core_src})
 
 set_target_properties(core
 	PROPERTIES
@@ -122,7 +140,6 @@ set_target_properties(core
 	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}core
-	PUBLIC_HEADER "${core_public_header}"
 	)
 
 if(${LIB_TYPE} STREQUAL "SHARED")
@@ -167,9 +184,18 @@ else()
 		uuid )
 endif()
 
+install(FILES ${core_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/core)
+install(FILES ${core_public_header_location}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/core/location)
+install(FILES ${core_public_header_location_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/core/location/model)
+install(FILES ${core_public_header_sts}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/core/sts)
+install(FILES ${core_public_header_sts_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/core/sts/model)
 install(TARGETS core
 	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/core
 	)
