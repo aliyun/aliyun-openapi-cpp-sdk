@@ -43,7 +43,8 @@ void DescribeLiveStreamsBlockListResult::parse(const std::string &payload)
 	auto allStreamUrls = value["StreamUrls"]["StreamUrl"];
 	for (const auto &item : allStreamUrls)
 		streamUrls_.push_back(item.asString());
-	domainName_ = value["DomainName"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 
 }
 
@@ -52,18 +53,8 @@ std::string DescribeLiveStreamsBlockListResult::getDomainName()const
 	return domainName_;
 }
 
-void DescribeLiveStreamsBlockListResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-}
-
 std::vector<std::string> DescribeLiveStreamsBlockListResult::getStreamUrls()const
 {
 	return streamUrls_;
-}
-
-void DescribeLiveStreamsBlockListResult::setStreamUrls(const std::vector<std::string>& streamUrls)
-{
-	streamUrls_ = streamUrls;
 }
 

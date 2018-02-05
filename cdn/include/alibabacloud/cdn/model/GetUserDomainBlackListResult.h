@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit GetUserDomainBlackListResult(const std::string &payload);
 				~GetUserDomainBlackListResult();
 				std::string getBind()const;
-				void setBind(const std::string& bind);
 
 			protected:
 				void parse(const std::string &payload);

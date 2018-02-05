@@ -43,38 +43,65 @@ void DescribeDomainsUsageByDayResult::parse(const std::string &payload)
 	auto allUsageByDays = value["UsageByDays"]["UsageByDay"];
 	for (auto value : allUsageByDays)
 	{
-		UsageByDay usageByDayObject;
-		usageByDayObject.timeStamp = value["TimeStamp"].asString();
-		usageByDayObject.qps = value["Qps"].asString();
-		usageByDayObject.bytesHitRate = value["BytesHitRate"].asString();
-		usageByDayObject.requestHitRate = value["RequestHitRate"].asString();
-		usageByDayObject.maxBps = value["MaxBps"].asString();
-		usageByDayObject.maxBpsTime = value["MaxBpsTime"].asString();
-		usageByDayObject.maxSrcBps = value["MaxSrcBps"].asString();
-		usageByDayObject.maxSrcBpsTime = value["MaxSrcBpsTime"].asString();
-		usageByDayObject.totalAccess = value["TotalAccess"].asString();
-		usageByDayObject.totalTraffic = value["TotalTraffic"].asString();
-		usageByDays_.push_back(usageByDayObject);
+		UsageByDay usageByDaysObject;
+		if(!value["TimeStamp"].isNull())
+			usageByDaysObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Qps"].isNull())
+			usageByDaysObject.qps = value["Qps"].asString();
+		if(!value["BytesHitRate"].isNull())
+			usageByDaysObject.bytesHitRate = value["BytesHitRate"].asString();
+		if(!value["RequestHitRate"].isNull())
+			usageByDaysObject.requestHitRate = value["RequestHitRate"].asString();
+		if(!value["MaxBps"].isNull())
+			usageByDaysObject.maxBps = value["MaxBps"].asString();
+		if(!value["MaxBpsTime"].isNull())
+			usageByDaysObject.maxBpsTime = value["MaxBpsTime"].asString();
+		if(!value["MaxSrcBps"].isNull())
+			usageByDaysObject.maxSrcBps = value["MaxSrcBps"].asString();
+		if(!value["MaxSrcBpsTime"].isNull())
+			usageByDaysObject.maxSrcBpsTime = value["MaxSrcBpsTime"].asString();
+		if(!value["TotalAccess"].isNull())
+			usageByDaysObject.totalAccess = value["TotalAccess"].asString();
+		if(!value["TotalTraffic"].isNull())
+			usageByDaysObject.totalTraffic = value["TotalTraffic"].asString();
+		usageByDays_.push_back(usageByDaysObject);
 	}
 	auto allUsageTotal = value["UsageTotal"];
 	for (auto value : allUsageTotal)
 	{
 		UsageTotal usageTotalObject;
-		usageTotalObject.bytesHitRate = value["BytesHitRate"].asString();
-		usageTotalObject.requestHitRate = value["RequestHitRate"].asString();
-		usageTotalObject.maxBps = value["MaxBps"].asString();
-		usageTotalObject.maxBpsTime = value["MaxBpsTime"].asString();
-		usageTotalObject.maxSrcBps = value["MaxSrcBps"].asString();
-		usageTotalObject.maxSrcBpsTime = value["MaxSrcBpsTime"].asString();
-		usageTotalObject.totalAccess = value["TotalAccess"].asString();
-		usageTotalObject.totalTraffic = value["TotalTraffic"].asString();
+		if(!value["BytesHitRate"].isNull())
+			usageTotalObject.bytesHitRate = value["BytesHitRate"].asString();
+		if(!value["RequestHitRate"].isNull())
+			usageTotalObject.requestHitRate = value["RequestHitRate"].asString();
+		if(!value["MaxBps"].isNull())
+			usageTotalObject.maxBps = value["MaxBps"].asString();
+		if(!value["MaxBpsTime"].isNull())
+			usageTotalObject.maxBpsTime = value["MaxBpsTime"].asString();
+		if(!value["MaxSrcBps"].isNull())
+			usageTotalObject.maxSrcBps = value["MaxSrcBps"].asString();
+		if(!value["MaxSrcBpsTime"].isNull())
+			usageTotalObject.maxSrcBpsTime = value["MaxSrcBpsTime"].asString();
+		if(!value["TotalAccess"].isNull())
+			usageTotalObject.totalAccess = value["TotalAccess"].asString();
+		if(!value["TotalTraffic"].isNull())
+			usageTotalObject.totalTraffic = value["TotalTraffic"].asString();
 		usageTotal_.push_back(usageTotalObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
+}
+
+std::vector<DescribeDomainsUsageByDayResult::UsageTotal> DescribeDomainsUsageByDayResult::getUsageTotal()const
+{
+	return usageTotal_;
 }
 
 std::string DescribeDomainsUsageByDayResult::getEndTime()const
@@ -82,19 +109,9 @@ std::string DescribeDomainsUsageByDayResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainsUsageByDayResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainsUsageByDayResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainsUsageByDayResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
 }
 
 std::string DescribeDomainsUsageByDayResult::getDataInterval()const
@@ -102,18 +119,13 @@ std::string DescribeDomainsUsageByDayResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeDomainsUsageByDayResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeDomainsUsageByDayResult::getStartTime()const
 {
 	return startTime_;
 }
 
-void DescribeDomainsUsageByDayResult::setStartTime(const std::string& startTime)
+std::vector<DescribeDomainsUsageByDayResult::UsageByDay> DescribeDomainsUsageByDayResult::getUsageByDays()const
 {
-	startTime_ = startTime;
+	return usageByDays_;
 }
 

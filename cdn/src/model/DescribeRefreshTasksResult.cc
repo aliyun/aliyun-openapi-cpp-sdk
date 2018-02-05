@@ -43,19 +43,29 @@ void DescribeRefreshTasksResult::parse(const std::string &payload)
 	auto allTasks = value["Tasks"]["CDNTask"];
 	for (auto value : allTasks)
 	{
-		CDNTask cDNTaskObject;
-		cDNTaskObject.taskId = value["TaskId"].asString();
-		cDNTaskObject.objectPath = value["ObjectPath"].asString();
-		cDNTaskObject.process = value["Process"].asString();
-		cDNTaskObject.status = value["Status"].asString();
-		cDNTaskObject.creationTime = value["CreationTime"].asString();
-		cDNTaskObject.description = value["Description"].asString();
-		cDNTaskObject.objectType = value["ObjectType"].asString();
-		tasks_.push_back(cDNTaskObject);
+		CDNTask tasksObject;
+		if(!value["TaskId"].isNull())
+			tasksObject.taskId = value["TaskId"].asString();
+		if(!value["ObjectPath"].isNull())
+			tasksObject.objectPath = value["ObjectPath"].asString();
+		if(!value["Process"].isNull())
+			tasksObject.process = value["Process"].asString();
+		if(!value["Status"].isNull())
+			tasksObject.status = value["Status"].asString();
+		if(!value["CreationTime"].isNull())
+			tasksObject.creationTime = value["CreationTime"].asString();
+		if(!value["Description"].isNull())
+			tasksObject.description = value["Description"].asString();
+		if(!value["ObjectType"].isNull())
+			tasksObject.objectType = value["ObjectType"].asString();
+		tasks_.push_back(tasksObject);
 	}
-	pageNumber_ = std::stol(value["PageNumber"].asString());
-	pageSize_ = std::stol(value["PageSize"].asString());
-	totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
 }
 
@@ -64,9 +74,9 @@ long DescribeRefreshTasksResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeRefreshTasksResult::setTotalCount(long totalCount)
+std::vector<DescribeRefreshTasksResult::CDNTask> DescribeRefreshTasksResult::getTasks()const
 {
-	totalCount_ = totalCount;
+	return tasks_;
 }
 
 long DescribeRefreshTasksResult::getPageSize()const
@@ -74,18 +84,8 @@ long DescribeRefreshTasksResult::getPageSize()const
 	return pageSize_;
 }
 
-void DescribeRefreshTasksResult::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 long DescribeRefreshTasksResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeRefreshTasksResult::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

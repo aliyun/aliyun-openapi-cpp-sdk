@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit DescribeCdnTypesResult(const std::string &payload);
 				~DescribeCdnTypesResult();
 				std::vector<CdnType> getCdnTypes()const;
-				void setCdnTypes(const std::vector<CdnType>& cdnTypes);
 
 			protected:
 				void parse(const std::string &payload);

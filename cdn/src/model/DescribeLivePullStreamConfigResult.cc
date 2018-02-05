@@ -43,14 +43,24 @@ void DescribeLivePullStreamConfigResult::parse(const std::string &payload)
 	auto allLiveAppRecordList = value["LiveAppRecordList"]["LiveAppRecord"];
 	for (auto value : allLiveAppRecordList)
 	{
-		LiveAppRecord liveAppRecordObject;
-		liveAppRecordObject.domainName = value["DomainName"].asString();
-		liveAppRecordObject.streamName = value["StreamName"].asString();
-		liveAppRecordObject.sourceUrl = value["SourceUrl"].asString();
-		liveAppRecordObject.startTime = value["StartTime"].asString();
-		liveAppRecordObject.endTime = value["EndTime"].asString();
-		liveAppRecordList_.push_back(liveAppRecordObject);
+		LiveAppRecord liveAppRecordListObject;
+		if(!value["DomainName"].isNull())
+			liveAppRecordListObject.domainName = value["DomainName"].asString();
+		if(!value["StreamName"].isNull())
+			liveAppRecordListObject.streamName = value["StreamName"].asString();
+		if(!value["SourceUrl"].isNull())
+			liveAppRecordListObject.sourceUrl = value["SourceUrl"].asString();
+		if(!value["StartTime"].isNull())
+			liveAppRecordListObject.startTime = value["StartTime"].asString();
+		if(!value["EndTime"].isNull())
+			liveAppRecordListObject.endTime = value["EndTime"].asString();
+		liveAppRecordList_.push_back(liveAppRecordListObject);
 	}
 
+}
+
+std::vector<DescribeLivePullStreamConfigResult::LiveAppRecord> DescribeLivePullStreamConfigResult::getLiveAppRecordList()const
+{
+	return liveAppRecordList_;
 }
 

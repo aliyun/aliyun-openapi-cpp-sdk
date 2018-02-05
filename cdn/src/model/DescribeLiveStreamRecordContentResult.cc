@@ -43,15 +43,26 @@ void DescribeLiveStreamRecordContentResult::parse(const std::string &payload)
 	auto allRecordContentInfoList = value["RecordContentInfoList"]["RecordContentInfo"];
 	for (auto value : allRecordContentInfoList)
 	{
-		RecordContentInfo recordContentInfoObject;
-		recordContentInfoObject.ossEndpoint = value["OssEndpoint"].asString();
-		recordContentInfoObject.ossBucket = value["OssBucket"].asString();
-		recordContentInfoObject.ossObjectPrefix = value["OssObjectPrefix"].asString();
-		recordContentInfoObject.startTime = value["StartTime"].asString();
-		recordContentInfoObject.endTime = value["EndTime"].asString();
-		recordContentInfoObject.duration = std::stof(value["Duration"].asString());
-		recordContentInfoList_.push_back(recordContentInfoObject);
+		RecordContentInfo recordContentInfoListObject;
+		if(!value["OssEndpoint"].isNull())
+			recordContentInfoListObject.ossEndpoint = value["OssEndpoint"].asString();
+		if(!value["OssBucket"].isNull())
+			recordContentInfoListObject.ossBucket = value["OssBucket"].asString();
+		if(!value["OssObjectPrefix"].isNull())
+			recordContentInfoListObject.ossObjectPrefix = value["OssObjectPrefix"].asString();
+		if(!value["StartTime"].isNull())
+			recordContentInfoListObject.startTime = value["StartTime"].asString();
+		if(!value["EndTime"].isNull())
+			recordContentInfoListObject.endTime = value["EndTime"].asString();
+		if(!value["Duration"].isNull())
+			recordContentInfoListObject.duration = std::stof(value["Duration"].asString());
+		recordContentInfoList_.push_back(recordContentInfoListObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamRecordContentResult::RecordContentInfo> DescribeLiveStreamRecordContentResult::getRecordContentInfoList()const
+{
+	return recordContentInfoList_;
 }
 

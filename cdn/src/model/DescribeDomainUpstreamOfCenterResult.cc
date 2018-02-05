@@ -43,11 +43,18 @@ void DescribeDomainUpstreamOfCenterResult::parse(const std::string &payload)
 	auto allBpsDatas = value["BpsDatas"]["DomainBpsModel"];
 	for (auto value : allBpsDatas)
 	{
-		DomainBpsModel domainBpsModelObject;
-		domainBpsModelObject.time = value["Time"].asString();
-		domainBpsModelObject.bps = std::stof(value["Bps"].asString());
-		bpsDatas_.push_back(domainBpsModelObject);
+		DomainBpsModel bpsDatasObject;
+		if(!value["Time"].isNull())
+			bpsDatasObject.time = value["Time"].asString();
+		if(!value["Bps"].isNull())
+			bpsDatasObject.bps = std::stof(value["Bps"].asString());
+		bpsDatas_.push_back(bpsDatasObject);
 	}
 
+}
+
+std::vector<DescribeDomainUpstreamOfCenterResult::DomainBpsModel> DescribeDomainUpstreamOfCenterResult::getBpsDatas()const
+{
+	return bpsDatas_;
 }
 

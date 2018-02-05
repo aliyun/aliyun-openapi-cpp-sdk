@@ -43,11 +43,18 @@ void DescribeDomainRealTimeBpsDataResult::parse(const std::string &payload)
 	auto allData = value["Data"]["BpsModel"];
 	for (auto value : allData)
 	{
-		BpsModel bpsModelObject;
-		bpsModelObject.bps = std::stof(value["Bps"].asString());
-		bpsModelObject.timeStamp = value["TimeStamp"].asString();
-		data_.push_back(bpsModelObject);
+		BpsModel dataObject;
+		if(!value["Bps"].isNull())
+			dataObject.bps = std::stof(value["Bps"].asString());
+		if(!value["TimeStamp"].isNull())
+			dataObject.timeStamp = value["TimeStamp"].asString();
+		data_.push_back(dataObject);
 	}
 
+}
+
+std::vector<DescribeDomainRealTimeBpsDataResult::BpsModel> DescribeDomainRealTimeBpsDataResult::getData()const
+{
+	return data_;
 }
 

@@ -43,23 +43,31 @@ void DescribeDomainHttpCodeDataResult::parse(const std::string &payload)
 	auto allHttpCodeData = value["HttpCodeData"]["UsageData"];
 	for (auto value : allHttpCodeData)
 	{
-		UsageData usageDataObject;
-		usageDataObject.timeStamp = value["TimeStamp"].asString();
+		UsageData httpCodeDataObject;
+		if(!value["TimeStamp"].isNull())
+			httpCodeDataObject.timeStamp = value["TimeStamp"].asString();
 		auto allValue = value["Value"]["CodeProportionData"];
 		for (auto value : allValue)
 		{
-			UsageData::CodeProportionData codeProportionDataObject;
-			codeProportionDataObject.code = value["Code"].asString();
-			codeProportionDataObject.proportion = value["Proportion"].asString();
-			codeProportionDataObject.count = value["Count"].asString();
-			usageDataObject.value.push_back(codeProportionDataObject);
+			UsageData::CodeProportionData valueObject;
+			if(!value["Code"].isNull())
+				valueObject.code = value["Code"].asString();
+			if(!value["Proportion"].isNull())
+				valueObject.proportion = value["Proportion"].asString();
+			if(!value["Count"].isNull())
+				valueObject.count = value["Count"].asString();
+			httpCodeDataObject.value.push_back(valueObject);
 		}
-		httpCodeData_.push_back(usageDataObject);
+		httpCodeData_.push_back(httpCodeDataObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -68,19 +76,9 @@ std::string DescribeDomainHttpCodeDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainHttpCodeDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainHttpCodeDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainHttpCodeDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
 }
 
 std::string DescribeDomainHttpCodeDataResult::getDataInterval()const
@@ -88,18 +86,13 @@ std::string DescribeDomainHttpCodeDataResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeDomainHttpCodeDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeDomainHttpCodeDataResult::getStartTime()const
 {
 	return startTime_;
 }
 
-void DescribeDomainHttpCodeDataResult::setStartTime(const std::string& startTime)
+std::vector<DescribeDomainHttpCodeDataResult::UsageData> DescribeDomainHttpCodeDataResult::getHttpCodeData()const
 {
-	startTime_ = startTime;
+	return httpCodeData_;
 }
 

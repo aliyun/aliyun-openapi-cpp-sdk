@@ -43,20 +43,31 @@ void DescribeExtensiveDomainDataResult::parse(const std::string &payload)
 	auto allDataPerInterval = value["DataPerInterval"]["UsageData"];
 	for (auto value : allDataPerInterval)
 	{
-		UsageData usageDataObject;
-		usageDataObject.exactDomain = value["ExactDomain"].asString();
-		usageDataObject.timeStamp = value["TimeStamp"].asString();
-		usageDataObject.acc = value["Acc"].asString();
-		usageDataObject.flow = value["Flow"].asString();
-		dataPerInterval_.push_back(usageDataObject);
+		UsageData dataPerIntervalObject;
+		if(!value["ExactDomain"].isNull())
+			dataPerIntervalObject.exactDomain = value["ExactDomain"].asString();
+		if(!value["TimeStamp"].isNull())
+			dataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Acc"].isNull())
+			dataPerIntervalObject.acc = value["Acc"].asString();
+		if(!value["Flow"].isNull())
+			dataPerIntervalObject.flow = value["Flow"].asString();
+		dataPerInterval_.push_back(dataPerIntervalObject);
 	}
-	extensiveDomain_ = value["ExtensiveDomain"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
-	pageNumber_ = value["PageNumber"].asString();
-	totalCount_ = value["TotalCount"].asString();
-	pageSize_ = value["PageSize"].asString();
+	if(!value["ExtensiveDomain"].isNull())
+		extensiveDomain_ = value["ExtensiveDomain"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
+	if(!value["PageSize"].isNull())
+		pageSize_ = value["PageSize"].asString();
 
 }
 
@@ -65,19 +76,9 @@ std::string DescribeExtensiveDomainDataResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeExtensiveDomainDataResult::setTotalCount(const std::string& totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 std::string DescribeExtensiveDomainDataResult::getEndTime()const
 {
 	return endTime_;
-}
-
-void DescribeExtensiveDomainDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
 }
 
 std::string DescribeExtensiveDomainDataResult::getPageSize()const
@@ -85,19 +86,9 @@ std::string DescribeExtensiveDomainDataResult::getPageSize()const
 	return pageSize_;
 }
 
-void DescribeExtensiveDomainDataResult::setPageSize(const std::string& pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 std::string DescribeExtensiveDomainDataResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeExtensiveDomainDataResult::setPageNumber(const std::string& pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 
 std::string DescribeExtensiveDomainDataResult::getDataInterval()const
@@ -105,28 +96,18 @@ std::string DescribeExtensiveDomainDataResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeExtensiveDomainDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeExtensiveDomainDataResult::getStartTime()const
 {
 	return startTime_;
 }
 
-void DescribeExtensiveDomainDataResult::setStartTime(const std::string& startTime)
+std::vector<DescribeExtensiveDomainDataResult::UsageData> DescribeExtensiveDomainDataResult::getDataPerInterval()const
 {
-	startTime_ = startTime;
+	return dataPerInterval_;
 }
 
 std::string DescribeExtensiveDomainDataResult::getExtensiveDomain()const
 {
 	return extensiveDomain_;
-}
-
-void DescribeExtensiveDomainDataResult::setExtensiveDomain(const std::string& extensiveDomain)
-{
-	extensiveDomain_ = extensiveDomain;
 }
 

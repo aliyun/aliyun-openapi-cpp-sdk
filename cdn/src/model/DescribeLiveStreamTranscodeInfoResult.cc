@@ -43,15 +43,26 @@ void DescribeLiveStreamTranscodeInfoResult::parse(const std::string &payload)
 	auto allDomainTranscodeList = value["DomainTranscodeList"]["DomainTranscodeInfo"];
 	for (auto value : allDomainTranscodeList)
 	{
-		DomainTranscodeInfo domainTranscodeInfoObject;
-		domainTranscodeInfoObject.transcodeApp = value["TranscodeApp"].asString();
-		domainTranscodeInfoObject.transcodeId = value["TranscodeId"].asString();
-		domainTranscodeInfoObject.transcodeName = value["TranscodeName"].asString();
-		domainTranscodeInfoObject.transcodeRecord = value["TranscodeRecord"].asString();
-		domainTranscodeInfoObject.transcodeSnapshot = value["TranscodeSnapshot"].asString();
-		domainTranscodeInfoObject.transcodeTemplate = value["TranscodeTemplate"].asString();
-		domainTranscodeList_.push_back(domainTranscodeInfoObject);
+		DomainTranscodeInfo domainTranscodeListObject;
+		if(!value["TranscodeApp"].isNull())
+			domainTranscodeListObject.transcodeApp = value["TranscodeApp"].asString();
+		if(!value["TranscodeId"].isNull())
+			domainTranscodeListObject.transcodeId = value["TranscodeId"].asString();
+		if(!value["TranscodeName"].isNull())
+			domainTranscodeListObject.transcodeName = value["TranscodeName"].asString();
+		if(!value["TranscodeRecord"].isNull())
+			domainTranscodeListObject.transcodeRecord = value["TranscodeRecord"].asString();
+		if(!value["TranscodeSnapshot"].isNull())
+			domainTranscodeListObject.transcodeSnapshot = value["TranscodeSnapshot"].asString();
+		if(!value["TranscodeTemplate"].isNull())
+			domainTranscodeListObject.transcodeTemplate = value["TranscodeTemplate"].asString();
+		domainTranscodeList_.push_back(domainTranscodeListObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamTranscodeInfoResult::DomainTranscodeInfo> DescribeLiveStreamTranscodeInfoResult::getDomainTranscodeList()const
+{
+	return domainTranscodeList_;
 }
 

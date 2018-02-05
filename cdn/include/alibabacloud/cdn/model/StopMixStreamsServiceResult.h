@@ -44,7 +44,6 @@ namespace AlibabaCloud
 				explicit StopMixStreamsServiceResult(const std::string &payload);
 				~StopMixStreamsServiceResult();
 				std::vector<MixStreamsInfo> getMixStreamsInfoList()const;
-				void setMixStreamsInfoList(const std::vector<MixStreamsInfo>& mixStreamsInfoList);
 
 			protected:
 				void parse(const std::string &payload);

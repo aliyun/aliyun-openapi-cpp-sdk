@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetRefererConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetRefererConfigRequest;
 
 SetRefererConfigRequest::SetRefererConfigRequest() :
-	CdnRequest("SetRefererConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetRefererConfig")
 {}
 
 SetRefererConfigRequest::~SetRefererConfigRequest()

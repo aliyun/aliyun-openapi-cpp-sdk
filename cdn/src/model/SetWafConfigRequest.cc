@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetWafConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetWafConfigRequest;
 
 SetWafConfigRequest::SetWafConfigRequest() :
-	CdnRequest("SetWafConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetWafConfig")
 {}
 
 SetWafConfigRequest::~SetWafConfigRequest()

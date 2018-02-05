@@ -43,15 +43,21 @@ void DescribeCdnServiceResult::parse(const std::string &payload)
 	auto allOperationLocks = value["OperationLocks"]["LockReason"];
 	for (auto value : allOperationLocks)
 	{
-		LockReason lockReasonObject;
-		lockReasonObject.lockReason = value["LockReason"].asString();
-		operationLocks_.push_back(lockReasonObject);
+		LockReason operationLocksObject;
+		if(!value["LockReason"].isNull())
+			operationLocksObject.lockReason = value["LockReason"].asString();
+		operationLocks_.push_back(operationLocksObject);
 	}
-	instanceId_ = value["InstanceId"].asString();
-	internetChargeType_ = value["InternetChargeType"].asString();
-	openingTime_ = value["OpeningTime"].asString();
-	changingChargeType_ = value["ChangingChargeType"].asString();
-	changingAffectTime_ = value["ChangingAffectTime"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["InternetChargeType"].isNull())
+		internetChargeType_ = value["InternetChargeType"].asString();
+	if(!value["OpeningTime"].isNull())
+		openingTime_ = value["OpeningTime"].asString();
+	if(!value["ChangingChargeType"].isNull())
+		changingChargeType_ = value["ChangingChargeType"].asString();
+	if(!value["ChangingAffectTime"].isNull())
+		changingAffectTime_ = value["ChangingAffectTime"].asString();
 
 }
 
@@ -60,19 +66,9 @@ std::string DescribeCdnServiceResult::getChangingChargeType()const
 	return changingChargeType_;
 }
 
-void DescribeCdnServiceResult::setChangingChargeType(const std::string& changingChargeType)
-{
-	changingChargeType_ = changingChargeType;
-}
-
 std::string DescribeCdnServiceResult::getInstanceId()const
 {
 	return instanceId_;
-}
-
-void DescribeCdnServiceResult::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
 }
 
 std::string DescribeCdnServiceResult::getOpeningTime()const
@@ -80,9 +76,9 @@ std::string DescribeCdnServiceResult::getOpeningTime()const
 	return openingTime_;
 }
 
-void DescribeCdnServiceResult::setOpeningTime(const std::string& openingTime)
+std::vector<DescribeCdnServiceResult::LockReason> DescribeCdnServiceResult::getOperationLocks()const
 {
-	openingTime_ = openingTime;
+	return operationLocks_;
 }
 
 std::string DescribeCdnServiceResult::getChangingAffectTime()const
@@ -90,18 +86,8 @@ std::string DescribeCdnServiceResult::getChangingAffectTime()const
 	return changingAffectTime_;
 }
 
-void DescribeCdnServiceResult::setChangingAffectTime(const std::string& changingAffectTime)
-{
-	changingAffectTime_ = changingAffectTime;
-}
-
 std::string DescribeCdnServiceResult::getInternetChargeType()const
 {
 	return internetChargeType_;
-}
-
-void DescribeCdnServiceResult::setInternetChargeType(const std::string& internetChargeType)
-{
-	internetChargeType_ = internetChargeType;
 }
 

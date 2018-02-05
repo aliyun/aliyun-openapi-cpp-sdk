@@ -38,29 +38,17 @@ namespace AlibabaCloud
 				explicit DescribeDomainMonthBillingBpsDataResult(const std::string &payload);
 				~DescribeDomainMonthBillingBpsDataResult();
 				float getOverseasBandwidth95Bps()const;
-				void setOverseasBandwidth95Bps(float overseasBandwidth95Bps);
 				float getDomesticMonth4thBps()const;
-				void setDomesticMonth4thBps(float domesticMonth4thBps);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				float getOverseasMonthavgBps()const;
-				void setOverseasMonthavgBps(float overseasMonthavgBps);
 				float getMonth4thBps()const;
-				void setMonth4thBps(float month4thBps);
 				float getDomesticMonthavgBps()const;
-				void setDomesticMonthavgBps(float domesticMonthavgBps);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				float getBandwidth95Bps()const;
-				void setBandwidth95Bps(float bandwidth95Bps);
 				float getMonthavgBps()const;
-				void setMonthavgBps(float monthavgBps);
 				float getOverseasMonth4thBps()const;
-				void setOverseasMonth4thBps(float overseasMonth4thBps);
 				float getDomesticBandwidth95Bps()const;
-				void setDomesticBandwidth95Bps(float domesticBandwidth95Bps);
 
 			protected:
 				void parse(const std::string &payload);

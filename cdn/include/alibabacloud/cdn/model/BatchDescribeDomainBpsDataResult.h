@@ -46,13 +46,9 @@ namespace AlibabaCloud
 				explicit BatchDescribeDomainBpsDataResult(const std::string &payload);
 				~BatchDescribeDomainBpsDataResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::vector<DataModule> getBpsDatas()const;
-				void setBpsDatas(const std::vector<DataModule>& bpsDatas);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

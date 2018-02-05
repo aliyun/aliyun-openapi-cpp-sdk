@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit DescribeDomainUpstreamOfCenterResult(const std::string &payload);
 				~DescribeDomainUpstreamOfCenterResult();
 				std::vector<DomainBpsModel> getBpsDatas()const;
-				void setBpsDatas(const std::vector<DomainBpsModel>& bpsDatas);
 
 			protected:
 				void parse(const std::string &payload);

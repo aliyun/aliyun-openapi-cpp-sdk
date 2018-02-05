@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetHttpsOptionConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetHttpsOptionConfigRequest;
 
 SetHttpsOptionConfigRequest::SetHttpsOptionConfigRequest() :
-	CdnRequest("SetHttpsOptionConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetHttpsOptionConfig")
 {}
 
 SetHttpsOptionConfigRequest::~SetHttpsOptionConfigRequest()

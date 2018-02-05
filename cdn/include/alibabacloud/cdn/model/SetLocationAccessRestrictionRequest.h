@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/cdn/CdnRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/cdn/CdnExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT SetLocationAccessRestrictionRequest : public CdnRequest
+			class ALIBABACLOUD_CDN_EXPORT SetLocationAccessRestrictionRequest : public RpcServiceRequest
 			{
 
 			public:

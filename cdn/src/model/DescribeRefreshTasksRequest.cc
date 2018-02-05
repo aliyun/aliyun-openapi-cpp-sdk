@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeRefreshTasksRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeRefreshTasksRequest;
 
 DescribeRefreshTasksRequest::DescribeRefreshTasksRequest() :
-	CdnRequest("DescribeRefreshTasks")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeRefreshTasks")
 {}
 
 DescribeRefreshTasksRequest::~DescribeRefreshTasksRequest()

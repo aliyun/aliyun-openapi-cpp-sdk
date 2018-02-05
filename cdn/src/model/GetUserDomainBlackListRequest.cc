@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/GetUserDomainBlackListRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::GetUserDomainBlackListRequest;
 
 GetUserDomainBlackListRequest::GetUserDomainBlackListRequest() :
-	CdnRequest("GetUserDomainBlackList")
+	RpcServiceRequest("cdn", "2014-11-11", "GetUserDomainBlackList")
 {}
 
 GetUserDomainBlackListRequest::~GetUserDomainBlackListRequest()

@@ -43,23 +43,27 @@ void DescribeLiveStreamOnlineUserNumResult::parse(const std::string &payload)
 	auto allOnlineUserInfo = value["OnlineUserInfo"]["LiveStreamOnlineUserNumInfo"];
 	for (auto value : allOnlineUserInfo)
 	{
-		LiveStreamOnlineUserNumInfo liveStreamOnlineUserNumInfoObject;
-		liveStreamOnlineUserNumInfoObject.streamUrl = value["StreamUrl"].asString();
-		liveStreamOnlineUserNumInfoObject.userNumber = std::stol(value["UserNumber"].asString());
-		liveStreamOnlineUserNumInfoObject.time = value["Time"].asString();
-		onlineUserInfo_.push_back(liveStreamOnlineUserNumInfoObject);
+		LiveStreamOnlineUserNumInfo onlineUserInfoObject;
+		if(!value["StreamUrl"].isNull())
+			onlineUserInfoObject.streamUrl = value["StreamUrl"].asString();
+		if(!value["UserNumber"].isNull())
+			onlineUserInfoObject.userNumber = std::stol(value["UserNumber"].asString());
+		if(!value["Time"].isNull())
+			onlineUserInfoObject.time = value["Time"].asString();
+		onlineUserInfo_.push_back(onlineUserInfoObject);
 	}
-	totalUserNumber_ = std::stol(value["TotalUserNumber"].asString());
+	if(!value["TotalUserNumber"].isNull())
+		totalUserNumber_ = std::stol(value["TotalUserNumber"].asString());
 
+}
+
+std::vector<DescribeLiveStreamOnlineUserNumResult::LiveStreamOnlineUserNumInfo> DescribeLiveStreamOnlineUserNumResult::getOnlineUserInfo()const
+{
+	return onlineUserInfo_;
 }
 
 long DescribeLiveStreamOnlineUserNumResult::getTotalUserNumber()const
 {
 	return totalUserNumber_;
-}
-
-void DescribeLiveStreamOnlineUserNumResult::setTotalUserNumber(long totalUserNumber)
-{
-	totalUserNumber_ = totalUserNumber;
 }
 

@@ -43,23 +43,18 @@ namespace AlibabaCloud
 				explicit DescribeDomainSrcFlowDataResult(const std::string &payload);
 				~DescribeDomainSrcFlowDataResult();
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				std::string getDataInterval()const;
-				void setDataInterval(const std::string& dataInterval);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
+				std::string getDataInterval()const;
 				std::vector<DataModule> getSrcFlowDataPerInterval()const;
-				void setSrcFlowDataPerInterval(const std::vector<DataModule>& srcFlowDataPerInterval);
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string endTime_;
 				std::string domainName_;
-				std::string dataInterval_;
 				std::string startTime_;
+				std::string dataInterval_;
 				std::vector<DataModule> srcFlowDataPerInterval_;
 
 			};

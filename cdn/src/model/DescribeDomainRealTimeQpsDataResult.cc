@@ -43,11 +43,18 @@ void DescribeDomainRealTimeQpsDataResult::parse(const std::string &payload)
 	auto allData = value["Data"]["QpsModel"];
 	for (auto value : allData)
 	{
-		QpsModel qpsModelObject;
-		qpsModelObject.qps = std::stof(value["Qps"].asString());
-		qpsModelObject.timeStamp = value["TimeStamp"].asString();
-		data_.push_back(qpsModelObject);
+		QpsModel dataObject;
+		if(!value["Qps"].isNull())
+			dataObject.qps = std::stof(value["Qps"].asString());
+		if(!value["TimeStamp"].isNull())
+			dataObject.timeStamp = value["TimeStamp"].asString();
+		data_.push_back(dataObject);
 	}
 
+}
+
+std::vector<DescribeDomainRealTimeQpsDataResult::QpsModel> DescribeDomainRealTimeQpsDataResult::getData()const
+{
+	return data_;
 }
 

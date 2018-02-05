@@ -43,16 +43,28 @@ void DescribeLiveStreamPushDataResult::parse(const std::string &payload)
 	auto allPushStreamModelList = value["PushStreamModelList"]["PushStreamModel"];
 	for (auto value : allPushStreamModelList)
 	{
-		PushStreamModel pushStreamModelObject;
-		pushStreamModelObject.time = value["Time"].asString();
-		pushStreamModelObject.stream = value["Stream"].asString();
-		pushStreamModelObject.frameRate = std::stof(value["FrameRate"].asString());
-		pushStreamModelObject.bitRate = std::stof(value["BitRate"].asString());
-		pushStreamModelObject.frameLossRate = std::stof(value["FrameLossRate"].asString());
-		pushStreamModelObject.serverAddr = value["ServerAddr"].asString();
-		pushStreamModelObject.clientAddr = value["ClientAddr"].asString();
-		pushStreamModelList_.push_back(pushStreamModelObject);
+		PushStreamModel pushStreamModelListObject;
+		if(!value["Time"].isNull())
+			pushStreamModelListObject.time = value["Time"].asString();
+		if(!value["Stream"].isNull())
+			pushStreamModelListObject.stream = value["Stream"].asString();
+		if(!value["FrameRate"].isNull())
+			pushStreamModelListObject.frameRate = std::stof(value["FrameRate"].asString());
+		if(!value["BitRate"].isNull())
+			pushStreamModelListObject.bitRate = std::stof(value["BitRate"].asString());
+		if(!value["FrameLossRate"].isNull())
+			pushStreamModelListObject.frameLossRate = std::stof(value["FrameLossRate"].asString());
+		if(!value["ServerAddr"].isNull())
+			pushStreamModelListObject.serverAddr = value["ServerAddr"].asString();
+		if(!value["ClientAddr"].isNull())
+			pushStreamModelListObject.clientAddr = value["ClientAddr"].asString();
+		pushStreamModelList_.push_back(pushStreamModelListObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamPushDataResult::PushStreamModel> DescribeLiveStreamPushDataResult::getPushStreamModelList()const
+{
+	return pushStreamModelList_;
 }
 

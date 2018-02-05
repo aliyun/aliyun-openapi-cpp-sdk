@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit DescribeRangeDataByLocateAndIspServiceResult(const std::string &payload);
 				~DescribeRangeDataByLocateAndIspServiceResult();
 				std::string getJsonResult()const;
-				void setJsonResult(const std::string& jsonResult);
 
 			protected:
 				void parse(const std::string &payload);

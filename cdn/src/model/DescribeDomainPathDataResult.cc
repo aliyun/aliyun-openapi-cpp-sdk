@@ -43,20 +43,31 @@ void DescribeDomainPathDataResult::parse(const std::string &payload)
 	auto allPathDataPerInterval = value["PathDataPerInterval"]["UsageData"];
 	for (auto value : allPathDataPerInterval)
 	{
-		UsageData usageDataObject;
-		usageDataObject.traffic = std::stoi(value["Traffic"].asString());
-		usageDataObject.acc = std::stoi(value["Acc"].asString());
-		usageDataObject.path = value["Path"].asString();
-		usageDataObject.time = value["Time"].asString();
-		pathDataPerInterval_.push_back(usageDataObject);
+		UsageData pathDataPerIntervalObject;
+		if(!value["Traffic"].isNull())
+			pathDataPerIntervalObject.traffic = std::stoi(value["Traffic"].asString());
+		if(!value["Acc"].isNull())
+			pathDataPerIntervalObject.acc = std::stoi(value["Acc"].asString());
+		if(!value["Path"].isNull())
+			pathDataPerIntervalObject.path = value["Path"].asString();
+		if(!value["Time"].isNull())
+			pathDataPerIntervalObject.time = value["Time"].asString();
+		pathDataPerInterval_.push_back(pathDataPerIntervalObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	dataInterval_ = value["DataInterval"].asString();
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -65,19 +76,9 @@ int DescribeDomainPathDataResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeDomainPathDataResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 std::string DescribeDomainPathDataResult::getEndTime()const
 {
 	return endTime_;
-}
-
-void DescribeDomainPathDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
 }
 
 int DescribeDomainPathDataResult::getPageSize()const
@@ -85,19 +86,9 @@ int DescribeDomainPathDataResult::getPageSize()const
 	return pageSize_;
 }
 
-void DescribeDomainPathDataResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 std::string DescribeDomainPathDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainPathDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
 }
 
 int DescribeDomainPathDataResult::getPageNumber()const
@@ -105,9 +96,9 @@ int DescribeDomainPathDataResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeDomainPathDataResult::setPageNumber(int pageNumber)
+std::vector<DescribeDomainPathDataResult::UsageData> DescribeDomainPathDataResult::getPathDataPerInterval()const
 {
-	pageNumber_ = pageNumber;
+	return pathDataPerInterval_;
 }
 
 std::string DescribeDomainPathDataResult::getStartTime()const
@@ -115,18 +106,8 @@ std::string DescribeDomainPathDataResult::getStartTime()const
 	return startTime_;
 }
 
-void DescribeDomainPathDataResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-}
-
 std::string DescribeDomainPathDataResult::getDataInterval()const
 {
 	return dataInterval_;
-}
-
-void DescribeDomainPathDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
 }
 

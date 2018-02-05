@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainHttpsDataRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainHttpsDataRequest;
 
 DescribeDomainHttpsDataRequest::DescribeDomainHttpsDataRequest() :
-	CdnRequest("DescribeDomainHttpsData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainHttpsData")
 {}
 
 DescribeDomainHttpsDataRequest::~DescribeDomainHttpsDataRequest()

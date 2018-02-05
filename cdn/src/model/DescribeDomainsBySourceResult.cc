@@ -43,35 +43,42 @@ void DescribeDomainsBySourceResult::parse(const std::string &payload)
 	auto allDomainsList = value["DomainsList"]["DomainsData"];
 	for (auto value : allDomainsList)
 	{
-		DomainsData domainsDataObject;
-		domainsDataObject.source = value["Source"].asString();
+		DomainsData domainsListObject;
+		if(!value["Source"].isNull())
+			domainsListObject.source = value["Source"].asString();
 		auto allDomainInfos = value["DomainInfos"]["domainInfo"];
 		for (auto value : allDomainInfos)
 		{
-			DomainsData::domainInfo domainInfoObject;
-			domainInfoObject.domainName = value["DomainName"].asString();
-			domainInfoObject.domainCname = value["DomainCname"].asString();
-			domainInfoObject.createTime = value["CreateTime"].asString();
-			domainInfoObject.updateTime = value["UpdateTime"].asString();
-			domainInfoObject.status = value["Status"].asString();
-			domainsDataObject.domainInfos.push_back(domainInfoObject);
+			DomainsData::DomainInfo domainInfosObject;
+			if(!value["DomainName"].isNull())
+				domainInfosObject.domainName = value["DomainName"].asString();
+			if(!value["DomainCname"].isNull())
+				domainInfosObject.domainCname = value["DomainCname"].asString();
+			if(!value["CreateTime"].isNull())
+				domainInfosObject.createTime = value["CreateTime"].asString();
+			if(!value["UpdateTime"].isNull())
+				domainInfosObject.updateTime = value["UpdateTime"].asString();
+			if(!value["Status"].isNull())
+				domainInfosObject.status = value["Status"].asString();
+			domainsListObject.domainInfos.push_back(domainInfosObject);
 		}
 		auto allDomains = value["Domains"]["domainNames"];
 		for (auto value : allDomains)
-			domainsDataObject.domains.push_back(value.asString());
-		domainsList_.push_back(domainsDataObject);
+			domainsListObject.domains.push_back(value.asString());
+		domainsList_.push_back(domainsListObject);
 	}
-	sources_ = value["Sources"].asString();
+	if(!value["Sources"].isNull())
+		sources_ = value["Sources"].asString();
 
+}
+
+std::vector<DescribeDomainsBySourceResult::DomainsData> DescribeDomainsBySourceResult::getDomainsList()const
+{
+	return domainsList_;
 }
 
 std::string DescribeDomainsBySourceResult::getSources()const
 {
 	return sources_;
-}
-
-void DescribeDomainsBySourceResult::setSources(const std::string& sources)
-{
-	sources_ = sources;
 }
 

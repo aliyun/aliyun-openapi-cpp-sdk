@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveStreamRelayPushErrorsRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveStreamRelayPushErrorsRequest;
 
 DescribeLiveStreamRelayPushErrorsRequest::DescribeLiveStreamRelayPushErrorsRequest() :
-	CdnRequest("DescribeLiveStreamRelayPushErrors")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamRelayPushErrors")
 {}
 
 DescribeLiveStreamRelayPushErrorsRequest::~DescribeLiveStreamRelayPushErrorsRequest()

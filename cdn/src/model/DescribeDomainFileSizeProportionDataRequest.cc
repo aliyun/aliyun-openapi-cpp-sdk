@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainFileSizeProportionDataRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainFileSizeProportionDataRequest;
 
 DescribeDomainFileSizeProportionDataRequest::DescribeDomainFileSizeProportionDataRequest() :
-	CdnRequest("DescribeDomainFileSizeProportionData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainFileSizeProportionData")
 {}
 
 DescribeDomainFileSizeProportionDataRequest::~DescribeDomainFileSizeProportionDataRequest()

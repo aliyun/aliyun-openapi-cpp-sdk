@@ -42,17 +42,11 @@ namespace AlibabaCloud
 				explicit DescribeCdnServiceResult(const std::string &payload);
 				~DescribeCdnServiceResult();
 				std::string getChangingChargeType()const;
-				void setChangingChargeType(const std::string& changingChargeType);
 				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getOpeningTime()const;
-				void setOpeningTime(const std::string& openingTime);
 				std::vector<LockReason> getOperationLocks()const;
-				void setOperationLocks(const std::vector<LockReason>& operationLocks);
 				std::string getChangingAffectTime()const;
-				void setChangingAffectTime(const std::string& changingAffectTime);
 				std::string getInternetChargeType()const;
-				void setInternetChargeType(const std::string& internetChargeType);
 
 			protected:
 				void parse(const std::string &payload);

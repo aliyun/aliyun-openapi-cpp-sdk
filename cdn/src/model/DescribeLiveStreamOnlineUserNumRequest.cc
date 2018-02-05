@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveStreamOnlineUserNumRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveStreamOnlineUserNumRequest;
 
 DescribeLiveStreamOnlineUserNumRequest::DescribeLiveStreamOnlineUserNumRequest() :
-	CdnRequest("DescribeLiveStreamOnlineUserNum")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamOnlineUserNum")
 {}
 
 DescribeLiveStreamOnlineUserNumRequest::~DescribeLiveStreamOnlineUserNumRequest()

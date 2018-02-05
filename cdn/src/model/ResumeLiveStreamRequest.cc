@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/ResumeLiveStreamRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::ResumeLiveStreamRequest;
 
 ResumeLiveStreamRequest::ResumeLiveStreamRequest() :
-	CdnRequest("ResumeLiveStream")
+	RpcServiceRequest("cdn", "2014-11-11", "ResumeLiveStream")
 {}
 
 ResumeLiveStreamRequest::~ResumeLiveStreamRequest()

@@ -43,11 +43,18 @@ void DescribeDomainRealTimeByteHitRateDataResult::parse(const std::string &paylo
 	auto allData = value["Data"]["ByteHitRateDataModel"];
 	for (auto value : allData)
 	{
-		ByteHitRateDataModel byteHitRateDataModelObject;
-		byteHitRateDataModelObject.byteHitRate = std::stof(value["ByteHitRate"].asString());
-		byteHitRateDataModelObject.timeStamp = value["TimeStamp"].asString();
-		data_.push_back(byteHitRateDataModelObject);
+		ByteHitRateDataModel dataObject;
+		if(!value["ByteHitRate"].isNull())
+			dataObject.byteHitRate = std::stof(value["ByteHitRate"].asString());
+		if(!value["TimeStamp"].isNull())
+			dataObject.timeStamp = value["TimeStamp"].asString();
+		data_.push_back(dataObject);
 	}
 
+}
+
+std::vector<DescribeDomainRealTimeByteHitRateDataResult::ByteHitRateDataModel> DescribeDomainRealTimeByteHitRateDataResult::getData()const
+{
+	return data_;
 }
 

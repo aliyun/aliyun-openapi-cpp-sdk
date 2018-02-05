@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetIpAllowListConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetIpAllowListConfigRequest;
 
 SetIpAllowListConfigRequest::SetIpAllowListConfigRequest() :
-	CdnRequest("SetIpAllowListConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetIpAllowListConfig")
 {}
 
 SetIpAllowListConfigRequest::~SetIpAllowListConfigRequest()

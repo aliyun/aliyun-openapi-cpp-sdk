@@ -44,14 +44,25 @@ void DescribeLiveAppRecordConfigResult::parse(const std::string &payload)
 	for (auto value : allLiveAppRecord)
 	{
 		LiveAppRecord liveAppRecordObject;
-		liveAppRecordObject.domainName = value["DomainName"].asString();
-		liveAppRecordObject.appName = value["AppName"].asString();
-		liveAppRecordObject.ossEndpoint = value["OssEndpoint"].asString();
-		liveAppRecordObject.ossBucket = value["OssBucket"].asString();
-		liveAppRecordObject.ossObjectPrefix = value["OssObjectPrefix"].asString();
-		liveAppRecordObject.createTime = value["CreateTime"].asString();
+		if(!value["DomainName"].isNull())
+			liveAppRecordObject.domainName = value["DomainName"].asString();
+		if(!value["AppName"].isNull())
+			liveAppRecordObject.appName = value["AppName"].asString();
+		if(!value["OssEndpoint"].isNull())
+			liveAppRecordObject.ossEndpoint = value["OssEndpoint"].asString();
+		if(!value["OssBucket"].isNull())
+			liveAppRecordObject.ossBucket = value["OssBucket"].asString();
+		if(!value["OssObjectPrefix"].isNull())
+			liveAppRecordObject.ossObjectPrefix = value["OssObjectPrefix"].asString();
+		if(!value["CreateTime"].isNull())
+			liveAppRecordObject.createTime = value["CreateTime"].asString();
 		liveAppRecord_.push_back(liveAppRecordObject);
 	}
 
+}
+
+std::vector<DescribeLiveAppRecordConfigResult::LiveAppRecord> DescribeLiveAppRecordConfigResult::getLiveAppRecord()const
+{
+	return liveAppRecord_;
 }
 

@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/cdn/CdnRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/cdn/CdnExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeLiveStreamRecordContentRequest : public CdnRequest
+			class ALIBABACLOUD_CDN_EXPORT DescribeLiveStreamRecordContentRequest : public RpcServiceRequest
 			{
 
 			public:

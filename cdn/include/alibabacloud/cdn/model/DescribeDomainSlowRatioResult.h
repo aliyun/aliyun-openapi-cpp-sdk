@@ -49,19 +49,12 @@ namespace AlibabaCloud
 				explicit DescribeDomainSlowRatioResult(const std::string &payload);
 				~DescribeDomainSlowRatioResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				int getDataInterval()const;
-				void setDataInterval(int dataInterval);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::vector<SlowRatioData> getSlowRatioDataPerInterval()const;
-				void setSlowRatioDataPerInterval(const std::vector<SlowRatioData>& slowRatioDataPerInterval);
 
 			protected:
 				void parse(const std::string &payload);

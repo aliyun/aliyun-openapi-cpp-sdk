@@ -51,13 +51,9 @@ namespace AlibabaCloud
 				explicit DescribeCdnDomainLogsResult(const std::string &payload);
 				~DescribeCdnDomainLogsResult();
 				long getTotalCount()const;
-				void setTotalCount(long totalCount);
 				long getPageSize()const;
-				void setPageSize(long pageSize);
 				std::vector<DomainLogModel> getDomainLogModel()const;
-				void setDomainLogModel(const std::vector<DomainLogModel>& domainLogModel);
 				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

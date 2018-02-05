@@ -49,7 +49,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamDomainAppInfoResult(const std::string &payload);
 				~DescribeLiveStreamDomainAppInfoResult();
 				std::vector<DomainAppInfo> getDomainAppList()const;
-				void setDomainAppList(const std::vector<DomainAppInfo>& domainAppList);
 
 			protected:
 				void parse(const std::string &payload);

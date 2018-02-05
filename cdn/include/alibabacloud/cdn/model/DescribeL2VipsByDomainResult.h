@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeL2VipsByDomainResult(const std::string &payload);
 				~DescribeL2VipsByDomainResult();
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::vector<std::string> getVips()const;
-				void setVips(const std::vector<std::string>& vips);
 
 			protected:
 				void parse(const std::string &payload);

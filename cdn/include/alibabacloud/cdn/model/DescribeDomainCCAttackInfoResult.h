@@ -50,15 +50,10 @@ namespace AlibabaCloud
 				explicit DescribeDomainCCAttackInfoResult(const std::string &payload);
 				~DescribeDomainCCAttackInfoResult();
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::vector<AttackIpDatas> getAttackIpDataList()const;
-				void setAttackIpDataList(const std::vector<AttackIpDatas>& attackIpDataList);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::vector<AttackedUrlDatas> getAttackedUrlDataList()const;
-				void setAttackedUrlDataList(const std::vector<AttackedUrlDatas>& attackedUrlDataList);
 
 			protected:
 				void parse(const std::string &payload);

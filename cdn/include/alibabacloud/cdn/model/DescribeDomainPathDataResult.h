@@ -45,21 +45,13 @@ namespace AlibabaCloud
 				explicit DescribeDomainPathDataResult(const std::string &payload);
 				~DescribeDomainPathDataResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<UsageData> getPathDataPerInterval()const;
-				void setPathDataPerInterval(const std::vector<UsageData>& pathDataPerInterval);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::string getDataInterval()const;
-				void setDataInterval(const std::string& dataInterval);
 
 			protected:
 				void parse(const std::string &payload);

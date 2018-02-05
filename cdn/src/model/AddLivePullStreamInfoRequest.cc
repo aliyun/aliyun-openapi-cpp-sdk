@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/AddLivePullStreamInfoRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::AddLivePullStreamInfoRequest;
 
 AddLivePullStreamInfoRequest::AddLivePullStreamInfoRequest() :
-	CdnRequest("AddLivePullStreamInfo")
+	RpcServiceRequest("cdn", "2014-11-11", "AddLivePullStreamInfo")
 {}
 
 AddLivePullStreamInfoRequest::~AddLivePullStreamInfoRequest()

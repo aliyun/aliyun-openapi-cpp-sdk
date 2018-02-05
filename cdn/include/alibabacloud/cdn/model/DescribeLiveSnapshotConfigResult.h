@@ -49,17 +49,11 @@ namespace AlibabaCloud
 				explicit DescribeLiveSnapshotConfigResult(const std::string &payload);
 				~DescribeLiveSnapshotConfigResult();
 				std::string getOrder()const;
-				void setOrder(const std::string& order);
 				int getTotalNum()const;
-				void setTotalNum(int totalNum);
 				int getPageNum()const;
-				void setPageNum(int pageNum);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getTotalPage()const;
-				void setTotalPage(int totalPage);
 				std::vector<LiveStreamSnapshotConfig> getLiveStreamSnapshotConfigList()const;
-				void setLiveStreamSnapshotConfigList(const std::vector<LiveStreamSnapshotConfig>& liveStreamSnapshotConfigList);
 
 			protected:
 				void parse(const std::string &payload);

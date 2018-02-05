@@ -40,17 +40,13 @@ void RefreshObjectCachesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	refreshTaskId_ = value["RefreshTaskId"].asString();
+	if(!value["RefreshTaskId"].isNull())
+		refreshTaskId_ = value["RefreshTaskId"].asString();
 
 }
 
 std::string RefreshObjectCachesResult::getRefreshTaskId()const
 {
 	return refreshTaskId_;
-}
-
-void RefreshObjectCachesResult::setRefreshTaskId(const std::string& refreshTaskId)
-{
-	refreshTaskId_ = refreshTaskId;
 }
 

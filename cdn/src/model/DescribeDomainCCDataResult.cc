@@ -43,16 +43,27 @@ void DescribeDomainCCDataResult::parse(const std::string &payload)
 	auto allCCDataList = value["CCDataList"]["CCDatas"];
 	for (auto value : allCCDataList)
 	{
-		CCDatas cCDatasObject;
-		cCDatasObject.timeStamp = value["TimeStamp"].asString();
-		cCDatasObject.count = value["Count"].asString();
-		cCDataList_.push_back(cCDatasObject);
+		CCDatas cCDataListObject;
+		if(!value["TimeStamp"].isNull())
+			cCDataListObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Count"].isNull())
+			cCDataListObject.count = value["Count"].asString();
+		cCDataList_.push_back(cCDataListObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
+}
+
+std::vector<DescribeDomainCCDataResult::CCDatas> DescribeDomainCCDataResult::getCCDataList()const
+{
+	return cCDataList_;
 }
 
 std::string DescribeDomainCCDataResult::getEndTime()const
@@ -60,19 +71,9 @@ std::string DescribeDomainCCDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainCCDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainCCDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainCCDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
 }
 
 std::string DescribeDomainCCDataResult::getDataInterval()const
@@ -80,18 +81,8 @@ std::string DescribeDomainCCDataResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeDomainCCDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeDomainCCDataResult::getStartTime()const
 {
 	return startTime_;
-}
-
-void DescribeDomainCCDataResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
 }
 

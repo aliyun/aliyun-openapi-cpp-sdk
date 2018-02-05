@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetErrorPageConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetErrorPageConfigRequest;
 
 SetErrorPageConfigRequest::SetErrorPageConfigRequest() :
-	CdnRequest("SetErrorPageConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetErrorPageConfig")
 {}
 
 SetErrorPageConfigRequest::~SetErrorPageConfigRequest()

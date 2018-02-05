@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit DescribeDomainRealTimeBpsDataResult(const std::string &payload);
 				~DescribeDomainRealTimeBpsDataResult();
 				std::vector<BpsModel> getData()const;
-				void setData(const std::vector<BpsModel>& data);
 
 			protected:
 				void parse(const std::string &payload);

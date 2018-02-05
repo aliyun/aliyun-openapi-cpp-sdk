@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetPageCompressConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetPageCompressConfigRequest;
 
 SetPageCompressConfigRequest::SetPageCompressConfigRequest() :
-	CdnRequest("SetPageCompressConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetPageCompressConfig")
 {}
 
 SetPageCompressConfigRequest::~SetPageCompressConfigRequest()

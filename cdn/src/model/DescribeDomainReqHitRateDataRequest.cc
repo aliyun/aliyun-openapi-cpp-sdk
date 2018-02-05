@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainReqHitRateDataRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainReqHitRateDataRequest;
 
 DescribeDomainReqHitRateDataRequest::DescribeDomainReqHitRateDataRequest() :
-	CdnRequest("DescribeDomainReqHitRateData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainReqHitRateData")
 {}
 
 DescribeDomainReqHitRateDataRequest::~DescribeDomainReqHitRateDataRequest()

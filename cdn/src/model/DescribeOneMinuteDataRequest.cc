@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeOneMinuteDataRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeOneMinuteDataRequest;
 
 DescribeOneMinuteDataRequest::DescribeOneMinuteDataRequest() :
-	CdnRequest("DescribeOneMinuteData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeOneMinuteData")
 {}
 
 DescribeOneMinuteDataRequest::~DescribeOneMinuteDataRequest()

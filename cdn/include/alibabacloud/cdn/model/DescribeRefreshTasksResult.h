@@ -48,13 +48,9 @@ namespace AlibabaCloud
 				explicit DescribeRefreshTasksResult(const std::string &payload);
 				~DescribeRefreshTasksResult();
 				long getTotalCount()const;
-				void setTotalCount(long totalCount);
 				std::vector<CDNTask> getTasks()const;
-				void setTasks(const std::vector<CDNTask>& tasks);
 				long getPageSize()const;
-				void setPageSize(long pageSize);
 				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

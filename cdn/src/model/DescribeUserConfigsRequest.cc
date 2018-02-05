@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeUserConfigsRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeUserConfigsRequest;
 
 DescribeUserConfigsRequest::DescribeUserConfigsRequest() :
-	CdnRequest("DescribeUserConfigs")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeUserConfigs")
 {}
 
 DescribeUserConfigsRequest::~DescribeUserConfigsRequest()

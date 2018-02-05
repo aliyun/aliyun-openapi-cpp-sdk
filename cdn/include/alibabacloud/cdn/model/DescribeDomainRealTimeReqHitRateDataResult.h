@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit DescribeDomainRealTimeReqHitRateDataResult(const std::string &payload);
 				~DescribeDomainRealTimeReqHitRateDataResult();
 				std::vector<ReqHitRateDataModel> getData()const;
-				void setData(const std::vector<ReqHitRateDataModel>& data);
 
 			protected:
 				void parse(const std::string &payload);

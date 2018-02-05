@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainCCAttackInfoRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainCCAttackInfoRequest;
 
 DescribeDomainCCAttackInfoRequest::DescribeDomainCCAttackInfoRequest() :
-	CdnRequest("DescribeDomainCCAttackInfo")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainCCAttackInfo")
 {}
 
 DescribeDomainCCAttackInfoRequest::~DescribeDomainCCAttackInfoRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/UpdateLiveAppSnapshotConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::UpdateLiveAppSnapshotConfigRequest;
 
 UpdateLiveAppSnapshotConfigRequest::UpdateLiveAppSnapshotConfigRequest() :
-	CdnRequest("UpdateLiveAppSnapshotConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "UpdateLiveAppSnapshotConfig")
 {}
 
 UpdateLiveAppSnapshotConfigRequest::~UpdateLiveAppSnapshotConfigRequest()

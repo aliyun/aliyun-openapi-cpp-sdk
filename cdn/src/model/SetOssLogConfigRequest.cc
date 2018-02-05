@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetOssLogConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetOssLogConfigRequest;
 
 SetOssLogConfigRequest::SetOssLogConfigRequest() :
-	CdnRequest("SetOssLogConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetOssLogConfig")
 {}
 
 SetOssLogConfigRequest::~SetOssLogConfigRequest()

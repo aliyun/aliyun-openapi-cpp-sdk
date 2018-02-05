@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/cdn/CdnRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/cdn/CdnExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,42 +28,96 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeDomainSrcBpsDataRequest : public CdnRequest
+			class ALIBABACLOUD_CDN_EXPORT DescribeDomainSrcBpsDataRequest : public RpcServiceRequest
 			{
 
 			public:
 				DescribeDomainSrcBpsDataRequest();
 				~DescribeDomainSrcBpsDataRequest();
 
-				std::string getFixTimeGap()const;
-				void setFixTimeGap(const std::string& fixTimeGap);
+				long getCallerParentId()const;
+				void setCallerParentId(long callerParentId);
+				bool getProxy_original_security_transport()const;
+				void setProxy_original_security_transport(bool proxy_original_security_transport);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getProxy_original_source_ip()const;
+				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
+				std::string getOwnerIdLoginEmail()const;
+				void setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail);
+				std::string getCallerType()const;
+				void setCallerType(const std::string& callerType);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getRequestContent()const;
+				void setRequestContent(const std::string& requestContent);
+				std::string getCallerBidEmail()const;
+				void setCallerBidEmail(const std::string& callerBidEmail);
+				std::string getCallerUidEmail()const;
+				void setCallerUidEmail(const std::string& callerUidEmail);
+				long getCallerUid()const;
+				void setCallerUid(long callerUid);
+				std::string getApp_ip()const;
+				void setApp_ip(const std::string& app_ip);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
+				std::string getFixTimeGap()const;
+				void setFixTimeGap(const std::string& fixTimeGap);
 				std::string getTimeMerge()const;
 				void setTimeMerge(const std::string& timeMerge);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getInterval()const;
-				void setInterval(const std::string& interval);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
+				std::string getCallerBid()const;
+				void setCallerBid(const std::string& callerBid);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getVersion()const;
+				void setVersion(const std::string& version);
+				bool getProxy_trust_transport_info()const;
+				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
+				bool getAk_mfa_present()const;
+				void setAk_mfa_present(bool ak_mfa_present);
+				bool getSecurity_transport()const;
+				void setSecurity_transport(bool security_transport);
+				std::string getRequestId()const;
+				void setRequestId(const std::string& requestId);
+				std::string getInterval()const;
+				void setInterval(const std::string& interval);
+				std::string getFields()const;
+				void setFields(const std::string& fields);
 
             private:
-				std::string fixTimeGap_;
+				long callerParentId_;
+				bool proxy_original_security_transport_;
+				std::string startTime_;
+				std::string proxy_original_source_ip_;
+				std::string ownerIdLoginEmail_;
+				std::string callerType_;
+				std::string accessKeyId_;
 				std::string securityToken_;
+				std::string requestContent_;
+				std::string callerBidEmail_;
+				std::string callerUidEmail_;
+				long callerUid_;
+				std::string app_ip_;
+				std::string product_;
+				std::string fixTimeGap_;
 				std::string timeMerge_;
 				std::string domainName_;
 				std::string endTime_;
-				std::string interval_;
-				std::string startTime_;
+				std::string callerBid_;
 				long ownerId_;
-				std::string accessKeyId_;
+				std::string version_;
+				bool proxy_trust_transport_info_;
+				bool ak_mfa_present_;
+				bool security_transport_;
+				std::string requestId_;
+				std::string interval_;
+				std::string fields_;
 
 			};
 		}

@@ -46,11 +46,8 @@ namespace AlibabaCloud
 				explicit DescribeDomainTopReferVisitResult(const std::string &payload);
 				~DescribeDomainTopReferVisitResult();
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::vector<ReferList> getTopReferList()const;
-				void setTopReferList(const std::vector<ReferList>& topReferList);
 
 			protected:
 				void parse(const std::string &payload);

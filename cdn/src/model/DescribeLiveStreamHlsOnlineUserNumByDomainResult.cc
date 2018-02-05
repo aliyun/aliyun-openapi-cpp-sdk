@@ -43,17 +43,29 @@ void DescribeLiveStreamHlsOnlineUserNumByDomainResult::parse(const std::string &
 	auto allOnlineUserInfo = value["OnlineUserInfo"]["LiveStreamOnlineUserNumInfo"];
 	for (auto value : allOnlineUserInfo)
 	{
-		LiveStreamOnlineUserNumInfo liveStreamOnlineUserNumInfoObject;
-		liveStreamOnlineUserNumInfoObject.streamUrl = value["StreamUrl"].asString();
-		liveStreamOnlineUserNumInfoObject.userNumber = std::stol(value["UserNumber"].asString());
-		liveStreamOnlineUserNumInfoObject.time = value["Time"].asString();
-		onlineUserInfo_.push_back(liveStreamOnlineUserNumInfoObject);
+		LiveStreamOnlineUserNumInfo onlineUserInfoObject;
+		if(!value["StreamUrl"].isNull())
+			onlineUserInfoObject.streamUrl = value["StreamUrl"].asString();
+		if(!value["UserNumber"].isNull())
+			onlineUserInfoObject.userNumber = std::stol(value["UserNumber"].asString());
+		if(!value["Time"].isNull())
+			onlineUserInfoObject.time = value["Time"].asString();
+		onlineUserInfo_.push_back(onlineUserInfoObject);
 	}
-	totalUserNumber_ = std::stol(value["TotalUserNumber"].asString());
-	count_ = std::stol(value["Count"].asString());
-	pageNumber_ = std::stol(value["pageNumber"].asString());
-	pageSize_ = std::stol(value["pageSize"].asString());
+	if(!value["TotalUserNumber"].isNull())
+		totalUserNumber_ = std::stol(value["TotalUserNumber"].asString());
+	if(!value["Count"].isNull())
+		count_ = std::stol(value["Count"].asString());
+	if(!value["pageNumber"].isNull())
+		pageNumber_ = std::stol(value["pageNumber"].asString());
+	if(!value["pageSize"].isNull())
+		pageSize_ = std::stol(value["pageSize"].asString());
 
+}
+
+std::vector<DescribeLiveStreamHlsOnlineUserNumByDomainResult::LiveStreamOnlineUserNumInfo> DescribeLiveStreamHlsOnlineUserNumByDomainResult::getOnlineUserInfo()const
+{
+	return onlineUserInfo_;
 }
 
 long DescribeLiveStreamHlsOnlineUserNumByDomainResult::getPageSize()const
@@ -61,19 +73,9 @@ long DescribeLiveStreamHlsOnlineUserNumByDomainResult::getPageSize()const
 	return pageSize_;
 }
 
-void DescribeLiveStreamHlsOnlineUserNumByDomainResult::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 long DescribeLiveStreamHlsOnlineUserNumByDomainResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeLiveStreamHlsOnlineUserNumByDomainResult::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 
 long DescribeLiveStreamHlsOnlineUserNumByDomainResult::getTotalUserNumber()const
@@ -81,18 +83,8 @@ long DescribeLiveStreamHlsOnlineUserNumByDomainResult::getTotalUserNumber()const
 	return totalUserNumber_;
 }
 
-void DescribeLiveStreamHlsOnlineUserNumByDomainResult::setTotalUserNumber(long totalUserNumber)
-{
-	totalUserNumber_ = totalUserNumber;
-}
-
 long DescribeLiveStreamHlsOnlineUserNumByDomainResult::getCount()const
 {
 	return count_;
-}
-
-void DescribeLiveStreamHlsOnlineUserNumByDomainResult::setCount(long count)
-{
-	count_ = count;
 }
 

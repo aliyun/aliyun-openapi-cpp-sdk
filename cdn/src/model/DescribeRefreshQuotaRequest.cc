@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeRefreshQuotaRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeRefreshQuotaRequest;
 
 DescribeRefreshQuotaRequest::DescribeRefreshQuotaRequest() :
-	CdnRequest("DescribeRefreshQuota")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeRefreshQuota")
 {}
 
 DescribeRefreshQuotaRequest::~DescribeRefreshQuotaRequest()

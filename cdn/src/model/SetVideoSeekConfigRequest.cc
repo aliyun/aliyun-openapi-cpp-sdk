@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetVideoSeekConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetVideoSeekConfigRequest;
 
 SetVideoSeekConfigRequest::SetVideoSeekConfigRequest() :
-	CdnRequest("SetVideoSeekConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetVideoSeekConfig")
 {}
 
 SetVideoSeekConfigRequest::~SetVideoSeekConfigRequest()

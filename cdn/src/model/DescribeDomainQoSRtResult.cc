@@ -43,16 +43,23 @@ void DescribeDomainQoSRtResult::parse(const std::string &payload)
 	auto allContent = value["Content"]["Data"];
 	for (auto value : allContent)
 	{
-		Data dataObject;
-		dataObject.more5s = value["More5s"].asString();
-		dataObject.time = value["Time"].asString();
-		dataObject.more3s = value["More3s"].asString();
-		content_.push_back(dataObject);
+		Data contentObject;
+		if(!value["More5s"].isNull())
+			contentObject.more5s = value["More5s"].asString();
+		if(!value["Time"].isNull())
+			contentObject.time = value["Time"].asString();
+		if(!value["More3s"].isNull())
+			contentObject.more3s = value["More3s"].asString();
+		content_.push_back(contentObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
-	ip_ = value["Ip"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["Ip"].isNull())
+		ip_ = value["Ip"].asString();
 
 }
 
@@ -61,19 +68,14 @@ std::string DescribeDomainQoSRtResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainQoSRtResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainQoSRtResult::getDomainName()const
 {
 	return domainName_;
 }
 
-void DescribeDomainQoSRtResult::setDomainName(const std::string& domainName)
+std::vector<DescribeDomainQoSRtResult::Data> DescribeDomainQoSRtResult::getContent()const
 {
-	domainName_ = domainName;
+	return content_;
 }
 
 std::string DescribeDomainQoSRtResult::getIp()const
@@ -81,18 +83,8 @@ std::string DescribeDomainQoSRtResult::getIp()const
 	return ip_;
 }
 
-void DescribeDomainQoSRtResult::setIp(const std::string& ip)
-{
-	ip_ = ip;
-}
-
 std::string DescribeDomainQoSRtResult::getStartTime()const
 {
 	return startTime_;
-}
-
-void DescribeDomainQoSRtResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
 }
 

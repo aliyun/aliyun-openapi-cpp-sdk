@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainPathDataRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainPathDataRequest;
 
 DescribeDomainPathDataRequest::DescribeDomainPathDataRequest() :
-	CdnRequest("DescribeDomainPathData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainPathData")
 {}
 
 DescribeDomainPathDataRequest::~DescribeDomainPathDataRequest()

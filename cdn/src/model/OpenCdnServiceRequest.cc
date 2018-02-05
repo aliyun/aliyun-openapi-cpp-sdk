@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/OpenCdnServiceRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::OpenCdnServiceRequest;
 
 OpenCdnServiceRequest::OpenCdnServiceRequest() :
-	CdnRequest("OpenCdnService")
+	RpcServiceRequest("cdn", "2014-11-11", "OpenCdnService")
 {}
 
 OpenCdnServiceRequest::~OpenCdnServiceRequest()

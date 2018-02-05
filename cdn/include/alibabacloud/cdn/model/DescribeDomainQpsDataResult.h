@@ -54,15 +54,10 @@ namespace AlibabaCloud
 				explicit DescribeDomainQpsDataResult(const std::string &payload);
 				~DescribeDomainQpsDataResult();
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getDataInterval()const;
-				void setDataInterval(const std::string& dataInterval);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::vector<DataModule> getQpsDataInterval()const;
-				void setQpsDataInterval(const std::vector<DataModule>& qpsDataInterval);
 
 			protected:
 				void parse(const std::string &payload);

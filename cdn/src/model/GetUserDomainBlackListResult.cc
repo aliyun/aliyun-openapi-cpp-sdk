@@ -40,17 +40,13 @@ void GetUserDomainBlackListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	bind_ = value["Bind"].asString();
+	if(!value["Bind"].isNull())
+		bind_ = value["Bind"].asString();
 
 }
 
 std::string GetUserDomainBlackListResult::getBind()const
 {
 	return bind_;
-}
-
-void GetUserDomainBlackListResult::setBind(const std::string& bind)
-{
-	bind_ = bind;
 }
 

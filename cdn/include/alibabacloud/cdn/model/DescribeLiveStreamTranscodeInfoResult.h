@@ -47,7 +47,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamTranscodeInfoResult(const std::string &payload);
 				~DescribeLiveStreamTranscodeInfoResult();
 				std::vector<DomainTranscodeInfo> getDomainTranscodeList()const;
-				void setDomainTranscodeList(const std::vector<DomainTranscodeInfo>& domainTranscodeList);
 
 			protected:
 				void parse(const std::string &payload);

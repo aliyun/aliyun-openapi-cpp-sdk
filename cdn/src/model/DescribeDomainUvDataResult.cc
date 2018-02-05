@@ -43,16 +43,27 @@ void DescribeDomainUvDataResult::parse(const std::string &payload)
 	auto allUvDataInterval = value["UvDataInterval"]["UsageData"];
 	for (auto value : allUvDataInterval)
 	{
-		UsageData usageDataObject;
-		usageDataObject.timeStamp = value["TimeStamp"].asString();
-		usageDataObject.value = value["Value"].asString();
-		uvDataInterval_.push_back(usageDataObject);
+		UsageData uvDataIntervalObject;
+		if(!value["TimeStamp"].isNull())
+			uvDataIntervalObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Value"].isNull())
+			uvDataIntervalObject.value = value["Value"].asString();
+		uvDataInterval_.push_back(uvDataIntervalObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
+}
+
+std::vector<DescribeDomainUvDataResult::UsageData> DescribeDomainUvDataResult::getUvDataInterval()const
+{
+	return uvDataInterval_;
 }
 
 std::string DescribeDomainUvDataResult::getEndTime()const
@@ -60,19 +71,9 @@ std::string DescribeDomainUvDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainUvDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainUvDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainUvDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
 }
 
 std::string DescribeDomainUvDataResult::getDataInterval()const
@@ -80,18 +81,8 @@ std::string DescribeDomainUvDataResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeDomainUvDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeDomainUvDataResult::getStartTime()const
 {
 	return startTime_;
-}
-
-void DescribeDomainUvDataResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
 }
 

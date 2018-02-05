@@ -43,17 +43,29 @@ void DescribeLiveStreamOnlineBpsResult::parse(const std::string &payload)
 	auto allLiveStreamOnlineBpsInfos = value["LiveStreamOnlineBpsInfos"]["LiveStreamOnlineBpsInfo"];
 	for (auto value : allLiveStreamOnlineBpsInfos)
 	{
-		LiveStreamOnlineBpsInfo liveStreamOnlineBpsInfoObject;
-		liveStreamOnlineBpsInfoObject.streamUrl = value["StreamUrl"].asString();
-		liveStreamOnlineBpsInfoObject.upBps = std::stof(value["UpBps"].asString());
-		liveStreamOnlineBpsInfoObject.downBps = std::stof(value["DownBps"].asString());
-		liveStreamOnlineBpsInfoObject.time = value["Time"].asString();
-		liveStreamOnlineBpsInfos_.push_back(liveStreamOnlineBpsInfoObject);
+		LiveStreamOnlineBpsInfo liveStreamOnlineBpsInfosObject;
+		if(!value["StreamUrl"].isNull())
+			liveStreamOnlineBpsInfosObject.streamUrl = value["StreamUrl"].asString();
+		if(!value["UpBps"].isNull())
+			liveStreamOnlineBpsInfosObject.upBps = std::stof(value["UpBps"].asString());
+		if(!value["DownBps"].isNull())
+			liveStreamOnlineBpsInfosObject.downBps = std::stof(value["DownBps"].asString());
+		if(!value["Time"].isNull())
+			liveStreamOnlineBpsInfosObject.time = value["Time"].asString();
+		liveStreamOnlineBpsInfos_.push_back(liveStreamOnlineBpsInfosObject);
 	}
-	totalUserNumber_ = std::stol(value["TotalUserNumber"].asString());
-	flvBps_ = std::stof(value["FlvBps"].asString());
-	hlsBps_ = std::stof(value["HlsBps"].asString());
+	if(!value["TotalUserNumber"].isNull())
+		totalUserNumber_ = std::stol(value["TotalUserNumber"].asString());
+	if(!value["FlvBps"].isNull())
+		flvBps_ = std::stof(value["FlvBps"].asString());
+	if(!value["HlsBps"].isNull())
+		hlsBps_ = std::stof(value["HlsBps"].asString());
 
+}
+
+std::vector<DescribeLiveStreamOnlineBpsResult::LiveStreamOnlineBpsInfo> DescribeLiveStreamOnlineBpsResult::getLiveStreamOnlineBpsInfos()const
+{
+	return liveStreamOnlineBpsInfos_;
 }
 
 float DescribeLiveStreamOnlineBpsResult::getHlsBps()const
@@ -61,28 +73,13 @@ float DescribeLiveStreamOnlineBpsResult::getHlsBps()const
 	return hlsBps_;
 }
 
-void DescribeLiveStreamOnlineBpsResult::setHlsBps(float hlsBps)
-{
-	hlsBps_ = hlsBps;
-}
-
 long DescribeLiveStreamOnlineBpsResult::getTotalUserNumber()const
 {
 	return totalUserNumber_;
 }
 
-void DescribeLiveStreamOnlineBpsResult::setTotalUserNumber(long totalUserNumber)
-{
-	totalUserNumber_ = totalUserNumber;
-}
-
 float DescribeLiveStreamOnlineBpsResult::getFlvBps()const
 {
 	return flvBps_;
-}
-
-void DescribeLiveStreamOnlineBpsResult::setFlvBps(float flvBps)
-{
-	flvBps_ = flvBps;
 }
 

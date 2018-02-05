@@ -259,7 +259,6 @@ namespace AlibabaCloud
 				explicit DescribeDomainConfigsResult(const std::string &payload);
 				~DescribeDomainConfigsResult();
 				std::vector<DomainConfigs> getDomainConfigs()const;
-				void setDomainConfigs(const std::vector<DomainConfigs>& domainConfigs);
 
 			protected:
 				void parse(const std::string &payload);

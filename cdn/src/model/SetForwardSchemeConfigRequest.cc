@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetForwardSchemeConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetForwardSchemeConfigRequest;
 
 SetForwardSchemeConfigRequest::SetForwardSchemeConfigRequest() :
-	CdnRequest("SetForwardSchemeConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetForwardSchemeConfig")
 {}
 
 SetForwardSchemeConfigRequest::~SetForwardSchemeConfigRequest()

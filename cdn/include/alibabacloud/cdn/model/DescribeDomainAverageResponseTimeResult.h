@@ -43,15 +43,10 @@ namespace AlibabaCloud
 				explicit DescribeDomainAverageResponseTimeResult(const std::string &payload);
 				~DescribeDomainAverageResponseTimeResult();
 				std::vector<DataModule> getAvgRTPerInterval()const;
-				void setAvgRTPerInterval(const std::vector<DataModule>& avgRTPerInterval);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getDataInterval()const;
-				void setDataInterval(const std::string& dataInterval);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 
 			protected:
 				void parse(const std::string &payload);

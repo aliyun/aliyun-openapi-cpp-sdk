@@ -83,11 +83,8 @@ namespace AlibabaCloud
 				explicit DescribeDomainHttpsDataResult(const std::string &payload);
 				~DescribeDomainHttpsDataResult();
 				std::string getDataInterval()const;
-				void setDataInterval(const std::string& dataInterval);
 				std::string getDomainNames()const;
-				void setDomainNames(const std::string& domainNames);
 				std::vector<HttpsStatisticsInfo> getHttpsStatisticsInfos()const;
-				void setHttpsStatisticsInfos(const std::vector<HttpsStatisticsInfo>& httpsStatisticsInfos);
 
 			protected:
 				void parse(const std::string &payload);

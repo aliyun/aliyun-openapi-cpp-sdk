@@ -40,8 +40,10 @@ void DescribeOneMinuteDataResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	bps_ = value["Bps"].asString();
-	qps_ = value["Qps"].asString();
+	if(!value["Bps"].isNull())
+		bps_ = value["Bps"].asString();
+	if(!value["Qps"].isNull())
+		qps_ = value["Qps"].asString();
 
 }
 
@@ -50,18 +52,8 @@ std::string DescribeOneMinuteDataResult::getBps()const
 	return bps_;
 }
 
-void DescribeOneMinuteDataResult::setBps(const std::string& bps)
-{
-	bps_ = bps;
-}
-
 std::string DescribeOneMinuteDataResult::getQps()const
 {
 	return qps_;
-}
-
-void DescribeOneMinuteDataResult::setQps(const std::string& qps)
-{
-	qps_ = qps;
 }
 

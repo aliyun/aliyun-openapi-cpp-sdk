@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainAverageResponseTimeRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainAverageResponseTimeRequest;
 
 DescribeDomainAverageResponseTimeRequest::DescribeDomainAverageResponseTimeRequest() :
-	CdnRequest("DescribeDomainAverageResponseTime")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainAverageResponseTime")
 {}
 
 DescribeDomainAverageResponseTimeRequest::~DescribeDomainAverageResponseTimeRequest()

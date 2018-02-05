@@ -43,16 +43,23 @@ void DescribeDomainTopReferVisitResult::parse(const std::string &payload)
 	auto allTopReferList = value["TopReferList"]["ReferList"];
 	for (auto value : allTopReferList)
 	{
-		ReferList referListObject;
-		referListObject.referDetail = value["ReferDetail"].asString();
-		referListObject.visitData = value["VisitData"].asString();
-		referListObject.visitProportion = std::stof(value["VisitProportion"].asString());
-		referListObject.flow = value["Flow"].asString();
-		referListObject.flowProportion = std::stof(value["FlowProportion"].asString());
-		topReferList_.push_back(referListObject);
+		ReferList topReferListObject;
+		if(!value["ReferDetail"].isNull())
+			topReferListObject.referDetail = value["ReferDetail"].asString();
+		if(!value["VisitData"].isNull())
+			topReferListObject.visitData = value["VisitData"].asString();
+		if(!value["VisitProportion"].isNull())
+			topReferListObject.visitProportion = std::stof(value["VisitProportion"].asString());
+		if(!value["Flow"].isNull())
+			topReferListObject.flow = value["Flow"].asString();
+		if(!value["FlowProportion"].isNull())
+			topReferListObject.flowProportion = std::stof(value["FlowProportion"].asString());
+		topReferList_.push_back(topReferListObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 
@@ -61,18 +68,13 @@ std::string DescribeDomainTopReferVisitResult::getDomainName()const
 	return domainName_;
 }
 
-void DescribeDomainTopReferVisitResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-}
-
 std::string DescribeDomainTopReferVisitResult::getStartTime()const
 {
 	return startTime_;
 }
 
-void DescribeDomainTopReferVisitResult::setStartTime(const std::string& startTime)
+std::vector<DescribeDomainTopReferVisitResult::ReferList> DescribeDomainTopReferVisitResult::getTopReferList()const
 {
-	startTime_ = startTime;
+	return topReferList_;
 }
 

@@ -48,7 +48,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamPushDataResult(const std::string &payload);
 				~DescribeLiveStreamPushDataResult();
 				std::vector<PushStreamModel> getPushStreamModelList()const;
-				void setPushStreamModelList(const std::vector<PushStreamModel>& pushStreamModelList);
 
 			protected:
 				void parse(const std::string &payload);

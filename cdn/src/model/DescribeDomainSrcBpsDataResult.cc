@@ -43,16 +43,27 @@ void DescribeDomainSrcBpsDataResult::parse(const std::string &payload)
 	auto allSrcBpsDataPerInterval = value["SrcBpsDataPerInterval"]["DataModule"];
 	for (auto value : allSrcBpsDataPerInterval)
 	{
-		DataModule dataModuleObject;
-		dataModuleObject.timeStamp = value["TimeStamp"].asString();
-		dataModuleObject.value = value["Value"].asString();
-		srcBpsDataPerInterval_.push_back(dataModuleObject);
+		DataModule srcBpsDataPerIntervalObject;
+		if(!value["TimeStamp"].isNull())
+			srcBpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Value"].isNull())
+			srcBpsDataPerIntervalObject.value = value["Value"].asString();
+		srcBpsDataPerInterval_.push_back(srcBpsDataPerIntervalObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 
+}
+
+std::vector<DescribeDomainSrcBpsDataResult::DataModule> DescribeDomainSrcBpsDataResult::getSrcBpsDataPerInterval()const
+{
+	return srcBpsDataPerInterval_;
 }
 
 std::string DescribeDomainSrcBpsDataResult::getEndTime()const
@@ -60,29 +71,9 @@ std::string DescribeDomainSrcBpsDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainSrcBpsDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainSrcBpsDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainSrcBpsDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-}
-
-std::string DescribeDomainSrcBpsDataResult::getDataInterval()const
-{
-	return dataInterval_;
-}
-
-void DescribeDomainSrcBpsDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
 }
 
 std::string DescribeDomainSrcBpsDataResult::getStartTime()const
@@ -90,8 +81,8 @@ std::string DescribeDomainSrcBpsDataResult::getStartTime()const
 	return startTime_;
 }
 
-void DescribeDomainSrcBpsDataResult::setStartTime(const std::string& startTime)
+std::string DescribeDomainSrcBpsDataResult::getDataInterval()const
 {
-	startTime_ = startTime;
+	return dataInterval_;
 }
 

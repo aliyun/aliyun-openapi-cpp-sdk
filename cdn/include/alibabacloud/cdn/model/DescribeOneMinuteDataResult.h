@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeOneMinuteDataResult(const std::string &payload);
 				~DescribeOneMinuteDataResult();
 				std::string getBps()const;
-				void setBps(const std::string& bps);
 				std::string getQps()const;
-				void setQps(const std::string& qps);
 
 			protected:
 				void parse(const std::string &payload);

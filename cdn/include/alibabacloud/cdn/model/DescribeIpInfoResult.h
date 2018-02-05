@@ -38,15 +38,10 @@ namespace AlibabaCloud
 				explicit DescribeIpInfoResult(const std::string &payload);
 				~DescribeIpInfoResult();
 				std::string getISP()const;
-				void setISP(const std::string& iSP);
 				std::string getRegion()const;
-				void setRegion(const std::string& region);
 				std::string getIspEname()const;
-				void setIspEname(const std::string& ispEname);
 				std::string getCdnIp()const;
-				void setCdnIp(const std::string& cdnIp);
 				std::string getRegionEname()const;
-				void setRegionEname(const std::string& regionEname);
 
 			protected:
 				void parse(const std::string &payload);

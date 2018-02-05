@@ -48,9 +48,7 @@ namespace AlibabaCloud
 				explicit DescribeCdnRegionAndIspResult(const std::string &payload);
 				~DescribeCdnRegionAndIspResult();
 				std::vector<Region> getRegions()const;
-				void setRegions(const std::vector<Region>& regions);
 				std::vector<Isp> getIsps()const;
-				void setIsps(const std::vector<Isp>& isps);
 
 			protected:
 				void parse(const std::string &payload);

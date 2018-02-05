@@ -40,12 +40,18 @@ void DescribeDomainMax95BpsDataResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	domainName_ = value["DomainName"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
-	max95Bps_ = value["Max95Bps"].asString();
-	domesticMax95Bps_ = value["DomesticMax95Bps"].asString();
-	overseasMax95Bps_ = value["OverseasMax95Bps"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["Max95Bps"].isNull())
+		max95Bps_ = value["Max95Bps"].asString();
+	if(!value["DomesticMax95Bps"].isNull())
+		domesticMax95Bps_ = value["DomesticMax95Bps"].asString();
+	if(!value["OverseasMax95Bps"].isNull())
+		overseasMax95Bps_ = value["OverseasMax95Bps"].asString();
 
 }
 
@@ -54,19 +60,9 @@ std::string DescribeDomainMax95BpsDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainMax95BpsDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainMax95BpsDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainMax95BpsDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
 }
 
 std::string DescribeDomainMax95BpsDataResult::getStartTime()const
@@ -74,19 +70,9 @@ std::string DescribeDomainMax95BpsDataResult::getStartTime()const
 	return startTime_;
 }
 
-void DescribeDomainMax95BpsDataResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-}
-
 std::string DescribeDomainMax95BpsDataResult::getDomesticMax95Bps()const
 {
 	return domesticMax95Bps_;
-}
-
-void DescribeDomainMax95BpsDataResult::setDomesticMax95Bps(const std::string& domesticMax95Bps)
-{
-	domesticMax95Bps_ = domesticMax95Bps;
 }
 
 std::string DescribeDomainMax95BpsDataResult::getMax95Bps()const
@@ -94,18 +80,8 @@ std::string DescribeDomainMax95BpsDataResult::getMax95Bps()const
 	return max95Bps_;
 }
 
-void DescribeDomainMax95BpsDataResult::setMax95Bps(const std::string& max95Bps)
-{
-	max95Bps_ = max95Bps;
-}
-
 std::string DescribeDomainMax95BpsDataResult::getOverseasMax95Bps()const
 {
 	return overseasMax95Bps_;
-}
-
-void DescribeDomainMax95BpsDataResult::setOverseasMax95Bps(const std::string& overseasMax95Bps)
-{
-	overseasMax95Bps_ = overseasMax95Bps;
 }
 

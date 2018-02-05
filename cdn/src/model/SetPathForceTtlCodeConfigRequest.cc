@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetPathForceTtlCodeConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetPathForceTtlCodeConfigRequest;
 
 SetPathForceTtlCodeConfigRequest::SetPathForceTtlCodeConfigRequest() :
-	CdnRequest("SetPathForceTtlCodeConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetPathForceTtlCodeConfig")
 {}
 
 SetPathForceTtlCodeConfigRequest::~SetPathForceTtlCodeConfigRequest()

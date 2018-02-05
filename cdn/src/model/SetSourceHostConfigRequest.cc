@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetSourceHostConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetSourceHostConfigRequest;
 
 SetSourceHostConfigRequest::SetSourceHostConfigRequest() :
-	CdnRequest("SetSourceHostConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetSourceHostConfig")
 {}
 
 SetSourceHostConfigRequest::~SetSourceHostConfigRequest()

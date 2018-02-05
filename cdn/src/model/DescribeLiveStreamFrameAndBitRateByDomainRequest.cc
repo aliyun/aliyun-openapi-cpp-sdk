@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveStreamFrameAndBitRateByDomainRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveStreamFrameAndBitRateByDomainRequest;
 
 DescribeLiveStreamFrameAndBitRateByDomainRequest::DescribeLiveStreamFrameAndBitRateByDomainRequest() :
-	CdnRequest("DescribeLiveStreamFrameAndBitRateByDomain")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamFrameAndBitRateByDomain")
 {}
 
 DescribeLiveStreamFrameAndBitRateByDomainRequest::~DescribeLiveStreamFrameAndBitRateByDomainRequest()

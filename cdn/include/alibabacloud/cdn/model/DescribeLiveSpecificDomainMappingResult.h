@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveSpecificDomainMappingResult(const std::string &payload);
 				~DescribeLiveSpecificDomainMappingResult();
 				std::vector<DomainMappingModel> getDomainMappingModels()const;
-				void setDomainMappingModels(const std::vector<DomainMappingModel>& domainMappingModels);
 
 			protected:
 				void parse(const std::string &payload);

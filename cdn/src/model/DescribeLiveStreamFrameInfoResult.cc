@@ -43,17 +43,30 @@ void DescribeLiveStreamFrameInfoResult::parse(const std::string &payload)
 	auto allFrameDataInfos = value["FrameDataInfos"]["FrameDataModel"];
 	for (auto value : allFrameDataInfos)
 	{
-		FrameDataModel frameDataModelObject;
-		frameDataModelObject.time = value["Time"].asString();
-		frameDataModelObject.stream = value["Stream"].asString();
-		frameDataModelObject.clientAddr = value["ClientAddr"].asString();
-		frameDataModelObject.server = value["Server"].asString();
-		frameDataModelObject.audioRate = std::stof(value["AudioRate"].asString());
-		frameDataModelObject.audioByte = std::stof(value["AudioByte"].asString());
-		frameDataModelObject.frameRate = std::stof(value["FrameRate"].asString());
-		frameDataModelObject.frameByte = std::stof(value["FrameByte"].asString());
-		frameDataInfos_.push_back(frameDataModelObject);
+		FrameDataModel frameDataInfosObject;
+		if(!value["Time"].isNull())
+			frameDataInfosObject.time = value["Time"].asString();
+		if(!value["Stream"].isNull())
+			frameDataInfosObject.stream = value["Stream"].asString();
+		if(!value["ClientAddr"].isNull())
+			frameDataInfosObject.clientAddr = value["ClientAddr"].asString();
+		if(!value["Server"].isNull())
+			frameDataInfosObject.server = value["Server"].asString();
+		if(!value["AudioRate"].isNull())
+			frameDataInfosObject.audioRate = std::stof(value["AudioRate"].asString());
+		if(!value["AudioByte"].isNull())
+			frameDataInfosObject.audioByte = std::stof(value["AudioByte"].asString());
+		if(!value["FrameRate"].isNull())
+			frameDataInfosObject.frameRate = std::stof(value["FrameRate"].asString());
+		if(!value["FrameByte"].isNull())
+			frameDataInfosObject.frameByte = std::stof(value["FrameByte"].asString());
+		frameDataInfos_.push_back(frameDataInfosObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamFrameInfoResult::FrameDataModel> DescribeLiveStreamFrameInfoResult::getFrameDataInfos()const
+{
+	return frameDataInfos_;
 }
 

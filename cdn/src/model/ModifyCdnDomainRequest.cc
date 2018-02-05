@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/ModifyCdnDomainRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::ModifyCdnDomainRequest;
 
 ModifyCdnDomainRequest::ModifyCdnDomainRequest() :
-	CdnRequest("ModifyCdnDomain")
+	RpcServiceRequest("cdn", "2014-11-11", "ModifyCdnDomain")
 {}
 
 ModifyCdnDomainRequest::~ModifyCdnDomainRequest()

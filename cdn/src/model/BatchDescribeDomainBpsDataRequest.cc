@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/BatchDescribeDomainBpsDataRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::BatchDescribeDomainBpsDataRequest;
 
 BatchDescribeDomainBpsDataRequest::BatchDescribeDomainBpsDataRequest() :
-	CdnRequest("BatchDescribeDomainBpsData")
+	RpcServiceRequest("cdn", "2014-11-11", "BatchDescribeDomainBpsData")
 {}
 
 BatchDescribeDomainBpsDataRequest::~BatchDescribeDomainBpsDataRequest()

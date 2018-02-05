@@ -43,7 +43,8 @@ void DescribeL2VipsByDomainResult::parse(const std::string &payload)
 	auto allVips = value["Vips"]["Vip"];
 	for (const auto &item : allVips)
 		vips_.push_back(item.asString());
-	domainName_ = value["DomainName"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 
 }
 
@@ -52,18 +53,8 @@ std::string DescribeL2VipsByDomainResult::getDomainName()const
 	return domainName_;
 }
 
-void DescribeL2VipsByDomainResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-}
-
 std::vector<std::string> DescribeL2VipsByDomainResult::getVips()const
 {
 	return vips_;
-}
-
-void DescribeL2VipsByDomainResult::setVips(const std::vector<std::string>& vips)
-{
-	vips_ = vips;
 }
 

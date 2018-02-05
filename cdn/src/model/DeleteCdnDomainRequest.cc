@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DeleteCdnDomainRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DeleteCdnDomainRequest;
 
 DeleteCdnDomainRequest::DeleteCdnDomainRequest() :
-	CdnRequest("DeleteCdnDomain")
+	RpcServiceRequest("cdn", "2014-11-11", "DeleteCdnDomain")
 {}
 
 DeleteCdnDomainRequest::~DeleteCdnDomainRequest()

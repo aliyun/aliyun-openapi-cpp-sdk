@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DeleteLiveAppSnapshotConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DeleteLiveAppSnapshotConfigRequest;
 
 DeleteLiveAppSnapshotConfigRequest::DeleteLiveAppSnapshotConfigRequest() :
-	CdnRequest("DeleteLiveAppSnapshotConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "DeleteLiveAppSnapshotConfig")
 {}
 
 DeleteLiveAppSnapshotConfigRequest::~DeleteLiveAppSnapshotConfigRequest()

@@ -40,9 +40,12 @@ void DescribeLiveStreamTranscodeStreamNumResult::parse(const std::string &payloa
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	total_ = std::stol(value["Total"].asString());
-	transcodedNumber_ = std::stol(value["TranscodedNumber"].asString());
-	untranscodeNumber_ = std::stol(value["UntranscodeNumber"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stol(value["Total"].asString());
+	if(!value["TranscodedNumber"].isNull())
+		transcodedNumber_ = std::stol(value["TranscodedNumber"].asString());
+	if(!value["UntranscodeNumber"].isNull())
+		untranscodeNumber_ = std::stol(value["UntranscodeNumber"].asString());
 
 }
 
@@ -51,28 +54,13 @@ long DescribeLiveStreamTranscodeStreamNumResult::getUntranscodeNumber()const
 	return untranscodeNumber_;
 }
 
-void DescribeLiveStreamTranscodeStreamNumResult::setUntranscodeNumber(long untranscodeNumber)
-{
-	untranscodeNumber_ = untranscodeNumber;
-}
-
 long DescribeLiveStreamTranscodeStreamNumResult::getTranscodedNumber()const
 {
 	return transcodedNumber_;
 }
 
-void DescribeLiveStreamTranscodeStreamNumResult::setTranscodedNumber(long transcodedNumber)
-{
-	transcodedNumber_ = transcodedNumber;
-}
-
 long DescribeLiveStreamTranscodeStreamNumResult::getTotal()const
 {
 	return total_;
-}
-
-void DescribeLiveStreamTranscodeStreamNumResult::setTotal(long total)
-{
-	total_ = total;
 }
 

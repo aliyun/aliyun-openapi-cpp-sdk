@@ -43,21 +43,37 @@ void DescribeTopDomainsByFlowResult::parse(const std::string &payload)
 	auto allTopDomains = value["TopDomains"]["TopDomain"];
 	for (auto value : allTopDomains)
 	{
-		TopDomain topDomainObject;
-		topDomainObject.domainName = value["DomainName"].asString();
-		topDomainObject.rank = std::stol(value["Rank"].asString());
-		topDomainObject.totalTraffic = value["TotalTraffic"].asString();
-		topDomainObject.trafficPercent = value["TrafficPercent"].asString();
-		topDomainObject.maxBps = std::stol(value["MaxBps"].asString());
-		topDomainObject.maxBpsTime = value["MaxBpsTime"].asString();
-		topDomainObject.totalAccess = std::stol(value["TotalAccess"].asString());
-		topDomains_.push_back(topDomainObject);
+		TopDomain topDomainsObject;
+		if(!value["DomainName"].isNull())
+			topDomainsObject.domainName = value["DomainName"].asString();
+		if(!value["Rank"].isNull())
+			topDomainsObject.rank = std::stol(value["Rank"].asString());
+		if(!value["TotalTraffic"].isNull())
+			topDomainsObject.totalTraffic = value["TotalTraffic"].asString();
+		if(!value["TrafficPercent"].isNull())
+			topDomainsObject.trafficPercent = value["TrafficPercent"].asString();
+		if(!value["MaxBps"].isNull())
+			topDomainsObject.maxBps = std::stol(value["MaxBps"].asString());
+		if(!value["MaxBpsTime"].isNull())
+			topDomainsObject.maxBpsTime = value["MaxBpsTime"].asString();
+		if(!value["TotalAccess"].isNull())
+			topDomainsObject.totalAccess = std::stol(value["TotalAccess"].asString());
+		topDomains_.push_back(topDomainsObject);
 	}
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
-	domainCount_ = std::stol(value["DomainCount"].asString());
-	domainOnlineCount_ = std::stol(value["DomainOnlineCount"].asString());
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["DomainCount"].isNull())
+		domainCount_ = std::stol(value["DomainCount"].asString());
+	if(!value["DomainOnlineCount"].isNull())
+		domainOnlineCount_ = std::stol(value["DomainOnlineCount"].asString());
 
+}
+
+std::vector<DescribeTopDomainsByFlowResult::TopDomain> DescribeTopDomainsByFlowResult::getTopDomains()const
+{
+	return topDomains_;
 }
 
 std::string DescribeTopDomainsByFlowResult::getEndTime()const
@@ -65,19 +81,9 @@ std::string DescribeTopDomainsByFlowResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeTopDomainsByFlowResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 long DescribeTopDomainsByFlowResult::getDomainOnlineCount()const
 {
 	return domainOnlineCount_;
-}
-
-void DescribeTopDomainsByFlowResult::setDomainOnlineCount(long domainOnlineCount)
-{
-	domainOnlineCount_ = domainOnlineCount;
 }
 
 std::string DescribeTopDomainsByFlowResult::getStartTime()const
@@ -85,18 +91,8 @@ std::string DescribeTopDomainsByFlowResult::getStartTime()const
 	return startTime_;
 }
 
-void DescribeTopDomainsByFlowResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-}
-
 long DescribeTopDomainsByFlowResult::getDomainCount()const
 {
 	return domainCount_;
-}
-
-void DescribeTopDomainsByFlowResult::setDomainCount(long domainCount)
-{
-	domainCount_ = domainCount;
 }
 

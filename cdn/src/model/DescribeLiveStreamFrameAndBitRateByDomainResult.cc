@@ -43,17 +43,25 @@ void DescribeLiveStreamFrameAndBitRateByDomainResult::parse(const std::string &p
 	auto allFrameRateAndBitRateInfos = value["FrameRateAndBitRateInfos"]["FrameRateAndBitRateInfo"];
 	for (auto value : allFrameRateAndBitRateInfos)
 	{
-		FrameRateAndBitRateInfo frameRateAndBitRateInfoObject;
-		frameRateAndBitRateInfoObject.streamUrl = value["StreamUrl"].asString();
-		frameRateAndBitRateInfoObject.videoFrameRate = std::stof(value["VideoFrameRate"].asString());
-		frameRateAndBitRateInfoObject.audioFrameRate = std::stof(value["AudioFrameRate"].asString());
-		frameRateAndBitRateInfoObject.bitRate = std::stof(value["BitRate"].asString());
-		frameRateAndBitRateInfoObject.time = value["Time"].asString();
-		frameRateAndBitRateInfos_.push_back(frameRateAndBitRateInfoObject);
+		FrameRateAndBitRateInfo frameRateAndBitRateInfosObject;
+		if(!value["StreamUrl"].isNull())
+			frameRateAndBitRateInfosObject.streamUrl = value["StreamUrl"].asString();
+		if(!value["VideoFrameRate"].isNull())
+			frameRateAndBitRateInfosObject.videoFrameRate = std::stof(value["VideoFrameRate"].asString());
+		if(!value["AudioFrameRate"].isNull())
+			frameRateAndBitRateInfosObject.audioFrameRate = std::stof(value["AudioFrameRate"].asString());
+		if(!value["BitRate"].isNull())
+			frameRateAndBitRateInfosObject.bitRate = std::stof(value["BitRate"].asString());
+		if(!value["Time"].isNull())
+			frameRateAndBitRateInfosObject.time = value["Time"].asString();
+		frameRateAndBitRateInfos_.push_back(frameRateAndBitRateInfosObject);
 	}
-	count_ = std::stol(value["Count"].asString());
-	pageNumber_ = std::stol(value["pageNumber"].asString());
-	pageSize_ = std::stol(value["pageSize"].asString());
+	if(!value["Count"].isNull())
+		count_ = std::stol(value["Count"].asString());
+	if(!value["pageNumber"].isNull())
+		pageNumber_ = std::stol(value["pageNumber"].asString());
+	if(!value["pageSize"].isNull())
+		pageSize_ = std::stol(value["pageSize"].asString());
 
 }
 
@@ -62,19 +70,9 @@ long DescribeLiveStreamFrameAndBitRateByDomainResult::getPageSize()const
 	return pageSize_;
 }
 
-void DescribeLiveStreamFrameAndBitRateByDomainResult::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 long DescribeLiveStreamFrameAndBitRateByDomainResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeLiveStreamFrameAndBitRateByDomainResult::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 
 long DescribeLiveStreamFrameAndBitRateByDomainResult::getCount()const
@@ -82,8 +80,8 @@ long DescribeLiveStreamFrameAndBitRateByDomainResult::getCount()const
 	return count_;
 }
 
-void DescribeLiveStreamFrameAndBitRateByDomainResult::setCount(long count)
+std::vector<DescribeLiveStreamFrameAndBitRateByDomainResult::FrameRateAndBitRateInfo> DescribeLiveStreamFrameAndBitRateByDomainResult::getFrameRateAndBitRateInfos()const
 {
-	count_ = count;
+	return frameRateAndBitRateInfos_;
 }
 

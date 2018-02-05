@@ -50,7 +50,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamsPublishListResult(const std::string &payload);
 				~DescribeLiveStreamsPublishListResult();
 				std::vector<LiveStreamPublishInfo> getPublishInfo()const;
-				void setPublishInfo(const std::vector<LiveStreamPublishInfo>& publishInfo);
 
 			protected:
 				void parse(const std::string &payload);

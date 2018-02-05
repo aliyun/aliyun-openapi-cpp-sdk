@@ -43,24 +43,29 @@ void DescribeLiveStreamSnapshotInfoResult::parse(const std::string &payload)
 	auto allLiveStreamSnapshotInfoList = value["LiveStreamSnapshotInfoList"]["LiveStreamSnapshotInfo"];
 	for (auto value : allLiveStreamSnapshotInfoList)
 	{
-		LiveStreamSnapshotInfo liveStreamSnapshotInfoObject;
-		liveStreamSnapshotInfoObject.ossEndpoint = value["OssEndpoint"].asString();
-		liveStreamSnapshotInfoObject.ossBucket = value["OssBucket"].asString();
-		liveStreamSnapshotInfoObject.ossObject = value["OssObject"].asString();
-		liveStreamSnapshotInfoObject.createTime = value["CreateTime"].asString();
-		liveStreamSnapshotInfoList_.push_back(liveStreamSnapshotInfoObject);
+		LiveStreamSnapshotInfo liveStreamSnapshotInfoListObject;
+		if(!value["OssEndpoint"].isNull())
+			liveStreamSnapshotInfoListObject.ossEndpoint = value["OssEndpoint"].asString();
+		if(!value["OssBucket"].isNull())
+			liveStreamSnapshotInfoListObject.ossBucket = value["OssBucket"].asString();
+		if(!value["OssObject"].isNull())
+			liveStreamSnapshotInfoListObject.ossObject = value["OssObject"].asString();
+		if(!value["CreateTime"].isNull())
+			liveStreamSnapshotInfoListObject.createTime = value["CreateTime"].asString();
+		liveStreamSnapshotInfoList_.push_back(liveStreamSnapshotInfoListObject);
 	}
-	nextStartTime_ = value["NextStartTime"].asString();
+	if(!value["NextStartTime"].isNull())
+		nextStartTime_ = value["NextStartTime"].asString();
 
+}
+
+std::vector<DescribeLiveStreamSnapshotInfoResult::LiveStreamSnapshotInfo> DescribeLiveStreamSnapshotInfoResult::getLiveStreamSnapshotInfoList()const
+{
+	return liveStreamSnapshotInfoList_;
 }
 
 std::string DescribeLiveStreamSnapshotInfoResult::getNextStartTime()const
 {
 	return nextStartTime_;
-}
-
-void DescribeLiveStreamSnapshotInfoResult::setNextStartTime(const std::string& nextStartTime)
-{
-	nextStartTime_ = nextStartTime;
 }
 

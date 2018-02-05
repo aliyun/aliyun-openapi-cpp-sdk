@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainRealTimeBpsDataRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainRealTimeBpsDataRequest;
 
 DescribeDomainRealTimeBpsDataRequest::DescribeDomainRealTimeBpsDataRequest() :
-	CdnRequest("DescribeDomainRealTimeBpsData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainRealTimeBpsData")
 {}
 
 DescribeDomainRealTimeBpsDataRequest::~DescribeDomainRealTimeBpsDataRequest()

@@ -46,7 +46,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamsFrameRateAndBitRateDataResult(const std::string &payload);
 				~DescribeLiveStreamsFrameRateAndBitRateDataResult();
 				std::vector<FrameRateAndBitRateInfo> getFrameRateAndBitRateInfos()const;
-				void setFrameRateAndBitRateInfos(const std::vector<FrameRateAndBitRateInfo>& frameRateAndBitRateInfos);
 
 			protected:
 				void parse(const std::string &payload);

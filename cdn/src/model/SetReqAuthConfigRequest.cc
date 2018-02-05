@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetReqAuthConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetReqAuthConfigRequest;
 
 SetReqAuthConfigRequest::SetReqAuthConfigRequest() :
-	CdnRequest("SetReqAuthConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetReqAuthConfig")
 {}
 
 SetReqAuthConfigRequest::~SetReqAuthConfigRequest()

@@ -43,15 +43,26 @@ void DescribeLiveStreamRelayPushBitRateResult::parse(const std::string &payload)
 	auto allRelayPushBitRateModelList = value["RelayPushBitRateModelList"]["RelayPushBitRateModel"];
 	for (auto value : allRelayPushBitRateModelList)
 	{
-		RelayPushBitRateModel relayPushBitRateModelObject;
-		relayPushBitRateModelObject.time = value["Time"].asString();
-		relayPushBitRateModelObject.vedioFrame = value["VedioFrame"].asString();
-		relayPushBitRateModelObject.vedioTimstamp = value["VedioTimstamp"].asString();
-		relayPushBitRateModelObject.audioFrame = value["AudioFrame"].asString();
-		relayPushBitRateModelObject.audioTimstamp = value["AudioTimstamp"].asString();
-		relayPushBitRateModelObject.relayDomain = value["RelayDomain"].asString();
-		relayPushBitRateModelList_.push_back(relayPushBitRateModelObject);
+		RelayPushBitRateModel relayPushBitRateModelListObject;
+		if(!value["Time"].isNull())
+			relayPushBitRateModelListObject.time = value["Time"].asString();
+		if(!value["VedioFrame"].isNull())
+			relayPushBitRateModelListObject.vedioFrame = value["VedioFrame"].asString();
+		if(!value["VedioTimstamp"].isNull())
+			relayPushBitRateModelListObject.vedioTimstamp = value["VedioTimstamp"].asString();
+		if(!value["AudioFrame"].isNull())
+			relayPushBitRateModelListObject.audioFrame = value["AudioFrame"].asString();
+		if(!value["AudioTimstamp"].isNull())
+			relayPushBitRateModelListObject.audioTimstamp = value["AudioTimstamp"].asString();
+		if(!value["RelayDomain"].isNull())
+			relayPushBitRateModelListObject.relayDomain = value["RelayDomain"].asString();
+		relayPushBitRateModelList_.push_back(relayPushBitRateModelListObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamRelayPushBitRateResult::RelayPushBitRateModel> DescribeLiveStreamRelayPushBitRateResult::getRelayPushBitRateModelList()const
+{
+	return relayPushBitRateModelList_;
 }
 

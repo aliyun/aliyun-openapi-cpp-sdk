@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetLiveStreamsNotifyUrlConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetLiveStreamsNotifyUrlConfigRequest;
 
 SetLiveStreamsNotifyUrlConfigRequest::SetLiveStreamsNotifyUrlConfigRequest() :
-	CdnRequest("SetLiveStreamsNotifyUrlConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetLiveStreamsNotifyUrlConfig")
 {}
 
 SetLiveStreamsNotifyUrlConfigRequest::~SetLiveStreamsNotifyUrlConfigRequest()

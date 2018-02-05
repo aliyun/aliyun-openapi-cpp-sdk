@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveStreamsPublishListRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveStreamsPublishListRequest;
 
 DescribeLiveStreamsPublishListRequest::DescribeLiveStreamsPublishListRequest() :
-	CdnRequest("DescribeLiveStreamsPublishList")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamsPublishList")
 {}
 
 DescribeLiveStreamsPublishListRequest::~DescribeLiveStreamsPublishListRequest()

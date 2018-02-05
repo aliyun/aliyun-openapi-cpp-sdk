@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/ModifyHttpHeaderConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::ModifyHttpHeaderConfigRequest;
 
 ModifyHttpHeaderConfigRequest::ModifyHttpHeaderConfigRequest() :
-	CdnRequest("ModifyHttpHeaderConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "ModifyHttpHeaderConfig")
 {}
 
 ModifyHttpHeaderConfigRequest::~ModifyHttpHeaderConfigRequest()

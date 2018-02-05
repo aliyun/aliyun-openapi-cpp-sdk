@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetL2OssKeyConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetL2OssKeyConfigRequest;
 
 SetL2OssKeyConfigRequest::SetL2OssKeyConfigRequest() :
-	CdnRequest("SetL2OssKeyConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetL2OssKeyConfig")
 {}
 
 SetL2OssKeyConfigRequest::~SetL2OssKeyConfigRequest()

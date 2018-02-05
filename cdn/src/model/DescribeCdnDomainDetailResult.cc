@@ -44,31 +44,52 @@ void DescribeCdnDomainDetailResult::parse(const std::string &payload)
 	for (auto value : allGetDomainDetailModel)
 	{
 		GetDomainDetailModel getDomainDetailModelObject;
-		getDomainDetailModelObject.gmtCreated = value["GmtCreated"].asString();
-		getDomainDetailModelObject.gmtModified = value["GmtModified"].asString();
-		getDomainDetailModelObject.sourceType = value["SourceType"].asString();
-		getDomainDetailModelObject.domainStatus = value["DomainStatus"].asString();
-		getDomainDetailModelObject.sourcePort = std::stoi(value["SourcePort"].asString());
-		getDomainDetailModelObject.cdnType = value["CdnType"].asString();
-		getDomainDetailModelObject.cname = value["Cname"].asString();
-		getDomainDetailModelObject.httpsCname = value["HttpsCname"].asString();
-		getDomainDetailModelObject.domainName = value["DomainName"].asString();
-		getDomainDetailModelObject.description = value["Description"].asString();
-		getDomainDetailModelObject.serverCertificateStatus = value["ServerCertificateStatus"].asString();
-		getDomainDetailModelObject.serverCertificate = value["ServerCertificate"].asString();
-		getDomainDetailModelObject.region = value["Region"].asString();
-		getDomainDetailModelObject.scope = value["Scope"].asString();
-		getDomainDetailModelObject.certificateName = value["CertificateName"].asString();
-		getDomainDetailModelObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["GmtCreated"].isNull())
+			getDomainDetailModelObject.gmtCreated = value["GmtCreated"].asString();
+		if(!value["GmtModified"].isNull())
+			getDomainDetailModelObject.gmtModified = value["GmtModified"].asString();
+		if(!value["SourceType"].isNull())
+			getDomainDetailModelObject.sourceType = value["SourceType"].asString();
+		if(!value["DomainStatus"].isNull())
+			getDomainDetailModelObject.domainStatus = value["DomainStatus"].asString();
+		if(!value["SourcePort"].isNull())
+			getDomainDetailModelObject.sourcePort = std::stoi(value["SourcePort"].asString());
+		if(!value["CdnType"].isNull())
+			getDomainDetailModelObject.cdnType = value["CdnType"].asString();
+		if(!value["Cname"].isNull())
+			getDomainDetailModelObject.cname = value["Cname"].asString();
+		if(!value["HttpsCname"].isNull())
+			getDomainDetailModelObject.httpsCname = value["HttpsCname"].asString();
+		if(!value["DomainName"].isNull())
+			getDomainDetailModelObject.domainName = value["DomainName"].asString();
+		if(!value["Description"].isNull())
+			getDomainDetailModelObject.description = value["Description"].asString();
+		if(!value["ServerCertificateStatus"].isNull())
+			getDomainDetailModelObject.serverCertificateStatus = value["ServerCertificateStatus"].asString();
+		if(!value["ServerCertificate"].isNull())
+			getDomainDetailModelObject.serverCertificate = value["ServerCertificate"].asString();
+		if(!value["Region"].isNull())
+			getDomainDetailModelObject.region = value["Region"].asString();
+		if(!value["Scope"].isNull())
+			getDomainDetailModelObject.scope = value["Scope"].asString();
+		if(!value["CertificateName"].isNull())
+			getDomainDetailModelObject.certificateName = value["CertificateName"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			getDomainDetailModelObject.resourceGroupId = value["ResourceGroupId"].asString();
 		auto allSourceModels = value["SourceModels"]["SourceModel"];
 		for (auto value : allSourceModels)
 		{
 			GetDomainDetailModel::SourceModel sourceModelObject;
-			sourceModelObject.content = value["Content"].asString();
-			sourceModelObject.type = value["Type"].asString();
-			sourceModelObject.port = std::stoi(value["Port"].asString());
-			sourceModelObject.enabled = value["Enabled"].asString();
-			sourceModelObject.priority = value["Priority"].asString();
+			if(!value["Content"].isNull())
+				sourceModelObject.content = value["Content"].asString();
+			if(!value["Type"].isNull())
+				sourceModelObject.type = value["Type"].asString();
+			if(!value["Port"].isNull())
+				sourceModelObject.port = std::stoi(value["Port"].asString());
+			if(!value["Enabled"].isNull())
+				sourceModelObject.enabled = value["Enabled"].asString();
+			if(!value["Priority"].isNull())
+				sourceModelObject.priority = value["Priority"].asString();
 			getDomainDetailModelObject.sourceModels.push_back(sourceModelObject);
 		}
 		auto allSources = value["Sources"]["Source"];
@@ -77,5 +98,10 @@ void DescribeCdnDomainDetailResult::parse(const std::string &payload)
 		getDomainDetailModel_.push_back(getDomainDetailModelObject);
 	}
 
+}
+
+std::vector<DescribeCdnDomainDetailResult::GetDomainDetailModel> DescribeCdnDomainDetailResult::getGetDomainDetailModel()const
+{
+	return getDomainDetailModel_;
 }
 

@@ -40,17 +40,13 @@ void DescribeUserCustomerLabelsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	isInnerUser_ = std::stoi(value["IsInnerUser"].asString());
+	if(!value["IsInnerUser"].isNull())
+		isInnerUser_ = value["IsInnerUser"].asString() == "true";
 
 }
 
 bool DescribeUserCustomerLabelsResult::getIsInnerUser()const
 {
 	return isInnerUser_;
-}
-
-void DescribeUserCustomerLabelsResult::setIsInnerUser(bool isInnerUser)
-{
-	isInnerUser_ = isInnerUser;
 }
 

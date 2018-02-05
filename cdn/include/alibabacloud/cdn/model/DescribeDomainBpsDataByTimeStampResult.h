@@ -44,11 +44,8 @@ namespace AlibabaCloud
 				explicit DescribeDomainBpsDataByTimeStampResult(const std::string &payload);
 				~DescribeDomainBpsDataByTimeStampResult();
 				std::vector<BpsDataModel> getBpsDataList()const;
-				void setBpsDataList(const std::vector<BpsDataModel>& bpsDataList);
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getTimeStamp()const;
-				void setTimeStamp(const std::string& timeStamp);
 
 			protected:
 				void parse(const std::string &payload);

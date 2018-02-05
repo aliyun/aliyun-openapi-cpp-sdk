@@ -43,11 +43,18 @@ void DescribeDomainOnlineUserNumberResult::parse(const std::string &payload)
 	auto allLiveStreamOnlineUserNumInfos = value["LiveStreamOnlineUserNumInfos"]["LiveStreamOnlineUserNumInfo"];
 	for (auto value : allLiveStreamOnlineUserNumInfos)
 	{
-		LiveStreamOnlineUserNumInfo liveStreamOnlineUserNumInfoObject;
-		liveStreamOnlineUserNumInfoObject.time = value["Time"].asString();
-		liveStreamOnlineUserNumInfoObject.userNumber = std::stol(value["UserNumber"].asString());
-		liveStreamOnlineUserNumInfos_.push_back(liveStreamOnlineUserNumInfoObject);
+		LiveStreamOnlineUserNumInfo liveStreamOnlineUserNumInfosObject;
+		if(!value["Time"].isNull())
+			liveStreamOnlineUserNumInfosObject.time = value["Time"].asString();
+		if(!value["UserNumber"].isNull())
+			liveStreamOnlineUserNumInfosObject.userNumber = std::stol(value["UserNumber"].asString());
+		liveStreamOnlineUserNumInfos_.push_back(liveStreamOnlineUserNumInfosObject);
 	}
 
+}
+
+std::vector<DescribeDomainOnlineUserNumberResult::LiveStreamOnlineUserNumInfo> DescribeDomainOnlineUserNumberResult::getLiveStreamOnlineUserNumInfos()const
+{
+	return liveStreamOnlineUserNumInfos_;
 }
 

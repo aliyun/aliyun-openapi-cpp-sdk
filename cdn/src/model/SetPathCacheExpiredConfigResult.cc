@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdn/CdnRequest.h>
+#include <alibabacloud/cdn/model/SetPathCacheExpiredConfigResult.h>
+#include <json/json.h>
 
-using namespace AlibabaCloud;
 using namespace AlibabaCloud::Cdn;
+using namespace AlibabaCloud::Cdn::Model;
 
-CdnRequest::CdnRequest(const std::string & action) :
-	RpcServiceRequest("cdn", "2014-11-11", action)
-{ }
+SetPathCacheExpiredConfigResult::SetPathCacheExpiredConfigResult() :
+	ServiceResult()
+{}
 
-CdnRequest::~CdnRequest()
-{ }
+SetPathCacheExpiredConfigResult::SetPathCacheExpiredConfigResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+SetPathCacheExpiredConfigResult::~SetPathCacheExpiredConfigResult()
+{}
+
+void SetPathCacheExpiredConfigResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+
+	setRequestId(value["RequestId"].asString());
+
+}
+

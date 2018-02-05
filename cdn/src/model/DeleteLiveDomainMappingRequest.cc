@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DeleteLiveDomainMappingRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DeleteLiveDomainMappingRequest;
 
 DeleteLiveDomainMappingRequest::DeleteLiveDomainMappingRequest() :
-	CdnRequest("DeleteLiveDomainMapping")
+	RpcServiceRequest("cdn", "2014-11-11", "DeleteLiveDomainMapping")
 {}
 
 DeleteLiveDomainMappingRequest::~DeleteLiveDomainMappingRequest()

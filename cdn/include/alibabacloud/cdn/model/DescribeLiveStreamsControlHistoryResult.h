@@ -45,7 +45,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamsControlHistoryResult(const std::string &payload);
 				~DescribeLiveStreamsControlHistoryResult();
 				std::vector<LiveStreamControlInfo> getControlInfo()const;
-				void setControlInfo(const std::vector<LiveStreamControlInfo>& controlInfo);
 
 			protected:
 				void parse(const std::string &payload);

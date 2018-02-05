@@ -49,15 +49,10 @@ namespace AlibabaCloud
 				explicit DescribeDomainHttpCodeDataResult(const std::string &payload);
 				~DescribeDomainHttpCodeDataResult();
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getDataInterval()const;
-				void setDataInterval(const std::string& dataInterval);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::vector<UsageData> getHttpCodeData()const;
-				void setHttpCodeData(const std::vector<UsageData>& httpCodeData);
 
 			protected:
 				void parse(const std::string &payload);

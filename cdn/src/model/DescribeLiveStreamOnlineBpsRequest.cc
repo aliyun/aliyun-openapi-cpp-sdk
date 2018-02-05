@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveStreamOnlineBpsRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveStreamOnlineBpsRequest;
 
 DescribeLiveStreamOnlineBpsRequest::DescribeLiveStreamOnlineBpsRequest() :
-	CdnRequest("DescribeLiveStreamOnlineBps")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamOnlineBps")
 {}
 
 DescribeLiveStreamOnlineBpsRequest::~DescribeLiveStreamOnlineBpsRequest()

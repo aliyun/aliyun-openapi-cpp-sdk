@@ -43,15 +43,26 @@ void DescribeLiveRecordConfigResult::parse(const std::string &payload)
 	auto allLiveAppRecordList = value["LiveAppRecordList"]["LiveAppRecord"];
 	for (auto value : allLiveAppRecordList)
 	{
-		LiveAppRecord liveAppRecordObject;
-		liveAppRecordObject.domainName = value["DomainName"].asString();
-		liveAppRecordObject.appName = value["AppName"].asString();
-		liveAppRecordObject.ossEndpoint = value["OssEndpoint"].asString();
-		liveAppRecordObject.ossBucket = value["OssBucket"].asString();
-		liveAppRecordObject.ossObjectPrefix = value["OssObjectPrefix"].asString();
-		liveAppRecordObject.createTime = value["CreateTime"].asString();
-		liveAppRecordList_.push_back(liveAppRecordObject);
+		LiveAppRecord liveAppRecordListObject;
+		if(!value["DomainName"].isNull())
+			liveAppRecordListObject.domainName = value["DomainName"].asString();
+		if(!value["AppName"].isNull())
+			liveAppRecordListObject.appName = value["AppName"].asString();
+		if(!value["OssEndpoint"].isNull())
+			liveAppRecordListObject.ossEndpoint = value["OssEndpoint"].asString();
+		if(!value["OssBucket"].isNull())
+			liveAppRecordListObject.ossBucket = value["OssBucket"].asString();
+		if(!value["OssObjectPrefix"].isNull())
+			liveAppRecordListObject.ossObjectPrefix = value["OssObjectPrefix"].asString();
+		if(!value["CreateTime"].isNull())
+			liveAppRecordListObject.createTime = value["CreateTime"].asString();
+		liveAppRecordList_.push_back(liveAppRecordListObject);
 	}
 
+}
+
+std::vector<DescribeLiveRecordConfigResult::LiveAppRecord> DescribeLiveRecordConfigResult::getLiveAppRecordList()const
+{
+	return liveAppRecordList_;
 }
 

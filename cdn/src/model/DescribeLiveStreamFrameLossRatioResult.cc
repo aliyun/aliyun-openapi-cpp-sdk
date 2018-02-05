@@ -43,12 +43,20 @@ void DescribeLiveStreamFrameLossRatioResult::parse(const std::string &payload)
 	auto allFrameLossRatioInfos = value["FrameLossRatioInfos"]["FrameLossRatioInfo"];
 	for (auto value : allFrameLossRatioInfos)
 	{
-		FrameLossRatioInfo frameLossRatioInfoObject;
-		frameLossRatioInfoObject.streamUrl = value["StreamUrl"].asString();
-		frameLossRatioInfoObject.frameLossRatio = std::stof(value["FrameLossRatio"].asString());
-		frameLossRatioInfoObject.time = value["Time"].asString();
-		frameLossRatioInfos_.push_back(frameLossRatioInfoObject);
+		FrameLossRatioInfo frameLossRatioInfosObject;
+		if(!value["StreamUrl"].isNull())
+			frameLossRatioInfosObject.streamUrl = value["StreamUrl"].asString();
+		if(!value["FrameLossRatio"].isNull())
+			frameLossRatioInfosObject.frameLossRatio = std::stof(value["FrameLossRatio"].asString());
+		if(!value["Time"].isNull())
+			frameLossRatioInfosObject.time = value["Time"].asString();
+		frameLossRatioInfos_.push_back(frameLossRatioInfosObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamFrameLossRatioResult::FrameLossRatioInfo> DescribeLiveStreamFrameLossRatioResult::getFrameLossRatioInfos()const
+{
+	return frameLossRatioInfos_;
 }
 

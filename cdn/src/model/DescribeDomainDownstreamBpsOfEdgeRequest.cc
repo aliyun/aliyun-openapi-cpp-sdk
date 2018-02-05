@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainDownstreamBpsOfEdgeRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainDownstreamBpsOfEdgeRequest;
 
 DescribeDomainDownstreamBpsOfEdgeRequest::DescribeDomainDownstreamBpsOfEdgeRequest() :
-	CdnRequest("DescribeDomainDownstreamBpsOfEdge")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainDownstreamBpsOfEdge")
 {}
 
 DescribeDomainDownstreamBpsOfEdgeRequest::~DescribeDomainDownstreamBpsOfEdgeRequest()

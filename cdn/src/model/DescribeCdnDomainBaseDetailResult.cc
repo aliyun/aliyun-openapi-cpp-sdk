@@ -44,20 +44,34 @@ void DescribeCdnDomainBaseDetailResult::parse(const std::string &payload)
 	for (auto value : allDomainBaseDetailModel)
 	{
 		DomainBaseDetailModel domainBaseDetailModelObject;
-		domainBaseDetailModelObject.cname = value["Cname"].asString();
-		domainBaseDetailModelObject.cdnType = value["CdnType"].asString();
-		domainBaseDetailModelObject.domainStatus = value["DomainStatus"].asString();
-		domainBaseDetailModelObject.sourceType = value["SourceType"].asString();
-		domainBaseDetailModelObject.region = value["Region"].asString();
-		domainBaseDetailModelObject.domainName = value["DomainName"].asString();
-		domainBaseDetailModelObject.remark = value["Remark"].asString();
-		domainBaseDetailModelObject.gmtModified = value["GmtModified"].asString();
-		domainBaseDetailModelObject.gmtCreated = value["GmtCreated"].asString();
+		if(!value["Cname"].isNull())
+			domainBaseDetailModelObject.cname = value["Cname"].asString();
+		if(!value["CdnType"].isNull())
+			domainBaseDetailModelObject.cdnType = value["CdnType"].asString();
+		if(!value["DomainStatus"].isNull())
+			domainBaseDetailModelObject.domainStatus = value["DomainStatus"].asString();
+		if(!value["SourceType"].isNull())
+			domainBaseDetailModelObject.sourceType = value["SourceType"].asString();
+		if(!value["Region"].isNull())
+			domainBaseDetailModelObject.region = value["Region"].asString();
+		if(!value["DomainName"].isNull())
+			domainBaseDetailModelObject.domainName = value["DomainName"].asString();
+		if(!value["Remark"].isNull())
+			domainBaseDetailModelObject.remark = value["Remark"].asString();
+		if(!value["GmtModified"].isNull())
+			domainBaseDetailModelObject.gmtModified = value["GmtModified"].asString();
+		if(!value["GmtCreated"].isNull())
+			domainBaseDetailModelObject.gmtCreated = value["GmtCreated"].asString();
 		auto allSources = value["Sources"]["Source"];
 		for (auto value : allSources)
 			domainBaseDetailModelObject.sources.push_back(value.asString());
 		domainBaseDetailModel_.push_back(domainBaseDetailModelObject);
 	}
 
+}
+
+std::vector<DescribeCdnDomainBaseDetailResult::DomainBaseDetailModel> DescribeCdnDomainBaseDetailResult::getDomainBaseDetailModel()const
+{
+	return domainBaseDetailModel_;
 }
 

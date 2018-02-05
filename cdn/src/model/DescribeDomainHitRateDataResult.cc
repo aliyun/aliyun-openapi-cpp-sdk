@@ -43,16 +43,27 @@ void DescribeDomainHitRateDataResult::parse(const std::string &payload)
 	auto allHitRateInterval = value["HitRateInterval"]["DataModule"];
 	for (auto value : allHitRateInterval)
 	{
-		DataModule dataModuleObject;
-		dataModuleObject.timeStamp = value["TimeStamp"].asString();
-		dataModuleObject.value = value["Value"].asString();
-		hitRateInterval_.push_back(dataModuleObject);
+		DataModule hitRateIntervalObject;
+		if(!value["TimeStamp"].isNull())
+			hitRateIntervalObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Value"].isNull())
+			hitRateIntervalObject.value = value["Value"].asString();
+		hitRateInterval_.push_back(hitRateIntervalObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
+}
+
+std::vector<DescribeDomainHitRateDataResult::DataModule> DescribeDomainHitRateDataResult::getHitRateInterval()const
+{
+	return hitRateInterval_;
 }
 
 std::string DescribeDomainHitRateDataResult::getEndTime()const
@@ -60,19 +71,9 @@ std::string DescribeDomainHitRateDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainHitRateDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainHitRateDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainHitRateDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
 }
 
 std::string DescribeDomainHitRateDataResult::getDataInterval()const
@@ -80,18 +81,8 @@ std::string DescribeDomainHitRateDataResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeDomainHitRateDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeDomainHitRateDataResult::getStartTime()const
 {
 	return startTime_;
-}
-
-void DescribeDomainHitRateDataResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
 }
 

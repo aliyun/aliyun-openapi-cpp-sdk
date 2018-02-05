@@ -40,11 +40,16 @@ void DescribeIpInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	cdnIp_ = value["CdnIp"].asString();
-	iSP_ = value["ISP"].asString();
-	ispEname_ = value["IspEname"].asString();
-	region_ = value["Region"].asString();
-	regionEname_ = value["RegionEname"].asString();
+	if(!value["CdnIp"].isNull())
+		cdnIp_ = value["CdnIp"].asString();
+	if(!value["ISP"].isNull())
+		iSP_ = value["ISP"].asString();
+	if(!value["IspEname"].isNull())
+		ispEname_ = value["IspEname"].asString();
+	if(!value["Region"].isNull())
+		region_ = value["Region"].asString();
+	if(!value["RegionEname"].isNull())
+		regionEname_ = value["RegionEname"].asString();
 
 }
 
@@ -53,19 +58,9 @@ std::string DescribeIpInfoResult::getISP()const
 	return iSP_;
 }
 
-void DescribeIpInfoResult::setISP(const std::string& iSP)
-{
-	iSP_ = iSP;
-}
-
 std::string DescribeIpInfoResult::getRegion()const
 {
 	return region_;
-}
-
-void DescribeIpInfoResult::setRegion(const std::string& region)
-{
-	region_ = region;
 }
 
 std::string DescribeIpInfoResult::getIspEname()const
@@ -73,28 +68,13 @@ std::string DescribeIpInfoResult::getIspEname()const
 	return ispEname_;
 }
 
-void DescribeIpInfoResult::setIspEname(const std::string& ispEname)
-{
-	ispEname_ = ispEname;
-}
-
 std::string DescribeIpInfoResult::getCdnIp()const
 {
 	return cdnIp_;
 }
 
-void DescribeIpInfoResult::setCdnIp(const std::string& cdnIp)
-{
-	cdnIp_ = cdnIp;
-}
-
 std::string DescribeIpInfoResult::getRegionEname()const
 {
 	return regionEname_;
-}
-
-void DescribeIpInfoResult::setRegionEname(const std::string& regionEname)
-{
-	regionEname_ = regionEname;
 }
 

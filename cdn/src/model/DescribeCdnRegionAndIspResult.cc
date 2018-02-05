@@ -43,19 +43,33 @@ void DescribeCdnRegionAndIspResult::parse(const std::string &payload)
 	auto allRegions = value["Regions"]["Region"];
 	for (auto value : allRegions)
 	{
-		Region regionObject;
-		regionObject.nameZh = value["NameZh"].asString();
-		regionObject.nameEn = value["NameEn"].asString();
-		regions_.push_back(regionObject);
+		Region regionsObject;
+		if(!value["NameZh"].isNull())
+			regionsObject.nameZh = value["NameZh"].asString();
+		if(!value["NameEn"].isNull())
+			regionsObject.nameEn = value["NameEn"].asString();
+		regions_.push_back(regionsObject);
 	}
 	auto allIsps = value["Isps"]["Isp"];
 	for (auto value : allIsps)
 	{
-		Isp ispObject;
-		ispObject.nameZh = value["NameZh"].asString();
-		ispObject.nameEn = value["NameEn"].asString();
-		isps_.push_back(ispObject);
+		Isp ispsObject;
+		if(!value["NameZh"].isNull())
+			ispsObject.nameZh = value["NameZh"].asString();
+		if(!value["NameEn"].isNull())
+			ispsObject.nameEn = value["NameEn"].asString();
+		isps_.push_back(ispsObject);
 	}
 
+}
+
+std::vector<DescribeCdnRegionAndIspResult::Region> DescribeCdnRegionAndIspResult::getRegions()const
+{
+	return regions_;
+}
+
+std::vector<DescribeCdnRegionAndIspResult::Isp> DescribeCdnRegionAndIspResult::getIsps()const
+{
+	return isps_;
 }
 

@@ -43,15 +43,10 @@ namespace AlibabaCloud
 				explicit DescribeDomainSrcBpsDataResult(const std::string &payload);
 				~DescribeDomainSrcBpsDataResult();
 				std::vector<DataModule> getSrcBpsDataPerInterval()const;
-				void setSrcBpsDataPerInterval(const std::vector<DataModule>& srcBpsDataPerInterval);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				std::string getDataInterval()const;
-				void setDataInterval(const std::string& dataInterval);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
+				std::string getDataInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -59,8 +54,8 @@ namespace AlibabaCloud
 				std::vector<DataModule> srcBpsDataPerInterval_;
 				std::string endTime_;
 				std::string domainName_;
-				std::string dataInterval_;
 				std::string startTime_;
+				std::string dataInterval_;
 
 			};
 		}

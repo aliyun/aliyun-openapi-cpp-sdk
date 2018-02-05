@@ -40,18 +40,30 @@ void DescribeDomainMonthBillingBpsDataResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	domainName_ = value["DomainName"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
-	bandwidth95Bps_ = std::stof(value["Bandwidth95Bps"].asString());
-	domesticBandwidth95Bps_ = std::stof(value["DomesticBandwidth95Bps"].asString());
-	overseasBandwidth95Bps_ = std::stof(value["OverseasBandwidth95Bps"].asString());
-	monthavgBps_ = std::stof(value["MonthavgBps"].asString());
-	domesticMonthavgBps_ = std::stof(value["DomesticMonthavgBps"].asString());
-	overseasMonthavgBps_ = std::stof(value["OverseasMonthavgBps"].asString());
-	month4thBps_ = std::stof(value["Month4thBps"].asString());
-	domesticMonth4thBps_ = std::stof(value["DomesticMonth4thBps"].asString());
-	overseasMonth4thBps_ = std::stof(value["OverseasMonth4thBps"].asString());
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["Bandwidth95Bps"].isNull())
+		bandwidth95Bps_ = std::stof(value["Bandwidth95Bps"].asString());
+	if(!value["DomesticBandwidth95Bps"].isNull())
+		domesticBandwidth95Bps_ = std::stof(value["DomesticBandwidth95Bps"].asString());
+	if(!value["OverseasBandwidth95Bps"].isNull())
+		overseasBandwidth95Bps_ = std::stof(value["OverseasBandwidth95Bps"].asString());
+	if(!value["MonthavgBps"].isNull())
+		monthavgBps_ = std::stof(value["MonthavgBps"].asString());
+	if(!value["DomesticMonthavgBps"].isNull())
+		domesticMonthavgBps_ = std::stof(value["DomesticMonthavgBps"].asString());
+	if(!value["OverseasMonthavgBps"].isNull())
+		overseasMonthavgBps_ = std::stof(value["OverseasMonthavgBps"].asString());
+	if(!value["Month4thBps"].isNull())
+		month4thBps_ = std::stof(value["Month4thBps"].asString());
+	if(!value["DomesticMonth4thBps"].isNull())
+		domesticMonth4thBps_ = std::stof(value["DomesticMonth4thBps"].asString());
+	if(!value["OverseasMonth4thBps"].isNull())
+		overseasMonth4thBps_ = std::stof(value["OverseasMonth4thBps"].asString());
 
 }
 
@@ -60,19 +72,9 @@ float DescribeDomainMonthBillingBpsDataResult::getOverseasBandwidth95Bps()const
 	return overseasBandwidth95Bps_;
 }
 
-void DescribeDomainMonthBillingBpsDataResult::setOverseasBandwidth95Bps(float overseasBandwidth95Bps)
-{
-	overseasBandwidth95Bps_ = overseasBandwidth95Bps;
-}
-
 float DescribeDomainMonthBillingBpsDataResult::getDomesticMonth4thBps()const
 {
 	return domesticMonth4thBps_;
-}
-
-void DescribeDomainMonthBillingBpsDataResult::setDomesticMonth4thBps(float domesticMonth4thBps)
-{
-	domesticMonth4thBps_ = domesticMonth4thBps;
 }
 
 std::string DescribeDomainMonthBillingBpsDataResult::getEndTime()const
@@ -80,19 +82,9 @@ std::string DescribeDomainMonthBillingBpsDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainMonthBillingBpsDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainMonthBillingBpsDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainMonthBillingBpsDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
 }
 
 float DescribeDomainMonthBillingBpsDataResult::getOverseasMonthavgBps()const
@@ -100,19 +92,9 @@ float DescribeDomainMonthBillingBpsDataResult::getOverseasMonthavgBps()const
 	return overseasMonthavgBps_;
 }
 
-void DescribeDomainMonthBillingBpsDataResult::setOverseasMonthavgBps(float overseasMonthavgBps)
-{
-	overseasMonthavgBps_ = overseasMonthavgBps;
-}
-
 float DescribeDomainMonthBillingBpsDataResult::getMonth4thBps()const
 {
 	return month4thBps_;
-}
-
-void DescribeDomainMonthBillingBpsDataResult::setMonth4thBps(float month4thBps)
-{
-	month4thBps_ = month4thBps;
 }
 
 float DescribeDomainMonthBillingBpsDataResult::getDomesticMonthavgBps()const
@@ -120,19 +102,9 @@ float DescribeDomainMonthBillingBpsDataResult::getDomesticMonthavgBps()const
 	return domesticMonthavgBps_;
 }
 
-void DescribeDomainMonthBillingBpsDataResult::setDomesticMonthavgBps(float domesticMonthavgBps)
-{
-	domesticMonthavgBps_ = domesticMonthavgBps;
-}
-
 std::string DescribeDomainMonthBillingBpsDataResult::getStartTime()const
 {
 	return startTime_;
-}
-
-void DescribeDomainMonthBillingBpsDataResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
 }
 
 float DescribeDomainMonthBillingBpsDataResult::getBandwidth95Bps()const
@@ -140,19 +112,9 @@ float DescribeDomainMonthBillingBpsDataResult::getBandwidth95Bps()const
 	return bandwidth95Bps_;
 }
 
-void DescribeDomainMonthBillingBpsDataResult::setBandwidth95Bps(float bandwidth95Bps)
-{
-	bandwidth95Bps_ = bandwidth95Bps;
-}
-
 float DescribeDomainMonthBillingBpsDataResult::getMonthavgBps()const
 {
 	return monthavgBps_;
-}
-
-void DescribeDomainMonthBillingBpsDataResult::setMonthavgBps(float monthavgBps)
-{
-	monthavgBps_ = monthavgBps;
 }
 
 float DescribeDomainMonthBillingBpsDataResult::getOverseasMonth4thBps()const
@@ -160,18 +122,8 @@ float DescribeDomainMonthBillingBpsDataResult::getOverseasMonth4thBps()const
 	return overseasMonth4thBps_;
 }
 
-void DescribeDomainMonthBillingBpsDataResult::setOverseasMonth4thBps(float overseasMonth4thBps)
-{
-	overseasMonth4thBps_ = overseasMonth4thBps;
-}
-
 float DescribeDomainMonthBillingBpsDataResult::getDomesticBandwidth95Bps()const
 {
 	return domesticBandwidth95Bps_;
-}
-
-void DescribeDomainMonthBillingBpsDataResult::setDomesticBandwidth95Bps(float domesticBandwidth95Bps)
-{
-	domesticBandwidth95Bps_ = domesticBandwidth95Bps;
 }
 

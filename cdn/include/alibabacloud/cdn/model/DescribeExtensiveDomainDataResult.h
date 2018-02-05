@@ -45,21 +45,13 @@ namespace AlibabaCloud
 				explicit DescribeExtensiveDomainDataResult(const std::string &payload);
 				~DescribeExtensiveDomainDataResult();
 				std::string getTotalCount()const;
-				void setTotalCount(const std::string& totalCount);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getPageSize()const;
-				void setPageSize(const std::string& pageSize);
 				std::string getPageNumber()const;
-				void setPageNumber(const std::string& pageNumber);
 				std::string getDataInterval()const;
-				void setDataInterval(const std::string& dataInterval);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::vector<UsageData> getDataPerInterval()const;
-				void setDataPerInterval(const std::vector<UsageData>& dataPerInterval);
 				std::string getExtensiveDomain()const;
-				void setExtensiveDomain(const std::string& extensiveDomain);
 
 			protected:
 				void parse(const std::string &payload);

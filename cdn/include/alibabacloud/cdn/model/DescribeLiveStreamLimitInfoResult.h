@@ -44,7 +44,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamLimitInfoResult(const std::string &payload);
 				~DescribeLiveStreamLimitInfoResult();
 				std::vector<UserLimitMode> getUserLimitLists()const;
-				void setUserLimitLists(const std::vector<UserLimitMode>& userLimitLists);
 
 			protected:
 				void parse(const std::string &payload);

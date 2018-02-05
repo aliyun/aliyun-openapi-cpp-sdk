@@ -48,21 +48,31 @@ void DescribeUserConfigsResult::parse(const std::string &payload)
 		for (auto value : allOssLogConfig)
 		{
 			Configs::OssLogConfig ossLogConfigObject;
-			ossLogConfigObject.enable = value["Enable"].asString();
-			ossLogConfigObject.bucket = value["Bucket"].asString();
-			ossLogConfigObject.prefix = value["Prefix"].asString();
+			if(!value["Enable"].isNull())
+				ossLogConfigObject.enable = value["Enable"].asString();
+			if(!value["Bucket"].isNull())
+				ossLogConfigObject.bucket = value["Bucket"].asString();
+			if(!value["Prefix"].isNull())
+				ossLogConfigObject.prefix = value["Prefix"].asString();
 			configsObject.ossLogConfig.push_back(ossLogConfigObject);
 		}
 		auto allGreenManagerConfig = value["GreenManagerConfig"];
 		for (auto value : allGreenManagerConfig)
 		{
 			Configs::GreenManagerConfig greenManagerConfigObject;
-			greenManagerConfigObject.quota = value["Quota"].asString();
-			greenManagerConfigObject.ratio = value["Ratio"].asString();
+			if(!value["Quota"].isNull())
+				greenManagerConfigObject.quota = value["Quota"].asString();
+			if(!value["Ratio"].isNull())
+				greenManagerConfigObject.ratio = value["Ratio"].asString();
 			configsObject.greenManagerConfig.push_back(greenManagerConfigObject);
 		}
 		configs_.push_back(configsObject);
 	}
 
+}
+
+std::vector<DescribeUserConfigsResult::Configs> DescribeUserConfigsResult::getConfigs()const
+{
+	return configs_;
 }
 

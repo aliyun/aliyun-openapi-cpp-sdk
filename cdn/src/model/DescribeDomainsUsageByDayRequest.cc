@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainsUsageByDayRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainsUsageByDayRequest;
 
 DescribeDomainsUsageByDayRequest::DescribeDomainsUsageByDayRequest() :
-	CdnRequest("DescribeDomainsUsageByDay")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainsUsageByDay")
 {}
 
 DescribeDomainsUsageByDayRequest::~DescribeDomainsUsageByDayRequest()

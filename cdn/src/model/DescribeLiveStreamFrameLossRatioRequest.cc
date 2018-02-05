@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveStreamFrameLossRatioRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveStreamFrameLossRatioRequest;
 
 DescribeLiveStreamFrameLossRatioRequest::DescribeLiveStreamFrameLossRatioRequest() :
-	CdnRequest("DescribeLiveStreamFrameLossRatio")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamFrameLossRatio")
 {}
 
 DescribeLiveStreamFrameLossRatioRequest::~DescribeLiveStreamFrameLossRatioRequest()

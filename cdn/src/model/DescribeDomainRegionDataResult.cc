@@ -43,27 +43,45 @@ void DescribeDomainRegionDataResult::parse(const std::string &payload)
 	auto allValue = value["Value"]["RegionProportionData"];
 	for (auto value : allValue)
 	{
-		RegionProportionData regionProportionDataObject;
-		regionProportionDataObject.region = value["Region"].asString();
-		regionProportionDataObject.proportion = value["Proportion"].asString();
-		regionProportionDataObject.regionEname = value["RegionEname"].asString();
-		regionProportionDataObject.avgObjectSize = value["AvgObjectSize"].asString();
-		regionProportionDataObject.avgResponseTime = value["AvgResponseTime"].asString();
-		regionProportionDataObject.bps = value["Bps"].asString();
-		regionProportionDataObject.byteHitRate = value["ByteHitRate"].asString();
-		regionProportionDataObject.qps = value["Qps"].asString();
-		regionProportionDataObject.reqErrRate = value["ReqErrRate"].asString();
-		regionProportionDataObject.reqHitRate = value["ReqHitRate"].asString();
-		regionProportionDataObject.avgResponseRate = value["AvgResponseRate"].asString();
-		regionProportionDataObject.totalBytes = value["TotalBytes"].asString();
-		regionProportionDataObject.bytesProportion = value["BytesProportion"].asString();
-		regionProportionDataObject.totalQuery = value["TotalQuery"].asString();
-		value_.push_back(regionProportionDataObject);
+		RegionProportionData valueObject;
+		if(!value["Region"].isNull())
+			valueObject.region = value["Region"].asString();
+		if(!value["Proportion"].isNull())
+			valueObject.proportion = value["Proportion"].asString();
+		if(!value["RegionEname"].isNull())
+			valueObject.regionEname = value["RegionEname"].asString();
+		if(!value["AvgObjectSize"].isNull())
+			valueObject.avgObjectSize = value["AvgObjectSize"].asString();
+		if(!value["AvgResponseTime"].isNull())
+			valueObject.avgResponseTime = value["AvgResponseTime"].asString();
+		if(!value["Bps"].isNull())
+			valueObject.bps = value["Bps"].asString();
+		if(!value["ByteHitRate"].isNull())
+			valueObject.byteHitRate = value["ByteHitRate"].asString();
+		if(!value["Qps"].isNull())
+			valueObject.qps = value["Qps"].asString();
+		if(!value["ReqErrRate"].isNull())
+			valueObject.reqErrRate = value["ReqErrRate"].asString();
+		if(!value["ReqHitRate"].isNull())
+			valueObject.reqHitRate = value["ReqHitRate"].asString();
+		if(!value["AvgResponseRate"].isNull())
+			valueObject.avgResponseRate = value["AvgResponseRate"].asString();
+		if(!value["TotalBytes"].isNull())
+			valueObject.totalBytes = value["TotalBytes"].asString();
+		if(!value["BytesProportion"].isNull())
+			valueObject.bytesProportion = value["BytesProportion"].asString();
+		if(!value["TotalQuery"].isNull())
+			valueObject.totalQuery = value["TotalQuery"].asString();
+		value_.push_back(valueObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -72,19 +90,14 @@ std::string DescribeDomainRegionDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainRegionDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainRegionDataResult::getDomainName()const
 {
 	return domainName_;
 }
 
-void DescribeDomainRegionDataResult::setDomainName(const std::string& domainName)
+std::vector<DescribeDomainRegionDataResult::RegionProportionData> DescribeDomainRegionDataResult::getValue()const
 {
-	domainName_ = domainName;
+	return value_;
 }
 
 std::string DescribeDomainRegionDataResult::getDataInterval()const
@@ -92,18 +105,8 @@ std::string DescribeDomainRegionDataResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeDomainRegionDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeDomainRegionDataResult::getStartTime()const
 {
 	return startTime_;
-}
-
-void DescribeDomainRegionDataResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
 }
 

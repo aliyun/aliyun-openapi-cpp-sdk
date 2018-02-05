@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamStreamStatusResult(const std::string &payload);
 				~DescribeLiveStreamStreamStatusResult();
 				std::string getStreamStatus()const;
-				void setStreamStatus(const std::string& streamStatus);
 
 			protected:
 				void parse(const std::string &payload);

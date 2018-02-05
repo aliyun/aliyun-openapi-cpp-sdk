@@ -43,17 +43,25 @@ void BatchDescribeDomainBpsDataResult::parse(const std::string &payload)
 	auto allBpsDatas = value["BpsDatas"]["DataModule"];
 	for (auto value : allBpsDatas)
 	{
-		DataModule dataModuleObject;
-		dataModuleObject.timestamp = value["Timestamp"].asString();
-		dataModuleObject.l1Bps = std::stof(value["L1Bps"].asString());
-		dataModuleObject.l1InnerBps = std::stof(value["L1InnerBps"].asString());
-		dataModuleObject.l1OutBps = std::stof(value["L1OutBps"].asString());
-		dataModuleObject.domainName = value["DomainName"].asString();
-		bpsDatas_.push_back(dataModuleObject);
+		DataModule bpsDatasObject;
+		if(!value["Timestamp"].isNull())
+			bpsDatasObject.timestamp = value["Timestamp"].asString();
+		if(!value["L1Bps"].isNull())
+			bpsDatasObject.l1Bps = std::stof(value["L1Bps"].asString());
+		if(!value["L1InnerBps"].isNull())
+			bpsDatasObject.l1InnerBps = std::stof(value["L1InnerBps"].asString());
+		if(!value["L1OutBps"].isNull())
+			bpsDatasObject.l1OutBps = std::stof(value["L1OutBps"].asString());
+		if(!value["DomainName"].isNull())
+			bpsDatasObject.domainName = value["DomainName"].asString();
+		bpsDatas_.push_back(bpsDatasObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -62,9 +70,9 @@ int BatchDescribeDomainBpsDataResult::getTotalCount()const
 	return totalCount_;
 }
 
-void BatchDescribeDomainBpsDataResult::setTotalCount(int totalCount)
+std::vector<BatchDescribeDomainBpsDataResult::DataModule> BatchDescribeDomainBpsDataResult::getBpsDatas()const
 {
-	totalCount_ = totalCount;
+	return bpsDatas_;
 }
 
 int BatchDescribeDomainBpsDataResult::getPageSize()const
@@ -72,18 +80,8 @@ int BatchDescribeDomainBpsDataResult::getPageSize()const
 	return pageSize_;
 }
 
-void BatchDescribeDomainBpsDataResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int BatchDescribeDomainBpsDataResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void BatchDescribeDomainBpsDataResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

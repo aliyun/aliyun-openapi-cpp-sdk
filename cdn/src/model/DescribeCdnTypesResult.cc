@@ -43,11 +43,18 @@ void DescribeCdnTypesResult::parse(const std::string &payload)
 	auto allCdnTypes = value["CdnTypes"]["CdnType"];
 	for (auto value : allCdnTypes)
 	{
-		CdnType cdnTypeObject;
-		cdnTypeObject.type = value["Type"].asString();
-		cdnTypeObject.desc = value["Desc"].asString();
-		cdnTypes_.push_back(cdnTypeObject);
+		CdnType cdnTypesObject;
+		if(!value["Type"].isNull())
+			cdnTypesObject.type = value["Type"].asString();
+		if(!value["Desc"].isNull())
+			cdnTypesObject.desc = value["Desc"].asString();
+		cdnTypes_.push_back(cdnTypesObject);
 	}
 
+}
+
+std::vector<DescribeCdnTypesResult::CdnType> DescribeCdnTypesResult::getCdnTypes()const
+{
+	return cdnTypes_;
 }
 

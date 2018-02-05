@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveAppRecordConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveAppRecordConfigRequest;
 
 DescribeLiveAppRecordConfigRequest::DescribeLiveAppRecordConfigRequest() :
-	CdnRequest("DescribeLiveAppRecordConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveAppRecordConfig")
 {}
 
 DescribeLiveAppRecordConfigRequest::~DescribeLiveAppRecordConfigRequest()

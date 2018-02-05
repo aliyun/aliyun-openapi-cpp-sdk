@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/PushObjectCacheRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::PushObjectCacheRequest;
 
 PushObjectCacheRequest::PushObjectCacheRequest() :
-	CdnRequest("PushObjectCache")
+	RpcServiceRequest("cdn", "2014-11-11", "PushObjectCache")
 {}
 
 PushObjectCacheRequest::~PushObjectCacheRequest()

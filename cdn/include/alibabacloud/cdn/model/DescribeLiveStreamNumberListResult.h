@@ -43,9 +43,7 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamNumberListResult(const std::string &payload);
 				~DescribeLiveStreamNumberListResult();
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::vector<StreamNumberInfo> getStreamNumberInfos()const;
-				void setStreamNumberInfos(const std::vector<StreamNumberInfo>& streamNumberInfos);
 
 			protected:
 				void parse(const std::string &payload);

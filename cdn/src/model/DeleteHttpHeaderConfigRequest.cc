@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DeleteHttpHeaderConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DeleteHttpHeaderConfigRequest;
 
 DeleteHttpHeaderConfigRequest::DeleteHttpHeaderConfigRequest() :
-	CdnRequest("DeleteHttpHeaderConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "DeleteHttpHeaderConfig")
 {}
 
 DeleteHttpHeaderConfigRequest::~DeleteHttpHeaderConfigRequest()

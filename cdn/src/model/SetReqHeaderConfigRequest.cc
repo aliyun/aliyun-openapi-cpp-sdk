@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetReqHeaderConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetReqHeaderConfigRequest;
 
 SetReqHeaderConfigRequest::SetReqHeaderConfigRequest() :
-	CdnRequest("SetReqHeaderConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetReqHeaderConfig")
 {}
 
 SetReqHeaderConfigRequest::~SetReqHeaderConfigRequest()

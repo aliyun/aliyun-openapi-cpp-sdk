@@ -47,15 +47,10 @@ namespace AlibabaCloud
 				explicit DescribeCdnMonitorDataResult(const std::string &payload);
 				~DescribeCdnMonitorDataResult();
 				long getMonitorInterval()const;
-				void setMonitorInterval(long monitorInterval);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::vector<CDNMonitorData> getMonitorDatas()const;
-				void setMonitorDatas(const std::vector<CDNMonitorData>& monitorDatas);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 
 			protected:
 				void parse(const std::string &payload);

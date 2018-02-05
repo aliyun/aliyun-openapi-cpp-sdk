@@ -45,13 +45,9 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamOnlineBpsResult(const std::string &payload);
 				~DescribeLiveStreamOnlineBpsResult();
 				std::vector<LiveStreamOnlineBpsInfo> getLiveStreamOnlineBpsInfos()const;
-				void setLiveStreamOnlineBpsInfos(const std::vector<LiveStreamOnlineBpsInfo>& liveStreamOnlineBpsInfos);
 				float getHlsBps()const;
-				void setHlsBps(float hlsBps);
 				long getTotalUserNumber()const;
-				void setTotalUserNumber(long totalUserNumber);
 				float getFlvBps()const;
-				void setFlvBps(float flvBps);
 
 			protected:
 				void parse(const std::string &payload);

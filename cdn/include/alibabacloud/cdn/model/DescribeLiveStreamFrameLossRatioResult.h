@@ -44,7 +44,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamFrameLossRatioResult(const std::string &payload);
 				~DescribeLiveStreamFrameLossRatioResult();
 				std::vector<FrameLossRatioInfo> getFrameLossRatioInfos()const;
-				void setFrameLossRatioInfos(const std::vector<FrameLossRatioInfo>& frameLossRatioInfos);
 
 			protected:
 				void parse(const std::string &payload);

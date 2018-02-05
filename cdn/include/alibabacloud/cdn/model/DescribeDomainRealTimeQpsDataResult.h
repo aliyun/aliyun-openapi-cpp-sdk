@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit DescribeDomainRealTimeQpsDataResult(const std::string &payload);
 				~DescribeDomainRealTimeQpsDataResult();
 				std::vector<QpsModel> getData()const;
-				void setData(const std::vector<QpsModel>& data);
 
 			protected:
 				void parse(const std::string &payload);

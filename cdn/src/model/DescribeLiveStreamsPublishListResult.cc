@@ -43,18 +43,32 @@ void DescribeLiveStreamsPublishListResult::parse(const std::string &payload)
 	auto allPublishInfo = value["PublishInfo"]["LiveStreamPublishInfo"];
 	for (auto value : allPublishInfo)
 	{
-		LiveStreamPublishInfo liveStreamPublishInfoObject;
-		liveStreamPublishInfoObject.domainName = value["DomainName"].asString();
-		liveStreamPublishInfoObject.appName = value["AppName"].asString();
-		liveStreamPublishInfoObject.streamName = value["StreamName"].asString();
-		liveStreamPublishInfoObject.streamUrl = value["StreamUrl"].asString();
-		liveStreamPublishInfoObject.publishTime = value["PublishTime"].asString();
-		liveStreamPublishInfoObject.stopTime = value["StopTime"].asString();
-		liveStreamPublishInfoObject.publishUrl = value["PublishUrl"].asString();
-		liveStreamPublishInfoObject.clientAddr = value["ClientAddr"].asString();
-		liveStreamPublishInfoObject.edgeNodeAddr = value["EdgeNodeAddr"].asString();
-		publishInfo_.push_back(liveStreamPublishInfoObject);
+		LiveStreamPublishInfo publishInfoObject;
+		if(!value["DomainName"].isNull())
+			publishInfoObject.domainName = value["DomainName"].asString();
+		if(!value["AppName"].isNull())
+			publishInfoObject.appName = value["AppName"].asString();
+		if(!value["StreamName"].isNull())
+			publishInfoObject.streamName = value["StreamName"].asString();
+		if(!value["StreamUrl"].isNull())
+			publishInfoObject.streamUrl = value["StreamUrl"].asString();
+		if(!value["PublishTime"].isNull())
+			publishInfoObject.publishTime = value["PublishTime"].asString();
+		if(!value["StopTime"].isNull())
+			publishInfoObject.stopTime = value["StopTime"].asString();
+		if(!value["PublishUrl"].isNull())
+			publishInfoObject.publishUrl = value["PublishUrl"].asString();
+		if(!value["ClientAddr"].isNull())
+			publishInfoObject.clientAddr = value["ClientAddr"].asString();
+		if(!value["EdgeNodeAddr"].isNull())
+			publishInfoObject.edgeNodeAddr = value["EdgeNodeAddr"].asString();
+		publishInfo_.push_back(publishInfoObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamsPublishListResult::LiveStreamPublishInfo> DescribeLiveStreamsPublishListResult::getPublishInfo()const
+{
+	return publishInfo_;
 }
 

@@ -54,7 +54,6 @@ namespace AlibabaCloud
 				explicit DescribeUserConfigsResult(const std::string &payload);
 				~DescribeUserConfigsResult();
 				std::vector<Configs> getConfigs()const;
-				void setConfigs(const std::vector<Configs>& configs);
 
 			protected:
 				void parse(const std::string &payload);

@@ -43,24 +43,33 @@ void DescribeDomainCCAttackInfoResult::parse(const std::string &payload)
 	auto allAttackIpDataList = value["AttackIpDataList"]["AttackIpDatas"];
 	for (auto value : allAttackIpDataList)
 	{
-		AttackIpDatas attackIpDatasObject;
-		attackIpDatasObject.ip = value["Ip"].asString();
-		attackIpDatasObject.attackCount = value["AttackCount"].asString();
-		attackIpDatasObject.result = value["Result"].asString();
-		attackIpDataList_.push_back(attackIpDatasObject);
+		AttackIpDatas attackIpDataListObject;
+		if(!value["Ip"].isNull())
+			attackIpDataListObject.ip = value["Ip"].asString();
+		if(!value["AttackCount"].isNull())
+			attackIpDataListObject.attackCount = value["AttackCount"].asString();
+		if(!value["Result"].isNull())
+			attackIpDataListObject.result = value["Result"].asString();
+		attackIpDataList_.push_back(attackIpDataListObject);
 	}
 	auto allAttackedUrlDataList = value["AttackedUrlDataList"]["AttackedUrlDatas"];
 	for (auto value : allAttackedUrlDataList)
 	{
-		AttackedUrlDatas attackedUrlDatasObject;
-		attackedUrlDatasObject.url = value["Url"].asString();
-		attackedUrlDatasObject.attackCount = value["AttackCount"].asString();
-		attackedUrlDatasObject.result = value["Result"].asString();
-		attackedUrlDataList_.push_back(attackedUrlDatasObject);
+		AttackedUrlDatas attackedUrlDataListObject;
+		if(!value["Url"].isNull())
+			attackedUrlDataListObject.url = value["Url"].asString();
+		if(!value["AttackCount"].isNull())
+			attackedUrlDataListObject.attackCount = value["AttackCount"].asString();
+		if(!value["Result"].isNull())
+			attackedUrlDataListObject.result = value["Result"].asString();
+		attackedUrlDataList_.push_back(attackedUrlDataListObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -69,19 +78,14 @@ std::string DescribeDomainCCAttackInfoResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainCCAttackInfoResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainCCAttackInfoResult::getDomainName()const
 {
 	return domainName_;
 }
 
-void DescribeDomainCCAttackInfoResult::setDomainName(const std::string& domainName)
+std::vector<DescribeDomainCCAttackInfoResult::AttackIpDatas> DescribeDomainCCAttackInfoResult::getAttackIpDataList()const
 {
-	domainName_ = domainName;
+	return attackIpDataList_;
 }
 
 std::string DescribeDomainCCAttackInfoResult::getStartTime()const
@@ -89,8 +93,8 @@ std::string DescribeDomainCCAttackInfoResult::getStartTime()const
 	return startTime_;
 }
 
-void DescribeDomainCCAttackInfoResult::setStartTime(const std::string& startTime)
+std::vector<DescribeDomainCCAttackInfoResult::AttackedUrlDatas> DescribeDomainCCAttackInfoResult::getAttackedUrlDataList()const
 {
-	startTime_ = startTime;
+	return attackedUrlDataList_;
 }
 

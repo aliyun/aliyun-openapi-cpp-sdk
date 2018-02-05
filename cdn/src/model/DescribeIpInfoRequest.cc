@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeIpInfoRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeIpInfoRequest;
 
 DescribeIpInfoRequest::DescribeIpInfoRequest() :
-	CdnRequest("DescribeIpInfo")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeIpInfo")
 {}
 
 DescribeIpInfoRequest::~DescribeIpInfoRequest()

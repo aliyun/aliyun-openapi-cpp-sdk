@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit DescribeUserCustomerLabelsResult(const std::string &payload);
 				~DescribeUserCustomerLabelsResult();
 				bool getIsInnerUser()const;
-				void setIsInnerUser(bool isInnerUser);
 
 			protected:
 				void parse(const std::string &payload);

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainUpstreamOfCenterRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainUpstreamOfCenterRequest;
 
 DescribeDomainUpstreamOfCenterRequest::DescribeDomainUpstreamOfCenterRequest() :
-	CdnRequest("DescribeDomainUpstreamOfCenter")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainUpstreamOfCenter")
 {}
 
 DescribeDomainUpstreamOfCenterRequest::~DescribeDomainUpstreamOfCenterRequest()

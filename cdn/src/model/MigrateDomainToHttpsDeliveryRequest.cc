@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/MigrateDomainToHttpsDeliveryRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::MigrateDomainToHttpsDeliveryRequest;
 
 MigrateDomainToHttpsDeliveryRequest::MigrateDomainToHttpsDeliveryRequest() :
-	CdnRequest("MigrateDomainToHttpsDelivery")
+	RpcServiceRequest("cdn", "2014-11-11", "MigrateDomainToHttpsDelivery")
 {}
 
 MigrateDomainToHttpsDeliveryRequest::~MigrateDomainToHttpsDeliveryRequest()

@@ -43,15 +43,21 @@ void DescribeDomainRealTimeDataResult::parse(const std::string &payload)
 	auto allDataPerInterval = value["DataPerInterval"]["DataModule"];
 	for (auto value : allDataPerInterval)
 	{
-		DataModule dataModuleObject;
-		dataModuleObject.timeStamp = value["TimeStamp"].asString();
-		dataModuleObject.value = value["Value"].asString();
-		dataPerInterval_.push_back(dataModuleObject);
+		DataModule dataPerIntervalObject;
+		if(!value["TimeStamp"].isNull())
+			dataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Value"].isNull())
+			dataPerIntervalObject.value = value["Value"].asString();
+		dataPerInterval_.push_back(dataPerIntervalObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	field_ = value["Field"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["Field"].isNull())
+		field_ = value["Field"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -60,19 +66,9 @@ std::string DescribeDomainRealTimeDataResult::getField()const
 	return field_;
 }
 
-void DescribeDomainRealTimeDataResult::setField(const std::string& field)
-{
-	field_ = field;
-}
-
 std::string DescribeDomainRealTimeDataResult::getEndTime()const
 {
 	return endTime_;
-}
-
-void DescribeDomainRealTimeDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
 }
 
 std::string DescribeDomainRealTimeDataResult::getDomainName()const
@@ -80,18 +76,13 @@ std::string DescribeDomainRealTimeDataResult::getDomainName()const
 	return domainName_;
 }
 
-void DescribeDomainRealTimeDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-}
-
 std::string DescribeDomainRealTimeDataResult::getStartTime()const
 {
 	return startTime_;
 }
 
-void DescribeDomainRealTimeDataResult::setStartTime(const std::string& startTime)
+std::vector<DescribeDomainRealTimeDataResult::DataModule> DescribeDomainRealTimeDataResult::getDataPerInterval()const
 {
-	startTime_ = startTime;
+	return dataPerInterval_;
 }
 

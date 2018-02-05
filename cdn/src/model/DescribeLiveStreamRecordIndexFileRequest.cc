@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveStreamRecordIndexFileRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveStreamRecordIndexFileRequest;
 
 DescribeLiveStreamRecordIndexFileRequest::DescribeLiveStreamRecordIndexFileRequest() :
-	CdnRequest("DescribeLiveStreamRecordIndexFile")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamRecordIndexFile")
 {}
 
 DescribeLiveStreamRecordIndexFileRequest::~DescribeLiveStreamRecordIndexFileRequest()

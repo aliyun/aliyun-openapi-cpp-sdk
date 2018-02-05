@@ -53,7 +53,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamRecordIndexFilesResult(const std::string &payload);
 				~DescribeLiveStreamRecordIndexFilesResult();
 				std::vector<RecordIndexInfo> getRecordIndexInfoList()const;
-				void setRecordIndexInfoList(const std::vector<RecordIndexInfo>& recordIndexInfoList);
 
 			protected:
 				void parse(const std::string &payload);

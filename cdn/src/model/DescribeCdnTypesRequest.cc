@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeCdnTypesRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeCdnTypesRequest;
 
 DescribeCdnTypesRequest::DescribeCdnTypesRequest() :
-	CdnRequest("DescribeCdnTypes")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeCdnTypes")
 {}
 
 DescribeCdnTypesRequest::~DescribeCdnTypesRequest()

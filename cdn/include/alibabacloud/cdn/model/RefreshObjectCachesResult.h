@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit RefreshObjectCachesResult(const std::string &payload);
 				~RefreshObjectCachesResult();
 				std::string getRefreshTaskId()const;
-				void setRefreshTaskId(const std::string& refreshTaskId);
 
 			protected:
 				void parse(const std::string &payload);

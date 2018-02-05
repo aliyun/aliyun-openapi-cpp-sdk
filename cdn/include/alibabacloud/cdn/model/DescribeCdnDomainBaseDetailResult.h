@@ -51,7 +51,6 @@ namespace AlibabaCloud
 				explicit DescribeCdnDomainBaseDetailResult(const std::string &payload);
 				~DescribeCdnDomainBaseDetailResult();
 				std::vector<DomainBaseDetailModel> getDomainBaseDetailModel()const;
-				void setDomainBaseDetailModel(const std::vector<DomainBaseDetailModel>& domainBaseDetailModel);
 
 			protected:
 				void parse(const std::string &payload);

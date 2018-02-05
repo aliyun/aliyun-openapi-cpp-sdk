@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainQoSRtRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainQoSRtRequest;
 
 DescribeDomainQoSRtRequest::DescribeDomainQoSRtRequest() :
-	CdnRequest("DescribeDomainQoSRt")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainQoSRt")
 {}
 
 DescribeDomainQoSRtRequest::~DescribeDomainQoSRtRequest()

@@ -43,27 +43,46 @@ void DescribeUserDomainsResult::parse(const std::string &payload)
 	auto allDomains = value["Domains"]["PageData"];
 	for (auto value : allDomains)
 	{
-		PageData pageDataObject;
-		pageDataObject.domainName = value["DomainName"].asString();
-		pageDataObject.cname = value["Cname"].asString();
-		pageDataObject.cdnType = value["CdnType"].asString();
-		pageDataObject.domainStatus = value["DomainStatus"].asString();
-		pageDataObject.gmtCreated = value["GmtCreated"].asString();
-		pageDataObject.gmtModified = value["GmtModified"].asString();
-		pageDataObject.description = value["Description"].asString();
-		pageDataObject.sourceType = value["SourceType"].asString();
-		pageDataObject.sslProtocol = value["SslProtocol"].asString();
-		pageDataObject.resourceGroupId = value["ResourceGroupId"].asString();
-		pageDataObject.sandbox = value["Sandbox"].asString();
+		PageData domainsObject;
+		if(!value["DomainName"].isNull())
+			domainsObject.domainName = value["DomainName"].asString();
+		if(!value["Cname"].isNull())
+			domainsObject.cname = value["Cname"].asString();
+		if(!value["CdnType"].isNull())
+			domainsObject.cdnType = value["CdnType"].asString();
+		if(!value["DomainStatus"].isNull())
+			domainsObject.domainStatus = value["DomainStatus"].asString();
+		if(!value["GmtCreated"].isNull())
+			domainsObject.gmtCreated = value["GmtCreated"].asString();
+		if(!value["GmtModified"].isNull())
+			domainsObject.gmtModified = value["GmtModified"].asString();
+		if(!value["Description"].isNull())
+			domainsObject.description = value["Description"].asString();
+		if(!value["SourceType"].isNull())
+			domainsObject.sourceType = value["SourceType"].asString();
+		if(!value["SslProtocol"].isNull())
+			domainsObject.sslProtocol = value["SslProtocol"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			domainsObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["Sandbox"].isNull())
+			domainsObject.sandbox = value["Sandbox"].asString();
 		auto allSources = value["Sources"]["Source"];
 		for (auto value : allSources)
-			pageDataObject.sources.push_back(value.asString());
-		domains_.push_back(pageDataObject);
+			domainsObject.sources.push_back(value.asString());
+		domains_.push_back(domainsObject);
 	}
-	pageNumber_ = std::stol(value["PageNumber"].asString());
-	pageSize_ = std::stol(value["PageSize"].asString());
-	totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
+}
+
+std::vector<DescribeUserDomainsResult::PageData> DescribeUserDomainsResult::getDomains()const
+{
+	return domains_;
 }
 
 long DescribeUserDomainsResult::getTotalCount()const
@@ -71,28 +90,13 @@ long DescribeUserDomainsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeUserDomainsResult::setTotalCount(long totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 long DescribeUserDomainsResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeUserDomainsResult::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 long DescribeUserDomainsResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeUserDomainsResult::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

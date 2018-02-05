@@ -43,12 +43,15 @@ void DescribeLiveStreamNumberListResult::parse(const std::string &payload)
 	auto allStreamNumberInfos = value["StreamNumberInfos"]["StreamNumberInfo"];
 	for (auto value : allStreamNumberInfos)
 	{
-		StreamNumberInfo streamNumberInfoObject;
-		streamNumberInfoObject.number = std::stoi(value["Number"].asString());
-		streamNumberInfoObject.time = value["Time"].asString();
-		streamNumberInfos_.push_back(streamNumberInfoObject);
+		StreamNumberInfo streamNumberInfosObject;
+		if(!value["Number"].isNull())
+			streamNumberInfosObject.number = std::stoi(value["Number"].asString());
+		if(!value["Time"].isNull())
+			streamNumberInfosObject.time = value["Time"].asString();
+		streamNumberInfos_.push_back(streamNumberInfosObject);
 	}
-	domainName_ = value["DomainName"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 
 }
 
@@ -57,8 +60,8 @@ std::string DescribeLiveStreamNumberListResult::getDomainName()const
 	return domainName_;
 }
 
-void DescribeLiveStreamNumberListResult::setDomainName(const std::string& domainName)
+std::vector<DescribeLiveStreamNumberListResult::StreamNumberInfo> DescribeLiveStreamNumberListResult::getStreamNumberInfos()const
 {
-	domainName_ = domainName;
+	return streamNumberInfos_;
 }
 

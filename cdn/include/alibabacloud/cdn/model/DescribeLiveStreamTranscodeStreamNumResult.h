@@ -38,11 +38,8 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamTranscodeStreamNumResult(const std::string &payload);
 				~DescribeLiveStreamTranscodeStreamNumResult();
 				long getUntranscodeNumber()const;
-				void setUntranscodeNumber(long untranscodeNumber);
 				long getTranscodedNumber()const;
-				void setTranscodedNumber(long transcodedNumber);
 				long getTotal()const;
-				void setTotal(long total);
 
 			protected:
 				void parse(const std::string &payload);

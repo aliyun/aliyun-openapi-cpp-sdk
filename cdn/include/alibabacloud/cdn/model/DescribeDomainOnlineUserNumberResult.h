@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit DescribeDomainOnlineUserNumberResult(const std::string &payload);
 				~DescribeDomainOnlineUserNumberResult();
 				std::vector<LiveStreamOnlineUserNumInfo> getLiveStreamOnlineUserNumInfos()const;
-				void setLiveStreamOnlineUserNumInfos(const std::vector<LiveStreamOnlineUserNumInfo>& liveStreamOnlineUserNumInfos);
 
 			protected:
 				void parse(const std::string &payload);

@@ -43,10 +43,16 @@ void DescribeLiveStreamPushErrorsResult::parse(const std::string &payload)
 	auto allPushErrorsModelList = value["PushErrorsModelList"]["PushErrorsModel"];
 	for (auto value : allPushErrorsModelList)
 	{
-		PushErrorsModel pushErrorsModelObject;
-		pushErrorsModelObject.errorCode = value["ErrorCode"].asString();
-		pushErrorsModelList_.push_back(pushErrorsModelObject);
+		PushErrorsModel pushErrorsModelListObject;
+		if(!value["ErrorCode"].isNull())
+			pushErrorsModelListObject.errorCode = value["ErrorCode"].asString();
+		pushErrorsModelList_.push_back(pushErrorsModelListObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamPushErrorsResult::PushErrorsModel> DescribeLiveStreamPushErrorsResult::getPushErrorsModelList()const
+{
+	return pushErrorsModelList_;
 }
 

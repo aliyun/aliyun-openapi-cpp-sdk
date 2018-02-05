@@ -43,16 +43,28 @@ void DescribeLiveStreamRelayPushDataResult::parse(const std::string &payload)
 	auto allRelayPushDetailModelList = value["RelayPushDetailModelList"]["RelayPushDetailModel"];
 	for (auto value : allRelayPushDetailModelList)
 	{
-		RelayPushDetailModel relayPushDetailModelObject;
-		relayPushDetailModelObject.time = value["Time"].asString();
-		relayPushDetailModelObject.stream = value["Stream"].asString();
-		relayPushDetailModelObject.frameRate = std::stof(value["FrameRate"].asString());
-		relayPushDetailModelObject.bitRate = std::stof(value["BitRate"].asString());
-		relayPushDetailModelObject.frameLossRate = std::stof(value["FrameLossRate"].asString());
-		relayPushDetailModelObject.serverAddr = value["ServerAddr"].asString();
-		relayPushDetailModelObject.clientAddr = value["ClientAddr"].asString();
-		relayPushDetailModelList_.push_back(relayPushDetailModelObject);
+		RelayPushDetailModel relayPushDetailModelListObject;
+		if(!value["Time"].isNull())
+			relayPushDetailModelListObject.time = value["Time"].asString();
+		if(!value["Stream"].isNull())
+			relayPushDetailModelListObject.stream = value["Stream"].asString();
+		if(!value["FrameRate"].isNull())
+			relayPushDetailModelListObject.frameRate = std::stof(value["FrameRate"].asString());
+		if(!value["BitRate"].isNull())
+			relayPushDetailModelListObject.bitRate = std::stof(value["BitRate"].asString());
+		if(!value["FrameLossRate"].isNull())
+			relayPushDetailModelListObject.frameLossRate = std::stof(value["FrameLossRate"].asString());
+		if(!value["ServerAddr"].isNull())
+			relayPushDetailModelListObject.serverAddr = value["ServerAddr"].asString();
+		if(!value["ClientAddr"].isNull())
+			relayPushDetailModelListObject.clientAddr = value["ClientAddr"].asString();
+		relayPushDetailModelList_.push_back(relayPushDetailModelListObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamRelayPushDataResult::RelayPushDetailModel> DescribeLiveStreamRelayPushDataResult::getRelayPushDetailModelList()const
+{
+	return relayPushDetailModelList_;
 }
 

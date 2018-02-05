@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainSlowRatioRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainSlowRatioRequest;
 
 DescribeDomainSlowRatioRequest::DescribeDomainSlowRatioRequest() :
-	CdnRequest("DescribeDomainSlowRatio")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainSlowRatio")
 {}
 
 DescribeDomainSlowRatioRequest::~DescribeDomainSlowRatioRequest()

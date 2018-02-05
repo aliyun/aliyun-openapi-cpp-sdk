@@ -43,7 +43,8 @@ void DescribeUserVipsByDomainResult::parse(const std::string &payload)
 	auto allVips = value["Vips"]["Vip"];
 	for (const auto &item : allVips)
 		vips_.push_back(item.asString());
-	domainName_ = std::stol(value["DomainName"].asString());
+	if(!value["DomainName"].isNull())
+		domainName_ = std::stol(value["DomainName"].asString());
 
 }
 
@@ -52,18 +53,8 @@ long DescribeUserVipsByDomainResult::getDomainName()const
 	return domainName_;
 }
 
-void DescribeUserVipsByDomainResult::setDomainName(long domainName)
-{
-	domainName_ = domainName;
-}
-
 std::vector<std::string> DescribeUserVipsByDomainResult::getVips()const
 {
 	return vips_;
-}
-
-void DescribeUserVipsByDomainResult::setVips(const std::vector<std::string>& vips)
-{
-	vips_ = vips;
 }
 

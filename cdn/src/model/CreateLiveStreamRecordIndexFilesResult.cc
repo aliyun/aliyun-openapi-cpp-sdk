@@ -44,14 +44,25 @@ void CreateLiveStreamRecordIndexFilesResult::parse(const std::string &payload)
 	for (auto value : allRecordInfo)
 	{
 		RecordInfo recordInfoObject;
-		recordInfoObject.recordId = value["RecordId"].asString();
-		recordInfoObject.recordUrl = value["RecordUrl"].asString();
-		recordInfoObject.duration = std::stof(value["Duration"].asString());
-		recordInfoObject.height = std::stoi(value["Height"].asString());
-		recordInfoObject.width = std::stoi(value["Width"].asString());
-		recordInfoObject.createTime = value["CreateTime"].asString();
+		if(!value["RecordId"].isNull())
+			recordInfoObject.recordId = value["RecordId"].asString();
+		if(!value["RecordUrl"].isNull())
+			recordInfoObject.recordUrl = value["RecordUrl"].asString();
+		if(!value["Duration"].isNull())
+			recordInfoObject.duration = std::stof(value["Duration"].asString());
+		if(!value["Height"].isNull())
+			recordInfoObject.height = std::stoi(value["Height"].asString());
+		if(!value["Width"].isNull())
+			recordInfoObject.width = std::stoi(value["Width"].asString());
+		if(!value["CreateTime"].isNull())
+			recordInfoObject.createTime = value["CreateTime"].asString();
 		recordInfo_.push_back(recordInfoObject);
 	}
 
+}
+
+std::vector<CreateLiveStreamRecordIndexFilesResult::RecordInfo> CreateLiveStreamRecordIndexFilesResult::getRecordInfo()const
+{
+	return recordInfo_;
 }
 

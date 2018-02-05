@@ -43,17 +43,30 @@ void DescribeLiveStreamDomainAppInfoResult::parse(const std::string &payload)
 	auto allDomainAppList = value["DomainAppList"]["DomainAppInfo"];
 	for (auto value : allDomainAppList)
 	{
-		DomainAppInfo domainAppInfoObject;
-		domainAppInfoObject.appDomain = value["AppDomain"].asString();
-		domainAppInfoObject.appId = value["AppId"].asString();
-		domainAppInfoObject.appKey = value["AppKey"].asString();
-		domainAppInfoObject.appOssBucket = value["AppOssBucket"].asString();
-		domainAppInfoObject.appOssHost = value["AppOssHost"].asString();
-		domainAppInfoObject.appOwnerId = value["AppOwnerId"].asString();
-		domainAppInfoObject.appSecret = value["AppSecret"].asString();
-		domainAppInfoObject.updateTime = value["UpdateTime"].asString();
-		domainAppList_.push_back(domainAppInfoObject);
+		DomainAppInfo domainAppListObject;
+		if(!value["AppDomain"].isNull())
+			domainAppListObject.appDomain = value["AppDomain"].asString();
+		if(!value["AppId"].isNull())
+			domainAppListObject.appId = value["AppId"].asString();
+		if(!value["AppKey"].isNull())
+			domainAppListObject.appKey = value["AppKey"].asString();
+		if(!value["AppOssBucket"].isNull())
+			domainAppListObject.appOssBucket = value["AppOssBucket"].asString();
+		if(!value["AppOssHost"].isNull())
+			domainAppListObject.appOssHost = value["AppOssHost"].asString();
+		if(!value["AppOwnerId"].isNull())
+			domainAppListObject.appOwnerId = value["AppOwnerId"].asString();
+		if(!value["AppSecret"].isNull())
+			domainAppListObject.appSecret = value["AppSecret"].asString();
+		if(!value["UpdateTime"].isNull())
+			domainAppListObject.updateTime = value["UpdateTime"].asString();
+		domainAppList_.push_back(domainAppListObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamDomainAppInfoResult::DomainAppInfo> DescribeLiveStreamDomainAppInfoResult::getDomainAppList()const
+{
+	return domainAppList_;
 }
 

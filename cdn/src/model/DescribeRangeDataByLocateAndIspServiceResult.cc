@@ -40,17 +40,13 @@ void DescribeRangeDataByLocateAndIspServiceResult::parse(const std::string &payl
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	jsonResult_ = value["JsonResult"].asString();
+	if(!value["JsonResult"].isNull())
+		jsonResult_ = value["JsonResult"].asString();
 
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceResult::getJsonResult()const
 {
 	return jsonResult_;
-}
-
-void DescribeRangeDataByLocateAndIspServiceResult::setJsonResult(const std::string& jsonResult)
-{
-	jsonResult_ = jsonResult;
 }
 

@@ -43,23 +43,35 @@ void DescribeDomainFileSizeProportionDataResult::parse(const std::string &payloa
 	auto allFileSizeProportionDataInterval = value["FileSizeProportionDataInterval"]["UsageData"];
 	for (auto value : allFileSizeProportionDataInterval)
 	{
-		UsageData usageDataObject;
-		usageDataObject.timeStamp = value["TimeStamp"].asString();
+		UsageData fileSizeProportionDataIntervalObject;
+		if(!value["TimeStamp"].isNull())
+			fileSizeProportionDataIntervalObject.timeStamp = value["TimeStamp"].asString();
 		auto allValue = value["Value"]["FileSizeProportionData"];
 		for (auto value : allValue)
 		{
-			UsageData::FileSizeProportionData fileSizeProportionDataObject;
-			fileSizeProportionDataObject.fileSize = value["FileSize"].asString();
-			fileSizeProportionDataObject.proportion = value["Proportion"].asString();
-			usageDataObject.value.push_back(fileSizeProportionDataObject);
+			UsageData::FileSizeProportionData valueObject;
+			if(!value["FileSize"].isNull())
+				valueObject.fileSize = value["FileSize"].asString();
+			if(!value["Proportion"].isNull())
+				valueObject.proportion = value["Proportion"].asString();
+			fileSizeProportionDataIntervalObject.value.push_back(valueObject);
 		}
-		fileSizeProportionDataInterval_.push_back(usageDataObject);
+		fileSizeProportionDataInterval_.push_back(fileSizeProportionDataIntervalObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
+}
+
+std::vector<DescribeDomainFileSizeProportionDataResult::UsageData> DescribeDomainFileSizeProportionDataResult::getFileSizeProportionDataInterval()const
+{
+	return fileSizeProportionDataInterval_;
 }
 
 std::string DescribeDomainFileSizeProportionDataResult::getEndTime()const
@@ -67,19 +79,9 @@ std::string DescribeDomainFileSizeProportionDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainFileSizeProportionDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainFileSizeProportionDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainFileSizeProportionDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
 }
 
 std::string DescribeDomainFileSizeProportionDataResult::getDataInterval()const
@@ -87,18 +89,8 @@ std::string DescribeDomainFileSizeProportionDataResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeDomainFileSizeProportionDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeDomainFileSizeProportionDataResult::getStartTime()const
 {
 	return startTime_;
-}
-
-void DescribeDomainFileSizeProportionDataResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
 }
 

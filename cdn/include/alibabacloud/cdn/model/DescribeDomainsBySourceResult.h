@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct DomainsData
 				{
-					struct domainInfo
+					struct DomainInfo
 					{
 						std::string status;
 						std::string domainName;
@@ -43,7 +43,7 @@ namespace AlibabaCloud
 						std::string domainCname;
 					};
 					std::vector<std::string> domains;
-					std::vector<DomainsData::domainInfo> domainInfos;
+					std::vector<DomainsData::DomainInfo> domainInfos;
 					std::string source;
 				};
 
@@ -52,9 +52,7 @@ namespace AlibabaCloud
 				explicit DescribeDomainsBySourceResult(const std::string &payload);
 				~DescribeDomainsBySourceResult();
 				std::vector<DomainsData> getDomainsList()const;
-				void setDomainsList(const std::vector<DomainsData>& domainsList);
 				std::string getSources()const;
-				void setSources(const std::string& sources);
 
 			protected:
 				void parse(const std::string &payload);

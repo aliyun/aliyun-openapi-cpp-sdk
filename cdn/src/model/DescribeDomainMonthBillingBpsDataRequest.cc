@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainMonthBillingBpsDataRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainMonthBillingBpsDataRequest;
 
 DescribeDomainMonthBillingBpsDataRequest::DescribeDomainMonthBillingBpsDataRequest() :
-	CdnRequest("DescribeDomainMonthBillingBpsData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainMonthBillingBpsData")
 {}
 
 DescribeDomainMonthBillingBpsDataRequest::~DescribeDomainMonthBillingBpsDataRequest()

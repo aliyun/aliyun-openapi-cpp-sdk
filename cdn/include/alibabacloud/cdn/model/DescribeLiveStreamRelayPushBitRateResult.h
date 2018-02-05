@@ -47,7 +47,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamRelayPushBitRateResult(const std::string &payload);
 				~DescribeLiveStreamRelayPushBitRateResult();
 				std::vector<RelayPushBitRateModel> getRelayPushBitRateModelList()const;
-				void setRelayPushBitRateModelList(const std::vector<RelayPushBitRateModel>& relayPushBitRateModelList);
 
 			protected:
 				void parse(const std::string &payload);

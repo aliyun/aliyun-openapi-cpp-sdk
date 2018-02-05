@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainMax95BpsDataRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainMax95BpsDataRequest;
 
 DescribeDomainMax95BpsDataRequest::DescribeDomainMax95BpsDataRequest() :
-	CdnRequest("DescribeDomainMax95BpsData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainMax95BpsData")
 {}
 
 DescribeDomainMax95BpsDataRequest::~DescribeDomainMax95BpsDataRequest()

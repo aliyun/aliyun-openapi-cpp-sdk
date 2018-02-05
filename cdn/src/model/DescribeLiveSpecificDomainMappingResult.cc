@@ -43,11 +43,18 @@ void DescribeLiveSpecificDomainMappingResult::parse(const std::string &payload)
 	auto allDomainMappingModels = value["DomainMappingModels"]["DomainMappingModel"];
 	for (auto value : allDomainMappingModels)
 	{
-		DomainMappingModel domainMappingModelObject;
-		domainMappingModelObject.pushDomain = value["PushDomain"].asString();
-		domainMappingModelObject.pullDomain = value["PullDomain"].asString();
-		domainMappingModels_.push_back(domainMappingModelObject);
+		DomainMappingModel domainMappingModelsObject;
+		if(!value["PushDomain"].isNull())
+			domainMappingModelsObject.pushDomain = value["PushDomain"].asString();
+		if(!value["PullDomain"].isNull())
+			domainMappingModelsObject.pullDomain = value["PullDomain"].asString();
+		domainMappingModels_.push_back(domainMappingModelsObject);
 	}
 
+}
+
+std::vector<DescribeLiveSpecificDomainMappingResult::DomainMappingModel> DescribeLiveSpecificDomainMappingResult::getDomainMappingModels()const
+{
+	return domainMappingModels_;
 }
 

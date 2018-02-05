@@ -43,12 +43,20 @@ void DescribeLiveStreamLimitInfoResult::parse(const std::string &payload)
 	auto allUserLimitLists = value["UserLimitLists"]["UserLimitMode"];
 	for (auto value : allUserLimitLists)
 	{
-		UserLimitMode userLimitModeObject;
-		userLimitModeObject.limitDomain = value["LimitDomain"].asString();
-		userLimitModeObject.limitNum = value["LimitNum"].asString();
-		userLimitModeObject.limitTranscodeNum = value["LimitTranscodeNum"].asString();
-		userLimitLists_.push_back(userLimitModeObject);
+		UserLimitMode userLimitListsObject;
+		if(!value["LimitDomain"].isNull())
+			userLimitListsObject.limitDomain = value["LimitDomain"].asString();
+		if(!value["LimitNum"].isNull())
+			userLimitListsObject.limitNum = value["LimitNum"].asString();
+		if(!value["LimitTranscodeNum"].isNull())
+			userLimitListsObject.limitTranscodeNum = value["LimitTranscodeNum"].asString();
+		userLimitLists_.push_back(userLimitListsObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamLimitInfoResult::UserLimitMode> DescribeLiveStreamLimitInfoResult::getUserLimitLists()const
+{
+	return userLimitLists_;
 }
 

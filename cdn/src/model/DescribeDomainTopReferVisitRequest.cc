@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainTopReferVisitRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainTopReferVisitRequest;
 
 DescribeDomainTopReferVisitRequest::DescribeDomainTopReferVisitRequest() :
-	CdnRequest("DescribeDomainTopReferVisit")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainTopReferVisit")
 {}
 
 DescribeDomainTopReferVisitRequest::~DescribeDomainTopReferVisitRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeTopDomainsByFlowRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeTopDomainsByFlowRequest;
 
 DescribeTopDomainsByFlowRequest::DescribeTopDomainsByFlowRequest() :
-	CdnRequest("DescribeTopDomainsByFlow")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeTopDomainsByFlow")
 {}
 
 DescribeTopDomainsByFlowRequest::~DescribeTopDomainsByFlowRequest()

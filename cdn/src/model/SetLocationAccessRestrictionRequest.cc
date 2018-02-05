@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetLocationAccessRestrictionRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetLocationAccessRestrictionRequest;
 
 SetLocationAccessRestrictionRequest::SetLocationAccessRestrictionRequest() :
-	CdnRequest("SetLocationAccessRestriction")
+	RpcServiceRequest("cdn", "2014-11-11", "SetLocationAccessRestriction")
 {}
 
 SetLocationAccessRestrictionRequest::~SetLocationAccessRestrictionRequest()

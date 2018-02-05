@@ -43,15 +43,21 @@ void DescribeDomainSrcFlowDataResult::parse(const std::string &payload)
 	auto allSrcFlowDataPerInterval = value["SrcFlowDataPerInterval"]["DataModule"];
 	for (auto value : allSrcFlowDataPerInterval)
 	{
-		DataModule dataModuleObject;
-		dataModuleObject.timeStamp = value["TimeStamp"].asString();
-		dataModuleObject.value = value["Value"].asString();
-		srcFlowDataPerInterval_.push_back(dataModuleObject);
+		DataModule srcFlowDataPerIntervalObject;
+		if(!value["TimeStamp"].isNull())
+			srcFlowDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Value"].isNull())
+			srcFlowDataPerIntervalObject.value = value["Value"].asString();
+		srcFlowDataPerInterval_.push_back(srcFlowDataPerIntervalObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 
 }
 
@@ -60,29 +66,9 @@ std::string DescribeDomainSrcFlowDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainSrcFlowDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainSrcFlowDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainSrcFlowDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-}
-
-std::string DescribeDomainSrcFlowDataResult::getDataInterval()const
-{
-	return dataInterval_;
-}
-
-void DescribeDomainSrcFlowDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
 }
 
 std::string DescribeDomainSrcFlowDataResult::getStartTime()const
@@ -90,8 +76,13 @@ std::string DescribeDomainSrcFlowDataResult::getStartTime()const
 	return startTime_;
 }
 
-void DescribeDomainSrcFlowDataResult::setStartTime(const std::string& startTime)
+std::string DescribeDomainSrcFlowDataResult::getDataInterval()const
 {
-	startTime_ = startTime;
+	return dataInterval_;
+}
+
+std::vector<DescribeDomainSrcFlowDataResult::DataModule> DescribeDomainSrcFlowDataResult::getSrcFlowDataPerInterval()const
+{
+	return srcFlowDataPerInterval_;
 }
 

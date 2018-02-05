@@ -45,9 +45,7 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamSnapshotInfoResult(const std::string &payload);
 				~DescribeLiveStreamSnapshotInfoResult();
 				std::vector<LiveStreamSnapshotInfo> getLiveStreamSnapshotInfoList()const;
-				void setLiveStreamSnapshotInfoList(const std::vector<LiveStreamSnapshotInfo>& liveStreamSnapshotInfoList);
 				std::string getNextStartTime()const;
-				void setNextStartTime(const std::string& nextStartTime);
 
 			protected:
 				void parse(const std::string &payload);

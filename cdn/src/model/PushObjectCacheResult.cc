@@ -40,17 +40,13 @@ void PushObjectCacheResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	pushTaskId_ = value["PushTaskId"].asString();
+	if(!value["PushTaskId"].isNull())
+		pushTaskId_ = value["PushTaskId"].asString();
 
 }
 
 std::string PushObjectCacheResult::getPushTaskId()const
 {
 	return pushTaskId_;
-}
-
-void PushObjectCacheResult::setPushTaskId(const std::string& pushTaskId)
-{
-	pushTaskId_ = pushTaskId;
 }
 

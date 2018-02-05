@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetUserAgentAcessRestrictionRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetUserAgentAcessRestrictionRequest;
 
 SetUserAgentAcessRestrictionRequest::SetUserAgentAcessRestrictionRequest() :
-	CdnRequest("SetUserAgentAcessRestriction")
+	RpcServiceRequest("cdn", "2014-11-11", "SetUserAgentAcessRestriction")
 {}
 
 SetUserAgentAcessRestrictionRequest::~SetUserAgentAcessRestrictionRequest()

@@ -43,10 +43,16 @@ void DescribeLiveStreamRelayPushErrorsResult::parse(const std::string &payload)
 	auto allRelayPushErrorsModelList = value["RelayPushErrorsModelList"]["RelayPushErrorsModel"];
 	for (auto value : allRelayPushErrorsModelList)
 	{
-		RelayPushErrorsModel relayPushErrorsModelObject;
-		relayPushErrorsModelObject.errorCode = value["ErrorCode"].asString();
-		relayPushErrorsModelList_.push_back(relayPushErrorsModelObject);
+		RelayPushErrorsModel relayPushErrorsModelListObject;
+		if(!value["ErrorCode"].isNull())
+			relayPushErrorsModelListObject.errorCode = value["ErrorCode"].asString();
+		relayPushErrorsModelList_.push_back(relayPushErrorsModelListObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamRelayPushErrorsResult::RelayPushErrorsModel> DescribeLiveStreamRelayPushErrorsResult::getRelayPushErrorsModelList()const
+{
+	return relayPushErrorsModelList_;
 }
 

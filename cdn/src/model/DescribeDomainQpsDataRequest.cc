@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainQpsDataRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainQpsDataRequest;
 
 DescribeDomainQpsDataRequest::DescribeDomainQpsDataRequest() :
-	CdnRequest("DescribeDomainQpsData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainQpsData")
 {}
 
 DescribeDomainQpsDataRequest::~DescribeDomainQpsDataRequest()

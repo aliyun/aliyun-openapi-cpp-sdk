@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeRangeDataByLocateAndIspServiceRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeRangeDataByLocateAndIspServiceRequest;
 
 DescribeRangeDataByLocateAndIspServiceRequest::DescribeRangeDataByLocateAndIspServiceRequest() :
-	CdnRequest("DescribeRangeDataByLocateAndIspService")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService")
 {}
 
 DescribeRangeDataByLocateAndIspServiceRequest::~DescribeRangeDataByLocateAndIspServiceRequest()

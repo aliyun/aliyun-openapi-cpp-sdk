@@ -43,23 +43,37 @@ void DescribeDomainFlowDataResult::parse(const std::string &payload)
 	auto allFlowDataPerInterval = value["FlowDataPerInterval"]["DataModule"];
 	for (auto value : allFlowDataPerInterval)
 	{
-		DataModule dataModuleObject;
-		dataModuleObject.timeStamp = value["TimeStamp"].asString();
-		dataModuleObject.value = value["Value"].asString();
-		dataModuleObject.domesticValue = value["DomesticValue"].asString();
-		dataModuleObject.overseasValue = value["OverseasValue"].asString();
-		dataModuleObject.dynamicValue = value["DynamicValue"].asString();
-		dataModuleObject.dynamicDomesticValue = value["DynamicDomesticValue"].asString();
-		dataModuleObject.dynamicOverseasValue = value["DynamicOverseasValue"].asString();
-		dataModuleObject.staticValue = value["StaticValue"].asString();
-		dataModuleObject.staticDomesticValue = value["StaticDomesticValue"].asString();
-		dataModuleObject.staticOverseasValue = value["StaticOverseasValue"].asString();
-		flowDataPerInterval_.push_back(dataModuleObject);
+		DataModule flowDataPerIntervalObject;
+		if(!value["TimeStamp"].isNull())
+			flowDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Value"].isNull())
+			flowDataPerIntervalObject.value = value["Value"].asString();
+		if(!value["DomesticValue"].isNull())
+			flowDataPerIntervalObject.domesticValue = value["DomesticValue"].asString();
+		if(!value["OverseasValue"].isNull())
+			flowDataPerIntervalObject.overseasValue = value["OverseasValue"].asString();
+		if(!value["DynamicValue"].isNull())
+			flowDataPerIntervalObject.dynamicValue = value["DynamicValue"].asString();
+		if(!value["DynamicDomesticValue"].isNull())
+			flowDataPerIntervalObject.dynamicDomesticValue = value["DynamicDomesticValue"].asString();
+		if(!value["DynamicOverseasValue"].isNull())
+			flowDataPerIntervalObject.dynamicOverseasValue = value["DynamicOverseasValue"].asString();
+		if(!value["StaticValue"].isNull())
+			flowDataPerIntervalObject.staticValue = value["StaticValue"].asString();
+		if(!value["StaticDomesticValue"].isNull())
+			flowDataPerIntervalObject.staticDomesticValue = value["StaticDomesticValue"].asString();
+		if(!value["StaticOverseasValue"].isNull())
+			flowDataPerIntervalObject.staticOverseasValue = value["StaticOverseasValue"].asString();
+		flowDataPerInterval_.push_back(flowDataPerIntervalObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -68,19 +82,14 @@ std::string DescribeDomainFlowDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainFlowDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainFlowDataResult::getDomainName()const
 {
 	return domainName_;
 }
 
-void DescribeDomainFlowDataResult::setDomainName(const std::string& domainName)
+std::vector<DescribeDomainFlowDataResult::DataModule> DescribeDomainFlowDataResult::getFlowDataPerInterval()const
 {
-	domainName_ = domainName;
+	return flowDataPerInterval_;
 }
 
 std::string DescribeDomainFlowDataResult::getDataInterval()const
@@ -88,18 +97,8 @@ std::string DescribeDomainFlowDataResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeDomainFlowDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeDomainFlowDataResult::getStartTime()const
 {
 	return startTime_;
-}
-
-void DescribeDomainFlowDataResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
 }
 

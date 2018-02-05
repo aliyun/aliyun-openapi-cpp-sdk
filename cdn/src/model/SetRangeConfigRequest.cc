@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetRangeConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetRangeConfigRequest;
 
 SetRangeConfigRequest::SetRangeConfigRequest() :
-	CdnRequest("SetRangeConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetRangeConfig")
 {}
 
 SetRangeConfigRequest::~SetRangeConfigRequest()

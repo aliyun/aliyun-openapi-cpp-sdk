@@ -43,12 +43,20 @@ void StartMixStreamsServiceResult::parse(const std::string &payload)
 	auto allMixStreamsInfoList = value["MixStreamsInfoList"]["MixStreamsInfo"];
 	for (auto value : allMixStreamsInfoList)
 	{
-		MixStreamsInfo mixStreamsInfoObject;
-		mixStreamsInfoObject.domainName = value["DomainName"].asString();
-		mixStreamsInfoObject.appName = value["AppName"].asString();
-		mixStreamsInfoObject.streamName = value["StreamName"].asString();
-		mixStreamsInfoList_.push_back(mixStreamsInfoObject);
+		MixStreamsInfo mixStreamsInfoListObject;
+		if(!value["DomainName"].isNull())
+			mixStreamsInfoListObject.domainName = value["DomainName"].asString();
+		if(!value["AppName"].isNull())
+			mixStreamsInfoListObject.appName = value["AppName"].asString();
+		if(!value["StreamName"].isNull())
+			mixStreamsInfoListObject.streamName = value["StreamName"].asString();
+		mixStreamsInfoList_.push_back(mixStreamsInfoListObject);
 	}
 
+}
+
+std::vector<StartMixStreamsServiceResult::MixStreamsInfo> StartMixStreamsServiceResult::getMixStreamsInfoList()const
+{
+	return mixStreamsInfoList_;
 }
 

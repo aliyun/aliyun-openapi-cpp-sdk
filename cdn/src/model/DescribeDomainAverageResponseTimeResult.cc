@@ -43,16 +43,27 @@ void DescribeDomainAverageResponseTimeResult::parse(const std::string &payload)
 	auto allAvgRTPerInterval = value["AvgRTPerInterval"]["DataModule"];
 	for (auto value : allAvgRTPerInterval)
 	{
-		DataModule dataModuleObject;
-		dataModuleObject.timeStamp = value["TimeStamp"].asString();
-		dataModuleObject.value = value["Value"].asString();
-		avgRTPerInterval_.push_back(dataModuleObject);
+		DataModule avgRTPerIntervalObject;
+		if(!value["TimeStamp"].isNull())
+			avgRTPerIntervalObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Value"].isNull())
+			avgRTPerIntervalObject.value = value["Value"].asString();
+		avgRTPerInterval_.push_back(avgRTPerIntervalObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
+}
+
+std::vector<DescribeDomainAverageResponseTimeResult::DataModule> DescribeDomainAverageResponseTimeResult::getAvgRTPerInterval()const
+{
+	return avgRTPerInterval_;
 }
 
 std::string DescribeDomainAverageResponseTimeResult::getEndTime()const
@@ -60,19 +71,9 @@ std::string DescribeDomainAverageResponseTimeResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainAverageResponseTimeResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainAverageResponseTimeResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainAverageResponseTimeResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
 }
 
 std::string DescribeDomainAverageResponseTimeResult::getDataInterval()const
@@ -80,18 +81,8 @@ std::string DescribeDomainAverageResponseTimeResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeDomainAverageResponseTimeResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeDomainAverageResponseTimeResult::getStartTime()const
 {
 	return startTime_;
-}
-
-void DescribeDomainAverageResponseTimeResult::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
 }
 

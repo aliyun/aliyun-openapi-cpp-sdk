@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveStreamStreamStatusRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveStreamStreamStatusRequest;
 
 DescribeLiveStreamStreamStatusRequest::DescribeLiveStreamStreamStatusRequest() :
-	CdnRequest("DescribeLiveStreamStreamStatus")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamStreamStatus")
 {}
 
 DescribeLiveStreamStreamStatusRequest::~DescribeLiveStreamStreamStatusRequest()

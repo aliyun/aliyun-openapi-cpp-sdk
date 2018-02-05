@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveStreamLimitInfoRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveStreamLimitInfoRequest;
 
 DescribeLiveStreamLimitInfoRequest::DescribeLiveStreamLimitInfoRequest() :
-	CdnRequest("DescribeLiveStreamLimitInfo")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamLimitInfo")
 {}
 
 DescribeLiveStreamLimitInfoRequest::~DescribeLiveStreamLimitInfoRequest()

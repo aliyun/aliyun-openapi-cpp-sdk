@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetIgnoreQueryStringConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetIgnoreQueryStringConfigRequest;
 
 SetIgnoreQueryStringConfigRequest::SetIgnoreQueryStringConfigRequest() :
-	CdnRequest("SetIgnoreQueryStringConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetIgnoreQueryStringConfig")
 {}
 
 SetIgnoreQueryStringConfigRequest::~SetIgnoreQueryStringConfigRequest()

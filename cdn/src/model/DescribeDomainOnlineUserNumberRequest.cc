@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeDomainOnlineUserNumberRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeDomainOnlineUserNumberRequest;
 
 DescribeDomainOnlineUserNumberRequest::DescribeDomainOnlineUserNumberRequest() :
-	CdnRequest("DescribeDomainOnlineUserNumber")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainOnlineUserNumber")
 {}
 
 DescribeDomainOnlineUserNumberRequest::~DescribeDomainOnlineUserNumberRequest()

@@ -42,7 +42,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamRelayPushErrorsResult(const std::string &payload);
 				~DescribeLiveStreamRelayPushErrorsResult();
 				std::vector<RelayPushErrorsModel> getRelayPushErrorsModelList()const;
-				void setRelayPushErrorsModelList(const std::vector<RelayPushErrorsModel>& relayPushErrorsModelList);
 
 			protected:
 				void parse(const std::string &payload);

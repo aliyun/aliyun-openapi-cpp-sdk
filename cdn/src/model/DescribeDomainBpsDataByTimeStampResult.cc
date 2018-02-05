@@ -43,15 +43,25 @@ void DescribeDomainBpsDataByTimeStampResult::parse(const std::string &payload)
 	auto allBpsDataList = value["BpsDataList"]["BpsDataModel"];
 	for (auto value : allBpsDataList)
 	{
-		BpsDataModel bpsDataModelObject;
-		bpsDataModelObject.locationName = value["LocationName"].asString();
-		bpsDataModelObject.ispName = value["IspName"].asString();
-		bpsDataModelObject.bps = std::stol(value["Bps"].asString());
-		bpsDataList_.push_back(bpsDataModelObject);
+		BpsDataModel bpsDataListObject;
+		if(!value["LocationName"].isNull())
+			bpsDataListObject.locationName = value["LocationName"].asString();
+		if(!value["IspName"].isNull())
+			bpsDataListObject.ispName = value["IspName"].asString();
+		if(!value["Bps"].isNull())
+			bpsDataListObject.bps = std::stol(value["Bps"].asString());
+		bpsDataList_.push_back(bpsDataListObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	timeStamp_ = value["TimeStamp"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["TimeStamp"].isNull())
+		timeStamp_ = value["TimeStamp"].asString();
 
+}
+
+std::vector<DescribeDomainBpsDataByTimeStampResult::BpsDataModel> DescribeDomainBpsDataByTimeStampResult::getBpsDataList()const
+{
+	return bpsDataList_;
 }
 
 std::string DescribeDomainBpsDataByTimeStampResult::getDomainName()const
@@ -59,18 +69,8 @@ std::string DescribeDomainBpsDataByTimeStampResult::getDomainName()const
 	return domainName_;
 }
 
-void DescribeDomainBpsDataByTimeStampResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-}
-
 std::string DescribeDomainBpsDataByTimeStampResult::getTimeStamp()const
 {
 	return timeStamp_;
-}
-
-void DescribeDomainBpsDataByTimeStampResult::setTimeStamp(const std::string& timeStamp)
-{
-	timeStamp_ = timeStamp;
 }
 

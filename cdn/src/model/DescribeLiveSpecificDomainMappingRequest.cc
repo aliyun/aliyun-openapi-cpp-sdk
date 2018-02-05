@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveSpecificDomainMappingRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveSpecificDomainMappingRequest;
 
 DescribeLiveSpecificDomainMappingRequest::DescribeLiveSpecificDomainMappingRequest() :
-	CdnRequest("DescribeLiveSpecificDomainMapping")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveSpecificDomainMapping")
 {}
 
 DescribeLiveSpecificDomainMappingRequest::~DescribeLiveSpecificDomainMappingRequest()

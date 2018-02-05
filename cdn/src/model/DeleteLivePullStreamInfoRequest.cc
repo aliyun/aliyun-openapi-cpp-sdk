@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DeleteLivePullStreamInfoRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DeleteLivePullStreamInfoRequest;
 
 DeleteLivePullStreamInfoRequest::DeleteLivePullStreamInfoRequest() :
-	CdnRequest("DeleteLivePullStreamInfo")
+	RpcServiceRequest("cdn", "2014-11-11", "DeleteLivePullStreamInfo")
 {}
 
 DeleteLivePullStreamInfoRequest::~DeleteLivePullStreamInfoRequest()

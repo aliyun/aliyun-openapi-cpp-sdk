@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetCcConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetCcConfigRequest;
 
 SetCcConfigRequest::SetCcConfigRequest() :
-	CdnRequest("SetCcConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetCcConfig")
 {}
 
 SetCcConfigRequest::~SetCcConfigRequest()

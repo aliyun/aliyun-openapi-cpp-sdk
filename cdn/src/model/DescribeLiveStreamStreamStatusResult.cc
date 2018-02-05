@@ -40,17 +40,13 @@ void DescribeLiveStreamStreamStatusResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	streamStatus_ = value["StreamStatus"].asString();
+	if(!value["StreamStatus"].isNull())
+		streamStatus_ = value["StreamStatus"].asString();
 
 }
 
 std::string DescribeLiveStreamStreamStatusResult::getStreamStatus()const
 {
 	return streamStatus_;
-}
-
-void DescribeLiveStreamStreamStatusResult::setStreamStatus(const std::string& streamStatus)
-{
-	streamStatus_ = streamStatus;
 }
 

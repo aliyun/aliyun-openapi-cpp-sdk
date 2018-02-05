@@ -38,17 +38,11 @@ namespace AlibabaCloud
 				explicit DescribeDomainMax95BpsDataResult(const std::string &payload);
 				~DescribeDomainMax95BpsDataResult();
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::string getDomesticMax95Bps()const;
-				void setDomesticMax95Bps(const std::string& domesticMax95Bps);
 				std::string getMax95Bps()const;
-				void setMax95Bps(const std::string& max95Bps);
 				std::string getOverseasMax95Bps()const;
-				void setOverseasMax95Bps(const std::string& overseasMax95Bps);
 
 			protected:
 				void parse(const std::string &payload);

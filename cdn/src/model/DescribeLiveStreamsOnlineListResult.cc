@@ -43,14 +43,24 @@ void DescribeLiveStreamsOnlineListResult::parse(const std::string &payload)
 	auto allOnlineInfo = value["OnlineInfo"]["LiveStreamOnlineInfo"];
 	for (auto value : allOnlineInfo)
 	{
-		LiveStreamOnlineInfo liveStreamOnlineInfoObject;
-		liveStreamOnlineInfoObject.domainName = value["DomainName"].asString();
-		liveStreamOnlineInfoObject.appName = value["AppName"].asString();
-		liveStreamOnlineInfoObject.streamName = value["StreamName"].asString();
-		liveStreamOnlineInfoObject.publishTime = value["PublishTime"].asString();
-		liveStreamOnlineInfoObject.publishUrl = value["PublishUrl"].asString();
-		onlineInfo_.push_back(liveStreamOnlineInfoObject);
+		LiveStreamOnlineInfo onlineInfoObject;
+		if(!value["DomainName"].isNull())
+			onlineInfoObject.domainName = value["DomainName"].asString();
+		if(!value["AppName"].isNull())
+			onlineInfoObject.appName = value["AppName"].asString();
+		if(!value["StreamName"].isNull())
+			onlineInfoObject.streamName = value["StreamName"].asString();
+		if(!value["PublishTime"].isNull())
+			onlineInfoObject.publishTime = value["PublishTime"].asString();
+		if(!value["PublishUrl"].isNull())
+			onlineInfoObject.publishUrl = value["PublishUrl"].asString();
+		onlineInfo_.push_back(onlineInfoObject);
 	}
 
+}
+
+std::vector<DescribeLiveStreamsOnlineListResult::LiveStreamOnlineInfo> DescribeLiveStreamsOnlineListResult::getOnlineInfo()const
+{
+	return onlineInfo_;
 }
 

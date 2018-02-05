@@ -43,11 +43,18 @@ void DescribeDomainRealTimeReqHitRateDataResult::parse(const std::string &payloa
 	auto allData = value["Data"]["ReqHitRateDataModel"];
 	for (auto value : allData)
 	{
-		ReqHitRateDataModel reqHitRateDataModelObject;
-		reqHitRateDataModelObject.reqHitRate = std::stof(value["ReqHitRate"].asString());
-		reqHitRateDataModelObject.timeStamp = value["TimeStamp"].asString();
-		data_.push_back(reqHitRateDataModelObject);
+		ReqHitRateDataModel dataObject;
+		if(!value["ReqHitRate"].isNull())
+			dataObject.reqHitRate = std::stof(value["ReqHitRate"].asString());
+		if(!value["TimeStamp"].isNull())
+			dataObject.timeStamp = value["TimeStamp"].asString();
+		data_.push_back(dataObject);
 	}
 
+}
+
+std::vector<DescribeDomainRealTimeReqHitRateDataResult::ReqHitRateDataModel> DescribeDomainRealTimeReqHitRateDataResult::getData()const
+{
+	return data_;
 }
 

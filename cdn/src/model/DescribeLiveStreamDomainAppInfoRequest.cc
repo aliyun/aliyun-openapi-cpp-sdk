@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeLiveStreamDomainAppInfoRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeLiveStreamDomainAppInfoRequest;
 
 DescribeLiveStreamDomainAppInfoRequest::DescribeLiveStreamDomainAppInfoRequest() :
-	CdnRequest("DescribeLiveStreamDomainAppInfo")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamDomainAppInfo")
 {}
 
 DescribeLiveStreamDomainAppInfoRequest::~DescribeLiveStreamDomainAppInfoRequest()

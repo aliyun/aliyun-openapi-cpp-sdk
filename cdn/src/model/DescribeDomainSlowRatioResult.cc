@@ -43,23 +43,37 @@ void DescribeDomainSlowRatioResult::parse(const std::string &payload)
 	auto allSlowRatioDataPerInterval = value["SlowRatioDataPerInterval"]["SlowRatioData"];
 	for (auto value : allSlowRatioDataPerInterval)
 	{
-		SlowRatioData slowRatioDataObject;
-		slowRatioDataObject.totalUsers = std::stoi(value["TotalUsers"].asString());
-		slowRatioDataObject.slowUsers = std::stoi(value["SlowUsers"].asString());
-		slowRatioDataObject.slowRatio = std::stof(value["SlowRatio"].asString());
-		slowRatioDataObject.regionNameZh = value["RegionNameZh"].asString();
-		slowRatioDataObject.regionNameEn = value["RegionNameEn"].asString();
-		slowRatioDataObject.ispNameZh = value["IspNameZh"].asString();
-		slowRatioDataObject.ispNameEn = value["IspNameEn"].asString();
-		slowRatioDataObject.time = value["Time"].asString();
-		slowRatioDataPerInterval_.push_back(slowRatioDataObject);
+		SlowRatioData slowRatioDataPerIntervalObject;
+		if(!value["TotalUsers"].isNull())
+			slowRatioDataPerIntervalObject.totalUsers = std::stoi(value["TotalUsers"].asString());
+		if(!value["SlowUsers"].isNull())
+			slowRatioDataPerIntervalObject.slowUsers = std::stoi(value["SlowUsers"].asString());
+		if(!value["SlowRatio"].isNull())
+			slowRatioDataPerIntervalObject.slowRatio = std::stof(value["SlowRatio"].asString());
+		if(!value["RegionNameZh"].isNull())
+			slowRatioDataPerIntervalObject.regionNameZh = value["RegionNameZh"].asString();
+		if(!value["RegionNameEn"].isNull())
+			slowRatioDataPerIntervalObject.regionNameEn = value["RegionNameEn"].asString();
+		if(!value["IspNameZh"].isNull())
+			slowRatioDataPerIntervalObject.ispNameZh = value["IspNameZh"].asString();
+		if(!value["IspNameEn"].isNull())
+			slowRatioDataPerIntervalObject.ispNameEn = value["IspNameEn"].asString();
+		if(!value["Time"].isNull())
+			slowRatioDataPerIntervalObject.time = value["Time"].asString();
+		slowRatioDataPerInterval_.push_back(slowRatioDataPerIntervalObject);
 	}
-	endTime_ = value["EndTime"].asString();
-	dataInterval_ = std::stoi(value["DataInterval"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = std::stoi(value["DataInterval"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
 }
 
@@ -68,19 +82,9 @@ int DescribeDomainSlowRatioResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeDomainSlowRatioResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 std::string DescribeDomainSlowRatioResult::getEndTime()const
 {
 	return endTime_;
-}
-
-void DescribeDomainSlowRatioResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
 }
 
 int DescribeDomainSlowRatioResult::getPageSize()const
@@ -88,19 +92,9 @@ int DescribeDomainSlowRatioResult::getPageSize()const
 	return pageSize_;
 }
 
-void DescribeDomainSlowRatioResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeDomainSlowRatioResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeDomainSlowRatioResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 
 int DescribeDomainSlowRatioResult::getDataInterval()const
@@ -108,18 +102,13 @@ int DescribeDomainSlowRatioResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeDomainSlowRatioResult::setDataInterval(int dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeDomainSlowRatioResult::getStartTime()const
 {
 	return startTime_;
 }
 
-void DescribeDomainSlowRatioResult::setStartTime(const std::string& startTime)
+std::vector<DescribeDomainSlowRatioResult::SlowRatioData> DescribeDomainSlowRatioResult::getSlowRatioDataPerInterval()const
 {
-	startTime_ = startTime;
+	return slowRatioDataPerInterval_;
 }
 

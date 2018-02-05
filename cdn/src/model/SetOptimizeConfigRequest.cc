@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetOptimizeConfigRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetOptimizeConfigRequest;
 
 SetOptimizeConfigRequest::SetOptimizeConfigRequest() :
-	CdnRequest("SetOptimizeConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetOptimizeConfig")
 {}
 
 SetOptimizeConfigRequest::~SetOptimizeConfigRequest()

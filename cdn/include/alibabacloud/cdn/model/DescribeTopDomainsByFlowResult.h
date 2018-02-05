@@ -48,15 +48,10 @@ namespace AlibabaCloud
 				explicit DescribeTopDomainsByFlowResult(const std::string &payload);
 				~DescribeTopDomainsByFlowResult();
 				std::vector<TopDomain> getTopDomains()const;
-				void setTopDomains(const std::vector<TopDomain>& topDomains);
 				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				long getDomainOnlineCount()const;
-				void setDomainOnlineCount(long domainOnlineCount);
 				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getDomainCount()const;
-				void setDomainCount(long domainCount);
 
 			protected:
 				void parse(const std::string &payload);

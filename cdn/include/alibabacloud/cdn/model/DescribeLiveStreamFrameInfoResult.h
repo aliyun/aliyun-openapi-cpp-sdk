@@ -49,7 +49,6 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamFrameInfoResult(const std::string &payload);
 				~DescribeLiveStreamFrameInfoResult();
 				std::vector<FrameDataModel> getFrameDataInfos()const;
-				void setFrameDataInfos(const std::vector<FrameDataModel>& frameDataInfos);
 
 			protected:
 				void parse(const std::string &payload);

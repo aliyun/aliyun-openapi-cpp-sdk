@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/AddLiveDomainMappingRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::AddLiveDomainMappingRequest;
 
 AddLiveDomainMappingRequest::AddLiveDomainMappingRequest() :
-	CdnRequest("AddLiveDomainMapping")
+	RpcServiceRequest("cdn", "2014-11-11", "AddLiveDomainMapping")
 {}
 
 AddLiveDomainMappingRequest::~AddLiveDomainMappingRequest()

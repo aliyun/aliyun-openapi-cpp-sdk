@@ -43,15 +43,21 @@ void DescribeDomainPvDataResult::parse(const std::string &payload)
 	auto allPvDataInterval = value["PvDataInterval"]["UsageData"];
 	for (auto value : allPvDataInterval)
 	{
-		UsageData usageDataObject;
-		usageDataObject.timeStamp = value["TimeStamp"].asString();
-		usageDataObject.value = value["Value"].asString();
-		pvDataInterval_.push_back(usageDataObject);
+		UsageData pvDataIntervalObject;
+		if(!value["TimeStamp"].isNull())
+			pvDataIntervalObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Value"].isNull())
+			pvDataIntervalObject.value = value["Value"].asString();
+		pvDataInterval_.push_back(pvDataIntervalObject);
 	}
-	domainName_ = value["DomainName"].asString();
-	dataInterval_ = value["DataInterval"].asString();
-	startTime_ = value["StartTime"].asString();
-	endTime_ = value["EndTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -60,19 +66,9 @@ std::string DescribeDomainPvDataResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeDomainPvDataResult::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string DescribeDomainPvDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-void DescribeDomainPvDataResult::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
 }
 
 std::string DescribeDomainPvDataResult::getDataInterval()const
@@ -80,18 +76,13 @@ std::string DescribeDomainPvDataResult::getDataInterval()const
 	return dataInterval_;
 }
 
-void DescribeDomainPvDataResult::setDataInterval(const std::string& dataInterval)
-{
-	dataInterval_ = dataInterval;
-}
-
 std::string DescribeDomainPvDataResult::getStartTime()const
 {
 	return startTime_;
 }
 
-void DescribeDomainPvDataResult::setStartTime(const std::string& startTime)
+std::vector<DescribeDomainPvDataResult::UsageData> DescribeDomainPvDataResult::getPvDataInterval()const
 {
-	startTime_ = startTime;
+	return pvDataInterval_;
 }
 

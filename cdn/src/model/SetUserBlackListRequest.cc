@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/SetUserBlackListRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::SetUserBlackListRequest;
 
 SetUserBlackListRequest::SetUserBlackListRequest() :
-	CdnRequest("SetUserBlackList")
+	RpcServiceRequest("cdn", "2014-11-11", "SetUserBlackList")
 {}
 
 SetUserBlackListRequest::~SetUserBlackListRequest()

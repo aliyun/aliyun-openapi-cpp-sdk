@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/DescribeCdnRegionAndIspRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::DescribeCdnRegionAndIspRequest;
 
 DescribeCdnRegionAndIspRequest::DescribeCdnRegionAndIspRequest() :
-	CdnRequest("DescribeCdnRegionAndIsp")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeCdnRegionAndIsp")
 {}
 
 DescribeCdnRegionAndIspRequest::~DescribeCdnRegionAndIspRequest()

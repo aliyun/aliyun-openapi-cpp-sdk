@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cdn/model/StopMixStreamsServiceRequest.h>
 
-using namespace AlibabaCloud::Cdn;
-using namespace AlibabaCloud::Cdn::Model;
+using AlibabaCloud::Cdn::Model::StopMixStreamsServiceRequest;
 
 StopMixStreamsServiceRequest::StopMixStreamsServiceRequest() :
-	CdnRequest("StopMixStreamsService")
+	RpcServiceRequest("cdn", "2014-11-11", "StopMixStreamsService")
 {}
 
 StopMixStreamsServiceRequest::~StopMixStreamsServiceRequest()

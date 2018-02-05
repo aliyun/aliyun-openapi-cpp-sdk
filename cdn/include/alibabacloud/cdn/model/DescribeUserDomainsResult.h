@@ -53,13 +53,9 @@ namespace AlibabaCloud
 				explicit DescribeUserDomainsResult(const std::string &payload);
 				~DescribeUserDomainsResult();
 				std::vector<PageData> getDomains()const;
-				void setDomains(const std::vector<PageData>& domains);
 				long getTotalCount()const;
-				void setTotalCount(long totalCount);
 				long getPageSize()const;
-				void setPageSize(long pageSize);
 				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
 
 			protected:
 				void parse(const std::string &payload);
