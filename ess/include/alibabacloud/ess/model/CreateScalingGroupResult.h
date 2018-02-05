@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateScalingGroupResult(const std::string &payload);
 				~CreateScalingGroupResult();
 				std::string getScalingGroupId()const;
-				void setScalingGroupId(const std::string& scalingGroupId);
 
 			protected:
 				void parse(const std::string &payload);

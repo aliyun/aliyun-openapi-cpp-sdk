@@ -52,18 +52,8 @@ std::string CreateScalingRuleResult::getScalingRuleAri()const
 	return scalingRuleAri_;
 }
 
-void CreateScalingRuleResult::setScalingRuleAri(const std::string& scalingRuleAri)
-{
-	scalingRuleAri_ = scalingRuleAri;
-}
-
 std::string CreateScalingRuleResult::getScalingRuleId()const
 {
 	return scalingRuleId_;
-}
-
-void CreateScalingRuleResult::setScalingRuleId(const std::string& scalingRuleId)
-{
-	scalingRuleId_ = scalingRuleId;
 }
 

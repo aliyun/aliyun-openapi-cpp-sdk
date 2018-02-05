@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/DescribeAccountAttributesRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::DescribeAccountAttributesRequest;
 
 DescribeAccountAttributesRequest::DescribeAccountAttributesRequest() :
-	EssRequest("DescribeAccountAttributes")
+	RpcServiceRequest("ess", "2014-08-28", "DescribeAccountAttributes")
 {}
 
 DescribeAccountAttributesRequest::~DescribeAccountAttributesRequest()

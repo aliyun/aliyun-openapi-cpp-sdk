@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateScalingConfigurationResult(const std::string &payload);
 				~CreateScalingConfigurationResult();
 				std::string getScalingConfigurationId()const;
-				void setScalingConfigurationId(const std::string& scalingConfigurationId);
 
 			protected:
 				void parse(const std::string &payload);

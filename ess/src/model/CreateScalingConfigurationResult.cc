@@ -50,8 +50,3 @@ std::string CreateScalingConfigurationResult::getScalingConfigurationId()const
 	return scalingConfigurationId_;
 }
 
-void CreateScalingConfigurationResult::setScalingConfigurationId(const std::string& scalingConfigurationId)
-{
-	scalingConfigurationId_ = scalingConfigurationId;
-}
-

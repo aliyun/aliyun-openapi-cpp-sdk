@@ -50,8 +50,3 @@ std::string CreateScheduledTaskResult::getScheduledTaskId()const
 	return scheduledTaskId_;
 }
 
-void CreateScheduledTaskResult::setScheduledTaskId(const std::string& scheduledTaskId)
-{
-	scheduledTaskId_ = scheduledTaskId;
-}
-

@@ -43,18 +43,18 @@ void DescribeCapacityHistoryResult::parse(const std::string &payload)
 	auto allCapacityHistoryItems = value["CapacityHistoryItems"]["CapacityHistoryModel"];
 	for (auto value : allCapacityHistoryItems)
 	{
-		CapacityHistoryModel capacityHistoryModelObject;
+		CapacityHistoryModel capacityHistoryItemsObject;
 		if(!value["ScalingGroupId"].isNull())
-			capacityHistoryModelObject.scalingGroupId = value["ScalingGroupId"].asString();
+			capacityHistoryItemsObject.scalingGroupId = value["ScalingGroupId"].asString();
 		if(!value["TotalCapacity"].isNull())
-			capacityHistoryModelObject.totalCapacity = std::stoi(value["TotalCapacity"].asString());
+			capacityHistoryItemsObject.totalCapacity = std::stoi(value["TotalCapacity"].asString());
 		if(!value["AttachedCapacity"].isNull())
-			capacityHistoryModelObject.attachedCapacity = std::stoi(value["AttachedCapacity"].asString());
+			capacityHistoryItemsObject.attachedCapacity = std::stoi(value["AttachedCapacity"].asString());
 		if(!value["AutoCreatedCapacity"].isNull())
-			capacityHistoryModelObject.autoCreatedCapacity = std::stoi(value["AutoCreatedCapacity"].asString());
+			capacityHistoryItemsObject.autoCreatedCapacity = std::stoi(value["AutoCreatedCapacity"].asString());
 		if(!value["Timestamp"].isNull())
-			capacityHistoryModelObject.timestamp = value["Timestamp"].asString();
-		capacityHistoryItems_.push_back(capacityHistoryModelObject);
+			capacityHistoryItemsObject.timestamp = value["Timestamp"].asString();
+		capacityHistoryItems_.push_back(capacityHistoryItemsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
@@ -70,19 +70,9 @@ int DescribeCapacityHistoryResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeCapacityHistoryResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeCapacityHistoryResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeCapacityHistoryResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeCapacityHistoryResult::getPageNumber()const
@@ -90,8 +80,8 @@ int DescribeCapacityHistoryResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeCapacityHistoryResult::setPageNumber(int pageNumber)
+std::vector<DescribeCapacityHistoryResult::CapacityHistoryModel> DescribeCapacityHistoryResult::getCapacityHistoryItems()const
 {
-	pageNumber_ = pageNumber;
+	return capacityHistoryItems_;
 }
 

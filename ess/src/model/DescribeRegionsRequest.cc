@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/DescribeRegionsRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
-	EssRequest("DescribeRegions")
+	RpcServiceRequest("ess", "2014-08-28", "DescribeRegions")
 {}
 
 DescribeRegionsRequest::~DescribeRegionsRequest()

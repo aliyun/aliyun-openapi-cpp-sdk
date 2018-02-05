@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/CreateScalingConfigurationRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::CreateScalingConfigurationRequest;
 
 CreateScalingConfigurationRequest::CreateScalingConfigurationRequest() :
-	EssRequest("CreateScalingConfiguration")
+	RpcServiceRequest("ess", "2014-08-28", "CreateScalingConfiguration")
 {}
 
 CreateScalingConfigurationRequest::~CreateScalingConfigurationRequest()

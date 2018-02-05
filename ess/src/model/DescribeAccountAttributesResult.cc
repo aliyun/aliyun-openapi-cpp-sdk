@@ -66,19 +66,9 @@ int DescribeAccountAttributesResult::getMaxNumberOfScalingRules()const
 	return maxNumberOfScalingRules_;
 }
 
-void DescribeAccountAttributesResult::setMaxNumberOfScalingRules(int maxNumberOfScalingRules)
-{
-	maxNumberOfScalingRules_ = maxNumberOfScalingRules;
-}
-
 int DescribeAccountAttributesResult::getMaxNumberOfScalingInstances()const
 {
 	return maxNumberOfScalingInstances_;
-}
-
-void DescribeAccountAttributesResult::setMaxNumberOfScalingInstances(int maxNumberOfScalingInstances)
-{
-	maxNumberOfScalingInstances_ = maxNumberOfScalingInstances;
 }
 
 int DescribeAccountAttributesResult::getMaxNumberOfScheduledTasks()const
@@ -86,19 +76,9 @@ int DescribeAccountAttributesResult::getMaxNumberOfScheduledTasks()const
 	return maxNumberOfScheduledTasks_;
 }
 
-void DescribeAccountAttributesResult::setMaxNumberOfScheduledTasks(int maxNumberOfScheduledTasks)
-{
-	maxNumberOfScheduledTasks_ = maxNumberOfScheduledTasks;
-}
-
 int DescribeAccountAttributesResult::getMaxNumberOfLoadBalancers()const
 {
 	return maxNumberOfLoadBalancers_;
-}
-
-void DescribeAccountAttributesResult::setMaxNumberOfLoadBalancers(int maxNumberOfLoadBalancers)
-{
-	maxNumberOfLoadBalancers_ = maxNumberOfLoadBalancers;
 }
 
 int DescribeAccountAttributesResult::getMaxNumberOfMinSize()const
@@ -106,19 +86,9 @@ int DescribeAccountAttributesResult::getMaxNumberOfMinSize()const
 	return maxNumberOfMinSize_;
 }
 
-void DescribeAccountAttributesResult::setMaxNumberOfMinSize(int maxNumberOfMinSize)
-{
-	maxNumberOfMinSize_ = maxNumberOfMinSize;
-}
-
 int DescribeAccountAttributesResult::getMaxNumberOfScalingGroups()const
 {
 	return maxNumberOfScalingGroups_;
-}
-
-void DescribeAccountAttributesResult::setMaxNumberOfScalingGroups(int maxNumberOfScalingGroups)
-{
-	maxNumberOfScalingGroups_ = maxNumberOfScalingGroups;
 }
 
 int DescribeAccountAttributesResult::getMaxNumberOfScalingConfigurations()const
@@ -126,28 +96,13 @@ int DescribeAccountAttributesResult::getMaxNumberOfScalingConfigurations()const
 	return maxNumberOfScalingConfigurations_;
 }
 
-void DescribeAccountAttributesResult::setMaxNumberOfScalingConfigurations(int maxNumberOfScalingConfigurations)
-{
-	maxNumberOfScalingConfigurations_ = maxNumberOfScalingConfigurations;
-}
-
 int DescribeAccountAttributesResult::getMaxNumberOfDBInstances()const
 {
 	return maxNumberOfDBInstances_;
 }
 
-void DescribeAccountAttributesResult::setMaxNumberOfDBInstances(int maxNumberOfDBInstances)
-{
-	maxNumberOfDBInstances_ = maxNumberOfDBInstances;
-}
-
 int DescribeAccountAttributesResult::getMaxNumberOfMaxSize()const
 {
 	return maxNumberOfMaxSize_;
-}
-
-void DescribeAccountAttributesResult::setMaxNumberOfMaxSize(int maxNumberOfMaxSize)
-{
-	maxNumberOfMaxSize_ = maxNumberOfMaxSize;
 }
 

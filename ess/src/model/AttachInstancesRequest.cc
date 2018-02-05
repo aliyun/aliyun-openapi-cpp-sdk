@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/AttachInstancesRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::AttachInstancesRequest;
 
 AttachInstancesRequest::AttachInstancesRequest() :
-	EssRequest("AttachInstances")
+	RpcServiceRequest("ess", "2014-08-28", "AttachInstances")
 {}
 
 AttachInstancesRequest::~AttachInstancesRequest()

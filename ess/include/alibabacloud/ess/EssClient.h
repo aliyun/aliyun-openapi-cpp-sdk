@@ -62,6 +62,8 @@
 #include "model/DescribeCapacityHistoryResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DescribeScheduledTasksRequest.h"
+#include "model/DescribeScheduledTasksResult.h"
 #include "model/DescribeAccountAttributesRequest.h"
 #include "model/DescribeAccountAttributesResult.h"
 #include "model/DetachInstancesRequest.h"
@@ -155,6 +157,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;			
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;			
 			typedef std::function<void(const EssClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScheduledTasksResult> DescribeScheduledTasksOutcome;			
+			typedef std::future<DescribeScheduledTasksOutcome> DescribeScheduledTasksOutcomeCallable;			
+			typedef std::function<void(const EssClient*, const Model::DescribeScheduledTasksRequest&, const DescribeScheduledTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledTasksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccountAttributesResult> DescribeAccountAttributesOutcome;			
 			typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;			
 			typedef std::function<void(const EssClient*, const Model::DescribeAccountAttributesRequest&, const DescribeAccountAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountAttributesAsyncHandler;
@@ -192,12 +197,10 @@ namespace AlibabaCloud
 			typedef std::future<ModifyAlertConfigOutcome> ModifyAlertConfigOutcomeCallable;			
 			typedef std::function<void(const EssClient*, const Model::ModifyAlertConfigRequest&, const ModifyAlertConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlertConfigAsyncHandler;
 
-
 			EssClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			EssClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			EssClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~EssClient();
-
             AttachInstancesOutcome attachInstances(const Model::AttachInstancesRequest &request)const;
             void attachInstancesAsync(const Model::AttachInstancesRequest& request, const AttachInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             AttachInstancesOutcomeCallable attachInstancesCallable(const Model::AttachInstancesRequest& request) const;
@@ -258,6 +261,9 @@ namespace AlibabaCloud
             DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
             void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+            DescribeScheduledTasksOutcome describeScheduledTasks(const Model::DescribeScheduledTasksRequest &request)const;
+            void describeScheduledTasksAsync(const Model::DescribeScheduledTasksRequest& request, const DescribeScheduledTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+            DescribeScheduledTasksOutcomeCallable describeScheduledTasksCallable(const Model::DescribeScheduledTasksRequest& request) const;
             DescribeAccountAttributesOutcome describeAccountAttributes(const Model::DescribeAccountAttributesRequest &request)const;
             void describeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             DescribeAccountAttributesOutcomeCallable describeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;

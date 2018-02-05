@@ -43,26 +43,26 @@ void DescribeScalingRulesResult::parse(const std::string &payload)
 	auto allScalingRules = value["ScalingRules"]["ScalingRule"];
 	for (auto value : allScalingRules)
 	{
-		ScalingRule scalingRuleObject;
+		ScalingRule scalingRulesObject;
 		if(!value["ScalingRuleId"].isNull())
-			scalingRuleObject.scalingRuleId = value["ScalingRuleId"].asString();
+			scalingRulesObject.scalingRuleId = value["ScalingRuleId"].asString();
 		if(!value["ScalingGroupId"].isNull())
-			scalingRuleObject.scalingGroupId = value["ScalingGroupId"].asString();
+			scalingRulesObject.scalingGroupId = value["ScalingGroupId"].asString();
 		if(!value["ScalingRuleName"].isNull())
-			scalingRuleObject.scalingRuleName = value["ScalingRuleName"].asString();
+			scalingRulesObject.scalingRuleName = value["ScalingRuleName"].asString();
 		if(!value["Cooldown"].isNull())
-			scalingRuleObject.cooldown = std::stoi(value["Cooldown"].asString());
+			scalingRulesObject.cooldown = std::stoi(value["Cooldown"].asString());
 		if(!value["AdjustmentType"].isNull())
-			scalingRuleObject.adjustmentType = value["AdjustmentType"].asString();
+			scalingRulesObject.adjustmentType = value["AdjustmentType"].asString();
 		if(!value["AdjustmentValue"].isNull())
-			scalingRuleObject.adjustmentValue = std::stoi(value["AdjustmentValue"].asString());
+			scalingRulesObject.adjustmentValue = std::stoi(value["AdjustmentValue"].asString());
 		if(!value["MinSize"].isNull())
-			scalingRuleObject.minSize = std::stoi(value["MinSize"].asString());
+			scalingRulesObject.minSize = std::stoi(value["MinSize"].asString());
 		if(!value["MaxSize"].isNull())
-			scalingRuleObject.maxSize = std::stoi(value["MaxSize"].asString());
+			scalingRulesObject.maxSize = std::stoi(value["MaxSize"].asString());
 		if(!value["ScalingRuleAri"].isNull())
-			scalingRuleObject.scalingRuleAri = value["ScalingRuleAri"].asString();
-		scalingRules_.push_back(scalingRuleObject);
+			scalingRulesObject.scalingRuleAri = value["ScalingRuleAri"].asString();
+		scalingRules_.push_back(scalingRulesObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
@@ -73,14 +73,14 @@ void DescribeScalingRulesResult::parse(const std::string &payload)
 
 }
 
+std::vector<DescribeScalingRulesResult::ScalingRule> DescribeScalingRulesResult::getScalingRules()const
+{
+	return scalingRules_;
+}
+
 int DescribeScalingRulesResult::getTotalCount()const
 {
 	return totalCount_;
-}
-
-void DescribeScalingRulesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
 }
 
 int DescribeScalingRulesResult::getPageSize()const
@@ -88,18 +88,8 @@ int DescribeScalingRulesResult::getPageSize()const
 	return pageSize_;
 }
 
-void DescribeScalingRulesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeScalingRulesResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeScalingRulesResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

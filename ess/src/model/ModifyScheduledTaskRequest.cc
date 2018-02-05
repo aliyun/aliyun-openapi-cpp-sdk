@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/ModifyScheduledTaskRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::ModifyScheduledTaskRequest;
 
 ModifyScheduledTaskRequest::ModifyScheduledTaskRequest() :
-	EssRequest("ModifyScheduledTask")
+	RpcServiceRequest("ess", "2014-08-28", "ModifyScheduledTask")
 {}
 
 ModifyScheduledTaskRequest::~ModifyScheduledTaskRequest()

@@ -46,13 +46,9 @@ namespace AlibabaCloud
 				explicit DescribeCapacityHistoryResult(const std::string &payload);
 				~DescribeCapacityHistoryResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<CapacityHistoryModel> getCapacityHistoryItems()const;
-				void setCapacityHistoryItems(const std::vector<CapacityHistoryModel>& capacityHistoryItems);
 
 			protected:
 				void parse(const std::string &payload);

@@ -779,6 +779,42 @@ EssClient::DescribeRegionsOutcomeCallable EssClient::describeRegionsCallable(con
 	return task->get_future();
 }
 
+EssClient::DescribeScheduledTasksOutcome EssClient::describeScheduledTasks(const DescribeScheduledTasksRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScheduledTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScheduledTasksOutcome(DescribeScheduledTasksResult(outcome.result()));
+	else
+		return DescribeScheduledTasksOutcome(outcome.error());
+}
+
+void EssClient::describeScheduledTasksAsync(const DescribeScheduledTasksRequest& request, const DescribeScheduledTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScheduledTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DescribeScheduledTasksOutcomeCallable EssClient::describeScheduledTasksCallable(const DescribeScheduledTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScheduledTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScheduledTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::DescribeAccountAttributesOutcome EssClient::describeAccountAttributes(const DescribeAccountAttributesRequest &request) const
 {
 	auto endpointOutcome = endpoint();

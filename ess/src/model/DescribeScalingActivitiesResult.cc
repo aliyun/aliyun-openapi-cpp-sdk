@@ -43,32 +43,32 @@ void DescribeScalingActivitiesResult::parse(const std::string &payload)
 	auto allScalingActivities = value["ScalingActivities"]["ScalingActivity"];
 	for (auto value : allScalingActivities)
 	{
-		ScalingActivity scalingActivityObject;
+		ScalingActivity scalingActivitiesObject;
 		if(!value["ScalingActivityId"].isNull())
-			scalingActivityObject.scalingActivityId = value["ScalingActivityId"].asString();
+			scalingActivitiesObject.scalingActivityId = value["ScalingActivityId"].asString();
 		if(!value["ScalingGroupId"].isNull())
-			scalingActivityObject.scalingGroupId = value["ScalingGroupId"].asString();
+			scalingActivitiesObject.scalingGroupId = value["ScalingGroupId"].asString();
 		if(!value["Description"].isNull())
-			scalingActivityObject.description = value["Description"].asString();
+			scalingActivitiesObject.description = value["Description"].asString();
 		if(!value["Cause"].isNull())
-			scalingActivityObject.cause = value["Cause"].asString();
+			scalingActivitiesObject.cause = value["Cause"].asString();
 		if(!value["StartTime"].isNull())
-			scalingActivityObject.startTime = value["StartTime"].asString();
+			scalingActivitiesObject.startTime = value["StartTime"].asString();
 		if(!value["EndTime"].isNull())
-			scalingActivityObject.endTime = value["EndTime"].asString();
+			scalingActivitiesObject.endTime = value["EndTime"].asString();
 		if(!value["Progress"].isNull())
-			scalingActivityObject.progress = std::stoi(value["Progress"].asString());
+			scalingActivitiesObject.progress = std::stoi(value["Progress"].asString());
 		if(!value["StatusCode"].isNull())
-			scalingActivityObject.statusCode = value["StatusCode"].asString();
+			scalingActivitiesObject.statusCode = value["StatusCode"].asString();
 		if(!value["StatusMessage"].isNull())
-			scalingActivityObject.statusMessage = value["StatusMessage"].asString();
+			scalingActivitiesObject.statusMessage = value["StatusMessage"].asString();
 		if(!value["TotalCapacity"].isNull())
-			scalingActivityObject.totalCapacity = value["TotalCapacity"].asString();
+			scalingActivitiesObject.totalCapacity = value["TotalCapacity"].asString();
 		if(!value["AttachedCapacity"].isNull())
-			scalingActivityObject.attachedCapacity = value["AttachedCapacity"].asString();
+			scalingActivitiesObject.attachedCapacity = value["AttachedCapacity"].asString();
 		if(!value["AutoCreatedCapacity"].isNull())
-			scalingActivityObject.autoCreatedCapacity = value["AutoCreatedCapacity"].asString();
-		scalingActivities_.push_back(scalingActivityObject);
+			scalingActivitiesObject.autoCreatedCapacity = value["AutoCreatedCapacity"].asString();
+		scalingActivities_.push_back(scalingActivitiesObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
@@ -84,19 +84,9 @@ int DescribeScalingActivitiesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeScalingActivitiesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeScalingActivitiesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeScalingActivitiesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeScalingActivitiesResult::getPageNumber()const
@@ -104,8 +94,8 @@ int DescribeScalingActivitiesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeScalingActivitiesResult::setPageNumber(int pageNumber)
+std::vector<DescribeScalingActivitiesResult::ScalingActivity> DescribeScalingActivitiesResult::getScalingActivities()const
 {
-	pageNumber_ = pageNumber;
+	return scalingActivities_;
 }
 

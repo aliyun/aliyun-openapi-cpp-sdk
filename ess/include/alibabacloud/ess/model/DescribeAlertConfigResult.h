@@ -38,11 +38,8 @@ namespace AlibabaCloud
 				explicit DescribeAlertConfigResult(const std::string &payload);
 				~DescribeAlertConfigResult();
 				int getFailConfig()const;
-				void setFailConfig(int failConfig);
 				int getRejectConfig()const;
-				void setRejectConfig(int rejectConfig);
 				int getSuccessConfig()const;
-				void setSuccessConfig(int successConfig);
 
 			protected:
 				void parse(const std::string &payload);

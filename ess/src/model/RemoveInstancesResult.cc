@@ -50,8 +50,3 @@ std::string RemoveInstancesResult::getScalingActivityId()const
 	return scalingActivityId_;
 }
 
-void RemoveInstancesResult::setScalingActivityId(const std::string& scalingActivityId)
-{
-	scalingActivityId_ = scalingActivityId;
-}
-

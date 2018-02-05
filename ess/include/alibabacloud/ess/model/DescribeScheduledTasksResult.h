@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ESS_MODEL_DESCRIBESCALINGINSTANCESRESULT_H_
-#define ALIBABACLOUD_ESS_MODEL_DESCRIBESCALINGINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_ESS_MODEL_DESCRIBESCHEDULEDTASKSRESULT_H_
+#define ALIBABACLOUD_ESS_MODEL_DESCRIBESCHEDULEDTASKSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ESS_EXPORT DescribeScalingInstancesResult : public ServiceResult
+			class ALIBABACLOUD_ESS_EXPORT DescribeScheduledTasksResult : public ServiceResult
 			{
 			public:
-				struct ScalingInstance
+				struct ScheduledTask
 				{
-					int loadBalancerWeight;
-					std::string instanceId;
-					std::string scalingGroupId;
-					std::string healthStatus;
-					std::string creationTime;
-					std::string lifecycleState;
-					std::string scalingConfigurationId;
-					std::string creationType;
+					std::string description;
+					std::string launchTime;
+					std::string scheduledTaskId;
+					std::string recurrenceType;
+					std::string scheduledTaskName;
+					std::string scheduledAction;
+					std::string recurrenceEndTime;
+					std::string recurrenceValue;
+					int launchExpirationTime;
+					bool taskEnabled;
 				};
 
 
-				DescribeScalingInstancesResult();
-				explicit DescribeScalingInstancesResult(const std::string &payload);
-				~DescribeScalingInstancesResult();
+				DescribeScheduledTasksResult();
+				explicit DescribeScheduledTasksResult(const std::string &payload);
+				~DescribeScheduledTasksResult();
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::vector<ScalingInstance> getScalingInstances()const;
+				std::vector<ScheduledTask> getScheduledTasks()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -59,10 +61,10 @@ namespace AlibabaCloud
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::vector<ScalingInstance> scalingInstances_;
+				std::vector<ScheduledTask> scheduledTasks_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ESS_MODEL_DESCRIBESCALINGINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_ESS_MODEL_DESCRIBESCHEDULEDTASKSRESULT_H_

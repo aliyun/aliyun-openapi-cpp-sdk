@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/DeleteScalingConfigurationRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::DeleteScalingConfigurationRequest;
 
 DeleteScalingConfigurationRequest::DeleteScalingConfigurationRequest() :
-	EssRequest("DeleteScalingConfiguration")
+	RpcServiceRequest("ess", "2014-08-28", "DeleteScalingConfiguration")
 {}
 
 DeleteScalingConfigurationRequest::~DeleteScalingConfigurationRequest()

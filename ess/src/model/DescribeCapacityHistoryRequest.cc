@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/DescribeCapacityHistoryRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::DescribeCapacityHistoryRequest;
 
 DescribeCapacityHistoryRequest::DescribeCapacityHistoryRequest() :
-	EssRequest("DescribeCapacityHistory")
+	RpcServiceRequest("ess", "2014-08-28", "DescribeCapacityHistory")
 {}
 
 DescribeCapacityHistoryRequest::~DescribeCapacityHistoryRequest()

@@ -50,8 +50,3 @@ std::string AttachInstancesResult::getScalingActivityId()const
 	return scalingActivityId_;
 }
 
-void AttachInstancesResult::setScalingActivityId(const std::string& scalingActivityId)
-{
-	scalingActivityId_ = scalingActivityId;
-}
-

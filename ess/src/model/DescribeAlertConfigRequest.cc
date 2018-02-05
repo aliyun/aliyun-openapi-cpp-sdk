@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/DescribeAlertConfigRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::DescribeAlertConfigRequest;
 
 DescribeAlertConfigRequest::DescribeAlertConfigRequest() :
-	EssRequest("DescribeAlertConfig")
+	RpcServiceRequest("ess", "2014-08-28", "DescribeAlertConfig")
 {}
 
 DescribeAlertConfigRequest::~DescribeAlertConfigRequest()

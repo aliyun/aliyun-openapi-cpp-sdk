@@ -43,24 +43,24 @@ void DescribeScalingInstancesResult::parse(const std::string &payload)
 	auto allScalingInstances = value["ScalingInstances"]["ScalingInstance"];
 	for (auto value : allScalingInstances)
 	{
-		ScalingInstance scalingInstanceObject;
+		ScalingInstance scalingInstancesObject;
 		if(!value["InstanceId"].isNull())
-			scalingInstanceObject.instanceId = value["InstanceId"].asString();
+			scalingInstancesObject.instanceId = value["InstanceId"].asString();
 		if(!value["ScalingConfigurationId"].isNull())
-			scalingInstanceObject.scalingConfigurationId = value["ScalingConfigurationId"].asString();
+			scalingInstancesObject.scalingConfigurationId = value["ScalingConfigurationId"].asString();
 		if(!value["ScalingGroupId"].isNull())
-			scalingInstanceObject.scalingGroupId = value["ScalingGroupId"].asString();
+			scalingInstancesObject.scalingGroupId = value["ScalingGroupId"].asString();
 		if(!value["HealthStatus"].isNull())
-			scalingInstanceObject.healthStatus = value["HealthStatus"].asString();
+			scalingInstancesObject.healthStatus = value["HealthStatus"].asString();
 		if(!value["LoadBalancerWeight"].isNull())
-			scalingInstanceObject.loadBalancerWeight = std::stoi(value["LoadBalancerWeight"].asString());
+			scalingInstancesObject.loadBalancerWeight = std::stoi(value["LoadBalancerWeight"].asString());
 		if(!value["LifecycleState"].isNull())
-			scalingInstanceObject.lifecycleState = value["LifecycleState"].asString();
+			scalingInstancesObject.lifecycleState = value["LifecycleState"].asString();
 		if(!value["CreationTime"].isNull())
-			scalingInstanceObject.creationTime = value["CreationTime"].asString();
+			scalingInstancesObject.creationTime = value["CreationTime"].asString();
 		if(!value["CreationType"].isNull())
-			scalingInstanceObject.creationType = value["CreationType"].asString();
-		scalingInstances_.push_back(scalingInstanceObject);
+			scalingInstancesObject.creationType = value["CreationType"].asString();
+		scalingInstances_.push_back(scalingInstancesObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
@@ -76,19 +76,9 @@ int DescribeScalingInstancesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeScalingInstancesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeScalingInstancesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeScalingInstancesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeScalingInstancesResult::getPageNumber()const
@@ -96,8 +86,8 @@ int DescribeScalingInstancesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeScalingInstancesResult::setPageNumber(int pageNumber)
+std::vector<DescribeScalingInstancesResult::ScalingInstance> DescribeScalingInstancesResult::getScalingInstances()const
 {
-	pageNumber_ = pageNumber;
+	return scalingInstances_;
 }
 

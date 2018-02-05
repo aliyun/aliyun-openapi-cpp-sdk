@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/DetachInstancesRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::DetachInstancesRequest;
 
 DetachInstancesRequest::DetachInstancesRequest() :
-	EssRequest("DetachInstances")
+	RpcServiceRequest("ess", "2014-08-28", "DetachInstances")
 {}
 
 DetachInstancesRequest::~DetachInstancesRequest()

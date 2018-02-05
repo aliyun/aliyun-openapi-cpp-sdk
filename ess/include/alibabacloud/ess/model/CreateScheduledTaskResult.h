@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateScheduledTaskResult(const std::string &payload);
 				~CreateScheduledTaskResult();
 				std::string getScheduledTaskId()const;
-				void setScheduledTaskId(const std::string& scheduledTaskId);
 
 			protected:
 				void parse(const std::string &payload);

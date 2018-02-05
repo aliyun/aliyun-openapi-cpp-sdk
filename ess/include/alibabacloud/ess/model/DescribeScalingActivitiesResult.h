@@ -53,13 +53,9 @@ namespace AlibabaCloud
 				explicit DescribeScalingActivitiesResult(const std::string &payload);
 				~DescribeScalingActivitiesResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<ScalingActivity> getScalingActivities()const;
-				void setScalingActivities(const std::vector<ScalingActivity>& scalingActivities);
 
 			protected:
 				void parse(const std::string &payload);

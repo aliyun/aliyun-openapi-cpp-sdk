@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit RemoveInstancesResult(const std::string &payload);
 				~RemoveInstancesResult();
 				std::string getScalingActivityId()const;
-				void setScalingActivityId(const std::string& scalingActivityId);
 
 			protected:
 				void parse(const std::string &payload);

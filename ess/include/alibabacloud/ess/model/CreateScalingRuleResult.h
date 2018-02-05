@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit CreateScalingRuleResult(const std::string &payload);
 				~CreateScalingRuleResult();
 				std::string getScalingRuleAri()const;
-				void setScalingRuleAri(const std::string& scalingRuleAri);
 				std::string getScalingRuleId()const;
-				void setScalingRuleId(const std::string& scalingRuleId);
 
 			protected:
 				void parse(const std::string &payload);

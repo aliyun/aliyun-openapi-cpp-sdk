@@ -52,18 +52,8 @@ std::string DescribeScalingActivityDetailResult::getScalingActivityId()const
 	return scalingActivityId_;
 }
 
-void DescribeScalingActivityDetailResult::setScalingActivityId(const std::string& scalingActivityId)
-{
-	scalingActivityId_ = scalingActivityId;
-}
-
 std::string DescribeScalingActivityDetailResult::getDetail()const
 {
 	return detail_;
-}
-
-void DescribeScalingActivityDetailResult::setDetail(const std::string& detail)
-{
-	detail_ = detail;
 }
 

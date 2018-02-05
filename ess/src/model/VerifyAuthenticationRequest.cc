@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/VerifyAuthenticationRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::VerifyAuthenticationRequest;
 
 VerifyAuthenticationRequest::VerifyAuthenticationRequest() :
-	EssRequest("VerifyAuthentication")
+	RpcServiceRequest("ess", "2014-08-28", "VerifyAuthentication")
 {}
 
 VerifyAuthenticationRequest::~VerifyAuthenticationRequest()

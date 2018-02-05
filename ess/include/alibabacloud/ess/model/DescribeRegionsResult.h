@@ -44,7 +44,6 @@ namespace AlibabaCloud
 				explicit DescribeRegionsResult(const std::string &payload);
 				~DescribeRegionsResult();
 				std::vector<Region> getRegions()const;
-				void setRegions(const std::vector<Region>& regions);
 
 			protected:
 				void parse(const std::string &payload);

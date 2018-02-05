@@ -61,13 +61,9 @@ namespace AlibabaCloud
 				explicit DescribeScalingGroupsResult(const std::string &payload);
 				~DescribeScalingGroupsResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::vector<ScalingGroup> getScalingGroups()const;
-				void setScalingGroups(const std::vector<ScalingGroup>& scalingGroups);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

@@ -43,52 +43,52 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 	auto allScalingGroups = value["ScalingGroups"]["ScalingGroup"];
 	for (auto value : allScalingGroups)
 	{
-		ScalingGroup scalingGroupObject;
+		ScalingGroup scalingGroupsObject;
 		if(!value["DefaultCooldown"].isNull())
-			scalingGroupObject.defaultCooldown = std::stoi(value["DefaultCooldown"].asString());
+			scalingGroupsObject.defaultCooldown = std::stoi(value["DefaultCooldown"].asString());
 		if(!value["MaxSize"].isNull())
-			scalingGroupObject.maxSize = std::stoi(value["MaxSize"].asString());
+			scalingGroupsObject.maxSize = std::stoi(value["MaxSize"].asString());
 		if(!value["PendingCapacity"].isNull())
-			scalingGroupObject.pendingCapacity = std::stoi(value["PendingCapacity"].asString());
+			scalingGroupsObject.pendingCapacity = std::stoi(value["PendingCapacity"].asString());
 		if(!value["RemovingCapacity"].isNull())
-			scalingGroupObject.removingCapacity = std::stoi(value["RemovingCapacity"].asString());
+			scalingGroupsObject.removingCapacity = std::stoi(value["RemovingCapacity"].asString());
 		if(!value["ScalingGroupName"].isNull())
-			scalingGroupObject.scalingGroupName = value["ScalingGroupName"].asString();
+			scalingGroupsObject.scalingGroupName = value["ScalingGroupName"].asString();
 		if(!value["ActiveCapacity"].isNull())
-			scalingGroupObject.activeCapacity = std::stoi(value["ActiveCapacity"].asString());
+			scalingGroupsObject.activeCapacity = std::stoi(value["ActiveCapacity"].asString());
 		if(!value["ActiveScalingConfigurationId"].isNull())
-			scalingGroupObject.activeScalingConfigurationId = value["ActiveScalingConfigurationId"].asString();
+			scalingGroupsObject.activeScalingConfigurationId = value["ActiveScalingConfigurationId"].asString();
 		if(!value["ScalingGroupId"].isNull())
-			scalingGroupObject.scalingGroupId = value["ScalingGroupId"].asString();
+			scalingGroupsObject.scalingGroupId = value["ScalingGroupId"].asString();
 		if(!value["RegionId"].isNull())
-			scalingGroupObject.regionId = value["RegionId"].asString();
+			scalingGroupsObject.regionId = value["RegionId"].asString();
 		if(!value["TotalCapacity"].isNull())
-			scalingGroupObject.totalCapacity = std::stoi(value["TotalCapacity"].asString());
+			scalingGroupsObject.totalCapacity = std::stoi(value["TotalCapacity"].asString());
 		if(!value["MinSize"].isNull())
-			scalingGroupObject.minSize = std::stoi(value["MinSize"].asString());
+			scalingGroupsObject.minSize = std::stoi(value["MinSize"].asString());
 		if(!value["LifecycleState"].isNull())
-			scalingGroupObject.lifecycleState = value["LifecycleState"].asString();
+			scalingGroupsObject.lifecycleState = value["LifecycleState"].asString();
 		if(!value["CreationTime"].isNull())
-			scalingGroupObject.creationTime = value["CreationTime"].asString();
+			scalingGroupsObject.creationTime = value["CreationTime"].asString();
 		if(!value["ModificationTime"].isNull())
-			scalingGroupObject.modificationTime = value["ModificationTime"].asString();
+			scalingGroupsObject.modificationTime = value["ModificationTime"].asString();
 		if(!value["VpcId"].isNull())
-			scalingGroupObject.vpcId = value["VpcId"].asString();
+			scalingGroupsObject.vpcId = value["VpcId"].asString();
 		if(!value["VSwitchId"].isNull())
-			scalingGroupObject.vSwitchId = value["VSwitchId"].asString();
+			scalingGroupsObject.vSwitchId = value["VSwitchId"].asString();
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
-			scalingGroupObject.vSwitchIds.push_back(value.asString());
+			scalingGroupsObject.vSwitchIds.push_back(value.asString());
 		auto allRemovalPolicies = value["RemovalPolicies"]["RemovalPolicy"];
 		for (auto value : allRemovalPolicies)
-			scalingGroupObject.removalPolicies.push_back(value.asString());
+			scalingGroupsObject.removalPolicies.push_back(value.asString());
 		auto allDBInstanceIds = value["DBInstanceIds"]["DBInstanceId"];
 		for (auto value : allDBInstanceIds)
-			scalingGroupObject.dBInstanceIds.push_back(value.asString());
+			scalingGroupsObject.dBInstanceIds.push_back(value.asString());
 		auto allLoadBalancerIds = value["LoadBalancerIds"]["LoadBalancerId"];
 		for (auto value : allLoadBalancerIds)
-			scalingGroupObject.loadBalancerIds.push_back(value.asString());
-		scalingGroups_.push_back(scalingGroupObject);
+			scalingGroupsObject.loadBalancerIds.push_back(value.asString());
+		scalingGroups_.push_back(scalingGroupsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
@@ -104,9 +104,9 @@ int DescribeScalingGroupsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeScalingGroupsResult::setTotalCount(int totalCount)
+std::vector<DescribeScalingGroupsResult::ScalingGroup> DescribeScalingGroupsResult::getScalingGroups()const
 {
-	totalCount_ = totalCount;
+	return scalingGroups_;
 }
 
 int DescribeScalingGroupsResult::getPageSize()const
@@ -114,18 +114,8 @@ int DescribeScalingGroupsResult::getPageSize()const
 	return pageSize_;
 }
 
-void DescribeScalingGroupsResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeScalingGroupsResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeScalingGroupsResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

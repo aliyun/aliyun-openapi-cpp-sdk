@@ -50,8 +50,3 @@ std::string DetachInstancesResult::getScalingActivityId()const
 	return scalingActivityId_;
 }
 
-void DetachInstancesResult::setScalingActivityId(const std::string& scalingActivityId)
-{
-	scalingActivityId_ = scalingActivityId;
-}
-

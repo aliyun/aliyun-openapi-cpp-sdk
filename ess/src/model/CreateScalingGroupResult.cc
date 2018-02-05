@@ -50,8 +50,3 @@ std::string CreateScalingGroupResult::getScalingGroupId()const
 	return scalingGroupId_;
 }
 
-void CreateScalingGroupResult::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-}
-

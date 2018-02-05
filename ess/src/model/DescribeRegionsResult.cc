@@ -43,15 +43,20 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	auto allRegions = value["Regions"]["Region"];
 	for (auto value : allRegions)
 	{
-		Region regionObject;
+		Region regionsObject;
 		if(!value["RegionId"].isNull())
-			regionObject.regionId = value["RegionId"].asString();
+			regionsObject.regionId = value["RegionId"].asString();
 		if(!value["ClassicUnavailable"].isNull())
-			regionObject.classicUnavailable = value["ClassicUnavailable"].asString() == "true";
+			regionsObject.classicUnavailable = value["ClassicUnavailable"].asString() == "true";
 		if(!value["VpcUnavailable"].isNull())
-			regionObject.vpcUnavailable = value["VpcUnavailable"].asString() == "true";
-		regions_.push_back(regionObject);
+			regionsObject.vpcUnavailable = value["VpcUnavailable"].asString() == "true";
+		regions_.push_back(regionsObject);
 	}
 
+}
+
+std::vector<DescribeRegionsResult::Region> DescribeRegionsResult::getRegions()const
+{
+	return regions_;
 }
 

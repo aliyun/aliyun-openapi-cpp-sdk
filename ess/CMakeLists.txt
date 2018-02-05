@@ -15,7 +15,12 @@
 #
 
 set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
-set(ess_public_header
+
+set(ess_public_header 
+	include/alibabacloud/ess/EssClient.h
+	include/alibabacloud/ess/EssExport.h )
+
+set(ess_public_header_model 
 	include/alibabacloud/ess/model/AttachInstancesRequest.h
 	include/alibabacloud/ess/model/AttachInstancesResult.h
 	include/alibabacloud/ess/model/DescribeScalingGroupsRequest.h
@@ -56,6 +61,8 @@ set(ess_public_header
 	include/alibabacloud/ess/model/DescribeCapacityHistoryResult.h
 	include/alibabacloud/ess/model/DescribeRegionsRequest.h
 	include/alibabacloud/ess/model/DescribeRegionsResult.h
+	include/alibabacloud/ess/model/DescribeScheduledTasksRequest.h
+	include/alibabacloud/ess/model/DescribeScheduledTasksResult.h
 	include/alibabacloud/ess/model/DescribeAccountAttributesRequest.h
 	include/alibabacloud/ess/model/DescribeAccountAttributesResult.h
 	include/alibabacloud/ess/model/DetachInstancesRequest.h
@@ -79,13 +86,10 @@ set(ess_public_header
 	include/alibabacloud/ess/model/VerifyUserRequest.h
 	include/alibabacloud/ess/model/VerifyUserResult.h
 	include/alibabacloud/ess/model/ModifyAlertConfigRequest.h
-	include/alibabacloud/ess/model/ModifyAlertConfigResult.h
-	include/alibabacloud/ess/EssClient.h
-	include/alibabacloud/ess/EssExport.h
-	include/alibabacloud/ess/EssRequest.h
-	)
+	include/alibabacloud/ess/model/ModifyAlertConfigResult.h )
 
-set(ess_src
+set(ess_src 
+	src/EssClient.cc
 	src/model/AttachInstancesRequest.cc
 	src/model/AttachInstancesResult.cc
 	src/model/DescribeScalingGroupsRequest.cc
@@ -126,6 +130,8 @@ set(ess_src
 	src/model/DescribeCapacityHistoryResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeScheduledTasksRequest.cc
+	src/model/DescribeScheduledTasksResult.cc
 	src/model/DescribeAccountAttributesRequest.cc
 	src/model/DescribeAccountAttributesResult.cc
 	src/model/DetachInstancesRequest.cc
@@ -149,12 +155,12 @@ set(ess_src
 	src/model/VerifyUserRequest.cc
 	src/model/VerifyUserResult.cc
 	src/model/ModifyAlertConfigRequest.cc
-	src/model/ModifyAlertConfigResult.cc
-	src/EssClient.cc
-	src/EssRequest.cc
-	)
+	src/model/ModifyAlertConfigResult.cc )
 
-add_library(ess ${LIB_TYPE} ${ess_public_header} ${ess_src})
+add_library(ess ${LIB_TYPE}
+	${ess_public_header}
+	${ess_public_header_model}
+	${ess_src})
 
 set_target_properties(ess
 	PROPERTIES
@@ -163,7 +169,6 @@ set_target_properties(ess
 	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}ess
-	PUBLIC_HEADER "${ess_public_header}"
 	)
 
 if(${LIB_TYPE} STREQUAL "SHARED")
@@ -198,9 +203,12 @@ else()
 		jsoncpp)
 endif()
 
+install(FILES ${ess_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/ess)
+install(FILES ${ess_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/ess/model)
 install(TARGETS ess
 	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/ess
 	)

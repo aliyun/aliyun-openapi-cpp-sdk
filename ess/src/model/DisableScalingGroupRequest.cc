@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/DisableScalingGroupRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::DisableScalingGroupRequest;
 
 DisableScalingGroupRequest::DisableScalingGroupRequest() :
-	EssRequest("DisableScalingGroup")
+	RpcServiceRequest("ess", "2014-08-28", "DisableScalingGroup")
 {}
 
 DisableScalingGroupRequest::~DisableScalingGroupRequest()

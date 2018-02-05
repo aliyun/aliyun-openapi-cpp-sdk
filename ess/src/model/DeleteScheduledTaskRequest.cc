@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/DeleteScheduledTaskRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::DeleteScheduledTaskRequest;
 
 DeleteScheduledTaskRequest::DeleteScheduledTaskRequest() :
-	EssRequest("DeleteScheduledTask")
+	RpcServiceRequest("ess", "2014-08-28", "DeleteScheduledTask")
 {}
 
 DeleteScheduledTaskRequest::~DeleteScheduledTaskRequest()

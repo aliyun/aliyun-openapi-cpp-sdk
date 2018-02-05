@@ -66,19 +66,9 @@ int DescribeLimitationResult::getMaxNumberOfScalingRules()const
 	return maxNumberOfScalingRules_;
 }
 
-void DescribeLimitationResult::setMaxNumberOfScalingRules(int maxNumberOfScalingRules)
-{
-	maxNumberOfScalingRules_ = maxNumberOfScalingRules;
-}
-
 int DescribeLimitationResult::getMaxNumberOfScalingInstances()const
 {
 	return maxNumberOfScalingInstances_;
-}
-
-void DescribeLimitationResult::setMaxNumberOfScalingInstances(int maxNumberOfScalingInstances)
-{
-	maxNumberOfScalingInstances_ = maxNumberOfScalingInstances;
 }
 
 int DescribeLimitationResult::getMaxNumberOfScheduledTasks()const
@@ -86,19 +76,9 @@ int DescribeLimitationResult::getMaxNumberOfScheduledTasks()const
 	return maxNumberOfScheduledTasks_;
 }
 
-void DescribeLimitationResult::setMaxNumberOfScheduledTasks(int maxNumberOfScheduledTasks)
-{
-	maxNumberOfScheduledTasks_ = maxNumberOfScheduledTasks;
-}
-
 int DescribeLimitationResult::getMaxNumberOfLoadBalancers()const
 {
 	return maxNumberOfLoadBalancers_;
-}
-
-void DescribeLimitationResult::setMaxNumberOfLoadBalancers(int maxNumberOfLoadBalancers)
-{
-	maxNumberOfLoadBalancers_ = maxNumberOfLoadBalancers;
 }
 
 int DescribeLimitationResult::getMaxNumberOfMinSize()const
@@ -106,19 +86,9 @@ int DescribeLimitationResult::getMaxNumberOfMinSize()const
 	return maxNumberOfMinSize_;
 }
 
-void DescribeLimitationResult::setMaxNumberOfMinSize(int maxNumberOfMinSize)
-{
-	maxNumberOfMinSize_ = maxNumberOfMinSize;
-}
-
 int DescribeLimitationResult::getMaxNumberOfScalingGroups()const
 {
 	return maxNumberOfScalingGroups_;
-}
-
-void DescribeLimitationResult::setMaxNumberOfScalingGroups(int maxNumberOfScalingGroups)
-{
-	maxNumberOfScalingGroups_ = maxNumberOfScalingGroups;
 }
 
 int DescribeLimitationResult::getMaxNumberOfScalingConfigurations()const
@@ -126,28 +96,13 @@ int DescribeLimitationResult::getMaxNumberOfScalingConfigurations()const
 	return maxNumberOfScalingConfigurations_;
 }
 
-void DescribeLimitationResult::setMaxNumberOfScalingConfigurations(int maxNumberOfScalingConfigurations)
-{
-	maxNumberOfScalingConfigurations_ = maxNumberOfScalingConfigurations;
-}
-
 int DescribeLimitationResult::getMaxNumberOfDBInstances()const
 {
 	return maxNumberOfDBInstances_;
 }
 
-void DescribeLimitationResult::setMaxNumberOfDBInstances(int maxNumberOfDBInstances)
-{
-	maxNumberOfDBInstances_ = maxNumberOfDBInstances;
-}
-
 int DescribeLimitationResult::getMaxNumberOfMaxSize()const
 {
 	return maxNumberOfMaxSize_;
-}
-
-void DescribeLimitationResult::setMaxNumberOfMaxSize(int maxNumberOfMaxSize)
-{
-	maxNumberOfMaxSize_ = maxNumberOfMaxSize;
 }
 

@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeScalingActivityDetailResult(const std::string &payload);
 				~DescribeScalingActivityDetailResult();
 				std::string getScalingActivityId()const;
-				void setScalingActivityId(const std::string& scalingActivityId);
 				std::string getDetail()const;
-				void setDetail(const std::string& detail);
 
 			protected:
 				void parse(const std::string &payload);

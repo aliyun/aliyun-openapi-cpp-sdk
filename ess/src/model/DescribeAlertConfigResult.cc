@@ -54,28 +54,13 @@ int DescribeAlertConfigResult::getFailConfig()const
 	return failConfig_;
 }
 
-void DescribeAlertConfigResult::setFailConfig(int failConfig)
-{
-	failConfig_ = failConfig;
-}
-
 int DescribeAlertConfigResult::getRejectConfig()const
 {
 	return rejectConfig_;
 }
 
-void DescribeAlertConfigResult::setRejectConfig(int rejectConfig)
-{
-	rejectConfig_ = rejectConfig;
-}
-
 int DescribeAlertConfigResult::getSuccessConfig()const
 {
 	return successConfig_;
-}
-
-void DescribeAlertConfigResult::setSuccessConfig(int successConfig)
-{
-	successConfig_ = successConfig;
 }
 

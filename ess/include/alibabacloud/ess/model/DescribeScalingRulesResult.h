@@ -50,13 +50,9 @@ namespace AlibabaCloud
 				explicit DescribeScalingRulesResult(const std::string &payload);
 				~DescribeScalingRulesResult();
 				std::vector<ScalingRule> getScalingRules()const;
-				void setScalingRules(const std::vector<ScalingRule>& scalingRules);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

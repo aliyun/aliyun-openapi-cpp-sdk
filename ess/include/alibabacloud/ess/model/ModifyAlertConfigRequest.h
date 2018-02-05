@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/ess/EssRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/ess/EssExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ESS_EXPORT ModifyAlertConfigRequest : public EssRequest
+			class ALIBABACLOUD_ESS_EXPORT ModifyAlertConfigRequest : public RpcServiceRequest
 			{
 
 			public:

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ess/model/RemoveInstancesRequest.h>
 
-using namespace AlibabaCloud::Ess;
-using namespace AlibabaCloud::Ess::Model;
+using AlibabaCloud::Ess::Model::RemoveInstancesRequest;
 
 RemoveInstancesRequest::RemoveInstancesRequest() :
-	EssRequest("RemoveInstances")
+	RpcServiceRequest("ess", "2014-08-28", "RemoveInstances")
 {}
 
 RemoveInstancesRequest::~RemoveInstancesRequest()

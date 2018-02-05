@@ -38,23 +38,14 @@ namespace AlibabaCloud
 				explicit DescribeAccountAttributesResult(const std::string &payload);
 				~DescribeAccountAttributesResult();
 				int getMaxNumberOfScalingRules()const;
-				void setMaxNumberOfScalingRules(int maxNumberOfScalingRules);
 				int getMaxNumberOfScalingInstances()const;
-				void setMaxNumberOfScalingInstances(int maxNumberOfScalingInstances);
 				int getMaxNumberOfScheduledTasks()const;
-				void setMaxNumberOfScheduledTasks(int maxNumberOfScheduledTasks);
 				int getMaxNumberOfLoadBalancers()const;
-				void setMaxNumberOfLoadBalancers(int maxNumberOfLoadBalancers);
 				int getMaxNumberOfMinSize()const;
-				void setMaxNumberOfMinSize(int maxNumberOfMinSize);
 				int getMaxNumberOfScalingGroups()const;
-				void setMaxNumberOfScalingGroups(int maxNumberOfScalingGroups);
 				int getMaxNumberOfScalingConfigurations()const;
-				void setMaxNumberOfScalingConfigurations(int maxNumberOfScalingConfigurations);
 				int getMaxNumberOfDBInstances()const;
-				void setMaxNumberOfDBInstances(int maxNumberOfDBInstances);
 				int getMaxNumberOfMaxSize()const;
-				void setMaxNumberOfMaxSize(int maxNumberOfMaxSize);
 
 			protected:
 				void parse(const std::string &payload);

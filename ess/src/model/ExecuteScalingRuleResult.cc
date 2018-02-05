@@ -50,8 +50,3 @@ std::string ExecuteScalingRuleResult::getScalingActivityId()const
 	return scalingActivityId_;
 }
 
-void ExecuteScalingRuleResult::setScalingActivityId(const std::string& scalingActivityId)
-{
-	scalingActivityId_ = scalingActivityId;
-}
-

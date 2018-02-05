@@ -43,79 +43,79 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 	auto allScalingConfigurations = value["ScalingConfigurations"]["ScalingConfiguration"];
 	for (auto value : allScalingConfigurations)
 	{
-		ScalingConfiguration scalingConfigurationObject;
+		ScalingConfiguration scalingConfigurationsObject;
 		if(!value["ScalingConfigurationId"].isNull())
-			scalingConfigurationObject.scalingConfigurationId = value["ScalingConfigurationId"].asString();
+			scalingConfigurationsObject.scalingConfigurationId = value["ScalingConfigurationId"].asString();
 		if(!value["ScalingConfigurationName"].isNull())
-			scalingConfigurationObject.scalingConfigurationName = value["ScalingConfigurationName"].asString();
+			scalingConfigurationsObject.scalingConfigurationName = value["ScalingConfigurationName"].asString();
 		if(!value["ScalingGroupId"].isNull())
-			scalingConfigurationObject.scalingGroupId = value["ScalingGroupId"].asString();
+			scalingConfigurationsObject.scalingGroupId = value["ScalingGroupId"].asString();
 		if(!value["InstanceName"].isNull())
-			scalingConfigurationObject.instanceName = value["InstanceName"].asString();
+			scalingConfigurationsObject.instanceName = value["InstanceName"].asString();
 		if(!value["ImageId"].isNull())
-			scalingConfigurationObject.imageId = value["ImageId"].asString();
+			scalingConfigurationsObject.imageId = value["ImageId"].asString();
 		if(!value["InstanceType"].isNull())
-			scalingConfigurationObject.instanceType = value["InstanceType"].asString();
+			scalingConfigurationsObject.instanceType = value["InstanceType"].asString();
 		if(!value["InstanceGeneration"].isNull())
-			scalingConfigurationObject.instanceGeneration = value["InstanceGeneration"].asString();
+			scalingConfigurationsObject.instanceGeneration = value["InstanceGeneration"].asString();
 		if(!value["SecurityGroupId"].isNull())
-			scalingConfigurationObject.securityGroupId = value["SecurityGroupId"].asString();
+			scalingConfigurationsObject.securityGroupId = value["SecurityGroupId"].asString();
 		if(!value["IoOptimized"].isNull())
-			scalingConfigurationObject.ioOptimized = value["IoOptimized"].asString();
+			scalingConfigurationsObject.ioOptimized = value["IoOptimized"].asString();
 		if(!value["InternetChargeType"].isNull())
-			scalingConfigurationObject.internetChargeType = value["InternetChargeType"].asString();
+			scalingConfigurationsObject.internetChargeType = value["InternetChargeType"].asString();
 		if(!value["InternetMaxBandwidthIn"].isNull())
-			scalingConfigurationObject.internetMaxBandwidthIn = std::stoi(value["InternetMaxBandwidthIn"].asString());
+			scalingConfigurationsObject.internetMaxBandwidthIn = std::stoi(value["InternetMaxBandwidthIn"].asString());
 		if(!value["InternetMaxBandwidthOut"].isNull())
-			scalingConfigurationObject.internetMaxBandwidthOut = std::stoi(value["InternetMaxBandwidthOut"].asString());
+			scalingConfigurationsObject.internetMaxBandwidthOut = std::stoi(value["InternetMaxBandwidthOut"].asString());
 		if(!value["SystemDiskCategory"].isNull())
-			scalingConfigurationObject.systemDiskCategory = value["SystemDiskCategory"].asString();
+			scalingConfigurationsObject.systemDiskCategory = value["SystemDiskCategory"].asString();
 		if(!value["SystemDiskSize"].isNull())
-			scalingConfigurationObject.systemDiskSize = std::stoi(value["SystemDiskSize"].asString());
+			scalingConfigurationsObject.systemDiskSize = std::stoi(value["SystemDiskSize"].asString());
 		if(!value["LifecycleState"].isNull())
-			scalingConfigurationObject.lifecycleState = value["LifecycleState"].asString();
+			scalingConfigurationsObject.lifecycleState = value["LifecycleState"].asString();
 		if(!value["CreationTime"].isNull())
-			scalingConfigurationObject.creationTime = value["CreationTime"].asString();
+			scalingConfigurationsObject.creationTime = value["CreationTime"].asString();
 		if(!value["LoadBalancerWeight"].isNull())
-			scalingConfigurationObject.loadBalancerWeight = std::stoi(value["LoadBalancerWeight"].asString());
+			scalingConfigurationsObject.loadBalancerWeight = std::stoi(value["LoadBalancerWeight"].asString());
 		if(!value["UserData"].isNull())
-			scalingConfigurationObject.userData = value["UserData"].asString();
+			scalingConfigurationsObject.userData = value["UserData"].asString();
 		if(!value["KeyPairName"].isNull())
-			scalingConfigurationObject.keyPairName = value["KeyPairName"].asString();
+			scalingConfigurationsObject.keyPairName = value["KeyPairName"].asString();
 		if(!value["RamRoleName"].isNull())
-			scalingConfigurationObject.ramRoleName = value["RamRoleName"].asString();
+			scalingConfigurationsObject.ramRoleName = value["RamRoleName"].asString();
 		if(!value["DeploymentSetId"].isNull())
-			scalingConfigurationObject.deploymentSetId = value["DeploymentSetId"].asString();
+			scalingConfigurationsObject.deploymentSetId = value["DeploymentSetId"].asString();
 		if(!value["SecurityEnhancementStrategy"].isNull())
-			scalingConfigurationObject.securityEnhancementStrategy = value["SecurityEnhancementStrategy"].asString();
+			scalingConfigurationsObject.securityEnhancementStrategy = value["SecurityEnhancementStrategy"].asString();
 		auto allDataDisks = value["DataDisks"]["DataDisk"];
 		for (auto value : allDataDisks)
 		{
-			ScalingConfiguration::DataDisk dataDiskObject;
+			ScalingConfiguration::DataDisk dataDisksObject;
 			if(!value["Size"].isNull())
-				dataDiskObject.size = std::stoi(value["Size"].asString());
+				dataDisksObject.size = std::stoi(value["Size"].asString());
 			if(!value["Category"].isNull())
-				dataDiskObject.category = value["Category"].asString();
+				dataDisksObject.category = value["Category"].asString();
 			if(!value["SnapshotId"].isNull())
-				dataDiskObject.snapshotId = value["SnapshotId"].asString();
+				dataDisksObject.snapshotId = value["SnapshotId"].asString();
 			if(!value["Device"].isNull())
-				dataDiskObject.device = value["Device"].asString();
-			scalingConfigurationObject.dataDisks.push_back(dataDiskObject);
+				dataDisksObject.device = value["Device"].asString();
+			scalingConfigurationsObject.dataDisks.push_back(dataDisksObject);
 		}
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{
-			ScalingConfiguration::Tag tagObject;
+			ScalingConfiguration::Tag tagsObject;
 			if(!value["Key"].isNull())
-				tagObject.key = value["Key"].asString();
+				tagsObject.key = value["Key"].asString();
 			if(!value["Value"].isNull())
-				tagObject.value = value["Value"].asString();
-			scalingConfigurationObject.tags.push_back(tagObject);
+				tagsObject.value = value["Value"].asString();
+			scalingConfigurationsObject.tags.push_back(tagsObject);
 		}
 		auto allInstanceTypes = value["InstanceTypes"]["InstanceType"];
 		for (auto value : allInstanceTypes)
-			scalingConfigurationObject.instanceTypes.push_back(value.asString());
-		scalingConfigurations_.push_back(scalingConfigurationObject);
+			scalingConfigurationsObject.instanceTypes.push_back(value.asString());
+		scalingConfigurations_.push_back(scalingConfigurationsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
@@ -131,19 +131,9 @@ int DescribeScalingConfigurationsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeScalingConfigurationsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeScalingConfigurationsResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeScalingConfigurationsResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeScalingConfigurationsResult::getPageNumber()const
@@ -151,8 +141,8 @@ int DescribeScalingConfigurationsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeScalingConfigurationsResult::setPageNumber(int pageNumber)
+std::vector<DescribeScalingConfigurationsResult::ScalingConfiguration> DescribeScalingConfigurationsResult::getScalingConfigurations()const
 {
-	pageNumber_ = pageNumber;
+	return scalingConfigurations_;
 }
 
