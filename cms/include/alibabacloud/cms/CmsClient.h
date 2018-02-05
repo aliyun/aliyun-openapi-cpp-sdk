@@ -28,6 +28,8 @@
 #include "model/ListProductOfActiceAlertResult.h"
 #include "model/DeleteCustomMetricRequest.h"
 #include "model/DeleteCustomMetricResult.h"
+#include "model/GetNotifyPolicyRequest.h"
+#include "model/GetNotifyPolicyResult.h"
 #include "model/NodeUninstallRequest.h"
 #include "model/NodeUninstallResult.h"
 #include "model/QueryCustomEventCountRequest.h"
@@ -150,6 +152,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCustomMetricResult> DeleteCustomMetricOutcome;			
 			typedef std::future<DeleteCustomMetricOutcome> DeleteCustomMetricOutcomeCallable;			
 			typedef std::function<void(const CmsClient*, const Model::DeleteCustomMetricRequest&, const DeleteCustomMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomMetricAsyncHandler;
+			typedef Outcome<Error, Model::GetNotifyPolicyResult> GetNotifyPolicyOutcome;			
+			typedef std::future<GetNotifyPolicyOutcome> GetNotifyPolicyOutcomeCallable;			
+			typedef std::function<void(const CmsClient*, const Model::GetNotifyPolicyRequest&, const GetNotifyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNotifyPolicyAsyncHandler;
 			typedef Outcome<Error, Model::NodeUninstallResult> NodeUninstallOutcome;			
 			typedef std::future<NodeUninstallOutcome> NodeUninstallOutcomeCallable;			
 			typedef std::function<void(const CmsClient*, const Model::NodeUninstallRequest&, const NodeUninstallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NodeUninstallAsyncHandler;
@@ -307,12 +312,10 @@ namespace AlibabaCloud
 			typedef std::future<QueryCustomEventDetailOutcome> QueryCustomEventDetailOutcomeCallable;			
 			typedef std::function<void(const CmsClient*, const Model::QueryCustomEventDetailRequest&, const QueryCustomEventDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomEventDetailAsyncHandler;
 
-
 			CmsClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			CmsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			CmsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~CmsClient();
-
             ProfileSetOutcome profileSet(const Model::ProfileSetRequest &request)const;
             void profileSetAsync(const Model::ProfileSetRequest& request, const ProfileSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             ProfileSetOutcomeCallable profileSetCallable(const Model::ProfileSetRequest& request) const;
@@ -322,6 +325,9 @@ namespace AlibabaCloud
             DeleteCustomMetricOutcome deleteCustomMetric(const Model::DeleteCustomMetricRequest &request)const;
             void deleteCustomMetricAsync(const Model::DeleteCustomMetricRequest& request, const DeleteCustomMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             DeleteCustomMetricOutcomeCallable deleteCustomMetricCallable(const Model::DeleteCustomMetricRequest& request) const;
+            GetNotifyPolicyOutcome getNotifyPolicy(const Model::GetNotifyPolicyRequest &request)const;
+            void getNotifyPolicyAsync(const Model::GetNotifyPolicyRequest& request, const GetNotifyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+            GetNotifyPolicyOutcomeCallable getNotifyPolicyCallable(const Model::GetNotifyPolicyRequest& request) const;
             NodeUninstallOutcome nodeUninstall(const Model::NodeUninstallRequest &request)const;
             void nodeUninstallAsync(const Model::NodeUninstallRequest& request, const NodeUninstallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             NodeUninstallOutcomeCallable nodeUninstallCallable(const Model::NodeUninstallRequest& request) const;

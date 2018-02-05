@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/QueryMetricListRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::QueryMetricListRequest;
 
 QueryMetricListRequest::QueryMetricListRequest() :
-	CmsRequest("QueryMetricList")
+	RpcServiceRequest("cms", "2017-03-01", "QueryMetricList")
 {}
 
 QueryMetricListRequest::~QueryMetricListRequest()

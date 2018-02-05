@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/QuerySystemEventDetailRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::QuerySystemEventDetailRequest;
 
 QuerySystemEventDetailRequest::QuerySystemEventDetailRequest() :
-	CmsRequest("QuerySystemEventDetail")
+	RpcServiceRequest("cms", "2017-03-01", "QuerySystemEventDetail")
 {}
 
 QuerySystemEventDetailRequest::~QuerySystemEventDetailRequest()

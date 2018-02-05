@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CMS_MODEL_LISTNOTIFYPOLICYREQUEST_H_
-#define ALIBABACLOUD_CMS_MODEL_LISTNOTIFYPOLICYREQUEST_H_
+#ifndef ALIBABACLOUD_CMS_MODEL_GETNOTIFYPOLICYREQUEST_H_
+#define ALIBABACLOUD_CMS_MODEL_GETNOTIFYPOLICYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,19 +28,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CMS_EXPORT ListNotifyPolicyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CMS_EXPORT GetNotifyPolicyRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListNotifyPolicyRequest();
-				~ListNotifyPolicyRequest();
+				GetNotifyPolicyRequest();
+				~GetNotifyPolicyRequest();
 
 				std::string getPolicyType()const;
 				void setPolicyType(const std::string& policyType);
 				std::string getAlertName()const;
 				void setAlertName(const std::string& alertName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getId()const;
 				void setId(const std::string& id);
 				std::string getDimensions()const;
@@ -51,7 +49,6 @@ namespace AlibabaCloud
             private:
 				std::string policyType_;
 				std::string alertName_;
-				int pageSize_;
 				std::string id_;
 				std::string dimensions_;
 				std::string accessKeyId_;
@@ -60,4 +57,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CMS_MODEL_LISTNOTIFYPOLICYREQUEST_H_
+#endif // !ALIBABACLOUD_CMS_MODEL_GETNOTIFYPOLICYREQUEST_H_

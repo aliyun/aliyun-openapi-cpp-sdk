@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/DeleteAlarmRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::DeleteAlarmRequest;
 
 DeleteAlarmRequest::DeleteAlarmRequest() :
-	CmsRequest("DeleteAlarm")
+	RpcServiceRequest("cms", "2017-03-01", "DeleteAlarm")
 {}
 
 DeleteAlarmRequest::~DeleteAlarmRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/ListAlarmHistoryRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::ListAlarmHistoryRequest;
 
 ListAlarmHistoryRequest::ListAlarmHistoryRequest() :
-	CmsRequest("ListAlarmHistory")
+	RpcServiceRequest("cms", "2017-03-01", "ListAlarmHistory")
 {}
 
 ListAlarmHistoryRequest::~ListAlarmHistoryRequest()

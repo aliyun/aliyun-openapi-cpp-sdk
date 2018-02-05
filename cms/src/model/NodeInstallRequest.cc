@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/NodeInstallRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::NodeInstallRequest;
 
 NodeInstallRequest::NodeInstallRequest() :
-	CmsRequest("NodeInstall")
+	RpcServiceRequest("cms", "2017-03-01", "NodeInstall")
 {}
 
 NodeInstallRequest::~NodeInstallRequest()

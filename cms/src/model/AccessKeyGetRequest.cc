@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/AccessKeyGetRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::AccessKeyGetRequest;
 
 AccessKeyGetRequest::AccessKeyGetRequest() :
-	CmsRequest("AccessKeyGet")
+	RpcServiceRequest("cms", "2017-03-01", "AccessKeyGet")
 {}
 
 AccessKeyGetRequest::~AccessKeyGetRequest()

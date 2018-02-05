@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/DeleteCustomMetricRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::DeleteCustomMetricRequest;
 
 DeleteCustomMetricRequest::DeleteCustomMetricRequest() :
-	CmsRequest("DeleteCustomMetric")
+	RpcServiceRequest("cms", "2017-03-01", "DeleteCustomMetric")
 {}
 
 DeleteCustomMetricRequest::~DeleteCustomMetricRequest()

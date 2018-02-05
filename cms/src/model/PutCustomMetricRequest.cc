@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/PutCustomMetricRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::PutCustomMetricRequest;
 
 PutCustomMetricRequest::PutCustomMetricRequest() :
-	CmsRequest("PutCustomMetric")
+	RpcServiceRequest("cms", "2017-03-01", "PutCustomMetric")
 {}
 
 PutCustomMetricRequest::~PutCustomMetricRequest()

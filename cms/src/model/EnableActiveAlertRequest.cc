@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/EnableActiveAlertRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::EnableActiveAlertRequest;
 
 EnableActiveAlertRequest::EnableActiveAlertRequest() :
-	CmsRequest("EnableActiveAlert")
+	RpcServiceRequest("cms", "2017-03-01", "EnableActiveAlert")
 {}
 
 EnableActiveAlertRequest::~EnableActiveAlertRequest()

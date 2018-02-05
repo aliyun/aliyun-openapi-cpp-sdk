@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/UpdateMyGroupInstancesRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::UpdateMyGroupInstancesRequest;
 
 UpdateMyGroupInstancesRequest::UpdateMyGroupInstancesRequest() :
-	CmsRequest("UpdateMyGroupInstances")
+	RpcServiceRequest("cms", "2017-03-01", "UpdateMyGroupInstances")
 {}
 
 UpdateMyGroupInstancesRequest::~UpdateMyGroupInstancesRequest()

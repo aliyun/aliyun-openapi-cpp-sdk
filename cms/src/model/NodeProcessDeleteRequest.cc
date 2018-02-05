@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/NodeProcessDeleteRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::NodeProcessDeleteRequest;
 
 NodeProcessDeleteRequest::NodeProcessDeleteRequest() :
-	CmsRequest("NodeProcessDelete")
+	RpcServiceRequest("cms", "2017-03-01", "NodeProcessDelete")
 {}
 
 NodeProcessDeleteRequest::~NodeProcessDeleteRequest()

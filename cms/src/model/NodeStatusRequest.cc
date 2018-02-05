@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/NodeStatusRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::NodeStatusRequest;
 
 NodeStatusRequest::NodeStatusRequest() :
-	CmsRequest("NodeStatus")
+	RpcServiceRequest("cms", "2017-03-01", "NodeStatus")
 {}
 
 NodeStatusRequest::~NodeStatusRequest()

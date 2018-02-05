@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/EnableActiceAlertRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::EnableActiceAlertRequest;
 
 EnableActiceAlertRequest::EnableActiceAlertRequest() :
-	CmsRequest("EnableActiceAlert")
+	RpcServiceRequest("cms", "2017-03-01", "EnableActiceAlert")
 {}
 
 EnableActiceAlertRequest::~EnableActiceAlertRequest()

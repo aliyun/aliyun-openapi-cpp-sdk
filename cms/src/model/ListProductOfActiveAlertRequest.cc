@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/ListProductOfActiveAlertRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::ListProductOfActiveAlertRequest;
 
 ListProductOfActiveAlertRequest::ListProductOfActiveAlertRequest() :
-	CmsRequest("ListProductOfActiveAlert")
+	RpcServiceRequest("cms", "2017-03-01", "ListProductOfActiveAlert")
 {}
 
 ListProductOfActiveAlertRequest::~ListProductOfActiveAlertRequest()

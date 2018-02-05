@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/NodeProcessesRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::NodeProcessesRequest;
 
 NodeProcessesRequest::NodeProcessesRequest() :
-	CmsRequest("NodeProcesses")
+	RpcServiceRequest("cms", "2017-03-01", "NodeProcesses")
 {}
 
 NodeProcessesRequest::~NodeProcessesRequest()

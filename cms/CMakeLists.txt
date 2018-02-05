@@ -15,13 +15,20 @@
 #
 
 set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
-set(cms_public_header
+
+set(cms_public_header 
+	include/alibabacloud/cms/CmsClient.h
+	include/alibabacloud/cms/CmsExport.h )
+
+set(cms_public_header_model 
 	include/alibabacloud/cms/model/ProfileSetRequest.h
 	include/alibabacloud/cms/model/ProfileSetResult.h
 	include/alibabacloud/cms/model/ListProductOfActiceAlertRequest.h
 	include/alibabacloud/cms/model/ListProductOfActiceAlertResult.h
 	include/alibabacloud/cms/model/DeleteCustomMetricRequest.h
 	include/alibabacloud/cms/model/DeleteCustomMetricResult.h
+	include/alibabacloud/cms/model/GetNotifyPolicyRequest.h
+	include/alibabacloud/cms/model/GetNotifyPolicyResult.h
 	include/alibabacloud/cms/model/NodeUninstallRequest.h
 	include/alibabacloud/cms/model/NodeUninstallResult.h
 	include/alibabacloud/cms/model/QueryCustomEventCountRequest.h
@@ -125,19 +132,18 @@ set(cms_public_header
 	include/alibabacloud/cms/model/EnableAlarmRequest.h
 	include/alibabacloud/cms/model/EnableAlarmResult.h
 	include/alibabacloud/cms/model/QueryCustomEventDetailRequest.h
-	include/alibabacloud/cms/model/QueryCustomEventDetailResult.h
-	include/alibabacloud/cms/CmsClient.h
-	include/alibabacloud/cms/CmsExport.h
-	include/alibabacloud/cms/CmsRequest.h
-	)
+	include/alibabacloud/cms/model/QueryCustomEventDetailResult.h )
 
-set(cms_src
+set(cms_src 
+	src/CmsClient.cc
 	src/model/ProfileSetRequest.cc
 	src/model/ProfileSetResult.cc
 	src/model/ListProductOfActiceAlertRequest.cc
 	src/model/ListProductOfActiceAlertResult.cc
 	src/model/DeleteCustomMetricRequest.cc
 	src/model/DeleteCustomMetricResult.cc
+	src/model/GetNotifyPolicyRequest.cc
+	src/model/GetNotifyPolicyResult.cc
 	src/model/NodeUninstallRequest.cc
 	src/model/NodeUninstallResult.cc
 	src/model/QueryCustomEventCountRequest.cc
@@ -241,12 +247,12 @@ set(cms_src
 	src/model/EnableAlarmRequest.cc
 	src/model/EnableAlarmResult.cc
 	src/model/QueryCustomEventDetailRequest.cc
-	src/model/QueryCustomEventDetailResult.cc
-	src/CmsClient.cc
-	src/CmsRequest.cc
-	)
+	src/model/QueryCustomEventDetailResult.cc )
 
-add_library(cms ${LIB_TYPE} ${cms_public_header} ${cms_src})
+add_library(cms ${LIB_TYPE}
+	${cms_public_header}
+	${cms_public_header_model}
+	${cms_src})
 
 set_target_properties(cms
 	PROPERTIES
@@ -255,7 +261,6 @@ set_target_properties(cms
 	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}cms
-	PUBLIC_HEADER "${cms_public_header}"
 	)
 
 if(${LIB_TYPE} STREQUAL "SHARED")
@@ -290,9 +295,12 @@ else()
 		jsoncpp)
 endif()
 
+install(FILES ${cms_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/cms)
+install(FILES ${cms_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/cms/model)
 install(TARGETS cms
 	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/cms
 	)

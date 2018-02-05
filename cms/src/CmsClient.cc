@@ -167,6 +167,42 @@ CmsClient::DeleteCustomMetricOutcomeCallable CmsClient::deleteCustomMetricCallab
 	return task->get_future();
 }
 
+CmsClient::GetNotifyPolicyOutcome CmsClient::getNotifyPolicy(const GetNotifyPolicyRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetNotifyPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetNotifyPolicyOutcome(GetNotifyPolicyResult(outcome.result()));
+	else
+		return GetNotifyPolicyOutcome(outcome.error());
+}
+
+void CmsClient::getNotifyPolicyAsync(const GetNotifyPolicyRequest& request, const GetNotifyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getNotifyPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::GetNotifyPolicyOutcomeCallable CmsClient::getNotifyPolicyCallable(const GetNotifyPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetNotifyPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->getNotifyPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CmsClient::NodeUninstallOutcome CmsClient::nodeUninstall(const NodeUninstallRequest &request) const
 {
 	auto endpointOutcome = endpoint();

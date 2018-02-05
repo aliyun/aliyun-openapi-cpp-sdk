@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/cms/CmsRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/cms/CmsExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CMS_EXPORT ProfileSetRequest : public CmsRequest
+			class ALIBABACLOUD_CMS_EXPORT ProfileSetRequest : public RpcServiceRequest
 			{
 
 			public:

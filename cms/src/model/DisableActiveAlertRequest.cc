@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/DisableActiveAlertRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::DisableActiveAlertRequest;
 
 DisableActiveAlertRequest::DisableActiveAlertRequest() :
-	CmsRequest("DisableActiveAlert")
+	RpcServiceRequest("cms", "2017-03-01", "DisableActiveAlert")
 {}
 
 DisableActiveAlertRequest::~DisableActiveAlertRequest()

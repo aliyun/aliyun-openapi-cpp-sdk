@@ -14,32 +14,50 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cms/model/CreateNotifyPolicyResult.h>
+#include <alibabacloud/cms/model/GetNotifyPolicyResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cms;
 using namespace AlibabaCloud::Cms::Model;
 
-CreateNotifyPolicyResult::CreateNotifyPolicyResult() :
+GetNotifyPolicyResult::GetNotifyPolicyResult() :
 	ServiceResult()
 {}
 
-CreateNotifyPolicyResult::CreateNotifyPolicyResult(const std::string &payload) :
+GetNotifyPolicyResult::GetNotifyPolicyResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateNotifyPolicyResult::~CreateNotifyPolicyResult()
+GetNotifyPolicyResult::~GetNotifyPolicyResult()
 {}
 
-void CreateNotifyPolicyResult::parse(const std::string &payload)
+void GetNotifyPolicyResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	auto allResult = value["Result"];
+	for (auto value : allResult)
+	{
+		Result resultObject;
+		if(!value["AlertName"].isNull())
+			resultObject.alertName = value["AlertName"].asString();
+		if(!value["Dimensions"].isNull())
+			resultObject.dimensions = value["Dimensions"].asString();
+		if(!value["Type"].isNull())
+			resultObject.type = value["Type"].asString();
+		if(!value["Id"].isNull())
+			resultObject.id = value["Id"].asString();
+		if(!value["StartTime"].isNull())
+			resultObject.startTime = std::stol(value["StartTime"].asString());
+		if(!value["EndTime"].isNull())
+			resultObject.endTime = std::stol(value["EndTime"].asString());
+		result_.push_back(resultObject);
+	}
 	if(!value["code"].isNull())
 		code_ = value["code"].asString();
 	if(!value["message"].isNull())
@@ -48,32 +66,30 @@ void CreateNotifyPolicyResult::parse(const std::string &payload)
 		success_ = value["success"].asString();
 	if(!value["traceId"].isNull())
 		traceId_ = value["traceId"].asString();
-	if(!value["result"].isNull())
-		result_ = std::stoi(value["result"].asString());
 
 }
 
-std::string CreateNotifyPolicyResult::getMessage()const
+std::string GetNotifyPolicyResult::getMessage()const
 {
 	return message_;
 }
 
-std::string CreateNotifyPolicyResult::getTraceId()const
+std::string GetNotifyPolicyResult::getTraceId()const
 {
 	return traceId_;
 }
 
-std::string CreateNotifyPolicyResult::getCode()const
+std::string GetNotifyPolicyResult::getCode()const
 {
 	return code_;
 }
 
-std::string CreateNotifyPolicyResult::getSuccess()const
+std::string GetNotifyPolicyResult::getSuccess()const
 {
 	return success_;
 }
 
-int CreateNotifyPolicyResult::getResult()const
+std::vector<GetNotifyPolicyResult::Result> GetNotifyPolicyResult::getResult()const
 {
 	return result_;
 }

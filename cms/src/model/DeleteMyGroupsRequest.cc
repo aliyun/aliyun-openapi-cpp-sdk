@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/DeleteMyGroupsRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::DeleteMyGroupsRequest;
 
 DeleteMyGroupsRequest::DeleteMyGroupsRequest() :
-	CmsRequest("DeleteMyGroups")
+	RpcServiceRequest("cms", "2017-03-01", "DeleteMyGroups")
 {}
 
 DeleteMyGroupsRequest::~DeleteMyGroupsRequest()

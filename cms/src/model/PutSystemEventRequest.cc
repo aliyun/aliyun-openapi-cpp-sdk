@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/PutSystemEventRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::PutSystemEventRequest;
 
 PutSystemEventRequest::PutSystemEventRequest() :
-	CmsRequest("PutSystemEvent")
+	RpcServiceRequest("cms", "2017-03-01", "PutSystemEvent")
 {}
 
 PutSystemEventRequest::~PutSystemEventRequest()

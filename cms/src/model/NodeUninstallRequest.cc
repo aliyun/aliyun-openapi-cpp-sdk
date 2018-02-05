@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/NodeUninstallRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::NodeUninstallRequest;
 
 NodeUninstallRequest::NodeUninstallRequest() :
-	CmsRequest("NodeUninstall")
+	RpcServiceRequest("cms", "2017-03-01", "NodeUninstall")
 {}
 
 NodeUninstallRequest::~NodeUninstallRequest()

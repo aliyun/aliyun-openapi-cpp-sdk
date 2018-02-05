@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/ListActiveAlertRuleRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::ListActiveAlertRuleRequest;
 
 ListActiveAlertRuleRequest::ListActiveAlertRuleRequest() :
-	CmsRequest("ListActiveAlertRule")
+	RpcServiceRequest("cms", "2017-03-01", "ListActiveAlertRule")
 {}
 
 ListActiveAlertRuleRequest::~ListActiveAlertRuleRequest()

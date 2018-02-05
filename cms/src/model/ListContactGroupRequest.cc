@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/ListContactGroupRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::ListContactGroupRequest;
 
 ListContactGroupRequest::ListContactGroupRequest() :
-	CmsRequest("ListContactGroup")
+	RpcServiceRequest("cms", "2017-03-01", "ListContactGroup")
 {}
 
 ListContactGroupRequest::~ListContactGroupRequest()

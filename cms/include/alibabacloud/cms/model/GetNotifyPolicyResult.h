@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CMS_MODEL_LISTALARMRESULT_H_
-#define ALIBABACLOUD_CMS_MODEL_LISTALARMRESULT_H_
+#ifndef ALIBABACLOUD_CMS_MODEL_GETNOTIFYPOLICYRESULT_H_
+#define ALIBABACLOUD_CMS_MODEL_GETNOTIFYPOLICYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,54 +29,40 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CMS_EXPORT ListAlarmResult : public ServiceResult
+			class ALIBABACLOUD_CMS_EXPORT GetNotifyPolicyResult : public ServiceResult
 			{
 			public:
-				struct Alarm
+				struct Result
 				{
-					int silenceTime;
-					int notifyType;
-					std::string contactGroups;
-					std::string comparisonOperator;
-					int endTime;
-					int startTime;
+					std::string type;
+					std::string alertName;
+					long endTime;
+					long startTime;
 					std::string dimensions;
-					int period;
-					int evaluationCount;
-					std::string _namespace;
-					std::string statistics;
-					std::string name;
-					std::string metricName;
-					std::string state;
-					bool enable;
-					std::string webhook;
 					std::string id;
-					std::string threshold;
 				};
 
 
-				ListAlarmResult();
-				explicit ListAlarmResult(const std::string &payload);
-				~ListAlarmResult();
+				GetNotifyPolicyResult();
+				explicit GetNotifyPolicyResult(const std::string &payload);
+				~GetNotifyPolicyResult();
 				std::string getMessage()const;
-				int getNextToken()const;
-				std::vector<Alarm> getAlarmList()const;
-				int getTotal()const;
+				std::string getTraceId()const;
 				std::string getCode()const;
-				bool getSuccess()const;
+				std::string getSuccess()const;
+				std::vector<Result> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				int nextToken_;
-				std::vector<Alarm> alarmList_;
-				int total_;
+				std::string traceId_;
 				std::string code_;
-				bool success_;
+				std::string success_;
+				std::vector<Result> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CMS_MODEL_LISTALARMRESULT_H_
+#endif // !ALIBABACLOUD_CMS_MODEL_GETNOTIFYPOLICYRESULT_H_

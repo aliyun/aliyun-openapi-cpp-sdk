@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/QueryMetricLastRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::QueryMetricLastRequest;
 
 QueryMetricLastRequest::QueryMetricLastRequest() :
-	CmsRequest("QueryMetricLast")
+	RpcServiceRequest("cms", "2017-03-01", "QueryMetricLast")
 {}
 
 QueryMetricLastRequest::~QueryMetricLastRequest()

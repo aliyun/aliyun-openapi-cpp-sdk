@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/EnableAlarmRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::EnableAlarmRequest;
 
 EnableAlarmRequest::EnableAlarmRequest() :
-	CmsRequest("EnableAlarm")
+	RpcServiceRequest("cms", "2017-03-01", "EnableAlarm")
 {}
 
 EnableAlarmRequest::~EnableAlarmRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/ListNotifyPolicyRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::ListNotifyPolicyRequest;
 
 ListNotifyPolicyRequest::ListNotifyPolicyRequest() :
-	CmsRequest("ListNotifyPolicy")
+	RpcServiceRequest("cms", "2017-03-01", "ListNotifyPolicy")
 {}
 
 ListNotifyPolicyRequest::~ListNotifyPolicyRequest()

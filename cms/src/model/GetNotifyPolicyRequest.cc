@@ -14,67 +14,67 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cms/model/DeleteNotifyPolicyRequest.h>
+#include <alibabacloud/cms/model/GetNotifyPolicyRequest.h>
 
-using AlibabaCloud::Cms::Model::DeleteNotifyPolicyRequest;
+using AlibabaCloud::Cms::Model::GetNotifyPolicyRequest;
 
-DeleteNotifyPolicyRequest::DeleteNotifyPolicyRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "DeleteNotifyPolicy")
+GetNotifyPolicyRequest::GetNotifyPolicyRequest() :
+	RpcServiceRequest("cms", "2017-03-01", "GetNotifyPolicy")
 {}
 
-DeleteNotifyPolicyRequest::~DeleteNotifyPolicyRequest()
+GetNotifyPolicyRequest::~GetNotifyPolicyRequest()
 {}
 
-std::string DeleteNotifyPolicyRequest::getPolicyType()const
+std::string GetNotifyPolicyRequest::getPolicyType()const
 {
 	return policyType_;
 }
 
-void DeleteNotifyPolicyRequest::setPolicyType(const std::string& policyType)
+void GetNotifyPolicyRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
 	setParameter("PolicyType", policyType);
 }
 
-std::string DeleteNotifyPolicyRequest::getAlertName()const
+std::string GetNotifyPolicyRequest::getAlertName()const
 {
 	return alertName_;
 }
 
-void DeleteNotifyPolicyRequest::setAlertName(const std::string& alertName)
+void GetNotifyPolicyRequest::setAlertName(const std::string& alertName)
 {
 	alertName_ = alertName;
 	setParameter("AlertName", alertName);
 }
 
-std::string DeleteNotifyPolicyRequest::getId()const
+std::string GetNotifyPolicyRequest::getId()const
 {
 	return id_;
 }
 
-void DeleteNotifyPolicyRequest::setId(const std::string& id)
+void GetNotifyPolicyRequest::setId(const std::string& id)
 {
 	id_ = id;
 	setParameter("Id", id);
 }
 
-std::string DeleteNotifyPolicyRequest::getDimensions()const
+std::string GetNotifyPolicyRequest::getDimensions()const
 {
 	return dimensions_;
 }
 
-void DeleteNotifyPolicyRequest::setDimensions(const std::string& dimensions)
+void GetNotifyPolicyRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
 	setParameter("Dimensions", dimensions);
 }
 
-std::string DeleteNotifyPolicyRequest::getAccessKeyId()const
+std::string GetNotifyPolicyRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void DeleteNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
+void GetNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);

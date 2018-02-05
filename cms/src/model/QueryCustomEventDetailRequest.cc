@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/QueryCustomEventDetailRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::QueryCustomEventDetailRequest;
 
 QueryCustomEventDetailRequest::QueryCustomEventDetailRequest() :
-	CmsRequest("QueryCustomEventDetail")
+	RpcServiceRequest("cms", "2017-03-01", "QueryCustomEventDetail")
 {}
 
 QueryCustomEventDetailRequest::~QueryCustomEventDetailRequest()

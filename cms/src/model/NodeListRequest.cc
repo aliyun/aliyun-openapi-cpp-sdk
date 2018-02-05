@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/NodeListRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::NodeListRequest;
 
 NodeListRequest::NodeListRequest() :
-	CmsRequest("NodeList")
+	RpcServiceRequest("cms", "2017-03-01", "NodeList")
 {}
 
 NodeListRequest::~NodeListRequest()

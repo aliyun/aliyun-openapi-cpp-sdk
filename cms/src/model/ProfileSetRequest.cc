@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/ProfileSetRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::ProfileSetRequest;
 
 ProfileSetRequest::ProfileSetRequest() :
-	CmsRequest("ProfileSet")
+	RpcServiceRequest("cms", "2017-03-01", "ProfileSet")
 {}
 
 ProfileSetRequest::~ProfileSetRequest()

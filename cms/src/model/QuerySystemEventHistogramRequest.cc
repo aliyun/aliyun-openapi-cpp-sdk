@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/QuerySystemEventHistogramRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::QuerySystemEventHistogramRequest;
 
 QuerySystemEventHistogramRequest::QuerySystemEventHistogramRequest() :
-	CmsRequest("QuerySystemEventHistogram")
+	RpcServiceRequest("cms", "2017-03-01", "QuerySystemEventHistogram")
 {}
 
 QuerySystemEventHistogramRequest::~QuerySystemEventHistogramRequest()

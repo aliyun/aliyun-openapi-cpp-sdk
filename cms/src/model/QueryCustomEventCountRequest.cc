@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/QueryCustomEventCountRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::QueryCustomEventCountRequest;
 
 QueryCustomEventCountRequest::QueryCustomEventCountRequest() :
-	CmsRequest("QueryCustomEventCount")
+	RpcServiceRequest("cms", "2017-03-01", "QueryCustomEventCount")
 {}
 
 QueryCustomEventCountRequest::~QueryCustomEventCountRequest()

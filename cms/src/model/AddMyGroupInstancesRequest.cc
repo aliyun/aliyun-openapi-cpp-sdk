@@ -16,11 +16,10 @@
 
 #include <alibabacloud/cms/model/AddMyGroupInstancesRequest.h>
 
-using namespace AlibabaCloud::Cms;
-using namespace AlibabaCloud::Cms::Model;
+using AlibabaCloud::Cms::Model::AddMyGroupInstancesRequest;
 
 AddMyGroupInstancesRequest::AddMyGroupInstancesRequest() :
-	CmsRequest("AddMyGroupInstances")
+	RpcServiceRequest("cms", "2017-03-01", "AddMyGroupInstances")
 {}
 
 AddMyGroupInstancesRequest::~AddMyGroupInstancesRequest()
