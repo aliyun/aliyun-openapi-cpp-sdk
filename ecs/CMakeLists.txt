@@ -15,7 +15,12 @@
 #
 
 set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
-set(ecs_public_header
+
+set(ecs_public_header 
+	include/alibabacloud/ecs/EcsClient.h
+	include/alibabacloud/ecs/EcsExport.h )
+
+set(ecs_public_header_model 
 	include/alibabacloud/ecs/model/ModifySnapshotAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifySnapshotAttributeResult.h
 	include/alibabacloud/ecs/model/JoinSecurityGroupRequest.h
@@ -136,6 +141,8 @@ set(ecs_public_header
 	include/alibabacloud/ecs/model/ModifyDiskAttributeResult.h
 	include/alibabacloud/ecs/model/CreateVSwitchRequest.h
 	include/alibabacloud/ecs/model/CreateVSwitchResult.h
+	include/alibabacloud/ecs/model/DescribeBandwidthLimitationRequest.h
+	include/alibabacloud/ecs/model/DescribeBandwidthLimitationResult.h
 	include/alibabacloud/ecs/model/ModifyEipAddressAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyEipAddressAttributeResult.h
 	include/alibabacloud/ecs/model/RemoveTagsRequest.h
@@ -150,6 +157,8 @@ set(ecs_public_header
 	include/alibabacloud/ecs/model/DescribeZonesResult.h
 	include/alibabacloud/ecs/model/DeactivateRouterInterfaceRequest.h
 	include/alibabacloud/ecs/model/DeactivateRouterInterfaceResult.h
+	include/alibabacloud/ecs/model/DescribeAvailableResourceRequest.h
+	include/alibabacloud/ecs/model/DescribeAvailableResourceResult.h
 	include/alibabacloud/ecs/model/DescribeAccessPointsRequest.h
 	include/alibabacloud/ecs/model/DescribeAccessPointsResult.h
 	include/alibabacloud/ecs/model/CreateCommandRequest.h
@@ -290,6 +299,8 @@ set(ecs_public_header
 	include/alibabacloud/ecs/model/DescribeInstanceAutoRenewAttributeResult.h
 	include/alibabacloud/ecs/model/ModifySecurityGroupRuleRequest.h
 	include/alibabacloud/ecs/model/ModifySecurityGroupRuleResult.h
+	include/alibabacloud/ecs/model/DescribeResourcesModificationRequest.h
+	include/alibabacloud/ecs/model/DescribeResourcesModificationResult.h
 	include/alibabacloud/ecs/model/ImportKeyPairRequest.h
 	include/alibabacloud/ecs/model/ImportKeyPairResult.h
 	include/alibabacloud/ecs/model/DescribeNewProjectEipMonitorDataRequest.h
@@ -455,13 +466,10 @@ set(ecs_public_header
 	include/alibabacloud/ecs/model/AttachInstanceRamRoleRequest.h
 	include/alibabacloud/ecs/model/AttachInstanceRamRoleResult.h
 	include/alibabacloud/ecs/model/ModifyVRouterAttributeRequest.h
-	include/alibabacloud/ecs/model/ModifyVRouterAttributeResult.h
-	include/alibabacloud/ecs/EcsClient.h
-	include/alibabacloud/ecs/EcsExport.h
-	include/alibabacloud/ecs/EcsRequest.h
-	)
+	include/alibabacloud/ecs/model/ModifyVRouterAttributeResult.h )
 
-set(ecs_src
+set(ecs_src 
+	src/EcsClient.cc
 	src/model/ModifySnapshotAttributeRequest.cc
 	src/model/ModifySnapshotAttributeResult.cc
 	src/model/JoinSecurityGroupRequest.cc
@@ -582,6 +590,8 @@ set(ecs_src
 	src/model/ModifyDiskAttributeResult.cc
 	src/model/CreateVSwitchRequest.cc
 	src/model/CreateVSwitchResult.cc
+	src/model/DescribeBandwidthLimitationRequest.cc
+	src/model/DescribeBandwidthLimitationResult.cc
 	src/model/ModifyEipAddressAttributeRequest.cc
 	src/model/ModifyEipAddressAttributeResult.cc
 	src/model/RemoveTagsRequest.cc
@@ -596,6 +606,8 @@ set(ecs_src
 	src/model/DescribeZonesResult.cc
 	src/model/DeactivateRouterInterfaceRequest.cc
 	src/model/DeactivateRouterInterfaceResult.cc
+	src/model/DescribeAvailableResourceRequest.cc
+	src/model/DescribeAvailableResourceResult.cc
 	src/model/DescribeAccessPointsRequest.cc
 	src/model/DescribeAccessPointsResult.cc
 	src/model/CreateCommandRequest.cc
@@ -736,6 +748,8 @@ set(ecs_src
 	src/model/DescribeInstanceAutoRenewAttributeResult.cc
 	src/model/ModifySecurityGroupRuleRequest.cc
 	src/model/ModifySecurityGroupRuleResult.cc
+	src/model/DescribeResourcesModificationRequest.cc
+	src/model/DescribeResourcesModificationResult.cc
 	src/model/ImportKeyPairRequest.cc
 	src/model/ImportKeyPairResult.cc
 	src/model/DescribeNewProjectEipMonitorDataRequest.cc
@@ -901,12 +915,12 @@ set(ecs_src
 	src/model/AttachInstanceRamRoleRequest.cc
 	src/model/AttachInstanceRamRoleResult.cc
 	src/model/ModifyVRouterAttributeRequest.cc
-	src/model/ModifyVRouterAttributeResult.cc
-	src/EcsClient.cc
-	src/EcsRequest.cc
-	)
+	src/model/ModifyVRouterAttributeResult.cc )
 
-add_library(ecs ${LIB_TYPE} ${ecs_public_header} ${ecs_src})
+add_library(ecs ${LIB_TYPE}
+	${ecs_public_header}
+	${ecs_public_header_model}
+	${ecs_src})
 
 set_target_properties(ecs
 	PROPERTIES
@@ -915,7 +929,6 @@ set_target_properties(ecs
 	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}ecs
-	PUBLIC_HEADER "${ecs_public_header}"
 	)
 
 if(${LIB_TYPE} STREQUAL "SHARED")
@@ -950,9 +963,12 @@ else()
 		jsoncpp)
 endif()
 
+install(FILES ${ecs_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/ecs)
+install(FILES ${ecs_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/ecs/model)
 install(TARGETS ecs
 	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/ecs
 	)

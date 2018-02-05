@@ -43,17 +43,21 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 	auto allOperationLocks = value["OperationLocks"]["LockReason"];
 	for (auto value : allOperationLocks)
 	{
-		LockReason lockReasonObject;
-		lockReasonObject.lockReason = value["LockReason"].asString();
-		operationLocks_.push_back(lockReasonObject);
+		LockReason operationLocksObject;
+		if(!value["LockReason"].isNull())
+			operationLocksObject.lockReason = value["LockReason"].asString();
+		operationLocks_.push_back(operationLocksObject);
 	}
 	auto allVpcAttributes = value["VpcAttributes"];
 	for (auto value : allVpcAttributes)
 	{
 		VpcAttributes vpcAttributesObject;
-		vpcAttributesObject.vpcId = value["VpcId"].asString();
-		vpcAttributesObject.vSwitchId = value["VSwitchId"].asString();
-		vpcAttributesObject.natIpAddress = value["NatIpAddress"].asString();
+		if(!value["VpcId"].isNull())
+			vpcAttributesObject.vpcId = value["VpcId"].asString();
+		if(!value["VSwitchId"].isNull())
+			vpcAttributesObject.vSwitchId = value["VSwitchId"].asString();
+		if(!value["NatIpAddress"].isNull())
+			vpcAttributesObject.natIpAddress = value["NatIpAddress"].asString();
 		auto allPrivateIpAddress = value["PrivateIpAddress"]["IpAddress"];
 		for (auto value : allPrivateIpAddress)
 			vpcAttributesObject.privateIpAddress.push_back(value.asString());
@@ -63,10 +67,14 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 	for (auto value : allEipAddress)
 	{
 		EipAddress eipAddressObject;
-		eipAddressObject.allocationId = value["AllocationId"].asString();
-		eipAddressObject.ipAddress = value["IpAddress"].asString();
-		eipAddressObject.bandwidth = std::stoi(value["Bandwidth"].asString());
-		eipAddressObject.internetChargeType = value["InternetChargeType"].asString();
+		if(!value["AllocationId"].isNull())
+			eipAddressObject.allocationId = value["AllocationId"].asString();
+		if(!value["IpAddress"].isNull())
+			eipAddressObject.ipAddress = value["IpAddress"].asString();
+		if(!value["Bandwidth"].isNull())
+			eipAddressObject.bandwidth = std::stoi(value["Bandwidth"].asString());
+		if(!value["InternetChargeType"].isNull())
+			eipAddressObject.internetChargeType = value["InternetChargeType"].asString();
 		eipAddress_.push_back(eipAddressObject);
 	}
 	auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
@@ -78,29 +86,52 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 	auto allInnerIpAddress = value["InnerIpAddress"]["IpAddress"];
 	for (const auto &item : allInnerIpAddress)
 		innerIpAddress_.push_back(item.asString());
-	instanceId_ = value["InstanceId"].asString();
-	instanceName_ = value["InstanceName"].asString();
-	imageId_ = value["ImageId"].asString();
-	regionId_ = value["RegionId"].asString();
-	zoneId_ = value["ZoneId"].asString();
-	clusterId_ = value["ClusterId"].asString();
-	instanceType_ = value["InstanceType"].asString();
-	cpu_ = std::stoi(value["Cpu"].asString());
-	memory_ = std::stoi(value["Memory"].asString());
-	hostName_ = value["HostName"].asString();
-	status_ = value["Status"].asString();
-	internetChargeType_ = value["InternetChargeType"].asString();
-	internetMaxBandwidthIn_ = std::stoi(value["InternetMaxBandwidthIn"].asString());
-	internetMaxBandwidthOut_ = std::stoi(value["InternetMaxBandwidthOut"].asString());
-	vlanId_ = value["VlanId"].asString();
-	serialNumber_ = value["SerialNumber"].asString();
-	creationTime_ = value["CreationTime"].asString();
-	description_ = value["Description"].asString();
-	instanceNetworkType_ = value["InstanceNetworkType"].asString();
-	ioOptimized_ = value["IoOptimized"].asString();
-	instanceChargeType_ = value["InstanceChargeType"].asString();
-	expiredTime_ = value["ExpiredTime"].asString();
-	stoppedMode_ = value["StoppedMode"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["InstanceName"].isNull())
+		instanceName_ = value["InstanceName"].asString();
+	if(!value["ImageId"].isNull())
+		imageId_ = value["ImageId"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["ZoneId"].isNull())
+		zoneId_ = value["ZoneId"].asString();
+	if(!value["ClusterId"].isNull())
+		clusterId_ = value["ClusterId"].asString();
+	if(!value["InstanceType"].isNull())
+		instanceType_ = value["InstanceType"].asString();
+	if(!value["Cpu"].isNull())
+		cpu_ = std::stoi(value["Cpu"].asString());
+	if(!value["Memory"].isNull())
+		memory_ = std::stoi(value["Memory"].asString());
+	if(!value["HostName"].isNull())
+		hostName_ = value["HostName"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["InternetChargeType"].isNull())
+		internetChargeType_ = value["InternetChargeType"].asString();
+	if(!value["InternetMaxBandwidthIn"].isNull())
+		internetMaxBandwidthIn_ = std::stoi(value["InternetMaxBandwidthIn"].asString());
+	if(!value["InternetMaxBandwidthOut"].isNull())
+		internetMaxBandwidthOut_ = std::stoi(value["InternetMaxBandwidthOut"].asString());
+	if(!value["VlanId"].isNull())
+		vlanId_ = value["VlanId"].asString();
+	if(!value["SerialNumber"].isNull())
+		serialNumber_ = value["SerialNumber"].asString();
+	if(!value["CreationTime"].isNull())
+		creationTime_ = value["CreationTime"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["InstanceNetworkType"].isNull())
+		instanceNetworkType_ = value["InstanceNetworkType"].asString();
+	if(!value["IoOptimized"].isNull())
+		ioOptimized_ = value["IoOptimized"].asString();
+	if(!value["InstanceChargeType"].isNull())
+		instanceChargeType_ = value["InstanceChargeType"].asString();
+	if(!value["ExpiredTime"].isNull())
+		expiredTime_ = value["ExpiredTime"].asString();
+	if(!value["StoppedMode"].isNull())
+		stoppedMode_ = value["StoppedMode"].asString();
 
 }
 
@@ -109,19 +140,9 @@ std::string DescribeInstanceAttributeResult::getDescription()const
 	return description_;
 }
 
-void DescribeInstanceAttributeResult::setDescription(const std::string& description)
-{
-	description_ = description;
-}
-
 int DescribeInstanceAttributeResult::getMemory()const
 {
 	return memory_;
-}
-
-void DescribeInstanceAttributeResult::setMemory(int memory)
-{
-	memory_ = memory;
 }
 
 std::string DescribeInstanceAttributeResult::getInstanceChargeType()const
@@ -129,19 +150,9 @@ std::string DescribeInstanceAttributeResult::getInstanceChargeType()const
 	return instanceChargeType_;
 }
 
-void DescribeInstanceAttributeResult::setInstanceChargeType(const std::string& instanceChargeType)
-{
-	instanceChargeType_ = instanceChargeType;
-}
-
 int DescribeInstanceAttributeResult::getCpu()const
 {
 	return cpu_;
-}
-
-void DescribeInstanceAttributeResult::setCpu(int cpu)
-{
-	cpu_ = cpu;
 }
 
 std::string DescribeInstanceAttributeResult::getInstanceNetworkType()const
@@ -149,19 +160,9 @@ std::string DescribeInstanceAttributeResult::getInstanceNetworkType()const
 	return instanceNetworkType_;
 }
 
-void DescribeInstanceAttributeResult::setInstanceNetworkType(const std::string& instanceNetworkType)
-{
-	instanceNetworkType_ = instanceNetworkType;
-}
-
 std::vector<std::string> DescribeInstanceAttributeResult::getPublicIpAddress()const
 {
 	return publicIpAddress_;
-}
-
-void DescribeInstanceAttributeResult::setPublicIpAddress(const std::vector<std::string>& publicIpAddress)
-{
-	publicIpAddress_ = publicIpAddress;
 }
 
 std::vector<std::string> DescribeInstanceAttributeResult::getInnerIpAddress()const
@@ -169,19 +170,14 @@ std::vector<std::string> DescribeInstanceAttributeResult::getInnerIpAddress()con
 	return innerIpAddress_;
 }
 
-void DescribeInstanceAttributeResult::setInnerIpAddress(const std::vector<std::string>& innerIpAddress)
-{
-	innerIpAddress_ = innerIpAddress;
-}
-
 std::string DescribeInstanceAttributeResult::getExpiredTime()const
 {
 	return expiredTime_;
 }
 
-void DescribeInstanceAttributeResult::setExpiredTime(const std::string& expiredTime)
+std::vector<DescribeInstanceAttributeResult::EipAddress> DescribeInstanceAttributeResult::getEipAddress()const
 {
-	expiredTime_ = expiredTime;
+	return eipAddress_;
 }
 
 std::string DescribeInstanceAttributeResult::getImageId()const
@@ -189,19 +185,9 @@ std::string DescribeInstanceAttributeResult::getImageId()const
 	return imageId_;
 }
 
-void DescribeInstanceAttributeResult::setImageId(const std::string& imageId)
-{
-	imageId_ = imageId;
-}
-
 std::string DescribeInstanceAttributeResult::getInstanceType()const
 {
 	return instanceType_;
-}
-
-void DescribeInstanceAttributeResult::setInstanceType(const std::string& instanceType)
-{
-	instanceType_ = instanceType;
 }
 
 std::string DescribeInstanceAttributeResult::getHostName()const
@@ -209,19 +195,9 @@ std::string DescribeInstanceAttributeResult::getHostName()const
 	return hostName_;
 }
 
-void DescribeInstanceAttributeResult::setHostName(const std::string& hostName)
-{
-	hostName_ = hostName;
-}
-
 std::string DescribeInstanceAttributeResult::getVlanId()const
 {
 	return vlanId_;
-}
-
-void DescribeInstanceAttributeResult::setVlanId(const std::string& vlanId)
-{
-	vlanId_ = vlanId;
 }
 
 std::string DescribeInstanceAttributeResult::getStatus()const
@@ -229,19 +205,9 @@ std::string DescribeInstanceAttributeResult::getStatus()const
 	return status_;
 }
 
-void DescribeInstanceAttributeResult::setStatus(const std::string& status)
-{
-	status_ = status;
-}
-
 std::string DescribeInstanceAttributeResult::getIoOptimized()const
 {
 	return ioOptimized_;
-}
-
-void DescribeInstanceAttributeResult::setIoOptimized(const std::string& ioOptimized)
-{
-	ioOptimized_ = ioOptimized;
 }
 
 std::string DescribeInstanceAttributeResult::getZoneId()const
@@ -249,19 +215,9 @@ std::string DescribeInstanceAttributeResult::getZoneId()const
 	return zoneId_;
 }
 
-void DescribeInstanceAttributeResult::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-}
-
 std::string DescribeInstanceAttributeResult::getInstanceId()const
 {
 	return instanceId_;
-}
-
-void DescribeInstanceAttributeResult::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
 }
 
 std::string DescribeInstanceAttributeResult::getClusterId()const
@@ -269,19 +225,14 @@ std::string DescribeInstanceAttributeResult::getClusterId()const
 	return clusterId_;
 }
 
-void DescribeInstanceAttributeResult::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-}
-
 std::string DescribeInstanceAttributeResult::getStoppedMode()const
 {
 	return stoppedMode_;
 }
 
-void DescribeInstanceAttributeResult::setStoppedMode(const std::string& stoppedMode)
+std::vector<DescribeInstanceAttributeResult::VpcAttributes> DescribeInstanceAttributeResult::getVpcAttributes()const
 {
-	stoppedMode_ = stoppedMode;
+	return vpcAttributes_;
 }
 
 std::vector<std::string> DescribeInstanceAttributeResult::getSecurityGroupIds()const
@@ -289,9 +240,9 @@ std::vector<std::string> DescribeInstanceAttributeResult::getSecurityGroupIds()c
 	return securityGroupIds_;
 }
 
-void DescribeInstanceAttributeResult::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
+std::vector<DescribeInstanceAttributeResult::LockReason> DescribeInstanceAttributeResult::getOperationLocks()const
 {
-	securityGroupIds_ = securityGroupIds;
+	return operationLocks_;
 }
 
 std::string DescribeInstanceAttributeResult::getInternetChargeType()const
@@ -299,19 +250,9 @@ std::string DescribeInstanceAttributeResult::getInternetChargeType()const
 	return internetChargeType_;
 }
 
-void DescribeInstanceAttributeResult::setInternetChargeType(const std::string& internetChargeType)
-{
-	internetChargeType_ = internetChargeType;
-}
-
 std::string DescribeInstanceAttributeResult::getInstanceName()const
 {
 	return instanceName_;
-}
-
-void DescribeInstanceAttributeResult::setInstanceName(const std::string& instanceName)
-{
-	instanceName_ = instanceName;
 }
 
 int DescribeInstanceAttributeResult::getInternetMaxBandwidthOut()const
@@ -319,19 +260,9 @@ int DescribeInstanceAttributeResult::getInternetMaxBandwidthOut()const
 	return internetMaxBandwidthOut_;
 }
 
-void DescribeInstanceAttributeResult::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
-{
-	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
-}
-
 int DescribeInstanceAttributeResult::getInternetMaxBandwidthIn()const
 {
 	return internetMaxBandwidthIn_;
-}
-
-void DescribeInstanceAttributeResult::setInternetMaxBandwidthIn(int internetMaxBandwidthIn)
-{
-	internetMaxBandwidthIn_ = internetMaxBandwidthIn;
 }
 
 std::string DescribeInstanceAttributeResult::getSerialNumber()const
@@ -339,28 +270,13 @@ std::string DescribeInstanceAttributeResult::getSerialNumber()const
 	return serialNumber_;
 }
 
-void DescribeInstanceAttributeResult::setSerialNumber(const std::string& serialNumber)
-{
-	serialNumber_ = serialNumber;
-}
-
 std::string DescribeInstanceAttributeResult::getCreationTime()const
 {
 	return creationTime_;
 }
 
-void DescribeInstanceAttributeResult::setCreationTime(const std::string& creationTime)
-{
-	creationTime_ = creationTime;
-}
-
 std::string DescribeInstanceAttributeResult::getRegionId()const
 {
 	return regionId_;
-}
-
-void DescribeInstanceAttributeResult::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
 }
 

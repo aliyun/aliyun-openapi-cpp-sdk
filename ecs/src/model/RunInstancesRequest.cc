@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/RunInstancesRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::RunInstancesRequest;
 
 RunInstancesRequest::RunInstancesRequest() :
-	EcsRequest("RunInstances")
+	RpcServiceRequest("ecs", "2014-05-26", "RunInstances")
 {}
 
 RunInstancesRequest::~RunInstancesRequest()
@@ -206,6 +205,17 @@ void RunInstancesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
 	setParameter("CallerUid", std::to_string(callerUid));
+}
+
+bool RunInstancesRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void RunInstancesRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", std::to_string(dryRun));
 }
 
 long RunInstancesRequest::getOwnerId()const

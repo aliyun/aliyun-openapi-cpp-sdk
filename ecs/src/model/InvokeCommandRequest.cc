@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/InvokeCommandRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::InvokeCommandRequest;
 
 InvokeCommandRequest::InvokeCommandRequest() :
-	EcsRequest("InvokeCommand")
+	RpcServiceRequest("ecs", "2014-05-26", "InvokeCommand")
 {}
 
 InvokeCommandRequest::~InvokeCommandRequest()

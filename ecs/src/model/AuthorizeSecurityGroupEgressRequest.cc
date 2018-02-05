@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/AuthorizeSecurityGroupEgressRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::AuthorizeSecurityGroupEgressRequest;
 
 AuthorizeSecurityGroupEgressRequest::AuthorizeSecurityGroupEgressRequest() :
-	EcsRequest("AuthorizeSecurityGroupEgress")
+	RpcServiceRequest("ecs", "2014-05-26", "AuthorizeSecurityGroupEgress")
 {}
 
 AuthorizeSecurityGroupEgressRequest::~AuthorizeSecurityGroupEgressRequest()

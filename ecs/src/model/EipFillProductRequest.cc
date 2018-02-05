@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/EipFillProductRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::EipFillProductRequest;
 
 EipFillProductRequest::EipFillProductRequest() :
-	EcsRequest("EipFillProduct")
+	RpcServiceRequest("ecs", "2014-05-26", "EipFillProduct")
 {}
 
 EipFillProductRequest::~EipFillProductRequest()

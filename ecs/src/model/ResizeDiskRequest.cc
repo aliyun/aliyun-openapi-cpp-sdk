@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ResizeDiskRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ResizeDiskRequest;
 
 ResizeDiskRequest::ResizeDiskRequest() :
-	EcsRequest("ResizeDisk")
+	RpcServiceRequest("ecs", "2014-05-26", "ResizeDisk")
 {}
 
 ResizeDiskRequest::~ResizeDiskRequest()

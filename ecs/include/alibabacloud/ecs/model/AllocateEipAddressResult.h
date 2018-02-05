@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit AllocateEipAddressResult(const std::string &payload);
 				~AllocateEipAddressResult();
 				std::string getAllocationId()const;
-				void setAllocationId(const std::string& allocationId);
 				std::string getEipAddress()const;
-				void setEipAddress(const std::string& eipAddress);
 
 			protected:
 				void parse(const std::string &payload);

@@ -43,14 +43,19 @@ void DescribeClassicLinkInstancesResult::parse(const std::string &payload)
 	auto allLinks = value["Links"]["Link"];
 	for (auto value : allLinks)
 	{
-		Link linkObject;
-		linkObject.instanceId = value["InstanceId"].asString();
-		linkObject.vpcId = value["VpcId"].asString();
-		links_.push_back(linkObject);
+		Link linksObject;
+		if(!value["InstanceId"].isNull())
+			linksObject.instanceId = value["InstanceId"].asString();
+		if(!value["VpcId"].isNull())
+			linksObject.vpcId = value["VpcId"].asString();
+		links_.push_back(linksObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -59,19 +64,9 @@ int DescribeClassicLinkInstancesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeClassicLinkInstancesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeClassicLinkInstancesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeClassicLinkInstancesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeClassicLinkInstancesResult::getPageNumber()const
@@ -79,8 +74,8 @@ int DescribeClassicLinkInstancesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeClassicLinkInstancesResult::setPageNumber(int pageNumber)
+std::vector<DescribeClassicLinkInstancesResult::Link> DescribeClassicLinkInstancesResult::getLinks()const
 {
-	pageNumber_ = pageNumber;
+	return links_;
 }
 

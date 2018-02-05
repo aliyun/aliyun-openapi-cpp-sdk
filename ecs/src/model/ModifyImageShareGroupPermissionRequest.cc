@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyImageShareGroupPermissionRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyImageShareGroupPermissionRequest;
 
 ModifyImageShareGroupPermissionRequest::ModifyImageShareGroupPermissionRequest() :
-	EcsRequest("ModifyImageShareGroupPermission")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyImageShareGroupPermission")
 {}
 
 ModifyImageShareGroupPermissionRequest::~ModifyImageShareGroupPermissionRequest()

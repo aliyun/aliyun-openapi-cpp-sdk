@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DetachKeyPairRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DetachKeyPairRequest;
 
 DetachKeyPairRequest::DetachKeyPairRequest() :
-	EcsRequest("DetachKeyPair")
+	RpcServiceRequest("ecs", "2014-05-26", "DetachKeyPair")
 {}
 
 DetachKeyPairRequest::~DetachKeyPairRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/AttachKeyPairRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::AttachKeyPairRequest;
 
 AttachKeyPairRequest::AttachKeyPairRequest() :
-	EcsRequest("AttachKeyPair")
+	RpcServiceRequest("ecs", "2014-05-26", "AttachKeyPair")
 {}
 
 AttachKeyPairRequest::~AttachKeyPairRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/StopInvocationRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::StopInvocationRequest;
 
 StopInvocationRequest::StopInvocationRequest() :
-	EcsRequest("StopInvocation")
+	RpcServiceRequest("ecs", "2014-05-26", "StopInvocation")
 {}
 
 StopInvocationRequest::~StopInvocationRequest()

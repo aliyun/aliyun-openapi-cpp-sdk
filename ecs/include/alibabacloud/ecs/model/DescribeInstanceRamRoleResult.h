@@ -43,11 +43,8 @@ namespace AlibabaCloud
 				explicit DescribeInstanceRamRoleResult(const std::string &payload);
 				~DescribeInstanceRamRoleResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::vector<InstanceRamRoleSet> getInstanceRamRoleSets()const;
-				void setInstanceRamRoleSets(const std::vector<InstanceRamRoleSet>& instanceRamRoleSets);
 
 			protected:
 				void parse(const std::string &payload);

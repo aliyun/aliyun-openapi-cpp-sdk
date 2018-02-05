@@ -56,7 +56,6 @@ namespace AlibabaCloud
 				explicit DescribeInstanceMonitorDataResult(const std::string &payload);
 				~DescribeInstanceMonitorDataResult();
 				std::vector<InstanceMonitorData> getMonitorData()const;
-				void setMonitorData(const std::vector<InstanceMonitorData>& monitorData);
 
 			protected:
 				void parse(const std::string &payload);

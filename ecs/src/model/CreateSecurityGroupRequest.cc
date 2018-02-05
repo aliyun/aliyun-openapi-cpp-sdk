@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CreateSecurityGroupRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CreateSecurityGroupRequest;
 
 CreateSecurityGroupRequest::CreateSecurityGroupRequest() :
-	EcsRequest("CreateSecurityGroup")
+	RpcServiceRequest("ecs", "2014-05-26", "CreateSecurityGroup")
 {}
 
 CreateSecurityGroupRequest::~CreateSecurityGroupRequest()

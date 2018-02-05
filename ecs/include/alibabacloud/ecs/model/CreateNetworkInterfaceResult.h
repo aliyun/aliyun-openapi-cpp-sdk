@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateNetworkInterfaceResult(const std::string &payload);
 				~CreateNetworkInterfaceResult();
 				std::string getNetworkInterfaceId()const;
-				void setNetworkInterfaceId(const std::string& networkInterfaceId);
 
 			protected:
 				void parse(const std::string &payload);

@@ -43,16 +43,23 @@ void DescribeSnapshotPackageResult::parse(const std::string &payload)
 	auto allSnapshotPackages = value["SnapshotPackages"]["SnapshotPackage"];
 	for (auto value : allSnapshotPackages)
 	{
-		SnapshotPackage snapshotPackageObject;
-		snapshotPackageObject.startTime = value["StartTime"].asString();
-		snapshotPackageObject.endTime = value["EndTime"].asString();
-		snapshotPackageObject.initCapacity = std::stol(value["InitCapacity"].asString());
-		snapshotPackageObject.displayName = value["DisplayName"].asString();
-		snapshotPackages_.push_back(snapshotPackageObject);
+		SnapshotPackage snapshotPackagesObject;
+		if(!value["StartTime"].isNull())
+			snapshotPackagesObject.startTime = value["StartTime"].asString();
+		if(!value["EndTime"].isNull())
+			snapshotPackagesObject.endTime = value["EndTime"].asString();
+		if(!value["InitCapacity"].isNull())
+			snapshotPackagesObject.initCapacity = std::stol(value["InitCapacity"].asString());
+		if(!value["DisplayName"].isNull())
+			snapshotPackagesObject.displayName = value["DisplayName"].asString();
+		snapshotPackages_.push_back(snapshotPackagesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -61,19 +68,9 @@ int DescribeSnapshotPackageResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeSnapshotPackageResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeSnapshotPackageResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeSnapshotPackageResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeSnapshotPackageResult::getPageNumber()const
@@ -81,8 +78,8 @@ int DescribeSnapshotPackageResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeSnapshotPackageResult::setPageNumber(int pageNumber)
+std::vector<DescribeSnapshotPackageResult::SnapshotPackage> DescribeSnapshotPackageResult::getSnapshotPackages()const
 {
-	pageNumber_ = pageNumber;
+	return snapshotPackages_;
 }
 

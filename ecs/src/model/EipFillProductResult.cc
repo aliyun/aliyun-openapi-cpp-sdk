@@ -40,11 +40,16 @@ void EipFillProductResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	requestId_ = value["requestId"].asString();
-	data_ = value["data"].asString();
-	code_ = value["code"].asString();
-	success_ = std::stoi(value["success"].asString());
-	message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["data"].isNull())
+		data_ = value["data"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["success"].isNull())
+		success_ = value["success"].asString() == "true";
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
 }
 
@@ -53,19 +58,9 @@ std::string EipFillProductResult::getRequestId()const
 	return requestId_;
 }
 
-void EipFillProductResult::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-}
-
 std::string EipFillProductResult::getMessage()const
 {
 	return message_;
-}
-
-void EipFillProductResult::setMessage(const std::string& message)
-{
-	message_ = message;
 }
 
 std::string EipFillProductResult::getData()const
@@ -73,28 +68,13 @@ std::string EipFillProductResult::getData()const
 	return data_;
 }
 
-void EipFillProductResult::setData(const std::string& data)
-{
-	data_ = data;
-}
-
 std::string EipFillProductResult::getCode()const
 {
 	return code_;
 }
 
-void EipFillProductResult::setCode(const std::string& code)
-{
-	code_ = code;
-}
-
 bool EipFillProductResult::getSuccess()const
 {
 	return success_;
-}
-
-void EipFillProductResult::setSuccess(bool success)
-{
-	success_ = success;
 }
 

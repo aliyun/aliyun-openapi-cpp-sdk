@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CheckAutoSnapshotPolicyRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CheckAutoSnapshotPolicyRequest;
 
 CheckAutoSnapshotPolicyRequest::CheckAutoSnapshotPolicyRequest() :
-	EcsRequest("CheckAutoSnapshotPolicy")
+	RpcServiceRequest("ecs", "2014-05-26", "CheckAutoSnapshotPolicy")
 {}
 
 CheckAutoSnapshotPolicyRequest::~CheckAutoSnapshotPolicyRequest()

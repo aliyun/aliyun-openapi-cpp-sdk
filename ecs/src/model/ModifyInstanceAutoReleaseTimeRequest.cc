@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyInstanceAutoReleaseTimeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyInstanceAutoReleaseTimeRequest;
 
 ModifyInstanceAutoReleaseTimeRequest::ModifyInstanceAutoReleaseTimeRequest() :
-	EcsRequest("ModifyInstanceAutoReleaseTime")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceAutoReleaseTime")
 {}
 
 ModifyInstanceAutoReleaseTimeRequest::~ModifyInstanceAutoReleaseTimeRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/AddTagsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::AddTagsRequest;
 
 AddTagsRequest::AddTagsRequest() :
-	EcsRequest("AddTags")
+	RpcServiceRequest("ecs", "2014-05-26", "AddTags")
 {}
 
 AddTagsRequest::~AddTagsRequest()

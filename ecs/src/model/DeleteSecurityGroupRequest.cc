@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteSecurityGroupRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteSecurityGroupRequest;
 
 DeleteSecurityGroupRequest::DeleteSecurityGroupRequest() :
-	EcsRequest("DeleteSecurityGroup")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteSecurityGroup")
 {}
 
 DeleteSecurityGroupRequest::~DeleteSecurityGroupRequest()

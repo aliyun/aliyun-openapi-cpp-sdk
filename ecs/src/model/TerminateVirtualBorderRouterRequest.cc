@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/TerminateVirtualBorderRouterRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::TerminateVirtualBorderRouterRequest;
 
 TerminateVirtualBorderRouterRequest::TerminateVirtualBorderRouterRequest() :
-	EcsRequest("TerminateVirtualBorderRouter")
+	RpcServiceRequest("ecs", "2014-05-26", "TerminateVirtualBorderRouter")
 {}
 
 TerminateVirtualBorderRouterRequest::~TerminateVirtualBorderRouterRequest()

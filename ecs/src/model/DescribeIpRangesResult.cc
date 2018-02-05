@@ -43,16 +43,23 @@ void DescribeIpRangesResult::parse(const std::string &payload)
 	auto allIpRanges = value["IpRanges"]["IpRange"];
 	for (auto value : allIpRanges)
 	{
-		IpRange ipRangeObject;
-		ipRangeObject.ipAddress = value["IpAddress"].asString();
-		ipRangeObject.nicType = value["NicType"].asString();
-		ipRanges_.push_back(ipRangeObject);
+		IpRange ipRangesObject;
+		if(!value["IpAddress"].isNull())
+			ipRangesObject.ipAddress = value["IpAddress"].asString();
+		if(!value["NicType"].isNull())
+			ipRangesObject.nicType = value["NicType"].asString();
+		ipRanges_.push_back(ipRangesObject);
 	}
-	regionId_ = value["RegionId"].asString();
-	clusterId_ = value["ClusterId"].asString();
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["ClusterId"].isNull())
+		clusterId_ = value["ClusterId"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -61,19 +68,9 @@ int DescribeIpRangesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeIpRangesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeIpRangesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeIpRangesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 std::string DescribeIpRangesResult::getClusterId()const
@@ -81,28 +78,18 @@ std::string DescribeIpRangesResult::getClusterId()const
 	return clusterId_;
 }
 
-void DescribeIpRangesResult::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-}
-
 int DescribeIpRangesResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeIpRangesResult::setPageNumber(int pageNumber)
+std::vector<DescribeIpRangesResult::IpRange> DescribeIpRangesResult::getIpRanges()const
 {
-	pageNumber_ = pageNumber;
+	return ipRanges_;
 }
 
 std::string DescribeIpRangesResult::getRegionId()const
 {
 	return regionId_;
-}
-
-void DescribeIpRangesResult::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
 }
 

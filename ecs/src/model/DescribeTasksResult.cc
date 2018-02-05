@@ -43,19 +43,29 @@ void DescribeTasksResult::parse(const std::string &payload)
 	auto allTaskSet = value["TaskSet"]["Task"];
 	for (auto value : allTaskSet)
 	{
-		Task taskObject;
-		taskObject.taskId = value["TaskId"].asString();
-		taskObject.taskAction = value["TaskAction"].asString();
-		taskObject.taskStatus = value["TaskStatus"].asString();
-		taskObject.supportCancel = value["SupportCancel"].asString();
-		taskObject.creationTime = value["CreationTime"].asString();
-		taskObject.finishedTime = value["FinishedTime"].asString();
-		taskSet_.push_back(taskObject);
+		Task taskSetObject;
+		if(!value["TaskId"].isNull())
+			taskSetObject.taskId = value["TaskId"].asString();
+		if(!value["TaskAction"].isNull())
+			taskSetObject.taskAction = value["TaskAction"].asString();
+		if(!value["TaskStatus"].isNull())
+			taskSetObject.taskStatus = value["TaskStatus"].asString();
+		if(!value["SupportCancel"].isNull())
+			taskSetObject.supportCancel = value["SupportCancel"].asString();
+		if(!value["CreationTime"].isNull())
+			taskSetObject.creationTime = value["CreationTime"].asString();
+		if(!value["FinishedTime"].isNull())
+			taskSetObject.finishedTime = value["FinishedTime"].asString();
+		taskSet_.push_back(taskSetObject);
 	}
-	regionId_ = value["RegionId"].asString();
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -64,19 +74,9 @@ int DescribeTasksResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeTasksResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeTasksResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeTasksResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeTasksResult::getPageNumber()const
@@ -84,18 +84,13 @@ int DescribeTasksResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeTasksResult::setPageNumber(int pageNumber)
+std::vector<DescribeTasksResult::Task> DescribeTasksResult::getTaskSet()const
 {
-	pageNumber_ = pageNumber;
+	return taskSet_;
 }
 
 std::string DescribeTasksResult::getRegionId()const
 {
 	return regionId_;
-}
-
-void DescribeTasksResult::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
 }
 

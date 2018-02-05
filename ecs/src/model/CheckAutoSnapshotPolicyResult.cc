@@ -40,8 +40,10 @@ void CheckAutoSnapshotPolicyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	autoSnapshotOccupation_ = std::stoi(value["AutoSnapshotOccupation"].asString());
-	isPermittedModify_ = value["IsPermittedModify"].asString();
+	if(!value["AutoSnapshotOccupation"].isNull())
+		autoSnapshotOccupation_ = std::stoi(value["AutoSnapshotOccupation"].asString());
+	if(!value["IsPermittedModify"].isNull())
+		isPermittedModify_ = value["IsPermittedModify"].asString();
 
 }
 
@@ -50,18 +52,8 @@ int CheckAutoSnapshotPolicyResult::getAutoSnapshotOccupation()const
 	return autoSnapshotOccupation_;
 }
 
-void CheckAutoSnapshotPolicyResult::setAutoSnapshotOccupation(int autoSnapshotOccupation)
-{
-	autoSnapshotOccupation_ = autoSnapshotOccupation;
-}
-
 std::string CheckAutoSnapshotPolicyResult::getIsPermittedModify()const
 {
 	return isPermittedModify_;
-}
-
-void CheckAutoSnapshotPolicyResult::setIsPermittedModify(const std::string& isPermittedModify)
-{
-	isPermittedModify_ = isPermittedModify;
 }
 

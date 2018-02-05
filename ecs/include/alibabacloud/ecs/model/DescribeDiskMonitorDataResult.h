@@ -51,9 +51,7 @@ namespace AlibabaCloud
 				explicit DescribeDiskMonitorDataResult(const std::string &payload);
 				~DescribeDiskMonitorDataResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::vector<DiskMonitorData> getMonitorData()const;
-				void setMonitorData(const std::vector<DiskMonitorData>& monitorData);
 
 			protected:
 				void parse(const std::string &payload);

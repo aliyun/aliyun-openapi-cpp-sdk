@@ -40,17 +40,13 @@ void CreateRouterInterfaceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	routerInterfaceId_ = value["RouterInterfaceId"].asString();
+	if(!value["RouterInterfaceId"].isNull())
+		routerInterfaceId_ = value["RouterInterfaceId"].asString();
 
 }
 
 std::string CreateRouterInterfaceResult::getRouterInterfaceId()const
 {
 	return routerInterfaceId_;
-}
-
-void CreateRouterInterfaceResult::setRouterInterfaceId(const std::string& routerInterfaceId)
-{
-	routerInterfaceId_ = routerInterfaceId;
 }
 

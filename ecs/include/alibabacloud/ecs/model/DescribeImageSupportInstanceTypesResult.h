@@ -45,11 +45,8 @@ namespace AlibabaCloud
 				explicit DescribeImageSupportInstanceTypesResult(const std::string &payload);
 				~DescribeImageSupportInstanceTypesResult();
 				std::string getImageId()const;
-				void setImageId(const std::string& imageId);
 				std::vector<InstanceType> getInstanceTypes()const;
-				void setInstanceTypes(const std::vector<InstanceType>& instanceTypes);
 				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
 			protected:
 				void parse(const std::string &payload);

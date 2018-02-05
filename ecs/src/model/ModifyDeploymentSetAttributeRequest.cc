@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyDeploymentSetAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyDeploymentSetAttributeRequest;
 
 ModifyDeploymentSetAttributeRequest::ModifyDeploymentSetAttributeRequest() :
-	EcsRequest("ModifyDeploymentSetAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyDeploymentSetAttribute")
 {}
 
 ModifyDeploymentSetAttributeRequest::~ModifyDeploymentSetAttributeRequest()

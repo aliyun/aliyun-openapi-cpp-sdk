@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeInstanceAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeInstanceAttributeRequest;
 
 DescribeInstanceAttributeRequest::DescribeInstanceAttributeRequest() :
-	EcsRequest("DescribeInstanceAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceAttribute")
 {}
 
 DescribeInstanceAttributeRequest::~DescribeInstanceAttributeRequest()

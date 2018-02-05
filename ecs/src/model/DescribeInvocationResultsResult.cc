@@ -44,24 +44,39 @@ void DescribeInvocationResultsResult::parse(const std::string &payload)
 	for (auto value : allInvocation)
 	{
 		Invocation invocationObject;
-		invocationObject.pageSize = std::stol(value["PageSize"].asString());
-		invocationObject.pageNumber = std::stol(value["PageNumber"].asString());
-		invocationObject.totalCount = std::stol(value["TotalCount"].asString());
+		if(!value["PageSize"].isNull())
+			invocationObject.pageSize = std::stol(value["PageSize"].asString());
+		if(!value["PageNumber"].isNull())
+			invocationObject.pageNumber = std::stol(value["PageNumber"].asString());
+		if(!value["TotalCount"].isNull())
+			invocationObject.totalCount = std::stol(value["TotalCount"].asString());
 		auto allInvocationResults = value["InvocationResults"]["InvocationResult"];
 		for (auto value : allInvocationResults)
 		{
 			Invocation::InvocationResult invocationResultObject;
-			invocationResultObject.commandId = value["CommandId"].asString();
-			invocationResultObject.invokeId = value["InvokeId"].asString();
-			invocationResultObject.instanceId = value["InstanceId"].asString();
-			invocationResultObject.finishedTime = value["FinishedTime"].asString();
-			invocationResultObject.output = value["Output"].asString();
-			invocationResultObject.invokeRecordStatus = value["InvokeRecordStatus"].asString();
-			invocationResultObject.exitCode = std::stol(value["ExitCode"].asString());
+			if(!value["CommandId"].isNull())
+				invocationResultObject.commandId = value["CommandId"].asString();
+			if(!value["InvokeId"].isNull())
+				invocationResultObject.invokeId = value["InvokeId"].asString();
+			if(!value["InstanceId"].isNull())
+				invocationResultObject.instanceId = value["InstanceId"].asString();
+			if(!value["FinishedTime"].isNull())
+				invocationResultObject.finishedTime = value["FinishedTime"].asString();
+			if(!value["Output"].isNull())
+				invocationResultObject.output = value["Output"].asString();
+			if(!value["InvokeRecordStatus"].isNull())
+				invocationResultObject.invokeRecordStatus = value["InvokeRecordStatus"].asString();
+			if(!value["ExitCode"].isNull())
+				invocationResultObject.exitCode = std::stol(value["ExitCode"].asString());
 			invocationObject.invocationResults.push_back(invocationResultObject);
 		}
 		invocation_.push_back(invocationObject);
 	}
 
+}
+
+std::vector<DescribeInvocationResultsResult::Invocation> DescribeInvocationResultsResult::getInvocation()const
+{
+	return invocation_;
 }
 

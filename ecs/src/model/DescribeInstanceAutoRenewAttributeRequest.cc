@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeInstanceAutoRenewAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeInstanceAutoRenewAttributeRequest;
 
 DescribeInstanceAutoRenewAttributeRequest::DescribeInstanceAutoRenewAttributeRequest() :
-	EcsRequest("DescribeInstanceAutoRenewAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceAutoRenewAttribute")
 {}
 
 DescribeInstanceAutoRenewAttributeRequest::~DescribeInstanceAutoRenewAttributeRequest()

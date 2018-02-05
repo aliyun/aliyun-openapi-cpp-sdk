@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeImagesRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeImagesRequest;
 
 DescribeImagesRequest::DescribeImagesRequest() :
-	EcsRequest("DescribeImages")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeImages")
 {}
 
 DescribeImagesRequest::~DescribeImagesRequest()
@@ -35,6 +34,17 @@ void DescribeImagesRequest::setTag4Value(const std::string& tag4Value)
 {
 	tag4Value_ = tag4Value;
 	setParameter("Tag4Value", tag4Value);
+}
+
+std::string DescribeImagesRequest::getActionType()const
+{
+	return actionType_;
+}
+
+void DescribeImagesRequest::setActionType(const std::string& actionType)
+{
+	actionType_ = actionType;
+	setParameter("ActionType", actionType);
 }
 
 long DescribeImagesRequest::getResourceOwnerId()const
@@ -79,17 +89,6 @@ void DescribeImagesRequest::setTag2Key(const std::string& tag2Key)
 {
 	tag2Key_ = tag2Key;
 	setParameter("Tag2Key", tag2Key);
-}
-
-std::string DescribeImagesRequest::getFilter2Value()const
-{
-	return filter2Value_;
-}
-
-void DescribeImagesRequest::setFilter2Value(const std::string& filter2Value)
-{
-	filter2Value_ = filter2Value;
-	setParameter("Filter2Value", filter2Value);
 }
 
 std::string DescribeImagesRequest::getUsage()const
@@ -156,17 +155,6 @@ void DescribeImagesRequest::setIsSupportIoOptimized(bool isSupportIoOptimized)
 {
 	isSupportIoOptimized_ = isSupportIoOptimized;
 	setParameter("IsSupportIoOptimized", std::to_string(isSupportIoOptimized));
-}
-
-std::string DescribeImagesRequest::getFilter1Key()const
-{
-	return filter1Key_;
-}
-
-void DescribeImagesRequest::setFilter1Key(const std::string& filter1Key)
-{
-	filter1Key_ = filter1Key;
-	setParameter("Filter1Key", filter1Key);
 }
 
 std::string DescribeImagesRequest::getRegionId()const
@@ -301,17 +289,6 @@ void DescribeImagesRequest::setShowExpired(bool showExpired)
 	setParameter("ShowExpired", std::to_string(showExpired));
 }
 
-std::string DescribeImagesRequest::getFilter1Value()const
-{
-	return filter1Value_;
-}
-
-void DescribeImagesRequest::setFilter1Value(const std::string& filter1Value)
-{
-	filter1Value_ = filter1Value;
-	setParameter("Filter1Value", filter1Value);
-}
-
 std::string DescribeImagesRequest::getOSType()const
 {
 	return oSType_;
@@ -321,17 +298,6 @@ void DescribeImagesRequest::setOSType(const std::string& oSType)
 {
 	oSType_ = oSType;
 	setParameter("OSType", oSType);
-}
-
-std::string DescribeImagesRequest::getFilter2Key()const
-{
-	return filter2Key_;
-}
-
-void DescribeImagesRequest::setFilter2Key(const std::string& filter2Key)
-{
-	filter2Key_ = filter2Key;
-	setParameter("Filter2Key", filter2Key);
 }
 
 long DescribeImagesRequest::getOwnerId()const
@@ -365,6 +331,23 @@ void DescribeImagesRequest::setTag1Key(const std::string& tag1Key)
 {
 	tag1Key_ = tag1Key;
 	setParameter("Tag1Key", tag1Key);
+}
+
+std::vector<DescribeImagesRequest::Filter> DescribeImagesRequest::getFilter()const
+{
+	return filter_;
+}
+
+void DescribeImagesRequest::setFilter(const std::vector<Filter>& filter)
+{
+	filter_ = filter;
+	int i = 0;
+	for(int i = 0; i!= filter.size(); i++)	{
+		auto obj = filter.at(i);
+		std::string str ="Filter."+ std::to_string(i);
+		setParameter(str + ".Key", obj.key);
+		setParameter(str + ".Value", obj.value);
+	}
 }
 
 std::string DescribeImagesRequest::getTag2Value()const

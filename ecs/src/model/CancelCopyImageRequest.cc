@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CancelCopyImageRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CancelCopyImageRequest;
 
 CancelCopyImageRequest::CancelCopyImageRequest() :
-	EcsRequest("CancelCopyImage")
+	RpcServiceRequest("ecs", "2014-05-26", "CancelCopyImage")
 {}
 
 CancelCopyImageRequest::~CancelCopyImageRequest()

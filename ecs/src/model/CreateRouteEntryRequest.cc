@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CreateRouteEntryRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CreateRouteEntryRequest;
 
 CreateRouteEntryRequest::CreateRouteEntryRequest() :
-	EcsRequest("CreateRouteEntry")
+	RpcServiceRequest("ecs", "2014-05-26", "CreateRouteEntry")
 {}
 
 CreateRouteEntryRequest::~CreateRouteEntryRequest()

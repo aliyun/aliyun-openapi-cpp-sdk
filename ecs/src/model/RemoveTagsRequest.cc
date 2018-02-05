@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/RemoveTagsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::RemoveTagsRequest;
 
 RemoveTagsRequest::RemoveTagsRequest() :
-	EcsRequest("RemoveTags")
+	RpcServiceRequest("ecs", "2014-05-26", "RemoveTags")
 {}
 
 RemoveTagsRequest::~RemoveTagsRequest()

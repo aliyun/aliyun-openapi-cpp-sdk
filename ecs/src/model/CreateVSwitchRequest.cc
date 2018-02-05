@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CreateVSwitchRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CreateVSwitchRequest;
 
 CreateVSwitchRequest::CreateVSwitchRequest() :
-	EcsRequest("CreateVSwitch")
+	RpcServiceRequest("ecs", "2014-05-26", "CreateVSwitch")
 {}
 
 CreateVSwitchRequest::~CreateVSwitchRequest()

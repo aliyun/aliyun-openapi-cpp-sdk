@@ -40,17 +40,13 @@ void CreateAutoSnapshotPolicyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	autoSnapshotPolicyId_ = value["AutoSnapshotPolicyId"].asString();
+	if(!value["AutoSnapshotPolicyId"].isNull())
+		autoSnapshotPolicyId_ = value["AutoSnapshotPolicyId"].asString();
 
 }
 
 std::string CreateAutoSnapshotPolicyResult::getAutoSnapshotPolicyId()const
 {
 	return autoSnapshotPolicyId_;
-}
-
-void CreateAutoSnapshotPolicyResult::setAutoSnapshotPolicyId(const std::string& autoSnapshotPolicyId)
-{
-	autoSnapshotPolicyId_ = autoSnapshotPolicyId;
 }
 

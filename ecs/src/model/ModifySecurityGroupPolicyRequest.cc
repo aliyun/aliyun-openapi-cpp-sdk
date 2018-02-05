@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifySecurityGroupPolicyRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifySecurityGroupPolicyRequest;
 
 ModifySecurityGroupPolicyRequest::ModifySecurityGroupPolicyRequest() :
-	EcsRequest("ModifySecurityGroupPolicy")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifySecurityGroupPolicy")
 {}
 
 ModifySecurityGroupPolicyRequest::~ModifySecurityGroupPolicyRequest()

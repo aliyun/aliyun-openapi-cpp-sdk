@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyDiskChargeTypeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyDiskChargeTypeRequest;
 
 ModifyDiskChargeTypeRequest::ModifyDiskChargeTypeRequest() :
-	EcsRequest("ModifyDiskChargeType")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyDiskChargeType")
 {}
 
 ModifyDiskChargeTypeRequest::~ModifyDiskChargeTypeRequest()

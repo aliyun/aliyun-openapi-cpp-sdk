@@ -43,14 +43,24 @@ void DescribeInstanceAutoRenewAttributeResult::parse(const std::string &payload)
 	auto allInstanceRenewAttributes = value["InstanceRenewAttributes"]["InstanceRenewAttribute"];
 	for (auto value : allInstanceRenewAttributes)
 	{
-		InstanceRenewAttribute instanceRenewAttributeObject;
-		instanceRenewAttributeObject.instanceId = value["InstanceId"].asString();
-		instanceRenewAttributeObject.autoRenewEnabled = std::stoi(value["AutoRenewEnabled"].asString());
-		instanceRenewAttributeObject.duration = std::stoi(value["Duration"].asString());
-		instanceRenewAttributeObject.periodUnit = value["PeriodUnit"].asString();
-		instanceRenewAttributeObject.renewalStatus = value["RenewalStatus"].asString();
-		instanceRenewAttributes_.push_back(instanceRenewAttributeObject);
+		InstanceRenewAttribute instanceRenewAttributesObject;
+		if(!value["InstanceId"].isNull())
+			instanceRenewAttributesObject.instanceId = value["InstanceId"].asString();
+		if(!value["AutoRenewEnabled"].isNull())
+			instanceRenewAttributesObject.autoRenewEnabled = value["AutoRenewEnabled"].asString() == "true";
+		if(!value["Duration"].isNull())
+			instanceRenewAttributesObject.duration = std::stoi(value["Duration"].asString());
+		if(!value["PeriodUnit"].isNull())
+			instanceRenewAttributesObject.periodUnit = value["PeriodUnit"].asString();
+		if(!value["RenewalStatus"].isNull())
+			instanceRenewAttributesObject.renewalStatus = value["RenewalStatus"].asString();
+		instanceRenewAttributes_.push_back(instanceRenewAttributesObject);
 	}
 
+}
+
+std::vector<DescribeInstanceAutoRenewAttributeResult::InstanceRenewAttribute> DescribeInstanceAutoRenewAttributeResult::getInstanceRenewAttributes()const
+{
+	return instanceRenewAttributes_;
 }
 

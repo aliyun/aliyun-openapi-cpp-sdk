@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeLimitationResult(const std::string &payload);
 				~DescribeLimitationResult();
 				std::string getLimitation()const;
-				void setLimitation(const std::string& limitation);
 				std::string getValue()const;
-				void setValue(const std::string& value);
 
 			protected:
 				void parse(const std::string &payload);

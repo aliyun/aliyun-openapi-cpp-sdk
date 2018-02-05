@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/EnablePhysicalConnectionRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::EnablePhysicalConnectionRequest;
 
 EnablePhysicalConnectionRequest::EnablePhysicalConnectionRequest() :
-	EcsRequest("EnablePhysicalConnection")
+	RpcServiceRequest("ecs", "2014-05-26", "EnablePhysicalConnection")
 {}
 
 EnablePhysicalConnectionRequest::~EnablePhysicalConnectionRequest()

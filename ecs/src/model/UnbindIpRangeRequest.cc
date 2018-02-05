@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/UnbindIpRangeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::UnbindIpRangeRequest;
 
 UnbindIpRangeRequest::UnbindIpRangeRequest() :
-	EcsRequest("UnbindIpRange")
+	RpcServiceRequest("ecs", "2014-05-26", "UnbindIpRange")
 {}
 
 UnbindIpRangeRequest::~UnbindIpRangeRequest()

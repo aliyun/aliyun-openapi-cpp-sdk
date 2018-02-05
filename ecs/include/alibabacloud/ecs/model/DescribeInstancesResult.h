@@ -121,13 +121,9 @@ namespace AlibabaCloud
 				explicit DescribeInstancesResult(const std::string &payload);
 				~DescribeInstancesResult();
 				std::vector<Instance> getInstances()const;
-				void setInstances(const std::vector<Instance>& instances);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

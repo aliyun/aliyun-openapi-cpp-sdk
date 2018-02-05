@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/ecs/EcsRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/ecs/EcsExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,13 +28,22 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeImageSupportInstanceTypesRequest : public EcsRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeImageSupportInstanceTypesRequest : public RpcServiceRequest
 			{
+				struct Filter
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				DescribeImageSupportInstanceTypesRequest();
 				~DescribeImageSupportInstanceTypesRequest();
 
+				std::string getActionType()const;
+				void setActionType(const std::string& actionType);
+				std::vector<Filter> getFilter()const;
+				void setFilter(const std::vector<Filter>& filter);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
@@ -46,6 +56,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string actionType_;
+				std::vector<Filter> filter_;
 				long resourceOwnerId_;
 				std::string imageId_;
 				std::string resourceOwnerAccount_;

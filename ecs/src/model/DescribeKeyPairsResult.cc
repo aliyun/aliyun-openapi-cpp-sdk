@@ -43,14 +43,19 @@ void DescribeKeyPairsResult::parse(const std::string &payload)
 	auto allKeyPairs = value["KeyPairs"]["KeyPair"];
 	for (auto value : allKeyPairs)
 	{
-		KeyPair keyPairObject;
-		keyPairObject.keyPairName = value["KeyPairName"].asString();
-		keyPairObject.keyPairFingerPrint = value["KeyPairFingerPrint"].asString();
-		keyPairs_.push_back(keyPairObject);
+		KeyPair keyPairsObject;
+		if(!value["KeyPairName"].isNull())
+			keyPairsObject.keyPairName = value["KeyPairName"].asString();
+		if(!value["KeyPairFingerPrint"].isNull())
+			keyPairsObject.keyPairFingerPrint = value["KeyPairFingerPrint"].asString();
+		keyPairs_.push_back(keyPairsObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -59,19 +64,9 @@ int DescribeKeyPairsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeKeyPairsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeKeyPairsResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeKeyPairsResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeKeyPairsResult::getPageNumber()const
@@ -79,8 +74,8 @@ int DescribeKeyPairsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeKeyPairsResult::setPageNumber(int pageNumber)
+std::vector<DescribeKeyPairsResult::KeyPair> DescribeKeyPairsResult::getKeyPairs()const
 {
-	pageNumber_ = pageNumber;
+	return keyPairs_;
 }
 

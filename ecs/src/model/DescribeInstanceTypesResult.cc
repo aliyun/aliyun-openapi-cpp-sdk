@@ -43,20 +43,38 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 	auto allInstanceTypes = value["InstanceTypes"]["InstanceType"];
 	for (auto value : allInstanceTypes)
 	{
-		InstanceType instanceTypeObject;
-		instanceTypeObject.instanceTypeId = value["InstanceTypeId"].asString();
-		instanceTypeObject.cpuCoreCount = std::stoi(value["CpuCoreCount"].asString());
-		instanceTypeObject.memorySize = std::stof(value["MemorySize"].asString());
-		instanceTypeObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
-		instanceTypeObject.localStorageCapacity = std::stol(value["LocalStorageCapacity"].asString());
-		instanceTypeObject.localStorageAmount = std::stoi(value["LocalStorageAmount"].asString());
-		instanceTypeObject.localStorageCategory = value["LocalStorageCategory"].asString();
-		instanceTypeObject.gPUAmount = std::stoi(value["GPUAmount"].asString());
-		instanceTypeObject.gPUSpec = value["GPUSpec"].asString();
-		instanceTypeObject.initialCredit = std::stoi(value["InitialCredit"].asString());
-		instanceTypeObject.baselineCredit = std::stoi(value["BaselineCredit"].asString());
-		instanceTypes_.push_back(instanceTypeObject);
+		InstanceType instanceTypesObject;
+		if(!value["InstanceTypeId"].isNull())
+			instanceTypesObject.instanceTypeId = value["InstanceTypeId"].asString();
+		if(!value["CpuCoreCount"].isNull())
+			instanceTypesObject.cpuCoreCount = std::stoi(value["CpuCoreCount"].asString());
+		if(!value["MemorySize"].isNull())
+			instanceTypesObject.memorySize = std::stof(value["MemorySize"].asString());
+		if(!value["InstanceTypeFamily"].isNull())
+			instanceTypesObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
+		if(!value["LocalStorageCapacity"].isNull())
+			instanceTypesObject.localStorageCapacity = std::stol(value["LocalStorageCapacity"].asString());
+		if(!value["LocalStorageAmount"].isNull())
+			instanceTypesObject.localStorageAmount = std::stoi(value["LocalStorageAmount"].asString());
+		if(!value["LocalStorageCategory"].isNull())
+			instanceTypesObject.localStorageCategory = value["LocalStorageCategory"].asString();
+		if(!value["GPUAmount"].isNull())
+			instanceTypesObject.gPUAmount = std::stoi(value["GPUAmount"].asString());
+		if(!value["GPUSpec"].isNull())
+			instanceTypesObject.gPUSpec = value["GPUSpec"].asString();
+		if(!value["InitialCredit"].isNull())
+			instanceTypesObject.initialCredit = std::stoi(value["InitialCredit"].asString());
+		if(!value["BaselineCredit"].isNull())
+			instanceTypesObject.baselineCredit = std::stoi(value["BaselineCredit"].asString());
+		if(!value["EniQuantity"].isNull())
+			instanceTypesObject.eniQuantity = std::stoi(value["EniQuantity"].asString());
+		instanceTypes_.push_back(instanceTypesObject);
 	}
 
+}
+
+std::vector<DescribeInstanceTypesResult::InstanceType> DescribeInstanceTypesResult::getInstanceTypes()const
+{
+	return instanceTypes_;
 }
 

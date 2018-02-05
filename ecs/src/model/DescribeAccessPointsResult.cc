@@ -43,21 +43,37 @@ void DescribeAccessPointsResult::parse(const std::string &payload)
 	auto allAccessPointSet = value["AccessPointSet"]["AccessPointType"];
 	for (auto value : allAccessPointSet)
 	{
-		AccessPointType accessPointTypeObject;
-		accessPointTypeObject.accessPointId = value["AccessPointId"].asString();
-		accessPointTypeObject.status = value["Status"].asString();
-		accessPointTypeObject.type = value["Type"].asString();
-		accessPointTypeObject.attachedRegionNo = value["AttachedRegionNo"].asString();
-		accessPointTypeObject.location = value["Location"].asString();
-		accessPointTypeObject.hostOperator = value["HostOperator"].asString();
-		accessPointTypeObject.name = value["Name"].asString();
-		accessPointTypeObject.description = value["Description"].asString();
-		accessPointSet_.push_back(accessPointTypeObject);
+		AccessPointType accessPointSetObject;
+		if(!value["AccessPointId"].isNull())
+			accessPointSetObject.accessPointId = value["AccessPointId"].asString();
+		if(!value["Status"].isNull())
+			accessPointSetObject.status = value["Status"].asString();
+		if(!value["Type"].isNull())
+			accessPointSetObject.type = value["Type"].asString();
+		if(!value["AttachedRegionNo"].isNull())
+			accessPointSetObject.attachedRegionNo = value["AttachedRegionNo"].asString();
+		if(!value["Location"].isNull())
+			accessPointSetObject.location = value["Location"].asString();
+		if(!value["HostOperator"].isNull())
+			accessPointSetObject.hostOperator = value["HostOperator"].asString();
+		if(!value["Name"].isNull())
+			accessPointSetObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			accessPointSetObject.description = value["Description"].asString();
+		accessPointSet_.push_back(accessPointSetObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
+}
+
+std::vector<DescribeAccessPointsResult::AccessPointType> DescribeAccessPointsResult::getAccessPointSet()const
+{
+	return accessPointSet_;
 }
 
 int DescribeAccessPointsResult::getTotalCount()const
@@ -65,28 +81,13 @@ int DescribeAccessPointsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeAccessPointsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeAccessPointsResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeAccessPointsResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeAccessPointsResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeAccessPointsResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

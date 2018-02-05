@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyInstanceNetworkSpecRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyInstanceNetworkSpecRequest;
 
 ModifyInstanceNetworkSpecRequest::ModifyInstanceNetworkSpecRequest() :
-	EcsRequest("ModifyInstanceNetworkSpec")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceNetworkSpec")
 {}
 
 ModifyInstanceNetworkSpecRequest::~ModifyInstanceNetworkSpecRequest()

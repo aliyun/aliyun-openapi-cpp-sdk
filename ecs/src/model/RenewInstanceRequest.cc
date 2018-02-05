@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/RenewInstanceRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::RenewInstanceRequest;
 
 RenewInstanceRequest::RenewInstanceRequest() :
-	EcsRequest("RenewInstance")
+	RpcServiceRequest("ecs", "2014-05-26", "RenewInstance")
 {}
 
 RenewInstanceRequest::~RenewInstanceRequest()

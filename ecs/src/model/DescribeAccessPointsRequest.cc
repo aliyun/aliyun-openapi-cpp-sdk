@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeAccessPointsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeAccessPointsRequest;
 
 DescribeAccessPointsRequest::DescribeAccessPointsRequest() :
-	EcsRequest("DescribeAccessPoints")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeAccessPoints")
 {}
 
 DescribeAccessPointsRequest::~DescribeAccessPointsRequest()

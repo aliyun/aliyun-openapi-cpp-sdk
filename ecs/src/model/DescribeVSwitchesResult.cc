@@ -43,22 +43,35 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 	auto allVSwitches = value["VSwitches"]["VSwitch"];
 	for (auto value : allVSwitches)
 	{
-		VSwitch vSwitchObject;
-		vSwitchObject.vSwitchId = value["VSwitchId"].asString();
-		vSwitchObject.vpcId = value["VpcId"].asString();
-		vSwitchObject.status = value["Status"].asString();
-		vSwitchObject.cidrBlock = value["CidrBlock"].asString();
-		vSwitchObject.zoneId = value["ZoneId"].asString();
-		vSwitchObject.availableIpAddressCount = std::stol(value["AvailableIpAddressCount"].asString());
-		vSwitchObject.description = value["Description"].asString();
-		vSwitchObject.vSwitchName = value["VSwitchName"].asString();
-		vSwitchObject.creationTime = value["CreationTime"].asString();
-		vSwitchObject.isDefault = std::stoi(value["IsDefault"].asString());
-		vSwitches_.push_back(vSwitchObject);
+		VSwitch vSwitchesObject;
+		if(!value["VSwitchId"].isNull())
+			vSwitchesObject.vSwitchId = value["VSwitchId"].asString();
+		if(!value["VpcId"].isNull())
+			vSwitchesObject.vpcId = value["VpcId"].asString();
+		if(!value["Status"].isNull())
+			vSwitchesObject.status = value["Status"].asString();
+		if(!value["CidrBlock"].isNull())
+			vSwitchesObject.cidrBlock = value["CidrBlock"].asString();
+		if(!value["ZoneId"].isNull())
+			vSwitchesObject.zoneId = value["ZoneId"].asString();
+		if(!value["AvailableIpAddressCount"].isNull())
+			vSwitchesObject.availableIpAddressCount = std::stol(value["AvailableIpAddressCount"].asString());
+		if(!value["Description"].isNull())
+			vSwitchesObject.description = value["Description"].asString();
+		if(!value["VSwitchName"].isNull())
+			vSwitchesObject.vSwitchName = value["VSwitchName"].asString();
+		if(!value["CreationTime"].isNull())
+			vSwitchesObject.creationTime = value["CreationTime"].asString();
+		if(!value["IsDefault"].isNull())
+			vSwitchesObject.isDefault = value["IsDefault"].asString() == "true";
+		vSwitches_.push_back(vSwitchesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -67,19 +80,9 @@ int DescribeVSwitchesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeVSwitchesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeVSwitchesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeVSwitchesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeVSwitchesResult::getPageNumber()const
@@ -87,8 +90,8 @@ int DescribeVSwitchesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeVSwitchesResult::setPageNumber(int pageNumber)
+std::vector<DescribeVSwitchesResult::VSwitch> DescribeVSwitchesResult::getVSwitches()const
 {
-	pageNumber_ = pageNumber;
+	return vSwitches_;
 }
 

@@ -66,13 +66,9 @@ namespace AlibabaCloud
 				explicit DescribeDisksFullStatusResult(const std::string &payload);
 				~DescribeDisksFullStatusResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<DiskFullStatusType> getDiskFullStatusSet()const;
-				void setDiskFullStatusSet(const std::vector<DiskFullStatusType>& diskFullStatusSet);
 
 			protected:
 				void parse(const std::string &payload);

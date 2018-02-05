@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateVSwitchResult(const std::string &payload);
 				~CreateVSwitchResult();
 				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
 
 			protected:
 				void parse(const std::string &payload);

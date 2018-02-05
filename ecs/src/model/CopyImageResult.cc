@@ -40,17 +40,13 @@ void CopyImageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	imageId_ = value["ImageId"].asString();
+	if(!value["ImageId"].isNull())
+		imageId_ = value["ImageId"].asString();
 
 }
 
 std::string CopyImageResult::getImageId()const
 {
 	return imageId_;
-}
-
-void CopyImageResult::setImageId(const std::string& imageId)
-{
-	imageId_ = imageId;
 }
 

@@ -45,13 +45,9 @@ namespace AlibabaCloud
 				explicit DetachKeyPairResult(const std::string &payload);
 				~DetachKeyPairResult();
 				std::string getKeyPairName()const;
-				void setKeyPairName(const std::string& keyPairName);
 				std::string getTotalCount()const;
-				void setTotalCount(const std::string& totalCount);
 				std::vector<Result> getResults()const;
-				void setResults(const std::vector<Result>& results);
 				std::string getFailCount()const;
-				void setFailCount(const std::string& failCount);
 
 			protected:
 				void parse(const std::string &payload);

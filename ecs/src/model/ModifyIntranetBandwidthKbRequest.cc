@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyIntranetBandwidthKbRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyIntranetBandwidthKbRequest;
 
 ModifyIntranetBandwidthKbRequest::ModifyIntranetBandwidthKbRequest() :
-	EcsRequest("ModifyIntranetBandwidthKb")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyIntranetBandwidthKb")
 {}
 
 ModifyIntranetBandwidthKbRequest::~ModifyIntranetBandwidthKbRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyVpcAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyVpcAttributeRequest;
 
 ModifyVpcAttributeRequest::ModifyVpcAttributeRequest() :
-	EcsRequest("ModifyVpcAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyVpcAttribute")
 {}
 
 ModifyVpcAttributeRequest::~ModifyVpcAttributeRequest()

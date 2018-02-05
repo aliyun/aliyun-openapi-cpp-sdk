@@ -43,11 +43,18 @@ void DescribeInstanceTypeFamiliesResult::parse(const std::string &payload)
 	auto allInstanceTypeFamilies = value["InstanceTypeFamilies"]["InstanceTypeFamily"];
 	for (auto value : allInstanceTypeFamilies)
 	{
-		InstanceTypeFamily instanceTypeFamilyObject;
-		instanceTypeFamilyObject.instanceTypeFamilyId = value["InstanceTypeFamilyId"].asString();
-		instanceTypeFamilyObject.generation = value["Generation"].asString();
-		instanceTypeFamilies_.push_back(instanceTypeFamilyObject);
+		InstanceTypeFamily instanceTypeFamiliesObject;
+		if(!value["InstanceTypeFamilyId"].isNull())
+			instanceTypeFamiliesObject.instanceTypeFamilyId = value["InstanceTypeFamilyId"].asString();
+		if(!value["Generation"].isNull())
+			instanceTypeFamiliesObject.generation = value["Generation"].asString();
+		instanceTypeFamilies_.push_back(instanceTypeFamiliesObject);
 	}
 
+}
+
+std::vector<DescribeInstanceTypeFamiliesResult::InstanceTypeFamily> DescribeInstanceTypeFamiliesResult::getInstanceTypeFamilies()const
+{
+	return instanceTypeFamilies_;
 }
 

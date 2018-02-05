@@ -48,22 +48,33 @@ void DescribePriceResult::parse(const std::string &payload)
 		for (auto value : allRules)
 		{
 			PriceInfo::Rule ruleObject;
-			ruleObject.ruleId = std::stol(value["RuleId"].asString());
-			ruleObject.description = value["Description"].asString();
+			if(!value["RuleId"].isNull())
+				ruleObject.ruleId = std::stol(value["RuleId"].asString());
+			if(!value["Description"].isNull())
+				ruleObject.description = value["Description"].asString();
 			priceInfoObject.rules.push_back(ruleObject);
 		}
 		auto allPrice = value["Price"];
 		for (auto value : allPrice)
 		{
 			PriceInfo::Price priceObject;
-			priceObject.originalPrice = std::stof(value["OriginalPrice"].asString());
-			priceObject.discountPrice = std::stof(value["DiscountPrice"].asString());
-			priceObject.tradePrice = std::stof(value["TradePrice"].asString());
-			priceObject.currency = value["Currency"].asString();
+			if(!value["OriginalPrice"].isNull())
+				priceObject.originalPrice = std::stof(value["OriginalPrice"].asString());
+			if(!value["DiscountPrice"].isNull())
+				priceObject.discountPrice = std::stof(value["DiscountPrice"].asString());
+			if(!value["TradePrice"].isNull())
+				priceObject.tradePrice = std::stof(value["TradePrice"].asString());
+			if(!value["Currency"].isNull())
+				priceObject.currency = value["Currency"].asString();
 			priceInfoObject.price.push_back(priceObject);
 		}
 		priceInfo_.push_back(priceInfoObject);
 	}
 
+}
+
+std::vector<DescribePriceResult::PriceInfo> DescribePriceResult::getPriceInfo()const
+{
+	return priceInfo_;
 }
 

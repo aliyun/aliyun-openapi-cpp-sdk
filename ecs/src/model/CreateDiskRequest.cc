@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CreateDiskRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CreateDiskRequest;
 
 CreateDiskRequest::CreateDiskRequest() :
-	EcsRequest("CreateDisk")
+	RpcServiceRequest("ecs", "2014-05-26", "CreateDisk")
 {}
 
 CreateDiskRequest::~CreateDiskRequest()

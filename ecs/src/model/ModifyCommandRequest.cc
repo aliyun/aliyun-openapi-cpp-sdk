@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyCommandRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyCommandRequest;
 
 ModifyCommandRequest::ModifyCommandRequest() :
-	EcsRequest("ModifyCommand")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyCommand")
 {}
 
 ModifyCommandRequest::~ModifyCommandRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/RebootInstanceRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::RebootInstanceRequest;
 
 RebootInstanceRequest::RebootInstanceRequest() :
-	EcsRequest("RebootInstance")
+	RpcServiceRequest("ecs", "2014-05-26", "RebootInstance")
 {}
 
 RebootInstanceRequest::~RebootInstanceRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeInstanceHistoryEventsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeInstanceHistoryEventsRequest;
 
 DescribeInstanceHistoryEventsRequest::DescribeInstanceHistoryEventsRequest() :
-	EcsRequest("DescribeInstanceHistoryEvents")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceHistoryEvents")
 {}
 
 DescribeInstanceHistoryEventsRequest::~DescribeInstanceHistoryEventsRequest()

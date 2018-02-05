@@ -38,13 +38,9 @@ namespace AlibabaCloud
 				explicit DescribeInstancePhysicalAttributeResult(const std::string &payload);
 				~DescribeInstancePhysicalAttributeResult();
 				std::string getRackId()const;
-				void setRackId(const std::string& rackId);
 				std::string getNodeControllerId()const;
-				void setNodeControllerId(const std::string& nodeControllerId);
 				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getVlanId()const;
-				void setVlanId(const std::string& vlanId);
 
 			protected:
 				void parse(const std::string &payload);

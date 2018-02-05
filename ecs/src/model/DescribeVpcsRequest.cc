@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeVpcsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeVpcsRequest;
 
 DescribeVpcsRequest::DescribeVpcsRequest() :
-	EcsRequest("DescribeVpcs")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeVpcs")
 {}
 
 DescribeVpcsRequest::~DescribeVpcsRequest()

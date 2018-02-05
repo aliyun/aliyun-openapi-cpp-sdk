@@ -38,11 +38,8 @@ namespace AlibabaCloud
 				explicit ImportImageResult(const std::string &payload);
 				~ImportImageResult();
 				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 				std::string getImageId()const;
-				void setImageId(const std::string& imageId);
 				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
 			protected:
 				void parse(const std::string &payload);

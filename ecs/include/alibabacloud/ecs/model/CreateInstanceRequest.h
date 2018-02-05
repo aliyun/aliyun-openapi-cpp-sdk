@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/ecs/EcsRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/ecs/EcsExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT CreateInstanceRequest : public EcsRequest
+			class ALIBABACLOUD_ECS_EXPORT CreateInstanceRequest : public RpcServiceRequest
 			{
 				struct DataDisk
 				{
@@ -75,6 +76,8 @@ namespace AlibabaCloud
 				void setNodeControllerId(const std::string& nodeControllerId);
 				int getPeriod()const;
 				void setPeriod(int period);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
 				std::string getTag5Key()const;
 				void setTag5Key(const std::string& tag5Key);
 				long getOwnerId()const;
@@ -170,6 +173,7 @@ namespace AlibabaCloud
 				int autoRenewPeriod_;
 				std::string nodeControllerId_;
 				int period_;
+				bool dryRun_;
 				std::string tag5Key_;
 				long ownerId_;
 				std::string vSwitchId_;

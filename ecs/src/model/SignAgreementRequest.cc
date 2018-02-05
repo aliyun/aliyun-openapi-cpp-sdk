@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/SignAgreementRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::SignAgreementRequest;
 
 SignAgreementRequest::SignAgreementRequest() :
-	EcsRequest("SignAgreement")
+	RpcServiceRequest("ecs", "2014-05-26", "SignAgreement")
 {}
 
 SignAgreementRequest::~SignAgreementRequest()

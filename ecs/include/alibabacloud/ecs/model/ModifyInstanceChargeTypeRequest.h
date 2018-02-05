@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/ecs/EcsRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/ecs/EcsExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT ModifyInstanceChargeTypeRequest : public EcsRequest
+			class ALIBABACLOUD_ECS_EXPORT ModifyInstanceChargeTypeRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -58,6 +59,8 @@ namespace AlibabaCloud
 				void setInstanceIds(const std::string& instanceIds);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getInstanceChargeType()const;
+				void setInstanceChargeType(const std::string& instanceChargeType);
 
             private:
 				long resourceOwnerId_;
@@ -72,6 +75,7 @@ namespace AlibabaCloud
 				std::string periodUnit_;
 				std::string instanceIds_;
 				std::string regionId_;
+				std::string instanceChargeType_;
 
 			};
 		}

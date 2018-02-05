@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/LeaveSecurityGroupRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::LeaveSecurityGroupRequest;
 
 LeaveSecurityGroupRequest::LeaveSecurityGroupRequest() :
-	EcsRequest("LeaveSecurityGroup")
+	RpcServiceRequest("ecs", "2014-05-26", "LeaveSecurityGroup")
 {}
 
 LeaveSecurityGroupRequest::~LeaveSecurityGroupRequest()

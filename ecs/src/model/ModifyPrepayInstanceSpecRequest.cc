@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyPrepayInstanceSpecRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyPrepayInstanceSpecRequest;
 
 ModifyPrepayInstanceSpecRequest::ModifyPrepayInstanceSpecRequest() :
-	EcsRequest("ModifyPrepayInstanceSpec")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyPrepayInstanceSpec")
 {}
 
 ModifyPrepayInstanceSpecRequest::~ModifyPrepayInstanceSpecRequest()
@@ -123,5 +122,16 @@ void ModifyPrepayInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyPrepayInstanceSpecRequest::getOperatorType()const
+{
+	return operatorType_;
+}
+
+void ModifyPrepayInstanceSpecRequest::setOperatorType(const std::string& operatorType)
+{
+	operatorType_ = operatorType;
+	setParameter("OperatorType", operatorType);
 }
 

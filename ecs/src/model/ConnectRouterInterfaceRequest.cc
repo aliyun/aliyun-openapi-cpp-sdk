@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ConnectRouterInterfaceRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ConnectRouterInterfaceRequest;
 
 ConnectRouterInterfaceRequest::ConnectRouterInterfaceRequest() :
-	EcsRequest("ConnectRouterInterface")
+	RpcServiceRequest("ecs", "2014-05-26", "ConnectRouterInterface")
 {}
 
 ConnectRouterInterfaceRequest::~ConnectRouterInterfaceRequest()

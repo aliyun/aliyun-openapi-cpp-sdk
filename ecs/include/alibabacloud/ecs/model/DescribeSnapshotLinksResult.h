@@ -50,13 +50,9 @@ namespace AlibabaCloud
 				explicit DescribeSnapshotLinksResult(const std::string &payload);
 				~DescribeSnapshotLinksResult();
 				std::vector<SnapshotLink> getSnapshotLinks()const;
-				void setSnapshotLinks(const std::vector<SnapshotLink>& snapshotLinks);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

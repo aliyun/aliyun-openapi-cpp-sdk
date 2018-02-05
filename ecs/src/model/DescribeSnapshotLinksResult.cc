@@ -43,22 +43,39 @@ void DescribeSnapshotLinksResult::parse(const std::string &payload)
 	auto allSnapshotLinks = value["SnapshotLinks"]["SnapshotLink"];
 	for (auto value : allSnapshotLinks)
 	{
-		SnapshotLink snapshotLinkObject;
-		snapshotLinkObject.snapshotLinkId = value["SnapshotLinkId"].asString();
-		snapshotLinkObject.regionId = value["RegionId"].asString();
-		snapshotLinkObject.instanceId = value["InstanceId"].asString();
-		snapshotLinkObject.instanceName = value["InstanceName"].asString();
-		snapshotLinkObject.sourceDiskId = value["SourceDiskId"].asString();
-		snapshotLinkObject.sourceDiskSize = std::stoi(value["SourceDiskSize"].asString());
-		snapshotLinkObject.sourceDiskType = value["SourceDiskType"].asString();
-		snapshotLinkObject.totalSize = std::stoi(value["TotalSize"].asString());
-		snapshotLinkObject.totalCount = std::stoi(value["TotalCount"].asString());
-		snapshotLinks_.push_back(snapshotLinkObject);
+		SnapshotLink snapshotLinksObject;
+		if(!value["SnapshotLinkId"].isNull())
+			snapshotLinksObject.snapshotLinkId = value["SnapshotLinkId"].asString();
+		if(!value["RegionId"].isNull())
+			snapshotLinksObject.regionId = value["RegionId"].asString();
+		if(!value["InstanceId"].isNull())
+			snapshotLinksObject.instanceId = value["InstanceId"].asString();
+		if(!value["InstanceName"].isNull())
+			snapshotLinksObject.instanceName = value["InstanceName"].asString();
+		if(!value["SourceDiskId"].isNull())
+			snapshotLinksObject.sourceDiskId = value["SourceDiskId"].asString();
+		if(!value["SourceDiskSize"].isNull())
+			snapshotLinksObject.sourceDiskSize = std::stoi(value["SourceDiskSize"].asString());
+		if(!value["SourceDiskType"].isNull())
+			snapshotLinksObject.sourceDiskType = value["SourceDiskType"].asString();
+		if(!value["TotalSize"].isNull())
+			snapshotLinksObject.totalSize = std::stoi(value["TotalSize"].asString());
+		if(!value["TotalCount"].isNull())
+			snapshotLinksObject.totalCount = std::stoi(value["TotalCount"].asString());
+		snapshotLinks_.push_back(snapshotLinksObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
+}
+
+std::vector<DescribeSnapshotLinksResult::SnapshotLink> DescribeSnapshotLinksResult::getSnapshotLinks()const
+{
+	return snapshotLinks_;
 }
 
 int DescribeSnapshotLinksResult::getTotalCount()const
@@ -66,28 +83,13 @@ int DescribeSnapshotLinksResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeSnapshotLinksResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeSnapshotLinksResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeSnapshotLinksResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeSnapshotLinksResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeSnapshotLinksResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

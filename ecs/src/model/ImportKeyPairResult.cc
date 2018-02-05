@@ -40,8 +40,10 @@ void ImportKeyPairResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	keyPairName_ = value["KeyPairName"].asString();
-	keyPairFingerPrint_ = value["KeyPairFingerPrint"].asString();
+	if(!value["KeyPairName"].isNull())
+		keyPairName_ = value["KeyPairName"].asString();
+	if(!value["KeyPairFingerPrint"].isNull())
+		keyPairFingerPrint_ = value["KeyPairFingerPrint"].asString();
 
 }
 
@@ -50,18 +52,8 @@ std::string ImportKeyPairResult::getKeyPairFingerPrint()const
 	return keyPairFingerPrint_;
 }
 
-void ImportKeyPairResult::setKeyPairFingerPrint(const std::string& keyPairFingerPrint)
-{
-	keyPairFingerPrint_ = keyPairFingerPrint;
-}
-
 std::string ImportKeyPairResult::getKeyPairName()const
 {
 	return keyPairName_;
-}
-
-void ImportKeyPairResult::setKeyPairName(const std::string& keyPairName)
-{
-	keyPairName_ = keyPairName;
 }
 

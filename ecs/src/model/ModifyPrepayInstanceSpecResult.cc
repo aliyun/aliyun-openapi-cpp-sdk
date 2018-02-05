@@ -40,17 +40,13 @@ void ModifyPrepayInstanceSpecResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	orderId_ = value["OrderId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
 }
 
 std::string ModifyPrepayInstanceSpecResult::getOrderId()const
 {
 	return orderId_;
-}
-
-void ModifyPrepayInstanceSpecResult::setOrderId(const std::string& orderId)
-{
-	orderId_ = orderId;
 }
 

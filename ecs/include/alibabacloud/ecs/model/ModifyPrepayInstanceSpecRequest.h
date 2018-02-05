@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/ecs/EcsRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/ecs/EcsExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT ModifyPrepayInstanceSpecRequest : public EcsRequest
+			class ALIBABACLOUD_ECS_EXPORT ModifyPrepayInstanceSpecRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -52,6 +53,8 @@ namespace AlibabaCloud
 				void setInstanceType(const std::string& instanceType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getOperatorType()const;
+				void setOperatorType(const std::string& operatorType);
 
             private:
 				long resourceOwnerId_;
@@ -63,6 +66,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string instanceType_;
 				long ownerId_;
+				std::string operatorType_;
 
 			};
 		}

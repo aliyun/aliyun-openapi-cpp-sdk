@@ -40,9 +40,12 @@ void CreateVpcResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	vpcId_ = value["VpcId"].asString();
-	vRouterId_ = value["VRouterId"].asString();
-	routeTableId_ = value["RouteTableId"].asString();
+	if(!value["VpcId"].isNull())
+		vpcId_ = value["VpcId"].asString();
+	if(!value["VRouterId"].isNull())
+		vRouterId_ = value["VRouterId"].asString();
+	if(!value["RouteTableId"].isNull())
+		routeTableId_ = value["RouteTableId"].asString();
 
 }
 
@@ -51,28 +54,13 @@ std::string CreateVpcResult::getVRouterId()const
 	return vRouterId_;
 }
 
-void CreateVpcResult::setVRouterId(const std::string& vRouterId)
-{
-	vRouterId_ = vRouterId;
-}
-
 std::string CreateVpcResult::getRouteTableId()const
 {
 	return routeTableId_;
 }
 
-void CreateVpcResult::setRouteTableId(const std::string& routeTableId)
-{
-	routeTableId_ = routeTableId;
-}
-
 std::string CreateVpcResult::getVpcId()const
 {
 	return vpcId_;
-}
-
-void CreateVpcResult::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
 }
 

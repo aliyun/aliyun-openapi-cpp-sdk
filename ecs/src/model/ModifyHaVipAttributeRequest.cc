@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyHaVipAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyHaVipAttributeRequest;
 
 ModifyHaVipAttributeRequest::ModifyHaVipAttributeRequest() :
-	EcsRequest("ModifyHaVipAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyHaVipAttribute")
 {}
 
 ModifyHaVipAttributeRequest::~ModifyHaVipAttributeRequest()

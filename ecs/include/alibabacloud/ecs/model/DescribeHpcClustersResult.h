@@ -44,13 +44,9 @@ namespace AlibabaCloud
 				explicit DescribeHpcClustersResult(const std::string &payload);
 				~DescribeHpcClustersResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<HpcCluster> getHpcClusters()const;
-				void setHpcClusters(const std::vector<HpcCluster>& hpcClusters);
 
 			protected:
 				void parse(const std::string &payload);

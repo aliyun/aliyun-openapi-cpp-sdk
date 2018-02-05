@@ -43,10 +43,16 @@ void DescribeClustersResult::parse(const std::string &payload)
 	auto allClusters = value["Clusters"]["Cluster"];
 	for (auto value : allClusters)
 	{
-		Cluster clusterObject;
-		clusterObject.clusterId = value["ClusterId"].asString();
-		clusters_.push_back(clusterObject);
+		Cluster clustersObject;
+		if(!value["ClusterId"].isNull())
+			clustersObject.clusterId = value["ClusterId"].asString();
+		clusters_.push_back(clustersObject);
 	}
 
+}
+
+std::vector<DescribeClustersResult::Cluster> DescribeClustersResult::getClusters()const
+{
+	return clusters_;
 }
 

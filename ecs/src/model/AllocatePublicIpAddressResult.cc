@@ -40,17 +40,13 @@ void AllocatePublicIpAddressResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	ipAddress_ = value["IpAddress"].asString();
+	if(!value["IpAddress"].isNull())
+		ipAddress_ = value["IpAddress"].asString();
 
 }
 
 std::string AllocatePublicIpAddressResult::getIpAddress()const
 {
 	return ipAddress_;
-}
-
-void AllocatePublicIpAddressResult::setIpAddress(const std::string& ipAddress)
-{
-	ipAddress_ = ipAddress;
 }
 

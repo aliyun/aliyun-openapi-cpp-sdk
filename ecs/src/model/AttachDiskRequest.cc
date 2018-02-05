@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/AttachDiskRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::AttachDiskRequest;
 
 AttachDiskRequest::AttachDiskRequest() :
-	EcsRequest("AttachDisk")
+	RpcServiceRequest("ecs", "2014-05-26", "AttachDisk")
 {}
 
 AttachDiskRequest::~AttachDiskRequest()

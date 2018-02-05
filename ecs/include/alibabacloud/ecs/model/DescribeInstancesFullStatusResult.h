@@ -73,13 +73,9 @@ namespace AlibabaCloud
 				explicit DescribeInstancesFullStatusResult(const std::string &payload);
 				~DescribeInstancesFullStatusResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<InstanceFullStatusType> getInstanceFullStatusSet()const;
-				void setInstanceFullStatusSet(const std::vector<InstanceFullStatusType>& instanceFullStatusSet);
 
 			protected:
 				void parse(const std::string &payload);

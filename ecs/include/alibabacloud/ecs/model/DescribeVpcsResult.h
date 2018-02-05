@@ -52,13 +52,9 @@ namespace AlibabaCloud
 				explicit DescribeVpcsResult(const std::string &payload);
 				~DescribeVpcsResult();
 				std::vector<Vpc> getVpcs()const;
-				void setVpcs(const std::vector<Vpc>& vpcs);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

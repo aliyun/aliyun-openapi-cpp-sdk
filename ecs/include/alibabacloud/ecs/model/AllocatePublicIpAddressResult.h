@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit AllocatePublicIpAddressResult(const std::string &payload);
 				~AllocatePublicIpAddressResult();
 				std::string getIpAddress()const;
-				void setIpAddress(const std::string& ipAddress);
 
 			protected:
 				void parse(const std::string &payload);

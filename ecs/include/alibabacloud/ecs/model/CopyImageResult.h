@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CopyImageResult(const std::string &payload);
 				~CopyImageResult();
 				std::string getImageId()const;
-				void setImageId(const std::string& imageId);
 
 			protected:
 				void parse(const std::string &payload);

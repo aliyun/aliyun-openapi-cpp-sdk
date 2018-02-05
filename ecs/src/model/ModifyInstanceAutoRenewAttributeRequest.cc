@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyInstanceAutoRenewAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyInstanceAutoRenewAttributeRequest;
 
 ModifyInstanceAutoRenewAttributeRequest::ModifyInstanceAutoRenewAttributeRequest() :
-	EcsRequest("ModifyInstanceAutoRenewAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute")
 {}
 
 ModifyInstanceAutoRenewAttributeRequest::~ModifyInstanceAutoRenewAttributeRequest()

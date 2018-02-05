@@ -43,7 +43,7 @@ namespace AlibabaCloud
 						int memory;
 						std::string instanceType;
 					};
-					struct zone
+					struct Zone
 					{
 						std::vector<std::string> networkTypes;
 						std::string zoneNo;
@@ -52,7 +52,7 @@ namespace AlibabaCloud
 					std::string commodityCode;
 					std::vector<InstanceType> instanceType;
 					std::string scene;
-					std::vector<RecommendInstanceType::zone> zones;
+					std::vector<RecommendInstanceType::Zone> zones;
 				};
 
 
@@ -60,7 +60,6 @@ namespace AlibabaCloud
 				explicit DescribeRecommendInstanceTypeResult(const std::string &payload);
 				~DescribeRecommendInstanceTypeResult();
 				std::vector<RecommendInstanceType> getData()const;
-				void setData(const std::vector<RecommendInstanceType>& data);
 
 			protected:
 				void parse(const std::string &payload);

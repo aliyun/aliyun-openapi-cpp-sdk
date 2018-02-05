@@ -43,13 +43,9 @@ namespace AlibabaCloud
 				explicit DescribeKeyPairsResult(const std::string &payload);
 				~DescribeKeyPairsResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<KeyPair> getKeyPairs()const;
-				void setKeyPairs(const std::vector<KeyPair>& keyPairs);
 
 			protected:
 				void parse(const std::string &payload);

@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit CheckDiskEnableAutoSnapshotValidationResult(const std::string &payload);
 				~CheckDiskEnableAutoSnapshotValidationResult();
 				int getAutoSnapshotOccupation()const;
-				void setAutoSnapshotOccupation(int autoSnapshotOccupation);
 				std::string getIsPermitted()const;
-				void setIsPermitted(const std::string& isPermitted);
 
 			protected:
 				void parse(const std::string &payload);

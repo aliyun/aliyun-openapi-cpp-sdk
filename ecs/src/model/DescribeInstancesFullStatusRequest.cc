@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeInstancesFullStatusRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeInstancesFullStatusRequest;
 
 DescribeInstancesFullStatusRequest::DescribeInstancesFullStatusRequest() :
-	EcsRequest("DescribeInstancesFullStatus")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstancesFullStatus")
 {}
 
 DescribeInstancesFullStatusRequest::~DescribeInstancesFullStatusRequest()

@@ -51,13 +51,9 @@ namespace AlibabaCloud
 				explicit DetachInstanceRamRoleResult(const std::string &payload);
 				~DetachInstanceRamRoleResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getRamRoleName()const;
-				void setRamRoleName(const std::string& ramRoleName);
 				int getFailCount()const;
-				void setFailCount(int failCount);
 				std::vector<Result> getDetachInstanceRamRoleResults()const;
-				void setDetachInstanceRamRoleResults(const std::vector<Result>& detachInstanceRamRoleResults);
 
 			protected:
 				void parse(const std::string &payload);

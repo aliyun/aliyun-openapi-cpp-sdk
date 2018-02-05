@@ -43,51 +43,72 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 	auto allNetworkInterfaceSets = value["NetworkInterfaceSets"]["NetworkInterfaceSet"];
 	for (auto value : allNetworkInterfaceSets)
 	{
-		NetworkInterfaceSet networkInterfaceSetObject;
-		networkInterfaceSetObject.networkInterfaceId = value["NetworkInterfaceId"].asString();
-		networkInterfaceSetObject.status = value["Status"].asString();
-		networkInterfaceSetObject.type = value["Type"].asString();
-		networkInterfaceSetObject.vpcId = value["VpcId"].asString();
-		networkInterfaceSetObject.vSwitchId = value["VSwitchId"].asString();
-		networkInterfaceSetObject.zoneId = value["ZoneId"].asString();
-		networkInterfaceSetObject.privateIpAddress = value["PrivateIpAddress"].asString();
-		networkInterfaceSetObject.macAddress = value["MacAddress"].asString();
-		networkInterfaceSetObject.networkInterfaceName = value["NetworkInterfaceName"].asString();
-		networkInterfaceSetObject.description = value["Description"].asString();
-		networkInterfaceSetObject.instanceId = value["InstanceId"].asString();
-		networkInterfaceSetObject.creationTime = value["CreationTime"].asString();
+		NetworkInterfaceSet networkInterfaceSetsObject;
+		if(!value["NetworkInterfaceId"].isNull())
+			networkInterfaceSetsObject.networkInterfaceId = value["NetworkInterfaceId"].asString();
+		if(!value["Status"].isNull())
+			networkInterfaceSetsObject.status = value["Status"].asString();
+		if(!value["Type"].isNull())
+			networkInterfaceSetsObject.type = value["Type"].asString();
+		if(!value["VpcId"].isNull())
+			networkInterfaceSetsObject.vpcId = value["VpcId"].asString();
+		if(!value["VSwitchId"].isNull())
+			networkInterfaceSetsObject.vSwitchId = value["VSwitchId"].asString();
+		if(!value["ZoneId"].isNull())
+			networkInterfaceSetsObject.zoneId = value["ZoneId"].asString();
+		if(!value["PrivateIpAddress"].isNull())
+			networkInterfaceSetsObject.privateIpAddress = value["PrivateIpAddress"].asString();
+		if(!value["MacAddress"].isNull())
+			networkInterfaceSetsObject.macAddress = value["MacAddress"].asString();
+		if(!value["NetworkInterfaceName"].isNull())
+			networkInterfaceSetsObject.networkInterfaceName = value["NetworkInterfaceName"].asString();
+		if(!value["Description"].isNull())
+			networkInterfaceSetsObject.description = value["Description"].asString();
+		if(!value["InstanceId"].isNull())
+			networkInterfaceSetsObject.instanceId = value["InstanceId"].asString();
+		if(!value["CreationTime"].isNull())
+			networkInterfaceSetsObject.creationTime = value["CreationTime"].asString();
 		auto allPrivateIpSets = value["PrivateIpSets"]["PrivateIpSet"];
 		for (auto value : allPrivateIpSets)
 		{
-			NetworkInterfaceSet::PrivateIpSet privateIpSetObject;
-			privateIpSetObject.privateIpAddress = value["PrivateIpAddress"].asString();
-			privateIpSetObject.primary = std::stoi(value["Primary"].asString());
-			auto allAssociatedPublicIp = value["AssociatedPublicIp"];
-			for (auto value : allAssociatedPublicIp)
+			NetworkInterfaceSet::PrivateIpSet privateIpSetsObject;
+			if(!value["PrivateIpAddress"].isNull())
+				privateIpSetsObject.privateIpAddress = value["PrivateIpAddress"].asString();
+			if(!value["Primary"].isNull())
+				privateIpSetsObject.primary = value["Primary"].asString() == "true";
+			auto allAssociatedPublicIp1 = value["AssociatedPublicIp"];
+			for (auto value : allAssociatedPublicIp1)
 			{
 				NetworkInterfaceSet::PrivateIpSet::AssociatedPublicIp1 associatedPublicIp1Object;
-				associatedPublicIp1Object.publicIpAddress = value["PublicIpAddress"].asString();
-				associatedPublicIp1Object.allocationId = value["AllocationId"].asString();
-				privateIpSetObject.associatedPublicIp1.push_back(associatedPublicIp1Object);
+				if(!value["PublicIpAddress"].isNull())
+					associatedPublicIp1Object.publicIpAddress = value["PublicIpAddress"].asString();
+				if(!value["AllocationId"].isNull())
+					associatedPublicIp1Object.allocationId = value["AllocationId"].asString();
+				privateIpSetsObject.associatedPublicIp1.push_back(associatedPublicIp1Object);
 			}
-			networkInterfaceSetObject.privateIpSets.push_back(privateIpSetObject);
+			networkInterfaceSetsObject.privateIpSets.push_back(privateIpSetsObject);
 		}
 		auto allAssociatedPublicIp = value["AssociatedPublicIp"];
 		for (auto value : allAssociatedPublicIp)
 		{
 			NetworkInterfaceSet::AssociatedPublicIp associatedPublicIpObject;
-			associatedPublicIpObject.publicIpAddress = value["PublicIpAddress"].asString();
-			associatedPublicIpObject.allocationId = value["AllocationId"].asString();
-			networkInterfaceSetObject.associatedPublicIp.push_back(associatedPublicIpObject);
+			if(!value["PublicIpAddress"].isNull())
+				associatedPublicIpObject.publicIpAddress = value["PublicIpAddress"].asString();
+			if(!value["AllocationId"].isNull())
+				associatedPublicIpObject.allocationId = value["AllocationId"].asString();
+			networkInterfaceSetsObject.associatedPublicIp.push_back(associatedPublicIpObject);
 		}
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
-			networkInterfaceSetObject.securityGroupIds.push_back(value.asString());
-		networkInterfaceSets_.push_back(networkInterfaceSetObject);
+			networkInterfaceSetsObject.securityGroupIds.push_back(value.asString());
+		networkInterfaceSets_.push_back(networkInterfaceSetsObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -96,19 +117,9 @@ int DescribeNetworkInterfacesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeNetworkInterfacesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeNetworkInterfacesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeNetworkInterfacesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeNetworkInterfacesResult::getPageNumber()const
@@ -116,8 +127,8 @@ int DescribeNetworkInterfacesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeNetworkInterfacesResult::setPageNumber(int pageNumber)
+std::vector<DescribeNetworkInterfacesResult::NetworkInterfaceSet> DescribeNetworkInterfacesResult::getNetworkInterfaceSets()const
 {
-	pageNumber_ = pageNumber;
+	return networkInterfaceSets_;
 }
 

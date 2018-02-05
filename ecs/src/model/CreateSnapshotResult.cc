@@ -40,17 +40,13 @@ void CreateSnapshotResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	snapshotId_ = value["SnapshotId"].asString();
+	if(!value["SnapshotId"].isNull())
+		snapshotId_ = value["SnapshotId"].asString();
 
 }
 
 std::string CreateSnapshotResult::getSnapshotId()const
 {
 	return snapshotId_;
-}
-
-void CreateSnapshotResult::setSnapshotId(const std::string& snapshotId)
-{
-	snapshotId_ = snapshotId;
 }
 

@@ -43,34 +43,49 @@ void DescribeRecommendInstanceTypeResult::parse(const std::string &payload)
 	auto allData = value["Data"]["RecommendInstanceType"];
 	for (auto value : allData)
 	{
-		RecommendInstanceType recommendInstanceTypeObject;
-		recommendInstanceTypeObject.regionNo = value["RegionNo"].asString();
-		recommendInstanceTypeObject.commodityCode = value["CommodityCode"].asString();
-		recommendInstanceTypeObject.scene = value["Scene"].asString();
+		RecommendInstanceType dataObject;
+		if(!value["RegionNo"].isNull())
+			dataObject.regionNo = value["RegionNo"].asString();
+		if(!value["CommodityCode"].isNull())
+			dataObject.commodityCode = value["CommodityCode"].asString();
+		if(!value["Scene"].isNull())
+			dataObject.scene = value["Scene"].asString();
 		auto allZones = value["Zones"]["zone"];
 		for (auto value : allZones)
 		{
-			RecommendInstanceType::zone zoneObject;
-			zoneObject.zoneNo = value["ZoneNo"].asString();
+			RecommendInstanceType::Zone zonesObject;
+			if(!value["ZoneNo"].isNull())
+				zonesObject.zoneNo = value["ZoneNo"].asString();
 			auto allNetworkTypes = value["NetworkTypes"]["NetworkType"];
 			for (auto value : allNetworkTypes)
-				zoneObject.networkTypes.push_back(value.asString());
-			recommendInstanceTypeObject.zones.push_back(zoneObject);
+				zonesObject.networkTypes.push_back(value.asString());
+			dataObject.zones.push_back(zonesObject);
 		}
 		auto allInstanceType = value["InstanceType"];
 		for (auto value : allInstanceType)
 		{
 			RecommendInstanceType::InstanceType instanceTypeObject;
-			instanceTypeObject.generation = value["Generation"].asString();
-			instanceTypeObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
-			instanceTypeObject.instanceType = value["InstanceType"].asString();
-			instanceTypeObject.supportIoOptimized = value["SupportIoOptimized"].asString();
-			instanceTypeObject.cores = std::stoi(value["Cores"].asString());
-			instanceTypeObject.memory = std::stoi(value["Memory"].asString());
-			recommendInstanceTypeObject.instanceType.push_back(instanceTypeObject);
+			if(!value["Generation"].isNull())
+				instanceTypeObject.generation = value["Generation"].asString();
+			if(!value["InstanceTypeFamily"].isNull())
+				instanceTypeObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
+			if(!value["InstanceType"].isNull())
+				instanceTypeObject.instanceType = value["InstanceType"].asString();
+			if(!value["SupportIoOptimized"].isNull())
+				instanceTypeObject.supportIoOptimized = value["SupportIoOptimized"].asString();
+			if(!value["Cores"].isNull())
+				instanceTypeObject.cores = std::stoi(value["Cores"].asString());
+			if(!value["Memory"].isNull())
+				instanceTypeObject.memory = std::stoi(value["Memory"].asString());
+			dataObject.instanceType.push_back(instanceTypeObject);
 		}
-		data_.push_back(recommendInstanceTypeObject);
+		data_.push_back(dataObject);
 	}
 
+}
+
+std::vector<DescribeRecommendInstanceTypeResult::RecommendInstanceType> DescribeRecommendInstanceTypeResult::getData()const
+{
+	return data_;
 }
 

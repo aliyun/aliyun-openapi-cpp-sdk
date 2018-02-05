@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/AddBandwidthPackageIpsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::AddBandwidthPackageIpsRequest;
 
 AddBandwidthPackageIpsRequest::AddBandwidthPackageIpsRequest() :
-	EcsRequest("AddBandwidthPackageIps")
+	RpcServiceRequest("ecs", "2014-05-26", "AddBandwidthPackageIps")
 {}
 
 AddBandwidthPackageIpsRequest::~AddBandwidthPackageIpsRequest()

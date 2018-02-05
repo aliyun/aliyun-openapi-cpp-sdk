@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/ecs/EcsRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/ecs/EcsExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT TerminatePhysicalConnectionRequest : public EcsRequest
+			class ALIBABACLOUD_ECS_EXPORT TerminatePhysicalConnectionRequest : public RpcServiceRequest
 			{
 
 			public:

@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit RunInstancesResult(const std::string &payload);
 				~RunInstancesResult();
 				std::vector<std::string> getInstanceIdSets()const;
-				void setInstanceIdSets(const std::vector<std::string>& instanceIdSets);
 
 			protected:
 				void parse(const std::string &payload);

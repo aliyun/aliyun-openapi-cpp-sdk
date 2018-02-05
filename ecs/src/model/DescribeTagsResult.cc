@@ -43,26 +43,37 @@ void DescribeTagsResult::parse(const std::string &payload)
 	auto allTags = value["Tags"]["Tag"];
 	for (auto value : allTags)
 	{
-		Tag tagObject;
-		tagObject.tagKey = value["TagKey"].asString();
-		tagObject.tagValue = value["TagValue"].asString();
+		Tag tagsObject;
+		if(!value["TagKey"].isNull())
+			tagsObject.tagKey = value["TagKey"].asString();
+		if(!value["TagValue"].isNull())
+			tagsObject.tagValue = value["TagValue"].asString();
 		auto allResourceTypeCount = value["ResourceTypeCount"];
 		for (auto value : allResourceTypeCount)
 		{
 			Tag::ResourceTypeCount resourceTypeCountObject;
-			resourceTypeCountObject.instance = std::stoi(value["Instance"].asString());
-			resourceTypeCountObject.disk = std::stoi(value["Disk"].asString());
-			resourceTypeCountObject.volume = std::stoi(value["Volume"].asString());
-			resourceTypeCountObject.image = std::stoi(value["Image"].asString());
-			resourceTypeCountObject.snapshot = std::stoi(value["Snapshot"].asString());
-			resourceTypeCountObject.securitygroup = std::stoi(value["Securitygroup"].asString());
-			tagObject.resourceTypeCount.push_back(resourceTypeCountObject);
+			if(!value["Instance"].isNull())
+				resourceTypeCountObject.instance = std::stoi(value["Instance"].asString());
+			if(!value["Disk"].isNull())
+				resourceTypeCountObject.disk = std::stoi(value["Disk"].asString());
+			if(!value["Volume"].isNull())
+				resourceTypeCountObject.volume = std::stoi(value["Volume"].asString());
+			if(!value["Image"].isNull())
+				resourceTypeCountObject.image = std::stoi(value["Image"].asString());
+			if(!value["Snapshot"].isNull())
+				resourceTypeCountObject.snapshot = std::stoi(value["Snapshot"].asString());
+			if(!value["Securitygroup"].isNull())
+				resourceTypeCountObject.securitygroup = std::stoi(value["Securitygroup"].asString());
+			tagsObject.resourceTypeCount.push_back(resourceTypeCountObject);
 		}
-		tags_.push_back(tagObject);
+		tags_.push_back(tagsObject);
 	}
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -71,19 +82,9 @@ int DescribeTagsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeTagsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeTagsResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeTagsResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeTagsResult::getPageNumber()const
@@ -91,8 +92,8 @@ int DescribeTagsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeTagsResult::setPageNumber(int pageNumber)
+std::vector<DescribeTagsResult::Tag> DescribeTagsResult::getTags()const
 {
-	pageNumber_ = pageNumber;
+	return tags_;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeNetworkInterfacesRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeNetworkInterfacesRequest;
 
 DescribeNetworkInterfacesRequest::DescribeNetworkInterfacesRequest() :
-	EcsRequest("DescribeNetworkInterfaces")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeNetworkInterfaces")
 {}
 
 DescribeNetworkInterfacesRequest::~DescribeNetworkInterfacesRequest()

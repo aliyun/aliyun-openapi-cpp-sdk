@@ -43,22 +43,35 @@ void DescribeAutoSnapshotPolicyExResult::parse(const std::string &payload)
 	auto allAutoSnapshotPolicies = value["AutoSnapshotPolicies"]["AutoSnapshotPolicy"];
 	for (auto value : allAutoSnapshotPolicies)
 	{
-		AutoSnapshotPolicy autoSnapshotPolicyObject;
-		autoSnapshotPolicyObject.autoSnapshotPolicyId = value["AutoSnapshotPolicyId"].asString();
-		autoSnapshotPolicyObject.regionId = value["RegionId"].asString();
-		autoSnapshotPolicyObject.autoSnapshotPolicyName = value["AutoSnapshotPolicyName"].asString();
-		autoSnapshotPolicyObject.timePoints = value["TimePoints"].asString();
-		autoSnapshotPolicyObject.repeatWeekdays = value["RepeatWeekdays"].asString();
-		autoSnapshotPolicyObject.retentionDays = std::stoi(value["RetentionDays"].asString());
-		autoSnapshotPolicyObject.diskNums = std::stoi(value["DiskNums"].asString());
-		autoSnapshotPolicyObject.volumeNums = std::stoi(value["VolumeNums"].asString());
-		autoSnapshotPolicyObject.creationTime = value["CreationTime"].asString();
-		autoSnapshotPolicyObject.status = value["Status"].asString();
-		autoSnapshotPolicies_.push_back(autoSnapshotPolicyObject);
+		AutoSnapshotPolicy autoSnapshotPoliciesObject;
+		if(!value["AutoSnapshotPolicyId"].isNull())
+			autoSnapshotPoliciesObject.autoSnapshotPolicyId = value["AutoSnapshotPolicyId"].asString();
+		if(!value["RegionId"].isNull())
+			autoSnapshotPoliciesObject.regionId = value["RegionId"].asString();
+		if(!value["AutoSnapshotPolicyName"].isNull())
+			autoSnapshotPoliciesObject.autoSnapshotPolicyName = value["AutoSnapshotPolicyName"].asString();
+		if(!value["TimePoints"].isNull())
+			autoSnapshotPoliciesObject.timePoints = value["TimePoints"].asString();
+		if(!value["RepeatWeekdays"].isNull())
+			autoSnapshotPoliciesObject.repeatWeekdays = value["RepeatWeekdays"].asString();
+		if(!value["RetentionDays"].isNull())
+			autoSnapshotPoliciesObject.retentionDays = std::stoi(value["RetentionDays"].asString());
+		if(!value["DiskNums"].isNull())
+			autoSnapshotPoliciesObject.diskNums = std::stoi(value["DiskNums"].asString());
+		if(!value["VolumeNums"].isNull())
+			autoSnapshotPoliciesObject.volumeNums = std::stoi(value["VolumeNums"].asString());
+		if(!value["CreationTime"].isNull())
+			autoSnapshotPoliciesObject.creationTime = value["CreationTime"].asString();
+		if(!value["Status"].isNull())
+			autoSnapshotPoliciesObject.status = value["Status"].asString();
+		autoSnapshotPolicies_.push_back(autoSnapshotPoliciesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -67,19 +80,9 @@ int DescribeAutoSnapshotPolicyExResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeAutoSnapshotPolicyExResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeAutoSnapshotPolicyExResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeAutoSnapshotPolicyExResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeAutoSnapshotPolicyExResult::getPageNumber()const
@@ -87,8 +90,8 @@ int DescribeAutoSnapshotPolicyExResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeAutoSnapshotPolicyExResult::setPageNumber(int pageNumber)
+std::vector<DescribeAutoSnapshotPolicyExResult::AutoSnapshotPolicy> DescribeAutoSnapshotPolicyExResult::getAutoSnapshotPolicies()const
 {
-	pageNumber_ = pageNumber;
+	return autoSnapshotPolicies_;
 }
 

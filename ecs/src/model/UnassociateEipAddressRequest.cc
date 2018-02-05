@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/UnassociateEipAddressRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::UnassociateEipAddressRequest;
 
 UnassociateEipAddressRequest::UnassociateEipAddressRequest() :
-	EcsRequest("UnassociateEipAddress")
+	RpcServiceRequest("ecs", "2014-05-26", "UnassociateEipAddress")
 {}
 
 UnassociateEipAddressRequest::~UnassociateEipAddressRequest()

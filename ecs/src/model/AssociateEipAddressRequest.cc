@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/AssociateEipAddressRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::AssociateEipAddressRequest;
 
 AssociateEipAddressRequest::AssociateEipAddressRequest() :
-	EcsRequest("AssociateEipAddress")
+	RpcServiceRequest("ecs", "2014-05-26", "AssociateEipAddress")
 {}
 
 AssociateEipAddressRequest::~AssociateEipAddressRequest()

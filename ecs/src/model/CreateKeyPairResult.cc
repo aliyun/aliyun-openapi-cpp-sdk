@@ -40,9 +40,12 @@ void CreateKeyPairResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	keyPairName_ = value["KeyPairName"].asString();
-	keyPairFingerPrint_ = value["KeyPairFingerPrint"].asString();
-	privateKeyBody_ = value["PrivateKeyBody"].asString();
+	if(!value["KeyPairName"].isNull())
+		keyPairName_ = value["KeyPairName"].asString();
+	if(!value["KeyPairFingerPrint"].isNull())
+		keyPairFingerPrint_ = value["KeyPairFingerPrint"].asString();
+	if(!value["PrivateKeyBody"].isNull())
+		privateKeyBody_ = value["PrivateKeyBody"].asString();
 
 }
 
@@ -51,28 +54,13 @@ std::string CreateKeyPairResult::getKeyPairFingerPrint()const
 	return keyPairFingerPrint_;
 }
 
-void CreateKeyPairResult::setKeyPairFingerPrint(const std::string& keyPairFingerPrint)
-{
-	keyPairFingerPrint_ = keyPairFingerPrint;
-}
-
 std::string CreateKeyPairResult::getKeyPairName()const
 {
 	return keyPairName_;
 }
 
-void CreateKeyPairResult::setKeyPairName(const std::string& keyPairName)
-{
-	keyPairName_ = keyPairName;
-}
-
 std::string CreateKeyPairResult::getPrivateKeyBody()const
 {
 	return privateKeyBody_;
-}
-
-void CreateKeyPairResult::setPrivateKeyBody(const std::string& privateKeyBody)
-{
-	privateKeyBody_ = privateKeyBody;
 }
 

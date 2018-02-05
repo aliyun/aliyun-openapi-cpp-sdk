@@ -51,13 +51,9 @@ namespace AlibabaCloud
 				explicit DescribeAutoSnapshotPolicyExResult(const std::string &payload);
 				~DescribeAutoSnapshotPolicyExResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<AutoSnapshotPolicy> getAutoSnapshotPolicies()const;
-				void setAutoSnapshotPolicies(const std::vector<AutoSnapshotPolicy>& autoSnapshotPolicies);
 
 			protected:
 				void parse(const std::string &payload);

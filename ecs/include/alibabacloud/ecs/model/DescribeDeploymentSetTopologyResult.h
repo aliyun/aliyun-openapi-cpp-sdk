@@ -44,13 +44,13 @@ namespace AlibabaCloud
 				};
 				struct Rack
 				{
-					struct Host
+					struct Host2
 					{
 						std::string hostId;
 						std::vector<std::string> instanceIds3;
 					};
 					std::string rackId;
-					std::vector<Rack::Host> hosts1;
+					std::vector<Rack::Host2> hosts1;
 				};
 
 
@@ -58,9 +58,7 @@ namespace AlibabaCloud
 				explicit DescribeDeploymentSetTopologyResult(const std::string &payload);
 				~DescribeDeploymentSetTopologyResult();
 				std::vector<Switch> getSwitchs()const;
-				void setSwitchs(const std::vector<Switch>& switchs);
 				std::vector<Rack> getRacks()const;
-				void setRacks(const std::vector<Rack>& racks);
 
 			protected:
 				void parse(const std::string &payload);

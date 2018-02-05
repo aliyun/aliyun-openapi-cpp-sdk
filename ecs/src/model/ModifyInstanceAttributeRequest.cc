@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyInstanceAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyInstanceAttributeRequest;
 
 ModifyInstanceAttributeRequest::ModifyInstanceAttributeRequest() :
-	EcsRequest("ModifyInstanceAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceAttribute")
 {}
 
 ModifyInstanceAttributeRequest::~ModifyInstanceAttributeRequest()

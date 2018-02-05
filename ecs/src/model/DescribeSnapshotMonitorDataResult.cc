@@ -43,11 +43,18 @@ void DescribeSnapshotMonitorDataResult::parse(const std::string &payload)
 	auto allMonitorData = value["MonitorData"]["DataPoint"];
 	for (auto value : allMonitorData)
 	{
-		DataPoint dataPointObject;
-		dataPointObject.timeStamp = value["TimeStamp"].asString();
-		dataPointObject.size = std::stol(value["Size"].asString());
-		monitorData_.push_back(dataPointObject);
+		DataPoint monitorDataObject;
+		if(!value["TimeStamp"].isNull())
+			monitorDataObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["Size"].isNull())
+			monitorDataObject.size = std::stol(value["Size"].asString());
+		monitorData_.push_back(monitorDataObject);
 	}
 
+}
+
+std::vector<DescribeSnapshotMonitorDataResult::DataPoint> DescribeSnapshotMonitorDataResult::getMonitorData()const
+{
+	return monitorData_;
 }
 

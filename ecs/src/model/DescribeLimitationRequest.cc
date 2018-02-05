@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeLimitationRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeLimitationRequest;
 
 DescribeLimitationRequest::DescribeLimitationRequest() :
-	EcsRequest("DescribeLimitation")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeLimitation")
 {}
 
 DescribeLimitationRequest::~DescribeLimitationRequest()

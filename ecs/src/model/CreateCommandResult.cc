@@ -40,17 +40,13 @@ void CreateCommandResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	commandId_ = value["CommandId"].asString();
+	if(!value["CommandId"].isNull())
+		commandId_ = value["CommandId"].asString();
 
 }
 
 std::string CreateCommandResult::getCommandId()const
 {
 	return commandId_;
-}
-
-void CreateCommandResult::setCommandId(const std::string& commandId)
-{
-	commandId_ = commandId;
 }
 

@@ -40,17 +40,13 @@ void CreateInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	instanceId_ = value["InstanceId"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
 
 }
 
 std::string CreateInstanceResult::getInstanceId()const
 {
 	return instanceId_;
-}
-
-void CreateInstanceResult::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
 }
 

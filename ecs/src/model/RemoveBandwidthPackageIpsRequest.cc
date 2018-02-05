@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/RemoveBandwidthPackageIpsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::RemoveBandwidthPackageIpsRequest;
 
 RemoveBandwidthPackageIpsRequest::RemoveBandwidthPackageIpsRequest() :
-	EcsRequest("RemoveBandwidthPackageIps")
+	RpcServiceRequest("ecs", "2014-05-26", "RemoveBandwidthPackageIps")
 {}
 
 RemoveBandwidthPackageIpsRequest::~RemoveBandwidthPackageIpsRequest()

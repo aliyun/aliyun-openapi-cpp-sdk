@@ -43,9 +43,12 @@ void DescribeTagKeysResult::parse(const std::string &payload)
 	auto allTagKeys = value["TagKeys"]["TagKey"];
 	for (const auto &item : allTagKeys)
 		tagKeys_.push_back(item.asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -54,19 +57,9 @@ int DescribeTagKeysResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeTagKeysResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeTagKeysResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeTagKeysResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeTagKeysResult::getPageNumber()const
@@ -74,18 +67,8 @@ int DescribeTagKeysResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeTagKeysResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-}
-
 std::vector<std::string> DescribeTagKeysResult::getTagKeys()const
 {
 	return tagKeys_;
-}
-
-void DescribeTagKeysResult::setTagKeys(const std::vector<std::string>& tagKeys)
-{
-	tagKeys_ = tagKeys;
 }
 

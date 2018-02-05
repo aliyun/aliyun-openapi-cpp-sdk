@@ -40,17 +40,13 @@ void DescribeUserBusinessBehaviorResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	statusValue_ = value["StatusValue"].asString();
+	if(!value["StatusValue"].isNull())
+		statusValue_ = value["StatusValue"].asString();
 
 }
 
 std::string DescribeUserBusinessBehaviorResult::getStatusValue()const
 {
 	return statusValue_;
-}
-
-void DescribeUserBusinessBehaviorResult::setStatusValue(const std::string& statusValue)
-{
-	statusValue_ = statusValue;
 }
 

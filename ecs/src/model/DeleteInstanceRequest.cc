@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteInstanceRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteInstanceRequest;
 
 DeleteInstanceRequest::DeleteInstanceRequest() :
-	EcsRequest("DeleteInstance")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteInstance")
 {}
 
 DeleteInstanceRequest::~DeleteInstanceRequest()

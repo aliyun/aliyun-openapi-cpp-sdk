@@ -40,11 +40,16 @@ void DescribeIntranetAttributeKbResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	instanceId_ = value["InstanceId"].asString();
-	vlanId_ = value["VlanId"].asString();
-	intranetIpAddress_ = value["IntranetIpAddress"].asString();
-	intranetMaxBandwidthIn_ = std::stoi(value["IntranetMaxBandwidthIn"].asString());
-	intranetMaxBandwidthOut_ = std::stoi(value["IntranetMaxBandwidthOut"].asString());
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["VlanId"].isNull())
+		vlanId_ = value["VlanId"].asString();
+	if(!value["IntranetIpAddress"].isNull())
+		intranetIpAddress_ = value["IntranetIpAddress"].asString();
+	if(!value["IntranetMaxBandwidthIn"].isNull())
+		intranetMaxBandwidthIn_ = std::stoi(value["IntranetMaxBandwidthIn"].asString());
+	if(!value["IntranetMaxBandwidthOut"].isNull())
+		intranetMaxBandwidthOut_ = std::stoi(value["IntranetMaxBandwidthOut"].asString());
 
 }
 
@@ -53,19 +58,9 @@ std::string DescribeIntranetAttributeKbResult::getInstanceId()const
 	return instanceId_;
 }
 
-void DescribeIntranetAttributeKbResult::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-}
-
 int DescribeIntranetAttributeKbResult::getIntranetMaxBandwidthOut()const
 {
 	return intranetMaxBandwidthOut_;
-}
-
-void DescribeIntranetAttributeKbResult::setIntranetMaxBandwidthOut(int intranetMaxBandwidthOut)
-{
-	intranetMaxBandwidthOut_ = intranetMaxBandwidthOut;
 }
 
 std::string DescribeIntranetAttributeKbResult::getVlanId()const
@@ -73,28 +68,13 @@ std::string DescribeIntranetAttributeKbResult::getVlanId()const
 	return vlanId_;
 }
 
-void DescribeIntranetAttributeKbResult::setVlanId(const std::string& vlanId)
-{
-	vlanId_ = vlanId;
-}
-
 std::string DescribeIntranetAttributeKbResult::getIntranetIpAddress()const
 {
 	return intranetIpAddress_;
 }
 
-void DescribeIntranetAttributeKbResult::setIntranetIpAddress(const std::string& intranetIpAddress)
-{
-	intranetIpAddress_ = intranetIpAddress;
-}
-
 int DescribeIntranetAttributeKbResult::getIntranetMaxBandwidthIn()const
 {
 	return intranetMaxBandwidthIn_;
-}
-
-void DescribeIntranetAttributeKbResult::setIntranetMaxBandwidthIn(int intranetMaxBandwidthIn)
-{
-	intranetMaxBandwidthIn_ = intranetMaxBandwidthIn;
 }
 

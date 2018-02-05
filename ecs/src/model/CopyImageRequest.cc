@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CopyImageRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CopyImageRequest;
 
 CopyImageRequest::CopyImageRequest() :
-	EcsRequest("CopyImage")
+	RpcServiceRequest("ecs", "2014-05-26", "CopyImage")
 {}
 
 CopyImageRequest::~CopyImageRequest()

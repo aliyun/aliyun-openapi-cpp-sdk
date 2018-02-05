@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/RevokeSecurityGroupEgressRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::RevokeSecurityGroupEgressRequest;
 
 RevokeSecurityGroupEgressRequest::RevokeSecurityGroupEgressRequest() :
-	EcsRequest("RevokeSecurityGroupEgress")
+	RpcServiceRequest("ecs", "2014-05-26", "RevokeSecurityGroupEgress")
 {}
 
 RevokeSecurityGroupEgressRequest::~RevokeSecurityGroupEgressRequest()

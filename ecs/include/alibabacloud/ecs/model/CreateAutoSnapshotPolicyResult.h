@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateAutoSnapshotPolicyResult(const std::string &payload);
 				~CreateAutoSnapshotPolicyResult();
 				std::string getAutoSnapshotPolicyId()const;
-				void setAutoSnapshotPolicyId(const std::string& autoSnapshotPolicyId);
 
 			protected:
 				void parse(const std::string &payload);

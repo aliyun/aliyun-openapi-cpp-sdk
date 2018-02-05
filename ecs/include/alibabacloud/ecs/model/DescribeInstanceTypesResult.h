@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					int baselineCredit;
 					int initialCredit;
 					std::string instanceTypeId;
+					int eniQuantity;
 					int gPUAmount;
 					int localStorageAmount;
 				};
@@ -52,7 +53,6 @@ namespace AlibabaCloud
 				explicit DescribeInstanceTypesResult(const std::string &payload);
 				~DescribeInstanceTypesResult();
 				std::vector<InstanceType> getInstanceTypes()const;
-				void setInstanceTypes(const std::vector<InstanceType>& instanceTypes);
 
 			protected:
 				void parse(const std::string &payload);

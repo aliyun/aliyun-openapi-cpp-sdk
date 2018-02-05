@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteVSwitchRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteVSwitchRequest;
 
 DeleteVSwitchRequest::DeleteVSwitchRequest() :
-	EcsRequest("DeleteVSwitch")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteVSwitch")
 {}
 
 DeleteVSwitchRequest::~DeleteVSwitchRequest()

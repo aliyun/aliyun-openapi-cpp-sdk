@@ -44,13 +44,9 @@ namespace AlibabaCloud
 				explicit DescribeResourceByTagsResult(const std::string &payload);
 				~DescribeResourceByTagsResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<Resource> getResources()const;
-				void setResources(const std::vector<Resource>& resources);
 
 			protected:
 				void parse(const std::string &payload);

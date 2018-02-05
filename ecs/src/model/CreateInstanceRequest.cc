@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CreateInstanceRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CreateInstanceRequest;
 
 CreateInstanceRequest::CreateInstanceRequest() :
-	EcsRequest("CreateInstance")
+	RpcServiceRequest("ecs", "2014-05-26", "CreateInstance")
 {}
 
 CreateInstanceRequest::~CreateInstanceRequest()
@@ -189,6 +188,17 @@ void CreateInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
 	setParameter("Period", std::to_string(period));
+}
+
+bool CreateInstanceRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void CreateInstanceRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", std::to_string(dryRun));
 }
 
 std::string CreateInstanceRequest::getTag5Key()const

@@ -43,22 +43,29 @@ void DescribeImageSharePermissionResult::parse(const std::string &payload)
 	auto allShareGroups = value["ShareGroups"]["ShareGroup"];
 	for (auto value : allShareGroups)
 	{
-		ShareGroup shareGroupObject;
-		shareGroupObject.group = value["Group"].asString();
-		shareGroups_.push_back(shareGroupObject);
+		ShareGroup shareGroupsObject;
+		if(!value["Group"].isNull())
+			shareGroupsObject.group = value["Group"].asString();
+		shareGroups_.push_back(shareGroupsObject);
 	}
 	auto allAccounts = value["Accounts"]["Account"];
 	for (auto value : allAccounts)
 	{
-		Account accountObject;
-		accountObject.aliyunId = value["AliyunId"].asString();
-		accounts_.push_back(accountObject);
+		Account accountsObject;
+		if(!value["AliyunId"].isNull())
+			accountsObject.aliyunId = value["AliyunId"].asString();
+		accounts_.push_back(accountsObject);
 	}
-	regionId_ = value["RegionId"].asString();
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	imageId_ = value["ImageId"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["ImageId"].isNull())
+		imageId_ = value["ImageId"].asString();
 
 }
 
@@ -67,19 +74,9 @@ int DescribeImageSharePermissionResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeImageSharePermissionResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeImageSharePermissionResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeImageSharePermissionResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeImageSharePermissionResult::getPageNumber()const
@@ -87,19 +84,14 @@ int DescribeImageSharePermissionResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeImageSharePermissionResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-}
-
 std::string DescribeImageSharePermissionResult::getImageId()const
 {
 	return imageId_;
 }
 
-void DescribeImageSharePermissionResult::setImageId(const std::string& imageId)
+std::vector<DescribeImageSharePermissionResult::ShareGroup> DescribeImageSharePermissionResult::getShareGroups()const
 {
-	imageId_ = imageId;
+	return shareGroups_;
 }
 
 std::string DescribeImageSharePermissionResult::getRegionId()const
@@ -107,8 +99,8 @@ std::string DescribeImageSharePermissionResult::getRegionId()const
 	return regionId_;
 }
 
-void DescribeImageSharePermissionResult::setRegionId(const std::string& regionId)
+std::vector<DescribeImageSharePermissionResult::Account> DescribeImageSharePermissionResult::getAccounts()const
 {
-	regionId_ = regionId;
+	return accounts_;
 }
 

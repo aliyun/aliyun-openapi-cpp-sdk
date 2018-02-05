@@ -48,7 +48,6 @@ namespace AlibabaCloud
 				explicit DescribeSecurityGroupReferencesResult(const std::string &payload);
 				~DescribeSecurityGroupReferencesResult();
 				std::vector<SecurityGroupReference> getSecurityGroupReferences()const;
-				void setSecurityGroupReferences(const std::vector<SecurityGroupReference>& securityGroupReferences);
 
 			protected:
 				void parse(const std::string &payload);

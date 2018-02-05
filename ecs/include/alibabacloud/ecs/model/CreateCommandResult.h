@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateCommandResult(const std::string &payload);
 				~CreateCommandResult();
 				std::string getCommandId()const;
-				void setCommandId(const std::string& commandId);
 
 			protected:
 				void parse(const std::string &payload);

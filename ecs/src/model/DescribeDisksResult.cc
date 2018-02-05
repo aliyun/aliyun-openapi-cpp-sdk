@@ -43,67 +43,107 @@ void DescribeDisksResult::parse(const std::string &payload)
 	auto allDisks = value["Disks"]["Disk"];
 	for (auto value : allDisks)
 	{
-		Disk diskObject;
-		diskObject.diskId = value["DiskId"].asString();
-		diskObject.regionId = value["RegionId"].asString();
-		diskObject.zoneId = value["ZoneId"].asString();
-		diskObject.diskName = value["DiskName"].asString();
-		diskObject.description = value["Description"].asString();
-		diskObject.type = value["Type"].asString();
-		diskObject.category = value["Category"].asString();
-		diskObject.size = std::stoi(value["Size"].asString());
-		diskObject.imageId = value["ImageId"].asString();
-		diskObject.sourceSnapshotId = value["SourceSnapshotId"].asString();
-		diskObject.autoSnapshotPolicyId = value["AutoSnapshotPolicyId"].asString();
-		diskObject.productCode = value["ProductCode"].asString();
-		diskObject.portable = std::stoi(value["Portable"].asString());
-		diskObject.status = value["Status"].asString();
-		diskObject.instanceId = value["InstanceId"].asString();
-		diskObject.device = value["Device"].asString();
-		diskObject.deleteWithInstance = std::stoi(value["DeleteWithInstance"].asString());
-		diskObject.deleteAutoSnapshot = std::stoi(value["DeleteAutoSnapshot"].asString());
-		diskObject.enableAutoSnapshot = std::stoi(value["EnableAutoSnapshot"].asString());
-		diskObject.enableAutomatedSnapshotPolicy = std::stoi(value["EnableAutomatedSnapshotPolicy"].asString());
-		diskObject.creationTime = value["CreationTime"].asString();
-		diskObject.attachedTime = value["AttachedTime"].asString();
-		diskObject.detachedTime = value["DetachedTime"].asString();
-		diskObject.diskChargeType = value["DiskChargeType"].asString();
-		diskObject.expiredTime = value["ExpiredTime"].asString();
-		diskObject.resourceGroupId = value["ResourceGroupId"].asString();
-		diskObject.encrypted = std::stoi(value["Encrypted"].asString());
-		diskObject.mountInstanceNum = std::stoi(value["MountInstanceNum"].asString());
-		diskObject.iOPS = std::stoi(value["IOPS"].asString());
-		diskObject.iOPSRead = std::stoi(value["IOPSRead"].asString());
-		diskObject.iOPSWrite = std::stoi(value["IOPSWrite"].asString());
+		Disk disksObject;
+		if(!value["DiskId"].isNull())
+			disksObject.diskId = value["DiskId"].asString();
+		if(!value["RegionId"].isNull())
+			disksObject.regionId = value["RegionId"].asString();
+		if(!value["ZoneId"].isNull())
+			disksObject.zoneId = value["ZoneId"].asString();
+		if(!value["DiskName"].isNull())
+			disksObject.diskName = value["DiskName"].asString();
+		if(!value["Description"].isNull())
+			disksObject.description = value["Description"].asString();
+		if(!value["Type"].isNull())
+			disksObject.type = value["Type"].asString();
+		if(!value["Category"].isNull())
+			disksObject.category = value["Category"].asString();
+		if(!value["Size"].isNull())
+			disksObject.size = std::stoi(value["Size"].asString());
+		if(!value["ImageId"].isNull())
+			disksObject.imageId = value["ImageId"].asString();
+		if(!value["SourceSnapshotId"].isNull())
+			disksObject.sourceSnapshotId = value["SourceSnapshotId"].asString();
+		if(!value["AutoSnapshotPolicyId"].isNull())
+			disksObject.autoSnapshotPolicyId = value["AutoSnapshotPolicyId"].asString();
+		if(!value["ProductCode"].isNull())
+			disksObject.productCode = value["ProductCode"].asString();
+		if(!value["Portable"].isNull())
+			disksObject.portable = value["Portable"].asString() == "true";
+		if(!value["Status"].isNull())
+			disksObject.status = value["Status"].asString();
+		if(!value["InstanceId"].isNull())
+			disksObject.instanceId = value["InstanceId"].asString();
+		if(!value["Device"].isNull())
+			disksObject.device = value["Device"].asString();
+		if(!value["DeleteWithInstance"].isNull())
+			disksObject.deleteWithInstance = value["DeleteWithInstance"].asString() == "true";
+		if(!value["DeleteAutoSnapshot"].isNull())
+			disksObject.deleteAutoSnapshot = value["DeleteAutoSnapshot"].asString() == "true";
+		if(!value["EnableAutoSnapshot"].isNull())
+			disksObject.enableAutoSnapshot = value["EnableAutoSnapshot"].asString() == "true";
+		if(!value["EnableAutomatedSnapshotPolicy"].isNull())
+			disksObject.enableAutomatedSnapshotPolicy = value["EnableAutomatedSnapshotPolicy"].asString() == "true";
+		if(!value["CreationTime"].isNull())
+			disksObject.creationTime = value["CreationTime"].asString();
+		if(!value["AttachedTime"].isNull())
+			disksObject.attachedTime = value["AttachedTime"].asString();
+		if(!value["DetachedTime"].isNull())
+			disksObject.detachedTime = value["DetachedTime"].asString();
+		if(!value["DiskChargeType"].isNull())
+			disksObject.diskChargeType = value["DiskChargeType"].asString();
+		if(!value["ExpiredTime"].isNull())
+			disksObject.expiredTime = value["ExpiredTime"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			disksObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["Encrypted"].isNull())
+			disksObject.encrypted = value["Encrypted"].asString() == "true";
+		if(!value["MountInstanceNum"].isNull())
+			disksObject.mountInstanceNum = std::stoi(value["MountInstanceNum"].asString());
+		if(!value["IOPS"].isNull())
+			disksObject.iOPS = std::stoi(value["IOPS"].asString());
+		if(!value["IOPSRead"].isNull())
+			disksObject.iOPSRead = std::stoi(value["IOPSRead"].asString());
+		if(!value["IOPSWrite"].isNull())
+			disksObject.iOPSWrite = std::stoi(value["IOPSWrite"].asString());
 		auto allOperationLocks = value["OperationLocks"]["OperationLock"];
 		for (auto value : allOperationLocks)
 		{
-			Disk::OperationLock operationLockObject;
-			operationLockObject.lockReason = value["LockReason"].asString();
-			diskObject.operationLocks.push_back(operationLockObject);
+			Disk::OperationLock operationLocksObject;
+			if(!value["LockReason"].isNull())
+				operationLocksObject.lockReason = value["LockReason"].asString();
+			disksObject.operationLocks.push_back(operationLocksObject);
 		}
 		auto allMountInstances = value["MountInstances"]["MountInstance"];
 		for (auto value : allMountInstances)
 		{
-			Disk::MountInstance mountInstanceObject;
-			mountInstanceObject.instanceId = value["InstanceId"].asString();
-			mountInstanceObject.device = value["Device"].asString();
-			mountInstanceObject.attachedTime = value["AttachedTime"].asString();
-			diskObject.mountInstances.push_back(mountInstanceObject);
+			Disk::MountInstance mountInstancesObject;
+			if(!value["InstanceId"].isNull())
+				mountInstancesObject.instanceId = value["InstanceId"].asString();
+			if(!value["Device"].isNull())
+				mountInstancesObject.device = value["Device"].asString();
+			if(!value["AttachedTime"].isNull())
+				mountInstancesObject.attachedTime = value["AttachedTime"].asString();
+			disksObject.mountInstances.push_back(mountInstancesObject);
 		}
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{
-			Disk::Tag tagObject;
-			tagObject.tagKey = value["TagKey"].asString();
-			tagObject.tagValue = value["TagValue"].asString();
-			diskObject.tags.push_back(tagObject);
+			Disk::Tag tagsObject;
+			if(!value["TagKey"].isNull())
+				tagsObject.tagKey = value["TagKey"].asString();
+			if(!value["TagValue"].isNull())
+				tagsObject.tagValue = value["TagValue"].asString();
+			disksObject.tags.push_back(tagsObject);
 		}
-		disks_.push_back(diskObject);
+		disks_.push_back(disksObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -112,19 +152,9 @@ int DescribeDisksResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeDisksResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeDisksResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeDisksResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeDisksResult::getPageNumber()const
@@ -132,8 +162,8 @@ int DescribeDisksResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeDisksResult::setPageNumber(int pageNumber)
+std::vector<DescribeDisksResult::Disk> DescribeDisksResult::getDisks()const
 {
-	pageNumber_ = pageNumber;
+	return disks_;
 }
 

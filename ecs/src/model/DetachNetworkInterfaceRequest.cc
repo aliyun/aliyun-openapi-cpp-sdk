@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DetachNetworkInterfaceRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DetachNetworkInterfaceRequest;
 
 DetachNetworkInterfaceRequest::DetachNetworkInterfaceRequest() :
-	EcsRequest("DetachNetworkInterface")
+	RpcServiceRequest("ecs", "2014-05-26", "DetachNetworkInterface")
 {}
 
 DetachNetworkInterfaceRequest::~DetachNetworkInterfaceRequest()

@@ -43,34 +43,53 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 	auto allSnapshots = value["Snapshots"]["Snapshot"];
 	for (auto value : allSnapshots)
 	{
-		Snapshot snapshotObject;
-		snapshotObject.snapshotId = value["SnapshotId"].asString();
-		snapshotObject.snapshotName = value["SnapshotName"].asString();
-		snapshotObject.progress = value["Progress"].asString();
-		snapshotObject.productCode = value["ProductCode"].asString();
-		snapshotObject.sourceDiskId = value["SourceDiskId"].asString();
-		snapshotObject.sourceDiskType = value["SourceDiskType"].asString();
-		snapshotObject.retentionDays = std::stoi(value["RetentionDays"].asString());
-		snapshotObject.encrypted = std::stoi(value["Encrypted"].asString());
-		snapshotObject.sourceDiskSize = value["SourceDiskSize"].asString();
-		snapshotObject.description = value["Description"].asString();
-		snapshotObject.creationTime = value["CreationTime"].asString();
-		snapshotObject.status = value["Status"].asString();
-		snapshotObject.usage = value["Usage"].asString();
-		snapshotObject.sourceStorageType = value["SourceStorageType"].asString();
+		Snapshot snapshotsObject;
+		if(!value["SnapshotId"].isNull())
+			snapshotsObject.snapshotId = value["SnapshotId"].asString();
+		if(!value["SnapshotName"].isNull())
+			snapshotsObject.snapshotName = value["SnapshotName"].asString();
+		if(!value["Progress"].isNull())
+			snapshotsObject.progress = value["Progress"].asString();
+		if(!value["ProductCode"].isNull())
+			snapshotsObject.productCode = value["ProductCode"].asString();
+		if(!value["SourceDiskId"].isNull())
+			snapshotsObject.sourceDiskId = value["SourceDiskId"].asString();
+		if(!value["SourceDiskType"].isNull())
+			snapshotsObject.sourceDiskType = value["SourceDiskType"].asString();
+		if(!value["RetentionDays"].isNull())
+			snapshotsObject.retentionDays = std::stoi(value["RetentionDays"].asString());
+		if(!value["Encrypted"].isNull())
+			snapshotsObject.encrypted = value["Encrypted"].asString() == "true";
+		if(!value["SourceDiskSize"].isNull())
+			snapshotsObject.sourceDiskSize = value["SourceDiskSize"].asString();
+		if(!value["Description"].isNull())
+			snapshotsObject.description = value["Description"].asString();
+		if(!value["CreationTime"].isNull())
+			snapshotsObject.creationTime = value["CreationTime"].asString();
+		if(!value["Status"].isNull())
+			snapshotsObject.status = value["Status"].asString();
+		if(!value["Usage"].isNull())
+			snapshotsObject.usage = value["Usage"].asString();
+		if(!value["SourceStorageType"].isNull())
+			snapshotsObject.sourceStorageType = value["SourceStorageType"].asString();
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{
-			Snapshot::Tag tagObject;
-			tagObject.tagKey = value["TagKey"].asString();
-			tagObject.tagValue = value["TagValue"].asString();
-			snapshotObject.tags.push_back(tagObject);
+			Snapshot::Tag tagsObject;
+			if(!value["TagKey"].isNull())
+				tagsObject.tagKey = value["TagKey"].asString();
+			if(!value["TagValue"].isNull())
+				tagsObject.tagValue = value["TagValue"].asString();
+			snapshotsObject.tags.push_back(tagsObject);
 		}
-		snapshots_.push_back(snapshotObject);
+		snapshots_.push_back(snapshotsObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -79,19 +98,9 @@ int DescribeSnapshotsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeSnapshotsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeSnapshotsResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeSnapshotsResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeSnapshotsResult::getPageNumber()const
@@ -99,8 +108,8 @@ int DescribeSnapshotsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeSnapshotsResult::setPageNumber(int pageNumber)
+std::vector<DescribeSnapshotsResult::Snapshot> DescribeSnapshotsResult::getSnapshots()const
 {
-	pageNumber_ = pageNumber;
+	return snapshots_;
 }
 

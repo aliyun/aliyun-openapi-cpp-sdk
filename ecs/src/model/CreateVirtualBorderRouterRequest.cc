@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CreateVirtualBorderRouterRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CreateVirtualBorderRouterRequest;
 
 CreateVirtualBorderRouterRequest::CreateVirtualBorderRouterRequest() :
-	EcsRequest("CreateVirtualBorderRouter")
+	RpcServiceRequest("ecs", "2014-05-26", "CreateVirtualBorderRouter")
 {}
 
 CreateVirtualBorderRouterRequest::~CreateVirtualBorderRouterRequest()

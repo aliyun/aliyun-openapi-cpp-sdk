@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeHpcClustersRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeHpcClustersRequest;
 
 DescribeHpcClustersRequest::DescribeHpcClustersRequest() :
-	EcsRequest("DescribeHpcClusters")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeHpcClusters")
 {}
 
 DescribeHpcClustersRequest::~DescribeHpcClustersRequest()

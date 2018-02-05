@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateSecurityGroupResult(const std::string &payload);
 				~CreateSecurityGroupResult();
 				std::string getSecurityGroupId()const;
-				void setSecurityGroupId(const std::string& securityGroupId);
 
 			protected:
 				void parse(const std::string &payload);

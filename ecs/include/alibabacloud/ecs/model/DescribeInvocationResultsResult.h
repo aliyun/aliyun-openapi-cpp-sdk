@@ -55,7 +55,6 @@ namespace AlibabaCloud
 				explicit DescribeInvocationResultsResult(const std::string &payload);
 				~DescribeInvocationResultsResult();
 				std::vector<Invocation> getInvocation()const;
-				void setInvocation(const std::vector<Invocation>& invocation);
 
 			protected:
 				void parse(const std::string &payload);

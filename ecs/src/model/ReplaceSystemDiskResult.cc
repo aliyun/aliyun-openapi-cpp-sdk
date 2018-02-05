@@ -40,17 +40,13 @@ void ReplaceSystemDiskResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	diskId_ = value["DiskId"].asString();
+	if(!value["DiskId"].isNull())
+		diskId_ = value["DiskId"].asString();
 
 }
 
 std::string ReplaceSystemDiskResult::getDiskId()const
 {
 	return diskId_;
-}
-
-void ReplaceSystemDiskResult::setDiskId(const std::string& diskId)
-{
-	diskId_ = diskId;
 }
 

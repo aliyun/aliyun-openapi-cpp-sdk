@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeDeploymentSetTopologyRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeDeploymentSetTopologyRequest;
 
 DescribeDeploymentSetTopologyRequest::DescribeDeploymentSetTopologyRequest() :
-	EcsRequest("DescribeDeploymentSetTopology")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeDeploymentSetTopology")
 {}
 
 DescribeDeploymentSetTopologyRequest::~DescribeDeploymentSetTopologyRequest()

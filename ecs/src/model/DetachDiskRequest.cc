@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DetachDiskRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DetachDiskRequest;
 
 DetachDiskRequest::DetachDiskRequest() :
-	EcsRequest("DetachDisk")
+	RpcServiceRequest("ecs", "2014-05-26", "DetachDisk")
 {}
 
 DetachDiskRequest::~DetachDiskRequest()

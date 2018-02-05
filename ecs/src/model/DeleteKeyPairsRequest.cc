@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteKeyPairsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteKeyPairsRequest;
 
 DeleteKeyPairsRequest::DeleteKeyPairsRequest() :
-	EcsRequest("DeleteKeyPairs")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteKeyPairs")
 {}
 
 DeleteKeyPairsRequest::~DeleteKeyPairsRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifySnapshotAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifySnapshotAttributeRequest;
 
 ModifySnapshotAttributeRequest::ModifySnapshotAttributeRequest() :
-	EcsRequest("ModifySnapshotAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifySnapshotAttribute")
 {}
 
 ModifySnapshotAttributeRequest::~ModifySnapshotAttributeRequest()

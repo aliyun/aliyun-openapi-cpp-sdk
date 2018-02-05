@@ -43,18 +43,26 @@ void DescribeSecurityGroupReferencesResult::parse(const std::string &payload)
 	auto allSecurityGroupReferences = value["SecurityGroupReferences"]["SecurityGroupReference"];
 	for (auto value : allSecurityGroupReferences)
 	{
-		SecurityGroupReference securityGroupReferenceObject;
-		securityGroupReferenceObject.securityGroupId = value["SecurityGroupId"].asString();
+		SecurityGroupReference securityGroupReferencesObject;
+		if(!value["SecurityGroupId"].isNull())
+			securityGroupReferencesObject.securityGroupId = value["SecurityGroupId"].asString();
 		auto allReferencingSecurityGroups = value["ReferencingSecurityGroups"]["ReferencingSecurityGroup"];
 		for (auto value : allReferencingSecurityGroups)
 		{
-			SecurityGroupReference::ReferencingSecurityGroup referencingSecurityGroupObject;
-			referencingSecurityGroupObject.aliUid = value["AliUid"].asString();
-			referencingSecurityGroupObject.securityGroupId = value["SecurityGroupId"].asString();
-			securityGroupReferenceObject.referencingSecurityGroups.push_back(referencingSecurityGroupObject);
+			SecurityGroupReference::ReferencingSecurityGroup referencingSecurityGroupsObject;
+			if(!value["AliUid"].isNull())
+				referencingSecurityGroupsObject.aliUid = value["AliUid"].asString();
+			if(!value["SecurityGroupId"].isNull())
+				referencingSecurityGroupsObject.securityGroupId = value["SecurityGroupId"].asString();
+			securityGroupReferencesObject.referencingSecurityGroups.push_back(referencingSecurityGroupsObject);
 		}
-		securityGroupReferences_.push_back(securityGroupReferenceObject);
+		securityGroupReferences_.push_back(securityGroupReferencesObject);
 	}
 
+}
+
+std::vector<DescribeSecurityGroupReferencesResult::SecurityGroupReference> DescribeSecurityGroupReferencesResult::getSecurityGroupReferences()const
+{
+	return securityGroupReferences_;
 }
 

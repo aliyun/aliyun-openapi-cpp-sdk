@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateDiskResult(const std::string &payload);
 				~CreateDiskResult();
 				std::string getDiskId()const;
-				void setDiskId(const std::string& diskId);
 
 			protected:
 				void parse(const std::string &payload);

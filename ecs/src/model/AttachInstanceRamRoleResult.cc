@@ -43,17 +43,29 @@ void AttachInstanceRamRoleResult::parse(const std::string &payload)
 	auto allAttachInstanceRamRoleResults = value["AttachInstanceRamRoleResults"]["AttachInstanceRamRoleResult"];
 	for (auto value : allAttachInstanceRamRoleResults)
 	{
-		Result attachInstanceRamRoleResultObject;
-		attachInstanceRamRoleResultObject.instanceId = value["InstanceId"].asString();
-		attachInstanceRamRoleResultObject.success = std::stoi(value["Success"].asString());
-		attachInstanceRamRoleResultObject.code = value["Code"].asString();
-		attachInstanceRamRoleResultObject.message = value["Message"].asString();
-		attachInstanceRamRoleResults_.push_back(attachInstanceRamRoleResultObject);
+		Result attachInstanceRamRoleResultsObject;
+		if(!value["InstanceId"].isNull())
+			attachInstanceRamRoleResultsObject.instanceId = value["InstanceId"].asString();
+		if(!value["Success"].isNull())
+			attachInstanceRamRoleResultsObject.success = value["Success"].asString() == "true";
+		if(!value["Code"].isNull())
+			attachInstanceRamRoleResultsObject.code = value["Code"].asString();
+		if(!value["Message"].isNull())
+			attachInstanceRamRoleResultsObject.message = value["Message"].asString();
+		attachInstanceRamRoleResults_.push_back(attachInstanceRamRoleResultsObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	failCount_ = std::stoi(value["FailCount"].asString());
-	ramRoleName_ = value["RamRoleName"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["FailCount"].isNull())
+		failCount_ = std::stoi(value["FailCount"].asString());
+	if(!value["RamRoleName"].isNull())
+		ramRoleName_ = value["RamRoleName"].asString();
 
+}
+
+std::vector<AttachInstanceRamRoleResult::Result> AttachInstanceRamRoleResult::getAttachInstanceRamRoleResults()const
+{
+	return attachInstanceRamRoleResults_;
 }
 
 int AttachInstanceRamRoleResult::getTotalCount()const
@@ -61,28 +73,13 @@ int AttachInstanceRamRoleResult::getTotalCount()const
 	return totalCount_;
 }
 
-void AttachInstanceRamRoleResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 std::string AttachInstanceRamRoleResult::getRamRoleName()const
 {
 	return ramRoleName_;
 }
 
-void AttachInstanceRamRoleResult::setRamRoleName(const std::string& ramRoleName)
-{
-	ramRoleName_ = ramRoleName;
-}
-
 int AttachInstanceRamRoleResult::getFailCount()const
 {
 	return failCount_;
-}
-
-void AttachInstanceRamRoleResult::setFailCount(int failCount)
-{
-	failCount_ = failCount;
 }
 

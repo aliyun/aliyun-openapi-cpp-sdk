@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/JoinResourceGroupRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::JoinResourceGroupRequest;
 
 JoinResourceGroupRequest::JoinResourceGroupRequest() :
-	EcsRequest("JoinResourceGroup")
+	RpcServiceRequest("ecs", "2014-05-26", "JoinResourceGroup")
 {}
 
 JoinResourceGroupRequest::~JoinResourceGroupRequest()

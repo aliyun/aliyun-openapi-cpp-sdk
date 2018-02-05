@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteVirtualBorderRouterRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteVirtualBorderRouterRequest;
 
 DeleteVirtualBorderRouterRequest::DeleteVirtualBorderRouterRequest() :
-	EcsRequest("DeleteVirtualBorderRouter")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteVirtualBorderRouter")
 {}
 
 DeleteVirtualBorderRouterRequest::~DeleteVirtualBorderRouterRequest()

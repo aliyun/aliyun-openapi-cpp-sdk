@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeDiskMonitorDataRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeDiskMonitorDataRequest;
 
 DescribeDiskMonitorDataRequest::DescribeDiskMonitorDataRequest() :
-	EcsRequest("DescribeDiskMonitorData")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeDiskMonitorData")
 {}
 
 DescribeDiskMonitorDataRequest::~DescribeDiskMonitorDataRequest()

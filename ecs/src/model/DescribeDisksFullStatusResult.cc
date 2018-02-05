@@ -43,45 +43,57 @@ void DescribeDisksFullStatusResult::parse(const std::string &payload)
 	auto allDiskFullStatusSet = value["DiskFullStatusSet"]["DiskFullStatusType"];
 	for (auto value : allDiskFullStatusSet)
 	{
-		DiskFullStatusType diskFullStatusTypeObject;
-		diskFullStatusTypeObject.diskId = value["DiskId"].asString();
+		DiskFullStatusType diskFullStatusSetObject;
+		if(!value["DiskId"].isNull())
+			diskFullStatusSetObject.diskId = value["DiskId"].asString();
 		auto allDiskEventSet = value["DiskEventSet"]["DiskEventType"];
 		for (auto value : allDiskEventSet)
 		{
-			DiskFullStatusType::DiskEventType diskEventTypeObject;
-			diskEventTypeObject.eventId = value["EventId"].asString();
-			diskEventTypeObject.eventTime = value["EventTime"].asString();
+			DiskFullStatusType::DiskEventType diskEventSetObject;
+			if(!value["EventId"].isNull())
+				diskEventSetObject.eventId = value["EventId"].asString();
+			if(!value["EventTime"].isNull())
+				diskEventSetObject.eventTime = value["EventTime"].asString();
 			auto allEventType = value["EventType"];
 			for (auto value : allEventType)
 			{
 				DiskFullStatusType::DiskEventType::EventType eventTypeObject;
-				eventTypeObject.code = std::stoi(value["Code"].asString());
-				eventTypeObject.name = value["Name"].asString();
-				diskEventTypeObject.eventType.push_back(eventTypeObject);
+				if(!value["Code"].isNull())
+					eventTypeObject.code = std::stoi(value["Code"].asString());
+				if(!value["Name"].isNull())
+					eventTypeObject.name = value["Name"].asString();
+				diskEventSetObject.eventType.push_back(eventTypeObject);
 			}
-			diskFullStatusTypeObject.diskEventSet.push_back(diskEventTypeObject);
+			diskFullStatusSetObject.diskEventSet.push_back(diskEventSetObject);
 		}
 		auto allStatus = value["Status"];
 		for (auto value : allStatus)
 		{
 			DiskFullStatusType::Status statusObject;
-			statusObject.code = std::stoi(value["Code"].asString());
-			statusObject.name = value["Name"].asString();
-			diskFullStatusTypeObject.status.push_back(statusObject);
+			if(!value["Code"].isNull())
+				statusObject.code = std::stoi(value["Code"].asString());
+			if(!value["Name"].isNull())
+				statusObject.name = value["Name"].asString();
+			diskFullStatusSetObject.status.push_back(statusObject);
 		}
 		auto allHealthStatus = value["HealthStatus"];
 		for (auto value : allHealthStatus)
 		{
 			DiskFullStatusType::HealthStatus healthStatusObject;
-			healthStatusObject.code = std::stoi(value["Code"].asString());
-			healthStatusObject.name = value["Name"].asString();
-			diskFullStatusTypeObject.healthStatus.push_back(healthStatusObject);
+			if(!value["Code"].isNull())
+				healthStatusObject.code = std::stoi(value["Code"].asString());
+			if(!value["Name"].isNull())
+				healthStatusObject.name = value["Name"].asString();
+			diskFullStatusSetObject.healthStatus.push_back(healthStatusObject);
 		}
-		diskFullStatusSet_.push_back(diskFullStatusTypeObject);
+		diskFullStatusSet_.push_back(diskFullStatusSetObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -90,19 +102,9 @@ int DescribeDisksFullStatusResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeDisksFullStatusResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeDisksFullStatusResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeDisksFullStatusResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeDisksFullStatusResult::getPageNumber()const
@@ -110,8 +112,8 @@ int DescribeDisksFullStatusResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeDisksFullStatusResult::setPageNumber(int pageNumber)
+std::vector<DescribeDisksFullStatusResult::DiskFullStatusType> DescribeDisksFullStatusResult::getDiskFullStatusSet()const
 {
-	pageNumber_ = pageNumber;
+	return diskFullStatusSet_;
 }
 

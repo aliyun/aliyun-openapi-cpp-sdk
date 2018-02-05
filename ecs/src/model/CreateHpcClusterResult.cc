@@ -40,17 +40,13 @@ void CreateHpcClusterResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	hpcClusterId_ = value["HpcClusterId"].asString();
+	if(!value["HpcClusterId"].isNull())
+		hpcClusterId_ = value["HpcClusterId"].asString();
 
 }
 
 std::string CreateHpcClusterResult::getHpcClusterId()const
 {
 	return hpcClusterId_;
-}
-
-void CreateHpcClusterResult::setHpcClusterId(const std::string& hpcClusterId)
-{
-	hpcClusterId_ = hpcClusterId;
 }
 

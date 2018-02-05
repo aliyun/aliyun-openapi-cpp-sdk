@@ -44,25 +44,36 @@ void DescribeAutoSnapshotPolicyResult::parse(const std::string &payload)
 	for (auto value : allAutoSnapshotPolicy)
 	{
 		AutoSnapshotPolicy autoSnapshotPolicyObject;
-		autoSnapshotPolicyObject.systemDiskPolicyEnabled = value["SystemDiskPolicyEnabled"].asString();
-		autoSnapshotPolicyObject.systemDiskPolicyTimePeriod = value["SystemDiskPolicyTimePeriod"].asString();
-		autoSnapshotPolicyObject.systemDiskPolicyRetentionDays = value["SystemDiskPolicyRetentionDays"].asString();
-		autoSnapshotPolicyObject.systemDiskPolicyRetentionLastWeek = value["SystemDiskPolicyRetentionLastWeek"].asString();
-		autoSnapshotPolicyObject.dataDiskPolicyEnabled = value["DataDiskPolicyEnabled"].asString();
-		autoSnapshotPolicyObject.dataDiskPolicyTimePeriod = value["DataDiskPolicyTimePeriod"].asString();
-		autoSnapshotPolicyObject.dataDiskPolicyRetentionDays = value["DataDiskPolicyRetentionDays"].asString();
-		autoSnapshotPolicyObject.dataDiskPolicyRetentionLastWeek = value["DataDiskPolicyRetentionLastWeek"].asString();
+		if(!value["SystemDiskPolicyEnabled"].isNull())
+			autoSnapshotPolicyObject.systemDiskPolicyEnabled = value["SystemDiskPolicyEnabled"].asString();
+		if(!value["SystemDiskPolicyTimePeriod"].isNull())
+			autoSnapshotPolicyObject.systemDiskPolicyTimePeriod = value["SystemDiskPolicyTimePeriod"].asString();
+		if(!value["SystemDiskPolicyRetentionDays"].isNull())
+			autoSnapshotPolicyObject.systemDiskPolicyRetentionDays = value["SystemDiskPolicyRetentionDays"].asString();
+		if(!value["SystemDiskPolicyRetentionLastWeek"].isNull())
+			autoSnapshotPolicyObject.systemDiskPolicyRetentionLastWeek = value["SystemDiskPolicyRetentionLastWeek"].asString();
+		if(!value["DataDiskPolicyEnabled"].isNull())
+			autoSnapshotPolicyObject.dataDiskPolicyEnabled = value["DataDiskPolicyEnabled"].asString();
+		if(!value["DataDiskPolicyTimePeriod"].isNull())
+			autoSnapshotPolicyObject.dataDiskPolicyTimePeriod = value["DataDiskPolicyTimePeriod"].asString();
+		if(!value["DataDiskPolicyRetentionDays"].isNull())
+			autoSnapshotPolicyObject.dataDiskPolicyRetentionDays = value["DataDiskPolicyRetentionDays"].asString();
+		if(!value["DataDiskPolicyRetentionLastWeek"].isNull())
+			autoSnapshotPolicyObject.dataDiskPolicyRetentionLastWeek = value["DataDiskPolicyRetentionLastWeek"].asString();
 		autoSnapshotPolicy_.push_back(autoSnapshotPolicyObject);
 	}
 	auto allAutoSnapshotExcutionStatus = value["AutoSnapshotExcutionStatus"];
 	for (auto value : allAutoSnapshotExcutionStatus)
 	{
 		AutoSnapshotExcutionStatus autoSnapshotExcutionStatusObject;
-		autoSnapshotExcutionStatusObject.systemDiskExcutionStatus = value["SystemDiskExcutionStatus"].asString();
-		autoSnapshotExcutionStatusObject.dataDiskExcutionStatus = value["DataDiskExcutionStatus"].asString();
+		if(!value["SystemDiskExcutionStatus"].isNull())
+			autoSnapshotExcutionStatusObject.systemDiskExcutionStatus = value["SystemDiskExcutionStatus"].asString();
+		if(!value["DataDiskExcutionStatus"].isNull())
+			autoSnapshotExcutionStatusObject.dataDiskExcutionStatus = value["DataDiskExcutionStatus"].asString();
 		autoSnapshotExcutionStatus_.push_back(autoSnapshotExcutionStatusObject);
 	}
-	autoSnapshotOccupation_ = std::stoi(value["AutoSnapshotOccupation"].asString());
+	if(!value["AutoSnapshotOccupation"].isNull())
+		autoSnapshotOccupation_ = std::stoi(value["AutoSnapshotOccupation"].asString());
 
 }
 
@@ -71,8 +82,13 @@ int DescribeAutoSnapshotPolicyResult::getAutoSnapshotOccupation()const
 	return autoSnapshotOccupation_;
 }
 
-void DescribeAutoSnapshotPolicyResult::setAutoSnapshotOccupation(int autoSnapshotOccupation)
+std::vector<DescribeAutoSnapshotPolicyResult::AutoSnapshotExcutionStatus> DescribeAutoSnapshotPolicyResult::getAutoSnapshotExcutionStatus()const
 {
-	autoSnapshotOccupation_ = autoSnapshotOccupation;
+	return autoSnapshotExcutionStatus_;
+}
+
+std::vector<DescribeAutoSnapshotPolicyResult::AutoSnapshotPolicy> DescribeAutoSnapshotPolicyResult::getAutoSnapshotPolicy()const
+{
+	return autoSnapshotPolicy_;
 }
 

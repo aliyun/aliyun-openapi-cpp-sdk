@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeNewProjectEipMonitorDataRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeNewProjectEipMonitorDataRequest;
 
 DescribeNewProjectEipMonitorDataRequest::DescribeNewProjectEipMonitorDataRequest() :
-	EcsRequest("DescribeNewProjectEipMonitorData")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeNewProjectEipMonitorData")
 {}
 
 DescribeNewProjectEipMonitorDataRequest::~DescribeNewProjectEipMonitorDataRequest()

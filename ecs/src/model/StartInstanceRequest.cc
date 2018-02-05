@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/StartInstanceRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::StartInstanceRequest;
 
 StartInstanceRequest::StartInstanceRequest() :
-	EcsRequest("StartInstance")
+	RpcServiceRequest("ecs", "2014-05-26", "StartInstance")
 {}
 
 StartInstanceRequest::~StartInstanceRequest()

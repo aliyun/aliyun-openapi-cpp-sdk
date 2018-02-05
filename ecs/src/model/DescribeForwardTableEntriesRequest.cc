@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeForwardTableEntriesRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeForwardTableEntriesRequest;
 
 DescribeForwardTableEntriesRequest::DescribeForwardTableEntriesRequest() :
-	EcsRequest("DescribeForwardTableEntries")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeForwardTableEntries")
 {}
 
 DescribeForwardTableEntriesRequest::~DescribeForwardTableEntriesRequest()

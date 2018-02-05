@@ -40,17 +40,13 @@ void DescribeInstanceVncUrlResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	vncUrl_ = value["VncUrl"].asString();
+	if(!value["VncUrl"].isNull())
+		vncUrl_ = value["VncUrl"].asString();
 
 }
 
 std::string DescribeInstanceVncUrlResult::getVncUrl()const
 {
 	return vncUrl_;
-}
-
-void DescribeInstanceVncUrlResult::setVncUrl(const std::string& vncUrl)
-{
-	vncUrl_ = vncUrl;
 }
 

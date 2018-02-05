@@ -46,19 +46,12 @@ namespace AlibabaCloud
 				explicit DescribeImageSharePermissionResult(const std::string &payload);
 				~DescribeImageSharePermissionResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getImageId()const;
-				void setImageId(const std::string& imageId);
 				std::vector<ShareGroup> getShareGroups()const;
-				void setShareGroups(const std::vector<ShareGroup>& shareGroups);
 				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::vector<Account> getAccounts()const;
-				void setAccounts(const std::vector<Account>& accounts);
 
 			protected:
 				void parse(const std::string &payload);

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeSecurityGroupReferencesRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeSecurityGroupReferencesRequest;
 
 DescribeSecurityGroupReferencesRequest::DescribeSecurityGroupReferencesRequest() :
-	EcsRequest("DescribeSecurityGroupReferences")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeSecurityGroupReferences")
 {}
 
 DescribeSecurityGroupReferencesRequest::~DescribeSecurityGroupReferencesRequest()

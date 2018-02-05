@@ -54,13 +54,9 @@ namespace AlibabaCloud
 				explicit DescribeInvocationsResult(const std::string &payload);
 				~DescribeInvocationsResult();
 				long getTotalCount()const;
-				void setTotalCount(long totalCount);
 				long getPageSize()const;
-				void setPageSize(long pageSize);
 				std::vector<Invocation> getInvocations()const;
-				void setInvocations(const std::vector<Invocation>& invocations);
 				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

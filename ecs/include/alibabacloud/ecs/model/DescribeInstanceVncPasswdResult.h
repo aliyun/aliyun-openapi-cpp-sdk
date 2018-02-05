@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit DescribeInstanceVncPasswdResult(const std::string &payload);
 				~DescribeInstanceVncPasswdResult();
 				std::string getVncPasswd()const;
-				void setVncPasswd(const std::string& vncPasswd);
 
 			protected:
 				void parse(const std::string &payload);

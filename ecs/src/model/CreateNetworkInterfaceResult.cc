@@ -40,17 +40,13 @@ void CreateNetworkInterfaceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	networkInterfaceId_ = value["NetworkInterfaceId"].asString();
+	if(!value["NetworkInterfaceId"].isNull())
+		networkInterfaceId_ = value["NetworkInterfaceId"].asString();
 
 }
 
 std::string CreateNetworkInterfaceResult::getNetworkInterfaceId()const
 {
 	return networkInterfaceId_;
-}
-
-void CreateNetworkInterfaceResult::setNetworkInterfaceId(const std::string& networkInterfaceId)
-{
-	networkInterfaceId_ = networkInterfaceId;
 }
 

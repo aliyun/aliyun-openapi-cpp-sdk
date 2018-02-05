@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeSnapshotsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeSnapshotsRequest;
 
 DescribeSnapshotsRequest::DescribeSnapshotsRequest() :
-	EcsRequest("DescribeSnapshots")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeSnapshots")
 {}
 
 DescribeSnapshotsRequest::~DescribeSnapshotsRequest()

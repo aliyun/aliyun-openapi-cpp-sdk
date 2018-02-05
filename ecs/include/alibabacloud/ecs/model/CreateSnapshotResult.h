@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateSnapshotResult(const std::string &payload);
 				~CreateSnapshotResult();
 				std::string getSnapshotId()const;
-				void setSnapshotId(const std::string& snapshotId);
 
 			protected:
 				void parse(const std::string &payload);

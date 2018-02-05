@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyInstanceChargeTypeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyInstanceChargeTypeRequest;
 
 ModifyInstanceChargeTypeRequest::ModifyInstanceChargeTypeRequest() :
-	EcsRequest("ModifyInstanceChargeType")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceChargeType")
 {}
 
 ModifyInstanceChargeTypeRequest::~ModifyInstanceChargeTypeRequest()
@@ -156,5 +155,16 @@ void ModifyInstanceChargeTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string ModifyInstanceChargeTypeRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
+}
+
+void ModifyInstanceChargeTypeRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeSpotPriceHistoryRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeSpotPriceHistoryRequest;
 
 DescribeSpotPriceHistoryRequest::DescribeSpotPriceHistoryRequest() :
-	EcsRequest("DescribeSpotPriceHistory")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeSpotPriceHistory")
 {}
 
 DescribeSpotPriceHistoryRequest::~DescribeSpotPriceHistoryRequest()

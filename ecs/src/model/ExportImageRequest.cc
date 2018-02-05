@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ExportImageRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ExportImageRequest;
 
 ExportImageRequest::ExportImageRequest() :
-	EcsRequest("ExportImage")
+	RpcServiceRequest("ecs", "2014-05-26", "ExportImage")
 {}
 
 ExportImageRequest::~ExportImageRequest()

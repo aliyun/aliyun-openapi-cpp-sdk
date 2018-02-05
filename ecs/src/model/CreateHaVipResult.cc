@@ -40,17 +40,13 @@ void CreateHaVipResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	haVipId_ = value["HaVipId"].asString();
+	if(!value["HaVipId"].isNull())
+		haVipId_ = value["HaVipId"].asString();
 
 }
 
 std::string CreateHaVipResult::getHaVipId()const
 {
 	return haVipId_;
-}
-
-void CreateHaVipResult::setHaVipId(const std::string& haVipId)
-{
-	haVipId_ = haVipId;
 }
 

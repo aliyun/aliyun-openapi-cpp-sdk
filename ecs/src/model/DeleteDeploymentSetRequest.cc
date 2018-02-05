@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteDeploymentSetRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteDeploymentSetRequest;
 
 DeleteDeploymentSetRequest::DeleteDeploymentSetRequest() :
-	EcsRequest("DeleteDeploymentSet")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteDeploymentSet")
 {}
 
 DeleteDeploymentSetRequest::~DeleteDeploymentSetRequest()

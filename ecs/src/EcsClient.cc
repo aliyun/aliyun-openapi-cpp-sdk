@@ -2219,6 +2219,42 @@ EcsClient::CreateVSwitchOutcomeCallable EcsClient::createVSwitchCallable(const C
 	return task->get_future();
 }
 
+EcsClient::DescribeBandwidthLimitationOutcome EcsClient::describeBandwidthLimitation(const DescribeBandwidthLimitationRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBandwidthLimitationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBandwidthLimitationOutcome(DescribeBandwidthLimitationResult(outcome.result()));
+	else
+		return DescribeBandwidthLimitationOutcome(outcome.error());
+}
+
+void EcsClient::describeBandwidthLimitationAsync(const DescribeBandwidthLimitationRequest& request, const DescribeBandwidthLimitationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBandwidthLimitation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeBandwidthLimitationOutcomeCallable EcsClient::describeBandwidthLimitationCallable(const DescribeBandwidthLimitationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBandwidthLimitationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBandwidthLimitation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ModifyEipAddressAttributeOutcome EcsClient::modifyEipAddressAttribute(const ModifyEipAddressAttributeRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -2465,6 +2501,42 @@ EcsClient::DeactivateRouterInterfaceOutcomeCallable EcsClient::deactivateRouterI
 			[this, request]()
 			{
 			return this->deactivateRouterInterface(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeAvailableResourceOutcome EcsClient::describeAvailableResource(const DescribeAvailableResourceRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAvailableResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAvailableResourceOutcome(DescribeAvailableResourceResult(outcome.result()));
+	else
+		return DescribeAvailableResourceOutcome(outcome.error());
+}
+
+void EcsClient::describeAvailableResourceAsync(const DescribeAvailableResourceRequest& request, const DescribeAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAvailableResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeAvailableResourceOutcomeCallable EcsClient::describeAvailableResourceCallable(const DescribeAvailableResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAvailableResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAvailableResource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4985,6 +5057,42 @@ EcsClient::ModifySecurityGroupRuleOutcomeCallable EcsClient::modifySecurityGroup
 			[this, request]()
 			{
 			return this->modifySecurityGroupRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeResourcesModificationOutcome EcsClient::describeResourcesModification(const DescribeResourcesModificationRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeResourcesModificationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeResourcesModificationOutcome(DescribeResourcesModificationResult(outcome.result()));
+	else
+		return DescribeResourcesModificationOutcome(outcome.error());
+}
+
+void EcsClient::describeResourcesModificationAsync(const DescribeResourcesModificationRequest& request, const DescribeResourcesModificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeResourcesModification(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeResourcesModificationOutcomeCallable EcsClient::describeResourcesModificationCallable(const DescribeResourcesModificationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeResourcesModificationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeResourcesModification(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

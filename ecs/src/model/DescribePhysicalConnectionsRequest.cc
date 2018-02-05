@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribePhysicalConnectionsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribePhysicalConnectionsRequest;
 
 DescribePhysicalConnectionsRequest::DescribePhysicalConnectionsRequest() :
-	EcsRequest("DescribePhysicalConnections")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribePhysicalConnections")
 {}
 
 DescribePhysicalConnectionsRequest::~DescribePhysicalConnectionsRequest()

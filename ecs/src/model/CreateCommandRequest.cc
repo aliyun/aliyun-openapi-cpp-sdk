@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CreateCommandRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CreateCommandRequest;
 
 CreateCommandRequest::CreateCommandRequest() :
-	EcsRequest("CreateCommand")
+	RpcServiceRequest("ecs", "2014-05-26", "CreateCommand")
 {}
 
 CreateCommandRequest::~CreateCommandRequest()

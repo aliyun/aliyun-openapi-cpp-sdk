@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ReActivateInstancesRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ReActivateInstancesRequest;
 
 ReActivateInstancesRequest::ReActivateInstancesRequest() :
-	EcsRequest("ReActivateInstances")
+	RpcServiceRequest("ecs", "2014-05-26", "ReActivateInstances")
 {}
 
 ReActivateInstancesRequest::~ReActivateInstancesRequest()

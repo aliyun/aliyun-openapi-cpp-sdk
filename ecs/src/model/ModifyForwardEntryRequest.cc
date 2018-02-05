@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyForwardEntryRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyForwardEntryRequest;
 
 ModifyForwardEntryRequest::ModifyForwardEntryRequest() :
-	EcsRequest("ModifyForwardEntry")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyForwardEntry")
 {}
 
 ModifyForwardEntryRequest::~ModifyForwardEntryRequest()

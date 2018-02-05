@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeTagsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeTagsRequest;
 
 DescribeTagsRequest::DescribeTagsRequest() :
-	EcsRequest("DescribeTags")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeTags")
 {}
 
 DescribeTagsRequest::~DescribeTagsRequest()

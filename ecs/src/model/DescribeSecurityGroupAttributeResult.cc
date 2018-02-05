@@ -43,31 +43,53 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 	auto allPermissions = value["Permissions"]["Permission"];
 	for (auto value : allPermissions)
 	{
-		Permission permissionObject;
-		permissionObject.ipProtocol = value["IpProtocol"].asString();
-		permissionObject.portRange = value["PortRange"].asString();
-		permissionObject.sourceGroupId = value["SourceGroupId"].asString();
-		permissionObject.sourceGroupName = value["SourceGroupName"].asString();
-		permissionObject.sourceCidrIp = value["SourceCidrIp"].asString();
-		permissionObject.policy = value["Policy"].asString();
-		permissionObject.nicType = value["NicType"].asString();
-		permissionObject.sourceGroupOwnerAccount = value["SourceGroupOwnerAccount"].asString();
-		permissionObject.destGroupId = value["DestGroupId"].asString();
-		permissionObject.destGroupName = value["DestGroupName"].asString();
-		permissionObject.destCidrIp = value["DestCidrIp"].asString();
-		permissionObject.destGroupOwnerAccount = value["DestGroupOwnerAccount"].asString();
-		permissionObject.priority = value["Priority"].asString();
-		permissionObject.direction = value["Direction"].asString();
-		permissionObject.description = value["Description"].asString();
-		permissionObject.createTime = value["CreateTime"].asString();
-		permissions_.push_back(permissionObject);
+		Permission permissionsObject;
+		if(!value["IpProtocol"].isNull())
+			permissionsObject.ipProtocol = value["IpProtocol"].asString();
+		if(!value["PortRange"].isNull())
+			permissionsObject.portRange = value["PortRange"].asString();
+		if(!value["SourceGroupId"].isNull())
+			permissionsObject.sourceGroupId = value["SourceGroupId"].asString();
+		if(!value["SourceGroupName"].isNull())
+			permissionsObject.sourceGroupName = value["SourceGroupName"].asString();
+		if(!value["SourceCidrIp"].isNull())
+			permissionsObject.sourceCidrIp = value["SourceCidrIp"].asString();
+		if(!value["Policy"].isNull())
+			permissionsObject.policy = value["Policy"].asString();
+		if(!value["NicType"].isNull())
+			permissionsObject.nicType = value["NicType"].asString();
+		if(!value["SourceGroupOwnerAccount"].isNull())
+			permissionsObject.sourceGroupOwnerAccount = value["SourceGroupOwnerAccount"].asString();
+		if(!value["DestGroupId"].isNull())
+			permissionsObject.destGroupId = value["DestGroupId"].asString();
+		if(!value["DestGroupName"].isNull())
+			permissionsObject.destGroupName = value["DestGroupName"].asString();
+		if(!value["DestCidrIp"].isNull())
+			permissionsObject.destCidrIp = value["DestCidrIp"].asString();
+		if(!value["DestGroupOwnerAccount"].isNull())
+			permissionsObject.destGroupOwnerAccount = value["DestGroupOwnerAccount"].asString();
+		if(!value["Priority"].isNull())
+			permissionsObject.priority = value["Priority"].asString();
+		if(!value["Direction"].isNull())
+			permissionsObject.direction = value["Direction"].asString();
+		if(!value["Description"].isNull())
+			permissionsObject.description = value["Description"].asString();
+		if(!value["CreateTime"].isNull())
+			permissionsObject.createTime = value["CreateTime"].asString();
+		permissions_.push_back(permissionsObject);
 	}
-	regionId_ = value["RegionId"].asString();
-	securityGroupId_ = value["SecurityGroupId"].asString();
-	description_ = value["Description"].asString();
-	securityGroupName_ = value["SecurityGroupName"].asString();
-	vpcId_ = value["VpcId"].asString();
-	innerAccessPolicy_ = value["InnerAccessPolicy"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["SecurityGroupId"].isNull())
+		securityGroupId_ = value["SecurityGroupId"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["SecurityGroupName"].isNull())
+		securityGroupName_ = value["SecurityGroupName"].asString();
+	if(!value["VpcId"].isNull())
+		vpcId_ = value["VpcId"].asString();
+	if(!value["InnerAccessPolicy"].isNull())
+		innerAccessPolicy_ = value["InnerAccessPolicy"].asString();
 
 }
 
@@ -76,19 +98,9 @@ std::string DescribeSecurityGroupAttributeResult::getDescription()const
 	return description_;
 }
 
-void DescribeSecurityGroupAttributeResult::setDescription(const std::string& description)
-{
-	description_ = description;
-}
-
 std::string DescribeSecurityGroupAttributeResult::getSecurityGroupName()const
 {
 	return securityGroupName_;
-}
-
-void DescribeSecurityGroupAttributeResult::setSecurityGroupName(const std::string& securityGroupName)
-{
-	securityGroupName_ = securityGroupName;
 }
 
 std::string DescribeSecurityGroupAttributeResult::getVpcId()const
@@ -96,19 +108,14 @@ std::string DescribeSecurityGroupAttributeResult::getVpcId()const
 	return vpcId_;
 }
 
-void DescribeSecurityGroupAttributeResult::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-}
-
 std::string DescribeSecurityGroupAttributeResult::getSecurityGroupId()const
 {
 	return securityGroupId_;
 }
 
-void DescribeSecurityGroupAttributeResult::setSecurityGroupId(const std::string& securityGroupId)
+std::vector<DescribeSecurityGroupAttributeResult::Permission> DescribeSecurityGroupAttributeResult::getPermissions()const
 {
-	securityGroupId_ = securityGroupId;
+	return permissions_;
 }
 
 std::string DescribeSecurityGroupAttributeResult::getRegionId()const
@@ -116,18 +123,8 @@ std::string DescribeSecurityGroupAttributeResult::getRegionId()const
 	return regionId_;
 }
 
-void DescribeSecurityGroupAttributeResult::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-}
-
 std::string DescribeSecurityGroupAttributeResult::getInnerAccessPolicy()const
 {
 	return innerAccessPolicy_;
-}
-
-void DescribeSecurityGroupAttributeResult::setInnerAccessPolicy(const std::string& innerAccessPolicy)
-{
-	innerAccessPolicy_ = innerAccessPolicy;
 }
 

@@ -43,15 +43,21 @@ void DescribeHpcClustersResult::parse(const std::string &payload)
 	auto allHpcClusters = value["HpcClusters"]["HpcCluster"];
 	for (auto value : allHpcClusters)
 	{
-		HpcCluster hpcClusterObject;
-		hpcClusterObject.hpcClusterId = value["HpcClusterId"].asString();
-		hpcClusterObject.name = value["Name"].asString();
-		hpcClusterObject.description = value["Description"].asString();
-		hpcClusters_.push_back(hpcClusterObject);
+		HpcCluster hpcClustersObject;
+		if(!value["HpcClusterId"].isNull())
+			hpcClustersObject.hpcClusterId = value["HpcClusterId"].asString();
+		if(!value["Name"].isNull())
+			hpcClustersObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			hpcClustersObject.description = value["Description"].asString();
+		hpcClusters_.push_back(hpcClustersObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -60,19 +66,9 @@ int DescribeHpcClustersResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeHpcClustersResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeHpcClustersResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeHpcClustersResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeHpcClustersResult::getPageNumber()const
@@ -80,8 +76,8 @@ int DescribeHpcClustersResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeHpcClustersResult::setPageNumber(int pageNumber)
+std::vector<DescribeHpcClustersResult::HpcCluster> DescribeHpcClustersResult::getHpcClusters()const
 {
-	pageNumber_ = pageNumber;
+	return hpcClusters_;
 }
 

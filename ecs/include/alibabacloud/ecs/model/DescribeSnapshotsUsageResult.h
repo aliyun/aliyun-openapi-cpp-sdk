@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeSnapshotsUsageResult(const std::string &payload);
 				~DescribeSnapshotsUsageResult();
 				int getSnapshotCount()const;
-				void setSnapshotCount(int snapshotCount);
 				long getSnapshotSize()const;
-				void setSnapshotSize(long snapshotSize);
 
 			protected:
 				void parse(const std::string &payload);

@@ -43,24 +43,33 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 	auto allInstanceSystemEventSet = value["InstanceSystemEventSet"]["InstanceSystemEventType"];
 	for (auto value : allInstanceSystemEventSet)
 	{
-		InstanceSystemEventType instanceSystemEventTypeObject;
-		instanceSystemEventTypeObject.instanceId = value["InstanceId"].asString();
-		instanceSystemEventTypeObject.eventId = value["EventId"].asString();
-		instanceSystemEventTypeObject.eventPublishTime = value["EventPublishTime"].asString();
-		instanceSystemEventTypeObject.notBefore = value["NotBefore"].asString();
+		InstanceSystemEventType instanceSystemEventSetObject;
+		if(!value["InstanceId"].isNull())
+			instanceSystemEventSetObject.instanceId = value["InstanceId"].asString();
+		if(!value["EventId"].isNull())
+			instanceSystemEventSetObject.eventId = value["EventId"].asString();
+		if(!value["EventPublishTime"].isNull())
+			instanceSystemEventSetObject.eventPublishTime = value["EventPublishTime"].asString();
+		if(!value["NotBefore"].isNull())
+			instanceSystemEventSetObject.notBefore = value["NotBefore"].asString();
 		auto allEventType = value["EventType"];
 		for (auto value : allEventType)
 		{
 			InstanceSystemEventType::EventType eventTypeObject;
-			eventTypeObject.code = std::stoi(value["Code"].asString());
-			eventTypeObject.name = value["Name"].asString();
-			instanceSystemEventTypeObject.eventType.push_back(eventTypeObject);
+			if(!value["Code"].isNull())
+				eventTypeObject.code = std::stoi(value["Code"].asString());
+			if(!value["Name"].isNull())
+				eventTypeObject.name = value["Name"].asString();
+			instanceSystemEventSetObject.eventType.push_back(eventTypeObject);
 		}
-		instanceSystemEventSet_.push_back(instanceSystemEventTypeObject);
+		instanceSystemEventSet_.push_back(instanceSystemEventSetObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -69,19 +78,9 @@ int DescribeInstanceHistoryEventsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeInstanceHistoryEventsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeInstanceHistoryEventsResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeInstanceHistoryEventsResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeInstanceHistoryEventsResult::getPageNumber()const
@@ -89,8 +88,8 @@ int DescribeInstanceHistoryEventsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeInstanceHistoryEventsResult::setPageNumber(int pageNumber)
+std::vector<DescribeInstanceHistoryEventsResult::InstanceSystemEventType> DescribeInstanceHistoryEventsResult::getInstanceSystemEventSet()const
 {
-	pageNumber_ = pageNumber;
+	return instanceSystemEventSet_;
 }
 

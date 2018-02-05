@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CreateNetworkInterfaceRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CreateNetworkInterfaceRequest;
 
 CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
-	EcsRequest("CreateNetworkInterface")
+	RpcServiceRequest("ecs", "2014-05-26", "CreateNetworkInterface")
 {}
 
 CreateNetworkInterfaceRequest::~CreateNetworkInterfaceRequest()

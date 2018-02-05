@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteSnapshotRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteSnapshotRequest;
 
 DeleteSnapshotRequest::DeleteSnapshotRequest() :
-	EcsRequest("DeleteSnapshot")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteSnapshot")
 {}
 
 DeleteSnapshotRequest::~DeleteSnapshotRequest()

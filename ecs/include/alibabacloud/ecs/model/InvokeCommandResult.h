@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit InvokeCommandResult(const std::string &payload);
 				~InvokeCommandResult();
 				std::string getInvokeId()const;
-				void setInvokeId(const std::string& invokeId);
 
 			protected:
 				void parse(const std::string &payload);

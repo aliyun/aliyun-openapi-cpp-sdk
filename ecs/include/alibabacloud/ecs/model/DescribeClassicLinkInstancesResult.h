@@ -43,13 +43,9 @@ namespace AlibabaCloud
 				explicit DescribeClassicLinkInstancesResult(const std::string &payload);
 				~DescribeClassicLinkInstancesResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<Link> getLinks()const;
-				void setLinks(const std::vector<Link>& links);
 
 			protected:
 				void parse(const std::string &payload);

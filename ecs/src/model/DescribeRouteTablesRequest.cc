@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeRouteTablesRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeRouteTablesRequest;
 
 DescribeRouteTablesRequest::DescribeRouteTablesRequest() :
-	EcsRequest("DescribeRouteTables")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeRouteTables")
 {}
 
 DescribeRouteTablesRequest::~DescribeRouteTablesRequest()

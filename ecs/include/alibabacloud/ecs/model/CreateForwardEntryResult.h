@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateForwardEntryResult(const std::string &payload);
 				~CreateForwardEntryResult();
 				std::string getForwardEntryId()const;
-				void setForwardEntryId(const std::string& forwardEntryId);
 
 			protected:
 				void parse(const std::string &payload);

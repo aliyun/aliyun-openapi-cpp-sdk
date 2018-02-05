@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyHpcClusterAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyHpcClusterAttributeRequest;
 
 ModifyHpcClusterAttributeRequest::ModifyHpcClusterAttributeRequest() :
-	EcsRequest("ModifyHpcClusterAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyHpcClusterAttribute")
 {}
 
 ModifyHpcClusterAttributeRequest::~ModifyHpcClusterAttributeRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeDeploymentSetsRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeDeploymentSetsRequest;
 
 DescribeDeploymentSetsRequest::DescribeDeploymentSetsRequest() :
-	EcsRequest("DescribeDeploymentSets")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeDeploymentSets")
 {}
 
 DescribeDeploymentSetsRequest::~DescribeDeploymentSetsRequest()

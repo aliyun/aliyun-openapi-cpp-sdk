@@ -40,17 +40,13 @@ void CreateSecurityGroupResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	securityGroupId_ = value["SecurityGroupId"].asString();
+	if(!value["SecurityGroupId"].isNull())
+		securityGroupId_ = value["SecurityGroupId"].asString();
 
 }
 
 std::string CreateSecurityGroupResult::getSecurityGroupId()const
 {
 	return securityGroupId_;
-}
-
-void CreateSecurityGroupResult::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
 }
 

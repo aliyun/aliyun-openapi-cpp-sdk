@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeNatGatewaysRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeNatGatewaysRequest;
 
 DescribeNatGatewaysRequest::DescribeNatGatewaysRequest() :
-	EcsRequest("DescribeNatGateways")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeNatGateways")
 {}
 
 DescribeNatGatewaysRequest::~DescribeNatGatewaysRequest()

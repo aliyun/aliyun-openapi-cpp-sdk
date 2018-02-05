@@ -51,13 +51,9 @@ namespace AlibabaCloud
 				explicit DescribeInstanceHistoryEventsResult(const std::string &payload);
 				~DescribeInstanceHistoryEventsResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<InstanceSystemEventType> getInstanceSystemEventSet()const;
-				void setInstanceSystemEventSet(const std::vector<InstanceSystemEventType>& instanceSystemEventSet);
 
 			protected:
 				void parse(const std::string &payload);

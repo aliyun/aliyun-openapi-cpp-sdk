@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DetachClassicLinkVpcRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DetachClassicLinkVpcRequest;
 
 DetachClassicLinkVpcRequest::DetachClassicLinkVpcRequest() :
-	EcsRequest("DetachClassicLinkVpc")
+	RpcServiceRequest("ecs", "2014-05-26", "DetachClassicLinkVpc")
 {}
 
 DetachClassicLinkVpcRequest::~DetachClassicLinkVpcRequest()

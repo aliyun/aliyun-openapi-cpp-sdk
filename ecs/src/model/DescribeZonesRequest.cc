@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeZonesRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeZonesRequest;
 
 DescribeZonesRequest::DescribeZonesRequest() :
-	EcsRequest("DescribeZones")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeZones")
 {}
 
 DescribeZonesRequest::~DescribeZonesRequest()

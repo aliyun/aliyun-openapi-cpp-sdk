@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeRecommendInstanceTypeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeRecommendInstanceTypeRequest;
 
 DescribeRecommendInstanceTypeRequest::DescribeRecommendInstanceTypeRequest() :
-	EcsRequest("DescribeRecommendInstanceType")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeRecommendInstanceType")
 {}
 
 DescribeRecommendInstanceTypeRequest::~DescribeRecommendInstanceTypeRequest()

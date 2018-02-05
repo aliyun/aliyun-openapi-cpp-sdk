@@ -43,27 +43,39 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 	auto allInvocations = value["Invocations"]["Invocation"];
 	for (auto value : allInvocations)
 	{
-		Invocation invocationObject;
-		invocationObject.invokeId = value["InvokeId"].asString();
-		invocationObject.commandId = value["CommandId"].asString();
-		invocationObject.commandType = value["CommandType"].asString();
-		invocationObject.commandName = value["CommandName"].asString();
-		invocationObject.frequency = value["Frequency"].asString();
-		invocationObject.timed = std::stoi(value["Timed"].asString());
-		invocationObject.invokeStatus = value["InvokeStatus"].asString();
+		Invocation invocationsObject;
+		if(!value["InvokeId"].isNull())
+			invocationsObject.invokeId = value["InvokeId"].asString();
+		if(!value["CommandId"].isNull())
+			invocationsObject.commandId = value["CommandId"].asString();
+		if(!value["CommandType"].isNull())
+			invocationsObject.commandType = value["CommandType"].asString();
+		if(!value["CommandName"].isNull())
+			invocationsObject.commandName = value["CommandName"].asString();
+		if(!value["Frequency"].isNull())
+			invocationsObject.frequency = value["Frequency"].asString();
+		if(!value["Timed"].isNull())
+			invocationsObject.timed = value["Timed"].asString() == "true";
+		if(!value["InvokeStatus"].isNull())
+			invocationsObject.invokeStatus = value["InvokeStatus"].asString();
 		auto allInvokeInstances = value["InvokeInstances"]["InvokeInstance"];
 		for (auto value : allInvokeInstances)
 		{
-			Invocation::InvokeInstance invokeInstanceObject;
-			invokeInstanceObject.instanceId = value["InstanceId"].asString();
-			invokeInstanceObject.instanceInvokeStatus = value["InstanceInvokeStatus"].asString();
-			invocationObject.invokeInstances.push_back(invokeInstanceObject);
+			Invocation::InvokeInstance invokeInstancesObject;
+			if(!value["InstanceId"].isNull())
+				invokeInstancesObject.instanceId = value["InstanceId"].asString();
+			if(!value["InstanceInvokeStatus"].isNull())
+				invokeInstancesObject.instanceInvokeStatus = value["InstanceInvokeStatus"].asString();
+			invocationsObject.invokeInstances.push_back(invokeInstancesObject);
 		}
-		invocations_.push_back(invocationObject);
+		invocations_.push_back(invocationsObject);
 	}
-	totalCount_ = std::stol(value["TotalCount"].asString());
-	pageNumber_ = std::stol(value["PageNumber"].asString());
-	pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
 
 }
 
@@ -72,28 +84,18 @@ long DescribeInvocationsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeInvocationsResult::setTotalCount(long totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 long DescribeInvocationsResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeInvocationsResult::setPageSize(long pageSize)
+std::vector<DescribeInvocationsResult::Invocation> DescribeInvocationsResult::getInvocations()const
 {
-	pageSize_ = pageSize;
+	return invocations_;
 }
 
 long DescribeInvocationsResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeInvocationsResult::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

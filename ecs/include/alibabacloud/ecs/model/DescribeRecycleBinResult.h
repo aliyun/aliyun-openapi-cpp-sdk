@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct RecycleBinModel
 				{
-					struct relationResource
+					struct RelationResource
 					{
 						std::string relationResourceId;
 						std::string relationResourceType;
@@ -43,7 +43,7 @@ namespace AlibabaCloud
 					std::string resourceId;
 					std::string creationTime;
 					std::string resourceType;
-					std::vector<RecycleBinModel::relationResource> relationResources;
+					std::vector<RecycleBinModel::RelationResource> relationResources;
 					std::string regionId;
 				};
 
@@ -52,9 +52,7 @@ namespace AlibabaCloud
 				explicit DescribeRecycleBinResult(const std::string &payload);
 				~DescribeRecycleBinResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::vector<RecycleBinModel> getRecycleBinModels()const;
-				void setRecycleBinModels(const std::vector<RecycleBinModel>& recycleBinModels);
 
 			protected:
 				void parse(const std::string &payload);

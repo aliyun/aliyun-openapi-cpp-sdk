@@ -38,11 +38,8 @@ namespace AlibabaCloud
 				explicit CreateKeyPairResult(const std::string &payload);
 				~CreateKeyPairResult();
 				std::string getKeyPairFingerPrint()const;
-				void setKeyPairFingerPrint(const std::string& keyPairFingerPrint);
 				std::string getKeyPairName()const;
-				void setKeyPairName(const std::string& keyPairName);
 				std::string getPrivateKeyBody()const;
-				void setPrivateKeyBody(const std::string& privateKeyBody);
 
 			protected:
 				void parse(const std::string &payload);

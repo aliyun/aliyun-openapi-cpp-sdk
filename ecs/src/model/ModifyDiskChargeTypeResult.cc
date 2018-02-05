@@ -40,17 +40,13 @@ void ModifyDiskChargeTypeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	orderId_ = value["OrderId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
 }
 
 std::string ModifyDiskChargeTypeResult::getOrderId()const
 {
 	return orderId_;
-}
-
-void ModifyDiskChargeTypeResult::setOrderId(const std::string& orderId)
-{
-	orderId_ = orderId;
 }
 

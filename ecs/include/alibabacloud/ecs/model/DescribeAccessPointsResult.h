@@ -49,13 +49,9 @@ namespace AlibabaCloud
 				explicit DescribeAccessPointsResult(const std::string &payload);
 				~DescribeAccessPointsResult();
 				std::vector<AccessPointType> getAccessPointSet()const;
-				void setAccessPointSet(const std::vector<AccessPointType>& accessPointSet);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

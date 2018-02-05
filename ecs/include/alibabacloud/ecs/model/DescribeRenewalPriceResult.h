@@ -55,7 +55,6 @@ namespace AlibabaCloud
 				explicit DescribeRenewalPriceResult(const std::string &payload);
 				~DescribeRenewalPriceResult();
 				std::vector<PriceInfo> getPriceInfo()const;
-				void setPriceInfo(const std::vector<PriceInfo>& priceInfo);
 
 			protected:
 				void parse(const std::string &payload);

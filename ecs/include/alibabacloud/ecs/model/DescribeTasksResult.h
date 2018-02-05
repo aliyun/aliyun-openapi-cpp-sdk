@@ -47,15 +47,10 @@ namespace AlibabaCloud
 				explicit DescribeTasksResult(const std::string &payload);
 				~DescribeTasksResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<Task> getTaskSet()const;
-				void setTaskSet(const std::vector<Task>& taskSet);
 				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
 			protected:
 				void parse(const std::string &payload);

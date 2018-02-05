@@ -48,11 +48,8 @@ namespace AlibabaCloud
 				explicit DescribeSpotPriceHistoryResult(const std::string &payload);
 				~DescribeSpotPriceHistoryResult();
 				std::string getCurrency()const;
-				void setCurrency(const std::string& currency);
 				int getNextOffset()const;
-				void setNextOffset(int nextOffset);
 				std::vector<SpotPriceType> getSpotPrices()const;
-				void setSpotPrices(const std::vector<SpotPriceType>& spotPrices);
 
 			protected:
 				void parse(const std::string &payload);

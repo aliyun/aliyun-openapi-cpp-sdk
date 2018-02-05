@@ -40,9 +40,12 @@ void ImportImageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	taskId_ = value["TaskId"].asString();
-	regionId_ = value["RegionId"].asString();
-	imageId_ = value["ImageId"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["ImageId"].isNull())
+		imageId_ = value["ImageId"].asString();
 
 }
 
@@ -51,28 +54,13 @@ std::string ImportImageResult::getTaskId()const
 	return taskId_;
 }
 
-void ImportImageResult::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-}
-
 std::string ImportImageResult::getImageId()const
 {
 	return imageId_;
 }
 
-void ImportImageResult::setImageId(const std::string& imageId)
-{
-	imageId_ = imageId;
-}
-
 std::string ImportImageResult::getRegionId()const
 {
 	return regionId_;
-}
-
-void ImportImageResult::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
 }
 

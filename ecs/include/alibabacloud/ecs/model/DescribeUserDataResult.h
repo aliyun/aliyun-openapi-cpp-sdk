@@ -38,11 +38,8 @@ namespace AlibabaCloud
 				explicit DescribeUserDataResult(const std::string &payload);
 				~DescribeUserDataResult();
 				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getUserData()const;
-				void setUserData(const std::string& userData);
 				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
 			protected:
 				void parse(const std::string &payload);

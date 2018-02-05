@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit ModifyInstanceChargeTypeResult(const std::string &payload);
 				~ModifyInstanceChargeTypeResult();
 				std::string getOrderId()const;
-				void setOrderId(const std::string& orderId);
 
 			protected:
 				void parse(const std::string &payload);

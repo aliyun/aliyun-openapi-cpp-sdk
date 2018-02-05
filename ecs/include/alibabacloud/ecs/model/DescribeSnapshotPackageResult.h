@@ -45,13 +45,9 @@ namespace AlibabaCloud
 				explicit DescribeSnapshotPackageResult(const std::string &payload);
 				~DescribeSnapshotPackageResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<SnapshotPackage> getSnapshotPackages()const;
-				void setSnapshotPackages(const std::vector<SnapshotPackage>& snapshotPackages);
 
 			protected:
 				void parse(const std::string &payload);

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteRouterInterfaceRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteRouterInterfaceRequest;
 
 DeleteRouterInterfaceRequest::DeleteRouterInterfaceRequest() :
-	EcsRequest("DeleteRouterInterface")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteRouterInterface")
 {}
 
 DeleteRouterInterfaceRequest::~DeleteRouterInterfaceRequest()

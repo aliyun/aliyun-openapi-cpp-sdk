@@ -40,8 +40,10 @@ void DescribeLimitationResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	limitation_ = value["Limitation"].asString();
-	value_ = value["Value"].asString();
+	if(!value["Limitation"].isNull())
+		limitation_ = value["Limitation"].asString();
+	if(!value["Value"].isNull())
+		value_ = value["Value"].asString();
 
 }
 
@@ -50,18 +52,8 @@ std::string DescribeLimitationResult::getLimitation()const
 	return limitation_;
 }
 
-void DescribeLimitationResult::setLimitation(const std::string& limitation)
-{
-	limitation_ = limitation;
-}
-
 std::string DescribeLimitationResult::getValue()const
 {
 	return value_;
-}
-
-void DescribeLimitationResult::setValue(const std::string& value)
-{
-	value_ = value;
 }
 

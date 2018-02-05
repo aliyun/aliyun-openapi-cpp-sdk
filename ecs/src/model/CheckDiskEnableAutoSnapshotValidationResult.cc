@@ -40,8 +40,10 @@ void CheckDiskEnableAutoSnapshotValidationResult::parse(const std::string &paylo
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	isPermitted_ = value["IsPermitted"].asString();
-	autoSnapshotOccupation_ = std::stoi(value["AutoSnapshotOccupation"].asString());
+	if(!value["IsPermitted"].isNull())
+		isPermitted_ = value["IsPermitted"].asString();
+	if(!value["AutoSnapshotOccupation"].isNull())
+		autoSnapshotOccupation_ = std::stoi(value["AutoSnapshotOccupation"].asString());
 
 }
 
@@ -50,18 +52,8 @@ int CheckDiskEnableAutoSnapshotValidationResult::getAutoSnapshotOccupation()cons
 	return autoSnapshotOccupation_;
 }
 
-void CheckDiskEnableAutoSnapshotValidationResult::setAutoSnapshotOccupation(int autoSnapshotOccupation)
-{
-	autoSnapshotOccupation_ = autoSnapshotOccupation;
-}
-
 std::string CheckDiskEnableAutoSnapshotValidationResult::getIsPermitted()const
 {
 	return isPermitted_;
-}
-
-void CheckDiskEnableAutoSnapshotValidationResult::setIsPermitted(const std::string& isPermitted)
-{
-	isPermitted_ = isPermitted;
 }
 

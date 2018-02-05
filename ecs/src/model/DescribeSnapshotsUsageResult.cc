@@ -40,8 +40,10 @@ void DescribeSnapshotsUsageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	snapshotCount_ = std::stoi(value["SnapshotCount"].asString());
-	snapshotSize_ = std::stol(value["SnapshotSize"].asString());
+	if(!value["SnapshotCount"].isNull())
+		snapshotCount_ = std::stoi(value["SnapshotCount"].asString());
+	if(!value["SnapshotSize"].isNull())
+		snapshotSize_ = std::stol(value["SnapshotSize"].asString());
 
 }
 
@@ -50,18 +52,8 @@ int DescribeSnapshotsUsageResult::getSnapshotCount()const
 	return snapshotCount_;
 }
 
-void DescribeSnapshotsUsageResult::setSnapshotCount(int snapshotCount)
-{
-	snapshotCount_ = snapshotCount;
-}
-
 long DescribeSnapshotsUsageResult::getSnapshotSize()const
 {
 	return snapshotSize_;
-}
-
-void DescribeSnapshotsUsageResult::setSnapshotSize(long snapshotSize)
-{
-	snapshotSize_ = snapshotSize;
 }
 

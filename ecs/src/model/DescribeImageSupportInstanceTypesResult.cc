@@ -43,15 +43,21 @@ void DescribeImageSupportInstanceTypesResult::parse(const std::string &payload)
 	auto allInstanceTypes = value["InstanceTypes"]["InstanceType"];
 	for (auto value : allInstanceTypes)
 	{
-		InstanceType instanceTypeObject;
-		instanceTypeObject.instanceTypeId = value["InstanceTypeId"].asString();
-		instanceTypeObject.cpuCoreCount = std::stoi(value["CpuCoreCount"].asString());
-		instanceTypeObject.memorySize = std::stof(value["MemorySize"].asString());
-		instanceTypeObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
-		instanceTypes_.push_back(instanceTypeObject);
+		InstanceType instanceTypesObject;
+		if(!value["InstanceTypeId"].isNull())
+			instanceTypesObject.instanceTypeId = value["InstanceTypeId"].asString();
+		if(!value["CpuCoreCount"].isNull())
+			instanceTypesObject.cpuCoreCount = std::stoi(value["CpuCoreCount"].asString());
+		if(!value["MemorySize"].isNull())
+			instanceTypesObject.memorySize = std::stof(value["MemorySize"].asString());
+		if(!value["InstanceTypeFamily"].isNull())
+			instanceTypesObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
+		instanceTypes_.push_back(instanceTypesObject);
 	}
-	regionId_ = value["RegionId"].asString();
-	imageId_ = value["ImageId"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["ImageId"].isNull())
+		imageId_ = value["ImageId"].asString();
 
 }
 
@@ -60,18 +66,13 @@ std::string DescribeImageSupportInstanceTypesResult::getImageId()const
 	return imageId_;
 }
 
-void DescribeImageSupportInstanceTypesResult::setImageId(const std::string& imageId)
+std::vector<DescribeImageSupportInstanceTypesResult::InstanceType> DescribeImageSupportInstanceTypesResult::getInstanceTypes()const
 {
-	imageId_ = imageId;
+	return instanceTypes_;
 }
 
 std::string DescribeImageSupportInstanceTypesResult::getRegionId()const
 {
 	return regionId_;
-}
-
-void DescribeImageSupportInstanceTypesResult::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
 }
 

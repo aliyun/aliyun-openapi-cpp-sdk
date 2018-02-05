@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeRecycleBinRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeRecycleBinRequest;
 
 DescribeRecycleBinRequest::DescribeRecycleBinRequest() :
-	EcsRequest("DescribeRecycleBin")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeRecycleBin")
 {}
 
 DescribeRecycleBinRequest::~DescribeRecycleBinRequest()

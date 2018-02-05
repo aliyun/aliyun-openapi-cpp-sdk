@@ -38,15 +38,10 @@ namespace AlibabaCloud
 				explicit EipFillParamsResult(const std::string &payload);
 				~EipFillParamsResult();
 				std::string getRequestId()const;
-				void setRequestId(const std::string& requestId);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::string getData()const;
-				void setData(const std::string& data);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 				bool getSuccess()const;
-				void setSuccess(bool success);
 
 			protected:
 				void parse(const std::string &payload);

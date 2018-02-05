@@ -43,37 +43,65 @@ void DescribeRouterInterfacesResult::parse(const std::string &payload)
 	auto allRouterInterfaceSet = value["RouterInterfaceSet"]["RouterInterfaceType"];
 	for (auto value : allRouterInterfaceSet)
 	{
-		RouterInterfaceType routerInterfaceTypeObject;
-		routerInterfaceTypeObject.routerInterfaceId = value["RouterInterfaceId"].asString();
-		routerInterfaceTypeObject.oppositeRegionId = value["OppositeRegionId"].asString();
-		routerInterfaceTypeObject.role = value["Role"].asString();
-		routerInterfaceTypeObject.spec = value["Spec"].asString();
-		routerInterfaceTypeObject.name = value["Name"].asString();
-		routerInterfaceTypeObject.description = value["Description"].asString();
-		routerInterfaceTypeObject.routerId = value["RouterId"].asString();
-		routerInterfaceTypeObject.routerType = value["RouterType"].asString();
-		routerInterfaceTypeObject.creationTime = value["CreationTime"].asString();
-		routerInterfaceTypeObject.endTime = value["EndTime"].asString();
-		routerInterfaceTypeObject.chargeType = value["ChargeType"].asString();
-		routerInterfaceTypeObject.status = value["Status"].asString();
-		routerInterfaceTypeObject.businessStatus = value["BusinessStatus"].asString();
-		routerInterfaceTypeObject.connectedTime = value["ConnectedTime"].asString();
-		routerInterfaceTypeObject.oppositeInterfaceId = value["OppositeInterfaceId"].asString();
-		routerInterfaceTypeObject.oppositeInterfaceSpec = value["OppositeInterfaceSpec"].asString();
-		routerInterfaceTypeObject.oppositeInterfaceStatus = value["OppositeInterfaceStatus"].asString();
-		routerInterfaceTypeObject.oppositeInterfaceBusinessStatus = value["OppositeInterfaceBusinessStatus"].asString();
-		routerInterfaceTypeObject.oppositeRouterId = value["OppositeRouterId"].asString();
-		routerInterfaceTypeObject.oppositeRouterType = value["OppositeRouterType"].asString();
-		routerInterfaceTypeObject.oppositeInterfaceOwnerId = value["OppositeInterfaceOwnerId"].asString();
-		routerInterfaceTypeObject.accessPointId = value["AccessPointId"].asString();
-		routerInterfaceTypeObject.oppositeAccessPointId = value["OppositeAccessPointId"].asString();
-		routerInterfaceTypeObject.healthCheckSourceIp = value["HealthCheckSourceIp"].asString();
-		routerInterfaceTypeObject.healthCheckTargetIp = value["HealthCheckTargetIp"].asString();
-		routerInterfaceSet_.push_back(routerInterfaceTypeObject);
+		RouterInterfaceType routerInterfaceSetObject;
+		if(!value["RouterInterfaceId"].isNull())
+			routerInterfaceSetObject.routerInterfaceId = value["RouterInterfaceId"].asString();
+		if(!value["OppositeRegionId"].isNull())
+			routerInterfaceSetObject.oppositeRegionId = value["OppositeRegionId"].asString();
+		if(!value["Role"].isNull())
+			routerInterfaceSetObject.role = value["Role"].asString();
+		if(!value["Spec"].isNull())
+			routerInterfaceSetObject.spec = value["Spec"].asString();
+		if(!value["Name"].isNull())
+			routerInterfaceSetObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			routerInterfaceSetObject.description = value["Description"].asString();
+		if(!value["RouterId"].isNull())
+			routerInterfaceSetObject.routerId = value["RouterId"].asString();
+		if(!value["RouterType"].isNull())
+			routerInterfaceSetObject.routerType = value["RouterType"].asString();
+		if(!value["CreationTime"].isNull())
+			routerInterfaceSetObject.creationTime = value["CreationTime"].asString();
+		if(!value["EndTime"].isNull())
+			routerInterfaceSetObject.endTime = value["EndTime"].asString();
+		if(!value["ChargeType"].isNull())
+			routerInterfaceSetObject.chargeType = value["ChargeType"].asString();
+		if(!value["Status"].isNull())
+			routerInterfaceSetObject.status = value["Status"].asString();
+		if(!value["BusinessStatus"].isNull())
+			routerInterfaceSetObject.businessStatus = value["BusinessStatus"].asString();
+		if(!value["ConnectedTime"].isNull())
+			routerInterfaceSetObject.connectedTime = value["ConnectedTime"].asString();
+		if(!value["OppositeInterfaceId"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceId = value["OppositeInterfaceId"].asString();
+		if(!value["OppositeInterfaceSpec"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceSpec = value["OppositeInterfaceSpec"].asString();
+		if(!value["OppositeInterfaceStatus"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceStatus = value["OppositeInterfaceStatus"].asString();
+		if(!value["OppositeInterfaceBusinessStatus"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceBusinessStatus = value["OppositeInterfaceBusinessStatus"].asString();
+		if(!value["OppositeRouterId"].isNull())
+			routerInterfaceSetObject.oppositeRouterId = value["OppositeRouterId"].asString();
+		if(!value["OppositeRouterType"].isNull())
+			routerInterfaceSetObject.oppositeRouterType = value["OppositeRouterType"].asString();
+		if(!value["OppositeInterfaceOwnerId"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceOwnerId = value["OppositeInterfaceOwnerId"].asString();
+		if(!value["AccessPointId"].isNull())
+			routerInterfaceSetObject.accessPointId = value["AccessPointId"].asString();
+		if(!value["OppositeAccessPointId"].isNull())
+			routerInterfaceSetObject.oppositeAccessPointId = value["OppositeAccessPointId"].asString();
+		if(!value["HealthCheckSourceIp"].isNull())
+			routerInterfaceSetObject.healthCheckSourceIp = value["HealthCheckSourceIp"].asString();
+		if(!value["HealthCheckTargetIp"].isNull())
+			routerInterfaceSetObject.healthCheckTargetIp = value["HealthCheckTargetIp"].asString();
+		routerInterfaceSet_.push_back(routerInterfaceSetObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -82,19 +110,9 @@ int DescribeRouterInterfacesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeRouterInterfacesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeRouterInterfacesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeRouterInterfacesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeRouterInterfacesResult::getPageNumber()const
@@ -102,8 +120,8 @@ int DescribeRouterInterfacesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeRouterInterfacesResult::setPageNumber(int pageNumber)
+std::vector<DescribeRouterInterfacesResult::RouterInterfaceType> DescribeRouterInterfacesResult::getRouterInterfaceSet()const
 {
-	pageNumber_ = pageNumber;
+	return routerInterfaceSet_;
 }
 

@@ -49,15 +49,10 @@ namespace AlibabaCloud
 				explicit DescribeDeploymentSetsResult(const std::string &payload);
 				~DescribeDeploymentSetsResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::vector<DeploymentSet> getDeploymentSets()const;
-				void setDeploymentSets(const std::vector<DeploymentSet>& deploymentSets);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
 			protected:
 				void parse(const std::string &payload);

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteHaVipRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteHaVipRequest;
 
 DeleteHaVipRequest::DeleteHaVipRequest() :
-	EcsRequest("DeleteHaVip")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteHaVip")
 {}
 
 DeleteHaVipRequest::~DeleteHaVipRequest()

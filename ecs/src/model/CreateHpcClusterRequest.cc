@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CreateHpcClusterRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CreateHpcClusterRequest;
 
 CreateHpcClusterRequest::CreateHpcClusterRequest() :
-	EcsRequest("CreateHpcCluster")
+	RpcServiceRequest("ecs", "2014-05-26", "CreateHpcCluster")
 {}
 
 CreateHpcClusterRequest::~CreateHpcClusterRequest()

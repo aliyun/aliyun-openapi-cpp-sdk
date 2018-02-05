@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeUserBusinessBehaviorRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeUserBusinessBehaviorRequest;
 
 DescribeUserBusinessBehaviorRequest::DescribeUserBusinessBehaviorRequest() :
-	EcsRequest("DescribeUserBusinessBehavior")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeUserBusinessBehavior")
 {}
 
 DescribeUserBusinessBehaviorRequest::~DescribeUserBusinessBehaviorRequest()

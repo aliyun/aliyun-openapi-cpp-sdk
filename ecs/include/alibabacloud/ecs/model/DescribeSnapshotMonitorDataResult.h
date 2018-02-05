@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit DescribeSnapshotMonitorDataResult(const std::string &payload);
 				~DescribeSnapshotMonitorDataResult();
 				std::vector<DataPoint> getMonitorData()const;
-				void setMonitorData(const std::vector<DataPoint>& monitorData);
 
 			protected:
 				void parse(const std::string &payload);

@@ -54,15 +54,10 @@ namespace AlibabaCloud
 				explicit DescribeSecurityGroupsResult(const std::string &payload);
 				~DescribeSecurityGroupsResult();
 				std::vector<SecurityGroup> getSecurityGroups()const;
-				void setSecurityGroups(const std::vector<SecurityGroup>& securityGroups);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
 			protected:
 				void parse(const std::string &payload);

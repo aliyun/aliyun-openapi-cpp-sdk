@@ -43,48 +43,56 @@ void DescribeZonesResult::parse(const std::string &payload)
 	auto allZones = value["Zones"]["Zone"];
 	for (auto value : allZones)
 	{
-		Zone zoneObject;
-		zoneObject.zoneId = value["ZoneId"].asString();
-		zoneObject.localName = value["LocalName"].asString();
+		Zone zonesObject;
+		if(!value["ZoneId"].isNull())
+			zonesObject.zoneId = value["ZoneId"].asString();
+		if(!value["LocalName"].isNull())
+			zonesObject.localName = value["LocalName"].asString();
 		auto allAvailableResources = value["AvailableResources"]["ResourcesInfo"];
 		for (auto value : allAvailableResources)
 		{
-			Zone::ResourcesInfo resourcesInfoObject;
-			resourcesInfoObject.ioOptimized = std::stoi(value["IoOptimized"].asString());
+			Zone::ResourcesInfo availableResourcesObject;
+			if(!value["IoOptimized"].isNull())
+				availableResourcesObject.ioOptimized = value["IoOptimized"].asString() == "true";
 			auto allSystemDiskCategories = value["SystemDiskCategories"]["supportedSystemDiskCategory"];
 			for (auto value : allSystemDiskCategories)
-				resourcesInfoObject.systemDiskCategories.push_back(value.asString());
+				availableResourcesObject.systemDiskCategories.push_back(value.asString());
 			auto allDataDiskCategories = value["DataDiskCategories"]["supportedDataDiskCategory"];
 			for (auto value : allDataDiskCategories)
-				resourcesInfoObject.dataDiskCategories.push_back(value.asString());
+				availableResourcesObject.dataDiskCategories.push_back(value.asString());
 			auto allNetworkTypes = value["NetworkTypes"]["supportedNetworkCategory"];
 			for (auto value : allNetworkTypes)
-				resourcesInfoObject.networkTypes.push_back(value.asString());
+				availableResourcesObject.networkTypes.push_back(value.asString());
 			auto allInstanceTypes = value["InstanceTypes"]["supportedInstanceType"];
 			for (auto value : allInstanceTypes)
-				resourcesInfoObject.instanceTypes.push_back(value.asString());
+				availableResourcesObject.instanceTypes.push_back(value.asString());
 			auto allInstanceTypeFamilies = value["InstanceTypeFamilies"]["supportedInstanceTypeFamily"];
 			for (auto value : allInstanceTypeFamilies)
-				resourcesInfoObject.instanceTypeFamilies.push_back(value.asString());
+				availableResourcesObject.instanceTypeFamilies.push_back(value.asString());
 			auto allInstanceGenerations = value["InstanceGenerations"]["supportedInstanceGeneration"];
 			for (auto value : allInstanceGenerations)
-				resourcesInfoObject.instanceGenerations.push_back(value.asString());
-			zoneObject.availableResources.push_back(resourcesInfoObject);
+				availableResourcesObject.instanceGenerations.push_back(value.asString());
+			zonesObject.availableResources.push_back(availableResourcesObject);
 		}
 		auto allAvailableResourceCreation = value["AvailableResourceCreation"]["ResourceTypes"];
 		for (auto value : allAvailableResourceCreation)
-			zoneObject.availableResourceCreation.push_back(value.asString());
+			zonesObject.availableResourceCreation.push_back(value.asString());
 		auto allAvailableDiskCategories = value["AvailableDiskCategories"]["DiskCategories"];
 		for (auto value : allAvailableDiskCategories)
-			zoneObject.availableDiskCategories.push_back(value.asString());
+			zonesObject.availableDiskCategories.push_back(value.asString());
 		auto allAvailableInstanceTypes = value["AvailableInstanceTypes"]["InstanceTypes"];
 		for (auto value : allAvailableInstanceTypes)
-			zoneObject.availableInstanceTypes.push_back(value.asString());
+			zonesObject.availableInstanceTypes.push_back(value.asString());
 		auto allAvailableVolumeCategories = value["AvailableVolumeCategories"]["VolumeCategories"];
 		for (auto value : allAvailableVolumeCategories)
-			zoneObject.availableVolumeCategories.push_back(value.asString());
-		zones_.push_back(zoneObject);
+			zonesObject.availableVolumeCategories.push_back(value.asString());
+		zones_.push_back(zonesObject);
 	}
 
+}
+
+std::vector<DescribeZonesResult::Zone> DescribeZonesResult::getZones()const
+{
+	return zones_;
 }
 

@@ -51,13 +51,9 @@ namespace AlibabaCloud
 				explicit DescribeVSwitchesResult(const std::string &payload);
 				~DescribeVSwitchesResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<VSwitch> getVSwitches()const;
-				void setVSwitches(const std::vector<VSwitch>& vSwitches);
 
 			protected:
 				void parse(const std::string &payload);

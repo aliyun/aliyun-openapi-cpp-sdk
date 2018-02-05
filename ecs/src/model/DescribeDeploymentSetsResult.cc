@@ -43,21 +43,33 @@ void DescribeDeploymentSetsResult::parse(const std::string &payload)
 	auto allDeploymentSets = value["DeploymentSets"]["DeploymentSet"];
 	for (auto value : allDeploymentSets)
 	{
-		DeploymentSet deploymentSetObject;
-		deploymentSetObject.deploymentSetId = value["DeploymentSetId"].asString();
-		deploymentSetObject.deploymentSetDescription = value["DeploymentSetDescription"].asString();
-		deploymentSetObject.deploymentSetName = value["DeploymentSetName"].asString();
-		deploymentSetObject.strategy = value["Strategy"].asString();
-		deploymentSetObject.domain = value["Domain"].asString();
-		deploymentSetObject.granularity = value["Granularity"].asString();
-		deploymentSetObject.instanceAmount = std::stoi(value["InstanceAmount"].asString());
-		deploymentSetObject.creationTime = value["CreationTime"].asString();
-		deploymentSets_.push_back(deploymentSetObject);
+		DeploymentSet deploymentSetsObject;
+		if(!value["DeploymentSetId"].isNull())
+			deploymentSetsObject.deploymentSetId = value["DeploymentSetId"].asString();
+		if(!value["DeploymentSetDescription"].isNull())
+			deploymentSetsObject.deploymentSetDescription = value["DeploymentSetDescription"].asString();
+		if(!value["DeploymentSetName"].isNull())
+			deploymentSetsObject.deploymentSetName = value["DeploymentSetName"].asString();
+		if(!value["Strategy"].isNull())
+			deploymentSetsObject.strategy = value["Strategy"].asString();
+		if(!value["Domain"].isNull())
+			deploymentSetsObject.domain = value["Domain"].asString();
+		if(!value["Granularity"].isNull())
+			deploymentSetsObject.granularity = value["Granularity"].asString();
+		if(!value["InstanceAmount"].isNull())
+			deploymentSetsObject.instanceAmount = std::stoi(value["InstanceAmount"].asString());
+		if(!value["CreationTime"].isNull())
+			deploymentSetsObject.creationTime = value["CreationTime"].asString();
+		deploymentSets_.push_back(deploymentSetsObject);
 	}
-	regionId_ = value["RegionId"].asString();
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -66,19 +78,14 @@ int DescribeDeploymentSetsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeDeploymentSetsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeDeploymentSetsResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeDeploymentSetsResult::setPageSize(int pageSize)
+std::vector<DescribeDeploymentSetsResult::DeploymentSet> DescribeDeploymentSetsResult::getDeploymentSets()const
 {
-	pageSize_ = pageSize;
+	return deploymentSets_;
 }
 
 int DescribeDeploymentSetsResult::getPageNumber()const
@@ -86,18 +93,8 @@ int DescribeDeploymentSetsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeDeploymentSetsResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-}
-
 std::string DescribeDeploymentSetsResult::getRegionId()const
 {
 	return regionId_;
-}
-
-void DescribeDeploymentSetsResult::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
 }
 

@@ -43,31 +43,47 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 	auto allEipAddresses = value["EipAddresses"]["EipAddress"];
 	for (auto value : allEipAddresses)
 	{
-		EipAddress eipAddressObject;
-		eipAddressObject.regionId = value["RegionId"].asString();
-		eipAddressObject.ipAddress = value["IpAddress"].asString();
-		eipAddressObject.allocationId = value["AllocationId"].asString();
-		eipAddressObject.status = value["Status"].asString();
-		eipAddressObject.instanceId = value["InstanceId"].asString();
-		eipAddressObject.bandwidth = value["Bandwidth"].asString();
-		eipAddressObject.eipBandwidth = value["EipBandwidth"].asString();
-		eipAddressObject.internetChargeType = value["InternetChargeType"].asString();
-		eipAddressObject.allocationTime = value["AllocationTime"].asString();
-		eipAddressObject.instanceType = value["InstanceType"].asString();
-		eipAddressObject.chargeType = value["ChargeType"].asString();
-		eipAddressObject.expiredTime = value["ExpiredTime"].asString();
+		EipAddress eipAddressesObject;
+		if(!value["RegionId"].isNull())
+			eipAddressesObject.regionId = value["RegionId"].asString();
+		if(!value["IpAddress"].isNull())
+			eipAddressesObject.ipAddress = value["IpAddress"].asString();
+		if(!value["AllocationId"].isNull())
+			eipAddressesObject.allocationId = value["AllocationId"].asString();
+		if(!value["Status"].isNull())
+			eipAddressesObject.status = value["Status"].asString();
+		if(!value["InstanceId"].isNull())
+			eipAddressesObject.instanceId = value["InstanceId"].asString();
+		if(!value["Bandwidth"].isNull())
+			eipAddressesObject.bandwidth = value["Bandwidth"].asString();
+		if(!value["EipBandwidth"].isNull())
+			eipAddressesObject.eipBandwidth = value["EipBandwidth"].asString();
+		if(!value["InternetChargeType"].isNull())
+			eipAddressesObject.internetChargeType = value["InternetChargeType"].asString();
+		if(!value["AllocationTime"].isNull())
+			eipAddressesObject.allocationTime = value["AllocationTime"].asString();
+		if(!value["InstanceType"].isNull())
+			eipAddressesObject.instanceType = value["InstanceType"].asString();
+		if(!value["ChargeType"].isNull())
+			eipAddressesObject.chargeType = value["ChargeType"].asString();
+		if(!value["ExpiredTime"].isNull())
+			eipAddressesObject.expiredTime = value["ExpiredTime"].asString();
 		auto allOperationLocks = value["OperationLocks"]["LockReason"];
 		for (auto value : allOperationLocks)
 		{
-			EipAddress::LockReason lockReasonObject;
-			lockReasonObject.lockReason = value["LockReason"].asString();
-			eipAddressObject.operationLocks.push_back(lockReasonObject);
+			EipAddress::LockReason operationLocksObject;
+			if(!value["LockReason"].isNull())
+				operationLocksObject.lockReason = value["LockReason"].asString();
+			eipAddressesObject.operationLocks.push_back(operationLocksObject);
 		}
-		eipAddresses_.push_back(eipAddressObject);
+		eipAddresses_.push_back(eipAddressesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -76,9 +92,9 @@ int DescribeEipAddressesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeEipAddressesResult::setTotalCount(int totalCount)
+std::vector<DescribeEipAddressesResult::EipAddress> DescribeEipAddressesResult::getEipAddresses()const
 {
-	totalCount_ = totalCount;
+	return eipAddresses_;
 }
 
 int DescribeEipAddressesResult::getPageSize()const
@@ -86,18 +102,8 @@ int DescribeEipAddressesResult::getPageSize()const
 	return pageSize_;
 }
 
-void DescribeEipAddressesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeEipAddressesResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeEipAddressesResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

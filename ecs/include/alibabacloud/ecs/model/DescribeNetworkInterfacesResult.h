@@ -72,13 +72,9 @@ namespace AlibabaCloud
 				explicit DescribeNetworkInterfacesResult(const std::string &payload);
 				~DescribeNetworkInterfacesResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<NetworkInterfaceSet> getNetworkInterfaceSets()const;
-				void setNetworkInterfaceSets(const std::vector<NetworkInterfaceSet>& networkInterfaceSets);
 
 			protected:
 				void parse(const std::string &payload);

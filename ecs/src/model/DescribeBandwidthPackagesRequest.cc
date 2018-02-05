@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeBandwidthPackagesRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeBandwidthPackagesRequest;
 
 DescribeBandwidthPackagesRequest::DescribeBandwidthPackagesRequest() :
-	EcsRequest("DescribeBandwidthPackages")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeBandwidthPackages")
 {}
 
 DescribeBandwidthPackagesRequest::~DescribeBandwidthPackagesRequest()

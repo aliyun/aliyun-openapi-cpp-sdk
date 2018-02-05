@@ -43,23 +43,31 @@ void DescribeRecycleBinResult::parse(const std::string &payload)
 	auto allRecycleBinModels = value["RecycleBinModels"]["RecycleBinModel"];
 	for (auto value : allRecycleBinModels)
 	{
-		RecycleBinModel recycleBinModelObject;
-		recycleBinModelObject.resourceId = value["ResourceId"].asString();
-		recycleBinModelObject.regionId = value["RegionId"].asString();
-		recycleBinModelObject.resourceType = value["ResourceType"].asString();
-		recycleBinModelObject.creationTime = value["CreationTime"].asString();
-		recycleBinModelObject.status = value["Status"].asString();
+		RecycleBinModel recycleBinModelsObject;
+		if(!value["ResourceId"].isNull())
+			recycleBinModelsObject.resourceId = value["ResourceId"].asString();
+		if(!value["RegionId"].isNull())
+			recycleBinModelsObject.regionId = value["RegionId"].asString();
+		if(!value["ResourceType"].isNull())
+			recycleBinModelsObject.resourceType = value["ResourceType"].asString();
+		if(!value["CreationTime"].isNull())
+			recycleBinModelsObject.creationTime = value["CreationTime"].asString();
+		if(!value["Status"].isNull())
+			recycleBinModelsObject.status = value["Status"].asString();
 		auto allRelationResources = value["RelationResources"]["relationResource"];
 		for (auto value : allRelationResources)
 		{
-			RecycleBinModel::relationResource relationResourceObject;
-			relationResourceObject.relationResourceId = value["RelationResourceId"].asString();
-			relationResourceObject.relationResourceType = value["RelationResourceType"].asString();
-			recycleBinModelObject.relationResources.push_back(relationResourceObject);
+			RecycleBinModel::RelationResource relationResourcesObject;
+			if(!value["RelationResourceId"].isNull())
+				relationResourcesObject.relationResourceId = value["RelationResourceId"].asString();
+			if(!value["RelationResourceType"].isNull())
+				relationResourcesObject.relationResourceType = value["RelationResourceType"].asString();
+			recycleBinModelsObject.relationResources.push_back(relationResourcesObject);
 		}
-		recycleBinModels_.push_back(recycleBinModelObject);
+		recycleBinModels_.push_back(recycleBinModelsObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -68,8 +76,8 @@ int DescribeRecycleBinResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeRecycleBinResult::setTotalCount(int totalCount)
+std::vector<DescribeRecycleBinResult::RecycleBinModel> DescribeRecycleBinResult::getRecycleBinModels()const
 {
-	totalCount_ = totalCount;
+	return recycleBinModels_;
 }
 

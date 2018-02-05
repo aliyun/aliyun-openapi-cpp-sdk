@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/EipNotifyPaidRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::EipNotifyPaidRequest;
 
 EipNotifyPaidRequest::EipNotifyPaidRequest() :
-	EcsRequest("EipNotifyPaid")
+	RpcServiceRequest("ecs", "2014-05-26", "EipNotifyPaid")
 {}
 
 EipNotifyPaidRequest::~EipNotifyPaidRequest()

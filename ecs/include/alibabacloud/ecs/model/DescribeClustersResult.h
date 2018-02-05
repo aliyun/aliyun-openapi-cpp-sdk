@@ -42,7 +42,6 @@ namespace AlibabaCloud
 				explicit DescribeClustersResult(const std::string &payload);
 				~DescribeClustersResult();
 				std::vector<Cluster> getClusters()const;
-				void setClusters(const std::vector<Cluster>& clusters);
 
 			protected:
 				void parse(const std::string &payload);

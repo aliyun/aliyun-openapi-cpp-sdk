@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateHpcClusterResult(const std::string &payload);
 				~CreateHpcClusterResult();
 				std::string getHpcClusterId()const;
-				void setHpcClusterId(const std::string& hpcClusterId);
 
 			protected:
 				void parse(const std::string &payload);

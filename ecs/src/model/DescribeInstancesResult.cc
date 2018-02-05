@@ -43,113 +43,176 @@ void DescribeInstancesResult::parse(const std::string &payload)
 	auto allInstances = value["Instances"]["Instance"];
 	for (auto value : allInstances)
 	{
-		Instance instanceObject;
-		instanceObject.instanceId = value["InstanceId"].asString();
-		instanceObject.instanceName = value["InstanceName"].asString();
-		instanceObject.description = value["Description"].asString();
-		instanceObject.imageId = value["ImageId"].asString();
-		instanceObject.oSName = value["OSName"].asString();
-		instanceObject.oSType = value["OSType"].asString();
-		instanceObject.regionId = value["RegionId"].asString();
-		instanceObject.zoneId = value["ZoneId"].asString();
-		instanceObject.clusterId = value["ClusterId"].asString();
-		instanceObject.instanceType = value["InstanceType"].asString();
-		instanceObject.cpu = std::stoi(value["Cpu"].asString());
-		instanceObject.memory = std::stoi(value["Memory"].asString());
-		instanceObject.hostName = value["HostName"].asString();
-		instanceObject.status = value["Status"].asString();
-		instanceObject.serialNumber = value["SerialNumber"].asString();
-		instanceObject.internetChargeType = value["InternetChargeType"].asString();
-		instanceObject.internetMaxBandwidthIn = std::stoi(value["InternetMaxBandwidthIn"].asString());
-		instanceObject.internetMaxBandwidthOut = std::stoi(value["InternetMaxBandwidthOut"].asString());
-		instanceObject.vlanId = value["VlanId"].asString();
-		instanceObject.creationTime = value["CreationTime"].asString();
-		instanceObject.startTime = value["StartTime"].asString();
-		instanceObject.instanceNetworkType = value["InstanceNetworkType"].asString();
-		instanceObject.instanceChargeType = value["InstanceChargeType"].asString();
-		instanceObject.saleCycle = value["SaleCycle"].asString();
-		instanceObject.expiredTime = value["ExpiredTime"].asString();
-		instanceObject.autoReleaseTime = value["AutoReleaseTime"].asString();
-		instanceObject.ioOptimized = std::stoi(value["IoOptimized"].asString());
-		instanceObject.deviceAvailable = std::stoi(value["DeviceAvailable"].asString());
-		instanceObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
-		instanceObject.localStorageCapacity = std::stol(value["LocalStorageCapacity"].asString());
-		instanceObject.localStorageAmount = std::stoi(value["LocalStorageAmount"].asString());
-		instanceObject.gPUAmount = std::stoi(value["GPUAmount"].asString());
-		instanceObject.gPUSpec = value["GPUSpec"].asString();
-		instanceObject.spotStrategy = value["SpotStrategy"].asString();
-		instanceObject.spotPriceLimit = std::stof(value["SpotPriceLimit"].asString());
-		instanceObject.resourceGroupId = value["ResourceGroupId"].asString();
-		instanceObject.keyPairName = value["KeyPairName"].asString();
-		instanceObject.recyclable = std::stoi(value["Recyclable"].asString());
-		instanceObject.hpcClusterId = value["HpcClusterId"].asString();
-		instanceObject.stoppedMode = value["StoppedMode"].asString();
+		Instance instancesObject;
+		if(!value["InstanceId"].isNull())
+			instancesObject.instanceId = value["InstanceId"].asString();
+		if(!value["InstanceName"].isNull())
+			instancesObject.instanceName = value["InstanceName"].asString();
+		if(!value["Description"].isNull())
+			instancesObject.description = value["Description"].asString();
+		if(!value["ImageId"].isNull())
+			instancesObject.imageId = value["ImageId"].asString();
+		if(!value["OSName"].isNull())
+			instancesObject.oSName = value["OSName"].asString();
+		if(!value["OSType"].isNull())
+			instancesObject.oSType = value["OSType"].asString();
+		if(!value["RegionId"].isNull())
+			instancesObject.regionId = value["RegionId"].asString();
+		if(!value["ZoneId"].isNull())
+			instancesObject.zoneId = value["ZoneId"].asString();
+		if(!value["ClusterId"].isNull())
+			instancesObject.clusterId = value["ClusterId"].asString();
+		if(!value["InstanceType"].isNull())
+			instancesObject.instanceType = value["InstanceType"].asString();
+		if(!value["Cpu"].isNull())
+			instancesObject.cpu = std::stoi(value["Cpu"].asString());
+		if(!value["Memory"].isNull())
+			instancesObject.memory = std::stoi(value["Memory"].asString());
+		if(!value["HostName"].isNull())
+			instancesObject.hostName = value["HostName"].asString();
+		if(!value["Status"].isNull())
+			instancesObject.status = value["Status"].asString();
+		if(!value["SerialNumber"].isNull())
+			instancesObject.serialNumber = value["SerialNumber"].asString();
+		if(!value["InternetChargeType"].isNull())
+			instancesObject.internetChargeType = value["InternetChargeType"].asString();
+		if(!value["InternetMaxBandwidthIn"].isNull())
+			instancesObject.internetMaxBandwidthIn = std::stoi(value["InternetMaxBandwidthIn"].asString());
+		if(!value["InternetMaxBandwidthOut"].isNull())
+			instancesObject.internetMaxBandwidthOut = std::stoi(value["InternetMaxBandwidthOut"].asString());
+		if(!value["VlanId"].isNull())
+			instancesObject.vlanId = value["VlanId"].asString();
+		if(!value["CreationTime"].isNull())
+			instancesObject.creationTime = value["CreationTime"].asString();
+		if(!value["StartTime"].isNull())
+			instancesObject.startTime = value["StartTime"].asString();
+		if(!value["InstanceNetworkType"].isNull())
+			instancesObject.instanceNetworkType = value["InstanceNetworkType"].asString();
+		if(!value["InstanceChargeType"].isNull())
+			instancesObject.instanceChargeType = value["InstanceChargeType"].asString();
+		if(!value["SaleCycle"].isNull())
+			instancesObject.saleCycle = value["SaleCycle"].asString();
+		if(!value["ExpiredTime"].isNull())
+			instancesObject.expiredTime = value["ExpiredTime"].asString();
+		if(!value["AutoReleaseTime"].isNull())
+			instancesObject.autoReleaseTime = value["AutoReleaseTime"].asString();
+		if(!value["IoOptimized"].isNull())
+			instancesObject.ioOptimized = value["IoOptimized"].asString() == "true";
+		if(!value["DeviceAvailable"].isNull())
+			instancesObject.deviceAvailable = value["DeviceAvailable"].asString() == "true";
+		if(!value["InstanceTypeFamily"].isNull())
+			instancesObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
+		if(!value["LocalStorageCapacity"].isNull())
+			instancesObject.localStorageCapacity = std::stol(value["LocalStorageCapacity"].asString());
+		if(!value["LocalStorageAmount"].isNull())
+			instancesObject.localStorageAmount = std::stoi(value["LocalStorageAmount"].asString());
+		if(!value["GPUAmount"].isNull())
+			instancesObject.gPUAmount = std::stoi(value["GPUAmount"].asString());
+		if(!value["GPUSpec"].isNull())
+			instancesObject.gPUSpec = value["GPUSpec"].asString();
+		if(!value["SpotStrategy"].isNull())
+			instancesObject.spotStrategy = value["SpotStrategy"].asString();
+		if(!value["SpotPriceLimit"].isNull())
+			instancesObject.spotPriceLimit = std::stof(value["SpotPriceLimit"].asString());
+		if(!value["ResourceGroupId"].isNull())
+			instancesObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["KeyPairName"].isNull())
+			instancesObject.keyPairName = value["KeyPairName"].asString();
+		if(!value["Recyclable"].isNull())
+			instancesObject.recyclable = value["Recyclable"].asString() == "true";
+		if(!value["HpcClusterId"].isNull())
+			instancesObject.hpcClusterId = value["HpcClusterId"].asString();
+		if(!value["StoppedMode"].isNull())
+			instancesObject.stoppedMode = value["StoppedMode"].asString();
 		auto allNetworkInterfaces = value["NetworkInterfaces"]["NetworkInterface"];
 		for (auto value : allNetworkInterfaces)
 		{
-			Instance::NetworkInterface networkInterfaceObject;
-			networkInterfaceObject.networkInterfaceId = value["NetworkInterfaceId"].asString();
-			networkInterfaceObject.macAddress = value["MacAddress"].asString();
-			networkInterfaceObject.primaryIpAddress = value["PrimaryIpAddress"].asString();
-			instanceObject.networkInterfaces.push_back(networkInterfaceObject);
+			Instance::NetworkInterface networkInterfacesObject;
+			if(!value["NetworkInterfaceId"].isNull())
+				networkInterfacesObject.networkInterfaceId = value["NetworkInterfaceId"].asString();
+			if(!value["MacAddress"].isNull())
+				networkInterfacesObject.macAddress = value["MacAddress"].asString();
+			if(!value["PrimaryIpAddress"].isNull())
+				networkInterfacesObject.primaryIpAddress = value["PrimaryIpAddress"].asString();
+			instancesObject.networkInterfaces.push_back(networkInterfacesObject);
 		}
 		auto allOperationLocks = value["OperationLocks"]["LockReason"];
 		for (auto value : allOperationLocks)
 		{
-			Instance::LockReason lockReasonObject;
-			lockReasonObject.lockReason = value["LockReason"].asString();
-			lockReasonObject.lockMsg = value["LockMsg"].asString();
-			instanceObject.operationLocks.push_back(lockReasonObject);
+			Instance::LockReason operationLocksObject;
+			if(!value["LockReason"].isNull())
+				operationLocksObject.lockReason = value["LockReason"].asString();
+			if(!value["LockMsg"].isNull())
+				operationLocksObject.lockMsg = value["LockMsg"].asString();
+			instancesObject.operationLocks.push_back(operationLocksObject);
 		}
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{
-			Instance::Tag tagObject;
-			tagObject.tagKey = value["TagKey"].asString();
-			tagObject.tagValue = value["TagValue"].asString();
-			instanceObject.tags.push_back(tagObject);
+			Instance::Tag tagsObject;
+			if(!value["TagKey"].isNull())
+				tagsObject.tagKey = value["TagKey"].asString();
+			if(!value["TagValue"].isNull())
+				tagsObject.tagValue = value["TagValue"].asString();
+			instancesObject.tags.push_back(tagsObject);
 		}
 		auto allVpcAttributes = value["VpcAttributes"];
 		for (auto value : allVpcAttributes)
 		{
 			Instance::VpcAttributes vpcAttributesObject;
-			vpcAttributesObject.vpcId = value["VpcId"].asString();
-			vpcAttributesObject.vSwitchId = value["VSwitchId"].asString();
-			vpcAttributesObject.natIpAddress = value["NatIpAddress"].asString();
+			if(!value["VpcId"].isNull())
+				vpcAttributesObject.vpcId = value["VpcId"].asString();
+			if(!value["VSwitchId"].isNull())
+				vpcAttributesObject.vSwitchId = value["VSwitchId"].asString();
+			if(!value["NatIpAddress"].isNull())
+				vpcAttributesObject.natIpAddress = value["NatIpAddress"].asString();
 			auto allPrivateIpAddress = value["PrivateIpAddress"]["IpAddress"];
 			for (auto value : allPrivateIpAddress)
 				vpcAttributesObject.privateIpAddress.push_back(value.asString());
-			instanceObject.vpcAttributes.push_back(vpcAttributesObject);
+			instancesObject.vpcAttributes.push_back(vpcAttributesObject);
 		}
 		auto allEipAddress = value["EipAddress"];
 		for (auto value : allEipAddress)
 		{
 			Instance::EipAddress eipAddressObject;
-			eipAddressObject.allocationId = value["AllocationId"].asString();
-			eipAddressObject.ipAddress = value["IpAddress"].asString();
-			eipAddressObject.bandwidth = std::stoi(value["Bandwidth"].asString());
-			eipAddressObject.internetChargeType = value["InternetChargeType"].asString();
-			eipAddressObject.isSupportUnassociate = std::stoi(value["IsSupportUnassociate"].asString());
-			instanceObject.eipAddress.push_back(eipAddressObject);
+			if(!value["AllocationId"].isNull())
+				eipAddressObject.allocationId = value["AllocationId"].asString();
+			if(!value["IpAddress"].isNull())
+				eipAddressObject.ipAddress = value["IpAddress"].asString();
+			if(!value["Bandwidth"].isNull())
+				eipAddressObject.bandwidth = std::stoi(value["Bandwidth"].asString());
+			if(!value["InternetChargeType"].isNull())
+				eipAddressObject.internetChargeType = value["InternetChargeType"].asString();
+			if(!value["IsSupportUnassociate"].isNull())
+				eipAddressObject.isSupportUnassociate = value["IsSupportUnassociate"].asString() == "true";
+			instancesObject.eipAddress.push_back(eipAddressObject);
 		}
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
-			instanceObject.securityGroupIds.push_back(value.asString());
+			instancesObject.securityGroupIds.push_back(value.asString());
 		auto allPublicIpAddress = value["PublicIpAddress"]["IpAddress"];
 		for (auto value : allPublicIpAddress)
-			instanceObject.publicIpAddress.push_back(value.asString());
+			instancesObject.publicIpAddress.push_back(value.asString());
 		auto allInnerIpAddress = value["InnerIpAddress"]["IpAddress"];
 		for (auto value : allInnerIpAddress)
-			instanceObject.innerIpAddress.push_back(value.asString());
+			instancesObject.innerIpAddress.push_back(value.asString());
 		auto allRdmaIpAddress = value["RdmaIpAddress"]["IpAddress"];
 		for (auto value : allRdmaIpAddress)
-			instanceObject.rdmaIpAddress.push_back(value.asString());
-		instances_.push_back(instanceObject);
+			instancesObject.rdmaIpAddress.push_back(value.asString());
+		instances_.push_back(instancesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
+}
+
+std::vector<DescribeInstancesResult::Instance> DescribeInstancesResult::getInstances()const
+{
+	return instances_;
 }
 
 int DescribeInstancesResult::getTotalCount()const
@@ -157,28 +220,13 @@ int DescribeInstancesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeInstancesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeInstancesResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeInstancesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeInstancesResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeInstancesResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

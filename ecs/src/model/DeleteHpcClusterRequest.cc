@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteHpcClusterRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteHpcClusterRequest;
 
 DeleteHpcClusterRequest::DeleteHpcClusterRequest() :
-	EcsRequest("DeleteHpcCluster")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteHpcCluster")
 {}
 
 DeleteHpcClusterRequest::~DeleteHpcClusterRequest()

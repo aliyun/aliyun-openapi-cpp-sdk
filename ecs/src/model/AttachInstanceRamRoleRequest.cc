@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/AttachInstanceRamRoleRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::AttachInstanceRamRoleRequest;
 
 AttachInstanceRamRoleRequest::AttachInstanceRamRoleRequest() :
-	EcsRequest("AttachInstanceRamRole")
+	RpcServiceRequest("ecs", "2014-05-26", "AttachInstanceRamRole")
 {}
 
 AttachInstanceRamRoleRequest::~AttachInstanceRamRoleRequest()

@@ -43,14 +43,19 @@ void DescribeInstanceStatusResult::parse(const std::string &payload)
 	auto allInstanceStatuses = value["InstanceStatuses"]["InstanceStatus"];
 	for (auto value : allInstanceStatuses)
 	{
-		InstanceStatus instanceStatusObject;
-		instanceStatusObject.instanceId = value["InstanceId"].asString();
-		instanceStatusObject.status = value["Status"].asString();
-		instanceStatuses_.push_back(instanceStatusObject);
+		InstanceStatus instanceStatusesObject;
+		if(!value["InstanceId"].isNull())
+			instanceStatusesObject.instanceId = value["InstanceId"].asString();
+		if(!value["Status"].isNull())
+			instanceStatusesObject.status = value["Status"].asString();
+		instanceStatuses_.push_back(instanceStatusesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -59,19 +64,9 @@ int DescribeInstanceStatusResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeInstanceStatusResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeInstanceStatusResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeInstanceStatusResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeInstanceStatusResult::getPageNumber()const
@@ -79,8 +74,8 @@ int DescribeInstanceStatusResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeInstanceStatusResult::setPageNumber(int pageNumber)
+std::vector<DescribeInstanceStatusResult::InstanceStatus> DescribeInstanceStatusResult::getInstanceStatuses()const
 {
-	pageNumber_ = pageNumber;
+	return instanceStatuses_;
 }
 

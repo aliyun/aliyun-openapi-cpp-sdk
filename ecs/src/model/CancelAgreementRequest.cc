@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CancelAgreementRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CancelAgreementRequest;
 
 CancelAgreementRequest::CancelAgreementRequest() :
-	EcsRequest("CancelAgreement")
+	RpcServiceRequest("ecs", "2014-05-26", "CancelAgreement")
 {}
 
 CancelAgreementRequest::~CancelAgreementRequest()

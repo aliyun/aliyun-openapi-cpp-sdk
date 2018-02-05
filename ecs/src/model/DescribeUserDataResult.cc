@@ -40,9 +40,12 @@ void DescribeUserDataResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	regionId_ = value["RegionId"].asString();
-	instanceId_ = value["InstanceId"].asString();
-	userData_ = value["UserData"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["UserData"].isNull())
+		userData_ = value["UserData"].asString();
 
 }
 
@@ -51,28 +54,13 @@ std::string DescribeUserDataResult::getInstanceId()const
 	return instanceId_;
 }
 
-void DescribeUserDataResult::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-}
-
 std::string DescribeUserDataResult::getUserData()const
 {
 	return userData_;
 }
 
-void DescribeUserDataResult::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-}
-
 std::string DescribeUserDataResult::getRegionId()const
 {
 	return regionId_;
-}
-
-void DescribeUserDataResult::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
 }
 

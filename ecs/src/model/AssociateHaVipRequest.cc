@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/AssociateHaVipRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::AssociateHaVipRequest;
 
 AssociateHaVipRequest::AssociateHaVipRequest() :
-	EcsRequest("AssociateHaVip")
+	RpcServiceRequest("ecs", "2014-05-26", "AssociateHaVip")
 {}
 
 AssociateHaVipRequest::~AssociateHaVipRequest()

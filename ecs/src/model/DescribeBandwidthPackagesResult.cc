@@ -43,33 +43,51 @@ void DescribeBandwidthPackagesResult::parse(const std::string &payload)
 	auto allBandwidthPackages = value["BandwidthPackages"]["BandwidthPackage"];
 	for (auto value : allBandwidthPackages)
 	{
-		BandwidthPackage bandwidthPackageObject;
-		bandwidthPackageObject.bandwidthPackageId = value["BandwidthPackageId"].asString();
-		bandwidthPackageObject.regionId = value["RegionId"].asString();
-		bandwidthPackageObject.name = value["Name"].asString();
-		bandwidthPackageObject.description = value["Description"].asString();
-		bandwidthPackageObject.zoneId = value["ZoneId"].asString();
-		bandwidthPackageObject.natGatewayId = value["NatGatewayId"].asString();
-		bandwidthPackageObject.bandwidth = value["Bandwidth"].asString();
-		bandwidthPackageObject.instanceChargeType = value["InstanceChargeType"].asString();
-		bandwidthPackageObject.internetChargeType = value["InternetChargeType"].asString();
-		bandwidthPackageObject.businessStatus = value["BusinessStatus"].asString();
-		bandwidthPackageObject.ipCount = value["IpCount"].asString();
-		bandwidthPackageObject.creationTime = value["CreationTime"].asString();
-		bandwidthPackageObject.status = value["Status"].asString();
+		BandwidthPackage bandwidthPackagesObject;
+		if(!value["BandwidthPackageId"].isNull())
+			bandwidthPackagesObject.bandwidthPackageId = value["BandwidthPackageId"].asString();
+		if(!value["RegionId"].isNull())
+			bandwidthPackagesObject.regionId = value["RegionId"].asString();
+		if(!value["Name"].isNull())
+			bandwidthPackagesObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			bandwidthPackagesObject.description = value["Description"].asString();
+		if(!value["ZoneId"].isNull())
+			bandwidthPackagesObject.zoneId = value["ZoneId"].asString();
+		if(!value["NatGatewayId"].isNull())
+			bandwidthPackagesObject.natGatewayId = value["NatGatewayId"].asString();
+		if(!value["Bandwidth"].isNull())
+			bandwidthPackagesObject.bandwidth = value["Bandwidth"].asString();
+		if(!value["InstanceChargeType"].isNull())
+			bandwidthPackagesObject.instanceChargeType = value["InstanceChargeType"].asString();
+		if(!value["InternetChargeType"].isNull())
+			bandwidthPackagesObject.internetChargeType = value["InternetChargeType"].asString();
+		if(!value["BusinessStatus"].isNull())
+			bandwidthPackagesObject.businessStatus = value["BusinessStatus"].asString();
+		if(!value["IpCount"].isNull())
+			bandwidthPackagesObject.ipCount = value["IpCount"].asString();
+		if(!value["CreationTime"].isNull())
+			bandwidthPackagesObject.creationTime = value["CreationTime"].asString();
+		if(!value["Status"].isNull())
+			bandwidthPackagesObject.status = value["Status"].asString();
 		auto allPublicIpAddresses = value["PublicIpAddresses"]["PublicIpAddresse"];
 		for (auto value : allPublicIpAddresses)
 		{
-			BandwidthPackage::PublicIpAddresse publicIpAddresseObject;
-			publicIpAddresseObject.allocationId = value["AllocationId"].asString();
-			publicIpAddresseObject.ipAddress = value["IpAddress"].asString();
-			bandwidthPackageObject.publicIpAddresses.push_back(publicIpAddresseObject);
+			BandwidthPackage::PublicIpAddresse publicIpAddressesObject;
+			if(!value["AllocationId"].isNull())
+				publicIpAddressesObject.allocationId = value["AllocationId"].asString();
+			if(!value["IpAddress"].isNull())
+				publicIpAddressesObject.ipAddress = value["IpAddress"].asString();
+			bandwidthPackagesObject.publicIpAddresses.push_back(publicIpAddressesObject);
 		}
-		bandwidthPackages_.push_back(bandwidthPackageObject);
+		bandwidthPackages_.push_back(bandwidthPackagesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -78,19 +96,9 @@ int DescribeBandwidthPackagesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeBandwidthPackagesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeBandwidthPackagesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeBandwidthPackagesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeBandwidthPackagesResult::getPageNumber()const
@@ -98,8 +106,8 @@ int DescribeBandwidthPackagesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeBandwidthPackagesResult::setPageNumber(int pageNumber)
+std::vector<DescribeBandwidthPackagesResult::BandwidthPackage> DescribeBandwidthPackagesResult::getBandwidthPackages()const
 {
-	pageNumber_ = pageNumber;
+	return bandwidthPackages_;
 }
 

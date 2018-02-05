@@ -43,18 +43,27 @@ void DescribeSpotPriceHistoryResult::parse(const std::string &payload)
 	auto allSpotPrices = value["SpotPrices"]["SpotPriceType"];
 	for (auto value : allSpotPrices)
 	{
-		SpotPriceType spotPriceTypeObject;
-		spotPriceTypeObject.zoneId = value["ZoneId"].asString();
-		spotPriceTypeObject.instanceType = value["InstanceType"].asString();
-		spotPriceTypeObject.ioOptimized = value["IoOptimized"].asString();
-		spotPriceTypeObject.timestamp = value["Timestamp"].asString();
-		spotPriceTypeObject.networkType = value["NetworkType"].asString();
-		spotPriceTypeObject.spotPrice = std::stof(value["SpotPrice"].asString());
-		spotPriceTypeObject.originPrice = std::stof(value["OriginPrice"].asString());
-		spotPrices_.push_back(spotPriceTypeObject);
+		SpotPriceType spotPricesObject;
+		if(!value["ZoneId"].isNull())
+			spotPricesObject.zoneId = value["ZoneId"].asString();
+		if(!value["InstanceType"].isNull())
+			spotPricesObject.instanceType = value["InstanceType"].asString();
+		if(!value["IoOptimized"].isNull())
+			spotPricesObject.ioOptimized = value["IoOptimized"].asString();
+		if(!value["Timestamp"].isNull())
+			spotPricesObject.timestamp = value["Timestamp"].asString();
+		if(!value["NetworkType"].isNull())
+			spotPricesObject.networkType = value["NetworkType"].asString();
+		if(!value["SpotPrice"].isNull())
+			spotPricesObject.spotPrice = std::stof(value["SpotPrice"].asString());
+		if(!value["OriginPrice"].isNull())
+			spotPricesObject.originPrice = std::stof(value["OriginPrice"].asString());
+		spotPrices_.push_back(spotPricesObject);
 	}
-	nextOffset_ = std::stoi(value["NextOffset"].asString());
-	currency_ = value["Currency"].asString();
+	if(!value["NextOffset"].isNull())
+		nextOffset_ = std::stoi(value["NextOffset"].asString());
+	if(!value["Currency"].isNull())
+		currency_ = value["Currency"].asString();
 
 }
 
@@ -63,18 +72,13 @@ std::string DescribeSpotPriceHistoryResult::getCurrency()const
 	return currency_;
 }
 
-void DescribeSpotPriceHistoryResult::setCurrency(const std::string& currency)
-{
-	currency_ = currency;
-}
-
 int DescribeSpotPriceHistoryResult::getNextOffset()const
 {
 	return nextOffset_;
 }
 
-void DescribeSpotPriceHistoryResult::setNextOffset(int nextOffset)
+std::vector<DescribeSpotPriceHistoryResult::SpotPriceType> DescribeSpotPriceHistoryResult::getSpotPrices()const
 {
-	nextOffset_ = nextOffset;
+	return spotPrices_;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeClassicLinkInstancesRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeClassicLinkInstancesRequest;
 
 DescribeClassicLinkInstancesRequest::DescribeClassicLinkInstancesRequest() :
-	EcsRequest("DescribeClassicLinkInstances")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeClassicLinkInstances")
 {}
 
 DescribeClassicLinkInstancesRequest::~DescribeClassicLinkInstancesRequest()

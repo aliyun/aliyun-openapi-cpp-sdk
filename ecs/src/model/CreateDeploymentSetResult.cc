@@ -40,17 +40,13 @@ void CreateDeploymentSetResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	deploymentSetId_ = value["DeploymentSetId"].asString();
+	if(!value["DeploymentSetId"].isNull())
+		deploymentSetId_ = value["DeploymentSetId"].asString();
 
 }
 
 std::string CreateDeploymentSetResult::getDeploymentSetId()const
 {
 	return deploymentSetId_;
-}
-
-void CreateDeploymentSetResult::setDeploymentSetId(const std::string& deploymentSetId)
-{
-	deploymentSetId_ = deploymentSetId;
 }
 

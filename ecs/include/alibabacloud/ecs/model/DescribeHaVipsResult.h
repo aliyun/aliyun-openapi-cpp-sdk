@@ -52,13 +52,9 @@ namespace AlibabaCloud
 				explicit DescribeHaVipsResult(const std::string &payload);
 				~DescribeHaVipsResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::vector<HaVip> getHaVips()const;
-				void setHaVips(const std::vector<HaVip>& haVips);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

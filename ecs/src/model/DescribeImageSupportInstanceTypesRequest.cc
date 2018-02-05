@@ -16,15 +16,42 @@
 
 #include <alibabacloud/ecs/model/DescribeImageSupportInstanceTypesRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeImageSupportInstanceTypesRequest;
 
 DescribeImageSupportInstanceTypesRequest::DescribeImageSupportInstanceTypesRequest() :
-	EcsRequest("DescribeImageSupportInstanceTypes")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeImageSupportInstanceTypes")
 {}
 
 DescribeImageSupportInstanceTypesRequest::~DescribeImageSupportInstanceTypesRequest()
 {}
+
+std::string DescribeImageSupportInstanceTypesRequest::getActionType()const
+{
+	return actionType_;
+}
+
+void DescribeImageSupportInstanceTypesRequest::setActionType(const std::string& actionType)
+{
+	actionType_ = actionType;
+	setParameter("ActionType", actionType);
+}
+
+std::vector<DescribeImageSupportInstanceTypesRequest::Filter> DescribeImageSupportInstanceTypesRequest::getFilter()const
+{
+	return filter_;
+}
+
+void DescribeImageSupportInstanceTypesRequest::setFilter(const std::vector<Filter>& filter)
+{
+	filter_ = filter;
+	int i = 0;
+	for(int i = 0; i!= filter.size(); i++)	{
+		auto obj = filter.at(i);
+		std::string str ="Filter."+ std::to_string(i);
+		setParameter(str + ".Key", obj.key);
+		setParameter(str + ".Value", obj.value);
+	}
+}
 
 long DescribeImageSupportInstanceTypesRequest::getResourceOwnerId()const
 {

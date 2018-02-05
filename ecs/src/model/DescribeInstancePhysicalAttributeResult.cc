@@ -40,10 +40,14 @@ void DescribeInstancePhysicalAttributeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	instanceId_ = value["InstanceId"].asString();
-	vlanId_ = value["VlanId"].asString();
-	nodeControllerId_ = value["NodeControllerId"].asString();
-	rackId_ = value["RackId"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["VlanId"].isNull())
+		vlanId_ = value["VlanId"].asString();
+	if(!value["NodeControllerId"].isNull())
+		nodeControllerId_ = value["NodeControllerId"].asString();
+	if(!value["RackId"].isNull())
+		rackId_ = value["RackId"].asString();
 
 }
 
@@ -52,19 +56,9 @@ std::string DescribeInstancePhysicalAttributeResult::getRackId()const
 	return rackId_;
 }
 
-void DescribeInstancePhysicalAttributeResult::setRackId(const std::string& rackId)
-{
-	rackId_ = rackId;
-}
-
 std::string DescribeInstancePhysicalAttributeResult::getNodeControllerId()const
 {
 	return nodeControllerId_;
-}
-
-void DescribeInstancePhysicalAttributeResult::setNodeControllerId(const std::string& nodeControllerId)
-{
-	nodeControllerId_ = nodeControllerId;
 }
 
 std::string DescribeInstancePhysicalAttributeResult::getInstanceId()const
@@ -72,18 +66,8 @@ std::string DescribeInstancePhysicalAttributeResult::getInstanceId()const
 	return instanceId_;
 }
 
-void DescribeInstancePhysicalAttributeResult::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-}
-
 std::string DescribeInstancePhysicalAttributeResult::getVlanId()const
 {
 	return vlanId_;
-}
-
-void DescribeInstancePhysicalAttributeResult::setVlanId(const std::string& vlanId)
-{
-	vlanId_ = vlanId;
 }
 

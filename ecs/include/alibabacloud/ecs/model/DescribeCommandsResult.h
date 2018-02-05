@@ -48,13 +48,9 @@ namespace AlibabaCloud
 				explicit DescribeCommandsResult(const std::string &payload);
 				~DescribeCommandsResult();
 				long getTotalCount()const;
-				void setTotalCount(long totalCount);
 				long getPageSize()const;
-				void setPageSize(long pageSize);
 				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
 				std::vector<Command> getCommands()const;
-				void setCommands(const std::vector<Command>& commands);
 
 			protected:
 				void parse(const std::string &payload);

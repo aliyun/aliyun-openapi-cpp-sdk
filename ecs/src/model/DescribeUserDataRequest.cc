@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeUserDataRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeUserDataRequest;
 
 DescribeUserDataRequest::DescribeUserDataRequest() :
-	EcsRequest("DescribeUserData")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeUserData")
 {}
 
 DescribeUserDataRequest::~DescribeUserDataRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/AddIpRangeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::AddIpRangeRequest;
 
 AddIpRangeRequest::AddIpRangeRequest() :
-	EcsRequest("AddIpRange")
+	RpcServiceRequest("ecs", "2014-05-26", "AddIpRange")
 {}
 
 AddIpRangeRequest::~AddIpRangeRequest()

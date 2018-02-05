@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit DescribeInstanceTypeFamiliesResult(const std::string &payload);
 				~DescribeInstanceTypeFamiliesResult();
 				std::vector<InstanceTypeFamily> getInstanceTypeFamilies()const;
-				void setInstanceTypeFamilies(const std::vector<InstanceTypeFamily>& instanceTypeFamilies);
 
 			protected:
 				void parse(const std::string &payload);

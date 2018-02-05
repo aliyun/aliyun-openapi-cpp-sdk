@@ -53,13 +53,9 @@ namespace AlibabaCloud
 				explicit DescribeNatGatewaysResult(const std::string &payload);
 				~DescribeNatGatewaysResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<NatGateway> getNatGateways()const;
-				void setNatGateways(const std::vector<NatGateway>& natGateways);
 
 			protected:
 				void parse(const std::string &payload);

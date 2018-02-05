@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyRouterInterfaceAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyRouterInterfaceAttributeRequest;
 
 ModifyRouterInterfaceAttributeRequest::ModifyRouterInterfaceAttributeRequest() :
-	EcsRequest("ModifyRouterInterfaceAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyRouterInterfaceAttribute")
 {}
 
 ModifyRouterInterfaceAttributeRequest::~ModifyRouterInterfaceAttributeRequest()

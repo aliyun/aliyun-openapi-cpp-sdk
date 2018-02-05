@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteCommandRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteCommandRequest;
 
 DeleteCommandRequest::DeleteCommandRequest() :
-	EcsRequest("DeleteCommand")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteCommand")
 {}
 
 DeleteCommandRequest::~DeleteCommandRequest()

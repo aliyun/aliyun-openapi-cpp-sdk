@@ -43,24 +43,33 @@ void DetachInstanceRamRoleResult::parse(const std::string &payload)
 	auto allDetachInstanceRamRoleResults = value["DetachInstanceRamRoleResults"]["DetachInstanceRamRoleResult"];
 	for (auto value : allDetachInstanceRamRoleResults)
 	{
-		Result detachInstanceRamRoleResultObject;
-		detachInstanceRamRoleResultObject.instanceId = value["InstanceId"].asString();
-		detachInstanceRamRoleResultObject.success = std::stoi(value["Success"].asString());
-		detachInstanceRamRoleResultObject.code = value["Code"].asString();
-		detachInstanceRamRoleResultObject.message = value["Message"].asString();
+		Result detachInstanceRamRoleResultsObject;
+		if(!value["InstanceId"].isNull())
+			detachInstanceRamRoleResultsObject.instanceId = value["InstanceId"].asString();
+		if(!value["Success"].isNull())
+			detachInstanceRamRoleResultsObject.success = value["Success"].asString() == "true";
+		if(!value["Code"].isNull())
+			detachInstanceRamRoleResultsObject.code = value["Code"].asString();
+		if(!value["Message"].isNull())
+			detachInstanceRamRoleResultsObject.message = value["Message"].asString();
 		auto allInstanceRamRoleSets = value["InstanceRamRoleSets"]["InstanceRamRoleSet"];
 		for (auto value : allInstanceRamRoleSets)
 		{
-			Result::InstanceRamRoleSet instanceRamRoleSetObject;
-			instanceRamRoleSetObject.instanceId = value["InstanceId"].asString();
-			instanceRamRoleSetObject.ramRoleName = value["RamRoleName"].asString();
-			detachInstanceRamRoleResultObject.instanceRamRoleSets.push_back(instanceRamRoleSetObject);
+			Result::InstanceRamRoleSet instanceRamRoleSetsObject;
+			if(!value["InstanceId"].isNull())
+				instanceRamRoleSetsObject.instanceId = value["InstanceId"].asString();
+			if(!value["RamRoleName"].isNull())
+				instanceRamRoleSetsObject.ramRoleName = value["RamRoleName"].asString();
+			detachInstanceRamRoleResultsObject.instanceRamRoleSets.push_back(instanceRamRoleSetsObject);
 		}
-		detachInstanceRamRoleResults_.push_back(detachInstanceRamRoleResultObject);
+		detachInstanceRamRoleResults_.push_back(detachInstanceRamRoleResultsObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	failCount_ = std::stoi(value["FailCount"].asString());
-	ramRoleName_ = value["RamRoleName"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["FailCount"].isNull())
+		failCount_ = std::stoi(value["FailCount"].asString());
+	if(!value["RamRoleName"].isNull())
+		ramRoleName_ = value["RamRoleName"].asString();
 
 }
 
@@ -69,19 +78,9 @@ int DetachInstanceRamRoleResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DetachInstanceRamRoleResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 std::string DetachInstanceRamRoleResult::getRamRoleName()const
 {
 	return ramRoleName_;
-}
-
-void DetachInstanceRamRoleResult::setRamRoleName(const std::string& ramRoleName)
-{
-	ramRoleName_ = ramRoleName;
 }
 
 int DetachInstanceRamRoleResult::getFailCount()const
@@ -89,8 +88,8 @@ int DetachInstanceRamRoleResult::getFailCount()const
 	return failCount_;
 }
 
-void DetachInstanceRamRoleResult::setFailCount(int failCount)
+std::vector<DetachInstanceRamRoleResult::Result> DetachInstanceRamRoleResult::getDetachInstanceRamRoleResults()const
 {
-	failCount_ = failCount;
+	return detachInstanceRamRoleResults_;
 }
 

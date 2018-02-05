@@ -43,19 +43,29 @@ void DescribeCommandsResult::parse(const std::string &payload)
 	auto allCommands = value["Commands"]["Command"];
 	for (auto value : allCommands)
 	{
-		Command commandObject;
-		commandObject.commandId = value["CommandId"].asString();
-		commandObject.name = value["Name"].asString();
-		commandObject.type = value["Type"].asString();
-		commandObject.description = value["Description"].asString();
-		commandObject.commandContent = value["CommandContent"].asString();
-		commandObject.workingDir = value["WorkingDir"].asString();
-		commandObject.timeout = std::stol(value["Timeout"].asString());
-		commands_.push_back(commandObject);
+		Command commandsObject;
+		if(!value["CommandId"].isNull())
+			commandsObject.commandId = value["CommandId"].asString();
+		if(!value["Name"].isNull())
+			commandsObject.name = value["Name"].asString();
+		if(!value["Type"].isNull())
+			commandsObject.type = value["Type"].asString();
+		if(!value["Description"].isNull())
+			commandsObject.description = value["Description"].asString();
+		if(!value["CommandContent"].isNull())
+			commandsObject.commandContent = value["CommandContent"].asString();
+		if(!value["WorkingDir"].isNull())
+			commandsObject.workingDir = value["WorkingDir"].asString();
+		if(!value["Timeout"].isNull())
+			commandsObject.timeout = std::stol(value["Timeout"].asString());
+		commands_.push_back(commandsObject);
 	}
-	totalCount_ = std::stol(value["TotalCount"].asString());
-	pageNumber_ = std::stol(value["PageNumber"].asString());
-	pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
 
 }
 
@@ -64,19 +74,9 @@ long DescribeCommandsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeCommandsResult::setTotalCount(long totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 long DescribeCommandsResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeCommandsResult::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 long DescribeCommandsResult::getPageNumber()const
@@ -84,8 +84,8 @@ long DescribeCommandsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeCommandsResult::setPageNumber(long pageNumber)
+std::vector<DescribeCommandsResult::Command> DescribeCommandsResult::getCommands()const
 {
-	pageNumber_ = pageNumber;
+	return commands_;
 }
 

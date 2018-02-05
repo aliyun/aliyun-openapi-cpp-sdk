@@ -38,15 +38,10 @@ namespace AlibabaCloud
 				explicit DescribeIntranetAttributeKbResult(const std::string &payload);
 				~DescribeIntranetAttributeKbResult();
 				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				int getIntranetMaxBandwidthOut()const;
-				void setIntranetMaxBandwidthOut(int intranetMaxBandwidthOut);
 				std::string getVlanId()const;
-				void setVlanId(const std::string& vlanId);
 				std::string getIntranetIpAddress()const;
-				void setIntranetIpAddress(const std::string& intranetIpAddress);
 				int getIntranetMaxBandwidthIn()const;
-				void setIntranetMaxBandwidthIn(int intranetMaxBandwidthIn);
 
 			protected:
 				void parse(const std::string &payload);

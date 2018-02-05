@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ImportKeyPairRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ImportKeyPairRequest;
 
 ImportKeyPairRequest::ImportKeyPairRequest() :
-	EcsRequest("ImportKeyPair")
+	RpcServiceRequest("ecs", "2014-05-26", "ImportKeyPair")
 {}
 
 ImportKeyPairRequest::~ImportKeyPairRequest()

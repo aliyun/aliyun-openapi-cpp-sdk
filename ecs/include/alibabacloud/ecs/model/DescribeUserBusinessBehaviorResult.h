@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit DescribeUserBusinessBehaviorResult(const std::string &payload);
 				~DescribeUserBusinessBehaviorResult();
 				std::string getStatusValue()const;
-				void setStatusValue(const std::string& statusValue);
 
 			protected:
 				void parse(const std::string &payload);

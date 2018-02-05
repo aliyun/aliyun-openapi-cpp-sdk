@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/ecs/EcsRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/ecs/EcsExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT RunInstancesRequest : public EcsRequest
+			class ALIBABACLOUD_ECS_EXPORT RunInstancesRequest : public RpcServiceRequest
 			{
 				struct Tag
 				{
@@ -89,6 +90,8 @@ namespace AlibabaCloud
 				void setTag(const std::vector<Tag>& tag);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				bool getAk_mfa_present()const;
@@ -181,6 +184,7 @@ namespace AlibabaCloud
 				std::string callerBidEmail_;
 				std::vector<Tag> tag_;
 				long callerUid_;
+				bool dryRun_;
 				long ownerId_;
 				bool ak_mfa_present_;
 				bool security_transport_;

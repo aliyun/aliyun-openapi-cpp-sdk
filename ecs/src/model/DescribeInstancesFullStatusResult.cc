@@ -43,54 +43,69 @@ void DescribeInstancesFullStatusResult::parse(const std::string &payload)
 	auto allInstanceFullStatusSet = value["InstanceFullStatusSet"]["InstanceFullStatusType"];
 	for (auto value : allInstanceFullStatusSet)
 	{
-		InstanceFullStatusType instanceFullStatusTypeObject;
-		instanceFullStatusTypeObject.instanceId = value["InstanceId"].asString();
+		InstanceFullStatusType instanceFullStatusSetObject;
+		if(!value["InstanceId"].isNull())
+			instanceFullStatusSetObject.instanceId = value["InstanceId"].asString();
 		auto allScheduledSystemEventSet = value["ScheduledSystemEventSet"]["ScheduledSystemEventType"];
 		for (auto value : allScheduledSystemEventSet)
 		{
-			InstanceFullStatusType::ScheduledSystemEventType scheduledSystemEventTypeObject;
-			scheduledSystemEventTypeObject.eventId = value["EventId"].asString();
-			scheduledSystemEventTypeObject.eventPublishTime = value["EventPublishTime"].asString();
-			scheduledSystemEventTypeObject.notBefore = value["NotBefore"].asString();
+			InstanceFullStatusType::ScheduledSystemEventType scheduledSystemEventSetObject;
+			if(!value["EventId"].isNull())
+				scheduledSystemEventSetObject.eventId = value["EventId"].asString();
+			if(!value["EventPublishTime"].isNull())
+				scheduledSystemEventSetObject.eventPublishTime = value["EventPublishTime"].asString();
+			if(!value["NotBefore"].isNull())
+				scheduledSystemEventSetObject.notBefore = value["NotBefore"].asString();
 			auto allEventCycleStatus = value["EventCycleStatus"];
 			for (auto value : allEventCycleStatus)
 			{
 				InstanceFullStatusType::ScheduledSystemEventType::EventCycleStatus eventCycleStatusObject;
-				eventCycleStatusObject.code = std::stoi(value["Code"].asString());
-				eventCycleStatusObject.name = value["Name"].asString();
-				scheduledSystemEventTypeObject.eventCycleStatus.push_back(eventCycleStatusObject);
+				if(!value["Code"].isNull())
+					eventCycleStatusObject.code = std::stoi(value["Code"].asString());
+				if(!value["Name"].isNull())
+					eventCycleStatusObject.name = value["Name"].asString();
+				scheduledSystemEventSetObject.eventCycleStatus.push_back(eventCycleStatusObject);
 			}
 			auto allEventType = value["EventType"];
 			for (auto value : allEventType)
 			{
 				InstanceFullStatusType::ScheduledSystemEventType::EventType eventTypeObject;
-				eventTypeObject.code = std::stoi(value["Code"].asString());
-				eventTypeObject.name = value["Name"].asString();
-				scheduledSystemEventTypeObject.eventType.push_back(eventTypeObject);
+				if(!value["Code"].isNull())
+					eventTypeObject.code = std::stoi(value["Code"].asString());
+				if(!value["Name"].isNull())
+					eventTypeObject.name = value["Name"].asString();
+				scheduledSystemEventSetObject.eventType.push_back(eventTypeObject);
 			}
-			instanceFullStatusTypeObject.scheduledSystemEventSet.push_back(scheduledSystemEventTypeObject);
+			instanceFullStatusSetObject.scheduledSystemEventSet.push_back(scheduledSystemEventSetObject);
 		}
 		auto allStatus = value["Status"];
 		for (auto value : allStatus)
 		{
 			InstanceFullStatusType::Status statusObject;
-			statusObject.code = std::stoi(value["Code"].asString());
-			statusObject.name = value["Name"].asString();
-			instanceFullStatusTypeObject.status.push_back(statusObject);
+			if(!value["Code"].isNull())
+				statusObject.code = std::stoi(value["Code"].asString());
+			if(!value["Name"].isNull())
+				statusObject.name = value["Name"].asString();
+			instanceFullStatusSetObject.status.push_back(statusObject);
 		}
 		auto allHealthStatus = value["HealthStatus"];
 		for (auto value : allHealthStatus)
 		{
 			InstanceFullStatusType::HealthStatus healthStatusObject;
-			healthStatusObject.code = std::stoi(value["Code"].asString());
-			healthStatusObject.name = value["Name"].asString();
-			instanceFullStatusTypeObject.healthStatus.push_back(healthStatusObject);
+			if(!value["Code"].isNull())
+				healthStatusObject.code = std::stoi(value["Code"].asString());
+			if(!value["Name"].isNull())
+				healthStatusObject.name = value["Name"].asString();
+			instanceFullStatusSetObject.healthStatus.push_back(healthStatusObject);
 		}
-		instanceFullStatusSet_.push_back(instanceFullStatusTypeObject);
+		instanceFullStatusSet_.push_back(instanceFullStatusSetObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -99,19 +114,9 @@ int DescribeInstancesFullStatusResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeInstancesFullStatusResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeInstancesFullStatusResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeInstancesFullStatusResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeInstancesFullStatusResult::getPageNumber()const
@@ -119,8 +124,8 @@ int DescribeInstancesFullStatusResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeInstancesFullStatusResult::setPageNumber(int pageNumber)
+std::vector<DescribeInstancesFullStatusResult::InstanceFullStatusType> DescribeInstancesFullStatusResult::getInstanceFullStatusSet()const
 {
-	pageNumber_ = pageNumber;
+	return instanceFullStatusSet_;
 }
 

@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreatePhysicalConnectionResult(const std::string &payload);
 				~CreatePhysicalConnectionResult();
 				std::string getPhysicalConnectionId()const;
-				void setPhysicalConnectionId(const std::string& physicalConnectionId);
 
 			protected:
 				void parse(const std::string &payload);

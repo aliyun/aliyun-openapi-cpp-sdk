@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/CancelPhysicalConnectionRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::CancelPhysicalConnectionRequest;
 
 CancelPhysicalConnectionRequest::CancelPhysicalConnectionRequest() :
-	EcsRequest("CancelPhysicalConnection")
+	RpcServiceRequest("ecs", "2014-05-26", "CancelPhysicalConnection")
 {}
 
 CancelPhysicalConnectionRequest::~CancelPhysicalConnectionRequest()

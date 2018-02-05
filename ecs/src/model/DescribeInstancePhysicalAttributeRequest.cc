@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeInstancePhysicalAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeInstancePhysicalAttributeRequest;
 
 DescribeInstancePhysicalAttributeRequest::DescribeInstancePhysicalAttributeRequest() :
-	EcsRequest("DescribeInstancePhysicalAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstancePhysicalAttribute")
 {}
 
 DescribeInstancePhysicalAttributeRequest::~DescribeInstancePhysicalAttributeRequest()

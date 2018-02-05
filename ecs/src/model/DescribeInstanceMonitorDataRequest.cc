@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeInstanceMonitorDataRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeInstanceMonitorDataRequest;
 
 DescribeInstanceMonitorDataRequest::DescribeInstanceMonitorDataRequest() :
-	EcsRequest("DescribeInstanceMonitorData")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceMonitorData")
 {}
 
 DescribeInstanceMonitorDataRequest::~DescribeInstanceMonitorDataRequest()

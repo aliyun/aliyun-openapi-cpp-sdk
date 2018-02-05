@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyDiskAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyDiskAttributeRequest;
 
 ModifyDiskAttributeRequest::ModifyDiskAttributeRequest() :
-	EcsRequest("ModifyDiskAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyDiskAttribute")
 {}
 
 ModifyDiskAttributeRequest::~ModifyDiskAttributeRequest()

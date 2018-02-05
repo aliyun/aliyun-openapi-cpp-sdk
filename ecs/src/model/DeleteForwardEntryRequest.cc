@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DeleteForwardEntryRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DeleteForwardEntryRequest;
 
 DeleteForwardEntryRequest::DeleteForwardEntryRequest() :
-	EcsRequest("DeleteForwardEntry")
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteForwardEntry")
 {}
 
 DeleteForwardEntryRequest::~DeleteForwardEntryRequest()

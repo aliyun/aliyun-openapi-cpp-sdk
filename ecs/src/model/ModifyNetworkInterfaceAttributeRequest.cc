@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyNetworkInterfaceAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyNetworkInterfaceAttributeRequest;
 
 ModifyNetworkInterfaceAttributeRequest::ModifyNetworkInterfaceAttributeRequest() :
-	EcsRequest("ModifyNetworkInterfaceAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute")
 {}
 
 ModifyNetworkInterfaceAttributeRequest::~ModifyNetworkInterfaceAttributeRequest()

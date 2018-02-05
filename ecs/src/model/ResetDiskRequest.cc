@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ResetDiskRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ResetDiskRequest;
 
 ResetDiskRequest::ResetDiskRequest() :
-	EcsRequest("ResetDisk")
+	RpcServiceRequest("ecs", "2014-05-26", "ResetDisk")
 {}
 
 ResetDiskRequest::~ResetDiskRequest()

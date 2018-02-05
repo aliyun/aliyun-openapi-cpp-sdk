@@ -43,13 +43,17 @@ void DescribeInstanceRamRoleResult::parse(const std::string &payload)
 	auto allInstanceRamRoleSets = value["InstanceRamRoleSets"]["InstanceRamRoleSet"];
 	for (auto value : allInstanceRamRoleSets)
 	{
-		InstanceRamRoleSet instanceRamRoleSetObject;
-		instanceRamRoleSetObject.instanceId = value["InstanceId"].asString();
-		instanceRamRoleSetObject.ramRoleName = value["RamRoleName"].asString();
-		instanceRamRoleSets_.push_back(instanceRamRoleSetObject);
+		InstanceRamRoleSet instanceRamRoleSetsObject;
+		if(!value["InstanceId"].isNull())
+			instanceRamRoleSetsObject.instanceId = value["InstanceId"].asString();
+		if(!value["RamRoleName"].isNull())
+			instanceRamRoleSetsObject.ramRoleName = value["RamRoleName"].asString();
+		instanceRamRoleSets_.push_back(instanceRamRoleSetsObject);
 	}
-	regionId_ = value["RegionId"].asString();
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -58,18 +62,13 @@ int DescribeInstanceRamRoleResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeInstanceRamRoleResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 std::string DescribeInstanceRamRoleResult::getRegionId()const
 {
 	return regionId_;
 }
 
-void DescribeInstanceRamRoleResult::setRegionId(const std::string& regionId)
+std::vector<DescribeInstanceRamRoleResult::InstanceRamRoleSet> DescribeInstanceRamRoleResult::getInstanceRamRoleSets()const
 {
-	regionId_ = regionId;
+	return instanceRamRoleSets_;
 }
 

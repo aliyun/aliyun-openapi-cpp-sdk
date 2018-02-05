@@ -46,7 +46,6 @@ namespace AlibabaCloud
 				explicit DescribeInstanceAutoRenewAttributeResult(const std::string &payload);
 				~DescribeInstanceAutoRenewAttributeResult();
 				std::vector<InstanceRenewAttribute> getInstanceRenewAttributes()const;
-				void setInstanceRenewAttributes(const std::vector<InstanceRenewAttribute>& instanceRenewAttributes);
 
 			protected:
 				void parse(const std::string &payload);

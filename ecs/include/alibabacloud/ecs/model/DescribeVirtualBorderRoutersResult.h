@@ -61,13 +61,9 @@ namespace AlibabaCloud
 				explicit DescribeVirtualBorderRoutersResult(const std::string &payload);
 				~DescribeVirtualBorderRoutersResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<VirtualBorderRouterType> getVirtualBorderRouterSet()const;
-				void setVirtualBorderRouterSet(const std::vector<VirtualBorderRouterType>& virtualBorderRouterSet);
 
 			protected:
 				void parse(const std::string &payload);

@@ -51,8 +51,3 @@ std::vector<std::string> RunInstancesResult::getInstanceIdSets()const
 	return instanceIdSets_;
 }
 
-void RunInstancesResult::setInstanceIdSets(const std::vector<std::string>& instanceIdSets)
-{
-	instanceIdSets_ = instanceIdSets;
-}
-

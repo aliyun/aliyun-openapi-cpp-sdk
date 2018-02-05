@@ -40,17 +40,13 @@ void DescribeInstanceVncPasswdResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	vncPasswd_ = value["VncPasswd"].asString();
+	if(!value["VncPasswd"].isNull())
+		vncPasswd_ = value["VncPasswd"].asString();
 
 }
 
 std::string DescribeInstanceVncPasswdResult::getVncPasswd()const
 {
 	return vncPasswd_;
-}
-
-void DescribeInstanceVncPasswdResult::setVncPasswd(const std::string& vncPasswd)
-{
-	vncPasswd_ = vncPasswd;
 }
 

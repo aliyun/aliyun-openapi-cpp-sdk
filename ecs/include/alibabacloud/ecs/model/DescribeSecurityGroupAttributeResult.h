@@ -57,19 +57,12 @@ namespace AlibabaCloud
 				explicit DescribeSecurityGroupAttributeResult(const std::string &payload);
 				~DescribeSecurityGroupAttributeResult();
 				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getSecurityGroupName()const;
-				void setSecurityGroupName(const std::string& securityGroupName);
 				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 				std::string getSecurityGroupId()const;
-				void setSecurityGroupId(const std::string& securityGroupId);
 				std::vector<Permission> getPermissions()const;
-				void setPermissions(const std::vector<Permission>& permissions);
 				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getInnerAccessPolicy()const;
-				void setInnerAccessPolicy(const std::string& innerAccessPolicy);
 
 			protected:
 				void parse(const std::string &payload);

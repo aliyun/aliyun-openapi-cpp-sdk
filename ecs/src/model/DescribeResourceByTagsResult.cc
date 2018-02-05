@@ -43,15 +43,21 @@ void DescribeResourceByTagsResult::parse(const std::string &payload)
 	auto allResources = value["Resources"]["Resource"];
 	for (auto value : allResources)
 	{
-		Resource resourceObject;
-		resourceObject.resourceId = value["ResourceId"].asString();
-		resourceObject.resourceType = value["ResourceType"].asString();
-		resourceObject.regionId = value["RegionId"].asString();
-		resources_.push_back(resourceObject);
+		Resource resourcesObject;
+		if(!value["ResourceId"].isNull())
+			resourcesObject.resourceId = value["ResourceId"].asString();
+		if(!value["ResourceType"].isNull())
+			resourcesObject.resourceType = value["ResourceType"].asString();
+		if(!value["RegionId"].isNull())
+			resourcesObject.regionId = value["RegionId"].asString();
+		resources_.push_back(resourcesObject);
 	}
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -60,19 +66,9 @@ int DescribeResourceByTagsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeResourceByTagsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeResourceByTagsResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeResourceByTagsResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeResourceByTagsResult::getPageNumber()const
@@ -80,8 +76,8 @@ int DescribeResourceByTagsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeResourceByTagsResult::setPageNumber(int pageNumber)
+std::vector<DescribeResourceByTagsResult::Resource> DescribeResourceByTagsResult::getResources()const
 {
-	pageNumber_ = pageNumber;
+	return resources_;
 }
 

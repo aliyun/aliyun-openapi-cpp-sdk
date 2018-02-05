@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/DescribeVirtualBorderRoutersForPhysicalConnectionRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::DescribeVirtualBorderRoutersForPhysicalConnectionRequest;
 
 DescribeVirtualBorderRoutersForPhysicalConnectionRequest::DescribeVirtualBorderRoutersForPhysicalConnectionRequest() :
-	EcsRequest("DescribeVirtualBorderRoutersForPhysicalConnection")
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection")
 {}
 
 DescribeVirtualBorderRoutersForPhysicalConnectionRequest::~DescribeVirtualBorderRoutersForPhysicalConnectionRequest()

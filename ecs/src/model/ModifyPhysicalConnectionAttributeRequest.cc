@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ModifyPhysicalConnectionAttributeRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ModifyPhysicalConnectionAttributeRequest;
 
 ModifyPhysicalConnectionAttributeRequest::ModifyPhysicalConnectionAttributeRequest() :
-	EcsRequest("ModifyPhysicalConnectionAttribute")
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute")
 {}
 
 ModifyPhysicalConnectionAttributeRequest::~ModifyPhysicalConnectionAttributeRequest()

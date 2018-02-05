@@ -40,17 +40,13 @@ void InvokeCommandResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	invokeId_ = value["InvokeId"].asString();
+	if(!value["InvokeId"].isNull())
+		invokeId_ = value["InvokeId"].asString();
 
 }
 
 std::string InvokeCommandResult::getInvokeId()const
 {
 	return invokeId_;
-}
-
-void InvokeCommandResult::setInvokeId(const std::string& invokeId)
-{
-	invokeId_ = invokeId;
 }
 

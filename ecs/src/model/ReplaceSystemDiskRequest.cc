@@ -16,11 +16,10 @@
 
 #include <alibabacloud/ecs/model/ReplaceSystemDiskRequest.h>
 
-using namespace AlibabaCloud::Ecs;
-using namespace AlibabaCloud::Ecs::Model;
+using AlibabaCloud::Ecs::Model::ReplaceSystemDiskRequest;
 
 ReplaceSystemDiskRequest::ReplaceSystemDiskRequest() :
-	EcsRequest("ReplaceSystemDisk")
+	RpcServiceRequest("ecs", "2014-05-26", "ReplaceSystemDisk")
 {}
 
 ReplaceSystemDiskRequest::~ReplaceSystemDiskRequest()
@@ -114,6 +113,17 @@ void ReplaceSystemDiskRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ReplaceSystemDiskRequest::getPlatform()const
+{
+	return platform_;
+}
+
+void ReplaceSystemDiskRequest::setPlatform(const std::string& platform)
+{
+	platform_ = platform;
+	setParameter("Platform", platform);
+}
+
 std::string ReplaceSystemDiskRequest::getPassword()const
 {
 	return password_;
@@ -147,6 +157,17 @@ void ReplaceSystemDiskRequest::setSystemDiskSize(int systemDiskSize)
 	setParameter("SystemDiskSize", std::to_string(systemDiskSize));
 }
 
+std::string ReplaceSystemDiskRequest::getDiskId()const
+{
+	return diskId_;
+}
+
+void ReplaceSystemDiskRequest::setDiskId(const std::string& diskId)
+{
+	diskId_ = diskId;
+	setParameter("DiskId", diskId);
+}
+
 bool ReplaceSystemDiskRequest::getUseAdditionalService()const
 {
 	return useAdditionalService_;
@@ -156,5 +177,16 @@ void ReplaceSystemDiskRequest::setUseAdditionalService(bool useAdditionalService
 {
 	useAdditionalService_ = useAdditionalService;
 	setParameter("UseAdditionalService", std::to_string(useAdditionalService));
+}
+
+std::string ReplaceSystemDiskRequest::getArchitecture()const
+{
+	return architecture_;
+}
+
+void ReplaceSystemDiskRequest::setArchitecture(const std::string& architecture)
+{
+	architecture_ = architecture;
+	setParameter("Architecture", architecture);
 }
 

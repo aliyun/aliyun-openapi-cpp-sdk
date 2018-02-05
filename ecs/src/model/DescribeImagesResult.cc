@@ -43,54 +43,87 @@ void DescribeImagesResult::parse(const std::string &payload)
 	auto allImages = value["Images"]["Image"];
 	for (auto value : allImages)
 	{
-		Image imageObject;
-		imageObject.progress = value["Progress"].asString();
-		imageObject.imageId = value["ImageId"].asString();
-		imageObject.imageName = value["ImageName"].asString();
-		imageObject.imageVersion = value["ImageVersion"].asString();
-		imageObject.description = value["Description"].asString();
-		imageObject.size = std::stoi(value["Size"].asString());
-		imageObject.imageOwnerAlias = value["ImageOwnerAlias"].asString();
-		imageObject.isSupportIoOptimized = std::stoi(value["IsSupportIoOptimized"].asString());
-		imageObject.isSupportCloudinit = std::stoi(value["IsSupportCloudinit"].asString());
-		imageObject.oSName = value["OSName"].asString();
-		imageObject.architecture = value["Architecture"].asString();
-		imageObject.status = value["Status"].asString();
-		imageObject.productCode = value["ProductCode"].asString();
-		imageObject.isSubscribed = std::stoi(value["IsSubscribed"].asString());
-		imageObject.creationTime = value["CreationTime"].asString();
-		imageObject.isSelfShared = value["IsSelfShared"].asString();
-		imageObject.oSType = value["OSType"].asString();
-		imageObject.platform = value["Platform"].asString();
-		imageObject.usage = value["Usage"].asString();
-		imageObject.isCopied = std::stoi(value["IsCopied"].asString());
+		Image imagesObject;
+		if(!value["Progress"].isNull())
+			imagesObject.progress = value["Progress"].asString();
+		if(!value["ImageId"].isNull())
+			imagesObject.imageId = value["ImageId"].asString();
+		if(!value["ImageName"].isNull())
+			imagesObject.imageName = value["ImageName"].asString();
+		if(!value["ImageVersion"].isNull())
+			imagesObject.imageVersion = value["ImageVersion"].asString();
+		if(!value["Description"].isNull())
+			imagesObject.description = value["Description"].asString();
+		if(!value["Size"].isNull())
+			imagesObject.size = std::stoi(value["Size"].asString());
+		if(!value["ImageOwnerAlias"].isNull())
+			imagesObject.imageOwnerAlias = value["ImageOwnerAlias"].asString();
+		if(!value["IsSupportIoOptimized"].isNull())
+			imagesObject.isSupportIoOptimized = value["IsSupportIoOptimized"].asString() == "true";
+		if(!value["IsSupportCloudinit"].isNull())
+			imagesObject.isSupportCloudinit = value["IsSupportCloudinit"].asString() == "true";
+		if(!value["OSName"].isNull())
+			imagesObject.oSName = value["OSName"].asString();
+		if(!value["Architecture"].isNull())
+			imagesObject.architecture = value["Architecture"].asString();
+		if(!value["Status"].isNull())
+			imagesObject.status = value["Status"].asString();
+		if(!value["ProductCode"].isNull())
+			imagesObject.productCode = value["ProductCode"].asString();
+		if(!value["IsSubscribed"].isNull())
+			imagesObject.isSubscribed = value["IsSubscribed"].asString() == "true";
+		if(!value["CreationTime"].isNull())
+			imagesObject.creationTime = value["CreationTime"].asString();
+		if(!value["IsSelfShared"].isNull())
+			imagesObject.isSelfShared = value["IsSelfShared"].asString();
+		if(!value["OSType"].isNull())
+			imagesObject.oSType = value["OSType"].asString();
+		if(!value["Platform"].isNull())
+			imagesObject.platform = value["Platform"].asString();
+		if(!value["Usage"].isNull())
+			imagesObject.usage = value["Usage"].asString();
+		if(!value["IsCopied"].isNull())
+			imagesObject.isCopied = value["IsCopied"].asString() == "true";
 		auto allDiskDeviceMappings = value["DiskDeviceMappings"]["DiskDeviceMapping"];
 		for (auto value : allDiskDeviceMappings)
 		{
-			Image::DiskDeviceMapping diskDeviceMappingObject;
-			diskDeviceMappingObject.snapshotId = value["SnapshotId"].asString();
-			diskDeviceMappingObject.size = value["Size"].asString();
-			diskDeviceMappingObject.device = value["Device"].asString();
-			diskDeviceMappingObject.type = value["Type"].asString();
-			diskDeviceMappingObject.format = value["Format"].asString();
-			diskDeviceMappingObject.importOSSBucket = value["ImportOSSBucket"].asString();
-			diskDeviceMappingObject.importOSSObject = value["ImportOSSObject"].asString();
-			imageObject.diskDeviceMappings.push_back(diskDeviceMappingObject);
+			Image::DiskDeviceMapping diskDeviceMappingsObject;
+			if(!value["SnapshotId"].isNull())
+				diskDeviceMappingsObject.snapshotId = value["SnapshotId"].asString();
+			if(!value["Size"].isNull())
+				diskDeviceMappingsObject.size = value["Size"].asString();
+			if(!value["Device"].isNull())
+				diskDeviceMappingsObject.device = value["Device"].asString();
+			if(!value["Type"].isNull())
+				diskDeviceMappingsObject.type = value["Type"].asString();
+			if(!value["Format"].isNull())
+				diskDeviceMappingsObject.format = value["Format"].asString();
+			if(!value["ImportOSSBucket"].isNull())
+				diskDeviceMappingsObject.importOSSBucket = value["ImportOSSBucket"].asString();
+			if(!value["ImportOSSObject"].isNull())
+				diskDeviceMappingsObject.importOSSObject = value["ImportOSSObject"].asString();
+			imagesObject.diskDeviceMappings.push_back(diskDeviceMappingsObject);
 		}
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{
-			Image::Tag tagObject;
-			tagObject.tagKey = value["TagKey"].asString();
-			tagObject.tagValue = value["TagValue"].asString();
-			imageObject.tags.push_back(tagObject);
+			Image::Tag tagsObject;
+			if(!value["TagKey"].isNull())
+				tagsObject.tagKey = value["TagKey"].asString();
+			if(!value["TagValue"].isNull())
+				tagsObject.tagValue = value["TagValue"].asString();
+			imagesObject.tags.push_back(tagsObject);
 		}
-		images_.push_back(imageObject);
+		images_.push_back(imagesObject);
 	}
-	regionId_ = value["RegionId"].asString();
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -99,19 +132,9 @@ int DescribeImagesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeImagesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeImagesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeImagesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeImagesResult::getPageNumber()const
@@ -119,18 +142,13 @@ int DescribeImagesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeImagesResult::setPageNumber(int pageNumber)
+std::vector<DescribeImagesResult::Image> DescribeImagesResult::getImages()const
 {
-	pageNumber_ = pageNumber;
+	return images_;
 }
 
 std::string DescribeImagesResult::getRegionId()const
 {
 	return regionId_;
-}
-
-void DescribeImagesResult::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
 }
 

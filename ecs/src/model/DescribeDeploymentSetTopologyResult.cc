@@ -43,37 +43,51 @@ void DescribeDeploymentSetTopologyResult::parse(const std::string &payload)
 	auto allSwitchs = value["Switchs"]["Switch"];
 	for (auto value : allSwitchs)
 	{
-		Switch switchObject;
-		switchObject.switchId = value["SwitchId"].asString();
+		Switch switchsObject;
+		if(!value["SwitchId"].isNull())
+			switchsObject.switchId = value["SwitchId"].asString();
 		auto allHosts = value["Hosts"]["Host"];
 		for (auto value : allHosts)
 		{
-			Switch::Host hostObject;
-			hostObject.hostId = value["HostId"].asString();
+			Switch::Host hostsObject;
+			if(!value["HostId"].isNull())
+				hostsObject.hostId = value["HostId"].asString();
 			auto allInstanceIds = value["InstanceIds"]["InstanceId"];
 			for (auto value : allInstanceIds)
-				hostObject.instanceIds.push_back(value.asString());
-			switchObject.hosts.push_back(hostObject);
+				hostsObject.instanceIds.push_back(value.asString());
+			switchsObject.hosts.push_back(hostsObject);
 		}
-		switchs_.push_back(switchObject);
+		switchs_.push_back(switchsObject);
 	}
 	auto allRacks = value["Racks"]["Rack"];
 	for (auto value : allRacks)
 	{
-		Rack rackObject;
-		rackObject.rackId = value["RackId"].asString();
-		auto allHosts = value["Hosts"]["Host"];
-		for (auto value : allHosts)
+		Rack racksObject;
+		if(!value["RackId"].isNull())
+			racksObject.rackId = value["RackId"].asString();
+		auto allHosts1 = value["Hosts"]["Host"];
+		for (auto value : allHosts1)
 		{
-			Rack::Host hostObject;
-			hostObject.hostId = value["HostId"].asString();
+			Rack::Host2 hosts1Object;
+			if(!value["HostId"].isNull())
+				hosts1Object.hostId = value["HostId"].asString();
 			auto allInstanceIds3 = value["InstanceIds"]["InstanceId"];
 			for (auto value : allInstanceIds3)
-				hostObject.instanceIds3.push_back(value.asString());
-			rackObject.hosts1.push_back(hostObject);
+				hosts1Object.instanceIds3.push_back(value.asString());
+			racksObject.hosts1.push_back(hosts1Object);
 		}
-		racks_.push_back(rackObject);
+		racks_.push_back(racksObject);
 	}
 
+}
+
+std::vector<DescribeDeploymentSetTopologyResult::Switch> DescribeDeploymentSetTopologyResult::getSwitchs()const
+{
+	return switchs_;
+}
+
+std::vector<DescribeDeploymentSetTopologyResult::Rack> DescribeDeploymentSetTopologyResult::getRacks()const
+{
+	return racks_;
 }
 

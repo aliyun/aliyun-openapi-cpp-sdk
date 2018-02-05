@@ -43,16 +43,23 @@ void AttachKeyPairResult::parse(const std::string &payload)
 	auto allResults = value["Results"]["Result"];
 	for (auto value : allResults)
 	{
-		Result resultObject;
-		resultObject.instanceId = value["InstanceId"].asString();
-		resultObject.success = value["Success"].asString();
-		resultObject.code = value["Code"].asString();
-		resultObject.message = value["Message"].asString();
-		results_.push_back(resultObject);
+		Result resultsObject;
+		if(!value["InstanceId"].isNull())
+			resultsObject.instanceId = value["InstanceId"].asString();
+		if(!value["Success"].isNull())
+			resultsObject.success = value["Success"].asString();
+		if(!value["Code"].isNull())
+			resultsObject.code = value["Code"].asString();
+		if(!value["Message"].isNull())
+			resultsObject.message = value["Message"].asString();
+		results_.push_back(resultsObject);
 	}
-	totalCount_ = value["TotalCount"].asString();
-	failCount_ = value["FailCount"].asString();
-	keyPairName_ = value["KeyPairName"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
+	if(!value["FailCount"].isNull())
+		failCount_ = value["FailCount"].asString();
+	if(!value["KeyPairName"].isNull())
+		keyPairName_ = value["KeyPairName"].asString();
 
 }
 
@@ -61,28 +68,18 @@ std::string AttachKeyPairResult::getKeyPairName()const
 	return keyPairName_;
 }
 
-void AttachKeyPairResult::setKeyPairName(const std::string& keyPairName)
-{
-	keyPairName_ = keyPairName;
-}
-
 std::string AttachKeyPairResult::getTotalCount()const
 {
 	return totalCount_;
 }
 
-void AttachKeyPairResult::setTotalCount(const std::string& totalCount)
+std::vector<AttachKeyPairResult::Result> AttachKeyPairResult::getResults()const
 {
-	totalCount_ = totalCount;
+	return results_;
 }
 
 std::string AttachKeyPairResult::getFailCount()const
 {
 	return failCount_;
-}
-
-void AttachKeyPairResult::setFailCount(const std::string& failCount)
-{
-	failCount_ = failCount;
 }
 
