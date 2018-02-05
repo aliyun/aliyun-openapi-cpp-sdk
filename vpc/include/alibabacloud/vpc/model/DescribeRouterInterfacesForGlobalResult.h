@@ -68,21 +68,13 @@ namespace AlibabaCloud
 				explicit DescribeRouterInterfacesForGlobalResult(const std::string &payload);
 				~DescribeRouterInterfacesForGlobalResult();
 				std::string getDesc()const;
-				void setDesc(const std::string& desc);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<RouterInterfaceType> getRouterInterfaceSet()const;
-				void setRouterInterfaceSet(const std::vector<RouterInterfaceType>& routerInterfaceSet);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 				bool getSuccess()const;
-				void setSuccess(bool success);
 
 			protected:
 				void parse(const std::string &payload);

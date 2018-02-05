@@ -64,13 +64,9 @@ namespace AlibabaCloud
 				explicit DescribeEipAddressesResult(const std::string &payload);
 				~DescribeEipAddressesResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::vector<EipAddress> getEipAddresses()const;
-				void setEipAddresses(const std::vector<EipAddress>& eipAddresses);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

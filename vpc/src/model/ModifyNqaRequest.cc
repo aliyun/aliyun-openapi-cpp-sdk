@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ModifyNqaRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ModifyNqaRequest;
 
 ModifyNqaRequest::ModifyNqaRequest() :
-	VpcRequest("ModifyNqa")
+	RpcServiceRequest("vpc", "2016-04-28", "ModifyNqa")
 {}
 
 ModifyNqaRequest::~ModifyNqaRequest()

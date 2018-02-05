@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeVSwitchesRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeVSwitchesRequest;
 
 DescribeVSwitchesRequest::DescribeVSwitchesRequest() :
-	VpcRequest("DescribeVSwitches")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeVSwitches")
 {}
 
 DescribeVSwitchesRequest::~DescribeVSwitchesRequest()

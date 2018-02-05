@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/EnableVpcClassicLinkRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::EnableVpcClassicLinkRequest;
 
 EnableVpcClassicLinkRequest::EnableVpcClassicLinkRequest() :
-	VpcRequest("EnableVpcClassicLink")
+	RpcServiceRequest("vpc", "2016-04-28", "EnableVpcClassicLink")
 {}
 
 EnableVpcClassicLinkRequest::~EnableVpcClassicLinkRequest()

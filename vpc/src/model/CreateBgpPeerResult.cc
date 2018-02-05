@@ -40,17 +40,13 @@ void CreateBgpPeerResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	bgpPeerId_ = value["BgpPeerId"].asString();
+	if(!value["BgpPeerId"].isNull())
+		bgpPeerId_ = value["BgpPeerId"].asString();
 
 }
 
 std::string CreateBgpPeerResult::getBgpPeerId()const
 {
 	return bgpPeerId_;
-}
-
-void CreateBgpPeerResult::setBgpPeerId(const std::string& bgpPeerId)
-{
-	bgpPeerId_ = bgpPeerId;
 }
 

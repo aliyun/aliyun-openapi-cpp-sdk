@@ -40,9 +40,12 @@ void AllocateEipAddressResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	allocationId_ = value["AllocationId"].asString();
-	eipAddress_ = value["EipAddress"].asString();
-	orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["AllocationId"].isNull())
+		allocationId_ = value["AllocationId"].asString();
+	if(!value["EipAddress"].isNull())
+		eipAddress_ = value["EipAddress"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
 
 }
 
@@ -51,28 +54,13 @@ std::string AllocateEipAddressResult::getAllocationId()const
 	return allocationId_;
 }
 
-void AllocateEipAddressResult::setAllocationId(const std::string& allocationId)
-{
-	allocationId_ = allocationId;
-}
-
 std::string AllocateEipAddressResult::getEipAddress()const
 {
 	return eipAddress_;
 }
 
-void AllocateEipAddressResult::setEipAddress(const std::string& eipAddress)
-{
-	eipAddress_ = eipAddress;
-}
-
 long AllocateEipAddressResult::getOrderId()const
 {
 	return orderId_;
-}
-
-void AllocateEipAddressResult::setOrderId(long orderId)
-{
-	orderId_ = orderId;
 }
 

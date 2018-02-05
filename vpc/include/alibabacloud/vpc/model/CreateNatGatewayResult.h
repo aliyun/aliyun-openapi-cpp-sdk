@@ -38,13 +38,9 @@ namespace AlibabaCloud
 				explicit CreateNatGatewayResult(const std::string &payload);
 				~CreateNatGatewayResult();
 				std::vector<std::string> getSnatTableIds()const;
-				void setSnatTableIds(const std::vector<std::string>& snatTableIds);
 				std::vector<std::string> getForwardTableIds()const;
-				void setForwardTableIds(const std::vector<std::string>& forwardTableIds);
 				std::vector<std::string> getBandwidthPackageIds()const;
-				void setBandwidthPackageIds(const std::vector<std::string>& bandwidthPackageIds);
 				std::string getNatGatewayId()const;
-				void setNatGatewayId(const std::string& natGatewayId);
 
 			protected:
 				void parse(const std::string &payload);

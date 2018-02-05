@@ -43,20 +43,31 @@ void DescribeVirtualBorderRoutersForPhysicalConnectionResult::parse(const std::s
 	auto allVirtualBorderRouterForPhysicalConnectionSet = value["VirtualBorderRouterForPhysicalConnectionSet"]["VirtualBorderRouterForPhysicalConnectionType"];
 	for (auto value : allVirtualBorderRouterForPhysicalConnectionSet)
 	{
-		VirtualBorderRouterForPhysicalConnectionType virtualBorderRouterForPhysicalConnectionTypeObject;
-		virtualBorderRouterForPhysicalConnectionTypeObject.vbrId = value["VbrId"].asString();
-		virtualBorderRouterForPhysicalConnectionTypeObject.vbrOwnerUid = std::stol(value["VbrOwnerUid"].asString());
-		virtualBorderRouterForPhysicalConnectionTypeObject.creationTime = value["CreationTime"].asString();
-		virtualBorderRouterForPhysicalConnectionTypeObject.activationTime = value["ActivationTime"].asString();
-		virtualBorderRouterForPhysicalConnectionTypeObject.terminationTime = value["TerminationTime"].asString();
-		virtualBorderRouterForPhysicalConnectionTypeObject.recoveryTime = value["RecoveryTime"].asString();
-		virtualBorderRouterForPhysicalConnectionTypeObject.vlanId = std::stoi(value["VlanId"].asString());
-		virtualBorderRouterForPhysicalConnectionTypeObject.circuitCode = value["CircuitCode"].asString();
-		virtualBorderRouterForPhysicalConnectionSet_.push_back(virtualBorderRouterForPhysicalConnectionTypeObject);
+		VirtualBorderRouterForPhysicalConnectionType virtualBorderRouterForPhysicalConnectionSetObject;
+		if(!value["VbrId"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.vbrId = value["VbrId"].asString();
+		if(!value["VbrOwnerUid"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.vbrOwnerUid = std::stol(value["VbrOwnerUid"].asString());
+		if(!value["CreationTime"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.creationTime = value["CreationTime"].asString();
+		if(!value["ActivationTime"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.activationTime = value["ActivationTime"].asString();
+		if(!value["TerminationTime"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.terminationTime = value["TerminationTime"].asString();
+		if(!value["RecoveryTime"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.recoveryTime = value["RecoveryTime"].asString();
+		if(!value["VlanId"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.vlanId = std::stoi(value["VlanId"].asString());
+		if(!value["CircuitCode"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.circuitCode = value["CircuitCode"].asString();
+		virtualBorderRouterForPhysicalConnectionSet_.push_back(virtualBorderRouterForPhysicalConnectionSetObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -65,19 +76,9 @@ int DescribeVirtualBorderRoutersForPhysicalConnectionResult::getTotalCount()cons
 	return totalCount_;
 }
 
-void DescribeVirtualBorderRoutersForPhysicalConnectionResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeVirtualBorderRoutersForPhysicalConnectionResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeVirtualBorderRoutersForPhysicalConnectionResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeVirtualBorderRoutersForPhysicalConnectionResult::getPageNumber()const
@@ -85,8 +86,8 @@ int DescribeVirtualBorderRoutersForPhysicalConnectionResult::getPageNumber()cons
 	return pageNumber_;
 }
 
-void DescribeVirtualBorderRoutersForPhysicalConnectionResult::setPageNumber(int pageNumber)
+std::vector<DescribeVirtualBorderRoutersForPhysicalConnectionResult::VirtualBorderRouterForPhysicalConnectionType> DescribeVirtualBorderRoutersForPhysicalConnectionResult::getVirtualBorderRouterForPhysicalConnectionSet()const
 {
-	pageNumber_ = pageNumber;
+	return virtualBorderRouterForPhysicalConnectionSet_;
 }
 

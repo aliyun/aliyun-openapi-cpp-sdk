@@ -40,17 +40,13 @@ void CreateVSwitchResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
 
 }
 
 std::string CreateVSwitchResult::getVSwitchId()const
 {
 	return vSwitchId_;
-}
-
-void CreateVSwitchResult::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
 }
 

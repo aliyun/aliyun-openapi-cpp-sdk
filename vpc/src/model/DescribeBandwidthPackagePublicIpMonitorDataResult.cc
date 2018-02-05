@@ -43,17 +43,30 @@ void DescribeBandwidthPackagePublicIpMonitorDataResult::parse(const std::string 
 	auto allMonitorDatas = value["MonitorDatas"]["MonitorData"];
 	for (auto value : allMonitorDatas)
 	{
-		MonitorData monitorDataObject;
-		monitorDataObject.rX = std::stol(value["RX"].asString());
-		monitorDataObject.tX = std::stol(value["TX"].asString());
-		monitorDataObject.receivedBandwidth = std::stol(value["ReceivedBandwidth"].asString());
-		monitorDataObject.transportedBandwidth = std::stol(value["TransportedBandwidth"].asString());
-		monitorDataObject.flow = std::stol(value["Flow"].asString());
-		monitorDataObject.bandwidth = std::stol(value["Bandwidth"].asString());
-		monitorDataObject.packets = std::stol(value["Packets"].asString());
-		monitorDataObject.timeStamp = value["TimeStamp"].asString();
-		monitorDatas_.push_back(monitorDataObject);
+		MonitorData monitorDatasObject;
+		if(!value["RX"].isNull())
+			monitorDatasObject.rX = std::stol(value["RX"].asString());
+		if(!value["TX"].isNull())
+			monitorDatasObject.tX = std::stol(value["TX"].asString());
+		if(!value["ReceivedBandwidth"].isNull())
+			monitorDatasObject.receivedBandwidth = std::stol(value["ReceivedBandwidth"].asString());
+		if(!value["TransportedBandwidth"].isNull())
+			monitorDatasObject.transportedBandwidth = std::stol(value["TransportedBandwidth"].asString());
+		if(!value["Flow"].isNull())
+			monitorDatasObject.flow = std::stol(value["Flow"].asString());
+		if(!value["Bandwidth"].isNull())
+			monitorDatasObject.bandwidth = std::stol(value["Bandwidth"].asString());
+		if(!value["Packets"].isNull())
+			monitorDatasObject.packets = std::stol(value["Packets"].asString());
+		if(!value["TimeStamp"].isNull())
+			monitorDatasObject.timeStamp = value["TimeStamp"].asString();
+		monitorDatas_.push_back(monitorDatasObject);
 	}
 
+}
+
+std::vector<DescribeBandwidthPackagePublicIpMonitorDataResult::MonitorData> DescribeBandwidthPackagePublicIpMonitorDataResult::getMonitorDatas()const
+{
+	return monitorDatas_;
 }
 

@@ -43,15 +43,26 @@ void DescribeNewProjectEipMonitorDataResult::parse(const std::string &payload)
 	auto allEipMonitorDatas = value["EipMonitorDatas"]["EipMonitorData"];
 	for (auto value : allEipMonitorDatas)
 	{
-		EipMonitorData eipMonitorDataObject;
-		eipMonitorDataObject.eipRX = std::stoi(value["EipRX"].asString());
-		eipMonitorDataObject.eipTX = std::stoi(value["EipTX"].asString());
-		eipMonitorDataObject.eipFlow = std::stoi(value["EipFlow"].asString());
-		eipMonitorDataObject.eipBandwidth = std::stoi(value["EipBandwidth"].asString());
-		eipMonitorDataObject.eipPackets = std::stoi(value["EipPackets"].asString());
-		eipMonitorDataObject.timeStamp = value["TimeStamp"].asString();
-		eipMonitorDatas_.push_back(eipMonitorDataObject);
+		EipMonitorData eipMonitorDatasObject;
+		if(!value["EipRX"].isNull())
+			eipMonitorDatasObject.eipRX = std::stoi(value["EipRX"].asString());
+		if(!value["EipTX"].isNull())
+			eipMonitorDatasObject.eipTX = std::stoi(value["EipTX"].asString());
+		if(!value["EipFlow"].isNull())
+			eipMonitorDatasObject.eipFlow = std::stoi(value["EipFlow"].asString());
+		if(!value["EipBandwidth"].isNull())
+			eipMonitorDatasObject.eipBandwidth = std::stoi(value["EipBandwidth"].asString());
+		if(!value["EipPackets"].isNull())
+			eipMonitorDatasObject.eipPackets = std::stoi(value["EipPackets"].asString());
+		if(!value["TimeStamp"].isNull())
+			eipMonitorDatasObject.timeStamp = value["TimeStamp"].asString();
+		eipMonitorDatas_.push_back(eipMonitorDatasObject);
 	}
 
+}
+
+std::vector<DescribeNewProjectEipMonitorDataResult::EipMonitorData> DescribeNewProjectEipMonitorDataResult::getEipMonitorDatas()const
+{
+	return eipMonitorDatas_;
 }
 

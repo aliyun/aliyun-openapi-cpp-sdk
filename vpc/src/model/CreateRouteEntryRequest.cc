@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreateRouteEntryRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreateRouteEntryRequest;
 
 CreateRouteEntryRequest::CreateRouteEntryRequest() :
-	VpcRequest("CreateRouteEntry")
+	RpcServiceRequest("vpc", "2016-04-28", "CreateRouteEntry")
 {}
 
 CreateRouteEntryRequest::~CreateRouteEntryRequest()

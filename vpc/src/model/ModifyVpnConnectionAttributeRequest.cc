@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ModifyVpnConnectionAttributeRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ModifyVpnConnectionAttributeRequest;
 
 ModifyVpnConnectionAttributeRequest::ModifyVpnConnectionAttributeRequest() :
-	VpcRequest("ModifyVpnConnectionAttribute")
+	RpcServiceRequest("vpc", "2016-04-28", "ModifyVpnConnectionAttribute")
 {}
 
 ModifyVpnConnectionAttributeRequest::~ModifyVpnConnectionAttributeRequest()

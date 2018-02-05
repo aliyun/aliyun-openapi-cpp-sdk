@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreatePhysicalConnectionRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreatePhysicalConnectionRequest;
 
 CreatePhysicalConnectionRequest::CreatePhysicalConnectionRequest() :
-	VpcRequest("CreatePhysicalConnection")
+	RpcServiceRequest("vpc", "2016-04-28", "CreatePhysicalConnection")
 {}
 
 CreatePhysicalConnectionRequest::~CreatePhysicalConnectionRequest()

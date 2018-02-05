@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreateVSwitchRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreateVSwitchRequest;
 
 CreateVSwitchRequest::CreateVSwitchRequest() :
-	VpcRequest("CreateVSwitch")
+	RpcServiceRequest("vpc", "2016-04-28", "CreateVSwitch")
 {}
 
 CreateVSwitchRequest::~CreateVSwitchRequest()

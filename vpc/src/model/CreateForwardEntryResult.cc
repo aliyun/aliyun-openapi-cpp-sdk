@@ -40,17 +40,13 @@ void CreateForwardEntryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	forwardEntryId_ = value["ForwardEntryId"].asString();
+	if(!value["ForwardEntryId"].isNull())
+		forwardEntryId_ = value["ForwardEntryId"].asString();
 
 }
 
 std::string CreateForwardEntryResult::getForwardEntryId()const
 {
 	return forwardEntryId_;
-}
-
-void CreateForwardEntryResult::setForwardEntryId(const std::string& forwardEntryId)
-{
-	forwardEntryId_ = forwardEntryId;
 }
 

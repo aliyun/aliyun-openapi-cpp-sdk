@@ -59,13 +59,9 @@ namespace AlibabaCloud
 				explicit DescribeCommonBandwidthPackagesResult(const std::string &payload);
 				~DescribeCommonBandwidthPackagesResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<CommonBandwidthPackage> getCommonBandwidthPackages()const;
-				void setCommonBandwidthPackages(const std::vector<CommonBandwidthPackage>& commonBandwidthPackages);
 
 			protected:
 				void parse(const std::string &payload);

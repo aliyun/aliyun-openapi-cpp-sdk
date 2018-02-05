@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeleteVirtualBorderRouterRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeleteVirtualBorderRouterRequest;
 
 DeleteVirtualBorderRouterRequest::DeleteVirtualBorderRouterRequest() :
-	VpcRequest("DeleteVirtualBorderRouter")
+	RpcServiceRequest("vpc", "2016-04-28", "DeleteVirtualBorderRouter")
 {}
 
 DeleteVirtualBorderRouterRequest::~DeleteVirtualBorderRouterRequest()

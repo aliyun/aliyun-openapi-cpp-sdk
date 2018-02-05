@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateHaVipResult(const std::string &payload);
 				~CreateHaVipResult();
 				std::string getHaVipId()const;
-				void setHaVipId(const std::string& haVipId);
 
 			protected:
 				void parse(const std::string &payload);

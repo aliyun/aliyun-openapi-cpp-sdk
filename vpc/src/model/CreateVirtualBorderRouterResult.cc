@@ -40,17 +40,13 @@ void CreateVirtualBorderRouterResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	vbrId_ = value["VbrId"].asString();
+	if(!value["VbrId"].isNull())
+		vbrId_ = value["VbrId"].asString();
 
 }
 
 std::string CreateVirtualBorderRouterResult::getVbrId()const
 {
 	return vbrId_;
-}
-
-void CreateVirtualBorderRouterResult::setVbrId(const std::string& vbrId)
-{
-	vbrId_ = vbrId;
 }
 

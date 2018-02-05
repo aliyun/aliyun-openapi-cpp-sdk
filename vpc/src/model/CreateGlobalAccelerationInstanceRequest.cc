@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreateGlobalAccelerationInstanceRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreateGlobalAccelerationInstanceRequest;
 
 CreateGlobalAccelerationInstanceRequest::CreateGlobalAccelerationInstanceRequest() :
-	VpcRequest("CreateGlobalAccelerationInstance")
+	RpcServiceRequest("vpc", "2016-04-28", "CreateGlobalAccelerationInstance")
 {}
 
 CreateGlobalAccelerationInstanceRequest::~CreateGlobalAccelerationInstanceRequest()

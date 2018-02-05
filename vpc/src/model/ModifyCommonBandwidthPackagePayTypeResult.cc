@@ -40,9 +40,12 @@ void ModifyCommonBandwidthPackagePayTypeResult::parse(const std::string &payload
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	orderId_ = std::stol(value["OrderId"].asString());
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
@@ -51,28 +54,13 @@ std::string ModifyCommonBandwidthPackagePayTypeResult::getMessage()const
 	return message_;
 }
 
-void ModifyCommonBandwidthPackagePayTypeResult::setMessage(const std::string& message)
-{
-	message_ = message;
-}
-
 long ModifyCommonBandwidthPackagePayTypeResult::getOrderId()const
 {
 	return orderId_;
 }
 
-void ModifyCommonBandwidthPackagePayTypeResult::setOrderId(long orderId)
-{
-	orderId_ = orderId;
-}
-
 std::string ModifyCommonBandwidthPackagePayTypeResult::getCode()const
 {
 	return code_;
-}
-
-void ModifyCommonBandwidthPackagePayTypeResult::setCode(const std::string& code)
-{
-	code_ = code;
 }
 

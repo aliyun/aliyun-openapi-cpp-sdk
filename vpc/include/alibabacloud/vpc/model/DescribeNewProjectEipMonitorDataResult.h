@@ -47,7 +47,6 @@ namespace AlibabaCloud
 				explicit DescribeNewProjectEipMonitorDataResult(const std::string &payload);
 				~DescribeNewProjectEipMonitorDataResult();
 				std::vector<EipMonitorData> getEipMonitorDatas()const;
-				void setEipMonitorDatas(const std::vector<EipMonitorData>& eipMonitorDatas);
 
 			protected:
 				void parse(const std::string &payload);

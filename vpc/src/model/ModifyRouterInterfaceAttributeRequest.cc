@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ModifyRouterInterfaceAttributeRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ModifyRouterInterfaceAttributeRequest;
 
 ModifyRouterInterfaceAttributeRequest::ModifyRouterInterfaceAttributeRequest() :
-	VpcRequest("ModifyRouterInterfaceAttribute")
+	RpcServiceRequest("vpc", "2016-04-28", "ModifyRouterInterfaceAttribute")
 {}
 
 ModifyRouterInterfaceAttributeRequest::~ModifyRouterInterfaceAttributeRequest()

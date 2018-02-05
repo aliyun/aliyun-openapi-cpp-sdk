@@ -40,11 +40,16 @@ void ModifyCustomerGatewayAttributeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	customerGatewayId_ = value["CustomerGatewayId"].asString();
-	ipAddress_ = value["IpAddress"].asString();
-	name_ = value["Name"].asString();
-	description_ = value["Description"].asString();
-	createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["CustomerGatewayId"].isNull())
+		customerGatewayId_ = value["CustomerGatewayId"].asString();
+	if(!value["IpAddress"].isNull())
+		ipAddress_ = value["IpAddress"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
 
 }
 
@@ -53,19 +58,9 @@ std::string ModifyCustomerGatewayAttributeResult::getDescription()const
 	return description_;
 }
 
-void ModifyCustomerGatewayAttributeResult::setDescription(const std::string& description)
-{
-	description_ = description;
-}
-
 std::string ModifyCustomerGatewayAttributeResult::getCustomerGatewayId()const
 {
 	return customerGatewayId_;
-}
-
-void ModifyCustomerGatewayAttributeResult::setCustomerGatewayId(const std::string& customerGatewayId)
-{
-	customerGatewayId_ = customerGatewayId;
 }
 
 long ModifyCustomerGatewayAttributeResult::getCreateTime()const
@@ -73,28 +68,13 @@ long ModifyCustomerGatewayAttributeResult::getCreateTime()const
 	return createTime_;
 }
 
-void ModifyCustomerGatewayAttributeResult::setCreateTime(long createTime)
-{
-	createTime_ = createTime;
-}
-
 std::string ModifyCustomerGatewayAttributeResult::getIpAddress()const
 {
 	return ipAddress_;
 }
 
-void ModifyCustomerGatewayAttributeResult::setIpAddress(const std::string& ipAddress)
-{
-	ipAddress_ = ipAddress;
-}
-
 std::string ModifyCustomerGatewayAttributeResult::getName()const
 {
 	return name_;
-}
-
-void ModifyCustomerGatewayAttributeResult::setName(const std::string& name)
-{
-	name_ = name;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeRegionsRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
-	VpcRequest("DescribeRegions")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeRegions")
 {}
 
 DescribeRegionsRequest::~DescribeRegionsRequest()

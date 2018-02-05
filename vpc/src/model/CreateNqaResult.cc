@@ -40,17 +40,13 @@ void CreateNqaResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	nqaId_ = value["NqaId"].asString();
+	if(!value["NqaId"].isNull())
+		nqaId_ = value["NqaId"].asString();
 
 }
 
 std::string CreateNqaResult::getNqaId()const
 {
 	return nqaId_;
-}
-
-void CreateNqaResult::setNqaId(const std::string& nqaId)
-{
-	nqaId_ = nqaId;
 }
 

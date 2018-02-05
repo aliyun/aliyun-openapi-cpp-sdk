@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ModifyBgpGroupAttributeRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ModifyBgpGroupAttributeRequest;
 
 ModifyBgpGroupAttributeRequest::ModifyBgpGroupAttributeRequest() :
-	VpcRequest("ModifyBgpGroupAttribute")
+	RpcServiceRequest("vpc", "2016-04-28", "ModifyBgpGroupAttribute")
 {}
 
 ModifyBgpGroupAttributeRequest::~ModifyBgpGroupAttributeRequest()

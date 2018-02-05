@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeNqasRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeNqasRequest;
 
 DescribeNqasRequest::DescribeNqasRequest() :
-	VpcRequest("DescribeNqas")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeNqas")
 {}
 
 DescribeNqasRequest::~DescribeNqasRequest()

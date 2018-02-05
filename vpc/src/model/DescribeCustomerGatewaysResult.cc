@@ -43,17 +43,25 @@ void DescribeCustomerGatewaysResult::parse(const std::string &payload)
 	auto allCustomerGateways = value["CustomerGateways"]["CustomerGateway"];
 	for (auto value : allCustomerGateways)
 	{
-		CustomerGateway customerGatewayObject;
-		customerGatewayObject.customerGatewayId = value["CustomerGatewayId"].asString();
-		customerGatewayObject.name = value["Name"].asString();
-		customerGatewayObject.ipAddress = value["IpAddress"].asString();
-		customerGatewayObject.description = value["Description"].asString();
-		customerGatewayObject.createTime = std::stol(value["CreateTime"].asString());
-		customerGateways_.push_back(customerGatewayObject);
+		CustomerGateway customerGatewaysObject;
+		if(!value["CustomerGatewayId"].isNull())
+			customerGatewaysObject.customerGatewayId = value["CustomerGatewayId"].asString();
+		if(!value["Name"].isNull())
+			customerGatewaysObject.name = value["Name"].asString();
+		if(!value["IpAddress"].isNull())
+			customerGatewaysObject.ipAddress = value["IpAddress"].asString();
+		if(!value["Description"].isNull())
+			customerGatewaysObject.description = value["Description"].asString();
+		if(!value["CreateTime"].isNull())
+			customerGatewaysObject.createTime = std::stol(value["CreateTime"].asString());
+		customerGateways_.push_back(customerGatewaysObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -62,19 +70,9 @@ int DescribeCustomerGatewaysResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeCustomerGatewaysResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeCustomerGatewaysResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeCustomerGatewaysResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeCustomerGatewaysResult::getPageNumber()const
@@ -82,8 +80,8 @@ int DescribeCustomerGatewaysResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeCustomerGatewaysResult::setPageNumber(int pageNumber)
+std::vector<DescribeCustomerGatewaysResult::CustomerGateway> DescribeCustomerGatewaysResult::getCustomerGateways()const
 {
-	pageNumber_ = pageNumber;
+	return customerGateways_;
 }
 

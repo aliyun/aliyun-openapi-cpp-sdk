@@ -311,6 +311,42 @@ VpcClient::DescribeGlobalAccelerationInstancesOutcomeCallable VpcClient::describ
 	return task->get_future();
 }
 
+VpcClient::ModifySslVpnClientCertOutcome VpcClient::modifySslVpnClientCert(const ModifySslVpnClientCertRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySslVpnClientCertOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySslVpnClientCertOutcome(ModifySslVpnClientCertResult(outcome.result()));
+	else
+		return ModifySslVpnClientCertOutcome(outcome.error());
+}
+
+void VpcClient::modifySslVpnClientCertAsync(const ModifySslVpnClientCertRequest& request, const ModifySslVpnClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySslVpnClientCert(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifySslVpnClientCertOutcomeCallable VpcClient::modifySslVpnClientCertCallable(const ModifySslVpnClientCertRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySslVpnClientCertOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySslVpnClientCert(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DeleteVpcOutcome VpcClient::deleteVpc(const DeleteVpcRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -779,6 +815,42 @@ VpcClient::ActivateRouterInterfaceOutcomeCallable VpcClient::activateRouterInter
 	return task->get_future();
 }
 
+VpcClient::DeleteSslVpnServerOutcome VpcClient::deleteSslVpnServer(const DeleteSslVpnServerRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSslVpnServerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSslVpnServerOutcome(DeleteSslVpnServerResult(outcome.result()));
+	else
+		return DeleteSslVpnServerOutcome(outcome.error());
+}
+
+void VpcClient::deleteSslVpnServerAsync(const DeleteSslVpnServerRequest& request, const DeleteSslVpnServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSslVpnServer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeleteSslVpnServerOutcomeCallable VpcClient::deleteSslVpnServerCallable(const DeleteSslVpnServerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSslVpnServerOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSslVpnServer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DeleteBandwidthPackageOutcome VpcClient::deleteBandwidthPackage(const DeleteBandwidthPackageRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -1139,6 +1211,42 @@ VpcClient::UnassociateEipAddressOutcomeCallable VpcClient::unassociateEipAddress
 	return task->get_future();
 }
 
+VpcClient::DescribeSslVpnClientCertsOutcome VpcClient::describeSslVpnClientCerts(const DescribeSslVpnClientCertsRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSslVpnClientCertsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSslVpnClientCertsOutcome(DescribeSslVpnClientCertsResult(outcome.result()));
+	else
+		return DescribeSslVpnClientCertsOutcome(outcome.error());
+}
+
+void VpcClient::describeSslVpnClientCertsAsync(const DescribeSslVpnClientCertsRequest& request, const DescribeSslVpnClientCertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSslVpnClientCerts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeSslVpnClientCertsOutcomeCallable VpcClient::describeSslVpnClientCertsCallable(const DescribeSslVpnClientCertsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSslVpnClientCertsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSslVpnClientCerts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DescribeVpnConnectionOutcome VpcClient::describeVpnConnection(const DescribeVpnConnectionRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -1277,6 +1385,42 @@ VpcClient::DeleteRouterInterfaceOutcomeCallable VpcClient::deleteRouterInterface
 			[this, request]()
 			{
 			return this->deleteRouterInterface(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::CreateSslVpnServerOutcome VpcClient::createSslVpnServer(const CreateSslVpnServerRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSslVpnServerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSslVpnServerOutcome(CreateSslVpnServerResult(outcome.result()));
+	else
+		return CreateSslVpnServerOutcome(outcome.error());
+}
+
+void VpcClient::createSslVpnServerAsync(const CreateSslVpnServerRequest& request, const CreateSslVpnServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSslVpnServer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateSslVpnServerOutcomeCallable VpcClient::createSslVpnServerCallable(const CreateSslVpnServerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSslVpnServerOutcome()>>(
+			[this, request]()
+			{
+			return this->createSslVpnServer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1601,6 +1745,42 @@ VpcClient::AddBgpNetworkOutcomeCallable VpcClient::addBgpNetworkCallable(const A
 			[this, request]()
 			{
 			return this->addBgpNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::ModifySslVpnServerOutcome VpcClient::modifySslVpnServer(const ModifySslVpnServerRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySslVpnServerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySslVpnServerOutcome(ModifySslVpnServerResult(outcome.result()));
+	else
+		return ModifySslVpnServerOutcome(outcome.error());
+}
+
+void VpcClient::modifySslVpnServerAsync(const ModifySslVpnServerRequest& request, const ModifySslVpnServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySslVpnServer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifySslVpnServerOutcomeCallable VpcClient::modifySslVpnServerCallable(const ModifySslVpnServerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySslVpnServerOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySslVpnServer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2615,42 +2795,6 @@ VpcClient::ModifyNatGatewaySpecOutcomeCallable VpcClient::modifyNatGatewaySpecCa
 	return task->get_future();
 }
 
-VpcClient::GrantInstanceToCbnOutcome VpcClient::grantInstanceToCbn(const GrantInstanceToCbnRequest &request) const
-{
-	auto endpointOutcome = endpoint();
-	if (!endpointOutcome.isSuccess())
-		return GrantInstanceToCbnOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GrantInstanceToCbnOutcome(GrantInstanceToCbnResult(outcome.result()));
-	else
-		return GrantInstanceToCbnOutcome(outcome.error());
-}
-
-void VpcClient::grantInstanceToCbnAsync(const GrantInstanceToCbnRequest& request, const GrantInstanceToCbnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, grantInstanceToCbn(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::GrantInstanceToCbnOutcomeCallable VpcClient::grantInstanceToCbnCallable(const GrantInstanceToCbnRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GrantInstanceToCbnOutcome()>>(
-			[this, request]()
-			{
-			return this->grantInstanceToCbn(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VpcClient::DescribeBgpGroupsOutcome VpcClient::describeBgpGroups(const DescribeBgpGroupsRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -2753,6 +2897,42 @@ VpcClient::ModifyVpcAttributeOutcomeCallable VpcClient::modifyVpcAttributeCallab
 			[this, request]()
 			{
 			return this->modifyVpcAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DeleteSslVpnClientCertOutcome VpcClient::deleteSslVpnClientCert(const DeleteSslVpnClientCertRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSslVpnClientCertOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSslVpnClientCertOutcome(DeleteSslVpnClientCertResult(outcome.result()));
+	else
+		return DeleteSslVpnClientCertOutcome(outcome.error());
+}
+
+void VpcClient::deleteSslVpnClientCertAsync(const DeleteSslVpnClientCertRequest& request, const DeleteSslVpnClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSslVpnClientCert(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeleteSslVpnClientCertOutcomeCallable VpcClient::deleteSslVpnClientCertCallable(const DeleteSslVpnClientCertRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSslVpnClientCertOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSslVpnClientCert(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3263,6 +3443,42 @@ VpcClient::DescribeAccessPointsOutcomeCallable VpcClient::describeAccessPointsCa
 	return task->get_future();
 }
 
+VpcClient::CreateSslVpnClientCertOutcome VpcClient::createSslVpnClientCert(const CreateSslVpnClientCertRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSslVpnClientCertOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSslVpnClientCertOutcome(CreateSslVpnClientCertResult(outcome.result()));
+	else
+		return CreateSslVpnClientCertOutcome(outcome.error());
+}
+
+void VpcClient::createSslVpnClientCertAsync(const CreateSslVpnClientCertRequest& request, const CreateSslVpnClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSslVpnClientCert(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateSslVpnClientCertOutcomeCallable VpcClient::createSslVpnClientCertCallable(const CreateSslVpnClientCertRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSslVpnClientCertOutcome()>>(
+			[this, request]()
+			{
+			return this->createSslVpnClientCert(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::CreateVirtualBorderRouterOutcome VpcClient::createVirtualBorderRouter(const CreateVirtualBorderRouterRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -3725,42 +3941,6 @@ VpcClient::ModifyRouterInterfaceAttributeOutcomeCallable VpcClient::modifyRouter
 			[this, request]()
 			{
 			return this->modifyRouterInterfaceAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VpcClient::RevokeInstanceFromCbnOutcome VpcClient::revokeInstanceFromCbn(const RevokeInstanceFromCbnRequest &request) const
-{
-	auto endpointOutcome = endpoint();
-	if (!endpointOutcome.isSuccess())
-		return RevokeInstanceFromCbnOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RevokeInstanceFromCbnOutcome(RevokeInstanceFromCbnResult(outcome.result()));
-	else
-		return RevokeInstanceFromCbnOutcome(outcome.error());
-}
-
-void VpcClient::revokeInstanceFromCbnAsync(const RevokeInstanceFromCbnRequest& request, const RevokeInstanceFromCbnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, revokeInstanceFromCbn(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::RevokeInstanceFromCbnOutcomeCallable VpcClient::revokeInstanceFromCbnCallable(const RevokeInstanceFromCbnRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RevokeInstanceFromCbnOutcome()>>(
-			[this, request]()
-			{
-			return this->revokeInstanceFromCbn(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4307,42 +4487,6 @@ VpcClient::DescribeVpnGatewaysOutcomeCallable VpcClient::describeVpnGatewaysCall
 	return task->get_future();
 }
 
-VpcClient::DescribeGrantRulesToCbnOutcome VpcClient::describeGrantRulesToCbn(const DescribeGrantRulesToCbnRequest &request) const
-{
-	auto endpointOutcome = endpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeGrantRulesToCbnOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeGrantRulesToCbnOutcome(DescribeGrantRulesToCbnResult(outcome.result()));
-	else
-		return DescribeGrantRulesToCbnOutcome(outcome.error());
-}
-
-void VpcClient::describeGrantRulesToCbnAsync(const DescribeGrantRulesToCbnRequest& request, const DescribeGrantRulesToCbnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeGrantRulesToCbn(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::DescribeGrantRulesToCbnOutcomeCallable VpcClient::describeGrantRulesToCbnCallable(const DescribeGrantRulesToCbnRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeGrantRulesToCbnOutcome()>>(
-			[this, request]()
-			{
-			return this->describeGrantRulesToCbn(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VpcClient::DescribeVirtualBorderRoutersOutcome VpcClient::describeVirtualBorderRouters(const DescribeVirtualBorderRoutersRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -4631,6 +4775,42 @@ VpcClient::AllocateEipAddressOutcomeCallable VpcClient::allocateEipAddressCallab
 	return task->get_future();
 }
 
+VpcClient::DescribeSslVpnClientCertOutcome VpcClient::describeSslVpnClientCert(const DescribeSslVpnClientCertRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSslVpnClientCertOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSslVpnClientCertOutcome(DescribeSslVpnClientCertResult(outcome.result()));
+	else
+		return DescribeSslVpnClientCertOutcome(outcome.error());
+}
+
+void VpcClient::describeSslVpnClientCertAsync(const DescribeSslVpnClientCertRequest& request, const DescribeSslVpnClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSslVpnClientCert(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeSslVpnClientCertOutcomeCallable VpcClient::describeSslVpnClientCertCallable(const DescribeSslVpnClientCertRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSslVpnClientCertOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSslVpnClientCert(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DescribeCommonBandwidthPackagesOutcome VpcClient::describeCommonBandwidthPackages(const DescribeCommonBandwidthPackagesRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -4769,6 +4949,42 @@ VpcClient::AssociateGlobalAccelerationInstanceOutcomeCallable VpcClient::associa
 			[this, request]()
 			{
 			return this->associateGlobalAccelerationInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DescribeSslVpnServersOutcome VpcClient::describeSslVpnServers(const DescribeSslVpnServersRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSslVpnServersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSslVpnServersOutcome(DescribeSslVpnServersResult(outcome.result()));
+	else
+		return DescribeSslVpnServersOutcome(outcome.error());
+}
+
+void VpcClient::describeSslVpnServersAsync(const DescribeSslVpnServersRequest& request, const DescribeSslVpnServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSslVpnServers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeSslVpnServersOutcomeCallable VpcClient::describeSslVpnServersCallable(const DescribeSslVpnServersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSslVpnServersOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSslVpnServers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

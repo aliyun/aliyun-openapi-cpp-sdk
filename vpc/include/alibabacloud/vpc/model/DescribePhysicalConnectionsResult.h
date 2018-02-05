@@ -59,13 +59,9 @@ namespace AlibabaCloud
 				explicit DescribePhysicalConnectionsResult(const std::string &payload);
 				~DescribePhysicalConnectionsResult();
 				std::vector<PhysicalConnectionType> getPhysicalConnectionSet()const;
-				void setPhysicalConnectionSet(const std::vector<PhysicalConnectionType>& physicalConnectionSet);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

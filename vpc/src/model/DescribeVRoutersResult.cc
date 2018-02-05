@@ -43,22 +43,36 @@ void DescribeVRoutersResult::parse(const std::string &payload)
 	auto allVRouters = value["VRouters"]["VRouter"];
 	for (auto value : allVRouters)
 	{
-		VRouter vRouterObject;
-		vRouterObject.regionId = value["RegionId"].asString();
-		vRouterObject.vpcId = value["VpcId"].asString();
-		vRouterObject.vRouterName = value["VRouterName"].asString();
-		vRouterObject.description = value["Description"].asString();
-		vRouterObject.vRouterId = value["VRouterId"].asString();
-		vRouterObject.creationTime = value["CreationTime"].asString();
+		VRouter vRoutersObject;
+		if(!value["RegionId"].isNull())
+			vRoutersObject.regionId = value["RegionId"].asString();
+		if(!value["VpcId"].isNull())
+			vRoutersObject.vpcId = value["VpcId"].asString();
+		if(!value["VRouterName"].isNull())
+			vRoutersObject.vRouterName = value["VRouterName"].asString();
+		if(!value["Description"].isNull())
+			vRoutersObject.description = value["Description"].asString();
+		if(!value["VRouterId"].isNull())
+			vRoutersObject.vRouterId = value["VRouterId"].asString();
+		if(!value["CreationTime"].isNull())
+			vRoutersObject.creationTime = value["CreationTime"].asString();
 		auto allRouteTableIds = value["RouteTableIds"]["RouteTableId"];
 		for (auto value : allRouteTableIds)
-			vRouterObject.routeTableIds.push_back(value.asString());
-		vRouters_.push_back(vRouterObject);
+			vRoutersObject.routeTableIds.push_back(value.asString());
+		vRouters_.push_back(vRoutersObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
+}
+
+std::vector<DescribeVRoutersResult::VRouter> DescribeVRoutersResult::getVRouters()const
+{
+	return vRouters_;
 }
 
 int DescribeVRoutersResult::getTotalCount()const
@@ -66,28 +80,13 @@ int DescribeVRoutersResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeVRoutersResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeVRoutersResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeVRoutersResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeVRoutersResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeVRoutersResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

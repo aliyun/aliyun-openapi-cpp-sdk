@@ -38,11 +38,8 @@ namespace AlibabaCloud
 				explicit CreateVpcResult(const std::string &payload);
 				~CreateVpcResult();
 				std::string getVRouterId()const;
-				void setVRouterId(const std::string& vRouterId);
 				std::string getRouteTableId()const;
-				void setRouteTableId(const std::string& routeTableId);
 				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 
 			protected:
 				void parse(const std::string &payload);

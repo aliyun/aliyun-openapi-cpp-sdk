@@ -40,17 +40,13 @@ void CreatePhysicalConnectionNewResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	physicalConnectionId_ = value["PhysicalConnectionId"].asString();
+	if(!value["PhysicalConnectionId"].isNull())
+		physicalConnectionId_ = value["PhysicalConnectionId"].asString();
 
 }
 
 std::string CreatePhysicalConnectionNewResult::getPhysicalConnectionId()const
 {
 	return physicalConnectionId_;
-}
-
-void CreatePhysicalConnectionNewResult::setPhysicalConnectionId(const std::string& physicalConnectionId)
-{
-	physicalConnectionId_ = physicalConnectionId;
 }
 

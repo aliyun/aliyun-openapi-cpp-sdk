@@ -35,17 +35,20 @@ namespace AlibabaCloud
 				struct VpnGateway
 				{
 					std::string status;
+					std::string ipsecVpn;
+					std::string sslVpn;
 					std::string description;
-					std::string vpcId;
-					std::string internetIp;
 					long endTime;
-					std::string vpnGatewayId;
-					std::string chargeType;
 					std::string vSwitchId;
 					long createTime;
-					std::string spec;
 					std::string businessStatus;
 					std::string name;
+					std::string vpcId;
+					std::string internetIp;
+					std::string vpnGatewayId;
+					std::string chargeType;
+					std::string spec;
+					long sslMaxConnections;
 				};
 
 
@@ -53,13 +56,9 @@ namespace AlibabaCloud
 				explicit DescribeVpnGatewaysResult(const std::string &payload);
 				~DescribeVpnGatewaysResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::vector<VpnGateway> getVpnGateways()const;
-				void setVpnGateways(const std::vector<VpnGateway>& vpnGateways);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

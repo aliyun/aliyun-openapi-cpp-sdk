@@ -49,7 +49,8 @@ void CreateNatGatewayResult::parse(const std::string &payload)
 	auto allBandwidthPackageIds = value["BandwidthPackageIds"]["BandwidthPackageId"];
 	for (const auto &item : allBandwidthPackageIds)
 		bandwidthPackageIds_.push_back(item.asString());
-	natGatewayId_ = value["NatGatewayId"].asString();
+	if(!value["NatGatewayId"].isNull())
+		natGatewayId_ = value["NatGatewayId"].asString();
 
 }
 
@@ -58,19 +59,9 @@ std::vector<std::string> CreateNatGatewayResult::getSnatTableIds()const
 	return snatTableIds_;
 }
 
-void CreateNatGatewayResult::setSnatTableIds(const std::vector<std::string>& snatTableIds)
-{
-	snatTableIds_ = snatTableIds;
-}
-
 std::vector<std::string> CreateNatGatewayResult::getForwardTableIds()const
 {
 	return forwardTableIds_;
-}
-
-void CreateNatGatewayResult::setForwardTableIds(const std::vector<std::string>& forwardTableIds)
-{
-	forwardTableIds_ = forwardTableIds;
 }
 
 std::vector<std::string> CreateNatGatewayResult::getBandwidthPackageIds()const
@@ -78,18 +69,8 @@ std::vector<std::string> CreateNatGatewayResult::getBandwidthPackageIds()const
 	return bandwidthPackageIds_;
 }
 
-void CreateNatGatewayResult::setBandwidthPackageIds(const std::vector<std::string>& bandwidthPackageIds)
-{
-	bandwidthPackageIds_ = bandwidthPackageIds;
-}
-
 std::string CreateNatGatewayResult::getNatGatewayId()const
 {
 	return natGatewayId_;
-}
-
-void CreateNatGatewayResult::setNatGatewayId(const std::string& natGatewayId)
-{
-	natGatewayId_ = natGatewayId;
 }
 

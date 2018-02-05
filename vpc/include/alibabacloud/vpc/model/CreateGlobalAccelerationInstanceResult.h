@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit CreateGlobalAccelerationInstanceResult(const std::string &payload);
 				~CreateGlobalAccelerationInstanceResult();
 				std::string getIpAddress()const;
-				void setIpAddress(const std::string& ipAddress);
 				std::string getGlobalAccelerationInstanceId()const;
-				void setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId);
 
 			protected:
 				void parse(const std::string &payload);

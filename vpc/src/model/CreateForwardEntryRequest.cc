@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreateForwardEntryRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreateForwardEntryRequest;
 
 CreateForwardEntryRequest::CreateForwardEntryRequest() :
-	VpcRequest("CreateForwardEntry")
+	RpcServiceRequest("vpc", "2016-04-28", "CreateForwardEntry")
 {}
 
 CreateForwardEntryRequest::~CreateForwardEntryRequest()

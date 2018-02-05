@@ -34,9 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct AssociatedCbn
 				{
-					std::string cbnId;
-					long cbnOwnerUid;
-					std::string cbnStatus;
+					std::string cenStatus;
+					std::string cenId;
+					long cenOwnerUid;
 				};
 				struct CloudResourceSetType
 				{
@@ -49,33 +49,20 @@ namespace AlibabaCloud
 				explicit DescribeVpcAttributeResult(const std::string &payload);
 				~DescribeVpcAttributeResult();
 				std::string getStatus()const;
-				void setStatus(const std::string& status);
 				bool getIsDefault()const;
-				void setIsDefault(bool isDefault);
 				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				bool getClassicLinkEnabled()const;
-				void setClassicLinkEnabled(bool classicLinkEnabled);
+				std::string getResourceGroupId()const;
 				std::vector<std::string> getVSwitchIds()const;
-				void setVSwitchIds(const std::vector<std::string>& vSwitchIds);
 				std::string getCidrBlock()const;
-				void setCidrBlock(const std::string& cidrBlock);
 				std::vector<std::string> getUserCidrs()const;
-				void setUserCidrs(const std::vector<std::string>& userCidrs);
-				std::vector<AssociatedCbn> getAssociatedCbns()const;
-				void setAssociatedCbns(const std::vector<AssociatedCbn>& associatedCbns);
 				std::string getVRouterId()const;
-				void setVRouterId(const std::string& vRouterId);
 				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
+				std::vector<AssociatedCbn> getAssociatedCens()const;
 				std::string getCreationTime()const;
-				void setCreationTime(const std::string& creationTime);
 				std::string getVpcName()const;
-				void setVpcName(const std::string& vpcName);
 				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::vector<CloudResourceSetType> getCloudResources()const;
-				void setCloudResources(const std::vector<CloudResourceSetType>& cloudResources);
 
 			protected:
 				void parse(const std::string &payload);
@@ -84,12 +71,13 @@ namespace AlibabaCloud
 				bool isDefault_;
 				std::string description_;
 				bool classicLinkEnabled_;
+				std::string resourceGroupId_;
 				std::vector<std::string> vSwitchIds_;
 				std::string cidrBlock_;
 				std::vector<std::string> userCidrs_;
-				std::vector<AssociatedCbn> associatedCbns_;
 				std::string vRouterId_;
 				std::string vpcId_;
+				std::vector<AssociatedCbn> associatedCens_;
 				std::string creationTime_;
 				std::string vpcName_;
 				std::string regionId_;

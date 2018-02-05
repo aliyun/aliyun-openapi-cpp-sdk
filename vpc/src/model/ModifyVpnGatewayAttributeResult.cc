@@ -40,18 +40,30 @@ void ModifyVpnGatewayAttributeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	vpnGatewayId_ = value["VpnGatewayId"].asString();
-	vpcId_ = value["VpcId"].asString();
-	vSwitchId_ = value["VSwitchId"].asString();
-	internetIp_ = value["InternetIp"].asString();
-	intranetIp_ = value["IntranetIp"].asString();
-	createTime_ = std::stol(value["CreateTime"].asString());
-	endTime_ = std::stol(value["EndTime"].asString());
-	spec_ = value["Spec"].asString();
-	name_ = value["Name"].asString();
-	description_ = value["Description"].asString();
-	status_ = value["Status"].asString();
-	businessStatus_ = value["BusinessStatus"].asString();
+	if(!value["VpnGatewayId"].isNull())
+		vpnGatewayId_ = value["VpnGatewayId"].asString();
+	if(!value["VpcId"].isNull())
+		vpcId_ = value["VpcId"].asString();
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["InternetIp"].isNull())
+		internetIp_ = value["InternetIp"].asString();
+	if(!value["IntranetIp"].isNull())
+		intranetIp_ = value["IntranetIp"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["EndTime"].isNull())
+		endTime_ = std::stol(value["EndTime"].asString());
+	if(!value["Spec"].isNull())
+		spec_ = value["Spec"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["BusinessStatus"].isNull())
+		businessStatus_ = value["BusinessStatus"].asString();
 
 }
 
@@ -60,19 +72,9 @@ std::string ModifyVpnGatewayAttributeResult::getStatus()const
 	return status_;
 }
 
-void ModifyVpnGatewayAttributeResult::setStatus(const std::string& status)
-{
-	status_ = status;
-}
-
 std::string ModifyVpnGatewayAttributeResult::getDescription()const
 {
 	return description_;
-}
-
-void ModifyVpnGatewayAttributeResult::setDescription(const std::string& description)
-{
-	description_ = description;
 }
 
 std::string ModifyVpnGatewayAttributeResult::getVpcId()const
@@ -80,19 +82,9 @@ std::string ModifyVpnGatewayAttributeResult::getVpcId()const
 	return vpcId_;
 }
 
-void ModifyVpnGatewayAttributeResult::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-}
-
 std::string ModifyVpnGatewayAttributeResult::getInternetIp()const
 {
 	return internetIp_;
-}
-
-void ModifyVpnGatewayAttributeResult::setInternetIp(const std::string& internetIp)
-{
-	internetIp_ = internetIp;
 }
 
 long ModifyVpnGatewayAttributeResult::getEndTime()const
@@ -100,19 +92,9 @@ long ModifyVpnGatewayAttributeResult::getEndTime()const
 	return endTime_;
 }
 
-void ModifyVpnGatewayAttributeResult::setEndTime(long endTime)
-{
-	endTime_ = endTime;
-}
-
 std::string ModifyVpnGatewayAttributeResult::getVpnGatewayId()const
 {
 	return vpnGatewayId_;
-}
-
-void ModifyVpnGatewayAttributeResult::setVpnGatewayId(const std::string& vpnGatewayId)
-{
-	vpnGatewayId_ = vpnGatewayId;
 }
 
 std::string ModifyVpnGatewayAttributeResult::getVSwitchId()const
@@ -120,19 +102,9 @@ std::string ModifyVpnGatewayAttributeResult::getVSwitchId()const
 	return vSwitchId_;
 }
 
-void ModifyVpnGatewayAttributeResult::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-}
-
 long ModifyVpnGatewayAttributeResult::getCreateTime()const
 {
 	return createTime_;
-}
-
-void ModifyVpnGatewayAttributeResult::setCreateTime(long createTime)
-{
-	createTime_ = createTime;
 }
 
 std::string ModifyVpnGatewayAttributeResult::getSpec()const
@@ -140,19 +112,9 @@ std::string ModifyVpnGatewayAttributeResult::getSpec()const
 	return spec_;
 }
 
-void ModifyVpnGatewayAttributeResult::setSpec(const std::string& spec)
-{
-	spec_ = spec;
-}
-
 std::string ModifyVpnGatewayAttributeResult::getIntranetIp()const
 {
 	return intranetIp_;
-}
-
-void ModifyVpnGatewayAttributeResult::setIntranetIp(const std::string& intranetIp)
-{
-	intranetIp_ = intranetIp;
 }
 
 std::string ModifyVpnGatewayAttributeResult::getBusinessStatus()const
@@ -160,18 +122,8 @@ std::string ModifyVpnGatewayAttributeResult::getBusinessStatus()const
 	return businessStatus_;
 }
 
-void ModifyVpnGatewayAttributeResult::setBusinessStatus(const std::string& businessStatus)
-{
-	businessStatus_ = businessStatus;
-}
-
 std::string ModifyVpnGatewayAttributeResult::getName()const
 {
 	return name_;
-}
-
-void ModifyVpnGatewayAttributeResult::setName(const std::string& name)
-{
-	name_ = name;
 }
 

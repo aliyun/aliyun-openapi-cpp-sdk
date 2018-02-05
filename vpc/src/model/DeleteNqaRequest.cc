@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeleteNqaRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeleteNqaRequest;
 
 DeleteNqaRequest::DeleteNqaRequest() :
-	VpcRequest("DeleteNqa")
+	RpcServiceRequest("vpc", "2016-04-28", "DeleteNqa")
 {}
 
 DeleteNqaRequest::~DeleteNqaRequest()

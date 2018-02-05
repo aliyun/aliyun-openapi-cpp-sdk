@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeleteNatGatewayRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeleteNatGatewayRequest;
 
 DeleteNatGatewayRequest::DeleteNatGatewayRequest() :
-	VpcRequest("DeleteNatGateway")
+	RpcServiceRequest("vpc", "2016-04-28", "DeleteNatGateway")
 {}
 
 DeleteNatGatewayRequest::~DeleteNatGatewayRequest()

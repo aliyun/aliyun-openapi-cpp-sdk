@@ -54,13 +54,9 @@ namespace AlibabaCloud
 				explicit DescribeBgpGroupsResult(const std::string &payload);
 				~DescribeBgpGroupsResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::vector<BgpGroup> getBgpGroups()const;
-				void setBgpGroups(const std::vector<BgpGroup>& bgpGroups);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

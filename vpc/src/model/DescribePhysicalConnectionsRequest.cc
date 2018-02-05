@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribePhysicalConnectionsRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribePhysicalConnectionsRequest;
 
 DescribePhysicalConnectionsRequest::DescribePhysicalConnectionsRequest() :
-	VpcRequest("DescribePhysicalConnections")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribePhysicalConnections")
 {}
 
 DescribePhysicalConnectionsRequest::~DescribePhysicalConnectionsRequest()

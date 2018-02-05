@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ModifyBandwidthPackageAttributeRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ModifyBandwidthPackageAttributeRequest;
 
 ModifyBandwidthPackageAttributeRequest::ModifyBandwidthPackageAttributeRequest() :
-	VpcRequest("ModifyBandwidthPackageAttribute")
+	RpcServiceRequest("vpc", "2016-04-28", "ModifyBandwidthPackageAttribute")
 {}
 
 ModifyBandwidthPackageAttributeRequest::~ModifyBandwidthPackageAttributeRequest()

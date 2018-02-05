@@ -65,13 +65,9 @@ namespace AlibabaCloud
 				explicit DescribeRouteTablesResult(const std::string &payload);
 				~DescribeRouteTablesResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<RouteTable> getRouteTables()const;
-				void setRouteTables(const std::vector<RouteTable>& routeTables);
 
 			protected:
 				void parse(const std::string &payload);

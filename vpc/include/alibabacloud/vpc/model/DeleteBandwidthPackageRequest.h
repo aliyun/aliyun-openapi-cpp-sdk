@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/vpc/VpcRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/vpc/VpcExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT DeleteBandwidthPackageRequest : public VpcRequest
+			class ALIBABACLOUD_VPC_EXPORT DeleteBandwidthPackageRequest : public RpcServiceRequest
 			{
 
 			public:

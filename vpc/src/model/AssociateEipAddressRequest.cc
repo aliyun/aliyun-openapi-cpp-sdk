@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/AssociateEipAddressRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::AssociateEipAddressRequest;
 
 AssociateEipAddressRequest::AssociateEipAddressRequest() :
-	VpcRequest("AssociateEipAddress")
+	RpcServiceRequest("vpc", "2016-04-28", "AssociateEipAddress")
 {}
 
 AssociateEipAddressRequest::~AssociateEipAddressRequest()

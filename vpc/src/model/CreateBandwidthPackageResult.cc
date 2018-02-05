@@ -40,17 +40,13 @@ void CreateBandwidthPackageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	bandwidthPackageId_ = value["BandwidthPackageId"].asString();
+	if(!value["BandwidthPackageId"].isNull())
+		bandwidthPackageId_ = value["BandwidthPackageId"].asString();
 
 }
 
 std::string CreateBandwidthPackageResult::getBandwidthPackageId()const
 {
 	return bandwidthPackageId_;
-}
-
-void CreateBandwidthPackageResult::setBandwidthPackageId(const std::string& bandwidthPackageId)
-{
-	bandwidthPackageId_ = bandwidthPackageId;
 }
 

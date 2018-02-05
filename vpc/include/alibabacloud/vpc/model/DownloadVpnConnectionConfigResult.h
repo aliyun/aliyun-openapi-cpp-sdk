@@ -66,7 +66,6 @@ namespace AlibabaCloud
 				explicit DownloadVpnConnectionConfigResult(const std::string &payload);
 				~DownloadVpnConnectionConfigResult();
 				std::vector<VpnConnectionConfig> getVpnConnectionConfig()const;
-				void setVpnConnectionConfig(const std::vector<VpnConnectionConfig>& vpnConnectionConfig);
 
 			protected:
 				void parse(const std::string &payload);

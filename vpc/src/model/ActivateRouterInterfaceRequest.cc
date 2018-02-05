@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ActivateRouterInterfaceRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ActivateRouterInterfaceRequest;
 
 ActivateRouterInterfaceRequest::ActivateRouterInterfaceRequest() :
-	VpcRequest("ActivateRouterInterface")
+	RpcServiceRequest("vpc", "2016-04-28", "ActivateRouterInterface")
 {}
 
 ActivateRouterInterfaceRequest::~ActivateRouterInterfaceRequest()

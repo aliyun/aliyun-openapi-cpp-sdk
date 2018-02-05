@@ -44,37 +44,59 @@ void DownloadVpnConnectionConfigResult::parse(const std::string &payload)
 	for (auto value : allVpnConnectionConfig)
 	{
 		VpnConnectionConfig vpnConnectionConfigObject;
-		vpnConnectionConfigObject.localSubnet = value["LocalSubnet"].asString();
-		vpnConnectionConfigObject.remoteSubnet = value["RemoteSubnet"].asString();
-		vpnConnectionConfigObject.local = value["Local"].asString();
-		vpnConnectionConfigObject.remote = value["Remote"].asString();
+		if(!value["LocalSubnet"].isNull())
+			vpnConnectionConfigObject.localSubnet = value["LocalSubnet"].asString();
+		if(!value["RemoteSubnet"].isNull())
+			vpnConnectionConfigObject.remoteSubnet = value["RemoteSubnet"].asString();
+		if(!value["Local"].isNull())
+			vpnConnectionConfigObject.local = value["Local"].asString();
+		if(!value["Remote"].isNull())
+			vpnConnectionConfigObject.remote = value["Remote"].asString();
 		auto allIkeConfig = value["IkeConfig"];
 		for (auto value : allIkeConfig)
 		{
 			VpnConnectionConfig::IkeConfig ikeConfigObject;
-			ikeConfigObject.psk = value["Psk"].asString();
-			ikeConfigObject.ikeVersion = value["IkeVersion"].asString();
-			ikeConfigObject.ikeMode = value["IkeMode"].asString();
-			ikeConfigObject.ikeEncAlg = value["IkeEncAlg"].asString();
-			ikeConfigObject.ikeAuthAlg = value["IkeAuthAlg"].asString();
-			ikeConfigObject.ikePfs = value["IkePfs"].asString();
-			ikeConfigObject.ikeLifetime = std::stol(value["IkeLifetime"].asString());
-			ikeConfigObject.localId = value["LocalId"].asString();
-			ikeConfigObject.remoteId = value["RemoteId"].asString();
+			if(!value["Psk"].isNull())
+				ikeConfigObject.psk = value["Psk"].asString();
+			if(!value["IkeVersion"].isNull())
+				ikeConfigObject.ikeVersion = value["IkeVersion"].asString();
+			if(!value["IkeMode"].isNull())
+				ikeConfigObject.ikeMode = value["IkeMode"].asString();
+			if(!value["IkeEncAlg"].isNull())
+				ikeConfigObject.ikeEncAlg = value["IkeEncAlg"].asString();
+			if(!value["IkeAuthAlg"].isNull())
+				ikeConfigObject.ikeAuthAlg = value["IkeAuthAlg"].asString();
+			if(!value["IkePfs"].isNull())
+				ikeConfigObject.ikePfs = value["IkePfs"].asString();
+			if(!value["IkeLifetime"].isNull())
+				ikeConfigObject.ikeLifetime = std::stol(value["IkeLifetime"].asString());
+			if(!value["LocalId"].isNull())
+				ikeConfigObject.localId = value["LocalId"].asString();
+			if(!value["RemoteId"].isNull())
+				ikeConfigObject.remoteId = value["RemoteId"].asString();
 			vpnConnectionConfigObject.ikeConfig.push_back(ikeConfigObject);
 		}
 		auto allIpsecConfig = value["IpsecConfig"];
 		for (auto value : allIpsecConfig)
 		{
 			VpnConnectionConfig::IpsecConfig ipsecConfigObject;
-			ipsecConfigObject.ipsecEncAlg = value["IpsecEncAlg"].asString();
-			ipsecConfigObject.ipsecAuthAlg = value["IpsecAuthAlg"].asString();
-			ipsecConfigObject.ipsecPfs = value["IpsecPfs"].asString();
-			ipsecConfigObject.ipsecLifetime = std::stol(value["IpsecLifetime"].asString());
+			if(!value["IpsecEncAlg"].isNull())
+				ipsecConfigObject.ipsecEncAlg = value["IpsecEncAlg"].asString();
+			if(!value["IpsecAuthAlg"].isNull())
+				ipsecConfigObject.ipsecAuthAlg = value["IpsecAuthAlg"].asString();
+			if(!value["IpsecPfs"].isNull())
+				ipsecConfigObject.ipsecPfs = value["IpsecPfs"].asString();
+			if(!value["IpsecLifetime"].isNull())
+				ipsecConfigObject.ipsecLifetime = std::stol(value["IpsecLifetime"].asString());
 			vpnConnectionConfigObject.ipsecConfig.push_back(ipsecConfigObject);
 		}
 		vpnConnectionConfig_.push_back(vpnConnectionConfigObject);
 	}
 
+}
+
+std::vector<DownloadVpnConnectionConfigResult::VpnConnectionConfig> DownloadVpnConnectionConfigResult::getVpnConnectionConfig()const
+{
+	return vpnConnectionConfig_;
 }
 

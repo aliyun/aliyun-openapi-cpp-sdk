@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeZonesRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeZonesRequest;
 
 DescribeZonesRequest::DescribeZonesRequest() :
-	VpcRequest("DescribeZones")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeZones")
 {}
 
 DescribeZonesRequest::~DescribeZonesRequest()

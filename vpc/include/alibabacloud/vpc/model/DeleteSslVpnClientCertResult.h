@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,26 +14,36 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_VPCREQUEST_H_
-#define ALIBABACLOUD_VPC_VPCREQUEST_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_DELETESSLVPNCLIENTCERTRESULT_H_
+#define ALIBABACLOUD_VPC_MODEL_DELETESSLVPNCLIENTCERTRESULT_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include "VpcExport.h"
+#include <string>
+#include <vector>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/vpc/VpcExport.h>
 
 namespace AlibabaCloud
 {
 	namespace Vpc
 	{
-		class ALIBABACLOUD_VPC_EXPORT VpcRequest : public RpcServiceRequest
+		namespace Model
 		{
-		public:
-			explicit VpcRequest(const std::string & action);
-			virtual ~VpcRequest();
+			class ALIBABACLOUD_VPC_EXPORT DeleteSslVpnClientCertResult : public ServiceResult
+			{
+			public:
 
-		private:
 
-		};
+				DeleteSslVpnClientCertResult();
+				explicit DeleteSslVpnClientCertResult(const std::string &payload);
+				~DeleteSslVpnClientCertResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+
+			};
+		}
 	}
 }
-
-#endif // !ALIBABACLOUD_VPC_VPCREQUEST_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_DELETESSLVPNCLIENTCERTRESULT_H_

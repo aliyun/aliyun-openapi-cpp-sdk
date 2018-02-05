@@ -57,27 +57,16 @@ namespace AlibabaCloud
 				explicit ModifyVpnConnectionAttributeResult(const std::string &payload);
 				~ModifyVpnConnectionAttributeResult();
 				std::string getLocalSubnet()const;
-				void setLocalSubnet(const std::string& localSubnet);
 				bool getEffectImmediately()const;
-				void setEffectImmediately(bool effectImmediately);
 				std::string getRemoteSubnet()const;
-				void setRemoteSubnet(const std::string& remoteSubnet);
 				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getCustomerGatewayId()const;
-				void setCustomerGatewayId(const std::string& customerGatewayId);
 				std::string getVpnGatewayId()const;
-				void setVpnGatewayId(const std::string& vpnGatewayId);
 				std::vector<IpsecConfig> getIpsecConfig()const;
-				void setIpsecConfig(const std::vector<IpsecConfig>& ipsecConfig);
 				long getCreateTime()const;
-				void setCreateTime(long createTime);
 				std::string getVpnConnectionId()const;
-				void setVpnConnectionId(const std::string& vpnConnectionId);
 				std::vector<IkeConfig> getIkeConfig()const;
-				void setIkeConfig(const std::vector<IkeConfig>& ikeConfig);
 				std::string getName()const;
-				void setName(const std::string& name);
 
 			protected:
 				void parse(const std::string &payload);

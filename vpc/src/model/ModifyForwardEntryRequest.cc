@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ModifyForwardEntryRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ModifyForwardEntryRequest;
 
 ModifyForwardEntryRequest::ModifyForwardEntryRequest() :
-	VpcRequest("ModifyForwardEntry")
+	RpcServiceRequest("vpc", "2016-04-28", "ModifyForwardEntry")
 {}
 
 ModifyForwardEntryRequest::~ModifyForwardEntryRequest()

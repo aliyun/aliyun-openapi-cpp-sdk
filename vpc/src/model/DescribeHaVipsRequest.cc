@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeHaVipsRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeHaVipsRequest;
 
 DescribeHaVipsRequest::DescribeHaVipsRequest() :
-	VpcRequest("DescribeHaVips")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeHaVips")
 {}
 
 DescribeHaVipsRequest::~DescribeHaVipsRequest()

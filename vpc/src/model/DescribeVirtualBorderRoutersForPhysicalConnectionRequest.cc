@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeVirtualBorderRoutersForPhysicalConnectionRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeVirtualBorderRoutersForPhysicalConnectionRequest;
 
 DescribeVirtualBorderRoutersForPhysicalConnectionRequest::DescribeVirtualBorderRoutersForPhysicalConnectionRequest() :
-	VpcRequest("DescribeVirtualBorderRoutersForPhysicalConnection")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeVirtualBorderRoutersForPhysicalConnection")
 {}
 
 DescribeVirtualBorderRoutersForPhysicalConnectionRequest::~DescribeVirtualBorderRoutersForPhysicalConnectionRequest()

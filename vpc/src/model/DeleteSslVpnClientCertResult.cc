@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/vpc/VpcRequest.h>
+#include <alibabacloud/vpc/model/DeleteSslVpnClientCertResult.h>
+#include <json/json.h>
 
-using namespace AlibabaCloud;
 using namespace AlibabaCloud::Vpc;
+using namespace AlibabaCloud::Vpc::Model;
 
-VpcRequest::VpcRequest(const std::string & action) :
-	RpcServiceRequest("vpc", "2016-04-28", action)
-{ }
+DeleteSslVpnClientCertResult::DeleteSslVpnClientCertResult() :
+	ServiceResult()
+{}
 
-VpcRequest::~VpcRequest()
-{ }
+DeleteSslVpnClientCertResult::DeleteSslVpnClientCertResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+DeleteSslVpnClientCertResult::~DeleteSslVpnClientCertResult()
+{}
+
+void DeleteSslVpnClientCertResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+
+	setRequestId(value["RequestId"].asString());
+
+}
+

@@ -43,29 +43,43 @@ void DescribeForwardTablesResult::parse(const std::string &payload)
 	auto allForwardTables = value["ForwardTables"]["ForwardTable"];
 	for (auto value : allForwardTables)
 	{
-		ForwardTable forwardTableObject;
-		forwardTableObject.natGatewayId = value["NatGatewayId"].asString();
-		forwardTableObject.forwardTableId = value["ForwardTableId"].asString();
-		forwardTableObject.creationTime = value["CreationTime"].asString();
+		ForwardTable forwardTablesObject;
+		if(!value["NatGatewayId"].isNull())
+			forwardTablesObject.natGatewayId = value["NatGatewayId"].asString();
+		if(!value["ForwardTableId"].isNull())
+			forwardTablesObject.forwardTableId = value["ForwardTableId"].asString();
+		if(!value["CreationTime"].isNull())
+			forwardTablesObject.creationTime = value["CreationTime"].asString();
 		auto allForwardEntrys = value["ForwardEntrys"]["ForwardEntry"];
 		for (auto value : allForwardEntrys)
 		{
-			ForwardTable::ForwardEntry forwardEntryObject;
-			forwardEntryObject.forwardTableId = value["ForwardTableId"].asString();
-			forwardEntryObject.forwardEntryId = value["ForwardEntryId"].asString();
-			forwardEntryObject.externalIp = value["ExternalIp"].asString();
-			forwardEntryObject.externalPort = value["ExternalPort"].asString();
-			forwardEntryObject.ipProtocol = value["IpProtocol"].asString();
-			forwardEntryObject.internalIp = value["InternalIp"].asString();
-			forwardEntryObject.internalPort = value["InternalPort"].asString();
-			forwardEntryObject.status = value["Status"].asString();
-			forwardTableObject.forwardEntrys.push_back(forwardEntryObject);
+			ForwardTable::ForwardEntry forwardEntrysObject;
+			if(!value["ForwardTableId"].isNull())
+				forwardEntrysObject.forwardTableId = value["ForwardTableId"].asString();
+			if(!value["ForwardEntryId"].isNull())
+				forwardEntrysObject.forwardEntryId = value["ForwardEntryId"].asString();
+			if(!value["ExternalIp"].isNull())
+				forwardEntrysObject.externalIp = value["ExternalIp"].asString();
+			if(!value["ExternalPort"].isNull())
+				forwardEntrysObject.externalPort = value["ExternalPort"].asString();
+			if(!value["IpProtocol"].isNull())
+				forwardEntrysObject.ipProtocol = value["IpProtocol"].asString();
+			if(!value["InternalIp"].isNull())
+				forwardEntrysObject.internalIp = value["InternalIp"].asString();
+			if(!value["InternalPort"].isNull())
+				forwardEntrysObject.internalPort = value["InternalPort"].asString();
+			if(!value["Status"].isNull())
+				forwardEntrysObject.status = value["Status"].asString();
+			forwardTablesObject.forwardEntrys.push_back(forwardEntrysObject);
 		}
-		forwardTables_.push_back(forwardTableObject);
+		forwardTables_.push_back(forwardTablesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -74,19 +88,9 @@ int DescribeForwardTablesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeForwardTablesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeForwardTablesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeForwardTablesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeForwardTablesResult::getPageNumber()const
@@ -94,8 +98,8 @@ int DescribeForwardTablesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeForwardTablesResult::setPageNumber(int pageNumber)
+std::vector<DescribeForwardTablesResult::ForwardTable> DescribeForwardTablesResult::getForwardTables()const
 {
-	pageNumber_ = pageNumber;
+	return forwardTables_;
 }
 

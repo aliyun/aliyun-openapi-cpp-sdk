@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeletePhysicalConnectionRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeletePhysicalConnectionRequest;
 
 DeletePhysicalConnectionRequest::DeletePhysicalConnectionRequest() :
-	VpcRequest("DeletePhysicalConnection")
+	RpcServiceRequest("vpc", "2016-04-28", "DeletePhysicalConnection")
 {}
 
 DeletePhysicalConnectionRequest::~DeletePhysicalConnectionRequest()

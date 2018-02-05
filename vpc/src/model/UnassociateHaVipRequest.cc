@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/UnassociateHaVipRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::UnassociateHaVipRequest;
 
 UnassociateHaVipRequest::UnassociateHaVipRequest() :
-	VpcRequest("UnassociateHaVip")
+	RpcServiceRequest("vpc", "2016-04-28", "UnassociateHaVip")
 {}
 
 UnassociateHaVipRequest::~UnassociateHaVipRequest()

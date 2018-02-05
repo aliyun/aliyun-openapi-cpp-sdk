@@ -38,11 +38,8 @@ namespace AlibabaCloud
 				explicit ModifyCommonBandwidthPackagePayTypeResult(const std::string &payload);
 				~ModifyCommonBandwidthPackagePayTypeResult();
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				long getOrderId()const;
-				void setOrderId(long orderId);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 
 			protected:
 				void parse(const std::string &payload);

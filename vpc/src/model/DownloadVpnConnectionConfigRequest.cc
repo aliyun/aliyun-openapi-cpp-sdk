@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DownloadVpnConnectionConfigRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DownloadVpnConnectionConfigRequest;
 
 DownloadVpnConnectionConfigRequest::DownloadVpnConnectionConfigRequest() :
-	VpcRequest("DownloadVpnConnectionConfig")
+	RpcServiceRequest("vpc", "2016-04-28", "DownloadVpnConnectionConfig")
 {}
 
 DownloadVpnConnectionConfigRequest::~DownloadVpnConnectionConfigRequest()

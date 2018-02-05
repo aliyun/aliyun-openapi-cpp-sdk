@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeRouteTablesRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeRouteTablesRequest;
 
 DescribeRouteTablesRequest::DescribeRouteTablesRequest() :
-	VpcRequest("DescribeRouteTables")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeRouteTables")
 {}
 
 DescribeRouteTablesRequest::~DescribeRouteTablesRequest()

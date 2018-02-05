@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeleteBgpGroupRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeleteBgpGroupRequest;
 
 DeleteBgpGroupRequest::DeleteBgpGroupRequest() :
-	VpcRequest("DeleteBgpGroup")
+	RpcServiceRequest("vpc", "2016-04-28", "DeleteBgpGroup")
 {}
 
 DeleteBgpGroupRequest::~DeleteBgpGroupRequest()

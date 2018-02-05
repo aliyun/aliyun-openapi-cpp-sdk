@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/TerminateVirtualBorderRouterRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::TerminateVirtualBorderRouterRequest;
 
 TerminateVirtualBorderRouterRequest::TerminateVirtualBorderRouterRequest() :
-	VpcRequest("TerminateVirtualBorderRouter")
+	RpcServiceRequest("vpc", "2016-04-28", "TerminateVirtualBorderRouter")
 {}
 
 TerminateVirtualBorderRouterRequest::~TerminateVirtualBorderRouterRequest()

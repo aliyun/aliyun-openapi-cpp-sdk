@@ -38,15 +38,10 @@ namespace AlibabaCloud
 				explicit ModifyCustomerGatewayAttributeResult(const std::string &payload);
 				~ModifyCustomerGatewayAttributeResult();
 				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getCustomerGatewayId()const;
-				void setCustomerGatewayId(const std::string& customerGatewayId);
 				long getCreateTime()const;
-				void setCreateTime(long createTime);
 				std::string getIpAddress()const;
-				void setIpAddress(const std::string& ipAddress);
 				std::string getName()const;
-				void setName(const std::string& name);
 
 			protected:
 				void parse(const std::string &payload);

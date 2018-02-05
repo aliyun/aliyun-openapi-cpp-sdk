@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeSnatTableEntriesRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeSnatTableEntriesRequest;
 
 DescribeSnatTableEntriesRequest::DescribeSnatTableEntriesRequest() :
-	VpcRequest("DescribeSnatTableEntries")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeSnatTableEntries")
 {}
 
 DescribeSnatTableEntriesRequest::~DescribeSnatTableEntriesRequest()

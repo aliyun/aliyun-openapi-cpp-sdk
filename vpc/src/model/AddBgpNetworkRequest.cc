@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/AddBgpNetworkRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::AddBgpNetworkRequest;
 
 AddBgpNetworkRequest::AddBgpNetworkRequest() :
-	VpcRequest("AddBgpNetwork")
+	RpcServiceRequest("vpc", "2016-04-28", "AddBgpNetwork")
 {}
 
 AddBgpNetworkRequest::~AddBgpNetworkRequest()

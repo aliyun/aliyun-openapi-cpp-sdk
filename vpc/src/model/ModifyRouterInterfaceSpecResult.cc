@@ -40,17 +40,13 @@ void ModifyRouterInterfaceSpecResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	spec_ = value["Spec"].asString();
+	if(!value["Spec"].isNull())
+		spec_ = value["Spec"].asString();
 
 }
 
 std::string ModifyRouterInterfaceSpecResult::getSpec()const
 {
 	return spec_;
-}
-
-void ModifyRouterInterfaceSpecResult::setSpec(const std::string& spec)
-{
-	spec_ = spec;
 }
 

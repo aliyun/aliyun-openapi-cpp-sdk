@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeGlobalAccelerationInstancesRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeGlobalAccelerationInstancesRequest;
 
 DescribeGlobalAccelerationInstancesRequest::DescribeGlobalAccelerationInstancesRequest() :
-	VpcRequest("DescribeGlobalAccelerationInstances")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeGlobalAccelerationInstances")
 {}
 
 DescribeGlobalAccelerationInstancesRequest::~DescribeGlobalAccelerationInstancesRequest()

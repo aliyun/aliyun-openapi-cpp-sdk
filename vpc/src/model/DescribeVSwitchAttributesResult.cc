@@ -43,21 +43,33 @@ void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 	auto allCloudResources = value["CloudResources"]["CloudResourceSetType"];
 	for (auto value : allCloudResources)
 	{
-		CloudResourceSetType cloudResourceSetTypeObject;
-		cloudResourceSetTypeObject.resourceType = value["ResourceType"].asString();
-		cloudResourceSetTypeObject.resourceCount = std::stoi(value["ResourceCount"].asString());
-		cloudResources_.push_back(cloudResourceSetTypeObject);
+		CloudResourceSetType cloudResourcesObject;
+		if(!value["ResourceType"].isNull())
+			cloudResourcesObject.resourceType = value["ResourceType"].asString();
+		if(!value["ResourceCount"].isNull())
+			cloudResourcesObject.resourceCount = std::stoi(value["ResourceCount"].asString());
+		cloudResources_.push_back(cloudResourcesObject);
 	}
-	vSwitchId_ = value["VSwitchId"].asString();
-	vpcId_ = value["VpcId"].asString();
-	status_ = value["Status"].asString();
-	cidrBlock_ = value["CidrBlock"].asString();
-	zoneId_ = value["ZoneId"].asString();
-	availableIpAddressCount_ = std::stol(value["AvailableIpAddressCount"].asString());
-	description_ = value["Description"].asString();
-	vSwitchName_ = value["VSwitchName"].asString();
-	creationTime_ = value["CreationTime"].asString();
-	isDefault_ = std::stoi(value["IsDefault"].asString());
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["VpcId"].isNull())
+		vpcId_ = value["VpcId"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["CidrBlock"].isNull())
+		cidrBlock_ = value["CidrBlock"].asString();
+	if(!value["ZoneId"].isNull())
+		zoneId_ = value["ZoneId"].asString();
+	if(!value["AvailableIpAddressCount"].isNull())
+		availableIpAddressCount_ = std::stol(value["AvailableIpAddressCount"].asString());
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["VSwitchName"].isNull())
+		vSwitchName_ = value["VSwitchName"].asString();
+	if(!value["CreationTime"].isNull())
+		creationTime_ = value["CreationTime"].asString();
+	if(!value["IsDefault"].isNull())
+		isDefault_ = value["IsDefault"].asString() == "true";
 
 }
 
@@ -66,19 +78,9 @@ std::string DescribeVSwitchAttributesResult::getStatus()const
 	return status_;
 }
 
-void DescribeVSwitchAttributesResult::setStatus(const std::string& status)
-{
-	status_ = status;
-}
-
 bool DescribeVSwitchAttributesResult::getIsDefault()const
 {
 	return isDefault_;
-}
-
-void DescribeVSwitchAttributesResult::setIsDefault(bool isDefault)
-{
-	isDefault_ = isDefault;
 }
 
 std::string DescribeVSwitchAttributesResult::getDescription()const
@@ -86,19 +88,9 @@ std::string DescribeVSwitchAttributesResult::getDescription()const
 	return description_;
 }
 
-void DescribeVSwitchAttributesResult::setDescription(const std::string& description)
-{
-	description_ = description;
-}
-
 std::string DescribeVSwitchAttributesResult::getVpcId()const
 {
 	return vpcId_;
-}
-
-void DescribeVSwitchAttributesResult::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
 }
 
 std::string DescribeVSwitchAttributesResult::getZoneId()const
@@ -106,19 +98,9 @@ std::string DescribeVSwitchAttributesResult::getZoneId()const
 	return zoneId_;
 }
 
-void DescribeVSwitchAttributesResult::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-}
-
 std::string DescribeVSwitchAttributesResult::getVSwitchId()const
 {
 	return vSwitchId_;
-}
-
-void DescribeVSwitchAttributesResult::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
 }
 
 long DescribeVSwitchAttributesResult::getAvailableIpAddressCount()const
@@ -126,19 +108,9 @@ long DescribeVSwitchAttributesResult::getAvailableIpAddressCount()const
 	return availableIpAddressCount_;
 }
 
-void DescribeVSwitchAttributesResult::setAvailableIpAddressCount(long availableIpAddressCount)
-{
-	availableIpAddressCount_ = availableIpAddressCount;
-}
-
 std::string DescribeVSwitchAttributesResult::getCreationTime()const
 {
 	return creationTime_;
-}
-
-void DescribeVSwitchAttributesResult::setCreationTime(const std::string& creationTime)
-{
-	creationTime_ = creationTime;
 }
 
 std::string DescribeVSwitchAttributesResult::getCidrBlock()const
@@ -146,18 +118,13 @@ std::string DescribeVSwitchAttributesResult::getCidrBlock()const
 	return cidrBlock_;
 }
 
-void DescribeVSwitchAttributesResult::setCidrBlock(const std::string& cidrBlock)
-{
-	cidrBlock_ = cidrBlock;
-}
-
 std::string DescribeVSwitchAttributesResult::getVSwitchName()const
 {
 	return vSwitchName_;
 }
 
-void DescribeVSwitchAttributesResult::setVSwitchName(const std::string& vSwitchName)
+std::vector<DescribeVSwitchAttributesResult::CloudResourceSetType> DescribeVSwitchAttributesResult::getCloudResources()const
 {
-	vSwitchName_ = vSwitchName;
+	return cloudResources_;
 }
 

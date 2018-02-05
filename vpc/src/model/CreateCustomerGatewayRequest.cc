@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreateCustomerGatewayRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreateCustomerGatewayRequest;
 
 CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() :
-	VpcRequest("CreateCustomerGateway")
+	RpcServiceRequest("vpc", "2016-04-28", "CreateCustomerGateway")
 {}
 
 CreateCustomerGatewayRequest::~CreateCustomerGatewayRequest()

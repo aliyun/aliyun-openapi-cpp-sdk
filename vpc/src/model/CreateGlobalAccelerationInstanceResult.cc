@@ -40,8 +40,10 @@ void CreateGlobalAccelerationInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	globalAccelerationInstanceId_ = value["GlobalAccelerationInstanceId"].asString();
-	ipAddress_ = value["IpAddress"].asString();
+	if(!value["GlobalAccelerationInstanceId"].isNull())
+		globalAccelerationInstanceId_ = value["GlobalAccelerationInstanceId"].asString();
+	if(!value["IpAddress"].isNull())
+		ipAddress_ = value["IpAddress"].asString();
 
 }
 
@@ -50,18 +52,8 @@ std::string CreateGlobalAccelerationInstanceResult::getIpAddress()const
 	return ipAddress_;
 }
 
-void CreateGlobalAccelerationInstanceResult::setIpAddress(const std::string& ipAddress)
-{
-	ipAddress_ = ipAddress;
-}
-
 std::string CreateGlobalAccelerationInstanceResult::getGlobalAccelerationInstanceId()const
 {
 	return globalAccelerationInstanceId_;
-}
-
-void CreateGlobalAccelerationInstanceResult::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
-{
-	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
 }
 

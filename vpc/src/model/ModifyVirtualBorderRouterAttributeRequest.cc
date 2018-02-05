@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ModifyVirtualBorderRouterAttributeRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ModifyVirtualBorderRouterAttributeRequest;
 
 ModifyVirtualBorderRouterAttributeRequest::ModifyVirtualBorderRouterAttributeRequest() :
-	VpcRequest("ModifyVirtualBorderRouterAttribute")
+	RpcServiceRequest("vpc", "2016-04-28", "ModifyVirtualBorderRouterAttribute")
 {}
 
 ModifyVirtualBorderRouterAttributeRequest::~ModifyVirtualBorderRouterAttributeRequest()

@@ -43,51 +43,75 @@ void DescribeGlobalAccelerationInstancesResult::parse(const std::string &payload
 	auto allGlobalAccelerationInstances = value["GlobalAccelerationInstances"]["GlobalAccelerationInstance"];
 	for (auto value : allGlobalAccelerationInstances)
 	{
-		GlobalAccelerationInstance globalAccelerationInstanceObject;
-		globalAccelerationInstanceObject.regionId = value["RegionId"].asString();
-		globalAccelerationInstanceObject.globalAccelerationInstanceId = value["GlobalAccelerationInstanceId"].asString();
-		globalAccelerationInstanceObject.ipAddress = value["IpAddress"].asString();
-		globalAccelerationInstanceObject.status = value["Status"].asString();
-		globalAccelerationInstanceObject.bandwidth = value["Bandwidth"].asString();
-		globalAccelerationInstanceObject.internetChargeType = value["InternetChargeType"].asString();
-		globalAccelerationInstanceObject.chargeType = value["ChargeType"].asString();
-		globalAccelerationInstanceObject.bandwidthType = value["BandwidthType"].asString();
-		globalAccelerationInstanceObject.accelerationLocation = value["AccelerationLocation"].asString();
-		globalAccelerationInstanceObject.serviceLocation = value["ServiceLocation"].asString();
-		globalAccelerationInstanceObject.name = value["Name"].asString();
-		globalAccelerationInstanceObject.description = value["Description"].asString();
-		globalAccelerationInstanceObject.expiredTime = value["ExpiredTime"].asString();
-		globalAccelerationInstanceObject.creationTime = value["CreationTime"].asString();
+		GlobalAccelerationInstance globalAccelerationInstancesObject;
+		if(!value["RegionId"].isNull())
+			globalAccelerationInstancesObject.regionId = value["RegionId"].asString();
+		if(!value["GlobalAccelerationInstanceId"].isNull())
+			globalAccelerationInstancesObject.globalAccelerationInstanceId = value["GlobalAccelerationInstanceId"].asString();
+		if(!value["IpAddress"].isNull())
+			globalAccelerationInstancesObject.ipAddress = value["IpAddress"].asString();
+		if(!value["Status"].isNull())
+			globalAccelerationInstancesObject.status = value["Status"].asString();
+		if(!value["Bandwidth"].isNull())
+			globalAccelerationInstancesObject.bandwidth = value["Bandwidth"].asString();
+		if(!value["InternetChargeType"].isNull())
+			globalAccelerationInstancesObject.internetChargeType = value["InternetChargeType"].asString();
+		if(!value["ChargeType"].isNull())
+			globalAccelerationInstancesObject.chargeType = value["ChargeType"].asString();
+		if(!value["BandwidthType"].isNull())
+			globalAccelerationInstancesObject.bandwidthType = value["BandwidthType"].asString();
+		if(!value["AccelerationLocation"].isNull())
+			globalAccelerationInstancesObject.accelerationLocation = value["AccelerationLocation"].asString();
+		if(!value["ServiceLocation"].isNull())
+			globalAccelerationInstancesObject.serviceLocation = value["ServiceLocation"].asString();
+		if(!value["Name"].isNull())
+			globalAccelerationInstancesObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			globalAccelerationInstancesObject.description = value["Description"].asString();
+		if(!value["ExpiredTime"].isNull())
+			globalAccelerationInstancesObject.expiredTime = value["ExpiredTime"].asString();
+		if(!value["CreationTime"].isNull())
+			globalAccelerationInstancesObject.creationTime = value["CreationTime"].asString();
 		auto allOperationLocks = value["OperationLocks"]["LockReason"];
 		for (auto value : allOperationLocks)
 		{
-			GlobalAccelerationInstance::LockReason lockReasonObject;
-			lockReasonObject.lockReason = value["LockReason"].asString();
-			globalAccelerationInstanceObject.operationLocks.push_back(lockReasonObject);
+			GlobalAccelerationInstance::LockReason operationLocksObject;
+			if(!value["LockReason"].isNull())
+				operationLocksObject.lockReason = value["LockReason"].asString();
+			globalAccelerationInstancesObject.operationLocks.push_back(operationLocksObject);
 		}
 		auto allBackendServers = value["BackendServers"]["BackendServer"];
 		for (auto value : allBackendServers)
 		{
-			GlobalAccelerationInstance::BackendServer backendServerObject;
-			backendServerObject.regionId = value["RegionId"].asString();
-			backendServerObject.serverId = value["ServerId"].asString();
-			backendServerObject.serverIpAddress = value["ServerIpAddress"].asString();
-			backendServerObject.serverType = value["ServerType"].asString();
-			globalAccelerationInstanceObject.backendServers.push_back(backendServerObject);
+			GlobalAccelerationInstance::BackendServer backendServersObject;
+			if(!value["RegionId"].isNull())
+				backendServersObject.regionId = value["RegionId"].asString();
+			if(!value["ServerId"].isNull())
+				backendServersObject.serverId = value["ServerId"].asString();
+			if(!value["ServerIpAddress"].isNull())
+				backendServersObject.serverIpAddress = value["ServerIpAddress"].asString();
+			if(!value["ServerType"].isNull())
+				backendServersObject.serverType = value["ServerType"].asString();
+			globalAccelerationInstancesObject.backendServers.push_back(backendServersObject);
 		}
 		auto allPublicIpAddresses = value["PublicIpAddresses"]["PublicIpAddress"];
 		for (auto value : allPublicIpAddresses)
 		{
-			GlobalAccelerationInstance::PublicIpAddress publicIpAddressObject;
-			publicIpAddressObject.allocationId = value["AllocationId"].asString();
-			publicIpAddressObject.ipAddress = value["IpAddress"].asString();
-			globalAccelerationInstanceObject.publicIpAddresses.push_back(publicIpAddressObject);
+			GlobalAccelerationInstance::PublicIpAddress publicIpAddressesObject;
+			if(!value["AllocationId"].isNull())
+				publicIpAddressesObject.allocationId = value["AllocationId"].asString();
+			if(!value["IpAddress"].isNull())
+				publicIpAddressesObject.ipAddress = value["IpAddress"].asString();
+			globalAccelerationInstancesObject.publicIpAddresses.push_back(publicIpAddressesObject);
 		}
-		globalAccelerationInstances_.push_back(globalAccelerationInstanceObject);
+		globalAccelerationInstances_.push_back(globalAccelerationInstancesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -96,9 +120,9 @@ int DescribeGlobalAccelerationInstancesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeGlobalAccelerationInstancesResult::setTotalCount(int totalCount)
+std::vector<DescribeGlobalAccelerationInstancesResult::GlobalAccelerationInstance> DescribeGlobalAccelerationInstancesResult::getGlobalAccelerationInstances()const
 {
-	totalCount_ = totalCount;
+	return globalAccelerationInstances_;
 }
 
 int DescribeGlobalAccelerationInstancesResult::getPageSize()const
@@ -106,18 +130,8 @@ int DescribeGlobalAccelerationInstancesResult::getPageSize()const
 	return pageSize_;
 }
 
-void DescribeGlobalAccelerationInstancesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeGlobalAccelerationInstancesResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeGlobalAccelerationInstancesResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

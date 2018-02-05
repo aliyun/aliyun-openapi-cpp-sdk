@@ -43,43 +43,77 @@ void DescribeRouterInterfacesForGlobalResult::parse(const std::string &payload)
 	auto allRouterInterfaceSet = value["RouterInterfaceSet"]["RouterInterfaceType"];
 	for (auto value : allRouterInterfaceSet)
 	{
-		RouterInterfaceType routerInterfaceTypeObject;
-		routerInterfaceTypeObject.businessStatus = value["BusinessStatus"].asString();
-		routerInterfaceTypeObject.accessPointId = value["AccessPointId"].asString();
-		routerInterfaceTypeObject.chargeType = value["ChargeType"].asString();
-		routerInterfaceTypeObject.connectedTime = value["ConnectedTime"].asString();
-		routerInterfaceTypeObject.creationTime = value["CreationTime"].asString();
-		routerInterfaceTypeObject.routerInterfaceId = value["RouterInterfaceId"].asString();
-		routerInterfaceTypeObject.oppositeInterfaceBusinessStatus = value["OppositeInterfaceBusinessStatus"].asString();
-		routerInterfaceTypeObject.oppositeInterfaceId = value["OppositeInterfaceId"].asString();
-		routerInterfaceTypeObject.oppositeInterfaceOwnerId = std::stol(value["OppositeInterfaceOwnerId"].asString());
-		routerInterfaceTypeObject.oppositeInterfaceSpec = value["OppositeInterfaceSpec"].asString();
-		routerInterfaceTypeObject.oppositeInterfaceStatus = value["OppositeInterfaceStatus"].asString();
-		routerInterfaceTypeObject.oppositeRegionId = value["OppositeRegionId"].asString();
-		routerInterfaceTypeObject.oppositeAccessPointId = value["OppositeAccessPointId"].asString();
-		routerInterfaceTypeObject.oppositeRouterId = value["OppositeRouterId"].asString();
-		routerInterfaceTypeObject.oppositeRouterType = value["OppositeRouterType"].asString();
-		routerInterfaceTypeObject.oppositeVpcInstanceId = value["OppositeVpcInstanceId"].asString();
-		routerInterfaceTypeObject.regionId = value["RegionId"].asString();
-		routerInterfaceTypeObject.role = value["Role"].asString();
-		routerInterfaceTypeObject.routerId = value["RouterId"].asString();
-		routerInterfaceTypeObject.routerType = value["RouterType"].asString();
-		routerInterfaceTypeObject.spec = value["Spec"].asString();
-		routerInterfaceTypeObject.status = value["Status"].asString();
-		routerInterfaceTypeObject.vpcInstanceId = value["VpcInstanceId"].asString();
-		routerInterfaceTypeObject.name = value["Name"].asString();
-		routerInterfaceTypeObject.description = value["Description"].asString();
-		routerInterfaceTypeObject.healthCheckSourceIp = value["HealthCheckSourceIp"].asString();
-		routerInterfaceTypeObject.healthCheckTargetIp = value["HealthCheckTargetIp"].asString();
-		routerInterfaceSet_.push_back(routerInterfaceTypeObject);
+		RouterInterfaceType routerInterfaceSetObject;
+		if(!value["BusinessStatus"].isNull())
+			routerInterfaceSetObject.businessStatus = value["BusinessStatus"].asString();
+		if(!value["AccessPointId"].isNull())
+			routerInterfaceSetObject.accessPointId = value["AccessPointId"].asString();
+		if(!value["ChargeType"].isNull())
+			routerInterfaceSetObject.chargeType = value["ChargeType"].asString();
+		if(!value["ConnectedTime"].isNull())
+			routerInterfaceSetObject.connectedTime = value["ConnectedTime"].asString();
+		if(!value["CreationTime"].isNull())
+			routerInterfaceSetObject.creationTime = value["CreationTime"].asString();
+		if(!value["RouterInterfaceId"].isNull())
+			routerInterfaceSetObject.routerInterfaceId = value["RouterInterfaceId"].asString();
+		if(!value["OppositeInterfaceBusinessStatus"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceBusinessStatus = value["OppositeInterfaceBusinessStatus"].asString();
+		if(!value["OppositeInterfaceId"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceId = value["OppositeInterfaceId"].asString();
+		if(!value["OppositeInterfaceOwnerId"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceOwnerId = std::stol(value["OppositeInterfaceOwnerId"].asString());
+		if(!value["OppositeInterfaceSpec"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceSpec = value["OppositeInterfaceSpec"].asString();
+		if(!value["OppositeInterfaceStatus"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceStatus = value["OppositeInterfaceStatus"].asString();
+		if(!value["OppositeRegionId"].isNull())
+			routerInterfaceSetObject.oppositeRegionId = value["OppositeRegionId"].asString();
+		if(!value["OppositeAccessPointId"].isNull())
+			routerInterfaceSetObject.oppositeAccessPointId = value["OppositeAccessPointId"].asString();
+		if(!value["OppositeRouterId"].isNull())
+			routerInterfaceSetObject.oppositeRouterId = value["OppositeRouterId"].asString();
+		if(!value["OppositeRouterType"].isNull())
+			routerInterfaceSetObject.oppositeRouterType = value["OppositeRouterType"].asString();
+		if(!value["OppositeVpcInstanceId"].isNull())
+			routerInterfaceSetObject.oppositeVpcInstanceId = value["OppositeVpcInstanceId"].asString();
+		if(!value["RegionId"].isNull())
+			routerInterfaceSetObject.regionId = value["RegionId"].asString();
+		if(!value["Role"].isNull())
+			routerInterfaceSetObject.role = value["Role"].asString();
+		if(!value["RouterId"].isNull())
+			routerInterfaceSetObject.routerId = value["RouterId"].asString();
+		if(!value["RouterType"].isNull())
+			routerInterfaceSetObject.routerType = value["RouterType"].asString();
+		if(!value["Spec"].isNull())
+			routerInterfaceSetObject.spec = value["Spec"].asString();
+		if(!value["Status"].isNull())
+			routerInterfaceSetObject.status = value["Status"].asString();
+		if(!value["VpcInstanceId"].isNull())
+			routerInterfaceSetObject.vpcInstanceId = value["VpcInstanceId"].asString();
+		if(!value["Name"].isNull())
+			routerInterfaceSetObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			routerInterfaceSetObject.description = value["Description"].asString();
+		if(!value["HealthCheckSourceIp"].isNull())
+			routerInterfaceSetObject.healthCheckSourceIp = value["HealthCheckSourceIp"].asString();
+		if(!value["HealthCheckTargetIp"].isNull())
+			routerInterfaceSetObject.healthCheckTargetIp = value["HealthCheckTargetIp"].asString();
+		routerInterfaceSet_.push_back(routerInterfaceSetObject);
 	}
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	desc_ = value["desc"].asString();
-	success_ = std::stoi(value["Success"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["desc"].isNull())
+		desc_ = value["desc"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -88,19 +122,9 @@ std::string DescribeRouterInterfacesForGlobalResult::getDesc()const
 	return desc_;
 }
 
-void DescribeRouterInterfacesForGlobalResult::setDesc(const std::string& desc)
-{
-	desc_ = desc;
-}
-
 int DescribeRouterInterfacesForGlobalResult::getTotalCount()const
 {
 	return totalCount_;
-}
-
-void DescribeRouterInterfacesForGlobalResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
 }
 
 std::string DescribeRouterInterfacesForGlobalResult::getMessage()const
@@ -108,19 +132,9 @@ std::string DescribeRouterInterfacesForGlobalResult::getMessage()const
 	return message_;
 }
 
-void DescribeRouterInterfacesForGlobalResult::setMessage(const std::string& message)
-{
-	message_ = message;
-}
-
 int DescribeRouterInterfacesForGlobalResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeRouterInterfacesForGlobalResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeRouterInterfacesForGlobalResult::getPageNumber()const
@@ -128,9 +142,9 @@ int DescribeRouterInterfacesForGlobalResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeRouterInterfacesForGlobalResult::setPageNumber(int pageNumber)
+std::vector<DescribeRouterInterfacesForGlobalResult::RouterInterfaceType> DescribeRouterInterfacesForGlobalResult::getRouterInterfaceSet()const
 {
-	pageNumber_ = pageNumber;
+	return routerInterfaceSet_;
 }
 
 std::string DescribeRouterInterfacesForGlobalResult::getCode()const
@@ -138,18 +152,8 @@ std::string DescribeRouterInterfacesForGlobalResult::getCode()const
 	return code_;
 }
 
-void DescribeRouterInterfacesForGlobalResult::setCode(const std::string& code)
-{
-	code_ = code;
-}
-
 bool DescribeRouterInterfacesForGlobalResult::getSuccess()const
 {
 	return success_;
-}
-
-void DescribeRouterInterfacesForGlobalResult::setSuccess(bool success)
-{
-	success_ = success;
 }
 

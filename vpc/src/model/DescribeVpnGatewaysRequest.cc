@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeVpnGatewaysRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeVpnGatewaysRequest;
 
 DescribeVpnGatewaysRequest::DescribeVpnGatewaysRequest() :
-	VpcRequest("DescribeVpnGateways")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeVpnGateways")
 {}
 
 DescribeVpnGatewaysRequest::~DescribeVpnGatewaysRequest()

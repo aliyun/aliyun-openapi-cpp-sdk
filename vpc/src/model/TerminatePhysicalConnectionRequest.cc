@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/TerminatePhysicalConnectionRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::TerminatePhysicalConnectionRequest;
 
 TerminatePhysicalConnectionRequest::TerminatePhysicalConnectionRequest() :
-	VpcRequest("TerminatePhysicalConnection")
+	RpcServiceRequest("vpc", "2016-04-28", "TerminatePhysicalConnection")
 {}
 
 TerminatePhysicalConnectionRequest::~TerminatePhysicalConnectionRequest()

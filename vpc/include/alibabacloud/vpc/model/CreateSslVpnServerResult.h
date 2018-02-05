@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_GRANTINSTANCETOCBNRESULT_H_
-#define ALIBABACLOUD_VPC_MODEL_GRANTINSTANCETOCBNRESULT_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_CREATESSLVPNSERVERRESULT_H_
+#define ALIBABACLOUD_VPC_MODEL_CREATESSLVPNSERVERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT GrantInstanceToCbnResult : public ServiceResult
+			class ALIBABACLOUD_VPC_EXPORT CreateSslVpnServerResult : public ServiceResult
 			{
 			public:
 
 
-				GrantInstanceToCbnResult();
-				explicit GrantInstanceToCbnResult(const std::string &payload);
-				~GrantInstanceToCbnResult();
+				CreateSslVpnServerResult();
+				explicit CreateSslVpnServerResult(const std::string &payload);
+				~CreateSslVpnServerResult();
+				std::string getSslVpnServerId()const;
+				std::string getName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string sslVpnServerId_;
+				std::string name_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_GRANTINSTANCETOCBNRESULT_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_CREATESSLVPNSERVERRESULT_H_

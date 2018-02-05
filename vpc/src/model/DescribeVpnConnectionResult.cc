@@ -44,36 +44,58 @@ void DescribeVpnConnectionResult::parse(const std::string &payload)
 	for (auto value : allIkeConfig)
 	{
 		IkeConfig ikeConfigObject;
-		ikeConfigObject.psk = value["Psk"].asString();
-		ikeConfigObject.ikeVersion = value["IkeVersion"].asString();
-		ikeConfigObject.ikeMode = value["IkeMode"].asString();
-		ikeConfigObject.ikeEncAlg = value["IkeEncAlg"].asString();
-		ikeConfigObject.ikeAuthAlg = value["IkeAuthAlg"].asString();
-		ikeConfigObject.ikePfs = value["IkePfs"].asString();
-		ikeConfigObject.ikeLifetime = std::stol(value["IkeLifetime"].asString());
-		ikeConfigObject.localId = value["LocalId"].asString();
-		ikeConfigObject.remoteId = value["RemoteId"].asString();
+		if(!value["Psk"].isNull())
+			ikeConfigObject.psk = value["Psk"].asString();
+		if(!value["IkeVersion"].isNull())
+			ikeConfigObject.ikeVersion = value["IkeVersion"].asString();
+		if(!value["IkeMode"].isNull())
+			ikeConfigObject.ikeMode = value["IkeMode"].asString();
+		if(!value["IkeEncAlg"].isNull())
+			ikeConfigObject.ikeEncAlg = value["IkeEncAlg"].asString();
+		if(!value["IkeAuthAlg"].isNull())
+			ikeConfigObject.ikeAuthAlg = value["IkeAuthAlg"].asString();
+		if(!value["IkePfs"].isNull())
+			ikeConfigObject.ikePfs = value["IkePfs"].asString();
+		if(!value["IkeLifetime"].isNull())
+			ikeConfigObject.ikeLifetime = std::stol(value["IkeLifetime"].asString());
+		if(!value["LocalId"].isNull())
+			ikeConfigObject.localId = value["LocalId"].asString();
+		if(!value["RemoteId"].isNull())
+			ikeConfigObject.remoteId = value["RemoteId"].asString();
 		ikeConfig_.push_back(ikeConfigObject);
 	}
 	auto allIpsecConfig = value["IpsecConfig"];
 	for (auto value : allIpsecConfig)
 	{
 		IpsecConfig ipsecConfigObject;
-		ipsecConfigObject.ipsecEncAlg = value["IpsecEncAlg"].asString();
-		ipsecConfigObject.ipsecAuthAlg = value["IpsecAuthAlg"].asString();
-		ipsecConfigObject.ipsecPfs = value["IpsecPfs"].asString();
-		ipsecConfigObject.ipsecLifetime = std::stol(value["IpsecLifetime"].asString());
+		if(!value["IpsecEncAlg"].isNull())
+			ipsecConfigObject.ipsecEncAlg = value["IpsecEncAlg"].asString();
+		if(!value["IpsecAuthAlg"].isNull())
+			ipsecConfigObject.ipsecAuthAlg = value["IpsecAuthAlg"].asString();
+		if(!value["IpsecPfs"].isNull())
+			ipsecConfigObject.ipsecPfs = value["IpsecPfs"].asString();
+		if(!value["IpsecLifetime"].isNull())
+			ipsecConfigObject.ipsecLifetime = std::stol(value["IpsecLifetime"].asString());
 		ipsecConfig_.push_back(ipsecConfigObject);
 	}
-	vpnConnectionId_ = value["VpnConnectionId"].asString();
-	customerGatewayId_ = value["CustomerGatewayId"].asString();
-	vpnGatewayId_ = value["VpnGatewayId"].asString();
-	name_ = value["Name"].asString();
-	localSubnet_ = value["LocalSubnet"].asString();
-	remoteSubnet_ = value["RemoteSubnet"].asString();
-	createTime_ = std::stol(value["CreateTime"].asString());
-	effectImmediately_ = std::stoi(value["EffectImmediately"].asString());
-	status_ = value["Status"].asString();
+	if(!value["VpnConnectionId"].isNull())
+		vpnConnectionId_ = value["VpnConnectionId"].asString();
+	if(!value["CustomerGatewayId"].isNull())
+		customerGatewayId_ = value["CustomerGatewayId"].asString();
+	if(!value["VpnGatewayId"].isNull())
+		vpnGatewayId_ = value["VpnGatewayId"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["LocalSubnet"].isNull())
+		localSubnet_ = value["LocalSubnet"].asString();
+	if(!value["RemoteSubnet"].isNull())
+		remoteSubnet_ = value["RemoteSubnet"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["EffectImmediately"].isNull())
+		effectImmediately_ = value["EffectImmediately"].asString() == "true";
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 
 }
 
@@ -82,19 +104,9 @@ std::string DescribeVpnConnectionResult::getLocalSubnet()const
 	return localSubnet_;
 }
 
-void DescribeVpnConnectionResult::setLocalSubnet(const std::string& localSubnet)
-{
-	localSubnet_ = localSubnet;
-}
-
 bool DescribeVpnConnectionResult::getEffectImmediately()const
 {
 	return effectImmediately_;
-}
-
-void DescribeVpnConnectionResult::setEffectImmediately(bool effectImmediately)
-{
-	effectImmediately_ = effectImmediately;
 }
 
 std::string DescribeVpnConnectionResult::getStatus()const
@@ -102,19 +114,9 @@ std::string DescribeVpnConnectionResult::getStatus()const
 	return status_;
 }
 
-void DescribeVpnConnectionResult::setStatus(const std::string& status)
-{
-	status_ = status;
-}
-
 std::string DescribeVpnConnectionResult::getRemoteSubnet()const
 {
 	return remoteSubnet_;
-}
-
-void DescribeVpnConnectionResult::setRemoteSubnet(const std::string& remoteSubnet)
-{
-	remoteSubnet_ = remoteSubnet;
 }
 
 std::string DescribeVpnConnectionResult::getCustomerGatewayId()const
@@ -122,19 +124,14 @@ std::string DescribeVpnConnectionResult::getCustomerGatewayId()const
 	return customerGatewayId_;
 }
 
-void DescribeVpnConnectionResult::setCustomerGatewayId(const std::string& customerGatewayId)
-{
-	customerGatewayId_ = customerGatewayId;
-}
-
 std::string DescribeVpnConnectionResult::getVpnGatewayId()const
 {
 	return vpnGatewayId_;
 }
 
-void DescribeVpnConnectionResult::setVpnGatewayId(const std::string& vpnGatewayId)
+std::vector<DescribeVpnConnectionResult::IpsecConfig> DescribeVpnConnectionResult::getIpsecConfig()const
 {
-	vpnGatewayId_ = vpnGatewayId;
+	return ipsecConfig_;
 }
 
 long DescribeVpnConnectionResult::getCreateTime()const
@@ -142,28 +139,18 @@ long DescribeVpnConnectionResult::getCreateTime()const
 	return createTime_;
 }
 
-void DescribeVpnConnectionResult::setCreateTime(long createTime)
-{
-	createTime_ = createTime;
-}
-
 std::string DescribeVpnConnectionResult::getVpnConnectionId()const
 {
 	return vpnConnectionId_;
 }
 
-void DescribeVpnConnectionResult::setVpnConnectionId(const std::string& vpnConnectionId)
+std::vector<DescribeVpnConnectionResult::IkeConfig> DescribeVpnConnectionResult::getIkeConfig()const
 {
-	vpnConnectionId_ = vpnConnectionId;
+	return ikeConfig_;
 }
 
 std::string DescribeVpnConnectionResult::getName()const
 {
 	return name_;
-}
-
-void DescribeVpnConnectionResult::setName(const std::string& name)
-{
-	name_ = name;
 }
 

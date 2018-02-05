@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeleteSnatEntryRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeleteSnatEntryRequest;
 
 DeleteSnatEntryRequest::DeleteSnatEntryRequest() :
-	VpcRequest("DeleteSnatEntry")
+	RpcServiceRequest("vpc", "2016-04-28", "DeleteSnatEntry")
 {}
 
 DeleteSnatEntryRequest::~DeleteSnatEntryRequest()

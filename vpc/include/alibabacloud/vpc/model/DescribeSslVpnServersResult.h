@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBEGRANTRULESTOCBNRESULT_H_
-#define ALIBABACLOUD_VPC_MODEL_DESCRIBEGRANTRULESTOCBNRESULT_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBESSLVPNSERVERSRESULT_H_
+#define ALIBABACLOUD_VPC_MODEL_DESCRIBESSLVPNSERVERSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,46 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT DescribeGrantRulesToCbnResult : public ServiceResult
+			class ALIBABACLOUD_VPC_EXPORT DescribeSslVpnServersResult : public ServiceResult
 			{
 			public:
-				struct CbnGrantRule
+				struct SslVpnServer
 				{
-					long cbnOwnerId;
-					std::string creationTime;
-					std::string cbnInstanceId;
+					std::string localSubnet;
+					bool compress;
+					int connections;
+					std::string clientIpPool;
+					int maxConnections;
+					std::string sslVpnServerId;
+					long createTime;
+					int port;
+					std::string name;
+					std::string proto;
+					std::string internetIp;
+					std::string vpnGatewayId;
+					std::string regionId;
+					std::string cipher;
 				};
 
 
-				DescribeGrantRulesToCbnResult();
-				explicit DescribeGrantRulesToCbnResult(const std::string &payload);
-				~DescribeGrantRulesToCbnResult();
+				DescribeSslVpnServersResult();
+				explicit DescribeSslVpnServersResult(const std::string &payload);
+				~DescribeSslVpnServersResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
+				std::vector<SslVpnServer> getSslVpnServers()const;
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::vector<CbnGrantRule> getCbnGrantRules()const;
-				void setCbnGrantRules(const std::vector<CbnGrantRule>& cbnGrantRules);
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
 				int pageSize_;
+				std::vector<SslVpnServer> sslVpnServers_;
 				int pageNumber_;
-				std::vector<CbnGrantRule> cbnGrantRules_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBEGRANTRULESTOCBNRESULT_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBESSLVPNSERVERSRESULT_H_

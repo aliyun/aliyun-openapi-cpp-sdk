@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateNqaResult(const std::string &payload);
 				~CreateNqaResult();
 				std::string getNqaId()const;
-				void setNqaId(const std::string& nqaId);
 
 			protected:
 				void parse(const std::string &payload);

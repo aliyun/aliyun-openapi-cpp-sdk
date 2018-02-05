@@ -43,13 +43,22 @@ void DescribeServerRelatedGlobalAccelerationInstancesResult::parse(const std::st
 	auto allGlobalAccelerationInstances = value["GlobalAccelerationInstances"]["GlobalAccelerationInstance"];
 	for (auto value : allGlobalAccelerationInstances)
 	{
-		GlobalAccelerationInstance globalAccelerationInstanceObject;
-		globalAccelerationInstanceObject.regionId = value["RegionId"].asString();
-		globalAccelerationInstanceObject.globalAccelerationInstanceId = value["GlobalAccelerationInstanceId"].asString();
-		globalAccelerationInstanceObject.ipAddress = value["IpAddress"].asString();
-		globalAccelerationInstanceObject.serverIpAddress = value["ServerIpAddress"].asString();
-		globalAccelerationInstances_.push_back(globalAccelerationInstanceObject);
+		GlobalAccelerationInstance globalAccelerationInstancesObject;
+		if(!value["RegionId"].isNull())
+			globalAccelerationInstancesObject.regionId = value["RegionId"].asString();
+		if(!value["GlobalAccelerationInstanceId"].isNull())
+			globalAccelerationInstancesObject.globalAccelerationInstanceId = value["GlobalAccelerationInstanceId"].asString();
+		if(!value["IpAddress"].isNull())
+			globalAccelerationInstancesObject.ipAddress = value["IpAddress"].asString();
+		if(!value["ServerIpAddress"].isNull())
+			globalAccelerationInstancesObject.serverIpAddress = value["ServerIpAddress"].asString();
+		globalAccelerationInstances_.push_back(globalAccelerationInstancesObject);
 	}
 
+}
+
+std::vector<DescribeServerRelatedGlobalAccelerationInstancesResult::GlobalAccelerationInstance> DescribeServerRelatedGlobalAccelerationInstancesResult::getGlobalAccelerationInstances()const
+{
+	return globalAccelerationInstances_;
 }
 

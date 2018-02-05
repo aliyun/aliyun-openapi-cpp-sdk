@@ -38,29 +38,17 @@ namespace AlibabaCloud
 				explicit ModifyVpnGatewayAttributeResult(const std::string &payload);
 				~ModifyVpnGatewayAttributeResult();
 				std::string getStatus()const;
-				void setStatus(const std::string& status);
 				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 				std::string getInternetIp()const;
-				void setInternetIp(const std::string& internetIp);
 				long getEndTime()const;
-				void setEndTime(long endTime);
 				std::string getVpnGatewayId()const;
-				void setVpnGatewayId(const std::string& vpnGatewayId);
 				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
 				long getCreateTime()const;
-				void setCreateTime(long createTime);
 				std::string getSpec()const;
-				void setSpec(const std::string& spec);
 				std::string getIntranetIp()const;
-				void setIntranetIp(const std::string& intranetIp);
 				std::string getBusinessStatus()const;
-				void setBusinessStatus(const std::string& businessStatus);
 				std::string getName()const;
-				void setName(const std::string& name);
 
 			protected:
 				void parse(const std::string &payload);

@@ -43,32 +43,49 @@ void DescribeCommonBandwidthPackagesResult::parse(const std::string &payload)
 	auto allCommonBandwidthPackages = value["CommonBandwidthPackages"]["CommonBandwidthPackage"];
 	for (auto value : allCommonBandwidthPackages)
 	{
-		CommonBandwidthPackage commonBandwidthPackageObject;
-		commonBandwidthPackageObject.bandwidthPackageId = value["BandwidthPackageId"].asString();
-		commonBandwidthPackageObject.regionId = value["RegionId"].asString();
-		commonBandwidthPackageObject.name = value["Name"].asString();
-		commonBandwidthPackageObject.description = value["Description"].asString();
-		commonBandwidthPackageObject.bandwidth = value["Bandwidth"].asString();
-		commonBandwidthPackageObject.instanceChargeType = value["InstanceChargeType"].asString();
-		commonBandwidthPackageObject.internetChargeType = value["InternetChargeType"].asString();
-		commonBandwidthPackageObject.businessStatus = value["BusinessStatus"].asString();
-		commonBandwidthPackageObject.creationTime = value["CreationTime"].asString();
-		commonBandwidthPackageObject.expiredTime = value["ExpiredTime"].asString();
-		commonBandwidthPackageObject.status = value["Status"].asString();
-		commonBandwidthPackageObject.ratio = std::stoi(value["Ratio"].asString());
+		CommonBandwidthPackage commonBandwidthPackagesObject;
+		if(!value["BandwidthPackageId"].isNull())
+			commonBandwidthPackagesObject.bandwidthPackageId = value["BandwidthPackageId"].asString();
+		if(!value["RegionId"].isNull())
+			commonBandwidthPackagesObject.regionId = value["RegionId"].asString();
+		if(!value["Name"].isNull())
+			commonBandwidthPackagesObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			commonBandwidthPackagesObject.description = value["Description"].asString();
+		if(!value["Bandwidth"].isNull())
+			commonBandwidthPackagesObject.bandwidth = value["Bandwidth"].asString();
+		if(!value["InstanceChargeType"].isNull())
+			commonBandwidthPackagesObject.instanceChargeType = value["InstanceChargeType"].asString();
+		if(!value["InternetChargeType"].isNull())
+			commonBandwidthPackagesObject.internetChargeType = value["InternetChargeType"].asString();
+		if(!value["BusinessStatus"].isNull())
+			commonBandwidthPackagesObject.businessStatus = value["BusinessStatus"].asString();
+		if(!value["CreationTime"].isNull())
+			commonBandwidthPackagesObject.creationTime = value["CreationTime"].asString();
+		if(!value["ExpiredTime"].isNull())
+			commonBandwidthPackagesObject.expiredTime = value["ExpiredTime"].asString();
+		if(!value["Status"].isNull())
+			commonBandwidthPackagesObject.status = value["Status"].asString();
+		if(!value["Ratio"].isNull())
+			commonBandwidthPackagesObject.ratio = std::stoi(value["Ratio"].asString());
 		auto allPublicIpAddresses = value["PublicIpAddresses"]["PublicIpAddresse"];
 		for (auto value : allPublicIpAddresses)
 		{
-			CommonBandwidthPackage::PublicIpAddresse publicIpAddresseObject;
-			publicIpAddresseObject.allocationId = value["AllocationId"].asString();
-			publicIpAddresseObject.ipAddress = value["IpAddress"].asString();
-			commonBandwidthPackageObject.publicIpAddresses.push_back(publicIpAddresseObject);
+			CommonBandwidthPackage::PublicIpAddresse publicIpAddressesObject;
+			if(!value["AllocationId"].isNull())
+				publicIpAddressesObject.allocationId = value["AllocationId"].asString();
+			if(!value["IpAddress"].isNull())
+				publicIpAddressesObject.ipAddress = value["IpAddress"].asString();
+			commonBandwidthPackagesObject.publicIpAddresses.push_back(publicIpAddressesObject);
 		}
-		commonBandwidthPackages_.push_back(commonBandwidthPackageObject);
+		commonBandwidthPackages_.push_back(commonBandwidthPackagesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -77,19 +94,9 @@ int DescribeCommonBandwidthPackagesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeCommonBandwidthPackagesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeCommonBandwidthPackagesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeCommonBandwidthPackagesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeCommonBandwidthPackagesResult::getPageNumber()const
@@ -97,8 +104,8 @@ int DescribeCommonBandwidthPackagesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeCommonBandwidthPackagesResult::setPageNumber(int pageNumber)
+std::vector<DescribeCommonBandwidthPackagesResult::CommonBandwidthPackage> DescribeCommonBandwidthPackagesResult::getCommonBandwidthPackages()const
 {
-	pageNumber_ = pageNumber;
+	return commonBandwidthPackages_;
 }
 

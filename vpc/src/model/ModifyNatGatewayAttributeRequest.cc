@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ModifyNatGatewayAttributeRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ModifyNatGatewayAttributeRequest;
 
 ModifyNatGatewayAttributeRequest::ModifyNatGatewayAttributeRequest() :
-	VpcRequest("ModifyNatGatewayAttribute")
+	RpcServiceRequest("vpc", "2016-04-28", "ModifyNatGatewayAttribute")
 {}
 
 ModifyNatGatewayAttributeRequest::~ModifyNatGatewayAttributeRequest()

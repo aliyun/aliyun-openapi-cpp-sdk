@@ -43,25 +43,41 @@ void DescribeBgpGroupsResult::parse(const std::string &payload)
 	auto allBgpGroups = value["BgpGroups"]["BgpGroup"];
 	for (auto value : allBgpGroups)
 	{
-		BgpGroup bgpGroupObject;
-		bgpGroupObject.name = value["Name"].asString();
-		bgpGroupObject.description = value["Description"].asString();
-		bgpGroupObject.bgpGroupId = value["BgpGroupId"].asString();
-		bgpGroupObject.peerAsn = value["PeerAsn"].asString();
-		bgpGroupObject.authKey = value["AuthKey"].asString();
-		bgpGroupObject.routerId = value["RouterId"].asString();
-		bgpGroupObject.status = value["Status"].asString();
-		bgpGroupObject.keepalive = value["Keepalive"].asString();
-		bgpGroupObject.localAsn = value["LocalAsn"].asString();
-		bgpGroupObject.hold = value["Hold"].asString();
-		bgpGroupObject.isFake = value["IsFake"].asString();
-		bgpGroupObject.routeLimit = value["RouteLimit"].asString();
-		bgpGroupObject.regionId = value["RegionId"].asString();
-		bgpGroups_.push_back(bgpGroupObject);
+		BgpGroup bgpGroupsObject;
+		if(!value["Name"].isNull())
+			bgpGroupsObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			bgpGroupsObject.description = value["Description"].asString();
+		if(!value["BgpGroupId"].isNull())
+			bgpGroupsObject.bgpGroupId = value["BgpGroupId"].asString();
+		if(!value["PeerAsn"].isNull())
+			bgpGroupsObject.peerAsn = value["PeerAsn"].asString();
+		if(!value["AuthKey"].isNull())
+			bgpGroupsObject.authKey = value["AuthKey"].asString();
+		if(!value["RouterId"].isNull())
+			bgpGroupsObject.routerId = value["RouterId"].asString();
+		if(!value["Status"].isNull())
+			bgpGroupsObject.status = value["Status"].asString();
+		if(!value["Keepalive"].isNull())
+			bgpGroupsObject.keepalive = value["Keepalive"].asString();
+		if(!value["LocalAsn"].isNull())
+			bgpGroupsObject.localAsn = value["LocalAsn"].asString();
+		if(!value["Hold"].isNull())
+			bgpGroupsObject.hold = value["Hold"].asString();
+		if(!value["IsFake"].isNull())
+			bgpGroupsObject.isFake = value["IsFake"].asString();
+		if(!value["RouteLimit"].isNull())
+			bgpGroupsObject.routeLimit = value["RouteLimit"].asString();
+		if(!value["RegionId"].isNull())
+			bgpGroupsObject.regionId = value["RegionId"].asString();
+		bgpGroups_.push_back(bgpGroupsObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -70,28 +86,18 @@ int DescribeBgpGroupsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeBgpGroupsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeBgpGroupsResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeBgpGroupsResult::setPageSize(int pageSize)
+std::vector<DescribeBgpGroupsResult::BgpGroup> DescribeBgpGroupsResult::getBgpGroups()const
 {
-	pageSize_ = pageSize;
+	return bgpGroups_;
 }
 
 int DescribeBgpGroupsResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeBgpGroupsResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

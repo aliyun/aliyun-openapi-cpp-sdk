@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateBgpGroupResult(const std::string &payload);
 				~CreateBgpGroupResult();
 				std::string getBgpGroupId()const;
-				void setBgpGroupId(const std::string& bgpGroupId);
 
 			protected:
 				void parse(const std::string &payload);

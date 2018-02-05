@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeleteBgpNetworkRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeleteBgpNetworkRequest;
 
 DeleteBgpNetworkRequest::DeleteBgpNetworkRequest() :
-	VpcRequest("DeleteBgpNetwork")
+	RpcServiceRequest("vpc", "2016-04-28", "DeleteBgpNetwork")
 {}
 
 DeleteBgpNetworkRequest::~DeleteBgpNetworkRequest()

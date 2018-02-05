@@ -43,34 +43,51 @@ void DescribeVpcsResult::parse(const std::string &payload)
 	auto allVpcs = value["Vpcs"]["Vpc"];
 	for (auto value : allVpcs)
 	{
-		Vpc vpcObject;
-		vpcObject.vpcId = value["VpcId"].asString();
-		vpcObject.regionId = value["RegionId"].asString();
-		vpcObject.status = value["Status"].asString();
-		vpcObject.vpcName = value["VpcName"].asString();
-		vpcObject.creationTime = value["CreationTime"].asString();
-		vpcObject.cidrBlock = value["CidrBlock"].asString();
-		vpcObject.vRouterId = value["VRouterId"].asString();
-		vpcObject.description = value["Description"].asString();
-		vpcObject.isDefault = std::stoi(value["IsDefault"].asString());
+		Vpc vpcsObject;
+		if(!value["VpcId"].isNull())
+			vpcsObject.vpcId = value["VpcId"].asString();
+		if(!value["RegionId"].isNull())
+			vpcsObject.regionId = value["RegionId"].asString();
+		if(!value["Status"].isNull())
+			vpcsObject.status = value["Status"].asString();
+		if(!value["VpcName"].isNull())
+			vpcsObject.vpcName = value["VpcName"].asString();
+		if(!value["CreationTime"].isNull())
+			vpcsObject.creationTime = value["CreationTime"].asString();
+		if(!value["CidrBlock"].isNull())
+			vpcsObject.cidrBlock = value["CidrBlock"].asString();
+		if(!value["VRouterId"].isNull())
+			vpcsObject.vRouterId = value["VRouterId"].asString();
+		if(!value["Description"].isNull())
+			vpcsObject.description = value["Description"].asString();
+		if(!value["IsDefault"].isNull())
+			vpcsObject.isDefault = value["IsDefault"].asString() == "true";
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
-			vpcObject.vSwitchIds.push_back(value.asString());
+			vpcsObject.vSwitchIds.push_back(value.asString());
 		auto allUserCidrs = value["UserCidrs"]["UserCidr"];
 		for (auto value : allUserCidrs)
-			vpcObject.userCidrs.push_back(value.asString());
+			vpcsObject.userCidrs.push_back(value.asString());
 		auto allNatGatewayIds = value["NatGatewayIds"]["NatGatewayIds"];
 		for (auto value : allNatGatewayIds)
-			vpcObject.natGatewayIds.push_back(value.asString());
+			vpcsObject.natGatewayIds.push_back(value.asString());
 		auto allRouterTableIds = value["RouterTableIds"]["RouterTableIds"];
 		for (auto value : allRouterTableIds)
-			vpcObject.routerTableIds.push_back(value.asString());
-		vpcs_.push_back(vpcObject);
+			vpcsObject.routerTableIds.push_back(value.asString());
+		vpcs_.push_back(vpcsObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
+}
+
+std::vector<DescribeVpcsResult::Vpc> DescribeVpcsResult::getVpcs()const
+{
+	return vpcs_;
 }
 
 int DescribeVpcsResult::getTotalCount()const
@@ -78,28 +95,13 @@ int DescribeVpcsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeVpcsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeVpcsResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeVpcsResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeVpcsResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeVpcsResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

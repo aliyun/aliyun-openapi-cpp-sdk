@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreateBgpPeerRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreateBgpPeerRequest;
 
 CreateBgpPeerRequest::CreateBgpPeerRequest() :
-	VpcRequest("CreateBgpPeer")
+	RpcServiceRequest("vpc", "2016-04-28", "CreateBgpPeer")
 {}
 
 CreateBgpPeerRequest::~CreateBgpPeerRequest()

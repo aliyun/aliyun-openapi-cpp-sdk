@@ -43,20 +43,31 @@ void DescribeForwardTableEntriesResult::parse(const std::string &payload)
 	auto allForwardTableEntries = value["ForwardTableEntries"]["ForwardTableEntry"];
 	for (auto value : allForwardTableEntries)
 	{
-		ForwardTableEntry forwardTableEntryObject;
-		forwardTableEntryObject.forwardTableId = value["ForwardTableId"].asString();
-		forwardTableEntryObject.forwardEntryId = value["ForwardEntryId"].asString();
-		forwardTableEntryObject.externalIp = value["ExternalIp"].asString();
-		forwardTableEntryObject.externalPort = value["ExternalPort"].asString();
-		forwardTableEntryObject.ipProtocol = value["IpProtocol"].asString();
-		forwardTableEntryObject.internalIp = value["InternalIp"].asString();
-		forwardTableEntryObject.internalPort = value["InternalPort"].asString();
-		forwardTableEntryObject.status = value["Status"].asString();
-		forwardTableEntries_.push_back(forwardTableEntryObject);
+		ForwardTableEntry forwardTableEntriesObject;
+		if(!value["ForwardTableId"].isNull())
+			forwardTableEntriesObject.forwardTableId = value["ForwardTableId"].asString();
+		if(!value["ForwardEntryId"].isNull())
+			forwardTableEntriesObject.forwardEntryId = value["ForwardEntryId"].asString();
+		if(!value["ExternalIp"].isNull())
+			forwardTableEntriesObject.externalIp = value["ExternalIp"].asString();
+		if(!value["ExternalPort"].isNull())
+			forwardTableEntriesObject.externalPort = value["ExternalPort"].asString();
+		if(!value["IpProtocol"].isNull())
+			forwardTableEntriesObject.ipProtocol = value["IpProtocol"].asString();
+		if(!value["InternalIp"].isNull())
+			forwardTableEntriesObject.internalIp = value["InternalIp"].asString();
+		if(!value["InternalPort"].isNull())
+			forwardTableEntriesObject.internalPort = value["InternalPort"].asString();
+		if(!value["Status"].isNull())
+			forwardTableEntriesObject.status = value["Status"].asString();
+		forwardTableEntries_.push_back(forwardTableEntriesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -65,19 +76,9 @@ int DescribeForwardTableEntriesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeForwardTableEntriesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeForwardTableEntriesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeForwardTableEntriesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeForwardTableEntriesResult::getPageNumber()const
@@ -85,8 +86,8 @@ int DescribeForwardTableEntriesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeForwardTableEntriesResult::setPageNumber(int pageNumber)
+std::vector<DescribeForwardTableEntriesResult::ForwardTableEntry> DescribeForwardTableEntriesResult::getForwardTableEntries()const
 {
-	pageNumber_ = pageNumber;
+	return forwardTableEntries_;
 }
 

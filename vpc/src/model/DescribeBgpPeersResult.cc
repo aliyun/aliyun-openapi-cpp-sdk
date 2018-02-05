@@ -43,29 +43,53 @@ void DescribeBgpPeersResult::parse(const std::string &payload)
 	auto allBgpPeers = value["BgpPeers"]["BgpPeer"];
 	for (auto value : allBgpPeers)
 	{
-		BgpPeer bgpPeerObject;
-		bgpPeerObject.name = value["Name"].asString();
-		bgpPeerObject.description = value["Description"].asString();
-		bgpPeerObject.bgpPeerId = value["BgpPeerId"].asString();
-		bgpPeerObject.bgpGroupId = value["BgpGroupId"].asString();
-		bgpPeerObject.peerIpAddress = value["PeerIpAddress"].asString();
-		bgpPeerObject.peerAsn = value["PeerAsn"].asString();
-		bgpPeerObject.authKey = value["AuthKey"].asString();
-		bgpPeerObject.routerId = value["RouterId"].asString();
-		bgpPeerObject.bgpStatus = value["BgpStatus"].asString();
-		bgpPeerObject.status = value["Status"].asString();
-		bgpPeerObject.keepalive = value["Keepalive"].asString();
-		bgpPeerObject.localAsn = value["LocalAsn"].asString();
-		bgpPeerObject.hold = value["Hold"].asString();
-		bgpPeerObject.isFake = value["IsFake"].asString();
-		bgpPeerObject.routeLimit = value["RouteLimit"].asString();
-		bgpPeerObject.regionId = value["RegionId"].asString();
-		bgpPeers_.push_back(bgpPeerObject);
+		BgpPeer bgpPeersObject;
+		if(!value["Name"].isNull())
+			bgpPeersObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			bgpPeersObject.description = value["Description"].asString();
+		if(!value["BgpPeerId"].isNull())
+			bgpPeersObject.bgpPeerId = value["BgpPeerId"].asString();
+		if(!value["BgpGroupId"].isNull())
+			bgpPeersObject.bgpGroupId = value["BgpGroupId"].asString();
+		if(!value["PeerIpAddress"].isNull())
+			bgpPeersObject.peerIpAddress = value["PeerIpAddress"].asString();
+		if(!value["PeerAsn"].isNull())
+			bgpPeersObject.peerAsn = value["PeerAsn"].asString();
+		if(!value["AuthKey"].isNull())
+			bgpPeersObject.authKey = value["AuthKey"].asString();
+		if(!value["RouterId"].isNull())
+			bgpPeersObject.routerId = value["RouterId"].asString();
+		if(!value["BgpStatus"].isNull())
+			bgpPeersObject.bgpStatus = value["BgpStatus"].asString();
+		if(!value["Status"].isNull())
+			bgpPeersObject.status = value["Status"].asString();
+		if(!value["Keepalive"].isNull())
+			bgpPeersObject.keepalive = value["Keepalive"].asString();
+		if(!value["LocalAsn"].isNull())
+			bgpPeersObject.localAsn = value["LocalAsn"].asString();
+		if(!value["Hold"].isNull())
+			bgpPeersObject.hold = value["Hold"].asString();
+		if(!value["IsFake"].isNull())
+			bgpPeersObject.isFake = value["IsFake"].asString();
+		if(!value["RouteLimit"].isNull())
+			bgpPeersObject.routeLimit = value["RouteLimit"].asString();
+		if(!value["RegionId"].isNull())
+			bgpPeersObject.regionId = value["RegionId"].asString();
+		bgpPeers_.push_back(bgpPeersObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
+}
+
+std::vector<DescribeBgpPeersResult::BgpPeer> DescribeBgpPeersResult::getBgpPeers()const
+{
+	return bgpPeers_;
 }
 
 int DescribeBgpPeersResult::getTotalCount()const
@@ -73,28 +97,13 @@ int DescribeBgpPeersResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeBgpPeersResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeBgpPeersResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeBgpPeersResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeBgpPeersResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeBgpPeersResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

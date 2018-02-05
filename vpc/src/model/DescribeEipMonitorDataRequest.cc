@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeEipMonitorDataRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeEipMonitorDataRequest;
 
 DescribeEipMonitorDataRequest::DescribeEipMonitorDataRequest() :
-	VpcRequest("DescribeEipMonitorData")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeEipMonitorData")
 {}
 
 DescribeEipMonitorDataRequest::~DescribeEipMonitorDataRequest()

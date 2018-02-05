@@ -40,9 +40,12 @@ void CreateVpnConnectionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	vpnConnectionId_ = value["VpnConnectionId"].asString();
-	name_ = value["Name"].asString();
-	createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["VpnConnectionId"].isNull())
+		vpnConnectionId_ = value["VpnConnectionId"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
 
 }
 
@@ -51,28 +54,13 @@ long CreateVpnConnectionResult::getCreateTime()const
 	return createTime_;
 }
 
-void CreateVpnConnectionResult::setCreateTime(long createTime)
-{
-	createTime_ = createTime;
-}
-
 std::string CreateVpnConnectionResult::getVpnConnectionId()const
 {
 	return vpnConnectionId_;
 }
 
-void CreateVpnConnectionResult::setVpnConnectionId(const std::string& vpnConnectionId)
-{
-	vpnConnectionId_ = vpnConnectionId;
-}
-
 std::string CreateVpnConnectionResult::getName()const
 {
 	return name_;
-}
-
-void CreateVpnConnectionResult::setName(const std::string& name)
-{
-	name_ = name;
 }
 

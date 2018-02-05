@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ModifyPhysicalConnectionAttributeRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ModifyPhysicalConnectionAttributeRequest;
 
 ModifyPhysicalConnectionAttributeRequest::ModifyPhysicalConnectionAttributeRequest() :
-	VpcRequest("ModifyPhysicalConnectionAttribute")
+	RpcServiceRequest("vpc", "2016-04-28", "ModifyPhysicalConnectionAttribute")
 {}
 
 ModifyPhysicalConnectionAttributeRequest::~ModifyPhysicalConnectionAttributeRequest()

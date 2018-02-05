@@ -43,57 +43,93 @@ void DescribeVirtualBorderRoutersResult::parse(const std::string &payload)
 	auto allVirtualBorderRouterSet = value["VirtualBorderRouterSet"]["VirtualBorderRouterType"];
 	for (auto value : allVirtualBorderRouterSet)
 	{
-		VirtualBorderRouterType virtualBorderRouterTypeObject;
-		virtualBorderRouterTypeObject.vbrId = value["VbrId"].asString();
-		virtualBorderRouterTypeObject.creationTime = value["CreationTime"].asString();
-		virtualBorderRouterTypeObject.activationTime = value["ActivationTime"].asString();
-		virtualBorderRouterTypeObject.terminationTime = value["TerminationTime"].asString();
-		virtualBorderRouterTypeObject.recoveryTime = value["RecoveryTime"].asString();
-		virtualBorderRouterTypeObject.status = value["Status"].asString();
-		virtualBorderRouterTypeObject.vlanId = std::stoi(value["VlanId"].asString());
-		virtualBorderRouterTypeObject.circuitCode = value["CircuitCode"].asString();
-		virtualBorderRouterTypeObject.routeTableId = value["RouteTableId"].asString();
-		virtualBorderRouterTypeObject.vlanInterfaceId = value["VlanInterfaceId"].asString();
-		virtualBorderRouterTypeObject.localGatewayIp = value["LocalGatewayIp"].asString();
-		virtualBorderRouterTypeObject.peerGatewayIp = value["PeerGatewayIp"].asString();
-		virtualBorderRouterTypeObject.peeringSubnetMask = value["PeeringSubnetMask"].asString();
-		virtualBorderRouterTypeObject.physicalConnectionId = value["PhysicalConnectionId"].asString();
-		virtualBorderRouterTypeObject.physicalConnectionStatus = value["PhysicalConnectionStatus"].asString();
-		virtualBorderRouterTypeObject.physicalConnectionBusinessStatus = value["PhysicalConnectionBusinessStatus"].asString();
-		virtualBorderRouterTypeObject.physicalConnectionOwnerUid = value["PhysicalConnectionOwnerUid"].asString();
-		virtualBorderRouterTypeObject.accessPointId = value["AccessPointId"].asString();
-		virtualBorderRouterTypeObject.name = value["Name"].asString();
-		virtualBorderRouterTypeObject.description = value["Description"].asString();
+		VirtualBorderRouterType virtualBorderRouterSetObject;
+		if(!value["VbrId"].isNull())
+			virtualBorderRouterSetObject.vbrId = value["VbrId"].asString();
+		if(!value["CreationTime"].isNull())
+			virtualBorderRouterSetObject.creationTime = value["CreationTime"].asString();
+		if(!value["ActivationTime"].isNull())
+			virtualBorderRouterSetObject.activationTime = value["ActivationTime"].asString();
+		if(!value["TerminationTime"].isNull())
+			virtualBorderRouterSetObject.terminationTime = value["TerminationTime"].asString();
+		if(!value["RecoveryTime"].isNull())
+			virtualBorderRouterSetObject.recoveryTime = value["RecoveryTime"].asString();
+		if(!value["Status"].isNull())
+			virtualBorderRouterSetObject.status = value["Status"].asString();
+		if(!value["VlanId"].isNull())
+			virtualBorderRouterSetObject.vlanId = std::stoi(value["VlanId"].asString());
+		if(!value["CircuitCode"].isNull())
+			virtualBorderRouterSetObject.circuitCode = value["CircuitCode"].asString();
+		if(!value["RouteTableId"].isNull())
+			virtualBorderRouterSetObject.routeTableId = value["RouteTableId"].asString();
+		if(!value["VlanInterfaceId"].isNull())
+			virtualBorderRouterSetObject.vlanInterfaceId = value["VlanInterfaceId"].asString();
+		if(!value["LocalGatewayIp"].isNull())
+			virtualBorderRouterSetObject.localGatewayIp = value["LocalGatewayIp"].asString();
+		if(!value["PeerGatewayIp"].isNull())
+			virtualBorderRouterSetObject.peerGatewayIp = value["PeerGatewayIp"].asString();
+		if(!value["PeeringSubnetMask"].isNull())
+			virtualBorderRouterSetObject.peeringSubnetMask = value["PeeringSubnetMask"].asString();
+		if(!value["PhysicalConnectionId"].isNull())
+			virtualBorderRouterSetObject.physicalConnectionId = value["PhysicalConnectionId"].asString();
+		if(!value["PhysicalConnectionStatus"].isNull())
+			virtualBorderRouterSetObject.physicalConnectionStatus = value["PhysicalConnectionStatus"].asString();
+		if(!value["PhysicalConnectionBusinessStatus"].isNull())
+			virtualBorderRouterSetObject.physicalConnectionBusinessStatus = value["PhysicalConnectionBusinessStatus"].asString();
+		if(!value["PhysicalConnectionOwnerUid"].isNull())
+			virtualBorderRouterSetObject.physicalConnectionOwnerUid = value["PhysicalConnectionOwnerUid"].asString();
+		if(!value["AccessPointId"].isNull())
+			virtualBorderRouterSetObject.accessPointId = value["AccessPointId"].asString();
+		if(!value["Name"].isNull())
+			virtualBorderRouterSetObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			virtualBorderRouterSetObject.description = value["Description"].asString();
 		auto allAssociatedPhysicalConnections = value["AssociatedPhysicalConnections"]["AssociatedPhysicalConnection"];
 		for (auto value : allAssociatedPhysicalConnections)
 		{
-			VirtualBorderRouterType::AssociatedPhysicalConnection associatedPhysicalConnectionObject;
-			associatedPhysicalConnectionObject.circuitCode = value["CircuitCode"].asString();
-			associatedPhysicalConnectionObject.vlanInterfaceId = value["VlanInterfaceId"].asString();
-			associatedPhysicalConnectionObject.localGatewayIp = value["LocalGatewayIp"].asString();
-			associatedPhysicalConnectionObject.peerGatewayIp = value["PeerGatewayIp"].asString();
-			associatedPhysicalConnectionObject.peeringSubnetMask = value["PeeringSubnetMask"].asString();
-			associatedPhysicalConnectionObject.physicalConnectionId = value["PhysicalConnectionId"].asString();
-			associatedPhysicalConnectionObject.physicalConnectionStatus = value["PhysicalConnectionStatus"].asString();
-			associatedPhysicalConnectionObject.physicalConnectionBusinessStatus = value["PhysicalConnectionBusinessStatus"].asString();
-			associatedPhysicalConnectionObject.physicalConnectionOwnerUid = value["PhysicalConnectionOwnerUid"].asString();
-			associatedPhysicalConnectionObject.vlanId = value["VlanId"].asString();
-			virtualBorderRouterTypeObject.associatedPhysicalConnections.push_back(associatedPhysicalConnectionObject);
+			VirtualBorderRouterType::AssociatedPhysicalConnection associatedPhysicalConnectionsObject;
+			if(!value["CircuitCode"].isNull())
+				associatedPhysicalConnectionsObject.circuitCode = value["CircuitCode"].asString();
+			if(!value["VlanInterfaceId"].isNull())
+				associatedPhysicalConnectionsObject.vlanInterfaceId = value["VlanInterfaceId"].asString();
+			if(!value["LocalGatewayIp"].isNull())
+				associatedPhysicalConnectionsObject.localGatewayIp = value["LocalGatewayIp"].asString();
+			if(!value["PeerGatewayIp"].isNull())
+				associatedPhysicalConnectionsObject.peerGatewayIp = value["PeerGatewayIp"].asString();
+			if(!value["PeeringSubnetMask"].isNull())
+				associatedPhysicalConnectionsObject.peeringSubnetMask = value["PeeringSubnetMask"].asString();
+			if(!value["PhysicalConnectionId"].isNull())
+				associatedPhysicalConnectionsObject.physicalConnectionId = value["PhysicalConnectionId"].asString();
+			if(!value["PhysicalConnectionStatus"].isNull())
+				associatedPhysicalConnectionsObject.physicalConnectionStatus = value["PhysicalConnectionStatus"].asString();
+			if(!value["PhysicalConnectionBusinessStatus"].isNull())
+				associatedPhysicalConnectionsObject.physicalConnectionBusinessStatus = value["PhysicalConnectionBusinessStatus"].asString();
+			if(!value["PhysicalConnectionOwnerUid"].isNull())
+				associatedPhysicalConnectionsObject.physicalConnectionOwnerUid = value["PhysicalConnectionOwnerUid"].asString();
+			if(!value["VlanId"].isNull())
+				associatedPhysicalConnectionsObject.vlanId = value["VlanId"].asString();
+			virtualBorderRouterSetObject.associatedPhysicalConnections.push_back(associatedPhysicalConnectionsObject);
 		}
-		auto allAssociatedCbns = value["AssociatedCbns"]["AssociatedCbn"];
-		for (auto value : allAssociatedCbns)
+		auto allAssociatedCens = value["AssociatedCens"]["AssociatedCbn"];
+		for (auto value : allAssociatedCens)
 		{
-			VirtualBorderRouterType::AssociatedCbn associatedCbnObject;
-			associatedCbnObject.cbnStatus = value["CbnStatus"].asString();
-			associatedCbnObject.cbnOwnerId = value["CbnOwnerId"].asString();
-			associatedCbnObject.cbnOwnerUid = std::stol(value["CbnOwnerUid"].asString());
-			virtualBorderRouterTypeObject.associatedCbns.push_back(associatedCbnObject);
+			VirtualBorderRouterType::AssociatedCbn associatedCensObject;
+			if(!value["CenStatus"].isNull())
+				associatedCensObject.cenStatus = value["CenStatus"].asString();
+			if(!value["CenOwnerId"].isNull())
+				associatedCensObject.cenOwnerId = value["CenOwnerId"].asString();
+			if(!value["CenOwnerUid"].isNull())
+				associatedCensObject.cenOwnerUid = std::stol(value["CenOwnerUid"].asString());
+			virtualBorderRouterSetObject.associatedCens.push_back(associatedCensObject);
 		}
-		virtualBorderRouterSet_.push_back(virtualBorderRouterTypeObject);
+		virtualBorderRouterSet_.push_back(virtualBorderRouterSetObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -102,19 +138,9 @@ int DescribeVirtualBorderRoutersResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeVirtualBorderRoutersResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeVirtualBorderRoutersResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeVirtualBorderRoutersResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeVirtualBorderRoutersResult::getPageNumber()const
@@ -122,8 +148,8 @@ int DescribeVirtualBorderRoutersResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeVirtualBorderRoutersResult::setPageNumber(int pageNumber)
+std::vector<DescribeVirtualBorderRoutersResult::VirtualBorderRouterType> DescribeVirtualBorderRoutersResult::getVirtualBorderRouterSet()const
 {
-	pageNumber_ = pageNumber;
+	return virtualBorderRouterSet_;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/RemoveBandwidthPackageIpsRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::RemoveBandwidthPackageIpsRequest;
 
 RemoveBandwidthPackageIpsRequest::RemoveBandwidthPackageIpsRequest() :
-	VpcRequest("RemoveBandwidthPackageIps")
+	RpcServiceRequest("vpc", "2016-04-28", "RemoveBandwidthPackageIps")
 {}
 
 RemoveBandwidthPackageIpsRequest::~RemoveBandwidthPackageIpsRequest()

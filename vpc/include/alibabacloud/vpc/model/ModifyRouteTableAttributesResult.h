@@ -38,11 +38,8 @@ namespace AlibabaCloud
 				explicit ModifyRouteTableAttributesResult(const std::string &payload);
 				~ModifyRouteTableAttributesResult();
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 				bool getSuccess()const;
-				void setSuccess(bool success);
 
 			protected:
 				void parse(const std::string &payload);

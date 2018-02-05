@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_REVOKEINSTANCEFROMCBNRESULT_H_
-#define ALIBABACLOUD_VPC_MODEL_REVOKEINSTANCEFROMCBNRESULT_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_CREATESSLVPNCLIENTCERTRESULT_H_
+#define ALIBABACLOUD_VPC_MODEL_CREATESSLVPNCLIENTCERTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT RevokeInstanceFromCbnResult : public ServiceResult
+			class ALIBABACLOUD_VPC_EXPORT CreateSslVpnClientCertResult : public ServiceResult
 			{
 			public:
 
 
-				RevokeInstanceFromCbnResult();
-				explicit RevokeInstanceFromCbnResult(const std::string &payload);
-				~RevokeInstanceFromCbnResult();
+				CreateSslVpnClientCertResult();
+				explicit CreateSslVpnClientCertResult(const std::string &payload);
+				~CreateSslVpnClientCertResult();
+				std::string getSslVpnClientCertId()const;
+				std::string getName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string sslVpnClientCertId_;
+				std::string name_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_REVOKEINSTANCEFROMCBNRESULT_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_CREATESSLVPNCLIENTCERTRESULT_H_

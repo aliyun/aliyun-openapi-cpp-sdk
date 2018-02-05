@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ModifyGlobalAccelerationInstanceAttributesRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ModifyGlobalAccelerationInstanceAttributesRequest;
 
 ModifyGlobalAccelerationInstanceAttributesRequest::ModifyGlobalAccelerationInstanceAttributesRequest() :
-	VpcRequest("ModifyGlobalAccelerationInstanceAttributes")
+	RpcServiceRequest("vpc", "2016-04-28", "ModifyGlobalAccelerationInstanceAttributes")
 {}
 
 ModifyGlobalAccelerationInstanceAttributesRequest::~ModifyGlobalAccelerationInstanceAttributesRequest()

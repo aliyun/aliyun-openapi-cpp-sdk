@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeleteGlobalAccelerationInstanceRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeleteGlobalAccelerationInstanceRequest;
 
 DeleteGlobalAccelerationInstanceRequest::DeleteGlobalAccelerationInstanceRequest() :
-	VpcRequest("DeleteGlobalAccelerationInstance")
+	RpcServiceRequest("vpc", "2016-04-28", "DeleteGlobalAccelerationInstance")
 {}
 
 DeleteGlobalAccelerationInstanceRequest::~DeleteGlobalAccelerationInstanceRequest()

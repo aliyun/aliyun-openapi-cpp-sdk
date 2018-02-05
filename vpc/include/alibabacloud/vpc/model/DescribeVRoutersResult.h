@@ -48,13 +48,9 @@ namespace AlibabaCloud
 				explicit DescribeVRoutersResult(const std::string &payload);
 				~DescribeVRoutersResult();
 				std::vector<VRouter> getVRouters()const;
-				void setVRouters(const std::vector<VRouter>& vRouters);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

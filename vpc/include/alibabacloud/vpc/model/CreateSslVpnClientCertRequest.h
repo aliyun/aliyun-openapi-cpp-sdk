@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBEGRANTRULESTOCBNREQUEST_H_
-#define ALIBABACLOUD_VPC_MODEL_DESCRIBEGRANTRULESTOCBNREQUEST_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_CREATESSLVPNCLIENTCERTREQUEST_H_
+#define ALIBABACLOUD_VPC_MODEL_CREATESSLVPNCLIENTCERTREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/vpc/VpcRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/vpc/VpcExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,42 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT DescribeGrantRulesToCbnRequest : public VpcRequest
+			class ALIBABACLOUD_VPC_EXPORT CreateSslVpnClientCertRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeGrantRulesToCbnRequest();
-				~DescribeGrantRulesToCbnRequest();
+				CreateSslVpnClientCertRequest();
+				~CreateSslVpnClientCertRequest();
 
+				std::string getSslVpnServerId()const;
+				void setSslVpnServerId(const std::string& sslVpnServerId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getInstanceType()const;
-				void setInstanceType(const std::string& instanceType);
+				std::string getName()const;
+				void setName(const std::string& name);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
+				std::string sslVpnServerId_;
 				long resourceOwnerId_;
-				std::string instanceId_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string clientToken_;
+				std::string regionId_;
 				std::string ownerAccount_;
-				std::string instanceType_;
+				std::string name_;
 				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBEGRANTRULESTOCBNREQUEST_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_CREATESSLVPNCLIENTCERTREQUEST_H_

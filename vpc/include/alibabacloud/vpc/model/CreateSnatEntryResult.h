@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateSnatEntryResult(const std::string &payload);
 				~CreateSnatEntryResult();
 				std::string getSnatEntryId()const;
-				void setSnatEntryId(const std::string& snatEntryId);
 
 			protected:
 				void parse(const std::string &payload);

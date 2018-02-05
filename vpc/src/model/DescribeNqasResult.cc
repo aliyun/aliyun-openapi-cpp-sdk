@@ -43,18 +43,31 @@ void DescribeNqasResult::parse(const std::string &payload)
 	auto allNqas = value["Nqas"]["Nqa"];
 	for (auto value : allNqas)
 	{
-		Nqa nqaObject;
-		nqaObject.nqaId = value["NqaId"].asString();
-		nqaObject.regionId = value["RegionId"].asString();
-		nqaObject.status = value["Status"].asString();
-		nqaObject.routerId = value["RouterId"].asString();
-		nqaObject.destinationIp = value["DestinationIp"].asString();
-		nqas_.push_back(nqaObject);
+		Nqa nqasObject;
+		if(!value["NqaId"].isNull())
+			nqasObject.nqaId = value["NqaId"].asString();
+		if(!value["RegionId"].isNull())
+			nqasObject.regionId = value["RegionId"].asString();
+		if(!value["Status"].isNull())
+			nqasObject.status = value["Status"].asString();
+		if(!value["RouterId"].isNull())
+			nqasObject.routerId = value["RouterId"].asString();
+		if(!value["DestinationIp"].isNull())
+			nqasObject.destinationIp = value["DestinationIp"].asString();
+		nqas_.push_back(nqasObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
+}
+
+std::vector<DescribeNqasResult::Nqa> DescribeNqasResult::getNqas()const
+{
+	return nqas_;
 }
 
 int DescribeNqasResult::getTotalCount()const
@@ -62,28 +75,13 @@ int DescribeNqasResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeNqasResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeNqasResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeNqasResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribeNqasResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeNqasResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

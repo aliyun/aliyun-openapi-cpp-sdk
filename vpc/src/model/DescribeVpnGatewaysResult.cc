@@ -43,24 +43,45 @@ void DescribeVpnGatewaysResult::parse(const std::string &payload)
 	auto allVpnGateways = value["VpnGateways"]["VpnGateway"];
 	for (auto value : allVpnGateways)
 	{
-		VpnGateway vpnGatewayObject;
-		vpnGatewayObject.vpnGatewayId = value["VpnGatewayId"].asString();
-		vpnGatewayObject.vpcId = value["VpcId"].asString();
-		vpnGatewayObject.vSwitchId = value["VSwitchId"].asString();
-		vpnGatewayObject.internetIp = value["InternetIp"].asString();
-		vpnGatewayObject.createTime = std::stol(value["CreateTime"].asString());
-		vpnGatewayObject.endTime = std::stol(value["EndTime"].asString());
-		vpnGatewayObject.spec = value["Spec"].asString();
-		vpnGatewayObject.name = value["Name"].asString();
-		vpnGatewayObject.description = value["Description"].asString();
-		vpnGatewayObject.status = value["Status"].asString();
-		vpnGatewayObject.businessStatus = value["BusinessStatus"].asString();
-		vpnGatewayObject.chargeType = value["ChargeType"].asString();
-		vpnGateways_.push_back(vpnGatewayObject);
+		VpnGateway vpnGatewaysObject;
+		if(!value["VpnGatewayId"].isNull())
+			vpnGatewaysObject.vpnGatewayId = value["VpnGatewayId"].asString();
+		if(!value["VpcId"].isNull())
+			vpnGatewaysObject.vpcId = value["VpcId"].asString();
+		if(!value["VSwitchId"].isNull())
+			vpnGatewaysObject.vSwitchId = value["VSwitchId"].asString();
+		if(!value["InternetIp"].isNull())
+			vpnGatewaysObject.internetIp = value["InternetIp"].asString();
+		if(!value["CreateTime"].isNull())
+			vpnGatewaysObject.createTime = std::stol(value["CreateTime"].asString());
+		if(!value["EndTime"].isNull())
+			vpnGatewaysObject.endTime = std::stol(value["EndTime"].asString());
+		if(!value["Spec"].isNull())
+			vpnGatewaysObject.spec = value["Spec"].asString();
+		if(!value["Name"].isNull())
+			vpnGatewaysObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			vpnGatewaysObject.description = value["Description"].asString();
+		if(!value["Status"].isNull())
+			vpnGatewaysObject.status = value["Status"].asString();
+		if(!value["BusinessStatus"].isNull())
+			vpnGatewaysObject.businessStatus = value["BusinessStatus"].asString();
+		if(!value["ChargeType"].isNull())
+			vpnGatewaysObject.chargeType = value["ChargeType"].asString();
+		if(!value["IpsecVpn"].isNull())
+			vpnGatewaysObject.ipsecVpn = value["IpsecVpn"].asString();
+		if(!value["SslVpn"].isNull())
+			vpnGatewaysObject.sslVpn = value["SslVpn"].asString();
+		if(!value["SslMaxConnections"].isNull())
+			vpnGatewaysObject.sslMaxConnections = std::stol(value["SslMaxConnections"].asString());
+		vpnGateways_.push_back(vpnGatewaysObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -69,28 +90,18 @@ int DescribeVpnGatewaysResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeVpnGatewaysResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeVpnGatewaysResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeVpnGatewaysResult::setPageSize(int pageSize)
+std::vector<DescribeVpnGatewaysResult::VpnGateway> DescribeVpnGatewaysResult::getVpnGateways()const
 {
-	pageSize_ = pageSize;
+	return vpnGateways_;
 }
 
 int DescribeVpnGatewaysResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribeVpnGatewaysResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

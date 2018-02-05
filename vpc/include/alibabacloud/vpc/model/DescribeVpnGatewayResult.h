@@ -38,45 +38,39 @@ namespace AlibabaCloud
 				explicit DescribeVpnGatewayResult(const std::string &payload);
 				~DescribeVpnGatewayResult();
 				std::string getStatus()const;
-				void setStatus(const std::string& status);
+				std::string getIpsecVpn()const;
+				std::string getSslVpn()const;
 				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
-				std::string getInternetIp()const;
-				void setInternetIp(const std::string& internetIp);
 				long getEndTime()const;
-				void setEndTime(long endTime);
-				std::string getVpnGatewayId()const;
-				void setVpnGatewayId(const std::string& vpnGatewayId);
-				std::string getChargeType()const;
-				void setChargeType(const std::string& chargeType);
 				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
 				long getCreateTime()const;
-				void setCreateTime(long createTime);
-				std::string getSpec()const;
-				void setSpec(const std::string& spec);
 				std::string getBusinessStatus()const;
-				void setBusinessStatus(const std::string& businessStatus);
 				std::string getName()const;
-				void setName(const std::string& name);
+				std::string getVpcId()const;
+				std::string getInternetIp()const;
+				std::string getVpnGatewayId()const;
+				std::string getChargeType()const;
+				std::string getSpec()const;
+				long getSslMaxConnections()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
+				std::string ipsecVpn_;
+				std::string sslVpn_;
 				std::string description_;
-				std::string vpcId_;
-				std::string internetIp_;
 				long endTime_;
-				std::string vpnGatewayId_;
-				std::string chargeType_;
 				std::string vSwitchId_;
 				long createTime_;
-				std::string spec_;
 				std::string businessStatus_;
 				std::string name_;
+				std::string vpcId_;
+				std::string internetIp_;
+				std::string vpnGatewayId_;
+				std::string chargeType_;
+				std::string spec_;
+				long sslMaxConnections_;
 
 			};
 		}

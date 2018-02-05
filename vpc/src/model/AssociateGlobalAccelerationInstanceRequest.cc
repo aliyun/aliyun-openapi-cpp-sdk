@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/AssociateGlobalAccelerationInstanceRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::AssociateGlobalAccelerationInstanceRequest;
 
 AssociateGlobalAccelerationInstanceRequest::AssociateGlobalAccelerationInstanceRequest() :
-	VpcRequest("AssociateGlobalAccelerationInstance")
+	RpcServiceRequest("vpc", "2016-04-28", "AssociateGlobalAccelerationInstance")
 {}
 
 AssociateGlobalAccelerationInstanceRequest::~AssociateGlobalAccelerationInstanceRequest()

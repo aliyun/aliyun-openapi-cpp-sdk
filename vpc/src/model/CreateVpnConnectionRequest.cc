@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreateVpnConnectionRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreateVpnConnectionRequest;
 
 CreateVpnConnectionRequest::CreateVpnConnectionRequest() :
-	VpcRequest("CreateVpnConnection")
+	RpcServiceRequest("vpc", "2016-04-28", "CreateVpnConnection")
 {}
 
 CreateVpnConnectionRequest::~CreateVpnConnectionRequest()

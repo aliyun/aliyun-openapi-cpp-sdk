@@ -49,19 +49,12 @@ namespace AlibabaCloud
 				explicit DescribeRouteTableListResult(const std::string &payload);
 				~DescribeRouteTableListResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<RouterTableListType> getRouterTableList()const;
-				void setRouterTableList(const std::vector<RouterTableListType>& routerTableList);
 				std::string getCode()const;
-				void setCode(const std::string& code);
 				bool getSuccess()const;
-				void setSuccess(bool success);
 
 			protected:
 				void parse(const std::string &payload);

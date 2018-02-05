@@ -47,13 +47,9 @@ namespace AlibabaCloud
 				explicit DescribeSnatTableEntriesResult(const std::string &payload);
 				~DescribeSnatTableEntriesResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<SnatTableEntry> getSnatTableEntries()const;
-				void setSnatTableEntries(const std::vector<SnatTableEntry>& snatTableEntries);
 
 			protected:
 				void parse(const std::string &payload);

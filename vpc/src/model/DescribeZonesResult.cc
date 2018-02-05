@@ -43,11 +43,18 @@ void DescribeZonesResult::parse(const std::string &payload)
 	auto allZones = value["Zones"]["Zone"];
 	for (auto value : allZones)
 	{
-		Zone zoneObject;
-		zoneObject.zoneId = value["ZoneId"].asString();
-		zoneObject.localName = value["LocalName"].asString();
-		zones_.push_back(zoneObject);
+		Zone zonesObject;
+		if(!value["ZoneId"].isNull())
+			zonesObject.zoneId = value["ZoneId"].asString();
+		if(!value["LocalName"].isNull())
+			zonesObject.localName = value["LocalName"].asString();
+		zones_.push_back(zonesObject);
 	}
 
+}
+
+std::vector<DescribeZonesResult::Zone> DescribeZonesResult::getZones()const
+{
+	return zones_;
 }
 

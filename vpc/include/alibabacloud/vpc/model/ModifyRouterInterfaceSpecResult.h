@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit ModifyRouterInterfaceSpecResult(const std::string &payload);
 				~ModifyRouterInterfaceSpecResult();
 				std::string getSpec()const;
-				void setSpec(const std::string& spec);
 
 			protected:
 				void parse(const std::string &payload);

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/ModifyEipAddressAttributeRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::ModifyEipAddressAttributeRequest;
 
 ModifyEipAddressAttributeRequest::ModifyEipAddressAttributeRequest() :
-	VpcRequest("ModifyEipAddressAttribute")
+	RpcServiceRequest("vpc", "2016-04-28", "ModifyEipAddressAttribute")
 {}
 
 ModifyEipAddressAttributeRequest::~ModifyEipAddressAttributeRequest()

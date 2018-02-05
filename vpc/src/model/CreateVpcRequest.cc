@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreateVpcRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreateVpcRequest;
 
 CreateVpcRequest::CreateVpcRequest() :
-	VpcRequest("CreateVpc")
+	RpcServiceRequest("vpc", "2016-04-28", "CreateVpc")
 {}
 
 CreateVpcRequest::~CreateVpcRequest()

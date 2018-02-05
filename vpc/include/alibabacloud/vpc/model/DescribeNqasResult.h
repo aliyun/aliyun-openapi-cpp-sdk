@@ -46,13 +46,9 @@ namespace AlibabaCloud
 				explicit DescribeNqasResult(const std::string &payload);
 				~DescribeNqasResult();
 				std::vector<Nqa> getNqas()const;
-				void setNqas(const std::vector<Nqa>& nqas);
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

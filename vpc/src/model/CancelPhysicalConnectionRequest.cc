@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CancelPhysicalConnectionRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CancelPhysicalConnectionRequest;
 
 CancelPhysicalConnectionRequest::CancelPhysicalConnectionRequest() :
-	VpcRequest("CancelPhysicalConnection")
+	RpcServiceRequest("vpc", "2016-04-28", "CancelPhysicalConnection")
 {}
 
 CancelPhysicalConnectionRequest::~CancelPhysicalConnectionRequest()

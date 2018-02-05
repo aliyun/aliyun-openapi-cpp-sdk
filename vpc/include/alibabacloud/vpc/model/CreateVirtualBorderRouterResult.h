@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateVirtualBorderRouterResult(const std::string &payload);
 				~CreateVirtualBorderRouterResult();
 				std::string getVbrId()const;
-				void setVbrId(const std::string& vbrId);
 
 			protected:
 				void parse(const std::string &payload);

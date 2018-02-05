@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreateSnatEntryRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreateSnatEntryRequest;
 
 CreateSnatEntryRequest::CreateSnatEntryRequest() :
-	VpcRequest("CreateSnatEntry")
+	RpcServiceRequest("vpc", "2016-04-28", "CreateSnatEntry")
 {}
 
 CreateSnatEntryRequest::~CreateSnatEntryRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeleteForwardEntryRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeleteForwardEntryRequest;
 
 DeleteForwardEntryRequest::DeleteForwardEntryRequest() :
-	VpcRequest("DeleteForwardEntry")
+	RpcServiceRequest("vpc", "2016-04-28", "DeleteForwardEntry")
 {}
 
 DeleteForwardEntryRequest::~DeleteForwardEntryRequest()

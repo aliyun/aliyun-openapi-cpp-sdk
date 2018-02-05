@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit CreateBgpPeerResult(const std::string &payload);
 				~CreateBgpPeerResult();
 				std::string getBgpPeerId()const;
-				void setBgpPeerId(const std::string& bgpPeerId);
 
 			protected:
 				void parse(const std::string &payload);

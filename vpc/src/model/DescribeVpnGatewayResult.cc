@@ -40,18 +40,36 @@ void DescribeVpnGatewayResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	vpnGatewayId_ = value["VpnGatewayId"].asString();
-	vpcId_ = value["VpcId"].asString();
-	vSwitchId_ = value["VSwitchId"].asString();
-	internetIp_ = value["InternetIp"].asString();
-	createTime_ = std::stol(value["CreateTime"].asString());
-	endTime_ = std::stol(value["EndTime"].asString());
-	spec_ = value["Spec"].asString();
-	name_ = value["Name"].asString();
-	description_ = value["Description"].asString();
-	status_ = value["Status"].asString();
-	businessStatus_ = value["BusinessStatus"].asString();
-	chargeType_ = value["ChargeType"].asString();
+	if(!value["VpnGatewayId"].isNull())
+		vpnGatewayId_ = value["VpnGatewayId"].asString();
+	if(!value["VpcId"].isNull())
+		vpcId_ = value["VpcId"].asString();
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["InternetIp"].isNull())
+		internetIp_ = value["InternetIp"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["EndTime"].isNull())
+		endTime_ = std::stol(value["EndTime"].asString());
+	if(!value["Spec"].isNull())
+		spec_ = value["Spec"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["BusinessStatus"].isNull())
+		businessStatus_ = value["BusinessStatus"].asString();
+	if(!value["ChargeType"].isNull())
+		chargeType_ = value["ChargeType"].asString();
+	if(!value["IpsecVpn"].isNull())
+		ipsecVpn_ = value["IpsecVpn"].asString();
+	if(!value["SslVpn"].isNull())
+		sslVpn_ = value["SslVpn"].asString();
+	if(!value["SslMaxConnections"].isNull())
+		sslMaxConnections_ = std::stol(value["SslMaxConnections"].asString());
 
 }
 
@@ -60,9 +78,14 @@ std::string DescribeVpnGatewayResult::getStatus()const
 	return status_;
 }
 
-void DescribeVpnGatewayResult::setStatus(const std::string& status)
+std::string DescribeVpnGatewayResult::getIpsecVpn()const
 {
-	status_ = status;
+	return ipsecVpn_;
+}
+
+std::string DescribeVpnGatewayResult::getSslVpn()const
+{
+	return sslVpn_;
 }
 
 std::string DescribeVpnGatewayResult::getDescription()const
@@ -70,59 +93,9 @@ std::string DescribeVpnGatewayResult::getDescription()const
 	return description_;
 }
 
-void DescribeVpnGatewayResult::setDescription(const std::string& description)
-{
-	description_ = description;
-}
-
-std::string DescribeVpnGatewayResult::getVpcId()const
-{
-	return vpcId_;
-}
-
-void DescribeVpnGatewayResult::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-}
-
-std::string DescribeVpnGatewayResult::getInternetIp()const
-{
-	return internetIp_;
-}
-
-void DescribeVpnGatewayResult::setInternetIp(const std::string& internetIp)
-{
-	internetIp_ = internetIp;
-}
-
 long DescribeVpnGatewayResult::getEndTime()const
 {
 	return endTime_;
-}
-
-void DescribeVpnGatewayResult::setEndTime(long endTime)
-{
-	endTime_ = endTime;
-}
-
-std::string DescribeVpnGatewayResult::getVpnGatewayId()const
-{
-	return vpnGatewayId_;
-}
-
-void DescribeVpnGatewayResult::setVpnGatewayId(const std::string& vpnGatewayId)
-{
-	vpnGatewayId_ = vpnGatewayId;
-}
-
-std::string DescribeVpnGatewayResult::getChargeType()const
-{
-	return chargeType_;
-}
-
-void DescribeVpnGatewayResult::setChargeType(const std::string& chargeType)
-{
-	chargeType_ = chargeType;
 }
 
 std::string DescribeVpnGatewayResult::getVSwitchId()const
@@ -130,29 +103,9 @@ std::string DescribeVpnGatewayResult::getVSwitchId()const
 	return vSwitchId_;
 }
 
-void DescribeVpnGatewayResult::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-}
-
 long DescribeVpnGatewayResult::getCreateTime()const
 {
 	return createTime_;
-}
-
-void DescribeVpnGatewayResult::setCreateTime(long createTime)
-{
-	createTime_ = createTime;
-}
-
-std::string DescribeVpnGatewayResult::getSpec()const
-{
-	return spec_;
-}
-
-void DescribeVpnGatewayResult::setSpec(const std::string& spec)
-{
-	spec_ = spec;
 }
 
 std::string DescribeVpnGatewayResult::getBusinessStatus()const
@@ -160,18 +113,38 @@ std::string DescribeVpnGatewayResult::getBusinessStatus()const
 	return businessStatus_;
 }
 
-void DescribeVpnGatewayResult::setBusinessStatus(const std::string& businessStatus)
-{
-	businessStatus_ = businessStatus;
-}
-
 std::string DescribeVpnGatewayResult::getName()const
 {
 	return name_;
 }
 
-void DescribeVpnGatewayResult::setName(const std::string& name)
+std::string DescribeVpnGatewayResult::getVpcId()const
 {
-	name_ = name;
+	return vpcId_;
+}
+
+std::string DescribeVpnGatewayResult::getInternetIp()const
+{
+	return internetIp_;
+}
+
+std::string DescribeVpnGatewayResult::getVpnGatewayId()const
+{
+	return vpnGatewayId_;
+}
+
+std::string DescribeVpnGatewayResult::getChargeType()const
+{
+	return chargeType_;
+}
+
+std::string DescribeVpnGatewayResult::getSpec()const
+{
+	return spec_;
+}
+
+long DescribeVpnGatewayResult::getSslMaxConnections()const
+{
+	return sslMaxConnections_;
 }
 

@@ -49,9 +49,9 @@ namespace AlibabaCloud
 					};
 					struct AssociatedCbn
 					{
-						long cbnOwnerUid;
-						std::string cbnOwnerId;
-						std::string cbnStatus;
+						std::string cenStatus;
+						std::string cenOwnerId;
+						long cenOwnerUid;
 					};
 					std::string status;
 					std::string peerGatewayIp;
@@ -69,8 +69,8 @@ namespace AlibabaCloud
 					std::string physicalConnectionOwnerUid;
 					std::string recoveryTime;
 					std::string name;
-					std::vector<VirtualBorderRouterType::AssociatedCbn> associatedCbns;
 					std::string localGatewayIp;
+					std::vector<VirtualBorderRouterType::AssociatedCbn> associatedCens;
 					std::string creationTime;
 					std::string accessPointId;
 					int vlanId;
@@ -82,13 +82,9 @@ namespace AlibabaCloud
 				explicit DescribeVirtualBorderRoutersResult(const std::string &payload);
 				~DescribeVirtualBorderRoutersResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<VirtualBorderRouterType> getVirtualBorderRouterSet()const;
-				void setVirtualBorderRouterSet(const std::vector<VirtualBorderRouterType>& virtualBorderRouterSet);
 
 			protected:
 				void parse(const std::string &payload);

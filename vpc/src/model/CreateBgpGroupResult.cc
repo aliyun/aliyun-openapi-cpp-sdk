@@ -40,17 +40,13 @@ void CreateBgpGroupResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	bgpGroupId_ = value["BgpGroupId"].asString();
+	if(!value["BgpGroupId"].isNull())
+		bgpGroupId_ = value["BgpGroupId"].asString();
 
 }
 
 std::string CreateBgpGroupResult::getBgpGroupId()const
 {
 	return bgpGroupId_;
-}
-
-void CreateBgpGroupResult::setBgpGroupId(const std::string& bgpGroupId)
-{
-	bgpGroupId_ = bgpGroupId;
 }
 

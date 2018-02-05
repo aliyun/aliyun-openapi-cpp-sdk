@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/AddCommonBandwidthPackageIpRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::AddCommonBandwidthPackageIpRequest;
 
 AddCommonBandwidthPackageIpRequest::AddCommonBandwidthPackageIpRequest() :
-	VpcRequest("AddCommonBandwidthPackageIp")
+	RpcServiceRequest("vpc", "2016-04-28", "AddCommonBandwidthPackageIp")
 {}
 
 AddCommonBandwidthPackageIpRequest::~AddCommonBandwidthPackageIpRequest()

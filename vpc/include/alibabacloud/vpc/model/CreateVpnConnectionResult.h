@@ -38,11 +38,8 @@ namespace AlibabaCloud
 				explicit CreateVpnConnectionResult(const std::string &payload);
 				~CreateVpnConnectionResult();
 				long getCreateTime()const;
-				void setCreateTime(long createTime);
 				std::string getVpnConnectionId()const;
-				void setVpnConnectionId(const std::string& vpnConnectionId);
 				std::string getName()const;
-				void setName(const std::string& name);
 
 			protected:
 				void parse(const std::string &payload);

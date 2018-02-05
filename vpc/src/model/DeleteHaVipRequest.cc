@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeleteHaVipRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeleteHaVipRequest;
 
 DeleteHaVipRequest::DeleteHaVipRequest() :
-	VpcRequest("DeleteHaVip")
+	RpcServiceRequest("vpc", "2016-04-28", "DeleteHaVip")
 {}
 
 DeleteHaVipRequest::~DeleteHaVipRequest()

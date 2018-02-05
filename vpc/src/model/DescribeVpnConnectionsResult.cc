@@ -43,46 +43,71 @@ void DescribeVpnConnectionsResult::parse(const std::string &payload)
 	auto allVpnConnections = value["VpnConnections"]["VpnConnection"];
 	for (auto value : allVpnConnections)
 	{
-		VpnConnection vpnConnectionObject;
-		vpnConnectionObject.vpnConnectionId = value["VpnConnectionId"].asString();
-		vpnConnectionObject.customerGatewayId = value["CustomerGatewayId"].asString();
-		vpnConnectionObject.vpnGatewayId = value["VpnGatewayId"].asString();
-		vpnConnectionObject.name = value["Name"].asString();
-		vpnConnectionObject.localSubnet = value["LocalSubnet"].asString();
-		vpnConnectionObject.remoteSubnet = value["RemoteSubnet"].asString();
-		vpnConnectionObject.createTime = std::stol(value["CreateTime"].asString());
-		vpnConnectionObject.effectImmediately = std::stoi(value["EffectImmediately"].asString());
-		vpnConnectionObject.status = value["Status"].asString();
+		VpnConnection vpnConnectionsObject;
+		if(!value["VpnConnectionId"].isNull())
+			vpnConnectionsObject.vpnConnectionId = value["VpnConnectionId"].asString();
+		if(!value["CustomerGatewayId"].isNull())
+			vpnConnectionsObject.customerGatewayId = value["CustomerGatewayId"].asString();
+		if(!value["VpnGatewayId"].isNull())
+			vpnConnectionsObject.vpnGatewayId = value["VpnGatewayId"].asString();
+		if(!value["Name"].isNull())
+			vpnConnectionsObject.name = value["Name"].asString();
+		if(!value["LocalSubnet"].isNull())
+			vpnConnectionsObject.localSubnet = value["LocalSubnet"].asString();
+		if(!value["RemoteSubnet"].isNull())
+			vpnConnectionsObject.remoteSubnet = value["RemoteSubnet"].asString();
+		if(!value["CreateTime"].isNull())
+			vpnConnectionsObject.createTime = std::stol(value["CreateTime"].asString());
+		if(!value["EffectImmediately"].isNull())
+			vpnConnectionsObject.effectImmediately = value["EffectImmediately"].asString() == "true";
+		if(!value["Status"].isNull())
+			vpnConnectionsObject.status = value["Status"].asString();
 		auto allIkeConfig = value["IkeConfig"];
 		for (auto value : allIkeConfig)
 		{
 			VpnConnection::IkeConfig ikeConfigObject;
-			ikeConfigObject.psk = value["Psk"].asString();
-			ikeConfigObject.ikeVersion = value["IkeVersion"].asString();
-			ikeConfigObject.ikeMode = value["IkeMode"].asString();
-			ikeConfigObject.ikeEncAlg = value["IkeEncAlg"].asString();
-			ikeConfigObject.ikeAuthAlg = value["IkeAuthAlg"].asString();
-			ikeConfigObject.ikePfs = value["IkePfs"].asString();
-			ikeConfigObject.ikeLifetime = std::stol(value["IkeLifetime"].asString());
-			ikeConfigObject.localId = value["LocalId"].asString();
-			ikeConfigObject.remoteId = value["RemoteId"].asString();
-			vpnConnectionObject.ikeConfig.push_back(ikeConfigObject);
+			if(!value["Psk"].isNull())
+				ikeConfigObject.psk = value["Psk"].asString();
+			if(!value["IkeVersion"].isNull())
+				ikeConfigObject.ikeVersion = value["IkeVersion"].asString();
+			if(!value["IkeMode"].isNull())
+				ikeConfigObject.ikeMode = value["IkeMode"].asString();
+			if(!value["IkeEncAlg"].isNull())
+				ikeConfigObject.ikeEncAlg = value["IkeEncAlg"].asString();
+			if(!value["IkeAuthAlg"].isNull())
+				ikeConfigObject.ikeAuthAlg = value["IkeAuthAlg"].asString();
+			if(!value["IkePfs"].isNull())
+				ikeConfigObject.ikePfs = value["IkePfs"].asString();
+			if(!value["IkeLifetime"].isNull())
+				ikeConfigObject.ikeLifetime = std::stol(value["IkeLifetime"].asString());
+			if(!value["LocalId"].isNull())
+				ikeConfigObject.localId = value["LocalId"].asString();
+			if(!value["RemoteId"].isNull())
+				ikeConfigObject.remoteId = value["RemoteId"].asString();
+			vpnConnectionsObject.ikeConfig.push_back(ikeConfigObject);
 		}
 		auto allIpsecConfig = value["IpsecConfig"];
 		for (auto value : allIpsecConfig)
 		{
 			VpnConnection::IpsecConfig ipsecConfigObject;
-			ipsecConfigObject.ipsecEncAlg = value["IpsecEncAlg"].asString();
-			ipsecConfigObject.ipsecAuthAlg = value["IpsecAuthAlg"].asString();
-			ipsecConfigObject.ipsecPfs = value["IpsecPfs"].asString();
-			ipsecConfigObject.ipsecLifetime = std::stol(value["IpsecLifetime"].asString());
-			vpnConnectionObject.ipsecConfig.push_back(ipsecConfigObject);
+			if(!value["IpsecEncAlg"].isNull())
+				ipsecConfigObject.ipsecEncAlg = value["IpsecEncAlg"].asString();
+			if(!value["IpsecAuthAlg"].isNull())
+				ipsecConfigObject.ipsecAuthAlg = value["IpsecAuthAlg"].asString();
+			if(!value["IpsecPfs"].isNull())
+				ipsecConfigObject.ipsecPfs = value["IpsecPfs"].asString();
+			if(!value["IpsecLifetime"].isNull())
+				ipsecConfigObject.ipsecLifetime = std::stol(value["IpsecLifetime"].asString());
+			vpnConnectionsObject.ipsecConfig.push_back(ipsecConfigObject);
 		}
-		vpnConnections_.push_back(vpnConnectionObject);
+		vpnConnections_.push_back(vpnConnectionsObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -91,19 +116,9 @@ int DescribeVpnConnectionsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeVpnConnectionsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeVpnConnectionsResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeVpnConnectionsResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeVpnConnectionsResult::getPageNumber()const
@@ -111,8 +126,8 @@ int DescribeVpnConnectionsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeVpnConnectionsResult::setPageNumber(int pageNumber)
+std::vector<DescribeVpnConnectionsResult::VpnConnection> DescribeVpnConnectionsResult::getVpnConnections()const
 {
-	pageNumber_ = pageNumber;
+	return vpnConnections_;
 }
 

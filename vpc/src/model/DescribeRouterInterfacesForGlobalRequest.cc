@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeRouterInterfacesForGlobalRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeRouterInterfacesForGlobalRequest;
 
 DescribeRouterInterfacesForGlobalRequest::DescribeRouterInterfacesForGlobalRequest() :
-	VpcRequest("DescribeRouterInterfacesForGlobal")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeRouterInterfacesForGlobal")
 {}
 
 DescribeRouterInterfacesForGlobalRequest::~DescribeRouterInterfacesForGlobalRequest()

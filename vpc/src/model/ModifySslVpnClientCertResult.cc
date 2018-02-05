@@ -14,32 +14,46 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/vpc/model/GrantInstanceToCbnResult.h>
+#include <alibabacloud/vpc/model/ModifySslVpnClientCertResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Vpc;
 using namespace AlibabaCloud::Vpc::Model;
 
-GrantInstanceToCbnResult::GrantInstanceToCbnResult() :
+ModifySslVpnClientCertResult::ModifySslVpnClientCertResult() :
 	ServiceResult()
 {}
 
-GrantInstanceToCbnResult::GrantInstanceToCbnResult(const std::string &payload) :
+ModifySslVpnClientCertResult::ModifySslVpnClientCertResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GrantInstanceToCbnResult::~GrantInstanceToCbnResult()
+ModifySslVpnClientCertResult::~ModifySslVpnClientCertResult()
 {}
 
-void GrantInstanceToCbnResult::parse(const std::string &payload)
+void ModifySslVpnClientCertResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["SslVpnClientCertId"].isNull())
+		sslVpnClientCertId_ = value["SslVpnClientCertId"].asString();
 
+}
+
+std::string ModifySslVpnClientCertResult::getSslVpnClientCertId()const
+{
+	return sslVpnClientCertId_;
+}
+
+std::string ModifySslVpnClientCertResult::getName()const
+{
+	return name_;
 }
 

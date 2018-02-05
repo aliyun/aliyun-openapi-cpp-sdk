@@ -43,31 +43,57 @@ void DescribePhysicalConnectionsResult::parse(const std::string &payload)
 	auto allPhysicalConnectionSet = value["PhysicalConnectionSet"]["PhysicalConnectionType"];
 	for (auto value : allPhysicalConnectionSet)
 	{
-		PhysicalConnectionType physicalConnectionTypeObject;
-		physicalConnectionTypeObject.physicalConnectionId = value["PhysicalConnectionId"].asString();
-		physicalConnectionTypeObject.accessPointId = value["AccessPointId"].asString();
-		physicalConnectionTypeObject.type = value["Type"].asString();
-		physicalConnectionTypeObject.status = value["Status"].asString();
-		physicalConnectionTypeObject.businessStatus = value["BusinessStatus"].asString();
-		physicalConnectionTypeObject.creationTime = value["CreationTime"].asString();
-		physicalConnectionTypeObject.enabledTime = value["EnabledTime"].asString();
-		physicalConnectionTypeObject.lineOperator = value["LineOperator"].asString();
-		physicalConnectionTypeObject.spec = value["Spec"].asString();
-		physicalConnectionTypeObject.peerLocation = value["PeerLocation"].asString();
-		physicalConnectionTypeObject.portType = value["PortType"].asString();
-		physicalConnectionTypeObject.redundantPhysicalConnectionId = value["RedundantPhysicalConnectionId"].asString();
-		physicalConnectionTypeObject.name = value["Name"].asString();
-		physicalConnectionTypeObject.description = value["Description"].asString();
-		physicalConnectionTypeObject.adLocation = value["AdLocation"].asString();
-		physicalConnectionTypeObject.portNumber = value["PortNumber"].asString();
-		physicalConnectionTypeObject.circuitCode = value["CircuitCode"].asString();
-		physicalConnectionTypeObject.bandwidth = std::stol(value["Bandwidth"].asString());
-		physicalConnectionSet_.push_back(physicalConnectionTypeObject);
+		PhysicalConnectionType physicalConnectionSetObject;
+		if(!value["PhysicalConnectionId"].isNull())
+			physicalConnectionSetObject.physicalConnectionId = value["PhysicalConnectionId"].asString();
+		if(!value["AccessPointId"].isNull())
+			physicalConnectionSetObject.accessPointId = value["AccessPointId"].asString();
+		if(!value["Type"].isNull())
+			physicalConnectionSetObject.type = value["Type"].asString();
+		if(!value["Status"].isNull())
+			physicalConnectionSetObject.status = value["Status"].asString();
+		if(!value["BusinessStatus"].isNull())
+			physicalConnectionSetObject.businessStatus = value["BusinessStatus"].asString();
+		if(!value["CreationTime"].isNull())
+			physicalConnectionSetObject.creationTime = value["CreationTime"].asString();
+		if(!value["EnabledTime"].isNull())
+			physicalConnectionSetObject.enabledTime = value["EnabledTime"].asString();
+		if(!value["LineOperator"].isNull())
+			physicalConnectionSetObject.lineOperator = value["LineOperator"].asString();
+		if(!value["Spec"].isNull())
+			physicalConnectionSetObject.spec = value["Spec"].asString();
+		if(!value["PeerLocation"].isNull())
+			physicalConnectionSetObject.peerLocation = value["PeerLocation"].asString();
+		if(!value["PortType"].isNull())
+			physicalConnectionSetObject.portType = value["PortType"].asString();
+		if(!value["RedundantPhysicalConnectionId"].isNull())
+			physicalConnectionSetObject.redundantPhysicalConnectionId = value["RedundantPhysicalConnectionId"].asString();
+		if(!value["Name"].isNull())
+			physicalConnectionSetObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			physicalConnectionSetObject.description = value["Description"].asString();
+		if(!value["AdLocation"].isNull())
+			physicalConnectionSetObject.adLocation = value["AdLocation"].asString();
+		if(!value["PortNumber"].isNull())
+			physicalConnectionSetObject.portNumber = value["PortNumber"].asString();
+		if(!value["CircuitCode"].isNull())
+			physicalConnectionSetObject.circuitCode = value["CircuitCode"].asString();
+		if(!value["Bandwidth"].isNull())
+			physicalConnectionSetObject.bandwidth = std::stol(value["Bandwidth"].asString());
+		physicalConnectionSet_.push_back(physicalConnectionSetObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
+}
+
+std::vector<DescribePhysicalConnectionsResult::PhysicalConnectionType> DescribePhysicalConnectionsResult::getPhysicalConnectionSet()const
+{
+	return physicalConnectionSet_;
 }
 
 int DescribePhysicalConnectionsResult::getTotalCount()const
@@ -75,28 +101,13 @@ int DescribePhysicalConnectionsResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribePhysicalConnectionsResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribePhysicalConnectionsResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribePhysicalConnectionsResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-}
-
 int DescribePhysicalConnectionsResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-void DescribePhysicalConnectionsResult::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
 }
 

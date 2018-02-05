@@ -40,17 +40,13 @@ void CreateSnatEntryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	snatEntryId_ = value["SnatEntryId"].asString();
+	if(!value["SnatEntryId"].isNull())
+		snatEntryId_ = value["SnatEntryId"].asString();
 
 }
 
 std::string CreateSnatEntryResult::getSnatEntryId()const
 {
 	return snatEntryId_;
-}
-
-void CreateSnatEntryResult::setSnatEntryId(const std::string& snatEntryId)
-{
-	snatEntryId_ = snatEntryId;
 }
 

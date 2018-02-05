@@ -74,13 +74,9 @@ namespace AlibabaCloud
 				explicit DescribeGlobalAccelerationInstancesResult(const std::string &payload);
 				~DescribeGlobalAccelerationInstancesResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::vector<GlobalAccelerationInstance> getGlobalAccelerationInstances()const;
-				void setGlobalAccelerationInstances(const std::vector<GlobalAccelerationInstance>& globalAccelerationInstances);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
 			protected:
 				void parse(const std::string &payload);

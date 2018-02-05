@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/AddBandwidthPackageIpsRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::AddBandwidthPackageIpsRequest;
 
 AddBandwidthPackageIpsRequest::AddBandwidthPackageIpsRequest() :
-	VpcRequest("AddBandwidthPackageIps")
+	RpcServiceRequest("vpc", "2016-04-28", "AddBandwidthPackageIps")
 {}
 
 AddBandwidthPackageIpsRequest::~AddBandwidthPackageIpsRequest()

@@ -49,13 +49,9 @@ namespace AlibabaCloud
 				explicit DescribeForwardTableEntriesResult(const std::string &payload);
 				~DescribeForwardTableEntriesResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<ForwardTableEntry> getForwardTableEntries()const;
-				void setForwardTableEntries(const std::vector<ForwardTableEntry>& forwardTableEntries);
 
 			protected:
 				void parse(const std::string &payload);

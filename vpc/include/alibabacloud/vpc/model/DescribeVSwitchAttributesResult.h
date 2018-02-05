@@ -43,27 +43,16 @@ namespace AlibabaCloud
 				explicit DescribeVSwitchAttributesResult(const std::string &payload);
 				~DescribeVSwitchAttributesResult();
 				std::string getStatus()const;
-				void setStatus(const std::string& status);
 				bool getIsDefault()const;
-				void setIsDefault(bool isDefault);
 				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
 				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
 				long getAvailableIpAddressCount()const;
-				void setAvailableIpAddressCount(long availableIpAddressCount);
 				std::string getCreationTime()const;
-				void setCreationTime(const std::string& creationTime);
 				std::string getCidrBlock()const;
-				void setCidrBlock(const std::string& cidrBlock);
 				std::string getVSwitchName()const;
-				void setVSwitchName(const std::string& vSwitchName);
 				std::vector<CloudResourceSetType> getCloudResources()const;
-				void setCloudResources(const std::vector<CloudResourceSetType>& cloudResources);
 
 			protected:
 				void parse(const std::string &payload);

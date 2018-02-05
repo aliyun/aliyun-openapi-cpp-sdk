@@ -43,18 +43,27 @@ void DescribeSnatTableEntriesResult::parse(const std::string &payload)
 	auto allSnatTableEntries = value["SnatTableEntries"]["SnatTableEntry"];
 	for (auto value : allSnatTableEntries)
 	{
-		SnatTableEntry snatTableEntryObject;
-		snatTableEntryObject.snatTableId = value["SnatTableId"].asString();
-		snatTableEntryObject.snatEntryId = value["SnatEntryId"].asString();
-		snatTableEntryObject.sourceVSwitchId = value["SourceVSwitchId"].asString();
-		snatTableEntryObject.sourceCIDR = value["SourceCIDR"].asString();
-		snatTableEntryObject.snatIp = value["SnatIp"].asString();
-		snatTableEntryObject.status = value["Status"].asString();
-		snatTableEntries_.push_back(snatTableEntryObject);
+		SnatTableEntry snatTableEntriesObject;
+		if(!value["SnatTableId"].isNull())
+			snatTableEntriesObject.snatTableId = value["SnatTableId"].asString();
+		if(!value["SnatEntryId"].isNull())
+			snatTableEntriesObject.snatEntryId = value["SnatEntryId"].asString();
+		if(!value["SourceVSwitchId"].isNull())
+			snatTableEntriesObject.sourceVSwitchId = value["SourceVSwitchId"].asString();
+		if(!value["SourceCIDR"].isNull())
+			snatTableEntriesObject.sourceCIDR = value["SourceCIDR"].asString();
+		if(!value["SnatIp"].isNull())
+			snatTableEntriesObject.snatIp = value["SnatIp"].asString();
+		if(!value["Status"].isNull())
+			snatTableEntriesObject.status = value["Status"].asString();
+		snatTableEntries_.push_back(snatTableEntriesObject);
 	}
-	totalCount_ = std::stoi(value["TotalCount"].asString());
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -63,19 +72,9 @@ int DescribeSnatTableEntriesResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeSnatTableEntriesResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeSnatTableEntriesResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeSnatTableEntriesResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeSnatTableEntriesResult::getPageNumber()const
@@ -83,8 +82,8 @@ int DescribeSnatTableEntriesResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeSnatTableEntriesResult::setPageNumber(int pageNumber)
+std::vector<DescribeSnatTableEntriesResult::SnatTableEntry> DescribeSnatTableEntriesResult::getSnatTableEntries()const
 {
-	pageNumber_ = pageNumber;
+	return snatTableEntries_;
 }
 

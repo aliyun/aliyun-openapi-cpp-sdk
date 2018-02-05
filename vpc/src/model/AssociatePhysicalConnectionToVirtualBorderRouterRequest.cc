@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/AssociatePhysicalConnectionToVirtualBorderRouterRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::AssociatePhysicalConnectionToVirtualBorderRouterRequest;
 
 AssociatePhysicalConnectionToVirtualBorderRouterRequest::AssociatePhysicalConnectionToVirtualBorderRouterRequest() :
-	VpcRequest("AssociatePhysicalConnectionToVirtualBorderRouter")
+	RpcServiceRequest("vpc", "2016-04-28", "AssociatePhysicalConnectionToVirtualBorderRouter")
 {}
 
 AssociatePhysicalConnectionToVirtualBorderRouterRequest::~AssociatePhysicalConnectionToVirtualBorderRouterRequest()

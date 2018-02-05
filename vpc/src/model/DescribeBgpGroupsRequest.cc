@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeBgpGroupsRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeBgpGroupsRequest;
 
 DescribeBgpGroupsRequest::DescribeBgpGroupsRequest() :
-	VpcRequest("DescribeBgpGroups")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeBgpGroups")
 {}
 
 DescribeBgpGroupsRequest::~DescribeBgpGroupsRequest()

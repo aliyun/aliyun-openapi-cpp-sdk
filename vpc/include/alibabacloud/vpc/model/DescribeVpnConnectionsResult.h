@@ -71,13 +71,9 @@ namespace AlibabaCloud
 				explicit DescribeVpnConnectionsResult(const std::string &payload);
 				~DescribeVpnConnectionsResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<VpnConnection> getVpnConnections()const;
-				void setVpnConnections(const std::vector<VpnConnection>& vpnConnections);
 
 			protected:
 				void parse(const std::string &payload);

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeactivateRouterInterfaceRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeactivateRouterInterfaceRequest;
 
 DeactivateRouterInterfaceRequest::DeactivateRouterInterfaceRequest() :
-	VpcRequest("DeactivateRouterInterface")
+	RpcServiceRequest("vpc", "2016-04-28", "DeactivateRouterInterface")
 {}
 
 DeactivateRouterInterfaceRequest::~DeactivateRouterInterfaceRequest()

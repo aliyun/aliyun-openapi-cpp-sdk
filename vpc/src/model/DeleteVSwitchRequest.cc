@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeleteVSwitchRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeleteVSwitchRequest;
 
 DeleteVSwitchRequest::DeleteVSwitchRequest() :
-	VpcRequest("DeleteVSwitch")
+	RpcServiceRequest("vpc", "2016-04-28", "DeleteVSwitch")
 {}
 
 DeleteVSwitchRequest::~DeleteVSwitchRequest()

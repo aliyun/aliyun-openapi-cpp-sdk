@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/RecoverVirtualBorderRouterRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::RecoverVirtualBorderRouterRequest;
 
 RecoverVirtualBorderRouterRequest::RecoverVirtualBorderRouterRequest() :
-	VpcRequest("RecoverVirtualBorderRouter")
+	RpcServiceRequest("vpc", "2016-04-28", "RecoverVirtualBorderRouter")
 {}
 
 RecoverVirtualBorderRouterRequest::~RecoverVirtualBorderRouterRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreateHaVipRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreateHaVipRequest;
 
 CreateHaVipRequest::CreateHaVipRequest() :
-	VpcRequest("CreateHaVip")
+	RpcServiceRequest("vpc", "2016-04-28", "CreateHaVip")
 {}
 
 CreateHaVipRequest::~CreateHaVipRequest()

@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit DescribeZonesResult(const std::string &payload);
 				~DescribeZonesResult();
 				std::vector<Zone> getZones()const;
-				void setZones(const std::vector<Zone>& zones);
 
 			protected:
 				void parse(const std::string &payload);

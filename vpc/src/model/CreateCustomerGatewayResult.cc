@@ -40,11 +40,16 @@ void CreateCustomerGatewayResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	customerGatewayId_ = value["CustomerGatewayId"].asString();
-	ipAddress_ = value["IpAddress"].asString();
-	name_ = value["Name"].asString();
-	description_ = value["Description"].asString();
-	createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["CustomerGatewayId"].isNull())
+		customerGatewayId_ = value["CustomerGatewayId"].asString();
+	if(!value["IpAddress"].isNull())
+		ipAddress_ = value["IpAddress"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
 
 }
 
@@ -53,19 +58,9 @@ std::string CreateCustomerGatewayResult::getDescription()const
 	return description_;
 }
 
-void CreateCustomerGatewayResult::setDescription(const std::string& description)
-{
-	description_ = description;
-}
-
 std::string CreateCustomerGatewayResult::getCustomerGatewayId()const
 {
 	return customerGatewayId_;
-}
-
-void CreateCustomerGatewayResult::setCustomerGatewayId(const std::string& customerGatewayId)
-{
-	customerGatewayId_ = customerGatewayId;
 }
 
 long CreateCustomerGatewayResult::getCreateTime()const
@@ -73,28 +68,13 @@ long CreateCustomerGatewayResult::getCreateTime()const
 	return createTime_;
 }
 
-void CreateCustomerGatewayResult::setCreateTime(long createTime)
-{
-	createTime_ = createTime;
-}
-
 std::string CreateCustomerGatewayResult::getIpAddress()const
 {
 	return ipAddress_;
 }
 
-void CreateCustomerGatewayResult::setIpAddress(const std::string& ipAddress)
-{
-	ipAddress_ = ipAddress;
-}
-
 std::string CreateCustomerGatewayResult::getName()const
 {
 	return name_;
-}
-
-void CreateCustomerGatewayResult::setName(const std::string& name)
-{
-	name_ = name;
 }
 

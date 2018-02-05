@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/UnassociateEipAddressRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::UnassociateEipAddressRequest;
 
 UnassociateEipAddressRequest::UnassociateEipAddressRequest() :
-	VpcRequest("UnassociateEipAddress")
+	RpcServiceRequest("vpc", "2016-04-28", "UnassociateEipAddress")
 {}
 
 UnassociateEipAddressRequest::~UnassociateEipAddressRequest()

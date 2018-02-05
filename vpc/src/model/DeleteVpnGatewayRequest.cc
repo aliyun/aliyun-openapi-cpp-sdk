@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DeleteVpnGatewayRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DeleteVpnGatewayRequest;
 
 DeleteVpnGatewayRequest::DeleteVpnGatewayRequest() :
-	VpcRequest("DeleteVpnGateway")
+	RpcServiceRequest("vpc", "2016-04-28", "DeleteVpnGateway")
 {}
 
 DeleteVpnGatewayRequest::~DeleteVpnGatewayRequest()

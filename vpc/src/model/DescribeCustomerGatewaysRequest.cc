@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/DescribeCustomerGatewaysRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::DescribeCustomerGatewaysRequest;
 
 DescribeCustomerGatewaysRequest::DescribeCustomerGatewaysRequest() :
-	VpcRequest("DescribeCustomerGateways")
+	RpcServiceRequest("vpc", "2016-04-28", "DescribeCustomerGateways")
 {}
 
 DescribeCustomerGatewaysRequest::~DescribeCustomerGatewaysRequest()

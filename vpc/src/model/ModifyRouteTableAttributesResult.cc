@@ -40,9 +40,12 @@ void ModifyRouteTableAttributesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	code_ = value["Code"].asString();
-	message_ = value["Message"].asString();
-	success_ = std::stoi(value["Success"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -51,28 +54,13 @@ std::string ModifyRouteTableAttributesResult::getMessage()const
 	return message_;
 }
 
-void ModifyRouteTableAttributesResult::setMessage(const std::string& message)
-{
-	message_ = message;
-}
-
 std::string ModifyRouteTableAttributesResult::getCode()const
 {
 	return code_;
 }
 
-void ModifyRouteTableAttributesResult::setCode(const std::string& code)
-{
-	code_ = code;
-}
-
 bool ModifyRouteTableAttributesResult::getSuccess()const
 {
 	return success_;
-}
-
-void ModifyRouteTableAttributesResult::setSuccess(bool success)
-{
-	success_ = success;
 }
 

@@ -45,7 +45,6 @@ namespace AlibabaCloud
 				explicit DescribeServerRelatedGlobalAccelerationInstancesResult(const std::string &payload);
 				~DescribeServerRelatedGlobalAccelerationInstancesResult();
 				std::vector<GlobalAccelerationInstance> getGlobalAccelerationInstances()const;
-				void setGlobalAccelerationInstances(const std::vector<GlobalAccelerationInstance>& globalAccelerationInstances);
 
 			protected:
 				void parse(const std::string &payload);

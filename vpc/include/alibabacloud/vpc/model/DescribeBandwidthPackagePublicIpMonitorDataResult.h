@@ -49,7 +49,6 @@ namespace AlibabaCloud
 				explicit DescribeBandwidthPackagePublicIpMonitorDataResult(const std::string &payload);
 				~DescribeBandwidthPackagePublicIpMonitorDataResult();
 				std::vector<MonitorData> getMonitorDatas()const;
-				void setMonitorDatas(const std::vector<MonitorData>& monitorDatas);
 
 			protected:
 				void parse(const std::string &payload);

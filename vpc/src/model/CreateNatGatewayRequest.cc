@@ -16,11 +16,10 @@
 
 #include <alibabacloud/vpc/model/CreateNatGatewayRequest.h>
 
-using namespace AlibabaCloud::Vpc;
-using namespace AlibabaCloud::Vpc::Model;
+using AlibabaCloud::Vpc::Model::CreateNatGatewayRequest;
 
 CreateNatGatewayRequest::CreateNatGatewayRequest() :
-	VpcRequest("CreateNatGateway")
+	RpcServiceRequest("vpc", "2016-04-28", "CreateNatGateway")
 {}
 
 CreateNatGatewayRequest::~CreateNatGatewayRequest()
