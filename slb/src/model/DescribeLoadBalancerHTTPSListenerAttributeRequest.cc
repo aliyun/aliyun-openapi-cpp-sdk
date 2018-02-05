@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DescribeLoadBalancerHTTPSListenerAttributeRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DescribeLoadBalancerHTTPSListenerAttributeRequest;
 
 DescribeLoadBalancerHTTPSListenerAttributeRequest::DescribeLoadBalancerHTTPSListenerAttributeRequest() :
-	SlbRequest("DescribeLoadBalancerHTTPSListenerAttribute")
+	RpcServiceRequest("slb", "2014-05-15", "DescribeLoadBalancerHTTPSListenerAttribute")
 {}
 
 DescribeLoadBalancerHTTPSListenerAttributeRequest::~DescribeLoadBalancerHTTPSListenerAttributeRequest()
@@ -112,17 +111,6 @@ void DescribeLoadBalancerHTTPSListenerAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeRequest::getTags()const

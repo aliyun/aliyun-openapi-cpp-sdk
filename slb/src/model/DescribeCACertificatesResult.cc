@@ -43,16 +43,28 @@ void DescribeCACertificatesResult::parse(const std::string &payload)
 	auto allCACertificates = value["CACertificates"]["CACertificate"];
 	for (auto value : allCACertificates)
 	{
-		CACertificate cACertificateObject;
-		cACertificateObject.regionId = value["RegionId"].asString();
-		cACertificateObject.cACertificateId = value["CACertificateId"].asString();
-		cACertificateObject.cACertificateName = value["CACertificateName"].asString();
-		cACertificateObject.fingerprint = value["Fingerprint"].asString();
-		cACertificateObject.resourceGroupId = value["ResourceGroupId"].asString();
-		cACertificateObject.createTime = value["CreateTime"].asString();
-		cACertificateObject.createTimeStamp = std::stol(value["CreateTimeStamp"].asString());
-		cACertificates_.push_back(cACertificateObject);
+		CACertificate cACertificatesObject;
+		if(!value["RegionId"].isNull())
+			cACertificatesObject.regionId = value["RegionId"].asString();
+		if(!value["CACertificateId"].isNull())
+			cACertificatesObject.cACertificateId = value["CACertificateId"].asString();
+		if(!value["CACertificateName"].isNull())
+			cACertificatesObject.cACertificateName = value["CACertificateName"].asString();
+		if(!value["Fingerprint"].isNull())
+			cACertificatesObject.fingerprint = value["Fingerprint"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			cACertificatesObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["CreateTime"].isNull())
+			cACertificatesObject.createTime = value["CreateTime"].asString();
+		if(!value["CreateTimeStamp"].isNull())
+			cACertificatesObject.createTimeStamp = std::stol(value["CreateTimeStamp"].asString());
+		cACertificates_.push_back(cACertificatesObject);
 	}
 
+}
+
+std::vector<DescribeCACertificatesResult::CACertificate> DescribeCACertificatesResult::getCACertificates()const
+{
+	return cACertificates_;
 }
 

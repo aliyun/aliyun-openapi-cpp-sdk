@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DescribeHealthStatusRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DescribeHealthStatusRequest;
 
 DescribeHealthStatusRequest::DescribeHealthStatusRequest() :
-	SlbRequest("DescribeHealthStatus")
+	RpcServiceRequest("slb", "2014-05-15", "DescribeHealthStatus")
 {}
 
 DescribeHealthStatusRequest::~DescribeHealthStatusRequest()
@@ -112,17 +111,6 @@ void DescribeHealthStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeHealthStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeHealthStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeHealthStatusRequest::getTags()const

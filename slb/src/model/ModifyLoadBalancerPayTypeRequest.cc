@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/ModifyLoadBalancerPayTypeRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::ModifyLoadBalancerPayTypeRequest;
 
 ModifyLoadBalancerPayTypeRequest::ModifyLoadBalancerPayTypeRequest() :
-	SlbRequest("ModifyLoadBalancerPayType")
+	RpcServiceRequest("slb", "2014-05-15", "ModifyLoadBalancerPayType")
 {}
 
 ModifyLoadBalancerPayTypeRequest::~ModifyLoadBalancerPayTypeRequest()
@@ -90,17 +89,6 @@ void ModifyLoadBalancerPayTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyLoadBalancerPayTypeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyLoadBalancerPayTypeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyLoadBalancerPayTypeRequest::getTags()const

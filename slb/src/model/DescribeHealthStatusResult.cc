@@ -43,13 +43,22 @@ void DescribeHealthStatusResult::parse(const std::string &payload)
 	auto allBackendServers = value["BackendServers"]["BackendServer"];
 	for (auto value : allBackendServers)
 	{
-		BackendServer backendServerObject;
-		backendServerObject.listenerPort = std::stoi(value["ListenerPort"].asString());
-		backendServerObject.serverId = value["ServerId"].asString();
-		backendServerObject.port = std::stoi(value["Port"].asString());
-		backendServerObject.serverHealthStatus = value["ServerHealthStatus"].asString();
-		backendServers_.push_back(backendServerObject);
+		BackendServer backendServersObject;
+		if(!value["ListenerPort"].isNull())
+			backendServersObject.listenerPort = std::stoi(value["ListenerPort"].asString());
+		if(!value["ServerId"].isNull())
+			backendServersObject.serverId = value["ServerId"].asString();
+		if(!value["Port"].isNull())
+			backendServersObject.port = std::stoi(value["Port"].asString());
+		if(!value["ServerHealthStatus"].isNull())
+			backendServersObject.serverHealthStatus = value["ServerHealthStatus"].asString();
+		backendServers_.push_back(backendServersObject);
 	}
 
+}
+
+std::vector<DescribeHealthStatusResult::BackendServer> DescribeHealthStatusResult::getBackendServers()const
+{
+	return backendServers_;
 }
 

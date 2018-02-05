@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DeleteServerCertificateRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DeleteServerCertificateRequest;
 
 DeleteServerCertificateRequest::DeleteServerCertificateRequest() :
-	SlbRequest("DeleteServerCertificate")
+	RpcServiceRequest("slb", "2014-05-15", "DeleteServerCertificate")
 {}
 
 DeleteServerCertificateRequest::~DeleteServerCertificateRequest()
@@ -101,17 +100,6 @@ void DeleteServerCertificateRequest::setServerCertificateId(const std::string& s
 {
 	serverCertificateId_ = serverCertificateId;
 	setParameter("ServerCertificateId", serverCertificateId);
-}
-
-std::string DeleteServerCertificateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteServerCertificateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteServerCertificateRequest::getTags()const

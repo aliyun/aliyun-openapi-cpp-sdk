@@ -40,14 +40,22 @@ void CreateLoadBalancerResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	loadBalancerId_ = value["LoadBalancerId"].asString();
-	resourceGroupId_ = value["ResourceGroupId"].asString();
-	address_ = value["Address"].asString();
-	loadBalancerName_ = value["LoadBalancerName"].asString();
-	vpcId_ = value["VpcId"].asString();
-	vSwitchId_ = value["VSwitchId"].asString();
-	networkType_ = value["NetworkType"].asString();
-	orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["LoadBalancerId"].isNull())
+		loadBalancerId_ = value["LoadBalancerId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["Address"].isNull())
+		address_ = value["Address"].asString();
+	if(!value["LoadBalancerName"].isNull())
+		loadBalancerName_ = value["LoadBalancerName"].asString();
+	if(!value["VpcId"].isNull())
+		vpcId_ = value["VpcId"].asString();
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["NetworkType"].isNull())
+		networkType_ = value["NetworkType"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
 
 }
 
@@ -56,19 +64,9 @@ std::string CreateLoadBalancerResult::getLoadBalancerName()const
 	return loadBalancerName_;
 }
 
-void CreateLoadBalancerResult::setLoadBalancerName(const std::string& loadBalancerName)
-{
-	loadBalancerName_ = loadBalancerName;
-}
-
 std::string CreateLoadBalancerResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
-}
-
-void CreateLoadBalancerResult::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
 }
 
 std::string CreateLoadBalancerResult::getAddress()const
@@ -76,19 +74,9 @@ std::string CreateLoadBalancerResult::getAddress()const
 	return address_;
 }
 
-void CreateLoadBalancerResult::setAddress(const std::string& address)
-{
-	address_ = address;
-}
-
 std::string CreateLoadBalancerResult::getVpcId()const
 {
 	return vpcId_;
-}
-
-void CreateLoadBalancerResult::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
 }
 
 std::string CreateLoadBalancerResult::getNetworkType()const
@@ -96,19 +84,9 @@ std::string CreateLoadBalancerResult::getNetworkType()const
 	return networkType_;
 }
 
-void CreateLoadBalancerResult::setNetworkType(const std::string& networkType)
-{
-	networkType_ = networkType;
-}
-
 std::string CreateLoadBalancerResult::getVSwitchId()const
 {
 	return vSwitchId_;
-}
-
-void CreateLoadBalancerResult::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
 }
 
 std::string CreateLoadBalancerResult::getLoadBalancerId()const
@@ -116,18 +94,8 @@ std::string CreateLoadBalancerResult::getLoadBalancerId()const
 	return loadBalancerId_;
 }
 
-void CreateLoadBalancerResult::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-}
-
 long CreateLoadBalancerResult::getOrderId()const
 {
 	return orderId_;
-}
-
-void CreateLoadBalancerResult::setOrderId(long orderId)
-{
-	orderId_ = orderId;
 }
 

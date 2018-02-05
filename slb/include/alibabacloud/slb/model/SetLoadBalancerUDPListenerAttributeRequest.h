@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/slb/SlbRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/slb/SlbExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT SetLoadBalancerUDPListenerAttributeRequest : public SlbRequest
+			class ALIBABACLOUD_SLB_EXPORT SetLoadBalancerUDPListenerAttributeRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -44,8 +45,6 @@ namespace AlibabaCloud
 				void setUnhealthyThreshold(int unhealthyThreshold);
 				int getHealthyThreshold()const;
 				void setHealthyThreshold(int healthyThreshold);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getScheduler()const;
 				void setScheduler(const std::string& scheduler);
 				std::string getMasterSlaveServerGroup()const;
@@ -91,7 +90,6 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				int unhealthyThreshold_;
 				int healthyThreshold_;
-				std::string accessKeyId_;
 				std::string scheduler_;
 				std::string masterSlaveServerGroup_;
 				int maxConnection_;

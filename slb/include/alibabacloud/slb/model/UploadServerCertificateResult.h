@@ -38,27 +38,16 @@ namespace AlibabaCloud
 				explicit UploadServerCertificateResult(const std::string &payload);
 				~UploadServerCertificateResult();
 				std::string getRegionIdAlias()const;
-				void setRegionIdAlias(const std::string& regionIdAlias);
 				std::string getFingerprint()const;
-				void setFingerprint(const std::string& fingerprint);
 				std::string getAliCloudCertificateName()const;
-				void setAliCloudCertificateName(const std::string& aliCloudCertificateName);
 				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				int getIsAliCloudCertificate()const;
-				void setIsAliCloudCertificate(int isAliCloudCertificate);
 				std::string getCreateTime()const;
-				void setCreateTime(const std::string& createTime);
 				std::string getServerCertificateId()const;
-				void setServerCertificateId(const std::string& serverCertificateId);
 				std::string getServerCertificateName()const;
-				void setServerCertificateName(const std::string& serverCertificateName);
 				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				long getCreateTimeStamp()const;
-				void setCreateTimeStamp(long createTimeStamp);
 				std::string getAliCloudCertificateId()const;
-				void setAliCloudCertificateId(const std::string& aliCloudCertificateId);
 
 			protected:
 				void parse(const std::string &payload);

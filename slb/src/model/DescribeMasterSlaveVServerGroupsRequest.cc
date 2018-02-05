@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DescribeMasterSlaveVServerGroupsRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DescribeMasterSlaveVServerGroupsRequest;
 
 DescribeMasterSlaveVServerGroupsRequest::DescribeMasterSlaveVServerGroupsRequest() :
-	SlbRequest("DescribeMasterSlaveVServerGroups")
+	RpcServiceRequest("slb", "2014-05-15", "DescribeMasterSlaveVServerGroups")
 {}
 
 DescribeMasterSlaveVServerGroupsRequest::~DescribeMasterSlaveVServerGroupsRequest()

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/CreateMasterSlaveServerGroupRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::CreateMasterSlaveServerGroupRequest;
 
 CreateMasterSlaveServerGroupRequest::CreateMasterSlaveServerGroupRequest() :
-	SlbRequest("CreateMasterSlaveServerGroup")
+	RpcServiceRequest("slb", "2014-05-15", "CreateMasterSlaveServerGroup")
 {}
 
 CreateMasterSlaveServerGroupRequest::~CreateMasterSlaveServerGroupRequest()
@@ -123,17 +122,6 @@ void CreateMasterSlaveServerGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateMasterSlaveServerGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateMasterSlaveServerGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getTags()const

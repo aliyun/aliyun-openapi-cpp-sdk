@@ -40,8 +40,10 @@ void DescribeListenerAccessControlAttributeResult::parse(const std::string &payl
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	accessControlStatus_ = value["AccessControlStatus"].asString();
-	sourceItems_ = value["SourceItems"].asString();
+	if(!value["AccessControlStatus"].isNull())
+		accessControlStatus_ = value["AccessControlStatus"].asString();
+	if(!value["SourceItems"].isNull())
+		sourceItems_ = value["SourceItems"].asString();
 
 }
 
@@ -50,18 +52,8 @@ std::string DescribeListenerAccessControlAttributeResult::getAccessControlStatus
 	return accessControlStatus_;
 }
 
-void DescribeListenerAccessControlAttributeResult::setAccessControlStatus(const std::string& accessControlStatus)
-{
-	accessControlStatus_ = accessControlStatus;
-}
-
 std::string DescribeListenerAccessControlAttributeResult::getSourceItems()const
 {
 	return sourceItems_;
-}
-
-void DescribeListenerAccessControlAttributeResult::setSourceItems(const std::string& sourceItems)
-{
-	sourceItems_ = sourceItems;
 }
 

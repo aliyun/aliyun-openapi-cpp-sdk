@@ -43,14 +43,24 @@ void DescribeRulesResult::parse(const std::string &payload)
 	auto allRules = value["Rules"]["Rule"];
 	for (auto value : allRules)
 	{
-		Rule ruleObject;
-		ruleObject.ruleId = value["RuleId"].asString();
-		ruleObject.ruleName = value["RuleName"].asString();
-		ruleObject.domain = value["Domain"].asString();
-		ruleObject.url = value["Url"].asString();
-		ruleObject.vServerGroupId = value["VServerGroupId"].asString();
-		rules_.push_back(ruleObject);
+		Rule rulesObject;
+		if(!value["RuleId"].isNull())
+			rulesObject.ruleId = value["RuleId"].asString();
+		if(!value["RuleName"].isNull())
+			rulesObject.ruleName = value["RuleName"].asString();
+		if(!value["Domain"].isNull())
+			rulesObject.domain = value["Domain"].asString();
+		if(!value["Url"].isNull())
+			rulesObject.url = value["Url"].asString();
+		if(!value["VServerGroupId"].isNull())
+			rulesObject.vServerGroupId = value["VServerGroupId"].asString();
+		rules_.push_back(rulesObject);
 	}
 
+}
+
+std::vector<DescribeRulesResult::Rule> DescribeRulesResult::getRules()const
+{
+	return rules_;
 }
 

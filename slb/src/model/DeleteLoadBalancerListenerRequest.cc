@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DeleteLoadBalancerListenerRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DeleteLoadBalancerListenerRequest;
 
 DeleteLoadBalancerListenerRequest::DeleteLoadBalancerListenerRequest() :
-	SlbRequest("DeleteLoadBalancerListener")
+	RpcServiceRequest("slb", "2014-05-15", "DeleteLoadBalancerListener")
 {}
 
 DeleteLoadBalancerListenerRequest::~DeleteLoadBalancerListenerRequest()
@@ -112,17 +111,6 @@ void DeleteLoadBalancerListenerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteLoadBalancerListenerRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteLoadBalancerListenerRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteLoadBalancerListenerRequest::getTags()const

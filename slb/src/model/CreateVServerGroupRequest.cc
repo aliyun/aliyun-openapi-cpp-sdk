@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/CreateVServerGroupRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::CreateVServerGroupRequest;
 
 CreateVServerGroupRequest::CreateVServerGroupRequest() :
-	SlbRequest("CreateVServerGroup")
+	RpcServiceRequest("slb", "2014-05-15", "CreateVServerGroup")
 {}
 
 CreateVServerGroupRequest::~CreateVServerGroupRequest()
@@ -112,17 +111,6 @@ void CreateVServerGroupRequest::setBackendServers(const std::string& backendServ
 {
 	backendServers_ = backendServers;
 	setParameter("BackendServers", backendServers);
-}
-
-std::string CreateVServerGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateVServerGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateVServerGroupRequest::getTags()const

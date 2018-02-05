@@ -38,9 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeListenerAccessControlAttributeResult(const std::string &payload);
 				~DescribeListenerAccessControlAttributeResult();
 				std::string getAccessControlStatus()const;
-				void setAccessControlStatus(const std::string& accessControlStatus);
 				std::string getSourceItems()const;
-				void setSourceItems(const std::string& sourceItems);
 
 			protected:
 				void parse(const std::string &payload);

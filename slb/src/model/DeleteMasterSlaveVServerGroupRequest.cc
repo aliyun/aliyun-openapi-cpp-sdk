@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DeleteMasterSlaveVServerGroupRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DeleteMasterSlaveVServerGroupRequest;
 
 DeleteMasterSlaveVServerGroupRequest::DeleteMasterSlaveVServerGroupRequest() :
-	SlbRequest("DeleteMasterSlaveVServerGroup")
+	RpcServiceRequest("slb", "2014-05-15", "DeleteMasterSlaveVServerGroup")
 {}
 
 DeleteMasterSlaveVServerGroupRequest::~DeleteMasterSlaveVServerGroupRequest()

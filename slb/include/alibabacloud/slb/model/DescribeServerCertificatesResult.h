@@ -52,7 +52,6 @@ namespace AlibabaCloud
 				explicit DescribeServerCertificatesResult(const std::string &payload);
 				~DescribeServerCertificatesResult();
 				std::vector<ServerCertificate> getServerCertificates()const;
-				void setServerCertificates(const std::vector<ServerCertificate>& serverCertificates);
 
 			protected:
 				void parse(const std::string &payload);

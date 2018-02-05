@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/SetCACertificateNameRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::SetCACertificateNameRequest;
 
 SetCACertificateNameRequest::SetCACertificateNameRequest() :
-	SlbRequest("SetCACertificateName")
+	RpcServiceRequest("slb", "2014-05-15", "SetCACertificateName")
 {}
 
 SetCACertificateNameRequest::~SetCACertificateNameRequest()
@@ -112,16 +111,5 @@ void SetCACertificateNameRequest::setCACertificateId(const std::string& cACertif
 {
 	cACertificateId_ = cACertificateId;
 	setParameter("CACertificateId", cACertificateId);
-}
-
-std::string SetCACertificateNameRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetCACertificateNameRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

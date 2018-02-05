@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/slb/SlbRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/slb/SlbExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT UploadServerCertificateRequest : public SlbRequest
+			class ALIBABACLOUD_SLB_EXPORT UploadServerCertificateRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -50,8 +51,6 @@ namespace AlibabaCloud
 				void setAliCloudCertificateId(const std::string& aliCloudCertificateId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 				std::string getPrivateKey()const;
@@ -72,7 +71,6 @@ namespace AlibabaCloud
 				std::string aliCloudCertificateName_;
 				std::string aliCloudCertificateId_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string tags_;
 				std::string privateKey_;
 				std::string resourceGroupId_;

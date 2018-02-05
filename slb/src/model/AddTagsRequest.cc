@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/AddTagsRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::AddTagsRequest;
 
 AddTagsRequest::AddTagsRequest() :
-	SlbRequest("AddTags")
+	RpcServiceRequest("slb", "2014-05-15", "AddTags")
 {}
 
 AddTagsRequest::~AddTagsRequest()
@@ -101,17 +100,6 @@ void AddTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string AddTagsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddTagsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddTagsRequest::getTags()const

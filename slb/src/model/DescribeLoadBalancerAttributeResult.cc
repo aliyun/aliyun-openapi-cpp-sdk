@@ -43,53 +43,86 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 	auto allListenerPortsAndProtocal = value["ListenerPortsAndProtocal"]["ListenerPortAndProtocal"];
 	for (auto value : allListenerPortsAndProtocal)
 	{
-		ListenerPortAndProtocal listenerPortAndProtocalObject;
-		listenerPortAndProtocalObject.listenerPort = std::stoi(value["ListenerPort"].asString());
-		listenerPortAndProtocalObject.listenerProtocal = value["ListenerProtocal"].asString();
-		listenerPortsAndProtocal_.push_back(listenerPortAndProtocalObject);
+		ListenerPortAndProtocal listenerPortsAndProtocalObject;
+		if(!value["ListenerPort"].isNull())
+			listenerPortsAndProtocalObject.listenerPort = std::stoi(value["ListenerPort"].asString());
+		if(!value["ListenerProtocal"].isNull())
+			listenerPortsAndProtocalObject.listenerProtocal = value["ListenerProtocal"].asString();
+		listenerPortsAndProtocal_.push_back(listenerPortsAndProtocalObject);
 	}
 	auto allListenerPortsAndProtocol = value["ListenerPortsAndProtocol"]["ListenerPortAndProtocol"];
 	for (auto value : allListenerPortsAndProtocol)
 	{
-		ListenerPortAndProtocol listenerPortAndProtocolObject;
-		listenerPortAndProtocolObject.listenerPort = std::stoi(value["ListenerPort"].asString());
-		listenerPortAndProtocolObject.listenerProtocol = value["ListenerProtocol"].asString();
-		listenerPortsAndProtocol_.push_back(listenerPortAndProtocolObject);
+		ListenerPortAndProtocol listenerPortsAndProtocolObject;
+		if(!value["ListenerPort"].isNull())
+			listenerPortsAndProtocolObject.listenerPort = std::stoi(value["ListenerPort"].asString());
+		if(!value["ListenerProtocol"].isNull())
+			listenerPortsAndProtocolObject.listenerProtocol = value["ListenerProtocol"].asString();
+		listenerPortsAndProtocol_.push_back(listenerPortsAndProtocolObject);
 	}
 	auto allBackendServers = value["BackendServers"]["BackendServer"];
 	for (auto value : allBackendServers)
 	{
-		BackendServer backendServerObject;
-		backendServerObject.serverId = value["ServerId"].asString();
-		backendServerObject.weight = std::stoi(value["Weight"].asString());
-		backendServers_.push_back(backendServerObject);
+		BackendServer backendServersObject;
+		if(!value["ServerId"].isNull())
+			backendServersObject.serverId = value["ServerId"].asString();
+		if(!value["Weight"].isNull())
+			backendServersObject.weight = std::stoi(value["Weight"].asString());
+		backendServers_.push_back(backendServersObject);
 	}
 	auto allListenerPorts = value["ListenerPorts"]["ListenerPort"];
 	for (const auto &item : allListenerPorts)
 		listenerPorts_.push_back(item.asString());
-	loadBalancerId_ = value["LoadBalancerId"].asString();
-	resourceGroupId_ = value["ResourceGroupId"].asString();
-	loadBalancerName_ = value["LoadBalancerName"].asString();
-	loadBalancerStatus_ = value["LoadBalancerStatus"].asString();
-	regionId_ = value["RegionId"].asString();
-	regionIdAlias_ = value["RegionIdAlias"].asString();
-	address_ = value["Address"].asString();
-	addressType_ = value["AddressType"].asString();
-	vpcId_ = value["VpcId"].asString();
-	vSwitchId_ = value["VSwitchId"].asString();
-	networkType_ = value["NetworkType"].asString();
-	internetChargeType_ = value["InternetChargeType"].asString();
-	autoReleaseTime_ = std::stol(value["AutoReleaseTime"].asString());
-	bandwidth_ = std::stoi(value["Bandwidth"].asString());
-	loadBalancerSpec_ = value["LoadBalancerSpec"].asString();
-	createTime_ = value["CreateTime"].asString();
-	createTimeStamp_ = std::stol(value["CreateTimeStamp"].asString());
-	endTime_ = value["EndTime"].asString();
-	endTimeStamp_ = std::stol(value["EndTimeStamp"].asString());
-	payType_ = value["PayType"].asString();
-	masterZoneId_ = value["MasterZoneId"].asString();
-	slaveZoneId_ = value["SlaveZoneId"].asString();
+	if(!value["LoadBalancerId"].isNull())
+		loadBalancerId_ = value["LoadBalancerId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["LoadBalancerName"].isNull())
+		loadBalancerName_ = value["LoadBalancerName"].asString();
+	if(!value["LoadBalancerStatus"].isNull())
+		loadBalancerStatus_ = value["LoadBalancerStatus"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["RegionIdAlias"].isNull())
+		regionIdAlias_ = value["RegionIdAlias"].asString();
+	if(!value["Address"].isNull())
+		address_ = value["Address"].asString();
+	if(!value["AddressType"].isNull())
+		addressType_ = value["AddressType"].asString();
+	if(!value["VpcId"].isNull())
+		vpcId_ = value["VpcId"].asString();
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["NetworkType"].isNull())
+		networkType_ = value["NetworkType"].asString();
+	if(!value["InternetChargeType"].isNull())
+		internetChargeType_ = value["InternetChargeType"].asString();
+	if(!value["AutoReleaseTime"].isNull())
+		autoReleaseTime_ = std::stol(value["AutoReleaseTime"].asString());
+	if(!value["Bandwidth"].isNull())
+		bandwidth_ = std::stoi(value["Bandwidth"].asString());
+	if(!value["LoadBalancerSpec"].isNull())
+		loadBalancerSpec_ = value["LoadBalancerSpec"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["CreateTimeStamp"].isNull())
+		createTimeStamp_ = std::stol(value["CreateTimeStamp"].asString());
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["EndTimeStamp"].isNull())
+		endTimeStamp_ = std::stol(value["EndTimeStamp"].asString());
+	if(!value["PayType"].isNull())
+		payType_ = value["PayType"].asString();
+	if(!value["MasterZoneId"].isNull())
+		masterZoneId_ = value["MasterZoneId"].asString();
+	if(!value["SlaveZoneId"].isNull())
+		slaveZoneId_ = value["SlaveZoneId"].asString();
 
+}
+
+std::vector<DescribeLoadBalancerAttributeResult::ListenerPortAndProtocal> DescribeLoadBalancerAttributeResult::getListenerPortsAndProtocal()const
+{
+	return listenerPortsAndProtocal_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getResourceGroupId()const
@@ -97,19 +130,9 @@ std::string DescribeLoadBalancerAttributeResult::getResourceGroupId()const
 	return resourceGroupId_;
 }
 
-void DescribeLoadBalancerAttributeResult::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-}
-
 std::string DescribeLoadBalancerAttributeResult::getAddress()const
 {
 	return address_;
-}
-
-void DescribeLoadBalancerAttributeResult::setAddress(const std::string& address)
-{
-	address_ = address;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getEndTime()const
@@ -117,29 +140,9 @@ std::string DescribeLoadBalancerAttributeResult::getEndTime()const
 	return endTime_;
 }
 
-void DescribeLoadBalancerAttributeResult::setEndTime(const std::string& endTime)
+std::vector<DescribeLoadBalancerAttributeResult::ListenerPortAndProtocol> DescribeLoadBalancerAttributeResult::getListenerPortsAndProtocol()const
 {
-	endTime_ = endTime;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
-void DescribeLoadBalancerAttributeResult::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getCreateTime()const
-{
-	return createTime_;
-}
-
-void DescribeLoadBalancerAttributeResult::setCreateTime(const std::string& createTime)
-{
-	createTime_ = createTime;
+	return listenerPortsAndProtocol_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getLoadBalancerId()const
@@ -147,39 +150,9 @@ std::string DescribeLoadBalancerAttributeResult::getLoadBalancerId()const
 	return loadBalancerId_;
 }
 
-void DescribeLoadBalancerAttributeResult::setLoadBalancerId(const std::string& loadBalancerId)
+std::vector<DescribeLoadBalancerAttributeResult::BackendServer> DescribeLoadBalancerAttributeResult::getBackendServers()const
 {
-	loadBalancerId_ = loadBalancerId;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getPayType()const
-{
-	return payType_;
-}
-
-void DescribeLoadBalancerAttributeResult::setPayType(const std::string& payType)
-{
-	payType_ = payType;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getSlaveZoneId()const
-{
-	return slaveZoneId_;
-}
-
-void DescribeLoadBalancerAttributeResult::setSlaveZoneId(const std::string& slaveZoneId)
-{
-	slaveZoneId_ = slaveZoneId;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getInternetChargeType()const
-{
-	return internetChargeType_;
-}
-
-void DescribeLoadBalancerAttributeResult::setInternetChargeType(const std::string& internetChargeType)
-{
-	internetChargeType_ = internetChargeType;
+	return backendServers_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getLoadBalancerSpec()const
@@ -187,59 +160,9 @@ std::string DescribeLoadBalancerAttributeResult::getLoadBalancerSpec()const
 	return loadBalancerSpec_;
 }
 
-void DescribeLoadBalancerAttributeResult::setLoadBalancerSpec(const std::string& loadBalancerSpec)
-{
-	loadBalancerSpec_ = loadBalancerSpec;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getRegionIdAlias()const
-{
-	return regionIdAlias_;
-}
-
-void DescribeLoadBalancerAttributeResult::setRegionIdAlias(const std::string& regionIdAlias)
-{
-	regionIdAlias_ = regionIdAlias;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getLoadBalancerName()const
-{
-	return loadBalancerName_;
-}
-
-void DescribeLoadBalancerAttributeResult::setLoadBalancerName(const std::string& loadBalancerName)
-{
-	loadBalancerName_ = loadBalancerName;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getVpcId()const
-{
-	return vpcId_;
-}
-
-void DescribeLoadBalancerAttributeResult::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-}
-
-long DescribeLoadBalancerAttributeResult::getEndTimeStamp()const
-{
-	return endTimeStamp_;
-}
-
-void DescribeLoadBalancerAttributeResult::setEndTimeStamp(long endTimeStamp)
-{
-	endTimeStamp_ = endTimeStamp;
-}
-
 std::string DescribeLoadBalancerAttributeResult::getNetworkType()const
 {
 	return networkType_;
-}
-
-void DescribeLoadBalancerAttributeResult::setNetworkType(const std::string& networkType)
-{
-	networkType_ = networkType;
 }
 
 int DescribeLoadBalancerAttributeResult::getBandwidth()const
@@ -247,59 +170,9 @@ int DescribeLoadBalancerAttributeResult::getBandwidth()const
 	return bandwidth_;
 }
 
-void DescribeLoadBalancerAttributeResult::setBandwidth(int bandwidth)
-{
-	bandwidth_ = bandwidth;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeLoadBalancerAttributeResult::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getAddressType()const
-{
-	return addressType_;
-}
-
-void DescribeLoadBalancerAttributeResult::setAddressType(const std::string& addressType)
-{
-	addressType_ = addressType;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getLoadBalancerStatus()const
-{
-	return loadBalancerStatus_;
-}
-
-void DescribeLoadBalancerAttributeResult::setLoadBalancerStatus(const std::string& loadBalancerStatus)
-{
-	loadBalancerStatus_ = loadBalancerStatus;
-}
-
 std::vector<std::string> DescribeLoadBalancerAttributeResult::getListenerPorts()const
 {
 	return listenerPorts_;
-}
-
-void DescribeLoadBalancerAttributeResult::setListenerPorts(const std::vector<std::string>& listenerPorts)
-{
-	listenerPorts_ = listenerPorts;
-}
-
-long DescribeLoadBalancerAttributeResult::getCreateTimeStamp()const
-{
-	return createTimeStamp_;
-}
-
-void DescribeLoadBalancerAttributeResult::setCreateTimeStamp(long createTimeStamp)
-{
-	createTimeStamp_ = createTimeStamp;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getMasterZoneId()const
@@ -307,18 +180,73 @@ std::string DescribeLoadBalancerAttributeResult::getMasterZoneId()const
 	return masterZoneId_;
 }
 
-void DescribeLoadBalancerAttributeResult::setMasterZoneId(const std::string& masterZoneId)
+std::string DescribeLoadBalancerAttributeResult::getVSwitchId()const
 {
-	masterZoneId_ = masterZoneId;
+	return vSwitchId_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getCreateTime()const
+{
+	return createTime_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getPayType()const
+{
+	return payType_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getSlaveZoneId()const
+{
+	return slaveZoneId_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getInternetChargeType()const
+{
+	return internetChargeType_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getRegionIdAlias()const
+{
+	return regionIdAlias_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getLoadBalancerName()const
+{
+	return loadBalancerName_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getVpcId()const
+{
+	return vpcId_;
+}
+
+long DescribeLoadBalancerAttributeResult::getEndTimeStamp()const
+{
+	return endTimeStamp_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getRegionId()const
+{
+	return regionId_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getAddressType()const
+{
+	return addressType_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getLoadBalancerStatus()const
+{
+	return loadBalancerStatus_;
+}
+
+long DescribeLoadBalancerAttributeResult::getCreateTimeStamp()const
+{
+	return createTimeStamp_;
 }
 
 long DescribeLoadBalancerAttributeResult::getAutoReleaseTime()const
 {
 	return autoReleaseTime_;
-}
-
-void DescribeLoadBalancerAttributeResult::setAutoReleaseTime(long autoReleaseTime)
-{
-	autoReleaseTime_ = autoReleaseTime;
 }
 

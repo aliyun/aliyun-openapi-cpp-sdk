@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/CreateLoadBalancerRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::CreateLoadBalancerRequest;
 
 CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
-	SlbRequest("CreateLoadBalancer")
+	RpcServiceRequest("slb", "2014-05-15", "CreateLoadBalancer")
 {}
 
 CreateLoadBalancerRequest::~CreateLoadBalancerRequest()
@@ -37,116 +36,6 @@ void CreateLoadBalancerRequest::setAccess_key_id(const std::string& access_key_i
 	setParameter("Access_key_id", access_key_id);
 }
 
-long CreateLoadBalancerRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void CreateLoadBalancerRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string CreateLoadBalancerRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void CreateLoadBalancerRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
-}
-
-std::string CreateLoadBalancerRequest::getMasterZoneId()const
-{
-	return masterZoneId_;
-}
-
-void CreateLoadBalancerRequest::setMasterZoneId(const std::string& masterZoneId)
-{
-	masterZoneId_ = masterZoneId;
-	setParameter("MasterZoneId", masterZoneId);
-}
-
-std::string CreateLoadBalancerRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateLoadBalancerRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-int CreateLoadBalancerRequest::getDuration()const
-{
-	return duration_;
-}
-
-void CreateLoadBalancerRequest::setDuration(int duration)
-{
-	duration_ = duration;
-	setParameter("Duration", std::to_string(duration));
-}
-
-std::string CreateLoadBalancerRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void CreateLoadBalancerRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string CreateLoadBalancerRequest::getLoadBalancerName()const
-{
-	return loadBalancerName_;
-}
-
-void CreateLoadBalancerRequest::setLoadBalancerName(const std::string& loadBalancerName)
-{
-	loadBalancerName_ = loadBalancerName;
-	setParameter("LoadBalancerName", loadBalancerName);
-}
-
-std::string CreateLoadBalancerRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateLoadBalancerRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string CreateLoadBalancerRequest::getAddressType()const
-{
-	return addressType_;
-}
-
-void CreateLoadBalancerRequest::setAddressType(const std::string& addressType)
-{
-	addressType_ = addressType;
-	setParameter("AddressType", addressType);
-}
-
-std::string CreateLoadBalancerRequest::getSlaveZoneId()const
-{
-	return slaveZoneId_;
-}
-
-void CreateLoadBalancerRequest::setSlaveZoneId(const std::string& slaveZoneId)
-{
-	slaveZoneId_ = slaveZoneId;
-	setParameter("SlaveZoneId", slaveZoneId);
-}
-
 std::string CreateLoadBalancerRequest::getLoadBalancerSpec()const
 {
 	return loadBalancerSpec_;
@@ -156,6 +45,17 @@ void CreateLoadBalancerRequest::setLoadBalancerSpec(const std::string& loadBalan
 {
 	loadBalancerSpec_ = loadBalancerSpec;
 	setParameter("LoadBalancerSpec", loadBalancerSpec);
+}
+
+long CreateLoadBalancerRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void CreateLoadBalancerRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool CreateLoadBalancerRequest::getAutoPay()const
@@ -191,6 +91,17 @@ void CreateLoadBalancerRequest::setBandwidth(int bandwidth)
 	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
+std::string CreateLoadBalancerRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateLoadBalancerRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string CreateLoadBalancerRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -211,6 +122,17 @@ void CreateLoadBalancerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateLoadBalancerRequest::getMasterZoneId()const
+{
+	return masterZoneId_;
+}
+
+void CreateLoadBalancerRequest::setMasterZoneId(const std::string& masterZoneId)
+{
+	masterZoneId_ = masterZoneId;
+	setParameter("MasterZoneId", masterZoneId);
 }
 
 std::string CreateLoadBalancerRequest::getTags()const
@@ -235,6 +157,39 @@ void CreateLoadBalancerRequest::setVSwitchId(const std::string& vSwitchId)
 	setParameter("VSwitchId", vSwitchId);
 }
 
+int CreateLoadBalancerRequest::getDuration()const
+{
+	return duration_;
+}
+
+void CreateLoadBalancerRequest::setDuration(int duration)
+{
+	duration_ = duration;
+	setParameter("Duration", std::to_string(duration));
+}
+
+std::string CreateLoadBalancerRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateLoadBalancerRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateLoadBalancerRequest::getLoadBalancerName()const
+{
+	return loadBalancerName_;
+}
+
+void CreateLoadBalancerRequest::setLoadBalancerName(const std::string& loadBalancerName)
+{
+	loadBalancerName_ = loadBalancerName;
+	setParameter("LoadBalancerName", loadBalancerName);
+}
+
 std::string CreateLoadBalancerRequest::getEnableVpcVipFlow()const
 {
 	return enableVpcVipFlow_;
@@ -244,6 +199,17 @@ void CreateLoadBalancerRequest::setEnableVpcVipFlow(const std::string& enableVpc
 {
 	enableVpcVipFlow_ = enableVpcVipFlow;
 	setParameter("EnableVpcVipFlow", enableVpcVipFlow);
+}
+
+std::string CreateLoadBalancerRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateLoadBalancerRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateLoadBalancerRequest::getInternetChargeType()const
@@ -266,6 +232,28 @@ void CreateLoadBalancerRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
 	setParameter("VpcId", vpcId);
+}
+
+std::string CreateLoadBalancerRequest::getAddressType()const
+{
+	return addressType_;
+}
+
+void CreateLoadBalancerRequest::setAddressType(const std::string& addressType)
+{
+	addressType_ = addressType;
+	setParameter("AddressType", addressType);
+}
+
+std::string CreateLoadBalancerRequest::getSlaveZoneId()const
+{
+	return slaveZoneId_;
+}
+
+void CreateLoadBalancerRequest::setSlaveZoneId(const std::string& slaveZoneId)
+{
+	slaveZoneId_ = slaveZoneId;
+	setParameter("SlaveZoneId", slaveZoneId);
 }
 
 std::string CreateLoadBalancerRequest::getPayType()const

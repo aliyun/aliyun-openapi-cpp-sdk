@@ -43,11 +43,18 @@ void DescribeMasterSlaveVServerGroupsResult::parse(const std::string &payload)
 	auto allMasterSlaveVServerGroups = value["MasterSlaveVServerGroups"]["MasterSlaveVServerGroup"];
 	for (auto value : allMasterSlaveVServerGroups)
 	{
-		MasterSlaveVServerGroup masterSlaveVServerGroupObject;
-		masterSlaveVServerGroupObject.masterSlaveVServerGroupId = value["MasterSlaveVServerGroupId"].asString();
-		masterSlaveVServerGroupObject.masterSlaveVServerGroupName = value["MasterSlaveVServerGroupName"].asString();
-		masterSlaveVServerGroups_.push_back(masterSlaveVServerGroupObject);
+		MasterSlaveVServerGroup masterSlaveVServerGroupsObject;
+		if(!value["MasterSlaveVServerGroupId"].isNull())
+			masterSlaveVServerGroupsObject.masterSlaveVServerGroupId = value["MasterSlaveVServerGroupId"].asString();
+		if(!value["MasterSlaveVServerGroupName"].isNull())
+			masterSlaveVServerGroupsObject.masterSlaveVServerGroupName = value["MasterSlaveVServerGroupName"].asString();
+		masterSlaveVServerGroups_.push_back(masterSlaveVServerGroupsObject);
 	}
 
+}
+
+std::vector<DescribeMasterSlaveVServerGroupsResult::MasterSlaveVServerGroup> DescribeMasterSlaveVServerGroupsResult::getMasterSlaveVServerGroups()const
+{
+	return masterSlaveVServerGroups_;
 }
 

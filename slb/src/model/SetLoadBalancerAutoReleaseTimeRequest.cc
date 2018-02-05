@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/SetLoadBalancerAutoReleaseTimeRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::SetLoadBalancerAutoReleaseTimeRequest;
 
 SetLoadBalancerAutoReleaseTimeRequest::SetLoadBalancerAutoReleaseTimeRequest() :
-	SlbRequest("SetLoadBalancerAutoReleaseTime")
+	RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerAutoReleaseTime")
 {}
 
 SetLoadBalancerAutoReleaseTimeRequest::~SetLoadBalancerAutoReleaseTimeRequest()
@@ -112,17 +111,6 @@ void SetLoadBalancerAutoReleaseTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string SetLoadBalancerAutoReleaseTimeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetLoadBalancerAutoReleaseTimeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetLoadBalancerAutoReleaseTimeRequest::getTags()const

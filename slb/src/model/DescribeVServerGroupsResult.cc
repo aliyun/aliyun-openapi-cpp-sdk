@@ -43,11 +43,18 @@ void DescribeVServerGroupsResult::parse(const std::string &payload)
 	auto allVServerGroups = value["VServerGroups"]["VServerGroup"];
 	for (auto value : allVServerGroups)
 	{
-		VServerGroup vServerGroupObject;
-		vServerGroupObject.vServerGroupId = value["VServerGroupId"].asString();
-		vServerGroupObject.vServerGroupName = value["VServerGroupName"].asString();
-		vServerGroups_.push_back(vServerGroupObject);
+		VServerGroup vServerGroupsObject;
+		if(!value["VServerGroupId"].isNull())
+			vServerGroupsObject.vServerGroupId = value["VServerGroupId"].asString();
+		if(!value["VServerGroupName"].isNull())
+			vServerGroupsObject.vServerGroupName = value["VServerGroupName"].asString();
+		vServerGroups_.push_back(vServerGroupsObject);
 	}
 
+}
+
+std::vector<DescribeVServerGroupsResult::VServerGroup> DescribeVServerGroupsResult::getVServerGroups()const
+{
+	return vServerGroups_;
 }
 

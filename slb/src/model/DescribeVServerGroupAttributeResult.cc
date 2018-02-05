@@ -43,14 +43,19 @@ void DescribeVServerGroupAttributeResult::parse(const std::string &payload)
 	auto allBackendServers = value["BackendServers"]["BackendServer"];
 	for (auto value : allBackendServers)
 	{
-		BackendServer backendServerObject;
-		backendServerObject.serverId = value["ServerId"].asString();
-		backendServerObject.port = std::stoi(value["Port"].asString());
-		backendServerObject.weight = std::stoi(value["Weight"].asString());
-		backendServers_.push_back(backendServerObject);
+		BackendServer backendServersObject;
+		if(!value["ServerId"].isNull())
+			backendServersObject.serverId = value["ServerId"].asString();
+		if(!value["Port"].isNull())
+			backendServersObject.port = std::stoi(value["Port"].asString());
+		if(!value["Weight"].isNull())
+			backendServersObject.weight = std::stoi(value["Weight"].asString());
+		backendServers_.push_back(backendServersObject);
 	}
-	vServerGroupId_ = value["VServerGroupId"].asString();
-	vServerGroupName_ = value["VServerGroupName"].asString();
+	if(!value["VServerGroupId"].isNull())
+		vServerGroupId_ = value["VServerGroupId"].asString();
+	if(!value["VServerGroupName"].isNull())
+		vServerGroupName_ = value["VServerGroupName"].asString();
 
 }
 
@@ -59,18 +64,13 @@ std::string DescribeVServerGroupAttributeResult::getVServerGroupId()const
 	return vServerGroupId_;
 }
 
-void DescribeVServerGroupAttributeResult::setVServerGroupId(const std::string& vServerGroupId)
-{
-	vServerGroupId_ = vServerGroupId;
-}
-
 std::string DescribeVServerGroupAttributeResult::getVServerGroupName()const
 {
 	return vServerGroupName_;
 }
 
-void DescribeVServerGroupAttributeResult::setVServerGroupName(const std::string& vServerGroupName)
+std::vector<DescribeVServerGroupAttributeResult::BackendServer> DescribeVServerGroupAttributeResult::getBackendServers()const
 {
-	vServerGroupName_ = vServerGroupName;
+	return backendServers_;
 }
 

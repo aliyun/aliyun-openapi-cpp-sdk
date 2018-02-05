@@ -40,17 +40,13 @@ void DescribeLoadBalancerAutoReleaseTimeResult::parse(const std::string &payload
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	autoReleaseTime_ = std::stol(value["AutoReleaseTime"].asString());
+	if(!value["AutoReleaseTime"].isNull())
+		autoReleaseTime_ = std::stol(value["AutoReleaseTime"].asString());
 
 }
 
 long DescribeLoadBalancerAutoReleaseTimeResult::getAutoReleaseTime()const
 {
 	return autoReleaseTime_;
-}
-
-void DescribeLoadBalancerAutoReleaseTimeResult::setAutoReleaseTime(long autoReleaseTime)
-{
-	autoReleaseTime_ = autoReleaseTime;
 }
 

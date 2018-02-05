@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/slb/SlbRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/slb/SlbExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT ModifyLoadBalancerInternetSpecRequest : public SlbRequest
+			class ALIBABACLOUD_SLB_EXPORT ModifyLoadBalancerInternetSpecRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -38,40 +39,37 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getLoadBalancerId()const;
+				void setLoadBalancerId(const std::string& loadBalancerId);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getBandwidth()const;
 				void setBandwidth(int bandwidth);
+				std::string getInternetChargeType()const;
+				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
-				std::string getLoadBalancerId()const;
-				void setLoadBalancerId(const std::string& loadBalancerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getInternetChargeType()const;
-				void setInternetChargeType(const std::string& internetChargeType);
 
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
+				std::string loadBalancerId_;
 				bool autoPay_;
+				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				int bandwidth_;
+				std::string internetChargeType_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string tags_;
-				std::string loadBalancerId_;
-				std::string regionId_;
-				std::string internetChargeType_;
 
 			};
 		}

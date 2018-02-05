@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/ModifyLoadBalancerInstanceSpecRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::ModifyLoadBalancerInstanceSpecRequest;
 
 ModifyLoadBalancerInstanceSpecRequest::ModifyLoadBalancerInstanceSpecRequest() :
-	SlbRequest("ModifyLoadBalancerInstanceSpec")
+	RpcServiceRequest("slb", "2014-05-15", "ModifyLoadBalancerInstanceSpec")
 {}
 
 ModifyLoadBalancerInstanceSpecRequest::~ModifyLoadBalancerInstanceSpecRequest()
@@ -123,17 +122,6 @@ void ModifyLoadBalancerInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyLoadBalancerInstanceSpecRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyLoadBalancerInstanceSpecRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyLoadBalancerInstanceSpecRequest::getTags()const

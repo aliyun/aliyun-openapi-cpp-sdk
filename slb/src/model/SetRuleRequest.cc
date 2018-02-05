@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/SetRuleRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::SetRuleRequest;
 
 SetRuleRequest::SetRuleRequest() :
-	SlbRequest("SetRule")
+	RpcServiceRequest("slb", "2014-05-15", "SetRule")
 {}
 
 SetRuleRequest::~SetRuleRequest()
@@ -112,17 +111,6 @@ void SetRuleRequest::setRuleId(const std::string& ruleId)
 {
 	ruleId_ = ruleId;
 	setParameter("RuleId", ruleId);
-}
-
-std::string SetRuleRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetRuleRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetRuleRequest::getTags()const

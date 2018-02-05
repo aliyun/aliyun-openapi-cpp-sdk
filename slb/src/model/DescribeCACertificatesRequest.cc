@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DescribeCACertificatesRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DescribeCACertificatesRequest;
 
 DescribeCACertificatesRequest::DescribeCACertificatesRequest() :
-	SlbRequest("DescribeCACertificates")
+	RpcServiceRequest("slb", "2014-05-15", "DescribeCACertificates")
 {}
 
 DescribeCACertificatesRequest::~DescribeCACertificatesRequest()
@@ -112,16 +111,5 @@ void DescribeCACertificatesRequest::setCACertificateId(const std::string& cACert
 {
 	cACertificateId_ = cACertificateId;
 	setParameter("CACertificateId", cACertificateId);
-}
-
-std::string DescribeCACertificatesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeCACertificatesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

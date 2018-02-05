@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/SetListenerAccessControlStatusRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::SetListenerAccessControlStatusRequest;
 
 SetListenerAccessControlStatusRequest::SetListenerAccessControlStatusRequest() :
-	SlbRequest("SetListenerAccessControlStatus")
+	RpcServiceRequest("slb", "2014-05-15", "SetListenerAccessControlStatus")
 {}
 
 SetListenerAccessControlStatusRequest::~SetListenerAccessControlStatusRequest()
@@ -123,17 +122,6 @@ void SetListenerAccessControlStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string SetListenerAccessControlStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetListenerAccessControlStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetListenerAccessControlStatusRequest::getTags()const

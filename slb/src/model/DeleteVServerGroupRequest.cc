@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DeleteVServerGroupRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DeleteVServerGroupRequest;
 
 DeleteVServerGroupRequest::DeleteVServerGroupRequest() :
-	SlbRequest("DeleteVServerGroup")
+	RpcServiceRequest("slb", "2014-05-15", "DeleteVServerGroup")
 {}
 
 DeleteVServerGroupRequest::~DeleteVServerGroupRequest()
@@ -101,17 +100,6 @@ void DeleteVServerGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteVServerGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteVServerGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteVServerGroupRequest::getTags()const

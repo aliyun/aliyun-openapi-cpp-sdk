@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/RemoveBackendServersRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::RemoveBackendServersRequest;
 
 RemoveBackendServersRequest::RemoveBackendServersRequest() :
-	SlbRequest("RemoveBackendServers")
+	RpcServiceRequest("slb", "2014-05-15", "RemoveBackendServers")
 {}
 
 RemoveBackendServersRequest::~RemoveBackendServersRequest()
@@ -112,17 +111,6 @@ void RemoveBackendServersRequest::setBackendServers(const std::string& backendSe
 {
 	backendServers_ = backendServers;
 	setParameter("BackendServers", backendServers);
-}
-
-std::string RemoveBackendServersRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RemoveBackendServersRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveBackendServersRequest::getTags()const

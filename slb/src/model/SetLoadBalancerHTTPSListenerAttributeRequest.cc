@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/SetLoadBalancerHTTPSListenerAttributeRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::SetLoadBalancerHTTPSListenerAttributeRequest;
 
 SetLoadBalancerHTTPSListenerAttributeRequest::SetLoadBalancerHTTPSListenerAttributeRequest() :
-	SlbRequest("SetLoadBalancerHTTPSListenerAttribute")
+	RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerHTTPSListenerAttribute")
 {}
 
 SetLoadBalancerHTTPSListenerAttributeRequest::~SetLoadBalancerHTTPSListenerAttributeRequest()
@@ -101,17 +100,6 @@ void SetLoadBalancerHTTPSListenerAttributeRequest::setHealthyThreshold(int healt
 {
 	healthyThreshold_ = healthyThreshold;
 	setParameter("HealthyThreshold", std::to_string(healthyThreshold));
-}
-
-std::string SetLoadBalancerHTTPSListenerAttributeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetLoadBalancerHTTPSListenerAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetLoadBalancerHTTPSListenerAttributeRequest::getScheduler()const

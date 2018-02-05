@@ -40,17 +40,13 @@ void ModifyLoadBalancerPayTypeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
 
 }
 
 long ModifyLoadBalancerPayTypeResult::getOrderId()const
 {
 	return orderId_;
-}
-
-void ModifyLoadBalancerPayTypeResult::setOrderId(long orderId)
-{
-	orderId_ = orderId;
 }
 

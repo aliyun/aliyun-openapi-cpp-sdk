@@ -43,20 +43,36 @@ void DescribeServerCertificatesResult::parse(const std::string &payload)
 	auto allServerCertificates = value["ServerCertificates"]["ServerCertificate"];
 	for (auto value : allServerCertificates)
 	{
-		ServerCertificate serverCertificateObject;
-		serverCertificateObject.serverCertificateId = value["ServerCertificateId"].asString();
-		serverCertificateObject.fingerprint = value["Fingerprint"].asString();
-		serverCertificateObject.serverCertificateName = value["ServerCertificateName"].asString();
-		serverCertificateObject.regionId = value["RegionId"].asString();
-		serverCertificateObject.regionIdAlias = value["RegionIdAlias"].asString();
-		serverCertificateObject.aliCloudCertificateId = value["AliCloudCertificateId"].asString();
-		serverCertificateObject.aliCloudCertificateName = value["AliCloudCertificateName"].asString();
-		serverCertificateObject.isAliCloudCertificate = std::stoi(value["IsAliCloudCertificate"].asString());
-		serverCertificateObject.resourceGroupId = value["ResourceGroupId"].asString();
-		serverCertificateObject.createTime = value["CreateTime"].asString();
-		serverCertificateObject.createTimeStamp = std::stol(value["CreateTimeStamp"].asString());
-		serverCertificates_.push_back(serverCertificateObject);
+		ServerCertificate serverCertificatesObject;
+		if(!value["ServerCertificateId"].isNull())
+			serverCertificatesObject.serverCertificateId = value["ServerCertificateId"].asString();
+		if(!value["Fingerprint"].isNull())
+			serverCertificatesObject.fingerprint = value["Fingerprint"].asString();
+		if(!value["ServerCertificateName"].isNull())
+			serverCertificatesObject.serverCertificateName = value["ServerCertificateName"].asString();
+		if(!value["RegionId"].isNull())
+			serverCertificatesObject.regionId = value["RegionId"].asString();
+		if(!value["RegionIdAlias"].isNull())
+			serverCertificatesObject.regionIdAlias = value["RegionIdAlias"].asString();
+		if(!value["AliCloudCertificateId"].isNull())
+			serverCertificatesObject.aliCloudCertificateId = value["AliCloudCertificateId"].asString();
+		if(!value["AliCloudCertificateName"].isNull())
+			serverCertificatesObject.aliCloudCertificateName = value["AliCloudCertificateName"].asString();
+		if(!value["IsAliCloudCertificate"].isNull())
+			serverCertificatesObject.isAliCloudCertificate = std::stoi(value["IsAliCloudCertificate"].asString());
+		if(!value["ResourceGroupId"].isNull())
+			serverCertificatesObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["CreateTime"].isNull())
+			serverCertificatesObject.createTime = value["CreateTime"].asString();
+		if(!value["CreateTimeStamp"].isNull())
+			serverCertificatesObject.createTimeStamp = std::stol(value["CreateTimeStamp"].asString());
+		serverCertificates_.push_back(serverCertificatesObject);
 	}
 
+}
+
+std::vector<DescribeServerCertificatesResult::ServerCertificate> DescribeServerCertificatesResult::getServerCertificates()const
+{
+	return serverCertificates_;
 }
 

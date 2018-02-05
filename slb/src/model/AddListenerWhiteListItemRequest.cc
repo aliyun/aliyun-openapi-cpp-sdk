@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/AddListenerWhiteListItemRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::AddListenerWhiteListItemRequest;
 
 AddListenerWhiteListItemRequest::AddListenerWhiteListItemRequest() :
-	SlbRequest("AddListenerWhiteListItem")
+	RpcServiceRequest("slb", "2014-05-15", "AddListenerWhiteListItem")
 {}
 
 AddListenerWhiteListItemRequest::~AddListenerWhiteListItemRequest()
@@ -123,17 +122,6 @@ void AddListenerWhiteListItemRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string AddListenerWhiteListItemRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddListenerWhiteListItemRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddListenerWhiteListItemRequest::getTags()const

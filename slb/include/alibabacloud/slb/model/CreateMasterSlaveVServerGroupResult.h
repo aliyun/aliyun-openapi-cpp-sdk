@@ -45,9 +45,7 @@ namespace AlibabaCloud
 				explicit CreateMasterSlaveVServerGroupResult(const std::string &payload);
 				~CreateMasterSlaveVServerGroupResult();
 				std::string getMasterSlaveVServerGroupId()const;
-				void setMasterSlaveVServerGroupId(const std::string& masterSlaveVServerGroupId);
 				std::vector<MasterSlaveBackendServer> getMasterSlaveBackendServers()const;
-				void setMasterSlaveBackendServers(const std::vector<MasterSlaveBackendServer>& masterSlaveBackendServers);
 
 			protected:
 				void parse(const std::string &payload);

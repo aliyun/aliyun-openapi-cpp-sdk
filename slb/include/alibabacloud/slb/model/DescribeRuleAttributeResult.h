@@ -38,17 +38,11 @@ namespace AlibabaCloud
 				explicit DescribeRuleAttributeResult(const std::string &payload);
 				~DescribeRuleAttributeResult();
 				std::string getListenerPort()const;
-				void setListenerPort(const std::string& listenerPort);
 				std::string getVServerGroupId()const;
-				void setVServerGroupId(const std::string& vServerGroupId);
 				std::string getLoadBalancerId()const;
-				void setLoadBalancerId(const std::string& loadBalancerId);
 				std::string getDomain()const;
-				void setDomain(const std::string& domain);
 				std::string getRuleName()const;
-				void setRuleName(const std::string& ruleName);
 				std::string getUrl()const;
-				void setUrl(const std::string& url);
 
 			protected:
 				void parse(const std::string &payload);

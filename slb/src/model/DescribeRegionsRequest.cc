@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DescribeRegionsRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
-	SlbRequest("DescribeRegions")
+	RpcServiceRequest("slb", "2014-05-15", "DescribeRegions")
 {}
 
 DescribeRegionsRequest::~DescribeRegionsRequest()
@@ -90,17 +89,6 @@ void DescribeRegionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeRegionsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRegionsRequest::getTags()const

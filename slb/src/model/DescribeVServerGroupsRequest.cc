@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DescribeVServerGroupsRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DescribeVServerGroupsRequest;
 
 DescribeVServerGroupsRequest::DescribeVServerGroupsRequest() :
-	SlbRequest("DescribeVServerGroups")
+	RpcServiceRequest("slb", "2014-05-15", "DescribeVServerGroups")
 {}
 
 DescribeVServerGroupsRequest::~DescribeVServerGroupsRequest()
@@ -101,17 +100,6 @@ void DescribeVServerGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeVServerGroupsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeVServerGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeVServerGroupsRequest::getTags()const

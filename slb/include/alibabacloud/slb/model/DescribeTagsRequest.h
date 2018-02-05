@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/slb/SlbRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/slb/SlbExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT DescribeTagsRequest : public SlbRequest
+			class ALIBABACLOUD_SLB_EXPORT DescribeTagsRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -38,40 +39,37 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getLoadBalancerId()const;
+				void setLoadBalancerId(const std::string& loadBalancerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				bool getDistinctKey()const;
 				void setDistinctKey(bool distinctKey);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
-				std::string getLoadBalancerId()const;
-				void setLoadBalancerId(const std::string& loadBalancerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
+				std::string loadBalancerId_;
 				std::string resourceOwnerAccount_;
+				std::string regionId_;
 				std::string ownerAccount_;
+				int pageSize_;
 				bool distinctKey_;
 				long ownerId_;
 				int pageNumber_;
-				std::string accessKeyId_;
 				std::string tags_;
-				std::string loadBalancerId_;
-				std::string regionId_;
-				int pageSize_;
 
 			};
 		}

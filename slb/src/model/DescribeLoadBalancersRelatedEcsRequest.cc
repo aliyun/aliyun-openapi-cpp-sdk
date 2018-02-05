@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DescribeLoadBalancersRelatedEcsRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DescribeLoadBalancersRelatedEcsRequest;
 
 DescribeLoadBalancersRelatedEcsRequest::DescribeLoadBalancersRelatedEcsRequest() :
-	SlbRequest("DescribeLoadBalancersRelatedEcs")
+	RpcServiceRequest("slb", "2014-05-15", "DescribeLoadBalancersRelatedEcs")
 {}
 
 DescribeLoadBalancersRelatedEcsRequest::~DescribeLoadBalancersRelatedEcsRequest()

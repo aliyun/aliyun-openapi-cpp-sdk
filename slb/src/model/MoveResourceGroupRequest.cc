@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/MoveResourceGroupRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::MoveResourceGroupRequest;
 
 MoveResourceGroupRequest::MoveResourceGroupRequest() :
-	SlbRequest("MoveResourceGroup")
+	RpcServiceRequest("slb", "2014-05-15", "MoveResourceGroup")
 {}
 
 MoveResourceGroupRequest::~MoveResourceGroupRequest()

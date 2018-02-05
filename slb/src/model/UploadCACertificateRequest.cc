@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/UploadCACertificateRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::UploadCACertificateRequest;
 
 UploadCACertificateRequest::UploadCACertificateRequest() :
-	SlbRequest("UploadCACertificate")
+	RpcServiceRequest("slb", "2014-05-15", "UploadCACertificate")
 {}
 
 UploadCACertificateRequest::~UploadCACertificateRequest()
@@ -123,16 +122,5 @@ void UploadCACertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string UploadCACertificateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UploadCACertificateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

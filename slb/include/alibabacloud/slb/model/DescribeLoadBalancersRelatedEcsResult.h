@@ -49,7 +49,7 @@ namespace AlibabaCloud
 					};
 					struct VServerGroup
 					{
-						struct BackendServer
+						struct BackendServer3
 						{
 							std::string networkType;
 							std::string vmName;
@@ -57,10 +57,10 @@ namespace AlibabaCloud
 							int weight;
 						};
 						std::string groupName;
-						std::vector<VServerGroup::BackendServer> backendServers2;
+						std::vector<VServerGroup::BackendServer3> backendServers2;
 						std::string groupId;
 					};
-					struct BackendServer
+					struct BackendServer4
 					{
 						std::string networkType;
 						std::string vmName;
@@ -71,7 +71,7 @@ namespace AlibabaCloud
 					std::vector<LoadBalancer::MasterSlaveVServerGroup> masterSlaveVServerGroups;
 					std::vector<LoadBalancer::VServerGroup> vServerGroups;
 					int count;
-					std::vector<LoadBalancer::BackendServer> backendServers;
+					std::vector<LoadBalancer::BackendServer4> backendServers;
 				};
 
 
@@ -79,11 +79,8 @@ namespace AlibabaCloud
 				explicit DescribeLoadBalancersRelatedEcsResult(const std::string &payload);
 				~DescribeLoadBalancersRelatedEcsResult();
 				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::vector<LoadBalancer> getLoadBalancers()const;
-				void setLoadBalancers(const std::vector<LoadBalancer>& loadBalancers);
 				bool getSuccess()const;
-				void setSuccess(bool success);
 
 			protected:
 				void parse(const std::string &payload);

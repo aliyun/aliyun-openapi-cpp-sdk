@@ -43,14 +43,19 @@ void CreateMasterSlaveServerGroupResult::parse(const std::string &payload)
 	auto allMasterSlaveBackendServers = value["MasterSlaveBackendServers"]["MasterSlaveBackendServer"];
 	for (auto value : allMasterSlaveBackendServers)
 	{
-		MasterSlaveBackendServer masterSlaveBackendServerObject;
-		masterSlaveBackendServerObject.serverId = value["ServerId"].asString();
-		masterSlaveBackendServerObject.port = std::stoi(value["Port"].asString());
-		masterSlaveBackendServerObject.weight = std::stoi(value["Weight"].asString());
-		masterSlaveBackendServerObject.serverType = value["ServerType"].asString();
-		masterSlaveBackendServers_.push_back(masterSlaveBackendServerObject);
+		MasterSlaveBackendServer masterSlaveBackendServersObject;
+		if(!value["ServerId"].isNull())
+			masterSlaveBackendServersObject.serverId = value["ServerId"].asString();
+		if(!value["Port"].isNull())
+			masterSlaveBackendServersObject.port = std::stoi(value["Port"].asString());
+		if(!value["Weight"].isNull())
+			masterSlaveBackendServersObject.weight = std::stoi(value["Weight"].asString());
+		if(!value["ServerType"].isNull())
+			masterSlaveBackendServersObject.serverType = value["ServerType"].asString();
+		masterSlaveBackendServers_.push_back(masterSlaveBackendServersObject);
 	}
-	masterSlaveServerGroupId_ = value["MasterSlaveServerGroupId"].asString();
+	if(!value["MasterSlaveServerGroupId"].isNull())
+		masterSlaveServerGroupId_ = value["MasterSlaveServerGroupId"].asString();
 
 }
 
@@ -59,8 +64,8 @@ std::string CreateMasterSlaveServerGroupResult::getMasterSlaveServerGroupId()con
 	return masterSlaveServerGroupId_;
 }
 
-void CreateMasterSlaveServerGroupResult::setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId)
+std::vector<CreateMasterSlaveServerGroupResult::MasterSlaveBackendServer> CreateMasterSlaveServerGroupResult::getMasterSlaveBackendServers()const
 {
-	masterSlaveServerGroupId_ = masterSlaveServerGroupId;
+	return masterSlaveBackendServers_;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DescribeTagsRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DescribeTagsRequest;
 
 DescribeTagsRequest::DescribeTagsRequest() :
-	SlbRequest("DescribeTags")
+	RpcServiceRequest("slb", "2014-05-15", "DescribeTags")
 {}
 
 DescribeTagsRequest::~DescribeTagsRequest()
@@ -48,6 +47,17 @@ void DescribeTagsRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeTagsRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void DescribeTagsRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setParameter("LoadBalancerId", loadBalancerId);
+}
+
 std::string DescribeTagsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -59,6 +69,17 @@ void DescribeTagsRequest::setResourceOwnerAccount(const std::string& resourceOwn
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string DescribeTagsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeTagsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeTagsRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -68,6 +89,17 @@ void DescribeTagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+int DescribeTagsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeTagsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 bool DescribeTagsRequest::getDistinctKey()const
@@ -103,17 +135,6 @@ void DescribeTagsRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeTagsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeTagsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeTagsRequest::getTags()const
 {
 	return tags_;
@@ -123,38 +144,5 @@ void DescribeTagsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setParameter("Tags", tags);
-}
-
-std::string DescribeTagsRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
-}
-
-void DescribeTagsRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setParameter("LoadBalancerId", loadBalancerId);
-}
-
-std::string DescribeTagsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeTagsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-int DescribeTagsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeTagsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
 }
 

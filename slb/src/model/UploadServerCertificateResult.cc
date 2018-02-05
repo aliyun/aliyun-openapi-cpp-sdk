@@ -40,17 +40,28 @@ void UploadServerCertificateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	serverCertificateId_ = value["ServerCertificateId"].asString();
-	fingerprint_ = value["Fingerprint"].asString();
-	serverCertificateName_ = value["ServerCertificateName"].asString();
-	regionId_ = value["RegionId"].asString();
-	regionIdAlias_ = value["RegionIdAlias"].asString();
-	aliCloudCertificateId_ = value["AliCloudCertificateId"].asString();
-	aliCloudCertificateName_ = value["AliCloudCertificateName"].asString();
-	isAliCloudCertificate_ = std::stoi(value["IsAliCloudCertificate"].asString());
-	resourceGroupId_ = value["ResourceGroupId"].asString();
-	createTime_ = value["CreateTime"].asString();
-	createTimeStamp_ = std::stol(value["CreateTimeStamp"].asString());
+	if(!value["ServerCertificateId"].isNull())
+		serverCertificateId_ = value["ServerCertificateId"].asString();
+	if(!value["Fingerprint"].isNull())
+		fingerprint_ = value["Fingerprint"].asString();
+	if(!value["ServerCertificateName"].isNull())
+		serverCertificateName_ = value["ServerCertificateName"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["RegionIdAlias"].isNull())
+		regionIdAlias_ = value["RegionIdAlias"].asString();
+	if(!value["AliCloudCertificateId"].isNull())
+		aliCloudCertificateId_ = value["AliCloudCertificateId"].asString();
+	if(!value["AliCloudCertificateName"].isNull())
+		aliCloudCertificateName_ = value["AliCloudCertificateName"].asString();
+	if(!value["IsAliCloudCertificate"].isNull())
+		isAliCloudCertificate_ = std::stoi(value["IsAliCloudCertificate"].asString());
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["CreateTimeStamp"].isNull())
+		createTimeStamp_ = std::stol(value["CreateTimeStamp"].asString());
 
 }
 
@@ -59,19 +70,9 @@ std::string UploadServerCertificateResult::getRegionIdAlias()const
 	return regionIdAlias_;
 }
 
-void UploadServerCertificateResult::setRegionIdAlias(const std::string& regionIdAlias)
-{
-	regionIdAlias_ = regionIdAlias;
-}
-
 std::string UploadServerCertificateResult::getFingerprint()const
 {
 	return fingerprint_;
-}
-
-void UploadServerCertificateResult::setFingerprint(const std::string& fingerprint)
-{
-	fingerprint_ = fingerprint;
 }
 
 std::string UploadServerCertificateResult::getAliCloudCertificateName()const
@@ -79,19 +80,9 @@ std::string UploadServerCertificateResult::getAliCloudCertificateName()const
 	return aliCloudCertificateName_;
 }
 
-void UploadServerCertificateResult::setAliCloudCertificateName(const std::string& aliCloudCertificateName)
-{
-	aliCloudCertificateName_ = aliCloudCertificateName;
-}
-
 std::string UploadServerCertificateResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
-}
-
-void UploadServerCertificateResult::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
 }
 
 int UploadServerCertificateResult::getIsAliCloudCertificate()const
@@ -99,19 +90,9 @@ int UploadServerCertificateResult::getIsAliCloudCertificate()const
 	return isAliCloudCertificate_;
 }
 
-void UploadServerCertificateResult::setIsAliCloudCertificate(int isAliCloudCertificate)
-{
-	isAliCloudCertificate_ = isAliCloudCertificate;
-}
-
 std::string UploadServerCertificateResult::getCreateTime()const
 {
 	return createTime_;
-}
-
-void UploadServerCertificateResult::setCreateTime(const std::string& createTime)
-{
-	createTime_ = createTime;
 }
 
 std::string UploadServerCertificateResult::getServerCertificateId()const
@@ -119,19 +100,9 @@ std::string UploadServerCertificateResult::getServerCertificateId()const
 	return serverCertificateId_;
 }
 
-void UploadServerCertificateResult::setServerCertificateId(const std::string& serverCertificateId)
-{
-	serverCertificateId_ = serverCertificateId;
-}
-
 std::string UploadServerCertificateResult::getServerCertificateName()const
 {
 	return serverCertificateName_;
-}
-
-void UploadServerCertificateResult::setServerCertificateName(const std::string& serverCertificateName)
-{
-	serverCertificateName_ = serverCertificateName;
 }
 
 std::string UploadServerCertificateResult::getRegionId()const
@@ -139,28 +110,13 @@ std::string UploadServerCertificateResult::getRegionId()const
 	return regionId_;
 }
 
-void UploadServerCertificateResult::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-}
-
 long UploadServerCertificateResult::getCreateTimeStamp()const
 {
 	return createTimeStamp_;
 }
 
-void UploadServerCertificateResult::setCreateTimeStamp(long createTimeStamp)
-{
-	createTimeStamp_ = createTimeStamp;
-}
-
 std::string UploadServerCertificateResult::getAliCloudCertificateId()const
 {
 	return aliCloudCertificateId_;
-}
-
-void UploadServerCertificateResult::setAliCloudCertificateId(const std::string& aliCloudCertificateId)
-{
-	aliCloudCertificateId_ = aliCloudCertificateId;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/RemoveTagsRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::RemoveTagsRequest;
 
 RemoveTagsRequest::RemoveTagsRequest() :
-	SlbRequest("RemoveTags")
+	RpcServiceRequest("slb", "2014-05-15", "RemoveTags")
 {}
 
 RemoveTagsRequest::~RemoveTagsRequest()
@@ -101,17 +100,6 @@ void RemoveTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string RemoveTagsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RemoveTagsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveTagsRequest::getTags()const

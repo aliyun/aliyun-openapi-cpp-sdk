@@ -43,12 +43,15 @@ void RemoveBackendServersResult::parse(const std::string &payload)
 	auto allBackendServers = value["BackendServers"]["BackendServer"];
 	for (auto value : allBackendServers)
 	{
-		BackendServer backendServerObject;
-		backendServerObject.serverId = value["ServerId"].asString();
-		backendServerObject.weight = std::stoi(value["Weight"].asString());
-		backendServers_.push_back(backendServerObject);
+		BackendServer backendServersObject;
+		if(!value["ServerId"].isNull())
+			backendServersObject.serverId = value["ServerId"].asString();
+		if(!value["Weight"].isNull())
+			backendServersObject.weight = std::stoi(value["Weight"].asString());
+		backendServers_.push_back(backendServersObject);
 	}
-	loadBalancerId_ = value["LoadBalancerId"].asString();
+	if(!value["LoadBalancerId"].isNull())
+		loadBalancerId_ = value["LoadBalancerId"].asString();
 
 }
 
@@ -57,8 +60,8 @@ std::string RemoveBackendServersResult::getLoadBalancerId()const
 	return loadBalancerId_;
 }
 
-void RemoveBackendServersResult::setLoadBalancerId(const std::string& loadBalancerId)
+std::vector<RemoveBackendServersResult::BackendServer> RemoveBackendServersResult::getBackendServers()const
 {
-	loadBalancerId_ = loadBalancerId;
+	return backendServers_;
 }
 

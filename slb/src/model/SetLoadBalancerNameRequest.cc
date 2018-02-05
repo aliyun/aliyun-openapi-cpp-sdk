@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/SetLoadBalancerNameRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::SetLoadBalancerNameRequest;
 
 SetLoadBalancerNameRequest::SetLoadBalancerNameRequest() :
-	SlbRequest("SetLoadBalancerName")
+	RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerName")
 {}
 
 SetLoadBalancerNameRequest::~SetLoadBalancerNameRequest()
@@ -112,17 +111,6 @@ void SetLoadBalancerNameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string SetLoadBalancerNameRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetLoadBalancerNameRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetLoadBalancerNameRequest::getTags()const

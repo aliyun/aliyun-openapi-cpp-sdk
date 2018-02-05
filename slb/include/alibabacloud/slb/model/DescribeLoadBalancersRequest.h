@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/slb/SlbRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/slb/SlbExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT DescribeLoadBalancersRequest : public SlbRequest
+			class ALIBABACLOUD_SLB_EXPORT DescribeLoadBalancersRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -38,75 +39,72 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getNetworkType()const;
-				void setNetworkType(const std::string& networkType);
-				std::string getMasterZoneId()const;
-				void setMasterZoneId(const std::string& masterZoneId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getLoadBalancerName()const;
-				void setLoadBalancerName(const std::string& loadBalancerName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getAddressType()const;
-				void setAddressType(const std::string& addressType);
-				std::string getSlaveZoneId()const;
-				void setSlaveZoneId(const std::string& slaveZoneId);
 				std::string getAddress()const;
 				void setAddress(const std::string& address);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getNetworkType()const;
+				void setNetworkType(const std::string& networkType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getServerId()const;
 				void setServerId(const std::string& serverId);
+				std::string getMasterZoneId()const;
+				void setMasterZoneId(const std::string& masterZoneId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 				std::string getServerIntranetAddress()const;
 				void setServerIntranetAddress(const std::string& serverIntranetAddress);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getLoadBalancerName()const;
+				void setLoadBalancerName(const std::string& loadBalancerName);
 				std::string getLoadBalancerId()const;
 				void setLoadBalancerId(const std::string& loadBalancerId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getAddressType()const;
+				void setAddressType(const std::string& addressType);
+				std::string getSlaveZoneId()const;
+				void setSlaveZoneId(const std::string& slaveZoneId);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
 
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
-				std::string networkType_;
-				std::string masterZoneId_;
-				int pageNumber_;
-				std::string accessKeyId_;
-				std::string resourceGroupId_;
-				std::string loadBalancerName_;
-				std::string regionId_;
-				int pageSize_;
-				std::string addressType_;
-				std::string slaveZoneId_;
 				std::string address_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string networkType_;
 				long ownerId_;
 				std::string serverId_;
+				std::string masterZoneId_;
+				int pageNumber_;
 				std::string tags_;
 				std::string serverIntranetAddress_;
 				std::string vSwitchId_;
+				std::string resourceGroupId_;
+				std::string loadBalancerName_;
 				std::string loadBalancerId_;
+				std::string regionId_;
 				std::string internetChargeType_;
 				std::string vpcId_;
+				int pageSize_;
+				std::string addressType_;
+				std::string slaveZoneId_;
 				std::string payType_;
 
 			};

@@ -40,34 +40,62 @@ void DescribeLoadBalancerHTTPSListenerAttributeResult::parse(const std::string &
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	listenerPort_ = std::stoi(value["ListenerPort"].asString());
-	backendServerPort_ = std::stoi(value["BackendServerPort"].asString());
-	bandwidth_ = std::stoi(value["Bandwidth"].asString());
-	status_ = value["Status"].asString();
-	securityStatus_ = value["SecurityStatus"].asString();
-	xForwardedFor_ = value["XForwardedFor"].asString();
-	scheduler_ = value["Scheduler"].asString();
-	stickySession_ = value["StickySession"].asString();
-	stickySessionType_ = value["StickySessionType"].asString();
-	cookieTimeout_ = std::stoi(value["CookieTimeout"].asString());
-	cookie_ = value["Cookie"].asString();
-	healthCheck_ = value["HealthCheck"].asString();
-	healthCheckDomain_ = value["HealthCheckDomain"].asString();
-	healthCheckURI_ = value["HealthCheckURI"].asString();
-	healthyThreshold_ = std::stoi(value["HealthyThreshold"].asString());
-	unhealthyThreshold_ = std::stoi(value["UnhealthyThreshold"].asString());
-	healthCheckTimeout_ = std::stoi(value["HealthCheckTimeout"].asString());
-	healthCheckInterval_ = std::stoi(value["HealthCheckInterval"].asString());
-	healthCheckConnectPort_ = std::stoi(value["HealthCheckConnectPort"].asString());
-	healthCheckHttpCode_ = value["HealthCheckHttpCode"].asString();
-	serverCertificateId_ = value["ServerCertificateId"].asString();
-	cACertificateId_ = value["CACertificateId"].asString();
-	maxConnection_ = std::stoi(value["MaxConnection"].asString());
-	vServerGroupId_ = value["VServerGroupId"].asString();
-	gzip_ = value["Gzip"].asString();
-	xForwardedFor_SLBIP_ = value["XForwardedFor_SLBIP"].asString();
-	xForwardedFor_SLBID_ = value["XForwardedFor_SLBID"].asString();
-	xForwardedFor_proto_ = value["XForwardedFor_proto"].asString();
+	if(!value["ListenerPort"].isNull())
+		listenerPort_ = std::stoi(value["ListenerPort"].asString());
+	if(!value["BackendServerPort"].isNull())
+		backendServerPort_ = std::stoi(value["BackendServerPort"].asString());
+	if(!value["Bandwidth"].isNull())
+		bandwidth_ = std::stoi(value["Bandwidth"].asString());
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["SecurityStatus"].isNull())
+		securityStatus_ = value["SecurityStatus"].asString();
+	if(!value["XForwardedFor"].isNull())
+		xForwardedFor_ = value["XForwardedFor"].asString();
+	if(!value["Scheduler"].isNull())
+		scheduler_ = value["Scheduler"].asString();
+	if(!value["StickySession"].isNull())
+		stickySession_ = value["StickySession"].asString();
+	if(!value["StickySessionType"].isNull())
+		stickySessionType_ = value["StickySessionType"].asString();
+	if(!value["CookieTimeout"].isNull())
+		cookieTimeout_ = std::stoi(value["CookieTimeout"].asString());
+	if(!value["Cookie"].isNull())
+		cookie_ = value["Cookie"].asString();
+	if(!value["HealthCheck"].isNull())
+		healthCheck_ = value["HealthCheck"].asString();
+	if(!value["HealthCheckDomain"].isNull())
+		healthCheckDomain_ = value["HealthCheckDomain"].asString();
+	if(!value["HealthCheckURI"].isNull())
+		healthCheckURI_ = value["HealthCheckURI"].asString();
+	if(!value["HealthyThreshold"].isNull())
+		healthyThreshold_ = std::stoi(value["HealthyThreshold"].asString());
+	if(!value["UnhealthyThreshold"].isNull())
+		unhealthyThreshold_ = std::stoi(value["UnhealthyThreshold"].asString());
+	if(!value["HealthCheckTimeout"].isNull())
+		healthCheckTimeout_ = std::stoi(value["HealthCheckTimeout"].asString());
+	if(!value["HealthCheckInterval"].isNull())
+		healthCheckInterval_ = std::stoi(value["HealthCheckInterval"].asString());
+	if(!value["HealthCheckConnectPort"].isNull())
+		healthCheckConnectPort_ = std::stoi(value["HealthCheckConnectPort"].asString());
+	if(!value["HealthCheckHttpCode"].isNull())
+		healthCheckHttpCode_ = value["HealthCheckHttpCode"].asString();
+	if(!value["ServerCertificateId"].isNull())
+		serverCertificateId_ = value["ServerCertificateId"].asString();
+	if(!value["CACertificateId"].isNull())
+		cACertificateId_ = value["CACertificateId"].asString();
+	if(!value["MaxConnection"].isNull())
+		maxConnection_ = std::stoi(value["MaxConnection"].asString());
+	if(!value["VServerGroupId"].isNull())
+		vServerGroupId_ = value["VServerGroupId"].asString();
+	if(!value["Gzip"].isNull())
+		gzip_ = value["Gzip"].asString();
+	if(!value["XForwardedFor_SLBIP"].isNull())
+		xForwardedFor_SLBIP_ = value["XForwardedFor_SLBIP"].asString();
+	if(!value["XForwardedFor_SLBID"].isNull())
+		xForwardedFor_SLBID_ = value["XForwardedFor_SLBID"].asString();
+	if(!value["XForwardedFor_proto"].isNull())
+		xForwardedFor_proto_ = value["XForwardedFor_proto"].asString();
 
 }
 
@@ -76,19 +104,9 @@ int DescribeLoadBalancerHTTPSListenerAttributeResult::getCookieTimeout()const
 	return cookieTimeout_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setCookieTimeout(int cookieTimeout)
-{
-	cookieTimeout_ = cookieTimeout;
-}
-
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getMaxConnection()const
 {
 	return maxConnection_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setMaxConnection(int maxConnection)
-{
-	maxConnection_ = maxConnection;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getVServerGroupId()const
@@ -96,19 +114,9 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getVServerGroupId(
 	return vServerGroupId_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setVServerGroupId(const std::string& vServerGroupId)
-{
-	vServerGroupId_ = vServerGroupId;
-}
-
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getUnhealthyThreshold()const
 {
 	return unhealthyThreshold_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setUnhealthyThreshold(int unhealthyThreshold)
-{
-	unhealthyThreshold_ = unhealthyThreshold;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getScheduler()const
@@ -116,19 +124,9 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getScheduler()cons
 	return scheduler_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setScheduler(const std::string& scheduler)
-{
-	scheduler_ = scheduler;
-}
-
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckURI()const
 {
 	return healthCheckURI_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setHealthCheckURI(const std::string& healthCheckURI)
-{
-	healthCheckURI_ = healthCheckURI;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheck()const
@@ -136,19 +134,9 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheck()co
 	return healthCheck_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setHealthCheck(const std::string& healthCheck)
-{
-	healthCheck_ = healthCheck;
-}
-
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getBackendServerPort()const
 {
 	return backendServerPort_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setBackendServerPort(int backendServerPort)
-{
-	backendServerPort_ = backendServerPort;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_SLBID()const
@@ -156,19 +144,9 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_S
 	return xForwardedFor_SLBID_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setXForwardedFor_SLBID(const std::string& xForwardedFor_SLBID)
-{
-	xForwardedFor_SLBID_ = xForwardedFor_SLBID;
-}
-
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckConnectPort()const
 {
 	return healthCheckConnectPort_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setHealthCheckConnectPort(int healthCheckConnectPort)
-{
-	healthCheckConnectPort_ = healthCheckConnectPort;
 }
 
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getBandwidth()const
@@ -176,19 +154,9 @@ int DescribeLoadBalancerHTTPSListenerAttributeResult::getBandwidth()const
 	return bandwidth_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setBandwidth(int bandwidth)
-{
-	bandwidth_ = bandwidth;
-}
-
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getSecurityStatus()const
 {
 	return securityStatus_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setSecurityStatus(const std::string& securityStatus)
-{
-	securityStatus_ = securityStatus;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getGzip()const
@@ -196,19 +164,9 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getGzip()const
 	return gzip_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setGzip(const std::string& gzip)
-{
-	gzip_ = gzip;
-}
-
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getServerCertificateId()const
 {
 	return serverCertificateId_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setServerCertificateId(const std::string& serverCertificateId)
-{
-	serverCertificateId_ = serverCertificateId;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStickySessionType()const
@@ -216,19 +174,9 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStickySessionTy
 	return stickySessionType_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setStickySessionType(const std::string& stickySessionType)
-{
-	stickySessionType_ = stickySessionType;
-}
-
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_SLBIP()const
 {
 	return xForwardedFor_SLBIP_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setXForwardedFor_SLBIP(const std::string& xForwardedFor_SLBIP)
-{
-	xForwardedFor_SLBIP_ = xForwardedFor_SLBIP;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckHttpCode()const
@@ -236,19 +184,9 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckHttp
 	return healthCheckHttpCode_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setHealthCheckHttpCode(const std::string& healthCheckHttpCode)
-{
-	healthCheckHttpCode_ = healthCheckHttpCode;
-}
-
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStatus()const
 {
 	return status_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setStatus(const std::string& status)
-{
-	status_ = status;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getCookie()const
@@ -256,19 +194,9 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getCookie()const
 	return cookie_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setCookie(const std::string& cookie)
-{
-	cookie_ = cookie;
-}
-
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getListenerPort()const
 {
 	return listenerPort_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setListenerPort(int listenerPort)
-{
-	listenerPort_ = listenerPort;
 }
 
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckInterval()const
@@ -276,19 +204,9 @@ int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckInterval()co
 	return healthCheckInterval_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setHealthCheckInterval(int healthCheckInterval)
-{
-	healthCheckInterval_ = healthCheckInterval;
-}
-
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getCACertificateId()const
 {
 	return cACertificateId_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setCACertificateId(const std::string& cACertificateId)
-{
-	cACertificateId_ = cACertificateId;
 }
 
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckTimeout()const
@@ -296,19 +214,9 @@ int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckTimeout()con
 	return healthCheckTimeout_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setHealthCheckTimeout(int healthCheckTimeout)
-{
-	healthCheckTimeout_ = healthCheckTimeout;
-}
-
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStickySession()const
 {
 	return stickySession_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setStickySession(const std::string& stickySession)
-{
-	stickySession_ = stickySession;
 }
 
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthyThreshold()const
@@ -316,19 +224,9 @@ int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthyThreshold()const
 	return healthyThreshold_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setHealthyThreshold(int healthyThreshold)
-{
-	healthyThreshold_ = healthyThreshold;
-}
-
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor()const
 {
 	return xForwardedFor_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setXForwardedFor(const std::string& xForwardedFor)
-{
-	xForwardedFor_ = xForwardedFor;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckDomain()const
@@ -336,18 +234,8 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckDoma
 	return healthCheckDomain_;
 }
 
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setHealthCheckDomain(const std::string& healthCheckDomain)
-{
-	healthCheckDomain_ = healthCheckDomain;
-}
-
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_proto()const
 {
 	return xForwardedFor_proto_;
-}
-
-void DescribeLoadBalancerHTTPSListenerAttributeResult::setXForwardedFor_proto(const std::string& xForwardedFor_proto)
-{
-	xForwardedFor_proto_ = xForwardedFor_proto;
 }
 

@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/CreateRulesRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::CreateRulesRequest;
 
 CreateRulesRequest::CreateRulesRequest() :
-	SlbRequest("CreateRules")
+	RpcServiceRequest("slb", "2014-05-15", "CreateRules")
 {}
 
 CreateRulesRequest::~CreateRulesRequest()
@@ -123,17 +122,6 @@ void CreateRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateRulesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateRulesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateRulesRequest::getTags()const

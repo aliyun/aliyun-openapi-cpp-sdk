@@ -45,7 +45,6 @@ namespace AlibabaCloud
 				explicit DescribeHealthStatusResult(const std::string &payload);
 				~DescribeHealthStatusResult();
 				std::vector<BackendServer> getBackendServers()const;
-				void setBackendServers(const std::vector<BackendServer>& backendServers);
 
 			protected:
 				void parse(const std::string &payload);

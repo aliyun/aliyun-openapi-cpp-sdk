@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/SetLoadBalancerStatusRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::SetLoadBalancerStatusRequest;
 
 SetLoadBalancerStatusRequest::SetLoadBalancerStatusRequest() :
-	SlbRequest("SetLoadBalancerStatus")
+	RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerStatus")
 {}
 
 SetLoadBalancerStatusRequest::~SetLoadBalancerStatusRequest()
@@ -112,17 +111,6 @@ void SetLoadBalancerStatusRequest::setLoadBalancerStatus(const std::string& load
 {
 	loadBalancerStatus_ = loadBalancerStatus;
 	setParameter("LoadBalancerStatus", loadBalancerStatus);
-}
-
-std::string SetLoadBalancerStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetLoadBalancerStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetLoadBalancerStatusRequest::getTags()const

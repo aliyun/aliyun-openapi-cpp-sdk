@@ -43,11 +43,18 @@ void CreateRulesResult::parse(const std::string &payload)
 	auto allRules = value["Rules"]["Rule"];
 	for (auto value : allRules)
 	{
-		Rule ruleObject;
-		ruleObject.ruleId = value["RuleId"].asString();
-		ruleObject.ruleName = value["RuleName"].asString();
-		rules_.push_back(ruleObject);
+		Rule rulesObject;
+		if(!value["RuleId"].isNull())
+			rulesObject.ruleId = value["RuleId"].asString();
+		if(!value["RuleName"].isNull())
+			rulesObject.ruleName = value["RuleName"].asString();
+		rules_.push_back(rulesObject);
 	}
 
+}
+
+std::vector<CreateRulesResult::Rule> CreateRulesResult::getRules()const
+{
+	return rules_;
 }
 

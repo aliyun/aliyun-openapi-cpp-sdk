@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/slb/SlbRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/slb/SlbExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT DeleteRulesRequest : public SlbRequest
+			class ALIBABACLOUD_SLB_EXPORT DeleteRulesRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -48,8 +49,6 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 
@@ -61,7 +60,6 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string tags_;
 
 			};

@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/slb/SlbRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/slb/SlbExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT CreateLoadBalancerRequest : public SlbRequest
+			class ALIBABACLOUD_SLB_EXPORT CreateLoadBalancerRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -36,48 +37,46 @@ namespace AlibabaCloud
 
 				std::string getAccess_key_id()const;
 				void setAccess_key_id(const std::string& access_key_id);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getMasterZoneId()const;
-				void setMasterZoneId(const std::string& masterZoneId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				int getDuration()const;
-				void setDuration(int duration);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getLoadBalancerName()const;
-				void setLoadBalancerName(const std::string& loadBalancerName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getAddressType()const;
-				void setAddressType(const std::string& addressType);
-				std::string getSlaveZoneId()const;
-				void setSlaveZoneId(const std::string& slaveZoneId);
 				std::string getLoadBalancerSpec()const;
 				void setLoadBalancerSpec(const std::string& loadBalancerSpec);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getBandwidth()const;
 				void setBandwidth(int bandwidth);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getMasterZoneId()const;
+				void setMasterZoneId(const std::string& masterZoneId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
+				int getDuration()const;
+				void setDuration(int duration);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getLoadBalancerName()const;
+				void setLoadBalancerName(const std::string& loadBalancerName);
 				std::string getEnableVpcVipFlow()const;
 				void setEnableVpcVipFlow(const std::string& enableVpcVipFlow);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
+				std::string getAddressType()const;
+				void setAddressType(const std::string& addressType);
+				std::string getSlaveZoneId()const;
+				void setSlaveZoneId(const std::string& slaveZoneId);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
 				std::string getPricingCycle()const;
@@ -85,27 +84,26 @@ namespace AlibabaCloud
 
             private:
 				std::string access_key_id_;
-				long resourceOwnerId_;
-				std::string clientToken_;
-				std::string masterZoneId_;
-				std::string accessKeyId_;
-				int duration_;
-				std::string resourceGroupId_;
-				std::string loadBalancerName_;
-				std::string regionId_;
-				std::string addressType_;
-				std::string slaveZoneId_;
 				std::string loadBalancerSpec_;
+				long resourceOwnerId_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				int bandwidth_;
+				std::string clientToken_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string masterZoneId_;
 				std::string tags_;
 				std::string vSwitchId_;
+				int duration_;
+				std::string resourceGroupId_;
+				std::string loadBalancerName_;
 				std::string enableVpcVipFlow_;
+				std::string regionId_;
 				std::string internetChargeType_;
 				std::string vpcId_;
+				std::string addressType_;
+				std::string slaveZoneId_;
 				std::string payType_;
 				std::string pricingCycle_;
 

@@ -15,7 +15,12 @@
 #
 
 set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
-set(slb_public_header
+
+set(slb_public_header 
+	include/alibabacloud/slb/SlbClient.h
+	include/alibabacloud/slb/SlbExport.h )
+
+set(slb_public_header_model 
 	include/alibabacloud/slb/model/CreateLoadBalancerUDPListenerRequest.h
 	include/alibabacloud/slb/model/CreateLoadBalancerUDPListenerResult.h
 	include/alibabacloud/slb/model/DescribeMasterSlaveVServerGroupsRequest.h
@@ -86,6 +91,8 @@ set(slb_public_header
 	include/alibabacloud/slb/model/ModifyVServerGroupBackendServersResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerUDPListenerAttributeRequest.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerUDPListenerAttributeResult.h
+	include/alibabacloud/slb/model/DescribeAccessLogsDownloadAttributeRequest.h
+	include/alibabacloud/slb/model/DescribeAccessLogsDownloadAttributeResult.h
 	include/alibabacloud/slb/model/DeleteRulesRequest.h
 	include/alibabacloud/slb/model/DeleteRulesResult.h
 	include/alibabacloud/slb/model/DeleteMasterSlaveVServerGroupRequest.h
@@ -126,10 +133,14 @@ set(slb_public_header
 	include/alibabacloud/slb/model/DescribeServerCertificatesResult.h
 	include/alibabacloud/slb/model/DescribeRulesRequest.h
 	include/alibabacloud/slb/model/DescribeRulesResult.h
+	include/alibabacloud/slb/model/DeleteAccessLogsDownloadAttributeRequest.h
+	include/alibabacloud/slb/model/DeleteAccessLogsDownloadAttributeResult.h
 	include/alibabacloud/slb/model/DescribeRuleAttributeRequest.h
 	include/alibabacloud/slb/model/DescribeRuleAttributeResult.h
 	include/alibabacloud/slb/model/UploadServerCertificateRequest.h
 	include/alibabacloud/slb/model/UploadServerCertificateResult.h
+	include/alibabacloud/slb/model/SetAccessLogsDownloadAttributeRequest.h
+	include/alibabacloud/slb/model/SetAccessLogsDownloadAttributeResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerAutoReleaseTimeRequest.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerAutoReleaseTimeResult.h
 	include/alibabacloud/slb/model/DeleteServerCertificateRequest.h
@@ -155,13 +166,10 @@ set(slb_public_header
 	include/alibabacloud/slb/model/AddVServerGroupBackendServersRequest.h
 	include/alibabacloud/slb/model/AddVServerGroupBackendServersResult.h
 	include/alibabacloud/slb/model/SetLoadBalancerUDPListenerAttributeRequest.h
-	include/alibabacloud/slb/model/SetLoadBalancerUDPListenerAttributeResult.h
-	include/alibabacloud/slb/SlbClient.h
-	include/alibabacloud/slb/SlbExport.h
-	include/alibabacloud/slb/SlbRequest.h
-	)
+	include/alibabacloud/slb/model/SetLoadBalancerUDPListenerAttributeResult.h )
 
-set(slb_src
+set(slb_src 
+	src/SlbClient.cc
 	src/model/CreateLoadBalancerUDPListenerRequest.cc
 	src/model/CreateLoadBalancerUDPListenerResult.cc
 	src/model/DescribeMasterSlaveVServerGroupsRequest.cc
@@ -232,6 +240,8 @@ set(slb_src
 	src/model/ModifyVServerGroupBackendServersResult.cc
 	src/model/DescribeLoadBalancerUDPListenerAttributeRequest.cc
 	src/model/DescribeLoadBalancerUDPListenerAttributeResult.cc
+	src/model/DescribeAccessLogsDownloadAttributeRequest.cc
+	src/model/DescribeAccessLogsDownloadAttributeResult.cc
 	src/model/DeleteRulesRequest.cc
 	src/model/DeleteRulesResult.cc
 	src/model/DeleteMasterSlaveVServerGroupRequest.cc
@@ -272,10 +282,14 @@ set(slb_src
 	src/model/DescribeServerCertificatesResult.cc
 	src/model/DescribeRulesRequest.cc
 	src/model/DescribeRulesResult.cc
+	src/model/DeleteAccessLogsDownloadAttributeRequest.cc
+	src/model/DeleteAccessLogsDownloadAttributeResult.cc
 	src/model/DescribeRuleAttributeRequest.cc
 	src/model/DescribeRuleAttributeResult.cc
 	src/model/UploadServerCertificateRequest.cc
 	src/model/UploadServerCertificateResult.cc
+	src/model/SetAccessLogsDownloadAttributeRequest.cc
+	src/model/SetAccessLogsDownloadAttributeResult.cc
 	src/model/DescribeLoadBalancerAutoReleaseTimeRequest.cc
 	src/model/DescribeLoadBalancerAutoReleaseTimeResult.cc
 	src/model/DeleteServerCertificateRequest.cc
@@ -301,12 +315,12 @@ set(slb_src
 	src/model/AddVServerGroupBackendServersRequest.cc
 	src/model/AddVServerGroupBackendServersResult.cc
 	src/model/SetLoadBalancerUDPListenerAttributeRequest.cc
-	src/model/SetLoadBalancerUDPListenerAttributeResult.cc
-	src/SlbClient.cc
-	src/SlbRequest.cc
-	)
+	src/model/SetLoadBalancerUDPListenerAttributeResult.cc )
 
-add_library(slb ${LIB_TYPE} ${slb_public_header} ${slb_src})
+add_library(slb ${LIB_TYPE}
+	${slb_public_header}
+	${slb_public_header_model}
+	${slb_src})
 
 set_target_properties(slb
 	PROPERTIES
@@ -315,7 +329,6 @@ set_target_properties(slb
 	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}slb
-	PUBLIC_HEADER "${slb_public_header}"
 	)
 
 if(${LIB_TYPE} STREQUAL "SHARED")
@@ -350,9 +363,12 @@ else()
 		jsoncpp)
 endif()
 
+install(FILES ${slb_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/slb)
+install(FILES ${slb_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/slb/model)
 install(TARGETS slb
 	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/slb
 	)

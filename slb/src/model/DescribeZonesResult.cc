@@ -43,19 +43,28 @@ void DescribeZonesResult::parse(const std::string &payload)
 	auto allZones = value["Zones"]["Zone"];
 	for (auto value : allZones)
 	{
-		Zone zoneObject;
-		zoneObject.zoneId = value["ZoneId"].asString();
-		zoneObject.localName = value["LocalName"].asString();
+		Zone zonesObject;
+		if(!value["ZoneId"].isNull())
+			zonesObject.zoneId = value["ZoneId"].asString();
+		if(!value["LocalName"].isNull())
+			zonesObject.localName = value["LocalName"].asString();
 		auto allSlaveZones = value["SlaveZones"]["SlaveZone"];
 		for (auto value : allSlaveZones)
 		{
-			Zone::SlaveZone slaveZoneObject;
-			slaveZoneObject.zoneId = value["ZoneId"].asString();
-			slaveZoneObject.localName = value["LocalName"].asString();
-			zoneObject.slaveZones.push_back(slaveZoneObject);
+			Zone::SlaveZone slaveZonesObject;
+			if(!value["ZoneId"].isNull())
+				slaveZonesObject.zoneId = value["ZoneId"].asString();
+			if(!value["LocalName"].isNull())
+				slaveZonesObject.localName = value["LocalName"].asString();
+			zonesObject.slaveZones.push_back(slaveZonesObject);
 		}
-		zones_.push_back(zoneObject);
+		zones_.push_back(zonesObject);
 	}
 
+}
+
+std::vector<DescribeZonesResult::Zone> DescribeZonesResult::getZones()const
+{
+	return zones_;
 }
 

@@ -43,59 +43,79 @@ void DescribeLoadBalancersRelatedEcsResult::parse(const std::string &payload)
 	auto allLoadBalancers = value["LoadBalancers"]["LoadBalancer"];
 	for (auto value : allLoadBalancers)
 	{
-		LoadBalancer loadBalancerObject;
-		loadBalancerObject.loadBalancerId = value["LoadBalancerId"].asString();
-		loadBalancerObject.count = std::stoi(value["Count"].asString());
+		LoadBalancer loadBalancersObject;
+		if(!value["LoadBalancerId"].isNull())
+			loadBalancersObject.loadBalancerId = value["LoadBalancerId"].asString();
+		if(!value["Count"].isNull())
+			loadBalancersObject.count = std::stoi(value["Count"].asString());
 		auto allMasterSlaveVServerGroups = value["MasterSlaveVServerGroups"]["MasterSlaveVServerGroup"];
 		for (auto value : allMasterSlaveVServerGroups)
 		{
-			LoadBalancer::MasterSlaveVServerGroup masterSlaveVServerGroupObject;
-			masterSlaveVServerGroupObject.groupId = value["GroupId"].asString();
-			masterSlaveVServerGroupObject.groupName = value["GroupName"].asString();
-			auto allBackendServers = value["BackendServers"]["BackendServer"];
-			for (auto value : allBackendServers)
+			LoadBalancer::MasterSlaveVServerGroup masterSlaveVServerGroupsObject;
+			if(!value["GroupId"].isNull())
+				masterSlaveVServerGroupsObject.groupId = value["GroupId"].asString();
+			if(!value["GroupName"].isNull())
+				masterSlaveVServerGroupsObject.groupName = value["GroupName"].asString();
+			auto allBackendServers1 = value["BackendServers"]["BackendServer"];
+			for (auto value : allBackendServers1)
 			{
-				LoadBalancer::MasterSlaveVServerGroup::BackendServer backendServerObject;
-				backendServerObject.vmName = value["VmName"].asString();
-				backendServerObject.weight = std::stoi(value["Weight"].asString());
-				backendServerObject.port = std::stoi(value["Port"].asString());
-				backendServerObject.networkType = value["NetworkType"].asString();
-				masterSlaveVServerGroupObject.backendServers1.push_back(backendServerObject);
+				LoadBalancer::MasterSlaveVServerGroup::BackendServer backendServers1Object;
+				if(!value["VmName"].isNull())
+					backendServers1Object.vmName = value["VmName"].asString();
+				if(!value["Weight"].isNull())
+					backendServers1Object.weight = std::stoi(value["Weight"].asString());
+				if(!value["Port"].isNull())
+					backendServers1Object.port = std::stoi(value["Port"].asString());
+				if(!value["NetworkType"].isNull())
+					backendServers1Object.networkType = value["NetworkType"].asString();
+				masterSlaveVServerGroupsObject.backendServers1.push_back(backendServers1Object);
 			}
-			loadBalancerObject.masterSlaveVServerGroups.push_back(masterSlaveVServerGroupObject);
+			loadBalancersObject.masterSlaveVServerGroups.push_back(masterSlaveVServerGroupsObject);
 		}
 		auto allVServerGroups = value["VServerGroups"]["VServerGroup"];
 		for (auto value : allVServerGroups)
 		{
-			LoadBalancer::VServerGroup vServerGroupObject;
-			vServerGroupObject.groupId = value["GroupId"].asString();
-			vServerGroupObject.groupName = value["GroupName"].asString();
-			auto allBackendServers = value["BackendServers"]["BackendServer"];
-			for (auto value : allBackendServers)
+			LoadBalancer::VServerGroup vServerGroupsObject;
+			if(!value["GroupId"].isNull())
+				vServerGroupsObject.groupId = value["GroupId"].asString();
+			if(!value["GroupName"].isNull())
+				vServerGroupsObject.groupName = value["GroupName"].asString();
+			auto allBackendServers2 = value["BackendServers"]["BackendServer"];
+			for (auto value : allBackendServers2)
 			{
-				LoadBalancer::VServerGroup::BackendServer backendServerObject;
-				backendServerObject.vmName = value["VmName"].asString();
-				backendServerObject.weight = std::stoi(value["Weight"].asString());
-				backendServerObject.port = std::stoi(value["Port"].asString());
-				backendServerObject.networkType = value["NetworkType"].asString();
-				vServerGroupObject.backendServers2.push_back(backendServerObject);
+				LoadBalancer::VServerGroup::BackendServer3 backendServers2Object;
+				if(!value["VmName"].isNull())
+					backendServers2Object.vmName = value["VmName"].asString();
+				if(!value["Weight"].isNull())
+					backendServers2Object.weight = std::stoi(value["Weight"].asString());
+				if(!value["Port"].isNull())
+					backendServers2Object.port = std::stoi(value["Port"].asString());
+				if(!value["NetworkType"].isNull())
+					backendServers2Object.networkType = value["NetworkType"].asString();
+				vServerGroupsObject.backendServers2.push_back(backendServers2Object);
 			}
-			loadBalancerObject.vServerGroups.push_back(vServerGroupObject);
+			loadBalancersObject.vServerGroups.push_back(vServerGroupsObject);
 		}
 		auto allBackendServers = value["BackendServers"]["BackendServer"];
 		for (auto value : allBackendServers)
 		{
-			LoadBalancer::BackendServer backendServerObject;
-			backendServerObject.vmName = value["VmName"].asString();
-			backendServerObject.weight = std::stoi(value["Weight"].asString());
-			backendServerObject.port = std::stoi(value["Port"].asString());
-			backendServerObject.networkType = value["NetworkType"].asString();
-			loadBalancerObject.backendServers.push_back(backendServerObject);
+			LoadBalancer::BackendServer4 backendServersObject;
+			if(!value["VmName"].isNull())
+				backendServersObject.vmName = value["VmName"].asString();
+			if(!value["Weight"].isNull())
+				backendServersObject.weight = std::stoi(value["Weight"].asString());
+			if(!value["Port"].isNull())
+				backendServersObject.port = std::stoi(value["Port"].asString());
+			if(!value["NetworkType"].isNull())
+				backendServersObject.networkType = value["NetworkType"].asString();
+			loadBalancersObject.backendServers.push_back(backendServersObject);
 		}
-		loadBalancers_.push_back(loadBalancerObject);
+		loadBalancers_.push_back(loadBalancersObject);
 	}
-	message_ = value["Message"].asString();
-	success_ = std::stoi(value["Success"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -104,18 +124,13 @@ std::string DescribeLoadBalancersRelatedEcsResult::getMessage()const
 	return message_;
 }
 
-void DescribeLoadBalancersRelatedEcsResult::setMessage(const std::string& message)
+std::vector<DescribeLoadBalancersRelatedEcsResult::LoadBalancer> DescribeLoadBalancersRelatedEcsResult::getLoadBalancers()const
 {
-	message_ = message;
+	return loadBalancers_;
 }
 
 bool DescribeLoadBalancersRelatedEcsResult::getSuccess()const
 {
 	return success_;
-}
-
-void DescribeLoadBalancersRelatedEcsResult::setSuccess(bool success)
-{
-	success_ = success;
 }
 

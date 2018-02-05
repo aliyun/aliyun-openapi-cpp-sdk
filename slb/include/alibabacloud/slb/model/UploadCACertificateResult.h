@@ -38,17 +38,11 @@ namespace AlibabaCloud
 				explicit UploadCACertificateResult(const std::string &payload);
 				~UploadCACertificateResult();
 				std::string getFingerprint()const;
-				void setFingerprint(const std::string& fingerprint);
 				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getCACertificateId()const;
-				void setCACertificateId(const std::string& cACertificateId);
 				std::string getCreateTime()const;
-				void setCreateTime(const std::string& createTime);
 				std::string getCACertificateName()const;
-				void setCACertificateName(const std::string& cACertificateName);
 				long getCreateTimeStamp()const;
-				void setCreateTimeStamp(long createTimeStamp);
 
 			protected:
 				void parse(const std::string &payload);

@@ -43,13 +43,17 @@ void ModifyVServerGroupBackendServersResult::parse(const std::string &payload)
 	auto allBackendServers = value["BackendServers"]["BackendServer"];
 	for (auto value : allBackendServers)
 	{
-		BackendServer backendServerObject;
-		backendServerObject.serverId = value["ServerId"].asString();
-		backendServerObject.port = std::stoi(value["Port"].asString());
-		backendServerObject.weight = std::stoi(value["Weight"].asString());
-		backendServers_.push_back(backendServerObject);
+		BackendServer backendServersObject;
+		if(!value["ServerId"].isNull())
+			backendServersObject.serverId = value["ServerId"].asString();
+		if(!value["Port"].isNull())
+			backendServersObject.port = std::stoi(value["Port"].asString());
+		if(!value["Weight"].isNull())
+			backendServersObject.weight = std::stoi(value["Weight"].asString());
+		backendServers_.push_back(backendServersObject);
 	}
-	vServerGroupId_ = value["VServerGroupId"].asString();
+	if(!value["VServerGroupId"].isNull())
+		vServerGroupId_ = value["VServerGroupId"].asString();
 
 }
 
@@ -58,8 +62,8 @@ std::string ModifyVServerGroupBackendServersResult::getVServerGroupId()const
 	return vServerGroupId_;
 }
 
-void ModifyVServerGroupBackendServersResult::setVServerGroupId(const std::string& vServerGroupId)
+std::vector<ModifyVServerGroupBackendServersResult::BackendServer> ModifyVServerGroupBackendServersResult::getBackendServers()const
 {
-	vServerGroupId_ = vServerGroupId;
+	return backendServers_;
 }
 

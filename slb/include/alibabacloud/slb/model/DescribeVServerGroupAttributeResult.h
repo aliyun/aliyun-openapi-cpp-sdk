@@ -44,11 +44,8 @@ namespace AlibabaCloud
 				explicit DescribeVServerGroupAttributeResult(const std::string &payload);
 				~DescribeVServerGroupAttributeResult();
 				std::string getVServerGroupId()const;
-				void setVServerGroupId(const std::string& vServerGroupId);
 				std::string getVServerGroupName()const;
-				void setVServerGroupName(const std::string& vServerGroupName);
 				std::vector<BackendServer> getBackendServers()const;
-				void setBackendServers(const std::vector<BackendServer>& backendServers);
 
 			protected:
 				void parse(const std::string &payload);

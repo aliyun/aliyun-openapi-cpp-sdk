@@ -58,13 +58,9 @@ namespace AlibabaCloud
 				explicit DescribeLoadBalancersResult(const std::string &payload);
 				~DescribeLoadBalancersResult();
 				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::vector<LoadBalancer> getLoadBalancers()const;
-				void setLoadBalancers(const std::vector<LoadBalancer>& loadBalancers);
 
 			protected:
 				void parse(const std::string &payload);

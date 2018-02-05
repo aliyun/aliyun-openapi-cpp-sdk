@@ -40,23 +40,40 @@ void DescribeLoadBalancerUDPListenerAttributeResult::parse(const std::string &pa
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	listenerPort_ = std::stoi(value["ListenerPort"].asString());
-	backendServerPort_ = std::stoi(value["BackendServerPort"].asString());
-	status_ = value["Status"].asString();
-	bandwidth_ = std::stoi(value["Bandwidth"].asString());
-	scheduler_ = value["Scheduler"].asString();
-	persistenceTimeout_ = std::stoi(value["PersistenceTimeout"].asString());
-	healthCheck_ = value["HealthCheck"].asString();
-	healthyThreshold_ = std::stoi(value["HealthyThreshold"].asString());
-	unhealthyThreshold_ = std::stoi(value["UnhealthyThreshold"].asString());
-	healthCheckConnectTimeout_ = std::stoi(value["HealthCheckConnectTimeout"].asString());
-	healthCheckConnectPort_ = std::stoi(value["HealthCheckConnectPort"].asString());
-	healthCheckInterval_ = std::stoi(value["HealthCheckInterval"].asString());
-	healthCheckReq_ = value["HealthCheckReq"].asString();
-	healthCheckExp_ = value["HealthCheckExp"].asString();
-	maxConnection_ = std::stoi(value["MaxConnection"].asString());
-	vServerGroupId_ = value["VServerGroupId"].asString();
-	masterSlaveServerGroupId_ = value["MasterSlaveServerGroupId"].asString();
+	if(!value["ListenerPort"].isNull())
+		listenerPort_ = std::stoi(value["ListenerPort"].asString());
+	if(!value["BackendServerPort"].isNull())
+		backendServerPort_ = std::stoi(value["BackendServerPort"].asString());
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["Bandwidth"].isNull())
+		bandwidth_ = std::stoi(value["Bandwidth"].asString());
+	if(!value["Scheduler"].isNull())
+		scheduler_ = value["Scheduler"].asString();
+	if(!value["PersistenceTimeout"].isNull())
+		persistenceTimeout_ = std::stoi(value["PersistenceTimeout"].asString());
+	if(!value["HealthCheck"].isNull())
+		healthCheck_ = value["HealthCheck"].asString();
+	if(!value["HealthyThreshold"].isNull())
+		healthyThreshold_ = std::stoi(value["HealthyThreshold"].asString());
+	if(!value["UnhealthyThreshold"].isNull())
+		unhealthyThreshold_ = std::stoi(value["UnhealthyThreshold"].asString());
+	if(!value["HealthCheckConnectTimeout"].isNull())
+		healthCheckConnectTimeout_ = std::stoi(value["HealthCheckConnectTimeout"].asString());
+	if(!value["HealthCheckConnectPort"].isNull())
+		healthCheckConnectPort_ = std::stoi(value["HealthCheckConnectPort"].asString());
+	if(!value["HealthCheckInterval"].isNull())
+		healthCheckInterval_ = std::stoi(value["HealthCheckInterval"].asString());
+	if(!value["HealthCheckReq"].isNull())
+		healthCheckReq_ = value["HealthCheckReq"].asString();
+	if(!value["HealthCheckExp"].isNull())
+		healthCheckExp_ = value["HealthCheckExp"].asString();
+	if(!value["MaxConnection"].isNull())
+		maxConnection_ = std::stoi(value["MaxConnection"].asString());
+	if(!value["VServerGroupId"].isNull())
+		vServerGroupId_ = value["VServerGroupId"].asString();
+	if(!value["MasterSlaveServerGroupId"].isNull())
+		masterSlaveServerGroupId_ = value["MasterSlaveServerGroupId"].asString();
 
 }
 
@@ -65,19 +82,9 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getStatus()const
 	return status_;
 }
 
-void DescribeLoadBalancerUDPListenerAttributeResult::setStatus(const std::string& status)
-{
-	status_ = status;
-}
-
 int DescribeLoadBalancerUDPListenerAttributeResult::getMaxConnection()const
 {
 	return maxConnection_;
-}
-
-void DescribeLoadBalancerUDPListenerAttributeResult::setMaxConnection(int maxConnection)
-{
-	maxConnection_ = maxConnection;
 }
 
 int DescribeLoadBalancerUDPListenerAttributeResult::getListenerPort()const
@@ -85,19 +92,9 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getListenerPort()const
 	return listenerPort_;
 }
 
-void DescribeLoadBalancerUDPListenerAttributeResult::setListenerPort(int listenerPort)
-{
-	listenerPort_ = listenerPort;
-}
-
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getVServerGroupId()const
 {
 	return vServerGroupId_;
-}
-
-void DescribeLoadBalancerUDPListenerAttributeResult::setVServerGroupId(const std::string& vServerGroupId)
-{
-	vServerGroupId_ = vServerGroupId;
 }
 
 int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckInterval()const
@@ -105,19 +102,9 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckInterval()cons
 	return healthCheckInterval_;
 }
 
-void DescribeLoadBalancerUDPListenerAttributeResult::setHealthCheckInterval(int healthCheckInterval)
-{
-	healthCheckInterval_ = healthCheckInterval;
-}
-
 int DescribeLoadBalancerUDPListenerAttributeResult::getUnhealthyThreshold()const
 {
 	return unhealthyThreshold_;
-}
-
-void DescribeLoadBalancerUDPListenerAttributeResult::setUnhealthyThreshold(int unhealthyThreshold)
-{
-	unhealthyThreshold_ = unhealthyThreshold;
 }
 
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getScheduler()const
@@ -125,19 +112,9 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getScheduler()const
 	return scheduler_;
 }
 
-void DescribeLoadBalancerUDPListenerAttributeResult::setScheduler(const std::string& scheduler)
-{
-	scheduler_ = scheduler;
-}
-
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheck()const
 {
 	return healthCheck_;
-}
-
-void DescribeLoadBalancerUDPListenerAttributeResult::setHealthCheck(const std::string& healthCheck)
-{
-	healthCheck_ = healthCheck;
 }
 
 int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckConnectTimeout()const
@@ -145,19 +122,9 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckConnectTimeout
 	return healthCheckConnectTimeout_;
 }
 
-void DescribeLoadBalancerUDPListenerAttributeResult::setHealthCheckConnectTimeout(int healthCheckConnectTimeout)
-{
-	healthCheckConnectTimeout_ = healthCheckConnectTimeout;
-}
-
 int DescribeLoadBalancerUDPListenerAttributeResult::getBackendServerPort()const
 {
 	return backendServerPort_;
-}
-
-void DescribeLoadBalancerUDPListenerAttributeResult::setBackendServerPort(int backendServerPort)
-{
-	backendServerPort_ = backendServerPort;
 }
 
 int DescribeLoadBalancerUDPListenerAttributeResult::getPersistenceTimeout()const
@@ -165,19 +132,9 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getPersistenceTimeout()const
 	return persistenceTimeout_;
 }
 
-void DescribeLoadBalancerUDPListenerAttributeResult::setPersistenceTimeout(int persistenceTimeout)
-{
-	persistenceTimeout_ = persistenceTimeout;
-}
-
 int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckConnectPort()const
 {
 	return healthCheckConnectPort_;
-}
-
-void DescribeLoadBalancerUDPListenerAttributeResult::setHealthCheckConnectPort(int healthCheckConnectPort)
-{
-	healthCheckConnectPort_ = healthCheckConnectPort;
 }
 
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckReq()const
@@ -185,19 +142,9 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckReq()c
 	return healthCheckReq_;
 }
 
-void DescribeLoadBalancerUDPListenerAttributeResult::setHealthCheckReq(const std::string& healthCheckReq)
-{
-	healthCheckReq_ = healthCheckReq;
-}
-
 int DescribeLoadBalancerUDPListenerAttributeResult::getBandwidth()const
 {
 	return bandwidth_;
-}
-
-void DescribeLoadBalancerUDPListenerAttributeResult::setBandwidth(int bandwidth)
-{
-	bandwidth_ = bandwidth;
 }
 
 int DescribeLoadBalancerUDPListenerAttributeResult::getHealthyThreshold()const
@@ -205,28 +152,13 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getHealthyThreshold()const
 	return healthyThreshold_;
 }
 
-void DescribeLoadBalancerUDPListenerAttributeResult::setHealthyThreshold(int healthyThreshold)
-{
-	healthyThreshold_ = healthyThreshold;
-}
-
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckExp()const
 {
 	return healthCheckExp_;
 }
 
-void DescribeLoadBalancerUDPListenerAttributeResult::setHealthCheckExp(const std::string& healthCheckExp)
-{
-	healthCheckExp_ = healthCheckExp;
-}
-
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getMasterSlaveServerGroupId()const
 {
 	return masterSlaveServerGroupId_;
-}
-
-void DescribeLoadBalancerUDPListenerAttributeResult::setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId)
-{
-	masterSlaveServerGroupId_ = masterSlaveServerGroupId;
 }
 

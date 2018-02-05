@@ -19,7 +19,8 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/slb/SlbRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/slb/SlbExport.h>
 
 namespace AlibabaCloud
 {
@@ -27,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT DeleteMasterSlaveVServerGroupRequest : public SlbRequest
+			class ALIBABACLOUD_SLB_EXPORT DeleteMasterSlaveVServerGroupRequest : public RpcServiceRequest
 			{
 
 			public:

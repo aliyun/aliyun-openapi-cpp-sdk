@@ -1319,6 +1319,42 @@ SlbClient::DescribeLoadBalancerUDPListenerAttributeOutcomeCallable SlbClient::de
 	return task->get_future();
 }
 
+SlbClient::DescribeAccessLogsDownloadAttributeOutcome SlbClient::describeAccessLogsDownloadAttribute(const DescribeAccessLogsDownloadAttributeRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccessLogsDownloadAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccessLogsDownloadAttributeOutcome(DescribeAccessLogsDownloadAttributeResult(outcome.result()));
+	else
+		return DescribeAccessLogsDownloadAttributeOutcome(outcome.error());
+}
+
+void SlbClient::describeAccessLogsDownloadAttributeAsync(const DescribeAccessLogsDownloadAttributeRequest& request, const DescribeAccessLogsDownloadAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccessLogsDownloadAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeAccessLogsDownloadAttributeOutcomeCallable SlbClient::describeAccessLogsDownloadAttributeCallable(const DescribeAccessLogsDownloadAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccessLogsDownloadAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccessLogsDownloadAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::DeleteRulesOutcome SlbClient::deleteRules(const DeleteRulesRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -2039,6 +2075,42 @@ SlbClient::DescribeRulesOutcomeCallable SlbClient::describeRulesCallable(const D
 	return task->get_future();
 }
 
+SlbClient::DeleteAccessLogsDownloadAttributeOutcome SlbClient::deleteAccessLogsDownloadAttribute(const DeleteAccessLogsDownloadAttributeRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAccessLogsDownloadAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAccessLogsDownloadAttributeOutcome(DeleteAccessLogsDownloadAttributeResult(outcome.result()));
+	else
+		return DeleteAccessLogsDownloadAttributeOutcome(outcome.error());
+}
+
+void SlbClient::deleteAccessLogsDownloadAttributeAsync(const DeleteAccessLogsDownloadAttributeRequest& request, const DeleteAccessLogsDownloadAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAccessLogsDownloadAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DeleteAccessLogsDownloadAttributeOutcomeCallable SlbClient::deleteAccessLogsDownloadAttributeCallable(const DeleteAccessLogsDownloadAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAccessLogsDownloadAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAccessLogsDownloadAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::DescribeRuleAttributeOutcome SlbClient::describeRuleAttribute(const DescribeRuleAttributeRequest &request) const
 {
 	auto endpointOutcome = endpoint();
@@ -2105,6 +2177,42 @@ SlbClient::UploadServerCertificateOutcomeCallable SlbClient::uploadServerCertifi
 			[this, request]()
 			{
 			return this->uploadServerCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetAccessLogsDownloadAttributeOutcome SlbClient::setAccessLogsDownloadAttribute(const SetAccessLogsDownloadAttributeRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetAccessLogsDownloadAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetAccessLogsDownloadAttributeOutcome(SetAccessLogsDownloadAttributeResult(outcome.result()));
+	else
+		return SetAccessLogsDownloadAttributeOutcome(outcome.error());
+}
+
+void SlbClient::setAccessLogsDownloadAttributeAsync(const SetAccessLogsDownloadAttributeRequest& request, const SetAccessLogsDownloadAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setAccessLogsDownloadAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetAccessLogsDownloadAttributeOutcomeCallable SlbClient::setAccessLogsDownloadAttributeCallable(const SetAccessLogsDownloadAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetAccessLogsDownloadAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->setAccessLogsDownloadAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

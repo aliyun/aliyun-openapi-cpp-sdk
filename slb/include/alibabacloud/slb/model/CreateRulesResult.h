@@ -43,7 +43,6 @@ namespace AlibabaCloud
 				explicit CreateRulesResult(const std::string &payload);
 				~CreateRulesResult();
 				std::vector<Rule> getRules()const;
-				void setRules(const std::vector<Rule>& rules);
 
 			protected:
 				void parse(const std::string &payload);

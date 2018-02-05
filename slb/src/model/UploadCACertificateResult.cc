@@ -40,12 +40,18 @@ void UploadCACertificateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	cACertificateId_ = value["CACertificateId"].asString();
-	cACertificateName_ = value["CACertificateName"].asString();
-	fingerprint_ = value["Fingerprint"].asString();
-	resourceGroupId_ = value["ResourceGroupId"].asString();
-	createTime_ = value["CreateTime"].asString();
-	createTimeStamp_ = std::stol(value["CreateTimeStamp"].asString());
+	if(!value["CACertificateId"].isNull())
+		cACertificateId_ = value["CACertificateId"].asString();
+	if(!value["CACertificateName"].isNull())
+		cACertificateName_ = value["CACertificateName"].asString();
+	if(!value["Fingerprint"].isNull())
+		fingerprint_ = value["Fingerprint"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["CreateTimeStamp"].isNull())
+		createTimeStamp_ = std::stol(value["CreateTimeStamp"].asString());
 
 }
 
@@ -54,19 +60,9 @@ std::string UploadCACertificateResult::getFingerprint()const
 	return fingerprint_;
 }
 
-void UploadCACertificateResult::setFingerprint(const std::string& fingerprint)
-{
-	fingerprint_ = fingerprint;
-}
-
 std::string UploadCACertificateResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
-}
-
-void UploadCACertificateResult::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
 }
 
 std::string UploadCACertificateResult::getCACertificateId()const
@@ -74,19 +70,9 @@ std::string UploadCACertificateResult::getCACertificateId()const
 	return cACertificateId_;
 }
 
-void UploadCACertificateResult::setCACertificateId(const std::string& cACertificateId)
-{
-	cACertificateId_ = cACertificateId;
-}
-
 std::string UploadCACertificateResult::getCreateTime()const
 {
 	return createTime_;
-}
-
-void UploadCACertificateResult::setCreateTime(const std::string& createTime)
-{
-	createTime_ = createTime;
 }
 
 std::string UploadCACertificateResult::getCACertificateName()const
@@ -94,18 +80,8 @@ std::string UploadCACertificateResult::getCACertificateName()const
 	return cACertificateName_;
 }
 
-void UploadCACertificateResult::setCACertificateName(const std::string& cACertificateName)
-{
-	cACertificateName_ = cACertificateName;
-}
-
 long UploadCACertificateResult::getCreateTimeStamp()const
 {
 	return createTimeStamp_;
-}
-
-void UploadCACertificateResult::setCreateTimeStamp(long createTimeStamp)
-{
-	createTimeStamp_ = createTimeStamp;
 }
 

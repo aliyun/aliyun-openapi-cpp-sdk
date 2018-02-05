@@ -40,12 +40,18 @@ void DescribeRuleAttributeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	ruleName_ = value["RuleName"].asString();
-	loadBalancerId_ = value["LoadBalancerId"].asString();
-	listenerPort_ = value["ListenerPort"].asString();
-	domain_ = value["Domain"].asString();
-	url_ = value["Url"].asString();
-	vServerGroupId_ = value["VServerGroupId"].asString();
+	if(!value["RuleName"].isNull())
+		ruleName_ = value["RuleName"].asString();
+	if(!value["LoadBalancerId"].isNull())
+		loadBalancerId_ = value["LoadBalancerId"].asString();
+	if(!value["ListenerPort"].isNull())
+		listenerPort_ = value["ListenerPort"].asString();
+	if(!value["Domain"].isNull())
+		domain_ = value["Domain"].asString();
+	if(!value["Url"].isNull())
+		url_ = value["Url"].asString();
+	if(!value["VServerGroupId"].isNull())
+		vServerGroupId_ = value["VServerGroupId"].asString();
 
 }
 
@@ -54,19 +60,9 @@ std::string DescribeRuleAttributeResult::getListenerPort()const
 	return listenerPort_;
 }
 
-void DescribeRuleAttributeResult::setListenerPort(const std::string& listenerPort)
-{
-	listenerPort_ = listenerPort;
-}
-
 std::string DescribeRuleAttributeResult::getVServerGroupId()const
 {
 	return vServerGroupId_;
-}
-
-void DescribeRuleAttributeResult::setVServerGroupId(const std::string& vServerGroupId)
-{
-	vServerGroupId_ = vServerGroupId;
 }
 
 std::string DescribeRuleAttributeResult::getLoadBalancerId()const
@@ -74,19 +70,9 @@ std::string DescribeRuleAttributeResult::getLoadBalancerId()const
 	return loadBalancerId_;
 }
 
-void DescribeRuleAttributeResult::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-}
-
 std::string DescribeRuleAttributeResult::getDomain()const
 {
 	return domain_;
-}
-
-void DescribeRuleAttributeResult::setDomain(const std::string& domain)
-{
-	domain_ = domain;
 }
 
 std::string DescribeRuleAttributeResult::getRuleName()const
@@ -94,18 +80,8 @@ std::string DescribeRuleAttributeResult::getRuleName()const
 	return ruleName_;
 }
 
-void DescribeRuleAttributeResult::setRuleName(const std::string& ruleName)
-{
-	ruleName_ = ruleName;
-}
-
 std::string DescribeRuleAttributeResult::getUrl()const
 {
 	return url_;
-}
-
-void DescribeRuleAttributeResult::setUrl(const std::string& url)
-{
-	url_ = url;
 }
 

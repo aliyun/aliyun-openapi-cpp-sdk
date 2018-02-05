@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DescribeServerCertificatesRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DescribeServerCertificatesRequest;
 
 DescribeServerCertificatesRequest::DescribeServerCertificatesRequest() :
-	SlbRequest("DescribeServerCertificates")
+	RpcServiceRequest("slb", "2014-05-15", "DescribeServerCertificates")
 {}
 
 DescribeServerCertificatesRequest::~DescribeServerCertificatesRequest()
@@ -112,17 +111,6 @@ void DescribeServerCertificatesRequest::setServerCertificateId(const std::string
 {
 	serverCertificateId_ = serverCertificateId;
 	setParameter("ServerCertificateId", serverCertificateId);
-}
-
-std::string DescribeServerCertificatesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeServerCertificatesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeServerCertificatesRequest::getTags()const

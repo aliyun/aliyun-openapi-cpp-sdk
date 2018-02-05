@@ -43,9 +43,7 @@ namespace AlibabaCloud
 				explicit RemoveBackendServersResult(const std::string &payload);
 				~RemoveBackendServersResult();
 				std::string getLoadBalancerId()const;
-				void setLoadBalancerId(const std::string& loadBalancerId);
 				std::vector<BackendServer> getBackendServers()const;
-				void setBackendServers(const std::vector<BackendServer>& backendServers);
 
 			protected:
 				void parse(const std::string &payload);

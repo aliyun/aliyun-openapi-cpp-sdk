@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit ModifyLoadBalancerInternetSpecResult(const std::string &payload);
 				~ModifyLoadBalancerInternetSpecResult();
 				long getOrderId()const;
-				void setOrderId(long orderId);
 
 			protected:
 				void parse(const std::string &payload);

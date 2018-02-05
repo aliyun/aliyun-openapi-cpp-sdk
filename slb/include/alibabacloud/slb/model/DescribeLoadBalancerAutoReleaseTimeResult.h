@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit DescribeLoadBalancerAutoReleaseTimeResult(const std::string &payload);
 				~DescribeLoadBalancerAutoReleaseTimeResult();
 				long getAutoReleaseTime()const;
-				void setAutoReleaseTime(long autoReleaseTime);
 
 			protected:
 				void parse(const std::string &payload);

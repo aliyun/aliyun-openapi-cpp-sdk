@@ -43,29 +43,49 @@ void DescribeLoadBalancersResult::parse(const std::string &payload)
 	auto allLoadBalancers = value["LoadBalancers"]["LoadBalancer"];
 	for (auto value : allLoadBalancers)
 	{
-		LoadBalancer loadBalancerObject;
-		loadBalancerObject.loadBalancerId = value["LoadBalancerId"].asString();
-		loadBalancerObject.loadBalancerName = value["LoadBalancerName"].asString();
-		loadBalancerObject.loadBalancerStatus = value["LoadBalancerStatus"].asString();
-		loadBalancerObject.address = value["Address"].asString();
-		loadBalancerObject.addressType = value["AddressType"].asString();
-		loadBalancerObject.regionId = value["RegionId"].asString();
-		loadBalancerObject.regionIdAlias = value["RegionIdAlias"].asString();
-		loadBalancerObject.vSwitchId = value["VSwitchId"].asString();
-		loadBalancerObject.vpcId = value["VpcId"].asString();
-		loadBalancerObject.networkType = value["NetworkType"].asString();
-		loadBalancerObject.masterZoneId = value["MasterZoneId"].asString();
-		loadBalancerObject.slaveZoneId = value["SlaveZoneId"].asString();
-		loadBalancerObject.internetChargeType = value["InternetChargeType"].asString();
-		loadBalancerObject.createTime = value["CreateTime"].asString();
-		loadBalancerObject.createTimeStamp = std::stol(value["CreateTimeStamp"].asString());
-		loadBalancerObject.payType = value["PayType"].asString();
-		loadBalancerObject.resourceGroupId = value["ResourceGroupId"].asString();
-		loadBalancers_.push_back(loadBalancerObject);
+		LoadBalancer loadBalancersObject;
+		if(!value["LoadBalancerId"].isNull())
+			loadBalancersObject.loadBalancerId = value["LoadBalancerId"].asString();
+		if(!value["LoadBalancerName"].isNull())
+			loadBalancersObject.loadBalancerName = value["LoadBalancerName"].asString();
+		if(!value["LoadBalancerStatus"].isNull())
+			loadBalancersObject.loadBalancerStatus = value["LoadBalancerStatus"].asString();
+		if(!value["Address"].isNull())
+			loadBalancersObject.address = value["Address"].asString();
+		if(!value["AddressType"].isNull())
+			loadBalancersObject.addressType = value["AddressType"].asString();
+		if(!value["RegionId"].isNull())
+			loadBalancersObject.regionId = value["RegionId"].asString();
+		if(!value["RegionIdAlias"].isNull())
+			loadBalancersObject.regionIdAlias = value["RegionIdAlias"].asString();
+		if(!value["VSwitchId"].isNull())
+			loadBalancersObject.vSwitchId = value["VSwitchId"].asString();
+		if(!value["VpcId"].isNull())
+			loadBalancersObject.vpcId = value["VpcId"].asString();
+		if(!value["NetworkType"].isNull())
+			loadBalancersObject.networkType = value["NetworkType"].asString();
+		if(!value["MasterZoneId"].isNull())
+			loadBalancersObject.masterZoneId = value["MasterZoneId"].asString();
+		if(!value["SlaveZoneId"].isNull())
+			loadBalancersObject.slaveZoneId = value["SlaveZoneId"].asString();
+		if(!value["InternetChargeType"].isNull())
+			loadBalancersObject.internetChargeType = value["InternetChargeType"].asString();
+		if(!value["CreateTime"].isNull())
+			loadBalancersObject.createTime = value["CreateTime"].asString();
+		if(!value["CreateTimeStamp"].isNull())
+			loadBalancersObject.createTimeStamp = std::stol(value["CreateTimeStamp"].asString());
+		if(!value["PayType"].isNull())
+			loadBalancersObject.payType = value["PayType"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			loadBalancersObject.resourceGroupId = value["ResourceGroupId"].asString();
+		loadBalancers_.push_back(loadBalancersObject);
 	}
-	pageNumber_ = std::stoi(value["PageNumber"].asString());
-	pageSize_ = std::stoi(value["PageSize"].asString());
-	totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -74,19 +94,9 @@ int DescribeLoadBalancersResult::getTotalCount()const
 	return totalCount_;
 }
 
-void DescribeLoadBalancersResult::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-}
-
 int DescribeLoadBalancersResult::getPageSize()const
 {
 	return pageSize_;
-}
-
-void DescribeLoadBalancersResult::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
 }
 
 int DescribeLoadBalancersResult::getPageNumber()const
@@ -94,8 +104,8 @@ int DescribeLoadBalancersResult::getPageNumber()const
 	return pageNumber_;
 }
 
-void DescribeLoadBalancersResult::setPageNumber(int pageNumber)
+std::vector<DescribeLoadBalancersResult::LoadBalancer> DescribeLoadBalancersResult::getLoadBalancers()const
 {
-	pageNumber_ = pageNumber;
+	return loadBalancers_;
 }
 

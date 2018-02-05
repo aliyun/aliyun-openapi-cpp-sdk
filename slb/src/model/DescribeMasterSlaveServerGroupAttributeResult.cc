@@ -43,15 +43,21 @@ void DescribeMasterSlaveServerGroupAttributeResult::parse(const std::string &pay
 	auto allMasterSlaveBackendServers = value["MasterSlaveBackendServers"]["MasterSlaveBackendServer"];
 	for (auto value : allMasterSlaveBackendServers)
 	{
-		MasterSlaveBackendServer masterSlaveBackendServerObject;
-		masterSlaveBackendServerObject.serverId = value["ServerId"].asString();
-		masterSlaveBackendServerObject.port = std::stoi(value["Port"].asString());
-		masterSlaveBackendServerObject.weight = std::stoi(value["Weight"].asString());
-		masterSlaveBackendServerObject.serverType = value["ServerType"].asString();
-		masterSlaveBackendServers_.push_back(masterSlaveBackendServerObject);
+		MasterSlaveBackendServer masterSlaveBackendServersObject;
+		if(!value["ServerId"].isNull())
+			masterSlaveBackendServersObject.serverId = value["ServerId"].asString();
+		if(!value["Port"].isNull())
+			masterSlaveBackendServersObject.port = std::stoi(value["Port"].asString());
+		if(!value["Weight"].isNull())
+			masterSlaveBackendServersObject.weight = std::stoi(value["Weight"].asString());
+		if(!value["ServerType"].isNull())
+			masterSlaveBackendServersObject.serverType = value["ServerType"].asString();
+		masterSlaveBackendServers_.push_back(masterSlaveBackendServersObject);
 	}
-	masterSlaveServerGroupId_ = value["MasterSlaveServerGroupId"].asString();
-	masterSlaveServerGroupName_ = value["MasterSlaveServerGroupName"].asString();
+	if(!value["MasterSlaveServerGroupId"].isNull())
+		masterSlaveServerGroupId_ = value["MasterSlaveServerGroupId"].asString();
+	if(!value["MasterSlaveServerGroupName"].isNull())
+		masterSlaveServerGroupName_ = value["MasterSlaveServerGroupName"].asString();
 
 }
 
@@ -60,18 +66,13 @@ std::string DescribeMasterSlaveServerGroupAttributeResult::getMasterSlaveServerG
 	return masterSlaveServerGroupId_;
 }
 
-void DescribeMasterSlaveServerGroupAttributeResult::setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId)
-{
-	masterSlaveServerGroupId_ = masterSlaveServerGroupId;
-}
-
 std::string DescribeMasterSlaveServerGroupAttributeResult::getMasterSlaveServerGroupName()const
 {
 	return masterSlaveServerGroupName_;
 }
 
-void DescribeMasterSlaveServerGroupAttributeResult::setMasterSlaveServerGroupName(const std::string& masterSlaveServerGroupName)
+std::vector<DescribeMasterSlaveServerGroupAttributeResult::MasterSlaveBackendServer> DescribeMasterSlaveServerGroupAttributeResult::getMasterSlaveBackendServers()const
 {
-	masterSlaveServerGroupName_ = masterSlaveServerGroupName;
+	return masterSlaveBackendServers_;
 }
 

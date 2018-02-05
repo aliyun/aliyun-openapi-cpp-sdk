@@ -38,21 +38,13 @@ namespace AlibabaCloud
 				explicit CreateLoadBalancerResult(const std::string &payload);
 				~CreateLoadBalancerResult();
 				std::string getLoadBalancerName()const;
-				void setLoadBalancerName(const std::string& loadBalancerName);
 				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getAddress()const;
-				void setAddress(const std::string& address);
 				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 				std::string getNetworkType()const;
-				void setNetworkType(const std::string& networkType);
 				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
 				std::string getLoadBalancerId()const;
-				void setLoadBalancerId(const std::string& loadBalancerId);
 				long getOrderId()const;
-				void setOrderId(long orderId);
 
 			protected:
 				void parse(const std::string &payload);

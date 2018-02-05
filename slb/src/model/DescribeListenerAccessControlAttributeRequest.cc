@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/DescribeListenerAccessControlAttributeRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::DescribeListenerAccessControlAttributeRequest;
 
 DescribeListenerAccessControlAttributeRequest::DescribeListenerAccessControlAttributeRequest() :
-	SlbRequest("DescribeListenerAccessControlAttribute")
+	RpcServiceRequest("slb", "2014-05-15", "DescribeListenerAccessControlAttribute")
 {}
 
 DescribeListenerAccessControlAttributeRequest::~DescribeListenerAccessControlAttributeRequest()
@@ -112,17 +111,6 @@ void DescribeListenerAccessControlAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeListenerAccessControlAttributeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeListenerAccessControlAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getTags()const

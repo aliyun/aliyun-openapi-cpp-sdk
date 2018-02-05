@@ -16,11 +16,10 @@
 
 #include <alibabacloud/slb/model/StartLoadBalancerListenerRequest.h>
 
-using namespace AlibabaCloud::Slb;
-using namespace AlibabaCloud::Slb::Model;
+using AlibabaCloud::Slb::Model::StartLoadBalancerListenerRequest;
 
 StartLoadBalancerListenerRequest::StartLoadBalancerListenerRequest() :
-	SlbRequest("StartLoadBalancerListener")
+	RpcServiceRequest("slb", "2014-05-15", "StartLoadBalancerListener")
 {}
 
 StartLoadBalancerListenerRequest::~StartLoadBalancerListenerRequest()
@@ -112,17 +111,6 @@ void StartLoadBalancerListenerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string StartLoadBalancerListenerRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void StartLoadBalancerListenerRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string StartLoadBalancerListenerRequest::getTags()const
