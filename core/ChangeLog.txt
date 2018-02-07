@@ -1,7 +1,0 @@
-2018-01-26 Version: 1.0.9
-1, Update  InstanceProfileCredentialsProvider
-2, Update common api
-
-2017-12-27 Version: 1.0.0
-1, Fix build failed on linux
-

@@ -1,3 +1,44 @@
 2018-02-07 Version: 1.0.12
 1, add the access interface of logs such as vulnerabilities, baselines, exceptions, etc.
 
+2018-02-06 Version: 1.0.11
+1, ModifyInstanceChargeType add instanceChargeType param, support prepay instance to postpay instance.
+2, ModifyPrepayInstanceSpec add operatorType param, support downgrade prepay ecs.
+
+2018-02-02 Version: 1.0.10
+1, this version is new of captcha management and nvc analyze
+
+2018-01-26 Version: 1.0.9
+1, Update  InstanceProfileCredentialsProvider
+2, Update common api
+
+2018-01-24 Version: 1.0.8
+1,  Fixed a problem that the ActiveAlert interface name is not standard
+2,  Update ActiveAlert interface : ListProductOfActiveAlert / DisableActiveAlert / EnableActiveAlert
+
+2018-01-24 Version: 1.0.7
+1, Add ActiveAlert API : ListActiveAlertRuleRequest/ListProductOfActiceAlertRequest/EnableActiceAlertRequest/DisableActiceAlertRequest
+
+2018-01-23 Version: 1.0.6
+1, Tesla Dam API release.
+2, Add ActionDiskCheck, ActionDiskMask, ActionDiskRma, HostGets.
+
+2018-01-12 Version: 1.0.5
+1, First commit ess module
+
+2018-01-11 Version: 1.0.4
+1, replace photo tag 2000 upgrade to 5000
+2, add TrashQuota
+
+2018-01-10 Version: 1.0.3
+1, First release vpc for c++
+
+2018-01-10 Version: 1.0.2
+1, First release slb for C++
+
+2018-01-10 Version: 1.0.1
+1, First release ecs for C++
+
+2017-12-27 Version: 1.0.0
+1, Fix build failed on linux
+
