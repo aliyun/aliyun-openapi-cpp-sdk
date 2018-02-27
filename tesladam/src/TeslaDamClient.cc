@@ -26,21 +26,21 @@ TeslaDamClient::TeslaDamClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "tesladam");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
 }
 
 TeslaDamClient::TeslaDamClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "tesladam");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
 }
 
 TeslaDamClient::TeslaDamClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "tesladam");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
 }
 
 TeslaDamClient::~TeslaDamClient()
@@ -57,6 +57,42 @@ CoreClient::EndpointOutcome TeslaDamClient::endpoint()const
 		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
 	else
 		return CoreClient::EndpointOutcome(endpoint);
+}
+
+TeslaDamClient::ActionOutcome TeslaDamClient::action(const ActionRequest &request) const
+{
+	auto endpointOutcome = endpoint();
+	if (!endpointOutcome.isSuccess())
+		return ActionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ActionOutcome(ActionResult(outcome.result()));
+	else
+		return ActionOutcome(outcome.error());
+}
+
+void TeslaDamClient::actionAsync(const ActionRequest& request, const ActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, action(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TeslaDamClient::ActionOutcomeCallable TeslaDamClient::actionCallable(const ActionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ActionOutcome()>>(
+			[this, request]()
+			{
+			return this->action(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
 }
 
 TeslaDamClient::ActionDiskRmaOutcome TeslaDamClient::actionDiskRma(const ActionDiskRmaRequest &request) const

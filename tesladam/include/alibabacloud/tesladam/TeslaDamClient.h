@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "TeslaDamExport.h"
+#include "model/ActionRequest.h"
+#include "model/ActionResult.h"
 #include "model/ActionDiskRmaRequest.h"
 #include "model/ActionDiskRmaResult.h"
 #include "model/ActionDiskMaskRequest.h"
@@ -39,6 +41,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_TESLADAM_EXPORT TeslaDamClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::ActionResult> ActionOutcome;			
+			typedef std::future<ActionOutcome> ActionOutcomeCallable;			
+			typedef std::function<void(const TeslaDamClient*, const Model::ActionRequest&, const ActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ActionAsyncHandler;
 			typedef Outcome<Error, Model::ActionDiskRmaResult> ActionDiskRmaOutcome;			
 			typedef std::future<ActionDiskRmaOutcome> ActionDiskRmaOutcomeCallable;			
 			typedef std::function<void(const TeslaDamClient*, const Model::ActionDiskRmaRequest&, const ActionDiskRmaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ActionDiskRmaAsyncHandler;
@@ -56,6 +61,9 @@ namespace AlibabaCloud
 			TeslaDamClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			TeslaDamClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~TeslaDamClient();
+            ActionOutcome action(const Model::ActionRequest &request)const;
+            void actionAsync(const Model::ActionRequest& request, const ActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+            ActionOutcomeCallable actionCallable(const Model::ActionRequest& request) const;
             ActionDiskRmaOutcome actionDiskRma(const Model::ActionDiskRmaRequest &request)const;
             void actionDiskRmaAsync(const Model::ActionDiskRmaRequest& request, const ActionDiskRmaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
             ActionDiskRmaOutcomeCallable actionDiskRmaCallable(const Model::ActionDiskRmaRequest& request) const;

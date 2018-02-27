@@ -21,6 +21,8 @@ set(tesladam_public_header
 	include/alibabacloud/tesladam/TeslaDamExport.h )
 
 set(tesladam_public_header_model 
+	include/alibabacloud/tesladam/model/ActionRequest.h
+	include/alibabacloud/tesladam/model/ActionResult.h
 	include/alibabacloud/tesladam/model/ActionDiskRmaRequest.h
 	include/alibabacloud/tesladam/model/ActionDiskRmaResult.h
 	include/alibabacloud/tesladam/model/ActionDiskMaskRequest.h
@@ -32,6 +34,8 @@ set(tesladam_public_header_model
 
 set(tesladam_src 
 	src/TeslaDamClient.cc
+	src/model/ActionRequest.cc
+	src/model/ActionResult.cc
 	src/model/ActionDiskRmaRequest.cc
 	src/model/ActionDiskRmaResult.cc
 	src/model/ActionDiskMaskRequest.cc
