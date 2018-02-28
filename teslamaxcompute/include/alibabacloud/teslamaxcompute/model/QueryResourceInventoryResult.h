@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TESLAMAXCOMPUTE_MODEL_QUERYTOPOLOGYRESULT_H_
-#define ALIBABACLOUD_TESLAMAXCOMPUTE_MODEL_QUERYTOPOLOGYRESULT_H_
+#ifndef ALIBABACLOUD_TESLAMAXCOMPUTE_MODEL_QUERYRESOURCEINVENTORYRESULT_H_
+#define ALIBABACLOUD_TESLAMAXCOMPUTE_MODEL_QUERYRESOURCEINVENTORYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,49 +29,53 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_TESLAMAXCOMPUTE_EXPORT QueryTopologyResult : public ServiceResult
+			class ALIBABACLOUD_TESLAMAXCOMPUTE_EXPORT QueryResourceInventoryResult : public ServiceResult
 			{
 			public:
-				struct ResultItem
+				struct Data
 				{
-					struct RegionItem
+					struct Cluster
 					{
-						struct ClusterItem
+						struct ResourceParameter
 						{
-							std::string netArch;
-							std::string netCode;
-							std::string cluster;
-							std::string machineRoom;
-							std::string productClass;
-							std::string productLine;
-							std::string business;
+							std::string paraName;
+							std::string paraValue;
 						};
-						std::vector<RegionItem::ClusterItem> clusters;
-						std::string regionEnName;
+						struct ResourceInventory
+						{
+							long used;
+							long total;
+							long available;
+							std::string resourceType;
+						};
+						std::string status;
+						std::vector<Cluster::ResourceInventory> resourceInventories;
+						std::string cluster;
 						std::string region;
-						std::string regionCnName;
+						std::string machineRoom;
+						std::vector<Cluster::ResourceParameter> resourceParameters;
 					};
 					std::string lastUpdate;
-					std::vector<ResultItem::RegionItem> regions;
+					std::vector<Cluster> clusters;
 				};
 
 
-				QueryTopologyResult();
-				explicit QueryTopologyResult(const std::string &payload);
-				~QueryTopologyResult();
+				QueryResourceInventoryResult();
+				explicit QueryResourceInventoryResult(const std::string &payload);
+				~QueryResourceInventoryResult();
 				std::string getMessage()const;
+				std::vector<Data> getData()const;
 				int getCode()const;
-				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::vector<Data> data_;
 				int code_;
-				std::vector<ResultItem> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_TESLAMAXCOMPUTE_MODEL_QUERYTOPOLOGYRESULT_H_
+#endif // !ALIBABACLOUD_TESLAMAXCOMPUTE_MODEL_QUERYRESOURCEINVENTORYRESULT_H_

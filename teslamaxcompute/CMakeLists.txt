@@ -25,6 +25,8 @@ set(teslamaxcompute_public_header_model
 	include/alibabacloud/teslamaxcompute/model/GetUserInstanceResult.h
 	include/alibabacloud/teslamaxcompute/model/GetProjectInstanceRequest.h
 	include/alibabacloud/teslamaxcompute/model/GetProjectInstanceResult.h
+	include/alibabacloud/teslamaxcompute/model/QueryResourceInventoryRequest.h
+	include/alibabacloud/teslamaxcompute/model/QueryResourceInventoryResult.h
 	include/alibabacloud/teslamaxcompute/model/QueryTopologyRequest.h
 	include/alibabacloud/teslamaxcompute/model/QueryTopologyResult.h
 	include/alibabacloud/teslamaxcompute/model/GetInstancesStatusCountRequest.h
@@ -42,6 +44,8 @@ set(teslamaxcompute_src
 	src/model/GetUserInstanceResult.cc
 	src/model/GetProjectInstanceRequest.cc
 	src/model/GetProjectInstanceResult.cc
+	src/model/QueryResourceInventoryRequest.cc
+	src/model/QueryResourceInventoryResult.cc
 	src/model/QueryTopologyRequest.cc
 	src/model/QueryTopologyResult.cc
 	src/model/GetInstancesStatusCountRequest.cc

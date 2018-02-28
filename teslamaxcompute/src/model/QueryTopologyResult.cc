@@ -40,26 +40,26 @@ void QueryTopologyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"];
+	auto allResult = value["Result"]["resultItem"];
 	for (auto value : allResult)
 	{
-		Result resultObject;
+		ResultItem resultObject;
 		if(!value["LastUpdate"].isNull())
 			resultObject.lastUpdate = value["LastUpdate"].asString();
-		auto allRegions = value["Regions"];
+		auto allRegions = value["Regions"]["regionItem"];
 		for (auto value : allRegions)
 		{
-			Result::Regions regionsObject;
+			ResultItem::RegionItem regionsObject;
 			if(!value["Region"].isNull())
 				regionsObject.region = value["Region"].asString();
 			if(!value["RegionEnName"].isNull())
 				regionsObject.regionEnName = value["RegionEnName"].asString();
 			if(!value["RegionCnName"].isNull())
 				regionsObject.regionCnName = value["RegionCnName"].asString();
-			auto allClusters = value["Clusters"];
+			auto allClusters = value["Clusters"]["clusterItem"];
 			for (auto value : allClusters)
 			{
-				Result::Regions::Clusters clustersObject;
+				ResultItem::RegionItem::ClusterItem clustersObject;
 				if(!value["Cluster"].isNull())
 					clustersObject.cluster = value["Cluster"].asString();
 				if(!value["ProductLine"].isNull())
@@ -97,7 +97,7 @@ int QueryTopologyResult::getCode()const
 	return code_;
 }
 
-std::vector<QueryTopologyResult::Result> QueryTopologyResult::getResult()const
+std::vector<QueryTopologyResult::ResultItem> QueryTopologyResult::getResult()const
 {
 	return result_;
 }
