@@ -50,6 +50,8 @@ void GetThumbnailsResult::parse(const std::string &payload)
 			resultsObject.message = value["Message"].asString();
 		if(!value["PhotoId"].isNull())
 			resultsObject.photoId = std::stol(value["PhotoId"].asString());
+		if(!value["PhotoIdStr"].isNull())
+			resultsObject.photoIdStr = value["PhotoIdStr"].asString();
 		if(!value["ThumbnailUrl"].isNull())
 			resultsObject.thumbnailUrl = value["ThumbnailUrl"].asString();
 		results_.push_back(resultsObject);

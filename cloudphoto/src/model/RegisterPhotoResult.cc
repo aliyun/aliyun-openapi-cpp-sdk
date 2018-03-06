@@ -46,6 +46,8 @@ void RegisterPhotoResult::parse(const std::string &payload)
 		Photo photoObject;
 		if(!value["Id"].isNull())
 			photoObject.id = std::stol(value["Id"].asString());
+		if(!value["IdStr"].isNull())
+			photoObject.idStr = value["IdStr"].asString();
 		if(!value["Title"].isNull())
 			photoObject.title = value["Title"].asString();
 		if(!value["Location"].isNull())

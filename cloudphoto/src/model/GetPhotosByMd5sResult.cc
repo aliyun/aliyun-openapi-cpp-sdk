@@ -46,6 +46,8 @@ void GetPhotosByMd5sResult::parse(const std::string &payload)
 		Photo photosObject;
 		if(!value["Id"].isNull())
 			photosObject.id = std::stol(value["Id"].asString());
+		if(!value["IdStr"].isNull())
+			photosObject.idStr = value["IdStr"].asString();
 		if(!value["Title"].isNull())
 			photosObject.title = value["Title"].asString();
 		if(!value["FileId"].isNull())

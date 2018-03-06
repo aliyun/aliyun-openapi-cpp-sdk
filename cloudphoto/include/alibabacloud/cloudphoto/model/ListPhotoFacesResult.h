@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Face
 				{
 					long faceId;
+					std::string faceIdStr;
 					std::string faceName;
 					std::vector<std::string> axis;
 				};

@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						bool isVideo;
 						long shareExpireTime;
+						std::string idStr;
 						long size;
 						std::string title;
 						long mtime;

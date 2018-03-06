@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					struct Cover
 					{
 						bool isVideo;
+						std::string idStr;
 						std::string state;
 						long ctime;
 						std::string title;
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 					};
 					bool isMe;
 					std::vector<Cover> cover;
+					std::string idStr;
 					std::string state;
 					long ctime;
 					int photosCount;

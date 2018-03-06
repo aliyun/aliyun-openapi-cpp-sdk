@@ -46,6 +46,8 @@ void ListMomentsResult::parse(const std::string &payload)
 		Moment momentsObject;
 		if(!value["Id"].isNull())
 			momentsObject.id = std::stol(value["Id"].asString());
+		if(!value["IdStr"].isNull())
+			momentsObject.idStr = value["IdStr"].asString();
 		if(!value["LocationName"].isNull())
 			momentsObject.locationName = value["LocationName"].asString();
 		if(!value["PhotosCount"].isNull())

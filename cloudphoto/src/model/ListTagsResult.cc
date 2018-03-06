@@ -46,6 +46,8 @@ void ListTagsResult::parse(const std::string &payload)
 		Tag tagsObject;
 		if(!value["Id"].isNull())
 			tagsObject.id = std::stol(value["Id"].asString());
+		if(!value["IdStr"].isNull())
+			tagsObject.idStr = value["IdStr"].asString();
 		if(!value["Name"].isNull())
 			tagsObject.name = value["Name"].asString();
 		if(!value["IsSubTag"].isNull())
@@ -58,6 +60,8 @@ void ListTagsResult::parse(const std::string &payload)
 			Tag::Cover coverObject;
 			if(!value["Id"].isNull())
 				coverObject.id = std::stol(value["Id"].asString());
+			if(!value["IdStr"].isNull())
+				coverObject.idStr = value["IdStr"].asString();
 			if(!value["Title"].isNull())
 				coverObject.title = value["Title"].asString();
 			if(!value["FileId"].isNull())

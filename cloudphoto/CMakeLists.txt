@@ -37,6 +37,8 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/ListFacesResult.h
 	include/alibabacloud/cloudphoto/model/MoveFacePhotosRequest.h
 	include/alibabacloud/cloudphoto/model/MoveFacePhotosResult.h
+	include/alibabacloud/cloudphoto/model/DeleteEventRequest.h
+	include/alibabacloud/cloudphoto/model/DeleteEventResult.h
 	include/alibabacloud/cloudphoto/model/ListPhotosRequest.h
 	include/alibabacloud/cloudphoto/model/ListPhotosResult.h
 	include/alibabacloud/cloudphoto/model/RegisterTagRequest.h
@@ -77,10 +79,14 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/GetPrivateAccessUrlsResult.h
 	include/alibabacloud/cloudphoto/model/GetSimilarPhotosRequest.h
 	include/alibabacloud/cloudphoto/model/GetSimilarPhotosResult.h
+	include/alibabacloud/cloudphoto/model/ListEventsRequest.h
+	include/alibabacloud/cloudphoto/model/ListEventsResult.h
 	include/alibabacloud/cloudphoto/model/GetVideoCoverRequest.h
 	include/alibabacloud/cloudphoto/model/GetVideoCoverResult.h
 	include/alibabacloud/cloudphoto/model/GetFramedPhotoUrlsRequest.h
 	include/alibabacloud/cloudphoto/model/GetFramedPhotoUrlsResult.h
+	include/alibabacloud/cloudphoto/model/GetEventRequest.h
+	include/alibabacloud/cloudphoto/model/GetEventResult.h
 	include/alibabacloud/cloudphoto/model/SetMeRequest.h
 	include/alibabacloud/cloudphoto/model/SetMeResult.h
 	include/alibabacloud/cloudphoto/model/ListTagPhotosRequest.h
@@ -105,6 +111,8 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/ListRegisteredTagsResult.h
 	include/alibabacloud/cloudphoto/model/DeletePhotoStoreRequest.h
 	include/alibabacloud/cloudphoto/model/DeletePhotoStoreResult.h
+	include/alibabacloud/cloudphoto/model/CreateEventRequest.h
+	include/alibabacloud/cloudphoto/model/CreateEventResult.h
 	include/alibabacloud/cloudphoto/model/GetPhotoStoreRequest.h
 	include/alibabacloud/cloudphoto/model/GetPhotoStoreResult.h
 	include/alibabacloud/cloudphoto/model/ListMomentPhotosRequest.h
@@ -117,6 +125,8 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/CreatePhotoResult.h
 	include/alibabacloud/cloudphoto/model/MoveAlbumPhotosRequest.h
 	include/alibabacloud/cloudphoto/model/MoveAlbumPhotosResult.h
+	include/alibabacloud/cloudphoto/model/EditEventRequest.h
+	include/alibabacloud/cloudphoto/model/EditEventResult.h
 	include/alibabacloud/cloudphoto/model/GetDownloadUrlRequest.h
 	include/alibabacloud/cloudphoto/model/GetDownloadUrlResult.h
 	include/alibabacloud/cloudphoto/model/CreateAlbumRequest.h
@@ -127,6 +137,8 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/LikePhotoResult.h
 	include/alibabacloud/cloudphoto/model/ListPhotoStoresRequest.h
 	include/alibabacloud/cloudphoto/model/ListPhotoStoresResult.h
+	include/alibabacloud/cloudphoto/model/GetAlbumsByNamesRequest.h
+	include/alibabacloud/cloudphoto/model/GetAlbumsByNamesResult.h
 	include/alibabacloud/cloudphoto/model/GetPublicAccessUrlsRequest.h
 	include/alibabacloud/cloudphoto/model/GetPublicAccessUrlsResult.h
 	include/alibabacloud/cloudphoto/model/EditPhotosRequest.h
@@ -160,6 +172,8 @@ set(cloudphoto_src
 	src/model/ListFacesResult.cc
 	src/model/MoveFacePhotosRequest.cc
 	src/model/MoveFacePhotosResult.cc
+	src/model/DeleteEventRequest.cc
+	src/model/DeleteEventResult.cc
 	src/model/ListPhotosRequest.cc
 	src/model/ListPhotosResult.cc
 	src/model/RegisterTagRequest.cc
@@ -200,10 +214,14 @@ set(cloudphoto_src
 	src/model/GetPrivateAccessUrlsResult.cc
 	src/model/GetSimilarPhotosRequest.cc
 	src/model/GetSimilarPhotosResult.cc
+	src/model/ListEventsRequest.cc
+	src/model/ListEventsResult.cc
 	src/model/GetVideoCoverRequest.cc
 	src/model/GetVideoCoverResult.cc
 	src/model/GetFramedPhotoUrlsRequest.cc
 	src/model/GetFramedPhotoUrlsResult.cc
+	src/model/GetEventRequest.cc
+	src/model/GetEventResult.cc
 	src/model/SetMeRequest.cc
 	src/model/SetMeResult.cc
 	src/model/ListTagPhotosRequest.cc
@@ -228,6 +246,8 @@ set(cloudphoto_src
 	src/model/ListRegisteredTagsResult.cc
 	src/model/DeletePhotoStoreRequest.cc
 	src/model/DeletePhotoStoreResult.cc
+	src/model/CreateEventRequest.cc
+	src/model/CreateEventResult.cc
 	src/model/GetPhotoStoreRequest.cc
 	src/model/GetPhotoStoreResult.cc
 	src/model/ListMomentPhotosRequest.cc
@@ -240,6 +260,8 @@ set(cloudphoto_src
 	src/model/CreatePhotoResult.cc
 	src/model/MoveAlbumPhotosRequest.cc
 	src/model/MoveAlbumPhotosResult.cc
+	src/model/EditEventRequest.cc
+	src/model/EditEventResult.cc
 	src/model/GetDownloadUrlRequest.cc
 	src/model/GetDownloadUrlResult.cc
 	src/model/CreateAlbumRequest.cc
@@ -250,6 +272,8 @@ set(cloudphoto_src
 	src/model/LikePhotoResult.cc
 	src/model/ListPhotoStoresRequest.cc
 	src/model/ListPhotoStoresResult.cc
+	src/model/GetAlbumsByNamesRequest.cc
+	src/model/GetAlbumsByNamesResult.cc
 	src/model/GetPublicAccessUrlsRequest.cc
 	src/model/GetPublicAccessUrlsResult.cc
 	src/model/EditPhotosRequest.cc

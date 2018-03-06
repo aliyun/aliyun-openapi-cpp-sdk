@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					};
 					int autoCleanDays;
 					long defaultQuota;
+					std::string idStr;
 					long ctime;
 					long mtime;
 					long id;

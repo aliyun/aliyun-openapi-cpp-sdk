@@ -36,6 +36,17 @@ void DeletePhotosRequest::setLibraryId(const std::string& libraryId)
 	setParameter("LibraryId", libraryId);
 }
 
+std::string DeletePhotosRequest::getStoreName()const
+{
+	return storeName_;
+}
+
+void DeletePhotosRequest::setStoreName(const std::string& storeName)
+{
+	storeName_ = storeName;
+	setParameter("StoreName", storeName);
+}
+
 std::vector<long> DeletePhotosRequest::getPhotoId()const
 {
 	return photoId_;
@@ -46,16 +57,5 @@ void DeletePhotosRequest::setPhotoId(const std::vector<long>& photoId)
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
 		setParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
-}
-
-std::string DeletePhotosRequest::getStoreName()const
-{
-	return storeName_;
-}
-
-void DeletePhotosRequest::setStoreName(const std::string& storeName)
-{
-	storeName_ = storeName;
-	setParameter("StoreName", storeName);
 }
 

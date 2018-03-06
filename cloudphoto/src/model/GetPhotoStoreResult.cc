@@ -46,6 +46,8 @@ void GetPhotoStoreResult::parse(const std::string &payload)
 		PhotoStore photoStoreObject;
 		if(!value["Id"].isNull())
 			photoStoreObject.id = std::stol(value["Id"].asString());
+		if(!value["IdStr"].isNull())
+			photoStoreObject.idStr = value["IdStr"].asString();
 		if(!value["Name"].isNull())
 			photoStoreObject.name = value["Name"].asString();
 		if(!value["Remark"].isNull())

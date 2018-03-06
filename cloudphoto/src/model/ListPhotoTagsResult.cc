@@ -46,6 +46,8 @@ void ListPhotoTagsResult::parse(const std::string &payload)
 		Tag tagsObject;
 		if(!value["Id"].isNull())
 			tagsObject.id = std::stol(value["Id"].asString());
+		if(!value["IdStr"].isNull())
+			tagsObject.idStr = value["IdStr"].asString();
 		if(!value["IsSubTag"].isNull())
 			tagsObject.isSubTag = value["IsSubTag"].asString() == "true";
 		if(!value["Name"].isNull())

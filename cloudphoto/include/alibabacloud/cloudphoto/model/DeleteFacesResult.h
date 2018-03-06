@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Result
 				{
 					std::string message;
+					std::string idStr;
 					long id;
 					std::string code;
 				};

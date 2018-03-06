@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					long photoId;
 					std::string message;
 					std::string thumbnailUrl;
+					std::string photoIdStr;
 					std::string code;
 				};
 

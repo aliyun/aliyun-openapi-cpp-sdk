@@ -46,6 +46,8 @@ void CreateAlbumResult::parse(const std::string &payload)
 		Album albumObject;
 		if(!value["Id"].isNull())
 			albumObject.id = std::stol(value["Id"].asString());
+		if(!value["IdStr"].isNull())
+			albumObject.idStr = value["IdStr"].asString();
 		if(!value["Name"].isNull())
 			albumObject.name = value["Name"].asString();
 		if(!value["State"].isNull())
@@ -64,6 +66,8 @@ void CreateAlbumResult::parse(const std::string &payload)
 			Album::Cover coverObject;
 			if(!value["Id"].isNull())
 				coverObject.id = std::stol(value["Id"].asString());
+			if(!value["IdStr"].isNull())
+				coverObject.idStr = value["IdStr"].asString();
 			if(!value["Title"].isNull())
 				coverObject.title = value["Title"].asString();
 			if(!value["FileId"].isNull())

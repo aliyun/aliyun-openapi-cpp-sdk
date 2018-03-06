@@ -46,6 +46,8 @@ void AddAlbumPhotosResult::parse(const std::string &payload)
 		Result resultsObject;
 		if(!value["Id"].isNull())
 			resultsObject.id = std::stol(value["Id"].asString());
+		if(!value["IdStr"].isNull())
+			resultsObject.idStr = value["IdStr"].asString();
 		if(!value["Code"].isNull())
 			resultsObject.code = value["Code"].asString();
 		if(!value["Message"].isNull())

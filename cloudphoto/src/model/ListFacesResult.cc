@@ -46,6 +46,8 @@ void ListFacesResult::parse(const std::string &payload)
 		Face facesObject;
 		if(!value["Id"].isNull())
 			facesObject.id = std::stol(value["Id"].asString());
+		if(!value["IdStr"].isNull())
+			facesObject.idStr = value["IdStr"].asString();
 		if(!value["Name"].isNull())
 			facesObject.name = value["Name"].asString();
 		if(!value["PhotosCount"].isNull())
@@ -64,6 +66,8 @@ void ListFacesResult::parse(const std::string &payload)
 			Face::Cover coverObject;
 			if(!value["Id"].isNull())
 				coverObject.id = std::stol(value["Id"].asString());
+			if(!value["IdStr"].isNull())
+				coverObject.idStr = value["IdStr"].asString();
 			if(!value["Title"].isNull())
 				coverObject.title = value["Title"].asString();
 			if(!value["FileId"].isNull())

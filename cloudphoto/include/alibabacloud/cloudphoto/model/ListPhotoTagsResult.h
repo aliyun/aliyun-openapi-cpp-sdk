@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Tag
 				{
+					std::string idStr;
 					bool isSubTag;
 					std::string parentTag;
 					long id;

@@ -46,6 +46,8 @@ void ListPhotoFacesResult::parse(const std::string &payload)
 		Face facesObject;
 		if(!value["FaceId"].isNull())
 			facesObject.faceId = std::stol(value["FaceId"].asString());
+		if(!value["FaceIdStr"].isNull())
+			facesObject.faceIdStr = value["FaceIdStr"].asString();
 		if(!value["FaceName"].isNull())
 			facesObject.faceName = value["FaceName"].asString();
 		auto allAxis = value["Axis"]["Axis"];

@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				std::string getLibraryId()const;
 				void setLibraryId(const std::string& libraryId);
-				std::vector<long> getPhotoId()const;
-				void setPhotoId(const std::vector<long>& photoId);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
+				std::vector<long> getPhotoId()const;
+				void setPhotoId(const std::vector<long>& photoId);
 
             private:
 				std::string libraryId_;
-				std::vector<long> photoId_;
 				std::string storeName_;
+				std::vector<long> photoId_;
 
 			};
 		}

@@ -58,6 +58,8 @@ void ListTimeLinesResult::parse(const std::string &payload)
 			TimeLine::Photo photosObject;
 			if(!value["Id"].isNull())
 				photosObject.id = std::stol(value["Id"].asString());
+			if(!value["IdStr"].isNull())
+				photosObject.idStr = value["IdStr"].asString();
 			if(!value["Title"].isNull())
 				photosObject.title = value["Title"].asString();
 			if(!value["Location"].isNull())

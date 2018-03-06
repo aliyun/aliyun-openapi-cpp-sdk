@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Moment
 				{
+					std::string idStr;
 					std::string state;
 					long ctime;
 					int photosCount;
