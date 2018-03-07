@@ -58,6 +58,17 @@ void EditEventRequest::setWatermarkPhotoId(const std::string& watermarkPhotoId)
 	setParameter("WatermarkPhotoId", watermarkPhotoId);
 }
 
+std::string EditEventRequest::getIdentity()const
+{
+	return identity_;
+}
+
+void EditEventRequest::setIdentity(const std::string& identity)
+{
+	identity_ = identity;
+	setParameter("Identity", identity);
+}
+
 std::string EditEventRequest::getSplashPhotoId()const
 {
 	return splashPhotoId_;

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setBannerPhotoId(const std::string& bannerPhotoId);
 				std::string getWatermarkPhotoId()const;
 				void setWatermarkPhotoId(const std::string& watermarkPhotoId);
+				std::string getIdentity()const;
+				void setIdentity(const std::string& identity);
 				std::string getSplashPhotoId()const;
 				void setSplashPhotoId(const std::string& splashPhotoId);
 				std::string getLibraryId()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				std::string eventId_;
 				std::string bannerPhotoId_;
 				std::string watermarkPhotoId_;
+				std::string identity_;
 				std::string splashPhotoId_;
 				std::string libraryId_;
 				std::string weixinTitle_;
