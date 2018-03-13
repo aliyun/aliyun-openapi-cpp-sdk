@@ -38,31 +38,45 @@ namespace AlibabaCloud
 					{
 						struct CpuMaxQuota
 						{
-							int min;
-							int avg;
-							int max;
+							float min;
+							float avg;
+							float max;
 						};
 						struct CpuMinQuota
 						{
-							int min;
-							int avg;
-							int max;
+							float min;
+							float avg;
+							float max;
 						};
 						struct MemUsed
 						{
-							int min;
-							int avg;
-							int max;
+							float min;
+							float avg;
+							float max;
 						};
 						struct CpuUsed
 						{
-							int min;
-							int avg;
-							int max;
+							float min;
+							float avg;
+							float max;
+						};
+						struct MemMaxQuota
+						{
+							float min;
+							float avg;
+							float max;
+						};
+						struct MemMinQuota
+						{
+							float min;
+							float avg;
+							float max;
 						};
 						std::vector<CpuMinQuota> cpuMinQuota;
 						std::vector<MemUsed> memUsed;
+						std::vector<MemMaxQuota> memMaxQuota;
 						std::vector<CpuMaxQuota> cpuMaxQuota;
+						std::vector<MemMinQuota> memMinQuota;
 						std::vector<CpuUsed> cpuUsed;
 					};
 					int times;

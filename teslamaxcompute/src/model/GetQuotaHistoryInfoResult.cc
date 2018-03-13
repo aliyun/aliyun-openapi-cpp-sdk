@@ -55,11 +55,11 @@ void GetQuotaHistoryInfoResult::parse(const std::string &payload)
 			{
 				DataItem::Point::CpuMaxQuota cpuMaxQuotaObject;
 				if(!value["Min"].isNull())
-					cpuMaxQuotaObject.min = std::stoi(value["Min"].asString());
+					cpuMaxQuotaObject.min = std::stof(value["Min"].asString());
 				if(!value["Max"].isNull())
-					cpuMaxQuotaObject.max = std::stoi(value["Max"].asString());
+					cpuMaxQuotaObject.max = std::stof(value["Max"].asString());
 				if(!value["Avg"].isNull())
-					cpuMaxQuotaObject.avg = std::stoi(value["Avg"].asString());
+					cpuMaxQuotaObject.avg = std::stof(value["Avg"].asString());
 				pointObject.cpuMaxQuota.push_back(cpuMaxQuotaObject);
 			}
 			auto allCpuMinQuota = value["CpuMinQuota"];
@@ -67,11 +67,11 @@ void GetQuotaHistoryInfoResult::parse(const std::string &payload)
 			{
 				DataItem::Point::CpuMinQuota cpuMinQuotaObject;
 				if(!value["Min"].isNull())
-					cpuMinQuotaObject.min = std::stoi(value["Min"].asString());
+					cpuMinQuotaObject.min = std::stof(value["Min"].asString());
 				if(!value["Max"].isNull())
-					cpuMinQuotaObject.max = std::stoi(value["Max"].asString());
+					cpuMinQuotaObject.max = std::stof(value["Max"].asString());
 				if(!value["Avg"].isNull())
-					cpuMinQuotaObject.avg = std::stoi(value["Avg"].asString());
+					cpuMinQuotaObject.avg = std::stof(value["Avg"].asString());
 				pointObject.cpuMinQuota.push_back(cpuMinQuotaObject);
 			}
 			auto allMemUsed = value["MemUsed"];
@@ -79,11 +79,11 @@ void GetQuotaHistoryInfoResult::parse(const std::string &payload)
 			{
 				DataItem::Point::MemUsed memUsedObject;
 				if(!value["Min"].isNull())
-					memUsedObject.min = std::stoi(value["Min"].asString());
+					memUsedObject.min = std::stof(value["Min"].asString());
 				if(!value["Max"].isNull())
-					memUsedObject.max = std::stoi(value["Max"].asString());
+					memUsedObject.max = std::stof(value["Max"].asString());
 				if(!value["Avg"].isNull())
-					memUsedObject.avg = std::stoi(value["Avg"].asString());
+					memUsedObject.avg = std::stof(value["Avg"].asString());
 				pointObject.memUsed.push_back(memUsedObject);
 			}
 			auto allCpuUsed = value["CpuUsed"];
@@ -91,12 +91,36 @@ void GetQuotaHistoryInfoResult::parse(const std::string &payload)
 			{
 				DataItem::Point::CpuUsed cpuUsedObject;
 				if(!value["Min"].isNull())
-					cpuUsedObject.min = std::stoi(value["Min"].asString());
+					cpuUsedObject.min = std::stof(value["Min"].asString());
 				if(!value["Max"].isNull())
-					cpuUsedObject.max = std::stoi(value["Max"].asString());
+					cpuUsedObject.max = std::stof(value["Max"].asString());
 				if(!value["Avg"].isNull())
-					cpuUsedObject.avg = std::stoi(value["Avg"].asString());
+					cpuUsedObject.avg = std::stof(value["Avg"].asString());
 				pointObject.cpuUsed.push_back(cpuUsedObject);
+			}
+			auto allMemMaxQuota = value["MemMaxQuota"];
+			for (auto value : allMemMaxQuota)
+			{
+				DataItem::Point::MemMaxQuota memMaxQuotaObject;
+				if(!value["Min"].isNull())
+					memMaxQuotaObject.min = std::stof(value["Min"].asString());
+				if(!value["Max"].isNull())
+					memMaxQuotaObject.max = std::stof(value["Max"].asString());
+				if(!value["Avg"].isNull())
+					memMaxQuotaObject.avg = std::stof(value["Avg"].asString());
+				pointObject.memMaxQuota.push_back(memMaxQuotaObject);
+			}
+			auto allMemMinQuota = value["MemMinQuota"];
+			for (auto value : allMemMinQuota)
+			{
+				DataItem::Point::MemMinQuota memMinQuotaObject;
+				if(!value["Min"].isNull())
+					memMinQuotaObject.min = std::stof(value["Min"].asString());
+				if(!value["Max"].isNull())
+					memMinQuotaObject.max = std::stof(value["Max"].asString());
+				if(!value["Avg"].isNull())
+					memMinQuotaObject.avg = std::stof(value["Avg"].asString());
+				pointObject.memMinQuota.push_back(memMinQuotaObject);
 			}
 			dataObject.point.push_back(pointObject);
 		}
