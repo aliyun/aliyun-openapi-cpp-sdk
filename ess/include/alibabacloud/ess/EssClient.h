@@ -302,7 +302,6 @@ namespace AlibabaCloud
             ModifyAlertConfigOutcomeCallable modifyAlertConfigCallable(const Model::ModifyAlertConfigRequest& request) const;
 	
 		private:
-			virtual EndpointOutcome endpoint()const override;
 			std::shared_ptr<EndpointProvider> endpointProvider_;
 		};
 	}

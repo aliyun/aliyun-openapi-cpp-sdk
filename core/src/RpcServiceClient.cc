@@ -20,14 +20,13 @@
 #include <sstream>
 #include <alibabacloud/core/HmacSha1Signer.h>
 #include "Utils.h"
-//#include <alibabacloud/core/RpcErrorMarshaller.h>
 
 using namespace AlibabaCloud;
 
-RpcServiceClient::RpcServiceClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+RpcServiceClient::RpcServiceClient(const std::string & servicename, const std::shared_ptr<CredentialsProvider> &credentialsProvider,
 	const ClientConfiguration &configuration,
 	const std::shared_ptr<Signer> &signer) :
-	CoreClient(configuration),
+	CoreClient(servicename, configuration),
 	credentialsProvider_(credentialsProvider),
 	signer_(signer)
 {

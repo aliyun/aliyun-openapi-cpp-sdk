@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Aegis;
 using namespace AlibabaCloud::Aegis::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "aegis";
+}
+
 AegisClient::AegisClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "vipaegis");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vipaegis");
 }
 
 AegisClient::AegisClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "vipaegis");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vipaegis");
 }
 
 AegisClient::AegisClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "vipaegis");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vipaegis");
 }
 
 AegisClient::~AegisClient()
 {}
 
-CoreClient::EndpointOutcome AegisClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 AegisClient::GetEntityListOutcome AegisClient::getEntityList(const GetEntityListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetEntityListOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ AegisClient::GetEntityListOutcomeCallable AegisClient::getEntityListCallable(con
 
 AegisClient::GetStatisticsByUuidOutcome AegisClient::getStatisticsByUuid(const GetStatisticsByUuidRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetStatisticsByUuidOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ AegisClient::GetStatisticsByUuidOutcomeCallable AegisClient::getStatisticsByUuid
 
 AegisClient::GetStatisticsOutcome AegisClient::getStatistics(const GetStatisticsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetStatisticsOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ AegisClient::GetStatisticsOutcomeCallable AegisClient::getStatisticsCallable(con
 
 AegisClient::DescribeVulDetailsOutcome AegisClient::describeVulDetails(const DescribeVulDetailsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVulDetailsOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ AegisClient::DescribeVulDetailsOutcomeCallable AegisClient::describeVulDetailsCa
 
 AegisClient::DeleteStrategyOutcome AegisClient::deleteStrategy(const DeleteStrategyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteStrategyOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ AegisClient::DeleteStrategyOutcomeCallable AegisClient::deleteStrategyCallable(c
 
 AegisClient::GetCrackStatisticsOutcome AegisClient::getCrackStatistics(const GetCrackStatisticsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetCrackStatisticsOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ AegisClient::GetCrackStatisticsOutcomeCallable AegisClient::getCrackStatisticsCa
 
 AegisClient::DescribeWarningOutcome AegisClient::describeWarning(const DescribeWarningRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeWarningOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ AegisClient::DescribeWarningOutcomeCallable AegisClient::describeWarningCallable
 
 AegisClient::ReleaseInstanceOutcome AegisClient::releaseInstance(const ReleaseInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ReleaseInstanceOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ AegisClient::ReleaseInstanceOutcomeCallable AegisClient::releaseInstanceCallable
 
 AegisClient::DescribeSuspiciousEventsOutcome AegisClient::describeSuspiciousEvents(const DescribeSuspiciousEventsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSuspiciousEventsOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ AegisClient::DescribeSuspiciousEventsOutcomeCallable AegisClient::describeSuspic
 
 AegisClient::CreateInstanceOutcome AegisClient::createInstance(const CreateInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateInstanceOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ AegisClient::CreateInstanceOutcomeCallable AegisClient::createInstanceCallable(c
 
 AegisClient::DescribeVulListOutcome AegisClient::describeVulList(const DescribeVulListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVulListOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ AegisClient::DescribeVulListOutcomeCallable AegisClient::describeVulListCallable
 
 AegisClient::UpgradeInstanceOutcome AegisClient::upgradeInstance(const UpgradeInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UpgradeInstanceOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ AegisClient::UpgradeInstanceOutcomeCallable AegisClient::upgradeInstanceCallable
 
 AegisClient::RenewInstanceOutcome AegisClient::renewInstance(const RenewInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RenewInstanceOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ AegisClient::RenewInstanceOutcomeCallable AegisClient::renewInstanceCallable(con
 
 AegisClient::DescribeStrategyTargetOutcome AegisClient::describeStrategyTarget(const DescribeStrategyTargetRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeStrategyTargetOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ AegisClient::DescribeStrategyTargetOutcomeCallable AegisClient::describeStrategy
 
 AegisClient::QueryLoginEventOutcome AegisClient::queryLoginEvent(const QueryLoginEventRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QueryLoginEventOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ AegisClient::QueryLoginEventOutcomeCallable AegisClient::queryLoginEventCallable
 
 AegisClient::GetAccountStatisticsOutcome AegisClient::getAccountStatistics(const GetAccountStatisticsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetAccountStatisticsOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ AegisClient::GetAccountStatisticsOutcomeCallable AegisClient::getAccountStatisti
 
 AegisClient::ModifyStrategyOutcome AegisClient::modifyStrategy(const ModifyStrategyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyStrategyOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ AegisClient::ModifyStrategyOutcomeCallable AegisClient::modifyStrategyCallable(c
 
 AegisClient::ModifyStrategyTargetOutcome AegisClient::modifyStrategyTarget(const ModifyStrategyTargetRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyStrategyTargetOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ AegisClient::ModifyStrategyTargetOutcomeCallable AegisClient::modifyStrategyTarg
 
 AegisClient::ModifyBatchIgnoreVulOutcome AegisClient::modifyBatchIgnoreVul(const ModifyBatchIgnoreVulRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyBatchIgnoreVulOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ AegisClient::ModifyBatchIgnoreVulOutcomeCallable AegisClient::modifyBatchIgnoreV
 
 AegisClient::DescribeWebshellOutcome AegisClient::describeWebshell(const DescribeWebshellRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeWebshellOutcome(endpointOutcome.error());
 
@@ -781,7 +773,7 @@ AegisClient::DescribeWebshellOutcomeCallable AegisClient::describeWebshellCallab
 
 AegisClient::DescribeStratetyDetailOutcome AegisClient::describeStratetyDetail(const DescribeStratetyDetailRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeStratetyDetailOutcome(endpointOutcome.error());
 
@@ -817,7 +809,7 @@ AegisClient::DescribeStratetyDetailOutcomeCallable AegisClient::describeStratety
 
 AegisClient::DescribeStratetyOutcome AegisClient::describeStratety(const DescribeStratetyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeStratetyOutcome(endpointOutcome.error());
 
@@ -853,7 +845,7 @@ AegisClient::DescribeStratetyOutcomeCallable AegisClient::describeStratetyCallab
 
 AegisClient::DescribeLoginLogsOutcome AegisClient::describeLoginLogs(const DescribeLoginLogsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLoginLogsOutcome(endpointOutcome.error());
 
@@ -889,7 +881,7 @@ AegisClient::DescribeLoginLogsOutcomeCallable AegisClient::describeLoginLogsCall
 
 AegisClient::QueryCrackEventOutcome AegisClient::queryCrackEvent(const QueryCrackEventRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QueryCrackEventOutcome(endpointOutcome.error());
 

@@ -61,9 +61,9 @@ void ListJobsResult::parse(const std::string &payload)
 		if(!value["LastModifyTime"].isNull())
 			jobsObject.lastModifyTime = value["LastModifyTime"].asString();
 		if(!value["Stdout"].isNull())
-			jobsObject.stdout = value["Stdout"].asString();
+			jobsObject._stdout = value["Stdout"].asString();
 		if(!value["Stderr"].isNull())
-			jobsObject.stderr = value["Stderr"].asString();
+			jobsObject._stderr = value["Stderr"].asString();
 		if(!value["Comment"].isNull())
 			jobsObject.comment = value["Comment"].asString();
 		if(!value["ArrayRequest"].isNull())

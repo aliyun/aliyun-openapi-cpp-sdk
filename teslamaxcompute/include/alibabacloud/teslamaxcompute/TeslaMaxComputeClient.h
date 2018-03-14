@@ -102,7 +102,6 @@ namespace AlibabaCloud
             GetQuotaHistoryInfoOutcomeCallable getQuotaHistoryInfoCallable(const Model::GetQuotaHistoryInfoRequest& request) const;
 	
 		private:
-			virtual EndpointOutcome endpoint()const override;
 			std::shared_ptr<EndpointProvider> endpointProvider_;
 		};
 	}

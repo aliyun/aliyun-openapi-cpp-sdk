@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Ess;
 using namespace AlibabaCloud::Ess::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "Ess";
+}
+
 EssClient::EssClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ess");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
 }
 
 EssClient::EssClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ess");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
 }
 
 EssClient::EssClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ess");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
 }
 
 EssClient::~EssClient()
 {}
 
-CoreClient::EndpointOutcome EssClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 EssClient::AttachInstancesOutcome EssClient::attachInstances(const AttachInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AttachInstancesOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ EssClient::AttachInstancesOutcomeCallable EssClient::attachInstancesCallable(con
 
 EssClient::DescribeScalingGroupsOutcome EssClient::describeScalingGroups(const DescribeScalingGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeScalingGroupsOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ EssClient::DescribeScalingGroupsOutcomeCallable EssClient::describeScalingGroups
 
 EssClient::DescribeScalingActivitiesOutcome EssClient::describeScalingActivities(const DescribeScalingActivitiesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeScalingActivitiesOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ EssClient::DescribeScalingActivitiesOutcomeCallable EssClient::describeScalingAc
 
 EssClient::DescribeScalingRulesOutcome EssClient::describeScalingRules(const DescribeScalingRulesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeScalingRulesOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ EssClient::DescribeScalingRulesOutcomeCallable EssClient::describeScalingRulesCa
 
 EssClient::ModifyScalingGroupOutcome EssClient::modifyScalingGroup(const ModifyScalingGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyScalingGroupOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ EssClient::ModifyScalingGroupOutcomeCallable EssClient::modifyScalingGroupCallab
 
 EssClient::EnableScalingGroupOutcome EssClient::enableScalingGroup(const EnableScalingGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EnableScalingGroupOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ EssClient::EnableScalingGroupOutcomeCallable EssClient::enableScalingGroupCallab
 
 EssClient::DeactivateScalingConfigurationOutcome EssClient::deactivateScalingConfiguration(const DeactivateScalingConfigurationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeactivateScalingConfigurationOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ EssClient::DeactivateScalingConfigurationOutcomeCallable EssClient::deactivateSc
 
 EssClient::VerifyAuthenticationOutcome EssClient::verifyAuthentication(const VerifyAuthenticationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return VerifyAuthenticationOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ EssClient::VerifyAuthenticationOutcomeCallable EssClient::verifyAuthenticationCa
 
 EssClient::CreateScheduledTaskOutcome EssClient::createScheduledTask(const CreateScheduledTaskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateScheduledTaskOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ EssClient::CreateScheduledTaskOutcomeCallable EssClient::createScheduledTaskCall
 
 EssClient::DeleteScheduledTaskOutcome EssClient::deleteScheduledTask(const DeleteScheduledTaskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteScheduledTaskOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ EssClient::DeleteScheduledTaskOutcomeCallable EssClient::deleteScheduledTaskCall
 
 EssClient::CreateScalingRuleOutcome EssClient::createScalingRule(const CreateScalingRuleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateScalingRuleOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ EssClient::CreateScalingRuleOutcomeCallable EssClient::createScalingRuleCallable
 
 EssClient::DescribeScalingConfigurationsOutcome EssClient::describeScalingConfigurations(const DescribeScalingConfigurationsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeScalingConfigurationsOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ EssClient::DescribeScalingConfigurationsOutcomeCallable EssClient::describeScali
 
 EssClient::ModifyScheduledTaskOutcome EssClient::modifyScheduledTask(const ModifyScheduledTaskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyScheduledTaskOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ EssClient::ModifyScheduledTaskOutcomeCallable EssClient::modifyScheduledTaskCall
 
 EssClient::RemoveInstancesOutcome EssClient::removeInstances(const RemoveInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveInstancesOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ EssClient::RemoveInstancesOutcomeCallable EssClient::removeInstancesCallable(con
 
 EssClient::ExecuteScalingRuleOutcome EssClient::executeScalingRule(const ExecuteScalingRuleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ExecuteScalingRuleOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ EssClient::ExecuteScalingRuleOutcomeCallable EssClient::executeScalingRuleCallab
 
 EssClient::DeleteScalingGroupOutcome EssClient::deleteScalingGroup(const DeleteScalingGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteScalingGroupOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ EssClient::DeleteScalingGroupOutcomeCallable EssClient::deleteScalingGroupCallab
 
 EssClient::DescribeScalingInstancesOutcome EssClient::describeScalingInstances(const DescribeScalingInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeScalingInstancesOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ EssClient::DescribeScalingInstancesOutcomeCallable EssClient::describeScalingIns
 
 EssClient::CreateScalingConfigurationOutcome EssClient::createScalingConfiguration(const CreateScalingConfigurationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateScalingConfigurationOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ EssClient::CreateScalingConfigurationOutcomeCallable EssClient::createScalingCon
 
 EssClient::DescribeCapacityHistoryOutcome EssClient::describeCapacityHistory(const DescribeCapacityHistoryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCapacityHistoryOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ EssClient::DescribeCapacityHistoryOutcomeCallable EssClient::describeCapacityHis
 
 EssClient::DescribeRegionsOutcome EssClient::describeRegions(const DescribeRegionsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRegionsOutcome(endpointOutcome.error());
 
@@ -781,7 +773,7 @@ EssClient::DescribeRegionsOutcomeCallable EssClient::describeRegionsCallable(con
 
 EssClient::DescribeScheduledTasksOutcome EssClient::describeScheduledTasks(const DescribeScheduledTasksRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeScheduledTasksOutcome(endpointOutcome.error());
 
@@ -817,7 +809,7 @@ EssClient::DescribeScheduledTasksOutcomeCallable EssClient::describeScheduledTas
 
 EssClient::DescribeAccountAttributesOutcome EssClient::describeAccountAttributes(const DescribeAccountAttributesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAccountAttributesOutcome(endpointOutcome.error());
 
@@ -853,7 +845,7 @@ EssClient::DescribeAccountAttributesOutcomeCallable EssClient::describeAccountAt
 
 EssClient::DetachInstancesOutcome EssClient::detachInstances(const DetachInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DetachInstancesOutcome(endpointOutcome.error());
 
@@ -889,7 +881,7 @@ EssClient::DetachInstancesOutcomeCallable EssClient::detachInstancesCallable(con
 
 EssClient::DescribeLimitationOutcome EssClient::describeLimitation(const DescribeLimitationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLimitationOutcome(endpointOutcome.error());
 
@@ -925,7 +917,7 @@ EssClient::DescribeLimitationOutcomeCallable EssClient::describeLimitationCallab
 
 EssClient::DescribeScalingActivityDetailOutcome EssClient::describeScalingActivityDetail(const DescribeScalingActivityDetailRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeScalingActivityDetailOutcome(endpointOutcome.error());
 
@@ -961,7 +953,7 @@ EssClient::DescribeScalingActivityDetailOutcomeCallable EssClient::describeScali
 
 EssClient::DescribeAlertConfigOutcome EssClient::describeAlertConfig(const DescribeAlertConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAlertConfigOutcome(endpointOutcome.error());
 
@@ -997,7 +989,7 @@ EssClient::DescribeAlertConfigOutcomeCallable EssClient::describeAlertConfigCall
 
 EssClient::CreateScalingGroupOutcome EssClient::createScalingGroup(const CreateScalingGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateScalingGroupOutcome(endpointOutcome.error());
 
@@ -1033,7 +1025,7 @@ EssClient::CreateScalingGroupOutcomeCallable EssClient::createScalingGroupCallab
 
 EssClient::DeleteScalingConfigurationOutcome EssClient::deleteScalingConfiguration(const DeleteScalingConfigurationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteScalingConfigurationOutcome(endpointOutcome.error());
 
@@ -1069,7 +1061,7 @@ EssClient::DeleteScalingConfigurationOutcomeCallable EssClient::deleteScalingCon
 
 EssClient::DisableScalingGroupOutcome EssClient::disableScalingGroup(const DisableScalingGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DisableScalingGroupOutcome(endpointOutcome.error());
 
@@ -1105,7 +1097,7 @@ EssClient::DisableScalingGroupOutcomeCallable EssClient::disableScalingGroupCall
 
 EssClient::ModifyScalingRuleOutcome EssClient::modifyScalingRule(const ModifyScalingRuleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyScalingRuleOutcome(endpointOutcome.error());
 
@@ -1141,7 +1133,7 @@ EssClient::ModifyScalingRuleOutcomeCallable EssClient::modifyScalingRuleCallable
 
 EssClient::DeleteScalingRuleOutcome EssClient::deleteScalingRule(const DeleteScalingRuleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteScalingRuleOutcome(endpointOutcome.error());
 
@@ -1177,7 +1169,7 @@ EssClient::DeleteScalingRuleOutcomeCallable EssClient::deleteScalingRuleCallable
 
 EssClient::VerifyUserOutcome EssClient::verifyUser(const VerifyUserRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return VerifyUserOutcome(endpointOutcome.error());
 
@@ -1213,7 +1205,7 @@ EssClient::VerifyUserOutcomeCallable EssClient::verifyUserCallable(const VerifyU
 
 EssClient::ModifyAlertConfigOutcome EssClient::modifyAlertConfig(const ModifyAlertConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyAlertConfigOutcome(endpointOutcome.error());
 

@@ -33,20 +33,19 @@ namespace AlibabaCloud
 	class ALIBABACLOUD_CORE_EXPORT CoreClient
 	{
 	public:
-		CoreClient(const ClientConfiguration &configuration);
+		CoreClient(const std::string & servicename, const ClientConfiguration &configuration);
 		virtual ~CoreClient();
 
 		ClientConfiguration configuration()const;
+		std::string serviceName()const;
 	protected:
-		typedef Outcome<Error, std::string> EndpointOutcome;
-
 		HttpClient::HttpResponseOutcome AttemptRequest(const std::string & endpoint, const ServiceRequest &request, HttpRequest::Method method)const;
 		Error buildCoreError(const HttpResponse &response)const;
 		bool hasResponseError(const HttpResponse &response)const;
 		virtual HttpRequest buildHttpRequest(const std::string & endpoint, const ServiceRequest &msg, HttpRequest::Method method)const = 0;
 		void asyncExecute(Runnable * r)const;
-		virtual EndpointOutcome endpoint()const = 0;
 	private:
+		std::string serviceName_;
 		ClientConfiguration configuration_;
 		std::shared_ptr<CredentialsProvider> credentialsProvider_;
 		HttpClient *httpClient_;

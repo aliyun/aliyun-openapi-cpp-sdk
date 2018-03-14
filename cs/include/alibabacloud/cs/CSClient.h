@@ -374,7 +374,6 @@ namespace AlibabaCloud
             CreateClusterOutcomeCallable createClusterCallable(const Model::CreateClusterRequest& request) const;
 	
 		private:
-			virtual EndpointOutcome endpoint()const override;
 			std::shared_ptr<EndpointProvider> endpointProvider_;
 		};
 	}

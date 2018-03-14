@@ -78,7 +78,6 @@ namespace AlibabaCloud
             HostGetsOutcomeCallable hostGetsCallable(const Model::HostGetsRequest& request) const;
 	
 		private:
-			virtual EndpointOutcome endpoint()const override;
 			std::shared_ptr<EndpointProvider> endpointProvider_;
 		};
 	}

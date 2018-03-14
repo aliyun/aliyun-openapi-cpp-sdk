@@ -1406,7 +1406,6 @@ namespace AlibabaCloud
             DescribeBackupSetsForSecurityOutcomeCallable describeBackupSetsForSecurityCallable(const Model::DescribeBackupSetsForSecurityRequest& request) const;
 	
 		private:
-			virtual EndpointOutcome endpoint()const override;
 			std::shared_ptr<EndpointProvider> endpointProvider_;
 		};
 	}

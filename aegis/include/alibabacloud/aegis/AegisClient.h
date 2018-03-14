@@ -230,7 +230,6 @@ namespace AlibabaCloud
             QueryCrackEventOutcomeCallable queryCrackEventCallable(const Model::QueryCrackEventRequest& request) const;
 	
 		private:
-			virtual EndpointOutcome endpoint()const override;
 			std::shared_ptr<EndpointProvider> endpointProvider_;
 		};
 	}

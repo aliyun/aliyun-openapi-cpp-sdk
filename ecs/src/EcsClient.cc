@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "Ecs";
+}
+
 EcsClient::EcsClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ecs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ecs");
 }
 
 EcsClient::EcsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ecs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ecs");
 }
 
 EcsClient::EcsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ecs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ecs");
 }
 
 EcsClient::~EcsClient()
 {}
 
-CoreClient::EndpointOutcome EcsClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 EcsClient::ModifySnapshotAttributeOutcome EcsClient::modifySnapshotAttribute(const ModifySnapshotAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifySnapshotAttributeOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ EcsClient::ModifySnapshotAttributeOutcomeCallable EcsClient::modifySnapshotAttri
 
 EcsClient::JoinSecurityGroupOutcome EcsClient::joinSecurityGroup(const JoinSecurityGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return JoinSecurityGroupOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ EcsClient::JoinSecurityGroupOutcomeCallable EcsClient::joinSecurityGroupCallable
 
 EcsClient::DescribeSnapshotsOutcome EcsClient::describeSnapshots(const DescribeSnapshotsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSnapshotsOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ EcsClient::DescribeSnapshotsOutcomeCallable EcsClient::describeSnapshotsCallable
 
 EcsClient::ModifyBandwidthPackageSpecOutcome EcsClient::modifyBandwidthPackageSpec(const ModifyBandwidthPackageSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyBandwidthPackageSpecOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ EcsClient::ModifyBandwidthPackageSpecOutcomeCallable EcsClient::modifyBandwidthP
 
 EcsClient::ModifyInstanceVncPasswdOutcome EcsClient::modifyInstanceVncPasswd(const ModifyInstanceVncPasswdRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyInstanceVncPasswdOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ EcsClient::ModifyInstanceVncPasswdOutcomeCallable EcsClient::modifyInstanceVncPa
 
 EcsClient::CreateNatGatewayOutcome EcsClient::createNatGateway(const CreateNatGatewayRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateNatGatewayOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ EcsClient::CreateNatGatewayOutcomeCallable EcsClient::createNatGatewayCallable(c
 
 EcsClient::AttachDiskOutcome EcsClient::attachDisk(const AttachDiskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AttachDiskOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ EcsClient::AttachDiskOutcomeCallable EcsClient::attachDiskCallable(const AttachD
 
 EcsClient::ReInitDiskOutcome EcsClient::reInitDisk(const ReInitDiskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ReInitDiskOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ EcsClient::ReInitDiskOutcomeCallable EcsClient::reInitDiskCallable(const ReInitD
 
 EcsClient::CreateHaVipOutcome EcsClient::createHaVip(const CreateHaVipRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateHaVipOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ EcsClient::CreateHaVipOutcomeCallable EcsClient::createHaVipCallable(const Creat
 
 EcsClient::ModifyAutoSnapshotPolicyOutcome EcsClient::modifyAutoSnapshotPolicy(const ModifyAutoSnapshotPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyAutoSnapshotPolicyOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ EcsClient::ModifyAutoSnapshotPolicyOutcomeCallable EcsClient::modifyAutoSnapshot
 
 EcsClient::AssociateEipAddressOutcome EcsClient::associateEipAddress(const AssociateEipAddressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AssociateEipAddressOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ EcsClient::AssociateEipAddressOutcomeCallable EcsClient::associateEipAddressCall
 
 EcsClient::DescribeEipAddressesOutcome EcsClient::describeEipAddresses(const DescribeEipAddressesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeEipAddressesOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ EcsClient::DescribeEipAddressesOutcomeCallable EcsClient::describeEipAddressesCa
 
 EcsClient::RevokeSecurityGroupEgressOutcome EcsClient::revokeSecurityGroupEgress(const RevokeSecurityGroupEgressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RevokeSecurityGroupEgressOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ EcsClient::RevokeSecurityGroupEgressOutcomeCallable EcsClient::revokeSecurityGro
 
 EcsClient::ActivateRouterInterfaceOutcome EcsClient::activateRouterInterface(const ActivateRouterInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ActivateRouterInterfaceOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ EcsClient::ActivateRouterInterfaceOutcomeCallable EcsClient::activateRouterInter
 
 EcsClient::DescribeSpotPriceHistoryOutcome EcsClient::describeSpotPriceHistory(const DescribeSpotPriceHistoryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSpotPriceHistoryOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ EcsClient::DescribeSpotPriceHistoryOutcomeCallable EcsClient::describeSpotPriceH
 
 EcsClient::TerminateVirtualBorderRouterOutcome EcsClient::terminateVirtualBorderRouter(const TerminateVirtualBorderRouterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return TerminateVirtualBorderRouterOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ EcsClient::TerminateVirtualBorderRouterOutcomeCallable EcsClient::terminateVirtu
 
 EcsClient::StopInstanceOutcome EcsClient::stopInstance(const StopInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StopInstanceOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ EcsClient::StopInstanceOutcomeCallable EcsClient::stopInstanceCallable(const Sto
 
 EcsClient::DescribeInstanceHistoryEventsOutcome EcsClient::describeInstanceHistoryEvents(const DescribeInstanceHistoryEventsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceHistoryEventsOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ EcsClient::DescribeInstanceHistoryEventsOutcomeCallable EcsClient::describeInsta
 
 EcsClient::DeletePhysicalConnectionOutcome EcsClient::deletePhysicalConnection(const DeletePhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeletePhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ EcsClient::DeletePhysicalConnectionOutcomeCallable EcsClient::deletePhysicalConn
 
 EcsClient::RevokeSecurityGroupOutcome EcsClient::revokeSecurityGroup(const RevokeSecurityGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RevokeSecurityGroupOutcome(endpointOutcome.error());
 
@@ -781,7 +773,7 @@ EcsClient::RevokeSecurityGroupOutcomeCallable EcsClient::revokeSecurityGroupCall
 
 EcsClient::CheckAutoSnapshotPolicyOutcome EcsClient::checkAutoSnapshotPolicy(const CheckAutoSnapshotPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CheckAutoSnapshotPolicyOutcome(endpointOutcome.error());
 
@@ -817,7 +809,7 @@ EcsClient::CheckAutoSnapshotPolicyOutcomeCallable EcsClient::checkAutoSnapshotPo
 
 EcsClient::DescribeTaskAttributeOutcome EcsClient::describeTaskAttribute(const DescribeTaskAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTaskAttributeOutcome(endpointOutcome.error());
 
@@ -853,7 +845,7 @@ EcsClient::DescribeTaskAttributeOutcomeCallable EcsClient::describeTaskAttribute
 
 EcsClient::CreateAutoSnapshotPolicyOutcome EcsClient::createAutoSnapshotPolicy(const CreateAutoSnapshotPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateAutoSnapshotPolicyOutcome(endpointOutcome.error());
 
@@ -889,7 +881,7 @@ EcsClient::CreateAutoSnapshotPolicyOutcomeCallable EcsClient::createAutoSnapshot
 
 EcsClient::ReActivateInstancesOutcome EcsClient::reActivateInstances(const ReActivateInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ReActivateInstancesOutcome(endpointOutcome.error());
 
@@ -925,7 +917,7 @@ EcsClient::ReActivateInstancesOutcomeCallable EcsClient::reActivateInstancesCall
 
 EcsClient::DescribeForwardTableEntriesOutcome EcsClient::describeForwardTableEntries(const DescribeForwardTableEntriesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeForwardTableEntriesOutcome(endpointOutcome.error());
 
@@ -961,7 +953,7 @@ EcsClient::DescribeForwardTableEntriesOutcomeCallable EcsClient::describeForward
 
 EcsClient::DescribeInstancesOutcome EcsClient::describeInstances(const DescribeInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstancesOutcome(endpointOutcome.error());
 
@@ -997,7 +989,7 @@ EcsClient::DescribeInstancesOutcomeCallable EcsClient::describeInstancesCallable
 
 EcsClient::DescribeSecurityGroupReferencesOutcome EcsClient::describeSecurityGroupReferences(const DescribeSecurityGroupReferencesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSecurityGroupReferencesOutcome(endpointOutcome.error());
 
@@ -1033,7 +1025,7 @@ EcsClient::DescribeSecurityGroupReferencesOutcomeCallable EcsClient::describeSec
 
 EcsClient::DeleteRouterInterfaceOutcome EcsClient::deleteRouterInterface(const DeleteRouterInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteRouterInterfaceOutcome(endpointOutcome.error());
 
@@ -1069,7 +1061,7 @@ EcsClient::DeleteRouterInterfaceOutcomeCallable EcsClient::deleteRouterInterface
 
 EcsClient::DetachInstanceRamRoleOutcome EcsClient::detachInstanceRamRole(const DetachInstanceRamRoleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DetachInstanceRamRoleOutcome(endpointOutcome.error());
 
@@ -1105,7 +1097,7 @@ EcsClient::DetachInstanceRamRoleOutcomeCallable EcsClient::detachInstanceRamRole
 
 EcsClient::AllocatePublicIpAddressOutcome EcsClient::allocatePublicIpAddress(const AllocatePublicIpAddressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AllocatePublicIpAddressOutcome(endpointOutcome.error());
 
@@ -1141,7 +1133,7 @@ EcsClient::AllocatePublicIpAddressOutcomeCallable EcsClient::allocatePublicIpAdd
 
 EcsClient::DescribeEipMonitorDataOutcome EcsClient::describeEipMonitorData(const DescribeEipMonitorDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeEipMonitorDataOutcome(endpointOutcome.error());
 
@@ -1177,7 +1169,7 @@ EcsClient::DescribeEipMonitorDataOutcomeCallable EcsClient::describeEipMonitorDa
 
 EcsClient::CancelAutoSnapshotPolicyOutcome EcsClient::cancelAutoSnapshotPolicy(const CancelAutoSnapshotPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CancelAutoSnapshotPolicyOutcome(endpointOutcome.error());
 
@@ -1213,7 +1205,7 @@ EcsClient::CancelAutoSnapshotPolicyOutcomeCallable EcsClient::cancelAutoSnapshot
 
 EcsClient::DescribeDisksFullStatusOutcome EcsClient::describeDisksFullStatus(const DescribeDisksFullStatusRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDisksFullStatusOutcome(endpointOutcome.error());
 
@@ -1249,7 +1241,7 @@ EcsClient::DescribeDisksFullStatusOutcomeCallable EcsClient::describeDisksFullSt
 
 EcsClient::DeleteNetworkInterfaceOutcome EcsClient::deleteNetworkInterface(const DeleteNetworkInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteNetworkInterfaceOutcome(endpointOutcome.error());
 
@@ -1285,7 +1277,7 @@ EcsClient::DeleteNetworkInterfaceOutcomeCallable EcsClient::deleteNetworkInterfa
 
 EcsClient::ModifyInstanceSpecOutcome EcsClient::modifyInstanceSpec(const ModifyInstanceSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyInstanceSpecOutcome(endpointOutcome.error());
 
@@ -1321,7 +1313,7 @@ EcsClient::ModifyInstanceSpecOutcomeCallable EcsClient::modifyInstanceSpecCallab
 
 EcsClient::DeleteSnapshotOutcome EcsClient::deleteSnapshot(const DeleteSnapshotRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteSnapshotOutcome(endpointOutcome.error());
 
@@ -1357,7 +1349,7 @@ EcsClient::DeleteSnapshotOutcomeCallable EcsClient::deleteSnapshotCallable(const
 
 EcsClient::DeleteKeyPairsOutcome EcsClient::deleteKeyPairs(const DeleteKeyPairsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteKeyPairsOutcome(endpointOutcome.error());
 
@@ -1393,7 +1385,7 @@ EcsClient::DeleteKeyPairsOutcomeCallable EcsClient::deleteKeyPairsCallable(const
 
 EcsClient::AuthorizeSecurityGroupOutcome EcsClient::authorizeSecurityGroup(const AuthorizeSecurityGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AuthorizeSecurityGroupOutcome(endpointOutcome.error());
 
@@ -1429,7 +1421,7 @@ EcsClient::AuthorizeSecurityGroupOutcomeCallable EcsClient::authorizeSecurityGro
 
 EcsClient::DeleteSecurityGroupOutcome EcsClient::deleteSecurityGroup(const DeleteSecurityGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteSecurityGroupOutcome(endpointOutcome.error());
 
@@ -1465,7 +1457,7 @@ EcsClient::DeleteSecurityGroupOutcomeCallable EcsClient::deleteSecurityGroupCall
 
 EcsClient::DescribeSnapshotMonitorDataOutcome EcsClient::describeSnapshotMonitorData(const DescribeSnapshotMonitorDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSnapshotMonitorDataOutcome(endpointOutcome.error());
 
@@ -1501,7 +1493,7 @@ EcsClient::DescribeSnapshotMonitorDataOutcomeCallable EcsClient::describeSnapsho
 
 EcsClient::ConnectRouterInterfaceOutcome EcsClient::connectRouterInterface(const ConnectRouterInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ConnectRouterInterfaceOutcome(endpointOutcome.error());
 
@@ -1537,7 +1529,7 @@ EcsClient::ConnectRouterInterfaceOutcomeCallable EcsClient::connectRouterInterfa
 
 EcsClient::AddIpRangeOutcome EcsClient::addIpRange(const AddIpRangeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddIpRangeOutcome(endpointOutcome.error());
 
@@ -1573,7 +1565,7 @@ EcsClient::AddIpRangeOutcomeCallable EcsClient::addIpRangeCallable(const AddIpRa
 
 EcsClient::CancelTaskOutcome EcsClient::cancelTask(const CancelTaskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CancelTaskOutcome(endpointOutcome.error());
 
@@ -1609,7 +1601,7 @@ EcsClient::CancelTaskOutcomeCallable EcsClient::cancelTaskCallable(const CancelT
 
 EcsClient::ModifyPhysicalConnectionAttributeOutcome EcsClient::modifyPhysicalConnectionAttribute(const ModifyPhysicalConnectionAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyPhysicalConnectionAttributeOutcome(endpointOutcome.error());
 
@@ -1645,7 +1637,7 @@ EcsClient::ModifyPhysicalConnectionAttributeOutcomeCallable EcsClient::modifyPhy
 
 EcsClient::ModifyCommandOutcome EcsClient::modifyCommand(const ModifyCommandRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyCommandOutcome(endpointOutcome.error());
 
@@ -1681,7 +1673,7 @@ EcsClient::ModifyCommandOutcomeCallable EcsClient::modifyCommandCallable(const M
 
 EcsClient::ModifyVSwitchAttributeOutcome EcsClient::modifyVSwitchAttribute(const ModifyVSwitchAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyVSwitchAttributeOutcome(endpointOutcome.error());
 
@@ -1717,7 +1709,7 @@ EcsClient::ModifyVSwitchAttributeOutcomeCallable EcsClient::modifyVSwitchAttribu
 
 EcsClient::ModifyInstanceAttributeOutcome EcsClient::modifyInstanceAttribute(const ModifyInstanceAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyInstanceAttributeOutcome(endpointOutcome.error());
 
@@ -1753,7 +1745,7 @@ EcsClient::ModifyInstanceAttributeOutcomeCallable EcsClient::modifyInstanceAttri
 
 EcsClient::DeleteHaVipOutcome EcsClient::deleteHaVip(const DeleteHaVipRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteHaVipOutcome(endpointOutcome.error());
 
@@ -1789,7 +1781,7 @@ EcsClient::DeleteHaVipOutcomeCallable EcsClient::deleteHaVipCallable(const Delet
 
 EcsClient::DescribeSecurityGroupsOutcome EcsClient::describeSecurityGroups(const DescribeSecurityGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSecurityGroupsOutcome(endpointOutcome.error());
 
@@ -1825,7 +1817,7 @@ EcsClient::DescribeSecurityGroupsOutcomeCallable EcsClient::describeSecurityGrou
 
 EcsClient::ResizeDiskOutcome EcsClient::resizeDisk(const ResizeDiskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ResizeDiskOutcome(endpointOutcome.error());
 
@@ -1861,7 +1853,7 @@ EcsClient::ResizeDiskOutcomeCallable EcsClient::resizeDiskCallable(const ResizeD
 
 EcsClient::CreateRouteEntryOutcome EcsClient::createRouteEntry(const CreateRouteEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateRouteEntryOutcome(endpointOutcome.error());
 
@@ -1897,7 +1889,7 @@ EcsClient::CreateRouteEntryOutcomeCallable EcsClient::createRouteEntryCallable(c
 
 EcsClient::DescribeInvocationsOutcome EcsClient::describeInvocations(const DescribeInvocationsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInvocationsOutcome(endpointOutcome.error());
 
@@ -1933,7 +1925,7 @@ EcsClient::DescribeInvocationsOutcomeCallable EcsClient::describeInvocationsCall
 
 EcsClient::AttachKeyPairOutcome EcsClient::attachKeyPair(const AttachKeyPairRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AttachKeyPairOutcome(endpointOutcome.error());
 
@@ -1969,7 +1961,7 @@ EcsClient::AttachKeyPairOutcomeCallable EcsClient::attachKeyPairCallable(const A
 
 EcsClient::CreateRouterInterfaceOutcome EcsClient::createRouterInterface(const CreateRouterInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateRouterInterfaceOutcome(endpointOutcome.error());
 
@@ -2005,7 +1997,7 @@ EcsClient::CreateRouterInterfaceOutcomeCallable EcsClient::createRouterInterface
 
 EcsClient::CheckDiskEnableAutoSnapshotValidationOutcome EcsClient::checkDiskEnableAutoSnapshotValidation(const CheckDiskEnableAutoSnapshotValidationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CheckDiskEnableAutoSnapshotValidationOutcome(endpointOutcome.error());
 
@@ -2041,7 +2033,7 @@ EcsClient::CheckDiskEnableAutoSnapshotValidationOutcomeCallable EcsClient::check
 
 EcsClient::RunInstancesOutcome EcsClient::runInstances(const RunInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RunInstancesOutcome(endpointOutcome.error());
 
@@ -2077,7 +2069,7 @@ EcsClient::RunInstancesOutcomeCallable EcsClient::runInstancesCallable(const Run
 
 EcsClient::StopInvocationOutcome EcsClient::stopInvocation(const StopInvocationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StopInvocationOutcome(endpointOutcome.error());
 
@@ -2113,7 +2105,7 @@ EcsClient::StopInvocationOutcomeCallable EcsClient::stopInvocationCallable(const
 
 EcsClient::ModifyInstanceNetworkSpecOutcome EcsClient::modifyInstanceNetworkSpec(const ModifyInstanceNetworkSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyInstanceNetworkSpecOutcome(endpointOutcome.error());
 
@@ -2149,7 +2141,7 @@ EcsClient::ModifyInstanceNetworkSpecOutcomeCallable EcsClient::modifyInstanceNet
 
 EcsClient::ModifyDiskAttributeOutcome EcsClient::modifyDiskAttribute(const ModifyDiskAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDiskAttributeOutcome(endpointOutcome.error());
 
@@ -2185,7 +2177,7 @@ EcsClient::ModifyDiskAttributeOutcomeCallable EcsClient::modifyDiskAttributeCall
 
 EcsClient::CreateVSwitchOutcome EcsClient::createVSwitch(const CreateVSwitchRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateVSwitchOutcome(endpointOutcome.error());
 
@@ -2221,7 +2213,7 @@ EcsClient::CreateVSwitchOutcomeCallable EcsClient::createVSwitchCallable(const C
 
 EcsClient::DescribeBandwidthLimitationOutcome EcsClient::describeBandwidthLimitation(const DescribeBandwidthLimitationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBandwidthLimitationOutcome(endpointOutcome.error());
 
@@ -2257,7 +2249,7 @@ EcsClient::DescribeBandwidthLimitationOutcomeCallable EcsClient::describeBandwid
 
 EcsClient::ModifyEipAddressAttributeOutcome EcsClient::modifyEipAddressAttribute(const ModifyEipAddressAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyEipAddressAttributeOutcome(endpointOutcome.error());
 
@@ -2293,7 +2285,7 @@ EcsClient::ModifyEipAddressAttributeOutcomeCallable EcsClient::modifyEipAddressA
 
 EcsClient::RemoveTagsOutcome EcsClient::removeTags(const RemoveTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveTagsOutcome(endpointOutcome.error());
 
@@ -2329,7 +2321,7 @@ EcsClient::RemoveTagsOutcomeCallable EcsClient::removeTagsCallable(const RemoveT
 
 EcsClient::ModifySecurityGroupAttributeOutcome EcsClient::modifySecurityGroupAttribute(const ModifySecurityGroupAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifySecurityGroupAttributeOutcome(endpointOutcome.error());
 
@@ -2365,7 +2357,7 @@ EcsClient::ModifySecurityGroupAttributeOutcomeCallable EcsClient::modifySecurity
 
 EcsClient::ModifyInstanceAutoReleaseTimeOutcome EcsClient::modifyInstanceAutoReleaseTime(const ModifyInstanceAutoReleaseTimeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyInstanceAutoReleaseTimeOutcome(endpointOutcome.error());
 
@@ -2401,7 +2393,7 @@ EcsClient::ModifyInstanceAutoReleaseTimeOutcomeCallable EcsClient::modifyInstanc
 
 EcsClient::DeleteNatGatewayOutcome EcsClient::deleteNatGateway(const DeleteNatGatewayRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteNatGatewayOutcome(endpointOutcome.error());
 
@@ -2437,7 +2429,7 @@ EcsClient::DeleteNatGatewayOutcomeCallable EcsClient::deleteNatGatewayCallable(c
 
 EcsClient::DescribeZonesOutcome EcsClient::describeZones(const DescribeZonesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeZonesOutcome(endpointOutcome.error());
 
@@ -2473,7 +2465,7 @@ EcsClient::DescribeZonesOutcomeCallable EcsClient::describeZonesCallable(const D
 
 EcsClient::DeactivateRouterInterfaceOutcome EcsClient::deactivateRouterInterface(const DeactivateRouterInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeactivateRouterInterfaceOutcome(endpointOutcome.error());
 
@@ -2509,7 +2501,7 @@ EcsClient::DeactivateRouterInterfaceOutcomeCallable EcsClient::deactivateRouterI
 
 EcsClient::DescribeAvailableResourceOutcome EcsClient::describeAvailableResource(const DescribeAvailableResourceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAvailableResourceOutcome(endpointOutcome.error());
 
@@ -2545,7 +2537,7 @@ EcsClient::DescribeAvailableResourceOutcomeCallable EcsClient::describeAvailable
 
 EcsClient::DescribeAccessPointsOutcome EcsClient::describeAccessPoints(const DescribeAccessPointsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAccessPointsOutcome(endpointOutcome.error());
 
@@ -2581,7 +2573,7 @@ EcsClient::DescribeAccessPointsOutcomeCallable EcsClient::describeAccessPointsCa
 
 EcsClient::CreateCommandOutcome EcsClient::createCommand(const CreateCommandRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateCommandOutcome(endpointOutcome.error());
 
@@ -2617,7 +2609,7 @@ EcsClient::CreateCommandOutcomeCallable EcsClient::createCommandCallable(const C
 
 EcsClient::DescribeInstancesFullStatusOutcome EcsClient::describeInstancesFullStatus(const DescribeInstancesFullStatusRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstancesFullStatusOutcome(endpointOutcome.error());
 
@@ -2653,7 +2645,7 @@ EcsClient::DescribeInstancesFullStatusOutcomeCallable EcsClient::describeInstanc
 
 EcsClient::ReleaseEipAddressOutcome EcsClient::releaseEipAddress(const ReleaseEipAddressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ReleaseEipAddressOutcome(endpointOutcome.error());
 
@@ -2689,7 +2681,7 @@ EcsClient::ReleaseEipAddressOutcomeCallable EcsClient::releaseEipAddressCallable
 
 EcsClient::DetachClassicLinkVpcOutcome EcsClient::detachClassicLinkVpc(const DetachClassicLinkVpcRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DetachClassicLinkVpcOutcome(endpointOutcome.error());
 
@@ -2725,7 +2717,7 @@ EcsClient::DetachClassicLinkVpcOutcomeCallable EcsClient::detachClassicLinkVpcCa
 
 EcsClient::DescribeVSwitchesOutcome EcsClient::describeVSwitches(const DescribeVSwitchesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVSwitchesOutcome(endpointOutcome.error());
 
@@ -2761,7 +2753,7 @@ EcsClient::DescribeVSwitchesOutcomeCallable EcsClient::describeVSwitchesCallable
 
 EcsClient::ModifyRouterInterfaceSpecOutcome EcsClient::modifyRouterInterfaceSpec(const ModifyRouterInterfaceSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyRouterInterfaceSpecOutcome(endpointOutcome.error());
 
@@ -2797,7 +2789,7 @@ EcsClient::ModifyRouterInterfaceSpecOutcomeCallable EcsClient::modifyRouterInter
 
 EcsClient::DescribeVpcsOutcome EcsClient::describeVpcs(const DescribeVpcsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVpcsOutcome(endpointOutcome.error());
 
@@ -2833,7 +2825,7 @@ EcsClient::DescribeVpcsOutcomeCallable EcsClient::describeVpcsCallable(const Des
 
 EcsClient::ExportImageOutcome EcsClient::exportImage(const ExportImageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ExportImageOutcome(endpointOutcome.error());
 
@@ -2869,7 +2861,7 @@ EcsClient::ExportImageOutcomeCallable EcsClient::exportImageCallable(const Expor
 
 EcsClient::DescribeDiskMonitorDataOutcome EcsClient::describeDiskMonitorData(const DescribeDiskMonitorDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDiskMonitorDataOutcome(endpointOutcome.error());
 
@@ -2905,7 +2897,7 @@ EcsClient::DescribeDiskMonitorDataOutcomeCallable EcsClient::describeDiskMonitor
 
 EcsClient::ModifyDeploymentSetAttributeOutcome EcsClient::modifyDeploymentSetAttribute(const ModifyDeploymentSetAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDeploymentSetAttributeOutcome(endpointOutcome.error());
 
@@ -2941,7 +2933,7 @@ EcsClient::ModifyDeploymentSetAttributeOutcomeCallable EcsClient::modifyDeployme
 
 EcsClient::ModifyRouterInterfaceAttributeOutcome EcsClient::modifyRouterInterfaceAttribute(const ModifyRouterInterfaceAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyRouterInterfaceAttributeOutcome(endpointOutcome.error());
 
@@ -2977,7 +2969,7 @@ EcsClient::ModifyRouterInterfaceAttributeOutcomeCallable EcsClient::modifyRouter
 
 EcsClient::DescribeVirtualBorderRoutersForPhysicalConnectionOutcome EcsClient::describeVirtualBorderRoutersForPhysicalConnection(const DescribeVirtualBorderRoutersForPhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVirtualBorderRoutersForPhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -3013,7 +3005,7 @@ EcsClient::DescribeVirtualBorderRoutersForPhysicalConnectionOutcomeCallable EcsC
 
 EcsClient::CreateDiskOutcome EcsClient::createDisk(const CreateDiskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateDiskOutcome(endpointOutcome.error());
 
@@ -3049,7 +3041,7 @@ EcsClient::CreateDiskOutcomeCallable EcsClient::createDiskCallable(const CreateD
 
 EcsClient::StartInstanceOutcome EcsClient::startInstance(const StartInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StartInstanceOutcome(endpointOutcome.error());
 
@@ -3085,7 +3077,7 @@ EcsClient::StartInstanceOutcomeCallable EcsClient::startInstanceCallable(const S
 
 EcsClient::DescribeInstanceTypesOutcome EcsClient::describeInstanceTypes(const DescribeInstanceTypesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceTypesOutcome(endpointOutcome.error());
 
@@ -3121,7 +3113,7 @@ EcsClient::DescribeInstanceTypesOutcomeCallable EcsClient::describeInstanceTypes
 
 EcsClient::DescribeSnapshotPackageOutcome EcsClient::describeSnapshotPackage(const DescribeSnapshotPackageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSnapshotPackageOutcome(endpointOutcome.error());
 
@@ -3157,7 +3149,7 @@ EcsClient::DescribeSnapshotPackageOutcomeCallable EcsClient::describeSnapshotPac
 
 EcsClient::RebootInstanceOutcome EcsClient::rebootInstance(const RebootInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RebootInstanceOutcome(endpointOutcome.error());
 
@@ -3193,7 +3185,7 @@ EcsClient::RebootInstanceOutcomeCallable EcsClient::rebootInstanceCallable(const
 
 EcsClient::BindIpRangeOutcome EcsClient::bindIpRange(const BindIpRangeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return BindIpRangeOutcome(endpointOutcome.error());
 
@@ -3229,7 +3221,7 @@ EcsClient::BindIpRangeOutcomeCallable EcsClient::bindIpRangeCallable(const BindI
 
 EcsClient::InvokeCommandOutcome EcsClient::invokeCommand(const InvokeCommandRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return InvokeCommandOutcome(endpointOutcome.error());
 
@@ -3265,7 +3257,7 @@ EcsClient::InvokeCommandOutcomeCallable EcsClient::invokeCommandCallable(const I
 
 EcsClient::ModifyUserBusinessBehaviorOutcome EcsClient::modifyUserBusinessBehavior(const ModifyUserBusinessBehaviorRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyUserBusinessBehaviorOutcome(endpointOutcome.error());
 
@@ -3301,7 +3293,7 @@ EcsClient::ModifyUserBusinessBehaviorOutcomeCallable EcsClient::modifyUserBusine
 
 EcsClient::DeleteForwardEntryOutcome EcsClient::deleteForwardEntry(const DeleteForwardEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteForwardEntryOutcome(endpointOutcome.error());
 
@@ -3337,7 +3329,7 @@ EcsClient::DeleteForwardEntryOutcomeCallable EcsClient::deleteForwardEntryCallab
 
 EcsClient::DescribeHpcClustersOutcome EcsClient::describeHpcClusters(const DescribeHpcClustersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeHpcClustersOutcome(endpointOutcome.error());
 
@@ -3373,7 +3365,7 @@ EcsClient::DescribeHpcClustersOutcomeCallable EcsClient::describeHpcClustersCall
 
 EcsClient::CancelAgreementOutcome EcsClient::cancelAgreement(const CancelAgreementRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CancelAgreementOutcome(endpointOutcome.error());
 
@@ -3409,7 +3401,7 @@ EcsClient::CancelAgreementOutcomeCallable EcsClient::cancelAgreementCallable(con
 
 EcsClient::ModifyInstanceChargeTypeOutcome EcsClient::modifyInstanceChargeType(const ModifyInstanceChargeTypeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyInstanceChargeTypeOutcome(endpointOutcome.error());
 
@@ -3445,7 +3437,7 @@ EcsClient::ModifyInstanceChargeTypeOutcomeCallable EcsClient::modifyInstanceChar
 
 EcsClient::ModifyInstanceAutoRenewAttributeOutcome EcsClient::modifyInstanceAutoRenewAttribute(const ModifyInstanceAutoRenewAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyInstanceAutoRenewAttributeOutcome(endpointOutcome.error());
 
@@ -3481,7 +3473,7 @@ EcsClient::ModifyInstanceAutoRenewAttributeOutcomeCallable EcsClient::modifyInst
 
 EcsClient::DescribeVirtualBorderRoutersOutcome EcsClient::describeVirtualBorderRouters(const DescribeVirtualBorderRoutersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVirtualBorderRoutersOutcome(endpointOutcome.error());
 
@@ -3517,7 +3509,7 @@ EcsClient::DescribeVirtualBorderRoutersOutcomeCallable EcsClient::describeVirtua
 
 EcsClient::ModifyHpcClusterAttributeOutcome EcsClient::modifyHpcClusterAttribute(const ModifyHpcClusterAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyHpcClusterAttributeOutcome(endpointOutcome.error());
 
@@ -3553,7 +3545,7 @@ EcsClient::ModifyHpcClusterAttributeOutcomeCallable EcsClient::modifyHpcClusterA
 
 EcsClient::DescribeLimitationOutcome EcsClient::describeLimitation(const DescribeLimitationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLimitationOutcome(endpointOutcome.error());
 
@@ -3589,7 +3581,7 @@ EcsClient::DescribeLimitationOutcomeCallable EcsClient::describeLimitationCallab
 
 EcsClient::DescribePriceOutcome EcsClient::describePrice(const DescribePriceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribePriceOutcome(endpointOutcome.error());
 
@@ -3625,7 +3617,7 @@ EcsClient::DescribePriceOutcomeCallable EcsClient::describePriceCallable(const D
 
 EcsClient::DeleteDeploymentSetOutcome EcsClient::deleteDeploymentSet(const DeleteDeploymentSetRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteDeploymentSetOutcome(endpointOutcome.error());
 
@@ -3661,7 +3653,7 @@ EcsClient::DeleteDeploymentSetOutcomeCallable EcsClient::deleteDeploymentSetCall
 
 EcsClient::DescribeDeploymentSetTopologyOutcome EcsClient::describeDeploymentSetTopology(const DescribeDeploymentSetTopologyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDeploymentSetTopologyOutcome(endpointOutcome.error());
 
@@ -3697,7 +3689,7 @@ EcsClient::DescribeDeploymentSetTopologyOutcomeCallable EcsClient::describeDeplo
 
 EcsClient::ModifyInstanceVpcAttributeOutcome EcsClient::modifyInstanceVpcAttribute(const ModifyInstanceVpcAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyInstanceVpcAttributeOutcome(endpointOutcome.error());
 
@@ -3733,7 +3725,7 @@ EcsClient::ModifyInstanceVpcAttributeOutcomeCallable EcsClient::modifyInstanceVp
 
 EcsClient::AddTagsOutcome EcsClient::addTags(const AddTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddTagsOutcome(endpointOutcome.error());
 
@@ -3769,7 +3761,7 @@ EcsClient::AddTagsOutcomeCallable EcsClient::addTagsCallable(const AddTagsReques
 
 EcsClient::CreateHpcClusterOutcome EcsClient::createHpcCluster(const CreateHpcClusterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateHpcClusterOutcome(endpointOutcome.error());
 
@@ -3805,7 +3797,7 @@ EcsClient::CreateHpcClusterOutcomeCallable EcsClient::createHpcClusterCallable(c
 
 EcsClient::DescribeUserBusinessBehaviorOutcome EcsClient::describeUserBusinessBehavior(const DescribeUserBusinessBehaviorRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeUserBusinessBehaviorOutcome(endpointOutcome.error());
 
@@ -3841,7 +3833,7 @@ EcsClient::DescribeUserBusinessBehaviorOutcomeCallable EcsClient::describeUserBu
 
 EcsClient::DescribeCommandsOutcome EcsClient::describeCommands(const DescribeCommandsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCommandsOutcome(endpointOutcome.error());
 
@@ -3877,7 +3869,7 @@ EcsClient::DescribeCommandsOutcomeCallable EcsClient::describeCommandsCallable(c
 
 EcsClient::DeleteImageOutcome EcsClient::deleteImage(const DeleteImageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteImageOutcome(endpointOutcome.error());
 
@@ -3913,7 +3905,7 @@ EcsClient::DeleteImageOutcomeCallable EcsClient::deleteImageCallable(const Delet
 
 EcsClient::DescribeDisksOutcome EcsClient::describeDisks(const DescribeDisksRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDisksOutcome(endpointOutcome.error());
 
@@ -3949,7 +3941,7 @@ EcsClient::DescribeDisksOutcomeCallable EcsClient::describeDisksCallable(const D
 
 EcsClient::DeleteVpcOutcome EcsClient::deleteVpc(const DeleteVpcRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteVpcOutcome(endpointOutcome.error());
 
@@ -3985,7 +3977,7 @@ EcsClient::DeleteVpcOutcomeCallable EcsClient::deleteVpcCallable(const DeleteVpc
 
 EcsClient::DescribeImageSupportInstanceTypesOutcome EcsClient::describeImageSupportInstanceTypes(const DescribeImageSupportInstanceTypesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeImageSupportInstanceTypesOutcome(endpointOutcome.error());
 
@@ -4021,7 +4013,7 @@ EcsClient::DescribeImageSupportInstanceTypesOutcomeCallable EcsClient::describeI
 
 EcsClient::DeleteCommandOutcome EcsClient::deleteCommand(const DeleteCommandRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteCommandOutcome(endpointOutcome.error());
 
@@ -4057,7 +4049,7 @@ EcsClient::DeleteCommandOutcomeCallable EcsClient::deleteCommandCallable(const D
 
 EcsClient::ReplaceSystemDiskOutcome EcsClient::replaceSystemDisk(const ReplaceSystemDiskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ReplaceSystemDiskOutcome(endpointOutcome.error());
 
@@ -4093,7 +4085,7 @@ EcsClient::ReplaceSystemDiskOutcomeCallable EcsClient::replaceSystemDiskCallable
 
 EcsClient::DeleteVSwitchOutcome EcsClient::deleteVSwitch(const DeleteVSwitchRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteVSwitchOutcome(endpointOutcome.error());
 
@@ -4129,7 +4121,7 @@ EcsClient::DeleteVSwitchOutcomeCallable EcsClient::deleteVSwitchCallable(const D
 
 EcsClient::ModifyImageShareGroupPermissionOutcome EcsClient::modifyImageShareGroupPermission(const ModifyImageShareGroupPermissionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyImageShareGroupPermissionOutcome(endpointOutcome.error());
 
@@ -4165,7 +4157,7 @@ EcsClient::ModifyImageShareGroupPermissionOutcomeCallable EcsClient::modifyImage
 
 EcsClient::DescribeInstanceVncUrlOutcome EcsClient::describeInstanceVncUrl(const DescribeInstanceVncUrlRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceVncUrlOutcome(endpointOutcome.error());
 
@@ -4201,7 +4193,7 @@ EcsClient::DescribeInstanceVncUrlOutcomeCallable EcsClient::describeInstanceVncU
 
 EcsClient::RecoverVirtualBorderRouterOutcome EcsClient::recoverVirtualBorderRouter(const RecoverVirtualBorderRouterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RecoverVirtualBorderRouterOutcome(endpointOutcome.error());
 
@@ -4237,7 +4229,7 @@ EcsClient::RecoverVirtualBorderRouterOutcomeCallable EcsClient::recoverVirtualBo
 
 EcsClient::DescribeResourceByTagsOutcome EcsClient::describeResourceByTags(const DescribeResourceByTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeResourceByTagsOutcome(endpointOutcome.error());
 
@@ -4273,7 +4265,7 @@ EcsClient::DescribeResourceByTagsOutcomeCallable EcsClient::describeResourceByTa
 
 EcsClient::DescribeClustersOutcome EcsClient::describeClusters(const DescribeClustersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClustersOutcome(endpointOutcome.error());
 
@@ -4309,7 +4301,7 @@ EcsClient::DescribeClustersOutcomeCallable EcsClient::describeClustersCallable(c
 
 EcsClient::DescribeTagsOutcome EcsClient::describeTags(const DescribeTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTagsOutcome(endpointOutcome.error());
 
@@ -4345,7 +4337,7 @@ EcsClient::DescribeTagsOutcomeCallable EcsClient::describeTagsCallable(const Des
 
 EcsClient::DeleteBandwidthPackageOutcome EcsClient::deleteBandwidthPackage(const DeleteBandwidthPackageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteBandwidthPackageOutcome(endpointOutcome.error());
 
@@ -4381,7 +4373,7 @@ EcsClient::DeleteBandwidthPackageOutcomeCallable EcsClient::deleteBandwidthPacka
 
 EcsClient::DescribeImagesOutcome EcsClient::describeImages(const DescribeImagesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeImagesOutcome(endpointOutcome.error());
 
@@ -4417,7 +4409,7 @@ EcsClient::DescribeImagesOutcomeCallable EcsClient::describeImagesCallable(const
 
 EcsClient::AuthorizeSecurityGroupEgressOutcome EcsClient::authorizeSecurityGroupEgress(const AuthorizeSecurityGroupEgressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AuthorizeSecurityGroupEgressOutcome(endpointOutcome.error());
 
@@ -4453,7 +4445,7 @@ EcsClient::AuthorizeSecurityGroupEgressOutcomeCallable EcsClient::authorizeSecur
 
 EcsClient::SignAgreementOutcome EcsClient::signAgreement(const SignAgreementRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SignAgreementOutcome(endpointOutcome.error());
 
@@ -4489,7 +4481,7 @@ EcsClient::SignAgreementOutcomeCallable EcsClient::signAgreementCallable(const S
 
 EcsClient::ImportImageOutcome EcsClient::importImage(const ImportImageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ImportImageOutcome(endpointOutcome.error());
 
@@ -4525,7 +4517,7 @@ EcsClient::ImportImageOutcomeCallable EcsClient::importImageCallable(const Impor
 
 EcsClient::ModifyForwardEntryOutcome EcsClient::modifyForwardEntry(const ModifyForwardEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyForwardEntryOutcome(endpointOutcome.error());
 
@@ -4561,7 +4553,7 @@ EcsClient::ModifyForwardEntryOutcomeCallable EcsClient::modifyForwardEntryCallab
 
 EcsClient::RenewInstanceOutcome EcsClient::renewInstance(const RenewInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RenewInstanceOutcome(endpointOutcome.error());
 
@@ -4597,7 +4589,7 @@ EcsClient::RenewInstanceOutcomeCallable EcsClient::renewInstanceCallable(const R
 
 EcsClient::CreateVpcOutcome EcsClient::createVpc(const CreateVpcRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateVpcOutcome(endpointOutcome.error());
 
@@ -4633,7 +4625,7 @@ EcsClient::CreateVpcOutcomeCallable EcsClient::createVpcCallable(const CreateVpc
 
 EcsClient::CopyImageOutcome EcsClient::copyImage(const CopyImageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CopyImageOutcome(endpointOutcome.error());
 
@@ -4669,7 +4661,7 @@ EcsClient::CopyImageOutcomeCallable EcsClient::copyImageCallable(const CopyImage
 
 EcsClient::DescribeInstanceMonitorDataOutcome EcsClient::describeInstanceMonitorData(const DescribeInstanceMonitorDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceMonitorDataOutcome(endpointOutcome.error());
 
@@ -4705,7 +4697,7 @@ EcsClient::DescribeInstanceMonitorDataOutcomeCallable EcsClient::describeInstanc
 
 EcsClient::UnassociateEipAddressOutcome EcsClient::unassociateEipAddress(const UnassociateEipAddressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UnassociateEipAddressOutcome(endpointOutcome.error());
 
@@ -4741,7 +4733,7 @@ EcsClient::UnassociateEipAddressOutcomeCallable EcsClient::unassociateEipAddress
 
 EcsClient::CreateSnapshotOutcome EcsClient::createSnapshot(const CreateSnapshotRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateSnapshotOutcome(endpointOutcome.error());
 
@@ -4777,7 +4769,7 @@ EcsClient::CreateSnapshotOutcomeCallable EcsClient::createSnapshotCallable(const
 
 EcsClient::ModifyVirtualBorderRouterAttributeOutcome EcsClient::modifyVirtualBorderRouterAttribute(const ModifyVirtualBorderRouterAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyVirtualBorderRouterAttributeOutcome(endpointOutcome.error());
 
@@ -4813,7 +4805,7 @@ EcsClient::ModifyVirtualBorderRouterAttributeOutcomeCallable EcsClient::modifyVi
 
 EcsClient::DetachKeyPairOutcome EcsClient::detachKeyPair(const DetachKeyPairRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DetachKeyPairOutcome(endpointOutcome.error());
 
@@ -4849,7 +4841,7 @@ EcsClient::DetachKeyPairOutcomeCallable EcsClient::detachKeyPairCallable(const D
 
 EcsClient::DescribeTasksOutcome EcsClient::describeTasks(const DescribeTasksRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTasksOutcome(endpointOutcome.error());
 
@@ -4885,7 +4877,7 @@ EcsClient::DescribeTasksOutcomeCallable EcsClient::describeTasksCallable(const D
 
 EcsClient::LeaveSecurityGroupOutcome EcsClient::leaveSecurityGroup(const LeaveSecurityGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return LeaveSecurityGroupOutcome(endpointOutcome.error());
 
@@ -4921,7 +4913,7 @@ EcsClient::LeaveSecurityGroupOutcomeCallable EcsClient::leaveSecurityGroupCallab
 
 EcsClient::DescribeRenewalPriceOutcome EcsClient::describeRenewalPrice(const DescribeRenewalPriceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRenewalPriceOutcome(endpointOutcome.error());
 
@@ -4957,7 +4949,7 @@ EcsClient::DescribeRenewalPriceOutcomeCallable EcsClient::describeRenewalPriceCa
 
 EcsClient::DescribeInstanceVncPasswdOutcome EcsClient::describeInstanceVncPasswd(const DescribeInstanceVncPasswdRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceVncPasswdOutcome(endpointOutcome.error());
 
@@ -4993,7 +4985,7 @@ EcsClient::DescribeInstanceVncPasswdOutcomeCallable EcsClient::describeInstanceV
 
 EcsClient::DescribeInstanceAutoRenewAttributeOutcome EcsClient::describeInstanceAutoRenewAttribute(const DescribeInstanceAutoRenewAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceAutoRenewAttributeOutcome(endpointOutcome.error());
 
@@ -5029,7 +5021,7 @@ EcsClient::DescribeInstanceAutoRenewAttributeOutcomeCallable EcsClient::describe
 
 EcsClient::ModifySecurityGroupRuleOutcome EcsClient::modifySecurityGroupRule(const ModifySecurityGroupRuleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifySecurityGroupRuleOutcome(endpointOutcome.error());
 
@@ -5065,7 +5057,7 @@ EcsClient::ModifySecurityGroupRuleOutcomeCallable EcsClient::modifySecurityGroup
 
 EcsClient::DescribeResourcesModificationOutcome EcsClient::describeResourcesModification(const DescribeResourcesModificationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeResourcesModificationOutcome(endpointOutcome.error());
 
@@ -5101,7 +5093,7 @@ EcsClient::DescribeResourcesModificationOutcomeCallable EcsClient::describeResou
 
 EcsClient::ImportKeyPairOutcome EcsClient::importKeyPair(const ImportKeyPairRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ImportKeyPairOutcome(endpointOutcome.error());
 
@@ -5137,7 +5129,7 @@ EcsClient::ImportKeyPairOutcomeCallable EcsClient::importKeyPairCallable(const I
 
 EcsClient::DescribeNewProjectEipMonitorDataOutcome EcsClient::describeNewProjectEipMonitorData(const DescribeNewProjectEipMonitorDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeNewProjectEipMonitorDataOutcome(endpointOutcome.error());
 
@@ -5173,7 +5165,7 @@ EcsClient::DescribeNewProjectEipMonitorDataOutcomeCallable EcsClient::describeNe
 
 EcsClient::UnbindIpRangeOutcome EcsClient::unbindIpRange(const UnbindIpRangeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UnbindIpRangeOutcome(endpointOutcome.error());
 
@@ -5209,7 +5201,7 @@ EcsClient::UnbindIpRangeOutcomeCallable EcsClient::unbindIpRangeCallable(const U
 
 EcsClient::DeleteRecycleBinOutcome EcsClient::deleteRecycleBin(const DeleteRecycleBinRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteRecycleBinOutcome(endpointOutcome.error());
 
@@ -5245,7 +5237,7 @@ EcsClient::DeleteRecycleBinOutcomeCallable EcsClient::deleteRecycleBinCallable(c
 
 EcsClient::DescribeInstanceRamRoleOutcome EcsClient::describeInstanceRamRole(const DescribeInstanceRamRoleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceRamRoleOutcome(endpointOutcome.error());
 
@@ -5281,7 +5273,7 @@ EcsClient::DescribeInstanceRamRoleOutcomeCallable EcsClient::describeInstanceRam
 
 EcsClient::CreateImageOutcome EcsClient::createImage(const CreateImageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateImageOutcome(endpointOutcome.error());
 
@@ -5317,7 +5309,7 @@ EcsClient::CreateImageOutcomeCallable EcsClient::createImageCallable(const Creat
 
 EcsClient::DescribeHaVipsOutcome EcsClient::describeHaVips(const DescribeHaVipsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeHaVipsOutcome(endpointOutcome.error());
 
@@ -5353,7 +5345,7 @@ EcsClient::DescribeHaVipsOutcomeCallable EcsClient::describeHaVipsCallable(const
 
 EcsClient::DescribeInstanceAttributeOutcome EcsClient::describeInstanceAttribute(const DescribeInstanceAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceAttributeOutcome(endpointOutcome.error());
 
@@ -5389,7 +5381,7 @@ EcsClient::DescribeInstanceAttributeOutcomeCallable EcsClient::describeInstanceA
 
 EcsClient::DetachDiskOutcome EcsClient::detachDisk(const DetachDiskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DetachDiskOutcome(endpointOutcome.error());
 
@@ -5425,7 +5417,7 @@ EcsClient::DetachDiskOutcomeCallable EcsClient::detachDiskCallable(const DetachD
 
 EcsClient::ModifyImageAttributeOutcome EcsClient::modifyImageAttribute(const ModifyImageAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyImageAttributeOutcome(endpointOutcome.error());
 
@@ -5461,7 +5453,7 @@ EcsClient::ModifyImageAttributeOutcomeCallable EcsClient::modifyImageAttributeCa
 
 EcsClient::AddBandwidthPackageIpsOutcome EcsClient::addBandwidthPackageIps(const AddBandwidthPackageIpsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddBandwidthPackageIpsOutcome(endpointOutcome.error());
 
@@ -5497,7 +5489,7 @@ EcsClient::AddBandwidthPackageIpsOutcomeCallable EcsClient::addBandwidthPackageI
 
 EcsClient::DescribeInstanceStatusOutcome EcsClient::describeInstanceStatus(const DescribeInstanceStatusRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceStatusOutcome(endpointOutcome.error());
 
@@ -5533,7 +5525,7 @@ EcsClient::DescribeInstanceStatusOutcomeCallable EcsClient::describeInstanceStat
 
 EcsClient::DescribeNatGatewaysOutcome EcsClient::describeNatGateways(const DescribeNatGatewaysRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeNatGatewaysOutcome(endpointOutcome.error());
 
@@ -5569,7 +5561,7 @@ EcsClient::DescribeNatGatewaysOutcomeCallable EcsClient::describeNatGatewaysCall
 
 EcsClient::DeleteHpcClusterOutcome EcsClient::deleteHpcCluster(const DeleteHpcClusterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteHpcClusterOutcome(endpointOutcome.error());
 
@@ -5605,7 +5597,7 @@ EcsClient::DeleteHpcClusterOutcomeCallable EcsClient::deleteHpcClusterCallable(c
 
 EcsClient::ResetDiskOutcome EcsClient::resetDisk(const ResetDiskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ResetDiskOutcome(endpointOutcome.error());
 
@@ -5641,7 +5633,7 @@ EcsClient::ResetDiskOutcomeCallable EcsClient::resetDiskCallable(const ResetDisk
 
 EcsClient::ModifyDiskChargeTypeOutcome EcsClient::modifyDiskChargeType(const ModifyDiskChargeTypeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDiskChargeTypeOutcome(endpointOutcome.error());
 
@@ -5677,7 +5669,7 @@ EcsClient::ModifyDiskChargeTypeOutcomeCallable EcsClient::modifyDiskChargeTypeCa
 
 EcsClient::ModifyIntranetBandwidthKbOutcome EcsClient::modifyIntranetBandwidthKb(const ModifyIntranetBandwidthKbRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyIntranetBandwidthKbOutcome(endpointOutcome.error());
 
@@ -5713,7 +5705,7 @@ EcsClient::ModifyIntranetBandwidthKbOutcomeCallable EcsClient::modifyIntranetBan
 
 EcsClient::DescribeBandwidthPackagesOutcome EcsClient::describeBandwidthPackages(const DescribeBandwidthPackagesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBandwidthPackagesOutcome(endpointOutcome.error());
 
@@ -5749,7 +5741,7 @@ EcsClient::DescribeBandwidthPackagesOutcomeCallable EcsClient::describeBandwidth
 
 EcsClient::ApplyAutoSnapshotPolicyOutcome EcsClient::applyAutoSnapshotPolicy(const ApplyAutoSnapshotPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ApplyAutoSnapshotPolicyOutcome(endpointOutcome.error());
 
@@ -5785,7 +5777,7 @@ EcsClient::ApplyAutoSnapshotPolicyOutcomeCallable EcsClient::applyAutoSnapshotPo
 
 EcsClient::CreateSecurityGroupOutcome EcsClient::createSecurityGroup(const CreateSecurityGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateSecurityGroupOutcome(endpointOutcome.error());
 
@@ -5821,7 +5813,7 @@ EcsClient::CreateSecurityGroupOutcomeCallable EcsClient::createSecurityGroupCall
 
 EcsClient::DescribeSnapshotLinksOutcome EcsClient::describeSnapshotLinks(const DescribeSnapshotLinksRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSnapshotLinksOutcome(endpointOutcome.error());
 
@@ -5857,7 +5849,7 @@ EcsClient::DescribeSnapshotLinksOutcomeCallable EcsClient::describeSnapshotLinks
 
 EcsClient::DescribeInvocationResultsOutcome EcsClient::describeInvocationResults(const DescribeInvocationResultsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInvocationResultsOutcome(endpointOutcome.error());
 
@@ -5893,7 +5885,7 @@ EcsClient::DescribeInvocationResultsOutcomeCallable EcsClient::describeInvocatio
 
 EcsClient::DescribeRecommendInstanceTypeOutcome EcsClient::describeRecommendInstanceType(const DescribeRecommendInstanceTypeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRecommendInstanceTypeOutcome(endpointOutcome.error());
 
@@ -5929,7 +5921,7 @@ EcsClient::DescribeRecommendInstanceTypeOutcomeCallable EcsClient::describeRecom
 
 EcsClient::DescribeTagKeysOutcome EcsClient::describeTagKeys(const DescribeTagKeysRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTagKeysOutcome(endpointOutcome.error());
 
@@ -5965,7 +5957,7 @@ EcsClient::DescribeTagKeysOutcomeCallable EcsClient::describeTagKeysCallable(con
 
 EcsClient::DeleteInstanceOutcome EcsClient::deleteInstance(const DeleteInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteInstanceOutcome(endpointOutcome.error());
 
@@ -6001,7 +5993,7 @@ EcsClient::DeleteInstanceOutcomeCallable EcsClient::deleteInstanceCallable(const
 
 EcsClient::DescribeIntranetAttributeKbOutcome EcsClient::describeIntranetAttributeKb(const DescribeIntranetAttributeKbRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeIntranetAttributeKbOutcome(endpointOutcome.error());
 
@@ -6037,7 +6029,7 @@ EcsClient::DescribeIntranetAttributeKbOutcomeCallable EcsClient::describeIntrane
 
 EcsClient::RemoveBandwidthPackageIpsOutcome EcsClient::removeBandwidthPackageIps(const RemoveBandwidthPackageIpsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveBandwidthPackageIpsOutcome(endpointOutcome.error());
 
@@ -6073,7 +6065,7 @@ EcsClient::RemoveBandwidthPackageIpsOutcomeCallable EcsClient::removeBandwidthPa
 
 EcsClient::ModifyVpcAttributeOutcome EcsClient::modifyVpcAttribute(const ModifyVpcAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyVpcAttributeOutcome(endpointOutcome.error());
 
@@ -6109,7 +6101,7 @@ EcsClient::ModifyVpcAttributeOutcomeCallable EcsClient::modifyVpcAttributeCallab
 
 EcsClient::DescribeSnapshotsUsageOutcome EcsClient::describeSnapshotsUsage(const DescribeSnapshotsUsageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSnapshotsUsageOutcome(endpointOutcome.error());
 
@@ -6145,7 +6137,7 @@ EcsClient::DescribeSnapshotsUsageOutcomeCallable EcsClient::describeSnapshotsUsa
 
 EcsClient::DeleteAutoSnapshotPolicyOutcome EcsClient::deleteAutoSnapshotPolicy(const DeleteAutoSnapshotPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteAutoSnapshotPolicyOutcome(endpointOutcome.error());
 
@@ -6181,7 +6173,7 @@ EcsClient::DeleteAutoSnapshotPolicyOutcomeCallable EcsClient::deleteAutoSnapshot
 
 EcsClient::ModifySecurityGroupEgressRuleOutcome EcsClient::modifySecurityGroupEgressRule(const ModifySecurityGroupEgressRuleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifySecurityGroupEgressRuleOutcome(endpointOutcome.error());
 
@@ -6217,7 +6209,7 @@ EcsClient::ModifySecurityGroupEgressRuleOutcomeCallable EcsClient::modifySecurit
 
 EcsClient::CreateInstanceOutcome EcsClient::createInstance(const CreateInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateInstanceOutcome(endpointOutcome.error());
 
@@ -6253,7 +6245,7 @@ EcsClient::CreateInstanceOutcomeCallable EcsClient::createInstanceCallable(const
 
 EcsClient::EnablePhysicalConnectionOutcome EcsClient::enablePhysicalConnection(const EnablePhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EnablePhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -6289,7 +6281,7 @@ EcsClient::EnablePhysicalConnectionOutcomeCallable EcsClient::enablePhysicalConn
 
 EcsClient::DescribeInstanceTypeFamiliesOutcome EcsClient::describeInstanceTypeFamilies(const DescribeInstanceTypeFamiliesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceTypeFamiliesOutcome(endpointOutcome.error());
 
@@ -6325,7 +6317,7 @@ EcsClient::DescribeInstanceTypeFamiliesOutcomeCallable EcsClient::describeInstan
 
 EcsClient::CreateForwardEntryOutcome EcsClient::createForwardEntry(const CreateForwardEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateForwardEntryOutcome(endpointOutcome.error());
 
@@ -6361,7 +6353,7 @@ EcsClient::CreateForwardEntryOutcomeCallable EcsClient::createForwardEntryCallab
 
 EcsClient::DescribeRouterInterfacesOutcome EcsClient::describeRouterInterfaces(const DescribeRouterInterfacesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRouterInterfacesOutcome(endpointOutcome.error());
 
@@ -6397,7 +6389,7 @@ EcsClient::DescribeRouterInterfacesOutcomeCallable EcsClient::describeRouterInte
 
 EcsClient::EipNotifyPaidOutcome EcsClient::eipNotifyPaid(const EipNotifyPaidRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EipNotifyPaidOutcome(endpointOutcome.error());
 
@@ -6433,7 +6425,7 @@ EcsClient::EipNotifyPaidOutcomeCallable EcsClient::eipNotifyPaidCallable(const E
 
 EcsClient::ReleasePublicIpAddressOutcome EcsClient::releasePublicIpAddress(const ReleasePublicIpAddressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ReleasePublicIpAddressOutcome(endpointOutcome.error());
 
@@ -6469,7 +6461,7 @@ EcsClient::ReleasePublicIpAddressOutcomeCallable EcsClient::releasePublicIpAddre
 
 EcsClient::CreateVirtualBorderRouterOutcome EcsClient::createVirtualBorderRouter(const CreateVirtualBorderRouterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateVirtualBorderRouterOutcome(endpointOutcome.error());
 
@@ -6505,7 +6497,7 @@ EcsClient::CreateVirtualBorderRouterOutcomeCallable EcsClient::createVirtualBord
 
 EcsClient::EipFillParamsOutcome EcsClient::eipFillParams(const EipFillParamsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EipFillParamsOutcome(endpointOutcome.error());
 
@@ -6541,7 +6533,7 @@ EcsClient::EipFillParamsOutcomeCallable EcsClient::eipFillParamsCallable(const E
 
 EcsClient::ModifyPrepayInstanceSpecOutcome EcsClient::modifyPrepayInstanceSpec(const ModifyPrepayInstanceSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyPrepayInstanceSpecOutcome(endpointOutcome.error());
 
@@ -6577,7 +6569,7 @@ EcsClient::ModifyPrepayInstanceSpecOutcomeCallable EcsClient::modifyPrepayInstan
 
 EcsClient::EipFillProductOutcome EcsClient::eipFillProduct(const EipFillProductRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EipFillProductOutcome(endpointOutcome.error());
 
@@ -6613,7 +6605,7 @@ EcsClient::EipFillProductOutcomeCallable EcsClient::eipFillProductCallable(const
 
 EcsClient::DescribeRouteTablesOutcome EcsClient::describeRouteTables(const DescribeRouteTablesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRouteTablesOutcome(endpointOutcome.error());
 
@@ -6649,7 +6641,7 @@ EcsClient::DescribeRouteTablesOutcomeCallable EcsClient::describeRouteTablesCall
 
 EcsClient::DescribeUserDataOutcome EcsClient::describeUserData(const DescribeUserDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeUserDataOutcome(endpointOutcome.error());
 
@@ -6685,7 +6677,7 @@ EcsClient::DescribeUserDataOutcomeCallable EcsClient::describeUserDataCallable(c
 
 EcsClient::JoinResourceGroupOutcome EcsClient::joinResourceGroup(const JoinResourceGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return JoinResourceGroupOutcome(endpointOutcome.error());
 
@@ -6721,7 +6713,7 @@ EcsClient::JoinResourceGroupOutcomeCallable EcsClient::joinResourceGroupCallable
 
 EcsClient::ModifyAutoSnapshotPolicyExOutcome EcsClient::modifyAutoSnapshotPolicyEx(const ModifyAutoSnapshotPolicyExRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyAutoSnapshotPolicyExOutcome(endpointOutcome.error());
 
@@ -6757,7 +6749,7 @@ EcsClient::ModifyAutoSnapshotPolicyExOutcomeCallable EcsClient::modifyAutoSnapsh
 
 EcsClient::CreatePhysicalConnectionOutcome EcsClient::createPhysicalConnection(const CreatePhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreatePhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -6793,7 +6785,7 @@ EcsClient::CreatePhysicalConnectionOutcomeCallable EcsClient::createPhysicalConn
 
 EcsClient::DescribeKeyPairsOutcome EcsClient::describeKeyPairs(const DescribeKeyPairsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeKeyPairsOutcome(endpointOutcome.error());
 
@@ -6829,7 +6821,7 @@ EcsClient::DescribeKeyPairsOutcomeCallable EcsClient::describeKeyPairsCallable(c
 
 EcsClient::ModifySecurityGroupPolicyOutcome EcsClient::modifySecurityGroupPolicy(const ModifySecurityGroupPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifySecurityGroupPolicyOutcome(endpointOutcome.error());
 
@@ -6865,7 +6857,7 @@ EcsClient::ModifySecurityGroupPolicyOutcomeCallable EcsClient::modifySecurityGro
 
 EcsClient::AssociateHaVipOutcome EcsClient::associateHaVip(const AssociateHaVipRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AssociateHaVipOutcome(endpointOutcome.error());
 
@@ -6901,7 +6893,7 @@ EcsClient::AssociateHaVipOutcomeCallable EcsClient::associateHaVipCallable(const
 
 EcsClient::ConvertNatPublicIpToEipOutcome EcsClient::convertNatPublicIpToEip(const ConvertNatPublicIpToEipRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ConvertNatPublicIpToEipOutcome(endpointOutcome.error());
 
@@ -6937,7 +6929,7 @@ EcsClient::ConvertNatPublicIpToEipOutcomeCallable EcsClient::convertNatPublicIpT
 
 EcsClient::DeleteRouteEntryOutcome EcsClient::deleteRouteEntry(const DeleteRouteEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteRouteEntryOutcome(endpointOutcome.error());
 
@@ -6973,7 +6965,7 @@ EcsClient::DeleteRouteEntryOutcomeCallable EcsClient::deleteRouteEntryCallable(c
 
 EcsClient::DeleteVirtualBorderRouterOutcome EcsClient::deleteVirtualBorderRouter(const DeleteVirtualBorderRouterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteVirtualBorderRouterOutcome(endpointOutcome.error());
 
@@ -7009,7 +7001,7 @@ EcsClient::DeleteVirtualBorderRouterOutcomeCallable EcsClient::deleteVirtualBord
 
 EcsClient::DescribeInstancePhysicalAttributeOutcome EcsClient::describeInstancePhysicalAttribute(const DescribeInstancePhysicalAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstancePhysicalAttributeOutcome(endpointOutcome.error());
 
@@ -7045,7 +7037,7 @@ EcsClient::DescribeInstancePhysicalAttributeOutcomeCallable EcsClient::describeI
 
 EcsClient::TerminatePhysicalConnectionOutcome EcsClient::terminatePhysicalConnection(const TerminatePhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return TerminatePhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -7081,7 +7073,7 @@ EcsClient::TerminatePhysicalConnectionOutcomeCallable EcsClient::terminatePhysic
 
 EcsClient::AttachNetworkInterfaceOutcome EcsClient::attachNetworkInterface(const AttachNetworkInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AttachNetworkInterfaceOutcome(endpointOutcome.error());
 
@@ -7117,7 +7109,7 @@ EcsClient::AttachNetworkInterfaceOutcomeCallable EcsClient::attachNetworkInterfa
 
 EcsClient::DescribeSecurityGroupAttributeOutcome EcsClient::describeSecurityGroupAttribute(const DescribeSecurityGroupAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSecurityGroupAttributeOutcome(endpointOutcome.error());
 
@@ -7153,7 +7145,7 @@ EcsClient::DescribeSecurityGroupAttributeOutcomeCallable EcsClient::describeSecu
 
 EcsClient::ModifyImageSharePermissionOutcome EcsClient::modifyImageSharePermission(const ModifyImageSharePermissionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyImageSharePermissionOutcome(endpointOutcome.error());
 
@@ -7189,7 +7181,7 @@ EcsClient::ModifyImageSharePermissionOutcomeCallable EcsClient::modifyImageShare
 
 EcsClient::DescribeAutoSnapshotPolicyExOutcome EcsClient::describeAutoSnapshotPolicyEx(const DescribeAutoSnapshotPolicyExRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAutoSnapshotPolicyExOutcome(endpointOutcome.error());
 
@@ -7225,7 +7217,7 @@ EcsClient::DescribeAutoSnapshotPolicyExOutcomeCallable EcsClient::describeAutoSn
 
 EcsClient::DescribeImageSharePermissionOutcome EcsClient::describeImageSharePermission(const DescribeImageSharePermissionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeImageSharePermissionOutcome(endpointOutcome.error());
 
@@ -7261,7 +7253,7 @@ EcsClient::DescribeImageSharePermissionOutcomeCallable EcsClient::describeImageS
 
 EcsClient::CancelCopyImageOutcome EcsClient::cancelCopyImage(const CancelCopyImageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CancelCopyImageOutcome(endpointOutcome.error());
 
@@ -7297,7 +7289,7 @@ EcsClient::CancelCopyImageOutcomeCallable EcsClient::cancelCopyImageCallable(con
 
 EcsClient::CreateDeploymentSetOutcome EcsClient::createDeploymentSet(const CreateDeploymentSetRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateDeploymentSetOutcome(endpointOutcome.error());
 
@@ -7333,7 +7325,7 @@ EcsClient::CreateDeploymentSetOutcomeCallable EcsClient::createDeploymentSetCall
 
 EcsClient::DescribeRegionsOutcome EcsClient::describeRegions(const DescribeRegionsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRegionsOutcome(endpointOutcome.error());
 
@@ -7369,7 +7361,7 @@ EcsClient::DescribeRegionsOutcomeCallable EcsClient::describeRegionsCallable(con
 
 EcsClient::DescribeClassicLinkInstancesOutcome EcsClient::describeClassicLinkInstances(const DescribeClassicLinkInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClassicLinkInstancesOutcome(endpointOutcome.error());
 
@@ -7405,7 +7397,7 @@ EcsClient::DescribeClassicLinkInstancesOutcomeCallable EcsClient::describeClassi
 
 EcsClient::DescribeAutoSnapshotPolicyOutcome EcsClient::describeAutoSnapshotPolicy(const DescribeAutoSnapshotPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAutoSnapshotPolicyOutcome(endpointOutcome.error());
 
@@ -7441,7 +7433,7 @@ EcsClient::DescribeAutoSnapshotPolicyOutcomeCallable EcsClient::describeAutoSnap
 
 EcsClient::DescribePhysicalConnectionsOutcome EcsClient::describePhysicalConnections(const DescribePhysicalConnectionsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribePhysicalConnectionsOutcome(endpointOutcome.error());
 
@@ -7477,7 +7469,7 @@ EcsClient::DescribePhysicalConnectionsOutcomeCallable EcsClient::describePhysica
 
 EcsClient::DescribeRecycleBinOutcome EcsClient::describeRecycleBin(const DescribeRecycleBinRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRecycleBinOutcome(endpointOutcome.error());
 
@@ -7513,7 +7505,7 @@ EcsClient::DescribeRecycleBinOutcomeCallable EcsClient::describeRecycleBinCallab
 
 EcsClient::CreateNetworkInterfaceOutcome EcsClient::createNetworkInterface(const CreateNetworkInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateNetworkInterfaceOutcome(endpointOutcome.error());
 
@@ -7549,7 +7541,7 @@ EcsClient::CreateNetworkInterfaceOutcomeCallable EcsClient::createNetworkInterfa
 
 EcsClient::DescribeIpRangesOutcome EcsClient::describeIpRanges(const DescribeIpRangesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeIpRangesOutcome(endpointOutcome.error());
 
@@ -7585,7 +7577,7 @@ EcsClient::DescribeIpRangesOutcomeCallable EcsClient::describeIpRangesCallable(c
 
 EcsClient::CancelPhysicalConnectionOutcome EcsClient::cancelPhysicalConnection(const CancelPhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CancelPhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -7621,7 +7613,7 @@ EcsClient::CancelPhysicalConnectionOutcomeCallable EcsClient::cancelPhysicalConn
 
 EcsClient::DescribeVRoutersOutcome EcsClient::describeVRouters(const DescribeVRoutersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVRoutersOutcome(endpointOutcome.error());
 
@@ -7657,7 +7649,7 @@ EcsClient::DescribeVRoutersOutcomeCallable EcsClient::describeVRoutersCallable(c
 
 EcsClient::DescribeNetworkInterfacesOutcome EcsClient::describeNetworkInterfaces(const DescribeNetworkInterfacesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeNetworkInterfacesOutcome(endpointOutcome.error());
 
@@ -7693,7 +7685,7 @@ EcsClient::DescribeNetworkInterfacesOutcomeCallable EcsClient::describeNetworkIn
 
 EcsClient::ModifyNetworkInterfaceAttributeOutcome EcsClient::modifyNetworkInterfaceAttribute(const ModifyNetworkInterfaceAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyNetworkInterfaceAttributeOutcome(endpointOutcome.error());
 
@@ -7729,7 +7721,7 @@ EcsClient::ModifyNetworkInterfaceAttributeOutcomeCallable EcsClient::modifyNetwo
 
 EcsClient::DetachNetworkInterfaceOutcome EcsClient::detachNetworkInterface(const DetachNetworkInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DetachNetworkInterfaceOutcome(endpointOutcome.error());
 
@@ -7765,7 +7757,7 @@ EcsClient::DetachNetworkInterfaceOutcomeCallable EcsClient::detachNetworkInterfa
 
 EcsClient::AllocateEipAddressOutcome EcsClient::allocateEipAddress(const AllocateEipAddressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AllocateEipAddressOutcome(endpointOutcome.error());
 
@@ -7801,7 +7793,7 @@ EcsClient::AllocateEipAddressOutcomeCallable EcsClient::allocateEipAddressCallab
 
 EcsClient::DeleteDiskOutcome EcsClient::deleteDisk(const DeleteDiskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteDiskOutcome(endpointOutcome.error());
 
@@ -7837,7 +7829,7 @@ EcsClient::DeleteDiskOutcomeCallable EcsClient::deleteDiskCallable(const DeleteD
 
 EcsClient::UnassociateHaVipOutcome EcsClient::unassociateHaVip(const UnassociateHaVipRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UnassociateHaVipOutcome(endpointOutcome.error());
 
@@ -7873,7 +7865,7 @@ EcsClient::UnassociateHaVipOutcomeCallable EcsClient::unassociateHaVipCallable(c
 
 EcsClient::ModifyHaVipAttributeOutcome EcsClient::modifyHaVipAttribute(const ModifyHaVipAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyHaVipAttributeOutcome(endpointOutcome.error());
 
@@ -7909,7 +7901,7 @@ EcsClient::ModifyHaVipAttributeOutcomeCallable EcsClient::modifyHaVipAttributeCa
 
 EcsClient::CreateKeyPairOutcome EcsClient::createKeyPair(const CreateKeyPairRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateKeyPairOutcome(endpointOutcome.error());
 
@@ -7945,7 +7937,7 @@ EcsClient::CreateKeyPairOutcomeCallable EcsClient::createKeyPairCallable(const C
 
 EcsClient::AttachClassicLinkVpcOutcome EcsClient::attachClassicLinkVpc(const AttachClassicLinkVpcRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AttachClassicLinkVpcOutcome(endpointOutcome.error());
 
@@ -7981,7 +7973,7 @@ EcsClient::AttachClassicLinkVpcOutcomeCallable EcsClient::attachClassicLinkVpcCa
 
 EcsClient::DescribeDeploymentSetsOutcome EcsClient::describeDeploymentSets(const DescribeDeploymentSetsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDeploymentSetsOutcome(endpointOutcome.error());
 
@@ -8017,7 +8009,7 @@ EcsClient::DescribeDeploymentSetsOutcomeCallable EcsClient::describeDeploymentSe
 
 EcsClient::AttachInstanceRamRoleOutcome EcsClient::attachInstanceRamRole(const AttachInstanceRamRoleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AttachInstanceRamRoleOutcome(endpointOutcome.error());
 
@@ -8053,7 +8045,7 @@ EcsClient::AttachInstanceRamRoleOutcomeCallable EcsClient::attachInstanceRamRole
 
 EcsClient::ModifyVRouterAttributeOutcome EcsClient::modifyVRouterAttribute(const ModifyVRouterAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyVRouterAttributeOutcome(endpointOutcome.error());
 

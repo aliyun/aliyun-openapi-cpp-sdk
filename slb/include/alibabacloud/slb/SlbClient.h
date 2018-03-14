@@ -622,7 +622,6 @@ namespace AlibabaCloud
             SetLoadBalancerUDPListenerAttributeOutcomeCallable setLoadBalancerUDPListenerAttributeCallable(const Model::SetLoadBalancerUDPListenerAttributeRequest& request) const;
 	
 		private:
-			virtual EndpointOutcome endpoint()const override;
 			std::shared_ptr<EndpointProvider> endpointProvider_;
 		};
 	}

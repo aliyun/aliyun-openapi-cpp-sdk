@@ -46,12 +46,12 @@ namespace AlibabaCloud
 					std::string lastModifyTime;
 					std::string submitTime;
 					std::string name;
-					std::string stderr;
+					std::string _stderr;
 					std::string state;
 					std::vector<Resources> resources;
 					std::string id;
 					std::string arrayRequest;
-					std::string stdout;
+					std::string _stdout;
 				};
 
 
