@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::CCC;
 using namespace AlibabaCloud::CCC::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "CCC";
+}
+
 CCCClient::CCCClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "CCC");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "CCC");
 }
 
 CCCClient::CCCClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "CCC");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "CCC");
 }
 
 CCCClient::CCCClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "CCC");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "CCC");
 }
 
 CCCClient::~CCCClient()
 {}
 
-CoreClient::EndpointOutcome CCCClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 CCCClient::ListRecordingsByContactIdOutcome CCCClient::listRecordingsByContactId(const ListRecordingsByContactIdRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListRecordingsByContactIdOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ CCCClient::ListRecordingsByContactIdOutcomeCallable CCCClient::listRecordingsByC
 
 CCCClient::ListUsersOfSkillGroupOutcome CCCClient::listUsersOfSkillGroup(const ListUsersOfSkillGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListUsersOfSkillGroupOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ CCCClient::ListUsersOfSkillGroupOutcomeCallable CCCClient::listUsersOfSkillGroup
 
 CCCClient::DeleteSkillGroupOutcome CCCClient::deleteSkillGroup(const DeleteSkillGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteSkillGroupOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ CCCClient::DeleteSkillGroupOutcomeCallable CCCClient::deleteSkillGroupCallable(c
 
 CCCClient::ModifyPhoneNumberOutcome CCCClient::modifyPhoneNumber(const ModifyPhoneNumberRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyPhoneNumberOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ CCCClient::ModifyPhoneNumberOutcomeCallable CCCClient::modifyPhoneNumberCallable
 
 CCCClient::ListUsersOutcome CCCClient::listUsers(const ListUsersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListUsersOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ CCCClient::ListUsersOutcomeCallable CCCClient::listUsersCallable(const ListUsers
 
 CCCClient::ListSkillGroupsOutcome CCCClient::listSkillGroups(const ListSkillGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListSkillGroupsOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ CCCClient::ListSkillGroupsOutcomeCallable CCCClient::listSkillGroupsCallable(con
 
 CCCClient::ListSkillGroupsOfUserOutcome CCCClient::listSkillGroupsOfUser(const ListSkillGroupsOfUserRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListSkillGroupsOfUserOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ CCCClient::ListSkillGroupsOfUserOutcomeCallable CCCClient::listSkillGroupsOfUser
 
 CCCClient::RemovePhoneNumberOutcome CCCClient::removePhoneNumber(const RemovePhoneNumberRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemovePhoneNumberOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ CCCClient::RemovePhoneNumberOutcomeCallable CCCClient::removePhoneNumberCallable
 
 CCCClient::ListCallDetailRecordsOutcome CCCClient::listCallDetailRecords(const ListCallDetailRecordsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListCallDetailRecordsOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ CCCClient::ListCallDetailRecordsOutcomeCallable CCCClient::listCallDetailRecords
 
 CCCClient::AddPhoneNumberOutcome CCCClient::addPhoneNumber(const AddPhoneNumberRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddPhoneNumberOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ CCCClient::AddPhoneNumberOutcomeCallable CCCClient::addPhoneNumberCallable(const
 
 CCCClient::ListRecordingsOutcome CCCClient::listRecordings(const ListRecordingsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListRecordingsOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ CCCClient::ListRecordingsOutcomeCallable CCCClient::listRecordingsCallable(const
 
 CCCClient::GetConfigOutcome CCCClient::getConfig(const GetConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetConfigOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ CCCClient::GetConfigOutcomeCallable CCCClient::getConfigCallable(const GetConfig
 
 CCCClient::DownloadRecordingOutcome CCCClient::downloadRecording(const DownloadRecordingRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DownloadRecordingOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ CCCClient::DownloadRecordingOutcomeCallable CCCClient::downloadRecordingCallable
 
 CCCClient::ListPhoneNumbersOutcome CCCClient::listPhoneNumbers(const ListPhoneNumbersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListPhoneNumbersOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ CCCClient::ListPhoneNumbersOutcomeCallable CCCClient::listPhoneNumbersCallable(c
 
 CCCClient::RefreshTokenOutcome CCCClient::refreshToken(const RefreshTokenRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RefreshTokenOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ CCCClient::RefreshTokenOutcomeCallable CCCClient::refreshTokenCallable(const Ref
 
 CCCClient::RequestLoginInfoOutcome CCCClient::requestLoginInfo(const RequestLoginInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RequestLoginInfoOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ CCCClient::RequestLoginInfoOutcomeCallable CCCClient::requestLoginInfoCallable(c
 
 CCCClient::GetServiceExtensionsOutcome CCCClient::getServiceExtensions(const GetServiceExtensionsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetServiceExtensionsOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ CCCClient::GetServiceExtensionsOutcomeCallable CCCClient::getServiceExtensionsCa
 
 CCCClient::ListContactFlowsOutcome CCCClient::listContactFlows(const ListContactFlowsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListContactFlowsOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ CCCClient::ListContactFlowsOutcomeCallable CCCClient::listContactFlowsCallable(c
 
 CCCClient::ListRolesOutcome CCCClient::listRoles(const ListRolesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListRolesOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ CCCClient::ListRolesOutcomeCallable CCCClient::listRolesCallable(const ListRoles
 
 CCCClient::GetUserOutcome CCCClient::getUser(const GetUserRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetUserOutcome(endpointOutcome.error());
 

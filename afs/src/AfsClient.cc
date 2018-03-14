@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Afs;
 using namespace AlibabaCloud::Afs::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "afs";
+}
+
 AfsClient::AfsClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AfsClient::AfsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AfsClient::AfsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AfsClient::~AfsClient()
 {}
 
-CoreClient::EndpointOutcome AfsClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 AfsClient::DescribeEarlyWarningOutcome AfsClient::describeEarlyWarning(const DescribeEarlyWarningRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeEarlyWarningOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ AfsClient::DescribeEarlyWarningOutcomeCallable AfsClient::describeEarlyWarningCa
 
 AfsClient::SetEarlyWarningOutcome AfsClient::setEarlyWarning(const SetEarlyWarningRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetEarlyWarningOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ AfsClient::SetEarlyWarningOutcomeCallable AfsClient::setEarlyWarningCallable(con
 
 AfsClient::DescribeCaptchaIpCityOutcome AfsClient::describeCaptchaIpCity(const DescribeCaptchaIpCityRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCaptchaIpCityOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ AfsClient::DescribeCaptchaIpCityOutcomeCallable AfsClient::describeCaptchaIpCity
 
 AfsClient::ConfigurationStyleOutcome AfsClient::configurationStyle(const ConfigurationStyleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ConfigurationStyleOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ AfsClient::ConfigurationStyleOutcomeCallable AfsClient::configurationStyleCallab
 
 AfsClient::DescribeCaptchaMinOutcome AfsClient::describeCaptchaMin(const DescribeCaptchaMinRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCaptchaMinOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ AfsClient::DescribeCaptchaMinOutcomeCallable AfsClient::describeCaptchaMinCallab
 
 AfsClient::DescribeCaptchaRiskOutcome AfsClient::describeCaptchaRisk(const DescribeCaptchaRiskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCaptchaRiskOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ AfsClient::DescribeCaptchaRiskOutcomeCallable AfsClient::describeCaptchaRiskCall
 
 AfsClient::AuthenticateSigOutcome AfsClient::authenticateSig(const AuthenticateSigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AuthenticateSigOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ AfsClient::AuthenticateSigOutcomeCallable AfsClient::authenticateSigCallable(con
 
 AfsClient::DescribeConfigNameOutcome AfsClient::describeConfigName(const DescribeConfigNameRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeConfigNameOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ AfsClient::DescribeConfigNameOutcomeCallable AfsClient::describeConfigNameCallab
 
 AfsClient::DescribeCaptchaDayOutcome AfsClient::describeCaptchaDay(const DescribeCaptchaDayRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCaptchaDayOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ AfsClient::DescribeCaptchaDayOutcomeCallable AfsClient::describeCaptchaDayCallab
 
 AfsClient::DescribePersonMachineListOutcome AfsClient::describePersonMachineList(const DescribePersonMachineListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribePersonMachineListOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ AfsClient::DescribePersonMachineListOutcomeCallable AfsClient::describePersonMac
 
 AfsClient::CreateConfigurationOutcome AfsClient::createConfiguration(const CreateConfigurationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateConfigurationOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ AfsClient::CreateConfigurationOutcomeCallable AfsClient::createConfigurationCall
 
 AfsClient::AnalyzeNvcOutcome AfsClient::analyzeNvc(const AnalyzeNvcRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AnalyzeNvcOutcome(endpointOutcome.error());
 

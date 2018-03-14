@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Cdn;
 using namespace AlibabaCloud::Cdn::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "Cdn";
+}
+
 CdnClient::CdnClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "cdn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cdn");
 }
 
 CdnClient::CdnClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "cdn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cdn");
 }
 
 CdnClient::CdnClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "cdn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cdn");
 }
 
 CdnClient::~CdnClient()
 {}
 
-CoreClient::EndpointOutcome CdnClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 CdnClient::SetPathCacheExpiredConfigOutcome CdnClient::setPathCacheExpiredConfig(const SetPathCacheExpiredConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetPathCacheExpiredConfigOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ CdnClient::SetPathCacheExpiredConfigOutcomeCallable CdnClient::setPathCacheExpir
 
 CdnClient::DescribeCdnServiceOutcome CdnClient::describeCdnService(const DescribeCdnServiceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCdnServiceOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ CdnClient::DescribeCdnServiceOutcomeCallable CdnClient::describeCdnServiceCallab
 
 CdnClient::CreateLiveStreamRecordIndexFilesOutcome CdnClient::createLiveStreamRecordIndexFiles(const CreateLiveStreamRecordIndexFilesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateLiveStreamRecordIndexFilesOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ CdnClient::CreateLiveStreamRecordIndexFilesOutcomeCallable CdnClient::createLive
 
 CdnClient::ModifyUserCustomLogConfigOutcome CdnClient::modifyUserCustomLogConfig(const ModifyUserCustomLogConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyUserCustomLogConfigOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ CdnClient::ModifyUserCustomLogConfigOutcomeCallable CdnClient::modifyUserCustomL
 
 CdnClient::SetWafConfigOutcome CdnClient::setWafConfig(const SetWafConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetWafConfigOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ CdnClient::SetWafConfigOutcomeCallable CdnClient::setWafConfigCallable(const Set
 
 CdnClient::DescribeCdnDomainDetailOutcome CdnClient::describeCdnDomainDetail(const DescribeCdnDomainDetailRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCdnDomainDetailOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ CdnClient::DescribeCdnDomainDetailOutcomeCallable CdnClient::describeCdnDomainDe
 
 CdnClient::DescribeLiveStreamTranscodeInfoOutcome CdnClient::describeLiveStreamTranscodeInfo(const DescribeLiveStreamTranscodeInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamTranscodeInfoOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ CdnClient::DescribeLiveStreamTranscodeInfoOutcomeCallable CdnClient::describeLiv
 
 CdnClient::DescribeLiveStreamsOnlineListOutcome CdnClient::describeLiveStreamsOnlineList(const DescribeLiveStreamsOnlineListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamsOnlineListOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ CdnClient::DescribeLiveStreamsOnlineListOutcomeCallable CdnClient::describeLiveS
 
 CdnClient::SetVideoSeekConfigOutcome CdnClient::setVideoSeekConfig(const SetVideoSeekConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetVideoSeekConfigOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ CdnClient::SetVideoSeekConfigOutcomeCallable CdnClient::setVideoSeekConfigCallab
 
 CdnClient::SetL2OssKeyConfigOutcome CdnClient::setL2OssKeyConfig(const SetL2OssKeyConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetL2OssKeyConfigOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ CdnClient::SetL2OssKeyConfigOutcomeCallable CdnClient::setL2OssKeyConfigCallable
 
 CdnClient::DescribeCdnMonitorDataOutcome CdnClient::describeCdnMonitorData(const DescribeCdnMonitorDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCdnMonitorDataOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ CdnClient::DescribeCdnMonitorDataOutcomeCallable CdnClient::describeCdnMonitorDa
 
 CdnClient::DeleteCacheExpiredConfigOutcome CdnClient::deleteCacheExpiredConfig(const DeleteCacheExpiredConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteCacheExpiredConfigOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ CdnClient::DeleteCacheExpiredConfigOutcomeCallable CdnClient::deleteCacheExpired
 
 CdnClient::DescribeDomainReqHitRateDataOutcome CdnClient::describeDomainReqHitRateData(const DescribeDomainReqHitRateDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainReqHitRateDataOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ CdnClient::DescribeDomainReqHitRateDataOutcomeCallable CdnClient::describeDomain
 
 CdnClient::DescribeDomainUvDataOutcome CdnClient::describeDomainUvData(const DescribeDomainUvDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainUvDataOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ CdnClient::DescribeDomainUvDataOutcomeCallable CdnClient::describeDomainUvDataCa
 
 CdnClient::StopMixStreamsServiceOutcome CdnClient::stopMixStreamsService(const StopMixStreamsServiceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StopMixStreamsServiceOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ CdnClient::StopMixStreamsServiceOutcomeCallable CdnClient::stopMixStreamsService
 
 CdnClient::SetRemoveQueryStringConfigOutcome CdnClient::setRemoveQueryStringConfig(const SetRemoveQueryStringConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetRemoveQueryStringConfigOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ CdnClient::SetRemoveQueryStringConfigOutcomeCallable CdnClient::setRemoveQuerySt
 
 CdnClient::DeleteCdnDomainOutcome CdnClient::deleteCdnDomain(const DeleteCdnDomainRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteCdnDomainOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ CdnClient::DeleteCdnDomainOutcomeCallable CdnClient::deleteCdnDomainCallable(con
 
 CdnClient::SetFileTypeForceTtlCodeConfigOutcome CdnClient::setFileTypeForceTtlCodeConfig(const SetFileTypeForceTtlCodeConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetFileTypeForceTtlCodeConfigOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ CdnClient::SetFileTypeForceTtlCodeConfigOutcomeCallable CdnClient::setFileTypeFo
 
 CdnClient::DeleteLiveStreamTranscodeOutcome CdnClient::deleteLiveStreamTranscode(const DeleteLiveStreamTranscodeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteLiveStreamTranscodeOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ CdnClient::DeleteLiveStreamTranscodeOutcomeCallable CdnClient::deleteLiveStreamT
 
 CdnClient::DescribeDomainUpstreamOfCenterOutcome CdnClient::describeDomainUpstreamOfCenter(const DescribeDomainUpstreamOfCenterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainUpstreamOfCenterOutcome(endpointOutcome.error());
 
@@ -781,7 +773,7 @@ CdnClient::DescribeDomainUpstreamOfCenterOutcomeCallable CdnClient::describeDoma
 
 CdnClient::StopCdnDomainOutcome CdnClient::stopCdnDomain(const StopCdnDomainRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StopCdnDomainOutcome(endpointOutcome.error());
 
@@ -817,7 +809,7 @@ CdnClient::StopCdnDomainOutcomeCallable CdnClient::stopCdnDomainCallable(const S
 
 CdnClient::SetFileCacheExpiredConfigOutcome CdnClient::setFileCacheExpiredConfig(const SetFileCacheExpiredConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetFileCacheExpiredConfigOutcome(endpointOutcome.error());
 
@@ -853,7 +845,7 @@ CdnClient::SetFileCacheExpiredConfigOutcomeCallable CdnClient::setFileCacheExpir
 
 CdnClient::DescribeDomainsUsageByDayOutcome CdnClient::describeDomainsUsageByDay(const DescribeDomainsUsageByDayRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainsUsageByDayOutcome(endpointOutcome.error());
 
@@ -889,7 +881,7 @@ CdnClient::DescribeDomainsUsageByDayOutcomeCallable CdnClient::describeDomainsUs
 
 CdnClient::DescribeTopDomainsByFlowOutcome CdnClient::describeTopDomainsByFlow(const DescribeTopDomainsByFlowRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTopDomainsByFlowOutcome(endpointOutcome.error());
 
@@ -925,7 +917,7 @@ CdnClient::DescribeTopDomainsByFlowOutcomeCallable CdnClient::describeTopDomains
 
 CdnClient::DescribeDomainAverageResponseTimeOutcome CdnClient::describeDomainAverageResponseTime(const DescribeDomainAverageResponseTimeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainAverageResponseTimeOutcome(endpointOutcome.error());
 
@@ -961,7 +953,7 @@ CdnClient::DescribeDomainAverageResponseTimeOutcomeCallable CdnClient::describeD
 
 CdnClient::DescribeLiveStreamBitRateDataOutcome CdnClient::describeLiveStreamBitRateData(const DescribeLiveStreamBitRateDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamBitRateDataOutcome(endpointOutcome.error());
 
@@ -997,7 +989,7 @@ CdnClient::DescribeLiveStreamBitRateDataOutcomeCallable CdnClient::describeLiveS
 
 CdnClient::SetUserDomainBlackListOutcome CdnClient::setUserDomainBlackList(const SetUserDomainBlackListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetUserDomainBlackListOutcome(endpointOutcome.error());
 
@@ -1033,7 +1025,7 @@ CdnClient::SetUserDomainBlackListOutcomeCallable CdnClient::setUserDomainBlackLi
 
 CdnClient::SetLocationAccessRestrictionOutcome CdnClient::setLocationAccessRestriction(const SetLocationAccessRestrictionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetLocationAccessRestrictionOutcome(endpointOutcome.error());
 
@@ -1069,7 +1061,7 @@ CdnClient::SetLocationAccessRestrictionOutcomeCallable CdnClient::setLocationAcc
 
 CdnClient::DescribeUserCustomLogConfigOutcome CdnClient::describeUserCustomLogConfig(const DescribeUserCustomLogConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeUserCustomLogConfigOutcome(endpointOutcome.error());
 
@@ -1105,7 +1097,7 @@ CdnClient::DescribeUserCustomLogConfigOutcomeCallable CdnClient::describeUserCus
 
 CdnClient::DescribeExtensiveDomainDataOutcome CdnClient::describeExtensiveDomainData(const DescribeExtensiveDomainDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeExtensiveDomainDataOutcome(endpointOutcome.error());
 
@@ -1141,7 +1133,7 @@ CdnClient::DescribeExtensiveDomainDataOutcomeCallable CdnClient::describeExtensi
 
 CdnClient::ModifyCdnServiceOutcome CdnClient::modifyCdnService(const ModifyCdnServiceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyCdnServiceOutcome(endpointOutcome.error());
 
@@ -1177,7 +1169,7 @@ CdnClient::ModifyCdnServiceOutcomeCallable CdnClient::modifyCdnServiceCallable(c
 
 CdnClient::DescribeLiveStreamRecordIndexFileOutcome CdnClient::describeLiveStreamRecordIndexFile(const DescribeLiveStreamRecordIndexFileRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamRecordIndexFileOutcome(endpointOutcome.error());
 
@@ -1213,7 +1205,7 @@ CdnClient::DescribeLiveStreamRecordIndexFileOutcomeCallable CdnClient::describeL
 
 CdnClient::DescribeLiveStreamTranscodeStreamNumOutcome CdnClient::describeLiveStreamTranscodeStreamNum(const DescribeLiveStreamTranscodeStreamNumRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamTranscodeStreamNumOutcome(endpointOutcome.error());
 
@@ -1249,7 +1241,7 @@ CdnClient::DescribeLiveStreamTranscodeStreamNumOutcomeCallable CdnClient::descri
 
 CdnClient::DescribeDomainHitRateDataOutcome CdnClient::describeDomainHitRateData(const DescribeDomainHitRateDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainHitRateDataOutcome(endpointOutcome.error());
 
@@ -1285,7 +1277,7 @@ CdnClient::DescribeDomainHitRateDataOutcomeCallable CdnClient::describeDomainHit
 
 CdnClient::DeleteHttpHeaderConfigOutcome CdnClient::deleteHttpHeaderConfig(const DeleteHttpHeaderConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteHttpHeaderConfigOutcome(endpointOutcome.error());
 
@@ -1321,7 +1313,7 @@ CdnClient::DeleteHttpHeaderConfigOutcomeCallable CdnClient::deleteHttpHeaderConf
 
 CdnClient::PushObjectCacheOutcome CdnClient::pushObjectCache(const PushObjectCacheRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return PushObjectCacheOutcome(endpointOutcome.error());
 
@@ -1357,7 +1349,7 @@ CdnClient::PushObjectCacheOutcomeCallable CdnClient::pushObjectCacheCallable(con
 
 CdnClient::DescribeLiveRecordConfigOutcome CdnClient::describeLiveRecordConfig(const DescribeLiveRecordConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveRecordConfigOutcome(endpointOutcome.error());
 
@@ -1393,7 +1385,7 @@ CdnClient::DescribeLiveRecordConfigOutcomeCallable CdnClient::describeLiveRecord
 
 CdnClient::SetForceRedirectConfigOutcome CdnClient::setForceRedirectConfig(const SetForceRedirectConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetForceRedirectConfigOutcome(endpointOutcome.error());
 
@@ -1429,7 +1421,7 @@ CdnClient::SetForceRedirectConfigOutcomeCallable CdnClient::setForceRedirectConf
 
 CdnClient::SetErrorPageConfigOutcome CdnClient::setErrorPageConfig(const SetErrorPageConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetErrorPageConfigOutcome(endpointOutcome.error());
 
@@ -1465,7 +1457,7 @@ CdnClient::SetErrorPageConfigOutcomeCallable CdnClient::setErrorPageConfigCallab
 
 CdnClient::DescribeLiveStreamOnlineUserNumOutcome CdnClient::describeLiveStreamOnlineUserNum(const DescribeLiveStreamOnlineUserNumRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamOnlineUserNumOutcome(endpointOutcome.error());
 
@@ -1501,7 +1493,7 @@ CdnClient::DescribeLiveStreamOnlineUserNumOutcomeCallable CdnClient::describeLiv
 
 CdnClient::SetRefererConfigOutcome CdnClient::setRefererConfig(const SetRefererConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetRefererConfigOutcome(endpointOutcome.error());
 
@@ -1537,7 +1529,7 @@ CdnClient::SetRefererConfigOutcomeCallable CdnClient::setRefererConfigCallable(c
 
 CdnClient::DescribeDomainSrcFlowDataOutcome CdnClient::describeDomainSrcFlowData(const DescribeDomainSrcFlowDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainSrcFlowDataOutcome(endpointOutcome.error());
 
@@ -1573,7 +1565,7 @@ CdnClient::DescribeDomainSrcFlowDataOutcomeCallable CdnClient::describeDomainSrc
 
 CdnClient::DeleteLiveAppSnapshotConfigOutcome CdnClient::deleteLiveAppSnapshotConfig(const DeleteLiveAppSnapshotConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteLiveAppSnapshotConfigOutcome(endpointOutcome.error());
 
@@ -1609,7 +1601,7 @@ CdnClient::DeleteLiveAppSnapshotConfigOutcomeCallable CdnClient::deleteLiveAppSn
 
 CdnClient::DescribeCdnTypesOutcome CdnClient::describeCdnTypes(const DescribeCdnTypesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCdnTypesOutcome(endpointOutcome.error());
 
@@ -1645,7 +1637,7 @@ CdnClient::DescribeCdnTypesOutcomeCallable CdnClient::describeCdnTypesCallable(c
 
 CdnClient::SetOptimizeConfigOutcome CdnClient::setOptimizeConfig(const SetOptimizeConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetOptimizeConfigOutcome(endpointOutcome.error());
 
@@ -1681,7 +1673,7 @@ CdnClient::SetOptimizeConfigOutcomeCallable CdnClient::setOptimizeConfigCallable
 
 CdnClient::SetDynamicConfigOutcome CdnClient::setDynamicConfig(const SetDynamicConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetDynamicConfigOutcome(endpointOutcome.error());
 
@@ -1717,7 +1709,7 @@ CdnClient::SetDynamicConfigOutcomeCallable CdnClient::setDynamicConfigCallable(c
 
 CdnClient::SetReqAuthConfigOutcome CdnClient::setReqAuthConfig(const SetReqAuthConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetReqAuthConfigOutcome(endpointOutcome.error());
 
@@ -1753,7 +1745,7 @@ CdnClient::SetReqAuthConfigOutcomeCallable CdnClient::setReqAuthConfigCallable(c
 
 CdnClient::DescribeLiveStreamLimitInfoOutcome CdnClient::describeLiveStreamLimitInfo(const DescribeLiveStreamLimitInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamLimitInfoOutcome(endpointOutcome.error());
 
@@ -1789,7 +1781,7 @@ CdnClient::DescribeLiveStreamLimitInfoOutcomeCallable CdnClient::describeLiveStr
 
 CdnClient::DescribeLiveStreamNumberListOutcome CdnClient::describeLiveStreamNumberList(const DescribeLiveStreamNumberListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamNumberListOutcome(endpointOutcome.error());
 
@@ -1825,7 +1817,7 @@ CdnClient::DescribeLiveStreamNumberListOutcomeCallable CdnClient::describeLiveSt
 
 CdnClient::SetHttpErrorPageConfigOutcome CdnClient::setHttpErrorPageConfig(const SetHttpErrorPageConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetHttpErrorPageConfigOutcome(endpointOutcome.error());
 
@@ -1861,7 +1853,7 @@ CdnClient::SetHttpErrorPageConfigOutcomeCallable CdnClient::setHttpErrorPageConf
 
 CdnClient::SetPathForceTtlCodeConfigOutcome CdnClient::setPathForceTtlCodeConfig(const SetPathForceTtlCodeConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetPathForceTtlCodeConfigOutcome(endpointOutcome.error());
 
@@ -1897,7 +1889,7 @@ CdnClient::SetPathForceTtlCodeConfigOutcomeCallable CdnClient::setPathForceTtlCo
 
 CdnClient::DescribeLiveStreamRelayPushBitRateOutcome CdnClient::describeLiveStreamRelayPushBitRate(const DescribeLiveStreamRelayPushBitRateRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamRelayPushBitRateOutcome(endpointOutcome.error());
 
@@ -1933,7 +1925,7 @@ CdnClient::DescribeLiveStreamRelayPushBitRateOutcomeCallable CdnClient::describe
 
 CdnClient::StartMixStreamsServiceOutcome CdnClient::startMixStreamsService(const StartMixStreamsServiceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StartMixStreamsServiceOutcome(endpointOutcome.error());
 
@@ -1969,7 +1961,7 @@ CdnClient::StartMixStreamsServiceOutcomeCallable CdnClient::startMixStreamsServi
 
 CdnClient::DescribeLivePullStreamConfigOutcome CdnClient::describeLivePullStreamConfig(const DescribeLivePullStreamConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLivePullStreamConfigOutcome(endpointOutcome.error());
 
@@ -2005,7 +1997,7 @@ CdnClient::DescribeLivePullStreamConfigOutcomeCallable CdnClient::describeLivePu
 
 CdnClient::SetLiveStreamsNotifyUrlConfigOutcome CdnClient::setLiveStreamsNotifyUrlConfig(const SetLiveStreamsNotifyUrlConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetLiveStreamsNotifyUrlConfigOutcome(endpointOutcome.error());
 
@@ -2041,7 +2033,7 @@ CdnClient::SetLiveStreamsNotifyUrlConfigOutcomeCallable CdnClient::setLiveStream
 
 CdnClient::DescribeDomainPathDataOutcome CdnClient::describeDomainPathData(const DescribeDomainPathDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainPathDataOutcome(endpointOutcome.error());
 
@@ -2077,7 +2069,7 @@ CdnClient::DescribeDomainPathDataOutcomeCallable CdnClient::describeDomainPathDa
 
 CdnClient::DescribeLiveAppRecordConfigOutcome CdnClient::describeLiveAppRecordConfig(const DescribeLiveAppRecordConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveAppRecordConfigOutcome(endpointOutcome.error());
 
@@ -2113,7 +2105,7 @@ CdnClient::DescribeLiveAppRecordConfigOutcomeCallable CdnClient::describeLiveApp
 
 CdnClient::DescribeCdnDomainLogsOutcome CdnClient::describeCdnDomainLogs(const DescribeCdnDomainLogsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCdnDomainLogsOutcome(endpointOutcome.error());
 
@@ -2149,7 +2141,7 @@ CdnClient::DescribeCdnDomainLogsOutcomeCallable CdnClient::describeCdnDomainLogs
 
 CdnClient::DescribeDomainTopUrlVisitOutcome CdnClient::describeDomainTopUrlVisit(const DescribeDomainTopUrlVisitRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainTopUrlVisitOutcome(endpointOutcome.error());
 
@@ -2185,7 +2177,7 @@ CdnClient::DescribeDomainTopUrlVisitOutcomeCallable CdnClient::describeDomainTop
 
 CdnClient::SetOssLogConfigOutcome CdnClient::setOssLogConfig(const SetOssLogConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetOssLogConfigOutcome(endpointOutcome.error());
 
@@ -2221,7 +2213,7 @@ CdnClient::SetOssLogConfigOutcomeCallable CdnClient::setOssLogConfigCallable(con
 
 CdnClient::DescribeDomainFlowDataOutcome CdnClient::describeDomainFlowData(const DescribeDomainFlowDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainFlowDataOutcome(endpointOutcome.error());
 
@@ -2257,7 +2249,7 @@ CdnClient::DescribeDomainFlowDataOutcomeCallable CdnClient::describeDomainFlowDa
 
 CdnClient::DescribeLiveStreamsBlockListOutcome CdnClient::describeLiveStreamsBlockList(const DescribeLiveStreamsBlockListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamsBlockListOutcome(endpointOutcome.error());
 
@@ -2293,7 +2285,7 @@ CdnClient::DescribeLiveStreamsBlockListOutcomeCallable CdnClient::describeLiveSt
 
 CdnClient::DescribeLiveStreamRelayPushErrorsOutcome CdnClient::describeLiveStreamRelayPushErrors(const DescribeLiveStreamRelayPushErrorsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamRelayPushErrorsOutcome(endpointOutcome.error());
 
@@ -2329,7 +2321,7 @@ CdnClient::DescribeLiveStreamRelayPushErrorsOutcomeCallable CdnClient::describeL
 
 CdnClient::AddLiveStreamTranscodeOutcome CdnClient::addLiveStreamTranscode(const AddLiveStreamTranscodeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddLiveStreamTranscodeOutcome(endpointOutcome.error());
 
@@ -2365,7 +2357,7 @@ CdnClient::AddLiveStreamTranscodeOutcomeCallable CdnClient::addLiveStreamTransco
 
 CdnClient::SetIgnoreQueryStringConfigOutcome CdnClient::setIgnoreQueryStringConfig(const SetIgnoreQueryStringConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetIgnoreQueryStringConfigOutcome(endpointOutcome.error());
 
@@ -2401,7 +2393,7 @@ CdnClient::SetIgnoreQueryStringConfigOutcomeCallable CdnClient::setIgnoreQuerySt
 
 CdnClient::DescribeDomainCustomLogConfigOutcome CdnClient::describeDomainCustomLogConfig(const DescribeDomainCustomLogConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainCustomLogConfigOutcome(endpointOutcome.error());
 
@@ -2437,7 +2429,7 @@ CdnClient::DescribeDomainCustomLogConfigOutcomeCallable CdnClient::describeDomai
 
 CdnClient::AddLivePullStreamInfoOutcome CdnClient::addLivePullStreamInfo(const AddLivePullStreamInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddLivePullStreamInfoOutcome(endpointOutcome.error());
 
@@ -2473,7 +2465,7 @@ CdnClient::AddLivePullStreamInfoOutcomeCallable CdnClient::addLivePullStreamInfo
 
 CdnClient::DescribeUserCustomerLabelsOutcome CdnClient::describeUserCustomerLabels(const DescribeUserCustomerLabelsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeUserCustomerLabelsOutcome(endpointOutcome.error());
 
@@ -2509,7 +2501,7 @@ CdnClient::DescribeUserCustomerLabelsOutcomeCallable CdnClient::describeUserCust
 
 CdnClient::BatchDescribeDomainBpsDataOutcome CdnClient::batchDescribeDomainBpsData(const BatchDescribeDomainBpsDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return BatchDescribeDomainBpsDataOutcome(endpointOutcome.error());
 
@@ -2545,7 +2537,7 @@ CdnClient::BatchDescribeDomainBpsDataOutcomeCallable CdnClient::batchDescribeDom
 
 CdnClient::DescribeLiveStreamBpsDataOutcome CdnClient::describeLiveStreamBpsData(const DescribeLiveStreamBpsDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamBpsDataOutcome(endpointOutcome.error());
 
@@ -2581,7 +2573,7 @@ CdnClient::DescribeLiveStreamBpsDataOutcomeCallable CdnClient::describeLiveStrea
 
 CdnClient::DescribeDomainTopReferVisitOutcome CdnClient::describeDomainTopReferVisit(const DescribeDomainTopReferVisitRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainTopReferVisitOutcome(endpointOutcome.error());
 
@@ -2617,7 +2609,7 @@ CdnClient::DescribeDomainTopReferVisitOutcomeCallable CdnClient::describeDomainT
 
 CdnClient::DescribeLiveStreamsControlHistoryOutcome CdnClient::describeLiveStreamsControlHistory(const DescribeLiveStreamsControlHistoryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamsControlHistoryOutcome(endpointOutcome.error());
 
@@ -2653,7 +2645,7 @@ CdnClient::DescribeLiveStreamsControlHistoryOutcomeCallable CdnClient::describeL
 
 CdnClient::SetReqHeaderConfigOutcome CdnClient::setReqHeaderConfig(const SetReqHeaderConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetReqHeaderConfigOutcome(endpointOutcome.error());
 
@@ -2689,7 +2681,7 @@ CdnClient::SetReqHeaderConfigOutcomeCallable CdnClient::setReqHeaderConfigCallab
 
 CdnClient::OpenCdnServiceOutcome CdnClient::openCdnService(const OpenCdnServiceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return OpenCdnServiceOutcome(endpointOutcome.error());
 
@@ -2725,7 +2717,7 @@ CdnClient::OpenCdnServiceOutcomeCallable CdnClient::openCdnServiceCallable(const
 
 CdnClient::DescribeDomainRealTimeReqHitRateDataOutcome CdnClient::describeDomainRealTimeReqHitRateData(const DescribeDomainRealTimeReqHitRateDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainRealTimeReqHitRateDataOutcome(endpointOutcome.error());
 
@@ -2761,7 +2753,7 @@ CdnClient::DescribeDomainRealTimeReqHitRateDataOutcomeCallable CdnClient::descri
 
 CdnClient::DescribeDomainQoSRtOutcome CdnClient::describeDomainQoSRt(const DescribeDomainQoSRtRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainQoSRtOutcome(endpointOutcome.error());
 
@@ -2797,7 +2789,7 @@ CdnClient::DescribeDomainQoSRtOutcomeCallable CdnClient::describeDomainQoSRtCall
 
 CdnClient::DescribeLiveStreamFrameAndBitRateByDomainOutcome CdnClient::describeLiveStreamFrameAndBitRateByDomain(const DescribeLiveStreamFrameAndBitRateByDomainRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamFrameAndBitRateByDomainOutcome(endpointOutcome.error());
 
@@ -2833,7 +2825,7 @@ CdnClient::DescribeLiveStreamFrameAndBitRateByDomainOutcomeCallable CdnClient::d
 
 CdnClient::DescribeLiveStreamSnapshotInfoOutcome CdnClient::describeLiveStreamSnapshotInfo(const DescribeLiveStreamSnapshotInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamSnapshotInfoOutcome(endpointOutcome.error());
 
@@ -2869,7 +2861,7 @@ CdnClient::DescribeLiveStreamSnapshotInfoOutcomeCallable CdnClient::describeLive
 
 CdnClient::SetIpBlackListConfigOutcome CdnClient::setIpBlackListConfig(const SetIpBlackListConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetIpBlackListConfigOutcome(endpointOutcome.error());
 
@@ -2905,7 +2897,7 @@ CdnClient::SetIpBlackListConfigOutcomeCallable CdnClient::setIpBlackListConfigCa
 
 CdnClient::DescribeDomainSlowRatioOutcome CdnClient::describeDomainSlowRatio(const DescribeDomainSlowRatioRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainSlowRatioOutcome(endpointOutcome.error());
 
@@ -2941,7 +2933,7 @@ CdnClient::DescribeDomainSlowRatioOutcomeCallable CdnClient::describeDomainSlowR
 
 CdnClient::DescribeDomainCCDataOutcome CdnClient::describeDomainCCData(const DescribeDomainCCDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainCCDataOutcome(endpointOutcome.error());
 
@@ -2977,7 +2969,7 @@ CdnClient::DescribeDomainCCDataOutcomeCallable CdnClient::describeDomainCCDataCa
 
 CdnClient::DescribeLiveStreamRelayPushDataOutcome CdnClient::describeLiveStreamRelayPushData(const DescribeLiveStreamRelayPushDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamRelayPushDataOutcome(endpointOutcome.error());
 
@@ -3013,7 +3005,7 @@ CdnClient::DescribeLiveStreamRelayPushDataOutcomeCallable CdnClient::describeLiv
 
 CdnClient::SetIpAllowListConfigOutcome CdnClient::setIpAllowListConfig(const SetIpAllowListConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetIpAllowListConfigOutcome(endpointOutcome.error());
 
@@ -3049,7 +3041,7 @@ CdnClient::SetIpAllowListConfigOutcomeCallable CdnClient::setIpAllowListConfigCa
 
 CdnClient::DescribeDomainRealTimeQpsDataOutcome CdnClient::describeDomainRealTimeQpsData(const DescribeDomainRealTimeQpsDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainRealTimeQpsDataOutcome(endpointOutcome.error());
 
@@ -3085,7 +3077,7 @@ CdnClient::DescribeDomainRealTimeQpsDataOutcomeCallable CdnClient::describeDomai
 
 CdnClient::RefreshObjectCachesOutcome CdnClient::refreshObjectCaches(const RefreshObjectCachesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RefreshObjectCachesOutcome(endpointOutcome.error());
 
@@ -3121,7 +3113,7 @@ CdnClient::RefreshObjectCachesOutcomeCallable CdnClient::refreshObjectCachesCall
 
 CdnClient::DescribeDomainBpsDataOutcome CdnClient::describeDomainBpsData(const DescribeDomainBpsDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainBpsDataOutcome(endpointOutcome.error());
 
@@ -3157,7 +3149,7 @@ CdnClient::DescribeDomainBpsDataOutcomeCallable CdnClient::describeDomainBpsData
 
 CdnClient::DescribeLiveStreamsFrameRateAndBitRateDataOutcome CdnClient::describeLiveStreamsFrameRateAndBitRateData(const DescribeLiveStreamsFrameRateAndBitRateDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamsFrameRateAndBitRateDataOutcome(endpointOutcome.error());
 
@@ -3193,7 +3185,7 @@ CdnClient::DescribeLiveStreamsFrameRateAndBitRateDataOutcomeCallable CdnClient::
 
 CdnClient::DescribeOneMinuteDataOutcome CdnClient::describeOneMinuteData(const DescribeOneMinuteDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeOneMinuteDataOutcome(endpointOutcome.error());
 
@@ -3229,7 +3221,7 @@ CdnClient::DescribeOneMinuteDataOutcomeCallable CdnClient::describeOneMinuteData
 
 CdnClient::DescribeLiveStreamRecordContentOutcome CdnClient::describeLiveStreamRecordContent(const DescribeLiveStreamRecordContentRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamRecordContentOutcome(endpointOutcome.error());
 
@@ -3265,7 +3257,7 @@ CdnClient::DescribeLiveStreamRecordContentOutcomeCallable CdnClient::describeLiv
 
 CdnClient::AddCdnDomainOutcome CdnClient::addCdnDomain(const AddCdnDomainRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddCdnDomainOutcome(endpointOutcome.error());
 
@@ -3301,7 +3293,7 @@ CdnClient::AddCdnDomainOutcomeCallable CdnClient::addCdnDomainCallable(const Add
 
 CdnClient::SetRangeConfigOutcome CdnClient::setRangeConfig(const SetRangeConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetRangeConfigOutcome(endpointOutcome.error());
 
@@ -3337,7 +3329,7 @@ CdnClient::SetRangeConfigOutcomeCallable CdnClient::setRangeConfigCallable(const
 
 CdnClient::DescribeLiveStreamRoomBitRateOutcome CdnClient::describeLiveStreamRoomBitRate(const DescribeLiveStreamRoomBitRateRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamRoomBitRateOutcome(endpointOutcome.error());
 
@@ -3373,7 +3365,7 @@ CdnClient::DescribeLiveStreamRoomBitRateOutcomeCallable CdnClient::describeLiveS
 
 CdnClient::DescribeDomainCnameOutcome CdnClient::describeDomainCname(const DescribeDomainCnameRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainCnameOutcome(endpointOutcome.error());
 
@@ -3409,7 +3401,7 @@ CdnClient::DescribeDomainCnameOutcomeCallable CdnClient::describeDomainCnameCall
 
 CdnClient::SetCcConfigOutcome CdnClient::setCcConfig(const SetCcConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetCcConfigOutcome(endpointOutcome.error());
 
@@ -3445,7 +3437,7 @@ CdnClient::SetCcConfigOutcomeCallable CdnClient::setCcConfigCallable(const SetCc
 
 CdnClient::DescribeCustomLogConfigOutcome CdnClient::describeCustomLogConfig(const DescribeCustomLogConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCustomLogConfigOutcome(endpointOutcome.error());
 
@@ -3481,7 +3473,7 @@ CdnClient::DescribeCustomLogConfigOutcomeCallable CdnClient::describeCustomLogCo
 
 CdnClient::DescribeUserDomainsOutcome CdnClient::describeUserDomains(const DescribeUserDomainsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeUserDomainsOutcome(endpointOutcome.error());
 
@@ -3517,7 +3509,7 @@ CdnClient::DescribeUserDomainsOutcomeCallable CdnClient::describeUserDomainsCall
 
 CdnClient::DescribeLiveSnapshotConfigOutcome CdnClient::describeLiveSnapshotConfig(const DescribeLiveSnapshotConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveSnapshotConfigOutcome(endpointOutcome.error());
 
@@ -3553,7 +3545,7 @@ CdnClient::DescribeLiveSnapshotConfigOutcomeCallable CdnClient::describeLiveSnap
 
 CdnClient::DescribeRefreshTasksOutcome CdnClient::describeRefreshTasks(const DescribeRefreshTasksRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRefreshTasksOutcome(endpointOutcome.error());
 
@@ -3589,7 +3581,7 @@ CdnClient::DescribeRefreshTasksOutcomeCallable CdnClient::describeRefreshTasksCa
 
 CdnClient::DescribeRefreshQuotaOutcome CdnClient::describeRefreshQuota(const DescribeRefreshQuotaRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRefreshQuotaOutcome(endpointOutcome.error());
 
@@ -3625,7 +3617,7 @@ CdnClient::DescribeRefreshQuotaOutcomeCallable CdnClient::describeRefreshQuotaCa
 
 CdnClient::SetForwardSchemeConfigOutcome CdnClient::setForwardSchemeConfig(const SetForwardSchemeConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetForwardSchemeConfigOutcome(endpointOutcome.error());
 
@@ -3661,7 +3653,7 @@ CdnClient::SetForwardSchemeConfigOutcomeCallable CdnClient::setForwardSchemeConf
 
 CdnClient::AddLiveAppRecordConfigOutcome CdnClient::addLiveAppRecordConfig(const AddLiveAppRecordConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddLiveAppRecordConfigOutcome(endpointOutcome.error());
 
@@ -3697,7 +3689,7 @@ CdnClient::AddLiveAppRecordConfigOutcomeCallable CdnClient::addLiveAppRecordConf
 
 CdnClient::DescribeDomainBpsDataByTimeStampOutcome CdnClient::describeDomainBpsDataByTimeStamp(const DescribeDomainBpsDataByTimeStampRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainBpsDataByTimeStampOutcome(endpointOutcome.error());
 
@@ -3733,7 +3725,7 @@ CdnClient::DescribeDomainBpsDataByTimeStampOutcomeCallable CdnClient::describeDo
 
 CdnClient::DeleteLiveDomainMappingOutcome CdnClient::deleteLiveDomainMapping(const DeleteLiveDomainMappingRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteLiveDomainMappingOutcome(endpointOutcome.error());
 
@@ -3769,7 +3761,7 @@ CdnClient::DeleteLiveDomainMappingOutcomeCallable CdnClient::deleteLiveDomainMap
 
 CdnClient::ModifyFileCacheExpiredConfigOutcome CdnClient::modifyFileCacheExpiredConfig(const ModifyFileCacheExpiredConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyFileCacheExpiredConfigOutcome(endpointOutcome.error());
 
@@ -3805,7 +3797,7 @@ CdnClient::ModifyFileCacheExpiredConfigOutcomeCallable CdnClient::modifyFileCach
 
 CdnClient::SetSourceHostConfigOutcome CdnClient::setSourceHostConfig(const SetSourceHostConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetSourceHostConfigOutcome(endpointOutcome.error());
 
@@ -3841,7 +3833,7 @@ CdnClient::SetSourceHostConfigOutcomeCallable CdnClient::setSourceHostConfigCall
 
 CdnClient::DescribeLiveStreamRoomUserNumberOutcome CdnClient::describeLiveStreamRoomUserNumber(const DescribeLiveStreamRoomUserNumberRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamRoomUserNumberOutcome(endpointOutcome.error());
 
@@ -3877,7 +3869,7 @@ CdnClient::DescribeLiveStreamRoomUserNumberOutcomeCallable CdnClient::describeLi
 
 CdnClient::DescribeUserConfigsOutcome CdnClient::describeUserConfigs(const DescribeUserConfigsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeUserConfigsOutcome(endpointOutcome.error());
 
@@ -3913,7 +3905,7 @@ CdnClient::DescribeUserConfigsOutcomeCallable CdnClient::describeUserConfigsCall
 
 CdnClient::DescribeLiveStreamStreamStatusOutcome CdnClient::describeLiveStreamStreamStatus(const DescribeLiveStreamStreamStatusRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamStreamStatusOutcome(endpointOutcome.error());
 
@@ -3949,7 +3941,7 @@ CdnClient::DescribeLiveStreamStreamStatusOutcomeCallable CdnClient::describeLive
 
 CdnClient::DescribeLiveStreamRecordIndexFilesOutcome CdnClient::describeLiveStreamRecordIndexFiles(const DescribeLiveStreamRecordIndexFilesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamRecordIndexFilesOutcome(endpointOutcome.error());
 
@@ -3985,7 +3977,7 @@ CdnClient::DescribeLiveStreamRecordIndexFilesOutcomeCallable CdnClient::describe
 
 CdnClient::ModifyCdnDomainOutcome CdnClient::modifyCdnDomain(const ModifyCdnDomainRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyCdnDomainOutcome(endpointOutcome.error());
 
@@ -4021,7 +4013,7 @@ CdnClient::ModifyCdnDomainOutcomeCallable CdnClient::modifyCdnDomainCallable(con
 
 CdnClient::DescribeDomainOnlineUserNumberOutcome CdnClient::describeDomainOnlineUserNumber(const DescribeDomainOnlineUserNumberRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainOnlineUserNumberOutcome(endpointOutcome.error());
 
@@ -4057,7 +4049,7 @@ CdnClient::DescribeDomainOnlineUserNumberOutcomeCallable CdnClient::describeDoma
 
 CdnClient::DescribeDomainMonthBillingBpsDataOutcome CdnClient::describeDomainMonthBillingBpsData(const DescribeDomainMonthBillingBpsDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainMonthBillingBpsDataOutcome(endpointOutcome.error());
 
@@ -4093,7 +4085,7 @@ CdnClient::DescribeDomainMonthBillingBpsDataOutcomeCallable CdnClient::describeD
 
 CdnClient::DescribeLiveStreamFrameInfoOutcome CdnClient::describeLiveStreamFrameInfo(const DescribeLiveStreamFrameInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamFrameInfoOutcome(endpointOutcome.error());
 
@@ -4129,7 +4121,7 @@ CdnClient::DescribeLiveStreamFrameInfoOutcomeCallable CdnClient::describeLiveStr
 
 CdnClient::DescribeLiveStreamFrameLossRatioOutcome CdnClient::describeLiveStreamFrameLossRatio(const DescribeLiveStreamFrameLossRatioRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamFrameLossRatioOutcome(endpointOutcome.error());
 
@@ -4165,7 +4157,7 @@ CdnClient::DescribeLiveStreamFrameLossRatioOutcomeCallable CdnClient::describeLi
 
 CdnClient::ForbidLiveStreamOutcome CdnClient::forbidLiveStream(const ForbidLiveStreamRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ForbidLiveStreamOutcome(endpointOutcome.error());
 
@@ -4201,7 +4193,7 @@ CdnClient::ForbidLiveStreamOutcomeCallable CdnClient::forbidLiveStreamCallable(c
 
 CdnClient::DescribeLiveStreamDomainAppInfoOutcome CdnClient::describeLiveStreamDomainAppInfo(const DescribeLiveStreamDomainAppInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamDomainAppInfoOutcome(endpointOutcome.error());
 
@@ -4237,7 +4229,7 @@ CdnClient::DescribeLiveStreamDomainAppInfoOutcomeCallable CdnClient::describeLiv
 
 CdnClient::SetPageCompressConfigOutcome CdnClient::setPageCompressConfig(const SetPageCompressConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetPageCompressConfigOutcome(endpointOutcome.error());
 
@@ -4273,7 +4265,7 @@ CdnClient::SetPageCompressConfigOutcomeCallable CdnClient::setPageCompressConfig
 
 CdnClient::DescribeDomainQpsDataOutcome CdnClient::describeDomainQpsData(const DescribeDomainQpsDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainQpsDataOutcome(endpointOutcome.error());
 
@@ -4309,7 +4301,7 @@ CdnClient::DescribeDomainQpsDataOutcomeCallable CdnClient::describeDomainQpsData
 
 CdnClient::DescribeL2VipsByDomainOutcome CdnClient::describeL2VipsByDomain(const DescribeL2VipsByDomainRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeL2VipsByDomainOutcome(endpointOutcome.error());
 
@@ -4345,7 +4337,7 @@ CdnClient::DescribeL2VipsByDomainOutcomeCallable CdnClient::describeL2VipsByDoma
 
 CdnClient::ModifyHttpHeaderConfigOutcome CdnClient::modifyHttpHeaderConfig(const ModifyHttpHeaderConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyHttpHeaderConfigOutcome(endpointOutcome.error());
 
@@ -4381,7 +4373,7 @@ CdnClient::ModifyHttpHeaderConfigOutcomeCallable CdnClient::modifyHttpHeaderConf
 
 CdnClient::SetDomainServerCertificateOutcome CdnClient::setDomainServerCertificate(const SetDomainServerCertificateRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetDomainServerCertificateOutcome(endpointOutcome.error());
 
@@ -4417,7 +4409,7 @@ CdnClient::SetDomainServerCertificateOutcomeCallable CdnClient::setDomainServerC
 
 CdnClient::DescribeIpInfoOutcome CdnClient::describeIpInfo(const DescribeIpInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeIpInfoOutcome(endpointOutcome.error());
 
@@ -4453,7 +4445,7 @@ CdnClient::DescribeIpInfoOutcomeCallable CdnClient::describeIpInfoCallable(const
 
 CdnClient::DescribeDomainConfigsOutcome CdnClient::describeDomainConfigs(const DescribeDomainConfigsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainConfigsOutcome(endpointOutcome.error());
 
@@ -4489,7 +4481,7 @@ CdnClient::DescribeDomainConfigsOutcomeCallable CdnClient::describeDomainConfigs
 
 CdnClient::DescribeDomainsBySourceOutcome CdnClient::describeDomainsBySource(const DescribeDomainsBySourceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainsBySourceOutcome(endpointOutcome.error());
 
@@ -4525,7 +4517,7 @@ CdnClient::DescribeDomainsBySourceOutcomeCallable CdnClient::describeDomainsBySo
 
 CdnClient::ModifyDomainCustomLogConfigOutcome CdnClient::modifyDomainCustomLogConfig(const ModifyDomainCustomLogConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDomainCustomLogConfigOutcome(endpointOutcome.error());
 
@@ -4561,7 +4553,7 @@ CdnClient::ModifyDomainCustomLogConfigOutcomeCallable CdnClient::modifyDomainCus
 
 CdnClient::UpdateLiveAppSnapshotConfigOutcome CdnClient::updateLiveAppSnapshotConfig(const UpdateLiveAppSnapshotConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UpdateLiveAppSnapshotConfigOutcome(endpointOutcome.error());
 
@@ -4597,7 +4589,7 @@ CdnClient::UpdateLiveAppSnapshotConfigOutcomeCallable CdnClient::updateLiveAppSn
 
 CdnClient::SetRemoteReqAuthConfigOutcome CdnClient::setRemoteReqAuthConfig(const SetRemoteReqAuthConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetRemoteReqAuthConfigOutcome(endpointOutcome.error());
 
@@ -4633,7 +4625,7 @@ CdnClient::SetRemoteReqAuthConfigOutcomeCallable CdnClient::setRemoteReqAuthConf
 
 CdnClient::DescribeDomainPvDataOutcome CdnClient::describeDomainPvData(const DescribeDomainPvDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainPvDataOutcome(endpointOutcome.error());
 
@@ -4669,7 +4661,7 @@ CdnClient::DescribeDomainPvDataOutcomeCallable CdnClient::describeDomainPvDataCa
 
 CdnClient::DescribeLiveStreamPushErrorsOutcome CdnClient::describeLiveStreamPushErrors(const DescribeLiveStreamPushErrorsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamPushErrorsOutcome(endpointOutcome.error());
 
@@ -4705,7 +4697,7 @@ CdnClient::DescribeLiveStreamPushErrorsOutcomeCallable CdnClient::describeLiveSt
 
 CdnClient::AddLiveAppSnapshotConfigOutcome CdnClient::addLiveAppSnapshotConfig(const AddLiveAppSnapshotConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddLiveAppSnapshotConfigOutcome(endpointOutcome.error());
 
@@ -4741,7 +4733,7 @@ CdnClient::AddLiveAppSnapshotConfigOutcomeCallable CdnClient::addLiveAppSnapshot
 
 CdnClient::DescribeDomainISPDataOutcome CdnClient::describeDomainISPData(const DescribeDomainISPDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainISPDataOutcome(endpointOutcome.error());
 
@@ -4777,7 +4769,7 @@ CdnClient::DescribeDomainISPDataOutcomeCallable CdnClient::describeDomainISPData
 
 CdnClient::ClearUserDomainBlackListOutcome CdnClient::clearUserDomainBlackList(const ClearUserDomainBlackListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ClearUserDomainBlackListOutcome(endpointOutcome.error());
 
@@ -4813,7 +4805,7 @@ CdnClient::ClearUserDomainBlackListOutcomeCallable CdnClient::clearUserDomainBla
 
 CdnClient::DescribeDomainFileSizeProportionDataOutcome CdnClient::describeDomainFileSizeProportionData(const DescribeDomainFileSizeProportionDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainFileSizeProportionDataOutcome(endpointOutcome.error());
 
@@ -4849,7 +4841,7 @@ CdnClient::DescribeDomainFileSizeProportionDataOutcomeCallable CdnClient::descri
 
 CdnClient::DescribeLiveSpecificDomainMappingOutcome CdnClient::describeLiveSpecificDomainMapping(const DescribeLiveSpecificDomainMappingRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveSpecificDomainMappingOutcome(endpointOutcome.error());
 
@@ -4885,7 +4877,7 @@ CdnClient::DescribeLiveSpecificDomainMappingOutcomeCallable CdnClient::describeL
 
 CdnClient::DescribeDomainRealTimeByteHitRateDataOutcome CdnClient::describeDomainRealTimeByteHitRateData(const DescribeDomainRealTimeByteHitRateDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainRealTimeByteHitRateDataOutcome(endpointOutcome.error());
 
@@ -4921,7 +4913,7 @@ CdnClient::DescribeDomainRealTimeByteHitRateDataOutcomeCallable CdnClient::descr
 
 CdnClient::MigrateDomainToHttpsDeliveryOutcome CdnClient::migrateDomainToHttpsDelivery(const MigrateDomainToHttpsDeliveryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return MigrateDomainToHttpsDeliveryOutcome(endpointOutcome.error());
 
@@ -4957,7 +4949,7 @@ CdnClient::MigrateDomainToHttpsDeliveryOutcomeCallable CdnClient::migrateDomainT
 
 CdnClient::AddLiveDomainMappingOutcome CdnClient::addLiveDomainMapping(const AddLiveDomainMappingRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddLiveDomainMappingOutcome(endpointOutcome.error());
 
@@ -4993,7 +4985,7 @@ CdnClient::AddLiveDomainMappingOutcomeCallable CdnClient::addLiveDomainMappingCa
 
 CdnClient::DescribeDomainRealTimeDataOutcome CdnClient::describeDomainRealTimeData(const DescribeDomainRealTimeDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainRealTimeDataOutcome(endpointOutcome.error());
 
@@ -5029,7 +5021,7 @@ CdnClient::DescribeDomainRealTimeDataOutcomeCallable CdnClient::describeDomainRe
 
 CdnClient::ResumeLiveStreamOutcome CdnClient::resumeLiveStream(const ResumeLiveStreamRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ResumeLiveStreamOutcome(endpointOutcome.error());
 
@@ -5065,7 +5057,7 @@ CdnClient::ResumeLiveStreamOutcomeCallable CdnClient::resumeLiveStreamCallable(c
 
 CdnClient::SetUserBlackListOutcome CdnClient::setUserBlackList(const SetUserBlackListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetUserBlackListOutcome(endpointOutcome.error());
 
@@ -5101,7 +5093,7 @@ CdnClient::SetUserBlackListOutcomeCallable CdnClient::setUserBlackListCallable(c
 
 CdnClient::GetUserDomainBlackListOutcome CdnClient::getUserDomainBlackList(const GetUserDomainBlackListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetUserDomainBlackListOutcome(endpointOutcome.error());
 
@@ -5137,7 +5129,7 @@ CdnClient::GetUserDomainBlackListOutcomeCallable CdnClient::getUserDomainBlackLi
 
 CdnClient::DescribeDomainCCAttackInfoOutcome CdnClient::describeDomainCCAttackInfo(const DescribeDomainCCAttackInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainCCAttackInfoOutcome(endpointOutcome.error());
 
@@ -5173,7 +5165,7 @@ CdnClient::DescribeDomainCCAttackInfoOutcomeCallable CdnClient::describeDomainCC
 
 CdnClient::DescribeLiveStreamsPublishListOutcome CdnClient::describeLiveStreamsPublishList(const DescribeLiveStreamsPublishListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamsPublishListOutcome(endpointOutcome.error());
 
@@ -5209,7 +5201,7 @@ CdnClient::DescribeLiveStreamsPublishListOutcomeCallable CdnClient::describeLive
 
 CdnClient::DescribeDomainRealTimeBpsDataOutcome CdnClient::describeDomainRealTimeBpsData(const DescribeDomainRealTimeBpsDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainRealTimeBpsDataOutcome(endpointOutcome.error());
 
@@ -5245,7 +5237,7 @@ CdnClient::DescribeDomainRealTimeBpsDataOutcomeCallable CdnClient::describeDomai
 
 CdnClient::DeleteLivePullStreamInfoOutcome CdnClient::deleteLivePullStreamInfo(const DeleteLivePullStreamInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteLivePullStreamInfoOutcome(endpointOutcome.error());
 
@@ -5281,7 +5273,7 @@ CdnClient::DeleteLivePullStreamInfoOutcomeCallable CdnClient::deleteLivePullStre
 
 CdnClient::DescribeDomainDownstreamBpsOfEdgeOutcome CdnClient::describeDomainDownstreamBpsOfEdge(const DescribeDomainDownstreamBpsOfEdgeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainDownstreamBpsOfEdgeOutcome(endpointOutcome.error());
 
@@ -5317,7 +5309,7 @@ CdnClient::DescribeDomainDownstreamBpsOfEdgeOutcomeCallable CdnClient::describeD
 
 CdnClient::ClearUserBlackListOutcome CdnClient::clearUserBlackList(const ClearUserBlackListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ClearUserBlackListOutcome(endpointOutcome.error());
 
@@ -5353,7 +5345,7 @@ CdnClient::ClearUserBlackListOutcomeCallable CdnClient::clearUserBlackListCallab
 
 CdnClient::DescribeDomainMax95BpsDataOutcome CdnClient::describeDomainMax95BpsData(const DescribeDomainMax95BpsDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainMax95BpsDataOutcome(endpointOutcome.error());
 
@@ -5389,7 +5381,7 @@ CdnClient::DescribeDomainMax95BpsDataOutcomeCallable CdnClient::describeDomainMa
 
 CdnClient::SetHttpsOptionConfigOutcome CdnClient::setHttpsOptionConfig(const SetHttpsOptionConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetHttpsOptionConfigOutcome(endpointOutcome.error());
 
@@ -5425,7 +5417,7 @@ CdnClient::SetHttpsOptionConfigOutcomeCallable CdnClient::setHttpsOptionConfigCa
 
 CdnClient::SetWaitingRoomConfigOutcome CdnClient::setWaitingRoomConfig(const SetWaitingRoomConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetWaitingRoomConfigOutcome(endpointOutcome.error());
 
@@ -5461,7 +5453,7 @@ CdnClient::SetWaitingRoomConfigOutcomeCallable CdnClient::setWaitingRoomConfigCa
 
 CdnClient::DescribeRangeDataByLocateAndIspServiceOutcome CdnClient::describeRangeDataByLocateAndIspService(const DescribeRangeDataByLocateAndIspServiceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRangeDataByLocateAndIspServiceOutcome(endpointOutcome.error());
 
@@ -5497,7 +5489,7 @@ CdnClient::DescribeRangeDataByLocateAndIspServiceOutcomeCallable CdnClient::desc
 
 CdnClient::ListDomainsByLogConfigIdOutcome CdnClient::listDomainsByLogConfigId(const ListDomainsByLogConfigIdRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListDomainsByLogConfigIdOutcome(endpointOutcome.error());
 
@@ -5533,7 +5525,7 @@ CdnClient::ListDomainsByLogConfigIdOutcomeCallable CdnClient::listDomainsByLogCo
 
 CdnClient::DescribeLiveStreamOnlineBpsOutcome CdnClient::describeLiveStreamOnlineBps(const DescribeLiveStreamOnlineBpsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamOnlineBpsOutcome(endpointOutcome.error());
 
@@ -5569,7 +5561,7 @@ CdnClient::DescribeLiveStreamOnlineBpsOutcomeCallable CdnClient::describeLiveStr
 
 CdnClient::DescribeDomainRegionDataOutcome CdnClient::describeDomainRegionData(const DescribeDomainRegionDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainRegionDataOutcome(endpointOutcome.error());
 
@@ -5605,7 +5597,7 @@ CdnClient::DescribeDomainRegionDataOutcomeCallable CdnClient::describeDomainRegi
 
 CdnClient::DescribeDomainSrcBpsDataOutcome CdnClient::describeDomainSrcBpsData(const DescribeDomainSrcBpsDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainSrcBpsDataOutcome(endpointOutcome.error());
 
@@ -5641,7 +5633,7 @@ CdnClient::DescribeDomainSrcBpsDataOutcomeCallable CdnClient::describeDomainSrcB
 
 CdnClient::DescribeLiveStreamPushDataOutcome CdnClient::describeLiveStreamPushData(const DescribeLiveStreamPushDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamPushDataOutcome(endpointOutcome.error());
 
@@ -5677,7 +5669,7 @@ CdnClient::DescribeLiveStreamPushDataOutcomeCallable CdnClient::describeLiveStre
 
 CdnClient::DeleteLiveAppRecordConfigOutcome CdnClient::deleteLiveAppRecordConfig(const DeleteLiveAppRecordConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteLiveAppRecordConfigOutcome(endpointOutcome.error());
 
@@ -5713,7 +5705,7 @@ CdnClient::DeleteLiveAppRecordConfigOutcomeCallable CdnClient::deleteLiveAppReco
 
 CdnClient::SetHttpHeaderConfigOutcome CdnClient::setHttpHeaderConfig(const SetHttpHeaderConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetHttpHeaderConfigOutcome(endpointOutcome.error());
 
@@ -5749,7 +5741,7 @@ CdnClient::SetHttpHeaderConfigOutcomeCallable CdnClient::setHttpHeaderConfigCall
 
 CdnClient::DescribeCdnRegionAndIspOutcome CdnClient::describeCdnRegionAndIsp(const DescribeCdnRegionAndIspRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCdnRegionAndIspOutcome(endpointOutcome.error());
 
@@ -5785,7 +5777,7 @@ CdnClient::DescribeCdnRegionAndIspOutcomeCallable CdnClient::describeCdnRegionAn
 
 CdnClient::DescribeCdnDomainBaseDetailOutcome CdnClient::describeCdnDomainBaseDetail(const DescribeCdnDomainBaseDetailRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCdnDomainBaseDetailOutcome(endpointOutcome.error());
 
@@ -5821,7 +5813,7 @@ CdnClient::DescribeCdnDomainBaseDetailOutcomeCallable CdnClient::describeCdnDoma
 
 CdnClient::SetUserAgentAcessRestrictionOutcome CdnClient::setUserAgentAcessRestriction(const SetUserAgentAcessRestrictionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetUserAgentAcessRestrictionOutcome(endpointOutcome.error());
 
@@ -5857,7 +5849,7 @@ CdnClient::SetUserAgentAcessRestrictionOutcomeCallable CdnClient::setUserAgentAc
 
 CdnClient::StartCdnDomainOutcome CdnClient::startCdnDomain(const StartCdnDomainRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StartCdnDomainOutcome(endpointOutcome.error());
 
@@ -5893,7 +5885,7 @@ CdnClient::StartCdnDomainOutcomeCallable CdnClient::startCdnDomainCallable(const
 
 CdnClient::DescribeUserVipsByDomainOutcome CdnClient::describeUserVipsByDomain(const DescribeUserVipsByDomainRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeUserVipsByDomainOutcome(endpointOutcome.error());
 
@@ -5929,7 +5921,7 @@ CdnClient::DescribeUserVipsByDomainOutcomeCallable CdnClient::describeUserVipsBy
 
 CdnClient::DescribeDomainUpstreamBpsOfEdgeOutcome CdnClient::describeDomainUpstreamBpsOfEdge(const DescribeDomainUpstreamBpsOfEdgeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainUpstreamBpsOfEdgeOutcome(endpointOutcome.error());
 
@@ -5965,7 +5957,7 @@ CdnClient::DescribeDomainUpstreamBpsOfEdgeOutcomeCallable CdnClient::describeDom
 
 CdnClient::DescribeLiveStreamOnlineUserNumByDomainOutcome CdnClient::describeLiveStreamOnlineUserNumByDomain(const DescribeLiveStreamOnlineUserNumByDomainRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamOnlineUserNumByDomainOutcome(endpointOutcome.error());
 
@@ -6001,7 +5993,7 @@ CdnClient::DescribeLiveStreamOnlineUserNumByDomainOutcomeCallable CdnClient::des
 
 CdnClient::DescribeLiveStreamHlsOnlineUserNumByDomainOutcome CdnClient::describeLiveStreamHlsOnlineUserNumByDomain(const DescribeLiveStreamHlsOnlineUserNumByDomainRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLiveStreamHlsOnlineUserNumByDomainOutcome(endpointOutcome.error());
 
@@ -6037,7 +6029,7 @@ CdnClient::DescribeLiveStreamHlsOnlineUserNumByDomainOutcomeCallable CdnClient::
 
 CdnClient::DescribeDomainHttpsDataOutcome CdnClient::describeDomainHttpsData(const DescribeDomainHttpsDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainHttpsDataOutcome(endpointOutcome.error());
 
@@ -6073,7 +6065,7 @@ CdnClient::DescribeDomainHttpsDataOutcomeCallable CdnClient::describeDomainHttps
 
 CdnClient::DescribeDomainHttpCodeDataOutcome CdnClient::describeDomainHttpCodeData(const DescribeDomainHttpCodeDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDomainHttpCodeDataOutcome(endpointOutcome.error());
 

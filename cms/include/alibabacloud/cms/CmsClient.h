@@ -486,7 +486,6 @@ namespace AlibabaCloud
             QueryCustomEventDetailOutcomeCallable queryCustomEventDetailCallable(const Model::QueryCustomEventDetailRequest& request) const;
 	
 		private:
-			virtual EndpointOutcome endpoint()const override;
 			std::shared_ptr<EndpointProvider> endpointProvider_;
 		};
 	}

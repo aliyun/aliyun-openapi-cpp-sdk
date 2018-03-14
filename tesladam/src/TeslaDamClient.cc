@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::TeslaDam;
 using namespace AlibabaCloud::TeslaDam::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "TeslaDam";
+}
+
 TeslaDamClient::TeslaDamClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 TeslaDamClient::TeslaDamClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 TeslaDamClient::TeslaDamClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 TeslaDamClient::~TeslaDamClient()
 {}
 
-CoreClient::EndpointOutcome TeslaDamClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 TeslaDamClient::ActionOutcome TeslaDamClient::action(const ActionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ActionOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ TeslaDamClient::ActionOutcomeCallable TeslaDamClient::actionCallable(const Actio
 
 TeslaDamClient::ActionDiskRmaOutcome TeslaDamClient::actionDiskRma(const ActionDiskRmaRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ActionDiskRmaOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ TeslaDamClient::ActionDiskRmaOutcomeCallable TeslaDamClient::actionDiskRmaCallab
 
 TeslaDamClient::ActionDiskMaskOutcome TeslaDamClient::actionDiskMask(const ActionDiskMaskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ActionDiskMaskOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ TeslaDamClient::ActionDiskMaskOutcomeCallable TeslaDamClient::actionDiskMaskCall
 
 TeslaDamClient::ActionDiskCheckOutcome TeslaDamClient::actionDiskCheck(const ActionDiskCheckRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ActionDiskCheckOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ TeslaDamClient::ActionDiskCheckOutcomeCallable TeslaDamClient::actionDiskCheckCa
 
 TeslaDamClient::HostGetsOutcome TeslaDamClient::hostGets(const HostGetsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return HostGetsOutcome(endpointOutcome.error());
 

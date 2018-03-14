@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Vpc;
 using namespace AlibabaCloud::Vpc::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "Vpc";
+}
+
 VpcClient::VpcClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "vpc");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vpc");
 }
 
 VpcClient::VpcClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "vpc");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vpc");
 }
 
 VpcClient::VpcClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "vpc");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vpc");
 }
 
 VpcClient::~VpcClient()
 {}
 
-CoreClient::EndpointOutcome VpcClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 VpcClient::UnassociateGlobalAccelerationInstanceOutcome VpcClient::unassociateGlobalAccelerationInstance(const UnassociateGlobalAccelerationInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UnassociateGlobalAccelerationInstanceOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ VpcClient::UnassociateGlobalAccelerationInstanceOutcomeCallable VpcClient::unass
 
 VpcClient::DeleteCustomerGatewayOutcome VpcClient::deleteCustomerGateway(const DeleteCustomerGatewayRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteCustomerGatewayOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ VpcClient::DeleteCustomerGatewayOutcomeCallable VpcClient::deleteCustomerGateway
 
 VpcClient::DescribeRouteTableListOutcome VpcClient::describeRouteTableList(const DescribeRouteTableListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRouteTableListOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ VpcClient::DescribeRouteTableListOutcomeCallable VpcClient::describeRouteTableLi
 
 VpcClient::AssociatePhysicalConnectionToVirtualBorderRouterOutcome VpcClient::associatePhysicalConnectionToVirtualBorderRouter(const AssociatePhysicalConnectionToVirtualBorderRouterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AssociatePhysicalConnectionToVirtualBorderRouterOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ VpcClient::AssociatePhysicalConnectionToVirtualBorderRouterOutcomeCallable VpcCl
 
 VpcClient::DeleteGlobalAccelerationInstanceOutcome VpcClient::deleteGlobalAccelerationInstance(const DeleteGlobalAccelerationInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteGlobalAccelerationInstanceOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ VpcClient::DeleteGlobalAccelerationInstanceOutcomeCallable VpcClient::deleteGlob
 
 VpcClient::DescribeCustomerGatewaysOutcome VpcClient::describeCustomerGateways(const DescribeCustomerGatewaysRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCustomerGatewaysOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ VpcClient::DescribeCustomerGatewaysOutcomeCallable VpcClient::describeCustomerGa
 
 VpcClient::DescribeGlobalAccelerationInstancesOutcome VpcClient::describeGlobalAccelerationInstances(const DescribeGlobalAccelerationInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeGlobalAccelerationInstancesOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ VpcClient::DescribeGlobalAccelerationInstancesOutcomeCallable VpcClient::describ
 
 VpcClient::ModifySslVpnClientCertOutcome VpcClient::modifySslVpnClientCert(const ModifySslVpnClientCertRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifySslVpnClientCertOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ VpcClient::ModifySslVpnClientCertOutcomeCallable VpcClient::modifySslVpnClientCe
 
 VpcClient::DeleteVpcOutcome VpcClient::deleteVpc(const DeleteVpcRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteVpcOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ VpcClient::DeleteVpcOutcomeCallable VpcClient::deleteVpcCallable(const DeleteVpc
 
 VpcClient::DownloadVpnConnectionConfigOutcome VpcClient::downloadVpnConnectionConfig(const DownloadVpnConnectionConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DownloadVpnConnectionConfigOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ VpcClient::DownloadVpnConnectionConfigOutcomeCallable VpcClient::downloadVpnConn
 
 VpcClient::RemoveCommonBandwidthPackageIpOutcome VpcClient::removeCommonBandwidthPackageIp(const RemoveCommonBandwidthPackageIpRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveCommonBandwidthPackageIpOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ VpcClient::RemoveCommonBandwidthPackageIpOutcomeCallable VpcClient::removeCommon
 
 VpcClient::ModifyBandwidthPackageSpecOutcome VpcClient::modifyBandwidthPackageSpec(const ModifyBandwidthPackageSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyBandwidthPackageSpecOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ VpcClient::ModifyBandwidthPackageSpecOutcomeCallable VpcClient::modifyBandwidthP
 
 VpcClient::CreateNatGatewayOutcome VpcClient::createNatGateway(const CreateNatGatewayRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateNatGatewayOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ VpcClient::CreateNatGatewayOutcomeCallable VpcClient::createNatGatewayCallable(c
 
 VpcClient::DeleteVSwitchOutcome VpcClient::deleteVSwitch(const DeleteVSwitchRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteVSwitchOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ VpcClient::DeleteVSwitchOutcomeCallable VpcClient::deleteVSwitchCallable(const D
 
 VpcClient::CreateHaVipOutcome VpcClient::createHaVip(const CreateHaVipRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateHaVipOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ VpcClient::CreateHaVipOutcomeCallable VpcClient::createHaVipCallable(const Creat
 
 VpcClient::CreateBandwidthPackageOutcome VpcClient::createBandwidthPackage(const CreateBandwidthPackageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateBandwidthPackageOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ VpcClient::CreateBandwidthPackageOutcomeCallable VpcClient::createBandwidthPacka
 
 VpcClient::RecoverVirtualBorderRouterOutcome VpcClient::recoverVirtualBorderRouter(const RecoverVirtualBorderRouterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RecoverVirtualBorderRouterOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ VpcClient::RecoverVirtualBorderRouterOutcomeCallable VpcClient::recoverVirtualBo
 
 VpcClient::AssociateEipAddressOutcome VpcClient::associateEipAddress(const AssociateEipAddressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AssociateEipAddressOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ VpcClient::AssociateEipAddressOutcomeCallable VpcClient::associateEipAddressCall
 
 VpcClient::DescribeEipAddressesOutcome VpcClient::describeEipAddresses(const DescribeEipAddressesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeEipAddressesOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ VpcClient::DescribeEipAddressesOutcomeCallable VpcClient::describeEipAddressesCa
 
 VpcClient::CreateCustomerGatewayOutcome VpcClient::createCustomerGateway(const CreateCustomerGatewayRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateCustomerGatewayOutcome(endpointOutcome.error());
 
@@ -781,7 +773,7 @@ VpcClient::CreateCustomerGatewayOutcomeCallable VpcClient::createCustomerGateway
 
 VpcClient::ActivateRouterInterfaceOutcome VpcClient::activateRouterInterface(const ActivateRouterInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ActivateRouterInterfaceOutcome(endpointOutcome.error());
 
@@ -817,7 +809,7 @@ VpcClient::ActivateRouterInterfaceOutcomeCallable VpcClient::activateRouterInter
 
 VpcClient::DeleteSslVpnServerOutcome VpcClient::deleteSslVpnServer(const DeleteSslVpnServerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteSslVpnServerOutcome(endpointOutcome.error());
 
@@ -853,7 +845,7 @@ VpcClient::DeleteSslVpnServerOutcomeCallable VpcClient::deleteSslVpnServerCallab
 
 VpcClient::DeleteBandwidthPackageOutcome VpcClient::deleteBandwidthPackage(const DeleteBandwidthPackageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteBandwidthPackageOutcome(endpointOutcome.error());
 
@@ -889,7 +881,7 @@ VpcClient::DeleteBandwidthPackageOutcomeCallable VpcClient::deleteBandwidthPacka
 
 VpcClient::DeleteBgpPeerOutcome VpcClient::deleteBgpPeer(const DeleteBgpPeerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteBgpPeerOutcome(endpointOutcome.error());
 
@@ -925,7 +917,7 @@ VpcClient::DeleteBgpPeerOutcomeCallable VpcClient::deleteBgpPeerCallable(const D
 
 VpcClient::DeleteNqaOutcome VpcClient::deleteNqa(const DeleteNqaRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteNqaOutcome(endpointOutcome.error());
 
@@ -961,7 +953,7 @@ VpcClient::DeleteNqaOutcomeCallable VpcClient::deleteNqaCallable(const DeleteNqa
 
 VpcClient::TerminateVirtualBorderRouterOutcome VpcClient::terminateVirtualBorderRouter(const TerminateVirtualBorderRouterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return TerminateVirtualBorderRouterOutcome(endpointOutcome.error());
 
@@ -997,7 +989,7 @@ VpcClient::TerminateVirtualBorderRouterOutcomeCallable VpcClient::terminateVirtu
 
 VpcClient::ModifyRouteTableAttributesOutcome VpcClient::modifyRouteTableAttributes(const ModifyRouteTableAttributesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyRouteTableAttributesOutcome(endpointOutcome.error());
 
@@ -1033,7 +1025,7 @@ VpcClient::ModifyRouteTableAttributesOutcomeCallable VpcClient::modifyRouteTable
 
 VpcClient::DeletePhysicalConnectionOutcome VpcClient::deletePhysicalConnection(const DeletePhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeletePhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -1069,7 +1061,7 @@ VpcClient::DeletePhysicalConnectionOutcomeCallable VpcClient::deletePhysicalConn
 
 VpcClient::ModifyForwardEntryOutcome VpcClient::modifyForwardEntry(const ModifyForwardEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyForwardEntryOutcome(endpointOutcome.error());
 
@@ -1105,7 +1097,7 @@ VpcClient::ModifyForwardEntryOutcomeCallable VpcClient::modifyForwardEntryCallab
 
 VpcClient::CreateVpcOutcome VpcClient::createVpc(const CreateVpcRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateVpcOutcome(endpointOutcome.error());
 
@@ -1141,7 +1133,7 @@ VpcClient::CreateVpcOutcomeCallable VpcClient::createVpcCallable(const CreateVpc
 
 VpcClient::DescribeForwardTableEntriesOutcome VpcClient::describeForwardTableEntries(const DescribeForwardTableEntriesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeForwardTableEntriesOutcome(endpointOutcome.error());
 
@@ -1177,7 +1169,7 @@ VpcClient::DescribeForwardTableEntriesOutcomeCallable VpcClient::describeForward
 
 VpcClient::UnassociateEipAddressOutcome VpcClient::unassociateEipAddress(const UnassociateEipAddressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UnassociateEipAddressOutcome(endpointOutcome.error());
 
@@ -1213,7 +1205,7 @@ VpcClient::UnassociateEipAddressOutcomeCallable VpcClient::unassociateEipAddress
 
 VpcClient::DescribeSslVpnClientCertsOutcome VpcClient::describeSslVpnClientCerts(const DescribeSslVpnClientCertsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSslVpnClientCertsOutcome(endpointOutcome.error());
 
@@ -1249,7 +1241,7 @@ VpcClient::DescribeSslVpnClientCertsOutcomeCallable VpcClient::describeSslVpnCli
 
 VpcClient::DescribeVpnConnectionOutcome VpcClient::describeVpnConnection(const DescribeVpnConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVpnConnectionOutcome(endpointOutcome.error());
 
@@ -1285,7 +1277,7 @@ VpcClient::DescribeVpnConnectionOutcomeCallable VpcClient::describeVpnConnection
 
 VpcClient::ModifyGlobalAccelerationInstanceSpecOutcome VpcClient::modifyGlobalAccelerationInstanceSpec(const ModifyGlobalAccelerationInstanceSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyGlobalAccelerationInstanceSpecOutcome(endpointOutcome.error());
 
@@ -1321,7 +1313,7 @@ VpcClient::ModifyGlobalAccelerationInstanceSpecOutcomeCallable VpcClient::modify
 
 VpcClient::AddGlobalAccelerationInstanceIpOutcome VpcClient::addGlobalAccelerationInstanceIp(const AddGlobalAccelerationInstanceIpRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddGlobalAccelerationInstanceIpOutcome(endpointOutcome.error());
 
@@ -1357,7 +1349,7 @@ VpcClient::AddGlobalAccelerationInstanceIpOutcomeCallable VpcClient::addGlobalAc
 
 VpcClient::DeleteRouterInterfaceOutcome VpcClient::deleteRouterInterface(const DeleteRouterInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteRouterInterfaceOutcome(endpointOutcome.error());
 
@@ -1393,7 +1385,7 @@ VpcClient::DeleteRouterInterfaceOutcomeCallable VpcClient::deleteRouterInterface
 
 VpcClient::CreateSslVpnServerOutcome VpcClient::createSslVpnServer(const CreateSslVpnServerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateSslVpnServerOutcome(endpointOutcome.error());
 
@@ -1429,7 +1421,7 @@ VpcClient::CreateSslVpnServerOutcomeCallable VpcClient::createSslVpnServerCallab
 
 VpcClient::DescribeBandwidthPackagePublicIpMonitorDataOutcome VpcClient::describeBandwidthPackagePublicIpMonitorData(const DescribeBandwidthPackagePublicIpMonitorDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBandwidthPackagePublicIpMonitorDataOutcome(endpointOutcome.error());
 
@@ -1465,7 +1457,7 @@ VpcClient::DescribeBandwidthPackagePublicIpMonitorDataOutcomeCallable VpcClient:
 
 VpcClient::DescribeNqasOutcome VpcClient::describeNqas(const DescribeNqasRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeNqasOutcome(endpointOutcome.error());
 
@@ -1501,7 +1493,7 @@ VpcClient::DescribeNqasOutcomeCallable VpcClient::describeNqasCallable(const Des
 
 VpcClient::ModifyVirtualBorderRouterAttributeOutcome VpcClient::modifyVirtualBorderRouterAttribute(const ModifyVirtualBorderRouterAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyVirtualBorderRouterAttributeOutcome(endpointOutcome.error());
 
@@ -1537,7 +1529,7 @@ VpcClient::ModifyVirtualBorderRouterAttributeOutcomeCallable VpcClient::modifyVi
 
 VpcClient::ModifyNatGatewayAttributeOutcome VpcClient::modifyNatGatewayAttribute(const ModifyNatGatewayAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyNatGatewayAttributeOutcome(endpointOutcome.error());
 
@@ -1573,7 +1565,7 @@ VpcClient::ModifyNatGatewayAttributeOutcomeCallable VpcClient::modifyNatGatewayA
 
 VpcClient::DescribeEipMonitorDataOutcome VpcClient::describeEipMonitorData(const DescribeEipMonitorDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeEipMonitorDataOutcome(endpointOutcome.error());
 
@@ -1609,7 +1601,7 @@ VpcClient::DescribeEipMonitorDataOutcomeCallable VpcClient::describeEipMonitorDa
 
 VpcClient::DeleteVpnGatewayOutcome VpcClient::deleteVpnGateway(const DeleteVpnGatewayRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteVpnGatewayOutcome(endpointOutcome.error());
 
@@ -1645,7 +1637,7 @@ VpcClient::DeleteVpnGatewayOutcomeCallable VpcClient::deleteVpnGatewayCallable(c
 
 VpcClient::DescribeCustomerGatewayOutcome VpcClient::describeCustomerGateway(const DescribeCustomerGatewayRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCustomerGatewayOutcome(endpointOutcome.error());
 
@@ -1681,7 +1673,7 @@ VpcClient::DescribeCustomerGatewayOutcomeCallable VpcClient::describeCustomerGat
 
 VpcClient::ModifyVpnGatewayAttributeOutcome VpcClient::modifyVpnGatewayAttribute(const ModifyVpnGatewayAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyVpnGatewayAttributeOutcome(endpointOutcome.error());
 
@@ -1717,7 +1709,7 @@ VpcClient::ModifyVpnGatewayAttributeOutcomeCallable VpcClient::modifyVpnGatewayA
 
 VpcClient::AddBgpNetworkOutcome VpcClient::addBgpNetwork(const AddBgpNetworkRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddBgpNetworkOutcome(endpointOutcome.error());
 
@@ -1753,7 +1745,7 @@ VpcClient::AddBgpNetworkOutcomeCallable VpcClient::addBgpNetworkCallable(const A
 
 VpcClient::ModifySslVpnServerOutcome VpcClient::modifySslVpnServer(const ModifySslVpnServerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifySslVpnServerOutcome(endpointOutcome.error());
 
@@ -1789,7 +1781,7 @@ VpcClient::ModifySslVpnServerOutcomeCallable VpcClient::modifySslVpnServerCallab
 
 VpcClient::DescribeVpnConnectionsOutcome VpcClient::describeVpnConnections(const DescribeVpnConnectionsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVpnConnectionsOutcome(endpointOutcome.error());
 
@@ -1825,7 +1817,7 @@ VpcClient::DescribeVpnConnectionsOutcomeCallable VpcClient::describeVpnConnectio
 
 VpcClient::DescribeNewProjectEipMonitorDataOutcome VpcClient::describeNewProjectEipMonitorData(const DescribeNewProjectEipMonitorDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeNewProjectEipMonitorDataOutcome(endpointOutcome.error());
 
@@ -1861,7 +1853,7 @@ VpcClient::DescribeNewProjectEipMonitorDataOutcomeCallable VpcClient::describeNe
 
 VpcClient::ModifyBandwidthPackageAttributeOutcome VpcClient::modifyBandwidthPackageAttribute(const ModifyBandwidthPackageAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyBandwidthPackageAttributeOutcome(endpointOutcome.error());
 
@@ -1897,7 +1889,7 @@ VpcClient::ModifyBandwidthPackageAttributeOutcomeCallable VpcClient::modifyBandw
 
 VpcClient::ConnectRouterInterfaceOutcome VpcClient::connectRouterInterface(const ConnectRouterInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ConnectRouterInterfaceOutcome(endpointOutcome.error());
 
@@ -1933,7 +1925,7 @@ VpcClient::ConnectRouterInterfaceOutcomeCallable VpcClient::connectRouterInterfa
 
 VpcClient::DescribeBgpPeersOutcome VpcClient::describeBgpPeers(const DescribeBgpPeersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBgpPeersOutcome(endpointOutcome.error());
 
@@ -1969,7 +1961,7 @@ VpcClient::DescribeBgpPeersOutcomeCallable VpcClient::describeBgpPeersCallable(c
 
 VpcClient::DeleteSnatEntryOutcome VpcClient::deleteSnatEntry(const DeleteSnatEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteSnatEntryOutcome(endpointOutcome.error());
 
@@ -2005,7 +1997,7 @@ VpcClient::DeleteSnatEntryOutcomeCallable VpcClient::deleteSnatEntryCallable(con
 
 VpcClient::DescribeHaVipsOutcome VpcClient::describeHaVips(const DescribeHaVipsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeHaVipsOutcome(endpointOutcome.error());
 
@@ -2041,7 +2033,7 @@ VpcClient::DescribeHaVipsOutcomeCallable VpcClient::describeHaVipsCallable(const
 
 VpcClient::CreateNqaOutcome VpcClient::createNqa(const CreateNqaRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateNqaOutcome(endpointOutcome.error());
 
@@ -2077,7 +2069,7 @@ VpcClient::CreateNqaOutcomeCallable VpcClient::createNqaCallable(const CreateNqa
 
 VpcClient::DescribeForwardTablesOutcome VpcClient::describeForwardTables(const DescribeForwardTablesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeForwardTablesOutcome(endpointOutcome.error());
 
@@ -2113,7 +2105,7 @@ VpcClient::DescribeForwardTablesOutcomeCallable VpcClient::describeForwardTables
 
 VpcClient::AddBandwidthPackageIpsOutcome VpcClient::addBandwidthPackageIps(const AddBandwidthPackageIpsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddBandwidthPackageIpsOutcome(endpointOutcome.error());
 
@@ -2149,7 +2141,7 @@ VpcClient::AddBandwidthPackageIpsOutcomeCallable VpcClient::addBandwidthPackageI
 
 VpcClient::ModifyPhysicalConnectionAttributeOutcome VpcClient::modifyPhysicalConnectionAttribute(const ModifyPhysicalConnectionAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyPhysicalConnectionAttributeOutcome(endpointOutcome.error());
 
@@ -2185,7 +2177,7 @@ VpcClient::ModifyPhysicalConnectionAttributeOutcomeCallable VpcClient::modifyPhy
 
 VpcClient::CreateSnatEntryOutcome VpcClient::createSnatEntry(const CreateSnatEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateSnatEntryOutcome(endpointOutcome.error());
 
@@ -2221,7 +2213,7 @@ VpcClient::CreateSnatEntryOutcomeCallable VpcClient::createSnatEntryCallable(con
 
 VpcClient::DeleteCommonBandwidthPackageOutcome VpcClient::deleteCommonBandwidthPackage(const DeleteCommonBandwidthPackageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteCommonBandwidthPackageOutcome(endpointOutcome.error());
 
@@ -2257,7 +2249,7 @@ VpcClient::DeleteCommonBandwidthPackageOutcomeCallable VpcClient::deleteCommonBa
 
 VpcClient::ModifyVSwitchAttributeOutcome VpcClient::modifyVSwitchAttribute(const ModifyVSwitchAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyVSwitchAttributeOutcome(endpointOutcome.error());
 
@@ -2293,7 +2285,7 @@ VpcClient::ModifyVSwitchAttributeOutcomeCallable VpcClient::modifyVSwitchAttribu
 
 VpcClient::DescribeNatGatewaysOutcome VpcClient::describeNatGateways(const DescribeNatGatewaysRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeNatGatewaysOutcome(endpointOutcome.error());
 
@@ -2329,7 +2321,7 @@ VpcClient::DescribeNatGatewaysOutcomeCallable VpcClient::describeNatGatewaysCall
 
 VpcClient::EnableVpcClassicLinkOutcome VpcClient::enableVpcClassicLink(const EnableVpcClassicLinkRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EnableVpcClassicLinkOutcome(endpointOutcome.error());
 
@@ -2365,7 +2357,7 @@ VpcClient::EnableVpcClassicLinkOutcomeCallable VpcClient::enableVpcClassicLinkCa
 
 VpcClient::DeleteHaVipOutcome VpcClient::deleteHaVip(const DeleteHaVipRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteHaVipOutcome(endpointOutcome.error());
 
@@ -2401,7 +2393,7 @@ VpcClient::DeleteHaVipOutcomeCallable VpcClient::deleteHaVipCallable(const Delet
 
 VpcClient::DescribeVpcAttributeOutcome VpcClient::describeVpcAttribute(const DescribeVpcAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVpcAttributeOutcome(endpointOutcome.error());
 
@@ -2437,7 +2429,7 @@ VpcClient::DescribeVpcAttributeOutcomeCallable VpcClient::describeVpcAttributeCa
 
 VpcClient::CreateVpnConnectionOutcome VpcClient::createVpnConnection(const CreateVpnConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateVpnConnectionOutcome(endpointOutcome.error());
 
@@ -2473,7 +2465,7 @@ VpcClient::CreateVpnConnectionOutcomeCallable VpcClient::createVpnConnectionCall
 
 VpcClient::DeleteVpnConnectionOutcome VpcClient::deleteVpnConnection(const DeleteVpnConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteVpnConnectionOutcome(endpointOutcome.error());
 
@@ -2509,7 +2501,7 @@ VpcClient::DeleteVpnConnectionOutcomeCallable VpcClient::deleteVpnConnectionCall
 
 VpcClient::DescribeBandwidthPackagesOutcome VpcClient::describeBandwidthPackages(const DescribeBandwidthPackagesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBandwidthPackagesOutcome(endpointOutcome.error());
 
@@ -2545,7 +2537,7 @@ VpcClient::DescribeBandwidthPackagesOutcomeCallable VpcClient::describeBandwidth
 
 VpcClient::DeleteBgpNetworkOutcome VpcClient::deleteBgpNetwork(const DeleteBgpNetworkRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteBgpNetworkOutcome(endpointOutcome.error());
 
@@ -2581,7 +2573,7 @@ VpcClient::DeleteBgpNetworkOutcomeCallable VpcClient::deleteBgpNetworkCallable(c
 
 VpcClient::CreateRouteEntryOutcome VpcClient::createRouteEntry(const CreateRouteEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateRouteEntryOutcome(endpointOutcome.error());
 
@@ -2617,7 +2609,7 @@ VpcClient::CreateRouteEntryOutcomeCallable VpcClient::createRouteEntryCallable(c
 
 VpcClient::CreateRouterInterfaceOutcome VpcClient::createRouterInterface(const CreateRouterInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateRouterInterfaceOutcome(endpointOutcome.error());
 
@@ -2653,7 +2645,7 @@ VpcClient::CreateRouterInterfaceOutcomeCallable VpcClient::createRouterInterface
 
 VpcClient::DisableVpcClassicLinkOutcome VpcClient::disableVpcClassicLink(const DisableVpcClassicLinkRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DisableVpcClassicLinkOutcome(endpointOutcome.error());
 
@@ -2689,7 +2681,7 @@ VpcClient::DisableVpcClassicLinkOutcomeCallable VpcClient::disableVpcClassicLink
 
 VpcClient::ModifyVpnConnectionAttributeOutcome VpcClient::modifyVpnConnectionAttribute(const ModifyVpnConnectionAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyVpnConnectionAttributeOutcome(endpointOutcome.error());
 
@@ -2725,7 +2717,7 @@ VpcClient::ModifyVpnConnectionAttributeOutcomeCallable VpcClient::modifyVpnConne
 
 VpcClient::RemoveGlobalAccelerationInstanceIpOutcome VpcClient::removeGlobalAccelerationInstanceIp(const RemoveGlobalAccelerationInstanceIpRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveGlobalAccelerationInstanceIpOutcome(endpointOutcome.error());
 
@@ -2761,7 +2753,7 @@ VpcClient::RemoveGlobalAccelerationInstanceIpOutcomeCallable VpcClient::removeGl
 
 VpcClient::ModifyNatGatewaySpecOutcome VpcClient::modifyNatGatewaySpec(const ModifyNatGatewaySpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyNatGatewaySpecOutcome(endpointOutcome.error());
 
@@ -2797,7 +2789,7 @@ VpcClient::ModifyNatGatewaySpecOutcomeCallable VpcClient::modifyNatGatewaySpecCa
 
 VpcClient::DescribeBgpGroupsOutcome VpcClient::describeBgpGroups(const DescribeBgpGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBgpGroupsOutcome(endpointOutcome.error());
 
@@ -2833,7 +2825,7 @@ VpcClient::DescribeBgpGroupsOutcomeCallable VpcClient::describeBgpGroupsCallable
 
 VpcClient::RemoveBandwidthPackageIpsOutcome VpcClient::removeBandwidthPackageIps(const RemoveBandwidthPackageIpsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveBandwidthPackageIpsOutcome(endpointOutcome.error());
 
@@ -2869,7 +2861,7 @@ VpcClient::RemoveBandwidthPackageIpsOutcomeCallable VpcClient::removeBandwidthPa
 
 VpcClient::ModifyVpcAttributeOutcome VpcClient::modifyVpcAttribute(const ModifyVpcAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyVpcAttributeOutcome(endpointOutcome.error());
 
@@ -2905,7 +2897,7 @@ VpcClient::ModifyVpcAttributeOutcomeCallable VpcClient::modifyVpcAttributeCallab
 
 VpcClient::DeleteSslVpnClientCertOutcome VpcClient::deleteSslVpnClientCert(const DeleteSslVpnClientCertRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteSslVpnClientCertOutcome(endpointOutcome.error());
 
@@ -2941,7 +2933,7 @@ VpcClient::DeleteSslVpnClientCertOutcomeCallable VpcClient::deleteSslVpnClientCe
 
 VpcClient::CreateVSwitchOutcome VpcClient::createVSwitch(const CreateVSwitchRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateVSwitchOutcome(endpointOutcome.error());
 
@@ -2977,7 +2969,7 @@ VpcClient::CreateVSwitchOutcomeCallable VpcClient::createVSwitchCallable(const C
 
 VpcClient::ModifyCustomerGatewayAttributeOutcome VpcClient::modifyCustomerGatewayAttribute(const ModifyCustomerGatewayAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyCustomerGatewayAttributeOutcome(endpointOutcome.error());
 
@@ -3013,7 +3005,7 @@ VpcClient::ModifyCustomerGatewayAttributeOutcomeCallable VpcClient::modifyCustom
 
 VpcClient::EnablePhysicalConnectionOutcome VpcClient::enablePhysicalConnection(const EnablePhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EnablePhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -3049,7 +3041,7 @@ VpcClient::EnablePhysicalConnectionOutcomeCallable VpcClient::enablePhysicalConn
 
 VpcClient::ModifyEipAddressAttributeOutcome VpcClient::modifyEipAddressAttribute(const ModifyEipAddressAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyEipAddressAttributeOutcome(endpointOutcome.error());
 
@@ -3085,7 +3077,7 @@ VpcClient::ModifyEipAddressAttributeOutcomeCallable VpcClient::modifyEipAddressA
 
 VpcClient::ModifyCommonBandwidthPackagePayTypeOutcome VpcClient::modifyCommonBandwidthPackagePayType(const ModifyCommonBandwidthPackagePayTypeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyCommonBandwidthPackagePayTypeOutcome(endpointOutcome.error());
 
@@ -3121,7 +3113,7 @@ VpcClient::ModifyCommonBandwidthPackagePayTypeOutcomeCallable VpcClient::modifyC
 
 VpcClient::DescribeVSwitchAttributesOutcome VpcClient::describeVSwitchAttributes(const DescribeVSwitchAttributesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVSwitchAttributesOutcome(endpointOutcome.error());
 
@@ -3157,7 +3149,7 @@ VpcClient::DescribeVSwitchAttributesOutcomeCallable VpcClient::describeVSwitchAt
 
 VpcClient::CreateCommonBandwidthPackageOutcome VpcClient::createCommonBandwidthPackage(const CreateCommonBandwidthPackageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateCommonBandwidthPackageOutcome(endpointOutcome.error());
 
@@ -3193,7 +3185,7 @@ VpcClient::CreateCommonBandwidthPackageOutcomeCallable VpcClient::createCommonBa
 
 VpcClient::CreateForwardEntryOutcome VpcClient::createForwardEntry(const CreateForwardEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateForwardEntryOutcome(endpointOutcome.error());
 
@@ -3229,7 +3221,7 @@ VpcClient::CreateForwardEntryOutcomeCallable VpcClient::createForwardEntryCallab
 
 VpcClient::DescribeRouterInterfacesOutcome VpcClient::describeRouterInterfaces(const DescribeRouterInterfacesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRouterInterfacesOutcome(endpointOutcome.error());
 
@@ -3265,7 +3257,7 @@ VpcClient::DescribeRouterInterfacesOutcomeCallable VpcClient::describeRouterInte
 
 VpcClient::DeleteNatGatewayOutcome VpcClient::deleteNatGateway(const DeleteNatGatewayRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteNatGatewayOutcome(endpointOutcome.error());
 
@@ -3301,7 +3293,7 @@ VpcClient::DeleteNatGatewayOutcomeCallable VpcClient::deleteNatGatewayCallable(c
 
 VpcClient::DescribeZonesOutcome VpcClient::describeZones(const DescribeZonesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeZonesOutcome(endpointOutcome.error());
 
@@ -3337,7 +3329,7 @@ VpcClient::DescribeZonesOutcomeCallable VpcClient::describeZonesCallable(const D
 
 VpcClient::DeactivateRouterInterfaceOutcome VpcClient::deactivateRouterInterface(const DeactivateRouterInterfaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeactivateRouterInterfaceOutcome(endpointOutcome.error());
 
@@ -3373,7 +3365,7 @@ VpcClient::DeactivateRouterInterfaceOutcomeCallable VpcClient::deactivateRouterI
 
 VpcClient::ModifySnatEntryOutcome VpcClient::modifySnatEntry(const ModifySnatEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifySnatEntryOutcome(endpointOutcome.error());
 
@@ -3409,7 +3401,7 @@ VpcClient::ModifySnatEntryOutcomeCallable VpcClient::modifySnatEntryCallable(con
 
 VpcClient::DescribeAccessPointsOutcome VpcClient::describeAccessPoints(const DescribeAccessPointsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAccessPointsOutcome(endpointOutcome.error());
 
@@ -3445,7 +3437,7 @@ VpcClient::DescribeAccessPointsOutcomeCallable VpcClient::describeAccessPointsCa
 
 VpcClient::CreateSslVpnClientCertOutcome VpcClient::createSslVpnClientCert(const CreateSslVpnClientCertRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateSslVpnClientCertOutcome(endpointOutcome.error());
 
@@ -3481,7 +3473,7 @@ VpcClient::CreateSslVpnClientCertOutcomeCallable VpcClient::createSslVpnClientCe
 
 VpcClient::CreateVirtualBorderRouterOutcome VpcClient::createVirtualBorderRouter(const CreateVirtualBorderRouterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateVirtualBorderRouterOutcome(endpointOutcome.error());
 
@@ -3517,7 +3509,7 @@ VpcClient::CreateVirtualBorderRouterOutcomeCallable VpcClient::createVirtualBord
 
 VpcClient::DeleteBgpGroupOutcome VpcClient::deleteBgpGroup(const DeleteBgpGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteBgpGroupOutcome(endpointOutcome.error());
 
@@ -3553,7 +3545,7 @@ VpcClient::DeleteBgpGroupOutcomeCallable VpcClient::deleteBgpGroupCallable(const
 
 VpcClient::ReleaseEipAddressOutcome VpcClient::releaseEipAddress(const ReleaseEipAddressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ReleaseEipAddressOutcome(endpointOutcome.error());
 
@@ -3589,7 +3581,7 @@ VpcClient::ReleaseEipAddressOutcomeCallable VpcClient::releaseEipAddressCallable
 
 VpcClient::CreateBgpPeerOutcome VpcClient::createBgpPeer(const CreateBgpPeerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateBgpPeerOutcome(endpointOutcome.error());
 
@@ -3625,7 +3617,7 @@ VpcClient::CreateBgpPeerOutcomeCallable VpcClient::createBgpPeerCallable(const C
 
 VpcClient::DescribeRouteTablesOutcome VpcClient::describeRouteTables(const DescribeRouteTablesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRouteTablesOutcome(endpointOutcome.error());
 
@@ -3661,7 +3653,7 @@ VpcClient::DescribeRouteTablesOutcomeCallable VpcClient::describeRouteTablesCall
 
 VpcClient::DescribeVSwitchesOutcome VpcClient::describeVSwitches(const DescribeVSwitchesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVSwitchesOutcome(endpointOutcome.error());
 
@@ -3697,7 +3689,7 @@ VpcClient::DescribeVSwitchesOutcomeCallable VpcClient::describeVSwitchesCallable
 
 VpcClient::ModifyRouterInterfaceSpecOutcome VpcClient::modifyRouterInterfaceSpec(const ModifyRouterInterfaceSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyRouterInterfaceSpecOutcome(endpointOutcome.error());
 
@@ -3733,7 +3725,7 @@ VpcClient::ModifyRouterInterfaceSpecOutcomeCallable VpcClient::modifyRouterInter
 
 VpcClient::DescribeVpcsOutcome VpcClient::describeVpcs(const DescribeVpcsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVpcsOutcome(endpointOutcome.error());
 
@@ -3769,7 +3761,7 @@ VpcClient::DescribeVpcsOutcomeCallable VpcClient::describeVpcsCallable(const Des
 
 VpcClient::CreatePhysicalConnectionOutcome VpcClient::createPhysicalConnection(const CreatePhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreatePhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -3805,7 +3797,7 @@ VpcClient::CreatePhysicalConnectionOutcomeCallable VpcClient::createPhysicalConn
 
 VpcClient::UnassociatePhysicalConnectionFromVirtualBorderRouterOutcome VpcClient::unassociatePhysicalConnectionFromVirtualBorderRouter(const UnassociatePhysicalConnectionFromVirtualBorderRouterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UnassociatePhysicalConnectionFromVirtualBorderRouterOutcome(endpointOutcome.error());
 
@@ -3841,7 +3833,7 @@ VpcClient::UnassociatePhysicalConnectionFromVirtualBorderRouterOutcomeCallable V
 
 VpcClient::DescribeServerRelatedGlobalAccelerationInstancesOutcome VpcClient::describeServerRelatedGlobalAccelerationInstances(const DescribeServerRelatedGlobalAccelerationInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeServerRelatedGlobalAccelerationInstancesOutcome(endpointOutcome.error());
 
@@ -3877,7 +3869,7 @@ VpcClient::DescribeServerRelatedGlobalAccelerationInstancesOutcomeCallable VpcCl
 
 VpcClient::AssociateHaVipOutcome VpcClient::associateHaVip(const AssociateHaVipRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AssociateHaVipOutcome(endpointOutcome.error());
 
@@ -3913,7 +3905,7 @@ VpcClient::AssociateHaVipOutcomeCallable VpcClient::associateHaVipCallable(const
 
 VpcClient::ModifyRouterInterfaceAttributeOutcome VpcClient::modifyRouterInterfaceAttribute(const ModifyRouterInterfaceAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyRouterInterfaceAttributeOutcome(endpointOutcome.error());
 
@@ -3949,7 +3941,7 @@ VpcClient::ModifyRouterInterfaceAttributeOutcomeCallable VpcClient::modifyRouter
 
 VpcClient::DescribeVirtualBorderRoutersForPhysicalConnectionOutcome VpcClient::describeVirtualBorderRoutersForPhysicalConnection(const DescribeVirtualBorderRoutersForPhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVirtualBorderRoutersForPhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -3985,7 +3977,7 @@ VpcClient::DescribeVirtualBorderRoutersForPhysicalConnectionOutcomeCallable VpcC
 
 VpcClient::ModifyGlobalAccelerationInstanceAttributesOutcome VpcClient::modifyGlobalAccelerationInstanceAttributes(const ModifyGlobalAccelerationInstanceAttributesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyGlobalAccelerationInstanceAttributesOutcome(endpointOutcome.error());
 
@@ -4021,7 +4013,7 @@ VpcClient::ModifyGlobalAccelerationInstanceAttributesOutcomeCallable VpcClient::
 
 VpcClient::ModifyCommonBandwidthPackageSpecOutcome VpcClient::modifyCommonBandwidthPackageSpec(const ModifyCommonBandwidthPackageSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyCommonBandwidthPackageSpecOutcome(endpointOutcome.error());
 
@@ -4057,7 +4049,7 @@ VpcClient::ModifyCommonBandwidthPackageSpecOutcomeCallable VpcClient::modifyComm
 
 VpcClient::DeleteRouteEntryOutcome VpcClient::deleteRouteEntry(const DeleteRouteEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteRouteEntryOutcome(endpointOutcome.error());
 
@@ -4093,7 +4085,7 @@ VpcClient::DeleteRouteEntryOutcomeCallable VpcClient::deleteRouteEntryCallable(c
 
 VpcClient::DeleteVirtualBorderRouterOutcome VpcClient::deleteVirtualBorderRouter(const DeleteVirtualBorderRouterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteVirtualBorderRouterOutcome(endpointOutcome.error());
 
@@ -4129,7 +4121,7 @@ VpcClient::DeleteVirtualBorderRouterOutcomeCallable VpcClient::deleteVirtualBord
 
 VpcClient::CreatePhysicalConnectionNewOutcome VpcClient::createPhysicalConnectionNew(const CreatePhysicalConnectionNewRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreatePhysicalConnectionNewOutcome(endpointOutcome.error());
 
@@ -4165,7 +4157,7 @@ VpcClient::CreatePhysicalConnectionNewOutcomeCallable VpcClient::createPhysicalC
 
 VpcClient::TerminatePhysicalConnectionOutcome VpcClient::terminatePhysicalConnection(const TerminatePhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return TerminatePhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -4201,7 +4193,7 @@ VpcClient::TerminatePhysicalConnectionOutcomeCallable VpcClient::terminatePhysic
 
 VpcClient::DescribeVpnGatewayOutcome VpcClient::describeVpnGateway(const DescribeVpnGatewayRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVpnGatewayOutcome(endpointOutcome.error());
 
@@ -4237,7 +4229,7 @@ VpcClient::DescribeVpnGatewayOutcomeCallable VpcClient::describeVpnGatewayCallab
 
 VpcClient::ModifyBgpGroupAttributeOutcome VpcClient::modifyBgpGroupAttribute(const ModifyBgpGroupAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyBgpGroupAttributeOutcome(endpointOutcome.error());
 
@@ -4273,7 +4265,7 @@ VpcClient::ModifyBgpGroupAttributeOutcomeCallable VpcClient::modifyBgpGroupAttri
 
 VpcClient::ModifyCommonBandwidthPackageAttributeOutcome VpcClient::modifyCommonBandwidthPackageAttribute(const ModifyCommonBandwidthPackageAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyCommonBandwidthPackageAttributeOutcome(endpointOutcome.error());
 
@@ -4309,7 +4301,7 @@ VpcClient::ModifyCommonBandwidthPackageAttributeOutcomeCallable VpcClient::modif
 
 VpcClient::DeleteForwardEntryOutcome VpcClient::deleteForwardEntry(const DeleteForwardEntryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteForwardEntryOutcome(endpointOutcome.error());
 
@@ -4345,7 +4337,7 @@ VpcClient::DeleteForwardEntryOutcomeCallable VpcClient::deleteForwardEntryCallab
 
 VpcClient::AddCommonBandwidthPackageIpOutcome VpcClient::addCommonBandwidthPackageIp(const AddCommonBandwidthPackageIpRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddCommonBandwidthPackageIpOutcome(endpointOutcome.error());
 
@@ -4381,7 +4373,7 @@ VpcClient::AddCommonBandwidthPackageIpOutcomeCallable VpcClient::addCommonBandwi
 
 VpcClient::DescribeRegionsOutcome VpcClient::describeRegions(const DescribeRegionsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRegionsOutcome(endpointOutcome.error());
 
@@ -4417,7 +4409,7 @@ VpcClient::DescribeRegionsOutcomeCallable VpcClient::describeRegionsCallable(con
 
 VpcClient::DescribePhysicalConnectionsOutcome VpcClient::describePhysicalConnections(const DescribePhysicalConnectionsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribePhysicalConnectionsOutcome(endpointOutcome.error());
 
@@ -4453,7 +4445,7 @@ VpcClient::DescribePhysicalConnectionsOutcomeCallable VpcClient::describePhysica
 
 VpcClient::DescribeVpnGatewaysOutcome VpcClient::describeVpnGateways(const DescribeVpnGatewaysRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVpnGatewaysOutcome(endpointOutcome.error());
 
@@ -4489,7 +4481,7 @@ VpcClient::DescribeVpnGatewaysOutcomeCallable VpcClient::describeVpnGatewaysCall
 
 VpcClient::DescribeVirtualBorderRoutersOutcome VpcClient::describeVirtualBorderRouters(const DescribeVirtualBorderRoutersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVirtualBorderRoutersOutcome(endpointOutcome.error());
 
@@ -4525,7 +4517,7 @@ VpcClient::DescribeVirtualBorderRoutersOutcomeCallable VpcClient::describeVirtua
 
 VpcClient::CreateGlobalAccelerationInstanceOutcome VpcClient::createGlobalAccelerationInstance(const CreateGlobalAccelerationInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateGlobalAccelerationInstanceOutcome(endpointOutcome.error());
 
@@ -4561,7 +4553,7 @@ VpcClient::CreateGlobalAccelerationInstanceOutcomeCallable VpcClient::createGlob
 
 VpcClient::CancelPhysicalConnectionOutcome VpcClient::cancelPhysicalConnection(const CancelPhysicalConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CancelPhysicalConnectionOutcome(endpointOutcome.error());
 
@@ -4597,7 +4589,7 @@ VpcClient::CancelPhysicalConnectionOutcomeCallable VpcClient::cancelPhysicalConn
 
 VpcClient::CreateBgpGroupOutcome VpcClient::createBgpGroup(const CreateBgpGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateBgpGroupOutcome(endpointOutcome.error());
 
@@ -4633,7 +4625,7 @@ VpcClient::CreateBgpGroupOutcomeCallable VpcClient::createBgpGroupCallable(const
 
 VpcClient::DescribeVRoutersOutcome VpcClient::describeVRouters(const DescribeVRoutersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVRoutersOutcome(endpointOutcome.error());
 
@@ -4669,7 +4661,7 @@ VpcClient::DescribeVRoutersOutcomeCallable VpcClient::describeVRoutersCallable(c
 
 VpcClient::DescribeRouterInterfacesForGlobalOutcome VpcClient::describeRouterInterfacesForGlobal(const DescribeRouterInterfacesForGlobalRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRouterInterfacesForGlobalOutcome(endpointOutcome.error());
 
@@ -4705,7 +4697,7 @@ VpcClient::DescribeRouterInterfacesForGlobalOutcomeCallable VpcClient::describeR
 
 VpcClient::ModifyNqaOutcome VpcClient::modifyNqa(const ModifyNqaRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyNqaOutcome(endpointOutcome.error());
 
@@ -4741,7 +4733,7 @@ VpcClient::ModifyNqaOutcomeCallable VpcClient::modifyNqaCallable(const ModifyNqa
 
 VpcClient::AllocateEipAddressOutcome VpcClient::allocateEipAddress(const AllocateEipAddressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AllocateEipAddressOutcome(endpointOutcome.error());
 
@@ -4777,7 +4769,7 @@ VpcClient::AllocateEipAddressOutcomeCallable VpcClient::allocateEipAddressCallab
 
 VpcClient::DescribeSslVpnClientCertOutcome VpcClient::describeSslVpnClientCert(const DescribeSslVpnClientCertRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSslVpnClientCertOutcome(endpointOutcome.error());
 
@@ -4813,7 +4805,7 @@ VpcClient::DescribeSslVpnClientCertOutcomeCallable VpcClient::describeSslVpnClie
 
 VpcClient::DescribeCommonBandwidthPackagesOutcome VpcClient::describeCommonBandwidthPackages(const DescribeCommonBandwidthPackagesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCommonBandwidthPackagesOutcome(endpointOutcome.error());
 
@@ -4849,7 +4841,7 @@ VpcClient::DescribeCommonBandwidthPackagesOutcomeCallable VpcClient::describeCom
 
 VpcClient::UnassociateHaVipOutcome VpcClient::unassociateHaVip(const UnassociateHaVipRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UnassociateHaVipOutcome(endpointOutcome.error());
 
@@ -4885,7 +4877,7 @@ VpcClient::UnassociateHaVipOutcomeCallable VpcClient::unassociateHaVipCallable(c
 
 VpcClient::ModifyHaVipAttributeOutcome VpcClient::modifyHaVipAttribute(const ModifyHaVipAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyHaVipAttributeOutcome(endpointOutcome.error());
 
@@ -4921,7 +4913,7 @@ VpcClient::ModifyHaVipAttributeOutcomeCallable VpcClient::modifyHaVipAttributeCa
 
 VpcClient::AssociateGlobalAccelerationInstanceOutcome VpcClient::associateGlobalAccelerationInstance(const AssociateGlobalAccelerationInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AssociateGlobalAccelerationInstanceOutcome(endpointOutcome.error());
 
@@ -4957,7 +4949,7 @@ VpcClient::AssociateGlobalAccelerationInstanceOutcomeCallable VpcClient::associa
 
 VpcClient::DescribeSslVpnServersOutcome VpcClient::describeSslVpnServers(const DescribeSslVpnServersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSslVpnServersOutcome(endpointOutcome.error());
 
@@ -4993,7 +4985,7 @@ VpcClient::DescribeSslVpnServersOutcomeCallable VpcClient::describeSslVpnServers
 
 VpcClient::ModifyVRouterAttributeOutcome VpcClient::modifyVRouterAttribute(const ModifyVRouterAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyVRouterAttributeOutcome(endpointOutcome.error());
 
@@ -5029,7 +5021,7 @@ VpcClient::ModifyVRouterAttributeOutcomeCallable VpcClient::modifyVRouterAttribu
 
 VpcClient::DescribeSnatTableEntriesOutcome VpcClient::describeSnatTableEntries(const DescribeSnatTableEntriesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSnatTableEntriesOutcome(endpointOutcome.error());
 

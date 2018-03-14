@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::EHPC;
 using namespace AlibabaCloud::EHPC::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "EHPC";
+}
+
 EHPCClient::EHPCClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ehs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ehs");
 }
 
 EHPCClient::EHPCClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ehs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ehs");
 }
 
 EHPCClient::EHPCClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ehs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ehs");
 }
 
 EHPCClient::~EHPCClient()
 {}
 
-CoreClient::EndpointOutcome EHPCClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 EHPCClient::DeleteUsersOutcome EHPCClient::deleteUsers(const DeleteUsersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteUsersOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ EHPCClient::DeleteUsersOutcomeCallable EHPCClient::deleteUsersCallable(const Del
 
 EHPCClient::DescribeClusterOutcome EHPCClient::describeCluster(const DescribeClusterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClusterOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ EHPCClient::DescribeClusterOutcomeCallable EHPCClient::describeClusterCallable(c
 
 EHPCClient::ListUsersOutcome EHPCClient::listUsers(const ListUsersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListUsersOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ EHPCClient::ListUsersOutcomeCallable EHPCClient::listUsersCallable(const ListUse
 
 EHPCClient::UpgradeClientOutcome EHPCClient::upgradeClient(const UpgradeClientRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UpgradeClientOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ EHPCClient::UpgradeClientOutcomeCallable EHPCClient::upgradeClientCallable(const
 
 EHPCClient::ListCurrentClientVersionOutcome EHPCClient::listCurrentClientVersion(const ListCurrentClientVersionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListCurrentClientVersionOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ EHPCClient::ListCurrentClientVersionOutcomeCallable EHPCClient::listCurrentClien
 
 EHPCClient::DeleteClusterOutcome EHPCClient::deleteCluster(const DeleteClusterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteClusterOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ EHPCClient::DeleteClusterOutcomeCallable EHPCClient::deleteClusterCallable(const
 
 EHPCClient::ListImagesOutcome EHPCClient::listImages(const ListImagesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListImagesOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ EHPCClient::ListImagesOutcomeCallable EHPCClient::listImagesCallable(const ListI
 
 EHPCClient::SetAutoScaleConfigOutcome EHPCClient::setAutoScaleConfig(const SetAutoScaleConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetAutoScaleConfigOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ EHPCClient::SetAutoScaleConfigOutcomeCallable EHPCClient::setAutoScaleConfigCall
 
 EHPCClient::ListVolumesOutcome EHPCClient::listVolumes(const ListVolumesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListVolumesOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ EHPCClient::ListVolumesOutcomeCallable EHPCClient::listVolumesCallable(const Lis
 
 EHPCClient::AddNodesOutcome EHPCClient::addNodes(const AddNodesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddNodesOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ EHPCClient::AddNodesOutcomeCallable EHPCClient::addNodesCallable(const AddNodesR
 
 EHPCClient::ListSoftwaresOutcome EHPCClient::listSoftwares(const ListSoftwaresRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListSoftwaresOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ EHPCClient::ListSoftwaresOutcomeCallable EHPCClient::listSoftwaresCallable(const
 
 EHPCClient::StopJobsOutcome EHPCClient::stopJobs(const StopJobsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StopJobsOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ EHPCClient::StopJobsOutcomeCallable EHPCClient::stopJobsCallable(const StopJobsR
 
 EHPCClient::GetAutoScaleConfigOutcome EHPCClient::getAutoScaleConfig(const GetAutoScaleConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetAutoScaleConfigOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ EHPCClient::GetAutoScaleConfigOutcomeCallable EHPCClient::getAutoScaleConfigCall
 
 EHPCClient::ListNodesOutcome EHPCClient::listNodes(const ListNodesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListNodesOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ EHPCClient::ListNodesOutcomeCallable EHPCClient::listNodesCallable(const ListNod
 
 EHPCClient::SetJobUserOutcome EHPCClient::setJobUser(const SetJobUserRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetJobUserOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ EHPCClient::SetJobUserOutcomeCallable EHPCClient::setJobUserCallable(const SetJo
 
 EHPCClient::ModifyUserGroupsOutcome EHPCClient::modifyUserGroups(const ModifyUserGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyUserGroupsOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ EHPCClient::ModifyUserGroupsOutcomeCallable EHPCClient::modifyUserGroupsCallable
 
 EHPCClient::ListClustersOutcome EHPCClient::listClusters(const ListClustersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListClustersOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ EHPCClient::ListClustersOutcomeCallable EHPCClient::listClustersCallable(const L
 
 EHPCClient::SubmitJobOutcome EHPCClient::submitJob(const SubmitJobRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SubmitJobOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ EHPCClient::SubmitJobOutcomeCallable EHPCClient::submitJobCallable(const SubmitJ
 
 EHPCClient::ListCustomImagesOutcome EHPCClient::listCustomImages(const ListCustomImagesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListCustomImagesOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ EHPCClient::ListCustomImagesOutcomeCallable EHPCClient::listCustomImagesCallable
 
 EHPCClient::ListRegionsOutcome EHPCClient::listRegions(const ListRegionsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListRegionsOutcome(endpointOutcome.error());
 
@@ -781,7 +773,7 @@ EHPCClient::ListRegionsOutcomeCallable EHPCClient::listRegionsCallable(const Lis
 
 EHPCClient::AddUsersOutcome EHPCClient::addUsers(const AddUsersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddUsersOutcome(endpointOutcome.error());
 
@@ -817,7 +809,7 @@ EHPCClient::AddUsersOutcomeCallable EHPCClient::addUsersCallable(const AddUsersR
 
 EHPCClient::ListJobTemplatesOutcome EHPCClient::listJobTemplates(const ListJobTemplatesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListJobTemplatesOutcome(endpointOutcome.error());
 
@@ -853,7 +845,7 @@ EHPCClient::ListJobTemplatesOutcomeCallable EHPCClient::listJobTemplatesCallable
 
 EHPCClient::ModifyClusterAttributesOutcome EHPCClient::modifyClusterAttributes(const ModifyClusterAttributesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyClusterAttributesOutcome(endpointOutcome.error());
 
@@ -889,7 +881,7 @@ EHPCClient::ModifyClusterAttributesOutcomeCallable EHPCClient::modifyClusterAttr
 
 EHPCClient::DeleteJobTemplatesOutcome EHPCClient::deleteJobTemplates(const DeleteJobTemplatesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteJobTemplatesOutcome(endpointOutcome.error());
 
@@ -925,7 +917,7 @@ EHPCClient::DeleteJobTemplatesOutcomeCallable EHPCClient::deleteJobTemplatesCall
 
 EHPCClient::ListNodesNoPagingOutcome EHPCClient::listNodesNoPaging(const ListNodesNoPagingRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListNodesNoPagingOutcome(endpointOutcome.error());
 
@@ -961,7 +953,7 @@ EHPCClient::ListNodesNoPagingOutcomeCallable EHPCClient::listNodesNoPagingCallab
 
 EHPCClient::CreateJobTemplateOutcome EHPCClient::createJobTemplate(const CreateJobTemplateRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateJobTemplateOutcome(endpointOutcome.error());
 
@@ -997,7 +989,7 @@ EHPCClient::CreateJobTemplateOutcomeCallable EHPCClient::createJobTemplateCallab
 
 EHPCClient::RerunJobsOutcome EHPCClient::rerunJobs(const RerunJobsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RerunJobsOutcome(endpointOutcome.error());
 
@@ -1033,7 +1025,7 @@ EHPCClient::RerunJobsOutcomeCallable EHPCClient::rerunJobsCallable(const RerunJo
 
 EHPCClient::ResetNodesOutcome EHPCClient::resetNodes(const ResetNodesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ResetNodesOutcome(endpointOutcome.error());
 
@@ -1069,7 +1061,7 @@ EHPCClient::ResetNodesOutcomeCallable EHPCClient::resetNodesCallable(const Reset
 
 EHPCClient::EditJobTemplateOutcome EHPCClient::editJobTemplate(const EditJobTemplateRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EditJobTemplateOutcome(endpointOutcome.error());
 
@@ -1105,7 +1097,7 @@ EHPCClient::EditJobTemplateOutcomeCallable EHPCClient::editJobTemplateCallable(c
 
 EHPCClient::ListPreferredEcsTypesOutcome EHPCClient::listPreferredEcsTypes(const ListPreferredEcsTypesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListPreferredEcsTypesOutcome(endpointOutcome.error());
 
@@ -1141,7 +1133,7 @@ EHPCClient::ListPreferredEcsTypesOutcomeCallable EHPCClient::listPreferredEcsTyp
 
 EHPCClient::ListClusterLogsOutcome EHPCClient::listClusterLogs(const ListClusterLogsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListClusterLogsOutcome(endpointOutcome.error());
 
@@ -1177,7 +1169,7 @@ EHPCClient::ListClusterLogsOutcomeCallable EHPCClient::listClusterLogsCallable(c
 
 EHPCClient::DeleteJobsOutcome EHPCClient::deleteJobs(const DeleteJobsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteJobsOutcome(endpointOutcome.error());
 
@@ -1213,7 +1205,7 @@ EHPCClient::DeleteJobsOutcomeCallable EHPCClient::deleteJobsCallable(const Delet
 
 EHPCClient::DeleteNodesOutcome EHPCClient::deleteNodes(const DeleteNodesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteNodesOutcome(endpointOutcome.error());
 
@@ -1249,7 +1241,7 @@ EHPCClient::DeleteNodesOutcomeCallable EHPCClient::deleteNodesCallable(const Del
 
 EHPCClient::ListJobsOutcome EHPCClient::listJobs(const ListJobsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListJobsOutcome(endpointOutcome.error());
 
@@ -1285,7 +1277,7 @@ EHPCClient::ListJobsOutcomeCallable EHPCClient::listJobsCallable(const ListJobsR
 
 EHPCClient::CreateClusterOutcome EHPCClient::createCluster(const CreateClusterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateClusterOutcome(endpointOutcome.error());
 
@@ -1321,7 +1313,7 @@ EHPCClient::CreateClusterOutcomeCallable EHPCClient::createClusterCallable(const
 
 EHPCClient::ModifyUserPasswordsOutcome EHPCClient::modifyUserPasswords(const ModifyUserPasswordsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyUserPasswordsOutcome(endpointOutcome.error());
 

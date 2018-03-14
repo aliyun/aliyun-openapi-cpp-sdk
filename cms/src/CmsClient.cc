@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Cms;
 using namespace AlibabaCloud::Cms::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "Cms";
+}
+
 CmsClient::CmsClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "cms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cms");
 }
 
 CmsClient::CmsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "cms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cms");
 }
 
 CmsClient::CmsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "cms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cms");
 }
 
 CmsClient::~CmsClient()
 {}
 
-CoreClient::EndpointOutcome CmsClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 CmsClient::ProfileSetOutcome CmsClient::profileSet(const ProfileSetRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ProfileSetOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ CmsClient::ProfileSetOutcomeCallable CmsClient::profileSetCallable(const Profile
 
 CmsClient::ListProductOfActiceAlertOutcome CmsClient::listProductOfActiceAlert(const ListProductOfActiceAlertRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListProductOfActiceAlertOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ CmsClient::ListProductOfActiceAlertOutcomeCallable CmsClient::listProductOfActic
 
 CmsClient::DeleteCustomMetricOutcome CmsClient::deleteCustomMetric(const DeleteCustomMetricRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteCustomMetricOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ CmsClient::DeleteCustomMetricOutcomeCallable CmsClient::deleteCustomMetricCallab
 
 CmsClient::GetNotifyPolicyOutcome CmsClient::getNotifyPolicy(const GetNotifyPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetNotifyPolicyOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ CmsClient::GetNotifyPolicyOutcomeCallable CmsClient::getNotifyPolicyCallable(con
 
 CmsClient::NodeUninstallOutcome CmsClient::nodeUninstall(const NodeUninstallRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return NodeUninstallOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ CmsClient::NodeUninstallOutcomeCallable CmsClient::nodeUninstallCallable(const N
 
 CmsClient::QueryCustomEventCountOutcome CmsClient::queryCustomEventCount(const QueryCustomEventCountRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QueryCustomEventCountOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ CmsClient::QueryCustomEventCountOutcomeCallable CmsClient::queryCustomEventCount
 
 CmsClient::UpdateMyGroupInstancesOutcome CmsClient::updateMyGroupInstances(const UpdateMyGroupInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UpdateMyGroupInstancesOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ CmsClient::UpdateMyGroupInstancesOutcomeCallable CmsClient::updateMyGroupInstanc
 
 CmsClient::ProfileGetOutcome CmsClient::profileGet(const ProfileGetRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ProfileGetOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ CmsClient::ProfileGetOutcomeCallable CmsClient::profileGetCallable(const Profile
 
 CmsClient::PutSystemEventOutcome CmsClient::putSystemEvent(const PutSystemEventRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return PutSystemEventOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ CmsClient::PutSystemEventOutcomeCallable CmsClient::putSystemEventCallable(const
 
 CmsClient::QueryCustomMetricListOutcome CmsClient::queryCustomMetricList(const QueryCustomMetricListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QueryCustomMetricListOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ CmsClient::QueryCustomMetricListOutcomeCallable CmsClient::queryCustomMetricList
 
 CmsClient::EnableActiveAlertOutcome CmsClient::enableActiveAlert(const EnableActiveAlertRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EnableActiveAlertOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ CmsClient::EnableActiveAlertOutcomeCallable CmsClient::enableActiveAlertCallable
 
 CmsClient::QuerySystemEventDetailOutcome CmsClient::querySystemEventDetail(const QuerySystemEventDetailRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QuerySystemEventDetailOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ CmsClient::QuerySystemEventDetailOutcomeCallable CmsClient::querySystemEventDeta
 
 CmsClient::CreateNotifyPolicyOutcome CmsClient::createNotifyPolicy(const CreateNotifyPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateNotifyPolicyOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ CmsClient::CreateNotifyPolicyOutcomeCallable CmsClient::createNotifyPolicyCallab
 
 CmsClient::DeleteAlarmOutcome CmsClient::deleteAlarm(const DeleteAlarmRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteAlarmOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ CmsClient::DeleteAlarmOutcomeCallable CmsClient::deleteAlarmCallable(const Delet
 
 CmsClient::NodeListOutcome CmsClient::nodeList(const NodeListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return NodeListOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ CmsClient::NodeListOutcomeCallable CmsClient::nodeListCallable(const NodeListReq
 
 CmsClient::NodeProcessesOutcome CmsClient::nodeProcesses(const NodeProcessesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return NodeProcessesOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ CmsClient::NodeProcessesOutcomeCallable CmsClient::nodeProcessesCallable(const N
 
 CmsClient::ListMyGroupCategoriesOutcome CmsClient::listMyGroupCategories(const ListMyGroupCategoriesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListMyGroupCategoriesOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ CmsClient::ListMyGroupCategoriesOutcomeCallable CmsClient::listMyGroupCategories
 
 CmsClient::QueryMetricListOutcome CmsClient::queryMetricList(const QueryMetricListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QueryMetricListOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ CmsClient::QueryMetricListOutcomeCallable CmsClient::queryMetricListCallable(con
 
 CmsClient::ListMyGroupInstancesDetailsOutcome CmsClient::listMyGroupInstancesDetails(const ListMyGroupInstancesDetailsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListMyGroupInstancesDetailsOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ CmsClient::ListMyGroupInstancesDetailsOutcomeCallable CmsClient::listMyGroupInst
 
 CmsClient::DisableAlarmOutcome CmsClient::disableAlarm(const DisableAlarmRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DisableAlarmOutcome(endpointOutcome.error());
 
@@ -781,7 +773,7 @@ CmsClient::DisableAlarmOutcomeCallable CmsClient::disableAlarmCallable(const Dis
 
 CmsClient::PutCustomMetricOutcome CmsClient::putCustomMetric(const PutCustomMetricRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return PutCustomMetricOutcome(endpointOutcome.error());
 
@@ -817,7 +809,7 @@ CmsClient::PutCustomMetricOutcomeCallable CmsClient::putCustomMetricCallable(con
 
 CmsClient::DeleteMyGroupsOutcome CmsClient::deleteMyGroups(const DeleteMyGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteMyGroupsOutcome(endpointOutcome.error());
 
@@ -853,7 +845,7 @@ CmsClient::DeleteMyGroupsOutcomeCallable CmsClient::deleteMyGroupsCallable(const
 
 CmsClient::QueryMetricLastOutcome CmsClient::queryMetricLast(const QueryMetricLastRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QueryMetricLastOutcome(endpointOutcome.error());
 
@@ -889,7 +881,7 @@ CmsClient::QueryMetricLastOutcomeCallable CmsClient::queryMetricLastCallable(con
 
 CmsClient::QuerySystemEventHistogramOutcome CmsClient::querySystemEventHistogram(const QuerySystemEventHistogramRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QuerySystemEventHistogramOutcome(endpointOutcome.error());
 
@@ -925,7 +917,7 @@ CmsClient::QuerySystemEventHistogramOutcomeCallable CmsClient::querySystemEventH
 
 CmsClient::DescribeAlarmHistoryOutcome CmsClient::describeAlarmHistory(const DescribeAlarmHistoryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAlarmHistoryOutcome(endpointOutcome.error());
 
@@ -961,7 +953,7 @@ CmsClient::DescribeAlarmHistoryOutcomeCallable CmsClient::describeAlarmHistoryCa
 
 CmsClient::NodeStatusOutcome CmsClient::nodeStatus(const NodeStatusRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return NodeStatusOutcome(endpointOutcome.error());
 
@@ -997,7 +989,7 @@ CmsClient::NodeStatusOutcomeCallable CmsClient::nodeStatusCallable(const NodeSta
 
 CmsClient::DeleteMyGroupInstancesOutcome CmsClient::deleteMyGroupInstances(const DeleteMyGroupInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteMyGroupInstancesOutcome(endpointOutcome.error());
 
@@ -1033,7 +1025,7 @@ CmsClient::DeleteMyGroupInstancesOutcomeCallable CmsClient::deleteMyGroupInstanc
 
 CmsClient::ListProductOfActiveAlertOutcome CmsClient::listProductOfActiveAlert(const ListProductOfActiveAlertRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListProductOfActiveAlertOutcome(endpointOutcome.error());
 
@@ -1069,7 +1061,7 @@ CmsClient::ListProductOfActiveAlertOutcomeCallable CmsClient::listProductOfActiv
 
 CmsClient::CreateMyGroupsOutcome CmsClient::createMyGroups(const CreateMyGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateMyGroupsOutcome(endpointOutcome.error());
 
@@ -1105,7 +1097,7 @@ CmsClient::CreateMyGroupsOutcomeCallable CmsClient::createMyGroupsCallable(const
 
 CmsClient::CreateAlarmOutcome CmsClient::createAlarm(const CreateAlarmRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateAlarmOutcome(endpointOutcome.error());
 
@@ -1141,7 +1133,7 @@ CmsClient::CreateAlarmOutcomeCallable CmsClient::createAlarmCallable(const Creat
 
 CmsClient::ListActiveAlertRuleOutcome CmsClient::listActiveAlertRule(const ListActiveAlertRuleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListActiveAlertRuleOutcome(endpointOutcome.error());
 
@@ -1177,7 +1169,7 @@ CmsClient::ListActiveAlertRuleOutcomeCallable CmsClient::listActiveAlertRuleCall
 
 CmsClient::ListMyGroupsOutcome CmsClient::listMyGroups(const ListMyGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListMyGroupsOutcome(endpointOutcome.error());
 
@@ -1213,7 +1205,7 @@ CmsClient::ListMyGroupsOutcomeCallable CmsClient::listMyGroupsCallable(const Lis
 
 CmsClient::DeleteNotifyPolicyOutcome CmsClient::deleteNotifyPolicy(const DeleteNotifyPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteNotifyPolicyOutcome(endpointOutcome.error());
 
@@ -1249,7 +1241,7 @@ CmsClient::DeleteNotifyPolicyOutcomeCallable CmsClient::deleteNotifyPolicyCallab
 
 CmsClient::AddMyGroupInstancesOutcome CmsClient::addMyGroupInstances(const AddMyGroupInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddMyGroupInstancesOutcome(endpointOutcome.error());
 
@@ -1285,7 +1277,7 @@ CmsClient::AddMyGroupInstancesOutcomeCallable CmsClient::addMyGroupInstancesCall
 
 CmsClient::NodeProcessDeleteOutcome CmsClient::nodeProcessDelete(const NodeProcessDeleteRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return NodeProcessDeleteOutcome(endpointOutcome.error());
 
@@ -1321,7 +1313,7 @@ CmsClient::NodeProcessDeleteOutcomeCallable CmsClient::nodeProcessDeleteCallable
 
 CmsClient::UpdateMyGroupsOutcome CmsClient::updateMyGroups(const UpdateMyGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UpdateMyGroupsOutcome(endpointOutcome.error());
 
@@ -1357,7 +1349,7 @@ CmsClient::UpdateMyGroupsOutcomeCallable CmsClient::updateMyGroupsCallable(const
 
 CmsClient::QuerySystemEventCountOutcome CmsClient::querySystemEventCount(const QuerySystemEventCountRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QuerySystemEventCountOutcome(endpointOutcome.error());
 
@@ -1393,7 +1385,7 @@ CmsClient::QuerySystemEventCountOutcomeCallable CmsClient::querySystemEventCount
 
 CmsClient::ListMyGroupInstancesOutcome CmsClient::listMyGroupInstances(const ListMyGroupInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListMyGroupInstancesOutcome(endpointOutcome.error());
 
@@ -1429,7 +1421,7 @@ CmsClient::ListMyGroupInstancesOutcomeCallable CmsClient::listMyGroupInstancesCa
 
 CmsClient::AccessKeyGetOutcome CmsClient::accessKeyGet(const AccessKeyGetRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AccessKeyGetOutcome(endpointOutcome.error());
 
@@ -1465,7 +1457,7 @@ CmsClient::AccessKeyGetOutcomeCallable CmsClient::accessKeyGetCallable(const Acc
 
 CmsClient::EnableActiceAlertOutcome CmsClient::enableActiceAlert(const EnableActiceAlertRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EnableActiceAlertOutcome(endpointOutcome.error());
 
@@ -1501,7 +1493,7 @@ CmsClient::EnableActiceAlertOutcomeCallable CmsClient::enableActiceAlertCallable
 
 CmsClient::PutMetricDataOutcome CmsClient::putMetricData(const PutMetricDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return PutMetricDataOutcome(endpointOutcome.error());
 
@@ -1537,7 +1529,7 @@ CmsClient::PutMetricDataOutcomeCallable CmsClient::putMetricDataCallable(const P
 
 CmsClient::DisableActiveAlertOutcome CmsClient::disableActiveAlert(const DisableActiveAlertRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DisableActiveAlertOutcome(endpointOutcome.error());
 
@@ -1573,7 +1565,7 @@ CmsClient::DisableActiveAlertOutcomeCallable CmsClient::disableActiveAlertCallab
 
 CmsClient::DisableActiceAlertOutcome CmsClient::disableActiceAlert(const DisableActiceAlertRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DisableActiceAlertOutcome(endpointOutcome.error());
 
@@ -1609,7 +1601,7 @@ CmsClient::DisableActiceAlertOutcomeCallable CmsClient::disableActiceAlertCallab
 
 CmsClient::ListAlarmOutcome CmsClient::listAlarm(const ListAlarmRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListAlarmOutcome(endpointOutcome.error());
 
@@ -1645,7 +1637,7 @@ CmsClient::ListAlarmOutcomeCallable CmsClient::listAlarmCallable(const ListAlarm
 
 CmsClient::NodeInstallOutcome CmsClient::nodeInstall(const NodeInstallRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return NodeInstallOutcome(endpointOutcome.error());
 
@@ -1681,7 +1673,7 @@ CmsClient::NodeInstallOutcomeCallable CmsClient::nodeInstallCallable(const NodeI
 
 CmsClient::QueryCustomEventHistogramOutcome CmsClient::queryCustomEventHistogram(const QueryCustomEventHistogramRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QueryCustomEventHistogramOutcome(endpointOutcome.error());
 
@@ -1717,7 +1709,7 @@ CmsClient::QueryCustomEventHistogramOutcomeCallable CmsClient::queryCustomEventH
 
 CmsClient::PutEventOutcome CmsClient::putEvent(const PutEventRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return PutEventOutcome(endpointOutcome.error());
 
@@ -1753,7 +1745,7 @@ CmsClient::PutEventOutcomeCallable CmsClient::putEventCallable(const PutEventReq
 
 CmsClient::ListAlarmHistoryOutcome CmsClient::listAlarmHistory(const ListAlarmHistoryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListAlarmHistoryOutcome(endpointOutcome.error());
 
@@ -1789,7 +1781,7 @@ CmsClient::ListAlarmHistoryOutcomeCallable CmsClient::listAlarmHistoryCallable(c
 
 CmsClient::NodeStatusListOutcome CmsClient::nodeStatusList(const NodeStatusListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return NodeStatusListOutcome(endpointOutcome.error());
 
@@ -1825,7 +1817,7 @@ CmsClient::NodeStatusListOutcomeCallable CmsClient::nodeStatusListCallable(const
 
 CmsClient::ListContactGroupOutcome CmsClient::listContactGroup(const ListContactGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListContactGroupOutcome(endpointOutcome.error());
 
@@ -1861,7 +1853,7 @@ CmsClient::ListContactGroupOutcomeCallable CmsClient::listContactGroupCallable(c
 
 CmsClient::GetMyGroupsOutcome CmsClient::getMyGroups(const GetMyGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetMyGroupsOutcome(endpointOutcome.error());
 
@@ -1897,7 +1889,7 @@ CmsClient::GetMyGroupsOutcomeCallable CmsClient::getMyGroupsCallable(const GetMy
 
 CmsClient::ListNotifyPolicyOutcome CmsClient::listNotifyPolicy(const ListNotifyPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListNotifyPolicyOutcome(endpointOutcome.error());
 
@@ -1933,7 +1925,7 @@ CmsClient::ListNotifyPolicyOutcomeCallable CmsClient::listNotifyPolicyCallable(c
 
 CmsClient::UpdateAlarmOutcome CmsClient::updateAlarm(const UpdateAlarmRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UpdateAlarmOutcome(endpointOutcome.error());
 
@@ -1969,7 +1961,7 @@ CmsClient::UpdateAlarmOutcomeCallable CmsClient::updateAlarmCallable(const Updat
 
 CmsClient::NodeProcessCreateOutcome CmsClient::nodeProcessCreate(const NodeProcessCreateRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return NodeProcessCreateOutcome(endpointOutcome.error());
 
@@ -2005,7 +1997,7 @@ CmsClient::NodeProcessCreateOutcomeCallable CmsClient::nodeProcessCreateCallable
 
 CmsClient::EnableAlarmOutcome CmsClient::enableAlarm(const EnableAlarmRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EnableAlarmOutcome(endpointOutcome.error());
 
@@ -2041,7 +2033,7 @@ CmsClient::EnableAlarmOutcomeCallable CmsClient::enableAlarmCallable(const Enabl
 
 CmsClient::QueryCustomEventDetailOutcome CmsClient::queryCustomEventDetail(const QueryCustomEventDetailRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QueryCustomEventDetailOutcome(endpointOutcome.error());
 

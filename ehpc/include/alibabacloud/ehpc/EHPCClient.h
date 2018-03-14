@@ -326,7 +326,6 @@ namespace AlibabaCloud
             ModifyUserPasswordsOutcomeCallable modifyUserPasswordsCallable(const Model::ModifyUserPasswordsRequest& request) const;
 	
 		private:
-			virtual EndpointOutcome endpoint()const override;
 			std::shared_ptr<EndpointProvider> endpointProvider_;
 		};
 	}

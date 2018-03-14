@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::TeslaMaxCompute;
 using namespace AlibabaCloud::TeslaMaxCompute::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "TeslaMaxCompute";
+}
+
 TeslaMaxComputeClient::TeslaMaxComputeClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 TeslaMaxComputeClient::TeslaMaxComputeClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 TeslaMaxComputeClient::TeslaMaxComputeClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 TeslaMaxComputeClient::~TeslaMaxComputeClient()
 {}
 
-CoreClient::EndpointOutcome TeslaMaxComputeClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 TeslaMaxComputeClient::GetUserInstanceOutcome TeslaMaxComputeClient::getUserInstance(const GetUserInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetUserInstanceOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ TeslaMaxComputeClient::GetUserInstanceOutcomeCallable TeslaMaxComputeClient::get
 
 TeslaMaxComputeClient::GetProjectInstanceOutcome TeslaMaxComputeClient::getProjectInstance(const GetProjectInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetProjectInstanceOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ TeslaMaxComputeClient::GetProjectInstanceOutcomeCallable TeslaMaxComputeClient::
 
 TeslaMaxComputeClient::QueryResourceInventoryOutcome TeslaMaxComputeClient::queryResourceInventory(const QueryResourceInventoryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QueryResourceInventoryOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ TeslaMaxComputeClient::QueryResourceInventoryOutcomeCallable TeslaMaxComputeClie
 
 TeslaMaxComputeClient::QueryTopologyOutcome TeslaMaxComputeClient::queryTopology(const QueryTopologyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QueryTopologyOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ TeslaMaxComputeClient::QueryTopologyOutcomeCallable TeslaMaxComputeClient::query
 
 TeslaMaxComputeClient::GetInstancesStatusCountOutcome TeslaMaxComputeClient::getInstancesStatusCount(const GetInstancesStatusCountRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetInstancesStatusCountOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ TeslaMaxComputeClient::GetInstancesStatusCountOutcomeCallable TeslaMaxComputeCli
 
 TeslaMaxComputeClient::GetQuotaInstanceOutcome TeslaMaxComputeClient::getQuotaInstance(const GetQuotaInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetQuotaInstanceOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ TeslaMaxComputeClient::GetQuotaInstanceOutcomeCallable TeslaMaxComputeClient::ge
 
 TeslaMaxComputeClient::GetClusterInstanceOutcome TeslaMaxComputeClient::getClusterInstance(const GetClusterInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetClusterInstanceOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ TeslaMaxComputeClient::GetClusterInstanceOutcomeCallable TeslaMaxComputeClient::
 
 TeslaMaxComputeClient::GetQuotaHistoryInfoOutcome TeslaMaxComputeClient::getQuotaHistoryInfo(const GetQuotaHistoryInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetQuotaHistoryInfoOutcome(endpointOutcome.error());
 

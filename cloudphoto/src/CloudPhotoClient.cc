@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::CloudPhoto;
 using namespace AlibabaCloud::CloudPhoto::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "CloudPhoto";
+}
+
 CloudPhotoClient::CloudPhotoClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "cloudphoto");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudphoto");
 }
 
 CloudPhotoClient::CloudPhotoClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "cloudphoto");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudphoto");
 }
 
 CloudPhotoClient::CloudPhotoClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "cloudphoto");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudphoto");
 }
 
 CloudPhotoClient::~CloudPhotoClient()
 {}
 
-CoreClient::EndpointOutcome CloudPhotoClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 CloudPhotoClient::RemoveFacePhotosOutcome CloudPhotoClient::removeFacePhotos(const RemoveFacePhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveFacePhotosOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ CloudPhotoClient::RemoveFacePhotosOutcomeCallable CloudPhotoClient::removeFacePh
 
 CloudPhotoClient::ReactivatePhotosOutcome CloudPhotoClient::reactivatePhotos(const ReactivatePhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ReactivatePhotosOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ CloudPhotoClient::ReactivatePhotosOutcomeCallable CloudPhotoClient::reactivatePh
 
 CloudPhotoClient::GetQuotaOutcome CloudPhotoClient::getQuota(const GetQuotaRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetQuotaOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ CloudPhotoClient::GetQuotaOutcomeCallable CloudPhotoClient::getQuotaCallable(con
 
 CloudPhotoClient::GetThumbnailsOutcome CloudPhotoClient::getThumbnails(const GetThumbnailsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetThumbnailsOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ CloudPhotoClient::GetThumbnailsOutcomeCallable CloudPhotoClient::getThumbnailsCa
 
 CloudPhotoClient::DeleteFacesOutcome CloudPhotoClient::deleteFaces(const DeleteFacesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteFacesOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ CloudPhotoClient::DeleteFacesOutcomeCallable CloudPhotoClient::deleteFacesCallab
 
 CloudPhotoClient::AddAlbumPhotosOutcome CloudPhotoClient::addAlbumPhotos(const AddAlbumPhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddAlbumPhotosOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ CloudPhotoClient::AddAlbumPhotosOutcomeCallable CloudPhotoClient::addAlbumPhotos
 
 CloudPhotoClient::ListFacesOutcome CloudPhotoClient::listFaces(const ListFacesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListFacesOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ CloudPhotoClient::ListFacesOutcomeCallable CloudPhotoClient::listFacesCallable(c
 
 CloudPhotoClient::MoveFacePhotosOutcome CloudPhotoClient::moveFacePhotos(const MoveFacePhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return MoveFacePhotosOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ CloudPhotoClient::MoveFacePhotosOutcomeCallable CloudPhotoClient::moveFacePhotos
 
 CloudPhotoClient::DeleteEventOutcome CloudPhotoClient::deleteEvent(const DeleteEventRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteEventOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ CloudPhotoClient::DeleteEventOutcomeCallable CloudPhotoClient::deleteEventCallab
 
 CloudPhotoClient::ListPhotosOutcome CloudPhotoClient::listPhotos(const ListPhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListPhotosOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ CloudPhotoClient::ListPhotosOutcomeCallable CloudPhotoClient::listPhotosCallable
 
 CloudPhotoClient::RegisterTagOutcome CloudPhotoClient::registerTag(const RegisterTagRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RegisterTagOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ CloudPhotoClient::RegisterTagOutcomeCallable CloudPhotoClient::registerTagCallab
 
 CloudPhotoClient::ListTimeLinePhotosOutcome CloudPhotoClient::listTimeLinePhotos(const ListTimeLinePhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListTimeLinePhotosOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ CloudPhotoClient::ListTimeLinePhotosOutcomeCallable CloudPhotoClient::listTimeLi
 
 CloudPhotoClient::DeletePhotosOutcome CloudPhotoClient::deletePhotos(const DeletePhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeletePhotosOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ CloudPhotoClient::DeletePhotosOutcomeCallable CloudPhotoClient::deletePhotosCall
 
 CloudPhotoClient::MergeFacesOutcome CloudPhotoClient::mergeFaces(const MergeFacesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return MergeFacesOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ CloudPhotoClient::MergeFacesOutcomeCallable CloudPhotoClient::mergeFacesCallable
 
 CloudPhotoClient::GetPhotosByMd5sOutcome CloudPhotoClient::getPhotosByMd5s(const GetPhotosByMd5sRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetPhotosByMd5sOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ CloudPhotoClient::GetPhotosByMd5sOutcomeCallable CloudPhotoClient::getPhotosByMd
 
 CloudPhotoClient::CreateTransactionOutcome CloudPhotoClient::createTransaction(const CreateTransactionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateTransactionOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ CloudPhotoClient::CreateTransactionOutcomeCallable CloudPhotoClient::createTrans
 
 CloudPhotoClient::InactivatePhotosOutcome CloudPhotoClient::inactivatePhotos(const InactivatePhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return InactivatePhotosOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ CloudPhotoClient::InactivatePhotosOutcomeCallable CloudPhotoClient::inactivatePh
 
 CloudPhotoClient::CreatePhotoStoreOutcome CloudPhotoClient::createPhotoStore(const CreatePhotoStoreRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreatePhotoStoreOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ CloudPhotoClient::CreatePhotoStoreOutcomeCallable CloudPhotoClient::createPhotoS
 
 CloudPhotoClient::TagPhotoOutcome CloudPhotoClient::tagPhoto(const TagPhotoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return TagPhotoOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ CloudPhotoClient::TagPhotoOutcomeCallable CloudPhotoClient::tagPhotoCallable(con
 
 CloudPhotoClient::GetLibraryOutcome CloudPhotoClient::getLibrary(const GetLibraryRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetLibraryOutcome(endpointOutcome.error());
 
@@ -781,7 +773,7 @@ CloudPhotoClient::GetLibraryOutcomeCallable CloudPhotoClient::getLibraryCallable
 
 CloudPhotoClient::SetQuotaOutcome CloudPhotoClient::setQuota(const SetQuotaRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetQuotaOutcome(endpointOutcome.error());
 
@@ -817,7 +809,7 @@ CloudPhotoClient::SetQuotaOutcomeCallable CloudPhotoClient::setQuotaCallable(con
 
 CloudPhotoClient::ListAlbumPhotosOutcome CloudPhotoClient::listAlbumPhotos(const ListAlbumPhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListAlbumPhotosOutcome(endpointOutcome.error());
 
@@ -853,7 +845,7 @@ CloudPhotoClient::ListAlbumPhotosOutcomeCallable CloudPhotoClient::listAlbumPhot
 
 CloudPhotoClient::RemoveAlbumPhotosOutcome CloudPhotoClient::removeAlbumPhotos(const RemoveAlbumPhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveAlbumPhotosOutcome(endpointOutcome.error());
 
@@ -889,7 +881,7 @@ CloudPhotoClient::RemoveAlbumPhotosOutcomeCallable CloudPhotoClient::removeAlbum
 
 CloudPhotoClient::ListAlbumsOutcome CloudPhotoClient::listAlbums(const ListAlbumsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListAlbumsOutcome(endpointOutcome.error());
 
@@ -925,7 +917,7 @@ CloudPhotoClient::ListAlbumsOutcomeCallable CloudPhotoClient::listAlbumsCallable
 
 CloudPhotoClient::ListPhotoFacesOutcome CloudPhotoClient::listPhotoFaces(const ListPhotoFacesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListPhotoFacesOutcome(endpointOutcome.error());
 
@@ -961,7 +953,7 @@ CloudPhotoClient::ListPhotoFacesOutcomeCallable CloudPhotoClient::listPhotoFaces
 
 CloudPhotoClient::RenameAlbumOutcome CloudPhotoClient::renameAlbum(const RenameAlbumRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RenameAlbumOutcome(endpointOutcome.error());
 
@@ -997,7 +989,7 @@ CloudPhotoClient::RenameAlbumOutcomeCallable CloudPhotoClient::renameAlbumCallab
 
 CloudPhotoClient::ActivatePhotosOutcome CloudPhotoClient::activatePhotos(const ActivatePhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ActivatePhotosOutcome(endpointOutcome.error());
 
@@ -1033,7 +1025,7 @@ CloudPhotoClient::ActivatePhotosOutcomeCallable CloudPhotoClient::activatePhotos
 
 CloudPhotoClient::GetPrivateAccessUrlsOutcome CloudPhotoClient::getPrivateAccessUrls(const GetPrivateAccessUrlsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetPrivateAccessUrlsOutcome(endpointOutcome.error());
 
@@ -1069,7 +1061,7 @@ CloudPhotoClient::GetPrivateAccessUrlsOutcomeCallable CloudPhotoClient::getPriva
 
 CloudPhotoClient::GetSimilarPhotosOutcome CloudPhotoClient::getSimilarPhotos(const GetSimilarPhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetSimilarPhotosOutcome(endpointOutcome.error());
 
@@ -1105,7 +1097,7 @@ CloudPhotoClient::GetSimilarPhotosOutcomeCallable CloudPhotoClient::getSimilarPh
 
 CloudPhotoClient::ListEventsOutcome CloudPhotoClient::listEvents(const ListEventsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListEventsOutcome(endpointOutcome.error());
 
@@ -1141,7 +1133,7 @@ CloudPhotoClient::ListEventsOutcomeCallable CloudPhotoClient::listEventsCallable
 
 CloudPhotoClient::GetVideoCoverOutcome CloudPhotoClient::getVideoCover(const GetVideoCoverRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetVideoCoverOutcome(endpointOutcome.error());
 
@@ -1177,7 +1169,7 @@ CloudPhotoClient::GetVideoCoverOutcomeCallable CloudPhotoClient::getVideoCoverCa
 
 CloudPhotoClient::GetFramedPhotoUrlsOutcome CloudPhotoClient::getFramedPhotoUrls(const GetFramedPhotoUrlsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetFramedPhotoUrlsOutcome(endpointOutcome.error());
 
@@ -1213,7 +1205,7 @@ CloudPhotoClient::GetFramedPhotoUrlsOutcomeCallable CloudPhotoClient::getFramedP
 
 CloudPhotoClient::GetEventOutcome CloudPhotoClient::getEvent(const GetEventRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetEventOutcome(endpointOutcome.error());
 
@@ -1249,7 +1241,7 @@ CloudPhotoClient::GetEventOutcomeCallable CloudPhotoClient::getEventCallable(con
 
 CloudPhotoClient::SetMeOutcome CloudPhotoClient::setMe(const SetMeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetMeOutcome(endpointOutcome.error());
 
@@ -1285,7 +1277,7 @@ CloudPhotoClient::SetMeOutcomeCallable CloudPhotoClient::setMeCallable(const Set
 
 CloudPhotoClient::ListTagPhotosOutcome CloudPhotoClient::listTagPhotos(const ListTagPhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListTagPhotosOutcome(endpointOutcome.error());
 
@@ -1321,7 +1313,7 @@ CloudPhotoClient::ListTagPhotosOutcomeCallable CloudPhotoClient::listTagPhotosCa
 
 CloudPhotoClient::DeleteAlbumsOutcome CloudPhotoClient::deleteAlbums(const DeleteAlbumsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteAlbumsOutcome(endpointOutcome.error());
 
@@ -1357,7 +1349,7 @@ CloudPhotoClient::DeleteAlbumsOutcomeCallable CloudPhotoClient::deleteAlbumsCall
 
 CloudPhotoClient::GetDownloadUrlsOutcome CloudPhotoClient::getDownloadUrls(const GetDownloadUrlsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetDownloadUrlsOutcome(endpointOutcome.error());
 
@@ -1393,7 +1385,7 @@ CloudPhotoClient::GetDownloadUrlsOutcomeCallable CloudPhotoClient::getDownloadUr
 
 CloudPhotoClient::GetPhotosOutcome CloudPhotoClient::getPhotos(const GetPhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetPhotosOutcome(endpointOutcome.error());
 
@@ -1429,7 +1421,7 @@ CloudPhotoClient::GetPhotosOutcomeCallable CloudPhotoClient::getPhotosCallable(c
 
 CloudPhotoClient::RegisterPhotoOutcome CloudPhotoClient::registerPhoto(const RegisterPhotoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RegisterPhotoOutcome(endpointOutcome.error());
 
@@ -1465,7 +1457,7 @@ CloudPhotoClient::RegisterPhotoOutcomeCallable CloudPhotoClient::registerPhotoCa
 
 CloudPhotoClient::EditPhotoStoreOutcome CloudPhotoClient::editPhotoStore(const EditPhotoStoreRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EditPhotoStoreOutcome(endpointOutcome.error());
 
@@ -1501,7 +1493,7 @@ CloudPhotoClient::EditPhotoStoreOutcomeCallable CloudPhotoClient::editPhotoStore
 
 CloudPhotoClient::ListTimeLinesOutcome CloudPhotoClient::listTimeLines(const ListTimeLinesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListTimeLinesOutcome(endpointOutcome.error());
 
@@ -1537,7 +1529,7 @@ CloudPhotoClient::ListTimeLinesOutcomeCallable CloudPhotoClient::listTimeLinesCa
 
 CloudPhotoClient::SearchPhotosOutcome CloudPhotoClient::searchPhotos(const SearchPhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SearchPhotosOutcome(endpointOutcome.error());
 
@@ -1573,7 +1565,7 @@ CloudPhotoClient::SearchPhotosOutcomeCallable CloudPhotoClient::searchPhotosCall
 
 CloudPhotoClient::ToggleFeaturesOutcome CloudPhotoClient::toggleFeatures(const ToggleFeaturesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ToggleFeaturesOutcome(endpointOutcome.error());
 
@@ -1609,7 +1601,7 @@ CloudPhotoClient::ToggleFeaturesOutcomeCallable CloudPhotoClient::toggleFeatures
 
 CloudPhotoClient::ListRegisteredTagsOutcome CloudPhotoClient::listRegisteredTags(const ListRegisteredTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListRegisteredTagsOutcome(endpointOutcome.error());
 
@@ -1645,7 +1637,7 @@ CloudPhotoClient::ListRegisteredTagsOutcomeCallable CloudPhotoClient::listRegist
 
 CloudPhotoClient::DeletePhotoStoreOutcome CloudPhotoClient::deletePhotoStore(const DeletePhotoStoreRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeletePhotoStoreOutcome(endpointOutcome.error());
 
@@ -1681,7 +1673,7 @@ CloudPhotoClient::DeletePhotoStoreOutcomeCallable CloudPhotoClient::deletePhotoS
 
 CloudPhotoClient::CreateEventOutcome CloudPhotoClient::createEvent(const CreateEventRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateEventOutcome(endpointOutcome.error());
 
@@ -1717,7 +1709,7 @@ CloudPhotoClient::CreateEventOutcomeCallable CloudPhotoClient::createEventCallab
 
 CloudPhotoClient::GetPhotoStoreOutcome CloudPhotoClient::getPhotoStore(const GetPhotoStoreRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetPhotoStoreOutcome(endpointOutcome.error());
 
@@ -1753,7 +1745,7 @@ CloudPhotoClient::GetPhotoStoreOutcomeCallable CloudPhotoClient::getPhotoStoreCa
 
 CloudPhotoClient::ListMomentPhotosOutcome CloudPhotoClient::listMomentPhotos(const ListMomentPhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListMomentPhotosOutcome(endpointOutcome.error());
 
@@ -1789,7 +1781,7 @@ CloudPhotoClient::ListMomentPhotosOutcomeCallable CloudPhotoClient::listMomentPh
 
 CloudPhotoClient::GetThumbnailOutcome CloudPhotoClient::getThumbnail(const GetThumbnailRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetThumbnailOutcome(endpointOutcome.error());
 
@@ -1825,7 +1817,7 @@ CloudPhotoClient::GetThumbnailOutcomeCallable CloudPhotoClient::getThumbnailCall
 
 CloudPhotoClient::SetFaceCoverOutcome CloudPhotoClient::setFaceCover(const SetFaceCoverRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetFaceCoverOutcome(endpointOutcome.error());
 
@@ -1861,7 +1853,7 @@ CloudPhotoClient::SetFaceCoverOutcomeCallable CloudPhotoClient::setFaceCoverCall
 
 CloudPhotoClient::CreatePhotoOutcome CloudPhotoClient::createPhoto(const CreatePhotoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreatePhotoOutcome(endpointOutcome.error());
 
@@ -1897,7 +1889,7 @@ CloudPhotoClient::CreatePhotoOutcomeCallable CloudPhotoClient::createPhotoCallab
 
 CloudPhotoClient::MoveAlbumPhotosOutcome CloudPhotoClient::moveAlbumPhotos(const MoveAlbumPhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return MoveAlbumPhotosOutcome(endpointOutcome.error());
 
@@ -1933,7 +1925,7 @@ CloudPhotoClient::MoveAlbumPhotosOutcomeCallable CloudPhotoClient::moveAlbumPhot
 
 CloudPhotoClient::EditEventOutcome CloudPhotoClient::editEvent(const EditEventRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EditEventOutcome(endpointOutcome.error());
 
@@ -1969,7 +1961,7 @@ CloudPhotoClient::EditEventOutcomeCallable CloudPhotoClient::editEventCallable(c
 
 CloudPhotoClient::GetDownloadUrlOutcome CloudPhotoClient::getDownloadUrl(const GetDownloadUrlRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetDownloadUrlOutcome(endpointOutcome.error());
 
@@ -2005,7 +1997,7 @@ CloudPhotoClient::GetDownloadUrlOutcomeCallable CloudPhotoClient::getDownloadUrl
 
 CloudPhotoClient::CreateAlbumOutcome CloudPhotoClient::createAlbum(const CreateAlbumRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateAlbumOutcome(endpointOutcome.error());
 
@@ -2041,7 +2033,7 @@ CloudPhotoClient::CreateAlbumOutcomeCallable CloudPhotoClient::createAlbumCallab
 
 CloudPhotoClient::ListPhotoTagsOutcome CloudPhotoClient::listPhotoTags(const ListPhotoTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListPhotoTagsOutcome(endpointOutcome.error());
 
@@ -2077,7 +2069,7 @@ CloudPhotoClient::ListPhotoTagsOutcomeCallable CloudPhotoClient::listPhotoTagsCa
 
 CloudPhotoClient::LikePhotoOutcome CloudPhotoClient::likePhoto(const LikePhotoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return LikePhotoOutcome(endpointOutcome.error());
 
@@ -2113,7 +2105,7 @@ CloudPhotoClient::LikePhotoOutcomeCallable CloudPhotoClient::likePhotoCallable(c
 
 CloudPhotoClient::ListPhotoStoresOutcome CloudPhotoClient::listPhotoStores(const ListPhotoStoresRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListPhotoStoresOutcome(endpointOutcome.error());
 
@@ -2149,7 +2141,7 @@ CloudPhotoClient::ListPhotoStoresOutcomeCallable CloudPhotoClient::listPhotoStor
 
 CloudPhotoClient::GetAlbumsByNamesOutcome CloudPhotoClient::getAlbumsByNames(const GetAlbumsByNamesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetAlbumsByNamesOutcome(endpointOutcome.error());
 
@@ -2185,7 +2177,7 @@ CloudPhotoClient::GetAlbumsByNamesOutcomeCallable CloudPhotoClient::getAlbumsByN
 
 CloudPhotoClient::GetPublicAccessUrlsOutcome CloudPhotoClient::getPublicAccessUrls(const GetPublicAccessUrlsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetPublicAccessUrlsOutcome(endpointOutcome.error());
 
@@ -2221,7 +2213,7 @@ CloudPhotoClient::GetPublicAccessUrlsOutcomeCallable CloudPhotoClient::getPublic
 
 CloudPhotoClient::EditPhotosOutcome CloudPhotoClient::editPhotos(const EditPhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return EditPhotosOutcome(endpointOutcome.error());
 
@@ -2257,7 +2249,7 @@ CloudPhotoClient::EditPhotosOutcomeCallable CloudPhotoClient::editPhotosCallable
 
 CloudPhotoClient::SetAlbumCoverOutcome CloudPhotoClient::setAlbumCover(const SetAlbumCoverRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetAlbumCoverOutcome(endpointOutcome.error());
 
@@ -2293,7 +2285,7 @@ CloudPhotoClient::SetAlbumCoverOutcomeCallable CloudPhotoClient::setAlbumCoverCa
 
 CloudPhotoClient::RenameFaceOutcome CloudPhotoClient::renameFace(const RenameFaceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RenameFaceOutcome(endpointOutcome.error());
 
@@ -2329,7 +2321,7 @@ CloudPhotoClient::RenameFaceOutcomeCallable CloudPhotoClient::renameFaceCallable
 
 CloudPhotoClient::ListMomentsOutcome CloudPhotoClient::listMoments(const ListMomentsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListMomentsOutcome(endpointOutcome.error());
 
@@ -2365,7 +2357,7 @@ CloudPhotoClient::ListMomentsOutcomeCallable CloudPhotoClient::listMomentsCallab
 
 CloudPhotoClient::ListTagsOutcome CloudPhotoClient::listTags(const ListTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListTagsOutcome(endpointOutcome.error());
 
@@ -2401,7 +2393,7 @@ CloudPhotoClient::ListTagsOutcomeCallable CloudPhotoClient::listTagsCallable(con
 
 CloudPhotoClient::ListFacePhotosOutcome CloudPhotoClient::listFacePhotos(const ListFacePhotosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ListFacePhotosOutcome(endpointOutcome.error());
 

@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Rds;
 using namespace AlibabaCloud::Rds::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "Rds";
+}
+
 RdsClient::RdsClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "rds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rds");
 }
 
 RdsClient::RdsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "rds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rds");
 }
 
 RdsClient::RdsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "rds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rds");
 }
 
 RdsClient::~RdsClient()
 {}
 
-CoreClient::EndpointOutcome RdsClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 RdsClient::CreateMigrateTaskOutcome RdsClient::createMigrateTask(const CreateMigrateTaskRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateMigrateTaskOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ RdsClient::CreateMigrateTaskOutcomeCallable RdsClient::createMigrateTaskCallable
 
 RdsClient::CheckRecoveryConditionsOutcome RdsClient::checkRecoveryConditions(const CheckRecoveryConditionsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CheckRecoveryConditionsOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ RdsClient::CheckRecoveryConditionsOutcomeCallable RdsClient::checkRecoveryCondit
 
 RdsClient::LoginDBInstancefromCloudDBAOutcome RdsClient::loginDBInstancefromCloudDBA(const LoginDBInstancefromCloudDBARequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return LoginDBInstancefromCloudDBAOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ RdsClient::LoginDBInstancefromCloudDBAOutcomeCallable RdsClient::loginDBInstance
 
 RdsClient::DeleteBackupOutcome RdsClient::deleteBackup(const DeleteBackupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteBackupOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ RdsClient::DeleteBackupOutcomeCallable RdsClient::deleteBackupCallable(const Del
 
 RdsClient::DescribeDatabasesOutcome RdsClient::describeDatabases(const DescribeDatabasesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDatabasesOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ RdsClient::DescribeDatabasesOutcomeCallable RdsClient::describeDatabasesCallable
 
 RdsClient::DescribeDBInstancesByExpireTimeOutcome RdsClient::describeDBInstancesByExpireTime(const DescribeDBInstancesByExpireTimeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstancesByExpireTimeOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ RdsClient::DescribeDBInstancesByExpireTimeOutcomeCallable RdsClient::describeDBI
 
 RdsClient::SwitchDBInstanceNetTypeOutcome RdsClient::switchDBInstanceNetType(const SwitchDBInstanceNetTypeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SwitchDBInstanceNetTypeOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ RdsClient::SwitchDBInstanceNetTypeOutcomeCallable RdsClient::switchDBInstanceNet
 
 RdsClient::DescribeDBInstanceMonitorOutcome RdsClient::describeDBInstanceMonitor(const DescribeDBInstanceMonitorRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceMonitorOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ RdsClient::DescribeDBInstanceMonitorOutcomeCallable RdsClient::describeDBInstanc
 
 RdsClient::CreateReadOnlyDBInstanceOutcome RdsClient::createReadOnlyDBInstance(const CreateReadOnlyDBInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateReadOnlyDBInstanceOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ RdsClient::CreateReadOnlyDBInstanceOutcomeCallable RdsClient::createReadOnlyDBIn
 
 RdsClient::ModifyAccountDescriptionOutcome RdsClient::modifyAccountDescription(const ModifyAccountDescriptionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyAccountDescriptionOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ RdsClient::ModifyAccountDescriptionOutcomeCallable RdsClient::modifyAccountDescr
 
 RdsClient::DescribeDBInstanceHAConfigOutcome RdsClient::describeDBInstanceHAConfig(const DescribeDBInstanceHAConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceHAConfigOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ RdsClient::DescribeDBInstanceHAConfigOutcomeCallable RdsClient::describeDBInstan
 
 RdsClient::DescribeOssDownloadsOutcome RdsClient::describeOssDownloads(const DescribeOssDownloadsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeOssDownloadsOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ RdsClient::DescribeOssDownloadsOutcomeCallable RdsClient::describeOssDownloadsCa
 
 RdsClient::ModifyParameterOutcome RdsClient::modifyParameter(const ModifyParameterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyParameterOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ RdsClient::ModifyParameterOutcomeCallable RdsClient::modifyParameterCallable(con
 
 RdsClient::ReleaseReplicaOutcome RdsClient::releaseReplica(const ReleaseReplicaRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ReleaseReplicaOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ RdsClient::ReleaseReplicaOutcomeCallable RdsClient::releaseReplicaCallable(const
 
 RdsClient::UpgradeDBInstanceEngineVersionOutcome RdsClient::upgradeDBInstanceEngineVersion(const UpgradeDBInstanceEngineVersionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UpgradeDBInstanceEngineVersionOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ RdsClient::UpgradeDBInstanceEngineVersionOutcomeCallable RdsClient::upgradeDBIns
 
 RdsClient::DescribeReplicasOutcome RdsClient::describeReplicas(const DescribeReplicasRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeReplicasOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ RdsClient::DescribeReplicasOutcomeCallable RdsClient::describeReplicasCallable(c
 
 RdsClient::ModifyDBInstanceConnectionStringOutcome RdsClient::modifyDBInstanceConnectionString(const ModifyDBInstanceConnectionStringRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBInstanceConnectionStringOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ RdsClient::ModifyDBInstanceConnectionStringOutcomeCallable RdsClient::modifyDBIn
 
 RdsClient::StopSyncingOutcome RdsClient::stopSyncing(const StopSyncingRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StopSyncingOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ RdsClient::StopSyncingOutcomeCallable RdsClient::stopSyncingCallable(const StopS
 
 RdsClient::CheckAccountNameAvailableOutcome RdsClient::checkAccountNameAvailable(const CheckAccountNameAvailableRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CheckAccountNameAvailableOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ RdsClient::CheckAccountNameAvailableOutcomeCallable RdsClient::checkAccountNameA
 
 RdsClient::RestartDBInstanceOutcome RdsClient::restartDBInstance(const RestartDBInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RestartDBInstanceOutcome(endpointOutcome.error());
 
@@ -781,7 +773,7 @@ RdsClient::RestartDBInstanceOutcomeCallable RdsClient::restartDBInstanceCallable
 
 RdsClient::ImportDataForSQLServerOutcome RdsClient::importDataForSQLServer(const ImportDataForSQLServerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ImportDataForSQLServerOutcome(endpointOutcome.error());
 
@@ -817,7 +809,7 @@ RdsClient::ImportDataForSQLServerOutcomeCallable RdsClient::importDataForSQLServ
 
 RdsClient::DescribeLogicDBInstanceTopologyOutcome RdsClient::describeLogicDBInstanceTopology(const DescribeLogicDBInstanceTopologyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLogicDBInstanceTopologyOutcome(endpointOutcome.error());
 
@@ -853,7 +845,7 @@ RdsClient::DescribeLogicDBInstanceTopologyOutcomeCallable RdsClient::describeLog
 
 RdsClient::DescribeTagsOutcome RdsClient::describeTags(const DescribeTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTagsOutcome(endpointOutcome.error());
 
@@ -889,7 +881,7 @@ RdsClient::DescribeTagsOutcomeCallable RdsClient::describeTagsCallable(const Des
 
 RdsClient::CheckResourceOutcome RdsClient::checkResource(const CheckResourceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CheckResourceOutcome(endpointOutcome.error());
 
@@ -925,7 +917,7 @@ RdsClient::CheckResourceOutcomeCallable RdsClient::checkResourceCallable(const C
 
 RdsClient::StartDBInstanceDiagnoseOutcome RdsClient::startDBInstanceDiagnose(const StartDBInstanceDiagnoseRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StartDBInstanceDiagnoseOutcome(endpointOutcome.error());
 
@@ -961,7 +953,7 @@ RdsClient::StartDBInstanceDiagnoseOutcomeCallable RdsClient::startDBInstanceDiag
 
 RdsClient::ModifySecurityGroupConfigurationOutcome RdsClient::modifySecurityGroupConfiguration(const ModifySecurityGroupConfigurationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifySecurityGroupConfigurationOutcome(endpointOutcome.error());
 
@@ -997,7 +989,7 @@ RdsClient::ModifySecurityGroupConfigurationOutcomeCallable RdsClient::modifySecu
 
 RdsClient::DescribeCharacterSetNameOutcome RdsClient::describeCharacterSetName(const DescribeCharacterSetNameRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCharacterSetNameOutcome(endpointOutcome.error());
 
@@ -1033,7 +1025,7 @@ RdsClient::DescribeCharacterSetNameOutcomeCallable RdsClient::describeCharacterS
 
 RdsClient::ImportDataFromDatabaseOutcome RdsClient::importDataFromDatabase(const ImportDataFromDatabaseRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ImportDataFromDatabaseOutcome(endpointOutcome.error());
 
@@ -1069,7 +1061,7 @@ RdsClient::ImportDataFromDatabaseOutcomeCallable RdsClient::importDataFromDataba
 
 RdsClient::DescribeMigrateTasksOutcome RdsClient::describeMigrateTasks(const DescribeMigrateTasksRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeMigrateTasksOutcome(endpointOutcome.error());
 
@@ -1105,7 +1097,7 @@ RdsClient::DescribeMigrateTasksOutcomeCallable RdsClient::describeMigrateTasksCa
 
 RdsClient::ModifyDBInstanceNetworkExpireTimeOutcome RdsClient::modifyDBInstanceNetworkExpireTime(const ModifyDBInstanceNetworkExpireTimeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBInstanceNetworkExpireTimeOutcome(endpointOutcome.error());
 
@@ -1141,7 +1133,7 @@ RdsClient::ModifyDBInstanceNetworkExpireTimeOutcomeCallable RdsClient::modifyDBI
 
 RdsClient::CreateAccountOutcome RdsClient::createAccount(const CreateAccountRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateAccountOutcome(endpointOutcome.error());
 
@@ -1177,7 +1169,7 @@ RdsClient::CreateAccountOutcomeCallable RdsClient::createAccountCallable(const C
 
 RdsClient::DescribeModifyParameterLogOutcome RdsClient::describeModifyParameterLog(const DescribeModifyParameterLogRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeModifyParameterLogOutcome(endpointOutcome.error());
 
@@ -1213,7 +1205,7 @@ RdsClient::DescribeModifyParameterLogOutcomeCallable RdsClient::describeModifyPa
 
 RdsClient::DescribeOperatorPermissionOutcome RdsClient::describeOperatorPermission(const DescribeOperatorPermissionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeOperatorPermissionOutcome(endpointOutcome.error());
 
@@ -1249,7 +1241,7 @@ RdsClient::DescribeOperatorPermissionOutcomeCallable RdsClient::describeOperator
 
 RdsClient::DescribeOptimizeAdviceOnMissIndexOutcome RdsClient::describeOptimizeAdviceOnMissIndex(const DescribeOptimizeAdviceOnMissIndexRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeOptimizeAdviceOnMissIndexOutcome(endpointOutcome.error());
 
@@ -1285,7 +1277,7 @@ RdsClient::DescribeOptimizeAdviceOnMissIndexOutcomeCallable RdsClient::describeO
 
 RdsClient::DescribeDampPoliciesByCidOutcome RdsClient::describeDampPoliciesByCid(const DescribeDampPoliciesByCidRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDampPoliciesByCidOutcome(endpointOutcome.error());
 
@@ -1321,7 +1313,7 @@ RdsClient::DescribeDampPoliciesByCidOutcomeCallable RdsClient::describeDampPolic
 
 RdsClient::ModifyDBDescriptionOutcome RdsClient::modifyDBDescription(const ModifyDBDescriptionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBDescriptionOutcome(endpointOutcome.error());
 
@@ -1357,7 +1349,7 @@ RdsClient::ModifyDBDescriptionOutcomeCallable RdsClient::modifyDBDescriptionCall
 
 RdsClient::ImportDatabaseBetweenInstancesOutcome RdsClient::importDatabaseBetweenInstances(const ImportDatabaseBetweenInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ImportDatabaseBetweenInstancesOutcome(endpointOutcome.error());
 
@@ -1393,7 +1385,7 @@ RdsClient::ImportDatabaseBetweenInstancesOutcomeCallable RdsClient::importDataba
 
 RdsClient::RenewInstanceOutcome RdsClient::renewInstance(const RenewInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RenewInstanceOutcome(endpointOutcome.error());
 
@@ -1429,7 +1421,7 @@ RdsClient::RenewInstanceOutcomeCallable RdsClient::renewInstanceCallable(const R
 
 RdsClient::CheckDBNameAvailableOutcome RdsClient::checkDBNameAvailable(const CheckDBNameAvailableRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CheckDBNameAvailableOutcome(endpointOutcome.error());
 
@@ -1465,7 +1457,7 @@ RdsClient::CheckDBNameAvailableOutcomeCallable RdsClient::checkDBNameAvailableCa
 
 RdsClient::ModifyDBInstanceMonitorOutcome RdsClient::modifyDBInstanceMonitor(const ModifyDBInstanceMonitorRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBInstanceMonitorOutcome(endpointOutcome.error());
 
@@ -1501,7 +1493,7 @@ RdsClient::ModifyDBInstanceMonitorOutcomeCallable RdsClient::modifyDBInstanceMon
 
 RdsClient::DescribeSQLLogFilesOutcome RdsClient::describeSQLLogFiles(const DescribeSQLLogFilesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSQLLogFilesOutcome(endpointOutcome.error());
 
@@ -1537,7 +1529,7 @@ RdsClient::DescribeSQLLogFilesOutcomeCallable RdsClient::describeSQLLogFilesCall
 
 RdsClient::CancelImportOutcome RdsClient::cancelImport(const CancelImportRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CancelImportOutcome(endpointOutcome.error());
 
@@ -1573,7 +1565,7 @@ RdsClient::CancelImportOutcomeCallable RdsClient::cancelImportCallable(const Can
 
 RdsClient::ModifyReplicaDescriptionOutcome RdsClient::modifyReplicaDescription(const ModifyReplicaDescriptionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyReplicaDescriptionOutcome(endpointOutcome.error());
 
@@ -1609,7 +1601,7 @@ RdsClient::ModifyReplicaDescriptionOutcomeCallable RdsClient::modifyReplicaDescr
 
 RdsClient::ModifyBackupPolicyOutcome RdsClient::modifyBackupPolicy(const ModifyBackupPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyBackupPolicyOutcome(endpointOutcome.error());
 
@@ -1645,7 +1637,7 @@ RdsClient::ModifyBackupPolicyOutcomeCallable RdsClient::modifyBackupPolicyCallab
 
 RdsClient::DescribeReplicaInitializeProgressOutcome RdsClient::describeReplicaInitializeProgress(const DescribeReplicaInitializeProgressRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeReplicaInitializeProgressOutcome(endpointOutcome.error());
 
@@ -1681,7 +1673,7 @@ RdsClient::DescribeReplicaInitializeProgressOutcomeCallable RdsClient::describeR
 
 RdsClient::DescribeSecurityGroupConfigurationOutcome RdsClient::describeSecurityGroupConfiguration(const DescribeSecurityGroupConfigurationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSecurityGroupConfigurationOutcome(endpointOutcome.error());
 
@@ -1717,7 +1709,7 @@ RdsClient::DescribeSecurityGroupConfigurationOutcomeCallable RdsClient::describe
 
 RdsClient::DescribeParametersOutcome RdsClient::describeParameters(const DescribeParametersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeParametersOutcome(endpointOutcome.error());
 
@@ -1753,7 +1745,7 @@ RdsClient::DescribeParametersOutcomeCallable RdsClient::describeParametersCallab
 
 RdsClient::UpgradeDBInstanceNetWorkInfoOutcome RdsClient::upgradeDBInstanceNetWorkInfo(const UpgradeDBInstanceNetWorkInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UpgradeDBInstanceNetWorkInfoOutcome(endpointOutcome.error());
 
@@ -1789,7 +1781,7 @@ RdsClient::UpgradeDBInstanceNetWorkInfoOutcomeCallable RdsClient::upgradeDBInsta
 
 RdsClient::AddTagsToResourceOutcome RdsClient::addTagsToResource(const AddTagsToResourceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddTagsToResourceOutcome(endpointOutcome.error());
 
@@ -1825,7 +1817,7 @@ RdsClient::AddTagsToResourceOutcomeCallable RdsClient::addTagsToResourceCallable
 
 RdsClient::DescribeBinlogFilesOutcome RdsClient::describeBinlogFiles(const DescribeBinlogFilesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBinlogFilesOutcome(endpointOutcome.error());
 
@@ -1861,7 +1853,7 @@ RdsClient::DescribeBinlogFilesOutcomeCallable RdsClient::describeBinlogFilesCall
 
 RdsClient::DescribeBackupsForSecurityOutcome RdsClient::describeBackupsForSecurity(const DescribeBackupsForSecurityRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBackupsForSecurityOutcome(endpointOutcome.error());
 
@@ -1897,7 +1889,7 @@ RdsClient::DescribeBackupsForSecurityOutcomeCallable RdsClient::describeBackupsF
 
 RdsClient::CreateDiagnosticReportOutcome RdsClient::createDiagnosticReport(const CreateDiagnosticReportRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateDiagnosticReportOutcome(endpointOutcome.error());
 
@@ -1933,7 +1925,7 @@ RdsClient::CreateDiagnosticReportOutcomeCallable RdsClient::createDiagnosticRepo
 
 RdsClient::DescribeSQLLogReportListOutcome RdsClient::describeSQLLogReportList(const DescribeSQLLogReportListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSQLLogReportListOutcome(endpointOutcome.error());
 
@@ -1969,7 +1961,7 @@ RdsClient::DescribeSQLLogReportListOutcomeCallable RdsClient::describeSQLLogRepo
 
 RdsClient::DescribeResourceDiagnosisOutcome RdsClient::describeResourceDiagnosis(const DescribeResourceDiagnosisRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeResourceDiagnosisOutcome(endpointOutcome.error());
 
@@ -2005,7 +1997,7 @@ RdsClient::DescribeResourceDiagnosisOutcomeCallable RdsClient::describeResourceD
 
 RdsClient::CloneDBInstanceOutcome RdsClient::cloneDBInstance(const CloneDBInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CloneDBInstanceOutcome(endpointOutcome.error());
 
@@ -2041,7 +2033,7 @@ RdsClient::CloneDBInstanceOutcomeCallable RdsClient::cloneDBInstanceCallable(con
 
 RdsClient::DescribeTasksOutcome RdsClient::describeTasks(const DescribeTasksRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTasksOutcome(endpointOutcome.error());
 
@@ -2077,7 +2069,7 @@ RdsClient::DescribeTasksOutcomeCallable RdsClient::describeTasksCallable(const D
 
 RdsClient::CreateUploadPathForSQLServerOutcome RdsClient::createUploadPathForSQLServer(const CreateUploadPathForSQLServerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateUploadPathForSQLServerOutcome(endpointOutcome.error());
 
@@ -2113,7 +2105,7 @@ RdsClient::CreateUploadPathForSQLServerOutcomeCallable RdsClient::createUploadPa
 
 RdsClient::DescribeRenewalPriceOutcome RdsClient::describeRenewalPrice(const DescribeRenewalPriceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRenewalPriceOutcome(endpointOutcome.error());
 
@@ -2149,7 +2141,7 @@ RdsClient::DescribeRenewalPriceOutcomeCallable RdsClient::describeRenewalPriceCa
 
 RdsClient::AllocateInstancePublicConnectionOutcome RdsClient::allocateInstancePublicConnection(const AllocateInstancePublicConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AllocateInstancePublicConnectionOutcome(endpointOutcome.error());
 
@@ -2185,7 +2177,7 @@ RdsClient::AllocateInstancePublicConnectionOutcomeCallable RdsClient::allocateIn
 
 RdsClient::DescribeOptimizeAdviceOnStorageOutcome RdsClient::describeOptimizeAdviceOnStorage(const DescribeOptimizeAdviceOnStorageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeOptimizeAdviceOnStorageOutcome(endpointOutcome.error());
 
@@ -2221,7 +2213,7 @@ RdsClient::DescribeOptimizeAdviceOnStorageOutcomeCallable RdsClient::describeOpt
 
 RdsClient::DescribeInstanceAutoRenewAttributeOutcome RdsClient::describeInstanceAutoRenewAttribute(const DescribeInstanceAutoRenewAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceAutoRenewAttributeOutcome(endpointOutcome.error());
 
@@ -2257,7 +2249,7 @@ RdsClient::DescribeInstanceAutoRenewAttributeOutcomeCallable RdsClient::describe
 
 RdsClient::DescribeDBInstanceAttributeOutcome RdsClient::describeDBInstanceAttribute(const DescribeDBInstanceAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceAttributeOutcome(endpointOutcome.error());
 
@@ -2293,7 +2285,7 @@ RdsClient::DescribeDBInstanceAttributeOutcomeCallable RdsClient::describeDBInsta
 
 RdsClient::DescribeDBInstanceUserOutcome RdsClient::describeDBInstanceUser(const DescribeDBInstanceUserRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceUserOutcome(endpointOutcome.error());
 
@@ -2329,7 +2321,7 @@ RdsClient::DescribeDBInstanceUserOutcomeCallable RdsClient::describeDBInstanceUs
 
 RdsClient::CreateTempDBInstanceOutcome RdsClient::createTempDBInstance(const CreateTempDBInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateTempDBInstanceOutcome(endpointOutcome.error());
 
@@ -2365,7 +2357,7 @@ RdsClient::CreateTempDBInstanceOutcomeCallable RdsClient::createTempDBInstanceCa
 
 RdsClient::DescribeImportsForSQLServerOutcome RdsClient::describeImportsForSQLServer(const DescribeImportsForSQLServerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeImportsForSQLServerOutcome(endpointOutcome.error());
 
@@ -2401,7 +2393,7 @@ RdsClient::DescribeImportsForSQLServerOutcomeCallable RdsClient::describeImports
 
 RdsClient::ModifyInstanceAutoRenewalAttributeOutcome RdsClient::modifyInstanceAutoRenewalAttribute(const ModifyInstanceAutoRenewalAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyInstanceAutoRenewalAttributeOutcome(endpointOutcome.error());
 
@@ -2437,7 +2429,7 @@ RdsClient::ModifyInstanceAutoRenewalAttributeOutcomeCallable RdsClient::modifyIn
 
 RdsClient::DescribeSQLCollectorPolicyOutcome RdsClient::describeSQLCollectorPolicy(const DescribeSQLCollectorPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSQLCollectorPolicyOutcome(endpointOutcome.error());
 
@@ -2473,7 +2465,7 @@ RdsClient::DescribeSQLCollectorPolicyOutcomeCallable RdsClient::describeSQLColle
 
 RdsClient::ModifySQLCollectorPolicyOutcome RdsClient::modifySQLCollectorPolicy(const ModifySQLCollectorPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifySQLCollectorPolicyOutcome(endpointOutcome.error());
 
@@ -2509,7 +2501,7 @@ RdsClient::ModifySQLCollectorPolicyOutcomeCallable RdsClient::modifySQLCollector
 
 RdsClient::DescribeBackupsOutcome RdsClient::describeBackups(const DescribeBackupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBackupsOutcome(endpointOutcome.error());
 
@@ -2545,7 +2537,7 @@ RdsClient::DescribeBackupsOutcomeCallable RdsClient::describeBackupsCallable(con
 
 RdsClient::CreateDatabaseOutcome RdsClient::createDatabase(const CreateDatabaseRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateDatabaseOutcome(endpointOutcome.error());
 
@@ -2581,7 +2573,7 @@ RdsClient::CreateDatabaseOutcomeCallable RdsClient::createDatabaseCallable(const
 
 RdsClient::DeleteDBInstanceOutcome RdsClient::deleteDBInstance(const DeleteDBInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteDBInstanceOutcome(endpointOutcome.error());
 
@@ -2617,7 +2609,7 @@ RdsClient::DeleteDBInstanceOutcomeCallable RdsClient::deleteDBInstanceCallable(c
 
 RdsClient::DescribeSQLInjectionInfosOutcome RdsClient::describeSQLInjectionInfos(const DescribeSQLInjectionInfosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSQLInjectionInfosOutcome(endpointOutcome.error());
 
@@ -2653,7 +2645,7 @@ RdsClient::DescribeSQLInjectionInfosOutcomeCallable RdsClient::describeSQLInject
 
 RdsClient::DescribeRealtimeDiagnosesOutcome RdsClient::describeRealtimeDiagnoses(const DescribeRealtimeDiagnosesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRealtimeDiagnosesOutcome(endpointOutcome.error());
 
@@ -2689,7 +2681,7 @@ RdsClient::DescribeRealtimeDiagnosesOutcomeCallable RdsClient::describeRealtimeD
 
 RdsClient::DescribeInstanceAutoRenewalAttributeOutcome RdsClient::describeInstanceAutoRenewalAttribute(const DescribeInstanceAutoRenewalAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeInstanceAutoRenewalAttributeOutcome(endpointOutcome.error());
 
@@ -2725,7 +2717,7 @@ RdsClient::DescribeInstanceAutoRenewalAttributeOutcomeCallable RdsClient::descri
 
 RdsClient::RestoreDBInstanceOutcome RdsClient::restoreDBInstance(const RestoreDBInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RestoreDBInstanceOutcome(endpointOutcome.error());
 
@@ -2761,7 +2753,7 @@ RdsClient::RestoreDBInstanceOutcomeCallable RdsClient::restoreDBInstanceCallable
 
 RdsClient::AddBuDBInstanceRelationOutcome RdsClient::addBuDBInstanceRelation(const AddBuDBInstanceRelationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddBuDBInstanceRelationOutcome(endpointOutcome.error());
 
@@ -2797,7 +2789,7 @@ RdsClient::AddBuDBInstanceRelationOutcomeCallable RdsClient::addBuDBInstanceRela
 
 RdsClient::RevokeOperatorPermissionOutcome RdsClient::revokeOperatorPermission(const RevokeOperatorPermissionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RevokeOperatorPermissionOutcome(endpointOutcome.error());
 
@@ -2833,7 +2825,7 @@ RdsClient::RevokeOperatorPermissionOutcomeCallable RdsClient::revokeOperatorPerm
 
 RdsClient::ModifyDBInstanceSpecOutcome RdsClient::modifyDBInstanceSpec(const ModifyDBInstanceSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBInstanceSpecOutcome(endpointOutcome.error());
 
@@ -2869,7 +2861,7 @@ RdsClient::ModifyDBInstanceSpecOutcomeCallable RdsClient::modifyDBInstanceSpecCa
 
 RdsClient::DescribeDiagnosticReportListOutcome RdsClient::describeDiagnosticReportList(const DescribeDiagnosticReportListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDiagnosticReportListOutcome(endpointOutcome.error());
 
@@ -2905,7 +2897,7 @@ RdsClient::DescribeDiagnosticReportListOutcomeCallable RdsClient::describeDiagno
 
 RdsClient::RemoveTagsFromResourceOutcome RdsClient::removeTagsFromResource(const RemoveTagsFromResourceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveTagsFromResourceOutcome(endpointOutcome.error());
 
@@ -2941,7 +2933,7 @@ RdsClient::RemoveTagsFromResourceOutcomeCallable RdsClient::removeTagsFromResour
 
 RdsClient::DescribeSQLLogRecordsOutcome RdsClient::describeSQLLogRecords(const DescribeSQLLogRecordsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSQLLogRecordsOutcome(endpointOutcome.error());
 
@@ -2977,7 +2969,7 @@ RdsClient::DescribeSQLLogRecordsOutcomeCallable RdsClient::describeSQLLogRecords
 
 RdsClient::ModifySecurityIpsOutcome RdsClient::modifySecurityIps(const ModifySecurityIpsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifySecurityIpsOutcome(endpointOutcome.error());
 
@@ -3013,7 +3005,7 @@ RdsClient::ModifySecurityIpsOutcomeCallable RdsClient::modifySecurityIpsCallable
 
 RdsClient::DescribeMigrateTasksForSQLServerOutcome RdsClient::describeMigrateTasksForSQLServer(const DescribeMigrateTasksForSQLServerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeMigrateTasksForSQLServerOutcome(endpointOutcome.error());
 
@@ -3049,7 +3041,7 @@ RdsClient::DescribeMigrateTasksForSQLServerOutcomeCallable RdsClient::describeMi
 
 RdsClient::ModifyReplicaModeOutcome RdsClient::modifyReplicaMode(const ModifyReplicaModeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyReplicaModeOutcome(endpointOutcome.error());
 
@@ -3085,7 +3077,7 @@ RdsClient::ModifyReplicaModeOutcomeCallable RdsClient::modifyReplicaModeCallable
 
 RdsClient::DeleteDampPolicyOutcome RdsClient::deleteDampPolicy(const DeleteDampPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteDampPolicyOutcome(endpointOutcome.error());
 
@@ -3121,7 +3113,7 @@ RdsClient::DeleteDampPolicyOutcomeCallable RdsClient::deleteDampPolicyCallable(c
 
 RdsClient::GrantAccountPrivilegeOutcome RdsClient::grantAccountPrivilege(const GrantAccountPrivilegeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GrantAccountPrivilegeOutcome(endpointOutcome.error());
 
@@ -3157,7 +3149,7 @@ RdsClient::GrantAccountPrivilegeOutcomeCallable RdsClient::grantAccountPrivilege
 
 RdsClient::GrantOperatorPermissionOutcome RdsClient::grantOperatorPermission(const GrantOperatorPermissionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GrantOperatorPermissionOutcome(endpointOutcome.error());
 
@@ -3193,7 +3185,7 @@ RdsClient::GrantOperatorPermissionOutcomeCallable RdsClient::grantOperatorPermis
 
 RdsClient::ModifyPostpaidDBInstanceSpecOutcome RdsClient::modifyPostpaidDBInstanceSpec(const ModifyPostpaidDBInstanceSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyPostpaidDBInstanceSpecOutcome(endpointOutcome.error());
 
@@ -3229,7 +3221,7 @@ RdsClient::ModifyPostpaidDBInstanceSpecOutcomeCallable RdsClient::modifyPostpaid
 
 RdsClient::CreatePolicyWithSpecifiedPolicyOutcome RdsClient::createPolicyWithSpecifiedPolicy(const CreatePolicyWithSpecifiedPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreatePolicyWithSpecifiedPolicyOutcome(endpointOutcome.error());
 
@@ -3265,7 +3257,7 @@ RdsClient::CreatePolicyWithSpecifiedPolicyOutcomeCallable RdsClient::createPolic
 
 RdsClient::ModifyDBInstanceTDEOutcome RdsClient::modifyDBInstanceTDE(const ModifyDBInstanceTDERequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBInstanceTDEOutcome(endpointOutcome.error());
 
@@ -3301,7 +3293,7 @@ RdsClient::ModifyDBInstanceTDEOutcomeCallable RdsClient::modifyDBInstanceTDECall
 
 RdsClient::DescribeDBInstancePerformanceOutcome RdsClient::describeDBInstancePerformance(const DescribeDBInstancePerformanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstancePerformanceOutcome(endpointOutcome.error());
 
@@ -3337,7 +3329,7 @@ RdsClient::DescribeDBInstancePerformanceOutcomeCallable RdsClient::describeDBIns
 
 RdsClient::DescribeVpcZoneNosOutcome RdsClient::describeVpcZoneNos(const DescribeVpcZoneNosRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVpcZoneNosOutcome(endpointOutcome.error());
 
@@ -3373,7 +3365,7 @@ RdsClient::DescribeVpcZoneNosOutcomeCallable RdsClient::describeVpcZoneNosCallab
 
 RdsClient::DescribeOptimizeAdviceOnBigTableOutcome RdsClient::describeOptimizeAdviceOnBigTable(const DescribeOptimizeAdviceOnBigTableRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeOptimizeAdviceOnBigTableOutcome(endpointOutcome.error());
 
@@ -3409,7 +3401,7 @@ RdsClient::DescribeOptimizeAdviceOnBigTableOutcomeCallable RdsClient::describeOp
 
 RdsClient::DescribeDBInstanceExtendAttributeOutcome RdsClient::describeDBInstanceExtendAttribute(const DescribeDBInstanceExtendAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceExtendAttributeOutcome(endpointOutcome.error());
 
@@ -3445,7 +3437,7 @@ RdsClient::DescribeDBInstanceExtendAttributeOutcomeCallable RdsClient::describeD
 
 RdsClient::DescribeDampPolicyByCommentOutcome RdsClient::describeDampPolicyByComment(const DescribeDampPolicyByCommentRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDampPolicyByCommentOutcome(endpointOutcome.error());
 
@@ -3481,7 +3473,7 @@ RdsClient::DescribeDampPolicyByCommentOutcomeCallable RdsClient::describeDampPol
 
 RdsClient::DescribePreCheckResultsOutcome RdsClient::describePreCheckResults(const DescribePreCheckResultsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribePreCheckResultsOutcome(endpointOutcome.error());
 
@@ -3517,7 +3509,7 @@ RdsClient::DescribePreCheckResultsOutcomeCallable RdsClient::describePreCheckRes
 
 RdsClient::DescribeDBInstancesOutcome RdsClient::describeDBInstances(const DescribeDBInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstancesOutcome(endpointOutcome.error());
 
@@ -3553,7 +3545,7 @@ RdsClient::DescribeDBInstancesOutcomeCallable RdsClient::describeDBInstancesCall
 
 RdsClient::StartArchiveSQLLogOutcome RdsClient::startArchiveSQLLog(const StartArchiveSQLLogRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StartArchiveSQLLogOutcome(endpointOutcome.error());
 
@@ -3589,7 +3581,7 @@ RdsClient::StartArchiveSQLLogOutcomeCallable RdsClient::startArchiveSQLLogCallab
 
 RdsClient::CreateDBInstanceReplicaOutcome RdsClient::createDBInstanceReplica(const CreateDBInstanceReplicaRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateDBInstanceReplicaOutcome(endpointOutcome.error());
 
@@ -3625,7 +3617,7 @@ RdsClient::CreateDBInstanceReplicaOutcomeCallable RdsClient::createDBInstanceRep
 
 RdsClient::ModifyDampPolicyOutcome RdsClient::modifyDampPolicy(const ModifyDampPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDampPolicyOutcome(endpointOutcome.error());
 
@@ -3661,7 +3653,7 @@ RdsClient::ModifyDampPolicyOutcomeCallable RdsClient::modifyDampPolicyCallable(c
 
 RdsClient::AllocateInstancePrivateConnectionOutcome RdsClient::allocateInstancePrivateConnection(const AllocateInstancePrivateConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AllocateInstancePrivateConnectionOutcome(endpointOutcome.error());
 
@@ -3697,7 +3689,7 @@ RdsClient::AllocateInstancePrivateConnectionOutcomeCallable RdsClient::allocateI
 
 RdsClient::RevokeAccountPrivilegeOutcome RdsClient::revokeAccountPrivilege(const RevokeAccountPrivilegeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RevokeAccountPrivilegeOutcome(endpointOutcome.error());
 
@@ -3733,7 +3725,7 @@ RdsClient::RevokeAccountPrivilegeOutcomeCallable RdsClient::revokeAccountPrivile
 
 RdsClient::DegradeDBInstanceSpecOutcome RdsClient::degradeDBInstanceSpec(const DegradeDBInstanceSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DegradeDBInstanceSpecOutcome(endpointOutcome.error());
 
@@ -3769,7 +3761,7 @@ RdsClient::DegradeDBInstanceSpecOutcomeCallable RdsClient::degradeDBInstanceSpec
 
 RdsClient::DescribeParameterTemplatesOutcome RdsClient::describeParameterTemplates(const DescribeParameterTemplatesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeParameterTemplatesOutcome(endpointOutcome.error());
 
@@ -3805,7 +3797,7 @@ RdsClient::DescribeParameterTemplatesOutcomeCallable RdsClient::describeParamete
 
 RdsClient::DescibeImportsFromDatabaseOutcome RdsClient::descibeImportsFromDatabase(const DescibeImportsFromDatabaseRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescibeImportsFromDatabaseOutcome(endpointOutcome.error());
 
@@ -3841,7 +3833,7 @@ RdsClient::DescibeImportsFromDatabaseOutcomeCallable RdsClient::descibeImportsFr
 
 RdsClient::DescribeDatabaseLockDiagnosisOutcome RdsClient::describeDatabaseLockDiagnosis(const DescribeDatabaseLockDiagnosisRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDatabaseLockDiagnosisOutcome(endpointOutcome.error());
 
@@ -3877,7 +3869,7 @@ RdsClient::DescribeDatabaseLockDiagnosisOutcomeCallable RdsClient::describeDatab
 
 RdsClient::DescribeOptimizeAdviceOnExcessIndexOutcome RdsClient::describeOptimizeAdviceOnExcessIndex(const DescribeOptimizeAdviceOnExcessIndexRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeOptimizeAdviceOnExcessIndexOutcome(endpointOutcome.error());
 
@@ -3913,7 +3905,7 @@ RdsClient::DescribeOptimizeAdviceOnExcessIndexOutcomeCallable RdsClient::describ
 
 RdsClient::CopyDatabaseOutcome RdsClient::copyDatabase(const CopyDatabaseRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CopyDatabaseOutcome(endpointOutcome.error());
 
@@ -3949,7 +3941,7 @@ RdsClient::CopyDatabaseOutcomeCallable RdsClient::copyDatabaseCallable(const Cop
 
 RdsClient::CreateDBInstanceOutcome RdsClient::createDBInstance(const CreateDBInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateDBInstanceOutcome(endpointOutcome.error());
 
@@ -3985,7 +3977,7 @@ RdsClient::CreateDBInstanceOutcomeCallable RdsClient::createDBInstanceCallable(c
 
 RdsClient::DescribeDBInstanceTDEOutcome RdsClient::describeDBInstanceTDE(const DescribeDBInstanceTDERequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceTDEOutcome(endpointOutcome.error());
 
@@ -4021,7 +4013,7 @@ RdsClient::DescribeDBInstanceTDEOutcomeCallable RdsClient::describeDBInstanceTDE
 
 RdsClient::ModifyDBInstanceSSLOutcome RdsClient::modifyDBInstanceSSL(const ModifyDBInstanceSSLRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBInstanceSSLOutcome(endpointOutcome.error());
 
@@ -4057,7 +4049,7 @@ RdsClient::ModifyDBInstanceSSLOutcomeCallable RdsClient::modifyDBInstanceSSLCall
 
 RdsClient::DescribeSQLLogReportsOutcome RdsClient::describeSQLLogReports(const DescribeSQLLogReportsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSQLLogReportsOutcome(endpointOutcome.error());
 
@@ -4093,7 +4085,7 @@ RdsClient::DescribeSQLLogReportsOutcomeCallable RdsClient::describeSQLLogReports
 
 RdsClient::DescribeSQLDiagnosisListOutcome RdsClient::describeSQLDiagnosisList(const DescribeSQLDiagnosisListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSQLDiagnosisListOutcome(endpointOutcome.error());
 
@@ -4129,7 +4121,7 @@ RdsClient::DescribeSQLDiagnosisListOutcomeCallable RdsClient::describeSQLDiagnos
 
 RdsClient::ModifyDBInstanceConnectionModeOutcome RdsClient::modifyDBInstanceConnectionMode(const ModifyDBInstanceConnectionModeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBInstanceConnectionModeOutcome(endpointOutcome.error());
 
@@ -4165,7 +4157,7 @@ RdsClient::ModifyDBInstanceConnectionModeOutcomeCallable RdsClient::modifyDBInst
 
 RdsClient::DescribeDBInstanceNetInfoOutcome RdsClient::describeDBInstanceNetInfo(const DescribeDBInstanceNetInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceNetInfoOutcome(endpointOutcome.error());
 
@@ -4201,7 +4193,7 @@ RdsClient::DescribeDBInstanceNetInfoOutcomeCallable RdsClient::describeDBInstanc
 
 RdsClient::AllocateReadWriteSplittingConnectionOutcome RdsClient::allocateReadWriteSplittingConnection(const AllocateReadWriteSplittingConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AllocateReadWriteSplittingConnectionOutcome(endpointOutcome.error());
 
@@ -4237,7 +4229,7 @@ RdsClient::AllocateReadWriteSplittingConnectionOutcomeCallable RdsClient::alloca
 
 RdsClient::ReleaseInstancePublicConnectionOutcome RdsClient::releaseInstancePublicConnection(const ReleaseInstancePublicConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ReleaseInstancePublicConnectionOutcome(endpointOutcome.error());
 
@@ -4273,7 +4265,7 @@ RdsClient::ReleaseInstancePublicConnectionOutcomeCallable RdsClient::releaseInst
 
 RdsClient::CalculateDBInstanceWeightOutcome RdsClient::calculateDBInstanceWeight(const CalculateDBInstanceWeightRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CalculateDBInstanceWeightOutcome(endpointOutcome.error());
 
@@ -4309,7 +4301,7 @@ RdsClient::CalculateDBInstanceWeightOutcomeCallable RdsClient::calculateDBInstan
 
 RdsClient::ModifyReplicaRelationOutcome RdsClient::modifyReplicaRelation(const ModifyReplicaRelationRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyReplicaRelationOutcome(endpointOutcome.error());
 
@@ -4345,7 +4337,7 @@ RdsClient::ModifyReplicaRelationOutcomeCallable RdsClient::modifyReplicaRelation
 
 RdsClient::ModifyDBInstanceNetworkTypeOutcome RdsClient::modifyDBInstanceNetworkType(const ModifyDBInstanceNetworkTypeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBInstanceNetworkTypeOutcome(endpointOutcome.error());
 
@@ -4381,7 +4373,7 @@ RdsClient::ModifyDBInstanceNetworkTypeOutcomeCallable RdsClient::modifyDBInstanc
 
 RdsClient::DescribeDBInstanceNetworkOutcome RdsClient::describeDBInstanceNetwork(const DescribeDBInstanceNetworkRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceNetworkOutcome(endpointOutcome.error());
 
@@ -4417,7 +4409,7 @@ RdsClient::DescribeDBInstanceNetworkOutcomeCallable RdsClient::describeDBInstanc
 
 RdsClient::DescribeAbnormalDBInstancesOutcome RdsClient::describeAbnormalDBInstances(const DescribeAbnormalDBInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAbnormalDBInstancesOutcome(endpointOutcome.error());
 
@@ -4453,7 +4445,7 @@ RdsClient::DescribeAbnormalDBInstancesOutcomeCallable RdsClient::describeAbnorma
 
 RdsClient::DescribeSlowLogsOutcome RdsClient::describeSlowLogs(const DescribeSlowLogsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSlowLogsOutcome(endpointOutcome.error());
 
@@ -4489,7 +4481,7 @@ RdsClient::DescribeSlowLogsOutcomeCallable RdsClient::describeSlowLogsCallable(c
 
 RdsClient::CreateSQLDiagnosisOutcome RdsClient::createSQLDiagnosis(const CreateSQLDiagnosisRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateSQLDiagnosisOutcome(endpointOutcome.error());
 
@@ -4525,7 +4517,7 @@ RdsClient::CreateSQLDiagnosisOutcomeCallable RdsClient::createSQLDiagnosisCallab
 
 RdsClient::CreateBackupOutcome RdsClient::createBackup(const CreateBackupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateBackupOutcome(endpointOutcome.error());
 
@@ -4561,7 +4553,7 @@ RdsClient::CreateBackupOutcomeCallable RdsClient::createBackupCallable(const Cre
 
 RdsClient::DescribeReplicaUsageOutcome RdsClient::describeReplicaUsage(const DescribeReplicaUsageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeReplicaUsageOutcome(endpointOutcome.error());
 
@@ -4597,7 +4589,7 @@ RdsClient::DescribeReplicaUsageOutcomeCallable RdsClient::describeReplicaUsageCa
 
 RdsClient::ModifyReadWriteSplittingConnectionOutcome RdsClient::modifyReadWriteSplittingConnection(const ModifyReadWriteSplittingConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyReadWriteSplittingConnectionOutcome(endpointOutcome.error());
 
@@ -4633,7 +4625,7 @@ RdsClient::ModifyReadWriteSplittingConnectionOutcomeCallable RdsClient::modifyRe
 
 RdsClient::ModifyDBInstanceMaintainTimeOutcome RdsClient::modifyDBInstanceMaintainTime(const ModifyDBInstanceMaintainTimeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBInstanceMaintainTimeOutcome(endpointOutcome.error());
 
@@ -4669,7 +4661,7 @@ RdsClient::ModifyDBInstanceMaintainTimeOutcomeCallable RdsClient::modifyDBInstan
 
 RdsClient::ModifyDBInstanceDescriptionOutcome RdsClient::modifyDBInstanceDescription(const ModifyDBInstanceDescriptionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBInstanceDescriptionOutcome(endpointOutcome.error());
 
@@ -4705,7 +4697,7 @@ RdsClient::ModifyDBInstanceDescriptionOutcomeCallable RdsClient::modifyDBInstanc
 
 RdsClient::DescribeDBInstanceNetworkDetailOutcome RdsClient::describeDBInstanceNetworkDetail(const DescribeDBInstanceNetworkDetailRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceNetworkDetailOutcome(endpointOutcome.error());
 
@@ -4741,7 +4733,7 @@ RdsClient::DescribeDBInstanceNetworkDetailOutcomeCallable RdsClient::describeDBI
 
 RdsClient::DescribeReplicaPerformanceOutcome RdsClient::describeReplicaPerformance(const DescribeReplicaPerformanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeReplicaPerformanceOutcome(endpointOutcome.error());
 
@@ -4777,7 +4769,7 @@ RdsClient::DescribeReplicaPerformanceOutcomeCallable RdsClient::describeReplicaP
 
 RdsClient::DescribeSQLDiagnosisOutcome RdsClient::describeSQLDiagnosis(const DescribeSQLDiagnosisRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSQLDiagnosisOutcome(endpointOutcome.error());
 
@@ -4813,7 +4805,7 @@ RdsClient::DescribeSQLDiagnosisOutcomeCallable RdsClient::describeSQLDiagnosisCa
 
 RdsClient::DescribeDampPolicyByPolicyNameOutcome RdsClient::describeDampPolicyByPolicyName(const DescribeDampPolicyByPolicyNameRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDampPolicyByPolicyNameOutcome(endpointOutcome.error());
 
@@ -4849,7 +4841,7 @@ RdsClient::DescribeDampPolicyByPolicyNameOutcomeCallable RdsClient::describeDamp
 
 RdsClient::ModifyResourceGroupOutcome RdsClient::modifyResourceGroup(const ModifyResourceGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyResourceGroupOutcome(endpointOutcome.error());
 
@@ -4885,7 +4877,7 @@ RdsClient::ModifyResourceGroupOutcomeCallable RdsClient::modifyResourceGroupCall
 
 RdsClient::DescribeOssDownloadsForSQLServerOutcome RdsClient::describeOssDownloadsForSQLServer(const DescribeOssDownloadsForSQLServerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeOssDownloadsForSQLServerOutcome(endpointOutcome.error());
 
@@ -4921,7 +4913,7 @@ RdsClient::DescribeOssDownloadsForSQLServerOutcomeCallable RdsClient::describeOs
 
 RdsClient::RequestServiceOfCloudDBAOutcome RdsClient::requestServiceOfCloudDBA(const RequestServiceOfCloudDBARequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RequestServiceOfCloudDBAOutcome(endpointOutcome.error());
 
@@ -4957,7 +4949,7 @@ RdsClient::RequestServiceOfCloudDBAOutcomeCallable RdsClient::requestServiceOfCl
 
 RdsClient::ResetAccountOutcome RdsClient::resetAccount(const ResetAccountRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ResetAccountOutcome(endpointOutcome.error());
 
@@ -4993,7 +4985,7 @@ RdsClient::ResetAccountOutcomeCallable RdsClient::resetAccountCallable(const Res
 
 RdsClient::PreCheckBeforeImportDataOutcome RdsClient::preCheckBeforeImportData(const PreCheckBeforeImportDataRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return PreCheckBeforeImportDataOutcome(endpointOutcome.error());
 
@@ -5029,7 +5021,7 @@ RdsClient::PreCheckBeforeImportDataOutcomeCallable RdsClient::preCheckBeforeImpo
 
 RdsClient::DescribeResourceUsageOutcome RdsClient::describeResourceUsage(const DescribeResourceUsageRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeResourceUsageOutcome(endpointOutcome.error());
 
@@ -5065,7 +5057,7 @@ RdsClient::DescribeResourceUsageOutcomeCallable RdsClient::describeResourceUsage
 
 RdsClient::PurgeDBInstanceLogOutcome RdsClient::purgeDBInstanceLog(const PurgeDBInstanceLogRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return PurgeDBInstanceLogOutcome(endpointOutcome.error());
 
@@ -5101,7 +5093,7 @@ RdsClient::PurgeDBInstanceLogOutcomeCallable RdsClient::purgeDBInstanceLogCallab
 
 RdsClient::DescribeTaskInfoOutcome RdsClient::describeTaskInfo(const DescribeTaskInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTaskInfoOutcome(endpointOutcome.error());
 
@@ -5137,7 +5129,7 @@ RdsClient::DescribeTaskInfoOutcomeCallable RdsClient::describeTaskInfoCallable(c
 
 RdsClient::DescribeRegionsOutcome RdsClient::describeRegions(const DescribeRegionsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRegionsOutcome(endpointOutcome.error());
 
@@ -5173,7 +5165,7 @@ RdsClient::DescribeRegionsOutcomeCallable RdsClient::describeRegionsCallable(con
 
 RdsClient::MigrateToOtherZoneOutcome RdsClient::migrateToOtherZone(const MigrateToOtherZoneRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return MigrateToOtherZoneOutcome(endpointOutcome.error());
 
@@ -5209,7 +5201,7 @@ RdsClient::MigrateToOtherZoneOutcomeCallable RdsClient::migrateToOtherZoneCallab
 
 RdsClient::DescribeOptimizeAdviceOnMissPKOutcome RdsClient::describeOptimizeAdviceOnMissPK(const DescribeOptimizeAdviceOnMissPKRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeOptimizeAdviceOnMissPKOutcome(endpointOutcome.error());
 
@@ -5245,7 +5237,7 @@ RdsClient::DescribeOptimizeAdviceOnMissPKOutcomeCallable RdsClient::describeOpti
 
 RdsClient::DeleteAccountOutcome RdsClient::deleteAccount(const DeleteAccountRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteAccountOutcome(endpointOutcome.error());
 
@@ -5281,7 +5273,7 @@ RdsClient::DeleteAccountOutcomeCallable RdsClient::deleteAccountCallable(const D
 
 RdsClient::DescribeSlowLogRecordsOutcome RdsClient::describeSlowLogRecords(const DescribeSlowLogRecordsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSlowLogRecordsOutcome(endpointOutcome.error());
 
@@ -5317,7 +5309,7 @@ RdsClient::DescribeSlowLogRecordsOutcomeCallable RdsClient::describeSlowLogRecor
 
 RdsClient::UpgradeDBInstanceNetworkOutcome RdsClient::upgradeDBInstanceNetwork(const UpgradeDBInstanceNetworkRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UpgradeDBInstanceNetworkOutcome(endpointOutcome.error());
 
@@ -5353,7 +5345,7 @@ RdsClient::UpgradeDBInstanceNetworkOutcomeCallable RdsClient::upgradeDBInstanceN
 
 RdsClient::ReleaseReadWriteSplittingConnectionOutcome RdsClient::releaseReadWriteSplittingConnection(const ReleaseReadWriteSplittingConnectionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ReleaseReadWriteSplittingConnectionOutcome(endpointOutcome.error());
 
@@ -5389,7 +5381,7 @@ RdsClient::ReleaseReadWriteSplittingConnectionOutcomeCallable RdsClient::release
 
 RdsClient::DescribeFilesForSQLServerOutcome RdsClient::describeFilesForSQLServer(const DescribeFilesForSQLServerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeFilesForSQLServerOutcome(endpointOutcome.error());
 
@@ -5425,7 +5417,7 @@ RdsClient::DescribeFilesForSQLServerOutcomeCallable RdsClient::describeFilesForS
 
 RdsClient::DescribeErrorLogsOutcome RdsClient::describeErrorLogs(const DescribeErrorLogsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeErrorLogsOutcome(endpointOutcome.error());
 
@@ -5461,7 +5453,7 @@ RdsClient::DescribeErrorLogsOutcomeCallable RdsClient::describeErrorLogsCallable
 
 RdsClient::ModifyDBInstanceHAConfigOutcome RdsClient::modifyDBInstanceHAConfig(const ModifyDBInstanceHAConfigRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyDBInstanceHAConfigOutcome(endpointOutcome.error());
 
@@ -5497,7 +5489,7 @@ RdsClient::ModifyDBInstanceHAConfigOutcomeCallable RdsClient::modifyDBInstanceHA
 
 RdsClient::DescribeDBInstancesAsCsvOutcome RdsClient::describeDBInstancesAsCsv(const DescribeDBInstancesAsCsvRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstancesAsCsvOutcome(endpointOutcome.error());
 
@@ -5533,7 +5525,7 @@ RdsClient::DescribeDBInstancesAsCsvOutcomeCallable RdsClient::describeDBInstance
 
 RdsClient::ResetAccountPasswordOutcome RdsClient::resetAccountPassword(const ResetAccountPasswordRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ResetAccountPasswordOutcome(endpointOutcome.error());
 
@@ -5569,7 +5561,7 @@ RdsClient::ResetAccountPasswordOutcomeCallable RdsClient::resetAccountPasswordCa
 
 RdsClient::DescribeAccountsOutcome RdsClient::describeAccounts(const DescribeAccountsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAccountsOutcome(endpointOutcome.error());
 
@@ -5605,7 +5597,7 @@ RdsClient::DescribeAccountsOutcomeCallable RdsClient::describeAccountsCallable(c
 
 RdsClient::DescribePriceOutcome RdsClient::describePrice(const DescribePriceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribePriceOutcome(endpointOutcome.error());
 
@@ -5641,7 +5633,7 @@ RdsClient::DescribePriceOutcomeCallable RdsClient::describePriceCallable(const D
 
 RdsClient::DescribeDBInstanceByTagsOutcome RdsClient::describeDBInstanceByTags(const DescribeDBInstanceByTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceByTagsOutcome(endpointOutcome.error());
 
@@ -5677,7 +5669,7 @@ RdsClient::DescribeDBInstanceByTagsOutcomeCallable RdsClient::describeDBInstance
 
 RdsClient::DescribeDBInstanceSSLOutcome RdsClient::describeDBInstanceSSL(const DescribeDBInstanceSSLRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceSSLOutcome(endpointOutcome.error());
 
@@ -5713,7 +5705,7 @@ RdsClient::DescribeDBInstanceSSLOutcomeCallable RdsClient::describeDBInstanceSSL
 
 RdsClient::CreateDampPolicyOutcome RdsClient::createDampPolicy(const CreateDampPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateDampPolicyOutcome(endpointOutcome.error());
 
@@ -5749,7 +5741,7 @@ RdsClient::CreateDampPolicyOutcomeCallable RdsClient::createDampPolicyCallable(c
 
 RdsClient::DescribeDBInstancesByPerformanceOutcome RdsClient::describeDBInstancesByPerformance(const DescribeDBInstancesByPerformanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstancesByPerformanceOutcome(endpointOutcome.error());
 
@@ -5785,7 +5777,7 @@ RdsClient::DescribeDBInstancesByPerformanceOutcomeCallable RdsClient::describeDB
 
 RdsClient::RenewDBInstanceOutcome RdsClient::renewDBInstance(const RenewDBInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RenewDBInstanceOutcome(endpointOutcome.error());
 
@@ -5821,7 +5813,7 @@ RdsClient::RenewDBInstanceOutcomeCallable RdsClient::renewDBInstanceCallable(con
 
 RdsClient::QueryPriceForBuyOutcome RdsClient::queryPriceForBuy(const QueryPriceForBuyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return QueryPriceForBuyOutcome(endpointOutcome.error());
 
@@ -5857,7 +5849,7 @@ RdsClient::QueryPriceForBuyOutcomeCallable RdsClient::queryPriceForBuyCallable(c
 
 RdsClient::DescribeSQLReportsOutcome RdsClient::describeSQLReports(const DescribeSQLReportsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeSQLReportsOutcome(endpointOutcome.error());
 
@@ -5893,7 +5885,7 @@ RdsClient::DescribeSQLReportsOutcomeCallable RdsClient::describeSQLReportsCallab
 
 RdsClient::DescribeBackupTasksOutcome RdsClient::describeBackupTasks(const DescribeBackupTasksRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBackupTasksOutcome(endpointOutcome.error());
 
@@ -5929,7 +5921,7 @@ RdsClient::DescribeBackupTasksOutcomeCallable RdsClient::describeBackupTasksCall
 
 RdsClient::DeleteDatabaseOutcome RdsClient::deleteDatabase(const DeleteDatabaseRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteDatabaseOutcome(endpointOutcome.error());
 
@@ -5965,7 +5957,7 @@ RdsClient::DeleteDatabaseOutcomeCallable RdsClient::deleteDatabaseCallable(const
 
 RdsClient::ModifyGuardDomainModeOutcome RdsClient::modifyGuardDomainMode(const ModifyGuardDomainModeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyGuardDomainModeOutcome(endpointOutcome.error());
 
@@ -6001,7 +5993,7 @@ RdsClient::ModifyGuardDomainModeOutcomeCallable RdsClient::modifyGuardDomainMode
 
 RdsClient::DescribeBackupPolicyOutcome RdsClient::describeBackupPolicy(const DescribeBackupPolicyRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBackupPolicyOutcome(endpointOutcome.error());
 
@@ -6037,7 +6029,7 @@ RdsClient::DescribeBackupPolicyOutcomeCallable RdsClient::describeBackupPolicyCa
 
 RdsClient::CreateMigrateTaskForSQLServerOutcome RdsClient::createMigrateTaskForSQLServer(const CreateMigrateTaskForSQLServerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateMigrateTaskForSQLServerOutcome(endpointOutcome.error());
 
@@ -6073,7 +6065,7 @@ RdsClient::CreateMigrateTaskForSQLServerOutcomeCallable RdsClient::createMigrate
 
 RdsClient::DescribeDBInstanceIPArrayListOutcome RdsClient::describeDBInstanceIPArrayList(const DescribeDBInstanceIPArrayListRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeDBInstanceIPArrayListOutcome(endpointOutcome.error());
 
@@ -6109,7 +6101,7 @@ RdsClient::DescribeDBInstanceIPArrayListOutcomeCallable RdsClient::describeDBIns
 
 RdsClient::SwitchDBInstanceHAOutcome RdsClient::switchDBInstanceHA(const SwitchDBInstanceHARequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SwitchDBInstanceHAOutcome(endpointOutcome.error());
 
@@ -6145,7 +6137,7 @@ RdsClient::SwitchDBInstanceHAOutcomeCallable RdsClient::switchDBInstanceHACallab
 
 RdsClient::ResetAccountForPGOutcome RdsClient::resetAccountForPG(const ResetAccountForPGRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ResetAccountForPGOutcome(endpointOutcome.error());
 
@@ -6181,7 +6173,7 @@ RdsClient::ResetAccountForPGOutcomeCallable RdsClient::resetAccountForPGCallable
 
 RdsClient::DescribeBackupSetsForSecurityOutcome RdsClient::describeBackupSetsForSecurity(const DescribeBackupSetsForSecurityRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeBackupSetsForSecurityOutcome(endpointOutcome.error());
 

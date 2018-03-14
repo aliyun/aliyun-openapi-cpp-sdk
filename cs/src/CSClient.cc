@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::CS;
 using namespace AlibabaCloud::CS::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "CS";
+}
+
 CSClient::CSClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RoaServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RoaServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CSClient::CSClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RoaServiceClient(credentialsProvider, configuration)
+	RoaServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CSClient::CSClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RoaServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RoaServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CSClient::~CSClient()
 {}
 
-CoreClient::EndpointOutcome CSClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 CSClient::AttachInstancesOutcome CSClient::attachInstances(const AttachInstancesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AttachInstancesOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ CSClient::AttachInstancesOutcomeCallable CSClient::attachInstancesCallable(const
 
 CSClient::CallbackClusterTokenOutcome CSClient::callbackClusterToken(const CallbackClusterTokenRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CallbackClusterTokenOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ CSClient::CallbackClusterTokenOutcomeCallable CSClient::callbackClusterTokenCall
 
 CSClient::DescribeTemplatesOutcome CSClient::describeTemplates(const DescribeTemplatesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTemplatesOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ CSClient::DescribeTemplatesOutcomeCallable CSClient::describeTemplatesCallable(c
 
 CSClient::GetProjectEventsOutcome CSClient::getProjectEvents(const GetProjectEventsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetProjectEventsOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ CSClient::GetProjectEventsOutcomeCallable CSClient::getProjectEventsCallable(con
 
 CSClient::CheckAliyunCSServiceRoleOutcome CSClient::checkAliyunCSServiceRole(const CheckAliyunCSServiceRoleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CheckAliyunCSServiceRoleOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ CSClient::CheckAliyunCSServiceRoleOutcomeCallable CSClient::checkAliyunCSService
 
 CSClient::DescribeTemplateAttributeOutcome CSClient::describeTemplateAttribute(const DescribeTemplateAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTemplateAttributeOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ CSClient::DescribeTemplateAttributeOutcomeCallable CSClient::describeTemplateAtt
 
 CSClient::CreateTemplateOutcome CSClient::createTemplate(const CreateTemplateRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateTemplateOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ CSClient::CreateTemplateOutcomeCallable CSClient::createTemplateCallable(const C
 
 CSClient::DescribeClusterCertsOutcome CSClient::describeClusterCerts(const DescribeClusterCertsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClusterCertsOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ CSClient::DescribeClusterCertsOutcomeCallable CSClient::describeClusterCertsCall
 
 CSClient::DeleteClusterOutcome CSClient::deleteCluster(const DeleteClusterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteClusterOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ CSClient::DeleteClusterOutcomeCallable CSClient::deleteClusterCallable(const Del
 
 CSClient::DescribeClusterNodesOutcome CSClient::describeClusterNodes(const DescribeClusterNodesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClusterNodesOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ CSClient::DescribeClusterNodesOutcomeCallable CSClient::describeClusterNodesCall
 
 CSClient::CallBackAgilityClusterOutcome CSClient::callBackAgilityCluster(const CallBackAgilityClusterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CallBackAgilityClusterOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ CSClient::CallBackAgilityClusterOutcomeCallable CSClient::callBackAgilityCluster
 
 CSClient::DescribeClusterScaledNodeOutcome CSClient::describeClusterScaledNode(const DescribeClusterScaledNodeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClusterScaledNodeOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ CSClient::DescribeClusterScaledNodeOutcomeCallable CSClient::describeClusterScal
 
 CSClient::DescribeClusterLogsOutcome CSClient::describeClusterLogs(const DescribeClusterLogsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClusterLogsOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ CSClient::DescribeClusterLogsOutcomeCallable CSClient::describeClusterLogsCallab
 
 CSClient::DescribeClusterDetailOutcome CSClient::describeClusterDetail(const DescribeClusterDetailRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClusterDetailOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ CSClient::DescribeClusterDetailOutcomeCallable CSClient::describeClusterDetailCa
 
 CSClient::ResetClusterNodeOutcome CSClient::resetClusterNode(const ResetClusterNodeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ResetClusterNodeOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ CSClient::ResetClusterNodeOutcomeCallable CSClient::resetClusterNodeCallable(con
 
 CSClient::DescribeServiceContainersOutcome CSClient::describeServiceContainers(const DescribeServiceContainersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeServiceContainersOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ CSClient::DescribeServiceContainersOutcomeCallable CSClient::describeServiceCont
 
 CSClient::DescribeTaskInfoOutcome CSClient::describeTaskInfo(const DescribeTaskInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTaskInfoOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ CSClient::DescribeTaskInfoOutcomeCallable CSClient::describeTaskInfoCallable(con
 
 CSClient::GetClusterProjectsOutcome CSClient::getClusterProjects(const GetClusterProjectsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetClusterProjectsOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ CSClient::GetClusterProjectsOutcomeCallable CSClient::getClusterProjectsCallable
 
 CSClient::DescribeClusterServicesOutcome CSClient::describeClusterServices(const DescribeClusterServicesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClusterServicesOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ CSClient::DescribeClusterServicesOutcomeCallable CSClient::describeClusterServic
 
 CSClient::ScaleInClusterOutcome CSClient::scaleInCluster(const ScaleInClusterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ScaleInClusterOutcome(endpointOutcome.error());
 
@@ -781,7 +773,7 @@ CSClient::ScaleInClusterOutcomeCallable CSClient::scaleInClusterCallable(const S
 
 CSClient::DeleteClusterNodeOutcome CSClient::deleteClusterNode(const DeleteClusterNodeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteClusterNodeOutcome(endpointOutcome.error());
 
@@ -817,7 +809,7 @@ CSClient::DeleteClusterNodeOutcomeCallable CSClient::deleteClusterNodeCallable(c
 
 CSClient::RevokeClusterTokenOutcome CSClient::revokeClusterToken(const RevokeClusterTokenRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RevokeClusterTokenOutcome(endpointOutcome.error());
 
@@ -853,7 +845,7 @@ CSClient::RevokeClusterTokenOutcomeCallable CSClient::revokeClusterTokenCallable
 
 CSClient::DescribeClustersOutcome CSClient::describeClusters(const DescribeClustersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClustersOutcome(endpointOutcome.error());
 
@@ -889,7 +881,7 @@ CSClient::DescribeClustersOutcomeCallable CSClient::describeClustersCallable(con
 
 CSClient::AddAgilityClusterOutcome CSClient::addAgilityCluster(const AddAgilityClusterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddAgilityClusterOutcome(endpointOutcome.error());
 
@@ -925,7 +917,7 @@ CSClient::AddAgilityClusterOutcomeCallable CSClient::addAgilityClusterCallable(c
 
 CSClient::DescribeImagesOutcome CSClient::describeImages(const DescribeImagesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeImagesOutcome(endpointOutcome.error());
 
@@ -961,7 +953,7 @@ CSClient::DescribeImagesOutcomeCallable CSClient::describeImagesCallable(const D
 
 CSClient::GetTriggerHookOutcome CSClient::getTriggerHook(const GetTriggerHookRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GetTriggerHookOutcome(endpointOutcome.error());
 
@@ -997,7 +989,7 @@ CSClient::GetTriggerHookOutcomeCallable CSClient::getTriggerHookCallable(const G
 
 CSClient::DescribeClusterTokensOutcome CSClient::describeClusterTokens(const DescribeClusterTokensRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClusterTokensOutcome(endpointOutcome.error());
 
@@ -1033,7 +1025,7 @@ CSClient::DescribeClusterTokensOutcomeCallable CSClient::describeClusterTokensCa
 
 CSClient::UpdateSubUserResoucesOutcome CSClient::updateSubUserResouces(const UpdateSubUserResoucesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UpdateSubUserResoucesOutcome(endpointOutcome.error());
 
@@ -1069,7 +1061,7 @@ CSClient::UpdateSubUserResoucesOutcomeCallable CSClient::updateSubUserResoucesCa
 
 CSClient::ModifyClusterNameOutcome CSClient::modifyClusterName(const ModifyClusterNameRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyClusterNameOutcome(endpointOutcome.error());
 
@@ -1105,7 +1097,7 @@ CSClient::ModifyClusterNameOutcomeCallable CSClient::modifyClusterNameCallable(c
 
 CSClient::DescribeClusterHostsOutcome CSClient::describeClusterHosts(const DescribeClusterHostsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClusterHostsOutcome(endpointOutcome.error());
 
@@ -1141,7 +1133,7 @@ CSClient::DescribeClusterHostsOutcomeCallable CSClient::describeClusterHostsCall
 
 CSClient::DescribeApiVersionOutcome CSClient::describeApiVersion(const DescribeApiVersionRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeApiVersionOutcome(endpointOutcome.error());
 
@@ -1177,7 +1169,7 @@ CSClient::DescribeApiVersionOutcomeCallable CSClient::describeApiVersionCallable
 
 CSClient::GatherLogsTokenOutcome CSClient::gatherLogsToken(const GatherLogsTokenRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return GatherLogsTokenOutcome(endpointOutcome.error());
 
@@ -1213,7 +1205,7 @@ CSClient::GatherLogsTokenOutcomeCallable CSClient::gatherLogsTokenCallable(const
 
 CSClient::CreateClusterTokenOutcome CSClient::createClusterToken(const CreateClusterTokenRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateClusterTokenOutcome(endpointOutcome.error());
 
@@ -1249,7 +1241,7 @@ CSClient::CreateClusterTokenOutcomeCallable CSClient::createClusterTokenCallable
 
 CSClient::DescribeUserContainersOutcome CSClient::describeUserContainers(const DescribeUserContainersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeUserContainersOutcome(endpointOutcome.error());
 
@@ -1285,7 +1277,7 @@ CSClient::DescribeUserContainersOutcomeCallable CSClient::describeUserContainers
 
 CSClient::DescribeAgilityTunnelAgentInfoOutcome CSClient::describeAgilityTunnelAgentInfo(const DescribeAgilityTunnelAgentInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAgilityTunnelAgentInfoOutcome(endpointOutcome.error());
 
@@ -1321,7 +1313,7 @@ CSClient::DescribeAgilityTunnelAgentInfoOutcomeCallable CSClient::describeAgilit
 
 CSClient::DescribeClusterNodeInfoOutcome CSClient::describeClusterNodeInfo(const DescribeClusterNodeInfoRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClusterNodeInfoOutcome(endpointOutcome.error());
 
@@ -1357,7 +1349,7 @@ CSClient::DescribeClusterNodeInfoOutcomeCallable CSClient::describeClusterNodeIn
 
 CSClient::ScaleClusterOutcome CSClient::scaleCluster(const ScaleClusterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ScaleClusterOutcome(endpointOutcome.error());
 
@@ -1393,7 +1385,7 @@ CSClient::ScaleClusterOutcomeCallable CSClient::scaleClusterCallable(const Scale
 
 CSClient::DescribeAgilityTunnelCertsOutcome CSClient::describeAgilityTunnelCerts(const DescribeAgilityTunnelCertsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAgilityTunnelCertsOutcome(endpointOutcome.error());
 
@@ -1429,7 +1421,7 @@ CSClient::DescribeAgilityTunnelCertsOutcomeCallable CSClient::describeAgilityTun
 
 CSClient::DescribeClusterNodeInfoWithInstanceOutcome CSClient::describeClusterNodeInfoWithInstance(const DescribeClusterNodeInfoWithInstanceRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeClusterNodeInfoWithInstanceOutcome(endpointOutcome.error());
 
@@ -1465,7 +1457,7 @@ CSClient::DescribeClusterNodeInfoWithInstanceOutcomeCallable CSClient::describeC
 
 CSClient::UpgradeClusterComponentsOutcome CSClient::upgradeClusterComponents(const UpgradeClusterComponentsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UpgradeClusterComponentsOutcome(endpointOutcome.error());
 
@@ -1501,7 +1493,7 @@ CSClient::UpgradeClusterComponentsOutcomeCallable CSClient::upgradeClusterCompon
 
 CSClient::DownloadClusterNodeCertsOutcome CSClient::downloadClusterNodeCerts(const DownloadClusterNodeCertsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DownloadClusterNodeCertsOutcome(endpointOutcome.error());
 
@@ -1537,7 +1529,7 @@ CSClient::DownloadClusterNodeCertsOutcomeCallable CSClient::downloadClusterNodeC
 
 CSClient::CreateClusterOutcome CSClient::createCluster(const CreateClusterRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateClusterOutcome(endpointOutcome.error());
 

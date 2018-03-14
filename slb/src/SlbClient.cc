@@ -22,46 +22,38 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Slb;
 using namespace AlibabaCloud::Slb::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "Slb";
+}
+
 SlbClient::SlbClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "slb");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "slb");
 }
 
 SlbClient::SlbClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "slb");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "slb");
 }
 
 SlbClient::SlbClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "slb");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "slb");
 }
 
 SlbClient::~SlbClient()
 {}
 
-CoreClient::EndpointOutcome SlbClient::endpoint()const
-{
-	if(!configuration().endpoint().empty())
-		return CoreClient::EndpointOutcome(configuration().endpoint());
-
-	auto endpoint = endpointProvider_->getEndpoint();
-	
-	if (endpoint.empty())
-		return CoreClient::EndpointOutcome(Error("InvalidEndpoint",""));
-	else
-		return CoreClient::EndpointOutcome(endpoint);
-}
-
 SlbClient::CreateLoadBalancerUDPListenerOutcome SlbClient::createLoadBalancerUDPListener(const CreateLoadBalancerUDPListenerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateLoadBalancerUDPListenerOutcome(endpointOutcome.error());
 
@@ -97,7 +89,7 @@ SlbClient::CreateLoadBalancerUDPListenerOutcomeCallable SlbClient::createLoadBal
 
 SlbClient::DescribeMasterSlaveVServerGroupsOutcome SlbClient::describeMasterSlaveVServerGroups(const DescribeMasterSlaveVServerGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeMasterSlaveVServerGroupsOutcome(endpointOutcome.error());
 
@@ -133,7 +125,7 @@ SlbClient::DescribeMasterSlaveVServerGroupsOutcomeCallable SlbClient::describeMa
 
 SlbClient::StartLoadBalancerListenerOutcome SlbClient::startLoadBalancerListener(const StartLoadBalancerListenerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StartLoadBalancerListenerOutcome(endpointOutcome.error());
 
@@ -169,7 +161,7 @@ SlbClient::StartLoadBalancerListenerOutcomeCallable SlbClient::startLoadBalancer
 
 SlbClient::DescribeLoadBalancerTCPListenerAttributeOutcome SlbClient::describeLoadBalancerTCPListenerAttribute(const DescribeLoadBalancerTCPListenerAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLoadBalancerTCPListenerAttributeOutcome(endpointOutcome.error());
 
@@ -205,7 +197,7 @@ SlbClient::DescribeLoadBalancerTCPListenerAttributeOutcomeCallable SlbClient::de
 
 SlbClient::DescribeListenerAccessControlAttributeOutcome SlbClient::describeListenerAccessControlAttribute(const DescribeListenerAccessControlAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeListenerAccessControlAttributeOutcome(endpointOutcome.error());
 
@@ -241,7 +233,7 @@ SlbClient::DescribeListenerAccessControlAttributeOutcomeCallable SlbClient::desc
 
 SlbClient::StopLoadBalancerListenerOutcome SlbClient::stopLoadBalancerListener(const StopLoadBalancerListenerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return StopLoadBalancerListenerOutcome(endpointOutcome.error());
 
@@ -277,7 +269,7 @@ SlbClient::StopLoadBalancerListenerOutcomeCallable SlbClient::stopLoadBalancerLi
 
 SlbClient::SetLoadBalancerStatusOutcome SlbClient::setLoadBalancerStatus(const SetLoadBalancerStatusRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetLoadBalancerStatusOutcome(endpointOutcome.error());
 
@@ -313,7 +305,7 @@ SlbClient::SetLoadBalancerStatusOutcomeCallable SlbClient::setLoadBalancerStatus
 
 SlbClient::ModifyLoadBalancerInstanceSpecOutcome SlbClient::modifyLoadBalancerInstanceSpec(const ModifyLoadBalancerInstanceSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyLoadBalancerInstanceSpecOutcome(endpointOutcome.error());
 
@@ -349,7 +341,7 @@ SlbClient::ModifyLoadBalancerInstanceSpecOutcomeCallable SlbClient::modifyLoadBa
 
 SlbClient::MoveResourceGroupOutcome SlbClient::moveResourceGroup(const MoveResourceGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return MoveResourceGroupOutcome(endpointOutcome.error());
 
@@ -385,7 +377,7 @@ SlbClient::MoveResourceGroupOutcomeCallable SlbClient::moveResourceGroupCallable
 
 SlbClient::SetLoadBalancerTCPListenerAttributeOutcome SlbClient::setLoadBalancerTCPListenerAttribute(const SetLoadBalancerTCPListenerAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetLoadBalancerTCPListenerAttributeOutcome(endpointOutcome.error());
 
@@ -421,7 +413,7 @@ SlbClient::SetLoadBalancerTCPListenerAttributeOutcomeCallable SlbClient::setLoad
 
 SlbClient::DeleteVServerGroupOutcome SlbClient::deleteVServerGroup(const DeleteVServerGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteVServerGroupOutcome(endpointOutcome.error());
 
@@ -457,7 +449,7 @@ SlbClient::DeleteVServerGroupOutcomeCallable SlbClient::deleteVServerGroupCallab
 
 SlbClient::DescribeVServerGroupAttributeOutcome SlbClient::describeVServerGroupAttribute(const DescribeVServerGroupAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVServerGroupAttributeOutcome(endpointOutcome.error());
 
@@ -493,7 +485,7 @@ SlbClient::DescribeVServerGroupAttributeOutcomeCallable SlbClient::describeVServ
 
 SlbClient::AddListenerWhiteListItemOutcome SlbClient::addListenerWhiteListItem(const AddListenerWhiteListItemRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddListenerWhiteListItemOutcome(endpointOutcome.error());
 
@@ -529,7 +521,7 @@ SlbClient::AddListenerWhiteListItemOutcomeCallable SlbClient::addListenerWhiteLi
 
 SlbClient::RemoveTagsOutcome SlbClient::removeTags(const RemoveTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveTagsOutcome(endpointOutcome.error());
 
@@ -565,7 +557,7 @@ SlbClient::RemoveTagsOutcomeCallable SlbClient::removeTagsCallable(const RemoveT
 
 SlbClient::CreateLoadBalancerOutcome SlbClient::createLoadBalancer(const CreateLoadBalancerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateLoadBalancerOutcome(endpointOutcome.error());
 
@@ -601,7 +593,7 @@ SlbClient::CreateLoadBalancerOutcomeCallable SlbClient::createLoadBalancerCallab
 
 SlbClient::SetLoadBalancerHTTPListenerAttributeOutcome SlbClient::setLoadBalancerHTTPListenerAttribute(const SetLoadBalancerHTTPListenerAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetLoadBalancerHTTPListenerAttributeOutcome(endpointOutcome.error());
 
@@ -637,7 +629,7 @@ SlbClient::SetLoadBalancerHTTPListenerAttributeOutcomeCallable SlbClient::setLoa
 
 SlbClient::SetLoadBalancerAutoReleaseTimeOutcome SlbClient::setLoadBalancerAutoReleaseTime(const SetLoadBalancerAutoReleaseTimeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetLoadBalancerAutoReleaseTimeOutcome(endpointOutcome.error());
 
@@ -673,7 +665,7 @@ SlbClient::SetLoadBalancerAutoReleaseTimeOutcomeCallable SlbClient::setLoadBalan
 
 SlbClient::SetListenerAccessControlStatusOutcome SlbClient::setListenerAccessControlStatus(const SetListenerAccessControlStatusRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetListenerAccessControlStatusOutcome(endpointOutcome.error());
 
@@ -709,7 +701,7 @@ SlbClient::SetListenerAccessControlStatusOutcomeCallable SlbClient::setListenerA
 
 SlbClient::UploadCACertificateOutcome SlbClient::uploadCACertificate(const UploadCACertificateRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UploadCACertificateOutcome(endpointOutcome.error());
 
@@ -745,7 +737,7 @@ SlbClient::UploadCACertificateOutcomeCallable SlbClient::uploadCACertificateCall
 
 SlbClient::DescribeZonesOutcome SlbClient::describeZones(const DescribeZonesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeZonesOutcome(endpointOutcome.error());
 
@@ -781,7 +773,7 @@ SlbClient::DescribeZonesOutcomeCallable SlbClient::describeZonesCallable(const D
 
 SlbClient::SetLoadBalancerHTTPSListenerAttributeOutcome SlbClient::setLoadBalancerHTTPSListenerAttribute(const SetLoadBalancerHTTPSListenerAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetLoadBalancerHTTPSListenerAttributeOutcome(endpointOutcome.error());
 
@@ -817,7 +809,7 @@ SlbClient::SetLoadBalancerHTTPSListenerAttributeOutcomeCallable SlbClient::setLo
 
 SlbClient::DeleteLoadBalancerListenerOutcome SlbClient::deleteLoadBalancerListener(const DeleteLoadBalancerListenerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteLoadBalancerListenerOutcome(endpointOutcome.error());
 
@@ -853,7 +845,7 @@ SlbClient::DeleteLoadBalancerListenerOutcomeCallable SlbClient::deleteLoadBalanc
 
 SlbClient::DescribeVServerGroupsOutcome SlbClient::describeVServerGroups(const DescribeVServerGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeVServerGroupsOutcome(endpointOutcome.error());
 
@@ -889,7 +881,7 @@ SlbClient::DescribeVServerGroupsOutcomeCallable SlbClient::describeVServerGroups
 
 SlbClient::DescribeLoadBalancerHTTPListenerAttributeOutcome SlbClient::describeLoadBalancerHTTPListenerAttribute(const DescribeLoadBalancerHTTPListenerAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLoadBalancerHTTPListenerAttributeOutcome(endpointOutcome.error());
 
@@ -925,7 +917,7 @@ SlbClient::DescribeLoadBalancerHTTPListenerAttributeOutcomeCallable SlbClient::d
 
 SlbClient::DescribeTagsOutcome SlbClient::describeTags(const DescribeTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeTagsOutcome(endpointOutcome.error());
 
@@ -961,7 +953,7 @@ SlbClient::DescribeTagsOutcomeCallable SlbClient::describeTagsCallable(const Des
 
 SlbClient::DeleteLoadBalancerOutcome SlbClient::deleteLoadBalancer(const DeleteLoadBalancerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteLoadBalancerOutcome(endpointOutcome.error());
 
@@ -997,7 +989,7 @@ SlbClient::DeleteLoadBalancerOutcomeCallable SlbClient::deleteLoadBalancerCallab
 
 SlbClient::CreateVServerGroupOutcome SlbClient::createVServerGroup(const CreateVServerGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateVServerGroupOutcome(endpointOutcome.error());
 
@@ -1033,7 +1025,7 @@ SlbClient::CreateVServerGroupOutcomeCallable SlbClient::createVServerGroupCallab
 
 SlbClient::DescribeLoadBalancersRelatedEcsOutcome SlbClient::describeLoadBalancersRelatedEcs(const DescribeLoadBalancersRelatedEcsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLoadBalancersRelatedEcsOutcome(endpointOutcome.error());
 
@@ -1069,7 +1061,7 @@ SlbClient::DescribeLoadBalancersRelatedEcsOutcomeCallable SlbClient::describeLoa
 
 SlbClient::DescribeLoadBalancersOutcome SlbClient::describeLoadBalancers(const DescribeLoadBalancersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLoadBalancersOutcome(endpointOutcome.error());
 
@@ -1105,7 +1097,7 @@ SlbClient::DescribeLoadBalancersOutcomeCallable SlbClient::describeLoadBalancers
 
 SlbClient::SetCACertificateNameOutcome SlbClient::setCACertificateName(const SetCACertificateNameRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetCACertificateNameOutcome(endpointOutcome.error());
 
@@ -1141,7 +1133,7 @@ SlbClient::SetCACertificateNameOutcomeCallable SlbClient::setCACertificateNameCa
 
 SlbClient::DescribeMasterSlaveVServerGroupAttributeOutcome SlbClient::describeMasterSlaveVServerGroupAttribute(const DescribeMasterSlaveVServerGroupAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeMasterSlaveVServerGroupAttributeOutcome(endpointOutcome.error());
 
@@ -1177,7 +1169,7 @@ SlbClient::DescribeMasterSlaveVServerGroupAttributeOutcomeCallable SlbClient::de
 
 SlbClient::CreateLoadBalancerHTTPListenerOutcome SlbClient::createLoadBalancerHTTPListener(const CreateLoadBalancerHTTPListenerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateLoadBalancerHTTPListenerOutcome(endpointOutcome.error());
 
@@ -1213,7 +1205,7 @@ SlbClient::CreateLoadBalancerHTTPListenerOutcomeCallable SlbClient::createLoadBa
 
 SlbClient::RemoveBackendServersOutcome SlbClient::removeBackendServers(const RemoveBackendServersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveBackendServersOutcome(endpointOutcome.error());
 
@@ -1249,7 +1241,7 @@ SlbClient::RemoveBackendServersOutcomeCallable SlbClient::removeBackendServersCa
 
 SlbClient::ModifyVServerGroupBackendServersOutcome SlbClient::modifyVServerGroupBackendServers(const ModifyVServerGroupBackendServersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyVServerGroupBackendServersOutcome(endpointOutcome.error());
 
@@ -1285,7 +1277,7 @@ SlbClient::ModifyVServerGroupBackendServersOutcomeCallable SlbClient::modifyVSer
 
 SlbClient::DescribeLoadBalancerUDPListenerAttributeOutcome SlbClient::describeLoadBalancerUDPListenerAttribute(const DescribeLoadBalancerUDPListenerAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLoadBalancerUDPListenerAttributeOutcome(endpointOutcome.error());
 
@@ -1321,7 +1313,7 @@ SlbClient::DescribeLoadBalancerUDPListenerAttributeOutcomeCallable SlbClient::de
 
 SlbClient::DescribeAccessLogsDownloadAttributeOutcome SlbClient::describeAccessLogsDownloadAttribute(const DescribeAccessLogsDownloadAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeAccessLogsDownloadAttributeOutcome(endpointOutcome.error());
 
@@ -1357,7 +1349,7 @@ SlbClient::DescribeAccessLogsDownloadAttributeOutcomeCallable SlbClient::describ
 
 SlbClient::DeleteRulesOutcome SlbClient::deleteRules(const DeleteRulesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteRulesOutcome(endpointOutcome.error());
 
@@ -1393,7 +1385,7 @@ SlbClient::DeleteRulesOutcomeCallable SlbClient::deleteRulesCallable(const Delet
 
 SlbClient::DeleteMasterSlaveVServerGroupOutcome SlbClient::deleteMasterSlaveVServerGroup(const DeleteMasterSlaveVServerGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteMasterSlaveVServerGroupOutcome(endpointOutcome.error());
 
@@ -1429,7 +1421,7 @@ SlbClient::DeleteMasterSlaveVServerGroupOutcomeCallable SlbClient::deleteMasterS
 
 SlbClient::DescribeCACertificatesOutcome SlbClient::describeCACertificates(const DescribeCACertificatesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeCACertificatesOutcome(endpointOutcome.error());
 
@@ -1465,7 +1457,7 @@ SlbClient::DescribeCACertificatesOutcomeCallable SlbClient::describeCACertificat
 
 SlbClient::CreateMasterSlaveVServerGroupOutcome SlbClient::createMasterSlaveVServerGroup(const CreateMasterSlaveVServerGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateMasterSlaveVServerGroupOutcome(endpointOutcome.error());
 
@@ -1501,7 +1493,7 @@ SlbClient::CreateMasterSlaveVServerGroupOutcomeCallable SlbClient::createMasterS
 
 SlbClient::SetBackendServersOutcome SlbClient::setBackendServers(const SetBackendServersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetBackendServersOutcome(endpointOutcome.error());
 
@@ -1537,7 +1529,7 @@ SlbClient::SetBackendServersOutcomeCallable SlbClient::setBackendServersCallable
 
 SlbClient::RemoveVServerGroupBackendServersOutcome SlbClient::removeVServerGroupBackendServers(const RemoveVServerGroupBackendServersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveVServerGroupBackendServersOutcome(endpointOutcome.error());
 
@@ -1573,7 +1565,7 @@ SlbClient::RemoveVServerGroupBackendServersOutcomeCallable SlbClient::removeVSer
 
 SlbClient::DescribeLoadBalancerAttributeOutcome SlbClient::describeLoadBalancerAttribute(const DescribeLoadBalancerAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLoadBalancerAttributeOutcome(endpointOutcome.error());
 
@@ -1609,7 +1601,7 @@ SlbClient::DescribeLoadBalancerAttributeOutcomeCallable SlbClient::describeLoadB
 
 SlbClient::CreateMasterSlaveServerGroupOutcome SlbClient::createMasterSlaveServerGroup(const CreateMasterSlaveServerGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateMasterSlaveServerGroupOutcome(endpointOutcome.error());
 
@@ -1645,7 +1637,7 @@ SlbClient::CreateMasterSlaveServerGroupOutcomeCallable SlbClient::createMasterSl
 
 SlbClient::SetServerCertificateNameOutcome SlbClient::setServerCertificateName(const SetServerCertificateNameRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetServerCertificateNameOutcome(endpointOutcome.error());
 
@@ -1681,7 +1673,7 @@ SlbClient::SetServerCertificateNameOutcomeCallable SlbClient::setServerCertifica
 
 SlbClient::DeleteCACertificateOutcome SlbClient::deleteCACertificate(const DeleteCACertificateRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteCACertificateOutcome(endpointOutcome.error());
 
@@ -1717,7 +1709,7 @@ SlbClient::DeleteCACertificateOutcomeCallable SlbClient::deleteCACertificateCall
 
 SlbClient::CreateLoadBalancerTCPListenerOutcome SlbClient::createLoadBalancerTCPListener(const CreateLoadBalancerTCPListenerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateLoadBalancerTCPListenerOutcome(endpointOutcome.error());
 
@@ -1753,7 +1745,7 @@ SlbClient::CreateLoadBalancerTCPListenerOutcomeCallable SlbClient::createLoadBal
 
 SlbClient::SetRuleOutcome SlbClient::setRule(const SetRuleRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetRuleOutcome(endpointOutcome.error());
 
@@ -1789,7 +1781,7 @@ SlbClient::SetRuleOutcomeCallable SlbClient::setRuleCallable(const SetRuleReques
 
 SlbClient::DescribeMasterSlaveServerGroupsOutcome SlbClient::describeMasterSlaveServerGroups(const DescribeMasterSlaveServerGroupsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeMasterSlaveServerGroupsOutcome(endpointOutcome.error());
 
@@ -1825,7 +1817,7 @@ SlbClient::DescribeMasterSlaveServerGroupsOutcomeCallable SlbClient::describeMas
 
 SlbClient::DescribeHealthStatusOutcome SlbClient::describeHealthStatus(const DescribeHealthStatusRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeHealthStatusOutcome(endpointOutcome.error());
 
@@ -1861,7 +1853,7 @@ SlbClient::DescribeHealthStatusOutcomeCallable SlbClient::describeHealthStatusCa
 
 SlbClient::DescribeRegionsOutcome SlbClient::describeRegions(const DescribeRegionsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRegionsOutcome(endpointOutcome.error());
 
@@ -1897,7 +1889,7 @@ SlbClient::DescribeRegionsOutcomeCallable SlbClient::describeRegionsCallable(con
 
 SlbClient::RemoveListenerWhiteListItemOutcome SlbClient::removeListenerWhiteListItem(const RemoveListenerWhiteListItemRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return RemoveListenerWhiteListItemOutcome(endpointOutcome.error());
 
@@ -1933,7 +1925,7 @@ SlbClient::RemoveListenerWhiteListItemOutcomeCallable SlbClient::removeListenerW
 
 SlbClient::CreateLoadBalancerHTTPSListenerOutcome SlbClient::createLoadBalancerHTTPSListener(const CreateLoadBalancerHTTPSListenerRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateLoadBalancerHTTPSListenerOutcome(endpointOutcome.error());
 
@@ -1969,7 +1961,7 @@ SlbClient::CreateLoadBalancerHTTPSListenerOutcomeCallable SlbClient::createLoadB
 
 SlbClient::DeleteMasterSlaveServerGroupOutcome SlbClient::deleteMasterSlaveServerGroup(const DeleteMasterSlaveServerGroupRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteMasterSlaveServerGroupOutcome(endpointOutcome.error());
 
@@ -2005,7 +1997,7 @@ SlbClient::DeleteMasterSlaveServerGroupOutcomeCallable SlbClient::deleteMasterSl
 
 SlbClient::DescribeServerCertificatesOutcome SlbClient::describeServerCertificates(const DescribeServerCertificatesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeServerCertificatesOutcome(endpointOutcome.error());
 
@@ -2041,7 +2033,7 @@ SlbClient::DescribeServerCertificatesOutcomeCallable SlbClient::describeServerCe
 
 SlbClient::DescribeRulesOutcome SlbClient::describeRules(const DescribeRulesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRulesOutcome(endpointOutcome.error());
 
@@ -2077,7 +2069,7 @@ SlbClient::DescribeRulesOutcomeCallable SlbClient::describeRulesCallable(const D
 
 SlbClient::DeleteAccessLogsDownloadAttributeOutcome SlbClient::deleteAccessLogsDownloadAttribute(const DeleteAccessLogsDownloadAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteAccessLogsDownloadAttributeOutcome(endpointOutcome.error());
 
@@ -2113,7 +2105,7 @@ SlbClient::DeleteAccessLogsDownloadAttributeOutcomeCallable SlbClient::deleteAcc
 
 SlbClient::DescribeRuleAttributeOutcome SlbClient::describeRuleAttribute(const DescribeRuleAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeRuleAttributeOutcome(endpointOutcome.error());
 
@@ -2149,7 +2141,7 @@ SlbClient::DescribeRuleAttributeOutcomeCallable SlbClient::describeRuleAttribute
 
 SlbClient::UploadServerCertificateOutcome SlbClient::uploadServerCertificate(const UploadServerCertificateRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return UploadServerCertificateOutcome(endpointOutcome.error());
 
@@ -2185,7 +2177,7 @@ SlbClient::UploadServerCertificateOutcomeCallable SlbClient::uploadServerCertifi
 
 SlbClient::SetAccessLogsDownloadAttributeOutcome SlbClient::setAccessLogsDownloadAttribute(const SetAccessLogsDownloadAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetAccessLogsDownloadAttributeOutcome(endpointOutcome.error());
 
@@ -2221,7 +2213,7 @@ SlbClient::SetAccessLogsDownloadAttributeOutcomeCallable SlbClient::setAccessLog
 
 SlbClient::DescribeLoadBalancerAutoReleaseTimeOutcome SlbClient::describeLoadBalancerAutoReleaseTime(const DescribeLoadBalancerAutoReleaseTimeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLoadBalancerAutoReleaseTimeOutcome(endpointOutcome.error());
 
@@ -2257,7 +2249,7 @@ SlbClient::DescribeLoadBalancerAutoReleaseTimeOutcomeCallable SlbClient::describ
 
 SlbClient::DeleteServerCertificateOutcome SlbClient::deleteServerCertificate(const DeleteServerCertificateRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DeleteServerCertificateOutcome(endpointOutcome.error());
 
@@ -2293,7 +2285,7 @@ SlbClient::DeleteServerCertificateOutcomeCallable SlbClient::deleteServerCertifi
 
 SlbClient::SetLoadBalancerNameOutcome SlbClient::setLoadBalancerName(const SetLoadBalancerNameRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetLoadBalancerNameOutcome(endpointOutcome.error());
 
@@ -2329,7 +2321,7 @@ SlbClient::SetLoadBalancerNameOutcomeCallable SlbClient::setLoadBalancerNameCall
 
 SlbClient::SetVServerGroupAttributeOutcome SlbClient::setVServerGroupAttribute(const SetVServerGroupAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetVServerGroupAttributeOutcome(endpointOutcome.error());
 
@@ -2365,7 +2357,7 @@ SlbClient::SetVServerGroupAttributeOutcomeCallable SlbClient::setVServerGroupAtt
 
 SlbClient::ModifyLoadBalancerInternetSpecOutcome SlbClient::modifyLoadBalancerInternetSpec(const ModifyLoadBalancerInternetSpecRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyLoadBalancerInternetSpecOutcome(endpointOutcome.error());
 
@@ -2401,7 +2393,7 @@ SlbClient::ModifyLoadBalancerInternetSpecOutcomeCallable SlbClient::modifyLoadBa
 
 SlbClient::DescribeLoadBalancerHTTPSListenerAttributeOutcome SlbClient::describeLoadBalancerHTTPSListenerAttribute(const DescribeLoadBalancerHTTPSListenerAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeLoadBalancerHTTPSListenerAttributeOutcome(endpointOutcome.error());
 
@@ -2437,7 +2429,7 @@ SlbClient::DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable SlbClient::
 
 SlbClient::DescribeMasterSlaveServerGroupAttributeOutcome SlbClient::describeMasterSlaveServerGroupAttribute(const DescribeMasterSlaveServerGroupAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return DescribeMasterSlaveServerGroupAttributeOutcome(endpointOutcome.error());
 
@@ -2473,7 +2465,7 @@ SlbClient::DescribeMasterSlaveServerGroupAttributeOutcomeCallable SlbClient::des
 
 SlbClient::AddTagsOutcome SlbClient::addTags(const AddTagsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddTagsOutcome(endpointOutcome.error());
 
@@ -2509,7 +2501,7 @@ SlbClient::AddTagsOutcomeCallable SlbClient::addTagsCallable(const AddTagsReques
 
 SlbClient::ModifyLoadBalancerPayTypeOutcome SlbClient::modifyLoadBalancerPayType(const ModifyLoadBalancerPayTypeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return ModifyLoadBalancerPayTypeOutcome(endpointOutcome.error());
 
@@ -2545,7 +2537,7 @@ SlbClient::ModifyLoadBalancerPayTypeOutcomeCallable SlbClient::modifyLoadBalance
 
 SlbClient::AddBackendServersOutcome SlbClient::addBackendServers(const AddBackendServersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddBackendServersOutcome(endpointOutcome.error());
 
@@ -2581,7 +2573,7 @@ SlbClient::AddBackendServersOutcomeCallable SlbClient::addBackendServersCallable
 
 SlbClient::CreateRulesOutcome SlbClient::createRules(const CreateRulesRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return CreateRulesOutcome(endpointOutcome.error());
 
@@ -2617,7 +2609,7 @@ SlbClient::CreateRulesOutcomeCallable SlbClient::createRulesCallable(const Creat
 
 SlbClient::AddVServerGroupBackendServersOutcome SlbClient::addVServerGroupBackendServers(const AddVServerGroupBackendServersRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return AddVServerGroupBackendServersOutcome(endpointOutcome.error());
 
@@ -2653,7 +2645,7 @@ SlbClient::AddVServerGroupBackendServersOutcomeCallable SlbClient::addVServerGro
 
 SlbClient::SetLoadBalancerUDPListenerAttributeOutcome SlbClient::setLoadBalancerUDPListenerAttribute(const SetLoadBalancerUDPListenerAttributeRequest &request) const
 {
-	auto endpointOutcome = endpoint();
+	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
 		return SetLoadBalancerUDPListenerAttributeOutcome(endpointOutcome.error());
 
