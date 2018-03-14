@@ -31,7 +31,7 @@ namespace
 #	include <strings.h>
 #endif
 
-	const std::string jsondata = "{\"products\":["
+	const std::string INTERNAL_ENDPOINTS_DATA = "{\"products\":["
 		"{\"code\":\"aegis\",\"document_id\":\"28449\",\"location_service_code\":\"vipaegis\",\"regional_endpoints\":[],\"global_endpoint\":\"aegis.cn-hangzhou.aliyuncs.com\",\"regional_endpoint_pattern\":\"\"},"
 		"{\"code\":\"alidns\",\"document_id\":\"29739\",\"location_service_code\":\"alidns\",\"regional_endpoints\":[],\"global_endpoint\":\"alidns.aliyuncs.com\",\"regional_endpoint_pattern\":\"\"},"
 		"{\"code\":\"arms\",\"document_id\":\"42924\",\"location_service_code\":\"\",\"regional_endpoints\":[{\"region\":\"ap-southeast-1\",\"endpoint\":\"arms.ap-southeast-1.aliyuncs.com\"},{\"region\":\"cn-beijing\",\"endpoint\":\"arms.cn-beijing.aliyuncs.com\"},{\"region\":\"cn-hangzhou\",\"endpoint\":\"arms.cn-hangzhou.aliyuncs.com\"},{\"region\":\"cn-hongkong\",\"endpoint\":\"arms.cn-hongkong.aliyuncs.com\"},{\"region\":\"cn-qingdao\",\"endpoint\":\"arms.cn-qingdao.aliyuncs.com\"},{\"region\":\"cn-shanghai\",\"endpoint\":\"arms.cn-shanghai.aliyuncs.com\"},{\"region\":\"cn-shenzhen\",\"endpoint\":\"arms.cn-shenzhen.aliyuncs.com\"}],\"global_endpoint\":\"\",\"regional_endpoint_pattern\":\"arms.[RegionId].aliyuncs.com\"},"
@@ -104,7 +104,7 @@ bool EndpointProvider::loadInternalProductsInfo()
 {
 	Json::Reader reader;
 	Json::Value value;
-	if (!reader.parse(jsondata, value))
+	if (!reader.parse(INTERNAL_ENDPOINTS_DATA, value))
 		return false;
 
 	auto productsNode = value["products"];
@@ -157,6 +157,9 @@ std::string EndpointProvider::internalEndpoint(const std::string regionId, const
 
 EndpointProvider::EndpointOutcome EndpointProvider::getEndpoint()
 {
+	if (!locationClient_->configuration().endpoint().empty())
+		return EndpointOutcome(locationClient_->configuration().endpoint());
+
 	if (!serviceCode_.empty())
 	{
 		EndpointOutcome outcome = loadRemoteEndpoint();

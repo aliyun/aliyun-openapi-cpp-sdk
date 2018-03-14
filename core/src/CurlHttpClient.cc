@@ -130,5 +130,5 @@ HttpClient::HttpResponseOutcome CurlHttpClient::makeRequest(const HttpRequest &r
 		return HttpResponseOutcome(response);
 	}
 	
-	return HttpResponseOutcome(Error("NetworkError", ""));
+	return HttpResponseOutcome(Error("NetworkError", "Failed to connect to host or proxy."));
 }
