@@ -27,7 +27,8 @@
 
 using namespace AlibabaCloud;
 
-CoreClient::CoreClient(const ClientConfiguration &configuration) :
+CoreClient::CoreClient(const std::string & servicename, const ClientConfiguration &configuration) :
+	serviceName_(servicename),
 	configuration_(configuration),
 	httpClient_(new CurlHttpClient)
 {
@@ -42,6 +43,11 @@ CoreClient::~CoreClient()
 ClientConfiguration CoreClient::configuration()const
 {
 	return configuration_;
+}
+
+std::string CoreClient::serviceName()const
+{
+	return serviceName_;
 }
 
 void CoreClient::asyncExecute(Runnable * r)const

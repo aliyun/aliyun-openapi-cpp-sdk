@@ -20,36 +20,33 @@
 using namespace AlibabaCloud;
 using namespace AlibabaCloud::Location;
 
+namespace
+{
+	const std::string SERVICE_NAME = "Location";
+	const std::string ENDPOINT = "location.aliyuncs.com";
+}
+
 LocationClient::LocationClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 }
 
 LocationClient::LocationClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 }
 
 LocationClient::LocationClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 }
 
 LocationClient::~LocationClient()
 {}
 
-CoreClient::EndpointOutcome LocationClient::endpoint()const
-{
-	return CoreClient::EndpointOutcome("location.aliyuncs.com");
-}
-
 LocationClient::DescribeEndpointsOutcome LocationClient::describeEndpoints(const Model::DescribeEndpointsRequest &request) const
 {
-	auto endpointOutcome = endpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeEndpointsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
+	auto outcome = makeRequest(ENDPOINT, request);
 
 	if (outcome.isSuccess())
 		return DescribeEndpointsOutcome(Model::DescribeEndpointsResult(outcome.result()));

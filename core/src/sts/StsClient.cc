@@ -16,23 +16,30 @@
 
 #include <alibabacloud/core/sts/StsClient.h>
 #include <alibabacloud/core/SimpleCredentialsProvider.h>
+#include <alibabacloud/core/EndpointProvider.h>
 
 using namespace AlibabaCloud;
 using namespace AlibabaCloud::Sts;
 using namespace AlibabaCloud::Sts::Model;
 
+namespace
+{
+	const std::string SERVICE_NAME = "Sts";
+	const std::string ENDPOINT = "sts.aliyuncs.com";
+}
+
 StsClient::StsClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 }
 
 StsClient::StsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(credentialsProvider, configuration)
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 }
 
 StsClient::StsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 }
 
@@ -40,18 +47,9 @@ StsClient::~StsClient()
 {
 }
 
-CoreClient::EndpointOutcome StsClient::endpoint()const
-{
-	return CoreClient::EndpointOutcome("sts.aliyuncs.com");
-}
-
 StsClient::AssumeRoleOutcome StsClient::assumeRole(const Model::AssumeRoleRequest &request)const
 {
-	auto endpointOutcome = endpoint();
-	if (!endpointOutcome.isSuccess())
-		return AssumeRoleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
+	auto outcome = makeRequest(ENDPOINT, request);
 
 	if (outcome.isSuccess())
 		return AssumeRoleOutcome(AssumeRoleResult(outcome.result()));
@@ -83,11 +81,7 @@ StsClient::AssumeRoleOutcomeCallable StsClient::assumeRoleCallable(const Model::
 
 StsClient::GetCallerIdentityOutcome StsClient::getCallerIdentity(const GetCallerIdentityRequest &request) const
 {
-	auto endpointOutcome = endpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetCallerIdentityOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
+	auto outcome = makeRequest(ENDPOINT, request);
 
 	if (outcome.isSuccess())
 		return GetCallerIdentityOutcome(GetCallerIdentityResult(outcome.result()));

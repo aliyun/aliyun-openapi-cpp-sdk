@@ -19,25 +19,42 @@
 
 #include <string>
 #include <chrono>
+#include <list>
+#include <map>
 #include <mutex>
 #include <alibabacloud/core/location/LocationClient.h>
+#include <alibabacloud/core/CoreClient.h>
 
 namespace AlibabaCloud
 {
 	class ALIBABACLOUD_CORE_EXPORT EndpointProvider
 	{
 	public:
+		typedef Outcome<Error, std::string> EndpointOutcome;
+
 		EndpointProvider(const std::shared_ptr<Location::LocationClient>& locationClient,
 			const std::string regionId,
-			const std::string serviceCode,
+			const std::string product,
+			const std::string serviceCode = std::string(),
 			int durationSeconds = 3600);
 		~EndpointProvider();
 
-		std::string getEndpoint();
-
+		EndpointOutcome getEndpoint();
 	private:
-		void loadEndpoint();
+		struct Product
+		{
+			std::string code;
+			std::string locationServiceCode;
+			std::string documentId;
+			std::map<std::string, std::string> regionalEndpoints;
+			std::string globalEndpoint;
+			std::string regionalEndpointPattern;
+		};
+
+		EndpointOutcome loadRemoteEndpoint();
 		bool checkExpiry()const;
+		bool loadInternalProductsInfo();
+		std::string internalEndpoint(const std::string regionId, const std::string product);
 
 		std::mutex cachedMutex_;
 		std::string cachedEndpoint_;
@@ -45,7 +62,9 @@ namespace AlibabaCloud
 		int durationSeconds_;
 		std::chrono::system_clock::time_point expiry_;
 		std::string regionId_;
+		std::string product_;
 		std::string serviceCode_;
+		std::list<Product> internalProductsInfo_;
 	};
 }
 #endif

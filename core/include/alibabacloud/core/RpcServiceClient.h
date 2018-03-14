@@ -36,7 +36,7 @@ namespace AlibabaCloud
 	public:
 		typedef Outcome<Error, std::string> JsonOutcome;
 
-		RpcServiceClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+		RpcServiceClient(const std::string & servicename, const std::shared_ptr<CredentialsProvider> &credentialsProvider,
 			const ClientConfiguration &configuration,
 			const std::shared_ptr<Signer> &signer = std::make_shared<HmacSha1Signer>());
 		virtual ~RpcServiceClient();

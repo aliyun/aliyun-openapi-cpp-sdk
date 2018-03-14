@@ -28,39 +28,28 @@ using namespace Location;
 
 namespace
 {
-#if defined(WIN32) && defined(_MSC_VER)
-#	define strcasecmp _stricmp
-#	define strncasecmp _strnicmp
-#else
-#	include <strings.h>
-#endif
+	const std::string SERVICE_NAME = "Common";
 }
 
 CommonClient::CommonClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	CoreClient(configuration),
-	credentialsProvider_(std::make_shared<SimpleCredentialsProvider>(credentials))
+	CoreClient(SERVICE_NAME, configuration),
+	credentialsProvider_(std::make_shared<SimpleCredentialsProvider>(credentials)),
+	signer_(std::make_shared<HmacSha1Signer>())
 {
-	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ecs");
 }
 
 CommonClient::CommonClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	CoreClient(configuration),
+	CoreClient(SERVICE_NAME, configuration),
+	credentialsProvider_(credentialsProvider),
 	signer_(std::make_shared<HmacSha1Signer>())
 {
-	credentialsProvider_ = credentialsProvider;
-	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ecs");
 }
 
 CommonClient::CommonClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	CoreClient(configuration),
+	CoreClient(SERVICE_NAME, configuration),
+	credentialsProvider_(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret)),
 	signer_(std::make_shared<HmacSha1Signer>())
 {
-	credentialsProvider_ = std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret);
-
-	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), "ecs");
 }
 
 CommonClient::~CommonClient()
@@ -107,11 +96,6 @@ CommonClient::CommonResponseOutcomeCallable CommonClient::commonResponseCallable
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
-}
-
-CoreClient::EndpointOutcome CommonClient::endpoint() const
-{
-	return EndpointOutcome();
 }
 
 HttpRequest CommonClient::buildHttpRequest(const std::string & endpoint, const ServiceRequest & msg, HttpRequest::Method method) const

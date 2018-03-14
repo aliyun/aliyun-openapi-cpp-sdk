@@ -24,10 +24,10 @@
 
 using namespace AlibabaCloud;
 
-RoaServiceClient::RoaServiceClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+RoaServiceClient::RoaServiceClient(const std::string & servicename, const std::shared_ptr<CredentialsProvider> &credentialsProvider,
 	const ClientConfiguration &configuration,
 	const std::shared_ptr<Signer> &signer) :
-	CoreClient(configuration),
+	CoreClient(servicename, configuration),
 	credentialsProvider_(credentialsProvider),
 	signer_(signer)
 {

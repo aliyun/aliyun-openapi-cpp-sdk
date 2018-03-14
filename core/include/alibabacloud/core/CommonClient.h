@@ -18,13 +18,13 @@
 #define ALIBABACLOUD_CORE_COMMONCLIENT_H_
 
 #include <future>
+#include "AsyncCallerContext.h"
 #include "ClientConfiguration.h"
 #include "CoreExport.h"
 #include "CoreClient.h"
-#include "CredentialsProvider.h"
-#include "EndpointProvider.h"
 #include "CommonRequest.h"
 #include "CommonResponse.h"
+#include "CredentialsProvider.h"
 
 namespace AlibabaCloud
 {
@@ -50,7 +50,6 @@ namespace AlibabaCloud
 		HttpRequest buildHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const;
 		HttpRequest buildRoaHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const;
 		HttpRequest buildRpcHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const;
-		virtual EndpointOutcome endpoint() const override;
 		JsonOutcome makeRequest(const std::string &endpoint, const CommonRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get)const;
 
 	private:
@@ -58,7 +57,6 @@ namespace AlibabaCloud
 		std::string canonicalizedHeaders(const HttpMessage::HeaderCollection &headers)const;
 
 		std::shared_ptr<CredentialsProvider> credentialsProvider_;
-		std::shared_ptr<EndpointProvider> endpointProvider_;
 		std::shared_ptr<Signer> signer_;
 	};
 }
