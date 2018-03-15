@@ -32,6 +32,8 @@
 #include "model/QueryTopologyResult.h"
 #include "model/GetInstancesStatusCountRequest.h"
 #include "model/GetInstancesStatusCountResult.h"
+#include "model/QueryCustomerSaleInfoRequest.h"
+#include "model/QueryCustomerSaleInfoResult.h"
 #include "model/GetQuotaInstanceRequest.h"
 #include "model/GetQuotaInstanceResult.h"
 #include "model/GetClusterInstanceRequest.h"
@@ -47,59 +49,65 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_TESLAMAXCOMPUTE_EXPORT TeslaMaxComputeClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::GetUserInstanceResult> GetUserInstanceOutcome;			
-			typedef std::future<GetUserInstanceOutcome> GetUserInstanceOutcomeCallable;			
+			typedef Outcome<Error, Model::GetUserInstanceResult> GetUserInstanceOutcome;
+			typedef std::future<GetUserInstanceOutcome> GetUserInstanceOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::GetUserInstanceRequest&, const GetUserInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserInstanceAsyncHandler;
-			typedef Outcome<Error, Model::GetProjectInstanceResult> GetProjectInstanceOutcome;			
-			typedef std::future<GetProjectInstanceOutcome> GetProjectInstanceOutcomeCallable;			
+			typedef Outcome<Error, Model::GetProjectInstanceResult> GetProjectInstanceOutcome;
+			typedef std::future<GetProjectInstanceOutcome> GetProjectInstanceOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::GetProjectInstanceRequest&, const GetProjectInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectInstanceAsyncHandler;
-			typedef Outcome<Error, Model::QueryResourceInventoryResult> QueryResourceInventoryOutcome;			
-			typedef std::future<QueryResourceInventoryOutcome> QueryResourceInventoryOutcomeCallable;			
+			typedef Outcome<Error, Model::QueryResourceInventoryResult> QueryResourceInventoryOutcome;
+			typedef std::future<QueryResourceInventoryOutcome> QueryResourceInventoryOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::QueryResourceInventoryRequest&, const QueryResourceInventoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResourceInventoryAsyncHandler;
-			typedef Outcome<Error, Model::QueryTopologyResult> QueryTopologyOutcome;			
-			typedef std::future<QueryTopologyOutcome> QueryTopologyOutcomeCallable;			
+			typedef Outcome<Error, Model::QueryTopologyResult> QueryTopologyOutcome;
+			typedef std::future<QueryTopologyOutcome> QueryTopologyOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::QueryTopologyRequest&, const QueryTopologyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTopologyAsyncHandler;
-			typedef Outcome<Error, Model::GetInstancesStatusCountResult> GetInstancesStatusCountOutcome;			
-			typedef std::future<GetInstancesStatusCountOutcome> GetInstancesStatusCountOutcomeCallable;			
+			typedef Outcome<Error, Model::GetInstancesStatusCountResult> GetInstancesStatusCountOutcome;
+			typedef std::future<GetInstancesStatusCountOutcome> GetInstancesStatusCountOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::GetInstancesStatusCountRequest&, const GetInstancesStatusCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstancesStatusCountAsyncHandler;
-			typedef Outcome<Error, Model::GetQuotaInstanceResult> GetQuotaInstanceOutcome;			
-			typedef std::future<GetQuotaInstanceOutcome> GetQuotaInstanceOutcomeCallable;			
+			typedef Outcome<Error, Model::QueryCustomerSaleInfoResult> QueryCustomerSaleInfoOutcome;
+			typedef std::future<QueryCustomerSaleInfoOutcome> QueryCustomerSaleInfoOutcomeCallable;
+			typedef std::function<void(const TeslaMaxComputeClient*, const Model::QueryCustomerSaleInfoRequest&, const QueryCustomerSaleInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomerSaleInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetQuotaInstanceResult> GetQuotaInstanceOutcome;
+			typedef std::future<GetQuotaInstanceOutcome> GetQuotaInstanceOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::GetQuotaInstanceRequest&, const GetQuotaInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetQuotaInstanceAsyncHandler;
-			typedef Outcome<Error, Model::GetClusterInstanceResult> GetClusterInstanceOutcome;			
-			typedef std::future<GetClusterInstanceOutcome> GetClusterInstanceOutcomeCallable;			
+			typedef Outcome<Error, Model::GetClusterInstanceResult> GetClusterInstanceOutcome;
+			typedef std::future<GetClusterInstanceOutcome> GetClusterInstanceOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::GetClusterInstanceRequest&, const GetClusterInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterInstanceAsyncHandler;
-			typedef Outcome<Error, Model::GetQuotaHistoryInfoResult> GetQuotaHistoryInfoOutcome;			
-			typedef std::future<GetQuotaHistoryInfoOutcome> GetQuotaHistoryInfoOutcomeCallable;			
+			typedef Outcome<Error, Model::GetQuotaHistoryInfoResult> GetQuotaHistoryInfoOutcome;
+			typedef std::future<GetQuotaHistoryInfoOutcome> GetQuotaHistoryInfoOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::GetQuotaHistoryInfoRequest&, const GetQuotaHistoryInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetQuotaHistoryInfoAsyncHandler;
 
 			TeslaMaxComputeClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			TeslaMaxComputeClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			TeslaMaxComputeClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~TeslaMaxComputeClient();
-            GetUserInstanceOutcome getUserInstance(const Model::GetUserInstanceRequest &request)const;
-            void getUserInstanceAsync(const Model::GetUserInstanceRequest& request, const GetUserInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-            GetUserInstanceOutcomeCallable getUserInstanceCallable(const Model::GetUserInstanceRequest& request) const;
-            GetProjectInstanceOutcome getProjectInstance(const Model::GetProjectInstanceRequest &request)const;
-            void getProjectInstanceAsync(const Model::GetProjectInstanceRequest& request, const GetProjectInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-            GetProjectInstanceOutcomeCallable getProjectInstanceCallable(const Model::GetProjectInstanceRequest& request) const;
-            QueryResourceInventoryOutcome queryResourceInventory(const Model::QueryResourceInventoryRequest &request)const;
-            void queryResourceInventoryAsync(const Model::QueryResourceInventoryRequest& request, const QueryResourceInventoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-            QueryResourceInventoryOutcomeCallable queryResourceInventoryCallable(const Model::QueryResourceInventoryRequest& request) const;
-            QueryTopologyOutcome queryTopology(const Model::QueryTopologyRequest &request)const;
-            void queryTopologyAsync(const Model::QueryTopologyRequest& request, const QueryTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-            QueryTopologyOutcomeCallable queryTopologyCallable(const Model::QueryTopologyRequest& request) const;
-            GetInstancesStatusCountOutcome getInstancesStatusCount(const Model::GetInstancesStatusCountRequest &request)const;
-            void getInstancesStatusCountAsync(const Model::GetInstancesStatusCountRequest& request, const GetInstancesStatusCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-            GetInstancesStatusCountOutcomeCallable getInstancesStatusCountCallable(const Model::GetInstancesStatusCountRequest& request) const;
-            GetQuotaInstanceOutcome getQuotaInstance(const Model::GetQuotaInstanceRequest &request)const;
-            void getQuotaInstanceAsync(const Model::GetQuotaInstanceRequest& request, const GetQuotaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-            GetQuotaInstanceOutcomeCallable getQuotaInstanceCallable(const Model::GetQuotaInstanceRequest& request) const;
-            GetClusterInstanceOutcome getClusterInstance(const Model::GetClusterInstanceRequest &request)const;
-            void getClusterInstanceAsync(const Model::GetClusterInstanceRequest& request, const GetClusterInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-            GetClusterInstanceOutcomeCallable getClusterInstanceCallable(const Model::GetClusterInstanceRequest& request) const;
-            GetQuotaHistoryInfoOutcome getQuotaHistoryInfo(const Model::GetQuotaHistoryInfoRequest &request)const;
-            void getQuotaHistoryInfoAsync(const Model::GetQuotaHistoryInfoRequest& request, const GetQuotaHistoryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-            GetQuotaHistoryInfoOutcomeCallable getQuotaHistoryInfoCallable(const Model::GetQuotaHistoryInfoRequest& request) const;
+			GetUserInstanceOutcome getUserInstance(const Model::GetUserInstanceRequest &request)const;
+			void getUserInstanceAsync(const Model::GetUserInstanceRequest& request, const GetUserInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUserInstanceOutcomeCallable getUserInstanceCallable(const Model::GetUserInstanceRequest& request) const;
+			GetProjectInstanceOutcome getProjectInstance(const Model::GetProjectInstanceRequest &request)const;
+			void getProjectInstanceAsync(const Model::GetProjectInstanceRequest& request, const GetProjectInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetProjectInstanceOutcomeCallable getProjectInstanceCallable(const Model::GetProjectInstanceRequest& request) const;
+			QueryResourceInventoryOutcome queryResourceInventory(const Model::QueryResourceInventoryRequest &request)const;
+			void queryResourceInventoryAsync(const Model::QueryResourceInventoryRequest& request, const QueryResourceInventoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryResourceInventoryOutcomeCallable queryResourceInventoryCallable(const Model::QueryResourceInventoryRequest& request) const;
+			QueryTopologyOutcome queryTopology(const Model::QueryTopologyRequest &request)const;
+			void queryTopologyAsync(const Model::QueryTopologyRequest& request, const QueryTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryTopologyOutcomeCallable queryTopologyCallable(const Model::QueryTopologyRequest& request) const;
+			GetInstancesStatusCountOutcome getInstancesStatusCount(const Model::GetInstancesStatusCountRequest &request)const;
+			void getInstancesStatusCountAsync(const Model::GetInstancesStatusCountRequest& request, const GetInstancesStatusCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetInstancesStatusCountOutcomeCallable getInstancesStatusCountCallable(const Model::GetInstancesStatusCountRequest& request) const;
+			QueryCustomerSaleInfoOutcome queryCustomerSaleInfo(const Model::QueryCustomerSaleInfoRequest &request)const;
+			void queryCustomerSaleInfoAsync(const Model::QueryCustomerSaleInfoRequest& request, const QueryCustomerSaleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryCustomerSaleInfoOutcomeCallable queryCustomerSaleInfoCallable(const Model::QueryCustomerSaleInfoRequest& request) const;
+			GetQuotaInstanceOutcome getQuotaInstance(const Model::GetQuotaInstanceRequest &request)const;
+			void getQuotaInstanceAsync(const Model::GetQuotaInstanceRequest& request, const GetQuotaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetQuotaInstanceOutcomeCallable getQuotaInstanceCallable(const Model::GetQuotaInstanceRequest& request) const;
+			GetClusterInstanceOutcome getClusterInstance(const Model::GetClusterInstanceRequest &request)const;
+			void getClusterInstanceAsync(const Model::GetClusterInstanceRequest& request, const GetClusterInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetClusterInstanceOutcomeCallable getClusterInstanceCallable(const Model::GetClusterInstanceRequest& request) const;
+			GetQuotaHistoryInfoOutcome getQuotaHistoryInfo(const Model::GetQuotaHistoryInfoRequest &request)const;
+			void getQuotaHistoryInfoAsync(const Model::GetQuotaHistoryInfoRequest& request, const GetQuotaHistoryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetQuotaHistoryInfoOutcomeCallable getQuotaHistoryInfoCallable(const Model::GetQuotaHistoryInfoRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

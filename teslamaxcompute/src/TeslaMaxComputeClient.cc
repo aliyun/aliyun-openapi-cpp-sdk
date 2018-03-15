@@ -231,6 +231,42 @@ TeslaMaxComputeClient::GetInstancesStatusCountOutcomeCallable TeslaMaxComputeCli
 	return task->get_future();
 }
 
+TeslaMaxComputeClient::QueryCustomerSaleInfoOutcome TeslaMaxComputeClient::queryCustomerSaleInfo(const QueryCustomerSaleInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCustomerSaleInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCustomerSaleInfoOutcome(QueryCustomerSaleInfoResult(outcome.result()));
+	else
+		return QueryCustomerSaleInfoOutcome(outcome.error());
+}
+
+void TeslaMaxComputeClient::queryCustomerSaleInfoAsync(const QueryCustomerSaleInfoRequest& request, const QueryCustomerSaleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCustomerSaleInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TeslaMaxComputeClient::QueryCustomerSaleInfoOutcomeCallable TeslaMaxComputeClient::queryCustomerSaleInfoCallable(const QueryCustomerSaleInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCustomerSaleInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCustomerSaleInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 TeslaMaxComputeClient::GetQuotaInstanceOutcome TeslaMaxComputeClient::getQuotaInstance(const GetQuotaInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
