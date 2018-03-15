@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::vector<std::string> availableRegions;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string allocationId;
 					std::string bandwidthPackageType;

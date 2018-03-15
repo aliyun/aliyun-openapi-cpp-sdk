@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_CREATEVPCRESULT_H_
-#define ALIBABACLOUD_VPC_MODEL_CREATEVPCRESULT_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBEVPNCONNECTIONLOGSRESULT_H_
+#define ALIBABACLOUD_VPC_MODEL_DESCRIBEVPNCONNECTIONLOGSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT CreateVpcResult : public ServiceResult
+			class ALIBABACLOUD_VPC_EXPORT DescribeVpnConnectionLogsResult : public ServiceResult
 			{
 			public:
 
 
-				CreateVpcResult();
-				explicit CreateVpcResult(const std::string &payload);
-				~CreateVpcResult();
-				std::string getVRouterId()const;
-				std::string getRouteTableId()const;
-				std::string getVpcId()const;
-				std::string getResourceGroupId()const;
+				DescribeVpnConnectionLogsResult();
+				explicit DescribeVpnConnectionLogsResult(const std::string &payload);
+				~DescribeVpnConnectionLogsResult();
+				int getPageSize()const;
+				int getPageNumber()const;
+				bool getIsCompleted()const;
+				std::vector<std::string> getData()const;
+				int getCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string vRouterId_;
-				std::string routeTableId_;
-				std::string vpcId_;
-				std::string resourceGroupId_;
+				int pageSize_;
+				int pageNumber_;
+				bool isCompleted_;
+				std::vector<std::string> data_;
+				int count_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_CREATEVPCRESULT_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBEVPNCONNECTIONLOGSRESULT_H_

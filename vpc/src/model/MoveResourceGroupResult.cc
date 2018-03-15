@@ -14,60 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/vpc/model/CreateVpcResult.h>
+#include <alibabacloud/vpc/model/MoveResourceGroupResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Vpc;
 using namespace AlibabaCloud::Vpc::Model;
 
-CreateVpcResult::CreateVpcResult() :
+MoveResourceGroupResult::MoveResourceGroupResult() :
 	ServiceResult()
 {}
 
-CreateVpcResult::CreateVpcResult(const std::string &payload) :
+MoveResourceGroupResult::MoveResourceGroupResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateVpcResult::~CreateVpcResult()
+MoveResourceGroupResult::~MoveResourceGroupResult()
 {}
 
-void CreateVpcResult::parse(const std::string &payload)
+void MoveResourceGroupResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["VpcId"].isNull())
-		vpcId_ = value["VpcId"].asString();
-	if(!value["VRouterId"].isNull())
-		vRouterId_ = value["VRouterId"].asString();
-	if(!value["RouteTableId"].isNull())
-		routeTableId_ = value["RouteTableId"].asString();
-	if(!value["ResourceGroupId"].isNull())
-		resourceGroupId_ = value["ResourceGroupId"].asString();
 
-}
-
-std::string CreateVpcResult::getVRouterId()const
-{
-	return vRouterId_;
-}
-
-std::string CreateVpcResult::getRouteTableId()const
-{
-	return routeTableId_;
-}
-
-std::string CreateVpcResult::getVpcId()const
-{
-	return vpcId_;
-}
-
-std::string CreateVpcResult::getResourceGroupId()const
-{
-	return resourceGroupId_;
 }
 

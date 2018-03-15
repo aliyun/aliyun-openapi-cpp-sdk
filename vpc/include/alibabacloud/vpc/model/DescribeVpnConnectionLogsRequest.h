@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBEVPCSREQUEST_H_
-#define ALIBABACLOUD_VPC_MODEL_DESCRIBEVPCSREQUEST_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBEVPNCONNECTIONLOGSREQUEST_H_
+#define ALIBABACLOUD_VPC_MODEL_DESCRIBEVPNCONNECTIONLOGSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,46 +28,46 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT DescribeVpcsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VPC_EXPORT DescribeVpnConnectionLogsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeVpcsRequest();
-				~DescribeVpcsRequest();
+				DescribeVpnConnectionLogsRequest();
+				~DescribeVpnConnectionLogsRequest();
 
-				std::string getVpcName()const;
-				void setVpcName(const std::string& vpcName);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getMinutePeriod()const;
+				void setMinutePeriod(int minutePeriod);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
+				std::string getVpnConnectionId()const;
+				void setVpnConnectionId(const std::string& vpnConnectionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				bool getIsDefault()const;
-				void setIsDefault(bool isDefault);
+				int getFrom()const;
+				void setFrom(int from);
+				int getTo()const;
+				void setTo(int to);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
             private:
-				std::string vpcName_;
-				std::string resourceGroupId_;
 				long resourceOwnerId_;
+				int minutePeriod_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
-				std::string vpcId_;
+				std::string vpnConnectionId_;
 				std::string ownerAccount_;
 				int pageSize_;
-				bool isDefault_;
+				int from_;
+				int to_;
 				long ownerId_;
 				int pageNumber_;
 
@@ -75,4 +75,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBEVPCSREQUEST_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBEVPNCONNECTIONLOGSREQUEST_H_

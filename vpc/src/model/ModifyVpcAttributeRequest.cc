@@ -91,17 +91,6 @@ void ModifyVpcAttributeRequest::setDescription(const std::string& description)
 	setParameter("Description", description);
 }
 
-std::string ModifyVpcAttributeRequest::getUserCidr()const
-{
-	return userCidr_;
-}
-
-void ModifyVpcAttributeRequest::setUserCidr(const std::string& userCidr)
-{
-	userCidr_ = userCidr;
-	setParameter("UserCidr", userCidr);
-}
-
 long ModifyVpcAttributeRequest::getOwnerId()const
 {
 	return ownerId_;

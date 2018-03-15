@@ -110,16 +110,16 @@ void DescribeVirtualBorderRoutersResult::parse(const std::string &payload)
 				associatedPhysicalConnectionsObject.vlanId = value["VlanId"].asString();
 			virtualBorderRouterSetObject.associatedPhysicalConnections.push_back(associatedPhysicalConnectionsObject);
 		}
-		auto allAssociatedCens = value["AssociatedCens"]["AssociatedCbn"];
+		auto allAssociatedCens = value["AssociatedCens"]["AssociatedCen"];
 		for (auto value : allAssociatedCens)
 		{
-			VirtualBorderRouterType::AssociatedCbn associatedCensObject;
+			VirtualBorderRouterType::AssociatedCen associatedCensObject;
+			if(!value["CenId"].isNull())
+				associatedCensObject.cenId = value["CenId"].asString();
+			if(!value["CenOwnerId"].isNull())
+				associatedCensObject.cenOwnerId = std::stol(value["CenOwnerId"].asString());
 			if(!value["CenStatus"].isNull())
 				associatedCensObject.cenStatus = value["CenStatus"].asString();
-			if(!value["CenOwnerId"].isNull())
-				associatedCensObject.cenOwnerId = value["CenOwnerId"].asString();
-			if(!value["CenOwnerUid"].isNull())
-				associatedCensObject.cenOwnerUid = std::stol(value["CenOwnerUid"].asString());
 			virtualBorderRouterSetObject.associatedCens.push_back(associatedCensObject);
 		}
 		virtualBorderRouterSet_.push_back(virtualBorderRouterSetObject);

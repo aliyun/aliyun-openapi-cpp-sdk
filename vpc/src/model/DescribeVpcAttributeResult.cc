@@ -40,16 +40,16 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allAssociatedCens = value["AssociatedCens"]["AssociatedCbn"];
+	auto allAssociatedCens = value["AssociatedCens"]["AssociatedCen"];
 	for (auto value : allAssociatedCens)
 	{
-		AssociatedCbn associatedCensObject;
-		if(!value["CenStatus"].isNull())
-			associatedCensObject.cenStatus = value["CenStatus"].asString();
+		AssociatedCen associatedCensObject;
 		if(!value["CenId"].isNull())
 			associatedCensObject.cenId = value["CenId"].asString();
-		if(!value["CenOwnerUid"].isNull())
-			associatedCensObject.cenOwnerUid = std::stol(value["CenOwnerUid"].asString());
+		if(!value["CenOwnerId"].isNull())
+			associatedCensObject.cenOwnerId = std::stol(value["CenOwnerId"].asString());
+		if(!value["CenStatus"].isNull())
+			associatedCensObject.cenStatus = value["CenStatus"].asString();
 		associatedCens_.push_back(associatedCensObject);
 	}
 	auto allCloudResources = value["CloudResources"]["CloudResourceSetType"];
@@ -143,7 +143,7 @@ std::string DescribeVpcAttributeResult::getVpcId()const
 	return vpcId_;
 }
 
-std::vector<DescribeVpcAttributeResult::AssociatedCbn> DescribeVpcAttributeResult::getAssociatedCens()const
+std::vector<DescribeVpcAttributeResult::AssociatedCen> DescribeVpcAttributeResult::getAssociatedCens()const
 {
 	return associatedCens_;
 }

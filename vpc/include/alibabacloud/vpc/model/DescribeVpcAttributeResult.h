@@ -32,11 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VPC_EXPORT DescribeVpcAttributeResult : public ServiceResult
 			{
 			public:
-				struct AssociatedCbn
+				struct AssociatedCen
 				{
 					std::string cenStatus;
+					long cenOwnerId;
 					std::string cenId;
-					long cenOwnerUid;
 				};
 				struct CloudResourceSetType
 				{
@@ -58,7 +58,7 @@ namespace AlibabaCloud
 				std::vector<std::string> getUserCidrs()const;
 				std::string getVRouterId()const;
 				std::string getVpcId()const;
-				std::vector<AssociatedCbn> getAssociatedCens()const;
+				std::vector<AssociatedCen> getAssociatedCens()const;
 				std::string getCreationTime()const;
 				std::string getVpcName()const;
 				std::string getRegionId()const;
@@ -77,7 +77,7 @@ namespace AlibabaCloud
 				std::vector<std::string> userCidrs_;
 				std::string vRouterId_;
 				std::string vpcId_;
-				std::vector<AssociatedCbn> associatedCens_;
+				std::vector<AssociatedCen> associatedCens_;
 				std::string creationTime_;
 				std::string vpcName_;
 				std::string regionId_;

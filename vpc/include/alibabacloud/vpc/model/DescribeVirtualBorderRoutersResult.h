@@ -47,11 +47,11 @@ namespace AlibabaCloud
 						std::string vlanId;
 						std::string physicalConnectionBusinessStatus;
 					};
-					struct AssociatedCbn
+					struct AssociatedCen
 					{
 						std::string cenStatus;
-						std::string cenOwnerId;
-						long cenOwnerUid;
+						long cenOwnerId;
+						std::string cenId;
 					};
 					std::string status;
 					std::string peerGatewayIp;
@@ -70,7 +70,7 @@ namespace AlibabaCloud
 					std::string recoveryTime;
 					std::string name;
 					std::string localGatewayIp;
-					std::vector<VirtualBorderRouterType::AssociatedCbn> associatedCens;
+					std::vector<VirtualBorderRouterType::AssociatedCen> associatedCens;
 					std::string creationTime;
 					std::string accessPointId;
 					int vlanId;

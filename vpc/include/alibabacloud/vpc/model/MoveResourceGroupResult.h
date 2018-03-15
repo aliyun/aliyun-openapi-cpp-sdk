@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_CREATEVPCRESULT_H_
-#define ALIBABACLOUD_VPC_MODEL_CREATEVPCRESULT_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_MOVERESOURCEGROUPRESULT_H_
+#define ALIBABACLOUD_VPC_MODEL_MOVERESOURCEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT CreateVpcResult : public ServiceResult
+			class ALIBABACLOUD_VPC_EXPORT MoveResourceGroupResult : public ServiceResult
 			{
 			public:
 
 
-				CreateVpcResult();
-				explicit CreateVpcResult(const std::string &payload);
-				~CreateVpcResult();
-				std::string getVRouterId()const;
-				std::string getRouteTableId()const;
-				std::string getVpcId()const;
-				std::string getResourceGroupId()const;
+				MoveResourceGroupResult();
+				explicit MoveResourceGroupResult(const std::string &payload);
+				~MoveResourceGroupResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string vRouterId_;
-				std::string routeTableId_;
-				std::string vpcId_;
-				std::string resourceGroupId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_CREATEVPCRESULT_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_MOVERESOURCEGROUPRESULT_H_

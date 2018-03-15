@@ -124,6 +124,17 @@ void AllocateEipAddressRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string AllocateEipAddressRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void AllocateEipAddressRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string AllocateEipAddressRequest::getRegionId()const
 {
 	return regionId_;
