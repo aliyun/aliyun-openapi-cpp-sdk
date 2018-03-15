@@ -91,8 +91,6 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/ModifyVServerGroupBackendServersResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerUDPListenerAttributeRequest.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerUDPListenerAttributeResult.h
-	include/alibabacloud/slb/model/DescribeAccessLogsDownloadAttributeRequest.h
-	include/alibabacloud/slb/model/DescribeAccessLogsDownloadAttributeResult.h
 	include/alibabacloud/slb/model/DeleteRulesRequest.h
 	include/alibabacloud/slb/model/DeleteRulesResult.h
 	include/alibabacloud/slb/model/DeleteMasterSlaveVServerGroupRequest.h
@@ -133,14 +131,10 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/DescribeServerCertificatesResult.h
 	include/alibabacloud/slb/model/DescribeRulesRequest.h
 	include/alibabacloud/slb/model/DescribeRulesResult.h
-	include/alibabacloud/slb/model/DeleteAccessLogsDownloadAttributeRequest.h
-	include/alibabacloud/slb/model/DeleteAccessLogsDownloadAttributeResult.h
 	include/alibabacloud/slb/model/DescribeRuleAttributeRequest.h
 	include/alibabacloud/slb/model/DescribeRuleAttributeResult.h
 	include/alibabacloud/slb/model/UploadServerCertificateRequest.h
 	include/alibabacloud/slb/model/UploadServerCertificateResult.h
-	include/alibabacloud/slb/model/SetAccessLogsDownloadAttributeRequest.h
-	include/alibabacloud/slb/model/SetAccessLogsDownloadAttributeResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerAutoReleaseTimeRequest.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerAutoReleaseTimeResult.h
 	include/alibabacloud/slb/model/DeleteServerCertificateRequest.h
@@ -240,8 +234,6 @@ set(slb_src
 	src/model/ModifyVServerGroupBackendServersResult.cc
 	src/model/DescribeLoadBalancerUDPListenerAttributeRequest.cc
 	src/model/DescribeLoadBalancerUDPListenerAttributeResult.cc
-	src/model/DescribeAccessLogsDownloadAttributeRequest.cc
-	src/model/DescribeAccessLogsDownloadAttributeResult.cc
 	src/model/DeleteRulesRequest.cc
 	src/model/DeleteRulesResult.cc
 	src/model/DeleteMasterSlaveVServerGroupRequest.cc
@@ -282,14 +274,10 @@ set(slb_src
 	src/model/DescribeServerCertificatesResult.cc
 	src/model/DescribeRulesRequest.cc
 	src/model/DescribeRulesResult.cc
-	src/model/DeleteAccessLogsDownloadAttributeRequest.cc
-	src/model/DeleteAccessLogsDownloadAttributeResult.cc
 	src/model/DescribeRuleAttributeRequest.cc
 	src/model/DescribeRuleAttributeResult.cc
 	src/model/UploadServerCertificateRequest.cc
 	src/model/UploadServerCertificateResult.cc
-	src/model/SetAccessLogsDownloadAttributeRequest.cc
-	src/model/SetAccessLogsDownloadAttributeResult.cc
 	src/model/DescribeLoadBalancerAutoReleaseTimeRequest.cc
 	src/model/DescribeLoadBalancerAutoReleaseTimeResult.cc
 	src/model/DeleteServerCertificateRequest.cc
