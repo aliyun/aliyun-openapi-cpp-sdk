@@ -171,8 +171,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeInstanceAutoRenewalAttributeResult.h
 	include/alibabacloud/rds/model/RestoreDBInstanceRequest.h
 	include/alibabacloud/rds/model/RestoreDBInstanceResult.h
-	include/alibabacloud/rds/model/AddBuDBInstanceRelationRequest.h
-	include/alibabacloud/rds/model/AddBuDBInstanceRelationResult.h
 	include/alibabacloud/rds/model/RevokeOperatorPermissionRequest.h
 	include/alibabacloud/rds/model/RevokeOperatorPermissionResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceSpecRequest.h
@@ -261,8 +259,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyReplicaRelationResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceNetworkTypeRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceNetworkTypeResult.h
-	include/alibabacloud/rds/model/DescribeDBInstanceNetworkRequest.h
-	include/alibabacloud/rds/model/DescribeDBInstanceNetworkResult.h
 	include/alibabacloud/rds/model/DescribeAbnormalDBInstancesRequest.h
 	include/alibabacloud/rds/model/DescribeAbnormalDBInstancesResult.h
 	include/alibabacloud/rds/model/DescribeSlowLogsRequest.h
@@ -279,8 +275,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyDBInstanceMaintainTimeResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceDescriptionRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceDescriptionResult.h
-	include/alibabacloud/rds/model/DescribeDBInstanceNetworkDetailRequest.h
-	include/alibabacloud/rds/model/DescribeDBInstanceNetworkDetailResult.h
 	include/alibabacloud/rds/model/DescribeReplicaPerformanceRequest.h
 	include/alibabacloud/rds/model/DescribeReplicaPerformanceResult.h
 	include/alibabacloud/rds/model/DescribeSQLDiagnosisRequest.h
@@ -339,8 +333,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CreateDampPolicyResult.h
 	include/alibabacloud/rds/model/DescribeDBInstancesByPerformanceRequest.h
 	include/alibabacloud/rds/model/DescribeDBInstancesByPerformanceResult.h
-	include/alibabacloud/rds/model/RenewDBInstanceRequest.h
-	include/alibabacloud/rds/model/RenewDBInstanceResult.h
 	include/alibabacloud/rds/model/QueryPriceForBuyRequest.h
 	include/alibabacloud/rds/model/QueryPriceForBuyResult.h
 	include/alibabacloud/rds/model/DescribeSQLReportsRequest.h
@@ -516,8 +508,6 @@ set(rds_src
 	src/model/DescribeInstanceAutoRenewalAttributeResult.cc
 	src/model/RestoreDBInstanceRequest.cc
 	src/model/RestoreDBInstanceResult.cc
-	src/model/AddBuDBInstanceRelationRequest.cc
-	src/model/AddBuDBInstanceRelationResult.cc
 	src/model/RevokeOperatorPermissionRequest.cc
 	src/model/RevokeOperatorPermissionResult.cc
 	src/model/ModifyDBInstanceSpecRequest.cc
@@ -606,8 +596,6 @@ set(rds_src
 	src/model/ModifyReplicaRelationResult.cc
 	src/model/ModifyDBInstanceNetworkTypeRequest.cc
 	src/model/ModifyDBInstanceNetworkTypeResult.cc
-	src/model/DescribeDBInstanceNetworkRequest.cc
-	src/model/DescribeDBInstanceNetworkResult.cc
 	src/model/DescribeAbnormalDBInstancesRequest.cc
 	src/model/DescribeAbnormalDBInstancesResult.cc
 	src/model/DescribeSlowLogsRequest.cc
@@ -624,8 +612,6 @@ set(rds_src
 	src/model/ModifyDBInstanceMaintainTimeResult.cc
 	src/model/ModifyDBInstanceDescriptionRequest.cc
 	src/model/ModifyDBInstanceDescriptionResult.cc
-	src/model/DescribeDBInstanceNetworkDetailRequest.cc
-	src/model/DescribeDBInstanceNetworkDetailResult.cc
 	src/model/DescribeReplicaPerformanceRequest.cc
 	src/model/DescribeReplicaPerformanceResult.cc
 	src/model/DescribeSQLDiagnosisRequest.cc
@@ -684,8 +670,6 @@ set(rds_src
 	src/model/CreateDampPolicyResult.cc
 	src/model/DescribeDBInstancesByPerformanceRequest.cc
 	src/model/DescribeDBInstancesByPerformanceResult.cc
-	src/model/RenewDBInstanceRequest.cc
-	src/model/RenewDBInstanceResult.cc
 	src/model/QueryPriceForBuyRequest.cc
 	src/model/QueryPriceForBuyResult.cc
 	src/model/DescribeSQLReportsRequest.cc

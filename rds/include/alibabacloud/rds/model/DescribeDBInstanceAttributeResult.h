@@ -72,6 +72,7 @@ namespace AlibabaCloud
 					std::string readDelayTime;
 					std::string creationTime;
 					std::string connectionMode;
+					std::string vpcCloudInstanceId;
 					std::string connectionString;
 					std::string expireTime;
 					std::string advancedFeatures;

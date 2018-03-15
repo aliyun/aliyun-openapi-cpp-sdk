@@ -50,8 +50,8 @@ void DescribeDBInstanceIPArrayListResult::parse(const std::string &payload)
 			itemsObject.dBInstanceIPArrayAttribute = value["DBInstanceIPArrayAttribute"].asString();
 		if(!value["SecurityIPList"].isNull())
 			itemsObject.securityIPList = value["SecurityIPList"].asString();
-		if(!value["WhitelistNetType"].isNull())
-			itemsObject.whitelistNetType = value["WhitelistNetType"].asString();
+		if(!value["WhitelistNetworkType"].isNull())
+			itemsObject.whitelistNetworkType = value["WhitelistNetworkType"].asString();
 		items_.push_back(itemsObject);
 	}
 

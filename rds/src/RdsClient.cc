@@ -2751,42 +2751,6 @@ RdsClient::RestoreDBInstanceOutcomeCallable RdsClient::restoreDBInstanceCallable
 	return task->get_future();
 }
 
-RdsClient::AddBuDBInstanceRelationOutcome RdsClient::addBuDBInstanceRelation(const AddBuDBInstanceRelationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddBuDBInstanceRelationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddBuDBInstanceRelationOutcome(AddBuDBInstanceRelationResult(outcome.result()));
-	else
-		return AddBuDBInstanceRelationOutcome(outcome.error());
-}
-
-void RdsClient::addBuDBInstanceRelationAsync(const AddBuDBInstanceRelationRequest& request, const AddBuDBInstanceRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addBuDBInstanceRelation(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::AddBuDBInstanceRelationOutcomeCallable RdsClient::addBuDBInstanceRelationCallable(const AddBuDBInstanceRelationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddBuDBInstanceRelationOutcome()>>(
-			[this, request]()
-			{
-			return this->addBuDBInstanceRelation(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::RevokeOperatorPermissionOutcome RdsClient::revokeOperatorPermission(const RevokeOperatorPermissionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4371,42 +4335,6 @@ RdsClient::ModifyDBInstanceNetworkTypeOutcomeCallable RdsClient::modifyDBInstanc
 	return task->get_future();
 }
 
-RdsClient::DescribeDBInstanceNetworkOutcome RdsClient::describeDBInstanceNetwork(const DescribeDBInstanceNetworkRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDBInstanceNetworkOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDBInstanceNetworkOutcome(DescribeDBInstanceNetworkResult(outcome.result()));
-	else
-		return DescribeDBInstanceNetworkOutcome(outcome.error());
-}
-
-void RdsClient::describeDBInstanceNetworkAsync(const DescribeDBInstanceNetworkRequest& request, const DescribeDBInstanceNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDBInstanceNetwork(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeDBInstanceNetworkOutcomeCallable RdsClient::describeDBInstanceNetworkCallable(const DescribeDBInstanceNetworkRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceNetworkOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDBInstanceNetwork(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::DescribeAbnormalDBInstancesOutcome RdsClient::describeAbnormalDBInstances(const DescribeAbnormalDBInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4689,42 +4617,6 @@ RdsClient::ModifyDBInstanceDescriptionOutcomeCallable RdsClient::modifyDBInstanc
 			[this, request]()
 			{
 			return this->modifyDBInstanceDescription(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::DescribeDBInstanceNetworkDetailOutcome RdsClient::describeDBInstanceNetworkDetail(const DescribeDBInstanceNetworkDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDBInstanceNetworkDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDBInstanceNetworkDetailOutcome(DescribeDBInstanceNetworkDetailResult(outcome.result()));
-	else
-		return DescribeDBInstanceNetworkDetailOutcome(outcome.error());
-}
-
-void RdsClient::describeDBInstanceNetworkDetailAsync(const DescribeDBInstanceNetworkDetailRequest& request, const DescribeDBInstanceNetworkDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDBInstanceNetworkDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeDBInstanceNetworkDetailOutcomeCallable RdsClient::describeDBInstanceNetworkDetailCallable(const DescribeDBInstanceNetworkDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceNetworkDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDBInstanceNetworkDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5769,42 +5661,6 @@ RdsClient::DescribeDBInstancesByPerformanceOutcomeCallable RdsClient::describeDB
 			[this, request]()
 			{
 			return this->describeDBInstancesByPerformance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::RenewDBInstanceOutcome RdsClient::renewDBInstance(const RenewDBInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RenewDBInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RenewDBInstanceOutcome(RenewDBInstanceResult(outcome.result()));
-	else
-		return RenewDBInstanceOutcome(outcome.error());
-}
-
-void RdsClient::renewDBInstanceAsync(const RenewDBInstanceRequest& request, const RenewDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, renewDBInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::RenewDBInstanceOutcomeCallable RdsClient::renewDBInstanceCallable(const RenewDBInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RenewDBInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->renewDBInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

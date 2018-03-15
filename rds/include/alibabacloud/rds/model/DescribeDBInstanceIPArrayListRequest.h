@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getWhitelistNetworkType()const;
+				void setWhitelistNetworkType(const std::string& whitelistNetworkType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -47,17 +49,15 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getWhitelistNetType()const;
-				void setWhitelistNetType(const std::string& whitelistNetType);
 
             private:
 				long resourceOwnerId_;
+				std::string whitelistNetworkType_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string dBInstanceId_;
 				long ownerId_;
 				std::string accessKeyId_;
-				std::string whitelistNetType_;
 
 			};
 		}
