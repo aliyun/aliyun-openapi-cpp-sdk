@@ -16,7 +16,7 @@
 
 if(CMAKE_HOST_WIN32)
 	ExternalProject_Add(jsoncpp
-		URL https://github.com/open-source-parsers/jsoncpp/archive/0.10.5.tar.gz
+		URL ${CMAKE_CURRENT_SOURCE_DIR}/jsoncpp-0.10.5.tar.gz
 		CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
 			-DJSONCPP_WITH_TESTS=OFF
 			-DJSONCPP_WITH_POST_BUILD_UNITTEST=OFF
@@ -28,7 +28,7 @@ if(CMAKE_HOST_WIN32)
 		)
 
 ExternalProject_Add(curl
-	URL https://github.com/curl/curl/releases/download/curl-7_55_1/curl-7.55.1.tar.gz
+	URL ${CMAKE_CURRENT_SOURCE_DIR}/curl-7.55.1.tar.gz
 	CMAKE_ARGS -DBUILD_CURL_EXE=OFF
 		-DBUILD_TESTING=OFF
 		-DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
@@ -40,7 +40,7 @@ ExternalProject_Add(curl
 endif()
 
 ExternalProject_Add(catch
-	URL https://github.com/catchorg/Catch2/releases/download/v2.0.1/catch.hpp
+	URL ${CMAKE_CURRENT_SOURCE_DIR}/catch-2.0.1.hpp
 	DOWNLOAD_NO_EXTRACT 1
 	CONFIGURE_COMMAND ""
 	BUILD_COMMAND ""
