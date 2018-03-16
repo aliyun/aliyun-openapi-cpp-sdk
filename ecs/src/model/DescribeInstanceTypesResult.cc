@@ -68,6 +68,10 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.baselineCredit = std::stoi(value["BaselineCredit"].asString());
 		if(!value["EniQuantity"].isNull())
 			instanceTypesObject.eniQuantity = std::stoi(value["EniQuantity"].asString());
+		if(!value["InstanceBandwidthRx"].isNull())
+			instanceTypesObject.instanceBandwidthRx = std::stoi(value["InstanceBandwidthRx"].asString());
+		if(!value["InstanceBandwidthTx"].isNull())
+			instanceTypesObject.instanceBandwidthTx = std::stoi(value["InstanceBandwidthTx"].asString());
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 

@@ -73,7 +73,7 @@ namespace AlibabaCloud
 					std::string instanceNetworkType;
 					std::vector<std::string> innerIpAddress;
 					std::string expiredTime;
-					std::vector<EipAddress> eipAddress;
+					EipAddress eipAddress;
 					std::string imageId;
 					std::vector<Instance::Tag> tags;
 					std::string hostName;
@@ -82,7 +82,7 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string stoppedMode;
 					std::string startTime;
-					std::vector<VpcAttributes> vpcAttributes;
+					VpcAttributes vpcAttributes;
 					std::vector<std::string> securityGroupIds;
 					std::string internetChargeType;
 					std::string instanceName;

@@ -76,28 +76,18 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 				privateIpSetsObject.privateIpAddress = value["PrivateIpAddress"].asString();
 			if(!value["Primary"].isNull())
 				privateIpSetsObject.primary = value["Primary"].asString() == "true";
-			auto allAssociatedPublicIp1 = value["AssociatedPublicIp"];
-			for (auto value : allAssociatedPublicIp1)
-			{
-				NetworkInterfaceSet::PrivateIpSet::AssociatedPublicIp1 associatedPublicIp1Object;
-				if(!value["PublicIpAddress"].isNull())
-					associatedPublicIp1Object.publicIpAddress = value["PublicIpAddress"].asString();
-				if(!value["AllocationId"].isNull())
-					associatedPublicIp1Object.allocationId = value["AllocationId"].asString();
-				privateIpSetsObject.associatedPublicIp1.push_back(associatedPublicIp1Object);
-			}
+			auto associatedPublicIp1Node = value["AssociatedPublicIp"];
+			if(!associatedPublicIp1Node["PublicIpAddress"].isNull())
+				privateIpSetsObject.associatedPublicIp1.publicIpAddress = associatedPublicIp1Node["PublicIpAddress"].asString();
+			if(!associatedPublicIp1Node["AllocationId"].isNull())
+				privateIpSetsObject.associatedPublicIp1.allocationId = associatedPublicIp1Node["AllocationId"].asString();
 			networkInterfaceSetsObject.privateIpSets.push_back(privateIpSetsObject);
 		}
-		auto allAssociatedPublicIp = value["AssociatedPublicIp"];
-		for (auto value : allAssociatedPublicIp)
-		{
-			NetworkInterfaceSet::AssociatedPublicIp associatedPublicIpObject;
-			if(!value["PublicIpAddress"].isNull())
-				associatedPublicIpObject.publicIpAddress = value["PublicIpAddress"].asString();
-			if(!value["AllocationId"].isNull())
-				associatedPublicIpObject.allocationId = value["AllocationId"].asString();
-			networkInterfaceSetsObject.associatedPublicIp.push_back(associatedPublicIpObject);
-		}
+		auto associatedPublicIpNode = value["AssociatedPublicIp"];
+		if(!associatedPublicIpNode["PublicIpAddress"].isNull())
+			networkInterfaceSetsObject.associatedPublicIp.publicIpAddress = associatedPublicIpNode["PublicIpAddress"].asString();
+		if(!associatedPublicIpNode["AllocationId"].isNull())
+			networkInterfaceSetsObject.associatedPublicIp.allocationId = associatedPublicIpNode["AllocationId"].asString();
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
 			networkInterfaceSetsObject.securityGroupIds.push_back(value.asString());

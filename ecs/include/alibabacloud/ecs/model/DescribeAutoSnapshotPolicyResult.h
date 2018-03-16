@@ -54,15 +54,15 @@ namespace AlibabaCloud
 				explicit DescribeAutoSnapshotPolicyResult(const std::string &payload);
 				~DescribeAutoSnapshotPolicyResult();
 				int getAutoSnapshotOccupation()const;
-				std::vector<AutoSnapshotExcutionStatus> getAutoSnapshotExcutionStatus()const;
-				std::vector<AutoSnapshotPolicy> getAutoSnapshotPolicy()const;
+				AutoSnapshotExcutionStatus getAutoSnapshotExcutionStatus()const;
+				AutoSnapshotPolicy getAutoSnapshotPolicy()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int autoSnapshotOccupation_;
-				std::vector<AutoSnapshotExcutionStatus> autoSnapshotExcutionStatus_;
-				std::vector<AutoSnapshotPolicy> autoSnapshotPolicy_;
+				AutoSnapshotExcutionStatus autoSnapshotExcutionStatus_;
+				AutoSnapshotPolicy autoSnapshotPolicy_;
 
 			};
 		}

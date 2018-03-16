@@ -61,24 +61,19 @@ void DescribeRecommendInstanceTypeResult::parse(const std::string &payload)
 				zonesObject.networkTypes.push_back(value.asString());
 			dataObject.zones.push_back(zonesObject);
 		}
-		auto allInstanceType = value["InstanceType"];
-		for (auto value : allInstanceType)
-		{
-			RecommendInstanceType::InstanceType instanceTypeObject;
-			if(!value["Generation"].isNull())
-				instanceTypeObject.generation = value["Generation"].asString();
-			if(!value["InstanceTypeFamily"].isNull())
-				instanceTypeObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
-			if(!value["InstanceType"].isNull())
-				instanceTypeObject.instanceType = value["InstanceType"].asString();
-			if(!value["SupportIoOptimized"].isNull())
-				instanceTypeObject.supportIoOptimized = value["SupportIoOptimized"].asString();
-			if(!value["Cores"].isNull())
-				instanceTypeObject.cores = std::stoi(value["Cores"].asString());
-			if(!value["Memory"].isNull())
-				instanceTypeObject.memory = std::stoi(value["Memory"].asString());
-			dataObject.instanceType.push_back(instanceTypeObject);
-		}
+		auto instanceTypeNode = value["InstanceType"];
+		if(!instanceTypeNode["Generation"].isNull())
+			dataObject.instanceType.generation = instanceTypeNode["Generation"].asString();
+		if(!instanceTypeNode["InstanceTypeFamily"].isNull())
+			dataObject.instanceType.instanceTypeFamily = instanceTypeNode["InstanceTypeFamily"].asString();
+		if(!instanceTypeNode["InstanceType"].isNull())
+			dataObject.instanceType.instanceType = instanceTypeNode["InstanceType"].asString();
+		if(!instanceTypeNode["SupportIoOptimized"].isNull())
+			dataObject.instanceType.supportIoOptimized = instanceTypeNode["SupportIoOptimized"].asString();
+		if(!instanceTypeNode["Cores"].isNull())
+			dataObject.instanceType.cores = std::stoi(instanceTypeNode["Cores"].asString());
+		if(!instanceTypeNode["Memory"].isNull())
+			dataObject.instanceType.memory = std::stoi(instanceTypeNode["Memory"].asString());
 		data_.push_back(dataObject);
 	}
 

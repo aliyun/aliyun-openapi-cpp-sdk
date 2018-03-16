@@ -227,6 +227,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyInstanceVpcAttributeResult.h
 	include/alibabacloud/ecs/model/AddTagsRequest.h
 	include/alibabacloud/ecs/model/AddTagsResult.h
+	include/alibabacloud/ecs/model/CancelUserEventRequest.h
+	include/alibabacloud/ecs/model/CancelUserEventResult.h
 	include/alibabacloud/ecs/model/CreateHpcClusterRequest.h
 	include/alibabacloud/ecs/model/CreateHpcClusterResult.h
 	include/alibabacloud/ecs/model/DescribeUserBusinessBehaviorRequest.h
@@ -343,6 +345,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateSecurityGroupResult.h
 	include/alibabacloud/ecs/model/DescribeSnapshotLinksRequest.h
 	include/alibabacloud/ecs/model/DescribeSnapshotLinksResult.h
+	include/alibabacloud/ecs/model/DescribeEventDetailRequest.h
+	include/alibabacloud/ecs/model/DescribeEventDetailResult.h
 	include/alibabacloud/ecs/model/DescribeInvocationResultsRequest.h
 	include/alibabacloud/ecs/model/DescribeInvocationResultsResult.h
 	include/alibabacloud/ecs/model/DescribeRecommendInstanceTypeRequest.h
@@ -395,6 +399,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyAutoSnapshotPolicyExResult.h
 	include/alibabacloud/ecs/model/CreatePhysicalConnectionRequest.h
 	include/alibabacloud/ecs/model/CreatePhysicalConnectionResult.h
+	include/alibabacloud/ecs/model/ModifyUserEventAttributeRequest.h
+	include/alibabacloud/ecs/model/ModifyUserEventAttributeResult.h
 	include/alibabacloud/ecs/model/DescribeKeyPairsRequest.h
 	include/alibabacloud/ecs/model/DescribeKeyPairsResult.h
 	include/alibabacloud/ecs/model/ModifySecurityGroupPolicyRequest.h
@@ -429,6 +435,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeRegionsResult.h
 	include/alibabacloud/ecs/model/DescribeClassicLinkInstancesRequest.h
 	include/alibabacloud/ecs/model/DescribeClassicLinkInstancesResult.h
+	include/alibabacloud/ecs/model/CreateUserEventRequest.h
+	include/alibabacloud/ecs/model/CreateUserEventResult.h
 	include/alibabacloud/ecs/model/DescribeAutoSnapshotPolicyRequest.h
 	include/alibabacloud/ecs/model/DescribeAutoSnapshotPolicyResult.h
 	include/alibabacloud/ecs/model/DescribePhysicalConnectionsRequest.h
@@ -453,6 +461,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/AllocateEipAddressResult.h
 	include/alibabacloud/ecs/model/DeleteDiskRequest.h
 	include/alibabacloud/ecs/model/DeleteDiskResult.h
+	include/alibabacloud/ecs/model/DescribeEventsRequest.h
+	include/alibabacloud/ecs/model/DescribeEventsResult.h
 	include/alibabacloud/ecs/model/UnassociateHaVipRequest.h
 	include/alibabacloud/ecs/model/UnassociateHaVipResult.h
 	include/alibabacloud/ecs/model/ModifyHaVipAttributeRequest.h
@@ -676,6 +686,8 @@ set(ecs_src
 	src/model/ModifyInstanceVpcAttributeResult.cc
 	src/model/AddTagsRequest.cc
 	src/model/AddTagsResult.cc
+	src/model/CancelUserEventRequest.cc
+	src/model/CancelUserEventResult.cc
 	src/model/CreateHpcClusterRequest.cc
 	src/model/CreateHpcClusterResult.cc
 	src/model/DescribeUserBusinessBehaviorRequest.cc
@@ -792,6 +804,8 @@ set(ecs_src
 	src/model/CreateSecurityGroupResult.cc
 	src/model/DescribeSnapshotLinksRequest.cc
 	src/model/DescribeSnapshotLinksResult.cc
+	src/model/DescribeEventDetailRequest.cc
+	src/model/DescribeEventDetailResult.cc
 	src/model/DescribeInvocationResultsRequest.cc
 	src/model/DescribeInvocationResultsResult.cc
 	src/model/DescribeRecommendInstanceTypeRequest.cc
@@ -844,6 +858,8 @@ set(ecs_src
 	src/model/ModifyAutoSnapshotPolicyExResult.cc
 	src/model/CreatePhysicalConnectionRequest.cc
 	src/model/CreatePhysicalConnectionResult.cc
+	src/model/ModifyUserEventAttributeRequest.cc
+	src/model/ModifyUserEventAttributeResult.cc
 	src/model/DescribeKeyPairsRequest.cc
 	src/model/DescribeKeyPairsResult.cc
 	src/model/ModifySecurityGroupPolicyRequest.cc
@@ -878,6 +894,8 @@ set(ecs_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeClassicLinkInstancesRequest.cc
 	src/model/DescribeClassicLinkInstancesResult.cc
+	src/model/CreateUserEventRequest.cc
+	src/model/CreateUserEventResult.cc
 	src/model/DescribeAutoSnapshotPolicyRequest.cc
 	src/model/DescribeAutoSnapshotPolicyResult.cc
 	src/model/DescribePhysicalConnectionsRequest.cc
@@ -902,6 +920,8 @@ set(ecs_src
 	src/model/AllocateEipAddressResult.cc
 	src/model/DeleteDiskRequest.cc
 	src/model/DeleteDiskResult.cc
+	src/model/DescribeEventsRequest.cc
+	src/model/DescribeEventsResult.cc
 	src/model/UnassociateHaVipRequest.cc
 	src/model/UnassociateHaVipResult.cc
 	src/model/ModifyHaVipAttributeRequest.cc

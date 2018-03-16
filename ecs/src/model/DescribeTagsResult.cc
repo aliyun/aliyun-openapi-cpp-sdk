@@ -48,24 +48,19 @@ void DescribeTagsResult::parse(const std::string &payload)
 			tagsObject.tagKey = value["TagKey"].asString();
 		if(!value["TagValue"].isNull())
 			tagsObject.tagValue = value["TagValue"].asString();
-		auto allResourceTypeCount = value["ResourceTypeCount"];
-		for (auto value : allResourceTypeCount)
-		{
-			Tag::ResourceTypeCount resourceTypeCountObject;
-			if(!value["Instance"].isNull())
-				resourceTypeCountObject.instance = std::stoi(value["Instance"].asString());
-			if(!value["Disk"].isNull())
-				resourceTypeCountObject.disk = std::stoi(value["Disk"].asString());
-			if(!value["Volume"].isNull())
-				resourceTypeCountObject.volume = std::stoi(value["Volume"].asString());
-			if(!value["Image"].isNull())
-				resourceTypeCountObject.image = std::stoi(value["Image"].asString());
-			if(!value["Snapshot"].isNull())
-				resourceTypeCountObject.snapshot = std::stoi(value["Snapshot"].asString());
-			if(!value["Securitygroup"].isNull())
-				resourceTypeCountObject.securitygroup = std::stoi(value["Securitygroup"].asString());
-			tagsObject.resourceTypeCount.push_back(resourceTypeCountObject);
-		}
+		auto resourceTypeCountNode = value["ResourceTypeCount"];
+		if(!resourceTypeCountNode["Instance"].isNull())
+			tagsObject.resourceTypeCount.instance = std::stoi(resourceTypeCountNode["Instance"].asString());
+		if(!resourceTypeCountNode["Disk"].isNull())
+			tagsObject.resourceTypeCount.disk = std::stoi(resourceTypeCountNode["Disk"].asString());
+		if(!resourceTypeCountNode["Volume"].isNull())
+			tagsObject.resourceTypeCount.volume = std::stoi(resourceTypeCountNode["Volume"].asString());
+		if(!resourceTypeCountNode["Image"].isNull())
+			tagsObject.resourceTypeCount.image = std::stoi(resourceTypeCountNode["Image"].asString());
+		if(!resourceTypeCountNode["Snapshot"].isNull())
+			tagsObject.resourceTypeCount.snapshot = std::stoi(resourceTypeCountNode["Snapshot"].asString());
+		if(!resourceTypeCountNode["Securitygroup"].isNull())
+			tagsObject.resourceTypeCount.securitygroup = std::stoi(resourceTypeCountNode["Securitygroup"].asString());
 		tags_.push_back(tagsObject);
 	}
 	if(!value["PageSize"].isNull())

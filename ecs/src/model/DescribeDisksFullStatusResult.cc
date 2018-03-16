@@ -54,38 +54,23 @@ void DescribeDisksFullStatusResult::parse(const std::string &payload)
 				diskEventSetObject.eventId = value["EventId"].asString();
 			if(!value["EventTime"].isNull())
 				diskEventSetObject.eventTime = value["EventTime"].asString();
-			auto allEventType = value["EventType"];
-			for (auto value : allEventType)
-			{
-				DiskFullStatusType::DiskEventType::EventType eventTypeObject;
-				if(!value["Code"].isNull())
-					eventTypeObject.code = std::stoi(value["Code"].asString());
-				if(!value["Name"].isNull())
-					eventTypeObject.name = value["Name"].asString();
-				diskEventSetObject.eventType.push_back(eventTypeObject);
-			}
+			auto eventTypeNode = value["EventType"];
+			if(!eventTypeNode["Code"].isNull())
+				diskEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());
+			if(!eventTypeNode["Name"].isNull())
+				diskEventSetObject.eventType.name = eventTypeNode["Name"].asString();
 			diskFullStatusSetObject.diskEventSet.push_back(diskEventSetObject);
 		}
-		auto allStatus = value["Status"];
-		for (auto value : allStatus)
-		{
-			DiskFullStatusType::Status statusObject;
-			if(!value["Code"].isNull())
-				statusObject.code = std::stoi(value["Code"].asString());
-			if(!value["Name"].isNull())
-				statusObject.name = value["Name"].asString();
-			diskFullStatusSetObject.status.push_back(statusObject);
-		}
-		auto allHealthStatus = value["HealthStatus"];
-		for (auto value : allHealthStatus)
-		{
-			DiskFullStatusType::HealthStatus healthStatusObject;
-			if(!value["Code"].isNull())
-				healthStatusObject.code = std::stoi(value["Code"].asString());
-			if(!value["Name"].isNull())
-				healthStatusObject.name = value["Name"].asString();
-			diskFullStatusSetObject.healthStatus.push_back(healthStatusObject);
-		}
+		auto statusNode = value["Status"];
+		if(!statusNode["Code"].isNull())
+			diskFullStatusSetObject.status.code = std::stoi(statusNode["Code"].asString());
+		if(!statusNode["Name"].isNull())
+			diskFullStatusSetObject.status.name = statusNode["Name"].asString();
+		auto healthStatusNode = value["HealthStatus"];
+		if(!healthStatusNode["Code"].isNull())
+			diskFullStatusSetObject.healthStatus.code = std::stoi(healthStatusNode["Code"].asString());
+		if(!healthStatusNode["Name"].isNull())
+			diskFullStatusSetObject.healthStatus.name = healthStatusNode["Name"].asString();
 		diskFullStatusSet_.push_back(diskFullStatusSetObject);
 	}
 	if(!value["TotalCount"].isNull())

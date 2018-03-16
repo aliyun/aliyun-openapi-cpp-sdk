@@ -52,16 +52,11 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 			instanceSystemEventSetObject.eventPublishTime = value["EventPublishTime"].asString();
 		if(!value["NotBefore"].isNull())
 			instanceSystemEventSetObject.notBefore = value["NotBefore"].asString();
-		auto allEventType = value["EventType"];
-		for (auto value : allEventType)
-		{
-			InstanceSystemEventType::EventType eventTypeObject;
-			if(!value["Code"].isNull())
-				eventTypeObject.code = std::stoi(value["Code"].asString());
-			if(!value["Name"].isNull())
-				eventTypeObject.name = value["Name"].asString();
-			instanceSystemEventSetObject.eventType.push_back(eventTypeObject);
-		}
+		auto eventTypeNode = value["EventType"];
+		if(!eventTypeNode["Code"].isNull())
+			instanceSystemEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());
+		if(!eventTypeNode["Name"].isNull())
+			instanceSystemEventSetObject.eventType.name = eventTypeNode["Name"].asString();
 		instanceSystemEventSet_.push_back(instanceSystemEventSetObject);
 	}
 	if(!value["TotalCount"].isNull())

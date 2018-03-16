@@ -63,7 +63,7 @@ namespace AlibabaCloud
 				std::vector<std::string> getPublicIpAddress()const;
 				std::vector<std::string> getInnerIpAddress()const;
 				std::string getExpiredTime()const;
-				std::vector<EipAddress> getEipAddress()const;
+				EipAddress getEipAddress()const;
 				std::string getImageId()const;
 				std::string getInstanceType()const;
 				std::string getHostName()const;
@@ -74,7 +74,7 @@ namespace AlibabaCloud
 				std::string getInstanceId()const;
 				std::string getClusterId()const;
 				std::string getStoppedMode()const;
-				std::vector<VpcAttributes> getVpcAttributes()const;
+				VpcAttributes getVpcAttributes()const;
 				std::vector<std::string> getSecurityGroupIds()const;
 				std::vector<LockReason> getOperationLocks()const;
 				std::string getInternetChargeType()const;
@@ -96,7 +96,7 @@ namespace AlibabaCloud
 				std::vector<std::string> publicIpAddress_;
 				std::vector<std::string> innerIpAddress_;
 				std::string expiredTime_;
-				std::vector<EipAddress> eipAddress_;
+				EipAddress eipAddress_;
 				std::string imageId_;
 				std::string instanceType_;
 				std::string hostName_;
@@ -107,7 +107,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string clusterId_;
 				std::string stoppedMode_;
-				std::vector<VpcAttributes> vpcAttributes_;
+				VpcAttributes vpcAttributes_;
 				std::vector<std::string> securityGroupIds_;
 				std::vector<LockReason> operationLocks_;
 				std::string internetChargeType_;

@@ -46,7 +46,7 @@ namespace AlibabaCloud
 							std::string publicIpAddress;
 							std::string allocationId;
 						};
-						std::vector<AssociatedPublicIp1> associatedPublicIp1;
+						AssociatedPublicIp1 associatedPublicIp1;
 						std::string privateIpAddress;
 						bool primary;
 					};
@@ -62,7 +62,7 @@ namespace AlibabaCloud
 					std::vector<std::string> securityGroupIds;
 					std::string type;
 					std::string vpcId;
-					std::vector<AssociatedPublicIp> associatedPublicIp;
+					AssociatedPublicIp associatedPublicIp;
 					std::string creationTime;
 					std::vector<NetworkInterfaceSet::PrivateIpSet> privateIpSets;
 				};

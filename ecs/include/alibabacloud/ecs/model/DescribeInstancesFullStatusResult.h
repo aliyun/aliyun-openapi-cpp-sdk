@@ -56,15 +56,15 @@ namespace AlibabaCloud
 							int code;
 							std::string name;
 						};
-						std::vector<EventCycleStatus> eventCycleStatus;
+						EventCycleStatus eventCycleStatus;
 						std::string eventPublishTime;
-						std::vector<EventType> eventType;
+						EventType eventType;
 						std::string eventId;
 						std::string notBefore;
 					};
-					std::vector<Status> status;
+					Status status;
 					std::string instanceId;
-					std::vector<HealthStatus> healthStatus;
+					HealthStatus healthStatus;
 					std::vector<InstanceFullStatusType::ScheduledSystemEventType> scheduledSystemEventSet;
 				};
 

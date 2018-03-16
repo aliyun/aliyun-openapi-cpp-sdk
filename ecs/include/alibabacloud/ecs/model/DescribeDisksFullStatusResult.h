@@ -51,13 +51,13 @@ namespace AlibabaCloud
 							int code;
 							std::string name;
 						};
-						std::vector<EventType> eventType;
+						EventType eventType;
 						std::string eventTime;
 						std::string eventId;
 					};
-					std::vector<Status> status;
+					Status status;
 					std::vector<DiskFullStatusType::DiskEventType> diskEventSet;
-					std::vector<HealthStatus> healthStatus;
+					HealthStatus healthStatus;
 					std::string diskId;
 				};
 

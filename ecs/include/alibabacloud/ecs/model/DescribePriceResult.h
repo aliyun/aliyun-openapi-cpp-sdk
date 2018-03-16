@@ -46,7 +46,7 @@ namespace AlibabaCloud
 						std::string description;
 						long ruleId;
 					};
-					std::vector<Price> price;
+					Price price;
 					std::vector<Rule> rules;
 				};
 
@@ -54,12 +54,12 @@ namespace AlibabaCloud
 				DescribePriceResult();
 				explicit DescribePriceResult(const std::string &payload);
 				~DescribePriceResult();
-				std::vector<PriceInfo> getPriceInfo()const;
+				PriceInfo getPriceInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<PriceInfo> priceInfo_;
+				PriceInfo priceInfo_;
 
 			};
 		}

@@ -3759,6 +3759,42 @@ EcsClient::AddTagsOutcomeCallable EcsClient::addTagsCallable(const AddTagsReques
 	return task->get_future();
 }
 
+EcsClient::CancelUserEventOutcome EcsClient::cancelUserEvent(const CancelUserEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelUserEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelUserEventOutcome(CancelUserEventResult(outcome.result()));
+	else
+		return CancelUserEventOutcome(outcome.error());
+}
+
+void EcsClient::cancelUserEventAsync(const CancelUserEventRequest& request, const CancelUserEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelUserEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CancelUserEventOutcomeCallable EcsClient::cancelUserEventCallable(const CancelUserEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelUserEventOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelUserEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateHpcClusterOutcome EcsClient::createHpcCluster(const CreateHpcClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5847,6 +5883,42 @@ EcsClient::DescribeSnapshotLinksOutcomeCallable EcsClient::describeSnapshotLinks
 	return task->get_future();
 }
 
+EcsClient::DescribeEventDetailOutcome EcsClient::describeEventDetail(const DescribeEventDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEventDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEventDetailOutcome(DescribeEventDetailResult(outcome.result()));
+	else
+		return DescribeEventDetailOutcome(outcome.error());
+}
+
+void EcsClient::describeEventDetailAsync(const DescribeEventDetailRequest& request, const DescribeEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEventDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeEventDetailOutcomeCallable EcsClient::describeEventDetailCallable(const DescribeEventDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEventDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEventDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeInvocationResultsOutcome EcsClient::describeInvocationResults(const DescribeInvocationResultsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6783,6 +6855,42 @@ EcsClient::CreatePhysicalConnectionOutcomeCallable EcsClient::createPhysicalConn
 	return task->get_future();
 }
 
+EcsClient::ModifyUserEventAttributeOutcome EcsClient::modifyUserEventAttribute(const ModifyUserEventAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyUserEventAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyUserEventAttributeOutcome(ModifyUserEventAttributeResult(outcome.result()));
+	else
+		return ModifyUserEventAttributeOutcome(outcome.error());
+}
+
+void EcsClient::modifyUserEventAttributeAsync(const ModifyUserEventAttributeRequest& request, const ModifyUserEventAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyUserEventAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyUserEventAttributeOutcomeCallable EcsClient::modifyUserEventAttributeCallable(const ModifyUserEventAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyUserEventAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyUserEventAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeKeyPairsOutcome EcsClient::describeKeyPairs(const DescribeKeyPairsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7395,6 +7503,42 @@ EcsClient::DescribeClassicLinkInstancesOutcomeCallable EcsClient::describeClassi
 	return task->get_future();
 }
 
+EcsClient::CreateUserEventOutcome EcsClient::createUserEvent(const CreateUserEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateUserEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateUserEventOutcome(CreateUserEventResult(outcome.result()));
+	else
+		return CreateUserEventOutcome(outcome.error());
+}
+
+void EcsClient::createUserEventAsync(const CreateUserEventRequest& request, const CreateUserEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createUserEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateUserEventOutcomeCallable EcsClient::createUserEventCallable(const CreateUserEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateUserEventOutcome()>>(
+			[this, request]()
+			{
+			return this->createUserEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeAutoSnapshotPolicyOutcome EcsClient::describeAutoSnapshotPolicy(const DescribeAutoSnapshotPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7821,6 +7965,42 @@ EcsClient::DeleteDiskOutcomeCallable EcsClient::deleteDiskCallable(const DeleteD
 			[this, request]()
 			{
 			return this->deleteDisk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeEventsOutcome EcsClient::describeEvents(const DescribeEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEventsOutcome(DescribeEventsResult(outcome.result()));
+	else
+		return DescribeEventsOutcome(outcome.error());
+}
+
+void EcsClient::describeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeEventsOutcomeCallable EcsClient::describeEventsCallable(const DescribeEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEvents(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

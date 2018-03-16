@@ -48,35 +48,25 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			operationLocksObject.lockReason = value["LockReason"].asString();
 		operationLocks_.push_back(operationLocksObject);
 	}
-	auto allVpcAttributes = value["VpcAttributes"];
-	for (auto value : allVpcAttributes)
-	{
-		VpcAttributes vpcAttributesObject;
-		if(!value["VpcId"].isNull())
-			vpcAttributesObject.vpcId = value["VpcId"].asString();
-		if(!value["VSwitchId"].isNull())
-			vpcAttributesObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["NatIpAddress"].isNull())
-			vpcAttributesObject.natIpAddress = value["NatIpAddress"].asString();
-		auto allPrivateIpAddress = value["PrivateIpAddress"]["IpAddress"];
+	auto vpcAttributesNode = value["VpcAttributes"];
+	if(!vpcAttributesNode["VpcId"].isNull())
+		vpcAttributes_.vpcId = vpcAttributesNode["VpcId"].asString();
+	if(!vpcAttributesNode["VSwitchId"].isNull())
+		vpcAttributes_.vSwitchId = vpcAttributesNode["VSwitchId"].asString();
+	if(!vpcAttributesNode["NatIpAddress"].isNull())
+		vpcAttributes_.natIpAddress = vpcAttributesNode["NatIpAddress"].asString();
+		auto allPrivateIpAddress = vpcAttributesNode["PrivateIpAddress"]["IpAddress"];
 		for (auto value : allPrivateIpAddress)
-			vpcAttributesObject.privateIpAddress.push_back(value.asString());
-		vpcAttributes_.push_back(vpcAttributesObject);
-	}
-	auto allEipAddress = value["EipAddress"];
-	for (auto value : allEipAddress)
-	{
-		EipAddress eipAddressObject;
-		if(!value["AllocationId"].isNull())
-			eipAddressObject.allocationId = value["AllocationId"].asString();
-		if(!value["IpAddress"].isNull())
-			eipAddressObject.ipAddress = value["IpAddress"].asString();
-		if(!value["Bandwidth"].isNull())
-			eipAddressObject.bandwidth = std::stoi(value["Bandwidth"].asString());
-		if(!value["InternetChargeType"].isNull())
-			eipAddressObject.internetChargeType = value["InternetChargeType"].asString();
-		eipAddress_.push_back(eipAddressObject);
-	}
+			vpcAttributes_.privateIpAddress.push_back(value.asString());
+	auto eipAddressNode = value["EipAddress"];
+	if(!eipAddressNode["AllocationId"].isNull())
+		eipAddress_.allocationId = eipAddressNode["AllocationId"].asString();
+	if(!eipAddressNode["IpAddress"].isNull())
+		eipAddress_.ipAddress = eipAddressNode["IpAddress"].asString();
+	if(!eipAddressNode["Bandwidth"].isNull())
+		eipAddress_.bandwidth = std::stoi(eipAddressNode["Bandwidth"].asString());
+	if(!eipAddressNode["InternetChargeType"].isNull())
+		eipAddress_.internetChargeType = eipAddressNode["InternetChargeType"].asString();
 	auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 	for (const auto &item : allSecurityGroupIds)
 		securityGroupIds_.push_back(item.asString());
@@ -175,7 +165,7 @@ std::string DescribeInstanceAttributeResult::getExpiredTime()const
 	return expiredTime_;
 }
 
-std::vector<DescribeInstanceAttributeResult::EipAddress> DescribeInstanceAttributeResult::getEipAddress()const
+DescribeInstanceAttributeResult::EipAddress DescribeInstanceAttributeResult::getEipAddress()const
 {
 	return eipAddress_;
 }
@@ -230,7 +220,7 @@ std::string DescribeInstanceAttributeResult::getStoppedMode()const
 	return stoppedMode_;
 }
 
-std::vector<DescribeInstanceAttributeResult::VpcAttributes> DescribeInstanceAttributeResult::getVpcAttributes()const
+DescribeInstanceAttributeResult::VpcAttributes DescribeInstanceAttributeResult::getVpcAttributes()const
 {
 	return vpcAttributes_;
 }

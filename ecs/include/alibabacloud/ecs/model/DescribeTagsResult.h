@@ -43,7 +43,7 @@ namespace AlibabaCloud
 						int image;
 						int disk;
 					};
-					std::vector<ResourceTypeCount> resourceTypeCount;
+					ResourceTypeCount resourceTypeCount;
 					std::string tagKey;
 					std::string tagValue;
 				};
