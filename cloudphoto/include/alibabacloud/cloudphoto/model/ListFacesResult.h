@@ -50,7 +50,7 @@ namespace AlibabaCloud
 						std::string remark;
 					};
 					bool isMe;
-					std::vector<Cover> cover;
+					Cover cover;
 					std::string idStr;
 					std::string state;
 					long ctime;

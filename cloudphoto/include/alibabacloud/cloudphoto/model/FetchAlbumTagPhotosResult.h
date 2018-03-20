@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDPHOTO_MODEL_INACTIVATEPHOTOSRESULT_H_
-#define ALIBABACLOUD_CLOUDPHOTO_MODEL_INACTIVATEPHOTOSRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDPHOTO_MODEL_FETCHALBUMTAGPHOTOSRESULT_H_
+#define ALIBABACLOUD_CLOUDPHOTO_MODEL_FETCHALBUMTAGPHOTOSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,22 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDPHOTO_EXPORT InactivatePhotosResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDPHOTO_EXPORT FetchAlbumTagPhotosResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
-					std::string message;
-					std::string idStr;
-					long id;
-					std::string code;
+					long photoId;
+					std::string state;
+					std::string photoIdStr;
+					long mtime;
 				};
 
 
-				InactivatePhotosResult();
-				explicit InactivatePhotosResult(const std::string &payload);
-				~InactivatePhotosResult();
+				FetchAlbumTagPhotosResult();
+				explicit FetchAlbumTagPhotosResult(const std::string &payload);
+				~FetchAlbumTagPhotosResult();
+				int getTotalCount()const;
 				std::string getAction()const;
 				std::string getMessage()const;
 				std::vector<Result> getResults()const;
@@ -52,6 +53,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
 				std::string action_;
 				std::string message_;
 				std::vector<Result> results_;
@@ -61,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDPHOTO_MODEL_INACTIVATEPHOTOSRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDPHOTO_MODEL_FETCHALBUMTAGPHOTOSRESULT_H_

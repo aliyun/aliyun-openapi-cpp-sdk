@@ -45,7 +45,7 @@ namespace AlibabaCloud
 						std::string fileId;
 						std::string sessionId;
 					};
-					std::vector<Upload> upload;
+					Upload upload;
 				};
 
 
@@ -53,7 +53,7 @@ namespace AlibabaCloud
 				explicit CreateTransactionResult(const std::string &payload);
 				~CreateTransactionResult();
 				std::string getAction()const;
-				std::vector<Transaction> getTransaction()const;
+				Transaction getTransaction()const;
 				std::string getMessage()const;
 				std::string getCode()const;
 
@@ -61,7 +61,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string action_;
-				std::vector<Transaction> transaction_;
+				Transaction transaction_;
 				std::string message_;
 				std::string code_;
 

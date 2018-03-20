@@ -591,6 +591,42 @@ CloudPhotoClient::GetPhotosByMd5sOutcomeCallable CloudPhotoClient::getPhotosByMd
 	return task->get_future();
 }
 
+CloudPhotoClient::FetchAlbumTagPhotosOutcome CloudPhotoClient::fetchAlbumTagPhotos(const FetchAlbumTagPhotosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FetchAlbumTagPhotosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FetchAlbumTagPhotosOutcome(FetchAlbumTagPhotosResult(outcome.result()));
+	else
+		return FetchAlbumTagPhotosOutcome(outcome.error());
+}
+
+void CloudPhotoClient::fetchAlbumTagPhotosAsync(const FetchAlbumTagPhotosRequest& request, const FetchAlbumTagPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, fetchAlbumTagPhotos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudPhotoClient::FetchAlbumTagPhotosOutcomeCallable CloudPhotoClient::fetchAlbumTagPhotosCallable(const FetchAlbumTagPhotosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FetchAlbumTagPhotosOutcome()>>(
+			[this, request]()
+			{
+			return this->fetchAlbumTagPhotos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudPhotoClient::CreateTransactionOutcome CloudPhotoClient::createTransaction(const CreateTransactionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

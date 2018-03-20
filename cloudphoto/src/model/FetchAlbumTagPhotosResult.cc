@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudphoto/model/RemoveFacePhotosResult.h>
+#include <alibabacloud/cloudphoto/model/FetchAlbumTagPhotosResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CloudPhoto;
 using namespace AlibabaCloud::CloudPhoto::Model;
 
-RemoveFacePhotosResult::RemoveFacePhotosResult() :
+FetchAlbumTagPhotosResult::FetchAlbumTagPhotosResult() :
 	ServiceResult()
 {}
 
-RemoveFacePhotosResult::RemoveFacePhotosResult(const std::string &payload) :
+FetchAlbumTagPhotosResult::FetchAlbumTagPhotosResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RemoveFacePhotosResult::~RemoveFacePhotosResult()
+FetchAlbumTagPhotosResult::~FetchAlbumTagPhotosResult()
 {}
 
-void RemoveFacePhotosResult::parse(const std::string &payload)
+void FetchAlbumTagPhotosResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -44,41 +44,48 @@ void RemoveFacePhotosResult::parse(const std::string &payload)
 	for (auto value : allResults)
 	{
 		Result resultsObject;
-		if(!value["Id"].isNull())
-			resultsObject.id = std::stol(value["Id"].asString());
-		if(!value["IdStr"].isNull())
-			resultsObject.idStr = value["IdStr"].asString();
-		if(!value["Code"].isNull())
-			resultsObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			resultsObject.message = value["Message"].asString();
+		if(!value["PhotoId"].isNull())
+			resultsObject.photoId = std::stol(value["PhotoId"].asString());
+		if(!value["PhotoIdStr"].isNull())
+			resultsObject.photoIdStr = value["PhotoIdStr"].asString();
+		if(!value["Mtime"].isNull())
+			resultsObject.mtime = std::stol(value["Mtime"].asString());
+		if(!value["State"].isNull())
+			resultsObject.state = value["State"].asString();
 		results_.push_back(resultsObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["Action"].isNull())
 		action_ = value["Action"].asString();
 
 }
 
-std::string RemoveFacePhotosResult::getAction()const
+int FetchAlbumTagPhotosResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+std::string FetchAlbumTagPhotosResult::getAction()const
 {
 	return action_;
 }
 
-std::string RemoveFacePhotosResult::getMessage()const
+std::string FetchAlbumTagPhotosResult::getMessage()const
 {
 	return message_;
 }
 
-std::vector<RemoveFacePhotosResult::Result> RemoveFacePhotosResult::getResults()const
+std::vector<FetchAlbumTagPhotosResult::Result> FetchAlbumTagPhotosResult::getResults()const
 {
 	return results_;
 }
 
-std::string RemoveFacePhotosResult::getCode()const
+std::string FetchAlbumTagPhotosResult::getCode()const
 {
 	return code_;
 }

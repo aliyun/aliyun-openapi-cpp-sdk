@@ -60,36 +60,31 @@ void ListFacesResult::parse(const std::string &payload)
 			facesObject.ctime = std::stol(value["Ctime"].asString());
 		if(!value["Mtime"].isNull())
 			facesObject.mtime = std::stol(value["Mtime"].asString());
-		auto allCover = value["Cover"];
-		for (auto value : allCover)
-		{
-			Face::Cover coverObject;
-			if(!value["Id"].isNull())
-				coverObject.id = std::stol(value["Id"].asString());
-			if(!value["IdStr"].isNull())
-				coverObject.idStr = value["IdStr"].asString();
-			if(!value["Title"].isNull())
-				coverObject.title = value["Title"].asString();
-			if(!value["FileId"].isNull())
-				coverObject.fileId = value["FileId"].asString();
-			if(!value["State"].isNull())
-				coverObject.state = value["State"].asString();
-			if(!value["Md5"].isNull())
-				coverObject.md5 = value["Md5"].asString();
-			if(!value["IsVideo"].isNull())
-				coverObject.isVideo = value["IsVideo"].asString() == "true";
-			if(!value["Width"].isNull())
-				coverObject.width = std::stol(value["Width"].asString());
-			if(!value["Height"].isNull())
-				coverObject.height = std::stol(value["Height"].asString());
-			if(!value["Ctime"].isNull())
-				coverObject.ctime = std::stol(value["Ctime"].asString());
-			if(!value["Mtime"].isNull())
-				coverObject.mtime = std::stol(value["Mtime"].asString());
-			if(!value["Remark"].isNull())
-				coverObject.remark = value["Remark"].asString();
-			facesObject.cover.push_back(coverObject);
-		}
+		auto coverNode = value["Cover"];
+		if(!coverNode["Id"].isNull())
+			facesObject.cover.id = std::stol(coverNode["Id"].asString());
+		if(!coverNode["IdStr"].isNull())
+			facesObject.cover.idStr = coverNode["IdStr"].asString();
+		if(!coverNode["Title"].isNull())
+			facesObject.cover.title = coverNode["Title"].asString();
+		if(!coverNode["FileId"].isNull())
+			facesObject.cover.fileId = coverNode["FileId"].asString();
+		if(!coverNode["State"].isNull())
+			facesObject.cover.state = coverNode["State"].asString();
+		if(!coverNode["Md5"].isNull())
+			facesObject.cover.md5 = coverNode["Md5"].asString();
+		if(!coverNode["IsVideo"].isNull())
+			facesObject.cover.isVideo = coverNode["IsVideo"].asString() == "true";
+		if(!coverNode["Width"].isNull())
+			facesObject.cover.width = std::stol(coverNode["Width"].asString());
+		if(!coverNode["Height"].isNull())
+			facesObject.cover.height = std::stol(coverNode["Height"].asString());
+		if(!coverNode["Ctime"].isNull())
+			facesObject.cover.ctime = std::stol(coverNode["Ctime"].asString());
+		if(!coverNode["Mtime"].isNull())
+			facesObject.cover.mtime = std::stol(coverNode["Mtime"].asString());
+		if(!coverNode["Remark"].isNull())
+			facesObject.cover.remark = coverNode["Remark"].asString();
 		auto allAxis = value["Axis"]["Axis"];
 		for (auto value : allAxis)
 			facesObject.axis.push_back(value.asString());

@@ -40,44 +40,39 @@ void GetEventResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allEvent = value["Event"];
-	for (auto value : allEvent)
-	{
-		Event eventObject;
-		if(!value["Id"].isNull())
-			eventObject.id = std::stol(value["Id"].asString());
-		if(!value["IdStr"].isNull())
-			eventObject.idStr = value["IdStr"].asString();
-		if(!value["Title"].isNull())
-			eventObject.title = value["Title"].asString();
-		if(!value["BannerPhotoId"].isNull())
-			eventObject.bannerPhotoId = value["BannerPhotoId"].asString();
-		if(!value["Identity"].isNull())
-			eventObject.identity = value["Identity"].asString();
-		if(!value["SplashPhotoId"].isNull())
-			eventObject.splashPhotoId = value["SplashPhotoId"].asString();
-		if(!value["State"].isNull())
-			eventObject.state = value["State"].asString();
-		if(!value["WeixinTitle"].isNull())
-			eventObject.weixinTitle = value["WeixinTitle"].asString();
-		if(!value["WatermarkPhotoId"].isNull())
-			eventObject.watermarkPhotoId = value["WatermarkPhotoId"].asString();
-		if(!value["StartAt"].isNull())
-			eventObject.startAt = std::stol(value["StartAt"].asString());
-		if(!value["EndAt"].isNull())
-			eventObject.endAt = std::stol(value["EndAt"].asString());
-		if(!value["Ctime"].isNull())
-			eventObject.ctime = std::stol(value["Ctime"].asString());
-		if(!value["Mtime"].isNull())
-			eventObject.mtime = std::stol(value["Mtime"].asString());
-		if(!value["ViewsCount"].isNull())
-			eventObject.viewsCount = std::stol(value["ViewsCount"].asString());
-		if(!value["LibraryId"].isNull())
-			eventObject.libraryId = value["LibraryId"].asString();
-		if(!value["IdStr"].isNull())
-			eventObject.idStr1 = value["IdStr"].asString();
-		event_.push_back(eventObject);
-	}
+	auto eventNode = value["Event"];
+	if(!eventNode["Id"].isNull())
+		event_.id = std::stol(eventNode["Id"].asString());
+	if(!eventNode["IdStr"].isNull())
+		event_.idStr = eventNode["IdStr"].asString();
+	if(!eventNode["Title"].isNull())
+		event_.title = eventNode["Title"].asString();
+	if(!eventNode["BannerPhotoId"].isNull())
+		event_.bannerPhotoId = eventNode["BannerPhotoId"].asString();
+	if(!eventNode["Identity"].isNull())
+		event_.identity = eventNode["Identity"].asString();
+	if(!eventNode["SplashPhotoId"].isNull())
+		event_.splashPhotoId = eventNode["SplashPhotoId"].asString();
+	if(!eventNode["State"].isNull())
+		event_.state = eventNode["State"].asString();
+	if(!eventNode["WeixinTitle"].isNull())
+		event_.weixinTitle = eventNode["WeixinTitle"].asString();
+	if(!eventNode["WatermarkPhotoId"].isNull())
+		event_.watermarkPhotoId = eventNode["WatermarkPhotoId"].asString();
+	if(!eventNode["StartAt"].isNull())
+		event_.startAt = std::stol(eventNode["StartAt"].asString());
+	if(!eventNode["EndAt"].isNull())
+		event_.endAt = std::stol(eventNode["EndAt"].asString());
+	if(!eventNode["Ctime"].isNull())
+		event_.ctime = std::stol(eventNode["Ctime"].asString());
+	if(!eventNode["Mtime"].isNull())
+		event_.mtime = std::stol(eventNode["Mtime"].asString());
+	if(!eventNode["ViewsCount"].isNull())
+		event_.viewsCount = std::stol(eventNode["ViewsCount"].asString());
+	if(!eventNode["LibraryId"].isNull())
+		event_.libraryId = eventNode["LibraryId"].asString();
+	if(!eventNode["IdStr"].isNull())
+		event_.idStr1 = eventNode["IdStr"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -97,7 +92,7 @@ std::string GetEventResult::getMessage()const
 	return message_;
 }
 
-std::vector<GetEventResult::Event> GetEventResult::getEvent()const
+GetEventResult::Event GetEventResult::getEvent()const
 {
 	return event_;
 }

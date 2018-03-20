@@ -54,36 +54,31 @@ void ListTagsResult::parse(const std::string &payload)
 			tagsObject.isSubTag = value["IsSubTag"].asString() == "true";
 		if(!value["ParentTag"].isNull())
 			tagsObject.parentTag = value["ParentTag"].asString();
-		auto allCover = value["Cover"];
-		for (auto value : allCover)
-		{
-			Tag::Cover coverObject;
-			if(!value["Id"].isNull())
-				coverObject.id = std::stol(value["Id"].asString());
-			if(!value["IdStr"].isNull())
-				coverObject.idStr = value["IdStr"].asString();
-			if(!value["Title"].isNull())
-				coverObject.title = value["Title"].asString();
-			if(!value["FileId"].isNull())
-				coverObject.fileId = value["FileId"].asString();
-			if(!value["State"].isNull())
-				coverObject.state = value["State"].asString();
-			if(!value["Md5"].isNull())
-				coverObject.md5 = value["Md5"].asString();
-			if(!value["IsVideo"].isNull())
-				coverObject.isVideo = value["IsVideo"].asString() == "true";
-			if(!value["Remark"].isNull())
-				coverObject.remark = value["Remark"].asString();
-			if(!value["Width"].isNull())
-				coverObject.width = std::stol(value["Width"].asString());
-			if(!value["Height"].isNull())
-				coverObject.height = std::stol(value["Height"].asString());
-			if(!value["Ctime"].isNull())
-				coverObject.ctime = std::stol(value["Ctime"].asString());
-			if(!value["Mtime"].isNull())
-				coverObject.mtime = std::stol(value["Mtime"].asString());
-			tagsObject.cover.push_back(coverObject);
-		}
+		auto coverNode = value["Cover"];
+		if(!coverNode["Id"].isNull())
+			tagsObject.cover.id = std::stol(coverNode["Id"].asString());
+		if(!coverNode["IdStr"].isNull())
+			tagsObject.cover.idStr = coverNode["IdStr"].asString();
+		if(!coverNode["Title"].isNull())
+			tagsObject.cover.title = coverNode["Title"].asString();
+		if(!coverNode["FileId"].isNull())
+			tagsObject.cover.fileId = coverNode["FileId"].asString();
+		if(!coverNode["State"].isNull())
+			tagsObject.cover.state = coverNode["State"].asString();
+		if(!coverNode["Md5"].isNull())
+			tagsObject.cover.md5 = coverNode["Md5"].asString();
+		if(!coverNode["IsVideo"].isNull())
+			tagsObject.cover.isVideo = coverNode["IsVideo"].asString() == "true";
+		if(!coverNode["Remark"].isNull())
+			tagsObject.cover.remark = coverNode["Remark"].asString();
+		if(!coverNode["Width"].isNull())
+			tagsObject.cover.width = std::stol(coverNode["Width"].asString());
+		if(!coverNode["Height"].isNull())
+			tagsObject.cover.height = std::stol(coverNode["Height"].asString());
+		if(!coverNode["Ctime"].isNull())
+			tagsObject.cover.ctime = std::stol(coverNode["Ctime"].asString());
+		if(!coverNode["Mtime"].isNull())
+			tagsObject.cover.mtime = std::stol(coverNode["Mtime"].asString());
 		tags_.push_back(tagsObject);
 	}
 	if(!value["Code"].isNull())

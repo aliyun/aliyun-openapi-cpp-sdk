@@ -40,44 +40,29 @@ void GetLibraryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allLibrary = value["Library"];
-	for (auto value : allLibrary)
-	{
-		Library libraryObject;
-		auto allQuota = value["Quota"];
-		for (auto value : allQuota)
-		{
-			Library::Quota quotaObject;
-			if(!value["TotalQuota"].isNull())
-				quotaObject.totalQuota = std::stol(value["TotalQuota"].asString());
-			if(!value["TotalTrashQuota"].isNull())
-				quotaObject.totalTrashQuota = std::stol(value["TotalTrashQuota"].asString());
-			if(!value["FacesCount"].isNull())
-				quotaObject.facesCount = std::stoi(value["FacesCount"].asString());
-			if(!value["PhotosCount"].isNull())
-				quotaObject.photosCount = std::stoi(value["PhotosCount"].asString());
-			if(!value["UsedQuota"].isNull())
-				quotaObject.usedQuota = std::stol(value["UsedQuota"].asString());
-			if(!value["VideosCount"].isNull())
-				quotaObject.videosCount = std::stoi(value["VideosCount"].asString());
-			if(!value["ActiveSize"].isNull())
-				quotaObject.activeSize = std::stol(value["ActiveSize"].asString());
-			if(!value["InactiveSize"].isNull())
-				quotaObject.inactiveSize = std::stol(value["InactiveSize"].asString());
-			libraryObject.quota.push_back(quotaObject);
-		}
-		auto allAutoCleanConfig = value["AutoCleanConfig"];
-		for (auto value : allAutoCleanConfig)
-		{
-			Library::AutoCleanConfig autoCleanConfigObject;
-			if(!value["AutoCleanEnabled"].isNull())
-				autoCleanConfigObject.autoCleanEnabled = value["AutoCleanEnabled"].asString() == "true";
-			if(!value["AutoCleanDays"].isNull())
-				autoCleanConfigObject.autoCleanDays = std::stoi(value["AutoCleanDays"].asString());
-			libraryObject.autoCleanConfig.push_back(autoCleanConfigObject);
-		}
-		library_.push_back(libraryObject);
-	}
+	auto libraryNode = value["Library"];
+	auto quotaNode = libraryNode["Quota"];
+	if(!quotaNode["TotalQuota"].isNull())
+		library_.quota.totalQuota = std::stol(quotaNode["TotalQuota"].asString());
+	if(!quotaNode["TotalTrashQuota"].isNull())
+		library_.quota.totalTrashQuota = std::stol(quotaNode["TotalTrashQuota"].asString());
+	if(!quotaNode["FacesCount"].isNull())
+		library_.quota.facesCount = std::stoi(quotaNode["FacesCount"].asString());
+	if(!quotaNode["PhotosCount"].isNull())
+		library_.quota.photosCount = std::stoi(quotaNode["PhotosCount"].asString());
+	if(!quotaNode["UsedQuota"].isNull())
+		library_.quota.usedQuota = std::stol(quotaNode["UsedQuota"].asString());
+	if(!quotaNode["VideosCount"].isNull())
+		library_.quota.videosCount = std::stoi(quotaNode["VideosCount"].asString());
+	if(!quotaNode["ActiveSize"].isNull())
+		library_.quota.activeSize = std::stol(quotaNode["ActiveSize"].asString());
+	if(!quotaNode["InactiveSize"].isNull())
+		library_.quota.inactiveSize = std::stol(quotaNode["InactiveSize"].asString());
+	auto autoCleanConfigNode = libraryNode["AutoCleanConfig"];
+	if(!autoCleanConfigNode["AutoCleanEnabled"].isNull())
+		library_.autoCleanConfig.autoCleanEnabled = autoCleanConfigNode["AutoCleanEnabled"].asString() == "true";
+	if(!autoCleanConfigNode["AutoCleanDays"].isNull())
+		library_.autoCleanConfig.autoCleanDays = std::stoi(autoCleanConfigNode["AutoCleanDays"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -97,7 +82,7 @@ std::string GetLibraryResult::getMessage()const
 	return message_;
 }
 
-std::vector<GetLibraryResult::Library> GetLibraryResult::getLibrary()const
+GetLibraryResult::Library GetLibraryResult::getLibrary()const
 {
 	return library_;
 }

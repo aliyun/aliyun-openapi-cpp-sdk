@@ -58,36 +58,31 @@ void ListAlbumsResult::parse(const std::string &payload)
 			albumsObject.ctime = std::stol(value["Ctime"].asString());
 		if(!value["Mtime"].isNull())
 			albumsObject.mtime = std::stol(value["Mtime"].asString());
-		auto allCover = value["Cover"];
-		for (auto value : allCover)
-		{
-			Album::Cover coverObject;
-			if(!value["Id"].isNull())
-				coverObject.id = std::stol(value["Id"].asString());
-			if(!value["IdStr"].isNull())
-				coverObject.idStr = value["IdStr"].asString();
-			if(!value["Title"].isNull())
-				coverObject.title = value["Title"].asString();
-			if(!value["FileId"].isNull())
-				coverObject.fileId = value["FileId"].asString();
-			if(!value["State"].isNull())
-				coverObject.state = value["State"].asString();
-			if(!value["Md5"].isNull())
-				coverObject.md5 = value["Md5"].asString();
-			if(!value["IsVideo"].isNull())
-				coverObject.isVideo = value["IsVideo"].asString() == "true";
-			if(!value["Remark"].isNull())
-				coverObject.remark = value["Remark"].asString();
-			if(!value["Width"].isNull())
-				coverObject.width = std::stol(value["Width"].asString());
-			if(!value["Height"].isNull())
-				coverObject.height = std::stol(value["Height"].asString());
-			if(!value["Ctime"].isNull())
-				coverObject.ctime = std::stol(value["Ctime"].asString());
-			if(!value["Mtime"].isNull())
-				coverObject.mtime = std::stol(value["Mtime"].asString());
-			albumsObject.cover.push_back(coverObject);
-		}
+		auto coverNode = value["Cover"];
+		if(!coverNode["Id"].isNull())
+			albumsObject.cover.id = std::stol(coverNode["Id"].asString());
+		if(!coverNode["IdStr"].isNull())
+			albumsObject.cover.idStr = coverNode["IdStr"].asString();
+		if(!coverNode["Title"].isNull())
+			albumsObject.cover.title = coverNode["Title"].asString();
+		if(!coverNode["FileId"].isNull())
+			albumsObject.cover.fileId = coverNode["FileId"].asString();
+		if(!coverNode["State"].isNull())
+			albumsObject.cover.state = coverNode["State"].asString();
+		if(!coverNode["Md5"].isNull())
+			albumsObject.cover.md5 = coverNode["Md5"].asString();
+		if(!coverNode["IsVideo"].isNull())
+			albumsObject.cover.isVideo = coverNode["IsVideo"].asString() == "true";
+		if(!coverNode["Remark"].isNull())
+			albumsObject.cover.remark = coverNode["Remark"].asString();
+		if(!coverNode["Width"].isNull())
+			albumsObject.cover.width = std::stol(coverNode["Width"].asString());
+		if(!coverNode["Height"].isNull())
+			albumsObject.cover.height = std::stol(coverNode["Height"].asString());
+		if(!coverNode["Ctime"].isNull())
+			albumsObject.cover.ctime = std::stol(coverNode["Ctime"].asString());
+		if(!coverNode["Mtime"].isNull())
+			albumsObject.cover.mtime = std::stol(coverNode["Mtime"].asString());
 		albums_.push_back(albumsObject);
 	}
 	if(!value["Code"].isNull())

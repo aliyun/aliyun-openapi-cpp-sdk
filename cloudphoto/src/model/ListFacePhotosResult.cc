@@ -48,6 +48,8 @@ void ListFacePhotosResult::parse(const std::string &payload)
 			resultsObject.photoId = std::stol(value["PhotoId"].asString());
 		if(!value["PhotoIdStr"].isNull())
 			resultsObject.photoIdStr = value["PhotoIdStr"].asString();
+		if(!value["Mtime"].isNull())
+			resultsObject.mtime = std::stol(value["Mtime"].asString());
 		if(!value["State"].isNull())
 			resultsObject.state = value["State"].asString();
 		results_.push_back(resultsObject);

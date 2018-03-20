@@ -40,22 +40,17 @@ void GetQuotaResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allQuota = value["Quota"];
-	for (auto value : allQuota)
-	{
-		Quota quotaObject;
-		if(!value["TotalQuota"].isNull())
-			quotaObject.totalQuota = std::stol(value["TotalQuota"].asString());
-		if(!value["FacesCount"].isNull())
-			quotaObject.facesCount = std::stoi(value["FacesCount"].asString());
-		if(!value["PhotosCount"].isNull())
-			quotaObject.photosCount = std::stoi(value["PhotosCount"].asString());
-		if(!value["UsedQuota"].isNull())
-			quotaObject.usedQuota = std::stol(value["UsedQuota"].asString());
-		if(!value["VideosCount"].isNull())
-			quotaObject.videosCount = std::stoi(value["VideosCount"].asString());
-		quota_.push_back(quotaObject);
-	}
+	auto quotaNode = value["Quota"];
+	if(!quotaNode["TotalQuota"].isNull())
+		quota_.totalQuota = std::stol(quotaNode["TotalQuota"].asString());
+	if(!quotaNode["FacesCount"].isNull())
+		quota_.facesCount = std::stoi(quotaNode["FacesCount"].asString());
+	if(!quotaNode["PhotosCount"].isNull())
+		quota_.photosCount = std::stoi(quotaNode["PhotosCount"].asString());
+	if(!quotaNode["UsedQuota"].isNull())
+		quota_.usedQuota = std::stol(quotaNode["UsedQuota"].asString());
+	if(!quotaNode["VideosCount"].isNull())
+		quota_.videosCount = std::stoi(quotaNode["VideosCount"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -70,7 +65,7 @@ std::string GetQuotaResult::getAction()const
 	return action_;
 }
 
-std::vector<GetQuotaResult::Quota> GetQuotaResult::getQuota()const
+GetQuotaResult::Quota GetQuotaResult::getQuota()const
 {
 	return quota_;
 }

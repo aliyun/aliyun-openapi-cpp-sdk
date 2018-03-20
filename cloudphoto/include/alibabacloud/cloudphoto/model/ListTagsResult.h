@@ -49,7 +49,7 @@ namespace AlibabaCloud
 						std::string md5;
 						std::string remark;
 					};
-					std::vector<Cover> cover;
+					Cover cover;
 					std::string idStr;
 					bool isSubTag;
 					std::string parentTag;

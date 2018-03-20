@@ -58,7 +58,7 @@ namespace AlibabaCloud
 				~RegisterPhotoResult();
 				std::string getAction()const;
 				std::string getMessage()const;
-				std::vector<Photo> getPhoto()const;
+				Photo getPhoto()const;
 				std::string getCode()const;
 
 			protected:
@@ -66,7 +66,7 @@ namespace AlibabaCloud
 			private:
 				std::string action_;
 				std::string message_;
-				std::vector<Photo> photo_;
+				Photo photo_;
 				std::string code_;
 
 			};

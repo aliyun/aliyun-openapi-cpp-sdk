@@ -25,6 +25,17 @@ CreatePhotoRequest::CreatePhotoRequest() :
 CreatePhotoRequest::~CreatePhotoRequest()
 {}
 
+long CreatePhotoRequest::getTakenAt()const
+{
+	return takenAt_;
+}
+
+void CreatePhotoRequest::setTakenAt(long takenAt)
+{
+	takenAt_ = takenAt;
+	setParameter("TakenAt", std::to_string(takenAt));
+}
+
 std::string CreatePhotoRequest::getPhotoTitle()const
 {
 	return photoTitle_;

@@ -40,58 +40,48 @@ void CreateAlbumResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allAlbum = value["Album"];
-	for (auto value : allAlbum)
-	{
-		Album albumObject;
-		if(!value["Id"].isNull())
-			albumObject.id = std::stol(value["Id"].asString());
-		if(!value["IdStr"].isNull())
-			albumObject.idStr = value["IdStr"].asString();
-		if(!value["Name"].isNull())
-			albumObject.name = value["Name"].asString();
-		if(!value["State"].isNull())
-			albumObject.state = value["State"].asString();
-		if(!value["Remark"].isNull())
-			albumObject.remark = value["Remark"].asString();
-		if(!value["PhotosCount"].isNull())
-			albumObject.photosCount = std::stol(value["PhotosCount"].asString());
-		if(!value["Ctime"].isNull())
-			albumObject.ctime = std::stol(value["Ctime"].asString());
-		if(!value["Mtime"].isNull())
-			albumObject.mtime = std::stol(value["Mtime"].asString());
-		auto allCover = value["Cover"];
-		for (auto value : allCover)
-		{
-			Album::Cover coverObject;
-			if(!value["Id"].isNull())
-				coverObject.id = std::stol(value["Id"].asString());
-			if(!value["IdStr"].isNull())
-				coverObject.idStr = value["IdStr"].asString();
-			if(!value["Title"].isNull())
-				coverObject.title = value["Title"].asString();
-			if(!value["FileId"].isNull())
-				coverObject.fileId = value["FileId"].asString();
-			if(!value["State"].isNull())
-				coverObject.state = value["State"].asString();
-			if(!value["Md5"].isNull())
-				coverObject.md5 = value["Md5"].asString();
-			if(!value["IsVideo"].isNull())
-				coverObject.isVideo = value["IsVideo"].asString() == "true";
-			if(!value["Width"].isNull())
-				coverObject.width = std::stol(value["Width"].asString());
-			if(!value["Height"].isNull())
-				coverObject.height = std::stol(value["Height"].asString());
-			if(!value["Ctime"].isNull())
-				coverObject.ctime = std::stol(value["Ctime"].asString());
-			if(!value["Mtime"].isNull())
-				coverObject.mtime = std::stol(value["Mtime"].asString());
-			if(!value["Remark"].isNull())
-				coverObject.remark = value["Remark"].asString();
-			albumObject.cover.push_back(coverObject);
-		}
-		album_.push_back(albumObject);
-	}
+	auto albumNode = value["Album"];
+	if(!albumNode["Id"].isNull())
+		album_.id = std::stol(albumNode["Id"].asString());
+	if(!albumNode["IdStr"].isNull())
+		album_.idStr = albumNode["IdStr"].asString();
+	if(!albumNode["Name"].isNull())
+		album_.name = albumNode["Name"].asString();
+	if(!albumNode["State"].isNull())
+		album_.state = albumNode["State"].asString();
+	if(!albumNode["Remark"].isNull())
+		album_.remark = albumNode["Remark"].asString();
+	if(!albumNode["PhotosCount"].isNull())
+		album_.photosCount = std::stol(albumNode["PhotosCount"].asString());
+	if(!albumNode["Ctime"].isNull())
+		album_.ctime = std::stol(albumNode["Ctime"].asString());
+	if(!albumNode["Mtime"].isNull())
+		album_.mtime = std::stol(albumNode["Mtime"].asString());
+	auto coverNode = albumNode["Cover"];
+	if(!coverNode["Id"].isNull())
+		album_.cover.id = std::stol(coverNode["Id"].asString());
+	if(!coverNode["IdStr"].isNull())
+		album_.cover.idStr = coverNode["IdStr"].asString();
+	if(!coverNode["Title"].isNull())
+		album_.cover.title = coverNode["Title"].asString();
+	if(!coverNode["FileId"].isNull())
+		album_.cover.fileId = coverNode["FileId"].asString();
+	if(!coverNode["State"].isNull())
+		album_.cover.state = coverNode["State"].asString();
+	if(!coverNode["Md5"].isNull())
+		album_.cover.md5 = coverNode["Md5"].asString();
+	if(!coverNode["IsVideo"].isNull())
+		album_.cover.isVideo = coverNode["IsVideo"].asString() == "true";
+	if(!coverNode["Width"].isNull())
+		album_.cover.width = std::stol(coverNode["Width"].asString());
+	if(!coverNode["Height"].isNull())
+		album_.cover.height = std::stol(coverNode["Height"].asString());
+	if(!coverNode["Ctime"].isNull())
+		album_.cover.ctime = std::stol(coverNode["Ctime"].asString());
+	if(!coverNode["Mtime"].isNull())
+		album_.cover.mtime = std::stol(coverNode["Mtime"].asString());
+	if(!coverNode["Remark"].isNull())
+		album_.cover.remark = coverNode["Remark"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -111,7 +101,7 @@ std::string CreateAlbumResult::getMessage()const
 	return message_;
 }
 
-std::vector<CreateAlbumResult::Album> CreateAlbumResult::getAlbum()const
+CreateAlbumResult::Album CreateAlbumResult::getAlbum()const
 {
 	return album_;
 }
