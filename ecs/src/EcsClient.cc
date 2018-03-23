@@ -1131,6 +1131,42 @@ EcsClient::AllocatePublicIpAddressOutcomeCallable EcsClient::allocatePublicIpAdd
 	return task->get_future();
 }
 
+EcsClient::AttachVolumeOutcome EcsClient::attachVolume(const AttachVolumeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachVolumeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachVolumeOutcome(AttachVolumeResult(outcome.result()));
+	else
+		return AttachVolumeOutcome(outcome.error());
+}
+
+void EcsClient::attachVolumeAsync(const AttachVolumeRequest& request, const AttachVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachVolume(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::AttachVolumeOutcomeCallable EcsClient::attachVolumeCallable(const AttachVolumeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachVolumeOutcome()>>(
+			[this, request]()
+			{
+			return this->attachVolume(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeEipMonitorDataOutcome EcsClient::describeEipMonitorData(const DescribeEipMonitorDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1851,6 +1887,42 @@ EcsClient::ResizeDiskOutcomeCallable EcsClient::resizeDiskCallable(const ResizeD
 	return task->get_future();
 }
 
+EcsClient::ResizeVolumeOutcome EcsClient::resizeVolume(const ResizeVolumeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResizeVolumeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResizeVolumeOutcome(ResizeVolumeResult(outcome.result()));
+	else
+		return ResizeVolumeOutcome(outcome.error());
+}
+
+void EcsClient::resizeVolumeAsync(const ResizeVolumeRequest& request, const ResizeVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resizeVolume(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ResizeVolumeOutcomeCallable EcsClient::resizeVolumeCallable(const ResizeVolumeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResizeVolumeOutcome()>>(
+			[this, request]()
+			{
+			return this->resizeVolume(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateRouteEntryOutcome EcsClient::createRouteEntry(const CreateRouteEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +2061,42 @@ EcsClient::CreateRouterInterfaceOutcomeCallable EcsClient::createRouterInterface
 			[this, request]()
 			{
 			return this->createRouterInterface(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyVolumeAttributeOutcome EcsClient::modifyVolumeAttribute(const ModifyVolumeAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyVolumeAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyVolumeAttributeOutcome(ModifyVolumeAttributeResult(outcome.result()));
+	else
+		return ModifyVolumeAttributeOutcome(outcome.error());
+}
+
+void EcsClient::modifyVolumeAttributeAsync(const ModifyVolumeAttributeRequest& request, const ModifyVolumeAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyVolumeAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyVolumeAttributeOutcomeCallable EcsClient::modifyVolumeAttributeCallable(const ModifyVolumeAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyVolumeAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyVolumeAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3141,6 +3249,42 @@ EcsClient::DescribeSnapshotPackageOutcomeCallable EcsClient::describeSnapshotPac
 			[this, request]()
 			{
 			return this->describeSnapshotPackage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ReInitVolumeOutcome EcsClient::reInitVolume(const ReInitVolumeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReInitVolumeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReInitVolumeOutcome(ReInitVolumeResult(outcome.result()));
+	else
+		return ReInitVolumeOutcome(outcome.error());
+}
+
+void EcsClient::reInitVolumeAsync(const ReInitVolumeRequest& request, const ReInitVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reInitVolume(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ReInitVolumeOutcomeCallable EcsClient::reInitVolumeCallable(const ReInitVolumeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReInitVolumeOutcome()>>(
+			[this, request]()
+			{
+			return this->reInitVolume(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5703,6 +5847,42 @@ EcsClient::ModifyDiskChargeTypeOutcomeCallable EcsClient::modifyDiskChargeTypeCa
 	return task->get_future();
 }
 
+EcsClient::DescribeVolumesOutcome EcsClient::describeVolumes(const DescribeVolumesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVolumesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVolumesOutcome(DescribeVolumesResult(outcome.result()));
+	else
+		return DescribeVolumesOutcome(outcome.error());
+}
+
+void EcsClient::describeVolumesAsync(const DescribeVolumesRequest& request, const DescribeVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVolumes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeVolumesOutcomeCallable EcsClient::describeVolumesCallable(const DescribeVolumesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVolumesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVolumes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ModifyIntranetBandwidthKbOutcome EcsClient::modifyIntranetBandwidthKb(const ModifyIntranetBandwidthKbRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6021,6 +6201,42 @@ EcsClient::DescribeTagKeysOutcomeCallable EcsClient::describeTagKeysCallable(con
 			[this, request]()
 			{
 			return this->describeTagKeys(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::CreateVolumeOutcome EcsClient::createVolume(const CreateVolumeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVolumeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVolumeOutcome(CreateVolumeResult(outcome.result()));
+	else
+		return CreateVolumeOutcome(outcome.error());
+}
+
+void EcsClient::createVolumeAsync(const CreateVolumeRequest& request, const CreateVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVolume(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateVolumeOutcomeCallable EcsClient::createVolumeCallable(const CreateVolumeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVolumeOutcome()>>(
+			[this, request]()
+			{
+			return this->createVolume(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6381,6 +6597,78 @@ EcsClient::DescribeInstanceTypeFamiliesOutcomeCallable EcsClient::describeInstan
 			[this, request]()
 			{
 			return this->describeInstanceTypeFamilies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::RollbackVolumeOutcome EcsClient::rollbackVolume(const RollbackVolumeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RollbackVolumeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RollbackVolumeOutcome(RollbackVolumeResult(outcome.result()));
+	else
+		return RollbackVolumeOutcome(outcome.error());
+}
+
+void EcsClient::rollbackVolumeAsync(const RollbackVolumeRequest& request, const RollbackVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rollbackVolume(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::RollbackVolumeOutcomeCallable EcsClient::rollbackVolumeCallable(const RollbackVolumeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RollbackVolumeOutcome()>>(
+			[this, request]()
+			{
+			return this->rollbackVolume(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DeleteVolumeOutcome EcsClient::deleteVolume(const DeleteVolumeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVolumeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVolumeOutcome(DeleteVolumeResult(outcome.result()));
+	else
+		return DeleteVolumeOutcome(outcome.error());
+}
+
+void EcsClient::deleteVolumeAsync(const DeleteVolumeRequest& request, const DeleteVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVolume(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DeleteVolumeOutcomeCallable EcsClient::deleteVolumeCallable(const DeleteVolumeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVolumeOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVolume(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7641,6 +7929,42 @@ EcsClient::DescribeRecycleBinOutcomeCallable EcsClient::describeRecycleBinCallab
 			[this, request]()
 			{
 			return this->describeRecycleBin(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DetachVolumeOutcome EcsClient::detachVolume(const DetachVolumeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachVolumeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachVolumeOutcome(DetachVolumeResult(outcome.result()));
+	else
+		return DetachVolumeOutcome(outcome.error());
+}
+
+void EcsClient::detachVolumeAsync(const DetachVolumeRequest& request, const DetachVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachVolume(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DetachVolumeOutcomeCallable EcsClient::detachVolumeCallable(const DetachVolumeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachVolumeOutcome()>>(
+			[this, request]()
+			{
+			return this->detachVolume(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

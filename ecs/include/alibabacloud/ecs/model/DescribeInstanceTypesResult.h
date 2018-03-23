@@ -35,9 +35,11 @@ namespace AlibabaCloud
 				struct InstanceType
 				{
 					float memorySize;
+					long instancePpsTx;
 					int cpuCoreCount;
 					long localStorageCapacity;
 					std::string instanceTypeFamily;
+					long instancePpsRx;
 					int initialCredit;
 					int eniQuantity;
 					int instanceBandwidthRx;

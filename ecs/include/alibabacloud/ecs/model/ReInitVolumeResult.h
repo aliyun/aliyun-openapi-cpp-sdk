@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_CREATEROUTERINTERFACERESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_CREATEROUTERINTERFACERESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_REINITVOLUMERESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_REINITVOLUMERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT CreateRouterInterfaceResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT ReInitVolumeResult : public ServiceResult
 			{
 			public:
 
 
-				CreateRouterInterfaceResult();
-				explicit CreateRouterInterfaceResult(const std::string &payload);
-				~CreateRouterInterfaceResult();
-				long getOrderId()const;
-				std::string getRouterInterfaceId()const;
+				ReInitVolumeResult();
+				explicit ReInitVolumeResult(const std::string &payload);
+				~ReInitVolumeResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long orderId_;
-				std::string routerInterfaceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_CREATEROUTERINTERFACERESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_REINITVOLUMERESULT_H_

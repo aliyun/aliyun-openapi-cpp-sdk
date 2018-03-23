@@ -81,6 +81,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DetachInstanceRamRoleResult.h
 	include/alibabacloud/ecs/model/AllocatePublicIpAddressRequest.h
 	include/alibabacloud/ecs/model/AllocatePublicIpAddressResult.h
+	include/alibabacloud/ecs/model/AttachVolumeRequest.h
+	include/alibabacloud/ecs/model/AttachVolumeResult.h
 	include/alibabacloud/ecs/model/DescribeEipMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeEipMonitorDataResult.h
 	include/alibabacloud/ecs/model/CancelAutoSnapshotPolicyRequest.h
@@ -121,6 +123,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeSecurityGroupsResult.h
 	include/alibabacloud/ecs/model/ResizeDiskRequest.h
 	include/alibabacloud/ecs/model/ResizeDiskResult.h
+	include/alibabacloud/ecs/model/ResizeVolumeRequest.h
+	include/alibabacloud/ecs/model/ResizeVolumeResult.h
 	include/alibabacloud/ecs/model/CreateRouteEntryRequest.h
 	include/alibabacloud/ecs/model/CreateRouteEntryResult.h
 	include/alibabacloud/ecs/model/DescribeInvocationsRequest.h
@@ -129,6 +133,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/AttachKeyPairResult.h
 	include/alibabacloud/ecs/model/CreateRouterInterfaceRequest.h
 	include/alibabacloud/ecs/model/CreateRouterInterfaceResult.h
+	include/alibabacloud/ecs/model/ModifyVolumeAttributeRequest.h
+	include/alibabacloud/ecs/model/ModifyVolumeAttributeResult.h
 	include/alibabacloud/ecs/model/CheckDiskEnableAutoSnapshotValidationRequest.h
 	include/alibabacloud/ecs/model/CheckDiskEnableAutoSnapshotValidationResult.h
 	include/alibabacloud/ecs/model/RunInstancesRequest.h
@@ -193,6 +199,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeInstanceTypesResult.h
 	include/alibabacloud/ecs/model/DescribeSnapshotPackageRequest.h
 	include/alibabacloud/ecs/model/DescribeSnapshotPackageResult.h
+	include/alibabacloud/ecs/model/ReInitVolumeRequest.h
+	include/alibabacloud/ecs/model/ReInitVolumeResult.h
 	include/alibabacloud/ecs/model/RebootInstanceRequest.h
 	include/alibabacloud/ecs/model/RebootInstanceResult.h
 	include/alibabacloud/ecs/model/BindIpRangeRequest.h
@@ -335,6 +343,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ResetDiskResult.h
 	include/alibabacloud/ecs/model/ModifyDiskChargeTypeRequest.h
 	include/alibabacloud/ecs/model/ModifyDiskChargeTypeResult.h
+	include/alibabacloud/ecs/model/DescribeVolumesRequest.h
+	include/alibabacloud/ecs/model/DescribeVolumesResult.h
 	include/alibabacloud/ecs/model/ModifyIntranetBandwidthKbRequest.h
 	include/alibabacloud/ecs/model/ModifyIntranetBandwidthKbResult.h
 	include/alibabacloud/ecs/model/DescribeBandwidthPackagesRequest.h
@@ -353,6 +363,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeRecommendInstanceTypeResult.h
 	include/alibabacloud/ecs/model/DescribeTagKeysRequest.h
 	include/alibabacloud/ecs/model/DescribeTagKeysResult.h
+	include/alibabacloud/ecs/model/CreateVolumeRequest.h
+	include/alibabacloud/ecs/model/CreateVolumeResult.h
 	include/alibabacloud/ecs/model/DeleteInstanceRequest.h
 	include/alibabacloud/ecs/model/DeleteInstanceResult.h
 	include/alibabacloud/ecs/model/DescribeIntranetAttributeKbRequest.h
@@ -373,6 +385,10 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/EnablePhysicalConnectionResult.h
 	include/alibabacloud/ecs/model/DescribeInstanceTypeFamiliesRequest.h
 	include/alibabacloud/ecs/model/DescribeInstanceTypeFamiliesResult.h
+	include/alibabacloud/ecs/model/RollbackVolumeRequest.h
+	include/alibabacloud/ecs/model/RollbackVolumeResult.h
+	include/alibabacloud/ecs/model/DeleteVolumeRequest.h
+	include/alibabacloud/ecs/model/DeleteVolumeResult.h
 	include/alibabacloud/ecs/model/CreateForwardEntryRequest.h
 	include/alibabacloud/ecs/model/CreateForwardEntryResult.h
 	include/alibabacloud/ecs/model/DescribeRouterInterfacesRequest.h
@@ -443,6 +459,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribePhysicalConnectionsResult.h
 	include/alibabacloud/ecs/model/DescribeRecycleBinRequest.h
 	include/alibabacloud/ecs/model/DescribeRecycleBinResult.h
+	include/alibabacloud/ecs/model/DetachVolumeRequest.h
+	include/alibabacloud/ecs/model/DetachVolumeResult.h
 	include/alibabacloud/ecs/model/CreateNetworkInterfaceRequest.h
 	include/alibabacloud/ecs/model/CreateNetworkInterfaceResult.h
 	include/alibabacloud/ecs/model/DescribeIpRangesRequest.h
@@ -540,6 +558,8 @@ set(ecs_src
 	src/model/DetachInstanceRamRoleResult.cc
 	src/model/AllocatePublicIpAddressRequest.cc
 	src/model/AllocatePublicIpAddressResult.cc
+	src/model/AttachVolumeRequest.cc
+	src/model/AttachVolumeResult.cc
 	src/model/DescribeEipMonitorDataRequest.cc
 	src/model/DescribeEipMonitorDataResult.cc
 	src/model/CancelAutoSnapshotPolicyRequest.cc
@@ -580,6 +600,8 @@ set(ecs_src
 	src/model/DescribeSecurityGroupsResult.cc
 	src/model/ResizeDiskRequest.cc
 	src/model/ResizeDiskResult.cc
+	src/model/ResizeVolumeRequest.cc
+	src/model/ResizeVolumeResult.cc
 	src/model/CreateRouteEntryRequest.cc
 	src/model/CreateRouteEntryResult.cc
 	src/model/DescribeInvocationsRequest.cc
@@ -588,6 +610,8 @@ set(ecs_src
 	src/model/AttachKeyPairResult.cc
 	src/model/CreateRouterInterfaceRequest.cc
 	src/model/CreateRouterInterfaceResult.cc
+	src/model/ModifyVolumeAttributeRequest.cc
+	src/model/ModifyVolumeAttributeResult.cc
 	src/model/CheckDiskEnableAutoSnapshotValidationRequest.cc
 	src/model/CheckDiskEnableAutoSnapshotValidationResult.cc
 	src/model/RunInstancesRequest.cc
@@ -652,6 +676,8 @@ set(ecs_src
 	src/model/DescribeInstanceTypesResult.cc
 	src/model/DescribeSnapshotPackageRequest.cc
 	src/model/DescribeSnapshotPackageResult.cc
+	src/model/ReInitVolumeRequest.cc
+	src/model/ReInitVolumeResult.cc
 	src/model/RebootInstanceRequest.cc
 	src/model/RebootInstanceResult.cc
 	src/model/BindIpRangeRequest.cc
@@ -794,6 +820,8 @@ set(ecs_src
 	src/model/ResetDiskResult.cc
 	src/model/ModifyDiskChargeTypeRequest.cc
 	src/model/ModifyDiskChargeTypeResult.cc
+	src/model/DescribeVolumesRequest.cc
+	src/model/DescribeVolumesResult.cc
 	src/model/ModifyIntranetBandwidthKbRequest.cc
 	src/model/ModifyIntranetBandwidthKbResult.cc
 	src/model/DescribeBandwidthPackagesRequest.cc
@@ -812,6 +840,8 @@ set(ecs_src
 	src/model/DescribeRecommendInstanceTypeResult.cc
 	src/model/DescribeTagKeysRequest.cc
 	src/model/DescribeTagKeysResult.cc
+	src/model/CreateVolumeRequest.cc
+	src/model/CreateVolumeResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
 	src/model/DescribeIntranetAttributeKbRequest.cc
@@ -832,6 +862,10 @@ set(ecs_src
 	src/model/EnablePhysicalConnectionResult.cc
 	src/model/DescribeInstanceTypeFamiliesRequest.cc
 	src/model/DescribeInstanceTypeFamiliesResult.cc
+	src/model/RollbackVolumeRequest.cc
+	src/model/RollbackVolumeResult.cc
+	src/model/DeleteVolumeRequest.cc
+	src/model/DeleteVolumeResult.cc
 	src/model/CreateForwardEntryRequest.cc
 	src/model/CreateForwardEntryResult.cc
 	src/model/DescribeRouterInterfacesRequest.cc
@@ -902,6 +936,8 @@ set(ecs_src
 	src/model/DescribePhysicalConnectionsResult.cc
 	src/model/DescribeRecycleBinRequest.cc
 	src/model/DescribeRecycleBinResult.cc
+	src/model/DetachVolumeRequest.cc
+	src/model/DetachVolumeResult.cc
 	src/model/CreateNetworkInterfaceRequest.cc
 	src/model/CreateNetworkInterfaceResult.cc
 	src/model/DescribeIpRangesRequest.cc

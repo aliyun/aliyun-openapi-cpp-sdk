@@ -72,6 +72,10 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.instanceBandwidthRx = std::stoi(value["InstanceBandwidthRx"].asString());
 		if(!value["InstanceBandwidthTx"].isNull())
 			instanceTypesObject.instanceBandwidthTx = std::stoi(value["InstanceBandwidthTx"].asString());
+		if(!value["InstancePpsRx"].isNull())
+			instanceTypesObject.instancePpsRx = std::stol(value["InstancePpsRx"].asString());
+		if(!value["InstancePpsTx"].isNull())
+			instanceTypesObject.instancePpsTx = std::stol(value["InstancePpsTx"].asString());
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 

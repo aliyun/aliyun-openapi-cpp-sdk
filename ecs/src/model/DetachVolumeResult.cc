@@ -14,46 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/CreateRouterInterfaceResult.h>
+#include <alibabacloud/ecs/model/DetachVolumeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-CreateRouterInterfaceResult::CreateRouterInterfaceResult() :
+DetachVolumeResult::DetachVolumeResult() :
 	ServiceResult()
 {}
 
-CreateRouterInterfaceResult::CreateRouterInterfaceResult(const std::string &payload) :
+DetachVolumeResult::DetachVolumeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateRouterInterfaceResult::~CreateRouterInterfaceResult()
+DetachVolumeResult::~DetachVolumeResult()
 {}
 
-void CreateRouterInterfaceResult::parse(const std::string &payload)
+void DetachVolumeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["RouterInterfaceId"].isNull())
-		routerInterfaceId_ = value["RouterInterfaceId"].asString();
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
 
-}
-
-long CreateRouterInterfaceResult::getOrderId()const
-{
-	return orderId_;
-}
-
-std::string CreateRouterInterfaceResult::getRouterInterfaceId()const
-{
-	return routerInterfaceId_;
 }
 

@@ -14,46 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/CreateRouterInterfaceResult.h>
+#include <alibabacloud/ecs/model/CreateVolumeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-CreateRouterInterfaceResult::CreateRouterInterfaceResult() :
+CreateVolumeResult::CreateVolumeResult() :
 	ServiceResult()
 {}
 
-CreateRouterInterfaceResult::CreateRouterInterfaceResult(const std::string &payload) :
+CreateVolumeResult::CreateVolumeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateRouterInterfaceResult::~CreateRouterInterfaceResult()
+CreateVolumeResult::~CreateVolumeResult()
 {}
 
-void CreateRouterInterfaceResult::parse(const std::string &payload)
+void CreateVolumeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["RouterInterfaceId"].isNull())
-		routerInterfaceId_ = value["RouterInterfaceId"].asString();
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["VolumeId"].isNull())
+		volumeId_ = value["VolumeId"].asString();
 
 }
 
-long CreateRouterInterfaceResult::getOrderId()const
+std::string CreateVolumeResult::getVolumeId()const
 {
-	return orderId_;
-}
-
-std::string CreateRouterInterfaceResult::getRouterInterfaceId()const
-{
-	return routerInterfaceId_;
+	return volumeId_;
 }
 
