@@ -37,36 +37,42 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getInstanceType()const;
-				void setInstanceType(const std::string& instanceType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getOperatorType()const;
 				void setOperatorType(const std::string& operatorType);
+				std::string getSystemDiskCategory()const;
+				void setSystemDiskCategory(const std::string& systemDiskCategory);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				bool getMigrateAcrossZone()const;
+				void setMigrateAcrossZone(bool migrateAcrossZone);
+				std::string getInstanceType()const;
+				void setInstanceType(const std::string& instanceType);
 
             private:
 				long resourceOwnerId_;
-				std::string instanceId_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string clientToken_;
 				std::string ownerAccount_;
-				std::string instanceType_;
 				long ownerId_;
 				std::string operatorType_;
+				std::string systemDiskCategory_;
+				std::string instanceId_;
+				std::string regionId_;
+				bool migrateAcrossZone_;
+				std::string instanceType_;
 
 			};
 		}

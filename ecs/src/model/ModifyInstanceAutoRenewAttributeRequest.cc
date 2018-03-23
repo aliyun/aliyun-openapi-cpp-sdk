@@ -47,6 +47,17 @@ void ModifyInstanceAutoRenewAttributeRequest::setResourceOwnerId(long resourceOw
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyInstanceAutoRenewAttributeRequest::getPeriodUnit()const
+{
+	return periodUnit_;
+}
+
+void ModifyInstanceAutoRenewAttributeRequest::setPeriodUnit(const std::string& periodUnit)
+{
+	periodUnit_ = periodUnit;
+	setParameter("PeriodUnit", periodUnit);
+}
+
 std::string ModifyInstanceAutoRenewAttributeRequest::getInstanceId()const
 {
 	return instanceId_;
