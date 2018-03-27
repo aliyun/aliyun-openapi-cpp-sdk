@@ -40,51 +40,46 @@ void QueryResourceInventoryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"];
-	for (auto value : allData)
+	auto dataNode = value["Data"];
+	if(!dataNode["LastUpdate"].isNull())
+		data_.lastUpdate = dataNode["LastUpdate"].asString();
+	auto allClusters = value["Clusters"]["cluster"];
+	for (auto value : allClusters)
 	{
-		Data dataObject;
-		if(!value["LastUpdate"].isNull())
-			dataObject.lastUpdate = value["LastUpdate"].asString();
-		auto allClusters = value["Clusters"]["cluster"];
-		for (auto value : allClusters)
+		Data::Cluster clusterObject;
+		if(!value["Status"].isNull())
+			clusterObject.status = value["Status"].asString();
+		if(!value["Cluster"].isNull())
+			clusterObject.cluster = value["Cluster"].asString();
+		if(!value["MachineRoom"].isNull())
+			clusterObject.machineRoom = value["MachineRoom"].asString();
+		if(!value["Region"].isNull())
+			clusterObject.region = value["Region"].asString();
+		auto allResourceParameters = value["ResourceParameters"]["resourceParameter"];
+		for (auto value : allResourceParameters)
 		{
-			Data::Cluster clusterObject;
-			if(!value["Status"].isNull())
-				clusterObject.status = value["Status"].asString();
-			if(!value["Cluster"].isNull())
-				clusterObject.cluster = value["Cluster"].asString();
-			if(!value["MachineRoom"].isNull())
-				clusterObject.machineRoom = value["MachineRoom"].asString();
-			if(!value["Region"].isNull())
-				clusterObject.region = value["Region"].asString();
-			auto allResourceParameters = value["ResourceParameters"]["resourceParameter"];
-			for (auto value : allResourceParameters)
-			{
-				Data::Cluster::ResourceParameter resourceParametersObject;
-				if(!value["ParaName"].isNull())
-					resourceParametersObject.paraName = value["ParaName"].asString();
-				if(!value["ParaValue"].isNull())
-					resourceParametersObject.paraValue = value["ParaValue"].asString();
-				clusterObject.resourceParameters.push_back(resourceParametersObject);
-			}
-			auto allResourceInventories = value["ResourceInventories"]["resourceInventory"];
-			for (auto value : allResourceInventories)
-			{
-				Data::Cluster::ResourceInventory resourceInventoriesObject;
-				if(!value["Total"].isNull())
-					resourceInventoriesObject.total = std::stol(value["Total"].asString());
-				if(!value["Available"].isNull())
-					resourceInventoriesObject.available = std::stol(value["Available"].asString());
-				if(!value["Used"].isNull())
-					resourceInventoriesObject.used = std::stol(value["Used"].asString());
-				if(!value["ResourceType"].isNull())
-					resourceInventoriesObject.resourceType = value["ResourceType"].asString();
-				clusterObject.resourceInventories.push_back(resourceInventoriesObject);
-			}
-			dataObject.clusters.push_back(clusterObject);
+			Data::Cluster::ResourceParameter resourceParametersObject;
+			if(!value["ParaName"].isNull())
+				resourceParametersObject.paraName = value["ParaName"].asString();
+			if(!value["ParaValue"].isNull())
+				resourceParametersObject.paraValue = value["ParaValue"].asString();
+			clusterObject.resourceParameters.push_back(resourceParametersObject);
 		}
-		data_.push_back(dataObject);
+		auto allResourceInventories = value["ResourceInventories"]["resourceInventory"];
+		for (auto value : allResourceInventories)
+		{
+			Data::Cluster::ResourceInventory resourceInventoriesObject;
+			if(!value["Total"].isNull())
+				resourceInventoriesObject.total = std::stol(value["Total"].asString());
+			if(!value["Available"].isNull())
+				resourceInventoriesObject.available = std::stol(value["Available"].asString());
+			if(!value["Used"].isNull())
+				resourceInventoriesObject.used = std::stol(value["Used"].asString());
+			if(!value["ResourceType"].isNull())
+				resourceInventoriesObject.resourceType = value["ResourceType"].asString();
+			clusterObject.resourceInventories.push_back(resourceInventoriesObject);
+		}
+		data_.clusters.push_back(clusterObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
@@ -98,7 +93,7 @@ std::string QueryResourceInventoryResult::getMessage()const
 	return message_;
 }
 
-std::vector<QueryResourceInventoryResult::Data> QueryResourceInventoryResult::getData()const
+QueryResourceInventoryResult::Data QueryResourceInventoryResult::getData()const
 {
 	return data_;
 }

@@ -67,14 +67,14 @@ namespace AlibabaCloud
 				explicit GetQuotaInstanceResult(const std::string &payload);
 				~GetQuotaInstanceResult();
 				std::string getMessage()const;
-				std::vector<Data> getData()const;
+				Data getData()const;
 				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::vector<Data> data_;
+				Data data_;
 				int code_;
 
 			};

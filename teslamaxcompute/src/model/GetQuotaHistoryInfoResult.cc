@@ -46,84 +46,49 @@ void GetQuotaHistoryInfoResult::parse(const std::string &payload)
 		DataItem dataObject;
 		if(!value["Times"].isNull())
 			dataObject.times = std::stoi(value["Times"].asString());
-		auto allPoint = value["Point"];
-		for (auto value : allPoint)
-		{
-			DataItem::Point pointObject;
-			auto allCpuMaxQuota = value["CpuMaxQuota"];
-			for (auto value : allCpuMaxQuota)
-			{
-				DataItem::Point::CpuMaxQuota cpuMaxQuotaObject;
-				if(!value["Min"].isNull())
-					cpuMaxQuotaObject.min = std::stof(value["Min"].asString());
-				if(!value["Max"].isNull())
-					cpuMaxQuotaObject.max = std::stof(value["Max"].asString());
-				if(!value["Avg"].isNull())
-					cpuMaxQuotaObject.avg = std::stof(value["Avg"].asString());
-				pointObject.cpuMaxQuota.push_back(cpuMaxQuotaObject);
-			}
-			auto allCpuMinQuota = value["CpuMinQuota"];
-			for (auto value : allCpuMinQuota)
-			{
-				DataItem::Point::CpuMinQuota cpuMinQuotaObject;
-				if(!value["Min"].isNull())
-					cpuMinQuotaObject.min = std::stof(value["Min"].asString());
-				if(!value["Max"].isNull())
-					cpuMinQuotaObject.max = std::stof(value["Max"].asString());
-				if(!value["Avg"].isNull())
-					cpuMinQuotaObject.avg = std::stof(value["Avg"].asString());
-				pointObject.cpuMinQuota.push_back(cpuMinQuotaObject);
-			}
-			auto allMemUsed = value["MemUsed"];
-			for (auto value : allMemUsed)
-			{
-				DataItem::Point::MemUsed memUsedObject;
-				if(!value["Min"].isNull())
-					memUsedObject.min = std::stof(value["Min"].asString());
-				if(!value["Max"].isNull())
-					memUsedObject.max = std::stof(value["Max"].asString());
-				if(!value["Avg"].isNull())
-					memUsedObject.avg = std::stof(value["Avg"].asString());
-				pointObject.memUsed.push_back(memUsedObject);
-			}
-			auto allCpuUsed = value["CpuUsed"];
-			for (auto value : allCpuUsed)
-			{
-				DataItem::Point::CpuUsed cpuUsedObject;
-				if(!value["Min"].isNull())
-					cpuUsedObject.min = std::stof(value["Min"].asString());
-				if(!value["Max"].isNull())
-					cpuUsedObject.max = std::stof(value["Max"].asString());
-				if(!value["Avg"].isNull())
-					cpuUsedObject.avg = std::stof(value["Avg"].asString());
-				pointObject.cpuUsed.push_back(cpuUsedObject);
-			}
-			auto allMemMaxQuota = value["MemMaxQuota"];
-			for (auto value : allMemMaxQuota)
-			{
-				DataItem::Point::MemMaxQuota memMaxQuotaObject;
-				if(!value["Min"].isNull())
-					memMaxQuotaObject.min = std::stof(value["Min"].asString());
-				if(!value["Max"].isNull())
-					memMaxQuotaObject.max = std::stof(value["Max"].asString());
-				if(!value["Avg"].isNull())
-					memMaxQuotaObject.avg = std::stof(value["Avg"].asString());
-				pointObject.memMaxQuota.push_back(memMaxQuotaObject);
-			}
-			auto allMemMinQuota = value["MemMinQuota"];
-			for (auto value : allMemMinQuota)
-			{
-				DataItem::Point::MemMinQuota memMinQuotaObject;
-				if(!value["Min"].isNull())
-					memMinQuotaObject.min = std::stof(value["Min"].asString());
-				if(!value["Max"].isNull())
-					memMinQuotaObject.max = std::stof(value["Max"].asString());
-				if(!value["Avg"].isNull())
-					memMinQuotaObject.avg = std::stof(value["Avg"].asString());
-				pointObject.memMinQuota.push_back(memMinQuotaObject);
-			}
-			dataObject.point.push_back(pointObject);
-		}
+		auto pointNode = value["Point"];
+		auto cpuMaxQuotaNode = pointNode["CpuMaxQuota"];
+		if(!cpuMaxQuotaNode["Min"].isNull())
+			dataObject.point.cpuMaxQuota.min = std::stof(cpuMaxQuotaNode["Min"].asString());
+		if(!cpuMaxQuotaNode["Max"].isNull())
+			dataObject.point.cpuMaxQuota.max = std::stof(cpuMaxQuotaNode["Max"].asString());
+		if(!cpuMaxQuotaNode["Avg"].isNull())
+			dataObject.point.cpuMaxQuota.avg = std::stof(cpuMaxQuotaNode["Avg"].asString());
+		auto cpuMinQuotaNode = pointNode["CpuMinQuota"];
+		if(!cpuMinQuotaNode["Min"].isNull())
+			dataObject.point.cpuMinQuota.min = std::stof(cpuMinQuotaNode["Min"].asString());
+		if(!cpuMinQuotaNode["Max"].isNull())
+			dataObject.point.cpuMinQuota.max = std::stof(cpuMinQuotaNode["Max"].asString());
+		if(!cpuMinQuotaNode["Avg"].isNull())
+			dataObject.point.cpuMinQuota.avg = std::stof(cpuMinQuotaNode["Avg"].asString());
+		auto memUsedNode = pointNode["MemUsed"];
+		if(!memUsedNode["Min"].isNull())
+			dataObject.point.memUsed.min = std::stof(memUsedNode["Min"].asString());
+		if(!memUsedNode["Max"].isNull())
+			dataObject.point.memUsed.max = std::stof(memUsedNode["Max"].asString());
+		if(!memUsedNode["Avg"].isNull())
+			dataObject.point.memUsed.avg = std::stof(memUsedNode["Avg"].asString());
+		auto cpuUsedNode = pointNode["CpuUsed"];
+		if(!cpuUsedNode["Min"].isNull())
+			dataObject.point.cpuUsed.min = std::stof(cpuUsedNode["Min"].asString());
+		if(!cpuUsedNode["Max"].isNull())
+			dataObject.point.cpuUsed.max = std::stof(cpuUsedNode["Max"].asString());
+		if(!cpuUsedNode["Avg"].isNull())
+			dataObject.point.cpuUsed.avg = std::stof(cpuUsedNode["Avg"].asString());
+		auto memMaxQuotaNode = pointNode["MemMaxQuota"];
+		if(!memMaxQuotaNode["Min"].isNull())
+			dataObject.point.memMaxQuota.min = std::stof(memMaxQuotaNode["Min"].asString());
+		if(!memMaxQuotaNode["Max"].isNull())
+			dataObject.point.memMaxQuota.max = std::stof(memMaxQuotaNode["Max"].asString());
+		if(!memMaxQuotaNode["Avg"].isNull())
+			dataObject.point.memMaxQuota.avg = std::stof(memMaxQuotaNode["Avg"].asString());
+		auto memMinQuotaNode = pointNode["MemMinQuota"];
+		if(!memMinQuotaNode["Min"].isNull())
+			dataObject.point.memMinQuota.min = std::stof(memMinQuotaNode["Min"].asString());
+		if(!memMinQuotaNode["Max"].isNull())
+			dataObject.point.memMinQuota.max = std::stof(memMinQuotaNode["Max"].asString());
+		if(!memMinQuotaNode["Avg"].isNull())
+			dataObject.point.memMinQuota.avg = std::stof(memMinQuotaNode["Avg"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())
