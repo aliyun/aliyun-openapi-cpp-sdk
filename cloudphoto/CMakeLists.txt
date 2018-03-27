@@ -51,6 +51,8 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/MergeFacesResult.h
 	include/alibabacloud/cloudphoto/model/GetPhotosByMd5sRequest.h
 	include/alibabacloud/cloudphoto/model/GetPhotosByMd5sResult.h
+	include/alibabacloud/cloudphoto/model/FetchLibrariesRequest.h
+	include/alibabacloud/cloudphoto/model/FetchLibrariesResult.h
 	include/alibabacloud/cloudphoto/model/FetchAlbumTagPhotosRequest.h
 	include/alibabacloud/cloudphoto/model/FetchAlbumTagPhotosResult.h
 	include/alibabacloud/cloudphoto/model/CreateTransactionRequest.h
@@ -188,6 +190,8 @@ set(cloudphoto_src
 	src/model/MergeFacesResult.cc
 	src/model/GetPhotosByMd5sRequest.cc
 	src/model/GetPhotosByMd5sResult.cc
+	src/model/FetchLibrariesRequest.cc
+	src/model/FetchLibrariesResult.cc
 	src/model/FetchAlbumTagPhotosRequest.cc
 	src/model/FetchAlbumTagPhotosResult.cc
 	src/model/CreateTransactionRequest.cc

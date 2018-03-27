@@ -52,6 +52,8 @@
 #include "model/MergeFacesResult.h"
 #include "model/GetPhotosByMd5sRequest.h"
 #include "model/GetPhotosByMd5sResult.h"
+#include "model/FetchLibrariesRequest.h"
+#include "model/FetchLibrariesResult.h"
 #include "model/FetchAlbumTagPhotosRequest.h"
 #include "model/FetchAlbumTagPhotosResult.h"
 #include "model/CreateTransactionRequest.h"
@@ -210,6 +212,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPhotosByMd5sResult> GetPhotosByMd5sOutcome;
 			typedef std::future<GetPhotosByMd5sOutcome> GetPhotosByMd5sOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::GetPhotosByMd5sRequest&, const GetPhotosByMd5sOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPhotosByMd5sAsyncHandler;
+			typedef Outcome<Error, Model::FetchLibrariesResult> FetchLibrariesOutcome;
+			typedef std::future<FetchLibrariesOutcome> FetchLibrariesOutcomeCallable;
+			typedef std::function<void(const CloudPhotoClient*, const Model::FetchLibrariesRequest&, const FetchLibrariesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FetchLibrariesAsyncHandler;
 			typedef Outcome<Error, Model::FetchAlbumTagPhotosResult> FetchAlbumTagPhotosOutcome;
 			typedef std::future<FetchAlbumTagPhotosOutcome> FetchAlbumTagPhotosOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::FetchAlbumTagPhotosRequest&, const FetchAlbumTagPhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FetchAlbumTagPhotosAsyncHandler;
@@ -416,6 +421,9 @@ namespace AlibabaCloud
 			GetPhotosByMd5sOutcome getPhotosByMd5s(const Model::GetPhotosByMd5sRequest &request)const;
 			void getPhotosByMd5sAsync(const Model::GetPhotosByMd5sRequest& request, const GetPhotosByMd5sAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPhotosByMd5sOutcomeCallable getPhotosByMd5sCallable(const Model::GetPhotosByMd5sRequest& request) const;
+			FetchLibrariesOutcome fetchLibraries(const Model::FetchLibrariesRequest &request)const;
+			void fetchLibrariesAsync(const Model::FetchLibrariesRequest& request, const FetchLibrariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FetchLibrariesOutcomeCallable fetchLibrariesCallable(const Model::FetchLibrariesRequest& request) const;
 			FetchAlbumTagPhotosOutcome fetchAlbumTagPhotos(const Model::FetchAlbumTagPhotosRequest &request)const;
 			void fetchAlbumTagPhotosAsync(const Model::FetchAlbumTagPhotosRequest& request, const FetchAlbumTagPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FetchAlbumTagPhotosOutcomeCallable fetchAlbumTagPhotosCallable(const Model::FetchAlbumTagPhotosRequest& request) const;
