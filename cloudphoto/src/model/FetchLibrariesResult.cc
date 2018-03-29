@@ -40,9 +40,14 @@ void FetchLibrariesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allLibrary = value["Library"]["Library"];
-	for (const auto &item : allLibrary)
-		library_.push_back(item.asString());
+	auto allLibraries = value["Libraries"]["Library"];
+	for (auto value : allLibraries)
+	{
+		Library librariesObject;
+		if(!value["LibraryId"].isNull())
+			librariesObject.libraryId = value["LibraryId"].asString();
+		libraries_.push_back(librariesObject);
+	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -69,9 +74,9 @@ std::string FetchLibrariesResult::getMessage()const
 	return message_;
 }
 
-std::vector<std::string> FetchLibrariesResult::getLibrary()const
+std::vector<FetchLibrariesResult::Library> FetchLibrariesResult::getLibraries()const
 {
-	return library_;
+	return libraries_;
 }
 
 std::string FetchLibrariesResult::getCode()const

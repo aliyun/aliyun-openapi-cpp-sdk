@@ -32,6 +32,10 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CLOUDPHOTO_EXPORT FetchLibrariesResult : public ServiceResult
 			{
 			public:
+				struct Library
+				{
+					std::string libraryId;
+				};
 
 
 				FetchLibrariesResult();
@@ -40,7 +44,7 @@ namespace AlibabaCloud
 				int getTotalCount()const;
 				std::string getAction()const;
 				std::string getMessage()const;
-				std::vector<std::string> getLibrary()const;
+				std::vector<Library> getLibraries()const;
 				std::string getCode()const;
 
 			protected:
@@ -49,7 +53,7 @@ namespace AlibabaCloud
 				int totalCount_;
 				std::string action_;
 				std::string message_;
-				std::vector<std::string> library_;
+				std::vector<Library> libraries_;
 				std::string code_;
 
 			};
