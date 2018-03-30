@@ -35,11 +35,11 @@ namespace AlibabaCloud
 				QueryCustomerSaleInfoRequest();
 				~QueryCustomerSaleInfoRequest();
 
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
+				std::string getRegionName()const;
+				void setRegionName(const std::string& regionName);
 
             private:
-				std::string region_;
+				std::string regionName_;
 
 			};
 		}

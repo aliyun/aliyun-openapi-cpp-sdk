@@ -25,14 +25,14 @@ QueryCustomerSaleInfoRequest::QueryCustomerSaleInfoRequest() :
 QueryCustomerSaleInfoRequest::~QueryCustomerSaleInfoRequest()
 {}
 
-std::string QueryCustomerSaleInfoRequest::getRegion()const
+std::string QueryCustomerSaleInfoRequest::getRegionName()const
 {
-	return region_;
+	return regionName_;
 }
 
-void QueryCustomerSaleInfoRequest::setRegion(const std::string& region)
+void QueryCustomerSaleInfoRequest::setRegionName(const std::string& regionName)
 {
-	region_ = region;
-	setParameter("Region", region);
+	regionName_ = regionName;
+	setParameter("RegionName", regionName);
 }
 
