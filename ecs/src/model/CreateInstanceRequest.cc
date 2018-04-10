@@ -377,6 +377,17 @@ void CreateInstanceRequest::setVlanId(const std::string& vlanId)
 	setParameter("VlanId", vlanId);
 }
 
+std::string CreateInstanceRequest::getSpotInterruptionBehavior()const
+{
+	return spotInterruptionBehavior_;
+}
+
+void CreateInstanceRequest::setSpotInterruptionBehavior(const std::string& spotInterruptionBehavior)
+{
+	spotInterruptionBehavior_ = spotInterruptionBehavior;
+	setParameter("SpotInterruptionBehavior", spotInterruptionBehavior);
+}
+
 std::string CreateInstanceRequest::getIoOptimized()const
 {
 	return ioOptimized_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEEVENTSRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEEVENTSRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_CREATENETWORKINTERFACEPERMISSIONRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_CREATENETWORKINTERFACEPERMISSIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeEventsResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT CreateNetworkInterfacePermissionResult : public ServiceResult
 			{
 			public:
-				struct Event
+				struct NetworkInterfacePermission
 				{
-					std::string status;
-					std::string eventCategory;
-					std::string resourceId;
-					std::string eventType;
-					std::string supportModify;
-					std::string eventId;
-					std::string planTime;
-					std::string expireTime;
+					std::string permissionState;
+					long accountId;
+					std::string serviceName;
+					std::string networkInterfacePermissionId;
+					std::string permission;
+					std::string networkInterfaceId;
 				};
 
 
-				DescribeEventsResult();
-				explicit DescribeEventsResult(const std::string &payload);
-				~DescribeEventsResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				std::vector<Event> getEvents()const;
-				int getPageNumber()const;
+				CreateNetworkInterfacePermissionResult();
+				explicit CreateNetworkInterfacePermissionResult(const std::string &payload);
+				~CreateNetworkInterfacePermissionResult();
+				NetworkInterfacePermission getNetworkInterfacePermission()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				std::vector<Event> events_;
-				int pageNumber_;
+				NetworkInterfacePermission networkInterfacePermission_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEEVENTSRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_CREATENETWORKINTERFACEPERMISSIONRESULT_H_

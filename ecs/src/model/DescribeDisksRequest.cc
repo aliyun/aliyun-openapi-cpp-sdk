@@ -388,16 +388,16 @@ void DescribeDisksRequest::setTag1Key(const std::string& tag1Key)
 	setParameter("Tag1Key", tag1Key);
 }
 
-std::vector<long> DescribeDisksRequest::getAdditionalAttributes()const
+std::vector<std::string> DescribeDisksRequest::getAdditionalAttributes()const
 {
 	return additionalAttributes_;
 }
 
-void DescribeDisksRequest::setAdditionalAttributes(const std::vector<long>& additionalAttributes)
+void DescribeDisksRequest::setAdditionalAttributes(const std::vector<std::string>& additionalAttributes)
 {
 	additionalAttributes_ = additionalAttributes;
 	for(int i = 0; i!= additionalAttributes.size(); i++)
-		setParameter("AdditionalAttributes."+ std::to_string(i), std::to_string(additionalAttributes.at(i)));
+		setParameter("AdditionalAttributes."+ std::to_string(i), additionalAttributes.at(i));
 }
 
 bool DescribeDisksRequest::getEnableShared()const

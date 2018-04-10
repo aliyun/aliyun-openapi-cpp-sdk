@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEEVENTSRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEEVENTSRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_GETINSTANCESCREENSHOTRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_GETINSTANCESCREENSHOTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeEventsResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT GetInstanceScreenshotResult : public ServiceResult
 			{
 			public:
-				struct Event
-				{
-					std::string status;
-					std::string eventCategory;
-					std::string resourceId;
-					std::string eventType;
-					std::string supportModify;
-					std::string eventId;
-					std::string planTime;
-					std::string expireTime;
-				};
 
 
-				DescribeEventsResult();
-				explicit DescribeEventsResult(const std::string &payload);
-				~DescribeEventsResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				std::vector<Event> getEvents()const;
-				int getPageNumber()const;
+				GetInstanceScreenshotResult();
+				explicit GetInstanceScreenshotResult(const std::string &payload);
+				~GetInstanceScreenshotResult();
+				std::string getInstanceId()const;
+				std::string getScreenshot()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				std::vector<Event> events_;
-				int pageNumber_;
+				std::string instanceId_;
+				std::string screenshot_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEEVENTSRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_GETINSTANCESCREENSHOTRESULT_H_

@@ -108,6 +108,8 @@
 #include "model/ConnectRouterInterfaceResult.h"
 #include "model/AddIpRangeRequest.h"
 #include "model/AddIpRangeResult.h"
+#include "model/GetInstanceConsoleOutputRequest.h"
+#include "model/GetInstanceConsoleOutputResult.h"
 #include "model/CancelTaskRequest.h"
 #include "model/CancelTaskResult.h"
 #include "model/ModifyPhysicalConnectionAttributeRequest.h"
@@ -246,6 +248,8 @@
 #include "model/DescribeCommandsResult.h"
 #include "model/DeleteImageRequest.h"
 #include "model/DeleteImageResult.h"
+#include "model/DescribeNetworkInterfacePermissionsRequest.h"
+#include "model/DescribeNetworkInterfacePermissionsResult.h"
 #include "model/DescribeDisksRequest.h"
 #include "model/DescribeDisksResult.h"
 #include "model/DeleteVpcRequest.h"
@@ -370,6 +374,8 @@
 #include "model/DeleteInstanceResult.h"
 #include "model/DescribeIntranetAttributeKbRequest.h"
 #include "model/DescribeIntranetAttributeKbResult.h"
+#include "model/CreateNetworkInterfacePermissionRequest.h"
+#include "model/CreateNetworkInterfacePermissionResult.h"
 #include "model/RemoveBandwidthPackageIpsRequest.h"
 #include "model/RemoveBandwidthPackageIpsResult.h"
 #include "model/ModifyVpcAttributeRequest.h"
@@ -466,6 +472,8 @@
 #include "model/CreateNetworkInterfaceResult.h"
 #include "model/DescribeIpRangesRequest.h"
 #include "model/DescribeIpRangesResult.h"
+#include "model/DeleteNetworkInterfacePermissionRequest.h"
+#include "model/DeleteNetworkInterfacePermissionResult.h"
 #include "model/CancelPhysicalConnectionRequest.h"
 #include "model/CancelPhysicalConnectionResult.h"
 #include "model/DescribeVRoutersRequest.h"
@@ -492,6 +500,8 @@
 #include "model/AttachClassicLinkVpcResult.h"
 #include "model/DescribeDeploymentSetsRequest.h"
 #include "model/DescribeDeploymentSetsResult.h"
+#include "model/GetInstanceScreenshotRequest.h"
+#include "model/GetInstanceScreenshotResult.h"
 #include "model/AttachInstanceRamRoleRequest.h"
 #include "model/AttachInstanceRamRoleResult.h"
 #include "model/ModifyVRouterAttributeRequest.h"
@@ -634,6 +644,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddIpRangeResult> AddIpRangeOutcome;
 			typedef std::future<AddIpRangeOutcome> AddIpRangeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::AddIpRangeRequest&, const AddIpRangeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddIpRangeAsyncHandler;
+			typedef Outcome<Error, Model::GetInstanceConsoleOutputResult> GetInstanceConsoleOutputOutcome;
+			typedef std::future<GetInstanceConsoleOutputOutcome> GetInstanceConsoleOutputOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::GetInstanceConsoleOutputRequest&, const GetInstanceConsoleOutputOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceConsoleOutputAsyncHandler;
 			typedef Outcome<Error, Model::CancelTaskResult> CancelTaskOutcome;
 			typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CancelTaskRequest&, const CancelTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
@@ -841,6 +854,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteImageResult> DeleteImageOutcome;
 			typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteImageRequest&, const DeleteImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageAsyncHandler;
+			typedef Outcome<Error, Model::DescribeNetworkInterfacePermissionsResult> DescribeNetworkInterfacePermissionsOutcome;
+			typedef std::future<DescribeNetworkInterfacePermissionsOutcome> DescribeNetworkInterfacePermissionsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeNetworkInterfacePermissionsRequest&, const DescribeNetworkInterfacePermissionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkInterfacePermissionsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDisksResult> DescribeDisksOutcome;
 			typedef std::future<DescribeDisksOutcome> DescribeDisksOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDisksRequest&, const DescribeDisksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisksAsyncHandler;
@@ -1027,6 +1043,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeIntranetAttributeKbResult> DescribeIntranetAttributeKbOutcome;
 			typedef std::future<DescribeIntranetAttributeKbOutcome> DescribeIntranetAttributeKbOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeIntranetAttributeKbRequest&, const DescribeIntranetAttributeKbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntranetAttributeKbAsyncHandler;
+			typedef Outcome<Error, Model::CreateNetworkInterfacePermissionResult> CreateNetworkInterfacePermissionOutcome;
+			typedef std::future<CreateNetworkInterfacePermissionOutcome> CreateNetworkInterfacePermissionOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateNetworkInterfacePermissionRequest&, const CreateNetworkInterfacePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkInterfacePermissionAsyncHandler;
 			typedef Outcome<Error, Model::RemoveBandwidthPackageIpsResult> RemoveBandwidthPackageIpsOutcome;
 			typedef std::future<RemoveBandwidthPackageIpsOutcome> RemoveBandwidthPackageIpsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RemoveBandwidthPackageIpsRequest&, const RemoveBandwidthPackageIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveBandwidthPackageIpsAsyncHandler;
@@ -1171,6 +1190,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeIpRangesResult> DescribeIpRangesOutcome;
 			typedef std::future<DescribeIpRangesOutcome> DescribeIpRangesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeIpRangesRequest&, const DescribeIpRangesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpRangesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteNetworkInterfacePermissionResult> DeleteNetworkInterfacePermissionOutcome;
+			typedef std::future<DeleteNetworkInterfacePermissionOutcome> DeleteNetworkInterfacePermissionOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DeleteNetworkInterfacePermissionRequest&, const DeleteNetworkInterfacePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkInterfacePermissionAsyncHandler;
 			typedef Outcome<Error, Model::CancelPhysicalConnectionResult> CancelPhysicalConnectionOutcome;
 			typedef std::future<CancelPhysicalConnectionOutcome> CancelPhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CancelPhysicalConnectionRequest&, const CancelPhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelPhysicalConnectionAsyncHandler;
@@ -1210,6 +1232,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDeploymentSetsResult> DescribeDeploymentSetsOutcome;
 			typedef std::future<DescribeDeploymentSetsOutcome> DescribeDeploymentSetsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDeploymentSetsRequest&, const DescribeDeploymentSetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeploymentSetsAsyncHandler;
+			typedef Outcome<Error, Model::GetInstanceScreenshotResult> GetInstanceScreenshotOutcome;
+			typedef std::future<GetInstanceScreenshotOutcome> GetInstanceScreenshotOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::GetInstanceScreenshotRequest&, const GetInstanceScreenshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceScreenshotAsyncHandler;
 			typedef Outcome<Error, Model::AttachInstanceRamRoleResult> AttachInstanceRamRoleOutcome;
 			typedef std::future<AttachInstanceRamRoleOutcome> AttachInstanceRamRoleOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::AttachInstanceRamRoleRequest&, const AttachInstanceRamRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachInstanceRamRoleAsyncHandler;
@@ -1350,6 +1375,9 @@ namespace AlibabaCloud
 			AddIpRangeOutcome addIpRange(const Model::AddIpRangeRequest &request)const;
 			void addIpRangeAsync(const Model::AddIpRangeRequest& request, const AddIpRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddIpRangeOutcomeCallable addIpRangeCallable(const Model::AddIpRangeRequest& request) const;
+			GetInstanceConsoleOutputOutcome getInstanceConsoleOutput(const Model::GetInstanceConsoleOutputRequest &request)const;
+			void getInstanceConsoleOutputAsync(const Model::GetInstanceConsoleOutputRequest& request, const GetInstanceConsoleOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetInstanceConsoleOutputOutcomeCallable getInstanceConsoleOutputCallable(const Model::GetInstanceConsoleOutputRequest& request) const;
 			CancelTaskOutcome cancelTask(const Model::CancelTaskRequest &request)const;
 			void cancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelTaskOutcomeCallable cancelTaskCallable(const Model::CancelTaskRequest& request) const;
@@ -1557,6 +1585,9 @@ namespace AlibabaCloud
 			DeleteImageOutcome deleteImage(const Model::DeleteImageRequest &request)const;
 			void deleteImageAsync(const Model::DeleteImageRequest& request, const DeleteImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteImageOutcomeCallable deleteImageCallable(const Model::DeleteImageRequest& request) const;
+			DescribeNetworkInterfacePermissionsOutcome describeNetworkInterfacePermissions(const Model::DescribeNetworkInterfacePermissionsRequest &request)const;
+			void describeNetworkInterfacePermissionsAsync(const Model::DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeNetworkInterfacePermissionsOutcomeCallable describeNetworkInterfacePermissionsCallable(const Model::DescribeNetworkInterfacePermissionsRequest& request) const;
 			DescribeDisksOutcome describeDisks(const Model::DescribeDisksRequest &request)const;
 			void describeDisksAsync(const Model::DescribeDisksRequest& request, const DescribeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDisksOutcomeCallable describeDisksCallable(const Model::DescribeDisksRequest& request) const;
@@ -1743,6 +1774,9 @@ namespace AlibabaCloud
 			DescribeIntranetAttributeKbOutcome describeIntranetAttributeKb(const Model::DescribeIntranetAttributeKbRequest &request)const;
 			void describeIntranetAttributeKbAsync(const Model::DescribeIntranetAttributeKbRequest& request, const DescribeIntranetAttributeKbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeIntranetAttributeKbOutcomeCallable describeIntranetAttributeKbCallable(const Model::DescribeIntranetAttributeKbRequest& request) const;
+			CreateNetworkInterfacePermissionOutcome createNetworkInterfacePermission(const Model::CreateNetworkInterfacePermissionRequest &request)const;
+			void createNetworkInterfacePermissionAsync(const Model::CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateNetworkInterfacePermissionOutcomeCallable createNetworkInterfacePermissionCallable(const Model::CreateNetworkInterfacePermissionRequest& request) const;
 			RemoveBandwidthPackageIpsOutcome removeBandwidthPackageIps(const Model::RemoveBandwidthPackageIpsRequest &request)const;
 			void removeBandwidthPackageIpsAsync(const Model::RemoveBandwidthPackageIpsRequest& request, const RemoveBandwidthPackageIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveBandwidthPackageIpsOutcomeCallable removeBandwidthPackageIpsCallable(const Model::RemoveBandwidthPackageIpsRequest& request) const;
@@ -1887,6 +1921,9 @@ namespace AlibabaCloud
 			DescribeIpRangesOutcome describeIpRanges(const Model::DescribeIpRangesRequest &request)const;
 			void describeIpRangesAsync(const Model::DescribeIpRangesRequest& request, const DescribeIpRangesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeIpRangesOutcomeCallable describeIpRangesCallable(const Model::DescribeIpRangesRequest& request) const;
+			DeleteNetworkInterfacePermissionOutcome deleteNetworkInterfacePermission(const Model::DeleteNetworkInterfacePermissionRequest &request)const;
+			void deleteNetworkInterfacePermissionAsync(const Model::DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteNetworkInterfacePermissionOutcomeCallable deleteNetworkInterfacePermissionCallable(const Model::DeleteNetworkInterfacePermissionRequest& request) const;
 			CancelPhysicalConnectionOutcome cancelPhysicalConnection(const Model::CancelPhysicalConnectionRequest &request)const;
 			void cancelPhysicalConnectionAsync(const Model::CancelPhysicalConnectionRequest& request, const CancelPhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelPhysicalConnectionOutcomeCallable cancelPhysicalConnectionCallable(const Model::CancelPhysicalConnectionRequest& request) const;
@@ -1926,6 +1963,9 @@ namespace AlibabaCloud
 			DescribeDeploymentSetsOutcome describeDeploymentSets(const Model::DescribeDeploymentSetsRequest &request)const;
 			void describeDeploymentSetsAsync(const Model::DescribeDeploymentSetsRequest& request, const DescribeDeploymentSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDeploymentSetsOutcomeCallable describeDeploymentSetsCallable(const Model::DescribeDeploymentSetsRequest& request) const;
+			GetInstanceScreenshotOutcome getInstanceScreenshot(const Model::GetInstanceScreenshotRequest &request)const;
+			void getInstanceScreenshotAsync(const Model::GetInstanceScreenshotRequest& request, const GetInstanceScreenshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetInstanceScreenshotOutcomeCallable getInstanceScreenshotCallable(const Model::GetInstanceScreenshotRequest& request) const;
 			AttachInstanceRamRoleOutcome attachInstanceRamRole(const Model::AttachInstanceRamRoleRequest &request)const;
 			void attachInstanceRamRoleAsync(const Model::AttachInstanceRamRoleRequest& request, const AttachInstanceRamRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachInstanceRamRoleOutcomeCallable attachInstanceRamRoleCallable(const Model::AttachInstanceRamRoleRequest& request) const;

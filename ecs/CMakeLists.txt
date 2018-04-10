@@ -107,6 +107,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ConnectRouterInterfaceResult.h
 	include/alibabacloud/ecs/model/AddIpRangeRequest.h
 	include/alibabacloud/ecs/model/AddIpRangeResult.h
+	include/alibabacloud/ecs/model/GetInstanceConsoleOutputRequest.h
+	include/alibabacloud/ecs/model/GetInstanceConsoleOutputResult.h
 	include/alibabacloud/ecs/model/CancelTaskRequest.h
 	include/alibabacloud/ecs/model/CancelTaskResult.h
 	include/alibabacloud/ecs/model/ModifyPhysicalConnectionAttributeRequest.h
@@ -245,6 +247,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeCommandsResult.h
 	include/alibabacloud/ecs/model/DeleteImageRequest.h
 	include/alibabacloud/ecs/model/DeleteImageResult.h
+	include/alibabacloud/ecs/model/DescribeNetworkInterfacePermissionsRequest.h
+	include/alibabacloud/ecs/model/DescribeNetworkInterfacePermissionsResult.h
 	include/alibabacloud/ecs/model/DescribeDisksRequest.h
 	include/alibabacloud/ecs/model/DescribeDisksResult.h
 	include/alibabacloud/ecs/model/DeleteVpcRequest.h
@@ -369,6 +373,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteInstanceResult.h
 	include/alibabacloud/ecs/model/DescribeIntranetAttributeKbRequest.h
 	include/alibabacloud/ecs/model/DescribeIntranetAttributeKbResult.h
+	include/alibabacloud/ecs/model/CreateNetworkInterfacePermissionRequest.h
+	include/alibabacloud/ecs/model/CreateNetworkInterfacePermissionResult.h
 	include/alibabacloud/ecs/model/RemoveBandwidthPackageIpsRequest.h
 	include/alibabacloud/ecs/model/RemoveBandwidthPackageIpsResult.h
 	include/alibabacloud/ecs/model/ModifyVpcAttributeRequest.h
@@ -465,6 +471,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateNetworkInterfaceResult.h
 	include/alibabacloud/ecs/model/DescribeIpRangesRequest.h
 	include/alibabacloud/ecs/model/DescribeIpRangesResult.h
+	include/alibabacloud/ecs/model/DeleteNetworkInterfacePermissionRequest.h
+	include/alibabacloud/ecs/model/DeleteNetworkInterfacePermissionResult.h
 	include/alibabacloud/ecs/model/CancelPhysicalConnectionRequest.h
 	include/alibabacloud/ecs/model/CancelPhysicalConnectionResult.h
 	include/alibabacloud/ecs/model/DescribeVRoutersRequest.h
@@ -491,6 +499,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/AttachClassicLinkVpcResult.h
 	include/alibabacloud/ecs/model/DescribeDeploymentSetsRequest.h
 	include/alibabacloud/ecs/model/DescribeDeploymentSetsResult.h
+	include/alibabacloud/ecs/model/GetInstanceScreenshotRequest.h
+	include/alibabacloud/ecs/model/GetInstanceScreenshotResult.h
 	include/alibabacloud/ecs/model/AttachInstanceRamRoleRequest.h
 	include/alibabacloud/ecs/model/AttachInstanceRamRoleResult.h
 	include/alibabacloud/ecs/model/ModifyVRouterAttributeRequest.h
@@ -584,6 +594,8 @@ set(ecs_src
 	src/model/ConnectRouterInterfaceResult.cc
 	src/model/AddIpRangeRequest.cc
 	src/model/AddIpRangeResult.cc
+	src/model/GetInstanceConsoleOutputRequest.cc
+	src/model/GetInstanceConsoleOutputResult.cc
 	src/model/CancelTaskRequest.cc
 	src/model/CancelTaskResult.cc
 	src/model/ModifyPhysicalConnectionAttributeRequest.cc
@@ -722,6 +734,8 @@ set(ecs_src
 	src/model/DescribeCommandsResult.cc
 	src/model/DeleteImageRequest.cc
 	src/model/DeleteImageResult.cc
+	src/model/DescribeNetworkInterfacePermissionsRequest.cc
+	src/model/DescribeNetworkInterfacePermissionsResult.cc
 	src/model/DescribeDisksRequest.cc
 	src/model/DescribeDisksResult.cc
 	src/model/DeleteVpcRequest.cc
@@ -846,6 +860,8 @@ set(ecs_src
 	src/model/DeleteInstanceResult.cc
 	src/model/DescribeIntranetAttributeKbRequest.cc
 	src/model/DescribeIntranetAttributeKbResult.cc
+	src/model/CreateNetworkInterfacePermissionRequest.cc
+	src/model/CreateNetworkInterfacePermissionResult.cc
 	src/model/RemoveBandwidthPackageIpsRequest.cc
 	src/model/RemoveBandwidthPackageIpsResult.cc
 	src/model/ModifyVpcAttributeRequest.cc
@@ -942,6 +958,8 @@ set(ecs_src
 	src/model/CreateNetworkInterfaceResult.cc
 	src/model/DescribeIpRangesRequest.cc
 	src/model/DescribeIpRangesResult.cc
+	src/model/DeleteNetworkInterfacePermissionRequest.cc
+	src/model/DeleteNetworkInterfacePermissionResult.cc
 	src/model/CancelPhysicalConnectionRequest.cc
 	src/model/CancelPhysicalConnectionResult.cc
 	src/model/DescribeVRoutersRequest.cc
@@ -968,6 +986,8 @@ set(ecs_src
 	src/model/AttachClassicLinkVpcResult.cc
 	src/model/DescribeDeploymentSetsRequest.cc
 	src/model/DescribeDeploymentSetsResult.cc
+	src/model/GetInstanceScreenshotRequest.cc
+	src/model/GetInstanceScreenshotResult.cc
 	src/model/AttachInstanceRamRoleRequest.cc
 	src/model/AttachInstanceRamRoleResult.cc
 	src/model/ModifyVRouterAttributeRequest.cc

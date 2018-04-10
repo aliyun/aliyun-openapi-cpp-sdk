@@ -101,8 +101,8 @@ namespace AlibabaCloud
 				void setTag5Value(const std::string& tag5Value);
 				std::string getTag1Key()const;
 				void setTag1Key(const std::string& tag1Key);
-				std::vector<long> getAdditionalAttributes()const;
-				void setAdditionalAttributes(const std::vector<long>& additionalAttributes);
+				std::vector<std::string> getAdditionalAttributes()const;
+				void setAdditionalAttributes(const std::vector<std::string>& additionalAttributes);
 				bool getEnableShared()const;
 				void setEnableShared(bool enableShared);
 				std::string getInstanceId()const;
@@ -154,7 +154,7 @@ namespace AlibabaCloud
 				std::string diskType_;
 				std::string tag5Value_;
 				std::string tag1Key_;
-				std::vector<long> additionalAttributes_;
+				std::vector<std::string> additionalAttributes_;
 				bool enableShared_;
 				std::string instanceId_;
 				bool encrypted_;

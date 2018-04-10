@@ -36,6 +36,17 @@ void RunInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RunInstancesRequest::getHpcClusterId()const
+{
+	return hpcClusterId_;
+}
+
+void RunInstancesRequest::setHpcClusterId(const std::string& hpcClusterId)
+{
+	hpcClusterId_ = hpcClusterId;
+	setParameter("HpcClusterId", hpcClusterId);
+}
+
 long RunInstancesRequest::getCallerParentId()const
 {
 	return callerParentId_;
@@ -337,6 +348,17 @@ void RunInstancesRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
 	setParameter("ImageId", imageId);
+}
+
+std::string RunInstancesRequest::getSpotInterruptionBehavior()const
+{
+	return spotInterruptionBehavior_;
+}
+
+void RunInstancesRequest::setSpotInterruptionBehavior(const std::string& spotInterruptionBehavior)
+{
+	spotInterruptionBehavior_ = spotInterruptionBehavior;
+	setParameter("SpotInterruptionBehavior", spotInterruptionBehavior);
 }
 
 std::string RunInstancesRequest::getClientToken()const

@@ -60,6 +60,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getHpcClusterId()const;
+				void setHpcClusterId(const std::string& hpcClusterId);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				std::string getSecurityEnhancementStrategy()const;
@@ -114,6 +116,8 @@ namespace AlibabaCloud
 				void setInternetMaxBandwidthIn(int internetMaxBandwidthIn);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
+				std::string getSpotInterruptionBehavior()const;
+				void setSpotInterruptionBehavior(const std::string& spotInterruptionBehavior);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getIoOptimized()const;
@@ -169,6 +173,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string hpcClusterId_;
 				long callerParentId_;
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
@@ -196,6 +201,7 @@ namespace AlibabaCloud
 				std::string zoneId_;
 				int internetMaxBandwidthIn_;
 				std::string imageId_;
+				std::string spotInterruptionBehavior_;
 				std::string clientToken_;
 				std::string ioOptimized_;
 				std::string securityGroupId_;

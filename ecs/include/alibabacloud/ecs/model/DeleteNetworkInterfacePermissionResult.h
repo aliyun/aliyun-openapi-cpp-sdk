@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEEVENTSRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEEVENTSRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DELETENETWORKINTERFACEPERMISSIONRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_DELETENETWORKINTERFACEPERMISSIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeEventsResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT DeleteNetworkInterfacePermissionResult : public ServiceResult
 			{
 			public:
-				struct Event
-				{
-					std::string status;
-					std::string eventCategory;
-					std::string resourceId;
-					std::string eventType;
-					std::string supportModify;
-					std::string eventId;
-					std::string planTime;
-					std::string expireTime;
-				};
 
 
-				DescribeEventsResult();
-				explicit DescribeEventsResult(const std::string &payload);
-				~DescribeEventsResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				std::vector<Event> getEvents()const;
-				int getPageNumber()const;
+				DeleteNetworkInterfacePermissionResult();
+				explicit DeleteNetworkInterfacePermissionResult(const std::string &payload);
+				~DeleteNetworkInterfacePermissionResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				std::vector<Event> events_;
-				int pageNumber_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEEVENTSRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DELETENETWORKINTERFACEPERMISSIONRESULT_H_

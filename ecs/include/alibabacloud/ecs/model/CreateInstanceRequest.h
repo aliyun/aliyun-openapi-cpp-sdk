@@ -110,6 +110,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getVlanId()const;
 				void setVlanId(const std::string& vlanId);
+				std::string getSpotInterruptionBehavior()const;
+				void setSpotInterruptionBehavior(const std::string& spotInterruptionBehavior);
 				std::string getIoOptimized()const;
 				void setIoOptimized(const std::string& ioOptimized);
 				std::string getSecurityGroupId()const;
@@ -190,6 +192,7 @@ namespace AlibabaCloud
 				std::string imageId_;
 				std::string clientToken_;
 				std::string vlanId_;
+				std::string spotInterruptionBehavior_;
 				std::string ioOptimized_;
 				std::string securityGroupId_;
 				int internetMaxBandwidthOut_;

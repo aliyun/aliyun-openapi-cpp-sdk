@@ -1599,6 +1599,42 @@ EcsClient::AddIpRangeOutcomeCallable EcsClient::addIpRangeCallable(const AddIpRa
 	return task->get_future();
 }
 
+EcsClient::GetInstanceConsoleOutputOutcome EcsClient::getInstanceConsoleOutput(const GetInstanceConsoleOutputRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetInstanceConsoleOutputOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetInstanceConsoleOutputOutcome(GetInstanceConsoleOutputResult(outcome.result()));
+	else
+		return GetInstanceConsoleOutputOutcome(outcome.error());
+}
+
+void EcsClient::getInstanceConsoleOutputAsync(const GetInstanceConsoleOutputRequest& request, const GetInstanceConsoleOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getInstanceConsoleOutput(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::GetInstanceConsoleOutputOutcomeCallable EcsClient::getInstanceConsoleOutputCallable(const GetInstanceConsoleOutputRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetInstanceConsoleOutputOutcome()>>(
+			[this, request]()
+			{
+			return this->getInstanceConsoleOutput(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CancelTaskOutcome EcsClient::cancelTask(const CancelTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4083,6 +4119,42 @@ EcsClient::DeleteImageOutcomeCallable EcsClient::deleteImageCallable(const Delet
 	return task->get_future();
 }
 
+EcsClient::DescribeNetworkInterfacePermissionsOutcome EcsClient::describeNetworkInterfacePermissions(const DescribeNetworkInterfacePermissionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNetworkInterfacePermissionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNetworkInterfacePermissionsOutcome(DescribeNetworkInterfacePermissionsResult(outcome.result()));
+	else
+		return DescribeNetworkInterfacePermissionsOutcome(outcome.error());
+}
+
+void EcsClient::describeNetworkInterfacePermissionsAsync(const DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNetworkInterfacePermissions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeNetworkInterfacePermissionsOutcomeCallable EcsClient::describeNetworkInterfacePermissionsCallable(const DescribeNetworkInterfacePermissionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNetworkInterfacePermissionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNetworkInterfacePermissions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeDisksOutcome EcsClient::describeDisks(const DescribeDisksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6315,6 +6387,42 @@ EcsClient::DescribeIntranetAttributeKbOutcomeCallable EcsClient::describeIntrane
 	return task->get_future();
 }
 
+EcsClient::CreateNetworkInterfacePermissionOutcome EcsClient::createNetworkInterfacePermission(const CreateNetworkInterfacePermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNetworkInterfacePermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNetworkInterfacePermissionOutcome(CreateNetworkInterfacePermissionResult(outcome.result()));
+	else
+		return CreateNetworkInterfacePermissionOutcome(outcome.error());
+}
+
+void EcsClient::createNetworkInterfacePermissionAsync(const CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNetworkInterfacePermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateNetworkInterfacePermissionOutcomeCallable EcsClient::createNetworkInterfacePermissionCallable(const CreateNetworkInterfacePermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNetworkInterfacePermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->createNetworkInterfacePermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::RemoveBandwidthPackageIpsOutcome EcsClient::removeBandwidthPackageIps(const RemoveBandwidthPackageIpsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8043,6 +8151,42 @@ EcsClient::DescribeIpRangesOutcomeCallable EcsClient::describeIpRangesCallable(c
 	return task->get_future();
 }
 
+EcsClient::DeleteNetworkInterfacePermissionOutcome EcsClient::deleteNetworkInterfacePermission(const DeleteNetworkInterfacePermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNetworkInterfacePermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNetworkInterfacePermissionOutcome(DeleteNetworkInterfacePermissionResult(outcome.result()));
+	else
+		return DeleteNetworkInterfacePermissionOutcome(outcome.error());
+}
+
+void EcsClient::deleteNetworkInterfacePermissionAsync(const DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNetworkInterfacePermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DeleteNetworkInterfacePermissionOutcomeCallable EcsClient::deleteNetworkInterfacePermissionCallable(const DeleteNetworkInterfacePermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNetworkInterfacePermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNetworkInterfacePermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CancelPhysicalConnectionOutcome EcsClient::cancelPhysicalConnection(const CancelPhysicalConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8505,6 +8649,42 @@ EcsClient::DescribeDeploymentSetsOutcomeCallable EcsClient::describeDeploymentSe
 			[this, request]()
 			{
 			return this->describeDeploymentSets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::GetInstanceScreenshotOutcome EcsClient::getInstanceScreenshot(const GetInstanceScreenshotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetInstanceScreenshotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetInstanceScreenshotOutcome(GetInstanceScreenshotResult(outcome.result()));
+	else
+		return GetInstanceScreenshotOutcome(outcome.error());
+}
+
+void EcsClient::getInstanceScreenshotAsync(const GetInstanceScreenshotRequest& request, const GetInstanceScreenshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getInstanceScreenshot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::GetInstanceScreenshotOutcomeCallable EcsClient::getInstanceScreenshotCallable(const GetInstanceScreenshotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetInstanceScreenshotOutcome()>>(
+			[this, request]()
+			{
+			return this->getInstanceScreenshot(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

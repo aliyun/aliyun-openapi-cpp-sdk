@@ -40,35 +40,40 @@ void DescribeEventsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Events"];
-	for (auto value : allData)
+	auto allEvents = value["Events"]["Event"];
+	for (auto value : allEvents)
 	{
-		Events dataObject;
+		Event eventsObject;
 		if(!value["ResourceId"].isNull())
-			dataObject.resourceId = value["ResourceId"].asString();
+			eventsObject.resourceId = value["ResourceId"].asString();
 		if(!value["EventType"].isNull())
-			dataObject.eventType = value["EventType"].asString();
+			eventsObject.eventType = value["EventType"].asString();
 		if(!value["EventCategory"].isNull())
-			dataObject.eventCategory = value["EventCategory"].asString();
+			eventsObject.eventCategory = value["EventCategory"].asString();
 		if(!value["Status"].isNull())
-			dataObject.status = value["Status"].asString();
+			eventsObject.status = value["Status"].asString();
 		if(!value["SupportModify"].isNull())
-			dataObject.supportModify = value["SupportModify"].asString();
+			eventsObject.supportModify = value["SupportModify"].asString();
 		if(!value["PlanTime"].isNull())
-			dataObject.planTime = value["PlanTime"].asString();
+			eventsObject.planTime = value["PlanTime"].asString();
 		if(!value["ExpireTime"].isNull())
-			dataObject.expireTime = value["ExpireTime"].asString();
+			eventsObject.expireTime = value["ExpireTime"].asString();
 		if(!value["EventId"].isNull())
-			dataObject.eventId = value["EventId"].asString();
-		data_.push_back(dataObject);
+			eventsObject.eventId = value["EventId"].asString();
+		events_.push_back(eventsObject);
 	}
-	if(!value["PageNo"].isNull())
-		pageNo_ = std::stoi(value["PageNo"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["Total"].isNull())
-		total_ = std::stoi(value["Total"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
+}
+
+int DescribeEventsResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 int DescribeEventsResult::getPageSize()const
@@ -76,18 +81,13 @@ int DescribeEventsResult::getPageSize()const
 	return pageSize_;
 }
 
-int DescribeEventsResult::getTotal()const
+std::vector<DescribeEventsResult::Event> DescribeEventsResult::getEvents()const
 {
-	return total_;
+	return events_;
 }
 
-std::vector<DescribeEventsResult::Events> DescribeEventsResult::getData()const
+int DescribeEventsResult::getPageNumber()const
 {
-	return data_;
-}
-
-int DescribeEventsResult::getPageNo()const
-{
-	return pageNo_;
+	return pageNumber_;
 }
 
