@@ -37,10 +37,10 @@ namespace AlibabaCloud
 
 				std::string getProjectName()const;
 				void setProjectName(const std::string& projectName);
-				bool getShowDelService()const;
-				void setShowDelService(bool showDelService);
 				int getCasShowType()const;
 				void setCasShowType(int casShowType);
+				bool getShowDelService()const;
+				void setShowDelService(bool showDelService);
 				long getCsbId()const;
 				void setCsbId(long csbId);
 				std::string getRegionId()const;
@@ -54,8 +54,8 @@ namespace AlibabaCloud
 
             private:
 				std::string projectName_;
-				bool showDelService_;
 				int casShowType_;
+				bool showDelService_;
 				long csbId_;
 				std::string regionId_;
 				std::string alias_;

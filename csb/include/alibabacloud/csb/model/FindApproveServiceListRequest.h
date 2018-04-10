@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				FindApproveServiceListRequest();
 				~FindApproveServiceListRequest();
 
-				std::string getProjectName()const;
-				void setProjectName(const std::string& projectName);
 				std::string getApproveLevel()const;
 				void setApproveLevel(const std::string& approveLevel);
+				std::string getProjectName()const;
+				void setProjectName(const std::string& projectName);
 				bool getShowDelService()const;
 				void setShowDelService(bool showDelService);
 				long getCsbId()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				void setServiceName(const std::string& serviceName);
 
             private:
-				std::string projectName_;
 				std::string approveLevel_;
+				std::string projectName_;
 				bool showDelService_;
 				long csbId_;
 				std::string regionId_;

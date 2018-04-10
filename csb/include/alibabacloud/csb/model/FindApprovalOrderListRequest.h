@@ -43,10 +43,10 @@ namespace AlibabaCloud
 				void setAlias(const std::string& alias);
 				std::string getServiceName()const;
 				void setServiceName(const std::string& serviceName);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				long getServiceId()const;
 				void setServiceId(long serviceId);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				bool getOnlyPending()const;
 				void setOnlyPending(bool onlyPending);
 
@@ -55,8 +55,8 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string alias_;
 				std::string serviceName_;
-				int pageNum_;
 				long serviceId_;
+				int pageNum_;
 				bool onlyPending_;
 
 			};

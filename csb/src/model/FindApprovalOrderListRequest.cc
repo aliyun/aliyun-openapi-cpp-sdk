@@ -69,17 +69,6 @@ void FindApprovalOrderListRequest::setServiceName(const std::string& serviceName
 	setParameter("ServiceName", serviceName);
 }
 
-int FindApprovalOrderListRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void FindApprovalOrderListRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
-}
-
 long FindApprovalOrderListRequest::getServiceId()const
 {
 	return serviceId_;
@@ -89,6 +78,17 @@ void FindApprovalOrderListRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
 	setParameter("ServiceId", std::to_string(serviceId));
+}
+
+int FindApprovalOrderListRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void FindApprovalOrderListRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 bool FindApprovalOrderListRequest::getOnlyPending()const

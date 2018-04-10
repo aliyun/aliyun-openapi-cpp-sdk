@@ -91,6 +91,8 @@ void FindServiceListResult::parse(const std::string &payload)
 			serviceObject.status = std::stoi(value["Status"].asString());
 		if(!value["UserId"].isNull())
 			serviceObject.userId = value["UserId"].asString();
+		if(!value["CasTargets"].isNull())
+			serviceObject.casTargets = value["CasTargets"].asString();
 		data_.serviceList.push_back(serviceObject);
 	}
 	if(!value["Message"].isNull())

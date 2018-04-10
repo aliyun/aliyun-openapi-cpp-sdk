@@ -56,6 +56,7 @@ namespace AlibabaCloud
 						std::string serviceVersion;
 						std::string interfaceName;
 						long id;
+						std::string casTargets;
 					};
 					int currentPage;
 					int pageNumber;
