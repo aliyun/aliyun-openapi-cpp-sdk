@@ -41,6 +41,8 @@ void GetLibraryResult::parse(const std::string &payload)
 
 	setRequestId(value["RequestId"].asString());
 	auto libraryNode = value["Library"];
+	if(!libraryNode["Ctime"].isNull())
+		library_.ctime = std::stol(libraryNode["Ctime"].asString());
 	auto quotaNode = libraryNode["Quota"];
 	if(!quotaNode["TotalQuota"].isNull())
 		library_.quota.totalQuota = std::stol(quotaNode["TotalQuota"].asString());

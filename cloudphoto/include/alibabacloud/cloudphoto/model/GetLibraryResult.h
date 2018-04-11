@@ -51,6 +51,7 @@ namespace AlibabaCloud
 						bool autoCleanEnabled;
 					};
 					Quota quota;
+					long ctime;
 					AutoCleanConfig autoCleanConfig;
 				};
 

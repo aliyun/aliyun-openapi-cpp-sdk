@@ -25,6 +25,17 @@ EditPhotosRequest::EditPhotosRequest() :
 EditPhotosRequest::~EditPhotosRequest()
 {}
 
+long EditPhotosRequest::getTakenAt()const
+{
+	return takenAt_;
+}
+
+void EditPhotosRequest::setTakenAt(long takenAt)
+{
+	takenAt_ = takenAt;
+	setParameter("TakenAt", std::to_string(takenAt));
+}
+
 std::string EditPhotosRequest::getLibraryId()const
 {
 	return libraryId_;

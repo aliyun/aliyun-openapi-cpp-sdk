@@ -46,6 +46,8 @@ void FetchLibrariesResult::parse(const std::string &payload)
 		Library librariesObject;
 		if(!value["LibraryId"].isNull())
 			librariesObject.libraryId = value["LibraryId"].asString();
+		if(!value["Ctime"].isNull())
+			librariesObject.ctime = std::stol(value["Ctime"].asString());
 		libraries_.push_back(librariesObject);
 	}
 	if(!value["Code"].isNull())
