@@ -483,6 +483,42 @@ CloudPhotoClient::ListTimeLinePhotosOutcomeCallable CloudPhotoClient::listTimeLi
 	return task->get_future();
 }
 
+CloudPhotoClient::FetchMomentPhotosOutcome CloudPhotoClient::fetchMomentPhotos(const FetchMomentPhotosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FetchMomentPhotosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FetchMomentPhotosOutcome(FetchMomentPhotosResult(outcome.result()));
+	else
+		return FetchMomentPhotosOutcome(outcome.error());
+}
+
+void CloudPhotoClient::fetchMomentPhotosAsync(const FetchMomentPhotosRequest& request, const FetchMomentPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, fetchMomentPhotos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudPhotoClient::FetchMomentPhotosOutcomeCallable CloudPhotoClient::fetchMomentPhotosCallable(const FetchMomentPhotosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FetchMomentPhotosOutcome()>>(
+			[this, request]()
+			{
+			return this->fetchMomentPhotos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudPhotoClient::DeletePhotosOutcome CloudPhotoClient::deletePhotos(const DeletePhotosRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

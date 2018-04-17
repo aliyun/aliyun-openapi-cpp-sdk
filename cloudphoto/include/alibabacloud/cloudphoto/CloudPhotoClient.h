@@ -46,6 +46,8 @@
 #include "model/RegisterTagResult.h"
 #include "model/ListTimeLinePhotosRequest.h"
 #include "model/ListTimeLinePhotosResult.h"
+#include "model/FetchMomentPhotosRequest.h"
+#include "model/FetchMomentPhotosResult.h"
 #include "model/DeletePhotosRequest.h"
 #include "model/DeletePhotosResult.h"
 #include "model/MergeFacesRequest.h"
@@ -203,6 +205,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTimeLinePhotosResult> ListTimeLinePhotosOutcome;
 			typedef std::future<ListTimeLinePhotosOutcome> ListTimeLinePhotosOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::ListTimeLinePhotosRequest&, const ListTimeLinePhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTimeLinePhotosAsyncHandler;
+			typedef Outcome<Error, Model::FetchMomentPhotosResult> FetchMomentPhotosOutcome;
+			typedef std::future<FetchMomentPhotosOutcome> FetchMomentPhotosOutcomeCallable;
+			typedef std::function<void(const CloudPhotoClient*, const Model::FetchMomentPhotosRequest&, const FetchMomentPhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FetchMomentPhotosAsyncHandler;
 			typedef Outcome<Error, Model::DeletePhotosResult> DeletePhotosOutcome;
 			typedef std::future<DeletePhotosOutcome> DeletePhotosOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::DeletePhotosRequest&, const DeletePhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePhotosAsyncHandler;
@@ -412,6 +417,9 @@ namespace AlibabaCloud
 			ListTimeLinePhotosOutcome listTimeLinePhotos(const Model::ListTimeLinePhotosRequest &request)const;
 			void listTimeLinePhotosAsync(const Model::ListTimeLinePhotosRequest& request, const ListTimeLinePhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTimeLinePhotosOutcomeCallable listTimeLinePhotosCallable(const Model::ListTimeLinePhotosRequest& request) const;
+			FetchMomentPhotosOutcome fetchMomentPhotos(const Model::FetchMomentPhotosRequest &request)const;
+			void fetchMomentPhotosAsync(const Model::FetchMomentPhotosRequest& request, const FetchMomentPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FetchMomentPhotosOutcomeCallable fetchMomentPhotosCallable(const Model::FetchMomentPhotosRequest& request) const;
 			DeletePhotosOutcome deletePhotos(const Model::DeletePhotosRequest &request)const;
 			void deletePhotosAsync(const Model::DeletePhotosRequest& request, const DeletePhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePhotosOutcomeCallable deletePhotosCallable(const Model::DeletePhotosRequest& request) const;

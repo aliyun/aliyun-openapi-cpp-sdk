@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDPHOTO_MODEL_LISTALBUMSRESULT_H_
-#define ALIBABACLOUD_CLOUDPHOTO_MODEL_LISTALBUMSRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDPHOTO_MODEL_FETCHMOMENTPHOTOSRESULT_H_
+#define ALIBABACLOUD_CLOUDPHOTO_MODEL_FETCHMOMENTPHOTOSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,60 +29,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDPHOTO_EXPORT ListAlbumsResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDPHOTO_EXPORT FetchMomentPhotosResult : public ServiceResult
 			{
 			public:
-				struct Album
+				struct Photo
 				{
-					struct Cover
-					{
-						bool isVideo;
-						std::string idStr;
-						std::string state;
-						long ctime;
-						std::string title;
-						long mtime;
-						std::string fileId;
-						long height;
-						long id;
-						long width;
-						std::string md5;
-						std::string remark;
-					};
-					Cover cover;
+					bool isVideo;
+					long shareExpireTime;
 					std::string idStr;
+					long size;
+					std::string title;
+					long mtime;
+					std::string remark;
 					std::string state;
 					long ctime;
-					long photosCount;
-					long mtime;
+					long inactiveTime;
+					std::string fileId;
+					long height;
 					long id;
-					std::string name;
-					std::string remark;
+					long width;
+					long takenAt;
+					std::string location;
+					std::string md5;
 				};
 
 
-				ListAlbumsResult();
-				explicit ListAlbumsResult(const std::string &payload);
-				~ListAlbumsResult();
-				std::string getNextCursor()const;
+				FetchMomentPhotosResult();
+				explicit FetchMomentPhotosResult(const std::string &payload);
+				~FetchMomentPhotosResult();
+				std::vector<Photo> getPhotos()const;
 				int getTotalCount()const;
 				std::string getAction()const;
 				std::string getMessage()const;
 				std::string getCode()const;
-				std::vector<Album> getAlbums()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string nextCursor_;
+				std::vector<Photo> photos_;
 				int totalCount_;
 				std::string action_;
 				std::string message_;
 				std::string code_;
-				std::vector<Album> albums_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDPHOTO_MODEL_LISTALBUMSRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDPHOTO_MODEL_FETCHMOMENTPHOTOSRESULT_H_

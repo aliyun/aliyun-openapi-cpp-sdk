@@ -45,6 +45,8 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/RegisterTagResult.h
 	include/alibabacloud/cloudphoto/model/ListTimeLinePhotosRequest.h
 	include/alibabacloud/cloudphoto/model/ListTimeLinePhotosResult.h
+	include/alibabacloud/cloudphoto/model/FetchMomentPhotosRequest.h
+	include/alibabacloud/cloudphoto/model/FetchMomentPhotosResult.h
 	include/alibabacloud/cloudphoto/model/DeletePhotosRequest.h
 	include/alibabacloud/cloudphoto/model/DeletePhotosResult.h
 	include/alibabacloud/cloudphoto/model/MergeFacesRequest.h
@@ -184,6 +186,8 @@ set(cloudphoto_src
 	src/model/RegisterTagResult.cc
 	src/model/ListTimeLinePhotosRequest.cc
 	src/model/ListTimeLinePhotosResult.cc
+	src/model/FetchMomentPhotosRequest.cc
+	src/model/FetchMomentPhotosResult.cc
 	src/model/DeletePhotosRequest.cc
 	src/model/DeletePhotosResult.cc
 	src/model/MergeFacesRequest.cc

@@ -52,6 +52,8 @@ void ListAlbumsResult::parse(const std::string &payload)
 			albumsObject.name = value["Name"].asString();
 		if(!value["State"].isNull())
 			albumsObject.state = value["State"].asString();
+		if(!value["Remark"].isNull())
+			albumsObject.remark = value["Remark"].asString();
 		if(!value["PhotosCount"].isNull())
 			albumsObject.photosCount = std::stol(value["PhotosCount"].asString());
 		if(!value["Ctime"].isNull())
