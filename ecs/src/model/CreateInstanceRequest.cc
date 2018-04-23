@@ -564,6 +564,17 @@ void CreateInstanceRequest::setRamRoleName(const std::string& ramRoleName)
 	setParameter("RamRoleName", ramRoleName);
 }
 
+std::string CreateInstanceRequest::getDedicatedHostId()const
+{
+	return dedicatedHostId_;
+}
+
+void CreateInstanceRequest::setDedicatedHostId(const std::string& dedicatedHostId)
+{
+	dedicatedHostId_ = dedicatedHostId;
+	setParameter("DedicatedHostId", dedicatedHostId);
+}
+
 std::string CreateInstanceRequest::getClusterId()const
 {
 	return clusterId_;

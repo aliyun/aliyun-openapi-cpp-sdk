@@ -39,6 +39,13 @@ namespace AlibabaCloud
 						int code;
 						std::string name;
 					};
+					struct EventCycleStatus
+					{
+						int code;
+						std::string name;
+					};
+					std::string eventFinishTime;
+					EventCycleStatus eventCycleStatus;
 					std::string eventPublishTime;
 					EventType eventType;
 					std::string instanceId;

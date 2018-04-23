@@ -93,6 +93,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteNetworkInterfaceResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceSpecRequest.h
 	include/alibabacloud/ecs/model/ModifyInstanceSpecResult.h
+	include/alibabacloud/ecs/model/AssignPrivateIpAddressesRequest.h
+	include/alibabacloud/ecs/model/AssignPrivateIpAddressesResult.h
 	include/alibabacloud/ecs/model/DeleteSnapshotRequest.h
 	include/alibabacloud/ecs/model/DeleteSnapshotResult.h
 	include/alibabacloud/ecs/model/DeleteKeyPairsRequest.h
@@ -307,6 +309,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/LeaveSecurityGroupResult.h
 	include/alibabacloud/ecs/model/DescribeRenewalPriceRequest.h
 	include/alibabacloud/ecs/model/DescribeRenewalPriceResult.h
+	include/alibabacloud/ecs/model/UnassignPrivateIpAddressesRequest.h
+	include/alibabacloud/ecs/model/UnassignPrivateIpAddressesResult.h
 	include/alibabacloud/ecs/model/DescribeInstanceVncPasswdRequest.h
 	include/alibabacloud/ecs/model/DescribeInstanceVncPasswdResult.h
 	include/alibabacloud/ecs/model/DescribeInstanceAutoRenewAttributeRequest.h
@@ -580,6 +584,8 @@ set(ecs_src
 	src/model/DeleteNetworkInterfaceResult.cc
 	src/model/ModifyInstanceSpecRequest.cc
 	src/model/ModifyInstanceSpecResult.cc
+	src/model/AssignPrivateIpAddressesRequest.cc
+	src/model/AssignPrivateIpAddressesResult.cc
 	src/model/DeleteSnapshotRequest.cc
 	src/model/DeleteSnapshotResult.cc
 	src/model/DeleteKeyPairsRequest.cc
@@ -794,6 +800,8 @@ set(ecs_src
 	src/model/LeaveSecurityGroupResult.cc
 	src/model/DescribeRenewalPriceRequest.cc
 	src/model/DescribeRenewalPriceResult.cc
+	src/model/UnassignPrivateIpAddressesRequest.cc
+	src/model/UnassignPrivateIpAddressesResult.cc
 	src/model/DescribeInstanceVncPasswdRequest.cc
 	src/model/DescribeInstanceVncPasswdResult.cc
 	src/model/DescribeInstanceAutoRenewAttributeRequest.cc

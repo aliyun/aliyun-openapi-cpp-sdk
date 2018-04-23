@@ -49,6 +49,11 @@ namespace AlibabaCloud
 						bool isSupportUnassociate;
 						std::string internetChargeType;
 					};
+					struct DedicatedHostAttribute
+					{
+						std::string dedicatedHostId;
+						std::string dedicatedHostName;
+					};
 					struct NetworkInterface
 					{
 						std::string primaryIpAddress;
@@ -108,6 +113,7 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string clusterId;
 					std::string hpcClusterId;
+					DedicatedHostAttribute dedicatedHostAttribute;
 					int gPUAmount;
 					std::vector<Instance::LockReason> operationLocks;
 					std::vector<std::string> rdmaIpAddress;

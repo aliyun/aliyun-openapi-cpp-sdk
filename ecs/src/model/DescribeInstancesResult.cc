@@ -177,6 +177,11 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.eipAddress.internetChargeType = eipAddressNode["InternetChargeType"].asString();
 		if(!eipAddressNode["IsSupportUnassociate"].isNull())
 			instancesObject.eipAddress.isSupportUnassociate = eipAddressNode["IsSupportUnassociate"].asString() == "true";
+		auto dedicatedHostAttributeNode = value["DedicatedHostAttribute"];
+		if(!dedicatedHostAttributeNode["DedicatedHostId"].isNull())
+			instancesObject.dedicatedHostAttribute.dedicatedHostId = dedicatedHostAttributeNode["DedicatedHostId"].asString();
+		if(!dedicatedHostAttributeNode["DedicatedHostName"].isNull())
+			instancesObject.dedicatedHostAttribute.dedicatedHostName = dedicatedHostAttributeNode["DedicatedHostName"].asString();
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
 			instancesObject.securityGroupIds.push_back(value.asString());

@@ -213,6 +213,18 @@ void DescribeInstanceHistoryEventsRequest::setCallerBidEmail(const std::string& 
 	setParameter("CallerBidEmail", callerBidEmail);
 }
 
+std::vector<std::string> DescribeInstanceHistoryEventsRequest::getInstanceEventCycleStatus()const
+{
+	return instanceEventCycleStatus_;
+}
+
+void DescribeInstanceHistoryEventsRequest::setInstanceEventCycleStatus(const std::vector<std::string>& instanceEventCycleStatus)
+{
+	instanceEventCycleStatus_ = instanceEventCycleStatus;
+	for(int i = 0; i!= instanceEventCycleStatus.size(); i++)
+		setParameter("InstanceEventCycleStatus."+ std::to_string(i), instanceEventCycleStatus.at(i));
+}
+
 std::string DescribeInstanceHistoryEventsRequest::getCallerUidEmail()const
 {
 	return callerUidEmail_;
@@ -255,6 +267,18 @@ void DescribeInstanceHistoryEventsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
 	setParameter("App_ip", app_ip);
+}
+
+std::vector<std::string> DescribeInstanceHistoryEventsRequest::getInstanceEventType()const
+{
+	return instanceEventType_;
+}
+
+void DescribeInstanceHistoryEventsRequest::setInstanceEventType(const std::vector<std::string>& instanceEventType)
+{
+	instanceEventType_ = instanceEventType;
+	for(int i = 0; i!= instanceEventType.size(); i++)
+		setParameter("InstanceEventType."+ std::to_string(i), instanceEventType.at(i));
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getResourceOwnerAccount()const

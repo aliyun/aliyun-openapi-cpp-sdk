@@ -94,6 +94,8 @@
 #include "model/DeleteNetworkInterfaceResult.h"
 #include "model/ModifyInstanceSpecRequest.h"
 #include "model/ModifyInstanceSpecResult.h"
+#include "model/AssignPrivateIpAddressesRequest.h"
+#include "model/AssignPrivateIpAddressesResult.h"
 #include "model/DeleteSnapshotRequest.h"
 #include "model/DeleteSnapshotResult.h"
 #include "model/DeleteKeyPairsRequest.h"
@@ -308,6 +310,8 @@
 #include "model/LeaveSecurityGroupResult.h"
 #include "model/DescribeRenewalPriceRequest.h"
 #include "model/DescribeRenewalPriceResult.h"
+#include "model/UnassignPrivateIpAddressesRequest.h"
+#include "model/UnassignPrivateIpAddressesResult.h"
 #include "model/DescribeInstanceVncPasswdRequest.h"
 #include "model/DescribeInstanceVncPasswdResult.h"
 #include "model/DescribeInstanceAutoRenewAttributeRequest.h"
@@ -623,6 +627,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyInstanceSpecResult> ModifyInstanceSpecOutcome;
 			typedef std::future<ModifyInstanceSpecOutcome> ModifyInstanceSpecOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyInstanceSpecRequest&, const ModifyInstanceSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceSpecAsyncHandler;
+			typedef Outcome<Error, Model::AssignPrivateIpAddressesResult> AssignPrivateIpAddressesOutcome;
+			typedef std::future<AssignPrivateIpAddressesOutcome> AssignPrivateIpAddressesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::AssignPrivateIpAddressesRequest&, const AssignPrivateIpAddressesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssignPrivateIpAddressesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSnapshotResult> DeleteSnapshotOutcome;
 			typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteSnapshotRequest&, const DeleteSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotAsyncHandler;
@@ -944,6 +951,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRenewalPriceResult> DescribeRenewalPriceOutcome;
 			typedef std::future<DescribeRenewalPriceOutcome> DescribeRenewalPriceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeRenewalPriceRequest&, const DescribeRenewalPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRenewalPriceAsyncHandler;
+			typedef Outcome<Error, Model::UnassignPrivateIpAddressesResult> UnassignPrivateIpAddressesOutcome;
+			typedef std::future<UnassignPrivateIpAddressesOutcome> UnassignPrivateIpAddressesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::UnassignPrivateIpAddressesRequest&, const UnassignPrivateIpAddressesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassignPrivateIpAddressesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceVncPasswdResult> DescribeInstanceVncPasswdOutcome;
 			typedef std::future<DescribeInstanceVncPasswdOutcome> DescribeInstanceVncPasswdOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceVncPasswdRequest&, const DescribeInstanceVncPasswdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceVncPasswdAsyncHandler;
@@ -1354,6 +1364,9 @@ namespace AlibabaCloud
 			ModifyInstanceSpecOutcome modifyInstanceSpec(const Model::ModifyInstanceSpecRequest &request)const;
 			void modifyInstanceSpecAsync(const Model::ModifyInstanceSpecRequest& request, const ModifyInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceSpecOutcomeCallable modifyInstanceSpecCallable(const Model::ModifyInstanceSpecRequest& request) const;
+			AssignPrivateIpAddressesOutcome assignPrivateIpAddresses(const Model::AssignPrivateIpAddressesRequest &request)const;
+			void assignPrivateIpAddressesAsync(const Model::AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AssignPrivateIpAddressesOutcomeCallable assignPrivateIpAddressesCallable(const Model::AssignPrivateIpAddressesRequest& request) const;
 			DeleteSnapshotOutcome deleteSnapshot(const Model::DeleteSnapshotRequest &request)const;
 			void deleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnapshotOutcomeCallable deleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
@@ -1675,6 +1688,9 @@ namespace AlibabaCloud
 			DescribeRenewalPriceOutcome describeRenewalPrice(const Model::DescribeRenewalPriceRequest &request)const;
 			void describeRenewalPriceAsync(const Model::DescribeRenewalPriceRequest& request, const DescribeRenewalPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRenewalPriceOutcomeCallable describeRenewalPriceCallable(const Model::DescribeRenewalPriceRequest& request) const;
+			UnassignPrivateIpAddressesOutcome unassignPrivateIpAddresses(const Model::UnassignPrivateIpAddressesRequest &request)const;
+			void unassignPrivateIpAddressesAsync(const Model::UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnassignPrivateIpAddressesOutcomeCallable unassignPrivateIpAddressesCallable(const Model::UnassignPrivateIpAddressesRequest& request) const;
 			DescribeInstanceVncPasswdOutcome describeInstanceVncPasswd(const Model::DescribeInstanceVncPasswdRequest &request)const;
 			void describeInstanceVncPasswdAsync(const Model::DescribeInstanceVncPasswdRequest& request, const DescribeInstanceVncPasswdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceVncPasswdOutcomeCallable describeInstanceVncPasswdCallable(const Model::DescribeInstanceVncPasswdRequest& request) const;

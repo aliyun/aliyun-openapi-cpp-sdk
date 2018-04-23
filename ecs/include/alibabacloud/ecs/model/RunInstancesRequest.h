@@ -160,6 +160,8 @@ namespace AlibabaCloud
 				void setRamRoleName(const std::string& ramRoleName);
 				std::string getAutoReleaseTime()const;
 				void setAutoReleaseTime(const std::string& autoReleaseTime);
+				std::string getDedicatedHostId()const;
+				void setDedicatedHostId(const std::string& dedicatedHostId);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
 				std::vector<DataDisk> getDataDisk()const;
@@ -223,6 +225,7 @@ namespace AlibabaCloud
 				std::string systemDiskDiskName_;
 				std::string ramRoleName_;
 				std::string autoReleaseTime_;
+				std::string dedicatedHostId_;
 				std::string callerBid_;
 				std::vector<DataDisk> dataDisk_;
 				bool proxy_trust_transport_info_;

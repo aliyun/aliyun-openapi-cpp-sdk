@@ -83,6 +83,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getDedicatedHostId()const;
+				void setDedicatedHostId(const std::string& dedicatedHostId);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
 				long getOwnerId()const;
@@ -127,6 +129,7 @@ namespace AlibabaCloud
 				std::string app_ip_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string dedicatedHostId_;
 				std::string callerBid_;
 				long ownerId_;
 				bool proxy_trust_transport_info_;

@@ -144,6 +144,8 @@ namespace AlibabaCloud
 				void setSystemDiskDiskName(const std::string& systemDiskDiskName);
 				std::string getRamRoleName()const;
 				void setRamRoleName(const std::string& ramRoleName);
+				std::string getDedicatedHostId()const;
+				void setDedicatedHostId(const std::string& dedicatedHostId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::vector<DataDisk> getDataDisk()const;
@@ -209,6 +211,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string systemDiskDiskName_;
 				std::string ramRoleName_;
+				std::string dedicatedHostId_;
 				std::string clusterId_;
 				std::vector<DataDisk> dataDisk_;
 				std::string tag5Value_;

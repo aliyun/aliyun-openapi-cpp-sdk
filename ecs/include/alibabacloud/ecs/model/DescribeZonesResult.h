@@ -44,8 +44,10 @@ namespace AlibabaCloud
 						std::vector<std::string> instanceTypeFamilies;
 						std::vector<std::string> dataDiskCategories;
 					};
+					std::vector<std::string> dedicatedHostGenerations;
 					std::vector<std::string> availableInstanceTypes;
 					std::string zoneId;
+					std::vector<std::string> availableDedicatedHostTypes;
 					std::vector<Zone::ResourcesInfo> availableResources;
 					std::vector<std::string> availableDiskCategories;
 					std::string localName;

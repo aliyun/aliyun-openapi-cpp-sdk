@@ -601,6 +601,17 @@ void RunInstancesRequest::setAutoReleaseTime(const std::string& autoReleaseTime)
 	setParameter("AutoReleaseTime", autoReleaseTime);
 }
 
+std::string RunInstancesRequest::getDedicatedHostId()const
+{
+	return dedicatedHostId_;
+}
+
+void RunInstancesRequest::setDedicatedHostId(const std::string& dedicatedHostId)
+{
+	dedicatedHostId_ = dedicatedHostId;
+	setParameter("DedicatedHostId", dedicatedHostId);
+}
+
 std::string RunInstancesRequest::getCallerBid()const
 {
 	return callerBid_;

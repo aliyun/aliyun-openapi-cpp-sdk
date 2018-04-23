@@ -46,6 +46,11 @@ namespace AlibabaCloud
 					std::string ipAddress;
 					std::string internetChargeType;
 				};
+				struct DedicatedHostAttribute
+				{
+					std::string dedicatedHostId;
+					std::string dedicatedHostName;
+				};
 				struct LockReason
 				{
 					std::string lockReason;
@@ -74,6 +79,7 @@ namespace AlibabaCloud
 				std::string getInstanceId()const;
 				std::string getClusterId()const;
 				std::string getStoppedMode()const;
+				DedicatedHostAttribute getDedicatedHostAttribute()const;
 				VpcAttributes getVpcAttributes()const;
 				std::vector<std::string> getSecurityGroupIds()const;
 				std::vector<LockReason> getOperationLocks()const;
@@ -107,6 +113,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string clusterId_;
 				std::string stoppedMode_;
+				DedicatedHostAttribute dedicatedHostAttribute_;
 				VpcAttributes vpcAttributes_;
 				std::vector<std::string> securityGroupIds_;
 				std::vector<LockReason> operationLocks_;

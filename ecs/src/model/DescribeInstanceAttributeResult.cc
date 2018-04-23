@@ -67,6 +67,11 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 		eipAddress_.bandwidth = std::stoi(eipAddressNode["Bandwidth"].asString());
 	if(!eipAddressNode["InternetChargeType"].isNull())
 		eipAddress_.internetChargeType = eipAddressNode["InternetChargeType"].asString();
+	auto dedicatedHostAttributeNode = value["DedicatedHostAttribute"];
+	if(!dedicatedHostAttributeNode["DedicatedHostId"].isNull())
+		dedicatedHostAttribute_.dedicatedHostId = dedicatedHostAttributeNode["DedicatedHostId"].asString();
+	if(!dedicatedHostAttributeNode["DedicatedHostName"].isNull())
+		dedicatedHostAttribute_.dedicatedHostName = dedicatedHostAttributeNode["DedicatedHostName"].asString();
 	auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 	for (const auto &item : allSecurityGroupIds)
 		securityGroupIds_.push_back(item.asString());
@@ -218,6 +223,11 @@ std::string DescribeInstanceAttributeResult::getClusterId()const
 std::string DescribeInstanceAttributeResult::getStoppedMode()const
 {
 	return stoppedMode_;
+}
+
+DescribeInstanceAttributeResult::DedicatedHostAttribute DescribeInstanceAttributeResult::getDedicatedHostAttribute()const
+{
+	return dedicatedHostAttribute_;
 }
 
 DescribeInstanceAttributeResult::VpcAttributes DescribeInstanceAttributeResult::getVpcAttributes()const

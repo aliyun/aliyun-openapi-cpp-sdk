@@ -289,6 +289,17 @@ void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerA
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string DescribeAvailableResourceRequest::getDedicatedHostId()const
+{
+	return dedicatedHostId_;
+}
+
+void DescribeAvailableResourceRequest::setDedicatedHostId(const std::string& dedicatedHostId)
+{
+	dedicatedHostId_ = dedicatedHostId;
+	setParameter("DedicatedHostId", dedicatedHostId);
+}
+
 std::string DescribeAvailableResourceRequest::getCallerBid()const
 {
 	return callerBid_;

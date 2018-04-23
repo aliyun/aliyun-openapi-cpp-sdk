@@ -1347,6 +1347,42 @@ EcsClient::ModifyInstanceSpecOutcomeCallable EcsClient::modifyInstanceSpecCallab
 	return task->get_future();
 }
 
+EcsClient::AssignPrivateIpAddressesOutcome EcsClient::assignPrivateIpAddresses(const AssignPrivateIpAddressesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AssignPrivateIpAddressesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AssignPrivateIpAddressesOutcome(AssignPrivateIpAddressesResult(outcome.result()));
+	else
+		return AssignPrivateIpAddressesOutcome(outcome.error());
+}
+
+void EcsClient::assignPrivateIpAddressesAsync(const AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, assignPrivateIpAddresses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::AssignPrivateIpAddressesOutcomeCallable EcsClient::assignPrivateIpAddressesCallable(const AssignPrivateIpAddressesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AssignPrivateIpAddressesOutcome()>>(
+			[this, request]()
+			{
+			return this->assignPrivateIpAddresses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DeleteSnapshotOutcome EcsClient::deleteSnapshot(const DeleteSnapshotRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5193,6 +5229,42 @@ EcsClient::DescribeRenewalPriceOutcomeCallable EcsClient::describeRenewalPriceCa
 			[this, request]()
 			{
 			return this->describeRenewalPrice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::UnassignPrivateIpAddressesOutcome EcsClient::unassignPrivateIpAddresses(const UnassignPrivateIpAddressesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnassignPrivateIpAddressesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnassignPrivateIpAddressesOutcome(UnassignPrivateIpAddressesResult(outcome.result()));
+	else
+		return UnassignPrivateIpAddressesOutcome(outcome.error());
+}
+
+void EcsClient::unassignPrivateIpAddressesAsync(const UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unassignPrivateIpAddresses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::UnassignPrivateIpAddressesOutcomeCallable EcsClient::unassignPrivateIpAddressesCallable(const UnassignPrivateIpAddressesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnassignPrivateIpAddressesOutcome()>>(
+			[this, request]()
+			{
+			return this->unassignPrivateIpAddresses(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
