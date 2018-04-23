@@ -25,8 +25,14 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/AttachInstancesResult.h
 	include/alibabacloud/ess/model/DescribeScalingGroupsRequest.h
 	include/alibabacloud/ess/model/DescribeScalingGroupsResult.h
+	include/alibabacloud/ess/model/EnterStandbyRequest.h
+	include/alibabacloud/ess/model/EnterStandbyResult.h
 	include/alibabacloud/ess/model/DescribeScalingActivitiesRequest.h
 	include/alibabacloud/ess/model/DescribeScalingActivitiesResult.h
+	include/alibabacloud/ess/model/ExitStandbyRequest.h
+	include/alibabacloud/ess/model/ExitStandbyResult.h
+	include/alibabacloud/ess/model/DescribeNotificationConfigurationsRequest.h
+	include/alibabacloud/ess/model/DescribeNotificationConfigurationsResult.h
 	include/alibabacloud/ess/model/DescribeScalingRulesRequest.h
 	include/alibabacloud/ess/model/DescribeScalingRulesResult.h
 	include/alibabacloud/ess/model/ModifyScalingGroupRequest.h
@@ -35,12 +41,16 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/EnableScalingGroupResult.h
 	include/alibabacloud/ess/model/DeactivateScalingConfigurationRequest.h
 	include/alibabacloud/ess/model/DeactivateScalingConfigurationResult.h
+	include/alibabacloud/ess/model/CreateNotificationConfigurationRequest.h
+	include/alibabacloud/ess/model/CreateNotificationConfigurationResult.h
 	include/alibabacloud/ess/model/VerifyAuthenticationRequest.h
 	include/alibabacloud/ess/model/VerifyAuthenticationResult.h
 	include/alibabacloud/ess/model/CreateScheduledTaskRequest.h
 	include/alibabacloud/ess/model/CreateScheduledTaskResult.h
 	include/alibabacloud/ess/model/DeleteScheduledTaskRequest.h
 	include/alibabacloud/ess/model/DeleteScheduledTaskResult.h
+	include/alibabacloud/ess/model/ModifyNotificationConfigurationRequest.h
+	include/alibabacloud/ess/model/ModifyNotificationConfigurationResult.h
 	include/alibabacloud/ess/model/CreateScalingRuleRequest.h
 	include/alibabacloud/ess/model/CreateScalingRuleResult.h
 	include/alibabacloud/ess/model/DescribeScalingConfigurationsRequest.h
@@ -49,6 +59,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/ModifyScheduledTaskResult.h
 	include/alibabacloud/ess/model/RemoveInstancesRequest.h
 	include/alibabacloud/ess/model/RemoveInstancesResult.h
+	include/alibabacloud/ess/model/DescribeNotificationTypesRequest.h
+	include/alibabacloud/ess/model/DescribeNotificationTypesResult.h
 	include/alibabacloud/ess/model/ExecuteScalingRuleRequest.h
 	include/alibabacloud/ess/model/ExecuteScalingRuleResult.h
 	include/alibabacloud/ess/model/DeleteScalingGroupRequest.h
@@ -63,6 +75,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/DescribeRegionsResult.h
 	include/alibabacloud/ess/model/DescribeScheduledTasksRequest.h
 	include/alibabacloud/ess/model/DescribeScheduledTasksResult.h
+	include/alibabacloud/ess/model/DeleteNotificationConfigurationRequest.h
+	include/alibabacloud/ess/model/DeleteNotificationConfigurationResult.h
 	include/alibabacloud/ess/model/DescribeAccountAttributesRequest.h
 	include/alibabacloud/ess/model/DescribeAccountAttributesResult.h
 	include/alibabacloud/ess/model/DetachInstancesRequest.h
@@ -94,8 +108,14 @@ set(ess_src
 	src/model/AttachInstancesResult.cc
 	src/model/DescribeScalingGroupsRequest.cc
 	src/model/DescribeScalingGroupsResult.cc
+	src/model/EnterStandbyRequest.cc
+	src/model/EnterStandbyResult.cc
 	src/model/DescribeScalingActivitiesRequest.cc
 	src/model/DescribeScalingActivitiesResult.cc
+	src/model/ExitStandbyRequest.cc
+	src/model/ExitStandbyResult.cc
+	src/model/DescribeNotificationConfigurationsRequest.cc
+	src/model/DescribeNotificationConfigurationsResult.cc
 	src/model/DescribeScalingRulesRequest.cc
 	src/model/DescribeScalingRulesResult.cc
 	src/model/ModifyScalingGroupRequest.cc
@@ -104,12 +124,16 @@ set(ess_src
 	src/model/EnableScalingGroupResult.cc
 	src/model/DeactivateScalingConfigurationRequest.cc
 	src/model/DeactivateScalingConfigurationResult.cc
+	src/model/CreateNotificationConfigurationRequest.cc
+	src/model/CreateNotificationConfigurationResult.cc
 	src/model/VerifyAuthenticationRequest.cc
 	src/model/VerifyAuthenticationResult.cc
 	src/model/CreateScheduledTaskRequest.cc
 	src/model/CreateScheduledTaskResult.cc
 	src/model/DeleteScheduledTaskRequest.cc
 	src/model/DeleteScheduledTaskResult.cc
+	src/model/ModifyNotificationConfigurationRequest.cc
+	src/model/ModifyNotificationConfigurationResult.cc
 	src/model/CreateScalingRuleRequest.cc
 	src/model/CreateScalingRuleResult.cc
 	src/model/DescribeScalingConfigurationsRequest.cc
@@ -118,6 +142,8 @@ set(ess_src
 	src/model/ModifyScheduledTaskResult.cc
 	src/model/RemoveInstancesRequest.cc
 	src/model/RemoveInstancesResult.cc
+	src/model/DescribeNotificationTypesRequest.cc
+	src/model/DescribeNotificationTypesResult.cc
 	src/model/ExecuteScalingRuleRequest.cc
 	src/model/ExecuteScalingRuleResult.cc
 	src/model/DeleteScalingGroupRequest.cc
@@ -132,6 +158,8 @@ set(ess_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeScheduledTasksRequest.cc
 	src/model/DescribeScheduledTasksResult.cc
+	src/model/DeleteNotificationConfigurationRequest.cc
+	src/model/DeleteNotificationConfigurationResult.cc
 	src/model/DescribeAccountAttributesRequest.cc
 	src/model/DescribeAccountAttributesResult.cc
 	src/model/DetachInstancesRequest.cc

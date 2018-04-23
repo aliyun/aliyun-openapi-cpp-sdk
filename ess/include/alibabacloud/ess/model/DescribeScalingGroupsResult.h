@@ -54,6 +54,7 @@ namespace AlibabaCloud
 					int totalCapacity;
 					std::string regionId;
 					std::vector<std::string> dBInstanceIds;
+					int standbyCapacity;
 				};
 
 

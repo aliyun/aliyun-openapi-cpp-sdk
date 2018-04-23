@@ -169,6 +169,23 @@ void CreateScalingConfigurationRequest::setKeyPairName(const std::string& keyPai
 	setParameter("KeyPairName", keyPairName);
 }
 
+std::vector<CreateScalingConfigurationRequest::SpotPriceLimit> CreateScalingConfigurationRequest::getSpotPriceLimit()const
+{
+	return spotPriceLimit_;
+}
+
+void CreateScalingConfigurationRequest::setSpotPriceLimit(const std::vector<SpotPriceLimit>& spotPriceLimit)
+{
+	spotPriceLimit_ = spotPriceLimit;
+	int i = 0;
+	for(int i = 0; i!= spotPriceLimit.size(); i++)	{
+		auto obj = spotPriceLimit.at(i);
+		std::string str ="SpotPriceLimit."+ std::to_string(i);
+		setParameter(str + ".InstanceType", obj.instanceType);
+		setParameter(str + ".PriceLimit", std::to_string(obj.priceLimit));
+	}
+}
+
 std::string CreateScalingConfigurationRequest::getSystemDiskCategory()const
 {
 	return systemDiskCategory_;
@@ -365,6 +382,17 @@ void CreateScalingConfigurationRequest::setDataDisk2DeleteWithInstance(const std
 {
 	dataDisk2DeleteWithInstance_ = dataDisk2DeleteWithInstance;
 	setParameter("DataDisk2DeleteWithInstance", dataDisk2DeleteWithInstance);
+}
+
+std::string CreateScalingConfigurationRequest::getSpotStrategy()const
+{
+	return spotStrategy_;
+}
+
+void CreateScalingConfigurationRequest::setSpotStrategy(const std::string& spotStrategy)
+{
+	spotStrategy_ = spotStrategy;
+	setParameter("SpotStrategy", spotStrategy);
 }
 
 std::string CreateScalingConfigurationRequest::getDataDisk1Category()const

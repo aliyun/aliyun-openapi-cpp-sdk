@@ -56,6 +56,8 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.scalingGroupName = value["ScalingGroupName"].asString();
 		if(!value["ActiveCapacity"].isNull())
 			scalingGroupsObject.activeCapacity = std::stoi(value["ActiveCapacity"].asString());
+		if(!value["StandbyCapacity"].isNull())
+			scalingGroupsObject.standbyCapacity = std::stoi(value["StandbyCapacity"].asString());
 		if(!value["ActiveScalingConfigurationId"].isNull())
 			scalingGroupsObject.activeScalingConfigurationId = value["ActiveScalingConfigurationId"].asString();
 		if(!value["ScalingGroupId"].isNull())

@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ESS_EXPORT CreateScalingConfigurationRequest : public RpcServiceRequest
 			{
+				struct SpotPriceLimit
+				{
+					std::string instanceType;
+					float priceLimit;
+				};
 
 			public:
 				CreateScalingConfigurationRequest();
@@ -61,6 +66,8 @@ namespace AlibabaCloud
 				void setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy);
 				std::string getKeyPairName()const;
 				void setKeyPairName(const std::string& keyPairName);
+				std::vector<SpotPriceLimit> getSpotPriceLimit()const;
+				void setSpotPriceLimit(const std::vector<SpotPriceLimit>& spotPriceLimit);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
 				std::string getAccessKeyId()const;
@@ -97,6 +104,8 @@ namespace AlibabaCloud
 				void setTags(const std::string& tags);
 				std::string getDataDisk2DeleteWithInstance()const;
 				void setDataDisk2DeleteWithInstance(const std::string& dataDisk2DeleteWithInstance);
+				std::string getSpotStrategy()const;
+				void setSpotStrategy(const std::string& spotStrategy);
 				std::string getDataDisk1Category()const;
 				void setDataDisk1Category(const std::string& dataDisk1Category);
 				std::string getDataDisk3DeleteWithInstance()const;
@@ -136,6 +145,7 @@ namespace AlibabaCloud
 				int internetMaxBandwidthOut_;
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
+				std::vector<SpotPriceLimit> spotPriceLimit_;
 				std::string systemDiskCategory_;
 				std::string accessKeyId_;
 				std::string userData_;
@@ -154,6 +164,7 @@ namespace AlibabaCloud
 				std::string scalingConfigurationName_;
 				std::string tags_;
 				std::string dataDisk2DeleteWithInstance_;
+				std::string spotStrategy_;
 				std::string dataDisk1Category_;
 				std::string dataDisk3DeleteWithInstance_;
 				int loadBalancerWeight_;

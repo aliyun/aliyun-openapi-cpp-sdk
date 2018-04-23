@@ -123,6 +123,42 @@ EssClient::DescribeScalingGroupsOutcomeCallable EssClient::describeScalingGroups
 	return task->get_future();
 }
 
+EssClient::EnterStandbyOutcome EssClient::enterStandby(const EnterStandbyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnterStandbyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnterStandbyOutcome(EnterStandbyResult(outcome.result()));
+	else
+		return EnterStandbyOutcome(outcome.error());
+}
+
+void EssClient::enterStandbyAsync(const EnterStandbyRequest& request, const EnterStandbyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enterStandby(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::EnterStandbyOutcomeCallable EssClient::enterStandbyCallable(const EnterStandbyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnterStandbyOutcome()>>(
+			[this, request]()
+			{
+			return this->enterStandby(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::DescribeScalingActivitiesOutcome EssClient::describeScalingActivities(const DescribeScalingActivitiesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +189,78 @@ EssClient::DescribeScalingActivitiesOutcomeCallable EssClient::describeScalingAc
 			[this, request]()
 			{
 			return this->describeScalingActivities(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::ExitStandbyOutcome EssClient::exitStandby(const ExitStandbyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExitStandbyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExitStandbyOutcome(ExitStandbyResult(outcome.result()));
+	else
+		return ExitStandbyOutcome(outcome.error());
+}
+
+void EssClient::exitStandbyAsync(const ExitStandbyRequest& request, const ExitStandbyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exitStandby(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::ExitStandbyOutcomeCallable EssClient::exitStandbyCallable(const ExitStandbyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExitStandbyOutcome()>>(
+			[this, request]()
+			{
+			return this->exitStandby(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DescribeNotificationConfigurationsOutcome EssClient::describeNotificationConfigurations(const DescribeNotificationConfigurationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNotificationConfigurationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNotificationConfigurationsOutcome(DescribeNotificationConfigurationsResult(outcome.result()));
+	else
+		return DescribeNotificationConfigurationsOutcome(outcome.error());
+}
+
+void EssClient::describeNotificationConfigurationsAsync(const DescribeNotificationConfigurationsRequest& request, const DescribeNotificationConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNotificationConfigurations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DescribeNotificationConfigurationsOutcomeCallable EssClient::describeNotificationConfigurationsCallable(const DescribeNotificationConfigurationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNotificationConfigurationsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNotificationConfigurations(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,6 +411,42 @@ EssClient::DeactivateScalingConfigurationOutcomeCallable EssClient::deactivateSc
 	return task->get_future();
 }
 
+EssClient::CreateNotificationConfigurationOutcome EssClient::createNotificationConfiguration(const CreateNotificationConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNotificationConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNotificationConfigurationOutcome(CreateNotificationConfigurationResult(outcome.result()));
+	else
+		return CreateNotificationConfigurationOutcome(outcome.error());
+}
+
+void EssClient::createNotificationConfigurationAsync(const CreateNotificationConfigurationRequest& request, const CreateNotificationConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNotificationConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::CreateNotificationConfigurationOutcomeCallable EssClient::createNotificationConfigurationCallable(const CreateNotificationConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNotificationConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->createNotificationConfiguration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::VerifyAuthenticationOutcome EssClient::verifyAuthentication(const VerifyAuthenticationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +549,42 @@ EssClient::DeleteScheduledTaskOutcomeCallable EssClient::deleteScheduledTaskCall
 			[this, request]()
 			{
 			return this->deleteScheduledTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::ModifyNotificationConfigurationOutcome EssClient::modifyNotificationConfiguration(const ModifyNotificationConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyNotificationConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyNotificationConfigurationOutcome(ModifyNotificationConfigurationResult(outcome.result()));
+	else
+		return ModifyNotificationConfigurationOutcome(outcome.error());
+}
+
+void EssClient::modifyNotificationConfigurationAsync(const ModifyNotificationConfigurationRequest& request, const ModifyNotificationConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyNotificationConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::ModifyNotificationConfigurationOutcomeCallable EssClient::modifyNotificationConfigurationCallable(const ModifyNotificationConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyNotificationConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyNotificationConfiguration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -549,6 +729,42 @@ EssClient::RemoveInstancesOutcomeCallable EssClient::removeInstancesCallable(con
 			[this, request]()
 			{
 			return this->removeInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DescribeNotificationTypesOutcome EssClient::describeNotificationTypes(const DescribeNotificationTypesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNotificationTypesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNotificationTypesOutcome(DescribeNotificationTypesResult(outcome.result()));
+	else
+		return DescribeNotificationTypesOutcome(outcome.error());
+}
+
+void EssClient::describeNotificationTypesAsync(const DescribeNotificationTypesRequest& request, const DescribeNotificationTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNotificationTypes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DescribeNotificationTypesOutcomeCallable EssClient::describeNotificationTypesCallable(const DescribeNotificationTypesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNotificationTypesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNotificationTypes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -801,6 +1017,42 @@ EssClient::DescribeScheduledTasksOutcomeCallable EssClient::describeScheduledTas
 			[this, request]()
 			{
 			return this->describeScheduledTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DeleteNotificationConfigurationOutcome EssClient::deleteNotificationConfiguration(const DeleteNotificationConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNotificationConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNotificationConfigurationOutcome(DeleteNotificationConfigurationResult(outcome.result()));
+	else
+		return DeleteNotificationConfigurationOutcome(outcome.error());
+}
+
+void EssClient::deleteNotificationConfigurationAsync(const DeleteNotificationConfigurationRequest& request, const DeleteNotificationConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNotificationConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DeleteNotificationConfigurationOutcomeCallable EssClient::deleteNotificationConfigurationCallable(const DeleteNotificationConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNotificationConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNotificationConfiguration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

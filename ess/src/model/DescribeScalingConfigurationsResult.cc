@@ -88,6 +88,8 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.deploymentSetId = value["DeploymentSetId"].asString();
 		if(!value["SecurityEnhancementStrategy"].isNull())
 			scalingConfigurationsObject.securityEnhancementStrategy = value["SecurityEnhancementStrategy"].asString();
+		if(!value["SpotStrategy"].isNull())
+			scalingConfigurationsObject.spotStrategy = value["SpotStrategy"].asString();
 		auto allDataDisks = value["DataDisks"]["DataDisk"];
 		for (auto value : allDataDisks)
 		{
@@ -111,6 +113,16 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			if(!value["Value"].isNull())
 				tagsObject.value = value["Value"].asString();
 			scalingConfigurationsObject.tags.push_back(tagsObject);
+		}
+		auto allSpotPriceLimit = value["SpotPriceLimit"]["SpotPriceModel"];
+		for (auto value : allSpotPriceLimit)
+		{
+			ScalingConfiguration::SpotPriceModel spotPriceLimitObject;
+			if(!value["InstanceType"].isNull())
+				spotPriceLimitObject.instanceType = value["InstanceType"].asString();
+			if(!value["PriceLimit"].isNull())
+				spotPriceLimitObject.priceLimit = std::stof(value["PriceLimit"].asString());
+			scalingConfigurationsObject.spotPriceLimit.push_back(spotPriceLimitObject);
 		}
 		auto allInstanceTypes = value["InstanceTypes"]["InstanceType"];
 		for (auto value : allInstanceTypes)

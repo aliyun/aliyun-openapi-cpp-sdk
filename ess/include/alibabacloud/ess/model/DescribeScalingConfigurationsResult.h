@@ -46,6 +46,11 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					struct SpotPriceModel
+					{
+						float priceLimit;
+						std::string instanceType;
+					};
 					std::string scalingConfigurationName;
 					std::vector<ScalingConfiguration::DataDisk> dataDisks;
 					int systemDiskSize;
@@ -53,9 +58,11 @@ namespace AlibabaCloud
 					std::string lifecycleState;
 					std::string ramRoleName;
 					std::string imageId;
+					std::vector<ScalingConfiguration::SpotPriceModel> spotPriceLimit;
 					std::vector<std::string> instanceTypes;
 					std::string instanceType;
 					std::vector<ScalingConfiguration::Tag> tags;
+					std::string spotStrategy;
 					std::string keyPairName;
 					int loadBalancerWeight;
 					std::string ioOptimized;
