@@ -76,6 +76,8 @@
 #include "model/RemoveAlbumPhotosResult.h"
 #include "model/ListAlbumsRequest.h"
 #include "model/ListAlbumsResult.h"
+#include "model/FetchPhotosRequest.h"
+#include "model/FetchPhotosResult.h"
 #include "model/ListPhotoFacesRequest.h"
 #include "model/ListPhotoFacesResult.h"
 #include "model/RenameAlbumRequest.h"
@@ -250,6 +252,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAlbumsResult> ListAlbumsOutcome;
 			typedef std::future<ListAlbumsOutcome> ListAlbumsOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::ListAlbumsRequest&, const ListAlbumsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAlbumsAsyncHandler;
+			typedef Outcome<Error, Model::FetchPhotosResult> FetchPhotosOutcome;
+			typedef std::future<FetchPhotosOutcome> FetchPhotosOutcomeCallable;
+			typedef std::function<void(const CloudPhotoClient*, const Model::FetchPhotosRequest&, const FetchPhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FetchPhotosAsyncHandler;
 			typedef Outcome<Error, Model::ListPhotoFacesResult> ListPhotoFacesOutcome;
 			typedef std::future<ListPhotoFacesOutcome> ListPhotoFacesOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::ListPhotoFacesRequest&, const ListPhotoFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPhotoFacesAsyncHandler;
@@ -462,6 +467,9 @@ namespace AlibabaCloud
 			ListAlbumsOutcome listAlbums(const Model::ListAlbumsRequest &request)const;
 			void listAlbumsAsync(const Model::ListAlbumsRequest& request, const ListAlbumsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAlbumsOutcomeCallable listAlbumsCallable(const Model::ListAlbumsRequest& request) const;
+			FetchPhotosOutcome fetchPhotos(const Model::FetchPhotosRequest &request)const;
+			void fetchPhotosAsync(const Model::FetchPhotosRequest& request, const FetchPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FetchPhotosOutcomeCallable fetchPhotosCallable(const Model::FetchPhotosRequest& request) const;
 			ListPhotoFacesOutcome listPhotoFaces(const Model::ListPhotoFacesRequest &request)const;
 			void listPhotoFacesAsync(const Model::ListPhotoFacesRequest& request, const ListPhotoFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPhotoFacesOutcomeCallable listPhotoFacesCallable(const Model::ListPhotoFacesRequest& request) const;

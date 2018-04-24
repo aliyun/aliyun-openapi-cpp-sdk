@@ -75,6 +75,8 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/RemoveAlbumPhotosResult.h
 	include/alibabacloud/cloudphoto/model/ListAlbumsRequest.h
 	include/alibabacloud/cloudphoto/model/ListAlbumsResult.h
+	include/alibabacloud/cloudphoto/model/FetchPhotosRequest.h
+	include/alibabacloud/cloudphoto/model/FetchPhotosResult.h
 	include/alibabacloud/cloudphoto/model/ListPhotoFacesRequest.h
 	include/alibabacloud/cloudphoto/model/ListPhotoFacesResult.h
 	include/alibabacloud/cloudphoto/model/RenameAlbumRequest.h
@@ -216,6 +218,8 @@ set(cloudphoto_src
 	src/model/RemoveAlbumPhotosResult.cc
 	src/model/ListAlbumsRequest.cc
 	src/model/ListAlbumsResult.cc
+	src/model/FetchPhotosRequest.cc
+	src/model/FetchPhotosResult.cc
 	src/model/ListPhotoFacesRequest.cc
 	src/model/ListPhotoFacesResult.cc
 	src/model/RenameAlbumRequest.cc
