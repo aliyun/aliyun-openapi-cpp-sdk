@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTRESULT_H_
-#define ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTRESULT_H_
+#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINSUFFIXRESULT_H_
+#define ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINSUFFIXRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainGroupListResult : public ServiceResult
+			class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainSuffixResult : public ServiceResult
 			{
 			public:
-				struct DomainGroup
-				{
-					bool beingDeleted;
-					std::string creationDate;
-					std::string domainGroupName;
-					std::string modificationDate;
-					std::string domainGroupId;
-					std::string domainGroupStatus;
-					int totalNumber;
-				};
 
 
-				QueryDomainGroupListResult();
-				explicit QueryDomainGroupListResult(const std::string &payload);
-				~QueryDomainGroupListResult();
-				std::vector<DomainGroup> getData()const;
+				QueryDomainSuffixResult();
+				explicit QueryDomainSuffixResult(const std::string &payload);
+				~QueryDomainSuffixResult();
+				std::vector<std::string> getSuffixList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DomainGroup> data_;
+				std::vector<std::string> suffixList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTRESULT_H_
+#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINSUFFIXRESULT_H_

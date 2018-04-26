@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTRESULT_H_
-#define ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTRESULT_H_
+#ifndef ALIBABACLOUD_DOMAIN_MODEL_SAVEDOMAINGROUPRESULT_H_
+#define ALIBABACLOUD_DOMAIN_MODEL_SAVEDOMAINGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainGroupListResult : public ServiceResult
+			class ALIBABACLOUD_DOMAIN_EXPORT SaveDomainGroupResult : public ServiceResult
 			{
 			public:
-				struct DomainGroup
-				{
-					bool beingDeleted;
-					std::string creationDate;
-					std::string domainGroupName;
-					std::string modificationDate;
-					std::string domainGroupId;
-					std::string domainGroupStatus;
-					int totalNumber;
-				};
 
 
-				QueryDomainGroupListResult();
-				explicit QueryDomainGroupListResult(const std::string &payload);
-				~QueryDomainGroupListResult();
-				std::vector<DomainGroup> getData()const;
+				SaveDomainGroupResult();
+				explicit SaveDomainGroupResult(const std::string &payload);
+				~SaveDomainGroupResult();
+				bool getBeingDeleted()const;
+				std::string getCreationDate()const;
+				std::string getDomainGroupName()const;
+				std::string getModificationDate()const;
+				long getDomainGroupId()const;
+				std::string getDomainGroupStatus()const;
+				int getTotalNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DomainGroup> data_;
+				bool beingDeleted_;
+				std::string creationDate_;
+				std::string domainGroupName_;
+				std::string modificationDate_;
+				long domainGroupId_;
+				std::string domainGroupStatus_;
+				int totalNumber_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTRESULT_H_
+#endif // !ALIBABACLOUD_DOMAIN_MODEL_SAVEDOMAINGROUPRESULT_H_

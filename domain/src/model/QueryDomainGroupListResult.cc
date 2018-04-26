@@ -40,10 +40,10 @@ void QueryDomainGroupListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Domain"];
+	auto allData = value["Data"]["DomainGroup"];
 	for (auto value : allData)
 	{
-		Domain dataObject;
+		DomainGroup dataObject;
 		if(!value["DomainGroupId"].isNull())
 			dataObject.domainGroupId = value["DomainGroupId"].asString();
 		if(!value["DomainGroupName"].isNull())
@@ -54,12 +54,16 @@ void QueryDomainGroupListResult::parse(const std::string &payload)
 			dataObject.creationDate = value["CreationDate"].asString();
 		if(!value["ModificationDate"].isNull())
 			dataObject.modificationDate = value["ModificationDate"].asString();
+		if(!value["DomainGroupStatus"].isNull())
+			dataObject.domainGroupStatus = value["DomainGroupStatus"].asString();
+		if(!value["BeingDeleted"].isNull())
+			dataObject.beingDeleted = value["BeingDeleted"].asString() == "true";
 		data_.push_back(dataObject);
 	}
 
 }
 
-std::vector<QueryDomainGroupListResult::Domain> QueryDomainGroupListResult::getData()const
+std::vector<QueryDomainGroupListResult::DomainGroup> QueryDomainGroupListResult::getData()const
 {
 	return data_;
 }

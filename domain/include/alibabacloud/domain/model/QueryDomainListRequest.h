@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setPageNum(int pageNum);
 				std::string getOrderByType()const;
 				void setOrderByType(const std::string& orderByType);
+				std::string getDomainGroupId()const;
+				void setDomainGroupId(const std::string& domainGroupId);
 				long getEndRegistrationDate()const;
 				void setEndRegistrationDate(long endRegistrationDate);
 				std::string getUserClientIp()const;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				long startExpirationDate_;
 				int pageNum_;
 				std::string orderByType_;
+				std::string domainGroupId_;
 				long endRegistrationDate_;
 				std::string userClientIp_;
 				int pageSize_;

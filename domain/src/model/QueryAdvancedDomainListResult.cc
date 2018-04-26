@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/domain/model/QueryDomainListResult.h>
+#include <alibabacloud/domain/model/QueryAdvancedDomainListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Domain;
 using namespace AlibabaCloud::Domain::Model;
 
-QueryDomainListResult::QueryDomainListResult() :
+QueryAdvancedDomainListResult::QueryAdvancedDomainListResult() :
 	ServiceResult()
 {}
 
-QueryDomainListResult::QueryDomainListResult(const std::string &payload) :
+QueryAdvancedDomainListResult::QueryAdvancedDomainListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-QueryDomainListResult::~QueryDomainListResult()
+QueryAdvancedDomainListResult::~QueryAdvancedDomainListResult()
 {}
 
-void QueryDomainListResult::parse(const std::string &payload)
+void QueryAdvancedDomainListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -95,37 +95,37 @@ void QueryDomainListResult::parse(const std::string &payload)
 
 }
 
-bool QueryDomainListResult::getPrePage()const
+bool QueryAdvancedDomainListResult::getPrePage()const
 {
 	return prePage_;
 }
 
-int QueryDomainListResult::getCurrentPageNum()const
+int QueryAdvancedDomainListResult::getCurrentPageNum()const
 {
 	return currentPageNum_;
 }
 
-int QueryDomainListResult::getPageSize()const
+int QueryAdvancedDomainListResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-int QueryDomainListResult::getTotalPageNum()const
+int QueryAdvancedDomainListResult::getTotalPageNum()const
 {
 	return totalPageNum_;
 }
 
-std::vector<QueryDomainListResult::Domain> QueryDomainListResult::getData()const
+std::vector<QueryAdvancedDomainListResult::Domain> QueryAdvancedDomainListResult::getData()const
 {
 	return data_;
 }
 
-int QueryDomainListResult::getTotalItemNum()const
+int QueryAdvancedDomainListResult::getTotalItemNum()const
 {
 	return totalItemNum_;
 }
 
-bool QueryDomainListResult::getNextPage()const
+bool QueryAdvancedDomainListResult::getNextPage()const
 {
 	return nextPage_;
 }

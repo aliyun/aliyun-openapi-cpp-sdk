@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTRESULT_H_
-#define ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTRESULT_H_
+#ifndef ALIBABACLOUD_DOMAIN_MODEL_SAVEBATCHDOMAINREMARKRESULT_H_
+#define ALIBABACLOUD_DOMAIN_MODEL_SAVEBATCHDOMAINREMARKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainGroupListResult : public ServiceResult
+			class ALIBABACLOUD_DOMAIN_EXPORT SaveBatchDomainRemarkResult : public ServiceResult
 			{
 			public:
-				struct DomainGroup
-				{
-					bool beingDeleted;
-					std::string creationDate;
-					std::string domainGroupName;
-					std::string modificationDate;
-					std::string domainGroupId;
-					std::string domainGroupStatus;
-					int totalNumber;
-				};
 
 
-				QueryDomainGroupListResult();
-				explicit QueryDomainGroupListResult(const std::string &payload);
-				~QueryDomainGroupListResult();
-				std::vector<DomainGroup> getData()const;
+				SaveBatchDomainRemarkResult();
+				explicit SaveBatchDomainRemarkResult(const std::string &payload);
+				~SaveBatchDomainRemarkResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DomainGroup> data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTRESULT_H_
+#endif // !ALIBABACLOUD_DOMAIN_MODEL_SAVEBATCHDOMAINREMARKRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINLISTRESULT_H_
-#define ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINLISTRESULT_H_
+#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYADVANCEDDOMAINLISTRESULT_H_
+#define ALIBABACLOUD_DOMAIN_MODEL_QUERYADVANCEDDOMAINLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainListResult : public ServiceResult
+			class ALIBABACLOUD_DOMAIN_EXPORT QueryAdvancedDomainListResult : public ServiceResult
 			{
 			public:
 				struct Domain
@@ -54,9 +54,9 @@ namespace AlibabaCloud
 				};
 
 
-				QueryDomainListResult();
-				explicit QueryDomainListResult(const std::string &payload);
-				~QueryDomainListResult();
+				QueryAdvancedDomainListResult();
+				explicit QueryAdvancedDomainListResult(const std::string &payload);
+				~QueryAdvancedDomainListResult();
 				bool getPrePage()const;
 				int getCurrentPageNum()const;
 				int getPageSize()const;
@@ -80,4 +80,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINLISTRESULT_H_
+#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYADVANCEDDOMAINLISTRESULT_H_

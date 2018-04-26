@@ -555,6 +555,42 @@ DomainClient::QueryFailReasonForDomainRealNameVerificationOutcomeCallable Domain
 	return task->get_future();
 }
 
+DomainClient::QueryAdvancedDomainListOutcome DomainClient::queryAdvancedDomainList(const QueryAdvancedDomainListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAdvancedDomainListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAdvancedDomainListOutcome(QueryAdvancedDomainListResult(outcome.result()));
+	else
+		return QueryAdvancedDomainListOutcome(outcome.error());
+}
+
+void DomainClient::queryAdvancedDomainListAsync(const QueryAdvancedDomainListRequest& request, const QueryAdvancedDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAdvancedDomainList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryAdvancedDomainListOutcomeCallable DomainClient::queryAdvancedDomainListCallable(const QueryAdvancedDomainListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAdvancedDomainListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAdvancedDomainList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::QueryTransferOutInfoOutcome DomainClient::queryTransferOutInfo(const QueryTransferOutInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +729,42 @@ DomainClient::QueryTaskDetailListOutcomeCallable DomainClient::queryTaskDetailLi
 			[this, request]()
 			{
 			return this->queryTaskDetailList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveBatchDomainRemarkOutcome DomainClient::saveBatchDomainRemark(const SaveBatchDomainRemarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveBatchDomainRemarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveBatchDomainRemarkOutcome(SaveBatchDomainRemarkResult(outcome.result()));
+	else
+		return SaveBatchDomainRemarkOutcome(outcome.error());
+}
+
+void DomainClient::saveBatchDomainRemarkAsync(const SaveBatchDomainRemarkRequest& request, const SaveBatchDomainRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveBatchDomainRemark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveBatchDomainRemarkOutcomeCallable DomainClient::saveBatchDomainRemarkCallable(const SaveBatchDomainRemarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveBatchDomainRemarkOutcome()>>(
+			[this, request]()
+			{
+			return this->saveBatchDomainRemark(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,6 +1131,42 @@ DomainClient::SaveSingleTaskForUpdateProhibitionLockOutcomeCallable DomainClient
 	return task->get_future();
 }
 
+DomainClient::UpdateDomainToDomainGroupOutcome DomainClient::updateDomainToDomainGroup(const UpdateDomainToDomainGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDomainToDomainGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDomainToDomainGroupOutcome(UpdateDomainToDomainGroupResult(outcome.result()));
+	else
+		return UpdateDomainToDomainGroupOutcome(outcome.error());
+}
+
+void DomainClient::updateDomainToDomainGroupAsync(const UpdateDomainToDomainGroupRequest& request, const UpdateDomainToDomainGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDomainToDomainGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::UpdateDomainToDomainGroupOutcomeCallable DomainClient::updateDomainToDomainGroupCallable(const UpdateDomainToDomainGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDomainToDomainGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDomainToDomainGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::QueryContactInfoOutcome DomainClient::queryContactInfo(const QueryContactInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1269,42 @@ DomainClient::TransferInResendMailTokenOutcomeCallable DomainClient::transferInR
 			[this, request]()
 			{
 			return this->transferInResendMailToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::QueryDomainSuffixOutcome DomainClient::queryDomainSuffix(const QueryDomainSuffixRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDomainSuffixOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDomainSuffixOutcome(QueryDomainSuffixResult(outcome.result()));
+	else
+		return QueryDomainSuffixOutcome(outcome.error());
+}
+
+void DomainClient::queryDomainSuffixAsync(const QueryDomainSuffixRequest& request, const QueryDomainSuffixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDomainSuffix(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryDomainSuffixOutcomeCallable DomainClient::queryDomainSuffixCallable(const QueryDomainSuffixRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDomainSuffixOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDomainSuffix(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1491,6 +1635,42 @@ DomainClient::SaveSingleTaskForCancelingTransferOutOutcomeCallable DomainClient:
 	return task->get_future();
 }
 
+DomainClient::SaveDomainGroupOutcome DomainClient::saveDomainGroup(const SaveDomainGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveDomainGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveDomainGroupOutcome(SaveDomainGroupResult(outcome.result()));
+	else
+		return SaveDomainGroupOutcome(outcome.error());
+}
+
+void DomainClient::saveDomainGroupAsync(const SaveDomainGroupRequest& request, const SaveDomainGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveDomainGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveDomainGroupOutcomeCallable DomainClient::saveDomainGroupCallable(const SaveDomainGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveDomainGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->saveDomainGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::AcknowledgeTaskResultOutcome DomainClient::acknowledgeTaskResult(const AcknowledgeTaskResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +1845,42 @@ DomainClient::SaveTaskForUpdatingRegistrantInfoByIdentityCredentialOutcomeCallab
 			[this, request]()
 			{
 			return this->saveTaskForUpdatingRegistrantInfoByIdentityCredential(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::DeleteDomainGroupOutcome DomainClient::deleteDomainGroup(const DeleteDomainGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDomainGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDomainGroupOutcome(DeleteDomainGroupResult(outcome.result()));
+	else
+		return DeleteDomainGroupOutcome(outcome.error());
+}
+
+void DomainClient::deleteDomainGroupAsync(const DeleteDomainGroupRequest& request, const DeleteDomainGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDomainGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::DeleteDomainGroupOutcomeCallable DomainClient::deleteDomainGroupCallable(const DeleteDomainGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDomainGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDomainGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

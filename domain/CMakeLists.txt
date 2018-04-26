@@ -49,6 +49,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/CheckTransferInFeasibilityResult.h
 	include/alibabacloud/domain/model/QueryFailReasonForDomainRealNameVerificationRequest.h
 	include/alibabacloud/domain/model/QueryFailReasonForDomainRealNameVerificationResult.h
+	include/alibabacloud/domain/model/QueryAdvancedDomainListRequest.h
+	include/alibabacloud/domain/model/QueryAdvancedDomainListResult.h
 	include/alibabacloud/domain/model/QueryTransferOutInfoRequest.h
 	include/alibabacloud/domain/model/QueryTransferOutInfoResult.h
 	include/alibabacloud/domain/model/SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest.h
@@ -57,6 +59,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingOrderRedeemResult.h
 	include/alibabacloud/domain/model/QueryTaskDetailListRequest.h
 	include/alibabacloud/domain/model/QueryTaskDetailListResult.h
+	include/alibabacloud/domain/model/SaveBatchDomainRemarkRequest.h
+	include/alibabacloud/domain/model/SaveBatchDomainRemarkResult.h
 	include/alibabacloud/domain/model/VerifyContactFieldRequest.h
 	include/alibabacloud/domain/model/VerifyContactFieldResult.h
 	include/alibabacloud/domain/model/RegistrantProfileRealNameVerificationRequest.h
@@ -77,12 +81,16 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/QueryTransferInByInstanceIdResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForUpdateProhibitionLockRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForUpdateProhibitionLockResult.h
+	include/alibabacloud/domain/model/UpdateDomainToDomainGroupRequest.h
+	include/alibabacloud/domain/model/UpdateDomainToDomainGroupResult.h
 	include/alibabacloud/domain/model/QueryContactInfoRequest.h
 	include/alibabacloud/domain/model/QueryContactInfoResult.h
 	include/alibabacloud/domain/model/ReserveDomainRequest.h
 	include/alibabacloud/domain/model/ReserveDomainResult.h
 	include/alibabacloud/domain/model/TransferInResendMailTokenRequest.h
 	include/alibabacloud/domain/model/TransferInResendMailTokenResult.h
+	include/alibabacloud/domain/model/QueryDomainSuffixRequest.h
+	include/alibabacloud/domain/model/QueryDomainSuffixResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForQueryingTransferAuthorizationCodeRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForQueryingTransferAuthorizationCodeResult.h
 	include/alibabacloud/domain/model/GetReserveDomainUrlRequest.h
@@ -101,6 +109,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/BidDomainResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCancelingTransferOutRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCancelingTransferOutResult.h
+	include/alibabacloud/domain/model/SaveDomainGroupRequest.h
+	include/alibabacloud/domain/model/SaveDomainGroupResult.h
 	include/alibabacloud/domain/model/AcknowledgeTaskResultRequest.h
 	include/alibabacloud/domain/model/AcknowledgeTaskResultResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForApprovingTransferOutRequest.h
@@ -111,6 +121,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveBatchTaskForCreatingOrderTransferResult.h
 	include/alibabacloud/domain/model/SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest.h
 	include/alibabacloud/domain/model/SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResult.h
+	include/alibabacloud/domain/model/DeleteDomainGroupRequest.h
+	include/alibabacloud/domain/model/DeleteDomainGroupResult.h
 	include/alibabacloud/domain/model/SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest.h
 	include/alibabacloud/domain/model/SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDResult.h
 	include/alibabacloud/domain/model/QueryAuctionDetailRequest.h
@@ -198,6 +210,8 @@ set(domain_src
 	src/model/CheckTransferInFeasibilityResult.cc
 	src/model/QueryFailReasonForDomainRealNameVerificationRequest.cc
 	src/model/QueryFailReasonForDomainRealNameVerificationResult.cc
+	src/model/QueryAdvancedDomainListRequest.cc
+	src/model/QueryAdvancedDomainListResult.cc
 	src/model/QueryTransferOutInfoRequest.cc
 	src/model/QueryTransferOutInfoResult.cc
 	src/model/SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest.cc
@@ -206,6 +220,8 @@ set(domain_src
 	src/model/SaveSingleTaskForCreatingOrderRedeemResult.cc
 	src/model/QueryTaskDetailListRequest.cc
 	src/model/QueryTaskDetailListResult.cc
+	src/model/SaveBatchDomainRemarkRequest.cc
+	src/model/SaveBatchDomainRemarkResult.cc
 	src/model/VerifyContactFieldRequest.cc
 	src/model/VerifyContactFieldResult.cc
 	src/model/RegistrantProfileRealNameVerificationRequest.cc
@@ -226,12 +242,16 @@ set(domain_src
 	src/model/QueryTransferInByInstanceIdResult.cc
 	src/model/SaveSingleTaskForUpdateProhibitionLockRequest.cc
 	src/model/SaveSingleTaskForUpdateProhibitionLockResult.cc
+	src/model/UpdateDomainToDomainGroupRequest.cc
+	src/model/UpdateDomainToDomainGroupResult.cc
 	src/model/QueryContactInfoRequest.cc
 	src/model/QueryContactInfoResult.cc
 	src/model/ReserveDomainRequest.cc
 	src/model/ReserveDomainResult.cc
 	src/model/TransferInResendMailTokenRequest.cc
 	src/model/TransferInResendMailTokenResult.cc
+	src/model/QueryDomainSuffixRequest.cc
+	src/model/QueryDomainSuffixResult.cc
 	src/model/SaveSingleTaskForQueryingTransferAuthorizationCodeRequest.cc
 	src/model/SaveSingleTaskForQueryingTransferAuthorizationCodeResult.cc
 	src/model/GetReserveDomainUrlRequest.cc
@@ -250,6 +270,8 @@ set(domain_src
 	src/model/BidDomainResult.cc
 	src/model/SaveSingleTaskForCancelingTransferOutRequest.cc
 	src/model/SaveSingleTaskForCancelingTransferOutResult.cc
+	src/model/SaveDomainGroupRequest.cc
+	src/model/SaveDomainGroupResult.cc
 	src/model/AcknowledgeTaskResultRequest.cc
 	src/model/AcknowledgeTaskResultResult.cc
 	src/model/SaveSingleTaskForApprovingTransferOutRequest.cc
@@ -260,6 +282,8 @@ set(domain_src
 	src/model/SaveBatchTaskForCreatingOrderTransferResult.cc
 	src/model/SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest.cc
 	src/model/SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResult.cc
+	src/model/DeleteDomainGroupRequest.cc
+	src/model/DeleteDomainGroupResult.cc
 	src/model/SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest.cc
 	src/model/SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDResult.cc
 	src/model/QueryAuctionDetailRequest.cc

@@ -102,6 +102,17 @@ void QueryDomainListRequest::setOrderByType(const std::string& orderByType)
 	setParameter("OrderByType", orderByType);
 }
 
+std::string QueryDomainListRequest::getDomainGroupId()const
+{
+	return domainGroupId_;
+}
+
+void QueryDomainListRequest::setDomainGroupId(const std::string& domainGroupId)
+{
+	domainGroupId_ = domainGroupId;
+	setParameter("DomainGroupId", domainGroupId);
+}
+
 long QueryDomainListRequest::getEndRegistrationDate()const
 {
 	return endRegistrationDate_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTREQUEST_H_
-#define ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTREQUEST_H_
+#ifndef ALIBABACLOUD_DOMAIN_MODEL_SAVEBATCHDOMAINREMARKREQUEST_H_
+#define ALIBABACLOUD_DOMAIN_MODEL_SAVEBATCHDOMAINREMARKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainGroupListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DOMAIN_EXPORT SaveBatchDomainRemarkRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryDomainGroupListRequest();
-				~QueryDomainGroupListRequest();
+				SaveBatchDomainRemarkRequest();
+				~SaveBatchDomainRemarkRequest();
 
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
-				std::string getDomainGroupName()const;
-				void setDomainGroupName(const std::string& domainGroupName);
+				std::string getInstanceIds()const;
+				void setInstanceIds(const std::string& instanceIds);
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				bool getShowDeletingGroup()const;
-				void setShowDeletingGroup(bool showDeletingGroup);
 
             private:
-				std::string userClientIp_;
-				std::string domainGroupName_;
+				std::string instanceIds_;
+				std::string remark_;
 				std::string lang_;
-				bool showDeletingGroup_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTREQUEST_H_
+#endif // !ALIBABACLOUD_DOMAIN_MODEL_SAVEBATCHDOMAINREMARKREQUEST_H_

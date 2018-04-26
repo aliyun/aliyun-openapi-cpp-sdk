@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTREQUEST_H_
-#define ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTREQUEST_H_
+#ifndef ALIBABACLOUD_DOMAIN_MODEL_UPDATEDOMAINTODOMAINGROUPREQUEST_H_
+#define ALIBABACLOUD_DOMAIN_MODEL_UPDATEDOMAINTODOMAINGROUPREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainGroupListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DOMAIN_EXPORT UpdateDomainToDomainGroupRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryDomainGroupListRequest();
-				~QueryDomainGroupListRequest();
+				UpdateDomainToDomainGroupRequest();
+				~UpdateDomainToDomainGroupRequest();
 
+				int getDataSource()const;
+				void setDataSource(int dataSource);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				std::string getDomainGroupName()const;
-				void setDomainGroupName(const std::string& domainGroupName);
+				std::string getFileToUpload()const;
+				void setFileToUpload(const std::string& fileToUpload);
+				std::vector<std::string> getDomainName()const;
+				void setDomainName(const std::vector<std::string>& domainName);
+				bool getReplace()const;
+				void setReplace(bool replace);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				bool getShowDeletingGroup()const;
-				void setShowDeletingGroup(bool showDeletingGroup);
+				long getDomainGroupId()const;
+				void setDomainGroupId(long domainGroupId);
 
             private:
+				int dataSource_;
 				std::string userClientIp_;
-				std::string domainGroupName_;
+				std::string fileToUpload_;
+				std::vector<std::string> domainName_;
+				bool replace_;
 				std::string lang_;
-				bool showDeletingGroup_;
+				long domainGroupId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTREQUEST_H_
+#endif // !ALIBABACLOUD_DOMAIN_MODEL_UPDATEDOMAINTODOMAINGROUPREQUEST_H_

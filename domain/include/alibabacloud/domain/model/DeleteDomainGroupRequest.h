@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTREQUEST_H_
-#define ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTREQUEST_H_
+#ifndef ALIBABACLOUD_DOMAIN_MODEL_DELETEDOMAINGROUPREQUEST_H_
+#define ALIBABACLOUD_DOMAIN_MODEL_DELETEDOMAINGROUPREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainGroupListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DOMAIN_EXPORT DeleteDomainGroupRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryDomainGroupListRequest();
-				~QueryDomainGroupListRequest();
+				DeleteDomainGroupRequest();
+				~DeleteDomainGroupRequest();
 
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				std::string getDomainGroupName()const;
-				void setDomainGroupName(const std::string& domainGroupName);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				bool getShowDeletingGroup()const;
-				void setShowDeletingGroup(bool showDeletingGroup);
+				long getDomainGroupId()const;
+				void setDomainGroupId(long domainGroupId);
 
             private:
 				std::string userClientIp_;
-				std::string domainGroupName_;
 				std::string lang_;
-				bool showDeletingGroup_;
+				long domainGroupId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINGROUPLISTREQUEST_H_
+#endif // !ALIBABACLOUD_DOMAIN_MODEL_DELETEDOMAINGROUPREQUEST_H_

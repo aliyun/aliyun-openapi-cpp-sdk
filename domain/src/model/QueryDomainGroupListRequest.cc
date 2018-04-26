@@ -58,3 +58,14 @@ void QueryDomainGroupListRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+bool QueryDomainGroupListRequest::getShowDeletingGroup()const
+{
+	return showDeletingGroup_;
+}
+
+void QueryDomainGroupListRequest::setShowDeletingGroup(bool showDeletingGroup)
+{
+	showDeletingGroup_ = showDeletingGroup;
+	setParameter("ShowDeletingGroup", std::to_string(showDeletingGroup));
+}
+
