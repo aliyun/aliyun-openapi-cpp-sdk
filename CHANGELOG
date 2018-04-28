@@ -1,3 +1,7 @@
+2018-04-28 Version: 1.7.3
+1, Add dcdn domain interface，Support add、modify、delete、query dcdn domain.
+2, Add dcdn config interface，Support set、delete、query domain config.
+
 2018-04-28 Version: 1.7.2
 1, Add dcdn domain interface，Support add、modify、delete、query dcdn domain.
 2, Add dcdn config interface，Support set、delete、query domain config.
