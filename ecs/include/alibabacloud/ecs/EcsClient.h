@@ -440,6 +440,8 @@
 #include "model/DeleteRouteEntryResult.h"
 #include "model/DeleteVirtualBorderRouterRequest.h"
 #include "model/DeleteVirtualBorderRouterResult.h"
+#include "model/DescribeCloudAssistantStatusRequest.h"
+#include "model/DescribeCloudAssistantStatusResult.h"
 #include "model/DescribeInstancePhysicalAttributeRequest.h"
 #include "model/DescribeInstancePhysicalAttributeResult.h"
 #include "model/TerminatePhysicalConnectionRequest.h"
@@ -508,6 +510,8 @@
 #include "model/GetInstanceScreenshotResult.h"
 #include "model/AttachInstanceRamRoleRequest.h"
 #include "model/AttachInstanceRamRoleResult.h"
+#include "model/InstallCloudAssistantRequest.h"
+#include "model/InstallCloudAssistantResult.h"
 #include "model/ModifyVRouterAttributeRequest.h"
 #include "model/ModifyVRouterAttributeResult.h"
 
@@ -1146,6 +1150,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteVirtualBorderRouterResult> DeleteVirtualBorderRouterOutcome;
 			typedef std::future<DeleteVirtualBorderRouterOutcome> DeleteVirtualBorderRouterOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteVirtualBorderRouterRequest&, const DeleteVirtualBorderRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVirtualBorderRouterAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCloudAssistantStatusResult> DescribeCloudAssistantStatusOutcome;
+			typedef std::future<DescribeCloudAssistantStatusOutcome> DescribeCloudAssistantStatusOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeCloudAssistantStatusRequest&, const DescribeCloudAssistantStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAssistantStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstancePhysicalAttributeResult> DescribeInstancePhysicalAttributeOutcome;
 			typedef std::future<DescribeInstancePhysicalAttributeOutcome> DescribeInstancePhysicalAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInstancePhysicalAttributeRequest&, const DescribeInstancePhysicalAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancePhysicalAttributeAsyncHandler;
@@ -1248,6 +1255,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachInstanceRamRoleResult> AttachInstanceRamRoleOutcome;
 			typedef std::future<AttachInstanceRamRoleOutcome> AttachInstanceRamRoleOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::AttachInstanceRamRoleRequest&, const AttachInstanceRamRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachInstanceRamRoleAsyncHandler;
+			typedef Outcome<Error, Model::InstallCloudAssistantResult> InstallCloudAssistantOutcome;
+			typedef std::future<InstallCloudAssistantOutcome> InstallCloudAssistantOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::InstallCloudAssistantRequest&, const InstallCloudAssistantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallCloudAssistantAsyncHandler;
 			typedef Outcome<Error, Model::ModifyVRouterAttributeResult> ModifyVRouterAttributeOutcome;
 			typedef std::future<ModifyVRouterAttributeOutcome> ModifyVRouterAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyVRouterAttributeRequest&, const ModifyVRouterAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVRouterAttributeAsyncHandler;
@@ -1883,6 +1893,9 @@ namespace AlibabaCloud
 			DeleteVirtualBorderRouterOutcome deleteVirtualBorderRouter(const Model::DeleteVirtualBorderRouterRequest &request)const;
 			void deleteVirtualBorderRouterAsync(const Model::DeleteVirtualBorderRouterRequest& request, const DeleteVirtualBorderRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVirtualBorderRouterOutcomeCallable deleteVirtualBorderRouterCallable(const Model::DeleteVirtualBorderRouterRequest& request) const;
+			DescribeCloudAssistantStatusOutcome describeCloudAssistantStatus(const Model::DescribeCloudAssistantStatusRequest &request)const;
+			void describeCloudAssistantStatusAsync(const Model::DescribeCloudAssistantStatusRequest& request, const DescribeCloudAssistantStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCloudAssistantStatusOutcomeCallable describeCloudAssistantStatusCallable(const Model::DescribeCloudAssistantStatusRequest& request) const;
 			DescribeInstancePhysicalAttributeOutcome describeInstancePhysicalAttribute(const Model::DescribeInstancePhysicalAttributeRequest &request)const;
 			void describeInstancePhysicalAttributeAsync(const Model::DescribeInstancePhysicalAttributeRequest& request, const DescribeInstancePhysicalAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstancePhysicalAttributeOutcomeCallable describeInstancePhysicalAttributeCallable(const Model::DescribeInstancePhysicalAttributeRequest& request) const;
@@ -1985,6 +1998,9 @@ namespace AlibabaCloud
 			AttachInstanceRamRoleOutcome attachInstanceRamRole(const Model::AttachInstanceRamRoleRequest &request)const;
 			void attachInstanceRamRoleAsync(const Model::AttachInstanceRamRoleRequest& request, const AttachInstanceRamRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachInstanceRamRoleOutcomeCallable attachInstanceRamRoleCallable(const Model::AttachInstanceRamRoleRequest& request) const;
+			InstallCloudAssistantOutcome installCloudAssistant(const Model::InstallCloudAssistantRequest &request)const;
+			void installCloudAssistantAsync(const Model::InstallCloudAssistantRequest& request, const InstallCloudAssistantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InstallCloudAssistantOutcomeCallable installCloudAssistantCallable(const Model::InstallCloudAssistantRequest& request) const;
 			ModifyVRouterAttributeOutcome modifyVRouterAttribute(const Model::ModifyVRouterAttributeRequest &request)const;
 			void modifyVRouterAttributeAsync(const Model::ModifyVRouterAttributeRequest& request, const ModifyVRouterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyVRouterAttributeOutcomeCallable modifyVRouterAttributeCallable(const Model::ModifyVRouterAttributeRequest& request) const;

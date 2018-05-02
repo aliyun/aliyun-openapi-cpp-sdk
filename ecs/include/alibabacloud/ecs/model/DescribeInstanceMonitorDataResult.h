@@ -41,10 +41,12 @@ namespace AlibabaCloud
 					std::string instanceId;
 					int intranetTX;
 					int cPU;
+					float cPUAdvanceCreditBalance;
 					int bPSRead;
 					int intranetRX;
 					std::string timeStamp;
 					int internetBandwidth;
+					float cPUNotpaidSurplusCreditUsage;
 					float cPUCreditBalance;
 					int internetTX;
 					int internetRX;

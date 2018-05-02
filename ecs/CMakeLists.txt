@@ -439,6 +439,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteRouteEntryResult.h
 	include/alibabacloud/ecs/model/DeleteVirtualBorderRouterRequest.h
 	include/alibabacloud/ecs/model/DeleteVirtualBorderRouterResult.h
+	include/alibabacloud/ecs/model/DescribeCloudAssistantStatusRequest.h
+	include/alibabacloud/ecs/model/DescribeCloudAssistantStatusResult.h
 	include/alibabacloud/ecs/model/DescribeInstancePhysicalAttributeRequest.h
 	include/alibabacloud/ecs/model/DescribeInstancePhysicalAttributeResult.h
 	include/alibabacloud/ecs/model/TerminatePhysicalConnectionRequest.h
@@ -507,6 +509,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/GetInstanceScreenshotResult.h
 	include/alibabacloud/ecs/model/AttachInstanceRamRoleRequest.h
 	include/alibabacloud/ecs/model/AttachInstanceRamRoleResult.h
+	include/alibabacloud/ecs/model/InstallCloudAssistantRequest.h
+	include/alibabacloud/ecs/model/InstallCloudAssistantResult.h
 	include/alibabacloud/ecs/model/ModifyVRouterAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyVRouterAttributeResult.h )
 
@@ -930,6 +934,8 @@ set(ecs_src
 	src/model/DeleteRouteEntryResult.cc
 	src/model/DeleteVirtualBorderRouterRequest.cc
 	src/model/DeleteVirtualBorderRouterResult.cc
+	src/model/DescribeCloudAssistantStatusRequest.cc
+	src/model/DescribeCloudAssistantStatusResult.cc
 	src/model/DescribeInstancePhysicalAttributeRequest.cc
 	src/model/DescribeInstancePhysicalAttributeResult.cc
 	src/model/TerminatePhysicalConnectionRequest.cc
@@ -998,6 +1004,8 @@ set(ecs_src
 	src/model/GetInstanceScreenshotResult.cc
 	src/model/AttachInstanceRamRoleRequest.cc
 	src/model/AttachInstanceRamRoleResult.cc
+	src/model/InstallCloudAssistantRequest.cc
+	src/model/InstallCloudAssistantResult.cc
 	src/model/ModifyVRouterAttributeRequest.cc
 	src/model/ModifyVRouterAttributeResult.cc )
 

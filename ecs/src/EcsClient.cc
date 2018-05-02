@@ -7575,6 +7575,42 @@ EcsClient::DeleteVirtualBorderRouterOutcomeCallable EcsClient::deleteVirtualBord
 	return task->get_future();
 }
 
+EcsClient::DescribeCloudAssistantStatusOutcome EcsClient::describeCloudAssistantStatus(const DescribeCloudAssistantStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCloudAssistantStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCloudAssistantStatusOutcome(DescribeCloudAssistantStatusResult(outcome.result()));
+	else
+		return DescribeCloudAssistantStatusOutcome(outcome.error());
+}
+
+void EcsClient::describeCloudAssistantStatusAsync(const DescribeCloudAssistantStatusRequest& request, const DescribeCloudAssistantStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCloudAssistantStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeCloudAssistantStatusOutcomeCallable EcsClient::describeCloudAssistantStatusCallable(const DescribeCloudAssistantStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCloudAssistantStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCloudAssistantStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeInstancePhysicalAttributeOutcome EcsClient::describeInstancePhysicalAttribute(const DescribeInstancePhysicalAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8793,6 +8829,42 @@ EcsClient::AttachInstanceRamRoleOutcomeCallable EcsClient::attachInstanceRamRole
 			[this, request]()
 			{
 			return this->attachInstanceRamRole(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::InstallCloudAssistantOutcome EcsClient::installCloudAssistant(const InstallCloudAssistantRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InstallCloudAssistantOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InstallCloudAssistantOutcome(InstallCloudAssistantResult(outcome.result()));
+	else
+		return InstallCloudAssistantOutcome(outcome.error());
+}
+
+void EcsClient::installCloudAssistantAsync(const InstallCloudAssistantRequest& request, const InstallCloudAssistantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, installCloudAssistant(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::InstallCloudAssistantOutcomeCallable EcsClient::installCloudAssistantCallable(const InstallCloudAssistantRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InstallCloudAssistantOutcome()>>(
+			[this, request]()
+			{
+			return this->installCloudAssistant(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

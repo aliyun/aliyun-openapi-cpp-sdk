@@ -1,3 +1,7 @@
+2018-05-02 Version: 1.8.0
+1, Add new interface InstallCloudAssistant, support Cloud Assistant client installation.
+2, Add new interface DescribeCloudAssistantStatus, support Cloud Assistant client status detection.
+
 2018-04-28 Version: 1.7.3
 1, Add dcdn domain interface，Support add、modify、delete、query dcdn domain.
 2, Add dcdn config interface，Support set、delete、query domain config.
