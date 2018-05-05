@@ -24,17 +24,17 @@ If you have any problem while using C++ SDK, please join the **DingTalk group: 1
 
 	- Run the following commands on the Redhat/Fedora system to install third-party libraries.
 	```
-sudo dnf install libcurl-devel openssl-devel libuuid-devel libjsoncpp-devel
-```
+    sudo dnf install libcurl-devel openssl-devel libuuid-devel libjsoncpp-devel
+    ```
 	- Run the following commands on the Debian/Ubuntu system to install third-party libraries.
-	```
-sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev
-```
+    ```
+    sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev
+    ```
 2. Run the following commands to clone source codes from GitHub.
 
-```
-git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
-```
+    ```
+    git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
+    ```
 
 ## Use the C++ SDK
 
