@@ -11,7 +11,7 @@ If you have any problem while using C++ SDK, please join the **DingTalk group: 1
 
 - To use Alibaba Cloud C++ SDK, you must have an Alibaba Cloud account and an AccessKey.
 
-	The AccessKey is required when initializing the client. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](~~53045~~).
+	The AccessKey is required when initializing the client. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak).
 
 	>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
 
