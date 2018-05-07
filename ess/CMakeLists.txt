@@ -41,6 +41,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/EnableScalingGroupResult.h
 	include/alibabacloud/ess/model/DeactivateScalingConfigurationRequest.h
 	include/alibabacloud/ess/model/DeactivateScalingConfigurationResult.h
+	include/alibabacloud/ess/model/RebalanceInstancesRequest.h
+	include/alibabacloud/ess/model/RebalanceInstancesResult.h
 	include/alibabacloud/ess/model/CreateNotificationConfigurationRequest.h
 	include/alibabacloud/ess/model/CreateNotificationConfigurationResult.h
 	include/alibabacloud/ess/model/VerifyAuthenticationRequest.h
@@ -75,10 +77,10 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/DescribeRegionsResult.h
 	include/alibabacloud/ess/model/DescribeScheduledTasksRequest.h
 	include/alibabacloud/ess/model/DescribeScheduledTasksResult.h
+	include/alibabacloud/ess/model/SetInstancesProtectionRequest.h
+	include/alibabacloud/ess/model/SetInstancesProtectionResult.h
 	include/alibabacloud/ess/model/DeleteNotificationConfigurationRequest.h
 	include/alibabacloud/ess/model/DeleteNotificationConfigurationResult.h
-	include/alibabacloud/ess/model/DescribeAccountAttributesRequest.h
-	include/alibabacloud/ess/model/DescribeAccountAttributesResult.h
 	include/alibabacloud/ess/model/DetachInstancesRequest.h
 	include/alibabacloud/ess/model/DetachInstancesResult.h
 	include/alibabacloud/ess/model/DescribeLimitationRequest.h
@@ -124,6 +126,8 @@ set(ess_src
 	src/model/EnableScalingGroupResult.cc
 	src/model/DeactivateScalingConfigurationRequest.cc
 	src/model/DeactivateScalingConfigurationResult.cc
+	src/model/RebalanceInstancesRequest.cc
+	src/model/RebalanceInstancesResult.cc
 	src/model/CreateNotificationConfigurationRequest.cc
 	src/model/CreateNotificationConfigurationResult.cc
 	src/model/VerifyAuthenticationRequest.cc
@@ -158,10 +162,10 @@ set(ess_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeScheduledTasksRequest.cc
 	src/model/DescribeScheduledTasksResult.cc
+	src/model/SetInstancesProtectionRequest.cc
+	src/model/SetInstancesProtectionResult.cc
 	src/model/DeleteNotificationConfigurationRequest.cc
 	src/model/DeleteNotificationConfigurationResult.cc
-	src/model/DescribeAccountAttributesRequest.cc
-	src/model/DescribeAccountAttributesResult.cc
 	src/model/DetachInstancesRequest.cc
 	src/model/DetachInstancesResult.cc
 	src/model/DescribeLimitationRequest.cc

@@ -52,8 +52,10 @@ namespace AlibabaCloud
 					std::vector<std::string> removalPolicies;
 					std::string creationTime;
 					int totalCapacity;
+					std::string multiAZPolicy;
 					std::string regionId;
 					std::vector<std::string> dBInstanceIds;
+					int protectedCapacity;
 					int standbyCapacity;
 				};
 

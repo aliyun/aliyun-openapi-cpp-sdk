@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ESS_MODEL_DESCRIBEACCOUNTATTRIBUTESREQUEST_H_
-#define ALIBABACLOUD_ESS_MODEL_DESCRIBEACCOUNTATTRIBUTESREQUEST_H_
+#ifndef ALIBABACLOUD_ESS_MODEL_REBALANCEINSTANCESREQUEST_H_
+#define ALIBABACLOUD_ESS_MODEL_REBALANCEINSTANCESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,22 +28,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ESS_EXPORT DescribeAccountAttributesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ESS_EXPORT RebalanceInstancesRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeAccountAttributesRequest();
-				~DescribeAccountAttributesRequest();
+				RebalanceInstancesRequest();
+				~RebalanceInstancesRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getScalingGroupId()const;
+				void setScalingGroupId(const std::string& scalingGroupId);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
+				std::string scalingGroupId_;
+				std::string ownerAccount_;
 				long ownerId_;
 				std::string accessKeyId_;
 
@@ -51,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ESS_MODEL_DESCRIBEACCOUNTATTRIBUTESREQUEST_H_
+#endif // !ALIBABACLOUD_ESS_MODEL_REBALANCEINSTANCESREQUEST_H_

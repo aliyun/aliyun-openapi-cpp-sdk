@@ -25,6 +25,17 @@ CreateScalingGroupRequest::CreateScalingGroupRequest() :
 CreateScalingGroupRequest::~CreateScalingGroupRequest()
 {}
 
+std::string CreateScalingGroupRequest::getMultiAZPolicy()const
+{
+	return multiAZPolicy_;
+}
+
+void CreateScalingGroupRequest::setMultiAZPolicy(const std::string& multiAZPolicy)
+{
+	multiAZPolicy_ = multiAZPolicy;
+	setParameter("MultiAZPolicy", multiAZPolicy);
+}
+
 std::string CreateScalingGroupRequest::getDBInstanceIds()const
 {
 	return dBInstanceIds_;

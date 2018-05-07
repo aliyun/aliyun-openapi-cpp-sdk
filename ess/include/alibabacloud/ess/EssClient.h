@@ -42,6 +42,8 @@
 #include "model/EnableScalingGroupResult.h"
 #include "model/DeactivateScalingConfigurationRequest.h"
 #include "model/DeactivateScalingConfigurationResult.h"
+#include "model/RebalanceInstancesRequest.h"
+#include "model/RebalanceInstancesResult.h"
 #include "model/CreateNotificationConfigurationRequest.h"
 #include "model/CreateNotificationConfigurationResult.h"
 #include "model/VerifyAuthenticationRequest.h"
@@ -76,10 +78,10 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeScheduledTasksRequest.h"
 #include "model/DescribeScheduledTasksResult.h"
+#include "model/SetInstancesProtectionRequest.h"
+#include "model/SetInstancesProtectionResult.h"
 #include "model/DeleteNotificationConfigurationRequest.h"
 #include "model/DeleteNotificationConfigurationResult.h"
-#include "model/DescribeAccountAttributesRequest.h"
-#include "model/DescribeAccountAttributesResult.h"
 #include "model/DetachInstancesRequest.h"
 #include "model/DetachInstancesResult.h"
 #include "model/DescribeLimitationRequest.h"
@@ -141,6 +143,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeactivateScalingConfigurationResult> DeactivateScalingConfigurationOutcome;
 			typedef std::future<DeactivateScalingConfigurationOutcome> DeactivateScalingConfigurationOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DeactivateScalingConfigurationRequest&, const DeactivateScalingConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeactivateScalingConfigurationAsyncHandler;
+			typedef Outcome<Error, Model::RebalanceInstancesResult> RebalanceInstancesOutcome;
+			typedef std::future<RebalanceInstancesOutcome> RebalanceInstancesOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::RebalanceInstancesRequest&, const RebalanceInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebalanceInstancesAsyncHandler;
 			typedef Outcome<Error, Model::CreateNotificationConfigurationResult> CreateNotificationConfigurationOutcome;
 			typedef std::future<CreateNotificationConfigurationOutcome> CreateNotificationConfigurationOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::CreateNotificationConfigurationRequest&, const CreateNotificationConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotificationConfigurationAsyncHandler;
@@ -192,12 +197,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeScheduledTasksResult> DescribeScheduledTasksOutcome;
 			typedef std::future<DescribeScheduledTasksOutcome> DescribeScheduledTasksOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DescribeScheduledTasksRequest&, const DescribeScheduledTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledTasksAsyncHandler;
+			typedef Outcome<Error, Model::SetInstancesProtectionResult> SetInstancesProtectionOutcome;
+			typedef std::future<SetInstancesProtectionOutcome> SetInstancesProtectionOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::SetInstancesProtectionRequest&, const SetInstancesProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetInstancesProtectionAsyncHandler;
 			typedef Outcome<Error, Model::DeleteNotificationConfigurationResult> DeleteNotificationConfigurationOutcome;
 			typedef std::future<DeleteNotificationConfigurationOutcome> DeleteNotificationConfigurationOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DeleteNotificationConfigurationRequest&, const DeleteNotificationConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNotificationConfigurationAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAccountAttributesResult> DescribeAccountAttributesOutcome;
-			typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
-			typedef std::function<void(const EssClient*, const Model::DescribeAccountAttributesRequest&, const DescribeAccountAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountAttributesAsyncHandler;
 			typedef Outcome<Error, Model::DetachInstancesResult> DetachInstancesOutcome;
 			typedef std::future<DetachInstancesOutcome> DetachInstancesOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DetachInstancesRequest&, const DetachInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachInstancesAsyncHandler;
@@ -266,6 +271,9 @@ namespace AlibabaCloud
 			DeactivateScalingConfigurationOutcome deactivateScalingConfiguration(const Model::DeactivateScalingConfigurationRequest &request)const;
 			void deactivateScalingConfigurationAsync(const Model::DeactivateScalingConfigurationRequest& request, const DeactivateScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeactivateScalingConfigurationOutcomeCallable deactivateScalingConfigurationCallable(const Model::DeactivateScalingConfigurationRequest& request) const;
+			RebalanceInstancesOutcome rebalanceInstances(const Model::RebalanceInstancesRequest &request)const;
+			void rebalanceInstancesAsync(const Model::RebalanceInstancesRequest& request, const RebalanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RebalanceInstancesOutcomeCallable rebalanceInstancesCallable(const Model::RebalanceInstancesRequest& request) const;
 			CreateNotificationConfigurationOutcome createNotificationConfiguration(const Model::CreateNotificationConfigurationRequest &request)const;
 			void createNotificationConfigurationAsync(const Model::CreateNotificationConfigurationRequest& request, const CreateNotificationConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNotificationConfigurationOutcomeCallable createNotificationConfigurationCallable(const Model::CreateNotificationConfigurationRequest& request) const;
@@ -317,12 +325,12 @@ namespace AlibabaCloud
 			DescribeScheduledTasksOutcome describeScheduledTasks(const Model::DescribeScheduledTasksRequest &request)const;
 			void describeScheduledTasksAsync(const Model::DescribeScheduledTasksRequest& request, const DescribeScheduledTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScheduledTasksOutcomeCallable describeScheduledTasksCallable(const Model::DescribeScheduledTasksRequest& request) const;
+			SetInstancesProtectionOutcome setInstancesProtection(const Model::SetInstancesProtectionRequest &request)const;
+			void setInstancesProtectionAsync(const Model::SetInstancesProtectionRequest& request, const SetInstancesProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetInstancesProtectionOutcomeCallable setInstancesProtectionCallable(const Model::SetInstancesProtectionRequest& request) const;
 			DeleteNotificationConfigurationOutcome deleteNotificationConfiguration(const Model::DeleteNotificationConfigurationRequest &request)const;
 			void deleteNotificationConfigurationAsync(const Model::DeleteNotificationConfigurationRequest& request, const DeleteNotificationConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteNotificationConfigurationOutcomeCallable deleteNotificationConfigurationCallable(const Model::DeleteNotificationConfigurationRequest& request) const;
-			DescribeAccountAttributesOutcome describeAccountAttributes(const Model::DescribeAccountAttributesRequest &request)const;
-			void describeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAccountAttributesOutcomeCallable describeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
 			DetachInstancesOutcome detachInstances(const Model::DetachInstancesRequest &request)const;
 			void detachInstancesAsync(const Model::DetachInstancesRequest& request, const DetachInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachInstancesOutcomeCallable detachInstancesCallable(const Model::DetachInstancesRequest& request) const;

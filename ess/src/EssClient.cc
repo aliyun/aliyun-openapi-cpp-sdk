@@ -411,6 +411,42 @@ EssClient::DeactivateScalingConfigurationOutcomeCallable EssClient::deactivateSc
 	return task->get_future();
 }
 
+EssClient::RebalanceInstancesOutcome EssClient::rebalanceInstances(const RebalanceInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RebalanceInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RebalanceInstancesOutcome(RebalanceInstancesResult(outcome.result()));
+	else
+		return RebalanceInstancesOutcome(outcome.error());
+}
+
+void EssClient::rebalanceInstancesAsync(const RebalanceInstancesRequest& request, const RebalanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rebalanceInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::RebalanceInstancesOutcomeCallable EssClient::rebalanceInstancesCallable(const RebalanceInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RebalanceInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->rebalanceInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::CreateNotificationConfigurationOutcome EssClient::createNotificationConfiguration(const CreateNotificationConfigurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1023,6 +1059,42 @@ EssClient::DescribeScheduledTasksOutcomeCallable EssClient::describeScheduledTas
 	return task->get_future();
 }
 
+EssClient::SetInstancesProtectionOutcome EssClient::setInstancesProtection(const SetInstancesProtectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetInstancesProtectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetInstancesProtectionOutcome(SetInstancesProtectionResult(outcome.result()));
+	else
+		return SetInstancesProtectionOutcome(outcome.error());
+}
+
+void EssClient::setInstancesProtectionAsync(const SetInstancesProtectionRequest& request, const SetInstancesProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setInstancesProtection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::SetInstancesProtectionOutcomeCallable EssClient::setInstancesProtectionCallable(const SetInstancesProtectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetInstancesProtectionOutcome()>>(
+			[this, request]()
+			{
+			return this->setInstancesProtection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::DeleteNotificationConfigurationOutcome EssClient::deleteNotificationConfiguration(const DeleteNotificationConfigurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,42 +1125,6 @@ EssClient::DeleteNotificationConfigurationOutcomeCallable EssClient::deleteNotif
 			[this, request]()
 			{
 			return this->deleteNotificationConfiguration(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EssClient::DescribeAccountAttributesOutcome EssClient::describeAccountAttributes(const DescribeAccountAttributesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAccountAttributesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAccountAttributesOutcome(DescribeAccountAttributesResult(outcome.result()));
-	else
-		return DescribeAccountAttributesOutcome(outcome.error());
-}
-
-void EssClient::describeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAccountAttributes(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EssClient::DescribeAccountAttributesOutcomeCallable EssClient::describeAccountAttributesCallable(const DescribeAccountAttributesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAccountAttributesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAccountAttributes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

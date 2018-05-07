@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateScalingGroupRequest();
 				~CreateScalingGroupRequest();
 
+				std::string getMultiAZPolicy()const;
+				void setMultiAZPolicy(const std::string& multiAZPolicy);
 				std::string getDBInstanceIds()const;
 				void setDBInstanceIds(const std::string& dBInstanceIds);
 				std::string getLoadBalancerIds()const;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				void setRemovalPolicy2(const std::string& removalPolicy2);
 
             private:
+				std::string multiAZPolicy_;
 				std::string dBInstanceIds_;
 				std::string loadBalancerIds_;
 				std::string resourceOwnerAccount_;

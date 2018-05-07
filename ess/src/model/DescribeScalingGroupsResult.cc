@@ -58,6 +58,8 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.activeCapacity = std::stoi(value["ActiveCapacity"].asString());
 		if(!value["StandbyCapacity"].isNull())
 			scalingGroupsObject.standbyCapacity = std::stoi(value["StandbyCapacity"].asString());
+		if(!value["ProtectedCapacity"].isNull())
+			scalingGroupsObject.protectedCapacity = std::stoi(value["ProtectedCapacity"].asString());
 		if(!value["ActiveScalingConfigurationId"].isNull())
 			scalingGroupsObject.activeScalingConfigurationId = value["ActiveScalingConfigurationId"].asString();
 		if(!value["ScalingGroupId"].isNull())
@@ -78,6 +80,8 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.vpcId = value["VpcId"].asString();
 		if(!value["VSwitchId"].isNull())
 			scalingGroupsObject.vSwitchId = value["VSwitchId"].asString();
+		if(!value["MultiAZPolicy"].isNull())
+			scalingGroupsObject.multiAZPolicy = value["MultiAZPolicy"].asString();
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			scalingGroupsObject.vSwitchIds.push_back(value.asString());
