@@ -36,25 +36,29 @@ namespace AlibabaCloud
 				{
 					struct Instance
 					{
-						std::string status;
 						int quotaId;
 						float cpuUsedRatioMin;
 						std::string runTime;
 						std::string skynetId;
-						long memRequest;
-						std::string instanceId;
-						std::string cluster;
+						std::string user;
+						std::string isRealOwner;
 						float memUsedRatioMax;
-						std::string nickName;
 						long memUsedTotal;
 						float cpuUsedRatioMax;
-						std::string project;
 						std::string quotaName;
 						long memUsed;
 						long cpuUsedTotal;
+						std::string projectOwner;
 						std::string taskType;
-						float memUsedRatioMin;
+						std::string collectTime;
 						long cpuUsed;
+						std::string status;
+						long memRequest;
+						std::string instanceId;
+						std::string cluster;
+						std::string nickName;
+						std::string project;
+						float memUsedRatioMin;
 						std::string userAccount;
 						long cpuRequest;
 					};

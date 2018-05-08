@@ -43,7 +43,7 @@ void GetQuotaInstanceResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Total"].isNull())
 		data_.total = std::stoi(dataNode["Total"].asString());
-	auto allDetail = value["Detail"]["instance"];
+	auto allDetail = value["Detail"]["Instance"];
 	for (auto value : allDetail)
 	{
 		Data::Instance instanceObject;
@@ -89,6 +89,14 @@ void GetQuotaInstanceResult::parse(const std::string &payload)
 			instanceObject.quotaName = value["QuotaName"].asString();
 		if(!value["QuotaId"].isNull())
 			instanceObject.quotaId = std::stoi(value["QuotaId"].asString());
+		if(!value["User"].isNull())
+			instanceObject.user = value["User"].asString();
+		if(!value["IsRealOwner"].isNull())
+			instanceObject.isRealOwner = value["IsRealOwner"].asString();
+		if(!value["ProjectOwner"].isNull())
+			instanceObject.projectOwner = value["ProjectOwner"].asString();
+		if(!value["CollectTime"].isNull())
+			instanceObject.collectTime = value["CollectTime"].asString();
 		data_.detail.push_back(instanceObject);
 	}
 	if(!value["Code"].isNull())
