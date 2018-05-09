@@ -195,6 +195,42 @@ DomainClient::QueryBookingDomainInfoOutcomeCallable DomainClient::queryBookingDo
 	return task->get_future();
 }
 
+DomainClient::AcceptDemandOutcome DomainClient::acceptDemand(const AcceptDemandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AcceptDemandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AcceptDemandOutcome(AcceptDemandResult(outcome.result()));
+	else
+		return AcceptDemandOutcome(outcome.error());
+}
+
+void DomainClient::acceptDemandAsync(const AcceptDemandRequest& request, const AcceptDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, acceptDemand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::AcceptDemandOutcomeCallable DomainClient::acceptDemandCallable(const AcceptDemandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AcceptDemandOutcome()>>(
+			[this, request]()
+			{
+			return this->acceptDemand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::SaveSingleTaskForSynchronizingDnsHostOutcome DomainClient::saveSingleTaskForSynchronizingDnsHost(const SaveSingleTaskForSynchronizingDnsHostRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -591,6 +627,42 @@ DomainClient::QueryAdvancedDomainListOutcomeCallable DomainClient::queryAdvanced
 	return task->get_future();
 }
 
+DomainClient::RequestPayDemandOutcome DomainClient::requestPayDemand(const RequestPayDemandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RequestPayDemandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RequestPayDemandOutcome(RequestPayDemandResult(outcome.result()));
+	else
+		return RequestPayDemandOutcome(outcome.error());
+}
+
+void DomainClient::requestPayDemandAsync(const RequestPayDemandRequest& request, const RequestPayDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, requestPayDemand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::RequestPayDemandOutcomeCallable DomainClient::requestPayDemandCallable(const RequestPayDemandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RequestPayDemandOutcome()>>(
+			[this, request]()
+			{
+			return this->requestPayDemand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::QueryTransferOutInfoOutcome DomainClient::queryTransferOutInfo(const QueryTransferOutInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +765,42 @@ DomainClient::SaveSingleTaskForCreatingOrderRedeemOutcomeCallable DomainClient::
 			[this, request]()
 			{
 			return this->saveSingleTaskForCreatingOrderRedeem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::QueryBrokerDemandOutcome DomainClient::queryBrokerDemand(const QueryBrokerDemandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryBrokerDemandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryBrokerDemandOutcome(QueryBrokerDemandResult(outcome.result()));
+	else
+		return QueryBrokerDemandOutcome(outcome.error());
+}
+
+void DomainClient::queryBrokerDemandAsync(const QueryBrokerDemandRequest& request, const QueryBrokerDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryBrokerDemand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryBrokerDemandOutcomeCallable DomainClient::queryBrokerDemandCallable(const QueryBrokerDemandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryBrokerDemandOutcome()>>(
+			[this, request]()
+			{
+			return this->queryBrokerDemand(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -807,6 +915,42 @@ DomainClient::VerifyContactFieldOutcomeCallable DomainClient::verifyContactField
 	return task->get_future();
 }
 
+DomainClient::FinishDemandOutcome DomainClient::finishDemand(const FinishDemandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FinishDemandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FinishDemandOutcome(FinishDemandResult(outcome.result()));
+	else
+		return FinishDemandOutcome(outcome.error());
+}
+
+void DomainClient::finishDemandAsync(const FinishDemandRequest& request, const FinishDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, finishDemand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::FinishDemandOutcomeCallable DomainClient::finishDemandCallable(const FinishDemandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FinishDemandOutcome()>>(
+			[this, request]()
+			{
+			return this->finishDemand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::RegistrantProfileRealNameVerificationOutcome DomainClient::registrantProfileRealNameVerification(const RegistrantProfileRealNameVerificationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +1017,42 @@ DomainClient::QueryBidRecordsOutcomeCallable DomainClient::queryBidRecordsCallab
 			[this, request]()
 			{
 			return this->queryBidRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::RecordDemandOutcome DomainClient::recordDemand(const RecordDemandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecordDemandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecordDemandOutcome(RecordDemandResult(outcome.result()));
+	else
+		return RecordDemandOutcome(outcome.error());
+}
+
+void DomainClient::recordDemandAsync(const RecordDemandRequest& request, const RecordDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recordDemand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::RecordDemandOutcomeCallable DomainClient::recordDemandCallable(const RecordDemandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecordDemandOutcome()>>(
+			[this, request]()
+			{
+			return this->recordDemand(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2283,6 +2463,42 @@ DomainClient::QueryRegistrantProfilesOutcomeCallable DomainClient::queryRegistra
 	return task->get_future();
 }
 
+DomainClient::FailDemandOutcome DomainClient::failDemand(const FailDemandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FailDemandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FailDemandOutcome(FailDemandResult(outcome.result()));
+	else
+		return FailDemandOutcome(outcome.error());
+}
+
+void DomainClient::failDemandAsync(const FailDemandRequest& request, const FailDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, failDemand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::FailDemandOutcomeCallable DomainClient::failDemandCallable(const FailDemandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FailDemandOutcome()>>(
+			[this, request]()
+			{
+			return this->failDemand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::SaveSingleTaskForCancelingTransferInOutcome DomainClient::saveSingleTaskForCancelingTransferIn(const SaveSingleTaskForCancelingTransferInRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2499,6 +2715,42 @@ DomainClient::SaveBatchTaskForTransferProhibitionLockOutcomeCallable DomainClien
 	return task->get_future();
 }
 
+DomainClient::RefuseDemandOutcome DomainClient::refuseDemand(const RefuseDemandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefuseDemandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefuseDemandOutcome(RefuseDemandResult(outcome.result()));
+	else
+		return RefuseDemandOutcome(outcome.error());
+}
+
+void DomainClient::refuseDemandAsync(const RefuseDemandRequest& request, const RefuseDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refuseDemand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::RefuseDemandOutcomeCallable DomainClient::refuseDemandCallable(const RefuseDemandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefuseDemandOutcome()>>(
+			[this, request]()
+			{
+			return this->refuseDemand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::TransferInReenterTransferAuthorizationCodeOutcome DomainClient::transferInReenterTransferAuthorizationCode(const TransferInReenterTransferAuthorizationCodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2673,6 +2925,42 @@ DomainClient::DeleteRegistrantProfileOutcomeCallable DomainClient::deleteRegistr
 			[this, request]()
 			{
 			return this->deleteRegistrantProfile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::QueryBrokerDemandRecordOutcome DomainClient::queryBrokerDemandRecord(const QueryBrokerDemandRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryBrokerDemandRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryBrokerDemandRecordOutcome(QueryBrokerDemandRecordResult(outcome.result()));
+	else
+		return QueryBrokerDemandRecordOutcome(outcome.error());
+}
+
+void DomainClient::queryBrokerDemandRecordAsync(const QueryBrokerDemandRecordRequest& request, const QueryBrokerDemandRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryBrokerDemandRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryBrokerDemandRecordOutcomeCallable DomainClient::queryBrokerDemandRecordCallable(const QueryBrokerDemandRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryBrokerDemandRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->queryBrokerDemandRecord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

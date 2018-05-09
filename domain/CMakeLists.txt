@@ -29,6 +29,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdResult.h
 	include/alibabacloud/domain/model/QueryBookingDomainInfoRequest.h
 	include/alibabacloud/domain/model/QueryBookingDomainInfoResult.h
+	include/alibabacloud/domain/model/AcceptDemandRequest.h
+	include/alibabacloud/domain/model/AcceptDemandResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForSynchronizingDnsHostRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForSynchronizingDnsHostResult.h
 	include/alibabacloud/domain/model/QueryAuctionsRequest.h
@@ -51,22 +53,30 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/QueryFailReasonForDomainRealNameVerificationResult.h
 	include/alibabacloud/domain/model/QueryAdvancedDomainListRequest.h
 	include/alibabacloud/domain/model/QueryAdvancedDomainListResult.h
+	include/alibabacloud/domain/model/RequestPayDemandRequest.h
+	include/alibabacloud/domain/model/RequestPayDemandResult.h
 	include/alibabacloud/domain/model/QueryTransferOutInfoRequest.h
 	include/alibabacloud/domain/model/QueryTransferOutInfoResult.h
 	include/alibabacloud/domain/model/SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest.h
 	include/alibabacloud/domain/model/SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingOrderRedeemRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingOrderRedeemResult.h
+	include/alibabacloud/domain/model/QueryBrokerDemandRequest.h
+	include/alibabacloud/domain/model/QueryBrokerDemandResult.h
 	include/alibabacloud/domain/model/QueryTaskDetailListRequest.h
 	include/alibabacloud/domain/model/QueryTaskDetailListResult.h
 	include/alibabacloud/domain/model/SaveBatchDomainRemarkRequest.h
 	include/alibabacloud/domain/model/SaveBatchDomainRemarkResult.h
 	include/alibabacloud/domain/model/VerifyContactFieldRequest.h
 	include/alibabacloud/domain/model/VerifyContactFieldResult.h
+	include/alibabacloud/domain/model/FinishDemandRequest.h
+	include/alibabacloud/domain/model/FinishDemandResult.h
 	include/alibabacloud/domain/model/RegistrantProfileRealNameVerificationRequest.h
 	include/alibabacloud/domain/model/RegistrantProfileRealNameVerificationResult.h
 	include/alibabacloud/domain/model/QueryBidRecordsRequest.h
 	include/alibabacloud/domain/model/QueryBidRecordsResult.h
+	include/alibabacloud/domain/model/RecordDemandRequest.h
+	include/alibabacloud/domain/model/RecordDemandResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForCreatingOrderActivateRequest.h
 	include/alibabacloud/domain/model/SaveBatchTaskForCreatingOrderActivateResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForTransferProhibitionLockRequest.h
@@ -145,6 +155,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/QueryRegistrantProfileRealNameVerificationInfoResult.h
 	include/alibabacloud/domain/model/QueryRegistrantProfilesRequest.h
 	include/alibabacloud/domain/model/QueryRegistrantProfilesResult.h
+	include/alibabacloud/domain/model/FailDemandRequest.h
+	include/alibabacloud/domain/model/FailDemandResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCancelingTransferInRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCancelingTransferInResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingOrderRenewRequest.h
@@ -157,6 +169,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingOrderActivateResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForTransferProhibitionLockRequest.h
 	include/alibabacloud/domain/model/SaveBatchTaskForTransferProhibitionLockResult.h
+	include/alibabacloud/domain/model/RefuseDemandRequest.h
+	include/alibabacloud/domain/model/RefuseDemandResult.h
 	include/alibabacloud/domain/model/TransferInReenterTransferAuthorizationCodeRequest.h
 	include/alibabacloud/domain/model/TransferInReenterTransferAuthorizationCodeResult.h
 	include/alibabacloud/domain/model/EmailVerifiedRequest.h
@@ -167,6 +181,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingDnsHostResult.h
 	include/alibabacloud/domain/model/DeleteRegistrantProfileRequest.h
 	include/alibabacloud/domain/model/DeleteRegistrantProfileResult.h
+	include/alibabacloud/domain/model/QueryBrokerDemandRecordRequest.h
+	include/alibabacloud/domain/model/QueryBrokerDemandRecordResult.h
 	include/alibabacloud/domain/model/QueryTaskInfoHistoryRequest.h
 	include/alibabacloud/domain/model/QueryTaskInfoHistoryResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingOrderTransferRequest.h
@@ -190,6 +206,8 @@ set(domain_src
 	src/model/SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdResult.cc
 	src/model/QueryBookingDomainInfoRequest.cc
 	src/model/QueryBookingDomainInfoResult.cc
+	src/model/AcceptDemandRequest.cc
+	src/model/AcceptDemandResult.cc
 	src/model/SaveSingleTaskForSynchronizingDnsHostRequest.cc
 	src/model/SaveSingleTaskForSynchronizingDnsHostResult.cc
 	src/model/QueryAuctionsRequest.cc
@@ -212,22 +230,30 @@ set(domain_src
 	src/model/QueryFailReasonForDomainRealNameVerificationResult.cc
 	src/model/QueryAdvancedDomainListRequest.cc
 	src/model/QueryAdvancedDomainListResult.cc
+	src/model/RequestPayDemandRequest.cc
+	src/model/RequestPayDemandResult.cc
 	src/model/QueryTransferOutInfoRequest.cc
 	src/model/QueryTransferOutInfoResult.cc
 	src/model/SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest.cc
 	src/model/SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResult.cc
 	src/model/SaveSingleTaskForCreatingOrderRedeemRequest.cc
 	src/model/SaveSingleTaskForCreatingOrderRedeemResult.cc
+	src/model/QueryBrokerDemandRequest.cc
+	src/model/QueryBrokerDemandResult.cc
 	src/model/QueryTaskDetailListRequest.cc
 	src/model/QueryTaskDetailListResult.cc
 	src/model/SaveBatchDomainRemarkRequest.cc
 	src/model/SaveBatchDomainRemarkResult.cc
 	src/model/VerifyContactFieldRequest.cc
 	src/model/VerifyContactFieldResult.cc
+	src/model/FinishDemandRequest.cc
+	src/model/FinishDemandResult.cc
 	src/model/RegistrantProfileRealNameVerificationRequest.cc
 	src/model/RegistrantProfileRealNameVerificationResult.cc
 	src/model/QueryBidRecordsRequest.cc
 	src/model/QueryBidRecordsResult.cc
+	src/model/RecordDemandRequest.cc
+	src/model/RecordDemandResult.cc
 	src/model/SaveBatchTaskForCreatingOrderActivateRequest.cc
 	src/model/SaveBatchTaskForCreatingOrderActivateResult.cc
 	src/model/SaveSingleTaskForTransferProhibitionLockRequest.cc
@@ -306,6 +332,8 @@ set(domain_src
 	src/model/QueryRegistrantProfileRealNameVerificationInfoResult.cc
 	src/model/QueryRegistrantProfilesRequest.cc
 	src/model/QueryRegistrantProfilesResult.cc
+	src/model/FailDemandRequest.cc
+	src/model/FailDemandResult.cc
 	src/model/SaveSingleTaskForCancelingTransferInRequest.cc
 	src/model/SaveSingleTaskForCancelingTransferInResult.cc
 	src/model/SaveSingleTaskForCreatingOrderRenewRequest.cc
@@ -318,6 +346,8 @@ set(domain_src
 	src/model/SaveSingleTaskForCreatingOrderActivateResult.cc
 	src/model/SaveBatchTaskForTransferProhibitionLockRequest.cc
 	src/model/SaveBatchTaskForTransferProhibitionLockResult.cc
+	src/model/RefuseDemandRequest.cc
+	src/model/RefuseDemandResult.cc
 	src/model/TransferInReenterTransferAuthorizationCodeRequest.cc
 	src/model/TransferInReenterTransferAuthorizationCodeResult.cc
 	src/model/EmailVerifiedRequest.cc
@@ -328,6 +358,8 @@ set(domain_src
 	src/model/SaveSingleTaskForCreatingDnsHostResult.cc
 	src/model/DeleteRegistrantProfileRequest.cc
 	src/model/DeleteRegistrantProfileResult.cc
+	src/model/QueryBrokerDemandRecordRequest.cc
+	src/model/QueryBrokerDemandRecordResult.cc
 	src/model/QueryTaskInfoHistoryRequest.cc
 	src/model/QueryTaskInfoHistoryResult.cc
 	src/model/SaveSingleTaskForCreatingOrderTransferRequest.cc
