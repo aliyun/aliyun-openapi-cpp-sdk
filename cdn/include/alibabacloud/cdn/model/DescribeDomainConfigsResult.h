@@ -207,6 +207,7 @@ namespace AlibabaCloud
 						std::string staticUri;
 						std::string dynamicCacheControl;
 						std::string staticType;
+						std::string enable;
 						std::string configId;
 						std::string dynamicOrigin;
 						std::string staticPath;
@@ -225,45 +226,45 @@ namespace AlibabaCloud
 						std::string configId;
 						std::string varName;
 					};
-					std::vector<IpAllowListConfig> ipAllowListConfig;
-					std::vector<MacServiceConfig> macServiceConfig;
-					std::vector<RedirectTypeConfig> redirectTypeConfig;
+					IpAllowListConfig ipAllowListConfig;
+					MacServiceConfig macServiceConfig;
+					RedirectTypeConfig redirectTypeConfig;
 					std::vector<SetVarsConfig> setVarsConfigs;
-					std::vector<ReqAuthConfig> reqAuthConfig;
-					std::vector<GreenManagerConfig> greenManagerConfig;
-					std::vector<RefererConfig> refererConfig;
-					std::vector<SrcHostConfig> srcHostConfig;
-					std::vector<ForwardSchemeConfig> forwardSchemeConfig;
+					ReqAuthConfig reqAuthConfig;
+					GreenManagerConfig greenManagerConfig;
+					RefererConfig refererConfig;
+					SrcHostConfig srcHostConfig;
+					ForwardSchemeConfig forwardSchemeConfig;
 					std::vector<HttpHeaderConfig> httpHeaderConfigs;
-					std::vector<AliBusinessConfig> aliBusinessConfig;
-					std::vector<HttpsOptionConfig> httpsOptionConfig;
+					AliBusinessConfig aliBusinessConfig;
+					HttpsOptionConfig httpsOptionConfig;
 					std::vector<ReqHeaderConfig> reqHeaderConfigs;
 					std::vector<CacheExpiredConfig> cacheExpiredConfigs;
-					std::vector<ErrorPageConfig> errorPageConfig;
-					std::vector<RemoveQueryStringConfig> removeQueryStringConfig;
-					std::vector<L2OssKeyConfig> l2OssKeyConfig;
+					ErrorPageConfig errorPageConfig;
+					RemoveQueryStringConfig removeQueryStringConfig;
+					L2OssKeyConfig l2OssKeyConfig;
 					std::vector<HttpErrorPageConfig> httpErrorPageConfigs;
-					std::vector<WafConfig> wafConfig;
-					std::vector<OptimizeConfig> optimizeConfig;
-					std::vector<IgnoreQueryStringConfig> ignoreQueryStringConfig;
-					std::vector<RangeConfig> rangeConfig;
-					std::vector<NotifyUrlConfig> notifyUrlConfig;
-					std::vector<VideoSeekConfig> videoSeekConfig;
+					WafConfig wafConfig;
+					OptimizeConfig optimizeConfig;
+					IgnoreQueryStringConfig ignoreQueryStringConfig;
+					RangeConfig rangeConfig;
+					NotifyUrlConfig notifyUrlConfig;
+					VideoSeekConfig videoSeekConfig;
 					std::vector<DynamicConfig> dynamicConfigs;
-					std::vector<PageCompressConfig> pageCompressConfig;
-					std::vector<CcConfig> ccConfig;
+					PageCompressConfig pageCompressConfig;
+					CcConfig ccConfig;
 				};
 
 
 				DescribeDomainConfigsResult();
 				explicit DescribeDomainConfigsResult(const std::string &payload);
 				~DescribeDomainConfigsResult();
-				std::vector<DomainConfigs> getDomainConfigs()const;
+				DomainConfigs getDomainConfigs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DomainConfigs> domainConfigs_;
+				DomainConfigs domainConfigs_;
 
 			};
 		}

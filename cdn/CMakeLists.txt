@@ -25,10 +25,14 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetPathCacheExpiredConfigResult.h
 	include/alibabacloud/cdn/model/DescribeCdnServiceRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnServiceResult.h
+	include/alibabacloud/cdn/model/AddFCTriggerRequest.h
+	include/alibabacloud/cdn/model/AddFCTriggerResult.h
 	include/alibabacloud/cdn/model/CreateLiveStreamRecordIndexFilesRequest.h
 	include/alibabacloud/cdn/model/CreateLiveStreamRecordIndexFilesResult.h
 	include/alibabacloud/cdn/model/ModifyUserCustomLogConfigRequest.h
 	include/alibabacloud/cdn/model/ModifyUserCustomLogConfigResult.h
+	include/alibabacloud/cdn/model/DescribeCdnDomainConfigsRequest.h
+	include/alibabacloud/cdn/model/DescribeCdnDomainConfigsResult.h
 	include/alibabacloud/cdn/model/SetWafConfigRequest.h
 	include/alibabacloud/cdn/model/SetWafConfigResult.h
 	include/alibabacloud/cdn/model/DescribeCdnDomainDetailRequest.h
@@ -217,6 +221,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeLiveSnapshotConfigResult.h
 	include/alibabacloud/cdn/model/DescribeRefreshTasksRequest.h
 	include/alibabacloud/cdn/model/DescribeRefreshTasksResult.h
+	include/alibabacloud/cdn/model/DeleteFCTriggerRequest.h
+	include/alibabacloud/cdn/model/DeleteFCTriggerResult.h
 	include/alibabacloud/cdn/model/DescribeRefreshQuotaRequest.h
 	include/alibabacloud/cdn/model/DescribeRefreshQuotaResult.h
 	include/alibabacloud/cdn/model/SetForwardSchemeConfigRequest.h
@@ -237,6 +243,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeUserConfigsResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamStreamStatusRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamStreamStatusResult.h
+	include/alibabacloud/cdn/model/DescribeDomainCertificateInfoRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainCertificateInfoResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamRecordIndexFilesRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamRecordIndexFilesResult.h
 	include/alibabacloud/cdn/model/ModifyCdnDomainRequest.h
@@ -299,6 +307,10 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeDataResult.h
 	include/alibabacloud/cdn/model/ResumeLiveStreamRequest.h
 	include/alibabacloud/cdn/model/ResumeLiveStreamResult.h
+	include/alibabacloud/cdn/model/UpdateFCTriggerRequest.h
+	include/alibabacloud/cdn/model/UpdateFCTriggerResult.h
+	include/alibabacloud/cdn/model/DescribeFCTriggerRequest.h
+	include/alibabacloud/cdn/model/DescribeFCTriggerResult.h
 	include/alibabacloud/cdn/model/SetUserBlackListRequest.h
 	include/alibabacloud/cdn/model/SetUserBlackListResult.h
 	include/alibabacloud/cdn/model/GetUserDomainBlackListRequest.h
@@ -364,10 +376,14 @@ set(cdn_src
 	src/model/SetPathCacheExpiredConfigResult.cc
 	src/model/DescribeCdnServiceRequest.cc
 	src/model/DescribeCdnServiceResult.cc
+	src/model/AddFCTriggerRequest.cc
+	src/model/AddFCTriggerResult.cc
 	src/model/CreateLiveStreamRecordIndexFilesRequest.cc
 	src/model/CreateLiveStreamRecordIndexFilesResult.cc
 	src/model/ModifyUserCustomLogConfigRequest.cc
 	src/model/ModifyUserCustomLogConfigResult.cc
+	src/model/DescribeCdnDomainConfigsRequest.cc
+	src/model/DescribeCdnDomainConfigsResult.cc
 	src/model/SetWafConfigRequest.cc
 	src/model/SetWafConfigResult.cc
 	src/model/DescribeCdnDomainDetailRequest.cc
@@ -556,6 +572,8 @@ set(cdn_src
 	src/model/DescribeLiveSnapshotConfigResult.cc
 	src/model/DescribeRefreshTasksRequest.cc
 	src/model/DescribeRefreshTasksResult.cc
+	src/model/DeleteFCTriggerRequest.cc
+	src/model/DeleteFCTriggerResult.cc
 	src/model/DescribeRefreshQuotaRequest.cc
 	src/model/DescribeRefreshQuotaResult.cc
 	src/model/SetForwardSchemeConfigRequest.cc
@@ -576,6 +594,8 @@ set(cdn_src
 	src/model/DescribeUserConfigsResult.cc
 	src/model/DescribeLiveStreamStreamStatusRequest.cc
 	src/model/DescribeLiveStreamStreamStatusResult.cc
+	src/model/DescribeDomainCertificateInfoRequest.cc
+	src/model/DescribeDomainCertificateInfoResult.cc
 	src/model/DescribeLiveStreamRecordIndexFilesRequest.cc
 	src/model/DescribeLiveStreamRecordIndexFilesResult.cc
 	src/model/ModifyCdnDomainRequest.cc
@@ -638,6 +658,10 @@ set(cdn_src
 	src/model/DescribeDomainRealTimeDataResult.cc
 	src/model/ResumeLiveStreamRequest.cc
 	src/model/ResumeLiveStreamResult.cc
+	src/model/UpdateFCTriggerRequest.cc
+	src/model/UpdateFCTriggerResult.cc
+	src/model/DescribeFCTriggerRequest.cc
+	src/model/DescribeFCTriggerResult.cc
 	src/model/SetUserBlackListRequest.cc
 	src/model/SetUserBlackListResult.cc
 	src/model/GetUserDomainBlackListRequest.cc

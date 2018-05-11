@@ -46,12 +46,12 @@ namespace AlibabaCloud
 				DescribeLiveAppRecordConfigResult();
 				explicit DescribeLiveAppRecordConfigResult(const std::string &payload);
 				~DescribeLiveAppRecordConfigResult();
-				std::vector<LiveAppRecord> getLiveAppRecord()const;
+				LiveAppRecord getLiveAppRecord()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LiveAppRecord> liveAppRecord_;
+				LiveAppRecord liveAppRecord_;
 
 			};
 		}

@@ -45,11 +45,19 @@ namespace AlibabaCloud
 				DescribeLiveStreamsOnlineListResult();
 				explicit DescribeLiveStreamsOnlineListResult(const std::string &payload);
 				~DescribeLiveStreamsOnlineListResult();
+				int getTotalNum()const;
+				int getPageNum()const;
+				int getPageSize()const;
+				int getTotalPage()const;
 				std::vector<LiveStreamOnlineInfo> getOnlineInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalNum_;
+				int pageNum_;
+				int pageSize_;
+				int totalPage_;
 				std::vector<LiveStreamOnlineInfo> onlineInfo_;
 
 			};

@@ -35,22 +35,31 @@ namespace AlibabaCloud
 				DescribeLiveStreamsOnlineListRequest();
 				~DescribeLiveStreamsOnlineListRequest();
 
+				std::string getStreamType()const;
+				void setStreamType(const std::string& streamType);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string streamType_;
 				std::string appName_;
 				std::string securityToken_;
 				std::string domainName_;
+				int pageSize_;
 				long ownerId_;
+				int pageNum_;
 				std::string accessKeyId_;
 
 			};

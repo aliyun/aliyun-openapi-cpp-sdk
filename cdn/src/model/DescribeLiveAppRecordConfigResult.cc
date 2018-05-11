@@ -40,28 +40,23 @@ void DescribeLiveAppRecordConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allLiveAppRecord = value["LiveAppRecord"];
-	for (auto value : allLiveAppRecord)
-	{
-		LiveAppRecord liveAppRecordObject;
-		if(!value["DomainName"].isNull())
-			liveAppRecordObject.domainName = value["DomainName"].asString();
-		if(!value["AppName"].isNull())
-			liveAppRecordObject.appName = value["AppName"].asString();
-		if(!value["OssEndpoint"].isNull())
-			liveAppRecordObject.ossEndpoint = value["OssEndpoint"].asString();
-		if(!value["OssBucket"].isNull())
-			liveAppRecordObject.ossBucket = value["OssBucket"].asString();
-		if(!value["OssObjectPrefix"].isNull())
-			liveAppRecordObject.ossObjectPrefix = value["OssObjectPrefix"].asString();
-		if(!value["CreateTime"].isNull())
-			liveAppRecordObject.createTime = value["CreateTime"].asString();
-		liveAppRecord_.push_back(liveAppRecordObject);
-	}
+	auto liveAppRecordNode = value["LiveAppRecord"];
+	if(!liveAppRecordNode["DomainName"].isNull())
+		liveAppRecord_.domainName = liveAppRecordNode["DomainName"].asString();
+	if(!liveAppRecordNode["AppName"].isNull())
+		liveAppRecord_.appName = liveAppRecordNode["AppName"].asString();
+	if(!liveAppRecordNode["OssEndpoint"].isNull())
+		liveAppRecord_.ossEndpoint = liveAppRecordNode["OssEndpoint"].asString();
+	if(!liveAppRecordNode["OssBucket"].isNull())
+		liveAppRecord_.ossBucket = liveAppRecordNode["OssBucket"].asString();
+	if(!liveAppRecordNode["OssObjectPrefix"].isNull())
+		liveAppRecord_.ossObjectPrefix = liveAppRecordNode["OssObjectPrefix"].asString();
+	if(!liveAppRecordNode["CreateTime"].isNull())
+		liveAppRecord_.createTime = liveAppRecordNode["CreateTime"].asString();
 
 }
 
-std::vector<DescribeLiveAppRecordConfigResult::LiveAppRecord> DescribeLiveAppRecordConfigResult::getLiveAppRecord()const
+DescribeLiveAppRecordConfigResult::LiveAppRecord DescribeLiveAppRecordConfigResult::getLiveAppRecord()const
 {
 	return liveAppRecord_;
 }

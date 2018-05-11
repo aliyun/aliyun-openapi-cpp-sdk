@@ -123,6 +123,42 @@ CdnClient::DescribeCdnServiceOutcomeCallable CdnClient::describeCdnServiceCallab
 	return task->get_future();
 }
 
+CdnClient::AddFCTriggerOutcome CdnClient::addFCTrigger(const AddFCTriggerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddFCTriggerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddFCTriggerOutcome(AddFCTriggerResult(outcome.result()));
+	else
+		return AddFCTriggerOutcome(outcome.error());
+}
+
+void CdnClient::addFCTriggerAsync(const AddFCTriggerRequest& request, const AddFCTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addFCTrigger(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::AddFCTriggerOutcomeCallable CdnClient::addFCTriggerCallable(const AddFCTriggerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddFCTriggerOutcome()>>(
+			[this, request]()
+			{
+			return this->addFCTrigger(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::CreateLiveStreamRecordIndexFilesOutcome CdnClient::createLiveStreamRecordIndexFiles(const CreateLiveStreamRecordIndexFilesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +225,42 @@ CdnClient::ModifyUserCustomLogConfigOutcomeCallable CdnClient::modifyUserCustomL
 			[this, request]()
 			{
 			return this->modifyUserCustomLogConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeCdnDomainConfigsOutcome CdnClient::describeCdnDomainConfigs(const DescribeCdnDomainConfigsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnDomainConfigsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnDomainConfigsOutcome(DescribeCdnDomainConfigsResult(outcome.result()));
+	else
+		return DescribeCdnDomainConfigsOutcome(outcome.error());
+}
+
+void CdnClient::describeCdnDomainConfigsAsync(const DescribeCdnDomainConfigsRequest& request, const DescribeCdnDomainConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnDomainConfigs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnDomainConfigsOutcomeCallable CdnClient::describeCdnDomainConfigsCallable(const DescribeCdnDomainConfigsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnDomainConfigsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnDomainConfigs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3579,6 +3651,42 @@ CdnClient::DescribeRefreshTasksOutcomeCallable CdnClient::describeRefreshTasksCa
 	return task->get_future();
 }
 
+CdnClient::DeleteFCTriggerOutcome CdnClient::deleteFCTrigger(const DeleteFCTriggerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFCTriggerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFCTriggerOutcome(DeleteFCTriggerResult(outcome.result()));
+	else
+		return DeleteFCTriggerOutcome(outcome.error());
+}
+
+void CdnClient::deleteFCTriggerAsync(const DeleteFCTriggerRequest& request, const DeleteFCTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFCTrigger(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DeleteFCTriggerOutcomeCallable CdnClient::deleteFCTriggerCallable(const DeleteFCTriggerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFCTriggerOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFCTrigger(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DescribeRefreshQuotaOutcome CdnClient::describeRefreshQuota(const DescribeRefreshQuotaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3933,6 +4041,42 @@ CdnClient::DescribeLiveStreamStreamStatusOutcomeCallable CdnClient::describeLive
 			[this, request]()
 			{
 			return this->describeLiveStreamStreamStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeDomainCertificateInfoOutcome CdnClient::describeDomainCertificateInfo(const DescribeDomainCertificateInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainCertificateInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainCertificateInfoOutcome(DescribeDomainCertificateInfoResult(outcome.result()));
+	else
+		return DescribeDomainCertificateInfoOutcome(outcome.error());
+}
+
+void CdnClient::describeDomainCertificateInfoAsync(const DescribeDomainCertificateInfoRequest& request, const DescribeDomainCertificateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainCertificateInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeDomainCertificateInfoOutcomeCallable CdnClient::describeDomainCertificateInfoCallable(const DescribeDomainCertificateInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainCertificateInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainCertificateInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5049,6 +5193,78 @@ CdnClient::ResumeLiveStreamOutcomeCallable CdnClient::resumeLiveStreamCallable(c
 			[this, request]()
 			{
 			return this->resumeLiveStream(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::UpdateFCTriggerOutcome CdnClient::updateFCTrigger(const UpdateFCTriggerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateFCTriggerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateFCTriggerOutcome(UpdateFCTriggerResult(outcome.result()));
+	else
+		return UpdateFCTriggerOutcome(outcome.error());
+}
+
+void CdnClient::updateFCTriggerAsync(const UpdateFCTriggerRequest& request, const UpdateFCTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateFCTrigger(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::UpdateFCTriggerOutcomeCallable CdnClient::updateFCTriggerCallable(const UpdateFCTriggerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateFCTriggerOutcome()>>(
+			[this, request]()
+			{
+			return this->updateFCTrigger(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeFCTriggerOutcome CdnClient::describeFCTrigger(const DescribeFCTriggerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFCTriggerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFCTriggerOutcome(DescribeFCTriggerResult(outcome.result()));
+	else
+		return DescribeFCTriggerOutcome(outcome.error());
+}
+
+void CdnClient::describeFCTriggerAsync(const DescribeFCTriggerRequest& request, const DescribeFCTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFCTrigger(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeFCTriggerOutcomeCallable CdnClient::describeFCTriggerCallable(const DescribeFCTriggerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFCTriggerOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFCTrigger(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -40,37 +40,32 @@ void DescribeCdnDomainBaseDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allDomainBaseDetailModel = value["DomainBaseDetailModel"];
-	for (auto value : allDomainBaseDetailModel)
-	{
-		DomainBaseDetailModel domainBaseDetailModelObject;
-		if(!value["Cname"].isNull())
-			domainBaseDetailModelObject.cname = value["Cname"].asString();
-		if(!value["CdnType"].isNull())
-			domainBaseDetailModelObject.cdnType = value["CdnType"].asString();
-		if(!value["DomainStatus"].isNull())
-			domainBaseDetailModelObject.domainStatus = value["DomainStatus"].asString();
-		if(!value["SourceType"].isNull())
-			domainBaseDetailModelObject.sourceType = value["SourceType"].asString();
-		if(!value["Region"].isNull())
-			domainBaseDetailModelObject.region = value["Region"].asString();
-		if(!value["DomainName"].isNull())
-			domainBaseDetailModelObject.domainName = value["DomainName"].asString();
-		if(!value["Remark"].isNull())
-			domainBaseDetailModelObject.remark = value["Remark"].asString();
-		if(!value["GmtModified"].isNull())
-			domainBaseDetailModelObject.gmtModified = value["GmtModified"].asString();
-		if(!value["GmtCreated"].isNull())
-			domainBaseDetailModelObject.gmtCreated = value["GmtCreated"].asString();
-		auto allSources = value["Sources"]["Source"];
+	auto domainBaseDetailModelNode = value["DomainBaseDetailModel"];
+	if(!domainBaseDetailModelNode["Cname"].isNull())
+		domainBaseDetailModel_.cname = domainBaseDetailModelNode["Cname"].asString();
+	if(!domainBaseDetailModelNode["CdnType"].isNull())
+		domainBaseDetailModel_.cdnType = domainBaseDetailModelNode["CdnType"].asString();
+	if(!domainBaseDetailModelNode["DomainStatus"].isNull())
+		domainBaseDetailModel_.domainStatus = domainBaseDetailModelNode["DomainStatus"].asString();
+	if(!domainBaseDetailModelNode["SourceType"].isNull())
+		domainBaseDetailModel_.sourceType = domainBaseDetailModelNode["SourceType"].asString();
+	if(!domainBaseDetailModelNode["Region"].isNull())
+		domainBaseDetailModel_.region = domainBaseDetailModelNode["Region"].asString();
+	if(!domainBaseDetailModelNode["DomainName"].isNull())
+		domainBaseDetailModel_.domainName = domainBaseDetailModelNode["DomainName"].asString();
+	if(!domainBaseDetailModelNode["Remark"].isNull())
+		domainBaseDetailModel_.remark = domainBaseDetailModelNode["Remark"].asString();
+	if(!domainBaseDetailModelNode["GmtModified"].isNull())
+		domainBaseDetailModel_.gmtModified = domainBaseDetailModelNode["GmtModified"].asString();
+	if(!domainBaseDetailModelNode["GmtCreated"].isNull())
+		domainBaseDetailModel_.gmtCreated = domainBaseDetailModelNode["GmtCreated"].asString();
+		auto allSources = domainBaseDetailModelNode["Sources"]["Source"];
 		for (auto value : allSources)
-			domainBaseDetailModelObject.sources.push_back(value.asString());
-		domainBaseDetailModel_.push_back(domainBaseDetailModelObject);
-	}
+			domainBaseDetailModel_.sources.push_back(value.asString());
 
 }
 
-std::vector<DescribeCdnDomainBaseDetailResult::DomainBaseDetailModel> DescribeCdnDomainBaseDetailResult::getDomainBaseDetailModel()const
+DescribeCdnDomainBaseDetailResult::DomainBaseDetailModel DescribeCdnDomainBaseDetailResult::getDomainBaseDetailModel()const
 {
 	return domainBaseDetailModel_;
 }

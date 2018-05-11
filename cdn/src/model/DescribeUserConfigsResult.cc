@@ -40,38 +40,23 @@ void DescribeUserConfigsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allConfigs = value["Configs"];
-	for (auto value : allConfigs)
-	{
-		Configs configsObject;
-		auto allOssLogConfig = value["OssLogConfig"];
-		for (auto value : allOssLogConfig)
-		{
-			Configs::OssLogConfig ossLogConfigObject;
-			if(!value["Enable"].isNull())
-				ossLogConfigObject.enable = value["Enable"].asString();
-			if(!value["Bucket"].isNull())
-				ossLogConfigObject.bucket = value["Bucket"].asString();
-			if(!value["Prefix"].isNull())
-				ossLogConfigObject.prefix = value["Prefix"].asString();
-			configsObject.ossLogConfig.push_back(ossLogConfigObject);
-		}
-		auto allGreenManagerConfig = value["GreenManagerConfig"];
-		for (auto value : allGreenManagerConfig)
-		{
-			Configs::GreenManagerConfig greenManagerConfigObject;
-			if(!value["Quota"].isNull())
-				greenManagerConfigObject.quota = value["Quota"].asString();
-			if(!value["Ratio"].isNull())
-				greenManagerConfigObject.ratio = value["Ratio"].asString();
-			configsObject.greenManagerConfig.push_back(greenManagerConfigObject);
-		}
-		configs_.push_back(configsObject);
-	}
+	auto configsNode = value["Configs"];
+	auto ossLogConfigNode = configsNode["OssLogConfig"];
+	if(!ossLogConfigNode["Enable"].isNull())
+		configs_.ossLogConfig.enable = ossLogConfigNode["Enable"].asString();
+	if(!ossLogConfigNode["Bucket"].isNull())
+		configs_.ossLogConfig.bucket = ossLogConfigNode["Bucket"].asString();
+	if(!ossLogConfigNode["Prefix"].isNull())
+		configs_.ossLogConfig.prefix = ossLogConfigNode["Prefix"].asString();
+	auto greenManagerConfigNode = configsNode["GreenManagerConfig"];
+	if(!greenManagerConfigNode["Quota"].isNull())
+		configs_.greenManagerConfig.quota = greenManagerConfigNode["Quota"].asString();
+	if(!greenManagerConfigNode["Ratio"].isNull())
+		configs_.greenManagerConfig.ratio = greenManagerConfigNode["Ratio"].asString();
 
 }
 
-std::vector<DescribeUserConfigsResult::Configs> DescribeUserConfigsResult::getConfigs()const
+DescribeUserConfigsResult::Configs DescribeUserConfigsResult::getConfigs()const
 {
 	return configs_;
 }

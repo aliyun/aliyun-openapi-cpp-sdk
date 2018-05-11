@@ -61,7 +61,7 @@ namespace AlibabaCloud
 				DescribeDomainsUsageByDayResult();
 				explicit DescribeDomainsUsageByDayResult(const std::string &payload);
 				~DescribeDomainsUsageByDayResult();
-				std::vector<UsageTotal> getUsageTotal()const;
+				UsageTotal getUsageTotal()const;
 				std::string getEndTime()const;
 				std::string getDomainName()const;
 				std::string getDataInterval()const;
@@ -71,7 +71,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<UsageTotal> usageTotal_;
+				UsageTotal usageTotal_;
 				std::string endTime_;
 				std::string domainName_;
 				std::string dataInterval_;
