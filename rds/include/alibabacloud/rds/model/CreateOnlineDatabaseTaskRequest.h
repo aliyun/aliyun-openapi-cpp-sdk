@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEIMPORTSFORSQLSERVERREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEIMPORTSFORSQLSERVERREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_CREATEONLINEDATABASETASKREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_CREATEONLINEDATABASETASKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,51 +28,48 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeImportsForSQLServerRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT CreateOnlineDatabaseTaskRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeImportsForSQLServerRequest();
-				~DescribeImportsForSQLServerRequest();
+				CreateOnlineDatabaseTaskRequest();
+				~CreateOnlineDatabaseTaskRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getImportId()const;
-				void setImportId(int importId);
+				std::string getMigrateTaskId()const;
+				void setMigrateTaskId(const std::string& migrateTaskId);
+				std::string getDBName()const;
+				void setDBName(const std::string& dBName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
+				std::string getCheckDBMode()const;
+				void setCheckDBMode(const std::string& checkDBMode);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				long resourceOwnerId_;
-				int importId_;
+				std::string migrateTaskId_;
+				std::string dBName_;
 				std::string resourceOwnerAccount_;
+				std::string clientToken_;
 				std::string ownerAccount_;
-				int pageSize_;
-				std::string endTime_;
 				std::string dBInstanceId_;
-				std::string startTime_;
+				std::string checkDBMode_;
 				long ownerId_;
-				int pageNumber_;
 				std::string accessKeyId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEIMPORTSFORSQLSERVERREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_CREATEONLINEDATABASETASKREQUEST_H_

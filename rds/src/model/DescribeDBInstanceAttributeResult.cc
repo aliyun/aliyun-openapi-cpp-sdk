@@ -140,6 +140,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.zoneId = value["ZoneId"].asString();
 		if(!value["InstanceNetworkType"].isNull())
 			itemsObject.instanceNetworkType = value["InstanceNetworkType"].asString();
+		if(!value["DBInstanceStorageType"].isNull())
+			itemsObject.dBInstanceStorageType = value["DBInstanceStorageType"].asString();
 		if(!value["AdvancedFeatures"].isNull())
 			itemsObject.advancedFeatures = value["AdvancedFeatures"].asString();
 		if(!value["Category"].isNull())
@@ -148,6 +150,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.accountType = value["AccountType"].asString();
 		if(!value["SupportUpgradeAccountType"].isNull())
 			itemsObject.supportUpgradeAccountType = value["SupportUpgradeAccountType"].asString();
+		if(!value["SupportCreateSuperAccount"].isNull())
+			itemsObject.supportCreateSuperAccount = value["SupportCreateSuperAccount"].asString();
 		if(!value["VpcId"].isNull())
 			itemsObject.vpcId = value["VpcId"].asString();
 		if(!value["VSwitchId"].isNull())

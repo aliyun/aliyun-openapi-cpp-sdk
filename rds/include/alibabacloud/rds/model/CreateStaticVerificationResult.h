@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEIMPORTSFORSQLSERVERRESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEIMPORTSFORSQLSERVERRESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_CREATESTATICVERIFICATIONRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_CREATESTATICVERIFICATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeImportsForSQLServerResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT CreateStaticVerificationResult : public ServiceResult
 			{
 			public:
-				struct SQLServerImport
-				{
-					std::string importStatus;
-					std::string fileName;
-					std::string startTime;
-					std::string dBName;
-					int importId;
-				};
 
 
-				DescribeImportsForSQLServerResult();
-				explicit DescribeImportsForSQLServerResult(const std::string &payload);
-				~DescribeImportsForSQLServerResult();
-				int getTotalRecordCounts()const;
-				int getPageNumber()const;
-				std::vector<SQLServerImport> getItems()const;
-				int getSQLItemsCounts()const;
+				CreateStaticVerificationResult();
+				explicit CreateStaticVerificationResult(const std::string &payload);
+				~CreateStaticVerificationResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalRecordCounts_;
-				int pageNumber_;
-				std::vector<SQLServerImport> items_;
-				int sQLItemsCounts_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEIMPORTSFORSQLSERVERRESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_CREATESTATICVERIFICATIONRESULT_H_

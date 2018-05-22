@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_CREATEUPLOADPATHFORSQLSERVERREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_CREATEUPLOADPATHFORSQLSERVERREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEVERIFICATIONLISTREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEVERIFICATIONLISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,54 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT CreateUploadPathForSQLServerRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT DescribeVerificationListRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateUploadPathForSQLServerRequest();
-				~CreateUploadPathForSQLServerRequest();
+				DescribeVerificationListRequest();
+				~DescribeVerificationListRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getDBName()const;
-				void setDBName(const std::string& dBName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getReplicaId()const;
+				void setReplicaId(const std::string& replicaId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
 				long resourceOwnerId_;
-				std::string dBName_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string dBInstanceId_;
+				std::string endTime_;
+				std::string startTime_;
 				long ownerId_;
+				int pageNumber_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string regionId_;
+				std::string replicaId_;
+				int pageSize_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_CREATEUPLOADPATHFORSQLSERVERREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEVERIFICATIONLISTREQUEST_H_

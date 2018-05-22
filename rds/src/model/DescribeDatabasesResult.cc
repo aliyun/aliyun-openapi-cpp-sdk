@@ -64,6 +64,8 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 				accountsObject.account = value["Account"].asString();
 			if(!value["AccountPrivilege"].isNull())
 				accountsObject.accountPrivilege = value["AccountPrivilege"].asString();
+			if(!value["AccountPrivilegeDetail"].isNull())
+				accountsObject.accountPrivilegeDetail = value["AccountPrivilegeDetail"].asString();
 			databasesObject.accounts.push_back(accountsObject);
 		}
 		databases_.push_back(databasesObject);

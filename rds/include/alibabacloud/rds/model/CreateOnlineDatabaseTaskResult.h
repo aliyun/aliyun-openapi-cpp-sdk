@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_CREATEUPLOADPATHFORSQLSERVERRESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_CREATEUPLOADPATHFORSQLSERVERRESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_CREATEONLINEDATABASETASKRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_CREATEONLINEDATABASETASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT CreateUploadPathForSQLServerResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT CreateOnlineDatabaseTaskResult : public ServiceResult
 			{
 			public:
 
 
-				CreateUploadPathForSQLServerResult();
-				explicit CreateUploadPathForSQLServerResult(const std::string &payload);
-				~CreateUploadPathForSQLServerResult();
-				std::string getIntranetFtpserver()const;
-				std::string getUserName()const;
-				std::string getFileName()const;
-				int getInternetPort()const;
-				std::string getInternetFtpServer()const;
-				int getIntranetport()const;
-				std::string getPassword()const;
+				CreateOnlineDatabaseTaskResult();
+				explicit CreateOnlineDatabaseTaskResult(const std::string &payload);
+				~CreateOnlineDatabaseTaskResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string intranetFtpserver_;
-				std::string userName_;
-				std::string fileName_;
-				int internetPort_;
-				std::string internetFtpServer_;
-				int intranetport_;
-				std::string password_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_CREATEUPLOADPATHFORSQLSERVERRESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_CREATEONLINEDATABASETASKRESULT_H_

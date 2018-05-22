@@ -38,9 +38,11 @@ namespace AlibabaCloud
 					{
 						std::string accountPrivilege;
 						std::string dBName;
+						std::string accountPrivilegeDetail;
 					};
 					std::string accountDescription;
 					std::string accountStatus;
+					std::string privExceeded;
 					std::string dBInstanceId;
 					std::string accountType;
 					std::vector<DBInstanceAccount::DatabasePrivilege> databasePrivileges;

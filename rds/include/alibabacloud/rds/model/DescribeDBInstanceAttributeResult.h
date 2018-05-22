@@ -64,6 +64,7 @@ namespace AlibabaCloud
 					std::string payType;
 					std::string lockMode;
 					std::string guardDBInstanceId;
+					std::string supportCreateSuperAccount;
 					int insId;
 					std::string vpcId;
 					std::string masterInstanceId;
@@ -90,6 +91,7 @@ namespace AlibabaCloud
 					std::string maintainTime;
 					std::string zoneId;
 					std::string tempUpgradeRecoveryTime;
+					std::string dBInstanceStorageType;
 					std::string accountType;
 					int maxIOPS;
 					std::string supportUpgradeAccountType;

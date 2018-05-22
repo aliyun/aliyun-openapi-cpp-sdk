@@ -48,6 +48,8 @@ void DescribeOssDownloadsResult::parse(const std::string &payload)
 			itemsObject.fileName = value["FileName"].asString();
 		if(!value["CreateTime"].isNull())
 			itemsObject.createTime = value["CreateTime"].asString();
+		if(!value["EndTime"].isNull())
+			itemsObject.endTime = value["EndTime"].asString();
 		if(!value["BackupMode"].isNull())
 			itemsObject.backupMode = value["BackupMode"].asString();
 		if(!value["FileSize"].isNull())

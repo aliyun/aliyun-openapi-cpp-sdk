@@ -146,6 +146,28 @@ void CreateDBInstanceRequest::setDBInstanceDescription(const std::string& dBInst
 	setParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
+std::string CreateDBInstanceRequest::getDBInstanceStorageType()const
+{
+	return dBInstanceStorageType_;
+}
+
+void CreateDBInstanceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
+{
+	dBInstanceStorageType_ = dBInstanceStorageType;
+	setParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
+std::string CreateDBInstanceRequest::getBusinessInfo()const
+{
+	return businessInfo_;
+}
+
+void CreateDBInstanceRequest::setBusinessInfo(const std::string& businessInfo)
+{
+	businessInfo_ = businessInfo;
+	setParameter("BusinessInfo", businessInfo);
+}
+
 std::string CreateDBInstanceRequest::getDBInstanceNetType()const
 {
 	return dBInstanceNetType_;

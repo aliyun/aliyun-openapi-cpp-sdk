@@ -52,49 +52,39 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 			rulesObject.description = value["Description"].asString();
 		rules_.push_back(rulesObject);
 	}
-	auto allPriceInfo = value["PriceInfo"];
-	for (auto value : allPriceInfo)
+	auto priceInfoNode = value["PriceInfo"];
+	if(!priceInfoNode["Currency"].isNull())
+		priceInfo_.currency = priceInfoNode["Currency"].asString();
+	if(!priceInfoNode["OriginalPrice"].isNull())
+		priceInfo_.originalPrice = std::stof(priceInfoNode["OriginalPrice"].asString());
+	if(!priceInfoNode["TradePrice"].isNull())
+		priceInfo_.tradePrice = std::stof(priceInfoNode["TradePrice"].asString());
+	if(!priceInfoNode["DiscountPrice"].isNull())
+		priceInfo_.discountPrice = std::stof(priceInfoNode["DiscountPrice"].asString());
+	auto allCoupons = value["Coupons"]["Coupon"];
+	for (auto value : allCoupons)
 	{
-		PriceInfo priceInfoObject;
-		if(!value["Currency"].isNull())
-			priceInfoObject.currency = value["Currency"].asString();
-		if(!value["OriginalPrice"].isNull())
-			priceInfoObject.originalPrice = std::stof(value["OriginalPrice"].asString());
-		if(!value["TradePrice"].isNull())
-			priceInfoObject.tradePrice = std::stof(value["TradePrice"].asString());
-		if(!value["DiscountPrice"].isNull())
-			priceInfoObject.discountPrice = std::stof(value["DiscountPrice"].asString());
-		auto allCoupons = value["Coupons"]["Coupon"];
-		for (auto value : allCoupons)
-		{
-			PriceInfo::Coupon couponObject;
-			if(!value["CouponNo"].isNull())
-				couponObject.couponNo = value["CouponNo"].asString();
-			if(!value["Name"].isNull())
-				couponObject.name = value["Name"].asString();
-			if(!value["Description"].isNull())
-				couponObject.description = value["Description"].asString();
-			if(!value["IsSelected"].isNull())
-				couponObject.isSelected = value["IsSelected"].asString();
-			priceInfoObject.coupons.push_back(couponObject);
-		}
-		auto allActivityInfo = value["ActivityInfo"];
-		for (auto value : allActivityInfo)
-		{
-			PriceInfo::ActivityInfo activityInfoObject;
-			if(!value["CheckErrMsg"].isNull())
-				activityInfoObject.checkErrMsg = value["CheckErrMsg"].asString();
-			if(!value["ErrorCode"].isNull())
-				activityInfoObject.errorCode = value["ErrorCode"].asString();
-			if(!value["Success"].isNull())
-				activityInfoObject.success = value["Success"].asString();
-			priceInfoObject.activityInfo.push_back(activityInfoObject);
-		}
-		auto allRuleIds = value["RuleIds"]["RuleId"];
-		for (auto value : allRuleIds)
-			priceInfoObject.ruleIds.push_back(value.asString());
-		priceInfo_.push_back(priceInfoObject);
+		PriceInfo::Coupon couponObject;
+		if(!value["CouponNo"].isNull())
+			couponObject.couponNo = value["CouponNo"].asString();
+		if(!value["Name"].isNull())
+			couponObject.name = value["Name"].asString();
+		if(!value["Description"].isNull())
+			couponObject.description = value["Description"].asString();
+		if(!value["IsSelected"].isNull())
+			couponObject.isSelected = value["IsSelected"].asString();
+		priceInfo_.coupons.push_back(couponObject);
 	}
+	auto activityInfoNode = priceInfoNode["ActivityInfo"];
+	if(!activityInfoNode["CheckErrMsg"].isNull())
+		priceInfo_.activityInfo.checkErrMsg = activityInfoNode["CheckErrMsg"].asString();
+	if(!activityInfoNode["ErrorCode"].isNull())
+		priceInfo_.activityInfo.errorCode = activityInfoNode["ErrorCode"].asString();
+	if(!activityInfoNode["Success"].isNull())
+		priceInfo_.activityInfo.success = activityInfoNode["Success"].asString();
+		auto allRuleIds = priceInfoNode["RuleIds"]["RuleId"];
+		for (auto value : allRuleIds)
+			priceInfo_.ruleIds.push_back(value.asString());
 
 }
 
@@ -103,7 +93,7 @@ std::vector<DescribeRenewalPriceResult::Rule> DescribeRenewalPriceResult::getRul
 	return rules_;
 }
 
-std::vector<DescribeRenewalPriceResult::PriceInfo> DescribeRenewalPriceResult::getPriceInfo()const
+DescribeRenewalPriceResult::PriceInfo DescribeRenewalPriceResult::getPriceInfo()const
 {
 	return priceInfo_;
 }

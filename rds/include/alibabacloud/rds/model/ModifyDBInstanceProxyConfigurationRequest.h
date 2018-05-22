@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEFILESFORSQLSERVERREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEFILESFORSQLSERVERREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEPROXYCONFIGURATIONREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEPROXYCONFIGURATIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeFilesForSQLServerRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT ModifyDBInstanceProxyConfigurationRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeFilesForSQLServerRequest();
-				~DescribeFilesForSQLServerRequest();
+				ModifyDBInstanceProxyConfigurationRequest();
+				~ModifyDBInstanceProxyConfigurationRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
+				std::string getProxyConfigurationKey()const;
+				void setProxyConfigurationKey(const std::string& proxyConfigurationKey);
+				std::string getProxyConfigurationValue()const;
+				void setProxyConfigurationValue(const std::string& proxyConfigurationValue);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				int pageSize_;
-				std::string endTime_;
+				std::string proxyConfigurationKey_;
+				std::string proxyConfigurationValue_;
 				std::string dBInstanceId_;
-				std::string startTime_;
 				long ownerId_;
-				int pageNumber_;
 				std::string accessKeyId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEFILESFORSQLSERVERREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEPROXYCONFIGURATIONREQUEST_H_
