@@ -64,20 +64,17 @@ void ListJobsResult::parse(const std::string &payload)
 			jobsObject._stdout = value["Stdout"].asString();
 		if(!value["Stderr"].isNull())
 			jobsObject._stderr = value["Stderr"].asString();
+		if(!value["ShellPath"].isNull())
+			jobsObject.shellPath = value["ShellPath"].asString();
 		if(!value["Comment"].isNull())
 			jobsObject.comment = value["Comment"].asString();
 		if(!value["ArrayRequest"].isNull())
 			jobsObject.arrayRequest = value["ArrayRequest"].asString();
-		auto allResources = value["Resources"];
-		for (auto value : allResources)
-		{
-			JobInfo::Resources resourcesObject;
-			if(!value["Nodes"].isNull())
-				resourcesObject.nodes = std::stoi(value["Nodes"].asString());
-			if(!value["Cores"].isNull())
-				resourcesObject.cores = std::stoi(value["Cores"].asString());
-			jobsObject.resources.push_back(resourcesObject);
-		}
+		auto resourcesNode = value["Resources"];
+		if(!resourcesNode["Nodes"].isNull())
+			jobsObject.resources.nodes = std::stoi(resourcesNode["Nodes"].asString());
+		if(!resourcesNode["Cores"].isNull())
+			jobsObject.resources.cores = std::stoi(resourcesNode["Cores"].asString());
 		jobs_.push_back(jobsObject);
 	}
 	if(!value["TotalCount"].isNull())

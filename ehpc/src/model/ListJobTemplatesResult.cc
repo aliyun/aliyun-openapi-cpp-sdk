@@ -54,8 +54,8 @@ void ListJobTemplatesResult::parse(const std::string &payload)
 			templatesObject.runasUser = value["RunasUser"].asString();
 		if(!value["Priority"].isNull())
 			templatesObject.priority = std::stoi(value["Priority"].asString());
-		if(!value["Package"].isNull())
-			templatesObject.package = value["Package"].asString();
+		if(!value["PackagePath"].isNull())
+			templatesObject.packagePath = value["PackagePath"].asString();
 		if(!value["StdoutRedirectPath"].isNull())
 			templatesObject.stdoutRedirectPath = value["StdoutRedirectPath"].asString();
 		if(!value["StderrRedirectPath"].isNull())

@@ -19,11 +19,33 @@
 using AlibabaCloud::EHPC::Model::AddNodesRequest;
 
 AddNodesRequest::AddNodesRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "AddNodes")
+	RpcServiceRequest("ehpc", "2018-04-12", "AddNodes")
 {}
 
 AddNodesRequest::~AddNodesRequest()
 {}
+
+int AddNodesRequest::getAutoRenewPeriod()const
+{
+	return autoRenewPeriod_;
+}
+
+void AddNodesRequest::setAutoRenewPeriod(int autoRenewPeriod)
+{
+	autoRenewPeriod_ = autoRenewPeriod;
+	setParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+}
+
+int AddNodesRequest::getPeriod()const
+{
+	return period_;
+}
+
+void AddNodesRequest::setPeriod(int period)
+{
+	period_ = period;
+	setParameter("Period", std::to_string(period));
+}
 
 std::string AddNodesRequest::getImageId()const
 {
@@ -69,17 +91,6 @@ void AddNodesRequest::setComputeSpotStrategy(const std::string& computeSpotStrat
 	setParameter("ComputeSpotStrategy", computeSpotStrategy);
 }
 
-std::string AddNodesRequest::getComputeSpotPriceLimit()const
-{
-	return computeSpotPriceLimit_;
-}
-
-void AddNodesRequest::setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit)
-{
-	computeSpotPriceLimit_ = computeSpotPriceLimit;
-	setParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
-}
-
 std::string AddNodesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -100,5 +111,49 @@ void AddNodesRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
 {
 	imageOwnerAlias_ = imageOwnerAlias;
 	setParameter("ImageOwnerAlias", imageOwnerAlias);
+}
+
+std::string AddNodesRequest::getPeriodUnit()const
+{
+	return periodUnit_;
+}
+
+void AddNodesRequest::setPeriodUnit(const std::string& periodUnit)
+{
+	periodUnit_ = periodUnit;
+	setParameter("PeriodUnit", periodUnit);
+}
+
+std::string AddNodesRequest::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+void AddNodesRequest::setAutoRenew(const std::string& autoRenew)
+{
+	autoRenew_ = autoRenew;
+	setParameter("AutoRenew", autoRenew);
+}
+
+std::string AddNodesRequest::getEcsChargeType()const
+{
+	return ecsChargeType_;
+}
+
+void AddNodesRequest::setEcsChargeType(const std::string& ecsChargeType)
+{
+	ecsChargeType_ = ecsChargeType;
+	setParameter("EcsChargeType", ecsChargeType);
+}
+
+std::string AddNodesRequest::getComputeSpotPriceLimit()const
+{
+	return computeSpotPriceLimit_;
+}
+
+void AddNodesRequest::setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit)
+{
+	computeSpotPriceLimit_ = computeSpotPriceLimit;
+	setParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
 }
 

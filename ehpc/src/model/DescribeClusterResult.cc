@@ -40,110 +40,87 @@ void DescribeClusterResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allClusterInfo = value["ClusterInfo"];
-	for (auto value : allClusterInfo)
+	auto clusterInfoNode = value["ClusterInfo"];
+	if(!clusterInfoNode["Id"].isNull())
+		clusterInfo_.id = clusterInfoNode["Id"].asString();
+	if(!clusterInfoNode["RegionId"].isNull())
+		clusterInfo_.regionId = clusterInfoNode["RegionId"].asString();
+	if(!clusterInfoNode["Name"].isNull())
+		clusterInfo_.name = clusterInfoNode["Name"].asString();
+	if(!clusterInfoNode["Description"].isNull())
+		clusterInfo_.description = clusterInfoNode["Description"].asString();
+	if(!clusterInfoNode["Status"].isNull())
+		clusterInfo_.status = clusterInfoNode["Status"].asString();
+	if(!clusterInfoNode["OsTag"].isNull())
+		clusterInfo_.osTag = clusterInfoNode["OsTag"].asString();
+	if(!clusterInfoNode["AccountType"].isNull())
+		clusterInfo_.accountType = clusterInfoNode["AccountType"].asString();
+	if(!clusterInfoNode["SchedulerType"].isNull())
+		clusterInfo_.schedulerType = clusterInfoNode["SchedulerType"].asString();
+	if(!clusterInfoNode["CreateTime"].isNull())
+		clusterInfo_.createTime = clusterInfoNode["CreateTime"].asString();
+	if(!clusterInfoNode["SecurityGroupId"].isNull())
+		clusterInfo_.securityGroupId = clusterInfoNode["SecurityGroupId"].asString();
+	if(!clusterInfoNode["VSwitchId"].isNull())
+		clusterInfo_.vSwitchId = clusterInfoNode["VSwitchId"].asString();
+	if(!clusterInfoNode["VolumeType"].isNull())
+		clusterInfo_.volumeType = clusterInfoNode["VolumeType"].asString();
+	if(!clusterInfoNode["VolumeId"].isNull())
+		clusterInfo_.volumeId = clusterInfoNode["VolumeId"].asString();
+	if(!clusterInfoNode["VolumeProtocol"].isNull())
+		clusterInfo_.volumeProtocol = clusterInfoNode["VolumeProtocol"].asString();
+	if(!clusterInfoNode["VolumeMountpoint"].isNull())
+		clusterInfo_.volumeMountpoint = clusterInfoNode["VolumeMountpoint"].asString();
+	if(!clusterInfoNode["RemoteDirectory"].isNull())
+		clusterInfo_.remoteDirectory = clusterInfoNode["RemoteDirectory"].asString();
+	if(!clusterInfoNode["DeployMode"].isNull())
+		clusterInfo_.deployMode = clusterInfoNode["DeployMode"].asString();
+	if(!clusterInfoNode["HaEnable"].isNull())
+		clusterInfo_.haEnable = clusterInfoNode["HaEnable"].asString() == "true";
+	if(!clusterInfoNode["EcsChargeType"].isNull())
+		clusterInfo_.ecsChargeType = clusterInfoNode["EcsChargeType"].asString();
+	if(!clusterInfoNode["KeyPairName"].isNull())
+		clusterInfo_.keyPairName = clusterInfoNode["KeyPairName"].asString();
+	if(!clusterInfoNode["SccClusterId"].isNull())
+		clusterInfo_.sccClusterId = clusterInfoNode["SccClusterId"].asString();
+	if(!clusterInfoNode["ClientVersion"].isNull())
+		clusterInfo_.clientVersion = clusterInfoNode["ClientVersion"].asString();
+	if(!clusterInfoNode["ImageOwnerAlias"].isNull())
+		clusterInfo_.imageOwnerAlias = clusterInfoNode["ImageOwnerAlias"].asString();
+	if(!clusterInfoNode["ImageId"].isNull())
+		clusterInfo_.imageId = clusterInfoNode["ImageId"].asString();
+	auto allApplications = value["Applications"]["ApplicationInfo"];
+	for (auto value : allApplications)
 	{
-		ClusterInfo clusterInfoObject;
-		if(!value["Id"].isNull())
-			clusterInfoObject.id = value["Id"].asString();
-		if(!value["RegionId"].isNull())
-			clusterInfoObject.regionId = value["RegionId"].asString();
+		ClusterInfo::ApplicationInfo applicationInfoObject;
+		if(!value["Tag"].isNull())
+			applicationInfoObject.tag = value["Tag"].asString();
 		if(!value["Name"].isNull())
-			clusterInfoObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			clusterInfoObject.description = value["Description"].asString();
-		if(!value["Status"].isNull())
-			clusterInfoObject.status = value["Status"].asString();
-		if(!value["OsTag"].isNull())
-			clusterInfoObject.osTag = value["OsTag"].asString();
-		if(!value["AccountType"].isNull())
-			clusterInfoObject.accountType = value["AccountType"].asString();
-		if(!value["SchedulerType"].isNull())
-			clusterInfoObject.schedulerType = value["SchedulerType"].asString();
-		if(!value["CreateTime"].isNull())
-			clusterInfoObject.createTime = value["CreateTime"].asString();
-		if(!value["SecurityGroupId"].isNull())
-			clusterInfoObject.securityGroupId = value["SecurityGroupId"].asString();
-		if(!value["VSwitchId"].isNull())
-			clusterInfoObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["VolumeType"].isNull())
-			clusterInfoObject.volumeType = value["VolumeType"].asString();
-		if(!value["VolumeId"].isNull())
-			clusterInfoObject.volumeId = value["VolumeId"].asString();
-		if(!value["VolumeProtocol"].isNull())
-			clusterInfoObject.volumeProtocol = value["VolumeProtocol"].asString();
-		if(!value["VolumeMountpoint"].isNull())
-			clusterInfoObject.volumeMountpoint = value["VolumeMountpoint"].asString();
-		if(!value["RemoteDirectory"].isNull())
-			clusterInfoObject.remoteDirectory = value["RemoteDirectory"].asString();
-		if(!value["HaEnable"].isNull())
-			clusterInfoObject.haEnable = value["HaEnable"].asString() == "true";
-		if(!value["EcsChargeType"].isNull())
-			clusterInfoObject.ecsChargeType = value["EcsChargeType"].asString();
-		if(!value["KeyPairName"].isNull())
-			clusterInfoObject.keyPairName = value["KeyPairName"].asString();
-		if(!value["SccClusterId"].isNull())
-			clusterInfoObject.sccClusterId = value["SccClusterId"].asString();
-		if(!value["ClientVersion"].isNull())
-			clusterInfoObject.clientVersion = value["ClientVersion"].asString();
-		if(!value["ImageOwnerAlias"].isNull())
-			clusterInfoObject.imageOwnerAlias = value["ImageOwnerAlias"].asString();
-		if(!value["ImageId"].isNull())
-			clusterInfoObject.imageId = value["ImageId"].asString();
-		auto allApplicationInfo = value["ApplicationInfo"]["ApplicationInfoItem"];
-		for (auto value : allApplicationInfo)
-		{
-			ClusterInfo::ApplicationInfoItem applicationInfoItemObject;
-			if(!value["Tag"].isNull())
-				applicationInfoItemObject.tag = value["Tag"].asString();
-			if(!value["Name"].isNull())
-				applicationInfoItemObject.name = value["Name"].asString();
-			if(!value["Version"].isNull())
-				applicationInfoItemObject.version = value["Version"].asString();
-			clusterInfoObject.applicationInfo.push_back(applicationInfoItemObject);
-		}
-		auto allEcsInfo = value["EcsInfo"];
-		for (auto value : allEcsInfo)
-		{
-			ClusterInfo::EcsInfo ecsInfoObject;
-			auto allManager = value["Manager"];
-			for (auto value : allManager)
-			{
-				ClusterInfo::EcsInfo::Manager managerObject;
-				if(!value["Count"].isNull())
-					managerObject.count = std::stoi(value["Count"].asString());
-				if(!value["InstanceType"].isNull())
-					managerObject.instanceType = value["InstanceType"].asString();
-				ecsInfoObject.manager.push_back(managerObject);
-			}
-			auto allCompute = value["Compute"];
-			for (auto value : allCompute)
-			{
-				ClusterInfo::EcsInfo::Compute computeObject;
-				if(!value["Count"].isNull())
-					computeObject.count = std::stoi(value["Count"].asString());
-				if(!value["InstanceType"].isNull())
-					computeObject.instanceType = value["InstanceType"].asString();
-				ecsInfoObject.compute.push_back(computeObject);
-			}
-			auto allLogin = value["Login"];
-			for (auto value : allLogin)
-			{
-				ClusterInfo::EcsInfo::Login loginObject;
-				if(!value["Count"].isNull())
-					loginObject.count = std::stoi(value["Count"].asString());
-				if(!value["InstanceType"].isNull())
-					loginObject.instanceType = value["InstanceType"].asString();
-				ecsInfoObject.login.push_back(loginObject);
-			}
-			clusterInfoObject.ecsInfo.push_back(ecsInfoObject);
-		}
-		clusterInfo_.push_back(clusterInfoObject);
+			applicationInfoObject.name = value["Name"].asString();
+		if(!value["Version"].isNull())
+			applicationInfoObject.version = value["Version"].asString();
+		clusterInfo_.applications.push_back(applicationInfoObject);
 	}
+	auto ecsInfoNode = clusterInfoNode["EcsInfo"];
+	auto managerNode = ecsInfoNode["Manager"];
+	if(!managerNode["Count"].isNull())
+		clusterInfo_.ecsInfo.manager.count = std::stoi(managerNode["Count"].asString());
+	if(!managerNode["InstanceType"].isNull())
+		clusterInfo_.ecsInfo.manager.instanceType = managerNode["InstanceType"].asString();
+	auto computeNode = ecsInfoNode["Compute"];
+	if(!computeNode["Count"].isNull())
+		clusterInfo_.ecsInfo.compute.count = std::stoi(computeNode["Count"].asString());
+	if(!computeNode["InstanceType"].isNull())
+		clusterInfo_.ecsInfo.compute.instanceType = computeNode["InstanceType"].asString();
+	auto loginNode = ecsInfoNode["Login"];
+	if(!loginNode["Count"].isNull())
+		clusterInfo_.ecsInfo.login.count = std::stoi(loginNode["Count"].asString());
+	if(!loginNode["InstanceType"].isNull())
+		clusterInfo_.ecsInfo.login.instanceType = loginNode["InstanceType"].asString();
 
 }
 
-std::vector<DescribeClusterResult::ClusterInfo> DescribeClusterResult::getClusterInfo()const
+DescribeClusterResult::ClusterInfo DescribeClusterResult::getClusterInfo()const
 {
 	return clusterInfo_;
 }

@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::CreateJobTemplateRequest;
 
 CreateJobTemplateRequest::CreateJobTemplateRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "CreateJobTemplate")
+	RpcServiceRequest("ehpc", "2018-04-12", "CreateJobTemplate")
 {}
 
 CreateJobTemplateRequest::~CreateJobTemplateRequest()

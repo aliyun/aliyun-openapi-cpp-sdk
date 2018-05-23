@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::ListCustomImagesRequest;
 
 ListCustomImagesRequest::ListCustomImagesRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "ListCustomImages")
+	RpcServiceRequest("ehpc", "2018-04-12", "ListCustomImages")
 {}
 
 ListCustomImagesRequest::~ListCustomImagesRequest()

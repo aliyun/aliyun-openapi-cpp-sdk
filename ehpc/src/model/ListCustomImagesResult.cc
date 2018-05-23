@@ -44,6 +44,8 @@ void ListCustomImagesResult::parse(const std::string &payload)
 	for (auto value : allImages)
 	{
 		ImageInfo imagesObject;
+		if(!value["Uid"].isNull())
+			imagesObject.uid = value["Uid"].asString();
 		if(!value["ImageId"].isNull())
 			imagesObject.imageId = value["ImageId"].asString();
 		if(!value["ImageName"].isNull())
@@ -52,20 +54,25 @@ void ListCustomImagesResult::parse(const std::string &payload)
 			imagesObject.imageOwnerAlias = value["ImageOwnerAlias"].asString();
 		if(!value["Description"].isNull())
 			imagesObject.description = value["Description"].asString();
-		auto allBaseOsTag = value["BaseOsTag"];
-		for (auto value : allBaseOsTag)
-		{
-			ImageInfo::BaseOsTag baseOsTagObject;
-			if(!value["OsTag"].isNull())
-				baseOsTagObject.osTag = value["OsTag"].asString();
-			if(!value["Platform"].isNull())
-				baseOsTagObject.platform = value["Platform"].asString();
-			if(!value["Version"].isNull())
-				baseOsTagObject.version = value["Version"].asString();
-			if(!value["Architecture"].isNull())
-				baseOsTagObject.architecture = value["Architecture"].asString();
-			imagesObject.baseOsTag.push_back(baseOsTagObject);
-		}
+		if(!value["Status"].isNull())
+			imagesObject.status = value["Status"].asString();
+		if(!value["ProductCode"].isNull())
+			imagesObject.productCode = value["ProductCode"].asString();
+		if(!value["SkuCode"].isNull())
+			imagesObject.skuCode = value["SkuCode"].asString();
+		if(!value["PricingCycle"].isNull())
+			imagesObject.pricingCycle = value["PricingCycle"].asString();
+		if(!value["PostInstallScript"].isNull())
+			imagesObject.postInstallScript = value["PostInstallScript"].asString();
+		auto baseOsTagNode = value["BaseOsTag"];
+		if(!baseOsTagNode["OsTag"].isNull())
+			imagesObject.baseOsTag.osTag = baseOsTagNode["OsTag"].asString();
+		if(!baseOsTagNode["Platform"].isNull())
+			imagesObject.baseOsTag.platform = baseOsTagNode["Platform"].asString();
+		if(!baseOsTagNode["Version"].isNull())
+			imagesObject.baseOsTag.version = baseOsTagNode["Version"].asString();
+		if(!baseOsTagNode["Architecture"].isNull())
+			imagesObject.baseOsTag.architecture = baseOsTagNode["Architecture"].asString();
 		images_.push_back(imagesObject);
 	}
 

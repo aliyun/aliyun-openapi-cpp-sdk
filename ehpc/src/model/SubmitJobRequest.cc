@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::SubmitJobRequest;
 
 SubmitJobRequest::SubmitJobRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "SubmitJob")
+	RpcServiceRequest("ehpc", "2018-04-12", "SubmitJob")
 {}
 
 SubmitJobRequest::~SubmitJobRequest()

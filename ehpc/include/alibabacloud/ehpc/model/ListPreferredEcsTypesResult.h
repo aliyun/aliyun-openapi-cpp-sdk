@@ -42,7 +42,7 @@ namespace AlibabaCloud
 					};
 					std::string seriesId;
 					std::string seriesName;
-					std::vector<Roles> roles;
+					Roles roles;
 				};
 
 
@@ -50,11 +50,13 @@ namespace AlibabaCloud
 				explicit ListPreferredEcsTypesResult(const std::string &payload);
 				~ListPreferredEcsTypesResult();
 				std::vector<SeriesInfo> getSeries()const;
+				bool getSupportSpotInstance()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<SeriesInfo> series_;
+				bool supportSpotInstance_;
 
 			};
 		}

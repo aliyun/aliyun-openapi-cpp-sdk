@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::ModifyUserPasswordsRequest;
 
 ModifyUserPasswordsRequest::ModifyUserPasswordsRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "ModifyUserPasswords")
+	RpcServiceRequest("ehpc", "2018-04-12", "ModifyUserPasswords")
 {}
 
 ModifyUserPasswordsRequest::~ModifyUserPasswordsRequest()

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setVariables(const std::string& variables);
 				std::string getRunasUser()const;
 				void setRunasUser(const std::string& runasUser);
+				bool getReRunable()const;
+				void setReRunable(bool reRunable);
 				std::string getTemplateId()const;
 				void setTemplateId(const std::string& templateId);
 				int getPriority()const;
@@ -53,8 +55,6 @@ namespace AlibabaCloud
 				void setArrayRequest(const std::string& arrayRequest);
 				std::string getPackagePath()const;
 				void setPackagePath(const std::string& packagePath);
-				bool getReRunnable()const;
-				void setReRunnable(bool reRunnable);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getName()const;
@@ -66,13 +66,13 @@ namespace AlibabaCloud
 				std::string stderrRedirectPath_;
 				std::string variables_;
 				std::string runasUser_;
+				bool reRunable_;
 				std::string templateId_;
 				int priority_;
 				std::string commandLine_;
 				std::string accessKeyId_;
 				std::string arrayRequest_;
 				std::string packagePath_;
-				bool reRunnable_;
 				std::string regionId_;
 				std::string name_;
 				std::string stdoutRedirectPath_;

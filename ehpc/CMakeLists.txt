@@ -29,6 +29,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/ListUsersResult.h
 	include/alibabacloud/ehpc/model/UpgradeClientRequest.h
 	include/alibabacloud/ehpc/model/UpgradeClientResult.h
+	include/alibabacloud/ehpc/model/StopNodesRequest.h
+	include/alibabacloud/ehpc/model/StopNodesResult.h
 	include/alibabacloud/ehpc/model/ListCurrentClientVersionRequest.h
 	include/alibabacloud/ehpc/model/ListCurrentClientVersionResult.h
 	include/alibabacloud/ehpc/model/DeleteClusterRequest.h
@@ -45,6 +47,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/ListSoftwaresResult.h
 	include/alibabacloud/ehpc/model/StopJobsRequest.h
 	include/alibabacloud/ehpc/model/StopJobsResult.h
+	include/alibabacloud/ehpc/model/StartNodesRequest.h
+	include/alibabacloud/ehpc/model/StartNodesResult.h
 	include/alibabacloud/ehpc/model/GetAutoScaleConfigRequest.h
 	include/alibabacloud/ehpc/model/GetAutoScaleConfigResult.h
 	include/alibabacloud/ehpc/model/ListNodesRequest.h
@@ -53,6 +57,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/SetJobUserResult.h
 	include/alibabacloud/ehpc/model/ModifyUserGroupsRequest.h
 	include/alibabacloud/ehpc/model/ModifyUserGroupsResult.h
+	include/alibabacloud/ehpc/model/StartClusterRequest.h
+	include/alibabacloud/ehpc/model/StartClusterResult.h
 	include/alibabacloud/ehpc/model/ListClustersRequest.h
 	include/alibabacloud/ehpc/model/ListClustersResult.h
 	include/alibabacloud/ehpc/model/SubmitJobRequest.h
@@ -69,6 +75,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/ModifyClusterAttributesResult.h
 	include/alibabacloud/ehpc/model/DeleteJobTemplatesRequest.h
 	include/alibabacloud/ehpc/model/DeleteJobTemplatesResult.h
+	include/alibabacloud/ehpc/model/StopClusterRequest.h
+	include/alibabacloud/ehpc/model/StopClusterResult.h
 	include/alibabacloud/ehpc/model/ListNodesNoPagingRequest.h
 	include/alibabacloud/ehpc/model/ListNodesNoPagingResult.h
 	include/alibabacloud/ehpc/model/CreateJobTemplateRequest.h
@@ -83,6 +91,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/ListPreferredEcsTypesResult.h
 	include/alibabacloud/ehpc/model/ListClusterLogsRequest.h
 	include/alibabacloud/ehpc/model/ListClusterLogsResult.h
+	include/alibabacloud/ehpc/model/RecoverClusterRequest.h
+	include/alibabacloud/ehpc/model/RecoverClusterResult.h
 	include/alibabacloud/ehpc/model/DeleteJobsRequest.h
 	include/alibabacloud/ehpc/model/DeleteJobsResult.h
 	include/alibabacloud/ehpc/model/DeleteNodesRequest.h
@@ -104,6 +114,8 @@ set(ehpc_src
 	src/model/ListUsersResult.cc
 	src/model/UpgradeClientRequest.cc
 	src/model/UpgradeClientResult.cc
+	src/model/StopNodesRequest.cc
+	src/model/StopNodesResult.cc
 	src/model/ListCurrentClientVersionRequest.cc
 	src/model/ListCurrentClientVersionResult.cc
 	src/model/DeleteClusterRequest.cc
@@ -120,6 +132,8 @@ set(ehpc_src
 	src/model/ListSoftwaresResult.cc
 	src/model/StopJobsRequest.cc
 	src/model/StopJobsResult.cc
+	src/model/StartNodesRequest.cc
+	src/model/StartNodesResult.cc
 	src/model/GetAutoScaleConfigRequest.cc
 	src/model/GetAutoScaleConfigResult.cc
 	src/model/ListNodesRequest.cc
@@ -128,6 +142,8 @@ set(ehpc_src
 	src/model/SetJobUserResult.cc
 	src/model/ModifyUserGroupsRequest.cc
 	src/model/ModifyUserGroupsResult.cc
+	src/model/StartClusterRequest.cc
+	src/model/StartClusterResult.cc
 	src/model/ListClustersRequest.cc
 	src/model/ListClustersResult.cc
 	src/model/SubmitJobRequest.cc
@@ -144,6 +160,8 @@ set(ehpc_src
 	src/model/ModifyClusterAttributesResult.cc
 	src/model/DeleteJobTemplatesRequest.cc
 	src/model/DeleteJobTemplatesResult.cc
+	src/model/StopClusterRequest.cc
+	src/model/StopClusterResult.cc
 	src/model/ListNodesNoPagingRequest.cc
 	src/model/ListNodesNoPagingResult.cc
 	src/model/CreateJobTemplateRequest.cc
@@ -158,6 +176,8 @@ set(ehpc_src
 	src/model/ListPreferredEcsTypesResult.cc
 	src/model/ListClusterLogsRequest.cc
 	src/model/ListClusterLogsResult.cc
+	src/model/RecoverClusterRequest.cc
+	src/model/RecoverClusterResult.cc
 	src/model/DeleteJobsRequest.cc
 	src/model/DeleteJobsResult.cc
 	src/model/DeleteNodesRequest.cc

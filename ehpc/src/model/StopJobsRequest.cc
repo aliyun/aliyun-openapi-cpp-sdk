@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::StopJobsRequest;
 
 StopJobsRequest::StopJobsRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "StopJobs")
+	RpcServiceRequest("ehpc", "2018-04-12", "StopJobs")
 {}
 
 StopJobsRequest::~StopJobsRequest()

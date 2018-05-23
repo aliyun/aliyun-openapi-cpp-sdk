@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				std::string getState()const;
 				void setState(const std::string& state);
+				std::string getRerunable()const;
+				void setRerunable(const std::string& rerunable);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::string clusterId_;
 				std::string state_;
+				std::string rerunable_;
 				int pageNumber_;
 				std::string accessKeyId_;
 

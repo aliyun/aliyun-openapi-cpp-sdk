@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::CreateClusterRequest;
 
 CreateClusterRequest::CreateClusterRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "CreateCluster")
+	RpcServiceRequest("ehpc", "2018-04-12", "CreateCluster")
 {}
 
 CreateClusterRequest::~CreateClusterRequest()
@@ -168,6 +168,17 @@ void CreateClusterRequest::setVolumeType(const std::string& volumeType)
 	setParameter("VolumeType", volumeType);
 }
 
+std::string CreateClusterRequest::getDeployMode()const
+{
+	return deployMode_;
+}
+
+void CreateClusterRequest::setDeployMode(const std::string& deployMode)
+{
+	deployMode_ = deployMode;
+	setParameter("DeployMode", deployMode);
+}
+
 int CreateClusterRequest::getEcsOrderManagerCount()const
 {
 	return ecsOrderManagerCount_;
@@ -210,6 +221,28 @@ void CreateClusterRequest::setComputeSpotPriceLimit(const std::string& computeSp
 {
 	computeSpotPriceLimit_ = computeSpotPriceLimit;
 	setParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
+}
+
+int CreateClusterRequest::getAutoRenewPeriod()const
+{
+	return autoRenewPeriod_;
+}
+
+void CreateClusterRequest::setAutoRenewPeriod(int autoRenewPeriod)
+{
+	autoRenewPeriod_ = autoRenewPeriod;
+	setParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+}
+
+int CreateClusterRequest::getPeriod()const
+{
+	return period_;
+}
+
+void CreateClusterRequest::setPeriod(int period)
+{
+	period_ = period;
+	setParameter("Period", std::to_string(period));
 }
 
 std::string CreateClusterRequest::getVolumeProtocol()const
@@ -267,6 +300,23 @@ void CreateClusterRequest::setComputeSpotStrategy(const std::string& computeSpot
 	setParameter("ComputeSpotStrategy", computeSpotStrategy);
 }
 
+std::vector<CreateClusterRequest::PostInstallScript> CreateClusterRequest::getPostInstallScript()const
+{
+	return postInstallScript_;
+}
+
+void CreateClusterRequest::setPostInstallScript(const std::vector<PostInstallScript>& postInstallScript)
+{
+	postInstallScript_ = postInstallScript;
+	int i = 0;
+	for(int i = 0; i!= postInstallScript.size(); i++)	{
+		auto obj = postInstallScript.at(i);
+		std::string str ="PostInstallScript."+ std::to_string(i);
+		setParameter(str + ".Url", obj.url);
+		setParameter(str + ".Args", obj.args);
+	}
+}
+
 std::string CreateClusterRequest::getVSwitchId()const
 {
 	return vSwitchId_;
@@ -276,6 +326,17 @@ void CreateClusterRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
 	setParameter("VSwitchId", vSwitchId);
+}
+
+std::string CreateClusterRequest::getPeriodUnit()const
+{
+	return periodUnit_;
+}
+
+void CreateClusterRequest::setPeriodUnit(const std::string& periodUnit)
+{
+	periodUnit_ = periodUnit;
+	setParameter("PeriodUnit", periodUnit);
 }
 
 std::vector<CreateClusterRequest::Application> CreateClusterRequest::getApplication()const
@@ -294,6 +355,17 @@ void CreateClusterRequest::setApplication(const std::vector<Application>& applic
 	}
 }
 
+std::string CreateClusterRequest::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+void CreateClusterRequest::setAutoRenew(const std::string& autoRenew)
+{
+	autoRenew_ = autoRenew;
+	setParameter("AutoRenew", autoRenew);
+}
+
 std::string CreateClusterRequest::getEcsChargeType()const
 {
 	return ecsChargeType_;
@@ -303,6 +375,17 @@ void CreateClusterRequest::setEcsChargeType(const std::string& ecsChargeType)
 {
 	ecsChargeType_ = ecsChargeType;
 	setParameter("EcsChargeType", ecsChargeType);
+}
+
+std::string CreateClusterRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void CreateClusterRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setParameter("VpcId", vpcId);
 }
 
 bool CreateClusterRequest::getHaEnable()const

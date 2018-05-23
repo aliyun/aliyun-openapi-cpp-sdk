@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::AddUsersRequest;
 
 AddUsersRequest::AddUsersRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "AddUsers")
+	RpcServiceRequest("ehpc", "2018-04-12", "AddUsers")
 {}
 
 AddUsersRequest::~AddUsersRequest()

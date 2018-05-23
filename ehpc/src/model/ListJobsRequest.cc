@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::ListJobsRequest;
 
 ListJobsRequest::ListJobsRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "ListJobs")
+	RpcServiceRequest("ehpc", "2018-04-12", "ListJobs")
 {}
 
 ListJobsRequest::~ListJobsRequest()
@@ -67,6 +67,17 @@ void ListJobsRequest::setState(const std::string& state)
 {
 	state_ = state;
 	setParameter("State", state);
+}
+
+std::string ListJobsRequest::getRerunable()const
+{
+	return rerunable_;
+}
+
+void ListJobsRequest::setRerunable(const std::string& rerunable)
+{
+	rerunable_ = rerunable;
+	setParameter("Rerunable", rerunable);
 }
 
 int ListJobsRequest::getPageNumber()const
