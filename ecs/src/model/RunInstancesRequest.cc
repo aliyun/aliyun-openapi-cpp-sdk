@@ -25,6 +25,17 @@ RunInstancesRequest::RunInstancesRequest() :
 RunInstancesRequest::~RunInstancesRequest()
 {}
 
+std::string RunInstancesRequest::getLaunchTemplateName()const
+{
+	return launchTemplateName_;
+}
+
+void RunInstancesRequest::setLaunchTemplateName(const std::string& launchTemplateName)
+{
+	launchTemplateName_ = launchTemplateName;
+	setParameter("LaunchTemplateName", launchTemplateName);
+}
+
 long RunInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -227,6 +238,17 @@ void RunInstancesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
 	setParameter("DryRun", std::to_string(dryRun));
+}
+
+std::string RunInstancesRequest::getLaunchTemplateId()const
+{
+	return launchTemplateId_;
+}
+
+void RunInstancesRequest::setLaunchTemplateId(const std::string& launchTemplateId)
+{
+	launchTemplateId_ = launchTemplateId;
+	setParameter("LaunchTemplateId", launchTemplateId);
 }
 
 long RunInstancesRequest::getOwnerId()const
@@ -641,8 +663,20 @@ void RunInstancesRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setParameter(str + ".Encrypted", obj.encrypted);
 		setParameter(str + ".DiskName", obj.diskName);
 		setParameter(str + ".Description", obj.description);
+		setParameter(str + ".Device", obj.device);
 		setParameter(str + ".DeleteWithInstance", std::to_string(obj.deleteWithInstance));
 	}
+}
+
+long RunInstancesRequest::getLaunchTemplateVersion()const
+{
+	return launchTemplateVersion_;
+}
+
+void RunInstancesRequest::setLaunchTemplateVersion(long launchTemplateVersion)
+{
+	launchTemplateVersion_ = launchTemplateVersion;
+	setParameter("LaunchTemplateVersion", std::to_string(launchTemplateVersion));
 }
 
 bool RunInstancesRequest::getProxy_trust_transport_info()const

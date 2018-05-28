@@ -54,6 +54,8 @@ void DescribeDisksFullStatusResult::parse(const std::string &payload)
 				diskEventSetObject.eventId = value["EventId"].asString();
 			if(!value["EventTime"].isNull())
 				diskEventSetObject.eventTime = value["EventTime"].asString();
+			if(!value["EventEndTime"].isNull())
+				diskEventSetObject.eventEndTime = value["EventEndTime"].asString();
 			auto eventTypeNode = value["EventType"];
 			if(!eventTypeNode["Code"].isNull())
 				diskEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());

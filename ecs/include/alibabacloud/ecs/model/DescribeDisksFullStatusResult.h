@@ -54,6 +54,7 @@ namespace AlibabaCloud
 						EventType eventType;
 						std::string eventTime;
 						std::string eventId;
+						std::string eventEndTime;
 					};
 					Status status;
 					std::vector<DiskFullStatusType::DiskEventType> diskEventSet;

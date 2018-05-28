@@ -81,8 +81,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DetachInstanceRamRoleResult.h
 	include/alibabacloud/ecs/model/AllocatePublicIpAddressRequest.h
 	include/alibabacloud/ecs/model/AllocatePublicIpAddressResult.h
-	include/alibabacloud/ecs/model/AttachVolumeRequest.h
-	include/alibabacloud/ecs/model/AttachVolumeResult.h
 	include/alibabacloud/ecs/model/DescribeEipMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeEipMonitorDataResult.h
 	include/alibabacloud/ecs/model/CancelAutoSnapshotPolicyRequest.h
@@ -127,8 +125,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeSecurityGroupsResult.h
 	include/alibabacloud/ecs/model/ResizeDiskRequest.h
 	include/alibabacloud/ecs/model/ResizeDiskResult.h
-	include/alibabacloud/ecs/model/ResizeVolumeRequest.h
-	include/alibabacloud/ecs/model/ResizeVolumeResult.h
 	include/alibabacloud/ecs/model/CreateRouteEntryRequest.h
 	include/alibabacloud/ecs/model/CreateRouteEntryResult.h
 	include/alibabacloud/ecs/model/DescribeInvocationsRequest.h
@@ -137,12 +133,14 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/AttachKeyPairResult.h
 	include/alibabacloud/ecs/model/CreateRouterInterfaceRequest.h
 	include/alibabacloud/ecs/model/CreateRouterInterfaceResult.h
-	include/alibabacloud/ecs/model/ModifyVolumeAttributeRequest.h
-	include/alibabacloud/ecs/model/ModifyVolumeAttributeResult.h
 	include/alibabacloud/ecs/model/CheckDiskEnableAutoSnapshotValidationRequest.h
 	include/alibabacloud/ecs/model/CheckDiskEnableAutoSnapshotValidationResult.h
 	include/alibabacloud/ecs/model/RunInstancesRequest.h
 	include/alibabacloud/ecs/model/RunInstancesResult.h
+	include/alibabacloud/ecs/model/ModifyLaunchTemplateDefaultVersionRequest.h
+	include/alibabacloud/ecs/model/ModifyLaunchTemplateDefaultVersionResult.h
+	include/alibabacloud/ecs/model/CreateLaunchTemplateVersionRequest.h
+	include/alibabacloud/ecs/model/CreateLaunchTemplateVersionResult.h
 	include/alibabacloud/ecs/model/StopInvocationRequest.h
 	include/alibabacloud/ecs/model/StopInvocationResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceNetworkSpecRequest.h
@@ -203,8 +201,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeInstanceTypesResult.h
 	include/alibabacloud/ecs/model/DescribeSnapshotPackageRequest.h
 	include/alibabacloud/ecs/model/DescribeSnapshotPackageResult.h
-	include/alibabacloud/ecs/model/ReInitVolumeRequest.h
-	include/alibabacloud/ecs/model/ReInitVolumeResult.h
 	include/alibabacloud/ecs/model/RebootInstanceRequest.h
 	include/alibabacloud/ecs/model/RebootInstanceResult.h
 	include/alibabacloud/ecs/model/BindIpRangeRequest.h
@@ -239,8 +235,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyInstanceVpcAttributeResult.h
 	include/alibabacloud/ecs/model/AddTagsRequest.h
 	include/alibabacloud/ecs/model/AddTagsResult.h
-	include/alibabacloud/ecs/model/CancelUserEventRequest.h
-	include/alibabacloud/ecs/model/CancelUserEventResult.h
 	include/alibabacloud/ecs/model/CreateHpcClusterRequest.h
 	include/alibabacloud/ecs/model/CreateHpcClusterResult.h
 	include/alibabacloud/ecs/model/DescribeUserBusinessBehaviorRequest.h
@@ -321,6 +315,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeResourcesModificationResult.h
 	include/alibabacloud/ecs/model/ImportKeyPairRequest.h
 	include/alibabacloud/ecs/model/ImportKeyPairResult.h
+	include/alibabacloud/ecs/model/DeleteLaunchTemplateRequest.h
+	include/alibabacloud/ecs/model/DeleteLaunchTemplateResult.h
 	include/alibabacloud/ecs/model/DescribeNewProjectEipMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeNewProjectEipMonitorDataResult.h
 	include/alibabacloud/ecs/model/UnbindIpRangeRequest.h
@@ -351,8 +347,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ResetDiskResult.h
 	include/alibabacloud/ecs/model/ModifyDiskChargeTypeRequest.h
 	include/alibabacloud/ecs/model/ModifyDiskChargeTypeResult.h
-	include/alibabacloud/ecs/model/DescribeVolumesRequest.h
-	include/alibabacloud/ecs/model/DescribeVolumesResult.h
 	include/alibabacloud/ecs/model/ModifyIntranetBandwidthKbRequest.h
 	include/alibabacloud/ecs/model/ModifyIntranetBandwidthKbResult.h
 	include/alibabacloud/ecs/model/DescribeBandwidthPackagesRequest.h
@@ -371,10 +365,10 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeRecommendInstanceTypeResult.h
 	include/alibabacloud/ecs/model/DescribeTagKeysRequest.h
 	include/alibabacloud/ecs/model/DescribeTagKeysResult.h
-	include/alibabacloud/ecs/model/CreateVolumeRequest.h
-	include/alibabacloud/ecs/model/CreateVolumeResult.h
 	include/alibabacloud/ecs/model/DeleteInstanceRequest.h
 	include/alibabacloud/ecs/model/DeleteInstanceResult.h
+	include/alibabacloud/ecs/model/CreateLaunchTemplateRequest.h
+	include/alibabacloud/ecs/model/CreateLaunchTemplateResult.h
 	include/alibabacloud/ecs/model/DescribeIntranetAttributeKbRequest.h
 	include/alibabacloud/ecs/model/DescribeIntranetAttributeKbResult.h
 	include/alibabacloud/ecs/model/CreateNetworkInterfacePermissionRequest.h
@@ -395,14 +389,12 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/EnablePhysicalConnectionResult.h
 	include/alibabacloud/ecs/model/DescribeInstanceTypeFamiliesRequest.h
 	include/alibabacloud/ecs/model/DescribeInstanceTypeFamiliesResult.h
-	include/alibabacloud/ecs/model/RollbackVolumeRequest.h
-	include/alibabacloud/ecs/model/RollbackVolumeResult.h
-	include/alibabacloud/ecs/model/DeleteVolumeRequest.h
-	include/alibabacloud/ecs/model/DeleteVolumeResult.h
 	include/alibabacloud/ecs/model/CreateForwardEntryRequest.h
 	include/alibabacloud/ecs/model/CreateForwardEntryResult.h
 	include/alibabacloud/ecs/model/DescribeRouterInterfacesRequest.h
 	include/alibabacloud/ecs/model/DescribeRouterInterfacesResult.h
+	include/alibabacloud/ecs/model/DescribeLaunchTemplatesRequest.h
+	include/alibabacloud/ecs/model/DescribeLaunchTemplatesResult.h
 	include/alibabacloud/ecs/model/EipNotifyPaidRequest.h
 	include/alibabacloud/ecs/model/EipNotifyPaidResult.h
 	include/alibabacloud/ecs/model/ReleasePublicIpAddressRequest.h
@@ -425,8 +417,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyAutoSnapshotPolicyExResult.h
 	include/alibabacloud/ecs/model/CreatePhysicalConnectionRequest.h
 	include/alibabacloud/ecs/model/CreatePhysicalConnectionResult.h
-	include/alibabacloud/ecs/model/ModifyUserEventAttributeRequest.h
-	include/alibabacloud/ecs/model/ModifyUserEventAttributeResult.h
 	include/alibabacloud/ecs/model/DescribeKeyPairsRequest.h
 	include/alibabacloud/ecs/model/DescribeKeyPairsResult.h
 	include/alibabacloud/ecs/model/ModifySecurityGroupPolicyRequest.h
@@ -443,6 +433,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeCloudAssistantStatusResult.h
 	include/alibabacloud/ecs/model/DescribeInstancePhysicalAttributeRequest.h
 	include/alibabacloud/ecs/model/DescribeInstancePhysicalAttributeResult.h
+	include/alibabacloud/ecs/model/ValidateSecurityGroupRequest.h
+	include/alibabacloud/ecs/model/ValidateSecurityGroupResult.h
 	include/alibabacloud/ecs/model/TerminatePhysicalConnectionRequest.h
 	include/alibabacloud/ecs/model/TerminatePhysicalConnectionResult.h
 	include/alibabacloud/ecs/model/AttachNetworkInterfaceRequest.h
@@ -459,20 +451,18 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CancelCopyImageResult.h
 	include/alibabacloud/ecs/model/CreateDeploymentSetRequest.h
 	include/alibabacloud/ecs/model/CreateDeploymentSetResult.h
+	include/alibabacloud/ecs/model/DeleteLaunchTemplateVersionRequest.h
+	include/alibabacloud/ecs/model/DeleteLaunchTemplateVersionResult.h
 	include/alibabacloud/ecs/model/DescribeRegionsRequest.h
 	include/alibabacloud/ecs/model/DescribeRegionsResult.h
 	include/alibabacloud/ecs/model/DescribeClassicLinkInstancesRequest.h
 	include/alibabacloud/ecs/model/DescribeClassicLinkInstancesResult.h
-	include/alibabacloud/ecs/model/CreateUserEventRequest.h
-	include/alibabacloud/ecs/model/CreateUserEventResult.h
 	include/alibabacloud/ecs/model/DescribeAutoSnapshotPolicyRequest.h
 	include/alibabacloud/ecs/model/DescribeAutoSnapshotPolicyResult.h
 	include/alibabacloud/ecs/model/DescribePhysicalConnectionsRequest.h
 	include/alibabacloud/ecs/model/DescribePhysicalConnectionsResult.h
 	include/alibabacloud/ecs/model/DescribeRecycleBinRequest.h
 	include/alibabacloud/ecs/model/DescribeRecycleBinResult.h
-	include/alibabacloud/ecs/model/DetachVolumeRequest.h
-	include/alibabacloud/ecs/model/DetachVolumeResult.h
 	include/alibabacloud/ecs/model/CreateNetworkInterfaceRequest.h
 	include/alibabacloud/ecs/model/CreateNetworkInterfaceResult.h
 	include/alibabacloud/ecs/model/DescribeIpRangesRequest.h
@@ -485,6 +475,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeVRoutersResult.h
 	include/alibabacloud/ecs/model/DescribeNetworkInterfacesRequest.h
 	include/alibabacloud/ecs/model/DescribeNetworkInterfacesResult.h
+	include/alibabacloud/ecs/model/DescribeLaunchTemplateVersionsRequest.h
+	include/alibabacloud/ecs/model/DescribeLaunchTemplateVersionsResult.h
 	include/alibabacloud/ecs/model/ModifyNetworkInterfaceAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyNetworkInterfaceAttributeResult.h
 	include/alibabacloud/ecs/model/DetachNetworkInterfaceRequest.h
@@ -576,8 +568,6 @@ set(ecs_src
 	src/model/DetachInstanceRamRoleResult.cc
 	src/model/AllocatePublicIpAddressRequest.cc
 	src/model/AllocatePublicIpAddressResult.cc
-	src/model/AttachVolumeRequest.cc
-	src/model/AttachVolumeResult.cc
 	src/model/DescribeEipMonitorDataRequest.cc
 	src/model/DescribeEipMonitorDataResult.cc
 	src/model/CancelAutoSnapshotPolicyRequest.cc
@@ -622,8 +612,6 @@ set(ecs_src
 	src/model/DescribeSecurityGroupsResult.cc
 	src/model/ResizeDiskRequest.cc
 	src/model/ResizeDiskResult.cc
-	src/model/ResizeVolumeRequest.cc
-	src/model/ResizeVolumeResult.cc
 	src/model/CreateRouteEntryRequest.cc
 	src/model/CreateRouteEntryResult.cc
 	src/model/DescribeInvocationsRequest.cc
@@ -632,12 +620,14 @@ set(ecs_src
 	src/model/AttachKeyPairResult.cc
 	src/model/CreateRouterInterfaceRequest.cc
 	src/model/CreateRouterInterfaceResult.cc
-	src/model/ModifyVolumeAttributeRequest.cc
-	src/model/ModifyVolumeAttributeResult.cc
 	src/model/CheckDiskEnableAutoSnapshotValidationRequest.cc
 	src/model/CheckDiskEnableAutoSnapshotValidationResult.cc
 	src/model/RunInstancesRequest.cc
 	src/model/RunInstancesResult.cc
+	src/model/ModifyLaunchTemplateDefaultVersionRequest.cc
+	src/model/ModifyLaunchTemplateDefaultVersionResult.cc
+	src/model/CreateLaunchTemplateVersionRequest.cc
+	src/model/CreateLaunchTemplateVersionResult.cc
 	src/model/StopInvocationRequest.cc
 	src/model/StopInvocationResult.cc
 	src/model/ModifyInstanceNetworkSpecRequest.cc
@@ -698,8 +688,6 @@ set(ecs_src
 	src/model/DescribeInstanceTypesResult.cc
 	src/model/DescribeSnapshotPackageRequest.cc
 	src/model/DescribeSnapshotPackageResult.cc
-	src/model/ReInitVolumeRequest.cc
-	src/model/ReInitVolumeResult.cc
 	src/model/RebootInstanceRequest.cc
 	src/model/RebootInstanceResult.cc
 	src/model/BindIpRangeRequest.cc
@@ -734,8 +722,6 @@ set(ecs_src
 	src/model/ModifyInstanceVpcAttributeResult.cc
 	src/model/AddTagsRequest.cc
 	src/model/AddTagsResult.cc
-	src/model/CancelUserEventRequest.cc
-	src/model/CancelUserEventResult.cc
 	src/model/CreateHpcClusterRequest.cc
 	src/model/CreateHpcClusterResult.cc
 	src/model/DescribeUserBusinessBehaviorRequest.cc
@@ -816,6 +802,8 @@ set(ecs_src
 	src/model/DescribeResourcesModificationResult.cc
 	src/model/ImportKeyPairRequest.cc
 	src/model/ImportKeyPairResult.cc
+	src/model/DeleteLaunchTemplateRequest.cc
+	src/model/DeleteLaunchTemplateResult.cc
 	src/model/DescribeNewProjectEipMonitorDataRequest.cc
 	src/model/DescribeNewProjectEipMonitorDataResult.cc
 	src/model/UnbindIpRangeRequest.cc
@@ -846,8 +834,6 @@ set(ecs_src
 	src/model/ResetDiskResult.cc
 	src/model/ModifyDiskChargeTypeRequest.cc
 	src/model/ModifyDiskChargeTypeResult.cc
-	src/model/DescribeVolumesRequest.cc
-	src/model/DescribeVolumesResult.cc
 	src/model/ModifyIntranetBandwidthKbRequest.cc
 	src/model/ModifyIntranetBandwidthKbResult.cc
 	src/model/DescribeBandwidthPackagesRequest.cc
@@ -866,10 +852,10 @@ set(ecs_src
 	src/model/DescribeRecommendInstanceTypeResult.cc
 	src/model/DescribeTagKeysRequest.cc
 	src/model/DescribeTagKeysResult.cc
-	src/model/CreateVolumeRequest.cc
-	src/model/CreateVolumeResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
+	src/model/CreateLaunchTemplateRequest.cc
+	src/model/CreateLaunchTemplateResult.cc
 	src/model/DescribeIntranetAttributeKbRequest.cc
 	src/model/DescribeIntranetAttributeKbResult.cc
 	src/model/CreateNetworkInterfacePermissionRequest.cc
@@ -890,14 +876,12 @@ set(ecs_src
 	src/model/EnablePhysicalConnectionResult.cc
 	src/model/DescribeInstanceTypeFamiliesRequest.cc
 	src/model/DescribeInstanceTypeFamiliesResult.cc
-	src/model/RollbackVolumeRequest.cc
-	src/model/RollbackVolumeResult.cc
-	src/model/DeleteVolumeRequest.cc
-	src/model/DeleteVolumeResult.cc
 	src/model/CreateForwardEntryRequest.cc
 	src/model/CreateForwardEntryResult.cc
 	src/model/DescribeRouterInterfacesRequest.cc
 	src/model/DescribeRouterInterfacesResult.cc
+	src/model/DescribeLaunchTemplatesRequest.cc
+	src/model/DescribeLaunchTemplatesResult.cc
 	src/model/EipNotifyPaidRequest.cc
 	src/model/EipNotifyPaidResult.cc
 	src/model/ReleasePublicIpAddressRequest.cc
@@ -920,8 +904,6 @@ set(ecs_src
 	src/model/ModifyAutoSnapshotPolicyExResult.cc
 	src/model/CreatePhysicalConnectionRequest.cc
 	src/model/CreatePhysicalConnectionResult.cc
-	src/model/ModifyUserEventAttributeRequest.cc
-	src/model/ModifyUserEventAttributeResult.cc
 	src/model/DescribeKeyPairsRequest.cc
 	src/model/DescribeKeyPairsResult.cc
 	src/model/ModifySecurityGroupPolicyRequest.cc
@@ -938,6 +920,8 @@ set(ecs_src
 	src/model/DescribeCloudAssistantStatusResult.cc
 	src/model/DescribeInstancePhysicalAttributeRequest.cc
 	src/model/DescribeInstancePhysicalAttributeResult.cc
+	src/model/ValidateSecurityGroupRequest.cc
+	src/model/ValidateSecurityGroupResult.cc
 	src/model/TerminatePhysicalConnectionRequest.cc
 	src/model/TerminatePhysicalConnectionResult.cc
 	src/model/AttachNetworkInterfaceRequest.cc
@@ -954,20 +938,18 @@ set(ecs_src
 	src/model/CancelCopyImageResult.cc
 	src/model/CreateDeploymentSetRequest.cc
 	src/model/CreateDeploymentSetResult.cc
+	src/model/DeleteLaunchTemplateVersionRequest.cc
+	src/model/DeleteLaunchTemplateVersionResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeClassicLinkInstancesRequest.cc
 	src/model/DescribeClassicLinkInstancesResult.cc
-	src/model/CreateUserEventRequest.cc
-	src/model/CreateUserEventResult.cc
 	src/model/DescribeAutoSnapshotPolicyRequest.cc
 	src/model/DescribeAutoSnapshotPolicyResult.cc
 	src/model/DescribePhysicalConnectionsRequest.cc
 	src/model/DescribePhysicalConnectionsResult.cc
 	src/model/DescribeRecycleBinRequest.cc
 	src/model/DescribeRecycleBinResult.cc
-	src/model/DetachVolumeRequest.cc
-	src/model/DetachVolumeResult.cc
 	src/model/CreateNetworkInterfaceRequest.cc
 	src/model/CreateNetworkInterfaceResult.cc
 	src/model/DescribeIpRangesRequest.cc
@@ -980,6 +962,8 @@ set(ecs_src
 	src/model/DescribeVRoutersResult.cc
 	src/model/DescribeNetworkInterfacesRequest.cc
 	src/model/DescribeNetworkInterfacesResult.cc
+	src/model/DescribeLaunchTemplateVersionsRequest.cc
+	src/model/DescribeLaunchTemplateVersionsResult.cc
 	src/model/ModifyNetworkInterfaceAttributeRequest.cc
 	src/model/ModifyNetworkInterfaceAttributeResult.cc
 	src/model/DetachNetworkInterfaceRequest.cc

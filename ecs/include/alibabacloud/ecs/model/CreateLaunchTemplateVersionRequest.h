@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_RUNINSTANCESREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_RUNINSTANCESREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_CREATELAUNCHTEMPLATEVERSIONREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_CREATELAUNCHTEMPLATEVERSIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT RunInstancesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT CreateLaunchTemplateVersionRequest : public RpcServiceRequest
 			{
 				struct Tag
 				{
@@ -51,24 +51,23 @@ namespace AlibabaCloud
 					std::string encrypted;
 					std::string diskName;
 					std::string description;
-					std::string device;
 					bool deleteWithInstance;
 				};
 
 			public:
-				RunInstancesRequest();
-				~RunInstancesRequest();
+				CreateLaunchTemplateVersionRequest();
+				~CreateLaunchTemplateVersionRequest();
 
 				std::string getLaunchTemplateName()const;
 				void setLaunchTemplateName(const std::string& launchTemplateName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getHpcClusterId()const;
-				void setHpcClusterId(const std::string& hpcClusterId);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				std::string getSecurityEnhancementStrategy()const;
 				void setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy);
+				std::string getNetworkType()const;
+				void setNetworkType(const std::string& networkType);
 				std::string getKeyPairName()const;
 				void setKeyPairName(const std::string& keyPairName);
 				std::string getProxy_original_source_ip()const;
@@ -79,24 +78,26 @@ namespace AlibabaCloud
 				void setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail);
 				std::string getCallerType()const;
 				void setCallerType(const std::string& callerType);
+				std::string getImageOwnerAlias()const;
+				void setImageOwnerAlias(const std::string& imageOwnerAlias);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
-				std::string getPassword()const;
-				void setPassword(const std::string& password);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				bool getEnable()const;
 				void setEnable(bool enable);
+				int getSystemDiskIops()const;
+				void setSystemDiskIops(int systemDiskIops);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
-				bool getDryRun()const;
-				void setDryRun(bool dryRun);
+				int getPeriod()const;
+				void setPeriod(int period);
 				std::string getLaunchTemplateId()const;
 				void setLaunchTemplateId(const std::string& launchTemplateId);
 				long getOwnerId()const;
@@ -119,12 +120,10 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				int getInternetMaxBandwidthIn()const;
 				void setInternetMaxBandwidthIn(int internetMaxBandwidthIn);
+				std::string getVersionDescription()const;
+				void setVersionDescription(const std::string& versionDescription);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
-				std::string getSpotInterruptionBehavior()const;
-				void setSpotInterruptionBehavior(const std::string& spotInterruptionBehavior);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getIoOptimized()const;
 				void setIoOptimized(const std::string& ioOptimized);
 				std::string getSecurityGroupId()const;
@@ -147,14 +146,16 @@ namespace AlibabaCloud
 				void setRequestContent(const std::string& requestContent);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getInstanceChargeType()const;
+				void setInstanceChargeType(const std::string& instanceChargeType);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
+				bool getEnableVmOsConfig()const;
+				void setEnableVmOsConfig(bool enableVmOsConfig);
 				std::vector<NetworkInterface> getNetworkInterface()const;
 				void setNetworkInterface(const std::vector<NetworkInterface>& networkInterface);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
-				int getAmount()const;
-				void setAmount(int amount);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -165,41 +166,42 @@ namespace AlibabaCloud
 				void setRamRoleName(const std::string& ramRoleName);
 				std::string getAutoReleaseTime()const;
 				void setAutoReleaseTime(const std::string& autoReleaseTime);
-				std::string getDedicatedHostId()const;
-				void setDedicatedHostId(const std::string& dedicatedHostId);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
+				int getSpotDuration()const;
+				void setSpotDuration(int spotDuration);
 				std::vector<DataDisk> getDataDisk()const;
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
-				long getLaunchTemplateVersion()const;
-				void setLaunchTemplateVersion(long launchTemplateVersion);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
-				std::string getSystemDiskSize()const;
-				void setSystemDiskSize(const std::string& systemDiskSize);
+				int getSystemDiskSize()const;
+				void setSystemDiskSize(int systemDiskSize);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 				std::string getSystemDiskDescription()const;
 				void setSystemDiskDescription(const std::string& systemDiskDescription);
 
             private:
 				std::string launchTemplateName_;
 				long resourceOwnerId_;
-				std::string hpcClusterId_;
 				long callerParentId_;
 				std::string securityEnhancementStrategy_;
+				std::string networkType_;
 				std::string keyPairName_;
 				std::string proxy_original_source_ip_;
 				float spotPriceLimit_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
+				std::string imageOwnerAlias_;
 				std::string resourceGroupId_;
 				std::string hostName_;
-				std::string password_;
 				std::string securityToken_;
 				bool enable_;
+				int systemDiskIops_;
 				std::string callerBidEmail_;
 				std::vector<Tag> tag_;
 				long callerUid_;
-				bool dryRun_;
+				int period_;
 				std::string launchTemplateId_;
 				long ownerId_;
 				bool ak_mfa_present_;
@@ -211,9 +213,8 @@ namespace AlibabaCloud
 				std::string internetChargeType_;
 				std::string zoneId_;
 				int internetMaxBandwidthIn_;
+				std::string versionDescription_;
 				std::string imageId_;
-				std::string spotInterruptionBehavior_;
-				std::string clientToken_;
 				std::string ioOptimized_;
 				std::string securityGroupId_;
 				int internetMaxBandwidthOut_;
@@ -225,25 +226,26 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string requestContent_;
 				std::string instanceType_;
+				std::string instanceChargeType_;
 				std::string callerUidEmail_;
+				bool enableVmOsConfig_;
 				std::vector<NetworkInterface> networkInterface_;
 				std::string app_ip_;
-				int amount_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string systemDiskDiskName_;
 				std::string ramRoleName_;
 				std::string autoReleaseTime_;
-				std::string dedicatedHostId_;
 				std::string callerBid_;
+				int spotDuration_;
 				std::vector<DataDisk> dataDisk_;
-				long launchTemplateVersion_;
 				bool proxy_trust_transport_info_;
-				std::string systemDiskSize_;
+				int systemDiskSize_;
+				std::string vpcId_;
 				std::string systemDiskDescription_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_RUNINSTANCESREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_CREATELAUNCHTEMPLATEVERSIONREQUEST_H_

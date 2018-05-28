@@ -179,6 +179,17 @@ void CreateSecurityGroupRequest::setTag1Value(const std::string& tag1Value)
 	setParameter("Tag1Value", tag1Value);
 }
 
+std::string CreateSecurityGroupRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateSecurityGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateSecurityGroupRequest::getRegionId()const
 {
 	return regionId_;
