@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/green/model/VideoAsyncScanRequest.h>
+#include <alibabacloud/green/model/VideoSyncScanRequest.h>
 
-using AlibabaCloud::Green::Model::VideoAsyncScanRequest;
+using AlibabaCloud::Green::Model::VideoSyncScanRequest;
 
-VideoAsyncScanRequest::VideoAsyncScanRequest() :
+VideoSyncScanRequest::VideoSyncScanRequest() :
 	RoaServiceRequest("green", "2018-05-09")
 {}
 
-VideoAsyncScanRequest::~VideoAsyncScanRequest()
+VideoSyncScanRequest::~VideoSyncScanRequest()
 {}
 
-std::string VideoAsyncScanRequest::getClientInfo()const
+std::string VideoSyncScanRequest::getClientInfo()const
 {
 	return clientInfo_;
 }
 
-void VideoAsyncScanRequest::setClientInfo(const std::string& clientInfo)
+void VideoSyncScanRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
 	setParameter("ClientInfo", clientInfo);

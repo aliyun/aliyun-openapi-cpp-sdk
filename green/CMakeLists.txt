@@ -33,6 +33,8 @@ set(green_public_header_model
 	include/alibabacloud/green/model/VideoFeedbackResult.h
 	include/alibabacloud/green/model/DeletePersonRequest.h
 	include/alibabacloud/green/model/DeletePersonResult.h
+	include/alibabacloud/green/model/VideoSyncScanRequest.h
+	include/alibabacloud/green/model/VideoSyncScanResult.h
 	include/alibabacloud/green/model/VideoAsyncScanResultsRequest.h
 	include/alibabacloud/green/model/VideoAsyncScanResultsResult.h
 	include/alibabacloud/green/model/AddGroupsRequest.h
@@ -43,8 +45,6 @@ set(green_public_header_model
 	include/alibabacloud/green/model/SetPersonResult.h
 	include/alibabacloud/green/model/TextFeedbackRequest.h
 	include/alibabacloud/green/model/TextFeedbackResult.h
-	include/alibabacloud/green/model/SearchRequest.h
-	include/alibabacloud/green/model/SearchResult.h
 	include/alibabacloud/green/model/FileAsyncScanResultsRequest.h
 	include/alibabacloud/green/model/FileAsyncScanResultsResult.h
 	include/alibabacloud/green/model/DeleteGroupsRequest.h
@@ -67,10 +67,16 @@ set(green_public_header_model
 	include/alibabacloud/green/model/TextScanResult.h
 	include/alibabacloud/green/model/ImageScanFeedbackRequest.h
 	include/alibabacloud/green/model/ImageScanFeedbackResult.h
+	include/alibabacloud/green/model/DeleteSimilarityImageRequest.h
+	include/alibabacloud/green/model/DeleteSimilarityImageResult.h
+	include/alibabacloud/green/model/SearchPersonRequest.h
+	include/alibabacloud/green/model/SearchPersonResult.h
 	include/alibabacloud/green/model/AddPersonRequest.h
 	include/alibabacloud/green/model/AddPersonResult.h
 	include/alibabacloud/green/model/AddFacesRequest.h
-	include/alibabacloud/green/model/AddFacesResult.h )
+	include/alibabacloud/green/model/AddFacesResult.h
+	include/alibabacloud/green/model/AddSimilarityImageRequest.h
+	include/alibabacloud/green/model/AddSimilarityImageResult.h )
 
 set(green_src 
 	src/GreenClient.cc
@@ -86,6 +92,8 @@ set(green_src
 	src/model/VideoFeedbackResult.cc
 	src/model/DeletePersonRequest.cc
 	src/model/DeletePersonResult.cc
+	src/model/VideoSyncScanRequest.cc
+	src/model/VideoSyncScanResult.cc
 	src/model/VideoAsyncScanResultsRequest.cc
 	src/model/VideoAsyncScanResultsResult.cc
 	src/model/AddGroupsRequest.cc
@@ -96,8 +104,6 @@ set(green_src
 	src/model/SetPersonResult.cc
 	src/model/TextFeedbackRequest.cc
 	src/model/TextFeedbackResult.cc
-	src/model/SearchRequest.cc
-	src/model/SearchResult.cc
 	src/model/FileAsyncScanResultsRequest.cc
 	src/model/FileAsyncScanResultsResult.cc
 	src/model/DeleteGroupsRequest.cc
@@ -120,10 +126,16 @@ set(green_src
 	src/model/TextScanResult.cc
 	src/model/ImageScanFeedbackRequest.cc
 	src/model/ImageScanFeedbackResult.cc
+	src/model/DeleteSimilarityImageRequest.cc
+	src/model/DeleteSimilarityImageResult.cc
+	src/model/SearchPersonRequest.cc
+	src/model/SearchPersonResult.cc
 	src/model/AddPersonRequest.cc
 	src/model/AddPersonResult.cc
 	src/model/AddFacesRequest.cc
-	src/model/AddFacesResult.cc )
+	src/model/AddFacesResult.cc
+	src/model/AddSimilarityImageRequest.cc
+	src/model/AddSimilarityImageResult.cc )
 
 add_library(green ${LIB_TYPE}
 	${green_public_header}

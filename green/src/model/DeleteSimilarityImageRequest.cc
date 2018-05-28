@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/green/model/VideoAsyncScanRequest.h>
+#include <alibabacloud/green/model/DeleteSimilarityImageRequest.h>
 
-using AlibabaCloud::Green::Model::VideoAsyncScanRequest;
+using AlibabaCloud::Green::Model::DeleteSimilarityImageRequest;
 
-VideoAsyncScanRequest::VideoAsyncScanRequest() :
+DeleteSimilarityImageRequest::DeleteSimilarityImageRequest() :
 	RoaServiceRequest("green", "2018-05-09")
 {}
 
-VideoAsyncScanRequest::~VideoAsyncScanRequest()
+DeleteSimilarityImageRequest::~DeleteSimilarityImageRequest()
 {}
 
-std::string VideoAsyncScanRequest::getClientInfo()const
+std::string DeleteSimilarityImageRequest::getClientInfo()const
 {
 	return clientInfo_;
 }
 
-void VideoAsyncScanRequest::setClientInfo(const std::string& clientInfo)
+void DeleteSimilarityImageRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
 	setParameter("ClientInfo", clientInfo);

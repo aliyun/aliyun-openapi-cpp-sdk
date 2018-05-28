@@ -19,7 +19,7 @@
 using AlibabaCloud::Green::Model::DeleteGroupsRequest;
 
 DeleteGroupsRequest::DeleteGroupsRequest() :
-	RoaServiceRequest("green", "2017-08-25")
+	RoaServiceRequest("green", "2018-05-09")
 {}
 
 DeleteGroupsRequest::~DeleteGroupsRequest()

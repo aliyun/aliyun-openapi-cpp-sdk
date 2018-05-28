@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_SEARCHREQUEST_H_
-#define ALIBABACLOUD_GREEN_MODEL_SEARCHREQUEST_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_VIDEOSYNCSCANREQUEST_H_
+#define ALIBABACLOUD_GREEN_MODEL_VIDEOSYNCSCANREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT SearchRequest : public RoaServiceRequest
+			class ALIBABACLOUD_GREEN_EXPORT VideoSyncScanRequest : public RoaServiceRequest
 			{
 
 			public:
-				SearchRequest();
-				~SearchRequest();
+				VideoSyncScanRequest();
+				~VideoSyncScanRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientInfo()const;
 				void setClientInfo(const std::string& clientInfo);
 
             private:
-				std::string regionId_;
 				std::string clientInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_SEARCHREQUEST_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_VIDEOSYNCSCANREQUEST_H_

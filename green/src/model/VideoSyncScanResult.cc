@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/green/model/SearchResult.h>
+#include <alibabacloud/green/model/VideoSyncScanResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Green;
 using namespace AlibabaCloud::Green::Model;
 
-SearchResult::SearchResult() :
+VideoSyncScanResult::VideoSyncScanResult() :
 	ServiceResult()
 {}
 
-SearchResult::SearchResult(const std::string &payload) :
+VideoSyncScanResult::VideoSyncScanResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SearchResult::~SearchResult()
+VideoSyncScanResult::~VideoSyncScanResult()
 {}
 
-void SearchResult::parse(const std::string &payload)
+void VideoSyncScanResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

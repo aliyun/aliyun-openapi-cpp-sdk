@@ -14,34 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/green/model/SearchRequest.h>
+#include <alibabacloud/green/model/SearchPersonRequest.h>
 
-using AlibabaCloud::Green::Model::SearchRequest;
+using AlibabaCloud::Green::Model::SearchPersonRequest;
 
-SearchRequest::SearchRequest() :
-	RoaServiceRequest("green", "2017-08-25")
+SearchPersonRequest::SearchPersonRequest() :
+	RoaServiceRequest("green", "2018-05-09")
 {}
 
-SearchRequest::~SearchRequest()
+SearchPersonRequest::~SearchPersonRequest()
 {}
 
-std::string SearchRequest::getRegionId()const
+std::string SearchPersonRequest::getRegionId()const
 {
 	return regionId_;
 }
 
-void SearchRequest::setRegionId(const std::string& regionId)
+void SearchPersonRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
 }
 
-std::string SearchRequest::getClientInfo()const
+std::string SearchPersonRequest::getClientInfo()const
 {
 	return clientInfo_;
 }
 
-void SearchRequest::setClientInfo(const std::string& clientInfo)
+void SearchPersonRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
 	setParameter("ClientInfo", clientInfo);

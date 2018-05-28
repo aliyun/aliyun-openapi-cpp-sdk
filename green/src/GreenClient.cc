@@ -267,6 +267,42 @@ GreenClient::DeletePersonOutcomeCallable GreenClient::deletePersonCallable(const
 	return task->get_future();
 }
 
+GreenClient::VideoSyncScanOutcome GreenClient::videoSyncScan(const VideoSyncScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VideoSyncScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VideoSyncScanOutcome(VideoSyncScanResult(outcome.result()));
+	else
+		return VideoSyncScanOutcome(outcome.error());
+}
+
+void GreenClient::videoSyncScanAsync(const VideoSyncScanRequest& request, const VideoSyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, videoSyncScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VideoSyncScanOutcomeCallable GreenClient::videoSyncScanCallable(const VideoSyncScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VideoSyncScanOutcome()>>(
+			[this, request]()
+			{
+			return this->videoSyncScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::VideoAsyncScanResultsOutcome GreenClient::videoAsyncScanResults(const VideoAsyncScanResultsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,42 +477,6 @@ GreenClient::TextFeedbackOutcomeCallable GreenClient::textFeedbackCallable(const
 			[this, request]()
 			{
 			return this->textFeedback(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-GreenClient::SearchOutcome GreenClient::search(const SearchRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SearchOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SearchOutcome(SearchResult(outcome.result()));
-	else
-		return SearchOutcome(outcome.error());
-}
-
-void GreenClient::searchAsync(const SearchRequest& request, const SearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, search(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::SearchOutcomeCallable GreenClient::searchCallable(const SearchRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SearchOutcome()>>(
-			[this, request]()
-			{
-			return this->search(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -879,6 +879,78 @@ GreenClient::ImageScanFeedbackOutcomeCallable GreenClient::imageScanFeedbackCall
 	return task->get_future();
 }
 
+GreenClient::DeleteSimilarityImageOutcome GreenClient::deleteSimilarityImage(const DeleteSimilarityImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSimilarityImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSimilarityImageOutcome(DeleteSimilarityImageResult(outcome.result()));
+	else
+		return DeleteSimilarityImageOutcome(outcome.error());
+}
+
+void GreenClient::deleteSimilarityImageAsync(const DeleteSimilarityImageRequest& request, const DeleteSimilarityImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSimilarityImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DeleteSimilarityImageOutcomeCallable GreenClient::deleteSimilarityImageCallable(const DeleteSimilarityImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSimilarityImageOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSimilarityImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::SearchPersonOutcome GreenClient::searchPerson(const SearchPersonRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchPersonOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchPersonOutcome(SearchPersonResult(outcome.result()));
+	else
+		return SearchPersonOutcome(outcome.error());
+}
+
+void GreenClient::searchPersonAsync(const SearchPersonRequest& request, const SearchPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchPerson(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::SearchPersonOutcomeCallable GreenClient::searchPersonCallable(const SearchPersonRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchPersonOutcome()>>(
+			[this, request]()
+			{
+			return this->searchPerson(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::AddPersonOutcome GreenClient::addPerson(const AddPersonRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +1017,42 @@ GreenClient::AddFacesOutcomeCallable GreenClient::addFacesCallable(const AddFace
 			[this, request]()
 			{
 			return this->addFaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::AddSimilarityImageOutcome GreenClient::addSimilarityImage(const AddSimilarityImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddSimilarityImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddSimilarityImageOutcome(AddSimilarityImageResult(outcome.result()));
+	else
+		return AddSimilarityImageOutcome(outcome.error());
+}
+
+void GreenClient::addSimilarityImageAsync(const AddSimilarityImageRequest& request, const AddSimilarityImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addSimilarityImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::AddSimilarityImageOutcomeCallable GreenClient::addSimilarityImageCallable(const AddSimilarityImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddSimilarityImageOutcome()>>(
+			[this, request]()
+			{
+			return this->addSimilarityImage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

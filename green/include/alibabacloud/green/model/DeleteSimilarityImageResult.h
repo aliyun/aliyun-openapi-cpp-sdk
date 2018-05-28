@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_SEARCHRESULT_H_
-#define ALIBABACLOUD_GREEN_MODEL_SEARCHRESULT_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_DELETESIMILARITYIMAGERESULT_H_
+#define ALIBABACLOUD_GREEN_MODEL_DELETESIMILARITYIMAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT SearchResult : public ServiceResult
+			class ALIBABACLOUD_GREEN_EXPORT DeleteSimilarityImageResult : public ServiceResult
 			{
 			public:
 
 
-				SearchResult();
-				explicit SearchResult(const std::string &payload);
-				~SearchResult();
+				DeleteSimilarityImageResult();
+				explicit DeleteSimilarityImageResult(const std::string &payload);
+				~DeleteSimilarityImageResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_SEARCHRESULT_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_DELETESIMILARITYIMAGERESULT_H_

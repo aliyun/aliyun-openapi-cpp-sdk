@@ -14,25 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/green/model/VideoAsyncScanRequest.h>
+#include <alibabacloud/green/model/SearchPersonResult.h>
+#include <json/json.h>
 
-using AlibabaCloud::Green::Model::VideoAsyncScanRequest;
+using namespace AlibabaCloud::Green;
+using namespace AlibabaCloud::Green::Model;
 
-VideoAsyncScanRequest::VideoAsyncScanRequest() :
-	RoaServiceRequest("green", "2018-05-09")
+SearchPersonResult::SearchPersonResult() :
+	ServiceResult()
 {}
 
-VideoAsyncScanRequest::~VideoAsyncScanRequest()
-{}
-
-std::string VideoAsyncScanRequest::getClientInfo()const
+SearchPersonResult::SearchPersonResult(const std::string &payload) :
+	ServiceResult()
 {
-	return clientInfo_;
+	parse(payload);
 }
 
-void VideoAsyncScanRequest::setClientInfo(const std::string& clientInfo)
+SearchPersonResult::~SearchPersonResult()
+{}
+
+void SearchPersonResult::parse(const std::string &payload)
 {
-	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+
+	setRequestId(value["RequestId"].asString());
+
 }
 

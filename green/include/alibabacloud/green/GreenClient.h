@@ -34,6 +34,8 @@
 #include "model/VideoFeedbackResult.h"
 #include "model/DeletePersonRequest.h"
 #include "model/DeletePersonResult.h"
+#include "model/VideoSyncScanRequest.h"
+#include "model/VideoSyncScanResult.h"
 #include "model/VideoAsyncScanResultsRequest.h"
 #include "model/VideoAsyncScanResultsResult.h"
 #include "model/AddGroupsRequest.h"
@@ -44,8 +46,6 @@
 #include "model/SetPersonResult.h"
 #include "model/TextFeedbackRequest.h"
 #include "model/TextFeedbackResult.h"
-#include "model/SearchRequest.h"
-#include "model/SearchResult.h"
 #include "model/FileAsyncScanResultsRequest.h"
 #include "model/FileAsyncScanResultsResult.h"
 #include "model/DeleteGroupsRequest.h"
@@ -68,10 +68,16 @@
 #include "model/TextScanResult.h"
 #include "model/ImageScanFeedbackRequest.h"
 #include "model/ImageScanFeedbackResult.h"
+#include "model/DeleteSimilarityImageRequest.h"
+#include "model/DeleteSimilarityImageResult.h"
+#include "model/SearchPersonRequest.h"
+#include "model/SearchPersonResult.h"
 #include "model/AddPersonRequest.h"
 #include "model/AddPersonResult.h"
 #include "model/AddFacesRequest.h"
 #include "model/AddFacesResult.h"
+#include "model/AddSimilarityImageRequest.h"
+#include "model/AddSimilarityImageResult.h"
 
 
 namespace AlibabaCloud
@@ -99,6 +105,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeletePersonResult> DeletePersonOutcome;
 			typedef std::future<DeletePersonOutcome> DeletePersonOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DeletePersonRequest&, const DeletePersonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePersonAsyncHandler;
+			typedef Outcome<Error, Model::VideoSyncScanResult> VideoSyncScanOutcome;
+			typedef std::future<VideoSyncScanOutcome> VideoSyncScanOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::VideoSyncScanRequest&, const VideoSyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoSyncScanAsyncHandler;
 			typedef Outcome<Error, Model::VideoAsyncScanResultsResult> VideoAsyncScanResultsOutcome;
 			typedef std::future<VideoAsyncScanResultsOutcome> VideoAsyncScanResultsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::VideoAsyncScanResultsRequest&, const VideoAsyncScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoAsyncScanResultsAsyncHandler;
@@ -114,9 +123,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TextFeedbackResult> TextFeedbackOutcome;
 			typedef std::future<TextFeedbackOutcome> TextFeedbackOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::TextFeedbackRequest&, const TextFeedbackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TextFeedbackAsyncHandler;
-			typedef Outcome<Error, Model::SearchResult> SearchOutcome;
-			typedef std::future<SearchOutcome> SearchOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::SearchRequest&, const SearchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchAsyncHandler;
 			typedef Outcome<Error, Model::FileAsyncScanResultsResult> FileAsyncScanResultsOutcome;
 			typedef std::future<FileAsyncScanResultsOutcome> FileAsyncScanResultsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::FileAsyncScanResultsRequest&, const FileAsyncScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FileAsyncScanResultsAsyncHandler;
@@ -150,12 +156,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ImageScanFeedbackResult> ImageScanFeedbackOutcome;
 			typedef std::future<ImageScanFeedbackOutcome> ImageScanFeedbackOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::ImageScanFeedbackRequest&, const ImageScanFeedbackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImageScanFeedbackAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSimilarityImageResult> DeleteSimilarityImageOutcome;
+			typedef std::future<DeleteSimilarityImageOutcome> DeleteSimilarityImageOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DeleteSimilarityImageRequest&, const DeleteSimilarityImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSimilarityImageAsyncHandler;
+			typedef Outcome<Error, Model::SearchPersonResult> SearchPersonOutcome;
+			typedef std::future<SearchPersonOutcome> SearchPersonOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::SearchPersonRequest&, const SearchPersonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchPersonAsyncHandler;
 			typedef Outcome<Error, Model::AddPersonResult> AddPersonOutcome;
 			typedef std::future<AddPersonOutcome> AddPersonOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::AddPersonRequest&, const AddPersonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddPersonAsyncHandler;
 			typedef Outcome<Error, Model::AddFacesResult> AddFacesOutcome;
 			typedef std::future<AddFacesOutcome> AddFacesOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::AddFacesRequest&, const AddFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddFacesAsyncHandler;
+			typedef Outcome<Error, Model::AddSimilarityImageResult> AddSimilarityImageOutcome;
+			typedef std::future<AddSimilarityImageOutcome> AddSimilarityImageOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::AddSimilarityImageRequest&, const AddSimilarityImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddSimilarityImageAsyncHandler;
 
 			GreenClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			GreenClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -179,6 +194,9 @@ namespace AlibabaCloud
 			DeletePersonOutcome deletePerson(const Model::DeletePersonRequest &request)const;
 			void deletePersonAsync(const Model::DeletePersonRequest& request, const DeletePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePersonOutcomeCallable deletePersonCallable(const Model::DeletePersonRequest& request) const;
+			VideoSyncScanOutcome videoSyncScan(const Model::VideoSyncScanRequest &request)const;
+			void videoSyncScanAsync(const Model::VideoSyncScanRequest& request, const VideoSyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VideoSyncScanOutcomeCallable videoSyncScanCallable(const Model::VideoSyncScanRequest& request) const;
 			VideoAsyncScanResultsOutcome videoAsyncScanResults(const Model::VideoAsyncScanResultsRequest &request)const;
 			void videoAsyncScanResultsAsync(const Model::VideoAsyncScanResultsRequest& request, const VideoAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VideoAsyncScanResultsOutcomeCallable videoAsyncScanResultsCallable(const Model::VideoAsyncScanResultsRequest& request) const;
@@ -194,9 +212,6 @@ namespace AlibabaCloud
 			TextFeedbackOutcome textFeedback(const Model::TextFeedbackRequest &request)const;
 			void textFeedbackAsync(const Model::TextFeedbackRequest& request, const TextFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TextFeedbackOutcomeCallable textFeedbackCallable(const Model::TextFeedbackRequest& request) const;
-			SearchOutcome search(const Model::SearchRequest &request)const;
-			void searchAsync(const Model::SearchRequest& request, const SearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SearchOutcomeCallable searchCallable(const Model::SearchRequest& request) const;
 			FileAsyncScanResultsOutcome fileAsyncScanResults(const Model::FileAsyncScanResultsRequest &request)const;
 			void fileAsyncScanResultsAsync(const Model::FileAsyncScanResultsRequest& request, const FileAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FileAsyncScanResultsOutcomeCallable fileAsyncScanResultsCallable(const Model::FileAsyncScanResultsRequest& request) const;
@@ -230,12 +245,21 @@ namespace AlibabaCloud
 			ImageScanFeedbackOutcome imageScanFeedback(const Model::ImageScanFeedbackRequest &request)const;
 			void imageScanFeedbackAsync(const Model::ImageScanFeedbackRequest& request, const ImageScanFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImageScanFeedbackOutcomeCallable imageScanFeedbackCallable(const Model::ImageScanFeedbackRequest& request) const;
+			DeleteSimilarityImageOutcome deleteSimilarityImage(const Model::DeleteSimilarityImageRequest &request)const;
+			void deleteSimilarityImageAsync(const Model::DeleteSimilarityImageRequest& request, const DeleteSimilarityImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSimilarityImageOutcomeCallable deleteSimilarityImageCallable(const Model::DeleteSimilarityImageRequest& request) const;
+			SearchPersonOutcome searchPerson(const Model::SearchPersonRequest &request)const;
+			void searchPersonAsync(const Model::SearchPersonRequest& request, const SearchPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchPersonOutcomeCallable searchPersonCallable(const Model::SearchPersonRequest& request) const;
 			AddPersonOutcome addPerson(const Model::AddPersonRequest &request)const;
 			void addPersonAsync(const Model::AddPersonRequest& request, const AddPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddPersonOutcomeCallable addPersonCallable(const Model::AddPersonRequest& request) const;
 			AddFacesOutcome addFaces(const Model::AddFacesRequest &request)const;
 			void addFacesAsync(const Model::AddFacesRequest& request, const AddFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddFacesOutcomeCallable addFacesCallable(const Model::AddFacesRequest& request) const;
+			AddSimilarityImageOutcome addSimilarityImage(const Model::AddSimilarityImageRequest &request)const;
+			void addSimilarityImageAsync(const Model::AddSimilarityImageRequest& request, const AddSimilarityImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddSimilarityImageOutcomeCallable addSimilarityImageCallable(const Model::AddSimilarityImageRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
