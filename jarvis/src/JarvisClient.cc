@@ -159,6 +159,78 @@ JarvisClient::CreateAccessWhiteListGroupOutcomeCallable JarvisClient::createAcce
 	return task->get_future();
 }
 
+JarvisClient::DescribeDdosDefenseInfoOutcome JarvisClient::describeDdosDefenseInfo(const DescribeDdosDefenseInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDdosDefenseInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDdosDefenseInfoOutcome(DescribeDdosDefenseInfoResult(outcome.result()));
+	else
+		return DescribeDdosDefenseInfoOutcome(outcome.error());
+}
+
+void JarvisClient::describeDdosDefenseInfoAsync(const DescribeDdosDefenseInfoRequest& request, const DescribeDdosDefenseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDdosDefenseInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeDdosDefenseInfoOutcomeCallable JarvisClient::describeDdosDefenseInfoCallable(const DescribeDdosDefenseInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDdosDefenseInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDdosDefenseInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribePhoneInfoOutcome JarvisClient::describePhoneInfo(const DescribePhoneInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePhoneInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePhoneInfoOutcome(DescribePhoneInfoResult(outcome.result()));
+	else
+		return DescribePhoneInfoOutcome(outcome.error());
+}
+
+void JarvisClient::describePhoneInfoAsync(const DescribePhoneInfoRequest& request, const DescribePhoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePhoneInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribePhoneInfoOutcomeCallable JarvisClient::describePhoneInfoCallable(const DescribePhoneInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePhoneInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describePhoneInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 JarvisClient::DescribeAccessWhitelistEcsListOutcome JarvisClient::describeAccessWhitelistEcsList(const DescribeAccessWhitelistEcsListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +591,42 @@ JarvisClient::DescribeResetRecordQueryCountOutcomeCallable JarvisClient::describ
 	return task->get_future();
 }
 
+JarvisClient::DescribePunishListOutcome JarvisClient::describePunishList(const DescribePunishListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePunishListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePunishListOutcome(DescribePunishListResult(outcome.result()));
+	else
+		return DescribePunishListOutcome(outcome.error());
+}
+
+void JarvisClient::describePunishListAsync(const DescribePunishListRequest& request, const DescribePunishListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePunishList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribePunishListOutcomeCallable JarvisClient::describePunishListCallable(const DescribePunishListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePunishListOutcome()>>(
+			[this, request]()
+			{
+			return this->describePunishList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 JarvisClient::DescribeUidWhiteListGroupOutcome JarvisClient::describeUidWhiteListGroup(const DescribeUidWhiteListGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +657,42 @@ JarvisClient::DescribeUidWhiteListGroupOutcomeCallable JarvisClient::describeUid
 			[this, request]()
 			{
 			return this->describeUidWhiteListGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeRiskListDetailOutcome JarvisClient::describeRiskListDetail(const DescribeRiskListDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRiskListDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRiskListDetailOutcome(DescribeRiskListDetailResult(outcome.result()));
+	else
+		return DescribeRiskListDetailOutcome(outcome.error());
+}
+
+void JarvisClient::describeRiskListDetailAsync(const DescribeRiskListDetailRequest& request, const DescribeRiskListDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRiskListDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeRiskListDetailOutcomeCallable JarvisClient::describeRiskListDetailCallable(const DescribeRiskListDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRiskListDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRiskListDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

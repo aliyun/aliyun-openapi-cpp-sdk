@@ -27,6 +27,10 @@ set(jarvis_public_header_model
 	include/alibabacloud/jarvis/model/CreateCpmcPunishFeedBackResult.h
 	include/alibabacloud/jarvis/model/CreateAccessWhiteListGroupRequest.h
 	include/alibabacloud/jarvis/model/CreateAccessWhiteListGroupResult.h
+	include/alibabacloud/jarvis/model/DescribeDdosDefenseInfoRequest.h
+	include/alibabacloud/jarvis/model/DescribeDdosDefenseInfoResult.h
+	include/alibabacloud/jarvis/model/DescribePhoneInfoRequest.h
+	include/alibabacloud/jarvis/model/DescribePhoneInfoResult.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhitelistEcsListRequest.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhitelistEcsListResult.h
 	include/alibabacloud/jarvis/model/DescribeResetRecordListRequest.h
@@ -47,8 +51,12 @@ set(jarvis_public_header_model
 	include/alibabacloud/jarvis/model/DescribeAccessWhiteListGroupResult.h
 	include/alibabacloud/jarvis/model/DescribeResetRecordQueryCountRequest.h
 	include/alibabacloud/jarvis/model/DescribeResetRecordQueryCountResult.h
+	include/alibabacloud/jarvis/model/DescribePunishListRequest.h
+	include/alibabacloud/jarvis/model/DescribePunishListResult.h
 	include/alibabacloud/jarvis/model/DescribeUidWhiteListGroupRequest.h
 	include/alibabacloud/jarvis/model/DescribeUidWhiteListGroupResult.h
+	include/alibabacloud/jarvis/model/DescribeRiskListDetailRequest.h
+	include/alibabacloud/jarvis/model/DescribeRiskListDetailResult.h
 	include/alibabacloud/jarvis/model/DescribeRiskTrendRequest.h
 	include/alibabacloud/jarvis/model/DescribeRiskTrendResult.h )
 
@@ -60,6 +68,10 @@ set(jarvis_src
 	src/model/CreateCpmcPunishFeedBackResult.cc
 	src/model/CreateAccessWhiteListGroupRequest.cc
 	src/model/CreateAccessWhiteListGroupResult.cc
+	src/model/DescribeDdosDefenseInfoRequest.cc
+	src/model/DescribeDdosDefenseInfoResult.cc
+	src/model/DescribePhoneInfoRequest.cc
+	src/model/DescribePhoneInfoResult.cc
 	src/model/DescribeAccessWhitelistEcsListRequest.cc
 	src/model/DescribeAccessWhitelistEcsListResult.cc
 	src/model/DescribeResetRecordListRequest.cc
@@ -80,8 +92,12 @@ set(jarvis_src
 	src/model/DescribeAccessWhiteListGroupResult.cc
 	src/model/DescribeResetRecordQueryCountRequest.cc
 	src/model/DescribeResetRecordQueryCountResult.cc
+	src/model/DescribePunishListRequest.cc
+	src/model/DescribePunishListResult.cc
 	src/model/DescribeUidWhiteListGroupRequest.cc
 	src/model/DescribeUidWhiteListGroupResult.cc
+	src/model/DescribeRiskListDetailRequest.cc
+	src/model/DescribeRiskListDetailResult.cc
 	src/model/DescribeRiskTrendRequest.cc
 	src/model/DescribeRiskTrendResult.cc )
 

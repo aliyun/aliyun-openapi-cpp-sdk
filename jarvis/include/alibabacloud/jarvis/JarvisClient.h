@@ -28,6 +28,10 @@
 #include "model/CreateCpmcPunishFeedBackResult.h"
 #include "model/CreateAccessWhiteListGroupRequest.h"
 #include "model/CreateAccessWhiteListGroupResult.h"
+#include "model/DescribeDdosDefenseInfoRequest.h"
+#include "model/DescribeDdosDefenseInfoResult.h"
+#include "model/DescribePhoneInfoRequest.h"
+#include "model/DescribePhoneInfoResult.h"
 #include "model/DescribeAccessWhitelistEcsListRequest.h"
 #include "model/DescribeAccessWhitelistEcsListResult.h"
 #include "model/DescribeResetRecordListRequest.h"
@@ -48,8 +52,12 @@
 #include "model/DescribeAccessWhiteListGroupResult.h"
 #include "model/DescribeResetRecordQueryCountRequest.h"
 #include "model/DescribeResetRecordQueryCountResult.h"
+#include "model/DescribePunishListRequest.h"
+#include "model/DescribePunishListResult.h"
 #include "model/DescribeUidWhiteListGroupRequest.h"
 #include "model/DescribeUidWhiteListGroupResult.h"
+#include "model/DescribeRiskListDetailRequest.h"
+#include "model/DescribeRiskListDetailResult.h"
 #include "model/DescribeRiskTrendRequest.h"
 #include "model/DescribeRiskTrendResult.h"
 
@@ -70,6 +78,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateAccessWhiteListGroupResult> CreateAccessWhiteListGroupOutcome;
 			typedef std::future<CreateAccessWhiteListGroupOutcome> CreateAccessWhiteListGroupOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::CreateAccessWhiteListGroupRequest&, const CreateAccessWhiteListGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessWhiteListGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDdosDefenseInfoResult> DescribeDdosDefenseInfoOutcome;
+			typedef std::future<DescribeDdosDefenseInfoOutcome> DescribeDdosDefenseInfoOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeDdosDefenseInfoRequest&, const DescribeDdosDefenseInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDdosDefenseInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribePhoneInfoResult> DescribePhoneInfoOutcome;
+			typedef std::future<DescribePhoneInfoOutcome> DescribePhoneInfoOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribePhoneInfoRequest&, const DescribePhoneInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccessWhitelistEcsListResult> DescribeAccessWhitelistEcsListOutcome;
 			typedef std::future<DescribeAccessWhitelistEcsListOutcome> DescribeAccessWhitelistEcsListOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeAccessWhitelistEcsListRequest&, const DescribeAccessWhitelistEcsListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessWhitelistEcsListAsyncHandler;
@@ -100,9 +114,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeResetRecordQueryCountResult> DescribeResetRecordQueryCountOutcome;
 			typedef std::future<DescribeResetRecordQueryCountOutcome> DescribeResetRecordQueryCountOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeResetRecordQueryCountRequest&, const DescribeResetRecordQueryCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResetRecordQueryCountAsyncHandler;
+			typedef Outcome<Error, Model::DescribePunishListResult> DescribePunishListOutcome;
+			typedef std::future<DescribePunishListOutcome> DescribePunishListOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribePunishListRequest&, const DescribePunishListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePunishListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUidWhiteListGroupResult> DescribeUidWhiteListGroupOutcome;
 			typedef std::future<DescribeUidWhiteListGroupOutcome> DescribeUidWhiteListGroupOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeUidWhiteListGroupRequest&, const DescribeUidWhiteListGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUidWhiteListGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRiskListDetailResult> DescribeRiskListDetailOutcome;
+			typedef std::future<DescribeRiskListDetailOutcome> DescribeRiskListDetailOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeRiskListDetailRequest&, const DescribeRiskListDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskListDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRiskTrendResult> DescribeRiskTrendOutcome;
 			typedef std::future<DescribeRiskTrendOutcome> DescribeRiskTrendOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeRiskTrendRequest&, const DescribeRiskTrendOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskTrendAsyncHandler;
@@ -120,6 +140,12 @@ namespace AlibabaCloud
 			CreateAccessWhiteListGroupOutcome createAccessWhiteListGroup(const Model::CreateAccessWhiteListGroupRequest &request)const;
 			void createAccessWhiteListGroupAsync(const Model::CreateAccessWhiteListGroupRequest& request, const CreateAccessWhiteListGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAccessWhiteListGroupOutcomeCallable createAccessWhiteListGroupCallable(const Model::CreateAccessWhiteListGroupRequest& request) const;
+			DescribeDdosDefenseInfoOutcome describeDdosDefenseInfo(const Model::DescribeDdosDefenseInfoRequest &request)const;
+			void describeDdosDefenseInfoAsync(const Model::DescribeDdosDefenseInfoRequest& request, const DescribeDdosDefenseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDdosDefenseInfoOutcomeCallable describeDdosDefenseInfoCallable(const Model::DescribeDdosDefenseInfoRequest& request) const;
+			DescribePhoneInfoOutcome describePhoneInfo(const Model::DescribePhoneInfoRequest &request)const;
+			void describePhoneInfoAsync(const Model::DescribePhoneInfoRequest& request, const DescribePhoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePhoneInfoOutcomeCallable describePhoneInfoCallable(const Model::DescribePhoneInfoRequest& request) const;
 			DescribeAccessWhitelistEcsListOutcome describeAccessWhitelistEcsList(const Model::DescribeAccessWhitelistEcsListRequest &request)const;
 			void describeAccessWhitelistEcsListAsync(const Model::DescribeAccessWhitelistEcsListRequest& request, const DescribeAccessWhitelistEcsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccessWhitelistEcsListOutcomeCallable describeAccessWhitelistEcsListCallable(const Model::DescribeAccessWhitelistEcsListRequest& request) const;
@@ -150,9 +176,15 @@ namespace AlibabaCloud
 			DescribeResetRecordQueryCountOutcome describeResetRecordQueryCount(const Model::DescribeResetRecordQueryCountRequest &request)const;
 			void describeResetRecordQueryCountAsync(const Model::DescribeResetRecordQueryCountRequest& request, const DescribeResetRecordQueryCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeResetRecordQueryCountOutcomeCallable describeResetRecordQueryCountCallable(const Model::DescribeResetRecordQueryCountRequest& request) const;
+			DescribePunishListOutcome describePunishList(const Model::DescribePunishListRequest &request)const;
+			void describePunishListAsync(const Model::DescribePunishListRequest& request, const DescribePunishListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePunishListOutcomeCallable describePunishListCallable(const Model::DescribePunishListRequest& request) const;
 			DescribeUidWhiteListGroupOutcome describeUidWhiteListGroup(const Model::DescribeUidWhiteListGroupRequest &request)const;
 			void describeUidWhiteListGroupAsync(const Model::DescribeUidWhiteListGroupRequest& request, const DescribeUidWhiteListGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUidWhiteListGroupOutcomeCallable describeUidWhiteListGroupCallable(const Model::DescribeUidWhiteListGroupRequest& request) const;
+			DescribeRiskListDetailOutcome describeRiskListDetail(const Model::DescribeRiskListDetailRequest &request)const;
+			void describeRiskListDetailAsync(const Model::DescribeRiskListDetailRequest& request, const DescribeRiskListDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRiskListDetailOutcomeCallable describeRiskListDetailCallable(const Model::DescribeRiskListDetailRequest& request) const;
 			DescribeRiskTrendOutcome describeRiskTrend(const Model::DescribeRiskTrendRequest &request)const;
 			void describeRiskTrendAsync(const Model::DescribeRiskTrendRequest& request, const DescribeRiskTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRiskTrendOutcomeCallable describeRiskTrendCallable(const Model::DescribeRiskTrendRequest& request) const;
