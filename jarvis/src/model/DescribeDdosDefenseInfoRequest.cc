@@ -47,15 +47,15 @@ void DescribeDdosDefenseInfoRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
-std::string DescribeDdosDefenseInfoRequest::getSrcUid()const
+long DescribeDdosDefenseInfoRequest::getSrcUid()const
 {
 	return srcUid_;
 }
 
-void DescribeDdosDefenseInfoRequest::setSrcUid(const std::string& srcUid)
+void DescribeDdosDefenseInfoRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setParameter("SrcUid", srcUid);
+	setParameter("SrcUid", std::to_string(srcUid));
 }
 
 std::string DescribeDdosDefenseInfoRequest::getSourceCode()const

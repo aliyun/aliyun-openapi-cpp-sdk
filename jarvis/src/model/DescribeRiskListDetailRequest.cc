@@ -47,15 +47,15 @@ void DescribeRiskListDetailRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeRiskListDetailRequest::getPageSize()const
+int DescribeRiskListDetailRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeRiskListDetailRequest::setPageSize(const std::string& pageSize)
+void DescribeRiskListDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", pageSize);
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRiskListDetailRequest::getQueryProduct()const
@@ -69,15 +69,15 @@ void DescribeRiskListDetailRequest::setQueryProduct(const std::string& queryProd
 	setParameter("QueryProduct", queryProduct);
 }
 
-std::string DescribeRiskListDetailRequest::getCurrentPage()const
+int DescribeRiskListDetailRequest::getCurrentPage()const
 {
 	return currentPage_;
 }
 
-void DescribeRiskListDetailRequest::setCurrentPage(const std::string& currentPage)
+void DescribeRiskListDetailRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", currentPage);
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeRiskListDetailRequest::getRiskDescribe()const
@@ -102,15 +102,15 @@ void DescribeRiskListDetailRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
-std::string DescribeRiskListDetailRequest::getSrcUid()const
+long DescribeRiskListDetailRequest::getSrcUid()const
 {
 	return srcUid_;
 }
 
-void DescribeRiskListDetailRequest::setSrcUid(const std::string& srcUid)
+void DescribeRiskListDetailRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setParameter("SrcUid", srcUid);
+	setParameter("SrcUid", std::to_string(srcUid));
 }
 
 std::string DescribeRiskListDetailRequest::getSourceCode()const

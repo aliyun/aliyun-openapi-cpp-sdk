@@ -91,15 +91,15 @@ void DescribePunishListRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
-std::string DescribePunishListRequest::getSrcUid()const
+long DescribePunishListRequest::getSrcUid()const
 {
 	return srcUid_;
 }
 
-void DescribePunishListRequest::setSrcUid(const std::string& srcUid)
+void DescribePunishListRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setParameter("SrcUid", srcUid);
+	setParameter("SrcUid", std::to_string(srcUid));
 }
 
 std::string DescribePunishListRequest::getSourceCode()const

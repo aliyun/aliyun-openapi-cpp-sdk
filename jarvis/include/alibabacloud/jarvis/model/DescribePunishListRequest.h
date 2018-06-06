@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				void setPunishStatus(const std::string& punishStatus);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getSrcUid()const;
-				void setSrcUid(const std::string& srcUid);
+				long getSrcUid()const;
+				void setSrcUid(long srcUid);
 				std::string getSourceCode()const;
 				void setSourceCode(const std::string& sourceCode);
 
@@ -59,7 +59,7 @@ namespace AlibabaCloud
 				int currentPage_;
 				std::string punishStatus_;
 				std::string lang_;
-				std::string srcUid_;
+				long srcUid_;
 				std::string sourceCode_;
 
 			};
