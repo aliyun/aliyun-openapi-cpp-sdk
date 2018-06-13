@@ -267,6 +267,42 @@ EssClient::DescribeNotificationConfigurationsOutcomeCallable EssClient::describe
 	return task->get_future();
 }
 
+EssClient::ModifyLifecycleHookOutcome EssClient::modifyLifecycleHook(const ModifyLifecycleHookRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLifecycleHookOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLifecycleHookOutcome(ModifyLifecycleHookResult(outcome.result()));
+	else
+		return ModifyLifecycleHookOutcome(outcome.error());
+}
+
+void EssClient::modifyLifecycleHookAsync(const ModifyLifecycleHookRequest& request, const ModifyLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLifecycleHook(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::ModifyLifecycleHookOutcomeCallable EssClient::modifyLifecycleHookCallable(const ModifyLifecycleHookRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLifecycleHookOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLifecycleHook(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::DescribeScalingRulesOutcome EssClient::describeScalingRules(const DescribeScalingRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -735,6 +771,42 @@ EssClient::ModifyScheduledTaskOutcomeCallable EssClient::modifyScheduledTaskCall
 	return task->get_future();
 }
 
+EssClient::RecordLifecycleActionHeartbeatOutcome EssClient::recordLifecycleActionHeartbeat(const RecordLifecycleActionHeartbeatRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecordLifecycleActionHeartbeatOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecordLifecycleActionHeartbeatOutcome(RecordLifecycleActionHeartbeatResult(outcome.result()));
+	else
+		return RecordLifecycleActionHeartbeatOutcome(outcome.error());
+}
+
+void EssClient::recordLifecycleActionHeartbeatAsync(const RecordLifecycleActionHeartbeatRequest& request, const RecordLifecycleActionHeartbeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recordLifecycleActionHeartbeat(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::RecordLifecycleActionHeartbeatOutcomeCallable EssClient::recordLifecycleActionHeartbeatCallable(const RecordLifecycleActionHeartbeatRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecordLifecycleActionHeartbeatOutcome()>>(
+			[this, request]()
+			{
+			return this->recordLifecycleActionHeartbeat(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::RemoveInstancesOutcome EssClient::removeInstances(const RemoveInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,6 +1131,42 @@ EssClient::DescribeScheduledTasksOutcomeCallable EssClient::describeScheduledTas
 	return task->get_future();
 }
 
+EssClient::DeleteLifecycleHookOutcome EssClient::deleteLifecycleHook(const DeleteLifecycleHookRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLifecycleHookOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLifecycleHookOutcome(DeleteLifecycleHookResult(outcome.result()));
+	else
+		return DeleteLifecycleHookOutcome(outcome.error());
+}
+
+void EssClient::deleteLifecycleHookAsync(const DeleteLifecycleHookRequest& request, const DeleteLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLifecycleHook(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DeleteLifecycleHookOutcomeCallable EssClient::deleteLifecycleHookCallable(const DeleteLifecycleHookRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLifecycleHookOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLifecycleHook(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::SetInstancesProtectionOutcome EssClient::setInstancesProtection(const SetInstancesProtectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1125,6 +1233,114 @@ EssClient::DeleteNotificationConfigurationOutcomeCallable EssClient::deleteNotif
 			[this, request]()
 			{
 			return this->deleteNotificationConfiguration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::CompleteLifecycleActionOutcome EssClient::completeLifecycleAction(const CompleteLifecycleActionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CompleteLifecycleActionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CompleteLifecycleActionOutcome(CompleteLifecycleActionResult(outcome.result()));
+	else
+		return CompleteLifecycleActionOutcome(outcome.error());
+}
+
+void EssClient::completeLifecycleActionAsync(const CompleteLifecycleActionRequest& request, const CompleteLifecycleActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, completeLifecycleAction(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::CompleteLifecycleActionOutcomeCallable EssClient::completeLifecycleActionCallable(const CompleteLifecycleActionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CompleteLifecycleActionOutcome()>>(
+			[this, request]()
+			{
+			return this->completeLifecycleAction(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DescribeLifecycleHooksOutcome EssClient::describeLifecycleHooks(const DescribeLifecycleHooksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLifecycleHooksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLifecycleHooksOutcome(DescribeLifecycleHooksResult(outcome.result()));
+	else
+		return DescribeLifecycleHooksOutcome(outcome.error());
+}
+
+void EssClient::describeLifecycleHooksAsync(const DescribeLifecycleHooksRequest& request, const DescribeLifecycleHooksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLifecycleHooks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DescribeLifecycleHooksOutcomeCallable EssClient::describeLifecycleHooksCallable(const DescribeLifecycleHooksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLifecycleHooksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLifecycleHooks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DescribeAccountAttributesOutcome EssClient::describeAccountAttributes(const DescribeAccountAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccountAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccountAttributesOutcome(DescribeAccountAttributesResult(outcome.result()));
+	else
+		return DescribeAccountAttributesOutcome(outcome.error());
+}
+
+void EssClient::describeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccountAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DescribeAccountAttributesOutcomeCallable EssClient::describeAccountAttributesCallable(const DescribeAccountAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccountAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccountAttributes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1449,6 +1665,42 @@ EssClient::DeleteScalingRuleOutcomeCallable EssClient::deleteScalingRuleCallable
 			[this, request]()
 			{
 			return this->deleteScalingRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::CreateLifecycleHookOutcome EssClient::createLifecycleHook(const CreateLifecycleHookRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLifecycleHookOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLifecycleHookOutcome(CreateLifecycleHookResult(outcome.result()));
+	else
+		return CreateLifecycleHookOutcome(outcome.error());
+}
+
+void EssClient::createLifecycleHookAsync(const CreateLifecycleHookRequest& request, const CreateLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLifecycleHook(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::CreateLifecycleHookOutcomeCallable EssClient::createLifecycleHookCallable(const CreateLifecycleHookRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLifecycleHookOutcome()>>(
+			[this, request]()
+			{
+			return this->createLifecycleHook(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -58,6 +58,17 @@ void CreateScalingGroupRequest::setLoadBalancerIds(const std::string& loadBalanc
 	setParameter("LoadBalancerIds", loadBalancerIds);
 }
 
+std::string CreateScalingGroupRequest::getHealthCheckType()const
+{
+	return healthCheckType_;
+}
+
+void CreateScalingGroupRequest::setHealthCheckType(const std::string& healthCheckType)
+{
+	healthCheckType_ = healthCheckType;
+	setParameter("HealthCheckType", healthCheckType);
+}
+
 std::string CreateScalingGroupRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -167,6 +178,27 @@ void CreateScalingGroupRequest::setMaxSize(int maxSize)
 {
 	maxSize_ = maxSize;
 	setParameter("MaxSize", std::to_string(maxSize));
+}
+
+std::vector<CreateScalingGroupRequest::LifecycleHook> CreateScalingGroupRequest::getLifecycleHook()const
+{
+	return lifecycleHook_;
+}
+
+void CreateScalingGroupRequest::setLifecycleHook(const std::vector<LifecycleHook>& lifecycleHook)
+{
+	lifecycleHook_ = lifecycleHook;
+	int i = 0;
+	for(int i = 0; i!= lifecycleHook.size(); i++)	{
+		auto obj = lifecycleHook.at(i);
+		std::string str ="LifecycleHook."+ std::to_string(i);
+		setParameter(str + ".LifecycleHookName", obj.lifecycleHookName);
+		setParameter(str + ".LifecycleTransition", obj.lifecycleTransition);
+		setParameter(str + ".DefaultResult", obj.defaultResult);
+		setParameter(str + ".HeartbeatTimeout", std::to_string(obj.heartbeatTimeout));
+		setParameter(str + ".NotificationMetadata", obj.notificationMetadata);
+		setParameter(str + ".NotificationArn", obj.notificationArn);
+	}
 }
 
 int CreateScalingGroupRequest::getDefaultCooldown()const

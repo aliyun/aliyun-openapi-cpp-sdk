@@ -33,6 +33,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/ExitStandbyResult.h
 	include/alibabacloud/ess/model/DescribeNotificationConfigurationsRequest.h
 	include/alibabacloud/ess/model/DescribeNotificationConfigurationsResult.h
+	include/alibabacloud/ess/model/ModifyLifecycleHookRequest.h
+	include/alibabacloud/ess/model/ModifyLifecycleHookResult.h
 	include/alibabacloud/ess/model/DescribeScalingRulesRequest.h
 	include/alibabacloud/ess/model/DescribeScalingRulesResult.h
 	include/alibabacloud/ess/model/ModifyScalingGroupRequest.h
@@ -59,6 +61,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/DescribeScalingConfigurationsResult.h
 	include/alibabacloud/ess/model/ModifyScheduledTaskRequest.h
 	include/alibabacloud/ess/model/ModifyScheduledTaskResult.h
+	include/alibabacloud/ess/model/RecordLifecycleActionHeartbeatRequest.h
+	include/alibabacloud/ess/model/RecordLifecycleActionHeartbeatResult.h
 	include/alibabacloud/ess/model/RemoveInstancesRequest.h
 	include/alibabacloud/ess/model/RemoveInstancesResult.h
 	include/alibabacloud/ess/model/DescribeNotificationTypesRequest.h
@@ -77,10 +81,18 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/DescribeRegionsResult.h
 	include/alibabacloud/ess/model/DescribeScheduledTasksRequest.h
 	include/alibabacloud/ess/model/DescribeScheduledTasksResult.h
+	include/alibabacloud/ess/model/DeleteLifecycleHookRequest.h
+	include/alibabacloud/ess/model/DeleteLifecycleHookResult.h
 	include/alibabacloud/ess/model/SetInstancesProtectionRequest.h
 	include/alibabacloud/ess/model/SetInstancesProtectionResult.h
 	include/alibabacloud/ess/model/DeleteNotificationConfigurationRequest.h
 	include/alibabacloud/ess/model/DeleteNotificationConfigurationResult.h
+	include/alibabacloud/ess/model/CompleteLifecycleActionRequest.h
+	include/alibabacloud/ess/model/CompleteLifecycleActionResult.h
+	include/alibabacloud/ess/model/DescribeLifecycleHooksRequest.h
+	include/alibabacloud/ess/model/DescribeLifecycleHooksResult.h
+	include/alibabacloud/ess/model/DescribeAccountAttributesRequest.h
+	include/alibabacloud/ess/model/DescribeAccountAttributesResult.h
 	include/alibabacloud/ess/model/DetachInstancesRequest.h
 	include/alibabacloud/ess/model/DetachInstancesResult.h
 	include/alibabacloud/ess/model/DescribeLimitationRequest.h
@@ -99,6 +111,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/ModifyScalingRuleResult.h
 	include/alibabacloud/ess/model/DeleteScalingRuleRequest.h
 	include/alibabacloud/ess/model/DeleteScalingRuleResult.h
+	include/alibabacloud/ess/model/CreateLifecycleHookRequest.h
+	include/alibabacloud/ess/model/CreateLifecycleHookResult.h
 	include/alibabacloud/ess/model/VerifyUserRequest.h
 	include/alibabacloud/ess/model/VerifyUserResult.h
 	include/alibabacloud/ess/model/ModifyAlertConfigRequest.h
@@ -118,6 +132,8 @@ set(ess_src
 	src/model/ExitStandbyResult.cc
 	src/model/DescribeNotificationConfigurationsRequest.cc
 	src/model/DescribeNotificationConfigurationsResult.cc
+	src/model/ModifyLifecycleHookRequest.cc
+	src/model/ModifyLifecycleHookResult.cc
 	src/model/DescribeScalingRulesRequest.cc
 	src/model/DescribeScalingRulesResult.cc
 	src/model/ModifyScalingGroupRequest.cc
@@ -144,6 +160,8 @@ set(ess_src
 	src/model/DescribeScalingConfigurationsResult.cc
 	src/model/ModifyScheduledTaskRequest.cc
 	src/model/ModifyScheduledTaskResult.cc
+	src/model/RecordLifecycleActionHeartbeatRequest.cc
+	src/model/RecordLifecycleActionHeartbeatResult.cc
 	src/model/RemoveInstancesRequest.cc
 	src/model/RemoveInstancesResult.cc
 	src/model/DescribeNotificationTypesRequest.cc
@@ -162,10 +180,18 @@ set(ess_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeScheduledTasksRequest.cc
 	src/model/DescribeScheduledTasksResult.cc
+	src/model/DeleteLifecycleHookRequest.cc
+	src/model/DeleteLifecycleHookResult.cc
 	src/model/SetInstancesProtectionRequest.cc
 	src/model/SetInstancesProtectionResult.cc
 	src/model/DeleteNotificationConfigurationRequest.cc
 	src/model/DeleteNotificationConfigurationResult.cc
+	src/model/CompleteLifecycleActionRequest.cc
+	src/model/CompleteLifecycleActionResult.cc
+	src/model/DescribeLifecycleHooksRequest.cc
+	src/model/DescribeLifecycleHooksResult.cc
+	src/model/DescribeAccountAttributesRequest.cc
+	src/model/DescribeAccountAttributesResult.cc
 	src/model/DetachInstancesRequest.cc
 	src/model/DetachInstancesResult.cc
 	src/model/DescribeLimitationRequest.cc
@@ -184,6 +210,8 @@ set(ess_src
 	src/model/ModifyScalingRuleResult.cc
 	src/model/DeleteScalingRuleRequest.cc
 	src/model/DeleteScalingRuleResult.cc
+	src/model/CreateLifecycleHookRequest.cc
+	src/model/CreateLifecycleHookResult.cc
 	src/model/VerifyUserRequest.cc
 	src/model/VerifyUserResult.cc
 	src/model/ModifyAlertConfigRequest.cc

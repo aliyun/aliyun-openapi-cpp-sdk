@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getHealthCheckType()const;
+				void setHealthCheckType(const std::string& healthCheckType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupName()const;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string healthCheckType_;
 				std::string resourceOwnerAccount_;
 				std::string scalingGroupName_;
 				std::string scalingGroupId_;

@@ -36,6 +36,17 @@ void ModifyScalingGroupRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyScalingGroupRequest::getHealthCheckType()const
+{
+	return healthCheckType_;
+}
+
+void ModifyScalingGroupRequest::setHealthCheckType(const std::string& healthCheckType)
+{
+	healthCheckType_ = healthCheckType;
+	setParameter("HealthCheckType", healthCheckType);
+}
+
 std::string ModifyScalingGroupRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

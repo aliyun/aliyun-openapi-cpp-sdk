@@ -34,6 +34,8 @@
 #include "model/ExitStandbyResult.h"
 #include "model/DescribeNotificationConfigurationsRequest.h"
 #include "model/DescribeNotificationConfigurationsResult.h"
+#include "model/ModifyLifecycleHookRequest.h"
+#include "model/ModifyLifecycleHookResult.h"
 #include "model/DescribeScalingRulesRequest.h"
 #include "model/DescribeScalingRulesResult.h"
 #include "model/ModifyScalingGroupRequest.h"
@@ -60,6 +62,8 @@
 #include "model/DescribeScalingConfigurationsResult.h"
 #include "model/ModifyScheduledTaskRequest.h"
 #include "model/ModifyScheduledTaskResult.h"
+#include "model/RecordLifecycleActionHeartbeatRequest.h"
+#include "model/RecordLifecycleActionHeartbeatResult.h"
 #include "model/RemoveInstancesRequest.h"
 #include "model/RemoveInstancesResult.h"
 #include "model/DescribeNotificationTypesRequest.h"
@@ -78,10 +82,18 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeScheduledTasksRequest.h"
 #include "model/DescribeScheduledTasksResult.h"
+#include "model/DeleteLifecycleHookRequest.h"
+#include "model/DeleteLifecycleHookResult.h"
 #include "model/SetInstancesProtectionRequest.h"
 #include "model/SetInstancesProtectionResult.h"
 #include "model/DeleteNotificationConfigurationRequest.h"
 #include "model/DeleteNotificationConfigurationResult.h"
+#include "model/CompleteLifecycleActionRequest.h"
+#include "model/CompleteLifecycleActionResult.h"
+#include "model/DescribeLifecycleHooksRequest.h"
+#include "model/DescribeLifecycleHooksResult.h"
+#include "model/DescribeAccountAttributesRequest.h"
+#include "model/DescribeAccountAttributesResult.h"
 #include "model/DetachInstancesRequest.h"
 #include "model/DetachInstancesResult.h"
 #include "model/DescribeLimitationRequest.h"
@@ -100,6 +112,8 @@
 #include "model/ModifyScalingRuleResult.h"
 #include "model/DeleteScalingRuleRequest.h"
 #include "model/DeleteScalingRuleResult.h"
+#include "model/CreateLifecycleHookRequest.h"
+#include "model/CreateLifecycleHookResult.h"
 #include "model/VerifyUserRequest.h"
 #include "model/VerifyUserResult.h"
 #include "model/ModifyAlertConfigRequest.h"
@@ -131,6 +145,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeNotificationConfigurationsResult> DescribeNotificationConfigurationsOutcome;
 			typedef std::future<DescribeNotificationConfigurationsOutcome> DescribeNotificationConfigurationsOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DescribeNotificationConfigurationsRequest&, const DescribeNotificationConfigurationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotificationConfigurationsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyLifecycleHookResult> ModifyLifecycleHookOutcome;
+			typedef std::future<ModifyLifecycleHookOutcome> ModifyLifecycleHookOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::ModifyLifecycleHookRequest&, const ModifyLifecycleHookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLifecycleHookAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScalingRulesResult> DescribeScalingRulesOutcome;
 			typedef std::future<DescribeScalingRulesOutcome> DescribeScalingRulesOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DescribeScalingRulesRequest&, const DescribeScalingRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScalingRulesAsyncHandler;
@@ -170,6 +187,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyScheduledTaskResult> ModifyScheduledTaskOutcome;
 			typedef std::future<ModifyScheduledTaskOutcome> ModifyScheduledTaskOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::ModifyScheduledTaskRequest&, const ModifyScheduledTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScheduledTaskAsyncHandler;
+			typedef Outcome<Error, Model::RecordLifecycleActionHeartbeatResult> RecordLifecycleActionHeartbeatOutcome;
+			typedef std::future<RecordLifecycleActionHeartbeatOutcome> RecordLifecycleActionHeartbeatOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::RecordLifecycleActionHeartbeatRequest&, const RecordLifecycleActionHeartbeatOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecordLifecycleActionHeartbeatAsyncHandler;
 			typedef Outcome<Error, Model::RemoveInstancesResult> RemoveInstancesOutcome;
 			typedef std::future<RemoveInstancesOutcome> RemoveInstancesOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::RemoveInstancesRequest&, const RemoveInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveInstancesAsyncHandler;
@@ -197,12 +217,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeScheduledTasksResult> DescribeScheduledTasksOutcome;
 			typedef std::future<DescribeScheduledTasksOutcome> DescribeScheduledTasksOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DescribeScheduledTasksRequest&, const DescribeScheduledTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledTasksAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLifecycleHookResult> DeleteLifecycleHookOutcome;
+			typedef std::future<DeleteLifecycleHookOutcome> DeleteLifecycleHookOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::DeleteLifecycleHookRequest&, const DeleteLifecycleHookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLifecycleHookAsyncHandler;
 			typedef Outcome<Error, Model::SetInstancesProtectionResult> SetInstancesProtectionOutcome;
 			typedef std::future<SetInstancesProtectionOutcome> SetInstancesProtectionOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::SetInstancesProtectionRequest&, const SetInstancesProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetInstancesProtectionAsyncHandler;
 			typedef Outcome<Error, Model::DeleteNotificationConfigurationResult> DeleteNotificationConfigurationOutcome;
 			typedef std::future<DeleteNotificationConfigurationOutcome> DeleteNotificationConfigurationOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DeleteNotificationConfigurationRequest&, const DeleteNotificationConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNotificationConfigurationAsyncHandler;
+			typedef Outcome<Error, Model::CompleteLifecycleActionResult> CompleteLifecycleActionOutcome;
+			typedef std::future<CompleteLifecycleActionOutcome> CompleteLifecycleActionOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::CompleteLifecycleActionRequest&, const CompleteLifecycleActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompleteLifecycleActionAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLifecycleHooksResult> DescribeLifecycleHooksOutcome;
+			typedef std::future<DescribeLifecycleHooksOutcome> DescribeLifecycleHooksOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::DescribeLifecycleHooksRequest&, const DescribeLifecycleHooksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLifecycleHooksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAccountAttributesResult> DescribeAccountAttributesOutcome;
+			typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::DescribeAccountAttributesRequest&, const DescribeAccountAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountAttributesAsyncHandler;
 			typedef Outcome<Error, Model::DetachInstancesResult> DetachInstancesOutcome;
 			typedef std::future<DetachInstancesOutcome> DetachInstancesOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DetachInstancesRequest&, const DetachInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachInstancesAsyncHandler;
@@ -230,6 +262,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteScalingRuleResult> DeleteScalingRuleOutcome;
 			typedef std::future<DeleteScalingRuleOutcome> DeleteScalingRuleOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DeleteScalingRuleRequest&, const DeleteScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScalingRuleAsyncHandler;
+			typedef Outcome<Error, Model::CreateLifecycleHookResult> CreateLifecycleHookOutcome;
+			typedef std::future<CreateLifecycleHookOutcome> CreateLifecycleHookOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::CreateLifecycleHookRequest&, const CreateLifecycleHookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLifecycleHookAsyncHandler;
 			typedef Outcome<Error, Model::VerifyUserResult> VerifyUserOutcome;
 			typedef std::future<VerifyUserOutcome> VerifyUserOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::VerifyUserRequest&, const VerifyUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyUserAsyncHandler;
@@ -259,6 +294,9 @@ namespace AlibabaCloud
 			DescribeNotificationConfigurationsOutcome describeNotificationConfigurations(const Model::DescribeNotificationConfigurationsRequest &request)const;
 			void describeNotificationConfigurationsAsync(const Model::DescribeNotificationConfigurationsRequest& request, const DescribeNotificationConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNotificationConfigurationsOutcomeCallable describeNotificationConfigurationsCallable(const Model::DescribeNotificationConfigurationsRequest& request) const;
+			ModifyLifecycleHookOutcome modifyLifecycleHook(const Model::ModifyLifecycleHookRequest &request)const;
+			void modifyLifecycleHookAsync(const Model::ModifyLifecycleHookRequest& request, const ModifyLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyLifecycleHookOutcomeCallable modifyLifecycleHookCallable(const Model::ModifyLifecycleHookRequest& request) const;
 			DescribeScalingRulesOutcome describeScalingRules(const Model::DescribeScalingRulesRequest &request)const;
 			void describeScalingRulesAsync(const Model::DescribeScalingRulesRequest& request, const DescribeScalingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScalingRulesOutcomeCallable describeScalingRulesCallable(const Model::DescribeScalingRulesRequest& request) const;
@@ -298,6 +336,9 @@ namespace AlibabaCloud
 			ModifyScheduledTaskOutcome modifyScheduledTask(const Model::ModifyScheduledTaskRequest &request)const;
 			void modifyScheduledTaskAsync(const Model::ModifyScheduledTaskRequest& request, const ModifyScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyScheduledTaskOutcomeCallable modifyScheduledTaskCallable(const Model::ModifyScheduledTaskRequest& request) const;
+			RecordLifecycleActionHeartbeatOutcome recordLifecycleActionHeartbeat(const Model::RecordLifecycleActionHeartbeatRequest &request)const;
+			void recordLifecycleActionHeartbeatAsync(const Model::RecordLifecycleActionHeartbeatRequest& request, const RecordLifecycleActionHeartbeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecordLifecycleActionHeartbeatOutcomeCallable recordLifecycleActionHeartbeatCallable(const Model::RecordLifecycleActionHeartbeatRequest& request) const;
 			RemoveInstancesOutcome removeInstances(const Model::RemoveInstancesRequest &request)const;
 			void removeInstancesAsync(const Model::RemoveInstancesRequest& request, const RemoveInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveInstancesOutcomeCallable removeInstancesCallable(const Model::RemoveInstancesRequest& request) const;
@@ -325,12 +366,24 @@ namespace AlibabaCloud
 			DescribeScheduledTasksOutcome describeScheduledTasks(const Model::DescribeScheduledTasksRequest &request)const;
 			void describeScheduledTasksAsync(const Model::DescribeScheduledTasksRequest& request, const DescribeScheduledTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScheduledTasksOutcomeCallable describeScheduledTasksCallable(const Model::DescribeScheduledTasksRequest& request) const;
+			DeleteLifecycleHookOutcome deleteLifecycleHook(const Model::DeleteLifecycleHookRequest &request)const;
+			void deleteLifecycleHookAsync(const Model::DeleteLifecycleHookRequest& request, const DeleteLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLifecycleHookOutcomeCallable deleteLifecycleHookCallable(const Model::DeleteLifecycleHookRequest& request) const;
 			SetInstancesProtectionOutcome setInstancesProtection(const Model::SetInstancesProtectionRequest &request)const;
 			void setInstancesProtectionAsync(const Model::SetInstancesProtectionRequest& request, const SetInstancesProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetInstancesProtectionOutcomeCallable setInstancesProtectionCallable(const Model::SetInstancesProtectionRequest& request) const;
 			DeleteNotificationConfigurationOutcome deleteNotificationConfiguration(const Model::DeleteNotificationConfigurationRequest &request)const;
 			void deleteNotificationConfigurationAsync(const Model::DeleteNotificationConfigurationRequest& request, const DeleteNotificationConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteNotificationConfigurationOutcomeCallable deleteNotificationConfigurationCallable(const Model::DeleteNotificationConfigurationRequest& request) const;
+			CompleteLifecycleActionOutcome completeLifecycleAction(const Model::CompleteLifecycleActionRequest &request)const;
+			void completeLifecycleActionAsync(const Model::CompleteLifecycleActionRequest& request, const CompleteLifecycleActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CompleteLifecycleActionOutcomeCallable completeLifecycleActionCallable(const Model::CompleteLifecycleActionRequest& request) const;
+			DescribeLifecycleHooksOutcome describeLifecycleHooks(const Model::DescribeLifecycleHooksRequest &request)const;
+			void describeLifecycleHooksAsync(const Model::DescribeLifecycleHooksRequest& request, const DescribeLifecycleHooksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLifecycleHooksOutcomeCallable describeLifecycleHooksCallable(const Model::DescribeLifecycleHooksRequest& request) const;
+			DescribeAccountAttributesOutcome describeAccountAttributes(const Model::DescribeAccountAttributesRequest &request)const;
+			void describeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAccountAttributesOutcomeCallable describeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
 			DetachInstancesOutcome detachInstances(const Model::DetachInstancesRequest &request)const;
 			void detachInstancesAsync(const Model::DetachInstancesRequest& request, const DetachInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachInstancesOutcomeCallable detachInstancesCallable(const Model::DetachInstancesRequest& request) const;
@@ -358,6 +411,9 @@ namespace AlibabaCloud
 			DeleteScalingRuleOutcome deleteScalingRule(const Model::DeleteScalingRuleRequest &request)const;
 			void deleteScalingRuleAsync(const Model::DeleteScalingRuleRequest& request, const DeleteScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteScalingRuleOutcomeCallable deleteScalingRuleCallable(const Model::DeleteScalingRuleRequest& request) const;
+			CreateLifecycleHookOutcome createLifecycleHook(const Model::CreateLifecycleHookRequest &request)const;
+			void createLifecycleHookAsync(const Model::CreateLifecycleHookRequest& request, const CreateLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateLifecycleHookOutcomeCallable createLifecycleHookCallable(const Model::CreateLifecycleHookRequest& request) const;
 			VerifyUserOutcome verifyUser(const Model::VerifyUserRequest &request)const;
 			void verifyUserAsync(const Model::VerifyUserRequest& request, const VerifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyUserOutcomeCallable verifyUserCallable(const Model::VerifyUserRequest& request) const;

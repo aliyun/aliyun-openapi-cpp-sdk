@@ -82,6 +82,8 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.vSwitchId = value["VSwitchId"].asString();
 		if(!value["MultiAZPolicy"].isNull())
 			scalingGroupsObject.multiAZPolicy = value["MultiAZPolicy"].asString();
+		if(!value["HealthCheckType"].isNull())
+			scalingGroupsObject.healthCheckType = value["HealthCheckType"].asString();
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			scalingGroupsObject.vSwitchIds.push_back(value.asString());
