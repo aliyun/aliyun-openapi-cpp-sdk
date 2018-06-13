@@ -1,0 +1,902 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_LIVE_LIVECLIENT_H_
+#define ALIBABACLOUD_LIVE_LIVECLIENT_H_
+
+#include <future>
+#include <alibabacloud/core/AsyncCallerContext.h>
+#include <alibabacloud/core/EndpointProvider.h>
+#include <alibabacloud/core/RpcServiceClient.h>
+#include "LiveExport.h"
+#include "model/DescribeLiveRecordNotifyConfigRequest.h"
+#include "model/DescribeLiveRecordNotifyConfigResult.h"
+#include "model/DescribeLiveDetectNotifyConfigRequest.h"
+#include "model/DescribeLiveDetectNotifyConfigResult.h"
+#include "model/ModifyCasterComponentRequest.h"
+#include "model/ModifyCasterComponentResult.h"
+#include "model/UpdateLiveSnapshotDetectPornConfigRequest.h"
+#include "model/UpdateLiveSnapshotDetectPornConfigResult.h"
+#include "model/EffectCasterUrgentRequest.h"
+#include "model/EffectCasterUrgentResult.h"
+#include "model/DescribeCasterComponentsRequest.h"
+#include "model/DescribeCasterComponentsResult.h"
+#include "model/DescribeLiveMixConfigRequest.h"
+#include "model/DescribeLiveMixConfigResult.h"
+#include "model/CreateLiveStreamRecordIndexFilesRequest.h"
+#include "model/CreateLiveStreamRecordIndexFilesResult.h"
+#include "model/UpdateCasterSceneConfigRequest.h"
+#include "model/UpdateCasterSceneConfigResult.h"
+#include "model/DescribeLiveStreamTranscodeInfoRequest.h"
+#include "model/DescribeLiveStreamTranscodeInfoResult.h"
+#include "model/DescribeLiveStreamsOnlineListRequest.h"
+#include "model/DescribeLiveStreamsOnlineListResult.h"
+#include "model/DeleteLiveSnapshotDetectPornConfigRequest.h"
+#include "model/DeleteLiveSnapshotDetectPornConfigResult.h"
+#include "model/CopyCasterSceneConfigRequest.h"
+#include "model/CopyCasterSceneConfigResult.h"
+#include "model/DescribeLiveDomainTranscodeDataRequest.h"
+#include "model/DescribeLiveDomainTranscodeDataResult.h"
+#include "model/StopMixStreamsServiceRequest.h"
+#include "model/StopMixStreamsServiceResult.h"
+#include "model/DeleteLiveStreamTranscodeRequest.h"
+#include "model/DeleteLiveStreamTranscodeResult.h"
+#include "model/DeleteCasterEpisodeRequest.h"
+#include "model/DeleteCasterEpisodeResult.h"
+#include "model/DescribeCasterRtcInfoRequest.h"
+#include "model/DescribeCasterRtcInfoResult.h"
+#include "model/SetCasterSceneConfigRequest.h"
+#include "model/SetCasterSceneConfigResult.h"
+#include "model/AddTrancodeSEIRequest.h"
+#include "model/AddTrancodeSEIResult.h"
+#include "model/DescribeLiveStreamBitRateDataRequest.h"
+#include "model/DescribeLiveStreamBitRateDataResult.h"
+#include "model/DeleteCasterLayoutRequest.h"
+#include "model/DeleteCasterLayoutResult.h"
+#include "model/DeleteCasterProgramRequest.h"
+#include "model/DeleteCasterProgramResult.h"
+#include "model/StartCasterSceneRequest.h"
+#include "model/StartCasterSceneResult.h"
+#include "model/DescribeLiveStreamRecordIndexFileRequest.h"
+#include "model/DescribeLiveStreamRecordIndexFileResult.h"
+#include "model/AddCasterEpisodeGroupRequest.h"
+#include "model/AddCasterEpisodeGroupResult.h"
+#include "model/AddLiveMixConfigRequest.h"
+#include "model/AddLiveMixConfigResult.h"
+#include "model/DescribeCasterConfigRequest.h"
+#include "model/DescribeCasterConfigResult.h"
+#include "model/CopyCasterRequest.h"
+#include "model/CopyCasterResult.h"
+#include "model/AddCustomLiveStreamTranscodeRequest.h"
+#include "model/AddCustomLiveStreamTranscodeResult.h"
+#include "model/AddCasterEpisodeRequest.h"
+#include "model/AddCasterEpisodeResult.h"
+#include "model/DescribeLiveRecordConfigRequest.h"
+#include "model/DescribeLiveRecordConfigResult.h"
+#include "model/DeleteLiveRecordNotifyConfigRequest.h"
+#include "model/DeleteLiveRecordNotifyConfigResult.h"
+#include "model/AddLiveRecordNotifyConfigRequest.h"
+#include "model/AddLiveRecordNotifyConfigResult.h"
+#include "model/DeleteLiveStreamsNotifyUrlConfigRequest.h"
+#include "model/DeleteLiveStreamsNotifyUrlConfigResult.h"
+#include "model/DescribeLiveStreamOnlineUserNumRequest.h"
+#include "model/DescribeLiveStreamOnlineUserNumResult.h"
+#include "model/AddCasterComponentRequest.h"
+#include "model/AddCasterComponentResult.h"
+#include "model/UpdateLiveMixNotifyConfigRequest.h"
+#include "model/UpdateLiveMixNotifyConfigResult.h"
+#include "model/DescribeLiveDomainRecordDataRequest.h"
+#include "model/DescribeLiveDomainRecordDataResult.h"
+#include "model/DeleteCasterVideoResourceRequest.h"
+#include "model/DeleteCasterVideoResourceResult.h"
+#include "model/DeleteLiveAppSnapshotConfigRequest.h"
+#include "model/DeleteLiveAppSnapshotConfigResult.h"
+#include "model/DescribeLiveStreamsNotifyUrlConfigRequest.h"
+#include "model/DescribeLiveStreamsNotifyUrlConfigResult.h"
+#include "model/DeleteLivePullStreamInfoConfigRequest.h"
+#include "model/DeleteLivePullStreamInfoConfigResult.h"
+#include "model/ModifyCasterProgramRequest.h"
+#include "model/ModifyCasterProgramResult.h"
+#include "model/StartMixStreamsServiceRequest.h"
+#include "model/StartMixStreamsServiceResult.h"
+#include "model/DescribeLivePullStreamConfigRequest.h"
+#include "model/DescribeLivePullStreamConfigResult.h"
+#include "model/SetLiveStreamsNotifyUrlConfigRequest.h"
+#include "model/SetLiveStreamsNotifyUrlConfigResult.h"
+#include "model/AddLivePullStreamInfoConfigRequest.h"
+#include "model/AddLivePullStreamInfoConfigResult.h"
+#include "model/DescribeLiveStreamsBlockListRequest.h"
+#include "model/DescribeLiveStreamsBlockListResult.h"
+#include "model/AddLiveStreamTranscodeRequest.h"
+#include "model/AddLiveStreamTranscodeResult.h"
+#include "model/AddCasterVideoResourceRequest.h"
+#include "model/AddCasterVideoResourceResult.h"
+#include "model/AddCasterEpisodeGroupContentRequest.h"
+#include "model/AddCasterEpisodeGroupContentResult.h"
+#include "model/UpdateLiveDetectNotifyConfigRequest.h"
+#include "model/UpdateLiveDetectNotifyConfigResult.h"
+#include "model/ModifyCasterVideoResourceRequest.h"
+#include "model/ModifyCasterVideoResourceResult.h"
+#include "model/ImagePornDetectionRequest.h"
+#include "model/ImagePornDetectionResult.h"
+#include "model/DescribeCasterStreamUrlRequest.h"
+#include "model/DescribeCasterStreamUrlResult.h"
+#include "model/DescribeLiveStreamsControlHistoryRequest.h"
+#include "model/DescribeLiveStreamsControlHistoryResult.h"
+#include "model/StopCasterSceneRequest.h"
+#include "model/StopCasterSceneResult.h"
+#include "model/DescribeLiveDomainSnapshotDataRequest.h"
+#include "model/DescribeLiveDomainSnapshotDataResult.h"
+#include "model/DeleteLiveRecordVodConfigRequest.h"
+#include "model/DeleteLiveRecordVodConfigResult.h"
+#include "model/ModifyCasterEpisodeRequest.h"
+#include "model/ModifyCasterEpisodeResult.h"
+#include "model/DescribeLiveStreamSnapshotInfoRequest.h"
+#include "model/DescribeLiveStreamSnapshotInfoResult.h"
+#include "model/StartMultipleStreamMixServiceRequest.h"
+#include "model/StartMultipleStreamMixServiceResult.h"
+#include "model/StopMultipleStreamMixServiceRequest.h"
+#include "model/StopMultipleStreamMixServiceResult.h"
+#include "model/DescribeLiveMixNotifyConfigRequest.h"
+#include "model/DescribeLiveMixNotifyConfigResult.h"
+#include "model/DescribeLiveStreamsFrameRateAndBitRateDataRequest.h"
+#include "model/DescribeLiveStreamsFrameRateAndBitRateDataResult.h"
+#include "model/CreateCasterRequest.h"
+#include "model/CreateCasterResult.h"
+#include "model/DescribeLiveStreamRecordContentRequest.h"
+#include "model/DescribeLiveStreamRecordContentResult.h"
+#include "model/AddMultipleStreamMixServiceRequest.h"
+#include "model/AddMultipleStreamMixServiceResult.h"
+#include "model/AddLiveSnapshotDetectPornConfigRequest.h"
+#include "model/AddLiveSnapshotDetectPornConfigResult.h"
+#include "model/DescribeCasterLayoutsRequest.h"
+#include "model/DescribeCasterLayoutsResult.h"
+#include "model/UpdateLiveRecordNotifyConfigRequest.h"
+#include "model/UpdateLiveRecordNotifyConfigResult.h"
+#include "model/DescribeLiveSnapshotConfigRequest.h"
+#include "model/DescribeLiveSnapshotConfigResult.h"
+#include "model/DescribeCasterProgramRequest.h"
+#include "model/DescribeCasterProgramResult.h"
+#include "model/DescribeLiveStreamHistoryUserNumRequest.h"
+#include "model/DescribeLiveStreamHistoryUserNumResult.h"
+#include "model/AddLiveAppRecordConfigRequest.h"
+#include "model/AddLiveAppRecordConfigResult.h"
+#include "model/AddLiveRecordVodConfigRequest.h"
+#include "model/AddLiveRecordVodConfigResult.h"
+#include "model/DescribeLiveStreamRecordIndexFilesRequest.h"
+#include "model/DescribeLiveStreamRecordIndexFilesResult.h"
+#include "model/AddCasterProgramRequest.h"
+#include "model/AddCasterProgramResult.h"
+#include "model/DeleteLiveMixConfigRequest.h"
+#include "model/DeleteLiveMixConfigResult.h"
+#include "model/ForbidLiveStreamRequest.h"
+#include "model/ForbidLiveStreamResult.h"
+#include "model/DeleteCasterEpisodeGroupRequest.h"
+#include "model/DeleteCasterEpisodeGroupResult.h"
+#include "model/DescribeCasterVideoResourcesRequest.h"
+#include "model/DescribeCasterVideoResourcesResult.h"
+#include "model/UpdateLiveAppSnapshotConfigRequest.h"
+#include "model/UpdateLiveAppSnapshotConfigResult.h"
+#include "model/DeleteLiveDetectNotifyConfigRequest.h"
+#include "model/DeleteLiveDetectNotifyConfigResult.h"
+#include "model/EffectCasterVideoResourceRequest.h"
+#include "model/EffectCasterVideoResourceResult.h"
+#include "model/DeleteLiveMixNotifyConfigRequest.h"
+#include "model/DeleteLiveMixNotifyConfigResult.h"
+#include "model/AddLiveAppSnapshotConfigRequest.h"
+#include "model/AddLiveAppSnapshotConfigResult.h"
+#include "model/RemoveMultipleStreamMixServiceRequest.h"
+#include "model/RemoveMultipleStreamMixServiceResult.h"
+#include "model/DeleteCasterComponentRequest.h"
+#include "model/DeleteCasterComponentResult.h"
+#include "model/SetCasterConfigRequest.h"
+#include "model/SetCasterConfigResult.h"
+#include "model/RealTimeRecordCommandRequest.h"
+#include "model/RealTimeRecordCommandResult.h"
+#include "model/StartCasterRequest.h"
+#include "model/StartCasterResult.h"
+#include "model/ResumeLiveStreamRequest.h"
+#include "model/ResumeLiveStreamResult.h"
+#include "model/AddCasterLayoutRequest.h"
+#include "model/AddCasterLayoutResult.h"
+#include "model/ModifyCasterLayoutRequest.h"
+#include "model/ModifyCasterLayoutResult.h"
+#include "model/StopCasterRequest.h"
+#include "model/StopCasterResult.h"
+#include "model/DescribeLiveStreamsPublishListRequest.h"
+#include "model/DescribeLiveStreamsPublishListResult.h"
+#include "model/DescribeLiveSnapshotDetectPornConfigRequest.h"
+#include "model/DescribeLiveSnapshotDetectPornConfigResult.h"
+#include "model/DeleteCasterSceneConfigRequest.h"
+#include "model/DeleteCasterSceneConfigResult.h"
+#include "model/DeleteLiveAppRecordConfigRequest.h"
+#include "model/DeleteLiveAppRecordConfigResult.h"
+#include "model/DeleteCasterRequest.h"
+#include "model/DeleteCasterResult.h"
+#include "model/DescribeLiveRecordVodConfigsRequest.h"
+#include "model/DescribeLiveRecordVodConfigsResult.h"
+#include "model/DescribeCastersRequest.h"
+#include "model/DescribeCastersResult.h"
+#include "model/AddLiveMixNotifyConfigRequest.h"
+#include "model/AddLiveMixNotifyConfigResult.h"
+#include "model/AddLiveDetectNotifyConfigRequest.h"
+#include "model/AddLiveDetectNotifyConfigResult.h"
+#include "model/DescribeCasterScenesRequest.h"
+#include "model/DescribeCasterScenesResult.h"
+
+
+namespace AlibabaCloud
+{
+	namespace Live
+	{
+		class ALIBABACLOUD_LIVE_EXPORT LiveClient : public RpcServiceClient
+		{
+		public:
+			typedef Outcome<Error, Model::DescribeLiveRecordNotifyConfigResult> DescribeLiveRecordNotifyConfigOutcome;
+			typedef std::future<DescribeLiveRecordNotifyConfigOutcome> DescribeLiveRecordNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveRecordNotifyConfigRequest&, const DescribeLiveRecordNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveDetectNotifyConfigResult> DescribeLiveDetectNotifyConfigOutcome;
+			typedef std::future<DescribeLiveDetectNotifyConfigOutcome> DescribeLiveDetectNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDetectNotifyConfigRequest&, const DescribeLiveDetectNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDetectNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCasterComponentResult> ModifyCasterComponentOutcome;
+			typedef std::future<ModifyCasterComponentOutcome> ModifyCasterComponentOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ModifyCasterComponentRequest&, const ModifyCasterComponentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterComponentAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveSnapshotDetectPornConfigResult> UpdateLiveSnapshotDetectPornConfigOutcome;
+			typedef std::future<UpdateLiveSnapshotDetectPornConfigOutcome> UpdateLiveSnapshotDetectPornConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveSnapshotDetectPornConfigRequest&, const UpdateLiveSnapshotDetectPornConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveSnapshotDetectPornConfigAsyncHandler;
+			typedef Outcome<Error, Model::EffectCasterUrgentResult> EffectCasterUrgentOutcome;
+			typedef std::future<EffectCasterUrgentOutcome> EffectCasterUrgentOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::EffectCasterUrgentRequest&, const EffectCasterUrgentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EffectCasterUrgentAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCasterComponentsResult> DescribeCasterComponentsOutcome;
+			typedef std::future<DescribeCasterComponentsOutcome> DescribeCasterComponentsOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeCasterComponentsRequest&, const DescribeCasterComponentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterComponentsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveMixConfigResult> DescribeLiveMixConfigOutcome;
+			typedef std::future<DescribeLiveMixConfigOutcome> DescribeLiveMixConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveMixConfigRequest&, const DescribeLiveMixConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveMixConfigAsyncHandler;
+			typedef Outcome<Error, Model::CreateLiveStreamRecordIndexFilesResult> CreateLiveStreamRecordIndexFilesOutcome;
+			typedef std::future<CreateLiveStreamRecordIndexFilesOutcome> CreateLiveStreamRecordIndexFilesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::CreateLiveStreamRecordIndexFilesRequest&, const CreateLiveStreamRecordIndexFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveStreamRecordIndexFilesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCasterSceneConfigResult> UpdateCasterSceneConfigOutcome;
+			typedef std::future<UpdateCasterSceneConfigOutcome> UpdateCasterSceneConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateCasterSceneConfigRequest&, const UpdateCasterSceneConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCasterSceneConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamTranscodeInfoResult> DescribeLiveStreamTranscodeInfoOutcome;
+			typedef std::future<DescribeLiveStreamTranscodeInfoOutcome> DescribeLiveStreamTranscodeInfoOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamTranscodeInfoRequest&, const DescribeLiveStreamTranscodeInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamTranscodeInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamsOnlineListResult> DescribeLiveStreamsOnlineListOutcome;
+			typedef std::future<DescribeLiveStreamsOnlineListOutcome> DescribeLiveStreamsOnlineListOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsOnlineListRequest&, const DescribeLiveStreamsOnlineListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsOnlineListAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveSnapshotDetectPornConfigResult> DeleteLiveSnapshotDetectPornConfigOutcome;
+			typedef std::future<DeleteLiveSnapshotDetectPornConfigOutcome> DeleteLiveSnapshotDetectPornConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveSnapshotDetectPornConfigRequest&, const DeleteLiveSnapshotDetectPornConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveSnapshotDetectPornConfigAsyncHandler;
+			typedef Outcome<Error, Model::CopyCasterSceneConfigResult> CopyCasterSceneConfigOutcome;
+			typedef std::future<CopyCasterSceneConfigOutcome> CopyCasterSceneConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::CopyCasterSceneConfigRequest&, const CopyCasterSceneConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyCasterSceneConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveDomainTranscodeDataResult> DescribeLiveDomainTranscodeDataOutcome;
+			typedef std::future<DescribeLiveDomainTranscodeDataOutcome> DescribeLiveDomainTranscodeDataOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainTranscodeDataRequest&, const DescribeLiveDomainTranscodeDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainTranscodeDataAsyncHandler;
+			typedef Outcome<Error, Model::StopMixStreamsServiceResult> StopMixStreamsServiceOutcome;
+			typedef std::future<StopMixStreamsServiceOutcome> StopMixStreamsServiceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::StopMixStreamsServiceRequest&, const StopMixStreamsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopMixStreamsServiceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveStreamTranscodeResult> DeleteLiveStreamTranscodeOutcome;
+			typedef std::future<DeleteLiveStreamTranscodeOutcome> DeleteLiveStreamTranscodeOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveStreamTranscodeRequest&, const DeleteLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveStreamTranscodeAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCasterEpisodeResult> DeleteCasterEpisodeOutcome;
+			typedef std::future<DeleteCasterEpisodeOutcome> DeleteCasterEpisodeOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteCasterEpisodeRequest&, const DeleteCasterEpisodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterEpisodeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCasterRtcInfoResult> DescribeCasterRtcInfoOutcome;
+			typedef std::future<DescribeCasterRtcInfoOutcome> DescribeCasterRtcInfoOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeCasterRtcInfoRequest&, const DescribeCasterRtcInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterRtcInfoAsyncHandler;
+			typedef Outcome<Error, Model::SetCasterSceneConfigResult> SetCasterSceneConfigOutcome;
+			typedef std::future<SetCasterSceneConfigOutcome> SetCasterSceneConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::SetCasterSceneConfigRequest&, const SetCasterSceneConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetCasterSceneConfigAsyncHandler;
+			typedef Outcome<Error, Model::AddTrancodeSEIResult> AddTrancodeSEIOutcome;
+			typedef std::future<AddTrancodeSEIOutcome> AddTrancodeSEIOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddTrancodeSEIRequest&, const AddTrancodeSEIOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddTrancodeSEIAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamBitRateDataResult> DescribeLiveStreamBitRateDataOutcome;
+			typedef std::future<DescribeLiveStreamBitRateDataOutcome> DescribeLiveStreamBitRateDataOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamBitRateDataRequest&, const DescribeLiveStreamBitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamBitRateDataAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCasterLayoutResult> DeleteCasterLayoutOutcome;
+			typedef std::future<DeleteCasterLayoutOutcome> DeleteCasterLayoutOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteCasterLayoutRequest&, const DeleteCasterLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterLayoutAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCasterProgramResult> DeleteCasterProgramOutcome;
+			typedef std::future<DeleteCasterProgramOutcome> DeleteCasterProgramOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteCasterProgramRequest&, const DeleteCasterProgramOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterProgramAsyncHandler;
+			typedef Outcome<Error, Model::StartCasterSceneResult> StartCasterSceneOutcome;
+			typedef std::future<StartCasterSceneOutcome> StartCasterSceneOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::StartCasterSceneRequest&, const StartCasterSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartCasterSceneAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamRecordIndexFileResult> DescribeLiveStreamRecordIndexFileOutcome;
+			typedef std::future<DescribeLiveStreamRecordIndexFileOutcome> DescribeLiveStreamRecordIndexFileOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamRecordIndexFileRequest&, const DescribeLiveStreamRecordIndexFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamRecordIndexFileAsyncHandler;
+			typedef Outcome<Error, Model::AddCasterEpisodeGroupResult> AddCasterEpisodeGroupOutcome;
+			typedef std::future<AddCasterEpisodeGroupOutcome> AddCasterEpisodeGroupOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddCasterEpisodeGroupRequest&, const AddCasterEpisodeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterEpisodeGroupAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveMixConfigResult> AddLiveMixConfigOutcome;
+			typedef std::future<AddLiveMixConfigOutcome> AddLiveMixConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveMixConfigRequest&, const AddLiveMixConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveMixConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCasterConfigResult> DescribeCasterConfigOutcome;
+			typedef std::future<DescribeCasterConfigOutcome> DescribeCasterConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeCasterConfigRequest&, const DescribeCasterConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterConfigAsyncHandler;
+			typedef Outcome<Error, Model::CopyCasterResult> CopyCasterOutcome;
+			typedef std::future<CopyCasterOutcome> CopyCasterOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::CopyCasterRequest&, const CopyCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyCasterAsyncHandler;
+			typedef Outcome<Error, Model::AddCustomLiveStreamTranscodeResult> AddCustomLiveStreamTranscodeOutcome;
+			typedef std::future<AddCustomLiveStreamTranscodeOutcome> AddCustomLiveStreamTranscodeOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddCustomLiveStreamTranscodeRequest&, const AddCustomLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomLiveStreamTranscodeAsyncHandler;
+			typedef Outcome<Error, Model::AddCasterEpisodeResult> AddCasterEpisodeOutcome;
+			typedef std::future<AddCasterEpisodeOutcome> AddCasterEpisodeOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddCasterEpisodeRequest&, const AddCasterEpisodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterEpisodeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveRecordConfigResult> DescribeLiveRecordConfigOutcome;
+			typedef std::future<DescribeLiveRecordConfigOutcome> DescribeLiveRecordConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveRecordConfigRequest&, const DescribeLiveRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveRecordNotifyConfigResult> DeleteLiveRecordNotifyConfigOutcome;
+			typedef std::future<DeleteLiveRecordNotifyConfigOutcome> DeleteLiveRecordNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveRecordNotifyConfigRequest&, const DeleteLiveRecordNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveRecordNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveRecordNotifyConfigResult> AddLiveRecordNotifyConfigOutcome;
+			typedef std::future<AddLiveRecordNotifyConfigOutcome> AddLiveRecordNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveRecordNotifyConfigRequest&, const AddLiveRecordNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveRecordNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveStreamsNotifyUrlConfigResult> DeleteLiveStreamsNotifyUrlConfigOutcome;
+			typedef std::future<DeleteLiveStreamsNotifyUrlConfigOutcome> DeleteLiveStreamsNotifyUrlConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveStreamsNotifyUrlConfigRequest&, const DeleteLiveStreamsNotifyUrlConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveStreamsNotifyUrlConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamOnlineUserNumResult> DescribeLiveStreamOnlineUserNumOutcome;
+			typedef std::future<DescribeLiveStreamOnlineUserNumOutcome> DescribeLiveStreamOnlineUserNumOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamOnlineUserNumRequest&, const DescribeLiveStreamOnlineUserNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamOnlineUserNumAsyncHandler;
+			typedef Outcome<Error, Model::AddCasterComponentResult> AddCasterComponentOutcome;
+			typedef std::future<AddCasterComponentOutcome> AddCasterComponentOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddCasterComponentRequest&, const AddCasterComponentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterComponentAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveMixNotifyConfigResult> UpdateLiveMixNotifyConfigOutcome;
+			typedef std::future<UpdateLiveMixNotifyConfigOutcome> UpdateLiveMixNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveMixNotifyConfigRequest&, const UpdateLiveMixNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveMixNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveDomainRecordDataResult> DescribeLiveDomainRecordDataOutcome;
+			typedef std::future<DescribeLiveDomainRecordDataOutcome> DescribeLiveDomainRecordDataOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainRecordDataRequest&, const DescribeLiveDomainRecordDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainRecordDataAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCasterVideoResourceResult> DeleteCasterVideoResourceOutcome;
+			typedef std::future<DeleteCasterVideoResourceOutcome> DeleteCasterVideoResourceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteCasterVideoResourceRequest&, const DeleteCasterVideoResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterVideoResourceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveAppSnapshotConfigResult> DeleteLiveAppSnapshotConfigOutcome;
+			typedef std::future<DeleteLiveAppSnapshotConfigOutcome> DeleteLiveAppSnapshotConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAppSnapshotConfigRequest&, const DeleteLiveAppSnapshotConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAppSnapshotConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamsNotifyUrlConfigResult> DescribeLiveStreamsNotifyUrlConfigOutcome;
+			typedef std::future<DescribeLiveStreamsNotifyUrlConfigOutcome> DescribeLiveStreamsNotifyUrlConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsNotifyUrlConfigRequest&, const DescribeLiveStreamsNotifyUrlConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsNotifyUrlConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLivePullStreamInfoConfigResult> DeleteLivePullStreamInfoConfigOutcome;
+			typedef std::future<DeleteLivePullStreamInfoConfigOutcome> DeleteLivePullStreamInfoConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLivePullStreamInfoConfigRequest&, const DeleteLivePullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLivePullStreamInfoConfigAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCasterProgramResult> ModifyCasterProgramOutcome;
+			typedef std::future<ModifyCasterProgramOutcome> ModifyCasterProgramOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ModifyCasterProgramRequest&, const ModifyCasterProgramOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterProgramAsyncHandler;
+			typedef Outcome<Error, Model::StartMixStreamsServiceResult> StartMixStreamsServiceOutcome;
+			typedef std::future<StartMixStreamsServiceOutcome> StartMixStreamsServiceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::StartMixStreamsServiceRequest&, const StartMixStreamsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartMixStreamsServiceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLivePullStreamConfigResult> DescribeLivePullStreamConfigOutcome;
+			typedef std::future<DescribeLivePullStreamConfigOutcome> DescribeLivePullStreamConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLivePullStreamConfigRequest&, const DescribeLivePullStreamConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePullStreamConfigAsyncHandler;
+			typedef Outcome<Error, Model::SetLiveStreamsNotifyUrlConfigResult> SetLiveStreamsNotifyUrlConfigOutcome;
+			typedef std::future<SetLiveStreamsNotifyUrlConfigOutcome> SetLiveStreamsNotifyUrlConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::SetLiveStreamsNotifyUrlConfigRequest&, const SetLiveStreamsNotifyUrlConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveStreamsNotifyUrlConfigAsyncHandler;
+			typedef Outcome<Error, Model::AddLivePullStreamInfoConfigResult> AddLivePullStreamInfoConfigOutcome;
+			typedef std::future<AddLivePullStreamInfoConfigOutcome> AddLivePullStreamInfoConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLivePullStreamInfoConfigRequest&, const AddLivePullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLivePullStreamInfoConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamsBlockListResult> DescribeLiveStreamsBlockListOutcome;
+			typedef std::future<DescribeLiveStreamsBlockListOutcome> DescribeLiveStreamsBlockListOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsBlockListRequest&, const DescribeLiveStreamsBlockListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsBlockListAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveStreamTranscodeResult> AddLiveStreamTranscodeOutcome;
+			typedef std::future<AddLiveStreamTranscodeOutcome> AddLiveStreamTranscodeOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveStreamTranscodeRequest&, const AddLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveStreamTranscodeAsyncHandler;
+			typedef Outcome<Error, Model::AddCasterVideoResourceResult> AddCasterVideoResourceOutcome;
+			typedef std::future<AddCasterVideoResourceOutcome> AddCasterVideoResourceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddCasterVideoResourceRequest&, const AddCasterVideoResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterVideoResourceAsyncHandler;
+			typedef Outcome<Error, Model::AddCasterEpisodeGroupContentResult> AddCasterEpisodeGroupContentOutcome;
+			typedef std::future<AddCasterEpisodeGroupContentOutcome> AddCasterEpisodeGroupContentOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddCasterEpisodeGroupContentRequest&, const AddCasterEpisodeGroupContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterEpisodeGroupContentAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveDetectNotifyConfigResult> UpdateLiveDetectNotifyConfigOutcome;
+			typedef std::future<UpdateLiveDetectNotifyConfigOutcome> UpdateLiveDetectNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveDetectNotifyConfigRequest&, const UpdateLiveDetectNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveDetectNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCasterVideoResourceResult> ModifyCasterVideoResourceOutcome;
+			typedef std::future<ModifyCasterVideoResourceOutcome> ModifyCasterVideoResourceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ModifyCasterVideoResourceRequest&, const ModifyCasterVideoResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterVideoResourceAsyncHandler;
+			typedef Outcome<Error, Model::ImagePornDetectionResult> ImagePornDetectionOutcome;
+			typedef std::future<ImagePornDetectionOutcome> ImagePornDetectionOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ImagePornDetectionRequest&, const ImagePornDetectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImagePornDetectionAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCasterStreamUrlResult> DescribeCasterStreamUrlOutcome;
+			typedef std::future<DescribeCasterStreamUrlOutcome> DescribeCasterStreamUrlOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeCasterStreamUrlRequest&, const DescribeCasterStreamUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterStreamUrlAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamsControlHistoryResult> DescribeLiveStreamsControlHistoryOutcome;
+			typedef std::future<DescribeLiveStreamsControlHistoryOutcome> DescribeLiveStreamsControlHistoryOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsControlHistoryRequest&, const DescribeLiveStreamsControlHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsControlHistoryAsyncHandler;
+			typedef Outcome<Error, Model::StopCasterSceneResult> StopCasterSceneOutcome;
+			typedef std::future<StopCasterSceneOutcome> StopCasterSceneOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::StopCasterSceneRequest&, const StopCasterSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopCasterSceneAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveDomainSnapshotDataResult> DescribeLiveDomainSnapshotDataOutcome;
+			typedef std::future<DescribeLiveDomainSnapshotDataOutcome> DescribeLiveDomainSnapshotDataOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainSnapshotDataRequest&, const DescribeLiveDomainSnapshotDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainSnapshotDataAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveRecordVodConfigResult> DeleteLiveRecordVodConfigOutcome;
+			typedef std::future<DeleteLiveRecordVodConfigOutcome> DeleteLiveRecordVodConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveRecordVodConfigRequest&, const DeleteLiveRecordVodConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveRecordVodConfigAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCasterEpisodeResult> ModifyCasterEpisodeOutcome;
+			typedef std::future<ModifyCasterEpisodeOutcome> ModifyCasterEpisodeOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ModifyCasterEpisodeRequest&, const ModifyCasterEpisodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterEpisodeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamSnapshotInfoResult> DescribeLiveStreamSnapshotInfoOutcome;
+			typedef std::future<DescribeLiveStreamSnapshotInfoOutcome> DescribeLiveStreamSnapshotInfoOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamSnapshotInfoRequest&, const DescribeLiveStreamSnapshotInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamSnapshotInfoAsyncHandler;
+			typedef Outcome<Error, Model::StartMultipleStreamMixServiceResult> StartMultipleStreamMixServiceOutcome;
+			typedef std::future<StartMultipleStreamMixServiceOutcome> StartMultipleStreamMixServiceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::StartMultipleStreamMixServiceRequest&, const StartMultipleStreamMixServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartMultipleStreamMixServiceAsyncHandler;
+			typedef Outcome<Error, Model::StopMultipleStreamMixServiceResult> StopMultipleStreamMixServiceOutcome;
+			typedef std::future<StopMultipleStreamMixServiceOutcome> StopMultipleStreamMixServiceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::StopMultipleStreamMixServiceRequest&, const StopMultipleStreamMixServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopMultipleStreamMixServiceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveMixNotifyConfigResult> DescribeLiveMixNotifyConfigOutcome;
+			typedef std::future<DescribeLiveMixNotifyConfigOutcome> DescribeLiveMixNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveMixNotifyConfigRequest&, const DescribeLiveMixNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveMixNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamsFrameRateAndBitRateDataResult> DescribeLiveStreamsFrameRateAndBitRateDataOutcome;
+			typedef std::future<DescribeLiveStreamsFrameRateAndBitRateDataOutcome> DescribeLiveStreamsFrameRateAndBitRateDataOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest&, const DescribeLiveStreamsFrameRateAndBitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsFrameRateAndBitRateDataAsyncHandler;
+			typedef Outcome<Error, Model::CreateCasterResult> CreateCasterOutcome;
+			typedef std::future<CreateCasterOutcome> CreateCasterOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::CreateCasterRequest&, const CreateCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamRecordContentResult> DescribeLiveStreamRecordContentOutcome;
+			typedef std::future<DescribeLiveStreamRecordContentOutcome> DescribeLiveStreamRecordContentOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamRecordContentRequest&, const DescribeLiveStreamRecordContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamRecordContentAsyncHandler;
+			typedef Outcome<Error, Model::AddMultipleStreamMixServiceResult> AddMultipleStreamMixServiceOutcome;
+			typedef std::future<AddMultipleStreamMixServiceOutcome> AddMultipleStreamMixServiceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddMultipleStreamMixServiceRequest&, const AddMultipleStreamMixServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddMultipleStreamMixServiceAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveSnapshotDetectPornConfigResult> AddLiveSnapshotDetectPornConfigOutcome;
+			typedef std::future<AddLiveSnapshotDetectPornConfigOutcome> AddLiveSnapshotDetectPornConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveSnapshotDetectPornConfigRequest&, const AddLiveSnapshotDetectPornConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveSnapshotDetectPornConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCasterLayoutsResult> DescribeCasterLayoutsOutcome;
+			typedef std::future<DescribeCasterLayoutsOutcome> DescribeCasterLayoutsOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeCasterLayoutsRequest&, const DescribeCasterLayoutsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterLayoutsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveRecordNotifyConfigResult> UpdateLiveRecordNotifyConfigOutcome;
+			typedef std::future<UpdateLiveRecordNotifyConfigOutcome> UpdateLiveRecordNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveRecordNotifyConfigRequest&, const UpdateLiveRecordNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveRecordNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveSnapshotConfigResult> DescribeLiveSnapshotConfigOutcome;
+			typedef std::future<DescribeLiveSnapshotConfigOutcome> DescribeLiveSnapshotConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveSnapshotConfigRequest&, const DescribeLiveSnapshotConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveSnapshotConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCasterProgramResult> DescribeCasterProgramOutcome;
+			typedef std::future<DescribeCasterProgramOutcome> DescribeCasterProgramOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeCasterProgramRequest&, const DescribeCasterProgramOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterProgramAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamHistoryUserNumResult> DescribeLiveStreamHistoryUserNumOutcome;
+			typedef std::future<DescribeLiveStreamHistoryUserNumOutcome> DescribeLiveStreamHistoryUserNumOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamHistoryUserNumRequest&, const DescribeLiveStreamHistoryUserNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamHistoryUserNumAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveAppRecordConfigResult> AddLiveAppRecordConfigOutcome;
+			typedef std::future<AddLiveAppRecordConfigOutcome> AddLiveAppRecordConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveAppRecordConfigRequest&, const AddLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveAppRecordConfigAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveRecordVodConfigResult> AddLiveRecordVodConfigOutcome;
+			typedef std::future<AddLiveRecordVodConfigOutcome> AddLiveRecordVodConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveRecordVodConfigRequest&, const AddLiveRecordVodConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveRecordVodConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamRecordIndexFilesResult> DescribeLiveStreamRecordIndexFilesOutcome;
+			typedef std::future<DescribeLiveStreamRecordIndexFilesOutcome> DescribeLiveStreamRecordIndexFilesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamRecordIndexFilesRequest&, const DescribeLiveStreamRecordIndexFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamRecordIndexFilesAsyncHandler;
+			typedef Outcome<Error, Model::AddCasterProgramResult> AddCasterProgramOutcome;
+			typedef std::future<AddCasterProgramOutcome> AddCasterProgramOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddCasterProgramRequest&, const AddCasterProgramOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterProgramAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveMixConfigResult> DeleteLiveMixConfigOutcome;
+			typedef std::future<DeleteLiveMixConfigOutcome> DeleteLiveMixConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveMixConfigRequest&, const DeleteLiveMixConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveMixConfigAsyncHandler;
+			typedef Outcome<Error, Model::ForbidLiveStreamResult> ForbidLiveStreamOutcome;
+			typedef std::future<ForbidLiveStreamOutcome> ForbidLiveStreamOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ForbidLiveStreamRequest&, const ForbidLiveStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ForbidLiveStreamAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCasterEpisodeGroupResult> DeleteCasterEpisodeGroupOutcome;
+			typedef std::future<DeleteCasterEpisodeGroupOutcome> DeleteCasterEpisodeGroupOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteCasterEpisodeGroupRequest&, const DeleteCasterEpisodeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterEpisodeGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCasterVideoResourcesResult> DescribeCasterVideoResourcesOutcome;
+			typedef std::future<DescribeCasterVideoResourcesOutcome> DescribeCasterVideoResourcesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeCasterVideoResourcesRequest&, const DescribeCasterVideoResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterVideoResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveAppSnapshotConfigResult> UpdateLiveAppSnapshotConfigOutcome;
+			typedef std::future<UpdateLiveAppSnapshotConfigOutcome> UpdateLiveAppSnapshotConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveAppSnapshotConfigRequest&, const UpdateLiveAppSnapshotConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveAppSnapshotConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveDetectNotifyConfigResult> DeleteLiveDetectNotifyConfigOutcome;
+			typedef std::future<DeleteLiveDetectNotifyConfigOutcome> DeleteLiveDetectNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveDetectNotifyConfigRequest&, const DeleteLiveDetectNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveDetectNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::EffectCasterVideoResourceResult> EffectCasterVideoResourceOutcome;
+			typedef std::future<EffectCasterVideoResourceOutcome> EffectCasterVideoResourceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::EffectCasterVideoResourceRequest&, const EffectCasterVideoResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EffectCasterVideoResourceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveMixNotifyConfigResult> DeleteLiveMixNotifyConfigOutcome;
+			typedef std::future<DeleteLiveMixNotifyConfigOutcome> DeleteLiveMixNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveMixNotifyConfigRequest&, const DeleteLiveMixNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveMixNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveAppSnapshotConfigResult> AddLiveAppSnapshotConfigOutcome;
+			typedef std::future<AddLiveAppSnapshotConfigOutcome> AddLiveAppSnapshotConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveAppSnapshotConfigRequest&, const AddLiveAppSnapshotConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveAppSnapshotConfigAsyncHandler;
+			typedef Outcome<Error, Model::RemoveMultipleStreamMixServiceResult> RemoveMultipleStreamMixServiceOutcome;
+			typedef std::future<RemoveMultipleStreamMixServiceOutcome> RemoveMultipleStreamMixServiceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::RemoveMultipleStreamMixServiceRequest&, const RemoveMultipleStreamMixServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveMultipleStreamMixServiceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCasterComponentResult> DeleteCasterComponentOutcome;
+			typedef std::future<DeleteCasterComponentOutcome> DeleteCasterComponentOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteCasterComponentRequest&, const DeleteCasterComponentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterComponentAsyncHandler;
+			typedef Outcome<Error, Model::SetCasterConfigResult> SetCasterConfigOutcome;
+			typedef std::future<SetCasterConfigOutcome> SetCasterConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::SetCasterConfigRequest&, const SetCasterConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetCasterConfigAsyncHandler;
+			typedef Outcome<Error, Model::RealTimeRecordCommandResult> RealTimeRecordCommandOutcome;
+			typedef std::future<RealTimeRecordCommandOutcome> RealTimeRecordCommandOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::RealTimeRecordCommandRequest&, const RealTimeRecordCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RealTimeRecordCommandAsyncHandler;
+			typedef Outcome<Error, Model::StartCasterResult> StartCasterOutcome;
+			typedef std::future<StartCasterOutcome> StartCasterOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::StartCasterRequest&, const StartCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartCasterAsyncHandler;
+			typedef Outcome<Error, Model::ResumeLiveStreamResult> ResumeLiveStreamOutcome;
+			typedef std::future<ResumeLiveStreamOutcome> ResumeLiveStreamOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ResumeLiveStreamRequest&, const ResumeLiveStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeLiveStreamAsyncHandler;
+			typedef Outcome<Error, Model::AddCasterLayoutResult> AddCasterLayoutOutcome;
+			typedef std::future<AddCasterLayoutOutcome> AddCasterLayoutOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddCasterLayoutRequest&, const AddCasterLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterLayoutAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCasterLayoutResult> ModifyCasterLayoutOutcome;
+			typedef std::future<ModifyCasterLayoutOutcome> ModifyCasterLayoutOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ModifyCasterLayoutRequest&, const ModifyCasterLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterLayoutAsyncHandler;
+			typedef Outcome<Error, Model::StopCasterResult> StopCasterOutcome;
+			typedef std::future<StopCasterOutcome> StopCasterOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::StopCasterRequest&, const StopCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopCasterAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamsPublishListResult> DescribeLiveStreamsPublishListOutcome;
+			typedef std::future<DescribeLiveStreamsPublishListOutcome> DescribeLiveStreamsPublishListOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsPublishListRequest&, const DescribeLiveStreamsPublishListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsPublishListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveSnapshotDetectPornConfigResult> DescribeLiveSnapshotDetectPornConfigOutcome;
+			typedef std::future<DescribeLiveSnapshotDetectPornConfigOutcome> DescribeLiveSnapshotDetectPornConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveSnapshotDetectPornConfigRequest&, const DescribeLiveSnapshotDetectPornConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveSnapshotDetectPornConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCasterSceneConfigResult> DeleteCasterSceneConfigOutcome;
+			typedef std::future<DeleteCasterSceneConfigOutcome> DeleteCasterSceneConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteCasterSceneConfigRequest&, const DeleteCasterSceneConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterSceneConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveAppRecordConfigResult> DeleteLiveAppRecordConfigOutcome;
+			typedef std::future<DeleteLiveAppRecordConfigOutcome> DeleteLiveAppRecordConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAppRecordConfigRequest&, const DeleteLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAppRecordConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCasterResult> DeleteCasterOutcome;
+			typedef std::future<DeleteCasterOutcome> DeleteCasterOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteCasterRequest&, const DeleteCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveRecordVodConfigsResult> DescribeLiveRecordVodConfigsOutcome;
+			typedef std::future<DescribeLiveRecordVodConfigsOutcome> DescribeLiveRecordVodConfigsOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveRecordVodConfigsRequest&, const DescribeLiveRecordVodConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordVodConfigsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCastersResult> DescribeCastersOutcome;
+			typedef std::future<DescribeCastersOutcome> DescribeCastersOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeCastersRequest&, const DescribeCastersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCastersAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveMixNotifyConfigResult> AddLiveMixNotifyConfigOutcome;
+			typedef std::future<AddLiveMixNotifyConfigOutcome> AddLiveMixNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveMixNotifyConfigRequest&, const AddLiveMixNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveMixNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveDetectNotifyConfigResult> AddLiveDetectNotifyConfigOutcome;
+			typedef std::future<AddLiveDetectNotifyConfigOutcome> AddLiveDetectNotifyConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveDetectNotifyConfigRequest&, const AddLiveDetectNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveDetectNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCasterScenesResult> DescribeCasterScenesOutcome;
+			typedef std::future<DescribeCasterScenesOutcome> DescribeCasterScenesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeCasterScenesRequest&, const DescribeCasterScenesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterScenesAsyncHandler;
+
+			LiveClient(const Credentials &credentials, const ClientConfiguration &configuration);
+			LiveClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
+			LiveClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
+			~LiveClient();
+			DescribeLiveRecordNotifyConfigOutcome describeLiveRecordNotifyConfig(const Model::DescribeLiveRecordNotifyConfigRequest &request)const;
+			void describeLiveRecordNotifyConfigAsync(const Model::DescribeLiveRecordNotifyConfigRequest& request, const DescribeLiveRecordNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveRecordNotifyConfigOutcomeCallable describeLiveRecordNotifyConfigCallable(const Model::DescribeLiveRecordNotifyConfigRequest& request) const;
+			DescribeLiveDetectNotifyConfigOutcome describeLiveDetectNotifyConfig(const Model::DescribeLiveDetectNotifyConfigRequest &request)const;
+			void describeLiveDetectNotifyConfigAsync(const Model::DescribeLiveDetectNotifyConfigRequest& request, const DescribeLiveDetectNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveDetectNotifyConfigOutcomeCallable describeLiveDetectNotifyConfigCallable(const Model::DescribeLiveDetectNotifyConfigRequest& request) const;
+			ModifyCasterComponentOutcome modifyCasterComponent(const Model::ModifyCasterComponentRequest &request)const;
+			void modifyCasterComponentAsync(const Model::ModifyCasterComponentRequest& request, const ModifyCasterComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCasterComponentOutcomeCallable modifyCasterComponentCallable(const Model::ModifyCasterComponentRequest& request) const;
+			UpdateLiveSnapshotDetectPornConfigOutcome updateLiveSnapshotDetectPornConfig(const Model::UpdateLiveSnapshotDetectPornConfigRequest &request)const;
+			void updateLiveSnapshotDetectPornConfigAsync(const Model::UpdateLiveSnapshotDetectPornConfigRequest& request, const UpdateLiveSnapshotDetectPornConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveSnapshotDetectPornConfigOutcomeCallable updateLiveSnapshotDetectPornConfigCallable(const Model::UpdateLiveSnapshotDetectPornConfigRequest& request) const;
+			EffectCasterUrgentOutcome effectCasterUrgent(const Model::EffectCasterUrgentRequest &request)const;
+			void effectCasterUrgentAsync(const Model::EffectCasterUrgentRequest& request, const EffectCasterUrgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EffectCasterUrgentOutcomeCallable effectCasterUrgentCallable(const Model::EffectCasterUrgentRequest& request) const;
+			DescribeCasterComponentsOutcome describeCasterComponents(const Model::DescribeCasterComponentsRequest &request)const;
+			void describeCasterComponentsAsync(const Model::DescribeCasterComponentsRequest& request, const DescribeCasterComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCasterComponentsOutcomeCallable describeCasterComponentsCallable(const Model::DescribeCasterComponentsRequest& request) const;
+			DescribeLiveMixConfigOutcome describeLiveMixConfig(const Model::DescribeLiveMixConfigRequest &request)const;
+			void describeLiveMixConfigAsync(const Model::DescribeLiveMixConfigRequest& request, const DescribeLiveMixConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveMixConfigOutcomeCallable describeLiveMixConfigCallable(const Model::DescribeLiveMixConfigRequest& request) const;
+			CreateLiveStreamRecordIndexFilesOutcome createLiveStreamRecordIndexFiles(const Model::CreateLiveStreamRecordIndexFilesRequest &request)const;
+			void createLiveStreamRecordIndexFilesAsync(const Model::CreateLiveStreamRecordIndexFilesRequest& request, const CreateLiveStreamRecordIndexFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateLiveStreamRecordIndexFilesOutcomeCallable createLiveStreamRecordIndexFilesCallable(const Model::CreateLiveStreamRecordIndexFilesRequest& request) const;
+			UpdateCasterSceneConfigOutcome updateCasterSceneConfig(const Model::UpdateCasterSceneConfigRequest &request)const;
+			void updateCasterSceneConfigAsync(const Model::UpdateCasterSceneConfigRequest& request, const UpdateCasterSceneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCasterSceneConfigOutcomeCallable updateCasterSceneConfigCallable(const Model::UpdateCasterSceneConfigRequest& request) const;
+			DescribeLiveStreamTranscodeInfoOutcome describeLiveStreamTranscodeInfo(const Model::DescribeLiveStreamTranscodeInfoRequest &request)const;
+			void describeLiveStreamTranscodeInfoAsync(const Model::DescribeLiveStreamTranscodeInfoRequest& request, const DescribeLiveStreamTranscodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamTranscodeInfoOutcomeCallable describeLiveStreamTranscodeInfoCallable(const Model::DescribeLiveStreamTranscodeInfoRequest& request) const;
+			DescribeLiveStreamsOnlineListOutcome describeLiveStreamsOnlineList(const Model::DescribeLiveStreamsOnlineListRequest &request)const;
+			void describeLiveStreamsOnlineListAsync(const Model::DescribeLiveStreamsOnlineListRequest& request, const DescribeLiveStreamsOnlineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamsOnlineListOutcomeCallable describeLiveStreamsOnlineListCallable(const Model::DescribeLiveStreamsOnlineListRequest& request) const;
+			DeleteLiveSnapshotDetectPornConfigOutcome deleteLiveSnapshotDetectPornConfig(const Model::DeleteLiveSnapshotDetectPornConfigRequest &request)const;
+			void deleteLiveSnapshotDetectPornConfigAsync(const Model::DeleteLiveSnapshotDetectPornConfigRequest& request, const DeleteLiveSnapshotDetectPornConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveSnapshotDetectPornConfigOutcomeCallable deleteLiveSnapshotDetectPornConfigCallable(const Model::DeleteLiveSnapshotDetectPornConfigRequest& request) const;
+			CopyCasterSceneConfigOutcome copyCasterSceneConfig(const Model::CopyCasterSceneConfigRequest &request)const;
+			void copyCasterSceneConfigAsync(const Model::CopyCasterSceneConfigRequest& request, const CopyCasterSceneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CopyCasterSceneConfigOutcomeCallable copyCasterSceneConfigCallable(const Model::CopyCasterSceneConfigRequest& request) const;
+			DescribeLiveDomainTranscodeDataOutcome describeLiveDomainTranscodeData(const Model::DescribeLiveDomainTranscodeDataRequest &request)const;
+			void describeLiveDomainTranscodeDataAsync(const Model::DescribeLiveDomainTranscodeDataRequest& request, const DescribeLiveDomainTranscodeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveDomainTranscodeDataOutcomeCallable describeLiveDomainTranscodeDataCallable(const Model::DescribeLiveDomainTranscodeDataRequest& request) const;
+			StopMixStreamsServiceOutcome stopMixStreamsService(const Model::StopMixStreamsServiceRequest &request)const;
+			void stopMixStreamsServiceAsync(const Model::StopMixStreamsServiceRequest& request, const StopMixStreamsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopMixStreamsServiceOutcomeCallable stopMixStreamsServiceCallable(const Model::StopMixStreamsServiceRequest& request) const;
+			DeleteLiveStreamTranscodeOutcome deleteLiveStreamTranscode(const Model::DeleteLiveStreamTranscodeRequest &request)const;
+			void deleteLiveStreamTranscodeAsync(const Model::DeleteLiveStreamTranscodeRequest& request, const DeleteLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveStreamTranscodeOutcomeCallable deleteLiveStreamTranscodeCallable(const Model::DeleteLiveStreamTranscodeRequest& request) const;
+			DeleteCasterEpisodeOutcome deleteCasterEpisode(const Model::DeleteCasterEpisodeRequest &request)const;
+			void deleteCasterEpisodeAsync(const Model::DeleteCasterEpisodeRequest& request, const DeleteCasterEpisodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCasterEpisodeOutcomeCallable deleteCasterEpisodeCallable(const Model::DeleteCasterEpisodeRequest& request) const;
+			DescribeCasterRtcInfoOutcome describeCasterRtcInfo(const Model::DescribeCasterRtcInfoRequest &request)const;
+			void describeCasterRtcInfoAsync(const Model::DescribeCasterRtcInfoRequest& request, const DescribeCasterRtcInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCasterRtcInfoOutcomeCallable describeCasterRtcInfoCallable(const Model::DescribeCasterRtcInfoRequest& request) const;
+			SetCasterSceneConfigOutcome setCasterSceneConfig(const Model::SetCasterSceneConfigRequest &request)const;
+			void setCasterSceneConfigAsync(const Model::SetCasterSceneConfigRequest& request, const SetCasterSceneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetCasterSceneConfigOutcomeCallable setCasterSceneConfigCallable(const Model::SetCasterSceneConfigRequest& request) const;
+			AddTrancodeSEIOutcome addTrancodeSEI(const Model::AddTrancodeSEIRequest &request)const;
+			void addTrancodeSEIAsync(const Model::AddTrancodeSEIRequest& request, const AddTrancodeSEIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddTrancodeSEIOutcomeCallable addTrancodeSEICallable(const Model::AddTrancodeSEIRequest& request) const;
+			DescribeLiveStreamBitRateDataOutcome describeLiveStreamBitRateData(const Model::DescribeLiveStreamBitRateDataRequest &request)const;
+			void describeLiveStreamBitRateDataAsync(const Model::DescribeLiveStreamBitRateDataRequest& request, const DescribeLiveStreamBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamBitRateDataOutcomeCallable describeLiveStreamBitRateDataCallable(const Model::DescribeLiveStreamBitRateDataRequest& request) const;
+			DeleteCasterLayoutOutcome deleteCasterLayout(const Model::DeleteCasterLayoutRequest &request)const;
+			void deleteCasterLayoutAsync(const Model::DeleteCasterLayoutRequest& request, const DeleteCasterLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCasterLayoutOutcomeCallable deleteCasterLayoutCallable(const Model::DeleteCasterLayoutRequest& request) const;
+			DeleteCasterProgramOutcome deleteCasterProgram(const Model::DeleteCasterProgramRequest &request)const;
+			void deleteCasterProgramAsync(const Model::DeleteCasterProgramRequest& request, const DeleteCasterProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCasterProgramOutcomeCallable deleteCasterProgramCallable(const Model::DeleteCasterProgramRequest& request) const;
+			StartCasterSceneOutcome startCasterScene(const Model::StartCasterSceneRequest &request)const;
+			void startCasterSceneAsync(const Model::StartCasterSceneRequest& request, const StartCasterSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartCasterSceneOutcomeCallable startCasterSceneCallable(const Model::StartCasterSceneRequest& request) const;
+			DescribeLiveStreamRecordIndexFileOutcome describeLiveStreamRecordIndexFile(const Model::DescribeLiveStreamRecordIndexFileRequest &request)const;
+			void describeLiveStreamRecordIndexFileAsync(const Model::DescribeLiveStreamRecordIndexFileRequest& request, const DescribeLiveStreamRecordIndexFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamRecordIndexFileOutcomeCallable describeLiveStreamRecordIndexFileCallable(const Model::DescribeLiveStreamRecordIndexFileRequest& request) const;
+			AddCasterEpisodeGroupOutcome addCasterEpisodeGroup(const Model::AddCasterEpisodeGroupRequest &request)const;
+			void addCasterEpisodeGroupAsync(const Model::AddCasterEpisodeGroupRequest& request, const AddCasterEpisodeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCasterEpisodeGroupOutcomeCallable addCasterEpisodeGroupCallable(const Model::AddCasterEpisodeGroupRequest& request) const;
+			AddLiveMixConfigOutcome addLiveMixConfig(const Model::AddLiveMixConfigRequest &request)const;
+			void addLiveMixConfigAsync(const Model::AddLiveMixConfigRequest& request, const AddLiveMixConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveMixConfigOutcomeCallable addLiveMixConfigCallable(const Model::AddLiveMixConfigRequest& request) const;
+			DescribeCasterConfigOutcome describeCasterConfig(const Model::DescribeCasterConfigRequest &request)const;
+			void describeCasterConfigAsync(const Model::DescribeCasterConfigRequest& request, const DescribeCasterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCasterConfigOutcomeCallable describeCasterConfigCallable(const Model::DescribeCasterConfigRequest& request) const;
+			CopyCasterOutcome copyCaster(const Model::CopyCasterRequest &request)const;
+			void copyCasterAsync(const Model::CopyCasterRequest& request, const CopyCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CopyCasterOutcomeCallable copyCasterCallable(const Model::CopyCasterRequest& request) const;
+			AddCustomLiveStreamTranscodeOutcome addCustomLiveStreamTranscode(const Model::AddCustomLiveStreamTranscodeRequest &request)const;
+			void addCustomLiveStreamTranscodeAsync(const Model::AddCustomLiveStreamTranscodeRequest& request, const AddCustomLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCustomLiveStreamTranscodeOutcomeCallable addCustomLiveStreamTranscodeCallable(const Model::AddCustomLiveStreamTranscodeRequest& request) const;
+			AddCasterEpisodeOutcome addCasterEpisode(const Model::AddCasterEpisodeRequest &request)const;
+			void addCasterEpisodeAsync(const Model::AddCasterEpisodeRequest& request, const AddCasterEpisodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCasterEpisodeOutcomeCallable addCasterEpisodeCallable(const Model::AddCasterEpisodeRequest& request) const;
+			DescribeLiveRecordConfigOutcome describeLiveRecordConfig(const Model::DescribeLiveRecordConfigRequest &request)const;
+			void describeLiveRecordConfigAsync(const Model::DescribeLiveRecordConfigRequest& request, const DescribeLiveRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveRecordConfigOutcomeCallable describeLiveRecordConfigCallable(const Model::DescribeLiveRecordConfigRequest& request) const;
+			DeleteLiveRecordNotifyConfigOutcome deleteLiveRecordNotifyConfig(const Model::DeleteLiveRecordNotifyConfigRequest &request)const;
+			void deleteLiveRecordNotifyConfigAsync(const Model::DeleteLiveRecordNotifyConfigRequest& request, const DeleteLiveRecordNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveRecordNotifyConfigOutcomeCallable deleteLiveRecordNotifyConfigCallable(const Model::DeleteLiveRecordNotifyConfigRequest& request) const;
+			AddLiveRecordNotifyConfigOutcome addLiveRecordNotifyConfig(const Model::AddLiveRecordNotifyConfigRequest &request)const;
+			void addLiveRecordNotifyConfigAsync(const Model::AddLiveRecordNotifyConfigRequest& request, const AddLiveRecordNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveRecordNotifyConfigOutcomeCallable addLiveRecordNotifyConfigCallable(const Model::AddLiveRecordNotifyConfigRequest& request) const;
+			DeleteLiveStreamsNotifyUrlConfigOutcome deleteLiveStreamsNotifyUrlConfig(const Model::DeleteLiveStreamsNotifyUrlConfigRequest &request)const;
+			void deleteLiveStreamsNotifyUrlConfigAsync(const Model::DeleteLiveStreamsNotifyUrlConfigRequest& request, const DeleteLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveStreamsNotifyUrlConfigOutcomeCallable deleteLiveStreamsNotifyUrlConfigCallable(const Model::DeleteLiveStreamsNotifyUrlConfigRequest& request) const;
+			DescribeLiveStreamOnlineUserNumOutcome describeLiveStreamOnlineUserNum(const Model::DescribeLiveStreamOnlineUserNumRequest &request)const;
+			void describeLiveStreamOnlineUserNumAsync(const Model::DescribeLiveStreamOnlineUserNumRequest& request, const DescribeLiveStreamOnlineUserNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamOnlineUserNumOutcomeCallable describeLiveStreamOnlineUserNumCallable(const Model::DescribeLiveStreamOnlineUserNumRequest& request) const;
+			AddCasterComponentOutcome addCasterComponent(const Model::AddCasterComponentRequest &request)const;
+			void addCasterComponentAsync(const Model::AddCasterComponentRequest& request, const AddCasterComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCasterComponentOutcomeCallable addCasterComponentCallable(const Model::AddCasterComponentRequest& request) const;
+			UpdateLiveMixNotifyConfigOutcome updateLiveMixNotifyConfig(const Model::UpdateLiveMixNotifyConfigRequest &request)const;
+			void updateLiveMixNotifyConfigAsync(const Model::UpdateLiveMixNotifyConfigRequest& request, const UpdateLiveMixNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveMixNotifyConfigOutcomeCallable updateLiveMixNotifyConfigCallable(const Model::UpdateLiveMixNotifyConfigRequest& request) const;
+			DescribeLiveDomainRecordDataOutcome describeLiveDomainRecordData(const Model::DescribeLiveDomainRecordDataRequest &request)const;
+			void describeLiveDomainRecordDataAsync(const Model::DescribeLiveDomainRecordDataRequest& request, const DescribeLiveDomainRecordDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveDomainRecordDataOutcomeCallable describeLiveDomainRecordDataCallable(const Model::DescribeLiveDomainRecordDataRequest& request) const;
+			DeleteCasterVideoResourceOutcome deleteCasterVideoResource(const Model::DeleteCasterVideoResourceRequest &request)const;
+			void deleteCasterVideoResourceAsync(const Model::DeleteCasterVideoResourceRequest& request, const DeleteCasterVideoResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCasterVideoResourceOutcomeCallable deleteCasterVideoResourceCallable(const Model::DeleteCasterVideoResourceRequest& request) const;
+			DeleteLiveAppSnapshotConfigOutcome deleteLiveAppSnapshotConfig(const Model::DeleteLiveAppSnapshotConfigRequest &request)const;
+			void deleteLiveAppSnapshotConfigAsync(const Model::DeleteLiveAppSnapshotConfigRequest& request, const DeleteLiveAppSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveAppSnapshotConfigOutcomeCallable deleteLiveAppSnapshotConfigCallable(const Model::DeleteLiveAppSnapshotConfigRequest& request) const;
+			DescribeLiveStreamsNotifyUrlConfigOutcome describeLiveStreamsNotifyUrlConfig(const Model::DescribeLiveStreamsNotifyUrlConfigRequest &request)const;
+			void describeLiveStreamsNotifyUrlConfigAsync(const Model::DescribeLiveStreamsNotifyUrlConfigRequest& request, const DescribeLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamsNotifyUrlConfigOutcomeCallable describeLiveStreamsNotifyUrlConfigCallable(const Model::DescribeLiveStreamsNotifyUrlConfigRequest& request) const;
+			DeleteLivePullStreamInfoConfigOutcome deleteLivePullStreamInfoConfig(const Model::DeleteLivePullStreamInfoConfigRequest &request)const;
+			void deleteLivePullStreamInfoConfigAsync(const Model::DeleteLivePullStreamInfoConfigRequest& request, const DeleteLivePullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLivePullStreamInfoConfigOutcomeCallable deleteLivePullStreamInfoConfigCallable(const Model::DeleteLivePullStreamInfoConfigRequest& request) const;
+			ModifyCasterProgramOutcome modifyCasterProgram(const Model::ModifyCasterProgramRequest &request)const;
+			void modifyCasterProgramAsync(const Model::ModifyCasterProgramRequest& request, const ModifyCasterProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCasterProgramOutcomeCallable modifyCasterProgramCallable(const Model::ModifyCasterProgramRequest& request) const;
+			StartMixStreamsServiceOutcome startMixStreamsService(const Model::StartMixStreamsServiceRequest &request)const;
+			void startMixStreamsServiceAsync(const Model::StartMixStreamsServiceRequest& request, const StartMixStreamsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartMixStreamsServiceOutcomeCallable startMixStreamsServiceCallable(const Model::StartMixStreamsServiceRequest& request) const;
+			DescribeLivePullStreamConfigOutcome describeLivePullStreamConfig(const Model::DescribeLivePullStreamConfigRequest &request)const;
+			void describeLivePullStreamConfigAsync(const Model::DescribeLivePullStreamConfigRequest& request, const DescribeLivePullStreamConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLivePullStreamConfigOutcomeCallable describeLivePullStreamConfigCallable(const Model::DescribeLivePullStreamConfigRequest& request) const;
+			SetLiveStreamsNotifyUrlConfigOutcome setLiveStreamsNotifyUrlConfig(const Model::SetLiveStreamsNotifyUrlConfigRequest &request)const;
+			void setLiveStreamsNotifyUrlConfigAsync(const Model::SetLiveStreamsNotifyUrlConfigRequest& request, const SetLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetLiveStreamsNotifyUrlConfigOutcomeCallable setLiveStreamsNotifyUrlConfigCallable(const Model::SetLiveStreamsNotifyUrlConfigRequest& request) const;
+			AddLivePullStreamInfoConfigOutcome addLivePullStreamInfoConfig(const Model::AddLivePullStreamInfoConfigRequest &request)const;
+			void addLivePullStreamInfoConfigAsync(const Model::AddLivePullStreamInfoConfigRequest& request, const AddLivePullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLivePullStreamInfoConfigOutcomeCallable addLivePullStreamInfoConfigCallable(const Model::AddLivePullStreamInfoConfigRequest& request) const;
+			DescribeLiveStreamsBlockListOutcome describeLiveStreamsBlockList(const Model::DescribeLiveStreamsBlockListRequest &request)const;
+			void describeLiveStreamsBlockListAsync(const Model::DescribeLiveStreamsBlockListRequest& request, const DescribeLiveStreamsBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamsBlockListOutcomeCallable describeLiveStreamsBlockListCallable(const Model::DescribeLiveStreamsBlockListRequest& request) const;
+			AddLiveStreamTranscodeOutcome addLiveStreamTranscode(const Model::AddLiveStreamTranscodeRequest &request)const;
+			void addLiveStreamTranscodeAsync(const Model::AddLiveStreamTranscodeRequest& request, const AddLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveStreamTranscodeOutcomeCallable addLiveStreamTranscodeCallable(const Model::AddLiveStreamTranscodeRequest& request) const;
+			AddCasterVideoResourceOutcome addCasterVideoResource(const Model::AddCasterVideoResourceRequest &request)const;
+			void addCasterVideoResourceAsync(const Model::AddCasterVideoResourceRequest& request, const AddCasterVideoResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCasterVideoResourceOutcomeCallable addCasterVideoResourceCallable(const Model::AddCasterVideoResourceRequest& request) const;
+			AddCasterEpisodeGroupContentOutcome addCasterEpisodeGroupContent(const Model::AddCasterEpisodeGroupContentRequest &request)const;
+			void addCasterEpisodeGroupContentAsync(const Model::AddCasterEpisodeGroupContentRequest& request, const AddCasterEpisodeGroupContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCasterEpisodeGroupContentOutcomeCallable addCasterEpisodeGroupContentCallable(const Model::AddCasterEpisodeGroupContentRequest& request) const;
+			UpdateLiveDetectNotifyConfigOutcome updateLiveDetectNotifyConfig(const Model::UpdateLiveDetectNotifyConfigRequest &request)const;
+			void updateLiveDetectNotifyConfigAsync(const Model::UpdateLiveDetectNotifyConfigRequest& request, const UpdateLiveDetectNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveDetectNotifyConfigOutcomeCallable updateLiveDetectNotifyConfigCallable(const Model::UpdateLiveDetectNotifyConfigRequest& request) const;
+			ModifyCasterVideoResourceOutcome modifyCasterVideoResource(const Model::ModifyCasterVideoResourceRequest &request)const;
+			void modifyCasterVideoResourceAsync(const Model::ModifyCasterVideoResourceRequest& request, const ModifyCasterVideoResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCasterVideoResourceOutcomeCallable modifyCasterVideoResourceCallable(const Model::ModifyCasterVideoResourceRequest& request) const;
+			ImagePornDetectionOutcome imagePornDetection(const Model::ImagePornDetectionRequest &request)const;
+			void imagePornDetectionAsync(const Model::ImagePornDetectionRequest& request, const ImagePornDetectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ImagePornDetectionOutcomeCallable imagePornDetectionCallable(const Model::ImagePornDetectionRequest& request) const;
+			DescribeCasterStreamUrlOutcome describeCasterStreamUrl(const Model::DescribeCasterStreamUrlRequest &request)const;
+			void describeCasterStreamUrlAsync(const Model::DescribeCasterStreamUrlRequest& request, const DescribeCasterStreamUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCasterStreamUrlOutcomeCallable describeCasterStreamUrlCallable(const Model::DescribeCasterStreamUrlRequest& request) const;
+			DescribeLiveStreamsControlHistoryOutcome describeLiveStreamsControlHistory(const Model::DescribeLiveStreamsControlHistoryRequest &request)const;
+			void describeLiveStreamsControlHistoryAsync(const Model::DescribeLiveStreamsControlHistoryRequest& request, const DescribeLiveStreamsControlHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamsControlHistoryOutcomeCallable describeLiveStreamsControlHistoryCallable(const Model::DescribeLiveStreamsControlHistoryRequest& request) const;
+			StopCasterSceneOutcome stopCasterScene(const Model::StopCasterSceneRequest &request)const;
+			void stopCasterSceneAsync(const Model::StopCasterSceneRequest& request, const StopCasterSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopCasterSceneOutcomeCallable stopCasterSceneCallable(const Model::StopCasterSceneRequest& request) const;
+			DescribeLiveDomainSnapshotDataOutcome describeLiveDomainSnapshotData(const Model::DescribeLiveDomainSnapshotDataRequest &request)const;
+			void describeLiveDomainSnapshotDataAsync(const Model::DescribeLiveDomainSnapshotDataRequest& request, const DescribeLiveDomainSnapshotDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveDomainSnapshotDataOutcomeCallable describeLiveDomainSnapshotDataCallable(const Model::DescribeLiveDomainSnapshotDataRequest& request) const;
+			DeleteLiveRecordVodConfigOutcome deleteLiveRecordVodConfig(const Model::DeleteLiveRecordVodConfigRequest &request)const;
+			void deleteLiveRecordVodConfigAsync(const Model::DeleteLiveRecordVodConfigRequest& request, const DeleteLiveRecordVodConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveRecordVodConfigOutcomeCallable deleteLiveRecordVodConfigCallable(const Model::DeleteLiveRecordVodConfigRequest& request) const;
+			ModifyCasterEpisodeOutcome modifyCasterEpisode(const Model::ModifyCasterEpisodeRequest &request)const;
+			void modifyCasterEpisodeAsync(const Model::ModifyCasterEpisodeRequest& request, const ModifyCasterEpisodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCasterEpisodeOutcomeCallable modifyCasterEpisodeCallable(const Model::ModifyCasterEpisodeRequest& request) const;
+			DescribeLiveStreamSnapshotInfoOutcome describeLiveStreamSnapshotInfo(const Model::DescribeLiveStreamSnapshotInfoRequest &request)const;
+			void describeLiveStreamSnapshotInfoAsync(const Model::DescribeLiveStreamSnapshotInfoRequest& request, const DescribeLiveStreamSnapshotInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamSnapshotInfoOutcomeCallable describeLiveStreamSnapshotInfoCallable(const Model::DescribeLiveStreamSnapshotInfoRequest& request) const;
+			StartMultipleStreamMixServiceOutcome startMultipleStreamMixService(const Model::StartMultipleStreamMixServiceRequest &request)const;
+			void startMultipleStreamMixServiceAsync(const Model::StartMultipleStreamMixServiceRequest& request, const StartMultipleStreamMixServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartMultipleStreamMixServiceOutcomeCallable startMultipleStreamMixServiceCallable(const Model::StartMultipleStreamMixServiceRequest& request) const;
+			StopMultipleStreamMixServiceOutcome stopMultipleStreamMixService(const Model::StopMultipleStreamMixServiceRequest &request)const;
+			void stopMultipleStreamMixServiceAsync(const Model::StopMultipleStreamMixServiceRequest& request, const StopMultipleStreamMixServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopMultipleStreamMixServiceOutcomeCallable stopMultipleStreamMixServiceCallable(const Model::StopMultipleStreamMixServiceRequest& request) const;
+			DescribeLiveMixNotifyConfigOutcome describeLiveMixNotifyConfig(const Model::DescribeLiveMixNotifyConfigRequest &request)const;
+			void describeLiveMixNotifyConfigAsync(const Model::DescribeLiveMixNotifyConfigRequest& request, const DescribeLiveMixNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveMixNotifyConfigOutcomeCallable describeLiveMixNotifyConfigCallable(const Model::DescribeLiveMixNotifyConfigRequest& request) const;
+			DescribeLiveStreamsFrameRateAndBitRateDataOutcome describeLiveStreamsFrameRateAndBitRateData(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest &request)const;
+			void describeLiveStreamsFrameRateAndBitRateDataAsync(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest& request, const DescribeLiveStreamsFrameRateAndBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamsFrameRateAndBitRateDataOutcomeCallable describeLiveStreamsFrameRateAndBitRateDataCallable(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest& request) const;
+			CreateCasterOutcome createCaster(const Model::CreateCasterRequest &request)const;
+			void createCasterAsync(const Model::CreateCasterRequest& request, const CreateCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCasterOutcomeCallable createCasterCallable(const Model::CreateCasterRequest& request) const;
+			DescribeLiveStreamRecordContentOutcome describeLiveStreamRecordContent(const Model::DescribeLiveStreamRecordContentRequest &request)const;
+			void describeLiveStreamRecordContentAsync(const Model::DescribeLiveStreamRecordContentRequest& request, const DescribeLiveStreamRecordContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamRecordContentOutcomeCallable describeLiveStreamRecordContentCallable(const Model::DescribeLiveStreamRecordContentRequest& request) const;
+			AddMultipleStreamMixServiceOutcome addMultipleStreamMixService(const Model::AddMultipleStreamMixServiceRequest &request)const;
+			void addMultipleStreamMixServiceAsync(const Model::AddMultipleStreamMixServiceRequest& request, const AddMultipleStreamMixServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddMultipleStreamMixServiceOutcomeCallable addMultipleStreamMixServiceCallable(const Model::AddMultipleStreamMixServiceRequest& request) const;
+			AddLiveSnapshotDetectPornConfigOutcome addLiveSnapshotDetectPornConfig(const Model::AddLiveSnapshotDetectPornConfigRequest &request)const;
+			void addLiveSnapshotDetectPornConfigAsync(const Model::AddLiveSnapshotDetectPornConfigRequest& request, const AddLiveSnapshotDetectPornConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveSnapshotDetectPornConfigOutcomeCallable addLiveSnapshotDetectPornConfigCallable(const Model::AddLiveSnapshotDetectPornConfigRequest& request) const;
+			DescribeCasterLayoutsOutcome describeCasterLayouts(const Model::DescribeCasterLayoutsRequest &request)const;
+			void describeCasterLayoutsAsync(const Model::DescribeCasterLayoutsRequest& request, const DescribeCasterLayoutsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCasterLayoutsOutcomeCallable describeCasterLayoutsCallable(const Model::DescribeCasterLayoutsRequest& request) const;
+			UpdateLiveRecordNotifyConfigOutcome updateLiveRecordNotifyConfig(const Model::UpdateLiveRecordNotifyConfigRequest &request)const;
+			void updateLiveRecordNotifyConfigAsync(const Model::UpdateLiveRecordNotifyConfigRequest& request, const UpdateLiveRecordNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveRecordNotifyConfigOutcomeCallable updateLiveRecordNotifyConfigCallable(const Model::UpdateLiveRecordNotifyConfigRequest& request) const;
+			DescribeLiveSnapshotConfigOutcome describeLiveSnapshotConfig(const Model::DescribeLiveSnapshotConfigRequest &request)const;
+			void describeLiveSnapshotConfigAsync(const Model::DescribeLiveSnapshotConfigRequest& request, const DescribeLiveSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveSnapshotConfigOutcomeCallable describeLiveSnapshotConfigCallable(const Model::DescribeLiveSnapshotConfigRequest& request) const;
+			DescribeCasterProgramOutcome describeCasterProgram(const Model::DescribeCasterProgramRequest &request)const;
+			void describeCasterProgramAsync(const Model::DescribeCasterProgramRequest& request, const DescribeCasterProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCasterProgramOutcomeCallable describeCasterProgramCallable(const Model::DescribeCasterProgramRequest& request) const;
+			DescribeLiveStreamHistoryUserNumOutcome describeLiveStreamHistoryUserNum(const Model::DescribeLiveStreamHistoryUserNumRequest &request)const;
+			void describeLiveStreamHistoryUserNumAsync(const Model::DescribeLiveStreamHistoryUserNumRequest& request, const DescribeLiveStreamHistoryUserNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamHistoryUserNumOutcomeCallable describeLiveStreamHistoryUserNumCallable(const Model::DescribeLiveStreamHistoryUserNumRequest& request) const;
+			AddLiveAppRecordConfigOutcome addLiveAppRecordConfig(const Model::AddLiveAppRecordConfigRequest &request)const;
+			void addLiveAppRecordConfigAsync(const Model::AddLiveAppRecordConfigRequest& request, const AddLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveAppRecordConfigOutcomeCallable addLiveAppRecordConfigCallable(const Model::AddLiveAppRecordConfigRequest& request) const;
+			AddLiveRecordVodConfigOutcome addLiveRecordVodConfig(const Model::AddLiveRecordVodConfigRequest &request)const;
+			void addLiveRecordVodConfigAsync(const Model::AddLiveRecordVodConfigRequest& request, const AddLiveRecordVodConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveRecordVodConfigOutcomeCallable addLiveRecordVodConfigCallable(const Model::AddLiveRecordVodConfigRequest& request) const;
+			DescribeLiveStreamRecordIndexFilesOutcome describeLiveStreamRecordIndexFiles(const Model::DescribeLiveStreamRecordIndexFilesRequest &request)const;
+			void describeLiveStreamRecordIndexFilesAsync(const Model::DescribeLiveStreamRecordIndexFilesRequest& request, const DescribeLiveStreamRecordIndexFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamRecordIndexFilesOutcomeCallable describeLiveStreamRecordIndexFilesCallable(const Model::DescribeLiveStreamRecordIndexFilesRequest& request) const;
+			AddCasterProgramOutcome addCasterProgram(const Model::AddCasterProgramRequest &request)const;
+			void addCasterProgramAsync(const Model::AddCasterProgramRequest& request, const AddCasterProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCasterProgramOutcomeCallable addCasterProgramCallable(const Model::AddCasterProgramRequest& request) const;
+			DeleteLiveMixConfigOutcome deleteLiveMixConfig(const Model::DeleteLiveMixConfigRequest &request)const;
+			void deleteLiveMixConfigAsync(const Model::DeleteLiveMixConfigRequest& request, const DeleteLiveMixConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveMixConfigOutcomeCallable deleteLiveMixConfigCallable(const Model::DeleteLiveMixConfigRequest& request) const;
+			ForbidLiveStreamOutcome forbidLiveStream(const Model::ForbidLiveStreamRequest &request)const;
+			void forbidLiveStreamAsync(const Model::ForbidLiveStreamRequest& request, const ForbidLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ForbidLiveStreamOutcomeCallable forbidLiveStreamCallable(const Model::ForbidLiveStreamRequest& request) const;
+			DeleteCasterEpisodeGroupOutcome deleteCasterEpisodeGroup(const Model::DeleteCasterEpisodeGroupRequest &request)const;
+			void deleteCasterEpisodeGroupAsync(const Model::DeleteCasterEpisodeGroupRequest& request, const DeleteCasterEpisodeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCasterEpisodeGroupOutcomeCallable deleteCasterEpisodeGroupCallable(const Model::DeleteCasterEpisodeGroupRequest& request) const;
+			DescribeCasterVideoResourcesOutcome describeCasterVideoResources(const Model::DescribeCasterVideoResourcesRequest &request)const;
+			void describeCasterVideoResourcesAsync(const Model::DescribeCasterVideoResourcesRequest& request, const DescribeCasterVideoResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCasterVideoResourcesOutcomeCallable describeCasterVideoResourcesCallable(const Model::DescribeCasterVideoResourcesRequest& request) const;
+			UpdateLiveAppSnapshotConfigOutcome updateLiveAppSnapshotConfig(const Model::UpdateLiveAppSnapshotConfigRequest &request)const;
+			void updateLiveAppSnapshotConfigAsync(const Model::UpdateLiveAppSnapshotConfigRequest& request, const UpdateLiveAppSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveAppSnapshotConfigOutcomeCallable updateLiveAppSnapshotConfigCallable(const Model::UpdateLiveAppSnapshotConfigRequest& request) const;
+			DeleteLiveDetectNotifyConfigOutcome deleteLiveDetectNotifyConfig(const Model::DeleteLiveDetectNotifyConfigRequest &request)const;
+			void deleteLiveDetectNotifyConfigAsync(const Model::DeleteLiveDetectNotifyConfigRequest& request, const DeleteLiveDetectNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveDetectNotifyConfigOutcomeCallable deleteLiveDetectNotifyConfigCallable(const Model::DeleteLiveDetectNotifyConfigRequest& request) const;
+			EffectCasterVideoResourceOutcome effectCasterVideoResource(const Model::EffectCasterVideoResourceRequest &request)const;
+			void effectCasterVideoResourceAsync(const Model::EffectCasterVideoResourceRequest& request, const EffectCasterVideoResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EffectCasterVideoResourceOutcomeCallable effectCasterVideoResourceCallable(const Model::EffectCasterVideoResourceRequest& request) const;
+			DeleteLiveMixNotifyConfigOutcome deleteLiveMixNotifyConfig(const Model::DeleteLiveMixNotifyConfigRequest &request)const;
+			void deleteLiveMixNotifyConfigAsync(const Model::DeleteLiveMixNotifyConfigRequest& request, const DeleteLiveMixNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveMixNotifyConfigOutcomeCallable deleteLiveMixNotifyConfigCallable(const Model::DeleteLiveMixNotifyConfigRequest& request) const;
+			AddLiveAppSnapshotConfigOutcome addLiveAppSnapshotConfig(const Model::AddLiveAppSnapshotConfigRequest &request)const;
+			void addLiveAppSnapshotConfigAsync(const Model::AddLiveAppSnapshotConfigRequest& request, const AddLiveAppSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveAppSnapshotConfigOutcomeCallable addLiveAppSnapshotConfigCallable(const Model::AddLiveAppSnapshotConfigRequest& request) const;
+			RemoveMultipleStreamMixServiceOutcome removeMultipleStreamMixService(const Model::RemoveMultipleStreamMixServiceRequest &request)const;
+			void removeMultipleStreamMixServiceAsync(const Model::RemoveMultipleStreamMixServiceRequest& request, const RemoveMultipleStreamMixServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveMultipleStreamMixServiceOutcomeCallable removeMultipleStreamMixServiceCallable(const Model::RemoveMultipleStreamMixServiceRequest& request) const;
+			DeleteCasterComponentOutcome deleteCasterComponent(const Model::DeleteCasterComponentRequest &request)const;
+			void deleteCasterComponentAsync(const Model::DeleteCasterComponentRequest& request, const DeleteCasterComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCasterComponentOutcomeCallable deleteCasterComponentCallable(const Model::DeleteCasterComponentRequest& request) const;
+			SetCasterConfigOutcome setCasterConfig(const Model::SetCasterConfigRequest &request)const;
+			void setCasterConfigAsync(const Model::SetCasterConfigRequest& request, const SetCasterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetCasterConfigOutcomeCallable setCasterConfigCallable(const Model::SetCasterConfigRequest& request) const;
+			RealTimeRecordCommandOutcome realTimeRecordCommand(const Model::RealTimeRecordCommandRequest &request)const;
+			void realTimeRecordCommandAsync(const Model::RealTimeRecordCommandRequest& request, const RealTimeRecordCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RealTimeRecordCommandOutcomeCallable realTimeRecordCommandCallable(const Model::RealTimeRecordCommandRequest& request) const;
+			StartCasterOutcome startCaster(const Model::StartCasterRequest &request)const;
+			void startCasterAsync(const Model::StartCasterRequest& request, const StartCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartCasterOutcomeCallable startCasterCallable(const Model::StartCasterRequest& request) const;
+			ResumeLiveStreamOutcome resumeLiveStream(const Model::ResumeLiveStreamRequest &request)const;
+			void resumeLiveStreamAsync(const Model::ResumeLiveStreamRequest& request, const ResumeLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResumeLiveStreamOutcomeCallable resumeLiveStreamCallable(const Model::ResumeLiveStreamRequest& request) const;
+			AddCasterLayoutOutcome addCasterLayout(const Model::AddCasterLayoutRequest &request)const;
+			void addCasterLayoutAsync(const Model::AddCasterLayoutRequest& request, const AddCasterLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCasterLayoutOutcomeCallable addCasterLayoutCallable(const Model::AddCasterLayoutRequest& request) const;
+			ModifyCasterLayoutOutcome modifyCasterLayout(const Model::ModifyCasterLayoutRequest &request)const;
+			void modifyCasterLayoutAsync(const Model::ModifyCasterLayoutRequest& request, const ModifyCasterLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCasterLayoutOutcomeCallable modifyCasterLayoutCallable(const Model::ModifyCasterLayoutRequest& request) const;
+			StopCasterOutcome stopCaster(const Model::StopCasterRequest &request)const;
+			void stopCasterAsync(const Model::StopCasterRequest& request, const StopCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopCasterOutcomeCallable stopCasterCallable(const Model::StopCasterRequest& request) const;
+			DescribeLiveStreamsPublishListOutcome describeLiveStreamsPublishList(const Model::DescribeLiveStreamsPublishListRequest &request)const;
+			void describeLiveStreamsPublishListAsync(const Model::DescribeLiveStreamsPublishListRequest& request, const DescribeLiveStreamsPublishListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamsPublishListOutcomeCallable describeLiveStreamsPublishListCallable(const Model::DescribeLiveStreamsPublishListRequest& request) const;
+			DescribeLiveSnapshotDetectPornConfigOutcome describeLiveSnapshotDetectPornConfig(const Model::DescribeLiveSnapshotDetectPornConfigRequest &request)const;
+			void describeLiveSnapshotDetectPornConfigAsync(const Model::DescribeLiveSnapshotDetectPornConfigRequest& request, const DescribeLiveSnapshotDetectPornConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveSnapshotDetectPornConfigOutcomeCallable describeLiveSnapshotDetectPornConfigCallable(const Model::DescribeLiveSnapshotDetectPornConfigRequest& request) const;
+			DeleteCasterSceneConfigOutcome deleteCasterSceneConfig(const Model::DeleteCasterSceneConfigRequest &request)const;
+			void deleteCasterSceneConfigAsync(const Model::DeleteCasterSceneConfigRequest& request, const DeleteCasterSceneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCasterSceneConfigOutcomeCallable deleteCasterSceneConfigCallable(const Model::DeleteCasterSceneConfigRequest& request) const;
+			DeleteLiveAppRecordConfigOutcome deleteLiveAppRecordConfig(const Model::DeleteLiveAppRecordConfigRequest &request)const;
+			void deleteLiveAppRecordConfigAsync(const Model::DeleteLiveAppRecordConfigRequest& request, const DeleteLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveAppRecordConfigOutcomeCallable deleteLiveAppRecordConfigCallable(const Model::DeleteLiveAppRecordConfigRequest& request) const;
+			DeleteCasterOutcome deleteCaster(const Model::DeleteCasterRequest &request)const;
+			void deleteCasterAsync(const Model::DeleteCasterRequest& request, const DeleteCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCasterOutcomeCallable deleteCasterCallable(const Model::DeleteCasterRequest& request) const;
+			DescribeLiveRecordVodConfigsOutcome describeLiveRecordVodConfigs(const Model::DescribeLiveRecordVodConfigsRequest &request)const;
+			void describeLiveRecordVodConfigsAsync(const Model::DescribeLiveRecordVodConfigsRequest& request, const DescribeLiveRecordVodConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveRecordVodConfigsOutcomeCallable describeLiveRecordVodConfigsCallable(const Model::DescribeLiveRecordVodConfigsRequest& request) const;
+			DescribeCastersOutcome describeCasters(const Model::DescribeCastersRequest &request)const;
+			void describeCastersAsync(const Model::DescribeCastersRequest& request, const DescribeCastersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCastersOutcomeCallable describeCastersCallable(const Model::DescribeCastersRequest& request) const;
+			AddLiveMixNotifyConfigOutcome addLiveMixNotifyConfig(const Model::AddLiveMixNotifyConfigRequest &request)const;
+			void addLiveMixNotifyConfigAsync(const Model::AddLiveMixNotifyConfigRequest& request, const AddLiveMixNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveMixNotifyConfigOutcomeCallable addLiveMixNotifyConfigCallable(const Model::AddLiveMixNotifyConfigRequest& request) const;
+			AddLiveDetectNotifyConfigOutcome addLiveDetectNotifyConfig(const Model::AddLiveDetectNotifyConfigRequest &request)const;
+			void addLiveDetectNotifyConfigAsync(const Model::AddLiveDetectNotifyConfigRequest& request, const AddLiveDetectNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveDetectNotifyConfigOutcomeCallable addLiveDetectNotifyConfigCallable(const Model::AddLiveDetectNotifyConfigRequest& request) const;
+			DescribeCasterScenesOutcome describeCasterScenes(const Model::DescribeCasterScenesRequest &request)const;
+			void describeCasterScenesAsync(const Model::DescribeCasterScenesRequest& request, const DescribeCasterScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCasterScenesOutcomeCallable describeCasterScenesCallable(const Model::DescribeCasterScenesRequest& request) const;
+	
+		private:
+			std::shared_ptr<EndpointProvider> endpointProvider_;
+		};
+	}
+}
+
+#endif // !ALIBABACLOUD_LIVE_LIVECLIENT_H_
