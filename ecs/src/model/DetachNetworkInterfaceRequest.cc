@@ -102,17 +102,6 @@ void DetachNetworkInterfaceRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DetachNetworkInterfaceRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DetachNetworkInterfaceRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DetachNetworkInterfaceRequest::getSecurityToken()const
 {
 	return securityToken_;

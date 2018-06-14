@@ -59,8 +59,6 @@ namespace AlibabaCloud
 				void setTimeout(long timeout);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
@@ -109,7 +107,6 @@ namespace AlibabaCloud
 				std::string commandContent_;
 				long timeout_;
 				std::string accessKeyId_;
-				std::string resourceGroupId_;
 				std::string securityToken_;
 				std::string regionId_;
 				bool enable_;

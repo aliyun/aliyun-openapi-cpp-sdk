@@ -486,8 +486,6 @@
 #include "model/AllocateEipAddressResult.h"
 #include "model/DeleteDiskRequest.h"
 #include "model/DeleteDiskResult.h"
-#include "model/DescribeEventsRequest.h"
-#include "model/DescribeEventsResult.h"
 #include "model/UnassociateHaVipRequest.h"
 #include "model/UnassociateHaVipResult.h"
 #include "model/ModifyHaVipAttributeRequest.h"
@@ -1211,9 +1209,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDiskResult> DeleteDiskOutcome;
 			typedef std::future<DeleteDiskOutcome> DeleteDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteDiskRequest&, const DeleteDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiskAsyncHandler;
-			typedef Outcome<Error, Model::DescribeEventsResult> DescribeEventsOutcome;
-			typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::DescribeEventsRequest&, const DescribeEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsAsyncHandler;
 			typedef Outcome<Error, Model::UnassociateHaVipResult> UnassociateHaVipOutcome;
 			typedef std::future<UnassociateHaVipOutcome> UnassociateHaVipOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::UnassociateHaVipRequest&, const UnassociateHaVipOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateHaVipAsyncHandler;
@@ -1942,9 +1937,6 @@ namespace AlibabaCloud
 			DeleteDiskOutcome deleteDisk(const Model::DeleteDiskRequest &request)const;
 			void deleteDiskAsync(const Model::DeleteDiskRequest& request, const DeleteDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDiskOutcomeCallable deleteDiskCallable(const Model::DeleteDiskRequest& request) const;
-			DescribeEventsOutcome describeEvents(const Model::DescribeEventsRequest &request)const;
-			void describeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeEventsOutcomeCallable describeEventsCallable(const Model::DescribeEventsRequest& request) const;
 			UnassociateHaVipOutcome unassociateHaVip(const Model::UnassociateHaVipRequest &request)const;
 			void unassociateHaVipAsync(const Model::UnassociateHaVipRequest& request, const UnassociateHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnassociateHaVipOutcomeCallable unassociateHaVipCallable(const Model::UnassociateHaVipRequest& request) const;

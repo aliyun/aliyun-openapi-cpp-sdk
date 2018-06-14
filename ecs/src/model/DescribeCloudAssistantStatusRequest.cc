@@ -102,17 +102,6 @@ void DescribeCloudAssistantStatusRequest::setAccessKeyId(const std::string& acce
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeCloudAssistantStatusRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeCloudAssistantStatusRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeCloudAssistantStatusRequest::getSecurityToken()const
 {
 	return securityToken_;

@@ -102,17 +102,6 @@ void StopInvocationRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string StopInvocationRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void StopInvocationRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string StopInvocationRequest::getSecurityToken()const
 {
 	return securityToken_;

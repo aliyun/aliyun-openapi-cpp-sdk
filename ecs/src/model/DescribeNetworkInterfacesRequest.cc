@@ -25,6 +25,17 @@ DescribeNetworkInterfacesRequest::DescribeNetworkInterfacesRequest() :
 DescribeNetworkInterfacesRequest::~DescribeNetworkInterfacesRequest()
 {}
 
+std::string DescribeNetworkInterfacesRequest::getTag4Value()const
+{
+	return tag4Value_;
+}
+
+void DescribeNetworkInterfacesRequest::setTag4Value(const std::string& tag4Value)
+{
+	tag4Value_ = tag4Value;
+	setParameter("Tag4Value", tag4Value);
+}
+
 long DescribeNetworkInterfacesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -34,6 +45,17 @@ void DescribeNetworkInterfacesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DescribeNetworkInterfacesRequest::getTag2Key()const
+{
+	return tag2Key_;
+}
+
+void DescribeNetworkInterfacesRequest::setTag2Key(const std::string& tag2Key)
+{
+	tag2Key_ = tag2Key;
+	setParameter("Tag2Key", tag2Key);
 }
 
 long DescribeNetworkInterfacesRequest::getCallerParentId()const
@@ -67,6 +89,17 @@ void DescribeNetworkInterfacesRequest::setProxy_original_security_transport(bool
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
 	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+}
+
+std::string DescribeNetworkInterfacesRequest::getTag3Key()const
+{
+	return tag3Key_;
+}
+
+void DescribeNetworkInterfacesRequest::setTag3Key(const std::string& tag3Key)
+{
+	tag3Key_ = tag3Key;
+	setParameter("Tag3Key", tag3Key);
 }
 
 std::string DescribeNetworkInterfacesRequest::getProxy_original_source_ip()const
@@ -133,6 +166,17 @@ void DescribeNetworkInterfacesRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeNetworkInterfacesRequest::getTag1Value()const
+{
+	return tag1Value_;
+}
+
+void DescribeNetworkInterfacesRequest::setTag1Value(const std::string& tag1Value)
+{
+	tag1Value_ = tag1Value;
+	setParameter("Tag1Value", tag1Value);
 }
 
 std::string DescribeNetworkInterfacesRequest::getResourceGroupId()const
@@ -223,6 +267,17 @@ void DescribeNetworkInterfacesRequest::setCallerUidEmail(const std::string& call
 	setParameter("CallerUidEmail", callerUidEmail);
 }
 
+std::string DescribeNetworkInterfacesRequest::getTag3Value()const
+{
+	return tag3Value_;
+}
+
+void DescribeNetworkInterfacesRequest::setTag3Value(const std::string& tag3Value)
+{
+	tag3Value_ = tag3Value;
+	setParameter("Tag3Value", tag3Value);
+}
+
 std::string DescribeNetworkInterfacesRequest::getNetworkInterfaceName()const
 {
 	return networkInterfaceName_;
@@ -254,6 +309,17 @@ void DescribeNetworkInterfacesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
 	setParameter("App_ip", app_ip);
+}
+
+std::string DescribeNetworkInterfacesRequest::getTag5Key()const
+{
+	return tag5Key_;
+}
+
+void DescribeNetworkInterfacesRequest::setTag5Key(const std::string& tag5Key)
+{
+	tag5Key_ = tag5Key;
+	setParameter("Tag5Key", tag5Key);
 }
 
 std::string DescribeNetworkInterfacesRequest::getResourceOwnerAccount()const
@@ -300,6 +366,17 @@ void DescribeNetworkInterfacesRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeNetworkInterfacesRequest::getTag5Value()const
+{
+	return tag5Value_;
+}
+
+void DescribeNetworkInterfacesRequest::setTag5Value(const std::string& tag5Value)
+{
+	tag5Value_ = tag5Value;
+	setParameter("Tag5Value", tag5Value);
+}
+
 bool DescribeNetworkInterfacesRequest::getProxy_trust_transport_info()const
 {
 	return proxy_trust_transport_info_;
@@ -333,6 +410,17 @@ void DescribeNetworkInterfacesRequest::setSecurity_transport(bool security_trans
 	setParameter("Security_transport", std::to_string(security_transport));
 }
 
+std::string DescribeNetworkInterfacesRequest::getTag1Key()const
+{
+	return tag1Key_;
+}
+
+void DescribeNetworkInterfacesRequest::setTag1Key(const std::string& tag1Key)
+{
+	tag1Key_ = tag1Key;
+	setParameter("Tag1Key", tag1Key);
+}
+
 std::string DescribeNetworkInterfacesRequest::getVSwitchId()const
 {
 	return vSwitchId_;
@@ -364,6 +452,28 @@ void DescribeNetworkInterfacesRequest::setRequestId(const std::string& requestId
 {
 	requestId_ = requestId;
 	setParameter("RequestId", requestId);
+}
+
+std::string DescribeNetworkInterfacesRequest::getTag2Value()const
+{
+	return tag2Value_;
+}
+
+void DescribeNetworkInterfacesRequest::setTag2Value(const std::string& tag2Value)
+{
+	tag2Value_ = tag2Value;
+	setParameter("Tag2Value", tag2Value);
+}
+
+std::string DescribeNetworkInterfacesRequest::getTag4Key()const
+{
+	return tag4Key_;
+}
+
+void DescribeNetworkInterfacesRequest::setTag4Key(const std::string& tag4Key)
+{
+	tag4Key_ = tag4Key;
+	setParameter("Tag4Key", tag4Key);
 }
 
 std::string DescribeNetworkInterfacesRequest::getPrimaryIpAddress()const

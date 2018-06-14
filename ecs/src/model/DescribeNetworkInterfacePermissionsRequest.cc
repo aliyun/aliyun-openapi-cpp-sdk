@@ -113,17 +113,6 @@ void DescribeNetworkInterfacePermissionsRequest::setAccessKeyId(const std::strin
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeNetworkInterfacePermissionsRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeNetworkInterfacePermissionsRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeNetworkInterfacePermissionsRequest::getSecurityToken()const
 {
 	return securityToken_;

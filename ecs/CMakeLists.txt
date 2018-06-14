@@ -485,8 +485,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/AllocateEipAddressResult.h
 	include/alibabacloud/ecs/model/DeleteDiskRequest.h
 	include/alibabacloud/ecs/model/DeleteDiskResult.h
-	include/alibabacloud/ecs/model/DescribeEventsRequest.h
-	include/alibabacloud/ecs/model/DescribeEventsResult.h
 	include/alibabacloud/ecs/model/UnassociateHaVipRequest.h
 	include/alibabacloud/ecs/model/UnassociateHaVipResult.h
 	include/alibabacloud/ecs/model/ModifyHaVipAttributeRequest.h
@@ -972,8 +970,6 @@ set(ecs_src
 	src/model/AllocateEipAddressResult.cc
 	src/model/DeleteDiskRequest.cc
 	src/model/DeleteDiskResult.cc
-	src/model/DescribeEventsRequest.cc
-	src/model/DescribeEventsResult.cc
 	src/model/UnassociateHaVipRequest.cc
 	src/model/UnassociateHaVipResult.cc
 	src/model/ModifyHaVipAttributeRequest.cc

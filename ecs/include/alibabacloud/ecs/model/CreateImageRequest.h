@@ -62,6 +62,8 @@ namespace AlibabaCloud
 				void setPlatform(const std::string& platform);
 				std::string getTag1Value()const;
 				void setTag1Value(const std::string& tag1Value);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getImageName()const;
@@ -102,6 +104,7 @@ namespace AlibabaCloud
 				std::string tag3Key_;
 				std::string platform_;
 				std::string tag1Value_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string imageName_;
 				std::string tag3Value_;

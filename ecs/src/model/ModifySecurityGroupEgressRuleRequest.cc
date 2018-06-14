@@ -157,17 +157,6 @@ void ModifySecurityGroupEgressRuleRequest::setAccessKeyId(const std::string& acc
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string ModifySecurityGroupEgressRuleRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void ModifySecurityGroupEgressRuleRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string ModifySecurityGroupEgressRuleRequest::getSecurityToken()const
 {
 	return securityToken_;

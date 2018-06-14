@@ -102,17 +102,6 @@ void UnassignPrivateIpAddressesRequest::setAccessKeyId(const std::string& access
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string UnassignPrivateIpAddressesRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void UnassignPrivateIpAddressesRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string UnassignPrivateIpAddressesRequest::getSecurityToken()const
 {
 	return securityToken_;

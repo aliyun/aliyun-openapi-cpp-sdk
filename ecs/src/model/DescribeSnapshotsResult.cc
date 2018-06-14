@@ -72,6 +72,8 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.usage = value["Usage"].asString();
 		if(!value["SourceStorageType"].isNull())
 			snapshotsObject.sourceStorageType = value["SourceStorageType"].asString();
+		if(!value["RemainTime"].isNull())
+			snapshotsObject.remainTime = std::stoi(value["RemainTime"].asString());
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{

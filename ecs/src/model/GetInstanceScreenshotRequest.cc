@@ -102,17 +102,6 @@ void GetInstanceScreenshotRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string GetInstanceScreenshotRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void GetInstanceScreenshotRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string GetInstanceScreenshotRequest::getSecurityToken()const
 {
 	return securityToken_;

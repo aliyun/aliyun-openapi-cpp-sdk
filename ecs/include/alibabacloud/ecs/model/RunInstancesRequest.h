@@ -141,6 +141,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
+				bool getPasswordInherit()const;
+				void setPasswordInherit(bool passwordInherit);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getRequestContent()const;
@@ -222,6 +224,7 @@ namespace AlibabaCloud
 				std::string systemDiskCategory_;
 				std::string accessKeyId_;
 				std::string userData_;
+				bool passwordInherit_;
 				std::string regionId_;
 				std::string requestContent_;
 				std::string instanceType_;

@@ -125,17 +125,6 @@ void DeleteLaunchTemplateVersionRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DeleteLaunchTemplateVersionRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DeleteLaunchTemplateVersionRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DeleteLaunchTemplateVersionRequest::getSecurityToken()const
 {
 	return securityToken_;

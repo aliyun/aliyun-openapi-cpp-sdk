@@ -454,6 +454,17 @@ void CreateInstanceRequest::setUserData(const std::string& userData)
 	setParameter("UserData", userData);
 }
 
+bool CreateInstanceRequest::getPasswordInherit()const
+{
+	return passwordInherit_;
+}
+
+void CreateInstanceRequest::setPasswordInherit(bool passwordInherit)
+{
+	passwordInherit_ = passwordInherit;
+	setParameter("PasswordInherit", std::to_string(passwordInherit));
+}
+
 std::string CreateInstanceRequest::getRegionId()const
 {
 	return regionId_;

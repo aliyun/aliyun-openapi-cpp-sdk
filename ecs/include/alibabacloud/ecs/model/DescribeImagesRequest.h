@@ -62,6 +62,8 @@ namespace AlibabaCloud
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
 				std::string getTag1Value()const;
 				void setTag1Value(const std::string& tag1Value);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				bool getIsSupportIoOptimized()const;
 				void setIsSupportIoOptimized(bool isSupportIoOptimized);
 				std::string getRegionId()const;
@@ -117,6 +119,7 @@ namespace AlibabaCloud
 				int pageNumber_;
 				std::string imageOwnerAlias_;
 				std::string tag1Value_;
+				std::string resourceGroupId_;
 				bool isSupportIoOptimized_;
 				std::string regionId_;
 				std::string imageName_;

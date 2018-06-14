@@ -136,17 +136,6 @@ void DescribeInstanceHistoryEventsRequest::setAccessKeyId(const std::string& acc
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeInstanceHistoryEventsRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeInstanceHistoryEventsRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeInstanceHistoryEventsRequest::getSecurityToken()const
 {
 	return securityToken_;

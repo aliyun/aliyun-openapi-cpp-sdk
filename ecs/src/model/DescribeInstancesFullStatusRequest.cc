@@ -125,17 +125,6 @@ void DescribeInstancesFullStatusRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeInstancesFullStatusRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeInstancesFullStatusRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeInstancesFullStatusRequest::getSecurityToken()const
 {
 	return securityToken_;

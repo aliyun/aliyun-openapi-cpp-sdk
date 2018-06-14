@@ -113,17 +113,6 @@ void AssignPrivateIpAddressesRequest::setAccessKeyId(const std::string& accessKe
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string AssignPrivateIpAddressesRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void AssignPrivateIpAddressesRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string AssignPrivateIpAddressesRequest::getSecurityToken()const
 {
 	return securityToken_;

@@ -102,17 +102,6 @@ void CreateNetworkInterfacePermissionRequest::setAccessKeyId(const std::string& 
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string CreateNetworkInterfacePermissionRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void CreateNetworkInterfacePermissionRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 long CreateNetworkInterfacePermissionRequest::getAccountId()const
 {
 	return accountId_;

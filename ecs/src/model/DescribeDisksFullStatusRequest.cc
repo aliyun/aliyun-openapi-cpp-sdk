@@ -136,17 +136,6 @@ void DescribeDisksFullStatusRequest::setEventTimeStart(const std::string& eventT
 	setParameter("EventTimeStart", eventTimeStart);
 }
 
-std::string DescribeDisksFullStatusRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeDisksFullStatusRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeDisksFullStatusRequest::getSecurityToken()const
 {
 	return securityToken_;

@@ -143,6 +143,17 @@ void CreateImageRequest::setTag1Value(const std::string& tag1Value)
 	setParameter("Tag1Value", tag1Value);
 }
 
+std::string CreateImageRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateImageRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateImageRequest::getRegionId()const
 {
 	return regionId_;

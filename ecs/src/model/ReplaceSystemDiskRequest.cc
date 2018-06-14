@@ -146,6 +146,17 @@ void ReplaceSystemDiskRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+bool ReplaceSystemDiskRequest::getPasswordInherit()const
+{
+	return passwordInherit_;
+}
+
+void ReplaceSystemDiskRequest::setPasswordInherit(bool passwordInherit)
+{
+	passwordInherit_ = passwordInherit;
+	setParameter("PasswordInherit", std::to_string(passwordInherit));
+}
+
 int ReplaceSystemDiskRequest::getSystemDiskSize()const
 {
 	return systemDiskSize_;

@@ -146,6 +146,17 @@ void DescribeImagesRequest::setTag1Value(const std::string& tag1Value)
 	setParameter("Tag1Value", tag1Value);
 }
 
+std::string DescribeImagesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeImagesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 bool DescribeImagesRequest::getIsSupportIoOptimized()const
 {
 	return isSupportIoOptimized_;

@@ -8403,42 +8403,6 @@ EcsClient::DeleteDiskOutcomeCallable EcsClient::deleteDiskCallable(const DeleteD
 	return task->get_future();
 }
 
-EcsClient::DescribeEventsOutcome EcsClient::describeEvents(const DescribeEventsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeEventsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeEventsOutcome(DescribeEventsResult(outcome.result()));
-	else
-		return DescribeEventsOutcome(outcome.error());
-}
-
-void EcsClient::describeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeEvents(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::DescribeEventsOutcomeCallable EcsClient::describeEventsCallable(const DescribeEventsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeEventsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeEvents(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::UnassociateHaVipOutcome EcsClient::unassociateHaVip(const UnassociateHaVipRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

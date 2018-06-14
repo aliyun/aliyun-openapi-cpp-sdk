@@ -102,17 +102,6 @@ void GetInstanceConsoleOutputRequest::setAccessKeyId(const std::string& accessKe
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string GetInstanceConsoleOutputRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void GetInstanceConsoleOutputRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string GetInstanceConsoleOutputRequest::getSecurityToken()const
 {
 	return securityToken_;

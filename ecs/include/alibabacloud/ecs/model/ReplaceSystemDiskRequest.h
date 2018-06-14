@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setPassword(const std::string& password);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				bool getPasswordInherit()const;
+				void setPasswordInherit(bool passwordInherit);
 				int getSystemDiskSize()const;
 				void setSystemDiskSize(int systemDiskSize);
 				std::string getDiskId()const;
@@ -78,6 +80,7 @@ namespace AlibabaCloud
 				std::string platform_;
 				std::string password_;
 				std::string instanceId_;
+				bool passwordInherit_;
 				int systemDiskSize_;
 				std::string diskId_;
 				bool useAdditionalService_;

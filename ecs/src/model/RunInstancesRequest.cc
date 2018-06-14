@@ -482,6 +482,17 @@ void RunInstancesRequest::setUserData(const std::string& userData)
 	setParameter("UserData", userData);
 }
 
+bool RunInstancesRequest::getPasswordInherit()const
+{
+	return passwordInherit_;
+}
+
+void RunInstancesRequest::setPasswordInherit(bool passwordInherit)
+{
+	passwordInherit_ = passwordInherit;
+	setParameter("PasswordInherit", std::to_string(passwordInherit));
+}
+
 std::string RunInstancesRequest::getRegionId()const
 {
 	return regionId_;

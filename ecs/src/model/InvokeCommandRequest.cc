@@ -124,17 +124,6 @@ void InvokeCommandRequest::setFrequency(const std::string& frequency)
 	setParameter("Frequency", frequency);
 }
 
-std::string InvokeCommandRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void InvokeCommandRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string InvokeCommandRequest::getSecurityToken()const
 {
 	return securityToken_;

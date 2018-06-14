@@ -113,17 +113,6 @@ void ModifyLaunchTemplateDefaultVersionRequest::setAccessKeyId(const std::string
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string ModifyLaunchTemplateDefaultVersionRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void ModifyLaunchTemplateDefaultVersionRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string ModifyLaunchTemplateDefaultVersionRequest::getSecurityToken()const
 {
 	return securityToken_;

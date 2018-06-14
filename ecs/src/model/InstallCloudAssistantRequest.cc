@@ -102,17 +102,6 @@ void InstallCloudAssistantRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string InstallCloudAssistantRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void InstallCloudAssistantRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string InstallCloudAssistantRequest::getSecurityToken()const
 {
 	return securityToken_;

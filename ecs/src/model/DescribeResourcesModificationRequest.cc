@@ -102,17 +102,6 @@ void DescribeResourcesModificationRequest::setAccessKeyId(const std::string& acc
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeResourcesModificationRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeResourcesModificationRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeResourcesModificationRequest::getSecurityToken()const
 {
 	return securityToken_;
