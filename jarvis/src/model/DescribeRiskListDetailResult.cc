@@ -88,6 +88,9 @@ void DescribeRiskListDetailResult::parse(const std::string &payload)
 				rdsWhitelistRiskObject.riskDetail = value["RiskDetail"].asString();
 			dataListObject.rdsWhitelistRisk.push_back(rdsWhitelistRiskObject);
 		}
+		auto allInstanceList = value["InstanceList"]["InstanceList"];
+		for (auto value : allInstanceList)
+			dataListObject.instanceList.push_back(value.asString());
 		dataList_.push_back(dataListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

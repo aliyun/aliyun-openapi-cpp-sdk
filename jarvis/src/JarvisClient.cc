@@ -195,6 +195,42 @@ JarvisClient::DescribeDdosDefenseInfoOutcomeCallable JarvisClient::describeDdosD
 	return task->get_future();
 }
 
+JarvisClient::DescribeAccessWhiteListSlbListOutcome JarvisClient::describeAccessWhiteListSlbList(const DescribeAccessWhiteListSlbListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccessWhiteListSlbListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccessWhiteListSlbListOutcome(DescribeAccessWhiteListSlbListResult(outcome.result()));
+	else
+		return DescribeAccessWhiteListSlbListOutcome(outcome.error());
+}
+
+void JarvisClient::describeAccessWhiteListSlbListAsync(const DescribeAccessWhiteListSlbListRequest& request, const DescribeAccessWhiteListSlbListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccessWhiteListSlbList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeAccessWhiteListSlbListOutcomeCallable JarvisClient::describeAccessWhiteListSlbListCallable(const DescribeAccessWhiteListSlbListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccessWhiteListSlbListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccessWhiteListSlbList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 JarvisClient::DescribePhoneInfoOutcome JarvisClient::describePhoneInfo(const DescribePhoneInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +297,42 @@ JarvisClient::DescribeAccessWhitelistEcsListOutcomeCallable JarvisClient::descri
 			[this, request]()
 			{
 			return this->describeAccessWhitelistEcsList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeAccessWhiteListEipListOutcome JarvisClient::describeAccessWhiteListEipList(const DescribeAccessWhiteListEipListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccessWhiteListEipListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccessWhiteListEipListOutcome(DescribeAccessWhiteListEipListResult(outcome.result()));
+	else
+		return DescribeAccessWhiteListEipListOutcome(outcome.error());
+}
+
+void JarvisClient::describeAccessWhiteListEipListAsync(const DescribeAccessWhiteListEipListRequest& request, const DescribeAccessWhiteListEipListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccessWhiteListEipList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeAccessWhiteListEipListOutcomeCallable JarvisClient::describeAccessWhiteListEipListCallable(const DescribeAccessWhiteListEipListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccessWhiteListEipListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccessWhiteListEipList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

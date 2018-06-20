@@ -54,14 +54,15 @@ namespace AlibabaCloud
 					};
 					int riskId;
 					std::string status;
+					std::string product;
+					std::string riskDescribe;
 					std::string ignoreTime;
 					std::string tacticsName;
 					std::string updateTime;
 					std::vector<Data::EcsSecGroupRiskItem> ecsSecGroupRisk;
 					std::string riskInstance;
-					std::string product;
 					std::string regionId;
-					std::string riskDescribe;
+					std::vector<std::string> instanceList;
 					std::string riskType;
 					std::vector<Data::RdsWhitelistRiskItem> rdsWhitelistRisk;
 				};

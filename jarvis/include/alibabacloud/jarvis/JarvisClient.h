@@ -30,10 +30,14 @@
 #include "model/CreateAccessWhiteListGroupResult.h"
 #include "model/DescribeDdosDefenseInfoRequest.h"
 #include "model/DescribeDdosDefenseInfoResult.h"
+#include "model/DescribeAccessWhiteListSlbListRequest.h"
+#include "model/DescribeAccessWhiteListSlbListResult.h"
 #include "model/DescribePhoneInfoRequest.h"
 #include "model/DescribePhoneInfoResult.h"
 #include "model/DescribeAccessWhitelistEcsListRequest.h"
 #include "model/DescribeAccessWhitelistEcsListResult.h"
+#include "model/DescribeAccessWhiteListEipListRequest.h"
+#include "model/DescribeAccessWhiteListEipListResult.h"
 #include "model/DescribeResetRecordListRequest.h"
 #include "model/DescribeResetRecordListResult.h"
 #include "model/ModifyUidWhiteListAutoShareRequest.h"
@@ -81,12 +85,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDdosDefenseInfoResult> DescribeDdosDefenseInfoOutcome;
 			typedef std::future<DescribeDdosDefenseInfoOutcome> DescribeDdosDefenseInfoOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeDdosDefenseInfoRequest&, const DescribeDdosDefenseInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDdosDefenseInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAccessWhiteListSlbListResult> DescribeAccessWhiteListSlbListOutcome;
+			typedef std::future<DescribeAccessWhiteListSlbListOutcome> DescribeAccessWhiteListSlbListOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeAccessWhiteListSlbListRequest&, const DescribeAccessWhiteListSlbListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessWhiteListSlbListAsyncHandler;
 			typedef Outcome<Error, Model::DescribePhoneInfoResult> DescribePhoneInfoOutcome;
 			typedef std::future<DescribePhoneInfoOutcome> DescribePhoneInfoOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribePhoneInfoRequest&, const DescribePhoneInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccessWhitelistEcsListResult> DescribeAccessWhitelistEcsListOutcome;
 			typedef std::future<DescribeAccessWhitelistEcsListOutcome> DescribeAccessWhitelistEcsListOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeAccessWhitelistEcsListRequest&, const DescribeAccessWhitelistEcsListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessWhitelistEcsListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAccessWhiteListEipListResult> DescribeAccessWhiteListEipListOutcome;
+			typedef std::future<DescribeAccessWhiteListEipListOutcome> DescribeAccessWhiteListEipListOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeAccessWhiteListEipListRequest&, const DescribeAccessWhiteListEipListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessWhiteListEipListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeResetRecordListResult> DescribeResetRecordListOutcome;
 			typedef std::future<DescribeResetRecordListOutcome> DescribeResetRecordListOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeResetRecordListRequest&, const DescribeResetRecordListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResetRecordListAsyncHandler;
@@ -143,12 +153,18 @@ namespace AlibabaCloud
 			DescribeDdosDefenseInfoOutcome describeDdosDefenseInfo(const Model::DescribeDdosDefenseInfoRequest &request)const;
 			void describeDdosDefenseInfoAsync(const Model::DescribeDdosDefenseInfoRequest& request, const DescribeDdosDefenseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDdosDefenseInfoOutcomeCallable describeDdosDefenseInfoCallable(const Model::DescribeDdosDefenseInfoRequest& request) const;
+			DescribeAccessWhiteListSlbListOutcome describeAccessWhiteListSlbList(const Model::DescribeAccessWhiteListSlbListRequest &request)const;
+			void describeAccessWhiteListSlbListAsync(const Model::DescribeAccessWhiteListSlbListRequest& request, const DescribeAccessWhiteListSlbListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAccessWhiteListSlbListOutcomeCallable describeAccessWhiteListSlbListCallable(const Model::DescribeAccessWhiteListSlbListRequest& request) const;
 			DescribePhoneInfoOutcome describePhoneInfo(const Model::DescribePhoneInfoRequest &request)const;
 			void describePhoneInfoAsync(const Model::DescribePhoneInfoRequest& request, const DescribePhoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePhoneInfoOutcomeCallable describePhoneInfoCallable(const Model::DescribePhoneInfoRequest& request) const;
 			DescribeAccessWhitelistEcsListOutcome describeAccessWhitelistEcsList(const Model::DescribeAccessWhitelistEcsListRequest &request)const;
 			void describeAccessWhitelistEcsListAsync(const Model::DescribeAccessWhitelistEcsListRequest& request, const DescribeAccessWhitelistEcsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccessWhitelistEcsListOutcomeCallable describeAccessWhitelistEcsListCallable(const Model::DescribeAccessWhitelistEcsListRequest& request) const;
+			DescribeAccessWhiteListEipListOutcome describeAccessWhiteListEipList(const Model::DescribeAccessWhiteListEipListRequest &request)const;
+			void describeAccessWhiteListEipListAsync(const Model::DescribeAccessWhiteListEipListRequest& request, const DescribeAccessWhiteListEipListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAccessWhiteListEipListOutcomeCallable describeAccessWhiteListEipListCallable(const Model::DescribeAccessWhiteListEipListRequest& request) const;
 			DescribeResetRecordListOutcome describeResetRecordList(const Model::DescribeResetRecordListRequest &request)const;
 			void describeResetRecordListAsync(const Model::DescribeResetRecordListRequest& request, const DescribeResetRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeResetRecordListOutcomeCallable describeResetRecordListCallable(const Model::DescribeResetRecordListRequest& request) const;

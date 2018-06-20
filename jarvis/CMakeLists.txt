@@ -29,10 +29,14 @@ set(jarvis_public_header_model
 	include/alibabacloud/jarvis/model/CreateAccessWhiteListGroupResult.h
 	include/alibabacloud/jarvis/model/DescribeDdosDefenseInfoRequest.h
 	include/alibabacloud/jarvis/model/DescribeDdosDefenseInfoResult.h
+	include/alibabacloud/jarvis/model/DescribeAccessWhiteListSlbListRequest.h
+	include/alibabacloud/jarvis/model/DescribeAccessWhiteListSlbListResult.h
 	include/alibabacloud/jarvis/model/DescribePhoneInfoRequest.h
 	include/alibabacloud/jarvis/model/DescribePhoneInfoResult.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhitelistEcsListRequest.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhitelistEcsListResult.h
+	include/alibabacloud/jarvis/model/DescribeAccessWhiteListEipListRequest.h
+	include/alibabacloud/jarvis/model/DescribeAccessWhiteListEipListResult.h
 	include/alibabacloud/jarvis/model/DescribeResetRecordListRequest.h
 	include/alibabacloud/jarvis/model/DescribeResetRecordListResult.h
 	include/alibabacloud/jarvis/model/ModifyUidWhiteListAutoShareRequest.h
@@ -70,10 +74,14 @@ set(jarvis_src
 	src/model/CreateAccessWhiteListGroupResult.cc
 	src/model/DescribeDdosDefenseInfoRequest.cc
 	src/model/DescribeDdosDefenseInfoResult.cc
+	src/model/DescribeAccessWhiteListSlbListRequest.cc
+	src/model/DescribeAccessWhiteListSlbListResult.cc
 	src/model/DescribePhoneInfoRequest.cc
 	src/model/DescribePhoneInfoResult.cc
 	src/model/DescribeAccessWhitelistEcsListRequest.cc
 	src/model/DescribeAccessWhitelistEcsListResult.cc
+	src/model/DescribeAccessWhiteListEipListRequest.cc
+	src/model/DescribeAccessWhiteListEipListResult.cc
 	src/model/DescribeResetRecordListRequest.cc
 	src/model/DescribeResetRecordListResult.cc
 	src/model/ModifyUidWhiteListAutoShareRequest.cc
