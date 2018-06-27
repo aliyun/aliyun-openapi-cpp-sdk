@@ -115,6 +115,8 @@ namespace AlibabaCloud
 				void setRequestId(const std::string& requestId);
 				std::string getTag2Value()const;
 				void setTag2Value(const std::string& tag2Value);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 				std::string getTag4Key()const;
 				void setTag4Key(const std::string& tag4Key);
 				std::string getPrimaryIpAddress()const;
@@ -163,6 +165,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string requestId_;
 				std::string tag2Value_;
+				std::string vpcId_;
 				std::string tag4Key_;
 				std::string primaryIpAddress_;
 				std::vector<std::string> networkInterfaceId_;

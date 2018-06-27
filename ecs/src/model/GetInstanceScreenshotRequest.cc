@@ -201,15 +201,15 @@ void GetInstanceScreenshotRequest::setResourceOwnerAccount(const std::string& re
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-bool GetInstanceScreenshotRequest::getWakeup()const
+bool GetInstanceScreenshotRequest::getWakeUp()const
 {
-	return wakeup_;
+	return wakeUp_;
 }
 
-void GetInstanceScreenshotRequest::setWakeup(bool wakeup)
+void GetInstanceScreenshotRequest::setWakeUp(bool wakeUp)
 {
-	wakeup_ = wakeup;
-	setParameter("Wakeup", std::to_string(wakeup));
+	wakeUp_ = wakeUp;
+	setParameter("WakeUp", std::to_string(wakeUp));
 }
 
 std::string GetInstanceScreenshotRequest::getOwnerAccount()const

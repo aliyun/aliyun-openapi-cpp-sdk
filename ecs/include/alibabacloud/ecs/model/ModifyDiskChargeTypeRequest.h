@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getDiskChargeType()const;
+				void setDiskChargeType(const std::string& diskChargeType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				bool getAutoPay()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string diskChargeType_;
 				std::string instanceId_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;

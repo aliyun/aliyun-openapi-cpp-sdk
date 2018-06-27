@@ -67,8 +67,8 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				bool getWakeup()const;
-				void setWakeup(bool wakeup);
+				bool getWakeUp()const;
+				void setWakeUp(bool wakeUp);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getCallerBid()const;
@@ -103,7 +103,7 @@ namespace AlibabaCloud
 				long callerUid_;
 				std::string app_ip_;
 				std::string resourceOwnerAccount_;
-				bool wakeup_;
+				bool wakeUp_;
 				std::string ownerAccount_;
 				std::string callerBid_;
 				long ownerId_;

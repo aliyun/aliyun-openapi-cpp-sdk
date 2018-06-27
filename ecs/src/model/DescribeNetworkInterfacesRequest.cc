@@ -465,6 +465,17 @@ void DescribeNetworkInterfacesRequest::setTag2Value(const std::string& tag2Value
 	setParameter("Tag2Value", tag2Value);
 }
 
+std::string DescribeNetworkInterfacesRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void DescribeNetworkInterfacesRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setParameter("VpcId", vpcId);
+}
+
 std::string DescribeNetworkInterfacesRequest::getTag4Key()const
 {
 	return tag4Key_;

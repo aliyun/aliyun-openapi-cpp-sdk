@@ -229,6 +229,28 @@ void RunInstancesRequest::setCallerUid(long callerUid)
 	setParameter("CallerUid", std::to_string(callerUid));
 }
 
+int RunInstancesRequest::getAutoRenewPeriod()const
+{
+	return autoRenewPeriod_;
+}
+
+void RunInstancesRequest::setAutoRenewPeriod(int autoRenewPeriod)
+{
+	autoRenewPeriod_ = autoRenewPeriod;
+	setParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+}
+
+int RunInstancesRequest::getPeriod()const
+{
+	return period_;
+}
+
+void RunInstancesRequest::setPeriod(int period)
+{
+	period_ = period;
+	setParameter("Period", std::to_string(period));
+}
+
 bool RunInstancesRequest::getDryRun()const
 {
 	return dryRun_;
@@ -306,6 +328,17 @@ void RunInstancesRequest::setSpotStrategy(const std::string& spotStrategy)
 	setParameter("SpotStrategy", spotStrategy);
 }
 
+std::string RunInstancesRequest::getPeriodUnit()const
+{
+	return periodUnit_;
+}
+
+void RunInstancesRequest::setPeriodUnit(const std::string& periodUnit)
+{
+	periodUnit_ = periodUnit;
+	setParameter("PeriodUnit", periodUnit);
+}
+
 std::string RunInstancesRequest::getInstanceName()const
 {
 	return instanceName_;
@@ -315,6 +348,17 @@ void RunInstancesRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
 	setParameter("InstanceName", instanceName);
+}
+
+bool RunInstancesRequest::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+void RunInstancesRequest::setAutoRenew(bool autoRenew)
+{
+	autoRenew_ = autoRenew;
+	setParameter("AutoRenew", std::to_string(autoRenew));
 }
 
 std::string RunInstancesRequest::getRequestId()const
@@ -524,6 +568,17 @@ void RunInstancesRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
 	setParameter("InstanceType", instanceType);
+}
+
+std::string RunInstancesRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
+}
+
+void RunInstancesRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string RunInstancesRequest::getCallerUidEmail()const

@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string regionId;
+					std::string regionEndpoint;
 					std::string localName;
 				};
 

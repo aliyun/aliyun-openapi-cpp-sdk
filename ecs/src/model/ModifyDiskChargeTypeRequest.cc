@@ -36,6 +36,17 @@ void ModifyDiskChargeTypeRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDiskChargeTypeRequest::getDiskChargeType()const
+{
+	return diskChargeType_;
+}
+
+void ModifyDiskChargeTypeRequest::setDiskChargeType(const std::string& diskChargeType)
+{
+	diskChargeType_ = diskChargeType;
+	setParameter("DiskChargeType", diskChargeType);
+}
+
 std::string ModifyDiskChargeTypeRequest::getInstanceId()const
 {
 	return instanceId_;

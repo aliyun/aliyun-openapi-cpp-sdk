@@ -95,6 +95,10 @@ namespace AlibabaCloud
 				void setTag(const std::vector<Tag>& tag);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
+				int getAutoRenewPeriod()const;
+				void setAutoRenewPeriod(int autoRenewPeriod);
+				int getPeriod()const;
+				void setPeriod(int period);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
 				std::string getLaunchTemplateId()const;
@@ -109,8 +113,12 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getSpotStrategy()const;
 				void setSpotStrategy(const std::string& spotStrategy);
+				std::string getPeriodUnit()const;
+				void setPeriodUnit(const std::string& periodUnit);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
+				bool getAutoRenew()const;
+				void setAutoRenew(bool autoRenew);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
 				std::string getInternetChargeType()const;
@@ -149,6 +157,8 @@ namespace AlibabaCloud
 				void setRequestContent(const std::string& requestContent);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getInstanceChargeType()const;
+				void setInstanceChargeType(const std::string& instanceChargeType);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				std::vector<NetworkInterface> getNetworkInterface()const;
@@ -201,6 +211,8 @@ namespace AlibabaCloud
 				std::string callerBidEmail_;
 				std::vector<Tag> tag_;
 				long callerUid_;
+				int autoRenewPeriod_;
+				int period_;
 				bool dryRun_;
 				std::string launchTemplateId_;
 				long ownerId_;
@@ -208,7 +220,9 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string vSwitchId_;
 				std::string spotStrategy_;
+				std::string periodUnit_;
 				std::string instanceName_;
+				bool autoRenew_;
 				std::string requestId_;
 				std::string internetChargeType_;
 				std::string zoneId_;
@@ -228,6 +242,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string requestContent_;
 				std::string instanceType_;
+				std::string instanceChargeType_;
 				std::string callerUidEmail_;
 				std::vector<NetworkInterface> networkInterface_;
 				std::string app_ip_;
