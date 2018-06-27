@@ -81,6 +81,14 @@ void QueryDomainByInstanceIdResult::parse(const std::string &payload)
 		registrantType_ = value["RegistrantType"].asString();
 	if(!value["DomainNameVerificationStatus"].isNull())
 		domainNameVerificationStatus_ = value["DomainNameVerificationStatus"].asString();
+	if(!value["ZhRegistrantOrganization"].isNull())
+		zhRegistrantOrganization_ = value["ZhRegistrantOrganization"].asString();
+	if(!value["ZhRegistrantName"].isNull())
+		zhRegistrantName_ = value["ZhRegistrantName"].asString();
+	if(!value["RegistrationDateLong"].isNull())
+		registrationDateLong_ = std::stol(value["RegistrationDateLong"].asString());
+	if(!value["ExpirationDateLong"].isNull())
+		expirationDateLong_ = std::stol(value["ExpirationDateLong"].asString());
 
 }
 
@@ -104,6 +112,11 @@ std::string QueryDomainByInstanceIdResult::getRegistrationDate()const
 	return registrationDate_;
 }
 
+long QueryDomainByInstanceIdResult::getRegistrationDateLong()const
+{
+	return registrationDateLong_;
+}
+
 std::string QueryDomainByInstanceIdResult::getDomainName()const
 {
 	return domainName_;
@@ -119,6 +132,11 @@ std::string QueryDomainByInstanceIdResult::getRealNameStatus()const
 	return realNameStatus_;
 }
 
+std::string QueryDomainByInstanceIdResult::getZhRegistrantName()const
+{
+	return zhRegistrantName_;
+}
+
 bool QueryDomainByInstanceIdResult::getPremium()const
 {
 	return premium_;
@@ -127,6 +145,11 @@ bool QueryDomainByInstanceIdResult::getPremium()const
 std::string QueryDomainByInstanceIdResult::getDomainNameVerificationStatus()const
 {
 	return domainNameVerificationStatus_;
+}
+
+long QueryDomainByInstanceIdResult::getExpirationDateLong()const
+{
+	return expirationDateLong_;
 }
 
 std::vector<std::string> QueryDomainByInstanceIdResult::getDnsList()const
@@ -152,6 +175,11 @@ std::string QueryDomainByInstanceIdResult::getTransferOutStatus()const
 std::string QueryDomainByInstanceIdResult::getUserId()const
 {
 	return userId_;
+}
+
+std::string QueryDomainByInstanceIdResult::getZhRegistrantOrganization()const
+{
+	return zhRegistrantOrganization_;
 }
 
 bool QueryDomainByInstanceIdResult::getEmailVerificationClientHold()const

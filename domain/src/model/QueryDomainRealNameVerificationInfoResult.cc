@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/domain/model/QueryRegistrantProfileRealNameVerificationInfoResult.h>
+#include <alibabacloud/domain/model/QueryDomainRealNameVerificationInfoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Domain;
 using namespace AlibabaCloud::Domain::Model;
 
-QueryRegistrantProfileRealNameVerificationInfoResult::QueryRegistrantProfileRealNameVerificationInfoResult() :
+QueryDomainRealNameVerificationInfoResult::QueryDomainRealNameVerificationInfoResult() :
 	ServiceResult()
 {}
 
-QueryRegistrantProfileRealNameVerificationInfoResult::QueryRegistrantProfileRealNameVerificationInfoResult(const std::string &payload) :
+QueryDomainRealNameVerificationInfoResult::QueryDomainRealNameVerificationInfoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-QueryRegistrantProfileRealNameVerificationInfoResult::~QueryRegistrantProfileRealNameVerificationInfoResult()
+QueryDomainRealNameVerificationInfoResult::~QueryDomainRealNameVerificationInfoResult()
 {}
 
-void QueryRegistrantProfileRealNameVerificationInfoResult::parse(const std::string &payload)
+void QueryDomainRealNameVerificationInfoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -42,52 +42,52 @@ void QueryRegistrantProfileRealNameVerificationInfoResult::parse(const std::stri
 	setRequestId(value["RequestId"].asString());
 	if(!value["SubmissionDate"].isNull())
 		submissionDate_ = value["SubmissionDate"].asString();
-	if(!value["ModificationDate"].isNull())
-		modificationDate_ = value["ModificationDate"].asString();
 	if(!value["IdentityCredential"].isNull())
 		identityCredential_ = value["IdentityCredential"].asString();
-	if(!value["RegistrantProfileId"].isNull())
-		registrantProfileId_ = std::stol(value["RegistrantProfileId"].asString());
 	if(!value["IdentityCredentialNo"].isNull())
 		identityCredentialNo_ = value["IdentityCredentialNo"].asString();
 	if(!value["IdentityCredentialType"].isNull())
 		identityCredentialType_ = value["IdentityCredentialType"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
 	if(!value["IdentityCredentialUrl"].isNull())
 		identityCredentialUrl_ = value["IdentityCredentialUrl"].asString();
 
 }
 
-std::string QueryRegistrantProfileRealNameVerificationInfoResult::getIdentityCredentialType()const
+std::string QueryDomainRealNameVerificationInfoResult::getIdentityCredentialType()const
 {
 	return identityCredentialType_;
 }
 
-std::string QueryRegistrantProfileRealNameVerificationInfoResult::getModificationDate()const
+std::string QueryDomainRealNameVerificationInfoResult::getDomainName()const
 {
-	return modificationDate_;
+	return domainName_;
 }
 
-std::string QueryRegistrantProfileRealNameVerificationInfoResult::getIdentityCredential()const
+std::string QueryDomainRealNameVerificationInfoResult::getInstanceId()const
+{
+	return instanceId_;
+}
+
+std::string QueryDomainRealNameVerificationInfoResult::getIdentityCredential()const
 {
 	return identityCredential_;
 }
 
-std::string QueryRegistrantProfileRealNameVerificationInfoResult::getSubmissionDate()const
+std::string QueryDomainRealNameVerificationInfoResult::getSubmissionDate()const
 {
 	return submissionDate_;
 }
 
-std::string QueryRegistrantProfileRealNameVerificationInfoResult::getIdentityCredentialNo()const
+std::string QueryDomainRealNameVerificationInfoResult::getIdentityCredentialNo()const
 {
 	return identityCredentialNo_;
 }
 
-long QueryRegistrantProfileRealNameVerificationInfoResult::getRegistrantProfileId()const
-{
-	return registrantProfileId_;
-}
-
-std::string QueryRegistrantProfileRealNameVerificationInfoResult::getIdentityCredentialUrl()const
+std::string QueryDomainRealNameVerificationInfoResult::getIdentityCredentialUrl()const
 {
 	return identityCredentialUrl_;
 }

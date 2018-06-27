@@ -2175,6 +2175,42 @@ DomainClient::QueryDomainByInstanceIdOutcomeCallable DomainClient::queryDomainBy
 	return task->get_future();
 }
 
+DomainClient::QueryDomainRealNameVerificationInfoOutcome DomainClient::queryDomainRealNameVerificationInfo(const QueryDomainRealNameVerificationInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDomainRealNameVerificationInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDomainRealNameVerificationInfoOutcome(QueryDomainRealNameVerificationInfoResult(outcome.result()));
+	else
+		return QueryDomainRealNameVerificationInfoOutcome(outcome.error());
+}
+
+void DomainClient::queryDomainRealNameVerificationInfoAsync(const QueryDomainRealNameVerificationInfoRequest& request, const QueryDomainRealNameVerificationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDomainRealNameVerificationInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryDomainRealNameVerificationInfoOutcomeCallable DomainClient::queryDomainRealNameVerificationInfoCallable(const QueryDomainRealNameVerificationInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDomainRealNameVerificationInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDomainRealNameVerificationInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::VerifyEmailOutcome DomainClient::verifyEmail(const VerifyEmailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2205,6 +2241,42 @@ DomainClient::VerifyEmailOutcomeCallable DomainClient::verifyEmailCallable(const
 			[this, request]()
 			{
 			return this->verifyEmail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForDeletingDnsHostOutcome DomainClient::saveSingleTaskForDeletingDnsHost(const SaveSingleTaskForDeletingDnsHostRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForDeletingDnsHostOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForDeletingDnsHostOutcome(SaveSingleTaskForDeletingDnsHostResult(outcome.result()));
+	else
+		return SaveSingleTaskForDeletingDnsHostOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForDeletingDnsHostAsync(const SaveSingleTaskForDeletingDnsHostRequest& request, const SaveSingleTaskForDeletingDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForDeletingDnsHost(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForDeletingDnsHostOutcomeCallable DomainClient::saveSingleTaskForDeletingDnsHostCallable(const SaveSingleTaskForDeletingDnsHostRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForDeletingDnsHostOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForDeletingDnsHost(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2895,6 +2967,42 @@ DomainClient::SaveSingleTaskForCreatingDnsHostOutcomeCallable DomainClient::save
 	return task->get_future();
 }
 
+DomainClient::QueryEmailVerificationOutcome DomainClient::queryEmailVerification(const QueryEmailVerificationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryEmailVerificationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryEmailVerificationOutcome(QueryEmailVerificationResult(outcome.result()));
+	else
+		return QueryEmailVerificationOutcome(outcome.error());
+}
+
+void DomainClient::queryEmailVerificationAsync(const QueryEmailVerificationRequest& request, const QueryEmailVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryEmailVerification(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryEmailVerificationOutcomeCallable DomainClient::queryEmailVerificationCallable(const QueryEmailVerificationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryEmailVerificationOutcome()>>(
+			[this, request]()
+			{
+			return this->queryEmailVerification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::DeleteRegistrantProfileOutcome DomainClient::deleteRegistrantProfile(const DeleteRegistrantProfileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3141,6 +3249,42 @@ DomainClient::SaveBatchTaskForCreatingOrderRenewOutcomeCallable DomainClient::sa
 			[this, request]()
 			{
 			return this->saveBatchTaskForCreatingOrderRenew(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::CancelDomainVerificationOutcome DomainClient::cancelDomainVerification(const CancelDomainVerificationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelDomainVerificationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelDomainVerificationOutcome(CancelDomainVerificationResult(outcome.result()));
+	else
+		return CancelDomainVerificationOutcome(outcome.error());
+}
+
+void DomainClient::cancelDomainVerificationAsync(const CancelDomainVerificationRequest& request, const CancelDomainVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelDomainVerification(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::CancelDomainVerificationOutcomeCallable DomainClient::cancelDomainVerificationCallable(const CancelDomainVerificationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelDomainVerificationOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelDomainVerification(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

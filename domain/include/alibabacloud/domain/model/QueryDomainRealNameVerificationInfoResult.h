@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYREGISTRANTPROFILEREALNAMEVERIFICATIONINFORESULT_H_
-#define ALIBABACLOUD_DOMAIN_MODEL_QUERYREGISTRANTPROFILEREALNAMEVERIFICATIONINFORESULT_H_
+#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINREALNAMEVERIFICATIONINFORESULT_H_
+#define ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINREALNAMEVERIFICATIONINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DOMAIN_EXPORT QueryRegistrantProfileRealNameVerificationInfoResult : public ServiceResult
+			class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainRealNameVerificationInfoResult : public ServiceResult
 			{
 			public:
 
 
-				QueryRegistrantProfileRealNameVerificationInfoResult();
-				explicit QueryRegistrantProfileRealNameVerificationInfoResult(const std::string &payload);
-				~QueryRegistrantProfileRealNameVerificationInfoResult();
+				QueryDomainRealNameVerificationInfoResult();
+				explicit QueryDomainRealNameVerificationInfoResult(const std::string &payload);
+				~QueryDomainRealNameVerificationInfoResult();
 				std::string getIdentityCredentialType()const;
-				std::string getModificationDate()const;
+				std::string getDomainName()const;
+				std::string getInstanceId()const;
 				std::string getIdentityCredential()const;
 				std::string getSubmissionDate()const;
 				std::string getIdentityCredentialNo()const;
-				long getRegistrantProfileId()const;
 				std::string getIdentityCredentialUrl()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string identityCredentialType_;
-				std::string modificationDate_;
+				std::string domainName_;
+				std::string instanceId_;
 				std::string identityCredential_;
 				std::string submissionDate_;
 				std::string identityCredentialNo_;
-				long registrantProfileId_;
 				std::string identityCredentialUrl_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYREGISTRANTPROFILEREALNAMEVERIFICATIONINFORESULT_H_
+#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINREALNAMEVERIFICATIONINFORESULT_H_

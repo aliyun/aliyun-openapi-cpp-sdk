@@ -140,8 +140,12 @@
 #include "model/QueryAuctionDetailResult.h"
 #include "model/QueryDomainByInstanceIdRequest.h"
 #include "model/QueryDomainByInstanceIdResult.h"
+#include "model/QueryDomainRealNameVerificationInfoRequest.h"
+#include "model/QueryDomainRealNameVerificationInfoResult.h"
 #include "model/VerifyEmailRequest.h"
 #include "model/VerifyEmailResult.h"
+#include "model/SaveSingleTaskForDeletingDnsHostRequest.h"
+#include "model/SaveSingleTaskForDeletingDnsHostResult.h"
 #include "model/SaveBatchTaskForCreatingOrderRedeemRequest.h"
 #include "model/SaveBatchTaskForCreatingOrderRedeemResult.h"
 #include "model/SaveBatchTaskForDomainNameProxyServiceRequest.h"
@@ -180,6 +184,8 @@
 #include "model/SaveBatchTaskForUpdateProhibitionLockResult.h"
 #include "model/SaveSingleTaskForCreatingDnsHostRequest.h"
 #include "model/SaveSingleTaskForCreatingDnsHostResult.h"
+#include "model/QueryEmailVerificationRequest.h"
+#include "model/QueryEmailVerificationResult.h"
 #include "model/DeleteRegistrantProfileRequest.h"
 #include "model/DeleteRegistrantProfileResult.h"
 #include "model/QueryBrokerDemandRecordRequest.h"
@@ -194,6 +200,8 @@
 #include "model/QueryFailReasonForRegistrantProfileRealNameVerificationResult.h"
 #include "model/SaveBatchTaskForCreatingOrderRenewRequest.h"
 #include "model/SaveBatchTaskForCreatingOrderRenewResult.h"
+#include "model/CancelDomainVerificationRequest.h"
+#include "model/CancelDomainVerificationResult.h"
 #include "model/ConfirmTransferInEmailRequest.h"
 #include "model/ConfirmTransferInEmailResult.h"
 
@@ -382,9 +390,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDomainByInstanceIdResult> QueryDomainByInstanceIdOutcome;
 			typedef std::future<QueryDomainByInstanceIdOutcome> QueryDomainByInstanceIdOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryDomainByInstanceIdRequest&, const QueryDomainByInstanceIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDomainByInstanceIdAsyncHandler;
+			typedef Outcome<Error, Model::QueryDomainRealNameVerificationInfoResult> QueryDomainRealNameVerificationInfoOutcome;
+			typedef std::future<QueryDomainRealNameVerificationInfoOutcome> QueryDomainRealNameVerificationInfoOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::QueryDomainRealNameVerificationInfoRequest&, const QueryDomainRealNameVerificationInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDomainRealNameVerificationInfoAsyncHandler;
 			typedef Outcome<Error, Model::VerifyEmailResult> VerifyEmailOutcome;
 			typedef std::future<VerifyEmailOutcome> VerifyEmailOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::VerifyEmailRequest&, const VerifyEmailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyEmailAsyncHandler;
+			typedef Outcome<Error, Model::SaveSingleTaskForDeletingDnsHostResult> SaveSingleTaskForDeletingDnsHostOutcome;
+			typedef std::future<SaveSingleTaskForDeletingDnsHostOutcome> SaveSingleTaskForDeletingDnsHostOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::SaveSingleTaskForDeletingDnsHostRequest&, const SaveSingleTaskForDeletingDnsHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveSingleTaskForDeletingDnsHostAsyncHandler;
 			typedef Outcome<Error, Model::SaveBatchTaskForCreatingOrderRedeemResult> SaveBatchTaskForCreatingOrderRedeemOutcome;
 			typedef std::future<SaveBatchTaskForCreatingOrderRedeemOutcome> SaveBatchTaskForCreatingOrderRedeemOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveBatchTaskForCreatingOrderRedeemRequest&, const SaveBatchTaskForCreatingOrderRedeemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveBatchTaskForCreatingOrderRedeemAsyncHandler;
@@ -442,6 +456,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SaveSingleTaskForCreatingDnsHostResult> SaveSingleTaskForCreatingDnsHostOutcome;
 			typedef std::future<SaveSingleTaskForCreatingDnsHostOutcome> SaveSingleTaskForCreatingDnsHostOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveSingleTaskForCreatingDnsHostRequest&, const SaveSingleTaskForCreatingDnsHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveSingleTaskForCreatingDnsHostAsyncHandler;
+			typedef Outcome<Error, Model::QueryEmailVerificationResult> QueryEmailVerificationOutcome;
+			typedef std::future<QueryEmailVerificationOutcome> QueryEmailVerificationOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::QueryEmailVerificationRequest&, const QueryEmailVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEmailVerificationAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRegistrantProfileResult> DeleteRegistrantProfileOutcome;
 			typedef std::future<DeleteRegistrantProfileOutcome> DeleteRegistrantProfileOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::DeleteRegistrantProfileRequest&, const DeleteRegistrantProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRegistrantProfileAsyncHandler;
@@ -463,6 +480,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SaveBatchTaskForCreatingOrderRenewResult> SaveBatchTaskForCreatingOrderRenewOutcome;
 			typedef std::future<SaveBatchTaskForCreatingOrderRenewOutcome> SaveBatchTaskForCreatingOrderRenewOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveBatchTaskForCreatingOrderRenewRequest&, const SaveBatchTaskForCreatingOrderRenewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveBatchTaskForCreatingOrderRenewAsyncHandler;
+			typedef Outcome<Error, Model::CancelDomainVerificationResult> CancelDomainVerificationOutcome;
+			typedef std::future<CancelDomainVerificationOutcome> CancelDomainVerificationOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::CancelDomainVerificationRequest&, const CancelDomainVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelDomainVerificationAsyncHandler;
 			typedef Outcome<Error, Model::ConfirmTransferInEmailResult> ConfirmTransferInEmailOutcome;
 			typedef std::future<ConfirmTransferInEmailOutcome> ConfirmTransferInEmailOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::ConfirmTransferInEmailRequest&, const ConfirmTransferInEmailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmTransferInEmailAsyncHandler;
@@ -648,9 +668,15 @@ namespace AlibabaCloud
 			QueryDomainByInstanceIdOutcome queryDomainByInstanceId(const Model::QueryDomainByInstanceIdRequest &request)const;
 			void queryDomainByInstanceIdAsync(const Model::QueryDomainByInstanceIdRequest& request, const QueryDomainByInstanceIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDomainByInstanceIdOutcomeCallable queryDomainByInstanceIdCallable(const Model::QueryDomainByInstanceIdRequest& request) const;
+			QueryDomainRealNameVerificationInfoOutcome queryDomainRealNameVerificationInfo(const Model::QueryDomainRealNameVerificationInfoRequest &request)const;
+			void queryDomainRealNameVerificationInfoAsync(const Model::QueryDomainRealNameVerificationInfoRequest& request, const QueryDomainRealNameVerificationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDomainRealNameVerificationInfoOutcomeCallable queryDomainRealNameVerificationInfoCallable(const Model::QueryDomainRealNameVerificationInfoRequest& request) const;
 			VerifyEmailOutcome verifyEmail(const Model::VerifyEmailRequest &request)const;
 			void verifyEmailAsync(const Model::VerifyEmailRequest& request, const VerifyEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyEmailOutcomeCallable verifyEmailCallable(const Model::VerifyEmailRequest& request) const;
+			SaveSingleTaskForDeletingDnsHostOutcome saveSingleTaskForDeletingDnsHost(const Model::SaveSingleTaskForDeletingDnsHostRequest &request)const;
+			void saveSingleTaskForDeletingDnsHostAsync(const Model::SaveSingleTaskForDeletingDnsHostRequest& request, const SaveSingleTaskForDeletingDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveSingleTaskForDeletingDnsHostOutcomeCallable saveSingleTaskForDeletingDnsHostCallable(const Model::SaveSingleTaskForDeletingDnsHostRequest& request) const;
 			SaveBatchTaskForCreatingOrderRedeemOutcome saveBatchTaskForCreatingOrderRedeem(const Model::SaveBatchTaskForCreatingOrderRedeemRequest &request)const;
 			void saveBatchTaskForCreatingOrderRedeemAsync(const Model::SaveBatchTaskForCreatingOrderRedeemRequest& request, const SaveBatchTaskForCreatingOrderRedeemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveBatchTaskForCreatingOrderRedeemOutcomeCallable saveBatchTaskForCreatingOrderRedeemCallable(const Model::SaveBatchTaskForCreatingOrderRedeemRequest& request) const;
@@ -708,6 +734,9 @@ namespace AlibabaCloud
 			SaveSingleTaskForCreatingDnsHostOutcome saveSingleTaskForCreatingDnsHost(const Model::SaveSingleTaskForCreatingDnsHostRequest &request)const;
 			void saveSingleTaskForCreatingDnsHostAsync(const Model::SaveSingleTaskForCreatingDnsHostRequest& request, const SaveSingleTaskForCreatingDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveSingleTaskForCreatingDnsHostOutcomeCallable saveSingleTaskForCreatingDnsHostCallable(const Model::SaveSingleTaskForCreatingDnsHostRequest& request) const;
+			QueryEmailVerificationOutcome queryEmailVerification(const Model::QueryEmailVerificationRequest &request)const;
+			void queryEmailVerificationAsync(const Model::QueryEmailVerificationRequest& request, const QueryEmailVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryEmailVerificationOutcomeCallable queryEmailVerificationCallable(const Model::QueryEmailVerificationRequest& request) const;
 			DeleteRegistrantProfileOutcome deleteRegistrantProfile(const Model::DeleteRegistrantProfileRequest &request)const;
 			void deleteRegistrantProfileAsync(const Model::DeleteRegistrantProfileRequest& request, const DeleteRegistrantProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRegistrantProfileOutcomeCallable deleteRegistrantProfileCallable(const Model::DeleteRegistrantProfileRequest& request) const;
@@ -729,6 +758,9 @@ namespace AlibabaCloud
 			SaveBatchTaskForCreatingOrderRenewOutcome saveBatchTaskForCreatingOrderRenew(const Model::SaveBatchTaskForCreatingOrderRenewRequest &request)const;
 			void saveBatchTaskForCreatingOrderRenewAsync(const Model::SaveBatchTaskForCreatingOrderRenewRequest& request, const SaveBatchTaskForCreatingOrderRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveBatchTaskForCreatingOrderRenewOutcomeCallable saveBatchTaskForCreatingOrderRenewCallable(const Model::SaveBatchTaskForCreatingOrderRenewRequest& request) const;
+			CancelDomainVerificationOutcome cancelDomainVerification(const Model::CancelDomainVerificationRequest &request)const;
+			void cancelDomainVerificationAsync(const Model::CancelDomainVerificationRequest& request, const CancelDomainVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelDomainVerificationOutcomeCallable cancelDomainVerificationCallable(const Model::CancelDomainVerificationRequest& request) const;
 			ConfirmTransferInEmailOutcome confirmTransferInEmail(const Model::ConfirmTransferInEmailRequest &request)const;
 			void confirmTransferInEmailAsync(const Model::ConfirmTransferInEmailRequest& request, const ConfirmTransferInEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfirmTransferInEmailOutcomeCallable confirmTransferInEmailCallable(const Model::ConfirmTransferInEmailRequest& request) const;
