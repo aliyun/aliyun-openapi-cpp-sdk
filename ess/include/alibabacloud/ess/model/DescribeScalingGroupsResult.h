@@ -34,30 +34,32 @@ namespace AlibabaCloud
 			public:
 				struct ScalingGroup
 				{
-					int removingCapacity;
 					std::string activeScalingConfigurationId;
+					std::string lifecycleState;
+					std::string modificationTime;
+					std::vector<std::string> removalPolicies;
+					int pendingWaitCapacity;
+					int totalCapacity;
+					int removingWaitCapacity;
+					int protectedCapacity;
+					int standbyCapacity;
+					int removingCapacity;
 					std::vector<std::string> vSwitchIds;
 					int pendingCapacity;
 					std::string scalingGroupId;
 					std::string vSwitchId;
 					std::vector<std::string> loadBalancerIds;
-					std::string lifecycleState;
-					std::string modificationTime;
 					int maxSize;
 					std::string scalingGroupName;
 					int activeCapacity;
 					int minSize;
 					int defaultCooldown;
 					std::string vpcId;
-					std::vector<std::string> removalPolicies;
 					std::string creationTime;
-					int totalCapacity;
 					std::string multiAZPolicy;
 					std::string regionId;
 					std::vector<std::string> dBInstanceIds;
-					int protectedCapacity;
 					std::string healthCheckType;
-					int standbyCapacity;
 				};
 
 

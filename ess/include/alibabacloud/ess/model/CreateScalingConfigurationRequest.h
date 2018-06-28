@@ -76,8 +76,12 @@ namespace AlibabaCloud
 				void setUserData(const std::string& userData);
 				std::string getDataDisk4Category()const;
 				void setDataDisk4Category(const std::string& dataDisk4Category);
+				std::string getHostName()const;
+				void setHostName(const std::string& hostName);
 				std::string getDataDisk2SnapshotId()const;
 				void setDataDisk2SnapshotId(const std::string& dataDisk2SnapshotId);
+				bool getPasswordInherit()const;
+				void setPasswordInherit(bool passwordInherit);
 				int getDataDisk4Size()const;
 				void setDataDisk4Size(int dataDisk4Size);
 				std::string getInstanceType()const;
@@ -150,7 +154,9 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string userData_;
 				std::string dataDisk4Category_;
+				std::string hostName_;
 				std::string dataDisk2SnapshotId_;
+				bool passwordInherit_;
 				int dataDisk4Size_;
 				std::string instanceType_;
 				std::string dataDisk2Category_;

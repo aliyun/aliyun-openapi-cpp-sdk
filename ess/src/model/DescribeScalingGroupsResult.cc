@@ -48,6 +48,10 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.defaultCooldown = std::stoi(value["DefaultCooldown"].asString());
 		if(!value["MaxSize"].isNull())
 			scalingGroupsObject.maxSize = std::stoi(value["MaxSize"].asString());
+		if(!value["PendingWaitCapacity"].isNull())
+			scalingGroupsObject.pendingWaitCapacity = std::stoi(value["PendingWaitCapacity"].asString());
+		if(!value["RemovingWaitCapacity"].isNull())
+			scalingGroupsObject.removingWaitCapacity = std::stoi(value["RemovingWaitCapacity"].asString());
 		if(!value["PendingCapacity"].isNull())
 			scalingGroupsObject.pendingCapacity = std::stoi(value["PendingCapacity"].asString());
 		if(!value["RemovingCapacity"].isNull())

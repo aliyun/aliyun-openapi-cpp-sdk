@@ -230,6 +230,17 @@ void CreateScalingConfigurationRequest::setDataDisk4Category(const std::string& 
 	setParameter("DataDisk4Category", dataDisk4Category);
 }
 
+std::string CreateScalingConfigurationRequest::getHostName()const
+{
+	return hostName_;
+}
+
+void CreateScalingConfigurationRequest::setHostName(const std::string& hostName)
+{
+	hostName_ = hostName;
+	setParameter("HostName", hostName);
+}
+
 std::string CreateScalingConfigurationRequest::getDataDisk2SnapshotId()const
 {
 	return dataDisk2SnapshotId_;
@@ -239,6 +250,17 @@ void CreateScalingConfigurationRequest::setDataDisk2SnapshotId(const std::string
 {
 	dataDisk2SnapshotId_ = dataDisk2SnapshotId;
 	setParameter("DataDisk2SnapshotId", dataDisk2SnapshotId);
+}
+
+bool CreateScalingConfigurationRequest::getPasswordInherit()const
+{
+	return passwordInherit_;
+}
+
+void CreateScalingConfigurationRequest::setPasswordInherit(bool passwordInherit)
+{
+	passwordInherit_ = passwordInherit;
+	setParameter("PasswordInherit", std::to_string(passwordInherit));
 }
 
 int CreateScalingConfigurationRequest::getDataDisk4Size()const

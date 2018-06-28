@@ -54,6 +54,8 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.instanceName = value["InstanceName"].asString();
 		if(!value["ImageId"].isNull())
 			scalingConfigurationsObject.imageId = value["ImageId"].asString();
+		if(!value["HostName"].isNull())
+			scalingConfigurationsObject.hostName = value["HostName"].asString();
 		if(!value["InstanceType"].isNull())
 			scalingConfigurationsObject.instanceType = value["InstanceType"].asString();
 		if(!value["InstanceGeneration"].isNull())
@@ -90,6 +92,8 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.securityEnhancementStrategy = value["SecurityEnhancementStrategy"].asString();
 		if(!value["SpotStrategy"].isNull())
 			scalingConfigurationsObject.spotStrategy = value["SpotStrategy"].asString();
+		if(!value["PasswordInherit"].isNull())
+			scalingConfigurationsObject.passwordInherit = value["PasswordInherit"].asString() == "true";
 		auto allDataDisks = value["DataDisks"]["DataDisk"];
 		for (auto value : allDataDisks)
 		{

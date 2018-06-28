@@ -62,7 +62,9 @@ namespace AlibabaCloud
 					std::vector<std::string> instanceTypes;
 					std::string instanceType;
 					std::vector<ScalingConfiguration::Tag> tags;
+					std::string hostName;
 					std::string spotStrategy;
+					bool passwordInherit;
 					std::string keyPairName;
 					int loadBalancerWeight;
 					std::string ioOptimized;
