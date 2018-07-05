@@ -31,21 +31,21 @@ EssClient::EssClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ESS");
 }
 
 EssClient::EssClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ESS");
 }
 
 EssClient::EssClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ESS");
 }
 
 EssClient::~EssClient()
@@ -951,6 +951,42 @@ EssClient::ExitStandbyOutcomeCallable EssClient::exitStandbyCallable(const ExitS
 	return task->get_future();
 }
 
+EssClient::DetachLoadBalancersOutcome EssClient::detachLoadBalancers(const DetachLoadBalancersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachLoadBalancersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachLoadBalancersOutcome(DetachLoadBalancersResult(outcome.result()));
+	else
+		return DetachLoadBalancersOutcome(outcome.error());
+}
+
+void EssClient::detachLoadBalancersAsync(const DetachLoadBalancersRequest& request, const DetachLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachLoadBalancers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DetachLoadBalancersOutcomeCallable EssClient::detachLoadBalancersCallable(const DetachLoadBalancersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachLoadBalancersOutcome()>>(
+			[this, request]()
+			{
+			return this->detachLoadBalancers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::DescribeNotificationConfigurationsOutcome EssClient::describeNotificationConfigurations(const DescribeNotificationConfigurationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1377,6 +1413,42 @@ EssClient::SetInstancesProtectionOutcomeCallable EssClient::setInstancesProtecti
 			[this, request]()
 			{
 			return this->setInstancesProtection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::AttachLoadBalancersOutcome EssClient::attachLoadBalancers(const AttachLoadBalancersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachLoadBalancersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachLoadBalancersOutcome(AttachLoadBalancersResult(outcome.result()));
+	else
+		return AttachLoadBalancersOutcome(outcome.error());
+}
+
+void EssClient::attachLoadBalancersAsync(const AttachLoadBalancersRequest& request, const AttachLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachLoadBalancers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::AttachLoadBalancersOutcomeCallable EssClient::attachLoadBalancersCallable(const AttachLoadBalancersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachLoadBalancersOutcome()>>(
+			[this, request]()
+			{
+			return this->attachLoadBalancers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

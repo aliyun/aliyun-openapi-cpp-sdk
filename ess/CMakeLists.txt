@@ -71,6 +71,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/DescribeScalingActivitiesResult.h
 	include/alibabacloud/ess/model/ExitStandbyRequest.h
 	include/alibabacloud/ess/model/ExitStandbyResult.h
+	include/alibabacloud/ess/model/DetachLoadBalancersRequest.h
+	include/alibabacloud/ess/model/DetachLoadBalancersResult.h
 	include/alibabacloud/ess/model/DescribeNotificationConfigurationsRequest.h
 	include/alibabacloud/ess/model/DescribeNotificationConfigurationsResult.h
 	include/alibabacloud/ess/model/ModifyLifecycleHookRequest.h
@@ -95,6 +97,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/DescribeRegionsResult.h
 	include/alibabacloud/ess/model/SetInstancesProtectionRequest.h
 	include/alibabacloud/ess/model/SetInstancesProtectionResult.h
+	include/alibabacloud/ess/model/AttachLoadBalancersRequest.h
+	include/alibabacloud/ess/model/AttachLoadBalancersResult.h
 	include/alibabacloud/ess/model/CompleteLifecycleActionRequest.h
 	include/alibabacloud/ess/model/CompleteLifecycleActionResult.h
 	include/alibabacloud/ess/model/ModifyScalingConfigurationRequest.h
@@ -172,6 +176,8 @@ set(ess_src
 	src/model/DescribeScalingActivitiesResult.cc
 	src/model/ExitStandbyRequest.cc
 	src/model/ExitStandbyResult.cc
+	src/model/DetachLoadBalancersRequest.cc
+	src/model/DetachLoadBalancersResult.cc
 	src/model/DescribeNotificationConfigurationsRequest.cc
 	src/model/DescribeNotificationConfigurationsResult.cc
 	src/model/ModifyLifecycleHookRequest.cc
@@ -196,6 +202,8 @@ set(ess_src
 	src/model/DescribeRegionsResult.cc
 	src/model/SetInstancesProtectionRequest.cc
 	src/model/SetInstancesProtectionResult.cc
+	src/model/AttachLoadBalancersRequest.cc
+	src/model/AttachLoadBalancersResult.cc
 	src/model/CompleteLifecycleActionRequest.cc
 	src/model/CompleteLifecycleActionResult.cc
 	src/model/ModifyScalingConfigurationRequest.cc

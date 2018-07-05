@@ -72,6 +72,8 @@
 #include "model/DescribeScalingActivitiesResult.h"
 #include "model/ExitStandbyRequest.h"
 #include "model/ExitStandbyResult.h"
+#include "model/DetachLoadBalancersRequest.h"
+#include "model/DetachLoadBalancersResult.h"
 #include "model/DescribeNotificationConfigurationsRequest.h"
 #include "model/DescribeNotificationConfigurationsResult.h"
 #include "model/ModifyLifecycleHookRequest.h"
@@ -96,6 +98,8 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/SetInstancesProtectionRequest.h"
 #include "model/SetInstancesProtectionResult.h"
+#include "model/AttachLoadBalancersRequest.h"
+#include "model/AttachLoadBalancersResult.h"
 #include "model/CompleteLifecycleActionRequest.h"
 #include "model/CompleteLifecycleActionResult.h"
 #include "model/ModifyScalingConfigurationRequest.h"
@@ -204,6 +208,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExitStandbyResult> ExitStandbyOutcome;
 			typedef std::future<ExitStandbyOutcome> ExitStandbyOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::ExitStandbyRequest&, const ExitStandbyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExitStandbyAsyncHandler;
+			typedef Outcome<Error, Model::DetachLoadBalancersResult> DetachLoadBalancersOutcome;
+			typedef std::future<DetachLoadBalancersOutcome> DetachLoadBalancersOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::DetachLoadBalancersRequest&, const DetachLoadBalancersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachLoadBalancersAsyncHandler;
 			typedef Outcome<Error, Model::DescribeNotificationConfigurationsResult> DescribeNotificationConfigurationsOutcome;
 			typedef std::future<DescribeNotificationConfigurationsOutcome> DescribeNotificationConfigurationsOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DescribeNotificationConfigurationsRequest&, const DescribeNotificationConfigurationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotificationConfigurationsAsyncHandler;
@@ -240,6 +247,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetInstancesProtectionResult> SetInstancesProtectionOutcome;
 			typedef std::future<SetInstancesProtectionOutcome> SetInstancesProtectionOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::SetInstancesProtectionRequest&, const SetInstancesProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetInstancesProtectionAsyncHandler;
+			typedef Outcome<Error, Model::AttachLoadBalancersResult> AttachLoadBalancersOutcome;
+			typedef std::future<AttachLoadBalancersOutcome> AttachLoadBalancersOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::AttachLoadBalancersRequest&, const AttachLoadBalancersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachLoadBalancersAsyncHandler;
 			typedef Outcome<Error, Model::CompleteLifecycleActionResult> CompleteLifecycleActionOutcome;
 			typedef std::future<CompleteLifecycleActionOutcome> CompleteLifecycleActionOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::CompleteLifecycleActionRequest&, const CompleteLifecycleActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompleteLifecycleActionAsyncHandler;
@@ -356,6 +366,9 @@ namespace AlibabaCloud
 			ExitStandbyOutcome exitStandby(const Model::ExitStandbyRequest &request)const;
 			void exitStandbyAsync(const Model::ExitStandbyRequest& request, const ExitStandbyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExitStandbyOutcomeCallable exitStandbyCallable(const Model::ExitStandbyRequest& request) const;
+			DetachLoadBalancersOutcome detachLoadBalancers(const Model::DetachLoadBalancersRequest &request)const;
+			void detachLoadBalancersAsync(const Model::DetachLoadBalancersRequest& request, const DetachLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachLoadBalancersOutcomeCallable detachLoadBalancersCallable(const Model::DetachLoadBalancersRequest& request) const;
 			DescribeNotificationConfigurationsOutcome describeNotificationConfigurations(const Model::DescribeNotificationConfigurationsRequest &request)const;
 			void describeNotificationConfigurationsAsync(const Model::DescribeNotificationConfigurationsRequest& request, const DescribeNotificationConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNotificationConfigurationsOutcomeCallable describeNotificationConfigurationsCallable(const Model::DescribeNotificationConfigurationsRequest& request) const;
@@ -392,6 +405,9 @@ namespace AlibabaCloud
 			SetInstancesProtectionOutcome setInstancesProtection(const Model::SetInstancesProtectionRequest &request)const;
 			void setInstancesProtectionAsync(const Model::SetInstancesProtectionRequest& request, const SetInstancesProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetInstancesProtectionOutcomeCallable setInstancesProtectionCallable(const Model::SetInstancesProtectionRequest& request) const;
+			AttachLoadBalancersOutcome attachLoadBalancers(const Model::AttachLoadBalancersRequest &request)const;
+			void attachLoadBalancersAsync(const Model::AttachLoadBalancersRequest& request, const AttachLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachLoadBalancersOutcomeCallable attachLoadBalancersCallable(const Model::AttachLoadBalancersRequest& request) const;
 			CompleteLifecycleActionOutcome completeLifecycleAction(const Model::CompleteLifecycleActionRequest &request)const;
 			void completeLifecycleActionAsync(const Model::CompleteLifecycleActionRequest& request, const CompleteLifecycleActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CompleteLifecycleActionOutcomeCallable completeLifecycleActionCallable(const Model::CompleteLifecycleActionRequest& request) const;
