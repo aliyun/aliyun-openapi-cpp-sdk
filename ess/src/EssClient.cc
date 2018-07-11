@@ -31,21 +31,21 @@ EssClient::EssClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ESS");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
 }
 
 EssClient::EssClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ESS");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
 }
 
 EssClient::EssClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ESS");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
 }
 
 EssClient::~EssClient()
@@ -1383,6 +1383,42 @@ EssClient::DescribeRegionsOutcomeCallable EssClient::describeRegionsCallable(con
 	return task->get_future();
 }
 
+EssClient::DetachDBInstancesOutcome EssClient::detachDBInstances(const DetachDBInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachDBInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachDBInstancesOutcome(DetachDBInstancesResult(outcome.result()));
+	else
+		return DetachDBInstancesOutcome(outcome.error());
+}
+
+void EssClient::detachDBInstancesAsync(const DetachDBInstancesRequest& request, const DetachDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachDBInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DetachDBInstancesOutcomeCallable EssClient::detachDBInstancesCallable(const DetachDBInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachDBInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->detachDBInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::SetInstancesProtectionOutcome EssClient::setInstancesProtection(const SetInstancesProtectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1809,6 +1845,42 @@ EssClient::DeleteScalingRuleOutcomeCallable EssClient::deleteScalingRuleCallable
 			[this, request]()
 			{
 			return this->deleteScalingRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::AttachDBInstancesOutcome EssClient::attachDBInstances(const AttachDBInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachDBInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachDBInstancesOutcome(AttachDBInstancesResult(outcome.result()));
+	else
+		return AttachDBInstancesOutcome(outcome.error());
+}
+
+void EssClient::attachDBInstancesAsync(const AttachDBInstancesRequest& request, const AttachDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachDBInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::AttachDBInstancesOutcomeCallable EssClient::attachDBInstancesCallable(const AttachDBInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachDBInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->attachDBInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

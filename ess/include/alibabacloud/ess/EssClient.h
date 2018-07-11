@@ -96,6 +96,8 @@
 #include "model/CreateScalingConfigurationResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DetachDBInstancesRequest.h"
+#include "model/DetachDBInstancesResult.h"
 #include "model/SetInstancesProtectionRequest.h"
 #include "model/SetInstancesProtectionResult.h"
 #include "model/AttachLoadBalancersRequest.h"
@@ -120,6 +122,8 @@
 #include "model/ModifyScalingRuleResult.h"
 #include "model/DeleteScalingRuleRequest.h"
 #include "model/DeleteScalingRuleResult.h"
+#include "model/AttachDBInstancesRequest.h"
+#include "model/AttachDBInstancesResult.h"
 #include "model/CreateLifecycleHookRequest.h"
 #include "model/CreateLifecycleHookResult.h"
 #include "model/ModifyAlertConfigRequest.h"
@@ -244,6 +248,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DetachDBInstancesResult> DetachDBInstancesOutcome;
+			typedef std::future<DetachDBInstancesOutcome> DetachDBInstancesOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::DetachDBInstancesRequest&, const DetachDBInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachDBInstancesAsyncHandler;
 			typedef Outcome<Error, Model::SetInstancesProtectionResult> SetInstancesProtectionOutcome;
 			typedef std::future<SetInstancesProtectionOutcome> SetInstancesProtectionOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::SetInstancesProtectionRequest&, const SetInstancesProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetInstancesProtectionAsyncHandler;
@@ -280,6 +287,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteScalingRuleResult> DeleteScalingRuleOutcome;
 			typedef std::future<DeleteScalingRuleOutcome> DeleteScalingRuleOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DeleteScalingRuleRequest&, const DeleteScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScalingRuleAsyncHandler;
+			typedef Outcome<Error, Model::AttachDBInstancesResult> AttachDBInstancesOutcome;
+			typedef std::future<AttachDBInstancesOutcome> AttachDBInstancesOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::AttachDBInstancesRequest&, const AttachDBInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachDBInstancesAsyncHandler;
 			typedef Outcome<Error, Model::CreateLifecycleHookResult> CreateLifecycleHookOutcome;
 			typedef std::future<CreateLifecycleHookOutcome> CreateLifecycleHookOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::CreateLifecycleHookRequest&, const CreateLifecycleHookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLifecycleHookAsyncHandler;
@@ -402,6 +412,9 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			DetachDBInstancesOutcome detachDBInstances(const Model::DetachDBInstancesRequest &request)const;
+			void detachDBInstancesAsync(const Model::DetachDBInstancesRequest& request, const DetachDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachDBInstancesOutcomeCallable detachDBInstancesCallable(const Model::DetachDBInstancesRequest& request) const;
 			SetInstancesProtectionOutcome setInstancesProtection(const Model::SetInstancesProtectionRequest &request)const;
 			void setInstancesProtectionAsync(const Model::SetInstancesProtectionRequest& request, const SetInstancesProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetInstancesProtectionOutcomeCallable setInstancesProtectionCallable(const Model::SetInstancesProtectionRequest& request) const;
@@ -438,6 +451,9 @@ namespace AlibabaCloud
 			DeleteScalingRuleOutcome deleteScalingRule(const Model::DeleteScalingRuleRequest &request)const;
 			void deleteScalingRuleAsync(const Model::DeleteScalingRuleRequest& request, const DeleteScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteScalingRuleOutcomeCallable deleteScalingRuleCallable(const Model::DeleteScalingRuleRequest& request) const;
+			AttachDBInstancesOutcome attachDBInstances(const Model::AttachDBInstancesRequest &request)const;
+			void attachDBInstancesAsync(const Model::AttachDBInstancesRequest& request, const AttachDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachDBInstancesOutcomeCallable attachDBInstancesCallable(const Model::AttachDBInstancesRequest& request) const;
 			CreateLifecycleHookOutcome createLifecycleHook(const Model::CreateLifecycleHookRequest &request)const;
 			void createLifecycleHookAsync(const Model::CreateLifecycleHookRequest& request, const CreateLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLifecycleHookOutcomeCallable createLifecycleHookCallable(const Model::CreateLifecycleHookRequest& request) const;

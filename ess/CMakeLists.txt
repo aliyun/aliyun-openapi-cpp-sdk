@@ -95,6 +95,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/CreateScalingConfigurationResult.h
 	include/alibabacloud/ess/model/DescribeRegionsRequest.h
 	include/alibabacloud/ess/model/DescribeRegionsResult.h
+	include/alibabacloud/ess/model/DetachDBInstancesRequest.h
+	include/alibabacloud/ess/model/DetachDBInstancesResult.h
 	include/alibabacloud/ess/model/SetInstancesProtectionRequest.h
 	include/alibabacloud/ess/model/SetInstancesProtectionResult.h
 	include/alibabacloud/ess/model/AttachLoadBalancersRequest.h
@@ -119,6 +121,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/ModifyScalingRuleResult.h
 	include/alibabacloud/ess/model/DeleteScalingRuleRequest.h
 	include/alibabacloud/ess/model/DeleteScalingRuleResult.h
+	include/alibabacloud/ess/model/AttachDBInstancesRequest.h
+	include/alibabacloud/ess/model/AttachDBInstancesResult.h
 	include/alibabacloud/ess/model/CreateLifecycleHookRequest.h
 	include/alibabacloud/ess/model/CreateLifecycleHookResult.h
 	include/alibabacloud/ess/model/ModifyAlertConfigRequest.h
@@ -200,6 +204,8 @@ set(ess_src
 	src/model/CreateScalingConfigurationResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DetachDBInstancesRequest.cc
+	src/model/DetachDBInstancesResult.cc
 	src/model/SetInstancesProtectionRequest.cc
 	src/model/SetInstancesProtectionResult.cc
 	src/model/AttachLoadBalancersRequest.cc
@@ -224,6 +230,8 @@ set(ess_src
 	src/model/ModifyScalingRuleResult.cc
 	src/model/DeleteScalingRuleRequest.cc
 	src/model/DeleteScalingRuleResult.cc
+	src/model/AttachDBInstancesRequest.cc
+	src/model/AttachDBInstancesResult.cc
 	src/model/CreateLifecycleHookRequest.cc
 	src/model/CreateLifecycleHookResult.cc
 	src/model/ModifyAlertConfigRequest.cc
