@@ -1,3 +1,7 @@
+2018-07-11 Version: 1.19.2
+1, Add DetectFaceAttributesService.
+2, Add cloudauthPageUrl to GetVerifyTokenResponse.
+
 2018-07-05 Version: 1.19.1
 1, new function, attach/detach load balancer of scalingGroup
 

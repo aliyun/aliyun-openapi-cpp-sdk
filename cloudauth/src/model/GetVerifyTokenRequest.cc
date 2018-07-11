@@ -19,7 +19,7 @@
 using AlibabaCloud::Cloudauth::Model::GetVerifyTokenRequest;
 
 GetVerifyTokenRequest::GetVerifyTokenRequest() :
-	RpcServiceRequest("cloudauth", "2018-05-04", "GetVerifyToken")
+	RpcServiceRequest("cloudauth", "2018-07-03", "GetVerifyToken")
 {}
 
 GetVerifyTokenRequest::~GetVerifyTokenRequest()

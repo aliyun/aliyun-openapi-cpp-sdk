@@ -19,7 +19,7 @@
 using AlibabaCloud::Cloudauth::Model::CompareFacesRequest;
 
 CompareFacesRequest::CompareFacesRequest() :
-	RpcServiceRequest("cloudauth", "2018-05-04", "CompareFaces")
+	RpcServiceRequest("cloudauth", "2018-07-03", "CompareFaces")
 {}
 
 CompareFacesRequest::~CompareFacesRequest()

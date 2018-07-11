@@ -25,6 +25,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/GetMaterialsResult.h
 	include/alibabacloud/cloudauth/model/GetVerifyTokenRequest.h
 	include/alibabacloud/cloudauth/model/GetVerifyTokenResult.h
+	include/alibabacloud/cloudauth/model/DetectFaceAttributesRequest.h
+	include/alibabacloud/cloudauth/model/DetectFaceAttributesResult.h
 	include/alibabacloud/cloudauth/model/CompareFacesRequest.h
 	include/alibabacloud/cloudauth/model/CompareFacesResult.h
 	include/alibabacloud/cloudauth/model/SubmitMaterialsRequest.h
@@ -38,6 +40,8 @@ set(cloudauth_src
 	src/model/GetMaterialsResult.cc
 	src/model/GetVerifyTokenRequest.cc
 	src/model/GetVerifyTokenResult.cc
+	src/model/DetectFaceAttributesRequest.cc
+	src/model/DetectFaceAttributesResult.cc
 	src/model/CompareFacesRequest.cc
 	src/model/CompareFacesResult.cc
 	src/model/SubmitMaterialsRequest.cc

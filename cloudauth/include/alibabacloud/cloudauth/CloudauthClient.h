@@ -26,6 +26,8 @@
 #include "model/GetMaterialsResult.h"
 #include "model/GetVerifyTokenRequest.h"
 #include "model/GetVerifyTokenResult.h"
+#include "model/DetectFaceAttributesRequest.h"
+#include "model/DetectFaceAttributesResult.h"
 #include "model/CompareFacesRequest.h"
 #include "model/CompareFacesResult.h"
 #include "model/SubmitMaterialsRequest.h"
@@ -47,6 +49,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetVerifyTokenResult> GetVerifyTokenOutcome;
 			typedef std::future<GetVerifyTokenOutcome> GetVerifyTokenOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::GetVerifyTokenRequest&, const GetVerifyTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVerifyTokenAsyncHandler;
+			typedef Outcome<Error, Model::DetectFaceAttributesResult> DetectFaceAttributesOutcome;
+			typedef std::future<DetectFaceAttributesOutcome> DetectFaceAttributesOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::DetectFaceAttributesRequest&, const DetectFaceAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectFaceAttributesAsyncHandler;
 			typedef Outcome<Error, Model::CompareFacesResult> CompareFacesOutcome;
 			typedef std::future<CompareFacesOutcome> CompareFacesOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::CompareFacesRequest&, const CompareFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompareFacesAsyncHandler;
@@ -67,6 +72,9 @@ namespace AlibabaCloud
 			GetVerifyTokenOutcome getVerifyToken(const Model::GetVerifyTokenRequest &request)const;
 			void getVerifyTokenAsync(const Model::GetVerifyTokenRequest& request, const GetVerifyTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVerifyTokenOutcomeCallable getVerifyTokenCallable(const Model::GetVerifyTokenRequest& request) const;
+			DetectFaceAttributesOutcome detectFaceAttributes(const Model::DetectFaceAttributesRequest &request)const;
+			void detectFaceAttributesAsync(const Model::DetectFaceAttributesRequest& request, const DetectFaceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectFaceAttributesOutcomeCallable detectFaceAttributesCallable(const Model::DetectFaceAttributesRequest& request) const;
 			CompareFacesOutcome compareFaces(const Model::CompareFacesRequest &request)const;
 			void compareFacesAsync(const Model::CompareFacesRequest& request, const CompareFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CompareFacesOutcomeCallable compareFacesCallable(const Model::CompareFacesRequest& request) const;

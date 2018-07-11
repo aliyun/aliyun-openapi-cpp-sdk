@@ -123,6 +123,42 @@ CloudauthClient::GetVerifyTokenOutcomeCallable CloudauthClient::getVerifyTokenCa
 	return task->get_future();
 }
 
+CloudauthClient::DetectFaceAttributesOutcome CloudauthClient::detectFaceAttributes(const DetectFaceAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectFaceAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectFaceAttributesOutcome(DetectFaceAttributesResult(outcome.result()));
+	else
+		return DetectFaceAttributesOutcome(outcome.error());
+}
+
+void CloudauthClient::detectFaceAttributesAsync(const DetectFaceAttributesRequest& request, const DetectFaceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectFaceAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DetectFaceAttributesOutcomeCallable CloudauthClient::detectFaceAttributesCallable(const DetectFaceAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectFaceAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->detectFaceAttributes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::CompareFacesOutcome CloudauthClient::compareFaces(const CompareFacesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

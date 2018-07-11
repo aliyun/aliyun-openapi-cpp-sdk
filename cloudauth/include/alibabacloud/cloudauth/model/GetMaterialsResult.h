@@ -36,10 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string facePic;
 					std::string identificationNumber;
-					std::string idCardStartDate;
 					std::string address;
 					std::string idCardFrontPic;
-					std::string ethnicGroup;
 					std::string sex;
 					std::string idCardExpiry;
 					std::string idCardType;

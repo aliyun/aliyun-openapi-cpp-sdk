@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						std::string endPoint;
 					};
 					StsToken stsToken;
+					std::string cloudauthPageUrl;
 					VerifyToken verifyToken;
 				};
 

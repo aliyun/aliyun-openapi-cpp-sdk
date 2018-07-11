@@ -41,6 +41,8 @@ void GetVerifyTokenResult::parse(const std::string &payload)
 
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["CloudauthPageUrl"].isNull())
+		data_.cloudauthPageUrl = dataNode["CloudauthPageUrl"].asString();
 	auto verifyTokenNode = dataNode["VerifyToken"];
 	if(!verifyTokenNode["Token"].isNull())
 		data_.verifyToken.token = verifyTokenNode["Token"].asString();
