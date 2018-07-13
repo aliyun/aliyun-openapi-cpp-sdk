@@ -25,17 +25,6 @@ AddUsersRequest::AddUsersRequest() :
 AddUsersRequest::~AddUsersRequest()
 {}
 
-bool AddUsersRequest::getReleaseInstance()const
-{
-	return releaseInstance_;
-}
-
-void AddUsersRequest::setReleaseInstance(bool releaseInstance)
-{
-	releaseInstance_ = releaseInstance;
-	setParameter("ReleaseInstance", std::to_string(releaseInstance));
-}
-
 std::string AddUsersRequest::getClusterId()const
 {
 	return clusterId_;

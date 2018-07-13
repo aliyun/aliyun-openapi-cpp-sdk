@@ -82,6 +82,7 @@ namespace AlibabaCloud
 					std::string instanceType;
 					std::string loginNodes;
 					Computes computes;
+					std::string location;
 				};
 
 

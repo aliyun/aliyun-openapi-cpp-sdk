@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setVariables(const std::string& variables);
 				std::string getRunasUserPassword()const;
 				void setRunasUserPassword(const std::string& runasUserPassword);
+				std::string getPostCmdLine()const;
+				void setPostCmdLine(const std::string& postCmdLine);
 				std::string getRunasUser()const;
 				void setRunasUser(const std::string& runasUser);
 				std::string getClusterId()const;
@@ -55,17 +57,24 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getArrayRequest()const;
 				void setArrayRequest(const std::string& arrayRequest);
+				std::string getUnzipCmd()const;
+				void setUnzipCmd(const std::string& unzipCmd);
 				std::string getPackagePath()const;
 				void setPackagePath(const std::string& packagePath);
+				std::string getInputFileUrl()const;
+				void setInputFileUrl(const std::string& inputFileUrl);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getStdoutRedirectPath()const;
 				void setStdoutRedirectPath(const std::string& stdoutRedirectPath);
+				std::string getContainerId()const;
+				void setContainerId(const std::string& containerId);
 
             private:
 				std::string stderrRedirectPath_;
 				std::string variables_;
 				std::string runasUserPassword_;
+				std::string postCmdLine_;
 				std::string runasUser_;
 				std::string clusterId_;
 				bool reRunable_;
@@ -73,9 +82,12 @@ namespace AlibabaCloud
 				std::string commandLine_;
 				std::string accessKeyId_;
 				std::string arrayRequest_;
+				std::string unzipCmd_;
 				std::string packagePath_;
+				std::string inputFileUrl_;
 				std::string name_;
 				std::string stdoutRedirectPath_;
+				std::string containerId_;
 
 			};
 		}

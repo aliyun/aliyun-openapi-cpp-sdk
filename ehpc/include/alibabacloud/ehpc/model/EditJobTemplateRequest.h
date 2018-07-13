@@ -55,8 +55,6 @@ namespace AlibabaCloud
 				void setArrayRequest(const std::string& arrayRequest);
 				std::string getPackagePath()const;
 				void setPackagePath(const std::string& packagePath);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getStdoutRedirectPath()const;
@@ -73,7 +71,6 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string arrayRequest_;
 				std::string packagePath_;
-				std::string regionId_;
 				std::string name_;
 				std::string stdoutRedirectPath_;
 

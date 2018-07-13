@@ -1,3 +1,8 @@
+2018-07-13 Version: 1.20.0
+1, New APIs for batch executing commands in cluster: InvokeShellCommand, ListCommands, etc.
+2, New APIs for HybridCluster (link E-HPC with cluster in local IDC): CreateHybridCluster, etc.
+3, New APIs for Container applications: AddContainerApp, etc.
+
 2018-07-11 Version: 1.19.3
 1, new function: Attach and Detach Rds instance of scalingGroup.
 

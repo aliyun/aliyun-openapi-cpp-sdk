@@ -25,17 +25,6 @@ ListJobTemplatesRequest::ListJobTemplatesRequest() :
 ListJobTemplatesRequest::~ListJobTemplatesRequest()
 {}
 
-std::string ListJobTemplatesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListJobTemplatesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string ListJobTemplatesRequest::getName()const
 {
 	return name_;

@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				AddUsersRequest();
 				~AddUsersRequest();
 
-				bool getReleaseInstance()const;
-				void setReleaseInstance(bool releaseInstance);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::vector<User> getUser()const;
@@ -51,7 +49,6 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				bool releaseInstance_;
 				std::string clusterId_;
 				std::vector<User> user_;
 				std::string accessKeyId_;

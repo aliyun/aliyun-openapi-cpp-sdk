@@ -27,20 +27,20 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/DescribeClusterResult.h
 	include/alibabacloud/ehpc/model/ListUsersRequest.h
 	include/alibabacloud/ehpc/model/ListUsersResult.h
-	include/alibabacloud/ehpc/model/UpgradeClientRequest.h
-	include/alibabacloud/ehpc/model/UpgradeClientResult.h
 	include/alibabacloud/ehpc/model/StopNodesRequest.h
 	include/alibabacloud/ehpc/model/StopNodesResult.h
+	include/alibabacloud/ehpc/model/PullImageRequest.h
+	include/alibabacloud/ehpc/model/PullImageResult.h
+	include/alibabacloud/ehpc/model/DescribeContainerAppRequest.h
+	include/alibabacloud/ehpc/model/DescribeContainerAppResult.h
 	include/alibabacloud/ehpc/model/ListCurrentClientVersionRequest.h
 	include/alibabacloud/ehpc/model/ListCurrentClientVersionResult.h
-	include/alibabacloud/ehpc/model/DeleteClusterRequest.h
-	include/alibabacloud/ehpc/model/DeleteClusterResult.h
-	include/alibabacloud/ehpc/model/ListImagesRequest.h
-	include/alibabacloud/ehpc/model/ListImagesResult.h
+	include/alibabacloud/ehpc/model/ModifyContainerAppAttributesRequest.h
+	include/alibabacloud/ehpc/model/ModifyContainerAppAttributesResult.h
 	include/alibabacloud/ehpc/model/SetAutoScaleConfigRequest.h
 	include/alibabacloud/ehpc/model/SetAutoScaleConfigResult.h
-	include/alibabacloud/ehpc/model/ListVolumesRequest.h
-	include/alibabacloud/ehpc/model/ListVolumesResult.h
+	include/alibabacloud/ehpc/model/ListInvocationResultsRequest.h
+	include/alibabacloud/ehpc/model/ListInvocationResultsResult.h
 	include/alibabacloud/ehpc/model/AddNodesRequest.h
 	include/alibabacloud/ehpc/model/AddNodesResult.h
 	include/alibabacloud/ehpc/model/ListSoftwaresRequest.h
@@ -53,20 +53,16 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/GetAutoScaleConfigResult.h
 	include/alibabacloud/ehpc/model/ListNodesRequest.h
 	include/alibabacloud/ehpc/model/ListNodesResult.h
-	include/alibabacloud/ehpc/model/SetJobUserRequest.h
-	include/alibabacloud/ehpc/model/SetJobUserResult.h
 	include/alibabacloud/ehpc/model/ModifyUserGroupsRequest.h
 	include/alibabacloud/ehpc/model/ModifyUserGroupsResult.h
 	include/alibabacloud/ehpc/model/StartClusterRequest.h
 	include/alibabacloud/ehpc/model/StartClusterResult.h
-	include/alibabacloud/ehpc/model/ListClustersRequest.h
-	include/alibabacloud/ehpc/model/ListClustersResult.h
-	include/alibabacloud/ehpc/model/SubmitJobRequest.h
-	include/alibabacloud/ehpc/model/SubmitJobResult.h
+	include/alibabacloud/ehpc/model/ListCommandsRequest.h
+	include/alibabacloud/ehpc/model/ListCommandsResult.h
 	include/alibabacloud/ehpc/model/ListCustomImagesRequest.h
 	include/alibabacloud/ehpc/model/ListCustomImagesResult.h
-	include/alibabacloud/ehpc/model/ListRegionsRequest.h
-	include/alibabacloud/ehpc/model/ListRegionsResult.h
+	include/alibabacloud/ehpc/model/InvokeShellCommandRequest.h
+	include/alibabacloud/ehpc/model/InvokeShellCommandResult.h
 	include/alibabacloud/ehpc/model/AddUsersRequest.h
 	include/alibabacloud/ehpc/model/AddUsersResult.h
 	include/alibabacloud/ehpc/model/ListJobTemplatesRequest.h
@@ -79,20 +75,16 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/StopClusterResult.h
 	include/alibabacloud/ehpc/model/ListNodesNoPagingRequest.h
 	include/alibabacloud/ehpc/model/ListNodesNoPagingResult.h
+	include/alibabacloud/ehpc/model/GetHybridClusterConfigRequest.h
+	include/alibabacloud/ehpc/model/GetHybridClusterConfigResult.h
 	include/alibabacloud/ehpc/model/CreateJobTemplateRequest.h
 	include/alibabacloud/ehpc/model/CreateJobTemplateResult.h
-	include/alibabacloud/ehpc/model/RerunJobsRequest.h
-	include/alibabacloud/ehpc/model/RerunJobsResult.h
 	include/alibabacloud/ehpc/model/ResetNodesRequest.h
 	include/alibabacloud/ehpc/model/ResetNodesResult.h
-	include/alibabacloud/ehpc/model/EditJobTemplateRequest.h
-	include/alibabacloud/ehpc/model/EditJobTemplateResult.h
-	include/alibabacloud/ehpc/model/ListPreferredEcsTypesRequest.h
-	include/alibabacloud/ehpc/model/ListPreferredEcsTypesResult.h
-	include/alibabacloud/ehpc/model/ListClusterLogsRequest.h
-	include/alibabacloud/ehpc/model/ListClusterLogsResult.h
-	include/alibabacloud/ehpc/model/RecoverClusterRequest.h
-	include/alibabacloud/ehpc/model/RecoverClusterResult.h
+	include/alibabacloud/ehpc/model/CreateHybridClusterRequest.h
+	include/alibabacloud/ehpc/model/CreateHybridClusterResult.h
+	include/alibabacloud/ehpc/model/ListContainerImagesRequest.h
+	include/alibabacloud/ehpc/model/ListContainerImagesResult.h
 	include/alibabacloud/ehpc/model/DeleteJobsRequest.h
 	include/alibabacloud/ehpc/model/DeleteJobsResult.h
 	include/alibabacloud/ehpc/model/DeleteNodesRequest.h
@@ -102,7 +94,43 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/CreateClusterRequest.h
 	include/alibabacloud/ehpc/model/CreateClusterResult.h
 	include/alibabacloud/ehpc/model/ModifyUserPasswordsRequest.h
-	include/alibabacloud/ehpc/model/ModifyUserPasswordsResult.h )
+	include/alibabacloud/ehpc/model/ModifyUserPasswordsResult.h
+	include/alibabacloud/ehpc/model/UpgradeClientRequest.h
+	include/alibabacloud/ehpc/model/UpgradeClientResult.h
+	include/alibabacloud/ehpc/model/DeleteClusterRequest.h
+	include/alibabacloud/ehpc/model/DeleteClusterResult.h
+	include/alibabacloud/ehpc/model/ListImagesRequest.h
+	include/alibabacloud/ehpc/model/ListImagesResult.h
+	include/alibabacloud/ehpc/model/ListVolumesRequest.h
+	include/alibabacloud/ehpc/model/ListVolumesResult.h
+	include/alibabacloud/ehpc/model/DeleteContainerAppsRequest.h
+	include/alibabacloud/ehpc/model/DeleteContainerAppsResult.h
+	include/alibabacloud/ehpc/model/ListInvocationStatusRequest.h
+	include/alibabacloud/ehpc/model/ListInvocationStatusResult.h
+	include/alibabacloud/ehpc/model/ListContainerAppsRequest.h
+	include/alibabacloud/ehpc/model/ListContainerAppsResult.h
+	include/alibabacloud/ehpc/model/SetJobUserRequest.h
+	include/alibabacloud/ehpc/model/SetJobUserResult.h
+	include/alibabacloud/ehpc/model/ListClustersRequest.h
+	include/alibabacloud/ehpc/model/ListClustersResult.h
+	include/alibabacloud/ehpc/model/SubmitJobRequest.h
+	include/alibabacloud/ehpc/model/SubmitJobResult.h
+	include/alibabacloud/ehpc/model/ListRegionsRequest.h
+	include/alibabacloud/ehpc/model/ListRegionsResult.h
+	include/alibabacloud/ehpc/model/DescribeAutoScaleConfigRequest.h
+	include/alibabacloud/ehpc/model/DescribeAutoScaleConfigResult.h
+	include/alibabacloud/ehpc/model/RerunJobsRequest.h
+	include/alibabacloud/ehpc/model/RerunJobsResult.h
+	include/alibabacloud/ehpc/model/EditJobTemplateRequest.h
+	include/alibabacloud/ehpc/model/EditJobTemplateResult.h
+	include/alibabacloud/ehpc/model/ListPreferredEcsTypesRequest.h
+	include/alibabacloud/ehpc/model/ListPreferredEcsTypesResult.h
+	include/alibabacloud/ehpc/model/AddContainerAppRequest.h
+	include/alibabacloud/ehpc/model/AddContainerAppResult.h
+	include/alibabacloud/ehpc/model/ListClusterLogsRequest.h
+	include/alibabacloud/ehpc/model/ListClusterLogsResult.h
+	include/alibabacloud/ehpc/model/RecoverClusterRequest.h
+	include/alibabacloud/ehpc/model/RecoverClusterResult.h )
 
 set(ehpc_src 
 	src/EHPCClient.cc
@@ -112,20 +140,20 @@ set(ehpc_src
 	src/model/DescribeClusterResult.cc
 	src/model/ListUsersRequest.cc
 	src/model/ListUsersResult.cc
-	src/model/UpgradeClientRequest.cc
-	src/model/UpgradeClientResult.cc
 	src/model/StopNodesRequest.cc
 	src/model/StopNodesResult.cc
+	src/model/PullImageRequest.cc
+	src/model/PullImageResult.cc
+	src/model/DescribeContainerAppRequest.cc
+	src/model/DescribeContainerAppResult.cc
 	src/model/ListCurrentClientVersionRequest.cc
 	src/model/ListCurrentClientVersionResult.cc
-	src/model/DeleteClusterRequest.cc
-	src/model/DeleteClusterResult.cc
-	src/model/ListImagesRequest.cc
-	src/model/ListImagesResult.cc
+	src/model/ModifyContainerAppAttributesRequest.cc
+	src/model/ModifyContainerAppAttributesResult.cc
 	src/model/SetAutoScaleConfigRequest.cc
 	src/model/SetAutoScaleConfigResult.cc
-	src/model/ListVolumesRequest.cc
-	src/model/ListVolumesResult.cc
+	src/model/ListInvocationResultsRequest.cc
+	src/model/ListInvocationResultsResult.cc
 	src/model/AddNodesRequest.cc
 	src/model/AddNodesResult.cc
 	src/model/ListSoftwaresRequest.cc
@@ -138,20 +166,16 @@ set(ehpc_src
 	src/model/GetAutoScaleConfigResult.cc
 	src/model/ListNodesRequest.cc
 	src/model/ListNodesResult.cc
-	src/model/SetJobUserRequest.cc
-	src/model/SetJobUserResult.cc
 	src/model/ModifyUserGroupsRequest.cc
 	src/model/ModifyUserGroupsResult.cc
 	src/model/StartClusterRequest.cc
 	src/model/StartClusterResult.cc
-	src/model/ListClustersRequest.cc
-	src/model/ListClustersResult.cc
-	src/model/SubmitJobRequest.cc
-	src/model/SubmitJobResult.cc
+	src/model/ListCommandsRequest.cc
+	src/model/ListCommandsResult.cc
 	src/model/ListCustomImagesRequest.cc
 	src/model/ListCustomImagesResult.cc
-	src/model/ListRegionsRequest.cc
-	src/model/ListRegionsResult.cc
+	src/model/InvokeShellCommandRequest.cc
+	src/model/InvokeShellCommandResult.cc
 	src/model/AddUsersRequest.cc
 	src/model/AddUsersResult.cc
 	src/model/ListJobTemplatesRequest.cc
@@ -164,20 +188,16 @@ set(ehpc_src
 	src/model/StopClusterResult.cc
 	src/model/ListNodesNoPagingRequest.cc
 	src/model/ListNodesNoPagingResult.cc
+	src/model/GetHybridClusterConfigRequest.cc
+	src/model/GetHybridClusterConfigResult.cc
 	src/model/CreateJobTemplateRequest.cc
 	src/model/CreateJobTemplateResult.cc
-	src/model/RerunJobsRequest.cc
-	src/model/RerunJobsResult.cc
 	src/model/ResetNodesRequest.cc
 	src/model/ResetNodesResult.cc
-	src/model/EditJobTemplateRequest.cc
-	src/model/EditJobTemplateResult.cc
-	src/model/ListPreferredEcsTypesRequest.cc
-	src/model/ListPreferredEcsTypesResult.cc
-	src/model/ListClusterLogsRequest.cc
-	src/model/ListClusterLogsResult.cc
-	src/model/RecoverClusterRequest.cc
-	src/model/RecoverClusterResult.cc
+	src/model/CreateHybridClusterRequest.cc
+	src/model/CreateHybridClusterResult.cc
+	src/model/ListContainerImagesRequest.cc
+	src/model/ListContainerImagesResult.cc
 	src/model/DeleteJobsRequest.cc
 	src/model/DeleteJobsResult.cc
 	src/model/DeleteNodesRequest.cc
@@ -187,7 +207,43 @@ set(ehpc_src
 	src/model/CreateClusterRequest.cc
 	src/model/CreateClusterResult.cc
 	src/model/ModifyUserPasswordsRequest.cc
-	src/model/ModifyUserPasswordsResult.cc )
+	src/model/ModifyUserPasswordsResult.cc
+	src/model/UpgradeClientRequest.cc
+	src/model/UpgradeClientResult.cc
+	src/model/DeleteClusterRequest.cc
+	src/model/DeleteClusterResult.cc
+	src/model/ListImagesRequest.cc
+	src/model/ListImagesResult.cc
+	src/model/ListVolumesRequest.cc
+	src/model/ListVolumesResult.cc
+	src/model/DeleteContainerAppsRequest.cc
+	src/model/DeleteContainerAppsResult.cc
+	src/model/ListInvocationStatusRequest.cc
+	src/model/ListInvocationStatusResult.cc
+	src/model/ListContainerAppsRequest.cc
+	src/model/ListContainerAppsResult.cc
+	src/model/SetJobUserRequest.cc
+	src/model/SetJobUserResult.cc
+	src/model/ListClustersRequest.cc
+	src/model/ListClustersResult.cc
+	src/model/SubmitJobRequest.cc
+	src/model/SubmitJobResult.cc
+	src/model/ListRegionsRequest.cc
+	src/model/ListRegionsResult.cc
+	src/model/DescribeAutoScaleConfigRequest.cc
+	src/model/DescribeAutoScaleConfigResult.cc
+	src/model/RerunJobsRequest.cc
+	src/model/RerunJobsResult.cc
+	src/model/EditJobTemplateRequest.cc
+	src/model/EditJobTemplateResult.cc
+	src/model/ListPreferredEcsTypesRequest.cc
+	src/model/ListPreferredEcsTypesResult.cc
+	src/model/AddContainerAppRequest.cc
+	src/model/AddContainerAppResult.cc
+	src/model/ListClusterLogsRequest.cc
+	src/model/ListClusterLogsResult.cc
+	src/model/RecoverClusterRequest.cc
+	src/model/RecoverClusterResult.cc )
 
 add_library(ehpc ${LIB_TYPE}
 	${ehpc_public_header}

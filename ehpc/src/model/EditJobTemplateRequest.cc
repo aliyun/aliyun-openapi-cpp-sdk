@@ -135,17 +135,6 @@ void EditJobTemplateRequest::setPackagePath(const std::string& packagePath)
 	setParameter("PackagePath", packagePath);
 }
 
-std::string EditJobTemplateRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void EditJobTemplateRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string EditJobTemplateRequest::getName()const
 {
 	return name_;

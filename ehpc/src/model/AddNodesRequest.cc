@@ -146,6 +146,17 @@ void AddNodesRequest::setEcsChargeType(const std::string& ecsChargeType)
 	setParameter("EcsChargeType", ecsChargeType);
 }
 
+std::string AddNodesRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void AddNodesRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setParameter("InstanceType", instanceType);
+}
+
 std::string AddNodesRequest::getComputeSpotPriceLimit()const
 {
 	return computeSpotPriceLimit_;

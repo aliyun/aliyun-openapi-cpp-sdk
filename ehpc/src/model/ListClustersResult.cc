@@ -76,6 +76,8 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.imageOwnerAlias = value["ImageOwnerAlias"].asString();
 		if(!value["ImageId"].isNull())
 			clustersObject.imageId = value["ImageId"].asString();
+		if(!value["Location"].isNull())
+			clustersObject.location = value["Location"].asString();
 		auto managersNode = value["Managers"];
 		if(!managersNode["Total"].isNull())
 			clustersObject.managers.total = std::stoi(managersNode["Total"].asString());

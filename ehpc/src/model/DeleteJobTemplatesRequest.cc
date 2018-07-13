@@ -25,17 +25,6 @@ DeleteJobTemplatesRequest::DeleteJobTemplatesRequest() :
 DeleteJobTemplatesRequest::~DeleteJobTemplatesRequest()
 {}
 
-std::string DeleteJobTemplatesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteJobTemplatesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string DeleteJobTemplatesRequest::getTemplates()const
 {
 	return templates_;

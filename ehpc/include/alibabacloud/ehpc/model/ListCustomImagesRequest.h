@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				ListCustomImagesRequest();
 				~ListCustomImagesRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getBaseOsTag()const;
 				void setBaseOsTag(const std::string& baseOsTag);
 				std::string getAccessKeyId()const;
@@ -45,7 +43,6 @@ namespace AlibabaCloud
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
 
             private:
-				std::string regionId_;
 				std::string baseOsTag_;
 				std::string accessKeyId_;
 				std::string imageOwnerAlias_;

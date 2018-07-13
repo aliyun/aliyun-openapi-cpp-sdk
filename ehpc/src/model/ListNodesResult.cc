@@ -66,6 +66,8 @@ void ListNodesResult::parse(const std::string &payload)
 			nodesObject.imageOwnerAlias = value["ImageOwnerAlias"].asString();
 		if(!value["ImageId"].isNull())
 			nodesObject.imageId = value["ImageId"].asString();
+		if(!value["Location"].isNull())
+			nodesObject.location = value["Location"].asString();
 		auto totalResourcesNode = value["TotalResources"];
 		if(!totalResourcesNode["Cpu"].isNull())
 			nodesObject.totalResources.cpu = std::stoi(totalResourcesNode["Cpu"].asString());

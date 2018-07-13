@@ -60,6 +60,7 @@ namespace AlibabaCloud
 					std::string regionId;
 					std::string lockReason;
 					std::string spotStrategy;
+					std::string location;
 				};
 
 

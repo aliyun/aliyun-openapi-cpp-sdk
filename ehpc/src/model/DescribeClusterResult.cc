@@ -61,6 +61,8 @@ void DescribeClusterResult::parse(const std::string &payload)
 		clusterInfo_.createTime = clusterInfoNode["CreateTime"].asString();
 	if(!clusterInfoNode["SecurityGroupId"].isNull())
 		clusterInfo_.securityGroupId = clusterInfoNode["SecurityGroupId"].asString();
+	if(!clusterInfoNode["VpcId"].isNull())
+		clusterInfo_.vpcId = clusterInfoNode["VpcId"].asString();
 	if(!clusterInfoNode["VSwitchId"].isNull())
 		clusterInfo_.vSwitchId = clusterInfoNode["VSwitchId"].asString();
 	if(!clusterInfoNode["VolumeType"].isNull())
@@ -89,6 +91,8 @@ void DescribeClusterResult::parse(const std::string &payload)
 		clusterInfo_.imageOwnerAlias = clusterInfoNode["ImageOwnerAlias"].asString();
 	if(!clusterInfoNode["ImageId"].isNull())
 		clusterInfo_.imageId = clusterInfoNode["ImageId"].asString();
+	if(!clusterInfoNode["Location"].isNull())
+		clusterInfo_.location = clusterInfoNode["Location"].asString();
 	auto allApplications = value["Applications"]["ApplicationInfo"];
 	for (auto value : allApplications)
 	{

@@ -36,6 +36,28 @@ void CreateJobTemplateRequest::setStderrRedirectPath(const std::string& stderrRe
 	setParameter("StderrRedirectPath", stderrRedirectPath);
 }
 
+std::string CreateJobTemplateRequest::getArrayRequest()const
+{
+	return arrayRequest_;
+}
+
+void CreateJobTemplateRequest::setArrayRequest(const std::string& arrayRequest)
+{
+	arrayRequest_ = arrayRequest;
+	setParameter("ArrayRequest", arrayRequest);
+}
+
+std::string CreateJobTemplateRequest::getPackagePath()const
+{
+	return packagePath_;
+}
+
+void CreateJobTemplateRequest::setPackagePath(const std::string& packagePath)
+{
+	packagePath_ = packagePath;
+	setParameter("PackagePath", packagePath);
+}
+
 std::string CreateJobTemplateRequest::getVariables()const
 {
 	return variables_;
@@ -47,6 +69,17 @@ void CreateJobTemplateRequest::setVariables(const std::string& variables)
 	setParameter("Variables", variables);
 }
 
+std::string CreateJobTemplateRequest::getName()const
+{
+	return name_;
+}
+
+void CreateJobTemplateRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
+}
+
 std::string CreateJobTemplateRequest::getRunasUser()const
 {
 	return runasUser_;
@@ -56,6 +89,17 @@ void CreateJobTemplateRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
 	setParameter("RunasUser", runasUser);
+}
+
+std::string CreateJobTemplateRequest::getStdoutRedirectPath()const
+{
+	return stdoutRedirectPath_;
+}
+
+void CreateJobTemplateRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
+{
+	stdoutRedirectPath_ = stdoutRedirectPath;
+	setParameter("StdoutRedirectPath", stdoutRedirectPath);
 }
 
 bool CreateJobTemplateRequest::getReRunable()const
@@ -100,60 +144,5 @@ void CreateJobTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateJobTemplateRequest::getArrayRequest()const
-{
-	return arrayRequest_;
-}
-
-void CreateJobTemplateRequest::setArrayRequest(const std::string& arrayRequest)
-{
-	arrayRequest_ = arrayRequest;
-	setParameter("ArrayRequest", arrayRequest);
-}
-
-std::string CreateJobTemplateRequest::getPackagePath()const
-{
-	return packagePath_;
-}
-
-void CreateJobTemplateRequest::setPackagePath(const std::string& packagePath)
-{
-	packagePath_ = packagePath;
-	setParameter("PackagePath", packagePath);
-}
-
-std::string CreateJobTemplateRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateJobTemplateRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string CreateJobTemplateRequest::getName()const
-{
-	return name_;
-}
-
-void CreateJobTemplateRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
-}
-
-std::string CreateJobTemplateRequest::getStdoutRedirectPath()const
-{
-	return stdoutRedirectPath_;
-}
-
-void CreateJobTemplateRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
-{
-	stdoutRedirectPath_ = stdoutRedirectPath;
-	setParameter("StdoutRedirectPath", stdoutRedirectPath);
 }
 

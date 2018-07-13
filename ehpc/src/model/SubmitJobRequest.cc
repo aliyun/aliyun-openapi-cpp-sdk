@@ -58,6 +58,17 @@ void SubmitJobRequest::setRunasUserPassword(const std::string& runasUserPassword
 	setParameter("RunasUserPassword", runasUserPassword);
 }
 
+std::string SubmitJobRequest::getPostCmdLine()const
+{
+	return postCmdLine_;
+}
+
+void SubmitJobRequest::setPostCmdLine(const std::string& postCmdLine)
+{
+	postCmdLine_ = postCmdLine;
+	setParameter("PostCmdLine", postCmdLine);
+}
+
 std::string SubmitJobRequest::getRunasUser()const
 {
 	return runasUser_;
@@ -135,6 +146,17 @@ void SubmitJobRequest::setArrayRequest(const std::string& arrayRequest)
 	setParameter("ArrayRequest", arrayRequest);
 }
 
+std::string SubmitJobRequest::getUnzipCmd()const
+{
+	return unzipCmd_;
+}
+
+void SubmitJobRequest::setUnzipCmd(const std::string& unzipCmd)
+{
+	unzipCmd_ = unzipCmd;
+	setParameter("UnzipCmd", unzipCmd);
+}
+
 std::string SubmitJobRequest::getPackagePath()const
 {
 	return packagePath_;
@@ -144,6 +166,17 @@ void SubmitJobRequest::setPackagePath(const std::string& packagePath)
 {
 	packagePath_ = packagePath;
 	setParameter("PackagePath", packagePath);
+}
+
+std::string SubmitJobRequest::getInputFileUrl()const
+{
+	return inputFileUrl_;
+}
+
+void SubmitJobRequest::setInputFileUrl(const std::string& inputFileUrl)
+{
+	inputFileUrl_ = inputFileUrl;
+	setParameter("InputFileUrl", inputFileUrl);
 }
 
 std::string SubmitJobRequest::getName()const
@@ -166,5 +199,16 @@ void SubmitJobRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPa
 {
 	stdoutRedirectPath_ = stdoutRedirectPath;
 	setParameter("StdoutRedirectPath", stdoutRedirectPath);
+}
+
+std::string SubmitJobRequest::getContainerId()const
+{
+	return containerId_;
+}
+
+void SubmitJobRequest::setContainerId(const std::string& containerId)
+{
+	containerId_ = containerId;
+	setParameter("ContainerId", containerId);
 }
 

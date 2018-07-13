@@ -25,17 +25,6 @@ ListCustomImagesRequest::ListCustomImagesRequest() :
 ListCustomImagesRequest::~ListCustomImagesRequest()
 {}
 
-std::string ListCustomImagesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListCustomImagesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string ListCustomImagesRequest::getBaseOsTag()const
 {
 	return baseOsTag_;
