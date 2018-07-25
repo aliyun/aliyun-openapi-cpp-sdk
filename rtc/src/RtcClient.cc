@@ -663,6 +663,42 @@ RtcClient::StopAppOutcomeCallable RtcClient::stopAppCallable(const StopAppReques
 	return task->get_future();
 }
 
+RtcClient::RemoveTerminalsOutcome RtcClient::removeTerminals(const RemoveTerminalsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveTerminalsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveTerminalsOutcome(RemoveTerminalsResult(outcome.result()));
+	else
+		return RemoveTerminalsOutcome(outcome.error());
+}
+
+void RtcClient::removeTerminalsAsync(const RemoveTerminalsRequest& request, const RemoveTerminalsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeTerminals(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::RemoveTerminalsOutcomeCallable RtcClient::removeTerminalsCallable(const RemoveTerminalsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveTerminalsOutcome()>>(
+			[this, request]()
+			{
+			return this->removeTerminals(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RtcClient::DeleteConferenceOutcome RtcClient::deleteConference(const DeleteConferenceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

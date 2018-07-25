@@ -56,6 +56,8 @@
 #include "model/DescribeRealTimeRecordListResult.h"
 #include "model/StopAppRequest.h"
 #include "model/StopAppResult.h"
+#include "model/RemoveTerminalsRequest.h"
+#include "model/RemoveTerminalsResult.h"
 #include "model/DeleteConferenceRequest.h"
 #include "model/DeleteConferenceResult.h"
 #include "model/UpdateChannelRequest.h"
@@ -124,6 +126,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopAppResult> StopAppOutcome;
 			typedef std::future<StopAppOutcome> StopAppOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::StopAppRequest&, const StopAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopAppAsyncHandler;
+			typedef Outcome<Error, Model::RemoveTerminalsResult> RemoveTerminalsOutcome;
+			typedef std::future<RemoveTerminalsOutcome> RemoveTerminalsOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::RemoveTerminalsRequest&, const RemoveTerminalsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveTerminalsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteConferenceResult> DeleteConferenceOutcome;
 			typedef std::future<DeleteConferenceOutcome> DeleteConferenceOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DeleteConferenceRequest&, const DeleteConferenceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConferenceAsyncHandler;
@@ -192,6 +197,9 @@ namespace AlibabaCloud
 			StopAppOutcome stopApp(const Model::StopAppRequest &request)const;
 			void stopAppAsync(const Model::StopAppRequest& request, const StopAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopAppOutcomeCallable stopAppCallable(const Model::StopAppRequest& request) const;
+			RemoveTerminalsOutcome removeTerminals(const Model::RemoveTerminalsRequest &request)const;
+			void removeTerminalsAsync(const Model::RemoveTerminalsRequest& request, const RemoveTerminalsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveTerminalsOutcomeCallable removeTerminalsCallable(const Model::RemoveTerminalsRequest& request) const;
 			DeleteConferenceOutcome deleteConference(const Model::DeleteConferenceRequest &request)const;
 			void deleteConferenceAsync(const Model::DeleteConferenceRequest& request, const DeleteConferenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteConferenceOutcomeCallable deleteConferenceCallable(const Model::DeleteConferenceRequest& request) const;

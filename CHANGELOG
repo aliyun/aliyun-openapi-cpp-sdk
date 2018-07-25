@@ -1,3 +1,7 @@
+2018-07-25 Version: 1.20.1
+1, Add RemoveTerminals API.
+
+
 2018-07-13 Version: 1.20.0
 1, New APIs for batch executing commands in cluster: InvokeShellCommand, ListCommands, etc.
 2, New APIs for HybridCluster (link E-HPC with cluster in local IDC): CreateHybridCluster, etc.

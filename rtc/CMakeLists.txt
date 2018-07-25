@@ -55,6 +55,8 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DescribeRealTimeRecordListResult.h
 	include/alibabacloud/rtc/model/StopAppRequest.h
 	include/alibabacloud/rtc/model/StopAppResult.h
+	include/alibabacloud/rtc/model/RemoveTerminalsRequest.h
+	include/alibabacloud/rtc/model/RemoveTerminalsResult.h
 	include/alibabacloud/rtc/model/DeleteConferenceRequest.h
 	include/alibabacloud/rtc/model/DeleteConferenceResult.h
 	include/alibabacloud/rtc/model/UpdateChannelRequest.h
@@ -100,6 +102,8 @@ set(rtc_src
 	src/model/DescribeRealTimeRecordListResult.cc
 	src/model/StopAppRequest.cc
 	src/model/StopAppResult.cc
+	src/model/RemoveTerminalsRequest.cc
+	src/model/RemoveTerminalsResult.cc
 	src/model/DeleteConferenceRequest.cc
 	src/model/DeleteConferenceResult.cc
 	src/model/UpdateChannelRequest.cc
