@@ -1,3 +1,8 @@
+2018-07-26 Version: 1.20.2
+1, Add BatchGetJobMetricInfo API.
+2, Add BatchGetPluginConfigInfo API.
+3, Add GetJobTopology API.
+
 2018-07-25 Version: 1.20.1
 1, Add RemoveTerminals API.
 
