@@ -84,6 +84,8 @@ void DescribeImagesResult::parse(const std::string &payload)
 			imagesObject.usage = value["Usage"].asString();
 		if(!value["IsCopied"].isNull())
 			imagesObject.isCopied = value["IsCopied"].asString() == "true";
+		if(!value["ResourceGroupId"].isNull())
+			imagesObject.resourceGroupId = value["ResourceGroupId"].asString();
 		auto allDiskDeviceMappings = value["DiskDeviceMappings"]["DiskDeviceMapping"];
 		for (auto value : allDiskDeviceMappings)
 		{

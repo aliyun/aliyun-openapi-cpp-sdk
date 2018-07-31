@@ -47,6 +47,17 @@ void RunInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool RunInstancesRequest::getUniqueSuffix()const
+{
+	return uniqueSuffix_;
+}
+
+void RunInstancesRequest::setUniqueSuffix(bool uniqueSuffix)
+{
+	uniqueSuffix_ = uniqueSuffix;
+	setParameter("UniqueSuffix", std::to_string(uniqueSuffix));
+}
+
 std::string RunInstancesRequest::getHpcClusterId()const
 {
 	return hpcClusterId_;

@@ -50,10 +50,16 @@ namespace AlibabaCloud
 						std::string privateIpAddress;
 						bool primary;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					std::string privateIpAddress;
 					std::string description;
 					std::string zoneId;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string vSwitchId;
 					std::string networkInterfaceName;
@@ -64,6 +70,7 @@ namespace AlibabaCloud
 					std::string vpcId;
 					AssociatedPublicIp associatedPublicIp;
 					std::string creationTime;
+					std::vector<NetworkInterfaceSet::Tag> tags;
 					std::vector<NetworkInterfaceSet::PrivateIpSet> privateIpSets;
 				};
 

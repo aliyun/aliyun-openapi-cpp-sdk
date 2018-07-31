@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string securityGroupName;
 					std::string vpcId;
+					std::string resourceGroupId;
 					std::string securityGroupId;
 					std::string creationTime;
 					std::vector<SecurityGroup::Tag> tags;

@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					std::string localStorageCategory;
 					std::string gPUSpec;
 					int baselineCredit;
+					std::string instanceFamilyLevel;
 					std::string instanceTypeId;
 				};
 

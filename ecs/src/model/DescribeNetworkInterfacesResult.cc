@@ -68,6 +68,8 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 			networkInterfaceSetsObject.instanceId = value["InstanceId"].asString();
 		if(!value["CreationTime"].isNull())
 			networkInterfaceSetsObject.creationTime = value["CreationTime"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			networkInterfaceSetsObject.resourceGroupId = value["ResourceGroupId"].asString();
 		auto allPrivateIpSets = value["PrivateIpSets"]["PrivateIpSet"];
 		for (auto value : allPrivateIpSets)
 		{
@@ -82,6 +84,16 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 			if(!associatedPublicIp1Node["AllocationId"].isNull())
 				privateIpSetsObject.associatedPublicIp1.allocationId = associatedPublicIp1Node["AllocationId"].asString();
 			networkInterfaceSetsObject.privateIpSets.push_back(privateIpSetsObject);
+		}
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+		{
+			NetworkInterfaceSet::Tag tagsObject;
+			if(!value["TagKey"].isNull())
+				tagsObject.tagKey = value["TagKey"].asString();
+			if(!value["TagValue"].isNull())
+				tagsObject.tagValue = value["TagValue"].asString();
+			networkInterfaceSetsObject.tags.push_back(tagsObject);
 		}
 		auto associatedPublicIpNode = value["AssociatedPublicIp"];
 		if(!associatedPublicIpNode["PublicIpAddress"].isNull())

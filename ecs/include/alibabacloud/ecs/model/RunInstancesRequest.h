@@ -63,6 +63,8 @@ namespace AlibabaCloud
 				void setLaunchTemplateName(const std::string& launchTemplateName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				bool getUniqueSuffix()const;
+				void setUniqueSuffix(bool uniqueSuffix);
 				std::string getHpcClusterId()const;
 				void setHpcClusterId(const std::string& hpcClusterId);
 				long getCallerParentId()const;
@@ -195,6 +197,7 @@ namespace AlibabaCloud
             private:
 				std::string launchTemplateName_;
 				long resourceOwnerId_;
+				bool uniqueSuffix_;
 				std::string hpcClusterId_;
 				long callerParentId_;
 				std::string securityEnhancementStrategy_;

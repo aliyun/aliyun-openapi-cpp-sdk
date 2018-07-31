@@ -36,6 +36,17 @@ void DescribeResourcesModificationRequest::setResourceOwnerId(long resourceOwner
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int DescribeResourcesModificationRequest::getMemory()const
+{
+	return memory_;
+}
+
+void DescribeResourcesModificationRequest::setMemory(int memory)
+{
+	memory_ = memory;
+	setParameter("Memory", std::to_string(memory));
+}
+
 long DescribeResourcesModificationRequest::getCallerParentId()const
 {
 	return callerParentId_;
@@ -100,6 +111,17 @@ void DescribeResourcesModificationRequest::setAccessKeyId(const std::string& acc
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+int DescribeResourcesModificationRequest::getCores()const
+{
+	return cores_;
+}
+
+void DescribeResourcesModificationRequest::setCores(int cores)
+{
+	cores_ = cores;
+	setParameter("Cores", std::to_string(cores));
 }
 
 std::string DescribeResourcesModificationRequest::getSecurityToken()const

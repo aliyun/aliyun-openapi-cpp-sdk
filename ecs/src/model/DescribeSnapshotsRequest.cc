@@ -146,6 +146,17 @@ void DescribeSnapshotsRequest::setTag1Value(const std::string& tag1Value)
 	setParameter("Tag1Value", tag1Value);
 }
 
+std::string DescribeSnapshotsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSnapshotsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeSnapshotsRequest::getFilter1Key()const
 {
 	return filter1Key_;

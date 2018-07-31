@@ -56,11 +56,32 @@ void DescribeInstanceAutoRenewAttributeResult::parse(const std::string &payload)
 			instanceRenewAttributesObject.renewalStatus = value["RenewalStatus"].asString();
 		instanceRenewAttributes_.push_back(instanceRenewAttributesObject);
 	}
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
+}
+
+int DescribeInstanceAutoRenewAttributeResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::vector<DescribeInstanceAutoRenewAttributeResult::InstanceRenewAttribute> DescribeInstanceAutoRenewAttributeResult::getInstanceRenewAttributes()const
 {
 	return instanceRenewAttributes_;
+}
+
+int DescribeInstanceAutoRenewAttributeResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int DescribeInstanceAutoRenewAttributeResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 

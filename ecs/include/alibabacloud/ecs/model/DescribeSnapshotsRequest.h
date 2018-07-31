@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getTag1Value()const;
 				void setTag1Value(const std::string& tag1Value);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getFilter1Key()const;
 				void setFilter1Key(const std::string& filter1Key);
 				std::string getRegionId()const;
@@ -112,6 +114,7 @@ namespace AlibabaCloud
 				std::string tag3Key_;
 				int pageNumber_;
 				std::string tag1Value_;
+				std::string resourceGroupId_;
 				std::string filter1Key_;
 				std::string regionId_;
 				int pageSize_;

@@ -58,6 +58,18 @@ void DescribeLaunchTemplatesResult::parse(const std::string &payload)
 			launchTemplateSetsObject.latestVersionNumber = std::stol(value["LatestVersionNumber"].asString());
 		if(!value["CreatedBy"].isNull())
 			launchTemplateSetsObject.createdBy = value["CreatedBy"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			launchTemplateSetsObject.resourceGroupId = value["ResourceGroupId"].asString();
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+		{
+			LaunchTemplateSet::Tag tagsObject;
+			if(!value["TagKey"].isNull())
+				tagsObject.tagKey = value["TagKey"].asString();
+			if(!value["TagValue"].isNull())
+				tagsObject.tagValue = value["TagValue"].asString();
+			launchTemplateSetsObject.tags.push_back(tagsObject);
+		}
 		launchTemplateSets_.push_back(launchTemplateSetsObject);
 	}
 	if(!value["TotalCount"].isNull())

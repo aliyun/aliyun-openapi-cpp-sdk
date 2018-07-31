@@ -60,6 +60,30 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 		priceInfo_.price.tradePrice = std::stof(priceNode["TradePrice"].asString());
 	if(!priceNode["Currency"].isNull())
 		priceInfo_.price.currency = priceNode["Currency"].asString();
+	auto allDetailInfos = value["DetailInfos"]["ResourcePriceModel"];
+	for (auto value : allDetailInfos)
+	{
+		PriceInfo::Price::ResourcePriceModel resourcePriceModelObject;
+		if(!value["Resource"].isNull())
+			resourcePriceModelObject.resource = value["Resource"].asString();
+		if(!value["OriginalPrice"].isNull())
+			resourcePriceModelObject.originalPrice = std::stof(value["OriginalPrice"].asString());
+		if(!value["DiscountPrice"].isNull())
+			resourcePriceModelObject.discountPrice = std::stof(value["DiscountPrice"].asString());
+		if(!value["TradePrice"].isNull())
+			resourcePriceModelObject.tradePrice = std::stof(value["TradePrice"].asString());
+		auto allSubRules = value["SubRules"]["Rule"];
+		for (auto value : allSubRules)
+		{
+			PriceInfo::Price::ResourcePriceModel::Rule1 subRulesObject;
+			if(!value["RuleId"].isNull())
+				subRulesObject.ruleId = std::stol(value["RuleId"].asString());
+			if(!value["Description"].isNull())
+				subRulesObject.description = value["Description"].asString();
+			resourcePriceModelObject.subRules.push_back(subRulesObject);
+		}
+		priceInfo_.price.detailInfos.push_back(resourcePriceModelObject);
+	}
 
 }
 

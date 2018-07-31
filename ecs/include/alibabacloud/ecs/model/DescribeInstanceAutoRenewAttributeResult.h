@@ -45,12 +45,18 @@ namespace AlibabaCloud
 				DescribeInstanceAutoRenewAttributeResult();
 				explicit DescribeInstanceAutoRenewAttributeResult(const std::string &payload);
 				~DescribeInstanceAutoRenewAttributeResult();
+				int getTotalCount()const;
 				std::vector<InstanceRenewAttribute> getInstanceRenewAttributes()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
 				std::vector<InstanceRenewAttribute> instanceRenewAttributes_;
+				int pageSize_;
+				int pageNumber_;
 
 			};
 		}

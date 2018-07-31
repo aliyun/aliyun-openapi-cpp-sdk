@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string sourceGroupId;
 					std::string policy;
 					std::string description;
+					std::string sourcePortRange;
 					std::string priority;
 					std::string createTime;
 					std::string nicType;

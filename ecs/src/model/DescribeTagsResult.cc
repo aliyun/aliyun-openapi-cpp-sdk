@@ -61,6 +61,14 @@ void DescribeTagsResult::parse(const std::string &payload)
 			tagsObject.resourceTypeCount.snapshot = std::stoi(resourceTypeCountNode["Snapshot"].asString());
 		if(!resourceTypeCountNode["Securitygroup"].isNull())
 			tagsObject.resourceTypeCount.securitygroup = std::stoi(resourceTypeCountNode["Securitygroup"].asString());
+		if(!resourceTypeCountNode["LaunchTemplate"].isNull())
+			tagsObject.resourceTypeCount.launchTemplate = std::stoi(resourceTypeCountNode["LaunchTemplate"].asString());
+		if(!resourceTypeCountNode["Eni"].isNull())
+			tagsObject.resourceTypeCount.eni = std::stoi(resourceTypeCountNode["Eni"].asString());
+		if(!resourceTypeCountNode["Ddh"].isNull())
+			tagsObject.resourceTypeCount.ddh = std::stoi(resourceTypeCountNode["Ddh"].asString());
+		if(!resourceTypeCountNode["KeyPair"].isNull())
+			tagsObject.resourceTypeCount.keyPair = std::stoi(resourceTypeCountNode["KeyPair"].asString());
 		tags_.push_back(tagsObject);
 	}
 	if(!value["PageSize"].isNull())

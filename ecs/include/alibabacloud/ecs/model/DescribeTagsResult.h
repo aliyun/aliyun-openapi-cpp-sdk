@@ -37,9 +37,13 @@ namespace AlibabaCloud
 					struct ResourceTypeCount
 					{
 						int snapshot;
+						int eni;
+						int keyPair;
 						int instance;
 						int volume;
+						int launchTemplate;
 						int securitygroup;
+						int ddh;
 						int image;
 						int disk;
 					};

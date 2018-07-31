@@ -80,6 +80,28 @@ void DescribeInstanceAutoRenewAttributeRequest::setOwnerAccount(const std::strin
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string DescribeInstanceAutoRenewAttributeRequest::getRenewalStatus()const
+{
+	return renewalStatus_;
+}
+
+void DescribeInstanceAutoRenewAttributeRequest::setRenewalStatus(const std::string& renewalStatus)
+{
+	renewalStatus_ = renewalStatus;
+	setParameter("RenewalStatus", renewalStatus);
+}
+
+std::string DescribeInstanceAutoRenewAttributeRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeInstanceAutoRenewAttributeRequest::setPageSize(const std::string& pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", pageSize);
+}
+
 long DescribeInstanceAutoRenewAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +111,16 @@ void DescribeInstanceAutoRenewAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeInstanceAutoRenewAttributeRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeInstanceAutoRenewAttributeRequest::setPageNumber(const std::string& pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", pageNumber);
 }
 

@@ -48,6 +48,8 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 			permissionsObject.ipProtocol = value["IpProtocol"].asString();
 		if(!value["PortRange"].isNull())
 			permissionsObject.portRange = value["PortRange"].asString();
+		if(!value["SourcePortRange"].isNull())
+			permissionsObject.sourcePortRange = value["SourcePortRange"].asString();
 		if(!value["SourceGroupId"].isNull())
 			permissionsObject.sourceGroupId = value["SourceGroupId"].asString();
 		if(!value["SourceGroupName"].isNull())

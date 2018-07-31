@@ -76,6 +76,8 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.instancePpsRx = std::stol(value["InstancePpsRx"].asString());
 		if(!value["InstancePpsTx"].isNull())
 			instanceTypesObject.instancePpsTx = std::stol(value["InstancePpsTx"].asString());
+		if(!value["InstanceFamilyLevel"].isNull())
+			instanceTypesObject.instanceFamilyLevel = value["InstanceFamilyLevel"].asString();
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 

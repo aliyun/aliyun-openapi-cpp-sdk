@@ -34,13 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct LaunchTemplateSet
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string launchTemplateName;
 					std::string createdBy;
 					std::string modifiedTime;
+					std::string resourceGroupId;
 					long latestVersionNumber;
 					std::string createTime;
 					std::string launchTemplateId;
 					long defaultVersionNumber;
+					std::vector<LaunchTemplateSet::Tag> tags;
 				};
 
 

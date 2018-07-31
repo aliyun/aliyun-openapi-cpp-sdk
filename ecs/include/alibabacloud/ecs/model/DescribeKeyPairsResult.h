@@ -34,8 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct KeyPair
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string keyPairFingerPrint;
 					std::string keyPairName;
+					std::string resourceGroupId;
+					std::vector<KeyPair::Tag> tags;
 				};
 
 
