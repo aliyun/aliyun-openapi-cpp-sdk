@@ -48,43 +48,42 @@ void ListSkillGroupsOfUserResult::parse(const std::string &payload)
 			skillLevelsObject.skillLevelId = value["SkillLevelId"].asString();
 		if(!value["Level"].isNull())
 			skillLevelsObject.level = std::stoi(value["Level"].asString());
-		auto allSkill = value["Skill"];
-		for (auto value : allSkill)
+		auto skillNode = value["Skill"];
+		if(!skillNode["SkillGroupId"].isNull())
+			skillLevelsObject.skill.skillGroupId = skillNode["SkillGroupId"].asString();
+		if(!skillNode["InstanceId"].isNull())
+			skillLevelsObject.skill.instanceId = skillNode["InstanceId"].asString();
+		if(!skillNode["SkillGroupName"].isNull())
+			skillLevelsObject.skill.skillGroupName = skillNode["SkillGroupName"].asString();
+		if(!skillNode["SkillGroupDescription"].isNull())
+			skillLevelsObject.skill.skillGroupDescription = skillNode["SkillGroupDescription"].asString();
+		auto allOutboundPhoneNumbers = value["OutboundPhoneNumbers"]["PhoneNumber"];
+		for (auto value : allOutboundPhoneNumbers)
 		{
-			SkillLevel::Skill skillObject;
-			if(!value["SkillGroupId"].isNull())
-				skillObject.skillGroupId = value["SkillGroupId"].asString();
+			SkillLevel::Skill::PhoneNumber phoneNumberObject;
+			if(!value["PhoneNumberId"].isNull())
+				phoneNumberObject.phoneNumberId = value["PhoneNumberId"].asString();
 			if(!value["InstanceId"].isNull())
-				skillObject.instanceId = value["InstanceId"].asString();
-			if(!value["SkillGroupName"].isNull())
-				skillObject.skillGroupName = value["SkillGroupName"].asString();
-			if(!value["SkillGroupDescription"].isNull())
-				skillObject.skillGroupDescription = value["SkillGroupDescription"].asString();
-			auto allOutboundPhoneNumbers = value["OutboundPhoneNumbers"]["PhoneNumber"];
-			for (auto value : allOutboundPhoneNumbers)
-			{
-				SkillLevel::Skill::PhoneNumber phoneNumberObject;
-				if(!value["PhoneNumberId"].isNull())
-					phoneNumberObject.phoneNumberId = value["PhoneNumberId"].asString();
-				if(!value["InstanceId"].isNull())
-					phoneNumberObject.instanceId = value["InstanceId"].asString();
-				if(!value["Number"].isNull())
-					phoneNumberObject.number = value["Number"].asString();
-				if(!value["PhoneNumberDescription"].isNull())
-					phoneNumberObject.phoneNumberDescription = value["PhoneNumberDescription"].asString();
-				if(!value["TestOnly"].isNull())
-					phoneNumberObject.testOnly = value["TestOnly"].asString() == "true";
-				if(!value["RemainingTime"].isNull())
-					phoneNumberObject.remainingTime = std::stoi(value["RemainingTime"].asString());
-				if(!value["AllowOutbound"].isNull())
-					phoneNumberObject.allowOutbound = value["AllowOutbound"].asString() == "true";
-				if(!value["Usage"].isNull())
-					phoneNumberObject.usage = value["Usage"].asString();
-				if(!value["Trunks"].isNull())
-					phoneNumberObject.trunks = std::stoi(value["Trunks"].asString());
-				skillObject.outboundPhoneNumbers.push_back(phoneNumberObject);
-			}
-			skillLevelsObject.skill.push_back(skillObject);
+				phoneNumberObject.instanceId = value["InstanceId"].asString();
+			if(!value["Number"].isNull())
+				phoneNumberObject.number = value["Number"].asString();
+			if(!value["PhoneNumberDescription"].isNull())
+				phoneNumberObject.phoneNumberDescription = value["PhoneNumberDescription"].asString();
+			if(!value["TestOnly"].isNull())
+				phoneNumberObject.testOnly = value["TestOnly"].asString() == "true";
+			if(!value["RemainingTime"].isNull())
+				phoneNumberObject.remainingTime = std::stoi(value["RemainingTime"].asString());
+			if(!value["AllowOutbound"].isNull())
+				phoneNumberObject.allowOutbound = value["AllowOutbound"].asString() == "true";
+			if(!value["Usage"].isNull())
+				phoneNumberObject.usage = value["Usage"].asString();
+			if(!value["Trunks"].isNull())
+				phoneNumberObject.trunks = std::stoi(value["Trunks"].asString());
+			if(!value["Province"].isNull())
+				phoneNumberObject.province = value["Province"].asString();
+			if(!value["City"].isNull())
+				phoneNumberObject.city = value["City"].asString();
+			skillLevelsObject.skill.outboundPhoneNumbers.push_back(phoneNumberObject);
 		}
 		skillLevels_.push_back(skillLevelsObject);
 	}

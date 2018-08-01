@@ -44,7 +44,7 @@ namespace AlibabaCloud
 				~GetConfigResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<ConfigItem> getConfigItem()const;
+				ConfigItem getConfigItem()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -53,7 +53,7 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				std::vector<ConfigItem> configItem_;
+				ConfigItem configItem_;
 				std::string code_;
 				bool success_;
 

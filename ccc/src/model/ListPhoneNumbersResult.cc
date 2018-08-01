@@ -62,22 +62,21 @@ void ListPhoneNumbersResult::parse(const std::string &payload)
 			phoneNumbersObject.usage = value["Usage"].asString();
 		if(!value["Trunks"].isNull())
 			phoneNumbersObject.trunks = std::stoi(value["Trunks"].asString());
-		auto allContactFlow = value["ContactFlow"];
-		for (auto value : allContactFlow)
-		{
-			PhoneNumber::ContactFlow contactFlowObject;
-			if(!value["ContactFlowId"].isNull())
-				contactFlowObject.contactFlowId = value["ContactFlowId"].asString();
-			if(!value["InstanceId"].isNull())
-				contactFlowObject.instanceId = value["InstanceId"].asString();
-			if(!value["ContactFlowName"].isNull())
-				contactFlowObject.contactFlowName = value["ContactFlowName"].asString();
-			if(!value["ContactFlowDescription"].isNull())
-				contactFlowObject.contactFlowDescription = value["ContactFlowDescription"].asString();
-			if(!value["Type"].isNull())
-				contactFlowObject.type = value["Type"].asString();
-			phoneNumbersObject.contactFlow.push_back(contactFlowObject);
-		}
+		if(!value["Province"].isNull())
+			phoneNumbersObject.province = value["Province"].asString();
+		if(!value["City"].isNull())
+			phoneNumbersObject.city = value["City"].asString();
+		auto contactFlowNode = value["ContactFlow"];
+		if(!contactFlowNode["ContactFlowId"].isNull())
+			phoneNumbersObject.contactFlow.contactFlowId = contactFlowNode["ContactFlowId"].asString();
+		if(!contactFlowNode["InstanceId"].isNull())
+			phoneNumbersObject.contactFlow.instanceId = contactFlowNode["InstanceId"].asString();
+		if(!contactFlowNode["ContactFlowName"].isNull())
+			phoneNumbersObject.contactFlow.contactFlowName = contactFlowNode["ContactFlowName"].asString();
+		if(!contactFlowNode["ContactFlowDescription"].isNull())
+			phoneNumbersObject.contactFlow.contactFlowDescription = contactFlowNode["ContactFlowDescription"].asString();
+		if(!contactFlowNode["Type"].isNull())
+			phoneNumbersObject.contactFlow.type = contactFlowNode["Type"].asString();
 		phoneNumbers_.push_back(phoneNumbersObject);
 	}
 	if(!value["Success"].isNull())

@@ -80,17 +80,6 @@ void ListRecordingsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
-long ListRecordingsRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void ListRecordingsRequest::setStartTime(long startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", std::to_string(startTime));
-}
-
 long ListRecordingsRequest::getStopTime()const
 {
 	return stopTime_;
@@ -100,6 +89,17 @@ void ListRecordingsRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
 	setParameter("StopTime", std::to_string(stopTime));
+}
+
+long ListRecordingsRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void ListRecordingsRequest::setStartTime(long startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 int ListRecordingsRequest::getPageNumber()const

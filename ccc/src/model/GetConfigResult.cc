@@ -40,16 +40,11 @@ void GetConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allConfigItem = value["ConfigItem"];
-	for (auto value : allConfigItem)
-	{
-		ConfigItem configItemObject;
-		if(!value["Name"].isNull())
-			configItemObject.name = value["Name"].asString();
-		if(!value["Value"].isNull())
-			configItemObject.value = value["Value"].asString();
-		configItem_.push_back(configItemObject);
-	}
+	auto configItemNode = value["ConfigItem"];
+	if(!configItemNode["Name"].isNull())
+		configItem_.name = configItemNode["Name"].asString();
+	if(!configItemNode["Value"].isNull())
+		configItem_.value = configItemNode["Value"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -71,7 +66,7 @@ int GetConfigResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
-std::vector<GetConfigResult::ConfigItem> GetConfigResult::getConfigItem()const
+GetConfigResult::ConfigItem GetConfigResult::getConfigItem()const
 {
 	return configItem_;
 }

@@ -50,7 +50,7 @@ namespace AlibabaCloud
 					int remainingTime;
 					int trunks;
 					std::string phoneNumberId;
-					std::vector<ContactFlow> contactFlow;
+					ContactFlow contactFlow;
 					std::string phoneNumberDescription;
 				};
 
@@ -60,7 +60,7 @@ namespace AlibabaCloud
 				~ModifyPhoneNumberResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<PhoneNumber> getPhoneNumber()const;
+				PhoneNumber getPhoneNumber()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -69,7 +69,7 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				std::vector<PhoneNumber> phoneNumber_;
+				PhoneNumber phoneNumber_;
 				std::string code_;
 				bool success_;
 

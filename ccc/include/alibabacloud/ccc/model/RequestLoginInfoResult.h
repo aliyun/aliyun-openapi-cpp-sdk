@@ -50,7 +50,7 @@ namespace AlibabaCloud
 				RequestLoginInfoResult();
 				explicit RequestLoginInfoResult(const std::string &payload);
 				~RequestLoginInfoResult();
-				std::vector<LoginInfo> getLoginInfo()const;
+				LoginInfo getLoginInfo()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
@@ -59,7 +59,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LoginInfo> loginInfo_;
+				LoginInfo loginInfo_;
 				std::string message_;
 				int httpStatusCode_;
 				std::string code_;

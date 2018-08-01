@@ -40,72 +40,57 @@ void GetUserResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allUser = value["User"];
-	for (auto value : allUser)
+	auto userNode = value["User"];
+	if(!userNode["UserId"].isNull())
+		user_.userId = userNode["UserId"].asString();
+	if(!userNode["RamId"].isNull())
+		user_.ramId = userNode["RamId"].asString();
+	if(!userNode["InstanceId"].isNull())
+		user_.instanceId = userNode["InstanceId"].asString();
+	auto allRoles = value["Roles"]["Role"];
+	for (auto value : allRoles)
 	{
-		User userObject;
-		if(!value["UserId"].isNull())
-			userObject.userId = value["UserId"].asString();
-		if(!value["RamId"].isNull())
-			userObject.ramId = value["RamId"].asString();
+		User::Role roleObject;
+		if(!value["RoleId"].isNull())
+			roleObject.roleId = value["RoleId"].asString();
 		if(!value["InstanceId"].isNull())
-			userObject.instanceId = value["InstanceId"].asString();
-		auto allRoles = value["Roles"]["Role"];
-		for (auto value : allRoles)
-		{
-			User::Role roleObject;
-			if(!value["RoleId"].isNull())
-				roleObject.roleId = value["RoleId"].asString();
-			if(!value["InstanceId"].isNull())
-				roleObject.instanceId = value["InstanceId"].asString();
-			if(!value["RoleName"].isNull())
-				roleObject.roleName = value["RoleName"].asString();
-			if(!value["RoleDescription"].isNull())
-				roleObject.roleDescription = value["RoleDescription"].asString();
-			userObject.roles.push_back(roleObject);
-		}
-		auto allSkillLevels = value["SkillLevels"]["SkillLevel"];
-		for (auto value : allSkillLevels)
-		{
-			User::SkillLevel skillLevelObject;
-			if(!value["SkillLevelId"].isNull())
-				skillLevelObject.skillLevelId = value["SkillLevelId"].asString();
-			if(!value["Level"].isNull())
-				skillLevelObject.level = std::stoi(value["Level"].asString());
-			auto allSkill = value["Skill"];
-			for (auto value : allSkill)
-			{
-				User::SkillLevel::Skill skillObject;
-				if(!value["SkillGroupId"].isNull())
-					skillObject.skillGroupId = value["SkillGroupId"].asString();
-				if(!value["InstanceId"].isNull())
-					skillObject.instanceId = value["InstanceId"].asString();
-				if(!value["SkillGroupName"].isNull())
-					skillObject.skillGroupName = value["SkillGroupName"].asString();
-				if(!value["SkillGroupDescription"].isNull())
-					skillObject.skillGroupDescription = value["SkillGroupDescription"].asString();
-				skillLevelObject.skill.push_back(skillObject);
-			}
-			userObject.skillLevels.push_back(skillLevelObject);
-		}
-		auto allDetail = value["Detail"];
-		for (auto value : allDetail)
-		{
-			User::Detail detailObject;
-			if(!value["LoginName"].isNull())
-				detailObject.loginName = value["LoginName"].asString();
-			if(!value["DisplayName"].isNull())
-				detailObject.displayName = value["DisplayName"].asString();
-			if(!value["Phone"].isNull())
-				detailObject.phone = value["Phone"].asString();
-			if(!value["Email"].isNull())
-				detailObject.email = value["Email"].asString();
-			if(!value["Department"].isNull())
-				detailObject.department = value["Department"].asString();
-			userObject.detail.push_back(detailObject);
-		}
-		user_.push_back(userObject);
+			roleObject.instanceId = value["InstanceId"].asString();
+		if(!value["RoleName"].isNull())
+			roleObject.roleName = value["RoleName"].asString();
+		if(!value["RoleDescription"].isNull())
+			roleObject.roleDescription = value["RoleDescription"].asString();
+		user_.roles.push_back(roleObject);
 	}
+	auto allSkillLevels = value["SkillLevels"]["SkillLevel"];
+	for (auto value : allSkillLevels)
+	{
+		User::SkillLevel skillLevelObject;
+		if(!value["SkillLevelId"].isNull())
+			skillLevelObject.skillLevelId = value["SkillLevelId"].asString();
+		if(!value["Level"].isNull())
+			skillLevelObject.level = std::stoi(value["Level"].asString());
+		auto skillNode = value["Skill"];
+		if(!skillNode["SkillGroupId"].isNull())
+			skillLevelObject.skill.skillGroupId = skillNode["SkillGroupId"].asString();
+		if(!skillNode["InstanceId"].isNull())
+			skillLevelObject.skill.instanceId = skillNode["InstanceId"].asString();
+		if(!skillNode["SkillGroupName"].isNull())
+			skillLevelObject.skill.skillGroupName = skillNode["SkillGroupName"].asString();
+		if(!skillNode["SkillGroupDescription"].isNull())
+			skillLevelObject.skill.skillGroupDescription = skillNode["SkillGroupDescription"].asString();
+		user_.skillLevels.push_back(skillLevelObject);
+	}
+	auto detailNode = userNode["Detail"];
+	if(!detailNode["LoginName"].isNull())
+		user_.detail.loginName = detailNode["LoginName"].asString();
+	if(!detailNode["DisplayName"].isNull())
+		user_.detail.displayName = detailNode["DisplayName"].asString();
+	if(!detailNode["Phone"].isNull())
+		user_.detail.phone = detailNode["Phone"].asString();
+	if(!detailNode["Email"].isNull())
+		user_.detail.email = detailNode["Email"].asString();
+	if(!detailNode["Department"].isNull())
+		user_.detail.department = detailNode["Department"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -117,7 +102,7 @@ void GetUserResult::parse(const std::string &payload)
 
 }
 
-std::vector<GetUserResult::User> GetUserResult::getUser()const
+GetUserResult::User GetUserResult::getUser()const
 {
 	return user_;
 }

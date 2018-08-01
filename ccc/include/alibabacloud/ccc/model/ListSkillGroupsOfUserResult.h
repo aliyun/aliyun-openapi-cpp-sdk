@@ -45,7 +45,9 @@ namespace AlibabaCloud
 							std::string instanceId;
 							int remainingTime;
 							int trunks;
+							std::string city;
 							std::string phoneNumberId;
+							std::string province;
 							std::string phoneNumberDescription;
 						};
 						std::string skillGroupName;
@@ -54,7 +56,7 @@ namespace AlibabaCloud
 						std::vector<PhoneNumber> outboundPhoneNumbers;
 						std::string skillGroupDescription;
 					};
-					std::vector<Skill> skill;
+					Skill skill;
 					std::string skillLevelId;
 					int level;
 				};

@@ -58,7 +58,7 @@ namespace AlibabaCloud
 							std::string skillGroupId;
 							std::string skillGroupDescription;
 						};
-						std::vector<Skill> skill;
+						Skill skill;
 						std::string skillLevelId;
 						int level;
 					};
@@ -67,14 +67,14 @@ namespace AlibabaCloud
 					std::string userId;
 					std::string ramId;
 					std::vector<Role> roles;
-					std::vector<Detail> detail;
+					Detail detail;
 				};
 
 
 				GetUserResult();
 				explicit GetUserResult(const std::string &payload);
 				~GetUserResult();
-				std::vector<User> getUser()const;
+				User getUser()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
@@ -83,7 +83,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<User> user_;
+				User user_;
 				std::string message_;
 				int httpStatusCode_;
 				std::string code_;
