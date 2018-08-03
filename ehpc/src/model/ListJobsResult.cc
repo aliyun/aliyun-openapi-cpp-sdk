@@ -50,6 +50,8 @@ void ListJobsResult::parse(const std::string &payload)
 			jobsObject.name = value["Name"].asString();
 		if(!value["Owner"].isNull())
 			jobsObject.owner = value["Owner"].asString();
+		if(!value["NodeList"].isNull())
+			jobsObject.nodeList = value["NodeList"].asString();
 		if(!value["Priority"].isNull())
 			jobsObject.priority = std::stoi(value["Priority"].asString());
 		if(!value["State"].isNull())

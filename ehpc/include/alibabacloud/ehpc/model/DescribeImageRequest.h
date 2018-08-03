@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_GETHYBRIDCLUSTERCONFIGREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_GETHYBRIDCLUSTERCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_DESCRIBEIMAGEREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_DESCRIBEIMAGEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT GetHybridClusterConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EHPC_EXPORT DescribeImageRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetHybridClusterConfigRequest();
-				~GetHybridClusterConfigRequest();
+				DescribeImageRequest();
+				~DescribeImageRequest();
 
-				std::string getNode()const;
-				void setNode(const std::string& node);
+				std::string getContainerType()const;
+				void setContainerType(const std::string& containerType);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
+				std::string getRepository()const;
+				void setRepository(const std::string& repository);
+				std::string getImageTag()const;
+				void setImageTag(const std::string& imageTag);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string node_;
+				std::string containerType_;
 				std::string clusterId_;
+				std::string repository_;
+				std::string imageTag_;
 				std::string accessKeyId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_GETHYBRIDCLUSTERCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_DESCRIBEIMAGEREQUEST_H_

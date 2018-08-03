@@ -43,10 +43,14 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				bool getEnableAutoGrow()const;
 				void setEnableAutoGrow(bool enableAutoGrow);
+				std::string getSpotPriceLimit()const;
+				void setSpotPriceLimit(const std::string& spotPriceLimit);
 				bool getEnableAutoShrink()const;
 				void setEnableAutoShrink(bool enableAutoShrink);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSpotStrategy()const;
+				void setSpotStrategy(const std::string& spotStrategy);
 				int getMaxNodesInCluster()const;
 				void setMaxNodesInCluster(int maxNodesInCluster);
 				std::string getExcludeNodes()const;
@@ -65,8 +69,10 @@ namespace AlibabaCloud
 				int growTimeoutInMinutes_;
 				std::string clusterId_;
 				bool enableAutoGrow_;
+				std::string spotPriceLimit_;
 				bool enableAutoShrink_;
 				std::string accessKeyId_;
+				std::string spotStrategy_;
 				int maxNodesInCluster_;
 				std::string excludeNodes_;
 				int shrinkIntervalInMinutes_;

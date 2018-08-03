@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "EHPCExport.h"
+#include "model/DeleteImageRequest.h"
+#include "model/DeleteImageResult.h"
 #include "model/DeleteUsersRequest.h"
 #include "model/DeleteUsersResult.h"
 #include "model/DescribeClusterRequest.h"
@@ -70,12 +72,16 @@
 #include "model/ListJobTemplatesResult.h"
 #include "model/ModifyClusterAttributesRequest.h"
 #include "model/ModifyClusterAttributesResult.h"
+#include "model/DescribeImageGatewayConfigRequest.h"
+#include "model/DescribeImageGatewayConfigResult.h"
 #include "model/DeleteJobTemplatesRequest.h"
 #include "model/DeleteJobTemplatesResult.h"
 #include "model/StopClusterRequest.h"
 #include "model/StopClusterResult.h"
 #include "model/ListNodesNoPagingRequest.h"
 #include "model/ListNodesNoPagingResult.h"
+#include "model/GetCloudMetricLogsRequest.h"
+#include "model/GetCloudMetricLogsResult.h"
 #include "model/GetHybridClusterConfigRequest.h"
 #include "model/GetHybridClusterConfigResult.h"
 #include "model/CreateJobTemplateRequest.h"
@@ -94,6 +100,8 @@
 #include "model/ListJobsResult.h"
 #include "model/CreateClusterRequest.h"
 #include "model/CreateClusterResult.h"
+#include "model/DescribeImageRequest.h"
+#include "model/DescribeImageResult.h"
 #include "model/ModifyUserPasswordsRequest.h"
 #include "model/ModifyUserPasswordsResult.h"
 #include "model/UpgradeClientRequest.h"
@@ -108,6 +116,8 @@
 #include "model/DeleteContainerAppsResult.h"
 #include "model/ListInvocationStatusRequest.h"
 #include "model/ListInvocationStatusResult.h"
+#include "model/ModifyImageGatewayConfigRequest.h"
+#include "model/ModifyImageGatewayConfigResult.h"
 #include "model/ListContainerAppsRequest.h"
 #include "model/ListContainerAppsResult.h"
 #include "model/SetJobUserRequest.h"
@@ -124,6 +134,8 @@
 #include "model/RerunJobsResult.h"
 #include "model/EditJobTemplateRequest.h"
 #include "model/EditJobTemplateResult.h"
+#include "model/AddLocalNodesRequest.h"
+#include "model/AddLocalNodesResult.h"
 #include "model/ListPreferredEcsTypesRequest.h"
 #include "model/ListPreferredEcsTypesResult.h"
 #include "model/AddContainerAppRequest.h"
@@ -141,6 +153,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_EHPC_EXPORT EHPCClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::DeleteImageResult> DeleteImageOutcome;
+			typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::DeleteImageRequest&, const DeleteImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUsersResult> DeleteUsersOutcome;
 			typedef std::future<DeleteUsersOutcome> DeleteUsersOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DeleteUsersRequest&, const DeleteUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersAsyncHandler;
@@ -213,6 +228,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyClusterAttributesResult> ModifyClusterAttributesOutcome;
 			typedef std::future<ModifyClusterAttributesOutcome> ModifyClusterAttributesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ModifyClusterAttributesRequest&, const ModifyClusterAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterAttributesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeImageGatewayConfigResult> DescribeImageGatewayConfigOutcome;
+			typedef std::future<DescribeImageGatewayConfigOutcome> DescribeImageGatewayConfigOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::DescribeImageGatewayConfigRequest&, const DescribeImageGatewayConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageGatewayConfigAsyncHandler;
 			typedef Outcome<Error, Model::DeleteJobTemplatesResult> DeleteJobTemplatesOutcome;
 			typedef std::future<DeleteJobTemplatesOutcome> DeleteJobTemplatesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DeleteJobTemplatesRequest&, const DeleteJobTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobTemplatesAsyncHandler;
@@ -222,6 +240,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListNodesNoPagingResult> ListNodesNoPagingOutcome;
 			typedef std::future<ListNodesNoPagingOutcome> ListNodesNoPagingOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListNodesNoPagingRequest&, const ListNodesNoPagingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNodesNoPagingAsyncHandler;
+			typedef Outcome<Error, Model::GetCloudMetricLogsResult> GetCloudMetricLogsOutcome;
+			typedef std::future<GetCloudMetricLogsOutcome> GetCloudMetricLogsOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::GetCloudMetricLogsRequest&, const GetCloudMetricLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCloudMetricLogsAsyncHandler;
 			typedef Outcome<Error, Model::GetHybridClusterConfigResult> GetHybridClusterConfigOutcome;
 			typedef std::future<GetHybridClusterConfigOutcome> GetHybridClusterConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetHybridClusterConfigRequest&, const GetHybridClusterConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetHybridClusterConfigAsyncHandler;
@@ -249,6 +270,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateClusterResult> CreateClusterOutcome;
 			typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::CreateClusterRequest&, const CreateClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
+			typedef Outcome<Error, Model::DescribeImageResult> DescribeImageOutcome;
+			typedef std::future<DescribeImageOutcome> DescribeImageOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::DescribeImageRequest&, const DescribeImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAsyncHandler;
 			typedef Outcome<Error, Model::ModifyUserPasswordsResult> ModifyUserPasswordsOutcome;
 			typedef std::future<ModifyUserPasswordsOutcome> ModifyUserPasswordsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ModifyUserPasswordsRequest&, const ModifyUserPasswordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserPasswordsAsyncHandler;
@@ -270,6 +294,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListInvocationStatusResult> ListInvocationStatusOutcome;
 			typedef std::future<ListInvocationStatusOutcome> ListInvocationStatusOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListInvocationStatusRequest&, const ListInvocationStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInvocationStatusAsyncHandler;
+			typedef Outcome<Error, Model::ModifyImageGatewayConfigResult> ModifyImageGatewayConfigOutcome;
+			typedef std::future<ModifyImageGatewayConfigOutcome> ModifyImageGatewayConfigOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ModifyImageGatewayConfigRequest&, const ModifyImageGatewayConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageGatewayConfigAsyncHandler;
 			typedef Outcome<Error, Model::ListContainerAppsResult> ListContainerAppsOutcome;
 			typedef std::future<ListContainerAppsOutcome> ListContainerAppsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListContainerAppsRequest&, const ListContainerAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListContainerAppsAsyncHandler;
@@ -294,6 +321,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EditJobTemplateResult> EditJobTemplateOutcome;
 			typedef std::future<EditJobTemplateOutcome> EditJobTemplateOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::EditJobTemplateRequest&, const EditJobTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EditJobTemplateAsyncHandler;
+			typedef Outcome<Error, Model::AddLocalNodesResult> AddLocalNodesOutcome;
+			typedef std::future<AddLocalNodesOutcome> AddLocalNodesOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::AddLocalNodesRequest&, const AddLocalNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLocalNodesAsyncHandler;
 			typedef Outcome<Error, Model::ListPreferredEcsTypesResult> ListPreferredEcsTypesOutcome;
 			typedef std::future<ListPreferredEcsTypesOutcome> ListPreferredEcsTypesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListPreferredEcsTypesRequest&, const ListPreferredEcsTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPreferredEcsTypesAsyncHandler;
@@ -311,6 +341,9 @@ namespace AlibabaCloud
 			EHPCClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			EHPCClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~EHPCClient();
+			DeleteImageOutcome deleteImage(const Model::DeleteImageRequest &request)const;
+			void deleteImageAsync(const Model::DeleteImageRequest& request, const DeleteImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteImageOutcomeCallable deleteImageCallable(const Model::DeleteImageRequest& request) const;
 			DeleteUsersOutcome deleteUsers(const Model::DeleteUsersRequest &request)const;
 			void deleteUsersAsync(const Model::DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUsersOutcomeCallable deleteUsersCallable(const Model::DeleteUsersRequest& request) const;
@@ -383,6 +416,9 @@ namespace AlibabaCloud
 			ModifyClusterAttributesOutcome modifyClusterAttributes(const Model::ModifyClusterAttributesRequest &request)const;
 			void modifyClusterAttributesAsync(const Model::ModifyClusterAttributesRequest& request, const ModifyClusterAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyClusterAttributesOutcomeCallable modifyClusterAttributesCallable(const Model::ModifyClusterAttributesRequest& request) const;
+			DescribeImageGatewayConfigOutcome describeImageGatewayConfig(const Model::DescribeImageGatewayConfigRequest &request)const;
+			void describeImageGatewayConfigAsync(const Model::DescribeImageGatewayConfigRequest& request, const DescribeImageGatewayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeImageGatewayConfigOutcomeCallable describeImageGatewayConfigCallable(const Model::DescribeImageGatewayConfigRequest& request) const;
 			DeleteJobTemplatesOutcome deleteJobTemplates(const Model::DeleteJobTemplatesRequest &request)const;
 			void deleteJobTemplatesAsync(const Model::DeleteJobTemplatesRequest& request, const DeleteJobTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteJobTemplatesOutcomeCallable deleteJobTemplatesCallable(const Model::DeleteJobTemplatesRequest& request) const;
@@ -392,6 +428,9 @@ namespace AlibabaCloud
 			ListNodesNoPagingOutcome listNodesNoPaging(const Model::ListNodesNoPagingRequest &request)const;
 			void listNodesNoPagingAsync(const Model::ListNodesNoPagingRequest& request, const ListNodesNoPagingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListNodesNoPagingOutcomeCallable listNodesNoPagingCallable(const Model::ListNodesNoPagingRequest& request) const;
+			GetCloudMetricLogsOutcome getCloudMetricLogs(const Model::GetCloudMetricLogsRequest &request)const;
+			void getCloudMetricLogsAsync(const Model::GetCloudMetricLogsRequest& request, const GetCloudMetricLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCloudMetricLogsOutcomeCallable getCloudMetricLogsCallable(const Model::GetCloudMetricLogsRequest& request) const;
 			GetHybridClusterConfigOutcome getHybridClusterConfig(const Model::GetHybridClusterConfigRequest &request)const;
 			void getHybridClusterConfigAsync(const Model::GetHybridClusterConfigRequest& request, const GetHybridClusterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetHybridClusterConfigOutcomeCallable getHybridClusterConfigCallable(const Model::GetHybridClusterConfigRequest& request) const;
@@ -419,6 +458,9 @@ namespace AlibabaCloud
 			CreateClusterOutcome createCluster(const Model::CreateClusterRequest &request)const;
 			void createClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateClusterOutcomeCallable createClusterCallable(const Model::CreateClusterRequest& request) const;
+			DescribeImageOutcome describeImage(const Model::DescribeImageRequest &request)const;
+			void describeImageAsync(const Model::DescribeImageRequest& request, const DescribeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeImageOutcomeCallable describeImageCallable(const Model::DescribeImageRequest& request) const;
 			ModifyUserPasswordsOutcome modifyUserPasswords(const Model::ModifyUserPasswordsRequest &request)const;
 			void modifyUserPasswordsAsync(const Model::ModifyUserPasswordsRequest& request, const ModifyUserPasswordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyUserPasswordsOutcomeCallable modifyUserPasswordsCallable(const Model::ModifyUserPasswordsRequest& request) const;
@@ -440,6 +482,9 @@ namespace AlibabaCloud
 			ListInvocationStatusOutcome listInvocationStatus(const Model::ListInvocationStatusRequest &request)const;
 			void listInvocationStatusAsync(const Model::ListInvocationStatusRequest& request, const ListInvocationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInvocationStatusOutcomeCallable listInvocationStatusCallable(const Model::ListInvocationStatusRequest& request) const;
+			ModifyImageGatewayConfigOutcome modifyImageGatewayConfig(const Model::ModifyImageGatewayConfigRequest &request)const;
+			void modifyImageGatewayConfigAsync(const Model::ModifyImageGatewayConfigRequest& request, const ModifyImageGatewayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyImageGatewayConfigOutcomeCallable modifyImageGatewayConfigCallable(const Model::ModifyImageGatewayConfigRequest& request) const;
 			ListContainerAppsOutcome listContainerApps(const Model::ListContainerAppsRequest &request)const;
 			void listContainerAppsAsync(const Model::ListContainerAppsRequest& request, const ListContainerAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListContainerAppsOutcomeCallable listContainerAppsCallable(const Model::ListContainerAppsRequest& request) const;
@@ -464,6 +509,9 @@ namespace AlibabaCloud
 			EditJobTemplateOutcome editJobTemplate(const Model::EditJobTemplateRequest &request)const;
 			void editJobTemplateAsync(const Model::EditJobTemplateRequest& request, const EditJobTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EditJobTemplateOutcomeCallable editJobTemplateCallable(const Model::EditJobTemplateRequest& request) const;
+			AddLocalNodesOutcome addLocalNodes(const Model::AddLocalNodesRequest &request)const;
+			void addLocalNodesAsync(const Model::AddLocalNodesRequest& request, const AddLocalNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLocalNodesOutcomeCallable addLocalNodesCallable(const Model::AddLocalNodesRequest& request) const;
 			ListPreferredEcsTypesOutcome listPreferredEcsTypes(const Model::ListPreferredEcsTypesRequest &request)const;
 			void listPreferredEcsTypesAsync(const Model::ListPreferredEcsTypesRequest& request, const ListPreferredEcsTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPreferredEcsTypesOutcomeCallable listPreferredEcsTypesCallable(const Model::ListPreferredEcsTypesRequest& request) const;

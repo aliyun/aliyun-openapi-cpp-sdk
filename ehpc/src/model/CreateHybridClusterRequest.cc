@@ -25,39 +25,6 @@ CreateHybridClusterRequest::CreateHybridClusterRequest() :
 CreateHybridClusterRequest::~CreateHybridClusterRequest()
 {}
 
-std::string CreateHybridClusterRequest::getVolumeProtocol()const
-{
-	return volumeProtocol_;
-}
-
-void CreateHybridClusterRequest::setVolumeProtocol(const std::string& volumeProtocol)
-{
-	volumeProtocol_ = volumeProtocol;
-	setParameter("VolumeProtocol", volumeProtocol);
-}
-
-std::string CreateHybridClusterRequest::getOsTag()const
-{
-	return osTag_;
-}
-
-void CreateHybridClusterRequest::setOsTag(const std::string& osTag)
-{
-	osTag_ = osTag;
-	setParameter("OsTag", osTag);
-}
-
-std::string CreateHybridClusterRequest::getRemoteDirectory()const
-{
-	return remoteDirectory_;
-}
-
-void CreateHybridClusterRequest::setRemoteDirectory(const std::string& remoteDirectory)
-{
-	remoteDirectory_ = remoteDirectory;
-	setParameter("RemoteDirectory", remoteDirectory);
-}
-
 std::string CreateHybridClusterRequest::getEhpcVersion()const
 {
 	return ehpcVersion_;
@@ -124,6 +91,17 @@ void CreateHybridClusterRequest::setEcsOrderComputeInstanceType(const std::strin
 	setParameter("EcsOrderComputeInstanceType", ecsOrderComputeInstanceType);
 }
 
+std::string CreateHybridClusterRequest::getOnPremiseVolumeRemotePath()const
+{
+	return onPremiseVolumeRemotePath_;
+}
+
+void CreateHybridClusterRequest::setOnPremiseVolumeRemotePath(const std::string& onPremiseVolumeRemotePath)
+{
+	onPremiseVolumeRemotePath_ = onPremiseVolumeRemotePath;
+	setParameter("OnPremiseVolumeRemotePath", onPremiseVolumeRemotePath);
+}
+
 std::string CreateHybridClusterRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -133,17 +111,6 @@ void CreateHybridClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateHybridClusterRequest::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
-void CreateHybridClusterRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateHybridClusterRequest::getVolumeType()const
@@ -166,6 +133,83 @@ void CreateHybridClusterRequest::setPassword(const std::string& password)
 {
 	password_ = password;
 	setParameter("Password", password);
+}
+
+std::string CreateHybridClusterRequest::getOnPremiseVolumeMountPoint()const
+{
+	return onPremiseVolumeMountPoint_;
+}
+
+void CreateHybridClusterRequest::setOnPremiseVolumeMountPoint(const std::string& onPremiseVolumeMountPoint)
+{
+	onPremiseVolumeMountPoint_ = onPremiseVolumeMountPoint;
+	setParameter("OnPremiseVolumeMountPoint", onPremiseVolumeMountPoint);
+}
+
+std::string CreateHybridClusterRequest::getOnPremiseVolumeProtocol()const
+{
+	return onPremiseVolumeProtocol_;
+}
+
+void CreateHybridClusterRequest::setOnPremiseVolumeProtocol(const std::string& onPremiseVolumeProtocol)
+{
+	onPremiseVolumeProtocol_ = onPremiseVolumeProtocol;
+	setParameter("OnPremiseVolumeProtocol", onPremiseVolumeProtocol);
+}
+
+std::string CreateHybridClusterRequest::getVolumeProtocol()const
+{
+	return volumeProtocol_;
+}
+
+void CreateHybridClusterRequest::setVolumeProtocol(const std::string& volumeProtocol)
+{
+	volumeProtocol_ = volumeProtocol;
+	setParameter("VolumeProtocol", volumeProtocol);
+}
+
+std::string CreateHybridClusterRequest::getOnPremiseVolumeLocalPath()const
+{
+	return onPremiseVolumeLocalPath_;
+}
+
+void CreateHybridClusterRequest::setOnPremiseVolumeLocalPath(const std::string& onPremiseVolumeLocalPath)
+{
+	onPremiseVolumeLocalPath_ = onPremiseVolumeLocalPath;
+	setParameter("OnPremiseVolumeLocalPath", onPremiseVolumeLocalPath);
+}
+
+std::string CreateHybridClusterRequest::getOsTag()const
+{
+	return osTag_;
+}
+
+void CreateHybridClusterRequest::setOsTag(const std::string& osTag)
+{
+	osTag_ = osTag;
+	setParameter("OsTag", osTag);
+}
+
+std::string CreateHybridClusterRequest::getRemoteDirectory()const
+{
+	return remoteDirectory_;
+}
+
+void CreateHybridClusterRequest::setRemoteDirectory(const std::string& remoteDirectory)
+{
+	remoteDirectory_ = remoteDirectory;
+	setParameter("RemoteDirectory", remoteDirectory);
+}
+
+std::string CreateHybridClusterRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void CreateHybridClusterRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateHybridClusterRequest::getNodes()const

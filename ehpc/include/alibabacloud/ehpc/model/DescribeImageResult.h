@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_GETHYBRIDCLUSTERCONFIGREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_GETHYBRIDCLUSTERCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_DESCRIBEIMAGERESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_DESCRIBEIMAGERESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/ehpc/EHPCExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT GetHybridClusterConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EHPC_EXPORT DescribeImageResult : public ServiceResult
 			{
-
 			public:
-				GetHybridClusterConfigRequest();
-				~GetHybridClusterConfigRequest();
+				struct ImageInfo
+				{
+					std::string status;
+					std::string type;
+					std::string repository;
+					std::string imageId;
+					std::string updateDateTime;
+					std::string tag;
+					std::string system;
+				};
 
-				std::string getNode()const;
-				void setNode(const std::string& node);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
-            private:
-				std::string node_;
-				std::string clusterId_;
-				std::string accessKeyId_;
+				DescribeImageResult();
+				explicit DescribeImageResult(const std::string &payload);
+				~DescribeImageResult();
+				ImageInfo getImageInfo()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				ImageInfo imageInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_GETHYBRIDCLUSTERCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_DESCRIBEIMAGERESULT_H_

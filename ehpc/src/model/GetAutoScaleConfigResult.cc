@@ -66,6 +66,10 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 		maxNodesInCluster_ = std::stoi(value["MaxNodesInCluster"].asString());
 	if(!value["ExcludeNodes"].isNull())
 		excludeNodes_ = value["ExcludeNodes"].asString();
+	if(!value["SpotStrategy"].isNull())
+		spotStrategy_ = value["SpotStrategy"].asString();
+	if(!value["SpotPriceLimit"].isNull())
+		spotPriceLimit_ = value["SpotPriceLimit"].asString();
 
 }
 
@@ -129,8 +133,18 @@ int GetAutoScaleConfigResult::getShrinkIntervalInMinutes()const
 	return shrinkIntervalInMinutes_;
 }
 
+std::string GetAutoScaleConfigResult::getSpotPriceLimit()const
+{
+	return spotPriceLimit_;
+}
+
 std::string GetAutoScaleConfigResult::getExcludeNodes()const
 {
 	return excludeNodes_;
+}
+
+std::string GetAutoScaleConfigResult::getSpotStrategy()const
+{
+	return spotStrategy_;
 }
 

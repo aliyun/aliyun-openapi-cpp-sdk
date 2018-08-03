@@ -69,6 +69,17 @@ void SetAutoScaleConfigRequest::setEnableAutoGrow(bool enableAutoGrow)
 	setParameter("EnableAutoGrow", std::to_string(enableAutoGrow));
 }
 
+std::string SetAutoScaleConfigRequest::getSpotPriceLimit()const
+{
+	return spotPriceLimit_;
+}
+
+void SetAutoScaleConfigRequest::setSpotPriceLimit(const std::string& spotPriceLimit)
+{
+	spotPriceLimit_ = spotPriceLimit;
+	setParameter("SpotPriceLimit", spotPriceLimit);
+}
+
 bool SetAutoScaleConfigRequest::getEnableAutoShrink()const
 {
 	return enableAutoShrink_;
@@ -89,6 +100,17 @@ void SetAutoScaleConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetAutoScaleConfigRequest::getSpotStrategy()const
+{
+	return spotStrategy_;
+}
+
+void SetAutoScaleConfigRequest::setSpotStrategy(const std::string& spotStrategy)
+{
+	spotStrategy_ = spotStrategy;
+	setParameter("SpotStrategy", spotStrategy);
 }
 
 int SetAutoScaleConfigRequest::getMaxNodesInCluster()const

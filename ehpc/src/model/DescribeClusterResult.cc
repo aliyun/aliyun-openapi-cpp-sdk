@@ -105,6 +105,16 @@ void DescribeClusterResult::parse(const std::string &payload)
 			applicationInfoObject.version = value["Version"].asString();
 		clusterInfo_.applications.push_back(applicationInfoObject);
 	}
+	auto allPostInstallScripts = value["PostInstallScripts"]["PostInstallScriptInfo"];
+	for (auto value : allPostInstallScripts)
+	{
+		ClusterInfo::PostInstallScriptInfo postInstallScriptInfoObject;
+		if(!value["Url"].isNull())
+			postInstallScriptInfoObject.url = value["Url"].asString();
+		if(!value["Args"].isNull())
+			postInstallScriptInfoObject.args = value["Args"].asString();
+		clusterInfo_.postInstallScripts.push_back(postInstallScriptInfoObject);
+	}
 	auto ecsInfoNode = clusterInfoNode["EcsInfo"];
 	auto managerNode = ecsInfoNode["Manager"];
 	if(!managerNode["Count"].isNull())

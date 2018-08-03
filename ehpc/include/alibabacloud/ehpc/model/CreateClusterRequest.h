@@ -106,6 +106,8 @@ namespace AlibabaCloud
 				void setAutoRenew(const std::string& autoRenew);
 				std::string getEcsChargeType()const;
 				void setEcsChargeType(const std::string& ecsChargeType);
+				std::string getInputFileUrl()const;
+				void setInputFileUrl(const std::string& inputFileUrl);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				bool getHaEnable()const;
@@ -155,6 +157,7 @@ namespace AlibabaCloud
 				std::vector<Application> application_;
 				std::string autoRenew_;
 				std::string ecsChargeType_;
+				std::string inputFileUrl_;
 				std::string vpcId_;
 				bool haEnable_;
 				std::string name_;

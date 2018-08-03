@@ -14,45 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ehpc/model/GetHybridClusterConfigRequest.h>
+#include <alibabacloud/ehpc/model/DescribeImageGatewayConfigRequest.h>
 
-using AlibabaCloud::EHPC::Model::GetHybridClusterConfigRequest;
+using AlibabaCloud::EHPC::Model::DescribeImageGatewayConfigRequest;
 
-GetHybridClusterConfigRequest::GetHybridClusterConfigRequest() :
-	RpcServiceRequest("ehpc", "2018-04-12", "GetHybridClusterConfig")
+DescribeImageGatewayConfigRequest::DescribeImageGatewayConfigRequest() :
+	RpcServiceRequest("ehpc", "2018-04-12", "DescribeImageGatewayConfig")
 {}
 
-GetHybridClusterConfigRequest::~GetHybridClusterConfigRequest()
+DescribeImageGatewayConfigRequest::~DescribeImageGatewayConfigRequest()
 {}
 
-std::string GetHybridClusterConfigRequest::getNode()const
-{
-	return node_;
-}
-
-void GetHybridClusterConfigRequest::setNode(const std::string& node)
-{
-	node_ = node;
-	setParameter("Node", node);
-}
-
-std::string GetHybridClusterConfigRequest::getClusterId()const
+std::string DescribeImageGatewayConfigRequest::getClusterId()const
 {
 	return clusterId_;
 }
 
-void GetHybridClusterConfigRequest::setClusterId(const std::string& clusterId)
+void DescribeImageGatewayConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
 	setParameter("ClusterId", clusterId);
 }
 
-std::string GetHybridClusterConfigRequest::getAccessKeyId()const
+std::string DescribeImageGatewayConfigRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void GetHybridClusterConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeImageGatewayConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);

@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string owner;
 					std::string _stderr;
 					int priority;
+					std::string nodeList;
 					std::string startTime;
 					std::string lastModifyTime;
 					std::string submitTime;

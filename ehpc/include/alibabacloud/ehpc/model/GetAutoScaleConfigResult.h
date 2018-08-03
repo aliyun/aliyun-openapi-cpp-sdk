@@ -49,7 +49,9 @@ namespace AlibabaCloud
 				std::string getUid()const;
 				int getGrowTimeoutInMinutes()const;
 				int getShrinkIntervalInMinutes()const;
+				std::string getSpotPriceLimit()const;
 				std::string getExcludeNodes()const;
+				std::string getSpotStrategy()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -66,7 +68,9 @@ namespace AlibabaCloud
 				std::string uid_;
 				int growTimeoutInMinutes_;
 				int shrinkIntervalInMinutes_;
+				std::string spotPriceLimit_;
 				std::string excludeNodes_;
+				std::string spotStrategy_;
 
 			};
 		}

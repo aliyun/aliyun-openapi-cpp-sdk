@@ -14,45 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ehpc/model/GetHybridClusterConfigRequest.h>
+#include <alibabacloud/ehpc/model/AddLocalNodesRequest.h>
 
-using AlibabaCloud::EHPC::Model::GetHybridClusterConfigRequest;
+using AlibabaCloud::EHPC::Model::AddLocalNodesRequest;
 
-GetHybridClusterConfigRequest::GetHybridClusterConfigRequest() :
-	RpcServiceRequest("ehpc", "2018-04-12", "GetHybridClusterConfig")
+AddLocalNodesRequest::AddLocalNodesRequest() :
+	RpcServiceRequest("ehpc", "2018-04-12", "AddLocalNodes")
 {}
 
-GetHybridClusterConfigRequest::~GetHybridClusterConfigRequest()
+AddLocalNodesRequest::~AddLocalNodesRequest()
 {}
 
-std::string GetHybridClusterConfigRequest::getNode()const
+std::string AddLocalNodesRequest::getNodes()const
 {
-	return node_;
+	return nodes_;
 }
 
-void GetHybridClusterConfigRequest::setNode(const std::string& node)
+void AddLocalNodesRequest::setNodes(const std::string& nodes)
 {
-	node_ = node;
-	setParameter("Node", node);
+	nodes_ = nodes;
+	setParameter("Nodes", nodes);
 }
 
-std::string GetHybridClusterConfigRequest::getClusterId()const
+std::string AddLocalNodesRequest::getClusterId()const
 {
 	return clusterId_;
 }
 
-void GetHybridClusterConfigRequest::setClusterId(const std::string& clusterId)
+void AddLocalNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
 	setParameter("ClusterId", clusterId);
 }
 
-std::string GetHybridClusterConfigRequest::getAccessKeyId()const
+std::string AddLocalNodesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void GetHybridClusterConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+void AddLocalNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);

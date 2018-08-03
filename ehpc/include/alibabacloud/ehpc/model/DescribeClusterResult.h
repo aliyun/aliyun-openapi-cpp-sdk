@@ -61,6 +61,11 @@ namespace AlibabaCloud
 						std::string tag;
 						std::string name;
 					};
+					struct PostInstallScriptInfo
+					{
+						std::string args;
+						std::string url;
+					};
 					std::string volumeProtocol;
 					std::string imageOwnerAlias;
 					std::string description;
@@ -75,6 +80,7 @@ namespace AlibabaCloud
 					std::string remoteDirectory;
 					std::string sccClusterId;
 					std::vector<ApplicationInfo> applications;
+					std::vector<PostInstallScriptInfo> postInstallScripts;
 					std::string createTime;
 					std::string securityGroupId;
 					std::string vSwitchId;

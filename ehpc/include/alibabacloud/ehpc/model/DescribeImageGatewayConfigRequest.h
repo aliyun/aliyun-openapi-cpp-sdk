@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_GETHYBRIDCLUSTERCONFIGREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_GETHYBRIDCLUSTERCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_DESCRIBEIMAGEGATEWAYCONFIGREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_DESCRIBEIMAGEGATEWAYCONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,22 +28,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT GetHybridClusterConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EHPC_EXPORT DescribeImageGatewayConfigRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetHybridClusterConfigRequest();
-				~GetHybridClusterConfigRequest();
+				DescribeImageGatewayConfigRequest();
+				~DescribeImageGatewayConfigRequest();
 
-				std::string getNode()const;
-				void setNode(const std::string& node);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string node_;
 				std::string clusterId_;
 				std::string accessKeyId_;
 
@@ -51,4 +48,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_GETHYBRIDCLUSTERCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_DESCRIBEIMAGEGATEWAYCONFIGREQUEST_H_

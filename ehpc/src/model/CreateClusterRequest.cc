@@ -377,6 +377,17 @@ void CreateClusterRequest::setEcsChargeType(const std::string& ecsChargeType)
 	setParameter("EcsChargeType", ecsChargeType);
 }
 
+std::string CreateClusterRequest::getInputFileUrl()const
+{
+	return inputFileUrl_;
+}
+
+void CreateClusterRequest::setInputFileUrl(const std::string& inputFileUrl)
+{
+	inputFileUrl_ = inputFileUrl;
+	setParameter("InputFileUrl", inputFileUrl);
+}
+
 std::string CreateClusterRequest::getVpcId()const
 {
 	return vpcId_;
