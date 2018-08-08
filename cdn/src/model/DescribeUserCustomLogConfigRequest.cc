@@ -25,17 +25,6 @@ DescribeUserCustomLogConfigRequest::DescribeUserCustomLogConfigRequest() :
 DescribeUserCustomLogConfigRequest::~DescribeUserCustomLogConfigRequest()
 {}
 
-std::string DescribeUserCustomLogConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeUserCustomLogConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
-}
-
 long DescribeUserCustomLogConfigRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -45,27 +34,5 @@ void DescribeUserCustomLogConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeUserCustomLogConfigRequest::getVersion()const
-{
-	return version_;
-}
-
-void DescribeUserCustomLogConfigRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setParameter("Version", version);
-}
-
-std::string DescribeUserCustomLogConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeUserCustomLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

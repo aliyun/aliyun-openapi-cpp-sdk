@@ -1059,42 +1059,6 @@ CdnClient::DescribeLiveStreamBitRateDataOutcomeCallable CdnClient::describeLiveS
 	return task->get_future();
 }
 
-CdnClient::SetUserDomainBlackListOutcome CdnClient::setUserDomainBlackList(const SetUserDomainBlackListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetUserDomainBlackListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetUserDomainBlackListOutcome(SetUserDomainBlackListResult(outcome.result()));
-	else
-		return SetUserDomainBlackListOutcome(outcome.error());
-}
-
-void CdnClient::setUserDomainBlackListAsync(const SetUserDomainBlackListRequest& request, const SetUserDomainBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setUserDomainBlackList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetUserDomainBlackListOutcomeCallable CdnClient::setUserDomainBlackListCallable(const SetUserDomainBlackListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetUserDomainBlackListOutcome()>>(
-			[this, request]()
-			{
-			return this->setUserDomainBlackList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::SetLocationAccessRestrictionOutcome CdnClient::setLocationAccessRestriction(const SetLocationAccessRestrictionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4911,42 +4875,6 @@ CdnClient::DescribeDomainISPDataOutcomeCallable CdnClient::describeDomainISPData
 	return task->get_future();
 }
 
-CdnClient::ClearUserDomainBlackListOutcome CdnClient::clearUserDomainBlackList(const ClearUserDomainBlackListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ClearUserDomainBlackListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ClearUserDomainBlackListOutcome(ClearUserDomainBlackListResult(outcome.result()));
-	else
-		return ClearUserDomainBlackListOutcome(outcome.error());
-}
-
-void CdnClient::clearUserDomainBlackListAsync(const ClearUserDomainBlackListRequest& request, const ClearUserDomainBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, clearUserDomainBlackList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::ClearUserDomainBlackListOutcomeCallable CdnClient::clearUserDomainBlackListCallable(const ClearUserDomainBlackListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ClearUserDomainBlackListOutcome()>>(
-			[this, request]()
-			{
-			return this->clearUserDomainBlackList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::DescribeDomainFileSizeProportionDataOutcome CdnClient::describeDomainFileSizeProportionData(const DescribeDomainFileSizeProportionDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5271,78 +5199,6 @@ CdnClient::DescribeFCTriggerOutcomeCallable CdnClient::describeFCTriggerCallable
 	return task->get_future();
 }
 
-CdnClient::SetUserBlackListOutcome CdnClient::setUserBlackList(const SetUserBlackListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetUserBlackListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetUserBlackListOutcome(SetUserBlackListResult(outcome.result()));
-	else
-		return SetUserBlackListOutcome(outcome.error());
-}
-
-void CdnClient::setUserBlackListAsync(const SetUserBlackListRequest& request, const SetUserBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setUserBlackList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetUserBlackListOutcomeCallable CdnClient::setUserBlackListCallable(const SetUserBlackListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetUserBlackListOutcome()>>(
-			[this, request]()
-			{
-			return this->setUserBlackList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::GetUserDomainBlackListOutcome CdnClient::getUserDomainBlackList(const GetUserDomainBlackListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetUserDomainBlackListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetUserDomainBlackListOutcome(GetUserDomainBlackListResult(outcome.result()));
-	else
-		return GetUserDomainBlackListOutcome(outcome.error());
-}
-
-void CdnClient::getUserDomainBlackListAsync(const GetUserDomainBlackListRequest& request, const GetUserDomainBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getUserDomainBlackList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::GetUserDomainBlackListOutcomeCallable CdnClient::getUserDomainBlackListCallable(const GetUserDomainBlackListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetUserDomainBlackListOutcome()>>(
-			[this, request]()
-			{
-			return this->getUserDomainBlackList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::DescribeDomainCCAttackInfoOutcome CdnClient::describeDomainCCAttackInfo(const DescribeDomainCCAttackInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5517,42 +5373,6 @@ CdnClient::DescribeDomainDownstreamBpsOfEdgeOutcomeCallable CdnClient::describeD
 			[this, request]()
 			{
 			return this->describeDomainDownstreamBpsOfEdge(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::ClearUserBlackListOutcome CdnClient::clearUserBlackList(const ClearUserBlackListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ClearUserBlackListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ClearUserBlackListOutcome(ClearUserBlackListResult(outcome.result()));
-	else
-		return ClearUserBlackListOutcome(outcome.error());
-}
-
-void CdnClient::clearUserBlackListAsync(const ClearUserBlackListRequest& request, const ClearUserBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, clearUserBlackList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::ClearUserBlackListOutcomeCallable CdnClient::clearUserBlackListCallable(const ClearUserBlackListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ClearUserBlackListOutcome()>>(
-			[this, request]()
-			{
-			return this->clearUserBlackList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

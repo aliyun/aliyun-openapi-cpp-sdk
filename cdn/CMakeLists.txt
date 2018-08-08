@@ -77,8 +77,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainAverageResponseTimeResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamBitRateDataRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamBitRateDataResult.h
-	include/alibabacloud/cdn/model/SetUserDomainBlackListRequest.h
-	include/alibabacloud/cdn/model/SetUserDomainBlackListResult.h
 	include/alibabacloud/cdn/model/SetLocationAccessRestrictionRequest.h
 	include/alibabacloud/cdn/model/SetLocationAccessRestrictionResult.h
 	include/alibabacloud/cdn/model/DescribeUserCustomLogConfigRequest.h
@@ -291,8 +289,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/AddLiveAppSnapshotConfigResult.h
 	include/alibabacloud/cdn/model/DescribeDomainISPDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainISPDataResult.h
-	include/alibabacloud/cdn/model/ClearUserDomainBlackListRequest.h
-	include/alibabacloud/cdn/model/ClearUserDomainBlackListResult.h
 	include/alibabacloud/cdn/model/DescribeDomainFileSizeProportionDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainFileSizeProportionDataResult.h
 	include/alibabacloud/cdn/model/DescribeLiveSpecificDomainMappingRequest.h
@@ -311,10 +307,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/UpdateFCTriggerResult.h
 	include/alibabacloud/cdn/model/DescribeFCTriggerRequest.h
 	include/alibabacloud/cdn/model/DescribeFCTriggerResult.h
-	include/alibabacloud/cdn/model/SetUserBlackListRequest.h
-	include/alibabacloud/cdn/model/SetUserBlackListResult.h
-	include/alibabacloud/cdn/model/GetUserDomainBlackListRequest.h
-	include/alibabacloud/cdn/model/GetUserDomainBlackListResult.h
 	include/alibabacloud/cdn/model/DescribeDomainCCAttackInfoRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainCCAttackInfoResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamsPublishListRequest.h
@@ -325,8 +317,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DeleteLivePullStreamInfoResult.h
 	include/alibabacloud/cdn/model/DescribeDomainDownstreamBpsOfEdgeRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainDownstreamBpsOfEdgeResult.h
-	include/alibabacloud/cdn/model/ClearUserBlackListRequest.h
-	include/alibabacloud/cdn/model/ClearUserBlackListResult.h
 	include/alibabacloud/cdn/model/DescribeDomainMax95BpsDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainMax95BpsDataResult.h
 	include/alibabacloud/cdn/model/SetHttpsOptionConfigRequest.h
@@ -428,8 +418,6 @@ set(cdn_src
 	src/model/DescribeDomainAverageResponseTimeResult.cc
 	src/model/DescribeLiveStreamBitRateDataRequest.cc
 	src/model/DescribeLiveStreamBitRateDataResult.cc
-	src/model/SetUserDomainBlackListRequest.cc
-	src/model/SetUserDomainBlackListResult.cc
 	src/model/SetLocationAccessRestrictionRequest.cc
 	src/model/SetLocationAccessRestrictionResult.cc
 	src/model/DescribeUserCustomLogConfigRequest.cc
@@ -642,8 +630,6 @@ set(cdn_src
 	src/model/AddLiveAppSnapshotConfigResult.cc
 	src/model/DescribeDomainISPDataRequest.cc
 	src/model/DescribeDomainISPDataResult.cc
-	src/model/ClearUserDomainBlackListRequest.cc
-	src/model/ClearUserDomainBlackListResult.cc
 	src/model/DescribeDomainFileSizeProportionDataRequest.cc
 	src/model/DescribeDomainFileSizeProportionDataResult.cc
 	src/model/DescribeLiveSpecificDomainMappingRequest.cc
@@ -662,10 +648,6 @@ set(cdn_src
 	src/model/UpdateFCTriggerResult.cc
 	src/model/DescribeFCTriggerRequest.cc
 	src/model/DescribeFCTriggerResult.cc
-	src/model/SetUserBlackListRequest.cc
-	src/model/SetUserBlackListResult.cc
-	src/model/GetUserDomainBlackListRequest.cc
-	src/model/GetUserDomainBlackListResult.cc
 	src/model/DescribeDomainCCAttackInfoRequest.cc
 	src/model/DescribeDomainCCAttackInfoResult.cc
 	src/model/DescribeLiveStreamsPublishListRequest.cc
@@ -676,8 +658,6 @@ set(cdn_src
 	src/model/DeleteLivePullStreamInfoResult.cc
 	src/model/DescribeDomainDownstreamBpsOfEdgeRequest.cc
 	src/model/DescribeDomainDownstreamBpsOfEdgeResult.cc
-	src/model/ClearUserBlackListRequest.cc
-	src/model/ClearUserBlackListResult.cc
 	src/model/DescribeDomainMax95BpsDataRequest.cc
 	src/model/DescribeDomainMax95BpsDataResult.cc
 	src/model/SetHttpsOptionConfigRequest.cc

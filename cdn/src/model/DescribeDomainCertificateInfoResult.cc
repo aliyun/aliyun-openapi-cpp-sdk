@@ -62,6 +62,16 @@ void DescribeDomainCertificateInfoResult::parse(const std::string &payload)
 			certInfosObject.serverCertificateStatus = value["ServerCertificateStatus"].asString();
 		if(!value["Status"].isNull())
 			certInfosObject.status = value["Status"].asString();
+		if(!value["ServerCertificate"].isNull())
+			certInfosObject.serverCertificate = value["ServerCertificate"].asString();
+		if(!value["CertUpdateTime"].isNull())
+			certInfosObject.certUpdateTime = value["CertUpdateTime"].asString();
+		if(!value["CertStartTime"].isNull())
+			certInfosObject.certStartTime = value["CertStartTime"].asString();
+		if(!value["CertCommonName"].isNull())
+			certInfosObject.certCommonName = value["CertCommonName"].asString();
+		if(!value["DomainCnameStatus"].isNull())
+			certInfosObject.domainCnameStatus = value["DomainCnameStatus"].asString();
 		certInfos_.push_back(certInfosObject);
 	}
 

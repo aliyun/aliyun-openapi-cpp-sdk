@@ -35,14 +35,19 @@ namespace AlibabaCloud
 				struct CertInfo
 				{
 					std::string status;
-					std::string certLife;
 					std::string domainName;
+					std::string certType;
+					std::string certStartTime;
+					std::string serverCertificateStatus;
+					std::string serverCertificate;
+					std::string certUpdateTime;
+					std::string certLife;
 					std::string certDomainName;
 					std::string certOrg;
-					std::string certType;
+					std::string certCommonName;
 					std::string certExpireTime;
+					std::string domainCnameStatus;
 					std::string certName;
-					std::string serverCertificateStatus;
 				};
 
 

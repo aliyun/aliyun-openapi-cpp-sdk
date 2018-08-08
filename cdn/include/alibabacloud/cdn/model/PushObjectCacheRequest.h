@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				PushObjectCacheRequest();
 				~PushObjectCacheRequest();
 
+				std::string getArea()const;
+				void setArea(const std::string& area);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getObjectPath()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string area_;
 				std::string securityToken_;
 				std::string objectPath_;
 				long ownerId_;

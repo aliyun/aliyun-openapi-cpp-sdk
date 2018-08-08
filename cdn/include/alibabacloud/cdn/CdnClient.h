@@ -78,8 +78,6 @@
 #include "model/DescribeDomainAverageResponseTimeResult.h"
 #include "model/DescribeLiveStreamBitRateDataRequest.h"
 #include "model/DescribeLiveStreamBitRateDataResult.h"
-#include "model/SetUserDomainBlackListRequest.h"
-#include "model/SetUserDomainBlackListResult.h"
 #include "model/SetLocationAccessRestrictionRequest.h"
 #include "model/SetLocationAccessRestrictionResult.h"
 #include "model/DescribeUserCustomLogConfigRequest.h"
@@ -292,8 +290,6 @@
 #include "model/AddLiveAppSnapshotConfigResult.h"
 #include "model/DescribeDomainISPDataRequest.h"
 #include "model/DescribeDomainISPDataResult.h"
-#include "model/ClearUserDomainBlackListRequest.h"
-#include "model/ClearUserDomainBlackListResult.h"
 #include "model/DescribeDomainFileSizeProportionDataRequest.h"
 #include "model/DescribeDomainFileSizeProportionDataResult.h"
 #include "model/DescribeLiveSpecificDomainMappingRequest.h"
@@ -312,10 +308,6 @@
 #include "model/UpdateFCTriggerResult.h"
 #include "model/DescribeFCTriggerRequest.h"
 #include "model/DescribeFCTriggerResult.h"
-#include "model/SetUserBlackListRequest.h"
-#include "model/SetUserBlackListResult.h"
-#include "model/GetUserDomainBlackListRequest.h"
-#include "model/GetUserDomainBlackListResult.h"
 #include "model/DescribeDomainCCAttackInfoRequest.h"
 #include "model/DescribeDomainCCAttackInfoResult.h"
 #include "model/DescribeLiveStreamsPublishListRequest.h"
@@ -326,8 +318,6 @@
 #include "model/DeleteLivePullStreamInfoResult.h"
 #include "model/DescribeDomainDownstreamBpsOfEdgeRequest.h"
 #include "model/DescribeDomainDownstreamBpsOfEdgeResult.h"
-#include "model/ClearUserBlackListRequest.h"
-#include "model/ClearUserBlackListResult.h"
 #include "model/DescribeDomainMax95BpsDataRequest.h"
 #include "model/DescribeDomainMax95BpsDataResult.h"
 #include "model/SetHttpsOptionConfigRequest.h"
@@ -463,9 +453,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveStreamBitRateDataResult> DescribeLiveStreamBitRateDataOutcome;
 			typedef std::future<DescribeLiveStreamBitRateDataOutcome> DescribeLiveStreamBitRateDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamBitRateDataRequest&, const DescribeLiveStreamBitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamBitRateDataAsyncHandler;
-			typedef Outcome<Error, Model::SetUserDomainBlackListResult> SetUserDomainBlackListOutcome;
-			typedef std::future<SetUserDomainBlackListOutcome> SetUserDomainBlackListOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::SetUserDomainBlackListRequest&, const SetUserDomainBlackListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetUserDomainBlackListAsyncHandler;
 			typedef Outcome<Error, Model::SetLocationAccessRestrictionResult> SetLocationAccessRestrictionOutcome;
 			typedef std::future<SetLocationAccessRestrictionOutcome> SetLocationAccessRestrictionOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetLocationAccessRestrictionRequest&, const SetLocationAccessRestrictionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLocationAccessRestrictionAsyncHandler;
@@ -784,9 +771,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainISPDataResult> DescribeDomainISPDataOutcome;
 			typedef std::future<DescribeDomainISPDataOutcome> DescribeDomainISPDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainISPDataRequest&, const DescribeDomainISPDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainISPDataAsyncHandler;
-			typedef Outcome<Error, Model::ClearUserDomainBlackListResult> ClearUserDomainBlackListOutcome;
-			typedef std::future<ClearUserDomainBlackListOutcome> ClearUserDomainBlackListOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::ClearUserDomainBlackListRequest&, const ClearUserDomainBlackListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ClearUserDomainBlackListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainFileSizeProportionDataResult> DescribeDomainFileSizeProportionDataOutcome;
 			typedef std::future<DescribeDomainFileSizeProportionDataOutcome> DescribeDomainFileSizeProportionDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainFileSizeProportionDataRequest&, const DescribeDomainFileSizeProportionDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainFileSizeProportionDataAsyncHandler;
@@ -814,12 +798,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeFCTriggerResult> DescribeFCTriggerOutcome;
 			typedef std::future<DescribeFCTriggerOutcome> DescribeFCTriggerOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeFCTriggerRequest&, const DescribeFCTriggerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFCTriggerAsyncHandler;
-			typedef Outcome<Error, Model::SetUserBlackListResult> SetUserBlackListOutcome;
-			typedef std::future<SetUserBlackListOutcome> SetUserBlackListOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::SetUserBlackListRequest&, const SetUserBlackListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetUserBlackListAsyncHandler;
-			typedef Outcome<Error, Model::GetUserDomainBlackListResult> GetUserDomainBlackListOutcome;
-			typedef std::future<GetUserDomainBlackListOutcome> GetUserDomainBlackListOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::GetUserDomainBlackListRequest&, const GetUserDomainBlackListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserDomainBlackListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainCCAttackInfoResult> DescribeDomainCCAttackInfoOutcome;
 			typedef std::future<DescribeDomainCCAttackInfoOutcome> DescribeDomainCCAttackInfoOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainCCAttackInfoRequest&, const DescribeDomainCCAttackInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainCCAttackInfoAsyncHandler;
@@ -835,9 +813,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainDownstreamBpsOfEdgeResult> DescribeDomainDownstreamBpsOfEdgeOutcome;
 			typedef std::future<DescribeDomainDownstreamBpsOfEdgeOutcome> DescribeDomainDownstreamBpsOfEdgeOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainDownstreamBpsOfEdgeRequest&, const DescribeDomainDownstreamBpsOfEdgeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainDownstreamBpsOfEdgeAsyncHandler;
-			typedef Outcome<Error, Model::ClearUserBlackListResult> ClearUserBlackListOutcome;
-			typedef std::future<ClearUserBlackListOutcome> ClearUserBlackListOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::ClearUserBlackListRequest&, const ClearUserBlackListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ClearUserBlackListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainMax95BpsDataResult> DescribeDomainMax95BpsDataOutcome;
 			typedef std::future<DescribeDomainMax95BpsDataOutcome> DescribeDomainMax95BpsDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainMax95BpsDataRequest&, const DescribeDomainMax95BpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainMax95BpsDataAsyncHandler;
@@ -990,9 +965,6 @@ namespace AlibabaCloud
 			DescribeLiveStreamBitRateDataOutcome describeLiveStreamBitRateData(const Model::DescribeLiveStreamBitRateDataRequest &request)const;
 			void describeLiveStreamBitRateDataAsync(const Model::DescribeLiveStreamBitRateDataRequest& request, const DescribeLiveStreamBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamBitRateDataOutcomeCallable describeLiveStreamBitRateDataCallable(const Model::DescribeLiveStreamBitRateDataRequest& request) const;
-			SetUserDomainBlackListOutcome setUserDomainBlackList(const Model::SetUserDomainBlackListRequest &request)const;
-			void setUserDomainBlackListAsync(const Model::SetUserDomainBlackListRequest& request, const SetUserDomainBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetUserDomainBlackListOutcomeCallable setUserDomainBlackListCallable(const Model::SetUserDomainBlackListRequest& request) const;
 			SetLocationAccessRestrictionOutcome setLocationAccessRestriction(const Model::SetLocationAccessRestrictionRequest &request)const;
 			void setLocationAccessRestrictionAsync(const Model::SetLocationAccessRestrictionRequest& request, const SetLocationAccessRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLocationAccessRestrictionOutcomeCallable setLocationAccessRestrictionCallable(const Model::SetLocationAccessRestrictionRequest& request) const;
@@ -1311,9 +1283,6 @@ namespace AlibabaCloud
 			DescribeDomainISPDataOutcome describeDomainISPData(const Model::DescribeDomainISPDataRequest &request)const;
 			void describeDomainISPDataAsync(const Model::DescribeDomainISPDataRequest& request, const DescribeDomainISPDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainISPDataOutcomeCallable describeDomainISPDataCallable(const Model::DescribeDomainISPDataRequest& request) const;
-			ClearUserDomainBlackListOutcome clearUserDomainBlackList(const Model::ClearUserDomainBlackListRequest &request)const;
-			void clearUserDomainBlackListAsync(const Model::ClearUserDomainBlackListRequest& request, const ClearUserDomainBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ClearUserDomainBlackListOutcomeCallable clearUserDomainBlackListCallable(const Model::ClearUserDomainBlackListRequest& request) const;
 			DescribeDomainFileSizeProportionDataOutcome describeDomainFileSizeProportionData(const Model::DescribeDomainFileSizeProportionDataRequest &request)const;
 			void describeDomainFileSizeProportionDataAsync(const Model::DescribeDomainFileSizeProportionDataRequest& request, const DescribeDomainFileSizeProportionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainFileSizeProportionDataOutcomeCallable describeDomainFileSizeProportionDataCallable(const Model::DescribeDomainFileSizeProportionDataRequest& request) const;
@@ -1341,12 +1310,6 @@ namespace AlibabaCloud
 			DescribeFCTriggerOutcome describeFCTrigger(const Model::DescribeFCTriggerRequest &request)const;
 			void describeFCTriggerAsync(const Model::DescribeFCTriggerRequest& request, const DescribeFCTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeFCTriggerOutcomeCallable describeFCTriggerCallable(const Model::DescribeFCTriggerRequest& request) const;
-			SetUserBlackListOutcome setUserBlackList(const Model::SetUserBlackListRequest &request)const;
-			void setUserBlackListAsync(const Model::SetUserBlackListRequest& request, const SetUserBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetUserBlackListOutcomeCallable setUserBlackListCallable(const Model::SetUserBlackListRequest& request) const;
-			GetUserDomainBlackListOutcome getUserDomainBlackList(const Model::GetUserDomainBlackListRequest &request)const;
-			void getUserDomainBlackListAsync(const Model::GetUserDomainBlackListRequest& request, const GetUserDomainBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetUserDomainBlackListOutcomeCallable getUserDomainBlackListCallable(const Model::GetUserDomainBlackListRequest& request) const;
 			DescribeDomainCCAttackInfoOutcome describeDomainCCAttackInfo(const Model::DescribeDomainCCAttackInfoRequest &request)const;
 			void describeDomainCCAttackInfoAsync(const Model::DescribeDomainCCAttackInfoRequest& request, const DescribeDomainCCAttackInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainCCAttackInfoOutcomeCallable describeDomainCCAttackInfoCallable(const Model::DescribeDomainCCAttackInfoRequest& request) const;
@@ -1362,9 +1325,6 @@ namespace AlibabaCloud
 			DescribeDomainDownstreamBpsOfEdgeOutcome describeDomainDownstreamBpsOfEdge(const Model::DescribeDomainDownstreamBpsOfEdgeRequest &request)const;
 			void describeDomainDownstreamBpsOfEdgeAsync(const Model::DescribeDomainDownstreamBpsOfEdgeRequest& request, const DescribeDomainDownstreamBpsOfEdgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainDownstreamBpsOfEdgeOutcomeCallable describeDomainDownstreamBpsOfEdgeCallable(const Model::DescribeDomainDownstreamBpsOfEdgeRequest& request) const;
-			ClearUserBlackListOutcome clearUserBlackList(const Model::ClearUserBlackListRequest &request)const;
-			void clearUserBlackListAsync(const Model::ClearUserBlackListRequest& request, const ClearUserBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ClearUserBlackListOutcomeCallable clearUserBlackListCallable(const Model::ClearUserBlackListRequest& request) const;
 			DescribeDomainMax95BpsDataOutcome describeDomainMax95BpsData(const Model::DescribeDomainMax95BpsDataRequest &request)const;
 			void describeDomainMax95BpsDataAsync(const Model::DescribeDomainMax95BpsDataRequest& request, const DescribeDomainMax95BpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainMax95BpsDataOutcomeCallable describeDomainMax95BpsDataCallable(const Model::DescribeDomainMax95BpsDataRequest& request) const;
