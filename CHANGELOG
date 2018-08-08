@@ -1,3 +1,6 @@
+2018-08-08 Version: 1.21.3
+1, First release.
+
 2018-08-07 Version: 1.21.2
 1, Add api GetGatewayBySubDevice.
 2, Modified the time related response parameters.
