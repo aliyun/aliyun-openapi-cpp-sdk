@@ -41,11 +41,14 @@ namespace AlibabaCloud
 				void setGroupId(const std::string& groupId);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
+				std::string getUserInfo()const;
+				void setUserInfo(const std::string& userInfo);
 
             private:
 				std::string image_;
 				std::string groupId_;
 				std::string userId_;
+				std::string userInfo_;
 
 			};
 		}

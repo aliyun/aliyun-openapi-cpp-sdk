@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LINKFACE_MODEL_UPDATEFACEREQUEST_H_
-#define ALIBABACLOUD_LINKFACE_MODEL_UPDATEFACEREQUEST_H_
+#ifndef ALIBABACLOUD_LINKFACE_MODEL_SEARCHFACEREQUEST_H_
+#define ALIBABACLOUD_LINKFACE_MODEL_SEARCHFACEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LINKFACE_EXPORT UpdateFaceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LINKFACE_EXPORT SearchFaceRequest : public RpcServiceRequest
 			{
 
 			public:
-				UpdateFaceRequest();
-				~UpdateFaceRequest();
+				SearchFaceRequest();
+				~SearchFaceRequest();
 
 				std::string getImage()const;
 				void setImage(const std::string& image);
-				std::string getUserId()const;
-				void setUserId(const std::string& userId);
-				std::string getUserInfo()const;
-				void setUserInfo(const std::string& userInfo);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
 
             private:
 				std::string image_;
-				std::string userId_;
-				std::string userInfo_;
+				std::string groupId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LINKFACE_MODEL_UPDATEFACEREQUEST_H_
+#endif // !ALIBABACLOUD_LINKFACE_MODEL_SEARCHFACEREQUEST_H_

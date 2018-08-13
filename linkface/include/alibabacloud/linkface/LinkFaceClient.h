@@ -42,6 +42,8 @@
 #include "model/QueryGroupUsersResult.h"
 #include "model/LinkFaceRequest.h"
 #include "model/LinkFaceResult.h"
+#include "model/SearchFaceRequest.h"
+#include "model/SearchFaceResult.h"
 #include "model/QueryAllGroupsRequest.h"
 #include "model/QueryAllGroupsResult.h"
 #include "model/RegisterFaceRequest.h"
@@ -91,6 +93,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::LinkFaceResult> LinkFaceOutcome;
 			typedef std::future<LinkFaceOutcome> LinkFaceOutcomeCallable;
 			typedef std::function<void(const LinkFaceClient*, const Model::LinkFaceRequest&, const LinkFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LinkFaceAsyncHandler;
+			typedef Outcome<Error, Model::SearchFaceResult> SearchFaceOutcome;
+			typedef std::future<SearchFaceOutcome> SearchFaceOutcomeCallable;
+			typedef std::function<void(const LinkFaceClient*, const Model::SearchFaceRequest&, const SearchFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchFaceAsyncHandler;
 			typedef Outcome<Error, Model::QueryAllGroupsResult> QueryAllGroupsOutcome;
 			typedef std::future<QueryAllGroupsOutcome> QueryAllGroupsOutcomeCallable;
 			typedef std::function<void(const LinkFaceClient*, const Model::QueryAllGroupsRequest&, const QueryAllGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAllGroupsAsyncHandler;
@@ -141,6 +146,9 @@ namespace AlibabaCloud
 			LinkFaceOutcome linkFace(const Model::LinkFaceRequest &request)const;
 			void linkFaceAsync(const Model::LinkFaceRequest& request, const LinkFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LinkFaceOutcomeCallable linkFaceCallable(const Model::LinkFaceRequest& request) const;
+			SearchFaceOutcome searchFace(const Model::SearchFaceRequest &request)const;
+			void searchFaceAsync(const Model::SearchFaceRequest& request, const SearchFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchFaceOutcomeCallable searchFaceCallable(const Model::SearchFaceRequest& request) const;
 			QueryAllGroupsOutcome queryAllGroups(const Model::QueryAllGroupsRequest &request)const;
 			void queryAllGroupsAsync(const Model::QueryAllGroupsRequest& request, const QueryAllGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryAllGroupsOutcomeCallable queryAllGroupsCallable(const Model::QueryAllGroupsRequest& request) const;

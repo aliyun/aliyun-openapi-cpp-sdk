@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/linkface/model/QueryFaceResult.h>
+#include <alibabacloud/linkface/model/SearchFaceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::LinkFace;
 using namespace AlibabaCloud::LinkFace::Model;
 
-QueryFaceResult::QueryFaceResult() :
+SearchFaceResult::SearchFaceResult() :
 	ServiceResult()
 {}
 
-QueryFaceResult::QueryFaceResult(const std::string &payload) :
+SearchFaceResult::SearchFaceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-QueryFaceResult::~QueryFaceResult()
+SearchFaceResult::~SearchFaceResult()
 {}
 
-void QueryFaceResult::parse(const std::string &payload)
+void SearchFaceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -41,23 +41,16 @@ void QueryFaceResult::parse(const std::string &payload)
 
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allUserFaceMetas = value["UserFaceMetas"]["UserFaceMetasItem"];
-	for (auto value : allUserFaceMetas)
+	auto allTopUserItem = value["TopUserItem"]["TopUserItemItem"];
+	for (auto value : allTopUserItem)
 	{
-		Data::UserFaceMetasItem userFaceMetasItemObject;
-		if(!value["ClientTag"].isNull())
-			userFaceMetasItemObject.clientTag = value["ClientTag"].asString();
-		if(!value["Index"].isNull())
-			userFaceMetasItemObject.index = std::stoi(value["Index"].asString());
-		if(!value["FaceUrl"].isNull())
-			userFaceMetasItemObject.faceUrl = value["FaceUrl"].asString();
-		if(!value["UserInfo"].isNull())
-			userFaceMetasItemObject.userInfo = value["UserInfo"].asString();
-		data_.userFaceMetas.push_back(userFaceMetasItemObject);
+		Data::TopUserItemItem topUserItemItemObject;
+		if(!value["UserId"].isNull())
+			topUserItemItemObject.userId = value["UserId"].asString();
+		if(!value["Score"].isNull())
+			topUserItemItemObject.score = std::stof(value["Score"].asString());
+		data_.topUserItem.push_back(topUserItemItemObject);
 	}
-		auto allGroupIds = dataNode["GroupIds"]["GroupIds"];
-		for (auto value : allGroupIds)
-			data_.groupIds.push_back(value.asString());
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
@@ -67,22 +60,22 @@ void QueryFaceResult::parse(const std::string &payload)
 
 }
 
-std::string QueryFaceResult::getMessage()const
+std::string SearchFaceResult::getMessage()const
 {
 	return message_;
 }
 
-QueryFaceResult::Data QueryFaceResult::getData()const
+SearchFaceResult::Data SearchFaceResult::getData()const
 {
 	return data_;
 }
 
-int QueryFaceResult::getCode()const
+int SearchFaceResult::getCode()const
 {
 	return code_;
 }
 
-bool QueryFaceResult::getSuccess()const
+bool SearchFaceResult::getSuccess()const
 {
 	return success_;
 }

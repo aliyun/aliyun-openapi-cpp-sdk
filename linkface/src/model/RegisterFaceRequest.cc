@@ -58,3 +58,14 @@ void RegisterFaceRequest::setUserId(const std::string& userId)
 	setParameter("UserId", userId);
 }
 
+std::string RegisterFaceRequest::getUserInfo()const
+{
+	return userInfo_;
+}
+
+void RegisterFaceRequest::setUserInfo(const std::string& userInfo)
+{
+	userInfo_ = userInfo;
+	setParameter("UserInfo", userInfo);
+}
+

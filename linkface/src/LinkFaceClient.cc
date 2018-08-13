@@ -411,6 +411,42 @@ LinkFaceClient::LinkFaceOutcomeCallable LinkFaceClient::linkFaceCallable(const L
 	return task->get_future();
 }
 
+LinkFaceClient::SearchFaceOutcome LinkFaceClient::searchFace(const SearchFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchFaceOutcome(SearchFaceResult(outcome.result()));
+	else
+		return SearchFaceOutcome(outcome.error());
+}
+
+void LinkFaceClient::searchFaceAsync(const SearchFaceRequest& request, const SearchFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkFaceClient::SearchFaceOutcomeCallable LinkFaceClient::searchFaceCallable(const SearchFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->searchFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LinkFaceClient::QueryAllGroupsOutcome LinkFaceClient::queryAllGroups(const QueryAllGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

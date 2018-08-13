@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LINKFACE_MODEL_QUERYFACERESULT_H_
-#define ALIBABACLOUD_LINKFACE_MODEL_QUERYFACERESULT_H_
+#ifndef ALIBABACLOUD_LINKFACE_MODEL_SEARCHFACERESULT_H_
+#define ALIBABACLOUD_LINKFACE_MODEL_SEARCHFACERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,26 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LINKFACE_EXPORT QueryFaceResult : public ServiceResult
+			class ALIBABACLOUD_LINKFACE_EXPORT SearchFaceResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct UserFaceMetasItem
+					struct TopUserItemItem
 					{
-						int index;
-						std::string userInfo;
-						std::string clientTag;
-						std::string faceUrl;
+						float score;
+						std::string userId;
 					};
-					std::vector<std::string> groupIds;
-					std::vector<UserFaceMetasItem> userFaceMetas;
+					std::vector<TopUserItemItem> topUserItem;
 				};
 
 
-				QueryFaceResult();
-				explicit QueryFaceResult(const std::string &payload);
-				~QueryFaceResult();
+				SearchFaceResult();
+				explicit SearchFaceResult(const std::string &payload);
+				~SearchFaceResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getCode()const;
@@ -66,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LINKFACE_MODEL_QUERYFACERESULT_H_
+#endif // !ALIBABACLOUD_LINKFACE_MODEL_SEARCHFACERESULT_H_

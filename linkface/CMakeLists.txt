@@ -41,6 +41,8 @@ set(linkface_public_header_model
 	include/alibabacloud/linkface/model/QueryGroupUsersResult.h
 	include/alibabacloud/linkface/model/LinkFaceRequest.h
 	include/alibabacloud/linkface/model/LinkFaceResult.h
+	include/alibabacloud/linkface/model/SearchFaceRequest.h
+	include/alibabacloud/linkface/model/SearchFaceResult.h
 	include/alibabacloud/linkface/model/QueryAllGroupsRequest.h
 	include/alibabacloud/linkface/model/QueryAllGroupsResult.h
 	include/alibabacloud/linkface/model/RegisterFaceRequest.h
@@ -74,6 +76,8 @@ set(linkface_src
 	src/model/QueryGroupUsersResult.cc
 	src/model/LinkFaceRequest.cc
 	src/model/LinkFaceResult.cc
+	src/model/SearchFaceRequest.cc
+	src/model/SearchFaceResult.cc
 	src/model/QueryAllGroupsRequest.cc
 	src/model/QueryAllGroupsResult.cc
 	src/model/RegisterFaceRequest.cc

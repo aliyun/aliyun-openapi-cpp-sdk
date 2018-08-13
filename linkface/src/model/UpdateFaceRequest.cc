@@ -47,3 +47,14 @@ void UpdateFaceRequest::setUserId(const std::string& userId)
 	setParameter("UserId", userId);
 }
 
+std::string UpdateFaceRequest::getUserInfo()const
+{
+	return userInfo_;
+}
+
+void UpdateFaceRequest::setUserInfo(const std::string& userInfo)
+{
+	userInfo_ = userInfo;
+	setParameter("UserInfo", userInfo);
+}
+
