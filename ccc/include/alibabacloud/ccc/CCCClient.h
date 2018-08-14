@@ -142,6 +142,8 @@
 #include "model/ListRolesResult.h"
 #include "model/ListConfigRequest.h"
 #include "model/ListConfigResult.h"
+#include "model/LaunchShortMessageAppraiseRequest.h"
+#include "model/LaunchShortMessageAppraiseResult.h"
 #include "model/ModifyPhoneNumberRequest.h"
 #include "model/ModifyPhoneNumberResult.h"
 #include "model/ListScenariosRequest.h"
@@ -367,6 +369,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListConfigResult> ListConfigOutcome;
 			typedef std::future<ListConfigOutcome> ListConfigOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListConfigRequest&, const ListConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConfigAsyncHandler;
+			typedef Outcome<Error, Model::LaunchShortMessageAppraiseResult> LaunchShortMessageAppraiseOutcome;
+			typedef std::future<LaunchShortMessageAppraiseOutcome> LaunchShortMessageAppraiseOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::LaunchShortMessageAppraiseRequest&, const LaunchShortMessageAppraiseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LaunchShortMessageAppraiseAsyncHandler;
 			typedef Outcome<Error, Model::ModifyPhoneNumberResult> ModifyPhoneNumberOutcome;
 			typedef std::future<ModifyPhoneNumberOutcome> ModifyPhoneNumberOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ModifyPhoneNumberRequest&, const ModifyPhoneNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPhoneNumberAsyncHandler;
@@ -606,6 +611,9 @@ namespace AlibabaCloud
 			ListConfigOutcome listConfig(const Model::ListConfigRequest &request)const;
 			void listConfigAsync(const Model::ListConfigRequest& request, const ListConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConfigOutcomeCallable listConfigCallable(const Model::ListConfigRequest& request) const;
+			LaunchShortMessageAppraiseOutcome launchShortMessageAppraise(const Model::LaunchShortMessageAppraiseRequest &request)const;
+			void launchShortMessageAppraiseAsync(const Model::LaunchShortMessageAppraiseRequest& request, const LaunchShortMessageAppraiseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			LaunchShortMessageAppraiseOutcomeCallable launchShortMessageAppraiseCallable(const Model::LaunchShortMessageAppraiseRequest& request) const;
 			ModifyPhoneNumberOutcome modifyPhoneNumber(const Model::ModifyPhoneNumberRequest &request)const;
 			void modifyPhoneNumberAsync(const Model::ModifyPhoneNumberRequest& request, const ModifyPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPhoneNumberOutcomeCallable modifyPhoneNumberCallable(const Model::ModifyPhoneNumberRequest& request) const;

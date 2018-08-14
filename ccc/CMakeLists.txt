@@ -141,6 +141,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListRolesResult.h
 	include/alibabacloud/ccc/model/ListConfigRequest.h
 	include/alibabacloud/ccc/model/ListConfigResult.h
+	include/alibabacloud/ccc/model/LaunchShortMessageAppraiseRequest.h
+	include/alibabacloud/ccc/model/LaunchShortMessageAppraiseResult.h
 	include/alibabacloud/ccc/model/ModifyPhoneNumberRequest.h
 	include/alibabacloud/ccc/model/ModifyPhoneNumberResult.h
 	include/alibabacloud/ccc/model/ListScenariosRequest.h
@@ -300,6 +302,8 @@ set(ccc_src
 	src/model/ListRolesResult.cc
 	src/model/ListConfigRequest.cc
 	src/model/ListConfigResult.cc
+	src/model/LaunchShortMessageAppraiseRequest.cc
+	src/model/LaunchShortMessageAppraiseResult.cc
 	src/model/ModifyPhoneNumberRequest.cc
 	src/model/ModifyPhoneNumberResult.cc
 	src/model/ListScenariosRequest.cc

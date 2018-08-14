@@ -69,6 +69,17 @@ void DialogueRequest::setCalledNumber(const std::string& calledNumber)
 	setParameter("CalledNumber", calledNumber);
 }
 
+std::string DialogueRequest::getActionKey()const
+{
+	return actionKey_;
+}
+
+void DialogueRequest::setActionKey(const std::string& actionKey)
+{
+	actionKey_ = actionKey;
+	setParameter("ActionKey", actionKey);
+}
+
 std::string DialogueRequest::getActionParams()const
 {
 	return actionParams_;

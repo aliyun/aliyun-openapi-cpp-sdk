@@ -2211,6 +2211,42 @@ CCCClient::ListConfigOutcomeCallable CCCClient::listConfigCallable(const ListCon
 	return task->get_future();
 }
 
+CCCClient::LaunchShortMessageAppraiseOutcome CCCClient::launchShortMessageAppraise(const LaunchShortMessageAppraiseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LaunchShortMessageAppraiseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LaunchShortMessageAppraiseOutcome(LaunchShortMessageAppraiseResult(outcome.result()));
+	else
+		return LaunchShortMessageAppraiseOutcome(outcome.error());
+}
+
+void CCCClient::launchShortMessageAppraiseAsync(const LaunchShortMessageAppraiseRequest& request, const LaunchShortMessageAppraiseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, launchShortMessageAppraise(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::LaunchShortMessageAppraiseOutcomeCallable CCCClient::launchShortMessageAppraiseCallable(const LaunchShortMessageAppraiseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LaunchShortMessageAppraiseOutcome()>>(
+			[this, request]()
+			{
+			return this->launchShortMessageAppraise(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::ModifyPhoneNumberOutcome CCCClient::modifyPhoneNumber(const ModifyPhoneNumberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
