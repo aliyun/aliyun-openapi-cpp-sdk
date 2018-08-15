@@ -25,17 +25,6 @@ DescribeLaunchTemplatesRequest::DescribeLaunchTemplatesRequest() :
 DescribeLaunchTemplatesRequest::~DescribeLaunchTemplatesRequest()
 {}
 
-std::string DescribeLaunchTemplatesRequest::getTemplateTag1Value()const
-{
-	return templateTag1Value_;
-}
-
-void DescribeLaunchTemplatesRequest::setTemplateTag1Value(const std::string& templateTag1Value)
-{
-	templateTag1Value_ = templateTag1Value;
-	setParameter("TemplateTag1Value", templateTag1Value);
-}
-
 std::vector<std::string> DescribeLaunchTemplatesRequest::getLaunchTemplateName()const
 {
 	return launchTemplateName_;
@@ -57,17 +46,6 @@ void DescribeLaunchTemplatesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeLaunchTemplatesRequest::getTemplateTag4Key()const
-{
-	return templateTag4Key_;
-}
-
-void DescribeLaunchTemplatesRequest::setTemplateTag4Key(const std::string& templateTag4Key)
-{
-	templateTag4Key_ = templateTag4Key;
-	setParameter("TemplateTag4Key", templateTag4Key);
 }
 
 long DescribeLaunchTemplatesRequest::getCallerParentId()const
@@ -147,17 +125,6 @@ void DescribeLaunchTemplatesRequest::setAccessKeyId(const std::string& accessKey
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeLaunchTemplatesRequest::getTemplateTag3Key()const
-{
-	return templateTag3Key_;
-}
-
-void DescribeLaunchTemplatesRequest::setTemplateTag3Key(const std::string& templateTag3Key)
-{
-	templateTag3Key_ = templateTag3Key;
-	setParameter("TemplateTag3Key", templateTag3Key);
-}
-
 std::string DescribeLaunchTemplatesRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -178,17 +145,6 @@ void DescribeLaunchTemplatesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
-}
-
-std::string DescribeLaunchTemplatesRequest::getTemplateTag5Value()const
-{
-	return templateTag5Value_;
-}
-
-void DescribeLaunchTemplatesRequest::setTemplateTag5Value(const std::string& templateTag5Value)
-{
-	templateTag5Value_ = templateTag5Value;
-	setParameter("TemplateTag5Value", templateTag5Value);
 }
 
 bool DescribeLaunchTemplatesRequest::getEnable()const
@@ -235,15 +191,21 @@ void DescribeLaunchTemplatesRequest::setCallerBidEmail(const std::string& caller
 	setParameter("CallerBidEmail", callerBidEmail);
 }
 
-std::string DescribeLaunchTemplatesRequest::getTemplateTag3Value()const
+std::vector<DescribeLaunchTemplatesRequest::TemplateTag> DescribeLaunchTemplatesRequest::getTemplateTag()const
 {
-	return templateTag3Value_;
+	return templateTag_;
 }
 
-void DescribeLaunchTemplatesRequest::setTemplateTag3Value(const std::string& templateTag3Value)
+void DescribeLaunchTemplatesRequest::setTemplateTag(const std::vector<TemplateTag>& templateTag)
 {
-	templateTag3Value_ = templateTag3Value;
-	setParameter("TemplateTag3Value", templateTag3Value);
+	templateTag_ = templateTag;
+	int i = 0;
+	for(int i = 0; i!= templateTag.size(); i++)	{
+		auto obj = templateTag.at(i);
+		std::string str ="TemplateTag."+ std::to_string(i);
+		setParameter(str + ".Key", obj.key);
+		setParameter(str + ".Value", obj.value);
+	}
 }
 
 std::string DescribeLaunchTemplatesRequest::getCallerUidEmail()const
@@ -277,17 +239,6 @@ void DescribeLaunchTemplatesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
 	setParameter("App_ip", app_ip);
-}
-
-std::string DescribeLaunchTemplatesRequest::getTemplateTag2Key()const
-{
-	return templateTag2Key_;
-}
-
-void DescribeLaunchTemplatesRequest::setTemplateTag2Key(const std::string& templateTag2Key)
-{
-	templateTag2Key_ = templateTag2Key;
-	setParameter("TemplateTag2Key", templateTag2Key);
 }
 
 std::vector<std::string> DescribeLaunchTemplatesRequest::getLaunchTemplateId()const
@@ -333,17 +284,6 @@ void DescribeLaunchTemplatesRequest::setTemplateResourceGroupId(const std::strin
 {
 	templateResourceGroupId_ = templateResourceGroupId;
 	setParameter("TemplateResourceGroupId", templateResourceGroupId);
-}
-
-std::string DescribeLaunchTemplatesRequest::getTemplateTag2Value()const
-{
-	return templateTag2Value_;
-}
-
-void DescribeLaunchTemplatesRequest::setTemplateTag2Value(const std::string& templateTag2Value)
-{
-	templateTag2Value_ = templateTag2Value;
-	setParameter("TemplateTag2Value", templateTag2Value);
 }
 
 std::string DescribeLaunchTemplatesRequest::getCallerBid()const
@@ -401,17 +341,6 @@ void DescribeLaunchTemplatesRequest::setSecurity_transport(bool security_transpo
 	setParameter("Security_transport", std::to_string(security_transport));
 }
 
-std::string DescribeLaunchTemplatesRequest::getTemplateTag4Value()const
-{
-	return templateTag4Value_;
-}
-
-void DescribeLaunchTemplatesRequest::setTemplateTag4Value(const std::string& templateTag4Value)
-{
-	templateTag4Value_ = templateTag4Value;
-	setParameter("TemplateTag4Value", templateTag4Value);
-}
-
 std::string DescribeLaunchTemplatesRequest::getRequestId()const
 {
 	return requestId_;
@@ -421,27 +350,5 @@ void DescribeLaunchTemplatesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
 	setParameter("RequestId", requestId);
-}
-
-std::string DescribeLaunchTemplatesRequest::getTemplateTag5Key()const
-{
-	return templateTag5Key_;
-}
-
-void DescribeLaunchTemplatesRequest::setTemplateTag5Key(const std::string& templateTag5Key)
-{
-	templateTag5Key_ = templateTag5Key;
-	setParameter("TemplateTag5Key", templateTag5Key);
-}
-
-std::string DescribeLaunchTemplatesRequest::getTemplateTag1Key()const
-{
-	return templateTag1Key_;
-}
-
-void DescribeLaunchTemplatesRequest::setTemplateTag1Key(const std::string& templateTag1Key)
-{
-	templateTag1Key_ = templateTag1Key;
-	setParameter("TemplateTag1Key", templateTag1Key);
 }
 

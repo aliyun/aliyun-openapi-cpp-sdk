@@ -47,6 +47,17 @@ void CreateVSwitchRequest::setResourceOwnerAccount(const std::string& resourceOw
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string CreateVSwitchRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateVSwitchRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string CreateVSwitchRequest::getClientToken()const
 {
 	return clientToken_;

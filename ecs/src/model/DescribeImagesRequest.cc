@@ -25,17 +25,6 @@ DescribeImagesRequest::DescribeImagesRequest() :
 DescribeImagesRequest::~DescribeImagesRequest()
 {}
 
-std::string DescribeImagesRequest::getTag4Value()const
-{
-	return tag4Value_;
-}
-
-void DescribeImagesRequest::setTag4Value(const std::string& tag4Value)
-{
-	tag4Value_ = tag4Value;
-	setParameter("Tag4Value", tag4Value);
-}
-
 std::string DescribeImagesRequest::getActionType()const
 {
 	return actionType_;
@@ -80,17 +69,6 @@ void DescribeImagesRequest::setSnapshotId(const std::string& snapshotId)
 	setParameter("SnapshotId", snapshotId);
 }
 
-std::string DescribeImagesRequest::getTag2Key()const
-{
-	return tag2Key_;
-}
-
-void DescribeImagesRequest::setTag2Key(const std::string& tag2Key)
-{
-	tag2Key_ = tag2Key;
-	setParameter("Tag2Key", tag2Key);
-}
-
 std::string DescribeImagesRequest::getUsage()const
 {
 	return usage_;
@@ -100,17 +78,6 @@ void DescribeImagesRequest::setUsage(const std::string& usage)
 {
 	usage_ = usage;
 	setParameter("Usage", usage);
-}
-
-std::string DescribeImagesRequest::getTag3Key()const
-{
-	return tag3Key_;
-}
-
-void DescribeImagesRequest::setTag3Key(const std::string& tag3Key)
-{
-	tag3Key_ = tag3Key;
-	setParameter("Tag3Key", tag3Key);
 }
 
 int DescribeImagesRequest::getPageNumber()const
@@ -133,17 +100,6 @@ void DescribeImagesRequest::setImageOwnerAlias(const std::string& imageOwnerAlia
 {
 	imageOwnerAlias_ = imageOwnerAlias;
 	setParameter("ImageOwnerAlias", imageOwnerAlias);
-}
-
-std::string DescribeImagesRequest::getTag1Value()const
-{
-	return tag1Value_;
-}
-
-void DescribeImagesRequest::setTag1Value(const std::string& tag1Value)
-{
-	tag1Value_ = tag1Value;
-	setParameter("Tag1Value", tag1Value);
 }
 
 std::string DescribeImagesRequest::getResourceGroupId()const
@@ -223,15 +179,21 @@ void DescribeImagesRequest::setInstanceType(const std::string& instanceType)
 	setParameter("InstanceType", instanceType);
 }
 
-std::string DescribeImagesRequest::getTag3Value()const
+std::vector<DescribeImagesRequest::Tag> DescribeImagesRequest::getTag()const
 {
-	return tag3Value_;
+	return tag_;
 }
 
-void DescribeImagesRequest::setTag3Value(const std::string& tag3Value)
+void DescribeImagesRequest::setTag(const std::vector<Tag>& tag)
 {
-	tag3Value_ = tag3Value;
-	setParameter("Tag3Value", tag3Value);
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 
 std::string DescribeImagesRequest::getArchitecture()const
@@ -254,17 +216,6 @@ void DescribeImagesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
 	setParameter("DryRun", std::to_string(dryRun));
-}
-
-std::string DescribeImagesRequest::getTag5Key()const
-{
-	return tag5Key_;
-}
-
-void DescribeImagesRequest::setTag5Key(const std::string& tag5Key)
-{
-	tag5Key_ = tag5Key;
-	setParameter("Tag5Key", tag5Key);
 }
 
 std::string DescribeImagesRequest::getResourceOwnerAccount()const
@@ -322,28 +273,6 @@ void DescribeImagesRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeImagesRequest::getTag5Value()const
-{
-	return tag5Value_;
-}
-
-void DescribeImagesRequest::setTag5Value(const std::string& tag5Value)
-{
-	tag5Value_ = tag5Value;
-	setParameter("Tag5Value", tag5Value);
-}
-
-std::string DescribeImagesRequest::getTag1Key()const
-{
-	return tag1Key_;
-}
-
-void DescribeImagesRequest::setTag1Key(const std::string& tag1Key)
-{
-	tag1Key_ = tag1Key;
-	setParameter("Tag1Key", tag1Key);
-}
-
 std::vector<DescribeImagesRequest::Filter> DescribeImagesRequest::getFilter()const
 {
 	return filter_;
@@ -356,31 +285,9 @@ void DescribeImagesRequest::setFilter(const std::vector<Filter>& filter)
 	for(int i = 0; i!= filter.size(); i++)	{
 		auto obj = filter.at(i);
 		std::string str ="Filter."+ std::to_string(i);
-		setParameter(str + ".Key", obj.key);
 		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
 	}
-}
-
-std::string DescribeImagesRequest::getTag2Value()const
-{
-	return tag2Value_;
-}
-
-void DescribeImagesRequest::setTag2Value(const std::string& tag2Value)
-{
-	tag2Value_ = tag2Value;
-	setParameter("Tag2Value", tag2Value);
-}
-
-std::string DescribeImagesRequest::getTag4Key()const
-{
-	return tag4Key_;
-}
-
-void DescribeImagesRequest::setTag4Key(const std::string& tag4Key)
-{
-	tag4Key_ = tag4Key;
-	setParameter("Tag4Key", tag4Key);
 }
 
 std::string DescribeImagesRequest::getStatus()const

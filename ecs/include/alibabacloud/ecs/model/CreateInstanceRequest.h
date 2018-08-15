@@ -30,46 +30,45 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateInstanceRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 				struct DataDisk
 				{
-					int size;
-					std::string snapshotId;
-					std::string category;
 					std::string diskName;
+					std::string snapshotId;
+					int size;
+					bool encrypted;
 					std::string description;
+					std::string category;
 					std::string device;
 					bool deleteWithInstance;
-					bool encrypted;
 				};
 
 			public:
 				CreateInstanceRequest();
 				~CreateInstanceRequest();
 
-				std::string getTag4Value()const;
-				void setTag4Value(const std::string& tag4Value);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getTag2Key()const;
-				void setTag2Key(const std::string& tag2Key);
 				std::string getHpcClusterId()const;
 				void setHpcClusterId(const std::string& hpcClusterId);
-				std::string getTag3Key()const;
-				void setTag3Key(const std::string& tag3Key);
 				std::string getSecurityEnhancementStrategy()const;
 				void setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy);
 				std::string getKeyPairName()const;
 				void setKeyPairName(const std::string& keyPairName);
 				float getSpotPriceLimit()const;
 				void setSpotPriceLimit(float spotPriceLimit);
-				std::string getTag1Value()const;
-				void setTag1Value(const std::string& tag1Value);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				int getAutoRenewPeriod()const;
 				void setAutoRenewPeriod(int autoRenewPeriod);
 				std::string getNodeControllerId()const;
@@ -78,8 +77,6 @@ namespace AlibabaCloud
 				void setPeriod(int period);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
-				std::string getTag5Key()const;
-				void setTag5Key(const std::string& tag5Key);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getVSwitchId()const;
@@ -98,8 +95,6 @@ namespace AlibabaCloud
 				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
-				std::string getTag4Key()const;
-				void setTag4Key(const std::string& tag4Key);
 				int getInternetMaxBandwidthIn()const;
 				void setInternetMaxBandwidthIn(int internetMaxBandwidthIn);
 				bool getUseAdditionalService()const;
@@ -132,8 +127,6 @@ namespace AlibabaCloud
 				void setInstanceType(const std::string& instanceType);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
-				std::string getTag3Value()const;
-				void setTag3Value(const std::string& tag3Value);
 				std::string getDeploymentSetId()const;
 				void setDeploymentSetId(const std::string& deploymentSetId);
 				std::string getInnerIpAddress()const;
@@ -152,35 +145,25 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				std::vector<DataDisk> getDataDisk()const;
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
-				std::string getTag5Value()const;
-				void setTag5Value(const std::string& tag5Value);
-				std::string getTag1Key()const;
-				void setTag1Key(const std::string& tag1Key);
 				int getSystemDiskSize()const;
 				void setSystemDiskSize(int systemDiskSize);
-				std::string getTag2Value()const;
-				void setTag2Value(const std::string& tag2Value);
 				std::string getSystemDiskDescription()const;
 				void setSystemDiskDescription(const std::string& systemDiskDescription);
 
             private:
-				std::string tag4Value_;
 				long resourceOwnerId_;
-				std::string tag2Key_;
 				std::string hpcClusterId_;
-				std::string tag3Key_;
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
 				float spotPriceLimit_;
-				std::string tag1Value_;
 				std::string resourceGroupId_;
 				std::string hostName_;
 				std::string password_;
+				std::vector<Tag> tag_;
 				int autoRenewPeriod_;
 				std::string nodeControllerId_;
 				int period_;
 				bool dryRun_;
-				std::string tag5Key_;
 				long ownerId_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
@@ -190,7 +173,6 @@ namespace AlibabaCloud
 				bool autoRenew_;
 				std::string internetChargeType_;
 				std::string zoneId_;
-				std::string tag4Key_;
 				int internetMaxBandwidthIn_;
 				bool useAdditionalService_;
 				std::string imageId_;
@@ -207,7 +189,6 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string instanceType_;
 				std::string instanceChargeType_;
-				std::string tag3Value_;
 				std::string deploymentSetId_;
 				std::string innerIpAddress_;
 				std::string resourceOwnerAccount_;
@@ -217,10 +198,7 @@ namespace AlibabaCloud
 				std::string dedicatedHostId_;
 				std::string clusterId_;
 				std::vector<DataDisk> dataDisk_;
-				std::string tag5Value_;
-				std::string tag1Key_;
 				int systemDiskSize_;
-				std::string tag2Value_;
 				std::string systemDiskDescription_;
 
 			};

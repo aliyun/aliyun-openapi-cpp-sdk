@@ -333,6 +333,17 @@ void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeAvailableResourceRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeAvailableResourceRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setParameter("ResourceType", resourceType);
+}
+
 bool DescribeAvailableResourceRequest::getProxy_trust_transport_info()const
 {
 	return proxy_trust_transport_info_;

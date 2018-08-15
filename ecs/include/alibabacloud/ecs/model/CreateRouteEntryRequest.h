@@ -32,8 +32,8 @@ namespace AlibabaCloud
 			{
 				struct NextHopList
 				{
-					std::string nextHopType;
 					std::string nextHopId;
+					std::string nextHopType;
 				};
 
 			public:

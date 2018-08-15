@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateLaunchTemplateRequest : public RpcServiceRequest
 			{
+				struct TemplateTag
+				{
+					std::string key;
+					std::string value;
+				};
 				struct Tag
 				{
 					std::string key;
@@ -62,8 +67,6 @@ namespace AlibabaCloud
 				void setLaunchTemplateName(const std::string& launchTemplateName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getTemplateTag4Key()const;
-				void setTemplateTag4Key(const std::string& templateTag4Key);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				std::string getSecurityEnhancementStrategy()const;
@@ -84,8 +87,6 @@ namespace AlibabaCloud
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getTemplateTag3Key()const;
-				void setTemplateTag3Key(const std::string& templateTag3Key);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
 				std::string getSecurityToken()const;
@@ -96,8 +97,8 @@ namespace AlibabaCloud
 				void setSystemDiskIops(int systemDiskIops);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
-				std::string getTemplateTag3Value()const;
-				void setTemplateTag3Value(const std::string& templateTag3Value);
+				std::vector<TemplateTag> getTemplateTag()const;
+				void setTemplateTag(const std::vector<TemplateTag>& templateTag);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				long getCallerUid()const;
@@ -106,8 +107,6 @@ namespace AlibabaCloud
 				void setPeriod(int period);
 				std::string getTemplateResourceGroupId()const;
 				void setTemplateResourceGroupId(const std::string& templateResourceGroupId);
-				std::string getTemplateTag2Value()const;
-				void setTemplateTag2Value(const std::string& templateTag2Value);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				bool getAk_mfa_present()const;
@@ -124,16 +123,12 @@ namespace AlibabaCloud
 				void setRequestId(const std::string& requestId);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
-				std::string getTemplateTag5Key()const;
-				void setTemplateTag5Key(const std::string& templateTag5Key);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
 				int getInternetMaxBandwidthIn()const;
 				void setInternetMaxBandwidthIn(int internetMaxBandwidthIn);
 				std::string getVersionDescription()const;
 				void setVersionDescription(const std::string& versionDescription);
-				std::string getTemplateTag1Value()const;
-				void setTemplateTag1Value(const std::string& templateTag1Value);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
 				std::string getIoOptimized()const;
@@ -154,8 +149,6 @@ namespace AlibabaCloud
 				void setUserData(const std::string& userData);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getTemplateTag5Value()const;
-				void setTemplateTag5Value(const std::string& templateTag5Value);
 				std::string getRequestContent()const;
 				void setRequestContent(const std::string& requestContent);
 				std::string getInstanceType()const;
@@ -170,8 +163,6 @@ namespace AlibabaCloud
 				void setNetworkInterface(const std::vector<NetworkInterface>& networkInterface);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
-				std::string getTemplateTag2Key()const;
-				void setTemplateTag2Key(const std::string& templateTag2Key);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -190,21 +181,16 @@ namespace AlibabaCloud
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
-				std::string getTemplateTag4Value()const;
-				void setTemplateTag4Value(const std::string& templateTag4Value);
 				int getSystemDiskSize()const;
 				void setSystemDiskSize(int systemDiskSize);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
-				std::string getTemplateTag1Key()const;
-				void setTemplateTag1Key(const std::string& templateTag1Key);
 				std::string getSystemDiskDescription()const;
 				void setSystemDiskDescription(const std::string& systemDiskDescription);
 
             private:
 				std::string launchTemplateName_;
 				long resourceOwnerId_;
-				std::string templateTag4Key_;
 				long callerParentId_;
 				std::string securityEnhancementStrategy_;
 				std::string networkType_;
@@ -215,18 +201,16 @@ namespace AlibabaCloud
 				std::string callerType_;
 				std::string imageOwnerAlias_;
 				std::string resourceGroupId_;
-				std::string templateTag3Key_;
 				std::string hostName_;
 				std::string securityToken_;
 				bool enable_;
 				int systemDiskIops_;
 				std::string callerBidEmail_;
-				std::string templateTag3Value_;
+				std::vector<TemplateTag> templateTag_;
 				std::vector<Tag> tag_;
 				long callerUid_;
 				int period_;
 				std::string templateResourceGroupId_;
-				std::string templateTag2Value_;
 				long ownerId_;
 				bool ak_mfa_present_;
 				bool security_transport_;
@@ -235,11 +219,9 @@ namespace AlibabaCloud
 				std::string instanceName_;
 				std::string requestId_;
 				std::string internetChargeType_;
-				std::string templateTag5Key_;
 				std::string zoneId_;
 				int internetMaxBandwidthIn_;
 				std::string versionDescription_;
-				std::string templateTag1Value_;
 				std::string imageId_;
 				std::string ioOptimized_;
 				std::string securityGroupId_;
@@ -250,7 +232,6 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string userData_;
 				std::string regionId_;
-				std::string templateTag5Value_;
 				std::string requestContent_;
 				std::string instanceType_;
 				std::string instanceChargeType_;
@@ -258,7 +239,6 @@ namespace AlibabaCloud
 				bool enableVmOsConfig_;
 				std::vector<NetworkInterface> networkInterface_;
 				std::string app_ip_;
-				std::string templateTag2Key_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string systemDiskDiskName_;
@@ -268,10 +248,8 @@ namespace AlibabaCloud
 				int spotDuration_;
 				std::vector<DataDisk> dataDisk_;
 				bool proxy_trust_transport_info_;
-				std::string templateTag4Value_;
 				int systemDiskSize_;
 				std::string vpcId_;
-				std::string templateTag1Key_;
 				std::string systemDiskDescription_;
 
 			};

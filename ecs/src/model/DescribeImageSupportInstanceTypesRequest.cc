@@ -48,8 +48,8 @@ void DescribeImageSupportInstanceTypesRequest::setFilter(const std::vector<Filte
 	for(int i = 0; i!= filter.size(); i++)	{
 		auto obj = filter.at(i);
 		std::string str ="Filter."+ std::to_string(i);
-		setParameter(str + ".Key", obj.key);
 		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
 	}
 }
 

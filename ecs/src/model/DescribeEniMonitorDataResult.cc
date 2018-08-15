@@ -1,0 +1,79 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/ecs/model/DescribeEniMonitorDataResult.h>
+#include <json/json.h>
+
+using namespace AlibabaCloud::Ecs;
+using namespace AlibabaCloud::Ecs::Model;
+
+DescribeEniMonitorDataResult::DescribeEniMonitorDataResult() :
+	ServiceResult()
+{}
+
+DescribeEniMonitorDataResult::DescribeEniMonitorDataResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+DescribeEniMonitorDataResult::~DescribeEniMonitorDataResult()
+{}
+
+void DescribeEniMonitorDataResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+
+	setRequestId(value["RequestId"].asString());
+	auto allMonitorData = value["MonitorData"]["EniMonitorData"];
+	for (auto value : allMonitorData)
+	{
+		EniMonitorData monitorDataObject;
+		if(!value["EniId"].isNull())
+			monitorDataObject.eniId = value["EniId"].asString();
+		if(!value["TimeStamp"].isNull())
+			monitorDataObject.timeStamp = value["TimeStamp"].asString();
+		if(!value["PacketTx"].isNull())
+			monitorDataObject.packetTx = value["PacketTx"].asString();
+		if(!value["PacketRx"].isNull())
+			monitorDataObject.packetRx = value["PacketRx"].asString();
+		if(!value["IntranetTx"].isNull())
+			monitorDataObject.intranetTx = value["IntranetTx"].asString();
+		if(!value["IntranetRx"].isNull())
+			monitorDataObject.intranetRx = value["IntranetRx"].asString();
+		if(!value["DropPacketTx"].isNull())
+			monitorDataObject.dropPacketTx = value["DropPacketTx"].asString();
+		if(!value["DropPacketRx"].isNull())
+			monitorDataObject.dropPacketRx = value["DropPacketRx"].asString();
+		monitorData_.push_back(monitorDataObject);
+	}
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+
+}
+
+int DescribeEniMonitorDataResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+std::vector<DescribeEniMonitorDataResult::EniMonitorData> DescribeEniMonitorDataResult::getMonitorData()const
+{
+	return monitorData_;
+}
+

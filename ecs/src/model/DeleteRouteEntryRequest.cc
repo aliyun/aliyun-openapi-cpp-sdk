@@ -103,8 +103,8 @@ void DeleteRouteEntryRequest::setNextHopList(const std::vector<NextHopList>& nex
 	for(int i = 0; i!= nextHopList.size(); i++)	{
 		auto obj = nextHopList.at(i);
 		std::string str ="NextHopList."+ std::to_string(i);
-		setParameter(str + ".NextHopType", obj.nextHopType);
 		setParameter(str + ".NextHopId", obj.nextHopId);
+		setParameter(str + ".NextHopType", obj.nextHopType);
 	}
 }
 

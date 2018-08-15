@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBELAUNCHTEMPLATESREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBELAUNCHTEMPLATESREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEENIMONITORDATAREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEENIMONITORDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,34 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeLaunchTemplatesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeEniMonitorDataRequest : public RpcServiceRequest
 			{
-				struct TemplateTag
-				{
-					std::string key;
-					std::string value;
-				};
 
 			public:
-				DescribeLaunchTemplatesRequest();
-				~DescribeLaunchTemplatesRequest();
+				DescribeEniMonitorDataRequest();
+				~DescribeEniMonitorDataRequest();
 
-				std::vector<std::string> getLaunchTemplateName()const;
-				void setLaunchTemplateName(const std::vector<std::string>& launchTemplateName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
 				std::string getOwnerIdLoginEmail()const;
 				void setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail);
 				std::string getCallerType()const;
 				void setCallerType(const std::string& callerType);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
@@ -66,26 +59,22 @@ namespace AlibabaCloud
 				void setEnable(bool enable);
 				std::string getRequestContent()const;
 				void setRequestContent(const std::string& requestContent);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
-				std::vector<TemplateTag> getTemplateTag()const;
-				void setTemplateTag(const std::vector<TemplateTag>& templateTag);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
-				std::vector<std::string> getLaunchTemplateId()const;
-				void setLaunchTemplateId(const std::vector<std::string>& launchTemplateId);
+				int getPeriod()const;
+				void setPeriod(int period);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getTemplateResourceGroupId()const;
-				void setTemplateResourceGroupId(const std::string& templateResourceGroupId);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
 				long getOwnerId()const;
@@ -96,42 +85,45 @@ namespace AlibabaCloud
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getEniId()const;
+				void setEniId(const std::string& eniId);
 
             private:
-				std::vector<std::string> launchTemplateName_;
 				long resourceOwnerId_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
+				std::string startTime_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
-				int pageNumber_;
 				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string regionId_;
 				bool enable_;
 				std::string requestContent_;
-				int pageSize_;
 				std::string callerBidEmail_;
-				std::vector<TemplateTag> templateTag_;
 				std::string callerUidEmail_;
 				long callerUid_;
 				std::string app_ip_;
-				std::vector<std::string> launchTemplateId_;
+				int period_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string templateResourceGroupId_;
+				std::string endTime_;
 				std::string callerBid_;
 				long ownerId_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
+				std::string instanceId_;
 				std::string requestId_;
+				std::string eniId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBELAUNCHTEMPLATESREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEENIMONITORDATAREQUEST_H_

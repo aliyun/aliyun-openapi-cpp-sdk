@@ -36,6 +36,8 @@
 #include "model/CreateNatGatewayResult.h"
 #include "model/AttachDiskRequest.h"
 #include "model/AttachDiskResult.h"
+#include "model/DescribeEniMonitorDataRequest.h"
+#include "model/DescribeEniMonitorDataResult.h"
 #include "model/ReInitDiskRequest.h"
 #include "model/ReInitDiskResult.h"
 #include "model/CreateHaVipRequest.h"
@@ -402,6 +404,8 @@
 #include "model/ReleasePublicIpAddressResult.h"
 #include "model/CreateVirtualBorderRouterRequest.h"
 #include "model/CreateVirtualBorderRouterResult.h"
+#include "model/DescribeAccountAttributesRequest.h"
+#include "model/DescribeAccountAttributesResult.h"
 #include "model/EipFillParamsRequest.h"
 #include "model/EipFillParamsResult.h"
 #include "model/ModifyPrepayInstanceSpecRequest.h"
@@ -534,6 +538,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachDiskResult> AttachDiskOutcome;
 			typedef std::future<AttachDiskOutcome> AttachDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::AttachDiskRequest&, const AttachDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachDiskAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEniMonitorDataResult> DescribeEniMonitorDataOutcome;
+			typedef std::future<DescribeEniMonitorDataOutcome> DescribeEniMonitorDataOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeEniMonitorDataRequest&, const DescribeEniMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEniMonitorDataAsyncHandler;
 			typedef Outcome<Error, Model::ReInitDiskResult> ReInitDiskOutcome;
 			typedef std::future<ReInitDiskOutcome> ReInitDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ReInitDiskRequest&, const ReInitDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReInitDiskAsyncHandler;
@@ -1083,6 +1090,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateVirtualBorderRouterResult> CreateVirtualBorderRouterOutcome;
 			typedef std::future<CreateVirtualBorderRouterOutcome> CreateVirtualBorderRouterOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateVirtualBorderRouterRequest&, const CreateVirtualBorderRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVirtualBorderRouterAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAccountAttributesResult> DescribeAccountAttributesOutcome;
+			typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeAccountAttributesRequest&, const DescribeAccountAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountAttributesAsyncHandler;
 			typedef Outcome<Error, Model::EipFillParamsResult> EipFillParamsOutcome;
 			typedef std::future<EipFillParamsOutcome> EipFillParamsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::EipFillParamsRequest&, const EipFillParamsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EipFillParamsAsyncHandler;
@@ -1262,6 +1272,9 @@ namespace AlibabaCloud
 			AttachDiskOutcome attachDisk(const Model::AttachDiskRequest &request)const;
 			void attachDiskAsync(const Model::AttachDiskRequest& request, const AttachDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachDiskOutcomeCallable attachDiskCallable(const Model::AttachDiskRequest& request) const;
+			DescribeEniMonitorDataOutcome describeEniMonitorData(const Model::DescribeEniMonitorDataRequest &request)const;
+			void describeEniMonitorDataAsync(const Model::DescribeEniMonitorDataRequest& request, const DescribeEniMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEniMonitorDataOutcomeCallable describeEniMonitorDataCallable(const Model::DescribeEniMonitorDataRequest& request) const;
 			ReInitDiskOutcome reInitDisk(const Model::ReInitDiskRequest &request)const;
 			void reInitDiskAsync(const Model::ReInitDiskRequest& request, const ReInitDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReInitDiskOutcomeCallable reInitDiskCallable(const Model::ReInitDiskRequest& request) const;
@@ -1811,6 +1824,9 @@ namespace AlibabaCloud
 			CreateVirtualBorderRouterOutcome createVirtualBorderRouter(const Model::CreateVirtualBorderRouterRequest &request)const;
 			void createVirtualBorderRouterAsync(const Model::CreateVirtualBorderRouterRequest& request, const CreateVirtualBorderRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVirtualBorderRouterOutcomeCallable createVirtualBorderRouterCallable(const Model::CreateVirtualBorderRouterRequest& request) const;
+			DescribeAccountAttributesOutcome describeAccountAttributes(const Model::DescribeAccountAttributesRequest &request)const;
+			void describeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAccountAttributesOutcomeCallable describeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
 			EipFillParamsOutcome eipFillParams(const Model::EipFillParamsRequest &request)const;
 			void eipFillParamsAsync(const Model::EipFillParamsRequest& request, const EipFillParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EipFillParamsOutcomeCallable eipFillParamsCallable(const Model::EipFillParamsRequest& request) const;

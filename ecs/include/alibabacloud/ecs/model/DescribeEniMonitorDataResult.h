@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBESNAPSHOTLINKSRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBESNAPSHOTLINKSRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEENIMONITORDATARESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEENIMONITORDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeSnapshotLinksResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT DescribeEniMonitorDataResult : public ServiceResult
 			{
 			public:
-				struct SnapshotLink
+				struct EniMonitorData
 				{
-					std::string instanceName;
-					int totalCount;
-					int sourceDiskSize;
-					std::string instanceId;
-					std::string snapshotLinkId;
-					std::string sourceDiskName;
-					std::string regionId;
-					std::string sourceDiskType;
-					int totalSize;
-					std::string sourceDiskId;
+					std::string dropPacketRx;
+					std::string packetTx;
+					std::string packetRx;
+					std::string eniId;
+					std::string dropPacketTx;
+					std::string intranetTx;
+					std::string timeStamp;
+					std::string intranetRx;
 				};
 
 
-				DescribeSnapshotLinksResult();
-				explicit DescribeSnapshotLinksResult(const std::string &payload);
-				~DescribeSnapshotLinksResult();
-				std::vector<SnapshotLink> getSnapshotLinks()const;
+				DescribeEniMonitorDataResult();
+				explicit DescribeEniMonitorDataResult(const std::string &payload);
+				~DescribeEniMonitorDataResult();
 				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
+				std::vector<EniMonitorData> getMonitorData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<SnapshotLink> snapshotLinks_;
 				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
+				std::vector<EniMonitorData> monitorData_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBESNAPSHOTLINKSRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEENIMONITORDATARESULT_H_

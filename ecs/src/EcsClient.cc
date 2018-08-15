@@ -303,6 +303,42 @@ EcsClient::AttachDiskOutcomeCallable EcsClient::attachDiskCallable(const AttachD
 	return task->get_future();
 }
 
+EcsClient::DescribeEniMonitorDataOutcome EcsClient::describeEniMonitorData(const DescribeEniMonitorDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEniMonitorDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEniMonitorDataOutcome(DescribeEniMonitorDataResult(outcome.result()));
+	else
+		return DescribeEniMonitorDataOutcome(outcome.error());
+}
+
+void EcsClient::describeEniMonitorDataAsync(const DescribeEniMonitorDataRequest& request, const DescribeEniMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEniMonitorData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeEniMonitorDataOutcomeCallable EcsClient::describeEniMonitorDataCallable(const DescribeEniMonitorDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEniMonitorDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEniMonitorData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ReInitDiskOutcome EcsClient::reInitDisk(const ReInitDiskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6885,6 +6921,42 @@ EcsClient::CreateVirtualBorderRouterOutcomeCallable EcsClient::createVirtualBord
 			[this, request]()
 			{
 			return this->createVirtualBorderRouter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeAccountAttributesOutcome EcsClient::describeAccountAttributes(const DescribeAccountAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccountAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccountAttributesOutcome(DescribeAccountAttributesResult(outcome.result()));
+	else
+		return DescribeAccountAttributesOutcome(outcome.error());
+}
+
+void EcsClient::describeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccountAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeAccountAttributesOutcomeCallable EcsClient::describeAccountAttributesCallable(const DescribeAccountAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccountAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccountAttributes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

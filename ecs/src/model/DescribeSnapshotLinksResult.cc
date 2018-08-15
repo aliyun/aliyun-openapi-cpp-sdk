@@ -54,6 +54,8 @@ void DescribeSnapshotLinksResult::parse(const std::string &payload)
 			snapshotLinksObject.instanceName = value["InstanceName"].asString();
 		if(!value["SourceDiskId"].isNull())
 			snapshotLinksObject.sourceDiskId = value["SourceDiskId"].asString();
+		if(!value["SourceDiskName"].isNull())
+			snapshotLinksObject.sourceDiskName = value["SourceDiskName"].asString();
 		if(!value["SourceDiskSize"].isNull())
 			snapshotLinksObject.sourceDiskSize = std::stoi(value["SourceDiskSize"].asString());
 		if(!value["SourceDiskType"].isNull())

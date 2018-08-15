@@ -47,8 +47,6 @@ namespace AlibabaCloud
 				void setPhysicalConnectionId(const std::string& physicalConnectionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getUserCidr()const;
-				void setUserCidr(const std::string& userCidr);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
@@ -59,7 +57,6 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string physicalConnectionId_;
 				std::string ownerAccount_;
-				std::string userCidr_;
 				long ownerId_;
 
 			};

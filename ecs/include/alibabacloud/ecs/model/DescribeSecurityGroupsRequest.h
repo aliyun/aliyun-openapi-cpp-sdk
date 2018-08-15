@@ -30,91 +30,69 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT DescribeSecurityGroupsRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeSecurityGroupsRequest();
 				~DescribeSecurityGroupsRequest();
 
-				std::string getTag4Value()const;
-				void setTag4Value(const std::string& tag4Value);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getTag2Key()const;
-				void setTag2Key(const std::string& tag2Key);
-				bool getFuzzyQuery()const;
-				void setFuzzyQuery(bool fuzzyQuery);
-				std::string getSecurityGroupId()const;
-				void setSecurityGroupId(const std::string& securityGroupId);
-				std::string getTag3Key()const;
-				void setTag3Key(const std::string& tag3Key);
-				bool getIsQueryEcsCount()const;
-				void setIsQueryEcsCount(bool isQueryEcsCount);
-				std::string getNetworkType()const;
-				void setNetworkType(const std::string& networkType);
-				std::string getSecurityGroupName()const;
-				void setSecurityGroupName(const std::string& securityGroupName);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getTag1Value()const;
-				void setTag1Value(const std::string& tag1Value);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getTag3Value()const;
-				void setTag3Value(const std::string& tag3Value);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
-				std::string getTag5Key()const;
-				void setTag5Key(const std::string& tag5Key);
+				bool getFuzzyQuery()const;
+				void setFuzzyQuery(bool fuzzyQuery);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getSecurityGroupId()const;
+				void setSecurityGroupId(const std::string& securityGroupId);
+				bool getIsQueryEcsCount()const;
+				void setIsQueryEcsCount(bool isQueryEcsCount);
+				std::string getNetworkType()const;
+				void setNetworkType(const std::string& networkType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getSecurityGroupIds()const;
 				void setSecurityGroupIds(const std::string& securityGroupIds);
-				std::string getTag5Value()const;
-				void setTag5Value(const std::string& tag5Value);
-				std::string getTag1Key()const;
-				void setTag1Key(const std::string& tag1Key);
+				std::string getSecurityGroupName()const;
+				void setSecurityGroupName(const std::string& securityGroupName);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
-				std::string getTag2Value()const;
-				void setTag2Value(const std::string& tag2Value);
-				std::string getTag4Key()const;
-				void setTag4Key(const std::string& tag4Key);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
-				std::string tag4Value_;
 				long resourceOwnerId_;
-				std::string tag2Key_;
-				bool fuzzyQuery_;
-				std::string securityGroupId_;
-				std::string tag3Key_;
-				bool isQueryEcsCount_;
-				std::string networkType_;
-				std::string securityGroupName_;
-				int pageNumber_;
-				std::string tag1Value_;
-				std::string resourceGroupId_;
-				std::string regionId_;
-				int pageSize_;
-				std::string tag3Value_;
 				bool dryRun_;
-				std::string tag5Key_;
+				bool fuzzyQuery_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string securityGroupId_;
+				bool isQueryEcsCount_;
+				std::string networkType_;
 				long ownerId_;
 				std::string securityGroupIds_;
-				std::string tag5Value_;
-				std::string tag1Key_;
+				std::string securityGroupName_;
+				int pageNumber_;
+				std::string resourceGroupId_;
+				std::string regionId_;
 				std::string vpcId_;
-				std::string tag2Value_;
-				std::string tag4Key_;
+				int pageSize_;
+				std::vector<Tag> tag_;
 
 			};
 		}

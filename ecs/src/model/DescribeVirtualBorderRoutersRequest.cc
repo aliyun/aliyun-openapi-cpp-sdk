@@ -37,8 +37,8 @@ void DescribeVirtualBorderRoutersRequest::setFilter(const std::vector<Filter>& f
 	for(int i = 0; i!= filter.size(); i++)	{
 		auto obj = filter.at(i);
 		std::string str ="Filter."+ std::to_string(i);
-		setParameter(str + ".Key", obj.key);
 		for(int i = 0; i!= obj.value.size(); i++)				setParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
+		setParameter(str + ".Key", obj.key);
 	}
 }
 

@@ -30,17 +30,18 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateNetworkInterfaceRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				CreateNetworkInterfaceRequest();
 				~CreateNetworkInterfaceRequest();
 
-				std::string getTag4Value()const;
-				void setTag4Value(const std::string& tag4Value);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getTag2Key()const;
-				void setTag2Key(const std::string& tag2Key);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				long getCallerParentId()const;
@@ -51,8 +52,6 @@ namespace AlibabaCloud
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getTag3Key()const;
-				void setTag3Key(const std::string& tag3Key);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
 				std::string getOwnerIdLoginEmail()const;
@@ -61,8 +60,6 @@ namespace AlibabaCloud
 				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getTag1Value()const;
-				void setTag1Value(const std::string& tag1Value);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
@@ -75,18 +72,16 @@ namespace AlibabaCloud
 				void setRequestContent(const std::string& requestContent);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
-				std::string getTag3Value()const;
-				void setTag3Value(const std::string& tag3Value);
 				std::string getNetworkInterfaceName()const;
 				void setNetworkInterfaceName(const std::string& networkInterfaceName);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
-				std::string getTag5Key()const;
-				void setTag5Key(const std::string& tag5Key);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -95,67 +90,50 @@ namespace AlibabaCloud
 				void setCallerBid(const std::string& callerBid);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getTag5Value()const;
-				void setTag5Value(const std::string& tag5Value);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
 				bool getAk_mfa_present()const;
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
-				std::string getTag1Key()const;
-				void setTag1Key(const std::string& tag1Key);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
-				std::string getTag2Value()const;
-				void setTag2Value(const std::string& tag2Value);
-				std::string getTag4Key()const;
-				void setTag4Key(const std::string& tag4Key);
 				std::string getPrimaryIpAddress()const;
 				void setPrimaryIpAddress(const std::string& primaryIpAddress);
 
             private:
-				std::string tag4Value_;
 				long resourceOwnerId_;
-				std::string tag2Key_;
 				std::string clientToken_;
 				long callerParentId_;
 				std::string securityGroupId_;
 				bool proxy_original_security_transport_;
 				std::string description_;
-				std::string tag3Key_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
-				std::string tag1Value_;
 				std::string resourceGroupId_;
 				std::string securityToken_;
 				std::string regionId_;
 				bool enable_;
 				std::string requestContent_;
 				std::string callerBidEmail_;
+				std::vector<Tag> tag_;
 				std::string callerUidEmail_;
-				std::string tag3Value_;
 				std::string networkInterfaceName_;
 				long callerUid_;
 				std::string app_ip_;
-				std::string tag5Key_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string callerBid_;
 				long ownerId_;
-				std::string tag5Value_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
-				std::string tag1Key_;
 				std::string vSwitchId_;
 				std::string requestId_;
-				std::string tag2Value_;
-				std::string tag4Key_;
 				std::string primaryIpAddress_;
 
 			};

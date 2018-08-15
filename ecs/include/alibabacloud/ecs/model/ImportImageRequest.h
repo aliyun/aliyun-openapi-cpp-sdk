@@ -32,12 +32,12 @@ namespace AlibabaCloud
 			{
 				struct DiskDeviceMapping
 				{
-					std::string format;
 					std::string oSSBucket;
-					std::string oSSObject;
 					int diskImSize;
-					int diskImageSize;
+					std::string format;
 					std::string device;
+					std::string oSSObject;
+					int diskImageSize;
 				};
 
 			public:

@@ -25,17 +25,6 @@ CreateInstanceRequest::CreateInstanceRequest() :
 CreateInstanceRequest::~CreateInstanceRequest()
 {}
 
-std::string CreateInstanceRequest::getTag4Value()const
-{
-	return tag4Value_;
-}
-
-void CreateInstanceRequest::setTag4Value(const std::string& tag4Value)
-{
-	tag4Value_ = tag4Value;
-	setParameter("Tag4Value", tag4Value);
-}
-
 long CreateInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,17 +36,6 @@ void CreateInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateInstanceRequest::getTag2Key()const
-{
-	return tag2Key_;
-}
-
-void CreateInstanceRequest::setTag2Key(const std::string& tag2Key)
-{
-	tag2Key_ = tag2Key;
-	setParameter("Tag2Key", tag2Key);
-}
-
 std::string CreateInstanceRequest::getHpcClusterId()const
 {
 	return hpcClusterId_;
@@ -67,17 +45,6 @@ void CreateInstanceRequest::setHpcClusterId(const std::string& hpcClusterId)
 {
 	hpcClusterId_ = hpcClusterId;
 	setParameter("HpcClusterId", hpcClusterId);
-}
-
-std::string CreateInstanceRequest::getTag3Key()const
-{
-	return tag3Key_;
-}
-
-void CreateInstanceRequest::setTag3Key(const std::string& tag3Key)
-{
-	tag3Key_ = tag3Key;
-	setParameter("Tag3Key", tag3Key);
 }
 
 std::string CreateInstanceRequest::getSecurityEnhancementStrategy()const
@@ -113,17 +80,6 @@ void CreateInstanceRequest::setSpotPriceLimit(float spotPriceLimit)
 	setParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
 }
 
-std::string CreateInstanceRequest::getTag1Value()const
-{
-	return tag1Value_;
-}
-
-void CreateInstanceRequest::setTag1Value(const std::string& tag1Value)
-{
-	tag1Value_ = tag1Value;
-	setParameter("Tag1Value", tag1Value);
-}
-
 std::string CreateInstanceRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -155,6 +111,23 @@ void CreateInstanceRequest::setPassword(const std::string& password)
 {
 	password_ = password;
 	setParameter("Password", password);
+}
+
+std::vector<CreateInstanceRequest::Tag> CreateInstanceRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateInstanceRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 
 int CreateInstanceRequest::getAutoRenewPeriod()const
@@ -199,17 +172,6 @@ void CreateInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
 	setParameter("DryRun", std::to_string(dryRun));
-}
-
-std::string CreateInstanceRequest::getTag5Key()const
-{
-	return tag5Key_;
-}
-
-void CreateInstanceRequest::setTag5Key(const std::string& tag5Key)
-{
-	tag5Key_ = tag5Key;
-	setParameter("Tag5Key", tag5Key);
 }
 
 long CreateInstanceRequest::getOwnerId()const
@@ -309,17 +271,6 @@ void CreateInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setParameter("ZoneId", zoneId);
-}
-
-std::string CreateInstanceRequest::getTag4Key()const
-{
-	return tag4Key_;
-}
-
-void CreateInstanceRequest::setTag4Key(const std::string& tag4Key)
-{
-	tag4Key_ = tag4Key;
-	setParameter("Tag4Key", tag4Key);
 }
 
 int CreateInstanceRequest::getInternetMaxBandwidthIn()const
@@ -498,17 +449,6 @@ void CreateInstanceRequest::setInstanceChargeType(const std::string& instanceCha
 	setParameter("InstanceChargeType", instanceChargeType);
 }
 
-std::string CreateInstanceRequest::getTag3Value()const
-{
-	return tag3Value_;
-}
-
-void CreateInstanceRequest::setTag3Value(const std::string& tag3Value)
-{
-	tag3Value_ = tag3Value;
-	setParameter("Tag3Value", tag3Value);
-}
-
 std::string CreateInstanceRequest::getDeploymentSetId()const
 {
 	return deploymentSetId_;
@@ -609,37 +549,15 @@ void CreateInstanceRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 	for(int i = 0; i!= dataDisk.size(); i++)	{
 		auto obj = dataDisk.at(i);
 		std::string str ="DataDisk."+ std::to_string(i);
-		setParameter(str + ".Size", std::to_string(obj.size));
-		setParameter(str + ".SnapshotId", obj.snapshotId);
-		setParameter(str + ".Category", obj.category);
 		setParameter(str + ".DiskName", obj.diskName);
+		setParameter(str + ".SnapshotId", obj.snapshotId);
+		setParameter(str + ".Size", std::to_string(obj.size));
+		setParameter(str + ".Encrypted", std::to_string(obj.encrypted));
 		setParameter(str + ".Description", obj.description);
+		setParameter(str + ".Category", obj.category);
 		setParameter(str + ".Device", obj.device);
 		setParameter(str + ".DeleteWithInstance", std::to_string(obj.deleteWithInstance));
-		setParameter(str + ".Encrypted", std::to_string(obj.encrypted));
 	}
-}
-
-std::string CreateInstanceRequest::getTag5Value()const
-{
-	return tag5Value_;
-}
-
-void CreateInstanceRequest::setTag5Value(const std::string& tag5Value)
-{
-	tag5Value_ = tag5Value;
-	setParameter("Tag5Value", tag5Value);
-}
-
-std::string CreateInstanceRequest::getTag1Key()const
-{
-	return tag1Key_;
-}
-
-void CreateInstanceRequest::setTag1Key(const std::string& tag1Key)
-{
-	tag1Key_ = tag1Key;
-	setParameter("Tag1Key", tag1Key);
 }
 
 int CreateInstanceRequest::getSystemDiskSize()const
@@ -651,17 +569,6 @@ void CreateInstanceRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
 	setParameter("SystemDiskSize", std::to_string(systemDiskSize));
-}
-
-std::string CreateInstanceRequest::getTag2Value()const
-{
-	return tag2Value_;
-}
-
-void CreateInstanceRequest::setTag2Value(const std::string& tag2Value)
-{
-	tag2Value_ = tag2Value;
-	setParameter("Tag2Value", tag2Value);
 }
 
 std::string CreateInstanceRequest::getSystemDiskDescription()const

@@ -47,17 +47,6 @@ void CreateLaunchTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateLaunchTemplateRequest::getTemplateTag4Key()const
-{
-	return templateTag4Key_;
-}
-
-void CreateLaunchTemplateRequest::setTemplateTag4Key(const std::string& templateTag4Key)
-{
-	templateTag4Key_ = templateTag4Key;
-	setParameter("TemplateTag4Key", templateTag4Key);
-}
-
 long CreateLaunchTemplateRequest::getCallerParentId()const
 {
 	return callerParentId_;
@@ -168,17 +157,6 @@ void CreateLaunchTemplateRequest::setResourceGroupId(const std::string& resource
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
-std::string CreateLaunchTemplateRequest::getTemplateTag3Key()const
-{
-	return templateTag3Key_;
-}
-
-void CreateLaunchTemplateRequest::setTemplateTag3Key(const std::string& templateTag3Key)
-{
-	templateTag3Key_ = templateTag3Key;
-	setParameter("TemplateTag3Key", templateTag3Key);
-}
-
 std::string CreateLaunchTemplateRequest::getHostName()const
 {
 	return hostName_;
@@ -234,15 +212,21 @@ void CreateLaunchTemplateRequest::setCallerBidEmail(const std::string& callerBid
 	setParameter("CallerBidEmail", callerBidEmail);
 }
 
-std::string CreateLaunchTemplateRequest::getTemplateTag3Value()const
+std::vector<CreateLaunchTemplateRequest::TemplateTag> CreateLaunchTemplateRequest::getTemplateTag()const
 {
-	return templateTag3Value_;
+	return templateTag_;
 }
 
-void CreateLaunchTemplateRequest::setTemplateTag3Value(const std::string& templateTag3Value)
+void CreateLaunchTemplateRequest::setTemplateTag(const std::vector<TemplateTag>& templateTag)
 {
-	templateTag3Value_ = templateTag3Value;
-	setParameter("TemplateTag3Value", templateTag3Value);
+	templateTag_ = templateTag;
+	int i = 0;
+	for(int i = 0; i!= templateTag.size(); i++)	{
+		auto obj = templateTag.at(i);
+		std::string str ="TemplateTag."+ std::to_string(i);
+		setParameter(str + ".Key", obj.key);
+		setParameter(str + ".Value", obj.value);
+	}
 }
 
 std::vector<CreateLaunchTemplateRequest::Tag> CreateLaunchTemplateRequest::getTag()const
@@ -293,17 +277,6 @@ void CreateLaunchTemplateRequest::setTemplateResourceGroupId(const std::string& 
 {
 	templateResourceGroupId_ = templateResourceGroupId;
 	setParameter("TemplateResourceGroupId", templateResourceGroupId);
-}
-
-std::string CreateLaunchTemplateRequest::getTemplateTag2Value()const
-{
-	return templateTag2Value_;
-}
-
-void CreateLaunchTemplateRequest::setTemplateTag2Value(const std::string& templateTag2Value)
-{
-	templateTag2Value_ = templateTag2Value;
-	setParameter("TemplateTag2Value", templateTag2Value);
 }
 
 long CreateLaunchTemplateRequest::getOwnerId()const
@@ -394,17 +367,6 @@ void CreateLaunchTemplateRequest::setInternetChargeType(const std::string& inter
 	setParameter("InternetChargeType", internetChargeType);
 }
 
-std::string CreateLaunchTemplateRequest::getTemplateTag5Key()const
-{
-	return templateTag5Key_;
-}
-
-void CreateLaunchTemplateRequest::setTemplateTag5Key(const std::string& templateTag5Key)
-{
-	templateTag5Key_ = templateTag5Key;
-	setParameter("TemplateTag5Key", templateTag5Key);
-}
-
 std::string CreateLaunchTemplateRequest::getZoneId()const
 {
 	return zoneId_;
@@ -436,17 +398,6 @@ void CreateLaunchTemplateRequest::setVersionDescription(const std::string& versi
 {
 	versionDescription_ = versionDescription;
 	setParameter("VersionDescription", versionDescription);
-}
-
-std::string CreateLaunchTemplateRequest::getTemplateTag1Value()const
-{
-	return templateTag1Value_;
-}
-
-void CreateLaunchTemplateRequest::setTemplateTag1Value(const std::string& templateTag1Value)
-{
-	templateTag1Value_ = templateTag1Value;
-	setParameter("TemplateTag1Value", templateTag1Value);
 }
 
 std::string CreateLaunchTemplateRequest::getImageId()const
@@ -559,17 +510,6 @@ void CreateLaunchTemplateRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
-std::string CreateLaunchTemplateRequest::getTemplateTag5Value()const
-{
-	return templateTag5Value_;
-}
-
-void CreateLaunchTemplateRequest::setTemplateTag5Value(const std::string& templateTag5Value)
-{
-	templateTag5Value_ = templateTag5Value;
-	setParameter("TemplateTag5Value", templateTag5Value);
-}
-
 std::string CreateLaunchTemplateRequest::getRequestContent()const
 {
 	return requestContent_;
@@ -654,17 +594,6 @@ void CreateLaunchTemplateRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
 	setParameter("App_ip", app_ip);
-}
-
-std::string CreateLaunchTemplateRequest::getTemplateTag2Key()const
-{
-	return templateTag2Key_;
-}
-
-void CreateLaunchTemplateRequest::setTemplateTag2Key(const std::string& templateTag2Key)
-{
-	templateTag2Key_ = templateTag2Key;
-	setParameter("TemplateTag2Key", templateTag2Key);
 }
 
 std::string CreateLaunchTemplateRequest::getResourceOwnerAccount()const
@@ -777,17 +706,6 @@ void CreateLaunchTemplateRequest::setProxy_trust_transport_info(bool proxy_trust
 	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
 }
 
-std::string CreateLaunchTemplateRequest::getTemplateTag4Value()const
-{
-	return templateTag4Value_;
-}
-
-void CreateLaunchTemplateRequest::setTemplateTag4Value(const std::string& templateTag4Value)
-{
-	templateTag4Value_ = templateTag4Value;
-	setParameter("TemplateTag4Value", templateTag4Value);
-}
-
 int CreateLaunchTemplateRequest::getSystemDiskSize()const
 {
 	return systemDiskSize_;
@@ -808,17 +726,6 @@ void CreateLaunchTemplateRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
 	setParameter("VpcId", vpcId);
-}
-
-std::string CreateLaunchTemplateRequest::getTemplateTag1Key()const
-{
-	return templateTag1Key_;
-}
-
-void CreateLaunchTemplateRequest::setTemplateTag1Key(const std::string& templateTag1Key)
-{
-	templateTag1Key_ = templateTag1Key;
-	setParameter("TemplateTag1Key", templateTag1Key);
 }
 
 std::string CreateLaunchTemplateRequest::getSystemDiskDescription()const

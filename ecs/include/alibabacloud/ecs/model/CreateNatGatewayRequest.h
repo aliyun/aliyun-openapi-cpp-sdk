@@ -32,9 +32,9 @@ namespace AlibabaCloud
 			{
 				struct BandwidthPackage
 				{
-					int ipCount;
 					int bandwidth;
 					std::string zone;
+					int ipCount;
 				};
 
 			public:

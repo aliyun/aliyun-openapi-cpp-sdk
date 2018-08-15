@@ -25,17 +25,6 @@ DescribeSnapshotsRequest::DescribeSnapshotsRequest() :
 DescribeSnapshotsRequest::~DescribeSnapshotsRequest()
 {}
 
-std::string DescribeSnapshotsRequest::getTag4Value()const
-{
-	return tag4Value_;
-}
-
-void DescribeSnapshotsRequest::setTag4Value(const std::string& tag4Value)
-{
-	tag4Value_ = tag4Value;
-	setParameter("Tag4Value", tag4Value);
-}
-
 long DescribeSnapshotsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,17 +34,6 @@ void DescribeSnapshotsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeSnapshotsRequest::getTag2Key()const
-{
-	return tag2Key_;
-}
-
-void DescribeSnapshotsRequest::setTag2Key(const std::string& tag2Key)
-{
-	tag2Key_ = tag2Key;
-	setParameter("Tag2Key", tag2Key);
 }
 
 std::string DescribeSnapshotsRequest::getFilter2Value()const
@@ -113,17 +91,6 @@ void DescribeSnapshotsRequest::setSnapshotName(const std::string& snapshotName)
 	setParameter("SnapshotName", snapshotName);
 }
 
-std::string DescribeSnapshotsRequest::getTag3Key()const
-{
-	return tag3Key_;
-}
-
-void DescribeSnapshotsRequest::setTag3Key(const std::string& tag3Key)
-{
-	tag3Key_ = tag3Key;
-	setParameter("Tag3Key", tag3Key);
-}
-
 int DescribeSnapshotsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -133,17 +100,6 @@ void DescribeSnapshotsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeSnapshotsRequest::getTag1Value()const
-{
-	return tag1Value_;
-}
-
-void DescribeSnapshotsRequest::setTag1Value(const std::string& tag1Value)
-{
-	tag1Value_ = tag1Value;
-	setParameter("Tag1Value", tag1Value);
 }
 
 std::string DescribeSnapshotsRequest::getResourceGroupId()const
@@ -201,15 +157,21 @@ void DescribeSnapshotsRequest::setDiskId(const std::string& diskId)
 	setParameter("DiskId", diskId);
 }
 
-std::string DescribeSnapshotsRequest::getTag3Value()const
+std::vector<DescribeSnapshotsRequest::Tag> DescribeSnapshotsRequest::getTag()const
 {
-	return tag3Value_;
+	return tag_;
 }
 
-void DescribeSnapshotsRequest::setTag3Value(const std::string& tag3Value)
+void DescribeSnapshotsRequest::setTag(const std::vector<Tag>& tag)
 {
-	tag3Value_ = tag3Value;
-	setParameter("Tag3Value", tag3Value);
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 
 bool DescribeSnapshotsRequest::getDryRun()const
@@ -221,17 +183,6 @@ void DescribeSnapshotsRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
 	setParameter("DryRun", std::to_string(dryRun));
-}
-
-std::string DescribeSnapshotsRequest::getTag5Key()const
-{
-	return tag5Key_;
-}
-
-void DescribeSnapshotsRequest::setTag5Key(const std::string& tag5Key)
-{
-	tag5Key_ = tag5Key;
-	setParameter("Tag5Key", tag5Key);
 }
 
 std::string DescribeSnapshotsRequest::getResourceOwnerAccount()const
@@ -300,28 +251,6 @@ void DescribeSnapshotsRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeSnapshotsRequest::getTag5Value()const
-{
-	return tag5Value_;
-}
-
-void DescribeSnapshotsRequest::setTag5Value(const std::string& tag5Value)
-{
-	tag5Value_ = tag5Value;
-	setParameter("Tag5Value", tag5Value);
-}
-
-std::string DescribeSnapshotsRequest::getTag1Key()const
-{
-	return tag1Key_;
-}
-
-void DescribeSnapshotsRequest::setTag1Key(const std::string& tag1Key)
-{
-	tag1Key_ = tag1Key;
-	setParameter("Tag1Key", tag1Key);
-}
-
 std::string DescribeSnapshotsRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -353,28 +282,6 @@ void DescribeSnapshotsRequest::setSnapshotType(const std::string& snapshotType)
 {
 	snapshotType_ = snapshotType;
 	setParameter("SnapshotType", snapshotType);
-}
-
-std::string DescribeSnapshotsRequest::getTag2Value()const
-{
-	return tag2Value_;
-}
-
-void DescribeSnapshotsRequest::setTag2Value(const std::string& tag2Value)
-{
-	tag2Value_ = tag2Value;
-	setParameter("Tag2Value", tag2Value);
-}
-
-std::string DescribeSnapshotsRequest::getTag4Key()const
-{
-	return tag4Key_;
-}
-
-void DescribeSnapshotsRequest::setTag4Key(const std::string& tag4Key)
-{
-	tag4Key_ = tag4Key;
-	setParameter("Tag4Key", tag4Key);
 }
 
 std::string DescribeSnapshotsRequest::getStatus()const

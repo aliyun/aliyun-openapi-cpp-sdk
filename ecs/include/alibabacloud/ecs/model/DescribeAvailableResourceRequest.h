@@ -91,6 +91,8 @@ namespace AlibabaCloud
 				void setCallerBid(const std::string& callerBid);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
 				bool getAk_mfa_present()const;
@@ -135,6 +137,7 @@ namespace AlibabaCloud
 				std::string dedicatedHostId_;
 				std::string callerBid_;
 				long ownerId_;
+				std::string resourceType_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;

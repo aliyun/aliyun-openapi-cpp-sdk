@@ -35,6 +35,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateNatGatewayResult.h
 	include/alibabacloud/ecs/model/AttachDiskRequest.h
 	include/alibabacloud/ecs/model/AttachDiskResult.h
+	include/alibabacloud/ecs/model/DescribeEniMonitorDataRequest.h
+	include/alibabacloud/ecs/model/DescribeEniMonitorDataResult.h
 	include/alibabacloud/ecs/model/ReInitDiskRequest.h
 	include/alibabacloud/ecs/model/ReInitDiskResult.h
 	include/alibabacloud/ecs/model/CreateHaVipRequest.h
@@ -401,6 +403,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ReleasePublicIpAddressResult.h
 	include/alibabacloud/ecs/model/CreateVirtualBorderRouterRequest.h
 	include/alibabacloud/ecs/model/CreateVirtualBorderRouterResult.h
+	include/alibabacloud/ecs/model/DescribeAccountAttributesRequest.h
+	include/alibabacloud/ecs/model/DescribeAccountAttributesResult.h
 	include/alibabacloud/ecs/model/EipFillParamsRequest.h
 	include/alibabacloud/ecs/model/EipFillParamsResult.h
 	include/alibabacloud/ecs/model/ModifyPrepayInstanceSpecRequest.h
@@ -520,6 +524,8 @@ set(ecs_src
 	src/model/CreateNatGatewayResult.cc
 	src/model/AttachDiskRequest.cc
 	src/model/AttachDiskResult.cc
+	src/model/DescribeEniMonitorDataRequest.cc
+	src/model/DescribeEniMonitorDataResult.cc
 	src/model/ReInitDiskRequest.cc
 	src/model/ReInitDiskResult.cc
 	src/model/CreateHaVipRequest.cc
@@ -886,6 +892,8 @@ set(ecs_src
 	src/model/ReleasePublicIpAddressResult.cc
 	src/model/CreateVirtualBorderRouterRequest.cc
 	src/model/CreateVirtualBorderRouterResult.cc
+	src/model/DescribeAccountAttributesRequest.cc
+	src/model/DescribeAccountAttributesResult.cc
 	src/model/EipFillParamsRequest.cc
 	src/model/EipFillParamsResult.cc
 	src/model/ModifyPrepayInstanceSpecRequest.cc

@@ -37,12 +37,12 @@ void ImportImageRequest::setDiskDeviceMapping(const std::vector<DiskDeviceMappin
 	for(int i = 0; i!= diskDeviceMapping.size(); i++)	{
 		auto obj = diskDeviceMapping.at(i);
 		std::string str ="DiskDeviceMapping."+ std::to_string(i);
-		setParameter(str + ".Format", obj.format);
 		setParameter(str + ".OSSBucket", obj.oSSBucket);
-		setParameter(str + ".OSSObject", obj.oSSObject);
 		setParameter(str + ".DiskImSize", std::to_string(obj.diskImSize));
-		setParameter(str + ".DiskImageSize", std::to_string(obj.diskImageSize));
+		setParameter(str + ".Format", obj.format);
 		setParameter(str + ".Device", obj.device);
+		setParameter(str + ".OSSObject", obj.oSSObject);
+		setParameter(str + ".DiskImageSize", std::to_string(obj.diskImageSize));
 	}
 }
 

@@ -136,9 +136,9 @@ void CreateNatGatewayRequest::setBandwidthPackage(const std::vector<BandwidthPac
 	for(int i = 0; i!= bandwidthPackage.size(); i++)	{
 		auto obj = bandwidthPackage.at(i);
 		std::string str ="BandwidthPackage."+ std::to_string(i);
-		setParameter(str + ".IpCount", std::to_string(obj.ipCount));
 		setParameter(str + ".Bandwidth", std::to_string(obj.bandwidth));
 		setParameter(str + ".Zone", obj.zone);
+		setParameter(str + ".IpCount", std::to_string(obj.ipCount));
 	}
 }
 

@@ -25,17 +25,6 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
 DescribeInstancesRequest::~DescribeInstancesRequest()
 {}
 
-std::string DescribeInstancesRequest::getTag4Value()const
-{
-	return tag4Value_;
-}
-
-void DescribeInstancesRequest::setTag4Value(const std::string& tag4Value)
-{
-	tag4Value_ = tag4Value;
-	setParameter("Tag4Value", tag4Value);
-}
-
 std::string DescribeInstancesRequest::getInnerIpAddresses()const
 {
 	return innerIpAddresses_;
@@ -58,15 +47,15 @@ void DescribeInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeInstancesRequest::getTag2Key()const
+std::string DescribeInstancesRequest::getImageId()const
 {
-	return tag2Key_;
+	return imageId_;
 }
 
-void DescribeInstancesRequest::setTag2Key(const std::string& tag2Key)
+void DescribeInstancesRequest::setImageId(const std::string& imageId)
 {
-	tag2Key_ = tag2Key;
-	setParameter("Tag2Key", tag2Key);
+	imageId_ = imageId;
+	setParameter("ImageId", imageId);
 }
 
 std::string DescribeInstancesRequest::getPrivateIpAddresses()const
@@ -102,15 +91,37 @@ void DescribeInstancesRequest::setFilter2Value(const std::string& filter2Value)
 	setParameter("Filter2Value", filter2Value);
 }
 
-std::string DescribeInstancesRequest::getTag3Key()const
+std::string DescribeInstancesRequest::getFilter4Value()const
 {
-	return tag3Key_;
+	return filter4Value_;
 }
 
-void DescribeInstancesRequest::setTag3Key(const std::string& tag3Key)
+void DescribeInstancesRequest::setFilter4Value(const std::string& filter4Value)
 {
-	tag3Key_ = tag3Key;
-	setParameter("Tag3Key", tag3Key);
+	filter4Value_ = filter4Value;
+	setParameter("Filter4Value", filter4Value);
+}
+
+bool DescribeInstancesRequest::getIoOptimized()const
+{
+	return ioOptimized_;
+}
+
+void DescribeInstancesRequest::setIoOptimized(bool ioOptimized)
+{
+	ioOptimized_ = ioOptimized;
+	setParameter("IoOptimized", std::to_string(ioOptimized));
+}
+
+std::string DescribeInstancesRequest::getSecurityGroupId()const
+{
+	return securityGroupId_;
+}
+
+void DescribeInstancesRequest::setSecurityGroupId(const std::string& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
 std::string DescribeInstancesRequest::getKeyPairName()const
@@ -124,15 +135,26 @@ void DescribeInstancesRequest::setKeyPairName(const std::string& keyPairName)
 	setParameter("KeyPairName", keyPairName);
 }
 
-std::string DescribeInstancesRequest::getTag1Value()const
+std::string DescribeInstancesRequest::getFilter4Key()const
 {
-	return tag1Value_;
+	return filter4Key_;
 }
 
-void DescribeInstancesRequest::setTag1Value(const std::string& tag1Value)
+void DescribeInstancesRequest::setFilter4Key(const std::string& filter4Key)
 {
-	tag1Value_ = tag1Value;
-	setParameter("Tag1Value", tag1Value);
+	filter4Key_ = filter4Key;
+	setParameter("Filter4Key", filter4Key);
+}
+
+int DescribeInstancesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeInstancesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeInstancesRequest::getResourceGroupId()const
@@ -168,226 +190,6 @@ void DescribeInstancesRequest::setFilter1Key(const std::string& filter1Key)
 	setParameter("Filter1Key", filter1Key);
 }
 
-bool DescribeInstancesRequest::getDeviceAvailable()const
-{
-	return deviceAvailable_;
-}
-
-void DescribeInstancesRequest::setDeviceAvailable(bool deviceAvailable)
-{
-	deviceAvailable_ = deviceAvailable;
-	setParameter("DeviceAvailable", std::to_string(deviceAvailable));
-}
-
-std::string DescribeInstancesRequest::getFilter3Value()const
-{
-	return filter3Value_;
-}
-
-void DescribeInstancesRequest::setFilter3Value(const std::string& filter3Value)
-{
-	filter3Value_ = filter3Value;
-	setParameter("Filter3Value", filter3Value);
-}
-
-bool DescribeInstancesRequest::getDryRun()const
-{
-	return dryRun_;
-}
-
-void DescribeInstancesRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", std::to_string(dryRun));
-}
-
-std::string DescribeInstancesRequest::getTag5Key()const
-{
-	return tag5Key_;
-}
-
-void DescribeInstancesRequest::setTag5Key(const std::string& tag5Key)
-{
-	tag5Key_ = tag5Key;
-	setParameter("Tag5Key", tag5Key);
-}
-
-std::string DescribeInstancesRequest::getFilter1Value()const
-{
-	return filter1Value_;
-}
-
-void DescribeInstancesRequest::setFilter1Value(const std::string& filter1Value)
-{
-	filter1Value_ = filter1Value;
-	setParameter("Filter1Value", filter1Value);
-}
-
-long DescribeInstancesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeInstancesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeInstancesRequest::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
-void DescribeInstancesRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
-}
-
-std::string DescribeInstancesRequest::getInstanceName()const
-{
-	return instanceName_;
-}
-
-void DescribeInstancesRequest::setInstanceName(const std::string& instanceName)
-{
-	instanceName_ = instanceName;
-	setParameter("InstanceName", instanceName);
-}
-
-std::string DescribeInstancesRequest::getInstanceIds()const
-{
-	return instanceIds_;
-}
-
-void DescribeInstancesRequest::setInstanceIds(const std::string& instanceIds)
-{
-	instanceIds_ = instanceIds;
-	setParameter("InstanceIds", instanceIds);
-}
-
-std::string DescribeInstancesRequest::getInternetChargeType()const
-{
-	return internetChargeType_;
-}
-
-void DescribeInstancesRequest::setInternetChargeType(const std::string& internetChargeType)
-{
-	internetChargeType_ = internetChargeType;
-	setParameter("InternetChargeType", internetChargeType);
-}
-
-std::string DescribeInstancesRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void DescribeInstancesRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
-}
-
-std::string DescribeInstancesRequest::getTag4Key()const
-{
-	return tag4Key_;
-}
-
-void DescribeInstancesRequest::setTag4Key(const std::string& tag4Key)
-{
-	tag4Key_ = tag4Key;
-	setParameter("Tag4Key", tag4Key);
-}
-
-std::string DescribeInstancesRequest::getInstanceNetworkType()const
-{
-	return instanceNetworkType_;
-}
-
-void DescribeInstancesRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
-{
-	instanceNetworkType_ = instanceNetworkType;
-	setParameter("InstanceNetworkType", instanceNetworkType);
-}
-
-std::string DescribeInstancesRequest::getStatus()const
-{
-	return status_;
-}
-
-void DescribeInstancesRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setParameter("Status", status);
-}
-
-std::string DescribeInstancesRequest::getImageId()const
-{
-	return imageId_;
-}
-
-void DescribeInstancesRequest::setImageId(const std::string& imageId)
-{
-	imageId_ = imageId;
-	setParameter("ImageId", imageId);
-}
-
-std::string DescribeInstancesRequest::getFilter4Value()const
-{
-	return filter4Value_;
-}
-
-void DescribeInstancesRequest::setFilter4Value(const std::string& filter4Value)
-{
-	filter4Value_ = filter4Value;
-	setParameter("Filter4Value", filter4Value);
-}
-
-bool DescribeInstancesRequest::getIoOptimized()const
-{
-	return ioOptimized_;
-}
-
-void DescribeInstancesRequest::setIoOptimized(bool ioOptimized)
-{
-	ioOptimized_ = ioOptimized;
-	setParameter("IoOptimized", std::to_string(ioOptimized));
-}
-
-std::string DescribeInstancesRequest::getSecurityGroupId()const
-{
-	return securityGroupId_;
-}
-
-void DescribeInstancesRequest::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
-}
-
-std::string DescribeInstancesRequest::getFilter4Key()const
-{
-	return filter4Key_;
-}
-
-void DescribeInstancesRequest::setFilter4Key(const std::string& filter4Key)
-{
-	filter4Key_ = filter4Key;
-	setParameter("Filter4Key", filter4Key);
-}
-
-int DescribeInstancesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeInstancesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
-}
-
 std::string DescribeInstancesRequest::getRegionId()const
 {
 	return regionId_;
@@ -408,6 +210,17 @@ void DescribeInstancesRequest::setRdmaIpAddresses(const std::string& rdmaIpAddre
 {
 	rdmaIpAddresses_ = rdmaIpAddresses;
 	setParameter("RdmaIpAddresses", rdmaIpAddresses);
+}
+
+bool DescribeInstancesRequest::getDeviceAvailable()const
+{
+	return deviceAvailable_;
+}
+
+void DescribeInstancesRequest::setDeviceAvailable(bool deviceAvailable)
+{
+	deviceAvailable_ = deviceAvailable;
+	setParameter("DeviceAvailable", std::to_string(deviceAvailable));
 }
 
 int DescribeInstancesRequest::getPageSize()const
@@ -443,6 +256,23 @@ void DescribeInstancesRequest::setInstanceType(const std::string& instanceType)
 	setParameter("InstanceType", instanceType);
 }
 
+std::vector<DescribeInstancesRequest::Tag> DescribeInstancesRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeInstancesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
+}
+
 std::string DescribeInstancesRequest::getInstanceChargeType()const
 {
 	return instanceChargeType_;
@@ -454,15 +284,26 @@ void DescribeInstancesRequest::setInstanceChargeType(const std::string& instance
 	setParameter("InstanceChargeType", instanceChargeType);
 }
 
-std::string DescribeInstancesRequest::getTag3Value()const
+std::string DescribeInstancesRequest::getFilter3Value()const
 {
-	return tag3Value_;
+	return filter3Value_;
 }
 
-void DescribeInstancesRequest::setTag3Value(const std::string& tag3Value)
+void DescribeInstancesRequest::setFilter3Value(const std::string& filter3Value)
 {
-	tag3Value_ = tag3Value;
-	setParameter("Tag3Value", tag3Value);
+	filter3Value_ = filter3Value;
+	setParameter("Filter3Value", filter3Value);
+}
+
+bool DescribeInstancesRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void DescribeInstancesRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", std::to_string(dryRun));
 }
 
 std::string DescribeInstancesRequest::getResourceOwnerAccount()const
@@ -498,6 +339,17 @@ void DescribeInstancesRequest::setInstanceTypeFamily(const std::string& instance
 	setParameter("InstanceTypeFamily", instanceTypeFamily);
 }
 
+std::string DescribeInstancesRequest::getFilter1Value()const
+{
+	return filter1Value_;
+}
+
+void DescribeInstancesRequest::setFilter1Value(const std::string& filter1Value)
+{
+	filter1Value_ = filter1Value;
+	setParameter("Filter1Value", filter1Value);
+}
+
 std::string DescribeInstancesRequest::getFilter2Key()const
 {
 	return filter2Key_;
@@ -509,26 +361,26 @@ void DescribeInstancesRequest::setFilter2Key(const std::string& filter2Key)
 	setParameter("Filter2Key", filter2Key);
 }
 
-std::string DescribeInstancesRequest::getTag5Value()const
+long DescribeInstancesRequest::getOwnerId()const
 {
-	return tag5Value_;
+	return ownerId_;
 }
 
-void DescribeInstancesRequest::setTag5Value(const std::string& tag5Value)
+void DescribeInstancesRequest::setOwnerId(long ownerId)
 {
-	tag5Value_ = tag5Value;
-	setParameter("Tag5Value", tag5Value);
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeInstancesRequest::getTag1Key()const
+std::string DescribeInstancesRequest::getVSwitchId()const
 {
-	return tag1Key_;
+	return vSwitchId_;
 }
 
-void DescribeInstancesRequest::setTag1Key(const std::string& tag1Key)
+void DescribeInstancesRequest::setVSwitchId(const std::string& vSwitchId)
 {
-	tag1Key_ = tag1Key;
-	setParameter("Tag1Key", tag1Key);
+	vSwitchId_ = vSwitchId;
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string DescribeInstancesRequest::getEipAddresses()const
@@ -542,6 +394,39 @@ void DescribeInstancesRequest::setEipAddresses(const std::string& eipAddresses)
 	setParameter("EipAddresses", eipAddresses);
 }
 
+std::string DescribeInstancesRequest::getInstanceName()const
+{
+	return instanceName_;
+}
+
+void DescribeInstancesRequest::setInstanceName(const std::string& instanceName)
+{
+	instanceName_ = instanceName;
+	setParameter("InstanceName", instanceName);
+}
+
+std::string DescribeInstancesRequest::getInstanceIds()const
+{
+	return instanceIds_;
+}
+
+void DescribeInstancesRequest::setInstanceIds(const std::string& instanceIds)
+{
+	instanceIds_ = instanceIds;
+	setParameter("InstanceIds", instanceIds);
+}
+
+std::string DescribeInstancesRequest::getInternetChargeType()const
+{
+	return internetChargeType_;
+}
+
+void DescribeInstancesRequest::setInternetChargeType(const std::string& internetChargeType)
+{
+	internetChargeType_ = internetChargeType;
+	setParameter("InternetChargeType", internetChargeType);
+}
+
 std::string DescribeInstancesRequest::getVpcId()const
 {
 	return vpcId_;
@@ -553,15 +438,15 @@ void DescribeInstancesRequest::setVpcId(const std::string& vpcId)
 	setParameter("VpcId", vpcId);
 }
 
-std::string DescribeInstancesRequest::getTag2Value()const
+std::string DescribeInstancesRequest::getZoneId()const
 {
-	return tag2Value_;
+	return zoneId_;
 }
 
-void DescribeInstancesRequest::setTag2Value(const std::string& tag2Value)
+void DescribeInstancesRequest::setZoneId(const std::string& zoneId)
 {
-	tag2Value_ = tag2Value;
-	setParameter("Tag2Value", tag2Value);
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
 }
 
 std::string DescribeInstancesRequest::getFilter3Key()const
@@ -573,5 +458,27 @@ void DescribeInstancesRequest::setFilter3Key(const std::string& filter3Key)
 {
 	filter3Key_ = filter3Key;
 	setParameter("Filter3Key", filter3Key);
+}
+
+std::string DescribeInstancesRequest::getInstanceNetworkType()const
+{
+	return instanceNetworkType_;
+}
+
+void DescribeInstancesRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
+{
+	instanceNetworkType_ = instanceNetworkType;
+	setParameter("InstanceNetworkType", instanceNetworkType);
+}
+
+std::string DescribeInstancesRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeInstancesRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
 }
 
