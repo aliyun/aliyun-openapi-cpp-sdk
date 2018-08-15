@@ -32,18 +32,18 @@ namespace AlibabaCloud
 			{
 				struct AudioLayer
 				{
+					int fixedDelayDuration;
 					float volumeRate;
 					std::string validChannel;
-					int fixedDelayDuration;
 				};
 				struct VideoLayer
 				{
 					std::string fillMode;
-					float heightNormalized;
 					float widthNormalized;
+					int fixedDelayDuration;
 					std::string positionRefer;
 					std::vector<float> positionNormalized;
-					int fixedDelayDuration;
+					float heightNormalized;
 				};
 
 			public:

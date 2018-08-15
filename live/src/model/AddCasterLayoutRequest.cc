@@ -49,9 +49,9 @@ void AddCasterLayoutRequest::setAudioLayer(const std::vector<AudioLayer>& audioL
 	for(int i = 0; i!= audioLayer.size(); i++)	{
 		auto obj = audioLayer.at(i);
 		std::string str ="AudioLayer."+ std::to_string(i);
+		setParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
 		setParameter(str + ".VolumeRate", std::to_string(obj.volumeRate));
 		setParameter(str + ".ValidChannel", obj.validChannel);
-		setParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
 	}
 }
 
@@ -68,11 +68,11 @@ void AddCasterLayoutRequest::setVideoLayer(const std::vector<VideoLayer>& videoL
 		auto obj = videoLayer.at(i);
 		std::string str ="VideoLayer."+ std::to_string(i);
 		setParameter(str + ".FillMode", obj.fillMode);
-		setParameter(str + ".HeightNormalized", std::to_string(obj.heightNormalized));
 		setParameter(str + ".WidthNormalized", std::to_string(obj.widthNormalized));
+		setParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
 		setParameter(str + ".PositionRefer", obj.positionRefer);
 		for(int i = 0; i!= obj.positionNormalized.size(); i++)				setParameter(str + ".PositionNormalized."+ std::to_string(i), std::to_string(obj.positionNormalized.at(i)));
-		setParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
+		setParameter(str + ".HeightNormalized", std::to_string(obj.heightNormalized));
 	}
 }
 

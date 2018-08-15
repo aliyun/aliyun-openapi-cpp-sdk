@@ -14,46 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/ImagePornDetectionResult.h>
+#include <alibabacloud/live/model/BatchSetLiveDomainConfigsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-ImagePornDetectionResult::ImagePornDetectionResult() :
+BatchSetLiveDomainConfigsResult::BatchSetLiveDomainConfigsResult() :
 	ServiceResult()
 {}
 
-ImagePornDetectionResult::ImagePornDetectionResult(const std::string &payload) :
+BatchSetLiveDomainConfigsResult::BatchSetLiveDomainConfigsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ImagePornDetectionResult::~ImagePornDetectionResult()
+BatchSetLiveDomainConfigsResult::~BatchSetLiveDomainConfigsResult()
 {}
 
-void ImagePornDetectionResult::parse(const std::string &payload)
+void BatchSetLiveDomainConfigsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["Label"].isNull())
-		label_ = value["Label"].asString();
-	if(!value["Rate"].isNull())
-		rate_ = std::stof(value["Rate"].asString());
 
-}
-
-float ImagePornDetectionResult::getRate()const
-{
-	return rate_;
-}
-
-std::string ImagePornDetectionResult::getLabel()const
-{
-	return label_;
 }
 

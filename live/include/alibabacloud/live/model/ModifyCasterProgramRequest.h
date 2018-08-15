@@ -32,14 +32,14 @@ namespace AlibabaCloud
 			{
 				struct Episode
 				{
-					std::string episodeId;
-					std::string episodeType;
-					std::string episodeName;
 					std::string resourceId;
 					std::vector<std::string> componentId;
-					std::string startTime;
-					std::string endTime;
 					std::string switchType;
+					std::string episodeType;
+					std::string episodeName;
+					std::string endTime;
+					std::string startTime;
+					std::string episodeId;
 				};
 
 			public:

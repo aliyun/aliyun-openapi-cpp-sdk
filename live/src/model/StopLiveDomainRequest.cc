@@ -14,56 +14,56 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/ImagePornDetectionRequest.h>
+#include <alibabacloud/live/model/StopLiveDomainRequest.h>
 
-using AlibabaCloud::Live::Model::ImagePornDetectionRequest;
+using AlibabaCloud::Live::Model::StopLiveDomainRequest;
 
-ImagePornDetectionRequest::ImagePornDetectionRequest() :
-	RpcServiceRequest("live", "2016-11-01", "ImagePornDetection")
+StopLiveDomainRequest::StopLiveDomainRequest() :
+	RpcServiceRequest("live", "2016-11-01", "StopLiveDomain")
 {}
 
-ImagePornDetectionRequest::~ImagePornDetectionRequest()
+StopLiveDomainRequest::~StopLiveDomainRequest()
 {}
 
-std::string ImagePornDetectionRequest::getSecurityToken()const
+std::string StopLiveDomainRequest::getSecurityToken()const
 {
 	return securityToken_;
 }
 
-void ImagePornDetectionRequest::setSecurityToken(const std::string& securityToken)
+void StopLiveDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
 }
 
-std::string ImagePornDetectionRequest::getImageUrl()const
+std::string StopLiveDomainRequest::getDomainName()const
 {
-	return imageUrl_;
+	return domainName_;
 }
 
-void ImagePornDetectionRequest::setImageUrl(const std::string& imageUrl)
+void StopLiveDomainRequest::setDomainName(const std::string& domainName)
 {
-	imageUrl_ = imageUrl;
-	setParameter("ImageUrl", imageUrl);
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
 }
 
-long ImagePornDetectionRequest::getOwnerId()const
+long StopLiveDomainRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ImagePornDetectionRequest::setOwnerId(long ownerId)
+void StopLiveDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ImagePornDetectionRequest::getAccessKeyId()const
+std::string StopLiveDomainRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void ImagePornDetectionRequest::setAccessKeyId(const std::string& accessKeyId)
+void StopLiveDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);

@@ -32,8 +32,8 @@ namespace AlibabaCloud
 			{
 				struct Item
 				{
-					std::string itemName;
 					std::string vodUrl;
+					std::string itemName;
 				};
 
 			public:

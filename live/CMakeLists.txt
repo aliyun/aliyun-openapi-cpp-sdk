@@ -37,6 +37,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveMixConfigResult.h
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesRequest.h
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesResult.h
+	include/alibabacloud/live/model/DeleteLiveSpecificConfigRequest.h
+	include/alibabacloud/live/model/DeleteLiveSpecificConfigResult.h
 	include/alibabacloud/live/model/UpdateCasterSceneConfigRequest.h
 	include/alibabacloud/live/model/UpdateCasterSceneConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamTranscodeInfoRequest.h
@@ -89,6 +91,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveRecordNotifyConfigResult.h
 	include/alibabacloud/live/model/AddLiveRecordNotifyConfigRequest.h
 	include/alibabacloud/live/model/AddLiveRecordNotifyConfigResult.h
+	include/alibabacloud/live/model/DescribeHlsLiveStreamRealTimeBpsDataRequest.h
+	include/alibabacloud/live/model/DescribeHlsLiveStreamRealTimeBpsDataResult.h
 	include/alibabacloud/live/model/DeleteLiveStreamsNotifyUrlConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveStreamsNotifyUrlConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamOnlineUserNumRequest.h
@@ -101,6 +105,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainRecordDataResult.h
 	include/alibabacloud/live/model/DeleteCasterVideoResourceRequest.h
 	include/alibabacloud/live/model/DeleteCasterVideoResourceResult.h
+	include/alibabacloud/live/model/DescribeLiveCertificateListRequest.h
+	include/alibabacloud/live/model/DescribeLiveCertificateListResult.h
 	include/alibabacloud/live/model/DeleteLiveAppSnapshotConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveAppSnapshotConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamsNotifyUrlConfigRequest.h
@@ -109,6 +115,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLivePullStreamInfoConfigResult.h
 	include/alibabacloud/live/model/ModifyCasterProgramRequest.h
 	include/alibabacloud/live/model/ModifyCasterProgramResult.h
+	include/alibabacloud/live/model/DescribeLiveCertificateDetailRequest.h
+	include/alibabacloud/live/model/DescribeLiveCertificateDetailResult.h
 	include/alibabacloud/live/model/StartMixStreamsServiceRequest.h
 	include/alibabacloud/live/model/StartMixStreamsServiceResult.h
 	include/alibabacloud/live/model/DescribeLivePullStreamConfigRequest.h
@@ -117,6 +125,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/SetLiveStreamsNotifyUrlConfigResult.h
 	include/alibabacloud/live/model/AddLivePullStreamInfoConfigRequest.h
 	include/alibabacloud/live/model/AddLivePullStreamInfoConfigResult.h
+	include/alibabacloud/live/model/StartLiveDomainRequest.h
+	include/alibabacloud/live/model/StartLiveDomainResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamsBlockListRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamsBlockListResult.h
 	include/alibabacloud/live/model/AddLiveStreamTranscodeRequest.h
@@ -129,12 +139,12 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateLiveDetectNotifyConfigResult.h
 	include/alibabacloud/live/model/ModifyCasterVideoResourceRequest.h
 	include/alibabacloud/live/model/ModifyCasterVideoResourceResult.h
-	include/alibabacloud/live/model/ImagePornDetectionRequest.h
-	include/alibabacloud/live/model/ImagePornDetectionResult.h
 	include/alibabacloud/live/model/DescribeCasterStreamUrlRequest.h
 	include/alibabacloud/live/model/DescribeCasterStreamUrlResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamsControlHistoryRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamsControlHistoryResult.h
+	include/alibabacloud/live/model/DescribeLiveStreamCountRequest.h
+	include/alibabacloud/live/model/DescribeLiveStreamCountResult.h
 	include/alibabacloud/live/model/StopCasterSceneRequest.h
 	include/alibabacloud/live/model/StopCasterSceneResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainSnapshotDataRequest.h
@@ -169,18 +179,30 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveSnapshotConfigResult.h
 	include/alibabacloud/live/model/DescribeCasterProgramRequest.h
 	include/alibabacloud/live/model/DescribeCasterProgramResult.h
+	include/alibabacloud/live/model/StopLiveDomainRequest.h
+	include/alibabacloud/live/model/StopLiveDomainResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumResult.h
 	include/alibabacloud/live/model/AddLiveAppRecordConfigRequest.h
 	include/alibabacloud/live/model/AddLiveAppRecordConfigResult.h
 	include/alibabacloud/live/model/AddLiveRecordVodConfigRequest.h
 	include/alibabacloud/live/model/AddLiveRecordVodConfigResult.h
+	include/alibabacloud/live/model/BatchSetLiveDomainConfigsRequest.h
+	include/alibabacloud/live/model/BatchSetLiveDomainConfigsResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainDetailRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainDetailResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainConfigsRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainConfigsResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamRecordIndexFilesRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamRecordIndexFilesResult.h
 	include/alibabacloud/live/model/AddCasterProgramRequest.h
 	include/alibabacloud/live/model/AddCasterProgramResult.h
 	include/alibabacloud/live/model/DeleteLiveMixConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveMixConfigResult.h
+	include/alibabacloud/live/model/BatchDeleteLiveDomainConfigsRequest.h
+	include/alibabacloud/live/model/BatchDeleteLiveDomainConfigsResult.h
+	include/alibabacloud/live/model/SetLiveDomainCertificateRequest.h
+	include/alibabacloud/live/model/SetLiveDomainCertificateResult.h
 	include/alibabacloud/live/model/ForbidLiveStreamRequest.h
 	include/alibabacloud/live/model/ForbidLiveStreamResult.h
 	include/alibabacloud/live/model/DeleteCasterEpisodeGroupRequest.h
@@ -201,6 +223,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/RemoveMultipleStreamMixServiceResult.h
 	include/alibabacloud/live/model/DeleteCasterComponentRequest.h
 	include/alibabacloud/live/model/DeleteCasterComponentResult.h
+	include/alibabacloud/live/model/DeleteLiveDomainRequest.h
+	include/alibabacloud/live/model/DeleteLiveDomainResult.h
 	include/alibabacloud/live/model/SetCasterConfigRequest.h
 	include/alibabacloud/live/model/SetCasterConfigResult.h
 	include/alibabacloud/live/model/RealTimeRecordCommandRequest.h
@@ -211,6 +235,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ResumeLiveStreamResult.h
 	include/alibabacloud/live/model/AddCasterLayoutRequest.h
 	include/alibabacloud/live/model/AddCasterLayoutResult.h
+	include/alibabacloud/live/model/DescribeLiveUserDomainsRequest.h
+	include/alibabacloud/live/model/DescribeLiveUserDomainsResult.h
 	include/alibabacloud/live/model/ModifyCasterLayoutRequest.h
 	include/alibabacloud/live/model/ModifyCasterLayoutResult.h
 	include/alibabacloud/live/model/StopCasterRequest.h
@@ -221,6 +247,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveSnapshotDetectPornConfigResult.h
 	include/alibabacloud/live/model/DeleteCasterSceneConfigRequest.h
 	include/alibabacloud/live/model/DeleteCasterSceneConfigResult.h
+	include/alibabacloud/live/model/AddLiveDomainRequest.h
+	include/alibabacloud/live/model/AddLiveDomainResult.h
 	include/alibabacloud/live/model/DeleteLiveAppRecordConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveAppRecordConfigResult.h
 	include/alibabacloud/live/model/DeleteCasterRequest.h
@@ -254,6 +282,8 @@ set(live_src
 	src/model/DescribeLiveMixConfigResult.cc
 	src/model/CreateLiveStreamRecordIndexFilesRequest.cc
 	src/model/CreateLiveStreamRecordIndexFilesResult.cc
+	src/model/DeleteLiveSpecificConfigRequest.cc
+	src/model/DeleteLiveSpecificConfigResult.cc
 	src/model/UpdateCasterSceneConfigRequest.cc
 	src/model/UpdateCasterSceneConfigResult.cc
 	src/model/DescribeLiveStreamTranscodeInfoRequest.cc
@@ -306,6 +336,8 @@ set(live_src
 	src/model/DeleteLiveRecordNotifyConfigResult.cc
 	src/model/AddLiveRecordNotifyConfigRequest.cc
 	src/model/AddLiveRecordNotifyConfigResult.cc
+	src/model/DescribeHlsLiveStreamRealTimeBpsDataRequest.cc
+	src/model/DescribeHlsLiveStreamRealTimeBpsDataResult.cc
 	src/model/DeleteLiveStreamsNotifyUrlConfigRequest.cc
 	src/model/DeleteLiveStreamsNotifyUrlConfigResult.cc
 	src/model/DescribeLiveStreamOnlineUserNumRequest.cc
@@ -318,6 +350,8 @@ set(live_src
 	src/model/DescribeLiveDomainRecordDataResult.cc
 	src/model/DeleteCasterVideoResourceRequest.cc
 	src/model/DeleteCasterVideoResourceResult.cc
+	src/model/DescribeLiveCertificateListRequest.cc
+	src/model/DescribeLiveCertificateListResult.cc
 	src/model/DeleteLiveAppSnapshotConfigRequest.cc
 	src/model/DeleteLiveAppSnapshotConfigResult.cc
 	src/model/DescribeLiveStreamsNotifyUrlConfigRequest.cc
@@ -326,6 +360,8 @@ set(live_src
 	src/model/DeleteLivePullStreamInfoConfigResult.cc
 	src/model/ModifyCasterProgramRequest.cc
 	src/model/ModifyCasterProgramResult.cc
+	src/model/DescribeLiveCertificateDetailRequest.cc
+	src/model/DescribeLiveCertificateDetailResult.cc
 	src/model/StartMixStreamsServiceRequest.cc
 	src/model/StartMixStreamsServiceResult.cc
 	src/model/DescribeLivePullStreamConfigRequest.cc
@@ -334,6 +370,8 @@ set(live_src
 	src/model/SetLiveStreamsNotifyUrlConfigResult.cc
 	src/model/AddLivePullStreamInfoConfigRequest.cc
 	src/model/AddLivePullStreamInfoConfigResult.cc
+	src/model/StartLiveDomainRequest.cc
+	src/model/StartLiveDomainResult.cc
 	src/model/DescribeLiveStreamsBlockListRequest.cc
 	src/model/DescribeLiveStreamsBlockListResult.cc
 	src/model/AddLiveStreamTranscodeRequest.cc
@@ -346,12 +384,12 @@ set(live_src
 	src/model/UpdateLiveDetectNotifyConfigResult.cc
 	src/model/ModifyCasterVideoResourceRequest.cc
 	src/model/ModifyCasterVideoResourceResult.cc
-	src/model/ImagePornDetectionRequest.cc
-	src/model/ImagePornDetectionResult.cc
 	src/model/DescribeCasterStreamUrlRequest.cc
 	src/model/DescribeCasterStreamUrlResult.cc
 	src/model/DescribeLiveStreamsControlHistoryRequest.cc
 	src/model/DescribeLiveStreamsControlHistoryResult.cc
+	src/model/DescribeLiveStreamCountRequest.cc
+	src/model/DescribeLiveStreamCountResult.cc
 	src/model/StopCasterSceneRequest.cc
 	src/model/StopCasterSceneResult.cc
 	src/model/DescribeLiveDomainSnapshotDataRequest.cc
@@ -386,18 +424,30 @@ set(live_src
 	src/model/DescribeLiveSnapshotConfigResult.cc
 	src/model/DescribeCasterProgramRequest.cc
 	src/model/DescribeCasterProgramResult.cc
+	src/model/StopLiveDomainRequest.cc
+	src/model/StopLiveDomainResult.cc
 	src/model/DescribeLiveStreamHistoryUserNumRequest.cc
 	src/model/DescribeLiveStreamHistoryUserNumResult.cc
 	src/model/AddLiveAppRecordConfigRequest.cc
 	src/model/AddLiveAppRecordConfigResult.cc
 	src/model/AddLiveRecordVodConfigRequest.cc
 	src/model/AddLiveRecordVodConfigResult.cc
+	src/model/BatchSetLiveDomainConfigsRequest.cc
+	src/model/BatchSetLiveDomainConfigsResult.cc
+	src/model/DescribeLiveDomainDetailRequest.cc
+	src/model/DescribeLiveDomainDetailResult.cc
+	src/model/DescribeLiveDomainConfigsRequest.cc
+	src/model/DescribeLiveDomainConfigsResult.cc
 	src/model/DescribeLiveStreamRecordIndexFilesRequest.cc
 	src/model/DescribeLiveStreamRecordIndexFilesResult.cc
 	src/model/AddCasterProgramRequest.cc
 	src/model/AddCasterProgramResult.cc
 	src/model/DeleteLiveMixConfigRequest.cc
 	src/model/DeleteLiveMixConfigResult.cc
+	src/model/BatchDeleteLiveDomainConfigsRequest.cc
+	src/model/BatchDeleteLiveDomainConfigsResult.cc
+	src/model/SetLiveDomainCertificateRequest.cc
+	src/model/SetLiveDomainCertificateResult.cc
 	src/model/ForbidLiveStreamRequest.cc
 	src/model/ForbidLiveStreamResult.cc
 	src/model/DeleteCasterEpisodeGroupRequest.cc
@@ -418,6 +468,8 @@ set(live_src
 	src/model/RemoveMultipleStreamMixServiceResult.cc
 	src/model/DeleteCasterComponentRequest.cc
 	src/model/DeleteCasterComponentResult.cc
+	src/model/DeleteLiveDomainRequest.cc
+	src/model/DeleteLiveDomainResult.cc
 	src/model/SetCasterConfigRequest.cc
 	src/model/SetCasterConfigResult.cc
 	src/model/RealTimeRecordCommandRequest.cc
@@ -428,6 +480,8 @@ set(live_src
 	src/model/ResumeLiveStreamResult.cc
 	src/model/AddCasterLayoutRequest.cc
 	src/model/AddCasterLayoutResult.cc
+	src/model/DescribeLiveUserDomainsRequest.cc
+	src/model/DescribeLiveUserDomainsResult.cc
 	src/model/ModifyCasterLayoutRequest.cc
 	src/model/ModifyCasterLayoutResult.cc
 	src/model/StopCasterRequest.cc
@@ -438,6 +492,8 @@ set(live_src
 	src/model/DescribeLiveSnapshotDetectPornConfigResult.cc
 	src/model/DeleteCasterSceneConfigRequest.cc
 	src/model/DeleteCasterSceneConfigResult.cc
+	src/model/AddLiveDomainRequest.cc
+	src/model/AddLiveDomainResult.cc
 	src/model/DeleteLiveAppRecordConfigRequest.cc
 	src/model/DeleteLiveAppRecordConfigResult.cc
 	src/model/DeleteCasterRequest.cc

@@ -48,8 +48,8 @@ void AddCasterEpisodeGroupRequest::setItem(const std::vector<Item>& item)
 	for(int i = 0; i!= item.size(); i++)	{
 		auto obj = item.at(i);
 		std::string str ="Item."+ std::to_string(i);
-		setParameter(str + ".ItemName", obj.itemName);
 		setParameter(str + ".VodUrl", obj.vodUrl);
+		setParameter(str + ".ItemName", obj.itemName);
 	}
 }
 

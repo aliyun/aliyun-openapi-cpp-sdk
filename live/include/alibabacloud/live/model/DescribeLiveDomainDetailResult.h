@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_IMAGEPORNDETECTIONRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_IMAGEPORNDETECTIONRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINDETAILRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINDETAILRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT ImagePornDetectionResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainDetailResult : public ServiceResult
 			{
 			public:
+				struct DomainDetail
+				{
+					std::string description;
+					std::string scope;
+					std::string domainName;
+					std::string liveDomainType;
+					std::string sSLPub;
+					std::string gmtModified;
+					std::string region;
+					std::string gmtCreated;
+					std::string certName;
+					std::string cname;
+					std::string domainStatus;
+					std::string sSLProtocol;
+				};
 
 
-				ImagePornDetectionResult();
-				explicit ImagePornDetectionResult(const std::string &payload);
-				~ImagePornDetectionResult();
-				float getRate()const;
-				std::string getLabel()const;
+				DescribeLiveDomainDetailResult();
+				explicit DescribeLiveDomainDetailResult(const std::string &payload);
+				~DescribeLiveDomainDetailResult();
+				DomainDetail getDomainDetail()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				float rate_;
-				std::string label_;
+				DomainDetail domainDetail_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_IMAGEPORNDETECTIONRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINDETAILRESULT_H_

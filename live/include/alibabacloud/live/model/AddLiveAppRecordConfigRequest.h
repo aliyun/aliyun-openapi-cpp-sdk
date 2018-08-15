@@ -32,9 +32,9 @@ namespace AlibabaCloud
 			{
 				struct RecordFormat
 				{
+					std::string sliceOssObjectPrefix;
 					std::string format;
 					std::string ossObjectPrefix;
-					std::string sliceOssObjectPrefix;
 					int cycleDuration;
 				};
 

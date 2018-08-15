@@ -136,9 +136,9 @@ void AddLiveAppRecordConfigRequest::setRecordFormat(const std::vector<RecordForm
 	for(int i = 0; i!= recordFormat.size(); i++)	{
 		auto obj = recordFormat.at(i);
 		std::string str ="RecordFormat."+ std::to_string(i);
+		setParameter(str + ".SliceOssObjectPrefix", obj.sliceOssObjectPrefix);
 		setParameter(str + ".Format", obj.format);
 		setParameter(str + ".OssObjectPrefix", obj.ossObjectPrefix);
-		setParameter(str + ".SliceOssObjectPrefix", obj.sliceOssObjectPrefix);
 		setParameter(str + ".CycleDuration", std::to_string(obj.cycleDuration));
 	}
 }

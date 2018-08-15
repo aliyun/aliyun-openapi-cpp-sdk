@@ -47,6 +47,17 @@ void AddCustomLiveStreamTranscodeRequest::set_Template(const std::string& _templ
 	setParameter("_Template", _template);
 }
 
+int AddCustomLiveStreamTranscodeRequest::getProfile()const
+{
+	return profile_;
+}
+
+void AddCustomLiveStreamTranscodeRequest::setProfile(int profile)
+{
+	profile_ = profile;
+	setParameter("Profile", std::to_string(profile));
+}
+
 int AddCustomLiveStreamTranscodeRequest::getFPS()const
 {
 	return fPS_;
@@ -56,6 +67,17 @@ void AddCustomLiveStreamTranscodeRequest::setFPS(int fPS)
 {
 	fPS_ = fPS;
 	setParameter("FPS", std::to_string(fPS));
+}
+
+std::string AddCustomLiveStreamTranscodeRequest::getGop()const
+{
+	return gop_;
+}
+
+void AddCustomLiveStreamTranscodeRequest::setGop(const std::string& gop)
+{
+	gop_ = gop;
+	setParameter("Gop", gop);
 }
 
 long AddCustomLiveStreamTranscodeRequest::getOwnerId()const
@@ -69,39 +91,6 @@ void AddCustomLiveStreamTranscodeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string AddCustomLiveStreamTranscodeRequest::getVersion()const
-{
-	return version_;
-}
-
-void AddCustomLiveStreamTranscodeRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setParameter("Version", version);
-}
-
-std::string AddCustomLiveStreamTranscodeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddCustomLiveStreamTranscodeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string AddCustomLiveStreamTranscodeRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void AddCustomLiveStreamTranscodeRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
-}
-
 std::string AddCustomLiveStreamTranscodeRequest::getTemplateType()const
 {
 	return templateType_;
@@ -111,6 +100,17 @@ void AddCustomLiveStreamTranscodeRequest::setTemplateType(const std::string& tem
 {
 	templateType_ = templateType;
 	setParameter("TemplateType", templateType);
+}
+
+int AddCustomLiveStreamTranscodeRequest::getAudioBitrate()const
+{
+	return audioBitrate_;
+}
+
+void AddCustomLiveStreamTranscodeRequest::setAudioBitrate(int audioBitrate)
+{
+	audioBitrate_ = audioBitrate;
+	setParameter("AudioBitrate", std::to_string(audioBitrate));
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getDomain()const

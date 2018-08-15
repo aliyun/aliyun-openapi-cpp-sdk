@@ -48,14 +48,14 @@ void ModifyCasterProgramRequest::setEpisode(const std::vector<Episode>& episode)
 	for(int i = 0; i!= episode.size(); i++)	{
 		auto obj = episode.at(i);
 		std::string str ="Episode."+ std::to_string(i);
-		setParameter(str + ".EpisodeId", obj.episodeId);
-		setParameter(str + ".EpisodeType", obj.episodeType);
-		setParameter(str + ".EpisodeName", obj.episodeName);
 		setParameter(str + ".ResourceId", obj.resourceId);
 		for(int i = 0; i!= obj.componentId.size(); i++)				setParameter(str + ".ComponentId."+ std::to_string(i), obj.componentId.at(i));
-		setParameter(str + ".StartTime", obj.startTime);
-		setParameter(str + ".EndTime", obj.endTime);
 		setParameter(str + ".SwitchType", obj.switchType);
+		setParameter(str + ".EpisodeType", obj.episodeType);
+		setParameter(str + ".EpisodeName", obj.episodeName);
+		setParameter(str + ".EndTime", obj.endTime);
+		setParameter(str + ".StartTime", obj.startTime);
+		setParameter(str + ".EpisodeId", obj.episodeId);
 	}
 }
 

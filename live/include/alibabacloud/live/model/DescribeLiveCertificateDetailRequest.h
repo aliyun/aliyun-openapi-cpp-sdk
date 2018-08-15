@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_IMAGEPORNDETECTIONREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_IMAGEPORNDETECTIONREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT ImagePornDetectionRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveCertificateDetailRequest : public RpcServiceRequest
 			{
 
 			public:
-				ImagePornDetectionRequest();
-				~ImagePornDetectionRequest();
+				DescribeLiveCertificateDetailRequest();
+				~DescribeLiveCertificateDetailRequest();
 
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getImageUrl()const;
-				void setImageUrl(const std::string& imageUrl);
+				std::string getCertName()const;
+				void setCertName(const std::string& certName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
@@ -46,7 +46,7 @@ namespace AlibabaCloud
 
             private:
 				std::string securityToken_;
-				std::string imageUrl_;
+				std::string certName_;
 				long ownerId_;
 				std::string accessKeyId_;
 
@@ -54,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_IMAGEPORNDETECTIONREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILREQUEST_H_
