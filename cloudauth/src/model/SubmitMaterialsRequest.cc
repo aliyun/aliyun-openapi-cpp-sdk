@@ -19,7 +19,7 @@
 using AlibabaCloud::Cloudauth::Model::SubmitMaterialsRequest;
 
 SubmitMaterialsRequest::SubmitMaterialsRequest() :
-	RpcServiceRequest("cloudauth", "2018-07-03", "SubmitMaterials")
+	RpcServiceRequest("cloudauth", "2018-08-07", "SubmitMaterials")
 {}
 
 SubmitMaterialsRequest::~SubmitMaterialsRequest()

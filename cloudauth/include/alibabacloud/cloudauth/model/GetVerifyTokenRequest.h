@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				std::string getBinding()const;
 				void setBinding(const std::string& binding);
+				std::string getVerifyConfigs()const;
+				void setVerifyConfigs(const std::string& verifyConfigs);
 				std::string getTicketId()const;
 				void setTicketId(const std::string& ticketId);
 
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string biz_;
 				std::string sourceIp_;
 				std::string binding_;
+				std::string verifyConfigs_;
 				std::string ticketId_;
 
 			};

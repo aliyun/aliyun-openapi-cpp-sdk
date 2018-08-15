@@ -19,7 +19,7 @@
 using AlibabaCloud::Cloudauth::Model::GetVerifyTokenRequest;
 
 GetVerifyTokenRequest::GetVerifyTokenRequest() :
-	RpcServiceRequest("cloudauth", "2018-07-03", "GetVerifyToken")
+	RpcServiceRequest("cloudauth", "2018-08-07", "GetVerifyToken")
 {}
 
 GetVerifyTokenRequest::~GetVerifyTokenRequest()
@@ -78,6 +78,17 @@ void GetVerifyTokenRequest::setBinding(const std::string& binding)
 {
 	binding_ = binding;
 	setParameter("Binding", binding);
+}
+
+std::string GetVerifyTokenRequest::getVerifyConfigs()const
+{
+	return verifyConfigs_;
+}
+
+void GetVerifyTokenRequest::setVerifyConfigs(const std::string& verifyConfigs)
+{
+	verifyConfigs_ = verifyConfigs;
+	setParameter("VerifyConfigs", verifyConfigs);
 }
 
 std::string GetVerifyTokenRequest::getTicketId()const

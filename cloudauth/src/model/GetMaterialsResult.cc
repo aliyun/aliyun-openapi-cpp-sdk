@@ -47,6 +47,8 @@ void GetMaterialsResult::parse(const std::string &payload)
 		data_.identificationNumber = dataNode["IdentificationNumber"].asString();
 	if(!dataNode["IdCardType"].isNull())
 		data_.idCardType = dataNode["IdCardType"].asString();
+	if(!dataNode["IdCardStartDate"].isNull())
+		data_.idCardStartDate = dataNode["IdCardStartDate"].asString();
 	if(!dataNode["IdCardExpiry"].isNull())
 		data_.idCardExpiry = dataNode["IdCardExpiry"].asString();
 	if(!dataNode["Address"].isNull())
@@ -59,6 +61,8 @@ void GetMaterialsResult::parse(const std::string &payload)
 		data_.idCardBackPic = dataNode["IdCardBackPic"].asString();
 	if(!dataNode["FacePic"].isNull())
 		data_.facePic = dataNode["FacePic"].asString();
+	if(!dataNode["EthnicGroup"].isNull())
+		data_.ethnicGroup = dataNode["EthnicGroup"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
