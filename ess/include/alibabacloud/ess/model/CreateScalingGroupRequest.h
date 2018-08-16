@@ -32,12 +32,12 @@ namespace AlibabaCloud
 			{
 				struct LifecycleHook
 				{
-					std::string lifecycleHookName;
-					std::string lifecycleTransition;
 					std::string defaultResult;
+					std::string lifecycleHookName;
 					int heartbeatTimeout;
-					std::string notificationMetadata;
 					std::string notificationArn;
+					std::string notificationMetadata;
+					std::string lifecycleTransition;
 				};
 
 			public:

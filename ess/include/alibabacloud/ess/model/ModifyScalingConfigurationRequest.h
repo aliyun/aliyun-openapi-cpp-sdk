@@ -30,6 +30,19 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ESS_EXPORT ModifyScalingConfigurationRequest : public RpcServiceRequest
 			{
+				struct SpotPriceLimit
+				{
+					std::string instanceType;
+					float priceLimit;
+				};
+				struct DataDisk
+				{
+					std::string snapshotId;
+					int size;
+					std::string category;
+					std::string device;
+					bool deleteWithInstance;
+				};
 
 			public:
 				ModifyScalingConfigurationRequest();
@@ -37,40 +50,50 @@ namespace AlibabaCloud
 
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getIoOptimized()const;
+				void setIoOptimized(const std::string& ioOptimized);
 				std::vector<std::string> getInstanceTypes()const;
 				void setInstanceTypes(const std::vector<std::string>& instanceTypes);
 				int getInternetMaxBandwidthOut()const;
 				void setInternetMaxBandwidthOut(int internetMaxBandwidthOut);
-				std::string getRamRoleName()const;
-				void setRamRoleName(const std::string& ramRoleName);
 				std::string getKeyPairName()const;
 				void setKeyPairName(const std::string& keyPairName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				std::vector<SpotPriceLimit> getSpotPriceLimit()const;
+				void setSpotPriceLimit(const std::vector<SpotPriceLimit>& spotPriceLimit);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
+				std::string getHostName()const;
+				void setHostName(const std::string& hostName);
+				bool getPasswordInherit()const;
+				void setPasswordInherit(bool passwordInherit);
+				std::string getImageName()const;
+				void setImageName(const std::string& imageName);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getRamRoleName()const;
+				void setRamRoleName(const std::string& ramRoleName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::vector<DataDisk> getDataDisk()const;
+				void setDataDisk(const std::vector<DataDisk>& dataDisk);
 				std::string getScalingConfigurationName()const;
 				void setScalingConfigurationName(const std::string& scalingConfigurationName);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 				std::string getScalingConfigurationId()const;
 				void setScalingConfigurationId(const std::string& scalingConfigurationId);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
-				std::string getHostName()const;
-				void setHostName(const std::string& hostName);
+				std::string getSpotStrategy()const;
+				void setSpotStrategy(const std::string& spotStrategy);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 				int getLoadBalancerWeight()const;
 				void setLoadBalancerWeight(int loadBalancerWeight);
-				bool getPasswordInherit()const;
-				void setPasswordInherit(bool passwordInherit);
 				int getSystemDiskSize()const;
 				void setSystemDiskSize(int systemDiskSize);
 				std::string getInternetChargeType()const;
@@ -78,23 +101,28 @@ namespace AlibabaCloud
 
             private:
 				std::string imageId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
+				std::string ioOptimized_;
 				std::vector<std::string> instanceTypes_;
 				int internetMaxBandwidthOut_;
-				std::string ramRoleName_;
 				std::string keyPairName_;
-				long ownerId_;
+				std::vector<SpotPriceLimit> spotPriceLimit_;
 				std::string systemDiskCategory_;
 				std::string accessKeyId_;
+				std::string userData_;
+				std::string hostName_;
+				bool passwordInherit_;
+				std::string imageName_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string ramRoleName_;
+				long ownerId_;
+				std::vector<DataDisk> dataDisk_;
 				std::string scalingConfigurationName_;
 				std::string tags_;
 				std::string scalingConfigurationId_;
-				std::string userData_;
-				std::string hostName_;
+				std::string spotStrategy_;
 				std::string instanceName_;
 				int loadBalancerWeight_;
-				bool passwordInherit_;
 				int systemDiskSize_;
 				std::string internetChargeType_;
 

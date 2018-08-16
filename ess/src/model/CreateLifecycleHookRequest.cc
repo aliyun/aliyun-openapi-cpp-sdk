@@ -158,12 +158,12 @@ void CreateLifecycleHookRequest::setLifecycleHook(const std::vector<LifecycleHoo
 	for(int i = 0; i!= lifecycleHook.size(); i++)	{
 		auto obj = lifecycleHook.at(i);
 		std::string str ="LifecycleHook."+ std::to_string(i);
-		setParameter(str + ".LifecycleHookName", obj.lifecycleHookName);
-		setParameter(str + ".LifecycleTransition", obj.lifecycleTransition);
 		setParameter(str + ".DefaultResult", obj.defaultResult);
+		setParameter(str + ".LifecycleHookName", obj.lifecycleHookName);
 		setParameter(str + ".HeartbeatTimeout", std::to_string(obj.heartbeatTimeout));
-		setParameter(str + ".NotificationMetadata", obj.notificationMetadata);
 		setParameter(str + ".NotificationArn", obj.notificationArn);
+		setParameter(str + ".NotificationMetadata", obj.notificationMetadata);
+		setParameter(str + ".LifecycleTransition", obj.lifecycleTransition);
 	}
 }
 

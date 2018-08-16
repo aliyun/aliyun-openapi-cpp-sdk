@@ -36,26 +36,15 @@ void ModifyScalingConfigurationRequest::setImageId(const std::string& imageId)
 	setParameter("ImageId", imageId);
 }
 
-std::string ModifyScalingConfigurationRequest::getResourceOwnerAccount()const
+std::string ModifyScalingConfigurationRequest::getIoOptimized()const
 {
-	return resourceOwnerAccount_;
+	return ioOptimized_;
 }
 
-void ModifyScalingConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ModifyScalingConfigurationRequest::setIoOptimized(const std::string& ioOptimized)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyScalingConfigurationRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyScalingConfigurationRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	ioOptimized_ = ioOptimized;
+	setParameter("IoOptimized", ioOptimized);
 }
 
 std::vector<std::string> ModifyScalingConfigurationRequest::getInstanceTypes()const
@@ -81,17 +70,6 @@ void ModifyScalingConfigurationRequest::setInternetMaxBandwidthOut(int internetM
 	setParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
 }
 
-std::string ModifyScalingConfigurationRequest::getRamRoleName()const
-{
-	return ramRoleName_;
-}
-
-void ModifyScalingConfigurationRequest::setRamRoleName(const std::string& ramRoleName)
-{
-	ramRoleName_ = ramRoleName;
-	setParameter("RamRoleName", ramRoleName);
-}
-
 std::string ModifyScalingConfigurationRequest::getKeyPairName()const
 {
 	return keyPairName_;
@@ -103,15 +81,21 @@ void ModifyScalingConfigurationRequest::setKeyPairName(const std::string& keyPai
 	setParameter("KeyPairName", keyPairName);
 }
 
-long ModifyScalingConfigurationRequest::getOwnerId()const
+std::vector<ModifyScalingConfigurationRequest::SpotPriceLimit> ModifyScalingConfigurationRequest::getSpotPriceLimit()const
 {
-	return ownerId_;
+	return spotPriceLimit_;
 }
 
-void ModifyScalingConfigurationRequest::setOwnerId(long ownerId)
+void ModifyScalingConfigurationRequest::setSpotPriceLimit(const std::vector<SpotPriceLimit>& spotPriceLimit)
 {
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	spotPriceLimit_ = spotPriceLimit;
+	int i = 0;
+	for(int i = 0; i!= spotPriceLimit.size(); i++)	{
+		auto obj = spotPriceLimit.at(i);
+		std::string str ="SpotPriceLimit."+ std::to_string(i);
+		setParameter(str + ".InstanceType", obj.instanceType);
+		setParameter(str + ".PriceLimit", std::to_string(obj.priceLimit));
+	}
 }
 
 std::string ModifyScalingConfigurationRequest::getSystemDiskCategory()const
@@ -134,6 +118,114 @@ void ModifyScalingConfigurationRequest::setAccessKeyId(const std::string& access
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyScalingConfigurationRequest::getUserData()const
+{
+	return userData_;
+}
+
+void ModifyScalingConfigurationRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setParameter("UserData", userData);
+}
+
+std::string ModifyScalingConfigurationRequest::getHostName()const
+{
+	return hostName_;
+}
+
+void ModifyScalingConfigurationRequest::setHostName(const std::string& hostName)
+{
+	hostName_ = hostName;
+	setParameter("HostName", hostName);
+}
+
+bool ModifyScalingConfigurationRequest::getPasswordInherit()const
+{
+	return passwordInherit_;
+}
+
+void ModifyScalingConfigurationRequest::setPasswordInherit(bool passwordInherit)
+{
+	passwordInherit_ = passwordInherit;
+	setParameter("PasswordInherit", std::to_string(passwordInherit));
+}
+
+std::string ModifyScalingConfigurationRequest::getImageName()const
+{
+	return imageName_;
+}
+
+void ModifyScalingConfigurationRequest::setImageName(const std::string& imageName)
+{
+	imageName_ = imageName;
+	setParameter("ImageName", imageName);
+}
+
+std::string ModifyScalingConfigurationRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyScalingConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyScalingConfigurationRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyScalingConfigurationRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
+}
+
+std::string ModifyScalingConfigurationRequest::getRamRoleName()const
+{
+	return ramRoleName_;
+}
+
+void ModifyScalingConfigurationRequest::setRamRoleName(const std::string& ramRoleName)
+{
+	ramRoleName_ = ramRoleName;
+	setParameter("RamRoleName", ramRoleName);
+}
+
+long ModifyScalingConfigurationRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyScalingConfigurationRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::vector<ModifyScalingConfigurationRequest::DataDisk> ModifyScalingConfigurationRequest::getDataDisk()const
+{
+	return dataDisk_;
+}
+
+void ModifyScalingConfigurationRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
+{
+	dataDisk_ = dataDisk;
+	int i = 0;
+	for(int i = 0; i!= dataDisk.size(); i++)	{
+		auto obj = dataDisk.at(i);
+		std::string str ="DataDisk."+ std::to_string(i);
+		setParameter(str + ".SnapshotId", obj.snapshotId);
+		setParameter(str + ".Size", std::to_string(obj.size));
+		setParameter(str + ".Category", obj.category);
+		setParameter(str + ".Device", obj.device);
+		setParameter(str + ".DeleteWithInstance", std::to_string(obj.deleteWithInstance));
+	}
 }
 
 std::string ModifyScalingConfigurationRequest::getScalingConfigurationName()const
@@ -169,26 +261,15 @@ void ModifyScalingConfigurationRequest::setScalingConfigurationId(const std::str
 	setParameter("ScalingConfigurationId", scalingConfigurationId);
 }
 
-std::string ModifyScalingConfigurationRequest::getUserData()const
+std::string ModifyScalingConfigurationRequest::getSpotStrategy()const
 {
-	return userData_;
+	return spotStrategy_;
 }
 
-void ModifyScalingConfigurationRequest::setUserData(const std::string& userData)
+void ModifyScalingConfigurationRequest::setSpotStrategy(const std::string& spotStrategy)
 {
-	userData_ = userData;
-	setParameter("UserData", userData);
-}
-
-std::string ModifyScalingConfigurationRequest::getHostName()const
-{
-	return hostName_;
-}
-
-void ModifyScalingConfigurationRequest::setHostName(const std::string& hostName)
-{
-	hostName_ = hostName;
-	setParameter("HostName", hostName);
+	spotStrategy_ = spotStrategy;
+	setParameter("SpotStrategy", spotStrategy);
 }
 
 std::string ModifyScalingConfigurationRequest::getInstanceName()const
@@ -211,17 +292,6 @@ void ModifyScalingConfigurationRequest::setLoadBalancerWeight(int loadBalancerWe
 {
 	loadBalancerWeight_ = loadBalancerWeight;
 	setParameter("LoadBalancerWeight", std::to_string(loadBalancerWeight));
-}
-
-bool ModifyScalingConfigurationRequest::getPasswordInherit()const
-{
-	return passwordInherit_;
-}
-
-void ModifyScalingConfigurationRequest::setPasswordInherit(bool passwordInherit)
-{
-	passwordInherit_ = passwordInherit;
-	setParameter("PasswordInherit", std::to_string(passwordInherit));
 }
 
 int ModifyScalingConfigurationRequest::getSystemDiskSize()const

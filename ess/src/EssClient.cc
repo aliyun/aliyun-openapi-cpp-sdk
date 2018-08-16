@@ -699,6 +699,42 @@ EssClient::DescribeLifecycleHooksOutcomeCallable EssClient::describeLifecycleHoo
 	return task->get_future();
 }
 
+EssClient::ModifyAlarmOutcome EssClient::modifyAlarm(const ModifyAlarmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAlarmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAlarmOutcome(ModifyAlarmResult(outcome.result()));
+	else
+		return ModifyAlarmOutcome(outcome.error());
+}
+
+void EssClient::modifyAlarmAsync(const ModifyAlarmRequest& request, const ModifyAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAlarm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::ModifyAlarmOutcomeCallable EssClient::modifyAlarmCallable(const ModifyAlarmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAlarmOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAlarm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::DescribeAccountAttributesOutcome EssClient::describeAccountAttributes(const DescribeAccountAttributesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +765,42 @@ EssClient::DescribeAccountAttributesOutcomeCallable EssClient::describeAccountAt
 			[this, request]()
 			{
 			return this->describeAccountAttributes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DeleteAlarmOutcome EssClient::deleteAlarm(const DeleteAlarmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAlarmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAlarmOutcome(DeleteAlarmResult(outcome.result()));
+	else
+		return DeleteAlarmOutcome(outcome.error());
+}
+
+void EssClient::deleteAlarmAsync(const DeleteAlarmRequest& request, const DeleteAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAlarm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DeleteAlarmOutcomeCallable EssClient::deleteAlarmCallable(const DeleteAlarmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAlarmOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAlarm(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -771,6 +843,42 @@ EssClient::DescribeScalingActivityDetailOutcomeCallable EssClient::describeScali
 	return task->get_future();
 }
 
+EssClient::DisableAlarmOutcome EssClient::disableAlarm(const DisableAlarmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableAlarmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableAlarmOutcome(DisableAlarmResult(outcome.result()));
+	else
+		return DisableAlarmOutcome(outcome.error());
+}
+
+void EssClient::disableAlarmAsync(const DisableAlarmRequest& request, const DisableAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableAlarm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DisableAlarmOutcomeCallable EssClient::disableAlarmCallable(const DisableAlarmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableAlarmOutcome()>>(
+			[this, request]()
+			{
+			return this->disableAlarm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::VerifyUserOutcome EssClient::verifyUser(const VerifyUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,6 +909,42 @@ EssClient::VerifyUserOutcomeCallable EssClient::verifyUserCallable(const VerifyU
 			[this, request]()
 			{
 			return this->verifyUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DescribeAlarmsOutcome EssClient::describeAlarms(const DescribeAlarmsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAlarmsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAlarmsOutcome(DescribeAlarmsResult(outcome.result()));
+	else
+		return DescribeAlarmsOutcome(outcome.error());
+}
+
+void EssClient::describeAlarmsAsync(const DescribeAlarmsRequest& request, const DescribeAlarmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAlarms(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DescribeAlarmsOutcomeCallable EssClient::describeAlarmsCallable(const DescribeAlarmsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAlarmsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAlarms(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1089,6 +1233,42 @@ EssClient::DescribeScalingRulesOutcomeCallable EssClient::describeScalingRulesCa
 			[this, request]()
 			{
 			return this->describeScalingRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::CreateAlarmOutcome EssClient::createAlarm(const CreateAlarmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAlarmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAlarmOutcome(CreateAlarmResult(outcome.result()));
+	else
+		return CreateAlarmOutcome(outcome.error());
+}
+
+void EssClient::createAlarmAsync(const CreateAlarmRequest& request, const CreateAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAlarm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::CreateAlarmOutcomeCallable EssClient::createAlarmCallable(const CreateAlarmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAlarmOutcome()>>(
+			[this, request]()
+			{
+			return this->createAlarm(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1917,6 +2097,42 @@ EssClient::CreateLifecycleHookOutcomeCallable EssClient::createLifecycleHookCall
 			[this, request]()
 			{
 			return this->createLifecycleHook(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::EnableAlarmOutcome EssClient::enableAlarm(const EnableAlarmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableAlarmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableAlarmOutcome(EnableAlarmResult(outcome.result()));
+	else
+		return EnableAlarmOutcome(outcome.error());
+}
+
+void EssClient::enableAlarmAsync(const EnableAlarmRequest& request, const EnableAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableAlarm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::EnableAlarmOutcomeCallable EssClient::enableAlarmCallable(const EnableAlarmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableAlarmOutcome()>>(
+			[this, request]()
+			{
+			return this->enableAlarm(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

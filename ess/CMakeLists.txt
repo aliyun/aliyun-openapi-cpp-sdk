@@ -57,12 +57,20 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/DeleteNotificationConfigurationResult.h
 	include/alibabacloud/ess/model/DescribeLifecycleHooksRequest.h
 	include/alibabacloud/ess/model/DescribeLifecycleHooksResult.h
+	include/alibabacloud/ess/model/ModifyAlarmRequest.h
+	include/alibabacloud/ess/model/ModifyAlarmResult.h
 	include/alibabacloud/ess/model/DescribeAccountAttributesRequest.h
 	include/alibabacloud/ess/model/DescribeAccountAttributesResult.h
+	include/alibabacloud/ess/model/DeleteAlarmRequest.h
+	include/alibabacloud/ess/model/DeleteAlarmResult.h
 	include/alibabacloud/ess/model/DescribeScalingActivityDetailRequest.h
 	include/alibabacloud/ess/model/DescribeScalingActivityDetailResult.h
+	include/alibabacloud/ess/model/DisableAlarmRequest.h
+	include/alibabacloud/ess/model/DisableAlarmResult.h
 	include/alibabacloud/ess/model/VerifyUserRequest.h
 	include/alibabacloud/ess/model/VerifyUserResult.h
+	include/alibabacloud/ess/model/DescribeAlarmsRequest.h
+	include/alibabacloud/ess/model/DescribeAlarmsResult.h
 	include/alibabacloud/ess/model/AttachInstancesRequest.h
 	include/alibabacloud/ess/model/AttachInstancesResult.h
 	include/alibabacloud/ess/model/DescribeScalingGroupsRequest.h
@@ -79,6 +87,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/ModifyLifecycleHookResult.h
 	include/alibabacloud/ess/model/DescribeScalingRulesRequest.h
 	include/alibabacloud/ess/model/DescribeScalingRulesResult.h
+	include/alibabacloud/ess/model/CreateAlarmRequest.h
+	include/alibabacloud/ess/model/CreateAlarmResult.h
 	include/alibabacloud/ess/model/EnableScalingGroupRequest.h
 	include/alibabacloud/ess/model/EnableScalingGroupResult.h
 	include/alibabacloud/ess/model/DeactivateScalingConfigurationRequest.h
@@ -125,6 +135,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/AttachDBInstancesResult.h
 	include/alibabacloud/ess/model/CreateLifecycleHookRequest.h
 	include/alibabacloud/ess/model/CreateLifecycleHookResult.h
+	include/alibabacloud/ess/model/EnableAlarmRequest.h
+	include/alibabacloud/ess/model/EnableAlarmResult.h
 	include/alibabacloud/ess/model/ModifyAlertConfigRequest.h
 	include/alibabacloud/ess/model/ModifyAlertConfigResult.h )
 
@@ -166,12 +178,20 @@ set(ess_src
 	src/model/DeleteNotificationConfigurationResult.cc
 	src/model/DescribeLifecycleHooksRequest.cc
 	src/model/DescribeLifecycleHooksResult.cc
+	src/model/ModifyAlarmRequest.cc
+	src/model/ModifyAlarmResult.cc
 	src/model/DescribeAccountAttributesRequest.cc
 	src/model/DescribeAccountAttributesResult.cc
+	src/model/DeleteAlarmRequest.cc
+	src/model/DeleteAlarmResult.cc
 	src/model/DescribeScalingActivityDetailRequest.cc
 	src/model/DescribeScalingActivityDetailResult.cc
+	src/model/DisableAlarmRequest.cc
+	src/model/DisableAlarmResult.cc
 	src/model/VerifyUserRequest.cc
 	src/model/VerifyUserResult.cc
+	src/model/DescribeAlarmsRequest.cc
+	src/model/DescribeAlarmsResult.cc
 	src/model/AttachInstancesRequest.cc
 	src/model/AttachInstancesResult.cc
 	src/model/DescribeScalingGroupsRequest.cc
@@ -188,6 +208,8 @@ set(ess_src
 	src/model/ModifyLifecycleHookResult.cc
 	src/model/DescribeScalingRulesRequest.cc
 	src/model/DescribeScalingRulesResult.cc
+	src/model/CreateAlarmRequest.cc
+	src/model/CreateAlarmResult.cc
 	src/model/EnableScalingGroupRequest.cc
 	src/model/EnableScalingGroupResult.cc
 	src/model/DeactivateScalingConfigurationRequest.cc
@@ -234,6 +256,8 @@ set(ess_src
 	src/model/AttachDBInstancesResult.cc
 	src/model/CreateLifecycleHookRequest.cc
 	src/model/CreateLifecycleHookResult.cc
+	src/model/EnableAlarmRequest.cc
+	src/model/EnableAlarmResult.cc
 	src/model/ModifyAlertConfigRequest.cc
 	src/model/ModifyAlertConfigResult.cc )
 

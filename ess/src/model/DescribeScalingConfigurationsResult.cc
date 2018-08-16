@@ -54,6 +54,8 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.instanceName = value["InstanceName"].asString();
 		if(!value["ImageId"].isNull())
 			scalingConfigurationsObject.imageId = value["ImageId"].asString();
+		if(!value["ImageName"].isNull())
+			scalingConfigurationsObject.imageName = value["ImageName"].asString();
 		if(!value["HostName"].isNull())
 			scalingConfigurationsObject.hostName = value["HostName"].asString();
 		if(!value["InstanceType"].isNull())
@@ -106,6 +108,8 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 				dataDisksObject.snapshotId = value["SnapshotId"].asString();
 			if(!value["Device"].isNull())
 				dataDisksObject.device = value["Device"].asString();
+			if(!value["DeleteWithInstance"].isNull())
+				dataDisksObject.deleteWithInstance = value["DeleteWithInstance"].asString() == "true";
 			scalingConfigurationsObject.dataDisks.push_back(dataDisksObject);
 		}
 		auto allTags = value["Tags"]["Tag"];

@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string category;
 						int size;
 						std::string device;
+						bool deleteWithInstance;
 					};
 					struct Tag
 					{
@@ -74,6 +75,7 @@ namespace AlibabaCloud
 					std::string systemDiskCategory;
 					std::string instanceName;
 					std::string deploymentSetId;
+					std::string imageName;
 					int internetMaxBandwidthOut;
 					int internetMaxBandwidthIn;
 					std::string creationTime;
