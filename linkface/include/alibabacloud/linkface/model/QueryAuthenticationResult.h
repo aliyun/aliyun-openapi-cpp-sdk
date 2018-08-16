@@ -35,9 +35,12 @@ namespace AlibabaCloud
 				struct DataItem
 				{
 					std::string iotId;
+					std::string packageName;
 					std::string expiredTime;
 					std::string beginTime;
+					std::string clientId;
 					int licenseType;
+					std::string apkPubkey;
 				};
 
 

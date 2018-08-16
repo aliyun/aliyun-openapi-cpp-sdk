@@ -52,6 +52,12 @@ void QueryAuthenticationResult::parse(const std::string &payload)
 			dataObject.beginTime = value["BeginTime"].asString();
 		if(!value["ExpiredTime"].isNull())
 			dataObject.expiredTime = value["ExpiredTime"].asString();
+		if(!value["ApkPubkey"].isNull())
+			dataObject.apkPubkey = value["ApkPubkey"].asString();
+		if(!value["PackageName"].isNull())
+			dataObject.packageName = value["PackageName"].asString();
+		if(!value["ClientId"].isNull())
+			dataObject.clientId = value["ClientId"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())
