@@ -1,3 +1,6 @@
+2018-08-21 Version: 1.22.8
+1, Add api: MoPenQueryCanvas, MoPenDoRecognize, MoPenSendMqttMessage, MoPenFindGroup
+
 2018-08-17 Version: 1.22.7
 1, Add a new api called DeleteImage to clear the image resource.
 2, Add the field called AdditionType and OutputType to GetMezzanineInfo api request.
