@@ -722,6 +722,17 @@ void RunInstancesRequest::setCallerBid(const std::string& callerBid)
 	setParameter("CallerBid", callerBid);
 }
 
+std::string RunInstancesRequest::getCreditSpecification()const
+{
+	return creditSpecification_;
+}
+
+void RunInstancesRequest::setCreditSpecification(const std::string& creditSpecification)
+{
+	creditSpecification_ = creditSpecification;
+	setParameter("CreditSpecification", creditSpecification);
+}
+
 std::vector<RunInstancesRequest::DataDisk> RunInstancesRequest::getDataDisk()const
 {
 	return dataDisk_;

@@ -124,7 +124,7 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 		if(!launchTemplateDataNode["ResourceGroupId"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.resourceGroupId = launchTemplateDataNode["ResourceGroupId"].asString();
 		if(!launchTemplateDataNode["SecurityEnhancementStrategy"].isNull())
-			launchTemplateVersionSetsObject.launchTemplateData.securityEnhancementStrategy = launchTemplateDataNode["SecurityEnhancementStrategy"].asString() == "true";
+			launchTemplateVersionSetsObject.launchTemplateData.securityEnhancementStrategy = launchTemplateDataNode["SecurityEnhancementStrategy"].asString();
 		auto allDataDisks = value["DataDisks"]["DataDisk"];
 		for (auto value : allDataDisks)
 		{

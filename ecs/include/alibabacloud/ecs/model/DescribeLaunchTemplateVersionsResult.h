@@ -92,7 +92,7 @@ namespace AlibabaCloud
 						std::string vpcId;
 						int internetMaxBandwidthIn;
 						int systemDiskIops;
-						bool securityEnhancementStrategy;
+						std::string securityEnhancementStrategy;
 						std::string autoReleaseTime;
 					};
 					LaunchTemplateData launchTemplateData;

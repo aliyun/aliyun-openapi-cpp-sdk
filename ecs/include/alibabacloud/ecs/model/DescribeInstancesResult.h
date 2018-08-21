@@ -120,6 +120,7 @@ namespace AlibabaCloud
 					int internetMaxBandwidthIn;
 					bool recyclable;
 					std::string regionId;
+					std::string creditSpecification;
 				};
 
 

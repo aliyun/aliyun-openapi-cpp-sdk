@@ -537,6 +537,17 @@ void CreateInstanceRequest::setClusterId(const std::string& clusterId)
 	setParameter("ClusterId", clusterId);
 }
 
+std::string CreateInstanceRequest::getCreditSpecification()const
+{
+	return creditSpecification_;
+}
+
+void CreateInstanceRequest::setCreditSpecification(const std::string& creditSpecification)
+{
+	creditSpecification_ = creditSpecification;
+	setParameter("CreditSpecification", creditSpecification);
+}
+
 std::vector<CreateInstanceRequest::DataDisk> CreateInstanceRequest::getDataDisk()const
 {
 	return dataDisk_;

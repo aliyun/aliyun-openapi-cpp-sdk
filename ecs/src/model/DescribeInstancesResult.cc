@@ -124,6 +124,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.hpcClusterId = value["HpcClusterId"].asString();
 		if(!value["StoppedMode"].isNull())
 			instancesObject.stoppedMode = value["StoppedMode"].asString();
+		if(!value["CreditSpecification"].isNull())
+			instancesObject.creditSpecification = value["CreditSpecification"].asString();
 		auto allNetworkInterfaces = value["NetworkInterfaces"]["NetworkInterface"];
 		for (auto value : allNetworkInterfaces)
 		{

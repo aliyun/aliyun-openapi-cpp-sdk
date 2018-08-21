@@ -90,6 +90,7 @@ namespace AlibabaCloud
 				std::string getSerialNumber()const;
 				std::string getCreationTime()const;
 				std::string getRegionId()const;
+				std::string getCreditSpecification()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -124,6 +125,7 @@ namespace AlibabaCloud
 				std::string serialNumber_;
 				std::string creationTime_;
 				std::string regionId_;
+				std::string creditSpecification_;
 
 			};
 		}

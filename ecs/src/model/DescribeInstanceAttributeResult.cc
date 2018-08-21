@@ -127,6 +127,8 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 		expiredTime_ = value["ExpiredTime"].asString();
 	if(!value["StoppedMode"].isNull())
 		stoppedMode_ = value["StoppedMode"].asString();
+	if(!value["CreditSpecification"].isNull())
+		creditSpecification_ = value["CreditSpecification"].asString();
 
 }
 
@@ -278,5 +280,10 @@ std::string DescribeInstanceAttributeResult::getCreationTime()const
 std::string DescribeInstanceAttributeResult::getRegionId()const
 {
 	return regionId_;
+}
+
+std::string DescribeInstanceAttributeResult::getCreditSpecification()const
+{
+	return creditSpecification_;
 }
 
