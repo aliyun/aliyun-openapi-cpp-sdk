@@ -112,6 +112,8 @@
 #include "model/AddIpRangeResult.h"
 #include "model/GetInstanceConsoleOutputRequest.h"
 #include "model/GetInstanceConsoleOutputResult.h"
+#include "model/CreateSimulatedSystemEventsRequest.h"
+#include "model/CreateSimulatedSystemEventsResult.h"
 #include "model/CancelTaskRequest.h"
 #include "model/CancelTaskResult.h"
 #include "model/ModifyPhysicalConnectionAttributeRequest.h"
@@ -160,6 +162,8 @@
 #include "model/RemoveTagsResult.h"
 #include "model/ModifySecurityGroupAttributeRequest.h"
 #include "model/ModifySecurityGroupAttributeResult.h"
+#include "model/CancelSimulatedSystemEventsRequest.h"
+#include "model/CancelSimulatedSystemEventsResult.h"
 #include "model/ModifyInstanceAutoReleaseTimeRequest.h"
 #include "model/ModifyInstanceAutoReleaseTimeResult.h"
 #include "model/DeleteNatGatewayRequest.h"
@@ -652,6 +656,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInstanceConsoleOutputResult> GetInstanceConsoleOutputOutcome;
 			typedef std::future<GetInstanceConsoleOutputOutcome> GetInstanceConsoleOutputOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::GetInstanceConsoleOutputRequest&, const GetInstanceConsoleOutputOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceConsoleOutputAsyncHandler;
+			typedef Outcome<Error, Model::CreateSimulatedSystemEventsResult> CreateSimulatedSystemEventsOutcome;
+			typedef std::future<CreateSimulatedSystemEventsOutcome> CreateSimulatedSystemEventsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateSimulatedSystemEventsRequest&, const CreateSimulatedSystemEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSimulatedSystemEventsAsyncHandler;
 			typedef Outcome<Error, Model::CancelTaskResult> CancelTaskOutcome;
 			typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CancelTaskRequest&, const CancelTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
@@ -724,6 +731,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySecurityGroupAttributeResult> ModifySecurityGroupAttributeOutcome;
 			typedef std::future<ModifySecurityGroupAttributeOutcome> ModifySecurityGroupAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifySecurityGroupAttributeRequest&, const ModifySecurityGroupAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupAttributeAsyncHandler;
+			typedef Outcome<Error, Model::CancelSimulatedSystemEventsResult> CancelSimulatedSystemEventsOutcome;
+			typedef std::future<CancelSimulatedSystemEventsOutcome> CancelSimulatedSystemEventsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CancelSimulatedSystemEventsRequest&, const CancelSimulatedSystemEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelSimulatedSystemEventsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceAutoReleaseTimeResult> ModifyInstanceAutoReleaseTimeOutcome;
 			typedef std::future<ModifyInstanceAutoReleaseTimeOutcome> ModifyInstanceAutoReleaseTimeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyInstanceAutoReleaseTimeRequest&, const ModifyInstanceAutoReleaseTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAutoReleaseTimeAsyncHandler;
@@ -1386,6 +1396,9 @@ namespace AlibabaCloud
 			GetInstanceConsoleOutputOutcome getInstanceConsoleOutput(const Model::GetInstanceConsoleOutputRequest &request)const;
 			void getInstanceConsoleOutputAsync(const Model::GetInstanceConsoleOutputRequest& request, const GetInstanceConsoleOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceConsoleOutputOutcomeCallable getInstanceConsoleOutputCallable(const Model::GetInstanceConsoleOutputRequest& request) const;
+			CreateSimulatedSystemEventsOutcome createSimulatedSystemEvents(const Model::CreateSimulatedSystemEventsRequest &request)const;
+			void createSimulatedSystemEventsAsync(const Model::CreateSimulatedSystemEventsRequest& request, const CreateSimulatedSystemEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSimulatedSystemEventsOutcomeCallable createSimulatedSystemEventsCallable(const Model::CreateSimulatedSystemEventsRequest& request) const;
 			CancelTaskOutcome cancelTask(const Model::CancelTaskRequest &request)const;
 			void cancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelTaskOutcomeCallable cancelTaskCallable(const Model::CancelTaskRequest& request) const;
@@ -1458,6 +1471,9 @@ namespace AlibabaCloud
 			ModifySecurityGroupAttributeOutcome modifySecurityGroupAttribute(const Model::ModifySecurityGroupAttributeRequest &request)const;
 			void modifySecurityGroupAttributeAsync(const Model::ModifySecurityGroupAttributeRequest& request, const ModifySecurityGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySecurityGroupAttributeOutcomeCallable modifySecurityGroupAttributeCallable(const Model::ModifySecurityGroupAttributeRequest& request) const;
+			CancelSimulatedSystemEventsOutcome cancelSimulatedSystemEvents(const Model::CancelSimulatedSystemEventsRequest &request)const;
+			void cancelSimulatedSystemEventsAsync(const Model::CancelSimulatedSystemEventsRequest& request, const CancelSimulatedSystemEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelSimulatedSystemEventsOutcomeCallable cancelSimulatedSystemEventsCallable(const Model::CancelSimulatedSystemEventsRequest& request) const;
 			ModifyInstanceAutoReleaseTimeOutcome modifyInstanceAutoReleaseTime(const Model::ModifyInstanceAutoReleaseTimeRequest &request)const;
 			void modifyInstanceAutoReleaseTimeAsync(const Model::ModifyInstanceAutoReleaseTimeRequest& request, const ModifyInstanceAutoReleaseTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceAutoReleaseTimeOutcomeCallable modifyInstanceAutoReleaseTimeCallable(const Model::ModifyInstanceAutoReleaseTimeRequest& request) const;

@@ -111,6 +111,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/AddIpRangeResult.h
 	include/alibabacloud/ecs/model/GetInstanceConsoleOutputRequest.h
 	include/alibabacloud/ecs/model/GetInstanceConsoleOutputResult.h
+	include/alibabacloud/ecs/model/CreateSimulatedSystemEventsRequest.h
+	include/alibabacloud/ecs/model/CreateSimulatedSystemEventsResult.h
 	include/alibabacloud/ecs/model/CancelTaskRequest.h
 	include/alibabacloud/ecs/model/CancelTaskResult.h
 	include/alibabacloud/ecs/model/ModifyPhysicalConnectionAttributeRequest.h
@@ -159,6 +161,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RemoveTagsResult.h
 	include/alibabacloud/ecs/model/ModifySecurityGroupAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifySecurityGroupAttributeResult.h
+	include/alibabacloud/ecs/model/CancelSimulatedSystemEventsRequest.h
+	include/alibabacloud/ecs/model/CancelSimulatedSystemEventsResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceAutoReleaseTimeRequest.h
 	include/alibabacloud/ecs/model/ModifyInstanceAutoReleaseTimeResult.h
 	include/alibabacloud/ecs/model/DeleteNatGatewayRequest.h
@@ -600,6 +604,8 @@ set(ecs_src
 	src/model/AddIpRangeResult.cc
 	src/model/GetInstanceConsoleOutputRequest.cc
 	src/model/GetInstanceConsoleOutputResult.cc
+	src/model/CreateSimulatedSystemEventsRequest.cc
+	src/model/CreateSimulatedSystemEventsResult.cc
 	src/model/CancelTaskRequest.cc
 	src/model/CancelTaskResult.cc
 	src/model/ModifyPhysicalConnectionAttributeRequest.cc
@@ -648,6 +654,8 @@ set(ecs_src
 	src/model/RemoveTagsResult.cc
 	src/model/ModifySecurityGroupAttributeRequest.cc
 	src/model/ModifySecurityGroupAttributeResult.cc
+	src/model/CancelSimulatedSystemEventsRequest.cc
+	src/model/CancelSimulatedSystemEventsResult.cc
 	src/model/ModifyInstanceAutoReleaseTimeRequest.cc
 	src/model/ModifyInstanceAutoReleaseTimeResult.cc
 	src/model/DeleteNatGatewayRequest.cc

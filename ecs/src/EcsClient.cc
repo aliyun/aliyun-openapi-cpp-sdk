@@ -1671,6 +1671,42 @@ EcsClient::GetInstanceConsoleOutputOutcomeCallable EcsClient::getInstanceConsole
 	return task->get_future();
 }
 
+EcsClient::CreateSimulatedSystemEventsOutcome EcsClient::createSimulatedSystemEvents(const CreateSimulatedSystemEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSimulatedSystemEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSimulatedSystemEventsOutcome(CreateSimulatedSystemEventsResult(outcome.result()));
+	else
+		return CreateSimulatedSystemEventsOutcome(outcome.error());
+}
+
+void EcsClient::createSimulatedSystemEventsAsync(const CreateSimulatedSystemEventsRequest& request, const CreateSimulatedSystemEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSimulatedSystemEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateSimulatedSystemEventsOutcomeCallable EcsClient::createSimulatedSystemEventsCallable(const CreateSimulatedSystemEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSimulatedSystemEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->createSimulatedSystemEvents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CancelTaskOutcome EcsClient::cancelTask(const CancelTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2529,6 +2565,42 @@ EcsClient::ModifySecurityGroupAttributeOutcomeCallable EcsClient::modifySecurity
 			[this, request]()
 			{
 			return this->modifySecurityGroupAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::CancelSimulatedSystemEventsOutcome EcsClient::cancelSimulatedSystemEvents(const CancelSimulatedSystemEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelSimulatedSystemEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelSimulatedSystemEventsOutcome(CancelSimulatedSystemEventsResult(outcome.result()));
+	else
+		return CancelSimulatedSystemEventsOutcome(outcome.error());
+}
+
+void EcsClient::cancelSimulatedSystemEventsAsync(const CancelSimulatedSystemEventsRequest& request, const CancelSimulatedSystemEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelSimulatedSystemEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CancelSimulatedSystemEventsOutcomeCallable EcsClient::cancelSimulatedSystemEventsCallable(const CancelSimulatedSystemEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelSimulatedSystemEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelSimulatedSystemEvents(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
