@@ -115,6 +115,8 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getSpotStrategy()const;
 				void setSpotStrategy(const std::string& spotStrategy);
+				std::string getPrivateIpAddress()const;
+				void setPrivateIpAddress(const std::string& privateIpAddress);
 				std::string getPeriodUnit()const;
 				void setPeriodUnit(const std::string& periodUnit);
 				std::string getInstanceName()const;
@@ -225,6 +227,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string vSwitchId_;
 				std::string spotStrategy_;
+				std::string privateIpAddress_;
 				std::string periodUnit_;
 				std::string instanceName_;
 				bool autoRenew_;

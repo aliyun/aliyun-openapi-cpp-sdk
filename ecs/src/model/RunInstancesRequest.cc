@@ -339,6 +339,17 @@ void RunInstancesRequest::setSpotStrategy(const std::string& spotStrategy)
 	setParameter("SpotStrategy", spotStrategy);
 }
 
+std::string RunInstancesRequest::getPrivateIpAddress()const
+{
+	return privateIpAddress_;
+}
+
+void RunInstancesRequest::setPrivateIpAddress(const std::string& privateIpAddress)
+{
+	privateIpAddress_ = privateIpAddress;
+	setParameter("PrivateIpAddress", privateIpAddress);
+}
+
 std::string RunInstancesRequest::getPeriodUnit()const
 {
 	return periodUnit_;

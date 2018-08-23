@@ -25,17 +25,6 @@ DescribeRouteTablesRequest::DescribeRouteTablesRequest() :
 DescribeRouteTablesRequest::~DescribeRouteTablesRequest()
 {}
 
-std::string DescribeRouteTablesRequest::getRouterType()const
-{
-	return routerType_;
-}
-
-void DescribeRouteTablesRequest::setRouterType(const std::string& routerType)
-{
-	routerType_ = routerType;
-	setParameter("RouterType", routerType);
-}
-
 long DescribeRouteTablesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,17 +34,6 @@ void DescribeRouteTablesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeRouteTablesRequest::getRouteTableName()const
-{
-	return routeTableName_;
-}
-
-void DescribeRouteTablesRequest::setRouteTableName(const std::string& routeTableName)
-{
-	routeTableName_ = routeTableName;
-	setParameter("RouteTableName", routeTableName);
 }
 
 std::string DescribeRouteTablesRequest::getVRouterId()const
@@ -80,17 +58,6 @@ void DescribeRouteTablesRequest::setResourceOwnerAccount(const std::string& reso
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeRouteTablesRequest::getRouterId()const
-{
-	return routerId_;
-}
-
-void DescribeRouteTablesRequest::setRouterId(const std::string& routerId)
-{
-	routerId_ = routerId;
-	setParameter("RouterId", routerId);
-}
-
 std::string DescribeRouteTablesRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -100,17 +67,6 @@ void DescribeRouteTablesRequest::setOwnerAccount(const std::string& ownerAccount
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
-}
-
-int DescribeRouteTablesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeRouteTablesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeRouteTablesRequest::getOwnerId()const
@@ -133,6 +89,61 @@ void DescribeRouteTablesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeRouteTablesRequest::getRouterType()const
+{
+	return routerType_;
+}
+
+void DescribeRouteTablesRequest::setRouterType(const std::string& routerType)
+{
+	routerType_ = routerType;
+	setParameter("RouterType", routerType);
+}
+
+std::string DescribeRouteTablesRequest::getRouteTableName()const
+{
+	return routeTableName_;
+}
+
+void DescribeRouteTablesRequest::setRouteTableName(const std::string& routeTableName)
+{
+	routeTableName_ = routeTableName;
+	setParameter("RouteTableName", routeTableName);
+}
+
+std::string DescribeRouteTablesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeRouteTablesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string DescribeRouteTablesRequest::getRouterId()const
+{
+	return routerId_;
+}
+
+void DescribeRouteTablesRequest::setRouterId(const std::string& routerId)
+{
+	routerId_ = routerId;
+	setParameter("RouterId", routerId);
+}
+
+int DescribeRouteTablesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeRouteTablesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRouteTablesRequest::getRouteTableId()const

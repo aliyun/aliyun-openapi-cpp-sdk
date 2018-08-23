@@ -47,6 +47,17 @@ void CreateRouteEntryRequest::setResourceOwnerAccount(const std::string& resourc
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string CreateRouteEntryRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateRouteEntryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string CreateRouteEntryRequest::getClientToken()const
 {
 	return clientToken_;

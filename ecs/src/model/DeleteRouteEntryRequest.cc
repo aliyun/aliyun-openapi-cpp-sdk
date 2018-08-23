@@ -47,6 +47,17 @@ void DeleteRouteEntryRequest::setResourceOwnerAccount(const std::string& resourc
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string DeleteRouteEntryRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteRouteEntryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DeleteRouteEntryRequest::getDestinationCidrBlock()const
 {
 	return destinationCidrBlock_;

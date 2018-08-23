@@ -58,6 +58,17 @@ void UnassociateEipAddressRequest::setResourceOwnerAccount(const std::string& re
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string UnassociateEipAddressRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void UnassociateEipAddressRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string UnassociateEipAddressRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

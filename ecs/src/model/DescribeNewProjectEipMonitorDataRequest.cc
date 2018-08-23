@@ -58,6 +58,17 @@ void DescribeNewProjectEipMonitorDataRequest::setResourceOwnerAccount(const std:
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string DescribeNewProjectEipMonitorDataRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeNewProjectEipMonitorDataRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeNewProjectEipMonitorDataRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

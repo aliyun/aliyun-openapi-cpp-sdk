@@ -47,6 +47,17 @@ void ModifyEipAddressAttributeRequest::setResourceOwnerAccount(const std::string
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string ModifyEipAddressAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyEipAddressAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifyEipAddressAttributeRequest::getBandwidth()const
 {
 	return bandwidth_;
