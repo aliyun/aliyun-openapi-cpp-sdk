@@ -1,3 +1,8 @@
+2018-08-27 Version: 1.23.2
+1, Add api GetGatewayBySubDevice.
+2, Modified the time related response parameters.
+3, Add messageId in response with InvokeThingService，SetDeviceProperty and NotifyAddThingTopo.
+
 2018-08-23 Version: 1.23.1
 1, RunInstance add privateIpAddress.
 
