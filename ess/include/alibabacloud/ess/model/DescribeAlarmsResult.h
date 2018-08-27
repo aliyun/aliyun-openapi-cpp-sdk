@@ -34,11 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct Alarm
 				{
+					struct Dimension
+					{
+						std::string dimensionValue;
+						std::string dimensionKey;
+					};
 					std::string comparisonOperator;
 					std::string description;
 					std::string scalingGroupId;
 					std::string metricType;
-					std::string dimensions;
+					std::vector<Alarm::Dimension> dimensions;
 					int period;
 					int evaluationCount;
 					std::string statistics;

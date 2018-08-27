@@ -48,8 +48,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
+				int getGroupId()const;
+				void setGroupId(int groupId);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::vector<std::string> getAlarmAction()const;
@@ -60,8 +60,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getComparisionOperator()const;
-				void setComparisionOperator(const std::string& comparisionOperator);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getName()const;
@@ -70,6 +68,8 @@ namespace AlibabaCloud
 				void setEvaluationCount(int evaluationCount);
 				std::string getMetricName()const;
 				void setMetricName(const std::string& metricName);
+				std::string getComparisonOperator()const;
+				void setComparisonOperator(const std::string& comparisonOperator);
 				std::vector<Dimension> getDimension()const;
 				void setDimension(const std::vector<Dimension>& dimension);
 				std::string getStatistics()const;
@@ -80,17 +80,17 @@ namespace AlibabaCloud
 				int period_;
 				std::string resourceOwnerAccount_;
 				std::string scalingGroupId_;
-				std::string groupId_;
+				int groupId_;
 				std::string description_;
 				std::vector<std::string> alarmAction_;
 				float threshold_;
 				long ownerId_;
 				std::string accessKeyId_;
-				std::string comparisionOperator_;
 				std::string regionId_;
 				std::string name_;
 				int evaluationCount_;
 				std::string metricName_;
+				std::string comparisonOperator_;
 				std::vector<Dimension> dimension_;
 				std::string statistics_;
 

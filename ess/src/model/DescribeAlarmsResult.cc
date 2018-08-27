@@ -54,8 +54,6 @@ void DescribeAlarmsResult::parse(const std::string &payload)
 			alarmListObject.metricType = value["MetricType"].asString();
 		if(!value["MetricName"].isNull())
 			alarmListObject.metricName = value["MetricName"].asString();
-		if(!value["Dimensions"].isNull())
-			alarmListObject.dimensions = value["Dimensions"].asString();
 		if(!value["Period"].isNull())
 			alarmListObject.period = std::stoi(value["Period"].asString());
 		if(!value["Statistics"].isNull())
@@ -72,6 +70,16 @@ void DescribeAlarmsResult::parse(const std::string &payload)
 			alarmListObject.scalingGroupId = value["ScalingGroupId"].asString();
 		if(!value["Enable"].isNull())
 			alarmListObject.enable = value["Enable"].asString() == "true";
+		auto allDimensions = value["Dimensions"]["Dimension"];
+		for (auto value : allDimensions)
+		{
+			Alarm::Dimension dimensionsObject;
+			if(!value["DimensionKey"].isNull())
+				dimensionsObject.dimensionKey = value["DimensionKey"].asString();
+			if(!value["DimensionValue"].isNull())
+				dimensionsObject.dimensionValue = value["DimensionValue"].asString();
+			alarmListObject.dimensions.push_back(dimensionsObject);
+		}
 		auto allAlarmActions = value["alarmActions"]["alarmAction"];
 		for (auto value : allAlarmActions)
 			alarmListObject.alarmActions.push_back(value.asString());

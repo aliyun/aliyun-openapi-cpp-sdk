@@ -69,15 +69,15 @@ void CreateAlarmRequest::setScalingGroupId(const std::string& scalingGroupId)
 	setParameter("ScalingGroupId", scalingGroupId);
 }
 
-std::string CreateAlarmRequest::getGroupId()const
+int CreateAlarmRequest::getGroupId()const
 {
 	return groupId_;
 }
 
-void CreateAlarmRequest::setGroupId(const std::string& groupId)
+void CreateAlarmRequest::setGroupId(int groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 std::string CreateAlarmRequest::getDescription()const
@@ -136,17 +136,6 @@ void CreateAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string CreateAlarmRequest::getComparisionOperator()const
-{
-	return comparisionOperator_;
-}
-
-void CreateAlarmRequest::setComparisionOperator(const std::string& comparisionOperator)
-{
-	comparisionOperator_ = comparisionOperator;
-	setParameter("ComparisionOperator", comparisionOperator);
-}
-
 std::string CreateAlarmRequest::getRegionId()const
 {
 	return regionId_;
@@ -189,6 +178,17 @@ void CreateAlarmRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
 	setParameter("MetricName", metricName);
+}
+
+std::string CreateAlarmRequest::getComparisonOperator()const
+{
+	return comparisonOperator_;
+}
+
+void CreateAlarmRequest::setComparisonOperator(const std::string& comparisonOperator)
+{
+	comparisonOperator_ = comparisonOperator;
+	setParameter("ComparisonOperator", comparisonOperator);
 }
 
 std::vector<CreateAlarmRequest::Dimension> CreateAlarmRequest::getDimension()const
