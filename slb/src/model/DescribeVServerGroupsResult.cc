@@ -48,6 +48,31 @@ void DescribeVServerGroupsResult::parse(const std::string &payload)
 			vServerGroupsObject.vServerGroupId = value["VServerGroupId"].asString();
 		if(!value["VServerGroupName"].isNull())
 			vServerGroupsObject.vServerGroupName = value["VServerGroupName"].asString();
+		auto associatedObjectsNode = value["AssociatedObjects"];
+		auto allListeners = value["Listeners"]["Listener"];
+		for (auto value : allListeners)
+		{
+			VServerGroup::AssociatedObjects::Listener listenerObject;
+			if(!value["Protocol"].isNull())
+				listenerObject.protocol = value["Protocol"].asString();
+			if(!value["Port"].isNull())
+				listenerObject.port = std::stoi(value["Port"].asString());
+			vServerGroupsObject.associatedObjects.listeners.push_back(listenerObject);
+		}
+		auto allRules = value["Rules"]["Rule"];
+		for (auto value : allRules)
+		{
+			VServerGroup::AssociatedObjects::Rule ruleObject;
+			if(!value["RuleId"].isNull())
+				ruleObject.ruleId = value["RuleId"].asString();
+			if(!value["Domain"].isNull())
+				ruleObject.domain = value["Domain"].asString();
+			if(!value["Url"].isNull())
+				ruleObject.url = value["Url"].asString();
+			if(!value["RuleName"].isNull())
+				ruleObject.ruleName = value["RuleName"].asString();
+			vServerGroupsObject.associatedObjects.rules.push_back(ruleObject);
+		}
 		vServerGroups_.push_back(vServerGroupsObject);
 	}
 

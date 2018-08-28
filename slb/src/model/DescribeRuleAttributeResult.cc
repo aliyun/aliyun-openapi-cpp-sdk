@@ -52,7 +52,47 @@ void DescribeRuleAttributeResult::parse(const std::string &payload)
 		url_ = value["Url"].asString();
 	if(!value["VServerGroupId"].isNull())
 		vServerGroupId_ = value["VServerGroupId"].asString();
+	if(!value["ListenerSync"].isNull())
+		listenerSync_ = value["ListenerSync"].asString();
+	if(!value["Scheduler"].isNull())
+		scheduler_ = value["Scheduler"].asString();
+	if(!value["StickySession"].isNull())
+		stickySession_ = value["StickySession"].asString();
+	if(!value["StickySessionType"].isNull())
+		stickySessionType_ = value["StickySessionType"].asString();
+	if(!value["CookieTimeout"].isNull())
+		cookieTimeout_ = std::stoi(value["CookieTimeout"].asString());
+	if(!value["Cookie"].isNull())
+		cookie_ = value["Cookie"].asString();
+	if(!value["HealthCheck"].isNull())
+		healthCheck_ = value["HealthCheck"].asString();
+	if(!value["HealthCheckDomain"].isNull())
+		healthCheckDomain_ = value["HealthCheckDomain"].asString();
+	if(!value["HealthCheckURI"].isNull())
+		healthCheckURI_ = value["HealthCheckURI"].asString();
+	if(!value["HealthyThreshold"].isNull())
+		healthyThreshold_ = std::stoi(value["HealthyThreshold"].asString());
+	if(!value["UnhealthyThreshold"].isNull())
+		unhealthyThreshold_ = std::stoi(value["UnhealthyThreshold"].asString());
+	if(!value["HealthCheckTimeout"].isNull())
+		healthCheckTimeout_ = std::stoi(value["HealthCheckTimeout"].asString());
+	if(!value["HealthCheckInterval"].isNull())
+		healthCheckInterval_ = std::stoi(value["HealthCheckInterval"].asString());
+	if(!value["HealthCheckConnectPort"].isNull())
+		healthCheckConnectPort_ = std::stoi(value["HealthCheckConnectPort"].asString());
+	if(!value["HealthCheckHttpCode"].isNull())
+		healthCheckHttpCode_ = value["HealthCheckHttpCode"].asString();
 
+}
+
+int DescribeRuleAttributeResult::getCookieTimeout()const
+{
+	return cookieTimeout_;
+}
+
+std::string DescribeRuleAttributeResult::getCookie()const
+{
+	return cookie_;
 }
 
 std::string DescribeRuleAttributeResult::getListenerPort()const
@@ -65,9 +105,74 @@ std::string DescribeRuleAttributeResult::getVServerGroupId()const
 	return vServerGroupId_;
 }
 
+int DescribeRuleAttributeResult::getHealthCheckInterval()const
+{
+	return healthCheckInterval_;
+}
+
+int DescribeRuleAttributeResult::getUnhealthyThreshold()const
+{
+	return unhealthyThreshold_;
+}
+
+std::string DescribeRuleAttributeResult::getScheduler()const
+{
+	return scheduler_;
+}
+
+std::string DescribeRuleAttributeResult::getHealthCheckURI()const
+{
+	return healthCheckURI_;
+}
+
+std::string DescribeRuleAttributeResult::getHealthCheck()const
+{
+	return healthCheck_;
+}
+
 std::string DescribeRuleAttributeResult::getLoadBalancerId()const
 {
 	return loadBalancerId_;
+}
+
+int DescribeRuleAttributeResult::getHealthCheckTimeout()const
+{
+	return healthCheckTimeout_;
+}
+
+std::string DescribeRuleAttributeResult::getUrl()const
+{
+	return url_;
+}
+
+std::string DescribeRuleAttributeResult::getStickySession()const
+{
+	return stickySession_;
+}
+
+int DescribeRuleAttributeResult::getHealthCheckConnectPort()const
+{
+	return healthCheckConnectPort_;
+}
+
+int DescribeRuleAttributeResult::getHealthyThreshold()const
+{
+	return healthyThreshold_;
+}
+
+std::string DescribeRuleAttributeResult::getListenerSync()const
+{
+	return listenerSync_;
+}
+
+std::string DescribeRuleAttributeResult::getHealthCheckDomain()const
+{
+	return healthCheckDomain_;
+}
+
+std::string DescribeRuleAttributeResult::getStickySessionType()const
+{
+	return stickySessionType_;
 }
 
 std::string DescribeRuleAttributeResult::getDomain()const
@@ -75,13 +180,13 @@ std::string DescribeRuleAttributeResult::getDomain()const
 	return domain_;
 }
 
+std::string DescribeRuleAttributeResult::getHealthCheckHttpCode()const
+{
+	return healthCheckHttpCode_;
+}
+
 std::string DescribeRuleAttributeResult::getRuleName()const
 {
 	return ruleName_;
-}
-
-std::string DescribeRuleAttributeResult::getUrl()const
-{
-	return url_;
 }
 

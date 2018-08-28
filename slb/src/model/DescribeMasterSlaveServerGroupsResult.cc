@@ -48,6 +48,17 @@ void DescribeMasterSlaveServerGroupsResult::parse(const std::string &payload)
 			masterSlaveServerGroupsObject.masterSlaveServerGroupId = value["MasterSlaveServerGroupId"].asString();
 		if(!value["MasterSlaveServerGroupName"].isNull())
 			masterSlaveServerGroupsObject.masterSlaveServerGroupName = value["MasterSlaveServerGroupName"].asString();
+		auto associatedObjectsNode = value["AssociatedObjects"];
+		auto allListeners = value["Listeners"]["Listener"];
+		for (auto value : allListeners)
+		{
+			MasterSlaveServerGroup::AssociatedObjects::Listener listenerObject;
+			if(!value["Protocol"].isNull())
+				listenerObject.protocol = value["Protocol"].asString();
+			if(!value["Port"].isNull())
+				listenerObject.port = std::stoi(value["Port"].asString());
+			masterSlaveServerGroupsObject.associatedObjects.listeners.push_back(listenerObject);
+		}
 		masterSlaveServerGroups_.push_back(masterSlaveServerGroupsObject);
 	}
 

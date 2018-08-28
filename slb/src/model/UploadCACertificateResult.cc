@@ -52,6 +52,12 @@ void UploadCACertificateResult::parse(const std::string &payload)
 		createTime_ = value["CreateTime"].asString();
 	if(!value["CreateTimeStamp"].isNull())
 		createTimeStamp_ = std::stol(value["CreateTimeStamp"].asString());
+	if(!value["ExpireTime"].isNull())
+		expireTime_ = value["ExpireTime"].asString();
+	if(!value["ExpireTimeStamp"].isNull())
+		expireTimeStamp_ = std::stol(value["ExpireTimeStamp"].asString());
+	if(!value["CommonName"].isNull())
+		commonName_ = value["CommonName"].asString();
 
 }
 
@@ -63,6 +69,11 @@ std::string UploadCACertificateResult::getFingerprint()const
 std::string UploadCACertificateResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
+}
+
+long UploadCACertificateResult::getExpireTimeStamp()const
+{
+	return expireTimeStamp_;
 }
 
 std::string UploadCACertificateResult::getCACertificateId()const
@@ -80,8 +91,18 @@ std::string UploadCACertificateResult::getCACertificateName()const
 	return cACertificateName_;
 }
 
+std::string UploadCACertificateResult::getExpireTime()const
+{
+	return expireTime_;
+}
+
 long UploadCACertificateResult::getCreateTimeStamp()const
 {
 	return createTimeStamp_;
+}
+
+std::string UploadCACertificateResult::getCommonName()const
+{
+	return commonName_;
 }
 

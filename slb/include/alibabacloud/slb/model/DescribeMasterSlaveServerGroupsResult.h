@@ -34,6 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct MasterSlaveServerGroup
 				{
+					struct AssociatedObjects
+					{
+						struct Listener
+						{
+							int port;
+							std::string protocol;
+						};
+						std::vector<Listener> listeners;
+					};
+					AssociatedObjects associatedObjects;
 					std::string masterSlaveServerGroupId;
 					std::string masterSlaveServerGroupName;
 				};

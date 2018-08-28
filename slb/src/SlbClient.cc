@@ -51,6 +51,42 @@ SlbClient::SlbClient(const std::string & accessKeyId, const std::string & access
 SlbClient::~SlbClient()
 {}
 
+SlbClient::SetDomainExtensionAttributeOutcome SlbClient::setDomainExtensionAttribute(const SetDomainExtensionAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDomainExtensionAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDomainExtensionAttributeOutcome(SetDomainExtensionAttributeResult(outcome.result()));
+	else
+		return SetDomainExtensionAttributeOutcome(outcome.error());
+}
+
+void SlbClient::setDomainExtensionAttributeAsync(const SetDomainExtensionAttributeRequest& request, const SetDomainExtensionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDomainExtensionAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetDomainExtensionAttributeOutcomeCallable SlbClient::setDomainExtensionAttributeCallable(const SetDomainExtensionAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDomainExtensionAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->setDomainExtensionAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::CreateLoadBalancerUDPListenerOutcome SlbClient::createLoadBalancerUDPListener(const CreateLoadBalancerUDPListenerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,6 +663,42 @@ SlbClient::SetLoadBalancerHTTPListenerAttributeOutcomeCallable SlbClient::setLoa
 	return task->get_future();
 }
 
+SlbClient::DescribeDomainExtensionsOutcome SlbClient::describeDomainExtensions(const DescribeDomainExtensionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainExtensionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainExtensionsOutcome(DescribeDomainExtensionsResult(outcome.result()));
+	else
+		return DescribeDomainExtensionsOutcome(outcome.error());
+}
+
+void SlbClient::describeDomainExtensionsAsync(const DescribeDomainExtensionsRequest& request, const DescribeDomainExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainExtensions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeDomainExtensionsOutcomeCallable SlbClient::describeDomainExtensionsCallable(const DescribeDomainExtensionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainExtensionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainExtensions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::SetLoadBalancerAutoReleaseTimeOutcome SlbClient::setLoadBalancerAutoReleaseTime(const SetLoadBalancerAutoReleaseTimeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,6 +873,42 @@ SlbClient::SetLoadBalancerHTTPSListenerAttributeOutcomeCallable SlbClient::setLo
 			[this, request]()
 			{
 			return this->setLoadBalancerHTTPSListenerAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetAutoRenewStatusOutcome SlbClient::setAutoRenewStatus(const SetAutoRenewStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetAutoRenewStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetAutoRenewStatusOutcome(SetAutoRenewStatusResult(outcome.result()));
+	else
+		return SetAutoRenewStatusOutcome(outcome.error());
+}
+
+void SlbClient::setAutoRenewStatusAsync(const SetAutoRenewStatusRequest& request, const SetAutoRenewStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setAutoRenewStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetAutoRenewStatusOutcomeCallable SlbClient::setAutoRenewStatusCallable(const SetAutoRenewStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetAutoRenewStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->setAutoRenewStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1239,6 +1347,42 @@ SlbClient::RemoveBackendServersOutcomeCallable SlbClient::removeBackendServersCa
 	return task->get_future();
 }
 
+SlbClient::AddAccessControlListEntryOutcome SlbClient::addAccessControlListEntry(const AddAccessControlListEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddAccessControlListEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddAccessControlListEntryOutcome(AddAccessControlListEntryResult(outcome.result()));
+	else
+		return AddAccessControlListEntryOutcome(outcome.error());
+}
+
+void SlbClient::addAccessControlListEntryAsync(const AddAccessControlListEntryRequest& request, const AddAccessControlListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addAccessControlListEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::AddAccessControlListEntryOutcomeCallable SlbClient::addAccessControlListEntryCallable(const AddAccessControlListEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddAccessControlListEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->addAccessControlListEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::ModifyVServerGroupBackendServersOutcome SlbClient::modifyVServerGroupBackendServers(const ModifyVServerGroupBackendServersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1269,6 +1413,42 @@ SlbClient::ModifyVServerGroupBackendServersOutcomeCallable SlbClient::modifyVSer
 			[this, request]()
 			{
 			return this->modifyVServerGroupBackendServers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeSlbQuotasOutcome SlbClient::describeSlbQuotas(const DescribeSlbQuotasRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSlbQuotasOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSlbQuotasOutcome(DescribeSlbQuotasResult(outcome.result()));
+	else
+		return DescribeSlbQuotasOutcome(outcome.error());
+}
+
+void SlbClient::describeSlbQuotasAsync(const DescribeSlbQuotasRequest& request, const DescribeSlbQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSlbQuotas(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeSlbQuotasOutcomeCallable SlbClient::describeSlbQuotasCallable(const DescribeSlbQuotasRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSlbQuotasOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSlbQuotas(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1491,6 +1671,42 @@ SlbClient::SetBackendServersOutcomeCallable SlbClient::setBackendServersCallable
 	return task->get_future();
 }
 
+SlbClient::DeleteAccessControlListOutcome SlbClient::deleteAccessControlList(const DeleteAccessControlListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAccessControlListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAccessControlListOutcome(DeleteAccessControlListResult(outcome.result()));
+	else
+		return DeleteAccessControlListOutcome(outcome.error());
+}
+
+void SlbClient::deleteAccessControlListAsync(const DeleteAccessControlListRequest& request, const DeleteAccessControlListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAccessControlList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DeleteAccessControlListOutcomeCallable SlbClient::deleteAccessControlListCallable(const DeleteAccessControlListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAccessControlListOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAccessControlList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::RemoveVServerGroupBackendServersOutcome SlbClient::removeVServerGroupBackendServers(const RemoveVServerGroupBackendServersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1671,6 +1887,42 @@ SlbClient::DeleteCACertificateOutcomeCallable SlbClient::deleteCACertificateCall
 	return task->get_future();
 }
 
+SlbClient::SetAccessControlListAttributeOutcome SlbClient::setAccessControlListAttribute(const SetAccessControlListAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetAccessControlListAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetAccessControlListAttributeOutcome(SetAccessControlListAttributeResult(outcome.result()));
+	else
+		return SetAccessControlListAttributeOutcome(outcome.error());
+}
+
+void SlbClient::setAccessControlListAttributeAsync(const SetAccessControlListAttributeRequest& request, const SetAccessControlListAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setAccessControlListAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetAccessControlListAttributeOutcomeCallable SlbClient::setAccessControlListAttributeCallable(const SetAccessControlListAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetAccessControlListAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->setAccessControlListAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::CreateLoadBalancerTCPListenerOutcome SlbClient::createLoadBalancerTCPListener(const CreateLoadBalancerTCPListenerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1701,6 +1953,114 @@ SlbClient::CreateLoadBalancerTCPListenerOutcomeCallable SlbClient::createLoadBal
 			[this, request]()
 			{
 			return this->createLoadBalancerTCPListener(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeAccessControlListAttributeOutcome SlbClient::describeAccessControlListAttribute(const DescribeAccessControlListAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccessControlListAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccessControlListAttributeOutcome(DescribeAccessControlListAttributeResult(outcome.result()));
+	else
+		return DescribeAccessControlListAttributeOutcome(outcome.error());
+}
+
+void SlbClient::describeAccessControlListAttributeAsync(const DescribeAccessControlListAttributeRequest& request, const DescribeAccessControlListAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccessControlListAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeAccessControlListAttributeOutcomeCallable SlbClient::describeAccessControlListAttributeCallable(const DescribeAccessControlListAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccessControlListAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccessControlListAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeAccessControlListsOutcome SlbClient::describeAccessControlLists(const DescribeAccessControlListsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccessControlListsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccessControlListsOutcome(DescribeAccessControlListsResult(outcome.result()));
+	else
+		return DescribeAccessControlListsOutcome(outcome.error());
+}
+
+void SlbClient::describeAccessControlListsAsync(const DescribeAccessControlListsRequest& request, const DescribeAccessControlListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccessControlLists(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeAccessControlListsOutcomeCallable SlbClient::describeAccessControlListsCallable(const DescribeAccessControlListsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccessControlListsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccessControlLists(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DeleteDomainExtensionOutcome SlbClient::deleteDomainExtension(const DeleteDomainExtensionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDomainExtensionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDomainExtensionOutcome(DeleteDomainExtensionResult(outcome.result()));
+	else
+		return DeleteDomainExtensionOutcome(outcome.error());
+}
+
+void SlbClient::deleteDomainExtensionAsync(const DeleteDomainExtensionRequest& request, const DeleteDomainExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDomainExtension(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DeleteDomainExtensionOutcomeCallable SlbClient::deleteDomainExtensionCallable(const DeleteDomainExtensionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDomainExtensionOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDomainExtension(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2031,6 +2391,78 @@ SlbClient::DescribeRulesOutcomeCallable SlbClient::describeRulesCallable(const D
 	return task->get_future();
 }
 
+SlbClient::RemoveAccessControlListEntryOutcome SlbClient::removeAccessControlListEntry(const RemoveAccessControlListEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveAccessControlListEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveAccessControlListEntryOutcome(RemoveAccessControlListEntryResult(outcome.result()));
+	else
+		return RemoveAccessControlListEntryOutcome(outcome.error());
+}
+
+void SlbClient::removeAccessControlListEntryAsync(const RemoveAccessControlListEntryRequest& request, const RemoveAccessControlListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeAccessControlListEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::RemoveAccessControlListEntryOutcomeCallable SlbClient::removeAccessControlListEntryCallable(const RemoveAccessControlListEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveAccessControlListEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->removeAccessControlListEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::CreateDomainExtensionOutcome SlbClient::createDomainExtension(const CreateDomainExtensionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDomainExtensionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDomainExtensionOutcome(CreateDomainExtensionResult(outcome.result()));
+	else
+		return CreateDomainExtensionOutcome(outcome.error());
+}
+
+void SlbClient::createDomainExtensionAsync(const CreateDomainExtensionRequest& request, const CreateDomainExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDomainExtension(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::CreateDomainExtensionOutcomeCallable SlbClient::createDomainExtensionCallable(const CreateDomainExtensionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDomainExtensionOutcome()>>(
+			[this, request]()
+			{
+			return this->createDomainExtension(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::DescribeRuleAttributeOutcome SlbClient::describeRuleAttribute(const DescribeRuleAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +2709,42 @@ SlbClient::ModifyLoadBalancerInternetSpecOutcomeCallable SlbClient::modifyLoadBa
 			[this, request]()
 			{
 			return this->modifyLoadBalancerInternetSpec(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::CreateAccessControlListOutcome SlbClient::createAccessControlList(const CreateAccessControlListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAccessControlListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAccessControlListOutcome(CreateAccessControlListResult(outcome.result()));
+	else
+		return CreateAccessControlListOutcome(outcome.error());
+}
+
+void SlbClient::createAccessControlListAsync(const CreateAccessControlListRequest& request, const CreateAccessControlListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAccessControlList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::CreateAccessControlListOutcomeCallable SlbClient::createAccessControlListCallable(const CreateAccessControlListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAccessControlListOutcome()>>(
+			[this, request]()
+			{
+			return this->createAccessControlList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

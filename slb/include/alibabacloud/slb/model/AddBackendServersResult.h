@@ -34,7 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct BackendServer
 				{
+					std::string type;
 					std::string serverId;
+					std::string vpcId;
+					std::string eniHost;
+					std::string serverIp;
 					std::string weight;
 				};
 

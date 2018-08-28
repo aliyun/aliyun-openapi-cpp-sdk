@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				bool getIncludeListener()const;
+				void setIncludeListener(bool includeListener);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string loadBalancerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
+				bool includeListener_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string tags_;

@@ -36,17 +36,6 @@ void CreateLoadBalancerUDPListenerRequest::setAccess_key_id(const std::string& a
 	setParameter("Access_key_id", access_key_id);
 }
 
-std::string CreateLoadBalancerUDPListenerRequest::getVServerGroupId()const
-{
-	return vServerGroupId_;
-}
-
-void CreateLoadBalancerUDPListenerRequest::setVServerGroupId(const std::string& vServerGroupId)
-{
-	vServerGroupId_ = vServerGroupId;
-	setParameter("VServerGroupId", vServerGroupId);
-}
-
 int CreateLoadBalancerUDPListenerRequest::getHealthCheckConnectTimeout()const
 {
 	return healthCheckConnectTimeout_;
@@ -67,6 +56,138 @@ void CreateLoadBalancerUDPListenerRequest::setResourceOwnerId(long resourceOwner
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
+}
+
+int CreateLoadBalancerUDPListenerRequest::getUnhealthyThreshold()const
+{
+	return unhealthyThreshold_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setUnhealthyThreshold(int unhealthyThreshold)
+{
+	unhealthyThreshold_ = unhealthyThreshold;
+	setParameter("UnhealthyThreshold", std::to_string(unhealthyThreshold));
+}
+
+int CreateLoadBalancerUDPListenerRequest::getHealthyThreshold()const
+{
+	return healthyThreshold_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setHealthyThreshold(int healthyThreshold)
+{
+	healthyThreshold_ = healthyThreshold;
+	setParameter("HealthyThreshold", std::to_string(healthyThreshold));
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getAclStatus()const
+{
+	return aclStatus_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setAclStatus(const std::string& aclStatus)
+{
+	aclStatus_ = aclStatus;
+	setParameter("AclStatus", aclStatus);
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getScheduler()const
+{
+	return scheduler_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setScheduler(const std::string& scheduler)
+{
+	scheduler_ = scheduler;
+	setParameter("Scheduler", scheduler);
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getAclType()const
+{
+	return aclType_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setAclType(const std::string& aclType)
+{
+	aclType_ = aclType;
+	setParameter("AclType", aclType);
+}
+
+int CreateLoadBalancerUDPListenerRequest::getMaxConnection()const
+{
+	return maxConnection_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setMaxConnection(int maxConnection)
+{
+	maxConnection_ = maxConnection;
+	setParameter("MaxConnection", std::to_string(maxConnection));
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+int CreateLoadBalancerUDPListenerRequest::getPersistenceTimeout()const
+{
+	return persistenceTimeout_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setPersistenceTimeout(int persistenceTimeout)
+{
+	persistenceTimeout_ = persistenceTimeout;
+	setParameter("PersistenceTimeout", std::to_string(persistenceTimeout));
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getVpcIds()const
+{
+	return vpcIds_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setVpcIds(const std::string& vpcIds)
+{
+	vpcIds_ = vpcIds;
+	setParameter("VpcIds", vpcIds);
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getVServerGroupId()const
+{
+	return vServerGroupId_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setVServerGroupId(const std::string& vServerGroupId)
+{
+	vServerGroupId_ = vServerGroupId;
+	setParameter("VServerGroupId", vServerGroupId);
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getAclId()const
+{
+	return aclId_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setAclId(const std::string& aclId)
+{
+	aclId_ = aclId;
+	setParameter("AclId", aclId);
 }
 
 int CreateLoadBalancerUDPListenerRequest::getListenerPort()const
@@ -113,17 +234,6 @@ void CreateLoadBalancerUDPListenerRequest::setOwnerAccount(const std::string& ow
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-int CreateLoadBalancerUDPListenerRequest::getUnhealthyThreshold()const
-{
-	return unhealthyThreshold_;
-}
-
-void CreateLoadBalancerUDPListenerRequest::setUnhealthyThreshold(int unhealthyThreshold)
-{
-	unhealthyThreshold_ = unhealthyThreshold;
-	setParameter("UnhealthyThreshold", std::to_string(unhealthyThreshold));
-}
-
 long CreateLoadBalancerUDPListenerRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -133,17 +243,6 @@ void CreateLoadBalancerUDPListenerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-int CreateLoadBalancerUDPListenerRequest::getHealthyThreshold()const
-{
-	return healthyThreshold_;
-}
-
-void CreateLoadBalancerUDPListenerRequest::setHealthyThreshold(int healthyThreshold)
-{
-	healthyThreshold_ = healthyThreshold;
-	setParameter("HealthyThreshold", std::to_string(healthyThreshold));
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getTags()const
@@ -157,17 +256,6 @@ void CreateLoadBalancerUDPListenerRequest::setTags(const std::string& tags)
 	setParameter("Tags", tags);
 }
 
-std::string CreateLoadBalancerUDPListenerRequest::getScheduler()const
-{
-	return scheduler_;
-}
-
-void CreateLoadBalancerUDPListenerRequest::setScheduler(const std::string& scheduler)
-{
-	scheduler_ = scheduler;
-	setParameter("Scheduler", scheduler);
-}
-
 std::string CreateLoadBalancerUDPListenerRequest::getLoadBalancerId()const
 {
 	return loadBalancerId_;
@@ -177,17 +265,6 @@ void CreateLoadBalancerUDPListenerRequest::setLoadBalancerId(const std::string& 
 {
 	loadBalancerId_ = loadBalancerId;
 	setParameter("LoadBalancerId", loadBalancerId);
-}
-
-int CreateLoadBalancerUDPListenerRequest::getMaxConnection()const
-{
-	return maxConnection_;
-}
-
-void CreateLoadBalancerUDPListenerRequest::setMaxConnection(int maxConnection)
-{
-	maxConnection_ = maxConnection;
-	setParameter("MaxConnection", std::to_string(maxConnection));
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getMasterSlaveServerGroupId()const
@@ -212,17 +289,6 @@ void CreateLoadBalancerUDPListenerRequest::setHealthCheckReq(const std::string& 
 	setParameter("HealthCheckReq", healthCheckReq);
 }
 
-std::string CreateLoadBalancerUDPListenerRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateLoadBalancerUDPListenerRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 int CreateLoadBalancerUDPListenerRequest::getBackendServerPort()const
 {
 	return backendServerPort_;
@@ -243,17 +309,6 @@ void CreateLoadBalancerUDPListenerRequest::setHealthCheckInterval(int healthChec
 {
 	healthCheckInterval_ = healthCheckInterval;
 	setParameter("HealthCheckInterval", std::to_string(healthCheckInterval));
-}
-
-int CreateLoadBalancerUDPListenerRequest::getPersistenceTimeout()const
-{
-	return persistenceTimeout_;
-}
-
-void CreateLoadBalancerUDPListenerRequest::setPersistenceTimeout(int persistenceTimeout)
-{
-	persistenceTimeout_ = persistenceTimeout;
-	setParameter("PersistenceTimeout", std::to_string(persistenceTimeout));
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getHealthCheckExp()const

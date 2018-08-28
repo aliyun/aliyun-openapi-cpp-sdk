@@ -74,6 +74,16 @@ void DescribeLoadBalancerUDPListenerAttributeResult::parse(const std::string &pa
 		vServerGroupId_ = value["VServerGroupId"].asString();
 	if(!value["MasterSlaveServerGroupId"].isNull())
 		masterSlaveServerGroupId_ = value["MasterSlaveServerGroupId"].asString();
+	if(!value["AclId"].isNull())
+		aclId_ = value["AclId"].asString();
+	if(!value["AclType"].isNull())
+		aclType_ = value["AclType"].asString();
+	if(!value["AclStatus"].isNull())
+		aclStatus_ = value["AclStatus"].asString();
+	if(!value["VpcIds"].isNull())
+		vpcIds_ = value["VpcIds"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
 
 }
 
@@ -102,6 +112,11 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckInterval()cons
 	return healthCheckInterval_;
 }
 
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getDescription()const
+{
+	return description_;
+}
+
 int DescribeLoadBalancerUDPListenerAttributeResult::getUnhealthyThreshold()const
 {
 	return unhealthyThreshold_;
@@ -110,6 +125,11 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getUnhealthyThreshold()const
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getScheduler()const
 {
 	return scheduler_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getAclId()const
+{
+	return aclId_;
 }
 
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheck()const
@@ -142,6 +162,16 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckReq()c
 	return healthCheckReq_;
 }
 
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getAclStatus()const
+{
+	return aclStatus_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getVpcIds()const
+{
+	return vpcIds_;
+}
+
 int DescribeLoadBalancerUDPListenerAttributeResult::getBandwidth()const
 {
 	return bandwidth_;
@@ -160,5 +190,10 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckExp()c
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getMasterSlaveServerGroupId()const
 {
 	return masterSlaveServerGroupId_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getAclType()const
+{
+	return aclType_;
 }
 

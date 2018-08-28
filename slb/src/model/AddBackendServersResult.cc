@@ -48,6 +48,14 @@ void AddBackendServersResult::parse(const std::string &payload)
 			backendServersObject.serverId = value["ServerId"].asString();
 		if(!value["Weight"].isNull())
 			backendServersObject.weight = value["Weight"].asString();
+		if(!value["ServerIp"].isNull())
+			backendServersObject.serverIp = value["ServerIp"].asString();
+		if(!value["VpcId"].isNull())
+			backendServersObject.vpcId = value["VpcId"].asString();
+		if(!value["EniHost"].isNull())
+			backendServersObject.eniHost = value["EniHost"].asString();
+		if(!value["Type"].isNull())
+			backendServersObject.type = value["Type"].asString();
 		backendServers_.push_back(backendServersObject);
 	}
 	if(!value["LoadBalancerId"].isNull())

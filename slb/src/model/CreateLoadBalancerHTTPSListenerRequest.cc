@@ -80,6 +80,17 @@ void CreateLoadBalancerHTTPSListenerRequest::setHealthCheckURI(const std::string
 	setParameter("HealthCheckURI", healthCheckURI);
 }
 
+std::string CreateLoadBalancerHTTPSListenerRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateLoadBalancerHTTPSListenerRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
+}
+
 int CreateLoadBalancerHTTPSListenerRequest::getUnhealthyThreshold()const
 {
 	return unhealthyThreshold_;
@@ -102,6 +113,17 @@ void CreateLoadBalancerHTTPSListenerRequest::setHealthyThreshold(int healthyThre
 	setParameter("HealthyThreshold", std::to_string(healthyThreshold));
 }
 
+std::string CreateLoadBalancerHTTPSListenerRequest::getAclStatus()const
+{
+	return aclStatus_;
+}
+
+void CreateLoadBalancerHTTPSListenerRequest::setAclStatus(const std::string& aclStatus)
+{
+	aclStatus_ = aclStatus;
+	setParameter("AclStatus", aclStatus);
+}
+
 std::string CreateLoadBalancerHTTPSListenerRequest::getScheduler()const
 {
 	return scheduler_;
@@ -111,6 +133,17 @@ void CreateLoadBalancerHTTPSListenerRequest::setScheduler(const std::string& sch
 {
 	scheduler_ = scheduler;
 	setParameter("Scheduler", scheduler);
+}
+
+std::string CreateLoadBalancerHTTPSListenerRequest::getAclType()const
+{
+	return aclType_;
+}
+
+void CreateLoadBalancerHTTPSListenerRequest::setAclType(const std::string& aclType)
+{
+	aclType_ = aclType;
+	setParameter("AclType", aclType);
 }
 
 std::string CreateLoadBalancerHTTPSListenerRequest::getHealthCheck()const
@@ -133,6 +166,17 @@ void CreateLoadBalancerHTTPSListenerRequest::setMaxConnection(int maxConnection)
 {
 	maxConnection_ = maxConnection;
 	setParameter("MaxConnection", std::to_string(maxConnection));
+}
+
+std::string CreateLoadBalancerHTTPSListenerRequest::getEnableHttp2()const
+{
+	return enableHttp2_;
+}
+
+void CreateLoadBalancerHTTPSListenerRequest::setEnableHttp2(const std::string& enableHttp2)
+{
+	enableHttp2_ = enableHttp2;
+	setParameter("EnableHttp2", enableHttp2);
 }
 
 std::string CreateLoadBalancerHTTPSListenerRequest::getRegionId()const
@@ -168,6 +212,17 @@ void CreateLoadBalancerHTTPSListenerRequest::setStickySessionType(const std::str
 	setParameter("StickySessionType", stickySessionType);
 }
 
+std::string CreateLoadBalancerHTTPSListenerRequest::getVpcIds()const
+{
+	return vpcIds_;
+}
+
+void CreateLoadBalancerHTTPSListenerRequest::setVpcIds(const std::string& vpcIds)
+{
+	vpcIds_ = vpcIds;
+	setParameter("VpcIds", vpcIds);
+}
+
 std::string CreateLoadBalancerHTTPSListenerRequest::getVServerGroupId()const
 {
 	return vServerGroupId_;
@@ -177,6 +232,17 @@ void CreateLoadBalancerHTTPSListenerRequest::setVServerGroupId(const std::string
 {
 	vServerGroupId_ = vServerGroupId;
 	setParameter("VServerGroupId", vServerGroupId);
+}
+
+std::string CreateLoadBalancerHTTPSListenerRequest::getAclId()const
+{
+	return aclId_;
+}
+
+void CreateLoadBalancerHTTPSListenerRequest::setAclId(const std::string& aclId)
+{
+	aclId_ = aclId;
+	setParameter("AclId", aclId);
 }
 
 int CreateLoadBalancerHTTPSListenerRequest::getListenerPort()const
@@ -245,6 +311,17 @@ void CreateLoadBalancerHTTPSListenerRequest::setHealthCheckDomain(const std::str
 	setParameter("HealthCheckDomain", healthCheckDomain);
 }
 
+int CreateLoadBalancerHTTPSListenerRequest::getRequestTimeout()const
+{
+	return requestTimeout_;
+}
+
+void CreateLoadBalancerHTTPSListenerRequest::setRequestTimeout(int requestTimeout)
+{
+	requestTimeout_ = requestTimeout;
+	setParameter("RequestTimeout", std::to_string(requestTimeout));
+}
+
 std::string CreateLoadBalancerHTTPSListenerRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -265,6 +342,17 @@ void CreateLoadBalancerHTTPSListenerRequest::setGzip(const std::string& gzip)
 {
 	gzip_ = gzip;
 	setParameter("Gzip", gzip);
+}
+
+std::string CreateLoadBalancerHTTPSListenerRequest::getTLSCipherPolicy()const
+{
+	return tLSCipherPolicy_;
+}
+
+void CreateLoadBalancerHTTPSListenerRequest::setTLSCipherPolicy(const std::string& tLSCipherPolicy)
+{
+	tLSCipherPolicy_ = tLSCipherPolicy;
+	setParameter("TLSCipherPolicy", tLSCipherPolicy);
 }
 
 long CreateLoadBalancerHTTPSListenerRequest::getOwnerId()const
@@ -309,6 +397,17 @@ void CreateLoadBalancerHTTPSListenerRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setParameter("Tags", tags);
+}
+
+int CreateLoadBalancerHTTPSListenerRequest::getIdleTimeout()const
+{
+	return idleTimeout_;
+}
+
+void CreateLoadBalancerHTTPSListenerRequest::setIdleTimeout(int idleTimeout)
+{
+	idleTimeout_ = idleTimeout;
+	setParameter("IdleTimeout", std::to_string(idleTimeout));
 }
 
 std::string CreateLoadBalancerHTTPSListenerRequest::getLoadBalancerId()const

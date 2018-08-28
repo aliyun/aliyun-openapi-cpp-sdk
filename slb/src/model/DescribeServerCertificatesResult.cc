@@ -66,6 +66,15 @@ void DescribeServerCertificatesResult::parse(const std::string &payload)
 			serverCertificatesObject.createTime = value["CreateTime"].asString();
 		if(!value["CreateTimeStamp"].isNull())
 			serverCertificatesObject.createTimeStamp = std::stol(value["CreateTimeStamp"].asString());
+		if(!value["ExpireTime"].isNull())
+			serverCertificatesObject.expireTime = value["ExpireTime"].asString();
+		if(!value["ExpireTimeStamp"].isNull())
+			serverCertificatesObject.expireTimeStamp = std::stol(value["ExpireTimeStamp"].asString());
+		if(!value["CommonName"].isNull())
+			serverCertificatesObject.commonName = value["CommonName"].asString();
+		auto allSubjectAlternativeNames = value["SubjectAlternativeNames"]["SubjectAlternativeName"];
+		for (auto value : allSubjectAlternativeNames)
+			serverCertificatesObject.subjectAlternativeNames.push_back(value.asString());
 		serverCertificates_.push_back(serverCertificatesObject);
 	}
 

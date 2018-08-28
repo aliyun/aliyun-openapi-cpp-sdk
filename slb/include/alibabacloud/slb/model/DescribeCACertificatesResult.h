@@ -36,11 +36,14 @@ namespace AlibabaCloud
 				{
 					std::string fingerprint;
 					std::string resourceGroupId;
+					long expireTimeStamp;
 					std::string cACertificateId;
 					std::string createTime;
 					std::string cACertificateName;
 					std::string regionId;
+					std::string expireTime;
 					long createTimeStamp;
+					std::string commonName;
 				};
 
 

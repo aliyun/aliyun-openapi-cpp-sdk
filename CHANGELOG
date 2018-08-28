@@ -1,3 +1,6 @@
+2018-08-28 Version: 1.23.4
+1, Add param for DescribeRegions,support AcceptLanguage,RegionEndpoint.
+
 2018-08-27 Version: 1.23.3
 1, add Ess alarm task api, CreateAlarm, DeleteAlarm, DescribeAlarms, DeleteAlarm, EnableAlarm, DisableAlarm
 

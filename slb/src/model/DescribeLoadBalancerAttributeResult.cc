@@ -58,6 +58,10 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 			listenerPortsAndProtocolObject.listenerPort = std::stoi(value["ListenerPort"].asString());
 		if(!value["ListenerProtocol"].isNull())
 			listenerPortsAndProtocolObject.listenerProtocol = value["ListenerProtocol"].asString();
+		if(!value["ListenerForward"].isNull())
+			listenerPortsAndProtocolObject.listenerForward = value["ListenerForward"].asString();
+		if(!value["ForwardPort"].isNull())
+			listenerPortsAndProtocolObject.forwardPort = std::stoi(value["ForwardPort"].asString());
 		listenerPortsAndProtocol_.push_back(listenerPortsAndProtocolObject);
 	}
 	auto allBackendServers = value["BackendServers"]["BackendServer"];
@@ -68,6 +72,14 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 			backendServersObject.serverId = value["ServerId"].asString();
 		if(!value["Weight"].isNull())
 			backendServersObject.weight = std::stoi(value["Weight"].asString());
+		if(!value["Type"].isNull())
+			backendServersObject.type = value["Type"].asString();
+		if(!value["ServerIp"].isNull())
+			backendServersObject.serverIp = value["ServerIp"].asString();
+		if(!value["EniHost"].isNull())
+			backendServersObject.eniHost = value["EniHost"].asString();
+		if(!value["VpcId"].isNull())
+			backendServersObject.vpcId = value["VpcId"].asString();
 		backendServers_.push_back(backendServersObject);
 	}
 	auto allListenerPorts = value["ListenerPorts"]["ListenerPort"];
@@ -117,7 +129,22 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 		masterZoneId_ = value["MasterZoneId"].asString();
 	if(!value["SlaveZoneId"].isNull())
 		slaveZoneId_ = value["SlaveZoneId"].asString();
+	if(!value["AddressIPVersion"].isNull())
+		addressIPVersion_ = value["AddressIPVersion"].asString();
+	if(!value["CloudType"].isNull())
+		cloudType_ = value["CloudType"].asString();
+	if(!value["RenewalDuration"].isNull())
+		renewalDuration_ = std::stoi(value["RenewalDuration"].asString());
+	if(!value["RenewalStatus"].isNull())
+		renewalStatus_ = value["RenewalStatus"].asString();
+	if(!value["RenewalCycUnit"].isNull())
+		renewalCycUnit_ = value["RenewalCycUnit"].asString();
 
+}
+
+int DescribeLoadBalancerAttributeResult::getRenewalDuration()const
+{
+	return renewalDuration_;
 }
 
 std::vector<DescribeLoadBalancerAttributeResult::ListenerPortAndProtocal> DescribeLoadBalancerAttributeResult::getListenerPortsAndProtocal()const
@@ -138,6 +165,11 @@ std::string DescribeLoadBalancerAttributeResult::getAddress()const
 std::string DescribeLoadBalancerAttributeResult::getEndTime()const
 {
 	return endTime_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getAddressIPVersion()const
+{
+	return addressIPVersion_;
 }
 
 std::vector<DescribeLoadBalancerAttributeResult::ListenerPortAndProtocol> DescribeLoadBalancerAttributeResult::getListenerPortsAndProtocol()const
@@ -180,6 +212,11 @@ std::string DescribeLoadBalancerAttributeResult::getMasterZoneId()const
 	return masterZoneId_;
 }
 
+std::string DescribeLoadBalancerAttributeResult::getCloudType()const
+{
+	return cloudType_;
+}
+
 std::string DescribeLoadBalancerAttributeResult::getVSwitchId()const
 {
 	return vSwitchId_;
@@ -188,6 +225,16 @@ std::string DescribeLoadBalancerAttributeResult::getVSwitchId()const
 std::string DescribeLoadBalancerAttributeResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getRenewalStatus()const
+{
+	return renewalStatus_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getRenewalCycUnit()const
+{
+	return renewalCycUnit_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getPayType()const

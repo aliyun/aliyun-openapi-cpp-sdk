@@ -54,6 +54,36 @@ void DescribeRulesResult::parse(const std::string &payload)
 			rulesObject.url = value["Url"].asString();
 		if(!value["VServerGroupId"].isNull())
 			rulesObject.vServerGroupId = value["VServerGroupId"].asString();
+		if(!value["ListenerSync"].isNull())
+			rulesObject.listenerSync = value["ListenerSync"].asString();
+		if(!value["Scheduler"].isNull())
+			rulesObject.scheduler = value["Scheduler"].asString();
+		if(!value["StickySession"].isNull())
+			rulesObject.stickySession = value["StickySession"].asString();
+		if(!value["StickySessionType"].isNull())
+			rulesObject.stickySessionType = value["StickySessionType"].asString();
+		if(!value["CookieTimeout"].isNull())
+			rulesObject.cookieTimeout = std::stoi(value["CookieTimeout"].asString());
+		if(!value["Cookie"].isNull())
+			rulesObject.cookie = value["Cookie"].asString();
+		if(!value["HealthCheck"].isNull())
+			rulesObject.healthCheck = value["HealthCheck"].asString();
+		if(!value["HealthCheckDomain"].isNull())
+			rulesObject.healthCheckDomain = value["HealthCheckDomain"].asString();
+		if(!value["HealthCheckURI"].isNull())
+			rulesObject.healthCheckURI = value["HealthCheckURI"].asString();
+		if(!value["HealthyThreshold"].isNull())
+			rulesObject.healthyThreshold = std::stoi(value["HealthyThreshold"].asString());
+		if(!value["UnhealthyThreshold"].isNull())
+			rulesObject.unhealthyThreshold = std::stoi(value["UnhealthyThreshold"].asString());
+		if(!value["HealthCheckTimeout"].isNull())
+			rulesObject.healthCheckTimeout = std::stoi(value["HealthCheckTimeout"].asString());
+		if(!value["HealthCheckInterval"].isNull())
+			rulesObject.healthCheckInterval = std::stoi(value["HealthCheckInterval"].asString());
+		if(!value["HealthCheckConnectPort"].isNull())
+			rulesObject.healthCheckConnectPort = std::stoi(value["HealthCheckConnectPort"].asString());
+		if(!value["HealthCheckHttpCode"].isNull())
+			rulesObject.healthCheckHttpCode = value["HealthCheckHttpCode"].asString();
 		rules_.push_back(rulesObject);
 	}
 

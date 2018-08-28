@@ -21,6 +21,8 @@ set(slb_public_header
 	include/alibabacloud/slb/SlbExport.h )
 
 set(slb_public_header_model 
+	include/alibabacloud/slb/model/SetDomainExtensionAttributeRequest.h
+	include/alibabacloud/slb/model/SetDomainExtensionAttributeResult.h
 	include/alibabacloud/slb/model/CreateLoadBalancerUDPListenerRequest.h
 	include/alibabacloud/slb/model/CreateLoadBalancerUDPListenerResult.h
 	include/alibabacloud/slb/model/DescribeMasterSlaveVServerGroupsRequest.h
@@ -53,6 +55,8 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/CreateLoadBalancerResult.h
 	include/alibabacloud/slb/model/SetLoadBalancerHTTPListenerAttributeRequest.h
 	include/alibabacloud/slb/model/SetLoadBalancerHTTPListenerAttributeResult.h
+	include/alibabacloud/slb/model/DescribeDomainExtensionsRequest.h
+	include/alibabacloud/slb/model/DescribeDomainExtensionsResult.h
 	include/alibabacloud/slb/model/SetLoadBalancerAutoReleaseTimeRequest.h
 	include/alibabacloud/slb/model/SetLoadBalancerAutoReleaseTimeResult.h
 	include/alibabacloud/slb/model/SetListenerAccessControlStatusRequest.h
@@ -63,6 +67,8 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/DescribeZonesResult.h
 	include/alibabacloud/slb/model/SetLoadBalancerHTTPSListenerAttributeRequest.h
 	include/alibabacloud/slb/model/SetLoadBalancerHTTPSListenerAttributeResult.h
+	include/alibabacloud/slb/model/SetAutoRenewStatusRequest.h
+	include/alibabacloud/slb/model/SetAutoRenewStatusResult.h
 	include/alibabacloud/slb/model/DeleteLoadBalancerListenerRequest.h
 	include/alibabacloud/slb/model/DeleteLoadBalancerListenerResult.h
 	include/alibabacloud/slb/model/DescribeVServerGroupsRequest.h
@@ -87,8 +93,12 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/CreateLoadBalancerHTTPListenerResult.h
 	include/alibabacloud/slb/model/RemoveBackendServersRequest.h
 	include/alibabacloud/slb/model/RemoveBackendServersResult.h
+	include/alibabacloud/slb/model/AddAccessControlListEntryRequest.h
+	include/alibabacloud/slb/model/AddAccessControlListEntryResult.h
 	include/alibabacloud/slb/model/ModifyVServerGroupBackendServersRequest.h
 	include/alibabacloud/slb/model/ModifyVServerGroupBackendServersResult.h
+	include/alibabacloud/slb/model/DescribeSlbQuotasRequest.h
+	include/alibabacloud/slb/model/DescribeSlbQuotasResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerUDPListenerAttributeRequest.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerUDPListenerAttributeResult.h
 	include/alibabacloud/slb/model/DeleteRulesRequest.h
@@ -101,6 +111,8 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/CreateMasterSlaveVServerGroupResult.h
 	include/alibabacloud/slb/model/SetBackendServersRequest.h
 	include/alibabacloud/slb/model/SetBackendServersResult.h
+	include/alibabacloud/slb/model/DeleteAccessControlListRequest.h
+	include/alibabacloud/slb/model/DeleteAccessControlListResult.h
 	include/alibabacloud/slb/model/RemoveVServerGroupBackendServersRequest.h
 	include/alibabacloud/slb/model/RemoveVServerGroupBackendServersResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerAttributeRequest.h
@@ -111,8 +123,16 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/SetServerCertificateNameResult.h
 	include/alibabacloud/slb/model/DeleteCACertificateRequest.h
 	include/alibabacloud/slb/model/DeleteCACertificateResult.h
+	include/alibabacloud/slb/model/SetAccessControlListAttributeRequest.h
+	include/alibabacloud/slb/model/SetAccessControlListAttributeResult.h
 	include/alibabacloud/slb/model/CreateLoadBalancerTCPListenerRequest.h
 	include/alibabacloud/slb/model/CreateLoadBalancerTCPListenerResult.h
+	include/alibabacloud/slb/model/DescribeAccessControlListAttributeRequest.h
+	include/alibabacloud/slb/model/DescribeAccessControlListAttributeResult.h
+	include/alibabacloud/slb/model/DescribeAccessControlListsRequest.h
+	include/alibabacloud/slb/model/DescribeAccessControlListsResult.h
+	include/alibabacloud/slb/model/DeleteDomainExtensionRequest.h
+	include/alibabacloud/slb/model/DeleteDomainExtensionResult.h
 	include/alibabacloud/slb/model/SetRuleRequest.h
 	include/alibabacloud/slb/model/SetRuleResult.h
 	include/alibabacloud/slb/model/DescribeMasterSlaveServerGroupsRequest.h
@@ -131,6 +151,10 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/DescribeServerCertificatesResult.h
 	include/alibabacloud/slb/model/DescribeRulesRequest.h
 	include/alibabacloud/slb/model/DescribeRulesResult.h
+	include/alibabacloud/slb/model/RemoveAccessControlListEntryRequest.h
+	include/alibabacloud/slb/model/RemoveAccessControlListEntryResult.h
+	include/alibabacloud/slb/model/CreateDomainExtensionRequest.h
+	include/alibabacloud/slb/model/CreateDomainExtensionResult.h
 	include/alibabacloud/slb/model/DescribeRuleAttributeRequest.h
 	include/alibabacloud/slb/model/DescribeRuleAttributeResult.h
 	include/alibabacloud/slb/model/UploadServerCertificateRequest.h
@@ -145,6 +169,8 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/SetVServerGroupAttributeResult.h
 	include/alibabacloud/slb/model/ModifyLoadBalancerInternetSpecRequest.h
 	include/alibabacloud/slb/model/ModifyLoadBalancerInternetSpecResult.h
+	include/alibabacloud/slb/model/CreateAccessControlListRequest.h
+	include/alibabacloud/slb/model/CreateAccessControlListResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerHTTPSListenerAttributeRequest.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerHTTPSListenerAttributeResult.h
 	include/alibabacloud/slb/model/DescribeMasterSlaveServerGroupAttributeRequest.h
@@ -164,6 +190,8 @@ set(slb_public_header_model
 
 set(slb_src 
 	src/SlbClient.cc
+	src/model/SetDomainExtensionAttributeRequest.cc
+	src/model/SetDomainExtensionAttributeResult.cc
 	src/model/CreateLoadBalancerUDPListenerRequest.cc
 	src/model/CreateLoadBalancerUDPListenerResult.cc
 	src/model/DescribeMasterSlaveVServerGroupsRequest.cc
@@ -196,6 +224,8 @@ set(slb_src
 	src/model/CreateLoadBalancerResult.cc
 	src/model/SetLoadBalancerHTTPListenerAttributeRequest.cc
 	src/model/SetLoadBalancerHTTPListenerAttributeResult.cc
+	src/model/DescribeDomainExtensionsRequest.cc
+	src/model/DescribeDomainExtensionsResult.cc
 	src/model/SetLoadBalancerAutoReleaseTimeRequest.cc
 	src/model/SetLoadBalancerAutoReleaseTimeResult.cc
 	src/model/SetListenerAccessControlStatusRequest.cc
@@ -206,6 +236,8 @@ set(slb_src
 	src/model/DescribeZonesResult.cc
 	src/model/SetLoadBalancerHTTPSListenerAttributeRequest.cc
 	src/model/SetLoadBalancerHTTPSListenerAttributeResult.cc
+	src/model/SetAutoRenewStatusRequest.cc
+	src/model/SetAutoRenewStatusResult.cc
 	src/model/DeleteLoadBalancerListenerRequest.cc
 	src/model/DeleteLoadBalancerListenerResult.cc
 	src/model/DescribeVServerGroupsRequest.cc
@@ -230,8 +262,12 @@ set(slb_src
 	src/model/CreateLoadBalancerHTTPListenerResult.cc
 	src/model/RemoveBackendServersRequest.cc
 	src/model/RemoveBackendServersResult.cc
+	src/model/AddAccessControlListEntryRequest.cc
+	src/model/AddAccessControlListEntryResult.cc
 	src/model/ModifyVServerGroupBackendServersRequest.cc
 	src/model/ModifyVServerGroupBackendServersResult.cc
+	src/model/DescribeSlbQuotasRequest.cc
+	src/model/DescribeSlbQuotasResult.cc
 	src/model/DescribeLoadBalancerUDPListenerAttributeRequest.cc
 	src/model/DescribeLoadBalancerUDPListenerAttributeResult.cc
 	src/model/DeleteRulesRequest.cc
@@ -244,6 +280,8 @@ set(slb_src
 	src/model/CreateMasterSlaveVServerGroupResult.cc
 	src/model/SetBackendServersRequest.cc
 	src/model/SetBackendServersResult.cc
+	src/model/DeleteAccessControlListRequest.cc
+	src/model/DeleteAccessControlListResult.cc
 	src/model/RemoveVServerGroupBackendServersRequest.cc
 	src/model/RemoveVServerGroupBackendServersResult.cc
 	src/model/DescribeLoadBalancerAttributeRequest.cc
@@ -254,8 +292,16 @@ set(slb_src
 	src/model/SetServerCertificateNameResult.cc
 	src/model/DeleteCACertificateRequest.cc
 	src/model/DeleteCACertificateResult.cc
+	src/model/SetAccessControlListAttributeRequest.cc
+	src/model/SetAccessControlListAttributeResult.cc
 	src/model/CreateLoadBalancerTCPListenerRequest.cc
 	src/model/CreateLoadBalancerTCPListenerResult.cc
+	src/model/DescribeAccessControlListAttributeRequest.cc
+	src/model/DescribeAccessControlListAttributeResult.cc
+	src/model/DescribeAccessControlListsRequest.cc
+	src/model/DescribeAccessControlListsResult.cc
+	src/model/DeleteDomainExtensionRequest.cc
+	src/model/DeleteDomainExtensionResult.cc
 	src/model/SetRuleRequest.cc
 	src/model/SetRuleResult.cc
 	src/model/DescribeMasterSlaveServerGroupsRequest.cc
@@ -274,6 +320,10 @@ set(slb_src
 	src/model/DescribeServerCertificatesResult.cc
 	src/model/DescribeRulesRequest.cc
 	src/model/DescribeRulesResult.cc
+	src/model/RemoveAccessControlListEntryRequest.cc
+	src/model/RemoveAccessControlListEntryResult.cc
+	src/model/CreateDomainExtensionRequest.cc
+	src/model/CreateDomainExtensionResult.cc
 	src/model/DescribeRuleAttributeRequest.cc
 	src/model/DescribeRuleAttributeResult.cc
 	src/model/UploadServerCertificateRequest.cc
@@ -288,6 +338,8 @@ set(slb_src
 	src/model/SetVServerGroupAttributeResult.cc
 	src/model/ModifyLoadBalancerInternetSpecRequest.cc
 	src/model/ModifyLoadBalancerInternetSpecResult.cc
+	src/model/CreateAccessControlListRequest.cc
+	src/model/CreateAccessControlListResult.cc
 	src/model/DescribeLoadBalancerHTTPSListenerAttributeRequest.cc
 	src/model/DescribeLoadBalancerHTTPSListenerAttributeResult.cc
 	src/model/DescribeMasterSlaveServerGroupAttributeRequest.cc

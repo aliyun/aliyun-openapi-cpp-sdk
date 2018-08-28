@@ -32,6 +32,14 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SLB_EXPORT DescribeLoadBalancerHTTPListenerAttributeResult : public ServiceResult
 			{
 			public:
+				struct Rule
+				{
+					std::string vServerGroupId;
+					std::string ruleId;
+					std::string domain;
+					std::string ruleName;
+					std::string url;
+				};
 
 
 				DescribeLoadBalancerHTTPListenerAttributeResult();
@@ -40,10 +48,12 @@ namespace AlibabaCloud
 				int getCookieTimeout()const;
 				int getMaxConnection()const;
 				std::string getVServerGroupId()const;
+				std::string getDescription()const;
 				int getUnhealthyThreshold()const;
 				std::string getScheduler()const;
 				std::string getHealthCheckURI()const;
 				std::string getHealthCheck()const;
+				int getIdleTimeout()const;
 				int getBackendServerPort()const;
 				std::string getXForwardedFor_SLBID()const;
 				int getHealthCheckConnectPort()const;
@@ -56,13 +66,21 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				std::string getCookie()const;
 				int getListenerPort()const;
+				int getRequestTimeout()const;
 				int getHealthCheckInterval()const;
+				std::string getAclId()const;
 				int getHealthCheckTimeout()const;
+				std::vector<Rule> getRules()const;
+				std::string getListenerForward()const;
 				std::string getStickySession()const;
+				std::string getAclStatus()const;
+				int getForwardPort()const;
+				std::string getVpcIds()const;
 				int getHealthyThreshold()const;
 				std::string getXForwardedFor()const;
 				std::string getHealthCheckDomain()const;
 				std::string getXForwardedFor_proto()const;
+				std::string getAclType()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -70,10 +88,12 @@ namespace AlibabaCloud
 				int cookieTimeout_;
 				int maxConnection_;
 				std::string vServerGroupId_;
+				std::string description_;
 				int unhealthyThreshold_;
 				std::string scheduler_;
 				std::string healthCheckURI_;
 				std::string healthCheck_;
+				int idleTimeout_;
 				int backendServerPort_;
 				std::string xForwardedFor_SLBID_;
 				int healthCheckConnectPort_;
@@ -86,13 +106,21 @@ namespace AlibabaCloud
 				std::string status_;
 				std::string cookie_;
 				int listenerPort_;
+				int requestTimeout_;
 				int healthCheckInterval_;
+				std::string aclId_;
 				int healthCheckTimeout_;
+				std::vector<Rule> rules_;
+				std::string listenerForward_;
 				std::string stickySession_;
+				std::string aclStatus_;
+				int forwardPort_;
+				std::string vpcIds_;
 				int healthyThreshold_;
 				std::string xForwardedFor_;
 				std::string healthCheckDomain_;
 				std::string xForwardedFor_proto_;
+				std::string aclType_;
 
 			};
 		}

@@ -35,8 +35,12 @@ namespace AlibabaCloud
 				struct MasterSlaveBackendServer
 				{
 					std::string serverType;
+					std::string type;
 					std::string serverId;
+					std::string vpcId;
+					std::string eniHost;
 					int port;
+					std::string serverIp;
 					int weight;
 				};
 

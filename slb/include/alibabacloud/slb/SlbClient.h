@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "SlbExport.h"
+#include "model/SetDomainExtensionAttributeRequest.h"
+#include "model/SetDomainExtensionAttributeResult.h"
 #include "model/CreateLoadBalancerUDPListenerRequest.h"
 #include "model/CreateLoadBalancerUDPListenerResult.h"
 #include "model/DescribeMasterSlaveVServerGroupsRequest.h"
@@ -54,6 +56,8 @@
 #include "model/CreateLoadBalancerResult.h"
 #include "model/SetLoadBalancerHTTPListenerAttributeRequest.h"
 #include "model/SetLoadBalancerHTTPListenerAttributeResult.h"
+#include "model/DescribeDomainExtensionsRequest.h"
+#include "model/DescribeDomainExtensionsResult.h"
 #include "model/SetLoadBalancerAutoReleaseTimeRequest.h"
 #include "model/SetLoadBalancerAutoReleaseTimeResult.h"
 #include "model/SetListenerAccessControlStatusRequest.h"
@@ -64,6 +68,8 @@
 #include "model/DescribeZonesResult.h"
 #include "model/SetLoadBalancerHTTPSListenerAttributeRequest.h"
 #include "model/SetLoadBalancerHTTPSListenerAttributeResult.h"
+#include "model/SetAutoRenewStatusRequest.h"
+#include "model/SetAutoRenewStatusResult.h"
 #include "model/DeleteLoadBalancerListenerRequest.h"
 #include "model/DeleteLoadBalancerListenerResult.h"
 #include "model/DescribeVServerGroupsRequest.h"
@@ -88,8 +94,12 @@
 #include "model/CreateLoadBalancerHTTPListenerResult.h"
 #include "model/RemoveBackendServersRequest.h"
 #include "model/RemoveBackendServersResult.h"
+#include "model/AddAccessControlListEntryRequest.h"
+#include "model/AddAccessControlListEntryResult.h"
 #include "model/ModifyVServerGroupBackendServersRequest.h"
 #include "model/ModifyVServerGroupBackendServersResult.h"
+#include "model/DescribeSlbQuotasRequest.h"
+#include "model/DescribeSlbQuotasResult.h"
 #include "model/DescribeLoadBalancerUDPListenerAttributeRequest.h"
 #include "model/DescribeLoadBalancerUDPListenerAttributeResult.h"
 #include "model/DeleteRulesRequest.h"
@@ -102,6 +112,8 @@
 #include "model/CreateMasterSlaveVServerGroupResult.h"
 #include "model/SetBackendServersRequest.h"
 #include "model/SetBackendServersResult.h"
+#include "model/DeleteAccessControlListRequest.h"
+#include "model/DeleteAccessControlListResult.h"
 #include "model/RemoveVServerGroupBackendServersRequest.h"
 #include "model/RemoveVServerGroupBackendServersResult.h"
 #include "model/DescribeLoadBalancerAttributeRequest.h"
@@ -112,8 +124,16 @@
 #include "model/SetServerCertificateNameResult.h"
 #include "model/DeleteCACertificateRequest.h"
 #include "model/DeleteCACertificateResult.h"
+#include "model/SetAccessControlListAttributeRequest.h"
+#include "model/SetAccessControlListAttributeResult.h"
 #include "model/CreateLoadBalancerTCPListenerRequest.h"
 #include "model/CreateLoadBalancerTCPListenerResult.h"
+#include "model/DescribeAccessControlListAttributeRequest.h"
+#include "model/DescribeAccessControlListAttributeResult.h"
+#include "model/DescribeAccessControlListsRequest.h"
+#include "model/DescribeAccessControlListsResult.h"
+#include "model/DeleteDomainExtensionRequest.h"
+#include "model/DeleteDomainExtensionResult.h"
 #include "model/SetRuleRequest.h"
 #include "model/SetRuleResult.h"
 #include "model/DescribeMasterSlaveServerGroupsRequest.h"
@@ -132,6 +152,10 @@
 #include "model/DescribeServerCertificatesResult.h"
 #include "model/DescribeRulesRequest.h"
 #include "model/DescribeRulesResult.h"
+#include "model/RemoveAccessControlListEntryRequest.h"
+#include "model/RemoveAccessControlListEntryResult.h"
+#include "model/CreateDomainExtensionRequest.h"
+#include "model/CreateDomainExtensionResult.h"
 #include "model/DescribeRuleAttributeRequest.h"
 #include "model/DescribeRuleAttributeResult.h"
 #include "model/UploadServerCertificateRequest.h"
@@ -146,6 +170,8 @@
 #include "model/SetVServerGroupAttributeResult.h"
 #include "model/ModifyLoadBalancerInternetSpecRequest.h"
 #include "model/ModifyLoadBalancerInternetSpecResult.h"
+#include "model/CreateAccessControlListRequest.h"
+#include "model/CreateAccessControlListResult.h"
 #include "model/DescribeLoadBalancerHTTPSListenerAttributeRequest.h"
 #include "model/DescribeLoadBalancerHTTPSListenerAttributeResult.h"
 #include "model/DescribeMasterSlaveServerGroupAttributeRequest.h"
@@ -171,6 +197,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_SLB_EXPORT SlbClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::SetDomainExtensionAttributeResult> SetDomainExtensionAttributeOutcome;
+			typedef std::future<SetDomainExtensionAttributeOutcome> SetDomainExtensionAttributeOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::SetDomainExtensionAttributeRequest&, const SetDomainExtensionAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainExtensionAttributeAsyncHandler;
 			typedef Outcome<Error, Model::CreateLoadBalancerUDPListenerResult> CreateLoadBalancerUDPListenerOutcome;
 			typedef std::future<CreateLoadBalancerUDPListenerOutcome> CreateLoadBalancerUDPListenerOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::CreateLoadBalancerUDPListenerRequest&, const CreateLoadBalancerUDPListenerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoadBalancerUDPListenerAsyncHandler;
@@ -219,6 +248,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetLoadBalancerHTTPListenerAttributeResult> SetLoadBalancerHTTPListenerAttributeOutcome;
 			typedef std::future<SetLoadBalancerHTTPListenerAttributeOutcome> SetLoadBalancerHTTPListenerAttributeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::SetLoadBalancerHTTPListenerAttributeRequest&, const SetLoadBalancerHTTPListenerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerHTTPListenerAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainExtensionsResult> DescribeDomainExtensionsOutcome;
+			typedef std::future<DescribeDomainExtensionsOutcome> DescribeDomainExtensionsOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::DescribeDomainExtensionsRequest&, const DescribeDomainExtensionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainExtensionsAsyncHandler;
 			typedef Outcome<Error, Model::SetLoadBalancerAutoReleaseTimeResult> SetLoadBalancerAutoReleaseTimeOutcome;
 			typedef std::future<SetLoadBalancerAutoReleaseTimeOutcome> SetLoadBalancerAutoReleaseTimeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::SetLoadBalancerAutoReleaseTimeRequest&, const SetLoadBalancerAutoReleaseTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerAutoReleaseTimeAsyncHandler;
@@ -234,6 +266,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetLoadBalancerHTTPSListenerAttributeResult> SetLoadBalancerHTTPSListenerAttributeOutcome;
 			typedef std::future<SetLoadBalancerHTTPSListenerAttributeOutcome> SetLoadBalancerHTTPSListenerAttributeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::SetLoadBalancerHTTPSListenerAttributeRequest&, const SetLoadBalancerHTTPSListenerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerHTTPSListenerAttributeAsyncHandler;
+			typedef Outcome<Error, Model::SetAutoRenewStatusResult> SetAutoRenewStatusOutcome;
+			typedef std::future<SetAutoRenewStatusOutcome> SetAutoRenewStatusOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::SetAutoRenewStatusRequest&, const SetAutoRenewStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoRenewStatusAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLoadBalancerListenerResult> DeleteLoadBalancerListenerOutcome;
 			typedef std::future<DeleteLoadBalancerListenerOutcome> DeleteLoadBalancerListenerOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DeleteLoadBalancerListenerRequest&, const DeleteLoadBalancerListenerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoadBalancerListenerAsyncHandler;
@@ -270,9 +305,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RemoveBackendServersResult> RemoveBackendServersOutcome;
 			typedef std::future<RemoveBackendServersOutcome> RemoveBackendServersOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::RemoveBackendServersRequest&, const RemoveBackendServersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveBackendServersAsyncHandler;
+			typedef Outcome<Error, Model::AddAccessControlListEntryResult> AddAccessControlListEntryOutcome;
+			typedef std::future<AddAccessControlListEntryOutcome> AddAccessControlListEntryOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::AddAccessControlListEntryRequest&, const AddAccessControlListEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddAccessControlListEntryAsyncHandler;
 			typedef Outcome<Error, Model::ModifyVServerGroupBackendServersResult> ModifyVServerGroupBackendServersOutcome;
 			typedef std::future<ModifyVServerGroupBackendServersOutcome> ModifyVServerGroupBackendServersOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::ModifyVServerGroupBackendServersRequest&, const ModifyVServerGroupBackendServersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVServerGroupBackendServersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSlbQuotasResult> DescribeSlbQuotasOutcome;
+			typedef std::future<DescribeSlbQuotasOutcome> DescribeSlbQuotasOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::DescribeSlbQuotasRequest&, const DescribeSlbQuotasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlbQuotasAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLoadBalancerUDPListenerAttributeResult> DescribeLoadBalancerUDPListenerAttributeOutcome;
 			typedef std::future<DescribeLoadBalancerUDPListenerAttributeOutcome> DescribeLoadBalancerUDPListenerAttributeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeLoadBalancerUDPListenerAttributeRequest&, const DescribeLoadBalancerUDPListenerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerUDPListenerAttributeAsyncHandler;
@@ -291,6 +332,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetBackendServersResult> SetBackendServersOutcome;
 			typedef std::future<SetBackendServersOutcome> SetBackendServersOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::SetBackendServersRequest&, const SetBackendServersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetBackendServersAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAccessControlListResult> DeleteAccessControlListOutcome;
+			typedef std::future<DeleteAccessControlListOutcome> DeleteAccessControlListOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::DeleteAccessControlListRequest&, const DeleteAccessControlListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessControlListAsyncHandler;
 			typedef Outcome<Error, Model::RemoveVServerGroupBackendServersResult> RemoveVServerGroupBackendServersOutcome;
 			typedef std::future<RemoveVServerGroupBackendServersOutcome> RemoveVServerGroupBackendServersOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::RemoveVServerGroupBackendServersRequest&, const RemoveVServerGroupBackendServersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveVServerGroupBackendServersAsyncHandler;
@@ -306,9 +350,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCACertificateResult> DeleteCACertificateOutcome;
 			typedef std::future<DeleteCACertificateOutcome> DeleteCACertificateOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DeleteCACertificateRequest&, const DeleteCACertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCACertificateAsyncHandler;
+			typedef Outcome<Error, Model::SetAccessControlListAttributeResult> SetAccessControlListAttributeOutcome;
+			typedef std::future<SetAccessControlListAttributeOutcome> SetAccessControlListAttributeOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::SetAccessControlListAttributeRequest&, const SetAccessControlListAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetAccessControlListAttributeAsyncHandler;
 			typedef Outcome<Error, Model::CreateLoadBalancerTCPListenerResult> CreateLoadBalancerTCPListenerOutcome;
 			typedef std::future<CreateLoadBalancerTCPListenerOutcome> CreateLoadBalancerTCPListenerOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::CreateLoadBalancerTCPListenerRequest&, const CreateLoadBalancerTCPListenerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoadBalancerTCPListenerAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAccessControlListAttributeResult> DescribeAccessControlListAttributeOutcome;
+			typedef std::future<DescribeAccessControlListAttributeOutcome> DescribeAccessControlListAttributeOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::DescribeAccessControlListAttributeRequest&, const DescribeAccessControlListAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessControlListAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAccessControlListsResult> DescribeAccessControlListsOutcome;
+			typedef std::future<DescribeAccessControlListsOutcome> DescribeAccessControlListsOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::DescribeAccessControlListsRequest&, const DescribeAccessControlListsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessControlListsAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDomainExtensionResult> DeleteDomainExtensionOutcome;
+			typedef std::future<DeleteDomainExtensionOutcome> DeleteDomainExtensionOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::DeleteDomainExtensionRequest&, const DeleteDomainExtensionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainExtensionAsyncHandler;
 			typedef Outcome<Error, Model::SetRuleResult> SetRuleOutcome;
 			typedef std::future<SetRuleOutcome> SetRuleOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::SetRuleRequest&, const SetRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetRuleAsyncHandler;
@@ -336,6 +392,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRulesResult> DescribeRulesOutcome;
 			typedef std::future<DescribeRulesOutcome> DescribeRulesOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeRulesRequest&, const DescribeRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesAsyncHandler;
+			typedef Outcome<Error, Model::RemoveAccessControlListEntryResult> RemoveAccessControlListEntryOutcome;
+			typedef std::future<RemoveAccessControlListEntryOutcome> RemoveAccessControlListEntryOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::RemoveAccessControlListEntryRequest&, const RemoveAccessControlListEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveAccessControlListEntryAsyncHandler;
+			typedef Outcome<Error, Model::CreateDomainExtensionResult> CreateDomainExtensionOutcome;
+			typedef std::future<CreateDomainExtensionOutcome> CreateDomainExtensionOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::CreateDomainExtensionRequest&, const CreateDomainExtensionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainExtensionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRuleAttributeResult> DescribeRuleAttributeOutcome;
 			typedef std::future<DescribeRuleAttributeOutcome> DescribeRuleAttributeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeRuleAttributeRequest&, const DescribeRuleAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleAttributeAsyncHandler;
@@ -357,6 +419,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyLoadBalancerInternetSpecResult> ModifyLoadBalancerInternetSpecOutcome;
 			typedef std::future<ModifyLoadBalancerInternetSpecOutcome> ModifyLoadBalancerInternetSpecOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::ModifyLoadBalancerInternetSpecRequest&, const ModifyLoadBalancerInternetSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerInternetSpecAsyncHandler;
+			typedef Outcome<Error, Model::CreateAccessControlListResult> CreateAccessControlListOutcome;
+			typedef std::future<CreateAccessControlListOutcome> CreateAccessControlListOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::CreateAccessControlListRequest&, const CreateAccessControlListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessControlListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLoadBalancerHTTPSListenerAttributeResult> DescribeLoadBalancerHTTPSListenerAttributeOutcome;
 			typedef std::future<DescribeLoadBalancerHTTPSListenerAttributeOutcome> DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest&, const DescribeLoadBalancerHTTPSListenerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerHTTPSListenerAttributeAsyncHandler;
@@ -386,6 +451,9 @@ namespace AlibabaCloud
 			SlbClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			SlbClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~SlbClient();
+			SetDomainExtensionAttributeOutcome setDomainExtensionAttribute(const Model::SetDomainExtensionAttributeRequest &request)const;
+			void setDomainExtensionAttributeAsync(const Model::SetDomainExtensionAttributeRequest& request, const SetDomainExtensionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDomainExtensionAttributeOutcomeCallable setDomainExtensionAttributeCallable(const Model::SetDomainExtensionAttributeRequest& request) const;
 			CreateLoadBalancerUDPListenerOutcome createLoadBalancerUDPListener(const Model::CreateLoadBalancerUDPListenerRequest &request)const;
 			void createLoadBalancerUDPListenerAsync(const Model::CreateLoadBalancerUDPListenerRequest& request, const CreateLoadBalancerUDPListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLoadBalancerUDPListenerOutcomeCallable createLoadBalancerUDPListenerCallable(const Model::CreateLoadBalancerUDPListenerRequest& request) const;
@@ -434,6 +502,9 @@ namespace AlibabaCloud
 			SetLoadBalancerHTTPListenerAttributeOutcome setLoadBalancerHTTPListenerAttribute(const Model::SetLoadBalancerHTTPListenerAttributeRequest &request)const;
 			void setLoadBalancerHTTPListenerAttributeAsync(const Model::SetLoadBalancerHTTPListenerAttributeRequest& request, const SetLoadBalancerHTTPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLoadBalancerHTTPListenerAttributeOutcomeCallable setLoadBalancerHTTPListenerAttributeCallable(const Model::SetLoadBalancerHTTPListenerAttributeRequest& request) const;
+			DescribeDomainExtensionsOutcome describeDomainExtensions(const Model::DescribeDomainExtensionsRequest &request)const;
+			void describeDomainExtensionsAsync(const Model::DescribeDomainExtensionsRequest& request, const DescribeDomainExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainExtensionsOutcomeCallable describeDomainExtensionsCallable(const Model::DescribeDomainExtensionsRequest& request) const;
 			SetLoadBalancerAutoReleaseTimeOutcome setLoadBalancerAutoReleaseTime(const Model::SetLoadBalancerAutoReleaseTimeRequest &request)const;
 			void setLoadBalancerAutoReleaseTimeAsync(const Model::SetLoadBalancerAutoReleaseTimeRequest& request, const SetLoadBalancerAutoReleaseTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLoadBalancerAutoReleaseTimeOutcomeCallable setLoadBalancerAutoReleaseTimeCallable(const Model::SetLoadBalancerAutoReleaseTimeRequest& request) const;
@@ -449,6 +520,9 @@ namespace AlibabaCloud
 			SetLoadBalancerHTTPSListenerAttributeOutcome setLoadBalancerHTTPSListenerAttribute(const Model::SetLoadBalancerHTTPSListenerAttributeRequest &request)const;
 			void setLoadBalancerHTTPSListenerAttributeAsync(const Model::SetLoadBalancerHTTPSListenerAttributeRequest& request, const SetLoadBalancerHTTPSListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLoadBalancerHTTPSListenerAttributeOutcomeCallable setLoadBalancerHTTPSListenerAttributeCallable(const Model::SetLoadBalancerHTTPSListenerAttributeRequest& request) const;
+			SetAutoRenewStatusOutcome setAutoRenewStatus(const Model::SetAutoRenewStatusRequest &request)const;
+			void setAutoRenewStatusAsync(const Model::SetAutoRenewStatusRequest& request, const SetAutoRenewStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetAutoRenewStatusOutcomeCallable setAutoRenewStatusCallable(const Model::SetAutoRenewStatusRequest& request) const;
 			DeleteLoadBalancerListenerOutcome deleteLoadBalancerListener(const Model::DeleteLoadBalancerListenerRequest &request)const;
 			void deleteLoadBalancerListenerAsync(const Model::DeleteLoadBalancerListenerRequest& request, const DeleteLoadBalancerListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLoadBalancerListenerOutcomeCallable deleteLoadBalancerListenerCallable(const Model::DeleteLoadBalancerListenerRequest& request) const;
@@ -485,9 +559,15 @@ namespace AlibabaCloud
 			RemoveBackendServersOutcome removeBackendServers(const Model::RemoveBackendServersRequest &request)const;
 			void removeBackendServersAsync(const Model::RemoveBackendServersRequest& request, const RemoveBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveBackendServersOutcomeCallable removeBackendServersCallable(const Model::RemoveBackendServersRequest& request) const;
+			AddAccessControlListEntryOutcome addAccessControlListEntry(const Model::AddAccessControlListEntryRequest &request)const;
+			void addAccessControlListEntryAsync(const Model::AddAccessControlListEntryRequest& request, const AddAccessControlListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddAccessControlListEntryOutcomeCallable addAccessControlListEntryCallable(const Model::AddAccessControlListEntryRequest& request) const;
 			ModifyVServerGroupBackendServersOutcome modifyVServerGroupBackendServers(const Model::ModifyVServerGroupBackendServersRequest &request)const;
 			void modifyVServerGroupBackendServersAsync(const Model::ModifyVServerGroupBackendServersRequest& request, const ModifyVServerGroupBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyVServerGroupBackendServersOutcomeCallable modifyVServerGroupBackendServersCallable(const Model::ModifyVServerGroupBackendServersRequest& request) const;
+			DescribeSlbQuotasOutcome describeSlbQuotas(const Model::DescribeSlbQuotasRequest &request)const;
+			void describeSlbQuotasAsync(const Model::DescribeSlbQuotasRequest& request, const DescribeSlbQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSlbQuotasOutcomeCallable describeSlbQuotasCallable(const Model::DescribeSlbQuotasRequest& request) const;
 			DescribeLoadBalancerUDPListenerAttributeOutcome describeLoadBalancerUDPListenerAttribute(const Model::DescribeLoadBalancerUDPListenerAttributeRequest &request)const;
 			void describeLoadBalancerUDPListenerAttributeAsync(const Model::DescribeLoadBalancerUDPListenerAttributeRequest& request, const DescribeLoadBalancerUDPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLoadBalancerUDPListenerAttributeOutcomeCallable describeLoadBalancerUDPListenerAttributeCallable(const Model::DescribeLoadBalancerUDPListenerAttributeRequest& request) const;
@@ -506,6 +586,9 @@ namespace AlibabaCloud
 			SetBackendServersOutcome setBackendServers(const Model::SetBackendServersRequest &request)const;
 			void setBackendServersAsync(const Model::SetBackendServersRequest& request, const SetBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetBackendServersOutcomeCallable setBackendServersCallable(const Model::SetBackendServersRequest& request) const;
+			DeleteAccessControlListOutcome deleteAccessControlList(const Model::DeleteAccessControlListRequest &request)const;
+			void deleteAccessControlListAsync(const Model::DeleteAccessControlListRequest& request, const DeleteAccessControlListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAccessControlListOutcomeCallable deleteAccessControlListCallable(const Model::DeleteAccessControlListRequest& request) const;
 			RemoveVServerGroupBackendServersOutcome removeVServerGroupBackendServers(const Model::RemoveVServerGroupBackendServersRequest &request)const;
 			void removeVServerGroupBackendServersAsync(const Model::RemoveVServerGroupBackendServersRequest& request, const RemoveVServerGroupBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveVServerGroupBackendServersOutcomeCallable removeVServerGroupBackendServersCallable(const Model::RemoveVServerGroupBackendServersRequest& request) const;
@@ -521,9 +604,21 @@ namespace AlibabaCloud
 			DeleteCACertificateOutcome deleteCACertificate(const Model::DeleteCACertificateRequest &request)const;
 			void deleteCACertificateAsync(const Model::DeleteCACertificateRequest& request, const DeleteCACertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCACertificateOutcomeCallable deleteCACertificateCallable(const Model::DeleteCACertificateRequest& request) const;
+			SetAccessControlListAttributeOutcome setAccessControlListAttribute(const Model::SetAccessControlListAttributeRequest &request)const;
+			void setAccessControlListAttributeAsync(const Model::SetAccessControlListAttributeRequest& request, const SetAccessControlListAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetAccessControlListAttributeOutcomeCallable setAccessControlListAttributeCallable(const Model::SetAccessControlListAttributeRequest& request) const;
 			CreateLoadBalancerTCPListenerOutcome createLoadBalancerTCPListener(const Model::CreateLoadBalancerTCPListenerRequest &request)const;
 			void createLoadBalancerTCPListenerAsync(const Model::CreateLoadBalancerTCPListenerRequest& request, const CreateLoadBalancerTCPListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLoadBalancerTCPListenerOutcomeCallable createLoadBalancerTCPListenerCallable(const Model::CreateLoadBalancerTCPListenerRequest& request) const;
+			DescribeAccessControlListAttributeOutcome describeAccessControlListAttribute(const Model::DescribeAccessControlListAttributeRequest &request)const;
+			void describeAccessControlListAttributeAsync(const Model::DescribeAccessControlListAttributeRequest& request, const DescribeAccessControlListAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAccessControlListAttributeOutcomeCallable describeAccessControlListAttributeCallable(const Model::DescribeAccessControlListAttributeRequest& request) const;
+			DescribeAccessControlListsOutcome describeAccessControlLists(const Model::DescribeAccessControlListsRequest &request)const;
+			void describeAccessControlListsAsync(const Model::DescribeAccessControlListsRequest& request, const DescribeAccessControlListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAccessControlListsOutcomeCallable describeAccessControlListsCallable(const Model::DescribeAccessControlListsRequest& request) const;
+			DeleteDomainExtensionOutcome deleteDomainExtension(const Model::DeleteDomainExtensionRequest &request)const;
+			void deleteDomainExtensionAsync(const Model::DeleteDomainExtensionRequest& request, const DeleteDomainExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDomainExtensionOutcomeCallable deleteDomainExtensionCallable(const Model::DeleteDomainExtensionRequest& request) const;
 			SetRuleOutcome setRule(const Model::SetRuleRequest &request)const;
 			void setRuleAsync(const Model::SetRuleRequest& request, const SetRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetRuleOutcomeCallable setRuleCallable(const Model::SetRuleRequest& request) const;
@@ -551,6 +646,12 @@ namespace AlibabaCloud
 			DescribeRulesOutcome describeRules(const Model::DescribeRulesRequest &request)const;
 			void describeRulesAsync(const Model::DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRulesOutcomeCallable describeRulesCallable(const Model::DescribeRulesRequest& request) const;
+			RemoveAccessControlListEntryOutcome removeAccessControlListEntry(const Model::RemoveAccessControlListEntryRequest &request)const;
+			void removeAccessControlListEntryAsync(const Model::RemoveAccessControlListEntryRequest& request, const RemoveAccessControlListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveAccessControlListEntryOutcomeCallable removeAccessControlListEntryCallable(const Model::RemoveAccessControlListEntryRequest& request) const;
+			CreateDomainExtensionOutcome createDomainExtension(const Model::CreateDomainExtensionRequest &request)const;
+			void createDomainExtensionAsync(const Model::CreateDomainExtensionRequest& request, const CreateDomainExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDomainExtensionOutcomeCallable createDomainExtensionCallable(const Model::CreateDomainExtensionRequest& request) const;
 			DescribeRuleAttributeOutcome describeRuleAttribute(const Model::DescribeRuleAttributeRequest &request)const;
 			void describeRuleAttributeAsync(const Model::DescribeRuleAttributeRequest& request, const DescribeRuleAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRuleAttributeOutcomeCallable describeRuleAttributeCallable(const Model::DescribeRuleAttributeRequest& request) const;
@@ -572,6 +673,9 @@ namespace AlibabaCloud
 			ModifyLoadBalancerInternetSpecOutcome modifyLoadBalancerInternetSpec(const Model::ModifyLoadBalancerInternetSpecRequest &request)const;
 			void modifyLoadBalancerInternetSpecAsync(const Model::ModifyLoadBalancerInternetSpecRequest& request, const ModifyLoadBalancerInternetSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLoadBalancerInternetSpecOutcomeCallable modifyLoadBalancerInternetSpecCallable(const Model::ModifyLoadBalancerInternetSpecRequest& request) const;
+			CreateAccessControlListOutcome createAccessControlList(const Model::CreateAccessControlListRequest &request)const;
+			void createAccessControlListAsync(const Model::CreateAccessControlListRequest& request, const CreateAccessControlListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAccessControlListOutcomeCallable createAccessControlListCallable(const Model::CreateAccessControlListRequest& request) const;
 			DescribeLoadBalancerHTTPSListenerAttributeOutcome describeLoadBalancerHTTPSListenerAttribute(const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest &request)const;
 			void describeLoadBalancerHTTPSListenerAttributeAsync(const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest& request, const DescribeLoadBalancerHTTPSListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable describeLoadBalancerHTTPSListenerAttributeCallable(const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest& request) const;

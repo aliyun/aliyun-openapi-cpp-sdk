@@ -78,6 +78,8 @@ void DescribeLoadBalancersResult::parse(const std::string &payload)
 			loadBalancersObject.payType = value["PayType"].asString();
 		if(!value["ResourceGroupId"].isNull())
 			loadBalancersObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["AddressIPVersion"].isNull())
+			loadBalancersObject.addressIPVersion = value["AddressIPVersion"].asString();
 		loadBalancers_.push_back(loadBalancersObject);
 	}
 	if(!value["PageNumber"].isNull())

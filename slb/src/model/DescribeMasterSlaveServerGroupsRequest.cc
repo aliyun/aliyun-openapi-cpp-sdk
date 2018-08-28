@@ -80,6 +80,17 @@ void DescribeMasterSlaveServerGroupsRequest::setRegionId(const std::string& regi
 	setParameter("RegionId", regionId);
 }
 
+bool DescribeMasterSlaveServerGroupsRequest::getIncludeListener()const
+{
+	return includeListener_;
+}
+
+void DescribeMasterSlaveServerGroupsRequest::setIncludeListener(bool includeListener)
+{
+	includeListener_ = includeListener;
+	setParameter("IncludeListener", std::to_string(includeListener));
+}
+
 std::string DescribeMasterSlaveServerGroupsRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
