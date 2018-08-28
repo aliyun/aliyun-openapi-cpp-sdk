@@ -52,6 +52,8 @@
 #include "model/StopJobsResult.h"
 #include "model/StartNodesRequest.h"
 #include "model/StartNodesResult.h"
+#include "model/GetCloudMetricProfilingRequest.h"
+#include "model/GetCloudMetricProfilingResult.h"
 #include "model/GetAutoScaleConfigRequest.h"
 #include "model/GetAutoScaleConfigResult.h"
 #include "model/ListNodesRequest.h"
@@ -120,6 +122,8 @@
 #include "model/ModifyImageGatewayConfigResult.h"
 #include "model/ListContainerAppsRequest.h"
 #include "model/ListContainerAppsResult.h"
+#include "model/ListCloudMetricProfilingsRequest.h"
+#include "model/ListCloudMetricProfilingsResult.h"
 #include "model/SetJobUserRequest.h"
 #include "model/SetJobUserResult.h"
 #include "model/ListClustersRequest.h"
@@ -130,6 +134,8 @@
 #include "model/ListRegionsResult.h"
 #include "model/DescribeAutoScaleConfigRequest.h"
 #include "model/DescribeAutoScaleConfigResult.h"
+#include "model/RunCloudMetricProfilingRequest.h"
+#include "model/RunCloudMetricProfilingResult.h"
 #include "model/RerunJobsRequest.h"
 #include "model/RerunJobsResult.h"
 #include "model/EditJobTemplateRequest.h"
@@ -198,6 +204,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartNodesResult> StartNodesOutcome;
 			typedef std::future<StartNodesOutcome> StartNodesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::StartNodesRequest&, const StartNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartNodesAsyncHandler;
+			typedef Outcome<Error, Model::GetCloudMetricProfilingResult> GetCloudMetricProfilingOutcome;
+			typedef std::future<GetCloudMetricProfilingOutcome> GetCloudMetricProfilingOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::GetCloudMetricProfilingRequest&, const GetCloudMetricProfilingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCloudMetricProfilingAsyncHandler;
 			typedef Outcome<Error, Model::GetAutoScaleConfigResult> GetAutoScaleConfigOutcome;
 			typedef std::future<GetAutoScaleConfigOutcome> GetAutoScaleConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetAutoScaleConfigRequest&, const GetAutoScaleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAutoScaleConfigAsyncHandler;
@@ -300,6 +309,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListContainerAppsResult> ListContainerAppsOutcome;
 			typedef std::future<ListContainerAppsOutcome> ListContainerAppsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListContainerAppsRequest&, const ListContainerAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListContainerAppsAsyncHandler;
+			typedef Outcome<Error, Model::ListCloudMetricProfilingsResult> ListCloudMetricProfilingsOutcome;
+			typedef std::future<ListCloudMetricProfilingsOutcome> ListCloudMetricProfilingsOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ListCloudMetricProfilingsRequest&, const ListCloudMetricProfilingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCloudMetricProfilingsAsyncHandler;
 			typedef Outcome<Error, Model::SetJobUserResult> SetJobUserOutcome;
 			typedef std::future<SetJobUserOutcome> SetJobUserOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::SetJobUserRequest&, const SetJobUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetJobUserAsyncHandler;
@@ -315,6 +327,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAutoScaleConfigResult> DescribeAutoScaleConfigOutcome;
 			typedef std::future<DescribeAutoScaleConfigOutcome> DescribeAutoScaleConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DescribeAutoScaleConfigRequest&, const DescribeAutoScaleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScaleConfigAsyncHandler;
+			typedef Outcome<Error, Model::RunCloudMetricProfilingResult> RunCloudMetricProfilingOutcome;
+			typedef std::future<RunCloudMetricProfilingOutcome> RunCloudMetricProfilingOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::RunCloudMetricProfilingRequest&, const RunCloudMetricProfilingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunCloudMetricProfilingAsyncHandler;
 			typedef Outcome<Error, Model::RerunJobsResult> RerunJobsOutcome;
 			typedef std::future<RerunJobsOutcome> RerunJobsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::RerunJobsRequest&, const RerunJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RerunJobsAsyncHandler;
@@ -386,6 +401,9 @@ namespace AlibabaCloud
 			StartNodesOutcome startNodes(const Model::StartNodesRequest &request)const;
 			void startNodesAsync(const Model::StartNodesRequest& request, const StartNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartNodesOutcomeCallable startNodesCallable(const Model::StartNodesRequest& request) const;
+			GetCloudMetricProfilingOutcome getCloudMetricProfiling(const Model::GetCloudMetricProfilingRequest &request)const;
+			void getCloudMetricProfilingAsync(const Model::GetCloudMetricProfilingRequest& request, const GetCloudMetricProfilingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCloudMetricProfilingOutcomeCallable getCloudMetricProfilingCallable(const Model::GetCloudMetricProfilingRequest& request) const;
 			GetAutoScaleConfigOutcome getAutoScaleConfig(const Model::GetAutoScaleConfigRequest &request)const;
 			void getAutoScaleConfigAsync(const Model::GetAutoScaleConfigRequest& request, const GetAutoScaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAutoScaleConfigOutcomeCallable getAutoScaleConfigCallable(const Model::GetAutoScaleConfigRequest& request) const;
@@ -488,6 +506,9 @@ namespace AlibabaCloud
 			ListContainerAppsOutcome listContainerApps(const Model::ListContainerAppsRequest &request)const;
 			void listContainerAppsAsync(const Model::ListContainerAppsRequest& request, const ListContainerAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListContainerAppsOutcomeCallable listContainerAppsCallable(const Model::ListContainerAppsRequest& request) const;
+			ListCloudMetricProfilingsOutcome listCloudMetricProfilings(const Model::ListCloudMetricProfilingsRequest &request)const;
+			void listCloudMetricProfilingsAsync(const Model::ListCloudMetricProfilingsRequest& request, const ListCloudMetricProfilingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCloudMetricProfilingsOutcomeCallable listCloudMetricProfilingsCallable(const Model::ListCloudMetricProfilingsRequest& request) const;
 			SetJobUserOutcome setJobUser(const Model::SetJobUserRequest &request)const;
 			void setJobUserAsync(const Model::SetJobUserRequest& request, const SetJobUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetJobUserOutcomeCallable setJobUserCallable(const Model::SetJobUserRequest& request) const;
@@ -503,6 +524,9 @@ namespace AlibabaCloud
 			DescribeAutoScaleConfigOutcome describeAutoScaleConfig(const Model::DescribeAutoScaleConfigRequest &request)const;
 			void describeAutoScaleConfigAsync(const Model::DescribeAutoScaleConfigRequest& request, const DescribeAutoScaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAutoScaleConfigOutcomeCallable describeAutoScaleConfigCallable(const Model::DescribeAutoScaleConfigRequest& request) const;
+			RunCloudMetricProfilingOutcome runCloudMetricProfiling(const Model::RunCloudMetricProfilingRequest &request)const;
+			void runCloudMetricProfilingAsync(const Model::RunCloudMetricProfilingRequest& request, const RunCloudMetricProfilingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RunCloudMetricProfilingOutcomeCallable runCloudMetricProfilingCallable(const Model::RunCloudMetricProfilingRequest& request) const;
 			RerunJobsOutcome rerunJobs(const Model::RerunJobsRequest &request)const;
 			void rerunJobsAsync(const Model::RerunJobsRequest& request, const RerunJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RerunJobsOutcomeCallable rerunJobsCallable(const Model::RerunJobsRequest& request) const;

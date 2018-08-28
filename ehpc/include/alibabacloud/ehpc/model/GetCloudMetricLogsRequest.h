@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				void setFilter(const std::string& filter);
 				std::string getMetricCategories()const;
 				void setMetricCategories(const std::string& metricCategories);
-				int getLine()const;
-				void setLine(int line);
 				std::string getMetricScope()const;
 				void setMetricScope(const std::string& metricScope);
 				int getFrom()const;
@@ -62,7 +60,6 @@ namespace AlibabaCloud
 				std::string aggregationType_;
 				std::string filter_;
 				std::string metricCategories_;
-				int line_;
 				std::string metricScope_;
 				int from_;
 				std::string clusterId_;

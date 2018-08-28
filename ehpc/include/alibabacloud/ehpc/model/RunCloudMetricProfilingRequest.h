@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_ADDUSERSREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_ADDUSERSREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_RUNCLOUDMETRICPROFILINGREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_RUNCLOUDMETRICPROFILINGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT AddUsersRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EHPC_EXPORT RunCloudMetricProfilingRequest : public RpcServiceRequest
 			{
-				struct User
-				{
-					std::string password;
-					std::string name;
-					std::string group;
-				};
 
 			public:
-				AddUsersRequest();
-				~AddUsersRequest();
+				RunCloudMetricProfilingRequest();
+				~RunCloudMetricProfilingRequest();
 
+				int getDuration()const;
+				void setDuration(int duration);
+				std::string getHostName()const;
+				void setHostName(const std::string& hostName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getProcessId()const;
+				void setProcessId(int processId);
+				int getFreq()const;
+				void setFreq(int freq);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				std::vector<User> getUser()const;
-				void setUser(const std::vector<User>& user);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				int duration_;
+				std::string hostName_;
+				std::string regionId_;
+				int processId_;
+				int freq_;
 				std::string clusterId_;
-				std::vector<User> user_;
 				std::string accessKeyId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_ADDUSERSREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_RUNCLOUDMETRICPROFILINGREQUEST_H_

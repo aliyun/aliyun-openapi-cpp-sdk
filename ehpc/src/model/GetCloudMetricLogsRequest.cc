@@ -58,17 +58,6 @@ void GetCloudMetricLogsRequest::setMetricCategories(const std::string& metricCat
 	setParameter("MetricCategories", metricCategories);
 }
 
-int GetCloudMetricLogsRequest::getLine()const
-{
-	return line_;
-}
-
-void GetCloudMetricLogsRequest::setLine(int line)
-{
-	line_ = line;
-	setParameter("Line", std::to_string(line));
-}
-
 std::string GetCloudMetricLogsRequest::getMetricScope()const
 {
 	return metricScope_;

@@ -48,9 +48,9 @@ void AddUsersRequest::setUser(const std::vector<User>& user)
 	for(int i = 0; i!= user.size(); i++)	{
 		auto obj = user.at(i);
 		std::string str ="User."+ std::to_string(i);
+		setParameter(str + ".Password", obj.password);
 		setParameter(str + ".Name", obj.name);
 		setParameter(str + ".Group", obj.group);
-		setParameter(str + ".Password", obj.password);
 	}
 }
 

@@ -67,6 +67,8 @@ namespace AlibabaCloud
 				void setVolumeProtocol(const std::string& volumeProtocol);
 				std::string getOnPremiseVolumeLocalPath()const;
 				void setOnPremiseVolumeLocalPath(const std::string& onPremiseVolumeLocalPath);
+				std::string getClientVersion()const;
+				void setClientVersion(const std::string& clientVersion);
 				std::string getOsTag()const;
 				void setOsTag(const std::string& osTag);
 				std::string getRemoteDirectory()const;
@@ -107,6 +109,7 @@ namespace AlibabaCloud
 				std::string onPremiseVolumeProtocol_;
 				std::string volumeProtocol_;
 				std::string onPremiseVolumeLocalPath_;
+				std::string clientVersion_;
 				std::string osTag_;
 				std::string remoteDirectory_;
 				std::string vSwitchId_;

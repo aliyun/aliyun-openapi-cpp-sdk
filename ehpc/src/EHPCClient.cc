@@ -591,6 +591,42 @@ EHPCClient::StartNodesOutcomeCallable EHPCClient::startNodesCallable(const Start
 	return task->get_future();
 }
 
+EHPCClient::GetCloudMetricProfilingOutcome EHPCClient::getCloudMetricProfiling(const GetCloudMetricProfilingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCloudMetricProfilingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCloudMetricProfilingOutcome(GetCloudMetricProfilingResult(outcome.result()));
+	else
+		return GetCloudMetricProfilingOutcome(outcome.error());
+}
+
+void EHPCClient::getCloudMetricProfilingAsync(const GetCloudMetricProfilingRequest& request, const GetCloudMetricProfilingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCloudMetricProfiling(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::GetCloudMetricProfilingOutcomeCallable EHPCClient::getCloudMetricProfilingCallable(const GetCloudMetricProfilingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCloudMetricProfilingOutcome()>>(
+			[this, request]()
+			{
+			return this->getCloudMetricProfiling(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::GetAutoScaleConfigOutcome EHPCClient::getAutoScaleConfig(const GetAutoScaleConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1815,6 +1851,42 @@ EHPCClient::ListContainerAppsOutcomeCallable EHPCClient::listContainerAppsCallab
 	return task->get_future();
 }
 
+EHPCClient::ListCloudMetricProfilingsOutcome EHPCClient::listCloudMetricProfilings(const ListCloudMetricProfilingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCloudMetricProfilingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCloudMetricProfilingsOutcome(ListCloudMetricProfilingsResult(outcome.result()));
+	else
+		return ListCloudMetricProfilingsOutcome(outcome.error());
+}
+
+void EHPCClient::listCloudMetricProfilingsAsync(const ListCloudMetricProfilingsRequest& request, const ListCloudMetricProfilingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCloudMetricProfilings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::ListCloudMetricProfilingsOutcomeCallable EHPCClient::listCloudMetricProfilingsCallable(const ListCloudMetricProfilingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCloudMetricProfilingsOutcome()>>(
+			[this, request]()
+			{
+			return this->listCloudMetricProfilings(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::SetJobUserOutcome EHPCClient::setJobUser(const SetJobUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +2061,42 @@ EHPCClient::DescribeAutoScaleConfigOutcomeCallable EHPCClient::describeAutoScale
 			[this, request]()
 			{
 			return this->describeAutoScaleConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::RunCloudMetricProfilingOutcome EHPCClient::runCloudMetricProfiling(const RunCloudMetricProfilingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RunCloudMetricProfilingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RunCloudMetricProfilingOutcome(RunCloudMetricProfilingResult(outcome.result()));
+	else
+		return RunCloudMetricProfilingOutcome(outcome.error());
+}
+
+void EHPCClient::runCloudMetricProfilingAsync(const RunCloudMetricProfilingRequest& request, const RunCloudMetricProfilingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, runCloudMetricProfiling(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::RunCloudMetricProfilingOutcomeCallable EHPCClient::runCloudMetricProfilingCallable(const RunCloudMetricProfilingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RunCloudMetricProfilingOutcome()>>(
+			[this, request]()
+			{
+			return this->runCloudMetricProfiling(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

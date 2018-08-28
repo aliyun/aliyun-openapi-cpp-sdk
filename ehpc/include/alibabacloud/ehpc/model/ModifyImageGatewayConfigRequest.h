@@ -32,8 +32,8 @@ namespace AlibabaCloud
 			{
 				struct Repo
 				{
-					std::string location;
 					std::string auth;
+					std::string location;
 					std::string uRL;
 				};
 

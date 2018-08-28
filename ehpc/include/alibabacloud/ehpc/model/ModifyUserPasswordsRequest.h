@@ -32,8 +32,8 @@ namespace AlibabaCloud
 			{
 				struct User
 				{
-					std::string name;
 					std::string password;
+					std::string name;
 				};
 
 			public:

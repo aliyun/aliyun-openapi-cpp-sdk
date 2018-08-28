@@ -51,6 +51,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/StopJobsResult.h
 	include/alibabacloud/ehpc/model/StartNodesRequest.h
 	include/alibabacloud/ehpc/model/StartNodesResult.h
+	include/alibabacloud/ehpc/model/GetCloudMetricProfilingRequest.h
+	include/alibabacloud/ehpc/model/GetCloudMetricProfilingResult.h
 	include/alibabacloud/ehpc/model/GetAutoScaleConfigRequest.h
 	include/alibabacloud/ehpc/model/GetAutoScaleConfigResult.h
 	include/alibabacloud/ehpc/model/ListNodesRequest.h
@@ -119,6 +121,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/ModifyImageGatewayConfigResult.h
 	include/alibabacloud/ehpc/model/ListContainerAppsRequest.h
 	include/alibabacloud/ehpc/model/ListContainerAppsResult.h
+	include/alibabacloud/ehpc/model/ListCloudMetricProfilingsRequest.h
+	include/alibabacloud/ehpc/model/ListCloudMetricProfilingsResult.h
 	include/alibabacloud/ehpc/model/SetJobUserRequest.h
 	include/alibabacloud/ehpc/model/SetJobUserResult.h
 	include/alibabacloud/ehpc/model/ListClustersRequest.h
@@ -129,6 +133,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/ListRegionsResult.h
 	include/alibabacloud/ehpc/model/DescribeAutoScaleConfigRequest.h
 	include/alibabacloud/ehpc/model/DescribeAutoScaleConfigResult.h
+	include/alibabacloud/ehpc/model/RunCloudMetricProfilingRequest.h
+	include/alibabacloud/ehpc/model/RunCloudMetricProfilingResult.h
 	include/alibabacloud/ehpc/model/RerunJobsRequest.h
 	include/alibabacloud/ehpc/model/RerunJobsResult.h
 	include/alibabacloud/ehpc/model/EditJobTemplateRequest.h
@@ -176,6 +182,8 @@ set(ehpc_src
 	src/model/StopJobsResult.cc
 	src/model/StartNodesRequest.cc
 	src/model/StartNodesResult.cc
+	src/model/GetCloudMetricProfilingRequest.cc
+	src/model/GetCloudMetricProfilingResult.cc
 	src/model/GetAutoScaleConfigRequest.cc
 	src/model/GetAutoScaleConfigResult.cc
 	src/model/ListNodesRequest.cc
@@ -244,6 +252,8 @@ set(ehpc_src
 	src/model/ModifyImageGatewayConfigResult.cc
 	src/model/ListContainerAppsRequest.cc
 	src/model/ListContainerAppsResult.cc
+	src/model/ListCloudMetricProfilingsRequest.cc
+	src/model/ListCloudMetricProfilingsResult.cc
 	src/model/SetJobUserRequest.cc
 	src/model/SetJobUserResult.cc
 	src/model/ListClustersRequest.cc
@@ -254,6 +264,8 @@ set(ehpc_src
 	src/model/ListRegionsResult.cc
 	src/model/DescribeAutoScaleConfigRequest.cc
 	src/model/DescribeAutoScaleConfigResult.cc
+	src/model/RunCloudMetricProfilingRequest.cc
+	src/model/RunCloudMetricProfilingResult.cc
 	src/model/RerunJobsRequest.cc
 	src/model/RerunJobsResult.cc
 	src/model/EditJobTemplateRequest.cc

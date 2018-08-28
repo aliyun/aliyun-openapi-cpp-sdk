@@ -179,6 +179,17 @@ void CreateHybridClusterRequest::setOnPremiseVolumeLocalPath(const std::string& 
 	setParameter("OnPremiseVolumeLocalPath", onPremiseVolumeLocalPath);
 }
 
+std::string CreateHybridClusterRequest::getClientVersion()const
+{
+	return clientVersion_;
+}
+
+void CreateHybridClusterRequest::setClientVersion(const std::string& clientVersion)
+{
+	clientVersion_ = clientVersion;
+	setParameter("ClientVersion", clientVersion);
+}
+
 std::string CreateHybridClusterRequest::getOsTag()const
 {
 	return osTag_;

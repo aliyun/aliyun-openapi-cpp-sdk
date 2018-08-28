@@ -48,8 +48,12 @@ void ListNodesResult::parse(const std::string &payload)
 			nodesObject.id = value["Id"].asString();
 		if(!value["RegionId"].isNull())
 			nodesObject.regionId = value["RegionId"].asString();
+		if(!value["HostName"].isNull())
+			nodesObject.hostName = value["HostName"].asString();
 		if(!value["Status"].isNull())
 			nodesObject.status = value["Status"].asString();
+		if(!value["Version"].isNull())
+			nodesObject.version = value["Version"].asString();
 		if(!value["CreatedByEhpc"].isNull())
 			nodesObject.createdByEhpc = value["CreatedByEhpc"].asString() == "true";
 		if(!value["AddTime"].isNull())

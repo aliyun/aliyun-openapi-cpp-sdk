@@ -256,6 +256,17 @@ void CreateClusterRequest::setVolumeProtocol(const std::string& volumeProtocol)
 	setParameter("VolumeProtocol", volumeProtocol);
 }
 
+std::string CreateClusterRequest::getClientVersion()const
+{
+	return clientVersion_;
+}
+
+void CreateClusterRequest::setClientVersion(const std::string& clientVersion)
+{
+	clientVersion_ = clientVersion;
+	setParameter("ClientVersion", clientVersion);
+}
+
 std::string CreateClusterRequest::getOsTag()const
 {
 	return osTag_;
@@ -312,8 +323,8 @@ void CreateClusterRequest::setPostInstallScript(const std::vector<PostInstallScr
 	for(int i = 0; i!= postInstallScript.size(); i++)	{
 		auto obj = postInstallScript.at(i);
 		std::string str ="PostInstallScript."+ std::to_string(i);
-		setParameter(str + ".Url", obj.url);
 		setParameter(str + ".Args", obj.args);
+		setParameter(str + ".Url", obj.url);
 	}
 }
 

@@ -59,8 +59,8 @@ void ModifyImageGatewayConfigRequest::setRepo(const std::vector<Repo>& repo)
 	for(int i = 0; i!= repo.size(); i++)	{
 		auto obj = repo.at(i);
 		std::string str ="Repo."+ std::to_string(i);
-		setParameter(str + ".Location", obj.location);
 		setParameter(str + ".Auth", obj.auth);
+		setParameter(str + ".Location", obj.location);
 		setParameter(str + ".URL", obj.uRL);
 	}
 }

@@ -53,12 +53,14 @@ namespace AlibabaCloud
 					std::string addTime;
 					UsedResources usedResources;
 					bool createdByEhpc;
+					std::string version;
 					TotalResources totalResources;
 					std::string expiredTime;
 					std::string imageId;
 					std::string id;
 					std::string regionId;
 					std::string lockReason;
+					std::string hostName;
 					std::string spotStrategy;
 					std::string location;
 				};

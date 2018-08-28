@@ -32,8 +32,8 @@ namespace AlibabaCloud
 			{
 				struct PostInstallScript
 				{
-					std::string url;
 					std::string args;
+					std::string url;
 				};
 				struct Application
 				{
@@ -86,6 +86,8 @@ namespace AlibabaCloud
 				void setPeriod(int period);
 				std::string getVolumeProtocol()const;
 				void setVolumeProtocol(const std::string& volumeProtocol);
+				std::string getClientVersion()const;
+				void setClientVersion(const std::string& clientVersion);
 				std::string getOsTag()const;
 				void setOsTag(const std::string& osTag);
 				std::string getRemoteDirectory()const;
@@ -147,6 +149,7 @@ namespace AlibabaCloud
 				int autoRenewPeriod_;
 				int period_;
 				std::string volumeProtocol_;
+				std::string clientVersion_;
 				std::string osTag_;
 				std::string remoteDirectory_;
 				int ecsOrderComputeCount_;

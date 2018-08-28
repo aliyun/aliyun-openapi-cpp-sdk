@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTNODESNOPAGINGRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTNODESNOPAGINGRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_LISTCLOUDMETRICPROFILINGSRESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_LISTCLOUDMETRICPROFILINGSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,49 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListNodesNoPagingResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT ListCloudMetricProfilingsResult : public ServiceResult
 			{
 			public:
-				struct NodeInfo
+				struct ProfilingInfo
 				{
-					struct TotalResources
-					{
-						int memory;
-						int cpu;
-						int gpu;
-					};
-					struct UsedResources
-					{
-						int memory;
-						int cpu;
-						int gpu;
-					};
-					std::string status;
-					std::string imageOwnerAlias;
-					bool expired;
-					std::vector<std::string> roles;
-					std::string addTime;
-					UsedResources usedResources;
-					bool createdByEhpc;
-					std::string version;
-					TotalResources totalResources;
-					std::string expiredTime;
-					std::string imageId;
-					std::string id;
-					std::string regionId;
-					std::string lockReason;
+					std::string profilingId;
+					std::string instanceId;
+					std::string triggerTime;
+					int freq;
+					int pid;
+					int duration;
 					std::string hostName;
-					std::string spotStrategy;
 				};
 
 
-				ListNodesNoPagingResult();
-				explicit ListNodesNoPagingResult(const std::string &payload);
-				~ListNodesNoPagingResult();
+				ListCloudMetricProfilingsResult();
+				explicit ListCloudMetricProfilingsResult(const std::string &payload);
+				~ListCloudMetricProfilingsResult();
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::vector<NodeInfo> getNodes()const;
+				std::vector<ProfilingInfo> getProfilings()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -79,10 +58,10 @@ namespace AlibabaCloud
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::vector<NodeInfo> nodes_;
+				std::vector<ProfilingInfo> profilings_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTNODESNOPAGINGRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_LISTCLOUDMETRICPROFILINGSRESULT_H_
