@@ -87,6 +87,42 @@ GreenClient::ImageSyncScanOutcomeCallable GreenClient::imageSyncScanCallable(con
 	return task->get_future();
 }
 
+GreenClient::UploadCredentialsOutcome GreenClient::uploadCredentials(const UploadCredentialsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadCredentialsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadCredentialsOutcome(UploadCredentialsResult(outcome.result()));
+	else
+		return UploadCredentialsOutcome(outcome.error());
+}
+
+void GreenClient::uploadCredentialsAsync(const UploadCredentialsRequest& request, const UploadCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadCredentials(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::UploadCredentialsOutcomeCallable GreenClient::uploadCredentialsCallable(const UploadCredentialsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadCredentialsOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadCredentials(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::GetPersonsOutcome GreenClient::getPersons(const GetPersonsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +225,78 @@ GreenClient::DeleteFacesOutcomeCallable GreenClient::deleteFacesCallable(const D
 			[this, request]()
 			{
 			return this->deleteFaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::DeleteVideoDnaGroupOutcome GreenClient::deleteVideoDnaGroup(const DeleteVideoDnaGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVideoDnaGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVideoDnaGroupOutcome(DeleteVideoDnaGroupResult(outcome.result()));
+	else
+		return DeleteVideoDnaGroupOutcome(outcome.error());
+}
+
+void GreenClient::deleteVideoDnaGroupAsync(const DeleteVideoDnaGroupRequest& request, const DeleteVideoDnaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVideoDnaGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DeleteVideoDnaGroupOutcomeCallable GreenClient::deleteVideoDnaGroupCallable(const DeleteVideoDnaGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVideoDnaGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVideoDnaGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::AddVideoDnaOutcome GreenClient::addVideoDna(const AddVideoDnaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddVideoDnaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddVideoDnaOutcome(AddVideoDnaResult(outcome.result()));
+	else
+		return AddVideoDnaOutcome(outcome.error());
+}
+
+void GreenClient::addVideoDnaAsync(const AddVideoDnaRequest& request, const AddVideoDnaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addVideoDna(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::AddVideoDnaOutcomeCallable GreenClient::addVideoDnaCallable(const AddVideoDnaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddVideoDnaOutcome()>>(
+			[this, request]()
+			{
+			return this->addVideoDna(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,6 +447,42 @@ GreenClient::VideoAsyncScanResultsOutcomeCallable GreenClient::videoAsyncScanRes
 	return task->get_future();
 }
 
+GreenClient::DeleteVideoDnaOutcome GreenClient::deleteVideoDna(const DeleteVideoDnaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVideoDnaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVideoDnaOutcome(DeleteVideoDnaResult(outcome.result()));
+	else
+		return DeleteVideoDnaOutcome(outcome.error());
+}
+
+void GreenClient::deleteVideoDnaAsync(const DeleteVideoDnaRequest& request, const DeleteVideoDnaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVideoDna(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DeleteVideoDnaOutcomeCallable GreenClient::deleteVideoDnaCallable(const DeleteVideoDnaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVideoDnaOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVideoDna(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::AddGroupsOutcome GreenClient::addGroups(const AddGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -447,6 +591,42 @@ GreenClient::SetPersonOutcomeCallable GreenClient::setPersonCallable(const SetPe
 	return task->get_future();
 }
 
+GreenClient::VoiceIdentityCheckOutcome GreenClient::voiceIdentityCheck(const VoiceIdentityCheckRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VoiceIdentityCheckOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VoiceIdentityCheckOutcome(VoiceIdentityCheckResult(outcome.result()));
+	else
+		return VoiceIdentityCheckOutcome(outcome.error());
+}
+
+void GreenClient::voiceIdentityCheckAsync(const VoiceIdentityCheckRequest& request, const VoiceIdentityCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, voiceIdentityCheck(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VoiceIdentityCheckOutcomeCallable GreenClient::voiceIdentityCheckCallable(const VoiceIdentityCheckRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VoiceIdentityCheckOutcome()>>(
+			[this, request]()
+			{
+			return this->voiceIdentityCheck(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::TextFeedbackOutcome GreenClient::textFeedback(const TextFeedbackRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +729,78 @@ GreenClient::DeleteGroupsOutcomeCallable GreenClient::deleteGroupsCallable(const
 			[this, request]()
 			{
 			return this->deleteGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::VoiceIdentityStartCheckOutcome GreenClient::voiceIdentityStartCheck(const VoiceIdentityStartCheckRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VoiceIdentityStartCheckOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VoiceIdentityStartCheckOutcome(VoiceIdentityStartCheckResult(outcome.result()));
+	else
+		return VoiceIdentityStartCheckOutcome(outcome.error());
+}
+
+void GreenClient::voiceIdentityStartCheckAsync(const VoiceIdentityStartCheckRequest& request, const VoiceIdentityStartCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, voiceIdentityStartCheck(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VoiceIdentityStartCheckOutcomeCallable GreenClient::voiceIdentityStartCheckCallable(const VoiceIdentityStartCheckRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VoiceIdentityStartCheckOutcome()>>(
+			[this, request]()
+			{
+			return this->voiceIdentityStartCheck(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::AddVideoDnaGroupOutcome GreenClient::addVideoDnaGroup(const AddVideoDnaGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddVideoDnaGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddVideoDnaGroupOutcome(AddVideoDnaGroupResult(outcome.result()));
+	else
+		return AddVideoDnaGroupOutcome(outcome.error());
+}
+
+void GreenClient::addVideoDnaGroupAsync(const AddVideoDnaGroupRequest& request, const AddVideoDnaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addVideoDnaGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::AddVideoDnaGroupOutcomeCallable GreenClient::addVideoDnaGroupCallable(const AddVideoDnaGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddVideoDnaGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->addVideoDnaGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -771,6 +1023,42 @@ GreenClient::VoiceAsyncScanOutcomeCallable GreenClient::voiceAsyncScanCallable(c
 	return task->get_future();
 }
 
+GreenClient::VoiceCancelScanOutcome GreenClient::voiceCancelScan(const VoiceCancelScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VoiceCancelScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VoiceCancelScanOutcome(VoiceCancelScanResult(outcome.result()));
+	else
+		return VoiceCancelScanOutcome(outcome.error());
+}
+
+void GreenClient::voiceCancelScanAsync(const VoiceCancelScanRequest& request, const VoiceCancelScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, voiceCancelScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VoiceCancelScanOutcomeCallable GreenClient::voiceCancelScanCallable(const VoiceCancelScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VoiceCancelScanOutcome()>>(
+			[this, request]()
+			{
+			return this->voiceCancelScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::GetGroupsOutcome GreenClient::getGroups(const GetGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -843,6 +1131,42 @@ GreenClient::TextScanOutcomeCallable GreenClient::textScanCallable(const TextSca
 	return task->get_future();
 }
 
+GreenClient::VoiceIdentityRegisterOutcome GreenClient::voiceIdentityRegister(const VoiceIdentityRegisterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VoiceIdentityRegisterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VoiceIdentityRegisterOutcome(VoiceIdentityRegisterResult(outcome.result()));
+	else
+		return VoiceIdentityRegisterOutcome(outcome.error());
+}
+
+void GreenClient::voiceIdentityRegisterAsync(const VoiceIdentityRegisterRequest& request, const VoiceIdentityRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, voiceIdentityRegister(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VoiceIdentityRegisterOutcomeCallable GreenClient::voiceIdentityRegisterCallable(const VoiceIdentityRegisterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VoiceIdentityRegisterOutcome()>>(
+			[this, request]()
+			{
+			return this->voiceIdentityRegister(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::ImageScanFeedbackOutcome GreenClient::imageScanFeedback(const ImageScanFeedbackRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +1197,42 @@ GreenClient::ImageScanFeedbackOutcomeCallable GreenClient::imageScanFeedbackCall
 			[this, request]()
 			{
 			return this->imageScanFeedback(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::VoiceIdentityStartRegisterOutcome GreenClient::voiceIdentityStartRegister(const VoiceIdentityStartRegisterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VoiceIdentityStartRegisterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VoiceIdentityStartRegisterOutcome(VoiceIdentityStartRegisterResult(outcome.result()));
+	else
+		return VoiceIdentityStartRegisterOutcome(outcome.error());
+}
+
+void GreenClient::voiceIdentityStartRegisterAsync(const VoiceIdentityStartRegisterRequest& request, const VoiceIdentityStartRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, voiceIdentityStartRegister(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VoiceIdentityStartRegisterOutcomeCallable GreenClient::voiceIdentityStartRegisterCallable(const VoiceIdentityStartRegisterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VoiceIdentityStartRegisterOutcome()>>(
+			[this, request]()
+			{
+			return this->voiceIdentityStartRegister(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -945,6 +1305,42 @@ GreenClient::SearchPersonOutcomeCallable GreenClient::searchPersonCallable(const
 			[this, request]()
 			{
 			return this->searchPerson(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::GetAddVideoDnaResultsOutcome GreenClient::getAddVideoDnaResults(const GetAddVideoDnaResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAddVideoDnaResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAddVideoDnaResultsOutcome(GetAddVideoDnaResultsResult(outcome.result()));
+	else
+		return GetAddVideoDnaResultsOutcome(outcome.error());
+}
+
+void GreenClient::getAddVideoDnaResultsAsync(const GetAddVideoDnaResultsRequest& request, const GetAddVideoDnaResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAddVideoDnaResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::GetAddVideoDnaResultsOutcomeCallable GreenClient::getAddVideoDnaResultsCallable(const GetAddVideoDnaResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAddVideoDnaResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->getAddVideoDnaResults(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1053,6 +1449,42 @@ GreenClient::AddSimilarityImageOutcomeCallable GreenClient::addSimilarityImageCa
 			[this, request]()
 			{
 			return this->addSimilarityImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::VoiceIdentityUnregisterOutcome GreenClient::voiceIdentityUnregister(const VoiceIdentityUnregisterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VoiceIdentityUnregisterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VoiceIdentityUnregisterOutcome(VoiceIdentityUnregisterResult(outcome.result()));
+	else
+		return VoiceIdentityUnregisterOutcome(outcome.error());
+}
+
+void GreenClient::voiceIdentityUnregisterAsync(const VoiceIdentityUnregisterRequest& request, const VoiceIdentityUnregisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, voiceIdentityUnregister(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VoiceIdentityUnregisterOutcomeCallable GreenClient::voiceIdentityUnregisterCallable(const VoiceIdentityUnregisterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VoiceIdentityUnregisterOutcome()>>(
+			[this, request]()
+			{
+			return this->voiceIdentityUnregister(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
