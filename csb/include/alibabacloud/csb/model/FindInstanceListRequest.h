@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				FindInstanceListRequest();
 				~FindInstanceListRequest();
 
-				std::string getSearchTxt()const;
-				void setSearchTxt(const std::string& searchTxt);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getSearchTxt()const;
+				void setSearchTxt(const std::string& searchTxt);
 				long getCsbId()const;
 				void setCsbId(long csbId);
 				int getPageNum()const;
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				void setStatus(int status);
 
             private:
-				std::string searchTxt_;
 				std::string regionId_;
+				std::string searchTxt_;
 				long csbId_;
 				int pageNum_;
 				int status_;

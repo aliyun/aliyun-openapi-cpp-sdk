@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				FindCredentialsListRequest();
 				~FindCredentialsListRequest();
 
-				long getCsbId()const;
-				void setCsbId(long csbId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				long getCsbId()const;
+				void setCsbId(long csbId);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				std::string getGroupName()const;
 				void setGroupName(const std::string& groupName);
 
             private:
-				long csbId_;
 				std::string regionId_;
+				long csbId_;
 				int pageNum_;
 				std::string groupName_;
 

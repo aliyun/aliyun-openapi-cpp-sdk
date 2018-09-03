@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				std::string getOperationFlag()const;
 				void setOperationFlag(const std::string& operationFlag);
-				long getCsbId()const;
-				void setCsbId(long csbId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				long getCsbId()const;
+				void setCsbId(long csbId);
 
             private:
 				std::string operationFlag_;
-				long csbId_;
 				std::string regionId_;
+				long csbId_;
 
 			};
 		}

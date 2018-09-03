@@ -36,17 +36,6 @@ void UpdateServiceListStatusRequest::setData(const std::string& data)
 	setParameter("Data", data);
 }
 
-long UpdateServiceListStatusRequest::getCsbId()const
-{
-	return csbId_;
-}
-
-void UpdateServiceListStatusRequest::setCsbId(long csbId)
-{
-	csbId_ = csbId;
-	setParameter("CsbId", std::to_string(csbId));
-}
-
 std::string UpdateServiceListStatusRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,5 +45,16 @@ void UpdateServiceListStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+long UpdateServiceListStatusRequest::getCsbId()const
+{
+	return csbId_;
+}
+
+void UpdateServiceListStatusRequest::setCsbId(long csbId)
+{
+	csbId_ = csbId;
+	setParameter("CsbId", std::to_string(csbId));
 }
 

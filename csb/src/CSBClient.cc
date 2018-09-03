@@ -31,21 +31,21 @@ CSBClient::CSBClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "CSB");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CSBClient::CSBClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "CSB");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CSBClient::CSBClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "CSB");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CSBClient::~CSBClient()
@@ -981,6 +981,42 @@ CSBClient::DeleteCredentialsListOutcomeCallable CSBClient::deleteCredentialsList
 			[this, request]()
 			{
 			return this->deleteCredentialsList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::FindServiceStatisticalDataOutcome CSBClient::findServiceStatisticalData(const FindServiceStatisticalDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindServiceStatisticalDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindServiceStatisticalDataOutcome(FindServiceStatisticalDataResult(outcome.result()));
+	else
+		return FindServiceStatisticalDataOutcome(outcome.error());
+}
+
+void CSBClient::findServiceStatisticalDataAsync(const FindServiceStatisticalDataRequest& request, const FindServiceStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findServiceStatisticalData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindServiceStatisticalDataOutcomeCallable CSBClient::findServiceStatisticalDataCallable(const FindServiceStatisticalDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindServiceStatisticalDataOutcome()>>(
+			[this, request]()
+			{
+			return this->findServiceStatisticalData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

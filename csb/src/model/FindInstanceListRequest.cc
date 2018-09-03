@@ -25,17 +25,6 @@ FindInstanceListRequest::FindInstanceListRequest() :
 FindInstanceListRequest::~FindInstanceListRequest()
 {}
 
-std::string FindInstanceListRequest::getSearchTxt()const
-{
-	return searchTxt_;
-}
-
-void FindInstanceListRequest::setSearchTxt(const std::string& searchTxt)
-{
-	searchTxt_ = searchTxt;
-	setParameter("SearchTxt", searchTxt);
-}
-
 std::string FindInstanceListRequest::getRegionId()const
 {
 	return regionId_;
@@ -45,6 +34,17 @@ void FindInstanceListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string FindInstanceListRequest::getSearchTxt()const
+{
+	return searchTxt_;
+}
+
+void FindInstanceListRequest::setSearchTxt(const std::string& searchTxt)
+{
+	searchTxt_ = searchTxt;
+	setParameter("SearchTxt", searchTxt);
 }
 
 long FindInstanceListRequest::getCsbId()const

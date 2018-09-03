@@ -73,6 +73,8 @@ set(csb_public_header_model
 	include/alibabacloud/csb/model/UpdateOrderListResult.h
 	include/alibabacloud/csb/model/DeleteCredentialsListRequest.h
 	include/alibabacloud/csb/model/DeleteCredentialsListResult.h
+	include/alibabacloud/csb/model/FindServiceStatisticalDataRequest.h
+	include/alibabacloud/csb/model/FindServiceStatisticalDataResult.h
 	include/alibabacloud/csb/model/CreateServiceRequest.h
 	include/alibabacloud/csb/model/CreateServiceResult.h
 	include/alibabacloud/csb/model/FindCredentialsListRequest.h
@@ -154,6 +156,8 @@ set(csb_src
 	src/model/UpdateOrderListResult.cc
 	src/model/DeleteCredentialsListRequest.cc
 	src/model/DeleteCredentialsListResult.cc
+	src/model/FindServiceStatisticalDataRequest.cc
+	src/model/FindServiceStatisticalDataResult.cc
 	src/model/CreateServiceRequest.cc
 	src/model/CreateServiceResult.cc
 	src/model/FindCredentialsListRequest.cc

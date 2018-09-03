@@ -25,17 +25,6 @@ FindCredentialsListRequest::FindCredentialsListRequest() :
 FindCredentialsListRequest::~FindCredentialsListRequest()
 {}
 
-long FindCredentialsListRequest::getCsbId()const
-{
-	return csbId_;
-}
-
-void FindCredentialsListRequest::setCsbId(long csbId)
-{
-	csbId_ = csbId;
-	setParameter("CsbId", std::to_string(csbId));
-}
-
 std::string FindCredentialsListRequest::getRegionId()const
 {
 	return regionId_;
@@ -45,6 +34,17 @@ void FindCredentialsListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+long FindCredentialsListRequest::getCsbId()const
+{
+	return csbId_;
+}
+
+void FindCredentialsListRequest::setCsbId(long csbId)
+{
+	csbId_ = csbId;
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 int FindCredentialsListRequest::getPageNum()const

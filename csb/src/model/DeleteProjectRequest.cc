@@ -25,17 +25,6 @@ DeleteProjectRequest::DeleteProjectRequest() :
 DeleteProjectRequest::~DeleteProjectRequest()
 {}
 
-long DeleteProjectRequest::getCsbId()const
-{
-	return csbId_;
-}
-
-void DeleteProjectRequest::setCsbId(long csbId)
-{
-	csbId_ = csbId;
-	setParameter("CsbId", std::to_string(csbId));
-}
-
 std::string DeleteProjectRequest::getRegionId()const
 {
 	return regionId_;
@@ -45,6 +34,17 @@ void DeleteProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+long DeleteProjectRequest::getCsbId()const
+{
+	return csbId_;
+}
+
+void DeleteProjectRequest::setCsbId(long csbId)
+{
+	csbId_ = csbId;
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 long DeleteProjectRequest::getProjectId()const

@@ -25,17 +25,6 @@ GetOrderRequest::GetOrderRequest() :
 GetOrderRequest::~GetOrderRequest()
 {}
 
-long GetOrderRequest::getOrderId()const
-{
-	return orderId_;
-}
-
-void GetOrderRequest::setOrderId(long orderId)
-{
-	orderId_ = orderId;
-	setParameter("OrderId", std::to_string(orderId));
-}
-
 std::string GetOrderRequest::getRegionId()const
 {
 	return regionId_;
@@ -45,6 +34,17 @@ void GetOrderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+long GetOrderRequest::getOrderId()const
+{
+	return orderId_;
+}
+
+void GetOrderRequest::setOrderId(long orderId)
+{
+	orderId_ = orderId;
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string GetOrderRequest::getServiceName()const

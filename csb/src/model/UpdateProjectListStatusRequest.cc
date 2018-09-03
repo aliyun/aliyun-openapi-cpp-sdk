@@ -36,17 +36,6 @@ void UpdateProjectListStatusRequest::setData(const std::string& data)
 	setParameter("Data", data);
 }
 
-long UpdateProjectListStatusRequest::getCsbId()const
-{
-	return csbId_;
-}
-
-void UpdateProjectListStatusRequest::setCsbId(long csbId)
-{
-	csbId_ = csbId;
-	setParameter("CsbId", std::to_string(csbId));
-}
-
 std::string UpdateProjectListStatusRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,5 +45,16 @@ void UpdateProjectListStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+long UpdateProjectListStatusRequest::getCsbId()const
+{
+	return csbId_;
+}
+
+void UpdateProjectListStatusRequest::setCsbId(long csbId)
+{
+	csbId_ = csbId;
+	setParameter("CsbId", std::to_string(csbId));
 }
 

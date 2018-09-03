@@ -36,17 +36,6 @@ void FindProjectsNameListRequest::setOperationFlag(const std::string& operationF
 	setParameter("OperationFlag", operationFlag);
 }
 
-long FindProjectsNameListRequest::getCsbId()const
-{
-	return csbId_;
-}
-
-void FindProjectsNameListRequest::setCsbId(long csbId)
-{
-	csbId_ = csbId;
-	setParameter("CsbId", std::to_string(csbId));
-}
-
 std::string FindProjectsNameListRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,5 +45,16 @@ void FindProjectsNameListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+long FindProjectsNameListRequest::getCsbId()const
+{
+	return csbId_;
+}
+
+void FindProjectsNameListRequest::setCsbId(long csbId)
+{
+	csbId_ = csbId;
+	setParameter("CsbId", std::to_string(csbId));
 }
 

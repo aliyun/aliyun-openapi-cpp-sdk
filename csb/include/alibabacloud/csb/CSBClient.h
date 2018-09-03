@@ -74,6 +74,8 @@
 #include "model/UpdateOrderListResult.h"
 #include "model/DeleteCredentialsListRequest.h"
 #include "model/DeleteCredentialsListResult.h"
+#include "model/FindServiceStatisticalDataRequest.h"
+#include "model/FindServiceStatisticalDataResult.h"
 #include "model/CreateServiceRequest.h"
 #include "model/CreateServiceResult.h"
 #include "model/FindCredentialsListRequest.h"
@@ -187,6 +189,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCredentialsListResult> DeleteCredentialsListOutcome;
 			typedef std::future<DeleteCredentialsListOutcome> DeleteCredentialsListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::DeleteCredentialsListRequest&, const DeleteCredentialsListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCredentialsListAsyncHandler;
+			typedef Outcome<Error, Model::FindServiceStatisticalDataResult> FindServiceStatisticalDataOutcome;
+			typedef std::future<FindServiceStatisticalDataOutcome> FindServiceStatisticalDataOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::FindServiceStatisticalDataRequest&, const FindServiceStatisticalDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindServiceStatisticalDataAsyncHandler;
 			typedef Outcome<Error, Model::CreateServiceResult> CreateServiceOutcome;
 			typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::CreateServiceRequest&, const CreateServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceAsyncHandler;
@@ -309,6 +314,9 @@ namespace AlibabaCloud
 			DeleteCredentialsListOutcome deleteCredentialsList(const Model::DeleteCredentialsListRequest &request)const;
 			void deleteCredentialsListAsync(const Model::DeleteCredentialsListRequest& request, const DeleteCredentialsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCredentialsListOutcomeCallable deleteCredentialsListCallable(const Model::DeleteCredentialsListRequest& request) const;
+			FindServiceStatisticalDataOutcome findServiceStatisticalData(const Model::FindServiceStatisticalDataRequest &request)const;
+			void findServiceStatisticalDataAsync(const Model::FindServiceStatisticalDataRequest& request, const FindServiceStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FindServiceStatisticalDataOutcomeCallable findServiceStatisticalDataCallable(const Model::FindServiceStatisticalDataRequest& request) const;
 			CreateServiceOutcome createService(const Model::CreateServiceRequest &request)const;
 			void createServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateServiceOutcomeCallable createServiceCallable(const Model::CreateServiceRequest& request) const;

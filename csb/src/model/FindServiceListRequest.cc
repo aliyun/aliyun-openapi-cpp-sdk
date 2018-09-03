@@ -36,17 +36,6 @@ void FindServiceListRequest::setProjectName(const std::string& projectName)
 	setParameter("ProjectName", projectName);
 }
 
-int FindServiceListRequest::getCasShowType()const
-{
-	return casShowType_;
-}
-
-void FindServiceListRequest::setCasShowType(int casShowType)
-{
-	casShowType_ = casShowType;
-	setParameter("CasShowType", std::to_string(casShowType));
-}
-
 bool FindServiceListRequest::getShowDelService()const
 {
 	return showDelService_;
@@ -56,6 +45,17 @@ void FindServiceListRequest::setShowDelService(bool showDelService)
 {
 	showDelService_ = showDelService;
 	setParameter("ShowDelService", std::to_string(showDelService));
+}
+
+int FindServiceListRequest::getCasShowType()const
+{
+	return casShowType_;
+}
+
+void FindServiceListRequest::setCasShowType(int casShowType)
+{
+	casShowType_ = casShowType;
+	setParameter("CasShowType", std::to_string(casShowType));
 }
 
 long FindServiceListRequest::getCsbId()const

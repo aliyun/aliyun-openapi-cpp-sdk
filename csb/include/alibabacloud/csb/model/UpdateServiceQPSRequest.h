@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				UpdateServiceQPSRequest();
 				~UpdateServiceQPSRequest();
 
-				std::string getQps()const;
-				void setQps(const std::string& qps);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getQps()const;
+				void setQps(const std::string& qps);
 				long getServiceId()const;
 				void setServiceId(long serviceId);
 
             private:
-				std::string qps_;
 				std::string regionId_;
+				std::string qps_;
 				long serviceId_;
 
 			};

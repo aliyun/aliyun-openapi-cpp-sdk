@@ -25,17 +25,6 @@ FindApproveServiceListRequest::FindApproveServiceListRequest() :
 FindApproveServiceListRequest::~FindApproveServiceListRequest()
 {}
 
-std::string FindApproveServiceListRequest::getApproveLevel()const
-{
-	return approveLevel_;
-}
-
-void FindApproveServiceListRequest::setApproveLevel(const std::string& approveLevel)
-{
-	approveLevel_ = approveLevel;
-	setParameter("ApproveLevel", approveLevel);
-}
-
 std::string FindApproveServiceListRequest::getProjectName()const
 {
 	return projectName_;
@@ -45,6 +34,17 @@ void FindApproveServiceListRequest::setProjectName(const std::string& projectNam
 {
 	projectName_ = projectName;
 	setParameter("ProjectName", projectName);
+}
+
+std::string FindApproveServiceListRequest::getApproveLevel()const
+{
+	return approveLevel_;
+}
+
+void FindApproveServiceListRequest::setApproveLevel(const std::string& approveLevel)
+{
+	approveLevel_ = approveLevel;
+	setParameter("ApproveLevel", approveLevel);
 }
 
 bool FindApproveServiceListRequest::getShowDelService()const

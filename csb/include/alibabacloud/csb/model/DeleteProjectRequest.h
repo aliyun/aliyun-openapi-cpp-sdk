@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				DeleteProjectRequest();
 				~DeleteProjectRequest();
 
-				long getCsbId()const;
-				void setCsbId(long csbId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				long getCsbId()const;
+				void setCsbId(long csbId);
 				long getProjectId()const;
 				void setProjectId(long projectId);
 
             private:
-				long csbId_;
 				std::string regionId_;
+				long csbId_;
 				long projectId_;
 
 			};

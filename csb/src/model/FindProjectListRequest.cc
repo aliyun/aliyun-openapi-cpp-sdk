@@ -36,17 +36,6 @@ void FindProjectListRequest::setProjectName(const std::string& projectName)
 	setParameter("ProjectName", projectName);
 }
 
-long FindProjectListRequest::getCsbId()const
-{
-	return csbId_;
-}
-
-void FindProjectListRequest::setCsbId(long csbId)
-{
-	csbId_ = csbId;
-	setParameter("CsbId", std::to_string(csbId));
-}
-
 std::string FindProjectListRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,17 @@ void FindProjectListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+long FindProjectListRequest::getCsbId()const
+{
+	return csbId_;
+}
+
+void FindProjectListRequest::setCsbId(long csbId)
+{
+	csbId_ = csbId;
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 int FindProjectListRequest::getPageNum()const

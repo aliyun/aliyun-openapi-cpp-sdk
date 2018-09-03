@@ -36,17 +36,6 @@ void DeleteServiceListRequest::setData(const std::string& data)
 	setParameter("Data", data);
 }
 
-long DeleteServiceListRequest::getCsbId()const
-{
-	return csbId_;
-}
-
-void DeleteServiceListRequest::setCsbId(long csbId)
-{
-	csbId_ = csbId;
-	setParameter("CsbId", std::to_string(csbId));
-}
-
 std::string DeleteServiceListRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,5 +45,16 @@ void DeleteServiceListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+long DeleteServiceListRequest::getCsbId()const
+{
+	return csbId_;
+}
+
+void DeleteServiceListRequest::setCsbId(long csbId)
+{
+	csbId_ = csbId;
+	setParameter("CsbId", std::to_string(csbId));
 }
 

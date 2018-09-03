@@ -36,17 +36,6 @@ void UpdateOrderRequest::setData(const std::string& data)
 	setParameter("Data", data);
 }
 
-long UpdateOrderRequest::getCsbId()const
-{
-	return csbId_;
-}
-
-void UpdateOrderRequest::setCsbId(long csbId)
-{
-	csbId_ = csbId;
-	setParameter("CsbId", std::to_string(csbId));
-}
-
 std::string UpdateOrderRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,5 +45,16 @@ void UpdateOrderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+long UpdateOrderRequest::getCsbId()const
+{
+	return csbId_;
+}
+
+void UpdateOrderRequest::setCsbId(long csbId)
+{
+	csbId_ = csbId;
+	setParameter("CsbId", std::to_string(csbId));
 }
 
