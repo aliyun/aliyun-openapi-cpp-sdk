@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYAPPLYSTATUSREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYAPPLYSTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_DELETEPRODUCTREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_DELETEPRODUCTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QueryApplyStatusRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT DeleteProductRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryApplyStatusRequest();
-				~QueryApplyStatusRequest();
+				DeleteProductRequest();
+				~DeleteProductRequest();
 
-				long getApplyId()const;
-				void setApplyId(long applyId);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				long applyId_;
+				std::string productKey_;
 				std::string accessKeyId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYAPPLYSTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_DELETEPRODUCTREQUEST_H_

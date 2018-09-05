@@ -51,42 +51,6 @@ IotClient::IotClient(const std::string & accessKeyId, const std::string & access
 IotClient::~IotClient()
 {}
 
-IotClient::RegistDeviceOutcome IotClient::registDevice(const RegistDeviceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RegistDeviceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RegistDeviceOutcome(RegistDeviceResult(outcome.result()));
-	else
-		return RegistDeviceOutcome(outcome.error());
-}
-
-void IotClient::registDeviceAsync(const RegistDeviceRequest& request, const RegistDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, registDevice(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IotClient::RegistDeviceOutcomeCallable IotClient::registDeviceCallable(const RegistDeviceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RegistDeviceOutcome()>>(
-			[this, request]()
-			{
-			return this->registDevice(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 IotClient::DeleteTopicRouteTableOutcome IotClient::deleteTopicRouteTable(const DeleteTopicRouteTableRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,42 +297,6 @@ IotClient::DeleteRuleOutcomeCallable IotClient::deleteRuleCallable(const DeleteR
 			[this, request]()
 			{
 			return this->deleteRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IotClient::QueryDeviceByNameOutcome IotClient::queryDeviceByName(const QueryDeviceByNameRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryDeviceByNameOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryDeviceByNameOutcome(QueryDeviceByNameResult(outcome.result()));
-	else
-		return QueryDeviceByNameOutcome(outcome.error());
-}
-
-void IotClient::queryDeviceByNameAsync(const QueryDeviceByNameRequest& request, const QueryDeviceByNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryDeviceByName(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IotClient::QueryDeviceByNameOutcomeCallable IotClient::queryDeviceByNameCallable(const QueryDeviceByNameRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryDeviceByNameOutcome()>>(
-			[this, request]()
-			{
-			return this->queryDeviceByName(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1383,42 +1311,6 @@ IotClient::StartRuleOutcomeCallable IotClient::startRuleCallable(const StartRule
 	return task->get_future();
 }
 
-IotClient::ApplyDeviceWithNamesOutcome IotClient::applyDeviceWithNames(const ApplyDeviceWithNamesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ApplyDeviceWithNamesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ApplyDeviceWithNamesOutcome(ApplyDeviceWithNamesResult(outcome.result()));
-	else
-		return ApplyDeviceWithNamesOutcome(outcome.error());
-}
-
-void IotClient::applyDeviceWithNamesAsync(const ApplyDeviceWithNamesRequest& request, const ApplyDeviceWithNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, applyDeviceWithNames(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IotClient::ApplyDeviceWithNamesOutcomeCallable IotClient::applyDeviceWithNamesCallable(const ApplyDeviceWithNamesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ApplyDeviceWithNamesOutcome()>>(
-			[this, request]()
-			{
-			return this->applyDeviceWithNames(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 IotClient::QueryProductListOutcome IotClient::queryProductList(const QueryProductListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1563,6 +1455,42 @@ IotClient::PubOutcomeCallable IotClient::pubCallable(const PubRequest &request) 
 	return task->get_future();
 }
 
+IotClient::DeleteProductOutcome IotClient::deleteProduct(const DeleteProductRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteProductOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteProductOutcome(DeleteProductResult(outcome.result()));
+	else
+		return DeleteProductOutcome(outcome.error());
+}
+
+void IotClient::deleteProductAsync(const DeleteProductRequest& request, const DeleteProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteProduct(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteProductOutcomeCallable IotClient::deleteProductCallable(const DeleteProductRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteProductOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteProduct(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::SaveDevicePropOutcome IotClient::saveDeviceProp(const SaveDevicePropRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,42 +1557,6 @@ IotClient::DeleteProductTopicOutcomeCallable IotClient::deleteProductTopicCallab
 			[this, request]()
 			{
 			return this->deleteProductTopic(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IotClient::QueryApplyStatusOutcome IotClient::queryApplyStatus(const QueryApplyStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryApplyStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryApplyStatusOutcome(QueryApplyStatusResult(outcome.result()));
-	else
-		return QueryApplyStatusOutcome(outcome.error());
-}
-
-void IotClient::queryApplyStatusAsync(const QueryApplyStatusRequest& request, const QueryApplyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryApplyStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IotClient::QueryApplyStatusOutcomeCallable IotClient::queryApplyStatusCallable(const QueryApplyStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryApplyStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->queryApplyStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

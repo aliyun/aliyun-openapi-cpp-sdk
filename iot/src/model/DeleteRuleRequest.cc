@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::DeleteRuleRequest;
 
 DeleteRuleRequest::DeleteRuleRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "DeleteRule")
+	RpcServiceRequest("iot", "2018-01-20", "DeleteRule")
 {}
 
 DeleteRuleRequest::~DeleteRuleRequest()

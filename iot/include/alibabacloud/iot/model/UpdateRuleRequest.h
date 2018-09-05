@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setRuleId(long ruleId);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
+				int getTopicType()const;
+				void setTopicType(int topicType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getShortTopic()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 				std::string where_;
 				long ruleId_;
 				std::string productKey_;
+				int topicType_;
 				std::string accessKeyId_;
 				std::string shortTopic_;
 

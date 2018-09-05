@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::UpdateRuleRequest;
 
 UpdateRuleRequest::UpdateRuleRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "UpdateRule")
+	RpcServiceRequest("iot", "2018-01-20", "UpdateRule")
 {}
 
 UpdateRuleRequest::~UpdateRuleRequest()
@@ -89,6 +89,17 @@ void UpdateRuleRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
 	setParameter("ProductKey", productKey);
+}
+
+int UpdateRuleRequest::getTopicType()const
+{
+	return topicType_;
+}
+
+void UpdateRuleRequest::setTopicType(int topicType)
+{
+	topicType_ = topicType;
+	setParameter("TopicType", std::to_string(topicType));
 }
 
 std::string UpdateRuleRequest::getAccessKeyId()const

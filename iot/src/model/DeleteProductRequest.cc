@@ -14,34 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/QueryApplyStatusRequest.h>
+#include <alibabacloud/iot/model/DeleteProductRequest.h>
 
-using AlibabaCloud::Iot::Model::QueryApplyStatusRequest;
+using AlibabaCloud::Iot::Model::DeleteProductRequest;
 
-QueryApplyStatusRequest::QueryApplyStatusRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "QueryApplyStatus")
+DeleteProductRequest::DeleteProductRequest() :
+	RpcServiceRequest("iot", "2018-01-20", "DeleteProduct")
 {}
 
-QueryApplyStatusRequest::~QueryApplyStatusRequest()
+DeleteProductRequest::~DeleteProductRequest()
 {}
 
-long QueryApplyStatusRequest::getApplyId()const
+std::string DeleteProductRequest::getProductKey()const
 {
-	return applyId_;
+	return productKey_;
 }
 
-void QueryApplyStatusRequest::setApplyId(long applyId)
+void DeleteProductRequest::setProductKey(const std::string& productKey)
 {
-	applyId_ = applyId;
-	setParameter("ApplyId", std::to_string(applyId));
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
 }
 
-std::string QueryApplyStatusRequest::getAccessKeyId()const
+std::string DeleteProductRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void QueryApplyStatusRequest::setAccessKeyId(const std::string& accessKeyId)
+void DeleteProductRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);

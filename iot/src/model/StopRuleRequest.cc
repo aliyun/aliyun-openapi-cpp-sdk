@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::StopRuleRequest;
 
 StopRuleRequest::StopRuleRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "StopRule")
+	RpcServiceRequest("iot", "2018-01-20", "StopRule")
 {}
 
 StopRuleRequest::~StopRuleRequest()

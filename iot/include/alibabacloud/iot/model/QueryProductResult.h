@@ -34,16 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					long gmtCreate;
 					std::string description;
-					std::string categoryKey;
 					std::string productName;
 					std::string aliyunCommodityCode;
+					std::string productSecret;
+					long gmtCreate;
+					std::string categoryKey;
 					bool id2;
+					std::string protocolType;
 					int nodeType;
 					int dataFormat;
 					std::string categoryName;
-					std::string productSecret;
 					std::string productKey;
 					int deviceCount;
 				};

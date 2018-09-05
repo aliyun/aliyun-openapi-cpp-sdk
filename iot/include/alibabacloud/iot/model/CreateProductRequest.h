@@ -35,38 +35,35 @@ namespace AlibabaCloud
 				CreateProductRequest();
 				~CreateProductRequest();
 
-				long getCatId()const;
-				void setCatId(long catId);
+				int getDataFormat()const;
+				void setDataFormat(int dataFormat);
 				int getNodeType()const;
 				void setNodeType(int nodeType);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				bool getId2()const;
 				void setId2(bool id2);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getExtProps()const;
-				void setExtProps(const std::string& extProps);
-				std::string getSecurityPolicy()const;
-				void setSecurityPolicy(const std::string& securityPolicy);
-				int getPayType()const;
-				void setPayType(int payType);
+				std::string getProductName()const;
+				void setProductName(const std::string& productName);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getProtocolType()const;
+				void setProtocolType(const std::string& protocolType);
+				std::string getAliyunCommodityCode()const;
+				void setAliyunCommodityCode(const std::string& aliyunCommodityCode);
+				long getCategoryId()const;
+				void setCategoryId(long categoryId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getDesc()const;
-				void setDesc(const std::string& desc);
 
             private:
-				long catId_;
+				int dataFormat_;
 				int nodeType_;
-				std::string regionId_;
 				bool id2_;
-				std::string name_;
-				std::string extProps_;
-				std::string securityPolicy_;
-				int payType_;
+				std::string productName_;
+				std::string description_;
+				std::string protocolType_;
+				std::string aliyunCommodityCode_;
+				long categoryId_;
 				std::string accessKeyId_;
-				std::string desc_;
 
 			};
 		}

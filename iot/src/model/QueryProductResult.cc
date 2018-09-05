@@ -65,6 +65,8 @@ void QueryProductResult::parse(const std::string &payload)
 		data_.aliyunCommodityCode = dataNode["AliyunCommodityCode"].asString();
 	if(!dataNode["Id2"].isNull())
 		data_.id2 = dataNode["Id2"].asString() == "true";
+	if(!dataNode["ProtocolType"].isNull())
+		data_.protocolType = dataNode["ProtocolType"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

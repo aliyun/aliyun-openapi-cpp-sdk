@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::QueryTopicRouteTableRequest;
 
 QueryTopicRouteTableRequest::QueryTopicRouteTableRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "QueryTopicRouteTable")
+	RpcServiceRequest("iot", "2018-01-20", "QueryTopicRouteTable")
 {}
 
 QueryTopicRouteTableRequest::~QueryTopicRouteTableRequest()

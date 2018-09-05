@@ -36,13 +36,16 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string modified;
+					std::string utcCreated;
 					long createUserId;
 					std::string name;
 					std::string created;
+					int topicType;
 					std::string select;
 					std::string shortTopic;
 					std::string ruleDesc;
 					std::string dataType;
+					std::string utcModified;
 					long id;
 					std::string topic;
 					std::string where;

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/RegistDeviceResult.h>
+#include <alibabacloud/iot/model/DeleteProductResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-RegistDeviceResult::RegistDeviceResult() :
+DeleteProductResult::DeleteProductResult() :
 	ServiceResult()
 {}
 
-RegistDeviceResult::RegistDeviceResult(const std::string &payload) :
+DeleteProductResult::DeleteProductResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RegistDeviceResult::~RegistDeviceResult()
+DeleteProductResult::~DeleteProductResult()
 {}
 
-void RegistDeviceResult::parse(const std::string &payload)
+void DeleteProductResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -46,49 +46,21 @@ void RegistDeviceResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["DeviceId"].isNull())
-		deviceId_ = value["DeviceId"].asString();
-	if(!value["DeviceSecret"].isNull())
-		deviceSecret_ = value["DeviceSecret"].asString();
-	if(!value["DeviceStatus"].isNull())
-		deviceStatus_ = value["DeviceStatus"].asString();
-	if(!value["DeviceName"].isNull())
-		deviceName_ = value["DeviceName"].asString();
 
 }
 
-std::string RegistDeviceResult::getDeviceId()const
-{
-	return deviceId_;
-}
-
-std::string RegistDeviceResult::getDeviceSecret()const
-{
-	return deviceSecret_;
-}
-
-std::string RegistDeviceResult::getDeviceStatus()const
-{
-	return deviceStatus_;
-}
-
-std::string RegistDeviceResult::getErrorMessage()const
+std::string DeleteProductResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string RegistDeviceResult::getCode()const
+std::string DeleteProductResult::getCode()const
 {
 	return code_;
 }
 
-bool RegistDeviceResult::getSuccess()const
+bool DeleteProductResult::getSuccess()const
 {
 	return success_;
-}
-
-std::string RegistDeviceResult::getDeviceName()const
-{
-	return deviceName_;
 }
 

@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::QueryTopicReverseRouteTableRequest;
 
 QueryTopicReverseRouteTableRequest::QueryTopicReverseRouteTableRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "QueryTopicReverseRouteTable")
+	RpcServiceRequest("iot", "2018-01-20", "QueryTopicReverseRouteTable")
 {}
 
 QueryTopicReverseRouteTableRequest::~QueryTopicReverseRouteTableRequest()

@@ -1,3 +1,7 @@
+2018-09-06 Version: 1.25.1
+1, Add API deleteProduct.
+2, Move all API to version 20180120.
+
 2018-09-05 Version: 1.25.0
 1, Add new APIs with control policy for querying price
 

@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::QueryPageByApplyIdRequest;
 
 QueryPageByApplyIdRequest::QueryPageByApplyIdRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "QueryPageByApplyId")
+	RpcServiceRequest("iot", "2018-01-20", "QueryPageByApplyId")
 {}
 
 QueryPageByApplyIdRequest::~QueryPageByApplyIdRequest()

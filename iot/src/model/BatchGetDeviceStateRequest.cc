@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::BatchGetDeviceStateRequest;
 
 BatchGetDeviceStateRequest::BatchGetDeviceStateRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "BatchGetDeviceState")
+	RpcServiceRequest("iot", "2018-01-20", "BatchGetDeviceState")
 {}
 
 BatchGetDeviceStateRequest::~BatchGetDeviceStateRequest()

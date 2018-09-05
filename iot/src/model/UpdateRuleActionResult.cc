@@ -40,10 +40,10 @@ void UpdateRuleActionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
 

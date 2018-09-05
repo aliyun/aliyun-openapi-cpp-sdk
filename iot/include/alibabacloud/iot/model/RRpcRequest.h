@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getRequestBase64Byte()const;
 				void setRequestBase64Byte(const std::string& requestBase64Byte);
+				std::string getTopic()const;
+				void setTopic(const std::string& topic);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
 				std::string getProductKey()const;
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 
             private:
 				std::string requestBase64Byte_;
+				std::string topic_;
 				std::string deviceName_;
 				std::string productKey_;
 				int timeout_;

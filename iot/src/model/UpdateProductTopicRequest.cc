@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::UpdateProductTopicRequest;
 
 UpdateProductTopicRequest::UpdateProductTopicRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "UpdateProductTopic")
+	RpcServiceRequest("iot", "2018-01-20", "UpdateProductTopic")
 {}
 
 UpdateProductTopicRequest::~UpdateProductTopicRequest()

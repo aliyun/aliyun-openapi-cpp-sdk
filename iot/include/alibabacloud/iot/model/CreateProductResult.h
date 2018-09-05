@@ -32,19 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_IOT_EXPORT CreateProductResult : public ServiceResult
 			{
 			public:
-				struct ProductInfo
+				struct Data
 				{
-					std::string gmtCreate;
+					std::string description;
 					std::string productName;
-					std::string extProps;
+					std::string aliyunCommodityCode;
 					bool id2;
+					std::string protocolType;
 					int nodeType;
-					std::string fromSource;
-					std::string gmtModified;
-					long createUserId;
-					std::string productDesc;
-					std::string productSecret;
-					long catId;
+					int dataFormat;
 					std::string productKey;
 				};
 
@@ -52,18 +48,20 @@ namespace AlibabaCloud
 				CreateProductResult();
 				explicit CreateProductResult(const std::string &payload);
 				~CreateProductResult();
-				ProductInfo getProductInfo()const;
+				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
+				std::string getProductKey()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				ProductInfo productInfo_;
+				Data data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
+				std::string productKey_;
 
 			};
 		}

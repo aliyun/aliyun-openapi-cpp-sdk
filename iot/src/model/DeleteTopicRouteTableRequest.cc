@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::DeleteTopicRouteTableRequest;
 
 DeleteTopicRouteTableRequest::DeleteTopicRouteTableRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "DeleteTopicRouteTable")
+	RpcServiceRequest("iot", "2018-01-20", "DeleteTopicRouteTable")
 {}
 
 DeleteTopicRouteTableRequest::~DeleteTopicRouteTableRequest()

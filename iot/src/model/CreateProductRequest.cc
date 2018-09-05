@@ -19,21 +19,21 @@
 using AlibabaCloud::Iot::Model::CreateProductRequest;
 
 CreateProductRequest::CreateProductRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "CreateProduct")
+	RpcServiceRequest("iot", "2018-01-20", "CreateProduct")
 {}
 
 CreateProductRequest::~CreateProductRequest()
 {}
 
-long CreateProductRequest::getCatId()const
+int CreateProductRequest::getDataFormat()const
 {
-	return catId_;
+	return dataFormat_;
 }
 
-void CreateProductRequest::setCatId(long catId)
+void CreateProductRequest::setDataFormat(int dataFormat)
 {
-	catId_ = catId;
-	setParameter("CatId", std::to_string(catId));
+	dataFormat_ = dataFormat;
+	setParameter("DataFormat", std::to_string(dataFormat));
 }
 
 int CreateProductRequest::getNodeType()const
@@ -47,17 +47,6 @@ void CreateProductRequest::setNodeType(int nodeType)
 	setParameter("NodeType", std::to_string(nodeType));
 }
 
-std::string CreateProductRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateProductRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 bool CreateProductRequest::getId2()const
 {
 	return id2_;
@@ -69,48 +58,59 @@ void CreateProductRequest::setId2(bool id2)
 	setParameter("Id2", std::to_string(id2));
 }
 
-std::string CreateProductRequest::getName()const
+std::string CreateProductRequest::getProductName()const
 {
-	return name_;
+	return productName_;
 }
 
-void CreateProductRequest::setName(const std::string& name)
+void CreateProductRequest::setProductName(const std::string& productName)
 {
-	name_ = name;
-	setParameter("Name", name);
+	productName_ = productName;
+	setParameter("ProductName", productName);
 }
 
-std::string CreateProductRequest::getExtProps()const
+std::string CreateProductRequest::getDescription()const
 {
-	return extProps_;
+	return description_;
 }
 
-void CreateProductRequest::setExtProps(const std::string& extProps)
+void CreateProductRequest::setDescription(const std::string& description)
 {
-	extProps_ = extProps;
-	setParameter("ExtProps", extProps);
+	description_ = description;
+	setParameter("Description", description);
 }
 
-std::string CreateProductRequest::getSecurityPolicy()const
+std::string CreateProductRequest::getProtocolType()const
 {
-	return securityPolicy_;
+	return protocolType_;
 }
 
-void CreateProductRequest::setSecurityPolicy(const std::string& securityPolicy)
+void CreateProductRequest::setProtocolType(const std::string& protocolType)
 {
-	securityPolicy_ = securityPolicy;
-	setParameter("SecurityPolicy", securityPolicy);
+	protocolType_ = protocolType;
+	setParameter("ProtocolType", protocolType);
 }
 
-int CreateProductRequest::getPayType()const
+std::string CreateProductRequest::getAliyunCommodityCode()const
 {
-	return payType_;
+	return aliyunCommodityCode_;
 }
 
-void CreateProductRequest::setPayType(int payType)
+void CreateProductRequest::setAliyunCommodityCode(const std::string& aliyunCommodityCode)
 {
-	payType_ = payType;
-	setParameter("PayType", std::to_string(payType));
+	aliyunCommodityCode_ = aliyunCommodityCode;
+	setParameter("AliyunCommodityCode", aliyunCommodityCode);
+}
+
+long CreateProductRequest::getCategoryId()const
+{
+	return categoryId_;
+}
+
+void CreateProductRequest::setCategoryId(long categoryId)
+{
+	categoryId_ = categoryId;
+	setParameter("CategoryId", std::to_string(categoryId));
 }
 
 std::string CreateProductRequest::getAccessKeyId()const
@@ -122,16 +122,5 @@ void CreateProductRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateProductRequest::getDesc()const
-{
-	return desc_;
-}
-
-void CreateProductRequest::setDesc(const std::string& desc)
-{
-	desc_ = desc;
-	setParameter("Desc", desc);
 }
 

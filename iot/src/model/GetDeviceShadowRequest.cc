@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::GetDeviceShadowRequest;
 
 GetDeviceShadowRequest::GetDeviceShadowRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "GetDeviceShadow")
+	RpcServiceRequest("iot", "2018-01-20", "GetDeviceShadow")
 {}
 
 GetDeviceShadowRequest::~GetDeviceShadowRequest()

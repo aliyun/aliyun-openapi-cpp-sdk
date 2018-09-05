@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::CreateProductTopicRequest;
 
 CreateProductTopicRequest::CreateProductTopicRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "CreateProductTopic")
+	RpcServiceRequest("iot", "2018-01-20", "CreateProductTopic")
 {}
 
 CreateProductTopicRequest::~CreateProductTopicRequest()

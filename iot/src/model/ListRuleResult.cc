@@ -68,8 +68,12 @@ void ListRuleResult::parse(const std::string &payload)
 			dataObject.ruleDesc = value["RuleDesc"].asString();
 		if(!value["Created"].isNull())
 			dataObject.created = value["Created"].asString();
+		if(!value["UtcCreated"].isNull())
+			dataObject.utcCreated = value["UtcCreated"].asString();
 		if(!value["Modified"].isNull())
 			dataObject.modified = value["Modified"].asString();
+		if(!value["UtcModified"].isNull())
+			dataObject.utcModified = value["UtcModified"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

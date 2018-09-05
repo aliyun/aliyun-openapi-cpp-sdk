@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::UpdateRuleActionRequest;
 
 UpdateRuleActionRequest::UpdateRuleActionRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "UpdateRuleAction")
+	RpcServiceRequest("iot", "2018-01-20", "UpdateRuleAction")
 {}
 
 UpdateRuleActionRequest::~UpdateRuleActionRequest()

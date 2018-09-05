@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::RRpcRequest;
 
 RRpcRequest::RRpcRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "RRpc")
+	RpcServiceRequest("iot", "2018-01-20", "RRpc")
 {}
 
 RRpcRequest::~RRpcRequest()
@@ -34,6 +34,17 @@ void RRpcRequest::setRequestBase64Byte(const std::string& requestBase64Byte)
 {
 	requestBase64Byte_ = requestBase64Byte;
 	setParameter("RequestBase64Byte", requestBase64Byte);
+}
+
+std::string RRpcRequest::getTopic()const
+{
+	return topic_;
+}
+
+void RRpcRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setParameter("Topic", topic);
 }
 
 std::string RRpcRequest::getDeviceName()const

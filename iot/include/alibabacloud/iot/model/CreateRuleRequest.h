@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setWhere(const std::string& where);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
+				int getTopicType()const;
+				void setTopicType(int topicType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getShortTopic()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 				std::string name_;
 				std::string where_;
 				std::string productKey_;
+				int topicType_;
 				std::string accessKeyId_;
 				std::string shortTopic_;
 

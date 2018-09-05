@@ -19,33 +19,11 @@
 using AlibabaCloud::Iot::Model::UpdateProductRequest;
 
 UpdateProductRequest::UpdateProductRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "UpdateProduct")
+	RpcServiceRequest("iot", "2018-01-20", "UpdateProduct")
 {}
 
 UpdateProductRequest::~UpdateProductRequest()
 {}
-
-long UpdateProductRequest::getCatId()const
-{
-	return catId_;
-}
-
-void UpdateProductRequest::setCatId(long catId)
-{
-	catId_ = catId;
-	setParameter("CatId", std::to_string(catId));
-}
-
-int UpdateProductRequest::getNodeType()const
-{
-	return nodeType_;
-}
-
-void UpdateProductRequest::setNodeType(int nodeType)
-{
-	nodeType_ = nodeType;
-	setParameter("NodeType", std::to_string(nodeType));
-}
 
 std::string UpdateProductRequest::getProductName()const
 {
@@ -58,15 +36,15 @@ void UpdateProductRequest::setProductName(const std::string& productName)
 	setParameter("ProductName", productName);
 }
 
-std::string UpdateProductRequest::getExtProps()const
+std::string UpdateProductRequest::getDescription()const
 {
-	return extProps_;
+	return description_;
 }
 
-void UpdateProductRequest::setExtProps(const std::string& extProps)
+void UpdateProductRequest::setDescription(const std::string& description)
 {
-	extProps_ = extProps;
-	setParameter("ExtProps", extProps);
+	description_ = description;
+	setParameter("Description", description);
 }
 
 std::string UpdateProductRequest::getProductKey()const
@@ -78,17 +56,6 @@ void UpdateProductRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
 	setParameter("ProductKey", productKey);
-}
-
-std::string UpdateProductRequest::getProductDesc()const
-{
-	return productDesc_;
-}
-
-void UpdateProductRequest::setProductDesc(const std::string& productDesc)
-{
-	productDesc_ = productDesc;
-	setParameter("ProductDesc", productDesc);
 }
 
 std::string UpdateProductRequest::getAccessKeyId()const

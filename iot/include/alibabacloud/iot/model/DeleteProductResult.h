@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_REGISTDEVICERESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_REGISTDEVICERESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_DELETEPRODUCTRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_DELETEPRODUCTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT RegistDeviceResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT DeleteProductResult : public ServiceResult
 			{
 			public:
 
 
-				RegistDeviceResult();
-				explicit RegistDeviceResult(const std::string &payload);
-				~RegistDeviceResult();
-				std::string getDeviceId()const;
-				std::string getDeviceSecret()const;
-				std::string getDeviceStatus()const;
+				DeleteProductResult();
+				explicit DeleteProductResult(const std::string &payload);
+				~DeleteProductResult();
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
-				std::string getDeviceName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string deviceId_;
-				std::string deviceSecret_;
-				std::string deviceStatus_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
-				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_REGISTDEVICERESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_DELETEPRODUCTRESULT_H_

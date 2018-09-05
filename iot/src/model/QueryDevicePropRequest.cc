@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::QueryDevicePropRequest;
 
 QueryDevicePropRequest::QueryDevicePropRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "QueryDeviceProp")
+	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceProp")
 {}
 
 QueryDevicePropRequest::~QueryDevicePropRequest()

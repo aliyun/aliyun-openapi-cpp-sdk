@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::SaveDevicePropRequest;
 
 SaveDevicePropRequest::SaveDevicePropRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "SaveDeviceProp")
+	RpcServiceRequest("iot", "2018-01-20", "SaveDeviceProp")
 {}
 
 SaveDevicePropRequest::~SaveDevicePropRequest()

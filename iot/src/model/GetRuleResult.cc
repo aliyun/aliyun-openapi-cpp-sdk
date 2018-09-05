@@ -61,12 +61,18 @@ void GetRuleResult::parse(const std::string &payload)
 		ruleInfo_.name = ruleInfoNode["Name"].asString();
 	if(!ruleInfoNode["RuleDesc"].isNull())
 		ruleInfo_.ruleDesc = ruleInfoNode["RuleDesc"].asString();
-	if(!ruleInfoNode["Created"].isNull())
-		ruleInfo_.created = ruleInfoNode["Created"].asString();
 	if(!ruleInfoNode["DataType"].isNull())
 		ruleInfo_.dataType = ruleInfoNode["DataType"].asString();
+	if(!ruleInfoNode["Created"].isNull())
+		ruleInfo_.created = ruleInfoNode["Created"].asString();
+	if(!ruleInfoNode["UtcCreated"].isNull())
+		ruleInfo_.utcCreated = ruleInfoNode["UtcCreated"].asString();
 	if(!ruleInfoNode["Modified"].isNull())
 		ruleInfo_.modified = ruleInfoNode["Modified"].asString();
+	if(!ruleInfoNode["UtcModified"].isNull())
+		ruleInfo_.utcModified = ruleInfoNode["UtcModified"].asString();
+	if(!ruleInfoNode["TopicType"].isNull())
+		ruleInfo_.topicType = std::stoi(ruleInfoNode["TopicType"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

@@ -22,8 +22,6 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "IotExport.h"
-#include "model/RegistDeviceRequest.h"
-#include "model/RegistDeviceResult.h"
 #include "model/DeleteTopicRouteTableRequest.h"
 #include "model/DeleteTopicRouteTableResult.h"
 #include "model/QueryDeviceEventDataRequest.h"
@@ -38,8 +36,6 @@
 #include "model/RRpcResult.h"
 #include "model/DeleteRuleRequest.h"
 #include "model/DeleteRuleResult.h"
-#include "model/QueryDeviceByNameRequest.h"
-#include "model/QueryDeviceByNameResult.h"
 #include "model/QueryProductTopicRequest.h"
 #include "model/QueryProductTopicResult.h"
 #include "model/GetThingTopoRequest.h"
@@ -96,8 +92,6 @@
 #include "model/CreateRuleResult.h"
 #include "model/StartRuleRequest.h"
 #include "model/StartRuleResult.h"
-#include "model/ApplyDeviceWithNamesRequest.h"
-#include "model/ApplyDeviceWithNamesResult.h"
 #include "model/QueryProductListRequest.h"
 #include "model/QueryProductListResult.h"
 #include "model/QueryDevicePropertyStatusRequest.h"
@@ -106,12 +100,12 @@
 #include "model/QueryDeviceStatisticsResult.h"
 #include "model/PubRequest.h"
 #include "model/PubResult.h"
+#include "model/DeleteProductRequest.h"
+#include "model/DeleteProductResult.h"
 #include "model/SaveDevicePropRequest.h"
 #include "model/SaveDevicePropResult.h"
 #include "model/DeleteProductTopicRequest.h"
 #include "model/DeleteProductTopicResult.h"
-#include "model/QueryApplyStatusRequest.h"
-#include "model/QueryApplyStatusResult.h"
 #include "model/QueryDeviceServiceDataRequest.h"
 #include "model/QueryDeviceServiceDataResult.h"
 #include "model/BatchRegisterDeviceWithApplyIdRequest.h"
@@ -151,9 +145,6 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_IOT_EXPORT IotClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::RegistDeviceResult> RegistDeviceOutcome;
-			typedef std::future<RegistDeviceOutcome> RegistDeviceOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::RegistDeviceRequest&, const RegistDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegistDeviceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteTopicRouteTableResult> DeleteTopicRouteTableOutcome;
 			typedef std::future<DeleteTopicRouteTableOutcome> DeleteTopicRouteTableOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteTopicRouteTableRequest&, const DeleteTopicRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicRouteTableAsyncHandler;
@@ -175,9 +166,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRuleResult> DeleteRuleOutcome;
 			typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteRuleRequest&, const DeleteRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRuleAsyncHandler;
-			typedef Outcome<Error, Model::QueryDeviceByNameResult> QueryDeviceByNameOutcome;
-			typedef std::future<QueryDeviceByNameOutcome> QueryDeviceByNameOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::QueryDeviceByNameRequest&, const QueryDeviceByNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceByNameAsyncHandler;
 			typedef Outcome<Error, Model::QueryProductTopicResult> QueryProductTopicOutcome;
 			typedef std::future<QueryProductTopicOutcome> QueryProductTopicOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryProductTopicRequest&, const QueryProductTopicOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryProductTopicAsyncHandler;
@@ -262,9 +250,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartRuleResult> StartRuleOutcome;
 			typedef std::future<StartRuleOutcome> StartRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::StartRuleRequest&, const StartRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRuleAsyncHandler;
-			typedef Outcome<Error, Model::ApplyDeviceWithNamesResult> ApplyDeviceWithNamesOutcome;
-			typedef std::future<ApplyDeviceWithNamesOutcome> ApplyDeviceWithNamesOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::ApplyDeviceWithNamesRequest&, const ApplyDeviceWithNamesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyDeviceWithNamesAsyncHandler;
 			typedef Outcome<Error, Model::QueryProductListResult> QueryProductListOutcome;
 			typedef std::future<QueryProductListOutcome> QueryProductListOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryProductListRequest&, const QueryProductListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryProductListAsyncHandler;
@@ -277,15 +262,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PubResult> PubOutcome;
 			typedef std::future<PubOutcome> PubOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::PubRequest&, const PubOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PubAsyncHandler;
+			typedef Outcome<Error, Model::DeleteProductResult> DeleteProductOutcome;
+			typedef std::future<DeleteProductOutcome> DeleteProductOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DeleteProductRequest&, const DeleteProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProductAsyncHandler;
 			typedef Outcome<Error, Model::SaveDevicePropResult> SaveDevicePropOutcome;
 			typedef std::future<SaveDevicePropOutcome> SaveDevicePropOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::SaveDevicePropRequest&, const SaveDevicePropOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveDevicePropAsyncHandler;
 			typedef Outcome<Error, Model::DeleteProductTopicResult> DeleteProductTopicOutcome;
 			typedef std::future<DeleteProductTopicOutcome> DeleteProductTopicOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteProductTopicRequest&, const DeleteProductTopicOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProductTopicAsyncHandler;
-			typedef Outcome<Error, Model::QueryApplyStatusResult> QueryApplyStatusOutcome;
-			typedef std::future<QueryApplyStatusOutcome> QueryApplyStatusOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::QueryApplyStatusRequest&, const QueryApplyStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryApplyStatusAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceServiceDataResult> QueryDeviceServiceDataOutcome;
 			typedef std::future<QueryDeviceServiceDataOutcome> QueryDeviceServiceDataOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceServiceDataRequest&, const QueryDeviceServiceDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceServiceDataAsyncHandler;
@@ -336,9 +321,6 @@ namespace AlibabaCloud
 			IotClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			IotClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~IotClient();
-			RegistDeviceOutcome registDevice(const Model::RegistDeviceRequest &request)const;
-			void registDeviceAsync(const Model::RegistDeviceRequest& request, const RegistDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RegistDeviceOutcomeCallable registDeviceCallable(const Model::RegistDeviceRequest& request) const;
 			DeleteTopicRouteTableOutcome deleteTopicRouteTable(const Model::DeleteTopicRouteTableRequest &request)const;
 			void deleteTopicRouteTableAsync(const Model::DeleteTopicRouteTableRequest& request, const DeleteTopicRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTopicRouteTableOutcomeCallable deleteTopicRouteTableCallable(const Model::DeleteTopicRouteTableRequest& request) const;
@@ -360,9 +342,6 @@ namespace AlibabaCloud
 			DeleteRuleOutcome deleteRule(const Model::DeleteRuleRequest &request)const;
 			void deleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRuleOutcomeCallable deleteRuleCallable(const Model::DeleteRuleRequest& request) const;
-			QueryDeviceByNameOutcome queryDeviceByName(const Model::QueryDeviceByNameRequest &request)const;
-			void queryDeviceByNameAsync(const Model::QueryDeviceByNameRequest& request, const QueryDeviceByNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryDeviceByNameOutcomeCallable queryDeviceByNameCallable(const Model::QueryDeviceByNameRequest& request) const;
 			QueryProductTopicOutcome queryProductTopic(const Model::QueryProductTopicRequest &request)const;
 			void queryProductTopicAsync(const Model::QueryProductTopicRequest& request, const QueryProductTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryProductTopicOutcomeCallable queryProductTopicCallable(const Model::QueryProductTopicRequest& request) const;
@@ -447,9 +426,6 @@ namespace AlibabaCloud
 			StartRuleOutcome startRule(const Model::StartRuleRequest &request)const;
 			void startRuleAsync(const Model::StartRuleRequest& request, const StartRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartRuleOutcomeCallable startRuleCallable(const Model::StartRuleRequest& request) const;
-			ApplyDeviceWithNamesOutcome applyDeviceWithNames(const Model::ApplyDeviceWithNamesRequest &request)const;
-			void applyDeviceWithNamesAsync(const Model::ApplyDeviceWithNamesRequest& request, const ApplyDeviceWithNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ApplyDeviceWithNamesOutcomeCallable applyDeviceWithNamesCallable(const Model::ApplyDeviceWithNamesRequest& request) const;
 			QueryProductListOutcome queryProductList(const Model::QueryProductListRequest &request)const;
 			void queryProductListAsync(const Model::QueryProductListRequest& request, const QueryProductListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryProductListOutcomeCallable queryProductListCallable(const Model::QueryProductListRequest& request) const;
@@ -462,15 +438,15 @@ namespace AlibabaCloud
 			PubOutcome pub(const Model::PubRequest &request)const;
 			void pubAsync(const Model::PubRequest& request, const PubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PubOutcomeCallable pubCallable(const Model::PubRequest& request) const;
+			DeleteProductOutcome deleteProduct(const Model::DeleteProductRequest &request)const;
+			void deleteProductAsync(const Model::DeleteProductRequest& request, const DeleteProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteProductOutcomeCallable deleteProductCallable(const Model::DeleteProductRequest& request) const;
 			SaveDevicePropOutcome saveDeviceProp(const Model::SaveDevicePropRequest &request)const;
 			void saveDevicePropAsync(const Model::SaveDevicePropRequest& request, const SaveDevicePropAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveDevicePropOutcomeCallable saveDevicePropCallable(const Model::SaveDevicePropRequest& request) const;
 			DeleteProductTopicOutcome deleteProductTopic(const Model::DeleteProductTopicRequest &request)const;
 			void deleteProductTopicAsync(const Model::DeleteProductTopicRequest& request, const DeleteProductTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteProductTopicOutcomeCallable deleteProductTopicCallable(const Model::DeleteProductTopicRequest& request) const;
-			QueryApplyStatusOutcome queryApplyStatus(const Model::QueryApplyStatusRequest &request)const;
-			void queryApplyStatusAsync(const Model::QueryApplyStatusRequest& request, const QueryApplyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryApplyStatusOutcomeCallable queryApplyStatusCallable(const Model::QueryApplyStatusRequest& request) const;
 			QueryDeviceServiceDataOutcome queryDeviceServiceData(const Model::QueryDeviceServiceDataRequest &request)const;
 			void queryDeviceServiceDataAsync(const Model::QueryDeviceServiceDataRequest& request, const QueryDeviceServiceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceServiceDataOutcomeCallable queryDeviceServiceDataCallable(const Model::QueryDeviceServiceDataRequest& request) const;

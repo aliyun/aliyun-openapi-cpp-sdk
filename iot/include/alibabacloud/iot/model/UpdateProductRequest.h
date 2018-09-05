@@ -35,28 +35,19 @@ namespace AlibabaCloud
 				UpdateProductRequest();
 				~UpdateProductRequest();
 
-				long getCatId()const;
-				void setCatId(long catId);
-				int getNodeType()const;
-				void setNodeType(int nodeType);
 				std::string getProductName()const;
 				void setProductName(const std::string& productName);
-				std::string getExtProps()const;
-				void setExtProps(const std::string& extProps);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
-				std::string getProductDesc()const;
-				void setProductDesc(const std::string& productDesc);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				long catId_;
-				int nodeType_;
 				std::string productName_;
-				std::string extProps_;
+				std::string description_;
 				std::string productKey_;
-				std::string productDesc_;
 				std::string accessKeyId_;
 
 			};

@@ -19,7 +19,7 @@
 using AlibabaCloud::Iot::Model::UpdateDeviceShadowRequest;
 
 UpdateDeviceShadowRequest::UpdateDeviceShadowRequest() :
-	RpcServiceRequest("iot", "2017-04-20", "UpdateDeviceShadow")
+	RpcServiceRequest("iot", "2018-01-20", "UpdateDeviceShadow")
 {}
 
 UpdateDeviceShadowRequest::~UpdateDeviceShadowRequest()

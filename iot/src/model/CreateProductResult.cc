@@ -40,43 +40,37 @@ void CreateProductResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto productInfoNode = value["ProductInfo"];
-	if(!productInfoNode["ProductKey"].isNull())
-		productInfo_.productKey = productInfoNode["ProductKey"].asString();
-	if(!productInfoNode["ProductName"].isNull())
-		productInfo_.productName = productInfoNode["ProductName"].asString();
-	if(!productInfoNode["NodeType"].isNull())
-		productInfo_.nodeType = std::stoi(productInfoNode["NodeType"].asString());
-	if(!productInfoNode["CatId"].isNull())
-		productInfo_.catId = std::stol(productInfoNode["CatId"].asString());
-	if(!productInfoNode["CreateUserId"].isNull())
-		productInfo_.createUserId = std::stol(productInfoNode["CreateUserId"].asString());
-	if(!productInfoNode["ProductDesc"].isNull())
-		productInfo_.productDesc = productInfoNode["ProductDesc"].asString();
-	if(!productInfoNode["FromSource"].isNull())
-		productInfo_.fromSource = productInfoNode["FromSource"].asString();
-	if(!productInfoNode["ExtProps"].isNull())
-		productInfo_.extProps = productInfoNode["ExtProps"].asString();
-	if(!productInfoNode["GmtCreate"].isNull())
-		productInfo_.gmtCreate = productInfoNode["GmtCreate"].asString();
-	if(!productInfoNode["GmtModified"].isNull())
-		productInfo_.gmtModified = productInfoNode["GmtModified"].asString();
-	if(!productInfoNode["ProductSecret"].isNull())
-		productInfo_.productSecret = productInfoNode["ProductSecret"].asString();
-	if(!productInfoNode["Id2"].isNull())
-		productInfo_.id2 = productInfoNode["Id2"].asString() == "true";
+	auto dataNode = value["Data"];
+	if(!dataNode["DataFormat"].isNull())
+		data_.dataFormat = std::stoi(dataNode["DataFormat"].asString());
+	if(!dataNode["Description"].isNull())
+		data_.description = dataNode["Description"].asString();
+	if(!dataNode["NodeType"].isNull())
+		data_.nodeType = std::stoi(dataNode["NodeType"].asString());
+	if(!dataNode["ProductKey"].isNull())
+		data_.productKey = dataNode["ProductKey"].asString();
+	if(!dataNode["ProductName"].isNull())
+		data_.productName = dataNode["ProductName"].asString();
+	if(!dataNode["AliyunCommodityCode"].isNull())
+		data_.aliyunCommodityCode = dataNode["AliyunCommodityCode"].asString();
+	if(!dataNode["Id2"].isNull())
+		data_.id2 = dataNode["Id2"].asString() == "true";
+	if(!dataNode["ProtocolType"].isNull())
+		data_.protocolType = dataNode["ProtocolType"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ProductKey"].isNull())
+		productKey_ = value["ProductKey"].asString();
 
 }
 
-CreateProductResult::ProductInfo CreateProductResult::getProductInfo()const
+CreateProductResult::Data CreateProductResult::getData()const
 {
-	return productInfo_;
+	return data_;
 }
 
 std::string CreateProductResult::getErrorMessage()const
@@ -92,5 +86,10 @@ std::string CreateProductResult::getCode()const
 bool CreateProductResult::getSuccess()const
 {
 	return success_;
+}
+
+std::string CreateProductResult::getProductKey()const
+{
+	return productKey_;
 }
 
