@@ -53,6 +53,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/StartNodesResult.h
 	include/alibabacloud/ehpc/model/GetCloudMetricProfilingRequest.h
 	include/alibabacloud/ehpc/model/GetCloudMetricProfilingResult.h
+	include/alibabacloud/ehpc/model/DescribeImagePriceRequest.h
+	include/alibabacloud/ehpc/model/DescribeImagePriceResult.h
 	include/alibabacloud/ehpc/model/GetAutoScaleConfigRequest.h
 	include/alibabacloud/ehpc/model/GetAutoScaleConfigResult.h
 	include/alibabacloud/ehpc/model/ListNodesRequest.h
@@ -135,6 +137,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/DescribeAutoScaleConfigResult.h
 	include/alibabacloud/ehpc/model/RunCloudMetricProfilingRequest.h
 	include/alibabacloud/ehpc/model/RunCloudMetricProfilingResult.h
+	include/alibabacloud/ehpc/model/DescribePriceRequest.h
+	include/alibabacloud/ehpc/model/DescribePriceResult.h
 	include/alibabacloud/ehpc/model/RerunJobsRequest.h
 	include/alibabacloud/ehpc/model/RerunJobsResult.h
 	include/alibabacloud/ehpc/model/EditJobTemplateRequest.h
@@ -184,6 +188,8 @@ set(ehpc_src
 	src/model/StartNodesResult.cc
 	src/model/GetCloudMetricProfilingRequest.cc
 	src/model/GetCloudMetricProfilingResult.cc
+	src/model/DescribeImagePriceRequest.cc
+	src/model/DescribeImagePriceResult.cc
 	src/model/GetAutoScaleConfigRequest.cc
 	src/model/GetAutoScaleConfigResult.cc
 	src/model/ListNodesRequest.cc
@@ -266,6 +272,8 @@ set(ehpc_src
 	src/model/DescribeAutoScaleConfigResult.cc
 	src/model/RunCloudMetricProfilingRequest.cc
 	src/model/RunCloudMetricProfilingResult.cc
+	src/model/DescribePriceRequest.cc
+	src/model/DescribePriceResult.cc
 	src/model/RerunJobsRequest.cc
 	src/model/RerunJobsResult.cc
 	src/model/EditJobTemplateRequest.cc

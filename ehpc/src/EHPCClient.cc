@@ -627,6 +627,42 @@ EHPCClient::GetCloudMetricProfilingOutcomeCallable EHPCClient::getCloudMetricPro
 	return task->get_future();
 }
 
+EHPCClient::DescribeImagePriceOutcome EHPCClient::describeImagePrice(const DescribeImagePriceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeImagePriceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeImagePriceOutcome(DescribeImagePriceResult(outcome.result()));
+	else
+		return DescribeImagePriceOutcome(outcome.error());
+}
+
+void EHPCClient::describeImagePriceAsync(const DescribeImagePriceRequest& request, const DescribeImagePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeImagePrice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::DescribeImagePriceOutcomeCallable EHPCClient::describeImagePriceCallable(const DescribeImagePriceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeImagePriceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeImagePrice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::GetAutoScaleConfigOutcome EHPCClient::getAutoScaleConfig(const GetAutoScaleConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2097,6 +2133,42 @@ EHPCClient::RunCloudMetricProfilingOutcomeCallable EHPCClient::runCloudMetricPro
 			[this, request]()
 			{
 			return this->runCloudMetricProfiling(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::DescribePriceOutcome EHPCClient::describePrice(const DescribePriceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePriceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePriceOutcome(DescribePriceResult(outcome.result()));
+	else
+		return DescribePriceOutcome(outcome.error());
+}
+
+void EHPCClient::describePriceAsync(const DescribePriceRequest& request, const DescribePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePrice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::DescribePriceOutcomeCallable EHPCClient::describePriceCallable(const DescribePriceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePriceOutcome()>>(
+			[this, request]()
+			{
+			return this->describePrice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

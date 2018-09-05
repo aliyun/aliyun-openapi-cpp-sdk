@@ -54,6 +54,8 @@
 #include "model/StartNodesResult.h"
 #include "model/GetCloudMetricProfilingRequest.h"
 #include "model/GetCloudMetricProfilingResult.h"
+#include "model/DescribeImagePriceRequest.h"
+#include "model/DescribeImagePriceResult.h"
 #include "model/GetAutoScaleConfigRequest.h"
 #include "model/GetAutoScaleConfigResult.h"
 #include "model/ListNodesRequest.h"
@@ -136,6 +138,8 @@
 #include "model/DescribeAutoScaleConfigResult.h"
 #include "model/RunCloudMetricProfilingRequest.h"
 #include "model/RunCloudMetricProfilingResult.h"
+#include "model/DescribePriceRequest.h"
+#include "model/DescribePriceResult.h"
 #include "model/RerunJobsRequest.h"
 #include "model/RerunJobsResult.h"
 #include "model/EditJobTemplateRequest.h"
@@ -207,6 +211,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCloudMetricProfilingResult> GetCloudMetricProfilingOutcome;
 			typedef std::future<GetCloudMetricProfilingOutcome> GetCloudMetricProfilingOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetCloudMetricProfilingRequest&, const GetCloudMetricProfilingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCloudMetricProfilingAsyncHandler;
+			typedef Outcome<Error, Model::DescribeImagePriceResult> DescribeImagePriceOutcome;
+			typedef std::future<DescribeImagePriceOutcome> DescribeImagePriceOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::DescribeImagePriceRequest&, const DescribeImagePriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagePriceAsyncHandler;
 			typedef Outcome<Error, Model::GetAutoScaleConfigResult> GetAutoScaleConfigOutcome;
 			typedef std::future<GetAutoScaleConfigOutcome> GetAutoScaleConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetAutoScaleConfigRequest&, const GetAutoScaleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAutoScaleConfigAsyncHandler;
@@ -330,6 +337,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RunCloudMetricProfilingResult> RunCloudMetricProfilingOutcome;
 			typedef std::future<RunCloudMetricProfilingOutcome> RunCloudMetricProfilingOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::RunCloudMetricProfilingRequest&, const RunCloudMetricProfilingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunCloudMetricProfilingAsyncHandler;
+			typedef Outcome<Error, Model::DescribePriceResult> DescribePriceOutcome;
+			typedef std::future<DescribePriceOutcome> DescribePriceOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::DescribePriceRequest&, const DescribePriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceAsyncHandler;
 			typedef Outcome<Error, Model::RerunJobsResult> RerunJobsOutcome;
 			typedef std::future<RerunJobsOutcome> RerunJobsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::RerunJobsRequest&, const RerunJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RerunJobsAsyncHandler;
@@ -404,6 +414,9 @@ namespace AlibabaCloud
 			GetCloudMetricProfilingOutcome getCloudMetricProfiling(const Model::GetCloudMetricProfilingRequest &request)const;
 			void getCloudMetricProfilingAsync(const Model::GetCloudMetricProfilingRequest& request, const GetCloudMetricProfilingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCloudMetricProfilingOutcomeCallable getCloudMetricProfilingCallable(const Model::GetCloudMetricProfilingRequest& request) const;
+			DescribeImagePriceOutcome describeImagePrice(const Model::DescribeImagePriceRequest &request)const;
+			void describeImagePriceAsync(const Model::DescribeImagePriceRequest& request, const DescribeImagePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeImagePriceOutcomeCallable describeImagePriceCallable(const Model::DescribeImagePriceRequest& request) const;
 			GetAutoScaleConfigOutcome getAutoScaleConfig(const Model::GetAutoScaleConfigRequest &request)const;
 			void getAutoScaleConfigAsync(const Model::GetAutoScaleConfigRequest& request, const GetAutoScaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAutoScaleConfigOutcomeCallable getAutoScaleConfigCallable(const Model::GetAutoScaleConfigRequest& request) const;
@@ -527,6 +540,9 @@ namespace AlibabaCloud
 			RunCloudMetricProfilingOutcome runCloudMetricProfiling(const Model::RunCloudMetricProfilingRequest &request)const;
 			void runCloudMetricProfilingAsync(const Model::RunCloudMetricProfilingRequest& request, const RunCloudMetricProfilingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RunCloudMetricProfilingOutcomeCallable runCloudMetricProfilingCallable(const Model::RunCloudMetricProfilingRequest& request) const;
+			DescribePriceOutcome describePrice(const Model::DescribePriceRequest &request)const;
+			void describePriceAsync(const Model::DescribePriceRequest& request, const DescribePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePriceOutcomeCallable describePriceCallable(const Model::DescribePriceRequest& request) const;
 			RerunJobsOutcome rerunJobs(const Model::RerunJobsRequest &request)const;
 			void rerunJobsAsync(const Model::RerunJobsRequest& request, const RerunJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RerunJobsOutcomeCallable rerunJobsCallable(const Model::RerunJobsRequest& request) const;
