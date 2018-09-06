@@ -47,6 +47,17 @@ void CreateScalingGroupRequest::setDBInstanceIds(const std::string& dBInstanceId
 	setParameter("DBInstanceIds", dBInstanceIds);
 }
 
+std::string CreateScalingGroupRequest::getLaunchTemplateId()const
+{
+	return launchTemplateId_;
+}
+
+void CreateScalingGroupRequest::setLaunchTemplateId(const std::string& launchTemplateId)
+{
+	launchTemplateId_ = launchTemplateId;
+	setParameter("LaunchTemplateId", launchTemplateId);
+}
+
 std::string CreateScalingGroupRequest::getLoadBalancerIds()const
 {
 	return loadBalancerIds_;
@@ -134,6 +145,17 @@ void CreateScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateScalingGroupRequest::getLaunchTemplateVersion()const
+{
+	return launchTemplateVersion_;
+}
+
+void CreateScalingGroupRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
+{
+	launchTemplateVersion_ = launchTemplateVersion;
+	setParameter("LaunchTemplateVersion", launchTemplateVersion);
 }
 
 std::string CreateScalingGroupRequest::getAccessKeyId()const

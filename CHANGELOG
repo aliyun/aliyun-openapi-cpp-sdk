@@ -1,3 +1,6 @@
+2018-09-06 Version: 1.25.2
+1, AutoScaling support launchTemplate.
+
 2018-09-06 Version: 1.25.1
 1, Add API deleteProduct.
 2, Move all API to version 20180120.

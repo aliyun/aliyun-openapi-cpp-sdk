@@ -47,6 +47,17 @@ void ModifyScalingGroupRequest::setHealthCheckType(const std::string& healthChec
 	setParameter("HealthCheckType", healthCheckType);
 }
 
+std::string ModifyScalingGroupRequest::getLaunchTemplateId()const
+{
+	return launchTemplateId_;
+}
+
+void ModifyScalingGroupRequest::setLaunchTemplateId(const std::string& launchTemplateId)
+{
+	launchTemplateId_ = launchTemplateId;
+	setParameter("LaunchTemplateId", launchTemplateId);
+}
+
 std::string ModifyScalingGroupRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -122,6 +133,17 @@ void ModifyScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyScalingGroupRequest::getLaunchTemplateVersion()const
+{
+	return launchTemplateVersion_;
+}
+
+void ModifyScalingGroupRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
+{
+	launchTemplateVersion_ = launchTemplateVersion;
+	setParameter("LaunchTemplateVersion", launchTemplateVersion);
 }
 
 std::string ModifyScalingGroupRequest::getAccessKeyId()const

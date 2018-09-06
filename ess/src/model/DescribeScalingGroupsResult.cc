@@ -66,6 +66,10 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.protectedCapacity = std::stoi(value["ProtectedCapacity"].asString());
 		if(!value["ActiveScalingConfigurationId"].isNull())
 			scalingGroupsObject.activeScalingConfigurationId = value["ActiveScalingConfigurationId"].asString();
+		if(!value["LaunchTemplateId"].isNull())
+			scalingGroupsObject.launchTemplateId = value["LaunchTemplateId"].asString();
+		if(!value["LaunchTemplateVersion"].isNull())
+			scalingGroupsObject.launchTemplateVersion = value["LaunchTemplateVersion"].asString();
 		if(!value["ScalingGroupId"].isNull())
 			scalingGroupsObject.scalingGroupId = value["ScalingGroupId"].asString();
 		if(!value["RegionId"].isNull())

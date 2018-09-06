@@ -80,7 +80,7 @@ void DescribeAlarmsResult::parse(const std::string &payload)
 				dimensionsObject.dimensionValue = value["DimensionValue"].asString();
 			alarmListObject.dimensions.push_back(dimensionsObject);
 		}
-		auto allAlarmActions = value["alarmActions"]["alarmAction"];
+		auto allAlarmActions = value["AlarmActions"]["AlarmAction"];
 		for (auto value : allAlarmActions)
 			alarmListObject.alarmActions.push_back(value.asString());
 		alarmList_.push_back(alarmListObject);

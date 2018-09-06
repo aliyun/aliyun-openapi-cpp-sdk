@@ -48,6 +48,8 @@ namespace AlibabaCloud
 				void setMultiAZPolicy(const std::string& multiAZPolicy);
 				std::string getDBInstanceIds()const;
 				void setDBInstanceIds(const std::string& dBInstanceIds);
+				std::string getLaunchTemplateId()const;
+				void setLaunchTemplateId(const std::string& launchTemplateId);
 				std::string getLoadBalancerIds()const;
 				void setLoadBalancerIds(const std::string& loadBalancerIds);
 				std::string getHealthCheckType()const;
@@ -64,6 +66,8 @@ namespace AlibabaCloud
 				void setMinSize(int minSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getLaunchTemplateVersion()const;
+				void setLaunchTemplateVersion(const std::string& launchTemplateVersion);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getVSwitchId()const;
@@ -84,6 +88,7 @@ namespace AlibabaCloud
             private:
 				std::string multiAZPolicy_;
 				std::string dBInstanceIds_;
+				std::string launchTemplateId_;
 				std::string loadBalancerIds_;
 				std::string healthCheckType_;
 				std::string resourceOwnerAccount_;
@@ -92,6 +97,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				int minSize_;
 				long ownerId_;
+				std::string launchTemplateVersion_;
 				std::string accessKeyId_;
 				std::string vSwitchId_;
 				std::string regionId_;

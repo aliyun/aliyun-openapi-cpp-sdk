@@ -49,12 +49,14 @@ namespace AlibabaCloud
 					std::string scalingGroupId;
 					std::string vSwitchId;
 					std::vector<std::string> loadBalancerIds;
+					std::string launchTemplateId;
 					int maxSize;
 					std::string scalingGroupName;
 					int activeCapacity;
 					int minSize;
 					int defaultCooldown;
 					std::string vpcId;
+					std::string launchTemplateVersion;
 					std::string creationTime;
 					std::string multiAZPolicy;
 					std::string regionId;

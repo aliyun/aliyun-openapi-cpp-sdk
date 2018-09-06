@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getHealthCheckType()const;
 				void setHealthCheckType(const std::string& healthCheckType);
+				std::string getLaunchTemplateId()const;
+				void setLaunchTemplateId(const std::string& launchTemplateId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupName()const;
@@ -53,6 +55,8 @@ namespace AlibabaCloud
 				void setMinSize(int minSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getLaunchTemplateVersion()const;
+				void setLaunchTemplateVersion(const std::string& launchTemplateVersion);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				int getMaxSize()const;
@@ -67,6 +71,7 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string healthCheckType_;
+				std::string launchTemplateId_;
 				std::string resourceOwnerAccount_;
 				std::string scalingGroupName_;
 				std::string scalingGroupId_;
@@ -74,6 +79,7 @@ namespace AlibabaCloud
 				std::string activeScalingConfigurationId_;
 				int minSize_;
 				long ownerId_;
+				std::string launchTemplateVersion_;
 				std::string accessKeyId_;
 				int maxSize_;
 				int defaultCooldown_;
