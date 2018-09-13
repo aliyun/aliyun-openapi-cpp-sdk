@@ -843,3 +843,39 @@ RtcClient::DescribeRecordDetailOutcomeCallable RtcClient::describeRecordDetailCa
 	return task->get_future();
 }
 
+RtcClient::CreateChannelTokenOutcome RtcClient::createChannelToken(const CreateChannelTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateChannelTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateChannelTokenOutcome(CreateChannelTokenResult(outcome.result()));
+	else
+		return CreateChannelTokenOutcome(outcome.error());
+}
+
+void RtcClient::createChannelTokenAsync(const CreateChannelTokenRequest& request, const CreateChannelTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createChannelToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::CreateChannelTokenOutcomeCallable RtcClient::createChannelTokenCallable(const CreateChannelTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateChannelTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->createChannelToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

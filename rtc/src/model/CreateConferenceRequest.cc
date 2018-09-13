@@ -201,6 +201,17 @@ void CreateConferenceRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string CreateConferenceRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void CreateConferenceRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string CreateConferenceRequest::getProduct()const
 {
 	return product_;

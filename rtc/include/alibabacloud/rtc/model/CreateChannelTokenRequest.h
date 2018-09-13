@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBEAPPSREQUEST_H_
-#define ALIBABACLOUD_RTC_MODEL_DESCRIBEAPPSREQUEST_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_CREATECHANNELTOKENREQUEST_H_
+#define ALIBABACLOUD_RTC_MODEL_CREATECHANNELTOKENREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,41 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT DescribeAppsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RTC_EXPORT CreateChannelTokenRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeAppsRequest();
-				~DescribeAppsRequest();
+				CreateChannelTokenRequest();
+				~CreateChannelTokenRequest();
 
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
+				std::string getSessionId()const;
+				void setSessionId(const std::string& sessionId);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				std::string getOwnerIdLoginEmail()const;
 				void setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail);
 				std::string getCallerType()const;
 				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUId()const;
+				void setUId(const std::string& uId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRequestContent()const;
 				void setRequestContent(const std::string& requestContent);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
-				std::string getOrder()const;
-				void setOrder(const std::string& order);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
@@ -75,6 +73,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getVersion()const;
 				void setVersion(const std::string& version);
+				std::string getNonce()const;
+				void setNonce(const std::string& nonce);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
 				bool getAk_mfa_present()const;
@@ -85,39 +85,39 @@ namespace AlibabaCloud
 				void setRequestId(const std::string& requestId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
+				std::string getChannelId()const;
+				void setChannelId(const std::string& channelId);
 
             private:
 				long callerParentId_;
 				bool proxy_original_security_transport_;
+				std::string sessionId_;
 				std::string proxy_original_source_ip_;
-				int pageNum_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
+				std::string uId_;
 				std::string securityToken_;
 				std::string requestContent_;
-				int pageSize_;
 				std::string callerBidEmail_;
 				std::string callerUidEmail_;
 				long callerUid_;
-				std::string order_;
 				std::string app_ip_;
 				std::string popProduct_;
 				std::string product_;
 				std::string callerBid_;
 				long ownerId_;
 				std::string version_;
+				std::string nonce_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
 				std::string requestId_;
 				std::string appId_;
-				std::string status_;
+				std::string channelId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBEAPPSREQUEST_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_CREATECHANNELTOKENREQUEST_H_

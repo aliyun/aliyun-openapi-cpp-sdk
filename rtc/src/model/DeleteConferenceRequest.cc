@@ -36,15 +36,15 @@ void DeleteConferenceRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
-std::string DeleteConferenceRequest::getProduct()const
+std::string DeleteConferenceRequest::getPopProduct()const
 {
-	return product_;
+	return popProduct_;
 }
 
-void DeleteConferenceRequest::setProduct(const std::string& product)
+void DeleteConferenceRequest::setPopProduct(const std::string& popProduct)
 {
-	product_ = product;
-	setParameter("Product", product);
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
 }
 
 long DeleteConferenceRequest::getCallerParentId()const

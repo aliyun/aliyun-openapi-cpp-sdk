@@ -190,6 +190,17 @@ void DescribeAppsRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeAppsRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeAppsRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeAppsRequest::getProduct()const
 {
 	return product_;

@@ -66,6 +66,8 @@
 #include "model/UnmuteAudioAllResult.h"
 #include "model/DescribeRecordDetailRequest.h"
 #include "model/DescribeRecordDetailResult.h"
+#include "model/CreateChannelTokenRequest.h"
+#include "model/CreateChannelTokenResult.h"
 
 
 namespace AlibabaCloud
@@ -141,6 +143,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRecordDetailResult> DescribeRecordDetailOutcome;
 			typedef std::future<DescribeRecordDetailOutcome> DescribeRecordDetailOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeRecordDetailRequest&, const DescribeRecordDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordDetailAsyncHandler;
+			typedef Outcome<Error, Model::CreateChannelTokenResult> CreateChannelTokenOutcome;
+			typedef std::future<CreateChannelTokenOutcome> CreateChannelTokenOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::CreateChannelTokenRequest&, const CreateChannelTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateChannelTokenAsyncHandler;
 
 			RtcClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			RtcClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -212,6 +217,9 @@ namespace AlibabaCloud
 			DescribeRecordDetailOutcome describeRecordDetail(const Model::DescribeRecordDetailRequest &request)const;
 			void describeRecordDetailAsync(const Model::DescribeRecordDetailRequest& request, const DescribeRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecordDetailOutcomeCallable describeRecordDetailCallable(const Model::DescribeRecordDetailRequest& request) const;
+			CreateChannelTokenOutcome createChannelToken(const Model::CreateChannelTokenRequest &request)const;
+			void createChannelTokenAsync(const Model::CreateChannelTokenRequest& request, const CreateChannelTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateChannelTokenOutcomeCallable createChannelTokenCallable(const Model::CreateChannelTokenRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

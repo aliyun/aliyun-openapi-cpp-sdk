@@ -64,7 +64,9 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/UnmuteAudioAllRequest.h
 	include/alibabacloud/rtc/model/UnmuteAudioAllResult.h
 	include/alibabacloud/rtc/model/DescribeRecordDetailRequest.h
-	include/alibabacloud/rtc/model/DescribeRecordDetailResult.h )
+	include/alibabacloud/rtc/model/DescribeRecordDetailResult.h
+	include/alibabacloud/rtc/model/CreateChannelTokenRequest.h
+	include/alibabacloud/rtc/model/CreateChannelTokenResult.h )
 
 set(rtc_src 
 	src/RtcClient.cc
@@ -111,7 +113,9 @@ set(rtc_src
 	src/model/UnmuteAudioAllRequest.cc
 	src/model/UnmuteAudioAllResult.cc
 	src/model/DescribeRecordDetailRequest.cc
-	src/model/DescribeRecordDetailResult.cc )
+	src/model/DescribeRecordDetailResult.cc
+	src/model/CreateChannelTokenRequest.cc
+	src/model/CreateChannelTokenResult.cc )
 
 add_library(rtc ${LIB_TYPE}
 	${rtc_public_header}
