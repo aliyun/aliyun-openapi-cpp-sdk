@@ -37,8 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getMemory()const;
-				void setMemory(int memory);
+				float getMemory()const;
+				void setMemory(float memory);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				std::string getIoOptimized()const;
@@ -110,7 +110,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				int memory_;
+				float memory_;
 				long callerParentId_;
 				std::string ioOptimized_;
 				bool proxy_original_security_transport_;

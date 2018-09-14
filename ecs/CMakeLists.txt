@@ -25,6 +25,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifySnapshotAttributeResult.h
 	include/alibabacloud/ecs/model/JoinSecurityGroupRequest.h
 	include/alibabacloud/ecs/model/JoinSecurityGroupResult.h
+	include/alibabacloud/ecs/model/DescribeDedicatedHostTypesRequest.h
+	include/alibabacloud/ecs/model/DescribeDedicatedHostTypesResult.h
 	include/alibabacloud/ecs/model/DescribeSnapshotsRequest.h
 	include/alibabacloud/ecs/model/DescribeSnapshotsResult.h
 	include/alibabacloud/ecs/model/ModifyBandwidthPackageSpecRequest.h
@@ -77,12 +79,16 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeInstancesResult.h
 	include/alibabacloud/ecs/model/DescribeSecurityGroupReferencesRequest.h
 	include/alibabacloud/ecs/model/DescribeSecurityGroupReferencesResult.h
+	include/alibabacloud/ecs/model/AllocateDedicatedHostsRequest.h
+	include/alibabacloud/ecs/model/AllocateDedicatedHostsResult.h
 	include/alibabacloud/ecs/model/DeleteRouterInterfaceRequest.h
 	include/alibabacloud/ecs/model/DeleteRouterInterfaceResult.h
 	include/alibabacloud/ecs/model/DetachInstanceRamRoleRequest.h
 	include/alibabacloud/ecs/model/DetachInstanceRamRoleResult.h
 	include/alibabacloud/ecs/model/AllocatePublicIpAddressRequest.h
 	include/alibabacloud/ecs/model/AllocatePublicIpAddressResult.h
+	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoRenewAttributeRequest.h
+	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoRenewAttributeResult.h
 	include/alibabacloud/ecs/model/DescribeEipMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeEipMonitorDataResult.h
 	include/alibabacloud/ecs/model/CancelAutoSnapshotPolicyRequest.h
@@ -129,6 +135,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeSecurityGroupsResult.h
 	include/alibabacloud/ecs/model/ResizeDiskRequest.h
 	include/alibabacloud/ecs/model/ResizeDiskResult.h
+	include/alibabacloud/ecs/model/ModifyDedicatedHostAttributeRequest.h
+	include/alibabacloud/ecs/model/ModifyDedicatedHostAttributeResult.h
 	include/alibabacloud/ecs/model/CreateRouteEntryRequest.h
 	include/alibabacloud/ecs/model/CreateRouteEntryResult.h
 	include/alibabacloud/ecs/model/DescribeInvocationsRequest.h
@@ -149,6 +157,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/StopInvocationResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceNetworkSpecRequest.h
 	include/alibabacloud/ecs/model/ModifyInstanceNetworkSpecResult.h
+	include/alibabacloud/ecs/model/ModifyInstanceDeploymentRequest.h
+	include/alibabacloud/ecs/model/ModifyInstanceDeploymentResult.h
 	include/alibabacloud/ecs/model/ModifyDiskAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyDiskAttributeResult.h
 	include/alibabacloud/ecs/model/CreateVSwitchRequest.h
@@ -161,6 +171,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RemoveTagsResult.h
 	include/alibabacloud/ecs/model/ModifySecurityGroupAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifySecurityGroupAttributeResult.h
+	include/alibabacloud/ecs/model/RenewDedicatedHostsRequest.h
+	include/alibabacloud/ecs/model/RenewDedicatedHostsResult.h
 	include/alibabacloud/ecs/model/CancelSimulatedSystemEventsRequest.h
 	include/alibabacloud/ecs/model/CancelSimulatedSystemEventsResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceAutoReleaseTimeRequest.h
@@ -179,6 +191,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateCommandResult.h
 	include/alibabacloud/ecs/model/DescribeInstancesFullStatusRequest.h
 	include/alibabacloud/ecs/model/DescribeInstancesFullStatusResult.h
+	include/alibabacloud/ecs/model/DescribeDedicatedHostsRequest.h
+	include/alibabacloud/ecs/model/DescribeDedicatedHostsResult.h
 	include/alibabacloud/ecs/model/ReleaseEipAddressRequest.h
 	include/alibabacloud/ecs/model/ReleaseEipAddressResult.h
 	include/alibabacloud/ecs/model/DetachClassicLinkVpcRequest.h
@@ -227,6 +241,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyInstanceAutoRenewAttributeResult.h
 	include/alibabacloud/ecs/model/DescribeVirtualBorderRoutersRequest.h
 	include/alibabacloud/ecs/model/DescribeVirtualBorderRoutersResult.h
+	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoReleaseTimeRequest.h
+	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoReleaseTimeResult.h
 	include/alibabacloud/ecs/model/ModifyHpcClusterAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyHpcClusterAttributeResult.h
 	include/alibabacloud/ecs/model/DescribeLimitationRequest.h
@@ -239,6 +255,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeDeploymentSetTopologyResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceVpcAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyInstanceVpcAttributeResult.h
+	include/alibabacloud/ecs/model/ReleaseDedicatedHostRequest.h
+	include/alibabacloud/ecs/model/ReleaseDedicatedHostResult.h
 	include/alibabacloud/ecs/model/AddTagsRequest.h
 	include/alibabacloud/ecs/model/AddTagsResult.h
 	include/alibabacloud/ecs/model/CreateHpcClusterRequest.h
@@ -371,6 +389,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeRecommendInstanceTypeResult.h
 	include/alibabacloud/ecs/model/DescribeTagKeysRequest.h
 	include/alibabacloud/ecs/model/DescribeTagKeysResult.h
+	include/alibabacloud/ecs/model/DescribeDedicatedHostAutoRenewRequest.h
+	include/alibabacloud/ecs/model/DescribeDedicatedHostAutoRenewResult.h
 	include/alibabacloud/ecs/model/DeleteInstanceRequest.h
 	include/alibabacloud/ecs/model/DeleteInstanceResult.h
 	include/alibabacloud/ecs/model/CreateLaunchTemplateRequest.h
@@ -518,6 +538,8 @@ set(ecs_src
 	src/model/ModifySnapshotAttributeResult.cc
 	src/model/JoinSecurityGroupRequest.cc
 	src/model/JoinSecurityGroupResult.cc
+	src/model/DescribeDedicatedHostTypesRequest.cc
+	src/model/DescribeDedicatedHostTypesResult.cc
 	src/model/DescribeSnapshotsRequest.cc
 	src/model/DescribeSnapshotsResult.cc
 	src/model/ModifyBandwidthPackageSpecRequest.cc
@@ -570,12 +592,16 @@ set(ecs_src
 	src/model/DescribeInstancesResult.cc
 	src/model/DescribeSecurityGroupReferencesRequest.cc
 	src/model/DescribeSecurityGroupReferencesResult.cc
+	src/model/AllocateDedicatedHostsRequest.cc
+	src/model/AllocateDedicatedHostsResult.cc
 	src/model/DeleteRouterInterfaceRequest.cc
 	src/model/DeleteRouterInterfaceResult.cc
 	src/model/DetachInstanceRamRoleRequest.cc
 	src/model/DetachInstanceRamRoleResult.cc
 	src/model/AllocatePublicIpAddressRequest.cc
 	src/model/AllocatePublicIpAddressResult.cc
+	src/model/ModifyDedicatedHostAutoRenewAttributeRequest.cc
+	src/model/ModifyDedicatedHostAutoRenewAttributeResult.cc
 	src/model/DescribeEipMonitorDataRequest.cc
 	src/model/DescribeEipMonitorDataResult.cc
 	src/model/CancelAutoSnapshotPolicyRequest.cc
@@ -622,6 +648,8 @@ set(ecs_src
 	src/model/DescribeSecurityGroupsResult.cc
 	src/model/ResizeDiskRequest.cc
 	src/model/ResizeDiskResult.cc
+	src/model/ModifyDedicatedHostAttributeRequest.cc
+	src/model/ModifyDedicatedHostAttributeResult.cc
 	src/model/CreateRouteEntryRequest.cc
 	src/model/CreateRouteEntryResult.cc
 	src/model/DescribeInvocationsRequest.cc
@@ -642,6 +670,8 @@ set(ecs_src
 	src/model/StopInvocationResult.cc
 	src/model/ModifyInstanceNetworkSpecRequest.cc
 	src/model/ModifyInstanceNetworkSpecResult.cc
+	src/model/ModifyInstanceDeploymentRequest.cc
+	src/model/ModifyInstanceDeploymentResult.cc
 	src/model/ModifyDiskAttributeRequest.cc
 	src/model/ModifyDiskAttributeResult.cc
 	src/model/CreateVSwitchRequest.cc
@@ -654,6 +684,8 @@ set(ecs_src
 	src/model/RemoveTagsResult.cc
 	src/model/ModifySecurityGroupAttributeRequest.cc
 	src/model/ModifySecurityGroupAttributeResult.cc
+	src/model/RenewDedicatedHostsRequest.cc
+	src/model/RenewDedicatedHostsResult.cc
 	src/model/CancelSimulatedSystemEventsRequest.cc
 	src/model/CancelSimulatedSystemEventsResult.cc
 	src/model/ModifyInstanceAutoReleaseTimeRequest.cc
@@ -672,6 +704,8 @@ set(ecs_src
 	src/model/CreateCommandResult.cc
 	src/model/DescribeInstancesFullStatusRequest.cc
 	src/model/DescribeInstancesFullStatusResult.cc
+	src/model/DescribeDedicatedHostsRequest.cc
+	src/model/DescribeDedicatedHostsResult.cc
 	src/model/ReleaseEipAddressRequest.cc
 	src/model/ReleaseEipAddressResult.cc
 	src/model/DetachClassicLinkVpcRequest.cc
@@ -720,6 +754,8 @@ set(ecs_src
 	src/model/ModifyInstanceAutoRenewAttributeResult.cc
 	src/model/DescribeVirtualBorderRoutersRequest.cc
 	src/model/DescribeVirtualBorderRoutersResult.cc
+	src/model/ModifyDedicatedHostAutoReleaseTimeRequest.cc
+	src/model/ModifyDedicatedHostAutoReleaseTimeResult.cc
 	src/model/ModifyHpcClusterAttributeRequest.cc
 	src/model/ModifyHpcClusterAttributeResult.cc
 	src/model/DescribeLimitationRequest.cc
@@ -732,6 +768,8 @@ set(ecs_src
 	src/model/DescribeDeploymentSetTopologyResult.cc
 	src/model/ModifyInstanceVpcAttributeRequest.cc
 	src/model/ModifyInstanceVpcAttributeResult.cc
+	src/model/ReleaseDedicatedHostRequest.cc
+	src/model/ReleaseDedicatedHostResult.cc
 	src/model/AddTagsRequest.cc
 	src/model/AddTagsResult.cc
 	src/model/CreateHpcClusterRequest.cc
@@ -864,6 +902,8 @@ set(ecs_src
 	src/model/DescribeRecommendInstanceTypeResult.cc
 	src/model/DescribeTagKeysRequest.cc
 	src/model/DescribeTagKeysResult.cc
+	src/model/DescribeDedicatedHostAutoRenewRequest.cc
+	src/model/DescribeDedicatedHostAutoRenewResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
 	src/model/CreateLaunchTemplateRequest.cc

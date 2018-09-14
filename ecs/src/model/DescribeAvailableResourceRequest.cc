@@ -36,12 +36,12 @@ void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int DescribeAvailableResourceRequest::getMemory()const
+float DescribeAvailableResourceRequest::getMemory()const
 {
 	return memory_;
 }
 
-void DescribeAvailableResourceRequest::setMemory(int memory)
+void DescribeAvailableResourceRequest::setMemory(float memory)
 {
 	memory_ = memory;
 	setParameter("Memory", std::to_string(memory));

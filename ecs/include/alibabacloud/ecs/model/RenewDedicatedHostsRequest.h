@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBERESOURCESMODIFICATIONREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBERESOURCESMODIFICATIONREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_RENEWDEDICATEDHOSTSREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_RENEWDEDICATEDHOSTSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeResourcesModificationRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT RenewDedicatedHostsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeResourcesModificationRequest();
-				~DescribeResourcesModificationRequest();
+				RenewDedicatedHostsRequest();
+				~RenewDedicatedHostsRequest();
 
+				std::string getDedicatedHostIds()const;
+				void setDedicatedHostIds(const std::string& dedicatedHostIds);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				float getMemory()const;
-				void setMemory(float memory);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
@@ -51,8 +53,6 @@ namespace AlibabaCloud
 				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				int getCores()const;
-				void setCores(int cores);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
@@ -61,28 +61,22 @@ namespace AlibabaCloud
 				void setEnable(bool enable);
 				std::string getRequestContent()const;
 				void setRequestContent(const std::string& requestContent);
-				bool getMigrateAcrossZone()const;
-				void setMigrateAcrossZone(bool migrateAcrossZone);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
-				std::string getInstanceType()const;
-				void setInstanceType(const std::string& instanceType);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
-				std::string getResourceId()const;
-				void setResourceId(const std::string& resourceId);
+				int getPeriod()const;
+				void setPeriod(int period);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
-				std::string getOperationType()const;
-				void setOperationType(const std::string& operationType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				bool getProxy_trust_transport_info()const;
@@ -91,45 +85,42 @@ namespace AlibabaCloud
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
-				std::string getDestinationResource()const;
-				void setDestinationResource(const std::string& destinationResource);
+				std::string getPeriodUnit()const;
+				void setPeriodUnit(const std::string& periodUnit);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
 
             private:
+				std::string dedicatedHostIds_;
 				long resourceOwnerId_;
-				float memory_;
+				std::string clientToken_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
-				int cores_;
 				std::string securityToken_;
 				std::string regionId_;
 				bool enable_;
 				std::string requestContent_;
-				bool migrateAcrossZone_;
 				std::string callerBidEmail_;
-				std::string instanceType_;
 				std::string callerUidEmail_;
 				long callerUid_;
 				std::string app_ip_;
-				std::string resourceId_;
+				int period_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string callerBid_;
-				std::string operationType_;
 				long ownerId_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
-				std::string destinationResource_;
+				std::string periodUnit_;
 				std::string requestId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBERESOURCESMODIFICATIONREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_RENEWDEDICATEDHOSTSREQUEST_H_
