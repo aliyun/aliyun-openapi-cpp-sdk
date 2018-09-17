@@ -25,6 +25,17 @@ DescribeLiveDomainSnapshotDataRequest::DescribeLiveDomainSnapshotDataRequest() :
 DescribeLiveDomainSnapshotDataRequest::~DescribeLiveDomainSnapshotDataRequest()
 {}
 
+std::string DescribeLiveDomainSnapshotDataRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeLiveDomainSnapshotDataRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeLiveDomainSnapshotDataRequest::getDomainName()const
 {
 	return domainName_;

@@ -36,6 +36,17 @@ void RealTimeRecordCommandRequest::setAppName(const std::string& appName)
 	setParameter("AppName", appName);
 }
 
+std::string RealTimeRecordCommandRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void RealTimeRecordCommandRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string RealTimeRecordCommandRequest::getDomainName()const
 {
 	return domainName_;

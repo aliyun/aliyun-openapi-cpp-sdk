@@ -25,6 +25,17 @@ AddLiveDomainRequest::AddLiveDomainRequest() :
 AddLiveDomainRequest::~AddLiveDomainRequest()
 {}
 
+std::string AddLiveDomainRequest::getTopLevelDomain()const
+{
+	return topLevelDomain_;
+}
+
+void AddLiveDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+{
+	topLevelDomain_ = topLevelDomain;
+	setParameter("TopLevelDomain", topLevelDomain);
+}
+
 std::string AddLiveDomainRequest::getSecurityToken()const
 {
 	return securityToken_;

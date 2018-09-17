@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setSideOutputUrl(const std::string& sideOutputUrl);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
+				int getChannelEnable()const;
+				void setChannelEnable(int channelEnable);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				int getProgramEffect()const;
@@ -55,6 +57,8 @@ namespace AlibabaCloud
 				void setTranscodeConfig(const std::string& transcodeConfig);
 				float getDelay()const;
 				void setDelay(float delay);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getCasterName()const;
 				void setCasterName(const std::string& casterName);
 				std::string getCallbackUrl()const;
@@ -63,6 +67,7 @@ namespace AlibabaCloud
             private:
 				std::string sideOutputUrl_;
 				std::string casterId_;
+				int channelEnable_;
 				std::string domainName_;
 				int programEffect_;
 				std::string programName_;
@@ -71,6 +76,7 @@ namespace AlibabaCloud
 				std::string urgentMaterialId_;
 				std::string transcodeConfig_;
 				float delay_;
+				std::string regionId_;
 				std::string casterName_;
 				std::string callbackUrl_;
 

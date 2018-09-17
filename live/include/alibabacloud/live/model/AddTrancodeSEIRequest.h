@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setDelay(int delay);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				int getRepeat()const;
 				void setRepeat(int repeat);
 				std::string getDomainName()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
             private:
 				int delay_;
 				std::string appName_;
+				std::string regionId_;
 				int repeat_;
 				std::string domainName_;
 				std::string pattern_;

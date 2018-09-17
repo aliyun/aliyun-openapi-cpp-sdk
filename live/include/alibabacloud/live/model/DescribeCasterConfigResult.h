@@ -58,6 +58,7 @@ namespace AlibabaCloud
 				std::string getSideOutputUrl()const;
 				std::string getCallbackUrl()const;
 				std::string getCasterName()const;
+				int getChannelEnable()const;
 				std::string getDomainName()const;
 				int getProgramEffect()const;
 				std::string getUrgentMaterialId()const;
@@ -73,6 +74,7 @@ namespace AlibabaCloud
 				std::string sideOutputUrl_;
 				std::string callbackUrl_;
 				std::string casterName_;
+				int channelEnable_;
 				std::string domainName_;
 				int programEffect_;
 				std::string urgentMaterialId_;

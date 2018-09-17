@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeLiveDomainSnapshotDataRequest();
 				~DescribeLiveDomainSnapshotDataRequest();
 
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string regionId_;
 				std::string domainName_;
 				std::string endTime_;
 				std::string startTime_;

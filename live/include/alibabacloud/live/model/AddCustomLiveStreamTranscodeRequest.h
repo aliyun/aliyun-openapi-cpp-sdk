@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setGop(const std::string& gop);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getTemplateType()const;
 				void setTemplateType(const std::string& templateType);
 				int getAudioBitrate()const;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				int fPS_;
 				std::string gop_;
 				long ownerId_;
+				std::string regionId_;
 				std::string templateType_;
 				int audioBitrate_;
 				std::string domain_;

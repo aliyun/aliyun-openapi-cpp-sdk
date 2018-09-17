@@ -83,6 +83,8 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 		programName_ = value["ProgramName"].asString();
 	if(!value["ProgramEffect"].isNull())
 		programEffect_ = std::stoi(value["ProgramEffect"].asString());
+	if(!value["ChannelEnable"].isNull())
+		channelEnable_ = std::stoi(value["ChannelEnable"].asString());
 
 }
 
@@ -99,6 +101,11 @@ std::string DescribeCasterConfigResult::getCallbackUrl()const
 std::string DescribeCasterConfigResult::getCasterName()const
 {
 	return casterName_;
+}
+
+int DescribeCasterConfigResult::getChannelEnable()const
+{
+	return channelEnable_;
 }
 
 std::string DescribeCasterConfigResult::getDomainName()const

@@ -47,6 +47,17 @@ void AddTrancodeSEIRequest::setAppName(const std::string& appName)
 	setParameter("AppName", appName);
 }
 
+std::string AddTrancodeSEIRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void AddTrancodeSEIRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 int AddTrancodeSEIRequest::getRepeat()const
 {
 	return repeat_;

@@ -25,17 +25,6 @@ AddCasterVideoResourceRequest::AddCasterVideoResourceRequest() :
 AddCasterVideoResourceRequest::~AddCasterVideoResourceRequest()
 {}
 
-int AddCasterVideoResourceRequest::getBeginOffset()const
-{
-	return beginOffset_;
-}
-
-void AddCasterVideoResourceRequest::setBeginOffset(int beginOffset)
-{
-	beginOffset_ = beginOffset;
-	setParameter("BeginOffset", std::to_string(beginOffset));
-}
-
 std::string AddCasterVideoResourceRequest::getVodUrl()const
 {
 	return vodUrl_;
@@ -45,28 +34,6 @@ void AddCasterVideoResourceRequest::setVodUrl(const std::string& vodUrl)
 {
 	vodUrl_ = vodUrl;
 	setParameter("VodUrl", vodUrl);
-}
-
-std::string AddCasterVideoResourceRequest::getLiveStreamUrl()const
-{
-	return liveStreamUrl_;
-}
-
-void AddCasterVideoResourceRequest::setLiveStreamUrl(const std::string& liveStreamUrl)
-{
-	liveStreamUrl_ = liveStreamUrl;
-	setParameter("LiveStreamUrl", liveStreamUrl);
-}
-
-std::string AddCasterVideoResourceRequest::getLocationId()const
-{
-	return locationId_;
-}
-
-void AddCasterVideoResourceRequest::setLocationId(const std::string& locationId)
-{
-	locationId_ = locationId;
-	setParameter("LocationId", locationId);
 }
 
 std::string AddCasterVideoResourceRequest::getCasterId()const
@@ -91,28 +58,6 @@ void AddCasterVideoResourceRequest::setEndOffset(int endOffset)
 	setParameter("EndOffset", std::to_string(endOffset));
 }
 
-std::string AddCasterVideoResourceRequest::getResourceName()const
-{
-	return resourceName_;
-}
-
-void AddCasterVideoResourceRequest::setResourceName(const std::string& resourceName)
-{
-	resourceName_ = resourceName;
-	setParameter("ResourceName", resourceName);
-}
-
-int AddCasterVideoResourceRequest::getRepeatNum()const
-{
-	return repeatNum_;
-}
-
-void AddCasterVideoResourceRequest::setRepeatNum(int repeatNum)
-{
-	repeatNum_ = repeatNum;
-	setParameter("RepeatNum", std::to_string(repeatNum));
-}
-
 long AddCasterVideoResourceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -133,5 +78,82 @@ void AddCasterVideoResourceRequest::setMaterialId(const std::string& materialId)
 {
 	materialId_ = materialId;
 	setParameter("MaterialId", materialId);
+}
+
+int AddCasterVideoResourceRequest::getBeginOffset()const
+{
+	return beginOffset_;
+}
+
+void AddCasterVideoResourceRequest::setBeginOffset(int beginOffset)
+{
+	beginOffset_ = beginOffset;
+	setParameter("BeginOffset", std::to_string(beginOffset));
+}
+
+std::string AddCasterVideoResourceRequest::getLiveStreamUrl()const
+{
+	return liveStreamUrl_;
+}
+
+void AddCasterVideoResourceRequest::setLiveStreamUrl(const std::string& liveStreamUrl)
+{
+	liveStreamUrl_ = liveStreamUrl;
+	setParameter("LiveStreamUrl", liveStreamUrl);
+}
+
+std::string AddCasterVideoResourceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void AddCasterVideoResourceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string AddCasterVideoResourceRequest::getLocationId()const
+{
+	return locationId_;
+}
+
+void AddCasterVideoResourceRequest::setLocationId(const std::string& locationId)
+{
+	locationId_ = locationId;
+	setParameter("LocationId", locationId);
+}
+
+int AddCasterVideoResourceRequest::getPtsCallbackInterval()const
+{
+	return ptsCallbackInterval_;
+}
+
+void AddCasterVideoResourceRequest::setPtsCallbackInterval(int ptsCallbackInterval)
+{
+	ptsCallbackInterval_ = ptsCallbackInterval;
+	setParameter("PtsCallbackInterval", std::to_string(ptsCallbackInterval));
+}
+
+std::string AddCasterVideoResourceRequest::getResourceName()const
+{
+	return resourceName_;
+}
+
+void AddCasterVideoResourceRequest::setResourceName(const std::string& resourceName)
+{
+	resourceName_ = resourceName;
+	setParameter("ResourceName", resourceName);
+}
+
+int AddCasterVideoResourceRequest::getRepeatNum()const
+{
+	return repeatNum_;
+}
+
+void AddCasterVideoResourceRequest::setRepeatNum(int repeatNum)
+{
+	repeatNum_ = repeatNum;
+	setParameter("RepeatNum", std::to_string(repeatNum));
 }
 

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeCastersRequest();
 				~DescribeCastersRequest();
 
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getCasterName()const;
 				void setCasterName(const std::string& casterName);
 				std::string getCasterId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				void setStatus(int status);
 
             private:
+				std::string regionId_;
 				std::string casterName_;
 				std::string casterId_;
 				int pageSize_;

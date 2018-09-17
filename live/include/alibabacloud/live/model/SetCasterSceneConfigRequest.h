@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::vector<std::string> getComponentId()const;
 				void setComponentId(const std::vector<std::string>& componentId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
 				std::string getSceneId()const;
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 
             private:
 				std::vector<std::string> componentId_;
+				std::string regionId_;
 				std::string casterId_;
 				std::string sceneId_;
 				long ownerId_;

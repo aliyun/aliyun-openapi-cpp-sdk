@@ -36,28 +36,6 @@ void DescribeLiveStreamsOnlineListRequest::setStreamType(const std::string& stre
 	setParameter("StreamType", streamType);
 }
 
-std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
-{
-	return appName_;
-}
-
-void DescribeLiveStreamsOnlineListRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setParameter("AppName", appName);
-}
-
-std::string DescribeLiveStreamsOnlineListRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeLiveStreamsOnlineListRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
 {
 	return domainName_;
@@ -69,17 +47,6 @@ void DescribeLiveStreamsOnlineListRequest::setDomainName(const std::string& doma
 	setParameter("DomainName", domainName);
 }
 
-int DescribeLiveStreamsOnlineListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeLiveStreamsOnlineListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeLiveStreamsOnlineListRequest::getEndTime()const
 {
 	return endTime_;
@@ -89,6 +56,17 @@ void DescribeLiveStreamsOnlineListRequest::setEndTime(const std::string& endTime
 {
 	endTime_ = endTime;
 	setParameter("EndTime", endTime);
+}
+
+std::string DescribeLiveStreamsOnlineListRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setParameter("OrderBy", orderBy);
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getStartTime()const
@@ -124,6 +102,50 @@ void DescribeLiveStreamsOnlineListRequest::setPageNum(int pageNum)
 	setParameter("PageNum", std::to_string(pageNum));
 }
 
+std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
+{
+	return appName_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setParameter("AppName", appName);
+}
+
+std::string DescribeLiveStreamsOnlineListRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+int DescribeLiveStreamsOnlineListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeLiveStreamsOnlineListRequest::getStreamName()const
+{
+	return streamName_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setStreamName(const std::string& streamName)
+{
+	streamName_ = streamName;
+	setParameter("StreamName", streamName);
+}
+
 std::string DescribeLiveStreamsOnlineListRequest::getQueryType()const
 {
 	return queryType_;
@@ -133,16 +155,5 @@ void DescribeLiveStreamsOnlineListRequest::setQueryType(const std::string& query
 {
 	queryType_ = queryType;
 	setParameter("QueryType", queryType);
-}
-
-std::string DescribeLiveStreamsOnlineListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveStreamsOnlineListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

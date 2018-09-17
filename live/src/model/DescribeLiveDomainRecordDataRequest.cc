@@ -25,6 +25,17 @@ DescribeLiveDomainRecordDataRequest::DescribeLiveDomainRecordDataRequest() :
 DescribeLiveDomainRecordDataRequest::~DescribeLiveDomainRecordDataRequest()
 {}
 
+std::string DescribeLiveDomainRecordDataRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeLiveDomainRecordDataRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeLiveDomainRecordDataRequest::getRecordType()const
 {
 	return recordType_;

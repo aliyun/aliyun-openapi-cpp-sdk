@@ -1,3 +1,7 @@
+2018-09-17 Version: 1.26.1
+1, Add field for AddCasterVideoResource, DescribeCasterVideoResources, ModifyCasterVideoResource.
+
+
 2018-09-14 Version: 1.26.0
 1, Add DedicatedHost Feature
 

@@ -35,20 +35,17 @@ namespace AlibabaCloud
 				DeleteLiveStreamsNotifyUrlConfigRequest();
 				~DeleteLiveStreamsNotifyUrlConfigRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string securityToken_;
+				std::string regionId_;
 				std::string domainName_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

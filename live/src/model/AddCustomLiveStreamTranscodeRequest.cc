@@ -91,6 +91,17 @@ void AddCustomLiveStreamTranscodeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string AddCustomLiveStreamTranscodeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void AddCustomLiveStreamTranscodeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string AddCustomLiveStreamTranscodeRequest::getTemplateType()const
 {
 	return templateType_;

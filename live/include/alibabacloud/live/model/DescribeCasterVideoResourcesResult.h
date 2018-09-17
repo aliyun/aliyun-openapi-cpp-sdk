@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string locationId;
 					int repeatNum;
 					std::string liveStreamUrl;
+					int ptsCallbackInterval;
 					std::string vodUrl;
 				};
 

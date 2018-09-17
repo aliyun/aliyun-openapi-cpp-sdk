@@ -25,15 +25,15 @@ DeleteLiveStreamsNotifyUrlConfigRequest::DeleteLiveStreamsNotifyUrlConfigRequest
 DeleteLiveStreamsNotifyUrlConfigRequest::~DeleteLiveStreamsNotifyUrlConfigRequest()
 {}
 
-std::string DeleteLiveStreamsNotifyUrlConfigRequest::getSecurityToken()const
+std::string DeleteLiveStreamsNotifyUrlConfigRequest::getRegionId()const
 {
-	return securityToken_;
+	return regionId_;
 }
 
-void DeleteLiveStreamsNotifyUrlConfigRequest::setSecurityToken(const std::string& securityToken)
+void DeleteLiveStreamsNotifyUrlConfigRequest::setRegionId(const std::string& regionId)
 {
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteLiveStreamsNotifyUrlConfigRequest::getDomainName()const
@@ -56,16 +56,5 @@ void DeleteLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteLiveStreamsNotifyUrlConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteLiveStreamsNotifyUrlConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

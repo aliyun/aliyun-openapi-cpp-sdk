@@ -25,6 +25,17 @@ DescribeLiveDomainTranscodeDataRequest::DescribeLiveDomainTranscodeDataRequest()
 DescribeLiveDomainTranscodeDataRequest::~DescribeLiveDomainTranscodeDataRequest()
 {}
 
+std::string DescribeLiveDomainTranscodeDataRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeLiveDomainTranscodeDataRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeLiveDomainTranscodeDataRequest::getDomainName()const
 {
 	return domainName_;

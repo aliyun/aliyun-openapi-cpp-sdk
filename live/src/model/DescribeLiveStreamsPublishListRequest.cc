@@ -58,6 +58,17 @@ void DescribeLiveStreamsPublishListRequest::setEndTime(const std::string& endTim
 	setParameter("EndTime", endTime);
 }
 
+std::string DescribeLiveStreamsPublishListRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void DescribeLiveStreamsPublishListRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setParameter("OrderBy", orderBy);
+}
+
 std::string DescribeLiveStreamsPublishListRequest::getStartTime()const
 {
 	return startTime_;
@@ -91,17 +102,6 @@ void DescribeLiveStreamsPublishListRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeLiveStreamsPublishListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveStreamsPublishListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeLiveStreamsPublishListRequest::getAppName()const
 {
 	return appName_;
@@ -113,15 +113,15 @@ void DescribeLiveStreamsPublishListRequest::setAppName(const std::string& appNam
 	setParameter("AppName", appName);
 }
 
-std::string DescribeLiveStreamsPublishListRequest::getSecurityToken()const
+std::string DescribeLiveStreamsPublishListRequest::getRegionId()const
 {
-	return securityToken_;
+	return regionId_;
 }
 
-void DescribeLiveStreamsPublishListRequest::setSecurityToken(const std::string& securityToken)
+void DescribeLiveStreamsPublishListRequest::setRegionId(const std::string& regionId)
 {
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 int DescribeLiveStreamsPublishListRequest::getPageSize()const

@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 
             private:
 				std::string appName_;
+				std::string regionId_;
 				std::string domainName_;
 				long ownerId_;
 				std::string command_;

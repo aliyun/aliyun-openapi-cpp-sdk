@@ -25,6 +25,17 @@ DescribeCastersRequest::DescribeCastersRequest() :
 DescribeCastersRequest::~DescribeCastersRequest()
 {}
 
+std::string DescribeCastersRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeCastersRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeCastersRequest::getCasterName()const
 {
 	return casterName_;

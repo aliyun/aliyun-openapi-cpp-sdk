@@ -64,6 +64,8 @@ void DescribeCastersResult::parse(const std::string &payload)
 			casterListObject.chargeType = value["ChargeType"].asString();
 		if(!value["CasterTemplate"].isNull())
 			casterListObject.casterTemplate = value["CasterTemplate"].asString();
+		if(!value["ChannelEnable"].isNull())
+			casterListObject.channelEnable = std::stoi(value["ChannelEnable"].asString());
 		casterList_.push_back(casterListObject);
 	}
 	if(!value["Total"].isNull())

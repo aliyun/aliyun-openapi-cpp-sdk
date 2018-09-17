@@ -47,6 +47,17 @@ void SetCasterConfigRequest::setCasterId(const std::string& casterId)
 	setParameter("CasterId", casterId);
 }
 
+int SetCasterConfigRequest::getChannelEnable()const
+{
+	return channelEnable_;
+}
+
+void SetCasterConfigRequest::setChannelEnable(int channelEnable)
+{
+	channelEnable_ = channelEnable;
+	setParameter("ChannelEnable", std::to_string(channelEnable));
+}
+
 std::string SetCasterConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -133,6 +144,17 @@ void SetCasterConfigRequest::setDelay(float delay)
 {
 	delay_ = delay;
 	setParameter("Delay", std::to_string(delay));
+}
+
+std::string SetCasterConfigRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void SetCasterConfigRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string SetCasterConfigRequest::getCasterName()const

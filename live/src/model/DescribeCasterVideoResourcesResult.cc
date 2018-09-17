@@ -62,6 +62,8 @@ void DescribeCasterVideoResourcesResult::parse(const std::string &payload)
 			videoResourcesObject.beginOffset = std::stoi(value["BeginOffset"].asString());
 		if(!value["EndOffset"].isNull())
 			videoResourcesObject.endOffset = std::stoi(value["EndOffset"].asString());
+		if(!value["PtsCallbackInterval"].isNull())
+			videoResourcesObject.ptsCallbackInterval = std::stoi(value["PtsCallbackInterval"].asString());
 		videoResources_.push_back(videoResourcesObject);
 	}
 	if(!value["Total"].isNull())

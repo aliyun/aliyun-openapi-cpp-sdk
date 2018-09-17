@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string purchaseTime;
 					std::string casterTemplate;
 					std::string casterName;
+					int channelEnable;
 					std::string chargeType;
 					std::string createTime;
 					std::string startTime;

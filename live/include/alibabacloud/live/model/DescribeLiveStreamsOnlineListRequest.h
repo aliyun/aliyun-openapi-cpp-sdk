@@ -37,39 +37,42 @@ namespace AlibabaCloud
 
 				std::string getStreamType()const;
 				void setStreamType(const std::string& streamType);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
+				std::string getOrderBy()const;
+				void setOrderBy(const std::string& orderBy);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
+				std::string getAppName()const;
+				void setAppName(const std::string& appName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getStreamName()const;
+				void setStreamName(const std::string& streamName);
 				std::string getQueryType()const;
 				void setQueryType(const std::string& queryType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string streamType_;
-				std::string appName_;
-				std::string securityToken_;
 				std::string domainName_;
-				int pageSize_;
 				std::string endTime_;
+				std::string orderBy_;
 				std::string startTime_;
 				long ownerId_;
 				int pageNum_;
+				std::string appName_;
+				std::string regionId_;
+				int pageSize_;
+				std::string streamName_;
 				std::string queryType_;
-				std::string accessKeyId_;
 
 			};
 		}
