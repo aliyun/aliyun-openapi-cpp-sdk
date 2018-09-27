@@ -135,6 +135,17 @@ void CreateClusterRequest::setEcsOrderComputeInstanceType(const std::string& ecs
 	setParameter("EcsOrderComputeInstanceType", ecsOrderComputeInstanceType);
 }
 
+std::string CreateClusterRequest::getJobQueue()const
+{
+	return jobQueue_;
+}
+
+void CreateClusterRequest::setJobQueue(const std::string& jobQueue)
+{
+	jobQueue_ = jobQueue;
+	setParameter("JobQueue", jobQueue);
+}
+
 std::string CreateClusterRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

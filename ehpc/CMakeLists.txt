@@ -123,6 +123,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/ModifyImageGatewayConfigResult.h
 	include/alibabacloud/ehpc/model/ListContainerAppsRequest.h
 	include/alibabacloud/ehpc/model/ListContainerAppsResult.h
+	include/alibabacloud/ehpc/model/ListQueuesRequest.h
+	include/alibabacloud/ehpc/model/ListQueuesResult.h
 	include/alibabacloud/ehpc/model/ListCloudMetricProfilingsRequest.h
 	include/alibabacloud/ehpc/model/ListCloudMetricProfilingsResult.h
 	include/alibabacloud/ehpc/model/SetJobUserRequest.h
@@ -258,6 +260,8 @@ set(ehpc_src
 	src/model/ModifyImageGatewayConfigResult.cc
 	src/model/ListContainerAppsRequest.cc
 	src/model/ListContainerAppsResult.cc
+	src/model/ListQueuesRequest.cc
+	src/model/ListQueuesResult.cc
 	src/model/ListCloudMetricProfilingsRequest.cc
 	src/model/ListCloudMetricProfilingsResult.cc
 	src/model/SetJobUserRequest.cc

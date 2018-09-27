@@ -64,6 +64,8 @@ namespace AlibabaCloud
 				void setSecurityGroupName(const std::string& securityGroupName);
 				std::string getEcsOrderComputeInstanceType()const;
 				void setEcsOrderComputeInstanceType(const std::string& ecsOrderComputeInstanceType);
+				std::string getJobQueue()const;
+				void setJobQueue(const std::string& jobQueue);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getImageOwnerAlias()const;
@@ -138,6 +140,7 @@ namespace AlibabaCloud
 				std::string keyPairName_;
 				std::string securityGroupName_;
 				std::string ecsOrderComputeInstanceType_;
+				std::string jobQueue_;
 				std::string accessKeyId_;
 				std::string imageOwnerAlias_;
 				std::string volumeType_;

@@ -1887,6 +1887,42 @@ EHPCClient::ListContainerAppsOutcomeCallable EHPCClient::listContainerAppsCallab
 	return task->get_future();
 }
 
+EHPCClient::ListQueuesOutcome EHPCClient::listQueues(const ListQueuesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListQueuesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListQueuesOutcome(ListQueuesResult(outcome.result()));
+	else
+		return ListQueuesOutcome(outcome.error());
+}
+
+void EHPCClient::listQueuesAsync(const ListQueuesRequest& request, const ListQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listQueues(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::ListQueuesOutcomeCallable EHPCClient::listQueuesCallable(const ListQueuesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListQueuesOutcome()>>(
+			[this, request]()
+			{
+			return this->listQueues(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::ListCloudMetricProfilingsOutcome EHPCClient::listCloudMetricProfilings(const ListCloudMetricProfilingsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

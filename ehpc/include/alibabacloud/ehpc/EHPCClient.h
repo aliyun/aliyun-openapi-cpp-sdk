@@ -124,6 +124,8 @@
 #include "model/ModifyImageGatewayConfigResult.h"
 #include "model/ListContainerAppsRequest.h"
 #include "model/ListContainerAppsResult.h"
+#include "model/ListQueuesRequest.h"
+#include "model/ListQueuesResult.h"
 #include "model/ListCloudMetricProfilingsRequest.h"
 #include "model/ListCloudMetricProfilingsResult.h"
 #include "model/SetJobUserRequest.h"
@@ -316,6 +318,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListContainerAppsResult> ListContainerAppsOutcome;
 			typedef std::future<ListContainerAppsOutcome> ListContainerAppsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListContainerAppsRequest&, const ListContainerAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListContainerAppsAsyncHandler;
+			typedef Outcome<Error, Model::ListQueuesResult> ListQueuesOutcome;
+			typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ListQueuesRequest&, const ListQueuesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQueuesAsyncHandler;
 			typedef Outcome<Error, Model::ListCloudMetricProfilingsResult> ListCloudMetricProfilingsOutcome;
 			typedef std::future<ListCloudMetricProfilingsOutcome> ListCloudMetricProfilingsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListCloudMetricProfilingsRequest&, const ListCloudMetricProfilingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCloudMetricProfilingsAsyncHandler;
@@ -519,6 +524,9 @@ namespace AlibabaCloud
 			ListContainerAppsOutcome listContainerApps(const Model::ListContainerAppsRequest &request)const;
 			void listContainerAppsAsync(const Model::ListContainerAppsRequest& request, const ListContainerAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListContainerAppsOutcomeCallable listContainerAppsCallable(const Model::ListContainerAppsRequest& request) const;
+			ListQueuesOutcome listQueues(const Model::ListQueuesRequest &request)const;
+			void listQueuesAsync(const Model::ListQueuesRequest& request, const ListQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListQueuesOutcomeCallable listQueuesCallable(const Model::ListQueuesRequest& request) const;
 			ListCloudMetricProfilingsOutcome listCloudMetricProfilings(const Model::ListCloudMetricProfilingsRequest &request)const;
 			void listCloudMetricProfilingsAsync(const Model::ListCloudMetricProfilingsRequest& request, const ListCloudMetricProfilingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCloudMetricProfilingsOutcomeCallable listCloudMetricProfilingsCallable(const Model::ListCloudMetricProfilingsRequest& request) const;

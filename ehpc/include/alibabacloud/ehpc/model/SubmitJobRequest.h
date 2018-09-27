@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setPriority(int priority);
 				std::string getCommandLine()const;
 				void setCommandLine(const std::string& commandLine);
+				std::string getJobQueue()const;
+				void setJobQueue(const std::string& jobQueue);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getArrayRequest()const;
@@ -80,6 +82,7 @@ namespace AlibabaCloud
 				bool reRunable_;
 				int priority_;
 				std::string commandLine_;
+				std::string jobQueue_;
 				std::string accessKeyId_;
 				std::string arrayRequest_;
 				std::string unzipCmd_;

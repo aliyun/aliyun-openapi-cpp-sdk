@@ -124,6 +124,17 @@ void SubmitJobRequest::setCommandLine(const std::string& commandLine)
 	setParameter("CommandLine", commandLine);
 }
 
+std::string SubmitJobRequest::getJobQueue()const
+{
+	return jobQueue_;
+}
+
+void SubmitJobRequest::setJobQueue(const std::string& jobQueue)
+{
+	jobQueue_ = jobQueue;
+	setParameter("JobQueue", jobQueue);
+}
+
 std::string SubmitJobRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

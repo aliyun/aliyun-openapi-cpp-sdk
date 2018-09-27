@@ -30,6 +30,13 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT SetAutoScaleConfigRequest : public RpcServiceRequest
 			{
+				struct Queues
+				{
+					std::string spotStrategy;
+					std::string queueName;
+					std::string instanceType;
+					float spotPriceLimit;
+				};
 
 			public:
 				SetAutoScaleConfigRequest();
@@ -43,8 +50,8 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				bool getEnableAutoGrow()const;
 				void setEnableAutoGrow(bool enableAutoGrow);
-				std::string getSpotPriceLimit()const;
-				void setSpotPriceLimit(const std::string& spotPriceLimit);
+				float getSpotPriceLimit()const;
+				void setSpotPriceLimit(float spotPriceLimit);
 				bool getEnableAutoShrink()const;
 				void setEnableAutoShrink(bool enableAutoShrink);
 				std::string getAccessKeyId()const;
@@ -57,6 +64,8 @@ namespace AlibabaCloud
 				void setExcludeNodes(const std::string& excludeNodes);
 				int getShrinkIntervalInMinutes()const;
 				void setShrinkIntervalInMinutes(int shrinkIntervalInMinutes);
+				std::vector<Queues> getQueues()const;
+				void setQueues(const std::vector<Queues>& queues);
 				int getExtraNodesGrowRatio()const;
 				void setExtraNodesGrowRatio(int extraNodesGrowRatio);
 				int getGrowIntervalInMinutes()const;
@@ -69,13 +78,14 @@ namespace AlibabaCloud
 				int growTimeoutInMinutes_;
 				std::string clusterId_;
 				bool enableAutoGrow_;
-				std::string spotPriceLimit_;
+				float spotPriceLimit_;
 				bool enableAutoShrink_;
 				std::string accessKeyId_;
 				std::string spotStrategy_;
 				int maxNodesInCluster_;
 				std::string excludeNodes_;
 				int shrinkIntervalInMinutes_;
+				std::vector<Queues> queues_;
 				int extraNodesGrowRatio_;
 				int growIntervalInMinutes_;
 				int growRatio_;

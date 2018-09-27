@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				std::string getComputeSpotStrategy()const;
 				void setComputeSpotStrategy(const std::string& computeSpotStrategy);
+				std::string getJobQueue()const;
+				void setJobQueue(const std::string& jobQueue);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getImageOwnerAlias()const;
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				int count_;
 				std::string clusterId_;
 				std::string computeSpotStrategy_;
+				std::string jobQueue_;
 				std::string accessKeyId_;
 				std::string imageOwnerAlias_;
 				std::string periodUnit_;

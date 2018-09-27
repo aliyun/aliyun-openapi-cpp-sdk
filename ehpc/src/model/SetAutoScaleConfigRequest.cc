@@ -69,15 +69,15 @@ void SetAutoScaleConfigRequest::setEnableAutoGrow(bool enableAutoGrow)
 	setParameter("EnableAutoGrow", std::to_string(enableAutoGrow));
 }
 
-std::string SetAutoScaleConfigRequest::getSpotPriceLimit()const
+float SetAutoScaleConfigRequest::getSpotPriceLimit()const
 {
 	return spotPriceLimit_;
 }
 
-void SetAutoScaleConfigRequest::setSpotPriceLimit(const std::string& spotPriceLimit)
+void SetAutoScaleConfigRequest::setSpotPriceLimit(float spotPriceLimit)
 {
 	spotPriceLimit_ = spotPriceLimit;
-	setParameter("SpotPriceLimit", spotPriceLimit);
+	setParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
 }
 
 bool SetAutoScaleConfigRequest::getEnableAutoShrink()const
@@ -144,6 +144,25 @@ void SetAutoScaleConfigRequest::setShrinkIntervalInMinutes(int shrinkIntervalInM
 {
 	shrinkIntervalInMinutes_ = shrinkIntervalInMinutes;
 	setParameter("ShrinkIntervalInMinutes", std::to_string(shrinkIntervalInMinutes));
+}
+
+std::vector<SetAutoScaleConfigRequest::Queues> SetAutoScaleConfigRequest::getQueues()const
+{
+	return queues_;
+}
+
+void SetAutoScaleConfigRequest::setQueues(const std::vector<Queues>& queues)
+{
+	queues_ = queues;
+	int i = 0;
+	for(int i = 0; i!= queues.size(); i++)	{
+		auto obj = queues.at(i);
+		std::string str ="Queues."+ std::to_string(i);
+		setParameter(str + ".SpotStrategy", obj.spotStrategy);
+		setParameter(str + ".QueueName", obj.queueName);
+		setParameter(str + ".InstanceType", obj.instanceType);
+		setParameter(str + ".SpotPriceLimit", std::to_string(obj.spotPriceLimit));
+	}
 }
 
 int SetAutoScaleConfigRequest::getExtraNodesGrowRatio()const

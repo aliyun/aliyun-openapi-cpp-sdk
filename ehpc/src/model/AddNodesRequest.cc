@@ -91,6 +91,17 @@ void AddNodesRequest::setComputeSpotStrategy(const std::string& computeSpotStrat
 	setParameter("ComputeSpotStrategy", computeSpotStrategy);
 }
 
+std::string AddNodesRequest::getJobQueue()const
+{
+	return jobQueue_;
+}
+
+void AddNodesRequest::setJobQueue(const std::string& jobQueue)
+{
+	jobQueue_ = jobQueue;
+	setParameter("JobQueue", jobQueue);
+}
+
 std::string AddNodesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
