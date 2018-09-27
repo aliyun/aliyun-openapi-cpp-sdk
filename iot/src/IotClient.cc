@@ -51,6 +51,42 @@ IotClient::IotClient(const std::string & accessKeyId, const std::string & access
 IotClient::~IotClient()
 {}
 
+IotClient::QueryAppDeviceListOutcome IotClient::queryAppDeviceList(const QueryAppDeviceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAppDeviceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAppDeviceListOutcome(QueryAppDeviceListResult(outcome.result()));
+	else
+		return QueryAppDeviceListOutcome(outcome.error());
+}
+
+void IotClient::queryAppDeviceListAsync(const QueryAppDeviceListRequest& request, const QueryAppDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAppDeviceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryAppDeviceListOutcomeCallable IotClient::queryAppDeviceListCallable(const QueryAppDeviceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAppDeviceListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAppDeviceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::DeleteTopicRouteTableOutcome IotClient::deleteTopicRouteTable(const DeleteTopicRouteTableRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +693,42 @@ IotClient::StopRuleOutcomeCallable IotClient::stopRuleCallable(const StopRuleReq
 			[this, request]()
 			{
 			return this->stopRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryDeviceGroupByDeviceOutcome IotClient::queryDeviceGroupByDevice(const QueryDeviceGroupByDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDeviceGroupByDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDeviceGroupByDeviceOutcome(QueryDeviceGroupByDeviceResult(outcome.result()));
+	else
+		return QueryDeviceGroupByDeviceOutcome(outcome.error());
+}
+
+void IotClient::queryDeviceGroupByDeviceAsync(const QueryDeviceGroupByDeviceRequest& request, const QueryDeviceGroupByDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDeviceGroupByDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryDeviceGroupByDeviceOutcomeCallable IotClient::queryDeviceGroupByDeviceCallable(const QueryDeviceGroupByDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDeviceGroupByDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDeviceGroupByDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

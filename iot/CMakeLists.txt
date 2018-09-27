@@ -21,6 +21,8 @@ set(iot_public_header
 	include/alibabacloud/iot/IotExport.h )
 
 set(iot_public_header_model 
+	include/alibabacloud/iot/model/QueryAppDeviceListRequest.h
+	include/alibabacloud/iot/model/QueryAppDeviceListResult.h
 	include/alibabacloud/iot/model/DeleteTopicRouteTableRequest.h
 	include/alibabacloud/iot/model/DeleteTopicRouteTableResult.h
 	include/alibabacloud/iot/model/QueryDeviceEventDataRequest.h
@@ -55,6 +57,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/DeleteDevicePropResult.h
 	include/alibabacloud/iot/model/StopRuleRequest.h
 	include/alibabacloud/iot/model/StopRuleResult.h
+	include/alibabacloud/iot/model/QueryDeviceGroupByDeviceRequest.h
+	include/alibabacloud/iot/model/QueryDeviceGroupByDeviceResult.h
 	include/alibabacloud/iot/model/QueryDeviceDetailRequest.h
 	include/alibabacloud/iot/model/QueryDeviceDetailResult.h
 	include/alibabacloud/iot/model/NotifyAddThingTopoRequest.h
@@ -138,6 +142,8 @@ set(iot_public_header_model
 
 set(iot_src 
 	src/IotClient.cc
+	src/model/QueryAppDeviceListRequest.cc
+	src/model/QueryAppDeviceListResult.cc
 	src/model/DeleteTopicRouteTableRequest.cc
 	src/model/DeleteTopicRouteTableResult.cc
 	src/model/QueryDeviceEventDataRequest.cc
@@ -172,6 +178,8 @@ set(iot_src
 	src/model/DeleteDevicePropResult.cc
 	src/model/StopRuleRequest.cc
 	src/model/StopRuleResult.cc
+	src/model/QueryDeviceGroupByDeviceRequest.cc
+	src/model/QueryDeviceGroupByDeviceResult.cc
 	src/model/QueryDeviceDetailRequest.cc
 	src/model/QueryDeviceDetailResult.cc
 	src/model/NotifyAddThingTopoRequest.cc
