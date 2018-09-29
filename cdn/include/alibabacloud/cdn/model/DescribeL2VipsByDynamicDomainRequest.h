@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEFCTRIGGERREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_DESCRIBEFCTRIGGERREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEL2VIPSBYDYNAMICDOMAINREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBEL2VIPSBYDYNAMICDOMAINREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,15 +28,13 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeFCTriggerRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT DescribeL2VipsByDynamicDomainRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeFCTriggerRequest();
-				~DescribeFCTriggerRequest();
+				DescribeL2VipsByDynamicDomainRequest();
+				~DescribeL2VipsByDynamicDomainRequest();
 
-				std::string getTriggerARN()const;
-				void setTriggerARN(const std::string& triggerARN);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
@@ -45,6 +43,8 @@ namespace AlibabaCloud
 				void setProduct(const std::string& product);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
 				std::string getCallerBid()const;
@@ -81,11 +81,11 @@ namespace AlibabaCloud
 				void setCallerUid(long callerUid);
 
             private:
-				std::string triggerARN_;
 				std::string app_ip_;
 				std::string popProduct_;
 				std::string product_;
 				long callerParentId_;
+				std::string domainName_;
 				bool proxy_original_security_transport_;
 				std::string callerBid_;
 				long ownerId_;
@@ -108,4 +108,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEFCTRIGGERREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEL2VIPSBYDYNAMICDOMAINREQUEST_H_

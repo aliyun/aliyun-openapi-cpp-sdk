@@ -190,6 +190,28 @@ void DescribeDomainSlowRatioRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeDomainSlowRatioRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeDomainSlowRatioRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
+std::string DescribeDomainSlowRatioRequest::getProduct()const
+{
+	return product_;
+}
+
+void DescribeDomainSlowRatioRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setParameter("Product", product);
+}
+
 std::string DescribeDomainSlowRatioRequest::getDomainName()const
 {
 	return domainName_;

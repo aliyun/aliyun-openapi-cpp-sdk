@@ -201,6 +201,17 @@ void DescribeDomainPathDataRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeDomainPathDataRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeDomainPathDataRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeDomainPathDataRequest::getProduct()const
 {
 	return product_;

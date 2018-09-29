@@ -36,6 +36,17 @@ void DescribeDomainCustomLogConfigRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeDomainCustomLogConfigRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeDomainCustomLogConfigRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeDomainCustomLogConfigRequest::getProduct()const
 {
 	return product_;

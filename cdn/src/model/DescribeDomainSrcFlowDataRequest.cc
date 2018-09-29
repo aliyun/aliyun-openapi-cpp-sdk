@@ -168,6 +168,17 @@ void DescribeDomainSrcFlowDataRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeDomainSrcFlowDataRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeDomainSrcFlowDataRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeDomainSrcFlowDataRequest::getProduct()const
 {
 	return product_;
