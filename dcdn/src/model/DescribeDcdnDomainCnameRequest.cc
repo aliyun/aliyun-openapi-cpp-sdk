@@ -36,6 +36,17 @@ void DescribeDcdnDomainCnameRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeDcdnDomainCnameRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeDcdnDomainCnameRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeDcdnDomainCnameRequest::getProduct()const
 {
 	return product_;

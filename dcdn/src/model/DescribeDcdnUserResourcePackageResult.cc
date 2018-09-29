@@ -56,6 +56,10 @@ void DescribeDcdnUserResourcePackageResult::parse(const std::string &payload)
 			resourcePackageInfosObject.instanceId = value["InstanceId"].asString();
 		if(!value["Status"].isNull())
 			resourcePackageInfosObject.status = value["Status"].asString();
+		if(!value["StartTime"].isNull())
+			resourcePackageInfosObject.startTime = value["StartTime"].asString();
+		if(!value["EndTime"].isNull())
+			resourcePackageInfosObject.endTime = value["EndTime"].asString();
 		resourcePackageInfos_.push_back(resourcePackageInfosObject);
 	}
 

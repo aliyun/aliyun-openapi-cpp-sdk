@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string content;
 						std::string priority;
 						int port;
+						std::string weight;
 					};
 					std::string description;
 					std::string resourceGroupId;

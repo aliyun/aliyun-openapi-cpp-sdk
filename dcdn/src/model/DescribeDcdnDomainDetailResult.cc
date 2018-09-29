@@ -77,6 +77,8 @@ void DescribeDcdnDomainDetailResult::parse(const std::string &payload)
 			sourceObject.enabled = value["Enabled"].asString();
 		if(!value["Priority"].isNull())
 			sourceObject.priority = value["Priority"].asString();
+		if(!value["Weight"].isNull())
+			sourceObject.weight = value["Weight"].asString();
 		domainDetail_.sources.push_back(sourceObject);
 	}
 

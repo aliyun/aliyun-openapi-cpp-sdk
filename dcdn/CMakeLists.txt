@@ -29,8 +29,12 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/SetDcdnDomainCertificateResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainLogRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainLogResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserQuotaRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserQuotaResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainOriginBpsDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainOriginBpsDataResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainCertificateInfoRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainCertificateInfoResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshTasksRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshTasksResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnServiceRequest.h
@@ -59,10 +63,16 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainTrafficDataResult.h
 	include/alibabacloud/dcdn/model/RefreshDcdnObjectCachesRequest.h
 	include/alibabacloud/dcdn/model/RefreshDcdnObjectCachesResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnTopDomainsByFlowRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnTopDomainsByFlowResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainRegionDataRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainRegionDataResult.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnStatusRequest.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnStatusResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainQpsDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainQpsDataResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainIspDataRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainIspDataResult.h
 	include/alibabacloud/dcdn/model/StartDcdnDomainRequest.h
 	include/alibabacloud/dcdn/model/StartDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserDomainsRequest.h
@@ -88,8 +98,12 @@ set(dcdn_src
 	src/model/SetDcdnDomainCertificateResult.cc
 	src/model/DescribeDcdnDomainLogRequest.cc
 	src/model/DescribeDcdnDomainLogResult.cc
+	src/model/DescribeDcdnUserQuotaRequest.cc
+	src/model/DescribeDcdnUserQuotaResult.cc
 	src/model/DescribeDcdnDomainOriginBpsDataRequest.cc
 	src/model/DescribeDcdnDomainOriginBpsDataResult.cc
+	src/model/DescribeDcdnDomainCertificateInfoRequest.cc
+	src/model/DescribeDcdnDomainCertificateInfoResult.cc
 	src/model/DescribeDcdnRefreshTasksRequest.cc
 	src/model/DescribeDcdnRefreshTasksResult.cc
 	src/model/DescribeDcdnServiceRequest.cc
@@ -118,10 +132,16 @@ set(dcdn_src
 	src/model/DescribeDcdnDomainTrafficDataResult.cc
 	src/model/RefreshDcdnObjectCachesRequest.cc
 	src/model/RefreshDcdnObjectCachesResult.cc
+	src/model/DescribeDcdnTopDomainsByFlowRequest.cc
+	src/model/DescribeDcdnTopDomainsByFlowResult.cc
+	src/model/DescribeDcdnDomainRegionDataRequest.cc
+	src/model/DescribeDcdnDomainRegionDataResult.cc
 	src/model/DescribeUserDcdnStatusRequest.cc
 	src/model/DescribeUserDcdnStatusResult.cc
 	src/model/DescribeDcdnDomainQpsDataRequest.cc
 	src/model/DescribeDcdnDomainQpsDataResult.cc
+	src/model/DescribeDcdnDomainIspDataRequest.cc
+	src/model/DescribeDcdnDomainIspDataResult.cc
 	src/model/StartDcdnDomainRequest.cc
 	src/model/StartDcdnDomainResult.cc
 	src/model/DescribeDcdnUserDomainsRequest.cc

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINCNAMEREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINCNAMEREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINCERTIFICATEINFOREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINCERTIFICATEINFOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainCnameRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainCertificateInfoRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDcdnDomainCnameRequest();
-				~DescribeDcdnDomainCnameRequest();
+				DescribeDcdnDomainCertificateInfoRequest();
+				~DescribeDcdnDomainCertificateInfoRequest();
 
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
@@ -108,4 +108,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINCNAMEREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINCERTIFICATEINFOREQUEST_H_

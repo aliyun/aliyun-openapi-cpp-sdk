@@ -190,6 +190,17 @@ void DescribeDcdnDomainHttpCodeDataRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeDcdnDomainHttpCodeDataRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeDcdnDomainHttpCodeDataRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeDcdnDomainHttpCodeDataRequest::getProduct()const
 {
 	return product_;

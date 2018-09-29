@@ -190,6 +190,17 @@ void DescribeDcdnDomainQpsDataRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeDcdnDomainQpsDataRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeDcdnDomainQpsDataRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeDcdnDomainQpsDataRequest::getProduct()const
 {
 	return product_;

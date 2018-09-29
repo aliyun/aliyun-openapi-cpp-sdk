@@ -58,7 +58,18 @@ void DescribeDcdnServiceResult::parse(const std::string &payload)
 		changingChargeType_ = value["ChangingChargeType"].asString();
 	if(!value["ChangingAffectTime"].isNull())
 		changingAffectTime_ = value["ChangingAffectTime"].asString();
+	if(!value["WebsocketChangingType"].isNull())
+		websocketChangingType_ = value["WebsocketChangingType"].asString();
+	if(!value["WebsocketType"].isNull())
+		websocketType_ = value["WebsocketType"].asString();
+	if(!value["WebsocketChangingTime"].isNull())
+		websocketChangingTime_ = value["WebsocketChangingTime"].asString();
 
+}
+
+std::string DescribeDcdnServiceResult::getWebsocketChangingType()const
+{
+	return websocketChangingType_;
 }
 
 std::string DescribeDcdnServiceResult::getChangingChargeType()const
@@ -69,6 +80,11 @@ std::string DescribeDcdnServiceResult::getChangingChargeType()const
 std::string DescribeDcdnServiceResult::getInstanceId()const
 {
 	return instanceId_;
+}
+
+std::string DescribeDcdnServiceResult::getWebsocketType()const
+{
+	return websocketType_;
 }
 
 std::string DescribeDcdnServiceResult::getOpeningTime()const
@@ -89,5 +105,10 @@ std::string DescribeDcdnServiceResult::getChangingAffectTime()const
 std::string DescribeDcdnServiceResult::getInternetChargeType()const
 {
 	return internetChargeType_;
+}
+
+std::string DescribeDcdnServiceResult::getWebsocketChangingTime()const
+{
+	return websocketChangingTime_;
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINORIGINTRAFFICDATAREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINORIGINTRAFFICDATAREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREGIONDATAREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREGIONDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainOriginTrafficDataRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainRegionDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDcdnDomainOriginTrafficDataRequest();
-				~DescribeDcdnDomainOriginTrafficDataRequest();
+				DescribeDcdnDomainRegionDataRequest();
+				~DescribeDcdnDomainRegionDataRequest();
 
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
@@ -65,10 +65,6 @@ namespace AlibabaCloud
 				void setPopProduct(const std::string& popProduct);
 				std::string getProduct()const;
 				void setProduct(const std::string& product);
-				std::string getFixTimeGap()const;
-				void setFixTimeGap(const std::string& fixTimeGap);
-				std::string getTimeMerge()const;
-				void setTimeMerge(const std::string& timeMerge);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -87,10 +83,6 @@ namespace AlibabaCloud
 				void setSecurity_transport(bool security_transport);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
-				std::string getInterval()const;
-				void setInterval(const std::string& interval);
-				std::string getFields()const;
-				void setFields(const std::string& fields);
 
             private:
 				long callerParentId_;
@@ -108,8 +100,6 @@ namespace AlibabaCloud
 				std::string app_ip_;
 				std::string popProduct_;
 				std::string product_;
-				std::string fixTimeGap_;
-				std::string timeMerge_;
 				std::string domainName_;
 				std::string endTime_;
 				std::string callerBid_;
@@ -119,11 +109,9 @@ namespace AlibabaCloud
 				bool ak_mfa_present_;
 				bool security_transport_;
 				std::string requestId_;
-				std::string interval_;
-				std::string fields_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINORIGINTRAFFICDATAREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREGIONDATAREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERRESOURCEPACKAGERESULT_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERRESOURCEPACKAGERESULT_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERQUOTARESULT_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERQUOTARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnUserResourcePackageResult : public ServiceResult
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnUserQuotaResult : public ServiceResult
 			{
 			public:
-				struct ResourcePackageInfo
-				{
-					std::string status;
-					std::string initCapacity;
-					std::string endTime;
-					std::string instanceId;
-					std::string commodityCode;
-					std::string displayName;
-					std::string startTime;
-					std::string currCapacity;
-				};
 
 
-				DescribeDcdnUserResourcePackageResult();
-				explicit DescribeDcdnUserResourcePackageResult(const std::string &payload);
-				~DescribeDcdnUserResourcePackageResult();
-				std::vector<ResourcePackageInfo> getResourcePackageInfos()const;
+				DescribeDcdnUserQuotaResult();
+				explicit DescribeDcdnUserQuotaResult(const std::string &payload);
+				~DescribeDcdnUserQuotaResult();
+				int getRefreshUrlQuota()const;
+				int getPreloadRemain()const;
+				int getBlockRemain()const;
+				int getRefreshDirRemain()const;
+				int getRefreshDirQuota()const;
+				int getBlockQuota()const;
+				int getDomainQuota()const;
+				int getRefreshUrlRemain()const;
+				int getPreloadQuota()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ResourcePackageInfo> resourcePackageInfos_;
+				int refreshUrlQuota_;
+				int preloadRemain_;
+				int blockRemain_;
+				int refreshDirRemain_;
+				int refreshDirQuota_;
+				int blockQuota_;
+				int domainQuota_;
+				int refreshUrlRemain_;
+				int preloadQuota_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERRESOURCEPACKAGERESULT_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERQUOTARESULT_H_

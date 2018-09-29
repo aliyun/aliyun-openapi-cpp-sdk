@@ -25,6 +25,17 @@ PreloadDcdnObjectCachesRequest::PreloadDcdnObjectCachesRequest() :
 PreloadDcdnObjectCachesRequest::~PreloadDcdnObjectCachesRequest()
 {}
 
+std::string PreloadDcdnObjectCachesRequest::getArea()const
+{
+	return area_;
+}
+
+void PreloadDcdnObjectCachesRequest::setArea(const std::string& area)
+{
+	area_ = area;
+	setParameter("Area", area);
+}
+
 std::string PreloadDcdnObjectCachesRequest::getSecurityToken()const
 {
 	return securityToken_;

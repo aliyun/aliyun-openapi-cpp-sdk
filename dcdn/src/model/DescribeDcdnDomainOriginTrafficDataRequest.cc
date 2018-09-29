@@ -168,6 +168,17 @@ void DescribeDcdnDomainOriginTrafficDataRequest::setApp_ip(const std::string& ap
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeDcdnDomainOriginTrafficDataRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeDcdnDomainOriginTrafficDataRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeDcdnDomainOriginTrafficDataRequest::getProduct()const
 {
 	return product_;

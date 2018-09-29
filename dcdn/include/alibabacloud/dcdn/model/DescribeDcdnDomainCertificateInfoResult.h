@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINDETAILRESULT_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINDETAILRESULT_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINCERTIFICATEINFORESULT_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINCERTIFICATEINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,47 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainDetailResult : public ServiceResult
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainCertificateInfoResult : public ServiceResult
 			{
 			public:
-				struct DomainDetail
+				struct CertInfo
 				{
-					struct Source
-					{
-						std::string type;
-						std::string content;
-						std::string priority;
-						int port;
-						std::string enabled;
-						std::string weight;
-					};
-					std::string description;
-					std::string scope;
-					std::string resourceGroupId;
+					std::string status;
+					std::string certLife;
 					std::string domainName;
 					std::string sSLPub;
-					std::string gmtModified;
-					std::string gmtCreated;
+					std::string certDomainName;
+					std::string certOrg;
+					std::string certType;
+					std::string certExpireTime;
 					std::string certName;
-					std::vector<Source> sources;
-					std::string cname;
-					std::string domainStatus;
 					std::string sSLProtocol;
 				};
 
 
-				DescribeDcdnDomainDetailResult();
-				explicit DescribeDcdnDomainDetailResult(const std::string &payload);
-				~DescribeDcdnDomainDetailResult();
-				DomainDetail getDomainDetail()const;
+				DescribeDcdnDomainCertificateInfoResult();
+				explicit DescribeDcdnDomainCertificateInfoResult(const std::string &payload);
+				~DescribeDcdnDomainCertificateInfoResult();
+				std::vector<CertInfo> getCertInfos()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				DomainDetail domainDetail_;
+				std::vector<CertInfo> certInfos_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINDETAILRESULT_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINCERTIFICATEINFORESULT_H_

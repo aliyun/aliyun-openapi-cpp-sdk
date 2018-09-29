@@ -74,6 +74,8 @@ void DescribeDcdnUserDomainsResult::parse(const std::string &payload)
 				sourcesObject.port = std::stoi(value["Port"].asString());
 			if(!value["Priority"].isNull())
 				sourcesObject.priority = value["Priority"].asString();
+			if(!value["Weight"].isNull())
+				sourcesObject.weight = value["Weight"].asString();
 			domainsObject.sources.push_back(sourcesObject);
 		}
 		domains_.push_back(domainsObject);

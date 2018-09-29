@@ -41,22 +41,28 @@ namespace AlibabaCloud
 				DescribeDcdnServiceResult();
 				explicit DescribeDcdnServiceResult(const std::string &payload);
 				~DescribeDcdnServiceResult();
+				std::string getWebsocketChangingType()const;
 				std::string getChangingChargeType()const;
 				std::string getInstanceId()const;
+				std::string getWebsocketType()const;
 				std::string getOpeningTime()const;
 				std::vector<LockReason> getOperationLocks()const;
 				std::string getChangingAffectTime()const;
 				std::string getInternetChargeType()const;
+				std::string getWebsocketChangingTime()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string websocketChangingType_;
 				std::string changingChargeType_;
 				std::string instanceId_;
+				std::string websocketType_;
 				std::string openingTime_;
 				std::vector<LockReason> operationLocks_;
 				std::string changingAffectTime_;
 				std::string internetChargeType_;
+				std::string websocketChangingTime_;
 
 			};
 		}
