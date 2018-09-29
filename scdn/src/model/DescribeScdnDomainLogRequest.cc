@@ -190,6 +190,17 @@ void DescribeScdnDomainLogRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeScdnDomainLogRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeScdnDomainLogRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeScdnDomainLogRequest::getProduct()const
 {
 	return product_;

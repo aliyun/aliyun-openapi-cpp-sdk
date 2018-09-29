@@ -33,6 +33,10 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/DescribeScdnCertificateListResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainQpsDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainQpsDataResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainUvDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainUvDataResult.h
+	include/alibabacloud/scdn/model/DescribeScdnIpInfoRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnIpInfoResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainConfigsRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainConfigsResult.h
 	include/alibabacloud/scdn/model/SetScdnDomainCertificateRequest.h
@@ -63,6 +67,8 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/DescribeScdnServiceResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainLogRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainLogResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainPvDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainPvDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnUserQuotaRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnUserQuotaResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainHttpCodeDataRequest.h
@@ -77,6 +83,8 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/UpdateScdnDomainResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainOriginTrafficDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainOriginTrafficDataResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainIspDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainIspDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnRefreshTasksRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnRefreshTasksResult.h )
 
@@ -94,6 +102,10 @@ set(scdn_src
 	src/model/DescribeScdnCertificateListResult.cc
 	src/model/DescribeScdnDomainQpsDataRequest.cc
 	src/model/DescribeScdnDomainQpsDataResult.cc
+	src/model/DescribeScdnDomainUvDataRequest.cc
+	src/model/DescribeScdnDomainUvDataResult.cc
+	src/model/DescribeScdnIpInfoRequest.cc
+	src/model/DescribeScdnIpInfoResult.cc
 	src/model/DescribeScdnDomainConfigsRequest.cc
 	src/model/DescribeScdnDomainConfigsResult.cc
 	src/model/SetScdnDomainCertificateRequest.cc
@@ -124,6 +136,8 @@ set(scdn_src
 	src/model/DescribeScdnServiceResult.cc
 	src/model/DescribeScdnDomainLogRequest.cc
 	src/model/DescribeScdnDomainLogResult.cc
+	src/model/DescribeScdnDomainPvDataRequest.cc
+	src/model/DescribeScdnDomainPvDataResult.cc
 	src/model/DescribeScdnUserQuotaRequest.cc
 	src/model/DescribeScdnUserQuotaResult.cc
 	src/model/DescribeScdnDomainHttpCodeDataRequest.cc
@@ -138,6 +152,8 @@ set(scdn_src
 	src/model/UpdateScdnDomainResult.cc
 	src/model/DescribeScdnDomainOriginTrafficDataRequest.cc
 	src/model/DescribeScdnDomainOriginTrafficDataResult.cc
+	src/model/DescribeScdnDomainIspDataRequest.cc
+	src/model/DescribeScdnDomainIspDataResult.cc
 	src/model/DescribeScdnRefreshTasksRequest.cc
 	src/model/DescribeScdnRefreshTasksResult.cc )
 

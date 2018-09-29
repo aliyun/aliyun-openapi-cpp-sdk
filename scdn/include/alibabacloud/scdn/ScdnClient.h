@@ -34,6 +34,10 @@
 #include "model/DescribeScdnCertificateListResult.h"
 #include "model/DescribeScdnDomainQpsDataRequest.h"
 #include "model/DescribeScdnDomainQpsDataResult.h"
+#include "model/DescribeScdnDomainUvDataRequest.h"
+#include "model/DescribeScdnDomainUvDataResult.h"
+#include "model/DescribeScdnIpInfoRequest.h"
+#include "model/DescribeScdnIpInfoResult.h"
 #include "model/DescribeScdnDomainConfigsRequest.h"
 #include "model/DescribeScdnDomainConfigsResult.h"
 #include "model/SetScdnDomainCertificateRequest.h"
@@ -64,6 +68,8 @@
 #include "model/DescribeScdnServiceResult.h"
 #include "model/DescribeScdnDomainLogRequest.h"
 #include "model/DescribeScdnDomainLogResult.h"
+#include "model/DescribeScdnDomainPvDataRequest.h"
+#include "model/DescribeScdnDomainPvDataResult.h"
 #include "model/DescribeScdnUserQuotaRequest.h"
 #include "model/DescribeScdnUserQuotaResult.h"
 #include "model/DescribeScdnDomainHttpCodeDataRequest.h"
@@ -78,6 +84,8 @@
 #include "model/UpdateScdnDomainResult.h"
 #include "model/DescribeScdnDomainOriginTrafficDataRequest.h"
 #include "model/DescribeScdnDomainOriginTrafficDataResult.h"
+#include "model/DescribeScdnDomainIspDataRequest.h"
+#include "model/DescribeScdnDomainIspDataResult.h"
 #include "model/DescribeScdnRefreshTasksRequest.h"
 #include "model/DescribeScdnRefreshTasksResult.h"
 
@@ -107,6 +115,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeScdnDomainQpsDataResult> DescribeScdnDomainQpsDataOutcome;
 			typedef std::future<DescribeScdnDomainQpsDataOutcome> DescribeScdnDomainQpsDataOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnDomainQpsDataRequest&, const DescribeScdnDomainQpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnDomainQpsDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScdnDomainUvDataResult> DescribeScdnDomainUvDataOutcome;
+			typedef std::future<DescribeScdnDomainUvDataOutcome> DescribeScdnDomainUvDataOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnDomainUvDataRequest&, const DescribeScdnDomainUvDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnDomainUvDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScdnIpInfoResult> DescribeScdnIpInfoOutcome;
+			typedef std::future<DescribeScdnIpInfoOutcome> DescribeScdnIpInfoOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnIpInfoRequest&, const DescribeScdnIpInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnIpInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScdnDomainConfigsResult> DescribeScdnDomainConfigsOutcome;
 			typedef std::future<DescribeScdnDomainConfigsOutcome> DescribeScdnDomainConfigsOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnDomainConfigsRequest&, const DescribeScdnDomainConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnDomainConfigsAsyncHandler;
@@ -152,6 +166,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeScdnDomainLogResult> DescribeScdnDomainLogOutcome;
 			typedef std::future<DescribeScdnDomainLogOutcome> DescribeScdnDomainLogOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnDomainLogRequest&, const DescribeScdnDomainLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnDomainLogAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScdnDomainPvDataResult> DescribeScdnDomainPvDataOutcome;
+			typedef std::future<DescribeScdnDomainPvDataOutcome> DescribeScdnDomainPvDataOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnDomainPvDataRequest&, const DescribeScdnDomainPvDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnDomainPvDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScdnUserQuotaResult> DescribeScdnUserQuotaOutcome;
 			typedef std::future<DescribeScdnUserQuotaOutcome> DescribeScdnUserQuotaOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnUserQuotaRequest&, const DescribeScdnUserQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnUserQuotaAsyncHandler;
@@ -173,6 +190,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeScdnDomainOriginTrafficDataResult> DescribeScdnDomainOriginTrafficDataOutcome;
 			typedef std::future<DescribeScdnDomainOriginTrafficDataOutcome> DescribeScdnDomainOriginTrafficDataOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnDomainOriginTrafficDataRequest&, const DescribeScdnDomainOriginTrafficDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnDomainOriginTrafficDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScdnDomainIspDataResult> DescribeScdnDomainIspDataOutcome;
+			typedef std::future<DescribeScdnDomainIspDataOutcome> DescribeScdnDomainIspDataOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnDomainIspDataRequest&, const DescribeScdnDomainIspDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnDomainIspDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScdnRefreshTasksResult> DescribeScdnRefreshTasksOutcome;
 			typedef std::future<DescribeScdnRefreshTasksOutcome> DescribeScdnRefreshTasksOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnRefreshTasksRequest&, const DescribeScdnRefreshTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnRefreshTasksAsyncHandler;
@@ -199,6 +219,12 @@ namespace AlibabaCloud
 			DescribeScdnDomainQpsDataOutcome describeScdnDomainQpsData(const Model::DescribeScdnDomainQpsDataRequest &request)const;
 			void describeScdnDomainQpsDataAsync(const Model::DescribeScdnDomainQpsDataRequest& request, const DescribeScdnDomainQpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnDomainQpsDataOutcomeCallable describeScdnDomainQpsDataCallable(const Model::DescribeScdnDomainQpsDataRequest& request) const;
+			DescribeScdnDomainUvDataOutcome describeScdnDomainUvData(const Model::DescribeScdnDomainUvDataRequest &request)const;
+			void describeScdnDomainUvDataAsync(const Model::DescribeScdnDomainUvDataRequest& request, const DescribeScdnDomainUvDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScdnDomainUvDataOutcomeCallable describeScdnDomainUvDataCallable(const Model::DescribeScdnDomainUvDataRequest& request) const;
+			DescribeScdnIpInfoOutcome describeScdnIpInfo(const Model::DescribeScdnIpInfoRequest &request)const;
+			void describeScdnIpInfoAsync(const Model::DescribeScdnIpInfoRequest& request, const DescribeScdnIpInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScdnIpInfoOutcomeCallable describeScdnIpInfoCallable(const Model::DescribeScdnIpInfoRequest& request) const;
 			DescribeScdnDomainConfigsOutcome describeScdnDomainConfigs(const Model::DescribeScdnDomainConfigsRequest &request)const;
 			void describeScdnDomainConfigsAsync(const Model::DescribeScdnDomainConfigsRequest& request, const DescribeScdnDomainConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnDomainConfigsOutcomeCallable describeScdnDomainConfigsCallable(const Model::DescribeScdnDomainConfigsRequest& request) const;
@@ -244,6 +270,9 @@ namespace AlibabaCloud
 			DescribeScdnDomainLogOutcome describeScdnDomainLog(const Model::DescribeScdnDomainLogRequest &request)const;
 			void describeScdnDomainLogAsync(const Model::DescribeScdnDomainLogRequest& request, const DescribeScdnDomainLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnDomainLogOutcomeCallable describeScdnDomainLogCallable(const Model::DescribeScdnDomainLogRequest& request) const;
+			DescribeScdnDomainPvDataOutcome describeScdnDomainPvData(const Model::DescribeScdnDomainPvDataRequest &request)const;
+			void describeScdnDomainPvDataAsync(const Model::DescribeScdnDomainPvDataRequest& request, const DescribeScdnDomainPvDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScdnDomainPvDataOutcomeCallable describeScdnDomainPvDataCallable(const Model::DescribeScdnDomainPvDataRequest& request) const;
 			DescribeScdnUserQuotaOutcome describeScdnUserQuota(const Model::DescribeScdnUserQuotaRequest &request)const;
 			void describeScdnUserQuotaAsync(const Model::DescribeScdnUserQuotaRequest& request, const DescribeScdnUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnUserQuotaOutcomeCallable describeScdnUserQuotaCallable(const Model::DescribeScdnUserQuotaRequest& request) const;
@@ -265,6 +294,9 @@ namespace AlibabaCloud
 			DescribeScdnDomainOriginTrafficDataOutcome describeScdnDomainOriginTrafficData(const Model::DescribeScdnDomainOriginTrafficDataRequest &request)const;
 			void describeScdnDomainOriginTrafficDataAsync(const Model::DescribeScdnDomainOriginTrafficDataRequest& request, const DescribeScdnDomainOriginTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnDomainOriginTrafficDataOutcomeCallable describeScdnDomainOriginTrafficDataCallable(const Model::DescribeScdnDomainOriginTrafficDataRequest& request) const;
+			DescribeScdnDomainIspDataOutcome describeScdnDomainIspData(const Model::DescribeScdnDomainIspDataRequest &request)const;
+			void describeScdnDomainIspDataAsync(const Model::DescribeScdnDomainIspDataRequest& request, const DescribeScdnDomainIspDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScdnDomainIspDataOutcomeCallable describeScdnDomainIspDataCallable(const Model::DescribeScdnDomainIspDataRequest& request) const;
 			DescribeScdnRefreshTasksOutcome describeScdnRefreshTasks(const Model::DescribeScdnRefreshTasksRequest &request)const;
 			void describeScdnRefreshTasksAsync(const Model::DescribeScdnRefreshTasksRequest& request, const DescribeScdnRefreshTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnRefreshTasksOutcomeCallable describeScdnRefreshTasksCallable(const Model::DescribeScdnRefreshTasksRequest& request) const;

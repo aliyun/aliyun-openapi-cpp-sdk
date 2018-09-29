@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINTRAFFICDATAREQUEST_H_
-#define ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINTRAFFICDATAREQUEST_H_
+#ifndef ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINISPDATAREQUEST_H_
+#define ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINISPDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,23 +28,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnDomainTrafficDataRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnDomainIspDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeScdnDomainTrafficDataRequest();
-				~DescribeScdnDomainTrafficDataRequest();
+				DescribeScdnDomainIspDataRequest();
+				~DescribeScdnDomainIspDataRequest();
 
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
-				std::string getLocationNameEn()const;
-				void setLocationNameEn(const std::string& locationNameEn);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				std::string getIspNameEn()const;
-				void setIspNameEn(const std::string& ispNameEn);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
 				std::string getOwnerIdLoginEmail()const;
@@ -87,17 +83,11 @@ namespace AlibabaCloud
 				void setSecurity_transport(bool security_transport);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
-				std::string getInterval()const;
-				void setInterval(const std::string& interval);
-				std::string getFields()const;
-				void setFields(const std::string& fields);
 
             private:
 				long callerParentId_;
 				bool proxy_original_security_transport_;
-				std::string locationNameEn_;
 				std::string startTime_;
-				std::string ispNameEn_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
@@ -119,11 +109,9 @@ namespace AlibabaCloud
 				bool ak_mfa_present_;
 				bool security_transport_;
 				std::string requestId_;
-				std::string interval_;
-				std::string fields_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINTRAFFICDATAREQUEST_H_
+#endif // !ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINISPDATAREQUEST_H_

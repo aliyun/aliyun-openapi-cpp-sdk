@@ -168,6 +168,17 @@ void DescribeScdnDomainHitRateDataRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeScdnDomainHitRateDataRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeScdnDomainHitRateDataRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeScdnDomainHitRateDataRequest::getProduct()const
 {
 	return product_;

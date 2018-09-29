@@ -190,6 +190,17 @@ void DescribeScdnDomainTrafficDataRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeScdnDomainTrafficDataRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeScdnDomainTrafficDataRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeScdnDomainTrafficDataRequest::getProduct()const
 {
 	return product_;

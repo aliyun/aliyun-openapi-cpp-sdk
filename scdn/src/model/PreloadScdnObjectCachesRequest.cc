@@ -25,6 +25,17 @@ PreloadScdnObjectCachesRequest::PreloadScdnObjectCachesRequest() :
 PreloadScdnObjectCachesRequest::~PreloadScdnObjectCachesRequest()
 {}
 
+std::string PreloadScdnObjectCachesRequest::getArea()const
+{
+	return area_;
+}
+
+void PreloadScdnObjectCachesRequest::setArea(const std::string& area)
+{
+	area_ = area;
+	setParameter("Area", area);
+}
+
 std::string PreloadScdnObjectCachesRequest::getSecurityToken()const
 {
 	return securityToken_;

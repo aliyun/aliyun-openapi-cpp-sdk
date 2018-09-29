@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCDN_MODEL_PRELOADSCDNOBJECTCACHESREQUEST_H_
-#define ALIBABACLOUD_SCDN_MODEL_PRELOADSCDNOBJECTCACHESREQUEST_H_
+#ifndef ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINUVDATAREQUEST_H_
+#define ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINUVDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,28 +28,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT PreloadScdnObjectCachesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnDomainUvDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				PreloadScdnObjectCachesRequest();
-				~PreloadScdnObjectCachesRequest();
+				DescribeScdnDomainUvDataRequest();
+				~DescribeScdnDomainUvDataRequest();
 
-				std::string getArea()const;
-				void setArea(const std::string& area);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getObjectPath()const;
-				void setObjectPath(const std::string& objectPath);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string area_;
 				std::string securityToken_;
-				std::string objectPath_;
+				std::string domainName_;
+				std::string endTime_;
+				std::string startTime_;
 				long ownerId_;
 				std::string accessKeyId_;
 
@@ -57,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCDN_MODEL_PRELOADSCDNOBJECTCACHESREQUEST_H_
+#endif // !ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINUVDATAREQUEST_H_

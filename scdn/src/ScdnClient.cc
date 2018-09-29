@@ -267,6 +267,78 @@ ScdnClient::DescribeScdnDomainQpsDataOutcomeCallable ScdnClient::describeScdnDom
 	return task->get_future();
 }
 
+ScdnClient::DescribeScdnDomainUvDataOutcome ScdnClient::describeScdnDomainUvData(const DescribeScdnDomainUvDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainUvDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainUvDataOutcome(DescribeScdnDomainUvDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainUvDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainUvDataAsync(const DescribeScdnDomainUvDataRequest& request, const DescribeScdnDomainUvDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainUvData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainUvDataOutcomeCallable ScdnClient::describeScdnDomainUvDataCallable(const DescribeScdnDomainUvDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainUvDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainUvData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::DescribeScdnIpInfoOutcome ScdnClient::describeScdnIpInfo(const DescribeScdnIpInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnIpInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnIpInfoOutcome(DescribeScdnIpInfoResult(outcome.result()));
+	else
+		return DescribeScdnIpInfoOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnIpInfoAsync(const DescribeScdnIpInfoRequest& request, const DescribeScdnIpInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnIpInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnIpInfoOutcomeCallable ScdnClient::describeScdnIpInfoCallable(const DescribeScdnIpInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnIpInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnIpInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::DescribeScdnDomainConfigsOutcome ScdnClient::describeScdnDomainConfigs(const DescribeScdnDomainConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -807,6 +879,42 @@ ScdnClient::DescribeScdnDomainLogOutcomeCallable ScdnClient::describeScdnDomainL
 	return task->get_future();
 }
 
+ScdnClient::DescribeScdnDomainPvDataOutcome ScdnClient::describeScdnDomainPvData(const DescribeScdnDomainPvDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainPvDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainPvDataOutcome(DescribeScdnDomainPvDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainPvDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainPvDataAsync(const DescribeScdnDomainPvDataRequest& request, const DescribeScdnDomainPvDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainPvData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainPvDataOutcomeCallable ScdnClient::describeScdnDomainPvDataCallable(const DescribeScdnDomainPvDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainPvDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainPvData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::DescribeScdnUserQuotaOutcome ScdnClient::describeScdnUserQuota(const DescribeScdnUserQuotaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1161,42 @@ ScdnClient::DescribeScdnDomainOriginTrafficDataOutcomeCallable ScdnClient::descr
 			[this, request]()
 			{
 			return this->describeScdnDomainOriginTrafficData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::DescribeScdnDomainIspDataOutcome ScdnClient::describeScdnDomainIspData(const DescribeScdnDomainIspDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainIspDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainIspDataOutcome(DescribeScdnDomainIspDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainIspDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainIspDataAsync(const DescribeScdnDomainIspDataRequest& request, const DescribeScdnDomainIspDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainIspData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainIspDataOutcomeCallable ScdnClient::describeScdnDomainIspDataCallable(const DescribeScdnDomainIspDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainIspDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainIspData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

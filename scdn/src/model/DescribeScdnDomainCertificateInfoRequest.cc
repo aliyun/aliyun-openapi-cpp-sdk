@@ -36,6 +36,17 @@ void DescribeScdnDomainCertificateInfoRequest::setApp_ip(const std::string& app_
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeScdnDomainCertificateInfoRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeScdnDomainCertificateInfoRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeScdnDomainCertificateInfoRequest::getProduct()const
 {
 	return product_;

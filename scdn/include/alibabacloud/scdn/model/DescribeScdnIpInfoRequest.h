@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCDN_MODEL_PRELOADSCDNOBJECTCACHESREQUEST_H_
-#define ALIBABACLOUD_SCDN_MODEL_PRELOADSCDNOBJECTCACHESREQUEST_H_
+#ifndef ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNIPINFOREQUEST_H_
+#define ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNIPINFOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,28 +28,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT PreloadScdnObjectCachesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnIpInfoRequest : public RpcServiceRequest
 			{
 
 			public:
-				PreloadScdnObjectCachesRequest();
-				~PreloadScdnObjectCachesRequest();
+				DescribeScdnIpInfoRequest();
+				~DescribeScdnIpInfoRequest();
 
-				std::string getArea()const;
-				void setArea(const std::string& area);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getObjectPath()const;
-				void setObjectPath(const std::string& objectPath);
+				std::string getIP()const;
+				void setIP(const std::string& iP);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string area_;
 				std::string securityToken_;
-				std::string objectPath_;
+				std::string iP_;
 				long ownerId_;
 				std::string accessKeyId_;
 
@@ -57,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCDN_MODEL_PRELOADSCDNOBJECTCACHESREQUEST_H_
+#endif // !ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNIPINFOREQUEST_H_
