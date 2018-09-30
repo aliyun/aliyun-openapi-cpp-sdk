@@ -65,10 +65,6 @@ namespace AlibabaCloud
 				void setPopProduct(const std::string& popProduct);
 				std::string getProduct()const;
 				void setProduct(const std::string& product);
-				std::string getFixTimeGap()const;
-				void setFixTimeGap(const std::string& fixTimeGap);
-				std::string getTimeMerge()const;
-				void setTimeMerge(const std::string& timeMerge);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -108,8 +104,6 @@ namespace AlibabaCloud
 				std::string app_ip_;
 				std::string popProduct_;
 				std::string product_;
-				std::string fixTimeGap_;
-				std::string timeMerge_;
 				std::string domainName_;
 				std::string endTime_;
 				std::string callerBid_;

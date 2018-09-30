@@ -19,54 +19,32 @@
 using AlibabaCloud::Cdn::Model::DescribeCdnDomainLogsRequest;
 
 DescribeCdnDomainLogsRequest::DescribeCdnDomainLogsRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeCdnDomainLogs")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeCdnDomainLogs")
 {}
 
 DescribeCdnDomainLogsRequest::~DescribeCdnDomainLogsRequest()
 {}
 
-std::string DescribeCdnDomainLogsRequest::getSecurityToken()const
+long DescribeCdnDomainLogsRequest::getCallerParentId()const
 {
-	return securityToken_;
+	return callerParentId_;
 }
 
-void DescribeCdnDomainLogsRequest::setSecurityToken(const std::string& securityToken)
+void DescribeCdnDomainLogsRequest::setCallerParentId(long callerParentId)
 {
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	callerParentId_ = callerParentId;
+	setParameter("CallerParentId", std::to_string(callerParentId));
 }
 
-std::string DescribeCdnDomainLogsRequest::getDomainName()const
+bool DescribeCdnDomainLogsRequest::getProxy_original_security_transport()const
 {
-	return domainName_;
+	return proxy_original_security_transport_;
 }
 
-void DescribeCdnDomainLogsRequest::setDomainName(const std::string& domainName)
+void DescribeCdnDomainLogsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
-}
-
-long DescribeCdnDomainLogsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeCdnDomainLogsRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeCdnDomainLogsRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeCdnDomainLogsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	proxy_original_security_transport_ = proxy_original_security_transport;
+	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
 }
 
 std::string DescribeCdnDomainLogsRequest::getStartTime()const
@@ -80,15 +58,37 @@ void DescribeCdnDomainLogsRequest::setStartTime(const std::string& startTime)
 	setParameter("StartTime", startTime);
 }
 
-long DescribeCdnDomainLogsRequest::getOwnerId()const
+std::string DescribeCdnDomainLogsRequest::getProxy_original_source_ip()const
 {
-	return ownerId_;
+	return proxy_original_source_ip_;
 }
 
-void DescribeCdnDomainLogsRequest::setOwnerId(long ownerId)
+void DescribeCdnDomainLogsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	proxy_original_source_ip_ = proxy_original_source_ip;
+	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+}
+
+std::string DescribeCdnDomainLogsRequest::getOwnerIdLoginEmail()const
+{
+	return ownerIdLoginEmail_;
+}
+
+void DescribeCdnDomainLogsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
+{
+	ownerIdLoginEmail_ = ownerIdLoginEmail;
+	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+}
+
+std::string DescribeCdnDomainLogsRequest::getCallerType()const
+{
+	return callerType_;
+}
+
+void DescribeCdnDomainLogsRequest::setCallerType(const std::string& callerType)
+{
+	callerType_ = callerType;
+	setParameter("CallerType", callerType);
 }
 
 long DescribeCdnDomainLogsRequest::getPageNumber()const
@@ -113,14 +113,201 @@ void DescribeCdnDomainLogsRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeCdnDomainLogsRequest::getLogDay()const
+std::string DescribeCdnDomainLogsRequest::getSecurityToken()const
 {
-	return logDay_;
+	return securityToken_;
 }
 
-void DescribeCdnDomainLogsRequest::setLogDay(const std::string& logDay)
+void DescribeCdnDomainLogsRequest::setSecurityToken(const std::string& securityToken)
 {
-	logDay_ = logDay;
-	setParameter("LogDay", logDay);
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeCdnDomainLogsRequest::getRequestContent()const
+{
+	return requestContent_;
+}
+
+void DescribeCdnDomainLogsRequest::setRequestContent(const std::string& requestContent)
+{
+	requestContent_ = requestContent;
+	setParameter("RequestContent", requestContent);
+}
+
+long DescribeCdnDomainLogsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeCdnDomainLogsRequest::setPageSize(long pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeCdnDomainLogsRequest::getCallerBidEmail()const
+{
+	return callerBidEmail_;
+}
+
+void DescribeCdnDomainLogsRequest::setCallerBidEmail(const std::string& callerBidEmail)
+{
+	callerBidEmail_ = callerBidEmail;
+	setParameter("CallerBidEmail", callerBidEmail);
+}
+
+std::string DescribeCdnDomainLogsRequest::getCallerUidEmail()const
+{
+	return callerUidEmail_;
+}
+
+void DescribeCdnDomainLogsRequest::setCallerUidEmail(const std::string& callerUidEmail)
+{
+	callerUidEmail_ = callerUidEmail;
+	setParameter("CallerUidEmail", callerUidEmail);
+}
+
+long DescribeCdnDomainLogsRequest::getCallerUid()const
+{
+	return callerUid_;
+}
+
+void DescribeCdnDomainLogsRequest::setCallerUid(long callerUid)
+{
+	callerUid_ = callerUid;
+	setParameter("CallerUid", std::to_string(callerUid));
+}
+
+std::string DescribeCdnDomainLogsRequest::getApp_ip()const
+{
+	return app_ip_;
+}
+
+void DescribeCdnDomainLogsRequest::setApp_ip(const std::string& app_ip)
+{
+	app_ip_ = app_ip;
+	setParameter("App_ip", app_ip);
+}
+
+std::string DescribeCdnDomainLogsRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeCdnDomainLogsRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
+std::string DescribeCdnDomainLogsRequest::getProduct()const
+{
+	return product_;
+}
+
+void DescribeCdnDomainLogsRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setParameter("Product", product);
+}
+
+std::string DescribeCdnDomainLogsRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeCdnDomainLogsRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+std::string DescribeCdnDomainLogsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeCdnDomainLogsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", endTime);
+}
+
+std::string DescribeCdnDomainLogsRequest::getCallerBid()const
+{
+	return callerBid_;
+}
+
+void DescribeCdnDomainLogsRequest::setCallerBid(const std::string& callerBid)
+{
+	callerBid_ = callerBid;
+	setParameter("CallerBid", callerBid);
+}
+
+long DescribeCdnDomainLogsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeCdnDomainLogsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeCdnDomainLogsRequest::getVersion()const
+{
+	return version_;
+}
+
+void DescribeCdnDomainLogsRequest::setVersion(const std::string& version)
+{
+	version_ = version;
+	setParameter("Version", version);
+}
+
+bool DescribeCdnDomainLogsRequest::getProxy_trust_transport_info()const
+{
+	return proxy_trust_transport_info_;
+}
+
+void DescribeCdnDomainLogsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
+{
+	proxy_trust_transport_info_ = proxy_trust_transport_info;
+	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+}
+
+bool DescribeCdnDomainLogsRequest::getAk_mfa_present()const
+{
+	return ak_mfa_present_;
+}
+
+void DescribeCdnDomainLogsRequest::setAk_mfa_present(bool ak_mfa_present)
+{
+	ak_mfa_present_ = ak_mfa_present;
+	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+}
+
+bool DescribeCdnDomainLogsRequest::getSecurity_transport()const
+{
+	return security_transport_;
+}
+
+void DescribeCdnDomainLogsRequest::setSecurity_transport(bool security_transport)
+{
+	security_transport_ = security_transport;
+	setParameter("Security_transport", std::to_string(security_transport));
+}
+
+std::string DescribeCdnDomainLogsRequest::getRequestId()const
+{
+	return requestId_;
+}
+
+void DescribeCdnDomainLogsRequest::setRequestId(const std::string& requestId)
+{
+	requestId_ = requestId;
+	setParameter("RequestId", requestId);
 }
 

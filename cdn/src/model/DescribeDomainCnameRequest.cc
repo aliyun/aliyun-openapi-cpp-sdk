@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainCnameRequest;
 
 DescribeDomainCnameRequest::DescribeDomainCnameRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainCname")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainCname")
 {}
 
 DescribeDomainCnameRequest::~DescribeDomainCnameRequest()
@@ -34,6 +34,17 @@ void DescribeDomainCnameRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
 	setParameter("App_ip", app_ip);
+}
+
+std::string DescribeDomainCnameRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeDomainCnameRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDomainCnameRequest::getProduct()const

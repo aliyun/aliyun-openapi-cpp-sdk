@@ -40,13 +40,13 @@ void PushObjectCacheResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["PushTaskId"].isNull())
-		pushTaskId_ = value["PushTaskId"].asString();
+	if(!value["PreloadTaskId"].isNull())
+		preloadTaskId_ = value["PreloadTaskId"].asString();
 
 }
 
-std::string PushObjectCacheResult::getPushTaskId()const
+std::string PushObjectCacheResult::getPreloadTaskId()const
 {
-	return pushTaskId_;
+	return preloadTaskId_;
 }
 

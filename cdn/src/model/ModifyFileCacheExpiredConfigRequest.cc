@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::ModifyFileCacheExpiredConfigRequest;
 
 ModifyFileCacheExpiredConfigRequest::ModifyFileCacheExpiredConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "ModifyFileCacheExpiredConfig")
+	RpcServiceRequest("cdn", "2018-05-10", "ModifyFileCacheExpiredConfig")
 {}
 
 ModifyFileCacheExpiredConfigRequest::~ModifyFileCacheExpiredConfigRequest()

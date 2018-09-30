@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
             private:
 				std::string resourceGroupId_;
 				std::string securityToken_;
+				std::string ownerAccount_;
 				std::string domainName_;
 				long ownerId_;
 				std::string accessKeyId_;

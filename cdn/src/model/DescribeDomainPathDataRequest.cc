@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainPathDataRequest;
 
 DescribeDomainPathDataRequest::DescribeDomainPathDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainPathData")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainPathData")
 {}
 
 DescribeDomainPathDataRequest::~DescribeDomainPathDataRequest()

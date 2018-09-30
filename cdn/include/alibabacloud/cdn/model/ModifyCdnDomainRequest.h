@@ -37,20 +37,14 @@ namespace AlibabaCloud
 
 				std::string getTopLevelDomain()const;
 				void setTopLevelDomain(const std::string& topLevelDomain);
-				int getSourcePort()const;
-				void setSourcePort(int sourcePort);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getPriorities()const;
-				void setPriorities(const std::string& priorities);
 				std::string getSources()const;
 				void setSources(const std::string& sources);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getSourceType()const;
-				void setSourceType(const std::string& sourceType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
@@ -58,13 +52,10 @@ namespace AlibabaCloud
 
             private:
 				std::string topLevelDomain_;
-				int sourcePort_;
 				std::string resourceGroupId_;
-				std::string priorities_;
 				std::string sources_;
 				std::string securityToken_;
 				std::string domainName_;
-				std::string sourceType_;
 				long ownerId_;
 				std::string accessKeyId_;
 

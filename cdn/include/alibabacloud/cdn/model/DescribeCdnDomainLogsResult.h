@@ -32,9 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CDN_EXPORT DescribeCdnDomainLogsResult : public ServiceResult
 			{
 			public:
-				struct DomainLogModel
+				struct DomainLogDetail
 				{
-					struct DomainLogDetail
+					struct PageInfoDetail
+					{
+						long pageSize;
+						long total;
+						long pageIndex;
+					};
+					struct LogInfoDetail
 					{
 						long logSize;
 						std::string endTime;
@@ -43,25 +49,21 @@ namespace AlibabaCloud
 						std::string logPath;
 					};
 					std::string domainName;
-					std::vector<DomainLogDetail> domainLogDetails;
+					std::vector<DomainLogDetail::LogInfoDetail> logInfos;
+					std::vector<DomainLogDetail::PageInfoDetail> pageInfos;
+					long logCount;
 				};
 
 
 				DescribeCdnDomainLogsResult();
 				explicit DescribeCdnDomainLogsResult(const std::string &payload);
 				~DescribeCdnDomainLogsResult();
-				long getTotalCount()const;
-				long getPageSize()const;
-				DomainLogModel getDomainLogModel()const;
-				long getPageNumber()const;
+				std::vector<DomainLogDetail> getDomainLogDetails()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				long pageSize_;
-				DomainLogModel domainLogModel_;
-				long pageNumber_;
+				std::vector<DomainLogDetail> domainLogDetails_;
 
 			};
 		}

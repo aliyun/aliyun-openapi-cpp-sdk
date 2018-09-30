@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::SetHttpHeaderConfigRequest;
 
 SetHttpHeaderConfigRequest::SetHttpHeaderConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetHttpHeaderConfig")
+	RpcServiceRequest("cdn", "2018-05-10", "SetHttpHeaderConfig")
 {}
 
 SetHttpHeaderConfigRequest::~SetHttpHeaderConfigRequest()

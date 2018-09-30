@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::ListDomainsByLogConfigIdRequest;
 
 ListDomainsByLogConfigIdRequest::ListDomainsByLogConfigIdRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "ListDomainsByLogConfigId")
+	RpcServiceRequest("cdn", "2018-05-10", "ListDomainsByLogConfigId")
 {}
 
 ListDomainsByLogConfigIdRequest::~ListDomainsByLogConfigIdRequest()

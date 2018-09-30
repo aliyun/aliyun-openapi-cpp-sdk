@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainCertificateInfoRequest;
 
 DescribeDomainCertificateInfoRequest::DescribeDomainCertificateInfoRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainCertificateInfo")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainCertificateInfo")
 {}
 
 DescribeDomainCertificateInfoRequest::~DescribeDomainCertificateInfoRequest()

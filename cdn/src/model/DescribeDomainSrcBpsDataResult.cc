@@ -48,6 +48,8 @@ void DescribeDomainSrcBpsDataResult::parse(const std::string &payload)
 			srcBpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
 		if(!value["Value"].isNull())
 			srcBpsDataPerIntervalObject.value = value["Value"].asString();
+		if(!value["HttpsValue"].isNull())
+			srcBpsDataPerIntervalObject.httpsValue = value["HttpsValue"].asString();
 		srcBpsDataPerInterval_.push_back(srcBpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

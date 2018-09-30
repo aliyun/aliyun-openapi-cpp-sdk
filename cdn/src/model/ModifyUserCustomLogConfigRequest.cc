@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::ModifyUserCustomLogConfigRequest;
 
 ModifyUserCustomLogConfigRequest::ModifyUserCustomLogConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "ModifyUserCustomLogConfig")
+	RpcServiceRequest("cdn", "2018-05-10", "ModifyUserCustomLogConfig")
 {}
 
 ModifyUserCustomLogConfigRequest::~ModifyUserCustomLogConfigRequest()

@@ -37,12 +37,12 @@ namespace AlibabaCloud
 				PushObjectCacheResult();
 				explicit PushObjectCacheResult(const std::string &payload);
 				~PushObjectCacheResult();
-				std::string getPushTaskId()const;
+				std::string getPreloadTaskId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string pushTaskId_;
+				std::string preloadTaskId_;
 
 			};
 		}

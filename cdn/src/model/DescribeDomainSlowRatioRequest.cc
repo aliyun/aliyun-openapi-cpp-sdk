@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainSlowRatioRequest;
 
 DescribeDomainSlowRatioRequest::DescribeDomainSlowRatioRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainSlowRatio")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainSlowRatio")
 {}
 
 DescribeDomainSlowRatioRequest::~DescribeDomainSlowRatioRequest()

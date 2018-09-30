@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				struct DataModule
 				{
 					std::string overseasValue;
-					std::string staticOverseasValue;
-					std::string staticValue;
-					std::string staticDomesticValue;
+					std::string httpsAccDomesticValue;
 					std::string timeStamp;
 					std::string domesticValue;
-					std::string dynamicOverseasValue;
+					std::string httpsAccOverseasValue;
+					std::string httpsValue;
 					std::string accDomesticValue;
 					std::string value;
 					std::string accOverseasValue;
-					std::string dynamicDomesticValue;
+					std::string httpsDomesticValue;
+					std::string httpsAccValue;
 					std::string accValue;
-					std::string dynamicValue;
+					std::string httpsOverseasValue;
 				};
 
 
@@ -55,8 +55,8 @@ namespace AlibabaCloud
 				~DescribeDomainQpsDataResult();
 				std::string getEndTime()const;
 				std::string getDomainName()const;
-				std::string getDataInterval()const;
 				std::string getStartTime()const;
+				std::string getDataInterval()const;
 				std::vector<DataModule> getQpsDataInterval()const;
 
 			protected:
@@ -64,8 +64,8 @@ namespace AlibabaCloud
 			private:
 				std::string endTime_;
 				std::string domainName_;
-				std::string dataInterval_;
 				std::string startTime_;
+				std::string dataInterval_;
 				std::vector<DataModule> qpsDataInterval_;
 
 			};
