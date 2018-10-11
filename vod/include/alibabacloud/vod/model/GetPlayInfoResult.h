@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string coverURL;
 					std::string duration;
 					std::vector<Thumbnail> thumbnailList;
+					std::string outputType;
 				};
 				struct PlayInfo
 				{

@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setRand(const std::string& rand);
 				std::string getReAuthInfo()const;
 				void setReAuthInfo(const std::string& reAuthInfo);
+				std::string getPlayConfig()const;
+				void setPlayConfig(const std::string& playConfig);
 				std::string getOutputType()const;
 				void setOutputType(const std::string& outputType);
 				std::string getDefinition()const;
@@ -78,6 +80,7 @@ namespace AlibabaCloud
 				std::string resultType_;
 				std::string rand_;
 				std::string reAuthInfo_;
+				std::string playConfig_;
 				std::string outputType_;
 				std::string definition_;
 				long authTimeout_;

@@ -89,6 +89,8 @@ void GetPlayInfoResult::parse(const std::string &payload)
 		playInfoList_.push_back(playInfoListObject);
 	}
 	auto videoBaseNode = value["VideoBase"];
+	if(!videoBaseNode["OutputType"].isNull())
+		videoBase_.outputType = videoBaseNode["OutputType"].asString();
 	if(!videoBaseNode["CoverURL"].isNull())
 		videoBase_.coverURL = videoBaseNode["CoverURL"].asString();
 	if(!videoBaseNode["Duration"].isNull())

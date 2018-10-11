@@ -58,6 +58,17 @@ void GetVideoPlayAuthRequest::setReAuthInfo(const std::string& reAuthInfo)
 	setParameter("ReAuthInfo", reAuthInfo);
 }
 
+std::string GetVideoPlayAuthRequest::getPlayConfig()const
+{
+	return playConfig_;
+}
+
+void GetVideoPlayAuthRequest::setPlayConfig(const std::string& playConfig)
+{
+	playConfig_ = playConfig;
+	setParameter("PlayConfig", playConfig);
+}
+
 long GetVideoPlayAuthRequest::getAuthInfoTimeout()const
 {
 	return authInfoTimeout_;

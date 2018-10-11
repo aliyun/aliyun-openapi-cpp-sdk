@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_GETAUDITRESULTRESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_GETAUDITRESULTRESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DELETEMEZZANINESRESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_DELETEMEZZANINESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT GetAuditResultResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT DeleteMezzaninesResult : public ServiceResult
 			{
 			public:
-				struct AIAuditResult
-				{
-					std::string abnormalModules;
-					std::string titleResult;
-					std::string label;
-					std::string terrorismResult;
-					std::string coverResult;
-					std::string pornResult;
-				};
 
 
-				GetAuditResultResult();
-				explicit GetAuditResultResult(const std::string &payload);
-				~GetAuditResultResult();
-				AIAuditResult getAIAuditResult()const;
+				DeleteMezzaninesResult();
+				explicit DeleteMezzaninesResult(const std::string &payload);
+				~DeleteMezzaninesResult();
+				std::vector<std::string> getNonExistVideoIds()const;
+				std::vector<std::string> getUnRemoveableVideoIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				AIAuditResult aIAuditResult_;
+				std::vector<std::string> nonExistVideoIds_;
+				std::vector<std::string> unRemoveableVideoIds_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_GETAUDITRESULTRESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DELETEMEZZANINESRESULT_H_

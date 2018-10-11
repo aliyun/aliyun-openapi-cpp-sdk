@@ -25,6 +25,39 @@ GetAuditResultRequest::GetAuditResultRequest() :
 GetAuditResultRequest::~GetAuditResultRequest()
 {}
 
+std::string GetAuditResultRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void GetAuditResultRequest::setResourceOwnerId(const std::string& resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", resourceOwnerId);
+}
+
+std::string GetAuditResultRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void GetAuditResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string GetAuditResultRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void GetAuditResultRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
+}
+
 std::string GetAuditResultRequest::getVideoId()const
 {
 	return videoId_;
@@ -34,5 +67,38 @@ void GetAuditResultRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
 	setParameter("VideoId", videoId);
+}
+
+std::string GetAuditResultRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void GetAuditResultRequest::setOwnerId(const std::string& ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", ownerId);
+}
+
+std::string GetAuditResultRequest::getMediaId()const
+{
+	return mediaId_;
+}
+
+void GetAuditResultRequest::setMediaId(const std::string& mediaId)
+{
+	mediaId_ = mediaId;
+	setParameter("MediaId", mediaId);
+}
+
+std::string GetAuditResultRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetAuditResultRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 

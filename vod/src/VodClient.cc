@@ -1275,6 +1275,42 @@ VodClient::UpdateVideoInfoOutcomeCallable VodClient::updateVideoInfoCallable(con
 	return task->get_future();
 }
 
+VodClient::UpdateImageInfosOutcome VodClient::updateImageInfos(const UpdateImageInfosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateImageInfosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateImageInfosOutcome(UpdateImageInfosResult(outcome.result()));
+	else
+		return UpdateImageInfosOutcome(outcome.error());
+}
+
+void VodClient::updateImageInfosAsync(const UpdateImageInfosRequest& request, const UpdateImageInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateImageInfos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::UpdateImageInfosOutcomeCallable VodClient::updateImageInfosCallable(const UpdateImageInfosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateImageInfosOutcome()>>(
+			[this, request]()
+			{
+			return this->updateImageInfos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::SearchMediaOutcome VodClient::searchMedia(const SearchMediaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2313,6 +2349,42 @@ VodClient::SetAuditSecurityIpOutcomeCallable VodClient::setAuditSecurityIpCallab
 			[this, request]()
 			{
 			return this->setAuditSecurityIp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DeleteMezzaninesOutcome VodClient::deleteMezzanines(const DeleteMezzaninesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMezzaninesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMezzaninesOutcome(DeleteMezzaninesResult(outcome.result()));
+	else
+		return DeleteMezzaninesOutcome(outcome.error());
+}
+
+void VodClient::deleteMezzaninesAsync(const DeleteMezzaninesRequest& request, const DeleteMezzaninesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMezzanines(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DeleteMezzaninesOutcomeCallable VodClient::deleteMezzaninesCallable(const DeleteMezzaninesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMezzaninesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMezzanines(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

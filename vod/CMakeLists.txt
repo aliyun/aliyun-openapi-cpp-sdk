@@ -89,6 +89,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/CreateUploadImageResult.h
 	include/alibabacloud/vod/model/UpdateVideoInfoRequest.h
 	include/alibabacloud/vod/model/UpdateVideoInfoResult.h
+	include/alibabacloud/vod/model/UpdateImageInfosRequest.h
+	include/alibabacloud/vod/model/UpdateImageInfosResult.h
 	include/alibabacloud/vod/model/SearchMediaRequest.h
 	include/alibabacloud/vod/model/SearchMediaResult.h
 	include/alibabacloud/vod/model/DescribePlayTopVideosRequest.h
@@ -147,6 +149,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetOSSStatisResult.h
 	include/alibabacloud/vod/model/SetAuditSecurityIpRequest.h
 	include/alibabacloud/vod/model/SetAuditSecurityIpResult.h
+	include/alibabacloud/vod/model/DeleteMezzaninesRequest.h
+	include/alibabacloud/vod/model/DeleteMezzaninesResult.h
 	include/alibabacloud/vod/model/AddEditingProjectRequest.h
 	include/alibabacloud/vod/model/AddEditingProjectResult.h
 	include/alibabacloud/vod/model/SubmitAIVideoSummaryJobRequest.h
@@ -238,6 +242,8 @@ set(vod_src
 	src/model/CreateUploadImageResult.cc
 	src/model/UpdateVideoInfoRequest.cc
 	src/model/UpdateVideoInfoResult.cc
+	src/model/UpdateImageInfosRequest.cc
+	src/model/UpdateImageInfosResult.cc
 	src/model/SearchMediaRequest.cc
 	src/model/SearchMediaResult.cc
 	src/model/DescribePlayTopVideosRequest.cc
@@ -296,6 +302,8 @@ set(vod_src
 	src/model/GetOSSStatisResult.cc
 	src/model/SetAuditSecurityIpRequest.cc
 	src/model/SetAuditSecurityIpResult.cc
+	src/model/DeleteMezzaninesRequest.cc
+	src/model/DeleteMezzaninesResult.cc
 	src/model/AddEditingProjectRequest.cc
 	src/model/AddEditingProjectResult.cc
 	src/model/SubmitAIVideoSummaryJobRequest.cc

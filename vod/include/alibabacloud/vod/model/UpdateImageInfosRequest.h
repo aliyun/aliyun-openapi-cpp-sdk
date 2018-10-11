@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_GETAUDITRESULTREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_GETAUDITRESULTREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_UPDATEIMAGEINFOSREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_UPDATEIMAGEINFOSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT GetAuditResultRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOD_EXPORT UpdateImageInfosRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetAuditResultRequest();
-				~GetAuditResultRequest();
+				UpdateImageInfosRequest();
+				~UpdateImageInfosRequest();
 
-				std::string getResourceOwnerId()const;
-				void setResourceOwnerId(const std::string& resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getUpdateContent()const;
+				void setUpdateContent(const std::string& updateContent);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getVideoId()const;
-				void setVideoId(const std::string& videoId);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
-				std::string getMediaId()const;
-				void setMediaId(const std::string& mediaId);
+				long getResourceRealOwnerId()const;
+				void setResourceRealOwnerId(long resourceRealOwnerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string resourceOwnerId_;
+				long resourceOwnerId_;
+				std::string updateContent_;
 				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				std::string videoId_;
-				std::string ownerId_;
-				std::string mediaId_;
+				long resourceRealOwnerId_;
+				long ownerId_;
 				std::string accessKeyId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_GETAUDITRESULTREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_UPDATEIMAGEINFOSREQUEST_H_

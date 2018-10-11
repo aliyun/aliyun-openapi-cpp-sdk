@@ -146,6 +146,17 @@ void GetPlayInfoRequest::setReAuthInfo(const std::string& reAuthInfo)
 	setParameter("ReAuthInfo", reAuthInfo);
 }
 
+std::string GetPlayInfoRequest::getPlayConfig()const
+{
+	return playConfig_;
+}
+
+void GetPlayInfoRequest::setPlayConfig(const std::string& playConfig)
+{
+	playConfig_ = playConfig;
+	setParameter("PlayConfig", playConfig);
+}
+
 std::string GetPlayInfoRequest::getOutputType()const
 {
 	return outputType_;

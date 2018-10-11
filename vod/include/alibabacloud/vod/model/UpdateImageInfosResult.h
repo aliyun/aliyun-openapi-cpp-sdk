@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_GETAUDITRESULTRESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_GETAUDITRESULTRESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_UPDATEIMAGEINFOSRESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_UPDATEIMAGEINFOSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT GetAuditResultResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT UpdateImageInfosResult : public ServiceResult
 			{
 			public:
-				struct AIAuditResult
-				{
-					std::string abnormalModules;
-					std::string titleResult;
-					std::string label;
-					std::string terrorismResult;
-					std::string coverResult;
-					std::string pornResult;
-				};
 
 
-				GetAuditResultResult();
-				explicit GetAuditResultResult(const std::string &payload);
-				~GetAuditResultResult();
-				AIAuditResult getAIAuditResult()const;
+				UpdateImageInfosResult();
+				explicit UpdateImageInfosResult(const std::string &payload);
+				~UpdateImageInfosResult();
+				std::vector<std::string> getNonExistImageIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				AIAuditResult aIAuditResult_;
+				std::vector<std::string> nonExistImageIds_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_GETAUDITRESULTRESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_UPDATEIMAGEINFOSRESULT_H_

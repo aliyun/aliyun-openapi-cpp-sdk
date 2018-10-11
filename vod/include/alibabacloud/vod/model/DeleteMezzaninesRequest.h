@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_GETVIDEOPLAYAUTHREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_GETVIDEOPLAYAUTHREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DELETEMEZZANINESREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_DELETEMEZZANINESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT GetVideoPlayAuthRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOD_EXPORT DeleteMezzaninesRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetVideoPlayAuthRequest();
-				~GetVideoPlayAuthRequest();
+				DeleteMezzaninesRequest();
+				~DeleteMezzaninesRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getReAuthInfo()const;
-				void setReAuthInfo(const std::string& reAuthInfo);
-				std::string getPlayConfig()const;
-				void setPlayConfig(const std::string& playConfig);
-				long getAuthInfoTimeout()const;
-				void setAuthInfoTimeout(long authInfoTimeout);
-				std::string getVideoId()const;
-				void setVideoId(const std::string& videoId);
+				bool getForce()const;
+				void setForce(bool force);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getVideoIds()const;
+				void setVideoIds(const std::string& videoIds);
 
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				std::string reAuthInfo_;
-				std::string playConfig_;
-				long authInfoTimeout_;
-				std::string videoId_;
+				bool force_;
+				long resourceRealOwnerId_;
 				long ownerId_;
+				std::string videoIds_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_GETVIDEOPLAYAUTHREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DELETEMEZZANINESREQUEST_H_

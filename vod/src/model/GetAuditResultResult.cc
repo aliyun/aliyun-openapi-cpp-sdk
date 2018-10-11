@@ -41,12 +41,18 @@ void GetAuditResultResult::parse(const std::string &payload)
 
 	setRequestId(value["RequestId"].asString());
 	auto aIAuditResultNode = value["AIAuditResult"];
+	if(!aIAuditResultNode["AbnormalModules"].isNull())
+		aIAuditResult_.abnormalModules = aIAuditResultNode["AbnormalModules"].asString();
 	if(!aIAuditResultNode["Label"].isNull())
 		aIAuditResult_.label = aIAuditResultNode["Label"].asString();
-	if(!aIAuditResultNode["TerrorismResult"].isNull())
-		aIAuditResult_.terrorismResult = aIAuditResultNode["TerrorismResult"].asString();
 	if(!aIAuditResultNode["PornResult"].isNull())
 		aIAuditResult_.pornResult = aIAuditResultNode["PornResult"].asString();
+	if(!aIAuditResultNode["TerrorismResult"].isNull())
+		aIAuditResult_.terrorismResult = aIAuditResultNode["TerrorismResult"].asString();
+	if(!aIAuditResultNode["TitleResult"].isNull())
+		aIAuditResult_.titleResult = aIAuditResultNode["TitleResult"].asString();
+	if(!aIAuditResultNode["CoverResult"].isNull())
+		aIAuditResult_.coverResult = aIAuditResultNode["CoverResult"].asString();
 
 }
 

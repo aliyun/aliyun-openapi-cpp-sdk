@@ -90,6 +90,8 @@
 #include "model/CreateUploadImageResult.h"
 #include "model/UpdateVideoInfoRequest.h"
 #include "model/UpdateVideoInfoResult.h"
+#include "model/UpdateImageInfosRequest.h"
+#include "model/UpdateImageInfosResult.h"
 #include "model/SearchMediaRequest.h"
 #include "model/SearchMediaResult.h"
 #include "model/DescribePlayTopVideosRequest.h"
@@ -148,6 +150,8 @@
 #include "model/GetOSSStatisResult.h"
 #include "model/SetAuditSecurityIpRequest.h"
 #include "model/SetAuditSecurityIpResult.h"
+#include "model/DeleteMezzaninesRequest.h"
+#include "model/DeleteMezzaninesResult.h"
 #include "model/AddEditingProjectRequest.h"
 #include "model/AddEditingProjectResult.h"
 #include "model/SubmitAIVideoSummaryJobRequest.h"
@@ -279,6 +283,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateVideoInfoResult> UpdateVideoInfoOutcome;
 			typedef std::future<UpdateVideoInfoOutcome> UpdateVideoInfoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::UpdateVideoInfoRequest&, const UpdateVideoInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVideoInfoAsyncHandler;
+			typedef Outcome<Error, Model::UpdateImageInfosResult> UpdateImageInfosOutcome;
+			typedef std::future<UpdateImageInfosOutcome> UpdateImageInfosOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::UpdateImageInfosRequest&, const UpdateImageInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateImageInfosAsyncHandler;
 			typedef Outcome<Error, Model::SearchMediaResult> SearchMediaOutcome;
 			typedef std::future<SearchMediaOutcome> SearchMediaOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SearchMediaRequest&, const SearchMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaAsyncHandler;
@@ -366,6 +373,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetAuditSecurityIpResult> SetAuditSecurityIpOutcome;
 			typedef std::future<SetAuditSecurityIpOutcome> SetAuditSecurityIpOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SetAuditSecurityIpRequest&, const SetAuditSecurityIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetAuditSecurityIpAsyncHandler;
+			typedef Outcome<Error, Model::DeleteMezzaninesResult> DeleteMezzaninesOutcome;
+			typedef std::future<DeleteMezzaninesOutcome> DeleteMezzaninesOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DeleteMezzaninesRequest&, const DeleteMezzaninesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMezzaninesAsyncHandler;
 			typedef Outcome<Error, Model::AddEditingProjectResult> AddEditingProjectOutcome;
 			typedef std::future<AddEditingProjectOutcome> AddEditingProjectOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::AddEditingProjectRequest&, const AddEditingProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddEditingProjectAsyncHandler;
@@ -503,6 +513,9 @@ namespace AlibabaCloud
 			UpdateVideoInfoOutcome updateVideoInfo(const Model::UpdateVideoInfoRequest &request)const;
 			void updateVideoInfoAsync(const Model::UpdateVideoInfoRequest& request, const UpdateVideoInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateVideoInfoOutcomeCallable updateVideoInfoCallable(const Model::UpdateVideoInfoRequest& request) const;
+			UpdateImageInfosOutcome updateImageInfos(const Model::UpdateImageInfosRequest &request)const;
+			void updateImageInfosAsync(const Model::UpdateImageInfosRequest& request, const UpdateImageInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateImageInfosOutcomeCallable updateImageInfosCallable(const Model::UpdateImageInfosRequest& request) const;
 			SearchMediaOutcome searchMedia(const Model::SearchMediaRequest &request)const;
 			void searchMediaAsync(const Model::SearchMediaRequest& request, const SearchMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchMediaOutcomeCallable searchMediaCallable(const Model::SearchMediaRequest& request) const;
@@ -590,6 +603,9 @@ namespace AlibabaCloud
 			SetAuditSecurityIpOutcome setAuditSecurityIp(const Model::SetAuditSecurityIpRequest &request)const;
 			void setAuditSecurityIpAsync(const Model::SetAuditSecurityIpRequest& request, const SetAuditSecurityIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetAuditSecurityIpOutcomeCallable setAuditSecurityIpCallable(const Model::SetAuditSecurityIpRequest& request) const;
+			DeleteMezzaninesOutcome deleteMezzanines(const Model::DeleteMezzaninesRequest &request)const;
+			void deleteMezzaninesAsync(const Model::DeleteMezzaninesRequest& request, const DeleteMezzaninesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteMezzaninesOutcomeCallable deleteMezzaninesCallable(const Model::DeleteMezzaninesRequest& request) const;
 			AddEditingProjectOutcome addEditingProject(const Model::AddEditingProjectRequest &request)const;
 			void addEditingProjectAsync(const Model::AddEditingProjectRequest& request, const AddEditingProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddEditingProjectOutcomeCallable addEditingProjectCallable(const Model::AddEditingProjectRequest& request) const;
