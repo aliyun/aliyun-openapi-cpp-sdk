@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_DELETEDEVICEGROUPRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_DELETEDEVICEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QueryProductResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT DeleteDeviceGroupResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					bool owner;
-					std::string description;
-					std::string productName;
-					std::string aliyunCommodityCode;
-					std::string productStatus;
-					std::string productSecret;
-					long gmtCreate;
-					std::string categoryKey;
-					bool id2;
-					std::string protocolType;
-					int nodeType;
-					int dataFormat;
-					std::string categoryName;
-					std::string productKey;
-					int deviceCount;
-				};
 
 
-				QueryProductResult();
-				explicit QueryProductResult(const std::string &payload);
-				~QueryProductResult();
-				Data getData()const;
+				DeleteDeviceGroupResult();
+				explicit DeleteDeviceGroupResult(const std::string &payload);
+				~DeleteDeviceGroupResult();
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -63,7 +44,6 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -72,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_DELETEDEVICEGROUPRESULT_H_

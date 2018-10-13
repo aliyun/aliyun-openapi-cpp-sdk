@@ -1,3 +1,6 @@
+2018-10-13 Version: 1.27.8
+1, Add device group related APIs.
+
 2018-10-11 Version: 1.27.7
 1, Add a new api called DeleteMezzanines to clear mezzanine infos and storages.
 2, Add the field called PlayConfig to GetVideoPlayAuth and GetPlayInfo api request.

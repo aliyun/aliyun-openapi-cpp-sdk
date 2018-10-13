@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_BATCHADDDEVICEGROUPRELATIONSRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_BATCHADDDEVICEGROUPRELATIONSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QueryProductResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT BatchAddDeviceGroupRelationsResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					bool owner;
-					std::string description;
-					std::string productName;
-					std::string aliyunCommodityCode;
-					std::string productStatus;
-					std::string productSecret;
-					long gmtCreate;
-					std::string categoryKey;
-					bool id2;
-					std::string protocolType;
-					int nodeType;
-					int dataFormat;
-					std::string categoryName;
-					std::string productKey;
-					int deviceCount;
-				};
 
 
-				QueryProductResult();
-				explicit QueryProductResult(const std::string &payload);
-				~QueryProductResult();
-				Data getData()const;
+				BatchAddDeviceGroupRelationsResult();
+				explicit BatchAddDeviceGroupRelationsResult(const std::string &payload);
+				~BatchAddDeviceGroupRelationsResult();
+				int getValidDeviceCount()const;
+				int getSuccessAddedDeviceCount()const;
+				int getExceedTenGroupDeviceCount()const;
+				int getAlreadyRelatedGroupDeviceCount()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -63,7 +48,10 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
+				int validDeviceCount_;
+				int successAddedDeviceCount_;
+				int exceedTenGroupDeviceCount_;
+				int alreadyRelatedGroupDeviceCount_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -72,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_BATCHADDDEVICEGROUPRELATIONSRESULT_H_

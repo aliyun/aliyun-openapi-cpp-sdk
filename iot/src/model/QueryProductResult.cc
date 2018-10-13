@@ -67,6 +67,10 @@ void QueryProductResult::parse(const std::string &payload)
 		data_.id2 = dataNode["Id2"].asString() == "true";
 	if(!dataNode["ProtocolType"].isNull())
 		data_.protocolType = dataNode["ProtocolType"].asString();
+	if(!dataNode["ProductStatus"].isNull())
+		data_.productStatus = dataNode["ProductStatus"].asString();
+	if(!dataNode["Owner"].isNull())
+		data_.owner = dataNode["Owner"].asString() == "true";
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_CREATEDEVICEGROUPRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_CREATEDEVICEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QueryProductResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT CreateDeviceGroupResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					bool owner;
-					std::string description;
-					std::string productName;
-					std::string aliyunCommodityCode;
-					std::string productStatus;
-					std::string productSecret;
-					long gmtCreate;
-					std::string categoryKey;
-					bool id2;
-					std::string protocolType;
-					int nodeType;
-					int dataFormat;
-					std::string categoryName;
-					std::string productKey;
-					int deviceCount;
+					std::string groupName;
+					std::string utcCreate;
+					std::string groupDesc;
+					std::string groupId;
 				};
 
 
-				QueryProductResult();
-				explicit QueryProductResult(const std::string &payload);
-				~QueryProductResult();
+				CreateDeviceGroupResult();
+				explicit CreateDeviceGroupResult(const std::string &payload);
+				~CreateDeviceGroupResult();
 				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
@@ -72,4 +61,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_CREATEDEVICEGROUPRESULT_H_

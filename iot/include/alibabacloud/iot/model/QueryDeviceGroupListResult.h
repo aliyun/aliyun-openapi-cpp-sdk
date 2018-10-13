@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYDEVICEGROUPLISTRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYDEVICEGROUPLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QueryProductResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT QueryDeviceGroupListResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct GroupInfo
 				{
-					bool owner;
-					std::string description;
-					std::string productName;
-					std::string aliyunCommodityCode;
-					std::string productStatus;
-					std::string productSecret;
-					long gmtCreate;
-					std::string categoryKey;
-					bool id2;
-					std::string protocolType;
-					int nodeType;
-					int dataFormat;
-					std::string categoryName;
-					std::string productKey;
-					int deviceCount;
+					std::string groupName;
+					std::string utcCreate;
+					std::string groupDesc;
+					std::string groupId;
 				};
 
 
-				QueryProductResult();
-				explicit QueryProductResult(const std::string &payload);
-				~QueryProductResult();
-				Data getData()const;
+				QueryDeviceGroupListResult();
+				explicit QueryDeviceGroupListResult(const std::string &payload);
+				~QueryDeviceGroupListResult();
+				int getPageCount()const;
+				int getPageSize()const;
+				int getCurrentPage()const;
+				int getTotal()const;
+				std::vector<GroupInfo> getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -63,7 +56,11 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
+				int pageCount_;
+				int pageSize_;
+				int currentPage_;
+				int total_;
+				std::vector<GroupInfo> data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -72,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYPRODUCTRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYDEVICEGROUPLISTRESULT_H_

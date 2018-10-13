@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string status;
+					bool owner;
 					std::string productName;
 					std::string deviceSecret;
 					std::string firmwareVersion;

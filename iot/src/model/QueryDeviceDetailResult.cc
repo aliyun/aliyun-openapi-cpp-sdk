@@ -73,6 +73,8 @@ void QueryDeviceDetailResult::parse(const std::string &payload)
 		data_.nodeType = std::stoi(dataNode["NodeType"].asString());
 	if(!dataNode["Region"].isNull())
 		data_.region = dataNode["Region"].asString();
+	if(!dataNode["Owner"].isNull())
+		data_.owner = dataNode["Owner"].asString() == "true";
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
