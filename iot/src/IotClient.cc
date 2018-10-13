@@ -519,42 +519,6 @@ IotClient::QueryPageByApplyIdOutcomeCallable IotClient::queryPageByApplyIdCallab
 	return task->get_future();
 }
 
-IotClient::ForceSetDeviceGroupTagOutcome IotClient::forceSetDeviceGroupTag(const ForceSetDeviceGroupTagRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ForceSetDeviceGroupTagOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ForceSetDeviceGroupTagOutcome(ForceSetDeviceGroupTagResult(outcome.result()));
-	else
-		return ForceSetDeviceGroupTagOutcome(outcome.error());
-}
-
-void IotClient::forceSetDeviceGroupTagAsync(const ForceSetDeviceGroupTagRequest& request, const ForceSetDeviceGroupTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, forceSetDeviceGroupTag(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IotClient::ForceSetDeviceGroupTagOutcomeCallable IotClient::forceSetDeviceGroupTagCallable(const ForceSetDeviceGroupTagRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ForceSetDeviceGroupTagOutcome()>>(
-			[this, request]()
-			{
-			return this->forceSetDeviceGroupTag(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 IotClient::CreateTopicRouteTableOutcome IotClient::createTopicRouteTable(const CreateTopicRouteTableRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

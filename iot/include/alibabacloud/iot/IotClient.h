@@ -48,8 +48,6 @@
 #include "model/GetThingTopoResult.h"
 #include "model/QueryPageByApplyIdRequest.h"
 #include "model/QueryPageByApplyIdResult.h"
-#include "model/ForceSetDeviceGroupTagRequest.h"
-#include "model/ForceSetDeviceGroupTagResult.h"
 #include "model/CreateTopicRouteTableRequest.h"
 #include "model/CreateTopicRouteTableResult.h"
 #include "model/CreateProductRequest.h"
@@ -206,9 +204,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryPageByApplyIdResult> QueryPageByApplyIdOutcome;
 			typedef std::future<QueryPageByApplyIdOutcome> QueryPageByApplyIdOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryPageByApplyIdRequest&, const QueryPageByApplyIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPageByApplyIdAsyncHandler;
-			typedef Outcome<Error, Model::ForceSetDeviceGroupTagResult> ForceSetDeviceGroupTagOutcome;
-			typedef std::future<ForceSetDeviceGroupTagOutcome> ForceSetDeviceGroupTagOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::ForceSetDeviceGroupTagRequest&, const ForceSetDeviceGroupTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ForceSetDeviceGroupTagAsyncHandler;
 			typedef Outcome<Error, Model::CreateTopicRouteTableResult> CreateTopicRouteTableOutcome;
 			typedef std::future<CreateTopicRouteTableOutcome> CreateTopicRouteTableOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateTopicRouteTableRequest&, const CreateTopicRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicRouteTableAsyncHandler;
@@ -415,9 +410,6 @@ namespace AlibabaCloud
 			QueryPageByApplyIdOutcome queryPageByApplyId(const Model::QueryPageByApplyIdRequest &request)const;
 			void queryPageByApplyIdAsync(const Model::QueryPageByApplyIdRequest& request, const QueryPageByApplyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryPageByApplyIdOutcomeCallable queryPageByApplyIdCallable(const Model::QueryPageByApplyIdRequest& request) const;
-			ForceSetDeviceGroupTagOutcome forceSetDeviceGroupTag(const Model::ForceSetDeviceGroupTagRequest &request)const;
-			void forceSetDeviceGroupTagAsync(const Model::ForceSetDeviceGroupTagRequest& request, const ForceSetDeviceGroupTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ForceSetDeviceGroupTagOutcomeCallable forceSetDeviceGroupTagCallable(const Model::ForceSetDeviceGroupTagRequest& request) const;
 			CreateTopicRouteTableOutcome createTopicRouteTable(const Model::CreateTopicRouteTableRequest &request)const;
 			void createTopicRouteTableAsync(const Model::CreateTopicRouteTableRequest& request, const CreateTopicRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTopicRouteTableOutcomeCallable createTopicRouteTableCallable(const Model::CreateTopicRouteTableRequest& request) const;

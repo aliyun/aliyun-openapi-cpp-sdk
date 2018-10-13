@@ -47,8 +47,6 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetThingTopoResult.h
 	include/alibabacloud/iot/model/QueryPageByApplyIdRequest.h
 	include/alibabacloud/iot/model/QueryPageByApplyIdResult.h
-	include/alibabacloud/iot/model/ForceSetDeviceGroupTagRequest.h
-	include/alibabacloud/iot/model/ForceSetDeviceGroupTagResult.h
 	include/alibabacloud/iot/model/CreateTopicRouteTableRequest.h
 	include/alibabacloud/iot/model/CreateTopicRouteTableResult.h
 	include/alibabacloud/iot/model/CreateProductRequest.h
@@ -186,8 +184,6 @@ set(iot_src
 	src/model/GetThingTopoResult.cc
 	src/model/QueryPageByApplyIdRequest.cc
 	src/model/QueryPageByApplyIdResult.cc
-	src/model/ForceSetDeviceGroupTagRequest.cc
-	src/model/ForceSetDeviceGroupTagResult.cc
 	src/model/CreateTopicRouteTableRequest.cc
 	src/model/CreateTopicRouteTableResult.cc
 	src/model/CreateProductRequest.cc
