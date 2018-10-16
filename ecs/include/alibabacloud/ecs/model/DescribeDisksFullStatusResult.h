@@ -57,7 +57,9 @@ namespace AlibabaCloud
 						std::string eventEndTime;
 					};
 					Status status;
+					std::string instanceId;
 					std::vector<DiskFullStatusType::DiskEventType> diskEventSet;
+					std::string device;
 					HealthStatus healthStatus;
 					std::string diskId;
 				};

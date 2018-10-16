@@ -167,6 +167,8 @@ namespace AlibabaCloud
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				std::vector<NetworkInterface> getNetworkInterface()const;
 				void setNetworkInterface(const std::vector<NetworkInterface>& networkInterface);
+				std::string getDeploymentSetId()const;
+				void setDeploymentSetId(const std::string& deploymentSetId);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
 				int getAmount()const;
@@ -253,6 +255,7 @@ namespace AlibabaCloud
 				std::string instanceChargeType_;
 				std::string callerUidEmail_;
 				std::vector<NetworkInterface> networkInterface_;
+				std::string deploymentSetId_;
 				std::string app_ip_;
 				int amount_;
 				std::string resourceOwnerAccount_;

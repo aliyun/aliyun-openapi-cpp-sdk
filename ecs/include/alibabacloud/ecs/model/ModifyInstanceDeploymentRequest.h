@@ -63,6 +63,8 @@ namespace AlibabaCloud
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
+				std::string getDeploymentSetId()const;
+				void setDeploymentSetId(const std::string& deploymentSetId);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
 				std::string getResourceOwnerAccount()const;
@@ -85,6 +87,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				bool getForce()const;
+				void setForce(bool force);
 
             private:
 				long resourceOwnerId_;
@@ -101,6 +105,7 @@ namespace AlibabaCloud
 				std::string callerBidEmail_;
 				std::string callerUidEmail_;
 				long callerUid_;
+				std::string deploymentSetId_;
 				std::string app_ip_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
@@ -112,6 +117,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string instanceId_;
 				std::string requestId_;
+				bool force_;
 
 			};
 		}

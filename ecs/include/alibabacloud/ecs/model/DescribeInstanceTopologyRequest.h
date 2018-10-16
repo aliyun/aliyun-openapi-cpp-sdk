@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_CHECKDISKENABLEAUTOSNAPSHOTVALIDATIONREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_CHECKDISKENABLEAUTOSNAPSHOTVALIDATIONREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCETOPOLOGYREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCETOPOLOGYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT CheckDiskEnableAutoSnapshotValidationRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeInstanceTopologyRequest : public RpcServiceRequest
 			{
 
 			public:
-				CheckDiskEnableAutoSnapshotValidationRequest();
-				~CheckDiskEnableAutoSnapshotValidationRequest();
+				DescribeInstanceTopologyRequest();
+				~DescribeInstanceTopologyRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDiskIds()const;
-				void setDiskIds(const std::string& diskIds);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getInstanceIds()const;
+				void setInstanceIds(const std::string& instanceIds);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				std::string diskIds_;
+				std::string regionId_;
+				std::string instanceIds_;
 				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_CHECKDISKENABLEAUTOSNAPSHOTVALIDATIONREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCETOPOLOGYREQUEST_H_

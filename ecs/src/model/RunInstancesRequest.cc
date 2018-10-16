@@ -634,6 +634,17 @@ void RunInstancesRequest::setNetworkInterface(const std::vector<NetworkInterface
 	}
 }
 
+std::string RunInstancesRequest::getDeploymentSetId()const
+{
+	return deploymentSetId_;
+}
+
+void RunInstancesRequest::setDeploymentSetId(const std::string& deploymentSetId)
+{
+	deploymentSetId_ = deploymentSetId;
+	setParameter("DeploymentSetId", deploymentSetId);
+}
+
 std::string RunInstancesRequest::getApp_ip()const
 {
 	return app_ip_;

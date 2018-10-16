@@ -14,46 +14,47 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/CheckAutoSnapshotPolicyResult.h>
+#include <alibabacloud/ecs/model/DescribeInstanceTopologyResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-CheckAutoSnapshotPolicyResult::CheckAutoSnapshotPolicyResult() :
+DescribeInstanceTopologyResult::DescribeInstanceTopologyResult() :
 	ServiceResult()
 {}
 
-CheckAutoSnapshotPolicyResult::CheckAutoSnapshotPolicyResult(const std::string &payload) :
+DescribeInstanceTopologyResult::DescribeInstanceTopologyResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CheckAutoSnapshotPolicyResult::~CheckAutoSnapshotPolicyResult()
+DescribeInstanceTopologyResult::~DescribeInstanceTopologyResult()
 {}
 
-void CheckAutoSnapshotPolicyResult::parse(const std::string &payload)
+void DescribeInstanceTopologyResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["AutoSnapshotOccupation"].isNull())
-		autoSnapshotOccupation_ = std::stoi(value["AutoSnapshotOccupation"].asString());
-	if(!value["IsPermittedModify"].isNull())
-		isPermittedModify_ = value["IsPermittedModify"].asString();
+	auto allTopologys = value["Topologys"]["Topology"];
+	for (auto value : allTopologys)
+	{
+		Topology topologysObject;
+		if(!value["InstanceId"].isNull())
+			topologysObject.instanceId = value["InstanceId"].asString();
+		if(!value["HostId"].isNull())
+			topologysObject.hostId = value["HostId"].asString();
+		topologys_.push_back(topologysObject);
+	}
 
 }
 
-int CheckAutoSnapshotPolicyResult::getAutoSnapshotOccupation()const
+std::vector<DescribeInstanceTopologyResult::Topology> DescribeInstanceTopologyResult::getTopologys()const
 {
-	return autoSnapshotOccupation_;
-}
-
-std::string CheckAutoSnapshotPolicyResult::getIsPermittedModify()const
-{
-	return isPermittedModify_;
+	return topologys_;
 }
 

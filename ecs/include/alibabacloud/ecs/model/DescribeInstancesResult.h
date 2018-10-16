@@ -91,6 +91,7 @@ namespace AlibabaCloud
 					std::vector<std::string> securityGroupIds;
 					std::string internetChargeType;
 					std::string instanceName;
+					std::string deploymentSetId;
 					int internetMaxBandwidthOut;
 					std::string serialNumber;
 					std::string oSType;

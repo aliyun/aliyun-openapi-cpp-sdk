@@ -350,6 +350,17 @@ void DescribeInstancesRequest::setFilter1Value(const std::string& filter1Value)
 	setParameter("Filter1Value", filter1Value);
 }
 
+bool DescribeInstancesRequest::getNeedSaleCycle()const
+{
+	return needSaleCycle_;
+}
+
+void DescribeInstancesRequest::setNeedSaleCycle(bool needSaleCycle)
+{
+	needSaleCycle_ = needSaleCycle;
+	setParameter("NeedSaleCycle", std::to_string(needSaleCycle));
+}
+
 std::string DescribeInstancesRequest::getFilter2Key()const
 {
 	return filter2Key_;

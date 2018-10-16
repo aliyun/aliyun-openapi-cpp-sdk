@@ -179,6 +179,17 @@ void ModifyInstanceDeploymentRequest::setCallerUid(long callerUid)
 	setParameter("CallerUid", std::to_string(callerUid));
 }
 
+std::string ModifyInstanceDeploymentRequest::getDeploymentSetId()const
+{
+	return deploymentSetId_;
+}
+
+void ModifyInstanceDeploymentRequest::setDeploymentSetId(const std::string& deploymentSetId)
+{
+	deploymentSetId_ = deploymentSetId;
+	setParameter("DeploymentSetId", deploymentSetId);
+}
+
 std::string ModifyInstanceDeploymentRequest::getApp_ip()const
 {
 	return app_ip_;
@@ -298,5 +309,16 @@ void ModifyInstanceDeploymentRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
 	setParameter("RequestId", requestId);
+}
+
+bool ModifyInstanceDeploymentRequest::getForce()const
+{
+	return force_;
+}
+
+void ModifyInstanceDeploymentRequest::setForce(bool force)
+{
+	force_ = force;
+	setParameter("Force", std::to_string(force));
 }
 

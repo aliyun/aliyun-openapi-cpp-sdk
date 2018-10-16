@@ -46,6 +46,10 @@ void DescribeDisksFullStatusResult::parse(const std::string &payload)
 		DiskFullStatusType diskFullStatusSetObject;
 		if(!value["DiskId"].isNull())
 			diskFullStatusSetObject.diskId = value["DiskId"].asString();
+		if(!value["InstanceId"].isNull())
+			diskFullStatusSetObject.instanceId = value["InstanceId"].asString();
+		if(!value["Device"].isNull())
+			diskFullStatusSetObject.device = value["Device"].asString();
 		auto allDiskEventSet = value["DiskEventSet"]["DiskEventType"];
 		for (auto value : allDiskEventSet)
 		{

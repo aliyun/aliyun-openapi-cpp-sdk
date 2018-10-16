@@ -113,6 +113,17 @@ void CreateDeploymentSetRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string CreateDeploymentSetRequest::getOnUnableToRedeployFailedInstance()const
+{
+	return onUnableToRedeployFailedInstance_;
+}
+
+void CreateDeploymentSetRequest::setOnUnableToRedeployFailedInstance(const std::string& onUnableToRedeployFailedInstance)
+{
+	onUnableToRedeployFailedInstance_ = onUnableToRedeployFailedInstance;
+	setParameter("OnUnableToRedeployFailedInstance", onUnableToRedeployFailedInstance);
+}
+
 std::string CreateDeploymentSetRequest::getGranularity()const
 {
 	return granularity_;
@@ -133,17 +144,6 @@ void CreateDeploymentSetRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
 	setParameter("Domain", domain);
-}
-
-std::string CreateDeploymentSetRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void CreateDeploymentSetRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
 }
 
 std::string CreateDeploymentSetRequest::getStrategy()const

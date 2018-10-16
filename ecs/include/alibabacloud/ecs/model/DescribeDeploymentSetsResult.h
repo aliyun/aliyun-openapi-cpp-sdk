@@ -42,6 +42,8 @@ namespace AlibabaCloud
 					std::string deploymentSetName;
 					std::string domain;
 					std::string granularity;
+					std::vector<std::string> instanceIds;
+					std::string deploymentStrategy;
 				};
 
 

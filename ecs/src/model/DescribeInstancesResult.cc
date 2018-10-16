@@ -70,6 +70,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.memory = std::stoi(value["Memory"].asString());
 		if(!value["HostName"].isNull())
 			instancesObject.hostName = value["HostName"].asString();
+		if(!value["DeploymentSetId"].isNull())
+			instancesObject.deploymentSetId = value["DeploymentSetId"].asString();
 		if(!value["Status"].isNull())
 			instancesObject.status = value["Status"].asString();
 		if(!value["SerialNumber"].isNull())

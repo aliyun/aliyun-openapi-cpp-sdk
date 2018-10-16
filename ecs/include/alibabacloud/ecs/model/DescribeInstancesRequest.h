@@ -98,6 +98,8 @@ namespace AlibabaCloud
 				void setInstanceTypeFamily(const std::string& instanceTypeFamily);
 				std::string getFilter1Value()const;
 				void setFilter1Value(const std::string& filter1Value);
+				bool getNeedSaleCycle()const;
+				void setNeedSaleCycle(bool needSaleCycle);
 				std::string getFilter2Key()const;
 				void setFilter2Key(const std::string& filter2Key);
 				long getOwnerId()const;
@@ -153,6 +155,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string instanceTypeFamily_;
 				std::string filter1Value_;
+				bool needSaleCycle_;
 				std::string filter2Key_;
 				long ownerId_;
 				std::string vSwitchId_;

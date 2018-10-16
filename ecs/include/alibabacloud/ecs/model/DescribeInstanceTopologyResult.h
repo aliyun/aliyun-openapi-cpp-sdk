@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_CHECKDISKENABLEAUTOSNAPSHOTVALIDATIONRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_CHECKDISKENABLEAUTOSNAPSHOTVALIDATIONRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCETOPOLOGYRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCETOPOLOGYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT CheckDiskEnableAutoSnapshotValidationResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT DescribeInstanceTopologyResult : public ServiceResult
 			{
 			public:
+				struct Topology
+				{
+					std::string instanceId;
+					std::string hostId;
+				};
 
 
-				CheckDiskEnableAutoSnapshotValidationResult();
-				explicit CheckDiskEnableAutoSnapshotValidationResult(const std::string &payload);
-				~CheckDiskEnableAutoSnapshotValidationResult();
-				int getAutoSnapshotOccupation()const;
-				std::string getIsPermitted()const;
+				DescribeInstanceTopologyResult();
+				explicit DescribeInstanceTopologyResult(const std::string &payload);
+				~DescribeInstanceTopologyResult();
+				std::vector<Topology> getTopologys()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int autoSnapshotOccupation_;
-				std::string isPermitted_;
+				std::vector<Topology> topologys_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_CHECKDISKENABLEAUTOSNAPSHOTVALIDATIONRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCETOPOLOGYRESULT_H_

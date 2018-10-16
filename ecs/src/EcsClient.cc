@@ -771,6 +771,42 @@ EcsClient::DescribeInstanceHistoryEventsOutcomeCallable EcsClient::describeInsta
 	return task->get_future();
 }
 
+EcsClient::DescribeInstanceTopologyOutcome EcsClient::describeInstanceTopology(const DescribeInstanceTopologyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceTopologyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceTopologyOutcome(DescribeInstanceTopologyResult(outcome.result()));
+	else
+		return DescribeInstanceTopologyOutcome(outcome.error());
+}
+
+void EcsClient::describeInstanceTopologyAsync(const DescribeInstanceTopologyRequest& request, const DescribeInstanceTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceTopology(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeInstanceTopologyOutcomeCallable EcsClient::describeInstanceTopologyCallable(const DescribeInstanceTopologyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceTopologyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceTopology(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DeletePhysicalConnectionOutcome EcsClient::deletePhysicalConnection(const DeletePhysicalConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,42 +873,6 @@ EcsClient::RevokeSecurityGroupOutcomeCallable EcsClient::revokeSecurityGroupCall
 			[this, request]()
 			{
 			return this->revokeSecurityGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::CheckAutoSnapshotPolicyOutcome EcsClient::checkAutoSnapshotPolicy(const CheckAutoSnapshotPolicyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CheckAutoSnapshotPolicyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CheckAutoSnapshotPolicyOutcome(CheckAutoSnapshotPolicyResult(outcome.result()));
-	else
-		return CheckAutoSnapshotPolicyOutcome(outcome.error());
-}
-
-void EcsClient::checkAutoSnapshotPolicyAsync(const CheckAutoSnapshotPolicyRequest& request, const CheckAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, checkAutoSnapshotPolicy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::CheckAutoSnapshotPolicyOutcomeCallable EcsClient::checkAutoSnapshotPolicyCallable(const CheckAutoSnapshotPolicyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CheckAutoSnapshotPolicyOutcome()>>(
-			[this, request]()
-			{
-			return this->checkAutoSnapshotPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1707,42 +1707,6 @@ EcsClient::ConnectRouterInterfaceOutcomeCallable EcsClient::connectRouterInterfa
 	return task->get_future();
 }
 
-EcsClient::AddIpRangeOutcome EcsClient::addIpRange(const AddIpRangeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddIpRangeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddIpRangeOutcome(AddIpRangeResult(outcome.result()));
-	else
-		return AddIpRangeOutcome(outcome.error());
-}
-
-void EcsClient::addIpRangeAsync(const AddIpRangeRequest& request, const AddIpRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addIpRange(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::AddIpRangeOutcomeCallable EcsClient::addIpRangeCallable(const AddIpRangeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddIpRangeOutcome()>>(
-			[this, request]()
-			{
-			return this->addIpRange(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::GetInstanceConsoleOutputOutcome EcsClient::getInstanceConsoleOutput(const GetInstanceConsoleOutputRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,42 +2241,6 @@ EcsClient::CreateRouterInterfaceOutcomeCallable EcsClient::createRouterInterface
 			[this, request]()
 			{
 			return this->createRouterInterface(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::CheckDiskEnableAutoSnapshotValidationOutcome EcsClient::checkDiskEnableAutoSnapshotValidation(const CheckDiskEnableAutoSnapshotValidationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CheckDiskEnableAutoSnapshotValidationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CheckDiskEnableAutoSnapshotValidationOutcome(CheckDiskEnableAutoSnapshotValidationResult(outcome.result()));
-	else
-		return CheckDiskEnableAutoSnapshotValidationOutcome(outcome.error());
-}
-
-void EcsClient::checkDiskEnableAutoSnapshotValidationAsync(const CheckDiskEnableAutoSnapshotValidationRequest& request, const CheckDiskEnableAutoSnapshotValidationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, checkDiskEnableAutoSnapshotValidation(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::CheckDiskEnableAutoSnapshotValidationOutcomeCallable EcsClient::checkDiskEnableAutoSnapshotValidationCallable(const CheckDiskEnableAutoSnapshotValidationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CheckDiskEnableAutoSnapshotValidationOutcome()>>(
-			[this, request]()
-			{
-			return this->checkDiskEnableAutoSnapshotValidation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3681,42 +3609,6 @@ EcsClient::RebootInstanceOutcomeCallable EcsClient::rebootInstanceCallable(const
 			[this, request]()
 			{
 			return this->rebootInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::BindIpRangeOutcome EcsClient::bindIpRange(const BindIpRangeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BindIpRangeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BindIpRangeOutcome(BindIpRangeResult(outcome.result()));
-	else
-		return BindIpRangeOutcome(outcome.error());
-}
-
-void EcsClient::bindIpRangeAsync(const BindIpRangeRequest& request, const BindIpRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, bindIpRange(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::BindIpRangeOutcomeCallable EcsClient::bindIpRangeCallable(const BindIpRangeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BindIpRangeOutcome()>>(
-			[this, request]()
-			{
-			return this->bindIpRange(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5847,42 +5739,6 @@ EcsClient::DescribeNewProjectEipMonitorDataOutcomeCallable EcsClient::describeNe
 	return task->get_future();
 }
 
-EcsClient::UnbindIpRangeOutcome EcsClient::unbindIpRange(const UnbindIpRangeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UnbindIpRangeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UnbindIpRangeOutcome(UnbindIpRangeResult(outcome.result()));
-	else
-		return UnbindIpRangeOutcome(outcome.error());
-}
-
-void EcsClient::unbindIpRangeAsync(const UnbindIpRangeRequest& request, const UnbindIpRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, unbindIpRange(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::UnbindIpRangeOutcomeCallable EcsClient::unbindIpRangeCallable(const UnbindIpRangeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UnbindIpRangeOutcome()>>(
-			[this, request]()
-			{
-			return this->unbindIpRange(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::DeleteRecycleBinOutcome EcsClient::deleteRecycleBin(const DeleteRecycleBinRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6351,42 +6207,6 @@ EcsClient::ModifyDiskChargeTypeOutcomeCallable EcsClient::modifyDiskChargeTypeCa
 	return task->get_future();
 }
 
-EcsClient::ModifyIntranetBandwidthKbOutcome EcsClient::modifyIntranetBandwidthKb(const ModifyIntranetBandwidthKbRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyIntranetBandwidthKbOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyIntranetBandwidthKbOutcome(ModifyIntranetBandwidthKbResult(outcome.result()));
-	else
-		return ModifyIntranetBandwidthKbOutcome(outcome.error());
-}
-
-void EcsClient::modifyIntranetBandwidthKbAsync(const ModifyIntranetBandwidthKbRequest& request, const ModifyIntranetBandwidthKbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyIntranetBandwidthKb(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::ModifyIntranetBandwidthKbOutcomeCallable EcsClient::modifyIntranetBandwidthKbCallable(const ModifyIntranetBandwidthKbRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyIntranetBandwidthKbOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyIntranetBandwidthKb(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::DescribeBandwidthPackagesOutcome EcsClient::describeBandwidthPackages(const DescribeBandwidthPackagesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6525,42 +6345,6 @@ EcsClient::DescribeSnapshotLinksOutcomeCallable EcsClient::describeSnapshotLinks
 			[this, request]()
 			{
 			return this->describeSnapshotLinks(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::DescribeEventDetailOutcome EcsClient::describeEventDetail(const DescribeEventDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeEventDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeEventDetailOutcome(DescribeEventDetailResult(outcome.result()));
-	else
-		return DescribeEventDetailOutcome(outcome.error());
-}
-
-void EcsClient::describeEventDetailAsync(const DescribeEventDetailRequest& request, const DescribeEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeEventDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::DescribeEventDetailOutcomeCallable EcsClient::describeEventDetailCallable(const DescribeEventDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeEventDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeEventDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6777,42 +6561,6 @@ EcsClient::CreateLaunchTemplateOutcomeCallable EcsClient::createLaunchTemplateCa
 			[this, request]()
 			{
 			return this->createLaunchTemplate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::DescribeIntranetAttributeKbOutcome EcsClient::describeIntranetAttributeKb(const DescribeIntranetAttributeKbRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeIntranetAttributeKbOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeIntranetAttributeKbOutcome(DescribeIntranetAttributeKbResult(outcome.result()));
-	else
-		return DescribeIntranetAttributeKbOutcome(outcome.error());
-}
-
-void EcsClient::describeIntranetAttributeKbAsync(const DescribeIntranetAttributeKbRequest& request, const DescribeIntranetAttributeKbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeIntranetAttributeKb(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::DescribeIntranetAttributeKbOutcomeCallable EcsClient::describeIntranetAttributeKbCallable(const DescribeIntranetAttributeKbRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeIntranetAttributeKbOutcome()>>(
-			[this, request]()
-			{
-			return this->describeIntranetAttributeKb(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7971,42 +7719,6 @@ EcsClient::DescribeInstancePhysicalAttributeOutcomeCallable EcsClient::describeI
 	return task->get_future();
 }
 
-EcsClient::ValidateSecurityGroupOutcome EcsClient::validateSecurityGroup(const ValidateSecurityGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ValidateSecurityGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ValidateSecurityGroupOutcome(ValidateSecurityGroupResult(outcome.result()));
-	else
-		return ValidateSecurityGroupOutcome(outcome.error());
-}
-
-void EcsClient::validateSecurityGroupAsync(const ValidateSecurityGroupRequest& request, const ValidateSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, validateSecurityGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::ValidateSecurityGroupOutcomeCallable EcsClient::validateSecurityGroupCallable(const ValidateSecurityGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ValidateSecurityGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->validateSecurityGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::TerminatePhysicalConnectionOutcome EcsClient::terminatePhysicalConnection(const TerminatePhysicalConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8403,42 +8115,6 @@ EcsClient::DescribeClassicLinkInstancesOutcomeCallable EcsClient::describeClassi
 	return task->get_future();
 }
 
-EcsClient::DescribeAutoSnapshotPolicyOutcome EcsClient::describeAutoSnapshotPolicy(const DescribeAutoSnapshotPolicyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAutoSnapshotPolicyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAutoSnapshotPolicyOutcome(DescribeAutoSnapshotPolicyResult(outcome.result()));
-	else
-		return DescribeAutoSnapshotPolicyOutcome(outcome.error());
-}
-
-void EcsClient::describeAutoSnapshotPolicyAsync(const DescribeAutoSnapshotPolicyRequest& request, const DescribeAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAutoSnapshotPolicy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::DescribeAutoSnapshotPolicyOutcomeCallable EcsClient::describeAutoSnapshotPolicyCallable(const DescribeAutoSnapshotPolicyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAutoSnapshotPolicyOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAutoSnapshotPolicy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::DescribePhysicalConnectionsOutcome EcsClient::describePhysicalConnections(const DescribePhysicalConnectionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8541,42 +8217,6 @@ EcsClient::CreateNetworkInterfaceOutcomeCallable EcsClient::createNetworkInterfa
 			[this, request]()
 			{
 			return this->createNetworkInterface(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::DescribeIpRangesOutcome EcsClient::describeIpRanges(const DescribeIpRangesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeIpRangesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeIpRangesOutcome(DescribeIpRangesResult(outcome.result()));
-	else
-		return DescribeIpRangesOutcome(outcome.error());
-}
-
-void EcsClient::describeIpRangesAsync(const DescribeIpRangesRequest& request, const DescribeIpRangesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeIpRanges(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::DescribeIpRangesOutcomeCallable EcsClient::describeIpRangesCallable(const DescribeIpRangesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeIpRangesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeIpRanges(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
