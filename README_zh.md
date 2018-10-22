@@ -4,6 +4,8 @@
 
 适用于阿里云的 C++ SDK 提供了一组现代化的 C++（C++ 11 或更高版本）接口，让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
 
+如果您在使用SDK的过程中遇到任何问题，欢迎前往[阿里云SDK问答社区](https://yq.aliyun.com/tags/type_ask-tagid_23350)提问，提问前请阅读[提问引导](https://help.aliyun.com/document_detail/93957.html)。亦可在当前GitHub提交Issues。
+
 完成本文档中的操作开始使用 C++ SDK。
 
 ## 前提条件
