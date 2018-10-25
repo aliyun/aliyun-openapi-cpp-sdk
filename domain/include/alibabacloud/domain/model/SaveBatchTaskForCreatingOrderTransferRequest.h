@@ -32,10 +32,10 @@ namespace AlibabaCloud
 			{
 				struct OrderTransferParam
 				{
-					std::string domainName;
-					std::string authorizationCode;
-					long registrantProfileId;
 					bool permitPremiumTransfer;
+					std::string authorizationCode;
+					std::string domainName;
+					long registrantProfileId;
 				};
 
 			public:

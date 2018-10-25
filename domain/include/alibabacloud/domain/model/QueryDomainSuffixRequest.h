@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				QueryDomainSuffixRequest();
 				~QueryDomainSuffixRequest();
 
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				std::string userClientIp_;
 				std::string lang_;
 
 			};

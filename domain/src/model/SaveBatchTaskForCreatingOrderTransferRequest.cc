@@ -37,10 +37,10 @@ void SaveBatchTaskForCreatingOrderTransferRequest::setOrderTransferParam(const s
 	for(int i = 0; i!= orderTransferParam.size(); i++)	{
 		auto obj = orderTransferParam.at(i);
 		std::string str ="OrderTransferParam."+ std::to_string(i);
-		setParameter(str + ".DomainName", obj.domainName);
-		setParameter(str + ".AuthorizationCode", obj.authorizationCode);
-		setParameter(str + ".RegistrantProfileId", std::to_string(obj.registrantProfileId));
 		setParameter(str + ".PermitPremiumTransfer", std::to_string(obj.permitPremiumTransfer));
+		setParameter(str + ".AuthorizationCode", obj.authorizationCode);
+		setParameter(str + ".DomainName", obj.domainName);
+		setParameter(str + ".RegistrantProfileId", std::to_string(obj.registrantProfileId));
 	}
 }
 

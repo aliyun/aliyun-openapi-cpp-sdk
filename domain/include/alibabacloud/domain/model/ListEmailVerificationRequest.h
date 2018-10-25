@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setEndCreateTime(long endCreateTime);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				int getPageNum()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				long beginCreateTime_;
 				long endCreateTime_;
 				int pageSize_;
+				std::string userClientIp_;
 				std::string lang_;
 				int pageNum_;
 				std::string email_;

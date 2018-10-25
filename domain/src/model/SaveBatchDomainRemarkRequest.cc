@@ -36,6 +36,17 @@ void SaveBatchDomainRemarkRequest::setInstanceIds(const std::string& instanceIds
 	setParameter("InstanceIds", instanceIds);
 }
 
+std::string SaveBatchDomainRemarkRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveBatchDomainRemarkRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setParameter("UserClientIp", userClientIp);
+}
+
 std::string SaveBatchDomainRemarkRequest::getRemark()const
 {
 	return remark_;

@@ -47,6 +47,17 @@ void SaveSingleTaskForDeletingDnsHostRequest::setDnsName(const std::string& dnsN
 	setParameter("DnsName", dnsName);
 }
 
+std::string SaveSingleTaskForDeletingDnsHostRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveSingleTaskForDeletingDnsHostRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setParameter("UserClientIp", userClientIp);
+}
+
 std::string SaveSingleTaskForDeletingDnsHostRequest::getLang()const
 {
 	return lang_;

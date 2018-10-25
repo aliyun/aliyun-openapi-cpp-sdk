@@ -58,6 +58,17 @@ void CheckDomainRequest::setDomainName(const std::string& domainName)
 	setParameter("DomainName", domainName);
 }
 
+std::string CheckDomainRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void CheckDomainRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setParameter("UserClientIp", userClientIp);
+}
+
 std::string CheckDomainRequest::getFeeCommand()const
 {
 	return feeCommand_;
@@ -67,5 +78,16 @@ void CheckDomainRequest::setFeeCommand(const std::string& feeCommand)
 {
 	feeCommand_ = feeCommand;
 	setParameter("FeeCommand", feeCommand);
+}
+
+std::string CheckDomainRequest::getLang()const
+{
+	return lang_;
+}
+
+void CheckDomainRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setParameter("Lang", lang);
 }
 

@@ -267,6 +267,17 @@ void SaveSingleTaskForCreatingOrderActivateRequest::setTelephone(const std::stri
 	setParameter("Telephone", telephone);
 }
 
+bool SaveSingleTaskForCreatingOrderActivateRequest::getTrademarkDomainActivation()const
+{
+	return trademarkDomainActivation_;
+}
+
+void SaveSingleTaskForCreatingOrderActivateRequest::setTrademarkDomainActivation(bool trademarkDomainActivation)
+{
+	trademarkDomainActivation_ = trademarkDomainActivation;
+	setParameter("TrademarkDomainActivation", std::to_string(trademarkDomainActivation));
+}
+
 std::string SaveSingleTaskForCreatingOrderActivateRequest::getZhProvince()const
 {
 	return zhProvince_;

@@ -59,6 +59,17 @@ void SaveSingleTaskForModifyingDnsHostRequest::setDnsName(const std::string& dns
 	setParameter("DnsName", dnsName);
 }
 
+std::string SaveSingleTaskForModifyingDnsHostRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveSingleTaskForModifyingDnsHostRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setParameter("UserClientIp", userClientIp);
+}
+
 std::string SaveSingleTaskForModifyingDnsHostRequest::getLang()const
 {
 	return lang_;

@@ -32,9 +32,9 @@ namespace AlibabaCloud
 			{
 				struct OrderRenewParam
 				{
-					std::string domainName;
-					long currentExpirationDate;
 					int subscriptionDuration;
+					long currentExpirationDate;
+					std::string domainName;
 				};
 
 			public:

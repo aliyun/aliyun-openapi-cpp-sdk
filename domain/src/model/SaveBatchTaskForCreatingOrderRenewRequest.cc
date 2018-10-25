@@ -48,9 +48,9 @@ void SaveBatchTaskForCreatingOrderRenewRequest::setOrderRenewParam(const std::ve
 	for(int i = 0; i!= orderRenewParam.size(); i++)	{
 		auto obj = orderRenewParam.at(i);
 		std::string str ="OrderRenewParam."+ std::to_string(i);
-		setParameter(str + ".DomainName", obj.domainName);
-		setParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
 		setParameter(str + ".SubscriptionDuration", std::to_string(obj.subscriptionDuration));
+		setParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
+		setParameter(str + ".DomainName", obj.domainName);
 	}
 }
 

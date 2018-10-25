@@ -58,6 +58,17 @@ void ListEmailVerificationRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string ListEmailVerificationRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void ListEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setParameter("UserClientIp", userClientIp);
+}
+
 std::string ListEmailVerificationRequest::getLang()const
 {
 	return lang_;

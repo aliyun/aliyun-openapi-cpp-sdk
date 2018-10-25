@@ -79,6 +79,8 @@ namespace AlibabaCloud
 				void setRegistrantType(const std::string& registrantType);
 				std::string getTelephone()const;
 				void setTelephone(const std::string& telephone);
+				bool getTrademarkDomainActivation()const;
+				void setTrademarkDomainActivation(bool trademarkDomainActivation);
 				std::string getZhProvince()const;
 				void setZhProvince(const std::string& zhProvince);
 				std::string getRegistrantOrganization()const;
@@ -113,6 +115,7 @@ namespace AlibabaCloud
 				std::string zhAddress_;
 				std::string registrantType_;
 				std::string telephone_;
+				bool trademarkDomainActivation_;
 				std::string zhProvince_;
 				std::string registrantOrganization_;
 				bool enableDomainProxy_;

@@ -36,6 +36,17 @@ void SaveSingleTaskForSynchronizingDnsHostRequest::setInstanceId(const std::stri
 	setParameter("InstanceId", instanceId);
 }
 
+std::string SaveSingleTaskForSynchronizingDnsHostRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveSingleTaskForSynchronizingDnsHostRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setParameter("UserClientIp", userClientIp);
+}
+
 std::string SaveSingleTaskForSynchronizingDnsHostRequest::getLang()const
 {
 	return lang_;

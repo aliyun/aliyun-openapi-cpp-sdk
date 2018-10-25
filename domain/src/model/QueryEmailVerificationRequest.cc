@@ -25,6 +25,17 @@ QueryEmailVerificationRequest::QueryEmailVerificationRequest() :
 QueryEmailVerificationRequest::~QueryEmailVerificationRequest()
 {}
 
+std::string QueryEmailVerificationRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void QueryEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setParameter("UserClientIp", userClientIp);
+}
+
 std::string QueryEmailVerificationRequest::getLang()const
 {
 	return lang_;

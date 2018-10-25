@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setIp(const std::vector<std::string>& ip);
 				std::string getDnsName()const;
 				void setDnsName(const std::string& dnsName);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::vector<std::string> ip_;
 				std::string dnsName_;
+				std::string userClientIp_;
 				std::string lang_;
 
 			};

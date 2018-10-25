@@ -32,8 +32,8 @@ namespace AlibabaCloud
 			{
 				struct OrderRedeemParam
 				{
-					std::string domainName;
 					long currentExpirationDate;
+					std::string domainName;
 				};
 
 			public:

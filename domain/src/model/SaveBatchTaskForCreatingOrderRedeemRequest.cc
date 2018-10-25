@@ -37,8 +37,8 @@ void SaveBatchTaskForCreatingOrderRedeemRequest::setOrderRedeemParam(const std::
 	for(int i = 0; i!= orderRedeemParam.size(); i++)	{
 		auto obj = orderRedeemParam.at(i);
 		std::string str ="OrderRedeemParam."+ std::to_string(i);
-		setParameter(str + ".DomainName", obj.domainName);
 		setParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
+		setParameter(str + ".DomainName", obj.domainName);
 	}
 }
 

@@ -47,17 +47,6 @@ void QueryTaskDetailListRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-std::string QueryTaskDetailListRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void QueryTaskDetailListRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
-}
-
 std::string QueryTaskDetailListRequest::getTaskNo()const
 {
 	return taskNo_;
@@ -78,6 +67,17 @@ void QueryTaskDetailListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setParameter("DomainName", domainName);
+}
+
+std::string QueryTaskDetailListRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void QueryTaskDetailListRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setParameter("UserClientIp", userClientIp);
 }
 
 int QueryTaskDetailListRequest::getPageSize()const

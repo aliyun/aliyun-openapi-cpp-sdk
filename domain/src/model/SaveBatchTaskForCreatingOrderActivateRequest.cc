@@ -37,31 +37,32 @@ void SaveBatchTaskForCreatingOrderActivateRequest::setOrderActivateParam(const s
 	for(int i = 0; i!= orderActivateParam.size(); i++)	{
 		auto obj = orderActivateParam.at(i);
 		std::string str ="OrderActivateParam."+ std::to_string(i);
-		setParameter(str + ".DomainName", obj.domainName);
-		setParameter(str + ".SubscriptionDuration", std::to_string(obj.subscriptionDuration));
-		setParameter(str + ".RegistrantProfileId", std::to_string(obj.registrantProfileId));
-		setParameter(str + ".EnableDomainProxy", std::to_string(obj.enableDomainProxy));
-		setParameter(str + ".PermitPremiumActivation", std::to_string(obj.permitPremiumActivation));
-		setParameter(str + ".AliyunDns", std::to_string(obj.aliyunDns));
-		setParameter(str + ".Dns1", obj.dns1);
-		setParameter(str + ".Dns2", obj.dns2);
-		setParameter(str + ".ZhCity", obj.zhCity);
-		setParameter(str + ".ZhRegistrantOrganization", obj.zhRegistrantOrganization);
 		setParameter(str + ".Country", obj.country);
-		setParameter(str + ".ZhRegistrantName", obj.zhRegistrantName);
-		setParameter(str + ".ZhProvince", obj.zhProvince);
-		setParameter(str + ".ZhAddress", obj.zhAddress);
+		setParameter(str + ".SubscriptionDuration", std::to_string(obj.subscriptionDuration));
+		setParameter(str + ".PermitPremiumActivation", std::to_string(obj.permitPremiumActivation));
 		setParameter(str + ".City", obj.city);
-		setParameter(str + ".RegistrantOrganization", obj.registrantOrganization);
-		setParameter(str + ".RegistrantName", obj.registrantName);
-		setParameter(str + ".Province", obj.province);
-		setParameter(str + ".Address", obj.address);
-		setParameter(str + ".Email", obj.email);
-		setParameter(str + ".PostalCode", obj.postalCode);
-		setParameter(str + ".TelArea", obj.telArea);
-		setParameter(str + ".Telephone", obj.telephone);
+		setParameter(str + ".Dns2", obj.dns2);
+		setParameter(str + ".Dns1", obj.dns1);
+		setParameter(str + ".RegistrantProfileId", std::to_string(obj.registrantProfileId));
+		setParameter(str + ".AliyunDns", std::to_string(obj.aliyunDns));
+		setParameter(str + ".ZhCity", obj.zhCity);
 		setParameter(str + ".TelExt", obj.telExt);
+		setParameter(str + ".ZhRegistrantName", obj.zhRegistrantName);
+		setParameter(str + ".Province", obj.province);
+		setParameter(str + ".PostalCode", obj.postalCode);
+		setParameter(str + ".Email", obj.email);
+		setParameter(str + ".ZhRegistrantOrganization", obj.zhRegistrantOrganization);
+		setParameter(str + ".Address", obj.address);
+		setParameter(str + ".TelArea", obj.telArea);
+		setParameter(str + ".DomainName", obj.domainName);
+		setParameter(str + ".ZhAddress", obj.zhAddress);
 		setParameter(str + ".RegistrantType", obj.registrantType);
+		setParameter(str + ".Telephone", obj.telephone);
+		setParameter(str + ".TrademarkDomainActivation", std::to_string(obj.trademarkDomainActivation));
+		setParameter(str + ".ZhProvince", obj.zhProvince);
+		setParameter(str + ".RegistrantOrganization", obj.registrantOrganization);
+		setParameter(str + ".EnableDomainProxy", std::to_string(obj.enableDomainProxy));
+		setParameter(str + ".RegistrantName", obj.registrantName);
 	}
 }
 

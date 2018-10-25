@@ -32,31 +32,32 @@ namespace AlibabaCloud
 			{
 				struct OrderActivateParam
 				{
-					std::string domainName;
-					int subscriptionDuration;
-					long registrantProfileId;
-					bool enableDomainProxy;
-					bool permitPremiumActivation;
-					bool aliyunDns;
-					std::string dns1;
-					std::string dns2;
-					std::string zhCity;
-					std::string zhRegistrantOrganization;
 					std::string country;
-					std::string zhRegistrantName;
-					std::string zhProvince;
-					std::string zhAddress;
+					int subscriptionDuration;
+					bool permitPremiumActivation;
 					std::string city;
-					std::string registrantOrganization;
-					std::string registrantName;
-					std::string province;
-					std::string address;
-					std::string email;
-					std::string postalCode;
-					std::string telArea;
-					std::string telephone;
+					std::string dns2;
+					std::string dns1;
+					long registrantProfileId;
+					bool aliyunDns;
+					std::string zhCity;
 					std::string telExt;
+					std::string zhRegistrantName;
+					std::string province;
+					std::string postalCode;
+					std::string email;
+					std::string zhRegistrantOrganization;
+					std::string address;
+					std::string telArea;
+					std::string domainName;
+					std::string zhAddress;
 					std::string registrantType;
+					std::string telephone;
+					bool trademarkDomainActivation;
+					std::string zhProvince;
+					std::string registrantOrganization;
+					bool enableDomainProxy;
+					std::string registrantName;
 				};
 
 			public:

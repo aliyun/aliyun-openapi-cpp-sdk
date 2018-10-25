@@ -36,6 +36,17 @@ void QueryDnsHostRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string QueryDnsHostRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void QueryDnsHostRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setParameter("UserClientIp", userClientIp);
+}
+
 std::string QueryDnsHostRequest::getLang()const
 {
 	return lang_;

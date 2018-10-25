@@ -25,6 +25,17 @@ QueryDomainSuffixRequest::QueryDomainSuffixRequest() :
 QueryDomainSuffixRequest::~QueryDomainSuffixRequest()
 {}
 
+std::string QueryDomainSuffixRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void QueryDomainSuffixRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setParameter("UserClientIp", userClientIp);
+}
+
 std::string QueryDomainSuffixRequest::getLang()const
 {
 	return lang_;
