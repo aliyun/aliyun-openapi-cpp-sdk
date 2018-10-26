@@ -48,6 +48,8 @@ void SubmitMaterialsResult::parse(const std::string &payload)
 		data_.verifyStatus.trustedScore = std::stof(verifyStatusNode["TrustedScore"].asString());
 	if(!verifyStatusNode["SimilarityScore"].isNull())
 		data_.verifyStatus.similarityScore = std::stof(verifyStatusNode["SimilarityScore"].asString());
+	if(!verifyStatusNode["AuditConclusions"].isNull())
+		data_.verifyStatus.auditConclusions = verifyStatusNode["AuditConclusions"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

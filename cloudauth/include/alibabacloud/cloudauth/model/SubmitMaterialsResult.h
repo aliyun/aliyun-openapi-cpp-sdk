@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct VerifyStatus
 					{
+						std::string auditConclusions;
 						float trustedScore;
 						float similarityScore;
 						int statusCode;

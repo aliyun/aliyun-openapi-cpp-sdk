@@ -19,7 +19,7 @@
 using AlibabaCloud::Cloudauth::Model::GetMaterialsRequest;
 
 GetMaterialsRequest::GetMaterialsRequest() :
-	RpcServiceRequest("cloudauth", "2018-08-07", "GetMaterials")
+	RpcServiceRequest("cloudauth", "2018-09-16", "GetMaterials")
 {}
 
 GetMaterialsRequest::~GetMaterialsRequest()
