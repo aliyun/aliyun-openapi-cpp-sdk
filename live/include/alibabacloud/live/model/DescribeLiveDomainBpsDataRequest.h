@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_FORBIDLIVESTREAMREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_FORBIDLIVESTREAMREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATAREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT ForbidLiveStreamRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainBpsDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				ForbidLiveStreamRequest();
-				~ForbidLiveStreamRequest();
+				DescribeLiveDomainBpsDataRequest();
+				~DescribeLiveDomainBpsDataRequest();
 
-				std::string getResumeTime()const;
-				void setResumeTime(const std::string& resumeTime);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getLiveStreamType()const;
-				void setLiveStreamType(const std::string& liveStreamType);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				std::string getInterval()const;
+				void setInterval(const std::string& interval);
+				std::string getLocationNameEn()const;
+				void setLocationNameEn(const std::string& locationNameEn);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getIspNameEn()const;
+				void setIspNameEn(const std::string& ispNameEn);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getOneshot()const;
-				void setOneshot(const std::string& oneshot);
-				std::string getStreamName()const;
-				void setStreamName(const std::string& streamName);
-				std::string getControlStreamAction()const;
-				void setControlStreamAction(const std::string& controlStreamAction);
 
             private:
-				std::string resumeTime_;
-				std::string appName_;
 				std::string regionId_;
-				std::string liveStreamType_;
 				std::string domainName_;
+				std::string endTime_;
+				std::string interval_;
+				std::string locationNameEn_;
+				std::string startTime_;
+				std::string ispNameEn_;
 				long ownerId_;
-				std::string oneshot_;
-				std::string streamName_;
-				std::string controlStreamAction_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_FORBIDLIVESTREAMREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATAREQUEST_H_

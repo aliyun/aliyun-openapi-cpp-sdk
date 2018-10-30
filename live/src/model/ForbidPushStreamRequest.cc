@@ -190,17 +190,6 @@ void ForbidPushStreamRequest::setPopProduct(const std::string& popProduct)
 	setParameter("PopProduct", popProduct);
 }
 
-std::string ForbidPushStreamRequest::getProduct()const
-{
-	return product_;
-}
-
-void ForbidPushStreamRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
-}
-
 std::string ForbidPushStreamRequest::getEndTime()const
 {
 	return endTime_;

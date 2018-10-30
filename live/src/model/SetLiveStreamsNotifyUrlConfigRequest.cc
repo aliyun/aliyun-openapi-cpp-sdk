@@ -25,15 +25,26 @@ SetLiveStreamsNotifyUrlConfigRequest::SetLiveStreamsNotifyUrlConfigRequest() :
 SetLiveStreamsNotifyUrlConfigRequest::~SetLiveStreamsNotifyUrlConfigRequest()
 {}
 
-std::string SetLiveStreamsNotifyUrlConfigRequest::getSecurityToken()const
+std::string SetLiveStreamsNotifyUrlConfigRequest::getAuthKey()const
 {
-	return securityToken_;
+	return authKey_;
 }
 
-void SetLiveStreamsNotifyUrlConfigRequest::setSecurityToken(const std::string& securityToken)
+void SetLiveStreamsNotifyUrlConfigRequest::setAuthKey(const std::string& authKey)
 {
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	authKey_ = authKey;
+	setParameter("AuthKey", authKey);
+}
+
+std::string SetLiveStreamsNotifyUrlConfigRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void SetLiveStreamsNotifyUrlConfigRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string SetLiveStreamsNotifyUrlConfigRequest::getDomainName()const
@@ -69,14 +80,14 @@ void SetLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetLiveStreamsNotifyUrlConfigRequest::getAccessKeyId()const
+std::string SetLiveStreamsNotifyUrlConfigRequest::getAuthType()const
 {
-	return accessKeyId_;
+	return authType_;
 }
 
-void SetLiveStreamsNotifyUrlConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+void SetLiveStreamsNotifyUrlConfigRequest::setAuthType(const std::string& authType)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	authType_ = authType;
+	setParameter("AuthType", authType);
 }
 

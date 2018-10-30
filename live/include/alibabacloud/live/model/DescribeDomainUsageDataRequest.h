@@ -91,6 +91,8 @@ namespace AlibabaCloud
 				void setField(const std::string& field);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getInterval()const;
+				void setInterval(const std::string& interval);
 
             private:
 				long callerParentId_;
@@ -121,6 +123,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string field_;
 				std::string requestId_;
+				std::string interval_;
 
 			};
 		}

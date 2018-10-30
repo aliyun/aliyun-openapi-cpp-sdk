@@ -40,6 +40,8 @@ namespace AlibabaCloud
 				std::string getBoardId()const;
 				std::string getToken()const;
 				std::string getTopicId()const;
+				std::string getKeepaliveTopic()const;
+				int getKeepaliveInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -47,6 +49,8 @@ namespace AlibabaCloud
 				std::string boardId_;
 				std::string token_;
 				std::string topicId_;
+				std::string keepaliveTopic_;
+				int keepaliveInterval_;
 
 			};
 		}

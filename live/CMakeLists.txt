@@ -209,6 +209,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/SetCasterChannelResult.h
 	include/alibabacloud/live/model/DescribeLiveSnapshotConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveSnapshotConfigResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainTrafficDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainTrafficDataResult.h
 	include/alibabacloud/live/model/DescribeCasterProgramRequest.h
 	include/alibabacloud/live/model/DescribeCasterProgramResult.h
 	include/alibabacloud/live/model/StopLiveDomainRequest.h
@@ -303,6 +305,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeDomainUsageDataResult.h
 	include/alibabacloud/live/model/DeleteLiveAppRecordConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveAppRecordConfigResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainBpsDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainBpsDataResult.h
 	include/alibabacloud/live/model/DeleteCasterRequest.h
 	include/alibabacloud/live/model/DeleteCasterResult.h
 	include/alibabacloud/live/model/DescribeLiveRecordVodConfigsRequest.h
@@ -512,6 +516,8 @@ set(live_src
 	src/model/SetCasterChannelResult.cc
 	src/model/DescribeLiveSnapshotConfigRequest.cc
 	src/model/DescribeLiveSnapshotConfigResult.cc
+	src/model/DescribeLiveDomainTrafficDataRequest.cc
+	src/model/DescribeLiveDomainTrafficDataResult.cc
 	src/model/DescribeCasterProgramRequest.cc
 	src/model/DescribeCasterProgramResult.cc
 	src/model/StopLiveDomainRequest.cc
@@ -606,6 +612,8 @@ set(live_src
 	src/model/DescribeDomainUsageDataResult.cc
 	src/model/DeleteLiveAppRecordConfigRequest.cc
 	src/model/DeleteLiveAppRecordConfigResult.cc
+	src/model/DescribeLiveDomainBpsDataRequest.cc
+	src/model/DescribeLiveDomainBpsDataResult.cc
 	src/model/DeleteCasterRequest.cc
 	src/model/DeleteCasterResult.cc
 	src/model/DescribeLiveRecordVodConfigsRequest.cc

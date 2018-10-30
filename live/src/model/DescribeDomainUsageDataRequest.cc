@@ -333,3 +333,14 @@ void DescribeDomainUsageDataRequest::setRequestId(const std::string& requestId)
 	setParameter("RequestId", requestId);
 }
 
+std::string DescribeDomainUsageDataRequest::getInterval()const
+{
+	return interval_;
+}
+
+void DescribeDomainUsageDataRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setParameter("Interval", interval);
+}
+

@@ -210,6 +210,8 @@
 #include "model/SetCasterChannelResult.h"
 #include "model/DescribeLiveSnapshotConfigRequest.h"
 #include "model/DescribeLiveSnapshotConfigResult.h"
+#include "model/DescribeLiveDomainTrafficDataRequest.h"
+#include "model/DescribeLiveDomainTrafficDataResult.h"
 #include "model/DescribeCasterProgramRequest.h"
 #include "model/DescribeCasterProgramResult.h"
 #include "model/StopLiveDomainRequest.h"
@@ -304,6 +306,8 @@
 #include "model/DescribeDomainUsageDataResult.h"
 #include "model/DeleteLiveAppRecordConfigRequest.h"
 #include "model/DeleteLiveAppRecordConfigResult.h"
+#include "model/DescribeLiveDomainBpsDataRequest.h"
+#include "model/DescribeLiveDomainBpsDataResult.h"
 #include "model/DeleteCasterRequest.h"
 #include "model/DeleteCasterResult.h"
 #include "model/DescribeLiveRecordVodConfigsRequest.h"
@@ -613,6 +617,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveSnapshotConfigResult> DescribeLiveSnapshotConfigOutcome;
 			typedef std::future<DescribeLiveSnapshotConfigOutcome> DescribeLiveSnapshotConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveSnapshotConfigRequest&, const DescribeLiveSnapshotConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveSnapshotConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveDomainTrafficDataResult> DescribeLiveDomainTrafficDataOutcome;
+			typedef std::future<DescribeLiveDomainTrafficDataOutcome> DescribeLiveDomainTrafficDataOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainTrafficDataRequest&, const DescribeLiveDomainTrafficDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainTrafficDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCasterProgramResult> DescribeCasterProgramOutcome;
 			typedef std::future<DescribeCasterProgramOutcome> DescribeCasterProgramOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeCasterProgramRequest&, const DescribeCasterProgramOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterProgramAsyncHandler;
@@ -754,6 +761,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteLiveAppRecordConfigResult> DeleteLiveAppRecordConfigOutcome;
 			typedef std::future<DeleteLiveAppRecordConfigOutcome> DeleteLiveAppRecordConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAppRecordConfigRequest&, const DeleteLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAppRecordConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveDomainBpsDataResult> DescribeLiveDomainBpsDataOutcome;
+			typedef std::future<DescribeLiveDomainBpsDataOutcome> DescribeLiveDomainBpsDataOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainBpsDataRequest&, const DescribeLiveDomainBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainBpsDataAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCasterResult> DeleteCasterOutcome;
 			typedef std::future<DeleteCasterOutcome> DeleteCasterOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteCasterRequest&, const DeleteCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterAsyncHandler;
@@ -1068,6 +1078,9 @@ namespace AlibabaCloud
 			DescribeLiveSnapshotConfigOutcome describeLiveSnapshotConfig(const Model::DescribeLiveSnapshotConfigRequest &request)const;
 			void describeLiveSnapshotConfigAsync(const Model::DescribeLiveSnapshotConfigRequest& request, const DescribeLiveSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveSnapshotConfigOutcomeCallable describeLiveSnapshotConfigCallable(const Model::DescribeLiveSnapshotConfigRequest& request) const;
+			DescribeLiveDomainTrafficDataOutcome describeLiveDomainTrafficData(const Model::DescribeLiveDomainTrafficDataRequest &request)const;
+			void describeLiveDomainTrafficDataAsync(const Model::DescribeLiveDomainTrafficDataRequest& request, const DescribeLiveDomainTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveDomainTrafficDataOutcomeCallable describeLiveDomainTrafficDataCallable(const Model::DescribeLiveDomainTrafficDataRequest& request) const;
 			DescribeCasterProgramOutcome describeCasterProgram(const Model::DescribeCasterProgramRequest &request)const;
 			void describeCasterProgramAsync(const Model::DescribeCasterProgramRequest& request, const DescribeCasterProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCasterProgramOutcomeCallable describeCasterProgramCallable(const Model::DescribeCasterProgramRequest& request) const;
@@ -1209,6 +1222,9 @@ namespace AlibabaCloud
 			DeleteLiveAppRecordConfigOutcome deleteLiveAppRecordConfig(const Model::DeleteLiveAppRecordConfigRequest &request)const;
 			void deleteLiveAppRecordConfigAsync(const Model::DeleteLiveAppRecordConfigRequest& request, const DeleteLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveAppRecordConfigOutcomeCallable deleteLiveAppRecordConfigCallable(const Model::DeleteLiveAppRecordConfigRequest& request) const;
+			DescribeLiveDomainBpsDataOutcome describeLiveDomainBpsData(const Model::DescribeLiveDomainBpsDataRequest &request)const;
+			void describeLiveDomainBpsDataAsync(const Model::DescribeLiveDomainBpsDataRequest& request, const DescribeLiveDomainBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveDomainBpsDataOutcomeCallable describeLiveDomainBpsDataCallable(const Model::DescribeLiveDomainBpsDataRequest& request) const;
 			DeleteCasterOutcome deleteCaster(const Model::DeleteCasterRequest &request)const;
 			void deleteCasterAsync(const Model::DeleteCasterRequest& request, const DeleteCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCasterOutcomeCallable deleteCasterCallable(const Model::DeleteCasterRequest& request) const;

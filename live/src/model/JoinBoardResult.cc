@@ -46,6 +46,10 @@ void JoinBoardResult::parse(const std::string &payload)
 		boardId_ = value["BoardId"].asString();
 	if(!value["TopicId"].isNull())
 		topicId_ = value["TopicId"].asString();
+	if(!value["KeepaliveTopic"].isNull())
+		keepaliveTopic_ = value["KeepaliveTopic"].asString();
+	if(!value["KeepaliveInterval"].isNull())
+		keepaliveInterval_ = std::stoi(value["KeepaliveInterval"].asString());
 
 }
 
@@ -62,5 +66,15 @@ std::string JoinBoardResult::getToken()const
 std::string JoinBoardResult::getTopicId()const
 {
 	return topicId_;
+}
+
+std::string JoinBoardResult::getKeepaliveTopic()const
+{
+	return keepaliveTopic_;
+}
+
+int JoinBoardResult::getKeepaliveInterval()const
+{
+	return keepaliveInterval_;
 }
 

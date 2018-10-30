@@ -39,8 +39,12 @@ namespace AlibabaCloud
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
+				std::string getAnchorId()const;
+				void setAnchorId(const std::string& anchorId);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				std::string getOwnerIdLoginEmail()const;
@@ -71,8 +75,8 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
 				long getOwnerId()const;
@@ -83,6 +87,8 @@ namespace AlibabaCloud
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
 				bool getAk_mfa_present()const;
 				void setAk_mfa_present(bool ak_mfa_present);
+				std::string getRoomId()const;
+				void setRoomId(const std::string& roomId);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
 				std::string getRequestId()const;
@@ -93,7 +99,9 @@ namespace AlibabaCloud
             private:
 				long callerParentId_;
 				bool proxy_original_security_transport_;
+				std::string startTime_;
 				std::string proxy_original_source_ip_;
+				std::string anchorId_;
 				int pageNum_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
@@ -109,12 +117,13 @@ namespace AlibabaCloud
 				std::string order_;
 				std::string app_ip_;
 				std::string popProduct_;
-				std::string product_;
+				std::string endTime_;
 				std::string callerBid_;
 				long ownerId_;
 				std::string version_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
+				std::string roomId_;
 				bool security_transport_;
 				std::string requestId_;
 				std::string appId_;

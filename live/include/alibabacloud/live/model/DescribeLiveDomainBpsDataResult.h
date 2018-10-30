@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEROOMLISTRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEROOMLISTRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATARESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeRoomListResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainBpsDataResult : public ServiceResult
 			{
 			public:
-				struct Room
+				struct DataModule
 				{
-					int roomStatus;
-					std::string anchorId;
-					std::string createTime;
-					std::string roomId;
-					std::string forbidStream;
+					std::string httpsBpsValue;
+					std::string bpsValue;
+					std::string httpBpsValue;
+					std::string timeStamp;
 				};
 
 
-				DescribeRoomListResult();
-				explicit DescribeRoomListResult(const std::string &payload);
-				~DescribeRoomListResult();
-				int getTotalNum()const;
-				int getTotalPage()const;
-				std::vector<Room> getRoomList()const;
+				DescribeLiveDomainBpsDataResult();
+				explicit DescribeLiveDomainBpsDataResult(const std::string &payload);
+				~DescribeLiveDomainBpsDataResult();
+				std::string getEndTime()const;
+				std::string getDomainName()const;
+				std::string getStartTime()const;
+				std::string getDataInterval()const;
+				std::vector<DataModule> getBpsDataPerInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalNum_;
-				int totalPage_;
-				std::vector<Room> roomList_;
+				std::string endTime_;
+				std::string domainName_;
+				std::string startTime_;
+				std::string dataInterval_;
+				std::vector<DataModule> bpsDataPerInterval_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEROOMLISTRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATARESULT_H_

@@ -47,6 +47,17 @@ void DescribeRoomListRequest::setProxy_original_security_transport(bool proxy_or
 	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
 }
 
+std::string DescribeRoomListRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeRoomListRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", startTime);
+}
+
 std::string DescribeRoomListRequest::getProxy_original_source_ip()const
 {
 	return proxy_original_source_ip_;
@@ -56,6 +67,17 @@ void DescribeRoomListRequest::setProxy_original_source_ip(const std::string& pro
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
 	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+}
+
+std::string DescribeRoomListRequest::getAnchorId()const
+{
+	return anchorId_;
+}
+
+void DescribeRoomListRequest::setAnchorId(const std::string& anchorId)
+{
+	anchorId_ = anchorId;
+	setParameter("AnchorId", anchorId);
 }
 
 int DescribeRoomListRequest::getPageNum()const
@@ -223,15 +245,15 @@ void DescribeRoomListRequest::setPopProduct(const std::string& popProduct)
 	setParameter("PopProduct", popProduct);
 }
 
-std::string DescribeRoomListRequest::getProduct()const
+std::string DescribeRoomListRequest::getEndTime()const
 {
-	return product_;
+	return endTime_;
 }
 
-void DescribeRoomListRequest::setProduct(const std::string& product)
+void DescribeRoomListRequest::setEndTime(const std::string& endTime)
 {
-	product_ = product;
-	setParameter("Product", product);
+	endTime_ = endTime;
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeRoomListRequest::getCallerBid()const
@@ -287,6 +309,17 @@ void DescribeRoomListRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
 	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+}
+
+std::string DescribeRoomListRequest::getRoomId()const
+{
+	return roomId_;
+}
+
+void DescribeRoomListRequest::setRoomId(const std::string& roomId)
+{
+	roomId_ = roomId;
+	setParameter("RoomId", roomId);
 }
 
 bool DescribeRoomListRequest::getSecurity_transport()const

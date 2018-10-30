@@ -3435,6 +3435,42 @@ LiveClient::DescribeLiveSnapshotConfigOutcomeCallable LiveClient::describeLiveSn
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveDomainTrafficDataOutcome LiveClient::describeLiveDomainTrafficData(const DescribeLiveDomainTrafficDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainTrafficDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainTrafficDataOutcome(DescribeLiveDomainTrafficDataResult(outcome.result()));
+	else
+		return DescribeLiveDomainTrafficDataOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainTrafficDataAsync(const DescribeLiveDomainTrafficDataRequest& request, const DescribeLiveDomainTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainTrafficData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainTrafficDataOutcomeCallable LiveClient::describeLiveDomainTrafficDataCallable(const DescribeLiveDomainTrafficDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainTrafficDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainTrafficData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeCasterProgramOutcome LiveClient::describeCasterProgram(const DescribeCasterProgramRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5121,6 +5157,42 @@ LiveClient::DeleteLiveAppRecordConfigOutcomeCallable LiveClient::deleteLiveAppRe
 			[this, request]()
 			{
 			return this->deleteLiveAppRecordConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveDomainBpsDataOutcome LiveClient::describeLiveDomainBpsData(const DescribeLiveDomainBpsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainBpsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainBpsDataOutcome(DescribeLiveDomainBpsDataResult(outcome.result()));
+	else
+		return DescribeLiveDomainBpsDataOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainBpsDataAsync(const DescribeLiveDomainBpsDataRequest& request, const DescribeLiveDomainBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainBpsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainBpsDataOutcomeCallable LiveClient::describeLiveDomainBpsDataCallable(const DescribeLiveDomainBpsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainBpsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainBpsData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -50,6 +50,8 @@ void DescribeRoomListResult::parse(const std::string &payload)
 			roomListObject.anchorId = value["AnchorId"].asString();
 		if(!value["RoomStatus"].isNull())
 			roomListObject.roomStatus = std::stoi(value["RoomStatus"].asString());
+		if(!value["ForbidStream"].isNull())
+			roomListObject.forbidStream = value["ForbidStream"].asString();
 		if(!value["CreateTime"].isNull())
 			roomListObject.createTime = value["CreateTime"].asString();
 		roomList_.push_back(roomListObject);
