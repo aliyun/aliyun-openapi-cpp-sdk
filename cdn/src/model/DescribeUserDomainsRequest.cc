@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeUserDomainsRequest;
 
 DescribeUserDomainsRequest::DescribeUserDomainsRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeUserDomains")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeUserDomains")
 {}
 
 DescribeUserDomainsRequest::~DescribeUserDomainsRequest()
@@ -34,6 +34,17 @@ void DescribeUserDomainsRequest::setFuncFilter(const std::string& funcFilter)
 {
 	funcFilter_ = funcFilter;
 	setParameter("FuncFilter", funcFilter);
+}
+
+std::string DescribeUserDomainsRequest::getSources()const
+{
+	return sources_;
+}
+
+void DescribeUserDomainsRequest::setSources(const std::string& sources)
+{
+	sources_ = sources;
+	setParameter("Sources", sources);
 }
 
 std::string DescribeUserDomainsRequest::getDomainName()const

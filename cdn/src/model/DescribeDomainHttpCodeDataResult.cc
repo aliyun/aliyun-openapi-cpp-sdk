@@ -62,12 +62,12 @@ void DescribeDomainHttpCodeDataResult::parse(const std::string &payload)
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
-	if(!value["DataInterval"].isNull())
-		dataInterval_ = value["DataInterval"].asString();
 
 }
 
@@ -81,14 +81,14 @@ std::string DescribeDomainHttpCodeDataResult::getDomainName()const
 	return domainName_;
 }
 
-std::string DescribeDomainHttpCodeDataResult::getStartTime()const
-{
-	return startTime_;
-}
-
 std::string DescribeDomainHttpCodeDataResult::getDataInterval()const
 {
 	return dataInterval_;
+}
+
+std::string DescribeDomainHttpCodeDataResult::getStartTime()const
+{
+	return startTime_;
 }
 
 std::vector<DescribeDomainHttpCodeDataResult::UsageData> DescribeDomainHttpCodeDataResult::getHttpCodeData()const

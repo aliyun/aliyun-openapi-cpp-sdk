@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeIpInfoRequest;
 
 DescribeIpInfoRequest::DescribeIpInfoRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeIpInfo")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeIpInfo")
 {}
 
 DescribeIpInfoRequest::~DescribeIpInfoRequest()

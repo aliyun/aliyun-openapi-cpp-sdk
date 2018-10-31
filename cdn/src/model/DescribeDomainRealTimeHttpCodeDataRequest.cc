@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainRealTimeHttpCodeDataRequest;
 
 DescribeDomainRealTimeHttpCodeDataRequest::DescribeDomainRealTimeHttpCodeDataRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainRealTimeHttpCodeData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainRealTimeHttpCodeData")
 {}
 
 DescribeDomainRealTimeHttpCodeDataRequest::~DescribeDomainRealTimeHttpCodeDataRequest()

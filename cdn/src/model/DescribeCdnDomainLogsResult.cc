@@ -40,49 +40,51 @@ void DescribeCdnDomainLogsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	auto domainLogModelNode = value["DomainLogModel"];
+	if(!domainLogModelNode["DomainName"].isNull())
+		domainLogModel_.domainName = domainLogModelNode["DomainName"].asString();
 	auto allDomainLogDetails = value["DomainLogDetails"]["DomainLogDetail"];
 	for (auto value : allDomainLogDetails)
 	{
-		DomainLogDetail domainLogDetailsObject;
-		if(!value["DomainName"].isNull())
-			domainLogDetailsObject.domainName = value["DomainName"].asString();
-		if(!value["LogCount"].isNull())
-			domainLogDetailsObject.logCount = std::stol(value["LogCount"].asString());
-		auto allPageInfos = value["PageInfos"]["PageInfoDetail"];
-		for (auto value : allPageInfos)
-		{
-			DomainLogDetail::PageInfoDetail pageInfosObject;
-			if(!value["PageIndex"].isNull())
-				pageInfosObject.pageIndex = std::stol(value["PageIndex"].asString());
-			if(!value["PageSize"].isNull())
-				pageInfosObject.pageSize = std::stol(value["PageSize"].asString());
-			if(!value["Total"].isNull())
-				pageInfosObject.total = std::stol(value["Total"].asString());
-			domainLogDetailsObject.pageInfos.push_back(pageInfosObject);
-		}
-		auto allLogInfos = value["LogInfos"]["LogInfoDetail"];
-		for (auto value : allLogInfos)
-		{
-			DomainLogDetail::LogInfoDetail logInfosObject;
-			if(!value["LogName"].isNull())
-				logInfosObject.logName = value["LogName"].asString();
-			if(!value["LogPath"].isNull())
-				logInfosObject.logPath = value["LogPath"].asString();
-			if(!value["LogSize"].isNull())
-				logInfosObject.logSize = std::stol(value["LogSize"].asString());
-			if(!value["StartTime"].isNull())
-				logInfosObject.startTime = value["StartTime"].asString();
-			if(!value["EndTime"].isNull())
-				logInfosObject.endTime = value["EndTime"].asString();
-			domainLogDetailsObject.logInfos.push_back(logInfosObject);
-		}
-		domainLogDetails_.push_back(domainLogDetailsObject);
+		DomainLogModel::DomainLogDetail domainLogDetailObject;
+		if(!value["LogName"].isNull())
+			domainLogDetailObject.logName = value["LogName"].asString();
+		if(!value["LogPath"].isNull())
+			domainLogDetailObject.logPath = value["LogPath"].asString();
+		if(!value["LogSize"].isNull())
+			domainLogDetailObject.logSize = std::stol(value["LogSize"].asString());
+		if(!value["StartTime"].isNull())
+			domainLogDetailObject.startTime = value["StartTime"].asString();
+		if(!value["EndTime"].isNull())
+			domainLogDetailObject.endTime = value["EndTime"].asString();
+		domainLogModel_.domainLogDetails.push_back(domainLogDetailObject);
 	}
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
 }
 
-std::vector<DescribeCdnDomainLogsResult::DomainLogDetail> DescribeCdnDomainLogsResult::getDomainLogDetails()const
+long DescribeCdnDomainLogsResult::getTotalCount()const
 {
-	return domainLogDetails_;
+	return totalCount_;
+}
+
+long DescribeCdnDomainLogsResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+DescribeCdnDomainLogsResult::DomainLogModel DescribeCdnDomainLogsResult::getDomainLogModel()const
+{
+	return domainLogModel_;
+}
+
+long DescribeCdnDomainLogsResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 

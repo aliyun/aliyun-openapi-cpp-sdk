@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getFuncFilter()const;
 				void setFuncFilter(const std::string& funcFilter);
+				std::string getSources()const;
+				void setSources(const std::string& sources);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 
             private:
 				std::string funcFilter_;
+				std::string sources_;
 				std::string domainName_;
 				long ownerId_;
 				std::string funcId_;

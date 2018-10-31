@@ -34,7 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct DataModule
 				{
-					std::string httpsValue;
 					std::string value;
 					std::string timeStamp;
 				};

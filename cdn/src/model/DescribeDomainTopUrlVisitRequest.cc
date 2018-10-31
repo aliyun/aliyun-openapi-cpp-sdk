@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainTopUrlVisitRequest;
 
 DescribeDomainTopUrlVisitRequest::DescribeDomainTopUrlVisitRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainTopUrlVisit")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainTopUrlVisit")
 {}
 
 DescribeDomainTopUrlVisitRequest::~DescribeDomainTopUrlVisitRequest()

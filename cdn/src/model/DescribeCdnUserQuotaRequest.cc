@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeCdnUserQuotaRequest;
 
 DescribeCdnUserQuotaRequest::DescribeCdnUserQuotaRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeCdnUserQuota")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeCdnUserQuota")
 {}
 
 DescribeCdnUserQuotaRequest::~DescribeCdnUserQuotaRequest()

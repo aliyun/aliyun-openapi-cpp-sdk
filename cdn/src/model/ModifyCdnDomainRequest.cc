@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::ModifyCdnDomainRequest;
 
 ModifyCdnDomainRequest::ModifyCdnDomainRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "ModifyCdnDomain")
+	RpcServiceRequest("cdn", "2014-11-11", "ModifyCdnDomain")
 {}
 
 ModifyCdnDomainRequest::~ModifyCdnDomainRequest()
@@ -36,6 +36,17 @@ void ModifyCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain
 	setParameter("TopLevelDomain", topLevelDomain);
 }
 
+int ModifyCdnDomainRequest::getSourcePort()const
+{
+	return sourcePort_;
+}
+
+void ModifyCdnDomainRequest::setSourcePort(int sourcePort)
+{
+	sourcePort_ = sourcePort;
+	setParameter("SourcePort", std::to_string(sourcePort));
+}
+
 std::string ModifyCdnDomainRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -45,6 +56,17 @@ void ModifyCdnDomainRequest::setResourceGroupId(const std::string& resourceGroup
 {
 	resourceGroupId_ = resourceGroupId;
 	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string ModifyCdnDomainRequest::getPriorities()const
+{
+	return priorities_;
+}
+
+void ModifyCdnDomainRequest::setPriorities(const std::string& priorities)
+{
+	priorities_ = priorities;
+	setParameter("Priorities", priorities);
 }
 
 std::string ModifyCdnDomainRequest::getSources()const
@@ -78,6 +100,17 @@ void ModifyCdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setParameter("DomainName", domainName);
+}
+
+std::string ModifyCdnDomainRequest::getSourceType()const
+{
+	return sourceType_;
+}
+
+void ModifyCdnDomainRequest::setSourceType(const std::string& sourceType)
+{
+	sourceType_ = sourceType;
+	setParameter("SourceType", sourceType);
 }
 
 long ModifyCdnDomainRequest::getOwnerId()const

@@ -58,28 +58,28 @@ void DescribeDomainQpsDataResult::parse(const std::string &payload)
 			qpsDataIntervalObject.accDomesticValue = value["AccDomesticValue"].asString();
 		if(!value["AccOverseasValue"].isNull())
 			qpsDataIntervalObject.accOverseasValue = value["AccOverseasValue"].asString();
-		if(!value["HttpsValue"].isNull())
-			qpsDataIntervalObject.httpsValue = value["HttpsValue"].asString();
-		if(!value["HttpsDomesticValue"].isNull())
-			qpsDataIntervalObject.httpsDomesticValue = value["HttpsDomesticValue"].asString();
-		if(!value["HttpsOverseasValue"].isNull())
-			qpsDataIntervalObject.httpsOverseasValue = value["HttpsOverseasValue"].asString();
-		if(!value["HttpsAccValue"].isNull())
-			qpsDataIntervalObject.httpsAccValue = value["HttpsAccValue"].asString();
-		if(!value["HttpsAccDomesticValue"].isNull())
-			qpsDataIntervalObject.httpsAccDomesticValue = value["HttpsAccDomesticValue"].asString();
-		if(!value["HttpsAccOverseasValue"].isNull())
-			qpsDataIntervalObject.httpsAccOverseasValue = value["HttpsAccOverseasValue"].asString();
+		if(!value["DynamicValue"].isNull())
+			qpsDataIntervalObject.dynamicValue = value["DynamicValue"].asString();
+		if(!value["DynamicDomesticValue"].isNull())
+			qpsDataIntervalObject.dynamicDomesticValue = value["DynamicDomesticValue"].asString();
+		if(!value["DynamicOverseasValue"].isNull())
+			qpsDataIntervalObject.dynamicOverseasValue = value["DynamicOverseasValue"].asString();
+		if(!value["StaticValue"].isNull())
+			qpsDataIntervalObject.staticValue = value["StaticValue"].asString();
+		if(!value["StaticDomesticValue"].isNull())
+			qpsDataIntervalObject.staticDomesticValue = value["StaticDomesticValue"].asString();
+		if(!value["StaticOverseasValue"].isNull())
+			qpsDataIntervalObject.staticOverseasValue = value["StaticOverseasValue"].asString();
 		qpsDataInterval_.push_back(qpsDataIntervalObject);
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
-	if(!value["DataInterval"].isNull())
-		dataInterval_ = value["DataInterval"].asString();
 
 }
 
@@ -93,14 +93,14 @@ std::string DescribeDomainQpsDataResult::getDomainName()const
 	return domainName_;
 }
 
-std::string DescribeDomainQpsDataResult::getStartTime()const
-{
-	return startTime_;
-}
-
 std::string DescribeDomainQpsDataResult::getDataInterval()const
 {
 	return dataInterval_;
+}
+
+std::string DescribeDomainQpsDataResult::getStartTime()const
+{
+	return startTime_;
 }
 
 std::vector<DescribeDomainQpsDataResult::DataModule> DescribeDomainQpsDataResult::getQpsDataInterval()const

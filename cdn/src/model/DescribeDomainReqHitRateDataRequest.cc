@@ -19,88 +19,11 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainReqHitRateDataRequest;
 
 DescribeDomainReqHitRateDataRequest::DescribeDomainReqHitRateDataRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainReqHitRateData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainReqHitRateData")
 {}
 
 DescribeDomainReqHitRateDataRequest::~DescribeDomainReqHitRateDataRequest()
 {}
-
-long DescribeDomainReqHitRateDataRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool DescribeDomainReqHitRateDataRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setParameter("CallerType", callerType);
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
 
 std::string DescribeDomainReqHitRateDataRequest::getSecurityToken()const
 {
@@ -111,83 +34,6 @@ void DescribeDomainReqHitRateDataRequest::setSecurityToken(const std::string& se
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
-}
-
-long DescribeDomainReqHitRateDataRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getProduct()const
-{
-	return product_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
 }
 
 std::string DescribeDomainReqHitRateDataRequest::getDomainName()const
@@ -212,15 +58,26 @@ void DescribeDomainReqHitRateDataRequest::setEndTime(const std::string& endTime)
 	setParameter("EndTime", endTime);
 }
 
-std::string DescribeDomainReqHitRateDataRequest::getCallerBid()const
+std::string DescribeDomainReqHitRateDataRequest::getInterval()const
 {
-	return callerBid_;
+	return interval_;
 }
 
-void DescribeDomainReqHitRateDataRequest::setCallerBid(const std::string& callerBid)
+void DescribeDomainReqHitRateDataRequest::setInterval(const std::string& interval)
 {
-	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	interval_ = interval;
+	setParameter("Interval", interval);
+}
+
+std::string DescribeDomainReqHitRateDataRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeDomainReqHitRateDataRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", startTime);
 }
 
 long DescribeDomainReqHitRateDataRequest::getOwnerId()const
@@ -234,80 +91,14 @@ void DescribeDomainReqHitRateDataRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeDomainReqHitRateDataRequest::getVersion()const
+std::string DescribeDomainReqHitRateDataRequest::getAccessKeyId()const
 {
-	return version_;
+	return accessKeyId_;
 }
 
-void DescribeDomainReqHitRateDataRequest::setVersion(const std::string& version)
+void DescribeDomainReqHitRateDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	version_ = version;
-	setParameter("Version", version);
-}
-
-bool DescribeDomainReqHitRateDataRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
-}
-
-bool DescribeDomainReqHitRateDataRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
-}
-
-bool DescribeDomainReqHitRateDataRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getInterval()const
-{
-	return interval_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setInterval(const std::string& interval)
-{
-	interval_ = interval;
-	setParameter("Interval", interval);
-}
-
-std::string DescribeDomainReqHitRateDataRequest::getFields()const
-{
-	return fields_;
-}
-
-void DescribeDomainReqHitRateDataRequest::setFields(const std::string& fields)
-{
-	fields_ = fields;
-	setParameter("Fields", fields);
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -50,8 +50,8 @@ namespace AlibabaCloud
 				~DescribeDomainHttpCodeDataResult();
 				std::string getEndTime()const;
 				std::string getDomainName()const;
-				std::string getStartTime()const;
 				std::string getDataInterval()const;
+				std::string getStartTime()const;
 				std::vector<UsageData> getHttpCodeData()const;
 
 			protected:
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 			private:
 				std::string endTime_;
 				std::string domainName_;
-				std::string startTime_;
 				std::string dataInterval_;
+				std::string startTime_;
 				std::vector<UsageData> httpCodeData_;
 
 			};

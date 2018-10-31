@@ -48,8 +48,6 @@ void DescribeDomainReqHitRateDataResult::parse(const std::string &payload)
 			reqHitRateIntervalObject.timeStamp = value["TimeStamp"].asString();
 		if(!value["Value"].isNull())
 			reqHitRateIntervalObject.value = value["Value"].asString();
-		if(!value["HttpsValue"].isNull())
-			reqHitRateIntervalObject.httpsValue = value["HttpsValue"].asString();
 		reqHitRateInterval_.push_back(reqHitRateIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

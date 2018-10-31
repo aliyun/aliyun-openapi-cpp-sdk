@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::AddCdnDomainRequest;
 
 AddCdnDomainRequest::AddCdnDomainRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "AddCdnDomain")
+	RpcServiceRequest("cdn", "2014-11-11", "AddCdnDomain")
 {}
 
 AddCdnDomainRequest::~AddCdnDomainRequest()
@@ -36,17 +36,6 @@ void AddCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 	setParameter("TopLevelDomain", topLevelDomain);
 }
 
-std::string AddCdnDomainRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void AddCdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string AddCdnDomainRequest::getSources()const
 {
 	return sources_;
@@ -58,28 +47,6 @@ void AddCdnDomainRequest::setSources(const std::string& sources)
 	setParameter("Sources", sources);
 }
 
-std::string AddCdnDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void AddCdnDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
-}
-
-std::string AddCdnDomainRequest::getCdnType()const
-{
-	return cdnType_;
-}
-
-void AddCdnDomainRequest::setCdnType(const std::string& cdnType)
-{
-	cdnType_ = cdnType;
-	setParameter("CdnType", cdnType);
-}
-
 std::string AddCdnDomainRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,17 +56,6 @@ void AddCdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
-}
-
-std::string AddCdnDomainRequest::getScope()const
-{
-	return scope_;
-}
-
-void AddCdnDomainRequest::setScope(const std::string& scope)
-{
-	scope_ = scope;
-	setParameter("Scope", scope);
 }
 
 std::string AddCdnDomainRequest::getDomainName()const
@@ -124,6 +80,94 @@ void AddCdnDomainRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string AddCdnDomainRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddCdnDomainRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AddCdnDomainRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void AddCdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+int AddCdnDomainRequest::getSourcePort()const
+{
+	return sourcePort_;
+}
+
+void AddCdnDomainRequest::setSourcePort(int sourcePort)
+{
+	sourcePort_ = sourcePort;
+	setParameter("SourcePort", std::to_string(sourcePort));
+}
+
+std::string AddCdnDomainRequest::getPriorities()const
+{
+	return priorities_;
+}
+
+void AddCdnDomainRequest::setPriorities(const std::string& priorities)
+{
+	priorities_ = priorities;
+	setParameter("Priorities", priorities);
+}
+
+std::string AddCdnDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void AddCdnDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
+}
+
+std::string AddCdnDomainRequest::getCdnType()const
+{
+	return cdnType_;
+}
+
+void AddCdnDomainRequest::setCdnType(const std::string& cdnType)
+{
+	cdnType_ = cdnType;
+	setParameter("CdnType", cdnType);
+}
+
+std::string AddCdnDomainRequest::getScope()const
+{
+	return scope_;
+}
+
+void AddCdnDomainRequest::setScope(const std::string& scope)
+{
+	scope_ = scope;
+	setParameter("Scope", scope);
+}
+
+std::string AddCdnDomainRequest::getSourceType()const
+{
+	return sourceType_;
+}
+
+void AddCdnDomainRequest::setSourceType(const std::string& sourceType)
+{
+	sourceType_ = sourceType;
+	setParameter("SourceType", sourceType);
+}
+
 std::string AddCdnDomainRequest::getCheckUrl()const
 {
 	return checkUrl_;
@@ -135,14 +179,14 @@ void AddCdnDomainRequest::setCheckUrl(const std::string& checkUrl)
 	setParameter("CheckUrl", checkUrl);
 }
 
-std::string AddCdnDomainRequest::getAccessKeyId()const
+std::string AddCdnDomainRequest::getRegion()const
 {
-	return accessKeyId_;
+	return region_;
 }
 
-void AddCdnDomainRequest::setAccessKeyId(const std::string& accessKeyId)
+void AddCdnDomainRequest::setRegion(const std::string& region)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	region_ = region;
+	setParameter("Region", region);
 }
 

@@ -19,77 +19,11 @@
 using AlibabaCloud::Cdn::Model::SetRangeConfigRequest;
 
 SetRangeConfigRequest::SetRangeConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetRangeConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetRangeConfig")
 {}
 
 SetRangeConfigRequest::~SetRangeConfigRequest()
 {}
-
-long SetRangeConfigRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void SetRangeConfigRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool SetRangeConfigRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void SetRangeConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
-}
-
-std::string SetRangeConfigRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void SetRangeConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string SetRangeConfigRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void SetRangeConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string SetRangeConfigRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void SetRangeConfigRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setParameter("CallerType", callerType);
-}
-
-std::string SetRangeConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetRangeConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
 
 std::string SetRangeConfigRequest::getSecurityToken()const
 {
@@ -100,28 +34,6 @@ void SetRangeConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
-}
-
-std::string SetRangeConfigRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void SetRangeConfigRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
-}
-
-std::string SetRangeConfigRequest::getFunctionName()const
-{
-	return functionName_;
-}
-
-void SetRangeConfigRequest::setFunctionName(const std::string& functionName)
-{
-	functionName_ = functionName;
-	setParameter("FunctionName", functionName);
 }
 
 std::string SetRangeConfigRequest::getEnable()const
@@ -135,72 +47,6 @@ void SetRangeConfigRequest::setEnable(const std::string& enable)
 	setParameter("Enable", enable);
 }
 
-std::string SetRangeConfigRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void SetRangeConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string SetRangeConfigRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void SetRangeConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
-}
-
-long SetRangeConfigRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void SetRangeConfigRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string SetRangeConfigRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void SetRangeConfigRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
-}
-
-std::string SetRangeConfigRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void SetRangeConfigRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
-}
-
-std::string SetRangeConfigRequest::getProduct()const
-{
-	return product_;
-}
-
-void SetRangeConfigRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
-}
-
 std::string SetRangeConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -210,17 +56,6 @@ void SetRangeConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setParameter("DomainName", domainName);
-}
-
-std::string SetRangeConfigRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void SetRangeConfigRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
 }
 
 long SetRangeConfigRequest::getOwnerId()const
@@ -234,69 +69,14 @@ void SetRangeConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetRangeConfigRequest::getVersion()const
+std::string SetRangeConfigRequest::getAccessKeyId()const
 {
-	return version_;
+	return accessKeyId_;
 }
 
-void SetRangeConfigRequest::setVersion(const std::string& version)
+void SetRangeConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	version_ = version;
-	setParameter("Version", version);
-}
-
-bool SetRangeConfigRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void SetRangeConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
-}
-
-bool SetRangeConfigRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void SetRangeConfigRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
-}
-
-bool SetRangeConfigRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void SetRangeConfigRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
-}
-
-std::string SetRangeConfigRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void SetRangeConfigRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
-}
-
-long SetRangeConfigRequest::getConfigId()const
-{
-	return configId_;
-}
-
-void SetRangeConfigRequest::setConfigId(long configId)
-{
-	configId_ = configId;
-	setParameter("ConfigId", std::to_string(configId));
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 

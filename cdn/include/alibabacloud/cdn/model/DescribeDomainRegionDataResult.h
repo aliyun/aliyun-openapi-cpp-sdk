@@ -37,11 +37,14 @@ namespace AlibabaCloud
 					std::string avgObjectSize;
 					std::string bytesProportion;
 					std::string bps;
+					std::string totalQuery;
+					std::string avgResponseRate;
+					std::string reqErrRate;
+					std::string reqHitRate;
 					std::string proportion;
 					std::string qps;
-					std::string totalQuery;
+					std::string byteHitRate;
 					std::string totalBytes;
-					std::string avgResponseRate;
 					std::string region;
 					std::string regionEname;
 					std::string avgResponseTime;

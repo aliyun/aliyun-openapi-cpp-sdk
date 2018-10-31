@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::SetDomainGreenManagerConfigRequest;
 
 SetDomainGreenManagerConfigRequest::SetDomainGreenManagerConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetDomainGreenManagerConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetDomainGreenManagerConfig")
 {}
 
 SetDomainGreenManagerConfigRequest::~SetDomainGreenManagerConfigRequest()
