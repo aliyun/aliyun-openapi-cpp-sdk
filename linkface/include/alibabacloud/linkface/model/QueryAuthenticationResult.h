@@ -39,8 +39,10 @@ namespace AlibabaCloud
 					std::string expiredTime;
 					std::string beginTime;
 					std::string clientId;
+					std::string productKey;
 					int licenseType;
 					std::string apkPubkey;
+					std::string deviceName;
 				};
 
 

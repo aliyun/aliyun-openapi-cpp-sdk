@@ -36,3 +36,25 @@ void QueryAddUserInfoRequest::setIotId(const std::string& iotId)
 	setParameter("IotId", iotId);
 }
 
+std::string QueryAddUserInfoRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void QueryAddUserInfoRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setParameter("DeviceName", deviceName);
+}
+
+std::string QueryAddUserInfoRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryAddUserInfoRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+

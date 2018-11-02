@@ -36,3 +36,25 @@ void QuerySyncPicScheduleRequest::setIotId(const std::string& iotId)
 	setParameter("IotId", iotId);
 }
 
+std::string QuerySyncPicScheduleRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void QuerySyncPicScheduleRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setParameter("DeviceName", deviceName);
+}
+
+std::string QuerySyncPicScheduleRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QuerySyncPicScheduleRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+

@@ -47,3 +47,25 @@ void SyncFacePicturesRequest::setGroupId(const std::string& groupId)
 	setParameter("GroupId", groupId);
 }
 
+std::string SyncFacePicturesRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void SyncFacePicturesRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setParameter("DeviceName", deviceName);
+}
+
+std::string SyncFacePicturesRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void SyncFacePicturesRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+

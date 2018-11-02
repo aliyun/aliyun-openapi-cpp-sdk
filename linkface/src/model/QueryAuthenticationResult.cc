@@ -58,6 +58,10 @@ void QueryAuthenticationResult::parse(const std::string &payload)
 			dataObject.packageName = value["PackageName"].asString();
 		if(!value["ClientId"].isNull())
 			dataObject.clientId = value["ClientId"].asString();
+		if(!value["ProductKey"].isNull())
+			dataObject.productKey = value["ProductKey"].asString();
+		if(!value["DeviceName"].isNull())
+			dataObject.deviceName = value["DeviceName"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

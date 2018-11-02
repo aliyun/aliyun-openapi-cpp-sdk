@@ -69,3 +69,25 @@ void QueryAuthenticationRequest::setCurrentPage(int currentPage)
 	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
+std::string QueryAuthenticationRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void QueryAuthenticationRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setParameter("DeviceName", deviceName);
+}
+
+std::string QueryAuthenticationRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryAuthenticationRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+

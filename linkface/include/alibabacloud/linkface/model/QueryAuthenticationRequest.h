@@ -43,12 +43,18 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
 
             private:
 				int licenseType_;
 				std::string iotId_;
 				int pageSize_;
 				int currentPage_;
+				std::string deviceName_;
+				std::string productKey_;
 
 			};
 		}
