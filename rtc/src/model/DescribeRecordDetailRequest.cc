@@ -168,15 +168,15 @@ void DescribeRecordDetailRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
-std::string DescribeRecordDetailRequest::getProduct()const
+std::string DescribeRecordDetailRequest::getPopProduct()const
 {
-	return product_;
+	return popProduct_;
 }
 
-void DescribeRecordDetailRequest::setProduct(const std::string& product)
+void DescribeRecordDetailRequest::setPopProduct(const std::string& popProduct)
 {
-	product_ = product;
-	setParameter("Product", product);
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
 }
 
 std::string DescribeRecordDetailRequest::getEndTime()const

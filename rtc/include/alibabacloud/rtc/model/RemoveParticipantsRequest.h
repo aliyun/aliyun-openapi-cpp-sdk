@@ -37,8 +37,8 @@ namespace AlibabaCloud
 
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
+				std::string getPopProduct()const;
+				void setPopProduct(const std::string& popProduct);
 				std::vector<std::string> getParticipantIds()const;
 				void setParticipantIds(const std::vector<std::string>& participantIds);
 				long getCallerParentId()const;
@@ -84,7 +84,7 @@ namespace AlibabaCloud
 
             private:
 				std::string app_ip_;
-				std::string product_;
+				std::string popProduct_;
 				std::vector<std::string> participantIds_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;

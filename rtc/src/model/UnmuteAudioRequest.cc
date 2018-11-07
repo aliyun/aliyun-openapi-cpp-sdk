@@ -36,15 +36,15 @@ void UnmuteAudioRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
-std::string UnmuteAudioRequest::getProduct()const
+std::string UnmuteAudioRequest::getPopProduct()const
 {
-	return product_;
+	return popProduct_;
 }
 
-void UnmuteAudioRequest::setProduct(const std::string& product)
+void UnmuteAudioRequest::setPopProduct(const std::string& popProduct)
 {
-	product_ = product;
-	setParameter("Product", product);
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
 }
 
 std::vector<std::string> UnmuteAudioRequest::getParticipantIds()const

@@ -201,15 +201,15 @@ void ModifyConferenceRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
-std::string ModifyConferenceRequest::getProduct()const
+std::string ModifyConferenceRequest::getPopProduct()const
 {
-	return product_;
+	return popProduct_;
 }
 
-void ModifyConferenceRequest::setProduct(const std::string& product)
+void ModifyConferenceRequest::setPopProduct(const std::string& popProduct)
 {
-	product_ = product;
-	setParameter("Product", product);
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
 }
 
 std::string ModifyConferenceRequest::getCallerBid()const

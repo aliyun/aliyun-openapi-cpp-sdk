@@ -201,15 +201,15 @@ void DescribeStatisRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
-std::string DescribeStatisRequest::getProduct()const
+std::string DescribeStatisRequest::getPopProduct()const
 {
-	return product_;
+	return popProduct_;
 }
 
-void DescribeStatisRequest::setProduct(const std::string& product)
+void DescribeStatisRequest::setPopProduct(const std::string& popProduct)
 {
-	product_ = product;
-	setParameter("Product", product);
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
 }
 
 std::string DescribeStatisRequest::getEndTime()const

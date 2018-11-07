@@ -23,14 +23,44 @@ set(rtc_public_header
 set(rtc_public_header_model 
 	include/alibabacloud/rtc/model/DescribeAppsRequest.h
 	include/alibabacloud/rtc/model/DescribeAppsResult.h
+	include/alibabacloud/rtc/model/GetTaskStatusRequest.h
+	include/alibabacloud/rtc/model/GetTaskStatusResult.h
+	include/alibabacloud/rtc/model/MuteAudioAllRequest.h
+	include/alibabacloud/rtc/model/MuteAudioAllResult.h
+	include/alibabacloud/rtc/model/UpdateTaskParamRequest.h
+	include/alibabacloud/rtc/model/UpdateTaskParamResult.h
+	include/alibabacloud/rtc/model/DeleteTemplateRequest.h
+	include/alibabacloud/rtc/model/DeleteTemplateResult.h
+	include/alibabacloud/rtc/model/CreateTemplateRequest.h
+	include/alibabacloud/rtc/model/CreateTemplateResult.h
+	include/alibabacloud/rtc/model/GetTemplateInfoRequest.h
+	include/alibabacloud/rtc/model/GetTemplateInfoResult.h
+	include/alibabacloud/rtc/model/DeleteChannelRequest.h
+	include/alibabacloud/rtc/model/DeleteChannelResult.h
+	include/alibabacloud/rtc/model/ModifyAppRequest.h
+	include/alibabacloud/rtc/model/ModifyAppResult.h
+	include/alibabacloud/rtc/model/RemoveParticipantsRequest.h
+	include/alibabacloud/rtc/model/RemoveParticipantsResult.h
+	include/alibabacloud/rtc/model/GetAllTemplateRequest.h
+	include/alibabacloud/rtc/model/GetAllTemplateResult.h
+	include/alibabacloud/rtc/model/DescribeStatisRequest.h
+	include/alibabacloud/rtc/model/DescribeStatisResult.h
+	include/alibabacloud/rtc/model/CreateChannelRequest.h
+	include/alibabacloud/rtc/model/CreateChannelResult.h
+	include/alibabacloud/rtc/model/StopTaskRequest.h
+	include/alibabacloud/rtc/model/StopTaskResult.h
+	include/alibabacloud/rtc/model/GetTaskParamRequest.h
+	include/alibabacloud/rtc/model/GetTaskParamResult.h
+	include/alibabacloud/rtc/model/UpdateChannelRequest.h
+	include/alibabacloud/rtc/model/UpdateChannelResult.h
+	include/alibabacloud/rtc/model/StartTaskRequest.h
+	include/alibabacloud/rtc/model/StartTaskResult.h
 	include/alibabacloud/rtc/model/ModifyConferenceRequest.h
 	include/alibabacloud/rtc/model/ModifyConferenceResult.h
 	include/alibabacloud/rtc/model/DescribeConferenceAuthInfoRequest.h
 	include/alibabacloud/rtc/model/DescribeConferenceAuthInfoResult.h
 	include/alibabacloud/rtc/model/DescribeRecordListRequest.h
 	include/alibabacloud/rtc/model/DescribeRecordListResult.h
-	include/alibabacloud/rtc/model/MuteAudioAllRequest.h
-	include/alibabacloud/rtc/model/MuteAudioAllResult.h
 	include/alibabacloud/rtc/model/UnmuteAudioRequest.h
 	include/alibabacloud/rtc/model/UnmuteAudioResult.h
 	include/alibabacloud/rtc/model/MuteAudioRequest.h
@@ -39,18 +69,8 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/StartAppResult.h
 	include/alibabacloud/rtc/model/CreateConferenceRequest.h
 	include/alibabacloud/rtc/model/CreateConferenceResult.h
-	include/alibabacloud/rtc/model/DeleteChannelRequest.h
-	include/alibabacloud/rtc/model/DeleteChannelResult.h
-	include/alibabacloud/rtc/model/ModifyAppRequest.h
-	include/alibabacloud/rtc/model/ModifyAppResult.h
 	include/alibabacloud/rtc/model/DescribeRealTimeRecordDetailRequest.h
 	include/alibabacloud/rtc/model/DescribeRealTimeRecordDetailResult.h
-	include/alibabacloud/rtc/model/RemoveParticipantsRequest.h
-	include/alibabacloud/rtc/model/RemoveParticipantsResult.h
-	include/alibabacloud/rtc/model/DescribeStatisRequest.h
-	include/alibabacloud/rtc/model/DescribeStatisResult.h
-	include/alibabacloud/rtc/model/CreateChannelRequest.h
-	include/alibabacloud/rtc/model/CreateChannelResult.h
 	include/alibabacloud/rtc/model/DescribeRealTimeRecordListRequest.h
 	include/alibabacloud/rtc/model/DescribeRealTimeRecordListResult.h
 	include/alibabacloud/rtc/model/StopAppRequest.h
@@ -59,8 +79,6 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/RemoveTerminalsResult.h
 	include/alibabacloud/rtc/model/DeleteConferenceRequest.h
 	include/alibabacloud/rtc/model/DeleteConferenceResult.h
-	include/alibabacloud/rtc/model/UpdateChannelRequest.h
-	include/alibabacloud/rtc/model/UpdateChannelResult.h
 	include/alibabacloud/rtc/model/UnmuteAudioAllRequest.h
 	include/alibabacloud/rtc/model/UnmuteAudioAllResult.h
 	include/alibabacloud/rtc/model/DescribeRecordDetailRequest.h
@@ -72,14 +90,44 @@ set(rtc_src
 	src/RtcClient.cc
 	src/model/DescribeAppsRequest.cc
 	src/model/DescribeAppsResult.cc
+	src/model/GetTaskStatusRequest.cc
+	src/model/GetTaskStatusResult.cc
+	src/model/MuteAudioAllRequest.cc
+	src/model/MuteAudioAllResult.cc
+	src/model/UpdateTaskParamRequest.cc
+	src/model/UpdateTaskParamResult.cc
+	src/model/DeleteTemplateRequest.cc
+	src/model/DeleteTemplateResult.cc
+	src/model/CreateTemplateRequest.cc
+	src/model/CreateTemplateResult.cc
+	src/model/GetTemplateInfoRequest.cc
+	src/model/GetTemplateInfoResult.cc
+	src/model/DeleteChannelRequest.cc
+	src/model/DeleteChannelResult.cc
+	src/model/ModifyAppRequest.cc
+	src/model/ModifyAppResult.cc
+	src/model/RemoveParticipantsRequest.cc
+	src/model/RemoveParticipantsResult.cc
+	src/model/GetAllTemplateRequest.cc
+	src/model/GetAllTemplateResult.cc
+	src/model/DescribeStatisRequest.cc
+	src/model/DescribeStatisResult.cc
+	src/model/CreateChannelRequest.cc
+	src/model/CreateChannelResult.cc
+	src/model/StopTaskRequest.cc
+	src/model/StopTaskResult.cc
+	src/model/GetTaskParamRequest.cc
+	src/model/GetTaskParamResult.cc
+	src/model/UpdateChannelRequest.cc
+	src/model/UpdateChannelResult.cc
+	src/model/StartTaskRequest.cc
+	src/model/StartTaskResult.cc
 	src/model/ModifyConferenceRequest.cc
 	src/model/ModifyConferenceResult.cc
 	src/model/DescribeConferenceAuthInfoRequest.cc
 	src/model/DescribeConferenceAuthInfoResult.cc
 	src/model/DescribeRecordListRequest.cc
 	src/model/DescribeRecordListResult.cc
-	src/model/MuteAudioAllRequest.cc
-	src/model/MuteAudioAllResult.cc
 	src/model/UnmuteAudioRequest.cc
 	src/model/UnmuteAudioResult.cc
 	src/model/MuteAudioRequest.cc
@@ -88,18 +136,8 @@ set(rtc_src
 	src/model/StartAppResult.cc
 	src/model/CreateConferenceRequest.cc
 	src/model/CreateConferenceResult.cc
-	src/model/DeleteChannelRequest.cc
-	src/model/DeleteChannelResult.cc
-	src/model/ModifyAppRequest.cc
-	src/model/ModifyAppResult.cc
 	src/model/DescribeRealTimeRecordDetailRequest.cc
 	src/model/DescribeRealTimeRecordDetailResult.cc
-	src/model/RemoveParticipantsRequest.cc
-	src/model/RemoveParticipantsResult.cc
-	src/model/DescribeStatisRequest.cc
-	src/model/DescribeStatisResult.cc
-	src/model/CreateChannelRequest.cc
-	src/model/CreateChannelResult.cc
 	src/model/DescribeRealTimeRecordListRequest.cc
 	src/model/DescribeRealTimeRecordListResult.cc
 	src/model/StopAppRequest.cc
@@ -108,8 +146,6 @@ set(rtc_src
 	src/model/RemoveTerminalsResult.cc
 	src/model/DeleteConferenceRequest.cc
 	src/model/DeleteConferenceResult.cc
-	src/model/UpdateChannelRequest.cc
-	src/model/UpdateChannelResult.cc
 	src/model/UnmuteAudioAllRequest.cc
 	src/model/UnmuteAudioAllResult.cc
 	src/model/DescribeRecordDetailRequest.cc

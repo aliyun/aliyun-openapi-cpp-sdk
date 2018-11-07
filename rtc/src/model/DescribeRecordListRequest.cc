@@ -212,15 +212,15 @@ void DescribeRecordListRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
-std::string DescribeRecordListRequest::getProduct()const
+std::string DescribeRecordListRequest::getPopProduct()const
 {
-	return product_;
+	return popProduct_;
 }
 
-void DescribeRecordListRequest::setProduct(const std::string& product)
+void DescribeRecordListRequest::setPopProduct(const std::string& popProduct)
 {
-	product_ = product;
-	setParameter("Product", product);
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
 }
 
 std::string DescribeRecordListRequest::getEndTime()const

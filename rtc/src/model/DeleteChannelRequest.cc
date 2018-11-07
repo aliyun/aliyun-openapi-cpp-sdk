@@ -36,6 +36,17 @@ void DeleteChannelRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DeleteChannelRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DeleteChannelRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DeleteChannelRequest::getProduct()const
 {
 	return product_;

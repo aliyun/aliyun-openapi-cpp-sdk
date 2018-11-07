@@ -212,17 +212,6 @@ void CreateConferenceRequest::setPopProduct(const std::string& popProduct)
 	setParameter("PopProduct", popProduct);
 }
 
-std::string CreateConferenceRequest::getProduct()const
-{
-	return product_;
-}
-
-void CreateConferenceRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
-}
-
 std::string CreateConferenceRequest::getCallerBid()const
 {
 	return callerBid_;

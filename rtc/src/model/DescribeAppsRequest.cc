@@ -201,17 +201,6 @@ void DescribeAppsRequest::setPopProduct(const std::string& popProduct)
 	setParameter("PopProduct", popProduct);
 }
 
-std::string DescribeAppsRequest::getProduct()const
-{
-	return product_;
-}
-
-void DescribeAppsRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
-}
-
 std::string DescribeAppsRequest::getCallerBid()const
 {
 	return callerBid_;

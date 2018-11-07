@@ -36,15 +36,15 @@ void StopAppRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
-std::string StopAppRequest::getProduct()const
+std::string StopAppRequest::getPopProduct()const
 {
-	return product_;
+	return popProduct_;
 }
 
-void StopAppRequest::setProduct(const std::string& product)
+void StopAppRequest::setPopProduct(const std::string& popProduct)
 {
-	product_ = product;
-	setParameter("Product", product);
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
 }
 
 long StopAppRequest::getCallerParentId()const

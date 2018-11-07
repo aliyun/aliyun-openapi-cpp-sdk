@@ -36,15 +36,15 @@ void DescribeRealTimeRecordDetailRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
-std::string DescribeRealTimeRecordDetailRequest::getProduct()const
+std::string DescribeRealTimeRecordDetailRequest::getPopProduct()const
 {
-	return product_;
+	return popProduct_;
 }
 
-void DescribeRealTimeRecordDetailRequest::setProduct(const std::string& product)
+void DescribeRealTimeRecordDetailRequest::setPopProduct(const std::string& popProduct)
 {
-	product_ = product;
-	setParameter("Product", product);
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
 }
 
 long DescribeRealTimeRecordDetailRequest::getCallerParentId()const
