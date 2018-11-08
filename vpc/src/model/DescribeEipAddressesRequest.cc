@@ -135,6 +135,17 @@ void DescribeEipAddressesRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeEipAddressesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeEipAddressesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeEipAddressesRequest::getLockReason()const
 {
 	return lockReason_;

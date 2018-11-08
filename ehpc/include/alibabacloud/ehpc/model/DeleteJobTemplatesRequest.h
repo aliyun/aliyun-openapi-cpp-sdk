@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				DeleteJobTemplatesRequest();
 				~DeleteJobTemplatesRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getTemplates()const;
 				void setTemplates(const std::string& templates);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string regionId_;
 				std::string templates_;
 				std::string accessKeyId_;
 

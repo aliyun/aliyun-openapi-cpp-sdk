@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT CreateClusterRequest : public RpcServiceRequest
 			{
+				struct PostInstallScript
+				{
+					std::string args;
+					std::string url;
+				};
 				struct Application
 				{
 					std::string tag;
@@ -59,12 +64,16 @@ namespace AlibabaCloud
 				void setSecurityGroupName(const std::string& securityGroupName);
 				std::string getEcsOrderComputeInstanceType()const;
 				void setEcsOrderComputeInstanceType(const std::string& ecsOrderComputeInstanceType);
+				std::string getJobQueue()const;
+				void setJobQueue(const std::string& jobQueue);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getImageOwnerAlias()const;
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
 				std::string getVolumeType()const;
 				void setVolumeType(const std::string& volumeType);
+				std::string getDeployMode()const;
+				void setDeployMode(const std::string& deployMode);
 				int getEcsOrderManagerCount()const;
 				void setEcsOrderManagerCount(int ecsOrderManagerCount);
 				std::string getPassword()const;
@@ -73,8 +82,14 @@ namespace AlibabaCloud
 				void setEcsOrderLoginCount(int ecsOrderLoginCount);
 				std::string getComputeSpotPriceLimit()const;
 				void setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit);
+				int getAutoRenewPeriod()const;
+				void setAutoRenewPeriod(int autoRenewPeriod);
+				int getPeriod()const;
+				void setPeriod(int period);
 				std::string getVolumeProtocol()const;
 				void setVolumeProtocol(const std::string& volumeProtocol);
+				std::string getClientVersion()const;
+				void setClientVersion(const std::string& clientVersion);
 				std::string getOsTag()const;
 				void setOsTag(const std::string& osTag);
 				std::string getRemoteDirectory()const;
@@ -83,12 +98,22 @@ namespace AlibabaCloud
 				void setEcsOrderComputeCount(int ecsOrderComputeCount);
 				std::string getComputeSpotStrategy()const;
 				void setComputeSpotStrategy(const std::string& computeSpotStrategy);
+				std::vector<PostInstallScript> getPostInstallScript()const;
+				void setPostInstallScript(const std::vector<PostInstallScript>& postInstallScript);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
+				std::string getPeriodUnit()const;
+				void setPeriodUnit(const std::string& periodUnit);
 				std::vector<Application> getApplication()const;
 				void setApplication(const std::vector<Application>& application);
+				std::string getAutoRenew()const;
+				void setAutoRenew(const std::string& autoRenew);
 				std::string getEcsChargeType()const;
 				void setEcsChargeType(const std::string& ecsChargeType);
+				std::string getInputFileUrl()const;
+				void setInputFileUrl(const std::string& inputFileUrl);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 				bool getHaEnable()const;
 				void setHaEnable(bool haEnable);
 				std::string getName()const;
@@ -115,21 +140,31 @@ namespace AlibabaCloud
 				std::string keyPairName_;
 				std::string securityGroupName_;
 				std::string ecsOrderComputeInstanceType_;
+				std::string jobQueue_;
 				std::string accessKeyId_;
 				std::string imageOwnerAlias_;
 				std::string volumeType_;
+				std::string deployMode_;
 				int ecsOrderManagerCount_;
 				std::string password_;
 				int ecsOrderLoginCount_;
 				std::string computeSpotPriceLimit_;
+				int autoRenewPeriod_;
+				int period_;
 				std::string volumeProtocol_;
+				std::string clientVersion_;
 				std::string osTag_;
 				std::string remoteDirectory_;
 				int ecsOrderComputeCount_;
 				std::string computeSpotStrategy_;
+				std::vector<PostInstallScript> postInstallScript_;
 				std::string vSwitchId_;
+				std::string periodUnit_;
 				std::vector<Application> application_;
+				std::string autoRenew_;
 				std::string ecsChargeType_;
+				std::string inputFileUrl_;
+				std::string vpcId_;
 				bool haEnable_;
 				std::string name_;
 				std::string schedulerType_;

@@ -35,18 +35,8 @@ namespace AlibabaCloud
 				ModifyInstanceAttributeRequest();
 				~ModifyInstanceAttributeRequest();
 
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getPassword()const;
-				void setPassword(const std::string& password);
-				std::string getHostName()const;
-				void setHostName(const std::string& hostName);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getInstanceName()const;
-				void setInstanceName(const std::string& instanceName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				bool getRecyclable()const;
@@ -55,21 +45,34 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getCreditSpecification()const;
+				void setCreditSpecification(const std::string& creditSpecification);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
+				std::string getPassword()const;
+				void setPassword(const std::string& password);
+				std::string getHostName()const;
+				void setHostName(const std::string& hostName);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getInstanceName()const;
+				void setInstanceName(const std::string& instanceName);
 
             private:
-				std::string userData_;
 				long resourceOwnerId_;
-				std::string password_;
-				std::string hostName_;
-				std::string instanceId_;
-				std::string instanceName_;
 				std::string resourceOwnerAccount_;
 				bool recyclable_;
 				std::string ownerAccount_;
 				std::string description_;
+				std::string creditSpecification_;
 				long ownerId_;
+				std::string userData_;
+				std::string password_;
+				std::string hostName_;
+				std::string instanceId_;
+				std::string instanceName_;
 
 			};
 		}

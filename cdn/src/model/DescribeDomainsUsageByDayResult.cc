@@ -66,28 +66,23 @@ void DescribeDomainsUsageByDayResult::parse(const std::string &payload)
 			usageByDaysObject.totalTraffic = value["TotalTraffic"].asString();
 		usageByDays_.push_back(usageByDaysObject);
 	}
-	auto allUsageTotal = value["UsageTotal"];
-	for (auto value : allUsageTotal)
-	{
-		UsageTotal usageTotalObject;
-		if(!value["BytesHitRate"].isNull())
-			usageTotalObject.bytesHitRate = value["BytesHitRate"].asString();
-		if(!value["RequestHitRate"].isNull())
-			usageTotalObject.requestHitRate = value["RequestHitRate"].asString();
-		if(!value["MaxBps"].isNull())
-			usageTotalObject.maxBps = value["MaxBps"].asString();
-		if(!value["MaxBpsTime"].isNull())
-			usageTotalObject.maxBpsTime = value["MaxBpsTime"].asString();
-		if(!value["MaxSrcBps"].isNull())
-			usageTotalObject.maxSrcBps = value["MaxSrcBps"].asString();
-		if(!value["MaxSrcBpsTime"].isNull())
-			usageTotalObject.maxSrcBpsTime = value["MaxSrcBpsTime"].asString();
-		if(!value["TotalAccess"].isNull())
-			usageTotalObject.totalAccess = value["TotalAccess"].asString();
-		if(!value["TotalTraffic"].isNull())
-			usageTotalObject.totalTraffic = value["TotalTraffic"].asString();
-		usageTotal_.push_back(usageTotalObject);
-	}
+	auto usageTotalNode = value["UsageTotal"];
+	if(!usageTotalNode["BytesHitRate"].isNull())
+		usageTotal_.bytesHitRate = usageTotalNode["BytesHitRate"].asString();
+	if(!usageTotalNode["RequestHitRate"].isNull())
+		usageTotal_.requestHitRate = usageTotalNode["RequestHitRate"].asString();
+	if(!usageTotalNode["MaxBps"].isNull())
+		usageTotal_.maxBps = usageTotalNode["MaxBps"].asString();
+	if(!usageTotalNode["MaxBpsTime"].isNull())
+		usageTotal_.maxBpsTime = usageTotalNode["MaxBpsTime"].asString();
+	if(!usageTotalNode["MaxSrcBps"].isNull())
+		usageTotal_.maxSrcBps = usageTotalNode["MaxSrcBps"].asString();
+	if(!usageTotalNode["MaxSrcBpsTime"].isNull())
+		usageTotal_.maxSrcBpsTime = usageTotalNode["MaxSrcBpsTime"].asString();
+	if(!usageTotalNode["TotalAccess"].isNull())
+		usageTotal_.totalAccess = usageTotalNode["TotalAccess"].asString();
+	if(!usageTotalNode["TotalTraffic"].isNull())
+		usageTotal_.totalTraffic = usageTotalNode["TotalTraffic"].asString();
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
@@ -99,7 +94,7 @@ void DescribeDomainsUsageByDayResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeDomainsUsageByDayResult::UsageTotal> DescribeDomainsUsageByDayResult::getUsageTotal()const
+DescribeDomainsUsageByDayResult::UsageTotal DescribeDomainsUsageByDayResult::getUsageTotal()const
 {
 	return usageTotal_;
 }

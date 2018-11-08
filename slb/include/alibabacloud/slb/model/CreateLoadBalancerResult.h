@@ -43,6 +43,7 @@ namespace AlibabaCloud
 				std::string getVpcId()const;
 				std::string getNetworkType()const;
 				std::string getVSwitchId()const;
+				std::string getAddressIPVersion()const;
 				std::string getLoadBalancerId()const;
 				long getOrderId()const;
 
@@ -55,6 +56,7 @@ namespace AlibabaCloud
 				std::string vpcId_;
 				std::string networkType_;
 				std::string vSwitchId_;
+				std::string addressIPVersion_;
 				std::string loadBalancerId_;
 				long orderId_;
 

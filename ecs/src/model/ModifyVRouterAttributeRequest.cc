@@ -69,6 +69,17 @@ void ModifyVRouterAttributeRequest::setResourceOwnerAccount(const std::string& r
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string ModifyVRouterAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyVRouterAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifyVRouterAttributeRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

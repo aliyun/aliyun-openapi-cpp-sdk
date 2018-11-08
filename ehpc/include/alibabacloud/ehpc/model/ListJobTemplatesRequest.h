@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				ListJobTemplatesRequest();
 				~ListJobTemplatesRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getName()const;
 				void setName(const std::string& name);
 				int getPageSize()const;
@@ -47,7 +45,6 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string regionId_;
 				std::string name_;
 				int pageSize_;
 				int pageNumber_;

@@ -69,6 +69,28 @@ void GetQuotaInstanceRequest::setPageNum(int pageNum)
 	setParameter("PageNum", std::to_string(pageNum));
 }
 
+std::string GetQuotaInstanceRequest::getRegion()const
+{
+	return region_;
+}
+
+void GetQuotaInstanceRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setParameter("Region", region);
+}
+
+std::string GetQuotaInstanceRequest::getQuotaName()const
+{
+	return quotaName_;
+}
+
+void GetQuotaInstanceRequest::setQuotaName(const std::string& quotaName)
+{
+	quotaName_ = quotaName;
+	setParameter("QuotaName", quotaName);
+}
+
 std::string GetQuotaInstanceRequest::getStatus()const
 {
 	return status_;

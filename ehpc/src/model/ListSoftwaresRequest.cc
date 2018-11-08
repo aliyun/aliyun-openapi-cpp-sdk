@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::ListSoftwaresRequest;
 
 ListSoftwaresRequest::ListSoftwaresRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "ListSoftwares")
+	RpcServiceRequest("ehpc", "2018-04-12", "ListSoftwares")
 {}
 
 ListSoftwaresRequest::~ListSoftwaresRequest()

@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::DeleteNodesRequest;
 
 DeleteNodesRequest::DeleteNodesRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "DeleteNodes")
+	RpcServiceRequest("ehpc", "2018-04-12", "DeleteNodes")
 {}
 
 DeleteNodesRequest::~DeleteNodesRequest()

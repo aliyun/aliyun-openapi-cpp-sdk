@@ -45,20 +45,20 @@ namespace AlibabaCloud
 						std::string quota;
 						std::string ratio;
 					};
-					std::vector<OssLogConfig> ossLogConfig;
-					std::vector<GreenManagerConfig> greenManagerConfig;
+					OssLogConfig ossLogConfig;
+					GreenManagerConfig greenManagerConfig;
 				};
 
 
 				DescribeUserConfigsResult();
 				explicit DescribeUserConfigsResult(const std::string &payload);
 				~DescribeUserConfigsResult();
-				std::vector<Configs> getConfigs()const;
+				Configs getConfigs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Configs> configs_;
+				Configs configs_;
 
 			};
 		}

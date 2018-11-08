@@ -35,6 +35,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DescribeCustomerGatewaysResult.h
 	include/alibabacloud/vpc/model/DescribeGlobalAccelerationInstancesRequest.h
 	include/alibabacloud/vpc/model/DescribeGlobalAccelerationInstancesResult.h
+	include/alibabacloud/vpc/model/MoveResourceGroupRequest.h
+	include/alibabacloud/vpc/model/MoveResourceGroupResult.h
 	include/alibabacloud/vpc/model/ModifySslVpnClientCertRequest.h
 	include/alibabacloud/vpc/model/ModifySslVpnClientCertResult.h
 	include/alibabacloud/vpc/model/DeleteVpcRequest.h
@@ -253,6 +255,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/TerminatePhysicalConnectionResult.h
 	include/alibabacloud/vpc/model/DescribeVpnGatewayRequest.h
 	include/alibabacloud/vpc/model/DescribeVpnGatewayResult.h
+	include/alibabacloud/vpc/model/DescribeVpnConnectionLogsRequest.h
+	include/alibabacloud/vpc/model/DescribeVpnConnectionLogsResult.h
 	include/alibabacloud/vpc/model/ModifyBgpGroupAttributeRequest.h
 	include/alibabacloud/vpc/model/ModifyBgpGroupAttributeResult.h
 	include/alibabacloud/vpc/model/ModifyCommonBandwidthPackageAttributeRequest.h
@@ -316,6 +320,8 @@ set(vpc_src
 	src/model/DescribeCustomerGatewaysResult.cc
 	src/model/DescribeGlobalAccelerationInstancesRequest.cc
 	src/model/DescribeGlobalAccelerationInstancesResult.cc
+	src/model/MoveResourceGroupRequest.cc
+	src/model/MoveResourceGroupResult.cc
 	src/model/ModifySslVpnClientCertRequest.cc
 	src/model/ModifySslVpnClientCertResult.cc
 	src/model/DeleteVpcRequest.cc
@@ -534,6 +540,8 @@ set(vpc_src
 	src/model/TerminatePhysicalConnectionResult.cc
 	src/model/DescribeVpnGatewayRequest.cc
 	src/model/DescribeVpnGatewayResult.cc
+	src/model/DescribeVpnConnectionLogsRequest.cc
+	src/model/DescribeVpnConnectionLogsResult.cc
 	src/model/ModifyBgpGroupAttributeRequest.cc
 	src/model/ModifyBgpGroupAttributeResult.cc
 	src/model/ModifyCommonBandwidthPackageAttributeRequest.cc

@@ -113,17 +113,6 @@ void DeleteCommandRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DeleteCommandRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DeleteCommandRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DeleteCommandRequest::getSecurityToken()const
 {
 	return securityToken_;

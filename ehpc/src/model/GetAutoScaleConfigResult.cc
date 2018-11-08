@@ -40,6 +40,20 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	auto allQueues = value["Queues"]["QueueInfo"];
+	for (auto value : allQueues)
+	{
+		QueueInfo queuesObject;
+		if(!value["QueueName"].isNull())
+			queuesObject.queueName = value["QueueName"].asString();
+		if(!value["InstanceType"].isNull())
+			queuesObject.instanceType = value["InstanceType"].asString();
+		if(!value["SpotStrategy"].isNull())
+			queuesObject.spotStrategy = value["SpotStrategy"].asString();
+		if(!value["SpotPriceLimit"].isNull())
+			queuesObject.spotPriceLimit = std::stof(value["SpotPriceLimit"].asString());
+		queues_.push_back(queuesObject);
+	}
 	if(!value["Uid"].isNull())
 		uid_ = value["Uid"].asString();
 	if(!value["ClusterId"].isNull())
@@ -66,6 +80,10 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 		maxNodesInCluster_ = std::stoi(value["MaxNodesInCluster"].asString());
 	if(!value["ExcludeNodes"].isNull())
 		excludeNodes_ = value["ExcludeNodes"].asString();
+	if(!value["SpotStrategy"].isNull())
+		spotStrategy_ = value["SpotStrategy"].asString();
+	if(!value["SpotPriceLimit"].isNull())
+		spotPriceLimit_ = std::stof(value["SpotPriceLimit"].asString());
 
 }
 
@@ -129,8 +147,23 @@ int GetAutoScaleConfigResult::getShrinkIntervalInMinutes()const
 	return shrinkIntervalInMinutes_;
 }
 
+float GetAutoScaleConfigResult::getSpotPriceLimit()const
+{
+	return spotPriceLimit_;
+}
+
+std::vector<GetAutoScaleConfigResult::QueueInfo> GetAutoScaleConfigResult::getQueues()const
+{
+	return queues_;
+}
+
 std::string GetAutoScaleConfigResult::getExcludeNodes()const
 {
 	return excludeNodes_;
+}
+
+std::string GetAutoScaleConfigResult::getSpotStrategy()const
+{
+	return spotStrategy_;
 }
 

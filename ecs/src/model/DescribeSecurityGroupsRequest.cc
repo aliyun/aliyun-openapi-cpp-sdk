@@ -25,17 +25,6 @@ DescribeSecurityGroupsRequest::DescribeSecurityGroupsRequest() :
 DescribeSecurityGroupsRequest::~DescribeSecurityGroupsRequest()
 {}
 
-std::string DescribeSecurityGroupsRequest::getTag4Value()const
-{
-	return tag4Value_;
-}
-
-void DescribeSecurityGroupsRequest::setTag4Value(const std::string& tag4Value)
-{
-	tag4Value_ = tag4Value;
-	setParameter("Tag4Value", tag4Value);
-}
-
 long DescribeSecurityGroupsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,138 +34,6 @@ void DescribeSecurityGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeSecurityGroupsRequest::getTag2Key()const
-{
-	return tag2Key_;
-}
-
-void DescribeSecurityGroupsRequest::setTag2Key(const std::string& tag2Key)
-{
-	tag2Key_ = tag2Key;
-	setParameter("Tag2Key", tag2Key);
-}
-
-bool DescribeSecurityGroupsRequest::getFuzzyQuery()const
-{
-	return fuzzyQuery_;
-}
-
-void DescribeSecurityGroupsRequest::setFuzzyQuery(bool fuzzyQuery)
-{
-	fuzzyQuery_ = fuzzyQuery;
-	setParameter("FuzzyQuery", std::to_string(fuzzyQuery));
-}
-
-std::string DescribeSecurityGroupsRequest::getSecurityGroupId()const
-{
-	return securityGroupId_;
-}
-
-void DescribeSecurityGroupsRequest::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
-}
-
-std::string DescribeSecurityGroupsRequest::getTag3Key()const
-{
-	return tag3Key_;
-}
-
-void DescribeSecurityGroupsRequest::setTag3Key(const std::string& tag3Key)
-{
-	tag3Key_ = tag3Key;
-	setParameter("Tag3Key", tag3Key);
-}
-
-bool DescribeSecurityGroupsRequest::getIsQueryEcsCount()const
-{
-	return isQueryEcsCount_;
-}
-
-void DescribeSecurityGroupsRequest::setIsQueryEcsCount(bool isQueryEcsCount)
-{
-	isQueryEcsCount_ = isQueryEcsCount;
-	setParameter("IsQueryEcsCount", std::to_string(isQueryEcsCount));
-}
-
-std::string DescribeSecurityGroupsRequest::getNetworkType()const
-{
-	return networkType_;
-}
-
-void DescribeSecurityGroupsRequest::setNetworkType(const std::string& networkType)
-{
-	networkType_ = networkType;
-	setParameter("NetworkType", networkType);
-}
-
-std::string DescribeSecurityGroupsRequest::getSecurityGroupName()const
-{
-	return securityGroupName_;
-}
-
-void DescribeSecurityGroupsRequest::setSecurityGroupName(const std::string& securityGroupName)
-{
-	securityGroupName_ = securityGroupName;
-	setParameter("SecurityGroupName", securityGroupName);
-}
-
-int DescribeSecurityGroupsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeSecurityGroupsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeSecurityGroupsRequest::getTag1Value()const
-{
-	return tag1Value_;
-}
-
-void DescribeSecurityGroupsRequest::setTag1Value(const std::string& tag1Value)
-{
-	tag1Value_ = tag1Value;
-	setParameter("Tag1Value", tag1Value);
-}
-
-std::string DescribeSecurityGroupsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeSecurityGroupsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-int DescribeSecurityGroupsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeSecurityGroupsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeSecurityGroupsRequest::getTag3Value()const
-{
-	return tag3Value_;
-}
-
-void DescribeSecurityGroupsRequest::setTag3Value(const std::string& tag3Value)
-{
-	tag3Value_ = tag3Value;
-	setParameter("Tag3Value", tag3Value);
 }
 
 bool DescribeSecurityGroupsRequest::getDryRun()const
@@ -190,15 +47,15 @@ void DescribeSecurityGroupsRequest::setDryRun(bool dryRun)
 	setParameter("DryRun", std::to_string(dryRun));
 }
 
-std::string DescribeSecurityGroupsRequest::getTag5Key()const
+bool DescribeSecurityGroupsRequest::getFuzzyQuery()const
 {
-	return tag5Key_;
+	return fuzzyQuery_;
 }
 
-void DescribeSecurityGroupsRequest::setTag5Key(const std::string& tag5Key)
+void DescribeSecurityGroupsRequest::setFuzzyQuery(bool fuzzyQuery)
 {
-	tag5Key_ = tag5Key;
-	setParameter("Tag5Key", tag5Key);
+	fuzzyQuery_ = fuzzyQuery;
+	setParameter("FuzzyQuery", std::to_string(fuzzyQuery));
 }
 
 std::string DescribeSecurityGroupsRequest::getResourceOwnerAccount()const
@@ -223,6 +80,39 @@ void DescribeSecurityGroupsRequest::setOwnerAccount(const std::string& ownerAcco
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string DescribeSecurityGroupsRequest::getSecurityGroupId()const
+{
+	return securityGroupId_;
+}
+
+void DescribeSecurityGroupsRequest::setSecurityGroupId(const std::string& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	setParameter("SecurityGroupId", securityGroupId);
+}
+
+bool DescribeSecurityGroupsRequest::getIsQueryEcsCount()const
+{
+	return isQueryEcsCount_;
+}
+
+void DescribeSecurityGroupsRequest::setIsQueryEcsCount(bool isQueryEcsCount)
+{
+	isQueryEcsCount_ = isQueryEcsCount;
+	setParameter("IsQueryEcsCount", std::to_string(isQueryEcsCount));
+}
+
+std::string DescribeSecurityGroupsRequest::getNetworkType()const
+{
+	return networkType_;
+}
+
+void DescribeSecurityGroupsRequest::setNetworkType(const std::string& networkType)
+{
+	networkType_ = networkType;
+	setParameter("NetworkType", networkType);
+}
+
 long DescribeSecurityGroupsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -245,26 +135,48 @@ void DescribeSecurityGroupsRequest::setSecurityGroupIds(const std::string& secur
 	setParameter("SecurityGroupIds", securityGroupIds);
 }
 
-std::string DescribeSecurityGroupsRequest::getTag5Value()const
+std::string DescribeSecurityGroupsRequest::getSecurityGroupName()const
 {
-	return tag5Value_;
+	return securityGroupName_;
 }
 
-void DescribeSecurityGroupsRequest::setTag5Value(const std::string& tag5Value)
+void DescribeSecurityGroupsRequest::setSecurityGroupName(const std::string& securityGroupName)
 {
-	tag5Value_ = tag5Value;
-	setParameter("Tag5Value", tag5Value);
+	securityGroupName_ = securityGroupName;
+	setParameter("SecurityGroupName", securityGroupName);
 }
 
-std::string DescribeSecurityGroupsRequest::getTag1Key()const
+int DescribeSecurityGroupsRequest::getPageNumber()const
 {
-	return tag1Key_;
+	return pageNumber_;
 }
 
-void DescribeSecurityGroupsRequest::setTag1Key(const std::string& tag1Key)
+void DescribeSecurityGroupsRequest::setPageNumber(int pageNumber)
 {
-	tag1Key_ = tag1Key;
-	setParameter("Tag1Key", tag1Key);
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeSecurityGroupsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSecurityGroupsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeSecurityGroupsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeSecurityGroupsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeSecurityGroupsRequest::getVpcId()const
@@ -278,25 +190,31 @@ void DescribeSecurityGroupsRequest::setVpcId(const std::string& vpcId)
 	setParameter("VpcId", vpcId);
 }
 
-std::string DescribeSecurityGroupsRequest::getTag2Value()const
+int DescribeSecurityGroupsRequest::getPageSize()const
 {
-	return tag2Value_;
+	return pageSize_;
 }
 
-void DescribeSecurityGroupsRequest::setTag2Value(const std::string& tag2Value)
+void DescribeSecurityGroupsRequest::setPageSize(int pageSize)
 {
-	tag2Value_ = tag2Value;
-	setParameter("Tag2Value", tag2Value);
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeSecurityGroupsRequest::getTag4Key()const
+std::vector<DescribeSecurityGroupsRequest::Tag> DescribeSecurityGroupsRequest::getTag()const
 {
-	return tag4Key_;
+	return tag_;
 }
 
-void DescribeSecurityGroupsRequest::setTag4Key(const std::string& tag4Key)
+void DescribeSecurityGroupsRequest::setTag(const std::vector<Tag>& tag)
 {
-	tag4Key_ = tag4Key;
-	setParameter("Tag4Key", tag4Key);
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 

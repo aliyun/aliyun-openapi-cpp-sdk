@@ -53,7 +53,6 @@ namespace AlibabaCloud
 					std::string engine;
 					std::string dBInstanceDescription;
 					std::string tags;
-					std::string dBInstanceName;
 					std::string engineVersion;
 					std::string dBInstanceStatus;
 					int maxConnections;
@@ -66,7 +65,6 @@ namespace AlibabaCloud
 					std::string guardDBInstanceId;
 					std::string accountType;
 					int maxIOPS;
-					int insId;
 					std::string supportUpgradeAccountType;
 					std::string vpcId;
 					std::string masterInstanceId;

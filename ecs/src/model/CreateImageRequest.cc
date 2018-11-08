@@ -37,22 +37,11 @@ void CreateImageRequest::setDiskDeviceMapping(const std::vector<DiskDeviceMappin
 	for(int i = 0; i!= diskDeviceMapping.size(); i++)	{
 		auto obj = diskDeviceMapping.at(i);
 		std::string str ="DiskDeviceMapping."+ std::to_string(i);
-		setParameter(str + ".Size", std::to_string(obj.size));
 		setParameter(str + ".SnapshotId", obj.snapshotId);
-		setParameter(str + ".Device", obj.device);
+		setParameter(str + ".Size", std::to_string(obj.size));
 		setParameter(str + ".DiskType", obj.diskType);
+		setParameter(str + ".Device", obj.device);
 	}
-}
-
-std::string CreateImageRequest::getTag4Value()const
-{
-	return tag4Value_;
-}
-
-void CreateImageRequest::setTag4Value(const std::string& tag4Value)
-{
-	tag4Value_ = tag4Value;
-	setParameter("Tag4Value", tag4Value);
 }
 
 long CreateImageRequest::getResourceOwnerId()const
@@ -77,15 +66,15 @@ void CreateImageRequest::setSnapshotId(const std::string& snapshotId)
 	setParameter("SnapshotId", snapshotId);
 }
 
-std::string CreateImageRequest::getTag2Key()const
+std::string CreateImageRequest::getResourceOwnerAccount()const
 {
-	return tag2Key_;
+	return resourceOwnerAccount_;
 }
 
-void CreateImageRequest::setTag2Key(const std::string& tag2Key)
+void CreateImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	tag2Key_ = tag2Key;
-	setParameter("Tag2Key", tag2Key);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateImageRequest::getClientToken()const
@@ -99,6 +88,17 @@ void CreateImageRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+std::string CreateImageRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateImageRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
+}
+
 std::string CreateImageRequest::getDescription()const
 {
 	return description_;
@@ -110,15 +110,15 @@ void CreateImageRequest::setDescription(const std::string& description)
 	setParameter("Description", description);
 }
 
-std::string CreateImageRequest::getTag3Key()const
+long CreateImageRequest::getOwnerId()const
 {
-	return tag3Key_;
+	return ownerId_;
 }
 
-void CreateImageRequest::setTag3Key(const std::string& tag3Key)
+void CreateImageRequest::setOwnerId(long ownerId)
 {
-	tag3Key_ = tag3Key;
-	setParameter("Tag3Key", tag3Key);
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateImageRequest::getPlatform()const
@@ -132,15 +132,26 @@ void CreateImageRequest::setPlatform(const std::string& platform)
 	setParameter("Platform", platform);
 }
 
-std::string CreateImageRequest::getTag1Value()const
+std::string CreateImageRequest::getResourceGroupId()const
 {
-	return tag1Value_;
+	return resourceGroupId_;
 }
 
-void CreateImageRequest::setTag1Value(const std::string& tag1Value)
+void CreateImageRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
-	tag1Value_ = tag1Value;
-	setParameter("Tag1Value", tag1Value);
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateImageRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateImageRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateImageRequest::getRegionId()const
@@ -165,116 +176,6 @@ void CreateImageRequest::setImageName(const std::string& imageName)
 	setParameter("ImageName", imageName);
 }
 
-std::string CreateImageRequest::getTag3Value()const
-{
-	return tag3Value_;
-}
-
-void CreateImageRequest::setTag3Value(const std::string& tag3Value)
-{
-	tag3Value_ = tag3Value;
-	setParameter("Tag3Value", tag3Value);
-}
-
-std::string CreateImageRequest::getArchitecture()const
-{
-	return architecture_;
-}
-
-void CreateImageRequest::setArchitecture(const std::string& architecture)
-{
-	architecture_ = architecture;
-	setParameter("Architecture", architecture);
-}
-
-std::string CreateImageRequest::getTag5Key()const
-{
-	return tag5Key_;
-}
-
-void CreateImageRequest::setTag5Key(const std::string& tag5Key)
-{
-	tag5Key_ = tag5Key;
-	setParameter("Tag5Key", tag5Key);
-}
-
-std::string CreateImageRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateImageRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateImageRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
-}
-
-long CreateImageRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateImageRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateImageRequest::getTag5Value()const
-{
-	return tag5Value_;
-}
-
-void CreateImageRequest::setTag5Value(const std::string& tag5Value)
-{
-	tag5Value_ = tag5Value;
-	setParameter("Tag5Value", tag5Value);
-}
-
-std::string CreateImageRequest::getTag1Key()const
-{
-	return tag1Key_;
-}
-
-void CreateImageRequest::setTag1Key(const std::string& tag1Key)
-{
-	tag1Key_ = tag1Key;
-	setParameter("Tag1Key", tag1Key);
-}
-
-std::string CreateImageRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateImageRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
-}
-
-std::string CreateImageRequest::getTag2Value()const
-{
-	return tag2Value_;
-}
-
-void CreateImageRequest::setTag2Value(const std::string& tag2Value)
-{
-	tag2Value_ = tag2Value;
-	setParameter("Tag2Value", tag2Value);
-}
-
 std::string CreateImageRequest::getImageVersion()const
 {
 	return imageVersion_;
@@ -286,14 +187,31 @@ void CreateImageRequest::setImageVersion(const std::string& imageVersion)
 	setParameter("ImageVersion", imageVersion);
 }
 
-std::string CreateImageRequest::getTag4Key()const
+std::vector<CreateImageRequest::Tag> CreateImageRequest::getTag()const
 {
-	return tag4Key_;
+	return tag_;
 }
 
-void CreateImageRequest::setTag4Key(const std::string& tag4Key)
+void CreateImageRequest::setTag(const std::vector<Tag>& tag)
 {
-	tag4Key_ = tag4Key;
-	setParameter("Tag4Key", tag4Key);
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
+}
+
+std::string CreateImageRequest::getArchitecture()const
+{
+	return architecture_;
+}
+
+void CreateImageRequest::setArchitecture(const std::string& architecture)
+{
+	architecture_ = architecture;
+	setParameter("Architecture", architecture);
 }
 

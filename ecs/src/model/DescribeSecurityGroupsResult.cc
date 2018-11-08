@@ -58,6 +58,8 @@ void DescribeSecurityGroupsResult::parse(const std::string &payload)
 			securityGroupsObject.availableInstanceAmount = std::stoi(value["AvailableInstanceAmount"].asString());
 		if(!value["EcsCount"].isNull())
 			securityGroupsObject.ecsCount = std::stoi(value["EcsCount"].asString());
+		if(!value["ResourceGroupId"].isNull())
+			securityGroupsObject.resourceGroupId = value["ResourceGroupId"].asString();
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{

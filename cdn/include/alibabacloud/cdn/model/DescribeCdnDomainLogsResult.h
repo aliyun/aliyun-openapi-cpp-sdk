@@ -52,7 +52,7 @@ namespace AlibabaCloud
 				~DescribeCdnDomainLogsResult();
 				long getTotalCount()const;
 				long getPageSize()const;
-				std::vector<DomainLogModel> getDomainLogModel()const;
+				DomainLogModel getDomainLogModel()const;
 				long getPageNumber()const;
 
 			protected:
@@ -60,7 +60,7 @@ namespace AlibabaCloud
 			private:
 				long totalCount_;
 				long pageSize_;
-				std::vector<DomainLogModel> domainLogModel_;
+				DomainLogModel domainLogModel_;
 				long pageNumber_;
 
 			};

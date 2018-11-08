@@ -40,46 +40,36 @@ void AddPhoneNumberResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allPhoneNumber = value["PhoneNumber"];
-	for (auto value : allPhoneNumber)
-	{
-		PhoneNumber phoneNumberObject;
-		if(!value["PhoneNumberId"].isNull())
-			phoneNumberObject.phoneNumberId = value["PhoneNumberId"].asString();
-		if(!value["InstanceId"].isNull())
-			phoneNumberObject.instanceId = value["InstanceId"].asString();
-		if(!value["Number"].isNull())
-			phoneNumberObject.number = value["Number"].asString();
-		if(!value["PhoneNumberDescription"].isNull())
-			phoneNumberObject.phoneNumberDescription = value["PhoneNumberDescription"].asString();
-		if(!value["TestOnly"].isNull())
-			phoneNumberObject.testOnly = value["TestOnly"].asString() == "true";
-		if(!value["RemainingTime"].isNull())
-			phoneNumberObject.remainingTime = std::stoi(value["RemainingTime"].asString());
-		if(!value["AllowOutbound"].isNull())
-			phoneNumberObject.allowOutbound = value["AllowOutbound"].asString() == "true";
-		if(!value["Usage"].isNull())
-			phoneNumberObject.usage = value["Usage"].asString();
-		if(!value["Trunks"].isNull())
-			phoneNumberObject.trunks = std::stoi(value["Trunks"].asString());
-		auto allContactFlow = value["ContactFlow"];
-		for (auto value : allContactFlow)
-		{
-			PhoneNumber::ContactFlow contactFlowObject;
-			if(!value["ContactFlowId"].isNull())
-				contactFlowObject.contactFlowId = value["ContactFlowId"].asString();
-			if(!value["InstanceId"].isNull())
-				contactFlowObject.instanceId = value["InstanceId"].asString();
-			if(!value["ContactFlowName"].isNull())
-				contactFlowObject.contactFlowName = value["ContactFlowName"].asString();
-			if(!value["ContactFlowDescription"].isNull())
-				contactFlowObject.contactFlowDescription = value["ContactFlowDescription"].asString();
-			if(!value["Type"].isNull())
-				contactFlowObject.type = value["Type"].asString();
-			phoneNumberObject.contactFlow.push_back(contactFlowObject);
-		}
-		phoneNumber_.push_back(phoneNumberObject);
-	}
+	auto phoneNumberNode = value["PhoneNumber"];
+	if(!phoneNumberNode["PhoneNumberId"].isNull())
+		phoneNumber_.phoneNumberId = phoneNumberNode["PhoneNumberId"].asString();
+	if(!phoneNumberNode["InstanceId"].isNull())
+		phoneNumber_.instanceId = phoneNumberNode["InstanceId"].asString();
+	if(!phoneNumberNode["Number"].isNull())
+		phoneNumber_.number = phoneNumberNode["Number"].asString();
+	if(!phoneNumberNode["PhoneNumberDescription"].isNull())
+		phoneNumber_.phoneNumberDescription = phoneNumberNode["PhoneNumberDescription"].asString();
+	if(!phoneNumberNode["TestOnly"].isNull())
+		phoneNumber_.testOnly = phoneNumberNode["TestOnly"].asString() == "true";
+	if(!phoneNumberNode["RemainingTime"].isNull())
+		phoneNumber_.remainingTime = std::stoi(phoneNumberNode["RemainingTime"].asString());
+	if(!phoneNumberNode["AllowOutbound"].isNull())
+		phoneNumber_.allowOutbound = phoneNumberNode["AllowOutbound"].asString() == "true";
+	if(!phoneNumberNode["Usage"].isNull())
+		phoneNumber_.usage = phoneNumberNode["Usage"].asString();
+	if(!phoneNumberNode["Trunks"].isNull())
+		phoneNumber_.trunks = std::stoi(phoneNumberNode["Trunks"].asString());
+	auto contactFlowNode = phoneNumberNode["ContactFlow"];
+	if(!contactFlowNode["ContactFlowId"].isNull())
+		phoneNumber_.contactFlow.contactFlowId = contactFlowNode["ContactFlowId"].asString();
+	if(!contactFlowNode["InstanceId"].isNull())
+		phoneNumber_.contactFlow.instanceId = contactFlowNode["InstanceId"].asString();
+	if(!contactFlowNode["ContactFlowName"].isNull())
+		phoneNumber_.contactFlow.contactFlowName = contactFlowNode["ContactFlowName"].asString();
+	if(!contactFlowNode["ContactFlowDescription"].isNull())
+		phoneNumber_.contactFlow.contactFlowDescription = contactFlowNode["ContactFlowDescription"].asString();
+	if(!contactFlowNode["Type"].isNull())
+		phoneNumber_.contactFlow.type = contactFlowNode["Type"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -101,7 +91,7 @@ int AddPhoneNumberResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
-std::vector<AddPhoneNumberResult::PhoneNumber> AddPhoneNumberResult::getPhoneNumber()const
+AddPhoneNumberResult::PhoneNumber AddPhoneNumberResult::getPhoneNumber()const
 {
 	return phoneNumber_;
 }

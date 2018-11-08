@@ -125,17 +125,6 @@ void ModifyNetworkInterfaceAttributeRequest::setAccessKeyId(const std::string& a
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string ModifyNetworkInterfaceAttributeRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void ModifyNetworkInterfaceAttributeRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string ModifyNetworkInterfaceAttributeRequest::getSecurityToken()const
 {
 	return securityToken_;

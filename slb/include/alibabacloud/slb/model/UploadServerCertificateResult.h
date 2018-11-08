@@ -37,32 +37,40 @@ namespace AlibabaCloud
 				UploadServerCertificateResult();
 				explicit UploadServerCertificateResult(const std::string &payload);
 				~UploadServerCertificateResult();
-				std::string getRegionIdAlias()const;
 				std::string getFingerprint()const;
-				std::string getAliCloudCertificateName()const;
 				std::string getResourceGroupId()const;
-				int getIsAliCloudCertificate()const;
+				long getExpireTimeStamp()const;
 				std::string getCreateTime()const;
+				std::vector<std::string> getSubjectAlternativeNames()const;
+				std::string getAliCloudCertificateId()const;
+				std::string getRegionIdAlias()const;
+				std::string getAliCloudCertificateName()const;
+				int getIsAliCloudCertificate()const;
 				std::string getServerCertificateId()const;
 				std::string getServerCertificateName()const;
 				std::string getRegionId()const;
+				std::string getExpireTime()const;
 				long getCreateTimeStamp()const;
-				std::string getAliCloudCertificateId()const;
+				std::string getCommonName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string regionIdAlias_;
 				std::string fingerprint_;
-				std::string aliCloudCertificateName_;
 				std::string resourceGroupId_;
-				int isAliCloudCertificate_;
+				long expireTimeStamp_;
 				std::string createTime_;
+				std::vector<std::string> subjectAlternativeNames_;
+				std::string aliCloudCertificateId_;
+				std::string regionIdAlias_;
+				std::string aliCloudCertificateName_;
+				int isAliCloudCertificate_;
 				std::string serverCertificateId_;
 				std::string serverCertificateName_;
 				std::string regionId_;
+				std::string expireTime_;
 				long createTimeStamp_;
-				std::string aliCloudCertificateId_;
+				std::string commonName_;
 
 			};
 		}

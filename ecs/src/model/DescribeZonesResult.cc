@@ -86,6 +86,12 @@ void DescribeZonesResult::parse(const std::string &payload)
 		auto allAvailableVolumeCategories = value["AvailableVolumeCategories"]["VolumeCategories"];
 		for (auto value : allAvailableVolumeCategories)
 			zonesObject.availableVolumeCategories.push_back(value.asString());
+		auto allAvailableDedicatedHostTypes = value["AvailableDedicatedHostTypes"]["DedicatedHostType"];
+		for (auto value : allAvailableDedicatedHostTypes)
+			zonesObject.availableDedicatedHostTypes.push_back(value.asString());
+		auto allDedicatedHostGenerations = value["DedicatedHostGenerations"]["DedicatedHostGeneration"];
+		for (auto value : allDedicatedHostGenerations)
+			zonesObject.dedicatedHostGenerations.push_back(value.asString());
 		zones_.push_back(zonesObject);
 	}
 

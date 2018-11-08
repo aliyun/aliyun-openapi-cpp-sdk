@@ -44,12 +44,8 @@ void DescribeDBInstancesAsCsvResult::parse(const std::string &payload)
 	for (auto value : allItems)
 	{
 		DBInstanceAttribute itemsObject;
-		if(!value["InsId"].isNull())
-			itemsObject.insId = std::stoi(value["InsId"].asString());
 		if(!value["DBInstanceId"].isNull())
 			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["DBInstanceName"].isNull())
-			itemsObject.dBInstanceName = value["DBInstanceName"].asString();
 		if(!value["PayType"].isNull())
 			itemsObject.payType = value["PayType"].asString();
 		if(!value["DBInstanceClassType"].isNull())

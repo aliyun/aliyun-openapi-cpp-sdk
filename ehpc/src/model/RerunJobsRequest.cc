@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::RerunJobsRequest;
 
 RerunJobsRequest::RerunJobsRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "RerunJobs")
+	RpcServiceRequest("ehpc", "2018-04-12", "RerunJobs")
 {}
 
 RerunJobsRequest::~RerunJobsRequest()

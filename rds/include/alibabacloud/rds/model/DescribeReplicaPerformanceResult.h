@@ -45,7 +45,7 @@ namespace AlibabaCloud
 							};
 							std::vector<PerformanceValueItem> performanceValue;
 						};
-						std::vector<PerformanceValues> performanceValues;
+						PerformanceValues performanceValues;
 						std::string valueFormat;
 						std::string unit;
 						std::string key;
@@ -57,7 +57,7 @@ namespace AlibabaCloud
 				DescribeReplicaPerformanceResult();
 				explicit DescribeReplicaPerformanceResult(const std::string &payload);
 				~DescribeReplicaPerformanceResult();
-				std::vector<PerformanceKeys> getPerformanceKeys()const;
+				PerformanceKeys getPerformanceKeys()const;
 				std::string getEndTime()const;
 				std::string getStartTime()const;
 				std::string getReplicaId()const;
@@ -65,7 +65,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<PerformanceKeys> performanceKeys_;
+				PerformanceKeys performanceKeys_;
 				std::string endTime_;
 				std::string startTime_;
 				std::string replicaId_;

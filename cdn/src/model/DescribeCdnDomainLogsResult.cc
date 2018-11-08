@@ -40,29 +40,24 @@ void DescribeCdnDomainLogsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allDomainLogModel = value["DomainLogModel"];
-	for (auto value : allDomainLogModel)
+	auto domainLogModelNode = value["DomainLogModel"];
+	if(!domainLogModelNode["DomainName"].isNull())
+		domainLogModel_.domainName = domainLogModelNode["DomainName"].asString();
+	auto allDomainLogDetails = value["DomainLogDetails"]["DomainLogDetail"];
+	for (auto value : allDomainLogDetails)
 	{
-		DomainLogModel domainLogModelObject;
-		if(!value["DomainName"].isNull())
-			domainLogModelObject.domainName = value["DomainName"].asString();
-		auto allDomainLogDetails = value["DomainLogDetails"]["DomainLogDetail"];
-		for (auto value : allDomainLogDetails)
-		{
-			DomainLogModel::DomainLogDetail domainLogDetailObject;
-			if(!value["LogName"].isNull())
-				domainLogDetailObject.logName = value["LogName"].asString();
-			if(!value["LogPath"].isNull())
-				domainLogDetailObject.logPath = value["LogPath"].asString();
-			if(!value["LogSize"].isNull())
-				domainLogDetailObject.logSize = std::stol(value["LogSize"].asString());
-			if(!value["StartTime"].isNull())
-				domainLogDetailObject.startTime = value["StartTime"].asString();
-			if(!value["EndTime"].isNull())
-				domainLogDetailObject.endTime = value["EndTime"].asString();
-			domainLogModelObject.domainLogDetails.push_back(domainLogDetailObject);
-		}
-		domainLogModel_.push_back(domainLogModelObject);
+		DomainLogModel::DomainLogDetail domainLogDetailObject;
+		if(!value["LogName"].isNull())
+			domainLogDetailObject.logName = value["LogName"].asString();
+		if(!value["LogPath"].isNull())
+			domainLogDetailObject.logPath = value["LogPath"].asString();
+		if(!value["LogSize"].isNull())
+			domainLogDetailObject.logSize = std::stol(value["LogSize"].asString());
+		if(!value["StartTime"].isNull())
+			domainLogDetailObject.startTime = value["StartTime"].asString();
+		if(!value["EndTime"].isNull())
+			domainLogDetailObject.endTime = value["EndTime"].asString();
+		domainLogModel_.domainLogDetails.push_back(domainLogDetailObject);
 	}
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stol(value["PageNumber"].asString());
@@ -83,7 +78,7 @@ long DescribeCdnDomainLogsResult::getPageSize()const
 	return pageSize_;
 }
 
-std::vector<DescribeCdnDomainLogsResult::DomainLogModel> DescribeCdnDomainLogsResult::getDomainLogModel()const
+DescribeCdnDomainLogsResult::DomainLogModel DescribeCdnDomainLogsResult::getDomainLogModel()const
 {
 	return domainLogModel_;
 }

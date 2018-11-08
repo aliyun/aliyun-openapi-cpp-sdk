@@ -62,7 +62,7 @@ namespace AlibabaCloud
 				~ListRecordingsResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<Recordings> getRecordings()const;
+				Recordings getRecordings()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -71,7 +71,7 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				std::vector<Recordings> recordings_;
+				Recordings recordings_;
 				std::string code_;
 				bool success_;
 

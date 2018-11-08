@@ -157,17 +157,6 @@ void AuthorizeSecurityGroupRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string AuthorizeSecurityGroupRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void AuthorizeSecurityGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 long AuthorizeSecurityGroupRequest::getSourceGroupOwnerId()const
 {
 	return sourceGroupOwnerId_;

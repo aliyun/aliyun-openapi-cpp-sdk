@@ -72,15 +72,15 @@ namespace AlibabaCloud
 							float avg;
 							float max;
 						};
-						std::vector<CpuMinQuota> cpuMinQuota;
-						std::vector<MemUsed> memUsed;
-						std::vector<MemMaxQuota> memMaxQuota;
-						std::vector<CpuMaxQuota> cpuMaxQuota;
-						std::vector<MemMinQuota> memMinQuota;
-						std::vector<CpuUsed> cpuUsed;
+						CpuMinQuota cpuMinQuota;
+						MemUsed memUsed;
+						MemMaxQuota memMaxQuota;
+						CpuMaxQuota cpuMaxQuota;
+						MemMinQuota memMinQuota;
+						CpuUsed cpuUsed;
 					};
 					int times;
-					std::vector<Point> point;
+					Point point;
 				};
 
 

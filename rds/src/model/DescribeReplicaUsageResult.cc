@@ -40,39 +40,29 @@ void DescribeReplicaUsageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allPerformanceKeys = value["PerformanceKeys"];
-	for (auto value : allPerformanceKeys)
+	auto performanceKeysNode = value["PerformanceKeys"];
+	auto allPerformanceKey = value["PerformanceKey"]["PerformanceKeyItem"];
+	for (auto value : allPerformanceKey)
 	{
-		PerformanceKeys performanceKeysObject;
-		auto allPerformanceKey = value["PerformanceKey"]["PerformanceKeyItem"];
-		for (auto value : allPerformanceKey)
+		PerformanceKeys::PerformanceKeyItem performanceKeyItemObject;
+		if(!value["Key"].isNull())
+			performanceKeyItemObject.key = value["Key"].asString();
+		if(!value["Unit"].isNull())
+			performanceKeyItemObject.unit = value["Unit"].asString();
+		if(!value["ValueFormat"].isNull())
+			performanceKeyItemObject.valueFormat = value["ValueFormat"].asString();
+		auto performanceValuesNode = value["PerformanceValues"];
+		auto allPerformanceValue = value["PerformanceValue"]["PerformanceValueItem"];
+		for (auto value : allPerformanceValue)
 		{
-			PerformanceKeys::PerformanceKeyItem performanceKeyItemObject;
-			if(!value["Key"].isNull())
-				performanceKeyItemObject.key = value["Key"].asString();
-			if(!value["Unit"].isNull())
-				performanceKeyItemObject.unit = value["Unit"].asString();
-			if(!value["ValueFormat"].isNull())
-				performanceKeyItemObject.valueFormat = value["ValueFormat"].asString();
-			auto allPerformanceValues = value["PerformanceValues"];
-			for (auto value : allPerformanceValues)
-			{
-				PerformanceKeys::PerformanceKeyItem::PerformanceValues performanceValuesObject;
-				auto allPerformanceValue = value["PerformanceValue"]["PerformanceValueItem"];
-				for (auto value : allPerformanceValue)
-				{
-					PerformanceKeys::PerformanceKeyItem::PerformanceValues::PerformanceValueItem performanceValueItemObject;
-					if(!value["Value"].isNull())
-						performanceValueItemObject.value = value["Value"].asString();
-					if(!value["Date"].isNull())
-						performanceValueItemObject.date = value["Date"].asString();
-					performanceValuesObject.performanceValue.push_back(performanceValueItemObject);
-				}
-				performanceKeyItemObject.performanceValues.push_back(performanceValuesObject);
-			}
-			performanceKeysObject.performanceKey.push_back(performanceKeyItemObject);
+			PerformanceKeys::PerformanceKeyItem::PerformanceValues::PerformanceValueItem performanceValueItemObject;
+			if(!value["Value"].isNull())
+				performanceValueItemObject.value = value["Value"].asString();
+			if(!value["Date"].isNull())
+				performanceValueItemObject.date = value["Date"].asString();
+			performanceKeyItemObject.performanceValues.performanceValue.push_back(performanceValueItemObject);
 		}
-		performanceKeys_.push_back(performanceKeysObject);
+		performanceKeys_.performanceKey.push_back(performanceKeyItemObject);
 	}
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
@@ -83,7 +73,7 @@ void DescribeReplicaUsageResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeReplicaUsageResult::PerformanceKeys> DescribeReplicaUsageResult::getPerformanceKeys()const
+DescribeReplicaUsageResult::PerformanceKeys DescribeReplicaUsageResult::getPerformanceKeys()const
 {
 	return performanceKeys_;
 }

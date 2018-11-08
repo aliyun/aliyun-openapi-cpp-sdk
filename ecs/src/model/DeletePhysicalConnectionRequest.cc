@@ -91,17 +91,6 @@ void DeletePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAc
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DeletePhysicalConnectionRequest::getUserCidr()const
-{
-	return userCidr_;
-}
-
-void DeletePhysicalConnectionRequest::setUserCidr(const std::string& userCidr)
-{
-	userCidr_ = userCidr;
-	setParameter("UserCidr", userCidr);
-}
-
 long DeletePhysicalConnectionRequest::getOwnerId()const
 {
 	return ownerId_;

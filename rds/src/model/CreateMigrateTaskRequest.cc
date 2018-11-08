@@ -36,15 +36,15 @@ void CreateMigrateTaskRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateMigrateTaskRequest::getDBName()const
+std::string CreateMigrateTaskRequest::getMigrateTaskId()const
 {
-	return dBName_;
+	return migrateTaskId_;
 }
 
-void CreateMigrateTaskRequest::setDBName(const std::string& dBName)
+void CreateMigrateTaskRequest::setMigrateTaskId(const std::string& migrateTaskId)
 {
-	dBName_ = dBName;
-	setParameter("DBName", dBName);
+	migrateTaskId_ = migrateTaskId;
+	setParameter("MigrateTaskId", migrateTaskId);
 }
 
 std::string CreateMigrateTaskRequest::getResourceOwnerAccount()const
@@ -69,28 +69,6 @@ void CreateMigrateTaskRequest::setIsOnlineDB(const std::string& isOnlineDB)
 	setParameter("IsOnlineDB", isOnlineDB);
 }
 
-std::string CreateMigrateTaskRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void CreateMigrateTaskRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
-}
-
-std::string CreateMigrateTaskRequest::getBackupMode()const
-{
-	return backupMode_;
-}
-
-void CreateMigrateTaskRequest::setBackupMode(const std::string& backupMode)
-{
-	backupMode_ = backupMode;
-	setParameter("BackupMode", backupMode);
-}
-
 long CreateMigrateTaskRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,6 +78,17 @@ void CreateMigrateTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateMigrateTaskRequest::getOssObjectPositions()const
+{
+	return ossObjectPositions_;
+}
+
+void CreateMigrateTaskRequest::setOssObjectPositions(const std::string& ossObjectPositions)
+{
+	ossObjectPositions_ = ossObjectPositions;
+	setParameter("OssObjectPositions", ossObjectPositions);
 }
 
 std::string CreateMigrateTaskRequest::getAccessKeyId()const
@@ -122,5 +111,49 @@ void CreateMigrateTaskRequest::setOSSUrls(const std::string& oSSUrls)
 {
 	oSSUrls_ = oSSUrls;
 	setParameter("OSSUrls", oSSUrls);
+}
+
+std::string CreateMigrateTaskRequest::getDBName()const
+{
+	return dBName_;
+}
+
+void CreateMigrateTaskRequest::setDBName(const std::string& dBName)
+{
+	dBName_ = dBName;
+	setParameter("DBName", dBName);
+}
+
+std::string CreateMigrateTaskRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void CreateMigrateTaskRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string CreateMigrateTaskRequest::getBackupMode()const
+{
+	return backupMode_;
+}
+
+void CreateMigrateTaskRequest::setBackupMode(const std::string& backupMode)
+{
+	backupMode_ = backupMode;
+	setParameter("BackupMode", backupMode);
+}
+
+std::string CreateMigrateTaskRequest::getCheckDBMode()const
+{
+	return checkDBMode_;
+}
+
+void CreateMigrateTaskRequest::setCheckDBMode(const std::string& checkDBMode)
+{
+	checkDBMode_ = checkDBMode;
+	setParameter("CheckDBMode", checkDBMode);
 }
 

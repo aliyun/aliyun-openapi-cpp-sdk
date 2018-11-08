@@ -102,17 +102,6 @@ void DescribeBandwidthLimitationRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeBandwidthLimitationRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeBandwidthLimitationRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeBandwidthLimitationRequest::getSecurityToken()const
 {
 	return securityToken_;

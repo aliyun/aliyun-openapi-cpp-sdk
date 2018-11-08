@@ -25,6 +25,17 @@ RunInstancesRequest::RunInstancesRequest() :
 RunInstancesRequest::~RunInstancesRequest()
 {}
 
+std::string RunInstancesRequest::getLaunchTemplateName()const
+{
+	return launchTemplateName_;
+}
+
+void RunInstancesRequest::setLaunchTemplateName(const std::string& launchTemplateName)
+{
+	launchTemplateName_ = launchTemplateName;
+	setParameter("LaunchTemplateName", launchTemplateName);
+}
+
 long RunInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -34,6 +45,28 @@ void RunInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+bool RunInstancesRequest::getUniqueSuffix()const
+{
+	return uniqueSuffix_;
+}
+
+void RunInstancesRequest::setUniqueSuffix(bool uniqueSuffix)
+{
+	uniqueSuffix_ = uniqueSuffix;
+	setParameter("UniqueSuffix", std::to_string(uniqueSuffix));
+}
+
+std::string RunInstancesRequest::getHpcClusterId()const
+{
+	return hpcClusterId_;
+}
+
+void RunInstancesRequest::setHpcClusterId(const std::string& hpcClusterId)
+{
+	hpcClusterId_ = hpcClusterId;
+	setParameter("HpcClusterId", hpcClusterId);
 }
 
 long RunInstancesRequest::getCallerParentId()const
@@ -207,6 +240,28 @@ void RunInstancesRequest::setCallerUid(long callerUid)
 	setParameter("CallerUid", std::to_string(callerUid));
 }
 
+int RunInstancesRequest::getAutoRenewPeriod()const
+{
+	return autoRenewPeriod_;
+}
+
+void RunInstancesRequest::setAutoRenewPeriod(int autoRenewPeriod)
+{
+	autoRenewPeriod_ = autoRenewPeriod;
+	setParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+}
+
+int RunInstancesRequest::getPeriod()const
+{
+	return period_;
+}
+
+void RunInstancesRequest::setPeriod(int period)
+{
+	period_ = period;
+	setParameter("Period", std::to_string(period));
+}
+
 bool RunInstancesRequest::getDryRun()const
 {
 	return dryRun_;
@@ -216,6 +271,17 @@ void RunInstancesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
 	setParameter("DryRun", std::to_string(dryRun));
+}
+
+std::string RunInstancesRequest::getLaunchTemplateId()const
+{
+	return launchTemplateId_;
+}
+
+void RunInstancesRequest::setLaunchTemplateId(const std::string& launchTemplateId)
+{
+	launchTemplateId_ = launchTemplateId;
+	setParameter("LaunchTemplateId", launchTemplateId);
 }
 
 long RunInstancesRequest::getOwnerId()const
@@ -273,6 +339,28 @@ void RunInstancesRequest::setSpotStrategy(const std::string& spotStrategy)
 	setParameter("SpotStrategy", spotStrategy);
 }
 
+std::string RunInstancesRequest::getPrivateIpAddress()const
+{
+	return privateIpAddress_;
+}
+
+void RunInstancesRequest::setPrivateIpAddress(const std::string& privateIpAddress)
+{
+	privateIpAddress_ = privateIpAddress;
+	setParameter("PrivateIpAddress", privateIpAddress);
+}
+
+std::string RunInstancesRequest::getPeriodUnit()const
+{
+	return periodUnit_;
+}
+
+void RunInstancesRequest::setPeriodUnit(const std::string& periodUnit)
+{
+	periodUnit_ = periodUnit;
+	setParameter("PeriodUnit", periodUnit);
+}
+
 std::string RunInstancesRequest::getInstanceName()const
 {
 	return instanceName_;
@@ -282,6 +370,17 @@ void RunInstancesRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
 	setParameter("InstanceName", instanceName);
+}
+
+bool RunInstancesRequest::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+void RunInstancesRequest::setAutoRenew(bool autoRenew)
+{
+	autoRenew_ = autoRenew;
+	setParameter("AutoRenew", std::to_string(autoRenew));
 }
 
 std::string RunInstancesRequest::getRequestId()const
@@ -337,6 +436,17 @@ void RunInstancesRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
 	setParameter("ImageId", imageId);
+}
+
+std::string RunInstancesRequest::getSpotInterruptionBehavior()const
+{
+	return spotInterruptionBehavior_;
+}
+
+void RunInstancesRequest::setSpotInterruptionBehavior(const std::string& spotInterruptionBehavior)
+{
+	spotInterruptionBehavior_ = spotInterruptionBehavior;
+	setParameter("SpotInterruptionBehavior", spotInterruptionBehavior);
 }
 
 std::string RunInstancesRequest::getClientToken()const
@@ -438,6 +548,17 @@ void RunInstancesRequest::setUserData(const std::string& userData)
 	setParameter("UserData", userData);
 }
 
+bool RunInstancesRequest::getPasswordInherit()const
+{
+	return passwordInherit_;
+}
+
+void RunInstancesRequest::setPasswordInherit(bool passwordInherit)
+{
+	passwordInherit_ = passwordInherit;
+	setParameter("PasswordInherit", std::to_string(passwordInherit));
+}
+
 std::string RunInstancesRequest::getRegionId()const
 {
 	return regionId_;
@@ -471,6 +592,17 @@ void RunInstancesRequest::setInstanceType(const std::string& instanceType)
 	setParameter("InstanceType", instanceType);
 }
 
+std::string RunInstancesRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
+}
+
+void RunInstancesRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setParameter("InstanceChargeType", instanceChargeType);
+}
+
 std::string RunInstancesRequest::getCallerUidEmail()const
 {
 	return callerUidEmail_;
@@ -500,6 +632,17 @@ void RunInstancesRequest::setNetworkInterface(const std::vector<NetworkInterface
 		setParameter(str + ".NetworkInterfaceName", obj.networkInterfaceName);
 		setParameter(str + ".Description", obj.description);
 	}
+}
+
+std::string RunInstancesRequest::getDeploymentSetId()const
+{
+	return deploymentSetId_;
+}
+
+void RunInstancesRequest::setDeploymentSetId(const std::string& deploymentSetId)
+{
+	deploymentSetId_ = deploymentSetId;
+	setParameter("DeploymentSetId", deploymentSetId);
 }
 
 std::string RunInstancesRequest::getApp_ip()const
@@ -579,6 +722,17 @@ void RunInstancesRequest::setAutoReleaseTime(const std::string& autoReleaseTime)
 	setParameter("AutoReleaseTime", autoReleaseTime);
 }
 
+std::string RunInstancesRequest::getDedicatedHostId()const
+{
+	return dedicatedHostId_;
+}
+
+void RunInstancesRequest::setDedicatedHostId(const std::string& dedicatedHostId)
+{
+	dedicatedHostId_ = dedicatedHostId;
+	setParameter("DedicatedHostId", dedicatedHostId);
+}
+
 std::string RunInstancesRequest::getCallerBid()const
 {
 	return callerBid_;
@@ -588,6 +742,17 @@ void RunInstancesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
 	setParameter("CallerBid", callerBid);
+}
+
+std::string RunInstancesRequest::getCreditSpecification()const
+{
+	return creditSpecification_;
+}
+
+void RunInstancesRequest::setCreditSpecification(const std::string& creditSpecification)
+{
+	creditSpecification_ = creditSpecification;
+	setParameter("CreditSpecification", creditSpecification);
 }
 
 std::vector<RunInstancesRequest::DataDisk> RunInstancesRequest::getDataDisk()const
@@ -608,8 +773,20 @@ void RunInstancesRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setParameter(str + ".Encrypted", obj.encrypted);
 		setParameter(str + ".DiskName", obj.diskName);
 		setParameter(str + ".Description", obj.description);
+		setParameter(str + ".Device", obj.device);
 		setParameter(str + ".DeleteWithInstance", std::to_string(obj.deleteWithInstance));
 	}
+}
+
+long RunInstancesRequest::getLaunchTemplateVersion()const
+{
+	return launchTemplateVersion_;
+}
+
+void RunInstancesRequest::setLaunchTemplateVersion(long launchTemplateVersion)
+{
+	launchTemplateVersion_ = launchTemplateVersion;
+	setParameter("LaunchTemplateVersion", std::to_string(launchTemplateVersion));
 }
 
 bool RunInstancesRequest::getProxy_trust_transport_info()const

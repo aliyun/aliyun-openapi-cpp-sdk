@@ -190,6 +190,17 @@ void DescribeDomainRealTimeBpsDataRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string DescribeDomainRealTimeBpsDataRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeDomainRealTimeBpsDataRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string DescribeDomainRealTimeBpsDataRequest::getProduct()const
 {
 	return product_;

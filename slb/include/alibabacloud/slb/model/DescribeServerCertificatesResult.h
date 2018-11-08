@@ -34,17 +34,21 @@ namespace AlibabaCloud
 			public:
 				struct ServerCertificate
 				{
-					std::string regionIdAlias;
 					std::string fingerprint;
-					std::string aliCloudCertificateName;
 					std::string resourceGroupId;
-					int isAliCloudCertificate;
+					long expireTimeStamp;
 					std::string createTime;
+					std::vector<std::string> subjectAlternativeNames;
+					std::string aliCloudCertificateId;
+					std::string regionIdAlias;
+					std::string aliCloudCertificateName;
+					int isAliCloudCertificate;
 					std::string serverCertificateId;
 					std::string serverCertificateName;
 					std::string regionId;
+					std::string expireTime;
 					long createTimeStamp;
-					std::string aliCloudCertificateId;
+					std::string commonName;
 				};
 
 

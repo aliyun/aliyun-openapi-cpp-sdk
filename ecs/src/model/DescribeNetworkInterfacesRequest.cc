@@ -212,6 +212,23 @@ void DescribeNetworkInterfacesRequest::setCallerBidEmail(const std::string& call
 	setParameter("CallerBidEmail", callerBidEmail);
 }
 
+std::vector<DescribeNetworkInterfacesRequest::Tag> DescribeNetworkInterfacesRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeNetworkInterfacesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Key", obj.key);
+		setParameter(str + ".Value", obj.value);
+	}
+}
+
 std::string DescribeNetworkInterfacesRequest::getCallerUidEmail()const
 {
 	return callerUidEmail_;
@@ -364,6 +381,17 @@ void DescribeNetworkInterfacesRequest::setRequestId(const std::string& requestId
 {
 	requestId_ = requestId;
 	setParameter("RequestId", requestId);
+}
+
+std::string DescribeNetworkInterfacesRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void DescribeNetworkInterfacesRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setParameter("VpcId", vpcId);
 }
 
 std::string DescribeNetworkInterfacesRequest::getPrimaryIpAddress()const

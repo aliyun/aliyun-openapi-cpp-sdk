@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setPeriod(int period);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getEndTime()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				int period_;
 				std::string resourceOwnerAccount_;
+				std::string regionId_;
 				std::string ownerAccount_;
 				std::string endTime_;
 				std::string allocationId_;

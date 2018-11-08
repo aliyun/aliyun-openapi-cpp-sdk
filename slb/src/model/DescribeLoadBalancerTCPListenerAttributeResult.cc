@@ -82,22 +82,22 @@ void DescribeLoadBalancerTCPListenerAttributeResult::parse(const std::string &pa
 		vServerGroupId_ = value["VServerGroupId"].asString();
 	if(!value["MasterSlaveServerGroupId"].isNull())
 		masterSlaveServerGroupId_ = value["MasterSlaveServerGroupId"].asString();
+	if(!value["AclId"].isNull())
+		aclId_ = value["AclId"].asString();
+	if(!value["AclType"].isNull())
+		aclType_ = value["AclType"].asString();
+	if(!value["AclStatus"].isNull())
+		aclStatus_ = value["AclStatus"].asString();
+	if(!value["VpcIds"].isNull())
+		vpcIds_ = value["VpcIds"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
 
-}
-
-std::string DescribeLoadBalancerTCPListenerAttributeResult::getStatus()const
-{
-	return status_;
 }
 
 int DescribeLoadBalancerTCPListenerAttributeResult::getMaxConnection()const
 {
 	return maxConnection_;
-}
-
-int DescribeLoadBalancerTCPListenerAttributeResult::getListenerPort()const
-{
-	return listenerPort_;
 }
 
 std::string DescribeLoadBalancerTCPListenerAttributeResult::getVServerGroupId()const
@@ -110,9 +110,9 @@ std::string DescribeLoadBalancerTCPListenerAttributeResult::getSynProxy()const
 	return synProxy_;
 }
 
-int DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckInterval()const
+std::string DescribeLoadBalancerTCPListenerAttributeResult::getDescription()const
 {
-	return healthCheckInterval_;
+	return description_;
 }
 
 int DescribeLoadBalancerTCPListenerAttributeResult::getUnhealthyThreshold()const
@@ -135,11 +135,6 @@ std::string DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheck()cons
 	return healthCheck_;
 }
 
-int DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckConnectTimeout()const
-{
-	return healthCheckConnectTimeout_;
-}
-
 int DescribeLoadBalancerTCPListenerAttributeResult::getBackendServerPort()const
 {
 	return backendServerPort_;
@@ -160,6 +155,51 @@ int DescribeLoadBalancerTCPListenerAttributeResult::getBandwidth()const
 	return bandwidth_;
 }
 
+std::string DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckHttpCode()const
+{
+	return healthCheckHttpCode_;
+}
+
+int DescribeLoadBalancerTCPListenerAttributeResult::getEstablishedTimeout()const
+{
+	return establishedTimeout_;
+}
+
+std::string DescribeLoadBalancerTCPListenerAttributeResult::getStatus()const
+{
+	return status_;
+}
+
+int DescribeLoadBalancerTCPListenerAttributeResult::getListenerPort()const
+{
+	return listenerPort_;
+}
+
+int DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckInterval()const
+{
+	return healthCheckInterval_;
+}
+
+std::string DescribeLoadBalancerTCPListenerAttributeResult::getAclId()const
+{
+	return aclId_;
+}
+
+int DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckConnectTimeout()const
+{
+	return healthCheckConnectTimeout_;
+}
+
+std::string DescribeLoadBalancerTCPListenerAttributeResult::getAclStatus()const
+{
+	return aclStatus_;
+}
+
+std::string DescribeLoadBalancerTCPListenerAttributeResult::getVpcIds()const
+{
+	return vpcIds_;
+}
+
 int DescribeLoadBalancerTCPListenerAttributeResult::getHealthyThreshold()const
 {
 	return healthyThreshold_;
@@ -175,18 +215,13 @@ std::string DescribeLoadBalancerTCPListenerAttributeResult::getMasterSlaveServer
 	return masterSlaveServerGroupId_;
 }
 
-std::string DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckHttpCode()const
+std::string DescribeLoadBalancerTCPListenerAttributeResult::getAclType()const
 {
-	return healthCheckHttpCode_;
+	return aclType_;
 }
 
 std::string DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckType()const
 {
 	return healthCheckType_;
-}
-
-int DescribeLoadBalancerTCPListenerAttributeResult::getEstablishedTimeout()const
-{
-	return establishedTimeout_;
 }
 

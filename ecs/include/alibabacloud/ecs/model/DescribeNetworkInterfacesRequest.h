@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT DescribeNetworkInterfacesRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				DescribeNetworkInterfacesRequest();
@@ -69,6 +74,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				std::string getNetworkInterfaceName()const;
@@ -97,6 +104,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 				std::string getPrimaryIpAddress()const;
 				void setPrimaryIpAddress(const std::string& primaryIpAddress);
 				std::vector<std::string> getNetworkInterfaceId()const;
@@ -120,6 +129,7 @@ namespace AlibabaCloud
 				std::string requestContent_;
 				int pageSize_;
 				std::string callerBidEmail_;
+				std::vector<Tag> tag_;
 				std::string callerUidEmail_;
 				std::string networkInterfaceName_;
 				long callerUid_;
@@ -134,6 +144,7 @@ namespace AlibabaCloud
 				std::string vSwitchId_;
 				std::string instanceId_;
 				std::string requestId_;
+				std::string vpcId_;
 				std::string primaryIpAddress_;
 				std::vector<std::string> networkInterfaceId_;
 

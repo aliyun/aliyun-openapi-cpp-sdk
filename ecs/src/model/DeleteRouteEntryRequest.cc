@@ -47,6 +47,17 @@ void DeleteRouteEntryRequest::setResourceOwnerAccount(const std::string& resourc
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string DeleteRouteEntryRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteRouteEntryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DeleteRouteEntryRequest::getDestinationCidrBlock()const
 {
 	return destinationCidrBlock_;
@@ -103,8 +114,8 @@ void DeleteRouteEntryRequest::setNextHopList(const std::vector<NextHopList>& nex
 	for(int i = 0; i!= nextHopList.size(); i++)	{
 		auto obj = nextHopList.at(i);
 		std::string str ="NextHopList."+ std::to_string(i);
-		setParameter(str + ".NextHopType", obj.nextHopType);
 		setParameter(str + ".NextHopId", obj.nextHopId);
+		setParameter(str + ".NextHopType", obj.nextHopType);
 	}
 }
 

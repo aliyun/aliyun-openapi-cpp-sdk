@@ -56,7 +56,35 @@ void DescribeLiveStreamsOnlineListResult::parse(const std::string &payload)
 			onlineInfoObject.publishUrl = value["PublishUrl"].asString();
 		onlineInfo_.push_back(onlineInfoObject);
 	}
+	if(!value["PageNum"].isNull())
+		pageNum_ = std::stoi(value["PageNum"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalNum"].isNull())
+		totalNum_ = std::stoi(value["TotalNum"].asString());
+	if(!value["TotalPage"].isNull())
+		totalPage_ = std::stoi(value["TotalPage"].asString());
 
+}
+
+int DescribeLiveStreamsOnlineListResult::getTotalNum()const
+{
+	return totalNum_;
+}
+
+int DescribeLiveStreamsOnlineListResult::getPageNum()const
+{
+	return pageNum_;
+}
+
+int DescribeLiveStreamsOnlineListResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int DescribeLiveStreamsOnlineListResult::getTotalPage()const
+{
+	return totalPage_;
 }
 
 std::vector<DescribeLiveStreamsOnlineListResult::LiveStreamOnlineInfo> DescribeLiveStreamsOnlineListResult::getOnlineInfo()const

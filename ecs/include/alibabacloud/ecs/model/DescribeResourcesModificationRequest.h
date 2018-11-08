@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				float getMemory()const;
+				void setMemory(float memory);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
@@ -49,8 +51,8 @@ namespace AlibabaCloud
 				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
+				int getCores()const;
+				void setCores(int cores);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
@@ -96,13 +98,14 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				float memory_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
-				std::string resourceGroupId_;
+				int cores_;
 				std::string securityToken_;
 				std::string regionId_;
 				bool enable_;

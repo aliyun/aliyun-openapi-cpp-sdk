@@ -25,6 +25,17 @@ DescribeKeyPairsRequest::DescribeKeyPairsRequest() :
 DescribeKeyPairsRequest::~DescribeKeyPairsRequest()
 {}
 
+std::string DescribeKeyPairsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeKeyPairsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 long DescribeKeyPairsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -89,6 +100,23 @@ void DescribeKeyPairsRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
 	setParameter("KeyPairName", keyPairName);
+}
+
+std::vector<DescribeKeyPairsRequest::Tag> DescribeKeyPairsRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeKeyPairsRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 
 long DescribeKeyPairsRequest::getOwnerId()const

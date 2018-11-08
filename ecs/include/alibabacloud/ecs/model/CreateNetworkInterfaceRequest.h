@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateNetworkInterfaceRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				CreateNetworkInterfaceRequest();
@@ -67,6 +72,8 @@ namespace AlibabaCloud
 				void setRequestContent(const std::string& requestContent);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				std::string getNetworkInterfaceName()const;
@@ -113,6 +120,7 @@ namespace AlibabaCloud
 				bool enable_;
 				std::string requestContent_;
 				std::string callerBidEmail_;
+				std::vector<Tag> tag_;
 				std::string callerUidEmail_;
 				std::string networkInterfaceName_;
 				long callerUid_;

@@ -19,22 +19,11 @@
 using AlibabaCloud::EHPC::Model::ListCustomImagesRequest;
 
 ListCustomImagesRequest::ListCustomImagesRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "ListCustomImages")
+	RpcServiceRequest("ehpc", "2018-04-12", "ListCustomImages")
 {}
 
 ListCustomImagesRequest::~ListCustomImagesRequest()
 {}
-
-std::string ListCustomImagesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListCustomImagesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
 
 std::string ListCustomImagesRequest::getBaseOsTag()const
 {

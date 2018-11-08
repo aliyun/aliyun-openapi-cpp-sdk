@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::ListImagesRequest;
 
 ListImagesRequest::ListImagesRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "ListImages")
+	RpcServiceRequest("ehpc", "2018-04-12", "ListImages")
 {}
 
 ListImagesRequest::~ListImagesRequest()

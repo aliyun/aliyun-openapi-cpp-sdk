@@ -47,8 +47,6 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getUserCidr()const;
-				void setUserCidr(const std::string& userCidr);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
@@ -59,7 +57,6 @@ namespace AlibabaCloud
 				std::string vpcId_;
 				std::string ownerAccount_;
 				std::string description_;
-				std::string userCidr_;
 				long ownerId_;
 
 			};

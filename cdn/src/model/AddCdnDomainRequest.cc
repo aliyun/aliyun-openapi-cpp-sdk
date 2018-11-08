@@ -69,17 +69,6 @@ void AddCdnDomainRequest::setDomainName(const std::string& domainName)
 	setParameter("DomainName", domainName);
 }
 
-std::string AddCdnDomainRequest::getLiveType()const
-{
-	return liveType_;
-}
-
-void AddCdnDomainRequest::setLiveType(const std::string& liveType)
-{
-	liveType_ = liveType;
-	setParameter("LiveType", liveType);
-}
-
 long AddCdnDomainRequest::getOwnerId()const
 {
 	return ownerId_;

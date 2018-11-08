@@ -40,42 +40,37 @@ void DescribeInvocationResultsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allInvocation = value["Invocation"];
-	for (auto value : allInvocation)
+	auto invocationNode = value["Invocation"];
+	if(!invocationNode["PageSize"].isNull())
+		invocation_.pageSize = std::stol(invocationNode["PageSize"].asString());
+	if(!invocationNode["PageNumber"].isNull())
+		invocation_.pageNumber = std::stol(invocationNode["PageNumber"].asString());
+	if(!invocationNode["TotalCount"].isNull())
+		invocation_.totalCount = std::stol(invocationNode["TotalCount"].asString());
+	auto allInvocationResults = value["InvocationResults"]["InvocationResult"];
+	for (auto value : allInvocationResults)
 	{
-		Invocation invocationObject;
-		if(!value["PageSize"].isNull())
-			invocationObject.pageSize = std::stol(value["PageSize"].asString());
-		if(!value["PageNumber"].isNull())
-			invocationObject.pageNumber = std::stol(value["PageNumber"].asString());
-		if(!value["TotalCount"].isNull())
-			invocationObject.totalCount = std::stol(value["TotalCount"].asString());
-		auto allInvocationResults = value["InvocationResults"]["InvocationResult"];
-		for (auto value : allInvocationResults)
-		{
-			Invocation::InvocationResult invocationResultObject;
-			if(!value["CommandId"].isNull())
-				invocationResultObject.commandId = value["CommandId"].asString();
-			if(!value["InvokeId"].isNull())
-				invocationResultObject.invokeId = value["InvokeId"].asString();
-			if(!value["InstanceId"].isNull())
-				invocationResultObject.instanceId = value["InstanceId"].asString();
-			if(!value["FinishedTime"].isNull())
-				invocationResultObject.finishedTime = value["FinishedTime"].asString();
-			if(!value["Output"].isNull())
-				invocationResultObject.output = value["Output"].asString();
-			if(!value["InvokeRecordStatus"].isNull())
-				invocationResultObject.invokeRecordStatus = value["InvokeRecordStatus"].asString();
-			if(!value["ExitCode"].isNull())
-				invocationResultObject.exitCode = std::stol(value["ExitCode"].asString());
-			invocationObject.invocationResults.push_back(invocationResultObject);
-		}
-		invocation_.push_back(invocationObject);
+		Invocation::InvocationResult invocationResultObject;
+		if(!value["CommandId"].isNull())
+			invocationResultObject.commandId = value["CommandId"].asString();
+		if(!value["InvokeId"].isNull())
+			invocationResultObject.invokeId = value["InvokeId"].asString();
+		if(!value["InstanceId"].isNull())
+			invocationResultObject.instanceId = value["InstanceId"].asString();
+		if(!value["FinishedTime"].isNull())
+			invocationResultObject.finishedTime = value["FinishedTime"].asString();
+		if(!value["Output"].isNull())
+			invocationResultObject.output = value["Output"].asString();
+		if(!value["InvokeRecordStatus"].isNull())
+			invocationResultObject.invokeRecordStatus = value["InvokeRecordStatus"].asString();
+		if(!value["ExitCode"].isNull())
+			invocationResultObject.exitCode = std::stol(value["ExitCode"].asString());
+		invocation_.invocationResults.push_back(invocationResultObject);
 	}
 
 }
 
-std::vector<DescribeInvocationResultsResult::Invocation> DescribeInvocationResultsResult::getInvocation()const
+DescribeInvocationResultsResult::Invocation DescribeInvocationResultsResult::getInvocation()const
 {
 	return invocation_;
 }

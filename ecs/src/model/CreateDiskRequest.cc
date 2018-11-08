@@ -25,17 +25,6 @@ CreateDiskRequest::CreateDiskRequest() :
 CreateDiskRequest::~CreateDiskRequest()
 {}
 
-std::string CreateDiskRequest::getTag4Value()const
-{
-	return tag4Value_;
-}
-
-void CreateDiskRequest::setTag4Value(const std::string& tag4Value)
-{
-	tag4Value_ = tag4Value;
-	setParameter("Tag4Value", tag4Value);
-}
-
 long CreateDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,15 +47,15 @@ void CreateDiskRequest::setSnapshotId(const std::string& snapshotId)
 	setParameter("SnapshotId", snapshotId);
 }
 
-std::string CreateDiskRequest::getTag2Key()const
+std::string CreateDiskRequest::getResourceOwnerAccount()const
 {
-	return tag2Key_;
+	return resourceOwnerAccount_;
 }
 
-void CreateDiskRequest::setTag2Key(const std::string& tag2Key)
+void CreateDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	tag2Key_ = tag2Key;
-	setParameter("Tag2Key", tag2Key);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateDiskRequest::getClientToken()const
@@ -80,116 +69,6 @@ void CreateDiskRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
-std::string CreateDiskRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateDiskRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
-}
-
-std::string CreateDiskRequest::getTag3Key()const
-{
-	return tag3Key_;
-}
-
-void CreateDiskRequest::setTag3Key(const std::string& tag3Key)
-{
-	tag3Key_ = tag3Key;
-	setParameter("Tag3Key", tag3Key);
-}
-
-std::string CreateDiskRequest::getDiskName()const
-{
-	return diskName_;
-}
-
-void CreateDiskRequest::setDiskName(const std::string& diskName)
-{
-	diskName_ = diskName;
-	setParameter("DiskName", diskName);
-}
-
-std::string CreateDiskRequest::getTag1Value()const
-{
-	return tag1Value_;
-}
-
-void CreateDiskRequest::setTag1Value(const std::string& tag1Value)
-{
-	tag1Value_ = tag1Value;
-	setParameter("Tag1Value", tag1Value);
-}
-
-std::string CreateDiskRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void CreateDiskRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string CreateDiskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateDiskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string CreateDiskRequest::getDiskCategory()const
-{
-	return diskCategory_;
-}
-
-void CreateDiskRequest::setDiskCategory(const std::string& diskCategory)
-{
-	diskCategory_ = diskCategory;
-	setParameter("DiskCategory", diskCategory);
-}
-
-std::string CreateDiskRequest::getTag3Value()const
-{
-	return tag3Value_;
-}
-
-void CreateDiskRequest::setTag3Value(const std::string& tag3Value)
-{
-	tag3Value_ = tag3Value;
-	setParameter("Tag3Value", tag3Value);
-}
-
-std::string CreateDiskRequest::getTag5Key()const
-{
-	return tag5Key_;
-}
-
-void CreateDiskRequest::setTag5Key(const std::string& tag5Key)
-{
-	tag5Key_ = tag5Key;
-	setParameter("Tag5Key", tag5Key);
-}
-
-std::string CreateDiskRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateDiskRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -199,6 +78,17 @@ void CreateDiskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+std::string CreateDiskRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateDiskRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
 }
 
 long CreateDiskRequest::getOwnerId()const
@@ -212,26 +102,26 @@ void CreateDiskRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CreateDiskRequest::getTag5Value()const
+std::string CreateDiskRequest::getDiskName()const
 {
-	return tag5Value_;
+	return diskName_;
 }
 
-void CreateDiskRequest::setTag5Value(const std::string& tag5Value)
+void CreateDiskRequest::setDiskName(const std::string& diskName)
 {
-	tag5Value_ = tag5Value;
-	setParameter("Tag5Value", tag5Value);
+	diskName_ = diskName;
+	setParameter("DiskName", diskName);
 }
 
-std::string CreateDiskRequest::getTag1Key()const
+std::string CreateDiskRequest::getResourceGroupId()const
 {
-	return tag1Key_;
+	return resourceGroupId_;
 }
 
-void CreateDiskRequest::setTag1Key(const std::string& tag1Key)
+void CreateDiskRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
-	tag1Key_ = tag1Key;
-	setParameter("Tag1Key", tag1Key);
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 int CreateDiskRequest::getSize()const
@@ -256,15 +146,26 @@ void CreateDiskRequest::setEncrypted(bool encrypted)
 	setParameter("Encrypted", std::to_string(encrypted));
 }
 
-std::string CreateDiskRequest::getTag2Value()const
+std::string CreateDiskRequest::getRegionId()const
 {
-	return tag2Value_;
+	return regionId_;
 }
 
-void CreateDiskRequest::setTag2Value(const std::string& tag2Value)
+void CreateDiskRequest::setRegionId(const std::string& regionId)
 {
-	tag2Value_ = tag2Value;
-	setParameter("Tag2Value", tag2Value);
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string CreateDiskRequest::getDiskCategory()const
+{
+	return diskCategory_;
+}
+
+void CreateDiskRequest::setDiskCategory(const std::string& diskCategory)
+{
+	diskCategory_ = diskCategory;
+	setParameter("DiskCategory", diskCategory);
 }
 
 std::string CreateDiskRequest::getZoneId()const
@@ -278,14 +179,20 @@ void CreateDiskRequest::setZoneId(const std::string& zoneId)
 	setParameter("ZoneId", zoneId);
 }
 
-std::string CreateDiskRequest::getTag4Key()const
+std::vector<CreateDiskRequest::Tag> CreateDiskRequest::getTag()const
 {
-	return tag4Key_;
+	return tag_;
 }
 
-void CreateDiskRequest::setTag4Key(const std::string& tag4Key)
+void CreateDiskRequest::setTag(const std::vector<Tag>& tag)
 {
-	tag4Key_ = tag4Key;
-	setParameter("Tag4Key", tag4Key);
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 

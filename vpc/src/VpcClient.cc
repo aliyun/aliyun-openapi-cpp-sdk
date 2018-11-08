@@ -303,6 +303,42 @@ VpcClient::DescribeGlobalAccelerationInstancesOutcomeCallable VpcClient::describ
 	return task->get_future();
 }
 
+VpcClient::MoveResourceGroupOutcome VpcClient::moveResourceGroup(const MoveResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MoveResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MoveResourceGroupOutcome(MoveResourceGroupResult(outcome.result()));
+	else
+		return MoveResourceGroupOutcome(outcome.error());
+}
+
+void VpcClient::moveResourceGroupAsync(const MoveResourceGroupRequest& request, const MoveResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, moveResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::MoveResourceGroupOutcomeCallable VpcClient::moveResourceGroupCallable(const MoveResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MoveResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->moveResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::ModifySslVpnClientCertOutcome VpcClient::modifySslVpnClientCert(const ModifySslVpnClientCertRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4221,6 +4257,42 @@ VpcClient::DescribeVpnGatewayOutcomeCallable VpcClient::describeVpnGatewayCallab
 			[this, request]()
 			{
 			return this->describeVpnGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DescribeVpnConnectionLogsOutcome VpcClient::describeVpnConnectionLogs(const DescribeVpnConnectionLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVpnConnectionLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVpnConnectionLogsOutcome(DescribeVpnConnectionLogsResult(outcome.result()));
+	else
+		return DescribeVpnConnectionLogsOutcome(outcome.error());
+}
+
+void VpcClient::describeVpnConnectionLogsAsync(const DescribeVpnConnectionLogsRequest& request, const DescribeVpnConnectionLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVpnConnectionLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeVpnConnectionLogsOutcomeCallable VpcClient::describeVpnConnectionLogsCallable(const DescribeVpnConnectionLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVpnConnectionLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVpnConnectionLogs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

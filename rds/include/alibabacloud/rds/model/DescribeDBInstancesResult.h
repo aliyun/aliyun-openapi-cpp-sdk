@@ -63,6 +63,7 @@ namespace AlibabaCloud
 					std::string vpcId;
 					std::string masterInstanceId;
 					std::string connectionMode;
+					std::string vpcCloudInstanceId;
 					std::string regionId;
 					std::string expireTime;
 				};

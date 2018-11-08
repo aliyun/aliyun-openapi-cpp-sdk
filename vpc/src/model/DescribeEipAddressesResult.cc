@@ -78,6 +78,8 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.bandwidthPackageId = value["BandwidthPackageId"].asString();
 		if(!value["BandwidthPackageType"].isNull())
 			eipAddressesObject.bandwidthPackageType = value["BandwidthPackageType"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			eipAddressesObject.resourceGroupId = value["ResourceGroupId"].asString();
 		auto allOperationLocks = value["OperationLocks"]["LockReason"];
 		for (auto value : allOperationLocks)
 		{

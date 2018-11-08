@@ -72,6 +72,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.dBInstanceClass = value["DBInstanceClass"].asString();
 		if(!value["InstanceNetworkType"].isNull())
 			itemsObject.instanceNetworkType = value["InstanceNetworkType"].asString();
+		if(!value["VpcCloudInstanceId"].isNull())
+			itemsObject.vpcCloudInstanceId = value["VpcCloudInstanceId"].asString();
 		if(!value["LockReason"].isNull())
 			itemsObject.lockReason = value["LockReason"].asString();
 		if(!value["ZoneId"].isNull())

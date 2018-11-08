@@ -56,48 +56,28 @@ void DescribeInstancesFullStatusResult::parse(const std::string &payload)
 				scheduledSystemEventSetObject.eventPublishTime = value["EventPublishTime"].asString();
 			if(!value["NotBefore"].isNull())
 				scheduledSystemEventSetObject.notBefore = value["NotBefore"].asString();
-			auto allEventCycleStatus = value["EventCycleStatus"];
-			for (auto value : allEventCycleStatus)
-			{
-				InstanceFullStatusType::ScheduledSystemEventType::EventCycleStatus eventCycleStatusObject;
-				if(!value["Code"].isNull())
-					eventCycleStatusObject.code = std::stoi(value["Code"].asString());
-				if(!value["Name"].isNull())
-					eventCycleStatusObject.name = value["Name"].asString();
-				scheduledSystemEventSetObject.eventCycleStatus.push_back(eventCycleStatusObject);
-			}
-			auto allEventType = value["EventType"];
-			for (auto value : allEventType)
-			{
-				InstanceFullStatusType::ScheduledSystemEventType::EventType eventTypeObject;
-				if(!value["Code"].isNull())
-					eventTypeObject.code = std::stoi(value["Code"].asString());
-				if(!value["Name"].isNull())
-					eventTypeObject.name = value["Name"].asString();
-				scheduledSystemEventSetObject.eventType.push_back(eventTypeObject);
-			}
+			auto eventCycleStatusNode = value["EventCycleStatus"];
+			if(!eventCycleStatusNode["Code"].isNull())
+				scheduledSystemEventSetObject.eventCycleStatus.code = std::stoi(eventCycleStatusNode["Code"].asString());
+			if(!eventCycleStatusNode["Name"].isNull())
+				scheduledSystemEventSetObject.eventCycleStatus.name = eventCycleStatusNode["Name"].asString();
+			auto eventTypeNode = value["EventType"];
+			if(!eventTypeNode["Code"].isNull())
+				scheduledSystemEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());
+			if(!eventTypeNode["Name"].isNull())
+				scheduledSystemEventSetObject.eventType.name = eventTypeNode["Name"].asString();
 			instanceFullStatusSetObject.scheduledSystemEventSet.push_back(scheduledSystemEventSetObject);
 		}
-		auto allStatus = value["Status"];
-		for (auto value : allStatus)
-		{
-			InstanceFullStatusType::Status statusObject;
-			if(!value["Code"].isNull())
-				statusObject.code = std::stoi(value["Code"].asString());
-			if(!value["Name"].isNull())
-				statusObject.name = value["Name"].asString();
-			instanceFullStatusSetObject.status.push_back(statusObject);
-		}
-		auto allHealthStatus = value["HealthStatus"];
-		for (auto value : allHealthStatus)
-		{
-			InstanceFullStatusType::HealthStatus healthStatusObject;
-			if(!value["Code"].isNull())
-				healthStatusObject.code = std::stoi(value["Code"].asString());
-			if(!value["Name"].isNull())
-				healthStatusObject.name = value["Name"].asString();
-			instanceFullStatusSetObject.healthStatus.push_back(healthStatusObject);
-		}
+		auto statusNode = value["Status"];
+		if(!statusNode["Code"].isNull())
+			instanceFullStatusSetObject.status.code = std::stoi(statusNode["Code"].asString());
+		if(!statusNode["Name"].isNull())
+			instanceFullStatusSetObject.status.name = statusNode["Name"].asString();
+		auto healthStatusNode = value["HealthStatus"];
+		if(!healthStatusNode["Code"].isNull())
+			instanceFullStatusSetObject.healthStatus.code = std::stoi(healthStatusNode["Code"].asString());
+		if(!healthStatusNode["Name"].isNull())
+			instanceFullStatusSetObject.healthStatus.name = healthStatusNode["Name"].asString();
 		instanceFullStatusSet_.push_back(instanceFullStatusSetObject);
 	}
 	if(!value["TotalCount"].isNull())

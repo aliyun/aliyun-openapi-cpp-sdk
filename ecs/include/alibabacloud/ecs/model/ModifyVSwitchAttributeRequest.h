@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getVSwitchName()const;
 				void setVSwitchName(const std::string& vSwitchName);
 				std::string getOwnerAccount()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string vSwitchId_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
+				std::string regionId_;
 				std::string vSwitchName_;
 				std::string ownerAccount_;
 				std::string description_;

@@ -1,0 +1,137 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/scdn/model/SetScdnDomainCertificateRequest.h>
+
+using AlibabaCloud::Scdn::Model::SetScdnDomainCertificateRequest;
+
+SetScdnDomainCertificateRequest::SetScdnDomainCertificateRequest() :
+	RpcServiceRequest("scdn", "2017-11-15", "SetScdnDomainCertificate")
+{}
+
+SetScdnDomainCertificateRequest::~SetScdnDomainCertificateRequest()
+{}
+
+std::string SetScdnDomainCertificateRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetScdnDomainCertificateRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
+}
+
+std::string SetScdnDomainCertificateRequest::getCertType()const
+{
+	return certType_;
+}
+
+void SetScdnDomainCertificateRequest::setCertType(const std::string& certType)
+{
+	certType_ = certType;
+	setParameter("CertType", certType);
+}
+
+std::string SetScdnDomainCertificateRequest::getSSLPub()const
+{
+	return sSLPub_;
+}
+
+void SetScdnDomainCertificateRequest::setSSLPub(const std::string& sSLPub)
+{
+	sSLPub_ = sSLPub;
+	setParameter("SSLPub", sSLPub);
+}
+
+std::string SetScdnDomainCertificateRequest::getCertName()const
+{
+	return certName_;
+}
+
+void SetScdnDomainCertificateRequest::setCertName(const std::string& certName)
+{
+	certName_ = certName;
+	setParameter("CertName", certName);
+}
+
+std::string SetScdnDomainCertificateRequest::getSSLProtocol()const
+{
+	return sSLProtocol_;
+}
+
+void SetScdnDomainCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
+{
+	sSLProtocol_ = sSLProtocol;
+	setParameter("SSLProtocol", sSLProtocol);
+}
+
+std::string SetScdnDomainCertificateRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void SetScdnDomainCertificateRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+long SetScdnDomainCertificateRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void SetScdnDomainCertificateRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetScdnDomainCertificateRequest::getRegion()const
+{
+	return region_;
+}
+
+void SetScdnDomainCertificateRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setParameter("Region", region);
+}
+
+std::string SetScdnDomainCertificateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetScdnDomainCertificateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetScdnDomainCertificateRequest::getSSLPri()const
+{
+	return sSLPri_;
+}
+
+void SetScdnDomainCertificateRequest::setSSLPri(const std::string& sSLPri)
+{
+	sSLPri_ = sSLPri;
+	setParameter("SSLPri", sSLPri);
+}
+

@@ -50,6 +50,14 @@ void ModifyVServerGroupBackendServersResult::parse(const std::string &payload)
 			backendServersObject.port = std::stoi(value["Port"].asString());
 		if(!value["Weight"].isNull())
 			backendServersObject.weight = std::stoi(value["Weight"].asString());
+		if(!value["Type"].isNull())
+			backendServersObject.type = value["Type"].asString();
+		if(!value["ServerIp"].isNull())
+			backendServersObject.serverIp = value["ServerIp"].asString();
+		if(!value["EniHost"].isNull())
+			backendServersObject.eniHost = value["EniHost"].asString();
+		if(!value["VpcId"].isNull())
+			backendServersObject.vpcId = value["VpcId"].asString();
 		backendServers_.push_back(backendServersObject);
 	}
 	if(!value["VServerGroupId"].isNull())

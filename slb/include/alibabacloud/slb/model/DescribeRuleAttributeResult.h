@@ -37,22 +37,52 @@ namespace AlibabaCloud
 				DescribeRuleAttributeResult();
 				explicit DescribeRuleAttributeResult(const std::string &payload);
 				~DescribeRuleAttributeResult();
+				int getCookieTimeout()const;
+				std::string getCookie()const;
 				std::string getListenerPort()const;
 				std::string getVServerGroupId()const;
+				int getHealthCheckInterval()const;
+				int getUnhealthyThreshold()const;
+				std::string getScheduler()const;
+				std::string getHealthCheckURI()const;
+				std::string getHealthCheck()const;
 				std::string getLoadBalancerId()const;
-				std::string getDomain()const;
-				std::string getRuleName()const;
+				int getHealthCheckTimeout()const;
 				std::string getUrl()const;
+				std::string getStickySession()const;
+				int getHealthCheckConnectPort()const;
+				int getHealthyThreshold()const;
+				std::string getListenerSync()const;
+				std::string getHealthCheckDomain()const;
+				std::string getStickySessionType()const;
+				std::string getDomain()const;
+				std::string getHealthCheckHttpCode()const;
+				std::string getRuleName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int cookieTimeout_;
+				std::string cookie_;
 				std::string listenerPort_;
 				std::string vServerGroupId_;
+				int healthCheckInterval_;
+				int unhealthyThreshold_;
+				std::string scheduler_;
+				std::string healthCheckURI_;
+				std::string healthCheck_;
 				std::string loadBalancerId_;
-				std::string domain_;
-				std::string ruleName_;
+				int healthCheckTimeout_;
 				std::string url_;
+				std::string stickySession_;
+				int healthCheckConnectPort_;
+				int healthyThreshold_;
+				std::string listenerSync_;
+				std::string healthCheckDomain_;
+				std::string stickySessionType_;
+				std::string domain_;
+				std::string healthCheckHttpCode_;
+				std::string ruleName_;
 
 			};
 		}

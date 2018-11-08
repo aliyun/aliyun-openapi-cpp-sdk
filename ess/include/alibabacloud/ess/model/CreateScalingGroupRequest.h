@@ -30,15 +30,30 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ESS_EXPORT CreateScalingGroupRequest : public RpcServiceRequest
 			{
+				struct LifecycleHook
+				{
+					std::string defaultResult;
+					std::string lifecycleHookName;
+					int heartbeatTimeout;
+					std::string notificationArn;
+					std::string notificationMetadata;
+					std::string lifecycleTransition;
+				};
 
 			public:
 				CreateScalingGroupRequest();
 				~CreateScalingGroupRequest();
 
+				std::string getMultiAZPolicy()const;
+				void setMultiAZPolicy(const std::string& multiAZPolicy);
 				std::string getDBInstanceIds()const;
 				void setDBInstanceIds(const std::string& dBInstanceIds);
+				std::string getLaunchTemplateId()const;
+				void setLaunchTemplateId(const std::string& launchTemplateId);
 				std::string getLoadBalancerIds()const;
 				void setLoadBalancerIds(const std::string& loadBalancerIds);
+				std::string getHealthCheckType()const;
+				void setHealthCheckType(const std::string& healthCheckType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupName()const;
@@ -51,6 +66,8 @@ namespace AlibabaCloud
 				void setMinSize(int minSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getLaunchTemplateVersion()const;
+				void setLaunchTemplateVersion(const std::string& launchTemplateVersion);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getVSwitchId()const;
@@ -59,6 +76,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				int getMaxSize()const;
 				void setMaxSize(int maxSize);
+				std::vector<LifecycleHook> getLifecycleHook()const;
+				void setLifecycleHook(const std::vector<LifecycleHook>& lifecycleHook);
 				int getDefaultCooldown()const;
 				void setDefaultCooldown(int defaultCooldown);
 				std::string getRemovalPolicy1()const;
@@ -67,18 +86,23 @@ namespace AlibabaCloud
 				void setRemovalPolicy2(const std::string& removalPolicy2);
 
             private:
+				std::string multiAZPolicy_;
 				std::string dBInstanceIds_;
+				std::string launchTemplateId_;
 				std::string loadBalancerIds_;
+				std::string healthCheckType_;
 				std::string resourceOwnerAccount_;
 				std::string scalingGroupName_;
 				std::vector<std::string> vSwitchIds_;
 				std::string ownerAccount_;
 				int minSize_;
 				long ownerId_;
+				std::string launchTemplateVersion_;
 				std::string accessKeyId_;
 				std::string vSwitchId_;
 				std::string regionId_;
 				int maxSize_;
+				std::vector<LifecycleHook> lifecycleHook_;
 				int defaultCooldown_;
 				std::string removalPolicy1_;
 				std::string removalPolicy2_;

@@ -46,7 +46,14 @@ void AllocateEipAddressResult::parse(const std::string &payload)
 		eipAddress_ = value["EipAddress"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
+}
+
+std::string AllocateEipAddressResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string AllocateEipAddressResult::getAllocationId()const

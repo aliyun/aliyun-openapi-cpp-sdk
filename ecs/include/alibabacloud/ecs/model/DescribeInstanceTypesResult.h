@@ -35,17 +35,22 @@ namespace AlibabaCloud
 				struct InstanceType
 				{
 					float memorySize;
-					std::string localStorageCategory;
+					long instancePpsTx;
 					int cpuCoreCount;
 					long localStorageCapacity;
-					std::string gPUSpec;
 					std::string instanceTypeFamily;
-					int baselineCredit;
+					long instancePpsRx;
 					int initialCredit;
-					std::string instanceTypeId;
 					int eniQuantity;
+					int instanceBandwidthRx;
 					int gPUAmount;
+					int instanceBandwidthTx;
 					int localStorageAmount;
+					std::string localStorageCategory;
+					std::string gPUSpec;
+					int baselineCredit;
+					std::string instanceFamilyLevel;
+					std::string instanceTypeId;
 				};
 
 

@@ -49,6 +49,11 @@ namespace AlibabaCloud
 						bool isSupportUnassociate;
 						std::string internetChargeType;
 					};
+					struct DedicatedHostAttribute
+					{
+						std::string dedicatedHostId;
+						std::string dedicatedHostName;
+					};
 					struct NetworkInterface
 					{
 						std::string primaryIpAddress;
@@ -73,7 +78,7 @@ namespace AlibabaCloud
 					std::string instanceNetworkType;
 					std::vector<std::string> innerIpAddress;
 					std::string expiredTime;
-					std::vector<EipAddress> eipAddress;
+					EipAddress eipAddress;
 					std::string imageId;
 					std::vector<Instance::Tag> tags;
 					std::string hostName;
@@ -82,10 +87,11 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string stoppedMode;
 					std::string startTime;
-					std::vector<VpcAttributes> vpcAttributes;
+					VpcAttributes vpcAttributes;
 					std::vector<std::string> securityGroupIds;
 					std::string internetChargeType;
 					std::string instanceName;
+					std::string deploymentSetId;
 					int internetMaxBandwidthOut;
 					std::string serialNumber;
 					std::string oSType;
@@ -108,12 +114,14 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string clusterId;
 					std::string hpcClusterId;
+					DedicatedHostAttribute dedicatedHostAttribute;
 					int gPUAmount;
 					std::vector<Instance::LockReason> operationLocks;
 					std::vector<std::string> rdmaIpAddress;
 					int internetMaxBandwidthIn;
 					bool recyclable;
 					std::string regionId;
+					std::string creditSpecification;
 				};
 
 

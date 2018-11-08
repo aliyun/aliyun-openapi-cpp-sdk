@@ -36,6 +36,17 @@ void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+float DescribeAvailableResourceRequest::getMemory()const
+{
+	return memory_;
+}
+
+void DescribeAvailableResourceRequest::setMemory(float memory)
+{
+	memory_ = memory;
+	setParameter("Memory", std::to_string(memory));
+}
+
 long DescribeAvailableResourceRequest::getCallerParentId()const
 {
 	return callerParentId_;
@@ -124,15 +135,15 @@ void DescribeAvailableResourceRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeAvailableResourceRequest::getResourceGroupId()const
+int DescribeAvailableResourceRequest::getCores()const
 {
-	return resourceGroupId_;
+	return cores_;
 }
 
-void DescribeAvailableResourceRequest::setResourceGroupId(const std::string& resourceGroupId)
+void DescribeAvailableResourceRequest::setCores(int cores)
 {
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	cores_ = cores;
+	setParameter("Cores", std::to_string(cores));
 }
 
 std::string DescribeAvailableResourceRequest::getSecurityToken()const
@@ -289,6 +300,17 @@ void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerA
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string DescribeAvailableResourceRequest::getDedicatedHostId()const
+{
+	return dedicatedHostId_;
+}
+
+void DescribeAvailableResourceRequest::setDedicatedHostId(const std::string& dedicatedHostId)
+{
+	dedicatedHostId_ = dedicatedHostId;
+	setParameter("DedicatedHostId", dedicatedHostId);
+}
+
 std::string DescribeAvailableResourceRequest::getCallerBid()const
 {
 	return callerBid_;
@@ -309,6 +331,17 @@ void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeAvailableResourceRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeAvailableResourceRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setParameter("ResourceType", resourceType);
 }
 
 bool DescribeAvailableResourceRequest::getProxy_trust_transport_info()const

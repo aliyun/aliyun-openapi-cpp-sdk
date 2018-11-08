@@ -36,9 +36,23 @@ namespace AlibabaCloud
 				{
 					struct Price
 					{
+						struct ResourcePriceModel
+						{
+							struct Rule1
+							{
+								std::string description;
+								long ruleId;
+							};
+							float originalPrice;
+							float discountPrice;
+							std::vector<ResourcePriceModel::Rule1> subRules;
+							std::string resource;
+							float tradePrice;
+						};
 						float originalPrice;
 						float discountPrice;
 						std::string currency;
+						std::vector<ResourcePriceModel> detailInfos;
 						float tradePrice;
 					};
 					struct Rule
@@ -46,7 +60,7 @@ namespace AlibabaCloud
 						std::string description;
 						long ruleId;
 					};
-					std::vector<Price> price;
+					Price price;
 					std::vector<Rule> rules;
 				};
 
@@ -54,12 +68,12 @@ namespace AlibabaCloud
 				DescribePriceResult();
 				explicit DescribePriceResult(const std::string &payload);
 				~DescribePriceResult();
-				std::vector<PriceInfo> getPriceInfo()const;
+				PriceInfo getPriceInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<PriceInfo> priceInfo_;
+				PriceInfo priceInfo_;
 
 			};
 		}

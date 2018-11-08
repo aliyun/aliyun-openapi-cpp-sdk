@@ -48,6 +48,8 @@ void DescribeRegionsResult::parse(const std::string &payload)
 			regionsObject.regionId = value["RegionId"].asString();
 		if(!value["LocalName"].isNull())
 			regionsObject.localName = value["LocalName"].asString();
+		if(!value["RegionEndpoint"].isNull())
+			regionsObject.regionEndpoint = value["RegionEndpoint"].asString();
 		if(!value["Status"].isNull())
 			regionsObject.status = value["Status"].asString();
 		regions_.push_back(regionsObject);

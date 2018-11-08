@@ -19,22 +19,11 @@
 using AlibabaCloud::EHPC::Model::ListJobTemplatesRequest;
 
 ListJobTemplatesRequest::ListJobTemplatesRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "ListJobTemplates")
+	RpcServiceRequest("ehpc", "2018-04-12", "ListJobTemplates")
 {}
 
 ListJobTemplatesRequest::~ListJobTemplatesRequest()
 {}
-
-std::string ListJobTemplatesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListJobTemplatesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
 
 std::string ListJobTemplatesRequest::getName()const
 {

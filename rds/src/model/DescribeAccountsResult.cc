@@ -54,6 +54,8 @@ void DescribeAccountsResult::parse(const std::string &payload)
 			accountsObject.accountType = value["AccountType"].asString();
 		if(!value["AccountDescription"].isNull())
 			accountsObject.accountDescription = value["AccountDescription"].asString();
+		if(!value["PrivExceeded"].isNull())
+			accountsObject.privExceeded = value["PrivExceeded"].asString();
 		auto allDatabasePrivileges = value["DatabasePrivileges"]["DatabasePrivilege"];
 		for (auto value : allDatabasePrivileges)
 		{
@@ -62,6 +64,8 @@ void DescribeAccountsResult::parse(const std::string &payload)
 				databasePrivilegesObject.dBName = value["DBName"].asString();
 			if(!value["AccountPrivilege"].isNull())
 				databasePrivilegesObject.accountPrivilege = value["AccountPrivilege"].asString();
+			if(!value["AccountPrivilegeDetail"].isNull())
+				databasePrivilegesObject.accountPrivilegeDetail = value["AccountPrivilegeDetail"].asString();
 			accountsObject.databasePrivileges.push_back(databasePrivilegesObject);
 		}
 		accounts_.push_back(accountsObject);

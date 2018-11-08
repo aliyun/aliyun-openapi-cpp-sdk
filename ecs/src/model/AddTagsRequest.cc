@@ -25,17 +25,6 @@ AddTagsRequest::AddTagsRequest() :
 AddTagsRequest::~AddTagsRequest()
 {}
 
-std::string AddTagsRequest::getTag4Value()const
-{
-	return tag4Value_;
-}
-
-void AddTagsRequest::setTag4Value(const std::string& tag4Value)
-{
-	tag4Value_ = tag4Value;
-	setParameter("Tag4Value", tag4Value);
-}
-
 long AddTagsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,28 +47,6 @@ void AddTagsRequest::setResourceId(const std::string& resourceId)
 	setParameter("ResourceId", resourceId);
 }
 
-std::string AddTagsRequest::getTag2Key()const
-{
-	return tag2Key_;
-}
-
-void AddTagsRequest::setTag2Key(const std::string& tag2Key)
-{
-	tag2Key_ = tag2Key;
-	setParameter("Tag2Key", tag2Key);
-}
-
-std::string AddTagsRequest::getTag5Key()const
-{
-	return tag5Key_;
-}
-
-void AddTagsRequest::setTag5Key(const std::string& tag5Key)
-{
-	tag5Key_ = tag5Key;
-	setParameter("Tag5Key", tag5Key);
-}
-
 std::string AddTagsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -91,15 +58,32 @@ void AddTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAcc
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string AddTagsRequest::getTag3Key()const
+std::string AddTagsRequest::getRegionId()const
 {
-	return tag3Key_;
+	return regionId_;
 }
 
-void AddTagsRequest::setTag3Key(const std::string& tag3Key)
+void AddTagsRequest::setRegionId(const std::string& regionId)
 {
-	tag3Key_ = tag3Key;
-	setParameter("Tag3Key", tag3Key);
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::vector<AddTagsRequest::Tag> AddTagsRequest::getTag()const
+{
+	return tag_;
+}
+
+void AddTagsRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 
 long AddTagsRequest::getOwnerId()const
@@ -122,82 +106,5 @@ void AddTagsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
 	setParameter("ResourceType", resourceType);
-}
-
-std::string AddTagsRequest::getTag5Value()const
-{
-	return tag5Value_;
-}
-
-void AddTagsRequest::setTag5Value(const std::string& tag5Value)
-{
-	tag5Value_ = tag5Value;
-	setParameter("Tag5Value", tag5Value);
-}
-
-std::string AddTagsRequest::getTag1Key()const
-{
-	return tag1Key_;
-}
-
-void AddTagsRequest::setTag1Key(const std::string& tag1Key)
-{
-	tag1Key_ = tag1Key;
-	setParameter("Tag1Key", tag1Key);
-}
-
-std::string AddTagsRequest::getTag1Value()const
-{
-	return tag1Value_;
-}
-
-void AddTagsRequest::setTag1Value(const std::string& tag1Value)
-{
-	tag1Value_ = tag1Value;
-	setParameter("Tag1Value", tag1Value);
-}
-
-std::string AddTagsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AddTagsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string AddTagsRequest::getTag2Value()const
-{
-	return tag2Value_;
-}
-
-void AddTagsRequest::setTag2Value(const std::string& tag2Value)
-{
-	tag2Value_ = tag2Value;
-	setParameter("Tag2Value", tag2Value);
-}
-
-std::string AddTagsRequest::getTag4Key()const
-{
-	return tag4Key_;
-}
-
-void AddTagsRequest::setTag4Key(const std::string& tag4Key)
-{
-	tag4Key_ = tag4Key;
-	setParameter("Tag4Key", tag4Key);
-}
-
-std::string AddTagsRequest::getTag3Value()const
-{
-	return tag3Value_;
-}
-
-void AddTagsRequest::setTag3Value(const std::string& tag3Value)
-{
-	tag3Value_ = tag3Value;
-	setParameter("Tag3Value", tag3Value);
 }
 

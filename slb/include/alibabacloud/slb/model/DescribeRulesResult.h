@@ -34,11 +34,26 @@ namespace AlibabaCloud
 			public:
 				struct Rule
 				{
+					int cookieTimeout;
+					std::string cookie;
 					std::string vServerGroupId;
+					int healthCheckInterval;
+					int unhealthyThreshold;
+					std::string scheduler;
+					std::string healthCheckURI;
 					std::string ruleId;
-					std::string domain;
-					std::string ruleName;
+					std::string healthCheck;
+					int healthCheckTimeout;
 					std::string url;
+					std::string stickySession;
+					int healthCheckConnectPort;
+					int healthyThreshold;
+					std::string listenerSync;
+					std::string healthCheckDomain;
+					std::string stickySessionType;
+					std::string domain;
+					std::string healthCheckHttpCode;
+					std::string ruleName;
 				};
 
 

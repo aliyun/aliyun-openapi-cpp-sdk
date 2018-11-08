@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				AllocateEipAddressResult();
 				explicit AllocateEipAddressResult(const std::string &payload);
 				~AllocateEipAddressResult();
+				std::string getResourceGroupId()const;
 				std::string getAllocationId()const;
 				std::string getEipAddress()const;
 				long getOrderId()const;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string resourceGroupId_;
 				std::string allocationId_;
 				std::string eipAddress_;
 				long orderId_;

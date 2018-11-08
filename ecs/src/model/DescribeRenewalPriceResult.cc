@@ -40,40 +40,54 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allPriceInfo = value["PriceInfo"];
-	for (auto value : allPriceInfo)
+	auto priceInfoNode = value["PriceInfo"];
+	auto allRules = value["Rules"]["Rule"];
+	for (auto value : allRules)
 	{
-		PriceInfo priceInfoObject;
-		auto allRules = value["Rules"]["Rule"];
-		for (auto value : allRules)
+		PriceInfo::Rule ruleObject;
+		if(!value["RuleId"].isNull())
+			ruleObject.ruleId = std::stol(value["RuleId"].asString());
+		if(!value["Description"].isNull())
+			ruleObject.description = value["Description"].asString();
+		priceInfo_.rules.push_back(ruleObject);
+	}
+	auto priceNode = priceInfoNode["Price"];
+	if(!priceNode["OriginalPrice"].isNull())
+		priceInfo_.price.originalPrice = std::stof(priceNode["OriginalPrice"].asString());
+	if(!priceNode["DiscountPrice"].isNull())
+		priceInfo_.price.discountPrice = std::stof(priceNode["DiscountPrice"].asString());
+	if(!priceNode["TradePrice"].isNull())
+		priceInfo_.price.tradePrice = std::stof(priceNode["TradePrice"].asString());
+	if(!priceNode["Currency"].isNull())
+		priceInfo_.price.currency = priceNode["Currency"].asString();
+	auto allDetailInfos = value["DetailInfos"]["ResourcePriceModel"];
+	for (auto value : allDetailInfos)
+	{
+		PriceInfo::Price::ResourcePriceModel resourcePriceModelObject;
+		if(!value["Resource"].isNull())
+			resourcePriceModelObject.resource = value["Resource"].asString();
+		if(!value["OriginalPrice"].isNull())
+			resourcePriceModelObject.originalPrice = std::stof(value["OriginalPrice"].asString());
+		if(!value["DiscountPrice"].isNull())
+			resourcePriceModelObject.discountPrice = std::stof(value["DiscountPrice"].asString());
+		if(!value["TradePrice"].isNull())
+			resourcePriceModelObject.tradePrice = std::stof(value["TradePrice"].asString());
+		auto allSubRules = value["SubRules"]["Rule"];
+		for (auto value : allSubRules)
 		{
-			PriceInfo::Rule ruleObject;
+			PriceInfo::Price::ResourcePriceModel::Rule1 subRulesObject;
 			if(!value["RuleId"].isNull())
-				ruleObject.ruleId = std::stol(value["RuleId"].asString());
+				subRulesObject.ruleId = std::stol(value["RuleId"].asString());
 			if(!value["Description"].isNull())
-				ruleObject.description = value["Description"].asString();
-			priceInfoObject.rules.push_back(ruleObject);
+				subRulesObject.description = value["Description"].asString();
+			resourcePriceModelObject.subRules.push_back(subRulesObject);
 		}
-		auto allPrice = value["Price"];
-		for (auto value : allPrice)
-		{
-			PriceInfo::Price priceObject;
-			if(!value["OriginalPrice"].isNull())
-				priceObject.originalPrice = std::stof(value["OriginalPrice"].asString());
-			if(!value["DiscountPrice"].isNull())
-				priceObject.discountPrice = std::stof(value["DiscountPrice"].asString());
-			if(!value["TradePrice"].isNull())
-				priceObject.tradePrice = std::stof(value["TradePrice"].asString());
-			if(!value["Currency"].isNull())
-				priceObject.currency = value["Currency"].asString();
-			priceInfoObject.price.push_back(priceObject);
-		}
-		priceInfo_.push_back(priceInfoObject);
+		priceInfo_.price.detailInfos.push_back(resourcePriceModelObject);
 	}
 
 }
 
-std::vector<DescribeRenewalPriceResult::PriceInfo> DescribeRenewalPriceResult::getPriceInfo()const
+DescribeRenewalPriceResult::PriceInfo DescribeRenewalPriceResult::getPriceInfo()const
 {
 	return priceInfo_;
 }

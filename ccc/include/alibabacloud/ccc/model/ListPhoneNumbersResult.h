@@ -49,8 +49,10 @@ namespace AlibabaCloud
 					std::string instanceId;
 					int remainingTime;
 					int trunks;
+					std::string city;
 					std::string phoneNumberId;
-					std::vector<ContactFlow> contactFlow;
+					ContactFlow contactFlow;
+					std::string province;
 					std::string phoneNumberDescription;
 				};
 

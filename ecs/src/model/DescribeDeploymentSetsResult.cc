@@ -52,6 +52,8 @@ void DescribeDeploymentSetsResult::parse(const std::string &payload)
 			deploymentSetsObject.deploymentSetName = value["DeploymentSetName"].asString();
 		if(!value["Strategy"].isNull())
 			deploymentSetsObject.strategy = value["Strategy"].asString();
+		if(!value["DeploymentStrategy"].isNull())
+			deploymentSetsObject.deploymentStrategy = value["DeploymentStrategy"].asString();
 		if(!value["Domain"].isNull())
 			deploymentSetsObject.domain = value["Domain"].asString();
 		if(!value["Granularity"].isNull())
@@ -60,6 +62,9 @@ void DescribeDeploymentSetsResult::parse(const std::string &payload)
 			deploymentSetsObject.instanceAmount = std::stoi(value["InstanceAmount"].asString());
 		if(!value["CreationTime"].isNull())
 			deploymentSetsObject.creationTime = value["CreationTime"].asString();
+		auto allInstanceIds = value["InstanceIds"]["InstanceId"];
+		for (auto value : allInstanceIds)
+			deploymentSetsObject.instanceIds.push_back(value.asString());
 		deploymentSets_.push_back(deploymentSetsObject);
 	}
 	if(!value["RegionId"].isNull())

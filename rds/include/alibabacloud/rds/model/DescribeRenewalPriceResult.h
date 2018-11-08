@@ -47,7 +47,7 @@ namespace AlibabaCloud
 						std::string isSelected;
 						std::string name;
 					};
-					std::vector<ActivityInfo> activityInfo;
+					ActivityInfo activityInfo;
 					float originalPrice;
 					std::string currency;
 					float discountPrice;
@@ -67,13 +67,13 @@ namespace AlibabaCloud
 				explicit DescribeRenewalPriceResult(const std::string &payload);
 				~DescribeRenewalPriceResult();
 				std::vector<Rule> getRules()const;
-				std::vector<PriceInfo> getPriceInfo()const;
+				PriceInfo getPriceInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<Rule> rules_;
-				std::vector<PriceInfo> priceInfo_;
+				PriceInfo priceInfo_;
 
 			};
 		}

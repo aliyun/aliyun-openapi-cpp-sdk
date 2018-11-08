@@ -58,6 +58,12 @@ void DescribeCACertificatesResult::parse(const std::string &payload)
 			cACertificatesObject.createTime = value["CreateTime"].asString();
 		if(!value["CreateTimeStamp"].isNull())
 			cACertificatesObject.createTimeStamp = std::stol(value["CreateTimeStamp"].asString());
+		if(!value["ExpireTime"].isNull())
+			cACertificatesObject.expireTime = value["ExpireTime"].asString();
+		if(!value["ExpireTimeStamp"].isNull())
+			cACertificatesObject.expireTimeStamp = std::stol(value["ExpireTimeStamp"].asString());
+		if(!value["CommonName"].isNull())
+			cACertificatesObject.commonName = value["CommonName"].asString();
 		cACertificates_.push_back(cACertificatesObject);
 	}
 

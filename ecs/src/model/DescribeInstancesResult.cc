@@ -70,6 +70,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.memory = std::stoi(value["Memory"].asString());
 		if(!value["HostName"].isNull())
 			instancesObject.hostName = value["HostName"].asString();
+		if(!value["DeploymentSetId"].isNull())
+			instancesObject.deploymentSetId = value["DeploymentSetId"].asString();
 		if(!value["Status"].isNull())
 			instancesObject.status = value["Status"].asString();
 		if(!value["SerialNumber"].isNull())
@@ -124,6 +126,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.hpcClusterId = value["HpcClusterId"].asString();
 		if(!value["StoppedMode"].isNull())
 			instancesObject.stoppedMode = value["StoppedMode"].asString();
+		if(!value["CreditSpecification"].isNull())
+			instancesObject.creditSpecification = value["CreditSpecification"].asString();
 		auto allNetworkInterfaces = value["NetworkInterfaces"]["NetworkInterface"];
 		for (auto value : allNetworkInterfaces)
 		{
@@ -156,37 +160,32 @@ void DescribeInstancesResult::parse(const std::string &payload)
 				tagsObject.tagValue = value["TagValue"].asString();
 			instancesObject.tags.push_back(tagsObject);
 		}
-		auto allVpcAttributes = value["VpcAttributes"];
-		for (auto value : allVpcAttributes)
-		{
-			Instance::VpcAttributes vpcAttributesObject;
-			if(!value["VpcId"].isNull())
-				vpcAttributesObject.vpcId = value["VpcId"].asString();
-			if(!value["VSwitchId"].isNull())
-				vpcAttributesObject.vSwitchId = value["VSwitchId"].asString();
-			if(!value["NatIpAddress"].isNull())
-				vpcAttributesObject.natIpAddress = value["NatIpAddress"].asString();
-			auto allPrivateIpAddress = value["PrivateIpAddress"]["IpAddress"];
+		auto vpcAttributesNode = value["VpcAttributes"];
+		if(!vpcAttributesNode["VpcId"].isNull())
+			instancesObject.vpcAttributes.vpcId = vpcAttributesNode["VpcId"].asString();
+		if(!vpcAttributesNode["VSwitchId"].isNull())
+			instancesObject.vpcAttributes.vSwitchId = vpcAttributesNode["VSwitchId"].asString();
+		if(!vpcAttributesNode["NatIpAddress"].isNull())
+			instancesObject.vpcAttributes.natIpAddress = vpcAttributesNode["NatIpAddress"].asString();
+			auto allPrivateIpAddress = vpcAttributesNode["PrivateIpAddress"]["IpAddress"];
 			for (auto value : allPrivateIpAddress)
-				vpcAttributesObject.privateIpAddress.push_back(value.asString());
-			instancesObject.vpcAttributes.push_back(vpcAttributesObject);
-		}
-		auto allEipAddress = value["EipAddress"];
-		for (auto value : allEipAddress)
-		{
-			Instance::EipAddress eipAddressObject;
-			if(!value["AllocationId"].isNull())
-				eipAddressObject.allocationId = value["AllocationId"].asString();
-			if(!value["IpAddress"].isNull())
-				eipAddressObject.ipAddress = value["IpAddress"].asString();
-			if(!value["Bandwidth"].isNull())
-				eipAddressObject.bandwidth = std::stoi(value["Bandwidth"].asString());
-			if(!value["InternetChargeType"].isNull())
-				eipAddressObject.internetChargeType = value["InternetChargeType"].asString();
-			if(!value["IsSupportUnassociate"].isNull())
-				eipAddressObject.isSupportUnassociate = value["IsSupportUnassociate"].asString() == "true";
-			instancesObject.eipAddress.push_back(eipAddressObject);
-		}
+				instancesObject.vpcAttributes.privateIpAddress.push_back(value.asString());
+		auto eipAddressNode = value["EipAddress"];
+		if(!eipAddressNode["AllocationId"].isNull())
+			instancesObject.eipAddress.allocationId = eipAddressNode["AllocationId"].asString();
+		if(!eipAddressNode["IpAddress"].isNull())
+			instancesObject.eipAddress.ipAddress = eipAddressNode["IpAddress"].asString();
+		if(!eipAddressNode["Bandwidth"].isNull())
+			instancesObject.eipAddress.bandwidth = std::stoi(eipAddressNode["Bandwidth"].asString());
+		if(!eipAddressNode["InternetChargeType"].isNull())
+			instancesObject.eipAddress.internetChargeType = eipAddressNode["InternetChargeType"].asString();
+		if(!eipAddressNode["IsSupportUnassociate"].isNull())
+			instancesObject.eipAddress.isSupportUnassociate = eipAddressNode["IsSupportUnassociate"].asString() == "true";
+		auto dedicatedHostAttributeNode = value["DedicatedHostAttribute"];
+		if(!dedicatedHostAttributeNode["DedicatedHostId"].isNull())
+			instancesObject.dedicatedHostAttribute.dedicatedHostId = dedicatedHostAttributeNode["DedicatedHostId"].asString();
+		if(!dedicatedHostAttributeNode["DedicatedHostName"].isNull())
+			instancesObject.dedicatedHostAttribute.dedicatedHostName = dedicatedHostAttributeNode["DedicatedHostName"].asString();
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
 			instancesObject.securityGroupIds.push_back(value.asString());

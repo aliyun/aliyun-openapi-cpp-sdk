@@ -124,17 +124,6 @@ void DescribeInvocationResultsRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeInvocationResultsRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeInvocationResultsRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeInvocationResultsRequest::getSecurityToken()const
 {
 	return securityToken_;

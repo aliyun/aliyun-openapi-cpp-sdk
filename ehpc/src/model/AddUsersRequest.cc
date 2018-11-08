@@ -19,22 +19,11 @@
 using AlibabaCloud::EHPC::Model::AddUsersRequest;
 
 AddUsersRequest::AddUsersRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "AddUsers")
+	RpcServiceRequest("ehpc", "2018-04-12", "AddUsers")
 {}
 
 AddUsersRequest::~AddUsersRequest()
 {}
-
-bool AddUsersRequest::getReleaseInstance()const
-{
-	return releaseInstance_;
-}
-
-void AddUsersRequest::setReleaseInstance(bool releaseInstance)
-{
-	releaseInstance_ = releaseInstance;
-	setParameter("ReleaseInstance", std::to_string(releaseInstance));
-}
 
 std::string AddUsersRequest::getClusterId()const
 {
@@ -59,9 +48,9 @@ void AddUsersRequest::setUser(const std::vector<User>& user)
 	for(int i = 0; i!= user.size(); i++)	{
 		auto obj = user.at(i);
 		std::string str ="User."+ std::to_string(i);
+		setParameter(str + ".Password", obj.password);
 		setParameter(str + ".Name", obj.name);
 		setParameter(str + ".Group", obj.group);
-		setParameter(str + ".Password", obj.password);
 	}
 }
 

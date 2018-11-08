@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setDuration(int duration);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getPeriodUnit()const;
+				void setPeriodUnit(const std::string& periodUnit);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				bool getAutoRenew()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
             private:
 				int duration_;
 				long resourceOwnerId_;
+				std::string periodUnit_;
 				std::string instanceId_;
 				bool autoRenew_;
 				std::string resourceOwnerAccount_;

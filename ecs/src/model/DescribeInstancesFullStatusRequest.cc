@@ -125,17 +125,6 @@ void DescribeInstancesFullStatusRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeInstancesFullStatusRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeInstancesFullStatusRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeInstancesFullStatusRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -244,6 +233,18 @@ void DescribeInstancesFullStatusRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
 	setParameter("App_ip", app_ip);
+}
+
+std::vector<std::string> DescribeInstancesFullStatusRequest::getInstanceEventType()const
+{
+	return instanceEventType_;
+}
+
+void DescribeInstancesFullStatusRequest::setInstanceEventType(const std::vector<std::string>& instanceEventType)
+{
+	instanceEventType_ = instanceEventType;
+	for(int i = 0; i!= instanceEventType.size(); i++)
+		setParameter("InstanceEventType."+ std::to_string(i), instanceEventType.at(i));
 }
 
 std::string DescribeInstancesFullStatusRequest::getResourceOwnerAccount()const

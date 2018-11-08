@@ -25,6 +25,17 @@ CreateScalingGroupRequest::CreateScalingGroupRequest() :
 CreateScalingGroupRequest::~CreateScalingGroupRequest()
 {}
 
+std::string CreateScalingGroupRequest::getMultiAZPolicy()const
+{
+	return multiAZPolicy_;
+}
+
+void CreateScalingGroupRequest::setMultiAZPolicy(const std::string& multiAZPolicy)
+{
+	multiAZPolicy_ = multiAZPolicy;
+	setParameter("MultiAZPolicy", multiAZPolicy);
+}
+
 std::string CreateScalingGroupRequest::getDBInstanceIds()const
 {
 	return dBInstanceIds_;
@@ -36,6 +47,17 @@ void CreateScalingGroupRequest::setDBInstanceIds(const std::string& dBInstanceId
 	setParameter("DBInstanceIds", dBInstanceIds);
 }
 
+std::string CreateScalingGroupRequest::getLaunchTemplateId()const
+{
+	return launchTemplateId_;
+}
+
+void CreateScalingGroupRequest::setLaunchTemplateId(const std::string& launchTemplateId)
+{
+	launchTemplateId_ = launchTemplateId;
+	setParameter("LaunchTemplateId", launchTemplateId);
+}
+
 std::string CreateScalingGroupRequest::getLoadBalancerIds()const
 {
 	return loadBalancerIds_;
@@ -45,6 +67,17 @@ void CreateScalingGroupRequest::setLoadBalancerIds(const std::string& loadBalanc
 {
 	loadBalancerIds_ = loadBalancerIds;
 	setParameter("LoadBalancerIds", loadBalancerIds);
+}
+
+std::string CreateScalingGroupRequest::getHealthCheckType()const
+{
+	return healthCheckType_;
+}
+
+void CreateScalingGroupRequest::setHealthCheckType(const std::string& healthCheckType)
+{
+	healthCheckType_ = healthCheckType;
+	setParameter("HealthCheckType", healthCheckType);
 }
 
 std::string CreateScalingGroupRequest::getResourceOwnerAccount()const
@@ -114,6 +147,17 @@ void CreateScalingGroupRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string CreateScalingGroupRequest::getLaunchTemplateVersion()const
+{
+	return launchTemplateVersion_;
+}
+
+void CreateScalingGroupRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
+{
+	launchTemplateVersion_ = launchTemplateVersion;
+	setParameter("LaunchTemplateVersion", launchTemplateVersion);
+}
+
 std::string CreateScalingGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -156,6 +200,27 @@ void CreateScalingGroupRequest::setMaxSize(int maxSize)
 {
 	maxSize_ = maxSize;
 	setParameter("MaxSize", std::to_string(maxSize));
+}
+
+std::vector<CreateScalingGroupRequest::LifecycleHook> CreateScalingGroupRequest::getLifecycleHook()const
+{
+	return lifecycleHook_;
+}
+
+void CreateScalingGroupRequest::setLifecycleHook(const std::vector<LifecycleHook>& lifecycleHook)
+{
+	lifecycleHook_ = lifecycleHook;
+	int i = 0;
+	for(int i = 0; i!= lifecycleHook.size(); i++)	{
+		auto obj = lifecycleHook.at(i);
+		std::string str ="LifecycleHook."+ std::to_string(i);
+		setParameter(str + ".DefaultResult", obj.defaultResult);
+		setParameter(str + ".LifecycleHookName", obj.lifecycleHookName);
+		setParameter(str + ".HeartbeatTimeout", std::to_string(obj.heartbeatTimeout));
+		setParameter(str + ".NotificationArn", obj.notificationArn);
+		setParameter(str + ".NotificationMetadata", obj.notificationMetadata);
+		setParameter(str + ".LifecycleTransition", obj.lifecycleTransition);
+	}
 }
 
 int CreateScalingGroupRequest::getDefaultCooldown()const

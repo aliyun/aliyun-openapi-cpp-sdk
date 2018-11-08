@@ -36,6 +36,17 @@ void DescribeVpcsRequest::setVpcName(const std::string& vpcName)
 	setParameter("VpcName", vpcName);
 }
 
+std::string DescribeVpcsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeVpcsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 long DescribeVpcsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

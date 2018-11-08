@@ -25,17 +25,6 @@ ModifyInstanceAttributeRequest::ModifyInstanceAttributeRequest() :
 ModifyInstanceAttributeRequest::~ModifyInstanceAttributeRequest()
 {}
 
-std::string ModifyInstanceAttributeRequest::getUserData()const
-{
-	return userData_;
-}
-
-void ModifyInstanceAttributeRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setParameter("UserData", userData);
-}
-
 long ModifyInstanceAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,50 +34,6 @@ void ModifyInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ModifyInstanceAttributeRequest::getPassword()const
-{
-	return password_;
-}
-
-void ModifyInstanceAttributeRequest::setPassword(const std::string& password)
-{
-	password_ = password;
-	setParameter("Password", password);
-}
-
-std::string ModifyInstanceAttributeRequest::getHostName()const
-{
-	return hostName_;
-}
-
-void ModifyInstanceAttributeRequest::setHostName(const std::string& hostName)
-{
-	hostName_ = hostName;
-	setParameter("HostName", hostName);
-}
-
-std::string ModifyInstanceAttributeRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ModifyInstanceAttributeRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
-}
-
-std::string ModifyInstanceAttributeRequest::getInstanceName()const
-{
-	return instanceName_;
-}
-
-void ModifyInstanceAttributeRequest::setInstanceName(const std::string& instanceName)
-{
-	instanceName_ = instanceName;
-	setParameter("InstanceName", instanceName);
 }
 
 std::string ModifyInstanceAttributeRequest::getResourceOwnerAccount()const
@@ -135,6 +80,17 @@ void ModifyInstanceAttributeRequest::setDescription(const std::string& descripti
 	setParameter("Description", description);
 }
 
+std::string ModifyInstanceAttributeRequest::getCreditSpecification()const
+{
+	return creditSpecification_;
+}
+
+void ModifyInstanceAttributeRequest::setCreditSpecification(const std::string& creditSpecification)
+{
+	creditSpecification_ = creditSpecification;
+	setParameter("CreditSpecification", creditSpecification);
+}
+
 long ModifyInstanceAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -144,5 +100,60 @@ void ModifyInstanceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyInstanceAttributeRequest::getUserData()const
+{
+	return userData_;
+}
+
+void ModifyInstanceAttributeRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setParameter("UserData", userData);
+}
+
+std::string ModifyInstanceAttributeRequest::getPassword()const
+{
+	return password_;
+}
+
+void ModifyInstanceAttributeRequest::setPassword(const std::string& password)
+{
+	password_ = password;
+	setParameter("Password", password);
+}
+
+std::string ModifyInstanceAttributeRequest::getHostName()const
+{
+	return hostName_;
+}
+
+void ModifyInstanceAttributeRequest::setHostName(const std::string& hostName)
+{
+	hostName_ = hostName;
+	setParameter("HostName", hostName);
+}
+
+std::string ModifyInstanceAttributeRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ModifyInstanceAttributeRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string ModifyInstanceAttributeRequest::getInstanceName()const
+{
+	return instanceName_;
+}
+
+void ModifyInstanceAttributeRequest::setInstanceName(const std::string& instanceName)
+{
+	instanceName_ = instanceName;
+	setParameter("InstanceName", instanceName);
 }
 

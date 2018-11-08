@@ -63,12 +63,10 @@ namespace AlibabaCloud
 				void setWaitUri(const std::string& waitUri);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
-				long getMaxQps()const;
-				void setMaxQps(long maxQps);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
+				std::string getPopProduct()const;
+				void setPopProduct(const std::string& popProduct);
 				int getMaxTimeWait()const;
 				void setMaxTimeWait(int maxTimeWait);
 				std::string getDomainName()const;
@@ -107,9 +105,8 @@ namespace AlibabaCloud
 				std::string callerUidEmail_;
 				std::string waitUri_;
 				long callerUid_;
-				long maxQps_;
 				std::string app_ip_;
-				std::string product_;
+				std::string popProduct_;
 				int maxTimeWait_;
 				std::string domainName_;
 				int allowPct_;

@@ -50,8 +50,9 @@ namespace AlibabaCloud
 						int autoCleanDays;
 						bool autoCleanEnabled;
 					};
-					std::vector<Quota> quota;
-					std::vector<AutoCleanConfig> autoCleanConfig;
+					Quota quota;
+					long ctime;
+					AutoCleanConfig autoCleanConfig;
 				};
 
 
@@ -60,7 +61,7 @@ namespace AlibabaCloud
 				~GetLibraryResult();
 				std::string getAction()const;
 				std::string getMessage()const;
-				std::vector<Library> getLibrary()const;
+				Library getLibrary()const;
 				std::string getCode()const;
 
 			protected:
@@ -68,7 +69,7 @@ namespace AlibabaCloud
 			private:
 				std::string action_;
 				std::string message_;
-				std::vector<Library> library_;
+				Library library_;
 				std::string code_;
 
 			};

@@ -91,7 +91,7 @@ namespace AlibabaCloud
 				explicit ListCallDetailRecordsResult(const std::string &payload);
 				~ListCallDetailRecordsResult();
 				std::string getMessage()const;
-				std::vector<CallDetailRecords> getCallDetailRecords()const;
+				CallDetailRecords getCallDetailRecords()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -100,7 +100,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::vector<CallDetailRecords> callDetailRecords_;
+				CallDetailRecords callDetailRecords_;
 				int httpStatusCode_;
 				std::string code_;
 				bool success_;

@@ -45,12 +45,18 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/RegisterTagResult.h
 	include/alibabacloud/cloudphoto/model/ListTimeLinePhotosRequest.h
 	include/alibabacloud/cloudphoto/model/ListTimeLinePhotosResult.h
+	include/alibabacloud/cloudphoto/model/FetchMomentPhotosRequest.h
+	include/alibabacloud/cloudphoto/model/FetchMomentPhotosResult.h
 	include/alibabacloud/cloudphoto/model/DeletePhotosRequest.h
 	include/alibabacloud/cloudphoto/model/DeletePhotosResult.h
 	include/alibabacloud/cloudphoto/model/MergeFacesRequest.h
 	include/alibabacloud/cloudphoto/model/MergeFacesResult.h
 	include/alibabacloud/cloudphoto/model/GetPhotosByMd5sRequest.h
 	include/alibabacloud/cloudphoto/model/GetPhotosByMd5sResult.h
+	include/alibabacloud/cloudphoto/model/FetchLibrariesRequest.h
+	include/alibabacloud/cloudphoto/model/FetchLibrariesResult.h
+	include/alibabacloud/cloudphoto/model/FetchAlbumTagPhotosRequest.h
+	include/alibabacloud/cloudphoto/model/FetchAlbumTagPhotosResult.h
 	include/alibabacloud/cloudphoto/model/CreateTransactionRequest.h
 	include/alibabacloud/cloudphoto/model/CreateTransactionResult.h
 	include/alibabacloud/cloudphoto/model/InactivatePhotosRequest.h
@@ -69,6 +75,8 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/RemoveAlbumPhotosResult.h
 	include/alibabacloud/cloudphoto/model/ListAlbumsRequest.h
 	include/alibabacloud/cloudphoto/model/ListAlbumsResult.h
+	include/alibabacloud/cloudphoto/model/FetchPhotosRequest.h
+	include/alibabacloud/cloudphoto/model/FetchPhotosResult.h
 	include/alibabacloud/cloudphoto/model/ListPhotoFacesRequest.h
 	include/alibabacloud/cloudphoto/model/ListPhotoFacesResult.h
 	include/alibabacloud/cloudphoto/model/RenameAlbumRequest.h
@@ -180,12 +188,18 @@ set(cloudphoto_src
 	src/model/RegisterTagResult.cc
 	src/model/ListTimeLinePhotosRequest.cc
 	src/model/ListTimeLinePhotosResult.cc
+	src/model/FetchMomentPhotosRequest.cc
+	src/model/FetchMomentPhotosResult.cc
 	src/model/DeletePhotosRequest.cc
 	src/model/DeletePhotosResult.cc
 	src/model/MergeFacesRequest.cc
 	src/model/MergeFacesResult.cc
 	src/model/GetPhotosByMd5sRequest.cc
 	src/model/GetPhotosByMd5sResult.cc
+	src/model/FetchLibrariesRequest.cc
+	src/model/FetchLibrariesResult.cc
+	src/model/FetchAlbumTagPhotosRequest.cc
+	src/model/FetchAlbumTagPhotosResult.cc
 	src/model/CreateTransactionRequest.cc
 	src/model/CreateTransactionResult.cc
 	src/model/InactivatePhotosRequest.cc
@@ -204,6 +218,8 @@ set(cloudphoto_src
 	src/model/RemoveAlbumPhotosResult.cc
 	src/model/ListAlbumsRequest.cc
 	src/model/ListAlbumsResult.cc
+	src/model/FetchPhotosRequest.cc
+	src/model/FetchPhotosResult.cc
 	src/model/ListPhotoFacesRequest.cc
 	src/model/ListPhotoFacesResult.cc
 	src/model/RenameAlbumRequest.cc

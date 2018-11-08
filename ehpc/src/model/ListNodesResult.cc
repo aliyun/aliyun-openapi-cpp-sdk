@@ -48,12 +48,14 @@ void ListNodesResult::parse(const std::string &payload)
 			nodesObject.id = value["Id"].asString();
 		if(!value["RegionId"].isNull())
 			nodesObject.regionId = value["RegionId"].asString();
+		if(!value["HostName"].isNull())
+			nodesObject.hostName = value["HostName"].asString();
 		if(!value["Status"].isNull())
 			nodesObject.status = value["Status"].asString();
+		if(!value["Version"].isNull())
+			nodesObject.version = value["Version"].asString();
 		if(!value["CreatedByEhpc"].isNull())
 			nodesObject.createdByEhpc = value["CreatedByEhpc"].asString() == "true";
-		if(!value["Role"].isNull())
-			nodesObject.role = value["Role"].asString();
 		if(!value["AddTime"].isNull())
 			nodesObject.addTime = value["AddTime"].asString();
 		if(!value["Expired"].isNull())
@@ -68,30 +70,25 @@ void ListNodesResult::parse(const std::string &payload)
 			nodesObject.imageOwnerAlias = value["ImageOwnerAlias"].asString();
 		if(!value["ImageId"].isNull())
 			nodesObject.imageId = value["ImageId"].asString();
-		auto allTotalResources = value["TotalResources"];
-		for (auto value : allTotalResources)
-		{
-			NodeInfo::TotalResources totalResourcesObject;
-			if(!value["Cpu"].isNull())
-				totalResourcesObject.cpu = std::stoi(value["Cpu"].asString());
-			if(!value["Memory"].isNull())
-				totalResourcesObject.memory = std::stoi(value["Memory"].asString());
-			if(!value["Gpu"].isNull())
-				totalResourcesObject.gpu = std::stoi(value["Gpu"].asString());
-			nodesObject.totalResources.push_back(totalResourcesObject);
-		}
-		auto allUsedResources = value["UsedResources"];
-		for (auto value : allUsedResources)
-		{
-			NodeInfo::UsedResources usedResourcesObject;
-			if(!value["Cpu"].isNull())
-				usedResourcesObject.cpu = std::stoi(value["Cpu"].asString());
-			if(!value["Memory"].isNull())
-				usedResourcesObject.memory = std::stoi(value["Memory"].asString());
-			if(!value["Gpu"].isNull())
-				usedResourcesObject.gpu = std::stoi(value["Gpu"].asString());
-			nodesObject.usedResources.push_back(usedResourcesObject);
-		}
+		if(!value["Location"].isNull())
+			nodesObject.location = value["Location"].asString();
+		auto totalResourcesNode = value["TotalResources"];
+		if(!totalResourcesNode["Cpu"].isNull())
+			nodesObject.totalResources.cpu = std::stoi(totalResourcesNode["Cpu"].asString());
+		if(!totalResourcesNode["Memory"].isNull())
+			nodesObject.totalResources.memory = std::stoi(totalResourcesNode["Memory"].asString());
+		if(!totalResourcesNode["Gpu"].isNull())
+			nodesObject.totalResources.gpu = std::stoi(totalResourcesNode["Gpu"].asString());
+		auto usedResourcesNode = value["UsedResources"];
+		if(!usedResourcesNode["Cpu"].isNull())
+			nodesObject.usedResources.cpu = std::stoi(usedResourcesNode["Cpu"].asString());
+		if(!usedResourcesNode["Memory"].isNull())
+			nodesObject.usedResources.memory = std::stoi(usedResourcesNode["Memory"].asString());
+		if(!usedResourcesNode["Gpu"].isNull())
+			nodesObject.usedResources.gpu = std::stoi(usedResourcesNode["Gpu"].asString());
+		auto allRoles = value["Roles"]["Role"];
+		for (auto value : allRoles)
+			nodesObject.roles.push_back(value.asString());
 		nodes_.push_back(nodesObject);
 	}
 	if(!value["TotalCount"].isNull())

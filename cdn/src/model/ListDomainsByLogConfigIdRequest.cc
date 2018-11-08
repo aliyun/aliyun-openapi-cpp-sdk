@@ -36,6 +36,17 @@ void ListDomainsByLogConfigIdRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
+std::string ListDomainsByLogConfigIdRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void ListDomainsByLogConfigIdRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
+
 std::string ListDomainsByLogConfigIdRequest::getProduct()const
 {
 	return product_;

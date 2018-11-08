@@ -50,7 +50,7 @@ namespace AlibabaCloud
 					};
 					std::string regionNo;
 					std::string commodityCode;
-					std::vector<InstanceType> instanceType;
+					InstanceType instanceType;
 					std::string scene;
 					std::vector<RecommendInstanceType::Zone> zones;
 				};

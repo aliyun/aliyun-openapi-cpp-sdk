@@ -49,16 +49,18 @@ namespace AlibabaCloud
 					std::string status;
 					std::string imageOwnerAlias;
 					bool expired;
+					std::vector<std::string> roles;
 					std::string addTime;
-					std::vector<UsedResources> usedResources;
-					std::string role;
+					UsedResources usedResources;
 					bool createdByEhpc;
-					std::vector<TotalResources> totalResources;
+					std::string version;
+					TotalResources totalResources;
 					std::string expiredTime;
 					std::string imageId;
 					std::string id;
 					std::string regionId;
 					std::string lockReason;
+					std::string hostName;
 					std::string spotStrategy;
 				};
 

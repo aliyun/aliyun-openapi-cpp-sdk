@@ -55,8 +55,6 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
@@ -69,6 +67,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
+				std::vector<std::string> getInstanceEventCycleStatus()const;
+				void setInstanceEventCycleStatus(const std::vector<std::string>& instanceEventCycleStatus);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				std::string getEventPublishTimeEnd()const;
@@ -77,6 +77,8 @@ namespace AlibabaCloud
 				void setCallerUid(long callerUid);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
+				std::vector<std::string> getInstanceEventType()const;
+				void setInstanceEventType(const std::vector<std::string>& instanceEventType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -115,17 +117,18 @@ namespace AlibabaCloud
 				std::string callerType_;
 				int pageNumber_;
 				std::string accessKeyId_;
-				std::string resourceGroupId_;
 				std::string securityToken_;
 				std::string regionId_;
 				bool enable_;
 				std::string requestContent_;
 				int pageSize_;
 				std::string callerBidEmail_;
+				std::vector<std::string> instanceEventCycleStatus_;
 				std::string callerUidEmail_;
 				std::string eventPublishTimeEnd_;
 				long callerUid_;
 				std::string app_ip_;
+				std::vector<std::string> instanceEventType_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string notBeforeStart_;

@@ -41,9 +41,9 @@ namespace AlibabaCloud
 					std::string stderrRedirectPath;
 					std::string stdoutRedirectPath;
 					std::string id;
-					std::string package;
 					std::string arrayRequest;
 					std::string runasUser;
+					std::string packagePath;
 					std::string name;
 				};
 

@@ -135,17 +135,6 @@ void DescribeSpotPriceHistoryRequest::setAccessKeyId(const std::string& accessKe
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeSpotPriceHistoryRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeSpotPriceHistoryRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeSpotPriceHistoryRequest::getSecurityToken()const
 {
 	return securityToken_;

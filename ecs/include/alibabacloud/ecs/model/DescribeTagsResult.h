@@ -37,13 +37,17 @@ namespace AlibabaCloud
 					struct ResourceTypeCount
 					{
 						int snapshot;
+						int eni;
+						int keyPair;
 						int instance;
 						int volume;
+						int launchTemplate;
 						int securitygroup;
+						int ddh;
 						int image;
 						int disk;
 					};
-					std::vector<ResourceTypeCount> resourceTypeCount;
+					ResourceTypeCount resourceTypeCount;
 					std::string tagKey;
 					std::string tagValue;
 				};

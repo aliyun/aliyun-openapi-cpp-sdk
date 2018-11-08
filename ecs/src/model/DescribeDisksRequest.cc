@@ -25,17 +25,6 @@ DescribeDisksRequest::DescribeDisksRequest() :
 DescribeDisksRequest::~DescribeDisksRequest()
 {}
 
-std::string DescribeDisksRequest::getTag4Value()const
-{
-	return tag4Value_;
-}
-
-void DescribeDisksRequest::setTag4Value(const std::string& tag4Value)
-{
-	tag4Value_ = tag4Value;
-	setParameter("Tag4Value", tag4Value);
-}
-
 long DescribeDisksRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -56,17 +45,6 @@ void DescribeDisksRequest::setSnapshotId(const std::string& snapshotId)
 {
 	snapshotId_ = snapshotId;
 	setParameter("SnapshotId", snapshotId);
-}
-
-std::string DescribeDisksRequest::getTag2Key()const
-{
-	return tag2Key_;
-}
-
-void DescribeDisksRequest::setTag2Key(const std::string& tag2Key)
-{
-	tag2Key_ = tag2Key;
-	setParameter("Tag2Key", tag2Key);
 }
 
 std::string DescribeDisksRequest::getFilter2Value()const
@@ -91,17 +69,6 @@ void DescribeDisksRequest::setAutoSnapshotPolicyId(const std::string& autoSnapsh
 	setParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
 }
 
-std::string DescribeDisksRequest::getTag3Key()const
-{
-	return tag3Key_;
-}
-
-void DescribeDisksRequest::setTag3Key(const std::string& tag3Key)
-{
-	tag3Key_ = tag3Key;
-	setParameter("Tag3Key", tag3Key);
-}
-
 int DescribeDisksRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -122,17 +89,6 @@ void DescribeDisksRequest::setDiskName(const std::string& diskName)
 {
 	diskName_ = diskName;
 	setParameter("DiskName", diskName);
-}
-
-std::string DescribeDisksRequest::getTag1Value()const
-{
-	return tag1Value_;
-}
-
-void DescribeDisksRequest::setTag1Value(const std::string& tag1Value)
-{
-	tag1Value_ = tag1Value;
-	setParameter("Tag1Value", tag1Value);
 }
 
 bool DescribeDisksRequest::getDeleteAutoSnapshot()const
@@ -223,6 +179,23 @@ void DescribeDisksRequest::setDiskIds(const std::string& diskIds)
 	setParameter("DiskIds", diskIds);
 }
 
+std::vector<DescribeDisksRequest::Tag> DescribeDisksRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeDisksRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
+}
+
 bool DescribeDisksRequest::getDeleteWithInstance()const
 {
 	return deleteWithInstance_;
@@ -232,17 +205,6 @@ void DescribeDisksRequest::setDeleteWithInstance(bool deleteWithInstance)
 {
 	deleteWithInstance_ = deleteWithInstance;
 	setParameter("DeleteWithInstance", std::to_string(deleteWithInstance));
-}
-
-std::string DescribeDisksRequest::getTag3Value()const
-{
-	return tag3Value_;
-}
-
-void DescribeDisksRequest::setTag3Value(const std::string& tag3Value)
-{
-	tag3Value_ = tag3Value;
-	setParameter("Tag3Value", tag3Value);
 }
 
 bool DescribeDisksRequest::getEnableAutoSnapshot()const
@@ -265,17 +227,6 @@ void DescribeDisksRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
 	setParameter("DryRun", std::to_string(dryRun));
-}
-
-std::string DescribeDisksRequest::getTag5Key()const
-{
-	return tag5Key_;
-}
-
-void DescribeDisksRequest::setTag5Key(const std::string& tag5Key)
-{
-	tag5Key_ = tag5Key;
-	setParameter("Tag5Key", tag5Key);
 }
 
 std::string DescribeDisksRequest::getResourceOwnerAccount()const
@@ -366,38 +317,16 @@ void DescribeDisksRequest::setDiskType(const std::string& diskType)
 	setParameter("DiskType", diskType);
 }
 
-std::string DescribeDisksRequest::getTag5Value()const
-{
-	return tag5Value_;
-}
-
-void DescribeDisksRequest::setTag5Value(const std::string& tag5Value)
-{
-	tag5Value_ = tag5Value;
-	setParameter("Tag5Value", tag5Value);
-}
-
-std::string DescribeDisksRequest::getTag1Key()const
-{
-	return tag1Key_;
-}
-
-void DescribeDisksRequest::setTag1Key(const std::string& tag1Key)
-{
-	tag1Key_ = tag1Key;
-	setParameter("Tag1Key", tag1Key);
-}
-
-std::vector<long> DescribeDisksRequest::getAdditionalAttributes()const
+std::vector<std::string> DescribeDisksRequest::getAdditionalAttributes()const
 {
 	return additionalAttributes_;
 }
 
-void DescribeDisksRequest::setAdditionalAttributes(const std::vector<long>& additionalAttributes)
+void DescribeDisksRequest::setAdditionalAttributes(const std::vector<std::string>& additionalAttributes)
 {
 	additionalAttributes_ = additionalAttributes;
 	for(int i = 0; i!= additionalAttributes.size(); i++)
-		setParameter("AdditionalAttributes."+ std::to_string(i), std::to_string(additionalAttributes.at(i)));
+		setParameter("AdditionalAttributes."+ std::to_string(i), additionalAttributes.at(i));
 }
 
 bool DescribeDisksRequest::getEnableShared()const
@@ -433,17 +362,6 @@ void DescribeDisksRequest::setEncrypted(bool encrypted)
 	setParameter("Encrypted", std::to_string(encrypted));
 }
 
-std::string DescribeDisksRequest::getTag2Value()const
-{
-	return tag2Value_;
-}
-
-void DescribeDisksRequest::setTag2Value(const std::string& tag2Value)
-{
-	tag2Value_ = tag2Value;
-	setParameter("Tag2Value", tag2Value);
-}
-
 std::string DescribeDisksRequest::getZoneId()const
 {
 	return zoneId_;
@@ -453,17 +371,6 @@ void DescribeDisksRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setParameter("ZoneId", zoneId);
-}
-
-std::string DescribeDisksRequest::getTag4Key()const
-{
-	return tag4Key_;
-}
-
-void DescribeDisksRequest::setTag4Key(const std::string& tag4Key)
-{
-	tag4Key_ = tag4Key;
-	setParameter("Tag4Key", tag4Key);
 }
 
 std::string DescribeDisksRequest::getCategory()const

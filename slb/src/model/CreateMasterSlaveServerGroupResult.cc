@@ -52,6 +52,14 @@ void CreateMasterSlaveServerGroupResult::parse(const std::string &payload)
 			masterSlaveBackendServersObject.weight = std::stoi(value["Weight"].asString());
 		if(!value["ServerType"].isNull())
 			masterSlaveBackendServersObject.serverType = value["ServerType"].asString();
+		if(!value["Type"].isNull())
+			masterSlaveBackendServersObject.type = value["Type"].asString();
+		if(!value["ServerIp"].isNull())
+			masterSlaveBackendServersObject.serverIp = value["ServerIp"].asString();
+		if(!value["EniHost"].isNull())
+			masterSlaveBackendServersObject.eniHost = value["EniHost"].asString();
+		if(!value["VpcId"].isNull())
+			masterSlaveBackendServersObject.vpcId = value["VpcId"].asString();
 		masterSlaveBackendServers_.push_back(masterSlaveBackendServersObject);
 	}
 	if(!value["MasterSlaveServerGroupId"].isNull())

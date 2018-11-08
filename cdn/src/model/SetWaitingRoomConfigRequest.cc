@@ -179,17 +179,6 @@ void SetWaitingRoomConfigRequest::setCallerUid(long callerUid)
 	setParameter("CallerUid", std::to_string(callerUid));
 }
 
-long SetWaitingRoomConfigRequest::getMaxQps()const
-{
-	return maxQps_;
-}
-
-void SetWaitingRoomConfigRequest::setMaxQps(long maxQps)
-{
-	maxQps_ = maxQps;
-	setParameter("MaxQps", std::to_string(maxQps));
-}
-
 std::string SetWaitingRoomConfigRequest::getApp_ip()const
 {
 	return app_ip_;
@@ -201,15 +190,15 @@ void SetWaitingRoomConfigRequest::setApp_ip(const std::string& app_ip)
 	setParameter("App_ip", app_ip);
 }
 
-std::string SetWaitingRoomConfigRequest::getProduct()const
+std::string SetWaitingRoomConfigRequest::getPopProduct()const
 {
-	return product_;
+	return popProduct_;
 }
 
-void SetWaitingRoomConfigRequest::setProduct(const std::string& product)
+void SetWaitingRoomConfigRequest::setPopProduct(const std::string& popProduct)
 {
-	product_ = product;
-	setParameter("Product", product);
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
 }
 
 int SetWaitingRoomConfigRequest::getMaxTimeWait()const

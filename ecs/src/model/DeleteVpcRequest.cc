@@ -47,6 +47,17 @@ void DeleteVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerA
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string DeleteVpcRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteVpcRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DeleteVpcRequest::getVpcId()const
 {
 	return vpcId_;

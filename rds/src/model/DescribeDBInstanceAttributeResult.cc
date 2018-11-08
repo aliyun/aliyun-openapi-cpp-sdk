@@ -92,6 +92,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.dBInstanceMemory = std::stol(value["DBInstanceMemory"].asString());
 		if(!value["DBInstanceStorage"].isNull())
 			itemsObject.dBInstanceStorage = std::stoi(value["DBInstanceStorage"].asString());
+		if(!value["VpcCloudInstanceId"].isNull())
+			itemsObject.vpcCloudInstanceId = value["VpcCloudInstanceId"].asString();
 		if(!value["DBInstanceNetType"].isNull())
 			itemsObject.dBInstanceNetType = value["DBInstanceNetType"].asString();
 		if(!value["DBInstanceStatus"].isNull())
@@ -138,12 +140,18 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.zoneId = value["ZoneId"].asString();
 		if(!value["InstanceNetworkType"].isNull())
 			itemsObject.instanceNetworkType = value["InstanceNetworkType"].asString();
+		if(!value["DBInstanceStorageType"].isNull())
+			itemsObject.dBInstanceStorageType = value["DBInstanceStorageType"].asString();
+		if(!value["AdvancedFeatures"].isNull())
+			itemsObject.advancedFeatures = value["AdvancedFeatures"].asString();
 		if(!value["Category"].isNull())
 			itemsObject.category = value["Category"].asString();
 		if(!value["AccountType"].isNull())
 			itemsObject.accountType = value["AccountType"].asString();
 		if(!value["SupportUpgradeAccountType"].isNull())
 			itemsObject.supportUpgradeAccountType = value["SupportUpgradeAccountType"].asString();
+		if(!value["SupportCreateSuperAccount"].isNull())
+			itemsObject.supportCreateSuperAccount = value["SupportCreateSuperAccount"].asString();
 		if(!value["VpcId"].isNull())
 			itemsObject.vpcId = value["VpcId"].asString();
 		if(!value["VSwitchId"].isNull())
@@ -152,8 +160,6 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.connectionMode = value["ConnectionMode"].asString();
 		if(!value["ResourceGroupId"].isNull())
 			itemsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["AdvancedFeatures"].isNull())
-			itemsObject.advancedFeatures = value["AdvancedFeatures"].asString();
 		auto allReadOnlyDBInstanceIds = value["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto value : allReadOnlyDBInstanceIds)
 		{

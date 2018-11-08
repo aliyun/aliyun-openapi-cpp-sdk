@@ -48,6 +48,10 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.defaultCooldown = std::stoi(value["DefaultCooldown"].asString());
 		if(!value["MaxSize"].isNull())
 			scalingGroupsObject.maxSize = std::stoi(value["MaxSize"].asString());
+		if(!value["PendingWaitCapacity"].isNull())
+			scalingGroupsObject.pendingWaitCapacity = std::stoi(value["PendingWaitCapacity"].asString());
+		if(!value["RemovingWaitCapacity"].isNull())
+			scalingGroupsObject.removingWaitCapacity = std::stoi(value["RemovingWaitCapacity"].asString());
 		if(!value["PendingCapacity"].isNull())
 			scalingGroupsObject.pendingCapacity = std::stoi(value["PendingCapacity"].asString());
 		if(!value["RemovingCapacity"].isNull())
@@ -56,8 +60,16 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.scalingGroupName = value["ScalingGroupName"].asString();
 		if(!value["ActiveCapacity"].isNull())
 			scalingGroupsObject.activeCapacity = std::stoi(value["ActiveCapacity"].asString());
+		if(!value["StandbyCapacity"].isNull())
+			scalingGroupsObject.standbyCapacity = std::stoi(value["StandbyCapacity"].asString());
+		if(!value["ProtectedCapacity"].isNull())
+			scalingGroupsObject.protectedCapacity = std::stoi(value["ProtectedCapacity"].asString());
 		if(!value["ActiveScalingConfigurationId"].isNull())
 			scalingGroupsObject.activeScalingConfigurationId = value["ActiveScalingConfigurationId"].asString();
+		if(!value["LaunchTemplateId"].isNull())
+			scalingGroupsObject.launchTemplateId = value["LaunchTemplateId"].asString();
+		if(!value["LaunchTemplateVersion"].isNull())
+			scalingGroupsObject.launchTemplateVersion = value["LaunchTemplateVersion"].asString();
 		if(!value["ScalingGroupId"].isNull())
 			scalingGroupsObject.scalingGroupId = value["ScalingGroupId"].asString();
 		if(!value["RegionId"].isNull())
@@ -76,6 +88,10 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.vpcId = value["VpcId"].asString();
 		if(!value["VSwitchId"].isNull())
 			scalingGroupsObject.vSwitchId = value["VSwitchId"].asString();
+		if(!value["MultiAZPolicy"].isNull())
+			scalingGroupsObject.multiAZPolicy = value["MultiAZPolicy"].asString();
+		if(!value["HealthCheckType"].isNull())
+			scalingGroupsObject.healthCheckType = value["HealthCheckType"].asString();
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			scalingGroupsObject.vSwitchIds.push_back(value.asString());

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreatePhotoRequest();
 				~CreatePhotoRequest();
 
+				long getTakenAt()const;
+				void setTakenAt(long takenAt);
 				std::string getPhotoTitle()const;
 				void setPhotoTitle(const std::string& photoTitle);
 				std::string getLibraryId()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setFileId(const std::string& fileId);
 
             private:
+				long takenAt_;
 				std::string photoTitle_;
 				std::string libraryId_;
 				long shareExpireTime_;

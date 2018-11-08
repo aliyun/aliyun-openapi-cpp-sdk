@@ -32,6 +32,13 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_EHPC_EXPORT GetAutoScaleConfigResult : public ServiceResult
 			{
 			public:
+				struct QueueInfo
+				{
+					float spotPriceLimit;
+					std::string instanceType;
+					std::string queueName;
+					std::string spotStrategy;
+				};
 
 
 				GetAutoScaleConfigResult();
@@ -49,7 +56,10 @@ namespace AlibabaCloud
 				std::string getUid()const;
 				int getGrowTimeoutInMinutes()const;
 				int getShrinkIntervalInMinutes()const;
+				float getSpotPriceLimit()const;
+				std::vector<QueueInfo> getQueues()const;
 				std::string getExcludeNodes()const;
+				std::string getSpotStrategy()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -66,7 +76,10 @@ namespace AlibabaCloud
 				std::string uid_;
 				int growTimeoutInMinutes_;
 				int shrinkIntervalInMinutes_;
+				float spotPriceLimit_;
+				std::vector<QueueInfo> queues_;
 				std::string excludeNodes_;
+				std::string spotStrategy_;
 
 			};
 		}

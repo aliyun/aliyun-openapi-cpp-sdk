@@ -54,12 +54,12 @@ namespace AlibabaCloud
 				DescribeInvocationResultsResult();
 				explicit DescribeInvocationResultsResult(const std::string &payload);
 				~DescribeInvocationResultsResult();
-				std::vector<Invocation> getInvocation()const;
+				Invocation getInvocation()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Invocation> invocation_;
+				Invocation invocation_;
 
 			};
 		}

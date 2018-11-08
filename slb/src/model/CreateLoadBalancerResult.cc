@@ -56,6 +56,8 @@ void CreateLoadBalancerResult::parse(const std::string &payload)
 		networkType_ = value["NetworkType"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["AddressIPVersion"].isNull())
+		addressIPVersion_ = value["AddressIPVersion"].asString();
 
 }
 
@@ -87,6 +89,11 @@ std::string CreateLoadBalancerResult::getNetworkType()const
 std::string CreateLoadBalancerResult::getVSwitchId()const
 {
 	return vSwitchId_;
+}
+
+std::string CreateLoadBalancerResult::getAddressIPVersion()const
+{
+	return addressIPVersion_;
 }
 
 std::string CreateLoadBalancerResult::getLoadBalancerId()const

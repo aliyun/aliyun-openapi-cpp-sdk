@@ -1,6 +1,480 @@
-2018-11-08 Version: 1.2.10
+2018-11-08 Version: 1.30.4
 1, Fix the http response receive bug
 
+2018-11-08 Version: 1.30.3
+1, Update Version.
+
+
+2018-11-07 Version: 1.30.2
+1, Add API CreateTemplate,DeleteTemplate,GetAllTemplate,GetTemplateInfo.
+2, Add API  GetTaskStatus,StartTask,StopTask.
+3, Add API GetTaskParam,UpdateTaskParam.
+
+
+2018-11-02 Version: 1.30.1
+1, deviceName and productKey can be used instead of iotId.
+2, New productKey fields for queryauthentication output parameter.
+3, New deviceName fields for queryauthentication output parameter.
+
+2018-11-02 Version: 1.30.0
+1, first version
+
+2018-10-31 Version: 1.29.5
+1, Update SetWaitingRoomConfig.
+
+2018-10-31 Version: 1.29.4
+1, Add SetWaitingRoomConfig.
+
+2018-10-31 Version: 1.29.3
+1, Add SetWaitingRoomConfig.
+
+2018-10-30 Version: 1.29.2
+1, Add API DescribeLiveDomainBpsData,DescribeLiveDomainTrafficData.
+
+
+2018-10-26 Version: 1.29.1
+1, Return AuditConclusions in SubmitMaterials API.
+
+2018-10-25 Version: 1.29.0
+1, Add apis for trademark domains.
+2, Add QueryDomainAdminDivision api.
+
+2018-10-16 Version: 1.28.3
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
+2018-10-16 Version: 1.28.2
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
+2018-10-16 Version: 1.28.1
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
+2018-10-16 Version: 1.28.0
+1, Delete deprecated and unusable apis : AddIpRange, UnbindIpRange, BindIpRange, DescribeIntranetAttributeKb, DescribeIpRanges, ModifyIntranetBandwidthKb, DescribeEventDetail, CheckAutoSnapshotPolicy, CheckDiskEnableAutoSnapshotValidation, DescribeAutoSnapshotPolicy
+2, Add instance topology api DescribeInstanceTopology
+3, Add mount point in DescribeDisksFullStatus
+
+
+2018-10-16 Version: 1.27.11
+1, remove set group tags API.
+
+2018-10-13 Version: 1.27.10
+1, Add device group related APIs.
+
+2018-10-13 Version: 1.27.9
+1, Add device group related APIs.
+
+2018-10-13 Version: 1.27.8
+1, Add device group related APIs.
+
+2018-10-11 Version: 1.27.7
+1, Add a new api called DeleteMezzanines to clear mezzanine infos and storages.
+2, Add the field called PlayConfig to GetVideoPlayAuth and GetPlayInfo api request.
+3, Add a new api called UpdateImageInfos to update image information.
+
+2018-10-09 Version: 1.27.6
+1, v1.0.0-->v1.0.1
+2, provider new region:beijing/shenzhen/zhangjiakou
+3, provider service for VPC user;
+
+2018-09-30 Version: 1.27.5
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-09-29 Version: 1.27.4
+1, Sync cdn api.
+
+2018-09-29 Version: 1.27.3
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-09-29 Version: 1.27.2
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-09-28 Version: 1.27.1
+1, Add one api, QueryAppDeviceList.
+
+2018-09-27 Version: 1.27.0
+1, Add new API ListQueues, modify API SetAutoScaleConfig to support queue related features.
+
+2018-09-27 Version: 1.26.4
+1, modify getFaces Api
+
+2018-09-27 Version: 1.26.3
+1, modify getFaces Api
+
+2018-09-25 Version: 1.26.2
+1, Add GetHotlineRecord and QueryHotlineRecord interface, version 1.0.0
+
+2018-09-17 Version: 1.26.1
+1, Add field for AddCasterVideoResource, DescribeCasterVideoResources, ModifyCasterVideoResource.
+
+
+2018-09-14 Version: 1.26.0
+1, Add DedicatedHost Feature
+
+2018-09-13 Version: 1.25.3
+1, Add CreateChannelToken.
+
+
+2018-09-06 Version: 1.25.2
+1, AutoScaling support launchTemplate.
+
+2018-09-06 Version: 1.25.1
+1, Add API deleteProduct.
+2, Move all API to version 20180120.
+
+2018-09-05 Version: 1.25.0
+1, Add new APIs with control policy for querying price
+
+2018-09-03 Version: 1.24.2
+1, voice identify interface
+2, client upload credentials interface
+
+2018-09-03 Version: 1.24.1
+1, Add new service API：FindServiceStatisticalData, which can support query service statistical data.
+
+2018-08-28 Version: 1.24.0
+1, Add new APIs for profiling application performance: GetCloudMetricProfiling, etc.
+2, Add new APIs to support Shifter container applications: AddContainerApp, etc.
+
+2018-08-28 Version: 1.23.4
+1, Add param for DescribeRegions,support AcceptLanguage,RegionEndpoint.
+
+2018-08-27 Version: 1.23.3
+1, add Ess alarm task api, CreateAlarm, DeleteAlarm, DescribeAlarms, DeleteAlarm, EnableAlarm, DisableAlarm
+
+
+2018-08-27 Version: 1.23.2
+1, Add api GetGatewayBySubDevice.
+2, Modified the time related response parameters.
+3, Add messageId in response with InvokeThingService，SetDeviceProperty and NotifyAddThingTopo.
+
+2018-08-23 Version: 1.23.1
+1, RunInstance add privateIpAddress.
+
+2018-08-22 Version: 1.23.0
+1, Add api CreateSimulatedSystemEvents, support creating one or more simulated system events.
+2, Add api CancelSimulatedSystemEvents, support cancelling one or more simulated system events.
+
+2018-08-21 Version: 1.22.9
+1, Repair describeLaunchTemplateVersions securityEnhancementStrategy type
+
+2018-08-21 Version: 1.22.8
+1, Add api: MoPenQueryCanvas, MoPenDoRecognize, MoPenSendMqttMessage, MoPenFindGroup
+
+2018-08-17 Version: 1.22.7
+1, Add a new api called DeleteImage to clear the image resource.
+2, Add the field called AdditionType and OutputType to GetMezzanineInfo api request.
+3, Add the field called OutputType to GetMezzanineInfo api response.
+4, Add the field called CreationTime and ModificationTime to GetPlayInfo api response.
+
+2018-08-17 Version: 1.22.6
+1, New apkpubkey fields for queryauthentication output parameter.
+2, New packagename fields for queryauthentication output parameter.
+3, New clientId fields for queryauthentication output parameter.
+
+2018-08-16 Version: 1.22.5
+1, ModifyScalingConfiguration add imageName.
+2, CreateScalingConfiguration add imageName.
+
+2018-08-15 Version: 1.22.4
+1, Fix bug in GetMaterials API.
+2, GetVerifyToken added a new param VerifyConfigs
+
+2018-08-15 Version: 1.22.3
+1, Add domain operation api AddLiveDomain,DeleteLiveDomain,DescribeLiveDomainDetail,StartLiveDomain,StopLiveDomain.
+2, Add certificate operation api DescribeLiveCertificateDetail,DescribeLiveCertificateList,SetLiveDomainCertificate.
+3, Add domain config api BatchSetLiveDomainConfigs,BatchDeleteLiveDomainConfigs,DeleteLiveSpecificConfig,DescribeLiveDomainConfigs.
+
+2018-08-15 Version: 1.22.2
+1, Update ecs tag to 20 maximum
+
+
+2018-08-14 Version: 1.22.1
+1, Change parameter name of Dialogue
+
+2018-08-13 Version: 1.22.0
+1, New userinfo fields for registerface input parameter.
+2, New userinfo fields for updateface input parameter.
+3, New userinfo fields for queryface output parameter.
+
+2018-08-13 Version: 1.21.6
+1, Add cross domain support.
+2, Add parameter SerialNumber to interface RebootSmartAccessGateway.
+
+2018-08-08 Version: 1.21.5
+1, The official release 4.0.0
+
+2018-08-08 Version: 1.21.4
+1, Update FC apis.
+
+2018-08-08 Version: 1.21.3
+1, First release.
+
+2018-08-07 Version: 1.21.2
+1, Add api GetGatewayBySubDevice.
+2, Modified the time related response parameters.
+3, Add messageId in response with InvokeThingService，SetDeviceProperty and NotifyAddThingTopo.
+
+2018-08-05 Version: 1.21.1
+1, Add Interface SubmitSubtitleJob
+2, Support convert ttml、stl subtitle to vtt
+
+2018-08-03 Version: 1.21.0
+1, Add new API AddLocalNodes, for adding local machine to a hybrid cluster
+
+2018-08-01 Version: 1.20.5
+1, Add new API GetConversationDetailByContactId
+
+2018-08-01 Version: 1.20.4
+1, Add api: MoPenQueryCanvas, MoPenDoRecognize, MoPenSendMqttMessage, MoPenFindGroup
+
+2018-07-31 Version: 1.20.3
+1, Support describePrice for market image, add return detailInfo in interface describePrice
+
+2018-07-26 Version: 1.20.2
+1, Add BatchGetJobMetricInfo API.
+2, Add BatchGetPluginConfigInfo API.
+3, Add GetJobTopology API.
+
+2018-07-25 Version: 1.20.1
+1, Add RemoveTerminals API.
+
+
+2018-07-13 Version: 1.20.0
+1, New APIs for batch executing commands in cluster: InvokeShellCommand, ListCommands, etc.
+2, New APIs for HybridCluster (link E-HPC with cluster in local IDC): CreateHybridCluster, etc.
+3, New APIs for Container applications: AddContainerApp, etc.
+
+2018-07-11 Version: 1.19.3
+1, new function: Attach and Detach Rds instance of scalingGroup.
+
+
+2018-07-11 Version: 1.19.2
+1, Add DetectFaceAttributesService.
+2, Add cloudauthPageUrl to GetVerifyTokenResponse.
+
+2018-07-05 Version: 1.19.1
+1, new function, attach/detach load balancer of scalingGroup
+
+2018-07-05 Version: 1.19.0
+1, A new optional parameter 'Perspectives' is introduced to the 'Chat' API. By filling this parameter when calling 'Chat', you'll get the knowledge base content within the specified perspectives.
+
+2018-06-28 Version: 1.18.1
+1, ScalingConfiguration support hostName and passwordInherit
+2, ScalingConfiguration support modify
+
+2018-06-27 Version: 1.18.0
+1, Modify QueryDomainRealNameVerificationInfo Api, add a return value IdentityCredentialUrl, which is domain real name verification image, you can download it via a HTTP get request,It has validity for 30 seconds.
+2, Modify QueryRegistrantProfileRealNameVerificationInfo Api, add a return value IdentityCredentialUrl, which is domain real name verification image, you can download it via a HTTP get request,It has validity for 30 seconds
+
+
+2018-06-27 Version: 1.17.10
+1, DescribeNetworkInterfaces support query with vpcId
+
+2018-06-22 Version: 1.17.9
+1, rtc openapi
+
+
+2018-06-21 Version: 1.17.8
+1, This is add InstanceList.
+
+2018-06-20 Version: 1.17.7
+1, Add InstanceList in product security information query.
+
+2018-06-20 Version: 1.17.6
+1, Add InstanceList in product security information query.
+
+2018-06-14 Version: 1.17.5
+1, Add passwordInherit.
+
+2018-06-13 Version: 1.17.4
+1, Add API AddCasterEpisodeGroupContent,CreateCaster.
+2, Add Parameter fillMode for AddCasterLayout,ModifyCasterLayout.
+3, Add return value fillMode DescribeCasterLayouts.
+4, Update ErrorCode for StartCaster,StartCasterScene,DescribeCasters,CopyCaster.
+5, Update ErrorCode for ModifyCasterLayout,DeleteCasterLayout,DeleteLiveAppRecordConfig.
+6, Update ForbidLiveStream,DescribeLiveStreamsPublishList,DescribeLiveStreamsOnlineList.
+
+2018-06-13 Version: 1.17.3
+1, Add lifecycleHook.
+
+2018-06-08 Version: 1.17.2
+1, Add scdn interface，support scdn.
+
+2018-06-06 Version: 1.17.1
+1, Change the type of srcUid to int.
+
+2018-06-06 Version: 1.17.0
+1, Add interface DescribePhoneInfo, DescribeDdosDefenseInfo, DescribeRiskListDetail, DescribePunishList.
+
+2018-05-29 Version: 1.16.0
+1, Add new interface DescribePhoneInfo to SDK.
+
+2018-05-28 Version: 1.15.0
+1, Add face 1-N,1-1 scan interface.
+
+2018-05-28 Version: 1.14.0
+1, ValidateSecurityGroup API
+
+2018-05-28 Version: 1.13.0
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-05-23 Version: 1.12.0
+1, Add CreateDrdsAccount API, to support creating account for all databases of a DRDS instance.
+
+2018-05-23 Version: 1.11.0
+1, Update API version to 2018-04-12. 
+2, New APIs in this new version: StartCluster, StopCluster, RecoverCluster, StartNodes, StopNodes, ListCustomImages. Support stopping a post-paid cluster or partial nodes of a cluster to save cost.
+3, New parameters for CreateCluster API: EcsChargeType. Support creating a pre-paid cluster.
+4, New parameters for CreateCluster API: DeploymentMode. Support creating a cluster with fewer manager nodes.
+
+2018-05-23 Version: 1.10.3
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-05-22 Version: 1.10.2
+1, add DescribeMigrateTasks,DescribeOssDownloads,CheckRecoveryConditions.
+2, modify DescribeDBInstanceAttribute.
+
+2018-05-17 Version: 1.10.1
+1, Supporting ethnicGroup and idCardStartDate fields in GetMaterials api
+
+2018-05-17 Version: 1.10.0
+1, the first version of private dns SDK
+
+2018-05-11 Version: 1.9.1
+1, Add Function Compute interface,support Function Compute.
+
+2018-05-09 Version: 1.9.0
+1, Add apis for domain broker.
+
+2018-05-08 Version: 1.8.2
+1, Add instance params.
+
+2018-05-08 Version: 1.8.1
+1, Remove DescribeAccountAttributes.
+
+2018-05-02 Version: 1.8.0
+1, Add new interface InstallCloudAssistant, support Cloud Assistant client installation.
+2, Add new interface DescribeCloudAssistantStatus, support Cloud Assistant client status detection.
+
+2018-04-28 Version: 1.7.3
+1, Add dcdn domain interface，Support add、modify、delete、query dcdn domain.
+2, Add dcdn config interface，Support set、delete、query domain config.
+
+2018-04-28 Version: 1.7.2
+1, Add dcdn domain interface，Support add、modify、delete、query dcdn domain.
+2, Add dcdn config interface，Support set、delete、query domain config.
+
+2018-04-27 Version: 1.7.1
+1, release hsm open api
+2, hsm open api includes DescribeRegions, DescribeInstances, ModityInstance, ConfigNetwork, ConfigWhiteList
+
+2018-04-26 Version: 1.7.0
+1, Add apis for domain group.
+3, Add fields for QueryDomainList.
+
+2018-04-24 Version: 1.6.5
+1, add interface FetchPhotos
+2, add xflush log param unixTimestamp
+
+2018-04-23 Version: 1.6.4
+1, DescribeInstanceHistoryEvents adds parameter instanceEventTypes and instanceEventCycleStatuss.
+2, InstanceId parameter is not necessary for DescribeInstanceHistoryEvents now.
+3, DescribeInstancesFullStatus adds parameter instanceEventTypes.
+
+2018-04-23 Version: 1.6.3
+1, Add notificationConfiguration.
+2, Add standby status.
+
+2018-04-17 Version: 1.6.2
+1, EditPhotos add input param TakenAt
+2, add FetchMomentPhotos
+3, ListAlbums add return param Remark
+
+2018-04-11 Version: 1.6.1
+1, GetLibrary/FetchLibraries add return ctime
+2, Editphotos add input param takenAt
+
+2018-04-10 Version: 1.6.0
+1, Add three interfaces CreateNetworkInterfacePermission DeleteNetworkInterfacePermission DescribeNetworkInterfacePermissions.
+
+2018-04-10 Version: 1.5.1
+1, publish Project API.
+2, publish Service API.
+3, publish Service order API.
+4, publish Credential API.
+5, publish CAS API.
+
+2018-04-08 Version: 1.5.0
+1, Add voice asynchronous scan interface.
+
+2018-04-03 Version: 1.4.0
+1, Add APIs for domain transfer in and transfer out.
+2, Add APIs for poll and acknowledge domain task.
+3, Add API for query domain group list.
+
+2018-03-30 Version: 1.3.8
+1, API QueryCustomerSaleInfo arguments update.
+
+2018-03-29 Version: 1.3.7
+1, edit FetchLibraries return param format
+
+2018-03-27 Version: 1.3.6
+1, Rename QueryCustomerSaleInfo to RegionName.
+
+2018-03-27 Version: 1.3.5
+1, publish Project API.
+2, publish Service API.
+3, publish Service order API.
+4, publish Credential API.
+5, publish CAS API.
+
+2018-03-27 Version: 1.3.4
+1, add interface FetchLibraries
+
+2018-03-23 Version: 1.3.3
+1, interface DescribeInstanceTypes output InstancePpsRx InstancePpsTx
+
+2018-03-23 Version: 1.3.2
+1, interface DescribeInstanceTypes output InstancePpsRx InstancePpsTx
+
+2018-03-23 Version: 1.3.1
+1, ModifyPrepayInstanceSpec support migrateAcrossZone.
+
+2018-03-23 Version: 1.3.0
+1, Add 'QueryDevicesByAccount' and 'QueryDevicesByAlias'  Api.
+2, Remove 'QueryPushDetail' Api.
+
+2018-03-20 Version: 1.2.16
+1, add FetchAlbumTagPhotos
+2, CreatePhoto add optional param TakenAt
+
+2018-03-16 Version: 1.2.15
+1, Synchronize to the latest api list
+
+2018-03-15 Version: 1.2.14
+1, Synchronize to the latest api list
+
+2018-03-15 Version: 1.2.13
+1, Synchronize to the latest api list
+
+2018-03-15 Version: 1.2.12
+1, Synchronize to the latest api list
+
+2018-03-15 Version: 1.2.11
+1, Synchronize to the latest api list
+
+2018-03-15 Version: 1.2.10
+1, Add QueryCustomerSaleInfo API.
 
 2018-03-14 Version: 1.2.9
 1, Support predefine endpoints parse

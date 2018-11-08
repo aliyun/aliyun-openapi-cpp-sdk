@@ -41,17 +41,19 @@ namespace AlibabaCloud
 					};
 					std::string comment;
 					std::string owner;
+					std::string _stderr;
 					int priority;
+					std::string nodeList;
 					std::string startTime;
 					std::string lastModifyTime;
 					std::string submitTime;
+					std::string _stdout;
 					std::string name;
-					std::string _stderr;
 					std::string state;
-					std::vector<Resources> resources;
+					std::string shellPath;
+					Resources resources;
 					std::string id;
 					std::string arrayRequest;
-					std::string _stdout;
 				};
 
 

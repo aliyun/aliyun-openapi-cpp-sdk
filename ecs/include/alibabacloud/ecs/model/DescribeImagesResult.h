@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					std::string isSelfShared;
 					std::string architecture;
 					std::string platform;
+					std::string resourceGroupId;
 					std::string productCode;
 					int size;
 					bool isSubscribed;

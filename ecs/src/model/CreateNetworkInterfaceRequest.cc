@@ -201,6 +201,23 @@ void CreateNetworkInterfaceRequest::setCallerBidEmail(const std::string& callerB
 	setParameter("CallerBidEmail", callerBidEmail);
 }
 
+std::vector<CreateNetworkInterfaceRequest::Tag> CreateNetworkInterfaceRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateNetworkInterfaceRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Key", obj.key);
+		setParameter(str + ".Value", obj.value);
+	}
+}
+
 std::string CreateNetworkInterfaceRequest::getCallerUidEmail()const
 {
 	return callerUidEmail_;

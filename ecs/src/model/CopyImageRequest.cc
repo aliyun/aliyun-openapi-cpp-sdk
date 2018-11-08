@@ -25,17 +25,6 @@ CopyImageRequest::CopyImageRequest() :
 CopyImageRequest::~CopyImageRequest()
 {}
 
-std::string CopyImageRequest::getTag4Value()const
-{
-	return tag4Value_;
-}
-
-void CopyImageRequest::setTag4Value(const std::string& tag4Value)
-{
-	tag4Value_ = tag4Value;
-	setParameter("Tag4Value", tag4Value);
-}
-
 long CopyImageRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,26 +47,15 @@ void CopyImageRequest::setImageId(const std::string& imageId)
 	setParameter("ImageId", imageId);
 }
 
-std::string CopyImageRequest::getTag2Key()const
+bool CopyImageRequest::getEncrypted()const
 {
-	return tag2Key_;
+	return encrypted_;
 }
 
-void CopyImageRequest::setTag2Key(const std::string& tag2Key)
+void CopyImageRequest::setEncrypted(bool encrypted)
 {
-	tag2Key_ = tag2Key;
-	setParameter("Tag2Key", tag2Key);
-}
-
-std::string CopyImageRequest::getTag5Key()const
-{
-	return tag5Key_;
-}
-
-void CopyImageRequest::setTag5Key(const std::string& tag5Key)
-{
-	tag5Key_ = tag5Key;
-	setParameter("Tag5Key", tag5Key);
+	encrypted_ = encrypted;
+	setParameter("Encrypted", std::to_string(encrypted));
 }
 
 std::string CopyImageRequest::getResourceOwnerAccount()const
@@ -89,6 +67,17 @@ void CopyImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerA
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CopyImageRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CopyImageRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string CopyImageRequest::getDestinationImageName()const
@@ -124,15 +113,21 @@ void CopyImageRequest::setOwnerAccount(const std::string& ownerAccount)
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CopyImageRequest::getTag3Key()const
+std::vector<CopyImageRequest::Tag> CopyImageRequest::getTag()const
 {
-	return tag3Key_;
+	return tag_;
 }
 
-void CopyImageRequest::setTag3Key(const std::string& tag3Key)
+void CopyImageRequest::setTag(const std::vector<Tag>& tag)
 {
-	tag3Key_ = tag3Key;
-	setParameter("Tag3Key", tag3Key);
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 
 long CopyImageRequest::getOwnerId()const
@@ -146,83 +141,6 @@ void CopyImageRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CopyImageRequest::getTag5Value()const
-{
-	return tag5Value_;
-}
-
-void CopyImageRequest::setTag5Value(const std::string& tag5Value)
-{
-	tag5Value_ = tag5Value;
-	setParameter("Tag5Value", tag5Value);
-}
-
-std::string CopyImageRequest::getTag1Key()const
-{
-	return tag1Key_;
-}
-
-void CopyImageRequest::setTag1Key(const std::string& tag1Key)
-{
-	tag1Key_ = tag1Key;
-	setParameter("Tag1Key", tag1Key);
-}
-
-std::string CopyImageRequest::getTag1Value()const
-{
-	return tag1Value_;
-}
-
-void CopyImageRequest::setTag1Value(const std::string& tag1Value)
-{
-	tag1Value_ = tag1Value;
-	setParameter("Tag1Value", tag1Value);
-}
-
-bool CopyImageRequest::getEncrypted()const
-{
-	return encrypted_;
-}
-
-void CopyImageRequest::setEncrypted(bool encrypted)
-{
-	encrypted_ = encrypted;
-	setParameter("Encrypted", std::to_string(encrypted));
-}
-
-std::string CopyImageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CopyImageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string CopyImageRequest::getTag2Value()const
-{
-	return tag2Value_;
-}
-
-void CopyImageRequest::setTag2Value(const std::string& tag2Value)
-{
-	tag2Value_ = tag2Value;
-	setParameter("Tag2Value", tag2Value);
-}
-
-std::string CopyImageRequest::getTag4Key()const
-{
-	return tag4Key_;
-}
-
-void CopyImageRequest::setTag4Key(const std::string& tag4Key)
-{
-	tag4Key_ = tag4Key;
-	setParameter("Tag4Key", tag4Key);
-}
-
 std::string CopyImageRequest::getDestinationDescription()const
 {
 	return destinationDescription_;
@@ -232,16 +150,5 @@ void CopyImageRequest::setDestinationDescription(const std::string& destinationD
 {
 	destinationDescription_ = destinationDescription;
 	setParameter("DestinationDescription", destinationDescription);
-}
-
-std::string CopyImageRequest::getTag3Value()const
-{
-	return tag3Value_;
-}
-
-void CopyImageRequest::setTag3Value(const std::string& tag3Value)
-{
-	tag3Value_ = tag3Value;
-	setParameter("Tag3Value", tag3Value);
 }
 

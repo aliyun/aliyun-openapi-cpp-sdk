@@ -32,8 +32,8 @@ namespace AlibabaCloud
 			{
 				struct Filter
 				{
-					std::string key;
 					std::string value;
+					std::string key;
 				};
 
 			public:

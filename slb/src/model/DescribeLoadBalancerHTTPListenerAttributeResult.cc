@@ -40,6 +40,22 @@ void DescribeLoadBalancerHTTPListenerAttributeResult::parse(const std::string &p
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	auto allRules = value["Rules"]["Rule"];
+	for (auto value : allRules)
+	{
+		Rule rulesObject;
+		if(!value["RuleId"].isNull())
+			rulesObject.ruleId = value["RuleId"].asString();
+		if(!value["RuleName"].isNull())
+			rulesObject.ruleName = value["RuleName"].asString();
+		if(!value["Domain"].isNull())
+			rulesObject.domain = value["Domain"].asString();
+		if(!value["Url"].isNull())
+			rulesObject.url = value["Url"].asString();
+		if(!value["VServerGroupId"].isNull())
+			rulesObject.vServerGroupId = value["VServerGroupId"].asString();
+		rules_.push_back(rulesObject);
+	}
 	if(!value["ListenerPort"].isNull())
 		listenerPort_ = std::stoi(value["ListenerPort"].asString());
 	if(!value["BackendServerPort"].isNull())
@@ -92,6 +108,24 @@ void DescribeLoadBalancerHTTPListenerAttributeResult::parse(const std::string &p
 		xForwardedFor_SLBID_ = value["XForwardedFor_SLBID"].asString();
 	if(!value["XForwardedFor_proto"].isNull())
 		xForwardedFor_proto_ = value["XForwardedFor_proto"].asString();
+	if(!value["AclId"].isNull())
+		aclId_ = value["AclId"].asString();
+	if(!value["AclType"].isNull())
+		aclType_ = value["AclType"].asString();
+	if(!value["AclStatus"].isNull())
+		aclStatus_ = value["AclStatus"].asString();
+	if(!value["VpcIds"].isNull())
+		vpcIds_ = value["VpcIds"].asString();
+	if(!value["ListenerForward"].isNull())
+		listenerForward_ = value["ListenerForward"].asString();
+	if(!value["ForwardPort"].isNull())
+		forwardPort_ = std::stoi(value["ForwardPort"].asString());
+	if(!value["RequestTimeout"].isNull())
+		requestTimeout_ = std::stoi(value["RequestTimeout"].asString());
+	if(!value["IdleTimeout"].isNull())
+		idleTimeout_ = std::stoi(value["IdleTimeout"].asString());
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
 
 }
 
@@ -108,6 +142,11 @@ int DescribeLoadBalancerHTTPListenerAttributeResult::getMaxConnection()const
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getVServerGroupId()const
 {
 	return vServerGroupId_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getDescription()const
+{
+	return description_;
 }
 
 int DescribeLoadBalancerHTTPListenerAttributeResult::getUnhealthyThreshold()const
@@ -128,6 +167,11 @@ std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckURI()
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheck()const
 {
 	return healthCheck_;
+}
+
+int DescribeLoadBalancerHTTPListenerAttributeResult::getIdleTimeout()const
+{
+	return idleTimeout_;
 }
 
 int DescribeLoadBalancerHTTPListenerAttributeResult::getBackendServerPort()const
@@ -190,9 +234,19 @@ int DescribeLoadBalancerHTTPListenerAttributeResult::getListenerPort()const
 	return listenerPort_;
 }
 
+int DescribeLoadBalancerHTTPListenerAttributeResult::getRequestTimeout()const
+{
+	return requestTimeout_;
+}
+
 int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckInterval()const
 {
 	return healthCheckInterval_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getAclId()const
+{
+	return aclId_;
 }
 
 int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckTimeout()const
@@ -200,9 +254,34 @@ int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckTimeout()cons
 	return healthCheckTimeout_;
 }
 
+std::vector<DescribeLoadBalancerHTTPListenerAttributeResult::Rule> DescribeLoadBalancerHTTPListenerAttributeResult::getRules()const
+{
+	return rules_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getListenerForward()const
+{
+	return listenerForward_;
+}
+
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getStickySession()const
 {
 	return stickySession_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getAclStatus()const
+{
+	return aclStatus_;
+}
+
+int DescribeLoadBalancerHTTPListenerAttributeResult::getForwardPort()const
+{
+	return forwardPort_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getVpcIds()const
+{
+	return vpcIds_;
 }
 
 int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthyThreshold()const
@@ -223,5 +302,10 @@ std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckDomai
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getXForwardedFor_proto()const
 {
 	return xForwardedFor_proto_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getAclType()const
+{
+	return aclType_;
 }
 

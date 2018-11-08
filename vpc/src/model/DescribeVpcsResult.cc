@@ -62,6 +62,8 @@ void DescribeVpcsResult::parse(const std::string &payload)
 			vpcsObject.description = value["Description"].asString();
 		if(!value["IsDefault"].isNull())
 			vpcsObject.isDefault = value["IsDefault"].asString() == "true";
+		if(!value["ResourceGroupId"].isNull())
+			vpcsObject.resourceGroupId = value["ResourceGroupId"].asString();
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			vpcsObject.vSwitchIds.push_back(value.asString());

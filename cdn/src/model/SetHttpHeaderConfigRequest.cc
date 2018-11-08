@@ -47,6 +47,17 @@ void SetHttpHeaderConfigRequest::setSecurityToken(const std::string& securityTok
 	setParameter("SecurityToken", securityToken);
 }
 
+long SetHttpHeaderConfigRequest::getConfigId()const
+{
+	return configId_;
+}
+
+void SetHttpHeaderConfigRequest::setConfigId(long configId)
+{
+	configId_ = configId;
+	setParameter("ConfigId", std::to_string(configId));
+}
+
 std::string SetHttpHeaderConfigRequest::getDomainName()const
 {
 	return domainName_;

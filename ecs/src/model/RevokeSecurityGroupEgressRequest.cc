@@ -157,17 +157,6 @@ void RevokeSecurityGroupEgressRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string RevokeSecurityGroupEgressRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void RevokeSecurityGroupEgressRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string RevokeSecurityGroupEgressRequest::getSecurityToken()const
 {
 	return securityToken_;

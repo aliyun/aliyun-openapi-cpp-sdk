@@ -47,6 +47,17 @@ void ReleaseEipAddressRequest::setResourceOwnerAccount(const std::string& resour
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string ReleaseEipAddressRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ReleaseEipAddressRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ReleaseEipAddressRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

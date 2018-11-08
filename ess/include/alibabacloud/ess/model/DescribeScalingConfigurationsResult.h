@@ -40,11 +40,17 @@ namespace AlibabaCloud
 						std::string category;
 						int size;
 						std::string device;
+						bool deleteWithInstance;
 					};
 					struct Tag
 					{
 						std::string value;
 						std::string key;
+					};
+					struct SpotPriceModel
+					{
+						float priceLimit;
+						std::string instanceType;
 					};
 					std::string scalingConfigurationName;
 					std::vector<ScalingConfiguration::DataDisk> dataDisks;
@@ -53,9 +59,13 @@ namespace AlibabaCloud
 					std::string lifecycleState;
 					std::string ramRoleName;
 					std::string imageId;
+					std::vector<ScalingConfiguration::SpotPriceModel> spotPriceLimit;
 					std::vector<std::string> instanceTypes;
 					std::string instanceType;
 					std::vector<ScalingConfiguration::Tag> tags;
+					std::string hostName;
+					std::string spotStrategy;
+					bool passwordInherit;
 					std::string keyPairName;
 					int loadBalancerWeight;
 					std::string ioOptimized;
@@ -65,6 +75,7 @@ namespace AlibabaCloud
 					std::string systemDiskCategory;
 					std::string instanceName;
 					std::string deploymentSetId;
+					std::string imageName;
 					int internetMaxBandwidthOut;
 					int internetMaxBandwidthIn;
 					std::string creationTime;

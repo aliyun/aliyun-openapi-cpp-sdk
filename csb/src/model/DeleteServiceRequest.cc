@@ -1,0 +1,60 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/csb/model/DeleteServiceRequest.h>
+
+using AlibabaCloud::CSB::Model::DeleteServiceRequest;
+
+DeleteServiceRequest::DeleteServiceRequest() :
+	RpcServiceRequest("csb", "2017-11-18", "DeleteService")
+{}
+
+DeleteServiceRequest::~DeleteServiceRequest()
+{}
+
+std::string DeleteServiceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteServiceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string DeleteServiceRequest::getServiceName()const
+{
+	return serviceName_;
+}
+
+void DeleteServiceRequest::setServiceName(const std::string& serviceName)
+{
+	serviceName_ = serviceName;
+	setParameter("ServiceName", serviceName);
+}
+
+long DeleteServiceRequest::getServiceId()const
+{
+	return serviceId_;
+}
+
+void DeleteServiceRequest::setServiceId(long serviceId)
+{
+	serviceId_ = serviceId;
+	setParameter("ServiceId", std::to_string(serviceId));
+}
+

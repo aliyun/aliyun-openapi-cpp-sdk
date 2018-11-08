@@ -49,7 +49,7 @@ namespace AlibabaCloud
 						std::string md5;
 						std::string remark;
 					};
-					std::vector<Cover> cover;
+					Cover cover;
 					std::string idStr;
 					std::string state;
 					long ctime;
@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					long mtime;
 					long id;
 					std::string name;
+					std::string remark;
 				};
 
 

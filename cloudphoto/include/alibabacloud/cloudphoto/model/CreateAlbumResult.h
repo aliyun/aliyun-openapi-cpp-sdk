@@ -49,7 +49,7 @@ namespace AlibabaCloud
 						std::string md5;
 						std::string remark;
 					};
-					std::vector<Cover> cover;
+					Cover cover;
 					std::string idStr;
 					std::string state;
 					long ctime;
@@ -66,7 +66,7 @@ namespace AlibabaCloud
 				~CreateAlbumResult();
 				std::string getAction()const;
 				std::string getMessage()const;
-				std::vector<Album> getAlbum()const;
+				Album getAlbum()const;
 				std::string getCode()const;
 
 			protected:
@@ -74,7 +74,7 @@ namespace AlibabaCloud
 			private:
 				std::string action_;
 				std::string message_;
-				std::vector<Album> album_;
+				Album album_;
 				std::string code_;
 
 			};

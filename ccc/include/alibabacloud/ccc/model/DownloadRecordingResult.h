@@ -42,7 +42,7 @@ namespace AlibabaCloud
 				DownloadRecordingResult();
 				explicit DownloadRecordingResult(const std::string &payload);
 				~DownloadRecordingResult();
-				std::vector<MediaDownloadParam> getMediaDownloadParam()const;
+				MediaDownloadParam getMediaDownloadParam()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
@@ -51,7 +51,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<MediaDownloadParam> mediaDownloadParam_;
+				MediaDownloadParam mediaDownloadParam_;
 				std::string message_;
 				int httpStatusCode_;
 				std::string code_;

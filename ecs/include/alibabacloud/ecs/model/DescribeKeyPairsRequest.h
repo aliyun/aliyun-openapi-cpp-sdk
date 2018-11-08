@@ -30,11 +30,18 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT DescribeKeyPairsRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeKeyPairsRequest();
 				~DescribeKeyPairsRequest();
 
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
@@ -47,18 +54,22 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getKeyPairName()const;
 				void setKeyPairName(const std::string& keyPairName);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
             private:
+				std::string resourceGroupId_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string keyPairFingerPrint_;
 				int pageSize_;
 				std::string keyPairName_;
+				std::vector<Tag> tag_;
 				long ownerId_;
 				int pageNumber_;
 

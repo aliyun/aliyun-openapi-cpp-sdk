@@ -39,12 +39,18 @@ namespace AlibabaCloud
 				};
 				struct ListenerPortAndProtocol
 				{
+					std::string listenerForward;
 					int listenerPort;
+					int forwardPort;
 					std::string listenerProtocol;
 				};
 				struct BackendServer
 				{
+					std::string type;
 					std::string serverId;
+					std::string vpcId;
+					std::string eniHost;
+					std::string serverIp;
 					int weight;
 				};
 
@@ -52,10 +58,12 @@ namespace AlibabaCloud
 				DescribeLoadBalancerAttributeResult();
 				explicit DescribeLoadBalancerAttributeResult(const std::string &payload);
 				~DescribeLoadBalancerAttributeResult();
+				int getRenewalDuration()const;
 				std::vector<ListenerPortAndProtocal> getListenerPortsAndProtocal()const;
 				std::string getResourceGroupId()const;
 				std::string getAddress()const;
 				std::string getEndTime()const;
+				std::string getAddressIPVersion()const;
 				std::vector<ListenerPortAndProtocol> getListenerPortsAndProtocol()const;
 				std::string getLoadBalancerId()const;
 				std::vector<BackendServer> getBackendServers()const;
@@ -64,8 +72,11 @@ namespace AlibabaCloud
 				int getBandwidth()const;
 				std::vector<std::string> getListenerPorts()const;
 				std::string getMasterZoneId()const;
+				std::string getCloudType()const;
 				std::string getVSwitchId()const;
 				std::string getCreateTime()const;
+				std::string getRenewalStatus()const;
+				std::string getRenewalCycUnit()const;
 				std::string getPayType()const;
 				std::string getSlaveZoneId()const;
 				std::string getInternetChargeType()const;
@@ -82,10 +93,12 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int renewalDuration_;
 				std::vector<ListenerPortAndProtocal> listenerPortsAndProtocal_;
 				std::string resourceGroupId_;
 				std::string address_;
 				std::string endTime_;
+				std::string addressIPVersion_;
 				std::vector<ListenerPortAndProtocol> listenerPortsAndProtocol_;
 				std::string loadBalancerId_;
 				std::vector<BackendServer> backendServers_;
@@ -94,8 +107,11 @@ namespace AlibabaCloud
 				int bandwidth_;
 				std::vector<std::string> listenerPorts_;
 				std::string masterZoneId_;
+				std::string cloudType_;
 				std::string vSwitchId_;
 				std::string createTime_;
+				std::string renewalStatus_;
+				std::string renewalCycUnit_;
 				std::string payType_;
 				std::string slaveZoneId_;
 				std::string internetChargeType_;

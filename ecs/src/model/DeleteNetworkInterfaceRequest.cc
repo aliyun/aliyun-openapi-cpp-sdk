@@ -102,17 +102,6 @@ void DeleteNetworkInterfaceRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DeleteNetworkInterfaceRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DeleteNetworkInterfaceRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DeleteNetworkInterfaceRequest::getSecurityToken()const
 {
 	return securityToken_;

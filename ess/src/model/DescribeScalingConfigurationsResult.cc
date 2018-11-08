@@ -54,6 +54,10 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.instanceName = value["InstanceName"].asString();
 		if(!value["ImageId"].isNull())
 			scalingConfigurationsObject.imageId = value["ImageId"].asString();
+		if(!value["ImageName"].isNull())
+			scalingConfigurationsObject.imageName = value["ImageName"].asString();
+		if(!value["HostName"].isNull())
+			scalingConfigurationsObject.hostName = value["HostName"].asString();
 		if(!value["InstanceType"].isNull())
 			scalingConfigurationsObject.instanceType = value["InstanceType"].asString();
 		if(!value["InstanceGeneration"].isNull())
@@ -88,6 +92,10 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.deploymentSetId = value["DeploymentSetId"].asString();
 		if(!value["SecurityEnhancementStrategy"].isNull())
 			scalingConfigurationsObject.securityEnhancementStrategy = value["SecurityEnhancementStrategy"].asString();
+		if(!value["SpotStrategy"].isNull())
+			scalingConfigurationsObject.spotStrategy = value["SpotStrategy"].asString();
+		if(!value["PasswordInherit"].isNull())
+			scalingConfigurationsObject.passwordInherit = value["PasswordInherit"].asString() == "true";
 		auto allDataDisks = value["DataDisks"]["DataDisk"];
 		for (auto value : allDataDisks)
 		{
@@ -100,6 +108,8 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 				dataDisksObject.snapshotId = value["SnapshotId"].asString();
 			if(!value["Device"].isNull())
 				dataDisksObject.device = value["Device"].asString();
+			if(!value["DeleteWithInstance"].isNull())
+				dataDisksObject.deleteWithInstance = value["DeleteWithInstance"].asString() == "true";
 			scalingConfigurationsObject.dataDisks.push_back(dataDisksObject);
 		}
 		auto allTags = value["Tags"]["Tag"];
@@ -111,6 +121,16 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			if(!value["Value"].isNull())
 				tagsObject.value = value["Value"].asString();
 			scalingConfigurationsObject.tags.push_back(tagsObject);
+		}
+		auto allSpotPriceLimit = value["SpotPriceLimit"]["SpotPriceModel"];
+		for (auto value : allSpotPriceLimit)
+		{
+			ScalingConfiguration::SpotPriceModel spotPriceLimitObject;
+			if(!value["InstanceType"].isNull())
+				spotPriceLimitObject.instanceType = value["InstanceType"].asString();
+			if(!value["PriceLimit"].isNull())
+				spotPriceLimitObject.priceLimit = std::stof(value["PriceLimit"].asString());
+			scalingConfigurationsObject.spotPriceLimit.push_back(spotPriceLimitObject);
 		}
 		auto allInstanceTypes = value["InstanceTypes"]["InstanceType"];
 		for (auto value : allInstanceTypes)

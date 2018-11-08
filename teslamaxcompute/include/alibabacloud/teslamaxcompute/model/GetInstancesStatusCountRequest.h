@@ -37,12 +37,18 @@ namespace AlibabaCloud
 
 				std::string getCluster()const;
 				void setCluster(const std::string& cluster);
+				std::string getQuotaId()const;
+				void setQuotaId(const std::string& quotaId);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
+				std::string getQuotaName()const;
+				void setQuotaName(const std::string& quotaName);
 
             private:
 				std::string cluster_;
+				std::string quotaId_;
 				std::string region_;
+				std::string quotaName_;
 
 			};
 		}

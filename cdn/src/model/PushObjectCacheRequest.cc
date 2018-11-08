@@ -25,6 +25,17 @@ PushObjectCacheRequest::PushObjectCacheRequest() :
 PushObjectCacheRequest::~PushObjectCacheRequest()
 {}
 
+std::string PushObjectCacheRequest::getArea()const
+{
+	return area_;
+}
+
+void PushObjectCacheRequest::setArea(const std::string& area)
+{
+	area_ = area;
+	setParameter("Area", area);
+}
+
 std::string PushObjectCacheRequest::getSecurityToken()const
 {
 	return securityToken_;

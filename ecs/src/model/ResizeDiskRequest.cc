@@ -102,3 +102,14 @@ void ResizeDiskRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ResizeDiskRequest::getType()const
+{
+	return type_;
+}
+
+void ResizeDiskRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setParameter("Type", type);
+}
+

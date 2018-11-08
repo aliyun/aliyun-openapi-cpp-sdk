@@ -69,6 +69,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckURI(const std::st
 	setParameter("HealthCheckURI", healthCheckURI);
 }
 
+std::string SetLoadBalancerTCPListenerAttributeRequest::getDescription()const
+{
+	return description_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
+}
+
 int SetLoadBalancerTCPListenerAttributeRequest::getUnhealthyThreshold()const
 {
 	return unhealthyThreshold_;
@@ -91,6 +102,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setHealthyThreshold(int healthy
 	setParameter("HealthyThreshold", std::to_string(healthyThreshold));
 }
 
+std::string SetLoadBalancerTCPListenerAttributeRequest::getAclStatus()const
+{
+	return aclStatus_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setAclStatus(const std::string& aclStatus)
+{
+	aclStatus_ = aclStatus;
+	setParameter("AclStatus", aclStatus);
+}
+
 std::string SetLoadBalancerTCPListenerAttributeRequest::getScheduler()const
 {
 	return scheduler_;
@@ -100,6 +122,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setScheduler(const std::string&
 {
 	scheduler_ = scheduler;
 	setParameter("Scheduler", scheduler);
+}
+
+std::string SetLoadBalancerTCPListenerAttributeRequest::getAclType()const
+{
+	return aclType_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setAclType(const std::string& aclType)
+{
+	aclType_ = aclType;
+	setParameter("AclType", aclType);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getMasterSlaveServerGroup()const
@@ -157,6 +190,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setPersistenceTimeout(int persi
 	setParameter("PersistenceTimeout", std::to_string(persistenceTimeout));
 }
 
+std::string SetLoadBalancerTCPListenerAttributeRequest::getVpcIds()const
+{
+	return vpcIds_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setVpcIds(const std::string& vpcIds)
+{
+	vpcIds_ = vpcIds;
+	setParameter("VpcIds", vpcIds);
+}
+
 std::string SetLoadBalancerTCPListenerAttributeRequest::getVServerGroupId()const
 {
 	return vServerGroupId_;
@@ -166,6 +210,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setVServerGroupId(const std::st
 {
 	vServerGroupId_ = vServerGroupId;
 	setParameter("VServerGroupId", vServerGroupId);
+}
+
+std::string SetLoadBalancerTCPListenerAttributeRequest::getAclId()const
+{
+	return aclId_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setAclId(const std::string& aclId)
+{
+	aclId_ = aclId;
+	setParameter("AclId", aclId);
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getListenerPort()const

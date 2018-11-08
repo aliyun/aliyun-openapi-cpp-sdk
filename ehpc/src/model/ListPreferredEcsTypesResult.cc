@@ -48,28 +48,30 @@ void ListPreferredEcsTypesResult::parse(const std::string &payload)
 			seriesObject.seriesId = value["SeriesId"].asString();
 		if(!value["SeriesName"].isNull())
 			seriesObject.seriesName = value["SeriesName"].asString();
-		auto allRoles = value["Roles"];
-		for (auto value : allRoles)
-		{
-			SeriesInfo::Roles rolesObject;
-			auto allManager = value["Manager"]["InstanceTypeId"];
+		auto rolesNode = value["Roles"];
+			auto allManager = rolesNode["Manager"]["InstanceTypeId"];
 			for (auto value : allManager)
-				rolesObject.manager.push_back(value.asString());
-			auto allCompute = value["Compute"]["InstanceTypeId"];
+				seriesObject.roles.manager.push_back(value.asString());
+			auto allCompute = rolesNode["Compute"]["InstanceTypeId"];
 			for (auto value : allCompute)
-				rolesObject.compute.push_back(value.asString());
-			auto allLogin = value["Login"]["InstanceTypeId"];
+				seriesObject.roles.compute.push_back(value.asString());
+			auto allLogin = rolesNode["Login"]["InstanceTypeId"];
 			for (auto value : allLogin)
-				rolesObject.login.push_back(value.asString());
-			seriesObject.roles.push_back(rolesObject);
-		}
+				seriesObject.roles.login.push_back(value.asString());
 		series_.push_back(seriesObject);
 	}
+	if(!value["SupportSpotInstance"].isNull())
+		supportSpotInstance_ = value["SupportSpotInstance"].asString() == "true";
 
 }
 
 std::vector<ListPreferredEcsTypesResult::SeriesInfo> ListPreferredEcsTypesResult::getSeries()const
 {
 	return series_;
+}
+
+bool ListPreferredEcsTypesResult::getSupportSpotInstance()const
+{
+	return supportSpotInstance_;
 }
 

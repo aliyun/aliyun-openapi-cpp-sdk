@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getVRouterId()const;
 				std::string getRouteTableId()const;
 				std::string getVpcId()const;
+				std::string getResourceGroupId()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -47,6 +48,7 @@ namespace AlibabaCloud
 				std::string vRouterId_;
 				std::string routeTableId_;
 				std::string vpcId_;
+				std::string resourceGroupId_;
 
 			};
 		}

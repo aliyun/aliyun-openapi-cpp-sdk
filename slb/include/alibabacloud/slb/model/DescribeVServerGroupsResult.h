@@ -34,7 +34,25 @@ namespace AlibabaCloud
 			public:
 				struct VServerGroup
 				{
+					struct AssociatedObjects
+					{
+						struct Listener
+						{
+							int port;
+							std::string protocol;
+						};
+						struct Rule
+						{
+							std::string ruleId;
+							std::string domain;
+							std::string url;
+							std::string ruleName;
+						};
+						std::vector<Listener> listeners;
+						std::vector<Rule> rules;
+					};
 					std::string vServerGroupId;
+					AssociatedObjects associatedObjects;
 					std::string vServerGroupName;
 				};
 

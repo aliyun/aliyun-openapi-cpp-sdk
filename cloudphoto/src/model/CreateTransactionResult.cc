@@ -40,34 +40,24 @@ void CreateTransactionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allTransaction = value["Transaction"];
-	for (auto value : allTransaction)
-	{
-		Transaction transactionObject;
-		auto allUpload = value["Upload"];
-		for (auto value : allUpload)
-		{
-			Transaction::Upload uploadObject;
-			if(!value["Bucket"].isNull())
-				uploadObject.bucket = value["Bucket"].asString();
-			if(!value["FileId"].isNull())
-				uploadObject.fileId = value["FileId"].asString();
-			if(!value["OssEndpoint"].isNull())
-				uploadObject.ossEndpoint = value["OssEndpoint"].asString();
-			if(!value["ObjectKey"].isNull())
-				uploadObject.objectKey = value["ObjectKey"].asString();
-			if(!value["SessionId"].isNull())
-				uploadObject.sessionId = value["SessionId"].asString();
-			if(!value["AccessKeyId"].isNull())
-				uploadObject.accessKeyId = value["AccessKeyId"].asString();
-			if(!value["AccessKeySecret"].isNull())
-				uploadObject.accessKeySecret = value["AccessKeySecret"].asString();
-			if(!value["StsToken"].isNull())
-				uploadObject.stsToken = value["StsToken"].asString();
-			transactionObject.upload.push_back(uploadObject);
-		}
-		transaction_.push_back(transactionObject);
-	}
+	auto transactionNode = value["Transaction"];
+	auto uploadNode = transactionNode["Upload"];
+	if(!uploadNode["Bucket"].isNull())
+		transaction_.upload.bucket = uploadNode["Bucket"].asString();
+	if(!uploadNode["FileId"].isNull())
+		transaction_.upload.fileId = uploadNode["FileId"].asString();
+	if(!uploadNode["OssEndpoint"].isNull())
+		transaction_.upload.ossEndpoint = uploadNode["OssEndpoint"].asString();
+	if(!uploadNode["ObjectKey"].isNull())
+		transaction_.upload.objectKey = uploadNode["ObjectKey"].asString();
+	if(!uploadNode["SessionId"].isNull())
+		transaction_.upload.sessionId = uploadNode["SessionId"].asString();
+	if(!uploadNode["AccessKeyId"].isNull())
+		transaction_.upload.accessKeyId = uploadNode["AccessKeyId"].asString();
+	if(!uploadNode["AccessKeySecret"].isNull())
+		transaction_.upload.accessKeySecret = uploadNode["AccessKeySecret"].asString();
+	if(!uploadNode["StsToken"].isNull())
+		transaction_.upload.stsToken = uploadNode["StsToken"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -82,7 +72,7 @@ std::string CreateTransactionResult::getAction()const
 	return action_;
 }
 
-std::vector<CreateTransactionResult::Transaction> CreateTransactionResult::getTransaction()const
+CreateTransactionResult::Transaction CreateTransactionResult::getTransaction()const
 {
 	return transaction_;
 }

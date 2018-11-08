@@ -44,7 +44,7 @@ namespace AlibabaCloud
 				~RefreshTokenResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<Token> getToken()const;
+				Token getToken()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -53,7 +53,7 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				std::vector<Token> token_;
+				Token token_;
 				std::string code_;
 				bool success_;
 

@@ -46,6 +46,8 @@ void CreateVpcResult::parse(const std::string &payload)
 		vRouterId_ = value["VRouterId"].asString();
 	if(!value["RouteTableId"].isNull())
 		routeTableId_ = value["RouteTableId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -62,5 +64,10 @@ std::string CreateVpcResult::getRouteTableId()const
 std::string CreateVpcResult::getVpcId()const
 {
 	return vpcId_;
+}
+
+std::string CreateVpcResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 

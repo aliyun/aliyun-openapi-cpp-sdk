@@ -40,32 +40,27 @@ void RequestLoginInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allLoginInfo = value["LoginInfo"];
-	for (auto value : allLoginInfo)
-	{
-		LoginInfo loginInfoObject;
-		if(!value["UserName"].isNull())
-			loginInfoObject.userName = value["UserName"].asString();
-		if(!value["DisplayName"].isNull())
-			loginInfoObject.displayName = value["DisplayName"].asString();
-		if(!value["PhoneNumber"].isNull())
-			loginInfoObject.phoneNumber = value["PhoneNumber"].asString();
-		if(!value["Region"].isNull())
-			loginInfoObject.region = value["Region"].asString();
-		if(!value["WebRtcUrl"].isNull())
-			loginInfoObject.webRtcUrl = value["WebRtcUrl"].asString();
-		if(!value["AgentServerUrl"].isNull())
-			loginInfoObject.agentServerUrl = value["AgentServerUrl"].asString();
-		if(!value["Extension"].isNull())
-			loginInfoObject.extension = value["Extension"].asString();
-		if(!value["TenantId"].isNull())
-			loginInfoObject.tenantId = value["TenantId"].asString();
-		if(!value["Signature"].isNull())
-			loginInfoObject.signature = value["Signature"].asString();
-		if(!value["SignData"].isNull())
-			loginInfoObject.signData = value["SignData"].asString();
-		loginInfo_.push_back(loginInfoObject);
-	}
+	auto loginInfoNode = value["LoginInfo"];
+	if(!loginInfoNode["UserName"].isNull())
+		loginInfo_.userName = loginInfoNode["UserName"].asString();
+	if(!loginInfoNode["DisplayName"].isNull())
+		loginInfo_.displayName = loginInfoNode["DisplayName"].asString();
+	if(!loginInfoNode["PhoneNumber"].isNull())
+		loginInfo_.phoneNumber = loginInfoNode["PhoneNumber"].asString();
+	if(!loginInfoNode["Region"].isNull())
+		loginInfo_.region = loginInfoNode["Region"].asString();
+	if(!loginInfoNode["WebRtcUrl"].isNull())
+		loginInfo_.webRtcUrl = loginInfoNode["WebRtcUrl"].asString();
+	if(!loginInfoNode["AgentServerUrl"].isNull())
+		loginInfo_.agentServerUrl = loginInfoNode["AgentServerUrl"].asString();
+	if(!loginInfoNode["Extension"].isNull())
+		loginInfo_.extension = loginInfoNode["Extension"].asString();
+	if(!loginInfoNode["TenantId"].isNull())
+		loginInfo_.tenantId = loginInfoNode["TenantId"].asString();
+	if(!loginInfoNode["Signature"].isNull())
+		loginInfo_.signature = loginInfoNode["Signature"].asString();
+	if(!loginInfoNode["SignData"].isNull())
+		loginInfo_.signData = loginInfoNode["SignData"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -77,7 +72,7 @@ void RequestLoginInfoResult::parse(const std::string &payload)
 
 }
 
-std::vector<RequestLoginInfoResult::LoginInfo> RequestLoginInfoResult::getLoginInfo()const
+RequestLoginInfoResult::LoginInfo RequestLoginInfoResult::getLoginInfo()const
 {
 	return loginInfo_;
 }

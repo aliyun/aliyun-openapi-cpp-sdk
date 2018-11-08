@@ -25,6 +25,17 @@ CreateKeyPairRequest::CreateKeyPairRequest() :
 CreateKeyPairRequest::~CreateKeyPairRequest()
 {}
 
+std::string CreateKeyPairRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateKeyPairRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 long CreateKeyPairRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -67,6 +78,23 @@ void CreateKeyPairRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
 	setParameter("KeyPairName", keyPairName);
+}
+
+std::vector<CreateKeyPairRequest::Tag> CreateKeyPairRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateKeyPairRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 
 long CreateKeyPairRequest::getOwnerId()const

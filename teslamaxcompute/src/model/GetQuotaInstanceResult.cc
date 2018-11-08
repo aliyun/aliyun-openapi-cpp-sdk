@@ -40,61 +40,64 @@ void GetQuotaInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"];
-	for (auto value : allData)
+	auto dataNode = value["Data"];
+	if(!dataNode["Total"].isNull())
+		data_.total = std::stoi(dataNode["Total"].asString());
+	auto allDetail = value["Detail"]["Instance"];
+	for (auto value : allDetail)
 	{
-		Data dataObject;
-		if(!value["Total"].isNull())
-			dataObject.total = std::stoi(value["Total"].asString());
-		auto allDetail = value["Detail"]["instance"];
-		for (auto value : allDetail)
-		{
-			Data::Instance instanceObject;
-			if(!value["Project"].isNull())
-				instanceObject.project = value["Project"].asString();
-			if(!value["InstanceId"].isNull())
-				instanceObject.instanceId = value["InstanceId"].asString();
-			if(!value["Status"].isNull())
-				instanceObject.status = value["Status"].asString();
-			if(!value["UserAccount"].isNull())
-				instanceObject.userAccount = value["UserAccount"].asString();
-			if(!value["NickName"].isNull())
-				instanceObject.nickName = value["NickName"].asString();
-			if(!value["Cluster"].isNull())
-				instanceObject.cluster = value["Cluster"].asString();
-			if(!value["RunTime"].isNull())
-				instanceObject.runTime = value["RunTime"].asString();
-			if(!value["CpuUsed"].isNull())
-				instanceObject.cpuUsed = std::stol(value["CpuUsed"].asString());
-			if(!value["CpuRequest"].isNull())
-				instanceObject.cpuRequest = std::stol(value["CpuRequest"].asString());
-			if(!value["CpuUsedTotal"].isNull())
-				instanceObject.cpuUsedTotal = std::stol(value["CpuUsedTotal"].asString());
-			if(!value["CpuUsedRatioMax"].isNull())
-				instanceObject.cpuUsedRatioMax = std::stof(value["CpuUsedRatioMax"].asString());
-			if(!value["CpuUsedRatioMin"].isNull())
-				instanceObject.cpuUsedRatioMin = std::stof(value["CpuUsedRatioMin"].asString());
-			if(!value["MemUsed"].isNull())
-				instanceObject.memUsed = std::stol(value["MemUsed"].asString());
-			if(!value["MemRequest"].isNull())
-				instanceObject.memRequest = std::stol(value["MemRequest"].asString());
-			if(!value["MemUsedTotal"].isNull())
-				instanceObject.memUsedTotal = std::stol(value["MemUsedTotal"].asString());
-			if(!value["MemUsedRatioMax"].isNull())
-				instanceObject.memUsedRatioMax = std::stof(value["MemUsedRatioMax"].asString());
-			if(!value["MemUsedRatioMin"].isNull())
-				instanceObject.memUsedRatioMin = std::stof(value["MemUsedRatioMin"].asString());
-			if(!value["TaskType"].isNull())
-				instanceObject.taskType = value["TaskType"].asString();
-			if(!value["SkynetId"].isNull())
-				instanceObject.skynetId = value["SkynetId"].asString();
-			if(!value["QuotaName"].isNull())
-				instanceObject.quotaName = value["QuotaName"].asString();
-			if(!value["QuotaId"].isNull())
-				instanceObject.quotaId = std::stoi(value["QuotaId"].asString());
-			dataObject.detail.push_back(instanceObject);
-		}
-		data_.push_back(dataObject);
+		Data::Instance instanceObject;
+		if(!value["Project"].isNull())
+			instanceObject.project = value["Project"].asString();
+		if(!value["InstanceId"].isNull())
+			instanceObject.instanceId = value["InstanceId"].asString();
+		if(!value["Status"].isNull())
+			instanceObject.status = value["Status"].asString();
+		if(!value["UserAccount"].isNull())
+			instanceObject.userAccount = value["UserAccount"].asString();
+		if(!value["NickName"].isNull())
+			instanceObject.nickName = value["NickName"].asString();
+		if(!value["Cluster"].isNull())
+			instanceObject.cluster = value["Cluster"].asString();
+		if(!value["RunTime"].isNull())
+			instanceObject.runTime = value["RunTime"].asString();
+		if(!value["CpuUsed"].isNull())
+			instanceObject.cpuUsed = std::stol(value["CpuUsed"].asString());
+		if(!value["CpuRequest"].isNull())
+			instanceObject.cpuRequest = std::stol(value["CpuRequest"].asString());
+		if(!value["CpuUsedTotal"].isNull())
+			instanceObject.cpuUsedTotal = std::stol(value["CpuUsedTotal"].asString());
+		if(!value["CpuUsedRatioMax"].isNull())
+			instanceObject.cpuUsedRatioMax = std::stof(value["CpuUsedRatioMax"].asString());
+		if(!value["CpuUsedRatioMin"].isNull())
+			instanceObject.cpuUsedRatioMin = std::stof(value["CpuUsedRatioMin"].asString());
+		if(!value["MemUsed"].isNull())
+			instanceObject.memUsed = std::stol(value["MemUsed"].asString());
+		if(!value["MemRequest"].isNull())
+			instanceObject.memRequest = std::stol(value["MemRequest"].asString());
+		if(!value["MemUsedTotal"].isNull())
+			instanceObject.memUsedTotal = std::stol(value["MemUsedTotal"].asString());
+		if(!value["MemUsedRatioMax"].isNull())
+			instanceObject.memUsedRatioMax = std::stof(value["MemUsedRatioMax"].asString());
+		if(!value["MemUsedRatioMin"].isNull())
+			instanceObject.memUsedRatioMin = std::stof(value["MemUsedRatioMin"].asString());
+		if(!value["TaskType"].isNull())
+			instanceObject.taskType = value["TaskType"].asString();
+		if(!value["SkynetId"].isNull())
+			instanceObject.skynetId = value["SkynetId"].asString();
+		if(!value["QuotaName"].isNull())
+			instanceObject.quotaName = value["QuotaName"].asString();
+		if(!value["QuotaId"].isNull())
+			instanceObject.quotaId = std::stoi(value["QuotaId"].asString());
+		if(!value["User"].isNull())
+			instanceObject.user = value["User"].asString();
+		if(!value["IsRealOwner"].isNull())
+			instanceObject.isRealOwner = value["IsRealOwner"].asString();
+		if(!value["ProjectOwner"].isNull())
+			instanceObject.projectOwner = value["ProjectOwner"].asString();
+		if(!value["CollectTime"].isNull())
+			instanceObject.collectTime = value["CollectTime"].asString();
+		data_.detail.push_back(instanceObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
@@ -108,7 +111,7 @@ std::string GetQuotaInstanceResult::getMessage()const
 	return message_;
 }
 
-std::vector<GetQuotaInstanceResult::Data> GetQuotaInstanceResult::getData()const
+GetQuotaInstanceResult::Data GetQuotaInstanceResult::getData()const
 {
 	return data_;
 }

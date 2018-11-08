@@ -36,6 +36,17 @@ void DescribeVServerGroupsRequest::setAccess_key_id(const std::string& access_ke
 	setParameter("Access_key_id", access_key_id);
 }
 
+bool DescribeVServerGroupsRequest::getIncludeRule()const
+{
+	return includeRule_;
+}
+
+void DescribeVServerGroupsRequest::setIncludeRule(bool includeRule)
+{
+	includeRule_ = includeRule;
+	setParameter("IncludeRule", std::to_string(includeRule));
+}
+
 long DescribeVServerGroupsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -78,6 +89,17 @@ void DescribeVServerGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+bool DescribeVServerGroupsRequest::getIncludeListener()const
+{
+	return includeListener_;
+}
+
+void DescribeVServerGroupsRequest::setIncludeListener(bool includeListener)
+{
+	includeListener_ = includeListener;
+	setParameter("IncludeListener", std::to_string(includeListener));
 }
 
 std::string DescribeVServerGroupsRequest::getOwnerAccount()const

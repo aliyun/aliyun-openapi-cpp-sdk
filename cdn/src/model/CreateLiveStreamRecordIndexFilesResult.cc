@@ -40,28 +40,23 @@ void CreateLiveStreamRecordIndexFilesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allRecordInfo = value["RecordInfo"];
-	for (auto value : allRecordInfo)
-	{
-		RecordInfo recordInfoObject;
-		if(!value["RecordId"].isNull())
-			recordInfoObject.recordId = value["RecordId"].asString();
-		if(!value["RecordUrl"].isNull())
-			recordInfoObject.recordUrl = value["RecordUrl"].asString();
-		if(!value["Duration"].isNull())
-			recordInfoObject.duration = std::stof(value["Duration"].asString());
-		if(!value["Height"].isNull())
-			recordInfoObject.height = std::stoi(value["Height"].asString());
-		if(!value["Width"].isNull())
-			recordInfoObject.width = std::stoi(value["Width"].asString());
-		if(!value["CreateTime"].isNull())
-			recordInfoObject.createTime = value["CreateTime"].asString();
-		recordInfo_.push_back(recordInfoObject);
-	}
+	auto recordInfoNode = value["RecordInfo"];
+	if(!recordInfoNode["RecordId"].isNull())
+		recordInfo_.recordId = recordInfoNode["RecordId"].asString();
+	if(!recordInfoNode["RecordUrl"].isNull())
+		recordInfo_.recordUrl = recordInfoNode["RecordUrl"].asString();
+	if(!recordInfoNode["Duration"].isNull())
+		recordInfo_.duration = std::stof(recordInfoNode["Duration"].asString());
+	if(!recordInfoNode["Height"].isNull())
+		recordInfo_.height = std::stoi(recordInfoNode["Height"].asString());
+	if(!recordInfoNode["Width"].isNull())
+		recordInfo_.width = std::stoi(recordInfoNode["Width"].asString());
+	if(!recordInfoNode["CreateTime"].isNull())
+		recordInfo_.createTime = recordInfoNode["CreateTime"].asString();
 
 }
 
-std::vector<CreateLiveStreamRecordIndexFilesResult::RecordInfo> CreateLiveStreamRecordIndexFilesResult::getRecordInfo()const
+CreateLiveStreamRecordIndexFilesResult::RecordInfo CreateLiveStreamRecordIndexFilesResult::getRecordInfo()const
 {
 	return recordInfo_;
 }

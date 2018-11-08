@@ -37,12 +37,16 @@ namespace AlibabaCloud
 					struct Managers
 					{
 						int normalCount;
+						int operatingCount;
+						int stoppedCount;
 						int total;
 						int exceptionCount;
 					};
 					struct Computes
 					{
 						int normalCount;
+						int operatingCount;
+						int stoppedCount;
 						int total;
 						int exceptionCount;
 					};
@@ -67,16 +71,18 @@ namespace AlibabaCloud
 					int count;
 					std::string accountType;
 					std::string name;
-					std::vector<UsedResources> usedResources;
-					std::vector<Managers> managers;
-					std::vector<TotalResources> totalResources;
+					UsedResources usedResources;
+					std::string deployMode;
+					Managers managers;
+					TotalResources totalResources;
 					std::string osTag;
 					std::string imageId;
 					std::string id;
 					std::string regionId;
 					std::string instanceType;
 					std::string loginNodes;
-					std::vector<Computes> computes;
+					Computes computes;
+					std::string location;
 				};
 
 

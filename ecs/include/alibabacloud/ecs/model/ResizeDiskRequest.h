@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setDiskId(const std::string& diskId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getType()const;
+				void setType(const std::string& type);
 
             private:
 				long resourceOwnerId_;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				int newSize_;
 				std::string diskId_;
 				long ownerId_;
+				std::string type_;
 
 			};
 		}

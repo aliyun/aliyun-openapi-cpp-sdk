@@ -62,6 +62,8 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.accountType = value["AccountType"].asString();
 		if(!value["SchedulerType"].isNull())
 			clustersObject.schedulerType = value["SchedulerType"].asString();
+		if(!value["DeployMode"].isNull())
+			clustersObject.deployMode = value["DeployMode"].asString();
 		if(!value["Count"].isNull())
 			clustersObject.count = std::stoi(value["Count"].asString());
 		if(!value["InstanceType"].isNull())
@@ -74,54 +76,44 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.imageOwnerAlias = value["ImageOwnerAlias"].asString();
 		if(!value["ImageId"].isNull())
 			clustersObject.imageId = value["ImageId"].asString();
-		auto allManagers = value["Managers"];
-		for (auto value : allManagers)
-		{
-			ClusterInfoSimple::Managers managersObject;
-			if(!value["Total"].isNull())
-				managersObject.total = std::stoi(value["Total"].asString());
-			if(!value["NormalCount"].isNull())
-				managersObject.normalCount = std::stoi(value["NormalCount"].asString());
-			if(!value["ExceptionCount"].isNull())
-				managersObject.exceptionCount = std::stoi(value["ExceptionCount"].asString());
-			clustersObject.managers.push_back(managersObject);
-		}
-		auto allComputes = value["Computes"];
-		for (auto value : allComputes)
-		{
-			ClusterInfoSimple::Computes computesObject;
-			if(!value["Total"].isNull())
-				computesObject.total = std::stoi(value["Total"].asString());
-			if(!value["NormalCount"].isNull())
-				computesObject.normalCount = std::stoi(value["NormalCount"].asString());
-			if(!value["ExceptionCount"].isNull())
-				computesObject.exceptionCount = std::stoi(value["ExceptionCount"].asString());
-			clustersObject.computes.push_back(computesObject);
-		}
-		auto allTotalResources = value["TotalResources"];
-		for (auto value : allTotalResources)
-		{
-			ClusterInfoSimple::TotalResources totalResourcesObject;
-			if(!value["Cpu"].isNull())
-				totalResourcesObject.cpu = std::stoi(value["Cpu"].asString());
-			if(!value["Memory"].isNull())
-				totalResourcesObject.memory = std::stoi(value["Memory"].asString());
-			if(!value["Gpu"].isNull())
-				totalResourcesObject.gpu = std::stoi(value["Gpu"].asString());
-			clustersObject.totalResources.push_back(totalResourcesObject);
-		}
-		auto allUsedResources = value["UsedResources"];
-		for (auto value : allUsedResources)
-		{
-			ClusterInfoSimple::UsedResources usedResourcesObject;
-			if(!value["Cpu"].isNull())
-				usedResourcesObject.cpu = std::stoi(value["Cpu"].asString());
-			if(!value["Memory"].isNull())
-				usedResourcesObject.memory = std::stoi(value["Memory"].asString());
-			if(!value["Gpu"].isNull())
-				usedResourcesObject.gpu = std::stoi(value["Gpu"].asString());
-			clustersObject.usedResources.push_back(usedResourcesObject);
-		}
+		if(!value["Location"].isNull())
+			clustersObject.location = value["Location"].asString();
+		auto managersNode = value["Managers"];
+		if(!managersNode["Total"].isNull())
+			clustersObject.managers.total = std::stoi(managersNode["Total"].asString());
+		if(!managersNode["NormalCount"].isNull())
+			clustersObject.managers.normalCount = std::stoi(managersNode["NormalCount"].asString());
+		if(!managersNode["OperatingCount"].isNull())
+			clustersObject.managers.operatingCount = std::stoi(managersNode["OperatingCount"].asString());
+		if(!managersNode["StoppedCount"].isNull())
+			clustersObject.managers.stoppedCount = std::stoi(managersNode["StoppedCount"].asString());
+		if(!managersNode["ExceptionCount"].isNull())
+			clustersObject.managers.exceptionCount = std::stoi(managersNode["ExceptionCount"].asString());
+		auto computesNode = value["Computes"];
+		if(!computesNode["Total"].isNull())
+			clustersObject.computes.total = std::stoi(computesNode["Total"].asString());
+		if(!computesNode["NormalCount"].isNull())
+			clustersObject.computes.normalCount = std::stoi(computesNode["NormalCount"].asString());
+		if(!computesNode["OperatingCount"].isNull())
+			clustersObject.computes.operatingCount = std::stoi(computesNode["OperatingCount"].asString());
+		if(!computesNode["StoppedCount"].isNull())
+			clustersObject.computes.stoppedCount = std::stoi(computesNode["StoppedCount"].asString());
+		if(!computesNode["ExceptionCount"].isNull())
+			clustersObject.computes.exceptionCount = std::stoi(computesNode["ExceptionCount"].asString());
+		auto totalResourcesNode = value["TotalResources"];
+		if(!totalResourcesNode["Cpu"].isNull())
+			clustersObject.totalResources.cpu = std::stoi(totalResourcesNode["Cpu"].asString());
+		if(!totalResourcesNode["Memory"].isNull())
+			clustersObject.totalResources.memory = std::stoi(totalResourcesNode["Memory"].asString());
+		if(!totalResourcesNode["Gpu"].isNull())
+			clustersObject.totalResources.gpu = std::stoi(totalResourcesNode["Gpu"].asString());
+		auto usedResourcesNode = value["UsedResources"];
+		if(!usedResourcesNode["Cpu"].isNull())
+			clustersObject.usedResources.cpu = std::stoi(usedResourcesNode["Cpu"].asString());
+		if(!usedResourcesNode["Memory"].isNull())
+			clustersObject.usedResources.memory = std::stoi(usedResourcesNode["Memory"].asString());
+		if(!usedResourcesNode["Gpu"].isNull())
+			clustersObject.usedResources.gpu = std::stoi(usedResourcesNode["Gpu"].asString());
 		clusters_.push_back(clustersObject);
 	}
 	if(!value["TotalCount"].isNull())

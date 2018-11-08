@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::SetAutoScaleConfigRequest;
 
 SetAutoScaleConfigRequest::SetAutoScaleConfigRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "SetAutoScaleConfig")
+	RpcServiceRequest("ehpc", "2018-04-12", "SetAutoScaleConfig")
 {}
 
 SetAutoScaleConfigRequest::~SetAutoScaleConfigRequest()
@@ -69,6 +69,17 @@ void SetAutoScaleConfigRequest::setEnableAutoGrow(bool enableAutoGrow)
 	setParameter("EnableAutoGrow", std::to_string(enableAutoGrow));
 }
 
+float SetAutoScaleConfigRequest::getSpotPriceLimit()const
+{
+	return spotPriceLimit_;
+}
+
+void SetAutoScaleConfigRequest::setSpotPriceLimit(float spotPriceLimit)
+{
+	spotPriceLimit_ = spotPriceLimit;
+	setParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
+}
+
 bool SetAutoScaleConfigRequest::getEnableAutoShrink()const
 {
 	return enableAutoShrink_;
@@ -89,6 +100,17 @@ void SetAutoScaleConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetAutoScaleConfigRequest::getSpotStrategy()const
+{
+	return spotStrategy_;
+}
+
+void SetAutoScaleConfigRequest::setSpotStrategy(const std::string& spotStrategy)
+{
+	spotStrategy_ = spotStrategy;
+	setParameter("SpotStrategy", spotStrategy);
 }
 
 int SetAutoScaleConfigRequest::getMaxNodesInCluster()const
@@ -122,6 +144,25 @@ void SetAutoScaleConfigRequest::setShrinkIntervalInMinutes(int shrinkIntervalInM
 {
 	shrinkIntervalInMinutes_ = shrinkIntervalInMinutes;
 	setParameter("ShrinkIntervalInMinutes", std::to_string(shrinkIntervalInMinutes));
+}
+
+std::vector<SetAutoScaleConfigRequest::Queues> SetAutoScaleConfigRequest::getQueues()const
+{
+	return queues_;
+}
+
+void SetAutoScaleConfigRequest::setQueues(const std::vector<Queues>& queues)
+{
+	queues_ = queues;
+	int i = 0;
+	for(int i = 0; i!= queues.size(); i++)	{
+		auto obj = queues.at(i);
+		std::string str ="Queues."+ std::to_string(i);
+		setParameter(str + ".SpotStrategy", obj.spotStrategy);
+		setParameter(str + ".QueueName", obj.queueName);
+		setParameter(str + ".InstanceType", obj.instanceType);
+		setParameter(str + ".SpotPriceLimit", std::to_string(obj.spotPriceLimit));
+	}
 }
 
 int SetAutoScaleConfigRequest::getExtraNodesGrowRatio()const

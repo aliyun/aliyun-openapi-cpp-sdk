@@ -72,6 +72,10 @@ void DescribeInstanceMonitorDataResult::parse(const std::string &payload)
 			monitorDataObject.cPUCreditUsage = std::stof(value["CPUCreditUsage"].asString());
 		if(!value["CPUCreditBalance"].isNull())
 			monitorDataObject.cPUCreditBalance = std::stof(value["CPUCreditBalance"].asString());
+		if(!value["CPUAdvanceCreditBalance"].isNull())
+			monitorDataObject.cPUAdvanceCreditBalance = std::stof(value["CPUAdvanceCreditBalance"].asString());
+		if(!value["CPUNotpaidSurplusCreditUsage"].isNull())
+			monitorDataObject.cPUNotpaidSurplusCreditUsage = std::stof(value["CPUNotpaidSurplusCreditUsage"].asString());
 		if(!value["TimeStamp"].isNull())
 			monitorDataObject.timeStamp = value["TimeStamp"].asString();
 		monitorData_.push_back(monitorDataObject);

@@ -157,17 +157,6 @@ void RevokeSecurityGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string RevokeSecurityGroupRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void RevokeSecurityGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 long RevokeSecurityGroupRequest::getSourceGroupOwnerId()const
 {
 	return sourceGroupOwnerId_;

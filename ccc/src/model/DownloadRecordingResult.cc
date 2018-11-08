@@ -40,16 +40,11 @@ void DownloadRecordingResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allMediaDownloadParam = value["MediaDownloadParam"];
-	for (auto value : allMediaDownloadParam)
-	{
-		MediaDownloadParam mediaDownloadParamObject;
-		if(!value["SignatureUrl"].isNull())
-			mediaDownloadParamObject.signatureUrl = value["SignatureUrl"].asString();
-		if(!value["FileName"].isNull())
-			mediaDownloadParamObject.fileName = value["FileName"].asString();
-		mediaDownloadParam_.push_back(mediaDownloadParamObject);
-	}
+	auto mediaDownloadParamNode = value["MediaDownloadParam"];
+	if(!mediaDownloadParamNode["SignatureUrl"].isNull())
+		mediaDownloadParam_.signatureUrl = mediaDownloadParamNode["SignatureUrl"].asString();
+	if(!mediaDownloadParamNode["FileName"].isNull())
+		mediaDownloadParam_.fileName = mediaDownloadParamNode["FileName"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -61,7 +56,7 @@ void DownloadRecordingResult::parse(const std::string &payload)
 
 }
 
-std::vector<DownloadRecordingResult::MediaDownloadParam> DownloadRecordingResult::getMediaDownloadParam()const
+DownloadRecordingResult::MediaDownloadParam DownloadRecordingResult::getMediaDownloadParam()const
 {
 	return mediaDownloadParam_;
 }

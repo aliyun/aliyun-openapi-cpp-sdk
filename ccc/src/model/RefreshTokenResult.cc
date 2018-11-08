@@ -40,16 +40,11 @@ void RefreshTokenResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allToken = value["Token"];
-	for (auto value : allToken)
-	{
-		Token tokenObject;
-		if(!value["Signature"].isNull())
-			tokenObject.signature = value["Signature"].asString();
-		if(!value["SignData"].isNull())
-			tokenObject.signData = value["SignData"].asString();
-		token_.push_back(tokenObject);
-	}
+	auto tokenNode = value["Token"];
+	if(!tokenNode["Signature"].isNull())
+		token_.signature = tokenNode["Signature"].asString();
+	if(!tokenNode["SignData"].isNull())
+		token_.signData = tokenNode["SignData"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -71,7 +66,7 @@ int RefreshTokenResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
-std::vector<RefreshTokenResult::Token> RefreshTokenResult::getToken()const
+RefreshTokenResult::Token RefreshTokenResult::getToken()const
 {
 	return token_;
 }

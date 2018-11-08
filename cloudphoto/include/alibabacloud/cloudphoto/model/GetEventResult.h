@@ -58,7 +58,7 @@ namespace AlibabaCloud
 				~GetEventResult();
 				std::string getAction()const;
 				std::string getMessage()const;
-				std::vector<Event> getEvent()const;
+				Event getEvent()const;
 				std::string getCode()const;
 
 			protected:
@@ -66,7 +66,7 @@ namespace AlibabaCloud
 			private:
 				std::string action_;
 				std::string message_;
-				std::vector<Event> event_;
+				Event event_;
 				std::string code_;
 
 			};

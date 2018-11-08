@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::EditJobTemplateRequest;
 
 EditJobTemplateRequest::EditJobTemplateRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "EditJobTemplate")
+	RpcServiceRequest("ehpc", "2018-04-12", "EditJobTemplate")
 {}
 
 EditJobTemplateRequest::~EditJobTemplateRequest()
@@ -56,6 +56,17 @@ void EditJobTemplateRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
 	setParameter("RunasUser", runasUser);
+}
+
+bool EditJobTemplateRequest::getReRunable()const
+{
+	return reRunable_;
+}
+
+void EditJobTemplateRequest::setReRunable(bool reRunable)
+{
+	reRunable_ = reRunable;
+	setParameter("ReRunable", std::to_string(reRunable));
 }
 
 std::string EditJobTemplateRequest::getTemplateId()const
@@ -122,28 +133,6 @@ void EditJobTemplateRequest::setPackagePath(const std::string& packagePath)
 {
 	packagePath_ = packagePath;
 	setParameter("PackagePath", packagePath);
-}
-
-bool EditJobTemplateRequest::getReRunnable()const
-{
-	return reRunnable_;
-}
-
-void EditJobTemplateRequest::setReRunnable(bool reRunnable)
-{
-	reRunnable_ = reRunnable;
-	setParameter("ReRunnable", std::to_string(reRunnable));
-}
-
-std::string EditJobTemplateRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void EditJobTemplateRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
 }
 
 std::string EditJobTemplateRequest::getName()const

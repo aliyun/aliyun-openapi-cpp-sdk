@@ -69,6 +69,17 @@ void SetDomainServerCertificateRequest::setSecurityToken(const std::string& secu
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string SetDomainServerCertificateRequest::getCertType()const
+{
+	return certType_;
+}
+
+void SetDomainServerCertificateRequest::setCertType(const std::string& certType)
+{
+	certType_ = certType;
+	setParameter("CertType", certType);
+}
+
 std::string SetDomainServerCertificateRequest::getCertName()const
 {
 	return certName_;

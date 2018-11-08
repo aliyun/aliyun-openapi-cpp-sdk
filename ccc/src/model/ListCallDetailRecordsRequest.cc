@@ -91,15 +91,15 @@ void ListCallDetailRecordsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
-long ListCallDetailRecordsRequest::getStartTime()const
+std::string ListCallDetailRecordsRequest::getOrderBy()const
 {
-	return startTime_;
+	return orderBy_;
 }
 
-void ListCallDetailRecordsRequest::setStartTime(long startTime)
+void ListCallDetailRecordsRequest::setOrderBy(const std::string& orderBy)
 {
-	startTime_ = startTime;
-	setParameter("StartTime", std::to_string(startTime));
+	orderBy_ = orderBy;
+	setParameter("OrderBy", orderBy);
 }
 
 long ListCallDetailRecordsRequest::getStopTime()const
@@ -111,6 +111,17 @@ void ListCallDetailRecordsRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
 	setParameter("StopTime", std::to_string(stopTime));
+}
+
+long ListCallDetailRecordsRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void ListCallDetailRecordsRequest::setStartTime(long startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 int ListCallDetailRecordsRequest::getPageNumber()const

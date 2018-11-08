@@ -46,7 +46,7 @@ namespace AlibabaCloud
 				explicit GetQuotaResult(const std::string &payload);
 				~GetQuotaResult();
 				std::string getAction()const;
-				std::vector<Quota> getQuota()const;
+				Quota getQuota()const;
 				std::string getMessage()const;
 				std::string getCode()const;
 
@@ -54,7 +54,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string action_;
-				std::vector<Quota> quota_;
+				Quota quota_;
 				std::string message_;
 				std::string code_;
 

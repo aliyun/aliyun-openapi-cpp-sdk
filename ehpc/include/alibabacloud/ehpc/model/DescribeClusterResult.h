@@ -51,53 +51,62 @@ namespace AlibabaCloud
 							int count;
 							std::string instanceType;
 						};
-						std::vector<Compute> compute;
-						std::vector<Login> login;
-						std::vector<Manager> manager;
+						Compute compute;
+						Login login;
+						Manager manager;
 					};
-					struct ApplicationInfoItem
+					struct ApplicationInfo
 					{
 						std::string version;
 						std::string tag;
 						std::string name;
 					};
+					struct PostInstallScriptInfo
+					{
+						std::string args;
+						std::string url;
+					};
 					std::string volumeProtocol;
 					std::string imageOwnerAlias;
 					std::string description;
-					std::vector<ApplicationInfoItem> applicationInfo;
 					std::string clientVersion;
 					std::string name;
 					std::string volumeId;
 					std::string volumeType;
+					std::string deployMode;
 					std::string imageId;
 					std::string status;
 					std::string keyPairName;
 					std::string remoteDirectory;
 					std::string sccClusterId;
+					std::vector<ApplicationInfo> applications;
+					std::vector<PostInstallScriptInfo> postInstallScripts;
 					std::string createTime;
 					std::string securityGroupId;
 					std::string vSwitchId;
 					std::string schedulerType;
 					std::string accountType;
 					std::string volumeMountpoint;
-					std::vector<EcsInfo> ecsInfo;
+					std::string vpcId;
+					EcsInfo ecsInfo;
 					bool haEnable;
 					std::string osTag;
 					std::string id;
 					std::string regionId;
 					std::string ecsChargeType;
+					std::string location;
 				};
 
 
 				DescribeClusterResult();
 				explicit DescribeClusterResult(const std::string &payload);
 				~DescribeClusterResult();
-				std::vector<ClusterInfo> getClusterInfo()const;
+				ClusterInfo getClusterInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ClusterInfo> clusterInfo_;
+				ClusterInfo clusterInfo_;
 
 			};
 		}

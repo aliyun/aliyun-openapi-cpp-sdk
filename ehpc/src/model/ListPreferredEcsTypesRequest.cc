@@ -19,11 +19,22 @@
 using AlibabaCloud::EHPC::Model::ListPreferredEcsTypesRequest;
 
 ListPreferredEcsTypesRequest::ListPreferredEcsTypesRequest() :
-	RpcServiceRequest("ehpc", "2017-07-14", "ListPreferredEcsTypes")
+	RpcServiceRequest("ehpc", "2018-04-12", "ListPreferredEcsTypes")
 {}
 
 ListPreferredEcsTypesRequest::~ListPreferredEcsTypesRequest()
 {}
+
+std::string ListPreferredEcsTypesRequest::getSpotStrategy()const
+{
+	return spotStrategy_;
+}
+
+void ListPreferredEcsTypesRequest::setSpotStrategy(const std::string& spotStrategy)
+{
+	spotStrategy_ = spotStrategy;
+	setParameter("SpotStrategy", spotStrategy);
+}
 
 std::string ListPreferredEcsTypesRequest::getZoneId()const
 {
@@ -34,6 +45,17 @@ void ListPreferredEcsTypesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setParameter("ZoneId", zoneId);
+}
+
+std::string ListPreferredEcsTypesRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
+}
+
+void ListPreferredEcsTypesRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string ListPreferredEcsTypesRequest::getAccessKeyId()const

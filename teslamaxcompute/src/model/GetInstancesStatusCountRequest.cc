@@ -36,6 +36,17 @@ void GetInstancesStatusCountRequest::setCluster(const std::string& cluster)
 	setParameter("Cluster", cluster);
 }
 
+std::string GetInstancesStatusCountRequest::getQuotaId()const
+{
+	return quotaId_;
+}
+
+void GetInstancesStatusCountRequest::setQuotaId(const std::string& quotaId)
+{
+	quotaId_ = quotaId;
+	setParameter("QuotaId", quotaId);
+}
+
 std::string GetInstancesStatusCountRequest::getRegion()const
 {
 	return region_;
@@ -45,5 +56,16 @@ void GetInstancesStatusCountRequest::setRegion(const std::string& region)
 {
 	region_ = region;
 	setParameter("Region", region);
+}
+
+std::string GetInstancesStatusCountRequest::getQuotaName()const
+{
+	return quotaName_;
+}
+
+void GetInstancesStatusCountRequest::setQuotaName(const std::string& quotaName)
+{
+	quotaName_ = quotaName;
+	setParameter("QuotaName", quotaName);
 }
 

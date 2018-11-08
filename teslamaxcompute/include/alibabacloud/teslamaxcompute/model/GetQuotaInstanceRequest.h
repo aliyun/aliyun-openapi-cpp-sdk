@@ -43,6 +43,10 @@ namespace AlibabaCloud
 				void setQuotaId(const std::string& quotaId);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
+				std::string getRegion()const;
+				void setRegion(const std::string& region);
+				std::string getQuotaName()const;
+				void setQuotaName(const std::string& quotaName);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
@@ -51,6 +55,8 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::string quotaId_;
 				int pageNum_;
+				std::string region_;
+				std::string quotaName_;
 				std::string status_;
 
 			};
