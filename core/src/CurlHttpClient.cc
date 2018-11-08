@@ -25,8 +25,8 @@ namespace
 {
 	size_t recvBody(char *ptr, size_t size, size_t nmemb, void *userdata)
 	{
-		HttpResponse *response = static_cast<HttpResponse*>(userdata);
-		response->setBody(ptr, nmemb);
+		std::ostringstream &out = *static_cast<std::ostringstream*>(userdata);
+		out << std::string(ptr, nmemb*size);
 		return nmemb * size;
 	}
 
@@ -118,17 +118,24 @@ HttpClient::HttpResponseOutcome CurlHttpClient::makeRequest(const HttpRequest &r
 		list = curl_slist_append(list, str.c_str());
 	}
 	curl_easy_setopt(curlHandle_, CURLOPT_HTTPHEADER, list);
-	curl_easy_setopt(curlHandle_, CURLOPT_WRITEDATA, &response);
+	std::ostringstream out;
+	curl_easy_setopt(curlHandle_, CURLOPT_WRITEDATA, &out);
 	curl_easy_setopt(curlHandle_, CURLOPT_WRITEFUNCTION, recvBody);
 	setCUrlProxy(curlHandle_, proxy());
 
 	CURLcode res = curl_easy_perform(curlHandle_);
-	if (res == CURLE_OK) {
+	switch (res)
+	{
+	case CURLE_OK: {
 		long response_code;
 		curl_easy_getinfo(curlHandle_, CURLINFO_RESPONSE_CODE, &response_code);
 		response.setStatusCode(response_code);
+		response.setBody(out.str().c_str(), out.str().length());
 		return HttpResponseOutcome(response);
 	}
-	
-	return HttpResponseOutcome(Error("NetworkError", "Failed to connect to host or proxy."));
+	case CURLE_SSL_CONNECT_ERROR:
+		return HttpResponseOutcome(Error("SSLConnectError", "A problem occurred somewhere in the SSL/TLS handshake."));
+	default:
+		return HttpResponseOutcome(Error("NetworkError", "Failed to connect to host or proxy."));
+	}
 }
