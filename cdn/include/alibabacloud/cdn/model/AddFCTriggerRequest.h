@@ -89,6 +89,8 @@ namespace AlibabaCloud
 				void setRoleARN(const std::string& roleARN);
 				std::string getEventMetaName()const;
 				void setEventMetaName(const std::string& eventMetaName);
+				std::string getFunctionARN()const;
+				void setFunctionARN(const std::string& functionARN);
 
             private:
 				std::string notes_;
@@ -118,6 +120,7 @@ namespace AlibabaCloud
 				std::string requestId_;
 				std::string roleARN_;
 				std::string eventMetaName_;
+				std::string functionARN_;
 
 			};
 		}

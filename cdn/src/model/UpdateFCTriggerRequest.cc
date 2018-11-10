@@ -300,3 +300,14 @@ void UpdateFCTriggerRequest::setRoleARN(const std::string& roleARN)
 	setParameter("RoleARN", roleARN);
 }
 
+std::string UpdateFCTriggerRequest::getFunctionARN()const
+{
+	return functionARN_;
+}
+
+void UpdateFCTriggerRequest::setFunctionARN(const std::string& functionARN)
+{
+	functionARN_ = functionARN;
+	setParameter("FunctionARN", functionARN);
+}
+

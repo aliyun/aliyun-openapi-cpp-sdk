@@ -85,6 +85,8 @@ namespace AlibabaCloud
 				void setRequestId(const std::string& requestId);
 				std::string getRoleARN()const;
 				void setRoleARN(const std::string& roleARN);
+				std::string getFunctionARN()const;
+				void setFunctionARN(const std::string& functionARN);
 
             private:
 				std::string notes_;
@@ -112,6 +114,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string requestId_;
 				std::string roleARN_;
+				std::string functionARN_;
 
 			};
 		}

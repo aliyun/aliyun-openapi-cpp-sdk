@@ -322,3 +322,14 @@ void AddFCTriggerRequest::setEventMetaName(const std::string& eventMetaName)
 	setParameter("EventMetaName", eventMetaName);
 }
 
+std::string AddFCTriggerRequest::getFunctionARN()const
+{
+	return functionARN_;
+}
+
+void AddFCTriggerRequest::setFunctionARN(const std::string& functionARN)
+{
+	functionARN_ = functionARN;
+	setParameter("FunctionARN", functionARN);
+}
+
