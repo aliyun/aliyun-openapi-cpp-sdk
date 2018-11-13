@@ -41,6 +41,7 @@ namespace AlibabaCloud
 				std::string getDomainName()const;
 				long getPrice()const;
 				std::string getPremium()const;
+				bool getDynamicCheck()const;
 				std::string getReason()const;
 
 			protected:
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 				std::string domainName_;
 				long price_;
 				std::string premium_;
+				bool dynamicCheck_;
 				std::string reason_;
 
 			};

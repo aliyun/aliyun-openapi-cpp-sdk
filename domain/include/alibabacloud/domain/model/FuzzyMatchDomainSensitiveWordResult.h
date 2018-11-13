@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINADMINDIVISIONRESULT_H_
-#define ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINADMINDIVISIONRESULT_H_
+#ifndef ALIBABACLOUD_DOMAIN_MODEL_FUZZYMATCHDOMAINSENSITIVEWORDRESULT_H_
+#define ALIBABACLOUD_DOMAIN_MODEL_FUZZYMATCHDOMAINSENSITIVEWORDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DOMAIN_EXPORT QueryDomainAdminDivisionResult : public ServiceResult
+			class ALIBABACLOUD_DOMAIN_EXPORT FuzzyMatchDomainSensitiveWordResult : public ServiceResult
 			{
 			public:
-				struct AdminDivision
+				struct MatchedSensitiveWord
 				{
-					struct ChildrenItem
-					{
-						std::string childDivisionName;
-					};
-					std::string divisionName;
-					std::vector<AdminDivision::ChildrenItem> children;
+					std::string word;
 				};
 
 
-				QueryDomainAdminDivisionResult();
-				explicit QueryDomainAdminDivisionResult(const std::string &payload);
-				~QueryDomainAdminDivisionResult();
-				std::vector<AdminDivision> getAdminDivisions()const;
+				FuzzyMatchDomainSensitiveWordResult();
+				explicit FuzzyMatchDomainSensitiveWordResult(const std::string &payload);
+				~FuzzyMatchDomainSensitiveWordResult();
+				bool getExist()const;
+				std::string getKeyword()const;
+				std::vector<MatchedSensitiveWord> getMatchedSentiveWords()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<AdminDivision> adminDivisions_;
+				bool exist_;
+				std::string keyword_;
+				std::vector<MatchedSensitiveWord> matchedSentiveWords_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DOMAIN_MODEL_QUERYDOMAINADMINDIVISIONRESULT_H_
+#endif // !ALIBABACLOUD_DOMAIN_MODEL_FUZZYMATCHDOMAINSENSITIVEWORDRESULT_H_

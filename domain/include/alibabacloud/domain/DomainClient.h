@@ -98,6 +98,8 @@
 #include "model/QueryDnsHostResult.h"
 #include "model/QueryRegistrantProfileRealNameVerificationInfoRequest.h"
 #include "model/QueryRegistrantProfileRealNameVerificationInfoResult.h"
+#include "model/FuzzyMatchDomainSensitiveWordRequest.h"
+#include "model/FuzzyMatchDomainSensitiveWordResult.h"
 #include "model/FailDemandRequest.h"
 #include "model/FailDemandResult.h"
 #include "model/SaveSingleTaskForCancelingTransferInRequest.h"
@@ -122,6 +124,8 @@
 #include "model/SaveBatchTaskForCreatingOrderRenewResult.h"
 #include "model/QueryServerLockRequest.h"
 #include "model/QueryServerLockResult.h"
+#include "model/BatchFuzzyMatchDomainSensitiveWordRequest.h"
+#include "model/BatchFuzzyMatchDomainSensitiveWordResult.h"
 #include "model/SaveSingleTaskForModifyingDnsHostRequest.h"
 #include "model/SaveSingleTaskForModifyingDnsHostResult.h"
 #include "model/QueryBookingDomainInfoRequest.h"
@@ -359,6 +363,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryRegistrantProfileRealNameVerificationInfoResult> QueryRegistrantProfileRealNameVerificationInfoOutcome;
 			typedef std::future<QueryRegistrantProfileRealNameVerificationInfoOutcome> QueryRegistrantProfileRealNameVerificationInfoOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryRegistrantProfileRealNameVerificationInfoRequest&, const QueryRegistrantProfileRealNameVerificationInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRegistrantProfileRealNameVerificationInfoAsyncHandler;
+			typedef Outcome<Error, Model::FuzzyMatchDomainSensitiveWordResult> FuzzyMatchDomainSensitiveWordOutcome;
+			typedef std::future<FuzzyMatchDomainSensitiveWordOutcome> FuzzyMatchDomainSensitiveWordOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::FuzzyMatchDomainSensitiveWordRequest&, const FuzzyMatchDomainSensitiveWordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FuzzyMatchDomainSensitiveWordAsyncHandler;
 			typedef Outcome<Error, Model::FailDemandResult> FailDemandOutcome;
 			typedef std::future<FailDemandOutcome> FailDemandOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::FailDemandRequest&, const FailDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FailDemandAsyncHandler;
@@ -395,6 +402,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryServerLockResult> QueryServerLockOutcome;
 			typedef std::future<QueryServerLockOutcome> QueryServerLockOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryServerLockRequest&, const QueryServerLockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryServerLockAsyncHandler;
+			typedef Outcome<Error, Model::BatchFuzzyMatchDomainSensitiveWordResult> BatchFuzzyMatchDomainSensitiveWordOutcome;
+			typedef std::future<BatchFuzzyMatchDomainSensitiveWordOutcome> BatchFuzzyMatchDomainSensitiveWordOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::BatchFuzzyMatchDomainSensitiveWordRequest&, const BatchFuzzyMatchDomainSensitiveWordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchFuzzyMatchDomainSensitiveWordAsyncHandler;
 			typedef Outcome<Error, Model::SaveSingleTaskForModifyingDnsHostResult> SaveSingleTaskForModifyingDnsHostOutcome;
 			typedef std::future<SaveSingleTaskForModifyingDnsHostOutcome> SaveSingleTaskForModifyingDnsHostOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveSingleTaskForModifyingDnsHostRequest&, const SaveSingleTaskForModifyingDnsHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveSingleTaskForModifyingDnsHostAsyncHandler;
@@ -685,6 +695,9 @@ namespace AlibabaCloud
 			QueryRegistrantProfileRealNameVerificationInfoOutcome queryRegistrantProfileRealNameVerificationInfo(const Model::QueryRegistrantProfileRealNameVerificationInfoRequest &request)const;
 			void queryRegistrantProfileRealNameVerificationInfoAsync(const Model::QueryRegistrantProfileRealNameVerificationInfoRequest& request, const QueryRegistrantProfileRealNameVerificationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryRegistrantProfileRealNameVerificationInfoOutcomeCallable queryRegistrantProfileRealNameVerificationInfoCallable(const Model::QueryRegistrantProfileRealNameVerificationInfoRequest& request) const;
+			FuzzyMatchDomainSensitiveWordOutcome fuzzyMatchDomainSensitiveWord(const Model::FuzzyMatchDomainSensitiveWordRequest &request)const;
+			void fuzzyMatchDomainSensitiveWordAsync(const Model::FuzzyMatchDomainSensitiveWordRequest& request, const FuzzyMatchDomainSensitiveWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FuzzyMatchDomainSensitiveWordOutcomeCallable fuzzyMatchDomainSensitiveWordCallable(const Model::FuzzyMatchDomainSensitiveWordRequest& request) const;
 			FailDemandOutcome failDemand(const Model::FailDemandRequest &request)const;
 			void failDemandAsync(const Model::FailDemandRequest& request, const FailDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FailDemandOutcomeCallable failDemandCallable(const Model::FailDemandRequest& request) const;
@@ -721,6 +734,9 @@ namespace AlibabaCloud
 			QueryServerLockOutcome queryServerLock(const Model::QueryServerLockRequest &request)const;
 			void queryServerLockAsync(const Model::QueryServerLockRequest& request, const QueryServerLockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryServerLockOutcomeCallable queryServerLockCallable(const Model::QueryServerLockRequest& request) const;
+			BatchFuzzyMatchDomainSensitiveWordOutcome batchFuzzyMatchDomainSensitiveWord(const Model::BatchFuzzyMatchDomainSensitiveWordRequest &request)const;
+			void batchFuzzyMatchDomainSensitiveWordAsync(const Model::BatchFuzzyMatchDomainSensitiveWordRequest& request, const BatchFuzzyMatchDomainSensitiveWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchFuzzyMatchDomainSensitiveWordOutcomeCallable batchFuzzyMatchDomainSensitiveWordCallable(const Model::BatchFuzzyMatchDomainSensitiveWordRequest& request) const;
 			SaveSingleTaskForModifyingDnsHostOutcome saveSingleTaskForModifyingDnsHost(const Model::SaveSingleTaskForModifyingDnsHostRequest &request)const;
 			void saveSingleTaskForModifyingDnsHostAsync(const Model::SaveSingleTaskForModifyingDnsHostRequest& request, const SaveSingleTaskForModifyingDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveSingleTaskForModifyingDnsHostOutcomeCallable saveSingleTaskForModifyingDnsHostCallable(const Model::SaveSingleTaskForModifyingDnsHostRequest& request) const;

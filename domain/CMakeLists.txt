@@ -97,6 +97,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/QueryDnsHostResult.h
 	include/alibabacloud/domain/model/QueryRegistrantProfileRealNameVerificationInfoRequest.h
 	include/alibabacloud/domain/model/QueryRegistrantProfileRealNameVerificationInfoResult.h
+	include/alibabacloud/domain/model/FuzzyMatchDomainSensitiveWordRequest.h
+	include/alibabacloud/domain/model/FuzzyMatchDomainSensitiveWordResult.h
 	include/alibabacloud/domain/model/FailDemandRequest.h
 	include/alibabacloud/domain/model/FailDemandResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCancelingTransferInRequest.h
@@ -121,6 +123,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveBatchTaskForCreatingOrderRenewResult.h
 	include/alibabacloud/domain/model/QueryServerLockRequest.h
 	include/alibabacloud/domain/model/QueryServerLockResult.h
+	include/alibabacloud/domain/model/BatchFuzzyMatchDomainSensitiveWordRequest.h
+	include/alibabacloud/domain/model/BatchFuzzyMatchDomainSensitiveWordResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForModifyingDnsHostRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForModifyingDnsHostResult.h
 	include/alibabacloud/domain/model/QueryBookingDomainInfoRequest.h
@@ -314,6 +318,8 @@ set(domain_src
 	src/model/QueryDnsHostResult.cc
 	src/model/QueryRegistrantProfileRealNameVerificationInfoRequest.cc
 	src/model/QueryRegistrantProfileRealNameVerificationInfoResult.cc
+	src/model/FuzzyMatchDomainSensitiveWordRequest.cc
+	src/model/FuzzyMatchDomainSensitiveWordResult.cc
 	src/model/FailDemandRequest.cc
 	src/model/FailDemandResult.cc
 	src/model/SaveSingleTaskForCancelingTransferInRequest.cc
@@ -338,6 +344,8 @@ set(domain_src
 	src/model/SaveBatchTaskForCreatingOrderRenewResult.cc
 	src/model/QueryServerLockRequest.cc
 	src/model/QueryServerLockResult.cc
+	src/model/BatchFuzzyMatchDomainSensitiveWordRequest.cc
+	src/model/BatchFuzzyMatchDomainSensitiveWordResult.cc
 	src/model/SaveSingleTaskForModifyingDnsHostRequest.cc
 	src/model/SaveSingleTaskForModifyingDnsHostResult.cc
 	src/model/QueryBookingDomainInfoRequest.cc

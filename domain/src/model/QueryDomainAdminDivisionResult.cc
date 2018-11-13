@@ -56,49 +56,7 @@ void QueryDomainAdminDivisionResult::parse(const std::string &payload)
 		}
 		adminDivisions_.push_back(adminDivisionsObject);
 	}
-	if(!value["TotalItemNum"].isNull())
-		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
-	if(!value["CurrentPageNum"].isNull())
-		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
-	if(!value["TotalPageNum"].isNull())
-		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PrePage"].isNull())
-		prePage_ = value["PrePage"].asString() == "true";
-	if(!value["NextPage"].isNull())
-		nextPage_ = value["NextPage"].asString() == "true";
 
-}
-
-bool QueryDomainAdminDivisionResult::getPrePage()const
-{
-	return prePage_;
-}
-
-int QueryDomainAdminDivisionResult::getCurrentPageNum()const
-{
-	return currentPageNum_;
-}
-
-int QueryDomainAdminDivisionResult::getPageSize()const
-{
-	return pageSize_;
-}
-
-int QueryDomainAdminDivisionResult::getTotalPageNum()const
-{
-	return totalPageNum_;
-}
-
-int QueryDomainAdminDivisionResult::getTotalItemNum()const
-{
-	return totalItemNum_;
-}
-
-bool QueryDomainAdminDivisionResult::getNextPage()const
-{
-	return nextPage_;
 }
 
 std::vector<QueryDomainAdminDivisionResult::AdminDivision> QueryDomainAdminDivisionResult::getAdminDivisions()const

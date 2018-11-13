@@ -50,6 +50,8 @@ void CheckDomainResult::parse(const std::string &payload)
 		reason_ = value["Reason"].asString();
 	if(!value["Price"].isNull())
 		price_ = std::stol(value["Price"].asString());
+	if(!value["DynamicCheck"].isNull())
+		dynamicCheck_ = value["DynamicCheck"].asString() == "true";
 
 }
 
@@ -71,6 +73,11 @@ long CheckDomainResult::getPrice()const
 std::string CheckDomainResult::getPremium()const
 {
 	return premium_;
+}
+
+bool CheckDomainResult::getDynamicCheck()const
+{
+	return dynamicCheck_;
 }
 
 std::string CheckDomainResult::getReason()const

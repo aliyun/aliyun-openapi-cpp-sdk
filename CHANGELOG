@@ -1,3 +1,8 @@
+2018-11-13 Version: 1.31.0
+1, Add FuzzyMatchDomainSensitiveWord interface，Support fuzzy matching sensitive words.
+2, Add BatchFuzzyMatchDomainSensitiveWord interface，Support batch fuzzy matching sensitive words.
+3, Add DynamicCheck properties for results of CheckDomain interface.
+
 2018-11-10 Version: 1.30.5
 1, Update SetWaitingRoomConfig.
 

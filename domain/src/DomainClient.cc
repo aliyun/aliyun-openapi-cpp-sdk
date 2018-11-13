@@ -1419,6 +1419,42 @@ DomainClient::QueryRegistrantProfileRealNameVerificationInfoOutcomeCallable Doma
 	return task->get_future();
 }
 
+DomainClient::FuzzyMatchDomainSensitiveWordOutcome DomainClient::fuzzyMatchDomainSensitiveWord(const FuzzyMatchDomainSensitiveWordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FuzzyMatchDomainSensitiveWordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FuzzyMatchDomainSensitiveWordOutcome(FuzzyMatchDomainSensitiveWordResult(outcome.result()));
+	else
+		return FuzzyMatchDomainSensitiveWordOutcome(outcome.error());
+}
+
+void DomainClient::fuzzyMatchDomainSensitiveWordAsync(const FuzzyMatchDomainSensitiveWordRequest& request, const FuzzyMatchDomainSensitiveWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, fuzzyMatchDomainSensitiveWord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::FuzzyMatchDomainSensitiveWordOutcomeCallable DomainClient::fuzzyMatchDomainSensitiveWordCallable(const FuzzyMatchDomainSensitiveWordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FuzzyMatchDomainSensitiveWordOutcome()>>(
+			[this, request]()
+			{
+			return this->fuzzyMatchDomainSensitiveWord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::FailDemandOutcome DomainClient::failDemand(const FailDemandRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1845,6 +1881,42 @@ DomainClient::QueryServerLockOutcomeCallable DomainClient::queryServerLockCallab
 			[this, request]()
 			{
 			return this->queryServerLock(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::BatchFuzzyMatchDomainSensitiveWordOutcome DomainClient::batchFuzzyMatchDomainSensitiveWord(const BatchFuzzyMatchDomainSensitiveWordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchFuzzyMatchDomainSensitiveWordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchFuzzyMatchDomainSensitiveWordOutcome(BatchFuzzyMatchDomainSensitiveWordResult(outcome.result()));
+	else
+		return BatchFuzzyMatchDomainSensitiveWordOutcome(outcome.error());
+}
+
+void DomainClient::batchFuzzyMatchDomainSensitiveWordAsync(const BatchFuzzyMatchDomainSensitiveWordRequest& request, const BatchFuzzyMatchDomainSensitiveWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchFuzzyMatchDomainSensitiveWord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::BatchFuzzyMatchDomainSensitiveWordOutcomeCallable DomainClient::batchFuzzyMatchDomainSensitiveWordCallable(const BatchFuzzyMatchDomainSensitiveWordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchFuzzyMatchDomainSensitiveWordOutcome()>>(
+			[this, request]()
+			{
+			return this->batchFuzzyMatchDomainSensitiveWord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
