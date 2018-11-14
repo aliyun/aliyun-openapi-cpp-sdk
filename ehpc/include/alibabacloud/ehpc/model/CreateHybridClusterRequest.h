@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT CreateHybridClusterRequest : public RpcServiceRequest
 			{
+				struct PostInstallScript
+				{
+					std::string args;
+					std::string url;
+				};
 				struct Application
 				{
 					std::string tag;
@@ -53,6 +58,8 @@ namespace AlibabaCloud
 				void setEcsOrderComputeInstanceType(const std::string& ecsOrderComputeInstanceType);
 				std::string getOnPremiseVolumeRemotePath()const;
 				void setOnPremiseVolumeRemotePath(const std::string& onPremiseVolumeRemotePath);
+				std::string getJobQueue()const;
+				void setJobQueue(const std::string& jobQueue);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getVolumeType()const;
@@ -73,6 +80,8 @@ namespace AlibabaCloud
 				void setOsTag(const std::string& osTag);
 				std::string getRemoteDirectory()const;
 				void setRemoteDirectory(const std::string& remoteDirectory);
+				std::vector<PostInstallScript> getPostInstallScript()const;
+				void setPostInstallScript(const std::vector<PostInstallScript>& postInstallScript);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getNodes()const;
@@ -102,6 +111,7 @@ namespace AlibabaCloud
 				std::string securityGroupName_;
 				std::string ecsOrderComputeInstanceType_;
 				std::string onPremiseVolumeRemotePath_;
+				std::string jobQueue_;
 				std::string accessKeyId_;
 				std::string volumeType_;
 				std::string password_;
@@ -112,6 +122,7 @@ namespace AlibabaCloud
 				std::string clientVersion_;
 				std::string osTag_;
 				std::string remoteDirectory_;
+				std::vector<PostInstallScript> postInstallScript_;
 				std::string vSwitchId_;
 				std::string nodes_;
 				std::vector<Application> application_;

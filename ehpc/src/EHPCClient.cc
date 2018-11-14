@@ -915,6 +915,42 @@ EHPCClient::InvokeShellCommandOutcomeCallable EHPCClient::invokeShellCommandCall
 	return task->get_future();
 }
 
+EHPCClient::ListFileSystemWithMountTargetsOutcome EHPCClient::listFileSystemWithMountTargets(const ListFileSystemWithMountTargetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFileSystemWithMountTargetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFileSystemWithMountTargetsOutcome(ListFileSystemWithMountTargetsResult(outcome.result()));
+	else
+		return ListFileSystemWithMountTargetsOutcome(outcome.error());
+}
+
+void EHPCClient::listFileSystemWithMountTargetsAsync(const ListFileSystemWithMountTargetsRequest& request, const ListFileSystemWithMountTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFileSystemWithMountTargets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::ListFileSystemWithMountTargetsOutcomeCallable EHPCClient::listFileSystemWithMountTargetsCallable(const ListFileSystemWithMountTargetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFileSystemWithMountTargetsOutcome()>>(
+			[this, request]()
+			{
+			return this->listFileSystemWithMountTargets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::AddUsersOutcome EHPCClient::addUsers(const AddUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2457,6 +2493,42 @@ EHPCClient::RecoverClusterOutcomeCallable EHPCClient::recoverClusterCallable(con
 			[this, request]()
 			{
 			return this->recoverCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::ListAvailableEcsTypesOutcome EHPCClient::listAvailableEcsTypes(const ListAvailableEcsTypesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAvailableEcsTypesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAvailableEcsTypesOutcome(ListAvailableEcsTypesResult(outcome.result()));
+	else
+		return ListAvailableEcsTypesOutcome(outcome.error());
+}
+
+void EHPCClient::listAvailableEcsTypesAsync(const ListAvailableEcsTypesRequest& request, const ListAvailableEcsTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAvailableEcsTypes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::ListAvailableEcsTypesOutcomeCallable EHPCClient::listAvailableEcsTypesCallable(const ListAvailableEcsTypesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAvailableEcsTypesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAvailableEcsTypes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

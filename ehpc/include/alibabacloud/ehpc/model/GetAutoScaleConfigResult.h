@@ -34,7 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct QueueInfo
 				{
+					bool enableAutoGrow;
 					float spotPriceLimit;
+					bool enableAutoShrink;
 					std::string instanceType;
 					std::string queueName;
 					std::string spotStrategy;

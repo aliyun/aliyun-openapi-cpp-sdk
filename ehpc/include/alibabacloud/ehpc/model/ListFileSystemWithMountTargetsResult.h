@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTNODESRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTNODESRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_LISTFILESYSTEMWITHMOUNTTARGETSRESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_LISTFILESYSTEMWITHMOUNTTARGETSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,51 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListNodesResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT ListFileSystemWithMountTargetsResult : public ServiceResult
 			{
 			public:
-				struct NodeInfo
+				struct FileSystems
 				{
-					struct TotalResources
+					struct Packages
 					{
-						int memory;
-						int cpu;
-						int gpu;
+						std::string packageId;
 					};
-					struct UsedResources
+					struct MountTargets
 					{
-						int memory;
-						int cpu;
-						int gpu;
+						std::string status;
+						std::string vswId;
+						std::string vpcId;
+						std::string mountTargetDomain;
+						std::string networkType;
+						std::string accessGroup;
 					};
-					std::string status;
-					std::string imageOwnerAlias;
-					bool expired;
-					std::vector<std::string> roles;
-					std::string addTime;
-					UsedResources usedResources;
-					bool createdByEhpc;
-					std::string createMode;
-					std::string version;
-					TotalResources totalResources;
-					std::string expiredTime;
-					std::string imageId;
-					std::string id;
+					std::string storageType;
+					std::string protocolType;
+					std::vector<FileSystems::Packages> packageList;
+					std::string createTime;
+					std::vector<FileSystems::MountTargets> mountTargetList;
+					std::string destription;
+					std::string fileSystemId;
 					std::string regionId;
-					std::string lockReason;
-					std::string hostName;
-					std::string spotStrategy;
-					std::string location;
+					std::string meteredSize;
 				};
 
 
-				ListNodesResult();
-				explicit ListNodesResult(const std::string &payload);
-				~ListNodesResult();
+				ListFileSystemWithMountTargetsResult();
+				explicit ListFileSystemWithMountTargetsResult(const std::string &payload);
+				~ListFileSystemWithMountTargetsResult();
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::vector<NodeInfo> getNodes()const;
+				std::vector<FileSystems> getFileSystemList()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -81,10 +73,10 @@ namespace AlibabaCloud
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::vector<NodeInfo> nodes_;
+				std::vector<FileSystems> fileSystemList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTNODESRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_LISTFILESYSTEMWITHMOUNTTARGETSRESULT_H_

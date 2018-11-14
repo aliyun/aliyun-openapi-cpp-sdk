@@ -35,7 +35,9 @@ namespace AlibabaCloud
 					std::string spotStrategy;
 					std::string queueName;
 					std::string instanceType;
+					bool enableAutoGrow;
 					float spotPriceLimit;
+					bool enableAutoShrink;
 				};
 
 			public:

@@ -52,6 +52,10 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 			queuesObject.spotStrategy = value["SpotStrategy"].asString();
 		if(!value["SpotPriceLimit"].isNull())
 			queuesObject.spotPriceLimit = std::stof(value["SpotPriceLimit"].asString());
+		if(!value["EnableAutoGrow"].isNull())
+			queuesObject.enableAutoGrow = value["EnableAutoGrow"].asString() == "true";
+		if(!value["EnableAutoShrink"].isNull())
+			queuesObject.enableAutoShrink = value["EnableAutoShrink"].asString() == "true";
 		queues_.push_back(queuesObject);
 	}
 	if(!value["Uid"].isNull())

@@ -157,6 +157,17 @@ void AddNodesRequest::setEcsChargeType(const std::string& ecsChargeType)
 	setParameter("EcsChargeType", ecsChargeType);
 }
 
+std::string AddNodesRequest::getCreateMode()const
+{
+	return createMode_;
+}
+
+void AddNodesRequest::setCreateMode(const std::string& createMode)
+{
+	createMode_ = createMode;
+	setParameter("CreateMode", createMode);
+}
+
 std::string AddNodesRequest::getInstanceType()const
 {
 	return instanceType_;

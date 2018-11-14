@@ -102,6 +102,17 @@ void CreateHybridClusterRequest::setOnPremiseVolumeRemotePath(const std::string&
 	setParameter("OnPremiseVolumeRemotePath", onPremiseVolumeRemotePath);
 }
 
+std::string CreateHybridClusterRequest::getJobQueue()const
+{
+	return jobQueue_;
+}
+
+void CreateHybridClusterRequest::setJobQueue(const std::string& jobQueue)
+{
+	jobQueue_ = jobQueue;
+	setParameter("JobQueue", jobQueue);
+}
+
 std::string CreateHybridClusterRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -210,6 +221,23 @@ void CreateHybridClusterRequest::setRemoteDirectory(const std::string& remoteDir
 {
 	remoteDirectory_ = remoteDirectory;
 	setParameter("RemoteDirectory", remoteDirectory);
+}
+
+std::vector<CreateHybridClusterRequest::PostInstallScript> CreateHybridClusterRequest::getPostInstallScript()const
+{
+	return postInstallScript_;
+}
+
+void CreateHybridClusterRequest::setPostInstallScript(const std::vector<PostInstallScript>& postInstallScript)
+{
+	postInstallScript_ = postInstallScript;
+	int i = 0;
+	for(int i = 0; i!= postInstallScript.size(); i++)	{
+		auto obj = postInstallScript.at(i);
+		std::string str ="PostInstallScript."+ std::to_string(i);
+		setParameter(str + ".Args", obj.args);
+		setParameter(str + ".Url", obj.url);
+	}
 }
 
 std::string CreateHybridClusterRequest::getVSwitchId()const

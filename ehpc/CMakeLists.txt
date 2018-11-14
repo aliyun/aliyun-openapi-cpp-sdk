@@ -69,6 +69,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/ListCustomImagesResult.h
 	include/alibabacloud/ehpc/model/InvokeShellCommandRequest.h
 	include/alibabacloud/ehpc/model/InvokeShellCommandResult.h
+	include/alibabacloud/ehpc/model/ListFileSystemWithMountTargetsRequest.h
+	include/alibabacloud/ehpc/model/ListFileSystemWithMountTargetsResult.h
 	include/alibabacloud/ehpc/model/AddUsersRequest.h
 	include/alibabacloud/ehpc/model/AddUsersResult.h
 	include/alibabacloud/ehpc/model/ListJobTemplatesRequest.h
@@ -154,7 +156,9 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/ListClusterLogsRequest.h
 	include/alibabacloud/ehpc/model/ListClusterLogsResult.h
 	include/alibabacloud/ehpc/model/RecoverClusterRequest.h
-	include/alibabacloud/ehpc/model/RecoverClusterResult.h )
+	include/alibabacloud/ehpc/model/RecoverClusterResult.h
+	include/alibabacloud/ehpc/model/ListAvailableEcsTypesRequest.h
+	include/alibabacloud/ehpc/model/ListAvailableEcsTypesResult.h )
 
 set(ehpc_src 
 	src/EHPCClient.cc
@@ -206,6 +210,8 @@ set(ehpc_src
 	src/model/ListCustomImagesResult.cc
 	src/model/InvokeShellCommandRequest.cc
 	src/model/InvokeShellCommandResult.cc
+	src/model/ListFileSystemWithMountTargetsRequest.cc
+	src/model/ListFileSystemWithMountTargetsResult.cc
 	src/model/AddUsersRequest.cc
 	src/model/AddUsersResult.cc
 	src/model/ListJobTemplatesRequest.cc
@@ -291,7 +297,9 @@ set(ehpc_src
 	src/model/ListClusterLogsRequest.cc
 	src/model/ListClusterLogsResult.cc
 	src/model/RecoverClusterRequest.cc
-	src/model/RecoverClusterResult.cc )
+	src/model/RecoverClusterResult.cc
+	src/model/ListAvailableEcsTypesRequest.cc
+	src/model/ListAvailableEcsTypesResult.cc )
 
 add_library(ehpc ${LIB_TYPE}
 	${ehpc_public_header}

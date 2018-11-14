@@ -70,6 +70,8 @@
 #include "model/ListCustomImagesResult.h"
 #include "model/InvokeShellCommandRequest.h"
 #include "model/InvokeShellCommandResult.h"
+#include "model/ListFileSystemWithMountTargetsRequest.h"
+#include "model/ListFileSystemWithMountTargetsResult.h"
 #include "model/AddUsersRequest.h"
 #include "model/AddUsersResult.h"
 #include "model/ListJobTemplatesRequest.h"
@@ -156,6 +158,8 @@
 #include "model/ListClusterLogsResult.h"
 #include "model/RecoverClusterRequest.h"
 #include "model/RecoverClusterResult.h"
+#include "model/ListAvailableEcsTypesRequest.h"
+#include "model/ListAvailableEcsTypesResult.h"
 
 
 namespace AlibabaCloud
@@ -237,6 +241,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InvokeShellCommandResult> InvokeShellCommandOutcome;
 			typedef std::future<InvokeShellCommandOutcome> InvokeShellCommandOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::InvokeShellCommandRequest&, const InvokeShellCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InvokeShellCommandAsyncHandler;
+			typedef Outcome<Error, Model::ListFileSystemWithMountTargetsResult> ListFileSystemWithMountTargetsOutcome;
+			typedef std::future<ListFileSystemWithMountTargetsOutcome> ListFileSystemWithMountTargetsOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ListFileSystemWithMountTargetsRequest&, const ListFileSystemWithMountTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFileSystemWithMountTargetsAsyncHandler;
 			typedef Outcome<Error, Model::AddUsersResult> AddUsersOutcome;
 			typedef std::future<AddUsersOutcome> AddUsersOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::AddUsersRequest&, const AddUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersAsyncHandler;
@@ -366,6 +373,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecoverClusterResult> RecoverClusterOutcome;
 			typedef std::future<RecoverClusterOutcome> RecoverClusterOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::RecoverClusterRequest&, const RecoverClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecoverClusterAsyncHandler;
+			typedef Outcome<Error, Model::ListAvailableEcsTypesResult> ListAvailableEcsTypesOutcome;
+			typedef std::future<ListAvailableEcsTypesOutcome> ListAvailableEcsTypesOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ListAvailableEcsTypesRequest&, const ListAvailableEcsTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAvailableEcsTypesAsyncHandler;
 
 			EHPCClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			EHPCClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -443,6 +453,9 @@ namespace AlibabaCloud
 			InvokeShellCommandOutcome invokeShellCommand(const Model::InvokeShellCommandRequest &request)const;
 			void invokeShellCommandAsync(const Model::InvokeShellCommandRequest& request, const InvokeShellCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InvokeShellCommandOutcomeCallable invokeShellCommandCallable(const Model::InvokeShellCommandRequest& request) const;
+			ListFileSystemWithMountTargetsOutcome listFileSystemWithMountTargets(const Model::ListFileSystemWithMountTargetsRequest &request)const;
+			void listFileSystemWithMountTargetsAsync(const Model::ListFileSystemWithMountTargetsRequest& request, const ListFileSystemWithMountTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFileSystemWithMountTargetsOutcomeCallable listFileSystemWithMountTargetsCallable(const Model::ListFileSystemWithMountTargetsRequest& request) const;
 			AddUsersOutcome addUsers(const Model::AddUsersRequest &request)const;
 			void addUsersAsync(const Model::AddUsersRequest& request, const AddUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUsersOutcomeCallable addUsersCallable(const Model::AddUsersRequest& request) const;
@@ -572,6 +585,9 @@ namespace AlibabaCloud
 			RecoverClusterOutcome recoverCluster(const Model::RecoverClusterRequest &request)const;
 			void recoverClusterAsync(const Model::RecoverClusterRequest& request, const RecoverClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecoverClusterOutcomeCallable recoverClusterCallable(const Model::RecoverClusterRequest& request) const;
+			ListAvailableEcsTypesOutcome listAvailableEcsTypes(const Model::ListAvailableEcsTypesRequest &request)const;
+			void listAvailableEcsTypesAsync(const Model::ListAvailableEcsTypesRequest& request, const ListAvailableEcsTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAvailableEcsTypesOutcomeCallable listAvailableEcsTypesCallable(const Model::ListAvailableEcsTypesRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

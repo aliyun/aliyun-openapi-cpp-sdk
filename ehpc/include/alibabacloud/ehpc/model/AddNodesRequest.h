@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setAutoRenew(const std::string& autoRenew);
 				std::string getEcsChargeType()const;
 				void setEcsChargeType(const std::string& ecsChargeType);
+				std::string getCreateMode()const;
+				void setCreateMode(const std::string& createMode);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
 				std::string getComputeSpotPriceLimit()const;
@@ -77,6 +79,7 @@ namespace AlibabaCloud
 				std::string periodUnit_;
 				std::string autoRenew_;
 				std::string ecsChargeType_;
+				std::string createMode_;
 				std::string instanceType_;
 				std::string computeSpotPriceLimit_;
 
