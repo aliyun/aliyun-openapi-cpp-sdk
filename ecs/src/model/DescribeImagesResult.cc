@@ -104,6 +104,10 @@ void DescribeImagesResult::parse(const std::string &payload)
 				diskDeviceMappingsObject.importOSSBucket = value["ImportOSSBucket"].asString();
 			if(!value["ImportOSSObject"].isNull())
 				diskDeviceMappingsObject.importOSSObject = value["ImportOSSObject"].asString();
+			if(!value["Progress"].isNull())
+				diskDeviceMappingsObject.progress = value["Progress"].asString();
+			if(!value["RemainTime"].isNull())
+				diskDeviceMappingsObject.remainTime = std::stoi(value["RemainTime"].asString());
 			imagesObject.diskDeviceMappings.push_back(diskDeviceMappingsObject);
 		}
 		auto allTags = value["Tags"]["Tag"];

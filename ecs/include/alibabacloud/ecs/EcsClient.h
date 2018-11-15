@@ -68,6 +68,8 @@
 #include "model/DeletePhysicalConnectionResult.h"
 #include "model/RevokeSecurityGroupRequest.h"
 #include "model/RevokeSecurityGroupResult.h"
+#include "model/CheckAutoSnapshotPolicyRequest.h"
+#include "model/CheckAutoSnapshotPolicyResult.h"
 #include "model/DescribeTaskAttributeRequest.h"
 #include "model/DescribeTaskAttributeResult.h"
 #include "model/CreateAutoSnapshotPolicyRequest.h"
@@ -88,6 +90,8 @@
 #include "model/DetachInstanceRamRoleResult.h"
 #include "model/AllocatePublicIpAddressRequest.h"
 #include "model/AllocatePublicIpAddressResult.h"
+#include "model/AttachVolumeRequest.h"
+#include "model/AttachVolumeResult.h"
 #include "model/ModifyDedicatedHostAutoRenewAttributeRequest.h"
 #include "model/ModifyDedicatedHostAutoRenewAttributeResult.h"
 #include "model/DescribeEipMonitorDataRequest.h"
@@ -114,6 +118,8 @@
 #include "model/DescribeSnapshotMonitorDataResult.h"
 #include "model/ConnectRouterInterfaceRequest.h"
 #include "model/ConnectRouterInterfaceResult.h"
+#include "model/AddIpRangeRequest.h"
+#include "model/AddIpRangeResult.h"
 #include "model/GetInstanceConsoleOutputRequest.h"
 #include "model/GetInstanceConsoleOutputResult.h"
 #include "model/CreateSimulatedSystemEventsRequest.h"
@@ -134,6 +140,8 @@
 #include "model/DescribeSecurityGroupsResult.h"
 #include "model/ResizeDiskRequest.h"
 #include "model/ResizeDiskResult.h"
+#include "model/ResizeVolumeRequest.h"
+#include "model/ResizeVolumeResult.h"
 #include "model/ModifyDedicatedHostAttributeRequest.h"
 #include "model/ModifyDedicatedHostAttributeResult.h"
 #include "model/CreateRouteEntryRequest.h"
@@ -144,6 +152,10 @@
 #include "model/AttachKeyPairResult.h"
 #include "model/CreateRouterInterfaceRequest.h"
 #include "model/CreateRouterInterfaceResult.h"
+#include "model/ModifyVolumeAttributeRequest.h"
+#include "model/ModifyVolumeAttributeResult.h"
+#include "model/CheckDiskEnableAutoSnapshotValidationRequest.h"
+#include "model/CheckDiskEnableAutoSnapshotValidationResult.h"
 #include "model/RunInstancesRequest.h"
 #include "model/RunInstancesResult.h"
 #include "model/ModifyLaunchTemplateDefaultVersionRequest.h"
@@ -218,8 +230,12 @@
 #include "model/DescribeInstanceTypesResult.h"
 #include "model/DescribeSnapshotPackageRequest.h"
 #include "model/DescribeSnapshotPackageResult.h"
+#include "model/ReInitVolumeRequest.h"
+#include "model/ReInitVolumeResult.h"
 #include "model/RebootInstanceRequest.h"
 #include "model/RebootInstanceResult.h"
+#include "model/BindIpRangeRequest.h"
+#include "model/BindIpRangeResult.h"
 #include "model/InvokeCommandRequest.h"
 #include "model/InvokeCommandResult.h"
 #include "model/ModifyUserBusinessBehaviorRequest.h"
@@ -254,6 +270,8 @@
 #include "model/ReleaseDedicatedHostResult.h"
 #include "model/AddTagsRequest.h"
 #include "model/AddTagsResult.h"
+#include "model/CancelUserEventRequest.h"
+#include "model/CancelUserEventResult.h"
 #include "model/CreateHpcClusterRequest.h"
 #include "model/CreateHpcClusterResult.h"
 #include "model/DescribeUserBusinessBehaviorRequest.h"
@@ -338,6 +356,8 @@
 #include "model/DeleteLaunchTemplateResult.h"
 #include "model/DescribeNewProjectEipMonitorDataRequest.h"
 #include "model/DescribeNewProjectEipMonitorDataResult.h"
+#include "model/UnbindIpRangeRequest.h"
+#include "model/UnbindIpRangeResult.h"
 #include "model/DeleteRecycleBinRequest.h"
 #include "model/DeleteRecycleBinResult.h"
 #include "model/DescribeInstanceRamRoleRequest.h"
@@ -364,6 +384,10 @@
 #include "model/ResetDiskResult.h"
 #include "model/ModifyDiskChargeTypeRequest.h"
 #include "model/ModifyDiskChargeTypeResult.h"
+#include "model/DescribeVolumesRequest.h"
+#include "model/DescribeVolumesResult.h"
+#include "model/ModifyIntranetBandwidthKbRequest.h"
+#include "model/ModifyIntranetBandwidthKbResult.h"
 #include "model/DescribeBandwidthPackagesRequest.h"
 #include "model/DescribeBandwidthPackagesResult.h"
 #include "model/ApplyAutoSnapshotPolicyRequest.h"
@@ -372,18 +396,24 @@
 #include "model/CreateSecurityGroupResult.h"
 #include "model/DescribeSnapshotLinksRequest.h"
 #include "model/DescribeSnapshotLinksResult.h"
+#include "model/DescribeEventDetailRequest.h"
+#include "model/DescribeEventDetailResult.h"
 #include "model/DescribeInvocationResultsRequest.h"
 #include "model/DescribeInvocationResultsResult.h"
 #include "model/DescribeRecommendInstanceTypeRequest.h"
 #include "model/DescribeRecommendInstanceTypeResult.h"
 #include "model/DescribeTagKeysRequest.h"
 #include "model/DescribeTagKeysResult.h"
+#include "model/CreateVolumeRequest.h"
+#include "model/CreateVolumeResult.h"
 #include "model/DescribeDedicatedHostAutoRenewRequest.h"
 #include "model/DescribeDedicatedHostAutoRenewResult.h"
 #include "model/DeleteInstanceRequest.h"
 #include "model/DeleteInstanceResult.h"
 #include "model/CreateLaunchTemplateRequest.h"
 #include "model/CreateLaunchTemplateResult.h"
+#include "model/DescribeIntranetAttributeKbRequest.h"
+#include "model/DescribeIntranetAttributeKbResult.h"
 #include "model/CreateNetworkInterfacePermissionRequest.h"
 #include "model/CreateNetworkInterfacePermissionResult.h"
 #include "model/RemoveBandwidthPackageIpsRequest.h"
@@ -402,6 +432,10 @@
 #include "model/EnablePhysicalConnectionResult.h"
 #include "model/DescribeInstanceTypeFamiliesRequest.h"
 #include "model/DescribeInstanceTypeFamiliesResult.h"
+#include "model/RollbackVolumeRequest.h"
+#include "model/RollbackVolumeResult.h"
+#include "model/DeleteVolumeRequest.h"
+#include "model/DeleteVolumeResult.h"
 #include "model/CreateForwardEntryRequest.h"
 #include "model/CreateForwardEntryResult.h"
 #include "model/DescribeRouterInterfacesRequest.h"
@@ -432,6 +466,8 @@
 #include "model/ModifyAutoSnapshotPolicyExResult.h"
 #include "model/CreatePhysicalConnectionRequest.h"
 #include "model/CreatePhysicalConnectionResult.h"
+#include "model/ModifyUserEventAttributeRequest.h"
+#include "model/ModifyUserEventAttributeResult.h"
 #include "model/DescribeKeyPairsRequest.h"
 #include "model/DescribeKeyPairsResult.h"
 #include "model/ModifySecurityGroupPolicyRequest.h"
@@ -440,14 +476,20 @@
 #include "model/AssociateHaVipResult.h"
 #include "model/ConvertNatPublicIpToEipRequest.h"
 #include "model/ConvertNatPublicIpToEipResult.h"
+#include "model/AssignIpv6AddressesRequest.h"
+#include "model/AssignIpv6AddressesResult.h"
 #include "model/DeleteRouteEntryRequest.h"
 #include "model/DeleteRouteEntryResult.h"
 #include "model/DeleteVirtualBorderRouterRequest.h"
 #include "model/DeleteVirtualBorderRouterResult.h"
 #include "model/DescribeCloudAssistantStatusRequest.h"
 #include "model/DescribeCloudAssistantStatusResult.h"
+#include "model/UnassignIpv6AddressesRequest.h"
+#include "model/UnassignIpv6AddressesResult.h"
 #include "model/DescribeInstancePhysicalAttributeRequest.h"
 #include "model/DescribeInstancePhysicalAttributeResult.h"
+#include "model/ValidateSecurityGroupRequest.h"
+#include "model/ValidateSecurityGroupResult.h"
 #include "model/TerminatePhysicalConnectionRequest.h"
 #include "model/TerminatePhysicalConnectionResult.h"
 #include "model/AttachNetworkInterfaceRequest.h"
@@ -470,12 +512,20 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeClassicLinkInstancesRequest.h"
 #include "model/DescribeClassicLinkInstancesResult.h"
+#include "model/CreateUserEventRequest.h"
+#include "model/CreateUserEventResult.h"
+#include "model/DescribeAutoSnapshotPolicyRequest.h"
+#include "model/DescribeAutoSnapshotPolicyResult.h"
 #include "model/DescribePhysicalConnectionsRequest.h"
 #include "model/DescribePhysicalConnectionsResult.h"
 #include "model/DescribeRecycleBinRequest.h"
 #include "model/DescribeRecycleBinResult.h"
+#include "model/DetachVolumeRequest.h"
+#include "model/DetachVolumeResult.h"
 #include "model/CreateNetworkInterfaceRequest.h"
 #include "model/CreateNetworkInterfaceResult.h"
+#include "model/DescribeIpRangesRequest.h"
+#include "model/DescribeIpRangesResult.h"
 #include "model/DeleteNetworkInterfacePermissionRequest.h"
 #include "model/DeleteNetworkInterfacePermissionResult.h"
 #include "model/CancelPhysicalConnectionRequest.h"
@@ -494,6 +544,8 @@
 #include "model/AllocateEipAddressResult.h"
 #include "model/DeleteDiskRequest.h"
 #include "model/DeleteDiskResult.h"
+#include "model/DescribeEventsRequest.h"
+#include "model/DescribeEventsResult.h"
 #include "model/UnassociateHaVipRequest.h"
 #include "model/UnassociateHaVipResult.h"
 #include "model/ModifyHaVipAttributeRequest.h"
@@ -590,6 +642,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RevokeSecurityGroupResult> RevokeSecurityGroupOutcome;
 			typedef std::future<RevokeSecurityGroupOutcome> RevokeSecurityGroupOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RevokeSecurityGroupRequest&, const RevokeSecurityGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokeSecurityGroupAsyncHandler;
+			typedef Outcome<Error, Model::CheckAutoSnapshotPolicyResult> CheckAutoSnapshotPolicyOutcome;
+			typedef std::future<CheckAutoSnapshotPolicyOutcome> CheckAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CheckAutoSnapshotPolicyRequest&, const CheckAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckAutoSnapshotPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTaskAttributeResult> DescribeTaskAttributeOutcome;
 			typedef std::future<DescribeTaskAttributeOutcome> DescribeTaskAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeTaskAttributeRequest&, const DescribeTaskAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskAttributeAsyncHandler;
@@ -620,6 +675,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AllocatePublicIpAddressResult> AllocatePublicIpAddressOutcome;
 			typedef std::future<AllocatePublicIpAddressOutcome> AllocatePublicIpAddressOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::AllocatePublicIpAddressRequest&, const AllocatePublicIpAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocatePublicIpAddressAsyncHandler;
+			typedef Outcome<Error, Model::AttachVolumeResult> AttachVolumeOutcome;
+			typedef std::future<AttachVolumeOutcome> AttachVolumeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::AttachVolumeRequest&, const AttachVolumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachVolumeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDedicatedHostAutoRenewAttributeResult> ModifyDedicatedHostAutoRenewAttributeOutcome;
 			typedef std::future<ModifyDedicatedHostAutoRenewAttributeOutcome> ModifyDedicatedHostAutoRenewAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDedicatedHostAutoRenewAttributeRequest&, const ModifyDedicatedHostAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDedicatedHostAutoRenewAttributeAsyncHandler;
@@ -659,6 +717,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ConnectRouterInterfaceResult> ConnectRouterInterfaceOutcome;
 			typedef std::future<ConnectRouterInterfaceOutcome> ConnectRouterInterfaceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ConnectRouterInterfaceRequest&, const ConnectRouterInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConnectRouterInterfaceAsyncHandler;
+			typedef Outcome<Error, Model::AddIpRangeResult> AddIpRangeOutcome;
+			typedef std::future<AddIpRangeOutcome> AddIpRangeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::AddIpRangeRequest&, const AddIpRangeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddIpRangeAsyncHandler;
 			typedef Outcome<Error, Model::GetInstanceConsoleOutputResult> GetInstanceConsoleOutputOutcome;
 			typedef std::future<GetInstanceConsoleOutputOutcome> GetInstanceConsoleOutputOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::GetInstanceConsoleOutputRequest&, const GetInstanceConsoleOutputOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceConsoleOutputAsyncHandler;
@@ -689,6 +750,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResizeDiskResult> ResizeDiskOutcome;
 			typedef std::future<ResizeDiskOutcome> ResizeDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ResizeDiskRequest&, const ResizeDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeDiskAsyncHandler;
+			typedef Outcome<Error, Model::ResizeVolumeResult> ResizeVolumeOutcome;
+			typedef std::future<ResizeVolumeOutcome> ResizeVolumeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ResizeVolumeRequest&, const ResizeVolumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeVolumeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDedicatedHostAttributeResult> ModifyDedicatedHostAttributeOutcome;
 			typedef std::future<ModifyDedicatedHostAttributeOutcome> ModifyDedicatedHostAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDedicatedHostAttributeRequest&, const ModifyDedicatedHostAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDedicatedHostAttributeAsyncHandler;
@@ -704,6 +768,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRouterInterfaceResult> CreateRouterInterfaceOutcome;
 			typedef std::future<CreateRouterInterfaceOutcome> CreateRouterInterfaceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateRouterInterfaceRequest&, const CreateRouterInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouterInterfaceAsyncHandler;
+			typedef Outcome<Error, Model::ModifyVolumeAttributeResult> ModifyVolumeAttributeOutcome;
+			typedef std::future<ModifyVolumeAttributeOutcome> ModifyVolumeAttributeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyVolumeAttributeRequest&, const ModifyVolumeAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVolumeAttributeAsyncHandler;
+			typedef Outcome<Error, Model::CheckDiskEnableAutoSnapshotValidationResult> CheckDiskEnableAutoSnapshotValidationOutcome;
+			typedef std::future<CheckDiskEnableAutoSnapshotValidationOutcome> CheckDiskEnableAutoSnapshotValidationOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CheckDiskEnableAutoSnapshotValidationRequest&, const CheckDiskEnableAutoSnapshotValidationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDiskEnableAutoSnapshotValidationAsyncHandler;
 			typedef Outcome<Error, Model::RunInstancesResult> RunInstancesOutcome;
 			typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RunInstancesRequest&, const RunInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunInstancesAsyncHandler;
@@ -815,9 +885,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSnapshotPackageResult> DescribeSnapshotPackageOutcome;
 			typedef std::future<DescribeSnapshotPackageOutcome> DescribeSnapshotPackageOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeSnapshotPackageRequest&, const DescribeSnapshotPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotPackageAsyncHandler;
+			typedef Outcome<Error, Model::ReInitVolumeResult> ReInitVolumeOutcome;
+			typedef std::future<ReInitVolumeOutcome> ReInitVolumeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ReInitVolumeRequest&, const ReInitVolumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReInitVolumeAsyncHandler;
 			typedef Outcome<Error, Model::RebootInstanceResult> RebootInstanceOutcome;
 			typedef std::future<RebootInstanceOutcome> RebootInstanceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RebootInstanceRequest&, const RebootInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstanceAsyncHandler;
+			typedef Outcome<Error, Model::BindIpRangeResult> BindIpRangeOutcome;
+			typedef std::future<BindIpRangeOutcome> BindIpRangeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::BindIpRangeRequest&, const BindIpRangeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindIpRangeAsyncHandler;
 			typedef Outcome<Error, Model::InvokeCommandResult> InvokeCommandOutcome;
 			typedef std::future<InvokeCommandOutcome> InvokeCommandOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::InvokeCommandRequest&, const InvokeCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InvokeCommandAsyncHandler;
@@ -869,6 +945,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddTagsResult> AddTagsOutcome;
 			typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::AddTagsRequest&, const AddTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddTagsAsyncHandler;
+			typedef Outcome<Error, Model::CancelUserEventResult> CancelUserEventOutcome;
+			typedef std::future<CancelUserEventOutcome> CancelUserEventOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CancelUserEventRequest&, const CancelUserEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelUserEventAsyncHandler;
 			typedef Outcome<Error, Model::CreateHpcClusterResult> CreateHpcClusterOutcome;
 			typedef std::future<CreateHpcClusterOutcome> CreateHpcClusterOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateHpcClusterRequest&, const CreateHpcClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateHpcClusterAsyncHandler;
@@ -995,6 +1074,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeNewProjectEipMonitorDataResult> DescribeNewProjectEipMonitorDataOutcome;
 			typedef std::future<DescribeNewProjectEipMonitorDataOutcome> DescribeNewProjectEipMonitorDataOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeNewProjectEipMonitorDataRequest&, const DescribeNewProjectEipMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNewProjectEipMonitorDataAsyncHandler;
+			typedef Outcome<Error, Model::UnbindIpRangeResult> UnbindIpRangeOutcome;
+			typedef std::future<UnbindIpRangeOutcome> UnbindIpRangeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::UnbindIpRangeRequest&, const UnbindIpRangeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindIpRangeAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRecycleBinResult> DeleteRecycleBinOutcome;
 			typedef std::future<DeleteRecycleBinOutcome> DeleteRecycleBinOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteRecycleBinRequest&, const DeleteRecycleBinOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecycleBinAsyncHandler;
@@ -1034,6 +1116,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDiskChargeTypeResult> ModifyDiskChargeTypeOutcome;
 			typedef std::future<ModifyDiskChargeTypeOutcome> ModifyDiskChargeTypeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDiskChargeTypeRequest&, const ModifyDiskChargeTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskChargeTypeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVolumesResult> DescribeVolumesOutcome;
+			typedef std::future<DescribeVolumesOutcome> DescribeVolumesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeVolumesRequest&, const DescribeVolumesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVolumesAsyncHandler;
+			typedef Outcome<Error, Model::ModifyIntranetBandwidthKbResult> ModifyIntranetBandwidthKbOutcome;
+			typedef std::future<ModifyIntranetBandwidthKbOutcome> ModifyIntranetBandwidthKbOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyIntranetBandwidthKbRequest&, const ModifyIntranetBandwidthKbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIntranetBandwidthKbAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBandwidthPackagesResult> DescribeBandwidthPackagesOutcome;
 			typedef std::future<DescribeBandwidthPackagesOutcome> DescribeBandwidthPackagesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeBandwidthPackagesRequest&, const DescribeBandwidthPackagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBandwidthPackagesAsyncHandler;
@@ -1046,6 +1134,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSnapshotLinksResult> DescribeSnapshotLinksOutcome;
 			typedef std::future<DescribeSnapshotLinksOutcome> DescribeSnapshotLinksOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeSnapshotLinksRequest&, const DescribeSnapshotLinksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotLinksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEventDetailResult> DescribeEventDetailOutcome;
+			typedef std::future<DescribeEventDetailOutcome> DescribeEventDetailOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeEventDetailRequest&, const DescribeEventDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInvocationResultsResult> DescribeInvocationResultsOutcome;
 			typedef std::future<DescribeInvocationResultsOutcome> DescribeInvocationResultsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInvocationResultsRequest&, const DescribeInvocationResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvocationResultsAsyncHandler;
@@ -1055,6 +1146,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTagKeysResult> DescribeTagKeysOutcome;
 			typedef std::future<DescribeTagKeysOutcome> DescribeTagKeysOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeTagKeysRequest&, const DescribeTagKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagKeysAsyncHandler;
+			typedef Outcome<Error, Model::CreateVolumeResult> CreateVolumeOutcome;
+			typedef std::future<CreateVolumeOutcome> CreateVolumeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateVolumeRequest&, const CreateVolumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVolumeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDedicatedHostAutoRenewResult> DescribeDedicatedHostAutoRenewOutcome;
 			typedef std::future<DescribeDedicatedHostAutoRenewOutcome> DescribeDedicatedHostAutoRenewOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDedicatedHostAutoRenewRequest&, const DescribeDedicatedHostAutoRenewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedHostAutoRenewAsyncHandler;
@@ -1064,6 +1158,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateLaunchTemplateResult> CreateLaunchTemplateOutcome;
 			typedef std::future<CreateLaunchTemplateOutcome> CreateLaunchTemplateOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateLaunchTemplateRequest&, const CreateLaunchTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLaunchTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIntranetAttributeKbResult> DescribeIntranetAttributeKbOutcome;
+			typedef std::future<DescribeIntranetAttributeKbOutcome> DescribeIntranetAttributeKbOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeIntranetAttributeKbRequest&, const DescribeIntranetAttributeKbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntranetAttributeKbAsyncHandler;
 			typedef Outcome<Error, Model::CreateNetworkInterfacePermissionResult> CreateNetworkInterfacePermissionOutcome;
 			typedef std::future<CreateNetworkInterfacePermissionOutcome> CreateNetworkInterfacePermissionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateNetworkInterfacePermissionRequest&, const CreateNetworkInterfacePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkInterfacePermissionAsyncHandler;
@@ -1091,6 +1188,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceTypeFamiliesResult> DescribeInstanceTypeFamiliesOutcome;
 			typedef std::future<DescribeInstanceTypeFamiliesOutcome> DescribeInstanceTypeFamiliesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceTypeFamiliesRequest&, const DescribeInstanceTypeFamiliesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceTypeFamiliesAsyncHandler;
+			typedef Outcome<Error, Model::RollbackVolumeResult> RollbackVolumeOutcome;
+			typedef std::future<RollbackVolumeOutcome> RollbackVolumeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::RollbackVolumeRequest&, const RollbackVolumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RollbackVolumeAsyncHandler;
+			typedef Outcome<Error, Model::DeleteVolumeResult> DeleteVolumeOutcome;
+			typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DeleteVolumeRequest&, const DeleteVolumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVolumeAsyncHandler;
 			typedef Outcome<Error, Model::CreateForwardEntryResult> CreateForwardEntryOutcome;
 			typedef std::future<CreateForwardEntryOutcome> CreateForwardEntryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateForwardEntryRequest&, const CreateForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateForwardEntryAsyncHandler;
@@ -1136,6 +1239,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePhysicalConnectionResult> CreatePhysicalConnectionOutcome;
 			typedef std::future<CreatePhysicalConnectionOutcome> CreatePhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreatePhysicalConnectionRequest&, const CreatePhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePhysicalConnectionAsyncHandler;
+			typedef Outcome<Error, Model::ModifyUserEventAttributeResult> ModifyUserEventAttributeOutcome;
+			typedef std::future<ModifyUserEventAttributeOutcome> ModifyUserEventAttributeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyUserEventAttributeRequest&, const ModifyUserEventAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserEventAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeKeyPairsResult> DescribeKeyPairsOutcome;
 			typedef std::future<DescribeKeyPairsOutcome> DescribeKeyPairsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeKeyPairsRequest&, const DescribeKeyPairsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeyPairsAsyncHandler;
@@ -1148,6 +1254,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ConvertNatPublicIpToEipResult> ConvertNatPublicIpToEipOutcome;
 			typedef std::future<ConvertNatPublicIpToEipOutcome> ConvertNatPublicIpToEipOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ConvertNatPublicIpToEipRequest&, const ConvertNatPublicIpToEipOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConvertNatPublicIpToEipAsyncHandler;
+			typedef Outcome<Error, Model::AssignIpv6AddressesResult> AssignIpv6AddressesOutcome;
+			typedef std::future<AssignIpv6AddressesOutcome> AssignIpv6AddressesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::AssignIpv6AddressesRequest&, const AssignIpv6AddressesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssignIpv6AddressesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRouteEntryResult> DeleteRouteEntryOutcome;
 			typedef std::future<DeleteRouteEntryOutcome> DeleteRouteEntryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteRouteEntryRequest&, const DeleteRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteEntryAsyncHandler;
@@ -1157,9 +1266,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCloudAssistantStatusResult> DescribeCloudAssistantStatusOutcome;
 			typedef std::future<DescribeCloudAssistantStatusOutcome> DescribeCloudAssistantStatusOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeCloudAssistantStatusRequest&, const DescribeCloudAssistantStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAssistantStatusAsyncHandler;
+			typedef Outcome<Error, Model::UnassignIpv6AddressesResult> UnassignIpv6AddressesOutcome;
+			typedef std::future<UnassignIpv6AddressesOutcome> UnassignIpv6AddressesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::UnassignIpv6AddressesRequest&, const UnassignIpv6AddressesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassignIpv6AddressesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstancePhysicalAttributeResult> DescribeInstancePhysicalAttributeOutcome;
 			typedef std::future<DescribeInstancePhysicalAttributeOutcome> DescribeInstancePhysicalAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInstancePhysicalAttributeRequest&, const DescribeInstancePhysicalAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancePhysicalAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ValidateSecurityGroupResult> ValidateSecurityGroupOutcome;
+			typedef std::future<ValidateSecurityGroupOutcome> ValidateSecurityGroupOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ValidateSecurityGroupRequest&, const ValidateSecurityGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateSecurityGroupAsyncHandler;
 			typedef Outcome<Error, Model::TerminatePhysicalConnectionResult> TerminatePhysicalConnectionOutcome;
 			typedef std::future<TerminatePhysicalConnectionOutcome> TerminatePhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::TerminatePhysicalConnectionRequest&, const TerminatePhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TerminatePhysicalConnectionAsyncHandler;
@@ -1193,15 +1308,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeClassicLinkInstancesResult> DescribeClassicLinkInstancesOutcome;
 			typedef std::future<DescribeClassicLinkInstancesOutcome> DescribeClassicLinkInstancesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeClassicLinkInstancesRequest&, const DescribeClassicLinkInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassicLinkInstancesAsyncHandler;
+			typedef Outcome<Error, Model::CreateUserEventResult> CreateUserEventOutcome;
+			typedef std::future<CreateUserEventOutcome> CreateUserEventOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateUserEventRequest&, const CreateUserEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserEventAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAutoSnapshotPolicyResult> DescribeAutoSnapshotPolicyOutcome;
+			typedef std::future<DescribeAutoSnapshotPolicyOutcome> DescribeAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeAutoSnapshotPolicyRequest&, const DescribeAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoSnapshotPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DescribePhysicalConnectionsResult> DescribePhysicalConnectionsOutcome;
 			typedef std::future<DescribePhysicalConnectionsOutcome> DescribePhysicalConnectionsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribePhysicalConnectionsRequest&, const DescribePhysicalConnectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhysicalConnectionsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRecycleBinResult> DescribeRecycleBinOutcome;
 			typedef std::future<DescribeRecycleBinOutcome> DescribeRecycleBinOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeRecycleBinRequest&, const DescribeRecycleBinOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecycleBinAsyncHandler;
+			typedef Outcome<Error, Model::DetachVolumeResult> DetachVolumeOutcome;
+			typedef std::future<DetachVolumeOutcome> DetachVolumeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DetachVolumeRequest&, const DetachVolumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachVolumeAsyncHandler;
 			typedef Outcome<Error, Model::CreateNetworkInterfaceResult> CreateNetworkInterfaceOutcome;
 			typedef std::future<CreateNetworkInterfaceOutcome> CreateNetworkInterfaceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateNetworkInterfaceRequest&, const CreateNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkInterfaceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIpRangesResult> DescribeIpRangesOutcome;
+			typedef std::future<DescribeIpRangesOutcome> DescribeIpRangesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeIpRangesRequest&, const DescribeIpRangesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpRangesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteNetworkInterfacePermissionResult> DeleteNetworkInterfacePermissionOutcome;
 			typedef std::future<DeleteNetworkInterfacePermissionOutcome> DeleteNetworkInterfacePermissionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteNetworkInterfacePermissionRequest&, const DeleteNetworkInterfacePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkInterfacePermissionAsyncHandler;
@@ -1229,6 +1356,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDiskResult> DeleteDiskOutcome;
 			typedef std::future<DeleteDiskOutcome> DeleteDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteDiskRequest&, const DeleteDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiskAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEventsResult> DescribeEventsOutcome;
+			typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeEventsRequest&, const DescribeEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsAsyncHandler;
 			typedef Outcome<Error, Model::UnassociateHaVipResult> UnassociateHaVipOutcome;
 			typedef std::future<UnassociateHaVipOutcome> UnassociateHaVipOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::UnassociateHaVipRequest&, const UnassociateHaVipOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateHaVipAsyncHandler;
@@ -1330,6 +1460,9 @@ namespace AlibabaCloud
 			RevokeSecurityGroupOutcome revokeSecurityGroup(const Model::RevokeSecurityGroupRequest &request)const;
 			void revokeSecurityGroupAsync(const Model::RevokeSecurityGroupRequest& request, const RevokeSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RevokeSecurityGroupOutcomeCallable revokeSecurityGroupCallable(const Model::RevokeSecurityGroupRequest& request) const;
+			CheckAutoSnapshotPolicyOutcome checkAutoSnapshotPolicy(const Model::CheckAutoSnapshotPolicyRequest &request)const;
+			void checkAutoSnapshotPolicyAsync(const Model::CheckAutoSnapshotPolicyRequest& request, const CheckAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckAutoSnapshotPolicyOutcomeCallable checkAutoSnapshotPolicyCallable(const Model::CheckAutoSnapshotPolicyRequest& request) const;
 			DescribeTaskAttributeOutcome describeTaskAttribute(const Model::DescribeTaskAttributeRequest &request)const;
 			void describeTaskAttributeAsync(const Model::DescribeTaskAttributeRequest& request, const DescribeTaskAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTaskAttributeOutcomeCallable describeTaskAttributeCallable(const Model::DescribeTaskAttributeRequest& request) const;
@@ -1360,6 +1493,9 @@ namespace AlibabaCloud
 			AllocatePublicIpAddressOutcome allocatePublicIpAddress(const Model::AllocatePublicIpAddressRequest &request)const;
 			void allocatePublicIpAddressAsync(const Model::AllocatePublicIpAddressRequest& request, const AllocatePublicIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocatePublicIpAddressOutcomeCallable allocatePublicIpAddressCallable(const Model::AllocatePublicIpAddressRequest& request) const;
+			AttachVolumeOutcome attachVolume(const Model::AttachVolumeRequest &request)const;
+			void attachVolumeAsync(const Model::AttachVolumeRequest& request, const AttachVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachVolumeOutcomeCallable attachVolumeCallable(const Model::AttachVolumeRequest& request) const;
 			ModifyDedicatedHostAutoRenewAttributeOutcome modifyDedicatedHostAutoRenewAttribute(const Model::ModifyDedicatedHostAutoRenewAttributeRequest &request)const;
 			void modifyDedicatedHostAutoRenewAttributeAsync(const Model::ModifyDedicatedHostAutoRenewAttributeRequest& request, const ModifyDedicatedHostAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDedicatedHostAutoRenewAttributeOutcomeCallable modifyDedicatedHostAutoRenewAttributeCallable(const Model::ModifyDedicatedHostAutoRenewAttributeRequest& request) const;
@@ -1399,6 +1535,9 @@ namespace AlibabaCloud
 			ConnectRouterInterfaceOutcome connectRouterInterface(const Model::ConnectRouterInterfaceRequest &request)const;
 			void connectRouterInterfaceAsync(const Model::ConnectRouterInterfaceRequest& request, const ConnectRouterInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConnectRouterInterfaceOutcomeCallable connectRouterInterfaceCallable(const Model::ConnectRouterInterfaceRequest& request) const;
+			AddIpRangeOutcome addIpRange(const Model::AddIpRangeRequest &request)const;
+			void addIpRangeAsync(const Model::AddIpRangeRequest& request, const AddIpRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddIpRangeOutcomeCallable addIpRangeCallable(const Model::AddIpRangeRequest& request) const;
 			GetInstanceConsoleOutputOutcome getInstanceConsoleOutput(const Model::GetInstanceConsoleOutputRequest &request)const;
 			void getInstanceConsoleOutputAsync(const Model::GetInstanceConsoleOutputRequest& request, const GetInstanceConsoleOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceConsoleOutputOutcomeCallable getInstanceConsoleOutputCallable(const Model::GetInstanceConsoleOutputRequest& request) const;
@@ -1429,6 +1568,9 @@ namespace AlibabaCloud
 			ResizeDiskOutcome resizeDisk(const Model::ResizeDiskRequest &request)const;
 			void resizeDiskAsync(const Model::ResizeDiskRequest& request, const ResizeDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResizeDiskOutcomeCallable resizeDiskCallable(const Model::ResizeDiskRequest& request) const;
+			ResizeVolumeOutcome resizeVolume(const Model::ResizeVolumeRequest &request)const;
+			void resizeVolumeAsync(const Model::ResizeVolumeRequest& request, const ResizeVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResizeVolumeOutcomeCallable resizeVolumeCallable(const Model::ResizeVolumeRequest& request) const;
 			ModifyDedicatedHostAttributeOutcome modifyDedicatedHostAttribute(const Model::ModifyDedicatedHostAttributeRequest &request)const;
 			void modifyDedicatedHostAttributeAsync(const Model::ModifyDedicatedHostAttributeRequest& request, const ModifyDedicatedHostAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDedicatedHostAttributeOutcomeCallable modifyDedicatedHostAttributeCallable(const Model::ModifyDedicatedHostAttributeRequest& request) const;
@@ -1444,6 +1586,12 @@ namespace AlibabaCloud
 			CreateRouterInterfaceOutcome createRouterInterface(const Model::CreateRouterInterfaceRequest &request)const;
 			void createRouterInterfaceAsync(const Model::CreateRouterInterfaceRequest& request, const CreateRouterInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRouterInterfaceOutcomeCallable createRouterInterfaceCallable(const Model::CreateRouterInterfaceRequest& request) const;
+			ModifyVolumeAttributeOutcome modifyVolumeAttribute(const Model::ModifyVolumeAttributeRequest &request)const;
+			void modifyVolumeAttributeAsync(const Model::ModifyVolumeAttributeRequest& request, const ModifyVolumeAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyVolumeAttributeOutcomeCallable modifyVolumeAttributeCallable(const Model::ModifyVolumeAttributeRequest& request) const;
+			CheckDiskEnableAutoSnapshotValidationOutcome checkDiskEnableAutoSnapshotValidation(const Model::CheckDiskEnableAutoSnapshotValidationRequest &request)const;
+			void checkDiskEnableAutoSnapshotValidationAsync(const Model::CheckDiskEnableAutoSnapshotValidationRequest& request, const CheckDiskEnableAutoSnapshotValidationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckDiskEnableAutoSnapshotValidationOutcomeCallable checkDiskEnableAutoSnapshotValidationCallable(const Model::CheckDiskEnableAutoSnapshotValidationRequest& request) const;
 			RunInstancesOutcome runInstances(const Model::RunInstancesRequest &request)const;
 			void runInstancesAsync(const Model::RunInstancesRequest& request, const RunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RunInstancesOutcomeCallable runInstancesCallable(const Model::RunInstancesRequest& request) const;
@@ -1555,9 +1703,15 @@ namespace AlibabaCloud
 			DescribeSnapshotPackageOutcome describeSnapshotPackage(const Model::DescribeSnapshotPackageRequest &request)const;
 			void describeSnapshotPackageAsync(const Model::DescribeSnapshotPackageRequest& request, const DescribeSnapshotPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSnapshotPackageOutcomeCallable describeSnapshotPackageCallable(const Model::DescribeSnapshotPackageRequest& request) const;
+			ReInitVolumeOutcome reInitVolume(const Model::ReInitVolumeRequest &request)const;
+			void reInitVolumeAsync(const Model::ReInitVolumeRequest& request, const ReInitVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReInitVolumeOutcomeCallable reInitVolumeCallable(const Model::ReInitVolumeRequest& request) const;
 			RebootInstanceOutcome rebootInstance(const Model::RebootInstanceRequest &request)const;
 			void rebootInstanceAsync(const Model::RebootInstanceRequest& request, const RebootInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RebootInstanceOutcomeCallable rebootInstanceCallable(const Model::RebootInstanceRequest& request) const;
+			BindIpRangeOutcome bindIpRange(const Model::BindIpRangeRequest &request)const;
+			void bindIpRangeAsync(const Model::BindIpRangeRequest& request, const BindIpRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindIpRangeOutcomeCallable bindIpRangeCallable(const Model::BindIpRangeRequest& request) const;
 			InvokeCommandOutcome invokeCommand(const Model::InvokeCommandRequest &request)const;
 			void invokeCommandAsync(const Model::InvokeCommandRequest& request, const InvokeCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InvokeCommandOutcomeCallable invokeCommandCallable(const Model::InvokeCommandRequest& request) const;
@@ -1609,6 +1763,9 @@ namespace AlibabaCloud
 			AddTagsOutcome addTags(const Model::AddTagsRequest &request)const;
 			void addTagsAsync(const Model::AddTagsRequest& request, const AddTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddTagsOutcomeCallable addTagsCallable(const Model::AddTagsRequest& request) const;
+			CancelUserEventOutcome cancelUserEvent(const Model::CancelUserEventRequest &request)const;
+			void cancelUserEventAsync(const Model::CancelUserEventRequest& request, const CancelUserEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelUserEventOutcomeCallable cancelUserEventCallable(const Model::CancelUserEventRequest& request) const;
 			CreateHpcClusterOutcome createHpcCluster(const Model::CreateHpcClusterRequest &request)const;
 			void createHpcClusterAsync(const Model::CreateHpcClusterRequest& request, const CreateHpcClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateHpcClusterOutcomeCallable createHpcClusterCallable(const Model::CreateHpcClusterRequest& request) const;
@@ -1735,6 +1892,9 @@ namespace AlibabaCloud
 			DescribeNewProjectEipMonitorDataOutcome describeNewProjectEipMonitorData(const Model::DescribeNewProjectEipMonitorDataRequest &request)const;
 			void describeNewProjectEipMonitorDataAsync(const Model::DescribeNewProjectEipMonitorDataRequest& request, const DescribeNewProjectEipMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNewProjectEipMonitorDataOutcomeCallable describeNewProjectEipMonitorDataCallable(const Model::DescribeNewProjectEipMonitorDataRequest& request) const;
+			UnbindIpRangeOutcome unbindIpRange(const Model::UnbindIpRangeRequest &request)const;
+			void unbindIpRangeAsync(const Model::UnbindIpRangeRequest& request, const UnbindIpRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindIpRangeOutcomeCallable unbindIpRangeCallable(const Model::UnbindIpRangeRequest& request) const;
 			DeleteRecycleBinOutcome deleteRecycleBin(const Model::DeleteRecycleBinRequest &request)const;
 			void deleteRecycleBinAsync(const Model::DeleteRecycleBinRequest& request, const DeleteRecycleBinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRecycleBinOutcomeCallable deleteRecycleBinCallable(const Model::DeleteRecycleBinRequest& request) const;
@@ -1774,6 +1934,12 @@ namespace AlibabaCloud
 			ModifyDiskChargeTypeOutcome modifyDiskChargeType(const Model::ModifyDiskChargeTypeRequest &request)const;
 			void modifyDiskChargeTypeAsync(const Model::ModifyDiskChargeTypeRequest& request, const ModifyDiskChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDiskChargeTypeOutcomeCallable modifyDiskChargeTypeCallable(const Model::ModifyDiskChargeTypeRequest& request) const;
+			DescribeVolumesOutcome describeVolumes(const Model::DescribeVolumesRequest &request)const;
+			void describeVolumesAsync(const Model::DescribeVolumesRequest& request, const DescribeVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVolumesOutcomeCallable describeVolumesCallable(const Model::DescribeVolumesRequest& request) const;
+			ModifyIntranetBandwidthKbOutcome modifyIntranetBandwidthKb(const Model::ModifyIntranetBandwidthKbRequest &request)const;
+			void modifyIntranetBandwidthKbAsync(const Model::ModifyIntranetBandwidthKbRequest& request, const ModifyIntranetBandwidthKbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyIntranetBandwidthKbOutcomeCallable modifyIntranetBandwidthKbCallable(const Model::ModifyIntranetBandwidthKbRequest& request) const;
 			DescribeBandwidthPackagesOutcome describeBandwidthPackages(const Model::DescribeBandwidthPackagesRequest &request)const;
 			void describeBandwidthPackagesAsync(const Model::DescribeBandwidthPackagesRequest& request, const DescribeBandwidthPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBandwidthPackagesOutcomeCallable describeBandwidthPackagesCallable(const Model::DescribeBandwidthPackagesRequest& request) const;
@@ -1786,6 +1952,9 @@ namespace AlibabaCloud
 			DescribeSnapshotLinksOutcome describeSnapshotLinks(const Model::DescribeSnapshotLinksRequest &request)const;
 			void describeSnapshotLinksAsync(const Model::DescribeSnapshotLinksRequest& request, const DescribeSnapshotLinksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSnapshotLinksOutcomeCallable describeSnapshotLinksCallable(const Model::DescribeSnapshotLinksRequest& request) const;
+			DescribeEventDetailOutcome describeEventDetail(const Model::DescribeEventDetailRequest &request)const;
+			void describeEventDetailAsync(const Model::DescribeEventDetailRequest& request, const DescribeEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEventDetailOutcomeCallable describeEventDetailCallable(const Model::DescribeEventDetailRequest& request) const;
 			DescribeInvocationResultsOutcome describeInvocationResults(const Model::DescribeInvocationResultsRequest &request)const;
 			void describeInvocationResultsAsync(const Model::DescribeInvocationResultsRequest& request, const DescribeInvocationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInvocationResultsOutcomeCallable describeInvocationResultsCallable(const Model::DescribeInvocationResultsRequest& request) const;
@@ -1795,6 +1964,9 @@ namespace AlibabaCloud
 			DescribeTagKeysOutcome describeTagKeys(const Model::DescribeTagKeysRequest &request)const;
 			void describeTagKeysAsync(const Model::DescribeTagKeysRequest& request, const DescribeTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTagKeysOutcomeCallable describeTagKeysCallable(const Model::DescribeTagKeysRequest& request) const;
+			CreateVolumeOutcome createVolume(const Model::CreateVolumeRequest &request)const;
+			void createVolumeAsync(const Model::CreateVolumeRequest& request, const CreateVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateVolumeOutcomeCallable createVolumeCallable(const Model::CreateVolumeRequest& request) const;
 			DescribeDedicatedHostAutoRenewOutcome describeDedicatedHostAutoRenew(const Model::DescribeDedicatedHostAutoRenewRequest &request)const;
 			void describeDedicatedHostAutoRenewAsync(const Model::DescribeDedicatedHostAutoRenewRequest& request, const DescribeDedicatedHostAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDedicatedHostAutoRenewOutcomeCallable describeDedicatedHostAutoRenewCallable(const Model::DescribeDedicatedHostAutoRenewRequest& request) const;
@@ -1804,6 +1976,9 @@ namespace AlibabaCloud
 			CreateLaunchTemplateOutcome createLaunchTemplate(const Model::CreateLaunchTemplateRequest &request)const;
 			void createLaunchTemplateAsync(const Model::CreateLaunchTemplateRequest& request, const CreateLaunchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLaunchTemplateOutcomeCallable createLaunchTemplateCallable(const Model::CreateLaunchTemplateRequest& request) const;
+			DescribeIntranetAttributeKbOutcome describeIntranetAttributeKb(const Model::DescribeIntranetAttributeKbRequest &request)const;
+			void describeIntranetAttributeKbAsync(const Model::DescribeIntranetAttributeKbRequest& request, const DescribeIntranetAttributeKbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIntranetAttributeKbOutcomeCallable describeIntranetAttributeKbCallable(const Model::DescribeIntranetAttributeKbRequest& request) const;
 			CreateNetworkInterfacePermissionOutcome createNetworkInterfacePermission(const Model::CreateNetworkInterfacePermissionRequest &request)const;
 			void createNetworkInterfacePermissionAsync(const Model::CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNetworkInterfacePermissionOutcomeCallable createNetworkInterfacePermissionCallable(const Model::CreateNetworkInterfacePermissionRequest& request) const;
@@ -1831,6 +2006,12 @@ namespace AlibabaCloud
 			DescribeInstanceTypeFamiliesOutcome describeInstanceTypeFamilies(const Model::DescribeInstanceTypeFamiliesRequest &request)const;
 			void describeInstanceTypeFamiliesAsync(const Model::DescribeInstanceTypeFamiliesRequest& request, const DescribeInstanceTypeFamiliesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceTypeFamiliesOutcomeCallable describeInstanceTypeFamiliesCallable(const Model::DescribeInstanceTypeFamiliesRequest& request) const;
+			RollbackVolumeOutcome rollbackVolume(const Model::RollbackVolumeRequest &request)const;
+			void rollbackVolumeAsync(const Model::RollbackVolumeRequest& request, const RollbackVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RollbackVolumeOutcomeCallable rollbackVolumeCallable(const Model::RollbackVolumeRequest& request) const;
+			DeleteVolumeOutcome deleteVolume(const Model::DeleteVolumeRequest &request)const;
+			void deleteVolumeAsync(const Model::DeleteVolumeRequest& request, const DeleteVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteVolumeOutcomeCallable deleteVolumeCallable(const Model::DeleteVolumeRequest& request) const;
 			CreateForwardEntryOutcome createForwardEntry(const Model::CreateForwardEntryRequest &request)const;
 			void createForwardEntryAsync(const Model::CreateForwardEntryRequest& request, const CreateForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateForwardEntryOutcomeCallable createForwardEntryCallable(const Model::CreateForwardEntryRequest& request) const;
@@ -1876,6 +2057,9 @@ namespace AlibabaCloud
 			CreatePhysicalConnectionOutcome createPhysicalConnection(const Model::CreatePhysicalConnectionRequest &request)const;
 			void createPhysicalConnectionAsync(const Model::CreatePhysicalConnectionRequest& request, const CreatePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePhysicalConnectionOutcomeCallable createPhysicalConnectionCallable(const Model::CreatePhysicalConnectionRequest& request) const;
+			ModifyUserEventAttributeOutcome modifyUserEventAttribute(const Model::ModifyUserEventAttributeRequest &request)const;
+			void modifyUserEventAttributeAsync(const Model::ModifyUserEventAttributeRequest& request, const ModifyUserEventAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyUserEventAttributeOutcomeCallable modifyUserEventAttributeCallable(const Model::ModifyUserEventAttributeRequest& request) const;
 			DescribeKeyPairsOutcome describeKeyPairs(const Model::DescribeKeyPairsRequest &request)const;
 			void describeKeyPairsAsync(const Model::DescribeKeyPairsRequest& request, const DescribeKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeKeyPairsOutcomeCallable describeKeyPairsCallable(const Model::DescribeKeyPairsRequest& request) const;
@@ -1888,6 +2072,9 @@ namespace AlibabaCloud
 			ConvertNatPublicIpToEipOutcome convertNatPublicIpToEip(const Model::ConvertNatPublicIpToEipRequest &request)const;
 			void convertNatPublicIpToEipAsync(const Model::ConvertNatPublicIpToEipRequest& request, const ConvertNatPublicIpToEipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConvertNatPublicIpToEipOutcomeCallable convertNatPublicIpToEipCallable(const Model::ConvertNatPublicIpToEipRequest& request) const;
+			AssignIpv6AddressesOutcome assignIpv6Addresses(const Model::AssignIpv6AddressesRequest &request)const;
+			void assignIpv6AddressesAsync(const Model::AssignIpv6AddressesRequest& request, const AssignIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AssignIpv6AddressesOutcomeCallable assignIpv6AddressesCallable(const Model::AssignIpv6AddressesRequest& request) const;
 			DeleteRouteEntryOutcome deleteRouteEntry(const Model::DeleteRouteEntryRequest &request)const;
 			void deleteRouteEntryAsync(const Model::DeleteRouteEntryRequest& request, const DeleteRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRouteEntryOutcomeCallable deleteRouteEntryCallable(const Model::DeleteRouteEntryRequest& request) const;
@@ -1897,9 +2084,15 @@ namespace AlibabaCloud
 			DescribeCloudAssistantStatusOutcome describeCloudAssistantStatus(const Model::DescribeCloudAssistantStatusRequest &request)const;
 			void describeCloudAssistantStatusAsync(const Model::DescribeCloudAssistantStatusRequest& request, const DescribeCloudAssistantStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudAssistantStatusOutcomeCallable describeCloudAssistantStatusCallable(const Model::DescribeCloudAssistantStatusRequest& request) const;
+			UnassignIpv6AddressesOutcome unassignIpv6Addresses(const Model::UnassignIpv6AddressesRequest &request)const;
+			void unassignIpv6AddressesAsync(const Model::UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnassignIpv6AddressesOutcomeCallable unassignIpv6AddressesCallable(const Model::UnassignIpv6AddressesRequest& request) const;
 			DescribeInstancePhysicalAttributeOutcome describeInstancePhysicalAttribute(const Model::DescribeInstancePhysicalAttributeRequest &request)const;
 			void describeInstancePhysicalAttributeAsync(const Model::DescribeInstancePhysicalAttributeRequest& request, const DescribeInstancePhysicalAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstancePhysicalAttributeOutcomeCallable describeInstancePhysicalAttributeCallable(const Model::DescribeInstancePhysicalAttributeRequest& request) const;
+			ValidateSecurityGroupOutcome validateSecurityGroup(const Model::ValidateSecurityGroupRequest &request)const;
+			void validateSecurityGroupAsync(const Model::ValidateSecurityGroupRequest& request, const ValidateSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ValidateSecurityGroupOutcomeCallable validateSecurityGroupCallable(const Model::ValidateSecurityGroupRequest& request) const;
 			TerminatePhysicalConnectionOutcome terminatePhysicalConnection(const Model::TerminatePhysicalConnectionRequest &request)const;
 			void terminatePhysicalConnectionAsync(const Model::TerminatePhysicalConnectionRequest& request, const TerminatePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TerminatePhysicalConnectionOutcomeCallable terminatePhysicalConnectionCallable(const Model::TerminatePhysicalConnectionRequest& request) const;
@@ -1933,15 +2126,27 @@ namespace AlibabaCloud
 			DescribeClassicLinkInstancesOutcome describeClassicLinkInstances(const Model::DescribeClassicLinkInstancesRequest &request)const;
 			void describeClassicLinkInstancesAsync(const Model::DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeClassicLinkInstancesOutcomeCallable describeClassicLinkInstancesCallable(const Model::DescribeClassicLinkInstancesRequest& request) const;
+			CreateUserEventOutcome createUserEvent(const Model::CreateUserEventRequest &request)const;
+			void createUserEventAsync(const Model::CreateUserEventRequest& request, const CreateUserEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateUserEventOutcomeCallable createUserEventCallable(const Model::CreateUserEventRequest& request) const;
+			DescribeAutoSnapshotPolicyOutcome describeAutoSnapshotPolicy(const Model::DescribeAutoSnapshotPolicyRequest &request)const;
+			void describeAutoSnapshotPolicyAsync(const Model::DescribeAutoSnapshotPolicyRequest& request, const DescribeAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAutoSnapshotPolicyOutcomeCallable describeAutoSnapshotPolicyCallable(const Model::DescribeAutoSnapshotPolicyRequest& request) const;
 			DescribePhysicalConnectionsOutcome describePhysicalConnections(const Model::DescribePhysicalConnectionsRequest &request)const;
 			void describePhysicalConnectionsAsync(const Model::DescribePhysicalConnectionsRequest& request, const DescribePhysicalConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePhysicalConnectionsOutcomeCallable describePhysicalConnectionsCallable(const Model::DescribePhysicalConnectionsRequest& request) const;
 			DescribeRecycleBinOutcome describeRecycleBin(const Model::DescribeRecycleBinRequest &request)const;
 			void describeRecycleBinAsync(const Model::DescribeRecycleBinRequest& request, const DescribeRecycleBinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecycleBinOutcomeCallable describeRecycleBinCallable(const Model::DescribeRecycleBinRequest& request) const;
+			DetachVolumeOutcome detachVolume(const Model::DetachVolumeRequest &request)const;
+			void detachVolumeAsync(const Model::DetachVolumeRequest& request, const DetachVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachVolumeOutcomeCallable detachVolumeCallable(const Model::DetachVolumeRequest& request) const;
 			CreateNetworkInterfaceOutcome createNetworkInterface(const Model::CreateNetworkInterfaceRequest &request)const;
 			void createNetworkInterfaceAsync(const Model::CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNetworkInterfaceOutcomeCallable createNetworkInterfaceCallable(const Model::CreateNetworkInterfaceRequest& request) const;
+			DescribeIpRangesOutcome describeIpRanges(const Model::DescribeIpRangesRequest &request)const;
+			void describeIpRangesAsync(const Model::DescribeIpRangesRequest& request, const DescribeIpRangesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIpRangesOutcomeCallable describeIpRangesCallable(const Model::DescribeIpRangesRequest& request) const;
 			DeleteNetworkInterfacePermissionOutcome deleteNetworkInterfacePermission(const Model::DeleteNetworkInterfacePermissionRequest &request)const;
 			void deleteNetworkInterfacePermissionAsync(const Model::DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteNetworkInterfacePermissionOutcomeCallable deleteNetworkInterfacePermissionCallable(const Model::DeleteNetworkInterfacePermissionRequest& request) const;
@@ -1969,6 +2174,9 @@ namespace AlibabaCloud
 			DeleteDiskOutcome deleteDisk(const Model::DeleteDiskRequest &request)const;
 			void deleteDiskAsync(const Model::DeleteDiskRequest& request, const DeleteDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDiskOutcomeCallable deleteDiskCallable(const Model::DeleteDiskRequest& request) const;
+			DescribeEventsOutcome describeEvents(const Model::DescribeEventsRequest &request)const;
+			void describeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEventsOutcomeCallable describeEventsCallable(const Model::DescribeEventsRequest& request) const;
 			UnassociateHaVipOutcome unassociateHaVip(const Model::UnassociateHaVipRequest &request)const;
 			void unassociateHaVipAsync(const Model::UnassociateHaVipRequest& request, const UnassociateHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnassociateHaVipOutcomeCallable unassociateHaVipCallable(const Model::UnassociateHaVipRequest& request) const;

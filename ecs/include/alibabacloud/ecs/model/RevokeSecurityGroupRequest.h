@@ -77,6 +77,10 @@ namespace AlibabaCloud
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
+				std::string getIpv6DestCidrIp()const;
+				void setIpv6DestCidrIp(const std::string& ipv6DestCidrIp);
+				std::string getIpv6SourceCidrIp()const;
+				void setIpv6SourceCidrIp(const std::string& ipv6SourceCidrIp);
 				std::string getPolicy()const;
 				void setPolicy(const std::string& policy);
 				std::string getApp_ip()const;
@@ -132,6 +136,8 @@ namespace AlibabaCloud
 				std::string callerBidEmail_;
 				std::string callerUidEmail_;
 				long callerUid_;
+				std::string ipv6DestCidrIp_;
+				std::string ipv6SourceCidrIp_;
 				std::string policy_;
 				std::string app_ip_;
 				std::string portRange_;

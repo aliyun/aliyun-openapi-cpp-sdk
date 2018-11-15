@@ -256,6 +256,28 @@ void ModifySecurityGroupRuleRequest::setCallerUid(long callerUid)
 	setParameter("CallerUid", std::to_string(callerUid));
 }
 
+std::string ModifySecurityGroupRuleRequest::getIpv6SourceCidrIp()const
+{
+	return ipv6SourceCidrIp_;
+}
+
+void ModifySecurityGroupRuleRequest::setIpv6SourceCidrIp(const std::string& ipv6SourceCidrIp)
+{
+	ipv6SourceCidrIp_ = ipv6SourceCidrIp;
+	setParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
+}
+
+std::string ModifySecurityGroupRuleRequest::getIpv6DestCidrIp()const
+{
+	return ipv6DestCidrIp_;
+}
+
+void ModifySecurityGroupRuleRequest::setIpv6DestCidrIp(const std::string& ipv6DestCidrIp)
+{
+	ipv6DestCidrIp_ = ipv6DestCidrIp;
+	setParameter("Ipv6DestCidrIp", ipv6DestCidrIp);
+}
+
 std::string ModifySecurityGroupRuleRequest::getPolicy()const
 {
 	return policy_;

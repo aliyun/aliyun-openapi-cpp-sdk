@@ -284,6 +284,17 @@ void RunInstancesRequest::setLaunchTemplateId(const std::string& launchTemplateI
 	setParameter("LaunchTemplateId", launchTemplateId);
 }
 
+int RunInstancesRequest::getIpv6AddressCount()const
+{
+	return ipv6AddressCount_;
+}
+
+void RunInstancesRequest::setIpv6AddressCount(int ipv6AddressCount)
+{
+	ipv6AddressCount_ = ipv6AddressCount;
+	setParameter("Ipv6AddressCount", std::to_string(ipv6AddressCount));
+}
+
 long RunInstancesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -414,6 +425,18 @@ void RunInstancesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setParameter("ZoneId", zoneId);
+}
+
+std::vector<std::string> RunInstancesRequest::getIpv6Address()const
+{
+	return ipv6Address_;
+}
+
+void RunInstancesRequest::setIpv6Address(const std::vector<std::string>& ipv6Address)
+{
+	ipv6Address_ = ipv6Address;
+	for(int i = 0; i!= ipv6Address.size(); i++)
+		setParameter("Ipv6Address."+ std::to_string(i), ipv6Address.at(i));
 }
 
 int RunInstancesRequest::getInternetMaxBandwidthIn()const

@@ -85,6 +85,14 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 				privateIpSetsObject.associatedPublicIp1.allocationId = associatedPublicIp1Node["AllocationId"].asString();
 			networkInterfaceSetsObject.privateIpSets.push_back(privateIpSetsObject);
 		}
+		auto allIpv6Sets = value["Ipv6Sets"]["Ipv6Set"];
+		for (auto value : allIpv6Sets)
+		{
+			NetworkInterfaceSet::Ipv6Set ipv6SetsObject;
+			if(!value["Ipv6Address"].isNull())
+				ipv6SetsObject.ipv6Address = value["Ipv6Address"].asString();
+			networkInterfaceSetsObject.ipv6Sets.push_back(ipv6SetsObject);
+		}
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{

@@ -38,11 +38,13 @@ namespace AlibabaCloud
 					{
 						std::string snapshotId;
 						std::string type;
+						std::string progress;
 						std::string format;
 						std::string size;
 						std::string device;
 						std::string importOSSBucket;
 						std::string importOSSObject;
+						int remainTime;
 					};
 					struct Tag
 					{

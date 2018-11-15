@@ -64,6 +64,8 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 			vSwitchesObject.creationTime = value["CreationTime"].asString();
 		if(!value["IsDefault"].isNull())
 			vSwitchesObject.isDefault = value["IsDefault"].asString() == "true";
+		if(!value["ResourceGroupId"].isNull())
+			vSwitchesObject.resourceGroupId = value["ResourceGroupId"].asString();
 		vSwitches_.push_back(vSwitchesObject);
 	}
 	if(!value["TotalCount"].isNull())

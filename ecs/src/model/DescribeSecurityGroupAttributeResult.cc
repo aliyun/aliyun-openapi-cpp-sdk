@@ -56,6 +56,8 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 			permissionsObject.sourceGroupName = value["SourceGroupName"].asString();
 		if(!value["SourceCidrIp"].isNull())
 			permissionsObject.sourceCidrIp = value["SourceCidrIp"].asString();
+		if(!value["Ipv6SourceCidrIp"].isNull())
+			permissionsObject.ipv6SourceCidrIp = value["Ipv6SourceCidrIp"].asString();
 		if(!value["Policy"].isNull())
 			permissionsObject.policy = value["Policy"].asString();
 		if(!value["NicType"].isNull())
@@ -68,6 +70,8 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 			permissionsObject.destGroupName = value["DestGroupName"].asString();
 		if(!value["DestCidrIp"].isNull())
 			permissionsObject.destCidrIp = value["DestCidrIp"].asString();
+		if(!value["Ipv6DestCidrIp"].isNull())
+			permissionsObject.ipv6DestCidrIp = value["Ipv6DestCidrIp"].asString();
 		if(!value["DestGroupOwnerAccount"].isNull())
 			permissionsObject.destGroupOwnerAccount = value["DestGroupOwnerAccount"].asString();
 		if(!value["Priority"].isNull())

@@ -234,6 +234,28 @@ void RevokeSecurityGroupEgressRequest::setCallerUid(long callerUid)
 	setParameter("CallerUid", std::to_string(callerUid));
 }
 
+std::string RevokeSecurityGroupEgressRequest::getIpv6DestCidrIp()const
+{
+	return ipv6DestCidrIp_;
+}
+
+void RevokeSecurityGroupEgressRequest::setIpv6DestCidrIp(const std::string& ipv6DestCidrIp)
+{
+	ipv6DestCidrIp_ = ipv6DestCidrIp;
+	setParameter("Ipv6DestCidrIp", ipv6DestCidrIp);
+}
+
+std::string RevokeSecurityGroupEgressRequest::getIpv6SourceCidrIp()const
+{
+	return ipv6SourceCidrIp_;
+}
+
+void RevokeSecurityGroupEgressRequest::setIpv6SourceCidrIp(const std::string& ipv6SourceCidrIp)
+{
+	ipv6SourceCidrIp_ = ipv6SourceCidrIp;
+	setParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
+}
+
 std::string RevokeSecurityGroupEgressRequest::getPolicy()const
 {
 	return policy_;

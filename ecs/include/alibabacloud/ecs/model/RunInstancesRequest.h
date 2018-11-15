@@ -105,6 +105,8 @@ namespace AlibabaCloud
 				void setDryRun(bool dryRun);
 				std::string getLaunchTemplateId()const;
 				void setLaunchTemplateId(const std::string& launchTemplateId);
+				int getIpv6AddressCount()const;
+				void setIpv6AddressCount(int ipv6AddressCount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				bool getAk_mfa_present()const;
@@ -129,6 +131,8 @@ namespace AlibabaCloud
 				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::vector<std::string> getIpv6Address()const;
+				void setIpv6Address(const std::vector<std::string>& ipv6Address);
 				int getInternetMaxBandwidthIn()const;
 				void setInternetMaxBandwidthIn(int internetMaxBandwidthIn);
 				std::string getImageId()const;
@@ -224,6 +228,7 @@ namespace AlibabaCloud
 				int period_;
 				bool dryRun_;
 				std::string launchTemplateId_;
+				int ipv6AddressCount_;
 				long ownerId_;
 				bool ak_mfa_present_;
 				bool security_transport_;
@@ -236,6 +241,7 @@ namespace AlibabaCloud
 				std::string requestId_;
 				std::string internetChargeType_;
 				std::string zoneId_;
+				std::vector<std::string> ipv6Address_;
 				int internetMaxBandwidthIn_;
 				std::string imageId_;
 				std::string spotInterruptionBehavior_;
