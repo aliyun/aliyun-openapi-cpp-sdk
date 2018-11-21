@@ -135,3 +135,14 @@ void GetVideoListRequest::setStatus(const std::string& status)
 	setParameter("Status", status);
 }
 
+std::string GetVideoListRequest::getStorageLocation()const
+{
+	return storageLocation_;
+}
+
+void GetVideoListRequest::setStorageLocation(const std::string& storageLocation)
+{
+	storageLocation_ = storageLocation;
+	setParameter("StorageLocation", storageLocation);
+}
+

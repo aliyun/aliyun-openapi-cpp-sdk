@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_GETVIDEOLISTRESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_GETVIDEOLISTRESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_ADDWATERMARKRESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_ADDWATERMARKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT GetVideoListResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT AddWatermarkResult : public ServiceResult
 			{
 			public:
-				struct Video
+				struct WatermarkInfo
 				{
-					std::string status;
-					std::string modifyTime;
-					std::string videoId;
-					std::string description;
-					long size;
-					std::string createTime;
-					std::string title;
-					float duration;
-					std::string modificationTime;
-					long cateId;
-					std::string cateName;
+					std::string isDefault;
+					std::string fileUrl;
+					std::string type;
+					std::string watermarkId;
 					std::string creationTime;
-					std::string coverURL;
-					std::string storageLocation;
-					std::vector<std::string> snapshots;
-					std::string tags;
+					std::string watermarkConfig;
+					std::string name;
 				};
 
 
-				GetVideoListResult();
-				explicit GetVideoListResult(const std::string &payload);
-				~GetVideoListResult();
-				int getTotal()const;
-				std::vector<Video> getVideoList()const;
+				AddWatermarkResult();
+				explicit AddWatermarkResult(const std::string &payload);
+				~AddWatermarkResult();
+				WatermarkInfo getWatermarkInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int total_;
-				std::vector<Video> videoList_;
+				WatermarkInfo watermarkInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_GETVIDEOLISTRESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_ADDWATERMARKRESULT_H_

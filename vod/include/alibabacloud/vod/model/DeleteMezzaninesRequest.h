@@ -50,7 +50,6 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				bool force_;
-				long resourceRealOwnerId_;
 				long ownerId_;
 				std::string videoIds_;
 

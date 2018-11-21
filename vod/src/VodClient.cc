@@ -771,6 +771,42 @@ VodClient::DescribeRefreshTasksOutcomeCallable VodClient::describeRefreshTasksCa
 	return task->get_future();
 }
 
+VodClient::DeleteWatermarkOutcome VodClient::deleteWatermark(const DeleteWatermarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteWatermarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteWatermarkOutcome(DeleteWatermarkResult(outcome.result()));
+	else
+		return DeleteWatermarkOutcome(outcome.error());
+}
+
+void VodClient::deleteWatermarkAsync(const DeleteWatermarkRequest& request, const DeleteWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteWatermark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DeleteWatermarkOutcomeCallable VodClient::deleteWatermarkCallable(const DeleteWatermarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteWatermarkOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteWatermark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::UpdateCategoryOutcome VodClient::updateCategory(const UpdateCategoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,6 +837,42 @@ VodClient::UpdateCategoryOutcomeCallable VodClient::updateCategoryCallable(const
 			[this, request]()
 			{
 			return this->updateCategory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::RegisterMediaOutcome VodClient::registerMedia(const RegisterMediaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RegisterMediaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RegisterMediaOutcome(RegisterMediaResult(outcome.result()));
+	else
+		return RegisterMediaOutcome(outcome.error());
+}
+
+void VodClient::registerMediaAsync(const RegisterMediaRequest& request, const RegisterMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, registerMedia(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::RegisterMediaOutcomeCallable VodClient::registerMediaCallable(const RegisterMediaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RegisterMediaOutcome()>>(
+			[this, request]()
+			{
+			return this->registerMedia(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -878,6 +950,7 @@ VodClient::ListAIVideoCensorJobOutcomeCallable VodClient::listAIVideoCensorJobCa
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
+
 
 VodClient::DescribeRefreshQuotaOutcome VodClient::describeRefreshQuota(const DescribeRefreshQuotaRequest &request) const
 {
@@ -1203,6 +1276,78 @@ VodClient::GetVideoConfigOutcomeCallable VodClient::getVideoConfigCallable(const
 	return task->get_future();
 }
 
+VodClient::AddWatermarkOutcome VodClient::addWatermark(const AddWatermarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddWatermarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddWatermarkOutcome(AddWatermarkResult(outcome.result()));
+	else
+		return AddWatermarkOutcome(outcome.error());
+}
+
+void VodClient::addWatermarkAsync(const AddWatermarkRequest& request, const AddWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addWatermark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::AddWatermarkOutcomeCallable VodClient::addWatermarkCallable(const AddWatermarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddWatermarkOutcome()>>(
+			[this, request]()
+			{
+			return this->addWatermark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::ListWatermarkOutcome VodClient::listWatermark(const ListWatermarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListWatermarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListWatermarkOutcome(ListWatermarkResult(outcome.result()));
+	else
+		return ListWatermarkOutcome(outcome.error());
+}
+
+void VodClient::listWatermarkAsync(const ListWatermarkRequest& request, const ListWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listWatermark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::ListWatermarkOutcomeCallable VodClient::listWatermarkCallable(const ListWatermarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListWatermarkOutcome()>>(
+			[this, request]()
+			{
+			return this->listWatermark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::CreateUploadImageOutcome VodClient::createUploadImage(const CreateUploadImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1377,6 +1522,42 @@ VodClient::DescribePlayTopVideosOutcomeCallable VodClient::describePlayTopVideos
 			[this, request]()
 			{
 			return this->describePlayTopVideos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::SetDefaultWatermarkOutcome VodClient::setDefaultWatermark(const SetDefaultWatermarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDefaultWatermarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDefaultWatermarkOutcome(SetDefaultWatermarkResult(outcome.result()));
+	else
+		return SetDefaultWatermarkOutcome(outcome.error());
+}
+
+void VodClient::setDefaultWatermarkAsync(const SetDefaultWatermarkRequest& request, const SetDefaultWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDefaultWatermark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SetDefaultWatermarkOutcomeCallable VodClient::setDefaultWatermarkCallable(const SetDefaultWatermarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDefaultWatermarkOutcome()>>(
+			[this, request]()
+			{
+			return this->setDefaultWatermark(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1773,6 +1954,78 @@ VodClient::SearchEditingProjectOutcomeCallable VodClient::searchEditingProjectCa
 			[this, request]()
 			{
 			return this->searchEditingProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::GetWatermarkOutcome VodClient::getWatermark(const GetWatermarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetWatermarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetWatermarkOutcome(GetWatermarkResult(outcome.result()));
+	else
+		return GetWatermarkOutcome(outcome.error());
+}
+
+void VodClient::getWatermarkAsync(const GetWatermarkRequest& request, const GetWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getWatermark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetWatermarkOutcomeCallable VodClient::getWatermarkCallable(const GetWatermarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetWatermarkOutcome()>>(
+			[this, request]()
+			{
+			return this->getWatermark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::UpdateWatermarkOutcome VodClient::updateWatermark(const UpdateWatermarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateWatermarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateWatermarkOutcome(UpdateWatermarkResult(outcome.result()));
+	else
+		return UpdateWatermarkOutcome(outcome.error());
+}
+
+void VodClient::updateWatermarkAsync(const UpdateWatermarkRequest& request, const UpdateWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateWatermark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::UpdateWatermarkOutcomeCallable VodClient::updateWatermarkCallable(const UpdateWatermarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateWatermarkOutcome()>>(
+			[this, request]()
+			{
+			return this->updateWatermark(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

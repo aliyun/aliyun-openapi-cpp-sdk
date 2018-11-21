@@ -69,6 +69,17 @@ void SubmitTranscodeJobsRequest::setVideoId(const std::string& videoId)
 	setParameter("VideoId", videoId);
 }
 
+std::string SubmitTranscodeJobsRequest::getOverrideParams()const
+{
+	return overrideParams_;
+}
+
+void SubmitTranscodeJobsRequest::setOverrideParams(const std::string& overrideParams)
+{
+	overrideParams_ = overrideParams;
+	setParameter("OverrideParams", overrideParams);
+}
+
 long SubmitTranscodeJobsRequest::getOwnerId()const
 {
 	return ownerId_;

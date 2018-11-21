@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
+				std::string getStorageLocation()const;
+				void setStorageLocation(const std::string& storageLocation);
 
             private:
 				long resourceOwnerId_;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				std::string startTime_;
 				long ownerId_;
 				std::string status_;
+				std::string storageLocation_;
 
 			};
 		}

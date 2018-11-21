@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_GETVIDEOLISTRESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_GETVIDEOLISTRESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_REGISTERMEDIARESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_REGISTERMEDIARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT GetVideoListResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT RegisterMediaResult : public ServiceResult
 			{
 			public:
-				struct Video
+				struct RegisteredMedia
 				{
-					std::string status;
-					std::string modifyTime;
-					std::string videoId;
-					std::string description;
-					long size;
-					std::string createTime;
-					std::string title;
-					float duration;
-					std::string modificationTime;
-					long cateId;
-					std::string cateName;
-					std::string creationTime;
-					std::string coverURL;
-					std::string storageLocation;
-					std::vector<std::string> snapshots;
-					std::string tags;
+					std::string fileURL;
+					std::string mediaId;
+					bool newRegister;
 				};
 
 
-				GetVideoListResult();
-				explicit GetVideoListResult(const std::string &payload);
-				~GetVideoListResult();
-				int getTotal()const;
-				std::vector<Video> getVideoList()const;
+				RegisterMediaResult();
+				explicit RegisterMediaResult(const std::string &payload);
+				~RegisterMediaResult();
+				std::vector<std::string> getFailedFileURLs()const;
+				std::vector<RegisteredMedia> getRegisteredMediaList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int total_;
-				std::vector<Video> videoList_;
+				std::vector<std::string> failedFileURLs_;
+				std::vector<RegisteredMedia> registeredMediaList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_GETVIDEOLISTRESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_REGISTERMEDIARESULT_H_

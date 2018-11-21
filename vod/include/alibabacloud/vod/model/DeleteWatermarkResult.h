@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_GETVIDEOLISTRESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_GETVIDEOLISTRESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DELETEWATERMARKRESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_DELETEWATERMARKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT GetVideoListResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT DeleteWatermarkResult : public ServiceResult
 			{
 			public:
-				struct Video
-				{
-					std::string status;
-					std::string modifyTime;
-					std::string videoId;
-					std::string description;
-					long size;
-					std::string createTime;
-					std::string title;
-					float duration;
-					std::string modificationTime;
-					long cateId;
-					std::string cateName;
-					std::string creationTime;
-					std::string coverURL;
-					std::string storageLocation;
-					std::vector<std::string> snapshots;
-					std::string tags;
-				};
 
 
-				GetVideoListResult();
-				explicit GetVideoListResult(const std::string &payload);
-				~GetVideoListResult();
-				int getTotal()const;
-				std::vector<Video> getVideoList()const;
+				DeleteWatermarkResult();
+				explicit DeleteWatermarkResult(const std::string &payload);
+				~DeleteWatermarkResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int total_;
-				std::vector<Video> videoList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_GETVIDEOLISTRESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DELETEWATERMARKRESULT_H_

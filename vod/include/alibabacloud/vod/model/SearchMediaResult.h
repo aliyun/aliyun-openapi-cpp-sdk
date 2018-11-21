@@ -81,11 +81,29 @@ namespace AlibabaCloud
 						std::string tags;
 						std::string audioId;
 					};
+					struct Image
+					{
+						std::string ext;
+						std::string status;
+						std::string description;
+						std::string title;
+						std::string modificationTime;
+						long cateId;
+						std::string cateName;
+						std::string uRL;
+						std::string type;
+						std::string imageId;
+						std::string creationTime;
+						std::string regionId;
+						std::string storageLocation;
+						std::string tags;
+					};
 					std::string mediaId;
 					Video video;
 					std::string creationTime;
 					std::string mediaType;
 					Audio audio;
+					Image image;
 				};
 
 

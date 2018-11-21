@@ -62,8 +62,12 @@
 #include "model/SubmitAIVideoCategoryJobResult.h"
 #include "model/DescribeRefreshTasksRequest.h"
 #include "model/DescribeRefreshTasksResult.h"
+#include "model/DeleteWatermarkRequest.h"
+#include "model/DeleteWatermarkResult.h"
 #include "model/UpdateCategoryRequest.h"
 #include "model/UpdateCategoryResult.h"
+#include "model/RegisterMediaRequest.h"
+#include "model/RegisterMediaResult.h"
 #include "model/ListAIASRJobRequest.h"
 #include "model/ListAIASRJobResult.h"
 #include "model/ListAIVideoCensorJobRequest.h"
@@ -86,6 +90,10 @@
 #include "model/ListAIJobResult.h"
 #include "model/GetVideoConfigRequest.h"
 #include "model/GetVideoConfigResult.h"
+#include "model/AddWatermarkRequest.h"
+#include "model/AddWatermarkResult.h"
+#include "model/ListWatermarkRequest.h"
+#include "model/ListWatermarkResult.h"
 #include "model/CreateUploadImageRequest.h"
 #include "model/CreateUploadImageResult.h"
 #include "model/UpdateVideoInfoRequest.h"
@@ -96,6 +104,8 @@
 #include "model/SearchMediaResult.h"
 #include "model/DescribePlayTopVideosRequest.h"
 #include "model/DescribePlayTopVideosResult.h"
+#include "model/SetDefaultWatermarkRequest.h"
+#include "model/SetDefaultWatermarkResult.h"
 #include "model/PushObjectCacheRequest.h"
 #include "model/PushObjectCacheResult.h"
 #include "model/AddCategoryRequest.h"
@@ -118,6 +128,10 @@
 #include "model/SubmitAIVideoTerrorismRecogJobResult.h"
 #include "model/SearchEditingProjectRequest.h"
 #include "model/SearchEditingProjectResult.h"
+#include "model/GetWatermarkRequest.h"
+#include "model/GetWatermarkResult.h"
+#include "model/UpdateWatermarkRequest.h"
+#include "model/UpdateWatermarkResult.h"
 #include "model/GetImageInfoRequest.h"
 #include "model/GetImageInfoResult.h"
 #include "model/GetMessageCallbackRequest.h"
@@ -241,9 +255,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRefreshTasksResult> DescribeRefreshTasksOutcome;
 			typedef std::future<DescribeRefreshTasksOutcome> DescribeRefreshTasksOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeRefreshTasksRequest&, const DescribeRefreshTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRefreshTasksAsyncHandler;
+			typedef Outcome<Error, Model::DeleteWatermarkResult> DeleteWatermarkOutcome;
+			typedef std::future<DeleteWatermarkOutcome> DeleteWatermarkOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DeleteWatermarkRequest&, const DeleteWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWatermarkAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCategoryResult> UpdateCategoryOutcome;
 			typedef std::future<UpdateCategoryOutcome> UpdateCategoryOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::UpdateCategoryRequest&, const UpdateCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCategoryAsyncHandler;
+			typedef Outcome<Error, Model::RegisterMediaResult> RegisterMediaOutcome;
+			typedef std::future<RegisterMediaOutcome> RegisterMediaOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::RegisterMediaRequest&, const RegisterMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterMediaAsyncHandler;
 			typedef Outcome<Error, Model::ListAIASRJobResult> ListAIASRJobOutcome;
 			typedef std::future<ListAIASRJobOutcome> ListAIASRJobOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::ListAIASRJobRequest&, const ListAIASRJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAIASRJobAsyncHandler;
@@ -277,6 +297,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetVideoConfigResult> GetVideoConfigOutcome;
 			typedef std::future<GetVideoConfigOutcome> GetVideoConfigOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetVideoConfigRequest&, const GetVideoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVideoConfigAsyncHandler;
+			typedef Outcome<Error, Model::AddWatermarkResult> AddWatermarkOutcome;
+			typedef std::future<AddWatermarkOutcome> AddWatermarkOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::AddWatermarkRequest&, const AddWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddWatermarkAsyncHandler;
+			typedef Outcome<Error, Model::ListWatermarkResult> ListWatermarkOutcome;
+			typedef std::future<ListWatermarkOutcome> ListWatermarkOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::ListWatermarkRequest&, const ListWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWatermarkAsyncHandler;
 			typedef Outcome<Error, Model::CreateUploadImageResult> CreateUploadImageOutcome;
 			typedef std::future<CreateUploadImageOutcome> CreateUploadImageOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::CreateUploadImageRequest&, const CreateUploadImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUploadImageAsyncHandler;
@@ -292,6 +318,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribePlayTopVideosResult> DescribePlayTopVideosOutcome;
 			typedef std::future<DescribePlayTopVideosOutcome> DescribePlayTopVideosOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribePlayTopVideosRequest&, const DescribePlayTopVideosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlayTopVideosAsyncHandler;
+			typedef Outcome<Error, Model::SetDefaultWatermarkResult> SetDefaultWatermarkOutcome;
+			typedef std::future<SetDefaultWatermarkOutcome> SetDefaultWatermarkOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::SetDefaultWatermarkRequest&, const SetDefaultWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDefaultWatermarkAsyncHandler;
 			typedef Outcome<Error, Model::PushObjectCacheResult> PushObjectCacheOutcome;
 			typedef std::future<PushObjectCacheOutcome> PushObjectCacheOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::PushObjectCacheRequest&, const PushObjectCacheOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PushObjectCacheAsyncHandler;
@@ -325,6 +354,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchEditingProjectResult> SearchEditingProjectOutcome;
 			typedef std::future<SearchEditingProjectOutcome> SearchEditingProjectOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SearchEditingProjectRequest&, const SearchEditingProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchEditingProjectAsyncHandler;
+			typedef Outcome<Error, Model::GetWatermarkResult> GetWatermarkOutcome;
+			typedef std::future<GetWatermarkOutcome> GetWatermarkOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::GetWatermarkRequest&, const GetWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWatermarkAsyncHandler;
+			typedef Outcome<Error, Model::UpdateWatermarkResult> UpdateWatermarkOutcome;
+			typedef std::future<UpdateWatermarkOutcome> UpdateWatermarkOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::UpdateWatermarkRequest&, const UpdateWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWatermarkAsyncHandler;
 			typedef Outcome<Error, Model::GetImageInfoResult> GetImageInfoOutcome;
 			typedef std::future<GetImageInfoOutcome> GetImageInfoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetImageInfoRequest&, const GetImageInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageInfoAsyncHandler;
@@ -471,9 +506,15 @@ namespace AlibabaCloud
 			DescribeRefreshTasksOutcome describeRefreshTasks(const Model::DescribeRefreshTasksRequest &request)const;
 			void describeRefreshTasksAsync(const Model::DescribeRefreshTasksRequest& request, const DescribeRefreshTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRefreshTasksOutcomeCallable describeRefreshTasksCallable(const Model::DescribeRefreshTasksRequest& request) const;
+			DeleteWatermarkOutcome deleteWatermark(const Model::DeleteWatermarkRequest &request)const;
+			void deleteWatermarkAsync(const Model::DeleteWatermarkRequest& request, const DeleteWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteWatermarkOutcomeCallable deleteWatermarkCallable(const Model::DeleteWatermarkRequest& request) const;
 			UpdateCategoryOutcome updateCategory(const Model::UpdateCategoryRequest &request)const;
 			void updateCategoryAsync(const Model::UpdateCategoryRequest& request, const UpdateCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCategoryOutcomeCallable updateCategoryCallable(const Model::UpdateCategoryRequest& request) const;
+			RegisterMediaOutcome registerMedia(const Model::RegisterMediaRequest &request)const;
+			void registerMediaAsync(const Model::RegisterMediaRequest& request, const RegisterMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RegisterMediaOutcomeCallable registerMediaCallable(const Model::RegisterMediaRequest& request) const;
 			ListAIASRJobOutcome listAIASRJob(const Model::ListAIASRJobRequest &request)const;
 			void listAIASRJobAsync(const Model::ListAIASRJobRequest& request, const ListAIASRJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAIASRJobOutcomeCallable listAIASRJobCallable(const Model::ListAIASRJobRequest& request) const;
@@ -507,6 +548,12 @@ namespace AlibabaCloud
 			GetVideoConfigOutcome getVideoConfig(const Model::GetVideoConfigRequest &request)const;
 			void getVideoConfigAsync(const Model::GetVideoConfigRequest& request, const GetVideoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVideoConfigOutcomeCallable getVideoConfigCallable(const Model::GetVideoConfigRequest& request) const;
+			AddWatermarkOutcome addWatermark(const Model::AddWatermarkRequest &request)const;
+			void addWatermarkAsync(const Model::AddWatermarkRequest& request, const AddWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddWatermarkOutcomeCallable addWatermarkCallable(const Model::AddWatermarkRequest& request) const;
+			ListWatermarkOutcome listWatermark(const Model::ListWatermarkRequest &request)const;
+			void listWatermarkAsync(const Model::ListWatermarkRequest& request, const ListWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListWatermarkOutcomeCallable listWatermarkCallable(const Model::ListWatermarkRequest& request) const;
 			CreateUploadImageOutcome createUploadImage(const Model::CreateUploadImageRequest &request)const;
 			void createUploadImageAsync(const Model::CreateUploadImageRequest& request, const CreateUploadImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUploadImageOutcomeCallable createUploadImageCallable(const Model::CreateUploadImageRequest& request) const;
@@ -522,6 +569,9 @@ namespace AlibabaCloud
 			DescribePlayTopVideosOutcome describePlayTopVideos(const Model::DescribePlayTopVideosRequest &request)const;
 			void describePlayTopVideosAsync(const Model::DescribePlayTopVideosRequest& request, const DescribePlayTopVideosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePlayTopVideosOutcomeCallable describePlayTopVideosCallable(const Model::DescribePlayTopVideosRequest& request) const;
+			SetDefaultWatermarkOutcome setDefaultWatermark(const Model::SetDefaultWatermarkRequest &request)const;
+			void setDefaultWatermarkAsync(const Model::SetDefaultWatermarkRequest& request, const SetDefaultWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDefaultWatermarkOutcomeCallable setDefaultWatermarkCallable(const Model::SetDefaultWatermarkRequest& request) const;
 			PushObjectCacheOutcome pushObjectCache(const Model::PushObjectCacheRequest &request)const;
 			void pushObjectCacheAsync(const Model::PushObjectCacheRequest& request, const PushObjectCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PushObjectCacheOutcomeCallable pushObjectCacheCallable(const Model::PushObjectCacheRequest& request) const;
@@ -555,6 +605,12 @@ namespace AlibabaCloud
 			SearchEditingProjectOutcome searchEditingProject(const Model::SearchEditingProjectRequest &request)const;
 			void searchEditingProjectAsync(const Model::SearchEditingProjectRequest& request, const SearchEditingProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchEditingProjectOutcomeCallable searchEditingProjectCallable(const Model::SearchEditingProjectRequest& request) const;
+			GetWatermarkOutcome getWatermark(const Model::GetWatermarkRequest &request)const;
+			void getWatermarkAsync(const Model::GetWatermarkRequest& request, const GetWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetWatermarkOutcomeCallable getWatermarkCallable(const Model::GetWatermarkRequest& request) const;
+			UpdateWatermarkOutcome updateWatermark(const Model::UpdateWatermarkRequest &request)const;
+			void updateWatermarkAsync(const Model::UpdateWatermarkRequest& request, const UpdateWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateWatermarkOutcomeCallable updateWatermarkCallable(const Model::UpdateWatermarkRequest& request) const;
 			GetImageInfoOutcome getImageInfo(const Model::GetImageInfoRequest &request)const;
 			void getImageInfoAsync(const Model::GetImageInfoRequest& request, const GetImageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetImageInfoOutcomeCallable getImageInfoCallable(const Model::GetImageInfoRequest& request) const;

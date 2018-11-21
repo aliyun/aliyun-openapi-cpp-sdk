@@ -61,8 +61,12 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SubmitAIVideoCategoryJobResult.h
 	include/alibabacloud/vod/model/DescribeRefreshTasksRequest.h
 	include/alibabacloud/vod/model/DescribeRefreshTasksResult.h
+	include/alibabacloud/vod/model/DeleteWatermarkRequest.h
+	include/alibabacloud/vod/model/DeleteWatermarkResult.h
 	include/alibabacloud/vod/model/UpdateCategoryRequest.h
 	include/alibabacloud/vod/model/UpdateCategoryResult.h
+	include/alibabacloud/vod/model/RegisterMediaRequest.h
+	include/alibabacloud/vod/model/RegisterMediaResult.h
 	include/alibabacloud/vod/model/ListAIASRJobRequest.h
 	include/alibabacloud/vod/model/ListAIASRJobResult.h
 	include/alibabacloud/vod/model/ListAIVideoCensorJobRequest.h
@@ -85,6 +89,10 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/ListAIJobResult.h
 	include/alibabacloud/vod/model/GetVideoConfigRequest.h
 	include/alibabacloud/vod/model/GetVideoConfigResult.h
+	include/alibabacloud/vod/model/AddWatermarkRequest.h
+	include/alibabacloud/vod/model/AddWatermarkResult.h
+	include/alibabacloud/vod/model/ListWatermarkRequest.h
+	include/alibabacloud/vod/model/ListWatermarkResult.h
 	include/alibabacloud/vod/model/CreateUploadImageRequest.h
 	include/alibabacloud/vod/model/CreateUploadImageResult.h
 	include/alibabacloud/vod/model/UpdateVideoInfoRequest.h
@@ -95,6 +103,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SearchMediaResult.h
 	include/alibabacloud/vod/model/DescribePlayTopVideosRequest.h
 	include/alibabacloud/vod/model/DescribePlayTopVideosResult.h
+	include/alibabacloud/vod/model/SetDefaultWatermarkRequest.h
+	include/alibabacloud/vod/model/SetDefaultWatermarkResult.h
 	include/alibabacloud/vod/model/PushObjectCacheRequest.h
 	include/alibabacloud/vod/model/PushObjectCacheResult.h
 	include/alibabacloud/vod/model/AddCategoryRequest.h
@@ -117,6 +127,10 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SubmitAIVideoTerrorismRecogJobResult.h
 	include/alibabacloud/vod/model/SearchEditingProjectRequest.h
 	include/alibabacloud/vod/model/SearchEditingProjectResult.h
+	include/alibabacloud/vod/model/GetWatermarkRequest.h
+	include/alibabacloud/vod/model/GetWatermarkResult.h
+	include/alibabacloud/vod/model/UpdateWatermarkRequest.h
+	include/alibabacloud/vod/model/UpdateWatermarkResult.h
 	include/alibabacloud/vod/model/GetImageInfoRequest.h
 	include/alibabacloud/vod/model/GetImageInfoResult.h
 	include/alibabacloud/vod/model/GetMessageCallbackRequest.h
@@ -214,8 +228,12 @@ set(vod_src
 	src/model/SubmitAIVideoCategoryJobResult.cc
 	src/model/DescribeRefreshTasksRequest.cc
 	src/model/DescribeRefreshTasksResult.cc
+	src/model/DeleteWatermarkRequest.cc
+	src/model/DeleteWatermarkResult.cc
 	src/model/UpdateCategoryRequest.cc
 	src/model/UpdateCategoryResult.cc
+	src/model/RegisterMediaRequest.cc
+	src/model/RegisterMediaResult.cc
 	src/model/ListAIASRJobRequest.cc
 	src/model/ListAIASRJobResult.cc
 	src/model/ListAIVideoCensorJobRequest.cc
@@ -238,6 +256,10 @@ set(vod_src
 	src/model/ListAIJobResult.cc
 	src/model/GetVideoConfigRequest.cc
 	src/model/GetVideoConfigResult.cc
+	src/model/AddWatermarkRequest.cc
+	src/model/AddWatermarkResult.cc
+	src/model/ListWatermarkRequest.cc
+	src/model/ListWatermarkResult.cc
 	src/model/CreateUploadImageRequest.cc
 	src/model/CreateUploadImageResult.cc
 	src/model/UpdateVideoInfoRequest.cc
@@ -248,6 +270,8 @@ set(vod_src
 	src/model/SearchMediaResult.cc
 	src/model/DescribePlayTopVideosRequest.cc
 	src/model/DescribePlayTopVideosResult.cc
+	src/model/SetDefaultWatermarkRequest.cc
+	src/model/SetDefaultWatermarkResult.cc
 	src/model/PushObjectCacheRequest.cc
 	src/model/PushObjectCacheResult.cc
 	src/model/AddCategoryRequest.cc
@@ -270,6 +294,10 @@ set(vod_src
 	src/model/SubmitAIVideoTerrorismRecogJobResult.cc
 	src/model/SearchEditingProjectRequest.cc
 	src/model/SearchEditingProjectResult.cc
+	src/model/GetWatermarkRequest.cc
+	src/model/GetWatermarkResult.cc
+	src/model/UpdateWatermarkRequest.cc
+	src/model/UpdateWatermarkResult.cc
 	src/model/GetImageInfoRequest.cc
 	src/model/GetImageInfoResult.cc
 	src/model/GetMessageCallbackRequest.cc

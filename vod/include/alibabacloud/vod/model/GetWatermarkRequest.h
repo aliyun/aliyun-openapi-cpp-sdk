@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_SUBMITTRANSCODEJOBSREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_SUBMITTRANSCODEJOBSREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_GETWATERMARKREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_GETWATERMARKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT SubmitTranscodeJobsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOD_EXPORT GetWatermarkRequest : public RpcServiceRequest
 			{
 
 			public:
-				SubmitTranscodeJobsRequest();
-				~SubmitTranscodeJobsRequest();
+				GetWatermarkRequest();
+				~GetWatermarkRequest();
 
+				std::string getWatermarkId()const;
+				void setWatermarkId(const std::string& watermarkId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getTemplateGroupId()const;
-				void setTemplateGroupId(const std::string& templateGroupId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getVideoId()const;
-				void setVideoId(const std::string& videoId);
-				std::string getOverrideParams()const;
-				void setOverrideParams(const std::string& overrideParams);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getEncryptConfig()const;
-				void setEncryptConfig(const std::string& encryptConfig);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getPipelineId()const;
-				void setPipelineId(const std::string& pipelineId);
 
             private:
+				std::string watermarkId_;
 				long resourceOwnerId_;
-				std::string templateGroupId_;
 				std::string resourceOwnerAccount_;
-				std::string videoId_;
-				std::string overrideParams_;
 				long ownerId_;
-				std::string encryptConfig_;
 				std::string accessKeyId_;
-				std::string pipelineId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_SUBMITTRANSCODEJOBSREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_GETWATERMARKREQUEST_H_

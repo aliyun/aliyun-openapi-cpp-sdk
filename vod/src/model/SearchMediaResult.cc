@@ -138,6 +138,35 @@ void SearchMediaResult::parse(const std::string &payload)
 			auto allSpriteSnapshots2 = audioNode["SpriteSnapshots"]["SpriteSnapshot"];
 			for (auto value : allSpriteSnapshots2)
 				mediaListObject.audio.spriteSnapshots2.push_back(value.asString());
+		auto imageNode = value["Image"];
+		if(!imageNode["Title"].isNull())
+			mediaListObject.image.title = imageNode["Title"].asString();
+		if(!imageNode["ImageId"].isNull())
+			mediaListObject.image.imageId = imageNode["ImageId"].asString();
+		if(!imageNode["CateId"].isNull())
+			mediaListObject.image.cateId = std::stol(imageNode["CateId"].asString());
+		if(!imageNode["CateName"].isNull())
+			mediaListObject.image.cateName = imageNode["CateName"].asString();
+		if(!imageNode["Ext"].isNull())
+			mediaListObject.image.ext = imageNode["Ext"].asString();
+		if(!imageNode["CreationTime"].isNull())
+			mediaListObject.image.creationTime = imageNode["CreationTime"].asString();
+		if(!imageNode["ModificationTime"].isNull())
+			mediaListObject.image.modificationTime = imageNode["ModificationTime"].asString();
+		if(!imageNode["Tags"].isNull())
+			mediaListObject.image.tags = imageNode["Tags"].asString();
+		if(!imageNode["Type"].isNull())
+			mediaListObject.image.type = imageNode["Type"].asString();
+		if(!imageNode["URL"].isNull())
+			mediaListObject.image.uRL = imageNode["URL"].asString();
+		if(!imageNode["Status"].isNull())
+			mediaListObject.image.status = imageNode["Status"].asString();
+		if(!imageNode["Description"].isNull())
+			mediaListObject.image.description = imageNode["Description"].asString();
+		if(!imageNode["StorageLocation"].isNull())
+			mediaListObject.image.storageLocation = imageNode["StorageLocation"].asString();
+		if(!imageNode["RegionId"].isNull())
+			mediaListObject.image.regionId = imageNode["RegionId"].asString();
 		mediaList_.push_back(mediaListObject);
 	}
 	if(!value["ScrollToken"].isNull())
