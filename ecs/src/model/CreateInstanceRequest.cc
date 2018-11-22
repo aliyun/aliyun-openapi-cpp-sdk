@@ -80,6 +80,17 @@ void CreateInstanceRequest::setSpotPriceLimit(float spotPriceLimit)
 	setParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
 }
 
+bool CreateInstanceRequest::getDeletionProtection()const
+{
+	return deletionProtection_;
+}
+
+void CreateInstanceRequest::setDeletionProtection(bool deletionProtection)
+{
+	deletionProtection_ = deletionProtection;
+	setParameter("DeletionProtection", std::to_string(deletionProtection));
+}
+
 std::string CreateInstanceRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

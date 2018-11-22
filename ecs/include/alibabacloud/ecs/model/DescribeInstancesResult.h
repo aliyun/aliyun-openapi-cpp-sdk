@@ -87,6 +87,7 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string stoppedMode;
 					std::string startTime;
+					bool deletionProtection;
 					VpcAttributes vpcAttributes;
 					std::vector<std::string> securityGroupIds;
 					std::string internetChargeType;

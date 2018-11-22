@@ -128,6 +128,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.stoppedMode = value["StoppedMode"].asString();
 		if(!value["CreditSpecification"].isNull())
 			instancesObject.creditSpecification = value["CreditSpecification"].asString();
+		if(!value["DeletionProtection"].isNull())
+			instancesObject.deletionProtection = value["DeletionProtection"].asString() == "true";
 		auto allNetworkInterfaces = value["NetworkInterfaces"]["NetworkInterface"];
 		for (auto value : allNetworkInterfaces)
 		{

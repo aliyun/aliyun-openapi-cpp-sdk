@@ -81,6 +81,8 @@ namespace AlibabaCloud
 				void setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail);
 				std::string getCallerType()const;
 				void setCallerType(const std::string& callerType);
+				bool getDeletionProtection()const;
+				void setDeletionProtection(bool deletionProtection);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getHostName()const;
@@ -216,6 +218,7 @@ namespace AlibabaCloud
 				float spotPriceLimit_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
+				bool deletionProtection_;
 				std::string resourceGroupId_;
 				std::string hostName_;
 				std::string password_;

@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setKeyPairName(const std::string& keyPairName);
 				float getSpotPriceLimit()const;
 				void setSpotPriceLimit(float spotPriceLimit);
+				bool getDeletionProtection()const;
+				void setDeletionProtection(bool deletionProtection);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getHostName()const;
@@ -158,6 +160,7 @@ namespace AlibabaCloud
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
 				float spotPriceLimit_;
+				bool deletionProtection_;
 				std::string resourceGroupId_;
 				std::string hostName_;
 				std::string password_;

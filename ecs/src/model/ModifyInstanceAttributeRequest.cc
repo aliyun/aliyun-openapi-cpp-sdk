@@ -102,6 +102,17 @@ void ModifyInstanceAttributeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+bool ModifyInstanceAttributeRequest::getDeletionProtection()const
+{
+	return deletionProtection_;
+}
+
+void ModifyInstanceAttributeRequest::setDeletionProtection(bool deletionProtection)
+{
+	deletionProtection_ = deletionProtection;
+	setParameter("DeletionProtection", std::to_string(deletionProtection));
+}
+
 std::string ModifyInstanceAttributeRequest::getUserData()const
 {
 	return userData_;

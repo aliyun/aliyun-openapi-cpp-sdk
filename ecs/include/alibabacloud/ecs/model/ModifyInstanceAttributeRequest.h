@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setCreditSpecification(const std::string& creditSpecification);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				bool getDeletionProtection()const;
+				void setDeletionProtection(bool deletionProtection);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
 				std::string getPassword()const;
@@ -68,6 +70,7 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string creditSpecification_;
 				long ownerId_;
+				bool deletionProtection_;
 				std::string userData_;
 				std::string password_;
 				std::string hostName_;

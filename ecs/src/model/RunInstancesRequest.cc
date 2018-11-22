@@ -146,6 +146,17 @@ void RunInstancesRequest::setCallerType(const std::string& callerType)
 	setParameter("CallerType", callerType);
 }
 
+bool RunInstancesRequest::getDeletionProtection()const
+{
+	return deletionProtection_;
+}
+
+void RunInstancesRequest::setDeletionProtection(bool deletionProtection)
+{
+	deletionProtection_ = deletionProtection;
+	setParameter("DeletionProtection", std::to_string(deletionProtection));
+}
+
 std::string RunInstancesRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
