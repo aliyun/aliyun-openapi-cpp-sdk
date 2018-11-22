@@ -69,3 +69,14 @@ void TranslateGeneralRequest::setTargetLanguage(const std::string& targetLanguag
 	setParameter("TargetLanguage", targetLanguage);
 }
 
+std::string TranslateGeneralRequest::getScene()const
+{
+	return scene_;
+}
+
+void TranslateGeneralRequest::setScene(const std::string& scene)
+{
+	scene_ = scene;
+	setParameter("Scene", scene);
+}
+
