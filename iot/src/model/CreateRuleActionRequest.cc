@@ -69,3 +69,14 @@ void CreateRuleActionRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+bool CreateRuleActionRequest::getErrorActionFlag()const
+{
+	return errorActionFlag_;
+}
+
+void CreateRuleActionRequest::setErrorActionFlag(bool errorActionFlag)
+{
+	errorActionFlag_ = errorActionFlag;
+	setParameter("ErrorActionFlag", std::to_string(errorActionFlag));
+}
+

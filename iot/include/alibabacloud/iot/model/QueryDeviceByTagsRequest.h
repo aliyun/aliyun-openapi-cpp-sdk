@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATERULEACTIONREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATERULEACTIONREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYDEVICEBYTAGSREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYDEVICEBYTAGSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateRuleActionRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT QueryDeviceByTagsRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string tagValue;
+					std::string tagKey;
+				};
 
 			public:
-				CreateRuleActionRequest();
-				~CreateRuleActionRequest();
+				QueryDeviceByTagsRequest();
+				~QueryDeviceByTagsRequest();
 
-				std::string getConfiguration()const;
-				void setConfiguration(const std::string& configuration);
-				long getRuleId()const;
-				void setRuleId(long ruleId);
-				std::string getType()const;
-				void setType(const std::string& type);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				bool getErrorActionFlag()const;
-				void setErrorActionFlag(bool errorActionFlag);
 
             private:
-				std::string configuration_;
-				long ruleId_;
-				std::string type_;
+				int pageSize_;
+				int currentPage_;
+				std::vector<Tag> tag_;
 				std::string accessKeyId_;
-				bool errorActionFlag_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATERULEACTIONREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYDEVICEBYTAGSREQUEST_H_

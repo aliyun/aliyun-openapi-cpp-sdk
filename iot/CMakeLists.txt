@@ -27,8 +27,12 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/DeleteTopicRouteTableResult.h
 	include/alibabacloud/iot/model/QueryDeviceGroupListRequest.h
 	include/alibabacloud/iot/model/QueryDeviceGroupListResult.h
+	include/alibabacloud/iot/model/SetDeviceGroupTagsRequest.h
+	include/alibabacloud/iot/model/SetDeviceGroupTagsResult.h
 	include/alibabacloud/iot/model/QueryDeviceEventDataRequest.h
 	include/alibabacloud/iot/model/QueryDeviceEventDataResult.h
+	include/alibabacloud/iot/model/QueryDeviceByTagsRequest.h
+	include/alibabacloud/iot/model/QueryDeviceByTagsResult.h
 	include/alibabacloud/iot/model/GetDeviceStatusRequest.h
 	include/alibabacloud/iot/model/GetDeviceStatusResult.h
 	include/alibabacloud/iot/model/DeleteDeviceRequest.h
@@ -97,6 +101,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryDeviceResult.h
 	include/alibabacloud/iot/model/BatchDeleteDeviceGroupRelationsRequest.h
 	include/alibabacloud/iot/model/BatchDeleteDeviceGroupRelationsResult.h
+	include/alibabacloud/iot/model/InvokeThingsServiceRequest.h
+	include/alibabacloud/iot/model/InvokeThingsServiceResult.h
 	include/alibabacloud/iot/model/QueryDeviceGroupTagListRequest.h
 	include/alibabacloud/iot/model/QueryDeviceGroupTagListResult.h
 	include/alibabacloud/iot/model/ListRuleRequest.h
@@ -143,6 +149,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetRuleResult.h
 	include/alibabacloud/iot/model/GetDeviceShadowRequest.h
 	include/alibabacloud/iot/model/GetDeviceShadowResult.h
+	include/alibabacloud/iot/model/SetDevicesPropertyRequest.h
+	include/alibabacloud/iot/model/SetDevicesPropertyResult.h
 	include/alibabacloud/iot/model/GetGatewayBySubDeviceRequest.h
 	include/alibabacloud/iot/model/GetGatewayBySubDeviceResult.h
 	include/alibabacloud/iot/model/CreateRuleActionRequest.h
@@ -164,8 +172,12 @@ set(iot_src
 	src/model/DeleteTopicRouteTableResult.cc
 	src/model/QueryDeviceGroupListRequest.cc
 	src/model/QueryDeviceGroupListResult.cc
+	src/model/SetDeviceGroupTagsRequest.cc
+	src/model/SetDeviceGroupTagsResult.cc
 	src/model/QueryDeviceEventDataRequest.cc
 	src/model/QueryDeviceEventDataResult.cc
+	src/model/QueryDeviceByTagsRequest.cc
+	src/model/QueryDeviceByTagsResult.cc
 	src/model/GetDeviceStatusRequest.cc
 	src/model/GetDeviceStatusResult.cc
 	src/model/DeleteDeviceRequest.cc
@@ -234,6 +246,8 @@ set(iot_src
 	src/model/QueryDeviceResult.cc
 	src/model/BatchDeleteDeviceGroupRelationsRequest.cc
 	src/model/BatchDeleteDeviceGroupRelationsResult.cc
+	src/model/InvokeThingsServiceRequest.cc
+	src/model/InvokeThingsServiceResult.cc
 	src/model/QueryDeviceGroupTagListRequest.cc
 	src/model/QueryDeviceGroupTagListResult.cc
 	src/model/ListRuleRequest.cc
@@ -280,6 +294,8 @@ set(iot_src
 	src/model/GetRuleResult.cc
 	src/model/GetDeviceShadowRequest.cc
 	src/model/GetDeviceShadowResult.cc
+	src/model/SetDevicesPropertyRequest.cc
+	src/model/SetDevicesPropertyResult.cc
 	src/model/GetGatewayBySubDeviceRequest.cc
 	src/model/GetGatewayBySubDeviceResult.cc
 	src/model/CreateRuleActionRequest.cc

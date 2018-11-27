@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct RuleActionInfo
 				{
+					bool errorActionFlag;
 					std::string type;
 					std::string configuration;
 					long ruleId;

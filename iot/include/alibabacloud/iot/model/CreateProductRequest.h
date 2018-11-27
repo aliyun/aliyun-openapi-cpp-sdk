@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setNodeType(int nodeType);
 				bool getId2()const;
 				void setId2(bool id2);
+				std::string getNetType()const;
+				void setNetType(const std::string& netType);
 				std::string getProductName()const;
 				void setProductName(const std::string& productName);
 				std::string getDescription()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				int dataFormat_;
 				int nodeType_;
 				bool id2_;
+				std::string netType_;
 				std::string productName_;
 				std::string description_;
 				std::string protocolType_;

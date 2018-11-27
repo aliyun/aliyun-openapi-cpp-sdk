@@ -14,43 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/GetRuleActionResult.h>
+#include <alibabacloud/iot/model/SetDeviceGroupTagsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-GetRuleActionResult::GetRuleActionResult() :
+SetDeviceGroupTagsResult::SetDeviceGroupTagsResult() :
 	ServiceResult()
 {}
 
-GetRuleActionResult::GetRuleActionResult(const std::string &payload) :
+SetDeviceGroupTagsResult::SetDeviceGroupTagsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetRuleActionResult::~GetRuleActionResult()
+SetDeviceGroupTagsResult::~SetDeviceGroupTagsResult()
 {}
 
-void GetRuleActionResult::parse(const std::string &payload)
+void SetDeviceGroupTagsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto ruleActionInfoNode = value["RuleActionInfo"];
-	if(!ruleActionInfoNode["Id"].isNull())
-		ruleActionInfo_.id = std::stol(ruleActionInfoNode["Id"].asString());
-	if(!ruleActionInfoNode["RuleId"].isNull())
-		ruleActionInfo_.ruleId = std::stol(ruleActionInfoNode["RuleId"].asString());
-	if(!ruleActionInfoNode["Type"].isNull())
-		ruleActionInfo_.type = ruleActionInfoNode["Type"].asString();
-	if(!ruleActionInfoNode["Configuration"].isNull())
-		ruleActionInfo_.configuration = ruleActionInfoNode["Configuration"].asString();
-	if(!ruleActionInfoNode["ErrorActionFlag"].isNull())
-		ruleActionInfo_.errorActionFlag = ruleActionInfoNode["ErrorActionFlag"].asString() == "true";
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -60,22 +49,17 @@ void GetRuleActionResult::parse(const std::string &payload)
 
 }
 
-GetRuleActionResult::RuleActionInfo GetRuleActionResult::getRuleActionInfo()const
-{
-	return ruleActionInfo_;
-}
-
-std::string GetRuleActionResult::getErrorMessage()const
+std::string SetDeviceGroupTagsResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string GetRuleActionResult::getCode()const
+std::string SetDeviceGroupTagsResult::getCode()const
 {
 	return code_;
 }
 
-bool GetRuleActionResult::getSuccess()const
+bool SetDeviceGroupTagsResult::getSuccess()const
 {
 	return success_;
 }

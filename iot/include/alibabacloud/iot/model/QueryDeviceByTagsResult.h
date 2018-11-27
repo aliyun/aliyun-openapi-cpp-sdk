@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_LISTRULEACTIONSRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_LISTRULEACTIONSRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYDEVICEBYTAGSRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYDEVICEBYTAGSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT ListRuleActionsResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT QueryDeviceByTagsResult : public ServiceResult
 			{
 			public:
-				struct RuleActionInfo
+				struct SimpleDeviceInfo
 				{
-					bool errorActionFlag;
-					std::string type;
-					std::string configuration;
-					long ruleId;
-					long id;
+					std::string iotId;
+					std::string productName;
+					std::string productKey;
+					std::string deviceName;
 				};
 
 
-				ListRuleActionsResult();
-				explicit ListRuleActionsResult(const std::string &payload);
-				~ListRuleActionsResult();
-				std::vector<RuleActionInfo> getRuleActionList()const;
+				QueryDeviceByTagsResult();
+				explicit QueryDeviceByTagsResult(const std::string &payload);
+				~QueryDeviceByTagsResult();
+				int getPageSize()const;
+				int getPageCount()const;
+				int getTotal()const;
+				std::vector<SimpleDeviceInfo> getData()const;
+				int getPage()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -53,7 +56,11 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<RuleActionInfo> ruleActionList_;
+				int pageSize_;
+				int pageCount_;
+				int total_;
+				std::vector<SimpleDeviceInfo> data_;
+				int page_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -62,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_LISTRULEACTIONSRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYDEVICEBYTAGSRESULT_H_

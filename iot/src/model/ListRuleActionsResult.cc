@@ -52,6 +52,8 @@ void ListRuleActionsResult::parse(const std::string &payload)
 			ruleActionListObject.type = value["Type"].asString();
 		if(!value["Configuration"].isNull())
 			ruleActionListObject.configuration = value["Configuration"].asString();
+		if(!value["ErrorActionFlag"].isNull())
+			ruleActionListObject.errorActionFlag = value["ErrorActionFlag"].asString() == "true";
 		ruleActionList_.push_back(ruleActionListObject);
 	}
 	if(!value["Success"].isNull())

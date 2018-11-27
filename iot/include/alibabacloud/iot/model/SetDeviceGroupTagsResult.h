@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_LISTRULEACTIONSRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_LISTRULEACTIONSRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_SETDEVICEGROUPTAGSRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_SETDEVICEGROUPTAGSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT ListRuleActionsResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT SetDeviceGroupTagsResult : public ServiceResult
 			{
 			public:
-				struct RuleActionInfo
-				{
-					bool errorActionFlag;
-					std::string type;
-					std::string configuration;
-					long ruleId;
-					long id;
-				};
 
 
-				ListRuleActionsResult();
-				explicit ListRuleActionsResult(const std::string &payload);
-				~ListRuleActionsResult();
-				std::vector<RuleActionInfo> getRuleActionList()const;
+				SetDeviceGroupTagsResult();
+				explicit SetDeviceGroupTagsResult(const std::string &payload);
+				~SetDeviceGroupTagsResult();
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -53,7 +44,6 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<RuleActionInfo> ruleActionList_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -62,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_LISTRULEACTIONSRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_SETDEVICEGROUPTAGSRESULT_H_

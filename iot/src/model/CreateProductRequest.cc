@@ -58,6 +58,17 @@ void CreateProductRequest::setId2(bool id2)
 	setParameter("Id2", std::to_string(id2));
 }
 
+std::string CreateProductRequest::getNetType()const
+{
+	return netType_;
+}
+
+void CreateProductRequest::setNetType(const std::string& netType)
+{
+	netType_ = netType;
+	setParameter("NetType", netType);
+}
+
 std::string CreateProductRequest::getProductName()const
 {
 	return productName_;

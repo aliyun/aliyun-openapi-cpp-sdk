@@ -28,8 +28,12 @@
 #include "model/DeleteTopicRouteTableResult.h"
 #include "model/QueryDeviceGroupListRequest.h"
 #include "model/QueryDeviceGroupListResult.h"
+#include "model/SetDeviceGroupTagsRequest.h"
+#include "model/SetDeviceGroupTagsResult.h"
 #include "model/QueryDeviceEventDataRequest.h"
 #include "model/QueryDeviceEventDataResult.h"
+#include "model/QueryDeviceByTagsRequest.h"
+#include "model/QueryDeviceByTagsResult.h"
 #include "model/GetDeviceStatusRequest.h"
 #include "model/GetDeviceStatusResult.h"
 #include "model/DeleteDeviceRequest.h"
@@ -98,6 +102,8 @@
 #include "model/QueryDeviceResult.h"
 #include "model/BatchDeleteDeviceGroupRelationsRequest.h"
 #include "model/BatchDeleteDeviceGroupRelationsResult.h"
+#include "model/InvokeThingsServiceRequest.h"
+#include "model/InvokeThingsServiceResult.h"
 #include "model/QueryDeviceGroupTagListRequest.h"
 #include "model/QueryDeviceGroupTagListResult.h"
 #include "model/ListRuleRequest.h"
@@ -144,6 +150,8 @@
 #include "model/GetRuleResult.h"
 #include "model/GetDeviceShadowRequest.h"
 #include "model/GetDeviceShadowResult.h"
+#include "model/SetDevicesPropertyRequest.h"
+#include "model/SetDevicesPropertyResult.h"
 #include "model/GetGatewayBySubDeviceRequest.h"
 #include "model/GetGatewayBySubDeviceResult.h"
 #include "model/CreateRuleActionRequest.h"
@@ -174,9 +182,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDeviceGroupListResult> QueryDeviceGroupListOutcome;
 			typedef std::future<QueryDeviceGroupListOutcome> QueryDeviceGroupListOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceGroupListRequest&, const QueryDeviceGroupListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceGroupListAsyncHandler;
+			typedef Outcome<Error, Model::SetDeviceGroupTagsResult> SetDeviceGroupTagsOutcome;
+			typedef std::future<SetDeviceGroupTagsOutcome> SetDeviceGroupTagsOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::SetDeviceGroupTagsRequest&, const SetDeviceGroupTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDeviceGroupTagsAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceEventDataResult> QueryDeviceEventDataOutcome;
 			typedef std::future<QueryDeviceEventDataOutcome> QueryDeviceEventDataOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceEventDataRequest&, const QueryDeviceEventDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceEventDataAsyncHandler;
+			typedef Outcome<Error, Model::QueryDeviceByTagsResult> QueryDeviceByTagsOutcome;
+			typedef std::future<QueryDeviceByTagsOutcome> QueryDeviceByTagsOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryDeviceByTagsRequest&, const QueryDeviceByTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceByTagsAsyncHandler;
 			typedef Outcome<Error, Model::GetDeviceStatusResult> GetDeviceStatusOutcome;
 			typedef std::future<GetDeviceStatusOutcome> GetDeviceStatusOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetDeviceStatusRequest&, const GetDeviceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceStatusAsyncHandler;
@@ -279,6 +293,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchDeleteDeviceGroupRelationsResult> BatchDeleteDeviceGroupRelationsOutcome;
 			typedef std::future<BatchDeleteDeviceGroupRelationsOutcome> BatchDeleteDeviceGroupRelationsOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchDeleteDeviceGroupRelationsRequest&, const BatchDeleteDeviceGroupRelationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteDeviceGroupRelationsAsyncHandler;
+			typedef Outcome<Error, Model::InvokeThingsServiceResult> InvokeThingsServiceOutcome;
+			typedef std::future<InvokeThingsServiceOutcome> InvokeThingsServiceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::InvokeThingsServiceRequest&, const InvokeThingsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InvokeThingsServiceAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceGroupTagListResult> QueryDeviceGroupTagListOutcome;
 			typedef std::future<QueryDeviceGroupTagListOutcome> QueryDeviceGroupTagListOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceGroupTagListRequest&, const QueryDeviceGroupTagListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceGroupTagListAsyncHandler;
@@ -348,6 +365,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDeviceShadowResult> GetDeviceShadowOutcome;
 			typedef std::future<GetDeviceShadowOutcome> GetDeviceShadowOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetDeviceShadowRequest&, const GetDeviceShadowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceShadowAsyncHandler;
+			typedef Outcome<Error, Model::SetDevicesPropertyResult> SetDevicesPropertyOutcome;
+			typedef std::future<SetDevicesPropertyOutcome> SetDevicesPropertyOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::SetDevicesPropertyRequest&, const SetDevicesPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDevicesPropertyAsyncHandler;
 			typedef Outcome<Error, Model::GetGatewayBySubDeviceResult> GetGatewayBySubDeviceOutcome;
 			typedef std::future<GetGatewayBySubDeviceOutcome> GetGatewayBySubDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetGatewayBySubDeviceRequest&, const GetGatewayBySubDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetGatewayBySubDeviceAsyncHandler;
@@ -380,9 +400,15 @@ namespace AlibabaCloud
 			QueryDeviceGroupListOutcome queryDeviceGroupList(const Model::QueryDeviceGroupListRequest &request)const;
 			void queryDeviceGroupListAsync(const Model::QueryDeviceGroupListRequest& request, const QueryDeviceGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceGroupListOutcomeCallable queryDeviceGroupListCallable(const Model::QueryDeviceGroupListRequest& request) const;
+			SetDeviceGroupTagsOutcome setDeviceGroupTags(const Model::SetDeviceGroupTagsRequest &request)const;
+			void setDeviceGroupTagsAsync(const Model::SetDeviceGroupTagsRequest& request, const SetDeviceGroupTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDeviceGroupTagsOutcomeCallable setDeviceGroupTagsCallable(const Model::SetDeviceGroupTagsRequest& request) const;
 			QueryDeviceEventDataOutcome queryDeviceEventData(const Model::QueryDeviceEventDataRequest &request)const;
 			void queryDeviceEventDataAsync(const Model::QueryDeviceEventDataRequest& request, const QueryDeviceEventDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceEventDataOutcomeCallable queryDeviceEventDataCallable(const Model::QueryDeviceEventDataRequest& request) const;
+			QueryDeviceByTagsOutcome queryDeviceByTags(const Model::QueryDeviceByTagsRequest &request)const;
+			void queryDeviceByTagsAsync(const Model::QueryDeviceByTagsRequest& request, const QueryDeviceByTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDeviceByTagsOutcomeCallable queryDeviceByTagsCallable(const Model::QueryDeviceByTagsRequest& request) const;
 			GetDeviceStatusOutcome getDeviceStatus(const Model::GetDeviceStatusRequest &request)const;
 			void getDeviceStatusAsync(const Model::GetDeviceStatusRequest& request, const GetDeviceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeviceStatusOutcomeCallable getDeviceStatusCallable(const Model::GetDeviceStatusRequest& request) const;
@@ -485,6 +511,9 @@ namespace AlibabaCloud
 			BatchDeleteDeviceGroupRelationsOutcome batchDeleteDeviceGroupRelations(const Model::BatchDeleteDeviceGroupRelationsRequest &request)const;
 			void batchDeleteDeviceGroupRelationsAsync(const Model::BatchDeleteDeviceGroupRelationsRequest& request, const BatchDeleteDeviceGroupRelationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchDeleteDeviceGroupRelationsOutcomeCallable batchDeleteDeviceGroupRelationsCallable(const Model::BatchDeleteDeviceGroupRelationsRequest& request) const;
+			InvokeThingsServiceOutcome invokeThingsService(const Model::InvokeThingsServiceRequest &request)const;
+			void invokeThingsServiceAsync(const Model::InvokeThingsServiceRequest& request, const InvokeThingsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InvokeThingsServiceOutcomeCallable invokeThingsServiceCallable(const Model::InvokeThingsServiceRequest& request) const;
 			QueryDeviceGroupTagListOutcome queryDeviceGroupTagList(const Model::QueryDeviceGroupTagListRequest &request)const;
 			void queryDeviceGroupTagListAsync(const Model::QueryDeviceGroupTagListRequest& request, const QueryDeviceGroupTagListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceGroupTagListOutcomeCallable queryDeviceGroupTagListCallable(const Model::QueryDeviceGroupTagListRequest& request) const;
@@ -554,6 +583,9 @@ namespace AlibabaCloud
 			GetDeviceShadowOutcome getDeviceShadow(const Model::GetDeviceShadowRequest &request)const;
 			void getDeviceShadowAsync(const Model::GetDeviceShadowRequest& request, const GetDeviceShadowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeviceShadowOutcomeCallable getDeviceShadowCallable(const Model::GetDeviceShadowRequest& request) const;
+			SetDevicesPropertyOutcome setDevicesProperty(const Model::SetDevicesPropertyRequest &request)const;
+			void setDevicesPropertyAsync(const Model::SetDevicesPropertyRequest& request, const SetDevicesPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDevicesPropertyOutcomeCallable setDevicesPropertyCallable(const Model::SetDevicesPropertyRequest& request) const;
 			GetGatewayBySubDeviceOutcome getGatewayBySubDevice(const Model::GetGatewayBySubDeviceRequest &request)const;
 			void getGatewayBySubDeviceAsync(const Model::GetGatewayBySubDeviceRequest& request, const GetGatewayBySubDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetGatewayBySubDeviceOutcomeCallable getGatewayBySubDeviceCallable(const Model::GetGatewayBySubDeviceRequest& request) const;

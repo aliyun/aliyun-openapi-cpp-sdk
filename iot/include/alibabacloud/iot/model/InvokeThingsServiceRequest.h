@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATERULEACTIONREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATERULEACTIONREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_INVOKETHINGSSERVICEREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_INVOKETHINGSSERVICEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateRuleActionRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT InvokeThingsServiceRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateRuleActionRequest();
-				~CreateRuleActionRequest();
+				InvokeThingsServiceRequest();
+				~InvokeThingsServiceRequest();
 
-				std::string getConfiguration()const;
-				void setConfiguration(const std::string& configuration);
-				long getRuleId()const;
-				void setRuleId(long ruleId);
-				std::string getType()const;
-				void setType(const std::string& type);
+				std::string getArgs()const;
+				void setArgs(const std::string& args);
+				std::string getIdentifier()const;
+				void setIdentifier(const std::string& identifier);
+				std::vector<std::string> getDeviceName()const;
+				void setDeviceName(const std::vector<std::string>& deviceName);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				bool getErrorActionFlag()const;
-				void setErrorActionFlag(bool errorActionFlag);
 
             private:
-				std::string configuration_;
-				long ruleId_;
-				std::string type_;
+				std::string args_;
+				std::string identifier_;
+				std::vector<std::string> deviceName_;
+				std::string productKey_;
 				std::string accessKeyId_;
-				bool errorActionFlag_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATERULEACTIONREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_INVOKETHINGSSERVICEREQUEST_H_

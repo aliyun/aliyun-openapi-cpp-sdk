@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATERULEACTIONREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATERULEACTIONREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_SETDEVICEGROUPTAGSREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_SETDEVICEGROUPTAGSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateRuleActionRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT SetDeviceGroupTagsRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateRuleActionRequest();
-				~CreateRuleActionRequest();
+				SetDeviceGroupTagsRequest();
+				~SetDeviceGroupTagsRequest();
 
-				std::string getConfiguration()const;
-				void setConfiguration(const std::string& configuration);
-				long getRuleId()const;
-				void setRuleId(long ruleId);
-				std::string getType()const;
-				void setType(const std::string& type);
+				std::string getTagString()const;
+				void setTagString(const std::string& tagString);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				bool getErrorActionFlag()const;
-				void setErrorActionFlag(bool errorActionFlag);
 
             private:
-				std::string configuration_;
-				long ruleId_;
-				std::string type_;
+				std::string tagString_;
+				std::string groupId_;
 				std::string accessKeyId_;
-				bool errorActionFlag_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATERULEACTIONREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_SETDEVICEGROUPTAGSREQUEST_H_
