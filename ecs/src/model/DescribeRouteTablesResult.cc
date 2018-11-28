@@ -52,6 +52,8 @@ void DescribeRouteTablesResult::parse(const std::string &payload)
 			routeTablesObject.routeTableType = value["RouteTableType"].asString();
 		if(!value["CreationTime"].isNull())
 			routeTablesObject.creationTime = value["CreationTime"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			routeTablesObject.resourceGroupId = value["ResourceGroupId"].asString();
 		auto allRouteEntrys = value["RouteEntrys"]["RouteEntry"];
 		for (auto value : allRouteEntrys)
 		{

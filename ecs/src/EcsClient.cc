@@ -1743,6 +1743,42 @@ EcsClient::CreateSimulatedSystemEventsOutcomeCallable EcsClient::createSimulated
 	return task->get_future();
 }
 
+EcsClient::RedeployInstanceOutcome EcsClient::redeployInstance(const RedeployInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RedeployInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RedeployInstanceOutcome(RedeployInstanceResult(outcome.result()));
+	else
+		return RedeployInstanceOutcome(outcome.error());
+}
+
+void EcsClient::redeployInstanceAsync(const RedeployInstanceRequest& request, const RedeployInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, redeployInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::RedeployInstanceOutcomeCallable EcsClient::redeployInstanceCallable(const RedeployInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RedeployInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->redeployInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CancelTaskOutcome EcsClient::cancelTask(const CancelTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

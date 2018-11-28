@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					};
 					std::string vRouterId;
 					std::string routeTableId;
+					std::string resourceGroupId;
 					std::string creationTime;
 					std::vector<RouteTable::RouteEntry> routeEntrys;
 					std::string routeTableType;

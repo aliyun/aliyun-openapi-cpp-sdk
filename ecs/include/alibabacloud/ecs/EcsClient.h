@@ -116,6 +116,8 @@
 #include "model/GetInstanceConsoleOutputResult.h"
 #include "model/CreateSimulatedSystemEventsRequest.h"
 #include "model/CreateSimulatedSystemEventsResult.h"
+#include "model/RedeployInstanceRequest.h"
+#include "model/RedeployInstanceResult.h"
 #include "model/CancelTaskRequest.h"
 #include "model/CancelTaskResult.h"
 #include "model/ModifyPhysicalConnectionAttributeRequest.h"
@@ -652,6 +654,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSimulatedSystemEventsResult> CreateSimulatedSystemEventsOutcome;
 			typedef std::future<CreateSimulatedSystemEventsOutcome> CreateSimulatedSystemEventsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateSimulatedSystemEventsRequest&, const CreateSimulatedSystemEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSimulatedSystemEventsAsyncHandler;
+			typedef Outcome<Error, Model::RedeployInstanceResult> RedeployInstanceOutcome;
+			typedef std::future<RedeployInstanceOutcome> RedeployInstanceOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::RedeployInstanceRequest&, const RedeployInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RedeployInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CancelTaskResult> CancelTaskOutcome;
 			typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CancelTaskRequest&, const CancelTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
@@ -1377,6 +1382,9 @@ namespace AlibabaCloud
 			CreateSimulatedSystemEventsOutcome createSimulatedSystemEvents(const Model::CreateSimulatedSystemEventsRequest &request)const;
 			void createSimulatedSystemEventsAsync(const Model::CreateSimulatedSystemEventsRequest& request, const CreateSimulatedSystemEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSimulatedSystemEventsOutcomeCallable createSimulatedSystemEventsCallable(const Model::CreateSimulatedSystemEventsRequest& request) const;
+			RedeployInstanceOutcome redeployInstance(const Model::RedeployInstanceRequest &request)const;
+			void redeployInstanceAsync(const Model::RedeployInstanceRequest& request, const RedeployInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RedeployInstanceOutcomeCallable redeployInstanceCallable(const Model::RedeployInstanceRequest& request) const;
 			CancelTaskOutcome cancelTask(const Model::CancelTaskRequest &request)const;
 			void cancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelTaskOutcomeCallable cancelTaskCallable(const Model::CancelTaskRequest& request) const;

@@ -115,6 +115,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/GetInstanceConsoleOutputResult.h
 	include/alibabacloud/ecs/model/CreateSimulatedSystemEventsRequest.h
 	include/alibabacloud/ecs/model/CreateSimulatedSystemEventsResult.h
+	include/alibabacloud/ecs/model/RedeployInstanceRequest.h
+	include/alibabacloud/ecs/model/RedeployInstanceResult.h
 	include/alibabacloud/ecs/model/CancelTaskRequest.h
 	include/alibabacloud/ecs/model/CancelTaskResult.h
 	include/alibabacloud/ecs/model/ModifyPhysicalConnectionAttributeRequest.h
@@ -598,6 +600,8 @@ set(ecs_src
 	src/model/GetInstanceConsoleOutputResult.cc
 	src/model/CreateSimulatedSystemEventsRequest.cc
 	src/model/CreateSimulatedSystemEventsResult.cc
+	src/model/RedeployInstanceRequest.cc
+	src/model/RedeployInstanceResult.cc
 	src/model/CancelTaskRequest.cc
 	src/model/CancelTaskResult.cc
 	src/model/ModifyPhysicalConnectionAttributeRequest.cc
