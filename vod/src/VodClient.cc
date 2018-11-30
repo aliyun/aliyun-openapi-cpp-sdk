@@ -31,21 +31,21 @@ VodClient::VodClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vod");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 VodClient::VodClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vod");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 VodClient::VodClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vod");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 VodClient::~VodClient()
@@ -153,6 +153,42 @@ VodClient::DeleteCategoryOutcomeCallable VodClient::deleteCategoryCallable(const
 			[this, request]()
 			{
 			return this->deleteCategory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::CreateUploadAttachedMediaOutcome VodClient::createUploadAttachedMedia(const CreateUploadAttachedMediaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateUploadAttachedMediaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateUploadAttachedMediaOutcome(CreateUploadAttachedMediaResult(outcome.result()));
+	else
+		return CreateUploadAttachedMediaOutcome(outcome.error());
+}
+
+void VodClient::createUploadAttachedMediaAsync(const CreateUploadAttachedMediaRequest& request, const CreateUploadAttachedMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createUploadAttachedMedia(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::CreateUploadAttachedMediaOutcomeCallable VodClient::createUploadAttachedMediaCallable(const CreateUploadAttachedMediaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateUploadAttachedMediaOutcome()>>(
+			[this, request]()
+			{
+			return this->createUploadAttachedMedia(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +411,42 @@ VodClient::UpdateEditingProjectOutcomeCallable VodClient::updateEditingProjectCa
 	return task->get_future();
 }
 
+VodClient::SetDefaultVodTemplateOutcome VodClient::setDefaultVodTemplate(const SetDefaultVodTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDefaultVodTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDefaultVodTemplateOutcome(SetDefaultVodTemplateResult(outcome.result()));
+	else
+		return SetDefaultVodTemplateOutcome(outcome.error());
+}
+
+void VodClient::setDefaultVodTemplateAsync(const SetDefaultVodTemplateRequest& request, const SetDefaultVodTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDefaultVodTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SetDefaultVodTemplateOutcomeCallable VodClient::setDefaultVodTemplateCallable(const SetDefaultVodTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDefaultVodTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->setDefaultVodTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::RefreshObjectCachesOutcome VodClient::refreshObjectCaches(const RefreshObjectCachesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +585,42 @@ VodClient::GetAuditHistoryOutcomeCallable VodClient::getAuditHistoryCallable(con
 			[this, request]()
 			{
 			return this->getAuditHistory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::GetMediaDNAResultOutcome VodClient::getMediaDNAResult(const GetMediaDNAResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMediaDNAResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMediaDNAResultOutcome(GetMediaDNAResultResult(outcome.result()));
+	else
+		return GetMediaDNAResultOutcome(outcome.error());
+}
+
+void VodClient::getMediaDNAResultAsync(const GetMediaDNAResultRequest& request, const GetMediaDNAResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMediaDNAResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetMediaDNAResultOutcomeCallable VodClient::getMediaDNAResultCallable(const GetMediaDNAResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMediaDNAResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getMediaDNAResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -951,7 +1059,6 @@ VodClient::ListAIVideoCensorJobOutcomeCallable VodClient::listAIVideoCensorJobCa
 	return task->get_future();
 }
 
-
 VodClient::DescribeRefreshQuotaOutcome VodClient::describeRefreshQuota(const DescribeRefreshQuotaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1132,6 +1239,42 @@ VodClient::GetAuditResultOutcomeCallable VodClient::getAuditResultCallable(const
 	return task->get_future();
 }
 
+VodClient::DeleteVodTemplateOutcome VodClient::deleteVodTemplate(const DeleteVodTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVodTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVodTemplateOutcome(DeleteVodTemplateResult(outcome.result()));
+	else
+		return DeleteVodTemplateOutcome(outcome.error());
+}
+
+void VodClient::deleteVodTemplateAsync(const DeleteVodTemplateRequest& request, const DeleteVodTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVodTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DeleteVodTemplateOutcomeCallable VodClient::deleteVodTemplateCallable(const DeleteVodTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVodTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVodTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::SubmitPreprocessJobsOutcome VodClient::submitPreprocessJobs(const SubmitPreprocessJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1162,6 +1305,42 @@ VodClient::SubmitPreprocessJobsOutcomeCallable VodClient::submitPreprocessJobsCa
 			[this, request]()
 			{
 			return this->submitPreprocessJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::ListVodTemplateOutcome VodClient::listVodTemplate(const ListVodTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListVodTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListVodTemplateOutcome(ListVodTemplateResult(outcome.result()));
+	else
+		return ListVodTemplateOutcome(outcome.error());
+}
+
+void VodClient::listVodTemplateAsync(const ListVodTemplateRequest& request, const ListVodTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listVodTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::ListVodTemplateOutcomeCallable VodClient::listVodTemplateCallable(const ListVodTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListVodTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->listVodTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1450,6 +1629,42 @@ VodClient::UpdateImageInfosOutcomeCallable VodClient::updateImageInfosCallable(c
 			[this, request]()
 			{
 			return this->updateImageInfos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DeleteWorkFlowOutcome VodClient::deleteWorkFlow(const DeleteWorkFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteWorkFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteWorkFlowOutcome(DeleteWorkFlowResult(outcome.result()));
+	else
+		return DeleteWorkFlowOutcome(outcome.error());
+}
+
+void VodClient::deleteWorkFlowAsync(const DeleteWorkFlowRequest& request, const DeleteWorkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteWorkFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DeleteWorkFlowOutcomeCallable VodClient::deleteWorkFlowCallable(const DeleteWorkFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteWorkFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteWorkFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2068,6 +2283,42 @@ VodClient::GetImageInfoOutcomeCallable VodClient::getImageInfoCallable(const Get
 	return task->get_future();
 }
 
+VodClient::ListWorkFlowOutcome VodClient::listWorkFlow(const ListWorkFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListWorkFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListWorkFlowOutcome(ListWorkFlowResult(outcome.result()));
+	else
+		return ListWorkFlowOutcome(outcome.error());
+}
+
+void VodClient::listWorkFlowAsync(const ListWorkFlowRequest& request, const ListWorkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listWorkFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::ListWorkFlowOutcomeCallable VodClient::listWorkFlowCallable(const ListWorkFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListWorkFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->listWorkFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::GetMessageCallbackOutcome VodClient::getMessageCallback(const GetMessageCallbackRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2134,6 +2385,42 @@ VodClient::ListLiveRecordVideoOutcomeCallable VodClient::listLiveRecordVideoCall
 			[this, request]()
 			{
 			return this->listLiveRecordVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::UpdateVodTemplateOutcome VodClient::updateVodTemplate(const UpdateVodTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateVodTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateVodTemplateOutcome(UpdateVodTemplateResult(outcome.result()));
+	else
+		return UpdateVodTemplateOutcome(outcome.error());
+}
+
+void VodClient::updateVodTemplateAsync(const UpdateVodTemplateRequest& request, const UpdateVodTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateVodTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::UpdateVodTemplateOutcomeCallable VodClient::updateVodTemplateCallable(const UpdateVodTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateVodTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->updateVodTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2278,6 +2565,42 @@ VodClient::DeleteStreamOutcomeCallable VodClient::deleteStreamCallable(const Del
 			[this, request]()
 			{
 			return this->deleteStream(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::UpdateWorkFlowOutcome VodClient::updateWorkFlow(const UpdateWorkFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateWorkFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateWorkFlowOutcome(UpdateWorkFlowResult(outcome.result()));
+	else
+		return UpdateWorkFlowOutcome(outcome.error());
+}
+
+void VodClient::updateWorkFlowAsync(const UpdateWorkFlowRequest& request, const UpdateWorkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateWorkFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::UpdateWorkFlowOutcomeCallable VodClient::updateWorkFlowCallable(const UpdateWorkFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateWorkFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->updateWorkFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2464,6 +2787,42 @@ VodClient::GetPlayInfoOutcomeCallable VodClient::getPlayInfoCallable(const GetPl
 	return task->get_future();
 }
 
+VodClient::GetWorkFlowOutcome VodClient::getWorkFlow(const GetWorkFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetWorkFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetWorkFlowOutcome(GetWorkFlowResult(outcome.result()));
+	else
+		return GetWorkFlowOutcome(outcome.error());
+}
+
+void VodClient::getWorkFlowAsync(const GetWorkFlowRequest& request, const GetWorkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getWorkFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetWorkFlowOutcomeCallable VodClient::getWorkFlowCallable(const GetWorkFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetWorkFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->getWorkFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::SubmitTranscodeJobsOutcome VodClient::submitTranscodeJobs(const SubmitTranscodeJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2494,6 +2853,42 @@ VodClient::SubmitTranscodeJobsOutcomeCallable VodClient::submitTranscodeJobsCall
 			[this, request]()
 			{
 			return this->submitTranscodeJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::AddWorkFlowOutcome VodClient::addWorkFlow(const AddWorkFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddWorkFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddWorkFlowOutcome(AddWorkFlowResult(outcome.result()));
+	else
+		return AddWorkFlowOutcome(outcome.error());
+}
+
+void VodClient::addWorkFlowAsync(const AddWorkFlowRequest& request, const AddWorkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addWorkFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::AddWorkFlowOutcomeCallable VodClient::addWorkFlowCallable(const AddWorkFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddWorkFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->addWorkFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2932,6 +3327,42 @@ VodClient::DeleteVideoOutcomeCallable VodClient::deleteVideoCallable(const Delet
 	return task->get_future();
 }
 
+VodClient::AddVodTemplateOutcome VodClient::addVodTemplate(const AddVodTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddVodTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddVodTemplateOutcome(AddVodTemplateResult(outcome.result()));
+	else
+		return AddVodTemplateOutcome(outcome.error());
+}
+
+void VodClient::addVodTemplateAsync(const AddVodTemplateRequest& request, const AddVodTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addVodTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::AddVodTemplateOutcomeCallable VodClient::addVodTemplateCallable(const AddVodTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddVodTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->addVodTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::SubmitAIVideoCoverJobOutcome VodClient::submitAIVideoCoverJob(const SubmitAIVideoCoverJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2998,6 +3429,42 @@ VodClient::DescribePlayUserAvgOutcomeCallable VodClient::describePlayUserAvgCall
 			[this, request]()
 			{
 			return this->describePlayUserAvg(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::GetVodTemplateOutcome VodClient::getVodTemplate(const GetVodTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetVodTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetVodTemplateOutcome(GetVodTemplateResult(outcome.result()));
+	else
+		return GetVodTemplateOutcome(outcome.error());
+}
+
+void VodClient::getVodTemplateAsync(const GetVodTemplateRequest& request, const GetVodTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getVodTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetVodTemplateOutcomeCallable VodClient::getVodTemplateCallable(const GetVodTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetVodTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->getVodTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getImageExt()const;
 				void setImageExt(const std::string& imageExt);
+				long getCateId()const;
+				void setCateId(long cateId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getTitle()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				std::string originalFileName_;
 				std::string resourceOwnerAccount_;
 				std::string imageExt_;
+				long cateId_;
 				long ownerId_;
 				std::string title_;
 				std::string accessKeyId_;

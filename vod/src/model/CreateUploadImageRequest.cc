@@ -80,6 +80,17 @@ void CreateUploadImageRequest::setImageExt(const std::string& imageExt)
 	setParameter("ImageExt", imageExt);
 }
 
+long CreateUploadImageRequest::getCateId()const
+{
+	return cateId_;
+}
+
+void CreateUploadImageRequest::setCateId(long cateId)
+{
+	cateId_ = cateId;
+	setParameter("CateId", std::to_string(cateId));
+}
+
 long CreateUploadImageRequest::getOwnerId()const
 {
 	return ownerId_;

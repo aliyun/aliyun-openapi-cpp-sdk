@@ -27,6 +27,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DeleteImageResult.h
 	include/alibabacloud/vod/model/DeleteCategoryRequest.h
 	include/alibabacloud/vod/model/DeleteCategoryResult.h
+	include/alibabacloud/vod/model/CreateUploadAttachedMediaRequest.h
+	include/alibabacloud/vod/model/CreateUploadAttachedMediaResult.h
 	include/alibabacloud/vod/model/ListAIVideoSummaryJobRequest.h
 	include/alibabacloud/vod/model/ListAIVideoSummaryJobResult.h
 	include/alibabacloud/vod/model/ListSnapshotsRequest.h
@@ -39,6 +41,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/ListAIVideoTerrorismRecogJobResult.h
 	include/alibabacloud/vod/model/UpdateEditingProjectRequest.h
 	include/alibabacloud/vod/model/UpdateEditingProjectResult.h
+	include/alibabacloud/vod/model/SetDefaultVodTemplateRequest.h
+	include/alibabacloud/vod/model/SetDefaultVodTemplateResult.h
 	include/alibabacloud/vod/model/RefreshObjectCachesRequest.h
 	include/alibabacloud/vod/model/RefreshObjectCachesResult.h
 	include/alibabacloud/vod/model/DescribeDomainBpsDataRequest.h
@@ -47,6 +51,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/ListAuditSecurityIpResult.h
 	include/alibabacloud/vod/model/GetAuditHistoryRequest.h
 	include/alibabacloud/vod/model/GetAuditHistoryResult.h
+	include/alibabacloud/vod/model/GetMediaDNAResultRequest.h
+	include/alibabacloud/vod/model/GetMediaDNAResultResult.h
 	include/alibabacloud/vod/model/GetVideoInfoRequest.h
 	include/alibabacloud/vod/model/GetVideoInfoResult.h
 	include/alibabacloud/vod/model/SetMessageCallbackRequest.h
@@ -81,8 +87,12 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetVideoPlayAuthResult.h
 	include/alibabacloud/vod/model/GetAuditResultRequest.h
 	include/alibabacloud/vod/model/GetAuditResultResult.h
+	include/alibabacloud/vod/model/DeleteVodTemplateRequest.h
+	include/alibabacloud/vod/model/DeleteVodTemplateResult.h
 	include/alibabacloud/vod/model/SubmitPreprocessJobsRequest.h
 	include/alibabacloud/vod/model/SubmitPreprocessJobsResult.h
+	include/alibabacloud/vod/model/ListVodTemplateRequest.h
+	include/alibabacloud/vod/model/ListVodTemplateResult.h
 	include/alibabacloud/vod/model/GetVideoPlayInfoRequest.h
 	include/alibabacloud/vod/model/GetVideoPlayInfoResult.h
 	include/alibabacloud/vod/model/ListAIJobRequest.h
@@ -99,6 +109,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/UpdateVideoInfoResult.h
 	include/alibabacloud/vod/model/UpdateImageInfosRequest.h
 	include/alibabacloud/vod/model/UpdateImageInfosResult.h
+	include/alibabacloud/vod/model/DeleteWorkFlowRequest.h
+	include/alibabacloud/vod/model/DeleteWorkFlowResult.h
 	include/alibabacloud/vod/model/SearchMediaRequest.h
 	include/alibabacloud/vod/model/SearchMediaResult.h
 	include/alibabacloud/vod/model/DescribePlayTopVideosRequest.h
@@ -133,10 +145,14 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/UpdateWatermarkResult.h
 	include/alibabacloud/vod/model/GetImageInfoRequest.h
 	include/alibabacloud/vod/model/GetImageInfoResult.h
+	include/alibabacloud/vod/model/ListWorkFlowRequest.h
+	include/alibabacloud/vod/model/ListWorkFlowResult.h
 	include/alibabacloud/vod/model/GetMessageCallbackRequest.h
 	include/alibabacloud/vod/model/GetMessageCallbackResult.h
 	include/alibabacloud/vod/model/ListLiveRecordVideoRequest.h
 	include/alibabacloud/vod/model/ListLiveRecordVideoResult.h
+	include/alibabacloud/vod/model/UpdateVodTemplateRequest.h
+	include/alibabacloud/vod/model/UpdateVodTemplateResult.h
 	include/alibabacloud/vod/model/ListAIVideoCategoryJobRequest.h
 	include/alibabacloud/vod/model/ListAIVideoCategoryJobResult.h
 	include/alibabacloud/vod/model/GetCategoriesRequest.h
@@ -145,6 +161,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribePlayVideoStatisResult.h
 	include/alibabacloud/vod/model/DeleteStreamRequest.h
 	include/alibabacloud/vod/model/DeleteStreamResult.h
+	include/alibabacloud/vod/model/UpdateWorkFlowRequest.h
+	include/alibabacloud/vod/model/UpdateWorkFlowResult.h
 	include/alibabacloud/vod/model/UploadMediaByURLRequest.h
 	include/alibabacloud/vod/model/UploadMediaByURLResult.h
 	include/alibabacloud/vod/model/SubmitAIJobRequest.h
@@ -155,8 +173,12 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SubmitAIASRJobResult.h
 	include/alibabacloud/vod/model/GetPlayInfoRequest.h
 	include/alibabacloud/vod/model/GetPlayInfoResult.h
+	include/alibabacloud/vod/model/GetWorkFlowRequest.h
+	include/alibabacloud/vod/model/GetWorkFlowResult.h
 	include/alibabacloud/vod/model/SubmitTranscodeJobsRequest.h
 	include/alibabacloud/vod/model/SubmitTranscodeJobsResult.h
+	include/alibabacloud/vod/model/AddWorkFlowRequest.h
+	include/alibabacloud/vod/model/AddWorkFlowResult.h
 	include/alibabacloud/vod/model/CreateUploadVideoRequest.h
 	include/alibabacloud/vod/model/CreateUploadVideoResult.h
 	include/alibabacloud/vod/model/GetOSSStatisRequest.h
@@ -181,10 +203,14 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetMezzanineInfoResult.h
 	include/alibabacloud/vod/model/DeleteVideoRequest.h
 	include/alibabacloud/vod/model/DeleteVideoResult.h
+	include/alibabacloud/vod/model/AddVodTemplateRequest.h
+	include/alibabacloud/vod/model/AddVodTemplateResult.h
 	include/alibabacloud/vod/model/SubmitAIVideoCoverJobRequest.h
 	include/alibabacloud/vod/model/SubmitAIVideoCoverJobResult.h
 	include/alibabacloud/vod/model/DescribePlayUserAvgRequest.h
-	include/alibabacloud/vod/model/DescribePlayUserAvgResult.h )
+	include/alibabacloud/vod/model/DescribePlayUserAvgResult.h
+	include/alibabacloud/vod/model/GetVodTemplateRequest.h
+	include/alibabacloud/vod/model/GetVodTemplateResult.h )
 
 set(vod_src 
 	src/VodClient.cc
@@ -194,6 +220,8 @@ set(vod_src
 	src/model/DeleteImageResult.cc
 	src/model/DeleteCategoryRequest.cc
 	src/model/DeleteCategoryResult.cc
+	src/model/CreateUploadAttachedMediaRequest.cc
+	src/model/CreateUploadAttachedMediaResult.cc
 	src/model/ListAIVideoSummaryJobRequest.cc
 	src/model/ListAIVideoSummaryJobResult.cc
 	src/model/ListSnapshotsRequest.cc
@@ -206,6 +234,8 @@ set(vod_src
 	src/model/ListAIVideoTerrorismRecogJobResult.cc
 	src/model/UpdateEditingProjectRequest.cc
 	src/model/UpdateEditingProjectResult.cc
+	src/model/SetDefaultVodTemplateRequest.cc
+	src/model/SetDefaultVodTemplateResult.cc
 	src/model/RefreshObjectCachesRequest.cc
 	src/model/RefreshObjectCachesResult.cc
 	src/model/DescribeDomainBpsDataRequest.cc
@@ -214,6 +244,8 @@ set(vod_src
 	src/model/ListAuditSecurityIpResult.cc
 	src/model/GetAuditHistoryRequest.cc
 	src/model/GetAuditHistoryResult.cc
+	src/model/GetMediaDNAResultRequest.cc
+	src/model/GetMediaDNAResultResult.cc
 	src/model/GetVideoInfoRequest.cc
 	src/model/GetVideoInfoResult.cc
 	src/model/SetMessageCallbackRequest.cc
@@ -248,8 +280,12 @@ set(vod_src
 	src/model/GetVideoPlayAuthResult.cc
 	src/model/GetAuditResultRequest.cc
 	src/model/GetAuditResultResult.cc
+	src/model/DeleteVodTemplateRequest.cc
+	src/model/DeleteVodTemplateResult.cc
 	src/model/SubmitPreprocessJobsRequest.cc
 	src/model/SubmitPreprocessJobsResult.cc
+	src/model/ListVodTemplateRequest.cc
+	src/model/ListVodTemplateResult.cc
 	src/model/GetVideoPlayInfoRequest.cc
 	src/model/GetVideoPlayInfoResult.cc
 	src/model/ListAIJobRequest.cc
@@ -266,6 +302,8 @@ set(vod_src
 	src/model/UpdateVideoInfoResult.cc
 	src/model/UpdateImageInfosRequest.cc
 	src/model/UpdateImageInfosResult.cc
+	src/model/DeleteWorkFlowRequest.cc
+	src/model/DeleteWorkFlowResult.cc
 	src/model/SearchMediaRequest.cc
 	src/model/SearchMediaResult.cc
 	src/model/DescribePlayTopVideosRequest.cc
@@ -300,10 +338,14 @@ set(vod_src
 	src/model/UpdateWatermarkResult.cc
 	src/model/GetImageInfoRequest.cc
 	src/model/GetImageInfoResult.cc
+	src/model/ListWorkFlowRequest.cc
+	src/model/ListWorkFlowResult.cc
 	src/model/GetMessageCallbackRequest.cc
 	src/model/GetMessageCallbackResult.cc
 	src/model/ListLiveRecordVideoRequest.cc
 	src/model/ListLiveRecordVideoResult.cc
+	src/model/UpdateVodTemplateRequest.cc
+	src/model/UpdateVodTemplateResult.cc
 	src/model/ListAIVideoCategoryJobRequest.cc
 	src/model/ListAIVideoCategoryJobResult.cc
 	src/model/GetCategoriesRequest.cc
@@ -312,6 +354,8 @@ set(vod_src
 	src/model/DescribePlayVideoStatisResult.cc
 	src/model/DeleteStreamRequest.cc
 	src/model/DeleteStreamResult.cc
+	src/model/UpdateWorkFlowRequest.cc
+	src/model/UpdateWorkFlowResult.cc
 	src/model/UploadMediaByURLRequest.cc
 	src/model/UploadMediaByURLResult.cc
 	src/model/SubmitAIJobRequest.cc
@@ -322,8 +366,12 @@ set(vod_src
 	src/model/SubmitAIASRJobResult.cc
 	src/model/GetPlayInfoRequest.cc
 	src/model/GetPlayInfoResult.cc
+	src/model/GetWorkFlowRequest.cc
+	src/model/GetWorkFlowResult.cc
 	src/model/SubmitTranscodeJobsRequest.cc
 	src/model/SubmitTranscodeJobsResult.cc
+	src/model/AddWorkFlowRequest.cc
+	src/model/AddWorkFlowResult.cc
 	src/model/CreateUploadVideoRequest.cc
 	src/model/CreateUploadVideoResult.cc
 	src/model/GetOSSStatisRequest.cc
@@ -348,10 +396,14 @@ set(vod_src
 	src/model/GetMezzanineInfoResult.cc
 	src/model/DeleteVideoRequest.cc
 	src/model/DeleteVideoResult.cc
+	src/model/AddVodTemplateRequest.cc
+	src/model/AddVodTemplateResult.cc
 	src/model/SubmitAIVideoCoverJobRequest.cc
 	src/model/SubmitAIVideoCoverJobResult.cc
 	src/model/DescribePlayUserAvgRequest.cc
-	src/model/DescribePlayUserAvgResult.cc )
+	src/model/DescribePlayUserAvgResult.cc
+	src/model/GetVodTemplateRequest.cc
+	src/model/GetVodTemplateResult.cc )
 
 add_library(vod ${LIB_TYPE}
 	${vod_public_header}

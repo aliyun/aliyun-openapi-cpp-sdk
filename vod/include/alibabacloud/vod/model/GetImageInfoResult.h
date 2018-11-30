@@ -36,12 +36,20 @@ namespace AlibabaCloud
 				{
 					struct Mezzanine
 					{
+						std::string fileURL;
 						std::string originalFileName;
+						int height;
+						int width;
+						std::string fileSize;
 					};
+					std::string description;
 					Mezzanine mezzanine;
 					std::string imageId;
 					std::string creationTime;
 					std::string title;
+					long cateId;
+					std::string cateName;
+					std::string storageLocation;
 					std::string tags;
 					std::string uRL;
 					std::string imageType;

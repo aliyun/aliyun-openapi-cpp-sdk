@@ -53,9 +53,25 @@ void GetImageInfoResult::parse(const std::string &payload)
 		imageInfo_.tags = imageInfoNode["Tags"].asString();
 	if(!imageInfoNode["URL"].isNull())
 		imageInfo_.uRL = imageInfoNode["URL"].asString();
+	if(!imageInfoNode["CateId"].isNull())
+		imageInfo_.cateId = std::stol(imageInfoNode["CateId"].asString());
+	if(!imageInfoNode["CateName"].isNull())
+		imageInfo_.cateName = imageInfoNode["CateName"].asString();
+	if(!imageInfoNode["Description"].isNull())
+		imageInfo_.description = imageInfoNode["Description"].asString();
+	if(!imageInfoNode["StorageLocation"].isNull())
+		imageInfo_.storageLocation = imageInfoNode["StorageLocation"].asString();
 	auto mezzanineNode = imageInfoNode["Mezzanine"];
 	if(!mezzanineNode["OriginalFileName"].isNull())
 		imageInfo_.mezzanine.originalFileName = mezzanineNode["OriginalFileName"].asString();
+	if(!mezzanineNode["FileSize"].isNull())
+		imageInfo_.mezzanine.fileSize = mezzanineNode["FileSize"].asString();
+	if(!mezzanineNode["Width"].isNull())
+		imageInfo_.mezzanine.width = std::stoi(mezzanineNode["Width"].asString());
+	if(!mezzanineNode["Height"].isNull())
+		imageInfo_.mezzanine.height = std::stoi(mezzanineNode["Height"].asString());
+	if(!mezzanineNode["FileURL"].isNull())
+		imageInfo_.mezzanine.fileURL = mezzanineNode["FileURL"].asString();
 
 }
 
