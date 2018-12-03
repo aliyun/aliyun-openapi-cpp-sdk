@@ -201,17 +201,6 @@ void DescribeDomainRealTimeBpsDataRequest::setPopProduct(const std::string& popP
 	setParameter("PopProduct", popProduct);
 }
 
-std::string DescribeDomainRealTimeBpsDataRequest::getProduct()const
-{
-	return product_;
-}
-
-void DescribeDomainRealTimeBpsDataRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
-}
-
 std::string DescribeDomainRealTimeBpsDataRequest::getDomainName()const
 {
 	return domainName_;
@@ -309,5 +298,27 @@ void DescribeDomainRealTimeBpsDataRequest::setRequestId(const std::string& reque
 {
 	requestId_ = requestId;
 	setParameter("RequestId", requestId);
+}
+
+std::string DescribeDomainRealTimeBpsDataRequest::getInterval()const
+{
+	return interval_;
+}
+
+void DescribeDomainRealTimeBpsDataRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setParameter("Interval", interval);
+}
+
+std::string DescribeDomainRealTimeBpsDataRequest::getFields()const
+{
+	return fields_;
+}
+
+void DescribeDomainRealTimeBpsDataRequest::setFields(const std::string& fields)
+{
+	fields_ = fields;
+	setParameter("Fields", fields);
 }
 

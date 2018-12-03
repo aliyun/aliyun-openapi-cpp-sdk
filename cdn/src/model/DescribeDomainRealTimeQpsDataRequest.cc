@@ -201,17 +201,6 @@ void DescribeDomainRealTimeQpsDataRequest::setPopProduct(const std::string& popP
 	setParameter("PopProduct", popProduct);
 }
 
-std::string DescribeDomainRealTimeQpsDataRequest::getProduct()const
-{
-	return product_;
-}
-
-void DescribeDomainRealTimeQpsDataRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
-}
-
 std::string DescribeDomainRealTimeQpsDataRequest::getDomainName()const
 {
 	return domainName_;
@@ -309,5 +298,27 @@ void DescribeDomainRealTimeQpsDataRequest::setRequestId(const std::string& reque
 {
 	requestId_ = requestId;
 	setParameter("RequestId", requestId);
+}
+
+std::string DescribeDomainRealTimeQpsDataRequest::getInterval()const
+{
+	return interval_;
+}
+
+void DescribeDomainRealTimeQpsDataRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setParameter("Interval", interval);
+}
+
+std::string DescribeDomainRealTimeQpsDataRequest::getFields()const
+{
+	return fields_;
+}
+
+void DescribeDomainRealTimeQpsDataRequest::setFields(const std::string& fields)
+{
+	fields_ = fields;
+	setParameter("Fields", fields);
 }
 

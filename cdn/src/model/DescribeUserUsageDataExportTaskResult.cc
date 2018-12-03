@@ -51,6 +51,10 @@ void DescribeUserUsageDataExportTaskResult::parse(const std::string &payload)
 	for (auto value : allData)
 	{
 		UsageDataPerPage::DataItem dataItemObject;
+		if(!value["TaskName"].isNull())
+			dataItemObject.taskName = value["TaskName"].asString();
+		if(!value["TaskId"].isNull())
+			dataItemObject.taskId = value["TaskId"].asString();
 		if(!value["CreateTime"].isNull())
 			dataItemObject.createTime = value["CreateTime"].asString();
 		if(!value["UpdateTime"].isNull())

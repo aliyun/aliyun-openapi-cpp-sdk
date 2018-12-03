@@ -179,17 +179,6 @@ void DescribeDomainRealTimeByteHitRateDataRequest::setPopProduct(const std::stri
 	setParameter("PopProduct", popProduct);
 }
 
-std::string DescribeDomainRealTimeByteHitRateDataRequest::getProduct()const
-{
-	return product_;
-}
-
-void DescribeDomainRealTimeByteHitRateDataRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
-}
-
 std::string DescribeDomainRealTimeByteHitRateDataRequest::getDomainName()const
 {
 	return domainName_;
@@ -287,5 +276,27 @@ void DescribeDomainRealTimeByteHitRateDataRequest::setRequestId(const std::strin
 {
 	requestId_ = requestId;
 	setParameter("RequestId", requestId);
+}
+
+std::string DescribeDomainRealTimeByteHitRateDataRequest::getInterval()const
+{
+	return interval_;
+}
+
+void DescribeDomainRealTimeByteHitRateDataRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setParameter("Interval", interval);
+}
+
+std::string DescribeDomainRealTimeByteHitRateDataRequest::getFields()const
+{
+	return fields_;
+}
+
+void DescribeDomainRealTimeByteHitRateDataRequest::setFields(const std::string& fields)
+{
+	fields_ = fields;
+	setParameter("Fields", fields);
 }
 

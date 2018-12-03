@@ -42,6 +42,8 @@ namespace AlibabaCloud
 							std::string startTime;
 						};
 						std::string status;
+						std::string taskId;
+						std::string taskName;
 						std::string createTime;
 						std::string updateTime;
 						TaskConfig taskConfig;

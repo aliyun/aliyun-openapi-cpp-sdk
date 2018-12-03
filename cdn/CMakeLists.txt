@@ -91,6 +91,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/ModifyCdnServiceResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamRecordIndexFileRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamRecordIndexFileResult.h
+	include/alibabacloud/cdn/model/BatchSetCdnDomainConfigRequest.h
+	include/alibabacloud/cdn/model/BatchSetCdnDomainConfigResult.h
 	include/alibabacloud/cdn/model/DeleteUserUsageDataExportTaskRequest.h
 	include/alibabacloud/cdn/model/DeleteUserUsageDataExportTaskResult.h
 	include/alibabacloud/cdn/model/DescribeDomainHitRateDataRequest.h
@@ -386,6 +388,8 @@ set(cdn_src
 	src/model/ModifyCdnServiceResult.cc
 	src/model/DescribeLiveStreamRecordIndexFileRequest.cc
 	src/model/DescribeLiveStreamRecordIndexFileResult.cc
+	src/model/BatchSetCdnDomainConfigRequest.cc
+	src/model/BatchSetCdnDomainConfigResult.cc
 	src/model/DeleteUserUsageDataExportTaskRequest.cc
 	src/model/DeleteUserUsageDataExportTaskResult.cc
 	src/model/DescribeDomainHitRateDataRequest.cc

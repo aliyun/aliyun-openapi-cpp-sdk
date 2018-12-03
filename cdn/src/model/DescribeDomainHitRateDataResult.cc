@@ -52,12 +52,12 @@ void DescribeDomainHitRateDataResult::parse(const std::string &payload)
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
-	if(!value["DataInterval"].isNull())
-		dataInterval_ = value["DataInterval"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 
 }
 
@@ -76,13 +76,13 @@ std::string DescribeDomainHitRateDataResult::getDomainName()const
 	return domainName_;
 }
 
-std::string DescribeDomainHitRateDataResult::getDataInterval()const
-{
-	return dataInterval_;
-}
-
 std::string DescribeDomainHitRateDataResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeDomainHitRateDataResult::getDataInterval()const
+{
+	return dataInterval_;
 }
 

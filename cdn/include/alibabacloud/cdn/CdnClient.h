@@ -92,6 +92,8 @@
 #include "model/ModifyCdnServiceResult.h"
 #include "model/DescribeLiveStreamRecordIndexFileRequest.h"
 #include "model/DescribeLiveStreamRecordIndexFileResult.h"
+#include "model/BatchSetCdnDomainConfigRequest.h"
+#include "model/BatchSetCdnDomainConfigResult.h"
 #include "model/DeleteUserUsageDataExportTaskRequest.h"
 #include "model/DeleteUserUsageDataExportTaskResult.h"
 #include "model/DescribeDomainHitRateDataRequest.h"
@@ -428,6 +430,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveStreamRecordIndexFileResult> DescribeLiveStreamRecordIndexFileOutcome;
 			typedef std::future<DescribeLiveStreamRecordIndexFileOutcome> DescribeLiveStreamRecordIndexFileOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamRecordIndexFileRequest&, const DescribeLiveStreamRecordIndexFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamRecordIndexFileAsyncHandler;
+			typedef Outcome<Error, Model::BatchSetCdnDomainConfigResult> BatchSetCdnDomainConfigOutcome;
+			typedef std::future<BatchSetCdnDomainConfigOutcome> BatchSetCdnDomainConfigOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::BatchSetCdnDomainConfigRequest&, const BatchSetCdnDomainConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchSetCdnDomainConfigAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUserUsageDataExportTaskResult> DeleteUserUsageDataExportTaskOutcome;
 			typedef std::future<DeleteUserUsageDataExportTaskOutcome> DeleteUserUsageDataExportTaskOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DeleteUserUsageDataExportTaskRequest&, const DeleteUserUsageDataExportTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserUsageDataExportTaskAsyncHandler;
@@ -871,6 +876,9 @@ namespace AlibabaCloud
 			DescribeLiveStreamRecordIndexFileOutcome describeLiveStreamRecordIndexFile(const Model::DescribeLiveStreamRecordIndexFileRequest &request)const;
 			void describeLiveStreamRecordIndexFileAsync(const Model::DescribeLiveStreamRecordIndexFileRequest& request, const DescribeLiveStreamRecordIndexFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamRecordIndexFileOutcomeCallable describeLiveStreamRecordIndexFileCallable(const Model::DescribeLiveStreamRecordIndexFileRequest& request) const;
+			BatchSetCdnDomainConfigOutcome batchSetCdnDomainConfig(const Model::BatchSetCdnDomainConfigRequest &request)const;
+			void batchSetCdnDomainConfigAsync(const Model::BatchSetCdnDomainConfigRequest& request, const BatchSetCdnDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchSetCdnDomainConfigOutcomeCallable batchSetCdnDomainConfigCallable(const Model::BatchSetCdnDomainConfigRequest& request) const;
 			DeleteUserUsageDataExportTaskOutcome deleteUserUsageDataExportTask(const Model::DeleteUserUsageDataExportTaskRequest &request)const;
 			void deleteUserUsageDataExportTaskAsync(const Model::DeleteUserUsageDataExportTaskRequest& request, const DeleteUserUsageDataExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserUsageDataExportTaskOutcomeCallable deleteUserUsageDataExportTaskCallable(const Model::DeleteUserUsageDataExportTaskRequest& request) const;

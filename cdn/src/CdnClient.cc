@@ -1311,6 +1311,42 @@ CdnClient::DescribeLiveStreamRecordIndexFileOutcomeCallable CdnClient::describeL
 	return task->get_future();
 }
 
+CdnClient::BatchSetCdnDomainConfigOutcome CdnClient::batchSetCdnDomainConfig(const BatchSetCdnDomainConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchSetCdnDomainConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchSetCdnDomainConfigOutcome(BatchSetCdnDomainConfigResult(outcome.result()));
+	else
+		return BatchSetCdnDomainConfigOutcome(outcome.error());
+}
+
+void CdnClient::batchSetCdnDomainConfigAsync(const BatchSetCdnDomainConfigRequest& request, const BatchSetCdnDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchSetCdnDomainConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::BatchSetCdnDomainConfigOutcomeCallable CdnClient::batchSetCdnDomainConfigCallable(const BatchSetCdnDomainConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchSetCdnDomainConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->batchSetCdnDomainConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DeleteUserUsageDataExportTaskOutcome CdnClient::deleteUserUsageDataExportTask(const DeleteUserUsageDataExportTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

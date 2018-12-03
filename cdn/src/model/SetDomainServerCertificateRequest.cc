@@ -36,6 +36,17 @@ void SetDomainServerCertificateRequest::setPrivateKey(const std::string& private
 	setParameter("PrivateKey", privateKey);
 }
 
+std::string SetDomainServerCertificateRequest::getForceSet()const
+{
+	return forceSet_;
+}
+
+void SetDomainServerCertificateRequest::setForceSet(const std::string& forceSet)
+{
+	forceSet_ = forceSet;
+	setParameter("ForceSet", forceSet);
+}
+
 std::string SetDomainServerCertificateRequest::getServerCertificateStatus()const
 {
 	return serverCertificateStatus_;

@@ -46,30 +46,30 @@ void DescribeCdnMonitorDataResult::parse(const std::string &payload)
 		CDNMonitorData monitorDatasObject;
 		if(!value["TimeStamp"].isNull())
 			monitorDatasObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["QueryPerSecond"].isNull())
-			monitorDatasObject.queryPerSecond = value["QueryPerSecond"].asString();
 		if(!value["BytesPerSecond"].isNull())
 			monitorDatasObject.bytesPerSecond = value["BytesPerSecond"].asString();
-		if(!value["BytesHitRate"].isNull())
-			monitorDatasObject.bytesHitRate = value["BytesHitRate"].asString();
+		if(!value["QueryPerSecond"].isNull())
+			monitorDatasObject.queryPerSecond = value["QueryPerSecond"].asString();
 		if(!value["RequestHitRate"].isNull())
 			monitorDatasObject.requestHitRate = value["RequestHitRate"].asString();
+		if(!value["BytesHitRate"].isNull())
+			monitorDatasObject.bytesHitRate = value["BytesHitRate"].asString();
 		if(!value["AverageObjectSize"].isNull())
 			monitorDatasObject.averageObjectSize = value["AverageObjectSize"].asString();
 		monitorDatas_.push_back(monitorDatasObject);
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
-	if(!value["MonitorInterval"].isNull())
-		monitorInterval_ = std::stol(value["MonitorInterval"].asString());
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["MonitorInterval"].isNull())
+		monitorInterval_ = value["MonitorInterval"].asString();
 
 }
 
-long DescribeCdnMonitorDataResult::getMonitorInterval()const
+std::string DescribeCdnMonitorDataResult::getMonitorInterval()const
 {
 	return monitorInterval_;
 }

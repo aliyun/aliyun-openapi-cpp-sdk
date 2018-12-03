@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINREQHITRATEDATARESULT_H_
-#define ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINREQHITRATEDATARESULT_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_BATCHSETCDNDOMAINCONFIGRESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_BATCHSETCDNDOMAINCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeDomainReqHitRateDataResult : public ServiceResult
+			class ALIBABACLOUD_CDN_EXPORT BatchSetCdnDomainConfigResult : public ServiceResult
 			{
 			public:
-				struct DataModule
-				{
-					std::string value;
-					std::string timeStamp;
-				};
 
 
-				DescribeDomainReqHitRateDataResult();
-				explicit DescribeDomainReqHitRateDataResult(const std::string &payload);
-				~DescribeDomainReqHitRateDataResult();
-				std::vector<DataModule> getReqHitRateInterval()const;
-				std::string getEndTime()const;
-				std::string getDomainName()const;
-				std::string getStartTime()const;
-				std::string getDataInterval()const;
+				BatchSetCdnDomainConfigResult();
+				explicit BatchSetCdnDomainConfigResult(const std::string &payload);
+				~BatchSetCdnDomainConfigResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DataModule> reqHitRateInterval_;
-				std::string endTime_;
-				std::string domainName_;
-				std::string startTime_;
-				std::string dataInterval_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINREQHITRATEDATARESULT_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_BATCHSETCDNDOMAINCONFIGRESULT_H_

@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getPrivateKey()const;
 				void setPrivateKey(const std::string& privateKey);
+				std::string getForceSet()const;
+				void setForceSet(const std::string& forceSet);
 				std::string getServerCertificateStatus()const;
 				void setServerCertificateStatus(const std::string& serverCertificateStatus);
 				std::string getServerCertificate()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 
             private:
 				std::string privateKey_;
+				std::string forceSet_;
 				std::string serverCertificateStatus_;
 				std::string serverCertificate_;
 				std::string securityToken_;
