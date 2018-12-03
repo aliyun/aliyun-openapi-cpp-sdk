@@ -201,17 +201,6 @@ void DescribeScdnDomainHttpCodeDataRequest::setPopProduct(const std::string& pop
 	setParameter("PopProduct", popProduct);
 }
 
-std::string DescribeScdnDomainHttpCodeDataRequest::getProduct()const
-{
-	return product_;
-}
-
-void DescribeScdnDomainHttpCodeDataRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
-}
-
 std::string DescribeScdnDomainHttpCodeDataRequest::getDomainName()const
 {
 	return domainName_;

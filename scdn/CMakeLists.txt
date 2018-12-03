@@ -23,26 +23,40 @@ set(scdn_public_header
 set(scdn_public_header_model 
 	include/alibabacloud/scdn/model/DescribeScdnRefreshQuotaRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnRefreshQuotaResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeByteHitRateDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeByteHitRateDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainTrafficDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainTrafficDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainDetailRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainDetailResult.h
+	include/alibabacloud/scdn/model/SetDomainServerCertificateRequest.h
+	include/alibabacloud/scdn/model/SetDomainServerCertificateResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainOriginBpsDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainOriginBpsDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnCertificateListRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnCertificateListResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainQpsDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainQpsDataResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainTopReferVisitRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainTopReferVisitResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainUvDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainUvDataResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRegionDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRegionDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnIpInfoRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnIpInfoResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainConfigsRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainConfigsResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeBpsDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeBpsDataResult.h
 	include/alibabacloud/scdn/model/SetScdnDomainCertificateRequest.h
 	include/alibabacloud/scdn/model/SetScdnDomainCertificateResult.h
 	include/alibabacloud/scdn/model/BatchDeleteScdnDomainConfigsRequest.h
 	include/alibabacloud/scdn/model/BatchDeleteScdnDomainConfigsResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeSrcTrafficDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeSrcTrafficDataResult.h
+	include/alibabacloud/scdn/model/DescribeScdnTopDomainsByFlowRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnTopDomainsByFlowResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainBpsDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainBpsDataResult.h
 	include/alibabacloud/scdn/model/PreloadScdnObjectCachesRequest.h
@@ -75,43 +89,73 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/DescribeScdnDomainHttpCodeDataResult.h
 	include/alibabacloud/scdn/model/RefreshScdnObjectCachesRequest.h
 	include/alibabacloud/scdn/model/RefreshScdnObjectCachesResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeTrafficDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeTrafficDataResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeQpsDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeQpsDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainCertificateInfoRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainCertificateInfoResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeHttpCodeDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeHttpCodeDataResult.h
 	include/alibabacloud/scdn/model/CheckScdnServiceRequest.h
 	include/alibabacloud/scdn/model/CheckScdnServiceResult.h
+	include/alibabacloud/scdn/model/BatchUpdateScdnDomainRequest.h
+	include/alibabacloud/scdn/model/BatchUpdateScdnDomainResult.h
 	include/alibabacloud/scdn/model/UpdateScdnDomainRequest.h
 	include/alibabacloud/scdn/model/UpdateScdnDomainResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainOriginTrafficDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainOriginTrafficDataResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeReqHitRateDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeReqHitRateDataResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeSrcBpsDataRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainRealTimeSrcBpsDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainIspDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainIspDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnRefreshTasksRequest.h
-	include/alibabacloud/scdn/model/DescribeScdnRefreshTasksResult.h )
+	include/alibabacloud/scdn/model/DescribeScdnRefreshTasksResult.h
+	include/alibabacloud/scdn/model/OpenScdnServiceRequest.h
+	include/alibabacloud/scdn/model/OpenScdnServiceResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainTopUrlVisitRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDomainTopUrlVisitResult.h )
 
 set(scdn_src 
 	src/ScdnClient.cc
 	src/model/DescribeScdnRefreshQuotaRequest.cc
 	src/model/DescribeScdnRefreshQuotaResult.cc
+	src/model/DescribeScdnDomainRealTimeByteHitRateDataRequest.cc
+	src/model/DescribeScdnDomainRealTimeByteHitRateDataResult.cc
 	src/model/DescribeScdnDomainTrafficDataRequest.cc
 	src/model/DescribeScdnDomainTrafficDataResult.cc
 	src/model/DescribeScdnDomainDetailRequest.cc
 	src/model/DescribeScdnDomainDetailResult.cc
+	src/model/SetDomainServerCertificateRequest.cc
+	src/model/SetDomainServerCertificateResult.cc
 	src/model/DescribeScdnDomainOriginBpsDataRequest.cc
 	src/model/DescribeScdnDomainOriginBpsDataResult.cc
 	src/model/DescribeScdnCertificateListRequest.cc
 	src/model/DescribeScdnCertificateListResult.cc
 	src/model/DescribeScdnDomainQpsDataRequest.cc
 	src/model/DescribeScdnDomainQpsDataResult.cc
+	src/model/DescribeScdnDomainTopReferVisitRequest.cc
+	src/model/DescribeScdnDomainTopReferVisitResult.cc
 	src/model/DescribeScdnDomainUvDataRequest.cc
 	src/model/DescribeScdnDomainUvDataResult.cc
+	src/model/DescribeScdnDomainRegionDataRequest.cc
+	src/model/DescribeScdnDomainRegionDataResult.cc
 	src/model/DescribeScdnIpInfoRequest.cc
 	src/model/DescribeScdnIpInfoResult.cc
 	src/model/DescribeScdnDomainConfigsRequest.cc
 	src/model/DescribeScdnDomainConfigsResult.cc
+	src/model/DescribeScdnDomainRealTimeBpsDataRequest.cc
+	src/model/DescribeScdnDomainRealTimeBpsDataResult.cc
 	src/model/SetScdnDomainCertificateRequest.cc
 	src/model/SetScdnDomainCertificateResult.cc
 	src/model/BatchDeleteScdnDomainConfigsRequest.cc
 	src/model/BatchDeleteScdnDomainConfigsResult.cc
+	src/model/DescribeScdnDomainRealTimeSrcTrafficDataRequest.cc
+	src/model/DescribeScdnDomainRealTimeSrcTrafficDataResult.cc
+	src/model/DescribeScdnTopDomainsByFlowRequest.cc
+	src/model/DescribeScdnTopDomainsByFlowResult.cc
 	src/model/DescribeScdnDomainBpsDataRequest.cc
 	src/model/DescribeScdnDomainBpsDataResult.cc
 	src/model/PreloadScdnObjectCachesRequest.cc
@@ -144,18 +188,34 @@ set(scdn_src
 	src/model/DescribeScdnDomainHttpCodeDataResult.cc
 	src/model/RefreshScdnObjectCachesRequest.cc
 	src/model/RefreshScdnObjectCachesResult.cc
+	src/model/DescribeScdnDomainRealTimeTrafficDataRequest.cc
+	src/model/DescribeScdnDomainRealTimeTrafficDataResult.cc
+	src/model/DescribeScdnDomainRealTimeQpsDataRequest.cc
+	src/model/DescribeScdnDomainRealTimeQpsDataResult.cc
 	src/model/DescribeScdnDomainCertificateInfoRequest.cc
 	src/model/DescribeScdnDomainCertificateInfoResult.cc
+	src/model/DescribeScdnDomainRealTimeHttpCodeDataRequest.cc
+	src/model/DescribeScdnDomainRealTimeHttpCodeDataResult.cc
 	src/model/CheckScdnServiceRequest.cc
 	src/model/CheckScdnServiceResult.cc
+	src/model/BatchUpdateScdnDomainRequest.cc
+	src/model/BatchUpdateScdnDomainResult.cc
 	src/model/UpdateScdnDomainRequest.cc
 	src/model/UpdateScdnDomainResult.cc
 	src/model/DescribeScdnDomainOriginTrafficDataRequest.cc
 	src/model/DescribeScdnDomainOriginTrafficDataResult.cc
+	src/model/DescribeScdnDomainRealTimeReqHitRateDataRequest.cc
+	src/model/DescribeScdnDomainRealTimeReqHitRateDataResult.cc
+	src/model/DescribeScdnDomainRealTimeSrcBpsDataRequest.cc
+	src/model/DescribeScdnDomainRealTimeSrcBpsDataResult.cc
 	src/model/DescribeScdnDomainIspDataRequest.cc
 	src/model/DescribeScdnDomainIspDataResult.cc
 	src/model/DescribeScdnRefreshTasksRequest.cc
-	src/model/DescribeScdnRefreshTasksResult.cc )
+	src/model/DescribeScdnRefreshTasksResult.cc
+	src/model/OpenScdnServiceRequest.cc
+	src/model/OpenScdnServiceResult.cc
+	src/model/DescribeScdnDomainTopUrlVisitRequest.cc
+	src/model/DescribeScdnDomainTopUrlVisitResult.cc )
 
 add_library(scdn ${LIB_TYPE}
 	${scdn_public_header}

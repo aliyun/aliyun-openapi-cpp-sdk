@@ -322,14 +322,3 @@ void DescribeScdnDomainTrafficDataRequest::setInterval(const std::string& interv
 	setParameter("Interval", interval);
 }
 
-std::string DescribeScdnDomainTrafficDataRequest::getFields()const
-{
-	return fields_;
-}
-
-void DescribeScdnDomainTrafficDataRequest::setFields(const std::string& fields)
-{
-	fields_ = fields;
-	setParameter("Fields", fields);
-}
-

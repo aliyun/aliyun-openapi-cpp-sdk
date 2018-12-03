@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnDomainIspDataResult : public ServiceResult
 			{
 			public:
-				struct IspProportionData
+				struct ISPProportionData
 				{
 					std::string avgObjectSize;
 					std::string bytesProportion;
@@ -40,9 +40,10 @@ namespace AlibabaCloud
 					std::string proportion;
 					std::string qps;
 					std::string totalQuery;
-					std::string isp;
+					std::string iSP;
 					std::string totalBytes;
 					std::string avgResponseRate;
+					std::string reqErrRate;
 					std::string ispEname;
 					std::string avgResponseTime;
 				};
@@ -53,7 +54,7 @@ namespace AlibabaCloud
 				~DescribeScdnDomainIspDataResult();
 				std::string getEndTime()const;
 				std::string getDomainName()const;
-				std::vector<IspProportionData> getValue()const;
+				std::vector<ISPProportionData> getValue()const;
 				std::string getDataInterval()const;
 				std::string getStartTime()const;
 
@@ -62,7 +63,7 @@ namespace AlibabaCloud
 			private:
 				std::string endTime_;
 				std::string domainName_;
-				std::vector<IspProportionData> value_;
+				std::vector<ISPProportionData> value_;
 				std::string dataInterval_;
 				std::string startTime_;
 

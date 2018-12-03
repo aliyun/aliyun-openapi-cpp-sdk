@@ -322,14 +322,3 @@ void DescribeScdnDomainBpsDataRequest::setInterval(const std::string& interval)
 	setParameter("Interval", interval);
 }
 
-std::string DescribeScdnDomainBpsDataRequest::getFields()const
-{
-	return fields_;
-}
-
-void DescribeScdnDomainBpsDataRequest::setFields(const std::string& fields)
-{
-	fields_ = fields;
-	setParameter("Fields", fields);
-}
-

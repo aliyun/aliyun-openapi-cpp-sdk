@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				SetScdnDomainCertificateRequest();
 				~SetScdnDomainCertificateRequest();
 
+				std::string getForceSet()const;
+				void setForceSet(const std::string& forceSet);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getCertType()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				void setSSLPri(const std::string& sSLPri);
 
             private:
+				std::string forceSet_;
 				std::string securityToken_;
 				std::string certType_;
 				std::string sSLPub_;

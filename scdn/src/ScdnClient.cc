@@ -87,6 +87,42 @@ ScdnClient::DescribeScdnRefreshQuotaOutcomeCallable ScdnClient::describeScdnRefr
 	return task->get_future();
 }
 
+ScdnClient::DescribeScdnDomainRealTimeByteHitRateDataOutcome ScdnClient::describeScdnDomainRealTimeByteHitRateData(const DescribeScdnDomainRealTimeByteHitRateDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainRealTimeByteHitRateDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainRealTimeByteHitRateDataOutcome(DescribeScdnDomainRealTimeByteHitRateDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainRealTimeByteHitRateDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainRealTimeByteHitRateDataAsync(const DescribeScdnDomainRealTimeByteHitRateDataRequest& request, const DescribeScdnDomainRealTimeByteHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainRealTimeByteHitRateData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainRealTimeByteHitRateDataOutcomeCallable ScdnClient::describeScdnDomainRealTimeByteHitRateDataCallable(const DescribeScdnDomainRealTimeByteHitRateDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainRealTimeByteHitRateDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainRealTimeByteHitRateData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::DescribeScdnDomainTrafficDataOutcome ScdnClient::describeScdnDomainTrafficData(const DescribeScdnDomainTrafficDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +189,42 @@ ScdnClient::DescribeScdnDomainDetailOutcomeCallable ScdnClient::describeScdnDoma
 			[this, request]()
 			{
 			return this->describeScdnDomainDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::SetDomainServerCertificateOutcome ScdnClient::setDomainServerCertificate(const SetDomainServerCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDomainServerCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDomainServerCertificateOutcome(SetDomainServerCertificateResult(outcome.result()));
+	else
+		return SetDomainServerCertificateOutcome(outcome.error());
+}
+
+void ScdnClient::setDomainServerCertificateAsync(const SetDomainServerCertificateRequest& request, const SetDomainServerCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDomainServerCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::SetDomainServerCertificateOutcomeCallable ScdnClient::setDomainServerCertificateCallable(const SetDomainServerCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDomainServerCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->setDomainServerCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,6 +339,42 @@ ScdnClient::DescribeScdnDomainQpsDataOutcomeCallable ScdnClient::describeScdnDom
 	return task->get_future();
 }
 
+ScdnClient::DescribeScdnDomainTopReferVisitOutcome ScdnClient::describeScdnDomainTopReferVisit(const DescribeScdnDomainTopReferVisitRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainTopReferVisitOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainTopReferVisitOutcome(DescribeScdnDomainTopReferVisitResult(outcome.result()));
+	else
+		return DescribeScdnDomainTopReferVisitOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainTopReferVisitAsync(const DescribeScdnDomainTopReferVisitRequest& request, const DescribeScdnDomainTopReferVisitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainTopReferVisit(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainTopReferVisitOutcomeCallable ScdnClient::describeScdnDomainTopReferVisitCallable(const DescribeScdnDomainTopReferVisitRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainTopReferVisitOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainTopReferVisit(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::DescribeScdnDomainUvDataOutcome ScdnClient::describeScdnDomainUvData(const DescribeScdnDomainUvDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +405,42 @@ ScdnClient::DescribeScdnDomainUvDataOutcomeCallable ScdnClient::describeScdnDoma
 			[this, request]()
 			{
 			return this->describeScdnDomainUvData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::DescribeScdnDomainRegionDataOutcome ScdnClient::describeScdnDomainRegionData(const DescribeScdnDomainRegionDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainRegionDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainRegionDataOutcome(DescribeScdnDomainRegionDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainRegionDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainRegionDataAsync(const DescribeScdnDomainRegionDataRequest& request, const DescribeScdnDomainRegionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainRegionData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainRegionDataOutcomeCallable ScdnClient::describeScdnDomainRegionDataCallable(const DescribeScdnDomainRegionDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainRegionDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainRegionData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +519,42 @@ ScdnClient::DescribeScdnDomainConfigsOutcomeCallable ScdnClient::describeScdnDom
 	return task->get_future();
 }
 
+ScdnClient::DescribeScdnDomainRealTimeBpsDataOutcome ScdnClient::describeScdnDomainRealTimeBpsData(const DescribeScdnDomainRealTimeBpsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainRealTimeBpsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainRealTimeBpsDataOutcome(DescribeScdnDomainRealTimeBpsDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainRealTimeBpsDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainRealTimeBpsDataAsync(const DescribeScdnDomainRealTimeBpsDataRequest& request, const DescribeScdnDomainRealTimeBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainRealTimeBpsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainRealTimeBpsDataOutcomeCallable ScdnClient::describeScdnDomainRealTimeBpsDataCallable(const DescribeScdnDomainRealTimeBpsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainRealTimeBpsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainRealTimeBpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::SetScdnDomainCertificateOutcome ScdnClient::setScdnDomainCertificate(const SetScdnDomainCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +621,78 @@ ScdnClient::BatchDeleteScdnDomainConfigsOutcomeCallable ScdnClient::batchDeleteS
 			[this, request]()
 			{
 			return this->batchDeleteScdnDomainConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::DescribeScdnDomainRealTimeSrcTrafficDataOutcome ScdnClient::describeScdnDomainRealTimeSrcTrafficData(const DescribeScdnDomainRealTimeSrcTrafficDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainRealTimeSrcTrafficDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainRealTimeSrcTrafficDataOutcome(DescribeScdnDomainRealTimeSrcTrafficDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainRealTimeSrcTrafficDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainRealTimeSrcTrafficDataAsync(const DescribeScdnDomainRealTimeSrcTrafficDataRequest& request, const DescribeScdnDomainRealTimeSrcTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainRealTimeSrcTrafficData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainRealTimeSrcTrafficDataOutcomeCallable ScdnClient::describeScdnDomainRealTimeSrcTrafficDataCallable(const DescribeScdnDomainRealTimeSrcTrafficDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainRealTimeSrcTrafficDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainRealTimeSrcTrafficData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::DescribeScdnTopDomainsByFlowOutcome ScdnClient::describeScdnTopDomainsByFlow(const DescribeScdnTopDomainsByFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnTopDomainsByFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnTopDomainsByFlowOutcome(DescribeScdnTopDomainsByFlowResult(outcome.result()));
+	else
+		return DescribeScdnTopDomainsByFlowOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnTopDomainsByFlowAsync(const DescribeScdnTopDomainsByFlowRequest& request, const DescribeScdnTopDomainsByFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnTopDomainsByFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnTopDomainsByFlowOutcomeCallable ScdnClient::describeScdnTopDomainsByFlowCallable(const DescribeScdnTopDomainsByFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnTopDomainsByFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnTopDomainsByFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,6 +1275,78 @@ ScdnClient::RefreshScdnObjectCachesOutcomeCallable ScdnClient::refreshScdnObject
 	return task->get_future();
 }
 
+ScdnClient::DescribeScdnDomainRealTimeTrafficDataOutcome ScdnClient::describeScdnDomainRealTimeTrafficData(const DescribeScdnDomainRealTimeTrafficDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainRealTimeTrafficDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainRealTimeTrafficDataOutcome(DescribeScdnDomainRealTimeTrafficDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainRealTimeTrafficDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainRealTimeTrafficDataAsync(const DescribeScdnDomainRealTimeTrafficDataRequest& request, const DescribeScdnDomainRealTimeTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainRealTimeTrafficData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainRealTimeTrafficDataOutcomeCallable ScdnClient::describeScdnDomainRealTimeTrafficDataCallable(const DescribeScdnDomainRealTimeTrafficDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainRealTimeTrafficDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainRealTimeTrafficData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::DescribeScdnDomainRealTimeQpsDataOutcome ScdnClient::describeScdnDomainRealTimeQpsData(const DescribeScdnDomainRealTimeQpsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainRealTimeQpsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainRealTimeQpsDataOutcome(DescribeScdnDomainRealTimeQpsDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainRealTimeQpsDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainRealTimeQpsDataAsync(const DescribeScdnDomainRealTimeQpsDataRequest& request, const DescribeScdnDomainRealTimeQpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainRealTimeQpsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainRealTimeQpsDataOutcomeCallable ScdnClient::describeScdnDomainRealTimeQpsDataCallable(const DescribeScdnDomainRealTimeQpsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainRealTimeQpsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainRealTimeQpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::DescribeScdnDomainCertificateInfoOutcome ScdnClient::describeScdnDomainCertificateInfo(const DescribeScdnDomainCertificateInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,6 +1383,42 @@ ScdnClient::DescribeScdnDomainCertificateInfoOutcomeCallable ScdnClient::describ
 	return task->get_future();
 }
 
+ScdnClient::DescribeScdnDomainRealTimeHttpCodeDataOutcome ScdnClient::describeScdnDomainRealTimeHttpCodeData(const DescribeScdnDomainRealTimeHttpCodeDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainRealTimeHttpCodeDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainRealTimeHttpCodeDataOutcome(DescribeScdnDomainRealTimeHttpCodeDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainRealTimeHttpCodeDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainRealTimeHttpCodeDataAsync(const DescribeScdnDomainRealTimeHttpCodeDataRequest& request, const DescribeScdnDomainRealTimeHttpCodeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainRealTimeHttpCodeData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainRealTimeHttpCodeDataOutcomeCallable ScdnClient::describeScdnDomainRealTimeHttpCodeDataCallable(const DescribeScdnDomainRealTimeHttpCodeDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainRealTimeHttpCodeDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainRealTimeHttpCodeData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::CheckScdnServiceOutcome ScdnClient::checkScdnService(const CheckScdnServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1449,42 @@ ScdnClient::CheckScdnServiceOutcomeCallable ScdnClient::checkScdnServiceCallable
 			[this, request]()
 			{
 			return this->checkScdnService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::BatchUpdateScdnDomainOutcome ScdnClient::batchUpdateScdnDomain(const BatchUpdateScdnDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchUpdateScdnDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchUpdateScdnDomainOutcome(BatchUpdateScdnDomainResult(outcome.result()));
+	else
+		return BatchUpdateScdnDomainOutcome(outcome.error());
+}
+
+void ScdnClient::batchUpdateScdnDomainAsync(const BatchUpdateScdnDomainRequest& request, const BatchUpdateScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchUpdateScdnDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::BatchUpdateScdnDomainOutcomeCallable ScdnClient::batchUpdateScdnDomainCallable(const BatchUpdateScdnDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchUpdateScdnDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->batchUpdateScdnDomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1167,6 +1563,78 @@ ScdnClient::DescribeScdnDomainOriginTrafficDataOutcomeCallable ScdnClient::descr
 	return task->get_future();
 }
 
+ScdnClient::DescribeScdnDomainRealTimeReqHitRateDataOutcome ScdnClient::describeScdnDomainRealTimeReqHitRateData(const DescribeScdnDomainRealTimeReqHitRateDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainRealTimeReqHitRateDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainRealTimeReqHitRateDataOutcome(DescribeScdnDomainRealTimeReqHitRateDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainRealTimeReqHitRateDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainRealTimeReqHitRateDataAsync(const DescribeScdnDomainRealTimeReqHitRateDataRequest& request, const DescribeScdnDomainRealTimeReqHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainRealTimeReqHitRateData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainRealTimeReqHitRateDataOutcomeCallable ScdnClient::describeScdnDomainRealTimeReqHitRateDataCallable(const DescribeScdnDomainRealTimeReqHitRateDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainRealTimeReqHitRateDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainRealTimeReqHitRateData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::DescribeScdnDomainRealTimeSrcBpsDataOutcome ScdnClient::describeScdnDomainRealTimeSrcBpsData(const DescribeScdnDomainRealTimeSrcBpsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainRealTimeSrcBpsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainRealTimeSrcBpsDataOutcome(DescribeScdnDomainRealTimeSrcBpsDataResult(outcome.result()));
+	else
+		return DescribeScdnDomainRealTimeSrcBpsDataOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainRealTimeSrcBpsDataAsync(const DescribeScdnDomainRealTimeSrcBpsDataRequest& request, const DescribeScdnDomainRealTimeSrcBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainRealTimeSrcBpsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainRealTimeSrcBpsDataOutcomeCallable ScdnClient::describeScdnDomainRealTimeSrcBpsDataCallable(const DescribeScdnDomainRealTimeSrcBpsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainRealTimeSrcBpsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainRealTimeSrcBpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::DescribeScdnDomainIspDataOutcome ScdnClient::describeScdnDomainIspData(const DescribeScdnDomainIspDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,6 +1701,78 @@ ScdnClient::DescribeScdnRefreshTasksOutcomeCallable ScdnClient::describeScdnRefr
 			[this, request]()
 			{
 			return this->describeScdnRefreshTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::OpenScdnServiceOutcome ScdnClient::openScdnService(const OpenScdnServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenScdnServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenScdnServiceOutcome(OpenScdnServiceResult(outcome.result()));
+	else
+		return OpenScdnServiceOutcome(outcome.error());
+}
+
+void ScdnClient::openScdnServiceAsync(const OpenScdnServiceRequest& request, const OpenScdnServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openScdnService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::OpenScdnServiceOutcomeCallable ScdnClient::openScdnServiceCallable(const OpenScdnServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenScdnServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->openScdnService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::DescribeScdnDomainTopUrlVisitOutcome ScdnClient::describeScdnDomainTopUrlVisit(const DescribeScdnDomainTopUrlVisitRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnDomainTopUrlVisitOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnDomainTopUrlVisitOutcome(DescribeScdnDomainTopUrlVisitResult(outcome.result()));
+	else
+		return DescribeScdnDomainTopUrlVisitOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnDomainTopUrlVisitAsync(const DescribeScdnDomainTopUrlVisitRequest& request, const DescribeScdnDomainTopUrlVisitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnDomainTopUrlVisit(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnDomainTopUrlVisitOutcomeCallable ScdnClient::describeScdnDomainTopUrlVisitCallable(const DescribeScdnDomainTopUrlVisitRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDomainTopUrlVisitOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnDomainTopUrlVisit(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

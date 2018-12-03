@@ -40,12 +40,12 @@ void DescribeScdnDomainIspDataResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allValue = value["Value"]["IspProportionData"];
+	auto allValue = value["Value"]["ISPProportionData"];
 	for (auto value : allValue)
 	{
-		IspProportionData valueObject;
-		if(!value["Isp"].isNull())
-			valueObject.isp = value["Isp"].asString();
+		ISPProportionData valueObject;
+		if(!value["ISP"].isNull())
+			valueObject.iSP = value["ISP"].asString();
 		if(!value["Proportion"].isNull())
 			valueObject.proportion = value["Proportion"].asString();
 		if(!value["IspEname"].isNull())
@@ -60,6 +60,8 @@ void DescribeScdnDomainIspDataResult::parse(const std::string &payload)
 			valueObject.qps = value["Qps"].asString();
 		if(!value["AvgResponseRate"].isNull())
 			valueObject.avgResponseRate = value["AvgResponseRate"].asString();
+		if(!value["ReqErrRate"].isNull())
+			valueObject.reqErrRate = value["ReqErrRate"].asString();
 		if(!value["TotalBytes"].isNull())
 			valueObject.totalBytes = value["TotalBytes"].asString();
 		if(!value["BytesProportion"].isNull())
@@ -89,7 +91,7 @@ std::string DescribeScdnDomainIspDataResult::getDomainName()const
 	return domainName_;
 }
 
-std::vector<DescribeScdnDomainIspDataResult::IspProportionData> DescribeScdnDomainIspDataResult::getValue()const
+std::vector<DescribeScdnDomainIspDataResult::ISPProportionData> DescribeScdnDomainIspDataResult::getValue()const
 {
 	return value_;
 }
