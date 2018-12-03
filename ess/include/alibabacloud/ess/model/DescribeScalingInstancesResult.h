@@ -39,7 +39,9 @@ namespace AlibabaCloud
 					std::string scalingGroupId;
 					std::string healthStatus;
 					std::string creationTime;
+					std::string launchTemplateVersion;
 					std::string lifecycleState;
+					std::string launchTemplateId;
 					std::string scalingConfigurationId;
 					std::string creationType;
 				};

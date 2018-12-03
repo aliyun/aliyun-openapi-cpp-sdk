@@ -60,6 +60,10 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.hostName = value["HostName"].asString();
 		if(!value["InstanceType"].isNull())
 			scalingConfigurationsObject.instanceType = value["InstanceType"].asString();
+		if(!value["Cpu"].isNull())
+			scalingConfigurationsObject.cpu = std::stoi(value["Cpu"].asString());
+		if(!value["Memory"].isNull())
+			scalingConfigurationsObject.memory = std::stoi(value["Memory"].asString());
 		if(!value["InstanceGeneration"].isNull())
 			scalingConfigurationsObject.instanceGeneration = value["InstanceGeneration"].asString();
 		if(!value["SecurityGroupId"].isNull())

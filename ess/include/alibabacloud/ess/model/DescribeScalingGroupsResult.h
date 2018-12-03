@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					int removingWaitCapacity;
 					int protectedCapacity;
 					int standbyCapacity;
+					std::string scalingPolicy;
 					int removingCapacity;
 					std::vector<std::string> vSwitchIds;
 					int pendingCapacity;
@@ -59,6 +60,7 @@ namespace AlibabaCloud
 					std::string launchTemplateVersion;
 					std::string creationTime;
 					std::string multiAZPolicy;
+					int stoppedCapacity;
 					std::string regionId;
 					std::vector<std::string> dBInstanceIds;
 					std::string healthCheckType;

@@ -68,6 +68,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getLaunchTemplateVersion()const;
 				void setLaunchTemplateVersion(const std::string& launchTemplateVersion);
+				std::string getScalingPolicy()const;
+				void setScalingPolicy(const std::string& scalingPolicy);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getVSwitchId()const;
@@ -98,6 +100,7 @@ namespace AlibabaCloud
 				int minSize_;
 				long ownerId_;
 				std::string launchTemplateVersion_;
+				std::string scalingPolicy_;
 				std::string accessKeyId_;
 				std::string vSwitchId_;
 				std::string regionId_;

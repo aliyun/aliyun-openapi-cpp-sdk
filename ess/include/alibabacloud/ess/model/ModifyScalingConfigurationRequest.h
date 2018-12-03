@@ -50,12 +50,16 @@ namespace AlibabaCloud
 
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
+				int getMemory()const;
+				void setMemory(int memory);
 				std::string getIoOptimized()const;
 				void setIoOptimized(const std::string& ioOptimized);
 				std::vector<std::string> getInstanceTypes()const;
 				void setInstanceTypes(const std::vector<std::string>& instanceTypes);
 				int getInternetMaxBandwidthOut()const;
 				void setInternetMaxBandwidthOut(int internetMaxBandwidthOut);
+				std::string getSecurityGroupId()const;
+				void setSecurityGroupId(const std::string& securityGroupId);
 				std::string getKeyPairName()const;
 				void setKeyPairName(const std::string& keyPairName);
 				std::vector<SpotPriceLimit> getSpotPriceLimit()const;
@@ -72,10 +76,16 @@ namespace AlibabaCloud
 				void setPasswordInherit(bool passwordInherit);
 				std::string getImageName()const;
 				void setImageName(const std::string& imageName);
+				bool getOverride()const;
+				void setOverride(bool override);
+				std::string getDeploymentSetId()const;
+				void setDeploymentSetId(const std::string& deploymentSetId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				int getCpu()const;
+				void setCpu(int cpu);
 				std::string getRamRoleName()const;
 				void setRamRoleName(const std::string& ramRoleName);
 				long getOwnerId()const;
@@ -101,9 +111,11 @@ namespace AlibabaCloud
 
             private:
 				std::string imageId_;
+				int memory_;
 				std::string ioOptimized_;
 				std::vector<std::string> instanceTypes_;
 				int internetMaxBandwidthOut_;
+				std::string securityGroupId_;
 				std::string keyPairName_;
 				std::vector<SpotPriceLimit> spotPriceLimit_;
 				std::string systemDiskCategory_;
@@ -112,8 +124,11 @@ namespace AlibabaCloud
 				std::string hostName_;
 				bool passwordInherit_;
 				std::string imageName_;
+				bool override_;
+				std::string deploymentSetId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				int cpu_;
 				std::string ramRoleName_;
 				long ownerId_;
 				std::vector<DataDisk> dataDisk_;

@@ -56,6 +56,8 @@ namespace AlibabaCloud
 					std::vector<ScalingConfiguration::DataDisk> dataDisks;
 					int systemDiskSize;
 					std::string userData;
+					int memory;
+					int cpu;
 					std::string lifecycleState;
 					std::string ramRoleName;
 					std::string imageId;

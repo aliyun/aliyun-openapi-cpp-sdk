@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setInstanceId20(const std::string& instanceId20);
 				std::string getInstanceId1()const;
 				void setInstanceId1(const std::string& instanceId1);
+				std::string getRemovePolicy()const;
+				void setRemovePolicy(const std::string& removePolicy);
 				std::string getInstanceId3()const;
 				void setInstanceId3(const std::string& instanceId3);
 				std::string getResourceOwnerAccount()const;
@@ -97,6 +99,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string instanceId20_;
 				std::string instanceId1_;
+				std::string removePolicy_;
 				std::string instanceId3_;
 				std::string resourceOwnerAccount_;
 				std::string instanceId2_;

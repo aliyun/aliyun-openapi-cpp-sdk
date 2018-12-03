@@ -92,6 +92,10 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.multiAZPolicy = value["MultiAZPolicy"].asString();
 		if(!value["HealthCheckType"].isNull())
 			scalingGroupsObject.healthCheckType = value["HealthCheckType"].asString();
+		if(!value["ScalingPolicy"].isNull())
+			scalingGroupsObject.scalingPolicy = value["ScalingPolicy"].asString();
+		if(!value["StoppedCapacity"].isNull())
+			scalingGroupsObject.stoppedCapacity = std::stoi(value["StoppedCapacity"].asString());
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			scalingGroupsObject.vSwitchIds.push_back(value.asString());

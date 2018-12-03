@@ -50,6 +50,8 @@ namespace AlibabaCloud
 
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
+				int getMemory()const;
+				void setMemory(int memory);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
 				std::vector<std::string> getInstanceTypes()const;
@@ -74,16 +76,22 @@ namespace AlibabaCloud
 				void setUserData(const std::string& userData);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
+				std::string getPassword()const;
+				void setPassword(const std::string& password);
 				bool getPasswordInherit()const;
 				void setPasswordInherit(bool passwordInherit);
 				std::string getImageName()const;
 				void setImageName(const std::string& imageName);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getDeploymentSetId()const;
+				void setDeploymentSetId(const std::string& deploymentSetId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				int getCpu()const;
+				void setCpu(int cpu);
 				std::string getRamRoleName()const;
 				void setRamRoleName(const std::string& ramRoleName);
 				long getOwnerId()const;
@@ -109,6 +117,7 @@ namespace AlibabaCloud
 
             private:
 				std::string imageId_;
+				int memory_;
 				std::string scalingGroupId_;
 				std::vector<std::string> instanceTypes_;
 				std::string ioOptimized_;
@@ -121,11 +130,14 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string userData_;
 				std::string hostName_;
+				std::string password_;
 				bool passwordInherit_;
 				std::string imageName_;
 				std::string instanceType_;
+				std::string deploymentSetId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				int cpu_;
 				std::string ramRoleName_;
 				long ownerId_;
 				std::vector<DataDisk> dataDisk_;

@@ -59,8 +59,6 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/DescribeLifecycleHooksResult.h
 	include/alibabacloud/ess/model/ModifyAlarmRequest.h
 	include/alibabacloud/ess/model/ModifyAlarmResult.h
-	include/alibabacloud/ess/model/DescribeAccountAttributesRequest.h
-	include/alibabacloud/ess/model/DescribeAccountAttributesResult.h
 	include/alibabacloud/ess/model/DeleteAlarmRequest.h
 	include/alibabacloud/ess/model/DeleteAlarmResult.h
 	include/alibabacloud/ess/model/DescribeScalingActivityDetailRequest.h
@@ -180,8 +178,6 @@ set(ess_src
 	src/model/DescribeLifecycleHooksResult.cc
 	src/model/ModifyAlarmRequest.cc
 	src/model/ModifyAlarmResult.cc
-	src/model/DescribeAccountAttributesRequest.cc
-	src/model/DescribeAccountAttributesResult.cc
 	src/model/DeleteAlarmRequest.cc
 	src/model/DeleteAlarmResult.cc
 	src/model/DescribeScalingActivityDetailRequest.cc

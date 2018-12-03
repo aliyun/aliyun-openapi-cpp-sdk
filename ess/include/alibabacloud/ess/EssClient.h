@@ -60,8 +60,6 @@
 #include "model/DescribeLifecycleHooksResult.h"
 #include "model/ModifyAlarmRequest.h"
 #include "model/ModifyAlarmResult.h"
-#include "model/DescribeAccountAttributesRequest.h"
-#include "model/DescribeAccountAttributesResult.h"
 #include "model/DeleteAlarmRequest.h"
 #include "model/DeleteAlarmResult.h"
 #include "model/DescribeScalingActivityDetailRequest.h"
@@ -206,9 +204,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyAlarmResult> ModifyAlarmOutcome;
 			typedef std::future<ModifyAlarmOutcome> ModifyAlarmOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::ModifyAlarmRequest&, const ModifyAlarmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAccountAttributesResult> DescribeAccountAttributesOutcome;
-			typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
-			typedef std::function<void(const EssClient*, const Model::DescribeAccountAttributesRequest&, const DescribeAccountAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountAttributesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAlarmResult> DeleteAlarmOutcome;
 			typedef std::future<DeleteAlarmOutcome> DeleteAlarmOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DeleteAlarmRequest&, const DeleteAlarmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmAsyncHandler;
@@ -388,9 +383,6 @@ namespace AlibabaCloud
 			ModifyAlarmOutcome modifyAlarm(const Model::ModifyAlarmRequest &request)const;
 			void modifyAlarmAsync(const Model::ModifyAlarmRequest& request, const ModifyAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAlarmOutcomeCallable modifyAlarmCallable(const Model::ModifyAlarmRequest& request) const;
-			DescribeAccountAttributesOutcome describeAccountAttributes(const Model::DescribeAccountAttributesRequest &request)const;
-			void describeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAccountAttributesOutcomeCallable describeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
 			DeleteAlarmOutcome deleteAlarm(const Model::DeleteAlarmRequest &request)const;
 			void deleteAlarmAsync(const Model::DeleteAlarmRequest& request, const DeleteAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAlarmOutcomeCallable deleteAlarmCallable(const Model::DeleteAlarmRequest& request) const;

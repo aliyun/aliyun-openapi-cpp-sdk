@@ -158,6 +158,17 @@ void CreateScalingGroupRequest::setLaunchTemplateVersion(const std::string& laun
 	setParameter("LaunchTemplateVersion", launchTemplateVersion);
 }
 
+std::string CreateScalingGroupRequest::getScalingPolicy()const
+{
+	return scalingPolicy_;
+}
+
+void CreateScalingGroupRequest::setScalingPolicy(const std::string& scalingPolicy)
+{
+	scalingPolicy_ = scalingPolicy;
+	setParameter("ScalingPolicy", scalingPolicy);
+}
+
 std::string CreateScalingGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

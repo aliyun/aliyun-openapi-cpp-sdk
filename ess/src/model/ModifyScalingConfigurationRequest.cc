@@ -36,6 +36,17 @@ void ModifyScalingConfigurationRequest::setImageId(const std::string& imageId)
 	setParameter("ImageId", imageId);
 }
 
+int ModifyScalingConfigurationRequest::getMemory()const
+{
+	return memory_;
+}
+
+void ModifyScalingConfigurationRequest::setMemory(int memory)
+{
+	memory_ = memory;
+	setParameter("Memory", std::to_string(memory));
+}
+
 std::string ModifyScalingConfigurationRequest::getIoOptimized()const
 {
 	return ioOptimized_;
@@ -68,6 +79,17 @@ void ModifyScalingConfigurationRequest::setInternetMaxBandwidthOut(int internetM
 {
 	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
 	setParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
+}
+
+std::string ModifyScalingConfigurationRequest::getSecurityGroupId()const
+{
+	return securityGroupId_;
+}
+
+void ModifyScalingConfigurationRequest::setSecurityGroupId(const std::string& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
 std::string ModifyScalingConfigurationRequest::getKeyPairName()const
@@ -164,6 +186,28 @@ void ModifyScalingConfigurationRequest::setImageName(const std::string& imageNam
 	setParameter("ImageName", imageName);
 }
 
+bool ModifyScalingConfigurationRequest::getOverride()const
+{
+	return override_;
+}
+
+void ModifyScalingConfigurationRequest::setOverride(bool override)
+{
+	override_ = override;
+	setParameter("Override", std::to_string(override));
+}
+
+std::string ModifyScalingConfigurationRequest::getDeploymentSetId()const
+{
+	return deploymentSetId_;
+}
+
+void ModifyScalingConfigurationRequest::setDeploymentSetId(const std::string& deploymentSetId)
+{
+	deploymentSetId_ = deploymentSetId;
+	setParameter("DeploymentSetId", deploymentSetId);
+}
+
 std::string ModifyScalingConfigurationRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -184,6 +228,17 @@ void ModifyScalingConfigurationRequest::setOwnerAccount(const std::string& owner
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+int ModifyScalingConfigurationRequest::getCpu()const
+{
+	return cpu_;
+}
+
+void ModifyScalingConfigurationRequest::setCpu(int cpu)
+{
+	cpu_ = cpu;
+	setParameter("Cpu", std::to_string(cpu));
 }
 
 std::string ModifyScalingConfigurationRequest::getRamRoleName()const

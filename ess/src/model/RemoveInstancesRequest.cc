@@ -113,6 +113,17 @@ void RemoveInstancesRequest::setInstanceId1(const std::string& instanceId1)
 	setParameter("InstanceId1", instanceId1);
 }
 
+std::string RemoveInstancesRequest::getRemovePolicy()const
+{
+	return removePolicy_;
+}
+
+void RemoveInstancesRequest::setRemovePolicy(const std::string& removePolicy)
+{
+	removePolicy_ = removePolicy;
+	setParameter("RemovePolicy", removePolicy);
+}
+
 std::string RemoveInstancesRequest::getInstanceId3()const
 {
 	return instanceId3_;

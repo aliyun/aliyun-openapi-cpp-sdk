@@ -36,6 +36,17 @@ void CreateScalingConfigurationRequest::setImageId(const std::string& imageId)
 	setParameter("ImageId", imageId);
 }
 
+int CreateScalingConfigurationRequest::getMemory()const
+{
+	return memory_;
+}
+
+void CreateScalingConfigurationRequest::setMemory(int memory)
+{
+	memory_ = memory;
+	setParameter("Memory", std::to_string(memory));
+}
+
 std::string CreateScalingConfigurationRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;
@@ -175,6 +186,17 @@ void CreateScalingConfigurationRequest::setHostName(const std::string& hostName)
 	setParameter("HostName", hostName);
 }
 
+std::string CreateScalingConfigurationRequest::getPassword()const
+{
+	return password_;
+}
+
+void CreateScalingConfigurationRequest::setPassword(const std::string& password)
+{
+	password_ = password;
+	setParameter("Password", password);
+}
+
 bool CreateScalingConfigurationRequest::getPasswordInherit()const
 {
 	return passwordInherit_;
@@ -208,6 +230,17 @@ void CreateScalingConfigurationRequest::setInstanceType(const std::string& insta
 	setParameter("InstanceType", instanceType);
 }
 
+std::string CreateScalingConfigurationRequest::getDeploymentSetId()const
+{
+	return deploymentSetId_;
+}
+
+void CreateScalingConfigurationRequest::setDeploymentSetId(const std::string& deploymentSetId)
+{
+	deploymentSetId_ = deploymentSetId;
+	setParameter("DeploymentSetId", deploymentSetId);
+}
+
 std::string CreateScalingConfigurationRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -228,6 +261,17 @@ void CreateScalingConfigurationRequest::setOwnerAccount(const std::string& owner
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+int CreateScalingConfigurationRequest::getCpu()const
+{
+	return cpu_;
+}
+
+void CreateScalingConfigurationRequest::setCpu(int cpu)
+{
+	cpu_ = cpu;
+	setParameter("Cpu", std::to_string(cpu));
 }
 
 std::string CreateScalingConfigurationRequest::getRamRoleName()const

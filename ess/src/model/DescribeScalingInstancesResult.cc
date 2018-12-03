@@ -60,6 +60,10 @@ void DescribeScalingInstancesResult::parse(const std::string &payload)
 			scalingInstancesObject.creationTime = value["CreationTime"].asString();
 		if(!value["CreationType"].isNull())
 			scalingInstancesObject.creationType = value["CreationType"].asString();
+		if(!value["LaunchTemplateId"].isNull())
+			scalingInstancesObject.launchTemplateId = value["LaunchTemplateId"].asString();
+		if(!value["LaunchTemplateVersion"].isNull())
+			scalingInstancesObject.launchTemplateVersion = value["LaunchTemplateVersion"].asString();
 		scalingInstances_.push_back(scalingInstancesObject);
 	}
 	if(!value["TotalCount"].isNull())
