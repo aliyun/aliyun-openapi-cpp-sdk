@@ -51,8 +51,6 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getAoneId()const;
-				void setAoneId(const std::string& aoneId);
 				std::string getRequestContent()const;
 				void setRequestContent(const std::string& requestContent);
 				long getLimit()const;
@@ -67,8 +65,8 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
-				std::string getMethod()const;
-				void setMethod(const std::string& method);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getCallerBid()const;
@@ -85,8 +83,6 @@ namespace AlibabaCloud
 				void setSecurity_transport(bool security_transport);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
-				std::string getCategory()const;
-				void setCategory(const std::string& category);
 
             private:
 				long callerParentId_;
@@ -97,7 +93,6 @@ namespace AlibabaCloud
 				std::string callerType_;
 				std::string accessKeyId_;
 				std::string securityToken_;
-				std::string aoneId_;
 				std::string requestContent_;
 				long limit_;
 				std::string callerBidEmail_;
@@ -105,7 +100,7 @@ namespace AlibabaCloud
 				long callerUid_;
 				std::string app_ip_;
 				std::string popProduct_;
-				std::string method_;
+				std::string product_;
 				std::string endTime_;
 				std::string callerBid_;
 				long ownerId_;
@@ -114,7 +109,6 @@ namespace AlibabaCloud
 				bool ak_mfa_present_;
 				bool security_transport_;
 				std::string requestId_;
-				std::string category_;
 
 			};
 		}

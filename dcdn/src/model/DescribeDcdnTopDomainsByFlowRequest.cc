@@ -113,17 +113,6 @@ void DescribeDcdnTopDomainsByFlowRequest::setSecurityToken(const std::string& se
 	setParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeDcdnTopDomainsByFlowRequest::getAoneId()const
-{
-	return aoneId_;
-}
-
-void DescribeDcdnTopDomainsByFlowRequest::setAoneId(const std::string& aoneId)
-{
-	aoneId_ = aoneId;
-	setParameter("AoneId", aoneId);
-}
-
 std::string DescribeDcdnTopDomainsByFlowRequest::getRequestContent()const
 {
 	return requestContent_;
@@ -201,15 +190,15 @@ void DescribeDcdnTopDomainsByFlowRequest::setPopProduct(const std::string& popPr
 	setParameter("PopProduct", popProduct);
 }
 
-std::string DescribeDcdnTopDomainsByFlowRequest::getMethod()const
+std::string DescribeDcdnTopDomainsByFlowRequest::getProduct()const
 {
-	return method_;
+	return product_;
 }
 
-void DescribeDcdnTopDomainsByFlowRequest::setMethod(const std::string& method)
+void DescribeDcdnTopDomainsByFlowRequest::setProduct(const std::string& product)
 {
-	method_ = method;
-	setParameter("Method", method);
+	product_ = product;
+	setParameter("Product", product);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getEndTime()const
@@ -298,16 +287,5 @@ void DescribeDcdnTopDomainsByFlowRequest::setRequestId(const std::string& reques
 {
 	requestId_ = requestId;
 	setParameter("RequestId", requestId);
-}
-
-std::string DescribeDcdnTopDomainsByFlowRequest::getCategory()const
-{
-	return category_;
-}
-
-void DescribeDcdnTopDomainsByFlowRequest::setCategory(const std::string& category)
-{
-	category_ = category;
-	setParameter("Category", category);
 }
 

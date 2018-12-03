@@ -344,14 +344,3 @@ void DescribeDcdnDomainTrafficDataRequest::setInterval(const std::string& interv
 	setParameter("Interval", interval);
 }
 
-std::string DescribeDcdnDomainTrafficDataRequest::getFields()const
-{
-	return fields_;
-}
-
-void DescribeDcdnDomainTrafficDataRequest::setFields(const std::string& fields)
-{
-	fields_ = fields;
-	setParameter("Fields", fields);
-}
-

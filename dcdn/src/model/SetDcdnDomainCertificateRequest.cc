@@ -25,6 +25,17 @@ SetDcdnDomainCertificateRequest::SetDcdnDomainCertificateRequest() :
 SetDcdnDomainCertificateRequest::~SetDcdnDomainCertificateRequest()
 {}
 
+std::string SetDcdnDomainCertificateRequest::getForceSet()const
+{
+	return forceSet_;
+}
+
+void SetDcdnDomainCertificateRequest::setForceSet(const std::string& forceSet)
+{
+	forceSet_ = forceSet;
+	setParameter("ForceSet", forceSet);
+}
+
 std::string SetDcdnDomainCertificateRequest::getSecurityToken()const
 {
 	return securityToken_;

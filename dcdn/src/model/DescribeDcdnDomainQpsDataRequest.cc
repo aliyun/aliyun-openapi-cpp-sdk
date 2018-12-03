@@ -344,14 +344,3 @@ void DescribeDcdnDomainQpsDataRequest::setInterval(const std::string& interval)
 	setParameter("Interval", interval);
 }
 
-std::string DescribeDcdnDomainQpsDataRequest::getFields()const
-{
-	return fields_;
-}
-
-void DescribeDcdnDomainQpsDataRequest::setFields(const std::string& fields)
-{
-	fields_ = fields;
-	setParameter("Fields", fields);
-}
-

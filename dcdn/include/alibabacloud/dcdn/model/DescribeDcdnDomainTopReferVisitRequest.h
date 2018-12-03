@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_SETDCDNDOMAINCERTIFICATEREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_SETDCDNDOMAINCERTIFICATEREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINTOPREFERVISITREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINTOPREFERVISITREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,51 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT SetDcdnDomainCertificateRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainTopReferVisitRequest : public RpcServiceRequest
 			{
 
 			public:
-				SetDcdnDomainCertificateRequest();
-				~SetDcdnDomainCertificateRequest();
+				DescribeDcdnDomainTopReferVisitRequest();
+				~DescribeDcdnDomainTopReferVisitRequest();
 
-				std::string getForceSet()const;
-				void setForceSet(const std::string& forceSet);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getCertType()const;
-				void setCertType(const std::string& certType);
-				std::string getSSLPub()const;
-				void setSSLPub(const std::string& sSLPub);
-				std::string getCertName()const;
-				void setCertName(const std::string& certName);
-				std::string getSSLProtocol()const;
-				void setSSLProtocol(const std::string& sSLProtocol);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
+				std::string getSortBy()const;
+				void setSortBy(const std::string& sortBy);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getSSLPri()const;
-				void setSSLPri(const std::string& sSLPri);
 
             private:
-				std::string forceSet_;
 				std::string securityToken_;
-				std::string certType_;
-				std::string sSLPub_;
-				std::string certName_;
-				std::string sSLProtocol_;
 				std::string domainName_;
+				std::string sortBy_;
+				std::string startTime_;
 				long ownerId_;
-				std::string region_;
 				std::string accessKeyId_;
-				std::string sSLPri_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_SETDCDNDOMAINCERTIFICATEREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINTOPREFERVISITREQUEST_H_

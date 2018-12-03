@@ -25,6 +25,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnUserResourcePackageResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshQuotaRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshQuotaResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainTopUrlVisitRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainTopUrlVisitResult.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainCertificateRequest.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainCertificateResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainLogRequest.h
@@ -43,6 +45,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/UpdateDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDomainRequest.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDomainResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketTrafficDataRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketTrafficDataResult.h
 	include/alibabacloud/dcdn/model/BatchDeleteDcdnDomainConfigsRequest.h
 	include/alibabacloud/dcdn/model/BatchDeleteDcdnDomainConfigsResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainDetailRequest.h
@@ -57,6 +61,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateListResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateDetailRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateDetailResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketBpsDataRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketBpsDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainOriginTrafficDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainOriginTrafficDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainTrafficDataRequest.h
@@ -77,12 +83,16 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/StartDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserDomainsRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserDomainsResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketHttpCodeDataRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketHttpCodeDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainHttpCodeDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainHttpCodeDataResult.h
 	include/alibabacloud/dcdn/model/AddDcdnDomainRequest.h
 	include/alibabacloud/dcdn/model/AddDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/PreloadDcdnObjectCachesRequest.h
 	include/alibabacloud/dcdn/model/PreloadDcdnObjectCachesResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainTopReferVisitRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainTopReferVisitResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainCnameRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainCnameResult.h
 	include/alibabacloud/dcdn/model/StopDcdnDomainRequest.h
@@ -94,6 +104,8 @@ set(dcdn_src
 	src/model/DescribeDcdnUserResourcePackageResult.cc
 	src/model/DescribeDcdnRefreshQuotaRequest.cc
 	src/model/DescribeDcdnRefreshQuotaResult.cc
+	src/model/DescribeDcdnDomainTopUrlVisitRequest.cc
+	src/model/DescribeDcdnDomainTopUrlVisitResult.cc
 	src/model/SetDcdnDomainCertificateRequest.cc
 	src/model/SetDcdnDomainCertificateResult.cc
 	src/model/DescribeDcdnDomainLogRequest.cc
@@ -112,6 +124,8 @@ set(dcdn_src
 	src/model/UpdateDcdnDomainResult.cc
 	src/model/DeleteDcdnDomainRequest.cc
 	src/model/DeleteDcdnDomainResult.cc
+	src/model/DescribeDcdnDomainWebsocketTrafficDataRequest.cc
+	src/model/DescribeDcdnDomainWebsocketTrafficDataResult.cc
 	src/model/BatchDeleteDcdnDomainConfigsRequest.cc
 	src/model/BatchDeleteDcdnDomainConfigsResult.cc
 	src/model/DescribeDcdnDomainDetailRequest.cc
@@ -126,6 +140,8 @@ set(dcdn_src
 	src/model/DescribeDcdnCertificateListResult.cc
 	src/model/DescribeDcdnCertificateDetailRequest.cc
 	src/model/DescribeDcdnCertificateDetailResult.cc
+	src/model/DescribeDcdnDomainWebsocketBpsDataRequest.cc
+	src/model/DescribeDcdnDomainWebsocketBpsDataResult.cc
 	src/model/DescribeDcdnDomainOriginTrafficDataRequest.cc
 	src/model/DescribeDcdnDomainOriginTrafficDataResult.cc
 	src/model/DescribeDcdnDomainTrafficDataRequest.cc
@@ -146,12 +162,16 @@ set(dcdn_src
 	src/model/StartDcdnDomainResult.cc
 	src/model/DescribeDcdnUserDomainsRequest.cc
 	src/model/DescribeDcdnUserDomainsResult.cc
+	src/model/DescribeDcdnDomainWebsocketHttpCodeDataRequest.cc
+	src/model/DescribeDcdnDomainWebsocketHttpCodeDataResult.cc
 	src/model/DescribeDcdnDomainHttpCodeDataRequest.cc
 	src/model/DescribeDcdnDomainHttpCodeDataResult.cc
 	src/model/AddDcdnDomainRequest.cc
 	src/model/AddDcdnDomainResult.cc
 	src/model/PreloadDcdnObjectCachesRequest.cc
 	src/model/PreloadDcdnObjectCachesResult.cc
+	src/model/DescribeDcdnDomainTopReferVisitRequest.cc
+	src/model/DescribeDcdnDomainTopReferVisitResult.cc
 	src/model/DescribeDcdnDomainCnameRequest.cc
 	src/model/DescribeDcdnDomainCnameResult.cc
 	src/model/StopDcdnDomainRequest.cc

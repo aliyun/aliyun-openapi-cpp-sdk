@@ -201,17 +201,6 @@ void DescribeDcdnDomainLogRequest::setPopProduct(const std::string& popProduct)
 	setParameter("PopProduct", popProduct);
 }
 
-std::string DescribeDcdnDomainLogRequest::getProduct()const
-{
-	return product_;
-}
-
-void DescribeDcdnDomainLogRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
-}
-
 std::string DescribeDcdnDomainLogRequest::getDomainName()const
 {
 	return domainName_;

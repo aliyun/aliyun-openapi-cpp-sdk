@@ -62,7 +62,6 @@ namespace AlibabaCloud
 				long getTotalCount()const;
 				long getPageSize()const;
 				long getPageNumber()const;
-				long getOnlineCount()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -71,7 +70,6 @@ namespace AlibabaCloud
 				long totalCount_;
 				long pageSize_;
 				long pageNumber_;
-				long onlineCount_;
 
 			};
 		}

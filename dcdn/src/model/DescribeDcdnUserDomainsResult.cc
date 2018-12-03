@@ -86,8 +86,6 @@ void DescribeDcdnUserDomainsResult::parse(const std::string &payload)
 		pageSize_ = std::stol(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["OnlineCount"].isNull())
-		onlineCount_ = std::stol(value["OnlineCount"].asString());
 
 }
 
@@ -109,10 +107,5 @@ long DescribeDcdnUserDomainsResult::getPageSize()const
 long DescribeDcdnUserDomainsResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-long DescribeDcdnUserDomainsResult::getOnlineCount()const
-{
-	return onlineCount_;
 }
 
