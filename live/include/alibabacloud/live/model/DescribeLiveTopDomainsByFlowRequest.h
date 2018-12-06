@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEDOMAINUSAGEDATAREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEDOMAINUSAGEDATAREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVETOPDOMAINSBYFLOWREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVETOPDOMAINSBYFLOWREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeDomainUsageDataRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveTopDomainsByFlowRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDomainUsageDataRequest();
-				~DescribeDomainUsageDataRequest();
+				DescribeLiveTopDomainsByFlowRequest();
+				~DescribeLiveTopDomainsByFlowRequest();
 
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
@@ -43,8 +43,6 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
-				std::string getType()const;
-				void setType(const std::string& type);
 				std::string getOwnerIdLoginEmail()const;
 				void setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail);
 				std::string getCallerType()const;
@@ -57,22 +55,20 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getRequestContent()const;
 				void setRequestContent(const std::string& requestContent);
+				long getLimit()const;
+				void setLimit(long limit);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
-				std::string getArea()const;
-				void setArea(const std::string& area);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
 				std::string getProduct()const;
 				void setProduct(const std::string& product);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getCallerBid()const;
@@ -87,33 +83,27 @@ namespace AlibabaCloud
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
-				std::string getField()const;
-				void setField(const std::string& field);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
-				std::string getInterval()const;
-				void setInterval(const std::string& interval);
 
             private:
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string startTime_;
 				std::string proxy_original_source_ip_;
-				std::string type_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string regionId_;
 				std::string requestContent_;
+				long limit_;
 				std::string callerBidEmail_;
 				std::string callerUidEmail_;
 				long callerUid_;
-				std::string area_;
 				std::string app_ip_;
 				std::string popProduct_;
 				std::string product_;
-				std::string domainName_;
 				std::string endTime_;
 				std::string callerBid_;
 				long ownerId_;
@@ -121,12 +111,10 @@ namespace AlibabaCloud
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
-				std::string field_;
 				std::string requestId_;
-				std::string interval_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEDOMAINUSAGEDATAREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVETOPDOMAINSBYFLOWREQUEST_H_

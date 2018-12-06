@@ -50,6 +50,8 @@ void DescribeCasterChannelsResult::parse(const std::string &payload)
 			channelsObject.resourceId = value["ResourceId"].asString();
 		if(!value["StreamUrl"].isNull())
 			channelsObject.streamUrl = value["StreamUrl"].asString();
+		if(!value["RtmpUrl"].isNull())
+			channelsObject.rtmpUrl = value["RtmpUrl"].asString();
 		channels_.push_back(channelsObject);
 	}
 	if(!value["Total"].isNull())

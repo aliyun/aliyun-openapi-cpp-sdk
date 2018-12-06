@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_SENDROOMNOTIFICATIONREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_SENDROOMNOTIFICATIONREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINREALTIMETRAFFICDATAREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINREALTIMETRAFFICDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,19 +28,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT SendRoomNotificationRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainRealTimeTrafficDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				SendRoomNotificationRequest();
-				~SendRoomNotificationRequest();
+				DescribeLiveDomainRealTimeTrafficDataRequest();
+				~DescribeLiveDomainRealTimeTrafficDataRequest();
 
-				std::string getData()const;
-				void setData(const std::string& data);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
+				std::string getLocationNameEn()const;
+				void setLocationNameEn(const std::string& locationNameEn);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getIspNameEn()const;
+				void setIspNameEn(const std::string& ispNameEn);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
 				std::string getOwnerIdLoginEmail()const;
@@ -65,33 +69,35 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
-				std::string getAppUid()const;
-				void setAppUid(const std::string& appUid);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPriority()const;
-				void setPriority(int priority);
 				std::string getVersion()const;
 				void setVersion(const std::string& version);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
 				bool getAk_mfa_present()const;
 				void setAk_mfa_present(bool ak_mfa_present);
-				std::string getRoomId()const;
-				void setRoomId(const std::string& roomId);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
-				std::string getAppId()const;
-				void setAppId(const std::string& appId);
+				std::string getInterval()const;
+				void setInterval(const std::string& interval);
+				std::string getFields()const;
+				void setFields(const std::string& fields);
 
             private:
-				std::string data_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
+				std::string locationNameEn_;
+				std::string startTime_;
+				std::string ispNameEn_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
@@ -104,20 +110,20 @@ namespace AlibabaCloud
 				long callerUid_;
 				std::string app_ip_;
 				std::string popProduct_;
-				std::string appUid_;
+				std::string domainName_;
+				std::string endTime_;
 				std::string callerBid_;
 				long ownerId_;
-				int priority_;
 				std::string version_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
-				std::string roomId_;
 				bool security_transport_;
 				std::string requestId_;
-				std::string appId_;
+				std::string interval_;
+				std::string fields_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_SENDROOMNOTIFICATIONREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINREALTIMETRAFFICDATAREQUEST_H_

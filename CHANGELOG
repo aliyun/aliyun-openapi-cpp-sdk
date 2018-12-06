@@ -1,3 +1,8 @@
+2018-12-06 Version: 1.34.6
+1, Add DescribeLiveDomainRealTimeBpsData, DescribeLiveDomainRealTimeHttpCodeData,DescribeLiveDomainRealTimeTrafficData.
+2, Update DescirbeCasterChannels and DescribeCasterStreamUrl.
+
+
 2018-12-03 Version: 1.34.5
 1, Sync CDN API.
 

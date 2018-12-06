@@ -190,17 +190,6 @@ void SendRoomNotificationRequest::setPopProduct(const std::string& popProduct)
 	setParameter("PopProduct", popProduct);
 }
 
-std::string SendRoomNotificationRequest::getProduct()const
-{
-	return product_;
-}
-
-void SendRoomNotificationRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
-}
-
 std::string SendRoomNotificationRequest::getAppUid()const
 {
 	return appUid_;

@@ -14,41 +14,41 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/DescribeDomainUsageDataResult.h>
+#include <alibabacloud/live/model/DescribeLiveDomainRealTimeBpsDataResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-DescribeDomainUsageDataResult::DescribeDomainUsageDataResult() :
+DescribeLiveDomainRealTimeBpsDataResult::DescribeLiveDomainRealTimeBpsDataResult() :
 	ServiceResult()
 {}
 
-DescribeDomainUsageDataResult::DescribeDomainUsageDataResult(const std::string &payload) :
+DescribeLiveDomainRealTimeBpsDataResult::DescribeLiveDomainRealTimeBpsDataResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeDomainUsageDataResult::~DescribeDomainUsageDataResult()
+DescribeLiveDomainRealTimeBpsDataResult::~DescribeLiveDomainRealTimeBpsDataResult()
 {}
 
-void DescribeDomainUsageDataResult::parse(const std::string &payload)
+void DescribeLiveDomainRealTimeBpsDataResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allUsageDataPerInterval = value["UsageDataPerInterval"]["DataModule"];
-	for (auto value : allUsageDataPerInterval)
+	auto allRealTimeBpsDataPerInterval = value["RealTimeBpsDataPerInterval"]["DataModule"];
+	for (auto value : allRealTimeBpsDataPerInterval)
 	{
-		DataModule usageDataPerIntervalObject;
+		DataModule realTimeBpsDataPerIntervalObject;
 		if(!value["TimeStamp"].isNull())
-			usageDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
+			realTimeBpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
 		if(!value["Value"].isNull())
-			usageDataPerIntervalObject.value = value["Value"].asString();
-		usageDataPerInterval_.push_back(usageDataPerIntervalObject);
+			realTimeBpsDataPerIntervalObject.value = value["Value"].asString();
+		realTimeBpsDataPerInterval_.push_back(realTimeBpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
@@ -56,47 +56,33 @@ void DescribeDomainUsageDataResult::parse(const std::string &payload)
 		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
-	if(!value["Field"].isNull())
-		field_ = value["Field"].asString();
-	if(!value["Area"].isNull())
-		area_ = value["Area"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 
 }
 
-std::vector<DescribeDomainUsageDataResult::DataModule> DescribeDomainUsageDataResult::getUsageDataPerInterval()const
-{
-	return usageDataPerInterval_;
-}
-
-std::string DescribeDomainUsageDataResult::getField()const
-{
-	return field_;
-}
-
-std::string DescribeDomainUsageDataResult::getArea()const
-{
-	return area_;
-}
-
-std::string DescribeDomainUsageDataResult::getEndTime()const
+std::string DescribeLiveDomainRealTimeBpsDataResult::getEndTime()const
 {
 	return endTime_;
 }
 
-std::string DescribeDomainUsageDataResult::getDomainName()const
+std::string DescribeLiveDomainRealTimeBpsDataResult::getDomainName()const
 {
 	return domainName_;
 }
 
-std::string DescribeDomainUsageDataResult::getStartTime()const
+std::string DescribeLiveDomainRealTimeBpsDataResult::getStartTime()const
 {
 	return startTime_;
 }
 
-std::string DescribeDomainUsageDataResult::getDataInterval()const
+std::string DescribeLiveDomainRealTimeBpsDataResult::getDataInterval()const
 {
 	return dataInterval_;
+}
+
+std::vector<DescribeLiveDomainRealTimeBpsDataResult::DataModule> DescribeLiveDomainRealTimeBpsDataResult::getRealTimeBpsDataPerInterval()const
+{
+	return realTimeBpsDataPerInterval_;
 }
 

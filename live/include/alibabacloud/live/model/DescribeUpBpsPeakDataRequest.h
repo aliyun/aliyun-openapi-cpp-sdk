@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBECASTERSTREAMURLREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBECASTERSTREAMURLREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEUPBPSPEAKDATAREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEUPBPSPEAKDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeCasterStreamUrlRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeUpBpsPeakDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeCasterStreamUrlRequest();
-				~DescribeCasterStreamUrlRequest();
+				DescribeUpBpsPeakDataRequest();
+				~DescribeUpBpsPeakDataRequest();
 
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getCasterId()const;
-				void setCasterId(const std::string& casterId);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getDomainSwitch()const;
+				void setDomainSwitch(const std::string& domainSwitch);
 
             private:
 				std::string regionId_;
-				std::string casterId_;
+				std::string domainName_;
+				std::string endTime_;
+				std::string startTime_;
 				long ownerId_;
+				std::string domainSwitch_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBECASTERSTREAMURLREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEUPBPSPEAKDATAREQUEST_H_

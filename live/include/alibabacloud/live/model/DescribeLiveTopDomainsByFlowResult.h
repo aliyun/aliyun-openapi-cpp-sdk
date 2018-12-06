@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEDOMAINUSAGEDATARESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEDOMAINUSAGEDATARESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVETOPDOMAINSBYFLOWRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVETOPDOMAINSBYFLOWRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeDomainUsageDataResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveTopDomainsByFlowResult : public ServiceResult
 			{
 			public:
-				struct DataModule
+				struct TopDomain
 				{
-					std::string value;
-					std::string timeStamp;
+					long maxBps;
+					std::string domainName;
+					std::string maxBpsTime;
+					long rank;
+					std::string totalTraffic;
+					long totalAccess;
+					std::string trafficPercent;
 				};
 
 
-				DescribeDomainUsageDataResult();
-				explicit DescribeDomainUsageDataResult(const std::string &payload);
-				~DescribeDomainUsageDataResult();
-				std::vector<DataModule> getUsageDataPerInterval()const;
-				std::string getField()const;
-				std::string getArea()const;
+				DescribeLiveTopDomainsByFlowResult();
+				explicit DescribeLiveTopDomainsByFlowResult(const std::string &payload);
+				~DescribeLiveTopDomainsByFlowResult();
+				std::vector<TopDomain> getTopDomains()const;
 				std::string getEndTime()const;
-				std::string getDomainName()const;
+				long getDomainOnlineCount()const;
 				std::string getStartTime()const;
-				std::string getDataInterval()const;
+				long getDomainCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DataModule> usageDataPerInterval_;
-				std::string field_;
-				std::string area_;
+				std::vector<TopDomain> topDomains_;
 				std::string endTime_;
-				std::string domainName_;
+				long domainOnlineCount_;
 				std::string startTime_;
-				std::string dataInterval_;
+				long domainCount_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEDOMAINUSAGEDATARESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVETOPDOMAINSBYFLOWRESULT_H_

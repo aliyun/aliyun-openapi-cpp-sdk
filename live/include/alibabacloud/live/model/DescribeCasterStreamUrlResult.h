@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string sceneId;
 					std::vector<CasterStream::StreamInfo> streamInfos;
 					std::string streamUrl;
+					std::string rtmpUrl;
 					int outputType;
 				};
 

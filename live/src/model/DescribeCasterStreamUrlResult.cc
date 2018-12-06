@@ -48,6 +48,8 @@ void DescribeCasterStreamUrlResult::parse(const std::string &payload)
 			casterStreamsObject.sceneId = value["SceneId"].asString();
 		if(!value["StreamUrl"].isNull())
 			casterStreamsObject.streamUrl = value["StreamUrl"].asString();
+		if(!value["RtmpUrl"].isNull())
+			casterStreamsObject.rtmpUrl = value["RtmpUrl"].asString();
 		if(!value["OutputType"].isNull())
 			casterStreamsObject.outputType = std::stoi(value["OutputType"].asString());
 		auto allStreamInfos = value["StreamInfos"]["StreamInfo"];

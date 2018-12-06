@@ -25,6 +25,17 @@ DescribeCasterStreamUrlRequest::DescribeCasterStreamUrlRequest() :
 DescribeCasterStreamUrlRequest::~DescribeCasterStreamUrlRequest()
 {}
 
+std::string DescribeCasterStreamUrlRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeCasterStreamUrlRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeCasterStreamUrlRequest::getCasterId()const
 {
 	return casterId_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBECASTERCHANNELSRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBECASTERCHANNELSRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEUPBPSPEAKOFLINERESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEUPBPSPEAKOFLINERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeCasterChannelsResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeUpBpsPeakOfLineResult : public ServiceResult
 			{
 			public:
-				struct Channel
+				struct DescribeUpBpsPeakOfLine
 				{
-					std::string resourceId;
-					std::string channelId;
-					std::string streamUrl;
-					std::string rtmpUrl;
+					float bandWidth;
+					std::string peakTime;
+					std::string queryTime;
+					std::string statName;
 				};
 
 
-				DescribeCasterChannelsResult();
-				explicit DescribeCasterChannelsResult(const std::string &payload);
-				~DescribeCasterChannelsResult();
-				int getTotal()const;
-				std::vector<Channel> getChannels()const;
+				DescribeUpBpsPeakOfLineResult();
+				explicit DescribeUpBpsPeakOfLineResult(const std::string &payload);
+				~DescribeUpBpsPeakOfLineResult();
+				std::vector<DescribeUpBpsPeakOfLine> getDescribeUpBpsPeakOfLines()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int total_;
-				std::vector<Channel> channels_;
+				std::vector<DescribeUpBpsPeakOfLine> describeUpBpsPeakOfLines_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBECASTERCHANNELSRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEUPBPSPEAKOFLINERESULT_H_
