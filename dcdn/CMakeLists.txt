@@ -27,6 +27,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshQuotaResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainTopUrlVisitRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainTopUrlVisitResult.h
+	include/alibabacloud/dcdn/model/BatchSetDcdnDomainConfigsRequest.h
+	include/alibabacloud/dcdn/model/BatchSetDcdnDomainConfigsResult.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainCertificateRequest.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainCertificateResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainLogRequest.h
@@ -106,6 +108,8 @@ set(dcdn_src
 	src/model/DescribeDcdnRefreshQuotaResult.cc
 	src/model/DescribeDcdnDomainTopUrlVisitRequest.cc
 	src/model/DescribeDcdnDomainTopUrlVisitResult.cc
+	src/model/BatchSetDcdnDomainConfigsRequest.cc
+	src/model/BatchSetDcdnDomainConfigsResult.cc
 	src/model/SetDcdnDomainCertificateRequest.cc
 	src/model/SetDcdnDomainCertificateResult.cc
 	src/model/DescribeDcdnDomainLogRequest.cc
