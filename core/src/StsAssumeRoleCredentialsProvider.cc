@@ -77,7 +77,7 @@ void StsAssumeRoleCredentialsProvider::loadCredentials()
 				std::tm tm = {};
 #if defined(__GNUG__) && __GNUC__ < 5
 				strptime(stsCredentials.expiration.c_str(), "%Y-%m-%dT%H:%M:%SZ", &tm);
-#else			
+#else
 				std::stringstream ss(stsCredentials.expiration);
 				ss >> std::get_time(&tm, "%Y-%m-%dT%H:%M:%SZ");
 #endif

@@ -106,7 +106,7 @@ void Executor::shutdown()
 {
 	if (isShutdown())
 		return;
-	
+
 	{
 		std::lock_guard<std::mutex> locker(tasksQueueMutex_);
 		while (tasksQueue_.size() > 0) {
