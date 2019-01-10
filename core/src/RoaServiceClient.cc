@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -133,7 +133,7 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint, con
 		std::stringstream ss;
 		ss << msg.contentSize();
 		request.setHeader("Content-Length", ss.str());
-		request.setHeader("Content-Type", "application/octet-stream");		
+		request.setHeader("Content-Type", "application/octet-stream");
 		request.setHeader("Content-MD5", ComputeContentMD5(msg.content(),msg.contentSize()));
 	}
 

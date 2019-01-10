@@ -39,6 +39,7 @@ add_executable(core_ut
   alibabacloud_ut.cc
   asynccallercontext_ut.cc
   clientconfiguration_ut.cc
+  commonclient_ut.cc
   commonrequest_ut.cc
   commonresponse_ut.cc
   credentials_ut.cc
@@ -51,6 +52,7 @@ add_executable(core_ut
   httpmessage_ut.cc
   hmacsha1signer_ut.cc
   networkproxy_ut.cc
+  roaserviceclient_ut.cc
   roaservicerequest_ut.cc
   rpcservicerequest_ut.cc
   runnable_ut.cc
