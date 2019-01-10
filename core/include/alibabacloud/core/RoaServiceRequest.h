@@ -26,7 +26,8 @@ namespace AlibabaCloud
 	public:
 		RoaServiceRequest(const std::string &product, const std::string &version);
 		virtual ~RoaServiceRequest();
-
+		using ServiceRequest::setParameter;
+		using ServiceRequest::setContent;
 	};
 }
 #endif // !ALIBABACLOUD_CORE_ROASERVICEREQUEST_H_
