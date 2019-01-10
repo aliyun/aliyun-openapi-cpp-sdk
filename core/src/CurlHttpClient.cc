@@ -104,7 +104,6 @@ HttpClient::HttpResponseOutcome CurlHttpClient::makeRequest(const HttpRequest &r
 		break;
 	}
 	curl_easy_setopt(curlHandle_, CURLOPT_URL, url.c_str());
-	curl_easy_setopt(curlHandle_, CURLOPT_VERBOSE, 1);
 	curl_easy_setopt(curlHandle_, CURLOPT_SSL_VERIFYPEER, 1L);
 	curl_easy_setopt(curlHandle_, CURLOPT_SSL_VERIFYHOST, 2L);
 	curl_easy_setopt(curlHandle_, CURLOPT_HEADERDATA, &response);
