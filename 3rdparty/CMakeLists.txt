@@ -44,9 +44,10 @@ endif()
 ExternalProject_Add(catch
 	URL ${CMAKE_CURRENT_SOURCE_DIR}/catch-2.0.1.hpp
 	URL_HASH MD5=9b3d2cb5c0f9532cddfbbfd0a622f0af
-	DOWNLOAD_NO_EXTRACT 1
-	CONFIGURE_COMMAND ""
+	DOWNLOAD_COMMAND ""
+        CONFIGURE_COMMAND ""
 	BUILD_COMMAND ""
 	INSTALL_COMMAND
-		${CMAKE_COMMAND} -E copy_if_different <DOWNLOADED_FILE> <INSTALL_DIR>/catch.hpp
+		${CMAKE_COMMAND} -E copy_if_different
+		${CMAKE_CURRENT_SOURCE_DIR}/catch-2.0.1.hpp <INSTALL_DIR>/catch.hpp
 	)
