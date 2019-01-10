@@ -11,6 +11,7 @@ install:
   - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
 
 script:
+  - cmake .
   - ./build.sh
   - ./travis_qmake_gcc_cpp11_gcov
   - ./get_code_cov.sh
