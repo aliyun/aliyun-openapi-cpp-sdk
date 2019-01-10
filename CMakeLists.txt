@@ -42,6 +42,11 @@ set(CMAKE_CXX_STANDARD 11)
 
 include(ExternalProject)
 include(GNUInstallDirs)
+include_directories(/usr/local/Cellar/jsoncpp/1.8.4/include)
+include_directories(/usr/local/Cellar/openssl/1.0.2p/include)
+link_directories(/usr/local/opt/openssl/lib)
+link_directories(/usr/local/Cellar/jsoncpp/1.8.4/lib)
+link_directories(/usr/local/Cellar/ossp-uuid/1.6.2_2/lib)
 
 add_subdirectory(3rdparty)
 add_subdirectory(core)
