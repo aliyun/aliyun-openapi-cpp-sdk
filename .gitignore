@@ -1,3 +1,6 @@
+initCoverage.info
+testCoverage.info
+coverageReport/
 .vscode/
-
+ut_build/
 sdk_build/

@@ -1,20 +1,14 @@
+dist: xenial
 sudo: require
 language: cpp
 compiler: gcc
 
-before_install:
-  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-  - sudo apt-get update -qq
-
 install:
-  - sudo apt-get install -qq g++-5
-  - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
+  - sudo apt-get install lcov libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev
 
 script:
-  - cmake .
-  - ./build.sh
-  - ./travis_qmake_gcc_cpp11_gcov
-  - ./get_code_cov.sh
+  - ./unit_test.sh
+  - ./generate_code_cov.sh
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
