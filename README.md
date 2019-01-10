@@ -1,6 +1,8 @@
 # Alibaba Cloud C++ Software Development Kit
 [中文文档](./README_zh.md)
 
+- [![Build Status](https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk)
+
 The Alibaba Cloud C++ Software Development Kit (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
 This document introduces how to obtain and call Alibaba Cloud C++ SDK.
@@ -64,14 +66,14 @@ int main(int argc, char** argv)
 	request.setPageSize(10);
 
 	auto outcome = client.describeInstances(request);
-	if (!outcome.isSuccess()) 
+	if (!outcome.isSuccess())
 	{
 		// Handle exceptions
 		std::cout << outcome.error().errorCode() << std::endl;
 		AlibabaCloud::ShutdownSdk();
 		return -1;
 	}
-	
+
 	std::cout << "totalCount: " << outcome.result().getTotalCount() << std::endl;
 
 	// Close the SDK

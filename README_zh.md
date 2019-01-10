@@ -1,5 +1,7 @@
 # 阿里云开发者C++工具套件
 
+- [![Build Status](https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk)
+
 欢迎使用阿里云开发者工具套件（SDK）。
 
 适用于阿里云的 C++ SDK 提供了一组现代化的 C++（C++ 11 或更高版本）接口，让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
@@ -100,14 +102,14 @@ int main(int argc, char** argv)
 	request.setPageSize(10);
 
 	auto outcome = client.describeInstances(request);
-	if (!outcome.isSuccess()) 
+	if (!outcome.isSuccess())
 	{
 		// 异常处理
 		std::cout << outcome.error().errorCode() << std::endl;
 		AlibabaCloud::ShutdownSdk();
 		return -1;
 	}
-	
+
 	std::cout << "totalCount: " << outcome.result().getTotalCount() << std::endl;
 
 	// 关闭 SDK
