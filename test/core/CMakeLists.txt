@@ -60,7 +60,16 @@ add_executable(core_ut
   servicerequest_ut.cc
   simplecredentialsprovider_ut.cc
   url_ut.cc
-  utils_ut.cc)
+  utils_ut.cc
+
+  location_model_describeendpoints_request_ut.cc
+  location_model_describeendpoints_result_ut.cc
+
+  sts_model_assumerole_request_ut.cc
+  sts_model_assumerole_result_ut.cc
+  sts_model_getcalleridentity_request_ut.cc
+  sts_model_getcalleridentity_result_ut.cc
+  )
 
 set_target_properties(core_ut
   PROPERTIES
