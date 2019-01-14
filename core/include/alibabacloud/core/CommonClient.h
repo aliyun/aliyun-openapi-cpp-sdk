@@ -35,7 +35,7 @@ namespace AlibabaCloud
 		typedef std::future<CommonResponseOutcome> CommonResponseOutcomeCallable;
 		typedef std::function<void(const CommonClient*, const CommonRequest&, const CommonResponseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CommonResponseAsyncHandler;
 		typedef Outcome<Error, std::string> JsonOutcome;
-		
+
 		CommonClient(const Credentials &credentials, const ClientConfiguration &configuration);
 		CommonClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 		CommonClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
@@ -51,7 +51,7 @@ namespace AlibabaCloud
 		HttpRequest buildRoaHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const;
 		HttpRequest buildRpcHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const;
 		JsonOutcome makeRequest(const std::string &endpoint, const CommonRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get)const;
-
+		using CoreClient::asyncExecute;
 	private:
 		std::string canonicalizedQuery(const std::map <std::string, std::string> &params)const;
 		std::string canonicalizedHeaders(const HttpMessage::HeaderCollection &headers)const;

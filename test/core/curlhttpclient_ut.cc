@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 #include "utils.h"
-#include "../include/gtest/gtest.h"
-#include "../include/gmock/gmock.h"
-#include "../../core/include/alibabacloud/core/Url.h"
-#include "../../core/include/alibabacloud/core/HttpRequest.h"
-#include "../../core/include/alibabacloud/core/HttpClient.h"
-#include "../../core/src/CurlHttpClient.h"
+#include "gtest/gtest.h"
+#include "gmock/gmock.h"
+#include "alibabacloud/core/Url.h"
+#include "alibabacloud/core/HttpRequest.h"
+#include "alibabacloud/core/HttpClient.h"
+#include "../src/CurlHttpClient.h"
 
 using namespace std;
 using ::testing::Return;

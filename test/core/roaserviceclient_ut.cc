@@ -4,6 +4,7 @@
 #include "alibabacloud/core/SimpleCredentialsProvider.h"
 #include "alibabacloud/core/RoaServiceClient.h"
 #include "alibabacloud/core/HttpMessage.h"
+#include "alibabacloud/core/HttpRequest.h"
 
 using namespace std;
 using namespace AlibabaCloud;
@@ -25,58 +26,26 @@ namespace AlibabaCloud {
     HttpRequest buildHttpRequest(const std::string & endpoint, const ServiceRequest &msg, HttpRequest::Method method)const {
       return RoaServiceClient::buildHttpRequest(endpoint, msg, method);
     }
-
   };
-
 
   class TestRoaServiceRequest: public ServiceRequest {
    public:
     TestRoaServiceRequest(const std::string &product, const std::string &version):
     ServiceRequest(product, version){}
 
-
-    void addParameter(const ParameterNameType &name, const ParameterValueType &value) {
-      addParameter(name, value);
-    }
-    ParameterValueType parameter(const ParameterNameType &name)const {
-      return parameter(name);
-    }
-    void removeParameter(const ParameterNameType &name) {
-      removeParameter(name);
-    }
-    void setContent(const char *data, size_t size) {
-      setContent(data, size);
-    }
-    void setParameter(const ParameterNameType &name, const ParameterValueType &value) {
-      setParameter(name, value);
-    }
-    void setParameters(const ParameterCollection &params) {
-      setParameters(params);
-    }
-    void setResourcePath(const std::string &path) {
-      setResourcePath(path);
-    }
-    void setProduct(const std::string &product) {
-      setProduct(product);
-    }
-    void setVersion(const std::string &version) {
-      setVersion(version);
-    }
-};
-
+    using ServiceRequest::addParameter;
+    using ServiceRequest::parameter;
+    using ServiceRequest::removeParameter;
+    using ServiceRequest::setContent;
+    using ServiceRequest::setParameter;
+    using ServiceRequest::setParameters;
+    using ServiceRequest::setResourcePath;
+    using ServiceRequest::setProduct;
+    using ServiceRequest::setVersion;
+  };
 }
 
-
-
-
-
-
-
-
-
-
-
-TEST(RoaServiceClient, b0) {
+TEST(RoaServiceClient, basic) {
   const ClientConfiguration config;
 
   std::string key    = "accessKeyId";
@@ -85,65 +54,38 @@ TEST(RoaServiceClient, b0) {
 
   const Credentials credentials(key, secret, token);
 
-  // const CommonClient cc1(credentials, cfg);
-  // CommonClient cc2(std::make_shared<SimpleCredentialsProvider>(credentials), cfg);
-
-
   TestRoaClient client("ecs", std::make_shared<SimpleCredentialsProvider>(credentials), config);
 
   const string product = "ECS";
   const string version = "1.0";
 
   RoaServiceRequest roa_req(product, version);
-  // roa_req.setParameter("key1", "value1");
-  // roa_req.setQueryParameter("query_k1", "query_v1");
-  // string content = "test-content";
-  // roa_req.setContent(content.c_str(), content.length());
 
-  client.makeRequest("cn-shanghai", roa_req, HttpRequest::Method::Get);
+  RoaServiceClient::JsonOutcome out = client.makeRequest("cn-shanghai", roa_req, HttpRequest::Method::Get);
+
+  EXPECT_TRUE(out.error().errorCode() == "NetworkError");
 
   RoaServiceRequest req(product, version);
 
   req.setParameter("a", "b");
   req.setContent("123456789", 9);
-  client.buildHttpRequest("cn-shanghai", req, HttpRequest::Method::Get);
+  HttpRequest http_req = client.buildHttpRequest("cn-shanghai", req, HttpRequest::Method::Get);
 
+  EXPECT_TRUE(http_req.url().toString() == "https://cn-shanghai/?a=b");
+  EXPECT_TRUE(http_req.header("Accept") == "application/json");
+  EXPECT_TRUE(http_req.header("Content-Length") == "9");
+  EXPECT_TRUE(http_req.header("Content-Type") == "application/octet-stream");
+  EXPECT_TRUE(http_req.header("Content-MD5") == "JfnnlDI7RTiF9RgfG2JNCw==");
+  const string date = "Fri, 11 Jan 2019 14:08:39 GMT";
+  EXPECT_TRUE(http_req.header("Date").length() == date.length());
+  EXPECT_TRUE(http_req.header("Host") == "cn-shanghai");
+  EXPECT_TRUE(http_req.header("x-sdk-cient") == "");
+  EXPECT_TRUE(http_req.header("x-acs-region-id") == "cn-hangzhou");
+  EXPECT_TRUE(http_req.header("x-acs-security-token") == token);
+  EXPECT_TRUE(http_req.header("x-acs-signature-method") == "HMAC-SHA1");
+  EXPECT_TRUE(http_req.header("x-acs-signature-version") == "1.0");
+  EXPECT_TRUE(http_req.header("x-acs-version") == "1.0");
+  const string nounce = "8a013b14-7bac-4652-8b5f-c02c8924e4ae";
+  EXPECT_TRUE(http_req.header("x-acs-signature-nonce").length() == nounce.length());
+  EXPECT_TRUE(http_req.header("Authorization").find("acs accessKeyId:") != string::npos);
 }
-
-
-TEST(RoaServiceClient, basic) {
-  const string service = "ECS";
-  const std::string regionId = "cn-shanghai";
-
-  const std::string hostname = "hostname";
-  const std::string user = "user";
-  const std::string password = "password";
-  uint16_t port = 12345;
-  const NetworkProxy proxy(NetworkProxy::Http, hostname, port, user, password);
-
-  HmacSha1Signer sig;
-
-  const std::string access_key = "accessKeyId";
-  const std::string access_secret = "accessKeySecret";
-  const std::string session_token = "sessionToken";
-  Credentials credentials(access_key, access_secret, session_token);
-
-  ClientConfiguration config(regionId, proxy);
-
-  RoaServiceClient roa(service,
-    std::make_shared<SimpleCredentialsProvider>(credentials),
-    config);
-  TestRoaClient client(service, std::make_shared<SimpleCredentialsProvider>(credentials), config);
-
-
-  HttpMessage::HeaderCollection headers;
-  // client.canonicalizedHeaders(headers);
-  // REQUIRE(roa.actionName() == action);
-}
-
-// EcsClient::EcsClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-//   RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
-// {
-//   auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-//   endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ecs");
-// }

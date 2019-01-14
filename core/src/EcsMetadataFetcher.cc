@@ -22,13 +22,6 @@
 
 using namespace AlibabaCloud;
 
-namespace
-{
-	const int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
-	const char* const METADATA_SERVICE_HOST = "100.100.100.200";
-	const char* const URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
-}
-
 EcsMetadataFetcher::EcsMetadataFetcher()
 {
 }
@@ -47,13 +40,13 @@ void EcsMetadataFetcher::setRoleName(const std::string & roleName)
 	roleName_ = roleName;
 }
 
-std::string EcsMetadataFetcher::getMetadata()
+std::string EcsMetadataFetcher::getMetadata(const std::string host, const std::string in_path)
 {
 	std::stringstream path;
-	path << URL_IN_ECS_METADATA << roleName_;
+	path << in_path << roleName_;
 
 	Url credentialUrl;
-	credentialUrl.setHost(METADATA_SERVICE_HOST);
+	credentialUrl.setHost(host);
 	credentialUrl.setPath(path.str());
 
 	auto client = std::make_shared<CurlHttpClient>();

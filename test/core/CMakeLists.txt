@@ -44,6 +44,7 @@ add_executable(core_ut
   commonresponse_ut.cc
   credentials_ut.cc
   curlhttpclient_ut.cc
+  ecsmetadatafetcher_ut.cc
   endpointprovider_ut.cc
   error_ut.cc
   executor_ut.cc
