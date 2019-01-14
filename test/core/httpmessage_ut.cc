@@ -40,17 +40,4 @@ TEST(HttpMessage, perRequest) {
   EXPECT_TRUE(req.bodySize() == body.size());
   EXPECT_TRUE(req.hasBody());
   EXPECT_TRUE(req.body() != nullptr);
-
-
-}
-
-class TestHttpMessage: public HttpMessage {
- public:
-  TestHttpMessage(): HttpMessage(){}
-};
-
-TEST(HttpMessage, A) {
-  TestHttpMessage tm;
-  TestHttpMessage ttm(tm);
-
 }

@@ -19,6 +19,12 @@
 
 #include <string>
 
+namespace {
+	const int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
+	const char* const METADATA_SERVICE_HOST = "100.100.100.200";
+	const char* const URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
+}
+
 namespace AlibabaCloud
 {
 	class EcsMetadataFetcher
@@ -29,8 +35,7 @@ namespace AlibabaCloud
 
 		std::string roleName()const;
 		void setRoleName(const std::string & roleName);
-		
-		std::string getMetadata();
+		std::string getMetadata(const std::string host = METADATA_SERVICE_HOST, const std::string path = URL_IN_ECS_METADATA);
 	private:
 		std::string roleName_;
 	};

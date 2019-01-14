@@ -4,10 +4,12 @@
 #include "gtest/gtest.h"
 #include "../../core/src/Utils.h"
 #include "alibabacloud/core/Config.h"
+#include "alibabacloud/core/AlibabaCloud.h"
 #include "alibabacloud/core/CommonClient.h"
 #include "alibabacloud/core/CommonResponse.h"
 #include "alibabacloud/core/CommonRequest.h"
 #include "alibabacloud/core/SimpleCredentialsProvider.h"
+
 
 using namespace std;
 using namespace AlibabaCloud;
@@ -18,23 +20,23 @@ namespace AlibabaCloud {
       TestCommonClient(const Credentials &credentials, const ClientConfiguration &configuration):
         CommonClient(credentials, configuration)
       {}
-      HttpRequest buildHttp(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) {
-        return CommonClient::buildHttpRequest(endpoint, msg, method);
-      }
-      HttpRequest buildRoa(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) {
-        return CommonClient::buildRoaHttpRequest(endpoint, msg, method);
-      }
-      HttpRequest buildRpc(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) {
-        return CommonClient::buildRpcHttpRequest(endpoint, msg, method);
-      }
-
-      JsonOutcome buildReq(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) {
-        return CommonClient::makeRequest(endpoint, msg, method);
-      }
+      using CommonClient::buildHttpRequest;
+      using CommonClient::buildRoaHttpRequest;
+      using CommonClient::buildRpcHttpRequest;
+      using CommonClient::makeRequest;
+      using CommonClient::asyncExecute;
   };
 }
 
+static int nbr = 0;
+static void task() {
+   nbr |= 0x01;
+}
+
+
 TEST(CommonClient, basic) {
+
+  InitializeSdk();
   const ClientConfiguration cfg;
 
   std::string key    = "accessKeyId";
@@ -50,7 +52,18 @@ TEST(CommonClient, basic) {
   CommonRequest cr;
   cr.setContent("test-content", 12);
 
-  CommonClient::CommonResponseOutcome out = cc1.commonResponse(cr);
+  CommonClient::CommonResponseOutcome out1 = cc1.commonResponse(cr);
+  EXPECT_TRUE(out1.error().errorCode() == "NetworkError");
+  EXPECT_TRUE(out1.result().payload() == "");
+
+  CommonClient::CommonResponseOutcome out2 = cc2.commonResponse(cr);
+  EXPECT_TRUE(out2.error().errorCode() == "NetworkError");
+  EXPECT_TRUE(out2.result().payload() == "");
+
+  CommonClient::CommonResponseOutcome out3 = cc3.commonResponse(cr);
+  EXPECT_TRUE(out3.error().errorCode() == "NetworkError");
+  EXPECT_TRUE(out3.result().payload() == "");
+
 /*
 https://cn-hangzhou/?
    AccessKeyId=accessKeyId
@@ -66,7 +79,7 @@ https://cn-hangzhou/?
 */
 
   TestCommonClient* client = new TestCommonClient(credentials, cfg);
-  HttpRequest r = client->buildHttp("cn-hangzhou", cr, HttpRequest::Method::Post);
+  HttpRequest r = client->buildHttpRequest("cn-hangzhou", cr, HttpRequest::Method::Post);
   EXPECT_TRUE(r.method() == HttpRequest::Method::Post);
   EXPECT_TRUE(r.url().scheme() == "https");
   EXPECT_TRUE(r.url().userName() == "");
@@ -86,11 +99,10 @@ https://cn-hangzhou/?
   EXPECT_TRUE(r.url().query().find("Timestamp=") != string::npos);
   EXPECT_TRUE(r.url().query().find("Version=") != string::npos);
 
-
   cr.setQueryParameter("query_k1", "query_v1");
   cr.setHeaderParameter("header_k1", "header_v1");
 
-  HttpRequest rr = client->buildRoa("cn-shanghai", cr, HttpRequest::Method::Get);
+  HttpRequest rr = client->buildRoaHttpRequest("cn-shanghai", cr, HttpRequest::Method::Get);
   EXPECT_TRUE(rr.method() == HttpRequest::Method::Get);
   EXPECT_TRUE(rr.header("Accept") == "application/json");
   EXPECT_TRUE(rr.url().toString() == "https://cn-shanghai/?header_k1=header_v1");
@@ -109,7 +121,14 @@ https://cn-hangzhou/?
   // acs accessKeyId:JZD81jGWLp1F3ZIkaLp1yuEZmKc=
   EXPECT_TRUE(rr.header("Authorization").find("acs accessKeyId:") != string::npos);
   EXPECT_TRUE(rr.header("unknown-header") == "");
-  HttpRequest rrr = client->buildRpc("cn-hangzhou", cr, HttpRequest::Method::Post);
-  cout << "" <<endl;
+  HttpRequest rrr = client->buildRpcHttpRequest("cn-hangzhou", cr, HttpRequest::Method::Post);
+  EXPECT_TRUE(client->serviceName() == "Common");
 
+  std::function<void()> func(task);
+  Runnable* rf = new Runnable(func);
+  EXPECT_TRUE(nbr == 0);
+  client->asyncExecute(rf);
+  usleep(10000);
+  EXPECT_TRUE(nbr == 1);
+  ShutdownSdk();
 }
