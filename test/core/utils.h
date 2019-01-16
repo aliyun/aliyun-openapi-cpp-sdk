@@ -24,6 +24,14 @@ class utUtils {
     *filename = '\0';
     return;
   }
+
+  std::string get_env(const std::string env) {
+    char* value = getenv(env.c_str());
+    if (value == nullptr) {
+      return std::string();
+    }
+    return std::string(value);
+  }
 };
 
 
