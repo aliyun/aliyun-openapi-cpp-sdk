@@ -51,6 +51,7 @@ namespace AlibabaCloud
 			GetCallerIdentityOutcome getCallerIdentity(const Model::GetCallerIdentityRequest &request)const;
 			void getCallerIdentityAsync(const Model::GetCallerIdentityRequest& request, const GetCallerIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCallerIdentityOutcomeCallable getCallerIdentityCallable(const Model::GetCallerIdentityRequest& request) const;
+			using RpcServiceClient::makeRequest;
 		};
 	}
 }
