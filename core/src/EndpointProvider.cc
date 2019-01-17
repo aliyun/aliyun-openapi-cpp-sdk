@@ -82,8 +82,14 @@ namespace
 		"]}";
 }
 
-EndpointProvider::EndpointProvider(const std::shared_ptr<Location::LocationClient>& locationClient, const std::string regionId, const std::string product, const std::string serviceCode, int durationSeconds) :
-	locationClient_(locationClient),
+EndpointProvider::EndpointProvider(
+	  const Credentials& credentials,
+	  const ClientConfiguration &configuration,
+	  const std::string &regionId,
+	  const std::string &product,
+	  const std::string &serviceCode,
+	  int durationSeconds) :
+	LocationClient(credentials, configuration),
 	regionId_(regionId),
 	product_(product),
 	serviceCode_(serviceCode),
@@ -157,8 +163,8 @@ std::string EndpointProvider::internalEndpoint(const std::string regionId, const
 
 EndpointProvider::EndpointOutcome EndpointProvider::getEndpoint()
 {
-	if (!locationClient_->configuration().endpoint().empty())
-		return EndpointOutcome(locationClient_->configuration().endpoint());
+	if (!configuration().endpoint().empty())
+		return EndpointOutcome(configuration().endpoint());
 
 	if (!serviceCode_.empty())
 	{
@@ -188,7 +194,7 @@ EndpointProvider::EndpointOutcome EndpointProvider::loadRemoteEndpoint()
 			request.setId(regionId_);
 			request.setServiceCode(serviceCode_);
 			request.setType("openAPI");
-			auto outcome = locationClient_->describeEndpoints(request);
+			auto outcome = describeEndpoints(request);
 			if (!outcome.isSuccess())
 				return EndpointOutcome(outcome.error());
 

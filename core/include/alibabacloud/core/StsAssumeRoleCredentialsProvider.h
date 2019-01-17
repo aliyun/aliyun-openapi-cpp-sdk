@@ -24,10 +24,12 @@
 
 namespace AlibabaCloud
 {
-	class ALIBABACLOUD_CORE_EXPORT StsAssumeRoleCredentialsProvider : public CredentialsProvider
+	class ALIBABACLOUD_CORE_EXPORT StsAssumeRoleCredentialsProvider : public CredentialsProvider, public Sts::StsClient
 	{
 	public:
-		StsAssumeRoleCredentialsProvider(const std::shared_ptr<Sts::StsClient>& stsClient,
+		StsAssumeRoleCredentialsProvider(
+			const Credentials &credentials,
+			const ClientConfiguration &configuration,
 			const std::string &roleArn,
 			const std::string &roleSessionName,
 			const std::string &policy = "",
@@ -35,13 +37,13 @@ namespace AlibabaCloud
 		~StsAssumeRoleCredentialsProvider();
 
 		virtual Credentials getCredentials() override;
+		using StsClient::assumeRole;
 	private:
 		void loadCredentials();
 		bool checkExpiry()const;
 
 		std::mutex cachedMutex_;
 		Credentials cachedCredentials_;
-		std::shared_ptr<Sts::StsClient> stsClient_;
 		int durationSeconds_;
 		std::chrono::system_clock::time_point expiry_;
 		std::string policy_;

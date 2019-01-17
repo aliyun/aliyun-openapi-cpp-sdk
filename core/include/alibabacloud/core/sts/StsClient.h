@@ -39,13 +39,13 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCallerIdentityResult> GetCallerIdentityOutcome;
 			typedef std::future<GetCallerIdentityOutcome> GetCallerIdentityOutcomeCallable;
 			typedef std::function<void(const StsClient*, const Model::GetCallerIdentityRequest&, const GetCallerIdentityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCallerIdentityAsyncHandler;
-			
+
 			StsClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			StsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			StsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~StsClient();
 
-			AssumeRoleOutcome assumeRole(const Model::AssumeRoleRequest &request)const;
+			virtual AssumeRoleOutcome assumeRole(const Model::AssumeRoleRequest &request)const;
 			void assumeRoleAsync(const Model::AssumeRoleRequest& request, const AssumeRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssumeRoleOutcomeCallable assumeRoleCallable(const Model::AssumeRoleRequest& request) const;
 			GetCallerIdentityOutcome getCallerIdentity(const Model::GetCallerIdentityRequest &request)const;

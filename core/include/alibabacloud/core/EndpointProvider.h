@@ -27,19 +27,22 @@
 
 namespace AlibabaCloud
 {
-	class ALIBABACLOUD_CORE_EXPORT EndpointProvider
+	class ALIBABACLOUD_CORE_EXPORT EndpointProvider : public Location::LocationClient
 	{
 	public:
 		typedef Outcome<Error, std::string> EndpointOutcome;
 
-		EndpointProvider(const std::shared_ptr<Location::LocationClient>& locationClient,
-			const std::string regionId,
-			const std::string product,
-			const std::string serviceCode = std::string(),
+		EndpointProvider(
+			const Credentials &credentials,
+			const ClientConfiguration &configuration,
+			const std::string &regionId,
+			const std::string &product,
+			const std::string &serviceCode = std::string(),
 			int durationSeconds = 3600);
 		~EndpointProvider();
 
 		EndpointOutcome getEndpoint();
+		using LocationClient::describeEndpoints;
 	private:
 		struct Product
 		{
@@ -58,7 +61,6 @@ namespace AlibabaCloud
 
 		std::mutex cachedMutex_;
 		std::string cachedEndpoint_;
-		std::shared_ptr<Location::LocationClient> locationClient_;
 		int durationSeconds_;
 		std::chrono::system_clock::time_point expiry_;
 		std::string regionId_;

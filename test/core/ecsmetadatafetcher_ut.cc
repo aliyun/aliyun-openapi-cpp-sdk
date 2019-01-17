@@ -29,6 +29,5 @@ namespace {
     EcsMetadataFetcher fetcher;
     string out = fetcher.getMetadata("a", "b");
     EXPECT_TRUE(out == "NetworkError");
-    out = fetcher.getMetadata("127.0.0.1");
   }
 }

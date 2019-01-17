@@ -55,6 +55,7 @@ add_executable(core_ut
   networkproxy_ut.cc
   roaserviceclient_ut.cc
   roaservicerequest_ut.cc
+  rpcserviceclient_ut.cc
   rpcservicerequest_ut.cc
   runnable_ut.cc
   serviceresult_ut.cc
@@ -68,6 +69,7 @@ add_executable(core_ut
   location_model_describeendpoints_result_ut.cc
 
   stsclient_ut.cc
+  stsassumerolecredentialsprovider_ut.cc
   sts_model_assumerole_request_ut.cc
   sts_model_assumerole_result_ut.cc
   sts_model_getcalleridentity_request_ut.cc
