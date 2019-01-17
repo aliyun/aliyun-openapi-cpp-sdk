@@ -39,7 +39,7 @@ namespace AlibabaCloud
 		ClientConfiguration configuration()const;
 		std::string serviceName()const;
 	protected:
-		HttpClient::HttpResponseOutcome AttemptRequest(const std::string & endpoint, const ServiceRequest &request, HttpRequest::Method method)const;
+		virtual HttpClient::HttpResponseOutcome AttemptRequest(const std::string & endpoint, const ServiceRequest &request, HttpRequest::Method method)const;
 		Error buildCoreError(const HttpResponse &response)const;
 		bool hasResponseError(const HttpResponse &response)const;
 		virtual HttpRequest buildHttpRequest(const std::string & endpoint, const ServiceRequest &msg, HttpRequest::Method method)const = 0;

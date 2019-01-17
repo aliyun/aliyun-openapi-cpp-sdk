@@ -21,9 +21,15 @@
 using namespace AlibabaCloud;
 using namespace AlibabaCloud::Sts;
 
-StsAssumeRoleCredentialsProvider::StsAssumeRoleCredentialsProvider(const std::shared_ptr<StsClient>& stsClient, const std::string & roleArn, const std::string & roleSessionName, const std::string & policy, int durationSeconds) :
+StsAssumeRoleCredentialsProvider::StsAssumeRoleCredentialsProvider(
+	  const Credentials &credentials,
+	  const ClientConfiguration &configuration,
+	  const std::string & roleArn,
+	  const std::string & roleSessionName,
+	  const std::string & policy,
+	  int durationSeconds):
 	CredentialsProvider(),
-	stsClient_(stsClient),
+	StsClient(credentials, configuration),
 	roleArn_(roleArn),
 	roleSessionName_(roleSessionName),
 	policy_(policy),
@@ -66,7 +72,7 @@ void StsAssumeRoleCredentialsProvider::loadCredentials()
 			request.setPolicy(policy_);
 			request.setDurationSeconds(durationSeconds_);
 
-			auto assumeRoleOutcome = stsClient_->assumeRole(request);
+			auto assumeRoleOutcome = assumeRole(request);
 			if (assumeRoleOutcome.isSuccess())
 			{
 				const auto stsCredentials = assumeRoleOutcome.result().credentials();

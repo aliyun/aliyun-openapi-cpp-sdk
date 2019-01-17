@@ -38,11 +38,11 @@ namespace AlibabaCloud
 			LocationClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			LocationClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~LocationClient();
-
-			DescribeEndpointsOutcome describeEndpoints(const Model::DescribeEndpointsRequest &request)const;
+			virtual DescribeEndpointsOutcome describeEndpoints(const Model::DescribeEndpointsRequest &request)const;
 			void describeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEndpointsOutcomeCallable describeEndpointsCallable(const Model::DescribeEndpointsRequest& request) const;
 			using RpcServiceClient::makeRequest;
+			using RpcServiceClient::configuration;
 		};
 	}
 }
