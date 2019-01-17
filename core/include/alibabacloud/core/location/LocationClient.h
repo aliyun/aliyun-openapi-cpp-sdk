@@ -42,6 +42,7 @@ namespace AlibabaCloud
 			DescribeEndpointsOutcome describeEndpoints(const Model::DescribeEndpointsRequest &request)const;
 			void describeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEndpointsOutcomeCallable describeEndpointsCallable(const Model::DescribeEndpointsRequest& request) const;
+			using RpcServiceClient::makeRequest;
 		};
 	}
 }

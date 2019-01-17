@@ -63,9 +63,11 @@ add_executable(core_ut
   url_ut.cc
   utils_ut.cc
 
+  locationclient_ut.cc
   location_model_describeendpoints_request_ut.cc
   location_model_describeendpoints_result_ut.cc
 
+  stsclient_ut.cc
   sts_model_assumerole_request_ut.cc
   sts_model_assumerole_result_ut.cc
   sts_model_getcalleridentity_request_ut.cc

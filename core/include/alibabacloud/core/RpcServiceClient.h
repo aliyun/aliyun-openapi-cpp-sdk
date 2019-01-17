@@ -42,7 +42,7 @@ namespace AlibabaCloud
 		virtual ~RpcServiceClient();
 		
 	protected:
-		JsonOutcome makeRequest(const std::string &endpoint, const RpcServiceRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get)const;
+		virtual JsonOutcome makeRequest(const std::string &endpoint, const RpcServiceRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get)const;
 		virtual HttpRequest buildHttpRequest(const std::string & endpoint, const ServiceRequest &msg, HttpRequest::Method method)const override;
 		HttpRequest buildHttpRequest(const std::string & endpoint, const RpcServiceRequest &msg, HttpRequest::Method method)const;
 	private:
