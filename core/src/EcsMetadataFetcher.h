@@ -35,7 +35,8 @@ namespace AlibabaCloud
 
 		std::string roleName()const;
 		void setRoleName(const std::string & roleName);
-		std::string getMetadata(const std::string host = METADATA_SERVICE_HOST, const std::string path = URL_IN_ECS_METADATA);
+		std::string getMetadata(const std::string host, const std::string path);
+		virtual std::string getMetadata();
 	private:
 		std::string roleName_;
 	};
