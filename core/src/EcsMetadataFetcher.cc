@@ -40,6 +40,10 @@ void EcsMetadataFetcher::setRoleName(const std::string & roleName)
 	roleName_ = roleName;
 }
 
+std::string EcsMetadataFetcher::getMetadata() {
+	return getMetadata(METADATA_SERVICE_HOST, URL_IN_ECS_METADATA);
+}
+
 std::string EcsMetadataFetcher::getMetadata(const std::string host, const std::string in_path)
 {
 	std::stringstream path;

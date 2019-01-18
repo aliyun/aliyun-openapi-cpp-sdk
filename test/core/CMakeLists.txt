@@ -64,6 +64,8 @@ add_executable(core_ut
   url_ut.cc
   utils_ut.cc
 
+  instanceprofilecredentialsprovider_ut.cc
+
   locationclient_ut.cc
   location_model_describeendpoints_request_ut.cc
   location_model_describeendpoints_result_ut.cc

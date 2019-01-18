@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,23 +27,17 @@ using namespace AlibabaCloud;
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std::string & roleName, int durationSeconds):
 	CredentialsProvider(),
+	EcsMetadataFetcher(),
 	durationSeconds_(durationSeconds),
 	cachedMutex_(),
 	cachedCredentials_("", ""),
-	fetcher_(new EcsMetadataFetcher),
 	expiry_()
 {
-	fetcher_->setRoleName(roleName);
+	setRoleName(roleName);
 }
 
 InstanceProfileCredentialsProvider::~InstanceProfileCredentialsProvider()
 {
-	delete fetcher_;
-}
-
-std::string InstanceProfileCredentialsProvider::roleName()const
-{
-	return fetcher_->roleName();
 }
 
 Credentials InstanceProfileCredentialsProvider::getCredentials()
@@ -68,16 +62,16 @@ void InstanceProfileCredentialsProvider::loadCredentials()
 		std::lock_guard<std::mutex> locker(cachedMutex_);
 		if (checkExpiry())
 		{
-			auto outcome = fetcher_->getMetadata();
+			auto outcome = getMetadata();
 			Json::Value value;
 			Json::Reader reader;
 			if (reader.parse(outcome, value))
 			{
-				if (value["Code"] == nullptr
-					&&value["AccessKeyId"] == nullptr
-					&&value["AccessKeySecret"] == nullptr
-					&&value["SecurityToken"] == nullptr
-					&&value["Expiration"] == nullptr)
+				if (value["Code"].empty()
+					&&value["AccessKeyId"].empty()
+					&&value["AccessKeySecret"].empty()
+					&&value["SecurityToken"].empty()
+					&&value["Expiration"].empty())
 				{
 					cachedCredentials_ = Credentials("","");
 					return;
@@ -96,7 +90,7 @@ void InstanceProfileCredentialsProvider::loadCredentials()
 				std::tm tm = {};
 #if defined(__GNUG__) && __GNUC__ < 5
 				strptime(expiration.c_str(), "%Y-%m-%dT%H:%M:%SZ", &tm);
-#else			
+#else
 				std::stringstream ss(expiration);
 				ss >> std::get_time(&tm, "%Y-%m-%dT%H:%M:%SZ");
 #endif
