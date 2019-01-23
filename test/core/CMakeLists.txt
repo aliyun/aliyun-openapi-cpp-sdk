@@ -38,6 +38,7 @@ include_directories("../../core/include/")
 add_executable(core_ut
   alibabacloud_ut.cc
   asynccallercontext_ut.cc
+  coreclient_ut.cc
   clientconfiguration_ut.cc
   commonclient_ut.cc
   commonrequest_ut.cc
