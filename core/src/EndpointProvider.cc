@@ -82,6 +82,21 @@ namespace
 		"]}";
 }
 
+EndpointProvider::EndpointProvider(const std::shared_ptr<Location::LocationClient>& locationClient, const std::string regionId, const std::string product, const std::string serviceCode, int durationSeconds) :
+	LocationClient(locationClient),
+	regionId_(regionId),
+	product_(product),
+	serviceCode_(serviceCode),
+	durationSeconds_(durationSeconds),
+	cachedMutex_(),
+	cachedEndpoint_(),
+	expiry_(),
+	internalProductsInfo_()
+{
+	loadInternalProductsInfo();
+}
+
+
 EndpointProvider::EndpointProvider(
 	  const Credentials& credentials,
 	  const ClientConfiguration &configuration,

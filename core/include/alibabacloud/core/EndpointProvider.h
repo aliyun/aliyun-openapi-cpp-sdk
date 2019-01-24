@@ -32,6 +32,12 @@ namespace AlibabaCloud
 	public:
 		typedef Outcome<Error, std::string> EndpointOutcome;
 
+		EndpointProvider(const std::shared_ptr<Location::LocationClient>& locationClient,
+			const std::string regionId,
+			const std::string product,
+			const std::string serviceCode = std::string(),
+			int durationSeconds = 3600);
+
 		EndpointProvider(
 			const Credentials &credentials,
 			const ClientConfiguration &configuration,

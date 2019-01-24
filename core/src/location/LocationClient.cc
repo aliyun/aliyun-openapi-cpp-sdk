@@ -41,6 +41,12 @@ LocationClient::LocationClient(const std::string & accessKeyId, const std::strin
 {
 }
 
+LocationClient::LocationClient(const std::shared_ptr<Location::LocationClient>& locationClient):
+  RpcServiceClient(SERVICE_NAME, locationClient->credentialsProvider(), locationClient->configuration())
+{
+}
+
+
 LocationClient::~LocationClient()
 {}
 

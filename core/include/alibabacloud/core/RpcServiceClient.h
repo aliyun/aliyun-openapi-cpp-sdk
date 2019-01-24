@@ -40,7 +40,12 @@ namespace AlibabaCloud
 			const ClientConfiguration &configuration,
 			const std::shared_ptr<Signer> &signer = std::make_shared<HmacSha1Signer>());
 		virtual ~RpcServiceClient();
+
+		std::shared_ptr<CredentialsProvider> credentialsProvider() {
+			return credentialsProvider_;
+		}
 		using CoreClient::configuration;
+
 		using CoreClient::AttemptRequest;
 
 	protected:
