@@ -2,5 +2,6 @@ initCoverage.info
 testCoverage.info
 coverageReport/
 .vscode/
+ft_build/
 ut_build/
 sdk_build/
