@@ -62,7 +62,11 @@ HttpRequest::Method CommonRequest::httpMethod() const
 
 CommonRequest::ParameterValueType CommonRequest::queryParameter(const ParameterNameType &name)const
 {
-	return queryParams_.at(name);
+	ParameterCollection::const_iterator it = queryParams_.find(name);
+	if (it == queryParams_.end()) {
+		return ParameterValueType("");
+	}
+	return it->second;
 }
 
 
@@ -75,10 +79,14 @@ void CommonRequest::setQueryParameter(const ParameterNameType &name, const Param
 {
 	queryParams_[name] = value;
 }
- 
+
 CommonRequest::ParameterValueType CommonRequest::headerParameter(const ParameterNameType &name)const
 {
-	return headerParams_.at(name);
+	const ParameterCollection::const_iterator it  = headerParams_.find(name);
+	if (it == headerParams_.end()) {
+		return ParameterValueType("");
+	}
+	return it->second;
 }
 
 CommonRequest::ParameterCollection CommonRequest::headerParameters() const
@@ -90,4 +98,3 @@ void CommonRequest::setHeaderParameter(const ParameterNameType &name, const Para
 {
 	headerParams_[name] = value;
 }
- 

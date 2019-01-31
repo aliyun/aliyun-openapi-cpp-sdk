@@ -69,6 +69,7 @@ TEST(CurlHttpClient, basic) {
   EXPECT_TRUE(out1.result().body() == testBody);
 
   request.setMethod(HttpRequest::Method::Post);
+  request.setBody("test-body", 9);
   request.setUrl(url);
 
   HttpClient::HttpResponseOutcome out2 = client.makeRequest(request);

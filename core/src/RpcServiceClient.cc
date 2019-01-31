@@ -77,7 +77,12 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint, con
 	const Credentials credentials = credentialsProvider_->getCredentials();
 
 	Url url;
-	url.setScheme("https");
+	if (msg.scheme().empty()) {
+		url.setScheme("https");
+	} else {
+		url.setScheme(msg.scheme());
+	}
+
 	url.setHost(endpoint);
 	url.setPath(msg.resourcePath());
 

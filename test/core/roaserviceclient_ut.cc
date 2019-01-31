@@ -68,6 +68,7 @@ TEST(RoaServiceClient, basic) {
   RoaServiceRequest req(product, version);
 
   req.setParameter("a", "b");
+  req.setScheme("");
   req.setContent("123456789", 9);
   HttpRequest http_req = client.buildHttpRequest("cn-shanghai", req, HttpRequest::Method::Get);
 
@@ -88,4 +89,11 @@ TEST(RoaServiceClient, basic) {
   const string nounce = "8a013b14-7bac-4652-8b5f-c02c8924e4ae";
   EXPECT_TRUE(http_req.header("x-acs-signature-nonce").length() == nounce.length());
   EXPECT_TRUE(http_req.header("Authorization").find("acs accessKeyId:") != string::npos);
+
+  req.setScheme("http");
+  req.setParameter("Accept", "tets-accept");
+  req.setParameter("Content-Type", "test-content-type");
+  http_req = client.buildHttpRequest("cn-shanghai", req, HttpRequest::Method::Get);
+  EXPECT_TRUE(http_req.url().toString() == "http://cn-shanghai/?Accept=tets-accept&Content-Type=test-content-type&a=b");
+
 }

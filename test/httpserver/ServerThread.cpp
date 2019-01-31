@@ -130,9 +130,10 @@ void ServerThread::Run() {
       Terminate(true);
     } else if (!strcmp("POST", method)) {
       if (fopen(path, "r") > 0) {
-        sprintf(buffer, "%s\r\n\r\n", "HTTP/1.1 403 Forbidden");
+        int size = strlen(echo_buffer);
+        sprintf(buffer, "%s%d\r\n\r\n", "HTTP/1.1 200 OK\r\nContent-Length: ", size);
         send(socket, buffer, strlen(buffer), 0);
-        cout << "402 " << path << endl;
+        send(socket, echo_buffer, size, 0);
         continue;
       }
       FILE *file = fopen(path, "w+");
