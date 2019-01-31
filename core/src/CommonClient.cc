@@ -143,7 +143,12 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, cons
 	const Credentials credentials = credentialsProvider_->getCredentials();
 
 	Url url;
-	url.setScheme("https");
+	if (msg.scheme().empty()) {
+		url.setScheme("https");
+	} else {
+		url.setScheme(msg.scheme());
+	}
+
 	url.setHost(endpoint);
 	url.setPath(msg.resourcePath());
 
@@ -168,13 +173,23 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, cons
 
 	HttpRequest request(url);
 	request.setMethod(method);
-	request.setHeader("Accept", "application/json");
+	if (msg.headerParameter("Accept").empty()) {
+		request.setHeader("Accept", "application/json");
+	} else {
+		request.setHeader("Accept", msg.headerParameter("Accept"));
+	}
+
 	if (msg.hasContent()) {
 		std::stringstream ss;
 		ss << msg.contentSize();
 		request.setHeader("Content-Length", ss.str());
-		request.setHeader("Content-Type", "application/octet-stream");
+		if(msg.headerParameter("Content-Type").empty()) {
+			request.setHeader("Content-Type", "application/octet-stream");
+		} else {
+			request.setHeader("Content-Type", msg.headerParameter("Content-Type"));
+		}
 		request.setHeader("Content-MD5", ComputeContentMD5(msg.content(), msg.contentSize()));
+		request.setBody(msg.content(), msg.contentSize());
 	}
 
 	std::time_t t = std::time(nullptr);
@@ -215,7 +230,6 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, cons
 		<< ":"
 		<< signer_->generate(plaintext.str(), credentials.accessKeySecret());
 	request.setHeader("Authorization", sign.str());
-
 	return request;
 }
 
@@ -246,7 +260,11 @@ HttpRequest CommonClient::buildRpcHttpRequest(const std::string & endpoint, cons
 	const Credentials credentials = credentialsProvider_->getCredentials();
 
 	Url url;
-	url.setScheme("https");
+	if (msg.scheme().empty()) {
+		url.setScheme("https");
+	} else {
+		url.setScheme(msg.scheme());
+	}
 	url.setHost(endpoint);
 	url.setPath(msg.resourcePath());
 

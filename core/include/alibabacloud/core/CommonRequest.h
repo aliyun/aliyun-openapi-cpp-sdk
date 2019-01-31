@@ -50,6 +50,7 @@ namespace AlibabaCloud
 		using ServiceRequest::setResourcePath;
 		void setRequestPattern(RequestPattern pattern);
 		using ServiceRequest::setVersion;
+		using ServiceRequest::setScheme;
 		RequestPattern requestPattern()const;
 	protected:
 		using ServiceRequest::product;

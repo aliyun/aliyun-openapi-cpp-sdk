@@ -92,10 +92,14 @@ HttpClient::HttpResponseOutcome CurlHttpClient::makeRequest(const HttpRequest &r
 {
 	curl_easy_reset(curlHandle_);
 	HttpResponse response(request);
+
 	std::string url = request.url().toString();
 	switch (request.method())
 	{
 	case HttpRequest::Method::Get:
+		break;
+	case HttpRequest::Method::Post:
+		curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, request.body());
 		break;
 	case HttpRequest::Method::Put:
 		curl_easy_setopt(curlHandle_, CURLOPT_UPLOAD, 1L);
@@ -103,6 +107,7 @@ HttpClient::HttpResponseOutcome CurlHttpClient::makeRequest(const HttpRequest &r
 	default:
 		break;
 	}
+
 	curl_easy_setopt(curlHandle_, CURLOPT_URL, url.c_str());
 	curl_easy_setopt(curlHandle_, CURLOPT_SSL_VERIFYPEER, 1L);
 	curl_easy_setopt(curlHandle_, CURLOPT_SSL_VERIFYHOST, 2L);

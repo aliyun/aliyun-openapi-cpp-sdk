@@ -101,7 +101,8 @@ https://cn-hangzhou/?
 
   cr.setQueryParameter("query_k1", "query_v1");
   cr.setHeaderParameter("header_k1", "header_v1");
-
+  cr.setScheme("");
+  cr.setHeaderParameter("Accept", "");
   HttpRequest rr = client->buildRoaHttpRequest("cn-shanghai", cr, HttpRequest::Method::Get);
   EXPECT_TRUE(rr.method() == HttpRequest::Method::Get);
   EXPECT_TRUE(rr.header("Accept") == "application/json");
@@ -121,8 +122,22 @@ https://cn-hangzhou/?
   // acs accessKeyId:JZD81jGWLp1F3ZIkaLp1yuEZmKc=
   EXPECT_TRUE(rr.header("Authorization").find("acs accessKeyId:") != string::npos);
   EXPECT_TRUE(rr.header("unknown-header") == "");
+
+  cr.setScheme("http");
+  cr.setHeaderParameter("Accept", "test-accept");
+  cr.setHeaderParameter("Content-Type", "test-content-type");
+  rr = client->buildRoaHttpRequest("cn-shanghai", cr, HttpRequest::Method::Get);
+  EXPECT_TRUE(rr.url().toString() == "http://cn-shanghai/?Accept=test-accept&Content-Type=test-content-type&header_k1=header_v1");
+  EXPECT_TRUE(rr.header("Accept") == "test-accept");
+  EXPECT_TRUE(rr.header("Content-Type") == "test-content-type");
+
   HttpRequest rrr = client->buildRpcHttpRequest("cn-hangzhou", cr, HttpRequest::Method::Post);
   EXPECT_TRUE(client->serviceName() == "Common");
+  EXPECT_TRUE(rrr.url().scheme() == "http");
+
+  cr.setScheme("");
+  rrr = client->buildRpcHttpRequest("cn-hangzhou", cr, HttpRequest::Method::Post);
+  EXPECT_TRUE(rrr.url().scheme() == "https");
 
   std::function<void()> func(task);
   Runnable* rf = new Runnable(func);

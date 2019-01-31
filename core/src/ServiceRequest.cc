@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -24,7 +24,8 @@ ServiceRequest::ServiceRequest(const std::string &product, const std::string &ve
 	params_(),
 	product_(product),
 	resourcePath_("/"),
-	version_(version)
+	version_(version),
+	scheme_("https")
 {
 }
 
@@ -34,7 +35,8 @@ ServiceRequest::ServiceRequest(const ServiceRequest &other) :
 	params_(other.params_),
 	product_(other.product_),
 	resourcePath_(other.resourcePath_),
-	version_(other.version_)
+	version_(other.version_),
+	scheme_(other.scheme_)
 {
 	setContent(other.content_, other.contentSize_);
 }
@@ -103,7 +105,11 @@ void ServiceRequest::addParameter(const ParameterNameType & name, const Paramete
 
 ServiceRequest::ParameterValueType ServiceRequest::parameter(const ParameterNameType &name)const
 {
-	return params_.at(name);
+	ParameterCollection::const_iterator it = params_.find(name);
+	if (it == params_.end()) {
+		return ParameterValueType("");
+	}
+	return it->second;
 }
 
 ServiceRequest::ParameterCollection ServiceRequest::parameters() const
@@ -154,4 +160,12 @@ std::string ServiceRequest::resourcePath() const
 void ServiceRequest::setResourcePath(const std::string & path)
 {
 	resourcePath_ = path;
+}
+
+void ServiceRequest::setScheme(const std::string scheme) {
+	scheme_ = scheme;
+}
+
+std::string ServiceRequest::scheme() const {
+	return scheme_;
 }

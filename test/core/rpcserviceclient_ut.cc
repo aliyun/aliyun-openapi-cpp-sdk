@@ -63,6 +63,7 @@ TEST(RpcServiceClient, basic) {
 
   RpcServiceRequest req(product, version, action);
 
+  req.setScheme("");
   HttpRequest http_req = client.buildHttpRequest(endpoint, req, HttpRequest::Method::Get);
   EXPECT_TRUE(http_req.header("x-sdk-client") == std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
   EXPECT_TRUE(http_req.header("Host") == endpoint);
@@ -79,6 +80,11 @@ TEST(RpcServiceClient, basic) {
   EXPECT_TRUE(http_req.url().query().find("&SignatureVersion=1.0") != string::npos);
   EXPECT_TRUE(http_req.url().query().find("&Version=1.0") != string::npos);
   EXPECT_TRUE(http_req.url().query().find("&Timestamp=") != string::npos);
+  EXPECT_TRUE(http_req.url().scheme() == "https");
+
+  req.setScheme("http");
+  http_req = client.buildHttpRequest(endpoint, req, HttpRequest::Method::Get);
+  EXPECT_TRUE(http_req.url().scheme() == "http");
 }
 
 TEST(RpcServiceClient, mock) {
