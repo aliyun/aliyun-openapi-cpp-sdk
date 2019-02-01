@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -24,31 +24,31 @@
 
 namespace AlibabaCloud
 {
-	class ALIBABACLOUD_CORE_EXPORT StsAssumeRoleCredentialsProvider : public CredentialsProvider, public Sts::StsClient
-	{
-	public:
-		StsAssumeRoleCredentialsProvider(
-			const Credentials &credentials,
-			const ClientConfiguration &configuration,
-			const std::string &roleArn,
-			const std::string &roleSessionName,
-			const std::string &policy = "",
-			int durationSeconds = 3600);
-		~StsAssumeRoleCredentialsProvider();
+  class ALIBABACLOUD_CORE_EXPORT StsAssumeRoleCredentialsProvider : public CredentialsProvider, public Sts::StsClient
+  {
+  public:
+    StsAssumeRoleCredentialsProvider(
+      const Credentials &credentials,
+      const ClientConfiguration &configuration,
+      const std::string &roleArn,
+      const std::string &roleSessionName,
+      const std::string &policy = "",
+      int durationSeconds = 3600);
+    ~StsAssumeRoleCredentialsProvider();
 
-		virtual Credentials getCredentials() override;
-		using StsClient::assumeRole;
-	private:
-		void loadCredentials();
-		bool checkExpiry()const;
+    virtual Credentials getCredentials() override;
+    using StsClient::assumeRole;
+  private:
+    void loadCredentials();
+    bool checkExpiry()const;
 
-		std::mutex cachedMutex_;
-		Credentials cachedCredentials_;
-		int durationSeconds_;
-		std::chrono::system_clock::time_point expiry_;
-		std::string policy_;
-		std::string roleArn_;
-		std::string roleSessionName_;
-	};
+    std::mutex cachedMutex_;
+    Credentials cachedCredentials_;
+    int durationSeconds_;
+    std::chrono::system_clock::time_point expiry_;
+    std::string policy_;
+    std::string roleArn_;
+    std::string roleSessionName_;
+  };
 }
 #endif // !ALIBABACLOUD_CORE_STSASSUMEROLECREDENTIALSPROVIDER_H_

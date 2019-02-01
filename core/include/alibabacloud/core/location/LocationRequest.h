@@ -1,5 +1,5 @@
-﻿/*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+/*
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,18 +21,18 @@
 
 namespace AlibabaCloud
 {
-	namespace Location
-	{
-		class ALIBABACLOUD_CORE_EXPORT LocationRequest : public RpcServiceRequest
-		{
-		public:
-			explicit LocationRequest(const std::string & action);
-			virtual ~LocationRequest();
+  namespace Location
+  {
+    class ALIBABACLOUD_CORE_EXPORT LocationRequest : public RpcServiceRequest
+    {
+    public:
+      explicit LocationRequest(const std::string & action);
+      virtual ~LocationRequest();
 
-		private:
+    private:
 
-		};
-	}
+    };
+  }
 }
 
 #endif // !ALIBABACLOUD_CORE_LOCATION_LOCATIONREQUEST_H_

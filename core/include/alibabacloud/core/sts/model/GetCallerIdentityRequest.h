@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -22,20 +22,20 @@
 
 namespace AlibabaCloud
 {
-	namespace Sts
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CORE_EXPORT GetCallerIdentityRequest : public StsRequest
-			{
-			public:
-				GetCallerIdentityRequest();
-				~GetCallerIdentityRequest();
+  namespace Sts
+  {
+    namespace Model
+    {
+      class ALIBABACLOUD_CORE_EXPORT GetCallerIdentityRequest : public StsRequest
+      {
+      public:
+        GetCallerIdentityRequest();
+        ~GetCallerIdentityRequest();
 
-			private:
+      private:
 
-			};
-		}
-	}
+      };
+    }
+  }
 }
 #endif // !ALIBABACLOUD_CORE_STS_MODEL_GETCALLERIDENTITYREQUEST_H_

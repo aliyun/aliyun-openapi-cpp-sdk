@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -20,26 +20,26 @@
 #include <string>
 
 namespace {
-	const int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
-	const char* const METADATA_SERVICE_HOST = "100.100.100.200";
-	const char* const URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
+  const int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
+  const char* const METADATA_SERVICE_HOST = "100.100.100.200";
+  const char* const URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
 }
 
 namespace AlibabaCloud
 {
-	class EcsMetadataFetcher
-	{
-	public:
-		EcsMetadataFetcher();
-		~EcsMetadataFetcher();
+  class EcsMetadataFetcher
+  {
+  public:
+    EcsMetadataFetcher();
+    ~EcsMetadataFetcher();
 
-		std::string roleName()const;
-		void setRoleName(const std::string & roleName);
-		std::string getMetadata(const std::string host, const std::string path);
-		virtual std::string getMetadata();
-	private:
-		std::string roleName_;
-	};
+    std::string roleName()const;
+    void setRoleName(const std::string & roleName);
+    std::string getMetadata(const std::string host, const std::string path);
+    virtual std::string getMetadata();
+  private:
+    std::string roleName_;
+  };
 }
 
 #endif // !ALIBABACLOUD_CORE_ECSMETADATASERVICECREDENTIALSFETCHER_H_

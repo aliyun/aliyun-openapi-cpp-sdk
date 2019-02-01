@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -19,12 +19,12 @@
 using namespace AlibabaCloud;
 
 CommonResponse::CommonResponse() :
-	payload_()
+  payload_()
 {
 }
 
 CommonResponse::CommonResponse(const std::string &payload) :
-	payload_(payload)
+  payload_(payload)
 {
 }
 
@@ -34,5 +34,5 @@ CommonResponse::~CommonResponse()
 
 std::string CommonResponse::payload() const
 {
-	return payload_;
+  return payload_;
 }

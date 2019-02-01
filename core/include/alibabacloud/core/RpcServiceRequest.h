@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,17 +21,17 @@
 
 namespace AlibabaCloud
 {
-	class ALIBABACLOUD_CORE_EXPORT RpcServiceRequest : public ServiceRequest
-	{
-	public:
-		RpcServiceRequest(const std::string &product, const std::string &version, const std::string & action);
-		virtual ~RpcServiceRequest();
+  class ALIBABACLOUD_CORE_EXPORT RpcServiceRequest : public ServiceRequest
+  {
+  public:
+    RpcServiceRequest(const std::string &product, const std::string &version, const std::string & action);
+    virtual ~RpcServiceRequest();
 
-		std::string actionName()const;
+    std::string actionName()const;
     using ServiceRequest::setScheme;
-	protected:
-		void setActionName(const std::string &name);
+  protected:
+    void setActionName(const std::string &name);
 
-	};
+  };
 }
 #endif // !ALIBABACLOUD_CORE_RPCSERVICEREQUEST_H_

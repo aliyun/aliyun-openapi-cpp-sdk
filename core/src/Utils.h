@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +22,11 @@
 
 namespace AlibabaCloud
 {
-	std::string ComputeContentMD5(const char *data, size_t size);
-	std::string GenerateUuid();
-	std::string HttpMethodToString(HttpRequest::Method method);
-	void StringReplace(std::string &src, const std::string &s1, const std::string &s2);
-	std::string UrlEncode(const std::string &src);
-	std::string UrlDecode(const std::string &src);
+  std::string ComputeContentMD5(const char *data, size_t size);
+  std::string GenerateUuid();
+  std::string HttpMethodToString(HttpRequest::Method method);
+  void StringReplace(std::string &src, const std::string &s1, const std::string &s2);
+  std::string UrlEncode(const std::string &src);
+  std::string UrlDecode(const std::string &src);
 }
 #endif

@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,22 +22,22 @@ using namespace AlibabaCloud::Location;
 
 namespace
 {
-	const std::string SERVICE_NAME = "Location";
-	const std::string ENDPOINT = "location.aliyuncs.com";
+  const std::string SERVICE_NAME = "Location";
+  const std::string ENDPOINT = "location.aliyuncs.com";
 }
 
 LocationClient::LocationClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+  RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 }
 
 LocationClient::LocationClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
+  RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 }
 
 LocationClient::LocationClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+  RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 }
 
@@ -52,31 +52,31 @@ LocationClient::~LocationClient()
 
 LocationClient::DescribeEndpointsOutcome LocationClient::describeEndpoints(const Model::DescribeEndpointsRequest &request) const
 {
-	auto outcome = makeRequest(ENDPOINT, request);
+  auto outcome = makeRequest(ENDPOINT, request);
 
-	if (outcome.isSuccess())
-		return DescribeEndpointsOutcome(Model::DescribeEndpointsResult(outcome.result()));
-	else
-		return DescribeEndpointsOutcome(outcome.error());
+  if (outcome.isSuccess())
+    return DescribeEndpointsOutcome(Model::DescribeEndpointsResult(outcome.result()));
+  else
+    return DescribeEndpointsOutcome(outcome.error());
 }
 
 void LocationClient::describeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
-	std::async(std::launch::async,
-		[this, request, handler, context]()
-	{
-		handler(this, request, describeEndpoints(request), context);
-	});
+  std::async(std::launch::async,
+    [this, request, handler, context]()
+  {
+    handler(this, request, describeEndpoints(request), context);
+  });
 }
 
 LocationClient::DescribeEndpointsOutcomeCallable LocationClient::describeEndpointsCallable(const Model::DescribeEndpointsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeEndpointsOutcome()>>(
-		[this, request]()
-	{
-		return this->describeEndpoints(request);
-	});
+  auto task = std::make_shared<std::packaged_task<DescribeEndpointsOutcome()>>(
+    [this, request]()
+  {
+    return this->describeEndpoints(request);
+  });
 
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
+  asyncExecute(new Runnable([task]() { (*task)(); }));
+  return task->get_future();
 }

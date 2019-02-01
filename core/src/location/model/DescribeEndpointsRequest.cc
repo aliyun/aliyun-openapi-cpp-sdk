@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Location::Model;
 
 DescribeEndpointsRequest::DescribeEndpointsRequest() :
-	LocationRequest("DescribeEndpoints")
+  LocationRequest("DescribeEndpoints")
 {}
 
 DescribeEndpointsRequest::~DescribeEndpointsRequest()
@@ -28,31 +28,30 @@ DescribeEndpointsRequest::~DescribeEndpointsRequest()
 
 std::string DescribeEndpointsRequest::serviceCode()const
 {
-	return parameter("ServiceCode");
+  return parameter("ServiceCode");
 }
 
 void DescribeEndpointsRequest::setServiceCode(const std::string & serviceCode)
 {
-	setParameter("ServiceCode", serviceCode);
+  setParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeEndpointsRequest::id()const
 {
-	return parameter("Id");
+  return parameter("Id");
 }
 
 void DescribeEndpointsRequest::setId(const std::string & id)
 {
-	setParameter("Id", id);
+  setParameter("Id", id);
 }
 
 std::string DescribeEndpointsRequest::type()const
 {
-	return parameter("Type");
+  return parameter("Type");
 }
 
 void DescribeEndpointsRequest::setType(const std::string & type)
 {
-	setParameter("Type", type);
+  setParameter("Type", type);
 }
-

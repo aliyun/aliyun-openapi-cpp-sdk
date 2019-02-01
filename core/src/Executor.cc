@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -22,103 +22,103 @@ using namespace AlibabaCloud;
 Executor *Executor::self_ = nullptr;
 
 Executor::Executor() :
-	cvMutex_(),
-	shutdown_(true),
-	tasksQueue_(),
-	tasksQueueMutex_(),
-	thread_()
+  cvMutex_(),
+  shutdown_(true),
+  tasksQueue_(),
+  tasksQueueMutex_(),
+  thread_()
 {
-	self_ = this;
+  self_ = this;
 }
 
 Executor::~Executor()
 {
-	self_ = nullptr;
-	shutdown();
+  self_ = nullptr;
+  shutdown();
 }
 
 Executor * Executor::instance()
 {
-	return self_;
+  return self_;
 }
 
 bool Executor::start()
 {
-	if (!isShutdown())
-		return true;
+  if (!isShutdown())
+    return true;
 
-	auto threadMain = [this]()
-	{
-		while (!shutdown_)
-		{
-			while (!tasksQueue_.empty())
-			{
-				Runnable *task = nullptr;
-				{
-					std::lock_guard<std::mutex> lock(tasksQueueMutex_);
-					if (!tasksQueue_.empty())
-					{
-						task = tasksQueue_.front();
-						tasksQueue_.pop();
-					}
-				}
+  auto threadMain = [this]()
+  {
+    while (!shutdown_)
+    {
+      while (!tasksQueue_.empty())
+      {
+        Runnable *task = nullptr;
+        {
+          std::lock_guard<std::mutex> lock(tasksQueueMutex_);
+          if (!tasksQueue_.empty())
+          {
+            task = tasksQueue_.front();
+            tasksQueue_.pop();
+          }
+        }
 
-				if (task) {
-					task->run();
-					delete task;
-				}
-			}
+        if (task) {
+          task->run();
+          delete task;
+        }
+      }
 
-			if (!shutdown_) {
-				std::unique_lock<std::mutex> lk(cvMutex_);
-				cv_.wait(lk);
-			}
-		}
-	};
+      if (!shutdown_) {
+        std::unique_lock<std::mutex> lk(cvMutex_);
+        cv_.wait(lk);
+      }
+    }
+  };
 
-	shutdown_ = false;
-	thread_ = std::thread(threadMain);
-	return true;
+  shutdown_ = false;
+  thread_ = std::thread(threadMain);
+  return true;
 }
 
 bool Executor::isShutdown()const
 {
-	return shutdown_;
+  return shutdown_;
 }
 
 void Executor::execute(Runnable* task)
 {
-	if (isShutdown())
-		return;
+  if (isShutdown())
+    return;
 
-	std::lock_guard<std::mutex> locker(tasksQueueMutex_);
-	tasksQueue_.push(task);
-	wakeUp();
+  std::lock_guard<std::mutex> locker(tasksQueueMutex_);
+  tasksQueue_.push(task);
+  wakeUp();
 }
 
 void Executor::wakeUp()
 {
-	std::unique_lock<std::mutex> lk(cvMutex_);
-	cv_.notify_one();
+  std::unique_lock<std::mutex> lk(cvMutex_);
+  cv_.notify_one();
 }
 
 void Executor::shutdown()
 {
-	if (isShutdown())
-		return;
+  if (isShutdown())
+    return;
 
-	{
-		std::lock_guard<std::mutex> locker(tasksQueueMutex_);
-		while (tasksQueue_.size() > 0) {
-			auto task = tasksQueue_.front();
-			delete task;
-			tasksQueue_.pop();
-		}
-	}
+  {
+    std::lock_guard<std::mutex> locker(tasksQueueMutex_);
+    while (tasksQueue_.size() > 0) {
+      auto task = tasksQueue_.front();
+      delete task;
+      tasksQueue_.pop();
+    }
+  }
 
-	shutdown_ = true;
-	wakeUp();
+  shutdown_ = true;
+  wakeUp();
 
-	if (thread_.joinable())
-		thread_.join();
+  if (thread_.joinable())
+    thread_.join();
 }

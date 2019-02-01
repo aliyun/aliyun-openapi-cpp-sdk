@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,41 +24,41 @@
 
 namespace AlibabaCloud
 {
-	namespace Location
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CORE_EXPORT DescribeEndpointsResult : public ServiceResult
-			{
-			public:
-				struct Endpoint
-				{
-					std::string endpoint;
-					std::string id;
-					std::string namespace_;
-					std::string serivceCode;
-					std::string type;
-					std::vector<std::string> protocols;
-				};
+  namespace Location
+  {
+    namespace Model
+    {
+      class ALIBABACLOUD_CORE_EXPORT DescribeEndpointsResult : public ServiceResult
+      {
+      public:
+        struct Endpoint
+        {
+          std::string endpoint;
+          std::string id;
+          std::string namespace_;
+          std::string serivceCode;
+          std::string type;
+          std::vector<std::string> protocols;
+        };
 
-				DescribeEndpointsResult();
-				explicit DescribeEndpointsResult(const std::string &payload);
-				~DescribeEndpointsResult();
+        DescribeEndpointsResult();
+        explicit DescribeEndpointsResult(const std::string &payload);
+        ~DescribeEndpointsResult();
 
-				std::vector<Endpoint> endpoints()const;
-				void setEndpoints(const std::vector<Endpoint> &endpoints);
+        std::vector<Endpoint> endpoints()const;
+        void setEndpoints(const std::vector<Endpoint> &endpoints);
 
-				bool success()const;
-				void setSuccess(const bool &success);
+        bool success()const;
+        void setSuccess(const bool &success);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::vector<Endpoint> endpoints_;
-				bool success_;
+      protected:
+        void parse(const std::string &payload);
+      private:
+        std::vector<Endpoint> endpoints_;
+        bool success_;
 
-			};
-		}
-	}
+      };
+    }
+  }
 }
 #endif // !ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSRESULT_H_

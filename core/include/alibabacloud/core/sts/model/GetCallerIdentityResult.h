@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,29 +21,29 @@
 
 namespace AlibabaCloud
 {
-	namespace Sts
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CORE_EXPORT GetCallerIdentityResult : public ServiceResult
-			{
-			public:
-				GetCallerIdentityResult();
-				explicit GetCallerIdentityResult(const std::string &payload);
-				~GetCallerIdentityResult();
+  namespace Sts
+  {
+    namespace Model
+    {
+      class ALIBABACLOUD_CORE_EXPORT GetCallerIdentityResult : public ServiceResult
+      {
+      public:
+        GetCallerIdentityResult();
+        explicit GetCallerIdentityResult(const std::string &payload);
+        ~GetCallerIdentityResult();
 
-				std::string accountId();
-				std::string arn()const;
-				std::string userId()const;
-			private:
-				void parse(const std::string &payload);
+        std::string accountId();
+        std::string arn()const;
+        std::string userId()const;
+      private:
+        void parse(const std::string &payload);
 
-				std::string accountId_;
-				std::string arn_;
-				std::string userId_;
-			};
-		}
-	}
+        std::string accountId_;
+        std::string arn_;
+        std::string userId_;
+      };
+    }
+  }
 }
 
 #endif // !ALIBABACLOUD_CORE_STS_MODEL_GETCALLERIDENTITYRESULT_H_

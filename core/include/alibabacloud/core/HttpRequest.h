@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,31 +23,31 @@
 
 namespace AlibabaCloud
 {
-	class ALIBABACLOUD_CORE_EXPORT HttpRequest : public HttpMessage
-	{
-		public:
-			enum Method
-			{
-				Get,
-				Head,
-				Post,
-				Put,
-				Delete,
-				Connect,
-				Options,
-				Patch,
-				Trace
-			};
-			explicit HttpRequest(const Url &url = Url(), Method method = Get);
-			~HttpRequest();
+  class ALIBABACLOUD_CORE_EXPORT HttpRequest : public HttpMessage
+  {
+    public:
+      enum Method
+      {
+        Get,
+        Head,
+        Post,
+        Put,
+        Delete,
+        Connect,
+        Options,
+        Patch,
+        Trace
+      };
+      explicit HttpRequest(const Url &url = Url(), Method method = Get);
+      ~HttpRequest();
 
-			Method method()const;
-			void setMethod(Method method);
-			void setUrl(const Url &url);
-			Url url()const;
-		private:
-			Method method_;
-			Url url_;
-	};
+      Method method()const;
+      void setMethod(Method method);
+      void setUrl(const Url &url);
+      Url url()const;
+    private:
+      Method method_;
+      Url url_;
+  };
 }
 #endif
