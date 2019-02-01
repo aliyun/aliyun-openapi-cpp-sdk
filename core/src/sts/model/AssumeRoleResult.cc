@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,18 +21,18 @@ using namespace AlibabaCloud::Sts;
 using namespace AlibabaCloud::Sts::Model;
 
 AssumeRoleResult::AssumeRoleResult() :
-	ServiceResult(),
-	assumedRoleUser_(),
-	credentials_()
+  ServiceResult(),
+  assumedRoleUser_(),
+  credentials_()
 {
 }
 
 AssumeRoleResult::AssumeRoleResult(const std::string & payload) :
-	ServiceResult(),
-	assumedRoleUser_(),
-	credentials_()
+  ServiceResult(),
+  assumedRoleUser_(),
+  credentials_()
 {
-	parse(payload);
+  parse(payload);
 }
 
 AssumeRoleResult::~AssumeRoleResult()
@@ -41,29 +41,29 @@ AssumeRoleResult::~AssumeRoleResult()
 
 AssumeRoleResult::AssumedRoleUser AssumeRoleResult::assumedRoleUser() const
 {
-	return assumedRoleUser_;
+  return assumedRoleUser_;
 }
 
 AssumeRoleResult::Credentials AssumeRoleResult::credentials() const
 {
-	return credentials_;
+  return credentials_;
 }
 
 void AssumeRoleResult::parse(const std::string & payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
+  Json::Reader reader;
+  Json::Value value;
+  reader.parse(payload, value);
 
-	setRequestId(value["RequestId"].asString());
+  setRequestId(value["RequestId"].asString());
 
-	auto assumedRoleUserNode = value["AssumedRoleUser"];
-	assumedRoleUser_.assumedRoleId = assumedRoleUserNode["AssumedRoleId"].asString();
-	assumedRoleUser_.arn = assumedRoleUserNode["Arn"].asString();
+  auto assumedRoleUserNode = value["AssumedRoleUser"];
+  assumedRoleUser_.assumedRoleId = assumedRoleUserNode["AssumedRoleId"].asString();
+  assumedRoleUser_.arn = assumedRoleUserNode["Arn"].asString();
 
-	auto credentialsNode = value["Credentials"];
-	credentials_.accessKeyId = credentialsNode["AccessKeyId"].asString();
-	credentials_.accessKeySecret = credentialsNode["AccessKeySecret"].asString();
-	credentials_.expiration = credentialsNode["Expiration"].asString();
-	credentials_.securityToken = credentialsNode["SecurityToken"].asString();
+  auto credentialsNode = value["Credentials"];
+  credentials_.accessKeyId = credentialsNode["AccessKeyId"].asString();
+  credentials_.accessKeySecret = credentialsNode["AccessKeySecret"].asString();
+  credentials_.expiration = credentialsNode["Expiration"].asString();
+  credentials_.securityToken = credentialsNode["SecurityToken"].asString();
 }

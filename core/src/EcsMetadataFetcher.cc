@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -32,35 +32,35 @@ EcsMetadataFetcher::~EcsMetadataFetcher()
 
 std::string EcsMetadataFetcher::roleName()const
 {
-	return roleName_;
+  return roleName_;
 }
 
 void EcsMetadataFetcher::setRoleName(const std::string & roleName)
 {
-	roleName_ = roleName;
+  roleName_ = roleName;
 }
 
 std::string EcsMetadataFetcher::getMetadata() {
-	return getMetadata(METADATA_SERVICE_HOST, URL_IN_ECS_METADATA);
+  return getMetadata(METADATA_SERVICE_HOST, URL_IN_ECS_METADATA);
 }
 
 std::string EcsMetadataFetcher::getMetadata(const std::string host, const std::string in_path)
 {
-	std::stringstream path;
-	path << in_path << roleName_;
+  std::stringstream path;
+  path << in_path << roleName_;
 
-	Url credentialUrl;
-	credentialUrl.setHost(host);
-	credentialUrl.setPath(path.str());
+  Url credentialUrl;
+  credentialUrl.setHost(host);
+  credentialUrl.setPath(path.str());
 
-	auto client = std::make_shared<CurlHttpClient>();
+  auto client = std::make_shared<CurlHttpClient>();
 
-	HttpRequest request;
-	request.setUrl(credentialUrl);
-	auto outcome = client->makeRequest(request);
+  HttpRequest request;
+  request.setUrl(credentialUrl);
+  auto outcome = client->makeRequest(request);
 
-	if (outcome.isSuccess())
-		return std::string(outcome.result().body(), outcome.result().bodySize());
-	else
-		return outcome.error().errorCode();
+  if (outcome.isSuccess())
+    return std::string(outcome.result().body(), outcome.result().bodySize());
+  else
+    return outcome.error().errorCode();
 }

@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,39 +21,39 @@
 
 namespace AlibabaCloud
 {
-	namespace Sts
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CORE_EXPORT AssumeRoleResult : public ServiceResult
-			{
-			public:
-				struct AssumedRoleUser
-				{
-					std::string arn;
-					std::string assumedRoleId;
-				};
-				struct Credentials
-				{
-					std::string accessKeyId;
-					std::string accessKeySecret;
-					std::string expiration;
-					std::string securityToken;
-				};
+  namespace Sts
+  {
+    namespace Model
+    {
+      class ALIBABACLOUD_CORE_EXPORT AssumeRoleResult : public ServiceResult
+      {
+      public:
+        struct AssumedRoleUser
+        {
+          std::string arn;
+          std::string assumedRoleId;
+        };
+        struct Credentials
+        {
+          std::string accessKeyId;
+          std::string accessKeySecret;
+          std::string expiration;
+          std::string securityToken;
+        };
 
-				AssumeRoleResult();
-				explicit AssumeRoleResult(const std::string &payload);
-				~AssumeRoleResult();
+        AssumeRoleResult();
+        explicit AssumeRoleResult(const std::string &payload);
+        ~AssumeRoleResult();
 
-				AssumedRoleUser assumedRoleUser()const;
-				Credentials credentials()const;
-			private:
-				void parse(const std::string &payload);
+        AssumedRoleUser assumedRoleUser()const;
+        Credentials credentials()const;
+      private:
+        void parse(const std::string &payload);
 
-				AssumedRoleUser assumedRoleUser_;
-				Credentials credentials_;
-			};
-		}
-	}
+        AssumedRoleUser assumedRoleUser_;
+        Credentials credentials_;
+      };
+    }
+  }
 }
 #endif // !ALIBABACLOUD_CORE_STS_MODEL_ASSUMEROLERESULT_H_

@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -22,26 +22,26 @@
 
 namespace AlibabaCloud
 {
-	namespace Sts
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CORE_EXPORT AssumeRoleRequest : public StsRequest
-			{
-			public:
-				AssumeRoleRequest();
-				~AssumeRoleRequest();
+  namespace Sts
+  {
+    namespace Model
+    {
+      class ALIBABACLOUD_CORE_EXPORT AssumeRoleRequest : public StsRequest
+      {
+      public:
+        AssumeRoleRequest();
+        ~AssumeRoleRequest();
 
-				int durationSeconds()const;
-				std::string policy()const;
-				std::string roleArn()const;
-				std::string roleSessionName()const;
-				void setDurationSeconds(int durationSeconds);
-				void setPolicy(const std::string &policy);
-				void setRoleArn(const std::string & roleArn);
-				void setRoleSessionName(const std::string & roleSessionName);
-			};
-		}
-	}
+        int durationSeconds()const;
+        std::string policy()const;
+        std::string roleArn()const;
+        std::string roleSessionName()const;
+        void setDurationSeconds(int durationSeconds);
+        void setPolicy(const std::string &policy);
+        void setRoleArn(const std::string & roleArn);
+        void setRoleSessionName(const std::string & roleSessionName);
+      };
+    }
+  }
 }
 #endif // !ALIBABACLOUD_CORE_STS_MODEL_ASSUMEROLEREQUEST_H_

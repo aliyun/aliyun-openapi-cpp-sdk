@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,25 +22,25 @@
 
 namespace AlibabaCloud
 {
-	namespace Location
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CORE_EXPORT DescribeEndpointsRequest : public LocationRequest
-			{
-			public:
-				DescribeEndpointsRequest();
-				~DescribeEndpointsRequest();
+  namespace Location
+  {
+    namespace Model
+    {
+      class ALIBABACLOUD_CORE_EXPORT DescribeEndpointsRequest : public LocationRequest
+      {
+      public:
+        DescribeEndpointsRequest();
+        ~DescribeEndpointsRequest();
 
-				std::string serviceCode()const;
-				void setServiceCode(const std::string& serviceCode);
-				std::string id()const;
-				void setId(const std::string& id);
-				std::string type()const;
-				void setType(const std::string& type);
+        std::string serviceCode()const;
+        void setServiceCode(const std::string& serviceCode);
+        std::string id()const;
+        void setId(const std::string& id);
+        std::string type()const;
+        void setType(const std::string& type);
 
-			};
-		}
-	}
+      };
+    }
+  }
 }
 #endif // !ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSREQUEST_H_

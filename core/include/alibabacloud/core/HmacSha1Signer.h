@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,14 +21,14 @@
 
 namespace AlibabaCloud
 {
-	class ALIBABACLOUD_CORE_EXPORT HmacSha1Signer : public Signer
-	{
-	public:
-		HmacSha1Signer();
-		~HmacSha1Signer();
+  class ALIBABACLOUD_CORE_EXPORT HmacSha1Signer : public Signer
+  {
+  public:
+    HmacSha1Signer();
+    ~HmacSha1Signer();
 
-		virtual std::string generate(const std::string &src, const std::string &secret)const override;
-	};
+    virtual std::string generate(const std::string &src, const std::string &secret)const override;
+  };
 }
 
 #endif // !ALIBABACLOUD_CORE_HMACSHA1SIGNER_H_

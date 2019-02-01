@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,25 +27,25 @@
 
 namespace AlibabaCloud
 {
-	class ALIBABACLOUD_CORE_EXPORT InstanceProfileCredentialsProvider : public CredentialsProvider, public EcsMetadataFetcher
-	{
-	public:
-		InstanceProfileCredentialsProvider(const std::string &roleName, int durationSeconds = 3600);
-		~InstanceProfileCredentialsProvider();
+  class ALIBABACLOUD_CORE_EXPORT InstanceProfileCredentialsProvider : public CredentialsProvider, public EcsMetadataFetcher
+  {
+  public:
+    InstanceProfileCredentialsProvider(const std::string &roleName, int durationSeconds = 3600);
+    ~InstanceProfileCredentialsProvider();
 
-		std::string roleName()const;
-		virtual Credentials getCredentials() override;
-		using EcsMetadataFetcher::roleName;
-		using EcsMetadataFetcher::setRoleName;
-		using EcsMetadataFetcher::getMetadata;
-	private:
-		void loadCredentials();
-		bool checkExpiry()const;
+    std::string roleName()const;
+    virtual Credentials getCredentials() override;
+    using EcsMetadataFetcher::roleName;
+    using EcsMetadataFetcher::setRoleName;
+    using EcsMetadataFetcher::getMetadata;
+  private:
+    void loadCredentials();
+    bool checkExpiry()const;
 
-		std::mutex cachedMutex_;
-		Credentials cachedCredentials_;
-		int durationSeconds_;
-		std::chrono::system_clock::time_point expiry_;
-	};
+    std::mutex cachedMutex_;
+    Credentials cachedCredentials_;
+    int durationSeconds_;
+    std::chrono::system_clock::time_point expiry_;
+  };
 }
 #endif

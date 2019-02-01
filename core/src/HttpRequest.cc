@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,9 @@
 using namespace AlibabaCloud;
 
 HttpRequest::HttpRequest(const Url &url, Method method) :
-	HttpMessage(),
-	url_(url),
-	method_(method)
+  HttpMessage(),
+  url_(url),
+  method_(method)
 {
 }
 
@@ -31,21 +31,21 @@ HttpRequest::~HttpRequest()
 
 HttpRequest::Method HttpRequest::method() const
 {
-	return method_;
+  return method_;
 }
 
 
 void HttpRequest::setMethod(Method method)
 {
-	method_ = method;
+  method_ = method;
 }
 
 void HttpRequest::setUrl(const Url &url)
 {
-	url_ = url;
+  url_ = url;
 }
 
 Url HttpRequest::url()const
 {
-	return url_;
+  return url_;
 }

@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -19,82 +19,84 @@
 using namespace AlibabaCloud;
 
 CommonRequest::CommonRequest(RequestPattern pattern):
-	ServiceRequest("",""),
-	domain_(),
-	queryParams_(),
-	httpMethod_(HttpRequest::Get),
-	requestPattern_(pattern)
+  ServiceRequest("",""),
+  domain_(),
+  queryParams_(),
+  httpMethod_(HttpRequest::Get),
+  requestPattern_(pattern)
 {
 }
 
 CommonRequest::~CommonRequest()
-{}
+{
+
+}
 
 std::string CommonRequest::domain()const
 {
-	return domain_;
+  return domain_;
 }
 
 void CommonRequest::setDomain(const std::string &domain)
 {
-	domain_ = domain;
+  domain_ = domain;
 }
 
 CommonRequest::RequestPattern CommonRequest::requestPattern() const
 {
-	return requestPattern_;
+  return requestPattern_;
 }
 
 void CommonRequest::setRequestPattern(RequestPattern pattern)
 {
-	requestPattern_ = pattern;
+  requestPattern_ = pattern;
 }
 
 void CommonRequest::setHttpMethod(HttpRequest::Method method)
 {
-	httpMethod_ = method;
+  httpMethod_ = method;
 }
 
 HttpRequest::Method CommonRequest::httpMethod() const
 {
-	return httpMethod_;
+  return httpMethod_;
 }
 
 CommonRequest::ParameterValueType CommonRequest::queryParameter(const ParameterNameType &name)const
 {
-	ParameterCollection::const_iterator it = queryParams_.find(name);
-	if (it == queryParams_.end()) {
-		return ParameterValueType("");
-	}
-	return it->second;
+  ParameterCollection::const_iterator it = queryParams_.find(name);
+  if (it == queryParams_.end()) {
+    return ParameterValueType("");
+  }
+  return it->second;
 }
 
 
 CommonRequest::ParameterCollection CommonRequest::queryParameters() const
 {
-	return queryParams_;
+  return queryParams_;
 }
 
 void CommonRequest::setQueryParameter(const ParameterNameType &name, const ParameterValueType &value)
 {
-	queryParams_[name] = value;
+  queryParams_[name] = value;
 }
 
 CommonRequest::ParameterValueType CommonRequest::headerParameter(const ParameterNameType &name)const
 {
-	const ParameterCollection::const_iterator it  = headerParams_.find(name);
-	if (it == headerParams_.end()) {
-		return ParameterValueType("");
-	}
-	return it->second;
+  const ParameterCollection::const_iterator it  = headerParams_.find(name);
+  if (it == headerParams_.end()) {
+    return ParameterValueType("");
+  }
+  return it->second;
 }
 
 CommonRequest::ParameterCollection CommonRequest::headerParameters() const
 {
-	return headerParams_;
+  return headerParams_;
 }
 
 void CommonRequest::setHeaderParameter(const ParameterNameType &name, const ParameterValueType &value)
 {
-	headerParams_[name] = value;
+  headerParams_[name] = value;
 }

@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -22,20 +22,20 @@ using namespace AlibabaCloud::Sts;
 using namespace AlibabaCloud::Sts::Model;
 
 GetCallerIdentityResult::GetCallerIdentityResult() :
-	ServiceResult(),
-	accountId_(),
-	arn_(),
-	userId_()
+  ServiceResult(),
+  accountId_(),
+  arn_(),
+  userId_()
 {
 }
 
 GetCallerIdentityResult::GetCallerIdentityResult(const std::string & payload) :
-	ServiceResult(),
-	accountId_(),
-	arn_(),
-	userId_()
+  ServiceResult(),
+  accountId_(),
+  arn_(),
+  userId_()
 {
-	parse(payload);
+  parse(payload);
 }
 
 GetCallerIdentityResult::~GetCallerIdentityResult()
@@ -44,28 +44,28 @@ GetCallerIdentityResult::~GetCallerIdentityResult()
 
 std::string GetCallerIdentityResult::accountId()
 {
-	return accountId_;
+  return accountId_;
 }
 
 std::string GetCallerIdentityResult::arn() const
 {
-	return arn_;
+  return arn_;
 }
 
 std::string GetCallerIdentityResult::userId() const
 {
-	return userId_;
+  return userId_;
 }
 
 void GetCallerIdentityResult::parse(const std::string & payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
+  Json::Reader reader;
+  Json::Value value;
+  reader.parse(payload, value);
 
-	setRequestId(value["RequestId"].asString());
+  setRequestId(value["RequestId"].asString());
 
-	accountId_ = value["AccountId"].asString();
-	arn_ = value["Arn"].asString();
-	userId_ = value["UserId"].asString();
+  accountId_ = value["AccountId"].asString();
+  arn_ = value["Arn"].asString();
+  userId_ = value["UserId"].asString();
 }

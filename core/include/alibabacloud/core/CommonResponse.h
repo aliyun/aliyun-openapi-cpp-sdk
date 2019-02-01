@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -22,17 +22,17 @@
 
 namespace AlibabaCloud
 {
-	class ALIBABACLOUD_CORE_EXPORT CommonResponse
-	{
-	public:
-		CommonResponse();
-		explicit CommonResponse(const std::string &payload);
-		~CommonResponse();
+  class ALIBABACLOUD_CORE_EXPORT CommonResponse
+  {
+  public:
+    CommonResponse();
+    explicit CommonResponse(const std::string &payload);
+    ~CommonResponse();
 
-		std::string payload()const;
-	private:
-		std::string payload_;
+    std::string payload()const;
+  private:
+    std::string payload_;
 
-	};
+  };
 }
 #endif // !ALIBABACLOUD_CORE_COMMONRESPONSE_H_

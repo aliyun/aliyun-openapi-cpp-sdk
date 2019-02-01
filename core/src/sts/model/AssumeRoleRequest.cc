@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,11 +21,11 @@ using namespace AlibabaCloud::Sts;
 using namespace AlibabaCloud::Sts::Model;
 
 AssumeRoleRequest::AssumeRoleRequest() :
-	StsRequest("AssumeRole")
+  StsRequest("AssumeRole")
 {
-	setRoleArn("");
-	setRoleSessionName("");
-	setDurationSeconds(3600);
+  setRoleArn("");
+  setRoleSessionName("");
+  setDurationSeconds(3600);
 }
 
 AssumeRoleRequest::~AssumeRoleRequest()
@@ -34,40 +34,40 @@ AssumeRoleRequest::~AssumeRoleRequest()
 
 int AssumeRoleRequest::durationSeconds() const
 {
-	return std::stoi(parameter("DurationSeconds"));
+  return std::stoi(parameter("DurationSeconds"));
 }
 
 std::string AssumeRoleRequest::policy() const
 {
-	return parameter("Policy");
+  return parameter("Policy");
 }
 
 std::string AssumeRoleRequest::roleArn() const
 {
-	return parameter("RoleArn");
+  return parameter("RoleArn");
 }
 
 std::string AssumeRoleRequest::roleSessionName() const
 {
-	return parameter("RoleSessionName");
+  return parameter("RoleSessionName");
 }
 
 void AssumeRoleRequest::setDurationSeconds(int durationSeconds)
 {
-	setParameter("DurationSeconds", std::to_string(durationSeconds));
+  setParameter("DurationSeconds", std::to_string(durationSeconds));
 }
 
 void AssumeRoleRequest::setPolicy(const std::string & policy)
 {
-	setParameter("Policy", policy);
+  setParameter("Policy", policy);
 }
 
 void AssumeRoleRequest::setRoleArn(const std::string & roleArn)
 {
-	setParameter("RoleArn", roleArn);
+  setParameter("RoleArn", roleArn);
 }
 
 void AssumeRoleRequest::setRoleSessionName(const std::string & roleSessionName)
 {
-	setParameter("RoleSessionName", roleSessionName);
+  setParameter("RoleSessionName", roleSessionName);
 }

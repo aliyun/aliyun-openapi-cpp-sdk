@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -24,43 +24,43 @@
 
 namespace AlibabaCloud
 {
-	class ALIBABACLOUD_CORE_EXPORT CommonRequest : public ServiceRequest
-	{
-	public:
-		enum RequestPattern
-		{
-			RpcPattern,
-			RoaPattern
-		};
+  class ALIBABACLOUD_CORE_EXPORT CommonRequest : public ServiceRequest
+  {
+  public:
+    enum RequestPattern
+    {
+      RpcPattern,
+      RoaPattern
+    };
 
-		explicit CommonRequest(RequestPattern pattern = RpcPattern);
-		~CommonRequest();
+    explicit CommonRequest(RequestPattern pattern = RpcPattern);
+    ~CommonRequest();
 
-		std::string domain()const;
-		ParameterValueType headerParameter(const ParameterNameType &name)const;
-		ParameterCollection headerParameters()const;
-		HttpRequest::Method httpMethod()const;
-		ParameterValueType queryParameter(const ParameterNameType &name)const;
-		ParameterCollection queryParameters()const;
-		using ServiceRequest::setContent;
-		void setDomain(const std::string &domain);
-		void setHeaderParameter(const ParameterNameType &name, const ParameterValueType &value);
-		void setHttpMethod(HttpRequest::Method method);
-		void setQueryParameter(const ParameterNameType &name, const ParameterValueType &value);
-		using ServiceRequest::setResourcePath;
-		void setRequestPattern(RequestPattern pattern);
-		using ServiceRequest::setVersion;
-		using ServiceRequest::setScheme;
-		RequestPattern requestPattern()const;
-	protected:
-		using ServiceRequest::product;
+    std::string domain()const;
+    ParameterValueType headerParameter(const ParameterNameType &name)const;
+    ParameterCollection headerParameters()const;
+    HttpRequest::Method httpMethod()const;
+    ParameterValueType queryParameter(const ParameterNameType &name)const;
+    ParameterCollection queryParameters()const;
+    using ServiceRequest::setContent;
+    void setDomain(const std::string &domain);
+    void setHeaderParameter(const ParameterNameType &name, const ParameterValueType &value);
+    void setHttpMethod(HttpRequest::Method method);
+    void setQueryParameter(const ParameterNameType &name, const ParameterValueType &value);
+    using ServiceRequest::setResourcePath;
+    void setRequestPattern(RequestPattern pattern);
+    using ServiceRequest::setVersion;
+    using ServiceRequest::setScheme;
+    RequestPattern requestPattern()const;
+  protected:
+    using ServiceRequest::product;
 
-	private:
-		std::string domain_;
-		RequestPattern requestPattern_;
-		ParameterCollection queryParams_;
-		ParameterCollection headerParams_;
-		HttpRequest::Method httpMethod_;
-	};
+  private:
+    std::string domain_;
+    RequestPattern requestPattern_;
+    ParameterCollection queryParams_;
+    ParameterCollection headerParams_;
+    HttpRequest::Method httpMethod_;
+  };
 }
 #endif // !ALIBABACLOUD_CORE_COMMONREQUEST_H_

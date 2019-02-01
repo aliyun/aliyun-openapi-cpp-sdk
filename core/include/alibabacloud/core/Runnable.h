@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -22,14 +22,14 @@
 
 namespace AlibabaCloud
 {
-	class ALIBABACLOUD_CORE_EXPORT Runnable
-	{
-	public:
-		explicit Runnable(const std::function<void()> f);
-		void run()const;
+  class ALIBABACLOUD_CORE_EXPORT Runnable
+  {
+  public:
+    explicit Runnable(const std::function<void()> f);
+    void run()const;
 
-	private:
-		std::function<void()> f_;
-	};
+  private:
+    std::function<void()> f_;
+  };
 }
 #endif // !ALIBABACLOUD_CORE_RUNNABLE_H_

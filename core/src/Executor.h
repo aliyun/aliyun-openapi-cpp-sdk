@@ -1,5 +1,5 @@
 /*
-* Copyright 2009-2017 Alibaba Cloud All rights reserved.
+* Copyright 1999-2019 Alibaba Cloud All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -26,28 +26,28 @@
 
 namespace AlibabaCloud
 {
-	class Runnable;
-	class Executor
-	{
-	public:
-		Executor();
-		~Executor();
-		 
-		static Executor * instance();
-		void execute(Runnable* task);
-		bool isShutdown()const;
-		bool start();
-		void shutdown();
-		void wakeUp();
-	private:
-		static Executor *self_;
-		std::atomic<bool> shutdown_;
-		std::queue<Runnable*> tasksQueue_;
-		std::mutex tasksQueueMutex_;
-		std::thread thread_;
-		std::condition_variable cv_;
-		std::mutex cvMutex_;
-	};
+  class Runnable;
+  class Executor
+  {
+  public:
+    Executor();
+    ~Executor();
+
+    static Executor * instance();
+    void execute(Runnable* task);
+    bool isShutdown()const;
+    bool start();
+    void shutdown();
+    void wakeUp();
+  private:
+    static Executor *self_;
+    std::atomic<bool> shutdown_;
+    std::queue<Runnable*> tasksQueue_;
+    std::mutex tasksQueueMutex_;
+    std::thread thread_;
+    std::condition_variable cv_;
+    std::mutex cvMutex_;
+  };
 }
 
 #endif // !ALIBABACLOUD_CORE_EXECUTOR_H_

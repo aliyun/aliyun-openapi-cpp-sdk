@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,61 +28,61 @@
 using namespace AlibabaCloud;
 
 CoreClient::CoreClient(const std::string & servicename, const ClientConfiguration &configuration) :
-	serviceName_(servicename),
-	configuration_(configuration),
-	httpClient_(new CurlHttpClient)
+  serviceName_(servicename),
+  configuration_(configuration),
+  httpClient_(new CurlHttpClient)
 {
-	httpClient_->setProxy(configuration.proxy());
+  httpClient_->setProxy(configuration.proxy());
 }
 
 CoreClient::~CoreClient()
 {
-	delete httpClient_;
+  delete httpClient_;
 }
 
 ClientConfiguration CoreClient::configuration()const
 {
-	return configuration_;
+  return configuration_;
 }
 
 std::string CoreClient::serviceName()const
 {
-	return serviceName_;
+  return serviceName_;
 }
 
 void CoreClient::asyncExecute(Runnable * r)const
 {
-	Executor::instance()->execute(r);
+  Executor::instance()->execute(r);
 }
 
 HttpClient::HttpResponseOutcome CoreClient::AttemptRequest(const std::string & endpoint, const ServiceRequest & request, HttpRequest::Method method) const
 {
-	auto r = buildHttpRequest(endpoint, request, method);
-	auto outcome = httpClient_->makeRequest(r);
-	if (!outcome.isSuccess())
-		return outcome;
-	if(hasResponseError(outcome.result()))
-		return HttpClient::HttpResponseOutcome(buildCoreError(outcome.result()));
-	else
-		return outcome;
+  auto r = buildHttpRequest(endpoint, request, method);
+  auto outcome = httpClient_->makeRequest(r);
+  if (!outcome.isSuccess())
+    return outcome;
+  if(hasResponseError(outcome.result()))
+    return HttpClient::HttpResponseOutcome(buildCoreError(outcome.result()));
+  else
+    return outcome;
 }
 
 Error CoreClient::buildCoreError(const HttpResponse &response)const
 {
-	Json::Reader reader;
-	Json::Value value;
-	if (!reader.parse(std::string(response.body(), response.bodySize()), value))
-		return Error("InvalidResponse", "");
+  Json::Reader reader;
+  Json::Value value;
+  if (!reader.parse(std::string(response.body(), response.bodySize()), value))
+    return Error("InvalidResponse", "");
 
-	Error error;
-	error.setErrorCode(value["Code"].asString());
-	error.setErrorMessage(value["Message"].asString());
-	error.setHost(value["HostId"].asString());
-	error.setRequestId(value["RequestId"].asString());
-	return error;
+  Error error;
+  error.setErrorCode(value["Code"].asString());
+  error.setErrorMessage(value["Message"].asString());
+  error.setHost(value["HostId"].asString());
+  error.setRequestId(value["RequestId"].asString());
+  return error;
 }
 
 bool CoreClient::hasResponseError(const HttpResponse &response)const
 {
-	return response.statusCode() < 200 || response.statusCode() > 299;
+  return response.statusCode() < 200 || response.statusCode() > 299;
 }
