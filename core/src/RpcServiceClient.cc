@@ -36,27 +36,6 @@ RpcServiceClient::~RpcServiceClient()
 {
 }
 
-std::string RpcServiceClient::canonicalizedQuery(const std::map<std::string, std::string>& params) const
-{
-  if (params.empty())
-    return std::string();
-
-  std::stringstream ss;
-  for (const auto &p : params)
-  {
-    std::string key = UrlEncode(p.first);
-    StringReplace(key, "+", "%20");
-    StringReplace(key, "*", "%2A");
-    StringReplace(key, "%7E", "~");
-    std::string value = UrlEncode(p.second);
-    StringReplace(value, "+", "%20");
-    StringReplace(value, "*", "%2A");
-    StringReplace(value, "%7E", "~");
-    ss << "&" << key << "=" << value;
-  }
-  return ss.str().substr(1);
-}
-
 RpcServiceClient::JsonOutcome RpcServiceClient::makeRequest(const std::string &endpoint, const RpcServiceRequest &msg, HttpRequest::Method method)const
 {
   auto outcome = AttemptRequest(endpoint, msg, method);
@@ -82,7 +61,6 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint, con
   } else {
     url.setScheme(msg.scheme());
   }
-
   url.setHost(endpoint);
   url.setPath(msg.resourcePath());
 
@@ -104,7 +82,7 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint, con
   std::stringstream ss;
 #if defined(__GNUG__) && __GNUC__ < 5
   char tmbuff[26];
-  strftime(tmbuff, 26, "%FT%TZ" , std::gmtime(&t));
+  strftime(tmbuff, 26, "%FT%TZ", std::gmtime(&t));
   ss << tmbuff;
 #else
   ss << std::put_time(std::gmtime(&t), "%FT%TZ");

@@ -53,8 +53,6 @@ namespace AlibabaCloud
     JsonOutcome makeRequest(const std::string &endpoint, const CommonRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get)const;
     using CoreClient::asyncExecute;
   private:
-    std::string canonicalizedQuery(const std::map <std::string, std::string> &params)const;
-    std::string canonicalizedHeaders(const HttpMessage::HeaderCollection &headers)const;
 
     std::shared_ptr<CredentialsProvider> credentialsProvider_;
     std::shared_ptr<Signer> signer_;

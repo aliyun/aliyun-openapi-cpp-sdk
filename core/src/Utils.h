@@ -19,6 +19,7 @@
 
 #include <string>
 #include <alibabacloud/core/HttpRequest.h>
+#include <alibabacloud/core/HttpMessage.h>
 
 namespace AlibabaCloud
 {
@@ -28,5 +29,7 @@ namespace AlibabaCloud
   void StringReplace(std::string &src, const std::string &s1, const std::string &s2);
   std::string UrlEncode(const std::string &src);
   std::string UrlDecode(const std::string &src);
+  std::string canonicalizedQuery(const std::map <std::string, std::string> &params);
+  std::string canonicalizedHeaders(const HttpMessage::HeaderCollection &headers);
 }
 #endif

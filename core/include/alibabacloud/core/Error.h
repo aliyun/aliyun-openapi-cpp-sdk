@@ -33,15 +33,18 @@ namespace AlibabaCloud
     std::string errorMessage() const;
     std::string host() const;
     std::string requestId() const;
+    std::string detail() const;
     void setErrorCode(const std::string &code);
     void setErrorMessage(const std::string& message);
     void setHost(const std::string& host);
     void setRequestId(const std::string& request);
+    void setDetail(const std::string& detail);
   private:
     std::string errorCode_;
     std::string message_;
     std::string host_;
     std::string requestId_;
+    std::string detail_;
   };
 }
 

@@ -98,8 +98,13 @@ HttpClient::HttpResponseOutcome CurlHttpClient::makeRequest(const HttpRequest &r
   {
   case HttpRequest::Method::Get:
     break;
-  case HttpRequest::Method::Post:
-    curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, request.body());
+  case HttpRequest::Method::Post: {
+    if (request.bodySize() > 0) {
+      curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, request.body());
+    } else {
+      curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, "");
+    }
+  }
     break;
   case HttpRequest::Method::Put:
     curl_easy_setopt(curlHandle_, CURLOPT_UPLOAD, 1L);

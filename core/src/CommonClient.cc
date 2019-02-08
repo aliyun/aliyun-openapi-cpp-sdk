@@ -69,7 +69,6 @@ CommonClient::JsonOutcome CommonClient::makeRequest(const std::string &endpoint,
 CommonClient::CommonResponseOutcome CommonClient::commonResponse(const CommonRequest & request) const
 {
   auto outcome = makeRequest(request.domain(), request, request.httpMethod());
-
   if (outcome.isSuccess())
     return CommonResponseOutcome(CommonResponse(outcome.result()));
   else
@@ -111,33 +110,6 @@ HttpRequest CommonClient::buildHttpRequest(const std::string & endpoint, const C
     return buildRoaHttpRequest(endpoint, msg, method);
 }
 
-std::string CommonClient::canonicalizedHeaders(const HttpMessage::HeaderCollection &headers)const
-{
-  std::map <std::string, std::string> materials;
-  for (const auto &p : headers)
-  {
-    std::string key = p.first;
-    std::transform(key.begin(), key.end(), key.begin(), ::tolower);
-    if (key.find("x-acs-") != 0)
-      continue;
-
-    std::string value = p.second;
-    StringReplace(value, "\t", " ");
-    StringReplace(value, "\n", " ");
-    StringReplace(value, "\r", " ");
-    StringReplace(value, "\f", " ");
-    materials[key] = value;
-  }
-
-  if (materials.empty())
-    return std::string();
-  std::stringstream ss;
-  for (const auto &p : materials)
-    ss << p.first << ":" << p.second << "\n";
-
-  return ss.str();
-}
-
 HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const
 {
   const Credentials credentials = credentialsProvider_->getCredentials();
@@ -148,7 +120,6 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, cons
   } else {
     url.setScheme(msg.scheme());
   }
-
   url.setHost(endpoint);
   url.setPath(msg.resourcePath());
 
@@ -179,18 +150,16 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, cons
     request.setHeader("Accept", msg.headerParameter("Accept"));
   }
 
-  if (msg.hasContent()) {
-    std::stringstream ss;
-    ss << msg.contentSize();
-    request.setHeader("Content-Length", ss.str());
-    if(msg.headerParameter("Content-Type").empty()) {
-      request.setHeader("Content-Type", "application/octet-stream");
-    } else {
-      request.setHeader("Content-Type", msg.headerParameter("Content-Type"));
-    }
-    request.setHeader("Content-MD5", ComputeContentMD5(msg.content(), msg.contentSize()));
-    request.setBody(msg.content(), msg.contentSize());
+  std::stringstream ss;
+  ss << msg.contentSize();
+  request.setHeader("Content-Length", ss.str());
+  if(msg.headerParameter("Content-Type").empty()) {
+    request.setHeader("Content-Type", "application/octet-stream");
+  } else {
+    request.setHeader("Content-Type", msg.headerParameter("Content-Type"));
   }
+  request.setHeader("Content-MD5", ComputeContentMD5(msg.content(), msg.contentSize()));
+  request.setBody(msg.content(), msg.contentSize());
 
   std::time_t t = std::time(nullptr);
   std::stringstream date;
@@ -231,28 +200,6 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, cons
     << signer_->generate(plaintext.str(), credentials.accessKeySecret());
   request.setHeader("Authorization", sign.str());
   return request;
-}
-
-
-std::string CommonClient::canonicalizedQuery(const std::map<std::string, std::string>& params) const
-{
-  if (params.empty())
-    return std::string();
-
-  std::stringstream ss;
-  for (const auto &p : params)
-  {
-    std::string key = UrlEncode(p.first);
-    StringReplace(key, "+", "%20");
-    StringReplace(key, "*", "%2A");
-    StringReplace(key, "%7E", "~");
-    std::string value = UrlEncode(p.second);
-    StringReplace(value, "+", "%20");
-    StringReplace(value, "*", "%2A");
-    StringReplace(value, "%7E", "~");
-    ss << "&" << key << "=" << value;
-  }
-  return ss.str().substr(1);
 }
 
 HttpRequest CommonClient::buildRpcHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const

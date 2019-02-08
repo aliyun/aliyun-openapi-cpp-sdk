@@ -79,6 +79,9 @@ Error CoreClient::buildCoreError(const HttpResponse &response)const
   error.setErrorMessage(value["Message"].asString());
   error.setHost(value["HostId"].asString());
   error.setRequestId(value["RequestId"].asString());
+  if (value["Code"].asString().empty() || value["Message"].asString().empty()) {
+    error.setDetail(std::string(response.body()));
+  }
   return error;
 }
 
