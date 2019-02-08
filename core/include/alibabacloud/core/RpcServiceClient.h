@@ -53,8 +53,6 @@ namespace AlibabaCloud
     virtual HttpRequest buildHttpRequest(const std::string & endpoint, const ServiceRequest &msg, HttpRequest::Method method)const override;
     HttpRequest buildHttpRequest(const std::string & endpoint, const RpcServiceRequest &msg, HttpRequest::Method method)const;
   private:
-    std::string canonicalizedQuery(const std::map <std::string, std::string> &params)const;
-
     std::shared_ptr<CredentialsProvider> credentialsProvider_;
     std::shared_ptr<Signer> signer_;
   };

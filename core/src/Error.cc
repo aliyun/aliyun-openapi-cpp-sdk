@@ -22,7 +22,8 @@ Error::Error(std::string code, const std::string message) :
   errorCode_(code),
   message_(message),
   host_(),
-  requestId_()
+  requestId_(),
+  detail_()
 {
 }
 
@@ -30,7 +31,9 @@ std::string Error::errorCode()const { return errorCode_; }
 std::string Error::errorMessage() const { return message_; }
 std::string Error::host() const { return host_; }
 std::string Error::requestId() const { return requestId_; }
+std::string Error::detail() const { return detail_; }
 void Error::setErrorCode(const std::string &code) { errorCode_ = code; }
 void Error::setErrorMessage(const std::string& message) { message_ = message; }
 void Error::setHost(const std::string& host) { host_ = host; }
 void Error::setRequestId(const std::string& request) { requestId_ = request; }
+void Error::setDetail(const std::string& detail) { detail_ = detail; }

@@ -36,4 +36,31 @@ namespace {
     EXPECT_TRUE(outcome.result().payload() == expected);
     AlibabaCloud::ShutdownSdk();
   }
+
+  TEST(nlp, wordsegment_error) {
+    utUtils utils;
+    string key = utils.get_env("ENV_AccessKeyId");
+    string secret = utils.get_env("ENV_AccessKeySecret");
+
+    AlibabaCloud::InitializeSdk();
+    ClientConfiguration configuration("cn-shanghai");
+
+    CommonClient client(key, secret, configuration);
+    // 创建API请求并设置参数
+    CommonRequest request(CommonRequest::RoaPattern);
+    request.setScheme("http");
+    request.setDomain("nlp.cn-shanghai.aliyuncs.com");
+    request.setResourcePath("/nlp/api/wordsegment/general");
+    request.setHttpMethod(HttpRequest::Post);
+    const char * data = "invlaid text";
+    request.setContent(data, strlen(data));
+    request.setHeaderParameter("Content-Type", "application/json;chrset=utf-8");
+    request.setVersion("2018-04-08");
+
+    auto outcome = client.commonResponse(request);
+    const string error = "{\"errorCode\":10007,\"errorMsg\":\"body json format invalid\"}";
+    cout << "error: " << outcome.error().detail() << endl;
+    EXPECT_TRUE(outcome.error().detail() == error);
+    AlibabaCloud::ShutdownSdk();
+  }
 }

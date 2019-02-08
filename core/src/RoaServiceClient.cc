@@ -37,52 +37,6 @@ RoaServiceClient::~RoaServiceClient()
 {
 }
 
-std::string RoaServiceClient::canonicalizedResource(const std::string &path, std::map <std::string, std::string> &params)const
-{
-  if (params.empty())
-    return path;
-
-  std::stringstream ss;
-  for (const auto &p : params)
-  {
-    if (p.second.empty())
-      ss << "&" << p.first;
-    else
-      ss << "&" << p.first << "=" << p.second;
-  }
-
-  std::string str = path;
-  str.append("?").append(ss.str().substr(1));
-  return str;
-}
-
-std::string RoaServiceClient::canonicalizedHeaders(const HttpMessage::HeaderCollection &headers)const
-{
-  std::map <std::string, std::string> materials;
-  for (const auto &p : headers)
-  {
-    std::string key = p.first;
-    std::transform(key.begin(), key.end(), key.begin(), ::tolower);
-    if (key.find("x-acs-") != 0)
-      continue;
-
-    std::string value = p.second;
-    StringReplace(value, "\t", " ");
-    StringReplace(value, "\n", " ");
-    StringReplace(value, "\r", " ");
-    StringReplace(value, "\f", " ");
-    materials[key] = value;
-  }
-
-  if (materials.empty())
-    return std::string();
-  std::stringstream ss;
-  for (const auto &p : materials)
-    ss << p.first << ":" << p.second << "\n";
-
-  return ss.str();
-}
-
 RoaServiceClient::JsonOutcome RoaServiceClient::makeRequest(const std::string &endpoint, const RoaServiceRequest &msg, HttpRequest::Method method)const
 {
   auto outcome = AttemptRequest(endpoint, msg, method);
@@ -113,7 +67,7 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint, con
 
   auto params = msg.parameters();
   std::map <std::string, std::string> queryParams;
-  for (const auto &p : params){
+  for (const auto &p : params) {
     if (!p.second.empty())
       queryParams[p.first] = p.second;
   }
@@ -164,7 +118,7 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint, con
   request.setHeader("Host", url.host());
   request.setHeader("x-sdk-client", std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
   request.setHeader("x-acs-region-id", configuration().regionId());
-  if(!credentials.sessionToken().empty())
+  if (!credentials.sessionToken().empty())
     request.setHeader("x-acs-security-token", credentials.sessionToken());
   request.setHeader("x-acs-signature-method", signer_->name());
   request.setHeader("x-acs-signature-nonce", GenerateUuid());
@@ -189,6 +143,5 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint, con
     << ":"
     << signer_->generate(plaintext.str(), credentials.accessKeySecret());
   request.setHeader("Authorization", sign.str());
-
   return request;
 }

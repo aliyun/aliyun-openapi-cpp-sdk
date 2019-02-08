@@ -15,6 +15,8 @@
  */
 
 #include "Utils.h"
+#include <sstream>
+#include <algorithm>
 #include <curl/curl.h>
 #ifdef _WIN32
 #include <Windows.h>
@@ -139,4 +141,52 @@ std::string AlibabaCloud::HttpMethodToString(HttpRequest::Method method)
     return "GET";
     break;
   }
+}
+
+std::string AlibabaCloud::canonicalizedQuery(const std::map<std::string, std::string>& params)
+{
+  if (params.empty())
+    return std::string();
+
+  std::stringstream ss;
+  for (const auto &p : params)
+  {
+    std::string key = UrlEncode(p.first);
+    StringReplace(key, "+", "%20");
+    StringReplace(key, "*", "%2A");
+    StringReplace(key, "%7E", "~");
+    std::string value = UrlEncode(p.second);
+    StringReplace(value, "+", "%20");
+    StringReplace(value, "*", "%2A");
+    StringReplace(value, "%7E", "~");
+    ss << "&" << key << "=" << value;
+  }
+  return ss.str().substr(1);
+}
+
+std::string AlibabaCloud::canonicalizedHeaders(const HttpMessage::HeaderCollection &headers)
+{
+  std::map <std::string, std::string> materials;
+  for (const auto &p : headers)
+  {
+    std::string key = p.first;
+    std::transform(key.begin(), key.end(), key.begin(), ::tolower);
+    if (key.find("x-acs-") != 0)
+      continue;
+
+    std::string value = p.second;
+    StringReplace(value, "\t", " ");
+    StringReplace(value, "\n", " ");
+    StringReplace(value, "\r", " ");
+    StringReplace(value, "\f", " ");
+    materials[key] = value;
+  }
+
+  if (materials.empty())
+    return std::string();
+  std::stringstream ss;
+  for (const auto &p : materials)
+    ss << p.first << ":" << p.second << "\n";
+
+  return ss.str();
 }
