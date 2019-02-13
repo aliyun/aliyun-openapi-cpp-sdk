@@ -45,7 +45,7 @@ Before using C++ SDK, you must first configure the preprocessor to define `ALIBA
 
 The following code shows how to call the [DescribeInstances](~~25506~~) API of ECS to query detailed information of all ECS instances in a specific region.
 
-```
+```cpp
 #include <iostream>
 #include <alibabacloud/core/AlibabaCloud.h>
 #include <alibabacloud/ecs/EcsClient.h>
