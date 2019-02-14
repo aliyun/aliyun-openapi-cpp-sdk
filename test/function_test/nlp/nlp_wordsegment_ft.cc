@@ -59,7 +59,6 @@ namespace {
 
     auto outcome = client.commonResponse(request);
     const string error = "{\"errorCode\":10007,\"errorMsg\":\"body json format invalid\"}";
-    cout << "error: " << outcome.error().detail() << endl;
     EXPECT_TRUE(outcome.error().detail() == error);
     AlibabaCloud::ShutdownSdk();
   }
