@@ -132,9 +132,6 @@ namespace {
     EXPECT_TRUE(it != protocols.end());
   }
 
-
-
-
   TEST(LocationClient, callable) {
     InitializeSdk();
     ClientConfiguration configuration("cn-hangzhou");
@@ -171,4 +168,32 @@ namespace {
     EXPECT_TRUE(it != protocols.end());
     ShutdownSdk();
   }
+
+
+void cb(const LocationClient *client,
+          const Model::DescribeEndpointsRequest &req,
+          const LocationClient::DescribeEndpointsOutcome& out,
+          const std::shared_ptr<const AsyncCallerContext>& contex) {
+    EXPECT_FALSE(out.error().errorCode().empty());
+  }
+
+  TEST(LocationClient, async) {
+    InitializeSdk();
+
+    ClientConfiguration configuration("cn-hangzhou");
+    Model::DescribeEndpointsRequest req;
+    req.setId("cn-hangzhou");
+    req.setServiceCode("ecs");
+    req.setType("openAPI");
+
+    LocationClient client("key", "secret", configuration);
+    LocationClient::DescribeEndpointsOutcome out;
+
+    const AsyncCallerContext context;
+
+    LocationClient::DescribeEndpointsAsyncHandler handler(cb);
+    client.describeEndpointsAsync(req, handler, std::make_shared<const AsyncCallerContext>(context));
+    ShutdownSdk();
+  }
+
 }

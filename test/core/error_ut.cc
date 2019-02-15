@@ -30,4 +30,8 @@ TEST(Error, basic) {
 
   EXPECT_TRUE(error.errorCode() == code1);
   EXPECT_TRUE(error.errorMessage() == message1);
+
+  const string detail = "any error detail";
+  error.setDetail(detail);
+  EXPECT_TRUE(error.detail() == detail);
 }

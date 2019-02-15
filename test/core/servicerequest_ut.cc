@@ -32,7 +32,7 @@ namespace {
     using ServiceRequest::setVersion;
   };
 
-  TEST(ServiceRequestTest, basic) {
+  TEST(ServiceRequest, basic) {
 
     TestServiceRequest sr1("ECS", "1.0");
     TestServiceRequest sr2(sr1);
