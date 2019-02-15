@@ -15,6 +15,7 @@ using namespace AlibabaCloud;
 using namespace AlibabaCloud::Sts;
 
 namespace {
+
   class mockStsClient : public StsClient {
    public:
     mockStsClient(const string& key, const string& secret, const ClientConfiguration& cfg):
@@ -102,6 +103,25 @@ namespace {
     ShutdownSdk();
   }
 
+  void cb(const StsClient *client,
+          const Model::GetCallerIdentityRequest &req,
+          const StsClient::GetCallerIdentityOutcome& out,
+          const std::shared_ptr<const AsyncCallerContext>& contex) {
+    EXPECT_FALSE(out.error().errorCode().empty());
+  }
+
+  TEST(StsClient, getCallerIdentity_async) {
+    InitializeSdk();
+    ClientConfiguration configuration("cn-hangzhou");
+    Model::GetCallerIdentityRequest req;
+    StsClient client("key", "secret", configuration);
+    const AsyncCallerContext context;
+
+    StsClient::GetCallerIdentityAsyncHandler handler(cb);
+    client.getCallerIdentityAsync(req, handler, std::make_shared<const AsyncCallerContext>(context));
+    ShutdownSdk();
+  }
+
   TEST(StsClient, assumeRole) {
     ClientConfiguration configuration;
     RpcServiceClient::JsonOutcome xout("{\"RequestId\":\"any-request-id\",\"success\":true,\"AssumedRoleUser\":{\"AssumedRoleId\":\"123456789\",\"Arn\":\"any-arn\"},\"Credentials\":{\"AccessKeyId\":\"any-key\",\"AccessKeySecret\":\"any-secret\",\"Expiration\":\"2019-01-15T16:31:10Z\",\"SecurityToken\":\"any-token\"}}");
@@ -151,4 +171,24 @@ namespace {
     EXPECT_TRUE(out.error().errorCode() == "any-error-code");
   }
 
+  void assumerole_cb(const StsClient *client,
+          const Model::AssumeRoleRequest &req,
+          const StsClient::AssumeRoleOutcome& out,
+          const std::shared_ptr<const AsyncCallerContext>& contex) {
+    EXPECT_FALSE(out.error().errorCode().empty());
+  }
+
+  TEST(StsClient, assumeRole_async) {
+    InitializeSdk();
+    ClientConfiguration configuration("cn-hangzhou");
+    Model::AssumeRoleRequest req;
+    req.setRoleArn("acs:ram::1940345800212929:root");
+    req.setRoleSessionName("test_session");
+    req.setDurationSeconds(1000);
+    StsClient client("key", "secret", configuration);
+    const AsyncCallerContext context;
+    StsClient::AssumeRoleAsyncHandler handler(assumerole_cb);
+    client.assumeRoleAsync(req, handler, std::make_shared<const AsyncCallerContext>(context));
+    ShutdownSdk();
+  }
 }
