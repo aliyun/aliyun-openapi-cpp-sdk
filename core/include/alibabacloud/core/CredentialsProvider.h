@@ -14,23 +14,20 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_CREDENTIALSPROVIDER_H_
-#define ALIBABACLOUD_CORE_CREDENTIALSPROVIDER_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALSPROVIDER_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALSPROVIDER_H_
 
 #include "CoreExport.h"
 #include "Credentials.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT CredentialsProvider
-  {
-  public:
-    CredentialsProvider() = default;
-    virtual  ~CredentialsProvider() = default;
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT CredentialsProvider {
+ public:
+  CredentialsProvider() = default;
+  virtual  ~CredentialsProvider() = default;
+  virtual Credentials getCredentials() = 0;
 
-    virtual Credentials getCredentials() = 0;
-  private:
-
-  };
-}
-#endif
+ private:
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALSPROVIDER_H_

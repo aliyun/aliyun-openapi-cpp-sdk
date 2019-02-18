@@ -19,10 +19,8 @@
 using namespace AlibabaCloud::Location;
 
 LocationRequest::LocationRequest(const std::string & action) :
-  RpcServiceRequest("location", "2015-06-12", action)
-{
+  RpcServiceRequest("location", "2015-06-12", action) {
 }
 
-LocationRequest::~LocationRequest()
-{
+LocationRequest::~LocationRequest() {
 }

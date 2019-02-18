@@ -18,10 +18,9 @@
 #include <algorithm>
 #include <sstream>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-namespace
-{
+namespace {
 #define INVALID_PORT -1
 }
 
@@ -33,18 +32,15 @@ Url::Url(const std::string & url) :
   path_(),
   port_(INVALID_PORT),
   query_(),
-  fragment_()
-{
-  if(!url.empty())
+  fragment_() {
+  if (!url.empty())
     fromString(url);
 }
 
-Url::~Url()
-{
+Url::~Url() {
 }
 
-bool Url::operator==(const Url &url) const
-{
+bool Url::operator==(const Url &url) const {
   return scheme_ == url.scheme_
     && userName_ == url.userName_
     && password_ == url.password_
@@ -55,13 +51,11 @@ bool Url::operator==(const Url &url) const
     && fragment_ == url.fragment_;
 }
 
-bool Url::operator!=(const Url &url) const
-{
+bool Url::operator!=(const Url &url) const {
   return !(*this == url);
 }
 
-std::string Url::authority() const
-{
+std::string Url::authority() const {
   if (!isValid())
     return std::string();
 
@@ -75,8 +69,7 @@ std::string Url::authority() const
   return out.str();
 }
 
-void Url::clear()
-{
+void Url::clear() {
   scheme_.clear();
   userName_.clear();
   password_.clear();
@@ -87,13 +80,11 @@ void Url::clear()
   fragment_.clear();
 }
 
-std::string Url::fragment() const
-{
+std::string Url::fragment() const {
   return fragment_;
 }
 
-void Url::fromString(const std::string & url)
-{
+void Url::fromString(const std::string & url) {
   clear();
   if (url.empty())
     return;
@@ -124,9 +115,9 @@ void Url::fromString(const std::string & url)
   if (pos != str.npos) {
     path = str.substr(pos);
     str.erase(pos);
-  }
-  else
+  } else {
     path = "/";
+  }
 
   authority = str;
 
@@ -137,23 +128,19 @@ void Url::fromString(const std::string & url)
   setFragment(fragment);
 }
 
-bool Url::hasFragment() const
-{
+bool Url::hasFragment() const {
   return !fragment_.empty();
 }
 
-bool Url::hasQuery() const
-{
+bool Url::hasQuery() const {
   return !query_.empty();
 }
 
-std::string Url::host() const
-{
+std::string Url::host() const {
   return host_;
 }
 
-bool Url::isEmpty() const
-{
+bool Url::isEmpty() const {
   return scheme_.empty()
     && userName_.empty()
     && password_.empty()
@@ -164,8 +151,7 @@ bool Url::isEmpty() const
     && fragment_.empty();
 }
 
-bool Url::isValid() const
-{
+bool Url::isValid() const {
   if (isEmpty())
     return false;
 
@@ -178,33 +164,27 @@ bool Url::isValid() const
   return valid;
 }
 
-int Url::port() const
-{
+int Url::port() const {
   return port_;
 }
 
-std::string Url::password() const
-{
+std::string Url::password() const {
   return password_;
 }
 
-std::string Url::path() const
-{
+std::string Url::path() const {
   return path_;
 }
 
-std::string Url::query() const
-{
+std::string Url::query() const {
   return query_;
 }
 
-std::string Url::scheme() const
-{
+std::string Url::scheme() const {
   return scheme_;
 }
 
-void Url::setAuthority(const std::string & authority)
-{
+void Url::setAuthority(const std::string & authority) {
   if (authority.empty()) {
     setUserInfo("");
     setHost("");
@@ -219,15 +199,14 @@ void Url::setAuthority(const std::string & authority)
   if (pos != authority.npos) {
     userinfo = authority.substr(0, pos);
     prevpos = pos + 1;
-  }
-  else {
+  } else {
     pos = 0;
   }
 
   pos = authority.find(':', prevpos);
-  if (pos == authority.npos)
+  if (pos == authority.npos) {
     host = authority.substr(prevpos);
-  else {
+  } else {
     host = authority.substr(prevpos, pos - prevpos);
     port = authority.substr(pos + 1);
   }
@@ -237,14 +216,12 @@ void Url::setAuthority(const std::string & authority)
   setPort(!port.empty() ? atoi(port.c_str()): INVALID_PORT);
 }
 
-void Url::setFragment(const std::string & fragment)
-{
+void Url::setFragment(const std::string & fragment) {
   fragment_ = fragment;
 }
 
-void Url::setHost(const std::string & host)
-{
-  if(host.empty()){
+void Url::setHost(const std::string & host) {
+  if (host.empty()) {
     host_.clear();
     return;
   }
@@ -252,29 +229,24 @@ void Url::setHost(const std::string & host)
   std::transform(host_.begin(), host_.end(), host_.begin(), ::tolower);
 }
 
-void Url::setPassword(const std::string & password)
-{
+void Url::setPassword(const std::string & password) {
   password_ = password;
 }
 
-void Url::setPath(const std::string & path)
-{
+void Url::setPath(const std::string & path) {
   path_ = path;
 }
 
-void Url::setPort(int port)
-{
+void Url::setPort(int port) {
   port_ = port;
 }
 
-void Url::setQuery(const std::string & query)
-{
+void Url::setQuery(const std::string & query) {
   query_ = query;
 }
 
-void Url::setScheme(const std::string & scheme)
-{
-  if(scheme.empty()){
+void Url::setScheme(const std::string & scheme) {
+  if (scheme.empty()) {
     scheme_.clear();
     return;
   }
@@ -282,8 +254,7 @@ void Url::setScheme(const std::string & scheme)
   std::transform(scheme_.begin(), scheme_.end(), scheme_.begin(), ::tolower);
 }
 
-void Url::setUserInfo(const std::string & userInfo)
-{
+void Url::setUserInfo(const std::string & userInfo) {
   if (userInfo.empty()) {
     userName_.clear();
     password_.clear();
@@ -291,21 +262,19 @@ void Url::setUserInfo(const std::string & userInfo)
   }
 
   auto pos = userInfo.find(':');
-  if (pos == userInfo.npos)
+  if (pos == userInfo.npos) {
     userName_ = userInfo;
-  else {
+  } else {
     userName_ = userInfo.substr(0, pos);
     password_ = userInfo.substr(pos + 1);
   }
 }
 
-void Url::setUserName(const std::string & userName)
-{
+void Url::setUserName(const std::string & userName) {
   userName_ = userName;
 }
 
-std::string Url::toString() const
-{
+std::string Url::toString() const {
   if (!isValid())
     return std::string();
 
@@ -326,8 +295,7 @@ std::string Url::toString() const
   return out.str();
 }
 
-std::string Url::userInfo() const
-{
+std::string Url::userInfo() const {
   if (!isValid())
     return std::string();
 
@@ -338,7 +306,8 @@ std::string Url::userInfo() const
   return out.str();
 }
 
-std::string Url::userName() const
-{
+std::string Url::userName() const {
   return userName_;
 }
+
+}  // namespace AlibabaCloud

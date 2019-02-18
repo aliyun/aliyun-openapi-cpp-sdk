@@ -20,10 +20,8 @@ using namespace AlibabaCloud;
 using namespace AlibabaCloud::Sts;
 
 StsRequest::StsRequest(const std::string & action) :
-  RpcServiceRequest("sts", "2015-04-01", action)
-{
+  RpcServiceRequest("sts", "2015-04-01", action) {
 }
 
-StsRequest::~StsRequest()
-{
+StsRequest::~StsRequest() {
 }

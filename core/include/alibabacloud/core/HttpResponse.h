@@ -14,30 +14,29 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_HTTPRESPONSE_H_
-#define ALIBABACLOUD_CORE_HTTPRESPONSE_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPRESPONSE_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPRESPONSE_H_
 
 #include <string>
 #include "CoreExport.h"
 #include "HttpMessage.h"
 #include "HttpRequest.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT HttpResponse : public HttpMessage
-  {
-    public:
-      HttpResponse();
-      explicit HttpResponse(const HttpRequest & request);
-      ~HttpResponse();
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT HttpResponse : public HttpMessage {
+ public:
+  HttpResponse();
+  explicit HttpResponse(const HttpRequest & request);
+  ~HttpResponse();
 
-      HttpRequest request()const;
-      void setStatusCode(int code);
-      int statusCode()const;
-    private:
-      int statusCode_;
-      HttpRequest request_;
-  };
-}
+  HttpRequest request()const;
+  void setStatusCode(int code);
+  int statusCode()const;
 
-#endif // !ALIBABACLOUD_CORE_HTTPRESPONSE_H_
+ private:
+  int statusCode_;
+  HttpRequest request_;
+};
+}  // namespace AlibabaCloud
+
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPRESPONSE_H_

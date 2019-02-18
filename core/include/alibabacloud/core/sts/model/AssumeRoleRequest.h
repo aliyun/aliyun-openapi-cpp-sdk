@@ -20,14 +20,10 @@
 #include <string>
 #include <alibabacloud/core/sts/StsRequest.h>
 
-namespace AlibabaCloud
-{
-  namespace Sts
-  {
-    namespace Model
-    {
-      class ALIBABACLOUD_CORE_EXPORT AssumeRoleRequest : public StsRequest
-      {
+namespace AlibabaCloud {
+  namespace Sts {
+    namespace Model {
+      class ALIBABACLOUD_CORE_EXPORT AssumeRoleRequest : public StsRequest {
       public:
         AssumeRoleRequest();
         ~AssumeRoleRequest();

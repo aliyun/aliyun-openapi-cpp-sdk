@@ -16,58 +16,49 @@
 
 #include <alibabacloud/core/sts/model/AssumeRoleRequest.h>
 
-using namespace AlibabaCloud;
+// using namespace AlibabaCloud;
 using namespace AlibabaCloud::Sts;
 using namespace AlibabaCloud::Sts::Model;
 
 AssumeRoleRequest::AssumeRoleRequest() :
-  StsRequest("AssumeRole")
-{
+  StsRequest("AssumeRole") {
   setRoleArn("");
   setRoleSessionName("");
   setDurationSeconds(3600);
 }
 
-AssumeRoleRequest::~AssumeRoleRequest()
-{
+AssumeRoleRequest::~AssumeRoleRequest() {
 }
 
-int AssumeRoleRequest::durationSeconds() const
-{
+int AssumeRoleRequest::durationSeconds() const {
   return std::stoi(parameter("DurationSeconds"));
 }
 
-std::string AssumeRoleRequest::policy() const
-{
+std::string AssumeRoleRequest::policy() const {
   return parameter("Policy");
 }
 
-std::string AssumeRoleRequest::roleArn() const
-{
+std::string AssumeRoleRequest::roleArn() const {
   return parameter("RoleArn");
 }
 
-std::string AssumeRoleRequest::roleSessionName() const
-{
+std::string AssumeRoleRequest::roleSessionName() const {
   return parameter("RoleSessionName");
 }
 
-void AssumeRoleRequest::setDurationSeconds(int durationSeconds)
-{
+void AssumeRoleRequest::setDurationSeconds(int durationSeconds) {
   setParameter("DurationSeconds", std::to_string(durationSeconds));
 }
 
-void AssumeRoleRequest::setPolicy(const std::string & policy)
-{
+void AssumeRoleRequest::setPolicy(const std::string & policy) {
   setParameter("Policy", policy);
 }
 
-void AssumeRoleRequest::setRoleArn(const std::string & roleArn)
-{
+void AssumeRoleRequest::setRoleArn(const std::string & roleArn) {
   setParameter("RoleArn", roleArn);
 }
 
-void AssumeRoleRequest::setRoleSessionName(const std::string & roleSessionName)
-{
+void AssumeRoleRequest::setRoleSessionName(
+  const std::string & roleSessionName) {
   setParameter("RoleSessionName", roleSessionName);
 }

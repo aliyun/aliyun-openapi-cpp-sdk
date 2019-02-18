@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_CLIENTCONFIGURATION_H_
-#define ALIBABACLOUD_CORE_CLIENTCONFIGURATION_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_CLIENTCONFIGURATION_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_CLIENTCONFIGURATION_H_
 
 #include <memory>
 #include <string>
@@ -24,26 +24,25 @@
 #include "NetworkProxy.h"
 #include "Signer.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT ClientConfiguration
-  {
-  public:
-    explicit ClientConfiguration(const std::string &regionId = "cn-hangzhou",
-      const NetworkProxy &proxy = NetworkProxy());
-    ~ClientConfiguration();
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT ClientConfiguration {
+ public:
+  explicit ClientConfiguration(const std::string &regionId = "cn-hangzhou",
+    const NetworkProxy &proxy = NetworkProxy());
+  ~ClientConfiguration();
 
-    std::string endpoint()const;
-    NetworkProxy proxy()const;
-    std::string regionId()const;
-    void setEndpoint(const std::string &endpoint);
-    void setProxy(const NetworkProxy &proxy);
-    void setRegionId(const std::string &regionId);
-  private:
-    std::string endpoint_;
-    NetworkProxy proxy_;
-    std::string regionId_;
-  };
-}
+  std::string endpoint()const;
+  NetworkProxy proxy()const;
+  std::string regionId()const;
+  void setEndpoint(const std::string &endpoint);
+  void setProxy(const NetworkProxy &proxy);
+  void setRegionId(const std::string &regionId);
 
-#endif // !ALIBABACLOUD_CORE_CLIENTCONFIGURATION_H_
+ private:
+  std::string endpoint_;
+  NetworkProxy proxy_;
+  std::string regionId_;
+};
+}  // namespace AlibabaCloud
+
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_CLIENTCONFIGURATION_H_

@@ -14,38 +14,37 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_ERROR_H_
-#define ALIBABACLOUD_CORE_ERROR_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_ERROR_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_ERROR_H_
 
 #include <string>
 #include "CoreExport.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT Error
-  {
-  public:
-    Error() = default;
-    Error(std::string code, const std::string message);
-    ~Error() = default;
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT Error {
+ public:
+  Error() = default;
+  Error(std::string code, const std::string message);
+  ~Error() = default;
 
-    std::string errorCode()const;
-    std::string errorMessage() const;
-    std::string host() const;
-    std::string requestId() const;
-    std::string detail() const;
-    void setErrorCode(const std::string &code);
-    void setErrorMessage(const std::string& message);
-    void setHost(const std::string& host);
-    void setRequestId(const std::string& request);
-    void setDetail(const std::string& detail);
-  private:
-    std::string errorCode_;
-    std::string message_;
-    std::string host_;
-    std::string requestId_;
-    std::string detail_;
-  };
-}
+  std::string errorCode() const;
+  std::string errorMessage() const;
+  std::string host() const;
+  std::string requestId() const;
+  std::string detail() const;
+  void setErrorCode(const std::string &code);
+  void setErrorMessage(const std::string& message);
+  void setHost(const std::string& host);
+  void setRequestId(const std::string& request);
+  void setDetail(const std::string& detail);
 
-#endif // !ALIBABACLOUD_CORE_ERROR_H_
+ private:
+  std::string errorCode_;
+  std::string message_;
+  std::string host_;
+  std::string requestId_;
+  std::string detail_;
+};
+}  // namespace AlibabaCloud
+
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_ERROR_H_

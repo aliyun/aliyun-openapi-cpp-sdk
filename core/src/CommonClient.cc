@@ -15,49 +15,51 @@
 */
 
 #include <alibabacloud/core/CommonClient.h>
+#include <alibabacloud/core/location/LocationClient.h>
+#include <alibabacloud/core/SimpleCredentialsProvider.h>
 #include <ctime>
 #include <algorithm>
 #include <iomanip>
 #include <sstream>
-#include <alibabacloud/core/location/LocationClient.h>
-#include <alibabacloud/core/SimpleCredentialsProvider.h>
+
 #include "Utils.h"
 
-using namespace AlibabaCloud;
-using namespace Location;
+namespace AlibabaCloud {
 
-namespace
-{
+namespace {
   const std::string SERVICE_NAME = "Common";
 }
 
-CommonClient::CommonClient(const Credentials &credentials, const ClientConfiguration &configuration) :
+CommonClient::CommonClient(const Credentials &credentials,
+  const ClientConfiguration &configuration) :
   CoreClient(SERVICE_NAME, configuration),
-  credentialsProvider_(std::make_shared<SimpleCredentialsProvider>(credentials)),
-  signer_(std::make_shared<HmacSha1Signer>())
-{
+  credentialsProvider_(
+    std::make_shared<SimpleCredentialsProvider>(credentials)),
+  signer_(std::make_shared<HmacSha1Signer>()) {
 }
 
-CommonClient::CommonClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
+CommonClient::CommonClient(
+  const std::shared_ptr<CredentialsProvider>& credentialsProvider,
+  const ClientConfiguration & configuration) :
   CoreClient(SERVICE_NAME, configuration),
   credentialsProvider_(credentialsProvider),
-  signer_(std::make_shared<HmacSha1Signer>())
-{
+  signer_(std::make_shared<HmacSha1Signer>()) {
 }
 
-CommonClient::CommonClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
+CommonClient::CommonClient(const std::string & accessKeyId,
+  const std::string & accessKeySecret,
+  const ClientConfiguration & configuration) :
   CoreClient(SERVICE_NAME, configuration),
-  credentialsProvider_(std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret)),
-  signer_(std::make_shared<HmacSha1Signer>())
-{
+  credentialsProvider_(std::make_shared<SimpleCredentialsProvider>(accessKeyId,
+    accessKeySecret)),
+  signer_(std::make_shared<HmacSha1Signer>()) {
 }
 
-CommonClient::~CommonClient()
-{
+CommonClient::~CommonClient() {
 }
 
-CommonClient::JsonOutcome CommonClient::makeRequest(const std::string &endpoint, const CommonRequest &msg, HttpRequest::Method method)const
-{
+CommonClient::JsonOutcome CommonClient::makeRequest(const std::string &endpoint,
+  const CommonRequest &msg, HttpRequest::Method method)const {
   auto outcome = AttemptRequest(endpoint, msg, method);
   if (outcome.isSuccess())
     return JsonOutcome(std::string(outcome.result().body(),
@@ -66,8 +68,8 @@ CommonClient::JsonOutcome CommonClient::makeRequest(const std::string &endpoint,
     return JsonOutcome(outcome.error());
 }
 
-CommonClient::CommonResponseOutcome CommonClient::commonResponse(const CommonRequest & request) const
-{
+CommonClient::CommonResponseOutcome CommonClient::commonResponse(
+  const CommonRequest & request) const {
   auto outcome = makeRequest(request.domain(), request, request.httpMethod());
   if (outcome.isSuccess())
     return CommonResponseOutcome(CommonResponse(outcome.result()));
@@ -75,21 +77,20 @@ CommonClient::CommonResponseOutcome CommonClient::commonResponse(const CommonReq
     return CommonResponseOutcome(Error(outcome.error()));
 }
 
-void CommonClient::commonResponseAsync(const CommonRequest & request, const CommonResponseAsyncHandler & handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-  auto fn = [this, request, handler, context]()
-  {
+void CommonClient::commonResponseAsync(const CommonRequest & request,
+  const CommonResponseAsyncHandler & handler,
+  const std::shared_ptr<const AsyncCallerContext>& context) const {
+  auto fn = [this, request, handler, context]() {
     handler(this, request, commonResponse(request), context);
   };
 
   asyncExecute(new Runnable(fn));
 }
 
-CommonClient::CommonResponseOutcomeCallable CommonClient::commonResponseCallable(const CommonRequest & request) const
-{
+CommonClient::CommonResponseOutcomeCallable
+CommonClient::commonResponseCallable(const CommonRequest & request) const {
   auto task = std::make_shared<std::packaged_task<CommonResponseOutcome()>>(
-    [this, request]()
-  {
+    [this, request]() {
     return this->commonResponse(request);
   });
 
@@ -97,21 +98,22 @@ CommonClient::CommonResponseOutcomeCallable CommonClient::commonResponseCallable
   return task->get_future();
 }
 
-HttpRequest CommonClient::buildHttpRequest(const std::string & endpoint, const ServiceRequest & msg, HttpRequest::Method method) const
-{
-  return buildHttpRequest(endpoint, dynamic_cast<const CommonRequest& >(msg), method);
+HttpRequest CommonClient::buildHttpRequest(const std::string & endpoint,
+  const ServiceRequest & msg, HttpRequest::Method method) const {
+  return buildHttpRequest(endpoint,
+    dynamic_cast<const CommonRequest& >(msg), method);
 }
 
-HttpRequest CommonClient::buildHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const
-{
+HttpRequest CommonClient::buildHttpRequest(const std::string & endpoint,
+  const CommonRequest &msg, HttpRequest::Method method) const {
   if (msg.requestPattern() == CommonRequest::RpcPattern)
     return buildRpcHttpRequest(endpoint, msg, method);
   else
     return buildRoaHttpRequest(endpoint, msg, method);
 }
 
-HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const
-{
+HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint,
+  const CommonRequest &msg, HttpRequest::Method method) const {
   const Credentials credentials = credentialsProvider_->getCredentials();
 
   Url url;
@@ -132,8 +134,7 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, cons
 
   if (!queryParams.empty()) {
     std::stringstream queryString;
-    for (const auto &p : queryParams)
-    {
+    for (const auto &p : queryParams) {
       if (p.second.empty())
         queryString << "&" << p.first;
       else
@@ -153,12 +154,13 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, cons
   std::stringstream ss;
   ss << msg.contentSize();
   request.setHeader("Content-Length", ss.str());
-  if(msg.headerParameter("Content-Type").empty()) {
+  if (msg.headerParameter("Content-Type").empty()) {
     request.setHeader("Content-Type", "application/octet-stream");
   } else {
     request.setHeader("Content-Type", msg.headerParameter("Content-Type"));
   }
-  request.setHeader("Content-MD5", ComputeContentMD5(msg.content(), msg.contentSize()));
+  request.setHeader("Content-MD5",
+    ComputeContentMD5(msg.content(), msg.contentSize()));
   request.setBody(msg.content(), msg.contentSize());
 
   std::time_t t = std::time(nullptr);
@@ -172,7 +174,8 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, cons
 #endif
   request.setHeader("Date", date.str());
   request.setHeader("Host", url.host());
-  request.setHeader("x-sdk-client", std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
+  request.setHeader("x-sdk-client",
+    std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
   request.setHeader("x-acs-region-id", configuration().regionId());
   if (!credentials.sessionToken().empty())
     request.setHeader("x-acs-security-token", credentials.sessionToken());
@@ -202,8 +205,8 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint, cons
   return request;
 }
 
-HttpRequest CommonClient::buildRpcHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const
-{
+HttpRequest CommonClient::buildRpcHttpRequest(const std::string & endpoint,
+  const CommonRequest &msg, HttpRequest::Method method) const {
   const Credentials credentials = credentialsProvider_->getCredentials();
 
   Url url;
@@ -248,7 +251,8 @@ HttpRequest CommonClient::buildRpcHttpRequest(const std::string & endpoint, cons
     << "&"
     << UrlEncode(canonicalizedQuery(queryParams));
 
-  queryParams["Signature"] = signer_->generate(plaintext.str(), credentials.accessKeySecret() + "&");
+  queryParams["Signature"] = signer_->generate(plaintext.str(),
+    credentials.accessKeySecret() + "&");
 
   std::stringstream queryString;
   for (const auto &p : queryParams)
@@ -258,6 +262,9 @@ HttpRequest CommonClient::buildRpcHttpRequest(const std::string & endpoint, cons
   HttpRequest request(url);
   request.setMethod(method);
   request.setHeader("Host", url.host());
-  request.setHeader("x-sdk-client", std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
+  request.setHeader("x-sdk-client",
+    std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
   return request;
 }
+
+}  // namespace AlibabaCloud

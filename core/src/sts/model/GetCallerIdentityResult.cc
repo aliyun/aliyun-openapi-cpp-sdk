@@ -25,40 +25,33 @@ GetCallerIdentityResult::GetCallerIdentityResult() :
   ServiceResult(),
   accountId_(),
   arn_(),
-  userId_()
-{
+  userId_() {
 }
 
 GetCallerIdentityResult::GetCallerIdentityResult(const std::string & payload) :
   ServiceResult(),
   accountId_(),
   arn_(),
-  userId_()
-{
+  userId_() {
   parse(payload);
 }
 
-GetCallerIdentityResult::~GetCallerIdentityResult()
-{
+GetCallerIdentityResult::~GetCallerIdentityResult() {
 }
 
-std::string GetCallerIdentityResult::accountId()
-{
+std::string GetCallerIdentityResult::accountId() {
   return accountId_;
 }
 
-std::string GetCallerIdentityResult::arn() const
-{
+std::string GetCallerIdentityResult::arn() const {
   return arn_;
 }
 
-std::string GetCallerIdentityResult::userId() const
-{
+std::string GetCallerIdentityResult::userId() const {
   return userId_;
 }
 
-void GetCallerIdentityResult::parse(const std::string & payload)
-{
+void GetCallerIdentityResult::parse(const std::string & payload) {
   Json::Reader reader;
   Json::Value value;
   reader.parse(payload, value);

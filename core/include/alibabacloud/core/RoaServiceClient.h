@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_ROASERVICECLIENT_H_
-#define ALIBABACLOUD_CORE_ROASERVICECLIENT_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_ROASERVICECLIENT_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_ROASERVICECLIENT_H_
 
 #include <map>
 #include <memory>
@@ -26,26 +26,31 @@
 #include "HttpRequest.h"
 #include "RoaServiceRequest.h"
 
-namespace AlibabaCloud
-{
-  class RoaErrorMarshaller;
-  class ALIBABACLOUD_CORE_EXPORT RoaServiceClient : public CoreClient
-  {
-  public:
-    typedef Outcome<Error, std::string> JsonOutcome;
+namespace AlibabaCloud {
+class RoaErrorMarshaller;
+class ALIBABACLOUD_CORE_EXPORT RoaServiceClient : public CoreClient {
+ public:
+  typedef Outcome<Error, std::string> JsonOutcome;
 
-    RoaServiceClient(const std::string & servicename, const std::shared_ptr<CredentialsProvider> &credentialsProvider,
-      const ClientConfiguration &configuration,
-      const std::shared_ptr<Signer> &signer = std::make_shared<HmacSha1Signer>());
-    virtual ~RoaServiceClient();
+  RoaServiceClient(const std::string & servicename,
+    const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+    const ClientConfiguration &configuration,
+    const std::shared_ptr<Signer> &signer =
+    std::make_shared<HmacSha1Signer>());
+  virtual ~RoaServiceClient();
 
-  protected:
-    JsonOutcome makeRequest(const std::string &endpoint, const RoaServiceRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get)const;
-    virtual HttpRequest buildHttpRequest(const std::string & endpoint, const ServiceRequest &msg, HttpRequest::Method method)const override;
-    HttpRequest buildHttpRequest(const std::string & endpoint, const RoaServiceRequest &msg, HttpRequest::Method method)const;
-  private:
-    std::shared_ptr<CredentialsProvider> credentialsProvider_;
-    std::shared_ptr<Signer> signer_;
-  };
-}
-#endif // !ALIBABACLOUD_CORE_ROASERVICECLIENT_H_
+ protected:
+  JsonOutcome makeRequest(const std::string &endpoint,
+    const RoaServiceRequest &msg, HttpRequest::Method method =
+    HttpRequest::Method::Get)const;
+  HttpRequest buildHttpRequest(const std::string & endpoint,
+    const ServiceRequest &msg, HttpRequest::Method method)const override;
+  HttpRequest buildHttpRequest(const std::string & endpoint,
+    const RoaServiceRequest &msg, HttpRequest::Method method)const;
+
+ private:
+  std::shared_ptr<CredentialsProvider> credentialsProvider_;
+  std::shared_ptr<Signer> signer_;
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_ROASERVICECLIENT_H_

@@ -16,30 +16,28 @@
 
 #include <alibabacloud/core/Signer.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-Signer::Signer(Type type, const std::string & name, const std::string & version) :
+Signer::Signer(Type type, const std::string & name,
+  const std::string & version) :
   type_(type),
   name_(name),
-  version_(version)
-{
+  version_(version) {
 }
 
-Signer::~Signer()
-{
+Signer::~Signer() {
 }
 
-std::string Signer::name() const
-{
+std::string Signer::name() const {
   return name_;
 }
 
-Signer::Type Signer::type() const
-{
+Signer::Type Signer::type() const {
   return type_;
 }
 
-std::string Signer::version() const
-{
+std::string Signer::version() const {
   return version_;
 }
+
+}  // namespace AlibabaCloud

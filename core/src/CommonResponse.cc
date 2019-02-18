@@ -16,23 +16,21 @@
 
 #include <alibabacloud/core/CommonResponse.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 CommonResponse::CommonResponse() :
-  payload_()
-{
+  payload_() {
 }
 
 CommonResponse::CommonResponse(const std::string &payload) :
-  payload_(payload)
-{
+  payload_(payload) {
 }
 
-CommonResponse::~CommonResponse()
-{
+CommonResponse::~CommonResponse() {
 }
 
-std::string CommonResponse::payload() const
-{
+std::string CommonResponse::payload() const {
   return payload_;
 }
+
+}  // namespace AlibabaCloud

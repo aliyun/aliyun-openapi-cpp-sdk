@@ -16,13 +16,13 @@
 
 #include <alibabacloud/core/InstanceProfileCredentials.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 InstanceProfileCredentials::InstanceProfileCredentials() :
-  BasicSessionCredentials(Credentials::InstanceProfile)
-{
+  BasicSessionCredentials(Credentials::InstanceProfile) {
 }
 
-InstanceProfileCredentials::~InstanceProfileCredentials()
-{
+InstanceProfileCredentials::~InstanceProfileCredentials() {
 }
+
+}  // namespace AlibabaCloud

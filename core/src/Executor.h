@@ -14,8 +14,8 @@
 * limitations under the License.
 */
 
-#ifndef ALIBABACLOUD_CORE_EXECUTOR_H_
-#define ALIBABACLOUD_CORE_EXECUTOR_H_
+#ifndef CORE_SRC_EXECUTOR_H_
+#define CORE_SRC_EXECUTOR_H_
 
 #include <atomic>
 #include <condition_variable>
@@ -24,30 +24,29 @@
 #include <thread>
 #include <mutex>
 
-namespace AlibabaCloud
-{
-  class Runnable;
-  class Executor
-  {
-  public:
-    Executor();
-    ~Executor();
+namespace AlibabaCloud {
+class Runnable;
+class Executor {
+ public:
+  Executor();
+  ~Executor();
 
-    static Executor * instance();
-    void execute(Runnable* task);
-    bool isShutdown()const;
-    bool start();
-    void shutdown();
-    void wakeUp();
-  private:
-    static Executor *self_;
-    std::atomic<bool> shutdown_;
-    std::queue<Runnable*> tasksQueue_;
-    std::mutex tasksQueueMutex_;
-    std::thread thread_;
-    std::condition_variable cv_;
-    std::mutex cvMutex_;
-  };
-}
+  static Executor * instance();
+  void execute(Runnable* task);
+  bool isShutdown()const;
+  bool start();
+  void shutdown();
+  void wakeUp();
 
-#endif // !ALIBABACLOUD_CORE_EXECUTOR_H_
+ private:
+  static Executor *self_;
+  std::atomic<bool> shutdown_;
+  std::queue<Runnable*> tasksQueue_;
+  std::mutex tasksQueueMutex_;
+  std::thread thread_;
+  std::condition_variable cv_;
+  std::mutex cvMutex_;
+};
+}  // namespace AlibabaCloud
+
+#endif  // CORE_SRC_EXECUTOR_H_

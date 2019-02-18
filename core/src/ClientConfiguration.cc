@@ -16,46 +16,40 @@
 
 #include <alibabacloud/core/ClientConfiguration.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 ClientConfiguration::ClientConfiguration(const std::string &regionId,
   const NetworkProxy &proxy):
   regionId_(regionId),
   proxy_(proxy),
-  endpoint_()
-{
+  endpoint_() {
 }
 
-ClientConfiguration::~ClientConfiguration()
-{
+ClientConfiguration::~ClientConfiguration() {
 }
 
-std::string ClientConfiguration::endpoint() const
-{
+std::string ClientConfiguration::endpoint() const {
   return endpoint_;
 }
 
-NetworkProxy ClientConfiguration::proxy()const
-{
+NetworkProxy ClientConfiguration::proxy()const {
   return proxy_;
 }
 
-std::string ClientConfiguration::regionId()const
-{
+std::string ClientConfiguration::regionId()const {
   return regionId_;
 }
 
-void ClientConfiguration::setEndpoint(const std::string & endpoint)
-{
+void ClientConfiguration::setEndpoint(const std::string & endpoint) {
   endpoint_ = endpoint;
 }
 
-void ClientConfiguration::setProxy(const NetworkProxy &proxy)
-{
+void ClientConfiguration::setProxy(const NetworkProxy &proxy) {
   proxy_ = proxy;
 }
 
-void ClientConfiguration::setRegionId(const std::string &regionId)
-{
+void ClientConfiguration::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
 }
+
+}  // namespace AlibabaCloud

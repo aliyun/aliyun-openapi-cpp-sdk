@@ -14,41 +14,42 @@
 * limitations under the License.
 */
 
-#ifndef ALIBABACLOUD_STS_STSASSUMEROLECREDENTIALSPROVIDER_H_
-#define ALIBABACLOUD_STS_STSASSUMEROLECREDENTIALSPROVIDER_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_STSASSUMEROLECREDENTIALSPROVIDER_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_STSASSUMEROLECREDENTIALSPROVIDER_H_
 
-#include <chrono>
-#include <mutex>
 #include <alibabacloud/core/CredentialsProvider.h>
 #include <alibabacloud/core/sts/StsClient.h>
+#include <chrono>
+#include <mutex>
+#include <string>
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT StsAssumeRoleCredentialsProvider : public CredentialsProvider, public Sts::StsClient
-  {
-  public:
-    StsAssumeRoleCredentialsProvider(
-      const Credentials &credentials,
-      const ClientConfiguration &configuration,
-      const std::string &roleArn,
-      const std::string &roleSessionName,
-      const std::string &policy = "",
-      int durationSeconds = 3600);
-    ~StsAssumeRoleCredentialsProvider();
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT StsAssumeRoleCredentialsProvider
+    : public CredentialsProvider, public Sts::StsClient {
+ public:
+  StsAssumeRoleCredentialsProvider(
+    const Credentials &credentials,
+    const ClientConfiguration &configuration,
+    const std::string &roleArn,
+    const std::string &roleSessionName,
+    const std::string &policy = "",
+    int durationSeconds = 3600);
+  ~StsAssumeRoleCredentialsProvider();
 
-    virtual Credentials getCredentials() override;
-    using StsClient::assumeRole;
-  private:
-    void loadCredentials();
-    bool checkExpiry()const;
+  Credentials getCredentials() override;
+  using StsClient::assumeRole;
 
-    std::mutex cachedMutex_;
-    Credentials cachedCredentials_;
-    int durationSeconds_;
-    std::chrono::system_clock::time_point expiry_;
-    std::string policy_;
-    std::string roleArn_;
-    std::string roleSessionName_;
-  };
-}
-#endif // !ALIBABACLOUD_CORE_STSASSUMEROLECREDENTIALSPROVIDER_H_
+ private:
+  void loadCredentials();
+  bool checkExpiry()const;
+
+  std::mutex cachedMutex_;
+  Credentials cachedCredentials_;
+  int durationSeconds_;
+  std::chrono::system_clock::time_point expiry_;
+  std::string policy_;
+  std::string roleArn_;
+  std::string roleSessionName_;
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_STSASSUMEROLECREDENTIALSPROVIDER_H_

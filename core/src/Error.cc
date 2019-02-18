@@ -16,15 +16,14 @@
 
 #include <alibabacloud/core/Error.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 Error::Error(std::string code, const std::string message) :
   errorCode_(code),
   message_(message),
   host_(),
   requestId_(),
-  detail_()
-{
+  detail_() {
 }
 
 std::string Error::errorCode()const { return errorCode_; }
@@ -37,3 +36,5 @@ void Error::setErrorMessage(const std::string& message) { message_ = message; }
 void Error::setHost(const std::string& host) { host_ = host; }
 void Error::setRequestId(const std::string& request) { requestId_ = request; }
 void Error::setDetail(const std::string& detail) { detail_ = detail; }
+
+}  // namespace AlibabaCloud

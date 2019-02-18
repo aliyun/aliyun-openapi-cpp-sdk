@@ -19,14 +19,10 @@
 
 #include <alibabacloud/core/ServiceResult.h>
 
-namespace AlibabaCloud
-{
-  namespace Sts
-  {
-    namespace Model
-    {
-      class ALIBABACLOUD_CORE_EXPORT GetCallerIdentityResult : public ServiceResult
-      {
+namespace AlibabaCloud {
+  namespace Sts {
+    namespace Model {
+      class ALIBABACLOUD_CORE_EXPORT GetCallerIdentityResult : public ServiceResult {
       public:
         GetCallerIdentityResult();
         explicit GetCallerIdentityResult(const std::string &payload);

@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_CORECLIENT_H_
-#define ALIBABACLOUD_CORE_CORECLIENT_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_CORECLIENT_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_CORECLIENT_H_
 
 #include <functional>
 #include <memory>
+#include <string>
 #include "ClientConfiguration.h"
 #include "CoreExport.h"
 #include "HttpClient.h"
@@ -28,27 +29,31 @@
 #include "ServiceRequest.h"
 #include "Runnable.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT CoreClient
-  {
-  public:
-    CoreClient(const std::string & servicename, const ClientConfiguration &configuration);
-    virtual ~CoreClient();
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT CoreClient {
+ public:
+  CoreClient(const std::string & servicename,
+    const ClientConfiguration &configuration);
+  virtual ~CoreClient();
 
-    ClientConfiguration configuration()const;
-    std::string serviceName()const;
-  protected:
-    virtual HttpClient::HttpResponseOutcome AttemptRequest(const std::string & endpoint, const ServiceRequest &request, HttpRequest::Method method)const;
-    Error buildCoreError(const HttpResponse &response)const;
-    bool hasResponseError(const HttpResponse &response)const;
-    virtual HttpRequest buildHttpRequest(const std::string & endpoint, const ServiceRequest &msg, HttpRequest::Method method)const = 0;
-    void asyncExecute(Runnable * r)const;
-  private:
-    std::string serviceName_;
-    ClientConfiguration configuration_;
-    std::shared_ptr<CredentialsProvider> credentialsProvider_;
-    HttpClient *httpClient_;
-  };
-}
-#endif
+  ClientConfiguration configuration() const;
+  std::string serviceName() const;
+
+ protected:
+  virtual HttpClient::HttpResponseOutcome AttemptRequest(
+    const std::string & endpoint,
+    const ServiceRequest &request, HttpRequest::Method method) const;
+  Error buildCoreError(const HttpResponse &response)const;
+  bool hasResponseError(const HttpResponse &response)const;
+  virtual HttpRequest buildHttpRequest(const std::string & endpoint,
+    const ServiceRequest &msg, HttpRequest::Method method) const = 0;
+  void asyncExecute(Runnable * r) const;
+
+ private:
+  std::string serviceName_;
+  ClientConfiguration configuration_;
+  std::shared_ptr<CredentialsProvider> credentialsProvider_;
+  HttpClient *httpClient_;
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_CORECLIENT_H_

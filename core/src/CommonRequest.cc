@@ -16,54 +16,45 @@
 
 #include <alibabacloud/core/CommonRequest.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 CommonRequest::CommonRequest(RequestPattern pattern):
-  ServiceRequest("",""),
+  ServiceRequest("", ""),
   domain_(),
   queryParams_(),
   httpMethod_(HttpRequest::Get),
-  requestPattern_(pattern)
-{
+  requestPattern_(pattern) {
 }
 
-CommonRequest::~CommonRequest()
-{
-
+CommonRequest::~CommonRequest() {
 }
 
-std::string CommonRequest::domain()const
-{
+std::string CommonRequest::domain()const {
   return domain_;
 }
 
-void CommonRequest::setDomain(const std::string &domain)
-{
+void CommonRequest::setDomain(const std::string &domain) {
   domain_ = domain;
 }
 
-CommonRequest::RequestPattern CommonRequest::requestPattern() const
-{
+CommonRequest::RequestPattern CommonRequest::requestPattern() const {
   return requestPattern_;
 }
 
-void CommonRequest::setRequestPattern(RequestPattern pattern)
-{
+void CommonRequest::setRequestPattern(RequestPattern pattern) {
   requestPattern_ = pattern;
 }
 
-void CommonRequest::setHttpMethod(HttpRequest::Method method)
-{
+void CommonRequest::setHttpMethod(HttpRequest::Method method) {
   httpMethod_ = method;
 }
 
-HttpRequest::Method CommonRequest::httpMethod() const
-{
+HttpRequest::Method CommonRequest::httpMethod() const {
   return httpMethod_;
 }
 
-CommonRequest::ParameterValueType CommonRequest::queryParameter(const ParameterNameType &name)const
-{
+CommonRequest::ParameterValueType CommonRequest::queryParameter(
+  const ParameterNameType &name) const {
   ParameterCollection::const_iterator it = queryParams_.find(name);
   if (it == queryParams_.end()) {
     return ParameterValueType("");
@@ -72,18 +63,17 @@ CommonRequest::ParameterValueType CommonRequest::queryParameter(const ParameterN
 }
 
 
-CommonRequest::ParameterCollection CommonRequest::queryParameters() const
-{
+CommonRequest::ParameterCollection CommonRequest::queryParameters() const {
   return queryParams_;
 }
 
-void CommonRequest::setQueryParameter(const ParameterNameType &name, const ParameterValueType &value)
-{
+void CommonRequest::setQueryParameter(const ParameterNameType &name,
+  const ParameterValueType &value) {
   queryParams_[name] = value;
 }
 
-CommonRequest::ParameterValueType CommonRequest::headerParameter(const ParameterNameType &name)const
-{
+CommonRequest::ParameterValueType CommonRequest::headerParameter(
+  const ParameterNameType &name) const {
   const ParameterCollection::const_iterator it  = headerParams_.find(name);
   if (it == headerParams_.end()) {
     return ParameterValueType("");
@@ -91,12 +81,13 @@ CommonRequest::ParameterValueType CommonRequest::headerParameter(const Parameter
   return it->second;
 }
 
-CommonRequest::ParameterCollection CommonRequest::headerParameters() const
-{
+CommonRequest::ParameterCollection CommonRequest::headerParameters() const {
   return headerParams_;
 }
 
-void CommonRequest::setHeaderParameter(const ParameterNameType &name, const ParameterValueType &value)
-{
+void CommonRequest::setHeaderParameter(const ParameterNameType &name,
+  const ParameterValueType &value) {
   headerParams_[name] = value;
 }
+
+}  // namespace AlibabaCloud

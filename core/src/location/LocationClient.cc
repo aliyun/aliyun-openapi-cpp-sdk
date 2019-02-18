@@ -20,60 +20,67 @@
 using namespace AlibabaCloud;
 using namespace AlibabaCloud::Location;
 
-namespace
-{
+namespace {
   const std::string SERVICE_NAME = "Location";
   const std::string ENDPOINT = "location.aliyuncs.com";
 }
 
-LocationClient::LocationClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-  RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
-{
+LocationClient::LocationClient(const Credentials &credentials,
+  const ClientConfiguration &configuration) :
+  RpcServiceClient(SERVICE_NAME,
+    std::make_shared<SimpleCredentialsProvider>(credentials), configuration) {
 }
 
-LocationClient::LocationClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-  RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
-{
+LocationClient::LocationClient(
+  const std::shared_ptr<CredentialsProvider>& credentialsProvider,
+  const ClientConfiguration & configuration) :
+  RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration) {
 }
 
-LocationClient::LocationClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-  RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
-{
+LocationClient::LocationClient(const std::string & accessKeyId,
+  const std::string & accessKeySecret,
+  const ClientConfiguration & configuration) :
+  RpcServiceClient(SERVICE_NAME,
+    std::make_shared<SimpleCredentialsProvider>(accessKeyId,
+      accessKeySecret), configuration) {
 }
 
-LocationClient::LocationClient(const std::shared_ptr<Location::LocationClient>& locationClient):
-  RpcServiceClient(SERVICE_NAME, locationClient->credentialsProvider(), locationClient->configuration())
-{
+LocationClient::LocationClient(
+  const std::shared_ptr<Location::LocationClient>& locationClient):
+  RpcServiceClient(SERVICE_NAME,
+    locationClient->credentialsProvider(),
+    locationClient->configuration()) {
 }
 
 
-LocationClient::~LocationClient()
-{}
+LocationClient::~LocationClient() {}
 
-LocationClient::DescribeEndpointsOutcome LocationClient::describeEndpoints(const Model::DescribeEndpointsRequest &request) const
-{
+LocationClient::DescribeEndpointsOutcome LocationClient::describeEndpoints(
+  const Model::DescribeEndpointsRequest &request) const {
   auto outcome = makeRequest(ENDPOINT, request);
 
   if (outcome.isSuccess())
-    return DescribeEndpointsOutcome(Model::DescribeEndpointsResult(outcome.result()));
+    return DescribeEndpointsOutcome(
+      Model::DescribeEndpointsResult(outcome.result()));
   else
     return DescribeEndpointsOutcome(outcome.error());
 }
 
-void LocationClient::describeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
+void LocationClient::describeEndpointsAsync(
+  const Model::DescribeEndpointsRequest& request,
+  const DescribeEndpointsAsyncHandler& handler,
+  const std::shared_ptr<const AsyncCallerContext>& context) const {
   std::async(std::launch::async,
-    [this, request, handler, context]()
-  {
+    [this, request, handler, context]() {
     handler(this, request, describeEndpoints(request), context);
   });
 }
 
-LocationClient::DescribeEndpointsOutcomeCallable LocationClient::describeEndpointsCallable(const Model::DescribeEndpointsRequest &request) const
-{
+LocationClient::DescribeEndpointsOutcomeCallable
+LocationClient::describeEndpointsCallable(
+  const Model::DescribeEndpointsRequest &request) const {
   auto task = std::make_shared<std::packaged_task<DescribeEndpointsOutcome()>>(
-    [this, request]()
-  {
+    [this, request]() {
     return this->describeEndpoints(request);
   });
 

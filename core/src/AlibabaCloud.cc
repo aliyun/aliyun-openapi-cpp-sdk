@@ -19,8 +19,7 @@
 
 static AlibabaCloud::Executor * executor = nullptr;
 
-void AlibabaCloud::InitializeSdk()
-{
+void AlibabaCloud::InitializeSdk() {
   if (IsSdkInitialized())
     return;
 
@@ -28,13 +27,11 @@ void AlibabaCloud::InitializeSdk()
   executor->start();
 }
 
-bool AlibabaCloud::IsSdkInitialized()
-{
+bool AlibabaCloud::IsSdkInitialized() {
   return executor != nullptr;
 }
 
-void AlibabaCloud::ShutdownSdk()
-{
+void AlibabaCloud::ShutdownSdk() {
   if (!IsSdkInitialized())
     return;
 

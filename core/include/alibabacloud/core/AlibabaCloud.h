@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_ALIBABACLOUD_H_
-#define ALIBABACLOUD_CORE_ALIBABACLOUD_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_ALIBABACLOUD_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_ALIBABACLOUD_H_
 
 #include "CoreExport.h"
 
-namespace AlibabaCloud
-{
-  ALIBABACLOUD_CORE_EXPORT void InitializeSdk();
-  ALIBABACLOUD_CORE_EXPORT bool IsSdkInitialized();
-  ALIBABACLOUD_CORE_EXPORT void ShutdownSdk();
-}
+namespace AlibabaCloud {
+ALIBABACLOUD_CORE_EXPORT void InitializeSdk();
+ALIBABACLOUD_CORE_EXPORT bool IsSdkInitialized();
+ALIBABACLOUD_CORE_EXPORT void ShutdownSdk();
+}  // namespace AlibabaCloud
 
-#endif
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_ALIBABACLOUD_H_

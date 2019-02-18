@@ -14,38 +14,53 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_LOCATION_LOCATIONCLIENT_H_
-#define ALIBABACLOUD_CORE_LOCATION_LOCATIONCLIENT_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_LOCATIONCLIENT_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_LOCATIONCLIENT_H_
 
-#include <future>
 #include <alibabacloud/core/AsyncCallerContext.h>
 #include <alibabacloud/core/RpcServiceClient.h>
+#include <future>
+#include <memory>
+#include <string>
 #include "model/DescribeEndpointsRequest.h"
 #include "model/DescribeEndpointsResult.h"
 
-namespace AlibabaCloud
-{
-  namespace Location
-  {
-    class ALIBABACLOUD_CORE_EXPORT LocationClient : public RpcServiceClient
-    {
-    public:
-      typedef Outcome<Error, Model::DescribeEndpointsResult> DescribeEndpointsOutcome;
-      typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
-      typedef std::function<void(const LocationClient*, const Model::DescribeEndpointsRequest&, const DescribeEndpointsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndpointsAsyncHandler;
 
-      LocationClient(const Credentials &credentials, const ClientConfiguration &configuration);
-      LocationClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
-      LocationClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
-      LocationClient(const std::shared_ptr<Location::LocationClient>& locationClient);
-      ~LocationClient();
-      virtual DescribeEndpointsOutcome describeEndpoints(const Model::DescribeEndpointsRequest &request)const;
-      void describeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-      DescribeEndpointsOutcomeCallable describeEndpointsCallable(const Model::DescribeEndpointsRequest& request) const;
-      using RpcServiceClient::makeRequest;
-      using RpcServiceClient::configuration;
-    };
-  }
-}
+namespace AlibabaCloud {
+namespace Location {
+class ALIBABACLOUD_CORE_EXPORT LocationClient : public RpcServiceClient {
+ public:
+  typedef Outcome<Error, Model::DescribeEndpointsResult>
+      DescribeEndpointsOutcome;
+  typedef std::future<DescribeEndpointsOutcome>
+      DescribeEndpointsOutcomeCallable;
+  typedef std::function<void(const LocationClient*,
+      const Model::DescribeEndpointsRequest&, const DescribeEndpointsOutcome&,
+      const std::shared_ptr<const AsyncCallerContext>&)>
+      DescribeEndpointsAsyncHandler;
 
-#endif // !ALIBABACLOUD_CORE_LOCATION_LOCATIONCLIENT_H_
+  LocationClient(const Credentials &credentials,
+      const ClientConfiguration &configuration);
+  LocationClient(
+      const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+      const ClientConfiguration &configuration);
+  LocationClient(const std::string &accessKeyId,
+      const std::string &accessKeySecret,
+      const ClientConfiguration &configuration);
+  LocationClient(
+      const std::shared_ptr<Location::LocationClient>& locationClient);
+  ~LocationClient();
+  virtual DescribeEndpointsOutcome describeEndpoints(
+      const Model::DescribeEndpointsRequest &request)const;
+  void describeEndpointsAsync(const Model::DescribeEndpointsRequest& request,
+      const DescribeEndpointsAsyncHandler& handler,
+      const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+  DescribeEndpointsOutcomeCallable describeEndpointsCallable(
+      const Model::DescribeEndpointsRequest& request) const;
+  using RpcServiceClient::makeRequest;
+  using RpcServiceClient::configuration;
+};
+}  // namespace Location
+}  // namespace AlibabaCloud
+
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_LOCATIONCLIENT_H_

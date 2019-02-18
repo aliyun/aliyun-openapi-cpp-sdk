@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_GLOBAL_H_
-#define ALIBABACLOUD_CORE_GLOBAL_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_GLOBAL_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_GLOBAL_H_
 
 #include "Config.h"
 
 #if defined(_WIN32)
 #  ifdef _MSC_VER
 #    pragma warning(disable : 4251)
-#  endif // _MSC_VER
+#  endif  // _MSC_VER
 #  define ALIBABACLOUD_DECL_EXPORT __declspec(dllexport)
 #  define ALIBABACLOUD_DECL_IMPORT __declspec(dllimport)
 #elif defined(__linux__)
@@ -38,4 +38,4 @@
 #  define ALIBABACLOUD_DECL_IMPORT
 #endif
 
-#endif // !ALIBABACLOUD_CORE_GLOBAL_H_
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_GLOBAL_H_

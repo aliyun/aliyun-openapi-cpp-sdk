@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALSPROVIDER_H_
-#define ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALSPROVIDER_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALSPROVIDER_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALSPROVIDER_H_
 
 #include <chrono>
 #include <mutex>
@@ -25,27 +25,28 @@
 #include "Credentials.h"
 #include "../src/EcsMetadataFetcher.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT InstanceProfileCredentialsProvider : public CredentialsProvider, public EcsMetadataFetcher
-  {
-  public:
-    InstanceProfileCredentialsProvider(const std::string &roleName, int durationSeconds = 3600);
-    ~InstanceProfileCredentialsProvider();
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT InstanceProfileCredentialsProvider :
+  public CredentialsProvider, public EcsMetadataFetcher {
+ public:
+  InstanceProfileCredentialsProvider(const std::string &roleName,
+    int durationSeconds = 3600);
+  ~InstanceProfileCredentialsProvider();
 
-    std::string roleName()const;
-    virtual Credentials getCredentials() override;
-    using EcsMetadataFetcher::roleName;
-    using EcsMetadataFetcher::setRoleName;
-    using EcsMetadataFetcher::getMetadata;
-  private:
-    void loadCredentials();
-    bool checkExpiry()const;
+  std::string roleName()const;
+  Credentials getCredentials() override;
+  using EcsMetadataFetcher::roleName;
+  using EcsMetadataFetcher::setRoleName;
+  using EcsMetadataFetcher::getMetadata;
 
-    std::mutex cachedMutex_;
-    Credentials cachedCredentials_;
-    int durationSeconds_;
-    std::chrono::system_clock::time_point expiry_;
-  };
-}
-#endif
+ private:
+  void loadCredentials();
+  bool checkExpiry()const;
+
+  std::mutex cachedMutex_;
+  Credentials cachedCredentials_;
+  int durationSeconds_;
+  std::chrono::system_clock::time_point expiry_;
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALSPROVIDER_H_

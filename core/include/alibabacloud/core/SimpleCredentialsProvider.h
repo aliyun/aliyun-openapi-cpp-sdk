@@ -14,24 +14,25 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_SIMPLECREDENTIALSPROVIDER_H_
-#define ALIBABACLOUD_CORE_SIMPLECREDENTIALSPROVIDER_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_SIMPLECREDENTIALSPROVIDER_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_SIMPLECREDENTIALSPROVIDER_H_
 
 #include "CredentialsProvider.h"
+#include <string>
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT SimpleCredentialsProvider : public CredentialsProvider
-  {
-  public:
-    SimpleCredentialsProvider(const Credentials &credentials);
-    SimpleCredentialsProvider(const std::string &accessKeyId,
-      const std::string &accessKeySecret);
-    ~SimpleCredentialsProvider();
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT SimpleCredentialsProvider
+    : public CredentialsProvider {
+ public:
+  explicit SimpleCredentialsProvider(const Credentials &credentials);
+  SimpleCredentialsProvider(const std::string &accessKeyId,
+    const std::string &accessKeySecret);
+  ~SimpleCredentialsProvider();
 
-    virtual Credentials getCredentials() override;
-  private:
-    Credentials credentials_;
-  };
-}
-#endif // !ALIBABACLOUD_CORE_SIMPLECREDENTIALSPROVIDER_H_
+  Credentials getCredentials() override;
+
+ private:
+  Credentials credentials_;
+};
+}  // namespace AlibabaCloud
+#endif   // CORE_INCLUDE_ALIBABACLOUD_CORE_SIMPLECREDENTIALSPROVIDER_H_

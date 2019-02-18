@@ -17,7 +17,7 @@
 #include "Executor.h"
 #include <alibabacloud/core/Runnable.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 Executor *Executor::self_ = nullptr;
 
@@ -26,38 +26,30 @@ Executor::Executor() :
   shutdown_(true),
   tasksQueue_(),
   tasksQueueMutex_(),
-  thread_()
-{
+  thread_() {
   self_ = this;
 }
 
-Executor::~Executor()
-{
+Executor::~Executor() {
   self_ = nullptr;
   shutdown();
 }
 
-Executor * Executor::instance()
-{
+Executor * Executor::instance() {
   return self_;
 }
 
-bool Executor::start()
-{
+bool Executor::start() {
   if (!isShutdown())
     return true;
 
-  auto threadMain = [this]()
-  {
-    while (!shutdown_)
-    {
-      while (!tasksQueue_.empty())
-      {
+  auto threadMain = [this]() {
+    while (!shutdown_) {
+      while (!tasksQueue_.empty()) {
         Runnable *task = nullptr;
         {
           std::lock_guard<std::mutex> lock(tasksQueueMutex_);
-          if (!tasksQueue_.empty())
-          {
+          if (!tasksQueue_.empty()) {
             task = tasksQueue_.front();
             tasksQueue_.pop();
           }
@@ -81,13 +73,11 @@ bool Executor::start()
   return true;
 }
 
-bool Executor::isShutdown()const
-{
+bool Executor::isShutdown()const {
   return shutdown_;
 }
 
-void Executor::execute(Runnable* task)
-{
+void Executor::execute(Runnable* task) {
   if (isShutdown())
     return;
 
@@ -96,14 +86,12 @@ void Executor::execute(Runnable* task)
   wakeUp();
 }
 
-void Executor::wakeUp()
-{
+void Executor::wakeUp() {
   std::unique_lock<std::mutex> lk(cvMutex_);
   cv_.notify_one();
 }
 
-void Executor::shutdown()
-{
+void Executor::shutdown() {
   if (isShutdown())
     return;
 
@@ -122,3 +110,5 @@ void Executor::shutdown()
   if (thread_.joinable())
     thread_.join();
 }
+
+}  // namespace AlibabaCloud

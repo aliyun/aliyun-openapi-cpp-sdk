@@ -17,28 +17,25 @@
 #include <alibabacloud/core/AsyncCallerContext.h>
 #include "Utils.h"
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 AsyncCallerContext::AsyncCallerContext() :
-  uuid_(GenerateUuid())
-{
+  uuid_(GenerateUuid()) {
 }
 
 AsyncCallerContext::AsyncCallerContext(const std::string &uuid) :
-  uuid_(uuid)
-{
+  uuid_(uuid) {
 }
 
-AsyncCallerContext::~AsyncCallerContext()
-{
+AsyncCallerContext::~AsyncCallerContext() {
 }
 
-std::string AsyncCallerContext::uuid()const
-{
+std::string AsyncCallerContext::uuid()const {
   return uuid_;
 }
 
-void AsyncCallerContext::setUuid(const std::string &uuid)
-{
+void AsyncCallerContext::setUuid(const std::string &uuid) {
   uuid_ = uuid;
 }
+
+}  // namespace AlibabaCloud

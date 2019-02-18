@@ -18,8 +18,7 @@
 #include <iomanip>
 #include <sstream>
 
-using namespace AlibabaCloud;
-using namespace AlibabaCloud::Sts;
+namespace AlibabaCloud {
 
 StsAssumeRoleCredentialsProvider::StsAssumeRoleCredentialsProvider(
     const Credentials &credentials,
@@ -36,45 +35,38 @@ StsAssumeRoleCredentialsProvider::StsAssumeRoleCredentialsProvider(
   durationSeconds_(durationSeconds),
   cachedMutex_(),
   cachedCredentials_("", ""),
-  expiry_()
-{
+  expiry_() {
 }
 
-StsAssumeRoleCredentialsProvider::~StsAssumeRoleCredentialsProvider()
-{
+StsAssumeRoleCredentialsProvider::~StsAssumeRoleCredentialsProvider() {
 }
 
-Credentials StsAssumeRoleCredentialsProvider::getCredentials()
-{
+Credentials StsAssumeRoleCredentialsProvider::getCredentials() {
   loadCredentials();
   std::lock_guard<std::mutex> locker(cachedMutex_);
   return cachedCredentials_;
 }
 
-bool StsAssumeRoleCredentialsProvider::checkExpiry()const
-{
+bool StsAssumeRoleCredentialsProvider::checkExpiry()const {
   auto now = std::chrono::system_clock::now();
-  auto diff = std::chrono::duration_cast<std::chrono::seconds>(now - expiry_).count();
+  auto diff =
+  std::chrono::duration_cast<std::chrono::seconds>(now - expiry_).count();
 
   return (diff > 0 - 60);
 }
 
-void StsAssumeRoleCredentialsProvider::loadCredentials()
-{
-  if (checkExpiry())
-  {
+void StsAssumeRoleCredentialsProvider::loadCredentials() {
+  if (checkExpiry()) {
     std::lock_guard<std::mutex> locker(cachedMutex_);
-    if (checkExpiry())
-    {
-      Model::AssumeRoleRequest request;
+    if (checkExpiry()) {
+      Sts::Model::AssumeRoleRequest request;
       request.setRoleArn(roleArn_);
       request.setRoleSessionName(roleSessionName_);
       request.setPolicy(policy_);
       request.setDurationSeconds(durationSeconds_);
 
       auto assumeRoleOutcome = assumeRole(request);
-      if (assumeRoleOutcome.isSuccess())
-      {
+      if (assumeRoleOutcome.isSuccess()) {
         const auto stsCredentials = assumeRoleOutcome.result().credentials();
         cachedCredentials_ = Credentials(stsCredentials.accessKeyId,
           stsCredentials.accessKeySecret,
@@ -92,3 +84,5 @@ void StsAssumeRoleCredentialsProvider::loadCredentials()
     }
   }
 }
+
+}  // namespace AlibabaCloud

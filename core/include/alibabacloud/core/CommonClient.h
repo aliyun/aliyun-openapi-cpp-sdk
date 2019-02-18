@@ -14,10 +14,12 @@
 * limitations under the License.
 */
 
-#ifndef ALIBABACLOUD_CORE_COMMONCLIENT_H_
-#define ALIBABACLOUD_CORE_COMMONCLIENT_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_COMMONCLIENT_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_COMMONCLIENT_H_
 
 #include <future>
+#include <memory>
+#include <string>
 #include "AsyncCallerContext.h"
 #include "ClientConfiguration.h"
 #include "CoreExport.h"
@@ -26,36 +28,50 @@
 #include "CommonResponse.h"
 #include "CredentialsProvider.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT CommonClient : public CoreClient
-  {
-  public:
-    typedef Outcome<Error, CommonResponse> CommonResponseOutcome;
-    typedef std::future<CommonResponseOutcome> CommonResponseOutcomeCallable;
-    typedef std::function<void(const CommonClient*, const CommonRequest&, const CommonResponseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CommonResponseAsyncHandler;
-    typedef Outcome<Error, std::string> JsonOutcome;
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT CommonClient : public CoreClient {
+ public:
+  typedef Outcome<Error, CommonResponse> CommonResponseOutcome;
+  typedef std::future<CommonResponseOutcome> CommonResponseOutcomeCallable;
+  typedef std::function<void(const CommonClient*, const CommonRequest&,
+    const CommonResponseOutcome&,
+    const std::shared_ptr<const AsyncCallerContext>&)>
+  CommonResponseAsyncHandler;
+  typedef Outcome<Error, std::string> JsonOutcome;
 
-    CommonClient(const Credentials &credentials, const ClientConfiguration &configuration);
-    CommonClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
-    CommonClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
-    ~CommonClient();
+  CommonClient(const Credentials &credentials,
+    const ClientConfiguration &configuration);
+  CommonClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+    const ClientConfiguration &configuration);
+  CommonClient(const std::string &accessKeyId,
+    const std::string &accessKeySecret,
+    const ClientConfiguration &configuration);
+  ~CommonClient();
 
-    CommonResponseOutcome commonResponse(const CommonRequest &request)const;
-    void commonResponseAsync(const CommonRequest& request, const CommonResponseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-    CommonResponseOutcomeCallable commonResponseCallable(const CommonRequest& request) const;
+  CommonResponseOutcome commonResponse(const CommonRequest &request) const;
+  void commonResponseAsync(const CommonRequest& request,
+    const CommonResponseAsyncHandler& handler,
+    const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+  CommonResponseOutcomeCallable commonResponseCallable(
+    const CommonRequest& request) const;
 
-  protected:
-    virtual HttpRequest buildHttpRequest(const std::string & endpoint, const ServiceRequest & msg, HttpRequest::Method method) const override;
-    HttpRequest buildHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const;
-    HttpRequest buildRoaHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const;
-    HttpRequest buildRpcHttpRequest(const std::string & endpoint, const CommonRequest &msg, HttpRequest::Method method) const;
-    JsonOutcome makeRequest(const std::string &endpoint, const CommonRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get)const;
-    using CoreClient::asyncExecute;
-  private:
+ protected:
+  HttpRequest buildHttpRequest(const std::string & endpoint,
+    const ServiceRequest & msg, HttpRequest::Method method) const override;
+  HttpRequest buildHttpRequest(const std::string & endpoint,
+    const CommonRequest &msg, HttpRequest::Method method) const;
+  HttpRequest buildRoaHttpRequest(const std::string & endpoint,
+    const CommonRequest &msg, HttpRequest::Method method) const;
+  HttpRequest buildRpcHttpRequest(const std::string & endpoint,
+  const CommonRequest &msg, HttpRequest::Method method) const;
+  JsonOutcome makeRequest(const std::string &endpoint,
+    const CommonRequest &msg, HttpRequest::Method method =
+    HttpRequest::Method::Get) const;
+  using CoreClient::asyncExecute;
 
-    std::shared_ptr<CredentialsProvider> credentialsProvider_;
-    std::shared_ptr<Signer> signer_;
-  };
-}
-#endif // !ALIBABACLOUD_CORE_COMMONCLIENT_H_
+ private:
+  std::shared_ptr<CredentialsProvider> credentialsProvider_;
+  std::shared_ptr<Signer> signer_;
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_COMMONCLIENT_H_

@@ -14,27 +14,27 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_SERVICERESULT_H_
-#define ALIBABACLOUD_CORE_SERVICERESULT_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICERESULT_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICERESULT_H_
 
 #include <string>
 #include "CoreExport.h"
 
-namespace AlibabaCloud
-{
-  class PayloadReader;
-  class ALIBABACLOUD_CORE_EXPORT ServiceResult
-  {
-  public:
-    ServiceResult();
-    virtual ~ServiceResult();
+namespace AlibabaCloud {
+class PayloadReader;
+class ALIBABACLOUD_CORE_EXPORT ServiceResult {
+ public:
+  ServiceResult();
+  virtual ~ServiceResult();
 
-    std::string requestId()const;
-  protected:
-    void setRequestId(const std::string &requestId);
-  private:
+  std::string requestId()const;
+
+ protected:
+  void setRequestId(const std::string &requestId);
+
+ private:
     std::string requestId_;
-  };
-}
+};
+}  // namespace AlibabaCloud
 
-#endif // !ALIBABACLOUD_CORE_SERVICERESULT_H_
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICERESULT_H_

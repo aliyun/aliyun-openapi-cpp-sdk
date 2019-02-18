@@ -16,25 +16,24 @@
 
 #include <alibabacloud/core/RpcServiceRequest.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-RpcServiceRequest::RpcServiceRequest(const std::string & product, const std::string & version, const std::string & action) :
-  ServiceRequest(product, version)
-{
+RpcServiceRequest::RpcServiceRequest(const std::string & product,
+  const std::string & version, const std::string & action) :
+  ServiceRequest(product, version) {
   setActionName(action);
 }
 
-RpcServiceRequest::~RpcServiceRequest()
-{
+RpcServiceRequest::~RpcServiceRequest() {
 }
 
-std::string RpcServiceRequest::actionName()const
-{
+std::string RpcServiceRequest::actionName()const {
   return parameter("Action");
 }
 
 
-void RpcServiceRequest::setActionName(const std::string & name)
-{
+void RpcServiceRequest::setActionName(const std::string & name) {
   setParameter("Action", name);
 }
+
+}  // namespace AlibabaCloud

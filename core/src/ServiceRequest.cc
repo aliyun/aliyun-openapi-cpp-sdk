@@ -16,17 +16,17 @@
 
 #include <alibabacloud/core/ServiceRequest.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-ServiceRequest::ServiceRequest(const std::string &product, const std::string &version) :
+ServiceRequest::ServiceRequest(const std::string &product,
+  const std::string &version) :
   content_(nullptr),
   contentSize_(0),
   params_(),
   product_(product),
   resourcePath_("/"),
   version_(version),
-  scheme_("https")
-{
+  scheme_("https") {
 }
 
 ServiceRequest::ServiceRequest(const ServiceRequest &other) :
@@ -36,18 +36,15 @@ ServiceRequest::ServiceRequest(const ServiceRequest &other) :
   product_(other.product_),
   resourcePath_(other.resourcePath_),
   version_(other.version_),
-  scheme_(other.scheme_)
-{
+  scheme_(other.scheme_) {
   setContent(other.content_, other.contentSize_);
 }
 
-ServiceRequest::ServiceRequest(ServiceRequest &&other)
-{
+ServiceRequest::ServiceRequest(ServiceRequest &&other) {
   *this = std::move(other);
 }
 
-ServiceRequest& ServiceRequest::operator=(const ServiceRequest &other)
-{
+ServiceRequest& ServiceRequest::operator=(const ServiceRequest &other) {
   if (this != &other) {
     content_ = nullptr;
     contentSize_ = 0;
@@ -57,36 +54,30 @@ ServiceRequest& ServiceRequest::operator=(const ServiceRequest &other)
   return *this;
 }
 
-ServiceRequest& ServiceRequest::operator=(ServiceRequest &&other)
-{
+ServiceRequest& ServiceRequest::operator=(ServiceRequest &&other) {
   if (this != &other)
     *this = std::move(other);
   return *this;
 }
 
-ServiceRequest::~ServiceRequest()
-{
+ServiceRequest::~ServiceRequest() {
   if (content_)
     delete content_;
 }
 
-const char * ServiceRequest::content() const
-{
+const char * ServiceRequest::content() const {
   return content_;
 }
 
-size_t ServiceRequest::contentSize() const
-{
+size_t ServiceRequest::contentSize() const {
   return contentSize_;
 }
 
-bool ServiceRequest::hasContent() const
-{
+bool ServiceRequest::hasContent() const {
   return (contentSize_ != 0);
 }
 
-void ServiceRequest::setContent(const char * data, size_t size)
-{
+void ServiceRequest::setContent(const char * data, size_t size) {
   if (content_)
     delete content_;
   content_ = nullptr;
@@ -98,13 +89,13 @@ void ServiceRequest::setContent(const char * data, size_t size)
   }
 }
 
-void ServiceRequest::addParameter(const ParameterNameType & name, const ParameterValueType & value)
-{
+void ServiceRequest::addParameter(const ParameterNameType & name,
+  const ParameterValueType & value) {
   setParameter(name, value);
 }
 
-ServiceRequest::ParameterValueType ServiceRequest::parameter(const ParameterNameType &name)const
-{
+ServiceRequest::ParameterValueType ServiceRequest::parameter(
+  const ParameterNameType &name)const {
   ParameterCollection::const_iterator it = params_.find(name);
   if (it == params_.end()) {
     return ParameterValueType("");
@@ -112,53 +103,44 @@ ServiceRequest::ParameterValueType ServiceRequest::parameter(const ParameterName
   return it->second;
 }
 
-ServiceRequest::ParameterCollection ServiceRequest::parameters() const
-{
+ServiceRequest::ParameterCollection ServiceRequest::parameters() const {
   return params_;
 }
 
-void ServiceRequest::removeParameter(const ParameterNameType & name)
-{
+void ServiceRequest::removeParameter(const ParameterNameType & name) {
   params_.erase(name);
 }
 
-void ServiceRequest::setParameter(const ParameterNameType &name, const ParameterValueType &value)
-{
+void ServiceRequest::setParameter(const ParameterNameType &name,
+  const ParameterValueType &value) {
   params_[name] = value;
 }
 
-void ServiceRequest::setParameters(const ParameterCollection & params)
-{
+void ServiceRequest::setParameters(const ParameterCollection & params) {
   params_ = params;
 }
 
-std::string ServiceRequest::version()const
-{
+std::string ServiceRequest::version()const {
   return version_;
 }
 
-void ServiceRequest::setVersion(const std::string &version)
-{
+void ServiceRequest::setVersion(const std::string &version) {
   version_ = version;
 }
 
-std::string ServiceRequest::product() const
-{
+std::string ServiceRequest::product() const {
   return product_;
 }
 
-void ServiceRequest::setProduct(const std::string & product)
-{
+void ServiceRequest::setProduct(const std::string & product) {
   product_ = product;
 }
 
-std::string ServiceRequest::resourcePath() const
-{
+std::string ServiceRequest::resourcePath() const {
   return resourcePath_;
 }
 
-void ServiceRequest::setResourcePath(const std::string & path)
-{
+void ServiceRequest::setResourcePath(const std::string & path) {
   resourcePath_ = path;
 }
 
@@ -169,3 +151,5 @@ void ServiceRequest::setScheme(const std::string scheme) {
 std::string ServiceRequest::scheme() const {
   return scheme_;
 }
+
+}  // namespace AlibabaCloud

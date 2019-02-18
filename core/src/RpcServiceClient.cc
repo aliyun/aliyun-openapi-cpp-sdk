@@ -15,29 +15,29 @@
  */
 
 #include <alibabacloud/core/RpcServiceClient.h>
+#include <alibabacloud/core/HmacSha1Signer.h>
 #include <algorithm>
 #include <iomanip>
 #include <sstream>
-#include <alibabacloud/core/HmacSha1Signer.h>
 #include "Utils.h"
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-RpcServiceClient::RpcServiceClient(const std::string & servicename, const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+RpcServiceClient::RpcServiceClient(const std::string & servicename,
+  const std::shared_ptr<CredentialsProvider> &credentialsProvider,
   const ClientConfiguration &configuration,
   const std::shared_ptr<Signer> &signer) :
   CoreClient(servicename, configuration),
   credentialsProvider_(credentialsProvider),
-  signer_(signer)
-{
+  signer_(signer) {
 }
 
-RpcServiceClient::~RpcServiceClient()
-{
+RpcServiceClient::~RpcServiceClient() {
 }
 
-RpcServiceClient::JsonOutcome RpcServiceClient::makeRequest(const std::string &endpoint, const RpcServiceRequest &msg, HttpRequest::Method method)const
-{
+RpcServiceClient::JsonOutcome RpcServiceClient::makeRequest(
+  const std::string &endpoint,
+  const RpcServiceRequest &msg, HttpRequest::Method method)const {
   auto outcome = AttemptRequest(endpoint, msg, method);
   if (outcome.isSuccess())
     return JsonOutcome(std::string(outcome.result().body(),
@@ -46,13 +46,14 @@ RpcServiceClient::JsonOutcome RpcServiceClient::makeRequest(const std::string &e
     return JsonOutcome(outcome.error());
 }
 
-HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint, const ServiceRequest &msg, HttpRequest::Method method )const
-{
-  return buildHttpRequest(endpoint, dynamic_cast<const RpcServiceRequest& >(msg), method);
+HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
+  const ServiceRequest &msg, HttpRequest::Method method)const {
+  return buildHttpRequest(endpoint,
+    dynamic_cast<const RpcServiceRequest& >(msg), method);
 }
 
-HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint, const RpcServiceRequest &msg, HttpRequest::Method method) const
-{
+HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
+  const RpcServiceRequest &msg, HttpRequest::Method method) const {
   const Credentials credentials = credentialsProvider_->getCredentials();
 
   Url url;
@@ -97,7 +98,8 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint, con
     << "&"
     << UrlEncode(canonicalizedQuery(queryParams));
 
-  queryParams["Signature"] = signer_->generate(plaintext.str(), credentials.accessKeySecret() + "&");
+  queryParams["Signature"] = signer_->generate(plaintext.str(),
+    credentials.accessKeySecret() + "&");
 
   std::stringstream queryString;
   for (const auto &p : queryParams)
@@ -107,6 +109,9 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint, con
   HttpRequest request(url);
   request.setMethod(method);
   request.setHeader("Host", url.host());
-  request.setHeader("x-sdk-client", std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
+  request.setHeader("x-sdk-client",
+    std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
   return request;
 }
+
+}  // namespace AlibabaCloud

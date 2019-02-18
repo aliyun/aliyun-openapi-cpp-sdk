@@ -14,46 +14,64 @@
 * limitations under the License.
 */
 
-#ifndef ALIBABACLOUD_CORE_STS_STSCLIENT_H_
-#define ALIBABACLOUD_CORE_STS_STSCLIENT_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_STS_STSCLIENT_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_STS_STSCLIENT_H_
 
-#include <future>
 #include <alibabacloud/core/AsyncCallerContext.h>
 #include <alibabacloud/core/RpcServiceClient.h>
+#include <future>
+#include <memory>
+#include <string>
 #include "model/AssumeRoleRequest.h"
 #include "model/AssumeRoleResult.h"
 #include "model/GetCallerIdentityRequest.h"
 #include "model/GetCallerIdentityResult.h"
 
-namespace AlibabaCloud
-{
-  namespace Sts
-  {
-    class ALIBABACLOUD_CORE_EXPORT StsClient : public RpcServiceClient
-    {
-    public:
-      typedef Outcome<Error, Model::AssumeRoleResult> AssumeRoleOutcome;
-      typedef std::future<AssumeRoleOutcome> AssumeRoleOutcomeCallable;
-      typedef std::function<void(const StsClient*, const Model::AssumeRoleRequest&, const AssumeRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleAsyncHandler;
 
-      typedef Outcome<Error, Model::GetCallerIdentityResult> GetCallerIdentityOutcome;
-      typedef std::future<GetCallerIdentityOutcome> GetCallerIdentityOutcomeCallable;
-      typedef std::function<void(const StsClient*, const Model::GetCallerIdentityRequest&, const GetCallerIdentityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCallerIdentityAsyncHandler;
+namespace AlibabaCloud {
+namespace Sts {
+class ALIBABACLOUD_CORE_EXPORT StsClient : public RpcServiceClient {
+ public:
+  typedef Outcome<Error, Model::AssumeRoleResult> AssumeRoleOutcome;
+  typedef std::future<AssumeRoleOutcome> AssumeRoleOutcomeCallable;
+  typedef std::function<void(const StsClient*,
+    const Model::AssumeRoleRequest&, const AssumeRoleOutcome&,
+    const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleAsyncHandler;
 
-      StsClient(const Credentials &credentials, const ClientConfiguration &configuration);
-      StsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
-      StsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
-      ~StsClient();
+  typedef Outcome<Error, Model::GetCallerIdentityResult>
+    GetCallerIdentityOutcome;
+  typedef std::future<GetCallerIdentityOutcome>
+    GetCallerIdentityOutcomeCallable;
+  typedef std::function<void(const StsClient*,
+    const Model::GetCallerIdentityRequest&, const GetCallerIdentityOutcome&,
+    const std::shared_ptr<const AsyncCallerContext>&)>
+  GetCallerIdentityAsyncHandler;
 
-      virtual AssumeRoleOutcome assumeRole(const Model::AssumeRoleRequest &request)const;
-      void assumeRoleAsync(const Model::AssumeRoleRequest& request, const AssumeRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-      AssumeRoleOutcomeCallable assumeRoleCallable(const Model::AssumeRoleRequest& request) const;
-      GetCallerIdentityOutcome getCallerIdentity(const Model::GetCallerIdentityRequest &request)const;
-      void getCallerIdentityAsync(const Model::GetCallerIdentityRequest& request, const GetCallerIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-      GetCallerIdentityOutcomeCallable getCallerIdentityCallable(const Model::GetCallerIdentityRequest& request) const;
-      using RpcServiceClient::makeRequest;
-    };
-  }
-}
+  StsClient(const Credentials &credentials,
+    const ClientConfiguration &configuration);
+  StsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+    const ClientConfiguration &configuration);
+  StsClient(const std::string &accessKeyId, const std::string &accessKeySecret,
+    const ClientConfiguration &configuration);
+  ~StsClient();
 
-#endif // !ALIBABACLOUD_CORE_STS_STSCLIENT_H_
+  virtual AssumeRoleOutcome assumeRole(
+    const Model::AssumeRoleRequest &request) const;
+  void assumeRoleAsync(const Model::AssumeRoleRequest& request,
+    const AssumeRoleAsyncHandler& handler,
+    const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+  AssumeRoleOutcomeCallable assumeRoleCallable(
+    const Model::AssumeRoleRequest& request) const;
+  GetCallerIdentityOutcome getCallerIdentity(
+    const Model::GetCallerIdentityRequest &request)const;
+  void getCallerIdentityAsync(const Model::GetCallerIdentityRequest& request,
+    const GetCallerIdentityAsyncHandler& handler,
+    const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+  GetCallerIdentityOutcomeCallable getCallerIdentityCallable(
+    const Model::GetCallerIdentityRequest& request) const;
+  using RpcServiceClient::makeRequest;
+};
+  }  // namespace Sts
+}  // namespace AlibabaCloud
+
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_STS_STSCLIENT_H_

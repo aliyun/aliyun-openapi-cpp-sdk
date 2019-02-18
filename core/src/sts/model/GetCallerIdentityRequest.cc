@@ -21,10 +21,8 @@ using namespace AlibabaCloud::Sts;
 using namespace AlibabaCloud::Sts::Model;
 
 GetCallerIdentityRequest::GetCallerIdentityRequest() :
-  StsRequest("GetCallerIdentity")
-{
+  StsRequest("GetCallerIdentity") {
 }
 
-GetCallerIdentityRequest::~GetCallerIdentityRequest()
-{
+GetCallerIdentityRequest::~GetCallerIdentityRequest() {
 }

@@ -14,25 +14,22 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_LOCATION_LOCATIONREQUEST_H_
-#define ALIBABACLOUD_CORE_LOCATION_LOCATIONREQUEST_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_LOCATIONREQUEST_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_LOCATIONREQUEST_H_
 
 #include <alibabacloud/core/RpcServiceRequest.h>
+#include <string>
 
-namespace AlibabaCloud
-{
-  namespace Location
-  {
-    class ALIBABACLOUD_CORE_EXPORT LocationRequest : public RpcServiceRequest
-    {
-    public:
-      explicit LocationRequest(const std::string & action);
-      virtual ~LocationRequest();
+namespace AlibabaCloud {
+namespace Location {
+class ALIBABACLOUD_CORE_EXPORT LocationRequest : public RpcServiceRequest {
+ public:
+  explicit LocationRequest(const std::string & action);
+  virtual ~LocationRequest();
 
-    private:
+ private:
+};
+}  // namespace Location
+}  // namespace AlibabaCloud
 
-    };
-  }
-}
-
-#endif // !ALIBABACLOUD_CORE_LOCATION_LOCATIONREQUEST_H_
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_LOCATIONREQUEST_H_

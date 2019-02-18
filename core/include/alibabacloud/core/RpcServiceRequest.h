@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_RPCSERVICEREQUEST_H_
-#define ALIBABACLOUD_CORE_RPCSERVICEREQUEST_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_RPCSERVICEREQUEST_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_RPCSERVICEREQUEST_H_
 
 #include "ServiceRequest.h"
+#include <string>
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT RpcServiceRequest : public ServiceRequest
-  {
-  public:
-    RpcServiceRequest(const std::string &product, const std::string &version, const std::string & action);
-    virtual ~RpcServiceRequest();
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT RpcServiceRequest : public ServiceRequest {
+ public:
+  RpcServiceRequest(const std::string &product, const std::string &version,
+    const std::string & action);
+  virtual ~RpcServiceRequest();
 
-    std::string actionName()const;
-    using ServiceRequest::setScheme;
-  protected:
-    void setActionName(const std::string &name);
+  std::string actionName()const;
+  using ServiceRequest::setScheme;
 
-  };
-}
-#endif // !ALIBABACLOUD_CORE_RPCSERVICEREQUEST_H_
+ protected:
+  void setActionName(const std::string &name);
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_RPCSERVICEREQUEST_H_
