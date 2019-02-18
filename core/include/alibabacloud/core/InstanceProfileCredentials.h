@@ -14,21 +14,18 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALS_H_
-#define ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALS_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALS_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALS_H_
 
 #include "BasicSessionCredentials.h"
 
-namespace AlibabaCloud
-{
-  class InstanceProfileCredentials : public BasicSessionCredentials
-  {
-  public:
-    InstanceProfileCredentials();
-    ~InstanceProfileCredentials();
+namespace AlibabaCloud {
+class InstanceProfileCredentials : public BasicSessionCredentials {
+ public:
+  InstanceProfileCredentials();
+  ~InstanceProfileCredentials();
 
-  private:
-
-  };
-}
-#endif // !ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALS_H_
+ private:
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALS_H_

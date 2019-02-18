@@ -15,30 +15,29 @@
  */
 
 #include <alibabacloud/core/RoaServiceClient.h>
+#include <alibabacloud/core/HmacSha1Signer.h>
 #include <algorithm>
 #include <iomanip>
 #include <sstream>
-#include <alibabacloud/core/HmacSha1Signer.h>
-//#include <alibabacloud/core/RoaErrorMarshaller.h>
 #include "Utils.h"
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-RoaServiceClient::RoaServiceClient(const std::string & servicename, const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+RoaServiceClient::RoaServiceClient(const std::string & servicename,
+  const std::shared_ptr<CredentialsProvider> &credentialsProvider,
   const ClientConfiguration &configuration,
   const std::shared_ptr<Signer> &signer) :
   CoreClient(servicename, configuration),
   credentialsProvider_(credentialsProvider),
-  signer_(signer)
-{
+  signer_(signer) {
 }
 
-RoaServiceClient::~RoaServiceClient()
-{
+RoaServiceClient::~RoaServiceClient() {
 }
 
-RoaServiceClient::JsonOutcome RoaServiceClient::makeRequest(const std::string &endpoint, const RoaServiceRequest &msg, HttpRequest::Method method)const
-{
+RoaServiceClient::JsonOutcome RoaServiceClient::makeRequest(
+  const std::string &endpoint,
+  const RoaServiceRequest &msg, HttpRequest::Method method)const {
   auto outcome = AttemptRequest(endpoint, msg, method);
   if (outcome.isSuccess())
     return JsonOutcome(std::string(outcome.result().body(),
@@ -47,13 +46,14 @@ RoaServiceClient::JsonOutcome RoaServiceClient::makeRequest(const std::string &e
     return JsonOutcome(outcome.error());
 }
 
-HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint, const ServiceRequest &msg, HttpRequest::Method method)const
-{
-  return buildHttpRequest(endpoint, dynamic_cast<const RoaServiceRequest& >(msg), method);
+HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
+  const ServiceRequest &msg, HttpRequest::Method method)const {
+  return buildHttpRequest(endpoint,
+    dynamic_cast<const RoaServiceRequest& >(msg), method);
 }
 
-HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint, const RoaServiceRequest &msg, HttpRequest::Method method) const
-{
+HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
+  const RoaServiceRequest &msg, HttpRequest::Method method) const {
   const Credentials credentials = credentialsProvider_->getCredentials();
 
   Url url;
@@ -74,8 +74,7 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint, con
 
   if (!queryParams.empty()) {
     std::stringstream queryString;
-    for (const auto &p : queryParams)
-    {
+    for (const auto &p : queryParams) {
       if (p.second.empty())
         queryString << "&" << p.first;
       else
@@ -96,12 +95,13 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint, con
     std::stringstream ss;
     ss << msg.contentSize();
     request.setHeader("Content-Length", ss.str());
-    if(msg.parameter("Content-Type").empty()) {
+    if (msg.parameter("Content-Type").empty()) {
       request.setHeader("Content-Type", "application/octet-stream");
     } else {
       request.setHeader("Content-Type", msg.parameter("Content-Type"));
     }
-    request.setHeader("Content-MD5", ComputeContentMD5(msg.content(),msg.contentSize()));
+    request.setHeader("Content-MD5",
+      ComputeContentMD5(msg.content(), msg.contentSize()));
     request.setBody(msg.content(), msg.contentSize());
   }
 
@@ -116,7 +116,8 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint, con
 #endif
   request.setHeader("Date", date.str());
   request.setHeader("Host", url.host());
-  request.setHeader("x-sdk-client", std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
+  request.setHeader("x-sdk-client",
+    std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
   request.setHeader("x-acs-region-id", configuration().regionId());
   if (!credentials.sessionToken().empty())
     request.setHeader("x-acs-security-token", credentials.sessionToken());
@@ -145,3 +146,5 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint, con
   request.setHeader("Authorization", sign.str());
   return request;
 }
+
+}  // namespace AlibabaCloud

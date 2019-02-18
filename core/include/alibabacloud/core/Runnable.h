@@ -14,22 +14,20 @@
 * limitations under the License.
 */
 
-#ifndef ALIBABACLOUD_CORE_RUNNABLE_H_
-#define ALIBABACLOUD_CORE_RUNNABLE_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_RUNNABLE_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_RUNNABLE_H_
 
 #include <functional>
 #include "CoreExport.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT Runnable
-  {
-  public:
-    explicit Runnable(const std::function<void()> f);
-    void run()const;
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT Runnable {
+ public:
+  explicit Runnable(const std::function<void()> f);
+  void run()const;
 
-  private:
-    std::function<void()> f_;
-  };
-}
-#endif // !ALIBABACLOUD_CORE_RUNNABLE_H_
+ private:
+  std::function<void()> f_;
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_RUNNABLE_H_

@@ -14,58 +14,61 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_SERVICEREQUEST_H_
-#define ALIBABACLOUD_CORE_SERVICEREQUEST_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICEREQUEST_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICEREQUEST_H_
 
 #include <map>
 #include "CoreExport.h"
 #include "Url.h"
+#include <string>
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT ServiceRequest
-  {
-  public:
-    typedef std::string ParameterNameType;
-    typedef std::string ParameterValueType;
-    typedef std::map<ParameterNameType, ParameterValueType> ParameterCollection;
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT ServiceRequest {
+ public:
+  typedef std::string ParameterNameType;
+  typedef std::string ParameterValueType;
+  typedef std::map<ParameterNameType, ParameterValueType> ParameterCollection;
 
-    virtual ~ServiceRequest();
+  virtual ~ServiceRequest();
 
-    const char* content()const;
-    size_t contentSize()const;
-    bool hasContent()const;
-    ParameterCollection parameters()const;
-    std::string product()const;
-    std::string resourcePath()const;
-    std::string version()const;
-    std::string scheme()const;
-  protected:
-    ServiceRequest(const std::string &product, const std::string &version);
-    ServiceRequest(const ServiceRequest &other);
-    ServiceRequest(ServiceRequest &&other);
-    ServiceRequest& operator=(const ServiceRequest &other);
-    ServiceRequest& operator=(ServiceRequest &&other);
+  const char* content() const;
+  size_t contentSize() const;
+  bool hasContent() const;
+  ParameterCollection parameters() const;
+  std::string product() const;
+  std::string resourcePath() const;
+  std::string version() const;
+  std::string scheme() const;
 
-    void addParameter(const ParameterNameType &name, const ParameterValueType &value);
-    ParameterValueType parameter(const ParameterNameType &name)const;
-    void removeParameter(const ParameterNameType &name);
-    void setContent(const char *data, size_t size);
-    void setParameter(const ParameterNameType &name, const ParameterValueType &value);
-    void setParameters(const ParameterCollection &params);
-    void setResourcePath(const std::string &path);
-    void setProduct(const std::string &product);
-    void setVersion(const std::string &version);
-    void setScheme(const std::string scheme);
-  private:
-    char *content_;
-    size_t contentSize_;
-    ParameterCollection params_;
-    std::string product_;
-    std::string resourcePath_;
-    std::string version_;
-    std::string scheme_;
-  };
-}
+ protected:
+  ServiceRequest(const std::string &product, const std::string &version);
+  ServiceRequest(const ServiceRequest &other);
+  ServiceRequest(ServiceRequest &&other);
+  ServiceRequest& operator=(const ServiceRequest &other);
+  ServiceRequest& operator=(ServiceRequest &&other);
 
-#endif // !ALIBABACLOUD_CORE_SERVICEREQUEST_H_
+  void addParameter(const ParameterNameType &name,
+    const ParameterValueType &value);
+  ParameterValueType parameter(const ParameterNameType &name) const;
+  void removeParameter(const ParameterNameType &name);
+  void setContent(const char *data, size_t size);
+  void setParameter(const ParameterNameType &name,
+      const ParameterValueType &value);
+  void setParameters(const ParameterCollection &params);
+  void setResourcePath(const std::string &path);
+  void setProduct(const std::string &product);
+  void setVersion(const std::string &version);
+  void setScheme(const std::string scheme);
+
+ private:
+  char *content_;
+  size_t contentSize_;
+  ParameterCollection params_;
+  std::string product_;
+  std::string resourcePath_;
+  std::string version_;
+  std::string scheme_;
+};
+}  // namespace AlibabaCloud
+
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICEREQUEST_H_

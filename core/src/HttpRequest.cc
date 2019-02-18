@@ -16,36 +16,32 @@
 
 #include <alibabacloud/core/HttpRequest.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 HttpRequest::HttpRequest(const Url &url, Method method) :
   HttpMessage(),
   url_(url),
-  method_(method)
-{
+  method_(method) {
 }
 
-HttpRequest::~HttpRequest()
-{
+HttpRequest::~HttpRequest() {
 }
 
-HttpRequest::Method HttpRequest::method() const
-{
+HttpRequest::Method HttpRequest::method() const {
   return method_;
 }
 
 
-void HttpRequest::setMethod(Method method)
-{
+void HttpRequest::setMethod(Method method) {
   method_ = method;
 }
 
-void HttpRequest::setUrl(const Url &url)
-{
+void HttpRequest::setUrl(const Url &url) {
   url_ = url;
 }
 
-Url HttpRequest::url()const
-{
+Url HttpRequest::url()const {
   return url_;
 }
+
+}  // namespace AlibabaCloud

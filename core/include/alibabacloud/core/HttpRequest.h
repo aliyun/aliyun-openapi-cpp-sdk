@@ -14,40 +14,38 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_HTTPREQUEST_H_
-#define ALIBABACLOUD_CORE_HTTPREQUEST_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPREQUEST_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPREQUEST_H_
 
 #include <string>
 #include "HttpMessage.h"
 #include "Url.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT HttpRequest : public HttpMessage
-  {
-    public:
-      enum Method
-      {
-        Get,
-        Head,
-        Post,
-        Put,
-        Delete,
-        Connect,
-        Options,
-        Patch,
-        Trace
-      };
-      explicit HttpRequest(const Url &url = Url(), Method method = Get);
-      ~HttpRequest();
-
-      Method method()const;
-      void setMethod(Method method);
-      void setUrl(const Url &url);
-      Url url()const;
-    private:
-      Method method_;
-      Url url_;
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT HttpRequest : public HttpMessage {
+ public:
+  enum Method {
+    Get,
+    Head,
+    Post,
+    Put,
+    Delete,
+    Connect,
+    Options,
+    Patch,
+    Trace
   };
-}
-#endif
+  explicit HttpRequest(const Url &url = Url(), Method method = Get);
+  ~HttpRequest();
+
+  Method method()const;
+  void setMethod(Method method);
+  void setUrl(const Url &url);
+  Url url()const;
+
+ private:
+  Method method_;
+  Url url_;
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPREQUEST_H_

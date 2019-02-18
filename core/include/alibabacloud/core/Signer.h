@@ -14,33 +14,34 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_SIGNER_H_
-#define ALIBABACLOUD_CORE_SIGNER_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_SIGNER_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_SIGNER_H_
 
 #include <string>
 #include "CoreExport.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT Signer
-  {
-  public:
-    enum Type
-    {
-      HmacSha1,
-    };
-    virtual ~Signer();
-
-    virtual std::string generate(const std::string &src, const std::string &secret)const = 0;
-    std::string name()const;
-    Type type() const;
-    std::string version()const;
-  protected:
-    Signer(Type type, const std::string &name, const std::string &version = "1.0");
-  private:
-    std::string name_;
-    std::string version_;
-    Type type_;
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT Signer {
+ public:
+  enum Type {
+    HmacSha1,
   };
-}
-#endif // !ALIBABACLOUD_CORE_SIGNER_H_
+  virtual ~Signer();
+
+  virtual std::string generate(const std::string &src,
+    const std::string &secret)const = 0;
+  std::string name()const;
+  Type type() const;
+  std::string version()const;
+
+ protected:
+  Signer(Type type, const std::string &name,
+    const std::string &version = "1.0");
+
+ private:
+  std::string name_;
+  std::string version_;
+  Type type_;
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_SIGNER_H_

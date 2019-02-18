@@ -19,23 +19,21 @@
 #include <vector>
 #include <sstream>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 HttpClient::HttpClient() :
-  proxy_()
-{
+  proxy_() {
 }
 
-HttpClient::~HttpClient()
-{
+HttpClient::~HttpClient() {
 }
 
-NetworkProxy HttpClient::proxy()const
-{
+NetworkProxy HttpClient::proxy()const {
   return proxy_;
 }
 
-void HttpClient::setProxy(const NetworkProxy &proxy)
-{
+void HttpClient::setProxy(const NetworkProxy &proxy) {
   proxy_ = proxy;
 }
+
+}  // namespace AlibabaCloud

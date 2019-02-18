@@ -14,33 +14,29 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSREQUEST_H_
-#define ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSREQUEST_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSREQUEST_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSREQUEST_H_
 
-#include <string>
 #include <alibabacloud/core/location/LocationRequest.h>
+#include <string>
 
-namespace AlibabaCloud
-{
-  namespace Location
-  {
-    namespace Model
-    {
-      class ALIBABACLOUD_CORE_EXPORT DescribeEndpointsRequest : public LocationRequest
-      {
-      public:
-        DescribeEndpointsRequest();
-        ~DescribeEndpointsRequest();
+namespace AlibabaCloud {
+namespace Location {
+namespace Model {
+class ALIBABACLOUD_CORE_EXPORT DescribeEndpointsRequest
+    : public LocationRequest {
+ public:
+  DescribeEndpointsRequest();
+  ~DescribeEndpointsRequest();
 
-        std::string serviceCode()const;
-        void setServiceCode(const std::string& serviceCode);
-        std::string id()const;
-        void setId(const std::string& id);
-        std::string type()const;
-        void setType(const std::string& type);
-
-      };
-    }
-  }
-}
-#endif // !ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSREQUEST_H_
+  std::string serviceCode()const;
+  void setServiceCode(const std::string& serviceCode);
+  std::string id()const;
+  void setId(const std::string& id);
+  std::string type()const;
+  void setType(const std::string& type);
+};
+}  // namespace Model
+}  // namespace Location
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSREQUEST_H_

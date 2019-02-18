@@ -14,29 +14,25 @@
 * limitations under the License.
 */
 
-#include "EcsMetadataFetcher.h"
+#include <alibabacloud/core/Url.h>
 #include <sstream>
 #include <memory>
-#include <alibabacloud/core/Url.h>
+#include "EcsMetadataFetcher.h"
 #include "CurlHttpClient.h"
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-EcsMetadataFetcher::EcsMetadataFetcher()
-{
+EcsMetadataFetcher::EcsMetadataFetcher() {
 }
 
-EcsMetadataFetcher::~EcsMetadataFetcher()
-{
+EcsMetadataFetcher::~EcsMetadataFetcher() {
 }
 
-std::string EcsMetadataFetcher::roleName()const
-{
+std::string EcsMetadataFetcher::roleName()const {
   return roleName_;
 }
 
-void EcsMetadataFetcher::setRoleName(const std::string & roleName)
-{
+void EcsMetadataFetcher::setRoleName(const std::string & roleName) {
   roleName_ = roleName;
 }
 
@@ -44,8 +40,8 @@ std::string EcsMetadataFetcher::getMetadata() {
   return getMetadata(METADATA_SERVICE_HOST, URL_IN_ECS_METADATA);
 }
 
-std::string EcsMetadataFetcher::getMetadata(const std::string host, const std::string in_path)
-{
+std::string EcsMetadataFetcher::getMetadata(const std::string host,
+  const std::string in_path) {
   std::stringstream path;
   path << in_path << roleName_;
 
@@ -64,3 +60,5 @@ std::string EcsMetadataFetcher::getMetadata(const std::string host, const std::s
   else
     return outcome.error().errorCode();
 }
+
+}  // namespace AlibabaCloud

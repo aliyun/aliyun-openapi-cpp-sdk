@@ -14,25 +14,22 @@
 * limitations under the License.
 */
 
-#ifndef ALIBABACLOUD_CORE_STS_STSSERVICEREQUEST_H_
-#define ALIBABACLOUD_CORE_STS_STSSERVICEREQUEST_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_STS_STSREQUEST_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_STS_STSREQUEST_H_
 
 #include <alibabacloud/core/RpcServiceRequest.h>
+#include <string>
 
-namespace AlibabaCloud
-{
-  namespace Sts
-  {
-    class ALIBABACLOUD_CORE_EXPORT StsRequest : public RpcServiceRequest
-    {
-    public:
-      explicit StsRequest(const std::string & action);
-      virtual ~StsRequest();
+namespace AlibabaCloud {
+namespace Sts {
+class ALIBABACLOUD_CORE_EXPORT StsRequest : public RpcServiceRequest {
+ public:
+  explicit StsRequest(const std::string & action);
+  virtual ~StsRequest();
 
-    private:
+ private:
+};
+}  // namespace Sts
+}  // namespace AlibabaCloud
 
-    };
-  }
-}
-
-#endif // !ALIBABACLOUD_CORE_STS_STSSERVICEREQUEST_H_
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_STS_STSREQUEST_H_

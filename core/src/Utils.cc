@@ -17,7 +17,6 @@
 #include "Utils.h"
 #include <sstream>
 #include <algorithm>
-#include <curl/curl.h>
 #ifdef _WIN32
 #include <Windows.h>
 #else
@@ -25,16 +24,16 @@
 #include <openssl/md5.h>
 #include <uuid/uuid.h>
 #endif
+#include <curl/curl.h>
 
-std::string AlibabaCloud::GenerateUuid()
-{
+std::string AlibabaCloud::GenerateUuid() {
 #ifdef _WIN32
   char *data;
   UUID uuidhandle;
   UuidCreate(&uuidhandle);
-  UuidToString(&uuidhandle, (RPC_CSTR*)&data);
+  UuidToString(&uuidhandle, reinterpret_cast<RPC_CSTR*>&data);
   std::string uuid(data);
-  RpcStringFree((RPC_CSTR*)&data);
+  RpcStringFree(reinterpret_cast<RPC_CSTR*>&data);
   return uuid;
 #else
   uuid_t uu;
@@ -45,8 +44,7 @@ std::string AlibabaCloud::GenerateUuid()
 #endif
 }
 
-std::string AlibabaCloud::UrlEncode(const std::string & src)
-{
+std::string AlibabaCloud::UrlEncode(const std::string & src) {
   CURL *curl = curl_easy_init();
   char *output = curl_easy_escape(curl, src.c_str(), src.size());
   std::string result(output);
@@ -54,8 +52,7 @@ std::string AlibabaCloud::UrlEncode(const std::string & src)
   return result;
 }
 
-std::string AlibabaCloud::UrlDecode(const std::string & src)
-{
+std::string AlibabaCloud::UrlDecode(const std::string & src) {
   CURL *curl = curl_easy_init();
   int outlength = 0;
   char *output = curl_easy_unescape(curl, src.c_str(), src.size(), &outlength);
@@ -64,8 +61,7 @@ std::string AlibabaCloud::UrlDecode(const std::string & src)
   return result;
 }
 
-std::string AlibabaCloud::ComputeContentMD5(const char * data, size_t size)
-{
+std::string AlibabaCloud::ComputeContentMD5(const char * data, size_t size) {
 #ifdef _WIN32
   HCRYPTPROV hProv = 0;
   HCRYPTHASH hHash = 0;
@@ -74,16 +70,18 @@ std::string AlibabaCloud::ComputeContentMD5(const char * data, size_t size)
 
   CryptAcquireContext(&hProv, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT);
   CryptCreateHash(hProv, CALG_MD5, 0, 0, &hHash);
-  CryptHashData(hHash, (BYTE*)(data), size, 0);
+  CryptHashData(hHash, reinterpret_cast<BYTE*>(data), size, 0);
   CryptGetHashParam(hHash, HP_HASHVAL, pbHash, &dwDataLen, 0);
 
   CryptDestroyHash(hHash);
   CryptReleaseContext(hProv, 0);
 
   DWORD dlen = 0;
-  CryptBinaryToString(pbHash, dwDataLen, CRYPT_STRING_BASE64 | CRYPT_STRING_NOCRLF, NULL, &dlen);
+  CryptBinaryToString(pbHash, dwDataLen,
+    CRYPT_STRING_BASE64 | CRYPT_STRING_NOCRLF, NULL, &dlen);
   char* dest = new char[dlen];
-  CryptBinaryToString(pbHash, dwDataLen, CRYPT_STRING_BASE64 | CRYPT_STRING_NOCRLF, dest, &dlen);
+  CryptBinaryToString(pbHash,
+    dwDataLen, CRYPT_STRING_BASE64 | CRYPT_STRING_NOCRLF, dest, &dlen);
 
   std::string ret = std::string(dest, dlen);
   delete dest;
@@ -93,25 +91,23 @@ std::string AlibabaCloud::ComputeContentMD5(const char * data, size_t size)
   MD5(reinterpret_cast<const unsigned char*>(data), size, (unsigned char*)&md);
 
   char encodedData[100];
-  EVP_EncodeBlock(reinterpret_cast<unsigned char*>(encodedData), md, MD5_DIGEST_LENGTH);
+  EVP_EncodeBlock(reinterpret_cast<unsigned char*>(encodedData),
+    md, MD5_DIGEST_LENGTH);
   return encodedData;
 #endif
 }
 
-void AlibabaCloud::StringReplace(std::string & src, const std::string & s1, const std::string & s2)
-{
-  std::string::size_type pos =0;
-  while ((pos = src.find(s1, pos)) != std::string::npos)
-  {
+void AlibabaCloud::StringReplace(std::string & src,
+  const std::string & s1, const std::string & s2) {
+  std::string::size_type pos = 0;
+  while ((pos = src.find(s1, pos)) != std::string::npos) {
     src.replace(pos, s1.length(), s2);
     pos += s2.length();
   }
 }
 
-std::string AlibabaCloud::HttpMethodToString(HttpRequest::Method method)
-{
-  switch (method)
-  {
+std::string AlibabaCloud::HttpMethodToString(HttpRequest::Method method) {
+  switch (method) {
   case HttpRequest::Method::Head:
     return "HEAD";
     break;
@@ -143,14 +139,13 @@ std::string AlibabaCloud::HttpMethodToString(HttpRequest::Method method)
   }
 }
 
-std::string AlibabaCloud::canonicalizedQuery(const std::map<std::string, std::string>& params)
-{
+std::string AlibabaCloud::canonicalizedQuery(const std::map<std::string,
+  std::string>& params) {
   if (params.empty())
     return std::string();
 
   std::stringstream ss;
-  for (const auto &p : params)
-  {
+  for (const auto &p : params) {
     std::string key = UrlEncode(p.first);
     StringReplace(key, "+", "%20");
     StringReplace(key, "*", "%2A");
@@ -164,11 +159,10 @@ std::string AlibabaCloud::canonicalizedQuery(const std::map<std::string, std::st
   return ss.str().substr(1);
 }
 
-std::string AlibabaCloud::canonicalizedHeaders(const HttpMessage::HeaderCollection &headers)
-{
+std::string AlibabaCloud::canonicalizedHeaders(
+  const HttpMessage::HeaderCollection &headers) {
   std::map <std::string, std::string> materials;
-  for (const auto &p : headers)
-  {
+  for (const auto &p : headers) {
     std::string key = p.first;
     std::transform(key.begin(), key.end(), key.begin(), ::tolower);
     if (key.find("x-acs-") != 0)

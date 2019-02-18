@@ -14,25 +14,24 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_ASYNCCALLERCONTEXT_H_
-#define ALIBABACLOUD_CORE_ASYNCCALLERCONTEXT_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_ASYNCCALLERCONTEXT_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_ASYNCCALLERCONTEXT_H_
 
 #include <string>
 #include "CoreExport.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT AsyncCallerContext
-  {
-  public:
-    AsyncCallerContext();
-    explicit AsyncCallerContext(const std::string &uuid);
-    virtual ~AsyncCallerContext();
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT AsyncCallerContext {
+ public:
+  AsyncCallerContext();
+  explicit AsyncCallerContext(const std::string &uuid);
+  virtual ~AsyncCallerContext();
 
-    std::string uuid()const;
-    void setUuid(const std::string &uuid);
-  private:
-    std::string uuid_;
-  };
-}
-#endif
+  std::string uuid()const;
+  void setUuid(const std::string &uuid);
+
+ private:
+  std::string uuid_;
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_ASYNCCALLERCONTEXT_H_

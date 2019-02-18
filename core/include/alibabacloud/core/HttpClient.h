@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_HTTPCLIENT_H_
-#define ALIBABACLOUD_CORE_HTTPCLIENT_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPCLIENT_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPCLIENT_H_
 
 #include <alibabacloud/core/HttpRequest.h>
 #include <alibabacloud/core/HttpResponse.h>
@@ -23,21 +23,20 @@
 #include <alibabacloud/core/Outcome.h>
 #include <alibabacloud/core/Error.h>
 
-namespace AlibabaCloud
-{
-  class HttpClient
-  {
-  public:
-    typedef Outcome<Error, HttpResponse> HttpResponseOutcome;
+namespace AlibabaCloud {
+class HttpClient {
+ public:
+  typedef Outcome<Error, HttpResponse> HttpResponseOutcome;
 
-    HttpClient();
-    virtual ~HttpClient();
+  HttpClient();
+  virtual ~HttpClient();
 
-    virtual HttpResponseOutcome makeRequest(const HttpRequest &request) = 0;
-    NetworkProxy proxy()const;
-    void setProxy(const NetworkProxy &proxy);
-  private:
-    NetworkProxy proxy_;
-  };
-}
-#endif
+  virtual HttpResponseOutcome makeRequest(const HttpRequest &request) = 0;
+  NetworkProxy proxy()const;
+  void setProxy(const NetworkProxy &proxy);
+
+ private:
+  NetworkProxy proxy_;
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPCLIENT_H_

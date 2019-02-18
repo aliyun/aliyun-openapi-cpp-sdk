@@ -15,65 +15,59 @@
  */
 
 #include <alibabacloud/core/InstanceProfileCredentialsProvider.h>
+#include <json/json.h>
+#include "EcsMetadataFetcher.h"
 #include <chrono>
 #include <iomanip>
 #include <chrono>
 #include <mutex>
 #include <sstream>
-#include <json/json.h>
-#include "EcsMetadataFetcher.h"
 
-using namespace AlibabaCloud;
 
-InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std::string & roleName, int durationSeconds):
+namespace AlibabaCloud {
+
+InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(
+  const std::string & roleName, int durationSeconds):
   CredentialsProvider(),
   EcsMetadataFetcher(),
   durationSeconds_(durationSeconds),
   cachedMutex_(),
   cachedCredentials_("", ""),
-  expiry_()
-{
+  expiry_() {
   setRoleName(roleName);
 }
 
-InstanceProfileCredentialsProvider::~InstanceProfileCredentialsProvider()
-{
+InstanceProfileCredentialsProvider::~InstanceProfileCredentialsProvider() {
 }
 
-Credentials InstanceProfileCredentialsProvider::getCredentials()
-{
+Credentials InstanceProfileCredentialsProvider::getCredentials() {
   loadCredentials();
   std::lock_guard<std::mutex> locker(cachedMutex_);
   return cachedCredentials_;
 }
 
-bool InstanceProfileCredentialsProvider::checkExpiry()const
-{
+bool InstanceProfileCredentialsProvider::checkExpiry()const {
   auto now = std::chrono::system_clock::now();
-  auto diff = std::chrono::duration_cast<std::chrono::seconds>(now - expiry_).count();
+  auto diff =
+  std::chrono::duration_cast<std::chrono::seconds>(now - expiry_).count();
 
   return (diff > 0 - 60);
 }
 
-void InstanceProfileCredentialsProvider::loadCredentials()
-{
-  if (checkExpiry())
-  {
+void InstanceProfileCredentialsProvider::loadCredentials() {
+  if (checkExpiry()) {
     std::lock_guard<std::mutex> locker(cachedMutex_);
-    if (checkExpiry())
-    {
+    if (checkExpiry()) {
       auto outcome = getMetadata();
       Json::Value value;
       Json::Reader reader;
-      if (reader.parse(outcome, value))
-      {
+      if (reader.parse(outcome, value)) {
         if (value["Code"].empty()
           &&value["AccessKeyId"].empty()
           &&value["AccessKeySecret"].empty()
           &&value["SecurityToken"].empty()
-          &&value["Expiration"].empty())
-        {
-          cachedCredentials_ = Credentials("","");
+          &&value["Expiration"].empty()) {
+          cachedCredentials_ = Credentials("", "");
           return;
         }
 
@@ -99,3 +93,5 @@ void InstanceProfileCredentialsProvider::loadCredentials()
     }
   }
 }
+
+}  // namespace AlibabaCloud

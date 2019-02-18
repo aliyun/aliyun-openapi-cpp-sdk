@@ -19,22 +19,16 @@
 
 #include <alibabacloud/core/ServiceResult.h>
 
-namespace AlibabaCloud
-{
-  namespace Sts
-  {
-    namespace Model
-    {
-      class ALIBABACLOUD_CORE_EXPORT AssumeRoleResult : public ServiceResult
-      {
+namespace AlibabaCloud {
+  namespace Sts {
+    namespace Model {
+      class ALIBABACLOUD_CORE_EXPORT AssumeRoleResult : public ServiceResult {
       public:
-        struct AssumedRoleUser
-        {
+        struct AssumedRoleUser {
           std::string arn;
           std::string assumedRoleId;
         };
-        struct Credentials
-        {
+        struct Credentials {
           std::string accessKeyId;
           std::string accessKeySecret;
           std::string expiration;

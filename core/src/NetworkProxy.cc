@@ -16,7 +16,7 @@
 
 #include <alibabacloud/core/NetworkProxy.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 NetworkProxy::NetworkProxy(Type type,
     const std::string &hostName,
@@ -27,60 +27,50 @@ NetworkProxy::NetworkProxy(Type type,
   password_(password),
   port_(port),
   type_(type),
-  user_(user)
-{
+  user_(user) {
 }
 
-NetworkProxy::~NetworkProxy()
-{
+NetworkProxy::~NetworkProxy() {
 }
 
-std::string NetworkProxy::hostName() const
-{
+std::string NetworkProxy::hostName() const {
   return hostName_;
 }
 
-std::string NetworkProxy::password() const
-{
+std::string NetworkProxy::password() const {
   return password_;
 }
 
-uint16_t NetworkProxy::port() const
-{
+uint16_t NetworkProxy::port() const {
   return port_;
 }
 
-void NetworkProxy::setHostName(const std::string &hostName)
-{
+void NetworkProxy::setHostName(const std::string &hostName) {
   hostName_ = hostName;
 }
 
-void NetworkProxy::setPassword(const std::string &password)
-{
+void NetworkProxy::setPassword(const std::string &password) {
   password_ = password;
 }
 
-void NetworkProxy::setPort(uint16_t port)
-{
+void NetworkProxy::setPort(uint16_t port) {
   port_ = port;
 }
 
-void NetworkProxy::setType(NetworkProxy::Type type)
-{
+void NetworkProxy::setType(NetworkProxy::Type type) {
   type_ = type;
 }
 
-void NetworkProxy::setUser(const std::string &user)
-{
+void NetworkProxy::setUser(const std::string &user) {
   user_ = user;
 }
 
-NetworkProxy::Type NetworkProxy::type() const
-{
+NetworkProxy::Type NetworkProxy::type() const {
   return type_;
 }
 
-std::string NetworkProxy::user() const
-{
+std::string NetworkProxy::user() const {
   return user_;
 }
+
+}  // namespace AlibabaCloud

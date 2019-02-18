@@ -16,14 +16,14 @@
 
 #include <alibabacloud/core/Runnable.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 Runnable::Runnable(const std::function<void()> f) :
-  f_(f)
-{
+  f_(f) {
 }
 
-void Runnable::run() const
-{
+void Runnable::run() const {
   f_();
 }
+
+}  // namespace AlibabaCloud

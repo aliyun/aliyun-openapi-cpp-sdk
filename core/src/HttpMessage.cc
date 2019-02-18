@@ -17,10 +17,9 @@
 #include <alibabacloud/core/HttpMessage.h>
 #include <algorithm>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-namespace
-{
+namespace {
 #if defined(WIN32) && defined(_MSC_VER)
 #  define strcasecmp _stricmp
 #  define strncasecmp _strnicmp
@@ -28,8 +27,7 @@ namespace
 #  include <strings.h>
 #endif
 
-  std::string KnownHeaderMapper[]
-  {
+  std::string KnownHeaderMapper[] {
     "Accept",
     "Accept-Charset",
     "Accept-Encoding",
@@ -44,30 +42,26 @@ namespace
     "Server",
     "User-Agent"
   };
-}
+}  // namespace
 
 HttpMessage::HttpMessage() :
   body_(nullptr),
   bodySize_(0),
-  headers_()
-{
+  headers_() {
 }
 
 HttpMessage::HttpMessage(const HttpMessage &other) :
   body_(nullptr),
   bodySize_(other.bodySize_),
-  headers_(other.headers_)
-{
+  headers_(other.headers_) {
   setBody(other.body_, other.bodySize_);
 }
 
-HttpMessage::HttpMessage(HttpMessage &&other)
-{
+HttpMessage::HttpMessage(HttpMessage &&other) {
   *this = std::move(other);
 }
 
-HttpMessage& HttpMessage::operator=(const HttpMessage &other)
-{
+HttpMessage& HttpMessage::operator=(const HttpMessage &other) {
   if (this != &other) {
     body_ = nullptr;
     bodySize_ = 0;
@@ -77,25 +71,23 @@ HttpMessage& HttpMessage::operator=(const HttpMessage &other)
   return *this;
 }
 
-HttpMessage& HttpMessage::operator=(HttpMessage &&other)
-{
+HttpMessage& HttpMessage::operator=(HttpMessage &&other) {
   if (this != &other)
     *this = std::move(other);
   return *this;
 }
 
-void HttpMessage::addHeader(const HeaderNameType & name, const HeaderValueType & value)
-{
+void HttpMessage::addHeader(const HeaderNameType & name,
+  const HeaderValueType & value) {
   setHeader(name, value);
 }
 
-void HttpMessage::addHeader(KnownHeader header, const HeaderValueType & value)
-{
+void HttpMessage::addHeader(KnownHeader header, const HeaderValueType & value) {
   setHeader(header, value);
 }
 
-HttpMessage::HeaderValueType HttpMessage::header(const HeaderNameType & name) const
-{
+HttpMessage::HeaderValueType HttpMessage::header(
+  const HeaderNameType & name) const {
   auto it = headers_.find(name);
   if (it != headers_.end())
     return it->second;
@@ -103,58 +95,49 @@ HttpMessage::HeaderValueType HttpMessage::header(const HeaderNameType & name) co
     return std::string();
 }
 
-HttpMessage::HeaderCollection HttpMessage::headers() const
-{
+HttpMessage::HeaderCollection HttpMessage::headers() const {
   return headers_;
 }
 
-void HttpMessage::removeHeader(const HeaderNameType & name)
-{
+void HttpMessage::removeHeader(const HeaderNameType & name) {
   headers_.erase(name);
 }
 
-void HttpMessage::removeHeader(KnownHeader header)
-{
+void HttpMessage::removeHeader(KnownHeader header) {
   removeHeader(KnownHeaderMapper[header]);
 }
 
-void HttpMessage::setHeader(const HeaderNameType & name, const HeaderValueType & value)
-{
+void HttpMessage::setHeader(const HeaderNameType & name,
+  const HeaderValueType & value) {
   headers_[name] = value;
 }
 
-void HttpMessage::setHeader(KnownHeader header, const std::string & value)
-{
+void HttpMessage::setHeader(KnownHeader header,
+  const std::string & value) {
   setHeader(KnownHeaderMapper[header], value);
 }
 
-HttpMessage::~HttpMessage()
-{
+HttpMessage::~HttpMessage() {
   setBody(nullptr, 0);
 }
 
-const char* HttpMessage::body()const
-{
+const char* HttpMessage::body()const {
   return body_;
 }
 
-size_t HttpMessage::bodySize()const
-{
+size_t HttpMessage::bodySize()const {
   return bodySize_;
 }
 
-bool HttpMessage::hasBody() const
-{
+bool HttpMessage::hasBody() const {
   return (bodySize_ != 0);
 }
 
-HttpMessage::HeaderValueType HttpMessage::header(KnownHeader header)const
-{
+HttpMessage::HeaderValueType HttpMessage::header(KnownHeader header)const {
   return this->header(KnownHeaderMapper[header]);
 }
 
-void HttpMessage::setBody(const char *data, size_t size)
-{
+void HttpMessage::setBody(const char *data, size_t size) {
   if (body_)
     delete body_;
   body_ = nullptr;
@@ -168,7 +151,8 @@ void HttpMessage::setBody(const char *data, size_t size)
 }
 
 bool HttpMessage::nocaseLess::operator()(const std::string & s1,
-  const std::string & s2) const
-{
+  const std::string & s2) const {
   return strcasecmp(s1.c_str(), s2.c_str()) < 0;
 }
+
+}  // namespace AlibabaCloud

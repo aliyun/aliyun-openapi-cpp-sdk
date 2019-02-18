@@ -14,22 +14,24 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_UTILS_H_
-#define ALIBABACLOUD_CORE_UTILS_H_
+#ifndef CORE_SRC_UTILS_H_
+#define CORE_SRC_UTILS_H_
 
-#include <string>
 #include <alibabacloud/core/HttpRequest.h>
 #include <alibabacloud/core/HttpMessage.h>
+#include <string>
+#include <map>
 
-namespace AlibabaCloud
-{
-  std::string ComputeContentMD5(const char *data, size_t size);
-  std::string GenerateUuid();
-  std::string HttpMethodToString(HttpRequest::Method method);
-  void StringReplace(std::string &src, const std::string &s1, const std::string &s2);
-  std::string UrlEncode(const std::string &src);
-  std::string UrlDecode(const std::string &src);
-  std::string canonicalizedQuery(const std::map <std::string, std::string> &params);
-  std::string canonicalizedHeaders(const HttpMessage::HeaderCollection &headers);
-}
-#endif
+namespace AlibabaCloud {
+std::string ComputeContentMD5(const char *data, size_t size);
+std::string GenerateUuid();
+std::string HttpMethodToString(HttpRequest::Method method);
+void StringReplace(std::string &src,
+  const std::string &s1, const std::string &s2);
+std::string UrlEncode(const std::string &src);
+std::string UrlDecode(const std::string &src);
+std::string canonicalizedQuery(const std::map <std::string,
+  std::string> &params);
+std::string canonicalizedHeaders(const HttpMessage::HeaderCollection &headers);
+}  // namespace AlibabaCloud
+#endif  // CORE_SRC_UTILS_H_

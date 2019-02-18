@@ -14,24 +14,23 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_CURLHTTPCLIENT_H_
-#define ALIBABACLOUD_CORE_CURLHTTPCLIENT_H_
+#ifndef CORE_SRC_CURLHTTPCLIENT_H_
+#define CORE_SRC_CURLHTTPCLIENT_H_
 
 #include <alibabacloud/core/HttpClient.h>
 #include <curl/curl.h>
 
-namespace AlibabaCloud
-{
-  class CurlHttpClient : public HttpClient
-  {
-  public:
-    CurlHttpClient();
-    ~CurlHttpClient();
+namespace AlibabaCloud {
+class CurlHttpClient : public HttpClient {
+ public:
+  CurlHttpClient();
+  ~CurlHttpClient();
 
-    virtual HttpResponseOutcome makeRequest(const HttpRequest &request) override;
-  private:
-    CURL *curlHandle_;
-  };
-}
+  HttpResponseOutcome makeRequest(const HttpRequest &request) override;
 
-#endif // !ALIBABACLOUD_CORE_CURLHTTPCLIENT_H_
+ private:
+  CURL *curlHandle_;
+};
+}  // namespace AlibabaCloud
+
+#endif  // CORE_SRC_CURLHTTPCLIENT_H_

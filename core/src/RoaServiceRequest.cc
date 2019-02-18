@@ -20,13 +20,14 @@
 #include <sstream>
 #include "Utils.h"
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-RoaServiceRequest::RoaServiceRequest(const std::string & product, const std::string & version) :
-  ServiceRequest(product, version)
-{
+RoaServiceRequest::RoaServiceRequest(const std::string & product,
+  const std::string & version) :
+  ServiceRequest(product, version) {
 }
 
-RoaServiceRequest::~RoaServiceRequest()
-{
+RoaServiceRequest::~RoaServiceRequest() {
 }
+
+}  // namespace AlibabaCloud

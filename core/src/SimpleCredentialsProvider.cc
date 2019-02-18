@@ -16,25 +16,25 @@
 
 #include <alibabacloud/core/SimpleCredentialsProvider.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-SimpleCredentialsProvider::SimpleCredentialsProvider(const Credentials &credentials):
+SimpleCredentialsProvider::SimpleCredentialsProvider(
+  const Credentials &credentials):
   CredentialsProvider(),
-  credentials_(credentials)
-{
+  credentials_(credentials) {
 }
 
-SimpleCredentialsProvider::SimpleCredentialsProvider(const std::string & accessKeyId, const std::string & accessKeySecret) :
+SimpleCredentialsProvider::SimpleCredentialsProvider(
+  const std::string & accessKeyId, const std::string & accessKeySecret) :
   CredentialsProvider(),
-  credentials_(accessKeyId, accessKeySecret)
-{
+  credentials_(accessKeyId, accessKeySecret) {
 }
 
-SimpleCredentialsProvider::~SimpleCredentialsProvider()
-{
+SimpleCredentialsProvider::~SimpleCredentialsProvider() {
 }
 
-Credentials SimpleCredentialsProvider::getCredentials()
-{
+Credentials SimpleCredentialsProvider::getCredentials() {
   return credentials_;
 }
+
+}  // namespace AlibabaCloud

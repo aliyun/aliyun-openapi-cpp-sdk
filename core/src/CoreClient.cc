@@ -25,50 +25,46 @@
  *
  */
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-CoreClient::CoreClient(const std::string & servicename, const ClientConfiguration &configuration) :
+CoreClient::CoreClient(const std::string & servicename,
+  const ClientConfiguration &configuration) :
   serviceName_(servicename),
   configuration_(configuration),
-  httpClient_(new CurlHttpClient)
-{
+  httpClient_(new CurlHttpClient) {
   httpClient_->setProxy(configuration.proxy());
 }
 
-CoreClient::~CoreClient()
-{
+CoreClient::~CoreClient() {
   delete httpClient_;
 }
 
-ClientConfiguration CoreClient::configuration()const
-{
+ClientConfiguration CoreClient::configuration()const {
   return configuration_;
 }
 
-std::string CoreClient::serviceName()const
-{
+std::string CoreClient::serviceName()const {
   return serviceName_;
 }
 
-void CoreClient::asyncExecute(Runnable * r)const
-{
+void CoreClient::asyncExecute(Runnable * r)const {
   Executor::instance()->execute(r);
 }
 
-HttpClient::HttpResponseOutcome CoreClient::AttemptRequest(const std::string & endpoint, const ServiceRequest & request, HttpRequest::Method method) const
-{
+HttpClient::HttpResponseOutcome CoreClient::AttemptRequest(
+  const std::string & endpoint,
+  const ServiceRequest & request, HttpRequest::Method method) const {
   auto r = buildHttpRequest(endpoint, request, method);
   auto outcome = httpClient_->makeRequest(r);
   if (!outcome.isSuccess())
     return outcome;
-  if(hasResponseError(outcome.result()))
+  if (hasResponseError(outcome.result()))
     return HttpClient::HttpResponseOutcome(buildCoreError(outcome.result()));
   else
     return outcome;
 }
 
-Error CoreClient::buildCoreError(const HttpResponse &response)const
-{
+Error CoreClient::buildCoreError(const HttpResponse &response)const {
   Json::Reader reader;
   Json::Value value;
   if (!reader.parse(std::string(response.body(), response.bodySize()), value))
@@ -85,7 +81,8 @@ Error CoreClient::buildCoreError(const HttpResponse &response)const
   return error;
 }
 
-bool CoreClient::hasResponseError(const HttpResponse &response)const
-{
+bool CoreClient::hasResponseError(const HttpResponse &response)const {
   return response.statusCode() < 200 || response.statusCode() > 299;
 }
+
+}  // namespace AlibabaCloud

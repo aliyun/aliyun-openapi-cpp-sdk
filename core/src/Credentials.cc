@@ -16,47 +16,41 @@
 
 #include <alibabacloud/core/Credentials.h>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 Credentials::Credentials(const std::string &accessKeyId,
     const std::string &accessKeySecret,
     const std::string &sessionToken) :
   accessKeyId_(accessKeyId),
   accessKeySecret_(accessKeySecret),
-  sessionToken_(sessionToken)
-{
+  sessionToken_(sessionToken) {
 }
 
-Credentials::~Credentials()
-{
+Credentials::~Credentials() {
 }
 
-std::string Credentials::accessKeyId () const
-{
+std::string Credentials::accessKeyId() const {
   return accessKeyId_;
 }
 
-std::string Credentials::accessKeySecret () const
-{
+std::string Credentials::accessKeySecret() const {
   return accessKeySecret_;
 }
 
-void Credentials::setAccessKeyId(const std::string &accessKeyId)
-{
+void Credentials::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
 }
 
-void Credentials::setAccessKeySecret(const std::string &accessKeySecret)
-{
+void Credentials::setAccessKeySecret(const std::string &accessKeySecret) {
   accessKeySecret_ = accessKeySecret;
 }
 
-void Credentials::setSessionToken (const std::string &sessionToken)
-{
+void Credentials::setSessionToken(const std::string &sessionToken) {
   sessionToken_ = sessionToken;
 }
 
-std::string Credentials::sessionToken () const
-{
+std::string Credentials::sessionToken() const {
   return sessionToken_;
 }
+
+}  // namespace AlibabaCloud

@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_HMACSHA1SIGNER_H_
-#define ALIBABACLOUD_CORE_HMACSHA1SIGNER_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_HMACSHA1SIGNER_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_HMACSHA1SIGNER_H_
 
 #include "Signer.h"
+#include <string>
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT HmacSha1Signer : public Signer
-  {
-  public:
-    HmacSha1Signer();
-    ~HmacSha1Signer();
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT HmacSha1Signer : public Signer {
+ public:
+  HmacSha1Signer();
+  ~HmacSha1Signer();
 
-    virtual std::string generate(const std::string &src, const std::string &secret)const override;
-  };
-}
+  std::string generate(const std::string &src,
+    const std::string &secret)  const override;
+};
+}  // namespace AlibabaCloud
 
-#endif // !ALIBABACLOUD_CORE_HMACSHA1SIGNER_H_
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_HMACSHA1SIGNER_H_

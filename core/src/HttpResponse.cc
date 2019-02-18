@@ -16,42 +16,37 @@
 
 #include <alibabacloud/core/HttpResponse.h>
 
-namespace
-{
+namespace {
   #define INVALID_STATUS_CODE -1
 }
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
 HttpResponse::HttpResponse() :
   HttpMessage(),
   request_(),
-  statusCode_(INVALID_STATUS_CODE)
-{
+  statusCode_(INVALID_STATUS_CODE) {
 }
 
 HttpResponse::HttpResponse(const HttpRequest & request) :
   HttpMessage(),
   request_(request),
-  statusCode_(INVALID_STATUS_CODE)
-{
+  statusCode_(INVALID_STATUS_CODE) {
 }
 
-HttpResponse::~HttpResponse()
-{
+HttpResponse::~HttpResponse() {
 }
 
-HttpRequest HttpResponse::request() const
-{
+HttpRequest HttpResponse::request() const {
   return request_;
 }
 
-void HttpResponse::setStatusCode(int code)
-{
+void HttpResponse::setStatusCode(int code) {
   statusCode_ = code;
 }
 
-int HttpResponse::statusCode() const
-{
+int HttpResponse::statusCode() const {
   return statusCode_;
 }
+
+}  // namespace AlibabaCloud

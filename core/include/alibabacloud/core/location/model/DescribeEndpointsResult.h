@@ -14,51 +14,46 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSRESULT_H_
-#define ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSRESULT_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSRESULT_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSRESULT_H_
 
+#include <alibabacloud/core/ServiceResult.h>
 #include <string>
 #include <vector>
 #include <utility>
-#include <alibabacloud/core/ServiceResult.h>
 
-namespace AlibabaCloud
-{
-  namespace Location
-  {
-    namespace Model
-    {
-      class ALIBABACLOUD_CORE_EXPORT DescribeEndpointsResult : public ServiceResult
-      {
-      public:
-        struct Endpoint
-        {
-          std::string endpoint;
-          std::string id;
-          std::string namespace_;
-          std::string serivceCode;
-          std::string type;
-          std::vector<std::string> protocols;
-        };
+namespace AlibabaCloud {
+namespace Location {
+namespace Model {
+class ALIBABACLOUD_CORE_EXPORT DescribeEndpointsResult : public ServiceResult {
+ public:
+  struct Endpoint {
+    std::string endpoint;
+    std::string id;
+    std::string namespace_;
+    std::string serivceCode;
+    std::string type;
+    std::vector<std::string> protocols;
+  };
 
-        DescribeEndpointsResult();
-        explicit DescribeEndpointsResult(const std::string &payload);
-        ~DescribeEndpointsResult();
+  DescribeEndpointsResult();
+  explicit DescribeEndpointsResult(const std::string &payload);
+  ~DescribeEndpointsResult();
 
-        std::vector<Endpoint> endpoints()const;
-        void setEndpoints(const std::vector<Endpoint> &endpoints);
+  std::vector<Endpoint> endpoints()const;
+  void setEndpoints(const std::vector<Endpoint> &endpoints);
 
-        bool success()const;
-        void setSuccess(const bool &success);
+  bool success()const;
+  void setSuccess(const bool &success);
 
-      protected:
-        void parse(const std::string &payload);
-      private:
-        std::vector<Endpoint> endpoints_;
-        bool success_;
+ protected:
+  void parse(const std::string &payload);
 
-      };
-    }
-  }
-}
-#endif // !ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSRESULT_H_
+ private:
+  std::vector<Endpoint> endpoints_;
+  bool success_;
+};
+}  // namespace Model
+}  // namespace Location
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSRESULT_H_

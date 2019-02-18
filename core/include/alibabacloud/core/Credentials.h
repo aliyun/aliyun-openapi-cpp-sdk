@@ -14,34 +14,32 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CORE_CREDENTIAL_H_
-#define ALIBABACLOUD_CORE_CREDENTIAL_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALS_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALS_H_
 
 #include <string>
 #include "CoreExport.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT Credentials
-  {
-    public:
-      Credentials(const std::string &accessKeyId,
-          const std::string &accessKeySecret,
-          const std::string &sessionToken="");
-      ~Credentials();
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT Credentials {
+ public:
+  Credentials(const std::string &accessKeyId,
+    const std::string &accessKeySecret,
+    const std::string &sessionToken = "");
+  ~Credentials();
 
-      std::string accessKeyId () const;
-      std::string accessKeySecret () const;
-      void setAccessKeyId(const std::string &accessKeyId);
-      void setAccessKeySecret(const std::string &accessKeySecret);
-      void setSessionToken (const std::string &sessionToken);
-      std::string sessionToken () const;
+  std::string accessKeyId() const;
+  std::string accessKeySecret() const;
+  void setAccessKeyId(const std::string &accessKeyId);
+  void setAccessKeySecret(const std::string &accessKeySecret);
+  void setSessionToken(const std::string &sessionToken);
+  std::string sessionToken() const;
 
-    private:
-      std::string accessKeyId_;
-      std::string accessKeySecret_;
-      std::string sessionToken_;
-  };
-}
+ private:
+  std::string accessKeyId_;
+  std::string accessKeySecret_;
+  std::string sessionToken_;
+};
+}  // namespace AlibabaCloud
 
-#endif // !ALIBABACLOUD_CORE_CREDENTIAL_H_
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALS_H_

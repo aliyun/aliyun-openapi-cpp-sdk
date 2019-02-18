@@ -21,21 +21,17 @@ using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Location::Model;
 
 DescribeEndpointsResult::DescribeEndpointsResult() :
-  ServiceResult()
-{
+  ServiceResult() {
 }
 
 DescribeEndpointsResult::DescribeEndpointsResult(const std::string &payload) :
-  ServiceResult()
-{
+  ServiceResult() {
   parse(payload);
 }
 
-DescribeEndpointsResult::~DescribeEndpointsResult()
-{}
+DescribeEndpointsResult::~DescribeEndpointsResult() {}
 
-void DescribeEndpointsResult::parse(const std::string &payload)
-{
+void DescribeEndpointsResult::parse(const std::string &payload) {
   Json::Reader reader;
   Json::Value value;
   reader.parse(payload, value);
@@ -44,8 +40,7 @@ void DescribeEndpointsResult::parse(const std::string &payload)
 
   success_ = value["Success"].asBool();
   auto allEndpoints = value["Endpoints"]["Endpoint"];
-  for (const auto &item : allEndpoints)
-  {
+  for (const auto &item : allEndpoints) {
     Endpoint region;
     region.endpoint = item["Endpoint"].asString();
     region.id = item["Id"].asString();
@@ -53,30 +48,27 @@ void DescribeEndpointsResult::parse(const std::string &payload)
     region.serivceCode = item["SerivceCode"].asString();
     region.type = item["Type"].asString();
     auto allProtocols = item["Protocols"]["Protocols"];
-    for (const auto &item : allProtocols)
-    {
+    for (const auto &item : allProtocols) {
       region.protocols.push_back(item.asString());
     }
     endpoints_.push_back(region);
   }
 }
 
-std::vector<DescribeEndpointsResult::Endpoint> DescribeEndpointsResult::endpoints()const
-{
+std::vector<DescribeEndpointsResult::Endpoint>
+  DescribeEndpointsResult::endpoints()const {
   return endpoints_;
 }
 
-void DescribeEndpointsResult::setEndpoints(const std::vector<Endpoint> & endpoints)
-{
+void DescribeEndpointsResult::setEndpoints(
+  const std::vector<Endpoint> & endpoints) {
   endpoints_ = endpoints;
 }
 
-bool DescribeEndpointsResult::success()const
-{
+bool DescribeEndpointsResult::success()const {
   return success_;
 }
 
-void DescribeEndpointsResult::setSuccess(const bool & success)
-{
+void DescribeEndpointsResult::setSuccess(const bool & success) {
   success_ = success;
 }

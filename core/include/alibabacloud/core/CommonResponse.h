@@ -14,25 +14,23 @@
 * limitations under the License.
 */
 
-#ifndef ALIBABACLOUD_CORE_COMMONRESPONSE_H_
-#define ALIBABACLOUD_CORE_COMMONRESPONSE_H_
+#ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_COMMONRESPONSE_H_
+#define CORE_INCLUDE_ALIBABACLOUD_CORE_COMMONRESPONSE_H_
 
 #include <string>
 #include "CoreExport.h"
 
-namespace AlibabaCloud
-{
-  class ALIBABACLOUD_CORE_EXPORT CommonResponse
-  {
-  public:
-    CommonResponse();
-    explicit CommonResponse(const std::string &payload);
-    ~CommonResponse();
+namespace AlibabaCloud {
+class ALIBABACLOUD_CORE_EXPORT CommonResponse {
+ public:
+  CommonResponse();
+  explicit CommonResponse(const std::string &payload);
+  ~CommonResponse();
 
-    std::string payload()const;
-  private:
-    std::string payload_;
+  std::string payload()const;
 
-  };
-}
-#endif // !ALIBABACLOUD_CORE_COMMONRESPONSE_H_
+ private:
+  std::string payload_;
+};
+}  // namespace AlibabaCloud
+#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_COMMONRESPONSE_H_

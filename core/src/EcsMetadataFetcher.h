@@ -14,32 +14,32 @@
 * limitations under the License.
 */
 
-#ifndef ALIBABACLOUD_CORE_ECSMETADATASERVICECREDENTIALSFETCHER_H_
-#define ALIBABACLOUD_CORE_ECSMETADATASERVICECREDENTIALSFETCHER_H_
+#ifndef CORE_SRC_ECSMETADATAFETCHER_H_
+#define CORE_SRC_ECSMETADATAFETCHER_H_
 
 #include <string>
 
 namespace {
   const int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
   const char* const METADATA_SERVICE_HOST = "100.100.100.200";
-  const char* const URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
+  const char* const URL_IN_ECS_METADATA =
+  "/latest/meta-data/ram/security-credentials/";
 }
 
-namespace AlibabaCloud
-{
-  class EcsMetadataFetcher
-  {
-  public:
-    EcsMetadataFetcher();
-    ~EcsMetadataFetcher();
+namespace AlibabaCloud {
+class EcsMetadataFetcher {
+ public:
+  EcsMetadataFetcher();
+  ~EcsMetadataFetcher();
 
-    std::string roleName()const;
-    void setRoleName(const std::string & roleName);
-    std::string getMetadata(const std::string host, const std::string path);
-    virtual std::string getMetadata();
-  private:
-    std::string roleName_;
-  };
-}
+  std::string roleName()const;
+  void setRoleName(const std::string & roleName);
+  std::string getMetadata(const std::string host, const std::string path);
+  virtual std::string getMetadata();
 
-#endif // !ALIBABACLOUD_CORE_ECSMETADATASERVICECREDENTIALSFETCHER_H_
+ private:
+  std::string roleName_;
+};
+}  // namespace AlibabaCloud
+
+#endif  // CORE_SRC_ECSMETADATAFETCHER_H_

@@ -22,33 +22,36 @@ using namespace AlibabaCloud;
 using namespace AlibabaCloud::Sts;
 using namespace AlibabaCloud::Sts::Model;
 
-namespace
-{
+namespace {
   const std::string SERVICE_NAME = "Sts";
   const std::string ENDPOINT = "sts.aliyuncs.com";
 }
 
-StsClient::StsClient(const Credentials &credentials, const ClientConfiguration &configuration) :
-  RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
-{
+StsClient::StsClient(const Credentials &credentials,
+  const ClientConfiguration &configuration) :
+  RpcServiceClient(SERVICE_NAME,
+    std::make_shared<SimpleCredentialsProvider>(credentials), configuration) {
 }
 
-StsClient::StsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
-  RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
-{
+StsClient::StsClient(
+  const std::shared_ptr<CredentialsProvider>& credentialsProvider,
+  const ClientConfiguration & configuration) :
+  RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration) {
 }
 
-StsClient::StsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
-  RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
-{
+StsClient::StsClient(const std::string & accessKeyId,
+  const std::string & accessKeySecret,
+  const ClientConfiguration & configuration) :
+  RpcServiceClient(SERVICE_NAME,
+    std::make_shared<SimpleCredentialsProvider>(accessKeyId,
+      accessKeySecret), configuration) {
 }
 
-StsClient::~StsClient()
-{
+StsClient::~StsClient() {
 }
 
-StsClient::AssumeRoleOutcome StsClient::assumeRole(const Model::AssumeRoleRequest &request)const
-{
+StsClient::AssumeRoleOutcome StsClient::assumeRole(
+  const Model::AssumeRoleRequest &request)const {
   auto outcome = makeRequest(ENDPOINT, request);
 
   if (outcome.isSuccess())
@@ -57,21 +60,20 @@ StsClient::AssumeRoleOutcome StsClient::assumeRole(const Model::AssumeRoleReques
     return AssumeRoleOutcome(Error(outcome.error()));
 }
 
-void StsClient::assumeRoleAsync(const Model::AssumeRoleRequest & request, const AssumeRoleAsyncHandler & handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-  auto fn = [this, request, handler, context]()
-  {
+void StsClient::assumeRoleAsync(const Model::AssumeRoleRequest & request,
+  const AssumeRoleAsyncHandler & handler,
+  const std::shared_ptr<const AsyncCallerContext>& context) const {
+  auto fn = [this, request, handler, context]() {
     handler(this, request, assumeRole(request), context);
   };
 
   asyncExecute(new Runnable(fn));
 }
 
-StsClient::AssumeRoleOutcomeCallable StsClient::assumeRoleCallable(const Model::AssumeRoleRequest & request) const
-{
+StsClient::AssumeRoleOutcomeCallable StsClient::assumeRoleCallable(
+  const Model::AssumeRoleRequest & request) const {
   auto task = std::make_shared<std::packaged_task<AssumeRoleOutcome()>>(
-    [this, request]()
-  {
+    [this, request]() {
     return this->assumeRole(request);
   });
 
@@ -79,8 +81,8 @@ StsClient::AssumeRoleOutcomeCallable StsClient::assumeRoleCallable(const Model::
   return task->get_future();
 }
 
-StsClient::GetCallerIdentityOutcome StsClient::getCallerIdentity(const GetCallerIdentityRequest &request) const
-{
+StsClient::GetCallerIdentityOutcome StsClient::getCallerIdentity(
+  const GetCallerIdentityRequest &request) const {
   auto outcome = makeRequest(ENDPOINT, request);
 
   if (outcome.isSuccess())
@@ -89,21 +91,21 @@ StsClient::GetCallerIdentityOutcome StsClient::getCallerIdentity(const GetCaller
     return GetCallerIdentityOutcome(Error(outcome.error()));
 }
 
-void StsClient::getCallerIdentityAsync(const GetCallerIdentityRequest& request, const GetCallerIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-  auto fn = [this, request, handler, context]()
-  {
+void StsClient::getCallerIdentityAsync(const GetCallerIdentityRequest& request,
+  const GetCallerIdentityAsyncHandler& handler,
+  const std::shared_ptr<const AsyncCallerContext>& context) const {
+  auto fn = [this, request, handler, context]() {
     handler(this, request, getCallerIdentity(request), context);
   };
 
   asyncExecute(new Runnable(fn));
 }
 
-StsClient::GetCallerIdentityOutcomeCallable StsClient::getCallerIdentityCallable(const GetCallerIdentityRequest &request) const
-{
+StsClient::GetCallerIdentityOutcomeCallable
+StsClient::getCallerIdentityCallable(
+  const GetCallerIdentityRequest &request) const {
   auto task = std::make_shared<std::packaged_task<GetCallerIdentityOutcome()>>(
-    [this, request]()
-  {
+    [this, request]() {
     return this->getCallerIdentity(request);
   });
 

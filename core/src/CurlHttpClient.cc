@@ -17,85 +17,77 @@
 #include "CurlHttpClient.h"
 #include <cassert>
 #include <sstream>
+#include <string>
 #include <vector>
 
-using namespace AlibabaCloud;
+namespace AlibabaCloud {
 
-namespace
-{
-  size_t recvBody(char *ptr, size_t size, size_t nmemb, void *userdata)
-  {
-    std::ostringstream &out = *static_cast<std::ostringstream*>(userdata);
-    out << std::string(ptr, nmemb*size);
-    return nmemb * size;
+namespace {
+size_t recvBody(char *ptr, size_t size, size_t nmemb, void *userdata) {
+  std::ostringstream &out = *static_cast<std::ostringstream*>(userdata);
+  out << std::string(ptr, nmemb*size);
+  return nmemb * size;
+}
+
+size_t recvHeaders(char *buffer, size_t size, size_t nitems, void *userdata) {
+  HttpResponse *response = static_cast<HttpResponse*>(userdata);
+  std::string line(buffer);
+  auto pos = line.find(':');
+  if (pos != line.npos) {
+    std::string name = line.substr(0, pos);
+    std::string value = line.substr(pos + 2);
+    size_t p = 0;
+    if ((p = value.rfind('\r')) != value.npos)
+      value[p] = '\0';
+    response->setHeader(name, value);
   }
+  return nitems * size;
+}
 
-  size_t recvHeaders(char *buffer, size_t size, size_t nitems, void *userdata)
-  {
-    HttpResponse *response = static_cast<HttpResponse*>(userdata);
-    std::string line(buffer);
-    auto pos = line.find(':');
-    if (pos != line.npos)
-    {
-      std::string name = line.substr(0, pos);
-      std::string value = line.substr(pos + 2);
-      size_t p = 0;
-      if ((p = value.rfind('\r')) != value.npos)
-        value[p] = '\0';
-      response->setHeader(name, value);
-    }
-    return nitems * size;
+void setCUrlProxy(CURL *curlHandle, const NetworkProxy &proxy) {
+  if (proxy.type() == NetworkProxy::Type::None)
+    return;
+
+  long type;
+  switch (proxy.type()) {
+  case NetworkProxy::Type::Socks5:
+    type = CURLPROXY_SOCKS5;
+    break;
+  case NetworkProxy::Type::Http:
+  default:
+    type = CURLPROXY_HTTP;
+    break;
   }
+  curl_easy_setopt(curlHandle, CURLOPT_PROXYTYPE, type);
 
-  void setCUrlProxy(CURL *curlHandle, const NetworkProxy &proxy)
-  {
-    if (proxy.type() == NetworkProxy::Type::None)
-      return;
+  std::ostringstream out;
+  out << proxy.hostName() << ":" << proxy.port();
+  curl_easy_setopt(curlHandle, CURLOPT_PROXY, out.str().c_str());
 
-    long type;
-    switch (proxy.type())
-    {
-    case NetworkProxy::Type::Socks5:
-      type = CURLPROXY_SOCKS5;
-      break;
-    case NetworkProxy::Type::Http:
-    default:
-      type = CURLPROXY_HTTP;
-      break;
-    }
-    curl_easy_setopt(curlHandle, CURLOPT_PROXYTYPE, type);
-
-    std::ostringstream out;
-    out << proxy.hostName() << ":" << proxy.port();
-    curl_easy_setopt(curlHandle, CURLOPT_PROXY, out.str().c_str());
-
-    if (!proxy.user().empty()) {
-      out.clear();
-      out << proxy.user() << ":" << proxy.password();
-      curl_easy_setopt(curlHandle, CURLOPT_PROXYUSERPWD, out.str().c_str());
-    }
+  if (!proxy.user().empty()) {
+    out.clear();
+    out << proxy.user() << ":" << proxy.password();
+    curl_easy_setopt(curlHandle, CURLOPT_PROXYUSERPWD, out.str().c_str());
   }
 }
+}  // namespace
 
 CurlHttpClient::CurlHttpClient() :
   HttpClient(),
-  curlHandle_(curl_easy_init())
-{
+  curlHandle_(curl_easy_init()) {
 }
 
-CurlHttpClient::~CurlHttpClient()
-{
+CurlHttpClient::~CurlHttpClient() {
   curl_easy_cleanup(curlHandle_);
 }
 
-HttpClient::HttpResponseOutcome CurlHttpClient::makeRequest(const HttpRequest &request)
-{
+HttpClient::HttpResponseOutcome
+CurlHttpClient::makeRequest(const HttpRequest &request) {
   curl_easy_reset(curlHandle_);
   HttpResponse response(request);
 
   std::string url = request.url().toString();
-  switch (request.method())
-  {
+  switch (request.method()) {
   case HttpRequest::Method::Get:
     break;
   case HttpRequest::Method::Post: {
@@ -121,8 +113,7 @@ HttpClient::HttpResponseOutcome CurlHttpClient::makeRequest(const HttpRequest &r
 
   curl_slist *list = nullptr;
   auto headers = request.headers();
-  for (const auto &p : headers)
-  {
+  for (const auto &p : headers) {
     std::string str = p.first;
     str.append(": ").append(p.second);
     list = curl_slist_append(list, str.c_str());
@@ -134,8 +125,7 @@ HttpClient::HttpResponseOutcome CurlHttpClient::makeRequest(const HttpRequest &r
   setCUrlProxy(curlHandle_, proxy());
 
   CURLcode res = curl_easy_perform(curlHandle_);
-  switch (res)
-  {
+  switch (res) {
   case CURLE_OK: {
     long response_code;
     curl_easy_getinfo(curlHandle_, CURLINFO_RESPONSE_CODE, &response_code);
@@ -144,8 +134,13 @@ HttpClient::HttpResponseOutcome CurlHttpClient::makeRequest(const HttpRequest &r
     return HttpResponseOutcome(response);
   }
   case CURLE_SSL_CONNECT_ERROR:
-    return HttpResponseOutcome(Error("SSLConnectError", "A problem occurred somewhere in the SSL/TLS handshake."));
+    return HttpResponseOutcome(
+      Error("SSLConnectError",
+        "A problem occurred somewhere in the SSL/TLS handshake."));
   default:
-    return HttpResponseOutcome(Error("NetworkError", "Failed to connect to host or proxy."));
+    return HttpResponseOutcome(
+      Error("NetworkError", "Failed to connect to host or proxy."));
   }
 }
+
+}  // namespace AlibabaCloud
