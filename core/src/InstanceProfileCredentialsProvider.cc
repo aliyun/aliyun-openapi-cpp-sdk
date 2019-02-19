@@ -19,7 +19,6 @@
 #include "EcsMetadataFetcher.h"
 #include <chrono>
 #include <iomanip>
-#include <chrono>
 #include <mutex>
 #include <sstream>
 

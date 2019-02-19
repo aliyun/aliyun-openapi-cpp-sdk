@@ -49,6 +49,7 @@ std::string AlibabaCloud::UrlEncode(const std::string & src) {
   char *output = curl_easy_escape(curl, src.c_str(), src.size());
   std::string result(output);
   curl_free(output);
+  curl_easy_cleanup(curl);
   return result;
 }
 
@@ -58,6 +59,7 @@ std::string AlibabaCloud::UrlDecode(const std::string & src) {
   char *output = curl_easy_unescape(curl, src.c_str(), src.size(), &outlength);
   std::string result(output, outlength);
   curl_free(output);
+  curl_easy_cleanup(curl);
   return result;
 }
 

@@ -25,14 +25,14 @@ namespace {
     request.setDomain("nlp.cn-shanghai.aliyuncs.com");
     request.setResourcePath("/nlp/api/wordsegment/general");
     request.setHttpMethod(HttpRequest::Post);
-    const char * data = "{\"lang\":\"ZH\",\"text\":\"Iphone is a bad choice 专用数据线\"}";
+    const char * data = "{\"lang\":\"ZH\",\"text\":\"Iphone is a good choice 专用数据线\"}";
     request.setContent(data, strlen(data));
     request.setHeaderParameter("Content-Type", "application/json;chrset=utf-8");
     request.setVersion("2018-04-08");
 
     auto outcome = client.commonResponse(request);
     EXPECT_TRUE(outcome.error().errorCode().empty());
-    const std::string expected = "{\"data\":[{\"id\":0,\"word\":\"Iphone\"},{\"id\":1,\"word\":\" \"},{\"id\":2,\"word\":\"is\"},{\"id\":3,\"word\":\" \"},{\"id\":4,\"word\":\"a\"},{\"id\":5,\"word\":\" \"},{\"id\":6,\"word\":\"bad\"},{\"id\":7,\"word\":\" \"},{\"id\":8,\"word\":\"choice\"},{\"id\":9,\"word\":\" \"},{\"id\":10,\"word\":\"专用\"},{\"id\":11,\"word\":\"数据线\"}]}";
+    const std::string expected = "{\"data\":[{\"id\":0,\"word\":\"Iphone\"},{\"id\":1,\"word\":\" \"},{\"id\":2,\"word\":\"is\"},{\"id\":3,\"word\":\" \"},{\"id\":4,\"word\":\"a\"},{\"id\":5,\"word\":\" \"},{\"id\":6,\"word\":\"good\"},{\"id\":7,\"word\":\" \"},{\"id\":8,\"word\":\"choice\"},{\"id\":9,\"word\":\" \"},{\"id\":10,\"word\":\"专用\"},{\"id\":11,\"word\":\"数据线\"}]}";
     EXPECT_TRUE(outcome.result().payload() == expected);
     AlibabaCloud::ShutdownSdk();
   }
