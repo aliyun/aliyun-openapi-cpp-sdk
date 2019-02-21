@@ -17,6 +17,7 @@
 #include "Utils.h"
 #include <sstream>
 #include <algorithm>
+#include <stdlib.h>
 #ifdef _WIN32
 #include <Windows.h>
 #else
@@ -31,9 +32,9 @@ std::string AlibabaCloud::GenerateUuid() {
   char *data;
   UUID uuidhandle;
   UuidCreate(&uuidhandle);
-  UuidToString(&uuidhandle, reinterpret_cast<RPC_CSTR*>&data);
+  UuidToString(&uuidhandle, reinterpret_cast<RPC_CSTR*>(&data));
   std::string uuid(data);
-  RpcStringFree(reinterpret_cast<RPC_CSTR*>&data);
+  RpcStringFree(reinterpret_cast<RPC_CSTR*>(&data));
   return uuid;
 #else
   uuid_t uu;
@@ -72,7 +73,7 @@ std::string AlibabaCloud::ComputeContentMD5(const char * data, size_t size) {
 
   CryptAcquireContext(&hProv, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT);
   CryptCreateHash(hProv, CALG_MD5, 0, 0, &hHash);
-  CryptHashData(hHash, reinterpret_cast<BYTE*>(data), size, 0);
+  CryptHashData(hHash, (BYTE*)(data), size, 0);
   CryptGetHashParam(hHash, HP_HASHVAL, pbHash, &dwDataLen, 0);
 
   CryptDestroyHash(hHash);
@@ -185,4 +186,27 @@ std::string AlibabaCloud::canonicalizedHeaders(
     ss << p.first << ":" << p.second << "\n";
 
   return ss.str();
+}
+
+std::string AlibabaCloud::GetEnv(const std::string env) {
+#ifdef _WIN32
+  char* buf = nullptr;
+  size_t sz = 0;
+  if (_dupenv_s(&buf, &sz, env.c_str()) == 0 && buf != nullptr) {
+    std::string var(buf);
+    free(buf);
+    return var;
+  } else {
+    if (buf) {
+      free(buf);
+    }
+    return std::string();
+  }
+#else
+  char* var = getenv(env.c_str());
+  if (var) {
+    return std::string(var);
+  }
+  return std::string();
+#endif
 }

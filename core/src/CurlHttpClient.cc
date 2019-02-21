@@ -15,6 +15,7 @@
  */
 
 #include "CurlHttpClient.h"
+#include "Utils.h"
 #include <cassert>
 #include <sstream>
 #include <string>
@@ -123,6 +124,10 @@ CurlHttpClient::makeRequest(const HttpRequest &request) {
   curl_easy_setopt(curlHandle_, CURLOPT_WRITEDATA, &out);
   curl_easy_setopt(curlHandle_, CURLOPT_WRITEFUNCTION, recvBody);
   setCUrlProxy(curlHandle_, proxy());
+
+  if (GetEnv("DEBUG") == "sdk") {
+    curl_easy_setopt(curlHandle_, CURLOPT_VERBOSE, 1L);
+  }
 
   CURLcode res = curl_easy_perform(curlHandle_);
   switch (res) {

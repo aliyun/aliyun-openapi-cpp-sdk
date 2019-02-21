@@ -33,5 +33,6 @@ std::string UrlDecode(const std::string &src);
 std::string canonicalizedQuery(const std::map <std::string,
   std::string> &params);
 std::string canonicalizedHeaders(const HttpMessage::HeaderCollection &headers);
+std::string GetEnv(const std::string env);
 }  // namespace AlibabaCloud
 #endif  // CORE_SRC_UTILS_H_

@@ -23,9 +23,11 @@ int main(int argc, char** argv) {
   request.setDomain("nlp.cn-shanghai.aliyuncs.com");
   request.setResourcePath("/nlp/api/wordsegment/general");
   request.setHttpMethod(HttpRequest::Post);
-  const char * data = "{\"lang\":\"ZH\",\"text\":\"Iphone is a bad choice 专用数据线\"}";
 
-  request.setContent(data, strlen(data));
+  // if windows, Chinese character will result in build error.
+  const std::string data = "{\"lang\":\"ZH\",\"text\":\"Iphone is a good choice.\"}";
+
+  request.setContent(data.c_str(), data.size());
   request.setHeaderParameter("Content-Type", "application/json;chrset=utf-8");
   request.setHeaderParameter("Accept", "application/json");
   request.setVersion("2018-04-08");

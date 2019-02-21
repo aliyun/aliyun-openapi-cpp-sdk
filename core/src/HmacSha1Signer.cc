@@ -44,7 +44,7 @@ std::string HmacSha1Signer::generate(const std::string & src,
   }my_blob;
 
   DWORD kbLen = sizeof(my_blob) + secret.size();
-  my_blob * kb = reinterpret_cast<my_blob *>LocalAlloc(LPTR, kbLen);
+  my_blob * kb = (my_blob *)LocalAlloc(LPTR, kbLen);
   kb->hdr.bType = PLAINTEXTKEYBLOB;
   kb->hdr.bVersion = CUR_BLOB_VERSION;
   kb->hdr.reserved = 0;
@@ -63,12 +63,10 @@ std::string HmacSha1Signer::generate(const std::string & src,
 
   CryptAcquireContext(&hProv, NULL,
     MS_ENHANCED_PROV, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT | CRYPT_NEWKEYSET);
-  CryptImportKey(hProv,
-    reinterpret_cast<BYTE*>(kb), kbLen, 0, CRYPT_IPSEC_HMAC_KEY, &hKey);
+  CryptImportKey(hProv, (BYTE*)kb, kbLen, 0, CRYPT_IPSEC_HMAC_KEY, &hKey);
   CryptCreateHash(hProv, CALG_HMAC, hKey, 0, &hHmacHash);
-  CryptSetHashParam(hHmacHash,
-    HP_HMAC_INFO, reinterpret_cast<BYTE*>&HmacInfo, 0);
-  CryptHashData(hHmacHash, reinterpret_cast<BYTE*>(src.c_str()), src.size(), 0);
+  CryptSetHashParam(hHmacHash, HP_HMAC_INFO, (BYTE*)&HmacInfo, 0);
+  CryptHashData(hHmacHash, (BYTE*)(src.c_str()), src.size(), 0);
   CryptGetHashParam(hHmacHash, HP_HASHVAL, pbHash, &dwDataLen, 0);
 
   LocalFree(kb);
