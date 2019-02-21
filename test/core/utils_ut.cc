@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 #include "../../core/src/Utils.h"
-
+#include <stdlib.h>
 
 using namespace std;
 using namespace AlibabaCloud;
@@ -59,5 +59,16 @@ namespace {
     const std::string encoded = "http%3A%2F%2Fusername%3Apassword%40example.com%3A123%2Fpath%2Fdata%3Fkey%3Dvalue%26key2%3Dvalue2%23fragid1";
     const std::string decoded = UrlDecode(encoded);
     EXPECT_TRUE(decoded == url);
+  }
+
+  TEST(Utils, GetEnv) {
+    const std::string var1 = GetEnv("PATH");
+    EXPECT_FALSE(var1.empty());
+    const std::string var2 = GetEnv("NOT_EXISTS_PATH");
+    EXPECT_TRUE(var2.empty());
+#ifndef _WIN32
+    setenv("SDK", "ttt", 1);
+    EXPECT_TRUE(GetEnv("SDK") == "ttt");
+#endif
   }
 }

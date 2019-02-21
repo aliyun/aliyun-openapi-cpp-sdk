@@ -76,7 +76,12 @@ string base64_encode(const unsigned char *src, size_t len) {
 
 string imageBase64(string file) {
 
-  FILE* img = fopen(file.c_str(), "rb");
+  FILE* img = nullptr;
+#ifdef _WIN32
+  fopen_s(&img, file.c_str(), "rb");
+#else
+  img = fopen(file.c_str(), "rb");
+#endif
   if (!img) {
     perror("open file error");
     return "";
@@ -166,8 +171,14 @@ int main(int argc, char** argv) {
 
   char dir[1024];
   utils.get_dir_exec(dir, nullptr);
+#ifdef _WIN32
+  // windows binary has an extra Release/Debug/... dir
+  string image1_path = string(dir) + "\\..\\1.jpg";
+  string image2_path = string(dir) + "\\..\\2.jpg";
+#else
   string image1_path = string(dir) + "1.jpg";
   string image2_path = string(dir) + "2.jpg";
+#endif
   picList[base64_encode((u8_t*)jpg1.c_str(), jpg1.size())] = imageBase64(image1_path);
   picList[base64_encode((u8_t*)jpg2.c_str(), jpg2.size())] = imageBase64(image2_path);
 
