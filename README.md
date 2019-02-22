@@ -20,24 +20,91 @@ If you have any problem while using C++ SDK, please submit an [issue](https://gi
 
 - To use Alibaba Cloud C++ SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
+- C++11 supported compiler installed
+  - Windows: Visual Studio 2015 or newer
+  - Linux: GCC 4.9 or newer
+- CMake 3.0 or newer
+- 4G memory or more
 
-## Install C++ SDK
+## Install C++ SDK from source code
+
+
+### Linux
 
 1. Install third-party libraries on the Linux platform, including `libcurl`, `libopenssl`, `libuuid`, and `libjsoncpp`.
 
-	- Run the following commands on the Redhat/Fedora system to install third-party libraries.
+	- Run the following commands on the `Redhat/Fedora` system
 	```
     sudo dnf install libcurl-devel openssl-devel libuuid-devel libjsoncpp-devel
     ```
-	- Run the following commands on the Debian/Ubuntu system to install third-party libraries.
+	- Run the following commands on the `Debian/Ubuntu` system
     ```
     sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev
     ```
 2. Run the following commands to clone source codes from GitHub.
 
-    ```
+    ```bash
     git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
     ```
+
+3. Build and install SDK
+
+  - Manually build and install
+
+  ```bash
+    cd aliyun-openapi-cpp-sdk
+    mkdir sdk_build
+    cd sdk_build
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
+    make
+    sudo make install
+  ```
+
+  - Or you may do this with `easyinstall.sh` in the source directory
+
+  ```shell
+    cd aliyun-openapi-cpp-sdk
+    sudo sh easyinstall.sh
+   ```
+
+**The C++ SDK will be installed to `/usr`.**
+
+### windows
+
+1. Install [perl](https://www.perl.org/get.html#win32).
+
+2. Run the following command to clone code from Github via git-bash:
+
+  ```bash
+  git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
+  ```
+
+2. Build Visual Studio solution
+
+- Change directory to source code and make directory sdk_build
+
+- Open CMake UI and
+
+  - `Browse Source` to open source code directory.
+
+  - `Browse build`  to open the created sdk_build directory
+
+  - `Configure`
+
+  - `Generate`
+
+3. Build and Install C++ SDK
+
+- Open `aliyun-openapi-cpp-sdk\\sdk_build\\alibabacloud-sdk.sln` with Visual Studio
+
+- Select  `Release`
+
+- Check INSTALL option from Build -> Configuration Manager
+
+- Build->Build Solutions to build.
+
+**SDK will be installed to `C:\Program File (x86)\alibabacloud-sdk`**
+
 
 ## Use the C++ SDK
 
@@ -53,32 +120,44 @@ The following code shows how to call the [DescribeInstances](~~25506~~) API of E
 using namespace AlibabaCloud;
 using namespace AlibabaCloud::Ecs;
 
-int main(int argc, char** argv)
-{
-	// Initialize the SDK
-	AlibabaCloud::InitializeSdk();
+int main(int argc, char** argv) {
+  // Initialize the SDK
+  AlibabaCloud::InitializeSdk();
 
-	// Configure the ECS instance
-	ClientConfiguration configuration("<your-region-id>");
-	EcsClient client("<your-access-key-id>", "<your-access-key-secret>", configuration);
+  // Configure the ECS instance
+  ClientConfiguration configuration("<your-region-id>");
+  EcsClient client("<your-access-key-id>", "<your-access-key-secret>", configuration);
 
-	// Create an API request and set parameters
-	Model::DescribeInstancesRequest request;
-	request.setPageSize(10);
+  // Create an API request and set parameters
+  Model::DescribeInstancesRequest request;
+  request.setPageSize(10);
 
-	auto outcome = client.describeInstances(request);
-	if (!outcome.isSuccess())
-	{
-		// Handle exceptions
-		std::cout << outcome.error().errorCode() << std::endl;
-		AlibabaCloud::ShutdownSdk();
-		return -1;
-	}
+  auto outcome = client.describeInstances(request);
+  if (!outcome.isSuccess()) {
+    // Handle exceptions
+    std::cout << outcome.error().errorCode() << std::endl;
+    AlibabaCloud::ShutdownSdk();
+    return -1;
+  }
 
-	std::cout << "totalCount: " << outcome.result().getTotalCount() << std::endl;
+  std::cout << "totalCount: " << outcome.result().getTotalCount() << std::endl;
 
-	// Close the SDK
-	AlibabaCloud::ShutdownSdk();
-	return 0;
+  // Close the SDK
+  AlibabaCloud::ShutdownSdk();
+  return 0;
 }
 ```
+
+Copy the above to ecs_test.cc, then build with the following command.
+
+```bash
+~$ g++ -o ecstest ecs_test.cc --std=c++11 -lalibabacloud-sdk-core -l alibabacloud-sdk-ecs
+~$ ./ecstest
+# Result or error message will be shown here.
+~$
+```
+
+**More [examples](https://github.com/aliyun/aliyun-openapi-cpp-sdk/tree/master/examples)**
+
+## LICENSE
+Please refer to [LICENSE](https://github.com/aliyun/aliyun-openapi-cpp-sdk/blob/master/LICENSE) (Apache 2.0 LICENSE).
