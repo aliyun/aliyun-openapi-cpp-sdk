@@ -22,8 +22,11 @@
 * 开通了云产品服务。有些云产品如对象存储（OSS）需要先在[阿里云控制台](https://home.console.aliyun.com)开通服务。
 
 * 安装支持 C++ 11 或更高版本的编译器：
-	* Visual Studio 2015 或以上版本
-	* 或 GCC 4.9 或以上版本
+	* Windows: Visual Studio 2015 或以上版本
+	* Linux: GCC 4.9 或以上版本
+
+* 安装 CMake 3.0 或以上版本
+* 建议 4G 或以上内存
 
 ## 从源代码构建 SDK
 
@@ -36,24 +39,13 @@
 git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
 ```
 
-2. 安装 cmake 3.0 或以上版本，进入 SDK 创建生成必要的构建文件
+2. 创建生成必要的构建文件
 
-```
+```bash
 cd <path/to/aliyun-openapi-cpp-sdk>
 mkdir sdk_build
 cd sdk_build
 cmake ..
-```
-
-### Windows
-
-进入 sdk_build 目录使用 Visual Studio 打开 alibabacloud-sdk.sln 生成解决方案。
-
-或者您也可以使用 VS 的开发人员命令提示符，执行以下命令编译并安装：
-
-```
-msbuild ALL_BUILD.vcxproj
-msbuild INSTALL.vcxproj
 ```
 
 ### Linux
@@ -62,16 +54,61 @@ msbuild INSTALL.vcxproj
 
 例如：在基于 Redhat / Fedora 的系统上安装这些软件包
 
-```
+```bash
 sudo dnf install libcurl-devel openssl-devel libuuid-devel libjsoncpp-devel
+```
+
+在基于 Debian/Ubuntu 的系统
+```bash
+sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev
 ```
 
 在安装依赖库后执行以下命令编译并安装：
 
+手动编译安装
+```bash
+  cd aliyun-openapi-cpp-sdk
+  mkdir sdk_build
+  cd sdk_build
+  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
+  make
+  sudo make install
 ```
-make
-sudo make install
+
+或者通过 `easyinstall.sh`一键式安装
+
+```bash
+  cd aliyun-openapi-cpp-sdk
+  sudo sh easyinstall.sh
 ```
+
+**C++ SDK 将被安装在 `/usr`.**
+
+
+### Windows
+
+通过 cmake 生成 Visual Studio 解决方案:
+
+在 aliyun-openapi-cpp-sdk 下创建 sdk_build 目录
+
+打开 cmake-ui 选择源代码目录和构建目录，点击 `配置(configure)` 和 `生成(generate)` 构建 VS 解决方案。
+
+进入 sdk_build 目录使用 Visual Studio 打开 alibabacloud-sdk.sln 解决方案。
+
+选择构建 `Release` 输出，并打开配置管理器勾选 `INSTALL`。
+
+构建 -> 生成解决方案。
+
+或者您也可以使用 VS 的开发人员命令提示符，执行以下命令编译并安装：
+
+```
+msbuild ALL_BUILD.vcxproj
+msbuild INSTALL.vcxproj
+```
+
+**C++ SDK 将安装在 `C:\Program File (x86)\alibabacloud-sdk` 目录**
+
+**注意：请以管理员身份运行 Visual Studio，否则无法安装 SDK**
 
 ## 如何使用 C++ SDK
 
@@ -89,35 +126,46 @@ sudo make install
 using namespace AlibabaCloud;
 using namespace AlibabaCloud::Ecs;
 
-int main(int argc, char** argv)
-{
-	// 初始化 SDK
-	AlibabaCloud::InitializeSdk();
+int main(int argc, char** argv) {
+  // 初始化 SDK
+  AlibabaCloud::InitializeSdk();
 
-	// 配置 ecs 实例
-	ClientConfiguration configuration("<your-region-id>");
-	EcsClient client("<your-access-key-id>", "<your-access-key-secret>", configuration);
+  // 配置 ecs 实例
+  ClientConfiguration configuration("<your-region-id>");
+  EcsClient client("<your-access-key-id>", "<your-access-key-secret>", configuration);
 
-	// 创建API请求并设置参数
-	Model::DescribeInstancesRequest request;
-	request.setPageSize(10);
+  // 创建API请求并设置参数
+  Model::DescribeInstancesRequest request;
+  request.setPageSize(10);
 
-	auto outcome = client.describeInstances(request);
-	if (!outcome.isSuccess())
-	{
-		// 异常处理
-		std::cout << outcome.error().errorCode() << std::endl;
-		AlibabaCloud::ShutdownSdk();
-		return -1;
-	}
+  auto outcome = client.describeInstances(request);
+  if (!outcome.isSuccess()) {
+    // 异常处理
+    std::cout << outcome.error().errorCode() << std::endl;
+    AlibabaCloud::ShutdownSdk();
+    return -1;
+  }
 
-	std::cout << "totalCount: " << outcome.result().getTotalCount() << std::endl;
+  std::cout << "totalCount: " << outcome.result().getTotalCount() << std::endl;
 
-	// 关闭 SDK
-	AlibabaCloud::ShutdownSdk();
-	return 0;
+  // 关闭 SDK
+  AlibabaCloud::ShutdownSdk();
+  return 0;
 }
 ```
+
+复制上述文件到 ecs_test.cc。
+
+Linux 下
+
+```bash
+~$ g++ -o ecstest ecs_test.cc --std=c++11 -lalibabacloud-sdk-core -l alibabacloud-sdk-ecs
+~$ ./ecstest
+# 结果或错误返回将在此展示
+~$
+```
+
+**更多 [例程](https://github.com/aliyun/aliyun-openapi-cpp-sdk/tree/master/examples) 请(参考)[https://github.com/aliyun/aliyun-openapi-cpp-sdk/blob/master/examples/README_zh.md]**
 
 ## 许可协议
 请参阅 LICENSE 文件（Apache 2.0 许可证）。

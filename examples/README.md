@@ -1,13 +1,10 @@
 # how to use examples
 
-## 1. install sdk
-
-```bash
-cd path/to/aliyun-openapi-cpp-sdk
-./build_sdk.sh
-```
+## 1. Install SDK according to [README](https://github.com/aliyun/aliyun-openapi-cpp-sdk/blob/master/README.md)
 
 ## 2. build examples
+
+### Linux
 
 ```bash
 cd path/to/aliyun-openapi-cpp-sdk
@@ -18,16 +15,33 @@ cmake ..
 make -j
 ```
 
+### Windows
+
+- Generate Visual Studio solution with the same way as buidl SDK.
+
+  - Run cmake-ui
+
+  - select source code path(examples dir) and build path (create build dir in examples dir).
+
+  - configure
+
+  - generate
+
+- Open `alibabacloud-sdk-examples.sln` in build directory.
+
+- Build -> Build Solution
+
+
 ## 3. run examples
 
-configure `accessKeyId` and `accessKeySecret` via env.
+### Linux
+
+- configure `accessKeyId` and `accessKeySecret` via env and then Run.
 
 ```bash
 export ENV_AccessKeyId="your-accessKeyId"
 export ENV_AccessKeySecret="your-accessKeySecret"
-```
 
-```bash
 cd path/to/aliyun-openapi-cpp-sdk
 cd examples/build/bin
 
@@ -35,3 +49,9 @@ cd examples/build/bin
 ./ecs_demo
 ...
 ```
+
+### Windows
+
+Configure env according to your windows OS.
+
+Run .exe file in command window in directory build\\bin\\Release

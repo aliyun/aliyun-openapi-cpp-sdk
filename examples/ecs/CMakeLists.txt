@@ -9,7 +9,7 @@ endif()
 add_executable(ecs_demo ecs.cc)
 target_link_libraries(ecs_demo alibabacloud-sdk-core alibabacloud-sdk-ecs)
 
-target_link_libraries(ecs_demo )
+target_link_libraries(ecs_demo)
 
 set_target_properties(ecs_demo
   PROPERTIES
