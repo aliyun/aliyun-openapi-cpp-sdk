@@ -144,7 +144,9 @@ CurlHttpClient::makeRequest(const HttpRequest &request) {
         "A problem occurred somewhere in the SSL/TLS handshake."));
   default:
     return HttpResponseOutcome(
-      Error("NetworkError", "Failed to connect to host or proxy."));
+      Error("NetworkError",
+        "Failed to connect to host or proxy: " +
+        HttpMethodToString(request.method()) + " " + request.url().toString()));
   }
 }
 
