@@ -83,7 +83,7 @@ TEST(CurlHttpClient, netWorkError) {
   HttpRequest request;
   HttpClient::HttpResponseOutcome out = client.makeRequest(request);
   EXPECT_TRUE(out.error().errorCode() == "NetworkError");
-  EXPECT_TRUE(out.error().errorMessage() == "Failed to connect to host or proxy.");
+  EXPECT_TRUE(out.error().errorMessage().find("Failed to connect to host or proxy: GET ") == 0);
 }
 
 TEST(CurlHttpClient, netWorkErrorWithHttpProxy) {
@@ -99,7 +99,7 @@ TEST(CurlHttpClient, netWorkErrorWithHttpProxy) {
   HttpRequest request;
   HttpClient::HttpResponseOutcome out = client.makeRequest(request);
   EXPECT_TRUE(out.error().errorCode() == "NetworkError");
-  EXPECT_TRUE(out.error().errorMessage() == "Failed to connect to host or proxy.");
+  EXPECT_TRUE(out.error().errorMessage().find("Failed to connect to host or proxy: GET ") == 0);
 }
 
 TEST(CurlHttpClient, netWorkErrorWithSocks5Proxy) {
@@ -115,7 +115,7 @@ TEST(CurlHttpClient, netWorkErrorWithSocks5Proxy) {
   HttpRequest request;
   HttpClient::HttpResponseOutcome out = client.makeRequest(request);
   EXPECT_TRUE(out.error().errorCode() == "NetworkError");
-  EXPECT_TRUE(out.error().errorMessage() == "Failed to connect to host or proxy.");
+  EXPECT_TRUE(out.error().errorMessage().find("Failed to connect to host or proxy: GET ") == 0);
 }
 
 TEST(CurlHttpClient, mock) {

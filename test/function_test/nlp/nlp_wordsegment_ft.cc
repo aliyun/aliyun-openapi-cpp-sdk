@@ -19,7 +19,7 @@ namespace {
     ClientConfiguration configuration("cn-shanghai");
 
     CommonClient client(key, secret, configuration);
-    // 创建API请求并设置参数
+    // create request and assign parameters
     CommonRequest request(CommonRequest::RoaPattern);
     request.setScheme("http");
     request.setDomain("nlp.cn-shanghai.aliyuncs.com");
@@ -46,7 +46,7 @@ namespace {
     ClientConfiguration configuration("cn-shanghai");
 
     CommonClient client(key, secret, configuration);
-    // 创建API请求并设置参数
+    // create request and assign parameters
     CommonRequest request(CommonRequest::RoaPattern);
     request.setScheme("http");
     request.setDomain("nlp.cn-shanghai.aliyuncs.com");

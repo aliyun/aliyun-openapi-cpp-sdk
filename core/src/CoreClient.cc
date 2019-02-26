@@ -67,8 +67,13 @@ HttpClient::HttpResponseOutcome CoreClient::AttemptRequest(
 Error CoreClient::buildCoreError(const HttpResponse &response)const {
   Json::Reader reader;
   Json::Value value;
-  if (!reader.parse(std::string(response.body(), response.bodySize()), value))
-    return Error("InvalidResponse", "");
+  if (!reader.parse(std::string(response.body(), response.bodySize()), value)) {
+    if (response.bodySize() > 0) {
+      return Error("InvalidResponse", response.body());
+    } else {
+      return Error("InvalidResponse", "body is empty");
+    }
+  }
 
   Error error;
   error.setErrorCode(value["Code"].asString());

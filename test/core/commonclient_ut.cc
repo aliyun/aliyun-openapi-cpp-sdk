@@ -56,19 +56,24 @@ namespace {
 
     CommonClient::CommonResponseOutcome out1 = cc1.commonResponse(cr);
     EXPECT_TRUE(out1.error().errorCode() == "NetworkError");
+    EXPECT_TRUE(out1.error().errorMessage().find("Failed to connect to host or proxy: GET ") == 0);
+
     EXPECT_TRUE(out1.result().payload() == "");
 
     CommonClient::CommonResponseOutcome out2 = cc2.commonResponse(cr);
     EXPECT_TRUE(out2.error().errorCode() == "NetworkError");
+    EXPECT_TRUE(out2.error().errorMessage().find("Failed to connect to host or proxy: GET ") == 0);
     EXPECT_TRUE(out2.result().payload() == "");
 
     CommonClient::CommonResponseOutcome out3 = cc3.commonResponse(cr);
     EXPECT_TRUE(out3.error().errorCode() == "NetworkError");
+    EXPECT_TRUE(out3.error().errorMessage().find("Failed to connect to host or proxy: GET ") == 0);
     EXPECT_TRUE(out3.result().payload() == "");
 
     cr.setRequestPattern(CommonRequest::RequestPattern::RoaPattern);
     CommonClient::CommonResponseOutcome out4 = cc4.commonResponse(cr);
     EXPECT_TRUE(out4.error().errorCode() == "NetworkError");
+    EXPECT_TRUE(out4.error().errorMessage().find("Failed to connect to host or proxy: GET ") == 0);
     EXPECT_TRUE(out4.result().payload() == "");
 
   /*
@@ -154,7 +159,33 @@ namespace {
     ShutdownSdk();
   }
 
+  TEST(CommonClient, abnormal) {
+    InitializeSdk();
 
+    ClientConfiguration configuration("cn-hangzhou");
+    CommonClient client("key", "secret", configuration);
+
+    CommonRequest req;
+    req.setScheme("http");
+    req.setDomain("aliyun.com");
+
+    auto out = client.commonResponse(req);
+    EXPECT_TRUE(out.error().errorCode() == "InvalidResponse");
+    EXPECT_TRUE(out.result().payload().empty());
+/*
+1: =====================<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+1: <html>
+1: <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+1: <title>301 Moved Permanently</title></head>
+1: <body bgcolor="white">
+1: <h1>301 Moved Permanently</h1>
+1: <p>The requested resource has been assigned a new permanent URI.</p>
+1: <hr/>Powered by Tengine/Aserver</body>
+1: </html>
+*/
+    EXPECT_FALSE(out.error().errorMessage().empty());
+    ShutdownSdk();
+  }
 
   void cb(const CommonClient *client,
           const CommonRequest &req,
