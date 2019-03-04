@@ -52,19 +52,11 @@ class ALIBABACLOUD_CORE_EXPORT EndpointProvider :
   using LocationClient::describeEndpoints;
 
  private:
-  struct Product {
-    std::string code;
-    std::string locationServiceCode;
-    std::string documentId;
-    std::map<std::string, std::string> regionalEndpoints;
-    std::string globalEndpoint;
-    std::string regionalEndpointPattern;
-  };
-
   EndpointOutcome loadRemoteEndpoint();
   bool checkExpiry()const;
-  bool loadInternalProductsInfo();
-  std::string internalEndpoint(const std::string regionId,
+
+  bool loadLocalProductsInfo();
+  std::string localEndpoint(const std::string regionId,
     const std::string product);
 
   std::mutex cachedMutex_;
@@ -74,7 +66,6 @@ class ALIBABACLOUD_CORE_EXPORT EndpointProvider :
   std::string regionId_;
   std::string product_;
   std::string serviceCode_;
-  std::list<Product> internalProductsInfo_;
 };
 }  // namespace AlibabaCloud
 #endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_ENDPOINTPROVIDER_H_
