@@ -88,7 +88,11 @@ bool DeleteInstanceRequest::getForce()const
 void DeleteInstanceRequest::setForce(bool force)
 {
 	force_ = force;
-	setParameter("Force", std::to_string(force));
+	if (force) {
+		setParameter("Force", "true");
+	} else {
+		setParameter("Force", "false");
+	}
 }
 
 long DeleteInstanceRequest::getOwnerId()const

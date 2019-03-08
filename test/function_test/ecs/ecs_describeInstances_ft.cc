@@ -31,6 +31,27 @@ namespace {
     ShutdownSdk();
   }
 
+  TEST(ecs, deleteInstance) {
+    utUtils utils;
+    string key = utils.get_env("ENV_AccessKeyId");
+    string secret = utils.get_env("ENV_AccessKeySecret");
+
+    InitializeSdk();
+    ClientConfiguration configuration("cn-hangzhou");
+    EcsClient client(key, secret, configuration);
+
+    Model::DeleteInstanceRequest delReq;
+
+    delReq.setInstanceId("non-exist-ecs-instance");
+    delReq.setForce(true);
+
+    auto outcome = client.deleteInstance(delReq);
+
+    EXPECT_TRUE(outcome.error().errorCode() == "InvalidInstanceId.NotFound");
+    EXPECT_TRUE(outcome.error().errorMessage() == "The specified InstanceId does not exist.");
+    ShutdownSdk();
+  }
+
   TEST(ecs, describeInstancesViaCommonRequest) {
     utUtils utils;
     string key = utils.get_env("ENV_AccessKeyId");

@@ -21,7 +21,7 @@ namespace {
     auto outcome = client.describeLoadBalancers(request);
     EXPECT_TRUE(outcome.isSuccess());
     EXPECT_TRUE(outcome.error().errorCode().empty());
-    EXPECT_TRUE(outcome.result().getTotalCount() == 0);
+    EXPECT_TRUE(outcome.result().getTotalCount() >= 0);
     ShutdownSdk();
   }
 }
