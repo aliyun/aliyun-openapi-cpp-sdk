@@ -19,7 +19,11 @@
 #include <iomanip>
 #include <sstream>
 #include <algorithm>
+#ifndef WIN32
 #include "LocalEndpoints.h"
+#else
+#include "LocalEndpointsForWindows.h"
+#endif
 
 namespace AlibabaCloud {
 
@@ -54,6 +58,11 @@ static void LoadLocalEndpoints() {
   if (local_endpoints_loaded) {
     return;
   }
+
+#ifdef WIN32
+  std::string LOCAL_ENDPOINTS_CONFIG = WIN_LOCAL_ENDPOINTS_CONFIG_1 +
+    WIN_LOCAL_ENDPOINTS_CONFIG_2 + WIN_LOCAL_ENDPOINTS_CONFIG_3;
+#endif
 
   if (!reader.parse(LOCAL_ENDPOINTS_CONFIG, value)){
     return;
@@ -131,6 +140,7 @@ EndpointProvider::~EndpointProvider() {
 
 bool EndpointProvider::loadLocalProductsInfo() {
   LoadLocalEndpoints();
+  return true;
 }
 
 std::string EndpointProvider::localEndpoint(
