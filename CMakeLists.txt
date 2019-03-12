@@ -34,7 +34,6 @@ add_subdirectory(core)
 if(BUILD_UNIT_TESTS)
 	enable_testing()
 	add_subdirectory(test/core)
-	add_subdirectory(test/httpserver)
 endif()
 
 if(BUILD_FUNCTION_TESTS)

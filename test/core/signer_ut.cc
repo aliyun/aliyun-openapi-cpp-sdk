@@ -24,7 +24,6 @@ namespace {
         "%26SignatureNonce%3DNwDAxvLU6tFE0DVb%26SignatureVersion%3D1.0"
         "%26TimeStamp%3D2012-12-26T10%253A33%253A56Z%26Version%3D2013-01-10",
         "testsecret&");
-    cout << "aaaaaaaaaaa======================================= " << sign << endl;
     EXPECT_TRUE("axE3FUHgDyfm9/+Iep0HpZXrRwE=" == sign);
   }
 }
