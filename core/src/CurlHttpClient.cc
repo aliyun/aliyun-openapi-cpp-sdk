@@ -21,9 +21,42 @@
 #include <string>
 #include <vector>
 
+#include <iostream>
+#include <string.h>
+#include <stdio.h>
+
+using namespace std;
+
 namespace AlibabaCloud {
 
 namespace {
+
+typedef struct {
+  const char *data;
+  const char *pos;
+  const char *last;
+} uploadContext;
+
+static size_t readCallback(void *ptr, size_t size, size_t nmemb, void *stream) {
+  uploadContext *ctx = (uploadContext *)stream;
+  size_t len = 0;
+
+  if (ctx->pos >= ctx->last) {
+    return 0;
+  }
+  if ((size == 0) || (nmemb == 0) || (size * nmemb < 1)) {
+    return 0;
+  }
+  len = ctx->last - ctx->pos;
+  if (len > size * nmemb) {
+    len = size * nmemb;
+  }
+  memcpy(ptr, ctx->pos, len);
+  ctx->pos += len;
+  return len;
+}
+
+
 size_t recvBody(char *ptr, size_t size, size_t nmemb, void *userdata) {
   std::ostringstream &out = *static_cast<std::ostringstream*>(userdata);
   out << std::string(ptr, nmemb*size);
@@ -90,7 +123,7 @@ CurlHttpClient::makeRequest(const HttpRequest &request) {
   std::string url = request.url().toString();
   switch (request.method()) {
   case HttpRequest::Method::Get:
-    break;
+  break;
   case HttpRequest::Method::Post: {
     if (request.bodySize() > 0) {
       curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, request.body());
@@ -98,12 +131,38 @@ CurlHttpClient::makeRequest(const HttpRequest &request) {
       curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, "");
     }
   }
-    break;
-  case HttpRequest::Method::Put:
+  break;
+
+  case HttpRequest::Method::Put: {
+    uploadContext* ctx = (uploadContext *)malloc(sizeof(uploadContext));
+    // this is impossible, as the size is 24 Bytes
+    if (ctx == nullptr) {
+      return HttpResponseOutcome(
+        Error("MemoryAllocateError",
+          "There is not enough memory for http transfer."));
+    }
+    ctx->data = request.body();
+    ctx->pos = request.body();
+    ctx->last = ctx->pos + request.bodySize();
+
+    curl_easy_setopt(curlHandle_, CURLOPT_READFUNCTION, readCallback);
     curl_easy_setopt(curlHandle_, CURLOPT_UPLOAD, 1L);
-    break;
+    curl_easy_setopt(curlHandle_, CURLOPT_READDATA, ctx);
+  }
+  break;
+
+  case HttpRequest::Method::Delete: {
+    curl_easy_setopt(curlHandle_, CURLOPT_CUSTOMREQUEST, "DELETE");
+    if (request.bodySize() > 0) {
+      curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, request.body());
+    } else {
+      curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, "");
+    }
+  }
+  break;
+
   default:
-    break;
+  break;
   }
 
   curl_easy_setopt(curlHandle_, CURLOPT_URL, url.c_str());

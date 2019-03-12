@@ -27,55 +27,76 @@ class mockCurlHttpClient : public CurlHttpClient {
   MOCK_METHOD1(makeRequest, HttpResponseOutcome (const HttpRequest &request));
 };
 
-// httpserver_for_ut port "echo text"
-// default port 8021
-// default text test/httpserver/index.html
 
-TEST(CurlHttpClient, basic) {
+TEST(CurlHttpClient, http_get) {
   CurlHttpClient client;
   HttpRequest request;
-
-  utUtils utils;
-  char dir[1024];
-  utils.get_dir_exec(dir, nullptr);
-  char httpserver_ut_with_args[10 * 1024];
-  const string testBody = "CurlHttpClient test boday";
-  snprintf(httpserver_ut_with_args, 10 * 1024, "%s/httpserver_for_ut  8021 \"%s\"", dir, testBody.c_str());
-
-  FILE* http = popen(httpserver_ut_with_args, "r");
-  EXPECT_TRUE(http != nullptr);
-
-  // wait util httpserver started
-  char buffer[100];
-  usleep(10 * 1000);
-  fgets(buffer, 100, http);
 
   Url url;
   url.setHost("127.0.0.1");
   url.setPort(8021);
+  url.setPath("/anypath");
+  url.setQuery("k1=v1&k2=v2");
 
   request.setMethod(HttpRequest::Method::Get);
   request.setUrl(url);
-
-  request.setHeader("head1", "value1");
-  request.setHeader("head2", "value2");
+  request.setHeader("Content-Type", "text/html");
   HttpClient::HttpResponseOutcome out = client.makeRequest(request);
-  EXPECT_TRUE(out.result().body() == testBody);
+  EXPECT_TRUE(std::string(out.result().body()) == "{\"k1\":\"v1\",\"k2\":\"v2\"}");
+}
+
+TEST(CurlHttpClient, http_post) {
+  CurlHttpClient client;
+  HttpRequest request;
+  std::string test_body = "any-body";
+  Url url;
+  url.setHost("127.0.0.1");
+  url.setPort(8021);
+  url.setPath("/anypath");
+  url.setQuery("k1=v1&k2=v2");
+
+  request.setMethod(HttpRequest::Method::Post);
+  request.setUrl(url);
+  request.setHeader("Content-Type", "text/html");
+  request.setBody(test_body.c_str(), test_body.size());
+  HttpClient::HttpResponseOutcome out = client.makeRequest(request);
+  EXPECT_TRUE(std::string(out.result().body()) == "POST: " + test_body);
+}
+
+TEST(CurlHttpClient, http_put) {
+  CurlHttpClient client;
+  HttpRequest request;
+  std::string test_body = "any-body";
+  Url url;
+  url.setHost("127.0.0.1");
+  url.setPort(8021);
+  url.setPath("/anypath");
+  url.setQuery("k1=v1&k2=v2");
 
   request.setMethod(HttpRequest::Method::Put);
   request.setUrl(url);
+  request.setHeader("Content-Type", "text/html");
+  request.setBody(test_body.c_str(), test_body.size());
+  HttpClient::HttpResponseOutcome out = client.makeRequest(request);
+  EXPECT_TRUE(std::string(out.result().body()) == "PUT: " + test_body);
+}
 
-  HttpClient::HttpResponseOutcome out1 = client.makeRequest(request);
-  EXPECT_TRUE(out1.result().body() == testBody);
+TEST(CurlHttpClient, http_delete) {
+  CurlHttpClient client;
+  HttpRequest request;
+  std::string test_body = "any-body";
+  Url url;
+  url.setHost("127.0.0.1");
+  url.setPort(8021);
+  url.setPath("/anypath");
+  url.setQuery("k1=v1&k2=v2");
 
-  request.setMethod(HttpRequest::Method::Post);
-  request.setBody("test-body", 9);
+  request.setMethod(HttpRequest::Method::Delete);
   request.setUrl(url);
-
-  HttpClient::HttpResponseOutcome out2 = client.makeRequest(request);
-  EXPECT_TRUE(out2.result().body() == testBody);
-
-  pclose(http);
+  request.setHeader("Content-Type", "text/html");
+  request.setBody(test_body.c_str(), test_body.size());
+  HttpClient::HttpResponseOutcome out = client.makeRequest(request);
+  EXPECT_TRUE(std::string(out.result().body()) == "DELETE: " + test_body);
 }
 
 TEST(CurlHttpClient, netWorkError) {

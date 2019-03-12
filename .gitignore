@@ -7,3 +7,7 @@ Testing/
 ft_build/
 ut_build/
 sdk_build/
+test/httpserver/node_modules
+test/httpserver/package-lock.json
+test/httpserver/nohup.out
+
