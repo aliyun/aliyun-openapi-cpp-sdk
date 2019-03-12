@@ -91,3 +91,5 @@ add_subdirectory(saf)
 add_subdirectory(arms)
 add_subdirectory(lubancloud)
 add_subdirectory(alimt)
+
+add_subdirectory(xspace)
