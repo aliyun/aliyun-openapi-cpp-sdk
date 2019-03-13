@@ -165,6 +165,76 @@ Linux 下
 ~$
 ```
 
+## Timeout 设置
+
+CPP SDK 使用 libcurl 作为底层 HTTP 传输库。
+
+- 下面两个参数用来传递超时参数到 libcurl。
+
+ - `connectTimeout`: 连接超时设置。 [参考](https://curl.haxx.se/libcurl/c/CURLOPT_CONNECTTIMEOUT_MS.html).
+
+ - `readTimeout`: 传输超时设置。[参考](https://curl.haxx.se/libcurl/c/CURLOPT_TIMEOUT_MS.html)
+
+- 默认值
+
+  - connectTimeout: 5000ms
+
+  - readTimeout: 10000ms
+
+- 可以在创建 Client 或者发 Requst 设置超时参数。
+
+-  Requst 设置优先级高于 Client 设置。
+
+- 输入 0 或者 -1 到 `setConnectTimeout` 和 `setReadTimeout` 可以禁用此功能。
+
+下面代码是设置超时参数的例子，由于 Request 优先级高于 Client，所以最终 `ConnectTimeout` 为 `1000ms`， `readTimeout` 为 `6000ms`。
+
+```cpp
+#include <iostream>
+#include <alibabacloud/core/AlibabaCloud.h>
+#include <alibabacloud/ecs/EcsClient.h>
+
+using namespace AlibabaCloud;
+using namespace AlibabaCloud::Ecs;
+
+int main(int argc, char** argv) {
+  // Initialize the SDK
+  AlibabaCloud::InitializeSdk();
+
+  // Configure the ECS instance
+  ClientConfiguration configuration("<your-region-id>");
+  // specify timeout when create client.
+  configuration.setConnectTimeout(1500);
+  configuration.setReadTimeout(4000);
+
+  EcsClient client("<your-access-key-id>", "<your-access-key-secret>", configuration);
+
+  // Create an API request and set parameters
+  Model::DescribeInstancesRequest request;
+  request.setPageSize(10);
+  // specify timeout when request
+  request.setConnectTimeout(1000);
+  request.setReadTimeout(6000);
+
+  auto outcome = client.describeInstances(request);
+  if (!outcome.isSuccess()) {
+    // Handle exceptions
+    std::cout << outcome.error().errorCode() << std::endl;
+    AlibabaCloud::ShutdownSdk();
+    return -1;
+  }
+
+  std::cout << "totalCount: " << outcome.result().getTotalCount() << std::endl;
+
+  // Close the SDK
+  AlibabaCloud::ShutdownSdk();
+  return 0;
+}
+
+```
+
+
+
 **更多 [例程](https://github.com/aliyun/aliyun-openapi-cpp-sdk/tree/master/examples) 请(参考)[https://github.com/aliyun/aliyun-openapi-cpp-sdk/blob/master/examples/README_zh.md]**
 
 ## 许可协议

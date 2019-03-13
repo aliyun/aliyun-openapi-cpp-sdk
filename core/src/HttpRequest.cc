@@ -15,13 +15,16 @@
  */
 
 #include <alibabacloud/core/HttpRequest.h>
+#include <alibabacloud/core/AlibabaCloud.h>
 
 namespace AlibabaCloud {
 
 HttpRequest::HttpRequest(const Url &url, Method method) :
   HttpMessage(),
   url_(url),
-  method_(method) {
+  method_(method),
+  connectTimeout_(kDefaultConnectTimeout),
+  readTimeout_(kDefaultReadTimeout) {
 }
 
 HttpRequest::~HttpRequest() {
@@ -42,6 +45,22 @@ void HttpRequest::setUrl(const Url &url) {
 
 Url HttpRequest::url()const {
   return url_;
+}
+
+long HttpRequest::connectTimeout() const {
+  return connectTimeout_;
+}
+
+long HttpRequest::readTimeout() const {
+  return readTimeout_;
+}
+
+void HttpRequest::setConnectTimeout(const long connectTimeout) {
+  connectTimeout_ = connectTimeout;
+}
+
+void HttpRequest::setReadTimeout(const long readTimeout) {
+  readTimeout_ = readTimeout;
 }
 
 }  // namespace AlibabaCloud

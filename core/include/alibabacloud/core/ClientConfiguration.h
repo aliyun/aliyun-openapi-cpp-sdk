@@ -38,10 +38,17 @@ class ALIBABACLOUD_CORE_EXPORT ClientConfiguration {
   void setProxy(const NetworkProxy &proxy);
   void setRegionId(const std::string &regionId);
 
+  long connectTimeout() const;
+  long readTimeout() const;
+  void setConnectTimeout(const long connectTimeout);
+  void setReadTimeout(const long readTimeout);
+
  private:
   std::string endpoint_;
   NetworkProxy proxy_;
   std::string regionId_;
+  long connectTimeout_;
+  long readTimeout_;
 };
 }  // namespace AlibabaCloud
 

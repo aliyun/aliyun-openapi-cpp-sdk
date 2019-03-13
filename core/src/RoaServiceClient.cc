@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+#include <alibabacloud/core/AlibabaCloud.h>
 #include <alibabacloud/core/RoaServiceClient.h>
 #include <alibabacloud/core/HmacSha1Signer.h>
 #include <algorithm>
@@ -85,6 +86,18 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
 
   HttpRequest request(url);
   request.setMethod(method);
+  if (msg.connectTimeout() != kInvalidTimeout) {
+    request.setConnectTimeout(msg.connectTimeout());
+  } else {
+    request.setConnectTimeout(configuration().connectTimeout());
+  }
+
+  if (msg.readTimeout() != kInvalidTimeout) {
+    request.setReadTimeout(msg.readTimeout());
+  } else {
+    request.setReadTimeout(configuration().readTimeout());
+  }
+
   if (msg.parameter("Accept").empty()) {
     request.setHeader("Accept", "application/json");
   } else {

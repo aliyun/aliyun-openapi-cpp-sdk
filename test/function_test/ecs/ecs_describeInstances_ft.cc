@@ -47,8 +47,8 @@ namespace {
 
     auto outcome = client.deleteInstance(delReq);
 
-    EXPECT_TRUE(outcome.error().errorCode() == "InvalidInstanceId.NotFound");
-    EXPECT_TRUE(outcome.error().errorMessage() == "The specified InstanceId does not exist.");
+    EXPECT_TRUE(outcome.error().errorCode() == "InvalidParameter");
+    EXPECT_TRUE(outcome.error().errorMessage() == "The specified parameter \"Force\" is not valid.");
     ShutdownSdk();
   }
 
@@ -109,6 +109,65 @@ namespace {
     EXPECT_TRUE(outcome.result().payload().find("\"PageNumber\":") != string::npos);
     EXPECT_TRUE(outcome.result().payload().find("\"PageSize\":") != string::npos);
     EXPECT_TRUE(outcome.result().payload().find("\"Instances\":") != string::npos);
+    ShutdownSdk();
+  }
+
+
+  TEST(ecs, describeInstancesClientTimeout) {
+    utUtils utils;
+    string key = utils.get_env("ENV_AccessKeyId");
+    string secret = utils.get_env("ENV_AccessKeySecret");
+
+    InitializeSdk();
+    ClientConfiguration configuration("cn-hangzhou");
+    configuration.setConnectTimeout(1);
+    configuration.setReadTimeout(123);
+    EcsClient client(key, secret, configuration);
+    Model::DescribeInstancesRequest request;
+    request.setPageSize(10);
+
+    auto outcome = client.describeInstances(request);
+    EXPECT_TRUE(outcome.error().errorCode() == "OperationTimeoutError");
+    EXPECT_TRUE(outcome.error().errorMessage().find("Timeout (connectTimeout: 1ms, readTimeout: 123ms) when connect or read") == 0);
+    ShutdownSdk();
+  }
+
+  TEST(ecs, describeInstancesRequestTimeout) {
+    utUtils utils;
+    string key = utils.get_env("ENV_AccessKeyId");
+    string secret = utils.get_env("ENV_AccessKeySecret");
+
+    InitializeSdk();
+    ClientConfiguration configuration("cn-hangzhou");
+    EcsClient client(key, secret, configuration);
+    Model::DescribeInstancesRequest request;
+    request.setPageSize(10);
+    request.setConnectTimeout(11);
+    request.setReadTimeout(213);
+    auto outcome = client.describeInstances(request);
+    EXPECT_TRUE(outcome.error().errorCode() == "OperationTimeoutError");
+    EXPECT_TRUE(outcome.error().errorMessage().find("Timeout (connectTimeout: 11ms, readTimeout: 213ms) when connect or read") == 0);
+    ShutdownSdk();
+  }
+
+
+  TEST(ecs, describeInstancesClientRequestTimeout) {
+    utUtils utils;
+    string key = utils.get_env("ENV_AccessKeyId");
+    string secret = utils.get_env("ENV_AccessKeySecret");
+
+    InitializeSdk();
+    ClientConfiguration configuration("cn-hangzhou");
+    configuration.setConnectTimeout(1);
+    configuration.setReadTimeout(123);
+    EcsClient client(key, secret, configuration);
+    Model::DescribeInstancesRequest request;
+    request.setPageSize(10);
+    request.setConnectTimeout(11);
+    request.setReadTimeout(213);
+    auto outcome = client.describeInstances(request);
+    EXPECT_TRUE(outcome.error().errorCode() == "OperationTimeoutError");
+    EXPECT_TRUE(outcome.error().errorMessage().find("Timeout (connectTimeout: 11ms, readTimeout: 213ms) when connect or read") == 0);
     ShutdownSdk();
   }
 }

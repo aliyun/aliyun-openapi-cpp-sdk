@@ -77,7 +77,8 @@ add_executable(core_ut
   sts_model_assumerole_result_ut.cc
   sts_model_getcalleridentity_request_ut.cc
   sts_model_getcalleridentity_result_ut.cc
-  )
+  timeout_ut.cc
+)
 
 set_target_properties(core_ut
   PROPERTIES

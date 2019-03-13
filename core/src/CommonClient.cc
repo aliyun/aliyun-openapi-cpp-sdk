@@ -14,6 +14,7 @@
 * limitations under the License.
 */
 
+#include <alibabacloud/core/AlibabaCloud.h>
 #include <alibabacloud/core/CommonClient.h>
 #include <alibabacloud/core/location/LocationClient.h>
 #include <alibabacloud/core/SimpleCredentialsProvider.h>
@@ -145,6 +146,19 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string & endpoint,
 
   HttpRequest request(url);
   request.setMethod(method);
+
+  if (msg.connectTimeout() != kInvalidTimeout) {
+    request.setConnectTimeout(msg.connectTimeout());
+  } else {
+    request.setConnectTimeout(configuration().connectTimeout());
+  }
+
+  if (msg.readTimeout() != kInvalidTimeout) {
+    request.setReadTimeout(msg.readTimeout());
+  } else {
+    request.setReadTimeout(configuration().readTimeout());
+  }
+
   if (msg.headerParameter("Accept").empty()) {
     request.setHeader("Accept", "application/json");
   } else {
@@ -260,6 +274,18 @@ HttpRequest CommonClient::buildRpcHttpRequest(const std::string & endpoint,
   url.setQuery(queryString.str().substr(1));
 
   HttpRequest request(url);
+  if (msg.connectTimeout() != kInvalidTimeout) {
+    request.setConnectTimeout(msg.connectTimeout());
+  } else {
+    request.setConnectTimeout(configuration().connectTimeout());
+  }
+
+  if (msg.readTimeout() != kInvalidTimeout) {
+    request.setReadTimeout(msg.readTimeout());
+  } else {
+    request.setReadTimeout(configuration().readTimeout());
+  }
+
   request.setMethod(method);
   request.setHeader("Host", url.host());
   request.setHeader("x-sdk-client",

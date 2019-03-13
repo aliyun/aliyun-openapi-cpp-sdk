@@ -10,10 +10,6 @@
 #include "../src/CurlHttpClient.h"
 
 using namespace std;
-using ::testing::Return;
-using ::testing::DoAll;
-using ::testing::SetArgReferee;
-using ::testing::ReturnPointee;
 using ::testing::_;
 using ::testing::NiceMock;
 using ::testing::DefaultValue;
@@ -27,6 +23,64 @@ class mockCurlHttpClient : public CurlHttpClient {
   MOCK_METHOD1(makeRequest, HttpResponseOutcome (const HttpRequest &request));
 };
 
+TEST(CurlHttpClient, connectTimeout) {
+  CurlHttpClient client;
+  HttpRequest request;
+
+  Url url;
+  url.setScheme("http");
+  url.setHost("192.168.100.100");
+
+  request.setMethod(HttpRequest::Method::Get);
+  request.setUrl(url);
+  request.setConnectTimeout(100);
+  request.setReadTimeout(1000);
+  request.setHeader("Content-Type", "text/html");
+  HttpClient::HttpResponseOutcome out = client.makeRequest(request);
+  string errmsg = "Timeout (connectTimeout: 100ms, readTimeout: 1000ms) when connect or read data: GET http://192.168.100.100/";
+  EXPECT_TRUE(out.error().errorCode() == "OperationTimeoutError");
+  EXPECT_TRUE(out.error().errorMessage() == errmsg);
+}
+
+TEST(CurlHttpClient, defaultTimeout) {
+  CurlHttpClient client;
+  HttpRequest request;
+
+  Url url;
+  url.setScheme("http");
+  url.setHost("192.168.100.100");
+
+  request.setMethod(HttpRequest::Method::Get);
+  request.setUrl(url);
+  request.setHeader("Content-Type", "text/html");
+  HttpClient::HttpResponseOutcome out = client.makeRequest(request);
+  string errmsg = "Timeout (connectTimeout: 5000ms, readTimeout: 10000ms) when connect or read data: GET http://192.168.100.100/";
+  EXPECT_TRUE(out.error().errorCode() == "OperationTimeoutError");
+  EXPECT_TRUE(out.error().errorMessage() == errmsg);
+}
+
+TEST(CurlHttpClient, readTimeout) {
+  CurlHttpClient client;
+  HttpRequest request;
+
+  Url url;
+  url.setScheme("http");
+  url.setHost("127.0.0.1");
+  url.setPort(8021);
+  url.setPath("/readTimeoutTest");
+  url.setQuery("timeout=500");
+
+  request.setMethod(HttpRequest::Method::Get);
+  request.setUrl(url);
+  request.setConnectTimeout(233);
+  request.setReadTimeout(500);
+  request.setHeader("Content-Type", "text/html");
+  HttpClient::HttpResponseOutcome out = client.makeRequest(request);
+  string errmsg = "Timeout (connectTimeout: 233ms, readTimeout: 500ms) when connect or read data: GET http://127.0.0.1:8021/readTimeoutTest?timeout=500";
+
+  EXPECT_TRUE(out.error().errorCode() == "OperationTimeoutError");
+  EXPECT_TRUE(out.error().errorMessage() == errmsg);
+}
 
 TEST(CurlHttpClient, http_get) {
   CurlHttpClient client;

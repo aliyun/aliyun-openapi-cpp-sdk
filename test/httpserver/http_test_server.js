@@ -13,7 +13,13 @@ app.use(bodyParser.json({ type: 'application/*+json' }))
 app.get('*', function (req, res) {
   console.log('GET req.params: ', req.params);
   console.log('GET req.query:  ', req.query);
-  res.send(JSON.stringify(req.query));
+  if (req.params[0] === '/readTimeoutTest') {
+    setTimeout(function() {
+      res.send("something");
+    }, Number(req.query.timeout) + 100);
+  } else {
+    res.send(JSON.stringify(req.query));
+  }
 });
 
 app.post('*', function (req, res) {

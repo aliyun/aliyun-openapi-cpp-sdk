@@ -31,7 +31,6 @@ std::string RpcServiceRequest::actionName()const {
   return parameter("Action");
 }
 
-
 void RpcServiceRequest::setActionName(const std::string & name) {
   setParameter("Action", name);
 }

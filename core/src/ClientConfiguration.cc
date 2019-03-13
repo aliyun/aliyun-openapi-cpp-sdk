@@ -15,6 +15,7 @@
  */
 
 #include <alibabacloud/core/ClientConfiguration.h>
+#include <alibabacloud/core/AlibabaCloud.h>
 
 namespace AlibabaCloud {
 
@@ -22,7 +23,9 @@ ClientConfiguration::ClientConfiguration(const std::string &regionId,
   const NetworkProxy &proxy):
   regionId_(regionId),
   proxy_(proxy),
-  endpoint_() {
+  endpoint_(),
+  connectTimeout_(kDefaultConnectTimeout),
+  readTimeout_(kDefaultReadTimeout) {
 }
 
 ClientConfiguration::~ClientConfiguration() {
@@ -50,6 +53,22 @@ void ClientConfiguration::setProxy(const NetworkProxy &proxy) {
 
 void ClientConfiguration::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
+}
+
+long ClientConfiguration::connectTimeout() const {
+  return connectTimeout_;
+}
+
+long ClientConfiguration::readTimeout() const {
+  return readTimeout_;
+}
+
+void ClientConfiguration::setConnectTimeout(const long connectTimeout) {
+  connectTimeout_ = connectTimeout;
+}
+
+void ClientConfiguration::setReadTimeout(const long readTimeout) {
+  readTimeout_ = readTimeout;
 }
 
 }  // namespace AlibabaCloud

@@ -18,8 +18,15 @@
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_ALIBABACLOUD_H_
 
 #include "CoreExport.h"
+#include <limits>
 
 namespace AlibabaCloud {
+
+const long kInvalidTimeout = (std::numeric_limits<long>::min)();
+
+const long kDefaultConnectTimeout = 5000;
+const long kDefaultReadTimeout = 10000;
+
 ALIBABACLOUD_CORE_EXPORT void InitializeSdk();
 ALIBABACLOUD_CORE_EXPORT bool IsSdkInitialized();
 ALIBABACLOUD_CORE_EXPORT void ShutdownSdk();
