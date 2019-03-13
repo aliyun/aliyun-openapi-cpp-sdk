@@ -25,6 +25,17 @@ DetachClassicLinkVpcRequest::DetachClassicLinkVpcRequest() :
 DetachClassicLinkVpcRequest::~DetachClassicLinkVpcRequest()
 {}
 
+std::string DetachClassicLinkVpcRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DetachClassicLinkVpcRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DetachClassicLinkVpcRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

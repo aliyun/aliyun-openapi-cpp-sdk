@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setTaskIds(const std::string& taskIds);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getTaskStatus()const;
 				void setTaskStatus(const std::string& taskStatus);
 				std::string getRegionId()const;
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string taskIds_;
 				int pageNumber_;
+				std::string sourceRegionId_;
 				std::string taskStatus_;
 				std::string regionId_;
 				int pageSize_;

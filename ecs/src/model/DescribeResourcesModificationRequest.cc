@@ -113,6 +113,17 @@ void DescribeResourcesModificationRequest::setAccessKeyId(const std::string& acc
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeResourcesModificationRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeResourcesModificationRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 int DescribeResourcesModificationRequest::getCores()const
 {
 	return cores_;

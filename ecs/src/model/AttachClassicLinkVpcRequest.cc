@@ -25,6 +25,17 @@ AttachClassicLinkVpcRequest::AttachClassicLinkVpcRequest() :
 AttachClassicLinkVpcRequest::~AttachClassicLinkVpcRequest()
 {}
 
+std::string AttachClassicLinkVpcRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void AttachClassicLinkVpcRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long AttachClassicLinkVpcRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

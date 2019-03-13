@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setDeploymentSetName(const std::string& deploymentSetName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getOnUnableToRedeployFailedInstance()const;
@@ -68,6 +70,7 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string deploymentSetName_;
 				long ownerId_;
+				std::string sourceRegionId_;
 				std::string regionId_;
 				std::string onUnableToRedeployFailedInstance_;
 				std::string granularity_;

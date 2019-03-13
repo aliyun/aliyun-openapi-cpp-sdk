@@ -25,6 +25,17 @@ ModifySnapshotAttributeRequest::ModifySnapshotAttributeRequest() :
 ModifySnapshotAttributeRequest::~ModifySnapshotAttributeRequest()
 {}
 
+std::string ModifySnapshotAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifySnapshotAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ModifySnapshotAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

@@ -102,6 +102,17 @@ void CreateDeploymentSetRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string CreateDeploymentSetRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateDeploymentSetRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string CreateDeploymentSetRequest::getRegionId()const
 {
 	return regionId_;

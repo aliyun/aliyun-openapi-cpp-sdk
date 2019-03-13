@@ -54,6 +54,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getDiskName()const;
 				void setDiskName(const std::string& diskName);
 				std::string getResourceGroupId()const;
@@ -70,6 +72,8 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getKMSKeyId()const;
+				void setKMSKeyId(const std::string& kMSKeyId);
 
             private:
 				long resourceOwnerId_;
@@ -79,6 +83,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string description_;
 				long ownerId_;
+				std::string sourceRegionId_;
 				std::string diskName_;
 				std::string resourceGroupId_;
 				int size_;
@@ -87,6 +92,7 @@ namespace AlibabaCloud
 				std::string diskCategory_;
 				std::string zoneId_;
 				std::vector<Tag> tag_;
+				std::string kMSKeyId_;
 
 			};
 		}

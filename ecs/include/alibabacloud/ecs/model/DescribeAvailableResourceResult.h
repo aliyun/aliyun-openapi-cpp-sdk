@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						struct SupportedResource
 						{
 							std::string status;
+							std::string statusCategory;
 							int min;
 							int max;
 							std::string value;
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 						std::vector<AvailableResource::SupportedResource> supportedResources;
 					};
 					std::string status;
+					std::string statusCategory;
 					std::string zoneId;
 					std::vector<AvailableZone::AvailableResource> availableResources;
 					std::string regionId;

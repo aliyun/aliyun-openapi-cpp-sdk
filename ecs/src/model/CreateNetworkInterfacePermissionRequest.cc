@@ -102,6 +102,17 @@ void CreateNetworkInterfacePermissionRequest::setAccessKeyId(const std::string& 
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateNetworkInterfacePermissionRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateNetworkInterfacePermissionRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long CreateNetworkInterfacePermissionRequest::getAccountId()const
 {
 	return accountId_;

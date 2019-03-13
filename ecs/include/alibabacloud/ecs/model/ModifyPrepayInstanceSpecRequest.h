@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setOperatorType(const std::string& operatorType);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getRegionId()const;
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string operatorType_;
 				std::string systemDiskCategory_;
+				std::string sourceRegionId_;
 				std::string instanceId_;
 				std::string regionId_;
 				bool migrateAcrossZone_;

@@ -124,6 +124,17 @@ void DescribeHpcClustersRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeHpcClustersRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeHpcClustersRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeHpcClustersRequest::getRegionId()const
 {
 	return regionId_;

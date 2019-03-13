@@ -25,6 +25,17 @@ ModifyInstanceAutoRenewAttributeRequest::ModifyInstanceAutoRenewAttributeRequest
 ModifyInstanceAutoRenewAttributeRequest::~ModifyInstanceAutoRenewAttributeRequest()
 {}
 
+std::string ModifyInstanceAutoRenewAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyInstanceAutoRenewAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 int ModifyInstanceAutoRenewAttributeRequest::getDuration()const
 {
 	return duration_;

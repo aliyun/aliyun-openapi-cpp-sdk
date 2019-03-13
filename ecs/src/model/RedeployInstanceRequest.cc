@@ -113,6 +113,17 @@ void RedeployInstanceRequest::setForceStop(bool forceStop)
 	setParameter("ForceStop", std::to_string(forceStop));
 }
 
+std::string RedeployInstanceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void RedeployInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string RedeployInstanceRequest::getSecurityToken()const
 {
 	return securityToken_;

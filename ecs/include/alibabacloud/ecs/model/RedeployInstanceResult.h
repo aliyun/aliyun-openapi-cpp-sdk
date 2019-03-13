@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				RedeployInstanceResult();
 				explicit RedeployInstanceResult(const std::string &payload);
 				~RedeployInstanceResult();
+				std::string getTaskId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskId_;
 
 			};
 		}

@@ -25,6 +25,17 @@ DeleteKeyPairsRequest::DeleteKeyPairsRequest() :
 DeleteKeyPairsRequest::~DeleteKeyPairsRequest()
 {}
 
+std::string DeleteKeyPairsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DeleteKeyPairsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DeleteKeyPairsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

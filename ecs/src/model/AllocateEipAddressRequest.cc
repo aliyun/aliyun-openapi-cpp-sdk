@@ -91,6 +91,17 @@ void AllocateEipAddressRequest::setInternetChargeType(const std::string& interne
 	setParameter("InternetChargeType", internetChargeType);
 }
 
+std::string AllocateEipAddressRequest::getISP()const
+{
+	return iSP_;
+}
+
+void AllocateEipAddressRequest::setISP(const std::string& iSP)
+{
+	iSP_ = iSP;
+	setParameter("ISP", iSP);
+}
+
 std::string AllocateEipAddressRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

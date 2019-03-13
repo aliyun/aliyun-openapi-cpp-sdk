@@ -102,6 +102,17 @@ void DescribeSnapshotsRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeSnapshotsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeSnapshotsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeSnapshotsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -282,6 +293,17 @@ void DescribeSnapshotsRequest::setSnapshotType(const std::string& snapshotType)
 {
 	snapshotType_ = snapshotType;
 	setParameter("SnapshotType", snapshotType);
+}
+
+std::string DescribeSnapshotsRequest::getKMSKeyId()const
+{
+	return kMSKeyId_;
+}
+
+void DescribeSnapshotsRequest::setKMSKeyId(const std::string& kMSKeyId)
+{
+	kMSKeyId_ = kMSKeyId;
+	setParameter("KMSKeyId", kMSKeyId);
 }
 
 std::string DescribeSnapshotsRequest::getStatus()const

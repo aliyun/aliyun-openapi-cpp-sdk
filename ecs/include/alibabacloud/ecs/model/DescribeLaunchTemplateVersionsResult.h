@@ -43,6 +43,7 @@ namespace AlibabaCloud
 							std::string description;
 							int size;
 							std::string encrypted;
+							std::string device;
 							bool deleteWithInstance;
 							std::string diskName;
 						};
@@ -78,6 +79,7 @@ namespace AlibabaCloud
 						std::vector<InstanceTag> tags;
 						std::string hostName;
 						std::string spotStrategy;
+						bool passwordInherit;
 						std::string keyPairName;
 						std::string ioOptimized;
 						std::string zoneId;

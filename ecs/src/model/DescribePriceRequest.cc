@@ -102,6 +102,17 @@ void DescribePriceRequest::setSystemDiskCategory(const std::string& systemDiskCa
 	setParameter("SystemDiskCategory", systemDiskCategory);
 }
 
+std::string DescribePriceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribePriceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribePriceRequest::getDataDisk4Category()const
 {
 	return dataDisk4Category_;

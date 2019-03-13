@@ -113,6 +113,17 @@ void ModifyPrepayInstanceSpecRequest::setSystemDiskCategory(const std::string& s
 	setParameter("SystemDiskCategory", systemDiskCategory);
 }
 
+std::string ModifyPrepayInstanceSpecRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyPrepayInstanceSpecRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyPrepayInstanceSpecRequest::getInstanceId()const
 {
 	return instanceId_;

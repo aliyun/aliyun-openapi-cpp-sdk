@@ -25,6 +25,17 @@ DeleteInstanceRequest::DeleteInstanceRequest() :
 DeleteInstanceRequest::~DeleteInstanceRequest()
 {}
 
+std::string DeleteInstanceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DeleteInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DeleteInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -88,11 +99,7 @@ bool DeleteInstanceRequest::getForce()const
 void DeleteInstanceRequest::setForce(bool force)
 {
 	force_ = force;
-	if (force) {
-		setParameter("Force", "true");
-	} else {
-		setParameter("Force", "false");
-	}
+	setParameter("Force", std::to_string(force));
 }
 
 long DeleteInstanceRequest::getOwnerId()const

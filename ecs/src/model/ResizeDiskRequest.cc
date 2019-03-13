@@ -25,6 +25,17 @@ ResizeDiskRequest::ResizeDiskRequest() :
 ResizeDiskRequest::~ResizeDiskRequest()
 {}
 
+std::string ResizeDiskRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ResizeDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ResizeDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

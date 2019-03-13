@@ -25,6 +25,17 @@ AttachDiskRequest::AttachDiskRequest() :
 AttachDiskRequest::~AttachDiskRequest()
 {}
 
+std::string AttachDiskRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void AttachDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long AttachDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

@@ -125,6 +125,17 @@ void DescribeLaunchTemplatesRequest::setAccessKeyId(const std::string& accessKey
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeLaunchTemplatesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeLaunchTemplatesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeLaunchTemplatesRequest::getSecurityToken()const
 {
 	return securityToken_;

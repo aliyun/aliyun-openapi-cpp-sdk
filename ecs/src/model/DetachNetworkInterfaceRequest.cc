@@ -102,6 +102,17 @@ void DetachNetworkInterfaceRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DetachNetworkInterfaceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DetachNetworkInterfaceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DetachNetworkInterfaceRequest::getSecurityToken()const
 {
 	return securityToken_;

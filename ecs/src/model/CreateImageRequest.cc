@@ -132,6 +132,17 @@ void CreateImageRequest::setPlatform(const std::string& platform)
 	setParameter("Platform", platform);
 }
 
+std::string CreateImageRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateImageRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string CreateImageRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

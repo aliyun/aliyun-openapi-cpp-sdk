@@ -102,6 +102,17 @@ void DescribeImagesRequest::setImageOwnerAlias(const std::string& imageOwnerAlia
 	setParameter("ImageOwnerAlias", imageOwnerAlias);
 }
 
+std::string DescribeImagesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeImagesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeImagesRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

@@ -25,6 +25,17 @@ DetachDiskRequest::DetachDiskRequest() :
 DetachDiskRequest::~DetachDiskRequest()
 {}
 
+std::string DetachDiskRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DetachDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DetachDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

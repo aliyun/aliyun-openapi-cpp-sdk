@@ -25,6 +25,17 @@ CreateSnapshotRequest::CreateSnapshotRequest() :
 CreateSnapshotRequest::~CreateSnapshotRequest()
 {}
 
+std::string CreateSnapshotRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateSnapshotRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long CreateSnapshotRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

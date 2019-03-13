@@ -113,6 +113,17 @@ void DescribeNetworkInterfacePermissionsRequest::setAccessKeyId(const std::strin
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeNetworkInterfacePermissionsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeNetworkInterfacePermissionsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeNetworkInterfacePermissionsRequest::getSecurityToken()const
 {
 	return securityToken_;

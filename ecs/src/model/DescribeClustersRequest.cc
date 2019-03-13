@@ -25,6 +25,17 @@ DescribeClustersRequest::DescribeClustersRequest() :
 DescribeClustersRequest::~DescribeClustersRequest()
 {}
 
+std::string DescribeClustersRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeClustersRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeClustersRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

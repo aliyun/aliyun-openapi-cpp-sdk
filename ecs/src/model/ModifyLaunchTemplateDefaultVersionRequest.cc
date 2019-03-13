@@ -113,6 +113,17 @@ void ModifyLaunchTemplateDefaultVersionRequest::setAccessKeyId(const std::string
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyLaunchTemplateDefaultVersionRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyLaunchTemplateDefaultVersionRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyLaunchTemplateDefaultVersionRequest::getSecurityToken()const
 {
 	return securityToken_;

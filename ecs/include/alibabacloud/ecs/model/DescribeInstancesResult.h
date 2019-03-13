@@ -54,6 +54,11 @@ namespace AlibabaCloud
 						std::string dedicatedHostId;
 						std::string dedicatedHostName;
 					};
+					struct EcsCapacityReservationAttr
+					{
+						std::string capacityReservationPreference;
+						std::string capacityReservationId;
+					};
 					struct NetworkInterface
 					{
 						std::string primaryIpAddress;
@@ -115,6 +120,7 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string clusterId;
 					std::string hpcClusterId;
+					EcsCapacityReservationAttr ecsCapacityReservationAttr;
 					DedicatedHostAttribute dedicatedHostAttribute;
 					int gPUAmount;
 					std::vector<Instance::LockReason> operationLocks;

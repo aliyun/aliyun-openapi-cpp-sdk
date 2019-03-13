@@ -125,6 +125,17 @@ void DeleteLaunchTemplateVersionRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DeleteLaunchTemplateVersionRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DeleteLaunchTemplateVersionRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DeleteLaunchTemplateVersionRequest::getSecurityToken()const
 {
 	return securityToken_;

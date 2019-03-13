@@ -52,6 +52,7 @@ namespace AlibabaCloud
 					std::string detachedTime;
 					std::string description;
 					std::string category;
+					std::string kMSKeyId;
 					std::string resourceGroupId;
 					int size;
 					bool encrypted;

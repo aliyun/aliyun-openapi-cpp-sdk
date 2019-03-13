@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					int baselineCredit;
 					std::string instanceFamilyLevel;
 					std::string instanceTypeId;
+					int eniPrivateIpAddressQuantity;
 				};
 
 

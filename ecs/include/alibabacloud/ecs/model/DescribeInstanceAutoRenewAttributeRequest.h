@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeInstanceAutoRenewAttributeRequest();
 				~DescribeInstanceAutoRenewAttributeRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setPageNumber(const std::string& pageNumber);
 
             private:
+				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string instanceId_;
 				std::string resourceOwnerAccount_;

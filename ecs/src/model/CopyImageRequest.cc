@@ -47,17 +47,6 @@ void CopyImageRequest::setImageId(const std::string& imageId)
 	setParameter("ImageId", imageId);
 }
 
-bool CopyImageRequest::getEncrypted()const
-{
-	return encrypted_;
-}
-
-void CopyImageRequest::setEncrypted(bool encrypted)
-{
-	encrypted_ = encrypted;
-	setParameter("Encrypted", std::to_string(encrypted));
-}
-
 std::string CopyImageRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +56,6 @@ void CopyImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerA
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CopyImageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CopyImageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
 }
 
 std::string CopyImageRequest::getDestinationImageName()const
@@ -113,6 +91,50 @@ void CopyImageRequest::setOwnerAccount(const std::string& ownerAccount)
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+long CopyImageRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CopyImageRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CopyImageRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CopyImageRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
+bool CopyImageRequest::getEncrypted()const
+{
+	return encrypted_;
+}
+
+void CopyImageRequest::setEncrypted(bool encrypted)
+{
+	encrypted_ = encrypted;
+	setParameter("Encrypted", std::to_string(encrypted));
+}
+
+std::string CopyImageRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CopyImageRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::vector<CopyImageRequest::Tag> CopyImageRequest::getTag()const
 {
 	return tag_;
@@ -128,17 +150,6 @@ void CopyImageRequest::setTag(const std::vector<Tag>& tag)
 		setParameter(str + ".Value", obj.value);
 		setParameter(str + ".Key", obj.key);
 	}
-}
-
-long CopyImageRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CopyImageRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CopyImageRequest::getDestinationDescription()const

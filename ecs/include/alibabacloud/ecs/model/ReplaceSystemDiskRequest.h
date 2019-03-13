@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getPlatform()const;
 				void setPlatform(const std::string& platform);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
 				std::string getInstanceId()const;
@@ -78,6 +80,7 @@ namespace AlibabaCloud
 				std::string keyPairName_;
 				long ownerId_;
 				std::string platform_;
+				std::string sourceRegionId_;
 				std::string password_;
 				std::string instanceId_;
 				bool passwordInherit_;

@@ -113,6 +113,17 @@ void RunInstancesRequest::setProxy_original_source_ip(const std::string& proxy_o
 	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
+int RunInstancesRequest::getMinAmount()const
+{
+	return minAmount_;
+}
+
+void RunInstancesRequest::setMinAmount(int minAmount)
+{
+	minAmount_ = minAmount;
+	setParameter("MinAmount", std::to_string(minAmount));
+}
+
 float RunInstancesRequest::getSpotPriceLimit()const
 {
 	return spotPriceLimit_;
@@ -144,6 +155,17 @@ void RunInstancesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
 	setParameter("CallerType", callerType);
+}
+
+std::string RunInstancesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void RunInstancesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
 }
 
 bool RunInstancesRequest::getDeletionProtection()const
@@ -315,6 +337,17 @@ void RunInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string RunInstancesRequest::getCapacityReservationPreference()const
+{
+	return capacityReservationPreference_;
+}
+
+void RunInstancesRequest::setCapacityReservationPreference(const std::string& capacityReservationPreference)
+{
+	capacityReservationPreference_ = capacityReservationPreference;
+	setParameter("CapacityReservationPreference", capacityReservationPreference);
 }
 
 bool RunInstancesRequest::getAk_mfa_present()const
@@ -560,6 +593,17 @@ void RunInstancesRequest::setSystemDiskCategory(const std::string& systemDiskCat
 	setParameter("SystemDiskCategory", systemDiskCategory);
 }
 
+std::string RunInstancesRequest::getCapacityReservationId()const
+{
+	return capacityReservationId_;
+}
+
+void RunInstancesRequest::setCapacityReservationId(const std::string& capacityReservationId)
+{
+	capacityReservationId_ = capacityReservationId;
+	setParameter("CapacityReservationId", capacityReservationId);
+}
+
 std::string RunInstancesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -624,6 +668,17 @@ void RunInstancesRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
 	setParameter("InstanceType", instanceType);
+}
+
+bool RunInstancesRequest::getHibernationConfigured()const
+{
+	return hibernationConfigured_;
+}
+
+void RunInstancesRequest::setHibernationConfigured(bool hibernationConfigured)
+{
+	hibernationConfigured_ = hibernationConfigured;
+	setParameter("HibernationConfigured", std::to_string(hibernationConfigured));
 }
 
 std::string RunInstancesRequest::getInstanceChargeType()const
@@ -805,6 +860,7 @@ void RunInstancesRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setParameter(str + ".SnapshotId", obj.snapshotId);
 		setParameter(str + ".Category", obj.category);
 		setParameter(str + ".Encrypted", obj.encrypted);
+		setParameter(str + ".KMSKeyId", obj.kMSKeyId);
 		setParameter(str + ".DiskName", obj.diskName);
 		setParameter(str + ".Description", obj.description);
 		setParameter(str + ".Device", obj.device);

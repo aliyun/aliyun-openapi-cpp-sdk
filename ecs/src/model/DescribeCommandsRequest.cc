@@ -146,6 +146,17 @@ void DescribeCommandsRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeCommandsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeCommandsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeCommandsRequest::getSecurityToken()const
 {
 	return securityToken_;

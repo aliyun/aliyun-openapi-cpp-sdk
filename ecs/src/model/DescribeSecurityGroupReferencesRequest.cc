@@ -25,6 +25,17 @@ DescribeSecurityGroupReferencesRequest::DescribeSecurityGroupReferencesRequest()
 DescribeSecurityGroupReferencesRequest::~DescribeSecurityGroupReferencesRequest()
 {}
 
+std::string DescribeSecurityGroupReferencesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeSecurityGroupReferencesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeSecurityGroupReferencesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

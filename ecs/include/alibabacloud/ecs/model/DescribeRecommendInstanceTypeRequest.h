@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setToken(const std::string& token);
 				std::string getScene()const;
 				void setScene(const std::string& scene);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getInstanceType()const;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				std::string _operator_;
 				std::string token_;
 				std::string scene_;
+				std::string sourceRegionId_;
 				std::string regionId_;
 				std::string instanceType_;
 				std::string proxyId_;

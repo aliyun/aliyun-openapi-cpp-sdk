@@ -25,6 +25,17 @@ JoinSecurityGroupRequest::JoinSecurityGroupRequest() :
 JoinSecurityGroupRequest::~JoinSecurityGroupRequest()
 {}
 
+std::string JoinSecurityGroupRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void JoinSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long JoinSecurityGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

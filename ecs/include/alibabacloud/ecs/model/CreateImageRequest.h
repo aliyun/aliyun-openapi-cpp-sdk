@@ -65,6 +65,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getPlatform()const;
 				void setPlatform(const std::string& platform);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getInstanceId()const;
@@ -90,6 +92,7 @@ namespace AlibabaCloud
 				std::string description_;
 				long ownerId_;
 				std::string platform_;
+				std::string sourceRegionId_;
 				std::string resourceGroupId_;
 				std::string instanceId_;
 				std::string regionId_;

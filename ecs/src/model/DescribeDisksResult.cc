@@ -106,6 +106,8 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.iOPSRead = std::stoi(value["IOPSRead"].asString());
 		if(!value["IOPSWrite"].isNull())
 			disksObject.iOPSWrite = std::stoi(value["IOPSWrite"].asString());
+		if(!value["KMSKeyId"].isNull())
+			disksObject.kMSKeyId = value["KMSKeyId"].asString();
 		auto allOperationLocks = value["OperationLocks"]["OperationLock"];
 		for (auto value : allOperationLocks)
 		{

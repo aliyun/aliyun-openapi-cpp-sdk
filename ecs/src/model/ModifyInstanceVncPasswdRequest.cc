@@ -25,6 +25,17 @@ ModifyInstanceVncPasswdRequest::ModifyInstanceVncPasswdRequest() :
 ModifyInstanceVncPasswdRequest::~ModifyInstanceVncPasswdRequest()
 {}
 
+std::string ModifyInstanceVncPasswdRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyInstanceVncPasswdRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ModifyInstanceVncPasswdRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

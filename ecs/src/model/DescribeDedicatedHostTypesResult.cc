@@ -50,8 +50,12 @@ void DescribeDedicatedHostTypesResult::parse(const std::string &payload)
 			dedicatedHostTypesObject.sockets = std::stoi(value["Sockets"].asString());
 		if(!value["TotalVcpus"].isNull())
 			dedicatedHostTypesObject.totalVcpus = std::stoi(value["TotalVcpus"].asString());
+		if(!value["TotalVgpus"].isNull())
+			dedicatedHostTypesObject.totalVgpus = std::stoi(value["TotalVgpus"].asString());
 		if(!value["Cores"].isNull())
 			dedicatedHostTypesObject.cores = std::stoi(value["Cores"].asString());
+		if(!value["PhysicalGpus"].isNull())
+			dedicatedHostTypesObject.physicalGpus = std::stoi(value["PhysicalGpus"].asString());
 		if(!value["MemorySize"].isNull())
 			dedicatedHostTypesObject.memorySize = std::stof(value["MemorySize"].asString());
 		if(!value["LocalStorageCapacity"].isNull())
@@ -60,9 +64,14 @@ void DescribeDedicatedHostTypesResult::parse(const std::string &payload)
 			dedicatedHostTypesObject.localStorageAmount = std::stoi(value["LocalStorageAmount"].asString());
 		if(!value["LocalStorageCategory"].isNull())
 			dedicatedHostTypesObject.localStorageCategory = value["LocalStorageCategory"].asString();
+		if(!value["GPUSpec"].isNull())
+			dedicatedHostTypesObject.gPUSpec = value["GPUSpec"].asString();
 		auto allSupportedInstanceTypeFamilies = value["SupportedInstanceTypeFamilies"]["SupportedInstanceTypeFamily"];
 		for (auto value : allSupportedInstanceTypeFamilies)
 			dedicatedHostTypesObject.supportedInstanceTypeFamilies.push_back(value.asString());
+		auto allSupportedInstanceTypesList = value["SupportedInstanceTypesList"]["SupportedInstanceTypesList"];
+		for (auto value : allSupportedInstanceTypesList)
+			dedicatedHostTypesObject.supportedInstanceTypesList.push_back(value.asString());
 		dedicatedHostTypes_.push_back(dedicatedHostTypesObject);
 	}
 

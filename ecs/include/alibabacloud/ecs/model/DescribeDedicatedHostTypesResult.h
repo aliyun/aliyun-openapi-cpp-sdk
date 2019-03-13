@@ -34,15 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct DedicatedHostType
 				{
-					int cores;
+					int physicalGpus;
 					float memorySize;
+					long localStorageCapacity;
+					std::string dedicatedHostType;
+					int localStorageAmount;
+					int cores;
 					std::string localStorageCategory;
 					int sockets;
-					long localStorageCapacity;
+					std::string gPUSpec;
 					std::vector<std::string> supportedInstanceTypeFamilies;
-					std::string dedicatedHostType;
+					int totalVgpus;
+					std::vector<std::string> supportedInstanceTypesList;
 					int totalVcpus;
-					int localStorageAmount;
 				};
 
 

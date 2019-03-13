@@ -135,6 +135,17 @@ void DescribeSpotPriceHistoryRequest::setAccessKeyId(const std::string& accessKe
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeSpotPriceHistoryRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeSpotPriceHistoryRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeSpotPriceHistoryRequest::getSecurityToken()const
 {
 	return securityToken_;

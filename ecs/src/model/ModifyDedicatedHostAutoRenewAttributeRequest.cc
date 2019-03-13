@@ -25,6 +25,17 @@ ModifyDedicatedHostAutoRenewAttributeRequest::ModifyDedicatedHostAutoRenewAttrib
 ModifyDedicatedHostAutoRenewAttributeRequest::~ModifyDedicatedHostAutoRenewAttributeRequest()
 {}
 
+std::string ModifyDedicatedHostAutoRenewAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyDedicatedHostAutoRenewAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 int ModifyDedicatedHostAutoRenewAttributeRequest::getDuration()const
 {
 	return duration_;

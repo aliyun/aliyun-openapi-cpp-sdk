@@ -76,6 +76,8 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.remainTime = std::stoi(value["RemainTime"].asString());
 		if(!value["ResourceGroupId"].isNull())
 			snapshotsObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["KMSKeyId"].isNull())
+			snapshotsObject.kMSKeyId = value["KMSKeyId"].asString();
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{

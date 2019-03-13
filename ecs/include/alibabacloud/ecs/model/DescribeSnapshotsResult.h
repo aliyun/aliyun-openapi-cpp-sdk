@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string progress;
 					std::string usage;
 					std::string description;
+					std::string kMSKeyId;
 					std::string resourceGroupId;
 					std::string productCode;
 					bool encrypted;

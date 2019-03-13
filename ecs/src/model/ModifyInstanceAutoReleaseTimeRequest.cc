@@ -25,6 +25,17 @@ ModifyInstanceAutoReleaseTimeRequest::ModifyInstanceAutoReleaseTimeRequest() :
 ModifyInstanceAutoReleaseTimeRequest::~ModifyInstanceAutoReleaseTimeRequest()
 {}
 
+std::string ModifyInstanceAutoReleaseTimeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyInstanceAutoReleaseTimeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ModifyInstanceAutoReleaseTimeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

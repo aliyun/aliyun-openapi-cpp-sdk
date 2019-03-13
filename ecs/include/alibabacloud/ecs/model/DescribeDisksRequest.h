@@ -50,6 +50,8 @@ namespace AlibabaCloud
 				void setAutoSnapshotPolicyId(const std::string& autoSnapshotPolicyId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getDiskName()const;
 				void setDiskName(const std::string& diskName);
 				bool getDeleteAutoSnapshot()const;
@@ -104,6 +106,8 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				std::string getCategory()const;
 				void setCategory(const std::string& category);
+				std::string getKMSKeyId()const;
+				void setKMSKeyId(const std::string& kMSKeyId);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
@@ -113,6 +117,7 @@ namespace AlibabaCloud
 				std::string filter2Value_;
 				std::string autoSnapshotPolicyId_;
 				int pageNumber_;
+				std::string sourceRegionId_;
 				std::string diskName_;
 				bool deleteAutoSnapshot_;
 				std::string resourceGroupId_;
@@ -140,6 +145,7 @@ namespace AlibabaCloud
 				bool encrypted_;
 				std::string zoneId_;
 				std::string category_;
+				std::string kMSKeyId_;
 				std::string status_;
 
 			};

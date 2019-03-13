@@ -25,6 +25,17 @@ ReInitDiskRequest::ReInitDiskRequest() :
 ReInitDiskRequest::~ReInitDiskRequest()
 {}
 
+std::string ReInitDiskRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ReInitDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ReInitDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

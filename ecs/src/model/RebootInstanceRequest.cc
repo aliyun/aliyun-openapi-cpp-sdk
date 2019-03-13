@@ -25,6 +25,17 @@ RebootInstanceRequest::RebootInstanceRequest() :
 RebootInstanceRequest::~RebootInstanceRequest()
 {}
 
+std::string RebootInstanceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void RebootInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long RebootInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +56,17 @@ void RebootInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+bool RebootInstanceRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void RebootInstanceRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", std::to_string(dryRun));
 }
 
 std::string RebootInstanceRequest::getResourceOwnerAccount()const

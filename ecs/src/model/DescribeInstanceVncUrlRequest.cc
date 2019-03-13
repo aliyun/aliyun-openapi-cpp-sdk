@@ -25,6 +25,17 @@ DescribeInstanceVncUrlRequest::DescribeInstanceVncUrlRequest() :
 DescribeInstanceVncUrlRequest::~DescribeInstanceVncUrlRequest()
 {}
 
+std::string DescribeInstanceVncUrlRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeInstanceVncUrlRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeInstanceVncUrlRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

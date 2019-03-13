@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				bool getForceStop()const;
 				void setForceStop(bool forceStop);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				bool getEnable()const;
@@ -93,6 +95,7 @@ namespace AlibabaCloud
 				std::string callerType_;
 				std::string accessKeyId_;
 				bool forceStop_;
+				std::string sourceRegionId_;
 				std::string securityToken_;
 				bool enable_;
 				std::string requestContent_;

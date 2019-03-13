@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string zoneId;
 						std::string instanceChargeType;
+						std::string expiredTime;
 						std::string value;
 						int count;
 						std::string instanceType;

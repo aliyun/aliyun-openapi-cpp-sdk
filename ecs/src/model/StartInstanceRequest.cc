@@ -25,6 +25,17 @@ StartInstanceRequest::StartInstanceRequest() :
 StartInstanceRequest::~StartInstanceRequest()
 {}
 
+std::string StartInstanceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void StartInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 bool StartInstanceRequest::getInitLocalDisk()const
 {
 	return initLocalDisk_;
@@ -56,6 +67,17 @@ void StartInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+bool StartInstanceRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void StartInstanceRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", std::to_string(dryRun));
 }
 
 std::string StartInstanceRequest::getResourceOwnerAccount()const

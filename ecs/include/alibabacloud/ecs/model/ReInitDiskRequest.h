@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ReInitDiskRequest();
 				~ReInitDiskRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getPassword()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string password_;
 				std::string resourceOwnerAccount_;

@@ -25,6 +25,17 @@ CreateKeyPairRequest::CreateKeyPairRequest() :
 CreateKeyPairRequest::~CreateKeyPairRequest()
 {}
 
+std::string CreateKeyPairRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string CreateKeyPairRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

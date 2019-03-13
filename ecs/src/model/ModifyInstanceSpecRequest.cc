@@ -135,6 +135,17 @@ void ModifyInstanceSpecRequest::setTemporaryStartTime(const std::string& tempora
 	setParameter("TemporaryStartTime", temporaryStartTime);
 }
 
+std::string ModifyInstanceSpecRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyInstanceSpecRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 bool ModifyInstanceSpecRequest::getAsync()const
 {
 	return async_;

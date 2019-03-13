@@ -25,6 +25,17 @@ LeaveSecurityGroupRequest::LeaveSecurityGroupRequest() :
 LeaveSecurityGroupRequest::~LeaveSecurityGroupRequest()
 {}
 
+std::string LeaveSecurityGroupRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void LeaveSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long LeaveSecurityGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

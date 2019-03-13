@@ -146,6 +146,17 @@ void CreateLaunchTemplateRequest::setImageOwnerAlias(const std::string& imageOwn
 	setParameter("ImageOwnerAlias", imageOwnerAlias);
 }
 
+std::string CreateLaunchTemplateRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateLaunchTemplateRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string CreateLaunchTemplateRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -499,6 +510,17 @@ void CreateLaunchTemplateRequest::setUserData(const std::string& userData)
 	setParameter("UserData", userData);
 }
 
+bool CreateLaunchTemplateRequest::getPasswordInherit()const
+{
+	return passwordInherit_;
+}
+
+void CreateLaunchTemplateRequest::setPasswordInherit(bool passwordInherit)
+{
+	passwordInherit_ = passwordInherit;
+	setParameter("PasswordInherit", std::to_string(passwordInherit));
+}
+
 std::string CreateLaunchTemplateRequest::getRegionId()const
 {
 	return regionId_;
@@ -692,6 +714,7 @@ void CreateLaunchTemplateRequest::setDataDisk(const std::vector<DataDisk>& dataD
 		setParameter(str + ".DiskName", obj.diskName);
 		setParameter(str + ".Description", obj.description);
 		setParameter(str + ".DeleteWithInstance", std::to_string(obj.deleteWithInstance));
+		setParameter(str + ".Device", obj.device);
 	}
 }
 

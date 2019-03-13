@@ -135,6 +135,17 @@ void ModifyHpcClusterAttributeRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyHpcClusterAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyHpcClusterAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyHpcClusterAttributeRequest::getRegionId()const
 {
 	return regionId_;

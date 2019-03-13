@@ -25,6 +25,17 @@ ModifyInstanceVpcAttributeRequest::ModifyInstanceVpcAttributeRequest() :
 ModifyInstanceVpcAttributeRequest::~ModifyInstanceVpcAttributeRequest()
 {}
 
+std::string ModifyInstanceVpcAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyInstanceVpcAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyInstanceVpcAttributeRequest::getVSwitchId()const
 {
 	return vSwitchId_;

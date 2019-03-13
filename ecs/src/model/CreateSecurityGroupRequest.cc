@@ -25,17 +25,6 @@ CreateSecurityGroupRequest::CreateSecurityGroupRequest() :
 CreateSecurityGroupRequest::~CreateSecurityGroupRequest()
 {}
 
-std::string CreateSecurityGroupRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void CreateSecurityGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 long CreateSecurityGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,17 +47,6 @@ void CreateSecurityGroupRequest::setResourceOwnerAccount(const std::string& reso
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string CreateSecurityGroupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateSecurityGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string CreateSecurityGroupRequest::getClientToken()const
 {
 	return clientToken_;
@@ -78,17 +56,6 @@ void CreateSecurityGroupRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);
-}
-
-std::string CreateSecurityGroupRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void CreateSecurityGroupRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
 }
 
 std::string CreateSecurityGroupRequest::getOwnerAccount()const
@@ -113,23 +80,6 @@ void CreateSecurityGroupRequest::setDescription(const std::string& description)
 	setParameter("Description", description);
 }
 
-std::vector<CreateSecurityGroupRequest::Tag> CreateSecurityGroupRequest::getTag()const
-{
-	return tag_;
-}
-
-void CreateSecurityGroupRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setParameter(str + ".Value", obj.value);
-		setParameter(str + ".Key", obj.key);
-	}
-}
-
 long CreateSecurityGroupRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -150,5 +100,66 @@ void CreateSecurityGroupRequest::setSecurityGroupName(const std::string& securit
 {
 	securityGroupName_ = securityGroupName;
 	setParameter("SecurityGroupName", securityGroupName);
+}
+
+std::string CreateSecurityGroupRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
+std::string CreateSecurityGroupRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateSecurityGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateSecurityGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateSecurityGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string CreateSecurityGroupRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void CreateSecurityGroupRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setParameter("VpcId", vpcId);
+}
+
+std::vector<CreateSecurityGroupRequest::Tag> CreateSecurityGroupRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateSecurityGroupRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 

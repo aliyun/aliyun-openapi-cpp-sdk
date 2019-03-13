@@ -25,6 +25,17 @@ CancelCopyImageRequest::CancelCopyImageRequest() :
 CancelCopyImageRequest::~CancelCopyImageRequest()
 {}
 
+std::string CancelCopyImageRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CancelCopyImageRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long CancelCopyImageRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeInstancePhysicalAttributeRequest();
 				~DescribeInstancePhysicalAttributeRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string instanceId_;
 				std::string resourceOwnerAccount_;

@@ -52,6 +52,8 @@ void DescribeAccountAttributesResult::parse(const std::string &payload)
 			AccountAttributeItem::ValueItem attributeValuesObject;
 			if(!value["Value"].isNull())
 				attributeValuesObject.value = value["Value"].asString();
+			if(!value["ExpiredTime"].isNull())
+				attributeValuesObject.expiredTime = value["ExpiredTime"].asString();
 			if(!value["ZoneId"].isNull())
 				attributeValuesObject.zoneId = value["ZoneId"].asString();
 			if(!value["InstanceChargeType"].isNull())

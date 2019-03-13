@@ -25,6 +25,17 @@ DescribeInstanceTypesRequest::DescribeInstanceTypesRequest() :
 DescribeInstanceTypesRequest::~DescribeInstanceTypesRequest()
 {}
 
+std::string DescribeInstanceTypesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeInstanceTypesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeInstanceTypesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

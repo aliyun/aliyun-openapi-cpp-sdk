@@ -25,6 +25,17 @@ DeleteSnapshotRequest::DeleteSnapshotRequest() :
 DeleteSnapshotRequest::~DeleteSnapshotRequest()
 {}
 
+std::string DeleteSnapshotRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DeleteSnapshotRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DeleteSnapshotRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

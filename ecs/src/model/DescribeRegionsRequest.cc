@@ -25,6 +25,17 @@ DescribeRegionsRequest::DescribeRegionsRequest() :
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
 
+std::string DescribeRegionsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeRegionsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeRegionsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

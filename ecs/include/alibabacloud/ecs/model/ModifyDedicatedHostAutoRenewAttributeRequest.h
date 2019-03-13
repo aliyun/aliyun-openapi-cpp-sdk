@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyDedicatedHostAutoRenewAttributeRequest();
 				~ModifyDedicatedHostAutoRenewAttributeRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				int getDuration()const;
 				void setDuration(int duration);
 				std::string getDedicatedHostIds()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string sourceRegionId_;
 				int duration_;
 				std::string dedicatedHostIds_;
 				long resourceOwnerId_;

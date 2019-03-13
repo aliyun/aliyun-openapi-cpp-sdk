@@ -35,10 +35,14 @@ namespace AlibabaCloud
 				RebootInstanceRequest();
 				~RebootInstanceRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -49,8 +53,10 @@ namespace AlibabaCloud
 				void setForceStop(bool forceStop);
 
             private:
+				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string instanceId_;
+				bool dryRun_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

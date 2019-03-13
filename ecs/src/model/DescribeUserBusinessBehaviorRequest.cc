@@ -102,6 +102,17 @@ void DescribeUserBusinessBehaviorRequest::setAccessKeyId(const std::string& acce
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeUserBusinessBehaviorRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeUserBusinessBehaviorRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeUserBusinessBehaviorRequest::getSecurityToken()const
 {
 	return securityToken_;

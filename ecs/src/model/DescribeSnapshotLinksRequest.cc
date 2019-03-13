@@ -25,6 +25,17 @@ DescribeSnapshotLinksRequest::DescribeSnapshotLinksRequest() :
 DescribeSnapshotLinksRequest::~DescribeSnapshotLinksRequest()
 {}
 
+std::string DescribeSnapshotLinksRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeSnapshotLinksRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeSnapshotLinksRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

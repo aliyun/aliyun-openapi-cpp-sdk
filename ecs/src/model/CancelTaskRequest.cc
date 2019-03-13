@@ -25,6 +25,17 @@ CancelTaskRequest::CancelTaskRequest() :
 CancelTaskRequest::~CancelTaskRequest()
 {}
 
+std::string CancelTaskRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CancelTaskRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long CancelTaskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

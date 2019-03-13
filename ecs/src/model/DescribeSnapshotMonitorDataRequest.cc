@@ -25,6 +25,17 @@ DescribeSnapshotMonitorDataRequest::DescribeSnapshotMonitorDataRequest() :
 DescribeSnapshotMonitorDataRequest::~DescribeSnapshotMonitorDataRequest()
 {}
 
+std::string DescribeSnapshotMonitorDataRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeSnapshotMonitorDataRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeSnapshotMonitorDataRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

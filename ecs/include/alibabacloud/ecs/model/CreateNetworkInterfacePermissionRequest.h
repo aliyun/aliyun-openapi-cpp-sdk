@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				long getAccountId()const;
 				void setAccountId(long accountId);
 				std::string getSecurityToken()const;
@@ -96,6 +98,7 @@ namespace AlibabaCloud
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
+				std::string sourceRegionId_;
 				long accountId_;
 				std::string securityToken_;
 				std::string regionId_;

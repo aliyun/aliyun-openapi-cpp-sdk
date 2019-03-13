@@ -124,6 +124,17 @@ void AllocateDedicatedHostsRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string AllocateDedicatedHostsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void AllocateDedicatedHostsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string AllocateDedicatedHostsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

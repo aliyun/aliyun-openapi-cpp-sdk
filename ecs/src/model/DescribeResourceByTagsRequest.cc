@@ -25,6 +25,17 @@ DescribeResourceByTagsRequest::DescribeResourceByTagsRequest() :
 DescribeResourceByTagsRequest::~DescribeResourceByTagsRequest()
 {}
 
+std::string DescribeResourceByTagsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeResourceByTagsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeResourceByTagsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setInternetMaxBandwidthOut(int internetMaxBandwidthOut);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getDataDisk4Category()const;
 				void setDataDisk4Category(const std::string& dataDisk4Category);
 				std::string getRegionId()const;
@@ -94,6 +96,7 @@ namespace AlibabaCloud
 				std::string ioOptimized_;
 				int internetMaxBandwidthOut_;
 				std::string systemDiskCategory_;
+				std::string sourceRegionId_;
 				std::string dataDisk4Category_;
 				std::string regionId_;
 				int dataDisk4Size_;

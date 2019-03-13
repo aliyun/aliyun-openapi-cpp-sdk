@@ -80,6 +80,17 @@ void DescribeDisksRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeDisksRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeDisksRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeDisksRequest::getDiskName()const
 {
 	return diskName_;
@@ -382,6 +393,17 @@ void DescribeDisksRequest::setCategory(const std::string& category)
 {
 	category_ = category;
 	setParameter("Category", category);
+}
+
+std::string DescribeDisksRequest::getKMSKeyId()const
+{
+	return kMSKeyId_;
+}
+
+void DescribeDisksRequest::setKMSKeyId(const std::string& kMSKeyId)
+{
+	kMSKeyId_ = kMSKeyId;
+	setParameter("KMSKeyId", kMSKeyId);
 }
 
 std::string DescribeDisksRequest::getStatus()const

@@ -25,6 +25,17 @@ DescribeInstanceAutoRenewAttributeRequest::DescribeInstanceAutoRenewAttributeReq
 DescribeInstanceAutoRenewAttributeRequest::~DescribeInstanceAutoRenewAttributeRequest()
 {}
 
+std::string DescribeInstanceAutoRenewAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeInstanceAutoRenewAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeInstanceAutoRenewAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

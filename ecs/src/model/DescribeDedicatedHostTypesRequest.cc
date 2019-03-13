@@ -113,6 +113,17 @@ void DescribeDedicatedHostTypesRequest::setAccessKeyId(const std::string& access
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeDedicatedHostTypesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeDedicatedHostTypesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeDedicatedHostTypesRequest::getSecurityToken()const
 {
 	return securityToken_;

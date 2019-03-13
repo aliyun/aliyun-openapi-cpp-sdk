@@ -66,6 +66,11 @@ void DescribeInstancesFullStatusResult::parse(const std::string &payload)
 				scheduledSystemEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());
 			if(!eventTypeNode["Name"].isNull())
 				scheduledSystemEventSetObject.eventType.name = eventTypeNode["Name"].asString();
+			auto extendedAttributeNode = value["ExtendedAttribute"];
+			if(!extendedAttributeNode["DiskId"].isNull())
+				scheduledSystemEventSetObject.extendedAttribute.diskId = extendedAttributeNode["DiskId"].asString();
+			if(!extendedAttributeNode["Device"].isNull())
+				scheduledSystemEventSetObject.extendedAttribute.device = extendedAttributeNode["Device"].asString();
 			instanceFullStatusSetObject.scheduledSystemEventSet.push_back(scheduledSystemEventSetObject);
 		}
 		auto statusNode = value["Status"];

@@ -25,6 +25,17 @@ DescribeAutoSnapshotPolicyExRequest::DescribeAutoSnapshotPolicyExRequest() :
 DescribeAutoSnapshotPolicyExRequest::~DescribeAutoSnapshotPolicyExRequest()
 {}
 
+std::string DescribeAutoSnapshotPolicyExRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeAutoSnapshotPolicyExRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeAutoSnapshotPolicyExRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

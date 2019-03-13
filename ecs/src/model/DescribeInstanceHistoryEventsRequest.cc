@@ -136,6 +136,17 @@ void DescribeInstanceHistoryEventsRequest::setAccessKeyId(const std::string& acc
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeInstanceHistoryEventsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeInstanceHistoryEventsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeInstanceHistoryEventsRequest::getSecurityToken()const
 {
 	return securityToken_;

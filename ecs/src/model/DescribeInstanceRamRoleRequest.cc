@@ -25,6 +25,17 @@ DescribeInstanceRamRoleRequest::DescribeInstanceRamRoleRequest() :
 DescribeInstanceRamRoleRequest::~DescribeInstanceRamRoleRequest()
 {}
 
+std::string DescribeInstanceRamRoleRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeInstanceRamRoleRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeInstanceRamRoleRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

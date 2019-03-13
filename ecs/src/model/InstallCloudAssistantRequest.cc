@@ -102,6 +102,17 @@ void InstallCloudAssistantRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string InstallCloudAssistantRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void InstallCloudAssistantRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string InstallCloudAssistantRequest::getSecurityToken()const
 {
 	return securityToken_;

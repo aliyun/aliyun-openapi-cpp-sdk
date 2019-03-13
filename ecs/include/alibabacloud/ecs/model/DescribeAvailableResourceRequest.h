@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				int getCores()const;
 				void setCores(int cores);
 				std::string getSecurityToken()const;
@@ -67,6 +69,8 @@ namespace AlibabaCloud
 				void setRequestContent(const std::string& requestContent);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
+				std::string getScope()const;
+				void setScope(const std::string& scope);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
 				std::string getInstanceType()const;
@@ -119,12 +123,14 @@ namespace AlibabaCloud
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
+				std::string sourceRegionId_;
 				int cores_;
 				std::string securityToken_;
 				std::string regionId_;
 				bool enable_;
 				std::string requestContent_;
 				std::string systemDiskCategory_;
+				std::string scope_;
 				std::string callerBidEmail_;
 				std::string instanceType_;
 				std::string networkCategory_;

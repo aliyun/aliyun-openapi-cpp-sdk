@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifySnapshotAttributeRequest();
 				~ModifySnapshotAttributeRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSnapshotId()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string snapshotId_;
 				std::string resourceOwnerAccount_;

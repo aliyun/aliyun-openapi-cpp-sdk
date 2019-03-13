@@ -40,41 +40,44 @@ namespace AlibabaCloud
 				CreateSecurityGroupRequest();
 				~CreateSecurityGroupRequest();
 
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getSecurityGroupName()const;
 				void setSecurityGroupName(const std::string& securityGroupName);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
-				std::string resourceGroupId_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string clientToken_;
-				std::string vpcId_;
 				std::string ownerAccount_;
 				std::string description_;
-				std::vector<Tag> tag_;
 				long ownerId_;
 				std::string securityGroupName_;
+				std::string sourceRegionId_;
+				std::string resourceGroupId_;
+				std::string regionId_;
+				std::string vpcId_;
+				std::vector<Tag> tag_;
 
 			};
 		}

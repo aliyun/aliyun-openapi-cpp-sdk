@@ -102,6 +102,17 @@ void GetInstanceConsoleOutputRequest::setAccessKeyId(const std::string& accessKe
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string GetInstanceConsoleOutputRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void GetInstanceConsoleOutputRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string GetInstanceConsoleOutputRequest::getSecurityToken()const
 {
 	return securityToken_;

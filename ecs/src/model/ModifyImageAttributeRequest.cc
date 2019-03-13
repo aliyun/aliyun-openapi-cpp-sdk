@@ -25,6 +25,17 @@ ModifyImageAttributeRequest::ModifyImageAttributeRequest() :
 ModifyImageAttributeRequest::~ModifyImageAttributeRequest()
 {}
 
+std::string ModifyImageAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyImageAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ModifyImageAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

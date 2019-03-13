@@ -25,6 +25,17 @@ ReActivateInstancesRequest::ReActivateInstancesRequest() :
 ReActivateInstancesRequest::~ReActivateInstancesRequest()
 {}
 
+std::string ReActivateInstancesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ReActivateInstancesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ReActivateInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

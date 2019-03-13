@@ -113,6 +113,17 @@ void DescribeEniMonitorDataRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeEniMonitorDataRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeEniMonitorDataRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeEniMonitorDataRequest::getSecurityToken()const
 {
 	return securityToken_;

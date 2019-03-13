@@ -65,6 +65,8 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.imageId = launchTemplateDataNode["ImageId"].asString();
 		if(!launchTemplateDataNode["ImageOwnerAlias"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.imageOwnerAlias = launchTemplateDataNode["ImageOwnerAlias"].asString();
+		if(!launchTemplateDataNode["PasswordInherit"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.passwordInherit = launchTemplateDataNode["PasswordInherit"].asString() == "true";
 		if(!launchTemplateDataNode["InstanceType"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.instanceType = launchTemplateDataNode["InstanceType"].asString();
 		if(!launchTemplateDataNode["SecurityGroupId"].isNull())
@@ -143,6 +145,8 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 				dataDiskObject.description = value["Description"].asString();
 			if(!value["DeleteWithInstance"].isNull())
 				dataDiskObject.deleteWithInstance = value["DeleteWithInstance"].asString() == "true";
+			if(!value["Device"].isNull())
+				dataDiskObject.device = value["Device"].asString();
 			launchTemplateVersionSetsObject.launchTemplateData.dataDisks.push_back(dataDiskObject);
 		}
 		auto allNetworkInterfaces = value["NetworkInterfaces"]["NetworkInterface"];

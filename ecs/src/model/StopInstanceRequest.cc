@@ -25,6 +25,17 @@ StopInstanceRequest::StopInstanceRequest() :
 StopInstanceRequest::~StopInstanceRequest()
 {}
 
+std::string StopInstanceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void StopInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long StopInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +56,17 @@ void StopInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+bool StopInstanceRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void StopInstanceRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", std::to_string(dryRun));
 }
 
 std::string StopInstanceRequest::getResourceOwnerAccount()const
@@ -100,6 +122,17 @@ void StopInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+bool StopInstanceRequest::getHibernate()const
+{
+	return hibernate_;
+}
+
+void StopInstanceRequest::setHibernate(bool hibernate)
+{
+	hibernate_ = hibernate;
+	setParameter("Hibernate", std::to_string(hibernate));
 }
 
 bool StopInstanceRequest::getForceStop()const

@@ -25,6 +25,17 @@ DescribeInstancePhysicalAttributeRequest::DescribeInstancePhysicalAttributeReque
 DescribeInstancePhysicalAttributeRequest::~DescribeInstancePhysicalAttributeRequest()
 {}
 
+std::string DescribeInstancePhysicalAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeInstancePhysicalAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeInstancePhysicalAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

@@ -102,6 +102,17 @@ void ModifyInstanceDeploymentRequest::setAccessKeyId(const std::string& accessKe
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyInstanceDeploymentRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyInstanceDeploymentRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyInstanceDeploymentRequest::getSecurityToken()const
 {
 	return securityToken_;

@@ -39,6 +39,7 @@ namespace AlibabaCloud
 				~CreateKeyPairResult();
 				std::string getKeyPairFingerPrint()const;
 				std::string getKeyPairName()const;
+				std::string getKeyPairId()const;
 				std::string getPrivateKeyBody()const;
 
 			protected:
@@ -46,6 +47,7 @@ namespace AlibabaCloud
 			private:
 				std::string keyPairFingerPrint_;
 				std::string keyPairName_;
+				std::string keyPairId_;
 				std::string privateKeyBody_;
 
 			};

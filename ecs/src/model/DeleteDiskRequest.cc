@@ -25,6 +25,17 @@ DeleteDiskRequest::DeleteDiskRequest() :
 DeleteDiskRequest::~DeleteDiskRequest()
 {}
 
+std::string DeleteDiskRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DeleteDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DeleteDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

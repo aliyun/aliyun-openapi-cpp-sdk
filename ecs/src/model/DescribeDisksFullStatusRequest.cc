@@ -125,6 +125,17 @@ void DescribeDisksFullStatusRequest::setAccessKeyId(const std::string& accessKey
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeDisksFullStatusRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeDisksFullStatusRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeDisksFullStatusRequest::getEventTimeStart()const
 {
 	return eventTimeStart_;

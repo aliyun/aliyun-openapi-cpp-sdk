@@ -102,6 +102,17 @@ void CreateDiskRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string CreateDiskRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string CreateDiskRequest::getDiskName()const
 {
 	return diskName_;
@@ -194,5 +205,16 @@ void CreateDiskRequest::setTag(const std::vector<Tag>& tag)
 		setParameter(str + ".Value", obj.value);
 		setParameter(str + ".Key", obj.key);
 	}
+}
+
+std::string CreateDiskRequest::getKMSKeyId()const
+{
+	return kMSKeyId_;
+}
+
+void CreateDiskRequest::setKMSKeyId(const std::string& kMSKeyId)
+{
+	kMSKeyId_ = kMSKeyId;
+	setParameter("KMSKeyId", kMSKeyId);
 }
 

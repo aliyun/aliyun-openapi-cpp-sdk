@@ -40,6 +40,13 @@ void RedeployInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
+}
+
+std::string RedeployInstanceResult::getTaskId()const
+{
+	return taskId_;
 }
 

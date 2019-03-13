@@ -58,6 +58,17 @@ void DescribeEipAddressesRequest::setFilter2Value(const std::string& filter2Valu
 	setParameter("Filter2Value", filter2Value);
 }
 
+std::string DescribeEipAddressesRequest::getISP()const
+{
+	return iSP_;
+}
+
+void DescribeEipAddressesRequest::setISP(const std::string& iSP)
+{
+	iSP_ = iSP;
+	setParameter("ISP", iSP);
+}
+
 std::string DescribeEipAddressesRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

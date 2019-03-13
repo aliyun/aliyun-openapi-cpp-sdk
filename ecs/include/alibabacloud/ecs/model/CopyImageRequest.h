@@ -44,36 +44,39 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
-				bool getEncrypted()const;
-				void setEncrypted(bool encrypted);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getDestinationImageName()const;
 				void setDestinationImageName(const std::string& destinationImageName);
 				std::string getDestinationRegionId()const;
 				void setDestinationRegionId(const std::string& destinationRegionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
+				bool getEncrypted()const;
+				void setEncrypted(bool encrypted);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getDestinationDescription()const;
 				void setDestinationDescription(const std::string& destinationDescription);
 
             private:
 				long resourceOwnerId_;
 				std::string imageId_;
-				bool encrypted_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string destinationImageName_;
 				std::string destinationRegionId_;
 				std::string ownerAccount_;
-				std::vector<Tag> tag_;
 				long ownerId_;
+				std::string sourceRegionId_;
+				bool encrypted_;
+				std::string regionId_;
+				std::vector<Tag> tag_;
 				std::string destinationDescription_;
 
 			};

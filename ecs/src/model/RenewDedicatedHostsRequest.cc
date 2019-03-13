@@ -124,6 +124,17 @@ void RenewDedicatedHostsRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string RenewDedicatedHostsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void RenewDedicatedHostsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string RenewDedicatedHostsRequest::getSecurityToken()const
 {
 	return securityToken_;

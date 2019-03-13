@@ -102,6 +102,17 @@ void AttachNetworkInterfaceRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string AttachNetworkInterfaceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void AttachNetworkInterfaceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string AttachNetworkInterfaceRequest::getSecurityToken()const
 {
 	return securityToken_;

@@ -157,6 +157,17 @@ void ModifySecurityGroupRuleRequest::setAccessKeyId(const std::string& accessKey
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifySecurityGroupRuleRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifySecurityGroupRuleRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ModifySecurityGroupRuleRequest::getSourceGroupOwnerId()const
 {
 	return sourceGroupOwnerId_;

@@ -124,6 +124,17 @@ void ModifyInstanceNetworkSpecRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyInstanceNetworkSpecRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyInstanceNetworkSpecRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyInstanceNetworkSpecRequest::getInstanceId()const
 {
 	return instanceId_;

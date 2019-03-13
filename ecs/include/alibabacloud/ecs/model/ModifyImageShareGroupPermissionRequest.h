@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyImageShareGroupPermissionRequest();
 				~ModifyImageShareGroupPermissionRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string imageId_;
 				std::string addGroup1_;

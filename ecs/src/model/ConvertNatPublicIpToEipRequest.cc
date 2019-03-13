@@ -25,17 +25,6 @@ ConvertNatPublicIpToEipRequest::ConvertNatPublicIpToEipRequest() :
 ConvertNatPublicIpToEipRequest::~ConvertNatPublicIpToEipRequest()
 {}
 
-std::string ConvertNatPublicIpToEipRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void ConvertNatPublicIpToEipRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
-}
-
 long ConvertNatPublicIpToEipRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,17 +34,6 @@ void ConvertNatPublicIpToEipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ConvertNatPublicIpToEipRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ConvertNatPublicIpToEipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ConvertNatPublicIpToEipRequest::getCallerParentId()const
@@ -78,28 +56,6 @@ void ConvertNatPublicIpToEipRequest::setProxy_original_security_transport(bool p
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
 	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
-}
-
-std::string ConvertNatPublicIpToEipRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void ConvertNatPublicIpToEipRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
-}
-
-long ConvertNatPublicIpToEipRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ConvertNatPublicIpToEipRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ConvertNatPublicIpToEipRequest::getProxy_original_source_ip()const
@@ -135,28 +91,6 @@ void ConvertNatPublicIpToEipRequest::setCallerType(const std::string& callerType
 	setParameter("CallerType", callerType);
 }
 
-bool ConvertNatPublicIpToEipRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void ConvertNatPublicIpToEipRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
-}
-
-bool ConvertNatPublicIpToEipRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void ConvertNatPublicIpToEipRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
-}
-
 std::string ConvertNatPublicIpToEipRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -168,26 +102,15 @@ void ConvertNatPublicIpToEipRequest::setAccessKeyId(const std::string& accessKey
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-bool ConvertNatPublicIpToEipRequest::getSecurity_transport()const
+std::string ConvertNatPublicIpToEipRequest::getSourceRegionId()const
 {
-	return security_transport_;
+	return sourceRegionId_;
 }
 
-void ConvertNatPublicIpToEipRequest::setSecurity_transport(bool security_transport)
+void ConvertNatPublicIpToEipRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
-	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
-}
-
-std::string ConvertNatPublicIpToEipRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ConvertNatPublicIpToEipRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string ConvertNatPublicIpToEipRequest::getSecurityToken()const
@@ -210,17 +133,6 @@ void ConvertNatPublicIpToEipRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
-}
-
-std::string ConvertNatPublicIpToEipRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void ConvertNatPublicIpToEipRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
 }
 
 bool ConvertNatPublicIpToEipRequest::getEnable()const
@@ -276,5 +188,104 @@ void ConvertNatPublicIpToEipRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
 	setParameter("CallerUid", std::to_string(callerUid));
+}
+
+std::string ConvertNatPublicIpToEipRequest::getApp_ip()const
+{
+	return app_ip_;
+}
+
+void ConvertNatPublicIpToEipRequest::setApp_ip(const std::string& app_ip)
+{
+	app_ip_ = app_ip;
+	setParameter("App_ip", app_ip);
+}
+
+std::string ConvertNatPublicIpToEipRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ConvertNatPublicIpToEipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ConvertNatPublicIpToEipRequest::getCallerBid()const
+{
+	return callerBid_;
+}
+
+void ConvertNatPublicIpToEipRequest::setCallerBid(const std::string& callerBid)
+{
+	callerBid_ = callerBid;
+	setParameter("CallerBid", callerBid);
+}
+
+long ConvertNatPublicIpToEipRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ConvertNatPublicIpToEipRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+bool ConvertNatPublicIpToEipRequest::getProxy_trust_transport_info()const
+{
+	return proxy_trust_transport_info_;
+}
+
+void ConvertNatPublicIpToEipRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
+{
+	proxy_trust_transport_info_ = proxy_trust_transport_info;
+	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+}
+
+bool ConvertNatPublicIpToEipRequest::getAk_mfa_present()const
+{
+	return ak_mfa_present_;
+}
+
+void ConvertNatPublicIpToEipRequest::setAk_mfa_present(bool ak_mfa_present)
+{
+	ak_mfa_present_ = ak_mfa_present;
+	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+}
+
+bool ConvertNatPublicIpToEipRequest::getSecurity_transport()const
+{
+	return security_transport_;
+}
+
+void ConvertNatPublicIpToEipRequest::setSecurity_transport(bool security_transport)
+{
+	security_transport_ = security_transport;
+	setParameter("Security_transport", std::to_string(security_transport));
+}
+
+std::string ConvertNatPublicIpToEipRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ConvertNatPublicIpToEipRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string ConvertNatPublicIpToEipRequest::getRequestId()const
+{
+	return requestId_;
+}
+
+void ConvertNatPublicIpToEipRequest::setRequestId(const std::string& requestId)
+{
+	requestId_ = requestId;
+	setParameter("RequestId", requestId);
 }
 

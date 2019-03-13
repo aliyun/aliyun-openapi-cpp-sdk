@@ -124,6 +124,17 @@ void ReplaceSystemDiskRequest::setPlatform(const std::string& platform)
 	setParameter("Platform", platform);
 }
 
+std::string ReplaceSystemDiskRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ReplaceSystemDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ReplaceSystemDiskRequest::getPassword()const
 {
 	return password_;

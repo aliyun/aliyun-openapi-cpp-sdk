@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ExportImageRequest();
 				~ExportImageRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setImageFormat(const std::string& imageFormat);
 
             private:
+				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string imageId_;
 				std::string oSSBucket_;

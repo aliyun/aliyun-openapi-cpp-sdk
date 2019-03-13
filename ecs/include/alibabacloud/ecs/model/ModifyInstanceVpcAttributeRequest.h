@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyInstanceVpcAttributeRequest();
 				~ModifyInstanceVpcAttributeRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPrivateIpAddress()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string sourceRegionId_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
 				long resourceOwnerId_;

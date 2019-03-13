@@ -25,6 +25,17 @@ ModifySecurityGroupPolicyRequest::ModifySecurityGroupPolicyRequest() :
 ModifySecurityGroupPolicyRequest::~ModifySecurityGroupPolicyRequest()
 {}
 
+std::string ModifySecurityGroupPolicyRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifySecurityGroupPolicyRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ModifySecurityGroupPolicyRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

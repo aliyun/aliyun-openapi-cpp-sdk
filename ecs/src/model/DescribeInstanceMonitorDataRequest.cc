@@ -113,6 +113,17 @@ void DescribeInstanceMonitorDataRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeInstanceMonitorDataRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeInstanceMonitorDataRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeInstanceMonitorDataRequest::getSecurityToken()const
 {
 	return securityToken_;

@@ -25,6 +25,17 @@ ModifySecurityGroupAttributeRequest::ModifySecurityGroupAttributeRequest() :
 ModifySecurityGroupAttributeRequest::~ModifySecurityGroupAttributeRequest()
 {}
 
+std::string ModifySecurityGroupAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifySecurityGroupAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ModifySecurityGroupAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

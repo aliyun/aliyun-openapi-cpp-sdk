@@ -102,6 +102,17 @@ void ReleaseDedicatedHostRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ReleaseDedicatedHostRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ReleaseDedicatedHostRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ReleaseDedicatedHostRequest::getSecurityToken()const
 {
 	return securityToken_;

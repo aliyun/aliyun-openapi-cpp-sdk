@@ -114,6 +114,17 @@ void DescribeAccountAttributesRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeAccountAttributesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeAccountAttributesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeAccountAttributesRequest::getSecurityToken()const
 {
 	return securityToken_;

@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					std::string snapshotId;
 					std::string category;
 					std::string encrypted;
+					std::string kMSKeyId;
 					std::string diskName;
 					std::string description;
 					std::string device;
@@ -75,12 +76,16 @@ namespace AlibabaCloud
 				void setKeyPairName(const std::string& keyPairName);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
+				int getMinAmount()const;
+				void setMinAmount(int minAmount);
 				float getSpotPriceLimit()const;
 				void setSpotPriceLimit(float spotPriceLimit);
 				std::string getOwnerIdLoginEmail()const;
 				void setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail);
 				std::string getCallerType()const;
 				void setCallerType(const std::string& callerType);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				bool getDeletionProtection()const;
 				void setDeletionProtection(bool deletionProtection);
 				std::string getResourceGroupId()const;
@@ -111,6 +116,8 @@ namespace AlibabaCloud
 				void setIpv6AddressCount(int ipv6AddressCount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getCapacityReservationPreference()const;
+				void setCapacityReservationPreference(const std::string& capacityReservationPreference);
 				bool getAk_mfa_present()const;
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
@@ -155,6 +162,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
+				std::string getCapacityReservationId()const;
+				void setCapacityReservationId(const std::string& capacityReservationId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUserData()const;
@@ -167,6 +176,8 @@ namespace AlibabaCloud
 				void setRequestContent(const std::string& requestContent);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				bool getHibernationConfigured()const;
+				void setHibernationConfigured(bool hibernationConfigured);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
 				std::string getCallerUidEmail()const;
@@ -215,9 +226,11 @@ namespace AlibabaCloud
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
 				std::string proxy_original_source_ip_;
+				int minAmount_;
 				float spotPriceLimit_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
+				std::string sourceRegionId_;
 				bool deletionProtection_;
 				std::string resourceGroupId_;
 				std::string hostName_;
@@ -233,6 +246,7 @@ namespace AlibabaCloud
 				std::string launchTemplateId_;
 				int ipv6AddressCount_;
 				long ownerId_;
+				std::string capacityReservationPreference_;
 				bool ak_mfa_present_;
 				bool security_transport_;
 				std::string vSwitchId_;
@@ -255,12 +269,14 @@ namespace AlibabaCloud
 				bool proxy_original_security_transport_;
 				std::string description_;
 				std::string systemDiskCategory_;
+				std::string capacityReservationId_;
 				std::string accessKeyId_;
 				std::string userData_;
 				bool passwordInherit_;
 				std::string regionId_;
 				std::string requestContent_;
 				std::string instanceType_;
+				bool hibernationConfigured_;
 				std::string instanceChargeType_;
 				std::string callerUidEmail_;
 				std::vector<NetworkInterface> networkInterface_;

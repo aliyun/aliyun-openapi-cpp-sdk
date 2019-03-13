@@ -135,6 +135,17 @@ void DescribeAvailableResourceRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeAvailableResourceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeAvailableResourceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 int DescribeAvailableResourceRequest::getCores()const
 {
 	return cores_;
@@ -199,6 +210,17 @@ void DescribeAvailableResourceRequest::setSystemDiskCategory(const std::string& 
 {
 	systemDiskCategory_ = systemDiskCategory;
 	setParameter("SystemDiskCategory", systemDiskCategory);
+}
+
+std::string DescribeAvailableResourceRequest::getScope()const
+{
+	return scope_;
+}
+
+void DescribeAvailableResourceRequest::setScope(const std::string& scope)
+{
+	scope_ = scope;
+	setParameter("Scope", scope);
 }
 
 std::string DescribeAvailableResourceRequest::getCallerBidEmail()const

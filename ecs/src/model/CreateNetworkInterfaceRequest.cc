@@ -135,6 +135,17 @@ void CreateNetworkInterfaceRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateNetworkInterfaceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateNetworkInterfaceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string CreateNetworkInterfaceRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

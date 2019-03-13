@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getNetworkChargeType()const;
@@ -72,6 +74,7 @@ namespace AlibabaCloud
 				std::string endTime_;
 				std::string startTime_;
 				long ownerId_;
+				std::string sourceRegionId_;
 				std::string instanceId_;
 				std::string networkChargeType_;
 				int internetMaxBandwidthIn_;

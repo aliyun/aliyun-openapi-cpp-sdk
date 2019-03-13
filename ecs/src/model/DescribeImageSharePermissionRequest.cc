@@ -25,6 +25,17 @@ DescribeImageSharePermissionRequest::DescribeImageSharePermissionRequest() :
 DescribeImageSharePermissionRequest::~DescribeImageSharePermissionRequest()
 {}
 
+std::string DescribeImageSharePermissionRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeImageSharePermissionRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeImageSharePermissionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

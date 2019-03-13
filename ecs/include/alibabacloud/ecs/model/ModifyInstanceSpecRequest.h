@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
 				std::string getTemporaryStartTime()const;
 				void setTemporaryStartTime(const std::string& temporaryStartTime);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				bool getAsync()const;
 				void setAsync(bool async);
 				std::string getInstanceId()const;
@@ -77,6 +79,7 @@ namespace AlibabaCloud
 				int temporaryInternetMaxBandwidthOut_;
 				std::string systemDiskCategory_;
 				std::string temporaryStartTime_;
+				std::string sourceRegionId_;
 				bool async_;
 				std::string instanceId_;
 				std::string instanceType_;

@@ -25,6 +25,17 @@ ExportImageRequest::ExportImageRequest() :
 ExportImageRequest::~ExportImageRequest()
 {}
 
+std::string ExportImageRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ExportImageRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ExportImageRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

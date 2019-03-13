@@ -62,6 +62,10 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 			dedicatedHostsObject.sockets = std::stoi(value["Sockets"].asString());
 		if(!value["Cores"].isNull())
 			dedicatedHostsObject.cores = std::stoi(value["Cores"].asString());
+		if(!value["PhysicalGpus"].isNull())
+			dedicatedHostsObject.physicalGpus = std::stoi(value["PhysicalGpus"].asString());
+		if(!value["GPUSpec"].isNull())
+			dedicatedHostsObject.gPUSpec = value["GPUSpec"].asString();
 		if(!value["ActionOnMaintenance"].isNull())
 			dedicatedHostsObject.actionOnMaintenance = value["ActionOnMaintenance"].asString();
 		if(!value["Status"].isNull())
@@ -111,6 +115,10 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 			dedicatedHostsObject.capacity.totalVcpus = std::stoi(capacityNode["TotalVcpus"].asString());
 		if(!capacityNode["AvailableVcpus"].isNull())
 			dedicatedHostsObject.capacity.availableVcpus = std::stoi(capacityNode["AvailableVcpus"].asString());
+		if(!capacityNode["TotalVgpus"].isNull())
+			dedicatedHostsObject.capacity.totalVgpus = std::stoi(capacityNode["TotalVgpus"].asString());
+		if(!capacityNode["AvailableVgpus"].isNull())
+			dedicatedHostsObject.capacity.availableVgpus = std::stoi(capacityNode["AvailableVgpus"].asString());
 		if(!capacityNode["TotalMemory"].isNull())
 			dedicatedHostsObject.capacity.totalMemory = std::stof(capacityNode["TotalMemory"].asString());
 		if(!capacityNode["AvailableMemory"].isNull())
@@ -129,6 +137,9 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 		auto allSupportedInstanceTypeFamilies = value["SupportedInstanceTypeFamilies"]["SupportedInstanceTypeFamily"];
 		for (auto value : allSupportedInstanceTypeFamilies)
 			dedicatedHostsObject.supportedInstanceTypeFamilies.push_back(value.asString());
+		auto allSupportedInstanceTypesList = value["SupportedInstanceTypesList"]["SupportedInstanceTypesList"];
+		for (auto value : allSupportedInstanceTypesList)
+			dedicatedHostsObject.supportedInstanceTypesList.push_back(value.asString());
 		dedicatedHosts_.push_back(dedicatedHostsObject);
 	}
 	if(!value["TotalCount"].isNull())

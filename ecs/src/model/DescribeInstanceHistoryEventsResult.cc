@@ -64,6 +64,11 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 			instanceSystemEventSetObject.eventCycleStatus.code = std::stoi(eventCycleStatusNode["Code"].asString());
 		if(!eventCycleStatusNode["Name"].isNull())
 			instanceSystemEventSetObject.eventCycleStatus.name = eventCycleStatusNode["Name"].asString();
+		auto extendedAttributeNode = value["ExtendedAttribute"];
+		if(!extendedAttributeNode["DiskId"].isNull())
+			instanceSystemEventSetObject.extendedAttribute.diskId = extendedAttributeNode["DiskId"].asString();
+		if(!extendedAttributeNode["Device"].isNull())
+			instanceSystemEventSetObject.extendedAttribute.device = extendedAttributeNode["Device"].asString();
 		instanceSystemEventSet_.push_back(instanceSystemEventSetObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				AttachDiskRequest();
 				~AttachDiskRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				void setDeleteWithInstance(bool deleteWithInstance);
 
             private:
+				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string instanceId_;
 				std::string resourceOwnerAccount_;

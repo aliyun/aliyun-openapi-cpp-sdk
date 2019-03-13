@@ -102,6 +102,17 @@ void DescribeCloudAssistantStatusRequest::setAccessKeyId(const std::string& acce
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeCloudAssistantStatusRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeCloudAssistantStatusRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeCloudAssistantStatusRequest::getSecurityToken()const
 {
 	return securityToken_;

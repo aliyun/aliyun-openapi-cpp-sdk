@@ -188,6 +188,11 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.dedicatedHostAttribute.dedicatedHostId = dedicatedHostAttributeNode["DedicatedHostId"].asString();
 		if(!dedicatedHostAttributeNode["DedicatedHostName"].isNull())
 			instancesObject.dedicatedHostAttribute.dedicatedHostName = dedicatedHostAttributeNode["DedicatedHostName"].asString();
+		auto ecsCapacityReservationAttrNode = value["EcsCapacityReservationAttr"];
+		if(!ecsCapacityReservationAttrNode["CapacityReservationId"].isNull())
+			instancesObject.ecsCapacityReservationAttr.capacityReservationId = ecsCapacityReservationAttrNode["CapacityReservationId"].asString();
+		if(!ecsCapacityReservationAttrNode["CapacityReservationPreference"].isNull())
+			instancesObject.ecsCapacityReservationAttr.capacityReservationPreference = ecsCapacityReservationAttrNode["CapacityReservationPreference"].asString();
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
 			instancesObject.securityGroupIds.push_back(value.asString());

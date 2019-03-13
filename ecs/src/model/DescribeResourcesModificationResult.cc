@@ -50,6 +50,8 @@ void DescribeResourcesModificationResult::parse(const std::string &payload)
 			availableZonesObject.zoneId = value["ZoneId"].asString();
 		if(!value["Status"].isNull())
 			availableZonesObject.status = value["Status"].asString();
+		if(!value["StatusCategory"].isNull())
+			availableZonesObject.statusCategory = value["StatusCategory"].asString();
 		auto allAvailableResources = value["AvailableResources"]["AvailableResource"];
 		for (auto value : allAvailableResources)
 		{
@@ -64,6 +66,8 @@ void DescribeResourcesModificationResult::parse(const std::string &payload)
 					supportedResourcesObject.value = value["Value"].asString();
 				if(!value["Status"].isNull())
 					supportedResourcesObject.status = value["Status"].asString();
+				if(!value["StatusCategory"].isNull())
+					supportedResourcesObject.statusCategory = value["StatusCategory"].asString();
 				if(!value["Min"].isNull())
 					supportedResourcesObject.min = std::stoi(value["Min"].asString());
 				if(!value["Max"].isNull())

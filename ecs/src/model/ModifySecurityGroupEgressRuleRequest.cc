@@ -157,6 +157,17 @@ void ModifySecurityGroupEgressRuleRequest::setAccessKeyId(const std::string& acc
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifySecurityGroupEgressRuleRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifySecurityGroupEgressRuleRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifySecurityGroupEgressRuleRequest::getSecurityToken()const
 {
 	return securityToken_;

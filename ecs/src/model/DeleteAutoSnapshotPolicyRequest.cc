@@ -25,6 +25,17 @@ DeleteAutoSnapshotPolicyRequest::DeleteAutoSnapshotPolicyRequest() :
 DeleteAutoSnapshotPolicyRequest::~DeleteAutoSnapshotPolicyRequest()
 {}
 
+std::string DeleteAutoSnapshotPolicyRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DeleteAutoSnapshotPolicyRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DeleteAutoSnapshotPolicyRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

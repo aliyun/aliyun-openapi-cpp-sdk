@@ -64,6 +64,8 @@ namespace AlibabaCloud
 				void setSecurityGroupName(const std::string& securityGroupName);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
@@ -88,6 +90,7 @@ namespace AlibabaCloud
 				std::string securityGroupIds_;
 				std::string securityGroupName_;
 				int pageNumber_;
+				std::string sourceRegionId_;
 				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string vpcId_;

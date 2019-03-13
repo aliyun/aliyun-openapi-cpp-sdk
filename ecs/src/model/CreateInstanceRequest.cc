@@ -80,6 +80,17 @@ void CreateInstanceRequest::setSpotPriceLimit(float spotPriceLimit)
 	setParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
 }
 
+std::string CreateInstanceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 bool CreateInstanceRequest::getDeletionProtection()const
 {
 	return deletionProtection_;
@@ -194,6 +205,17 @@ void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateInstanceRequest::getCapacityReservationPreference()const
+{
+	return capacityReservationPreference_;
+}
+
+void CreateInstanceRequest::setCapacityReservationPreference(const std::string& capacityReservationPreference)
+{
+	capacityReservationPreference_ = capacityReservationPreference;
+	setParameter("CapacityReservationPreference", capacityReservationPreference);
 }
 
 std::string CreateInstanceRequest::getVSwitchId()const
@@ -405,6 +427,17 @@ void CreateInstanceRequest::setSystemDiskCategory(const std::string& systemDiskC
 	setParameter("SystemDiskCategory", systemDiskCategory);
 }
 
+std::string CreateInstanceRequest::getCapacityReservationId()const
+{
+	return capacityReservationId_;
+}
+
+void CreateInstanceRequest::setCapacityReservationId(const std::string& capacityReservationId)
+{
+	capacityReservationId_ = capacityReservationId;
+	setParameter("CapacityReservationId", capacityReservationId);
+}
+
 std::string CreateInstanceRequest::getUserData()const
 {
 	return userData_;
@@ -577,6 +610,7 @@ void CreateInstanceRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setParameter(str + ".Encrypted", std::to_string(obj.encrypted));
 		setParameter(str + ".Description", obj.description);
 		setParameter(str + ".Category", obj.category);
+		setParameter(str + ".KMSKeyId", obj.kMSKeyId);
 		setParameter(str + ".Device", obj.device);
 		setParameter(str + ".DeleteWithInstance", std::to_string(obj.deleteWithInstance));
 	}

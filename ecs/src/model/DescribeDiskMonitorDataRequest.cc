@@ -113,6 +113,17 @@ void DescribeDiskMonitorDataRequest::setAccessKeyId(const std::string& accessKey
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeDiskMonitorDataRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeDiskMonitorDataRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeDiskMonitorDataRequest::getSecurityToken()const
 {
 	return securityToken_;

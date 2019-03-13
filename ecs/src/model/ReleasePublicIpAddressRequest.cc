@@ -25,6 +25,17 @@ ReleasePublicIpAddressRequest::ReleasePublicIpAddressRequest() :
 ReleasePublicIpAddressRequest::~ReleasePublicIpAddressRequest()
 {}
 
+std::string ReleasePublicIpAddressRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ReleasePublicIpAddressRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ReleasePublicIpAddressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

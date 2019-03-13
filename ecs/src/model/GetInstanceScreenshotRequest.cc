@@ -102,6 +102,17 @@ void GetInstanceScreenshotRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string GetInstanceScreenshotRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void GetInstanceScreenshotRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string GetInstanceScreenshotRequest::getSecurityToken()const
 {
 	return securityToken_;

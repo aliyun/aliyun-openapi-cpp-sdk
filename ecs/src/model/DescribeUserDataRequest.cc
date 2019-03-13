@@ -25,6 +25,17 @@ DescribeUserDataRequest::DescribeUserDataRequest() :
 DescribeUserDataRequest::~DescribeUserDataRequest()
 {}
 
+std::string DescribeUserDataRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeUserDataRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeUserDataRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

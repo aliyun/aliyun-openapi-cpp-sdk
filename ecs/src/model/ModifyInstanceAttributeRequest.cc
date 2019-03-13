@@ -102,6 +102,17 @@ void ModifyInstanceAttributeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyInstanceAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyInstanceAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 bool ModifyInstanceAttributeRequest::getDeletionProtection()const
 {
 	return deletionProtection_;

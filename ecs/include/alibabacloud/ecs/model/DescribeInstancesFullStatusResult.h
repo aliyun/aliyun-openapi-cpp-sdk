@@ -56,9 +56,15 @@ namespace AlibabaCloud
 							int code;
 							std::string name;
 						};
+						struct ExtendedAttribute
+						{
+							std::string device;
+							std::string diskId;
+						};
 						EventCycleStatus eventCycleStatus;
 						std::string eventPublishTime;
 						EventType eventType;
+						ExtendedAttribute extendedAttribute;
 						std::string eventId;
 						std::string notBefore;
 					};

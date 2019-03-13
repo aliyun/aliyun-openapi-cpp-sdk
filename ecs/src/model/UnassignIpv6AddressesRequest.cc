@@ -102,6 +102,17 @@ void UnassignIpv6AddressesRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string UnassignIpv6AddressesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void UnassignIpv6AddressesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string UnassignIpv6AddressesRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

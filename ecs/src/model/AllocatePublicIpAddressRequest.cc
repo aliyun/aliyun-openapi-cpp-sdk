@@ -25,6 +25,17 @@ AllocatePublicIpAddressRequest::AllocatePublicIpAddressRequest() :
 AllocatePublicIpAddressRequest::~AllocatePublicIpAddressRequest()
 {}
 
+std::string AllocatePublicIpAddressRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void AllocatePublicIpAddressRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string AllocatePublicIpAddressRequest::getIpAddress()const
 {
 	return ipAddress_;

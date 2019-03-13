@@ -25,6 +25,17 @@ ImportKeyPairRequest::ImportKeyPairRequest() :
 ImportKeyPairRequest::~ImportKeyPairRequest()
 {}
 
+std::string ImportKeyPairRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ImportKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ImportKeyPairRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

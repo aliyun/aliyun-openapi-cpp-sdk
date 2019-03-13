@@ -157,6 +157,17 @@ void DescribeSecurityGroupsRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeSecurityGroupsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeSecurityGroupsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeSecurityGroupsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

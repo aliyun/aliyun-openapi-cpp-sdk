@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					bool encrypted;
 					std::string description;
 					std::string category;
+					std::string kMSKeyId;
 					std::string device;
 					bool deleteWithInstance;
 				};
@@ -61,6 +62,8 @@ namespace AlibabaCloud
 				void setKeyPairName(const std::string& keyPairName);
 				float getSpotPriceLimit()const;
 				void setSpotPriceLimit(float spotPriceLimit);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				bool getDeletionProtection()const;
 				void setDeletionProtection(bool deletionProtection);
 				std::string getResourceGroupId()const;
@@ -81,6 +84,8 @@ namespace AlibabaCloud
 				void setDryRun(bool dryRun);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getCapacityReservationPreference()const;
+				void setCapacityReservationPreference(const std::string& capacityReservationPreference);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPrivateIpAddress()const;
@@ -119,6 +124,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
+				std::string getCapacityReservationId()const;
+				void setCapacityReservationId(const std::string& capacityReservationId);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
 				bool getPasswordInherit()const;
@@ -160,6 +167,7 @@ namespace AlibabaCloud
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
 				float spotPriceLimit_;
+				std::string sourceRegionId_;
 				bool deletionProtection_;
 				std::string resourceGroupId_;
 				std::string hostName_;
@@ -170,6 +178,7 @@ namespace AlibabaCloud
 				int period_;
 				bool dryRun_;
 				long ownerId_;
+				std::string capacityReservationPreference_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
 				std::string spotStrategy_;
@@ -189,6 +198,7 @@ namespace AlibabaCloud
 				int internetMaxBandwidthOut_;
 				std::string description_;
 				std::string systemDiskCategory_;
+				std::string capacityReservationId_;
 				std::string userData_;
 				bool passwordInherit_;
 				std::string regionId_;

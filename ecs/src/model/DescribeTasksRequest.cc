@@ -113,6 +113,17 @@ void DescribeTasksRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeTasksRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeTasksRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeTasksRequest::getTaskStatus()const
 {
 	return taskStatus_;

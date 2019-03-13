@@ -64,6 +64,8 @@ namespace AlibabaCloud
 				void setFilter4Key(const std::string& filter4Key);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getLockReason()const;
@@ -138,6 +140,7 @@ namespace AlibabaCloud
 				std::string keyPairName_;
 				std::string filter4Key_;
 				int pageNumber_;
+				std::string sourceRegionId_;
 				std::string resourceGroupId_;
 				std::string lockReason_;
 				std::string filter1Key_;

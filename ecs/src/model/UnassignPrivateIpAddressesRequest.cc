@@ -102,6 +102,17 @@ void UnassignPrivateIpAddressesRequest::setAccessKeyId(const std::string& access
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string UnassignPrivateIpAddressesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void UnassignPrivateIpAddressesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string UnassignPrivateIpAddressesRequest::getSecurityToken()const
 {
 	return securityToken_;

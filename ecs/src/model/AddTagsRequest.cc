@@ -25,6 +25,17 @@ AddTagsRequest::AddTagsRequest() :
 AddTagsRequest::~AddTagsRequest()
 {}
 
+std::string AddTagsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void AddTagsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long AddTagsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

@@ -25,6 +25,17 @@ ModifyDiskChargeTypeRequest::ModifyDiskChargeTypeRequest() :
 ModifyDiskChargeTypeRequest::~ModifyDiskChargeTypeRequest()
 {}
 
+std::string ModifyDiskChargeTypeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyDiskChargeTypeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long ModifyDiskChargeTypeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

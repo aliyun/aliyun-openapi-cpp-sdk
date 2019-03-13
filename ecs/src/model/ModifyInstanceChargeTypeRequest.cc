@@ -124,6 +124,17 @@ void ModifyInstanceChargeTypeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyInstanceChargeTypeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyInstanceChargeTypeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyInstanceChargeTypeRequest::getPeriodUnit()const
 {
 	return periodUnit_;

@@ -25,6 +25,17 @@ DescribeClassicLinkInstancesRequest::DescribeClassicLinkInstancesRequest() :
 DescribeClassicLinkInstancesRequest::~DescribeClassicLinkInstancesRequest()
 {}
 
+std::string DescribeClassicLinkInstancesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeClassicLinkInstancesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeClassicLinkInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

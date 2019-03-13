@@ -157,6 +157,17 @@ void RevokeSecurityGroupEgressRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string RevokeSecurityGroupEgressRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void RevokeSecurityGroupEgressRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string RevokeSecurityGroupEgressRequest::getSecurityToken()const
 {
 	return securityToken_;

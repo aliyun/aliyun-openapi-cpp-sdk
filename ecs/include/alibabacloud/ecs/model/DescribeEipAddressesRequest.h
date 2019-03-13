@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getFilter2Value()const;
 				void setFilter2Value(const std::string& filter2Value);
+				std::string getISP()const;
+				void setISP(const std::string& iSP);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getAllocationId()const;
@@ -76,6 +78,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string filter2Value_;
+				std::string iSP_;
 				std::string ownerAccount_;
 				std::string allocationId_;
 				std::string filter1Value_;

@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
+				std::string getISP()const;
+				void setISP(const std::string& iSP);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 				std::string bandwidth_;
 				std::string clientToken_;
 				std::string internetChargeType_;
+				std::string iSP_;
 				std::string ownerAccount_;
 				long ownerId_;
 

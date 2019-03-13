@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					std::string diskName;
 					std::string description;
 					bool deleteWithInstance;
+					std::string device;
 				};
 
 			public:
@@ -85,6 +86,8 @@ namespace AlibabaCloud
 				void setCallerType(const std::string& callerType);
 				std::string getImageOwnerAlias()const;
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getHostName()const;
@@ -147,6 +150,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
+				bool getPasswordInherit()const;
+				void setPasswordInherit(bool passwordInherit);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getRequestContent()const;
@@ -200,6 +205,7 @@ namespace AlibabaCloud
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string imageOwnerAlias_;
+				std::string sourceRegionId_;
 				std::string resourceGroupId_;
 				std::string hostName_;
 				std::string securityToken_;
@@ -231,6 +237,7 @@ namespace AlibabaCloud
 				std::string systemDiskCategory_;
 				std::string accessKeyId_;
 				std::string userData_;
+				bool passwordInherit_;
 				std::string regionId_;
 				std::string requestContent_;
 				std::string instanceType_;

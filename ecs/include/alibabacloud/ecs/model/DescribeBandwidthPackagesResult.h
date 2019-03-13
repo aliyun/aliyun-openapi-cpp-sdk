@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string zoneId;
 					std::string instanceChargeType;
+					std::string iSP;
 					std::string businessStatus;
 					std::string name;
 					std::string internetChargeType;

@@ -66,6 +66,8 @@ void DescribeBandwidthPackagesResult::parse(const std::string &payload)
 			bandwidthPackagesObject.businessStatus = value["BusinessStatus"].asString();
 		if(!value["IpCount"].isNull())
 			bandwidthPackagesObject.ipCount = value["IpCount"].asString();
+		if(!value["ISP"].isNull())
+			bandwidthPackagesObject.iSP = value["ISP"].asString();
 		if(!value["CreationTime"].isNull())
 			bandwidthPackagesObject.creationTime = value["CreationTime"].asString();
 		if(!value["Status"].isNull())

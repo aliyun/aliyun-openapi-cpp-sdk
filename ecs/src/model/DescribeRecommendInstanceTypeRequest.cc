@@ -124,6 +124,17 @@ void DescribeRecommendInstanceTypeRequest::setScene(const std::string& scene)
 	setParameter("Scene", scene);
 }
 
+std::string DescribeRecommendInstanceTypeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeRecommendInstanceTypeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeRecommendInstanceTypeRequest::getRegionId()const
 {
 	return regionId_;
