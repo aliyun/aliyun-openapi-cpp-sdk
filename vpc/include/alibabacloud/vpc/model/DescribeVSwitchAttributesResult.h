@@ -32,6 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VPC_EXPORT DescribeVSwitchAttributesResult : public ServiceResult
 			{
 			public:
+				struct RouteTable
+				{
+					std::string routeTableId;
+					std::string routeTableType;
+				};
 				struct CloudResourceSetType
 				{
 					int resourceCount;
@@ -45,13 +50,16 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				bool getIsDefault()const;
 				std::string getDescription()const;
-				std::string getVpcId()const;
 				std::string getZoneId()const;
+				std::string getResourceGroupId()const;
 				std::string getVSwitchId()const;
 				long getAvailableIpAddressCount()const;
-				std::string getCreationTime()const;
 				std::string getCidrBlock()const;
+				RouteTable getRouteTable()const;
+				std::string getVpcId()const;
+				std::string getCreationTime()const;
 				std::string getVSwitchName()const;
+				std::string getIpv6CidrBlock()const;
 				std::vector<CloudResourceSetType> getCloudResources()const;
 
 			protected:
@@ -60,13 +68,16 @@ namespace AlibabaCloud
 				std::string status_;
 				bool isDefault_;
 				std::string description_;
-				std::string vpcId_;
 				std::string zoneId_;
+				std::string resourceGroupId_;
 				std::string vSwitchId_;
 				long availableIpAddressCount_;
-				std::string creationTime_;
 				std::string cidrBlock_;
+				RouteTable routeTable_;
+				std::string vpcId_;
+				std::string creationTime_;
 				std::string vSwitchName_;
+				std::string ipv6CidrBlock_;
 				std::vector<CloudResourceSetType> cloudResources_;
 
 			};

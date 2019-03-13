@@ -91,6 +91,17 @@ void DescribeRouteTableListRequest::setRouterType(const std::string& routerType)
 	setParameter("RouterType", routerType);
 }
 
+std::string DescribeRouteTableListRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeRouteTableListRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeRouteTableListRequest::getRouteTableName()const
 {
 	return routeTableName_;
@@ -144,6 +155,23 @@ void DescribeRouteTableListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<DescribeRouteTableListRequest::Tag> DescribeRouteTableListRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeRouteTableListRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 
 std::string DescribeRouteTableListRequest::getRouteTableId()const

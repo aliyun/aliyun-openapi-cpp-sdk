@@ -58,6 +58,17 @@ void DeleteVSwitchRequest::setResourceOwnerAccount(const std::string& resourceOw
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string DeleteVSwitchRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteVSwitchRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DeleteVSwitchRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

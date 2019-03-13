@@ -72,6 +72,16 @@ void DescribeGlobalAccelerationInstancesResult::parse(const std::string &payload
 			globalAccelerationInstancesObject.expiredTime = value["ExpiredTime"].asString();
 		if(!value["CreationTime"].isNull())
 			globalAccelerationInstancesObject.creationTime = value["CreationTime"].asString();
+		if(!value["HasReservationData"].isNull())
+			globalAccelerationInstancesObject.hasReservationData = value["HasReservationData"].asString();
+		if(!value["ReservationBandwidth"].isNull())
+			globalAccelerationInstancesObject.reservationBandwidth = value["ReservationBandwidth"].asString();
+		if(!value["ReservationInternetChargeType"].isNull())
+			globalAccelerationInstancesObject.reservationInternetChargeType = value["ReservationInternetChargeType"].asString();
+		if(!value["ReservationActiveTime"].isNull())
+			globalAccelerationInstancesObject.reservationActiveTime = value["ReservationActiveTime"].asString();
+		if(!value["ReservationOrderType"].isNull())
+			globalAccelerationInstancesObject.reservationOrderType = value["ReservationOrderType"].asString();
 		auto allOperationLocks = value["OperationLocks"]["LockReason"];
 		for (auto value : allOperationLocks)
 		{

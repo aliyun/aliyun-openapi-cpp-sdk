@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string sourceVSwitchId;
+					std::string snatEntryName;
 					std::string sourceCIDR;
 					std::string snatEntryId;
 					std::string snatIp;

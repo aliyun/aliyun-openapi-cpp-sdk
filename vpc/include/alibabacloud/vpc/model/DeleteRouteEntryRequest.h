@@ -32,8 +32,8 @@ namespace AlibabaCloud
 			{
 				struct NextHopList
 				{
-					std::string nextHopType;
 					std::string nextHopId;
+					std::string nextHopType;
 				};
 
 			public:
@@ -46,6 +46,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getRouteEntryId()const;
+				void setRouteEntryId(const std::string& routeEntryId);
 				std::string getDestinationCidrBlock()const;
 				void setDestinationCidrBlock(const std::string& destinationCidrBlock);
 				std::string getOwnerAccount()const;
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
+				std::string routeEntryId_;
 				std::string destinationCidrBlock_;
 				std::string ownerAccount_;
 				std::string nextHopId_;

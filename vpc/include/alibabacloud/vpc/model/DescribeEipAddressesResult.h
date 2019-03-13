@@ -38,26 +38,41 @@ namespace AlibabaCloud
 					{
 						std::string lockReason;
 					};
-					std::string status;
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
+					std::string hDMonitorStatus;
+					std::string privateIpAddress;
 					std::vector<std::string> availableRegions;
 					std::string resourceGroupId;
-					std::string instanceId;
 					std::string allocationId;
-					std::string bandwidthPackageType;
-					std::vector<EipAddress::LockReason> operationLocks;
-					std::string internetChargeType;
 					std::string name;
-					std::string allocationTime;
-					std::string descritpion;
-					std::string eipBandwidth;
+					std::string reservationOrderType;
 					std::string instanceRegionId;
-					std::string chargeType;
 					std::string bandwidth;
 					std::string expiredTime;
 					std::string bandwidthPackageId;
+					std::string instanceType;
+					std::string reservationActiveTime;
+					std::string reservationBandwidth;
+					std::vector<EipAddress::Tag> tags;
+					std::string status;
+					std::string instanceId;
+					std::string iSP;
+					std::string mode;
+					std::string hasReservationData;
+					std::string bandwidthPackageType;
+					std::vector<EipAddress::LockReason> operationLocks;
+					std::string internetChargeType;
+					std::string reservationInternetChargeType;
+					std::string allocationTime;
+					std::string descritpion;
+					std::string eipBandwidth;
+					std::string chargeType;
 					std::string ipAddress;
 					std::string regionId;
-					std::string instanceType;
 				};
 
 

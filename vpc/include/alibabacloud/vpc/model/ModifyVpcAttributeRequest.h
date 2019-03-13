@@ -41,10 +41,16 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getCidrBlock()const;
+				void setCidrBlock(const std::string& cidrBlock);
+				bool getEnableIPv6()const;
+				void setEnableIPv6(bool enableIPv6);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				long getOwnerId()const;
@@ -54,8 +60,11 @@ namespace AlibabaCloud
 				std::string vpcName_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
+				std::string regionId_;
 				std::string vpcId_;
 				std::string ownerAccount_;
+				std::string cidrBlock_;
+				bool enableIPv6_;
 				std::string description_;
 				long ownerId_;
 

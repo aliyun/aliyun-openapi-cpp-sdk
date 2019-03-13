@@ -55,22 +55,22 @@ namespace AlibabaCloud
 					};
 					std::string localSubnet;
 					std::string remoteSubnet;
-					std::vector<IpsecConfig> ipsecConfig;
+					IpsecConfig ipsecConfig;
 					std::string local;
 					std::string remote;
-					std::vector<IkeConfig> ikeConfig;
+					IkeConfig ikeConfig;
 				};
 
 
 				DownloadVpnConnectionConfigResult();
 				explicit DownloadVpnConnectionConfigResult(const std::string &payload);
 				~DownloadVpnConnectionConfigResult();
-				std::vector<VpnConnectionConfig> getVpnConnectionConfig()const;
+				VpnConnectionConfig getVpnConnectionConfig()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<VpnConnectionConfig> vpnConnectionConfig_;
+				VpnConnectionConfig vpnConnectionConfig_;
 
 			};
 		}

@@ -58,6 +58,17 @@ void ModifyForwardEntryRequest::setIpProtocol(const std::string& ipProtocol)
 	setParameter("IpProtocol", ipProtocol);
 }
 
+std::string ModifyForwardEntryRequest::getForwardEntryName()const
+{
+	return forwardEntryName_;
+}
+
+void ModifyForwardEntryRequest::setForwardEntryName(const std::string& forwardEntryName)
+{
+	forwardEntryName_ = forwardEntryName;
+	setParameter("ForwardEntryName", forwardEntryName);
+}
+
 std::string ModifyForwardEntryRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

@@ -58,6 +58,17 @@ void DescribeVpnConnectionsRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string DescribeVpnConnectionsRequest::getVpnConnectionId()const
+{
+	return vpnConnectionId_;
+}
+
+void DescribeVpnConnectionsRequest::setVpnConnectionId(const std::string& vpnConnectionId)
+{
+	vpnConnectionId_ = vpnConnectionId;
+	setParameter("VpnConnectionId", vpnConnectionId);
+}
+
 std::string DescribeVpnConnectionsRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

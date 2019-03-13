@@ -62,10 +62,10 @@ namespace AlibabaCloud
 				std::string getRemoteSubnet()const;
 				std::string getCustomerGatewayId()const;
 				std::string getVpnGatewayId()const;
-				std::vector<IpsecConfig> getIpsecConfig()const;
+				IpsecConfig getIpsecConfig()const;
 				long getCreateTime()const;
 				std::string getVpnConnectionId()const;
-				std::vector<IkeConfig> getIkeConfig()const;
+				IkeConfig getIkeConfig()const;
 				std::string getName()const;
 
 			protected:
@@ -77,10 +77,10 @@ namespace AlibabaCloud
 				std::string remoteSubnet_;
 				std::string customerGatewayId_;
 				std::string vpnGatewayId_;
-				std::vector<IpsecConfig> ipsecConfig_;
+				IpsecConfig ipsecConfig_;
 				long createTime_;
 				std::string vpnConnectionId_;
-				std::vector<IkeConfig> ikeConfig_;
+				IkeConfig ikeConfig_;
 				std::string name_;
 
 			};

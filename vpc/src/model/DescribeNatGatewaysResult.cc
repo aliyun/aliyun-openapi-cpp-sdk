@@ -58,6 +58,10 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 			natGatewaysObject.spec = value["Spec"].asString();
 		if(!value["InstanceChargeType"].isNull())
 			natGatewaysObject.instanceChargeType = value["InstanceChargeType"].asString();
+		if(!value["ExpiredTime"].isNull())
+			natGatewaysObject.expiredTime = value["ExpiredTime"].asString();
+		if(!value["AutoPay"].isNull())
+			natGatewaysObject.autoPay = value["AutoPay"].asString() == "true";
 		if(!value["BusinessStatus"].isNull())
 			natGatewaysObject.businessStatus = value["BusinessStatus"].asString();
 		if(!value["CreationTime"].isNull())

@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string forwardEntryId;
 					std::string ipProtocol;
 					std::string internalPort;
+					std::string forwardEntryName;
 					std::string internalIp;
 					std::string forwardTableId;
 				};

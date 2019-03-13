@@ -52,6 +52,8 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 			vSwitchesObject.status = value["Status"].asString();
 		if(!value["CidrBlock"].isNull())
 			vSwitchesObject.cidrBlock = value["CidrBlock"].asString();
+		if(!value["Ipv6CidrBlock"].isNull())
+			vSwitchesObject.ipv6CidrBlock = value["Ipv6CidrBlock"].asString();
 		if(!value["ZoneId"].isNull())
 			vSwitchesObject.zoneId = value["ZoneId"].asString();
 		if(!value["AvailableIpAddressCount"].isNull())
@@ -64,6 +66,23 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 			vSwitchesObject.creationTime = value["CreationTime"].asString();
 		if(!value["IsDefault"].isNull())
 			vSwitchesObject.isDefault = value["IsDefault"].asString() == "true";
+		if(!value["ResourceGroupId"].isNull())
+			vSwitchesObject.resourceGroupId = value["ResourceGroupId"].asString();
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+		{
+			VSwitch::Tag tagsObject;
+			if(!value["Key"].isNull())
+				tagsObject.key = value["Key"].asString();
+			if(!value["Value"].isNull())
+				tagsObject.value = value["Value"].asString();
+			vSwitchesObject.tags.push_back(tagsObject);
+		}
+		auto routeTableNode = value["RouteTable"];
+		if(!routeTableNode["RouteTableId"].isNull())
+			vSwitchesObject.routeTable.routeTableId = routeTableNode["RouteTableId"].asString();
+		if(!routeTableNode["RouteTableType"].isNull())
+			vSwitchesObject.routeTable.routeTableType = routeTableNode["RouteTableType"].asString();
 		vSwitches_.push_back(vSwitchesObject);
 	}
 	if(!value["TotalCount"].isNull())

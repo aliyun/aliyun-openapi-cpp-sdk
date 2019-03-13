@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT DescribeEipAddressesRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeEipAddressesRequest();
@@ -41,6 +46,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getFilter2Value()const;
 				void setFilter2Value(const std::string& filter2Value);
+				std::string getISP()const;
+				void setISP(const std::string& iSP);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getAllocationId()const;
@@ -51,6 +58,8 @@ namespace AlibabaCloud
 				void setFilter2Key(const std::string& filter2Key);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				bool getIncludeReservationData()const;
+				void setIncludeReservationData(bool includeReservationData);
 				std::string getEipAddress()const;
 				void setEipAddress(const std::string& eipAddress);
 				int getPageNumber()const;
@@ -67,6 +76,8 @@ namespace AlibabaCloud
 				void setAssociatedInstanceType(const std::string& associatedInstanceType);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getChargeType()const;
 				void setChargeType(const std::string& chargeType);
 				std::string getAssociatedInstanceId()const;
@@ -78,11 +89,13 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string filter2Value_;
+				std::string iSP_;
 				std::string ownerAccount_;
 				std::string allocationId_;
 				std::string filter1Value_;
 				std::string filter2Key_;
 				long ownerId_;
+				bool includeReservationData_;
 				std::string eipAddress_;
 				int pageNumber_;
 				std::string resourceGroupId_;
@@ -91,6 +104,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string associatedInstanceType_;
 				int pageSize_;
+				std::vector<Tag> tag_;
 				std::string chargeType_;
 				std::string associatedInstanceId_;
 				std::string status_;

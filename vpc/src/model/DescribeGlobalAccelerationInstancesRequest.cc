@@ -102,6 +102,17 @@ void DescribeGlobalAccelerationInstancesRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+bool DescribeGlobalAccelerationInstancesRequest::getIncludeReservationData()const
+{
+	return includeReservationData_;
+}
+
+void DescribeGlobalAccelerationInstancesRequest::setIncludeReservationData(bool includeReservationData)
+{
+	includeReservationData_ = includeReservationData;
+	setParameter("IncludeReservationData", std::to_string(includeReservationData));
+}
+
 std::string DescribeGlobalAccelerationInstancesRequest::getGlobalAccelerationInstanceId()const
 {
 	return globalAccelerationInstanceId_;

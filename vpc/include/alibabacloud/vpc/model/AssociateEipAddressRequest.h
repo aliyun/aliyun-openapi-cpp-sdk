@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				AssociateEipAddressRequest();
 				~AssociateEipAddressRequest();
 
+				std::string getPrivateIpAddress()const;
+				void setPrivateIpAddress(const std::string& privateIpAddress);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string privateIpAddress_;
 				long resourceOwnerId_;
 				std::string instanceId_;
 				std::string resourceOwnerAccount_;

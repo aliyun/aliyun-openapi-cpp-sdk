@@ -32,8 +32,8 @@ namespace AlibabaCloud
 			{
 				struct Filter
 				{
-					std::string key;
 					std::vector<std::string> value;
+					std::string key;
 				};
 
 			public:
@@ -52,6 +52,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				bool getIncludeReservationData()const;
+				void setIncludeReservationData(bool includeReservationData);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				int pageSize_;
 				long ownerId_;
+				bool includeReservationData_;
 				int pageNumber_;
 
 			};

@@ -68,6 +68,20 @@ void DescribeCommonBandwidthPackagesResult::parse(const std::string &payload)
 			commonBandwidthPackagesObject.status = value["Status"].asString();
 		if(!value["Ratio"].isNull())
 			commonBandwidthPackagesObject.ratio = std::stoi(value["Ratio"].asString());
+		if(!value["ResourceGroupId"].isNull())
+			commonBandwidthPackagesObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["HasReservationData"].isNull())
+			commonBandwidthPackagesObject.hasReservationData = value["HasReservationData"].asString();
+		if(!value["ReservationBandwidth"].isNull())
+			commonBandwidthPackagesObject.reservationBandwidth = value["ReservationBandwidth"].asString();
+		if(!value["ReservationInternetChargeType"].isNull())
+			commonBandwidthPackagesObject.reservationInternetChargeType = value["ReservationInternetChargeType"].asString();
+		if(!value["ReservationActiveTime"].isNull())
+			commonBandwidthPackagesObject.reservationActiveTime = value["ReservationActiveTime"].asString();
+		if(!value["ReservationOrderType"].isNull())
+			commonBandwidthPackagesObject.reservationOrderType = value["ReservationOrderType"].asString();
+		if(!value["ISP"].isNull())
+			commonBandwidthPackagesObject.iSP = value["ISP"].asString();
 		auto allPublicIpAddresses = value["PublicIpAddresses"]["PublicIpAddresse"];
 		for (auto value : allPublicIpAddresses)
 		{

@@ -113,6 +113,17 @@ void DescribeSslVpnClientCertsRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeSslVpnClientCertsRequest::getSslVpnClientCertId()const
+{
+	return sslVpnClientCertId_;
+}
+
+void DescribeSslVpnClientCertsRequest::setSslVpnClientCertId(const std::string& sslVpnClientCertId)
+{
+	sslVpnClientCertId_ = sslVpnClientCertId;
+	setParameter("SslVpnClientCertId", sslVpnClientCertId);
+}
+
 int DescribeSslVpnClientCertsRequest::getPageNumber()const
 {
 	return pageNumber_;

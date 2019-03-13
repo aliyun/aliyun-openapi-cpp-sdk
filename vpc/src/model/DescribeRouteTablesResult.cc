@@ -52,6 +52,8 @@ void DescribeRouteTablesResult::parse(const std::string &payload)
 			routeTablesObject.routeTableType = value["RouteTableType"].asString();
 		if(!value["CreationTime"].isNull())
 			routeTablesObject.creationTime = value["CreationTime"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			routeTablesObject.resourceGroupId = value["ResourceGroupId"].asString();
 		auto allRouteEntrys = value["RouteEntrys"]["RouteEntry"];
 		for (auto value : allRouteEntrys)
 		{
@@ -70,6 +72,14 @@ void DescribeRouteTablesResult::parse(const std::string &payload)
 				routeEntrysObject.nextHopType = value["NextHopType"].asString();
 			if(!value["NextHopRegionId"].isNull())
 				routeEntrysObject.nextHopRegionId = value["NextHopRegionId"].asString();
+			if(!value["NextHopOppsiteType"].isNull())
+				routeEntrysObject.nextHopOppsiteType = value["NextHopOppsiteType"].asString();
+			if(!value["NextHopOppsiteInstanceId"].isNull())
+				routeEntrysObject.nextHopOppsiteInstanceId = value["NextHopOppsiteInstanceId"].asString();
+			if(!value["NextHopOppsiteRegionId"].isNull())
+				routeEntrysObject.nextHopOppsiteRegionId = value["NextHopOppsiteRegionId"].asString();
+			if(!value["PrivateIpAddress"].isNull())
+				routeEntrysObject.privateIpAddress = value["PrivateIpAddress"].asString();
 			auto allNextHops = value["NextHops"]["NextHop"];
 			for (auto value : allNextHops)
 			{
@@ -84,10 +94,19 @@ void DescribeRouteTablesResult::parse(const std::string &payload)
 					nextHopsObject.weight = std::stoi(value["Weight"].asString());
 				if(!value["NextHopRegionId"].isNull())
 					nextHopsObject.nextHopRegionId = value["NextHopRegionId"].asString();
+				if(!value["NextHopOppsiteType"].isNull())
+					nextHopsObject.nextHopOppsiteType = value["NextHopOppsiteType"].asString();
+				if(!value["NextHopOppsiteInstanceId"].isNull())
+					nextHopsObject.nextHopOppsiteInstanceId = value["NextHopOppsiteInstanceId"].asString();
+				if(!value["NextHopOppsiteRegionId"].isNull())
+					nextHopsObject.nextHopOppsiteRegionId = value["NextHopOppsiteRegionId"].asString();
 				routeEntrysObject.nextHops.push_back(nextHopsObject);
 			}
 			routeTablesObject.routeEntrys.push_back(routeEntrysObject);
 		}
+		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
+		for (auto value : allVSwitchIds)
+			routeTablesObject.vSwitchIds.push_back(value.asString());
 		routeTables_.push_back(routeTablesObject);
 	}
 	if(!value["TotalCount"].isNull())

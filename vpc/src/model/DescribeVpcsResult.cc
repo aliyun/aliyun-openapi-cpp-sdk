@@ -56,6 +56,8 @@ void DescribeVpcsResult::parse(const std::string &payload)
 			vpcsObject.creationTime = value["CreationTime"].asString();
 		if(!value["CidrBlock"].isNull())
 			vpcsObject.cidrBlock = value["CidrBlock"].asString();
+		if(!value["Ipv6CidrBlock"].isNull())
+			vpcsObject.ipv6CidrBlock = value["Ipv6CidrBlock"].asString();
 		if(!value["VRouterId"].isNull())
 			vpcsObject.vRouterId = value["VRouterId"].asString();
 		if(!value["Description"].isNull())
@@ -64,6 +66,16 @@ void DescribeVpcsResult::parse(const std::string &payload)
 			vpcsObject.isDefault = value["IsDefault"].asString() == "true";
 		if(!value["ResourceGroupId"].isNull())
 			vpcsObject.resourceGroupId = value["ResourceGroupId"].asString();
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+		{
+			Vpc::Tag tagsObject;
+			if(!value["Key"].isNull())
+				tagsObject.key = value["Key"].asString();
+			if(!value["Value"].isNull())
+				tagsObject.value = value["Value"].asString();
+			vpcsObject.tags.push_back(tagsObject);
+		}
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			vpcsObject.vSwitchIds.push_back(value.asString());

@@ -59,10 +59,10 @@ namespace AlibabaCloud
 					std::string remoteSubnet;
 					std::string customerGatewayId;
 					std::string vpnGatewayId;
-					std::vector<IpsecConfig> ipsecConfig;
+					IpsecConfig ipsecConfig;
 					long createTime;
 					std::string vpnConnectionId;
-					std::vector<IkeConfig> ikeConfig;
+					IkeConfig ikeConfig;
 					std::string name;
 				};
 

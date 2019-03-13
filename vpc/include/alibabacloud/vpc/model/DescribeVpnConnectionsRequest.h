@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getVpnConnectionId()const;
+				void setVpnConnectionId(const std::string& vpnConnectionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getPageSize()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
+				std::string vpnConnectionId_;
 				std::string ownerAccount_;
 				int pageSize_;
 				std::string vpnGatewayId_;

@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Vpc
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					bool isDefault;
 					std::string description;
@@ -48,6 +53,8 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string vpcName;
 					std::string regionId;
+					std::string ipv6CidrBlock;
+					std::vector<Vpc::Tag> tags;
 				};
 
 

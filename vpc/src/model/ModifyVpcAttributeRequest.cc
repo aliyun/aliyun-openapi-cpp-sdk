@@ -58,6 +58,17 @@ void ModifyVpcAttributeRequest::setResourceOwnerAccount(const std::string& resou
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string ModifyVpcAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyVpcAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifyVpcAttributeRequest::getVpcId()const
 {
 	return vpcId_;
@@ -78,6 +89,28 @@ void ModifyVpcAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+std::string ModifyVpcAttributeRequest::getCidrBlock()const
+{
+	return cidrBlock_;
+}
+
+void ModifyVpcAttributeRequest::setCidrBlock(const std::string& cidrBlock)
+{
+	cidrBlock_ = cidrBlock;
+	setParameter("CidrBlock", cidrBlock);
+}
+
+bool ModifyVpcAttributeRequest::getEnableIPv6()const
+{
+	return enableIPv6_;
+}
+
+void ModifyVpcAttributeRequest::setEnableIPv6(bool enableIPv6)
+{
+	enableIPv6_ = enableIPv6;
+	setParameter("EnableIPv6", std::to_string(enableIPv6));
 }
 
 std::string ModifyVpcAttributeRequest::getDescription()const

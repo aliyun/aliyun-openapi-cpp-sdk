@@ -50,6 +50,11 @@ void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 			cloudResourcesObject.resourceCount = std::stoi(value["ResourceCount"].asString());
 		cloudResources_.push_back(cloudResourcesObject);
 	}
+	auto routeTableNode = value["RouteTable"];
+	if(!routeTableNode["RouteTableId"].isNull())
+		routeTable_.routeTableId = routeTableNode["RouteTableId"].asString();
+	if(!routeTableNode["RouteTableType"].isNull())
+		routeTable_.routeTableType = routeTableNode["RouteTableType"].asString();
 	if(!value["VSwitchId"].isNull())
 		vSwitchId_ = value["VSwitchId"].asString();
 	if(!value["VpcId"].isNull())
@@ -58,6 +63,8 @@ void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 		status_ = value["Status"].asString();
 	if(!value["CidrBlock"].isNull())
 		cidrBlock_ = value["CidrBlock"].asString();
+	if(!value["Ipv6CidrBlock"].isNull())
+		ipv6CidrBlock_ = value["Ipv6CidrBlock"].asString();
 	if(!value["ZoneId"].isNull())
 		zoneId_ = value["ZoneId"].asString();
 	if(!value["AvailableIpAddressCount"].isNull())
@@ -70,6 +77,8 @@ void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 		creationTime_ = value["CreationTime"].asString();
 	if(!value["IsDefault"].isNull())
 		isDefault_ = value["IsDefault"].asString() == "true";
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -88,14 +97,14 @@ std::string DescribeVSwitchAttributesResult::getDescription()const
 	return description_;
 }
 
-std::string DescribeVSwitchAttributesResult::getVpcId()const
-{
-	return vpcId_;
-}
-
 std::string DescribeVSwitchAttributesResult::getZoneId()const
 {
 	return zoneId_;
+}
+
+std::string DescribeVSwitchAttributesResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string DescribeVSwitchAttributesResult::getVSwitchId()const
@@ -108,19 +117,34 @@ long DescribeVSwitchAttributesResult::getAvailableIpAddressCount()const
 	return availableIpAddressCount_;
 }
 
-std::string DescribeVSwitchAttributesResult::getCreationTime()const
-{
-	return creationTime_;
-}
-
 std::string DescribeVSwitchAttributesResult::getCidrBlock()const
 {
 	return cidrBlock_;
 }
 
+DescribeVSwitchAttributesResult::RouteTable DescribeVSwitchAttributesResult::getRouteTable()const
+{
+	return routeTable_;
+}
+
+std::string DescribeVSwitchAttributesResult::getVpcId()const
+{
+	return vpcId_;
+}
+
+std::string DescribeVSwitchAttributesResult::getCreationTime()const
+{
+	return creationTime_;
+}
+
 std::string DescribeVSwitchAttributesResult::getVSwitchName()const
 {
 	return vSwitchName_;
+}
+
+std::string DescribeVSwitchAttributesResult::getIpv6CidrBlock()const
+{
+	return ipv6CidrBlock_;
 }
 
 std::vector<DescribeVSwitchAttributesResult::CloudResourceSetType> DescribeVSwitchAttributesResult::getCloudResources()const

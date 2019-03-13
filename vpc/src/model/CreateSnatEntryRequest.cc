@@ -80,6 +80,17 @@ void CreateSnatEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string CreateSnatEntryRequest::getSnatEntryName()const
+{
+	return snatEntryName_;
+}
+
+void CreateSnatEntryRequest::setSnatEntryName(const std::string& snatEntryName)
+{
+	snatEntryName_ = snatEntryName;
+	setParameter("SnatEntryName", snatEntryName);
+}
+
 std::string CreateSnatEntryRequest::getSourceCIDR()const
 {
 	return sourceCIDR_;

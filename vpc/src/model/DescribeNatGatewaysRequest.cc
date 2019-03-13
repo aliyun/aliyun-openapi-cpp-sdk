@@ -47,17 +47,6 @@ void DescribeNatGatewaysRequest::setResourceOwnerAccount(const std::string& reso
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeNatGatewaysRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeNatGatewaysRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string DescribeNatGatewaysRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -67,6 +56,50 @@ void DescribeNatGatewaysRequest::setOwnerAccount(const std::string& ownerAccount
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeNatGatewaysRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeNatGatewaysRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeNatGatewaysRequest::getSpec()const
+{
+	return spec_;
+}
+
+void DescribeNatGatewaysRequest::setSpec(const std::string& spec)
+{
+	spec_ = spec;
+	setParameter("Spec", spec);
+}
+
+int DescribeNatGatewaysRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeNatGatewaysRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeNatGatewaysRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeNatGatewaysRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeNatGatewaysRequest::getVpcId()const
@@ -113,25 +146,14 @@ void DescribeNatGatewaysRequest::setNatGatewayId(const std::string& natGatewayId
 	setParameter("NatGatewayId", natGatewayId);
 }
 
-long DescribeNatGatewaysRequest::getOwnerId()const
+std::string DescribeNatGatewaysRequest::getInstanceChargeType()const
 {
-	return ownerId_;
+	return instanceChargeType_;
 }
 
-void DescribeNatGatewaysRequest::setOwnerId(long ownerId)
+void DescribeNatGatewaysRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeNatGatewaysRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeNatGatewaysRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	instanceChargeType_ = instanceChargeType;
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 

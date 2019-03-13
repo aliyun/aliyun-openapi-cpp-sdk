@@ -41,10 +41,15 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string description;
+					std::string resourceGroupId;
 					std::string instanceChargeType;
+					std::string iSP;
+					std::string hasReservationData;
 					std::string businessStatus;
 					std::string name;
 					std::string internetChargeType;
+					std::string reservationInternetChargeType;
+					std::string reservationOrderType;
 					std::string bandwidth;
 					std::string expiredTime;
 					std::string creationTime;
@@ -52,6 +57,8 @@ namespace AlibabaCloud
 					std::string bandwidthPackageId;
 					int ratio;
 					std::string regionId;
+					std::string reservationActiveTime;
+					std::string reservationBandwidth;
 				};
 
 

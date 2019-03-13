@@ -35,41 +35,47 @@ namespace AlibabaCloud
 				CreateVpcRequest();
 				~CreateVpcRequest();
 
-				std::string getVpcName()const;
-				void setVpcName(const std::string& vpcName);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getCidrBlock()const;
-				void setCidrBlock(const std::string& cidrBlock);
+				bool getEnableIpv6()const;
+				void setEnableIpv6(bool enableIpv6);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getUserCidr()const;
-				void setUserCidr(const std::string& userCidr);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getIpv6CidrBlock()const;
+				void setIpv6CidrBlock(const std::string& ipv6CidrBlock);
+				std::string getVpcName()const;
+				void setVpcName(const std::string& vpcName);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getCidrBlock()const;
+				void setCidrBlock(const std::string& cidrBlock);
+				std::string getUserCidr()const;
+				void setUserCidr(const std::string& userCidr);
 
             private:
-				std::string vpcName_;
-				std::string resourceGroupId_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string clientToken_;
 				std::string ownerAccount_;
-				std::string cidrBlock_;
+				bool enableIpv6_;
 				std::string description_;
-				std::string userCidr_;
 				long ownerId_;
+				std::string ipv6CidrBlock_;
+				std::string vpcName_;
+				std::string resourceGroupId_;
+				std::string regionId_;
+				std::string cidrBlock_;
+				std::string userCidr_;
 
 			};
 		}

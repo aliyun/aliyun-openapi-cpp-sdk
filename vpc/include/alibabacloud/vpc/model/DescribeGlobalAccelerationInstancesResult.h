@@ -52,11 +52,14 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string description;
+					std::string hasReservationData;
 					std::string globalAccelerationInstanceId;
 					std::vector<GlobalAccelerationInstance::BackendServer> backendServers;
 					std::vector<GlobalAccelerationInstance::LockReason> operationLocks;
 					std::string internetChargeType;
 					std::string name;
+					std::string reservationInternetChargeType;
+					std::string reservationOrderType;
 					std::string bandwidthType;
 					std::string accelerationLocation;
 					std::string chargeType;
@@ -67,6 +70,8 @@ namespace AlibabaCloud
 					std::vector<GlobalAccelerationInstance::PublicIpAddress> publicIpAddresses;
 					std::string ipAddress;
 					std::string regionId;
+					std::string reservationActiveTime;
+					std::string reservationBandwidth;
 				};
 
 

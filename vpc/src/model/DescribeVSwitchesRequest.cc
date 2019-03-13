@@ -91,6 +91,17 @@ void DescribeVSwitchesRequest::setVSwitchId(const std::string& vSwitchId)
 	setParameter("VSwitchId", vSwitchId);
 }
 
+std::string DescribeVSwitchesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeVSwitchesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeVSwitchesRequest::getRegionId()const
 {
 	return regionId_;
@@ -146,6 +157,23 @@ void DescribeVSwitchesRequest::setZoneId(const std::string& zoneId)
 	setParameter("ZoneId", zoneId);
 }
 
+std::vector<DescribeVSwitchesRequest::Tag> DescribeVSwitchesRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeVSwitchesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
+}
+
 bool DescribeVSwitchesRequest::getIsDefault()const
 {
 	return isDefault_;
@@ -155,5 +183,16 @@ void DescribeVSwitchesRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
 	setParameter("IsDefault", std::to_string(isDefault));
+}
+
+std::string DescribeVSwitchesRequest::getRouteTableId()const
+{
+	return routeTableId_;
+}
+
+void DescribeVSwitchesRequest::setRouteTableId(const std::string& routeTableId)
+{
+	routeTableId_ = routeTableId;
+	setParameter("RouteTableId", routeTableId);
 }
 

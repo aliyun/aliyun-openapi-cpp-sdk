@@ -62,6 +62,7 @@ namespace AlibabaCloud
 				std::string getCreationTime()const;
 				std::string getVpcName()const;
 				std::string getRegionId()const;
+				std::string getIpv6CidrBlock()const;
 				std::vector<CloudResourceSetType> getCloudResources()const;
 
 			protected:
@@ -81,6 +82,7 @@ namespace AlibabaCloud
 				std::string creationTime_;
 				std::string vpcName_;
 				std::string regionId_;
+				std::string ipv6CidrBlock_;
 				std::vector<CloudResourceSetType> cloudResources_;
 
 			};

@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				CreateRouterInterfaceResult();
 				explicit CreateRouterInterfaceResult(const std::string &payload);
 				~CreateRouterInterfaceResult();
+				long getOrderId()const;
 				std::string getRouterInterfaceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long orderId_;
 				std::string routerInterfaceId_;
 
 			};

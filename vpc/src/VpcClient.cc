@@ -51,6 +51,42 @@ VpcClient::VpcClient(const std::string & accessKeyId, const std::string & access
 VpcClient::~VpcClient()
 {}
 
+VpcClient::DeleteCustomerGatewayOutcome VpcClient::deleteCustomerGateway(const DeleteCustomerGatewayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCustomerGatewayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCustomerGatewayOutcome(DeleteCustomerGatewayResult(outcome.result()));
+	else
+		return DeleteCustomerGatewayOutcome(outcome.error());
+}
+
+void VpcClient::deleteCustomerGatewayAsync(const DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCustomerGateway(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeleteCustomerGatewayOutcomeCallable VpcClient::deleteCustomerGatewayCallable(const DeleteCustomerGatewayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCustomerGatewayOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCustomerGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::UnassociateGlobalAccelerationInstanceOutcome VpcClient::unassociateGlobalAccelerationInstance(const UnassociateGlobalAccelerationInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -87,36 +123,36 @@ VpcClient::UnassociateGlobalAccelerationInstanceOutcomeCallable VpcClient::unass
 	return task->get_future();
 }
 
-VpcClient::DeleteCustomerGatewayOutcome VpcClient::deleteCustomerGateway(const DeleteCustomerGatewayRequest &request) const
+VpcClient::DeleteIPv6TranslatorOutcome VpcClient::deleteIPv6Translator(const DeleteIPv6TranslatorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteCustomerGatewayOutcome(endpointOutcome.error());
+		return DeleteIPv6TranslatorOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteCustomerGatewayOutcome(DeleteCustomerGatewayResult(outcome.result()));
+		return DeleteIPv6TranslatorOutcome(DeleteIPv6TranslatorResult(outcome.result()));
 	else
-		return DeleteCustomerGatewayOutcome(outcome.error());
+		return DeleteIPv6TranslatorOutcome(outcome.error());
 }
 
-void VpcClient::deleteCustomerGatewayAsync(const DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VpcClient::deleteIPv6TranslatorAsync(const DeleteIPv6TranslatorRequest& request, const DeleteIPv6TranslatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteCustomerGateway(request), context);
+		handler(this, request, deleteIPv6Translator(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VpcClient::DeleteCustomerGatewayOutcomeCallable VpcClient::deleteCustomerGatewayCallable(const DeleteCustomerGatewayRequest &request) const
+VpcClient::DeleteIPv6TranslatorOutcomeCallable VpcClient::deleteIPv6TranslatorCallable(const DeleteIPv6TranslatorRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteCustomerGatewayOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteIPv6TranslatorOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteCustomerGateway(request);
+			return this->deleteIPv6Translator(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,42 +339,6 @@ VpcClient::DescribeGlobalAccelerationInstancesOutcomeCallable VpcClient::describ
 	return task->get_future();
 }
 
-VpcClient::MoveResourceGroupOutcome VpcClient::moveResourceGroup(const MoveResourceGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return MoveResourceGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return MoveResourceGroupOutcome(MoveResourceGroupResult(outcome.result()));
-	else
-		return MoveResourceGroupOutcome(outcome.error());
-}
-
-void VpcClient::moveResourceGroupAsync(const MoveResourceGroupRequest& request, const MoveResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, moveResourceGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::MoveResourceGroupOutcomeCallable VpcClient::moveResourceGroupCallable(const MoveResourceGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<MoveResourceGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->moveResourceGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VpcClient::ModifySslVpnClientCertOutcome VpcClient::modifySslVpnClientCert(const ModifySslVpnClientCertRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -411,6 +411,42 @@ VpcClient::DeleteVpcOutcomeCallable VpcClient::deleteVpcCallable(const DeleteVpc
 	return task->get_future();
 }
 
+VpcClient::DescribeBgpNetworksOutcome VpcClient::describeBgpNetworks(const DescribeBgpNetworksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBgpNetworksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBgpNetworksOutcome(DescribeBgpNetworksResult(outcome.result()));
+	else
+		return DescribeBgpNetworksOutcome(outcome.error());
+}
+
+void VpcClient::describeBgpNetworksAsync(const DescribeBgpNetworksRequest& request, const DescribeBgpNetworksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBgpNetworks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeBgpNetworksOutcomeCallable VpcClient::describeBgpNetworksCallable(const DescribeBgpNetworksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBgpNetworksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBgpNetworks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DownloadVpnConnectionConfigOutcome VpcClient::downloadVpnConnectionConfig(const DownloadVpnConnectionConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +513,42 @@ VpcClient::RemoveCommonBandwidthPackageIpOutcomeCallable VpcClient::removeCommon
 			[this, request]()
 			{
 			return this->removeCommonBandwidthPackageIp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DescribeIPv6TranslatorsOutcome VpcClient::describeIPv6Translators(const DescribeIPv6TranslatorsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIPv6TranslatorsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIPv6TranslatorsOutcome(DescribeIPv6TranslatorsResult(outcome.result()));
+	else
+		return DescribeIPv6TranslatorsOutcome(outcome.error());
+}
+
+void VpcClient::describeIPv6TranslatorsAsync(const DescribeIPv6TranslatorsRequest& request, const DescribeIPv6TranslatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIPv6Translators(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeIPv6TranslatorsOutcomeCallable VpcClient::describeIPv6TranslatorsCallable(const DescribeIPv6TranslatorsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIPv6TranslatorsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIPv6Translators(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,6 +663,78 @@ VpcClient::DeleteVSwitchOutcomeCallable VpcClient::deleteVSwitchCallable(const D
 	return task->get_future();
 }
 
+VpcClient::AddIPv6TranslatorAclListEntryOutcome VpcClient::addIPv6TranslatorAclListEntry(const AddIPv6TranslatorAclListEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddIPv6TranslatorAclListEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddIPv6TranslatorAclListEntryOutcome(AddIPv6TranslatorAclListEntryResult(outcome.result()));
+	else
+		return AddIPv6TranslatorAclListEntryOutcome(outcome.error());
+}
+
+void VpcClient::addIPv6TranslatorAclListEntryAsync(const AddIPv6TranslatorAclListEntryRequest& request, const AddIPv6TranslatorAclListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addIPv6TranslatorAclListEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::AddIPv6TranslatorAclListEntryOutcomeCallable VpcClient::addIPv6TranslatorAclListEntryCallable(const AddIPv6TranslatorAclListEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddIPv6TranslatorAclListEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->addIPv6TranslatorAclListEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::CreateRouteTableOutcome VpcClient::createRouteTable(const CreateRouteTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRouteTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRouteTableOutcome(CreateRouteTableResult(outcome.result()));
+	else
+		return CreateRouteTableOutcome(outcome.error());
+}
+
+void VpcClient::createRouteTableAsync(const CreateRouteTableRequest& request, const CreateRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRouteTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateRouteTableOutcomeCallable VpcClient::createRouteTableCallable(const CreateRouteTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRouteTableOutcome()>>(
+			[this, request]()
+			{
+			return this->createRouteTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::CreateHaVipOutcome VpcClient::createHaVip(const CreateHaVipRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,6 +765,42 @@ VpcClient::CreateHaVipOutcomeCallable VpcClient::createHaVipCallable(const Creat
 			[this, request]()
 			{
 			return this->createHaVip(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DeleteIpv6GatewayOutcome VpcClient::deleteIpv6Gateway(const DeleteIpv6GatewayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteIpv6GatewayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteIpv6GatewayOutcome(DeleteIpv6GatewayResult(outcome.result()));
+	else
+		return DeleteIpv6GatewayOutcome(outcome.error());
+}
+
+void VpcClient::deleteIpv6GatewayAsync(const DeleteIpv6GatewayRequest& request, const DeleteIpv6GatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteIpv6Gateway(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeleteIpv6GatewayOutcomeCallable VpcClient::deleteIpv6GatewayCallable(const DeleteIpv6GatewayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteIpv6GatewayOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteIpv6Gateway(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -771,42 +951,6 @@ VpcClient::DescribeEipAddressesOutcomeCallable VpcClient::describeEipAddressesCa
 	return task->get_future();
 }
 
-VpcClient::CreateCustomerGatewayOutcome VpcClient::createCustomerGateway(const CreateCustomerGatewayRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateCustomerGatewayOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateCustomerGatewayOutcome(CreateCustomerGatewayResult(outcome.result()));
-	else
-		return CreateCustomerGatewayOutcome(outcome.error());
-}
-
-void VpcClient::createCustomerGatewayAsync(const CreateCustomerGatewayRequest& request, const CreateCustomerGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createCustomerGateway(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::CreateCustomerGatewayOutcomeCallable VpcClient::createCustomerGatewayCallable(const CreateCustomerGatewayRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateCustomerGatewayOutcome()>>(
-			[this, request]()
-			{
-			return this->createCustomerGateway(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VpcClient::ActivateRouterInterfaceOutcome VpcClient::activateRouterInterface(const ActivateRouterInterfaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,6 +981,42 @@ VpcClient::ActivateRouterInterfaceOutcomeCallable VpcClient::activateRouterInter
 			[this, request]()
 			{
 			return this->activateRouterInterface(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::CreateCustomerGatewayOutcome VpcClient::createCustomerGateway(const CreateCustomerGatewayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCustomerGatewayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCustomerGatewayOutcome(CreateCustomerGatewayResult(outcome.result()));
+	else
+		return CreateCustomerGatewayOutcome(outcome.error());
+}
+
+void VpcClient::createCustomerGatewayAsync(const CreateCustomerGatewayRequest& request, const CreateCustomerGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCustomerGateway(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateCustomerGatewayOutcomeCallable VpcClient::createCustomerGatewayCallable(const CreateCustomerGatewayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCustomerGatewayOutcome()>>(
+			[this, request]()
+			{
+			return this->createCustomerGateway(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -951,36 +1131,36 @@ VpcClient::DeleteBgpPeerOutcomeCallable VpcClient::deleteBgpPeerCallable(const D
 	return task->get_future();
 }
 
-VpcClient::DeleteNqaOutcome VpcClient::deleteNqa(const DeleteNqaRequest &request) const
+VpcClient::DescribeIpv6GatewaysOutcome VpcClient::describeIpv6Gateways(const DescribeIpv6GatewaysRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteNqaOutcome(endpointOutcome.error());
+		return DescribeIpv6GatewaysOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteNqaOutcome(DeleteNqaResult(outcome.result()));
+		return DescribeIpv6GatewaysOutcome(DescribeIpv6GatewaysResult(outcome.result()));
 	else
-		return DeleteNqaOutcome(outcome.error());
+		return DescribeIpv6GatewaysOutcome(outcome.error());
 }
 
-void VpcClient::deleteNqaAsync(const DeleteNqaRequest& request, const DeleteNqaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VpcClient::describeIpv6GatewaysAsync(const DescribeIpv6GatewaysRequest& request, const DescribeIpv6GatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteNqa(request), context);
+		handler(this, request, describeIpv6Gateways(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VpcClient::DeleteNqaOutcomeCallable VpcClient::deleteNqaCallable(const DeleteNqaRequest &request) const
+VpcClient::DescribeIpv6GatewaysOutcomeCallable VpcClient::describeIpv6GatewaysCallable(const DescribeIpv6GatewaysRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteNqaOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeIpv6GatewaysOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteNqa(request);
+			return this->describeIpv6Gateways(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,6 +1203,150 @@ VpcClient::TerminateVirtualBorderRouterOutcomeCallable VpcClient::terminateVirtu
 	return task->get_future();
 }
 
+VpcClient::DeleteNqaOutcome VpcClient::deleteNqa(const DeleteNqaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNqaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNqaOutcome(DeleteNqaResult(outcome.result()));
+	else
+		return DeleteNqaOutcome(outcome.error());
+}
+
+void VpcClient::deleteNqaAsync(const DeleteNqaRequest& request, const DeleteNqaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNqa(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeleteNqaOutcomeCallable VpcClient::deleteNqaCallable(const DeleteNqaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNqaOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNqa(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::RemoveIPv6TranslatorAclListEntryOutcome VpcClient::removeIPv6TranslatorAclListEntry(const RemoveIPv6TranslatorAclListEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveIPv6TranslatorAclListEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveIPv6TranslatorAclListEntryOutcome(RemoveIPv6TranslatorAclListEntryResult(outcome.result()));
+	else
+		return RemoveIPv6TranslatorAclListEntryOutcome(outcome.error());
+}
+
+void VpcClient::removeIPv6TranslatorAclListEntryAsync(const RemoveIPv6TranslatorAclListEntryRequest& request, const RemoveIPv6TranslatorAclListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeIPv6TranslatorAclListEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::RemoveIPv6TranslatorAclListEntryOutcomeCallable VpcClient::removeIPv6TranslatorAclListEntryCallable(const RemoveIPv6TranslatorAclListEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveIPv6TranslatorAclListEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->removeIPv6TranslatorAclListEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::ModifyRouteEntryOutcome VpcClient::modifyRouteEntry(const ModifyRouteEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyRouteEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyRouteEntryOutcome(ModifyRouteEntryResult(outcome.result()));
+	else
+		return ModifyRouteEntryOutcome(outcome.error());
+}
+
+void VpcClient::modifyRouteEntryAsync(const ModifyRouteEntryRequest& request, const ModifyRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyRouteEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyRouteEntryOutcomeCallable VpcClient::modifyRouteEntryCallable(const ModifyRouteEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyRouteEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyRouteEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::CreateIpv6EgressOnlyRuleOutcome VpcClient::createIpv6EgressOnlyRule(const CreateIpv6EgressOnlyRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateIpv6EgressOnlyRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateIpv6EgressOnlyRuleOutcome(CreateIpv6EgressOnlyRuleResult(outcome.result()));
+	else
+		return CreateIpv6EgressOnlyRuleOutcome(outcome.error());
+}
+
+void VpcClient::createIpv6EgressOnlyRuleAsync(const CreateIpv6EgressOnlyRuleRequest& request, const CreateIpv6EgressOnlyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createIpv6EgressOnlyRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateIpv6EgressOnlyRuleOutcomeCallable VpcClient::createIpv6EgressOnlyRuleCallable(const CreateIpv6EgressOnlyRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateIpv6EgressOnlyRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->createIpv6EgressOnlyRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::ModifyRouteTableAttributesOutcome VpcClient::modifyRouteTableAttributes(const ModifyRouteTableAttributesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,42 +1377,6 @@ VpcClient::ModifyRouteTableAttributesOutcomeCallable VpcClient::modifyRouteTable
 			[this, request]()
 			{
 			return this->modifyRouteTableAttributes(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VpcClient::DeletePhysicalConnectionOutcome VpcClient::deletePhysicalConnection(const DeletePhysicalConnectionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeletePhysicalConnectionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeletePhysicalConnectionOutcome(DeletePhysicalConnectionResult(outcome.result()));
-	else
-		return DeletePhysicalConnectionOutcome(outcome.error());
-}
-
-void VpcClient::deletePhysicalConnectionAsync(const DeletePhysicalConnectionRequest& request, const DeletePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deletePhysicalConnection(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::DeletePhysicalConnectionOutcomeCallable VpcClient::deletePhysicalConnectionCallable(const DeletePhysicalConnectionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeletePhysicalConnectionOutcome()>>(
-			[this, request]()
-			{
-			return this->deletePhysicalConnection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1131,6 +1419,78 @@ VpcClient::ModifyForwardEntryOutcomeCallable VpcClient::modifyForwardEntryCallab
 	return task->get_future();
 }
 
+VpcClient::DeletePhysicalConnectionOutcome VpcClient::deletePhysicalConnection(const DeletePhysicalConnectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePhysicalConnectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePhysicalConnectionOutcome(DeletePhysicalConnectionResult(outcome.result()));
+	else
+		return DeletePhysicalConnectionOutcome(outcome.error());
+}
+
+void VpcClient::deletePhysicalConnectionAsync(const DeletePhysicalConnectionRequest& request, const DeletePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePhysicalConnection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeletePhysicalConnectionOutcomeCallable VpcClient::deletePhysicalConnectionCallable(const DeletePhysicalConnectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePhysicalConnectionOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePhysicalConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DeleteFlowLogOutcome VpcClient::deleteFlowLog(const DeleteFlowLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFlowLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFlowLogOutcome(DeleteFlowLogResult(outcome.result()));
+	else
+		return DeleteFlowLogOutcome(outcome.error());
+}
+
+void VpcClient::deleteFlowLogAsync(const DeleteFlowLogRequest& request, const DeleteFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFlowLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeleteFlowLogOutcomeCallable VpcClient::deleteFlowLogCallable(const DeleteFlowLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFlowLogOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFlowLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::CreateVpcOutcome VpcClient::createVpc(const CreateVpcRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1167,6 +1527,78 @@ VpcClient::CreateVpcOutcomeCallable VpcClient::createVpcCallable(const CreateVpc
 	return task->get_future();
 }
 
+VpcClient::CreateIPv6TranslatorOutcome VpcClient::createIPv6Translator(const CreateIPv6TranslatorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateIPv6TranslatorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateIPv6TranslatorOutcome(CreateIPv6TranslatorResult(outcome.result()));
+	else
+		return CreateIPv6TranslatorOutcome(outcome.error());
+}
+
+void VpcClient::createIPv6TranslatorAsync(const CreateIPv6TranslatorRequest& request, const CreateIPv6TranslatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createIPv6Translator(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateIPv6TranslatorOutcomeCallable VpcClient::createIPv6TranslatorCallable(const CreateIPv6TranslatorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateIPv6TranslatorOutcome()>>(
+			[this, request]()
+			{
+			return this->createIPv6Translator(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::CreateIPv6TranslatorEntryOutcome VpcClient::createIPv6TranslatorEntry(const CreateIPv6TranslatorEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateIPv6TranslatorEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateIPv6TranslatorEntryOutcome(CreateIPv6TranslatorEntryResult(outcome.result()));
+	else
+		return CreateIPv6TranslatorEntryOutcome(outcome.error());
+}
+
+void VpcClient::createIPv6TranslatorEntryAsync(const CreateIPv6TranslatorEntryRequest& request, const CreateIPv6TranslatorEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createIPv6TranslatorEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateIPv6TranslatorEntryOutcomeCallable VpcClient::createIPv6TranslatorEntryCallable(const CreateIPv6TranslatorEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateIPv6TranslatorEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->createIPv6TranslatorEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DescribeForwardTableEntriesOutcome VpcClient::describeForwardTableEntries(const DescribeForwardTableEntriesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1197,6 +1629,42 @@ VpcClient::DescribeForwardTableEntriesOutcomeCallable VpcClient::describeForward
 			[this, request]()
 			{
 			return this->describeForwardTableEntries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::ModifyIpv6GatewayAttributeOutcome VpcClient::modifyIpv6GatewayAttribute(const ModifyIpv6GatewayAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyIpv6GatewayAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyIpv6GatewayAttributeOutcome(ModifyIpv6GatewayAttributeResult(outcome.result()));
+	else
+		return ModifyIpv6GatewayAttributeOutcome(outcome.error());
+}
+
+void VpcClient::modifyIpv6GatewayAttributeAsync(const ModifyIpv6GatewayAttributeRequest& request, const ModifyIpv6GatewayAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyIpv6GatewayAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyIpv6GatewayAttributeOutcomeCallable VpcClient::modifyIpv6GatewayAttributeCallable(const ModifyIpv6GatewayAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyIpv6GatewayAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyIpv6GatewayAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1455,42 +1923,6 @@ VpcClient::CreateSslVpnServerOutcomeCallable VpcClient::createSslVpnServerCallab
 	return task->get_future();
 }
 
-VpcClient::DescribeBandwidthPackagePublicIpMonitorDataOutcome VpcClient::describeBandwidthPackagePublicIpMonitorData(const DescribeBandwidthPackagePublicIpMonitorDataRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeBandwidthPackagePublicIpMonitorDataOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeBandwidthPackagePublicIpMonitorDataOutcome(DescribeBandwidthPackagePublicIpMonitorDataResult(outcome.result()));
-	else
-		return DescribeBandwidthPackagePublicIpMonitorDataOutcome(outcome.error());
-}
-
-void VpcClient::describeBandwidthPackagePublicIpMonitorDataAsync(const DescribeBandwidthPackagePublicIpMonitorDataRequest& request, const DescribeBandwidthPackagePublicIpMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeBandwidthPackagePublicIpMonitorData(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::DescribeBandwidthPackagePublicIpMonitorDataOutcomeCallable VpcClient::describeBandwidthPackagePublicIpMonitorDataCallable(const DescribeBandwidthPackagePublicIpMonitorDataRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeBandwidthPackagePublicIpMonitorDataOutcome()>>(
-			[this, request]()
-			{
-			return this->describeBandwidthPackagePublicIpMonitorData(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VpcClient::DescribeNqasOutcome VpcClient::describeNqas(const DescribeNqasRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1521,6 +1953,42 @@ VpcClient::DescribeNqasOutcomeCallable VpcClient::describeNqasCallable(const Des
 			[this, request]()
 			{
 			return this->describeNqas(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::ModifyFlowLogAttributeOutcome VpcClient::modifyFlowLogAttribute(const ModifyFlowLogAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyFlowLogAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyFlowLogAttributeOutcome(ModifyFlowLogAttributeResult(outcome.result()));
+	else
+		return ModifyFlowLogAttributeOutcome(outcome.error());
+}
+
+void VpcClient::modifyFlowLogAttributeAsync(const ModifyFlowLogAttributeRequest& request, const ModifyFlowLogAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyFlowLogAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyFlowLogAttributeOutcomeCallable VpcClient::modifyFlowLogAttributeCallable(const ModifyFlowLogAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyFlowLogAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyFlowLogAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1743,6 +2211,42 @@ VpcClient::ModifyVpnGatewayAttributeOutcomeCallable VpcClient::modifyVpnGatewayA
 	return task->get_future();
 }
 
+VpcClient::AllocateIpv6InternetBandwidthOutcome VpcClient::allocateIpv6InternetBandwidth(const AllocateIpv6InternetBandwidthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AllocateIpv6InternetBandwidthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AllocateIpv6InternetBandwidthOutcome(AllocateIpv6InternetBandwidthResult(outcome.result()));
+	else
+		return AllocateIpv6InternetBandwidthOutcome(outcome.error());
+}
+
+void VpcClient::allocateIpv6InternetBandwidthAsync(const AllocateIpv6InternetBandwidthRequest& request, const AllocateIpv6InternetBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, allocateIpv6InternetBandwidth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::AllocateIpv6InternetBandwidthOutcomeCallable VpcClient::allocateIpv6InternetBandwidthCallable(const AllocateIpv6InternetBandwidthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AllocateIpv6InternetBandwidthOutcome()>>(
+			[this, request]()
+			{
+			return this->allocateIpv6InternetBandwidth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::AddBgpNetworkOutcome VpcClient::addBgpNetwork(const AddBgpNetworkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1815,6 +2319,42 @@ VpcClient::ModifySslVpnServerOutcomeCallable VpcClient::modifySslVpnServerCallab
 	return task->get_future();
 }
 
+VpcClient::DescribeIPv6TranslatorEntriesOutcome VpcClient::describeIPv6TranslatorEntries(const DescribeIPv6TranslatorEntriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIPv6TranslatorEntriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIPv6TranslatorEntriesOutcome(DescribeIPv6TranslatorEntriesResult(outcome.result()));
+	else
+		return DescribeIPv6TranslatorEntriesOutcome(outcome.error());
+}
+
+void VpcClient::describeIPv6TranslatorEntriesAsync(const DescribeIPv6TranslatorEntriesRequest& request, const DescribeIPv6TranslatorEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIPv6TranslatorEntries(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeIPv6TranslatorEntriesOutcomeCallable VpcClient::describeIPv6TranslatorEntriesCallable(const DescribeIPv6TranslatorEntriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIPv6TranslatorEntriesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIPv6TranslatorEntries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DescribeVpnConnectionsOutcome VpcClient::describeVpnConnections(const DescribeVpnConnectionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1845,42 +2385,6 @@ VpcClient::DescribeVpnConnectionsOutcomeCallable VpcClient::describeVpnConnectio
 			[this, request]()
 			{
 			return this->describeVpnConnections(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VpcClient::DescribeNewProjectEipMonitorDataOutcome VpcClient::describeNewProjectEipMonitorData(const DescribeNewProjectEipMonitorDataRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeNewProjectEipMonitorDataOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeNewProjectEipMonitorDataOutcome(DescribeNewProjectEipMonitorDataResult(outcome.result()));
-	else
-		return DescribeNewProjectEipMonitorDataOutcome(outcome.error());
-}
-
-void VpcClient::describeNewProjectEipMonitorDataAsync(const DescribeNewProjectEipMonitorDataRequest& request, const DescribeNewProjectEipMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeNewProjectEipMonitorData(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::DescribeNewProjectEipMonitorDataOutcomeCallable VpcClient::describeNewProjectEipMonitorDataCallable(const DescribeNewProjectEipMonitorDataRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeNewProjectEipMonitorDataOutcome()>>(
-			[this, request]()
-			{
-			return this->describeNewProjectEipMonitorData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1995,6 +2499,42 @@ VpcClient::DescribeBgpPeersOutcomeCallable VpcClient::describeBgpPeersCallable(c
 	return task->get_future();
 }
 
+VpcClient::DescribeIpv6GatewayAttributeOutcome VpcClient::describeIpv6GatewayAttribute(const DescribeIpv6GatewayAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIpv6GatewayAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIpv6GatewayAttributeOutcome(DescribeIpv6GatewayAttributeResult(outcome.result()));
+	else
+		return DescribeIpv6GatewayAttributeOutcome(outcome.error());
+}
+
+void VpcClient::describeIpv6GatewayAttributeAsync(const DescribeIpv6GatewayAttributeRequest& request, const DescribeIpv6GatewayAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIpv6GatewayAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeIpv6GatewayAttributeOutcomeCallable VpcClient::describeIpv6GatewayAttributeCallable(const DescribeIpv6GatewayAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIpv6GatewayAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIpv6GatewayAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DeleteSnatEntryOutcome VpcClient::deleteSnatEntry(const DeleteSnatEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2025,42 +2565,6 @@ VpcClient::DeleteSnatEntryOutcomeCallable VpcClient::deleteSnatEntryCallable(con
 			[this, request]()
 			{
 			return this->deleteSnatEntry(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VpcClient::DescribeHaVipsOutcome VpcClient::describeHaVips(const DescribeHaVipsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeHaVipsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeHaVipsOutcome(DescribeHaVipsResult(outcome.result()));
-	else
-		return DescribeHaVipsOutcome(outcome.error());
-}
-
-void VpcClient::describeHaVipsAsync(const DescribeHaVipsRequest& request, const DescribeHaVipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeHaVips(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::DescribeHaVipsOutcomeCallable VpcClient::describeHaVipsCallable(const DescribeHaVipsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeHaVipsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeHaVips(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2103,36 +2607,144 @@ VpcClient::CreateNqaOutcomeCallable VpcClient::createNqaCallable(const CreateNqa
 	return task->get_future();
 }
 
-VpcClient::DescribeForwardTablesOutcome VpcClient::describeForwardTables(const DescribeForwardTablesRequest &request) const
+VpcClient::ConvertBandwidthPackageOutcome VpcClient::convertBandwidthPackage(const ConvertBandwidthPackageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeForwardTablesOutcome(endpointOutcome.error());
+		return ConvertBandwidthPackageOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeForwardTablesOutcome(DescribeForwardTablesResult(outcome.result()));
+		return ConvertBandwidthPackageOutcome(ConvertBandwidthPackageResult(outcome.result()));
 	else
-		return DescribeForwardTablesOutcome(outcome.error());
+		return ConvertBandwidthPackageOutcome(outcome.error());
 }
 
-void VpcClient::describeForwardTablesAsync(const DescribeForwardTablesRequest& request, const DescribeForwardTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VpcClient::convertBandwidthPackageAsync(const ConvertBandwidthPackageRequest& request, const ConvertBandwidthPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeForwardTables(request), context);
+		handler(this, request, convertBandwidthPackage(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VpcClient::DescribeForwardTablesOutcomeCallable VpcClient::describeForwardTablesCallable(const DescribeForwardTablesRequest &request) const
+VpcClient::ConvertBandwidthPackageOutcomeCallable VpcClient::convertBandwidthPackageCallable(const ConvertBandwidthPackageRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeForwardTablesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ConvertBandwidthPackageOutcome()>>(
 			[this, request]()
 			{
-			return this->describeForwardTables(request);
+			return this->convertBandwidthPackage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DescribeHaVipsOutcome VpcClient::describeHaVips(const DescribeHaVipsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHaVipsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHaVipsOutcome(DescribeHaVipsResult(outcome.result()));
+	else
+		return DescribeHaVipsOutcome(outcome.error());
+}
+
+void VpcClient::describeHaVipsAsync(const DescribeHaVipsRequest& request, const DescribeHaVipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHaVips(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeHaVipsOutcomeCallable VpcClient::describeHaVipsCallable(const DescribeHaVipsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHaVipsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHaVips(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::ModifyIpv6GatewaySpecOutcome VpcClient::modifyIpv6GatewaySpec(const ModifyIpv6GatewaySpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyIpv6GatewaySpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyIpv6GatewaySpecOutcome(ModifyIpv6GatewaySpecResult(outcome.result()));
+	else
+		return ModifyIpv6GatewaySpecOutcome(outcome.error());
+}
+
+void VpcClient::modifyIpv6GatewaySpecAsync(const ModifyIpv6GatewaySpecRequest& request, const ModifyIpv6GatewaySpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyIpv6GatewaySpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyIpv6GatewaySpecOutcomeCallable VpcClient::modifyIpv6GatewaySpecCallable(const ModifyIpv6GatewaySpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyIpv6GatewaySpecOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyIpv6GatewaySpec(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::GrantInstanceToCenOutcome VpcClient::grantInstanceToCen(const GrantInstanceToCenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GrantInstanceToCenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GrantInstanceToCenOutcome(GrantInstanceToCenResult(outcome.result()));
+	else
+		return GrantInstanceToCenOutcome(outcome.error());
+}
+
+void VpcClient::grantInstanceToCenAsync(const GrantInstanceToCenRequest& request, const GrantInstanceToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, grantInstanceToCen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::GrantInstanceToCenOutcomeCallable VpcClient::grantInstanceToCenCallable(const GrantInstanceToCenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GrantInstanceToCenOutcome()>>(
+			[this, request]()
+			{
+			return this->grantInstanceToCen(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2169,42 +2781,6 @@ VpcClient::AddBandwidthPackageIpsOutcomeCallable VpcClient::addBandwidthPackageI
 			[this, request]()
 			{
 			return this->addBandwidthPackageIps(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VpcClient::ModifyPhysicalConnectionAttributeOutcome VpcClient::modifyPhysicalConnectionAttribute(const ModifyPhysicalConnectionAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyPhysicalConnectionAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyPhysicalConnectionAttributeOutcome(ModifyPhysicalConnectionAttributeResult(outcome.result()));
-	else
-		return ModifyPhysicalConnectionAttributeOutcome(outcome.error());
-}
-
-void VpcClient::modifyPhysicalConnectionAttributeAsync(const ModifyPhysicalConnectionAttributeRequest& request, const ModifyPhysicalConnectionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyPhysicalConnectionAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::ModifyPhysicalConnectionAttributeOutcomeCallable VpcClient::modifyPhysicalConnectionAttributeCallable(const ModifyPhysicalConnectionAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyPhysicalConnectionAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyPhysicalConnectionAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2283,36 +2859,36 @@ VpcClient::DeleteCommonBandwidthPackageOutcomeCallable VpcClient::deleteCommonBa
 	return task->get_future();
 }
 
-VpcClient::ModifyVSwitchAttributeOutcome VpcClient::modifyVSwitchAttribute(const ModifyVSwitchAttributeRequest &request) const
+VpcClient::ModifyPhysicalConnectionAttributeOutcome VpcClient::modifyPhysicalConnectionAttribute(const ModifyPhysicalConnectionAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyVSwitchAttributeOutcome(endpointOutcome.error());
+		return ModifyPhysicalConnectionAttributeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyVSwitchAttributeOutcome(ModifyVSwitchAttributeResult(outcome.result()));
+		return ModifyPhysicalConnectionAttributeOutcome(ModifyPhysicalConnectionAttributeResult(outcome.result()));
 	else
-		return ModifyVSwitchAttributeOutcome(outcome.error());
+		return ModifyPhysicalConnectionAttributeOutcome(outcome.error());
 }
 
-void VpcClient::modifyVSwitchAttributeAsync(const ModifyVSwitchAttributeRequest& request, const ModifyVSwitchAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VpcClient::modifyPhysicalConnectionAttributeAsync(const ModifyPhysicalConnectionAttributeRequest& request, const ModifyPhysicalConnectionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyVSwitchAttribute(request), context);
+		handler(this, request, modifyPhysicalConnectionAttribute(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VpcClient::ModifyVSwitchAttributeOutcomeCallable VpcClient::modifyVSwitchAttributeCallable(const ModifyVSwitchAttributeRequest &request) const
+VpcClient::ModifyPhysicalConnectionAttributeOutcomeCallable VpcClient::modifyPhysicalConnectionAttributeCallable(const ModifyPhysicalConnectionAttributeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyVSwitchAttributeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyPhysicalConnectionAttributeOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyVSwitchAttribute(request);
+			return this->modifyPhysicalConnectionAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2349,6 +2925,78 @@ VpcClient::DescribeNatGatewaysOutcomeCallable VpcClient::describeNatGatewaysCall
 			[this, request]()
 			{
 			return this->describeNatGateways(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::ModifyVSwitchAttributeOutcome VpcClient::modifyVSwitchAttribute(const ModifyVSwitchAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyVSwitchAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyVSwitchAttributeOutcome(ModifyVSwitchAttributeResult(outcome.result()));
+	else
+		return ModifyVSwitchAttributeOutcome(outcome.error());
+}
+
+void VpcClient::modifyVSwitchAttributeAsync(const ModifyVSwitchAttributeRequest& request, const ModifyVSwitchAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyVSwitchAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyVSwitchAttributeOutcomeCallable VpcClient::modifyVSwitchAttributeCallable(const ModifyVSwitchAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyVSwitchAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyVSwitchAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::ModifyIPv6TranslatorAclListEntryOutcome VpcClient::modifyIPv6TranslatorAclListEntry(const ModifyIPv6TranslatorAclListEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyIPv6TranslatorAclListEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyIPv6TranslatorAclListEntryOutcome(ModifyIPv6TranslatorAclListEntryResult(outcome.result()));
+	else
+		return ModifyIPv6TranslatorAclListEntryOutcome(outcome.error());
+}
+
+void VpcClient::modifyIPv6TranslatorAclListEntryAsync(const ModifyIPv6TranslatorAclListEntryRequest& request, const ModifyIPv6TranslatorAclListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyIPv6TranslatorAclListEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyIPv6TranslatorAclListEntryOutcomeCallable VpcClient::modifyIPv6TranslatorAclListEntryCallable(const ModifyIPv6TranslatorAclListEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyIPv6TranslatorAclListEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyIPv6TranslatorAclListEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2463,6 +3111,42 @@ VpcClient::DescribeVpcAttributeOutcomeCallable VpcClient::describeVpcAttributeCa
 	return task->get_future();
 }
 
+VpcClient::ModifyIpv6AddressAttributeOutcome VpcClient::modifyIpv6AddressAttribute(const ModifyIpv6AddressAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyIpv6AddressAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyIpv6AddressAttributeOutcome(ModifyIpv6AddressAttributeResult(outcome.result()));
+	else
+		return ModifyIpv6AddressAttributeOutcome(outcome.error());
+}
+
+void VpcClient::modifyIpv6AddressAttributeAsync(const ModifyIpv6AddressAttributeRequest& request, const ModifyIpv6AddressAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyIpv6AddressAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyIpv6AddressAttributeOutcomeCallable VpcClient::modifyIpv6AddressAttributeCallable(const ModifyIpv6AddressAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyIpv6AddressAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyIpv6AddressAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::CreateVpnConnectionOutcome VpcClient::createVpnConnection(const CreateVpnConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2499,6 +3183,78 @@ VpcClient::CreateVpnConnectionOutcomeCallable VpcClient::createVpnConnectionCall
 	return task->get_future();
 }
 
+VpcClient::ModifyIPv6TranslatorBandwidthOutcome VpcClient::modifyIPv6TranslatorBandwidth(const ModifyIPv6TranslatorBandwidthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyIPv6TranslatorBandwidthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyIPv6TranslatorBandwidthOutcome(ModifyIPv6TranslatorBandwidthResult(outcome.result()));
+	else
+		return ModifyIPv6TranslatorBandwidthOutcome(outcome.error());
+}
+
+void VpcClient::modifyIPv6TranslatorBandwidthAsync(const ModifyIPv6TranslatorBandwidthRequest& request, const ModifyIPv6TranslatorBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyIPv6TranslatorBandwidth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyIPv6TranslatorBandwidthOutcomeCallable VpcClient::modifyIPv6TranslatorBandwidthCallable(const ModifyIPv6TranslatorBandwidthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyIPv6TranslatorBandwidthOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyIPv6TranslatorBandwidth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::ModifyIPv6TranslatorAttributeOutcome VpcClient::modifyIPv6TranslatorAttribute(const ModifyIPv6TranslatorAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyIPv6TranslatorAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyIPv6TranslatorAttributeOutcome(ModifyIPv6TranslatorAttributeResult(outcome.result()));
+	else
+		return ModifyIPv6TranslatorAttributeOutcome(outcome.error());
+}
+
+void VpcClient::modifyIPv6TranslatorAttributeAsync(const ModifyIPv6TranslatorAttributeRequest& request, const ModifyIPv6TranslatorAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyIPv6TranslatorAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyIPv6TranslatorAttributeOutcomeCallable VpcClient::modifyIPv6TranslatorAttributeCallable(const ModifyIPv6TranslatorAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyIPv6TranslatorAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyIPv6TranslatorAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DeleteVpnConnectionOutcome VpcClient::deleteVpnConnection(const DeleteVpnConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2529,6 +3285,78 @@ VpcClient::DeleteVpnConnectionOutcomeCallable VpcClient::deleteVpnConnectionCall
 			[this, request]()
 			{
 			return this->deleteVpnConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::CreateIpv6GatewayOutcome VpcClient::createIpv6Gateway(const CreateIpv6GatewayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateIpv6GatewayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateIpv6GatewayOutcome(CreateIpv6GatewayResult(outcome.result()));
+	else
+		return CreateIpv6GatewayOutcome(outcome.error());
+}
+
+void VpcClient::createIpv6GatewayAsync(const CreateIpv6GatewayRequest& request, const CreateIpv6GatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createIpv6Gateway(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateIpv6GatewayOutcomeCallable VpcClient::createIpv6GatewayCallable(const CreateIpv6GatewayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateIpv6GatewayOutcome()>>(
+			[this, request]()
+			{
+			return this->createIpv6Gateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::CreateRouteEntryOutcome VpcClient::createRouteEntry(const CreateRouteEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRouteEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRouteEntryOutcome(CreateRouteEntryResult(outcome.result()));
+	else
+		return CreateRouteEntryOutcome(outcome.error());
+}
+
+void VpcClient::createRouteEntryAsync(const CreateRouteEntryRequest& request, const CreateRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRouteEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateRouteEntryOutcomeCallable VpcClient::createRouteEntryCallable(const CreateRouteEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRouteEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->createRouteEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2607,36 +3435,36 @@ VpcClient::DeleteBgpNetworkOutcomeCallable VpcClient::deleteBgpNetworkCallable(c
 	return task->get_future();
 }
 
-VpcClient::CreateRouteEntryOutcome VpcClient::createRouteEntry(const CreateRouteEntryRequest &request) const
+VpcClient::DisableVpcClassicLinkOutcome VpcClient::disableVpcClassicLink(const DisableVpcClassicLinkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateRouteEntryOutcome(endpointOutcome.error());
+		return DisableVpcClassicLinkOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateRouteEntryOutcome(CreateRouteEntryResult(outcome.result()));
+		return DisableVpcClassicLinkOutcome(DisableVpcClassicLinkResult(outcome.result()));
 	else
-		return CreateRouteEntryOutcome(outcome.error());
+		return DisableVpcClassicLinkOutcome(outcome.error());
 }
 
-void VpcClient::createRouteEntryAsync(const CreateRouteEntryRequest& request, const CreateRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VpcClient::disableVpcClassicLinkAsync(const DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createRouteEntry(request), context);
+		handler(this, request, disableVpcClassicLink(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VpcClient::CreateRouteEntryOutcomeCallable VpcClient::createRouteEntryCallable(const CreateRouteEntryRequest &request) const
+VpcClient::DisableVpcClassicLinkOutcomeCallable VpcClient::disableVpcClassicLinkCallable(const DisableVpcClassicLinkRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateRouteEntryOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DisableVpcClassicLinkOutcome()>>(
 			[this, request]()
 			{
-			return this->createRouteEntry(request);
+			return this->disableVpcClassicLink(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2679,42 +3507,6 @@ VpcClient::CreateRouterInterfaceOutcomeCallable VpcClient::createRouterInterface
 	return task->get_future();
 }
 
-VpcClient::DisableVpcClassicLinkOutcome VpcClient::disableVpcClassicLink(const DisableVpcClassicLinkRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DisableVpcClassicLinkOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DisableVpcClassicLinkOutcome(DisableVpcClassicLinkResult(outcome.result()));
-	else
-		return DisableVpcClassicLinkOutcome(outcome.error());
-}
-
-void VpcClient::disableVpcClassicLinkAsync(const DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, disableVpcClassicLink(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::DisableVpcClassicLinkOutcomeCallable VpcClient::disableVpcClassicLinkCallable(const DisableVpcClassicLinkRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DisableVpcClassicLinkOutcome()>>(
-			[this, request]()
-			{
-			return this->disableVpcClassicLink(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VpcClient::ModifyVpnConnectionAttributeOutcome VpcClient::modifyVpnConnectionAttribute(const ModifyVpnConnectionAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2745,6 +3537,78 @@ VpcClient::ModifyVpnConnectionAttributeOutcomeCallable VpcClient::modifyVpnConne
 			[this, request]()
 			{
 			return this->modifyVpnConnectionAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DescribeFlowLogsOutcome VpcClient::describeFlowLogs(const DescribeFlowLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFlowLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFlowLogsOutcome(DescribeFlowLogsResult(outcome.result()));
+	else
+		return DescribeFlowLogsOutcome(outcome.error());
+}
+
+void VpcClient::describeFlowLogsAsync(const DescribeFlowLogsRequest& request, const DescribeFlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFlowLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeFlowLogsOutcomeCallable VpcClient::describeFlowLogsCallable(const DescribeFlowLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFlowLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFlowLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DescribeIPv6TranslatorAclListAttributesOutcome VpcClient::describeIPv6TranslatorAclListAttributes(const DescribeIPv6TranslatorAclListAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIPv6TranslatorAclListAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIPv6TranslatorAclListAttributesOutcome(DescribeIPv6TranslatorAclListAttributesResult(outcome.result()));
+	else
+		return DescribeIPv6TranslatorAclListAttributesOutcome(outcome.error());
+}
+
+void VpcClient::describeIPv6TranslatorAclListAttributesAsync(const DescribeIPv6TranslatorAclListAttributesRequest& request, const DescribeIPv6TranslatorAclListAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIPv6TranslatorAclListAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeIPv6TranslatorAclListAttributesOutcomeCallable VpcClient::describeIPv6TranslatorAclListAttributesCallable(const DescribeIPv6TranslatorAclListAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIPv6TranslatorAclListAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIPv6TranslatorAclListAttributes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2859,36 +3723,72 @@ VpcClient::DescribeBgpGroupsOutcomeCallable VpcClient::describeBgpGroupsCallable
 	return task->get_future();
 }
 
-VpcClient::RemoveBandwidthPackageIpsOutcome VpcClient::removeBandwidthPackageIps(const RemoveBandwidthPackageIpsRequest &request) const
+VpcClient::DescribeGrantRulesToCenOutcome VpcClient::describeGrantRulesToCen(const DescribeGrantRulesToCenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return RemoveBandwidthPackageIpsOutcome(endpointOutcome.error());
+		return DescribeGrantRulesToCenOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return RemoveBandwidthPackageIpsOutcome(RemoveBandwidthPackageIpsResult(outcome.result()));
+		return DescribeGrantRulesToCenOutcome(DescribeGrantRulesToCenResult(outcome.result()));
 	else
-		return RemoveBandwidthPackageIpsOutcome(outcome.error());
+		return DescribeGrantRulesToCenOutcome(outcome.error());
 }
 
-void VpcClient::removeBandwidthPackageIpsAsync(const RemoveBandwidthPackageIpsRequest& request, const RemoveBandwidthPackageIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VpcClient::describeGrantRulesToCenAsync(const DescribeGrantRulesToCenRequest& request, const DescribeGrantRulesToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, removeBandwidthPackageIps(request), context);
+		handler(this, request, describeGrantRulesToCen(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VpcClient::RemoveBandwidthPackageIpsOutcomeCallable VpcClient::removeBandwidthPackageIpsCallable(const RemoveBandwidthPackageIpsRequest &request) const
+VpcClient::DescribeGrantRulesToCenOutcomeCallable VpcClient::describeGrantRulesToCenCallable(const DescribeGrantRulesToCenRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<RemoveBandwidthPackageIpsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeGrantRulesToCenOutcome()>>(
 			[this, request]()
 			{
-			return this->removeBandwidthPackageIps(request);
+			return this->describeGrantRulesToCen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DeleteIpv6InternetBandwidthOutcome VpcClient::deleteIpv6InternetBandwidth(const DeleteIpv6InternetBandwidthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteIpv6InternetBandwidthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteIpv6InternetBandwidthOutcome(DeleteIpv6InternetBandwidthResult(outcome.result()));
+	else
+		return DeleteIpv6InternetBandwidthOutcome(outcome.error());
+}
+
+void VpcClient::deleteIpv6InternetBandwidthAsync(const DeleteIpv6InternetBandwidthRequest& request, const DeleteIpv6InternetBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteIpv6InternetBandwidth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeleteIpv6InternetBandwidthOutcomeCallable VpcClient::deleteIpv6InternetBandwidthCallable(const DeleteIpv6InternetBandwidthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteIpv6InternetBandwidthOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteIpv6InternetBandwidth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2925,6 +3825,42 @@ VpcClient::ModifyVpcAttributeOutcomeCallable VpcClient::modifyVpcAttributeCallab
 			[this, request]()
 			{
 			return this->modifyVpcAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::RemoveBandwidthPackageIpsOutcome VpcClient::removeBandwidthPackageIps(const RemoveBandwidthPackageIpsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveBandwidthPackageIpsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveBandwidthPackageIpsOutcome(RemoveBandwidthPackageIpsResult(outcome.result()));
+	else
+		return RemoveBandwidthPackageIpsOutcome(outcome.error());
+}
+
+void VpcClient::removeBandwidthPackageIpsAsync(const RemoveBandwidthPackageIpsRequest& request, const RemoveBandwidthPackageIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeBandwidthPackageIps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::RemoveBandwidthPackageIpsOutcomeCallable VpcClient::removeBandwidthPackageIpsCallable(const RemoveBandwidthPackageIpsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveBandwidthPackageIpsOutcome()>>(
+			[this, request]()
+			{
+			return this->removeBandwidthPackageIps(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3183,6 +4119,42 @@ VpcClient::DescribeVSwitchAttributesOutcomeCallable VpcClient::describeVSwitchAt
 	return task->get_future();
 }
 
+VpcClient::ModifyIPv6TranslatorEntryOutcome VpcClient::modifyIPv6TranslatorEntry(const ModifyIPv6TranslatorEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyIPv6TranslatorEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyIPv6TranslatorEntryOutcome(ModifyIPv6TranslatorEntryResult(outcome.result()));
+	else
+		return ModifyIPv6TranslatorEntryOutcome(outcome.error());
+}
+
+void VpcClient::modifyIPv6TranslatorEntryAsync(const ModifyIPv6TranslatorEntryRequest& request, const ModifyIPv6TranslatorEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyIPv6TranslatorEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyIPv6TranslatorEntryOutcomeCallable VpcClient::modifyIPv6TranslatorEntryCallable(const ModifyIPv6TranslatorEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyIPv6TranslatorEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyIPv6TranslatorEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::CreateCommonBandwidthPackageOutcome VpcClient::createCommonBandwidthPackage(const CreateCommonBandwidthPackageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3213,6 +4185,42 @@ VpcClient::CreateCommonBandwidthPackageOutcomeCallable VpcClient::createCommonBa
 			[this, request]()
 			{
 			return this->createCommonBandwidthPackage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DescribePhysicalConnectionOrderOutcome VpcClient::describePhysicalConnectionOrder(const DescribePhysicalConnectionOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePhysicalConnectionOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePhysicalConnectionOrderOutcome(DescribePhysicalConnectionOrderResult(outcome.result()));
+	else
+		return DescribePhysicalConnectionOrderOutcome(outcome.error());
+}
+
+void VpcClient::describePhysicalConnectionOrderAsync(const DescribePhysicalConnectionOrderRequest& request, const DescribePhysicalConnectionOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePhysicalConnectionOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribePhysicalConnectionOrderOutcomeCallable VpcClient::describePhysicalConnectionOrderCallable(const DescribePhysicalConnectionOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePhysicalConnectionOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->describePhysicalConnectionOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3291,6 +4299,78 @@ VpcClient::DescribeRouterInterfacesOutcomeCallable VpcClient::describeRouterInte
 	return task->get_future();
 }
 
+VpcClient::DeactiveFlowLogOutcome VpcClient::deactiveFlowLog(const DeactiveFlowLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeactiveFlowLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeactiveFlowLogOutcome(DeactiveFlowLogResult(outcome.result()));
+	else
+		return DeactiveFlowLogOutcome(outcome.error());
+}
+
+void VpcClient::deactiveFlowLogAsync(const DeactiveFlowLogRequest& request, const DeactiveFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deactiveFlowLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeactiveFlowLogOutcomeCallable VpcClient::deactiveFlowLogCallable(const DeactiveFlowLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeactiveFlowLogOutcome()>>(
+			[this, request]()
+			{
+			return this->deactiveFlowLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::CreateFlowLogOutcome VpcClient::createFlowLog(const CreateFlowLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFlowLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFlowLogOutcome(CreateFlowLogResult(outcome.result()));
+	else
+		return CreateFlowLogOutcome(outcome.error());
+}
+
+void VpcClient::createFlowLogAsync(const CreateFlowLogRequest& request, const CreateFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFlowLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateFlowLogOutcomeCallable VpcClient::createFlowLogCallable(const CreateFlowLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFlowLogOutcome()>>(
+			[this, request]()
+			{
+			return this->createFlowLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DeleteNatGatewayOutcome VpcClient::deleteNatGateway(const DeleteNatGatewayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3327,6 +4407,42 @@ VpcClient::DeleteNatGatewayOutcomeCallable VpcClient::deleteNatGatewayCallable(c
 	return task->get_future();
 }
 
+VpcClient::ActiveFlowLogOutcome VpcClient::activeFlowLog(const ActiveFlowLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ActiveFlowLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ActiveFlowLogOutcome(ActiveFlowLogResult(outcome.result()));
+	else
+		return ActiveFlowLogOutcome(outcome.error());
+}
+
+void VpcClient::activeFlowLogAsync(const ActiveFlowLogRequest& request, const ActiveFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, activeFlowLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ActiveFlowLogOutcomeCallable VpcClient::activeFlowLogCallable(const ActiveFlowLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ActiveFlowLogOutcome()>>(
+			[this, request]()
+			{
+			return this->activeFlowLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DescribeZonesOutcome VpcClient::describeZones(const DescribeZonesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3357,6 +4473,42 @@ VpcClient::DescribeZonesOutcomeCallable VpcClient::describeZonesCallable(const D
 			[this, request]()
 			{
 			return this->describeZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DeleteIpv6EgressOnlyRuleOutcome VpcClient::deleteIpv6EgressOnlyRule(const DeleteIpv6EgressOnlyRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteIpv6EgressOnlyRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteIpv6EgressOnlyRuleOutcome(DeleteIpv6EgressOnlyRuleResult(outcome.result()));
+	else
+		return DeleteIpv6EgressOnlyRuleOutcome(outcome.error());
+}
+
+void VpcClient::deleteIpv6EgressOnlyRuleAsync(const DeleteIpv6EgressOnlyRuleRequest& request, const DeleteIpv6EgressOnlyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteIpv6EgressOnlyRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeleteIpv6EgressOnlyRuleOutcomeCallable VpcClient::deleteIpv6EgressOnlyRuleCallable(const DeleteIpv6EgressOnlyRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteIpv6EgressOnlyRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteIpv6EgressOnlyRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3435,6 +4587,42 @@ VpcClient::ModifySnatEntryOutcomeCallable VpcClient::modifySnatEntryCallable(con
 	return task->get_future();
 }
 
+VpcClient::DescribeIPv6TranslatorAclListsOutcome VpcClient::describeIPv6TranslatorAclLists(const DescribeIPv6TranslatorAclListsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIPv6TranslatorAclListsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIPv6TranslatorAclListsOutcome(DescribeIPv6TranslatorAclListsResult(outcome.result()));
+	else
+		return DescribeIPv6TranslatorAclListsOutcome(outcome.error());
+}
+
+void VpcClient::describeIPv6TranslatorAclListsAsync(const DescribeIPv6TranslatorAclListsRequest& request, const DescribeIPv6TranslatorAclListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIPv6TranslatorAclLists(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeIPv6TranslatorAclListsOutcomeCallable VpcClient::describeIPv6TranslatorAclListsCallable(const DescribeIPv6TranslatorAclListsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIPv6TranslatorAclListsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIPv6TranslatorAclLists(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DescribeAccessPointsOutcome VpcClient::describeAccessPoints(const DescribeAccessPointsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3507,6 +4695,42 @@ VpcClient::CreateSslVpnClientCertOutcomeCallable VpcClient::createSslVpnClientCe
 	return task->get_future();
 }
 
+VpcClient::CreateIPv6TranslatorAclListOutcome VpcClient::createIPv6TranslatorAclList(const CreateIPv6TranslatorAclListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateIPv6TranslatorAclListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateIPv6TranslatorAclListOutcome(CreateIPv6TranslatorAclListResult(outcome.result()));
+	else
+		return CreateIPv6TranslatorAclListOutcome(outcome.error());
+}
+
+void VpcClient::createIPv6TranslatorAclListAsync(const CreateIPv6TranslatorAclListRequest& request, const CreateIPv6TranslatorAclListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createIPv6TranslatorAclList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateIPv6TranslatorAclListOutcomeCallable VpcClient::createIPv6TranslatorAclListCallable(const CreateIPv6TranslatorAclListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateIPv6TranslatorAclListOutcome()>>(
+			[this, request]()
+			{
+			return this->createIPv6TranslatorAclList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::CreateVirtualBorderRouterOutcome VpcClient::createVirtualBorderRouter(const CreateVirtualBorderRouterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3573,6 +4797,78 @@ VpcClient::DeleteBgpGroupOutcomeCallable VpcClient::deleteBgpGroupCallable(const
 			[this, request]()
 			{
 			return this->deleteBgpGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DescribeIpv6AddressesOutcome VpcClient::describeIpv6Addresses(const DescribeIpv6AddressesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIpv6AddressesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIpv6AddressesOutcome(DescribeIpv6AddressesResult(outcome.result()));
+	else
+		return DescribeIpv6AddressesOutcome(outcome.error());
+}
+
+void VpcClient::describeIpv6AddressesAsync(const DescribeIpv6AddressesRequest& request, const DescribeIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIpv6Addresses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeIpv6AddressesOutcomeCallable VpcClient::describeIpv6AddressesCallable(const DescribeIpv6AddressesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIpv6AddressesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIpv6Addresses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DeleteIPv6TranslatorEntryOutcome VpcClient::deleteIPv6TranslatorEntry(const DeleteIPv6TranslatorEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteIPv6TranslatorEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteIPv6TranslatorEntryOutcome(DeleteIPv6TranslatorEntryResult(outcome.result()));
+	else
+		return DeleteIPv6TranslatorEntryOutcome(outcome.error());
+}
+
+void VpcClient::deleteIPv6TranslatorEntryAsync(const DeleteIPv6TranslatorEntryRequest& request, const DeleteIPv6TranslatorEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteIPv6TranslatorEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeleteIPv6TranslatorEntryOutcomeCallable VpcClient::deleteIPv6TranslatorEntryCallable(const DeleteIPv6TranslatorEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteIPv6TranslatorEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteIPv6TranslatorEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3975,6 +5271,78 @@ VpcClient::ModifyRouterInterfaceAttributeOutcomeCallable VpcClient::modifyRouter
 	return task->get_future();
 }
 
+VpcClient::AssociateRouteTableOutcome VpcClient::associateRouteTable(const AssociateRouteTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AssociateRouteTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AssociateRouteTableOutcome(AssociateRouteTableResult(outcome.result()));
+	else
+		return AssociateRouteTableOutcome(outcome.error());
+}
+
+void VpcClient::associateRouteTableAsync(const AssociateRouteTableRequest& request, const AssociateRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, associateRouteTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::AssociateRouteTableOutcomeCallable VpcClient::associateRouteTableCallable(const AssociateRouteTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AssociateRouteTableOutcome()>>(
+			[this, request]()
+			{
+			return this->associateRouteTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::ModifyIPv6TranslatorAclAttributeOutcome VpcClient::modifyIPv6TranslatorAclAttribute(const ModifyIPv6TranslatorAclAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyIPv6TranslatorAclAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyIPv6TranslatorAclAttributeOutcome(ModifyIPv6TranslatorAclAttributeResult(outcome.result()));
+	else
+		return ModifyIPv6TranslatorAclAttributeOutcome(outcome.error());
+}
+
+void VpcClient::modifyIPv6TranslatorAclAttributeAsync(const ModifyIPv6TranslatorAclAttributeRequest& request, const ModifyIPv6TranslatorAclAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyIPv6TranslatorAclAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyIPv6TranslatorAclAttributeOutcomeCallable VpcClient::modifyIPv6TranslatorAclAttributeCallable(const ModifyIPv6TranslatorAclAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyIPv6TranslatorAclAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyIPv6TranslatorAclAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DescribeVirtualBorderRoutersForPhysicalConnectionOutcome VpcClient::describeVirtualBorderRoutersForPhysicalConnection(const DescribeVirtualBorderRoutersForPhysicalConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4041,42 +5409,6 @@ VpcClient::ModifyGlobalAccelerationInstanceAttributesOutcomeCallable VpcClient::
 			[this, request]()
 			{
 			return this->modifyGlobalAccelerationInstanceAttributes(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VpcClient::ModifyCommonBandwidthPackageSpecOutcome VpcClient::modifyCommonBandwidthPackageSpec(const ModifyCommonBandwidthPackageSpecRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyCommonBandwidthPackageSpecOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyCommonBandwidthPackageSpecOutcome(ModifyCommonBandwidthPackageSpecResult(outcome.result()));
-	else
-		return ModifyCommonBandwidthPackageSpecOutcome(outcome.error());
-}
-
-void VpcClient::modifyCommonBandwidthPackageSpecAsync(const ModifyCommonBandwidthPackageSpecRequest& request, const ModifyCommonBandwidthPackageSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyCommonBandwidthPackageSpec(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::ModifyCommonBandwidthPackageSpecOutcomeCallable VpcClient::modifyCommonBandwidthPackageSpecCallable(const ModifyCommonBandwidthPackageSpecRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyCommonBandwidthPackageSpecOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyCommonBandwidthPackageSpec(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4155,6 +5487,42 @@ VpcClient::DeleteVirtualBorderRouterOutcomeCallable VpcClient::deleteVirtualBord
 	return task->get_future();
 }
 
+VpcClient::ModifyCommonBandwidthPackageSpecOutcome VpcClient::modifyCommonBandwidthPackageSpec(const ModifyCommonBandwidthPackageSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyCommonBandwidthPackageSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyCommonBandwidthPackageSpecOutcome(ModifyCommonBandwidthPackageSpecResult(outcome.result()));
+	else
+		return ModifyCommonBandwidthPackageSpecOutcome(outcome.error());
+}
+
+void VpcClient::modifyCommonBandwidthPackageSpecAsync(const ModifyCommonBandwidthPackageSpecRequest& request, const ModifyCommonBandwidthPackageSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCommonBandwidthPackageSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyCommonBandwidthPackageSpecOutcomeCallable VpcClient::modifyCommonBandwidthPackageSpecCallable(const ModifyCommonBandwidthPackageSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyCommonBandwidthPackageSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCommonBandwidthPackageSpec(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::CreatePhysicalConnectionNewOutcome VpcClient::createPhysicalConnectionNew(const CreatePhysicalConnectionNewRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4227,6 +5595,42 @@ VpcClient::TerminatePhysicalConnectionOutcomeCallable VpcClient::terminatePhysic
 	return task->get_future();
 }
 
+VpcClient::DescribeIpv6EgressOnlyRulesOutcome VpcClient::describeIpv6EgressOnlyRules(const DescribeIpv6EgressOnlyRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIpv6EgressOnlyRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIpv6EgressOnlyRulesOutcome(DescribeIpv6EgressOnlyRulesResult(outcome.result()));
+	else
+		return DescribeIpv6EgressOnlyRulesOutcome(outcome.error());
+}
+
+void VpcClient::describeIpv6EgressOnlyRulesAsync(const DescribeIpv6EgressOnlyRulesRequest& request, const DescribeIpv6EgressOnlyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIpv6EgressOnlyRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeIpv6EgressOnlyRulesOutcomeCallable VpcClient::describeIpv6EgressOnlyRulesCallable(const DescribeIpv6EgressOnlyRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIpv6EgressOnlyRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIpv6EgressOnlyRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DescribeVpnGatewayOutcome VpcClient::describeVpnGateway(const DescribeVpnGatewayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4263,36 +5667,72 @@ VpcClient::DescribeVpnGatewayOutcomeCallable VpcClient::describeVpnGatewayCallab
 	return task->get_future();
 }
 
-VpcClient::DescribeVpnConnectionLogsOutcome VpcClient::describeVpnConnectionLogs(const DescribeVpnConnectionLogsRequest &request) const
+VpcClient::RevokeInstanceFromCenOutcome VpcClient::revokeInstanceFromCen(const RevokeInstanceFromCenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeVpnConnectionLogsOutcome(endpointOutcome.error());
+		return RevokeInstanceFromCenOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeVpnConnectionLogsOutcome(DescribeVpnConnectionLogsResult(outcome.result()));
+		return RevokeInstanceFromCenOutcome(RevokeInstanceFromCenResult(outcome.result()));
 	else
-		return DescribeVpnConnectionLogsOutcome(outcome.error());
+		return RevokeInstanceFromCenOutcome(outcome.error());
 }
 
-void VpcClient::describeVpnConnectionLogsAsync(const DescribeVpnConnectionLogsRequest& request, const DescribeVpnConnectionLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VpcClient::revokeInstanceFromCenAsync(const RevokeInstanceFromCenRequest& request, const RevokeInstanceFromCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeVpnConnectionLogs(request), context);
+		handler(this, request, revokeInstanceFromCen(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VpcClient::DescribeVpnConnectionLogsOutcomeCallable VpcClient::describeVpnConnectionLogsCallable(const DescribeVpnConnectionLogsRequest &request) const
+VpcClient::RevokeInstanceFromCenOutcomeCallable VpcClient::revokeInstanceFromCenCallable(const RevokeInstanceFromCenRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeVpnConnectionLogsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RevokeInstanceFromCenOutcome()>>(
 			[this, request]()
 			{
-			return this->describeVpnConnectionLogs(request);
+			return this->revokeInstanceFromCen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DeleteRouteTableOutcome VpcClient::deleteRouteTable(const DeleteRouteTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRouteTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRouteTableOutcome(DeleteRouteTableResult(outcome.result()));
+	else
+		return DeleteRouteTableOutcome(outcome.error());
+}
+
+void VpcClient::deleteRouteTableAsync(const DeleteRouteTableRequest& request, const DeleteRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRouteTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeleteRouteTableOutcomeCallable VpcClient::deleteRouteTableCallable(const DeleteRouteTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRouteTableOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRouteTable(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4365,6 +5805,42 @@ VpcClient::ModifyCommonBandwidthPackageAttributeOutcomeCallable VpcClient::modif
 			[this, request]()
 			{
 			return this->modifyCommonBandwidthPackageAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::UnassociateRouteTableOutcome VpcClient::unassociateRouteTable(const UnassociateRouteTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnassociateRouteTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnassociateRouteTableOutcome(UnassociateRouteTableResult(outcome.result()));
+	else
+		return UnassociateRouteTableOutcome(outcome.error());
+}
+
+void VpcClient::unassociateRouteTableAsync(const UnassociateRouteTableRequest& request, const UnassociateRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unassociateRouteTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::UnassociateRouteTableOutcomeCallable VpcClient::unassociateRouteTableCallable(const UnassociateRouteTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnassociateRouteTableOutcome()>>(
+			[this, request]()
+			{
+			return this->unassociateRouteTable(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4479,6 +5955,42 @@ VpcClient::DescribeRegionsOutcomeCallable VpcClient::describeRegionsCallable(con
 	return task->get_future();
 }
 
+VpcClient::ModifyIpv6InternetBandwidthOutcome VpcClient::modifyIpv6InternetBandwidth(const ModifyIpv6InternetBandwidthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyIpv6InternetBandwidthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyIpv6InternetBandwidthOutcome(ModifyIpv6InternetBandwidthResult(outcome.result()));
+	else
+		return ModifyIpv6InternetBandwidthOutcome(outcome.error());
+}
+
+void VpcClient::modifyIpv6InternetBandwidthAsync(const ModifyIpv6InternetBandwidthRequest& request, const ModifyIpv6InternetBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyIpv6InternetBandwidth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::ModifyIpv6InternetBandwidthOutcomeCallable VpcClient::modifyIpv6InternetBandwidthCallable(const ModifyIpv6InternetBandwidthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyIpv6InternetBandwidthOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyIpv6InternetBandwidth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::DescribePhysicalConnectionsOutcome VpcClient::describePhysicalConnections(const DescribePhysicalConnectionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4587,42 +6099,6 @@ VpcClient::DescribeVirtualBorderRoutersOutcomeCallable VpcClient::describeVirtua
 	return task->get_future();
 }
 
-VpcClient::CreateGlobalAccelerationInstanceOutcome VpcClient::createGlobalAccelerationInstance(const CreateGlobalAccelerationInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateGlobalAccelerationInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateGlobalAccelerationInstanceOutcome(CreateGlobalAccelerationInstanceResult(outcome.result()));
-	else
-		return CreateGlobalAccelerationInstanceOutcome(outcome.error());
-}
-
-void VpcClient::createGlobalAccelerationInstanceAsync(const CreateGlobalAccelerationInstanceRequest& request, const CreateGlobalAccelerationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createGlobalAccelerationInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::CreateGlobalAccelerationInstanceOutcomeCallable VpcClient::createGlobalAccelerationInstanceCallable(const CreateGlobalAccelerationInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateGlobalAccelerationInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->createGlobalAccelerationInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VpcClient::CancelPhysicalConnectionOutcome VpcClient::cancelPhysicalConnection(const CancelPhysicalConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4653,6 +6129,42 @@ VpcClient::CancelPhysicalConnectionOutcomeCallable VpcClient::cancelPhysicalConn
 			[this, request]()
 			{
 			return this->cancelPhysicalConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::CreateGlobalAccelerationInstanceOutcome VpcClient::createGlobalAccelerationInstance(const CreateGlobalAccelerationInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateGlobalAccelerationInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateGlobalAccelerationInstanceOutcome(CreateGlobalAccelerationInstanceResult(outcome.result()));
+	else
+		return CreateGlobalAccelerationInstanceOutcome(outcome.error());
+}
+
+void VpcClient::createGlobalAccelerationInstanceAsync(const CreateGlobalAccelerationInstanceRequest& request, const CreateGlobalAccelerationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createGlobalAccelerationInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateGlobalAccelerationInstanceOutcomeCallable VpcClient::createGlobalAccelerationInstanceCallable(const CreateGlobalAccelerationInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateGlobalAccelerationInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->createGlobalAccelerationInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4725,42 +6237,6 @@ VpcClient::DescribeVRoutersOutcomeCallable VpcClient::describeVRoutersCallable(c
 			[this, request]()
 			{
 			return this->describeVRouters(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VpcClient::DescribeRouterInterfacesForGlobalOutcome VpcClient::describeRouterInterfacesForGlobal(const DescribeRouterInterfacesForGlobalRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRouterInterfacesForGlobalOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRouterInterfacesForGlobalOutcome(DescribeRouterInterfacesForGlobalResult(outcome.result()));
-	else
-		return DescribeRouterInterfacesForGlobalOutcome(outcome.error());
-}
-
-void VpcClient::describeRouterInterfacesForGlobalAsync(const DescribeRouterInterfacesForGlobalRequest& request, const DescribeRouterInterfacesForGlobalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRouterInterfacesForGlobal(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::DescribeRouterInterfacesForGlobalOutcomeCallable VpcClient::describeRouterInterfacesForGlobalCallable(const DescribeRouterInterfacesForGlobalRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRouterInterfacesForGlobalOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRouterInterfacesForGlobal(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4875,42 +6351,6 @@ VpcClient::DescribeSslVpnClientCertOutcomeCallable VpcClient::describeSslVpnClie
 	return task->get_future();
 }
 
-VpcClient::DescribeCommonBandwidthPackagesOutcome VpcClient::describeCommonBandwidthPackages(const DescribeCommonBandwidthPackagesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCommonBandwidthPackagesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCommonBandwidthPackagesOutcome(DescribeCommonBandwidthPackagesResult(outcome.result()));
-	else
-		return DescribeCommonBandwidthPackagesOutcome(outcome.error());
-}
-
-void VpcClient::describeCommonBandwidthPackagesAsync(const DescribeCommonBandwidthPackagesRequest& request, const DescribeCommonBandwidthPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCommonBandwidthPackages(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VpcClient::DescribeCommonBandwidthPackagesOutcomeCallable VpcClient::describeCommonBandwidthPackagesCallable(const DescribeCommonBandwidthPackagesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCommonBandwidthPackagesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCommonBandwidthPackages(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VpcClient::UnassociateHaVipOutcome VpcClient::unassociateHaVip(const UnassociateHaVipRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4947,6 +6387,42 @@ VpcClient::UnassociateHaVipOutcomeCallable VpcClient::unassociateHaVipCallable(c
 	return task->get_future();
 }
 
+VpcClient::DescribeCommonBandwidthPackagesOutcome VpcClient::describeCommonBandwidthPackages(const DescribeCommonBandwidthPackagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCommonBandwidthPackagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCommonBandwidthPackagesOutcome(DescribeCommonBandwidthPackagesResult(outcome.result()));
+	else
+		return DescribeCommonBandwidthPackagesOutcome(outcome.error());
+}
+
+void VpcClient::describeCommonBandwidthPackagesAsync(const DescribeCommonBandwidthPackagesRequest& request, const DescribeCommonBandwidthPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCommonBandwidthPackages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeCommonBandwidthPackagesOutcomeCallable VpcClient::describeCommonBandwidthPackagesCallable(const DescribeCommonBandwidthPackagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCommonBandwidthPackagesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCommonBandwidthPackages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::ModifyHaVipAttributeOutcome VpcClient::modifyHaVipAttribute(const ModifyHaVipAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4977,6 +6453,42 @@ VpcClient::ModifyHaVipAttributeOutcomeCallable VpcClient::modifyHaVipAttributeCa
 			[this, request]()
 			{
 			return this->modifyHaVipAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::DeleteIPv6TranslatorAclListOutcome VpcClient::deleteIPv6TranslatorAclList(const DeleteIPv6TranslatorAclListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteIPv6TranslatorAclListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteIPv6TranslatorAclListOutcome(DeleteIPv6TranslatorAclListResult(outcome.result()));
+	else
+		return DeleteIPv6TranslatorAclListOutcome(outcome.error());
+}
+
+void VpcClient::deleteIPv6TranslatorAclListAsync(const DeleteIPv6TranslatorAclListRequest& request, const DeleteIPv6TranslatorAclListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteIPv6TranslatorAclList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DeleteIPv6TranslatorAclListOutcomeCallable VpcClient::deleteIPv6TranslatorAclListCallable(const DeleteIPv6TranslatorAclListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteIPv6TranslatorAclListOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteIPv6TranslatorAclList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5055,6 +6567,42 @@ VpcClient::DescribeSslVpnServersOutcomeCallable VpcClient::describeSslVpnServers
 	return task->get_future();
 }
 
+VpcClient::DescribeSnatTableEntriesOutcome VpcClient::describeSnatTableEntries(const DescribeSnatTableEntriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSnatTableEntriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSnatTableEntriesOutcome(DescribeSnatTableEntriesResult(outcome.result()));
+	else
+		return DescribeSnatTableEntriesOutcome(outcome.error());
+}
+
+void VpcClient::describeSnatTableEntriesAsync(const DescribeSnatTableEntriesRequest& request, const DescribeSnatTableEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSnatTableEntries(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::DescribeSnatTableEntriesOutcomeCallable VpcClient::describeSnatTableEntriesCallable(const DescribeSnatTableEntriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSnatTableEntriesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSnatTableEntries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::ModifyVRouterAttributeOutcome VpcClient::modifyVRouterAttribute(const ModifyVRouterAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5091,36 +6639,36 @@ VpcClient::ModifyVRouterAttributeOutcomeCallable VpcClient::modifyVRouterAttribu
 	return task->get_future();
 }
 
-VpcClient::DescribeSnatTableEntriesOutcome VpcClient::describeSnatTableEntries(const DescribeSnatTableEntriesRequest &request) const
+VpcClient::CreateVpnGatewayOutcome VpcClient::createVpnGateway(const CreateVpnGatewayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeSnatTableEntriesOutcome(endpointOutcome.error());
+		return CreateVpnGatewayOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeSnatTableEntriesOutcome(DescribeSnatTableEntriesResult(outcome.result()));
+		return CreateVpnGatewayOutcome(CreateVpnGatewayResult(outcome.result()));
 	else
-		return DescribeSnatTableEntriesOutcome(outcome.error());
+		return CreateVpnGatewayOutcome(outcome.error());
 }
 
-void VpcClient::describeSnatTableEntriesAsync(const DescribeSnatTableEntriesRequest& request, const DescribeSnatTableEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VpcClient::createVpnGatewayAsync(const CreateVpnGatewayRequest& request, const CreateVpnGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeSnatTableEntries(request), context);
+		handler(this, request, createVpnGateway(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VpcClient::DescribeSnatTableEntriesOutcomeCallable VpcClient::describeSnatTableEntriesCallable(const DescribeSnatTableEntriesRequest &request) const
+VpcClient::CreateVpnGatewayOutcomeCallable VpcClient::createVpnGatewayCallable(const CreateVpnGatewayRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeSnatTableEntriesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateVpnGatewayOutcome()>>(
 			[this, request]()
 			{
-			return this->describeSnatTableEntries(request);
+			return this->createVpnGateway(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

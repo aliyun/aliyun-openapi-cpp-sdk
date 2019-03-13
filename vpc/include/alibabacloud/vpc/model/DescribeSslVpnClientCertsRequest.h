@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSslVpnClientCertId()const;
+				void setSslVpnClientCertId(const std::string& sslVpnClientCertId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				std::string name_;
 				int pageSize_;
 				long ownerId_;
+				std::string sslVpnClientCertId_;
 				int pageNumber_;
 
 			};

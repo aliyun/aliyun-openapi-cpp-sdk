@@ -42,7 +42,14 @@ void CreateCommonBandwidthPackageResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["BandwidthPackageId"].isNull())
 		bandwidthPackageId_ = value["BandwidthPackageId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
+}
+
+std::string CreateCommonBandwidthPackageResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string CreateCommonBandwidthPackageResult::getBandwidthPackageId()const

@@ -25,6 +25,17 @@ AssociateEipAddressRequest::AssociateEipAddressRequest() :
 AssociateEipAddressRequest::~AssociateEipAddressRequest()
 {}
 
+std::string AssociateEipAddressRequest::getPrivateIpAddress()const
+{
+	return privateIpAddress_;
+}
+
+void AssociateEipAddressRequest::setPrivateIpAddress(const std::string& privateIpAddress)
+{
+	privateIpAddress_ = privateIpAddress;
+	setParameter("PrivateIpAddress", privateIpAddress);
+}
+
 long AssociateEipAddressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

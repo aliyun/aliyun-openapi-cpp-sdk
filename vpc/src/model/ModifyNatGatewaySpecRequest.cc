@@ -36,6 +36,17 @@ void ModifyNatGatewaySpecRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool ModifyNatGatewaySpecRequest::getAutoPay()const
+{
+	return autoPay_;
+}
+
+void ModifyNatGatewaySpecRequest::setAutoPay(bool autoPay)
+{
+	autoPay_ = autoPay;
+	setParameter("AutoPay", std::to_string(autoPay));
+}
+
 std::string ModifyNatGatewaySpecRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

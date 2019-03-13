@@ -113,6 +113,17 @@ void DescribeRouteTablesRequest::setRouterType(const std::string& routerType)
 	setParameter("RouterType", routerType);
 }
 
+std::string DescribeRouteTablesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeRouteTablesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeRouteTablesRequest::getRouteTableName()const
 {
 	return routeTableName_;
@@ -122,6 +133,17 @@ void DescribeRouteTablesRequest::setRouteTableName(const std::string& routeTable
 {
 	routeTableName_ = routeTableName;
 	setParameter("RouteTableName", routeTableName);
+}
+
+std::string DescribeRouteTablesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeRouteTablesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeRouteTablesRequest::getRouterId()const

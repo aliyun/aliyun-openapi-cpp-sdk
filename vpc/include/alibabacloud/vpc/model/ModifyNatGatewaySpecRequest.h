@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				bool getAutoPay()const;
+				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string clientToken_;

@@ -47,10 +47,12 @@ namespace AlibabaCloud
 					std::vector<std::string> forwardTableIds;
 					std::vector<NatGateway::IpList> ipLists;
 					std::vector<std::string> bandwidthPackageIds;
+					bool autoPay;
 					std::string businessStatus;
 					std::string name;
 					std::string vpcId;
 					std::vector<std::string> snatTableIds;
+					std::string expiredTime;
 					std::string creationTime;
 					std::string regionId;
 					std::string spec;

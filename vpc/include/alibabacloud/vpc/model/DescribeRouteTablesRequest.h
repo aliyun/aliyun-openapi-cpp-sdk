@@ -51,8 +51,12 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getRouterType()const;
 				void setRouterType(const std::string& routerType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRouteTableName()const;
 				void setRouteTableName(const std::string& routeTableName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getRouterId()const;
 				void setRouterId(const std::string& routerId);
 				int getPageSize()const;
@@ -69,7 +73,9 @@ namespace AlibabaCloud
 				std::string type_;
 				int pageNumber_;
 				std::string routerType_;
+				std::string resourceGroupId_;
 				std::string routeTableName_;
+				std::string regionId_;
 				std::string routerId_;
 				int pageSize_;
 				std::string routeTableId_;

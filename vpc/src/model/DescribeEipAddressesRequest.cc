@@ -58,6 +58,17 @@ void DescribeEipAddressesRequest::setFilter2Value(const std::string& filter2Valu
 	setParameter("Filter2Value", filter2Value);
 }
 
+std::string DescribeEipAddressesRequest::getISP()const
+{
+	return iSP_;
+}
+
+void DescribeEipAddressesRequest::setISP(const std::string& iSP)
+{
+	iSP_ = iSP;
+	setParameter("ISP", iSP);
+}
+
 std::string DescribeEipAddressesRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -111,6 +122,17 @@ void DescribeEipAddressesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+bool DescribeEipAddressesRequest::getIncludeReservationData()const
+{
+	return includeReservationData_;
+}
+
+void DescribeEipAddressesRequest::setIncludeReservationData(bool includeReservationData)
+{
+	includeReservationData_ = includeReservationData;
+	setParameter("IncludeReservationData", std::to_string(includeReservationData));
 }
 
 std::string DescribeEipAddressesRequest::getEipAddress()const
@@ -199,6 +221,23 @@ void DescribeEipAddressesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<DescribeEipAddressesRequest::Tag> DescribeEipAddressesRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeEipAddressesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setParameter(str + ".Value", obj.value);
+		setParameter(str + ".Key", obj.key);
+	}
 }
 
 std::string DescribeEipAddressesRequest::getChargeType()const

@@ -32,9 +32,9 @@ namespace AlibabaCloud
 			{
 				struct NextHopList
 				{
-					std::string nextHopType;
-					std::string nextHopId;
 					int weight;
+					std::string nextHopId;
+					std::string nextHopType;
 				};
 
 			public:
@@ -43,20 +43,24 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getRouteEntryName()const;
+				void setRouteEntryName(const std::string& routeEntryName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getDestinationCidrBlock()const;
 				void setDestinationCidrBlock(const std::string& destinationCidrBlock);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getNextHopId()const;
-				void setNextHopId(const std::string& nextHopId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getPrivateIpAddress()const;
+				void setPrivateIpAddress(const std::string& privateIpAddress);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getNextHopId()const;
+				void setNextHopId(const std::string& nextHopId);
 				std::string getNextHopType()const;
 				void setNextHopType(const std::string& nextHopType);
 				std::vector<NextHopList> getNextHopList()const;
@@ -66,13 +70,15 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string routeEntryName_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string clientToken_;
 				std::string destinationCidrBlock_;
 				std::string ownerAccount_;
-				std::string nextHopId_;
 				long ownerId_;
+				std::string privateIpAddress_;
+				std::string regionId_;
+				std::string nextHopId_;
 				std::string nextHopType_;
 				std::vector<NextHopList> nextHopList_;
 				std::string routeTableId_;

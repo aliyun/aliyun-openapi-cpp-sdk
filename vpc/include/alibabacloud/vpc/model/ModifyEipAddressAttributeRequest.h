@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getBandwidth()const;
 				void setBandwidth(const std::string& bandwidth);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getName()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string bandwidth_;
+				std::string regionId_;
 				std::string ownerAccount_;
 				std::string name_;
 				std::string description_;

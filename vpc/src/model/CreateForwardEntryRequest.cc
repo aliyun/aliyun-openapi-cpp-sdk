@@ -47,17 +47,6 @@ void CreateForwardEntryRequest::setResourceOwnerAccount(const std::string& resou
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string CreateForwardEntryRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateForwardEntryRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string CreateForwardEntryRequest::getIpProtocol()const
 {
 	return ipProtocol_;
@@ -69,15 +58,15 @@ void CreateForwardEntryRequest::setIpProtocol(const std::string& ipProtocol)
 	setParameter("IpProtocol", ipProtocol);
 }
 
-std::string CreateForwardEntryRequest::getInternalPort()const
+std::string CreateForwardEntryRequest::getForwardEntryName()const
 {
-	return internalPort_;
+	return forwardEntryName_;
 }
 
-void CreateForwardEntryRequest::setInternalPort(const std::string& internalPort)
+void CreateForwardEntryRequest::setForwardEntryName(const std::string& forwardEntryName)
 {
-	internalPort_ = internalPort;
-	setParameter("InternalPort", internalPort);
+	forwardEntryName_ = forwardEntryName;
+	setParameter("ForwardEntryName", forwardEntryName);
 }
 
 std::string CreateForwardEntryRequest::getOwnerAccount()const
@@ -113,6 +102,39 @@ void CreateForwardEntryRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string CreateForwardEntryRequest::getInternalIp()const
+{
+	return internalIp_;
+}
+
+void CreateForwardEntryRequest::setInternalIp(const std::string& internalIp)
+{
+	internalIp_ = internalIp;
+	setParameter("InternalIp", internalIp);
+}
+
+std::string CreateForwardEntryRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateForwardEntryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string CreateForwardEntryRequest::getInternalPort()const
+{
+	return internalPort_;
+}
+
+void CreateForwardEntryRequest::setInternalPort(const std::string& internalPort)
+{
+	internalPort_ = internalPort;
+	setParameter("InternalPort", internalPort);
+}
+
 std::string CreateForwardEntryRequest::getExternalIp()const
 {
 	return externalIp_;
@@ -133,16 +155,5 @@ void CreateForwardEntryRequest::setExternalPort(const std::string& externalPort)
 {
 	externalPort_ = externalPort;
 	setParameter("ExternalPort", externalPort);
-}
-
-std::string CreateForwardEntryRequest::getInternalIp()const
-{
-	return internalIp_;
-}
-
-void CreateForwardEntryRequest::setInternalIp(const std::string& internalIp)
-{
-	internalIp_ = internalIp;
-	setParameter("InternalIp", internalIp);
 }
 

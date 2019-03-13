@@ -60,6 +60,12 @@ void DescribeVirtualBorderRoutersForPhysicalConnectionResult::parse(const std::s
 			virtualBorderRouterForPhysicalConnectionSetObject.vlanId = std::stoi(value["VlanId"].asString());
 		if(!value["CircuitCode"].isNull())
 			virtualBorderRouterForPhysicalConnectionSetObject.circuitCode = value["CircuitCode"].asString();
+		if(!value["LocalGatewayIp"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.localGatewayIp = value["LocalGatewayIp"].asString();
+		if(!value["PeerGatewayIp"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.peerGatewayIp = value["PeerGatewayIp"].asString();
+		if(!value["PeeringSubnetMask"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.peeringSubnetMask = value["PeeringSubnetMask"].asString();
 		virtualBorderRouterForPhysicalConnectionSet_.push_back(virtualBorderRouterForPhysicalConnectionSetObject);
 	}
 	if(!value["PageNumber"].isNull())

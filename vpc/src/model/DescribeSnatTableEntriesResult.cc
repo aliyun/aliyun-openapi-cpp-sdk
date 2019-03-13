@@ -56,6 +56,8 @@ void DescribeSnatTableEntriesResult::parse(const std::string &payload)
 			snatTableEntriesObject.snatIp = value["SnatIp"].asString();
 		if(!value["Status"].isNull())
 			snatTableEntriesObject.status = value["Status"].asString();
+		if(!value["SnatEntryName"].isNull())
+			snatTableEntriesObject.snatEntryName = value["SnatEntryName"].asString();
 		snatTableEntries_.push_back(snatTableEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())

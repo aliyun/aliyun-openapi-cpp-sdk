@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				bool getIncludeReservationData()const;
+				void setIncludeReservationData(bool includeReservationData);
 				std::string getGlobalAccelerationInstanceId()const;
 				void setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId);
 				std::string getServerId()const;
@@ -72,6 +74,7 @@ namespace AlibabaCloud
 				std::string serviceLocation_;
 				std::string ownerAccount_;
 				long ownerId_;
+				bool includeReservationData_;
 				std::string globalAccelerationInstanceId_;
 				std::string serverId_;
 				int pageNumber_;

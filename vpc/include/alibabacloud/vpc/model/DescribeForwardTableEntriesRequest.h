@@ -39,31 +39,49 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getForwardEntryId()const;
-				void setForwardEntryId(const std::string& forwardEntryId);
+				std::string getIpProtocol()const;
+				void setIpProtocol(const std::string& ipProtocol);
+				std::string getForwardEntryName()const;
+				void setForwardEntryName(const std::string& forwardEntryName);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getForwardTableId()const;
 				void setForwardTableId(const std::string& forwardTableId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInternalIp()const;
+				void setInternalIp(const std::string& internalIp);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getForwardEntryId()const;
+				void setForwardEntryId(const std::string& forwardEntryId);
+				std::string getInternalPort()const;
+				void setInternalPort(const std::string& internalPort);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getExternalIp()const;
+				void setExternalIp(const std::string& externalIp);
+				std::string getExternalPort()const;
+				void setExternalPort(const std::string& externalPort);
 
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string forwardEntryId_;
+				std::string ipProtocol_;
+				std::string forwardEntryName_;
 				std::string ownerAccount_;
 				std::string forwardTableId_;
-				int pageSize_;
 				long ownerId_;
+				std::string internalIp_;
 				int pageNumber_;
+				std::string regionId_;
+				std::string forwardEntryId_;
+				std::string internalPort_;
+				int pageSize_;
+				std::string externalIp_;
+				std::string externalPort_;
 
 			};
 		}

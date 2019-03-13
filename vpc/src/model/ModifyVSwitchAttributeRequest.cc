@@ -58,6 +58,17 @@ void ModifyVSwitchAttributeRequest::setResourceOwnerAccount(const std::string& r
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string ModifyVSwitchAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyVSwitchAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifyVSwitchAttributeRequest::getVSwitchName()const
 {
 	return vSwitchName_;
@@ -100,5 +111,16 @@ void ModifyVSwitchAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+int ModifyVSwitchAttributeRequest::getIpv6CidrBlock()const
+{
+	return ipv6CidrBlock_;
+}
+
+void ModifyVSwitchAttributeRequest::setIpv6CidrBlock(int ipv6CidrBlock)
+{
+	ipv6CidrBlock_ = ipv6CidrBlock;
+	setParameter("Ipv6CidrBlock", std::to_string(ipv6CidrBlock));
 }
 

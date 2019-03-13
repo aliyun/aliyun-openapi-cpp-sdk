@@ -69,6 +69,17 @@ void ModifySnatEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string ModifySnatEntryRequest::getSnatEntryName()const
+{
+	return snatEntryName_;
+}
+
+void ModifySnatEntryRequest::setSnatEntryName(const std::string& snatEntryName)
+{
+	snatEntryName_ = snatEntryName;
+	setParameter("SnatEntryName", snatEntryName);
+}
+
 std::string ModifySnatEntryRequest::getSnatTableId()const
 {
 	return snatTableId_;

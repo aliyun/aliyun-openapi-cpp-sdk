@@ -22,10 +22,12 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "VpcExport.h"
-#include "model/UnassociateGlobalAccelerationInstanceRequest.h"
-#include "model/UnassociateGlobalAccelerationInstanceResult.h"
 #include "model/DeleteCustomerGatewayRequest.h"
 #include "model/DeleteCustomerGatewayResult.h"
+#include "model/UnassociateGlobalAccelerationInstanceRequest.h"
+#include "model/UnassociateGlobalAccelerationInstanceResult.h"
+#include "model/DeleteIPv6TranslatorRequest.h"
+#include "model/DeleteIPv6TranslatorResult.h"
 #include "model/DescribeRouteTableListRequest.h"
 #include "model/DescribeRouteTableListResult.h"
 #include "model/AssociatePhysicalConnectionToVirtualBorderRouterRequest.h"
@@ -36,24 +38,32 @@
 #include "model/DescribeCustomerGatewaysResult.h"
 #include "model/DescribeGlobalAccelerationInstancesRequest.h"
 #include "model/DescribeGlobalAccelerationInstancesResult.h"
-#include "model/MoveResourceGroupRequest.h"
-#include "model/MoveResourceGroupResult.h"
 #include "model/ModifySslVpnClientCertRequest.h"
 #include "model/ModifySslVpnClientCertResult.h"
 #include "model/DeleteVpcRequest.h"
 #include "model/DeleteVpcResult.h"
+#include "model/DescribeBgpNetworksRequest.h"
+#include "model/DescribeBgpNetworksResult.h"
 #include "model/DownloadVpnConnectionConfigRequest.h"
 #include "model/DownloadVpnConnectionConfigResult.h"
 #include "model/RemoveCommonBandwidthPackageIpRequest.h"
 #include "model/RemoveCommonBandwidthPackageIpResult.h"
+#include "model/DescribeIPv6TranslatorsRequest.h"
+#include "model/DescribeIPv6TranslatorsResult.h"
 #include "model/ModifyBandwidthPackageSpecRequest.h"
 #include "model/ModifyBandwidthPackageSpecResult.h"
 #include "model/CreateNatGatewayRequest.h"
 #include "model/CreateNatGatewayResult.h"
 #include "model/DeleteVSwitchRequest.h"
 #include "model/DeleteVSwitchResult.h"
+#include "model/AddIPv6TranslatorAclListEntryRequest.h"
+#include "model/AddIPv6TranslatorAclListEntryResult.h"
+#include "model/CreateRouteTableRequest.h"
+#include "model/CreateRouteTableResult.h"
 #include "model/CreateHaVipRequest.h"
 #include "model/CreateHaVipResult.h"
+#include "model/DeleteIpv6GatewayRequest.h"
+#include "model/DeleteIpv6GatewayResult.h"
 #include "model/CreateBandwidthPackageRequest.h"
 #include "model/CreateBandwidthPackageResult.h"
 #include "model/RecoverVirtualBorderRouterRequest.h"
@@ -62,30 +72,46 @@
 #include "model/AssociateEipAddressResult.h"
 #include "model/DescribeEipAddressesRequest.h"
 #include "model/DescribeEipAddressesResult.h"
-#include "model/CreateCustomerGatewayRequest.h"
-#include "model/CreateCustomerGatewayResult.h"
 #include "model/ActivateRouterInterfaceRequest.h"
 #include "model/ActivateRouterInterfaceResult.h"
+#include "model/CreateCustomerGatewayRequest.h"
+#include "model/CreateCustomerGatewayResult.h"
 #include "model/DeleteSslVpnServerRequest.h"
 #include "model/DeleteSslVpnServerResult.h"
 #include "model/DeleteBandwidthPackageRequest.h"
 #include "model/DeleteBandwidthPackageResult.h"
 #include "model/DeleteBgpPeerRequest.h"
 #include "model/DeleteBgpPeerResult.h"
-#include "model/DeleteNqaRequest.h"
-#include "model/DeleteNqaResult.h"
+#include "model/DescribeIpv6GatewaysRequest.h"
+#include "model/DescribeIpv6GatewaysResult.h"
 #include "model/TerminateVirtualBorderRouterRequest.h"
 #include "model/TerminateVirtualBorderRouterResult.h"
+#include "model/DeleteNqaRequest.h"
+#include "model/DeleteNqaResult.h"
+#include "model/RemoveIPv6TranslatorAclListEntryRequest.h"
+#include "model/RemoveIPv6TranslatorAclListEntryResult.h"
+#include "model/ModifyRouteEntryRequest.h"
+#include "model/ModifyRouteEntryResult.h"
+#include "model/CreateIpv6EgressOnlyRuleRequest.h"
+#include "model/CreateIpv6EgressOnlyRuleResult.h"
 #include "model/ModifyRouteTableAttributesRequest.h"
 #include "model/ModifyRouteTableAttributesResult.h"
-#include "model/DeletePhysicalConnectionRequest.h"
-#include "model/DeletePhysicalConnectionResult.h"
 #include "model/ModifyForwardEntryRequest.h"
 #include "model/ModifyForwardEntryResult.h"
+#include "model/DeletePhysicalConnectionRequest.h"
+#include "model/DeletePhysicalConnectionResult.h"
+#include "model/DeleteFlowLogRequest.h"
+#include "model/DeleteFlowLogResult.h"
 #include "model/CreateVpcRequest.h"
 #include "model/CreateVpcResult.h"
+#include "model/CreateIPv6TranslatorRequest.h"
+#include "model/CreateIPv6TranslatorResult.h"
+#include "model/CreateIPv6TranslatorEntryRequest.h"
+#include "model/CreateIPv6TranslatorEntryResult.h"
 #include "model/DescribeForwardTableEntriesRequest.h"
 #include "model/DescribeForwardTableEntriesResult.h"
+#include "model/ModifyIpv6GatewayAttributeRequest.h"
+#include "model/ModifyIpv6GatewayAttributeResult.h"
 #include "model/UnassociateEipAddressRequest.h"
 #include "model/UnassociateEipAddressResult.h"
 #include "model/DescribeSslVpnClientCertsRequest.h"
@@ -100,10 +126,10 @@
 #include "model/DeleteRouterInterfaceResult.h"
 #include "model/CreateSslVpnServerRequest.h"
 #include "model/CreateSslVpnServerResult.h"
-#include "model/DescribeBandwidthPackagePublicIpMonitorDataRequest.h"
-#include "model/DescribeBandwidthPackagePublicIpMonitorDataResult.h"
 #include "model/DescribeNqasRequest.h"
 #include "model/DescribeNqasResult.h"
+#include "model/ModifyFlowLogAttributeRequest.h"
+#include "model/ModifyFlowLogAttributeResult.h"
 #include "model/ModifyVirtualBorderRouterAttributeRequest.h"
 #include "model/ModifyVirtualBorderRouterAttributeResult.h"
 #include "model/ModifyNatGatewayAttributeRequest.h"
@@ -116,72 +142,98 @@
 #include "model/DescribeCustomerGatewayResult.h"
 #include "model/ModifyVpnGatewayAttributeRequest.h"
 #include "model/ModifyVpnGatewayAttributeResult.h"
+#include "model/AllocateIpv6InternetBandwidthRequest.h"
+#include "model/AllocateIpv6InternetBandwidthResult.h"
 #include "model/AddBgpNetworkRequest.h"
 #include "model/AddBgpNetworkResult.h"
 #include "model/ModifySslVpnServerRequest.h"
 #include "model/ModifySslVpnServerResult.h"
+#include "model/DescribeIPv6TranslatorEntriesRequest.h"
+#include "model/DescribeIPv6TranslatorEntriesResult.h"
 #include "model/DescribeVpnConnectionsRequest.h"
 #include "model/DescribeVpnConnectionsResult.h"
-#include "model/DescribeNewProjectEipMonitorDataRequest.h"
-#include "model/DescribeNewProjectEipMonitorDataResult.h"
 #include "model/ModifyBandwidthPackageAttributeRequest.h"
 #include "model/ModifyBandwidthPackageAttributeResult.h"
 #include "model/ConnectRouterInterfaceRequest.h"
 #include "model/ConnectRouterInterfaceResult.h"
 #include "model/DescribeBgpPeersRequest.h"
 #include "model/DescribeBgpPeersResult.h"
+#include "model/DescribeIpv6GatewayAttributeRequest.h"
+#include "model/DescribeIpv6GatewayAttributeResult.h"
 #include "model/DeleteSnatEntryRequest.h"
 #include "model/DeleteSnatEntryResult.h"
-#include "model/DescribeHaVipsRequest.h"
-#include "model/DescribeHaVipsResult.h"
 #include "model/CreateNqaRequest.h"
 #include "model/CreateNqaResult.h"
-#include "model/DescribeForwardTablesRequest.h"
-#include "model/DescribeForwardTablesResult.h"
+#include "model/ConvertBandwidthPackageRequest.h"
+#include "model/ConvertBandwidthPackageResult.h"
+#include "model/DescribeHaVipsRequest.h"
+#include "model/DescribeHaVipsResult.h"
+#include "model/ModifyIpv6GatewaySpecRequest.h"
+#include "model/ModifyIpv6GatewaySpecResult.h"
+#include "model/GrantInstanceToCenRequest.h"
+#include "model/GrantInstanceToCenResult.h"
 #include "model/AddBandwidthPackageIpsRequest.h"
 #include "model/AddBandwidthPackageIpsResult.h"
-#include "model/ModifyPhysicalConnectionAttributeRequest.h"
-#include "model/ModifyPhysicalConnectionAttributeResult.h"
 #include "model/CreateSnatEntryRequest.h"
 #include "model/CreateSnatEntryResult.h"
 #include "model/DeleteCommonBandwidthPackageRequest.h"
 #include "model/DeleteCommonBandwidthPackageResult.h"
-#include "model/ModifyVSwitchAttributeRequest.h"
-#include "model/ModifyVSwitchAttributeResult.h"
+#include "model/ModifyPhysicalConnectionAttributeRequest.h"
+#include "model/ModifyPhysicalConnectionAttributeResult.h"
 #include "model/DescribeNatGatewaysRequest.h"
 #include "model/DescribeNatGatewaysResult.h"
+#include "model/ModifyVSwitchAttributeRequest.h"
+#include "model/ModifyVSwitchAttributeResult.h"
+#include "model/ModifyIPv6TranslatorAclListEntryRequest.h"
+#include "model/ModifyIPv6TranslatorAclListEntryResult.h"
 #include "model/EnableVpcClassicLinkRequest.h"
 #include "model/EnableVpcClassicLinkResult.h"
 #include "model/DeleteHaVipRequest.h"
 #include "model/DeleteHaVipResult.h"
 #include "model/DescribeVpcAttributeRequest.h"
 #include "model/DescribeVpcAttributeResult.h"
+#include "model/ModifyIpv6AddressAttributeRequest.h"
+#include "model/ModifyIpv6AddressAttributeResult.h"
 #include "model/CreateVpnConnectionRequest.h"
 #include "model/CreateVpnConnectionResult.h"
+#include "model/ModifyIPv6TranslatorBandwidthRequest.h"
+#include "model/ModifyIPv6TranslatorBandwidthResult.h"
+#include "model/ModifyIPv6TranslatorAttributeRequest.h"
+#include "model/ModifyIPv6TranslatorAttributeResult.h"
 #include "model/DeleteVpnConnectionRequest.h"
 #include "model/DeleteVpnConnectionResult.h"
+#include "model/CreateIpv6GatewayRequest.h"
+#include "model/CreateIpv6GatewayResult.h"
+#include "model/CreateRouteEntryRequest.h"
+#include "model/CreateRouteEntryResult.h"
 #include "model/DescribeBandwidthPackagesRequest.h"
 #include "model/DescribeBandwidthPackagesResult.h"
 #include "model/DeleteBgpNetworkRequest.h"
 #include "model/DeleteBgpNetworkResult.h"
-#include "model/CreateRouteEntryRequest.h"
-#include "model/CreateRouteEntryResult.h"
-#include "model/CreateRouterInterfaceRequest.h"
-#include "model/CreateRouterInterfaceResult.h"
 #include "model/DisableVpcClassicLinkRequest.h"
 #include "model/DisableVpcClassicLinkResult.h"
+#include "model/CreateRouterInterfaceRequest.h"
+#include "model/CreateRouterInterfaceResult.h"
 #include "model/ModifyVpnConnectionAttributeRequest.h"
 #include "model/ModifyVpnConnectionAttributeResult.h"
+#include "model/DescribeFlowLogsRequest.h"
+#include "model/DescribeFlowLogsResult.h"
+#include "model/DescribeIPv6TranslatorAclListAttributesRequest.h"
+#include "model/DescribeIPv6TranslatorAclListAttributesResult.h"
 #include "model/RemoveGlobalAccelerationInstanceIpRequest.h"
 #include "model/RemoveGlobalAccelerationInstanceIpResult.h"
 #include "model/ModifyNatGatewaySpecRequest.h"
 #include "model/ModifyNatGatewaySpecResult.h"
 #include "model/DescribeBgpGroupsRequest.h"
 #include "model/DescribeBgpGroupsResult.h"
-#include "model/RemoveBandwidthPackageIpsRequest.h"
-#include "model/RemoveBandwidthPackageIpsResult.h"
+#include "model/DescribeGrantRulesToCenRequest.h"
+#include "model/DescribeGrantRulesToCenResult.h"
+#include "model/DeleteIpv6InternetBandwidthRequest.h"
+#include "model/DeleteIpv6InternetBandwidthResult.h"
 #include "model/ModifyVpcAttributeRequest.h"
 #include "model/ModifyVpcAttributeResult.h"
+#include "model/RemoveBandwidthPackageIpsRequest.h"
+#include "model/RemoveBandwidthPackageIpsResult.h"
 #include "model/DeleteSslVpnClientCertRequest.h"
 #include "model/DeleteSslVpnClientCertResult.h"
 #include "model/CreateVSwitchRequest.h"
@@ -196,28 +248,48 @@
 #include "model/ModifyCommonBandwidthPackagePayTypeResult.h"
 #include "model/DescribeVSwitchAttributesRequest.h"
 #include "model/DescribeVSwitchAttributesResult.h"
+#include "model/ModifyIPv6TranslatorEntryRequest.h"
+#include "model/ModifyIPv6TranslatorEntryResult.h"
 #include "model/CreateCommonBandwidthPackageRequest.h"
 #include "model/CreateCommonBandwidthPackageResult.h"
+#include "model/DescribePhysicalConnectionOrderRequest.h"
+#include "model/DescribePhysicalConnectionOrderResult.h"
 #include "model/CreateForwardEntryRequest.h"
 #include "model/CreateForwardEntryResult.h"
 #include "model/DescribeRouterInterfacesRequest.h"
 #include "model/DescribeRouterInterfacesResult.h"
+#include "model/DeactiveFlowLogRequest.h"
+#include "model/DeactiveFlowLogResult.h"
+#include "model/CreateFlowLogRequest.h"
+#include "model/CreateFlowLogResult.h"
 #include "model/DeleteNatGatewayRequest.h"
 #include "model/DeleteNatGatewayResult.h"
+#include "model/ActiveFlowLogRequest.h"
+#include "model/ActiveFlowLogResult.h"
 #include "model/DescribeZonesRequest.h"
 #include "model/DescribeZonesResult.h"
+#include "model/DeleteIpv6EgressOnlyRuleRequest.h"
+#include "model/DeleteIpv6EgressOnlyRuleResult.h"
 #include "model/DeactivateRouterInterfaceRequest.h"
 #include "model/DeactivateRouterInterfaceResult.h"
 #include "model/ModifySnatEntryRequest.h"
 #include "model/ModifySnatEntryResult.h"
+#include "model/DescribeIPv6TranslatorAclListsRequest.h"
+#include "model/DescribeIPv6TranslatorAclListsResult.h"
 #include "model/DescribeAccessPointsRequest.h"
 #include "model/DescribeAccessPointsResult.h"
 #include "model/CreateSslVpnClientCertRequest.h"
 #include "model/CreateSslVpnClientCertResult.h"
+#include "model/CreateIPv6TranslatorAclListRequest.h"
+#include "model/CreateIPv6TranslatorAclListResult.h"
 #include "model/CreateVirtualBorderRouterRequest.h"
 #include "model/CreateVirtualBorderRouterResult.h"
 #include "model/DeleteBgpGroupRequest.h"
 #include "model/DeleteBgpGroupResult.h"
+#include "model/DescribeIpv6AddressesRequest.h"
+#include "model/DescribeIpv6AddressesResult.h"
+#include "model/DeleteIPv6TranslatorEntryRequest.h"
+#include "model/DeleteIPv6TranslatorEntryResult.h"
 #include "model/ReleaseEipAddressRequest.h"
 #include "model/ReleaseEipAddressResult.h"
 #include "model/CreateBgpPeerRequest.h"
@@ -240,70 +312,84 @@
 #include "model/AssociateHaVipResult.h"
 #include "model/ModifyRouterInterfaceAttributeRequest.h"
 #include "model/ModifyRouterInterfaceAttributeResult.h"
+#include "model/AssociateRouteTableRequest.h"
+#include "model/AssociateRouteTableResult.h"
+#include "model/ModifyIPv6TranslatorAclAttributeRequest.h"
+#include "model/ModifyIPv6TranslatorAclAttributeResult.h"
 #include "model/DescribeVirtualBorderRoutersForPhysicalConnectionRequest.h"
 #include "model/DescribeVirtualBorderRoutersForPhysicalConnectionResult.h"
 #include "model/ModifyGlobalAccelerationInstanceAttributesRequest.h"
 #include "model/ModifyGlobalAccelerationInstanceAttributesResult.h"
-#include "model/ModifyCommonBandwidthPackageSpecRequest.h"
-#include "model/ModifyCommonBandwidthPackageSpecResult.h"
 #include "model/DeleteRouteEntryRequest.h"
 #include "model/DeleteRouteEntryResult.h"
 #include "model/DeleteVirtualBorderRouterRequest.h"
 #include "model/DeleteVirtualBorderRouterResult.h"
+#include "model/ModifyCommonBandwidthPackageSpecRequest.h"
+#include "model/ModifyCommonBandwidthPackageSpecResult.h"
 #include "model/CreatePhysicalConnectionNewRequest.h"
 #include "model/CreatePhysicalConnectionNewResult.h"
 #include "model/TerminatePhysicalConnectionRequest.h"
 #include "model/TerminatePhysicalConnectionResult.h"
+#include "model/DescribeIpv6EgressOnlyRulesRequest.h"
+#include "model/DescribeIpv6EgressOnlyRulesResult.h"
 #include "model/DescribeVpnGatewayRequest.h"
 #include "model/DescribeVpnGatewayResult.h"
-#include "model/DescribeVpnConnectionLogsRequest.h"
-#include "model/DescribeVpnConnectionLogsResult.h"
+#include "model/RevokeInstanceFromCenRequest.h"
+#include "model/RevokeInstanceFromCenResult.h"
+#include "model/DeleteRouteTableRequest.h"
+#include "model/DeleteRouteTableResult.h"
 #include "model/ModifyBgpGroupAttributeRequest.h"
 #include "model/ModifyBgpGroupAttributeResult.h"
 #include "model/ModifyCommonBandwidthPackageAttributeRequest.h"
 #include "model/ModifyCommonBandwidthPackageAttributeResult.h"
+#include "model/UnassociateRouteTableRequest.h"
+#include "model/UnassociateRouteTableResult.h"
 #include "model/DeleteForwardEntryRequest.h"
 #include "model/DeleteForwardEntryResult.h"
 #include "model/AddCommonBandwidthPackageIpRequest.h"
 #include "model/AddCommonBandwidthPackageIpResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/ModifyIpv6InternetBandwidthRequest.h"
+#include "model/ModifyIpv6InternetBandwidthResult.h"
 #include "model/DescribePhysicalConnectionsRequest.h"
 #include "model/DescribePhysicalConnectionsResult.h"
 #include "model/DescribeVpnGatewaysRequest.h"
 #include "model/DescribeVpnGatewaysResult.h"
 #include "model/DescribeVirtualBorderRoutersRequest.h"
 #include "model/DescribeVirtualBorderRoutersResult.h"
-#include "model/CreateGlobalAccelerationInstanceRequest.h"
-#include "model/CreateGlobalAccelerationInstanceResult.h"
 #include "model/CancelPhysicalConnectionRequest.h"
 #include "model/CancelPhysicalConnectionResult.h"
+#include "model/CreateGlobalAccelerationInstanceRequest.h"
+#include "model/CreateGlobalAccelerationInstanceResult.h"
 #include "model/CreateBgpGroupRequest.h"
 #include "model/CreateBgpGroupResult.h"
 #include "model/DescribeVRoutersRequest.h"
 #include "model/DescribeVRoutersResult.h"
-#include "model/DescribeRouterInterfacesForGlobalRequest.h"
-#include "model/DescribeRouterInterfacesForGlobalResult.h"
 #include "model/ModifyNqaRequest.h"
 #include "model/ModifyNqaResult.h"
 #include "model/AllocateEipAddressRequest.h"
 #include "model/AllocateEipAddressResult.h"
 #include "model/DescribeSslVpnClientCertRequest.h"
 #include "model/DescribeSslVpnClientCertResult.h"
-#include "model/DescribeCommonBandwidthPackagesRequest.h"
-#include "model/DescribeCommonBandwidthPackagesResult.h"
 #include "model/UnassociateHaVipRequest.h"
 #include "model/UnassociateHaVipResult.h"
+#include "model/DescribeCommonBandwidthPackagesRequest.h"
+#include "model/DescribeCommonBandwidthPackagesResult.h"
 #include "model/ModifyHaVipAttributeRequest.h"
 #include "model/ModifyHaVipAttributeResult.h"
+#include "model/DeleteIPv6TranslatorAclListRequest.h"
+#include "model/DeleteIPv6TranslatorAclListResult.h"
 #include "model/AssociateGlobalAccelerationInstanceRequest.h"
 #include "model/AssociateGlobalAccelerationInstanceResult.h"
 #include "model/DescribeSslVpnServersRequest.h"
 #include "model/DescribeSslVpnServersResult.h"
-#include "model/ModifyVRouterAttributeRequest.h"
-#include "model/ModifyVRouterAttributeResult.h"
 #include "model/DescribeSnatTableEntriesRequest.h"
 #include "model/DescribeSnatTableEntriesResult.h"
+#include "model/ModifyVRouterAttributeRequest.h"
+#include "model/ModifyVRouterAttributeResult.h"
+#include "model/CreateVpnGatewayRequest.h"
+#include "model/CreateVpnGatewayResult.h"
 
 
 namespace AlibabaCloud
@@ -313,12 +399,15 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_VPC_EXPORT VpcClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::UnassociateGlobalAccelerationInstanceResult> UnassociateGlobalAccelerationInstanceOutcome;
-			typedef std::future<UnassociateGlobalAccelerationInstanceOutcome> UnassociateGlobalAccelerationInstanceOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::UnassociateGlobalAccelerationInstanceRequest&, const UnassociateGlobalAccelerationInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateGlobalAccelerationInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCustomerGatewayResult> DeleteCustomerGatewayOutcome;
 			typedef std::future<DeleteCustomerGatewayOutcome> DeleteCustomerGatewayOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteCustomerGatewayRequest&, const DeleteCustomerGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomerGatewayAsyncHandler;
+			typedef Outcome<Error, Model::UnassociateGlobalAccelerationInstanceResult> UnassociateGlobalAccelerationInstanceOutcome;
+			typedef std::future<UnassociateGlobalAccelerationInstanceOutcome> UnassociateGlobalAccelerationInstanceOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::UnassociateGlobalAccelerationInstanceRequest&, const UnassociateGlobalAccelerationInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateGlobalAccelerationInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteIPv6TranslatorResult> DeleteIPv6TranslatorOutcome;
+			typedef std::future<DeleteIPv6TranslatorOutcome> DeleteIPv6TranslatorOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeleteIPv6TranslatorRequest&, const DeleteIPv6TranslatorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIPv6TranslatorAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRouteTableListResult> DescribeRouteTableListOutcome;
 			typedef std::future<DescribeRouteTableListOutcome> DescribeRouteTableListOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeRouteTableListRequest&, const DescribeRouteTableListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTableListAsyncHandler;
@@ -334,21 +423,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeGlobalAccelerationInstancesResult> DescribeGlobalAccelerationInstancesOutcome;
 			typedef std::future<DescribeGlobalAccelerationInstancesOutcome> DescribeGlobalAccelerationInstancesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeGlobalAccelerationInstancesRequest&, const DescribeGlobalAccelerationInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalAccelerationInstancesAsyncHandler;
-			typedef Outcome<Error, Model::MoveResourceGroupResult> MoveResourceGroupOutcome;
-			typedef std::future<MoveResourceGroupOutcome> MoveResourceGroupOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::MoveResourceGroupRequest&, const MoveResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::ModifySslVpnClientCertResult> ModifySslVpnClientCertOutcome;
 			typedef std::future<ModifySslVpnClientCertOutcome> ModifySslVpnClientCertOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifySslVpnClientCertRequest&, const ModifySslVpnClientCertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySslVpnClientCertAsyncHandler;
 			typedef Outcome<Error, Model::DeleteVpcResult> DeleteVpcOutcome;
 			typedef std::future<DeleteVpcOutcome> DeleteVpcOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteVpcRequest&, const DeleteVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBgpNetworksResult> DescribeBgpNetworksOutcome;
+			typedef std::future<DescribeBgpNetworksOutcome> DescribeBgpNetworksOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeBgpNetworksRequest&, const DescribeBgpNetworksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBgpNetworksAsyncHandler;
 			typedef Outcome<Error, Model::DownloadVpnConnectionConfigResult> DownloadVpnConnectionConfigOutcome;
 			typedef std::future<DownloadVpnConnectionConfigOutcome> DownloadVpnConnectionConfigOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DownloadVpnConnectionConfigRequest&, const DownloadVpnConnectionConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DownloadVpnConnectionConfigAsyncHandler;
 			typedef Outcome<Error, Model::RemoveCommonBandwidthPackageIpResult> RemoveCommonBandwidthPackageIpOutcome;
 			typedef std::future<RemoveCommonBandwidthPackageIpOutcome> RemoveCommonBandwidthPackageIpOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::RemoveCommonBandwidthPackageIpRequest&, const RemoveCommonBandwidthPackageIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveCommonBandwidthPackageIpAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIPv6TranslatorsResult> DescribeIPv6TranslatorsOutcome;
+			typedef std::future<DescribeIPv6TranslatorsOutcome> DescribeIPv6TranslatorsOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeIPv6TranslatorsRequest&, const DescribeIPv6TranslatorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPv6TranslatorsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyBandwidthPackageSpecResult> ModifyBandwidthPackageSpecOutcome;
 			typedef std::future<ModifyBandwidthPackageSpecOutcome> ModifyBandwidthPackageSpecOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyBandwidthPackageSpecRequest&, const ModifyBandwidthPackageSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBandwidthPackageSpecAsyncHandler;
@@ -358,9 +450,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteVSwitchResult> DeleteVSwitchOutcome;
 			typedef std::future<DeleteVSwitchOutcome> DeleteVSwitchOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteVSwitchRequest&, const DeleteVSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVSwitchAsyncHandler;
+			typedef Outcome<Error, Model::AddIPv6TranslatorAclListEntryResult> AddIPv6TranslatorAclListEntryOutcome;
+			typedef std::future<AddIPv6TranslatorAclListEntryOutcome> AddIPv6TranslatorAclListEntryOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::AddIPv6TranslatorAclListEntryRequest&, const AddIPv6TranslatorAclListEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddIPv6TranslatorAclListEntryAsyncHandler;
+			typedef Outcome<Error, Model::CreateRouteTableResult> CreateRouteTableOutcome;
+			typedef std::future<CreateRouteTableOutcome> CreateRouteTableOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateRouteTableRequest&, const CreateRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteTableAsyncHandler;
 			typedef Outcome<Error, Model::CreateHaVipResult> CreateHaVipOutcome;
 			typedef std::future<CreateHaVipOutcome> CreateHaVipOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateHaVipRequest&, const CreateHaVipOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateHaVipAsyncHandler;
+			typedef Outcome<Error, Model::DeleteIpv6GatewayResult> DeleteIpv6GatewayOutcome;
+			typedef std::future<DeleteIpv6GatewayOutcome> DeleteIpv6GatewayOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeleteIpv6GatewayRequest&, const DeleteIpv6GatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIpv6GatewayAsyncHandler;
 			typedef Outcome<Error, Model::CreateBandwidthPackageResult> CreateBandwidthPackageOutcome;
 			typedef std::future<CreateBandwidthPackageOutcome> CreateBandwidthPackageOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateBandwidthPackageRequest&, const CreateBandwidthPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBandwidthPackageAsyncHandler;
@@ -373,12 +474,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEipAddressesResult> DescribeEipAddressesOutcome;
 			typedef std::future<DescribeEipAddressesOutcome> DescribeEipAddressesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeEipAddressesRequest&, const DescribeEipAddressesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEipAddressesAsyncHandler;
-			typedef Outcome<Error, Model::CreateCustomerGatewayResult> CreateCustomerGatewayOutcome;
-			typedef std::future<CreateCustomerGatewayOutcome> CreateCustomerGatewayOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::CreateCustomerGatewayRequest&, const CreateCustomerGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomerGatewayAsyncHandler;
 			typedef Outcome<Error, Model::ActivateRouterInterfaceResult> ActivateRouterInterfaceOutcome;
 			typedef std::future<ActivateRouterInterfaceOutcome> ActivateRouterInterfaceOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ActivateRouterInterfaceRequest&, const ActivateRouterInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ActivateRouterInterfaceAsyncHandler;
+			typedef Outcome<Error, Model::CreateCustomerGatewayResult> CreateCustomerGatewayOutcome;
+			typedef std::future<CreateCustomerGatewayOutcome> CreateCustomerGatewayOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateCustomerGatewayRequest&, const CreateCustomerGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomerGatewayAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSslVpnServerResult> DeleteSslVpnServerOutcome;
 			typedef std::future<DeleteSslVpnServerOutcome> DeleteSslVpnServerOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteSslVpnServerRequest&, const DeleteSslVpnServerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSslVpnServerAsyncHandler;
@@ -388,27 +489,51 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteBgpPeerResult> DeleteBgpPeerOutcome;
 			typedef std::future<DeleteBgpPeerOutcome> DeleteBgpPeerOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteBgpPeerRequest&, const DeleteBgpPeerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBgpPeerAsyncHandler;
-			typedef Outcome<Error, Model::DeleteNqaResult> DeleteNqaOutcome;
-			typedef std::future<DeleteNqaOutcome> DeleteNqaOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::DeleteNqaRequest&, const DeleteNqaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNqaAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIpv6GatewaysResult> DescribeIpv6GatewaysOutcome;
+			typedef std::future<DescribeIpv6GatewaysOutcome> DescribeIpv6GatewaysOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeIpv6GatewaysRequest&, const DescribeIpv6GatewaysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpv6GatewaysAsyncHandler;
 			typedef Outcome<Error, Model::TerminateVirtualBorderRouterResult> TerminateVirtualBorderRouterOutcome;
 			typedef std::future<TerminateVirtualBorderRouterOutcome> TerminateVirtualBorderRouterOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::TerminateVirtualBorderRouterRequest&, const TerminateVirtualBorderRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TerminateVirtualBorderRouterAsyncHandler;
+			typedef Outcome<Error, Model::DeleteNqaResult> DeleteNqaOutcome;
+			typedef std::future<DeleteNqaOutcome> DeleteNqaOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeleteNqaRequest&, const DeleteNqaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNqaAsyncHandler;
+			typedef Outcome<Error, Model::RemoveIPv6TranslatorAclListEntryResult> RemoveIPv6TranslatorAclListEntryOutcome;
+			typedef std::future<RemoveIPv6TranslatorAclListEntryOutcome> RemoveIPv6TranslatorAclListEntryOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::RemoveIPv6TranslatorAclListEntryRequest&, const RemoveIPv6TranslatorAclListEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveIPv6TranslatorAclListEntryAsyncHandler;
+			typedef Outcome<Error, Model::ModifyRouteEntryResult> ModifyRouteEntryOutcome;
+			typedef std::future<ModifyRouteEntryOutcome> ModifyRouteEntryOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyRouteEntryRequest&, const ModifyRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRouteEntryAsyncHandler;
+			typedef Outcome<Error, Model::CreateIpv6EgressOnlyRuleResult> CreateIpv6EgressOnlyRuleOutcome;
+			typedef std::future<CreateIpv6EgressOnlyRuleOutcome> CreateIpv6EgressOnlyRuleOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateIpv6EgressOnlyRuleRequest&, const CreateIpv6EgressOnlyRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIpv6EgressOnlyRuleAsyncHandler;
 			typedef Outcome<Error, Model::ModifyRouteTableAttributesResult> ModifyRouteTableAttributesOutcome;
 			typedef std::future<ModifyRouteTableAttributesOutcome> ModifyRouteTableAttributesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyRouteTableAttributesRequest&, const ModifyRouteTableAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRouteTableAttributesAsyncHandler;
-			typedef Outcome<Error, Model::DeletePhysicalConnectionResult> DeletePhysicalConnectionOutcome;
-			typedef std::future<DeletePhysicalConnectionOutcome> DeletePhysicalConnectionOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::DeletePhysicalConnectionRequest&, const DeletePhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePhysicalConnectionAsyncHandler;
 			typedef Outcome<Error, Model::ModifyForwardEntryResult> ModifyForwardEntryOutcome;
 			typedef std::future<ModifyForwardEntryOutcome> ModifyForwardEntryOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyForwardEntryRequest&, const ModifyForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyForwardEntryAsyncHandler;
+			typedef Outcome<Error, Model::DeletePhysicalConnectionResult> DeletePhysicalConnectionOutcome;
+			typedef std::future<DeletePhysicalConnectionOutcome> DeletePhysicalConnectionOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeletePhysicalConnectionRequest&, const DeletePhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePhysicalConnectionAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFlowLogResult> DeleteFlowLogOutcome;
+			typedef std::future<DeleteFlowLogOutcome> DeleteFlowLogOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeleteFlowLogRequest&, const DeleteFlowLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFlowLogAsyncHandler;
 			typedef Outcome<Error, Model::CreateVpcResult> CreateVpcOutcome;
 			typedef std::future<CreateVpcOutcome> CreateVpcOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateVpcRequest&, const CreateVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcAsyncHandler;
+			typedef Outcome<Error, Model::CreateIPv6TranslatorResult> CreateIPv6TranslatorOutcome;
+			typedef std::future<CreateIPv6TranslatorOutcome> CreateIPv6TranslatorOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateIPv6TranslatorRequest&, const CreateIPv6TranslatorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIPv6TranslatorAsyncHandler;
+			typedef Outcome<Error, Model::CreateIPv6TranslatorEntryResult> CreateIPv6TranslatorEntryOutcome;
+			typedef std::future<CreateIPv6TranslatorEntryOutcome> CreateIPv6TranslatorEntryOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateIPv6TranslatorEntryRequest&, const CreateIPv6TranslatorEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIPv6TranslatorEntryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeForwardTableEntriesResult> DescribeForwardTableEntriesOutcome;
 			typedef std::future<DescribeForwardTableEntriesOutcome> DescribeForwardTableEntriesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeForwardTableEntriesRequest&, const DescribeForwardTableEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForwardTableEntriesAsyncHandler;
+			typedef Outcome<Error, Model::ModifyIpv6GatewayAttributeResult> ModifyIpv6GatewayAttributeOutcome;
+			typedef std::future<ModifyIpv6GatewayAttributeOutcome> ModifyIpv6GatewayAttributeOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyIpv6GatewayAttributeRequest&, const ModifyIpv6GatewayAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpv6GatewayAttributeAsyncHandler;
 			typedef Outcome<Error, Model::UnassociateEipAddressResult> UnassociateEipAddressOutcome;
 			typedef std::future<UnassociateEipAddressOutcome> UnassociateEipAddressOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::UnassociateEipAddressRequest&, const UnassociateEipAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateEipAddressAsyncHandler;
@@ -430,12 +555,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSslVpnServerResult> CreateSslVpnServerOutcome;
 			typedef std::future<CreateSslVpnServerOutcome> CreateSslVpnServerOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateSslVpnServerRequest&, const CreateSslVpnServerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSslVpnServerAsyncHandler;
-			typedef Outcome<Error, Model::DescribeBandwidthPackagePublicIpMonitorDataResult> DescribeBandwidthPackagePublicIpMonitorDataOutcome;
-			typedef std::future<DescribeBandwidthPackagePublicIpMonitorDataOutcome> DescribeBandwidthPackagePublicIpMonitorDataOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::DescribeBandwidthPackagePublicIpMonitorDataRequest&, const DescribeBandwidthPackagePublicIpMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBandwidthPackagePublicIpMonitorDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeNqasResult> DescribeNqasOutcome;
 			typedef std::future<DescribeNqasOutcome> DescribeNqasOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeNqasRequest&, const DescribeNqasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNqasAsyncHandler;
+			typedef Outcome<Error, Model::ModifyFlowLogAttributeResult> ModifyFlowLogAttributeOutcome;
+			typedef std::future<ModifyFlowLogAttributeOutcome> ModifyFlowLogAttributeOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyFlowLogAttributeRequest&, const ModifyFlowLogAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFlowLogAttributeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyVirtualBorderRouterAttributeResult> ModifyVirtualBorderRouterAttributeOutcome;
 			typedef std::future<ModifyVirtualBorderRouterAttributeOutcome> ModifyVirtualBorderRouterAttributeOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyVirtualBorderRouterAttributeRequest&, const ModifyVirtualBorderRouterAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVirtualBorderRouterAttributeAsyncHandler;
@@ -454,18 +579,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyVpnGatewayAttributeResult> ModifyVpnGatewayAttributeOutcome;
 			typedef std::future<ModifyVpnGatewayAttributeOutcome> ModifyVpnGatewayAttributeOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyVpnGatewayAttributeRequest&, const ModifyVpnGatewayAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpnGatewayAttributeAsyncHandler;
+			typedef Outcome<Error, Model::AllocateIpv6InternetBandwidthResult> AllocateIpv6InternetBandwidthOutcome;
+			typedef std::future<AllocateIpv6InternetBandwidthOutcome> AllocateIpv6InternetBandwidthOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::AllocateIpv6InternetBandwidthRequest&, const AllocateIpv6InternetBandwidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateIpv6InternetBandwidthAsyncHandler;
 			typedef Outcome<Error, Model::AddBgpNetworkResult> AddBgpNetworkOutcome;
 			typedef std::future<AddBgpNetworkOutcome> AddBgpNetworkOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::AddBgpNetworkRequest&, const AddBgpNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddBgpNetworkAsyncHandler;
 			typedef Outcome<Error, Model::ModifySslVpnServerResult> ModifySslVpnServerOutcome;
 			typedef std::future<ModifySslVpnServerOutcome> ModifySslVpnServerOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifySslVpnServerRequest&, const ModifySslVpnServerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySslVpnServerAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIPv6TranslatorEntriesResult> DescribeIPv6TranslatorEntriesOutcome;
+			typedef std::future<DescribeIPv6TranslatorEntriesOutcome> DescribeIPv6TranslatorEntriesOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeIPv6TranslatorEntriesRequest&, const DescribeIPv6TranslatorEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPv6TranslatorEntriesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVpnConnectionsResult> DescribeVpnConnectionsOutcome;
 			typedef std::future<DescribeVpnConnectionsOutcome> DescribeVpnConnectionsOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeVpnConnectionsRequest&, const DescribeVpnConnectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpnConnectionsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeNewProjectEipMonitorDataResult> DescribeNewProjectEipMonitorDataOutcome;
-			typedef std::future<DescribeNewProjectEipMonitorDataOutcome> DescribeNewProjectEipMonitorDataOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::DescribeNewProjectEipMonitorDataRequest&, const DescribeNewProjectEipMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNewProjectEipMonitorDataAsyncHandler;
 			typedef Outcome<Error, Model::ModifyBandwidthPackageAttributeResult> ModifyBandwidthPackageAttributeOutcome;
 			typedef std::future<ModifyBandwidthPackageAttributeOutcome> ModifyBandwidthPackageAttributeOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyBandwidthPackageAttributeRequest&, const ModifyBandwidthPackageAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBandwidthPackageAttributeAsyncHandler;
@@ -475,36 +603,48 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBgpPeersResult> DescribeBgpPeersOutcome;
 			typedef std::future<DescribeBgpPeersOutcome> DescribeBgpPeersOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeBgpPeersRequest&, const DescribeBgpPeersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBgpPeersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIpv6GatewayAttributeResult> DescribeIpv6GatewayAttributeOutcome;
+			typedef std::future<DescribeIpv6GatewayAttributeOutcome> DescribeIpv6GatewayAttributeOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeIpv6GatewayAttributeRequest&, const DescribeIpv6GatewayAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpv6GatewayAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSnatEntryResult> DeleteSnatEntryOutcome;
 			typedef std::future<DeleteSnatEntryOutcome> DeleteSnatEntryOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteSnatEntryRequest&, const DeleteSnatEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnatEntryAsyncHandler;
-			typedef Outcome<Error, Model::DescribeHaVipsResult> DescribeHaVipsOutcome;
-			typedef std::future<DescribeHaVipsOutcome> DescribeHaVipsOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::DescribeHaVipsRequest&, const DescribeHaVipsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHaVipsAsyncHandler;
 			typedef Outcome<Error, Model::CreateNqaResult> CreateNqaOutcome;
 			typedef std::future<CreateNqaOutcome> CreateNqaOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateNqaRequest&, const CreateNqaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNqaAsyncHandler;
-			typedef Outcome<Error, Model::DescribeForwardTablesResult> DescribeForwardTablesOutcome;
-			typedef std::future<DescribeForwardTablesOutcome> DescribeForwardTablesOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::DescribeForwardTablesRequest&, const DescribeForwardTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForwardTablesAsyncHandler;
+			typedef Outcome<Error, Model::ConvertBandwidthPackageResult> ConvertBandwidthPackageOutcome;
+			typedef std::future<ConvertBandwidthPackageOutcome> ConvertBandwidthPackageOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ConvertBandwidthPackageRequest&, const ConvertBandwidthPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConvertBandwidthPackageAsyncHandler;
+			typedef Outcome<Error, Model::DescribeHaVipsResult> DescribeHaVipsOutcome;
+			typedef std::future<DescribeHaVipsOutcome> DescribeHaVipsOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeHaVipsRequest&, const DescribeHaVipsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHaVipsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyIpv6GatewaySpecResult> ModifyIpv6GatewaySpecOutcome;
+			typedef std::future<ModifyIpv6GatewaySpecOutcome> ModifyIpv6GatewaySpecOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyIpv6GatewaySpecRequest&, const ModifyIpv6GatewaySpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpv6GatewaySpecAsyncHandler;
+			typedef Outcome<Error, Model::GrantInstanceToCenResult> GrantInstanceToCenOutcome;
+			typedef std::future<GrantInstanceToCenOutcome> GrantInstanceToCenOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::GrantInstanceToCenRequest&, const GrantInstanceToCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GrantInstanceToCenAsyncHandler;
 			typedef Outcome<Error, Model::AddBandwidthPackageIpsResult> AddBandwidthPackageIpsOutcome;
 			typedef std::future<AddBandwidthPackageIpsOutcome> AddBandwidthPackageIpsOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::AddBandwidthPackageIpsRequest&, const AddBandwidthPackageIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddBandwidthPackageIpsAsyncHandler;
-			typedef Outcome<Error, Model::ModifyPhysicalConnectionAttributeResult> ModifyPhysicalConnectionAttributeOutcome;
-			typedef std::future<ModifyPhysicalConnectionAttributeOutcome> ModifyPhysicalConnectionAttributeOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::ModifyPhysicalConnectionAttributeRequest&, const ModifyPhysicalConnectionAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPhysicalConnectionAttributeAsyncHandler;
 			typedef Outcome<Error, Model::CreateSnatEntryResult> CreateSnatEntryOutcome;
 			typedef std::future<CreateSnatEntryOutcome> CreateSnatEntryOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateSnatEntryRequest&, const CreateSnatEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnatEntryAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCommonBandwidthPackageResult> DeleteCommonBandwidthPackageOutcome;
 			typedef std::future<DeleteCommonBandwidthPackageOutcome> DeleteCommonBandwidthPackageOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteCommonBandwidthPackageRequest&, const DeleteCommonBandwidthPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCommonBandwidthPackageAsyncHandler;
-			typedef Outcome<Error, Model::ModifyVSwitchAttributeResult> ModifyVSwitchAttributeOutcome;
-			typedef std::future<ModifyVSwitchAttributeOutcome> ModifyVSwitchAttributeOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::ModifyVSwitchAttributeRequest&, const ModifyVSwitchAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVSwitchAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyPhysicalConnectionAttributeResult> ModifyPhysicalConnectionAttributeOutcome;
+			typedef std::future<ModifyPhysicalConnectionAttributeOutcome> ModifyPhysicalConnectionAttributeOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyPhysicalConnectionAttributeRequest&, const ModifyPhysicalConnectionAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPhysicalConnectionAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeNatGatewaysResult> DescribeNatGatewaysOutcome;
 			typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewaysRequest&, const DescribeNatGatewaysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaysAsyncHandler;
+			typedef Outcome<Error, Model::ModifyVSwitchAttributeResult> ModifyVSwitchAttributeOutcome;
+			typedef std::future<ModifyVSwitchAttributeOutcome> ModifyVSwitchAttributeOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyVSwitchAttributeRequest&, const ModifyVSwitchAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVSwitchAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyIPv6TranslatorAclListEntryResult> ModifyIPv6TranslatorAclListEntryOutcome;
+			typedef std::future<ModifyIPv6TranslatorAclListEntryOutcome> ModifyIPv6TranslatorAclListEntryOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyIPv6TranslatorAclListEntryRequest&, const ModifyIPv6TranslatorAclListEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIPv6TranslatorAclListEntryAsyncHandler;
 			typedef Outcome<Error, Model::EnableVpcClassicLinkResult> EnableVpcClassicLinkOutcome;
 			typedef std::future<EnableVpcClassicLinkOutcome> EnableVpcClassicLinkOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::EnableVpcClassicLinkRequest&, const EnableVpcClassicLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpcClassicLinkAsyncHandler;
@@ -514,30 +654,48 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVpcAttributeResult> DescribeVpcAttributeOutcome;
 			typedef std::future<DescribeVpcAttributeOutcome> DescribeVpcAttributeOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeVpcAttributeRequest&, const DescribeVpcAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyIpv6AddressAttributeResult> ModifyIpv6AddressAttributeOutcome;
+			typedef std::future<ModifyIpv6AddressAttributeOutcome> ModifyIpv6AddressAttributeOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyIpv6AddressAttributeRequest&, const ModifyIpv6AddressAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpv6AddressAttributeAsyncHandler;
 			typedef Outcome<Error, Model::CreateVpnConnectionResult> CreateVpnConnectionOutcome;
 			typedef std::future<CreateVpnConnectionOutcome> CreateVpnConnectionOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateVpnConnectionRequest&, const CreateVpnConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpnConnectionAsyncHandler;
+			typedef Outcome<Error, Model::ModifyIPv6TranslatorBandwidthResult> ModifyIPv6TranslatorBandwidthOutcome;
+			typedef std::future<ModifyIPv6TranslatorBandwidthOutcome> ModifyIPv6TranslatorBandwidthOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyIPv6TranslatorBandwidthRequest&, const ModifyIPv6TranslatorBandwidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIPv6TranslatorBandwidthAsyncHandler;
+			typedef Outcome<Error, Model::ModifyIPv6TranslatorAttributeResult> ModifyIPv6TranslatorAttributeOutcome;
+			typedef std::future<ModifyIPv6TranslatorAttributeOutcome> ModifyIPv6TranslatorAttributeOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyIPv6TranslatorAttributeRequest&, const ModifyIPv6TranslatorAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIPv6TranslatorAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DeleteVpnConnectionResult> DeleteVpnConnectionOutcome;
 			typedef std::future<DeleteVpnConnectionOutcome> DeleteVpnConnectionOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteVpnConnectionRequest&, const DeleteVpnConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpnConnectionAsyncHandler;
+			typedef Outcome<Error, Model::CreateIpv6GatewayResult> CreateIpv6GatewayOutcome;
+			typedef std::future<CreateIpv6GatewayOutcome> CreateIpv6GatewayOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateIpv6GatewayRequest&, const CreateIpv6GatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIpv6GatewayAsyncHandler;
+			typedef Outcome<Error, Model::CreateRouteEntryResult> CreateRouteEntryOutcome;
+			typedef std::future<CreateRouteEntryOutcome> CreateRouteEntryOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateRouteEntryRequest&, const CreateRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteEntryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBandwidthPackagesResult> DescribeBandwidthPackagesOutcome;
 			typedef std::future<DescribeBandwidthPackagesOutcome> DescribeBandwidthPackagesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeBandwidthPackagesRequest&, const DescribeBandwidthPackagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBandwidthPackagesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteBgpNetworkResult> DeleteBgpNetworkOutcome;
 			typedef std::future<DeleteBgpNetworkOutcome> DeleteBgpNetworkOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteBgpNetworkRequest&, const DeleteBgpNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBgpNetworkAsyncHandler;
-			typedef Outcome<Error, Model::CreateRouteEntryResult> CreateRouteEntryOutcome;
-			typedef std::future<CreateRouteEntryOutcome> CreateRouteEntryOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::CreateRouteEntryRequest&, const CreateRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteEntryAsyncHandler;
-			typedef Outcome<Error, Model::CreateRouterInterfaceResult> CreateRouterInterfaceOutcome;
-			typedef std::future<CreateRouterInterfaceOutcome> CreateRouterInterfaceOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::CreateRouterInterfaceRequest&, const CreateRouterInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouterInterfaceAsyncHandler;
 			typedef Outcome<Error, Model::DisableVpcClassicLinkResult> DisableVpcClassicLinkOutcome;
 			typedef std::future<DisableVpcClassicLinkOutcome> DisableVpcClassicLinkOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DisableVpcClassicLinkRequest&, const DisableVpcClassicLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableVpcClassicLinkAsyncHandler;
+			typedef Outcome<Error, Model::CreateRouterInterfaceResult> CreateRouterInterfaceOutcome;
+			typedef std::future<CreateRouterInterfaceOutcome> CreateRouterInterfaceOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateRouterInterfaceRequest&, const CreateRouterInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouterInterfaceAsyncHandler;
 			typedef Outcome<Error, Model::ModifyVpnConnectionAttributeResult> ModifyVpnConnectionAttributeOutcome;
 			typedef std::future<ModifyVpnConnectionAttributeOutcome> ModifyVpnConnectionAttributeOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyVpnConnectionAttributeRequest&, const ModifyVpnConnectionAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpnConnectionAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowLogsResult> DescribeFlowLogsOutcome;
+			typedef std::future<DescribeFlowLogsOutcome> DescribeFlowLogsOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeFlowLogsRequest&, const DescribeFlowLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowLogsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIPv6TranslatorAclListAttributesResult> DescribeIPv6TranslatorAclListAttributesOutcome;
+			typedef std::future<DescribeIPv6TranslatorAclListAttributesOutcome> DescribeIPv6TranslatorAclListAttributesOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeIPv6TranslatorAclListAttributesRequest&, const DescribeIPv6TranslatorAclListAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPv6TranslatorAclListAttributesAsyncHandler;
 			typedef Outcome<Error, Model::RemoveGlobalAccelerationInstanceIpResult> RemoveGlobalAccelerationInstanceIpOutcome;
 			typedef std::future<RemoveGlobalAccelerationInstanceIpOutcome> RemoveGlobalAccelerationInstanceIpOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::RemoveGlobalAccelerationInstanceIpRequest&, const RemoveGlobalAccelerationInstanceIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveGlobalAccelerationInstanceIpAsyncHandler;
@@ -547,12 +705,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBgpGroupsResult> DescribeBgpGroupsOutcome;
 			typedef std::future<DescribeBgpGroupsOutcome> DescribeBgpGroupsOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeBgpGroupsRequest&, const DescribeBgpGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBgpGroupsAsyncHandler;
-			typedef Outcome<Error, Model::RemoveBandwidthPackageIpsResult> RemoveBandwidthPackageIpsOutcome;
-			typedef std::future<RemoveBandwidthPackageIpsOutcome> RemoveBandwidthPackageIpsOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::RemoveBandwidthPackageIpsRequest&, const RemoveBandwidthPackageIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveBandwidthPackageIpsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGrantRulesToCenResult> DescribeGrantRulesToCenOutcome;
+			typedef std::future<DescribeGrantRulesToCenOutcome> DescribeGrantRulesToCenOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeGrantRulesToCenRequest&, const DescribeGrantRulesToCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrantRulesToCenAsyncHandler;
+			typedef Outcome<Error, Model::DeleteIpv6InternetBandwidthResult> DeleteIpv6InternetBandwidthOutcome;
+			typedef std::future<DeleteIpv6InternetBandwidthOutcome> DeleteIpv6InternetBandwidthOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeleteIpv6InternetBandwidthRequest&, const DeleteIpv6InternetBandwidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIpv6InternetBandwidthAsyncHandler;
 			typedef Outcome<Error, Model::ModifyVpcAttributeResult> ModifyVpcAttributeOutcome;
 			typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyVpcAttributeRequest&, const ModifyVpcAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcAttributeAsyncHandler;
+			typedef Outcome<Error, Model::RemoveBandwidthPackageIpsResult> RemoveBandwidthPackageIpsOutcome;
+			typedef std::future<RemoveBandwidthPackageIpsOutcome> RemoveBandwidthPackageIpsOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::RemoveBandwidthPackageIpsRequest&, const RemoveBandwidthPackageIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveBandwidthPackageIpsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSslVpnClientCertResult> DeleteSslVpnClientCertOutcome;
 			typedef std::future<DeleteSslVpnClientCertOutcome> DeleteSslVpnClientCertOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteSslVpnClientCertRequest&, const DeleteSslVpnClientCertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSslVpnClientCertAsyncHandler;
@@ -574,39 +738,69 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVSwitchAttributesResult> DescribeVSwitchAttributesOutcome;
 			typedef std::future<DescribeVSwitchAttributesOutcome> DescribeVSwitchAttributesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeVSwitchAttributesRequest&, const DescribeVSwitchAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVSwitchAttributesAsyncHandler;
+			typedef Outcome<Error, Model::ModifyIPv6TranslatorEntryResult> ModifyIPv6TranslatorEntryOutcome;
+			typedef std::future<ModifyIPv6TranslatorEntryOutcome> ModifyIPv6TranslatorEntryOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyIPv6TranslatorEntryRequest&, const ModifyIPv6TranslatorEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIPv6TranslatorEntryAsyncHandler;
 			typedef Outcome<Error, Model::CreateCommonBandwidthPackageResult> CreateCommonBandwidthPackageOutcome;
 			typedef std::future<CreateCommonBandwidthPackageOutcome> CreateCommonBandwidthPackageOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateCommonBandwidthPackageRequest&, const CreateCommonBandwidthPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommonBandwidthPackageAsyncHandler;
+			typedef Outcome<Error, Model::DescribePhysicalConnectionOrderResult> DescribePhysicalConnectionOrderOutcome;
+			typedef std::future<DescribePhysicalConnectionOrderOutcome> DescribePhysicalConnectionOrderOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribePhysicalConnectionOrderRequest&, const DescribePhysicalConnectionOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhysicalConnectionOrderAsyncHandler;
 			typedef Outcome<Error, Model::CreateForwardEntryResult> CreateForwardEntryOutcome;
 			typedef std::future<CreateForwardEntryOutcome> CreateForwardEntryOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateForwardEntryRequest&, const CreateForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateForwardEntryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRouterInterfacesResult> DescribeRouterInterfacesOutcome;
 			typedef std::future<DescribeRouterInterfacesOutcome> DescribeRouterInterfacesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeRouterInterfacesRequest&, const DescribeRouterInterfacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouterInterfacesAsyncHandler;
+			typedef Outcome<Error, Model::DeactiveFlowLogResult> DeactiveFlowLogOutcome;
+			typedef std::future<DeactiveFlowLogOutcome> DeactiveFlowLogOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeactiveFlowLogRequest&, const DeactiveFlowLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeactiveFlowLogAsyncHandler;
+			typedef Outcome<Error, Model::CreateFlowLogResult> CreateFlowLogOutcome;
+			typedef std::future<CreateFlowLogOutcome> CreateFlowLogOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateFlowLogRequest&, const CreateFlowLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowLogAsyncHandler;
 			typedef Outcome<Error, Model::DeleteNatGatewayResult> DeleteNatGatewayOutcome;
 			typedef std::future<DeleteNatGatewayOutcome> DeleteNatGatewayOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteNatGatewayRequest&, const DeleteNatGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNatGatewayAsyncHandler;
+			typedef Outcome<Error, Model::ActiveFlowLogResult> ActiveFlowLogOutcome;
+			typedef std::future<ActiveFlowLogOutcome> ActiveFlowLogOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ActiveFlowLogRequest&, const ActiveFlowLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ActiveFlowLogAsyncHandler;
 			typedef Outcome<Error, Model::DescribeZonesResult> DescribeZonesOutcome;
 			typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeZonesRequest&, const DescribeZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteIpv6EgressOnlyRuleResult> DeleteIpv6EgressOnlyRuleOutcome;
+			typedef std::future<DeleteIpv6EgressOnlyRuleOutcome> DeleteIpv6EgressOnlyRuleOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeleteIpv6EgressOnlyRuleRequest&, const DeleteIpv6EgressOnlyRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIpv6EgressOnlyRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeactivateRouterInterfaceResult> DeactivateRouterInterfaceOutcome;
 			typedef std::future<DeactivateRouterInterfaceOutcome> DeactivateRouterInterfaceOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeactivateRouterInterfaceRequest&, const DeactivateRouterInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeactivateRouterInterfaceAsyncHandler;
 			typedef Outcome<Error, Model::ModifySnatEntryResult> ModifySnatEntryOutcome;
 			typedef std::future<ModifySnatEntryOutcome> ModifySnatEntryOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifySnatEntryRequest&, const ModifySnatEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnatEntryAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIPv6TranslatorAclListsResult> DescribeIPv6TranslatorAclListsOutcome;
+			typedef std::future<DescribeIPv6TranslatorAclListsOutcome> DescribeIPv6TranslatorAclListsOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeIPv6TranslatorAclListsRequest&, const DescribeIPv6TranslatorAclListsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPv6TranslatorAclListsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccessPointsResult> DescribeAccessPointsOutcome;
 			typedef std::future<DescribeAccessPointsOutcome> DescribeAccessPointsOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeAccessPointsRequest&, const DescribeAccessPointsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessPointsAsyncHandler;
 			typedef Outcome<Error, Model::CreateSslVpnClientCertResult> CreateSslVpnClientCertOutcome;
 			typedef std::future<CreateSslVpnClientCertOutcome> CreateSslVpnClientCertOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateSslVpnClientCertRequest&, const CreateSslVpnClientCertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSslVpnClientCertAsyncHandler;
+			typedef Outcome<Error, Model::CreateIPv6TranslatorAclListResult> CreateIPv6TranslatorAclListOutcome;
+			typedef std::future<CreateIPv6TranslatorAclListOutcome> CreateIPv6TranslatorAclListOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateIPv6TranslatorAclListRequest&, const CreateIPv6TranslatorAclListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIPv6TranslatorAclListAsyncHandler;
 			typedef Outcome<Error, Model::CreateVirtualBorderRouterResult> CreateVirtualBorderRouterOutcome;
 			typedef std::future<CreateVirtualBorderRouterOutcome> CreateVirtualBorderRouterOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateVirtualBorderRouterRequest&, const CreateVirtualBorderRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVirtualBorderRouterAsyncHandler;
 			typedef Outcome<Error, Model::DeleteBgpGroupResult> DeleteBgpGroupOutcome;
 			typedef std::future<DeleteBgpGroupOutcome> DeleteBgpGroupOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteBgpGroupRequest&, const DeleteBgpGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBgpGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIpv6AddressesResult> DescribeIpv6AddressesOutcome;
+			typedef std::future<DescribeIpv6AddressesOutcome> DescribeIpv6AddressesOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeIpv6AddressesRequest&, const DescribeIpv6AddressesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpv6AddressesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteIPv6TranslatorEntryResult> DeleteIPv6TranslatorEntryOutcome;
+			typedef std::future<DeleteIPv6TranslatorEntryOutcome> DeleteIPv6TranslatorEntryOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeleteIPv6TranslatorEntryRequest&, const DeleteIPv6TranslatorEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIPv6TranslatorEntryAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseEipAddressResult> ReleaseEipAddressOutcome;
 			typedef std::future<ReleaseEipAddressOutcome> ReleaseEipAddressOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ReleaseEipAddressRequest&, const ReleaseEipAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseEipAddressAsyncHandler;
@@ -640,39 +834,54 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyRouterInterfaceAttributeResult> ModifyRouterInterfaceAttributeOutcome;
 			typedef std::future<ModifyRouterInterfaceAttributeOutcome> ModifyRouterInterfaceAttributeOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyRouterInterfaceAttributeRequest&, const ModifyRouterInterfaceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRouterInterfaceAttributeAsyncHandler;
+			typedef Outcome<Error, Model::AssociateRouteTableResult> AssociateRouteTableOutcome;
+			typedef std::future<AssociateRouteTableOutcome> AssociateRouteTableOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::AssociateRouteTableRequest&, const AssociateRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateRouteTableAsyncHandler;
+			typedef Outcome<Error, Model::ModifyIPv6TranslatorAclAttributeResult> ModifyIPv6TranslatorAclAttributeOutcome;
+			typedef std::future<ModifyIPv6TranslatorAclAttributeOutcome> ModifyIPv6TranslatorAclAttributeOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyIPv6TranslatorAclAttributeRequest&, const ModifyIPv6TranslatorAclAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIPv6TranslatorAclAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVirtualBorderRoutersForPhysicalConnectionResult> DescribeVirtualBorderRoutersForPhysicalConnectionOutcome;
 			typedef std::future<DescribeVirtualBorderRoutersForPhysicalConnectionOutcome> DescribeVirtualBorderRoutersForPhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeVirtualBorderRoutersForPhysicalConnectionRequest&, const DescribeVirtualBorderRoutersForPhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirtualBorderRoutersForPhysicalConnectionAsyncHandler;
 			typedef Outcome<Error, Model::ModifyGlobalAccelerationInstanceAttributesResult> ModifyGlobalAccelerationInstanceAttributesOutcome;
 			typedef std::future<ModifyGlobalAccelerationInstanceAttributesOutcome> ModifyGlobalAccelerationInstanceAttributesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyGlobalAccelerationInstanceAttributesRequest&, const ModifyGlobalAccelerationInstanceAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalAccelerationInstanceAttributesAsyncHandler;
-			typedef Outcome<Error, Model::ModifyCommonBandwidthPackageSpecResult> ModifyCommonBandwidthPackageSpecOutcome;
-			typedef std::future<ModifyCommonBandwidthPackageSpecOutcome> ModifyCommonBandwidthPackageSpecOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::ModifyCommonBandwidthPackageSpecRequest&, const ModifyCommonBandwidthPackageSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCommonBandwidthPackageSpecAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRouteEntryResult> DeleteRouteEntryOutcome;
 			typedef std::future<DeleteRouteEntryOutcome> DeleteRouteEntryOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteRouteEntryRequest&, const DeleteRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteEntryAsyncHandler;
 			typedef Outcome<Error, Model::DeleteVirtualBorderRouterResult> DeleteVirtualBorderRouterOutcome;
 			typedef std::future<DeleteVirtualBorderRouterOutcome> DeleteVirtualBorderRouterOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteVirtualBorderRouterRequest&, const DeleteVirtualBorderRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVirtualBorderRouterAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCommonBandwidthPackageSpecResult> ModifyCommonBandwidthPackageSpecOutcome;
+			typedef std::future<ModifyCommonBandwidthPackageSpecOutcome> ModifyCommonBandwidthPackageSpecOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyCommonBandwidthPackageSpecRequest&, const ModifyCommonBandwidthPackageSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCommonBandwidthPackageSpecAsyncHandler;
 			typedef Outcome<Error, Model::CreatePhysicalConnectionNewResult> CreatePhysicalConnectionNewOutcome;
 			typedef std::future<CreatePhysicalConnectionNewOutcome> CreatePhysicalConnectionNewOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreatePhysicalConnectionNewRequest&, const CreatePhysicalConnectionNewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePhysicalConnectionNewAsyncHandler;
 			typedef Outcome<Error, Model::TerminatePhysicalConnectionResult> TerminatePhysicalConnectionOutcome;
 			typedef std::future<TerminatePhysicalConnectionOutcome> TerminatePhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::TerminatePhysicalConnectionRequest&, const TerminatePhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TerminatePhysicalConnectionAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIpv6EgressOnlyRulesResult> DescribeIpv6EgressOnlyRulesOutcome;
+			typedef std::future<DescribeIpv6EgressOnlyRulesOutcome> DescribeIpv6EgressOnlyRulesOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeIpv6EgressOnlyRulesRequest&, const DescribeIpv6EgressOnlyRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpv6EgressOnlyRulesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVpnGatewayResult> DescribeVpnGatewayOutcome;
 			typedef std::future<DescribeVpnGatewayOutcome> DescribeVpnGatewayOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeVpnGatewayRequest&, const DescribeVpnGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpnGatewayAsyncHandler;
-			typedef Outcome<Error, Model::DescribeVpnConnectionLogsResult> DescribeVpnConnectionLogsOutcome;
-			typedef std::future<DescribeVpnConnectionLogsOutcome> DescribeVpnConnectionLogsOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::DescribeVpnConnectionLogsRequest&, const DescribeVpnConnectionLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpnConnectionLogsAsyncHandler;
+			typedef Outcome<Error, Model::RevokeInstanceFromCenResult> RevokeInstanceFromCenOutcome;
+			typedef std::future<RevokeInstanceFromCenOutcome> RevokeInstanceFromCenOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::RevokeInstanceFromCenRequest&, const RevokeInstanceFromCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokeInstanceFromCenAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRouteTableResult> DeleteRouteTableOutcome;
+			typedef std::future<DeleteRouteTableOutcome> DeleteRouteTableOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeleteRouteTableRequest&, const DeleteRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteTableAsyncHandler;
 			typedef Outcome<Error, Model::ModifyBgpGroupAttributeResult> ModifyBgpGroupAttributeOutcome;
 			typedef std::future<ModifyBgpGroupAttributeOutcome> ModifyBgpGroupAttributeOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyBgpGroupAttributeRequest&, const ModifyBgpGroupAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBgpGroupAttributeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyCommonBandwidthPackageAttributeResult> ModifyCommonBandwidthPackageAttributeOutcome;
 			typedef std::future<ModifyCommonBandwidthPackageAttributeOutcome> ModifyCommonBandwidthPackageAttributeOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyCommonBandwidthPackageAttributeRequest&, const ModifyCommonBandwidthPackageAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCommonBandwidthPackageAttributeAsyncHandler;
+			typedef Outcome<Error, Model::UnassociateRouteTableResult> UnassociateRouteTableOutcome;
+			typedef std::future<UnassociateRouteTableOutcome> UnassociateRouteTableOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::UnassociateRouteTableRequest&, const UnassociateRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateRouteTableAsyncHandler;
 			typedef Outcome<Error, Model::DeleteForwardEntryResult> DeleteForwardEntryOutcome;
 			typedef std::future<DeleteForwardEntryOutcome> DeleteForwardEntryOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteForwardEntryRequest&, const DeleteForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteForwardEntryAsyncHandler;
@@ -682,6 +891,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyIpv6InternetBandwidthResult> ModifyIpv6InternetBandwidthOutcome;
+			typedef std::future<ModifyIpv6InternetBandwidthOutcome> ModifyIpv6InternetBandwidthOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyIpv6InternetBandwidthRequest&, const ModifyIpv6InternetBandwidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpv6InternetBandwidthAsyncHandler;
 			typedef Outcome<Error, Model::DescribePhysicalConnectionsResult> DescribePhysicalConnectionsOutcome;
 			typedef std::future<DescribePhysicalConnectionsOutcome> DescribePhysicalConnectionsOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribePhysicalConnectionsRequest&, const DescribePhysicalConnectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhysicalConnectionsAsyncHandler;
@@ -691,21 +903,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVirtualBorderRoutersResult> DescribeVirtualBorderRoutersOutcome;
 			typedef std::future<DescribeVirtualBorderRoutersOutcome> DescribeVirtualBorderRoutersOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeVirtualBorderRoutersRequest&, const DescribeVirtualBorderRoutersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirtualBorderRoutersAsyncHandler;
-			typedef Outcome<Error, Model::CreateGlobalAccelerationInstanceResult> CreateGlobalAccelerationInstanceOutcome;
-			typedef std::future<CreateGlobalAccelerationInstanceOutcome> CreateGlobalAccelerationInstanceOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::CreateGlobalAccelerationInstanceRequest&, const CreateGlobalAccelerationInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalAccelerationInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CancelPhysicalConnectionResult> CancelPhysicalConnectionOutcome;
 			typedef std::future<CancelPhysicalConnectionOutcome> CancelPhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CancelPhysicalConnectionRequest&, const CancelPhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelPhysicalConnectionAsyncHandler;
+			typedef Outcome<Error, Model::CreateGlobalAccelerationInstanceResult> CreateGlobalAccelerationInstanceOutcome;
+			typedef std::future<CreateGlobalAccelerationInstanceOutcome> CreateGlobalAccelerationInstanceOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateGlobalAccelerationInstanceRequest&, const CreateGlobalAccelerationInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalAccelerationInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CreateBgpGroupResult> CreateBgpGroupOutcome;
 			typedef std::future<CreateBgpGroupOutcome> CreateBgpGroupOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateBgpGroupRequest&, const CreateBgpGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBgpGroupAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVRoutersResult> DescribeVRoutersOutcome;
 			typedef std::future<DescribeVRoutersOutcome> DescribeVRoutersOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeVRoutersRequest&, const DescribeVRoutersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVRoutersAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRouterInterfacesForGlobalResult> DescribeRouterInterfacesForGlobalOutcome;
-			typedef std::future<DescribeRouterInterfacesForGlobalOutcome> DescribeRouterInterfacesForGlobalOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::DescribeRouterInterfacesForGlobalRequest&, const DescribeRouterInterfacesForGlobalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouterInterfacesForGlobalAsyncHandler;
 			typedef Outcome<Error, Model::ModifyNqaResult> ModifyNqaOutcome;
 			typedef std::future<ModifyNqaOutcome> ModifyNqaOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyNqaRequest&, const ModifyNqaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNqaAsyncHandler;
@@ -715,38 +924,47 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSslVpnClientCertResult> DescribeSslVpnClientCertOutcome;
 			typedef std::future<DescribeSslVpnClientCertOutcome> DescribeSslVpnClientCertOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeSslVpnClientCertRequest&, const DescribeSslVpnClientCertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSslVpnClientCertAsyncHandler;
-			typedef Outcome<Error, Model::DescribeCommonBandwidthPackagesResult> DescribeCommonBandwidthPackagesOutcome;
-			typedef std::future<DescribeCommonBandwidthPackagesOutcome> DescribeCommonBandwidthPackagesOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::DescribeCommonBandwidthPackagesRequest&, const DescribeCommonBandwidthPackagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCommonBandwidthPackagesAsyncHandler;
 			typedef Outcome<Error, Model::UnassociateHaVipResult> UnassociateHaVipOutcome;
 			typedef std::future<UnassociateHaVipOutcome> UnassociateHaVipOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::UnassociateHaVipRequest&, const UnassociateHaVipOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateHaVipAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCommonBandwidthPackagesResult> DescribeCommonBandwidthPackagesOutcome;
+			typedef std::future<DescribeCommonBandwidthPackagesOutcome> DescribeCommonBandwidthPackagesOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeCommonBandwidthPackagesRequest&, const DescribeCommonBandwidthPackagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCommonBandwidthPackagesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyHaVipAttributeResult> ModifyHaVipAttributeOutcome;
 			typedef std::future<ModifyHaVipAttributeOutcome> ModifyHaVipAttributeOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ModifyHaVipAttributeRequest&, const ModifyHaVipAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHaVipAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DeleteIPv6TranslatorAclListResult> DeleteIPv6TranslatorAclListOutcome;
+			typedef std::future<DeleteIPv6TranslatorAclListOutcome> DeleteIPv6TranslatorAclListOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeleteIPv6TranslatorAclListRequest&, const DeleteIPv6TranslatorAclListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIPv6TranslatorAclListAsyncHandler;
 			typedef Outcome<Error, Model::AssociateGlobalAccelerationInstanceResult> AssociateGlobalAccelerationInstanceOutcome;
 			typedef std::future<AssociateGlobalAccelerationInstanceOutcome> AssociateGlobalAccelerationInstanceOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::AssociateGlobalAccelerationInstanceRequest&, const AssociateGlobalAccelerationInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateGlobalAccelerationInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSslVpnServersResult> DescribeSslVpnServersOutcome;
 			typedef std::future<DescribeSslVpnServersOutcome> DescribeSslVpnServersOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeSslVpnServersRequest&, const DescribeSslVpnServersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSslVpnServersAsyncHandler;
-			typedef Outcome<Error, Model::ModifyVRouterAttributeResult> ModifyVRouterAttributeOutcome;
-			typedef std::future<ModifyVRouterAttributeOutcome> ModifyVRouterAttributeOutcomeCallable;
-			typedef std::function<void(const VpcClient*, const Model::ModifyVRouterAttributeRequest&, const ModifyVRouterAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVRouterAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSnatTableEntriesResult> DescribeSnatTableEntriesOutcome;
 			typedef std::future<DescribeSnatTableEntriesOutcome> DescribeSnatTableEntriesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeSnatTableEntriesRequest&, const DescribeSnatTableEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnatTableEntriesAsyncHandler;
+			typedef Outcome<Error, Model::ModifyVRouterAttributeResult> ModifyVRouterAttributeOutcome;
+			typedef std::future<ModifyVRouterAttributeOutcome> ModifyVRouterAttributeOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ModifyVRouterAttributeRequest&, const ModifyVRouterAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVRouterAttributeAsyncHandler;
+			typedef Outcome<Error, Model::CreateVpnGatewayResult> CreateVpnGatewayOutcome;
+			typedef std::future<CreateVpnGatewayOutcome> CreateVpnGatewayOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateVpnGatewayRequest&, const CreateVpnGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpnGatewayAsyncHandler;
 
 			VpcClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			VpcClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			VpcClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~VpcClient();
-			UnassociateGlobalAccelerationInstanceOutcome unassociateGlobalAccelerationInstance(const Model::UnassociateGlobalAccelerationInstanceRequest &request)const;
-			void unassociateGlobalAccelerationInstanceAsync(const Model::UnassociateGlobalAccelerationInstanceRequest& request, const UnassociateGlobalAccelerationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UnassociateGlobalAccelerationInstanceOutcomeCallable unassociateGlobalAccelerationInstanceCallable(const Model::UnassociateGlobalAccelerationInstanceRequest& request) const;
 			DeleteCustomerGatewayOutcome deleteCustomerGateway(const Model::DeleteCustomerGatewayRequest &request)const;
 			void deleteCustomerGatewayAsync(const Model::DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCustomerGatewayOutcomeCallable deleteCustomerGatewayCallable(const Model::DeleteCustomerGatewayRequest& request) const;
+			UnassociateGlobalAccelerationInstanceOutcome unassociateGlobalAccelerationInstance(const Model::UnassociateGlobalAccelerationInstanceRequest &request)const;
+			void unassociateGlobalAccelerationInstanceAsync(const Model::UnassociateGlobalAccelerationInstanceRequest& request, const UnassociateGlobalAccelerationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnassociateGlobalAccelerationInstanceOutcomeCallable unassociateGlobalAccelerationInstanceCallable(const Model::UnassociateGlobalAccelerationInstanceRequest& request) const;
+			DeleteIPv6TranslatorOutcome deleteIPv6Translator(const Model::DeleteIPv6TranslatorRequest &request)const;
+			void deleteIPv6TranslatorAsync(const Model::DeleteIPv6TranslatorRequest& request, const DeleteIPv6TranslatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteIPv6TranslatorOutcomeCallable deleteIPv6TranslatorCallable(const Model::DeleteIPv6TranslatorRequest& request) const;
 			DescribeRouteTableListOutcome describeRouteTableList(const Model::DescribeRouteTableListRequest &request)const;
 			void describeRouteTableListAsync(const Model::DescribeRouteTableListRequest& request, const DescribeRouteTableListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRouteTableListOutcomeCallable describeRouteTableListCallable(const Model::DescribeRouteTableListRequest& request) const;
@@ -762,21 +980,24 @@ namespace AlibabaCloud
 			DescribeGlobalAccelerationInstancesOutcome describeGlobalAccelerationInstances(const Model::DescribeGlobalAccelerationInstancesRequest &request)const;
 			void describeGlobalAccelerationInstancesAsync(const Model::DescribeGlobalAccelerationInstancesRequest& request, const DescribeGlobalAccelerationInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGlobalAccelerationInstancesOutcomeCallable describeGlobalAccelerationInstancesCallable(const Model::DescribeGlobalAccelerationInstancesRequest& request) const;
-			MoveResourceGroupOutcome moveResourceGroup(const Model::MoveResourceGroupRequest &request)const;
-			void moveResourceGroupAsync(const Model::MoveResourceGroupRequest& request, const MoveResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			MoveResourceGroupOutcomeCallable moveResourceGroupCallable(const Model::MoveResourceGroupRequest& request) const;
 			ModifySslVpnClientCertOutcome modifySslVpnClientCert(const Model::ModifySslVpnClientCertRequest &request)const;
 			void modifySslVpnClientCertAsync(const Model::ModifySslVpnClientCertRequest& request, const ModifySslVpnClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySslVpnClientCertOutcomeCallable modifySslVpnClientCertCallable(const Model::ModifySslVpnClientCertRequest& request) const;
 			DeleteVpcOutcome deleteVpc(const Model::DeleteVpcRequest &request)const;
 			void deleteVpcAsync(const Model::DeleteVpcRequest& request, const DeleteVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVpcOutcomeCallable deleteVpcCallable(const Model::DeleteVpcRequest& request) const;
+			DescribeBgpNetworksOutcome describeBgpNetworks(const Model::DescribeBgpNetworksRequest &request)const;
+			void describeBgpNetworksAsync(const Model::DescribeBgpNetworksRequest& request, const DescribeBgpNetworksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBgpNetworksOutcomeCallable describeBgpNetworksCallable(const Model::DescribeBgpNetworksRequest& request) const;
 			DownloadVpnConnectionConfigOutcome downloadVpnConnectionConfig(const Model::DownloadVpnConnectionConfigRequest &request)const;
 			void downloadVpnConnectionConfigAsync(const Model::DownloadVpnConnectionConfigRequest& request, const DownloadVpnConnectionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DownloadVpnConnectionConfigOutcomeCallable downloadVpnConnectionConfigCallable(const Model::DownloadVpnConnectionConfigRequest& request) const;
 			RemoveCommonBandwidthPackageIpOutcome removeCommonBandwidthPackageIp(const Model::RemoveCommonBandwidthPackageIpRequest &request)const;
 			void removeCommonBandwidthPackageIpAsync(const Model::RemoveCommonBandwidthPackageIpRequest& request, const RemoveCommonBandwidthPackageIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveCommonBandwidthPackageIpOutcomeCallable removeCommonBandwidthPackageIpCallable(const Model::RemoveCommonBandwidthPackageIpRequest& request) const;
+			DescribeIPv6TranslatorsOutcome describeIPv6Translators(const Model::DescribeIPv6TranslatorsRequest &request)const;
+			void describeIPv6TranslatorsAsync(const Model::DescribeIPv6TranslatorsRequest& request, const DescribeIPv6TranslatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIPv6TranslatorsOutcomeCallable describeIPv6TranslatorsCallable(const Model::DescribeIPv6TranslatorsRequest& request) const;
 			ModifyBandwidthPackageSpecOutcome modifyBandwidthPackageSpec(const Model::ModifyBandwidthPackageSpecRequest &request)const;
 			void modifyBandwidthPackageSpecAsync(const Model::ModifyBandwidthPackageSpecRequest& request, const ModifyBandwidthPackageSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBandwidthPackageSpecOutcomeCallable modifyBandwidthPackageSpecCallable(const Model::ModifyBandwidthPackageSpecRequest& request) const;
@@ -786,9 +1007,18 @@ namespace AlibabaCloud
 			DeleteVSwitchOutcome deleteVSwitch(const Model::DeleteVSwitchRequest &request)const;
 			void deleteVSwitchAsync(const Model::DeleteVSwitchRequest& request, const DeleteVSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVSwitchOutcomeCallable deleteVSwitchCallable(const Model::DeleteVSwitchRequest& request) const;
+			AddIPv6TranslatorAclListEntryOutcome addIPv6TranslatorAclListEntry(const Model::AddIPv6TranslatorAclListEntryRequest &request)const;
+			void addIPv6TranslatorAclListEntryAsync(const Model::AddIPv6TranslatorAclListEntryRequest& request, const AddIPv6TranslatorAclListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddIPv6TranslatorAclListEntryOutcomeCallable addIPv6TranslatorAclListEntryCallable(const Model::AddIPv6TranslatorAclListEntryRequest& request) const;
+			CreateRouteTableOutcome createRouteTable(const Model::CreateRouteTableRequest &request)const;
+			void createRouteTableAsync(const Model::CreateRouteTableRequest& request, const CreateRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRouteTableOutcomeCallable createRouteTableCallable(const Model::CreateRouteTableRequest& request) const;
 			CreateHaVipOutcome createHaVip(const Model::CreateHaVipRequest &request)const;
 			void createHaVipAsync(const Model::CreateHaVipRequest& request, const CreateHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateHaVipOutcomeCallable createHaVipCallable(const Model::CreateHaVipRequest& request) const;
+			DeleteIpv6GatewayOutcome deleteIpv6Gateway(const Model::DeleteIpv6GatewayRequest &request)const;
+			void deleteIpv6GatewayAsync(const Model::DeleteIpv6GatewayRequest& request, const DeleteIpv6GatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteIpv6GatewayOutcomeCallable deleteIpv6GatewayCallable(const Model::DeleteIpv6GatewayRequest& request) const;
 			CreateBandwidthPackageOutcome createBandwidthPackage(const Model::CreateBandwidthPackageRequest &request)const;
 			void createBandwidthPackageAsync(const Model::CreateBandwidthPackageRequest& request, const CreateBandwidthPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateBandwidthPackageOutcomeCallable createBandwidthPackageCallable(const Model::CreateBandwidthPackageRequest& request) const;
@@ -801,12 +1031,12 @@ namespace AlibabaCloud
 			DescribeEipAddressesOutcome describeEipAddresses(const Model::DescribeEipAddressesRequest &request)const;
 			void describeEipAddressesAsync(const Model::DescribeEipAddressesRequest& request, const DescribeEipAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEipAddressesOutcomeCallable describeEipAddressesCallable(const Model::DescribeEipAddressesRequest& request) const;
-			CreateCustomerGatewayOutcome createCustomerGateway(const Model::CreateCustomerGatewayRequest &request)const;
-			void createCustomerGatewayAsync(const Model::CreateCustomerGatewayRequest& request, const CreateCustomerGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateCustomerGatewayOutcomeCallable createCustomerGatewayCallable(const Model::CreateCustomerGatewayRequest& request) const;
 			ActivateRouterInterfaceOutcome activateRouterInterface(const Model::ActivateRouterInterfaceRequest &request)const;
 			void activateRouterInterfaceAsync(const Model::ActivateRouterInterfaceRequest& request, const ActivateRouterInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ActivateRouterInterfaceOutcomeCallable activateRouterInterfaceCallable(const Model::ActivateRouterInterfaceRequest& request) const;
+			CreateCustomerGatewayOutcome createCustomerGateway(const Model::CreateCustomerGatewayRequest &request)const;
+			void createCustomerGatewayAsync(const Model::CreateCustomerGatewayRequest& request, const CreateCustomerGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCustomerGatewayOutcomeCallable createCustomerGatewayCallable(const Model::CreateCustomerGatewayRequest& request) const;
 			DeleteSslVpnServerOutcome deleteSslVpnServer(const Model::DeleteSslVpnServerRequest &request)const;
 			void deleteSslVpnServerAsync(const Model::DeleteSslVpnServerRequest& request, const DeleteSslVpnServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSslVpnServerOutcomeCallable deleteSslVpnServerCallable(const Model::DeleteSslVpnServerRequest& request) const;
@@ -816,27 +1046,51 @@ namespace AlibabaCloud
 			DeleteBgpPeerOutcome deleteBgpPeer(const Model::DeleteBgpPeerRequest &request)const;
 			void deleteBgpPeerAsync(const Model::DeleteBgpPeerRequest& request, const DeleteBgpPeerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteBgpPeerOutcomeCallable deleteBgpPeerCallable(const Model::DeleteBgpPeerRequest& request) const;
-			DeleteNqaOutcome deleteNqa(const Model::DeleteNqaRequest &request)const;
-			void deleteNqaAsync(const Model::DeleteNqaRequest& request, const DeleteNqaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteNqaOutcomeCallable deleteNqaCallable(const Model::DeleteNqaRequest& request) const;
+			DescribeIpv6GatewaysOutcome describeIpv6Gateways(const Model::DescribeIpv6GatewaysRequest &request)const;
+			void describeIpv6GatewaysAsync(const Model::DescribeIpv6GatewaysRequest& request, const DescribeIpv6GatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIpv6GatewaysOutcomeCallable describeIpv6GatewaysCallable(const Model::DescribeIpv6GatewaysRequest& request) const;
 			TerminateVirtualBorderRouterOutcome terminateVirtualBorderRouter(const Model::TerminateVirtualBorderRouterRequest &request)const;
 			void terminateVirtualBorderRouterAsync(const Model::TerminateVirtualBorderRouterRequest& request, const TerminateVirtualBorderRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TerminateVirtualBorderRouterOutcomeCallable terminateVirtualBorderRouterCallable(const Model::TerminateVirtualBorderRouterRequest& request) const;
+			DeleteNqaOutcome deleteNqa(const Model::DeleteNqaRequest &request)const;
+			void deleteNqaAsync(const Model::DeleteNqaRequest& request, const DeleteNqaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteNqaOutcomeCallable deleteNqaCallable(const Model::DeleteNqaRequest& request) const;
+			RemoveIPv6TranslatorAclListEntryOutcome removeIPv6TranslatorAclListEntry(const Model::RemoveIPv6TranslatorAclListEntryRequest &request)const;
+			void removeIPv6TranslatorAclListEntryAsync(const Model::RemoveIPv6TranslatorAclListEntryRequest& request, const RemoveIPv6TranslatorAclListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveIPv6TranslatorAclListEntryOutcomeCallable removeIPv6TranslatorAclListEntryCallable(const Model::RemoveIPv6TranslatorAclListEntryRequest& request) const;
+			ModifyRouteEntryOutcome modifyRouteEntry(const Model::ModifyRouteEntryRequest &request)const;
+			void modifyRouteEntryAsync(const Model::ModifyRouteEntryRequest& request, const ModifyRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyRouteEntryOutcomeCallable modifyRouteEntryCallable(const Model::ModifyRouteEntryRequest& request) const;
+			CreateIpv6EgressOnlyRuleOutcome createIpv6EgressOnlyRule(const Model::CreateIpv6EgressOnlyRuleRequest &request)const;
+			void createIpv6EgressOnlyRuleAsync(const Model::CreateIpv6EgressOnlyRuleRequest& request, const CreateIpv6EgressOnlyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateIpv6EgressOnlyRuleOutcomeCallable createIpv6EgressOnlyRuleCallable(const Model::CreateIpv6EgressOnlyRuleRequest& request) const;
 			ModifyRouteTableAttributesOutcome modifyRouteTableAttributes(const Model::ModifyRouteTableAttributesRequest &request)const;
 			void modifyRouteTableAttributesAsync(const Model::ModifyRouteTableAttributesRequest& request, const ModifyRouteTableAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyRouteTableAttributesOutcomeCallable modifyRouteTableAttributesCallable(const Model::ModifyRouteTableAttributesRequest& request) const;
-			DeletePhysicalConnectionOutcome deletePhysicalConnection(const Model::DeletePhysicalConnectionRequest &request)const;
-			void deletePhysicalConnectionAsync(const Model::DeletePhysicalConnectionRequest& request, const DeletePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeletePhysicalConnectionOutcomeCallable deletePhysicalConnectionCallable(const Model::DeletePhysicalConnectionRequest& request) const;
 			ModifyForwardEntryOutcome modifyForwardEntry(const Model::ModifyForwardEntryRequest &request)const;
 			void modifyForwardEntryAsync(const Model::ModifyForwardEntryRequest& request, const ModifyForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyForwardEntryOutcomeCallable modifyForwardEntryCallable(const Model::ModifyForwardEntryRequest& request) const;
+			DeletePhysicalConnectionOutcome deletePhysicalConnection(const Model::DeletePhysicalConnectionRequest &request)const;
+			void deletePhysicalConnectionAsync(const Model::DeletePhysicalConnectionRequest& request, const DeletePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeletePhysicalConnectionOutcomeCallable deletePhysicalConnectionCallable(const Model::DeletePhysicalConnectionRequest& request) const;
+			DeleteFlowLogOutcome deleteFlowLog(const Model::DeleteFlowLogRequest &request)const;
+			void deleteFlowLogAsync(const Model::DeleteFlowLogRequest& request, const DeleteFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFlowLogOutcomeCallable deleteFlowLogCallable(const Model::DeleteFlowLogRequest& request) const;
 			CreateVpcOutcome createVpc(const Model::CreateVpcRequest &request)const;
 			void createVpcAsync(const Model::CreateVpcRequest& request, const CreateVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVpcOutcomeCallable createVpcCallable(const Model::CreateVpcRequest& request) const;
+			CreateIPv6TranslatorOutcome createIPv6Translator(const Model::CreateIPv6TranslatorRequest &request)const;
+			void createIPv6TranslatorAsync(const Model::CreateIPv6TranslatorRequest& request, const CreateIPv6TranslatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateIPv6TranslatorOutcomeCallable createIPv6TranslatorCallable(const Model::CreateIPv6TranslatorRequest& request) const;
+			CreateIPv6TranslatorEntryOutcome createIPv6TranslatorEntry(const Model::CreateIPv6TranslatorEntryRequest &request)const;
+			void createIPv6TranslatorEntryAsync(const Model::CreateIPv6TranslatorEntryRequest& request, const CreateIPv6TranslatorEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateIPv6TranslatorEntryOutcomeCallable createIPv6TranslatorEntryCallable(const Model::CreateIPv6TranslatorEntryRequest& request) const;
 			DescribeForwardTableEntriesOutcome describeForwardTableEntries(const Model::DescribeForwardTableEntriesRequest &request)const;
 			void describeForwardTableEntriesAsync(const Model::DescribeForwardTableEntriesRequest& request, const DescribeForwardTableEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeForwardTableEntriesOutcomeCallable describeForwardTableEntriesCallable(const Model::DescribeForwardTableEntriesRequest& request) const;
+			ModifyIpv6GatewayAttributeOutcome modifyIpv6GatewayAttribute(const Model::ModifyIpv6GatewayAttributeRequest &request)const;
+			void modifyIpv6GatewayAttributeAsync(const Model::ModifyIpv6GatewayAttributeRequest& request, const ModifyIpv6GatewayAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyIpv6GatewayAttributeOutcomeCallable modifyIpv6GatewayAttributeCallable(const Model::ModifyIpv6GatewayAttributeRequest& request) const;
 			UnassociateEipAddressOutcome unassociateEipAddress(const Model::UnassociateEipAddressRequest &request)const;
 			void unassociateEipAddressAsync(const Model::UnassociateEipAddressRequest& request, const UnassociateEipAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnassociateEipAddressOutcomeCallable unassociateEipAddressCallable(const Model::UnassociateEipAddressRequest& request) const;
@@ -858,12 +1112,12 @@ namespace AlibabaCloud
 			CreateSslVpnServerOutcome createSslVpnServer(const Model::CreateSslVpnServerRequest &request)const;
 			void createSslVpnServerAsync(const Model::CreateSslVpnServerRequest& request, const CreateSslVpnServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSslVpnServerOutcomeCallable createSslVpnServerCallable(const Model::CreateSslVpnServerRequest& request) const;
-			DescribeBandwidthPackagePublicIpMonitorDataOutcome describeBandwidthPackagePublicIpMonitorData(const Model::DescribeBandwidthPackagePublicIpMonitorDataRequest &request)const;
-			void describeBandwidthPackagePublicIpMonitorDataAsync(const Model::DescribeBandwidthPackagePublicIpMonitorDataRequest& request, const DescribeBandwidthPackagePublicIpMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeBandwidthPackagePublicIpMonitorDataOutcomeCallable describeBandwidthPackagePublicIpMonitorDataCallable(const Model::DescribeBandwidthPackagePublicIpMonitorDataRequest& request) const;
 			DescribeNqasOutcome describeNqas(const Model::DescribeNqasRequest &request)const;
 			void describeNqasAsync(const Model::DescribeNqasRequest& request, const DescribeNqasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNqasOutcomeCallable describeNqasCallable(const Model::DescribeNqasRequest& request) const;
+			ModifyFlowLogAttributeOutcome modifyFlowLogAttribute(const Model::ModifyFlowLogAttributeRequest &request)const;
+			void modifyFlowLogAttributeAsync(const Model::ModifyFlowLogAttributeRequest& request, const ModifyFlowLogAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyFlowLogAttributeOutcomeCallable modifyFlowLogAttributeCallable(const Model::ModifyFlowLogAttributeRequest& request) const;
 			ModifyVirtualBorderRouterAttributeOutcome modifyVirtualBorderRouterAttribute(const Model::ModifyVirtualBorderRouterAttributeRequest &request)const;
 			void modifyVirtualBorderRouterAttributeAsync(const Model::ModifyVirtualBorderRouterAttributeRequest& request, const ModifyVirtualBorderRouterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyVirtualBorderRouterAttributeOutcomeCallable modifyVirtualBorderRouterAttributeCallable(const Model::ModifyVirtualBorderRouterAttributeRequest& request) const;
@@ -882,18 +1136,21 @@ namespace AlibabaCloud
 			ModifyVpnGatewayAttributeOutcome modifyVpnGatewayAttribute(const Model::ModifyVpnGatewayAttributeRequest &request)const;
 			void modifyVpnGatewayAttributeAsync(const Model::ModifyVpnGatewayAttributeRequest& request, const ModifyVpnGatewayAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyVpnGatewayAttributeOutcomeCallable modifyVpnGatewayAttributeCallable(const Model::ModifyVpnGatewayAttributeRequest& request) const;
+			AllocateIpv6InternetBandwidthOutcome allocateIpv6InternetBandwidth(const Model::AllocateIpv6InternetBandwidthRequest &request)const;
+			void allocateIpv6InternetBandwidthAsync(const Model::AllocateIpv6InternetBandwidthRequest& request, const AllocateIpv6InternetBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AllocateIpv6InternetBandwidthOutcomeCallable allocateIpv6InternetBandwidthCallable(const Model::AllocateIpv6InternetBandwidthRequest& request) const;
 			AddBgpNetworkOutcome addBgpNetwork(const Model::AddBgpNetworkRequest &request)const;
 			void addBgpNetworkAsync(const Model::AddBgpNetworkRequest& request, const AddBgpNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddBgpNetworkOutcomeCallable addBgpNetworkCallable(const Model::AddBgpNetworkRequest& request) const;
 			ModifySslVpnServerOutcome modifySslVpnServer(const Model::ModifySslVpnServerRequest &request)const;
 			void modifySslVpnServerAsync(const Model::ModifySslVpnServerRequest& request, const ModifySslVpnServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySslVpnServerOutcomeCallable modifySslVpnServerCallable(const Model::ModifySslVpnServerRequest& request) const;
+			DescribeIPv6TranslatorEntriesOutcome describeIPv6TranslatorEntries(const Model::DescribeIPv6TranslatorEntriesRequest &request)const;
+			void describeIPv6TranslatorEntriesAsync(const Model::DescribeIPv6TranslatorEntriesRequest& request, const DescribeIPv6TranslatorEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIPv6TranslatorEntriesOutcomeCallable describeIPv6TranslatorEntriesCallable(const Model::DescribeIPv6TranslatorEntriesRequest& request) const;
 			DescribeVpnConnectionsOutcome describeVpnConnections(const Model::DescribeVpnConnectionsRequest &request)const;
 			void describeVpnConnectionsAsync(const Model::DescribeVpnConnectionsRequest& request, const DescribeVpnConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVpnConnectionsOutcomeCallable describeVpnConnectionsCallable(const Model::DescribeVpnConnectionsRequest& request) const;
-			DescribeNewProjectEipMonitorDataOutcome describeNewProjectEipMonitorData(const Model::DescribeNewProjectEipMonitorDataRequest &request)const;
-			void describeNewProjectEipMonitorDataAsync(const Model::DescribeNewProjectEipMonitorDataRequest& request, const DescribeNewProjectEipMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeNewProjectEipMonitorDataOutcomeCallable describeNewProjectEipMonitorDataCallable(const Model::DescribeNewProjectEipMonitorDataRequest& request) const;
 			ModifyBandwidthPackageAttributeOutcome modifyBandwidthPackageAttribute(const Model::ModifyBandwidthPackageAttributeRequest &request)const;
 			void modifyBandwidthPackageAttributeAsync(const Model::ModifyBandwidthPackageAttributeRequest& request, const ModifyBandwidthPackageAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBandwidthPackageAttributeOutcomeCallable modifyBandwidthPackageAttributeCallable(const Model::ModifyBandwidthPackageAttributeRequest& request) const;
@@ -903,36 +1160,48 @@ namespace AlibabaCloud
 			DescribeBgpPeersOutcome describeBgpPeers(const Model::DescribeBgpPeersRequest &request)const;
 			void describeBgpPeersAsync(const Model::DescribeBgpPeersRequest& request, const DescribeBgpPeersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBgpPeersOutcomeCallable describeBgpPeersCallable(const Model::DescribeBgpPeersRequest& request) const;
+			DescribeIpv6GatewayAttributeOutcome describeIpv6GatewayAttribute(const Model::DescribeIpv6GatewayAttributeRequest &request)const;
+			void describeIpv6GatewayAttributeAsync(const Model::DescribeIpv6GatewayAttributeRequest& request, const DescribeIpv6GatewayAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIpv6GatewayAttributeOutcomeCallable describeIpv6GatewayAttributeCallable(const Model::DescribeIpv6GatewayAttributeRequest& request) const;
 			DeleteSnatEntryOutcome deleteSnatEntry(const Model::DeleteSnatEntryRequest &request)const;
 			void deleteSnatEntryAsync(const Model::DeleteSnatEntryRequest& request, const DeleteSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnatEntryOutcomeCallable deleteSnatEntryCallable(const Model::DeleteSnatEntryRequest& request) const;
-			DescribeHaVipsOutcome describeHaVips(const Model::DescribeHaVipsRequest &request)const;
-			void describeHaVipsAsync(const Model::DescribeHaVipsRequest& request, const DescribeHaVipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeHaVipsOutcomeCallable describeHaVipsCallable(const Model::DescribeHaVipsRequest& request) const;
 			CreateNqaOutcome createNqa(const Model::CreateNqaRequest &request)const;
 			void createNqaAsync(const Model::CreateNqaRequest& request, const CreateNqaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNqaOutcomeCallable createNqaCallable(const Model::CreateNqaRequest& request) const;
-			DescribeForwardTablesOutcome describeForwardTables(const Model::DescribeForwardTablesRequest &request)const;
-			void describeForwardTablesAsync(const Model::DescribeForwardTablesRequest& request, const DescribeForwardTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeForwardTablesOutcomeCallable describeForwardTablesCallable(const Model::DescribeForwardTablesRequest& request) const;
+			ConvertBandwidthPackageOutcome convertBandwidthPackage(const Model::ConvertBandwidthPackageRequest &request)const;
+			void convertBandwidthPackageAsync(const Model::ConvertBandwidthPackageRequest& request, const ConvertBandwidthPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConvertBandwidthPackageOutcomeCallable convertBandwidthPackageCallable(const Model::ConvertBandwidthPackageRequest& request) const;
+			DescribeHaVipsOutcome describeHaVips(const Model::DescribeHaVipsRequest &request)const;
+			void describeHaVipsAsync(const Model::DescribeHaVipsRequest& request, const DescribeHaVipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeHaVipsOutcomeCallable describeHaVipsCallable(const Model::DescribeHaVipsRequest& request) const;
+			ModifyIpv6GatewaySpecOutcome modifyIpv6GatewaySpec(const Model::ModifyIpv6GatewaySpecRequest &request)const;
+			void modifyIpv6GatewaySpecAsync(const Model::ModifyIpv6GatewaySpecRequest& request, const ModifyIpv6GatewaySpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyIpv6GatewaySpecOutcomeCallable modifyIpv6GatewaySpecCallable(const Model::ModifyIpv6GatewaySpecRequest& request) const;
+			GrantInstanceToCenOutcome grantInstanceToCen(const Model::GrantInstanceToCenRequest &request)const;
+			void grantInstanceToCenAsync(const Model::GrantInstanceToCenRequest& request, const GrantInstanceToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GrantInstanceToCenOutcomeCallable grantInstanceToCenCallable(const Model::GrantInstanceToCenRequest& request) const;
 			AddBandwidthPackageIpsOutcome addBandwidthPackageIps(const Model::AddBandwidthPackageIpsRequest &request)const;
 			void addBandwidthPackageIpsAsync(const Model::AddBandwidthPackageIpsRequest& request, const AddBandwidthPackageIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddBandwidthPackageIpsOutcomeCallable addBandwidthPackageIpsCallable(const Model::AddBandwidthPackageIpsRequest& request) const;
-			ModifyPhysicalConnectionAttributeOutcome modifyPhysicalConnectionAttribute(const Model::ModifyPhysicalConnectionAttributeRequest &request)const;
-			void modifyPhysicalConnectionAttributeAsync(const Model::ModifyPhysicalConnectionAttributeRequest& request, const ModifyPhysicalConnectionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyPhysicalConnectionAttributeOutcomeCallable modifyPhysicalConnectionAttributeCallable(const Model::ModifyPhysicalConnectionAttributeRequest& request) const;
 			CreateSnatEntryOutcome createSnatEntry(const Model::CreateSnatEntryRequest &request)const;
 			void createSnatEntryAsync(const Model::CreateSnatEntryRequest& request, const CreateSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSnatEntryOutcomeCallable createSnatEntryCallable(const Model::CreateSnatEntryRequest& request) const;
 			DeleteCommonBandwidthPackageOutcome deleteCommonBandwidthPackage(const Model::DeleteCommonBandwidthPackageRequest &request)const;
 			void deleteCommonBandwidthPackageAsync(const Model::DeleteCommonBandwidthPackageRequest& request, const DeleteCommonBandwidthPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCommonBandwidthPackageOutcomeCallable deleteCommonBandwidthPackageCallable(const Model::DeleteCommonBandwidthPackageRequest& request) const;
-			ModifyVSwitchAttributeOutcome modifyVSwitchAttribute(const Model::ModifyVSwitchAttributeRequest &request)const;
-			void modifyVSwitchAttributeAsync(const Model::ModifyVSwitchAttributeRequest& request, const ModifyVSwitchAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyVSwitchAttributeOutcomeCallable modifyVSwitchAttributeCallable(const Model::ModifyVSwitchAttributeRequest& request) const;
+			ModifyPhysicalConnectionAttributeOutcome modifyPhysicalConnectionAttribute(const Model::ModifyPhysicalConnectionAttributeRequest &request)const;
+			void modifyPhysicalConnectionAttributeAsync(const Model::ModifyPhysicalConnectionAttributeRequest& request, const ModifyPhysicalConnectionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyPhysicalConnectionAttributeOutcomeCallable modifyPhysicalConnectionAttributeCallable(const Model::ModifyPhysicalConnectionAttributeRequest& request) const;
 			DescribeNatGatewaysOutcome describeNatGateways(const Model::DescribeNatGatewaysRequest &request)const;
 			void describeNatGatewaysAsync(const Model::DescribeNatGatewaysRequest& request, const DescribeNatGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNatGatewaysOutcomeCallable describeNatGatewaysCallable(const Model::DescribeNatGatewaysRequest& request) const;
+			ModifyVSwitchAttributeOutcome modifyVSwitchAttribute(const Model::ModifyVSwitchAttributeRequest &request)const;
+			void modifyVSwitchAttributeAsync(const Model::ModifyVSwitchAttributeRequest& request, const ModifyVSwitchAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyVSwitchAttributeOutcomeCallable modifyVSwitchAttributeCallable(const Model::ModifyVSwitchAttributeRequest& request) const;
+			ModifyIPv6TranslatorAclListEntryOutcome modifyIPv6TranslatorAclListEntry(const Model::ModifyIPv6TranslatorAclListEntryRequest &request)const;
+			void modifyIPv6TranslatorAclListEntryAsync(const Model::ModifyIPv6TranslatorAclListEntryRequest& request, const ModifyIPv6TranslatorAclListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyIPv6TranslatorAclListEntryOutcomeCallable modifyIPv6TranslatorAclListEntryCallable(const Model::ModifyIPv6TranslatorAclListEntryRequest& request) const;
 			EnableVpcClassicLinkOutcome enableVpcClassicLink(const Model::EnableVpcClassicLinkRequest &request)const;
 			void enableVpcClassicLinkAsync(const Model::EnableVpcClassicLinkRequest& request, const EnableVpcClassicLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableVpcClassicLinkOutcomeCallable enableVpcClassicLinkCallable(const Model::EnableVpcClassicLinkRequest& request) const;
@@ -942,30 +1211,48 @@ namespace AlibabaCloud
 			DescribeVpcAttributeOutcome describeVpcAttribute(const Model::DescribeVpcAttributeRequest &request)const;
 			void describeVpcAttributeAsync(const Model::DescribeVpcAttributeRequest& request, const DescribeVpcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVpcAttributeOutcomeCallable describeVpcAttributeCallable(const Model::DescribeVpcAttributeRequest& request) const;
+			ModifyIpv6AddressAttributeOutcome modifyIpv6AddressAttribute(const Model::ModifyIpv6AddressAttributeRequest &request)const;
+			void modifyIpv6AddressAttributeAsync(const Model::ModifyIpv6AddressAttributeRequest& request, const ModifyIpv6AddressAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyIpv6AddressAttributeOutcomeCallable modifyIpv6AddressAttributeCallable(const Model::ModifyIpv6AddressAttributeRequest& request) const;
 			CreateVpnConnectionOutcome createVpnConnection(const Model::CreateVpnConnectionRequest &request)const;
 			void createVpnConnectionAsync(const Model::CreateVpnConnectionRequest& request, const CreateVpnConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVpnConnectionOutcomeCallable createVpnConnectionCallable(const Model::CreateVpnConnectionRequest& request) const;
+			ModifyIPv6TranslatorBandwidthOutcome modifyIPv6TranslatorBandwidth(const Model::ModifyIPv6TranslatorBandwidthRequest &request)const;
+			void modifyIPv6TranslatorBandwidthAsync(const Model::ModifyIPv6TranslatorBandwidthRequest& request, const ModifyIPv6TranslatorBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyIPv6TranslatorBandwidthOutcomeCallable modifyIPv6TranslatorBandwidthCallable(const Model::ModifyIPv6TranslatorBandwidthRequest& request) const;
+			ModifyIPv6TranslatorAttributeOutcome modifyIPv6TranslatorAttribute(const Model::ModifyIPv6TranslatorAttributeRequest &request)const;
+			void modifyIPv6TranslatorAttributeAsync(const Model::ModifyIPv6TranslatorAttributeRequest& request, const ModifyIPv6TranslatorAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyIPv6TranslatorAttributeOutcomeCallable modifyIPv6TranslatorAttributeCallable(const Model::ModifyIPv6TranslatorAttributeRequest& request) const;
 			DeleteVpnConnectionOutcome deleteVpnConnection(const Model::DeleteVpnConnectionRequest &request)const;
 			void deleteVpnConnectionAsync(const Model::DeleteVpnConnectionRequest& request, const DeleteVpnConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVpnConnectionOutcomeCallable deleteVpnConnectionCallable(const Model::DeleteVpnConnectionRequest& request) const;
+			CreateIpv6GatewayOutcome createIpv6Gateway(const Model::CreateIpv6GatewayRequest &request)const;
+			void createIpv6GatewayAsync(const Model::CreateIpv6GatewayRequest& request, const CreateIpv6GatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateIpv6GatewayOutcomeCallable createIpv6GatewayCallable(const Model::CreateIpv6GatewayRequest& request) const;
+			CreateRouteEntryOutcome createRouteEntry(const Model::CreateRouteEntryRequest &request)const;
+			void createRouteEntryAsync(const Model::CreateRouteEntryRequest& request, const CreateRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRouteEntryOutcomeCallable createRouteEntryCallable(const Model::CreateRouteEntryRequest& request) const;
 			DescribeBandwidthPackagesOutcome describeBandwidthPackages(const Model::DescribeBandwidthPackagesRequest &request)const;
 			void describeBandwidthPackagesAsync(const Model::DescribeBandwidthPackagesRequest& request, const DescribeBandwidthPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBandwidthPackagesOutcomeCallable describeBandwidthPackagesCallable(const Model::DescribeBandwidthPackagesRequest& request) const;
 			DeleteBgpNetworkOutcome deleteBgpNetwork(const Model::DeleteBgpNetworkRequest &request)const;
 			void deleteBgpNetworkAsync(const Model::DeleteBgpNetworkRequest& request, const DeleteBgpNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteBgpNetworkOutcomeCallable deleteBgpNetworkCallable(const Model::DeleteBgpNetworkRequest& request) const;
-			CreateRouteEntryOutcome createRouteEntry(const Model::CreateRouteEntryRequest &request)const;
-			void createRouteEntryAsync(const Model::CreateRouteEntryRequest& request, const CreateRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateRouteEntryOutcomeCallable createRouteEntryCallable(const Model::CreateRouteEntryRequest& request) const;
-			CreateRouterInterfaceOutcome createRouterInterface(const Model::CreateRouterInterfaceRequest &request)const;
-			void createRouterInterfaceAsync(const Model::CreateRouterInterfaceRequest& request, const CreateRouterInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateRouterInterfaceOutcomeCallable createRouterInterfaceCallable(const Model::CreateRouterInterfaceRequest& request) const;
 			DisableVpcClassicLinkOutcome disableVpcClassicLink(const Model::DisableVpcClassicLinkRequest &request)const;
 			void disableVpcClassicLinkAsync(const Model::DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableVpcClassicLinkOutcomeCallable disableVpcClassicLinkCallable(const Model::DisableVpcClassicLinkRequest& request) const;
+			CreateRouterInterfaceOutcome createRouterInterface(const Model::CreateRouterInterfaceRequest &request)const;
+			void createRouterInterfaceAsync(const Model::CreateRouterInterfaceRequest& request, const CreateRouterInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRouterInterfaceOutcomeCallable createRouterInterfaceCallable(const Model::CreateRouterInterfaceRequest& request) const;
 			ModifyVpnConnectionAttributeOutcome modifyVpnConnectionAttribute(const Model::ModifyVpnConnectionAttributeRequest &request)const;
 			void modifyVpnConnectionAttributeAsync(const Model::ModifyVpnConnectionAttributeRequest& request, const ModifyVpnConnectionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyVpnConnectionAttributeOutcomeCallable modifyVpnConnectionAttributeCallable(const Model::ModifyVpnConnectionAttributeRequest& request) const;
+			DescribeFlowLogsOutcome describeFlowLogs(const Model::DescribeFlowLogsRequest &request)const;
+			void describeFlowLogsAsync(const Model::DescribeFlowLogsRequest& request, const DescribeFlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowLogsOutcomeCallable describeFlowLogsCallable(const Model::DescribeFlowLogsRequest& request) const;
+			DescribeIPv6TranslatorAclListAttributesOutcome describeIPv6TranslatorAclListAttributes(const Model::DescribeIPv6TranslatorAclListAttributesRequest &request)const;
+			void describeIPv6TranslatorAclListAttributesAsync(const Model::DescribeIPv6TranslatorAclListAttributesRequest& request, const DescribeIPv6TranslatorAclListAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIPv6TranslatorAclListAttributesOutcomeCallable describeIPv6TranslatorAclListAttributesCallable(const Model::DescribeIPv6TranslatorAclListAttributesRequest& request) const;
 			RemoveGlobalAccelerationInstanceIpOutcome removeGlobalAccelerationInstanceIp(const Model::RemoveGlobalAccelerationInstanceIpRequest &request)const;
 			void removeGlobalAccelerationInstanceIpAsync(const Model::RemoveGlobalAccelerationInstanceIpRequest& request, const RemoveGlobalAccelerationInstanceIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveGlobalAccelerationInstanceIpOutcomeCallable removeGlobalAccelerationInstanceIpCallable(const Model::RemoveGlobalAccelerationInstanceIpRequest& request) const;
@@ -975,12 +1262,18 @@ namespace AlibabaCloud
 			DescribeBgpGroupsOutcome describeBgpGroups(const Model::DescribeBgpGroupsRequest &request)const;
 			void describeBgpGroupsAsync(const Model::DescribeBgpGroupsRequest& request, const DescribeBgpGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBgpGroupsOutcomeCallable describeBgpGroupsCallable(const Model::DescribeBgpGroupsRequest& request) const;
-			RemoveBandwidthPackageIpsOutcome removeBandwidthPackageIps(const Model::RemoveBandwidthPackageIpsRequest &request)const;
-			void removeBandwidthPackageIpsAsync(const Model::RemoveBandwidthPackageIpsRequest& request, const RemoveBandwidthPackageIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RemoveBandwidthPackageIpsOutcomeCallable removeBandwidthPackageIpsCallable(const Model::RemoveBandwidthPackageIpsRequest& request) const;
+			DescribeGrantRulesToCenOutcome describeGrantRulesToCen(const Model::DescribeGrantRulesToCenRequest &request)const;
+			void describeGrantRulesToCenAsync(const Model::DescribeGrantRulesToCenRequest& request, const DescribeGrantRulesToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGrantRulesToCenOutcomeCallable describeGrantRulesToCenCallable(const Model::DescribeGrantRulesToCenRequest& request) const;
+			DeleteIpv6InternetBandwidthOutcome deleteIpv6InternetBandwidth(const Model::DeleteIpv6InternetBandwidthRequest &request)const;
+			void deleteIpv6InternetBandwidthAsync(const Model::DeleteIpv6InternetBandwidthRequest& request, const DeleteIpv6InternetBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteIpv6InternetBandwidthOutcomeCallable deleteIpv6InternetBandwidthCallable(const Model::DeleteIpv6InternetBandwidthRequest& request) const;
 			ModifyVpcAttributeOutcome modifyVpcAttribute(const Model::ModifyVpcAttributeRequest &request)const;
 			void modifyVpcAttributeAsync(const Model::ModifyVpcAttributeRequest& request, const ModifyVpcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyVpcAttributeOutcomeCallable modifyVpcAttributeCallable(const Model::ModifyVpcAttributeRequest& request) const;
+			RemoveBandwidthPackageIpsOutcome removeBandwidthPackageIps(const Model::RemoveBandwidthPackageIpsRequest &request)const;
+			void removeBandwidthPackageIpsAsync(const Model::RemoveBandwidthPackageIpsRequest& request, const RemoveBandwidthPackageIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveBandwidthPackageIpsOutcomeCallable removeBandwidthPackageIpsCallable(const Model::RemoveBandwidthPackageIpsRequest& request) const;
 			DeleteSslVpnClientCertOutcome deleteSslVpnClientCert(const Model::DeleteSslVpnClientCertRequest &request)const;
 			void deleteSslVpnClientCertAsync(const Model::DeleteSslVpnClientCertRequest& request, const DeleteSslVpnClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSslVpnClientCertOutcomeCallable deleteSslVpnClientCertCallable(const Model::DeleteSslVpnClientCertRequest& request) const;
@@ -1002,39 +1295,69 @@ namespace AlibabaCloud
 			DescribeVSwitchAttributesOutcome describeVSwitchAttributes(const Model::DescribeVSwitchAttributesRequest &request)const;
 			void describeVSwitchAttributesAsync(const Model::DescribeVSwitchAttributesRequest& request, const DescribeVSwitchAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVSwitchAttributesOutcomeCallable describeVSwitchAttributesCallable(const Model::DescribeVSwitchAttributesRequest& request) const;
+			ModifyIPv6TranslatorEntryOutcome modifyIPv6TranslatorEntry(const Model::ModifyIPv6TranslatorEntryRequest &request)const;
+			void modifyIPv6TranslatorEntryAsync(const Model::ModifyIPv6TranslatorEntryRequest& request, const ModifyIPv6TranslatorEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyIPv6TranslatorEntryOutcomeCallable modifyIPv6TranslatorEntryCallable(const Model::ModifyIPv6TranslatorEntryRequest& request) const;
 			CreateCommonBandwidthPackageOutcome createCommonBandwidthPackage(const Model::CreateCommonBandwidthPackageRequest &request)const;
 			void createCommonBandwidthPackageAsync(const Model::CreateCommonBandwidthPackageRequest& request, const CreateCommonBandwidthPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCommonBandwidthPackageOutcomeCallable createCommonBandwidthPackageCallable(const Model::CreateCommonBandwidthPackageRequest& request) const;
+			DescribePhysicalConnectionOrderOutcome describePhysicalConnectionOrder(const Model::DescribePhysicalConnectionOrderRequest &request)const;
+			void describePhysicalConnectionOrderAsync(const Model::DescribePhysicalConnectionOrderRequest& request, const DescribePhysicalConnectionOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePhysicalConnectionOrderOutcomeCallable describePhysicalConnectionOrderCallable(const Model::DescribePhysicalConnectionOrderRequest& request) const;
 			CreateForwardEntryOutcome createForwardEntry(const Model::CreateForwardEntryRequest &request)const;
 			void createForwardEntryAsync(const Model::CreateForwardEntryRequest& request, const CreateForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateForwardEntryOutcomeCallable createForwardEntryCallable(const Model::CreateForwardEntryRequest& request) const;
 			DescribeRouterInterfacesOutcome describeRouterInterfaces(const Model::DescribeRouterInterfacesRequest &request)const;
 			void describeRouterInterfacesAsync(const Model::DescribeRouterInterfacesRequest& request, const DescribeRouterInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRouterInterfacesOutcomeCallable describeRouterInterfacesCallable(const Model::DescribeRouterInterfacesRequest& request) const;
+			DeactiveFlowLogOutcome deactiveFlowLog(const Model::DeactiveFlowLogRequest &request)const;
+			void deactiveFlowLogAsync(const Model::DeactiveFlowLogRequest& request, const DeactiveFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeactiveFlowLogOutcomeCallable deactiveFlowLogCallable(const Model::DeactiveFlowLogRequest& request) const;
+			CreateFlowLogOutcome createFlowLog(const Model::CreateFlowLogRequest &request)const;
+			void createFlowLogAsync(const Model::CreateFlowLogRequest& request, const CreateFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFlowLogOutcomeCallable createFlowLogCallable(const Model::CreateFlowLogRequest& request) const;
 			DeleteNatGatewayOutcome deleteNatGateway(const Model::DeleteNatGatewayRequest &request)const;
 			void deleteNatGatewayAsync(const Model::DeleteNatGatewayRequest& request, const DeleteNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteNatGatewayOutcomeCallable deleteNatGatewayCallable(const Model::DeleteNatGatewayRequest& request) const;
+			ActiveFlowLogOutcome activeFlowLog(const Model::ActiveFlowLogRequest &request)const;
+			void activeFlowLogAsync(const Model::ActiveFlowLogRequest& request, const ActiveFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ActiveFlowLogOutcomeCallable activeFlowLogCallable(const Model::ActiveFlowLogRequest& request) const;
 			DescribeZonesOutcome describeZones(const Model::DescribeZonesRequest &request)const;
 			void describeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeZonesOutcomeCallable describeZonesCallable(const Model::DescribeZonesRequest& request) const;
+			DeleteIpv6EgressOnlyRuleOutcome deleteIpv6EgressOnlyRule(const Model::DeleteIpv6EgressOnlyRuleRequest &request)const;
+			void deleteIpv6EgressOnlyRuleAsync(const Model::DeleteIpv6EgressOnlyRuleRequest& request, const DeleteIpv6EgressOnlyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteIpv6EgressOnlyRuleOutcomeCallable deleteIpv6EgressOnlyRuleCallable(const Model::DeleteIpv6EgressOnlyRuleRequest& request) const;
 			DeactivateRouterInterfaceOutcome deactivateRouterInterface(const Model::DeactivateRouterInterfaceRequest &request)const;
 			void deactivateRouterInterfaceAsync(const Model::DeactivateRouterInterfaceRequest& request, const DeactivateRouterInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeactivateRouterInterfaceOutcomeCallable deactivateRouterInterfaceCallable(const Model::DeactivateRouterInterfaceRequest& request) const;
 			ModifySnatEntryOutcome modifySnatEntry(const Model::ModifySnatEntryRequest &request)const;
 			void modifySnatEntryAsync(const Model::ModifySnatEntryRequest& request, const ModifySnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySnatEntryOutcomeCallable modifySnatEntryCallable(const Model::ModifySnatEntryRequest& request) const;
+			DescribeIPv6TranslatorAclListsOutcome describeIPv6TranslatorAclLists(const Model::DescribeIPv6TranslatorAclListsRequest &request)const;
+			void describeIPv6TranslatorAclListsAsync(const Model::DescribeIPv6TranslatorAclListsRequest& request, const DescribeIPv6TranslatorAclListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIPv6TranslatorAclListsOutcomeCallable describeIPv6TranslatorAclListsCallable(const Model::DescribeIPv6TranslatorAclListsRequest& request) const;
 			DescribeAccessPointsOutcome describeAccessPoints(const Model::DescribeAccessPointsRequest &request)const;
 			void describeAccessPointsAsync(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccessPointsOutcomeCallable describeAccessPointsCallable(const Model::DescribeAccessPointsRequest& request) const;
 			CreateSslVpnClientCertOutcome createSslVpnClientCert(const Model::CreateSslVpnClientCertRequest &request)const;
 			void createSslVpnClientCertAsync(const Model::CreateSslVpnClientCertRequest& request, const CreateSslVpnClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSslVpnClientCertOutcomeCallable createSslVpnClientCertCallable(const Model::CreateSslVpnClientCertRequest& request) const;
+			CreateIPv6TranslatorAclListOutcome createIPv6TranslatorAclList(const Model::CreateIPv6TranslatorAclListRequest &request)const;
+			void createIPv6TranslatorAclListAsync(const Model::CreateIPv6TranslatorAclListRequest& request, const CreateIPv6TranslatorAclListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateIPv6TranslatorAclListOutcomeCallable createIPv6TranslatorAclListCallable(const Model::CreateIPv6TranslatorAclListRequest& request) const;
 			CreateVirtualBorderRouterOutcome createVirtualBorderRouter(const Model::CreateVirtualBorderRouterRequest &request)const;
 			void createVirtualBorderRouterAsync(const Model::CreateVirtualBorderRouterRequest& request, const CreateVirtualBorderRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVirtualBorderRouterOutcomeCallable createVirtualBorderRouterCallable(const Model::CreateVirtualBorderRouterRequest& request) const;
 			DeleteBgpGroupOutcome deleteBgpGroup(const Model::DeleteBgpGroupRequest &request)const;
 			void deleteBgpGroupAsync(const Model::DeleteBgpGroupRequest& request, const DeleteBgpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteBgpGroupOutcomeCallable deleteBgpGroupCallable(const Model::DeleteBgpGroupRequest& request) const;
+			DescribeIpv6AddressesOutcome describeIpv6Addresses(const Model::DescribeIpv6AddressesRequest &request)const;
+			void describeIpv6AddressesAsync(const Model::DescribeIpv6AddressesRequest& request, const DescribeIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIpv6AddressesOutcomeCallable describeIpv6AddressesCallable(const Model::DescribeIpv6AddressesRequest& request) const;
+			DeleteIPv6TranslatorEntryOutcome deleteIPv6TranslatorEntry(const Model::DeleteIPv6TranslatorEntryRequest &request)const;
+			void deleteIPv6TranslatorEntryAsync(const Model::DeleteIPv6TranslatorEntryRequest& request, const DeleteIPv6TranslatorEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteIPv6TranslatorEntryOutcomeCallable deleteIPv6TranslatorEntryCallable(const Model::DeleteIPv6TranslatorEntryRequest& request) const;
 			ReleaseEipAddressOutcome releaseEipAddress(const Model::ReleaseEipAddressRequest &request)const;
 			void releaseEipAddressAsync(const Model::ReleaseEipAddressRequest& request, const ReleaseEipAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseEipAddressOutcomeCallable releaseEipAddressCallable(const Model::ReleaseEipAddressRequest& request) const;
@@ -1068,39 +1391,54 @@ namespace AlibabaCloud
 			ModifyRouterInterfaceAttributeOutcome modifyRouterInterfaceAttribute(const Model::ModifyRouterInterfaceAttributeRequest &request)const;
 			void modifyRouterInterfaceAttributeAsync(const Model::ModifyRouterInterfaceAttributeRequest& request, const ModifyRouterInterfaceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyRouterInterfaceAttributeOutcomeCallable modifyRouterInterfaceAttributeCallable(const Model::ModifyRouterInterfaceAttributeRequest& request) const;
+			AssociateRouteTableOutcome associateRouteTable(const Model::AssociateRouteTableRequest &request)const;
+			void associateRouteTableAsync(const Model::AssociateRouteTableRequest& request, const AssociateRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AssociateRouteTableOutcomeCallable associateRouteTableCallable(const Model::AssociateRouteTableRequest& request) const;
+			ModifyIPv6TranslatorAclAttributeOutcome modifyIPv6TranslatorAclAttribute(const Model::ModifyIPv6TranslatorAclAttributeRequest &request)const;
+			void modifyIPv6TranslatorAclAttributeAsync(const Model::ModifyIPv6TranslatorAclAttributeRequest& request, const ModifyIPv6TranslatorAclAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyIPv6TranslatorAclAttributeOutcomeCallable modifyIPv6TranslatorAclAttributeCallable(const Model::ModifyIPv6TranslatorAclAttributeRequest& request) const;
 			DescribeVirtualBorderRoutersForPhysicalConnectionOutcome describeVirtualBorderRoutersForPhysicalConnection(const Model::DescribeVirtualBorderRoutersForPhysicalConnectionRequest &request)const;
 			void describeVirtualBorderRoutersForPhysicalConnectionAsync(const Model::DescribeVirtualBorderRoutersForPhysicalConnectionRequest& request, const DescribeVirtualBorderRoutersForPhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVirtualBorderRoutersForPhysicalConnectionOutcomeCallable describeVirtualBorderRoutersForPhysicalConnectionCallable(const Model::DescribeVirtualBorderRoutersForPhysicalConnectionRequest& request) const;
 			ModifyGlobalAccelerationInstanceAttributesOutcome modifyGlobalAccelerationInstanceAttributes(const Model::ModifyGlobalAccelerationInstanceAttributesRequest &request)const;
 			void modifyGlobalAccelerationInstanceAttributesAsync(const Model::ModifyGlobalAccelerationInstanceAttributesRequest& request, const ModifyGlobalAccelerationInstanceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyGlobalAccelerationInstanceAttributesOutcomeCallable modifyGlobalAccelerationInstanceAttributesCallable(const Model::ModifyGlobalAccelerationInstanceAttributesRequest& request) const;
-			ModifyCommonBandwidthPackageSpecOutcome modifyCommonBandwidthPackageSpec(const Model::ModifyCommonBandwidthPackageSpecRequest &request)const;
-			void modifyCommonBandwidthPackageSpecAsync(const Model::ModifyCommonBandwidthPackageSpecRequest& request, const ModifyCommonBandwidthPackageSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyCommonBandwidthPackageSpecOutcomeCallable modifyCommonBandwidthPackageSpecCallable(const Model::ModifyCommonBandwidthPackageSpecRequest& request) const;
 			DeleteRouteEntryOutcome deleteRouteEntry(const Model::DeleteRouteEntryRequest &request)const;
 			void deleteRouteEntryAsync(const Model::DeleteRouteEntryRequest& request, const DeleteRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRouteEntryOutcomeCallable deleteRouteEntryCallable(const Model::DeleteRouteEntryRequest& request) const;
 			DeleteVirtualBorderRouterOutcome deleteVirtualBorderRouter(const Model::DeleteVirtualBorderRouterRequest &request)const;
 			void deleteVirtualBorderRouterAsync(const Model::DeleteVirtualBorderRouterRequest& request, const DeleteVirtualBorderRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVirtualBorderRouterOutcomeCallable deleteVirtualBorderRouterCallable(const Model::DeleteVirtualBorderRouterRequest& request) const;
+			ModifyCommonBandwidthPackageSpecOutcome modifyCommonBandwidthPackageSpec(const Model::ModifyCommonBandwidthPackageSpecRequest &request)const;
+			void modifyCommonBandwidthPackageSpecAsync(const Model::ModifyCommonBandwidthPackageSpecRequest& request, const ModifyCommonBandwidthPackageSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCommonBandwidthPackageSpecOutcomeCallable modifyCommonBandwidthPackageSpecCallable(const Model::ModifyCommonBandwidthPackageSpecRequest& request) const;
 			CreatePhysicalConnectionNewOutcome createPhysicalConnectionNew(const Model::CreatePhysicalConnectionNewRequest &request)const;
 			void createPhysicalConnectionNewAsync(const Model::CreatePhysicalConnectionNewRequest& request, const CreatePhysicalConnectionNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePhysicalConnectionNewOutcomeCallable createPhysicalConnectionNewCallable(const Model::CreatePhysicalConnectionNewRequest& request) const;
 			TerminatePhysicalConnectionOutcome terminatePhysicalConnection(const Model::TerminatePhysicalConnectionRequest &request)const;
 			void terminatePhysicalConnectionAsync(const Model::TerminatePhysicalConnectionRequest& request, const TerminatePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TerminatePhysicalConnectionOutcomeCallable terminatePhysicalConnectionCallable(const Model::TerminatePhysicalConnectionRequest& request) const;
+			DescribeIpv6EgressOnlyRulesOutcome describeIpv6EgressOnlyRules(const Model::DescribeIpv6EgressOnlyRulesRequest &request)const;
+			void describeIpv6EgressOnlyRulesAsync(const Model::DescribeIpv6EgressOnlyRulesRequest& request, const DescribeIpv6EgressOnlyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIpv6EgressOnlyRulesOutcomeCallable describeIpv6EgressOnlyRulesCallable(const Model::DescribeIpv6EgressOnlyRulesRequest& request) const;
 			DescribeVpnGatewayOutcome describeVpnGateway(const Model::DescribeVpnGatewayRequest &request)const;
 			void describeVpnGatewayAsync(const Model::DescribeVpnGatewayRequest& request, const DescribeVpnGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVpnGatewayOutcomeCallable describeVpnGatewayCallable(const Model::DescribeVpnGatewayRequest& request) const;
-			DescribeVpnConnectionLogsOutcome describeVpnConnectionLogs(const Model::DescribeVpnConnectionLogsRequest &request)const;
-			void describeVpnConnectionLogsAsync(const Model::DescribeVpnConnectionLogsRequest& request, const DescribeVpnConnectionLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeVpnConnectionLogsOutcomeCallable describeVpnConnectionLogsCallable(const Model::DescribeVpnConnectionLogsRequest& request) const;
+			RevokeInstanceFromCenOutcome revokeInstanceFromCen(const Model::RevokeInstanceFromCenRequest &request)const;
+			void revokeInstanceFromCenAsync(const Model::RevokeInstanceFromCenRequest& request, const RevokeInstanceFromCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RevokeInstanceFromCenOutcomeCallable revokeInstanceFromCenCallable(const Model::RevokeInstanceFromCenRequest& request) const;
+			DeleteRouteTableOutcome deleteRouteTable(const Model::DeleteRouteTableRequest &request)const;
+			void deleteRouteTableAsync(const Model::DeleteRouteTableRequest& request, const DeleteRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRouteTableOutcomeCallable deleteRouteTableCallable(const Model::DeleteRouteTableRequest& request) const;
 			ModifyBgpGroupAttributeOutcome modifyBgpGroupAttribute(const Model::ModifyBgpGroupAttributeRequest &request)const;
 			void modifyBgpGroupAttributeAsync(const Model::ModifyBgpGroupAttributeRequest& request, const ModifyBgpGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBgpGroupAttributeOutcomeCallable modifyBgpGroupAttributeCallable(const Model::ModifyBgpGroupAttributeRequest& request) const;
 			ModifyCommonBandwidthPackageAttributeOutcome modifyCommonBandwidthPackageAttribute(const Model::ModifyCommonBandwidthPackageAttributeRequest &request)const;
 			void modifyCommonBandwidthPackageAttributeAsync(const Model::ModifyCommonBandwidthPackageAttributeRequest& request, const ModifyCommonBandwidthPackageAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCommonBandwidthPackageAttributeOutcomeCallable modifyCommonBandwidthPackageAttributeCallable(const Model::ModifyCommonBandwidthPackageAttributeRequest& request) const;
+			UnassociateRouteTableOutcome unassociateRouteTable(const Model::UnassociateRouteTableRequest &request)const;
+			void unassociateRouteTableAsync(const Model::UnassociateRouteTableRequest& request, const UnassociateRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnassociateRouteTableOutcomeCallable unassociateRouteTableCallable(const Model::UnassociateRouteTableRequest& request) const;
 			DeleteForwardEntryOutcome deleteForwardEntry(const Model::DeleteForwardEntryRequest &request)const;
 			void deleteForwardEntryAsync(const Model::DeleteForwardEntryRequest& request, const DeleteForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteForwardEntryOutcomeCallable deleteForwardEntryCallable(const Model::DeleteForwardEntryRequest& request) const;
@@ -1110,6 +1448,9 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			ModifyIpv6InternetBandwidthOutcome modifyIpv6InternetBandwidth(const Model::ModifyIpv6InternetBandwidthRequest &request)const;
+			void modifyIpv6InternetBandwidthAsync(const Model::ModifyIpv6InternetBandwidthRequest& request, const ModifyIpv6InternetBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyIpv6InternetBandwidthOutcomeCallable modifyIpv6InternetBandwidthCallable(const Model::ModifyIpv6InternetBandwidthRequest& request) const;
 			DescribePhysicalConnectionsOutcome describePhysicalConnections(const Model::DescribePhysicalConnectionsRequest &request)const;
 			void describePhysicalConnectionsAsync(const Model::DescribePhysicalConnectionsRequest& request, const DescribePhysicalConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePhysicalConnectionsOutcomeCallable describePhysicalConnectionsCallable(const Model::DescribePhysicalConnectionsRequest& request) const;
@@ -1119,21 +1460,18 @@ namespace AlibabaCloud
 			DescribeVirtualBorderRoutersOutcome describeVirtualBorderRouters(const Model::DescribeVirtualBorderRoutersRequest &request)const;
 			void describeVirtualBorderRoutersAsync(const Model::DescribeVirtualBorderRoutersRequest& request, const DescribeVirtualBorderRoutersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVirtualBorderRoutersOutcomeCallable describeVirtualBorderRoutersCallable(const Model::DescribeVirtualBorderRoutersRequest& request) const;
-			CreateGlobalAccelerationInstanceOutcome createGlobalAccelerationInstance(const Model::CreateGlobalAccelerationInstanceRequest &request)const;
-			void createGlobalAccelerationInstanceAsync(const Model::CreateGlobalAccelerationInstanceRequest& request, const CreateGlobalAccelerationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateGlobalAccelerationInstanceOutcomeCallable createGlobalAccelerationInstanceCallable(const Model::CreateGlobalAccelerationInstanceRequest& request) const;
 			CancelPhysicalConnectionOutcome cancelPhysicalConnection(const Model::CancelPhysicalConnectionRequest &request)const;
 			void cancelPhysicalConnectionAsync(const Model::CancelPhysicalConnectionRequest& request, const CancelPhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelPhysicalConnectionOutcomeCallable cancelPhysicalConnectionCallable(const Model::CancelPhysicalConnectionRequest& request) const;
+			CreateGlobalAccelerationInstanceOutcome createGlobalAccelerationInstance(const Model::CreateGlobalAccelerationInstanceRequest &request)const;
+			void createGlobalAccelerationInstanceAsync(const Model::CreateGlobalAccelerationInstanceRequest& request, const CreateGlobalAccelerationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateGlobalAccelerationInstanceOutcomeCallable createGlobalAccelerationInstanceCallable(const Model::CreateGlobalAccelerationInstanceRequest& request) const;
 			CreateBgpGroupOutcome createBgpGroup(const Model::CreateBgpGroupRequest &request)const;
 			void createBgpGroupAsync(const Model::CreateBgpGroupRequest& request, const CreateBgpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateBgpGroupOutcomeCallable createBgpGroupCallable(const Model::CreateBgpGroupRequest& request) const;
 			DescribeVRoutersOutcome describeVRouters(const Model::DescribeVRoutersRequest &request)const;
 			void describeVRoutersAsync(const Model::DescribeVRoutersRequest& request, const DescribeVRoutersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVRoutersOutcomeCallable describeVRoutersCallable(const Model::DescribeVRoutersRequest& request) const;
-			DescribeRouterInterfacesForGlobalOutcome describeRouterInterfacesForGlobal(const Model::DescribeRouterInterfacesForGlobalRequest &request)const;
-			void describeRouterInterfacesForGlobalAsync(const Model::DescribeRouterInterfacesForGlobalRequest& request, const DescribeRouterInterfacesForGlobalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRouterInterfacesForGlobalOutcomeCallable describeRouterInterfacesForGlobalCallable(const Model::DescribeRouterInterfacesForGlobalRequest& request) const;
 			ModifyNqaOutcome modifyNqa(const Model::ModifyNqaRequest &request)const;
 			void modifyNqaAsync(const Model::ModifyNqaRequest& request, const ModifyNqaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyNqaOutcomeCallable modifyNqaCallable(const Model::ModifyNqaRequest& request) const;
@@ -1143,27 +1481,33 @@ namespace AlibabaCloud
 			DescribeSslVpnClientCertOutcome describeSslVpnClientCert(const Model::DescribeSslVpnClientCertRequest &request)const;
 			void describeSslVpnClientCertAsync(const Model::DescribeSslVpnClientCertRequest& request, const DescribeSslVpnClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSslVpnClientCertOutcomeCallable describeSslVpnClientCertCallable(const Model::DescribeSslVpnClientCertRequest& request) const;
-			DescribeCommonBandwidthPackagesOutcome describeCommonBandwidthPackages(const Model::DescribeCommonBandwidthPackagesRequest &request)const;
-			void describeCommonBandwidthPackagesAsync(const Model::DescribeCommonBandwidthPackagesRequest& request, const DescribeCommonBandwidthPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeCommonBandwidthPackagesOutcomeCallable describeCommonBandwidthPackagesCallable(const Model::DescribeCommonBandwidthPackagesRequest& request) const;
 			UnassociateHaVipOutcome unassociateHaVip(const Model::UnassociateHaVipRequest &request)const;
 			void unassociateHaVipAsync(const Model::UnassociateHaVipRequest& request, const UnassociateHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnassociateHaVipOutcomeCallable unassociateHaVipCallable(const Model::UnassociateHaVipRequest& request) const;
+			DescribeCommonBandwidthPackagesOutcome describeCommonBandwidthPackages(const Model::DescribeCommonBandwidthPackagesRequest &request)const;
+			void describeCommonBandwidthPackagesAsync(const Model::DescribeCommonBandwidthPackagesRequest& request, const DescribeCommonBandwidthPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCommonBandwidthPackagesOutcomeCallable describeCommonBandwidthPackagesCallable(const Model::DescribeCommonBandwidthPackagesRequest& request) const;
 			ModifyHaVipAttributeOutcome modifyHaVipAttribute(const Model::ModifyHaVipAttributeRequest &request)const;
 			void modifyHaVipAttributeAsync(const Model::ModifyHaVipAttributeRequest& request, const ModifyHaVipAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyHaVipAttributeOutcomeCallable modifyHaVipAttributeCallable(const Model::ModifyHaVipAttributeRequest& request) const;
+			DeleteIPv6TranslatorAclListOutcome deleteIPv6TranslatorAclList(const Model::DeleteIPv6TranslatorAclListRequest &request)const;
+			void deleteIPv6TranslatorAclListAsync(const Model::DeleteIPv6TranslatorAclListRequest& request, const DeleteIPv6TranslatorAclListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteIPv6TranslatorAclListOutcomeCallable deleteIPv6TranslatorAclListCallable(const Model::DeleteIPv6TranslatorAclListRequest& request) const;
 			AssociateGlobalAccelerationInstanceOutcome associateGlobalAccelerationInstance(const Model::AssociateGlobalAccelerationInstanceRequest &request)const;
 			void associateGlobalAccelerationInstanceAsync(const Model::AssociateGlobalAccelerationInstanceRequest& request, const AssociateGlobalAccelerationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssociateGlobalAccelerationInstanceOutcomeCallable associateGlobalAccelerationInstanceCallable(const Model::AssociateGlobalAccelerationInstanceRequest& request) const;
 			DescribeSslVpnServersOutcome describeSslVpnServers(const Model::DescribeSslVpnServersRequest &request)const;
 			void describeSslVpnServersAsync(const Model::DescribeSslVpnServersRequest& request, const DescribeSslVpnServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSslVpnServersOutcomeCallable describeSslVpnServersCallable(const Model::DescribeSslVpnServersRequest& request) const;
-			ModifyVRouterAttributeOutcome modifyVRouterAttribute(const Model::ModifyVRouterAttributeRequest &request)const;
-			void modifyVRouterAttributeAsync(const Model::ModifyVRouterAttributeRequest& request, const ModifyVRouterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyVRouterAttributeOutcomeCallable modifyVRouterAttributeCallable(const Model::ModifyVRouterAttributeRequest& request) const;
 			DescribeSnatTableEntriesOutcome describeSnatTableEntries(const Model::DescribeSnatTableEntriesRequest &request)const;
 			void describeSnatTableEntriesAsync(const Model::DescribeSnatTableEntriesRequest& request, const DescribeSnatTableEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSnatTableEntriesOutcomeCallable describeSnatTableEntriesCallable(const Model::DescribeSnatTableEntriesRequest& request) const;
+			ModifyVRouterAttributeOutcome modifyVRouterAttribute(const Model::ModifyVRouterAttributeRequest &request)const;
+			void modifyVRouterAttributeAsync(const Model::ModifyVRouterAttributeRequest& request, const ModifyVRouterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyVRouterAttributeOutcomeCallable modifyVRouterAttributeCallable(const Model::ModifyVRouterAttributeRequest& request) const;
+			CreateVpnGatewayOutcome createVpnGateway(const Model::CreateVpnGatewayRequest &request)const;
+			void createVpnGatewayAsync(const Model::CreateVpnGatewayRequest& request, const CreateVpnGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateVpnGatewayOutcomeCallable createVpnGatewayCallable(const Model::CreateVpnGatewayRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

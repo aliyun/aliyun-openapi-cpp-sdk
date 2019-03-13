@@ -42,7 +42,14 @@ void CreateRouterInterfaceResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["RouterInterfaceId"].isNull())
 		routerInterfaceId_ = value["RouterInterfaceId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
 
+}
+
+long CreateRouterInterfaceResult::getOrderId()const
+{
+	return orderId_;
 }
 
 std::string CreateRouterInterfaceResult::getRouterInterfaceId()const

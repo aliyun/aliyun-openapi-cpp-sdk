@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT DescribeVSwitchesRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeVSwitchesRequest();
@@ -47,6 +52,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getVpcId()const;
@@ -57,8 +64,12 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				bool getIsDefault()const;
 				void setIsDefault(bool isDefault);
+				std::string getRouteTableId()const;
+				void setRouteTableId(const std::string& routeTableId);
 
             private:
 				long resourceOwnerId_;
@@ -67,12 +78,15 @@ namespace AlibabaCloud
 				long ownerId_;
 				int pageNumber_;
 				std::string vSwitchId_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string vpcId_;
 				std::string vSwitchName_;
 				int pageSize_;
 				std::string zoneId_;
+				std::vector<Tag> tag_;
 				bool isDefault_;
+				std::string routeTableId_;
 
 			};
 		}

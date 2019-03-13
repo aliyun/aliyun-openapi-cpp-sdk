@@ -25,6 +25,17 @@ UnassociateEipAddressRequest::UnassociateEipAddressRequest() :
 UnassociateEipAddressRequest::~UnassociateEipAddressRequest()
 {}
 
+std::string UnassociateEipAddressRequest::getPrivateIpAddress()const
+{
+	return privateIpAddress_;
+}
+
+void UnassociateEipAddressRequest::setPrivateIpAddress(const std::string& privateIpAddress)
+{
+	privateIpAddress_ = privateIpAddress;
+	setParameter("PrivateIpAddress", privateIpAddress);
+}
+
 long UnassociateEipAddressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -89,6 +100,17 @@ void UnassociateEipAddressRequest::setInstanceType(const std::string& instanceTy
 {
 	instanceType_ = instanceType;
 	setParameter("InstanceType", instanceType);
+}
+
+bool UnassociateEipAddressRequest::getForce()const
+{
+	return force_;
+}
+
+void UnassociateEipAddressRequest::setForce(bool force)
+{
+	force_ = force;
+	setParameter("Force", std::to_string(force));
 }
 
 std::string UnassociateEipAddressRequest::getAllocationId()const

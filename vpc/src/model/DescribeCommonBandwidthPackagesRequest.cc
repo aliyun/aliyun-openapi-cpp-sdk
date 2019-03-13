@@ -25,6 +25,17 @@ DescribeCommonBandwidthPackagesRequest::DescribeCommonBandwidthPackagesRequest()
 DescribeCommonBandwidthPackagesRequest::~DescribeCommonBandwidthPackagesRequest()
 {}
 
+std::string DescribeCommonBandwidthPackagesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeCommonBandwidthPackagesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 long DescribeCommonBandwidthPackagesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -111,6 +122,17 @@ void DescribeCommonBandwidthPackagesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+bool DescribeCommonBandwidthPackagesRequest::getIncludeReservationData()const
+{
+	return includeReservationData_;
+}
+
+void DescribeCommonBandwidthPackagesRequest::setIncludeReservationData(bool includeReservationData)
+{
+	includeReservationData_ = includeReservationData;
+	setParameter("IncludeReservationData", std::to_string(includeReservationData));
 }
 
 int DescribeCommonBandwidthPackagesRequest::getPageNumber()const

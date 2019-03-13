@@ -34,16 +34,30 @@ namespace AlibabaCloud
 			public:
 				struct VSwitch
 				{
+					struct RouteTable
+					{
+						std::string routeTableId;
+						std::string routeTableType;
+					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					bool isDefault;
 					std::string description;
-					std::string vpcId;
 					std::string zoneId;
+					std::string resourceGroupId;
 					std::string vSwitchId;
 					long availableIpAddressCount;
-					std::string creationTime;
 					std::string cidrBlock;
+					RouteTable routeTable;
+					std::string vpcId;
+					std::string creationTime;
 					std::string vSwitchName;
+					std::string ipv6CidrBlock;
+					std::vector<VSwitch::Tag> tags;
 				};
 
 

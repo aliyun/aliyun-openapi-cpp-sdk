@@ -40,44 +40,34 @@ void ModifyVpnConnectionAttributeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allIkeConfig = value["IkeConfig"];
-	for (auto value : allIkeConfig)
-	{
-		IkeConfig ikeConfigObject;
-		if(!value["Psk"].isNull())
-			ikeConfigObject.psk = value["Psk"].asString();
-		if(!value["IkeVersion"].isNull())
-			ikeConfigObject.ikeVersion = value["IkeVersion"].asString();
-		if(!value["IkeMode"].isNull())
-			ikeConfigObject.ikeMode = value["IkeMode"].asString();
-		if(!value["IkeEncAlg"].isNull())
-			ikeConfigObject.ikeEncAlg = value["IkeEncAlg"].asString();
-		if(!value["IkeAuthAlg"].isNull())
-			ikeConfigObject.ikeAuthAlg = value["IkeAuthAlg"].asString();
-		if(!value["IkePfs"].isNull())
-			ikeConfigObject.ikePfs = value["IkePfs"].asString();
-		if(!value["IkeLifetime"].isNull())
-			ikeConfigObject.ikeLifetime = std::stol(value["IkeLifetime"].asString());
-		if(!value["LocalId"].isNull())
-			ikeConfigObject.localId = value["LocalId"].asString();
-		if(!value["RemoteId"].isNull())
-			ikeConfigObject.remoteId = value["RemoteId"].asString();
-		ikeConfig_.push_back(ikeConfigObject);
-	}
-	auto allIpsecConfig = value["IpsecConfig"];
-	for (auto value : allIpsecConfig)
-	{
-		IpsecConfig ipsecConfigObject;
-		if(!value["IpsecEncAlg"].isNull())
-			ipsecConfigObject.ipsecEncAlg = value["IpsecEncAlg"].asString();
-		if(!value["IpsecAuthAlg"].isNull())
-			ipsecConfigObject.ipsecAuthAlg = value["IpsecAuthAlg"].asString();
-		if(!value["IpsecPfs"].isNull())
-			ipsecConfigObject.ipsecPfs = value["IpsecPfs"].asString();
-		if(!value["IpsecLifetime"].isNull())
-			ipsecConfigObject.ipsecLifetime = std::stol(value["IpsecLifetime"].asString());
-		ipsecConfig_.push_back(ipsecConfigObject);
-	}
+	auto ikeConfigNode = value["IkeConfig"];
+	if(!ikeConfigNode["Psk"].isNull())
+		ikeConfig_.psk = ikeConfigNode["Psk"].asString();
+	if(!ikeConfigNode["IkeVersion"].isNull())
+		ikeConfig_.ikeVersion = ikeConfigNode["IkeVersion"].asString();
+	if(!ikeConfigNode["IkeMode"].isNull())
+		ikeConfig_.ikeMode = ikeConfigNode["IkeMode"].asString();
+	if(!ikeConfigNode["IkeEncAlg"].isNull())
+		ikeConfig_.ikeEncAlg = ikeConfigNode["IkeEncAlg"].asString();
+	if(!ikeConfigNode["IkeAuthAlg"].isNull())
+		ikeConfig_.ikeAuthAlg = ikeConfigNode["IkeAuthAlg"].asString();
+	if(!ikeConfigNode["IkePfs"].isNull())
+		ikeConfig_.ikePfs = ikeConfigNode["IkePfs"].asString();
+	if(!ikeConfigNode["IkeLifetime"].isNull())
+		ikeConfig_.ikeLifetime = std::stol(ikeConfigNode["IkeLifetime"].asString());
+	if(!ikeConfigNode["LocalId"].isNull())
+		ikeConfig_.localId = ikeConfigNode["LocalId"].asString();
+	if(!ikeConfigNode["RemoteId"].isNull())
+		ikeConfig_.remoteId = ikeConfigNode["RemoteId"].asString();
+	auto ipsecConfigNode = value["IpsecConfig"];
+	if(!ipsecConfigNode["IpsecEncAlg"].isNull())
+		ipsecConfig_.ipsecEncAlg = ipsecConfigNode["IpsecEncAlg"].asString();
+	if(!ipsecConfigNode["IpsecAuthAlg"].isNull())
+		ipsecConfig_.ipsecAuthAlg = ipsecConfigNode["IpsecAuthAlg"].asString();
+	if(!ipsecConfigNode["IpsecPfs"].isNull())
+		ipsecConfig_.ipsecPfs = ipsecConfigNode["IpsecPfs"].asString();
+	if(!ipsecConfigNode["IpsecLifetime"].isNull())
+		ipsecConfig_.ipsecLifetime = std::stol(ipsecConfigNode["IpsecLifetime"].asString());
 	if(!value["VpnConnectionId"].isNull())
 		vpnConnectionId_ = value["VpnConnectionId"].asString();
 	if(!value["CustomerGatewayId"].isNull())
@@ -129,7 +119,7 @@ std::string ModifyVpnConnectionAttributeResult::getVpnGatewayId()const
 	return vpnGatewayId_;
 }
 
-std::vector<ModifyVpnConnectionAttributeResult::IpsecConfig> ModifyVpnConnectionAttributeResult::getIpsecConfig()const
+ModifyVpnConnectionAttributeResult::IpsecConfig ModifyVpnConnectionAttributeResult::getIpsecConfig()const
 {
 	return ipsecConfig_;
 }
@@ -144,7 +134,7 @@ std::string ModifyVpnConnectionAttributeResult::getVpnConnectionId()const
 	return vpnConnectionId_;
 }
 
-std::vector<ModifyVpnConnectionAttributeResult::IkeConfig> ModifyVpnConnectionAttributeResult::getIkeConfig()const
+ModifyVpnConnectionAttributeResult::IkeConfig ModifyVpnConnectionAttributeResult::getIkeConfig()const
 {
 	return ikeConfig_;
 }

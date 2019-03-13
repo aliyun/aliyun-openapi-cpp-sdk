@@ -60,6 +60,8 @@ void DescribeForwardTableEntriesResult::parse(const std::string &payload)
 			forwardTableEntriesObject.internalPort = value["InternalPort"].asString();
 		if(!value["Status"].isNull())
 			forwardTableEntriesObject.status = value["Status"].asString();
+		if(!value["ForwardEntryName"].isNull())
+			forwardTableEntriesObject.forwardEntryName = value["ForwardEntryName"].asString();
 		forwardTableEntries_.push_back(forwardTableEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())

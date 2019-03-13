@@ -39,31 +39,43 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
+				std::string getSourceCIDR()const;
+				void setSourceCIDR(const std::string& sourceCIDR);
 				std::string getSnatTableId()const;
 				void setSnatTableId(const std::string& snatTableId);
-				std::string getSnatEntryId()const;
-				void setSnatEntryId(const std::string& snatEntryId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSnatIp()const;
+				void setSnatIp(const std::string& snatIp);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getSourceVSwitchId()const;
+				void setSourceVSwitchId(const std::string& sourceVSwitchId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getSnatEntryName()const;
+				void setSnatEntryName(const std::string& snatEntryName);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getSnatEntryId()const;
+				void setSnatEntryId(const std::string& snatEntryId);
 
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string ownerAccount_;
-				int pageSize_;
+				std::string sourceCIDR_;
 				std::string snatTableId_;
-				std::string snatEntryId_;
 				long ownerId_;
+				std::string snatIp_;
 				int pageNumber_;
+				std::string sourceVSwitchId_;
+				std::string regionId_;
+				std::string snatEntryName_;
+				int pageSize_;
+				std::string snatEntryId_;
 
 			};
 		}

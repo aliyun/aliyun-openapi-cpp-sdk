@@ -37,8 +37,8 @@ void DescribeRouterInterfacesRequest::setFilter(const std::vector<Filter>& filte
 	for(int i = 0; i!= filter.size(); i++)	{
 		auto obj = filter.at(i);
 		std::string str ="Filter."+ std::to_string(i);
-		setParameter(str + ".Key", obj.key);
 		for(int i = 0; i!= obj.value.size(); i++)				setParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
+		setParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -95,6 +95,17 @@ void DescribeRouterInterfacesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+bool DescribeRouterInterfacesRequest::getIncludeReservationData()const
+{
+	return includeReservationData_;
+}
+
+void DescribeRouterInterfacesRequest::setIncludeReservationData(bool includeReservationData)
+{
+	includeReservationData_ = includeReservationData;
+	setParameter("IncludeReservationData", std::to_string(includeReservationData));
 }
 
 int DescribeRouterInterfacesRequest::getPageNumber()const

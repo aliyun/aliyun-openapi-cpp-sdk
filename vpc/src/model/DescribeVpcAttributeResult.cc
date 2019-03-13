@@ -80,6 +80,8 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 		creationTime_ = value["CreationTime"].asString();
 	if(!value["CidrBlock"].isNull())
 		cidrBlock_ = value["CidrBlock"].asString();
+	if(!value["Ipv6CidrBlock"].isNull())
+		ipv6CidrBlock_ = value["Ipv6CidrBlock"].asString();
 	if(!value["VRouterId"].isNull())
 		vRouterId_ = value["VRouterId"].asString();
 	if(!value["Description"].isNull())
@@ -161,6 +163,11 @@ std::string DescribeVpcAttributeResult::getVpcName()const
 std::string DescribeVpcAttributeResult::getRegionId()const
 {
 	return regionId_;
+}
+
+std::string DescribeVpcAttributeResult::getIpv6CidrBlock()const
+{
+	return ipv6CidrBlock_;
 }
 
 std::vector<DescribeVpcAttributeResult::CloudResourceSetType> DescribeVpcAttributeResult::getCloudResources()const

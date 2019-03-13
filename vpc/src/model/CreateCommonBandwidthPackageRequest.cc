@@ -47,17 +47,6 @@ void CreateCommonBandwidthPackageRequest::setResourceOwnerAccount(const std::str
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string CreateCommonBandwidthPackageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateCommonBandwidthPackageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string CreateCommonBandwidthPackageRequest::getClientToken()const
 {
 	return clientToken_;
@@ -80,17 +69,6 @@ void CreateCommonBandwidthPackageRequest::setBandwidth(int bandwidth)
 	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
-std::string CreateCommonBandwidthPackageRequest::getInternetChargeType()const
-{
-	return internetChargeType_;
-}
-
-void CreateCommonBandwidthPackageRequest::setInternetChargeType(const std::string& internetChargeType)
-{
-	internetChargeType_ = internetChargeType;
-	setParameter("InternetChargeType", internetChargeType);
-}
-
 std::string CreateCommonBandwidthPackageRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -102,15 +80,15 @@ void CreateCommonBandwidthPackageRequest::setOwnerAccount(const std::string& own
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CreateCommonBandwidthPackageRequest::getName()const
+std::string CreateCommonBandwidthPackageRequest::getISP()const
 {
-	return name_;
+	return iSP_;
 }
 
-void CreateCommonBandwidthPackageRequest::setName(const std::string& name)
+void CreateCommonBandwidthPackageRequest::setISP(const std::string& iSP)
 {
-	name_ = name;
-	setParameter("Name", name);
+	iSP_ = iSP;
+	setParameter("ISP", iSP);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getDescription()const
@@ -133,6 +111,61 @@ void CreateCommonBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateCommonBandwidthPackageRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateCommonBandwidthPackageRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateCommonBandwidthPackageRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateCommonBandwidthPackageRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string CreateCommonBandwidthPackageRequest::getZone()const
+{
+	return zone_;
+}
+
+void CreateCommonBandwidthPackageRequest::setZone(const std::string& zone)
+{
+	zone_ = zone;
+	setParameter("Zone", zone);
+}
+
+std::string CreateCommonBandwidthPackageRequest::getInternetChargeType()const
+{
+	return internetChargeType_;
+}
+
+void CreateCommonBandwidthPackageRequest::setInternetChargeType(const std::string& internetChargeType)
+{
+	internetChargeType_ = internetChargeType;
+	setParameter("InternetChargeType", internetChargeType);
+}
+
+std::string CreateCommonBandwidthPackageRequest::getName()const
+{
+	return name_;
+}
+
+void CreateCommonBandwidthPackageRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 
 int CreateCommonBandwidthPackageRequest::getRatio()const

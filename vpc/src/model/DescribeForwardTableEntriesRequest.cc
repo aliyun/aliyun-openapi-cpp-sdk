@@ -47,26 +47,26 @@ void DescribeForwardTableEntriesRequest::setResourceOwnerAccount(const std::stri
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeForwardTableEntriesRequest::getRegionId()const
+std::string DescribeForwardTableEntriesRequest::getIpProtocol()const
 {
-	return regionId_;
+	return ipProtocol_;
 }
 
-void DescribeForwardTableEntriesRequest::setRegionId(const std::string& regionId)
+void DescribeForwardTableEntriesRequest::setIpProtocol(const std::string& ipProtocol)
 {
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	ipProtocol_ = ipProtocol;
+	setParameter("IpProtocol", ipProtocol);
 }
 
-std::string DescribeForwardTableEntriesRequest::getForwardEntryId()const
+std::string DescribeForwardTableEntriesRequest::getForwardEntryName()const
 {
-	return forwardEntryId_;
+	return forwardEntryName_;
 }
 
-void DescribeForwardTableEntriesRequest::setForwardEntryId(const std::string& forwardEntryId)
+void DescribeForwardTableEntriesRequest::setForwardEntryName(const std::string& forwardEntryName)
 {
-	forwardEntryId_ = forwardEntryId;
-	setParameter("ForwardEntryId", forwardEntryId);
+	forwardEntryName_ = forwardEntryName;
+	setParameter("ForwardEntryName", forwardEntryName);
 }
 
 std::string DescribeForwardTableEntriesRequest::getOwnerAccount()const
@@ -91,17 +91,6 @@ void DescribeForwardTableEntriesRequest::setForwardTableId(const std::string& fo
 	setParameter("ForwardTableId", forwardTableId);
 }
 
-int DescribeForwardTableEntriesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeForwardTableEntriesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
 long DescribeForwardTableEntriesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,6 +102,17 @@ void DescribeForwardTableEntriesRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeForwardTableEntriesRequest::getInternalIp()const
+{
+	return internalIp_;
+}
+
+void DescribeForwardTableEntriesRequest::setInternalIp(const std::string& internalIp)
+{
+	internalIp_ = internalIp;
+	setParameter("InternalIp", internalIp);
+}
+
 int DescribeForwardTableEntriesRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -122,5 +122,71 @@ void DescribeForwardTableEntriesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeForwardTableEntriesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeForwardTableEntriesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string DescribeForwardTableEntriesRequest::getForwardEntryId()const
+{
+	return forwardEntryId_;
+}
+
+void DescribeForwardTableEntriesRequest::setForwardEntryId(const std::string& forwardEntryId)
+{
+	forwardEntryId_ = forwardEntryId;
+	setParameter("ForwardEntryId", forwardEntryId);
+}
+
+std::string DescribeForwardTableEntriesRequest::getInternalPort()const
+{
+	return internalPort_;
+}
+
+void DescribeForwardTableEntriesRequest::setInternalPort(const std::string& internalPort)
+{
+	internalPort_ = internalPort;
+	setParameter("InternalPort", internalPort);
+}
+
+int DescribeForwardTableEntriesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeForwardTableEntriesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeForwardTableEntriesRequest::getExternalIp()const
+{
+	return externalIp_;
+}
+
+void DescribeForwardTableEntriesRequest::setExternalIp(const std::string& externalIp)
+{
+	externalIp_ = externalIp;
+	setParameter("ExternalIp", externalIp);
+}
+
+std::string DescribeForwardTableEntriesRequest::getExternalPort()const
+{
+	return externalPort_;
+}
+
+void DescribeForwardTableEntriesRequest::setExternalPort(const std::string& externalPort)
+{
+	externalPort_ = externalPort;
+	setParameter("ExternalPort", externalPort);
 }
 

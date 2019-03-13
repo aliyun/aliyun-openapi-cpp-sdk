@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getSnatEntryName()const;
+				void setSnatEntryName(const std::string& snatEntryName);
 				std::string getSnatTableId()const;
 				void setSnatTableId(const std::string& snatTableId);
 				std::string getSnatEntryId()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string ownerAccount_;
+				std::string snatEntryName_;
 				std::string snatTableId_;
 				std::string snatEntryId_;
 				long ownerId_;

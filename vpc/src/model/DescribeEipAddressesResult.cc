@@ -48,6 +48,8 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.regionId = value["RegionId"].asString();
 		if(!value["IpAddress"].isNull())
 			eipAddressesObject.ipAddress = value["IpAddress"].asString();
+		if(!value["PrivateIpAddress"].isNull())
+			eipAddressesObject.privateIpAddress = value["PrivateIpAddress"].asString();
 		if(!value["AllocationId"].isNull())
 			eipAddressesObject.allocationId = value["AllocationId"].asString();
 		if(!value["Status"].isNull())
@@ -70,8 +72,12 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.chargeType = value["ChargeType"].asString();
 		if(!value["ExpiredTime"].isNull())
 			eipAddressesObject.expiredTime = value["ExpiredTime"].asString();
+		if(!value["HDMonitorStatus"].isNull())
+			eipAddressesObject.hDMonitorStatus = value["HDMonitorStatus"].asString();
 		if(!value["Name"].isNull())
 			eipAddressesObject.name = value["Name"].asString();
+		if(!value["ISP"].isNull())
+			eipAddressesObject.iSP = value["ISP"].asString();
 		if(!value["Descritpion"].isNull())
 			eipAddressesObject.descritpion = value["Descritpion"].asString();
 		if(!value["BandwidthPackageId"].isNull())
@@ -80,6 +86,18 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.bandwidthPackageType = value["BandwidthPackageType"].asString();
 		if(!value["ResourceGroupId"].isNull())
 			eipAddressesObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["HasReservationData"].isNull())
+			eipAddressesObject.hasReservationData = value["HasReservationData"].asString();
+		if(!value["ReservationBandwidth"].isNull())
+			eipAddressesObject.reservationBandwidth = value["ReservationBandwidth"].asString();
+		if(!value["ReservationInternetChargeType"].isNull())
+			eipAddressesObject.reservationInternetChargeType = value["ReservationInternetChargeType"].asString();
+		if(!value["ReservationActiveTime"].isNull())
+			eipAddressesObject.reservationActiveTime = value["ReservationActiveTime"].asString();
+		if(!value["ReservationOrderType"].isNull())
+			eipAddressesObject.reservationOrderType = value["ReservationOrderType"].asString();
+		if(!value["Mode"].isNull())
+			eipAddressesObject.mode = value["Mode"].asString();
 		auto allOperationLocks = value["OperationLocks"]["LockReason"];
 		for (auto value : allOperationLocks)
 		{
@@ -87,6 +105,16 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			if(!value["LockReason"].isNull())
 				operationLocksObject.lockReason = value["LockReason"].asString();
 			eipAddressesObject.operationLocks.push_back(operationLocksObject);
+		}
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+		{
+			EipAddress::Tag tagsObject;
+			if(!value["Key"].isNull())
+				tagsObject.key = value["Key"].asString();
+			if(!value["Value"].isNull())
+				tagsObject.value = value["Value"].asString();
+			eipAddressesObject.tags.push_back(tagsObject);
 		}
 		auto allAvailableRegions = value["AvailableRegions"]["AvailableRegion"];
 		for (auto value : allAvailableRegions)

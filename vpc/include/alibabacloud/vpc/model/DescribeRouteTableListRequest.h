@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT DescribeRouteTableListRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeRouteTableListRequest();
@@ -47,6 +52,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getRouterType()const;
 				void setRouterType(const std::string& routerType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRouteTableName()const;
 				void setRouteTableName(const std::string& routeTableName);
 				std::string getRegionId()const;
@@ -57,6 +64,8 @@ namespace AlibabaCloud
 				void setVpcId(const std::string& vpcId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getRouteTableId()const;
 				void setRouteTableId(const std::string& routeTableId);
 
@@ -67,11 +76,13 @@ namespace AlibabaCloud
 				long ownerId_;
 				int pageNumber_;
 				std::string routerType_;
+				std::string resourceGroupId_;
 				std::string routeTableName_;
 				std::string regionId_;
 				std::string routerId_;
 				std::string vpcId_;
 				int pageSize_;
+				std::vector<Tag> tag_;
 				std::string routeTableId_;
 
 			};

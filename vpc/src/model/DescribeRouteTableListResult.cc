@@ -58,8 +58,23 @@ void DescribeRouteTableListResult::parse(const std::string &payload)
 			routerTableListObject.routeTableType = value["RouteTableType"].asString();
 		if(!value["Description"].isNull())
 			routerTableListObject.description = value["Description"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			routerTableListObject.resourceGroupId = value["ResourceGroupId"].asString();
 		if(!value["CreationTime"].isNull())
 			routerTableListObject.creationTime = value["CreationTime"].asString();
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+		{
+			RouterTableListType::Tag tagsObject;
+			if(!value["Key"].isNull())
+				tagsObject.key = value["Key"].asString();
+			if(!value["Value"].isNull())
+				tagsObject.value = value["Value"].asString();
+			routerTableListObject.tags.push_back(tagsObject);
+		}
+		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
+		for (auto value : allVSwitchIds)
+			routerTableListObject.vSwitchIds.push_back(value.asString());
 		routerTableList_.push_back(routerTableListObject);
 	}
 	if(!value["Code"].isNull())

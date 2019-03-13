@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				CreateCommonBandwidthPackageResult();
 				explicit CreateCommonBandwidthPackageResult(const std::string &payload);
 				~CreateCommonBandwidthPackageResult();
+				std::string getResourceGroupId()const;
 				std::string getBandwidthPackageId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string resourceGroupId_;
 				std::string bandwidthPackageId_;
 
 			};

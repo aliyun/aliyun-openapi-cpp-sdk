@@ -38,23 +38,32 @@ namespace AlibabaCloud
 					{
 						struct NextHop
 						{
+							std::string nextHopOppsiteRegionId;
 							std::string nextHopType;
 							std::string nextHopRegionId;
 							std::string nextHopId;
 							int enabled;
+							std::string nextHopOppsiteType;
+							std::string nextHopOppsiteInstanceId;
 							int weight;
 						};
 						std::string status;
+						std::string nextHopOppsiteRegionId;
 						std::string nextHopType;
 						std::string nextHopRegionId;
 						std::string type;
 						std::string routeTableId;
+						std::string privateIpAddress;
 						std::string instanceId;
 						std::vector<RouteEntry::NextHop> nextHops;
+						std::string nextHopOppsiteType;
+						std::string nextHopOppsiteInstanceId;
 						std::string destinationCidrBlock;
 					};
 					std::string vRouterId;
 					std::string routeTableId;
+					std::string resourceGroupId;
+					std::vector<std::string> vSwitchIds;
 					std::string creationTime;
 					std::vector<RouteTable::RouteEntry> routeEntrys;
 					std::string routeTableType;

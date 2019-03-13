@@ -96,8 +96,28 @@ void DescribeRouterInterfacesResult::parse(const std::string &payload)
 			routerInterfaceSetObject.healthCheckTargetIp = value["HealthCheckTargetIp"].asString();
 		if(!value["OppositeVpcInstanceId"].isNull())
 			routerInterfaceSetObject.oppositeVpcInstanceId = value["OppositeVpcInstanceId"].asString();
+		if(!value["Bandwidth"].isNull())
+			routerInterfaceSetObject.bandwidth = std::stoi(value["Bandwidth"].asString());
 		if(!value["VpcInstanceId"].isNull())
 			routerInterfaceSetObject.vpcInstanceId = value["VpcInstanceId"].asString();
+		if(!value["OppositeBandwidth"].isNull())
+			routerInterfaceSetObject.oppositeBandwidth = std::stoi(value["OppositeBandwidth"].asString());
+		if(!value["HasReservationData"].isNull())
+			routerInterfaceSetObject.hasReservationData = value["HasReservationData"].asString();
+		if(!value["ReservationBandwidth"].isNull())
+			routerInterfaceSetObject.reservationBandwidth = value["ReservationBandwidth"].asString();
+		if(!value["ReservationInternetChargeType"].isNull())
+			routerInterfaceSetObject.reservationInternetChargeType = value["ReservationInternetChargeType"].asString();
+		if(!value["ReservationActiveTime"].isNull())
+			routerInterfaceSetObject.reservationActiveTime = value["ReservationActiveTime"].asString();
+		if(!value["ReservationOrderType"].isNull())
+			routerInterfaceSetObject.reservationOrderType = value["ReservationOrderType"].asString();
+		if(!value["CrossBorder"].isNull())
+			routerInterfaceSetObject.crossBorder = value["CrossBorder"].asString() == "true";
+		if(!value["HcThreshold"].isNull())
+			routerInterfaceSetObject.hcThreshold = std::stoi(value["HcThreshold"].asString());
+		if(!value["HcRate"].isNull())
+			routerInterfaceSetObject.hcRate = std::stoi(value["HcRate"].asString());
 		routerInterfaceSet_.push_back(routerInterfaceSetObject);
 	}
 	if(!value["PageNumber"].isNull())
