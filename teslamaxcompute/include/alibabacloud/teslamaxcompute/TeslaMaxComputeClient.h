@@ -32,6 +32,8 @@
 #include "model/QueryTopologyResult.h"
 #include "model/GetInstancesStatusCountRequest.h"
 #include "model/GetInstancesStatusCountResult.h"
+#include "model/ListUserQuotasRequest.h"
+#include "model/ListUserQuotasResult.h"
 #include "model/QueryCustomerSaleInfoRequest.h"
 #include "model/QueryCustomerSaleInfoResult.h"
 #include "model/GetQuotaInstanceRequest.h"
@@ -64,6 +66,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInstancesStatusCountResult> GetInstancesStatusCountOutcome;
 			typedef std::future<GetInstancesStatusCountOutcome> GetInstancesStatusCountOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::GetInstancesStatusCountRequest&, const GetInstancesStatusCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstancesStatusCountAsyncHandler;
+			typedef Outcome<Error, Model::ListUserQuotasResult> ListUserQuotasOutcome;
+			typedef std::future<ListUserQuotasOutcome> ListUserQuotasOutcomeCallable;
+			typedef std::function<void(const TeslaMaxComputeClient*, const Model::ListUserQuotasRequest&, const ListUserQuotasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserQuotasAsyncHandler;
 			typedef Outcome<Error, Model::QueryCustomerSaleInfoResult> QueryCustomerSaleInfoOutcome;
 			typedef std::future<QueryCustomerSaleInfoOutcome> QueryCustomerSaleInfoOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::QueryCustomerSaleInfoRequest&, const QueryCustomerSaleInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomerSaleInfoAsyncHandler;
@@ -96,6 +101,9 @@ namespace AlibabaCloud
 			GetInstancesStatusCountOutcome getInstancesStatusCount(const Model::GetInstancesStatusCountRequest &request)const;
 			void getInstancesStatusCountAsync(const Model::GetInstancesStatusCountRequest& request, const GetInstancesStatusCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstancesStatusCountOutcomeCallable getInstancesStatusCountCallable(const Model::GetInstancesStatusCountRequest& request) const;
+			ListUserQuotasOutcome listUserQuotas(const Model::ListUserQuotasRequest &request)const;
+			void listUserQuotasAsync(const Model::ListUserQuotasRequest& request, const ListUserQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserQuotasOutcomeCallable listUserQuotasCallable(const Model::ListUserQuotasRequest& request) const;
 			QueryCustomerSaleInfoOutcome queryCustomerSaleInfo(const Model::QueryCustomerSaleInfoRequest &request)const;
 			void queryCustomerSaleInfoAsync(const Model::QueryCustomerSaleInfoRequest& request, const QueryCustomerSaleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCustomerSaleInfoOutcomeCallable queryCustomerSaleInfoCallable(const Model::QueryCustomerSaleInfoRequest& request) const;
