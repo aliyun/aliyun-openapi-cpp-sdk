@@ -92,3 +92,4 @@ add_subdirectory(lubancloud)
 add_subdirectory(alimt)
 
 add_subdirectory(xspace)
+add_subdirectory(jarvis-public)
