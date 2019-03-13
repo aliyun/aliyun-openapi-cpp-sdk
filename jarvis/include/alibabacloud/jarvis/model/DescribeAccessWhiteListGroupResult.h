@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string gmtCreate;
+					std::string insProduct;
 					std::string gmtRealExpire;
 					std::vector<Data::Item> items;
 					std::string srcIP;

@@ -124,6 +124,17 @@ void CreateAccessWhiteListGroupRequest::setWhiteListType(int whiteListType)
 	setParameter("WhiteListType", std::to_string(whiteListType));
 }
 
+std::string CreateAccessWhiteListGroupRequest::getInstanceInfoList()const
+{
+	return instanceInfoList_;
+}
+
+void CreateAccessWhiteListGroupRequest::setInstanceInfoList(const std::string& instanceInfoList)
+{
+	instanceInfoList_ = instanceInfoList;
+	setParameter("InstanceInfoList", instanceInfoList);
+}
+
 std::string CreateAccessWhiteListGroupRequest::getLang()const
 {
 	return lang_;

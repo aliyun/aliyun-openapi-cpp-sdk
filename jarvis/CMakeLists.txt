@@ -25,42 +25,70 @@ set(jarvis_public_header_model
 	include/alibabacloud/jarvis/model/DeleteUidWhiteListGroupResult.h
 	include/alibabacloud/jarvis/model/CreateCpmcPunishFeedBackRequest.h
 	include/alibabacloud/jarvis/model/CreateCpmcPunishFeedBackResult.h
-	include/alibabacloud/jarvis/model/CreateAccessWhiteListGroupRequest.h
-	include/alibabacloud/jarvis/model/CreateAccessWhiteListGroupResult.h
-	include/alibabacloud/jarvis/model/DescribeDdosDefenseInfoRequest.h
-	include/alibabacloud/jarvis/model/DescribeDdosDefenseInfoResult.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhiteListSlbListRequest.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhiteListSlbListResult.h
 	include/alibabacloud/jarvis/model/DescribePhoneInfoRequest.h
 	include/alibabacloud/jarvis/model/DescribePhoneInfoResult.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhitelistEcsListRequest.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhitelistEcsListResult.h
-	include/alibabacloud/jarvis/model/DescribeAccessWhiteListEipListRequest.h
-	include/alibabacloud/jarvis/model/DescribeAccessWhiteListEipListResult.h
-	include/alibabacloud/jarvis/model/DescribeResetRecordListRequest.h
-	include/alibabacloud/jarvis/model/DescribeResetRecordListResult.h
 	include/alibabacloud/jarvis/model/ModifyUidWhiteListAutoShareRequest.h
 	include/alibabacloud/jarvis/model/ModifyUidWhiteListAutoShareResult.h
+	include/alibabacloud/jarvis/model/CreateConsoleAccessWhiteListRequest.h
+	include/alibabacloud/jarvis/model/CreateConsoleAccessWhiteListResult.h
+	include/alibabacloud/jarvis/model/DescribeConsoleAccessWhiteListRequest.h
+	include/alibabacloud/jarvis/model/DescribeConsoleAccessWhiteListResult.h
+	include/alibabacloud/jarvis/model/DeleteCdnIpRequest.h
+	include/alibabacloud/jarvis/model/DeleteCdnIpResult.h
+	include/alibabacloud/jarvis/model/CreateCdnIpRequest.h
+	include/alibabacloud/jarvis/model/CreateCdnIpResult.h
+	include/alibabacloud/jarvis/model/DescribeUidGcLevelRequest.h
+	include/alibabacloud/jarvis/model/DescribeUidGcLevelResult.h
+	include/alibabacloud/jarvis/model/DescribeResetRecordQueryCountRequest.h
+	include/alibabacloud/jarvis/model/DescribeResetRecordQueryCountResult.h
+	include/alibabacloud/jarvis/model/DescribeCdnCertifyRequest.h
+	include/alibabacloud/jarvis/model/DescribeCdnCertifyResult.h
+	include/alibabacloud/jarvis/model/CreateAllEcsWhiteListRequest.h
+	include/alibabacloud/jarvis/model/CreateAllEcsWhiteListResult.h
+	include/alibabacloud/jarvis/model/DescribeRiskListDetailRequest.h
+	include/alibabacloud/jarvis/model/DescribeRiskListDetailResult.h
+	include/alibabacloud/jarvis/model/DescribeEcsListPageRequest.h
+	include/alibabacloud/jarvis/model/DescribeEcsListPageResult.h
+	include/alibabacloud/jarvis/model/DeleteConsoleAccessWhiteListRequest.h
+	include/alibabacloud/jarvis/model/DeleteConsoleAccessWhiteListResult.h
+	include/alibabacloud/jarvis/model/DescribeSpecialEcsRequest.h
+	include/alibabacloud/jarvis/model/DescribeSpecialEcsResult.h
+	include/alibabacloud/jarvis/model/CreateAccessWhiteListGroupRequest.h
+	include/alibabacloud/jarvis/model/CreateAccessWhiteListGroupResult.h
+	include/alibabacloud/jarvis/model/DescribeDdosDefenseInfoRequest.h
+	include/alibabacloud/jarvis/model/DescribeDdosDefenseInfoResult.h
+	include/alibabacloud/jarvis/model/DescribeCdnVendorRequest.h
+	include/alibabacloud/jarvis/model/DescribeCdnVendorResult.h
+	include/alibabacloud/jarvis/model/DescribeResetRecordListRequest.h
+	include/alibabacloud/jarvis/model/DescribeResetRecordListResult.h
+	include/alibabacloud/jarvis/model/DescribeAccessWhiteListEipListRequest.h
+	include/alibabacloud/jarvis/model/DescribeAccessWhiteListEipListResult.h
 	include/alibabacloud/jarvis/model/ModifyAccessWhiteListAutoShareRequest.h
 	include/alibabacloud/jarvis/model/ModifyAccessWhiteListAutoShareResult.h
 	include/alibabacloud/jarvis/model/CreateUidWhiteListGroupRequest.h
 	include/alibabacloud/jarvis/model/CreateUidWhiteListGroupResult.h
+	include/alibabacloud/jarvis/model/DescribeCdnIpListRequest.h
+	include/alibabacloud/jarvis/model/DescribeCdnIpListResult.h
+	include/alibabacloud/jarvis/model/CreateCdnSubscriptionRequest.h
+	include/alibabacloud/jarvis/model/CreateCdnSubscriptionResult.h
+	include/alibabacloud/jarvis/model/DeleteCdnSubscriptionRequest.h
+	include/alibabacloud/jarvis/model/DeleteCdnSubscriptionResult.h
 	include/alibabacloud/jarvis/model/DescribeCpmcPunishListRequest.h
 	include/alibabacloud/jarvis/model/DescribeCpmcPunishListResult.h
-	include/alibabacloud/jarvis/model/DescribeUidGcLevelRequest.h
-	include/alibabacloud/jarvis/model/DescribeUidGcLevelResult.h
 	include/alibabacloud/jarvis/model/DeleteAccessWhiteListGroupRequest.h
 	include/alibabacloud/jarvis/model/DeleteAccessWhiteListGroupResult.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhiteListGroupRequest.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhiteListGroupResult.h
-	include/alibabacloud/jarvis/model/DescribeResetRecordQueryCountRequest.h
-	include/alibabacloud/jarvis/model/DescribeResetRecordQueryCountResult.h
 	include/alibabacloud/jarvis/model/DescribePunishListRequest.h
 	include/alibabacloud/jarvis/model/DescribePunishListResult.h
 	include/alibabacloud/jarvis/model/DescribeUidWhiteListGroupRequest.h
 	include/alibabacloud/jarvis/model/DescribeUidWhiteListGroupResult.h
-	include/alibabacloud/jarvis/model/DescribeRiskListDetailRequest.h
-	include/alibabacloud/jarvis/model/DescribeRiskListDetailResult.h
+	include/alibabacloud/jarvis/model/DescribeCdnSubscriptionRequest.h
+	include/alibabacloud/jarvis/model/DescribeCdnSubscriptionResult.h
 	include/alibabacloud/jarvis/model/DescribeRiskTrendRequest.h
 	include/alibabacloud/jarvis/model/DescribeRiskTrendResult.h )
 
@@ -70,42 +98,70 @@ set(jarvis_src
 	src/model/DeleteUidWhiteListGroupResult.cc
 	src/model/CreateCpmcPunishFeedBackRequest.cc
 	src/model/CreateCpmcPunishFeedBackResult.cc
-	src/model/CreateAccessWhiteListGroupRequest.cc
-	src/model/CreateAccessWhiteListGroupResult.cc
-	src/model/DescribeDdosDefenseInfoRequest.cc
-	src/model/DescribeDdosDefenseInfoResult.cc
 	src/model/DescribeAccessWhiteListSlbListRequest.cc
 	src/model/DescribeAccessWhiteListSlbListResult.cc
 	src/model/DescribePhoneInfoRequest.cc
 	src/model/DescribePhoneInfoResult.cc
 	src/model/DescribeAccessWhitelistEcsListRequest.cc
 	src/model/DescribeAccessWhitelistEcsListResult.cc
-	src/model/DescribeAccessWhiteListEipListRequest.cc
-	src/model/DescribeAccessWhiteListEipListResult.cc
-	src/model/DescribeResetRecordListRequest.cc
-	src/model/DescribeResetRecordListResult.cc
 	src/model/ModifyUidWhiteListAutoShareRequest.cc
 	src/model/ModifyUidWhiteListAutoShareResult.cc
+	src/model/CreateConsoleAccessWhiteListRequest.cc
+	src/model/CreateConsoleAccessWhiteListResult.cc
+	src/model/DescribeConsoleAccessWhiteListRequest.cc
+	src/model/DescribeConsoleAccessWhiteListResult.cc
+	src/model/DeleteCdnIpRequest.cc
+	src/model/DeleteCdnIpResult.cc
+	src/model/CreateCdnIpRequest.cc
+	src/model/CreateCdnIpResult.cc
+	src/model/DescribeUidGcLevelRequest.cc
+	src/model/DescribeUidGcLevelResult.cc
+	src/model/DescribeResetRecordQueryCountRequest.cc
+	src/model/DescribeResetRecordQueryCountResult.cc
+	src/model/DescribeCdnCertifyRequest.cc
+	src/model/DescribeCdnCertifyResult.cc
+	src/model/CreateAllEcsWhiteListRequest.cc
+	src/model/CreateAllEcsWhiteListResult.cc
+	src/model/DescribeRiskListDetailRequest.cc
+	src/model/DescribeRiskListDetailResult.cc
+	src/model/DescribeEcsListPageRequest.cc
+	src/model/DescribeEcsListPageResult.cc
+	src/model/DeleteConsoleAccessWhiteListRequest.cc
+	src/model/DeleteConsoleAccessWhiteListResult.cc
+	src/model/DescribeSpecialEcsRequest.cc
+	src/model/DescribeSpecialEcsResult.cc
+	src/model/CreateAccessWhiteListGroupRequest.cc
+	src/model/CreateAccessWhiteListGroupResult.cc
+	src/model/DescribeDdosDefenseInfoRequest.cc
+	src/model/DescribeDdosDefenseInfoResult.cc
+	src/model/DescribeCdnVendorRequest.cc
+	src/model/DescribeCdnVendorResult.cc
+	src/model/DescribeResetRecordListRequest.cc
+	src/model/DescribeResetRecordListResult.cc
+	src/model/DescribeAccessWhiteListEipListRequest.cc
+	src/model/DescribeAccessWhiteListEipListResult.cc
 	src/model/ModifyAccessWhiteListAutoShareRequest.cc
 	src/model/ModifyAccessWhiteListAutoShareResult.cc
 	src/model/CreateUidWhiteListGroupRequest.cc
 	src/model/CreateUidWhiteListGroupResult.cc
+	src/model/DescribeCdnIpListRequest.cc
+	src/model/DescribeCdnIpListResult.cc
+	src/model/CreateCdnSubscriptionRequest.cc
+	src/model/CreateCdnSubscriptionResult.cc
+	src/model/DeleteCdnSubscriptionRequest.cc
+	src/model/DeleteCdnSubscriptionResult.cc
 	src/model/DescribeCpmcPunishListRequest.cc
 	src/model/DescribeCpmcPunishListResult.cc
-	src/model/DescribeUidGcLevelRequest.cc
-	src/model/DescribeUidGcLevelResult.cc
 	src/model/DeleteAccessWhiteListGroupRequest.cc
 	src/model/DeleteAccessWhiteListGroupResult.cc
 	src/model/DescribeAccessWhiteListGroupRequest.cc
 	src/model/DescribeAccessWhiteListGroupResult.cc
-	src/model/DescribeResetRecordQueryCountRequest.cc
-	src/model/DescribeResetRecordQueryCountResult.cc
 	src/model/DescribePunishListRequest.cc
 	src/model/DescribePunishListResult.cc
 	src/model/DescribeUidWhiteListGroupRequest.cc
 	src/model/DescribeUidWhiteListGroupResult.cc
-	src/model/DescribeRiskListDetailRequest.cc
-	src/model/DescribeRiskListDetailResult.cc
+	src/model/DescribeCdnSubscriptionRequest.cc
+	src/model/DescribeCdnSubscriptionResult.cc
 	src/model/DescribeRiskTrendRequest.cc
 	src/model/DescribeRiskTrendResult.cc )
 

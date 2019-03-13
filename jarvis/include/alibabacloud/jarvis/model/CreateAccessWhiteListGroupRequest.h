@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setProductName(const std::string& productName);
 				int getWhiteListType()const;
 				void setWhiteListType(int whiteListType);
+				std::string getInstanceInfoList()const;
+				void setInstanceInfoList(const std::string& instanceInfoList);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getSourceCode()const;
@@ -68,6 +70,7 @@ namespace AlibabaCloud
 				int liveTime_;
 				std::string productName_;
 				int whiteListType_;
+				std::string instanceInfoList_;
 				std::string lang_;
 				std::string sourceCode_;
 

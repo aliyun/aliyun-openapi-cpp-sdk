@@ -58,6 +58,17 @@ void DescribeAccessWhiteListGroupRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeAccessWhiteListGroupRequest::getQueryProduct()const
+{
+	return queryProduct_;
+}
+
+void DescribeAccessWhiteListGroupRequest::setQueryProduct(const std::string& queryProduct)
+{
+	queryProduct_ = queryProduct;
+	setParameter("QueryProduct", queryProduct);
+}
+
 int DescribeAccessWhiteListGroupRequest::getCurrentPage()const
 {
 	return currentPage_;

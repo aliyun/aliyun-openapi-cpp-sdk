@@ -40,17 +40,21 @@ void DescribeAccessWhiteListEipListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allEcsList = value["EcsList"]["Ecs"];
-	for (auto value : allEcsList)
+	auto allEipList = value["EipList"]["Ecs"];
+	for (auto value : allEipList)
 	{
-		Ecs ecsListObject;
+		Ecs eipListObject;
 		if(!value["InstanceName"].isNull())
-			ecsListObject.instanceName = value["InstanceName"].asString();
+			eipListObject.instanceName = value["InstanceName"].asString();
 		if(!value["InstanceId"].isNull())
-			ecsListObject.instanceId = value["InstanceId"].asString();
+			eipListObject.instanceId = value["InstanceId"].asString();
 		if(!value["IP"].isNull())
-			ecsListObject.iP = value["IP"].asString();
-		ecsList_.push_back(ecsListObject);
+			eipListObject.iP = value["IP"].asString();
+		if(!value["Region"].isNull())
+			eipListObject.region = value["Region"].asString();
+		if(!value["ItemSign"].isNull())
+			eipListObject.itemSign = value["ItemSign"].asString();
+		eipList_.push_back(eipListObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
@@ -64,9 +68,9 @@ int DescribeAccessWhiteListEipListResult::getTotalCount()const
 	return totalCount_;
 }
 
-std::vector<DescribeAccessWhiteListEipListResult::Ecs> DescribeAccessWhiteListEipListResult::getEcsList()const
+std::vector<DescribeAccessWhiteListEipListResult::Ecs> DescribeAccessWhiteListEipListResult::getEipList()const
 {
-	return ecsList_;
+	return eipList_;
 }
 
 std::string DescribeAccessWhiteListEipListResult::getModule()const

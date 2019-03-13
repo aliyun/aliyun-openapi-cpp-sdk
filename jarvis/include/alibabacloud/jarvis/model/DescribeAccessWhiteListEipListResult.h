@@ -37,6 +37,8 @@ namespace AlibabaCloud
 					std::string instanceName;
 					std::string instanceId;
 					std::string iP;
+					std::string region;
+					std::string itemSign;
 				};
 
 
@@ -44,14 +46,14 @@ namespace AlibabaCloud
 				explicit DescribeAccessWhiteListEipListResult(const std::string &payload);
 				~DescribeAccessWhiteListEipListResult();
 				int getTotalCount()const;
-				std::vector<Ecs> getEcsList()const;
+				std::vector<Ecs> getEipList()const;
 				std::string getModule()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				std::vector<Ecs> ecsList_;
+				std::vector<Ecs> eipList_;
 				std::string module_;
 
 			};

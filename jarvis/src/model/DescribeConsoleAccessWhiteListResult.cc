@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/jarvis/model/DescribeAccessWhiteListGroupResult.h>
+#include <alibabacloud/jarvis/model/DescribeConsoleAccessWhiteListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Jarvis;
 using namespace AlibabaCloud::Jarvis::Model;
 
-DescribeAccessWhiteListGroupResult::DescribeAccessWhiteListGroupResult() :
+DescribeConsoleAccessWhiteListResult::DescribeConsoleAccessWhiteListResult() :
 	ServiceResult()
 {}
 
-DescribeAccessWhiteListGroupResult::DescribeAccessWhiteListGroupResult(const std::string &payload) :
+DescribeConsoleAccessWhiteListResult::DescribeConsoleAccessWhiteListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeAccessWhiteListGroupResult::~DescribeAccessWhiteListGroupResult()
+DescribeConsoleAccessWhiteListResult::~DescribeConsoleAccessWhiteListResult()
 {}
 
-void DescribeAccessWhiteListGroupResult::parse(const std::string &payload)
+void DescribeConsoleAccessWhiteListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -44,30 +44,22 @@ void DescribeAccessWhiteListGroupResult::parse(const std::string &payload)
 	for (auto value : allDataList)
 	{
 		Data dataListObject;
-		if(!value["Status"].isNull())
-			dataListObject.status = value["Status"].asString();
+		if(!value["Id"].isNull())
+			dataListObject.id = std::stoi(value["Id"].asString());
+		if(!value["SrcIp"].isNull())
+			dataListObject.srcIp = value["SrcIp"].asString();
+		if(!value["DstIp"].isNull())
+			dataListObject.dstIp = value["DstIp"].asString();
 		if(!value["InsProduct"].isNull())
 			dataListObject.insProduct = value["InsProduct"].asString();
+		if(!value["RegionId"].isNull())
+			dataListObject.regionId = value["RegionId"].asString();
+		if(!value["Status"].isNull())
+			dataListObject.status = value["Status"].asString();
 		if(!value["GmtCreate"].isNull())
 			dataListObject.gmtCreate = value["GmtCreate"].asString();
 		if(!value["GmtRealExpire"].isNull())
 			dataListObject.gmtRealExpire = value["GmtRealExpire"].asString();
-		if(!value["SrcIP"].isNull())
-			dataListObject.srcIP = value["SrcIP"].asString();
-		if(!value["AutoConfig"].isNull())
-			dataListObject.autoConfig = std::stoi(value["AutoConfig"].asString());
-		if(!value["GroupId"].isNull())
-			dataListObject.groupId = std::stoi(value["GroupId"].asString());
-		auto allItems = value["Items"]["Item"];
-		for (auto value : allItems)
-		{
-			Data::Item itemsObject;
-			if(!value["IP"].isNull())
-				itemsObject.iP = value["IP"].asString();
-			if(!value["RegionId"].isNull())
-				itemsObject.regionId = value["RegionId"].asString();
-			dataListObject.items.push_back(itemsObject);
-		}
 		dataList_.push_back(dataListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
@@ -82,17 +74,17 @@ void DescribeAccessWhiteListGroupResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeAccessWhiteListGroupResult::Data> DescribeAccessWhiteListGroupResult::getDataList()const
+std::vector<DescribeConsoleAccessWhiteListResult::Data> DescribeConsoleAccessWhiteListResult::getDataList()const
 {
 	return dataList_;
 }
 
-DescribeAccessWhiteListGroupResult::PageInfo DescribeAccessWhiteListGroupResult::getPageInfo()const
+DescribeConsoleAccessWhiteListResult::PageInfo DescribeConsoleAccessWhiteListResult::getPageInfo()const
 {
 	return pageInfo_;
 }
 
-std::string DescribeAccessWhiteListGroupResult::getModule()const
+std::string DescribeConsoleAccessWhiteListResult::getModule()const
 {
 	return module_;
 }

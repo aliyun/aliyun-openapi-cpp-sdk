@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTGROUPREQUEST_H_
-#define ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_JARVIS_MODEL_DELETECDNIPREQUEST_H_
+#define ALIBABACLOUD_JARVIS_MODEL_DELETECDNIPREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_JARVIS_EXPORT DescribeAccessWhiteListGroupRequest : public RpcServiceRequest
+			class ALIBABACLOUD_JARVIS_EXPORT DeleteCdnIpRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeAccessWhiteListGroupRequest();
-				~DescribeAccessWhiteListGroupRequest();
+				DeleteCdnIpRequest();
+				~DeleteCdnIpRequest();
 
-				std::string getSrcIP()const;
-				void setSrcIP(const std::string& srcIP);
+				int getItemId()const;
+				void setItemId(int itemId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getQueryProduct()const;
-				void setQueryProduct(const std::string& queryProduct);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				int getWhiteListType()const;
-				void setWhiteListType(int whiteListType);
-				std::string getDstIP()const;
-				void setDstIP(const std::string& dstIP);
+				std::string getCdnIp()const;
+				void setCdnIp(const std::string& cdnIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 				std::string getSourceCode()const;
 				void setSourceCode(const std::string& sourceCode);
 
             private:
-				std::string srcIP_;
+				int itemId_;
+				long resourceOwnerId_;
 				std::string sourceIp_;
-				int pageSize_;
-				std::string queryProduct_;
-				int currentPage_;
-				int whiteListType_;
-				std::string dstIP_;
+				std::string cdnIp_;
 				std::string lang_;
-				std::string status_;
 				std::string sourceCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_JARVIS_MODEL_DELETECDNIPREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTGROUPREQUEST_H_
-#define ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_JARVIS_MODEL_DESCRIBECONSOLEACCESSWHITELISTREQUEST_H_
+#define ALIBABACLOUD_JARVIS_MODEL_DESCRIBECONSOLEACCESSWHITELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_JARVIS_EXPORT DescribeAccessWhiteListGroupRequest : public RpcServiceRequest
+			class ALIBABACLOUD_JARVIS_EXPORT DescribeConsoleAccessWhiteListRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeAccessWhiteListGroupRequest();
-				~DescribeAccessWhiteListGroupRequest();
+				DescribeConsoleAccessWhiteListRequest();
+				~DescribeConsoleAccessWhiteListRequest();
 
 				std::string getSrcIP()const;
 				void setSrcIP(const std::string& srcIP);
@@ -72,4 +72,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_JARVIS_MODEL_DESCRIBECONSOLEACCESSWHITELISTREQUEST_H_

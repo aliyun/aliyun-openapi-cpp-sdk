@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTSLBLISTRESULT_H_
-#define ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTSLBLISTRESULT_H_
+#ifndef ALIBABACLOUD_JARVIS_MODEL_CREATECDNSUBSCRIPTIONRESULT_H_
+#define ALIBABACLOUD_JARVIS_MODEL_CREATECDNSUBSCRIPTIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_JARVIS_EXPORT DescribeAccessWhiteListSlbListResult : public ServiceResult
+			class ALIBABACLOUD_JARVIS_EXPORT CreateCdnSubscriptionResult : public ServiceResult
 			{
 			public:
-				struct Ecs
-				{
-					std::string instanceName;
-					std::string instanceId;
-					std::string iP;
-					std::string region;
-					std::string itemSign;
-				};
 
 
-				DescribeAccessWhiteListSlbListResult();
-				explicit DescribeAccessWhiteListSlbListResult(const std::string &payload);
-				~DescribeAccessWhiteListSlbListResult();
-				int getTotalCount()const;
+				CreateCdnSubscriptionResult();
+				explicit CreateCdnSubscriptionResult(const std::string &payload);
+				~CreateCdnSubscriptionResult();
 				std::string getModule()const;
-				std::vector<Ecs> getSlbList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
 				std::string module_;
-				std::vector<Ecs> slbList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTSLBLISTRESULT_H_
+#endif // !ALIBABACLOUD_JARVIS_MODEL_CREATECDNSUBSCRIPTIONRESULT_H_

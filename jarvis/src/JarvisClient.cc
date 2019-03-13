@@ -31,21 +31,21 @@ JarvisClient::JarvisClient(const Credentials &credentials, const ClientConfigura
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "jarvis");
 }
 
 JarvisClient::JarvisClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "jarvis");
 }
 
 JarvisClient::JarvisClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "jarvis");
 }
 
 JarvisClient::~JarvisClient()
@@ -117,78 +117,6 @@ JarvisClient::CreateCpmcPunishFeedBackOutcomeCallable JarvisClient::createCpmcPu
 			[this, request]()
 			{
 			return this->createCpmcPunishFeedBack(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-JarvisClient::CreateAccessWhiteListGroupOutcome JarvisClient::createAccessWhiteListGroup(const CreateAccessWhiteListGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateAccessWhiteListGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateAccessWhiteListGroupOutcome(CreateAccessWhiteListGroupResult(outcome.result()));
-	else
-		return CreateAccessWhiteListGroupOutcome(outcome.error());
-}
-
-void JarvisClient::createAccessWhiteListGroupAsync(const CreateAccessWhiteListGroupRequest& request, const CreateAccessWhiteListGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createAccessWhiteListGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-JarvisClient::CreateAccessWhiteListGroupOutcomeCallable JarvisClient::createAccessWhiteListGroupCallable(const CreateAccessWhiteListGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateAccessWhiteListGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->createAccessWhiteListGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-JarvisClient::DescribeDdosDefenseInfoOutcome JarvisClient::describeDdosDefenseInfo(const DescribeDdosDefenseInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDdosDefenseInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDdosDefenseInfoOutcome(DescribeDdosDefenseInfoResult(outcome.result()));
-	else
-		return DescribeDdosDefenseInfoOutcome(outcome.error());
-}
-
-void JarvisClient::describeDdosDefenseInfoAsync(const DescribeDdosDefenseInfoRequest& request, const DescribeDdosDefenseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDdosDefenseInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-JarvisClient::DescribeDdosDefenseInfoOutcomeCallable JarvisClient::describeDdosDefenseInfoCallable(const DescribeDdosDefenseInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDdosDefenseInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDdosDefenseInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,36 +231,576 @@ JarvisClient::DescribeAccessWhitelistEcsListOutcomeCallable JarvisClient::descri
 	return task->get_future();
 }
 
-JarvisClient::DescribeAccessWhiteListEipListOutcome JarvisClient::describeAccessWhiteListEipList(const DescribeAccessWhiteListEipListRequest &request) const
+JarvisClient::ModifyUidWhiteListAutoShareOutcome JarvisClient::modifyUidWhiteListAutoShare(const ModifyUidWhiteListAutoShareRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeAccessWhiteListEipListOutcome(endpointOutcome.error());
+		return ModifyUidWhiteListAutoShareOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeAccessWhiteListEipListOutcome(DescribeAccessWhiteListEipListResult(outcome.result()));
+		return ModifyUidWhiteListAutoShareOutcome(ModifyUidWhiteListAutoShareResult(outcome.result()));
 	else
-		return DescribeAccessWhiteListEipListOutcome(outcome.error());
+		return ModifyUidWhiteListAutoShareOutcome(outcome.error());
 }
 
-void JarvisClient::describeAccessWhiteListEipListAsync(const DescribeAccessWhiteListEipListRequest& request, const DescribeAccessWhiteListEipListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void JarvisClient::modifyUidWhiteListAutoShareAsync(const ModifyUidWhiteListAutoShareRequest& request, const ModifyUidWhiteListAutoShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeAccessWhiteListEipList(request), context);
+		handler(this, request, modifyUidWhiteListAutoShare(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-JarvisClient::DescribeAccessWhiteListEipListOutcomeCallable JarvisClient::describeAccessWhiteListEipListCallable(const DescribeAccessWhiteListEipListRequest &request) const
+JarvisClient::ModifyUidWhiteListAutoShareOutcomeCallable JarvisClient::modifyUidWhiteListAutoShareCallable(const ModifyUidWhiteListAutoShareRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeAccessWhiteListEipListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyUidWhiteListAutoShareOutcome()>>(
 			[this, request]()
 			{
-			return this->describeAccessWhiteListEipList(request);
+			return this->modifyUidWhiteListAutoShare(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::CreateConsoleAccessWhiteListOutcome JarvisClient::createConsoleAccessWhiteList(const CreateConsoleAccessWhiteListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateConsoleAccessWhiteListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateConsoleAccessWhiteListOutcome(CreateConsoleAccessWhiteListResult(outcome.result()));
+	else
+		return CreateConsoleAccessWhiteListOutcome(outcome.error());
+}
+
+void JarvisClient::createConsoleAccessWhiteListAsync(const CreateConsoleAccessWhiteListRequest& request, const CreateConsoleAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createConsoleAccessWhiteList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::CreateConsoleAccessWhiteListOutcomeCallable JarvisClient::createConsoleAccessWhiteListCallable(const CreateConsoleAccessWhiteListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateConsoleAccessWhiteListOutcome()>>(
+			[this, request]()
+			{
+			return this->createConsoleAccessWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeConsoleAccessWhiteListOutcome JarvisClient::describeConsoleAccessWhiteList(const DescribeConsoleAccessWhiteListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeConsoleAccessWhiteListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeConsoleAccessWhiteListOutcome(DescribeConsoleAccessWhiteListResult(outcome.result()));
+	else
+		return DescribeConsoleAccessWhiteListOutcome(outcome.error());
+}
+
+void JarvisClient::describeConsoleAccessWhiteListAsync(const DescribeConsoleAccessWhiteListRequest& request, const DescribeConsoleAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeConsoleAccessWhiteList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeConsoleAccessWhiteListOutcomeCallable JarvisClient::describeConsoleAccessWhiteListCallable(const DescribeConsoleAccessWhiteListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeConsoleAccessWhiteListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeConsoleAccessWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DeleteCdnIpOutcome JarvisClient::deleteCdnIp(const DeleteCdnIpRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCdnIpOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCdnIpOutcome(DeleteCdnIpResult(outcome.result()));
+	else
+		return DeleteCdnIpOutcome(outcome.error());
+}
+
+void JarvisClient::deleteCdnIpAsync(const DeleteCdnIpRequest& request, const DeleteCdnIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCdnIp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DeleteCdnIpOutcomeCallable JarvisClient::deleteCdnIpCallable(const DeleteCdnIpRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCdnIpOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCdnIp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::CreateCdnIpOutcome JarvisClient::createCdnIp(const CreateCdnIpRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCdnIpOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCdnIpOutcome(CreateCdnIpResult(outcome.result()));
+	else
+		return CreateCdnIpOutcome(outcome.error());
+}
+
+void JarvisClient::createCdnIpAsync(const CreateCdnIpRequest& request, const CreateCdnIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCdnIp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::CreateCdnIpOutcomeCallable JarvisClient::createCdnIpCallable(const CreateCdnIpRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCdnIpOutcome()>>(
+			[this, request]()
+			{
+			return this->createCdnIp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeUidGcLevelOutcome JarvisClient::describeUidGcLevel(const DescribeUidGcLevelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUidGcLevelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUidGcLevelOutcome(DescribeUidGcLevelResult(outcome.result()));
+	else
+		return DescribeUidGcLevelOutcome(outcome.error());
+}
+
+void JarvisClient::describeUidGcLevelAsync(const DescribeUidGcLevelRequest& request, const DescribeUidGcLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUidGcLevel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeUidGcLevelOutcomeCallable JarvisClient::describeUidGcLevelCallable(const DescribeUidGcLevelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUidGcLevelOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUidGcLevel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeResetRecordQueryCountOutcome JarvisClient::describeResetRecordQueryCount(const DescribeResetRecordQueryCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeResetRecordQueryCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeResetRecordQueryCountOutcome(DescribeResetRecordQueryCountResult(outcome.result()));
+	else
+		return DescribeResetRecordQueryCountOutcome(outcome.error());
+}
+
+void JarvisClient::describeResetRecordQueryCountAsync(const DescribeResetRecordQueryCountRequest& request, const DescribeResetRecordQueryCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeResetRecordQueryCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeResetRecordQueryCountOutcomeCallable JarvisClient::describeResetRecordQueryCountCallable(const DescribeResetRecordQueryCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeResetRecordQueryCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeResetRecordQueryCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeCdnCertifyOutcome JarvisClient::describeCdnCertify(const DescribeCdnCertifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnCertifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnCertifyOutcome(DescribeCdnCertifyResult(outcome.result()));
+	else
+		return DescribeCdnCertifyOutcome(outcome.error());
+}
+
+void JarvisClient::describeCdnCertifyAsync(const DescribeCdnCertifyRequest& request, const DescribeCdnCertifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnCertify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeCdnCertifyOutcomeCallable JarvisClient::describeCdnCertifyCallable(const DescribeCdnCertifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnCertifyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnCertify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::CreateAllEcsWhiteListOutcome JarvisClient::createAllEcsWhiteList(const CreateAllEcsWhiteListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAllEcsWhiteListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAllEcsWhiteListOutcome(CreateAllEcsWhiteListResult(outcome.result()));
+	else
+		return CreateAllEcsWhiteListOutcome(outcome.error());
+}
+
+void JarvisClient::createAllEcsWhiteListAsync(const CreateAllEcsWhiteListRequest& request, const CreateAllEcsWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAllEcsWhiteList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::CreateAllEcsWhiteListOutcomeCallable JarvisClient::createAllEcsWhiteListCallable(const CreateAllEcsWhiteListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAllEcsWhiteListOutcome()>>(
+			[this, request]()
+			{
+			return this->createAllEcsWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeRiskListDetailOutcome JarvisClient::describeRiskListDetail(const DescribeRiskListDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRiskListDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRiskListDetailOutcome(DescribeRiskListDetailResult(outcome.result()));
+	else
+		return DescribeRiskListDetailOutcome(outcome.error());
+}
+
+void JarvisClient::describeRiskListDetailAsync(const DescribeRiskListDetailRequest& request, const DescribeRiskListDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRiskListDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeRiskListDetailOutcomeCallable JarvisClient::describeRiskListDetailCallable(const DescribeRiskListDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRiskListDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRiskListDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeEcsListPageOutcome JarvisClient::describeEcsListPage(const DescribeEcsListPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEcsListPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEcsListPageOutcome(DescribeEcsListPageResult(outcome.result()));
+	else
+		return DescribeEcsListPageOutcome(outcome.error());
+}
+
+void JarvisClient::describeEcsListPageAsync(const DescribeEcsListPageRequest& request, const DescribeEcsListPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEcsListPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeEcsListPageOutcomeCallable JarvisClient::describeEcsListPageCallable(const DescribeEcsListPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEcsListPageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEcsListPage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DeleteConsoleAccessWhiteListOutcome JarvisClient::deleteConsoleAccessWhiteList(const DeleteConsoleAccessWhiteListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteConsoleAccessWhiteListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteConsoleAccessWhiteListOutcome(DeleteConsoleAccessWhiteListResult(outcome.result()));
+	else
+		return DeleteConsoleAccessWhiteListOutcome(outcome.error());
+}
+
+void JarvisClient::deleteConsoleAccessWhiteListAsync(const DeleteConsoleAccessWhiteListRequest& request, const DeleteConsoleAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteConsoleAccessWhiteList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DeleteConsoleAccessWhiteListOutcomeCallable JarvisClient::deleteConsoleAccessWhiteListCallable(const DeleteConsoleAccessWhiteListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteConsoleAccessWhiteListOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteConsoleAccessWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeSpecialEcsOutcome JarvisClient::describeSpecialEcs(const DescribeSpecialEcsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSpecialEcsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSpecialEcsOutcome(DescribeSpecialEcsResult(outcome.result()));
+	else
+		return DescribeSpecialEcsOutcome(outcome.error());
+}
+
+void JarvisClient::describeSpecialEcsAsync(const DescribeSpecialEcsRequest& request, const DescribeSpecialEcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSpecialEcs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeSpecialEcsOutcomeCallable JarvisClient::describeSpecialEcsCallable(const DescribeSpecialEcsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSpecialEcsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSpecialEcs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::CreateAccessWhiteListGroupOutcome JarvisClient::createAccessWhiteListGroup(const CreateAccessWhiteListGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAccessWhiteListGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAccessWhiteListGroupOutcome(CreateAccessWhiteListGroupResult(outcome.result()));
+	else
+		return CreateAccessWhiteListGroupOutcome(outcome.error());
+}
+
+void JarvisClient::createAccessWhiteListGroupAsync(const CreateAccessWhiteListGroupRequest& request, const CreateAccessWhiteListGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAccessWhiteListGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::CreateAccessWhiteListGroupOutcomeCallable JarvisClient::createAccessWhiteListGroupCallable(const CreateAccessWhiteListGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAccessWhiteListGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createAccessWhiteListGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeDdosDefenseInfoOutcome JarvisClient::describeDdosDefenseInfo(const DescribeDdosDefenseInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDdosDefenseInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDdosDefenseInfoOutcome(DescribeDdosDefenseInfoResult(outcome.result()));
+	else
+		return DescribeDdosDefenseInfoOutcome(outcome.error());
+}
+
+void JarvisClient::describeDdosDefenseInfoAsync(const DescribeDdosDefenseInfoRequest& request, const DescribeDdosDefenseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDdosDefenseInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeDdosDefenseInfoOutcomeCallable JarvisClient::describeDdosDefenseInfoCallable(const DescribeDdosDefenseInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDdosDefenseInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDdosDefenseInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeCdnVendorOutcome JarvisClient::describeCdnVendor(const DescribeCdnVendorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnVendorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnVendorOutcome(DescribeCdnVendorResult(outcome.result()));
+	else
+		return DescribeCdnVendorOutcome(outcome.error());
+}
+
+void JarvisClient::describeCdnVendorAsync(const DescribeCdnVendorRequest& request, const DescribeCdnVendorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnVendor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeCdnVendorOutcomeCallable JarvisClient::describeCdnVendorCallable(const DescribeCdnVendorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnVendorOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnVendor(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,36 +843,36 @@ JarvisClient::DescribeResetRecordListOutcomeCallable JarvisClient::describeReset
 	return task->get_future();
 }
 
-JarvisClient::ModifyUidWhiteListAutoShareOutcome JarvisClient::modifyUidWhiteListAutoShare(const ModifyUidWhiteListAutoShareRequest &request) const
+JarvisClient::DescribeAccessWhiteListEipListOutcome JarvisClient::describeAccessWhiteListEipList(const DescribeAccessWhiteListEipListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyUidWhiteListAutoShareOutcome(endpointOutcome.error());
+		return DescribeAccessWhiteListEipListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyUidWhiteListAutoShareOutcome(ModifyUidWhiteListAutoShareResult(outcome.result()));
+		return DescribeAccessWhiteListEipListOutcome(DescribeAccessWhiteListEipListResult(outcome.result()));
 	else
-		return ModifyUidWhiteListAutoShareOutcome(outcome.error());
+		return DescribeAccessWhiteListEipListOutcome(outcome.error());
 }
 
-void JarvisClient::modifyUidWhiteListAutoShareAsync(const ModifyUidWhiteListAutoShareRequest& request, const ModifyUidWhiteListAutoShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void JarvisClient::describeAccessWhiteListEipListAsync(const DescribeAccessWhiteListEipListRequest& request, const DescribeAccessWhiteListEipListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyUidWhiteListAutoShare(request), context);
+		handler(this, request, describeAccessWhiteListEipList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-JarvisClient::ModifyUidWhiteListAutoShareOutcomeCallable JarvisClient::modifyUidWhiteListAutoShareCallable(const ModifyUidWhiteListAutoShareRequest &request) const
+JarvisClient::DescribeAccessWhiteListEipListOutcomeCallable JarvisClient::describeAccessWhiteListEipListCallable(const DescribeAccessWhiteListEipListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyUidWhiteListAutoShareOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeAccessWhiteListEipListOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyUidWhiteListAutoShare(request);
+			return this->describeAccessWhiteListEipList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -483,6 +951,114 @@ JarvisClient::CreateUidWhiteListGroupOutcomeCallable JarvisClient::createUidWhit
 	return task->get_future();
 }
 
+JarvisClient::DescribeCdnIpListOutcome JarvisClient::describeCdnIpList(const DescribeCdnIpListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnIpListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnIpListOutcome(DescribeCdnIpListResult(outcome.result()));
+	else
+		return DescribeCdnIpListOutcome(outcome.error());
+}
+
+void JarvisClient::describeCdnIpListAsync(const DescribeCdnIpListRequest& request, const DescribeCdnIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnIpList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeCdnIpListOutcomeCallable JarvisClient::describeCdnIpListCallable(const DescribeCdnIpListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnIpListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnIpList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::CreateCdnSubscriptionOutcome JarvisClient::createCdnSubscription(const CreateCdnSubscriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCdnSubscriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCdnSubscriptionOutcome(CreateCdnSubscriptionResult(outcome.result()));
+	else
+		return CreateCdnSubscriptionOutcome(outcome.error());
+}
+
+void JarvisClient::createCdnSubscriptionAsync(const CreateCdnSubscriptionRequest& request, const CreateCdnSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCdnSubscription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::CreateCdnSubscriptionOutcomeCallable JarvisClient::createCdnSubscriptionCallable(const CreateCdnSubscriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCdnSubscriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->createCdnSubscription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DeleteCdnSubscriptionOutcome JarvisClient::deleteCdnSubscription(const DeleteCdnSubscriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCdnSubscriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCdnSubscriptionOutcome(DeleteCdnSubscriptionResult(outcome.result()));
+	else
+		return DeleteCdnSubscriptionOutcome(outcome.error());
+}
+
+void JarvisClient::deleteCdnSubscriptionAsync(const DeleteCdnSubscriptionRequest& request, const DeleteCdnSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCdnSubscription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DeleteCdnSubscriptionOutcomeCallable JarvisClient::deleteCdnSubscriptionCallable(const DeleteCdnSubscriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCdnSubscriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCdnSubscription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 JarvisClient::DescribeCpmcPunishListOutcome JarvisClient::describeCpmcPunishList(const DescribeCpmcPunishListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,42 +1089,6 @@ JarvisClient::DescribeCpmcPunishListOutcomeCallable JarvisClient::describeCpmcPu
 			[this, request]()
 			{
 			return this->describeCpmcPunishList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-JarvisClient::DescribeUidGcLevelOutcome JarvisClient::describeUidGcLevel(const DescribeUidGcLevelRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeUidGcLevelOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeUidGcLevelOutcome(DescribeUidGcLevelResult(outcome.result()));
-	else
-		return DescribeUidGcLevelOutcome(outcome.error());
-}
-
-void JarvisClient::describeUidGcLevelAsync(const DescribeUidGcLevelRequest& request, const DescribeUidGcLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeUidGcLevel(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-JarvisClient::DescribeUidGcLevelOutcomeCallable JarvisClient::describeUidGcLevelCallable(const DescribeUidGcLevelRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeUidGcLevelOutcome()>>(
-			[this, request]()
-			{
-			return this->describeUidGcLevel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,42 +1167,6 @@ JarvisClient::DescribeAccessWhiteListGroupOutcomeCallable JarvisClient::describe
 	return task->get_future();
 }
 
-JarvisClient::DescribeResetRecordQueryCountOutcome JarvisClient::describeResetRecordQueryCount(const DescribeResetRecordQueryCountRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeResetRecordQueryCountOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeResetRecordQueryCountOutcome(DescribeResetRecordQueryCountResult(outcome.result()));
-	else
-		return DescribeResetRecordQueryCountOutcome(outcome.error());
-}
-
-void JarvisClient::describeResetRecordQueryCountAsync(const DescribeResetRecordQueryCountRequest& request, const DescribeResetRecordQueryCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeResetRecordQueryCount(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-JarvisClient::DescribeResetRecordQueryCountOutcomeCallable JarvisClient::describeResetRecordQueryCountCallable(const DescribeResetRecordQueryCountRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeResetRecordQueryCountOutcome()>>(
-			[this, request]()
-			{
-			return this->describeResetRecordQueryCount(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 JarvisClient::DescribePunishListOutcome JarvisClient::describePunishList(const DescribePunishListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -735,36 +1239,36 @@ JarvisClient::DescribeUidWhiteListGroupOutcomeCallable JarvisClient::describeUid
 	return task->get_future();
 }
 
-JarvisClient::DescribeRiskListDetailOutcome JarvisClient::describeRiskListDetail(const DescribeRiskListDetailRequest &request) const
+JarvisClient::DescribeCdnSubscriptionOutcome JarvisClient::describeCdnSubscription(const DescribeCdnSubscriptionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeRiskListDetailOutcome(endpointOutcome.error());
+		return DescribeCdnSubscriptionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeRiskListDetailOutcome(DescribeRiskListDetailResult(outcome.result()));
+		return DescribeCdnSubscriptionOutcome(DescribeCdnSubscriptionResult(outcome.result()));
 	else
-		return DescribeRiskListDetailOutcome(outcome.error());
+		return DescribeCdnSubscriptionOutcome(outcome.error());
 }
 
-void JarvisClient::describeRiskListDetailAsync(const DescribeRiskListDetailRequest& request, const DescribeRiskListDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void JarvisClient::describeCdnSubscriptionAsync(const DescribeCdnSubscriptionRequest& request, const DescribeCdnSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeRiskListDetail(request), context);
+		handler(this, request, describeCdnSubscription(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-JarvisClient::DescribeRiskListDetailOutcomeCallable JarvisClient::describeRiskListDetailCallable(const DescribeRiskListDetailRequest &request) const
+JarvisClient::DescribeCdnSubscriptionOutcomeCallable JarvisClient::describeCdnSubscriptionCallable(const DescribeCdnSubscriptionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeRiskListDetailOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeCdnSubscriptionOutcome()>>(
 			[this, request]()
 			{
-			return this->describeRiskListDetail(request);
+			return this->describeCdnSubscription(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

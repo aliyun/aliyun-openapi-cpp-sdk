@@ -26,42 +26,70 @@
 #include "model/DeleteUidWhiteListGroupResult.h"
 #include "model/CreateCpmcPunishFeedBackRequest.h"
 #include "model/CreateCpmcPunishFeedBackResult.h"
-#include "model/CreateAccessWhiteListGroupRequest.h"
-#include "model/CreateAccessWhiteListGroupResult.h"
-#include "model/DescribeDdosDefenseInfoRequest.h"
-#include "model/DescribeDdosDefenseInfoResult.h"
 #include "model/DescribeAccessWhiteListSlbListRequest.h"
 #include "model/DescribeAccessWhiteListSlbListResult.h"
 #include "model/DescribePhoneInfoRequest.h"
 #include "model/DescribePhoneInfoResult.h"
 #include "model/DescribeAccessWhitelistEcsListRequest.h"
 #include "model/DescribeAccessWhitelistEcsListResult.h"
-#include "model/DescribeAccessWhiteListEipListRequest.h"
-#include "model/DescribeAccessWhiteListEipListResult.h"
-#include "model/DescribeResetRecordListRequest.h"
-#include "model/DescribeResetRecordListResult.h"
 #include "model/ModifyUidWhiteListAutoShareRequest.h"
 #include "model/ModifyUidWhiteListAutoShareResult.h"
+#include "model/CreateConsoleAccessWhiteListRequest.h"
+#include "model/CreateConsoleAccessWhiteListResult.h"
+#include "model/DescribeConsoleAccessWhiteListRequest.h"
+#include "model/DescribeConsoleAccessWhiteListResult.h"
+#include "model/DeleteCdnIpRequest.h"
+#include "model/DeleteCdnIpResult.h"
+#include "model/CreateCdnIpRequest.h"
+#include "model/CreateCdnIpResult.h"
+#include "model/DescribeUidGcLevelRequest.h"
+#include "model/DescribeUidGcLevelResult.h"
+#include "model/DescribeResetRecordQueryCountRequest.h"
+#include "model/DescribeResetRecordQueryCountResult.h"
+#include "model/DescribeCdnCertifyRequest.h"
+#include "model/DescribeCdnCertifyResult.h"
+#include "model/CreateAllEcsWhiteListRequest.h"
+#include "model/CreateAllEcsWhiteListResult.h"
+#include "model/DescribeRiskListDetailRequest.h"
+#include "model/DescribeRiskListDetailResult.h"
+#include "model/DescribeEcsListPageRequest.h"
+#include "model/DescribeEcsListPageResult.h"
+#include "model/DeleteConsoleAccessWhiteListRequest.h"
+#include "model/DeleteConsoleAccessWhiteListResult.h"
+#include "model/DescribeSpecialEcsRequest.h"
+#include "model/DescribeSpecialEcsResult.h"
+#include "model/CreateAccessWhiteListGroupRequest.h"
+#include "model/CreateAccessWhiteListGroupResult.h"
+#include "model/DescribeDdosDefenseInfoRequest.h"
+#include "model/DescribeDdosDefenseInfoResult.h"
+#include "model/DescribeCdnVendorRequest.h"
+#include "model/DescribeCdnVendorResult.h"
+#include "model/DescribeResetRecordListRequest.h"
+#include "model/DescribeResetRecordListResult.h"
+#include "model/DescribeAccessWhiteListEipListRequest.h"
+#include "model/DescribeAccessWhiteListEipListResult.h"
 #include "model/ModifyAccessWhiteListAutoShareRequest.h"
 #include "model/ModifyAccessWhiteListAutoShareResult.h"
 #include "model/CreateUidWhiteListGroupRequest.h"
 #include "model/CreateUidWhiteListGroupResult.h"
+#include "model/DescribeCdnIpListRequest.h"
+#include "model/DescribeCdnIpListResult.h"
+#include "model/CreateCdnSubscriptionRequest.h"
+#include "model/CreateCdnSubscriptionResult.h"
+#include "model/DeleteCdnSubscriptionRequest.h"
+#include "model/DeleteCdnSubscriptionResult.h"
 #include "model/DescribeCpmcPunishListRequest.h"
 #include "model/DescribeCpmcPunishListResult.h"
-#include "model/DescribeUidGcLevelRequest.h"
-#include "model/DescribeUidGcLevelResult.h"
 #include "model/DeleteAccessWhiteListGroupRequest.h"
 #include "model/DeleteAccessWhiteListGroupResult.h"
 #include "model/DescribeAccessWhiteListGroupRequest.h"
 #include "model/DescribeAccessWhiteListGroupResult.h"
-#include "model/DescribeResetRecordQueryCountRequest.h"
-#include "model/DescribeResetRecordQueryCountResult.h"
 #include "model/DescribePunishListRequest.h"
 #include "model/DescribePunishListResult.h"
 #include "model/DescribeUidWhiteListGroupRequest.h"
 #include "model/DescribeUidWhiteListGroupResult.h"
-#include "model/DescribeRiskListDetailRequest.h"
-#include "model/DescribeRiskListDetailResult.h"
+#include "model/DescribeCdnSubscriptionRequest.h"
+#include "model/DescribeCdnSubscriptionResult.h"
 #include "model/DescribeRiskTrendRequest.h"
 #include "model/DescribeRiskTrendResult.h"
 
@@ -79,12 +107,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCpmcPunishFeedBackResult> CreateCpmcPunishFeedBackOutcome;
 			typedef std::future<CreateCpmcPunishFeedBackOutcome> CreateCpmcPunishFeedBackOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::CreateCpmcPunishFeedBackRequest&, const CreateCpmcPunishFeedBackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCpmcPunishFeedBackAsyncHandler;
-			typedef Outcome<Error, Model::CreateAccessWhiteListGroupResult> CreateAccessWhiteListGroupOutcome;
-			typedef std::future<CreateAccessWhiteListGroupOutcome> CreateAccessWhiteListGroupOutcomeCallable;
-			typedef std::function<void(const JarvisClient*, const Model::CreateAccessWhiteListGroupRequest&, const CreateAccessWhiteListGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessWhiteListGroupAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDdosDefenseInfoResult> DescribeDdosDefenseInfoOutcome;
-			typedef std::future<DescribeDdosDefenseInfoOutcome> DescribeDdosDefenseInfoOutcomeCallable;
-			typedef std::function<void(const JarvisClient*, const Model::DescribeDdosDefenseInfoRequest&, const DescribeDdosDefenseInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDdosDefenseInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccessWhiteListSlbListResult> DescribeAccessWhiteListSlbListOutcome;
 			typedef std::future<DescribeAccessWhiteListSlbListOutcome> DescribeAccessWhiteListSlbListOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeAccessWhiteListSlbListRequest&, const DescribeAccessWhiteListSlbListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessWhiteListSlbListAsyncHandler;
@@ -94,45 +116,93 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAccessWhitelistEcsListResult> DescribeAccessWhitelistEcsListOutcome;
 			typedef std::future<DescribeAccessWhitelistEcsListOutcome> DescribeAccessWhitelistEcsListOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeAccessWhitelistEcsListRequest&, const DescribeAccessWhitelistEcsListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessWhitelistEcsListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAccessWhiteListEipListResult> DescribeAccessWhiteListEipListOutcome;
-			typedef std::future<DescribeAccessWhiteListEipListOutcome> DescribeAccessWhiteListEipListOutcomeCallable;
-			typedef std::function<void(const JarvisClient*, const Model::DescribeAccessWhiteListEipListRequest&, const DescribeAccessWhiteListEipListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessWhiteListEipListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeResetRecordListResult> DescribeResetRecordListOutcome;
-			typedef std::future<DescribeResetRecordListOutcome> DescribeResetRecordListOutcomeCallable;
-			typedef std::function<void(const JarvisClient*, const Model::DescribeResetRecordListRequest&, const DescribeResetRecordListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResetRecordListAsyncHandler;
 			typedef Outcome<Error, Model::ModifyUidWhiteListAutoShareResult> ModifyUidWhiteListAutoShareOutcome;
 			typedef std::future<ModifyUidWhiteListAutoShareOutcome> ModifyUidWhiteListAutoShareOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::ModifyUidWhiteListAutoShareRequest&, const ModifyUidWhiteListAutoShareOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUidWhiteListAutoShareAsyncHandler;
+			typedef Outcome<Error, Model::CreateConsoleAccessWhiteListResult> CreateConsoleAccessWhiteListOutcome;
+			typedef std::future<CreateConsoleAccessWhiteListOutcome> CreateConsoleAccessWhiteListOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::CreateConsoleAccessWhiteListRequest&, const CreateConsoleAccessWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsoleAccessWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeConsoleAccessWhiteListResult> DescribeConsoleAccessWhiteListOutcome;
+			typedef std::future<DescribeConsoleAccessWhiteListOutcome> DescribeConsoleAccessWhiteListOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeConsoleAccessWhiteListRequest&, const DescribeConsoleAccessWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsoleAccessWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCdnIpResult> DeleteCdnIpOutcome;
+			typedef std::future<DeleteCdnIpOutcome> DeleteCdnIpOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DeleteCdnIpRequest&, const DeleteCdnIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCdnIpAsyncHandler;
+			typedef Outcome<Error, Model::CreateCdnIpResult> CreateCdnIpOutcome;
+			typedef std::future<CreateCdnIpOutcome> CreateCdnIpOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::CreateCdnIpRequest&, const CreateCdnIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdnIpAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUidGcLevelResult> DescribeUidGcLevelOutcome;
+			typedef std::future<DescribeUidGcLevelOutcome> DescribeUidGcLevelOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeUidGcLevelRequest&, const DescribeUidGcLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUidGcLevelAsyncHandler;
+			typedef Outcome<Error, Model::DescribeResetRecordQueryCountResult> DescribeResetRecordQueryCountOutcome;
+			typedef std::future<DescribeResetRecordQueryCountOutcome> DescribeResetRecordQueryCountOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeResetRecordQueryCountRequest&, const DescribeResetRecordQueryCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResetRecordQueryCountAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCdnCertifyResult> DescribeCdnCertifyOutcome;
+			typedef std::future<DescribeCdnCertifyOutcome> DescribeCdnCertifyOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeCdnCertifyRequest&, const DescribeCdnCertifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnCertifyAsyncHandler;
+			typedef Outcome<Error, Model::CreateAllEcsWhiteListResult> CreateAllEcsWhiteListOutcome;
+			typedef std::future<CreateAllEcsWhiteListOutcome> CreateAllEcsWhiteListOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::CreateAllEcsWhiteListRequest&, const CreateAllEcsWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAllEcsWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRiskListDetailResult> DescribeRiskListDetailOutcome;
+			typedef std::future<DescribeRiskListDetailOutcome> DescribeRiskListDetailOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeRiskListDetailRequest&, const DescribeRiskListDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskListDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEcsListPageResult> DescribeEcsListPageOutcome;
+			typedef std::future<DescribeEcsListPageOutcome> DescribeEcsListPageOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeEcsListPageRequest&, const DescribeEcsListPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEcsListPageAsyncHandler;
+			typedef Outcome<Error, Model::DeleteConsoleAccessWhiteListResult> DeleteConsoleAccessWhiteListOutcome;
+			typedef std::future<DeleteConsoleAccessWhiteListOutcome> DeleteConsoleAccessWhiteListOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DeleteConsoleAccessWhiteListRequest&, const DeleteConsoleAccessWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsoleAccessWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSpecialEcsResult> DescribeSpecialEcsOutcome;
+			typedef std::future<DescribeSpecialEcsOutcome> DescribeSpecialEcsOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeSpecialEcsRequest&, const DescribeSpecialEcsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecialEcsAsyncHandler;
+			typedef Outcome<Error, Model::CreateAccessWhiteListGroupResult> CreateAccessWhiteListGroupOutcome;
+			typedef std::future<CreateAccessWhiteListGroupOutcome> CreateAccessWhiteListGroupOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::CreateAccessWhiteListGroupRequest&, const CreateAccessWhiteListGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessWhiteListGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDdosDefenseInfoResult> DescribeDdosDefenseInfoOutcome;
+			typedef std::future<DescribeDdosDefenseInfoOutcome> DescribeDdosDefenseInfoOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeDdosDefenseInfoRequest&, const DescribeDdosDefenseInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDdosDefenseInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCdnVendorResult> DescribeCdnVendorOutcome;
+			typedef std::future<DescribeCdnVendorOutcome> DescribeCdnVendorOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeCdnVendorRequest&, const DescribeCdnVendorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnVendorAsyncHandler;
+			typedef Outcome<Error, Model::DescribeResetRecordListResult> DescribeResetRecordListOutcome;
+			typedef std::future<DescribeResetRecordListOutcome> DescribeResetRecordListOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeResetRecordListRequest&, const DescribeResetRecordListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResetRecordListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAccessWhiteListEipListResult> DescribeAccessWhiteListEipListOutcome;
+			typedef std::future<DescribeAccessWhiteListEipListOutcome> DescribeAccessWhiteListEipListOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeAccessWhiteListEipListRequest&, const DescribeAccessWhiteListEipListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessWhiteListEipListAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAccessWhiteListAutoShareResult> ModifyAccessWhiteListAutoShareOutcome;
 			typedef std::future<ModifyAccessWhiteListAutoShareOutcome> ModifyAccessWhiteListAutoShareOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::ModifyAccessWhiteListAutoShareRequest&, const ModifyAccessWhiteListAutoShareOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessWhiteListAutoShareAsyncHandler;
 			typedef Outcome<Error, Model::CreateUidWhiteListGroupResult> CreateUidWhiteListGroupOutcome;
 			typedef std::future<CreateUidWhiteListGroupOutcome> CreateUidWhiteListGroupOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::CreateUidWhiteListGroupRequest&, const CreateUidWhiteListGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUidWhiteListGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCdnIpListResult> DescribeCdnIpListOutcome;
+			typedef std::future<DescribeCdnIpListOutcome> DescribeCdnIpListOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeCdnIpListRequest&, const DescribeCdnIpListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnIpListAsyncHandler;
+			typedef Outcome<Error, Model::CreateCdnSubscriptionResult> CreateCdnSubscriptionOutcome;
+			typedef std::future<CreateCdnSubscriptionOutcome> CreateCdnSubscriptionOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::CreateCdnSubscriptionRequest&, const CreateCdnSubscriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdnSubscriptionAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCdnSubscriptionResult> DeleteCdnSubscriptionOutcome;
+			typedef std::future<DeleteCdnSubscriptionOutcome> DeleteCdnSubscriptionOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DeleteCdnSubscriptionRequest&, const DeleteCdnSubscriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCdnSubscriptionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCpmcPunishListResult> DescribeCpmcPunishListOutcome;
 			typedef std::future<DescribeCpmcPunishListOutcome> DescribeCpmcPunishListOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeCpmcPunishListRequest&, const DescribeCpmcPunishListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCpmcPunishListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeUidGcLevelResult> DescribeUidGcLevelOutcome;
-			typedef std::future<DescribeUidGcLevelOutcome> DescribeUidGcLevelOutcomeCallable;
-			typedef std::function<void(const JarvisClient*, const Model::DescribeUidGcLevelRequest&, const DescribeUidGcLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUidGcLevelAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAccessWhiteListGroupResult> DeleteAccessWhiteListGroupOutcome;
 			typedef std::future<DeleteAccessWhiteListGroupOutcome> DeleteAccessWhiteListGroupOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DeleteAccessWhiteListGroupRequest&, const DeleteAccessWhiteListGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessWhiteListGroupAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccessWhiteListGroupResult> DescribeAccessWhiteListGroupOutcome;
 			typedef std::future<DescribeAccessWhiteListGroupOutcome> DescribeAccessWhiteListGroupOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeAccessWhiteListGroupRequest&, const DescribeAccessWhiteListGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessWhiteListGroupAsyncHandler;
-			typedef Outcome<Error, Model::DescribeResetRecordQueryCountResult> DescribeResetRecordQueryCountOutcome;
-			typedef std::future<DescribeResetRecordQueryCountOutcome> DescribeResetRecordQueryCountOutcomeCallable;
-			typedef std::function<void(const JarvisClient*, const Model::DescribeResetRecordQueryCountRequest&, const DescribeResetRecordQueryCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResetRecordQueryCountAsyncHandler;
 			typedef Outcome<Error, Model::DescribePunishListResult> DescribePunishListOutcome;
 			typedef std::future<DescribePunishListOutcome> DescribePunishListOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribePunishListRequest&, const DescribePunishListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePunishListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUidWhiteListGroupResult> DescribeUidWhiteListGroupOutcome;
 			typedef std::future<DescribeUidWhiteListGroupOutcome> DescribeUidWhiteListGroupOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeUidWhiteListGroupRequest&, const DescribeUidWhiteListGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUidWhiteListGroupAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRiskListDetailResult> DescribeRiskListDetailOutcome;
-			typedef std::future<DescribeRiskListDetailOutcome> DescribeRiskListDetailOutcomeCallable;
-			typedef std::function<void(const JarvisClient*, const Model::DescribeRiskListDetailRequest&, const DescribeRiskListDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskListDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCdnSubscriptionResult> DescribeCdnSubscriptionOutcome;
+			typedef std::future<DescribeCdnSubscriptionOutcome> DescribeCdnSubscriptionOutcomeCallable;
+			typedef std::function<void(const JarvisClient*, const Model::DescribeCdnSubscriptionRequest&, const DescribeCdnSubscriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnSubscriptionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRiskTrendResult> DescribeRiskTrendOutcome;
 			typedef std::future<DescribeRiskTrendOutcome> DescribeRiskTrendOutcomeCallable;
 			typedef std::function<void(const JarvisClient*, const Model::DescribeRiskTrendRequest&, const DescribeRiskTrendOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskTrendAsyncHandler;
@@ -147,12 +217,6 @@ namespace AlibabaCloud
 			CreateCpmcPunishFeedBackOutcome createCpmcPunishFeedBack(const Model::CreateCpmcPunishFeedBackRequest &request)const;
 			void createCpmcPunishFeedBackAsync(const Model::CreateCpmcPunishFeedBackRequest& request, const CreateCpmcPunishFeedBackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCpmcPunishFeedBackOutcomeCallable createCpmcPunishFeedBackCallable(const Model::CreateCpmcPunishFeedBackRequest& request) const;
-			CreateAccessWhiteListGroupOutcome createAccessWhiteListGroup(const Model::CreateAccessWhiteListGroupRequest &request)const;
-			void createAccessWhiteListGroupAsync(const Model::CreateAccessWhiteListGroupRequest& request, const CreateAccessWhiteListGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateAccessWhiteListGroupOutcomeCallable createAccessWhiteListGroupCallable(const Model::CreateAccessWhiteListGroupRequest& request) const;
-			DescribeDdosDefenseInfoOutcome describeDdosDefenseInfo(const Model::DescribeDdosDefenseInfoRequest &request)const;
-			void describeDdosDefenseInfoAsync(const Model::DescribeDdosDefenseInfoRequest& request, const DescribeDdosDefenseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDdosDefenseInfoOutcomeCallable describeDdosDefenseInfoCallable(const Model::DescribeDdosDefenseInfoRequest& request) const;
 			DescribeAccessWhiteListSlbListOutcome describeAccessWhiteListSlbList(const Model::DescribeAccessWhiteListSlbListRequest &request)const;
 			void describeAccessWhiteListSlbListAsync(const Model::DescribeAccessWhiteListSlbListRequest& request, const DescribeAccessWhiteListSlbListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccessWhiteListSlbListOutcomeCallable describeAccessWhiteListSlbListCallable(const Model::DescribeAccessWhiteListSlbListRequest& request) const;
@@ -162,45 +226,93 @@ namespace AlibabaCloud
 			DescribeAccessWhitelistEcsListOutcome describeAccessWhitelistEcsList(const Model::DescribeAccessWhitelistEcsListRequest &request)const;
 			void describeAccessWhitelistEcsListAsync(const Model::DescribeAccessWhitelistEcsListRequest& request, const DescribeAccessWhitelistEcsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccessWhitelistEcsListOutcomeCallable describeAccessWhitelistEcsListCallable(const Model::DescribeAccessWhitelistEcsListRequest& request) const;
-			DescribeAccessWhiteListEipListOutcome describeAccessWhiteListEipList(const Model::DescribeAccessWhiteListEipListRequest &request)const;
-			void describeAccessWhiteListEipListAsync(const Model::DescribeAccessWhiteListEipListRequest& request, const DescribeAccessWhiteListEipListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAccessWhiteListEipListOutcomeCallable describeAccessWhiteListEipListCallable(const Model::DescribeAccessWhiteListEipListRequest& request) const;
-			DescribeResetRecordListOutcome describeResetRecordList(const Model::DescribeResetRecordListRequest &request)const;
-			void describeResetRecordListAsync(const Model::DescribeResetRecordListRequest& request, const DescribeResetRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeResetRecordListOutcomeCallable describeResetRecordListCallable(const Model::DescribeResetRecordListRequest& request) const;
 			ModifyUidWhiteListAutoShareOutcome modifyUidWhiteListAutoShare(const Model::ModifyUidWhiteListAutoShareRequest &request)const;
 			void modifyUidWhiteListAutoShareAsync(const Model::ModifyUidWhiteListAutoShareRequest& request, const ModifyUidWhiteListAutoShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyUidWhiteListAutoShareOutcomeCallable modifyUidWhiteListAutoShareCallable(const Model::ModifyUidWhiteListAutoShareRequest& request) const;
+			CreateConsoleAccessWhiteListOutcome createConsoleAccessWhiteList(const Model::CreateConsoleAccessWhiteListRequest &request)const;
+			void createConsoleAccessWhiteListAsync(const Model::CreateConsoleAccessWhiteListRequest& request, const CreateConsoleAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateConsoleAccessWhiteListOutcomeCallable createConsoleAccessWhiteListCallable(const Model::CreateConsoleAccessWhiteListRequest& request) const;
+			DescribeConsoleAccessWhiteListOutcome describeConsoleAccessWhiteList(const Model::DescribeConsoleAccessWhiteListRequest &request)const;
+			void describeConsoleAccessWhiteListAsync(const Model::DescribeConsoleAccessWhiteListRequest& request, const DescribeConsoleAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeConsoleAccessWhiteListOutcomeCallable describeConsoleAccessWhiteListCallable(const Model::DescribeConsoleAccessWhiteListRequest& request) const;
+			DeleteCdnIpOutcome deleteCdnIp(const Model::DeleteCdnIpRequest &request)const;
+			void deleteCdnIpAsync(const Model::DeleteCdnIpRequest& request, const DeleteCdnIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCdnIpOutcomeCallable deleteCdnIpCallable(const Model::DeleteCdnIpRequest& request) const;
+			CreateCdnIpOutcome createCdnIp(const Model::CreateCdnIpRequest &request)const;
+			void createCdnIpAsync(const Model::CreateCdnIpRequest& request, const CreateCdnIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCdnIpOutcomeCallable createCdnIpCallable(const Model::CreateCdnIpRequest& request) const;
+			DescribeUidGcLevelOutcome describeUidGcLevel(const Model::DescribeUidGcLevelRequest &request)const;
+			void describeUidGcLevelAsync(const Model::DescribeUidGcLevelRequest& request, const DescribeUidGcLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUidGcLevelOutcomeCallable describeUidGcLevelCallable(const Model::DescribeUidGcLevelRequest& request) const;
+			DescribeResetRecordQueryCountOutcome describeResetRecordQueryCount(const Model::DescribeResetRecordQueryCountRequest &request)const;
+			void describeResetRecordQueryCountAsync(const Model::DescribeResetRecordQueryCountRequest& request, const DescribeResetRecordQueryCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeResetRecordQueryCountOutcomeCallable describeResetRecordQueryCountCallable(const Model::DescribeResetRecordQueryCountRequest& request) const;
+			DescribeCdnCertifyOutcome describeCdnCertify(const Model::DescribeCdnCertifyRequest &request)const;
+			void describeCdnCertifyAsync(const Model::DescribeCdnCertifyRequest& request, const DescribeCdnCertifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCdnCertifyOutcomeCallable describeCdnCertifyCallable(const Model::DescribeCdnCertifyRequest& request) const;
+			CreateAllEcsWhiteListOutcome createAllEcsWhiteList(const Model::CreateAllEcsWhiteListRequest &request)const;
+			void createAllEcsWhiteListAsync(const Model::CreateAllEcsWhiteListRequest& request, const CreateAllEcsWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAllEcsWhiteListOutcomeCallable createAllEcsWhiteListCallable(const Model::CreateAllEcsWhiteListRequest& request) const;
+			DescribeRiskListDetailOutcome describeRiskListDetail(const Model::DescribeRiskListDetailRequest &request)const;
+			void describeRiskListDetailAsync(const Model::DescribeRiskListDetailRequest& request, const DescribeRiskListDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRiskListDetailOutcomeCallable describeRiskListDetailCallable(const Model::DescribeRiskListDetailRequest& request) const;
+			DescribeEcsListPageOutcome describeEcsListPage(const Model::DescribeEcsListPageRequest &request)const;
+			void describeEcsListPageAsync(const Model::DescribeEcsListPageRequest& request, const DescribeEcsListPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEcsListPageOutcomeCallable describeEcsListPageCallable(const Model::DescribeEcsListPageRequest& request) const;
+			DeleteConsoleAccessWhiteListOutcome deleteConsoleAccessWhiteList(const Model::DeleteConsoleAccessWhiteListRequest &request)const;
+			void deleteConsoleAccessWhiteListAsync(const Model::DeleteConsoleAccessWhiteListRequest& request, const DeleteConsoleAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteConsoleAccessWhiteListOutcomeCallable deleteConsoleAccessWhiteListCallable(const Model::DeleteConsoleAccessWhiteListRequest& request) const;
+			DescribeSpecialEcsOutcome describeSpecialEcs(const Model::DescribeSpecialEcsRequest &request)const;
+			void describeSpecialEcsAsync(const Model::DescribeSpecialEcsRequest& request, const DescribeSpecialEcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSpecialEcsOutcomeCallable describeSpecialEcsCallable(const Model::DescribeSpecialEcsRequest& request) const;
+			CreateAccessWhiteListGroupOutcome createAccessWhiteListGroup(const Model::CreateAccessWhiteListGroupRequest &request)const;
+			void createAccessWhiteListGroupAsync(const Model::CreateAccessWhiteListGroupRequest& request, const CreateAccessWhiteListGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAccessWhiteListGroupOutcomeCallable createAccessWhiteListGroupCallable(const Model::CreateAccessWhiteListGroupRequest& request) const;
+			DescribeDdosDefenseInfoOutcome describeDdosDefenseInfo(const Model::DescribeDdosDefenseInfoRequest &request)const;
+			void describeDdosDefenseInfoAsync(const Model::DescribeDdosDefenseInfoRequest& request, const DescribeDdosDefenseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDdosDefenseInfoOutcomeCallable describeDdosDefenseInfoCallable(const Model::DescribeDdosDefenseInfoRequest& request) const;
+			DescribeCdnVendorOutcome describeCdnVendor(const Model::DescribeCdnVendorRequest &request)const;
+			void describeCdnVendorAsync(const Model::DescribeCdnVendorRequest& request, const DescribeCdnVendorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCdnVendorOutcomeCallable describeCdnVendorCallable(const Model::DescribeCdnVendorRequest& request) const;
+			DescribeResetRecordListOutcome describeResetRecordList(const Model::DescribeResetRecordListRequest &request)const;
+			void describeResetRecordListAsync(const Model::DescribeResetRecordListRequest& request, const DescribeResetRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeResetRecordListOutcomeCallable describeResetRecordListCallable(const Model::DescribeResetRecordListRequest& request) const;
+			DescribeAccessWhiteListEipListOutcome describeAccessWhiteListEipList(const Model::DescribeAccessWhiteListEipListRequest &request)const;
+			void describeAccessWhiteListEipListAsync(const Model::DescribeAccessWhiteListEipListRequest& request, const DescribeAccessWhiteListEipListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAccessWhiteListEipListOutcomeCallable describeAccessWhiteListEipListCallable(const Model::DescribeAccessWhiteListEipListRequest& request) const;
 			ModifyAccessWhiteListAutoShareOutcome modifyAccessWhiteListAutoShare(const Model::ModifyAccessWhiteListAutoShareRequest &request)const;
 			void modifyAccessWhiteListAutoShareAsync(const Model::ModifyAccessWhiteListAutoShareRequest& request, const ModifyAccessWhiteListAutoShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccessWhiteListAutoShareOutcomeCallable modifyAccessWhiteListAutoShareCallable(const Model::ModifyAccessWhiteListAutoShareRequest& request) const;
 			CreateUidWhiteListGroupOutcome createUidWhiteListGroup(const Model::CreateUidWhiteListGroupRequest &request)const;
 			void createUidWhiteListGroupAsync(const Model::CreateUidWhiteListGroupRequest& request, const CreateUidWhiteListGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUidWhiteListGroupOutcomeCallable createUidWhiteListGroupCallable(const Model::CreateUidWhiteListGroupRequest& request) const;
+			DescribeCdnIpListOutcome describeCdnIpList(const Model::DescribeCdnIpListRequest &request)const;
+			void describeCdnIpListAsync(const Model::DescribeCdnIpListRequest& request, const DescribeCdnIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCdnIpListOutcomeCallable describeCdnIpListCallable(const Model::DescribeCdnIpListRequest& request) const;
+			CreateCdnSubscriptionOutcome createCdnSubscription(const Model::CreateCdnSubscriptionRequest &request)const;
+			void createCdnSubscriptionAsync(const Model::CreateCdnSubscriptionRequest& request, const CreateCdnSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCdnSubscriptionOutcomeCallable createCdnSubscriptionCallable(const Model::CreateCdnSubscriptionRequest& request) const;
+			DeleteCdnSubscriptionOutcome deleteCdnSubscription(const Model::DeleteCdnSubscriptionRequest &request)const;
+			void deleteCdnSubscriptionAsync(const Model::DeleteCdnSubscriptionRequest& request, const DeleteCdnSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCdnSubscriptionOutcomeCallable deleteCdnSubscriptionCallable(const Model::DeleteCdnSubscriptionRequest& request) const;
 			DescribeCpmcPunishListOutcome describeCpmcPunishList(const Model::DescribeCpmcPunishListRequest &request)const;
 			void describeCpmcPunishListAsync(const Model::DescribeCpmcPunishListRequest& request, const DescribeCpmcPunishListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCpmcPunishListOutcomeCallable describeCpmcPunishListCallable(const Model::DescribeCpmcPunishListRequest& request) const;
-			DescribeUidGcLevelOutcome describeUidGcLevel(const Model::DescribeUidGcLevelRequest &request)const;
-			void describeUidGcLevelAsync(const Model::DescribeUidGcLevelRequest& request, const DescribeUidGcLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeUidGcLevelOutcomeCallable describeUidGcLevelCallable(const Model::DescribeUidGcLevelRequest& request) const;
 			DeleteAccessWhiteListGroupOutcome deleteAccessWhiteListGroup(const Model::DeleteAccessWhiteListGroupRequest &request)const;
 			void deleteAccessWhiteListGroupAsync(const Model::DeleteAccessWhiteListGroupRequest& request, const DeleteAccessWhiteListGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccessWhiteListGroupOutcomeCallable deleteAccessWhiteListGroupCallable(const Model::DeleteAccessWhiteListGroupRequest& request) const;
 			DescribeAccessWhiteListGroupOutcome describeAccessWhiteListGroup(const Model::DescribeAccessWhiteListGroupRequest &request)const;
 			void describeAccessWhiteListGroupAsync(const Model::DescribeAccessWhiteListGroupRequest& request, const DescribeAccessWhiteListGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccessWhiteListGroupOutcomeCallable describeAccessWhiteListGroupCallable(const Model::DescribeAccessWhiteListGroupRequest& request) const;
-			DescribeResetRecordQueryCountOutcome describeResetRecordQueryCount(const Model::DescribeResetRecordQueryCountRequest &request)const;
-			void describeResetRecordQueryCountAsync(const Model::DescribeResetRecordQueryCountRequest& request, const DescribeResetRecordQueryCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeResetRecordQueryCountOutcomeCallable describeResetRecordQueryCountCallable(const Model::DescribeResetRecordQueryCountRequest& request) const;
 			DescribePunishListOutcome describePunishList(const Model::DescribePunishListRequest &request)const;
 			void describePunishListAsync(const Model::DescribePunishListRequest& request, const DescribePunishListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePunishListOutcomeCallable describePunishListCallable(const Model::DescribePunishListRequest& request) const;
 			DescribeUidWhiteListGroupOutcome describeUidWhiteListGroup(const Model::DescribeUidWhiteListGroupRequest &request)const;
 			void describeUidWhiteListGroupAsync(const Model::DescribeUidWhiteListGroupRequest& request, const DescribeUidWhiteListGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUidWhiteListGroupOutcomeCallable describeUidWhiteListGroupCallable(const Model::DescribeUidWhiteListGroupRequest& request) const;
-			DescribeRiskListDetailOutcome describeRiskListDetail(const Model::DescribeRiskListDetailRequest &request)const;
-			void describeRiskListDetailAsync(const Model::DescribeRiskListDetailRequest& request, const DescribeRiskListDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRiskListDetailOutcomeCallable describeRiskListDetailCallable(const Model::DescribeRiskListDetailRequest& request) const;
+			DescribeCdnSubscriptionOutcome describeCdnSubscription(const Model::DescribeCdnSubscriptionRequest &request)const;
+			void describeCdnSubscriptionAsync(const Model::DescribeCdnSubscriptionRequest& request, const DescribeCdnSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCdnSubscriptionOutcomeCallable describeCdnSubscriptionCallable(const Model::DescribeCdnSubscriptionRequest& request) const;
 			DescribeRiskTrendOutcome describeRiskTrend(const Model::DescribeRiskTrendRequest &request)const;
 			void describeRiskTrendAsync(const Model::DescribeRiskTrendRequest& request, const DescribeRiskTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRiskTrendOutcomeCallable describeRiskTrendCallable(const Model::DescribeRiskTrendRequest& request) const;

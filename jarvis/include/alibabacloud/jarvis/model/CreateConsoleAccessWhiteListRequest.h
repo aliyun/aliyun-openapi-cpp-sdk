@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTGROUPREQUEST_H_
-#define ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_JARVIS_MODEL_CREATECONSOLEACCESSWHITELISTREQUEST_H_
+#define ALIBABACLOUD_JARVIS_MODEL_CREATECONSOLEACCESSWHITELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,54 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_JARVIS_EXPORT DescribeAccessWhiteListGroupRequest : public RpcServiceRequest
+			class ALIBABACLOUD_JARVIS_EXPORT CreateConsoleAccessWhiteListRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeAccessWhiteListGroupRequest();
-				~DescribeAccessWhiteListGroupRequest();
+				CreateConsoleAccessWhiteListRequest();
+				~CreateConsoleAccessWhiteListRequest();
 
+				std::string getNote()const;
+				void setNote(const std::string& note);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSrcIP()const;
 				void setSrcIP(const std::string& srcIP);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getQueryProduct()const;
-				void setQueryProduct(const std::string& queryProduct);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
+				int getDstPort()const;
+				void setDstPort(int dstPort);
+				std::string getInstanceIdList()const;
+				void setInstanceIdList(const std::string& instanceIdList);
+				int getLiveTime()const;
+				void setLiveTime(int liveTime);
+				std::string getProductName()const;
+				void setProductName(const std::string& productName);
 				int getWhiteListType()const;
 				void setWhiteListType(int whiteListType);
-				std::string getDstIP()const;
-				void setDstIP(const std::string& dstIP);
+				std::string getInstanceInfoList()const;
+				void setInstanceInfoList(const std::string& instanceInfoList);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 				std::string getSourceCode()const;
 				void setSourceCode(const std::string& sourceCode);
 
             private:
+				std::string note_;
+				long resourceOwnerId_;
 				std::string srcIP_;
 				std::string sourceIp_;
-				int pageSize_;
-				std::string queryProduct_;
-				int currentPage_;
+				int dstPort_;
+				std::string instanceIdList_;
+				int liveTime_;
+				std::string productName_;
 				int whiteListType_;
-				std::string dstIP_;
+				std::string instanceInfoList_;
 				std::string lang_;
-				std::string status_;
 				std::string sourceCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_JARVIS_MODEL_CREATECONSOLEACCESSWHITELISTREQUEST_H_

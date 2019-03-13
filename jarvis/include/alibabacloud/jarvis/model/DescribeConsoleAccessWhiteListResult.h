@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTSLBLISTRESULT_H_
-#define ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTSLBLISTRESULT_H_
+#ifndef ALIBABACLOUD_JARVIS_MODEL_DESCRIBECONSOLEACCESSWHITELISTRESULT_H_
+#define ALIBABACLOUD_JARVIS_MODEL_DESCRIBECONSOLEACCESSWHITELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_JARVIS_EXPORT DescribeAccessWhiteListSlbListResult : public ServiceResult
+			class ALIBABACLOUD_JARVIS_EXPORT DescribeConsoleAccessWhiteListResult : public ServiceResult
 			{
 			public:
-				struct Ecs
+				struct PageInfo
 				{
-					std::string instanceName;
-					std::string instanceId;
-					std::string iP;
-					std::string region;
-					std::string itemSign;
+					int pageSize;
+					int currentPage;
+					int total;
+				};
+				struct Data
+				{
+					std::string status;
+					std::string gmtCreate;
+					std::string insProduct;
+					std::string dstIp;
+					std::string gmtRealExpire;
+					int id;
+					std::string regionId;
+					std::string srcIp;
 				};
 
 
-				DescribeAccessWhiteListSlbListResult();
-				explicit DescribeAccessWhiteListSlbListResult(const std::string &payload);
-				~DescribeAccessWhiteListSlbListResult();
-				int getTotalCount()const;
+				DescribeConsoleAccessWhiteListResult();
+				explicit DescribeConsoleAccessWhiteListResult(const std::string &payload);
+				~DescribeConsoleAccessWhiteListResult();
+				std::vector<Data> getDataList()const;
+				PageInfo getPageInfo()const;
 				std::string getModule()const;
-				std::vector<Ecs> getSlbList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
+				std::vector<Data> dataList_;
+				PageInfo pageInfo_;
 				std::string module_;
-				std::vector<Ecs> slbList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTSLBLISTRESULT_H_
+#endif // !ALIBABACLOUD_JARVIS_MODEL_DESCRIBECONSOLEACCESSWHITELISTRESULT_H_

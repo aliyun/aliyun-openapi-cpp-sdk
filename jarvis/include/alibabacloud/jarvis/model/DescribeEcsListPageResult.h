@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTSLBLISTRESULT_H_
-#define ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTSLBLISTRESULT_H_
+#ifndef ALIBABACLOUD_JARVIS_MODEL_DESCRIBEECSLISTPAGERESULT_H_
+#define ALIBABACLOUD_JARVIS_MODEL_DESCRIBEECSLISTPAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,10 +29,16 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_JARVIS_EXPORT DescribeAccessWhiteListSlbListResult : public ServiceResult
+			class ALIBABACLOUD_JARVIS_EXPORT DescribeEcsListPageResult : public ServiceResult
 			{
 			public:
-				struct Ecs
+				struct PageInfo
+				{
+					int pageSize;
+					int currentPage;
+					int total;
+				};
+				struct Data
 				{
 					std::string instanceName;
 					std::string instanceId;
@@ -42,22 +48,22 @@ namespace AlibabaCloud
 				};
 
 
-				DescribeAccessWhiteListSlbListResult();
-				explicit DescribeAccessWhiteListSlbListResult(const std::string &payload);
-				~DescribeAccessWhiteListSlbListResult();
-				int getTotalCount()const;
+				DescribeEcsListPageResult();
+				explicit DescribeEcsListPageResult(const std::string &payload);
+				~DescribeEcsListPageResult();
+				std::vector<Data> getDataList()const;
+				PageInfo getPageInfo()const;
 				std::string getModule()const;
-				std::vector<Ecs> getSlbList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
+				std::vector<Data> dataList_;
+				PageInfo pageInfo_;
 				std::string module_;
-				std::vector<Ecs> slbList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_JARVIS_MODEL_DESCRIBEACCESSWHITELISTSLBLISTRESULT_H_
+#endif // !ALIBABACLOUD_JARVIS_MODEL_DESCRIBEECSLISTPAGERESULT_H_
