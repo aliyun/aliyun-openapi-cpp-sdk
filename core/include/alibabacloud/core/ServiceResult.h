@@ -26,14 +26,13 @@ class ALIBABACLOUD_CORE_EXPORT ServiceResult {
  public:
   ServiceResult();
   virtual ~ServiceResult();
-
   std::string requestId()const;
 
  protected:
   void setRequestId(const std::string &requestId);
 
  private:
-    std::string requestId_;
+  std::string requestId_;
 };
 }  // namespace AlibabaCloud
 

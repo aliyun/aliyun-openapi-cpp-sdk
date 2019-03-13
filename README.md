@@ -157,6 +157,73 @@ Copy the above to ecs_test.cc, then build with the following command.
 ~$
 ```
 
+## Timeout Configuration
+
+CPP SDK uses libcurl to do HTTP transfer.
+
+- The following timeout parameters are used to for libcurl.
+
+ - `connectTimeout`: timeout for the connect phase. [Refer](https://curl.haxx.se/libcurl/c/CURLOPT_CONNECTTIMEOUT_MS.html).
+ - `readTimeout`: maximum time the request is allowed to take, [Refer](https://curl.haxx.se/libcurl/c/CURLOPT_TIMEOUT_MS.html)
+
+- Default Value
+ - `connectTimeout`: 5000ms
+ - `readTimeout`: 10000ms
+
+- You may specify `timeout` parameters when create a client or make a request.
+
+- Request timeout has higher priority than client timeout.
+
+- If you want to disable timeout feature, deliver `0` or `-1` to `setConnectTimeout` and `setReadTimeout`.
+
+The following code shows hot to specify `timeout` parameters, and the final connectTimeout is 1000ms and readTimeout 6000ms.
+
+```cpp
+#include <iostream>
+#include <alibabacloud/core/AlibabaCloud.h>
+#include <alibabacloud/ecs/EcsClient.h>
+
+using namespace AlibabaCloud;
+using namespace AlibabaCloud::Ecs;
+
+int main(int argc, char** argv) {
+  // Initialize the SDK
+  AlibabaCloud::InitializeSdk();
+
+  // Configure the ECS instance
+  ClientConfiguration configuration("<your-region-id>");
+  // specify timeout when create client.
+  configuration.setConnectTimeout(1500);
+  configuration.setReadTimeout(4000);
+
+  EcsClient client("<your-access-key-id>", "<your-access-key-secret>", configuration);
+
+  // Create an API request and set parameters
+  Model::DescribeInstancesRequest request;
+  request.setPageSize(10);
+  // specify timeout when request
+  request.setConnectTimeout(1000);
+  request.setReadTimeout(6000);
+
+  auto outcome = client.describeInstances(request);
+  if (!outcome.isSuccess()) {
+    // Handle exceptions
+    std::cout << outcome.error().errorCode() << std::endl;
+    AlibabaCloud::ShutdownSdk();
+    return -1;
+  }
+
+  std::cout << "totalCount: " << outcome.result().getTotalCount() << std::endl;
+
+  // Close the SDK
+  AlibabaCloud::ShutdownSdk();
+  return 0;
+}
+
+```
+
+
+
 **More [examples](https://github.com/aliyun/aliyun-openapi-cpp-sdk/tree/master/examples)**
 
 ## LICENSE

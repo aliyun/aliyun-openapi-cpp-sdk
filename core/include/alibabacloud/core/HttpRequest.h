@@ -42,10 +42,16 @@ class ALIBABACLOUD_CORE_EXPORT HttpRequest : public HttpMessage {
   void setMethod(Method method);
   void setUrl(const Url &url);
   Url url()const;
+  long connectTimeout() const;
+  long readTimeout() const;
+  void setConnectTimeout(const long connectTimeout);
+  void setReadTimeout(const long readTimeout);
 
  private:
   Method method_;
   Url url_;
+  long connectTimeout_;
+  long readTimeout_;
 };
 }  // namespace AlibabaCloud
 #endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPREQUEST_H_

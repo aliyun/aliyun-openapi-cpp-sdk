@@ -4,6 +4,7 @@
 #include <string.h>
 #include "gtest/gtest.h"
 #include "alibabacloud/core/ServiceRequest.h"
+#include "alibabacloud/core/AlibabaCloud.h"
 
 using namespace std;
 using namespace AlibabaCloud;
@@ -30,6 +31,7 @@ namespace {
     using ServiceRequest::setResourcePath;
     using ServiceRequest::setProduct;
     using ServiceRequest::setVersion;
+
   };
 
   TEST(ServiceRequest, basic) {
@@ -81,5 +83,12 @@ namespace {
     ServiceRequest::ParameterCollection pc = sr1.parameters();
     EXPECT_TRUE(pc.at("km") == "vm");
     EXPECT_TRUE(pc.at("kn") == "vn");
+
+    EXPECT_TRUE(sr1.connectTimeout() == kInvalidTimeout);
+    EXPECT_TRUE(sr1.readTimeout() == kInvalidTimeout);
+    sr1.setConnectTimeout(1234);
+    sr1.setReadTimeout(22233);
+    EXPECT_TRUE(sr1.connectTimeout() == 1234);
+    EXPECT_TRUE(sr1.readTimeout() == 22233);
   }
 }

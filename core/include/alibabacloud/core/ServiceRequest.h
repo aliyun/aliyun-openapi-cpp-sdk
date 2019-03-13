@@ -39,6 +39,10 @@ class ALIBABACLOUD_CORE_EXPORT ServiceRequest {
   std::string resourcePath() const;
   std::string version() const;
   std::string scheme() const;
+  long connectTimeout() const;
+  long readTimeout() const;
+  void setConnectTimeout(const long connectTimeout);
+  void setReadTimeout(const long readTimeout);
 
  protected:
   ServiceRequest(const std::string &product, const std::string &version);
@@ -68,6 +72,8 @@ class ALIBABACLOUD_CORE_EXPORT ServiceRequest {
   std::string resourcePath_;
   std::string version_;
   std::string scheme_;
+  long connectTimeout_;
+  long readTimeout_;
 };
 }  // namespace AlibabaCloud
 

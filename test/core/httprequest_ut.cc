@@ -18,13 +18,20 @@ TEST(HttpRequest, basic) {
   url.setQuery("key=value&key2=value2");
   url.setFragment("fragid1");
 
-  HttpRequest http_request(url, HttpRequest::Method::Post);
+  HttpRequest req(url, HttpRequest::Method::Post);
 
-  EXPECT_TRUE(http_request.method() == HttpRequest::Method::Post);
-  http_request.setMethod(HttpRequest::Method::Get);
-  EXPECT_TRUE(http_request.method() == HttpRequest::Method::Get);
+  EXPECT_TRUE(req.method() == HttpRequest::Method::Post);
+  req.setMethod(HttpRequest::Method::Get);
+  EXPECT_TRUE(req.method() == HttpRequest::Method::Get);
 
-  http_request.setUrl(url);
-  Url rUrl = http_request.url();
+  req.setUrl(url);
+  Url rUrl = req.url();
   EXPECT_TRUE(rUrl.toString() == src);
+
+  EXPECT_TRUE(req.connectTimeout() == 5000);
+  EXPECT_TRUE(req.readTimeout() == 10000);
+  req.setConnectTimeout(12345);
+  req.setReadTimeout(3335);
+  EXPECT_TRUE(req.connectTimeout() == 12345);
+  EXPECT_TRUE(req.readTimeout() == 3335);
 }

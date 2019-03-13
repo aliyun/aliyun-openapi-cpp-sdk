@@ -15,6 +15,7 @@
  */
 
 #include <alibabacloud/core/ServiceRequest.h>
+#include <alibabacloud/core/AlibabaCloud.h>
 
 namespace AlibabaCloud {
 
@@ -26,7 +27,9 @@ ServiceRequest::ServiceRequest(const std::string &product,
   product_(product),
   resourcePath_("/"),
   version_(version),
-  scheme_("https") {
+  scheme_("https"),
+  connectTimeout_(kInvalidTimeout),
+  readTimeout_(kInvalidTimeout) {
 }
 
 ServiceRequest::ServiceRequest(const ServiceRequest &other) :
@@ -36,7 +39,9 @@ ServiceRequest::ServiceRequest(const ServiceRequest &other) :
   product_(other.product_),
   resourcePath_(other.resourcePath_),
   version_(other.version_),
-  scheme_(other.scheme_) {
+  scheme_(other.scheme_),
+  connectTimeout_(other.connectTimeout_),
+  readTimeout_(other.readTimeout_) {
   setContent(other.content_, other.contentSize_);
 }
 
@@ -49,6 +54,8 @@ ServiceRequest& ServiceRequest::operator=(const ServiceRequest &other) {
     content_ = nullptr;
     contentSize_ = 0;
     params_ = other.params_;
+    connectTimeout_ = other.connectTimeout_;
+    readTimeout_ = other.readTimeout_;
     setContent(other.content_, other.contentSize_);
   }
   return *this;
@@ -150,6 +157,22 @@ void ServiceRequest::setScheme(const std::string scheme) {
 
 std::string ServiceRequest::scheme() const {
   return scheme_;
+}
+
+long ServiceRequest::connectTimeout() const{
+  return connectTimeout_;
+}
+
+long ServiceRequest::readTimeout() const{
+  return readTimeout_;
+}
+
+void ServiceRequest::setConnectTimeout(const long connectTimeout) {
+  connectTimeout_ = connectTimeout;
+}
+
+void ServiceRequest::setReadTimeout(const long readTimeout) {
+  readTimeout_ = readTimeout;
 }
 
 }  // namespace AlibabaCloud

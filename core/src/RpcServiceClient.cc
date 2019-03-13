@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+#include <alibabacloud/core/AlibabaCloud.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include <alibabacloud/core/HmacSha1Signer.h>
 #include <algorithm>
@@ -107,6 +108,18 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
   url.setQuery(queryString.str().substr(1));
 
   HttpRequest request(url);
+  if (msg.connectTimeout() != kInvalidTimeout) {
+    request.setConnectTimeout(msg.connectTimeout());
+  } else {
+    request.setConnectTimeout(configuration().connectTimeout());
+  }
+
+  if (msg.readTimeout() != kInvalidTimeout) {
+    request.setReadTimeout(msg.readTimeout());
+  } else {
+    request.setReadTimeout(configuration().readTimeout());
+  }
+
   request.setMethod(method);
   request.setHeader("Host", url.host());
   request.setHeader("x-sdk-client",
