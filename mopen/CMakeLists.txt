@@ -31,10 +31,10 @@ set(mopen_public_header_model
 	include/alibabacloud/mopen/model/MoPenDoRecognizeResult.h
 	include/alibabacloud/mopen/model/MoPenBindIsvRequest.h
 	include/alibabacloud/mopen/model/MoPenBindIsvResult.h
-	include/alibabacloud/mopen/model/MoPenAddGroupMemberRequest.h
-	include/alibabacloud/mopen/model/MoPenAddGroupMemberResult.h
 	include/alibabacloud/mopen/model/MoPenCreateDeviceRequest.h
 	include/alibabacloud/mopen/model/MoPenCreateDeviceResult.h
+	include/alibabacloud/mopen/model/MoPenAddGroupMemberRequest.h
+	include/alibabacloud/mopen/model/MoPenAddGroupMemberResult.h
 	include/alibabacloud/mopen/model/MoPenSendMqttMessageRequest.h
 	include/alibabacloud/mopen/model/MoPenSendMqttMessageResult.h
 	include/alibabacloud/mopen/model/MoPenFindGroupRequest.h
@@ -54,10 +54,10 @@ set(mopen_src
 	src/model/MoPenDoRecognizeResult.cc
 	src/model/MoPenBindIsvRequest.cc
 	src/model/MoPenBindIsvResult.cc
-	src/model/MoPenAddGroupMemberRequest.cc
-	src/model/MoPenAddGroupMemberResult.cc
 	src/model/MoPenCreateDeviceRequest.cc
 	src/model/MoPenCreateDeviceResult.cc
+	src/model/MoPenAddGroupMemberRequest.cc
+	src/model/MoPenAddGroupMemberResult.cc
 	src/model/MoPenSendMqttMessageRequest.cc
 	src/model/MoPenSendMqttMessageResult.cc
 	src/model/MoPenFindGroupRequest.cc
