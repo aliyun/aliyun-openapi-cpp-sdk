@@ -87,42 +87,6 @@ CloudPhotoClient::RemoveFacePhotosOutcomeCallable CloudPhotoClient::removeFacePh
 	return task->get_future();
 }
 
-CloudPhotoClient::ReactivatePhotosOutcome CloudPhotoClient::reactivatePhotos(const ReactivatePhotosRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReactivatePhotosOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReactivatePhotosOutcome(ReactivatePhotosResult(outcome.result()));
-	else
-		return ReactivatePhotosOutcome(outcome.error());
-}
-
-void CloudPhotoClient::reactivatePhotosAsync(const ReactivatePhotosRequest& request, const ReactivatePhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, reactivatePhotos(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudPhotoClient::ReactivatePhotosOutcomeCallable CloudPhotoClient::reactivatePhotosCallable(const ReactivatePhotosRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReactivatePhotosOutcome()>>(
-			[this, request]()
-			{
-			return this->reactivatePhotos(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudPhotoClient::GetQuotaOutcome CloudPhotoClient::getQuota(const GetQuotaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +117,42 @@ CloudPhotoClient::GetQuotaOutcomeCallable CloudPhotoClient::getQuotaCallable(con
 			[this, request]()
 			{
 			return this->getQuota(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudPhotoClient::ReactivatePhotosOutcome CloudPhotoClient::reactivatePhotos(const ReactivatePhotosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReactivatePhotosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReactivatePhotosOutcome(ReactivatePhotosResult(outcome.result()));
+	else
+		return ReactivatePhotosOutcome(outcome.error());
+}
+
+void CloudPhotoClient::reactivatePhotosAsync(const ReactivatePhotosRequest& request, const ReactivatePhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reactivatePhotos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudPhotoClient::ReactivatePhotosOutcomeCallable CloudPhotoClient::reactivatePhotosCallable(const ReactivatePhotosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReactivatePhotosOutcome()>>(
+			[this, request]()
+			{
+			return this->reactivatePhotos(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,42 +375,6 @@ CloudPhotoClient::DeleteEventOutcomeCallable CloudPhotoClient::deleteEventCallab
 	return task->get_future();
 }
 
-CloudPhotoClient::ListPhotosOutcome CloudPhotoClient::listPhotos(const ListPhotosRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListPhotosOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListPhotosOutcome(ListPhotosResult(outcome.result()));
-	else
-		return ListPhotosOutcome(outcome.error());
-}
-
-void CloudPhotoClient::listPhotosAsync(const ListPhotosRequest& request, const ListPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listPhotos(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudPhotoClient::ListPhotosOutcomeCallable CloudPhotoClient::listPhotosCallable(const ListPhotosRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListPhotosOutcome()>>(
-			[this, request]()
-			{
-			return this->listPhotos(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudPhotoClient::RegisterTagOutcome CloudPhotoClient::registerTag(const RegisterTagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -447,36 +411,36 @@ CloudPhotoClient::RegisterTagOutcomeCallable CloudPhotoClient::registerTagCallab
 	return task->get_future();
 }
 
-CloudPhotoClient::ListTimeLinePhotosOutcome CloudPhotoClient::listTimeLinePhotos(const ListTimeLinePhotosRequest &request) const
+CloudPhotoClient::ListPhotosOutcome CloudPhotoClient::listPhotos(const ListPhotosRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListTimeLinePhotosOutcome(endpointOutcome.error());
+		return ListPhotosOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListTimeLinePhotosOutcome(ListTimeLinePhotosResult(outcome.result()));
+		return ListPhotosOutcome(ListPhotosResult(outcome.result()));
 	else
-		return ListTimeLinePhotosOutcome(outcome.error());
+		return ListPhotosOutcome(outcome.error());
 }
 
-void CloudPhotoClient::listTimeLinePhotosAsync(const ListTimeLinePhotosRequest& request, const ListTimeLinePhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CloudPhotoClient::listPhotosAsync(const ListPhotosRequest& request, const ListPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listTimeLinePhotos(request), context);
+		handler(this, request, listPhotos(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CloudPhotoClient::ListTimeLinePhotosOutcomeCallable CloudPhotoClient::listTimeLinePhotosCallable(const ListTimeLinePhotosRequest &request) const
+CloudPhotoClient::ListPhotosOutcomeCallable CloudPhotoClient::listPhotosCallable(const ListPhotosRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListTimeLinePhotosOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListPhotosOutcome()>>(
 			[this, request]()
 			{
-			return this->listTimeLinePhotos(request);
+			return this->listPhotos(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,6 +483,42 @@ CloudPhotoClient::FetchMomentPhotosOutcomeCallable CloudPhotoClient::fetchMoment
 	return task->get_future();
 }
 
+CloudPhotoClient::ListTimeLinePhotosOutcome CloudPhotoClient::listTimeLinePhotos(const ListTimeLinePhotosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTimeLinePhotosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTimeLinePhotosOutcome(ListTimeLinePhotosResult(outcome.result()));
+	else
+		return ListTimeLinePhotosOutcome(outcome.error());
+}
+
+void CloudPhotoClient::listTimeLinePhotosAsync(const ListTimeLinePhotosRequest& request, const ListTimeLinePhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTimeLinePhotos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudPhotoClient::ListTimeLinePhotosOutcomeCallable CloudPhotoClient::listTimeLinePhotosCallable(const ListTimeLinePhotosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTimeLinePhotosOutcome()>>(
+			[this, request]()
+			{
+			return this->listTimeLinePhotos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudPhotoClient::DeletePhotosOutcome CloudPhotoClient::deletePhotos(const DeletePhotosRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -555,42 +555,6 @@ CloudPhotoClient::DeletePhotosOutcomeCallable CloudPhotoClient::deletePhotosCall
 	return task->get_future();
 }
 
-CloudPhotoClient::MergeFacesOutcome CloudPhotoClient::mergeFaces(const MergeFacesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return MergeFacesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return MergeFacesOutcome(MergeFacesResult(outcome.result()));
-	else
-		return MergeFacesOutcome(outcome.error());
-}
-
-void CloudPhotoClient::mergeFacesAsync(const MergeFacesRequest& request, const MergeFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, mergeFaces(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudPhotoClient::MergeFacesOutcomeCallable CloudPhotoClient::mergeFacesCallable(const MergeFacesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<MergeFacesOutcome()>>(
-			[this, request]()
-			{
-			return this->mergeFaces(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudPhotoClient::GetPhotosByMd5sOutcome CloudPhotoClient::getPhotosByMd5s(const GetPhotosByMd5sRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,6 +585,42 @@ CloudPhotoClient::GetPhotosByMd5sOutcomeCallable CloudPhotoClient::getPhotosByMd
 			[this, request]()
 			{
 			return this->getPhotosByMd5s(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudPhotoClient::MergeFacesOutcome CloudPhotoClient::mergeFaces(const MergeFacesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MergeFacesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MergeFacesOutcome(MergeFacesResult(outcome.result()));
+	else
+		return MergeFacesOutcome(outcome.error());
+}
+
+void CloudPhotoClient::mergeFacesAsync(const MergeFacesRequest& request, const MergeFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, mergeFaces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudPhotoClient::MergeFacesOutcomeCallable CloudPhotoClient::mergeFacesCallable(const MergeFacesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MergeFacesOutcome()>>(
+			[this, request]()
+			{
+			return this->mergeFaces(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,6 +699,42 @@ CloudPhotoClient::FetchAlbumTagPhotosOutcomeCallable CloudPhotoClient::fetchAlbu
 	return task->get_future();
 }
 
+CloudPhotoClient::InactivatePhotosOutcome CloudPhotoClient::inactivatePhotos(const InactivatePhotosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InactivatePhotosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InactivatePhotosOutcome(InactivatePhotosResult(outcome.result()));
+	else
+		return InactivatePhotosOutcome(outcome.error());
+}
+
+void CloudPhotoClient::inactivatePhotosAsync(const InactivatePhotosRequest& request, const InactivatePhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, inactivatePhotos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudPhotoClient::InactivatePhotosOutcomeCallable CloudPhotoClient::inactivatePhotosCallable(const InactivatePhotosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InactivatePhotosOutcome()>>(
+			[this, request]()
+			{
+			return this->inactivatePhotos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudPhotoClient::CreateTransactionOutcome CloudPhotoClient::createTransaction(const CreateTransactionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -735,36 +771,36 @@ CloudPhotoClient::CreateTransactionOutcomeCallable CloudPhotoClient::createTrans
 	return task->get_future();
 }
 
-CloudPhotoClient::InactivatePhotosOutcome CloudPhotoClient::inactivatePhotos(const InactivatePhotosRequest &request) const
+CloudPhotoClient::GetLibraryOutcome CloudPhotoClient::getLibrary(const GetLibraryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return InactivatePhotosOutcome(endpointOutcome.error());
+		return GetLibraryOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return InactivatePhotosOutcome(InactivatePhotosResult(outcome.result()));
+		return GetLibraryOutcome(GetLibraryResult(outcome.result()));
 	else
-		return InactivatePhotosOutcome(outcome.error());
+		return GetLibraryOutcome(outcome.error());
 }
 
-void CloudPhotoClient::inactivatePhotosAsync(const InactivatePhotosRequest& request, const InactivatePhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CloudPhotoClient::getLibraryAsync(const GetLibraryRequest& request, const GetLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, inactivatePhotos(request), context);
+		handler(this, request, getLibrary(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CloudPhotoClient::InactivatePhotosOutcomeCallable CloudPhotoClient::inactivatePhotosCallable(const InactivatePhotosRequest &request) const
+CloudPhotoClient::GetLibraryOutcomeCallable CloudPhotoClient::getLibraryCallable(const GetLibraryRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<InactivatePhotosOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetLibraryOutcome()>>(
 			[this, request]()
 			{
-			return this->inactivatePhotos(request);
+			return this->getLibrary(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -843,42 +879,6 @@ CloudPhotoClient::TagPhotoOutcomeCallable CloudPhotoClient::tagPhotoCallable(con
 	return task->get_future();
 }
 
-CloudPhotoClient::GetLibraryOutcome CloudPhotoClient::getLibrary(const GetLibraryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetLibraryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetLibraryOutcome(GetLibraryResult(outcome.result()));
-	else
-		return GetLibraryOutcome(outcome.error());
-}
-
-void CloudPhotoClient::getLibraryAsync(const GetLibraryRequest& request, const GetLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getLibrary(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudPhotoClient::GetLibraryOutcomeCallable CloudPhotoClient::getLibraryCallable(const GetLibraryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetLibraryOutcome()>>(
-			[this, request]()
-			{
-			return this->getLibrary(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudPhotoClient::SetQuotaOutcome CloudPhotoClient::setQuota(const SetQuotaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -915,42 +915,6 @@ CloudPhotoClient::SetQuotaOutcomeCallable CloudPhotoClient::setQuotaCallable(con
 	return task->get_future();
 }
 
-CloudPhotoClient::ListAlbumPhotosOutcome CloudPhotoClient::listAlbumPhotos(const ListAlbumPhotosRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListAlbumPhotosOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListAlbumPhotosOutcome(ListAlbumPhotosResult(outcome.result()));
-	else
-		return ListAlbumPhotosOutcome(outcome.error());
-}
-
-void CloudPhotoClient::listAlbumPhotosAsync(const ListAlbumPhotosRequest& request, const ListAlbumPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listAlbumPhotos(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudPhotoClient::ListAlbumPhotosOutcomeCallable CloudPhotoClient::listAlbumPhotosCallable(const ListAlbumPhotosRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListAlbumPhotosOutcome()>>(
-			[this, request]()
-			{
-			return this->listAlbumPhotos(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudPhotoClient::RemoveAlbumPhotosOutcome CloudPhotoClient::removeAlbumPhotos(const RemoveAlbumPhotosRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +945,42 @@ CloudPhotoClient::RemoveAlbumPhotosOutcomeCallable CloudPhotoClient::removeAlbum
 			[this, request]()
 			{
 			return this->removeAlbumPhotos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudPhotoClient::ListAlbumPhotosOutcome CloudPhotoClient::listAlbumPhotos(const ListAlbumPhotosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAlbumPhotosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAlbumPhotosOutcome(ListAlbumPhotosResult(outcome.result()));
+	else
+		return ListAlbumPhotosOutcome(outcome.error());
+}
+
+void CloudPhotoClient::listAlbumPhotosAsync(const ListAlbumPhotosRequest& request, const ListAlbumPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAlbumPhotos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudPhotoClient::ListAlbumPhotosOutcomeCallable CloudPhotoClient::listAlbumPhotosCallable(const ListAlbumPhotosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAlbumPhotosOutcome()>>(
+			[this, request]()
+			{
+			return this->listAlbumPhotos(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1203,42 +1203,6 @@ CloudPhotoClient::GetPrivateAccessUrlsOutcomeCallable CloudPhotoClient::getPriva
 	return task->get_future();
 }
 
-CloudPhotoClient::GetSimilarPhotosOutcome CloudPhotoClient::getSimilarPhotos(const GetSimilarPhotosRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetSimilarPhotosOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetSimilarPhotosOutcome(GetSimilarPhotosResult(outcome.result()));
-	else
-		return GetSimilarPhotosOutcome(outcome.error());
-}
-
-void CloudPhotoClient::getSimilarPhotosAsync(const GetSimilarPhotosRequest& request, const GetSimilarPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getSimilarPhotos(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudPhotoClient::GetSimilarPhotosOutcomeCallable CloudPhotoClient::getSimilarPhotosCallable(const GetSimilarPhotosRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetSimilarPhotosOutcome()>>(
-			[this, request]()
-			{
-			return this->getSimilarPhotos(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudPhotoClient::ListEventsOutcome CloudPhotoClient::listEvents(const ListEventsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1269,6 +1233,42 @@ CloudPhotoClient::ListEventsOutcomeCallable CloudPhotoClient::listEventsCallable
 			[this, request]()
 			{
 			return this->listEvents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudPhotoClient::GetSimilarPhotosOutcome CloudPhotoClient::getSimilarPhotos(const GetSimilarPhotosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSimilarPhotosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSimilarPhotosOutcome(GetSimilarPhotosResult(outcome.result()));
+	else
+		return GetSimilarPhotosOutcome(outcome.error());
+}
+
+void CloudPhotoClient::getSimilarPhotosAsync(const GetSimilarPhotosRequest& request, const GetSimilarPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSimilarPhotos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudPhotoClient::GetSimilarPhotosOutcomeCallable CloudPhotoClient::getSimilarPhotosCallable(const GetSimilarPhotosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSimilarPhotosOutcome()>>(
+			[this, request]()
+			{
+			return this->getSimilarPhotos(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1527,42 +1527,6 @@ CloudPhotoClient::GetDownloadUrlsOutcomeCallable CloudPhotoClient::getDownloadUr
 	return task->get_future();
 }
 
-CloudPhotoClient::GetPhotosOutcome CloudPhotoClient::getPhotos(const GetPhotosRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetPhotosOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetPhotosOutcome(GetPhotosResult(outcome.result()));
-	else
-		return GetPhotosOutcome(outcome.error());
-}
-
-void CloudPhotoClient::getPhotosAsync(const GetPhotosRequest& request, const GetPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getPhotos(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudPhotoClient::GetPhotosOutcomeCallable CloudPhotoClient::getPhotosCallable(const GetPhotosRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetPhotosOutcome()>>(
-			[this, request]()
-			{
-			return this->getPhotos(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudPhotoClient::RegisterPhotoOutcome CloudPhotoClient::registerPhoto(const RegisterPhotoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1593,6 +1557,42 @@ CloudPhotoClient::RegisterPhotoOutcomeCallable CloudPhotoClient::registerPhotoCa
 			[this, request]()
 			{
 			return this->registerPhoto(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudPhotoClient::GetPhotosOutcome CloudPhotoClient::getPhotos(const GetPhotosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPhotosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPhotosOutcome(GetPhotosResult(outcome.result()));
+	else
+		return GetPhotosOutcome(outcome.error());
+}
+
+void CloudPhotoClient::getPhotosAsync(const GetPhotosRequest& request, const GetPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPhotos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudPhotoClient::GetPhotosOutcomeCallable CloudPhotoClient::getPhotosCallable(const GetPhotosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPhotosOutcome()>>(
+			[this, request]()
+			{
+			return this->getPhotos(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
