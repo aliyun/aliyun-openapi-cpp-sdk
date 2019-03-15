@@ -41,12 +41,14 @@ namespace AlibabaCloud
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::string getSearchMode()const;
+				void setSearchMode(const std::string& searchMode);
 				std::string getTag()const;
 				void setTag(const std::string& tag);
-				std::string getKeyword()const;
-				void setKeyword(const std::string& keyword);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getKeyword()const;
+				void setKeyword(const std::string& keyword);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
@@ -54,9 +56,10 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::string userClientIp_;
 				std::string zoneId_;
+				std::string searchMode_;
 				std::string tag_;
-				std::string keyword_;
 				std::string lang_;
+				std::string keyword_;
 				int pageNumber_;
 
 			};

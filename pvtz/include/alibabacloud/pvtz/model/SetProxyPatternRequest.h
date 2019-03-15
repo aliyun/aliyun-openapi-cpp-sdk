@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PVTZ_MODEL_DESCRIBEREGIONSREQUEST_H_
-#define ALIBABACLOUD_PVTZ_MODEL_DESCRIBEREGIONSREQUEST_H_
+#ifndef ALIBABACLOUD_PVTZ_MODEL_SETPROXYPATTERNREQUEST_H_
+#define ALIBABACLOUD_PVTZ_MODEL_SETPROXYPATTERNREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PVTZ_EXPORT DescribeRegionsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_PVTZ_EXPORT SetProxyPatternRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeRegionsRequest();
-				~DescribeRegionsRequest();
+				SetProxyPatternRequest();
+				~SetProxyPatternRequest();
 
+				std::string getProxyPattern()const;
+				void setProxyPattern(const std::string& proxyPattern);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				std::string getAcceptLanguage()const;
-				void setAcceptLanguage(const std::string& acceptLanguage);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				std::string proxyPattern_;
 				std::string userClientIp_;
-				std::string acceptLanguage_;
+				std::string zoneId_;
 				std::string lang_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PVTZ_MODEL_DESCRIBEREGIONSREQUEST_H_
+#endif // !ALIBABACLOUD_PVTZ_MODEL_SETPROXYPATTERNREQUEST_H_

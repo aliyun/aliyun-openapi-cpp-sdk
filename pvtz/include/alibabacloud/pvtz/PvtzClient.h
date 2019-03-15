@@ -38,10 +38,12 @@
 #include "model/AddZoneResult.h"
 #include "model/BindZoneVpcRequest.h"
 #include "model/BindZoneVpcResult.h"
-#include "model/DescribeRequestGraphRequest.h"
-#include "model/DescribeRequestGraphResult.h"
 #include "model/DescribeStatisticSummaryRequest.h"
 #include "model/DescribeStatisticSummaryResult.h"
+#include "model/DescribeRequestGraphRequest.h"
+#include "model/DescribeRequestGraphResult.h"
+#include "model/SetProxyPatternRequest.h"
+#include "model/SetProxyPatternResult.h"
 #include "model/DescribeZoneVpcTreeRequest.h"
 #include "model/DescribeZoneVpcTreeResult.h"
 #include "model/DescribeChangeLogsRequest.h"
@@ -52,10 +54,10 @@
 #include "model/DescribeUserServiceStatusResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
-#include "model/DescribeZoneRecordsRequest.h"
-#include "model/DescribeZoneRecordsResult.h"
 #include "model/SetZoneRecordStatusRequest.h"
 #include "model/SetZoneRecordStatusResult.h"
+#include "model/DescribeZoneRecordsRequest.h"
+#include "model/DescribeZoneRecordsResult.h"
 #include "model/DescribeZonesRequest.h"
 #include "model/DescribeZonesResult.h"
 
@@ -91,12 +93,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BindZoneVpcResult> BindZoneVpcOutcome;
 			typedef std::future<BindZoneVpcOutcome> BindZoneVpcOutcomeCallable;
 			typedef std::function<void(const PvtzClient*, const Model::BindZoneVpcRequest&, const BindZoneVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindZoneVpcAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRequestGraphResult> DescribeRequestGraphOutcome;
-			typedef std::future<DescribeRequestGraphOutcome> DescribeRequestGraphOutcomeCallable;
-			typedef std::function<void(const PvtzClient*, const Model::DescribeRequestGraphRequest&, const DescribeRequestGraphOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRequestGraphAsyncHandler;
 			typedef Outcome<Error, Model::DescribeStatisticSummaryResult> DescribeStatisticSummaryOutcome;
 			typedef std::future<DescribeStatisticSummaryOutcome> DescribeStatisticSummaryOutcomeCallable;
 			typedef std::function<void(const PvtzClient*, const Model::DescribeStatisticSummaryRequest&, const DescribeStatisticSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStatisticSummaryAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRequestGraphResult> DescribeRequestGraphOutcome;
+			typedef std::future<DescribeRequestGraphOutcome> DescribeRequestGraphOutcomeCallable;
+			typedef std::function<void(const PvtzClient*, const Model::DescribeRequestGraphRequest&, const DescribeRequestGraphOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRequestGraphAsyncHandler;
+			typedef Outcome<Error, Model::SetProxyPatternResult> SetProxyPatternOutcome;
+			typedef std::future<SetProxyPatternOutcome> SetProxyPatternOutcomeCallable;
+			typedef std::function<void(const PvtzClient*, const Model::SetProxyPatternRequest&, const SetProxyPatternOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetProxyPatternAsyncHandler;
 			typedef Outcome<Error, Model::DescribeZoneVpcTreeResult> DescribeZoneVpcTreeOutcome;
 			typedef std::future<DescribeZoneVpcTreeOutcome> DescribeZoneVpcTreeOutcomeCallable;
 			typedef std::function<void(const PvtzClient*, const Model::DescribeZoneVpcTreeRequest&, const DescribeZoneVpcTreeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneVpcTreeAsyncHandler;
@@ -112,12 +117,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const PvtzClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeZoneRecordsResult> DescribeZoneRecordsOutcome;
-			typedef std::future<DescribeZoneRecordsOutcome> DescribeZoneRecordsOutcomeCallable;
-			typedef std::function<void(const PvtzClient*, const Model::DescribeZoneRecordsRequest&, const DescribeZoneRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneRecordsAsyncHandler;
 			typedef Outcome<Error, Model::SetZoneRecordStatusResult> SetZoneRecordStatusOutcome;
 			typedef std::future<SetZoneRecordStatusOutcome> SetZoneRecordStatusOutcomeCallable;
 			typedef std::function<void(const PvtzClient*, const Model::SetZoneRecordStatusRequest&, const SetZoneRecordStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetZoneRecordStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeZoneRecordsResult> DescribeZoneRecordsOutcome;
+			typedef std::future<DescribeZoneRecordsOutcome> DescribeZoneRecordsOutcomeCallable;
+			typedef std::function<void(const PvtzClient*, const Model::DescribeZoneRecordsRequest&, const DescribeZoneRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneRecordsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeZonesResult> DescribeZonesOutcome;
 			typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
 			typedef std::function<void(const PvtzClient*, const Model::DescribeZonesRequest&, const DescribeZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
@@ -150,12 +155,15 @@ namespace AlibabaCloud
 			BindZoneVpcOutcome bindZoneVpc(const Model::BindZoneVpcRequest &request)const;
 			void bindZoneVpcAsync(const Model::BindZoneVpcRequest& request, const BindZoneVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindZoneVpcOutcomeCallable bindZoneVpcCallable(const Model::BindZoneVpcRequest& request) const;
-			DescribeRequestGraphOutcome describeRequestGraph(const Model::DescribeRequestGraphRequest &request)const;
-			void describeRequestGraphAsync(const Model::DescribeRequestGraphRequest& request, const DescribeRequestGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRequestGraphOutcomeCallable describeRequestGraphCallable(const Model::DescribeRequestGraphRequest& request) const;
 			DescribeStatisticSummaryOutcome describeStatisticSummary(const Model::DescribeStatisticSummaryRequest &request)const;
 			void describeStatisticSummaryAsync(const Model::DescribeStatisticSummaryRequest& request, const DescribeStatisticSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStatisticSummaryOutcomeCallable describeStatisticSummaryCallable(const Model::DescribeStatisticSummaryRequest& request) const;
+			DescribeRequestGraphOutcome describeRequestGraph(const Model::DescribeRequestGraphRequest &request)const;
+			void describeRequestGraphAsync(const Model::DescribeRequestGraphRequest& request, const DescribeRequestGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRequestGraphOutcomeCallable describeRequestGraphCallable(const Model::DescribeRequestGraphRequest& request) const;
+			SetProxyPatternOutcome setProxyPattern(const Model::SetProxyPatternRequest &request)const;
+			void setProxyPatternAsync(const Model::SetProxyPatternRequest& request, const SetProxyPatternAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetProxyPatternOutcomeCallable setProxyPatternCallable(const Model::SetProxyPatternRequest& request) const;
 			DescribeZoneVpcTreeOutcome describeZoneVpcTree(const Model::DescribeZoneVpcTreeRequest &request)const;
 			void describeZoneVpcTreeAsync(const Model::DescribeZoneVpcTreeRequest& request, const DescribeZoneVpcTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeZoneVpcTreeOutcomeCallable describeZoneVpcTreeCallable(const Model::DescribeZoneVpcTreeRequest& request) const;
@@ -171,12 +179,12 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
-			DescribeZoneRecordsOutcome describeZoneRecords(const Model::DescribeZoneRecordsRequest &request)const;
-			void describeZoneRecordsAsync(const Model::DescribeZoneRecordsRequest& request, const DescribeZoneRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeZoneRecordsOutcomeCallable describeZoneRecordsCallable(const Model::DescribeZoneRecordsRequest& request) const;
 			SetZoneRecordStatusOutcome setZoneRecordStatus(const Model::SetZoneRecordStatusRequest &request)const;
 			void setZoneRecordStatusAsync(const Model::SetZoneRecordStatusRequest& request, const SetZoneRecordStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetZoneRecordStatusOutcomeCallable setZoneRecordStatusCallable(const Model::SetZoneRecordStatusRequest& request) const;
+			DescribeZoneRecordsOutcome describeZoneRecords(const Model::DescribeZoneRecordsRequest &request)const;
+			void describeZoneRecordsAsync(const Model::DescribeZoneRecordsRequest& request, const DescribeZoneRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeZoneRecordsOutcomeCallable describeZoneRecordsCallable(const Model::DescribeZoneRecordsRequest& request) const;
 			DescribeZonesOutcome describeZones(const Model::DescribeZonesRequest &request)const;
 			void describeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeZonesOutcomeCallable describeZonesCallable(const Model::DescribeZonesRequest& request) const;

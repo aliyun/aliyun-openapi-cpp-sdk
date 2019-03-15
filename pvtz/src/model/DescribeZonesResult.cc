@@ -62,6 +62,8 @@ void DescribeZonesResult::parse(const std::string &payload)
 			zonesObject.updateTimestamp = std::stol(value["UpdateTimestamp"].asString());
 		if(!value["IsPtr"].isNull())
 			zonesObject.isPtr = value["IsPtr"].asString() == "true";
+		if(!value["ProxyPattern"].isNull())
+			zonesObject.proxyPattern = value["ProxyPattern"].asString();
 		zones_.push_back(zonesObject);
 	}
 	if(!value["TotalItems"].isNull())

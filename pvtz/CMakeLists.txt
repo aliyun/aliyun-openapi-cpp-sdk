@@ -37,10 +37,12 @@ set(pvtz_public_header_model
 	include/alibabacloud/pvtz/model/AddZoneResult.h
 	include/alibabacloud/pvtz/model/BindZoneVpcRequest.h
 	include/alibabacloud/pvtz/model/BindZoneVpcResult.h
-	include/alibabacloud/pvtz/model/DescribeRequestGraphRequest.h
-	include/alibabacloud/pvtz/model/DescribeRequestGraphResult.h
 	include/alibabacloud/pvtz/model/DescribeStatisticSummaryRequest.h
 	include/alibabacloud/pvtz/model/DescribeStatisticSummaryResult.h
+	include/alibabacloud/pvtz/model/DescribeRequestGraphRequest.h
+	include/alibabacloud/pvtz/model/DescribeRequestGraphResult.h
+	include/alibabacloud/pvtz/model/SetProxyPatternRequest.h
+	include/alibabacloud/pvtz/model/SetProxyPatternResult.h
 	include/alibabacloud/pvtz/model/DescribeZoneVpcTreeRequest.h
 	include/alibabacloud/pvtz/model/DescribeZoneVpcTreeResult.h
 	include/alibabacloud/pvtz/model/DescribeChangeLogsRequest.h
@@ -51,10 +53,10 @@ set(pvtz_public_header_model
 	include/alibabacloud/pvtz/model/DescribeUserServiceStatusResult.h
 	include/alibabacloud/pvtz/model/DescribeRegionsRequest.h
 	include/alibabacloud/pvtz/model/DescribeRegionsResult.h
-	include/alibabacloud/pvtz/model/DescribeZoneRecordsRequest.h
-	include/alibabacloud/pvtz/model/DescribeZoneRecordsResult.h
 	include/alibabacloud/pvtz/model/SetZoneRecordStatusRequest.h
 	include/alibabacloud/pvtz/model/SetZoneRecordStatusResult.h
+	include/alibabacloud/pvtz/model/DescribeZoneRecordsRequest.h
+	include/alibabacloud/pvtz/model/DescribeZoneRecordsResult.h
 	include/alibabacloud/pvtz/model/DescribeZonesRequest.h
 	include/alibabacloud/pvtz/model/DescribeZonesResult.h )
 
@@ -76,10 +78,12 @@ set(pvtz_src
 	src/model/AddZoneResult.cc
 	src/model/BindZoneVpcRequest.cc
 	src/model/BindZoneVpcResult.cc
-	src/model/DescribeRequestGraphRequest.cc
-	src/model/DescribeRequestGraphResult.cc
 	src/model/DescribeStatisticSummaryRequest.cc
 	src/model/DescribeStatisticSummaryResult.cc
+	src/model/DescribeRequestGraphRequest.cc
+	src/model/DescribeRequestGraphResult.cc
+	src/model/SetProxyPatternRequest.cc
+	src/model/SetProxyPatternResult.cc
 	src/model/DescribeZoneVpcTreeRequest.cc
 	src/model/DescribeZoneVpcTreeResult.cc
 	src/model/DescribeChangeLogsRequest.cc
@@ -90,10 +94,10 @@ set(pvtz_src
 	src/model/DescribeUserServiceStatusResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
-	src/model/DescribeZoneRecordsRequest.cc
-	src/model/DescribeZoneRecordsResult.cc
 	src/model/SetZoneRecordStatusRequest.cc
 	src/model/SetZoneRecordStatusResult.cc
+	src/model/DescribeZoneRecordsRequest.cc
+	src/model/DescribeZoneRecordsResult.cc
 	src/model/DescribeZonesRequest.cc
 	src/model/DescribeZonesResult.cc )
 

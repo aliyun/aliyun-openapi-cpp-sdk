@@ -58,6 +58,17 @@ void DescribeZoneRecordsRequest::setZoneId(const std::string& zoneId)
 	setParameter("ZoneId", zoneId);
 }
 
+std::string DescribeZoneRecordsRequest::getSearchMode()const
+{
+	return searchMode_;
+}
+
+void DescribeZoneRecordsRequest::setSearchMode(const std::string& searchMode)
+{
+	searchMode_ = searchMode;
+	setParameter("SearchMode", searchMode);
+}
+
 std::string DescribeZoneRecordsRequest::getTag()const
 {
 	return tag_;
@@ -69,17 +80,6 @@ void DescribeZoneRecordsRequest::setTag(const std::string& tag)
 	setParameter("Tag", tag);
 }
 
-std::string DescribeZoneRecordsRequest::getKeyword()const
-{
-	return keyword_;
-}
-
-void DescribeZoneRecordsRequest::setKeyword(const std::string& keyword)
-{
-	keyword_ = keyword;
-	setParameter("Keyword", keyword);
-}
-
 std::string DescribeZoneRecordsRequest::getLang()const
 {
 	return lang_;
@@ -89,6 +89,17 @@ void DescribeZoneRecordsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setParameter("Lang", lang);
+}
+
+std::string DescribeZoneRecordsRequest::getKeyword()const
+{
+	return keyword_;
+}
+
+void DescribeZoneRecordsRequest::setKeyword(const std::string& keyword)
+{
+	keyword_ = keyword;
+	setParameter("Keyword", keyword);
 }
 
 int DescribeZoneRecordsRequest::getPageNumber()const

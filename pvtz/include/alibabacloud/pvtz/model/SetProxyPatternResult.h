@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PVTZ_MODEL_DESCRIBEREGIONSREQUEST_H_
-#define ALIBABACLOUD_PVTZ_MODEL_DESCRIBEREGIONSREQUEST_H_
+#ifndef ALIBABACLOUD_PVTZ_MODEL_SETPROXYPATTERNRESULT_H_
+#define ALIBABACLOUD_PVTZ_MODEL_SETPROXYPATTERNRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/pvtz/PvtzExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PVTZ_EXPORT DescribeRegionsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_PVTZ_EXPORT SetProxyPatternResult : public ServiceResult
 			{
-
 			public:
-				DescribeRegionsRequest();
-				~DescribeRegionsRequest();
 
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
-				std::string getAcceptLanguage()const;
-				void setAcceptLanguage(const std::string& acceptLanguage);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 
-            private:
-				std::string userClientIp_;
-				std::string acceptLanguage_;
-				std::string lang_;
+				SetProxyPatternResult();
+				explicit SetProxyPatternResult(const std::string &payload);
+				~SetProxyPatternResult();
+				std::string getZoneId()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string zoneId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PVTZ_MODEL_DESCRIBEREGIONSREQUEST_H_
+#endif // !ALIBABACLOUD_PVTZ_MODEL_SETPROXYPATTERNRESULT_H_

@@ -35,23 +35,32 @@ namespace AlibabaCloud
 				DescribeZonesRequest();
 				~DescribeZonesRequest();
 
+				std::string getQueryVpcId()const;
+				void setQueryVpcId(const std::string& queryVpcId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
+				std::string getSearchMode()const;
+				void setSearchMode(const std::string& searchMode);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getQueryRegionId()const;
+				void setQueryRegionId(const std::string& queryRegionId);
 
             private:
+				std::string queryVpcId_;
 				int pageSize_;
 				std::string userClientIp_;
+				std::string searchMode_;
 				std::string lang_;
 				std::string keyword_;
 				int pageNumber_;
+				std::string queryRegionId_;
 
 			};
 		}

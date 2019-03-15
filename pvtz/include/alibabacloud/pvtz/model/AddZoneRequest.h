@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				AddZoneRequest();
 				~AddZoneRequest();
 
+				std::string getProxyPattern()const;
+				void setProxyPattern(const std::string& proxyPattern);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setZoneName(const std::string& zoneName);
 
             private:
+				std::string proxyPattern_;
 				std::string userClientIp_;
 				std::string lang_;
 				std::string zoneName_;

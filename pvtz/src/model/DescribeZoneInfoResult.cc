@@ -52,6 +52,8 @@ void DescribeZoneInfoResult::parse(const std::string &payload)
 			bindVpcsObject.vpcName = value["VpcName"].asString();
 		if(!value["RegionName"].isNull())
 			bindVpcsObject.regionName = value["RegionName"].asString();
+		if(!value["RegionId"].isNull())
+			bindVpcsObject.regionId = value["RegionId"].asString();
 		bindVpcs_.push_back(bindVpcsObject);
 	}
 	if(!value["ZoneId"].isNull())
@@ -72,6 +74,8 @@ void DescribeZoneInfoResult::parse(const std::string &payload)
 		updateTimestamp_ = std::stol(value["UpdateTimestamp"].asString());
 	if(!value["IsPtr"].isNull())
 		isPtr_ = value["IsPtr"].asString() == "true";
+	if(!value["ProxyPattern"].isNull())
+		proxyPattern_ = value["ProxyPattern"].asString();
 
 }
 
@@ -83,6 +87,11 @@ std::string DescribeZoneInfoResult::getZoneName()const
 std::string DescribeZoneInfoResult::getZoneId()const
 {
 	return zoneId_;
+}
+
+std::string DescribeZoneInfoResult::getProxyPattern()const
+{
+	return proxyPattern_;
 }
 
 std::string DescribeZoneInfoResult::getCreateTime()const

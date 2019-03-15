@@ -25,6 +25,17 @@ AddZoneRequest::AddZoneRequest() :
 AddZoneRequest::~AddZoneRequest()
 {}
 
+std::string AddZoneRequest::getProxyPattern()const
+{
+	return proxyPattern_;
+}
+
+void AddZoneRequest::setProxyPattern(const std::string& proxyPattern)
+{
+	proxyPattern_ = proxyPattern;
+	setParameter("ProxyPattern", proxyPattern);
+}
+
 std::string AddZoneRequest::getUserClientIp()const
 {
 	return userClientIp_;

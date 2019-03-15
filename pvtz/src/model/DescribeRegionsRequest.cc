@@ -36,6 +36,17 @@ void DescribeRegionsRequest::setUserClientIp(const std::string& userClientIp)
 	setParameter("UserClientIp", userClientIp);
 }
 
+std::string DescribeRegionsRequest::getAcceptLanguage()const
+{
+	return acceptLanguage_;
+}
+
+void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
+{
+	acceptLanguage_ = acceptLanguage;
+	setParameter("AcceptLanguage", acceptLanguage);
+}
+
 std::string DescribeRegionsRequest::getLang()const
 {
 	return lang_;
