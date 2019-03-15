@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_MTS_MODEL_SUBMITCENSORJOBRESULT_H_
-#define ALIBABACLOUD_MTS_MODEL_SUBMITCENSORJOBRESULT_H_
+#ifndef ALIBABACLOUD_MTS_MODEL_SUBMITMCJOBRESULT_H_
+#define ALIBABACLOUD_MTS_MODEL_SUBMITMCJOBRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_MTS_EXPORT SubmitCensorJobResult : public ServiceResult
+			class ALIBABACLOUD_MTS_EXPORT SubmitMCJobResult : public ServiceResult
 			{
 			public:
 
 
-				SubmitCensorJobResult();
-				explicit SubmitCensorJobResult(const std::string &payload);
-				~SubmitCensorJobResult();
+				SubmitMCJobResult();
+				explicit SubmitMCJobResult(const std::string &payload);
+				~SubmitMCJobResult();
 				std::string getJobId()const;
 
 			protected:
@@ -48,4 +48,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_MTS_MODEL_SUBMITCENSORJOBRESULT_H_
+#endif // !ALIBABACLOUD_MTS_MODEL_SUBMITMCJOBRESULT_H_

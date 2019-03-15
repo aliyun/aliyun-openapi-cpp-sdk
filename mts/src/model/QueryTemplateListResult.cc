@@ -84,6 +84,8 @@ void QueryTemplateListResult::parse(const std::string &payload)
 			templateListObject.video.degrain = videoNode["Degrain"].asString();
 		if(!videoNode["Qscale"].isNull())
 			templateListObject.video.qscale = videoNode["Qscale"].asString();
+		if(!videoNode["LongShortMode"].isNull())
+			templateListObject.video.longShortMode = videoNode["LongShortMode"].asString();
 		if(!videoNode["Remove"].isNull())
 			templateListObject.video.remove = videoNode["Remove"].asString();
 		if(!videoNode["Crop"].isNull())
@@ -92,6 +94,8 @@ void QueryTemplateListResult::parse(const std::string &payload)
 			templateListObject.video.pad = videoNode["Pad"].asString();
 		if(!videoNode["MaxFps"].isNull())
 			templateListObject.video.maxFps = videoNode["MaxFps"].asString();
+		if(!videoNode["ResoPriority"].isNull())
+			templateListObject.video.resoPriority = videoNode["ResoPriority"].asString();
 		auto bitrateBndNode = videoNode["BitrateBnd"];
 		if(!bitrateBndNode["Max"].isNull())
 			templateListObject.video.bitrateBnd.max = bitrateBndNode["Max"].asString();
@@ -142,6 +146,9 @@ void QueryTemplateListResult::parse(const std::string &payload)
 			templateListObject.muxConfig.gif.isCustomPalette = gifNode["IsCustomPalette"].asString();
 		if(!gifNode["DitherMode"].isNull())
 			templateListObject.muxConfig.gif.ditherMode = gifNode["DitherMode"].asString();
+		auto webpNode = muxConfigNode["Webp"];
+		if(!webpNode["Loop"].isNull())
+			templateListObject.muxConfig.webp.loop = webpNode["Loop"].asString();
 		templateList_.push_back(templateListObject);
 	}
 	auto allNonExistTids = value["NonExistTids"]["String"];

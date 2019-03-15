@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						std::string scanMode;
 						std::string preset;
 						std::string fps;
+						std::string longShortMode;
 						std::string gop;
 						std::string remove;
 						BitrateBnd bitrateBnd;
@@ -65,6 +66,7 @@ namespace AlibabaCloud
 						std::string height;
 						std::string degrain;
 						std::string width;
+						std::string resoPriority;
 					};
 					struct Audio
 					{
@@ -100,7 +102,12 @@ namespace AlibabaCloud
 							std::string ditherMode;
 							std::string isCustomPalette;
 						};
+						struct Webp
+						{
+							std::string loop;
+						};
 						Gif gif;
+						Webp webp;
 						Segment segment;
 					};
 					Container container;

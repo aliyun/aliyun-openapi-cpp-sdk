@@ -47,6 +47,17 @@ void ListAllMediaBucketRequest::setResourceOwnerAccount(const std::string& resou
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string ListAllMediaBucketRequest::getNextPageToken()const
+{
+	return nextPageToken_;
+}
+
+void ListAllMediaBucketRequest::setNextPageToken(const std::string& nextPageToken)
+{
+	nextPageToken_ = nextPageToken;
+	setParameter("NextPageToken", nextPageToken);
+}
+
 std::string ListAllMediaBucketRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -56,6 +67,17 @@ void ListAllMediaBucketRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+int ListAllMediaBucketRequest::getMaximumPageSize()const
+{
+	return maximumPageSize_;
+}
+
+void ListAllMediaBucketRequest::setMaximumPageSize(int maximumPageSize)
+{
+	maximumPageSize_ = maximumPageSize;
+	setParameter("MaximumPageSize", std::to_string(maximumPageSize));
 }
 
 long ListAllMediaBucketRequest::getOwnerId()const

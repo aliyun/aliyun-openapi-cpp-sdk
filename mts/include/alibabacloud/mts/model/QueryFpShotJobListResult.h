@@ -40,6 +40,11 @@ namespace AlibabaCloud
 						std::string object;
 						std::string location;
 					};
+					struct FpShotConfig
+					{
+						std::string saveType;
+						std::string primaryKey;
+					};
 					struct FpShotResult
 					{
 						struct FpShot
@@ -63,8 +68,31 @@ namespace AlibabaCloud
 							std::string primaryKey;
 							std::vector<FpShot::FpShotSlice> fpShotSlices;
 						};
+						struct FpShot
+						{
+							struct FpShotSlice
+							{
+								struct Input
+								{
+									std::string start;
+									std::string duration;
+								};
+								struct Duplication
+								{
+									std::string start;
+									std::string duration;
+								};
+								Input input;
+								Duplication duplication;
+							};
+							std::string similarity;
+							std::string primaryKey;
+							std::vector<FpShot::FpShotSlice> fpShotSlices;
+						};
+						std::vector<FpShot> audioFpShots;
 						std::vector<FpShot> fpShots;
 					};
+					FpShotConfig fpShotConfig;
 					std::string message;
 					std::string finishTime;
 					std::string userData;
@@ -72,6 +100,7 @@ namespace AlibabaCloud
 					FpShotResult fpShotResult;
 					std::string creationTime;
 					std::string pipelineId;
+					std::string fileId;
 					std::string id;
 					std::string code;
 					InputFile inputFile;
@@ -81,12 +110,16 @@ namespace AlibabaCloud
 				QueryFpShotJobListResult();
 				explicit QueryFpShotJobListResult(const std::string &payload);
 				~QueryFpShotJobListResult();
+				std::string getNextPageToken()const;
+				std::vector<std::string> getNonExistPrimaryKeys()const;
 				std::vector<FpShotJob> getFpShotJobList()const;
 				std::vector<std::string> getNonExistIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string nextPageToken_;
+				std::vector<std::string> nonExistPrimaryKeys_;
 				std::vector<FpShotJob> fpShotJobList_;
 				std::vector<std::string> nonExistIds_;
 

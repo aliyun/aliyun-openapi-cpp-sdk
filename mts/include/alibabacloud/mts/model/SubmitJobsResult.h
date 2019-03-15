@@ -334,6 +334,14 @@ namespace AlibabaCloud
 								std::string map;
 								bool success;
 							};
+							struct Amix
+							{
+								std::string amixURL;
+								std::string start;
+								std::string mixDurMode;
+								std::string duration;
+								std::string map;
+							};
 							std::string rotate;
 							DigiWaterMark digiWaterMark;
 							std::string userData;
@@ -351,6 +359,7 @@ namespace AlibabaCloud
 							std::string templateId;
 							OutputFile outputFile;
 							std::vector<TailSlate> tailSlateList;
+							std::vector<Amix> amixList;
 							std::string priority;
 							std::string mergeConfigUrl;
 							std::string deWatermark;

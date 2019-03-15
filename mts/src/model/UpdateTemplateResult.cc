@@ -63,6 +63,8 @@ void UpdateTemplateResult::parse(const std::string &payload)
 		_template_.video.width = videoNode["Width"].asString();
 	if(!videoNode["Height"].isNull())
 		_template_.video.height = videoNode["Height"].asString();
+	if(!videoNode["LongShortMode"].isNull())
+		_template_.video.longShortMode = videoNode["LongShortMode"].asString();
 	if(!videoNode["Fps"].isNull())
 		_template_.video.fps = videoNode["Fps"].asString();
 	if(!videoNode["Gop"].isNull())
@@ -89,6 +91,8 @@ void UpdateTemplateResult::parse(const std::string &payload)
 		_template_.video.pad = videoNode["Pad"].asString();
 	if(!videoNode["MaxFps"].isNull())
 		_template_.video.maxFps = videoNode["MaxFps"].asString();
+	if(!videoNode["ResoPriority"].isNull())
+		_template_.video.resoPriority = videoNode["ResoPriority"].asString();
 	auto bitrateBndNode = videoNode["BitrateBnd"];
 	if(!bitrateBndNode["Max"].isNull())
 		_template_.video.bitrateBnd.max = bitrateBndNode["Max"].asString();
@@ -139,6 +143,9 @@ void UpdateTemplateResult::parse(const std::string &payload)
 		_template_.muxConfig.gif.isCustomPalette = gifNode["IsCustomPalette"].asString();
 	if(!gifNode["DitherMode"].isNull())
 		_template_.muxConfig.gif.ditherMode = gifNode["DitherMode"].asString();
+	auto webpNode = muxConfigNode["Webp"];
+	if(!webpNode["Loop"].isNull())
+		_template_.muxConfig.webp.loop = webpNode["Loop"].asString();
 
 }
 

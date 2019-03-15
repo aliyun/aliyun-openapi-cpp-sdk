@@ -54,6 +54,8 @@ void QueryPipelineListResult::parse(const std::string &payload)
 			pipelineListObject.speed = value["Speed"].asString();
 		if(!value["SpeedLevel"].isNull())
 			pipelineListObject.speedLevel = std::stol(value["SpeedLevel"].asString());
+		if(!value["QuotaAllocate"].isNull())
+			pipelineListObject.quotaAllocate = std::stol(value["QuotaAllocate"].asString());
 		if(!value["Role"].isNull())
 			pipelineListObject.role = value["Role"].asString();
 		auto notifyConfigNode = value["NotifyConfig"];
@@ -61,6 +63,10 @@ void QueryPipelineListResult::parse(const std::string &payload)
 			pipelineListObject.notifyConfig.topic = notifyConfigNode["Topic"].asString();
 		if(!notifyConfigNode["QueueName"].isNull())
 			pipelineListObject.notifyConfig.queueName = notifyConfigNode["QueueName"].asString();
+		if(!notifyConfigNode["MqTopic"].isNull())
+			pipelineListObject.notifyConfig.mqTopic = notifyConfigNode["MqTopic"].asString();
+		if(!notifyConfigNode["MqTag"].isNull())
+			pipelineListObject.notifyConfig.mqTag = notifyConfigNode["MqTag"].asString();
 		pipelineList_.push_back(pipelineListObject);
 	}
 	auto allNonExistPids = value["NonExistPids"]["String"];

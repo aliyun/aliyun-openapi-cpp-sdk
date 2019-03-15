@@ -49,6 +49,8 @@ void UpdatePipelineResult::parse(const std::string &payload)
 		pipeline_.state = pipelineNode["State"].asString();
 	if(!pipelineNode["Speed"].isNull())
 		pipeline_.speed = pipelineNode["Speed"].asString();
+	if(!pipelineNode["QuotaAllocate"].isNull())
+		pipeline_.quotaAllocate = std::stol(pipelineNode["QuotaAllocate"].asString());
 	if(!pipelineNode["Role"].isNull())
 		pipeline_.role = pipelineNode["Role"].asString();
 	auto notifyConfigNode = pipelineNode["NotifyConfig"];
@@ -56,6 +58,10 @@ void UpdatePipelineResult::parse(const std::string &payload)
 		pipeline_.notifyConfig.topic = notifyConfigNode["Topic"].asString();
 	if(!notifyConfigNode["QueueName"].isNull())
 		pipeline_.notifyConfig.queueName = notifyConfigNode["QueueName"].asString();
+	if(!notifyConfigNode["MqTopic"].isNull())
+		pipeline_.notifyConfig.mqTopic = notifyConfigNode["MqTopic"].asString();
+	if(!notifyConfigNode["MqTag"].isNull())
+		pipeline_.notifyConfig.mqTag = notifyConfigNode["MqTag"].asString();
 
 }
 

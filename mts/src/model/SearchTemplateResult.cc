@@ -84,6 +84,8 @@ void SearchTemplateResult::parse(const std::string &payload)
 			templateListObject.video.degrain = videoNode["Degrain"].asString();
 		if(!videoNode["Qscale"].isNull())
 			templateListObject.video.qscale = videoNode["Qscale"].asString();
+		if(!videoNode["LongShortMode"].isNull())
+			templateListObject.video.longShortMode = videoNode["LongShortMode"].asString();
 		if(!videoNode["Remove"].isNull())
 			templateListObject.video.remove = videoNode["Remove"].asString();
 		if(!videoNode["Crop"].isNull())

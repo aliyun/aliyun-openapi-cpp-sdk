@@ -189,6 +189,22 @@ void SubmitJobsResult::parse(const std::string &payload)
 				outSubtitleObject.outSubtitleFile.roleArn = outSubtitleFileNode["RoleArn"].asString();
 			jobResultListObject.job.output.outSubtitleList.push_back(outSubtitleObject);
 		}
+		auto allAmixList = value["AmixList"]["Amix"];
+		for (auto value : allAmixList)
+		{
+			JobResult::Job::Output::Amix amixObject;
+			if(!value["AmixURL"].isNull())
+				amixObject.amixURL = value["AmixURL"].asString();
+			if(!value["Map"].isNull())
+				amixObject.map = value["Map"].asString();
+			if(!value["MixDurMode"].isNull())
+				amixObject.mixDurMode = value["MixDurMode"].asString();
+			if(!value["Start"].isNull())
+				amixObject.start = value["Start"].asString();
+			if(!value["Duration"].isNull())
+				amixObject.duration = value["Duration"].asString();
+			jobResultListObject.job.output.amixList.push_back(amixObject);
+		}
 		auto digiWaterMarkNode = outputNode["DigiWaterMark"];
 		if(!digiWaterMarkNode["Type"].isNull())
 			jobResultListObject.job.output.digiWaterMark.type = digiWaterMarkNode["Type"].asString();

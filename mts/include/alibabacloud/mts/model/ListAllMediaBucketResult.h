@@ -42,11 +42,13 @@ namespace AlibabaCloud
 				ListAllMediaBucketResult();
 				explicit ListAllMediaBucketResult(const std::string &payload);
 				~ListAllMediaBucketResult();
+				std::string getNextPageToken()const;
 				std::vector<MediaBucket> getMediaBucketList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string nextPageToken_;
 				std::vector<MediaBucket> mediaBucketList_;
 
 			};

@@ -39,8 +39,12 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getNextPageToken()const;
+				void setNextPageToken(const std::string& nextPageToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				int getMaximumPageSize()const;
+				void setMaximumPageSize(int maximumPageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
@@ -49,7 +53,9 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
+				std::string nextPageToken_;
 				std::string ownerAccount_;
+				int maximumPageSize_;
 				long ownerId_;
 				std::string accessKeyId_;
 

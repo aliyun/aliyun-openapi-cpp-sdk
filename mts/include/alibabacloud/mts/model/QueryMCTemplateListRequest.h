@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_MTS_MODEL_SUBMITCENSORJOBREQUEST_H_
-#define ALIBABACLOUD_MTS_MODEL_SUBMITCENSORJOBREQUEST_H_
+#ifndef ALIBABACLOUD_MTS_MODEL_QUERYMCTEMPLATELISTREQUEST_H_
+#define ALIBABACLOUD_MTS_MODEL_QUERYMCTEMPLATELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,57 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_MTS_EXPORT SubmitCensorJobRequest : public RpcServiceRequest
+			class ALIBABACLOUD_MTS_EXPORT QueryMCTemplateListRequest : public RpcServiceRequest
 			{
 
 			public:
-				SubmitCensorJobRequest();
-				~SubmitCensorJobRequest();
+				QueryMCTemplateListRequest();
+				~QueryMCTemplateListRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getCoverImages()const;
-				void setCoverImages(const std::string& coverImages);
+				std::string getTemplateIds()const;
+				void setTemplateIds(const std::string& templateIds);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getTitle()const;
-				void setTitle(const std::string& title);
-				std::string getCensorConfig()const;
-				void setCensorConfig(const std::string& censorConfig);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getPipelineId()const;
-				void setPipelineId(const std::string& pipelineId);
-				std::string getInput()const;
-				void setInput(const std::string& input);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
-				std::string getBarrages()const;
-				void setBarrages(const std::string& barrages);
 
             private:
 				long resourceOwnerId_;
-				std::string coverImages_;
+				std::string templateIds_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string description_;
 				long ownerId_;
-				std::string title_;
-				std::string censorConfig_;
 				std::string accessKeyId_;
-				std::string pipelineId_;
-				std::string input_;
-				std::string userData_;
-				std::string barrages_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_MTS_MODEL_SUBMITCENSORJOBREQUEST_H_
+#endif // !ALIBABACLOUD_MTS_MODEL_QUERYMCTEMPLATELISTREQUEST_H_

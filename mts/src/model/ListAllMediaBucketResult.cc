@@ -50,7 +50,14 @@ void ListAllMediaBucketResult::parse(const std::string &payload)
 			mediaBucketListObject.type = value["Type"].asString();
 		mediaBucketList_.push_back(mediaBucketListObject);
 	}
+	if(!value["NextPageToken"].isNull())
+		nextPageToken_ = value["NextPageToken"].asString();
 
+}
+
+std::string ListAllMediaBucketResult::getNextPageToken()const
+{
+	return nextPageToken_;
 }
 
 std::vector<ListAllMediaBucketResult::MediaBucket> ListAllMediaBucketResult::getMediaBucketList()const

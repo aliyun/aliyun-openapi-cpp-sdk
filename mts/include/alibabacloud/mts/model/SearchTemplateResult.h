@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						std::string scanMode;
 						std::string preset;
 						std::string fps;
+						std::string longShortMode;
 						std::string gop;
 						std::string remove;
 						BitrateBnd bitrateBnd;
