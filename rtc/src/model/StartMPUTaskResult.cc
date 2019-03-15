@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rtc/model/StopAppResult.h>
+#include <alibabacloud/rtc/model/StartMPUTaskResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rtc;
 using namespace AlibabaCloud::Rtc::Model;
 
-StopAppResult::StopAppResult() :
+StartMPUTaskResult::StartMPUTaskResult() :
 	ServiceResult()
 {}
 
-StopAppResult::StopAppResult(const std::string &payload) :
+StartMPUTaskResult::StartMPUTaskResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-StopAppResult::~StopAppResult()
+StartMPUTaskResult::~StartMPUTaskResult()
 {}
 
-void StopAppResult::parse(const std::string &payload)
+void StartMPUTaskResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

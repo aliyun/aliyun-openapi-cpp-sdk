@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_STOPAPPREQUEST_H_
-#define ALIBABACLOUD_RTC_MODEL_STOPAPPREQUEST_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_STOPMPUTASKREQUEST_H_
+#define ALIBABACLOUD_RTC_MODEL_STOPMPUTASKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT StopAppRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RTC_EXPORT StopMPUTaskRequest : public RpcServiceRequest
 			{
 
 			public:
-				StopAppRequest();
-				~StopAppRequest();
+				StopMPUTaskRequest();
+				~StopMPUTaskRequest();
 
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
@@ -75,12 +77,15 @@ namespace AlibabaCloud
 				void setCallerBidEmail(const std::string& callerBidEmail);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
+				std::string getTaskId()const;
+				void setTaskId(const std::string& taskId);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
 
             private:
 				std::string app_ip_;
 				std::string popProduct_;
+				long resourceOwnerId_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string callerBid_;
@@ -99,10 +104,11 @@ namespace AlibabaCloud
 				std::string appId_;
 				std::string callerBidEmail_;
 				std::string callerUidEmail_;
+				std::string taskId_;
 				long callerUid_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_STOPAPPREQUEST_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_STOPMPUTASKREQUEST_H_

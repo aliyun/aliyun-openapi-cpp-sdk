@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_STARTAPPRESULT_H_
-#define ALIBABACLOUD_RTC_MODEL_STARTAPPRESULT_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_STOPMPUTASKRESULT_H_
+#define ALIBABACLOUD_RTC_MODEL_STOPMPUTASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT StartAppResult : public ServiceResult
+			class ALIBABACLOUD_RTC_EXPORT StopMPUTaskResult : public ServiceResult
 			{
 			public:
 
 
-				StartAppResult();
-				explicit StartAppResult(const std::string &payload);
-				~StartAppResult();
+				StopMPUTaskResult();
+				explicit StopMPUTaskResult(const std::string &payload);
+				~StopMPUTaskResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_STARTAPPRESULT_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_STOPMPUTASKRESULT_H_

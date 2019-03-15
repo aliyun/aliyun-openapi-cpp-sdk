@@ -36,10 +36,10 @@
 #include "model/CreateTemplateResult.h"
 #include "model/GetTemplateInfoRequest.h"
 #include "model/GetTemplateInfoResult.h"
-#include "model/DeleteChannelRequest.h"
-#include "model/DeleteChannelResult.h"
 #include "model/ModifyAppRequest.h"
 #include "model/ModifyAppResult.h"
+#include "model/DeleteChannelRequest.h"
+#include "model/DeleteChannelResult.h"
 #include "model/RemoveParticipantsRequest.h"
 #include "model/RemoveParticipantsResult.h"
 #include "model/GetAllTemplateRequest.h"
@@ -54,6 +54,10 @@
 #include "model/GetTaskParamResult.h"
 #include "model/UpdateChannelRequest.h"
 #include "model/UpdateChannelResult.h"
+#include "model/StartMPUTaskRequest.h"
+#include "model/StartMPUTaskResult.h"
+#include "model/StopMPUTaskRequest.h"
+#include "model/StopMPUTaskResult.h"
 #include "model/StartTaskRequest.h"
 #include "model/StartTaskResult.h"
 #include "model/ModifyConferenceRequest.h"
@@ -66,20 +70,20 @@
 #include "model/UnmuteAudioResult.h"
 #include "model/MuteAudioRequest.h"
 #include "model/MuteAudioResult.h"
-#include "model/StartAppRequest.h"
-#include "model/StartAppResult.h"
 #include "model/CreateConferenceRequest.h"
 #include "model/CreateConferenceResult.h"
+#include "model/GetMPUTaskStatusRequest.h"
+#include "model/GetMPUTaskStatusResult.h"
 #include "model/DescribeRealTimeRecordDetailRequest.h"
 #include "model/DescribeRealTimeRecordDetailResult.h"
 #include "model/DescribeRealTimeRecordListRequest.h"
 #include "model/DescribeRealTimeRecordListResult.h"
-#include "model/StopAppRequest.h"
-#include "model/StopAppResult.h"
 #include "model/RemoveTerminalsRequest.h"
 #include "model/RemoveTerminalsResult.h"
 #include "model/DeleteConferenceRequest.h"
 #include "model/DeleteConferenceResult.h"
+#include "model/ReceiveNotifyRequest.h"
+#include "model/ReceiveNotifyResult.h"
 #include "model/UnmuteAudioAllRequest.h"
 #include "model/UnmuteAudioAllResult.h"
 #include "model/DescribeRecordDetailRequest.h"
@@ -116,12 +120,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTemplateInfoResult> GetTemplateInfoOutcome;
 			typedef std::future<GetTemplateInfoOutcome> GetTemplateInfoOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::GetTemplateInfoRequest&, const GetTemplateInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTemplateInfoAsyncHandler;
-			typedef Outcome<Error, Model::DeleteChannelResult> DeleteChannelOutcome;
-			typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::DeleteChannelRequest&, const DeleteChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteChannelAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAppResult> ModifyAppOutcome;
 			typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::ModifyAppRequest&, const ModifyAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
+			typedef Outcome<Error, Model::DeleteChannelResult> DeleteChannelOutcome;
+			typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::DeleteChannelRequest&, const DeleteChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteChannelAsyncHandler;
 			typedef Outcome<Error, Model::RemoveParticipantsResult> RemoveParticipantsOutcome;
 			typedef std::future<RemoveParticipantsOutcome> RemoveParticipantsOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::RemoveParticipantsRequest&, const RemoveParticipantsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveParticipantsAsyncHandler;
@@ -143,6 +147,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateChannelResult> UpdateChannelOutcome;
 			typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::UpdateChannelRequest&, const UpdateChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateChannelAsyncHandler;
+			typedef Outcome<Error, Model::StartMPUTaskResult> StartMPUTaskOutcome;
+			typedef std::future<StartMPUTaskOutcome> StartMPUTaskOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::StartMPUTaskRequest&, const StartMPUTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartMPUTaskAsyncHandler;
+			typedef Outcome<Error, Model::StopMPUTaskResult> StopMPUTaskOutcome;
+			typedef std::future<StopMPUTaskOutcome> StopMPUTaskOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::StopMPUTaskRequest&, const StopMPUTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopMPUTaskAsyncHandler;
 			typedef Outcome<Error, Model::StartTaskResult> StartTaskOutcome;
 			typedef std::future<StartTaskOutcome> StartTaskOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::StartTaskRequest&, const StartTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartTaskAsyncHandler;
@@ -161,27 +171,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::MuteAudioResult> MuteAudioOutcome;
 			typedef std::future<MuteAudioOutcome> MuteAudioOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::MuteAudioRequest&, const MuteAudioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MuteAudioAsyncHandler;
-			typedef Outcome<Error, Model::StartAppResult> StartAppOutcome;
-			typedef std::future<StartAppOutcome> StartAppOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::StartAppRequest&, const StartAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartAppAsyncHandler;
 			typedef Outcome<Error, Model::CreateConferenceResult> CreateConferenceOutcome;
 			typedef std::future<CreateConferenceOutcome> CreateConferenceOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::CreateConferenceRequest&, const CreateConferenceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConferenceAsyncHandler;
+			typedef Outcome<Error, Model::GetMPUTaskStatusResult> GetMPUTaskStatusOutcome;
+			typedef std::future<GetMPUTaskStatusOutcome> GetMPUTaskStatusOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::GetMPUTaskStatusRequest&, const GetMPUTaskStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMPUTaskStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRealTimeRecordDetailResult> DescribeRealTimeRecordDetailOutcome;
 			typedef std::future<DescribeRealTimeRecordDetailOutcome> DescribeRealTimeRecordDetailOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeRealTimeRecordDetailRequest&, const DescribeRealTimeRecordDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealTimeRecordDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRealTimeRecordListResult> DescribeRealTimeRecordListOutcome;
 			typedef std::future<DescribeRealTimeRecordListOutcome> DescribeRealTimeRecordListOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeRealTimeRecordListRequest&, const DescribeRealTimeRecordListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealTimeRecordListAsyncHandler;
-			typedef Outcome<Error, Model::StopAppResult> StopAppOutcome;
-			typedef std::future<StopAppOutcome> StopAppOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::StopAppRequest&, const StopAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopAppAsyncHandler;
 			typedef Outcome<Error, Model::RemoveTerminalsResult> RemoveTerminalsOutcome;
 			typedef std::future<RemoveTerminalsOutcome> RemoveTerminalsOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::RemoveTerminalsRequest&, const RemoveTerminalsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveTerminalsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteConferenceResult> DeleteConferenceOutcome;
 			typedef std::future<DeleteConferenceOutcome> DeleteConferenceOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DeleteConferenceRequest&, const DeleteConferenceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConferenceAsyncHandler;
+			typedef Outcome<Error, Model::ReceiveNotifyResult> ReceiveNotifyOutcome;
+			typedef std::future<ReceiveNotifyOutcome> ReceiveNotifyOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::ReceiveNotifyRequest&, const ReceiveNotifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReceiveNotifyAsyncHandler;
 			typedef Outcome<Error, Model::UnmuteAudioAllResult> UnmuteAudioAllOutcome;
 			typedef std::future<UnmuteAudioAllOutcome> UnmuteAudioAllOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::UnmuteAudioAllRequest&, const UnmuteAudioAllOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnmuteAudioAllAsyncHandler;
@@ -217,12 +227,12 @@ namespace AlibabaCloud
 			GetTemplateInfoOutcome getTemplateInfo(const Model::GetTemplateInfoRequest &request)const;
 			void getTemplateInfoAsync(const Model::GetTemplateInfoRequest& request, const GetTemplateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTemplateInfoOutcomeCallable getTemplateInfoCallable(const Model::GetTemplateInfoRequest& request) const;
-			DeleteChannelOutcome deleteChannel(const Model::DeleteChannelRequest &request)const;
-			void deleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteChannelOutcomeCallable deleteChannelCallable(const Model::DeleteChannelRequest& request) const;
 			ModifyAppOutcome modifyApp(const Model::ModifyAppRequest &request)const;
 			void modifyAppAsync(const Model::ModifyAppRequest& request, const ModifyAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAppOutcomeCallable modifyAppCallable(const Model::ModifyAppRequest& request) const;
+			DeleteChannelOutcome deleteChannel(const Model::DeleteChannelRequest &request)const;
+			void deleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteChannelOutcomeCallable deleteChannelCallable(const Model::DeleteChannelRequest& request) const;
 			RemoveParticipantsOutcome removeParticipants(const Model::RemoveParticipantsRequest &request)const;
 			void removeParticipantsAsync(const Model::RemoveParticipantsRequest& request, const RemoveParticipantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveParticipantsOutcomeCallable removeParticipantsCallable(const Model::RemoveParticipantsRequest& request) const;
@@ -244,6 +254,12 @@ namespace AlibabaCloud
 			UpdateChannelOutcome updateChannel(const Model::UpdateChannelRequest &request)const;
 			void updateChannelAsync(const Model::UpdateChannelRequest& request, const UpdateChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateChannelOutcomeCallable updateChannelCallable(const Model::UpdateChannelRequest& request) const;
+			StartMPUTaskOutcome startMPUTask(const Model::StartMPUTaskRequest &request)const;
+			void startMPUTaskAsync(const Model::StartMPUTaskRequest& request, const StartMPUTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartMPUTaskOutcomeCallable startMPUTaskCallable(const Model::StartMPUTaskRequest& request) const;
+			StopMPUTaskOutcome stopMPUTask(const Model::StopMPUTaskRequest &request)const;
+			void stopMPUTaskAsync(const Model::StopMPUTaskRequest& request, const StopMPUTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopMPUTaskOutcomeCallable stopMPUTaskCallable(const Model::StopMPUTaskRequest& request) const;
 			StartTaskOutcome startTask(const Model::StartTaskRequest &request)const;
 			void startTaskAsync(const Model::StartTaskRequest& request, const StartTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartTaskOutcomeCallable startTaskCallable(const Model::StartTaskRequest& request) const;
@@ -262,27 +278,27 @@ namespace AlibabaCloud
 			MuteAudioOutcome muteAudio(const Model::MuteAudioRequest &request)const;
 			void muteAudioAsync(const Model::MuteAudioRequest& request, const MuteAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MuteAudioOutcomeCallable muteAudioCallable(const Model::MuteAudioRequest& request) const;
-			StartAppOutcome startApp(const Model::StartAppRequest &request)const;
-			void startAppAsync(const Model::StartAppRequest& request, const StartAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StartAppOutcomeCallable startAppCallable(const Model::StartAppRequest& request) const;
 			CreateConferenceOutcome createConference(const Model::CreateConferenceRequest &request)const;
 			void createConferenceAsync(const Model::CreateConferenceRequest& request, const CreateConferenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateConferenceOutcomeCallable createConferenceCallable(const Model::CreateConferenceRequest& request) const;
+			GetMPUTaskStatusOutcome getMPUTaskStatus(const Model::GetMPUTaskStatusRequest &request)const;
+			void getMPUTaskStatusAsync(const Model::GetMPUTaskStatusRequest& request, const GetMPUTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMPUTaskStatusOutcomeCallable getMPUTaskStatusCallable(const Model::GetMPUTaskStatusRequest& request) const;
 			DescribeRealTimeRecordDetailOutcome describeRealTimeRecordDetail(const Model::DescribeRealTimeRecordDetailRequest &request)const;
 			void describeRealTimeRecordDetailAsync(const Model::DescribeRealTimeRecordDetailRequest& request, const DescribeRealTimeRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRealTimeRecordDetailOutcomeCallable describeRealTimeRecordDetailCallable(const Model::DescribeRealTimeRecordDetailRequest& request) const;
 			DescribeRealTimeRecordListOutcome describeRealTimeRecordList(const Model::DescribeRealTimeRecordListRequest &request)const;
 			void describeRealTimeRecordListAsync(const Model::DescribeRealTimeRecordListRequest& request, const DescribeRealTimeRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRealTimeRecordListOutcomeCallable describeRealTimeRecordListCallable(const Model::DescribeRealTimeRecordListRequest& request) const;
-			StopAppOutcome stopApp(const Model::StopAppRequest &request)const;
-			void stopAppAsync(const Model::StopAppRequest& request, const StopAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StopAppOutcomeCallable stopAppCallable(const Model::StopAppRequest& request) const;
 			RemoveTerminalsOutcome removeTerminals(const Model::RemoveTerminalsRequest &request)const;
 			void removeTerminalsAsync(const Model::RemoveTerminalsRequest& request, const RemoveTerminalsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveTerminalsOutcomeCallable removeTerminalsCallable(const Model::RemoveTerminalsRequest& request) const;
 			DeleteConferenceOutcome deleteConference(const Model::DeleteConferenceRequest &request)const;
 			void deleteConferenceAsync(const Model::DeleteConferenceRequest& request, const DeleteConferenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteConferenceOutcomeCallable deleteConferenceCallable(const Model::DeleteConferenceRequest& request) const;
+			ReceiveNotifyOutcome receiveNotify(const Model::ReceiveNotifyRequest &request)const;
+			void receiveNotifyAsync(const Model::ReceiveNotifyRequest& request, const ReceiveNotifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReceiveNotifyOutcomeCallable receiveNotifyCallable(const Model::ReceiveNotifyRequest& request) const;
 			UnmuteAudioAllOutcome unmuteAudioAll(const Model::UnmuteAudioAllRequest &request)const;
 			void unmuteAudioAllAsync(const Model::UnmuteAudioAllRequest& request, const UnmuteAudioAllAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnmuteAudioAllOutcomeCallable unmuteAudioAllCallable(const Model::UnmuteAudioAllRequest& request) const;

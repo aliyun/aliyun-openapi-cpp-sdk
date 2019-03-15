@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_STARTAPPREQUEST_H_
-#define ALIBABACLOUD_RTC_MODEL_STARTAPPREQUEST_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_RECEIVENOTIFYREQUEST_H_
+#define ALIBABACLOUD_RTC_MODEL_RECEIVENOTIFYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,81 +28,96 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT StartAppRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RTC_EXPORT ReceiveNotifyRequest : public RpcServiceRequest
 			{
 
 			public:
-				StartAppRequest();
-				~StartAppRequest();
+				ReceiveNotifyRequest();
+				~ReceiveNotifyRequest();
 
-				std::string getApp_ip()const;
-				void setApp_ip(const std::string& app_ip);
-				std::string getPopProduct()const;
-				void setPopProduct(const std::string& popProduct);
+				std::string getTraceId()const;
+				void setTraceId(const std::string& traceId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
-				std::string getCallerBid()const;
-				void setCallerBid(const std::string& callerBid);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
-				std::string getVersion()const;
-				void setVersion(const std::string& version);
 				std::string getOwnerIdLoginEmail()const;
 				void setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail);
 				std::string getCallerType()const;
 				void setCallerType(const std::string& callerType);
-				bool getProxy_trust_transport_info()const;
-				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
-				bool getAk_mfa_present()const;
-				void setAk_mfa_present(bool ak_mfa_present);
+				std::string getContent()const;
+				void setContent(const std::string& content);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				bool getSecurity_transport()const;
-				void setSecurity_transport(bool security_transport);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRequestId()const;
-				void setRequestId(const std::string& requestId);
 				std::string getRequestContent()const;
 				void setRequestContent(const std::string& requestContent);
-				std::string getAppId()const;
-				void setAppId(const std::string& appId);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
+				std::string getEvent()const;
+				void setEvent(const std::string& event);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
+				std::string getApp_ip()const;
+				void setApp_ip(const std::string& app_ip);
+				std::string getPopProduct()const;
+				void setPopProduct(const std::string& popProduct);
+				std::string getCallerBid()const;
+				void setCallerBid(const std::string& callerBid);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getVersion()const;
+				void setVersion(const std::string& version);
+				bool getProxy_trust_transport_info()const;
+				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
+				bool getAk_mfa_present()const;
+				void setAk_mfa_present(bool ak_mfa_present);
+				std::string getContentType()const;
+				void setContentType(const std::string& contentType);
+				bool getSecurity_transport()const;
+				void setSecurity_transport(bool security_transport);
+				std::string getRequestId()const;
+				void setRequestId(const std::string& requestId);
+				std::string getBizId()const;
+				void setBizId(const std::string& bizId);
 
             private:
-				std::string app_ip_;
-				std::string popProduct_;
+				std::string traceId_;
+				long resourceOwnerId_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
-				std::string callerBid_;
-				long ownerId_;
 				std::string proxy_original_source_ip_;
-				std::string version_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
-				bool proxy_trust_transport_info_;
-				bool ak_mfa_present_;
+				std::string content_;
 				std::string accessKeyId_;
-				bool security_transport_;
 				std::string securityToken_;
-				std::string requestId_;
 				std::string requestContent_;
-				std::string appId_;
 				std::string callerBidEmail_;
+				std::string event_;
 				std::string callerUidEmail_;
 				long callerUid_;
+				std::string app_ip_;
+				std::string popProduct_;
+				std::string callerBid_;
+				long ownerId_;
+				std::string version_;
+				bool proxy_trust_transport_info_;
+				bool ak_mfa_present_;
+				std::string contentType_;
+				bool security_transport_;
+				std::string requestId_;
+				std::string bizId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_STARTAPPREQUEST_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_RECEIVENOTIFYREQUEST_H_

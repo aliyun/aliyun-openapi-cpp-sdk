@@ -14,32 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rtc/model/StartAppResult.h>
+#include <alibabacloud/rtc/model/ReceiveNotifyResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rtc;
 using namespace AlibabaCloud::Rtc::Model;
 
-StartAppResult::StartAppResult() :
+ReceiveNotifyResult::ReceiveNotifyResult() :
 	ServiceResult()
 {}
 
-StartAppResult::StartAppResult(const std::string &payload) :
+ReceiveNotifyResult::ReceiveNotifyResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-StartAppResult::~StartAppResult()
+ReceiveNotifyResult::~ReceiveNotifyResult()
 {}
 
-void StartAppResult::parse(const std::string &payload)
+void ReceiveNotifyResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	if(!value["TraceId"].isNull())
+		traceId_ = value["TraceId"].asString();
 
+}
+
+std::string ReceiveNotifyResult::getTraceId()const
+{
+	return traceId_;
 }
 

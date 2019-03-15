@@ -14,36 +14,32 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_STOPAPPRESULT_H_
-#define ALIBABACLOUD_RTC_MODEL_STOPAPPRESULT_H_
+#include <alibabacloud/rtc/model/StopMPUTaskResult.h>
+#include <json/json.h>
 
-#include <string>
-#include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
-#include <alibabacloud/rtc/RtcExport.h>
+using namespace AlibabaCloud::Rtc;
+using namespace AlibabaCloud::Rtc::Model;
 
-namespace AlibabaCloud
+StopMPUTaskResult::StopMPUTaskResult() :
+	ServiceResult()
+{}
+
+StopMPUTaskResult::StopMPUTaskResult(const std::string &payload) :
+	ServiceResult()
 {
-	namespace Rtc
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_RTC_EXPORT StopAppResult : public ServiceResult
-			{
-			public:
-
-
-				StopAppResult();
-				explicit StopAppResult(const std::string &payload);
-				~StopAppResult();
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-
-			};
-		}
-	}
+	parse(payload);
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_STOPAPPRESULT_H_
+
+StopMPUTaskResult::~StopMPUTaskResult()
+{}
+
+void StopMPUTaskResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+
+	setRequestId(value["RequestId"].asString());
+
+}
+
