@@ -108,3 +108,4 @@ add_subdirectory(ubsms)
 
 add_subdirectory(yundun)
 add_subdirectory(arms4finance)
+add_subdirectory(imagesearch)
