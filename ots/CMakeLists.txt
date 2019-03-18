@@ -39,10 +39,10 @@ set(ots_public_header_model
 	include/alibabacloud/ots/model/InsertInstanceResult.h
 	include/alibabacloud/ots/model/ListTagsRequest.h
 	include/alibabacloud/ots/model/ListTagsResult.h
-	include/alibabacloud/ots/model/ListVpcInfoByInstanceRequest.h
-	include/alibabacloud/ots/model/ListVpcInfoByInstanceResult.h
 	include/alibabacloud/ots/model/InsertTagsRequest.h
 	include/alibabacloud/ots/model/InsertTagsResult.h
+	include/alibabacloud/ots/model/ListVpcInfoByInstanceRequest.h
+	include/alibabacloud/ots/model/ListVpcInfoByInstanceResult.h
 	include/alibabacloud/ots/model/DeleteTagsRequest.h
 	include/alibabacloud/ots/model/DeleteTagsResult.h
 	include/alibabacloud/ots/model/DeleteInstanceRequest.h
@@ -68,10 +68,10 @@ set(ots_src
 	src/model/InsertInstanceResult.cc
 	src/model/ListTagsRequest.cc
 	src/model/ListTagsResult.cc
-	src/model/ListVpcInfoByInstanceRequest.cc
-	src/model/ListVpcInfoByInstanceResult.cc
 	src/model/InsertTagsRequest.cc
 	src/model/InsertTagsResult.cc
+	src/model/ListVpcInfoByInstanceRequest.cc
+	src/model/ListVpcInfoByInstanceResult.cc
 	src/model/DeleteTagsRequest.cc
 	src/model/DeleteTagsResult.cc
 	src/model/DeleteInstanceRequest.cc

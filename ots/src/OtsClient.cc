@@ -375,42 +375,6 @@ OtsClient::ListTagsOutcomeCallable OtsClient::listTagsCallable(const ListTagsReq
 	return task->get_future();
 }
 
-OtsClient::ListVpcInfoByInstanceOutcome OtsClient::listVpcInfoByInstance(const ListVpcInfoByInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListVpcInfoByInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListVpcInfoByInstanceOutcome(ListVpcInfoByInstanceResult(outcome.result()));
-	else
-		return ListVpcInfoByInstanceOutcome(outcome.error());
-}
-
-void OtsClient::listVpcInfoByInstanceAsync(const ListVpcInfoByInstanceRequest& request, const ListVpcInfoByInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listVpcInfoByInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OtsClient::ListVpcInfoByInstanceOutcomeCallable OtsClient::listVpcInfoByInstanceCallable(const ListVpcInfoByInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListVpcInfoByInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->listVpcInfoByInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OtsClient::InsertTagsOutcome OtsClient::insertTags(const InsertTagsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +405,42 @@ OtsClient::InsertTagsOutcomeCallable OtsClient::insertTagsCallable(const InsertT
 			[this, request]()
 			{
 			return this->insertTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OtsClient::ListVpcInfoByInstanceOutcome OtsClient::listVpcInfoByInstance(const ListVpcInfoByInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListVpcInfoByInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListVpcInfoByInstanceOutcome(ListVpcInfoByInstanceResult(outcome.result()));
+	else
+		return ListVpcInfoByInstanceOutcome(outcome.error());
+}
+
+void OtsClient::listVpcInfoByInstanceAsync(const ListVpcInfoByInstanceRequest& request, const ListVpcInfoByInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listVpcInfoByInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OtsClient::ListVpcInfoByInstanceOutcomeCallable OtsClient::listVpcInfoByInstanceCallable(const ListVpcInfoByInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListVpcInfoByInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->listVpcInfoByInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

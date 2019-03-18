@@ -92,8 +92,8 @@ void ListVpcInfoByVpcRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 	for(int i = 0; i!= tagInfo.size(); i++)	{
 		auto obj = tagInfo.at(i);
 		std::string str ="TagInfo."+ std::to_string(i);
-		setParameter(str + ".TagKey", obj.tagKey);
 		setParameter(str + ".TagValue", obj.tagValue);
+		setParameter(str + ".TagKey", obj.tagKey);
 	}
 }
 

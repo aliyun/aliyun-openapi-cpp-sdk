@@ -32,8 +32,8 @@ namespace AlibabaCloud
 			{
 				struct TagInfo
 				{
-					std::string tagKey;
 					std::string tagValue;
+					std::string tagKey;
 				};
 
 			public:
