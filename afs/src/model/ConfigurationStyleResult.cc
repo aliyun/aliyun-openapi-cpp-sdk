@@ -40,30 +40,35 @@ void ConfigurationStyleResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allCodeData = value["CodeData"];
-	for (auto value : allCodeData)
-	{
-		CodeData codeDataObject;
-		if(!value["Html"].isNull())
-			codeDataObject.html = value["Html"].asString();
-		if(!value["Net"].isNull())
-			codeDataObject.net = value["Net"].asString();
-		if(!value["Php"].isNull())
-			codeDataObject.php = value["Php"].asString();
-		if(!value["Python"].isNull())
-			codeDataObject.python = value["Python"].asString();
-		if(!value["Java"].isNull())
-			codeDataObject.java = value["Java"].asString();
-		if(!value["NodeJs"].isNull())
-			codeDataObject.nodeJs = value["NodeJs"].asString();
-		codeData_.push_back(codeDataObject);
-	}
+	auto codeDataNode = value["CodeData"];
+	if(!codeDataNode["Html"].isNull())
+		codeData_.html = codeDataNode["Html"].asString();
+	if(!codeDataNode["Net"].isNull())
+		codeData_.net = codeDataNode["Net"].asString();
+	if(!codeDataNode["Php"].isNull())
+		codeData_.php = codeDataNode["Php"].asString();
+	if(!codeDataNode["Python"].isNull())
+		codeData_.python = codeDataNode["Python"].asString();
+	if(!codeDataNode["Java"].isNull())
+		codeData_.java = codeDataNode["Java"].asString();
+	if(!codeDataNode["NodeJs"].isNull())
+		codeData_.nodeJs = codeDataNode["NodeJs"].asString();
+	if(!codeDataNode["NetUrl"].isNull())
+		codeData_.netUrl = codeDataNode["NetUrl"].asString();
+	if(!codeDataNode["PhpUrl"].isNull())
+		codeData_.phpUrl = codeDataNode["PhpUrl"].asString();
+	if(!codeDataNode["PythonUrl"].isNull())
+		codeData_.pythonUrl = codeDataNode["PythonUrl"].asString();
+	if(!codeDataNode["JavaUrl"].isNull())
+		codeData_.javaUrl = codeDataNode["JavaUrl"].asString();
+	if(!codeDataNode["NodeJsUrl"].isNull())
+		codeData_.nodeJsUrl = codeDataNode["NodeJsUrl"].asString();
 	if(!value["BizCode"].isNull())
 		bizCode_ = value["BizCode"].asString();
 
 }
 
-std::vector<ConfigurationStyleResult::CodeData> ConfigurationStyleResult::getCodeData()const
+ConfigurationStyleResult::CodeData ConfigurationStyleResult::getCodeData()const
 {
 	return codeData_;
 }

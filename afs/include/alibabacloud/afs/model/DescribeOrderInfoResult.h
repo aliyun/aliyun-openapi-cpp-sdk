@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AFS_MODEL_ANALYZENVCRESULT_H_
-#define ALIBABACLOUD_AFS_MODEL_ANALYZENVCRESULT_H_
+#ifndef ALIBABACLOUD_AFS_MODEL_DESCRIBEORDERINFORESULT_H_
+#define ALIBABACLOUD_AFS_MODEL_DESCRIBEORDERINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_AFS_EXPORT AnalyzeNvcResult : public ServiceResult
+			class ALIBABACLOUD_AFS_EXPORT DescribeOrderInfoResult : public ServiceResult
 			{
 			public:
 
 
-				AnalyzeNvcResult();
-				explicit AnalyzeNvcResult(const std::string &payload);
-				~AnalyzeNvcResult();
+				DescribeOrderInfoResult();
+				explicit DescribeOrderInfoResult(const std::string &payload);
+				~DescribeOrderInfoResult();
+				std::string getOrderLevel()const;
+				std::string getNum()const;
+				std::string getEndDate()const;
 				std::string getBizCode()const;
+				std::string getBeginDate()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string orderLevel_;
+				std::string num_;
+				std::string endDate_;
 				std::string bizCode_;
+				std::string beginDate_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_AFS_MODEL_ANALYZENVCRESULT_H_
+#endif // !ALIBABACLOUD_AFS_MODEL_DESCRIBEORDERINFORESULT_H_

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/afs/model/AnalyzeNvcResult.h>
+#include <alibabacloud/afs/model/DescribeOrderInfoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Afs;
 using namespace AlibabaCloud::Afs::Model;
 
-AnalyzeNvcResult::AnalyzeNvcResult() :
+DescribeOrderInfoResult::DescribeOrderInfoResult() :
 	ServiceResult()
 {}
 
-AnalyzeNvcResult::AnalyzeNvcResult(const std::string &payload) :
+DescribeOrderInfoResult::DescribeOrderInfoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-AnalyzeNvcResult::~AnalyzeNvcResult()
+DescribeOrderInfoResult::~DescribeOrderInfoResult()
 {}
 
-void AnalyzeNvcResult::parse(const std::string &payload)
+void DescribeOrderInfoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -42,11 +42,39 @@ void AnalyzeNvcResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["BizCode"].isNull())
 		bizCode_ = value["BizCode"].asString();
+	if(!value["OrderLevel"].isNull())
+		orderLevel_ = value["OrderLevel"].asString();
+	if(!value["Num"].isNull())
+		num_ = value["Num"].asString();
+	if(!value["BeginDate"].isNull())
+		beginDate_ = value["BeginDate"].asString();
+	if(!value["EndDate"].isNull())
+		endDate_ = value["EndDate"].asString();
 
 }
 
-std::string AnalyzeNvcResult::getBizCode()const
+std::string DescribeOrderInfoResult::getOrderLevel()const
+{
+	return orderLevel_;
+}
+
+std::string DescribeOrderInfoResult::getNum()const
+{
+	return num_;
+}
+
+std::string DescribeOrderInfoResult::getEndDate()const
+{
+	return endDate_;
+}
+
+std::string DescribeOrderInfoResult::getBizCode()const
 {
 	return bizCode_;
+}
+
+std::string DescribeOrderInfoResult::getBeginDate()const
+{
+	return beginDate_;
 }
 

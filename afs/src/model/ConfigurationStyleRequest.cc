@@ -25,17 +25,6 @@ ConfigurationStyleRequest::ConfigurationStyleRequest() :
 ConfigurationStyleRequest::~ConfigurationStyleRequest()
 {}
 
-long ConfigurationStyleRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ConfigurationStyleRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string ConfigurationStyleRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,6 +45,17 @@ void ConfigurationStyleRequest::setConfigurationMethod(const std::string& config
 {
 	configurationMethod_ = configurationMethod;
 	setParameter("ConfigurationMethod", configurationMethod);
+}
+
+std::string ConfigurationStyleRequest::getRefExtId()const
+{
+	return refExtId_;
+}
+
+void ConfigurationStyleRequest::setRefExtId(const std::string& refExtId)
+{
+	refExtId_ = refExtId;
+	setParameter("RefExtId", refExtId);
 }
 
 std::string ConfigurationStyleRequest::getApplyType()const

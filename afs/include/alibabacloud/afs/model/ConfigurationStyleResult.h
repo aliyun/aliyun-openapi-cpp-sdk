@@ -35,9 +35,14 @@ namespace AlibabaCloud
 				struct CodeData
 				{
 					std::string java;
+					std::string javaUrl;
+					std::string phpUrl;
+					std::string pythonUrl;
 					std::string html;
 					std::string php;
+					std::string nodeJsUrl;
 					std::string net;
+					std::string netUrl;
 					std::string nodeJs;
 					std::string python;
 				};
@@ -46,13 +51,13 @@ namespace AlibabaCloud
 				ConfigurationStyleResult();
 				explicit ConfigurationStyleResult(const std::string &payload);
 				~ConfigurationStyleResult();
-				std::vector<CodeData> getCodeData()const;
+				CodeData getCodeData()const;
 				std::string getBizCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<CodeData> codeData_;
+				CodeData codeData_;
 				std::string bizCode_;
 
 			};

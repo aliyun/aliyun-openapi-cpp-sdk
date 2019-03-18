@@ -42,7 +42,14 @@ void CreateConfigurationResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["BizCode"].isNull())
 		bizCode_ = value["BizCode"].asString();
+	if(!value["RefExtId"].isNull())
+		refExtId_ = value["RefExtId"].asString();
 
+}
+
+std::string CreateConfigurationResult::getRefExtId()const
+{
+	return refExtId_;
 }
 
 std::string CreateConfigurationResult::getBizCode()const

@@ -25,17 +25,6 @@ DescribePersonMachineListRequest::DescribePersonMachineListRequest() :
 DescribePersonMachineListRequest::~DescribePersonMachineListRequest()
 {}
 
-long DescribePersonMachineListRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribePersonMachineListRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DescribePersonMachineListRequest::getSourceIp()const
 {
 	return sourceIp_;

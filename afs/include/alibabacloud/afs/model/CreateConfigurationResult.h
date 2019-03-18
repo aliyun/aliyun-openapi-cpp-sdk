@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				CreateConfigurationResult();
 				explicit CreateConfigurationResult(const std::string &payload);
 				~CreateConfigurationResult();
+				std::string getRefExtId()const;
 				std::string getBizCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string refExtId_;
 				std::string bizCode_;
 
 			};

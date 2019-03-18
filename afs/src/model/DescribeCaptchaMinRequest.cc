@@ -25,17 +25,6 @@ DescribeCaptchaMinRequest::DescribeCaptchaMinRequest() :
 DescribeCaptchaMinRequest::~DescribeCaptchaMinRequest()
 {}
 
-long DescribeCaptchaMinRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeCaptchaMinRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DescribeCaptchaMinRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,6 +45,17 @@ void DescribeCaptchaMinRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
 	setParameter("ConfigName", configName);
+}
+
+std::string DescribeCaptchaMinRequest::getRefExtId()const
+{
+	return refExtId_;
+}
+
+void DescribeCaptchaMinRequest::setRefExtId(const std::string& refExtId)
+{
+	refExtId_ = refExtId;
+	setParameter("RefExtId", refExtId);
 }
 
 std::string DescribeCaptchaMinRequest::getTime()const

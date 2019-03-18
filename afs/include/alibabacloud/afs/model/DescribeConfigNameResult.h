@@ -32,19 +32,25 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_AFS_EXPORT DescribeConfigNameResult : public ServiceResult
 			{
 			public:
+				struct ConfigName
+				{
+					std::string refExtId;
+					std::string configName;
+					std::string aliUid;
+				};
 
 
 				DescribeConfigNameResult();
 				explicit DescribeConfigNameResult(const std::string &payload);
 				~DescribeConfigNameResult();
-				std::string getConfigNames()const;
+				std::vector<ConfigName> getConfigNames()const;
 				bool getHasConfig()const;
 				std::string getBizCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string configNames_;
+				std::vector<ConfigName> configNames_;
 				bool hasConfig_;
 				std::string bizCode_;
 

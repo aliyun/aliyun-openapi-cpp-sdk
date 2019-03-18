@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AFS_MODEL_ANALYZENVCRESULT_H_
-#define ALIBABACLOUD_AFS_MODEL_ANALYZENVCRESULT_H_
+#ifndef ALIBABACLOUD_AFS_MODEL_DESCRIBECAPTCHAORDERRESULT_H_
+#define ALIBABACLOUD_AFS_MODEL_DESCRIBECAPTCHAORDERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_AFS_EXPORT AnalyzeNvcResult : public ServiceResult
+			class ALIBABACLOUD_AFS_EXPORT DescribeCaptchaOrderResult : public ServiceResult
 			{
 			public:
 
 
-				AnalyzeNvcResult();
-				explicit AnalyzeNvcResult(const std::string &payload);
-				~AnalyzeNvcResult();
+				DescribeCaptchaOrderResult();
+				explicit DescribeCaptchaOrderResult(const std::string &payload);
+				~DescribeCaptchaOrderResult();
 				std::string getBizCode()const;
 
 			protected:
@@ -48,4 +48,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_AFS_MODEL_ANALYZENVCRESULT_H_
+#endif // !ALIBABACLOUD_AFS_MODEL_DESCRIBECAPTCHAORDERRESULT_H_

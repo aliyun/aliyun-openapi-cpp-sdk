@@ -25,17 +25,6 @@ AnalyzeNvcRequest::AnalyzeNvcRequest() :
 AnalyzeNvcRequest::~AnalyzeNvcRequest()
 {}
 
-long AnalyzeNvcRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void AnalyzeNvcRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string AnalyzeNvcRequest::getSourceIp()const
 {
 	return sourceIp_;

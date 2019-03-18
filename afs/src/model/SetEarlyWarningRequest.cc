@@ -36,17 +36,6 @@ void SetEarlyWarningRequest::setTimeEnd(const std::string& timeEnd)
 	setParameter("TimeEnd", timeEnd);
 }
 
-long SetEarlyWarningRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SetEarlyWarningRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 bool SetEarlyWarningRequest::getWarnOpen()const
 {
 	return warnOpen_;

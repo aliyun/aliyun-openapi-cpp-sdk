@@ -35,21 +35,21 @@ namespace AlibabaCloud
 				ConfigurationStyleRequest();
 				~ConfigurationStyleRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getConfigurationMethod()const;
 				void setConfigurationMethod(const std::string& configurationMethod);
+				std::string getRefExtId()const;
+				void setRefExtId(const std::string& refExtId);
 				std::string getApplyType()const;
 				void setApplyType(const std::string& applyType);
 				std::string getScene()const;
 				void setScene(const std::string& scene);
 
             private:
-				long resourceOwnerId_;
 				std::string sourceIp_;
 				std::string configurationMethod_;
+				std::string refExtId_;
 				std::string applyType_;
 				std::string scene_;
 

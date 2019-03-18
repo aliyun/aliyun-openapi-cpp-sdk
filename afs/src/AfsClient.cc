@@ -31,21 +31,21 @@ AfsClient::AfsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "afs");
 }
 
 AfsClient::AfsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "afs");
 }
 
 AfsClient::AfsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "afs");
 }
 
 AfsClient::~AfsClient()
@@ -87,42 +87,6 @@ AfsClient::DescribeEarlyWarningOutcomeCallable AfsClient::describeEarlyWarningCa
 	return task->get_future();
 }
 
-AfsClient::SetEarlyWarningOutcome AfsClient::setEarlyWarning(const SetEarlyWarningRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetEarlyWarningOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetEarlyWarningOutcome(SetEarlyWarningResult(outcome.result()));
-	else
-		return SetEarlyWarningOutcome(outcome.error());
-}
-
-void AfsClient::setEarlyWarningAsync(const SetEarlyWarningRequest& request, const SetEarlyWarningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setEarlyWarning(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AfsClient::SetEarlyWarningOutcomeCallable AfsClient::setEarlyWarningCallable(const SetEarlyWarningRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetEarlyWarningOutcome()>>(
-			[this, request]()
-			{
-			return this->setEarlyWarning(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AfsClient::DescribeCaptchaIpCityOutcome AfsClient::describeCaptchaIpCity(const DescribeCaptchaIpCityRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +117,222 @@ AfsClient::DescribeCaptchaIpCityOutcomeCallable AfsClient::describeCaptchaIpCity
 			[this, request]()
 			{
 			return this->describeCaptchaIpCity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AfsClient::DescribeOrderInfoOutcome AfsClient::describeOrderInfo(const DescribeOrderInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeOrderInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeOrderInfoOutcome(DescribeOrderInfoResult(outcome.result()));
+	else
+		return DescribeOrderInfoOutcome(outcome.error());
+}
+
+void AfsClient::describeOrderInfoAsync(const DescribeOrderInfoRequest& request, const DescribeOrderInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeOrderInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::DescribeOrderInfoOutcomeCallable AfsClient::describeOrderInfoCallable(const DescribeOrderInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeOrderInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeOrderInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AfsClient::DescribeCaptchaRiskOutcome AfsClient::describeCaptchaRisk(const DescribeCaptchaRiskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCaptchaRiskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCaptchaRiskOutcome(DescribeCaptchaRiskResult(outcome.result()));
+	else
+		return DescribeCaptchaRiskOutcome(outcome.error());
+}
+
+void AfsClient::describeCaptchaRiskAsync(const DescribeCaptchaRiskRequest& request, const DescribeCaptchaRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCaptchaRisk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::DescribeCaptchaRiskOutcomeCallable AfsClient::describeCaptchaRiskCallable(const DescribeCaptchaRiskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCaptchaRiskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCaptchaRisk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AfsClient::DescribeCaptchaOrderOutcome AfsClient::describeCaptchaOrder(const DescribeCaptchaOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCaptchaOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCaptchaOrderOutcome(DescribeCaptchaOrderResult(outcome.result()));
+	else
+		return DescribeCaptchaOrderOutcome(outcome.error());
+}
+
+void AfsClient::describeCaptchaOrderAsync(const DescribeCaptchaOrderRequest& request, const DescribeCaptchaOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCaptchaOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::DescribeCaptchaOrderOutcomeCallable AfsClient::describeCaptchaOrderCallable(const DescribeCaptchaOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCaptchaOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCaptchaOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AfsClient::CreateConfigurationOutcome AfsClient::createConfiguration(const CreateConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateConfigurationOutcome(CreateConfigurationResult(outcome.result()));
+	else
+		return CreateConfigurationOutcome(outcome.error());
+}
+
+void AfsClient::createConfigurationAsync(const CreateConfigurationRequest& request, const CreateConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::CreateConfigurationOutcomeCallable AfsClient::createConfigurationCallable(const CreateConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->createConfiguration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AfsClient::AnalyzeNvcOutcome AfsClient::analyzeNvc(const AnalyzeNvcRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AnalyzeNvcOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AnalyzeNvcOutcome(AnalyzeNvcResult(outcome.result()));
+	else
+		return AnalyzeNvcOutcome(outcome.error());
+}
+
+void AfsClient::analyzeNvcAsync(const AnalyzeNvcRequest& request, const AnalyzeNvcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, analyzeNvc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::AnalyzeNvcOutcomeCallable AfsClient::analyzeNvcCallable(const AnalyzeNvcRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AnalyzeNvcOutcome()>>(
+			[this, request]()
+			{
+			return this->analyzeNvc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AfsClient::SetEarlyWarningOutcome AfsClient::setEarlyWarning(const SetEarlyWarningRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetEarlyWarningOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetEarlyWarningOutcome(SetEarlyWarningResult(outcome.result()));
+	else
+		return SetEarlyWarningOutcome(outcome.error());
+}
+
+void AfsClient::setEarlyWarningAsync(const SetEarlyWarningRequest& request, const SetEarlyWarningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setEarlyWarning(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::SetEarlyWarningOutcomeCallable AfsClient::setEarlyWarningCallable(const SetEarlyWarningRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetEarlyWarningOutcome()>>(
+			[this, request]()
+			{
+			return this->setEarlyWarning(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -225,42 +405,6 @@ AfsClient::DescribeCaptchaMinOutcomeCallable AfsClient::describeCaptchaMinCallab
 			[this, request]()
 			{
 			return this->describeCaptchaMin(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AfsClient::DescribeCaptchaRiskOutcome AfsClient::describeCaptchaRisk(const DescribeCaptchaRiskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCaptchaRiskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCaptchaRiskOutcome(DescribeCaptchaRiskResult(outcome.result()));
-	else
-		return DescribeCaptchaRiskOutcome(outcome.error());
-}
-
-void AfsClient::describeCaptchaRiskAsync(const DescribeCaptchaRiskRequest& request, const DescribeCaptchaRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCaptchaRisk(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AfsClient::DescribeCaptchaRiskOutcomeCallable AfsClient::describeCaptchaRiskCallable(const DescribeCaptchaRiskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCaptchaRiskOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCaptchaRisk(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +519,42 @@ AfsClient::DescribeCaptchaDayOutcomeCallable AfsClient::describeCaptchaDayCallab
 	return task->get_future();
 }
 
+AfsClient::UpdateConfigNameOutcome AfsClient::updateConfigName(const UpdateConfigNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateConfigNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateConfigNameOutcome(UpdateConfigNameResult(outcome.result()));
+	else
+		return UpdateConfigNameOutcome(outcome.error());
+}
+
+void AfsClient::updateConfigNameAsync(const UpdateConfigNameRequest& request, const UpdateConfigNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateConfigName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::UpdateConfigNameOutcomeCallable AfsClient::updateConfigNameCallable(const UpdateConfigNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateConfigNameOutcome()>>(
+			[this, request]()
+			{
+			return this->updateConfigName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AfsClient::DescribePersonMachineListOutcome AfsClient::describePersonMachineList(const DescribePersonMachineListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,78 +585,6 @@ AfsClient::DescribePersonMachineListOutcomeCallable AfsClient::describePersonMac
 			[this, request]()
 			{
 			return this->describePersonMachineList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AfsClient::CreateConfigurationOutcome AfsClient::createConfiguration(const CreateConfigurationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateConfigurationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateConfigurationOutcome(CreateConfigurationResult(outcome.result()));
-	else
-		return CreateConfigurationOutcome(outcome.error());
-}
-
-void AfsClient::createConfigurationAsync(const CreateConfigurationRequest& request, const CreateConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createConfiguration(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AfsClient::CreateConfigurationOutcomeCallable AfsClient::createConfigurationCallable(const CreateConfigurationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateConfigurationOutcome()>>(
-			[this, request]()
-			{
-			return this->createConfiguration(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AfsClient::AnalyzeNvcOutcome AfsClient::analyzeNvc(const AnalyzeNvcRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AnalyzeNvcOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AnalyzeNvcOutcome(AnalyzeNvcResult(outcome.result()));
-	else
-		return AnalyzeNvcOutcome(outcome.error());
-}
-
-void AfsClient::analyzeNvcAsync(const AnalyzeNvcRequest& request, const AnalyzeNvcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, analyzeNvc(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AfsClient::AnalyzeNvcOutcomeCallable AfsClient::analyzeNvcCallable(const AnalyzeNvcRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AnalyzeNvcOutcome()>>(
-			[this, request]()
-			{
-			return this->analyzeNvc(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

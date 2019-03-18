@@ -25,17 +25,6 @@ DescribeCaptchaDayRequest::DescribeCaptchaDayRequest() :
 DescribeCaptchaDayRequest::~DescribeCaptchaDayRequest()
 {}
 
-long DescribeCaptchaDayRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeCaptchaDayRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DescribeCaptchaDayRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,6 +45,17 @@ void DescribeCaptchaDayRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
 	setParameter("ConfigName", configName);
+}
+
+std::string DescribeCaptchaDayRequest::getRefExtId()const
+{
+	return refExtId_;
+}
+
+void DescribeCaptchaDayRequest::setRefExtId(const std::string& refExtId)
+{
+	refExtId_ = refExtId;
+	setParameter("RefExtId", refExtId);
 }
 
 std::string DescribeCaptchaDayRequest::getTime()const

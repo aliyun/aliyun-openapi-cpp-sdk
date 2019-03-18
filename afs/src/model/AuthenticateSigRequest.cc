@@ -36,17 +36,6 @@ void AuthenticateSigRequest::setSig(const std::string& sig)
 	setParameter("Sig", sig);
 }
 
-long AuthenticateSigRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void AuthenticateSigRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string AuthenticateSigRequest::getRemoteIp()const
 {
 	return remoteIp_;

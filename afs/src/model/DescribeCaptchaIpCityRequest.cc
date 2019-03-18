@@ -25,17 +25,6 @@ DescribeCaptchaIpCityRequest::DescribeCaptchaIpCityRequest() :
 DescribeCaptchaIpCityRequest::~DescribeCaptchaIpCityRequest()
 {}
 
-long DescribeCaptchaIpCityRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeCaptchaIpCityRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DescribeCaptchaIpCityRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,6 +45,17 @@ void DescribeCaptchaIpCityRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
 	setParameter("ConfigName", configName);
+}
+
+std::string DescribeCaptchaIpCityRequest::getRefExtId()const
+{
+	return refExtId_;
+}
+
+void DescribeCaptchaIpCityRequest::setRefExtId(const std::string& refExtId)
+{
+	refExtId_ = refExtId;
+	setParameter("RefExtId", refExtId);
 }
 
 std::string DescribeCaptchaIpCityRequest::getTime()const

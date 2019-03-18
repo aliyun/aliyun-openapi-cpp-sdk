@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				AnalyzeNvcRequest();
 				~AnalyzeNvcRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getData()const;
@@ -45,7 +43,6 @@ namespace AlibabaCloud
 				void setScoreJsonStr(const std::string& scoreJsonStr);
 
             private:
-				long resourceOwnerId_;
 				std::string sourceIp_;
 				std::string data_;
 				std::string scoreJsonStr_;

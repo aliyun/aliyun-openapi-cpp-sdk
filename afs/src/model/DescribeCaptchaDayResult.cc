@@ -40,30 +40,25 @@ void DescribeCaptchaDayResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allCaptchaDay = value["CaptchaDay"];
-	for (auto value : allCaptchaDay)
-	{
-		CaptchaDay captchaDayObject;
-		if(!value["Init"].isNull())
-			captchaDayObject.init = std::stoi(value["Init"].asString());
-		if(!value["AskForVerify"].isNull())
-			captchaDayObject.askForVerify = std::stoi(value["AskForVerify"].asString());
-		if(!value["DirecetStrategyInterception"].isNull())
-			captchaDayObject.direcetStrategyInterception = std::stoi(value["DirecetStrategyInterception"].asString());
-		if(!value["TwiceVerify"].isNull())
-			captchaDayObject.twiceVerify = std::stoi(value["TwiceVerify"].asString());
-		if(!value["Pass"].isNull())
-			captchaDayObject.pass = std::stoi(value["Pass"].asString());
-		if(!value["CheckTested"].isNull())
-			captchaDayObject.checkTested = std::stoi(value["CheckTested"].asString());
-		if(!value["UncheckTested"].isNull())
-			captchaDayObject.uncheckTested = std::stoi(value["UncheckTested"].asString());
-		if(!value["LegalSign"].isNull())
-			captchaDayObject.legalSign = std::stoi(value["LegalSign"].asString());
-		if(!value["MaliciousFlow"].isNull())
-			captchaDayObject.maliciousFlow = std::stoi(value["MaliciousFlow"].asString());
-		captchaDay_.push_back(captchaDayObject);
-	}
+	auto captchaDayNode = value["CaptchaDay"];
+	if(!captchaDayNode["Init"].isNull())
+		captchaDay_.init = std::stoi(captchaDayNode["Init"].asString());
+	if(!captchaDayNode["AskForVerify"].isNull())
+		captchaDay_.askForVerify = std::stoi(captchaDayNode["AskForVerify"].asString());
+	if(!captchaDayNode["DirecetStrategyInterception"].isNull())
+		captchaDay_.direcetStrategyInterception = std::stoi(captchaDayNode["DirecetStrategyInterception"].asString());
+	if(!captchaDayNode["TwiceVerify"].isNull())
+		captchaDay_.twiceVerify = std::stoi(captchaDayNode["TwiceVerify"].asString());
+	if(!captchaDayNode["Pass"].isNull())
+		captchaDay_.pass = std::stoi(captchaDayNode["Pass"].asString());
+	if(!captchaDayNode["CheckTested"].isNull())
+		captchaDay_.checkTested = std::stoi(captchaDayNode["CheckTested"].asString());
+	if(!captchaDayNode["UncheckTested"].isNull())
+		captchaDay_.uncheckTested = std::stoi(captchaDayNode["UncheckTested"].asString());
+	if(!captchaDayNode["LegalSign"].isNull())
+		captchaDay_.legalSign = std::stoi(captchaDayNode["LegalSign"].asString());
+	if(!captchaDayNode["MaliciousFlow"].isNull())
+		captchaDay_.maliciousFlow = std::stoi(captchaDayNode["MaliciousFlow"].asString());
 	if(!value["BizCode"].isNull())
 		bizCode_ = value["BizCode"].asString();
 	if(!value["HasData"].isNull())
@@ -71,7 +66,7 @@ void DescribeCaptchaDayResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeCaptchaDayResult::CaptchaDay> DescribeCaptchaDayResult::getCaptchaDay()const
+DescribeCaptchaDayResult::CaptchaDay DescribeCaptchaDayResult::getCaptchaDay()const
 {
 	return captchaDay_;
 }

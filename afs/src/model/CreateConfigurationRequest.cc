@@ -25,17 +25,6 @@ CreateConfigurationRequest::CreateConfigurationRequest() :
 CreateConfigurationRequest::~CreateConfigurationRequest()
 {}
 
-long CreateConfigurationRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void CreateConfigurationRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string CreateConfigurationRequest::getSourceIp()const
 {
 	return sourceIp_;

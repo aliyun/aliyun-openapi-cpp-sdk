@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				DescribeCaptchaRiskRequest();
 				~DescribeCaptchaRiskRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getConfigName()const;
 				void setConfigName(const std::string& configName);
+				std::string getRefExtId()const;
+				void setRefExtId(const std::string& refExtId);
 				std::string getTime()const;
 				void setTime(const std::string& time);
 
             private:
-				long resourceOwnerId_;
 				std::string sourceIp_;
 				std::string configName_;
+				std::string refExtId_;
 				std::string time_;
 
 			};

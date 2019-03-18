@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AFS_MODEL_ANALYZENVCRESULT_H_
-#define ALIBABACLOUD_AFS_MODEL_ANALYZENVCRESULT_H_
+#ifndef ALIBABACLOUD_AFS_MODEL_UPDATECONFIGNAMERESULT_H_
+#define ALIBABACLOUD_AFS_MODEL_UPDATECONFIGNAMERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_AFS_EXPORT AnalyzeNvcResult : public ServiceResult
+			class ALIBABACLOUD_AFS_EXPORT UpdateConfigNameResult : public ServiceResult
 			{
 			public:
 
 
-				AnalyzeNvcResult();
-				explicit AnalyzeNvcResult(const std::string &payload);
-				~AnalyzeNvcResult();
+				UpdateConfigNameResult();
+				explicit UpdateConfigNameResult(const std::string &payload);
+				~UpdateConfigNameResult();
 				std::string getBizCode()const;
 
 			protected:
@@ -48,4 +48,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_AFS_MODEL_ANALYZENVCRESULT_H_
+#endif // !ALIBABACLOUD_AFS_MODEL_UPDATECONFIGNAMERESULT_H_

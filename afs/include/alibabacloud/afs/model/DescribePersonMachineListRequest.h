@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				DescribePersonMachineListRequest();
 				~DescribePersonMachineListRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 
             private:
-				long resourceOwnerId_;
 				std::string sourceIp_;
 
 			};

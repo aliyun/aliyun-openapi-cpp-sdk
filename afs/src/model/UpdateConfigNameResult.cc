@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/afs/model/AnalyzeNvcResult.h>
+#include <alibabacloud/afs/model/UpdateConfigNameResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Afs;
 using namespace AlibabaCloud::Afs::Model;
 
-AnalyzeNvcResult::AnalyzeNvcResult() :
+UpdateConfigNameResult::UpdateConfigNameResult() :
 	ServiceResult()
 {}
 
-AnalyzeNvcResult::AnalyzeNvcResult(const std::string &payload) :
+UpdateConfigNameResult::UpdateConfigNameResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-AnalyzeNvcResult::~AnalyzeNvcResult()
+UpdateConfigNameResult::~UpdateConfigNameResult()
 {}
 
-void AnalyzeNvcResult::parse(const std::string &payload)
+void UpdateConfigNameResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -45,7 +45,7 @@ void AnalyzeNvcResult::parse(const std::string &payload)
 
 }
 
-std::string AnalyzeNvcResult::getBizCode()const
+std::string UpdateConfigNameResult::getBizCode()const
 {
 	return bizCode_;
 }

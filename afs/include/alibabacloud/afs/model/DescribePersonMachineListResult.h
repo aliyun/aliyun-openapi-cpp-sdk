@@ -40,8 +40,10 @@ namespace AlibabaCloud
 						std::string applyType;
 						std::string lastUpdate;
 						std::string appkey;
+						std::string extId;
 						std::string configurationName;
 						std::string scene;
+						std::string sceneOriginal;
 					};
 					std::string hasConfiguration;
 					std::vector<PersonMachine> personMachines;
@@ -51,13 +53,13 @@ namespace AlibabaCloud
 				DescribePersonMachineListResult();
 				explicit DescribePersonMachineListResult(const std::string &payload);
 				~DescribePersonMachineListResult();
-				std::vector<PersonMachineRes> getPersonMachineRes()const;
+				PersonMachineRes getPersonMachineRes()const;
 				std::string getBizCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<PersonMachineRes> personMachineRes_;
+				PersonMachineRes personMachineRes_;
 				std::string bizCode_;
 
 			};

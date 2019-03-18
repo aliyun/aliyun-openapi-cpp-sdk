@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getTimeEnd()const;
 				void setTimeEnd(const std::string& timeEnd);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				bool getWarnOpen()const;
 				void setWarnOpen(bool warnOpen);
 				std::string getSourceIp()const;
@@ -56,7 +54,6 @@ namespace AlibabaCloud
 
             private:
 				std::string timeEnd_;
-				long resourceOwnerId_;
 				bool warnOpen_;
 				std::string sourceIp_;
 				std::string channel_;

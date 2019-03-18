@@ -40,16 +40,26 @@ void DescribeConfigNameResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	auto allConfigNames = value["ConfigNames"]["ConfigName"];
+	for (auto value : allConfigNames)
+	{
+		ConfigName configNamesObject;
+		if(!value["AliUid"].isNull())
+			configNamesObject.aliUid = value["AliUid"].asString();
+		if(!value["ConfigName"].isNull())
+			configNamesObject.configName = value["ConfigName"].asString();
+		if(!value["RefExtId"].isNull())
+			configNamesObject.refExtId = value["RefExtId"].asString();
+		configNames_.push_back(configNamesObject);
+	}
 	if(!value["HasConfig"].isNull())
 		hasConfig_ = value["HasConfig"].asString() == "true";
-	if(!value["ConfigNames"].isNull())
-		configNames_ = value["ConfigNames"].asString();
 	if(!value["BizCode"].isNull())
 		bizCode_ = value["BizCode"].asString();
 
 }
 
-std::string DescribeConfigNameResult::getConfigNames()const
+std::vector<DescribeConfigNameResult::ConfigName> DescribeConfigNameResult::getConfigNames()const
 {
 	return configNames_;
 }

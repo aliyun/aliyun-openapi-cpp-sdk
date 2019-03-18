@@ -40,38 +40,37 @@ void DescribePersonMachineListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allPersonMachineRes = value["PersonMachineRes"];
-	for (auto value : allPersonMachineRes)
+	auto personMachineResNode = value["PersonMachineRes"];
+	if(!personMachineResNode["HasConfiguration"].isNull())
+		personMachineRes_.hasConfiguration = personMachineResNode["HasConfiguration"].asString();
+	auto allPersonMachines = value["PersonMachines"]["PersonMachine"];
+	for (auto value : allPersonMachines)
 	{
-		PersonMachineRes personMachineResObject;
-		if(!value["HasConfiguration"].isNull())
-			personMachineResObject.hasConfiguration = value["HasConfiguration"].asString();
-		auto allPersonMachines = value["PersonMachines"]["PersonMachine"];
-		for (auto value : allPersonMachines)
-		{
-			PersonMachineRes::PersonMachine personMachineObject;
-			if(!value["ConfigurationName"].isNull())
-				personMachineObject.configurationName = value["ConfigurationName"].asString();
-			if(!value["Appkey"].isNull())
-				personMachineObject.appkey = value["Appkey"].asString();
-			if(!value["ConfigurationMethod"].isNull())
-				personMachineObject.configurationMethod = value["ConfigurationMethod"].asString();
-			if(!value["ApplyType"].isNull())
-				personMachineObject.applyType = value["ApplyType"].asString();
-			if(!value["Scene"].isNull())
-				personMachineObject.scene = value["Scene"].asString();
-			if(!value["LastUpdate"].isNull())
-				personMachineObject.lastUpdate = value["LastUpdate"].asString();
-			personMachineResObject.personMachines.push_back(personMachineObject);
-		}
-		personMachineRes_.push_back(personMachineResObject);
+		PersonMachineRes::PersonMachine personMachineObject;
+		if(!value["ConfigurationName"].isNull())
+			personMachineObject.configurationName = value["ConfigurationName"].asString();
+		if(!value["Appkey"].isNull())
+			personMachineObject.appkey = value["Appkey"].asString();
+		if(!value["ConfigurationMethod"].isNull())
+			personMachineObject.configurationMethod = value["ConfigurationMethod"].asString();
+		if(!value["ApplyType"].isNull())
+			personMachineObject.applyType = value["ApplyType"].asString();
+		if(!value["Scene"].isNull())
+			personMachineObject.scene = value["Scene"].asString();
+		if(!value["LastUpdate"].isNull())
+			personMachineObject.lastUpdate = value["LastUpdate"].asString();
+		if(!value["ExtId"].isNull())
+			personMachineObject.extId = value["ExtId"].asString();
+		if(!value["SceneOriginal"].isNull())
+			personMachineObject.sceneOriginal = value["SceneOriginal"].asString();
+		personMachineRes_.personMachines.push_back(personMachineObject);
 	}
 	if(!value["BizCode"].isNull())
 		bizCode_ = value["BizCode"].asString();
 
 }
 
-std::vector<DescribePersonMachineListResult::PersonMachineRes> DescribePersonMachineListResult::getPersonMachineRes()const
+DescribePersonMachineListResult::PersonMachineRes DescribePersonMachineListResult::getPersonMachineRes()const
 {
 	return personMachineRes_;
 }

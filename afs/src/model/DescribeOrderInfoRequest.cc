@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/afs/model/DescribeConfigNameRequest.h>
+#include <alibabacloud/afs/model/DescribeOrderInfoRequest.h>
 
-using AlibabaCloud::Afs::Model::DescribeConfigNameRequest;
+using AlibabaCloud::Afs::Model::DescribeOrderInfoRequest;
 
-DescribeConfigNameRequest::DescribeConfigNameRequest() :
-	RpcServiceRequest("afs", "2018-01-12", "DescribeConfigName")
+DescribeOrderInfoRequest::DescribeOrderInfoRequest() :
+	RpcServiceRequest("afs", "2018-01-12", "DescribeOrderInfo")
 {}
 
-DescribeConfigNameRequest::~DescribeConfigNameRequest()
+DescribeOrderInfoRequest::~DescribeOrderInfoRequest()
 {}
 
-std::string DescribeConfigNameRequest::getSourceIp()const
+std::string DescribeOrderInfoRequest::getSourceIp()const
 {
 	return sourceIp_;
 }
 
-void DescribeConfigNameRequest::setSourceIp(const std::string& sourceIp)
+void DescribeOrderInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);

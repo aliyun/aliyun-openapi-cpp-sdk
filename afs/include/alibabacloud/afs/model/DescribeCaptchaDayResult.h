@@ -49,14 +49,14 @@ namespace AlibabaCloud
 				DescribeCaptchaDayResult();
 				explicit DescribeCaptchaDayResult(const std::string &payload);
 				~DescribeCaptchaDayResult();
-				std::vector<CaptchaDay> getCaptchaDay()const;
+				CaptchaDay getCaptchaDay()const;
 				std::string getBizCode()const;
 				bool getHasData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<CaptchaDay> captchaDay_;
+				CaptchaDay captchaDay_;
 				std::string bizCode_;
 				bool hasData_;
 

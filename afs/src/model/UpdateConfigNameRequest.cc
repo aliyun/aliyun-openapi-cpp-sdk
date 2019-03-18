@@ -14,58 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/afs/model/DescribeCaptchaRiskRequest.h>
+#include <alibabacloud/afs/model/UpdateConfigNameRequest.h>
 
-using AlibabaCloud::Afs::Model::DescribeCaptchaRiskRequest;
+using AlibabaCloud::Afs::Model::UpdateConfigNameRequest;
 
-DescribeCaptchaRiskRequest::DescribeCaptchaRiskRequest() :
-	RpcServiceRequest("afs", "2018-01-12", "DescribeCaptchaRisk")
+UpdateConfigNameRequest::UpdateConfigNameRequest() :
+	RpcServiceRequest("afs", "2018-01-12", "UpdateConfigName")
 {}
 
-DescribeCaptchaRiskRequest::~DescribeCaptchaRiskRequest()
+UpdateConfigNameRequest::~UpdateConfigNameRequest()
 {}
 
-std::string DescribeCaptchaRiskRequest::getSourceIp()const
+std::string UpdateConfigNameRequest::getSourceIp()const
 {
 	return sourceIp_;
 }
 
-void DescribeCaptchaRiskRequest::setSourceIp(const std::string& sourceIp)
+void UpdateConfigNameRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeCaptchaRiskRequest::getConfigName()const
+std::string UpdateConfigNameRequest::getConfigName()const
 {
 	return configName_;
 }
 
-void DescribeCaptchaRiskRequest::setConfigName(const std::string& configName)
+void UpdateConfigNameRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
 	setParameter("ConfigName", configName);
 }
 
-std::string DescribeCaptchaRiskRequest::getRefExtId()const
+std::string UpdateConfigNameRequest::getRefExtId()const
 {
 	return refExtId_;
 }
 
-void DescribeCaptchaRiskRequest::setRefExtId(const std::string& refExtId)
+void UpdateConfigNameRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
 	setParameter("RefExtId", refExtId);
 }
 
-std::string DescribeCaptchaRiskRequest::getTime()const
+std::string UpdateConfigNameRequest::getLang()const
 {
-	return time_;
+	return lang_;
 }
 
-void DescribeCaptchaRiskRequest::setTime(const std::string& time)
+void UpdateConfigNameRequest::setLang(const std::string& lang)
 {
-	time_ = time;
-	setParameter("Time", time);
+	lang_ = lang;
+	setParameter("Lang", lang);
 }
 

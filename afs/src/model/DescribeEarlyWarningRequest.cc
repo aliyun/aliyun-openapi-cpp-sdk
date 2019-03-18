@@ -25,17 +25,6 @@ DescribeEarlyWarningRequest::DescribeEarlyWarningRequest() :
 DescribeEarlyWarningRequest::~DescribeEarlyWarningRequest()
 {}
 
-long DescribeEarlyWarningRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeEarlyWarningRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DescribeEarlyWarningRequest::getSourceIp()const
 {
 	return sourceIp_;

@@ -14,25 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/afs/model/DescribeConfigNameRequest.h>
+#include <alibabacloud/afs/model/DescribeCaptchaOrderRequest.h>
 
-using AlibabaCloud::Afs::Model::DescribeConfigNameRequest;
+using AlibabaCloud::Afs::Model::DescribeCaptchaOrderRequest;
 
-DescribeConfigNameRequest::DescribeConfigNameRequest() :
-	RpcServiceRequest("afs", "2018-01-12", "DescribeConfigName")
+DescribeCaptchaOrderRequest::DescribeCaptchaOrderRequest() :
+	RpcServiceRequest("afs", "2018-01-12", "DescribeCaptchaOrder")
 {}
 
-DescribeConfigNameRequest::~DescribeConfigNameRequest()
+DescribeCaptchaOrderRequest::~DescribeCaptchaOrderRequest()
 {}
 
-std::string DescribeConfigNameRequest::getSourceIp()const
+std::string DescribeCaptchaOrderRequest::getSourceIp()const
 {
 	return sourceIp_;
 }
 
-void DescribeConfigNameRequest::setSourceIp(const std::string& sourceIp)
+void DescribeCaptchaOrderRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeCaptchaOrderRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeCaptchaOrderRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setParameter("Lang", lang);
 }
 
