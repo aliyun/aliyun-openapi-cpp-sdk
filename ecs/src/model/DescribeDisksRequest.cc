@@ -110,7 +110,7 @@ bool DescribeDisksRequest::getDeleteAutoSnapshot()const
 void DescribeDisksRequest::setDeleteAutoSnapshot(bool deleteAutoSnapshot)
 {
 	deleteAutoSnapshot_ = deleteAutoSnapshot;
-	setParameter("DeleteAutoSnapshot", std::to_string(deleteAutoSnapshot));
+	setParameter("DeleteAutoSnapshot", deleteAutoSnapshot ? "true" : "false");
 }
 
 std::string DescribeDisksRequest::getResourceGroupId()const
@@ -215,7 +215,7 @@ bool DescribeDisksRequest::getDeleteWithInstance()const
 void DescribeDisksRequest::setDeleteWithInstance(bool deleteWithInstance)
 {
 	deleteWithInstance_ = deleteWithInstance;
-	setParameter("DeleteWithInstance", std::to_string(deleteWithInstance));
+	setParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
 }
 
 bool DescribeDisksRequest::getEnableAutoSnapshot()const
@@ -226,7 +226,7 @@ bool DescribeDisksRequest::getEnableAutoSnapshot()const
 void DescribeDisksRequest::setEnableAutoSnapshot(bool enableAutoSnapshot)
 {
 	enableAutoSnapshot_ = enableAutoSnapshot;
-	setParameter("EnableAutoSnapshot", std::to_string(enableAutoSnapshot));
+	setParameter("EnableAutoSnapshot", enableAutoSnapshot ? "true" : "false");
 }
 
 bool DescribeDisksRequest::getDryRun()const
@@ -237,7 +237,7 @@ bool DescribeDisksRequest::getDryRun()const
 void DescribeDisksRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", std::to_string(dryRun));
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeDisksRequest::getResourceOwnerAccount()const
@@ -281,7 +281,7 @@ bool DescribeDisksRequest::getPortable()const
 void DescribeDisksRequest::setPortable(bool portable)
 {
 	portable_ = portable;
-	setParameter("Portable", std::to_string(portable));
+	setParameter("Portable", portable ? "true" : "false");
 }
 
 bool DescribeDisksRequest::getEnableAutomatedSnapshotPolicy()const
@@ -292,7 +292,7 @@ bool DescribeDisksRequest::getEnableAutomatedSnapshotPolicy()const
 void DescribeDisksRequest::setEnableAutomatedSnapshotPolicy(bool enableAutomatedSnapshotPolicy)
 {
 	enableAutomatedSnapshotPolicy_ = enableAutomatedSnapshotPolicy;
-	setParameter("EnableAutomatedSnapshotPolicy", std::to_string(enableAutomatedSnapshotPolicy));
+	setParameter("EnableAutomatedSnapshotPolicy", enableAutomatedSnapshotPolicy ? "true" : "false");
 }
 
 std::string DescribeDisksRequest::getFilter2Key()const
@@ -348,7 +348,7 @@ bool DescribeDisksRequest::getEnableShared()const
 void DescribeDisksRequest::setEnableShared(bool enableShared)
 {
 	enableShared_ = enableShared;
-	setParameter("EnableShared", std::to_string(enableShared));
+	setParameter("EnableShared", enableShared ? "true" : "false");
 }
 
 std::string DescribeDisksRequest::getInstanceId()const
@@ -370,7 +370,7 @@ bool DescribeDisksRequest::getEncrypted()const
 void DescribeDisksRequest::setEncrypted(bool encrypted)
 {
 	encrypted_ = encrypted;
-	setParameter("Encrypted", std::to_string(encrypted));
+	setParameter("Encrypted", encrypted ? "true" : "false");
 }
 
 std::string DescribeDisksRequest::getZoneId()const

@@ -187,7 +187,7 @@ bool CreateRouterInterfaceRequest::getAutoPay()const
 void CreateRouterInterfaceRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setParameter("AutoPay", std::to_string(autoPay));
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateRouterInterfaceRequest::getResourceOwnerAccount()const

@@ -50,10 +50,6 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getImageName()const;
-				void setImageName(const std::string& imageName);
 				std::string getRoleName()const;
 				void setRoleName(const std::string& roleName);
 				std::string getDescription()const;
@@ -64,6 +60,12 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getPlatform()const;
 				void setPlatform(const std::string& platform);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getImageName()const;
+				void setImageName(const std::string& imageName);
 				std::string getArchitecture()const;
 				void setArchitecture(const std::string& architecture);
 
@@ -71,13 +73,14 @@ namespace AlibabaCloud
 				std::vector<DiskDeviceMapping> diskDeviceMapping_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string imageName_;
 				std::string roleName_;
 				std::string description_;
 				std::string oSType_;
 				long ownerId_;
 				std::string platform_;
+				std::string sourceRegionId_;
+				std::string regionId_;
+				std::string imageName_;
 				std::string architecture_;
 
 			};

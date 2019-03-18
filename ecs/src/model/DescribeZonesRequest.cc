@@ -110,6 +110,6 @@ bool DescribeZonesRequest::getVerbose()const
 void DescribeZonesRequest::setVerbose(bool verbose)
 {
 	verbose_ = verbose;
-	setParameter("Verbose", std::to_string(verbose));
+	setParameter("Verbose", verbose ? "true" : "false");
 }
 

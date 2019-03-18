@@ -44,7 +44,7 @@ bool StartInstanceRequest::getInitLocalDisk()const
 void StartInstanceRequest::setInitLocalDisk(bool initLocalDisk)
 {
 	initLocalDisk_ = initLocalDisk;
-	setParameter("InitLocalDisk", std::to_string(initLocalDisk));
+	setParameter("InitLocalDisk", initLocalDisk ? "true" : "false");
 }
 
 long StartInstanceRequest::getResourceOwnerId()const
@@ -77,7 +77,7 @@ bool StartInstanceRequest::getDryRun()const
 void StartInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", std::to_string(dryRun));
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string StartInstanceRequest::getResourceOwnerAccount()const

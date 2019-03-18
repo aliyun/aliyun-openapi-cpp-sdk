@@ -121,6 +121,6 @@ bool AttachDiskRequest::getDeleteWithInstance()const
 void AttachDiskRequest::setDeleteWithInstance(bool deleteWithInstance)
 {
 	deleteWithInstance_ = deleteWithInstance;
-	setParameter("DeleteWithInstance", std::to_string(deleteWithInstance));
+	setParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
 }
 

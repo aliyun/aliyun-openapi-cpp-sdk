@@ -165,7 +165,7 @@ bool ReplaceSystemDiskRequest::getPasswordInherit()const
 void ReplaceSystemDiskRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setParameter("PasswordInherit", std::to_string(passwordInherit));
+	setParameter("PasswordInherit", passwordInherit ? "true" : "false");
 }
 
 int ReplaceSystemDiskRequest::getSystemDiskSize()const
@@ -198,7 +198,7 @@ bool ReplaceSystemDiskRequest::getUseAdditionalService()const
 void ReplaceSystemDiskRequest::setUseAdditionalService(bool useAdditionalService)
 {
 	useAdditionalService_ = useAdditionalService;
-	setParameter("UseAdditionalService", std::to_string(useAdditionalService));
+	setParameter("UseAdditionalService", useAdditionalService ? "true" : "false");
 }
 
 std::string ReplaceSystemDiskRequest::getArchitecture()const

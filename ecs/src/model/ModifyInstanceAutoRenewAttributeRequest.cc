@@ -88,7 +88,7 @@ bool ModifyInstanceAutoRenewAttributeRequest::getAutoRenew()const
 void ModifyInstanceAutoRenewAttributeRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setParameter("AutoRenew", std::to_string(autoRenew));
+	setParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string ModifyInstanceAutoRenewAttributeRequest::getResourceOwnerAccount()const

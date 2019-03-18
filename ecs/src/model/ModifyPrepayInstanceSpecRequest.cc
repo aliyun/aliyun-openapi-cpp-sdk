@@ -44,7 +44,7 @@ bool ModifyPrepayInstanceSpecRequest::getAutoPay()const
 void ModifyPrepayInstanceSpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setParameter("AutoPay", std::to_string(autoPay));
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getResourceOwnerAccount()const
@@ -154,7 +154,7 @@ bool ModifyPrepayInstanceSpecRequest::getMigrateAcrossZone()const
 void ModifyPrepayInstanceSpecRequest::setMigrateAcrossZone(bool migrateAcrossZone)
 {
 	migrateAcrossZone_ = migrateAcrossZone;
-	setParameter("MigrateAcrossZone", std::to_string(migrateAcrossZone));
+	setParameter("MigrateAcrossZone", migrateAcrossZone ? "true" : "false");
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getInstanceType()const

@@ -66,7 +66,7 @@ bool DescribeResourcesModificationRequest::getProxy_original_security_transport(
 void DescribeResourcesModificationRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeResourcesModificationRequest::getProxy_original_source_ip()const
@@ -165,7 +165,7 @@ bool DescribeResourcesModificationRequest::getEnable()const
 void DescribeResourcesModificationRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", std::to_string(enable));
+	setParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeResourcesModificationRequest::getRequestContent()const
@@ -187,7 +187,7 @@ bool DescribeResourcesModificationRequest::getMigrateAcrossZone()const
 void DescribeResourcesModificationRequest::setMigrateAcrossZone(bool migrateAcrossZone)
 {
 	migrateAcrossZone_ = migrateAcrossZone;
-	setParameter("MigrateAcrossZone", std::to_string(migrateAcrossZone));
+	setParameter("MigrateAcrossZone", migrateAcrossZone ? "true" : "false");
 }
 
 std::string DescribeResourcesModificationRequest::getCallerBidEmail()const
@@ -319,7 +319,7 @@ bool DescribeResourcesModificationRequest::getProxy_trust_transport_info()const
 void DescribeResourcesModificationRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeResourcesModificationRequest::getAk_mfa_present()const
@@ -330,7 +330,7 @@ bool DescribeResourcesModificationRequest::getAk_mfa_present()const
 void DescribeResourcesModificationRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeResourcesModificationRequest::getSecurity_transport()const
@@ -341,7 +341,7 @@ bool DescribeResourcesModificationRequest::getSecurity_transport()const
 void DescribeResourcesModificationRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeResourcesModificationRequest::getDestinationResource()const

@@ -66,7 +66,7 @@ bool ModifyInstanceSpecRequest::getAllowMigrateAcrossZone()const
 void ModifyInstanceSpecRequest::setAllowMigrateAcrossZone(bool allowMigrateAcrossZone)
 {
 	allowMigrateAcrossZone_ = allowMigrateAcrossZone;
-	setParameter("AllowMigrateAcrossZone", std::to_string(allowMigrateAcrossZone));
+	setParameter("AllowMigrateAcrossZone", allowMigrateAcrossZone ? "true" : "false");
 }
 
 std::string ModifyInstanceSpecRequest::getOwnerAccount()const
@@ -154,7 +154,7 @@ bool ModifyInstanceSpecRequest::getAsync()const
 void ModifyInstanceSpecRequest::setAsync(bool async)
 {
 	async_ = async;
-	setParameter("Async", std::to_string(async));
+	setParameter("Async", async ? "true" : "false");
 }
 
 std::string ModifyInstanceSpecRequest::getInstanceId()const

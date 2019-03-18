@@ -88,7 +88,7 @@ bool DeleteSnapshotRequest::getForce()const
 void DeleteSnapshotRequest::setForce(bool force)
 {
 	force_ = force;
-	setParameter("Force", std::to_string(force));
+	setParameter("Force", force ? "true" : "false");
 }
 
 long DeleteSnapshotRequest::getOwnerId()const

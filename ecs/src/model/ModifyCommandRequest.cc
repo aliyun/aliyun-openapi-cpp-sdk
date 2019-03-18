@@ -66,7 +66,7 @@ bool ModifyCommandRequest::getProxy_original_security_transport()const
 void ModifyCommandRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ModifyCommandRequest::getDescription()const
@@ -198,7 +198,7 @@ bool ModifyCommandRequest::getEnable()const
 void ModifyCommandRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", std::to_string(enable));
+	setParameter("Enable", enable ? "true" : "false");
 }
 
 std::string ModifyCommandRequest::getRequestContent()const
@@ -308,7 +308,7 @@ bool ModifyCommandRequest::getProxy_trust_transport_info()const
 void ModifyCommandRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ModifyCommandRequest::getAk_mfa_present()const
@@ -319,7 +319,7 @@ bool ModifyCommandRequest::getAk_mfa_present()const
 void ModifyCommandRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool ModifyCommandRequest::getSecurity_transport()const
@@ -330,7 +330,7 @@ bool ModifyCommandRequest::getSecurity_transport()const
 void ModifyCommandRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ModifyCommandRequest::getRequestId()const

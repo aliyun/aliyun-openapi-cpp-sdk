@@ -25,6 +25,17 @@ RenewInstanceRequest::RenewInstanceRequest() :
 RenewInstanceRequest::~RenewInstanceRequest()
 {}
 
+std::string RenewInstanceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void RenewInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
 long RenewInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

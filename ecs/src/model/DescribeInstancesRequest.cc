@@ -110,7 +110,7 @@ bool DescribeInstancesRequest::getIoOptimized()const
 void DescribeInstancesRequest::setIoOptimized(bool ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setParameter("IoOptimized", std::to_string(ioOptimized));
+	setParameter("IoOptimized", ioOptimized ? "true" : "false");
 }
 
 std::string DescribeInstancesRequest::getSecurityGroupId()const
@@ -231,7 +231,7 @@ bool DescribeInstancesRequest::getDeviceAvailable()const
 void DescribeInstancesRequest::setDeviceAvailable(bool deviceAvailable)
 {
 	deviceAvailable_ = deviceAvailable;
-	setParameter("DeviceAvailable", std::to_string(deviceAvailable));
+	setParameter("DeviceAvailable", deviceAvailable ? "true" : "false");
 }
 
 int DescribeInstancesRequest::getPageSize()const
@@ -314,7 +314,7 @@ bool DescribeInstancesRequest::getDryRun()const
 void DescribeInstancesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", std::to_string(dryRun));
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeInstancesRequest::getResourceOwnerAccount()const
@@ -369,7 +369,7 @@ bool DescribeInstancesRequest::getNeedSaleCycle()const
 void DescribeInstancesRequest::setNeedSaleCycle(bool needSaleCycle)
 {
 	needSaleCycle_ = needSaleCycle;
-	setParameter("NeedSaleCycle", std::to_string(needSaleCycle));
+	setParameter("NeedSaleCycle", needSaleCycle ? "true" : "false");
 }
 
 std::string DescribeInstancesRequest::getFilter2Key()const

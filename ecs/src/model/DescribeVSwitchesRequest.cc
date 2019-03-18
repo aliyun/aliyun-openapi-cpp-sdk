@@ -121,7 +121,7 @@ bool DescribeVSwitchesRequest::getIsDefault()const
 void DescribeVSwitchesRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setParameter("IsDefault", std::to_string(isDefault));
+	setParameter("IsDefault", isDefault ? "true" : "false");
 }
 
 long DescribeVSwitchesRequest::getOwnerId()const

@@ -193,7 +193,7 @@ bool DescribeSnapshotsRequest::getDryRun()const
 void DescribeSnapshotsRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", std::to_string(dryRun));
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeSnapshotsRequest::getResourceOwnerAccount()const
@@ -281,7 +281,7 @@ bool DescribeSnapshotsRequest::getEncrypted()const
 void DescribeSnapshotsRequest::setEncrypted(bool encrypted)
 {
 	encrypted_ = encrypted;
-	setParameter("Encrypted", std::to_string(encrypted));
+	setParameter("Encrypted", encrypted ? "true" : "false");
 }
 
 std::string DescribeSnapshotsRequest::getSnapshotType()const

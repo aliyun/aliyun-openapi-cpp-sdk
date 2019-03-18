@@ -99,7 +99,7 @@ bool CreateInstanceRequest::getDeletionProtection()const
 void CreateInstanceRequest::setDeletionProtection(bool deletionProtection)
 {
 	deletionProtection_ = deletionProtection;
-	setParameter("DeletionProtection", std::to_string(deletionProtection));
+	setParameter("DeletionProtection", deletionProtection ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getResourceGroupId()const
@@ -193,7 +193,7 @@ bool CreateInstanceRequest::getDryRun()const
 void CreateInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", std::to_string(dryRun));
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 long CreateInstanceRequest::getOwnerId()const
@@ -281,7 +281,7 @@ bool CreateInstanceRequest::getAutoRenew()const
 void CreateInstanceRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setParameter("AutoRenew", std::to_string(autoRenew));
+	setParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getInternetChargeType()const
@@ -325,7 +325,7 @@ bool CreateInstanceRequest::getUseAdditionalService()const
 void CreateInstanceRequest::setUseAdditionalService(bool useAdditionalService)
 {
 	useAdditionalService_ = useAdditionalService;
-	setParameter("UseAdditionalService", std::to_string(useAdditionalService));
+	setParameter("UseAdditionalService", useAdditionalService ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getImageId()const
@@ -457,7 +457,7 @@ bool CreateInstanceRequest::getPasswordInherit()const
 void CreateInstanceRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setParameter("PasswordInherit", std::to_string(passwordInherit));
+	setParameter("PasswordInherit", passwordInherit ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getRegionId()const
@@ -607,12 +607,12 @@ void CreateInstanceRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setParameter(str + ".DiskName", obj.diskName);
 		setParameter(str + ".SnapshotId", obj.snapshotId);
 		setParameter(str + ".Size", std::to_string(obj.size));
-		setParameter(str + ".Encrypted", std::to_string(obj.encrypted));
+		setParameter(str + ".Encrypted", obj.encrypted ? "true" : "false");
 		setParameter(str + ".Description", obj.description);
 		setParameter(str + ".Category", obj.category);
 		setParameter(str + ".KMSKeyId", obj.kMSKeyId);
 		setParameter(str + ".Device", obj.device);
-		setParameter(str + ".DeleteWithInstance", std::to_string(obj.deleteWithInstance));
+		setParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
 	}
 }
 

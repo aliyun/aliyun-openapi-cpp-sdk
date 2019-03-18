@@ -44,7 +44,7 @@ bool ModifyInstanceNetworkSpecRequest::getAutoPay()const
 void ModifyInstanceNetworkSpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setParameter("AutoPay", std::to_string(autoPay));
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyInstanceNetworkSpecRequest::getResourceOwnerAccount()const
@@ -176,6 +176,6 @@ bool ModifyInstanceNetworkSpecRequest::getAllocatePublicIp()const
 void ModifyInstanceNetworkSpecRequest::setAllocatePublicIp(bool allocatePublicIp)
 {
 	allocatePublicIp_ = allocatePublicIp;
-	setParameter("AllocatePublicIp", std::to_string(allocatePublicIp));
+	setParameter("AllocatePublicIp", allocatePublicIp ? "true" : "false");
 }
 

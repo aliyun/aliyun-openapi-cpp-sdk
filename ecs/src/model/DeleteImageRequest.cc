@@ -88,7 +88,7 @@ bool DeleteImageRequest::getForce()const
 void DeleteImageRequest::setForce(bool force)
 {
 	force_ = force;
-	setParameter("Force", std::to_string(force));
+	setParameter("Force", force ? "true" : "false");
 }
 
 long DeleteImageRequest::getOwnerId()const

@@ -55,7 +55,7 @@ bool ModifyInstanceAttributeRequest::getRecyclable()const
 void ModifyInstanceAttributeRequest::setRecyclable(bool recyclable)
 {
 	recyclable_ = recyclable;
-	setParameter("Recyclable", std::to_string(recyclable));
+	setParameter("Recyclable", recyclable ? "true" : "false");
 }
 
 std::string ModifyInstanceAttributeRequest::getOwnerAccount()const
@@ -121,7 +121,7 @@ bool ModifyInstanceAttributeRequest::getDeletionProtection()const
 void ModifyInstanceAttributeRequest::setDeletionProtection(bool deletionProtection)
 {
 	deletionProtection_ = deletionProtection;
-	setParameter("DeletionProtection", std::to_string(deletionProtection));
+	setParameter("DeletionProtection", deletionProtection ? "true" : "false");
 }
 
 std::string ModifyInstanceAttributeRequest::getUserData()const

@@ -198,7 +198,7 @@ bool CreateLaunchTemplateVersionRequest::getEnable()const
 void CreateLaunchTemplateVersionRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", std::to_string(enable));
+	setParameter("Enable", enable ? "true" : "false");
 }
 
 int CreateLaunchTemplateVersionRequest::getSystemDiskIops()const
@@ -292,7 +292,7 @@ bool CreateLaunchTemplateVersionRequest::getAk_mfa_present()const
 void CreateLaunchTemplateVersionRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateLaunchTemplateVersionRequest::getSecurity_transport()const
@@ -303,7 +303,7 @@ bool CreateLaunchTemplateVersionRequest::getSecurity_transport()const
 void CreateLaunchTemplateVersionRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateLaunchTemplateVersionRequest::getVSwitchId()const
@@ -446,7 +446,7 @@ bool CreateLaunchTemplateVersionRequest::getProxy_original_security_transport()c
 void CreateLaunchTemplateVersionRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateLaunchTemplateVersionRequest::getDescription()const
@@ -501,7 +501,7 @@ bool CreateLaunchTemplateVersionRequest::getPasswordInherit()const
 void CreateLaunchTemplateVersionRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setParameter("PasswordInherit", std::to_string(passwordInherit));
+	setParameter("PasswordInherit", passwordInherit ? "true" : "false");
 }
 
 std::string CreateLaunchTemplateVersionRequest::getRegionId()const
@@ -567,7 +567,7 @@ bool CreateLaunchTemplateVersionRequest::getEnableVmOsConfig()const
 void CreateLaunchTemplateVersionRequest::setEnableVmOsConfig(bool enableVmOsConfig)
 {
 	enableVmOsConfig_ = enableVmOsConfig;
-	setParameter("EnableVmOsConfig", std::to_string(enableVmOsConfig));
+	setParameter("EnableVmOsConfig", enableVmOsConfig ? "true" : "false");
 }
 
 std::vector<CreateLaunchTemplateVersionRequest::NetworkInterface> CreateLaunchTemplateVersionRequest::getNetworkInterface()const
@@ -696,7 +696,7 @@ void CreateLaunchTemplateVersionRequest::setDataDisk(const std::vector<DataDisk>
 		setParameter(str + ".Encrypted", obj.encrypted);
 		setParameter(str + ".DiskName", obj.diskName);
 		setParameter(str + ".Description", obj.description);
-		setParameter(str + ".DeleteWithInstance", std::to_string(obj.deleteWithInstance));
+		setParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
 		setParameter(str + ".Device", obj.device);
 	}
 }
@@ -709,7 +709,7 @@ bool CreateLaunchTemplateVersionRequest::getProxy_trust_transport_info()const
 void CreateLaunchTemplateVersionRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 int CreateLaunchTemplateVersionRequest::getSystemDiskSize()const

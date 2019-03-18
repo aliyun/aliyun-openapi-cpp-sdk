@@ -55,7 +55,7 @@ bool DetachNetworkInterfaceRequest::getProxy_original_security_transport()const
 void DetachNetworkInterfaceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DetachNetworkInterfaceRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool DetachNetworkInterfaceRequest::getEnable()const
 void DetachNetworkInterfaceRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", std::to_string(enable));
+	setParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DetachNetworkInterfaceRequest::getRequestContent()const
@@ -253,7 +253,7 @@ bool DetachNetworkInterfaceRequest::getProxy_trust_transport_info()const
 void DetachNetworkInterfaceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DetachNetworkInterfaceRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DetachNetworkInterfaceRequest::getAk_mfa_present()const
 void DetachNetworkInterfaceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DetachNetworkInterfaceRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DetachNetworkInterfaceRequest::getSecurity_transport()const
 void DetachNetworkInterfaceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DetachNetworkInterfaceRequest::getInstanceId()const

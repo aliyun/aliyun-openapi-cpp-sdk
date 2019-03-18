@@ -55,7 +55,7 @@ bool ModifyInstanceChargeTypeRequest::getDryRun()const
 void ModifyInstanceChargeTypeRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", std::to_string(dryRun));
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 bool ModifyInstanceChargeTypeRequest::getAutoPay()const
@@ -66,7 +66,7 @@ bool ModifyInstanceChargeTypeRequest::getAutoPay()const
 void ModifyInstanceChargeTypeRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setParameter("AutoPay", std::to_string(autoPay));
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 bool ModifyInstanceChargeTypeRequest::getIncludeDataDisks()const
@@ -77,7 +77,7 @@ bool ModifyInstanceChargeTypeRequest::getIncludeDataDisks()const
 void ModifyInstanceChargeTypeRequest::setIncludeDataDisks(bool includeDataDisks)
 {
 	includeDataDisks_ = includeDataDisks;
-	setParameter("IncludeDataDisks", std::to_string(includeDataDisks));
+	setParameter("IncludeDataDisks", includeDataDisks ? "true" : "false");
 }
 
 std::string ModifyInstanceChargeTypeRequest::getResourceOwnerAccount()const

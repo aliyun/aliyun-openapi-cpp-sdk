@@ -99,7 +99,7 @@ bool DescribeVpcsRequest::getIsDefault()const
 void DescribeVpcsRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setParameter("IsDefault", std::to_string(isDefault));
+	setParameter("IsDefault", isDefault ? "true" : "false");
 }
 
 long DescribeVpcsRequest::getOwnerId()const

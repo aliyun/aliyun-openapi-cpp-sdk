@@ -44,7 +44,7 @@ bool DescribeSecurityGroupsRequest::getDryRun()const
 void DescribeSecurityGroupsRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", std::to_string(dryRun));
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 bool DescribeSecurityGroupsRequest::getFuzzyQuery()const
@@ -55,7 +55,7 @@ bool DescribeSecurityGroupsRequest::getFuzzyQuery()const
 void DescribeSecurityGroupsRequest::setFuzzyQuery(bool fuzzyQuery)
 {
 	fuzzyQuery_ = fuzzyQuery;
-	setParameter("FuzzyQuery", std::to_string(fuzzyQuery));
+	setParameter("FuzzyQuery", fuzzyQuery ? "true" : "false");
 }
 
 std::string DescribeSecurityGroupsRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ bool DescribeSecurityGroupsRequest::getIsQueryEcsCount()const
 void DescribeSecurityGroupsRequest::setIsQueryEcsCount(bool isQueryEcsCount)
 {
 	isQueryEcsCount_ = isQueryEcsCount;
-	setParameter("IsQueryEcsCount", std::to_string(isQueryEcsCount));
+	setParameter("IsQueryEcsCount", isQueryEcsCount ? "true" : "false");
 }
 
 std::string DescribeSecurityGroupsRequest::getNetworkType()const

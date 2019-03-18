@@ -77,7 +77,7 @@ bool ReInitDiskRequest::getAutoStartInstance()const
 void ReInitDiskRequest::setAutoStartInstance(bool autoStartInstance)
 {
 	autoStartInstance_ = autoStartInstance;
-	setParameter("AutoStartInstance", std::to_string(autoStartInstance));
+	setParameter("AutoStartInstance", autoStartInstance ? "true" : "false");
 }
 
 std::string ReInitDiskRequest::getOwnerAccount()const

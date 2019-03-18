@@ -77,7 +77,7 @@ bool ModifyDiskChargeTypeRequest::getAutoPay()const
 void ModifyDiskChargeTypeRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setParameter("AutoPay", std::to_string(autoPay));
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyDiskChargeTypeRequest::getResourceOwnerAccount()const

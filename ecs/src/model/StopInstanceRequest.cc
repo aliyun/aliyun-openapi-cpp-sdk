@@ -66,7 +66,7 @@ bool StopInstanceRequest::getDryRun()const
 void StopInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", std::to_string(dryRun));
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string StopInstanceRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ bool StopInstanceRequest::getConfirmStop()const
 void StopInstanceRequest::setConfirmStop(bool confirmStop)
 {
 	confirmStop_ = confirmStop;
-	setParameter("ConfirmStop", std::to_string(confirmStop));
+	setParameter("ConfirmStop", confirmStop ? "true" : "false");
 }
 
 std::string StopInstanceRequest::getOwnerAccount()const
@@ -132,7 +132,7 @@ bool StopInstanceRequest::getHibernate()const
 void StopInstanceRequest::setHibernate(bool hibernate)
 {
 	hibernate_ = hibernate;
-	setParameter("Hibernate", std::to_string(hibernate));
+	setParameter("Hibernate", hibernate ? "true" : "false");
 }
 
 bool StopInstanceRequest::getForceStop()const
@@ -143,6 +143,6 @@ bool StopInstanceRequest::getForceStop()const
 void StopInstanceRequest::setForceStop(bool forceStop)
 {
 	forceStop_ = forceStop;
-	setParameter("ForceStop", std::to_string(forceStop));
+	setParameter("ForceStop", forceStop ? "true" : "false");
 }
 

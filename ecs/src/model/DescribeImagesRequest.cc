@@ -132,7 +132,7 @@ bool DescribeImagesRequest::getIsSupportIoOptimized()const
 void DescribeImagesRequest::setIsSupportIoOptimized(bool isSupportIoOptimized)
 {
 	isSupportIoOptimized_ = isSupportIoOptimized;
-	setParameter("IsSupportIoOptimized", std::to_string(isSupportIoOptimized));
+	setParameter("IsSupportIoOptimized", isSupportIoOptimized ? "true" : "false");
 }
 
 std::string DescribeImagesRequest::getRegionId()const
@@ -165,7 +165,7 @@ bool DescribeImagesRequest::getIsSupportCloudinit()const
 void DescribeImagesRequest::setIsSupportCloudinit(bool isSupportCloudinit)
 {
 	isSupportCloudinit_ = isSupportCloudinit;
-	setParameter("IsSupportCloudinit", std::to_string(isSupportCloudinit));
+	setParameter("IsSupportCloudinit", isSupportCloudinit ? "true" : "false");
 }
 
 int DescribeImagesRequest::getPageSize()const
@@ -226,7 +226,7 @@ bool DescribeImagesRequest::getDryRun()const
 void DescribeImagesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", std::to_string(dryRun));
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeImagesRequest::getResourceOwnerAccount()const
@@ -259,7 +259,7 @@ bool DescribeImagesRequest::getShowExpired()const
 void DescribeImagesRequest::setShowExpired(bool showExpired)
 {
 	showExpired_ = showExpired;
-	setParameter("ShowExpired", std::to_string(showExpired));
+	setParameter("ShowExpired", showExpired ? "true" : "false");
 }
 
 std::string DescribeImagesRequest::getOSType()const

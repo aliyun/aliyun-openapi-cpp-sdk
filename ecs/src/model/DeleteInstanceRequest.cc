@@ -88,7 +88,7 @@ bool DeleteInstanceRequest::getTerminateSubscription()const
 void DeleteInstanceRequest::setTerminateSubscription(bool terminateSubscription)
 {
 	terminateSubscription_ = terminateSubscription;
-	setParameter("TerminateSubscription", std::to_string(terminateSubscription));
+	setParameter("TerminateSubscription", terminateSubscription ? "true" : "false");
 }
 
 bool DeleteInstanceRequest::getForce()const
@@ -99,7 +99,7 @@ bool DeleteInstanceRequest::getForce()const
 void DeleteInstanceRequest::setForce(bool force)
 {
 	force_ = force;
-	setParameter("Force", std::to_string(force));
+	setParameter("Force", force ? "true" : "false");
 }
 
 long DeleteInstanceRequest::getOwnerId()const

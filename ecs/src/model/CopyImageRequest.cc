@@ -121,7 +121,7 @@ bool CopyImageRequest::getEncrypted()const
 void CopyImageRequest::setEncrypted(bool encrypted)
 {
 	encrypted_ = encrypted;
-	setParameter("Encrypted", std::to_string(encrypted));
+	setParameter("Encrypted", encrypted ? "true" : "false");
 }
 
 std::string CopyImageRequest::getRegionId()const

@@ -77,7 +77,7 @@ bool DescribeLaunchTemplateVersionsRequest::getDefaultVersion()const
 void DescribeLaunchTemplateVersionsRequest::setDefaultVersion(bool defaultVersion)
 {
 	defaultVersion_ = defaultVersion;
-	setParameter("DefaultVersion", std::to_string(defaultVersion));
+	setParameter("DefaultVersion", defaultVersion ? "true" : "false");
 }
 
 bool DescribeLaunchTemplateVersionsRequest::getProxy_original_security_transport()const
@@ -88,7 +88,7 @@ bool DescribeLaunchTemplateVersionsRequest::getProxy_original_security_transport
 void DescribeLaunchTemplateVersionsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 long DescribeLaunchTemplateVersionsRequest::getMinVersion()const
@@ -198,7 +198,7 @@ bool DescribeLaunchTemplateVersionsRequest::getEnable()const
 void DescribeLaunchTemplateVersionsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", std::to_string(enable));
+	setParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeLaunchTemplateVersionsRequest::getRequestContent()const
@@ -342,7 +342,7 @@ bool DescribeLaunchTemplateVersionsRequest::getProxy_trust_transport_info()const
 void DescribeLaunchTemplateVersionsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeLaunchTemplateVersionsRequest::getAk_mfa_present()const
@@ -353,7 +353,7 @@ bool DescribeLaunchTemplateVersionsRequest::getAk_mfa_present()const
 void DescribeLaunchTemplateVersionsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeLaunchTemplateVersionsRequest::getSecurity_transport()const
@@ -364,7 +364,7 @@ bool DescribeLaunchTemplateVersionsRequest::getSecurity_transport()const
 void DescribeLaunchTemplateVersionsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeLaunchTemplateVersionsRequest::getRequestId()const
@@ -386,6 +386,6 @@ bool DescribeLaunchTemplateVersionsRequest::getDetailFlag()const
 void DescribeLaunchTemplateVersionsRequest::setDetailFlag(bool detailFlag)
 {
 	detailFlag_ = detailFlag;
-	setParameter("DetailFlag", std::to_string(detailFlag));
+	setParameter("DetailFlag", detailFlag ? "true" : "false");
 }
 

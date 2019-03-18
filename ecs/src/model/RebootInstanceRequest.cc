@@ -66,7 +66,7 @@ bool RebootInstanceRequest::getDryRun()const
 void RebootInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", std::to_string(dryRun));
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string RebootInstanceRequest::getResourceOwnerAccount()const
@@ -110,6 +110,6 @@ bool RebootInstanceRequest::getForceStop()const
 void RebootInstanceRequest::setForceStop(bool forceStop)
 {
 	forceStop_ = forceStop;
-	setParameter("ForceStop", std::to_string(forceStop));
+	setParameter("ForceStop", forceStop ? "true" : "false");
 }
 

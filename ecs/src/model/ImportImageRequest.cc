@@ -68,28 +68,6 @@ void ImportImageRequest::setResourceOwnerAccount(const std::string& resourceOwne
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ImportImageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ImportImageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string ImportImageRequest::getImageName()const
-{
-	return imageName_;
-}
-
-void ImportImageRequest::setImageName(const std::string& imageName)
-{
-	imageName_ = imageName;
-	setParameter("ImageName", imageName);
-}
-
 std::string ImportImageRequest::getRoleName()const
 {
 	return roleName_;
@@ -143,6 +121,39 @@ void ImportImageRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
 	setParameter("Platform", platform);
+}
+
+std::string ImportImageRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ImportImageRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setParameter("SourceRegionId", sourceRegionId);
+}
+
+std::string ImportImageRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ImportImageRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string ImportImageRequest::getImageName()const
+{
+	return imageName_;
+}
+
+void ImportImageRequest::setImageName(const std::string& imageName)
+{
+	imageName_ = imageName;
+	setParameter("ImageName", imageName);
 }
 
 std::string ImportImageRequest::getArchitecture()const

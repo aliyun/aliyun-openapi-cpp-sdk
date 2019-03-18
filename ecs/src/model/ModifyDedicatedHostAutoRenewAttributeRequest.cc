@@ -88,7 +88,7 @@ bool ModifyDedicatedHostAutoRenewAttributeRequest::getAutoRenew()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setParameter("AutoRenew", std::to_string(autoRenew));
+	setParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerAccount()const
