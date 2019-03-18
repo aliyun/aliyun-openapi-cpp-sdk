@@ -22,8 +22,14 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "CcsExport.h"
+#include "model/CreateTicketRequest.h"
+#include "model/CreateTicketResult.h"
+#include "model/QueryTicketRequest.h"
+#include "model/QueryTicketResult.h"
 #include "model/GetHotlineRecordRequest.h"
 #include "model/GetHotlineRecordResult.h"
+#include "model/ProceedTicketRequest.h"
+#include "model/ProceedTicketResult.h"
 #include "model/QueryHotlineRecordRequest.h"
 #include "model/QueryHotlineRecordResult.h"
 
@@ -35,9 +41,18 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_CCS_EXPORT CcsClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CreateTicketResult> CreateTicketOutcome;
+			typedef std::future<CreateTicketOutcome> CreateTicketOutcomeCallable;
+			typedef std::function<void(const CcsClient*, const Model::CreateTicketRequest&, const CreateTicketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTicketAsyncHandler;
+			typedef Outcome<Error, Model::QueryTicketResult> QueryTicketOutcome;
+			typedef std::future<QueryTicketOutcome> QueryTicketOutcomeCallable;
+			typedef std::function<void(const CcsClient*, const Model::QueryTicketRequest&, const QueryTicketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTicketAsyncHandler;
 			typedef Outcome<Error, Model::GetHotlineRecordResult> GetHotlineRecordOutcome;
 			typedef std::future<GetHotlineRecordOutcome> GetHotlineRecordOutcomeCallable;
 			typedef std::function<void(const CcsClient*, const Model::GetHotlineRecordRequest&, const GetHotlineRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetHotlineRecordAsyncHandler;
+			typedef Outcome<Error, Model::ProceedTicketResult> ProceedTicketOutcome;
+			typedef std::future<ProceedTicketOutcome> ProceedTicketOutcomeCallable;
+			typedef std::function<void(const CcsClient*, const Model::ProceedTicketRequest&, const ProceedTicketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProceedTicketAsyncHandler;
 			typedef Outcome<Error, Model::QueryHotlineRecordResult> QueryHotlineRecordOutcome;
 			typedef std::future<QueryHotlineRecordOutcome> QueryHotlineRecordOutcomeCallable;
 			typedef std::function<void(const CcsClient*, const Model::QueryHotlineRecordRequest&, const QueryHotlineRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryHotlineRecordAsyncHandler;
@@ -46,9 +61,18 @@ namespace AlibabaCloud
 			CcsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			CcsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~CcsClient();
+			CreateTicketOutcome createTicket(const Model::CreateTicketRequest &request)const;
+			void createTicketAsync(const Model::CreateTicketRequest& request, const CreateTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTicketOutcomeCallable createTicketCallable(const Model::CreateTicketRequest& request) const;
+			QueryTicketOutcome queryTicket(const Model::QueryTicketRequest &request)const;
+			void queryTicketAsync(const Model::QueryTicketRequest& request, const QueryTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryTicketOutcomeCallable queryTicketCallable(const Model::QueryTicketRequest& request) const;
 			GetHotlineRecordOutcome getHotlineRecord(const Model::GetHotlineRecordRequest &request)const;
 			void getHotlineRecordAsync(const Model::GetHotlineRecordRequest& request, const GetHotlineRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetHotlineRecordOutcomeCallable getHotlineRecordCallable(const Model::GetHotlineRecordRequest& request) const;
+			ProceedTicketOutcome proceedTicket(const Model::ProceedTicketRequest &request)const;
+			void proceedTicketAsync(const Model::ProceedTicketRequest& request, const ProceedTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ProceedTicketOutcomeCallable proceedTicketCallable(const Model::ProceedTicketRequest& request) const;
 			QueryHotlineRecordOutcome queryHotlineRecord(const Model::QueryHotlineRecordRequest &request)const;
 			void queryHotlineRecordAsync(const Model::QueryHotlineRecordRequest& request, const QueryHotlineRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryHotlineRecordOutcomeCallable queryHotlineRecordCallable(const Model::QueryHotlineRecordRequest& request) const;

@@ -21,15 +21,27 @@ set(ccs_public_header
 	include/alibabacloud/ccs/CcsExport.h )
 
 set(ccs_public_header_model 
+	include/alibabacloud/ccs/model/CreateTicketRequest.h
+	include/alibabacloud/ccs/model/CreateTicketResult.h
+	include/alibabacloud/ccs/model/QueryTicketRequest.h
+	include/alibabacloud/ccs/model/QueryTicketResult.h
 	include/alibabacloud/ccs/model/GetHotlineRecordRequest.h
 	include/alibabacloud/ccs/model/GetHotlineRecordResult.h
+	include/alibabacloud/ccs/model/ProceedTicketRequest.h
+	include/alibabacloud/ccs/model/ProceedTicketResult.h
 	include/alibabacloud/ccs/model/QueryHotlineRecordRequest.h
 	include/alibabacloud/ccs/model/QueryHotlineRecordResult.h )
 
 set(ccs_src 
 	src/CcsClient.cc
+	src/model/CreateTicketRequest.cc
+	src/model/CreateTicketResult.cc
+	src/model/QueryTicketRequest.cc
+	src/model/QueryTicketResult.cc
 	src/model/GetHotlineRecordRequest.cc
 	src/model/GetHotlineRecordResult.cc
+	src/model/ProceedTicketRequest.cc
+	src/model/ProceedTicketResult.cc
 	src/model/QueryHotlineRecordRequest.cc
 	src/model/QueryHotlineRecordResult.cc )
 

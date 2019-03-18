@@ -14,19 +14,32 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCS_CCSEXPORT_H_
-#define ALIBABACLOUD_CCS_CCSEXPORT_H_
+#include <alibabacloud/ccs/model/ProceedTicketResult.h>
+#include <json/json.h>
 
-#include <alibabacloud/core/Global.h>
+using namespace AlibabaCloud::Ccs;
+using namespace AlibabaCloud::Ccs::Model;
 
-#if defined(ALIBABACLOUD_SHARED)
-#	if defined(ALIBABACLOUD_CCS_LIBRARY)
-#		define ALIBABACLOUD_CCS_EXPORT ALIBABACLOUD_DECL_EXPORT
-#	else
-#		define ALIBABACLOUD_CCS_EXPORT ALIBABACLOUD_DECL_IMPORT
-#	endif
-#else
-#	define ALIBABACLOUD_CCS_EXPORT
-#endif
+ProceedTicketResult::ProceedTicketResult() :
+	ServiceResult()
+{}
 
-#endif // !ALIBABACLOUD_CCS_CCSEXPORT_H_
+ProceedTicketResult::ProceedTicketResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+ProceedTicketResult::~ProceedTicketResult()
+{}
+
+void ProceedTicketResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+
+	setRequestId(value["RequestId"].asString());
+
+}
+

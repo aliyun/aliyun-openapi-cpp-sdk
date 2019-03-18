@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCS_MODEL_GETHOTLINERECORDREQUEST_H_
-#define ALIBABACLOUD_CCS_MODEL_GETHOTLINERECORDREQUEST_H_
+#ifndef ALIBABACLOUD_CCS_MODEL_PROCEEDTICKETREQUEST_H_
+#define ALIBABACLOUD_CCS_MODEL_PROCEEDTICKETREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCS_EXPORT GetHotlineRecordRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CCS_EXPORT ProceedTicketRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetHotlineRecordRequest();
-				~GetHotlineRecordRequest();
+				ProceedTicketRequest();
+				~ProceedTicketRequest();
 
+				std::string getMemo()const;
+				void setMemo(const std::string& memo);
 				std::string getId()const;
 				void setId(const std::string& id);
 				std::string getCcsInstanceId()const;
 				void setCcsInstanceId(const std::string& ccsInstanceId);
+				std::string getOperation()const;
+				void setOperation(const std::string& operation);
+				std::string getOperatorId()const;
+				void setOperatorId(const std::string& operatorId);
 
             private:
+				std::string memo_;
 				std::string id_;
 				std::string ccsInstanceId_;
+				std::string operation_;
+				std::string operatorId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCS_MODEL_GETHOTLINERECORDREQUEST_H_
+#endif // !ALIBABACLOUD_CCS_MODEL_PROCEEDTICKETREQUEST_H_

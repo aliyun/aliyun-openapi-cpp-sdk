@@ -85,7 +85,7 @@ void QueryHotlineRecordResult::parse(const std::string &payload)
 		records_.push_back(recordsObject);
 	}
 	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
+		totalCount_ = std::stol(value["TotalCount"].asString());
 	if(!value["PageNum"].isNull())
 		pageNum_ = std::stoi(value["PageNum"].asString());
 	if(!value["PageSize"].isNull())
@@ -93,7 +93,7 @@ void QueryHotlineRecordResult::parse(const std::string &payload)
 
 }
 
-int QueryHotlineRecordResult::getTotalCount()const
+long QueryHotlineRecordResult::getTotalCount()const
 {
 	return totalCount_;
 }

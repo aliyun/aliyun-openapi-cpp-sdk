@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCS_MODEL_GETHOTLINERECORDREQUEST_H_
-#define ALIBABACLOUD_CCS_MODEL_GETHOTLINERECORDREQUEST_H_
+#ifndef ALIBABACLOUD_CCS_MODEL_CREATETICKETREQUEST_H_
+#define ALIBABACLOUD_CCS_MODEL_CREATETICKETREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCS_EXPORT GetHotlineRecordRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CCS_EXPORT CreateTicketRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetHotlineRecordRequest();
-				~GetHotlineRecordRequest();
+				CreateTicketRequest();
+				~CreateTicketRequest();
 
-				std::string getId()const;
-				void setId(const std::string& id);
+				std::string getCreatorId()const;
+				void setCreatorId(const std::string& creatorId);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getCcsInstanceId()const;
 				void setCcsInstanceId(const std::string& ccsInstanceId);
+				std::string getCustomFields()const;
+				void setCustomFields(const std::string& customFields);
 
             private:
-				std::string id_;
+				std::string creatorId_;
+				std::string description_;
+				std::string type_;
 				std::string ccsInstanceId_;
+				std::string customFields_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCS_MODEL_GETHOTLINERECORDREQUEST_H_
+#endif // !ALIBABACLOUD_CCS_MODEL_CREATETICKETREQUEST_H_

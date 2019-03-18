@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCS_MODEL_QUERYHOTLINERECORDRESULT_H_
-#define ALIBABACLOUD_CCS_MODEL_QUERYHOTLINERECORDRESULT_H_
+#ifndef ALIBABACLOUD_CCS_MODEL_QUERYTICKETRESULT_H_
+#define ALIBABACLOUD_CCS_MODEL_QUERYTICKETRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCS_EXPORT QueryHotlineRecordResult : public ServiceResult
+			class ALIBABACLOUD_CCS_EXPORT QueryTicketResult : public ServiceResult
 			{
 			public:
-				struct HotlineRecord
+				struct Ticket
 				{
-					std::string groupName;
-					std::string status;
-					std::string visitorId;
-					std::string outboundTaskId;
-					std::string categories;
-					long talkDuration;
-					std::string visitorPhone;
+					std::string type;
+					std::string customFields;
+					std::string description;
+					std::string creatorId;
 					std::string createTime;
-					std::string satisfaction;
-					std::string callType;
-					std::string visitorProvince;
-					std::string ccsInstanceId;
-					std::string groupId;
-					std::string finishTime;
-					std::string hangupType;
+					std::string stage;
 					std::string id;
-					std::string agentId;
-					std::string agentName;
-					std::string memo;
 				};
 
 
-				QueryHotlineRecordResult();
-				explicit QueryHotlineRecordResult(const std::string &payload);
-				~QueryHotlineRecordResult();
+				QueryTicketResult();
+				explicit QueryTicketResult(const std::string &payload);
+				~QueryTicketResult();
 				long getTotalCount()const;
 				int getPageNum()const;
 				int getPageSize()const;
-				std::vector<HotlineRecord> getRecords()const;
+				std::vector<Ticket> getTickets()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -70,10 +58,10 @@ namespace AlibabaCloud
 				long totalCount_;
 				int pageNum_;
 				int pageSize_;
-				std::vector<HotlineRecord> records_;
+				std::vector<Ticket> tickets_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCS_MODEL_QUERYHOTLINERECORDRESULT_H_
+#endif // !ALIBABACLOUD_CCS_MODEL_QUERYTICKETRESULT_H_

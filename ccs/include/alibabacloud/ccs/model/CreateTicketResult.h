@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCS_MODEL_GETHOTLINERECORDREQUEST_H_
-#define ALIBABACLOUD_CCS_MODEL_GETHOTLINERECORDREQUEST_H_
+#ifndef ALIBABACLOUD_CCS_MODEL_CREATETICKETRESULT_H_
+#define ALIBABACLOUD_CCS_MODEL_CREATETICKETRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/ccs/CcsExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCS_EXPORT GetHotlineRecordRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CCS_EXPORT CreateTicketResult : public ServiceResult
 			{
-
 			public:
-				GetHotlineRecordRequest();
-				~GetHotlineRecordRequest();
 
+
+				CreateTicketResult();
+				explicit CreateTicketResult(const std::string &payload);
+				~CreateTicketResult();
 				std::string getId()const;
-				void setId(const std::string& id);
-				std::string getCcsInstanceId()const;
-				void setCcsInstanceId(const std::string& ccsInstanceId);
 
-            private:
+			protected:
+				void parse(const std::string &payload);
+			private:
 				std::string id_;
-				std::string ccsInstanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCS_MODEL_GETHOTLINERECORDREQUEST_H_
+#endif // !ALIBABACLOUD_CCS_MODEL_CREATETICKETRESULT_H_
