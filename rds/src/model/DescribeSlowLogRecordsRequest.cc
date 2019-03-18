@@ -25,17 +25,6 @@ DescribeSlowLogRecordsRequest::DescribeSlowLogRecordsRequest() :
 DescribeSlowLogRecordsRequest::~DescribeSlowLogRecordsRequest()
 {}
 
-long DescribeSlowLogRecordsRequest::getSQLId()const
-{
-	return sQLId_;
-}
-
-void DescribeSlowLogRecordsRequest::setSQLId(long sQLId)
-{
-	sQLId_ = sQLId;
-	setParameter("SQLId", std::to_string(sQLId));
-}
-
 long DescribeSlowLogRecordsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -155,5 +144,16 @@ void DescribeSlowLogRecordsRequest::setDBInstanceId(const std::string& dBInstanc
 {
 	dBInstanceId_ = dBInstanceId;
 	setParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescribeSlowLogRecordsRequest::getSQLHASH()const
+{
+	return sQLHASH_;
+}
+
+void DescribeSlowLogRecordsRequest::setSQLHASH(const std::string& sQLHASH)
+{
+	sQLHASH_ = sQLHASH;
+	setParameter("SQLHASH", sQLHASH);
 }
 

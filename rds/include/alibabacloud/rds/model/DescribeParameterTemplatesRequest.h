@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setEngineVersion(const std::string& engineVersion);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
@@ -60,6 +62,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string engineVersion_;
 				long ownerId_;
+				std::string category_;
 				std::string accessKeyId_;
 
 			};

@@ -44,6 +44,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 	for (auto value : allItems)
 	{
 		DBInstanceAttribute itemsObject;
+		if(!value["IPType"].isNull())
+			itemsObject.iPType = value["IPType"].asString();
 		if(!value["DBInstanceDiskUsed"].isNull())
 			itemsObject.dBInstanceDiskUsed = value["DBInstanceDiskUsed"].asString();
 		if(!value["GuardDBInstanceName"].isNull())
@@ -158,8 +160,32 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.vSwitchId = value["VSwitchId"].asString();
 		if(!value["ConnectionMode"].isNull())
 			itemsObject.connectionMode = value["ConnectionMode"].asString();
+		if(!value["CurrentKernelVersion"].isNull())
+			itemsObject.currentKernelVersion = value["CurrentKernelVersion"].asString();
+		if(!value["LatestKernelVersion"].isNull())
+			itemsObject.latestKernelVersion = value["LatestKernelVersion"].asString();
 		if(!value["ResourceGroupId"].isNull())
 			itemsObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["ReadonlyInstanceSQLDelayedTime"].isNull())
+			itemsObject.readonlyInstanceSQLDelayedTime = value["ReadonlyInstanceSQLDelayedTime"].asString();
+		if(!value["SecurityIPMode"].isNull())
+			itemsObject.securityIPMode = value["SecurityIPMode"].asString();
+		if(!value["TimeZone"].isNull())
+			itemsObject.timeZone = value["TimeZone"].asString();
+		if(!value["Collation"].isNull())
+			itemsObject.collation = value["Collation"].asString();
+		if(!value["DispenseMode"].isNull())
+			itemsObject.dispenseMode = value["DispenseMode"].asString();
+		if(!value["MasterZone"].isNull())
+			itemsObject.masterZone = value["MasterZone"].asString();
+		auto allSlaveZones = value["SlaveZones"]["SlaveZone"];
+		for (auto value : allSlaveZones)
+		{
+			DBInstanceAttribute::SlaveZone slaveZonesObject;
+			if(!value["ZoneId"].isNull())
+				slaveZonesObject.zoneId = value["ZoneId"].asString();
+			itemsObject.slaveZones.push_back(slaveZonesObject);
+		}
 		auto allReadOnlyDBInstanceIds = value["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto value : allReadOnlyDBInstanceIds)
 		{
@@ -168,6 +194,16 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 				readOnlyDBInstanceIdsObject.dBInstanceId = value["DBInstanceId"].asString();
 			itemsObject.readOnlyDBInstanceIds.push_back(readOnlyDBInstanceIdsObject);
 		}
+		auto extraNode = value["Extra"];
+		if(!extraNode["ReplicaGroupID"].isNull())
+			itemsObject.extra.replicaGroupID = extraNode["ReplicaGroupID"].asString();
+		if(!extraNode["ReplicaGroupStatus"].isNull())
+			itemsObject.extra.replicaGroupStatus = extraNode["ReplicaGroupStatus"].asString();
+		if(!extraNode["ActiveReplicaDBInstanceID"].isNull())
+			itemsObject.extra.activeReplicaDBInstanceID = extraNode["ActiveReplicaDBInstanceID"].asString();
+			auto allDBInstanceId = extraNode["DBInstanceId"]["DBInstanceId"];
+			for (auto value : allDBInstanceId)
+				itemsObject.extra.dBInstanceId.push_back(value.asString());
 		items_.push_back(itemsObject);
 	}
 

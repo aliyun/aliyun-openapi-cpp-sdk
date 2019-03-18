@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setWhitelistNetworkType(const std::string& whitelistNetworkType);
 				std::string getDBInstanceIPArrayAttribute()const;
 				void setDBInstanceIPArrayAttribute(const std::string& dBInstanceIPArrayAttribute);
+				std::string getSecurityIPType()const;
+				void setSecurityIPType(const std::string& securityIPType);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 
@@ -75,6 +77,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string whitelistNetworkType_;
 				std::string dBInstanceIPArrayAttribute_;
+				std::string securityIPType_;
 				std::string dBInstanceId_;
 
 			};

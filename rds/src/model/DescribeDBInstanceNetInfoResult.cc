@@ -94,12 +94,19 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 	}
 	if(!value["InstanceNetworkType"].isNull())
 		instanceNetworkType_ = value["InstanceNetworkType"].asString();
+	if(!value["SecurityIPMode"].isNull())
+		securityIPMode_ = value["SecurityIPMode"].asString();
 
 }
 
 std::vector<DescribeDBInstanceNetInfoResult::DBInstanceNetInfo> DescribeDBInstanceNetInfoResult::getDBInstanceNetInfos()const
 {
 	return dBInstanceNetInfos_;
+}
+
+std::string DescribeDBInstanceNetInfoResult::getSecurityIPMode()const
+{
+	return securityIPMode_;
 }
 
 std::string DescribeDBInstanceNetInfoResult::getInstanceNetworkType()const

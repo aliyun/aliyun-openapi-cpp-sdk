@@ -110,7 +110,7 @@ bool DescribeDBInstancesByExpireTimeRequest::getExpired()const
 void DescribeDBInstancesByExpireTimeRequest::setExpired(bool expired)
 {
 	expired_ = expired;
-	setParameter("Expired", std::to_string(expired));
+	setParameter("Expired", expired ? "true" : "false");
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getRegionId()const

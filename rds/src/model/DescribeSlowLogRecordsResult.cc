@@ -62,6 +62,8 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 			itemsObject.executionStartTime = value["ExecutionStartTime"].asString();
 		items_.push_back(itemsObject);
 	}
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
 	if(!value["Engine"].isNull())
 		engine_ = value["Engine"].asString();
 	if(!value["TotalRecordCount"].isNull())
@@ -81,6 +83,11 @@ int DescribeSlowLogRecordsResult::getTotalRecordCount()const
 int DescribeSlowLogRecordsResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
+}
+
+std::string DescribeSlowLogRecordsResult::getDBInstanceId()const
+{
+	return dBInstanceId_;
 }
 
 int DescribeSlowLogRecordsResult::getPageNumber()const

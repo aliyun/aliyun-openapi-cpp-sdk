@@ -52,6 +52,10 @@ void DescribeResourceUsageResult::parse(const std::string &payload)
 		logSize_ = std::stol(value["LogSize"].asString());
 	if(!value["BackupSize"].isNull())
 		backupSize_ = std::stol(value["BackupSize"].asString());
+	if(!value["BackupOssDataSize"].isNull())
+		backupOssDataSize_ = std::stol(value["BackupOssDataSize"].asString());
+	if(!value["BackupOssLogSize"].isNull())
+		backupOssLogSize_ = std::stol(value["BackupOssLogSize"].asString());
 	if(!value["SQLSize"].isNull())
 		sQLSize_ = std::stol(value["SQLSize"].asString());
 	if(!value["ColdBackupSize"].isNull())
@@ -62,6 +66,11 @@ void DescribeResourceUsageResult::parse(const std::string &payload)
 long DescribeResourceUsageResult::getLogSize()const
 {
 	return logSize_;
+}
+
+long DescribeResourceUsageResult::getBackupOssLogSize()const
+{
+	return backupOssLogSize_;
 }
 
 std::string DescribeResourceUsageResult::getDBInstanceId()const
@@ -77,6 +86,11 @@ long DescribeResourceUsageResult::getDataSize()const
 long DescribeResourceUsageResult::getBackupSize()const
 {
 	return backupSize_;
+}
+
+long DescribeResourceUsageResult::getBackupOssDataSize()const
+{
+	return backupOssDataSize_;
 }
 
 long DescribeResourceUsageResult::getSQLSize()const

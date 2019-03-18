@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				UpgradeDBInstanceKernelVersionRequest();
 				~UpgradeDBInstanceKernelVersionRequest();
 
-				std::string getSwitchTimeMode()const;
-				void setSwitchTimeMode(const std::string& switchTimeMode);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getUpgradeTime()const;
+				void setUpgradeTime(const std::string& upgradeTime);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getSwitchTime()const;
@@ -51,9 +51,9 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string switchTimeMode_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
+				std::string upgradeTime_;
 				std::string dBInstanceId_;
 				std::string switchTime_;
 				long ownerId_;

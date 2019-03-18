@@ -40,6 +40,41 @@ void ModifyBackupPolicyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	if(!value["DBInstanceID"].isNull())
+		dBInstanceID_ = value["DBInstanceID"].asString();
+	if(!value["EnableBackupLog"].isNull())
+		enableBackupLog_ = value["EnableBackupLog"].asString();
+	if(!value["LocalLogRetentionHours"].isNull())
+		localLogRetentionHours_ = std::stoi(value["LocalLogRetentionHours"].asString());
+	if(!value["LocalLogRetentionSpace"].isNull())
+		localLogRetentionSpace_ = value["LocalLogRetentionSpace"].asString();
+	if(!value["HighSpaceUsageProtection"].isNull())
+		highSpaceUsageProtection_ = value["HighSpaceUsageProtection"].asString();
 
+}
+
+std::string ModifyBackupPolicyResult::getDBInstanceID()const
+{
+	return dBInstanceID_;
+}
+
+std::string ModifyBackupPolicyResult::getEnableBackupLog()const
+{
+	return enableBackupLog_;
+}
+
+int ModifyBackupPolicyResult::getLocalLogRetentionHours()const
+{
+	return localLogRetentionHours_;
+}
+
+std::string ModifyBackupPolicyResult::getLocalLogRetentionSpace()const
+{
+	return localLogRetentionSpace_;
+}
+
+std::string ModifyBackupPolicyResult::getHighSpaceUsageProtection()const
+{
+	return highSpaceUsageProtection_;
 }
 

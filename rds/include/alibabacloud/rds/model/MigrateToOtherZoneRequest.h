@@ -35,35 +35,47 @@ namespace AlibabaCloud
 				MigrateToOtherZoneRequest();
 				~MigrateToOtherZoneRequest();
 
-				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getEffectiveTime()const;
-				void setEffectiveTime(const std::string& effectiveTime);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getZoneIdSlave1()const;
+				void setZoneIdSlave1(const std::string& zoneIdSlave1);
+				std::string getZoneIdSlave2()const;
+				void setZoneIdSlave2(const std::string& zoneIdSlave2);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
+				std::string getEffectiveTime()const;
+				void setEffectiveTime(const std::string& effectiveTime);
+				std::string getVPCId()const;
+				void setVPCId(const std::string& vPCId);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
-				std::string vSwitchId_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				std::string effectiveTime_;
 				std::string ownerAccount_;
-				std::string zoneId_;
-				std::string dBInstanceId_;
+				std::string zoneIdSlave1_;
+				std::string zoneIdSlave2_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string vSwitchId_;
+				std::string effectiveTime_;
+				std::string vPCId_;
+				std::string zoneId_;
+				std::string dBInstanceId_;
+				std::string category_;
 
 			};
 		}

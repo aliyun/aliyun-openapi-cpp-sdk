@@ -46,8 +46,10 @@ void DescribeSlowLogsResult::parse(const std::string &payload)
 		SQLSlowLog itemsObject;
 		if(!value["SlowLogId"].isNull())
 			itemsObject.slowLogId = std::stol(value["SlowLogId"].asString());
-		if(!value["SQLId"].isNull())
-			itemsObject.sQLId = std::stol(value["SQLId"].asString());
+		if(!value["SQLHASH"].isNull())
+			itemsObject.sQLHASH = value["SQLHASH"].asString();
+		if(!value["SQLIdStr"].isNull())
+			itemsObject.sQLIdStr = value["SQLIdStr"].asString();
 		if(!value["DBName"].isNull())
 			itemsObject.dBName = value["DBName"].asString();
 		if(!value["SQLText"].isNull())
@@ -86,6 +88,8 @@ void DescribeSlowLogsResult::parse(const std::string &payload)
 			itemsObject.avgExecutionTime = std::stol(value["AvgExecutionTime"].asString());
 		items_.push_back(itemsObject);
 	}
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
 	if(!value["Engine"].isNull())
 		engine_ = value["Engine"].asString();
 	if(!value["StartTime"].isNull())
@@ -114,6 +118,11 @@ int DescribeSlowLogsResult::getPageRecordCount()const
 std::string DescribeSlowLogsResult::getEndTime()const
 {
 	return endTime_;
+}
+
+std::string DescribeSlowLogsResult::getDBInstanceId()const
+{
+	return dBInstanceId_;
 }
 
 int DescribeSlowLogsResult::getPageNumber()const

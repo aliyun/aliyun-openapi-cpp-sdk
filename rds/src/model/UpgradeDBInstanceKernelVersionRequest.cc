@@ -25,17 +25,6 @@ UpgradeDBInstanceKernelVersionRequest::UpgradeDBInstanceKernelVersionRequest() :
 UpgradeDBInstanceKernelVersionRequest::~UpgradeDBInstanceKernelVersionRequest()
 {}
 
-std::string UpgradeDBInstanceKernelVersionRequest::getSwitchTimeMode()const
-{
-	return switchTimeMode_;
-}
-
-void UpgradeDBInstanceKernelVersionRequest::setSwitchTimeMode(const std::string& switchTimeMode)
-{
-	switchTimeMode_ = switchTimeMode;
-	setParameter("SwitchTimeMode", switchTimeMode);
-}
-
 long UpgradeDBInstanceKernelVersionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -56,6 +45,17 @@ void UpgradeDBInstanceKernelVersionRequest::setResourceOwnerAccount(const std::s
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string UpgradeDBInstanceKernelVersionRequest::getUpgradeTime()const
+{
+	return upgradeTime_;
+}
+
+void UpgradeDBInstanceKernelVersionRequest::setUpgradeTime(const std::string& upgradeTime)
+{
+	upgradeTime_ = upgradeTime;
+	setParameter("UpgradeTime", upgradeTime);
 }
 
 std::string UpgradeDBInstanceKernelVersionRequest::getDBInstanceId()const

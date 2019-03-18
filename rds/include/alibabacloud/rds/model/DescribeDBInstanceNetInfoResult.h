@@ -66,12 +66,14 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceNetInfoResult(const std::string &payload);
 				~DescribeDBInstanceNetInfoResult();
 				std::vector<DBInstanceNetInfo> getDBInstanceNetInfos()const;
+				std::string getSecurityIPMode()const;
 				std::string getInstanceNetworkType()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<DBInstanceNetInfo> dBInstanceNetInfos_;
+				std::string securityIPMode_;
 				std::string instanceNetworkType_;
 
 			};

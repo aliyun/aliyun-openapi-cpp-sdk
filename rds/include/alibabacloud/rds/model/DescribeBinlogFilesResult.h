@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string logEndTime;
 					std::string intranetDownloadLink;
 					std::string hostInstanceID;
+					std::string logFileName;
 					long fileSize;
 				};
 

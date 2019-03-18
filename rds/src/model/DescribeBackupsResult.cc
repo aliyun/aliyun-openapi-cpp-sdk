@@ -80,6 +80,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.hostInstanceID = value["HostInstanceID"].asString();
 		if(!value["StoreStatus"].isNull())
 			itemsObject.storeStatus = value["StoreStatus"].asString();
+		if(!value["MetaStatus"].isNull())
+			itemsObject.metaStatus = value["MetaStatus"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

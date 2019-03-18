@@ -60,6 +60,8 @@ void DescribeBinlogFilesResult::parse(const std::string &payload)
 			itemsObject.checksum = value["Checksum"].asString();
 		if(!value["HostInstanceID"].isNull())
 			itemsObject.hostInstanceID = value["HostInstanceID"].asString();
+		if(!value["LogFileName"].isNull())
+			itemsObject.logFileName = value["LogFileName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

@@ -32,27 +32,53 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_RDS_EXPORT DescribeBackupPolicyResult : public ServiceResult
 			{
 			public:
+				struct DuplicationLocation
+				{
+					struct Location
+					{
+						std::string endpoint;
+						std::string bucket;
+					};
+					std::string sotrage;
+					Location location;
+				};
 
 
 				DescribeBackupPolicyResult();
 				explicit DescribeBackupPolicyResult(const std::string &payload);
 				~DescribeBackupPolicyResult();
+				std::string getDuplication()const;
+				std::string getPreferredBackupTime()const;
+				int getLocalLogRetentionHours()const;
+				DuplicationLocation getDuplicationLocation()const;
+				std::string getPreferredNextBackupTime()const;
+				std::string getHighSpaceUsageProtection()const;
+				std::string getLogBackupFrequency()const;
 				std::string getPreferredBackupPeriod()const;
 				int getLogBackupRetentionPeriod()const;
-				std::string getPreferredBackupTime()const;
 				std::string getBackupLog()const;
+				std::string getEnableBackupLog()const;
+				std::string getLocalLogRetentionSpace()const;
 				int getBackupRetentionPeriod()const;
-				std::string getPreferredNextBackupTime()const;
+				std::string getDuplicationContent()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string duplication_;
+				std::string preferredBackupTime_;
+				int localLogRetentionHours_;
+				DuplicationLocation duplicationLocation_;
+				std::string preferredNextBackupTime_;
+				std::string highSpaceUsageProtection_;
+				std::string logBackupFrequency_;
 				std::string preferredBackupPeriod_;
 				int logBackupRetentionPeriod_;
-				std::string preferredBackupTime_;
 				std::string backupLog_;
+				std::string enableBackupLog_;
+				std::string localLogRetentionSpace_;
 				int backupRetentionPeriod_;
-				std::string preferredNextBackupTime_;
+				std::string duplicationContent_;
 
 			};
 		}

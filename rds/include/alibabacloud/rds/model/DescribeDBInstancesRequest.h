@@ -49,12 +49,16 @@ namespace AlibabaCloud
 				void setSearchKey(const std::string& searchKey);
 				std::string getTag3key()const;
 				void setTag3key(const std::string& tag3key);
+				std::string getEngineVersion()const;
+				void setEngineVersion(const std::string& engineVersion);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTag1value()const;
 				void setTag1value(const std::string& tag1value);
+				std::string getExpired()const;
+				void setExpired(const std::string& expired);
 				std::string getEngine()const;
 				void setEngine(const std::string& engine);
 				std::string getRegionId()const;
@@ -81,6 +85,8 @@ namespace AlibabaCloud
 				void setTag5value(const std::string& tag5value);
 				std::string getDBInstanceType()const;
 				void setDBInstanceType(const std::string& dBInstanceType);
+				std::string getDBInstanceClass()const;
+				void setDBInstanceClass(const std::string& dBInstanceClass);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 				std::string getVSwitchId()const;
@@ -91,8 +97,12 @@ namespace AlibabaCloud
 				void setVpcId(const std::string& vpcId);
 				std::string getTag2value()const;
 				void setTag2value(const std::string& tag2value);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 				std::string getTag4key()const;
 				void setTag4key(const std::string& tag4key);
+				std::string getPayType()const;
+				void setPayType(const std::string& payType);
 				std::string getInstanceNetworkType()const;
 				void setInstanceNetworkType(const std::string& instanceNetworkType);
 
@@ -104,9 +114,11 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string searchKey_;
 				std::string tag3key_;
+				std::string engineVersion_;
 				int pageNumber_;
 				std::string accessKeyId_;
 				std::string tag1value_;
+				std::string expired_;
 				std::string engine_;
 				std::string regionId_;
 				int pageSize_;
@@ -120,12 +132,15 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string tag5value_;
 				std::string dBInstanceType_;
+				std::string dBInstanceClass_;
 				std::string tags_;
 				std::string vSwitchId_;
 				std::string tag1key_;
 				std::string vpcId_;
 				std::string tag2value_;
+				std::string zoneId_;
 				std::string tag4key_;
+				std::string payType_;
 				std::string instanceNetworkType_;
 
 			};

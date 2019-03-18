@@ -91,3 +91,14 @@ void DescribeBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeBackupPolicyRequest::getBackupPolicyMode()const
+{
+	return backupPolicyMode_;
+}
+
+void DescribeBackupPolicyRequest::setBackupPolicyMode(const std::string& backupPolicyMode)
+{
+	backupPolicyMode_ = backupPolicyMode;
+	setParameter("BackupPolicyMode", backupPolicyMode);
+}
+

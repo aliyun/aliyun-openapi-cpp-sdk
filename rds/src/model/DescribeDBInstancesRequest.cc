@@ -102,6 +102,17 @@ void DescribeDBInstancesRequest::setTag3key(const std::string& tag3key)
 	setParameter("Tag3key", tag3key);
 }
 
+std::string DescribeDBInstancesRequest::getEngineVersion()const
+{
+	return engineVersion_;
+}
+
+void DescribeDBInstancesRequest::setEngineVersion(const std::string& engineVersion)
+{
+	engineVersion_ = engineVersion;
+	setParameter("EngineVersion", engineVersion);
+}
+
 int DescribeDBInstancesRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -133,6 +144,17 @@ void DescribeDBInstancesRequest::setTag1value(const std::string& tag1value)
 {
 	tag1value_ = tag1value;
 	setParameter("Tag1value", tag1value);
+}
+
+std::string DescribeDBInstancesRequest::getExpired()const
+{
+	return expired_;
+}
+
+void DescribeDBInstancesRequest::setExpired(const std::string& expired)
+{
+	expired_ = expired;
+	setParameter("Expired", expired);
 }
 
 std::string DescribeDBInstancesRequest::getEngine()const
@@ -278,6 +300,17 @@ void DescribeDBInstancesRequest::setDBInstanceType(const std::string& dBInstance
 	setParameter("DBInstanceType", dBInstanceType);
 }
 
+std::string DescribeDBInstancesRequest::getDBInstanceClass()const
+{
+	return dBInstanceClass_;
+}
+
+void DescribeDBInstancesRequest::setDBInstanceClass(const std::string& dBInstanceClass)
+{
+	dBInstanceClass_ = dBInstanceClass;
+	setParameter("DBInstanceClass", dBInstanceClass);
+}
+
 std::string DescribeDBInstancesRequest::getTags()const
 {
 	return tags_;
@@ -333,6 +366,17 @@ void DescribeDBInstancesRequest::setTag2value(const std::string& tag2value)
 	setParameter("Tag2value", tag2value);
 }
 
+std::string DescribeDBInstancesRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void DescribeDBInstancesRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
+}
+
 std::string DescribeDBInstancesRequest::getTag4key()const
 {
 	return tag4key_;
@@ -342,6 +386,17 @@ void DescribeDBInstancesRequest::setTag4key(const std::string& tag4key)
 {
 	tag4key_ = tag4key;
 	setParameter("Tag4key", tag4key);
+}
+
+std::string DescribeDBInstancesRequest::getPayType()const
+{
+	return payType_;
+}
+
+void DescribeDBInstancesRequest::setPayType(const std::string& payType)
+{
+	payType_ = payType;
+	setParameter("PayType", payType);
 }
 
 std::string DescribeDBInstancesRequest::getInstanceNetworkType()const

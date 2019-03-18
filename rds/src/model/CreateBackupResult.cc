@@ -40,6 +40,13 @@ void CreateBackupResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	if(!value["BackupJobId"].isNull())
+		backupJobId_ = value["BackupJobId"].asString();
 
+}
+
+std::string CreateBackupResult::getBackupJobId()const
+{
+	return backupJobId_;
 }
 

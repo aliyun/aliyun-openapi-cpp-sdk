@@ -36,6 +36,17 @@ void RestoreDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RestoreDBInstanceRequest::getRestoreTime()const
+{
+	return restoreTime_;
+}
+
+void RestoreDBInstanceRequest::setRestoreTime(const std::string& restoreTime)
+{
+	restoreTime_ = restoreTime;
+	setParameter("RestoreTime", restoreTime);
+}
+
 std::string RestoreDBInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setBackupMethod(const std::string& backupMethod);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getBackupStrategy()const;
+				void setBackupStrategy(const std::string& backupStrategy);
 				std::string getDBName()const;
 				void setDBName(const std::string& dBName);
 				std::string getResourceOwnerAccount()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
             private:
 				std::string backupMethod_;
 				long resourceOwnerId_;
+				std::string backupStrategy_;
 				std::string dBName_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

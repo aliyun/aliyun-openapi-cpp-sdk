@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getExpired()const;
+				void setExpired(const std::string& expired);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
             private:
 				std::string resourceGroupId_;
 				long resourceOwnerId_;
+				std::string expired_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string dBInstanceId_;

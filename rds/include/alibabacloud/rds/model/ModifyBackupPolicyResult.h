@@ -37,10 +37,20 @@ namespace AlibabaCloud
 				ModifyBackupPolicyResult();
 				explicit ModifyBackupPolicyResult(const std::string &payload);
 				~ModifyBackupPolicyResult();
+				std::string getDBInstanceID()const;
+				std::string getEnableBackupLog()const;
+				int getLocalLogRetentionHours()const;
+				std::string getLocalLogRetentionSpace()const;
+				std::string getHighSpaceUsageProtection()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dBInstanceID_;
+				std::string enableBackupLog_;
+				int localLogRetentionHours_;
+				std::string localLogRetentionSpace_;
+				std::string highSpaceUsageProtection_;
 
 			};
 		}

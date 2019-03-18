@@ -91,17 +91,6 @@ void AllocateReadWriteSplittingConnectionRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string AllocateReadWriteSplittingConnectionRequest::getIPType()const
-{
-	return iPType_;
-}
-
-void AllocateReadWriteSplittingConnectionRequest::setIPType(const std::string& iPType)
-{
-	iPType_ = iPType;
-	setParameter("IPType", iPType);
-}
-
 std::string AllocateReadWriteSplittingConnectionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -133,6 +122,17 @@ void AllocateReadWriteSplittingConnectionRequest::setDistributionType(const std:
 {
 	distributionType_ = distributionType;
 	setParameter("DistributionType", distributionType);
+}
+
+std::string AllocateReadWriteSplittingConnectionRequest::getNetType()const
+{
+	return netType_;
+}
+
+void AllocateReadWriteSplittingConnectionRequest::setNetType(const std::string& netType)
+{
+	netType_ = netType;
+	setParameter("NetType", netType);
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getDBInstanceId()const

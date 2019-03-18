@@ -102,6 +102,17 @@ void DescribeParameterTemplatesRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeParameterTemplatesRequest::getCategory()const
+{
+	return category_;
+}
+
+void DescribeParameterTemplatesRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
+}
+
 std::string DescribeParameterTemplatesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

@@ -69,6 +69,10 @@ namespace AlibabaCloud
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getDBInstanceDescription()const;
 				void setDBInstanceDescription(const std::string& dBInstanceDescription);
+				std::string getDBInstanceStorageType()const;
+				void setDBInstanceStorageType(const std::string& dBInstanceStorageType);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
 				std::string getInstanceNetworkType()const;
@@ -92,6 +96,8 @@ namespace AlibabaCloud
 				std::string zoneId_;
 				std::string dBInstanceId_;
 				std::string dBInstanceDescription_;
+				std::string dBInstanceStorageType_;
+				std::string category_;
 				std::string payType_;
 				std::string instanceNetworkType_;
 

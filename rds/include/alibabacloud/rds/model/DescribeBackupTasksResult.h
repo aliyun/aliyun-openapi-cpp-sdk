@@ -36,9 +36,10 @@ namespace AlibabaCloud
 				{
 					std::string jobMode;
 					std::string taskAction;
-					std::string backupjobId;
 					std::string backupProgressStatus;
 					std::string process;
+					std::string backupJobId;
+					std::string backupStatus;
 				};
 
 

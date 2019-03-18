@@ -50,6 +50,7 @@ namespace AlibabaCloud
 				~DescribeSlowLogRecordsResult();
 				int getTotalRecordCount()const;
 				int getPageRecordCount()const;
+				std::string getDBInstanceId()const;
 				int getPageNumber()const;
 				std::vector<SQLSlowRecord> getItems()const;
 				std::string getEngine()const;
@@ -59,6 +60,7 @@ namespace AlibabaCloud
 			private:
 				int totalRecordCount_;
 				int pageRecordCount_;
+				std::string dBInstanceId_;
 				int pageNumber_;
 				std::vector<SQLSlowRecord> items_;
 				std::string engine_;

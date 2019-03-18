@@ -48,6 +48,8 @@ void CalculateDBInstanceWeightResult::parse(const std::string &payload)
 			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
 		if(!value["DBInstanceType"].isNull())
 			itemsObject.dBInstanceType = value["DBInstanceType"].asString();
+		if(!value["ReadonlyInstanceSQLDelayedTime"].isNull())
+			itemsObject.readonlyInstanceSQLDelayedTime = value["ReadonlyInstanceSQLDelayedTime"].asString();
 		if(!value["Availability"].isNull())
 			itemsObject.availability = value["Availability"].asString();
 		if(!value["Weight"].isNull())

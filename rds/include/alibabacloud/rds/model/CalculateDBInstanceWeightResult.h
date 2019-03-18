@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string availability;
 					std::string dBInstanceId;
 					std::string dBInstanceType;
+					std::string readonlyInstanceSQLDelayedTime;
 					std::string weight;
 				};
 

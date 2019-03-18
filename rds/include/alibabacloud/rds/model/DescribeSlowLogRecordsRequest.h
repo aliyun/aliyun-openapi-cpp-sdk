@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				DescribeSlowLogRecordsRequest();
 				~DescribeSlowLogRecordsRequest();
 
-				long getSQLId()const;
-				void setSQLId(long sQLId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
@@ -59,9 +57,10 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getSQLHASH()const;
+				void setSQLHASH(const std::string& sQLHASH);
 
             private:
-				long sQLId_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
@@ -73,6 +72,7 @@ namespace AlibabaCloud
 				std::string dBName_;
 				int pageSize_;
 				std::string dBInstanceId_;
+				std::string sQLHASH_;
 
 			};
 		}

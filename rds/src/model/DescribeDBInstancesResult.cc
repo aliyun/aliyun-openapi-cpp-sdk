@@ -58,6 +58,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.regionId = value["RegionId"].asString();
 		if(!value["ExpireTime"].isNull())
 			itemsObject.expireTime = value["ExpireTime"].asString();
+		if(!value["DestroyTime"].isNull())
+			itemsObject.destroyTime = value["DestroyTime"].asString();
 		if(!value["DBInstanceStatus"].isNull())
 			itemsObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
 		if(!value["Engine"].isNull())
@@ -68,6 +70,10 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.connectionMode = value["ConnectionMode"].asString();
 		if(!value["LockMode"].isNull())
 			itemsObject.lockMode = value["LockMode"].asString();
+		if(!value["Category"].isNull())
+			itemsObject.category = value["Category"].asString();
+		if(!value["DBInstanceStorageType"].isNull())
+			itemsObject.dBInstanceStorageType = value["DBInstanceStorageType"].asString();
 		if(!value["DBInstanceClass"].isNull())
 			itemsObject.dBInstanceClass = value["DBInstanceClass"].asString();
 		if(!value["InstanceNetworkType"].isNull())

@@ -34,6 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct DBInstanceAttribute
 				{
+					struct Extra
+					{
+						std::string replicaGroupStatus;
+						std::vector<std::string> dBInstanceId;
+						std::string replicaGroupID;
+						std::string activeReplicaDBInstanceID;
+					};
+					struct SlaveZone
+					{
+						std::string zoneId;
+					};
 					struct ReadOnlyDBInstanceId
 					{
 						std::string dBInstanceId;
@@ -42,6 +53,8 @@ namespace AlibabaCloud
 					std::string resourceGroupId;
 					std::string incrementSourceDBInstanceId;
 					std::string port;
+					std::string masterZone;
+					std::string latestKernelVersion;
 					std::string dBInstanceType;
 					std::string instanceNetworkType;
 					std::string dBInstanceClassType;
@@ -54,6 +67,7 @@ namespace AlibabaCloud
 					std::string tempUpgradeRecoveryClass;
 					std::string engine;
 					std::string dBInstanceDescription;
+					std::string iPType;
 					std::string dBInstanceDiskUsed;
 					std::string engineVersion;
 					std::string dBInstanceStatus;
@@ -66,14 +80,17 @@ namespace AlibabaCloud
 					std::string guardDBInstanceId;
 					std::string supportCreateSuperAccount;
 					int insId;
+					std::string timeZone;
 					std::string vpcId;
 					std::string masterInstanceId;
+					std::string currentKernelVersion;
 					std::string tempUpgradeTimeStart;
 					std::string tempUpgradeTimeEnd;
 					std::string readDelayTime;
 					std::string creationTime;
 					std::string connectionMode;
 					std::string vpcCloudInstanceId;
+					std::string readonlyInstanceSQLDelayedTime;
 					std::string connectionString;
 					std::string expireTime;
 					std::string advancedFeatures;
@@ -88,13 +105,18 @@ namespace AlibabaCloud
 					std::string tempUpgradeRecoveryMaxConnections;
 					std::string securityIPList;
 					std::vector<DBInstanceAttribute::ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+					std::string securityIPMode;
 					std::string maintainTime;
+					std::string dispenseMode;
 					std::string zoneId;
 					std::string tempUpgradeRecoveryTime;
 					std::string dBInstanceStorageType;
+					std::string collation;
 					std::string accountType;
 					int maxIOPS;
+					std::vector<DBInstanceAttribute::SlaveZone> slaveZones;
 					std::string supportUpgradeAccountType;
+					Extra extra;
 					bool canTempUpgrade;
 					std::string regionId;
 				};

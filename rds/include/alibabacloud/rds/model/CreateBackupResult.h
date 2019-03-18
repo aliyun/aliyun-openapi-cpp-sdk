@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				CreateBackupResult();
 				explicit CreateBackupResult(const std::string &payload);
 				~CreateBackupResult();
+				std::string getBackupJobId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string backupJobId_;
 
 			};
 		}

@@ -88,7 +88,7 @@ bool ModifyParameterRequest::getForcerestart()const
 void ModifyParameterRequest::setForcerestart(bool forcerestart)
 {
 	forcerestart_ = forcerestart;
-	setParameter("Forcerestart", std::to_string(forcerestart));
+	setParameter("Forcerestart", forcerestart ? "true" : "false");
 }
 
 long ModifyParameterRequest::getOwnerId()const

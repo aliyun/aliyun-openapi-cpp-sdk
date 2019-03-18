@@ -38,8 +38,10 @@ namespace AlibabaCloud
 					{
 						std::string dBInstanceId;
 					};
+					std::string category;
 					std::string resourceGroupId;
 					std::string dBInstanceNetType;
+					std::string destroyTime;
 					std::string dBInstanceType;
 					std::string tempDBInstanceId;
 					bool mutriORsignle;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 					std::string payType;
 					std::string lockMode;
 					std::string guardDBInstanceId;
+					std::string dBInstanceStorageType;
 					int insId;
 					std::string vpcId;
 					std::string masterInstanceId;

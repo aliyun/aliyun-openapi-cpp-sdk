@@ -46,13 +46,14 @@ namespace AlibabaCloud
 					long parseMaxRowCount;
 					long maxExecutionTime;
 					std::string reportTime;
+					std::string sQLHASH;
 					long sQLServerTotalExecutionTimes;
+					std::string sQLIdStr;
 					long returnTotalRowCounts;
 					long sQLServerTotalExecutionCounts;
 					long mySQLTotalExecutionCounts;
 					long parseTotalRowCounts;
 					std::string dBName;
-					long sQLId;
 					long mySQLTotalExecutionTimes;
 				};
 
@@ -63,6 +64,7 @@ namespace AlibabaCloud
 				int getTotalRecordCount()const;
 				int getPageRecordCount()const;
 				std::string getEndTime()const;
+				std::string getDBInstanceId()const;
 				int getPageNumber()const;
 				std::string getStartTime()const;
 				std::vector<SQLSlowLog> getItems()const;
@@ -74,6 +76,7 @@ namespace AlibabaCloud
 				int totalRecordCount_;
 				int pageRecordCount_;
 				std::string endTime_;
+				std::string dBInstanceId_;
 				int pageNumber_;
 				std::string startTime_;
 				std::vector<SQLSlowLog> items_;

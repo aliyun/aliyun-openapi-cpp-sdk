@@ -47,6 +47,17 @@ void DescribeDBInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeDBInstanceAttributeRequest::getExpired()const
+{
+	return expired_;
+}
+
+void DescribeDBInstanceAttributeRequest::setExpired(const std::string& expired)
+{
+	expired_ = expired;
+	setParameter("Expired", expired);
+}
+
 std::string DescribeDBInstanceAttributeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

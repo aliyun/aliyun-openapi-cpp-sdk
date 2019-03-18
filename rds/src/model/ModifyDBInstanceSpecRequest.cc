@@ -69,17 +69,6 @@ void ModifyDBInstanceSpecRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
-std::string ModifyDBInstanceSpecRequest::getEffectiveTime()const
-{
-	return effectiveTime_;
-}
-
-void ModifyDBInstanceSpecRequest::setEffectiveTime(const std::string& effectiveTime)
-{
-	effectiveTime_ = effectiveTime;
-	setParameter("EffectiveTime", effectiveTime);
-}
-
 std::string ModifyDBInstanceSpecRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -91,15 +80,15 @@ void ModifyDBInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccoun
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyDBInstanceSpecRequest::getDBInstanceId()const
+std::string ModifyDBInstanceSpecRequest::getEngineVersion()const
 {
-	return dBInstanceId_;
+	return engineVersion_;
 }
 
-void ModifyDBInstanceSpecRequest::setDBInstanceId(const std::string& dBInstanceId)
+void ModifyDBInstanceSpecRequest::setEngineVersion(const std::string& engineVersion)
 {
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	engineVersion_ = engineVersion;
+	setParameter("EngineVersion", engineVersion);
 }
 
 long ModifyDBInstanceSpecRequest::getOwnerId()const
@@ -111,17 +100,6 @@ void ModifyDBInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyDBInstanceSpecRequest::getPayType()const
-{
-	return payType_;
-}
-
-void ModifyDBInstanceSpecRequest::setPayType(const std::string& payType)
-{
-	payType_ = payType;
-	setParameter("PayType", payType);
 }
 
 std::string ModifyDBInstanceSpecRequest::getAccessKeyId()const
@@ -144,5 +122,38 @@ void ModifyDBInstanceSpecRequest::setDBInstanceClass(const std::string& dBInstan
 {
 	dBInstanceClass_ = dBInstanceClass;
 	setParameter("DBInstanceClass", dBInstanceClass);
+}
+
+std::string ModifyDBInstanceSpecRequest::getEffectiveTime()const
+{
+	return effectiveTime_;
+}
+
+void ModifyDBInstanceSpecRequest::setEffectiveTime(const std::string& effectiveTime)
+{
+	effectiveTime_ = effectiveTime;
+	setParameter("EffectiveTime", effectiveTime);
+}
+
+std::string ModifyDBInstanceSpecRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyDBInstanceSpecRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string ModifyDBInstanceSpecRequest::getPayType()const
+{
+	return payType_;
+}
+
+void ModifyDBInstanceSpecRequest::setPayType(const std::string& payType)
+{
+	payType_ = payType;
+	setParameter("PayType", payType);
 }
 

@@ -157,6 +157,17 @@ void CloneDBInstanceRequest::setDBInstanceClass(const std::string& dBInstanceCla
 	setParameter("DBInstanceClass", dBInstanceClass);
 }
 
+std::string CloneDBInstanceRequest::getDbNames()const
+{
+	return dbNames_;
+}
+
+void CloneDBInstanceRequest::setDbNames(const std::string& dbNames)
+{
+	dbNames_ = dbNames;
+	setParameter("DbNames", dbNames);
+}
+
 std::string CloneDBInstanceRequest::getVSwitchId()const
 {
 	return vSwitchId_;
@@ -190,6 +201,17 @@ void CloneDBInstanceRequest::setResourceGroupId(const std::string& resourceGroup
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
+std::string CloneDBInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CloneDBInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string CloneDBInstanceRequest::getVPCId()const
 {
 	return vPCId_;
@@ -199,6 +221,17 @@ void CloneDBInstanceRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
 	setParameter("VPCId", vPCId);
+}
+
+std::string CloneDBInstanceRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void CloneDBInstanceRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
 }
 
 std::string CloneDBInstanceRequest::getDBInstanceDescription()const

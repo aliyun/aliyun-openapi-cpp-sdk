@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getBackupPolicyMode()const;
+				void setBackupPolicyMode(const std::string& backupPolicyMode);
 
             private:
 				long resourceOwnerId_;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				std::string dBInstanceId_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string backupPolicyMode_;
 
 			};
 		}

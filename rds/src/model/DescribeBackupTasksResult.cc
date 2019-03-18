@@ -46,14 +46,16 @@ void DescribeBackupTasksResult::parse(const std::string &payload)
 		BackupJob itemsObject;
 		if(!value["BackupProgressStatus"].isNull())
 			itemsObject.backupProgressStatus = value["BackupProgressStatus"].asString();
+		if(!value["BackupStatus"].isNull())
+			itemsObject.backupStatus = value["BackupStatus"].asString();
 		if(!value["JobMode"].isNull())
 			itemsObject.jobMode = value["JobMode"].asString();
 		if(!value["Process"].isNull())
 			itemsObject.process = value["Process"].asString();
 		if(!value["TaskAction"].isNull())
 			itemsObject.taskAction = value["TaskAction"].asString();
-		if(!value["BackupjobId"].isNull())
-			itemsObject.backupjobId = value["BackupjobId"].asString();
+		if(!value["BackupJobId"].isNull())
+			itemsObject.backupJobId = value["BackupJobId"].asString();
 		items_.push_back(itemsObject);
 	}
 

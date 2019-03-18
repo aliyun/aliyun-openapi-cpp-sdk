@@ -157,6 +157,17 @@ void ModifySecurityIpsRequest::setDBInstanceIPArrayAttribute(const std::string& 
 	setParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
 }
 
+std::string ModifySecurityIpsRequest::getSecurityIPType()const
+{
+	return securityIPType_;
+}
+
+void ModifySecurityIpsRequest::setSecurityIPType(const std::string& securityIPType)
+{
+	securityIPType_ = securityIPType;
+	setParameter("SecurityIPType", securityIPType);
+}
+
 std::string ModifySecurityIpsRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;

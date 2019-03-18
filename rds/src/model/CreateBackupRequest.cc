@@ -47,6 +47,17 @@ void CreateBackupRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateBackupRequest::getBackupStrategy()const
+{
+	return backupStrategy_;
+}
+
+void CreateBackupRequest::setBackupStrategy(const std::string& backupStrategy)
+{
+	backupStrategy_ = backupStrategy;
+	setParameter("BackupStrategy", backupStrategy);
+}
+
 std::string CreateBackupRequest::getDBName()const
 {
 	return dBName_;

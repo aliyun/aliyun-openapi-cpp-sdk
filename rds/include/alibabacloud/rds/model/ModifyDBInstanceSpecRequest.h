@@ -43,33 +43,36 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getEffectiveTime()const;
-				void setEffectiveTime(const std::string& effectiveTime);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getEngineVersion()const;
+				void setEngineVersion(const std::string& engineVersion);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPayType()const;
-				void setPayType(const std::string& payType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDBInstanceClass()const;
 				void setDBInstanceClass(const std::string& dBInstanceClass);
+				std::string getEffectiveTime()const;
+				void setEffectiveTime(const std::string& effectiveTime);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getPayType()const;
+				void setPayType(const std::string& payType);
 
             private:
 				long resourceOwnerId_;
 				int dBInstanceStorage_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string effectiveTime_;
 				std::string ownerAccount_;
-				std::string dBInstanceId_;
+				std::string engineVersion_;
 				long ownerId_;
-				std::string payType_;
 				std::string accessKeyId_;
 				std::string dBInstanceClass_;
+				std::string effectiveTime_;
+				std::string dBInstanceId_;
+				std::string payType_;
 
 			};
 		}

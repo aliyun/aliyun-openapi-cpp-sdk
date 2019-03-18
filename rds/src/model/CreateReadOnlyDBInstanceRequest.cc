@@ -212,6 +212,28 @@ void CreateReadOnlyDBInstanceRequest::setDBInstanceDescription(const std::string
 	setParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
+std::string CreateReadOnlyDBInstanceRequest::getDBInstanceStorageType()const
+{
+	return dBInstanceStorageType_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
+{
+	dBInstanceStorageType_ = dBInstanceStorageType;
+	setParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getCategory()const
+{
+	return category_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
+}
+
 std::string CreateReadOnlyDBInstanceRequest::getPayType()const
 {
 	return payType_;
