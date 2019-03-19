@@ -69,6 +69,10 @@ void QueryCustomerByPhoneResult::parse(const std::string &payload)
 			dataObject.customizeFields.distributionLevel = customizeFieldsNode["DistributionLevel"].asString();
 		if(!customizeFieldsNode["MainAccountUid"].isNull())
 			dataObject.customizeFields.mainAccountUid = customizeFieldsNode["MainAccountUid"].asString();
+		if(!customizeFieldsNode["AssociatePerson"].isNull())
+			dataObject.customizeFields.associatePerson = customizeFieldsNode["AssociatePerson"].asString();
+		if(!customizeFieldsNode["Tag"].isNull())
+			dataObject.customizeFields.tag = customizeFieldsNode["Tag"].asString();
 			auto allAssociatePersonList = customizeFieldsNode["AssociatePersonList"]["AssociatePersonList"];
 			for (auto value : allAssociatePersonList)
 				dataObject.customizeFields.associatePersonList.push_back(value.asString());

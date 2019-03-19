@@ -40,6 +40,8 @@ namespace AlibabaCloud
 						std::string abcUrl;
 						std::vector<std::string> associatePersonList;
 						std::string distributionLevel;
+						std::string tag;
+						std::string associatePerson;
 						std::string cid;
 					};
 					std::string email;
