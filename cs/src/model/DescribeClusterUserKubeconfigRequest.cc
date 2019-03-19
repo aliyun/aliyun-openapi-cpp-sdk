@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cs/model/DescribeAgilityTunnelAgentInfoRequest.h>
+#include <alibabacloud/cs/model/DescribeClusterUserKubeconfigRequest.h>
 
-using AlibabaCloud::CS::Model::DescribeAgilityTunnelAgentInfoRequest;
+using AlibabaCloud::CS::Model::DescribeClusterUserKubeconfigRequest;
 
-DescribeAgilityTunnelAgentInfoRequest::DescribeAgilityTunnelAgentInfoRequest() :
+DescribeClusterUserKubeconfigRequest::DescribeClusterUserKubeconfigRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
 {}
 
-DescribeAgilityTunnelAgentInfoRequest::~DescribeAgilityTunnelAgentInfoRequest()
+DescribeClusterUserKubeconfigRequest::~DescribeClusterUserKubeconfigRequest()
 {}
 
-std::string DescribeAgilityTunnelAgentInfoRequest::getToken()const
+std::string DescribeClusterUserKubeconfigRequest::getClusterId()const
 {
-	return token_;
+	return clusterId_;
 }
 
-void DescribeAgilityTunnelAgentInfoRequest::setToken(const std::string& token)
+void DescribeClusterUserKubeconfigRequest::setClusterId(const std::string& clusterId)
 {
-	token_ = token;
-	setParameter("Token", token);
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
 }
 

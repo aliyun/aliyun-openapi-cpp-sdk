@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cs/model/DescribeAgilityTunnelAgentInfoResult.h>
+#include <alibabacloud/cs/model/DescribeClusterEndpointsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CS;
 using namespace AlibabaCloud::CS::Model;
 
-DescribeAgilityTunnelAgentInfoResult::DescribeAgilityTunnelAgentInfoResult() :
+DescribeClusterEndpointsResult::DescribeClusterEndpointsResult() :
 	ServiceResult()
 {}
 
-DescribeAgilityTunnelAgentInfoResult::DescribeAgilityTunnelAgentInfoResult(const std::string &payload) :
+DescribeClusterEndpointsResult::DescribeClusterEndpointsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeAgilityTunnelAgentInfoResult::~DescribeAgilityTunnelAgentInfoResult()
+DescribeClusterEndpointsResult::~DescribeClusterEndpointsResult()
 {}
 
-void DescribeAgilityTunnelAgentInfoResult::parse(const std::string &payload)
+void DescribeClusterEndpointsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

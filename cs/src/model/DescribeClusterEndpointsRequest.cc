@@ -14,32 +14,25 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CS_MODEL_CREATETEMPLATEREQUEST_H_
-#define ALIBABACLOUD_CS_MODEL_CREATETEMPLATEREQUEST_H_
+#include <alibabacloud/cs/model/DescribeClusterEndpointsRequest.h>
 
-#include <string>
-#include <vector>
-#include <alibabacloud/core/RoaServiceRequest.h>
-#include <alibabacloud/cs/CSExport.h>
+using AlibabaCloud::CS::Model::DescribeClusterEndpointsRequest;
 
-namespace AlibabaCloud
+DescribeClusterEndpointsRequest::DescribeClusterEndpointsRequest() :
+	RoaServiceRequest("cs", "2015-12-15")
+{}
+
+DescribeClusterEndpointsRequest::~DescribeClusterEndpointsRequest()
+{}
+
+std::string DescribeClusterEndpointsRequest::getClusterId()const
 {
-	namespace CS
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CS_EXPORT CreateTemplateRequest : public RoaServiceRequest
-			{
-
-			public:
-				CreateTemplateRequest();
-				~CreateTemplateRequest();
-
-
-            private:
-
-			};
-		}
-	}
+	return clusterId_;
 }
-#endif // !ALIBABACLOUD_CS_MODEL_CREATETEMPLATEREQUEST_H_
+
+void DescribeClusterEndpointsRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+

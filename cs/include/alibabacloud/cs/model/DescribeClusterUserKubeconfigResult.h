@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CS_MODEL_DESCRIBETASKINFORESULT_H_
-#define ALIBABACLOUD_CS_MODEL_DESCRIBETASKINFORESULT_H_
+#ifndef ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERUSERKUBECONFIGRESULT_H_
+#define ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERUSERKUBECONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CS_EXPORT DescribeTaskInfoResult : public ServiceResult
+			class ALIBABACLOUD_CS_EXPORT DescribeClusterUserKubeconfigResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeTaskInfoResult();
-				explicit DescribeTaskInfoResult(const std::string &payload);
-				~DescribeTaskInfoResult();
+				DescribeClusterUserKubeconfigResult();
+				explicit DescribeClusterUserKubeconfigResult(const std::string &payload);
+				~DescribeClusterUserKubeconfigResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CS_MODEL_DESCRIBETASKINFORESULT_H_
+#endif // !ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERUSERKUBECONFIGRESULT_H_

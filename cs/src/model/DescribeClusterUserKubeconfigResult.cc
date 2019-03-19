@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cs/model/DescribeClusterNodeInfoWithInstanceResult.h>
+#include <alibabacloud/cs/model/DescribeClusterUserKubeconfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CS;
 using namespace AlibabaCloud::CS::Model;
 
-DescribeClusterNodeInfoWithInstanceResult::DescribeClusterNodeInfoWithInstanceResult() :
+DescribeClusterUserKubeconfigResult::DescribeClusterUserKubeconfigResult() :
 	ServiceResult()
 {}
 
-DescribeClusterNodeInfoWithInstanceResult::DescribeClusterNodeInfoWithInstanceResult(const std::string &payload) :
+DescribeClusterUserKubeconfigResult::DescribeClusterUserKubeconfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeClusterNodeInfoWithInstanceResult::~DescribeClusterNodeInfoWithInstanceResult()
+DescribeClusterUserKubeconfigResult::~DescribeClusterUserKubeconfigResult()
 {}
 
-void DescribeClusterNodeInfoWithInstanceResult::parse(const std::string &payload)
+void DescribeClusterUserKubeconfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

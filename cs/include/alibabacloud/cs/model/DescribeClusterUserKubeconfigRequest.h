@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERNODEINFOWITHINSTANCERESULT_H_
-#define ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERNODEINFOWITHINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERUSERKUBECONFIGREQUEST_H_
+#define ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERUSERKUBECONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <alibabacloud/cs/CSExport.h>
 
 namespace AlibabaCloud
@@ -29,21 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CS_EXPORT DescribeClusterNodeInfoWithInstanceResult : public ServiceResult
+			class ALIBABACLOUD_CS_EXPORT DescribeClusterUserKubeconfigRequest : public RoaServiceRequest
 			{
+
 			public:
+				DescribeClusterUserKubeconfigRequest();
+				~DescribeClusterUserKubeconfigRequest();
 
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 
-				DescribeClusterNodeInfoWithInstanceResult();
-				explicit DescribeClusterNodeInfoWithInstanceResult(const std::string &payload);
-				~DescribeClusterNodeInfoWithInstanceResult();
-
-			protected:
-				void parse(const std::string &payload);
-			private:
+            private:
+				std::string clusterId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERNODEINFOWITHINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERUSERKUBECONFIGREQUEST_H_

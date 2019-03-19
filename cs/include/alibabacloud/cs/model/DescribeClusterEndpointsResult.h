@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CS_MODEL_CREATECLUSTERTOKENRESULT_H_
-#define ALIBABACLOUD_CS_MODEL_CREATECLUSTERTOKENRESULT_H_
+#ifndef ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERENDPOINTSRESULT_H_
+#define ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERENDPOINTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CS_EXPORT CreateClusterTokenResult : public ServiceResult
+			class ALIBABACLOUD_CS_EXPORT DescribeClusterEndpointsResult : public ServiceResult
 			{
 			public:
 
 
-				CreateClusterTokenResult();
-				explicit CreateClusterTokenResult(const std::string &payload);
-				~CreateClusterTokenResult();
+				DescribeClusterEndpointsResult();
+				explicit DescribeClusterEndpointsResult(const std::string &payload);
+				~DescribeClusterEndpointsResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CS_MODEL_CREATECLUSTERTOKENRESULT_H_
+#endif // !ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERENDPOINTSRESULT_H_
