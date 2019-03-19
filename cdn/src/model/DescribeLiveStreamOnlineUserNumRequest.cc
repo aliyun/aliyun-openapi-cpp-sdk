@@ -113,14 +113,3 @@ void DescribeLiveStreamOnlineUserNumRequest::setStreamName(const std::string& st
 	setParameter("StreamName", streamName);
 }
 
-std::string DescribeLiveStreamOnlineUserNumRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveStreamOnlineUserNumRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

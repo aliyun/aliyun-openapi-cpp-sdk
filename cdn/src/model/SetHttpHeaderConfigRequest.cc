@@ -91,14 +91,3 @@ void SetHttpHeaderConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetHttpHeaderConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetHttpHeaderConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

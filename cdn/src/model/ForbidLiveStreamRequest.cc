@@ -102,14 +102,3 @@ void ForbidLiveStreamRequest::setStreamName(const std::string& streamName)
 	setParameter("StreamName", streamName);
 }
 
-std::string ForbidLiveStreamRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ForbidLiveStreamRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

@@ -58,14 +58,3 @@ void OpenCdnServiceRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string OpenCdnServiceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void OpenCdnServiceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

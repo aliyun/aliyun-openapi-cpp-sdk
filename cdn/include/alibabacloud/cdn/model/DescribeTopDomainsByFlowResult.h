@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct TopDomain
 				{
-					long maxBps;
+					float maxBps;
 					std::string domainName;
 					std::string maxBpsTime;
 					long rank;

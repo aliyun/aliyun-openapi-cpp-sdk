@@ -80,14 +80,3 @@ void SetErrorPageConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetErrorPageConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetErrorPageConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

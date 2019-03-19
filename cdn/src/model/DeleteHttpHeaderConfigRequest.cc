@@ -69,14 +69,3 @@ void DeleteHttpHeaderConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteHttpHeaderConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteHttpHeaderConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

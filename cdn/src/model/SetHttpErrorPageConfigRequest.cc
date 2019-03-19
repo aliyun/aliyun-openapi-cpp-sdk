@@ -80,14 +80,3 @@ void SetHttpErrorPageConfigRequest::setErrorCode(const std::string& errorCode)
 	setParameter("ErrorCode", errorCode);
 }
 
-std::string SetHttpErrorPageConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetHttpErrorPageConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

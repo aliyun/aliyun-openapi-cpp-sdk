@@ -80,14 +80,3 @@ void SetRemoveQueryStringConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetRemoveQueryStringConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetRemoveQueryStringConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

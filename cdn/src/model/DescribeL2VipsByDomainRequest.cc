@@ -58,14 +58,3 @@ void DescribeL2VipsByDomainRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeL2VipsByDomainRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeL2VipsByDomainRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

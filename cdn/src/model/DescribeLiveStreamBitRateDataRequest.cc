@@ -102,14 +102,3 @@ void DescribeLiveStreamBitRateDataRequest::setStreamName(const std::string& stre
 	setParameter("StreamName", streamName);
 }
 
-std::string DescribeLiveStreamBitRateDataRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveStreamBitRateDataRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

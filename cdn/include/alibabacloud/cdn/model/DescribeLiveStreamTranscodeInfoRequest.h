@@ -41,14 +41,11 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getDomainTranscodeName()const;
 				void setDomainTranscodeName(const std::string& domainTranscodeName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string securityToken_;
 				long ownerId_;
 				std::string domainTranscodeName_;
-				std::string accessKeyId_;
 
 			};
 		}

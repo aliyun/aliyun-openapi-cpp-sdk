@@ -113,14 +113,3 @@ void AddLiveStreamTranscodeRequest::setSnapshot(const std::string& snapshot)
 	setParameter("Snapshot", snapshot);
 }
 
-std::string AddLiveStreamTranscodeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddLiveStreamTranscodeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

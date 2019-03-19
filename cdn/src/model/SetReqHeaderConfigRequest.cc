@@ -91,14 +91,3 @@ void SetReqHeaderConfigRequest::setKey(const std::string& key)
 	setParameter("Key", key);
 }
 
-std::string SetReqHeaderConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetReqHeaderConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

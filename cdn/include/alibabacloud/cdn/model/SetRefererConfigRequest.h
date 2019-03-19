@@ -49,8 +49,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAllowEmpty()const;
 				void setAllowEmpty(const std::string& allowEmpty);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string referList_;
@@ -60,7 +58,6 @@ namespace AlibabaCloud
 				std::string disableAst_;
 				long ownerId_;
 				std::string allowEmpty_;
-				std::string accessKeyId_;
 
 			};
 		}

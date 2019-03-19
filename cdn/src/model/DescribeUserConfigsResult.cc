@@ -53,6 +53,9 @@ void DescribeUserConfigsResult::parse(const std::string &payload)
 		configs_.greenManagerConfig.quota = greenManagerConfigNode["Quota"].asString();
 	if(!greenManagerConfigNode["Ratio"].isNull())
 		configs_.greenManagerConfig.ratio = greenManagerConfigNode["Ratio"].asString();
+	auto wafConfigNode = configsNode["WafConfig"];
+	if(!wafConfigNode["Enable"].isNull())
+		configs_.wafConfig.enable = wafConfigNode["Enable"].asString();
 
 }
 

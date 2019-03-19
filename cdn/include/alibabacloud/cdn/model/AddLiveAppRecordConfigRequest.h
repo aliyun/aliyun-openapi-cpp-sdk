@@ -49,8 +49,6 @@ namespace AlibabaCloud
 				void setOssObjectPrefix(const std::string& ossObjectPrefix);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string ossBucket_;
@@ -60,7 +58,6 @@ namespace AlibabaCloud
 				std::string ossEndpoint_;
 				std::string ossObjectPrefix_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

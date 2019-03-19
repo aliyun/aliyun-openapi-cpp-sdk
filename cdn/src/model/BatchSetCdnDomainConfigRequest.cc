@@ -80,14 +80,3 @@ void BatchSetCdnDomainConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string BatchSetCdnDomainConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void BatchSetCdnDomainConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

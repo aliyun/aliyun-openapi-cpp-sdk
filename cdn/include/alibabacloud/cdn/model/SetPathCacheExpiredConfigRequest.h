@@ -47,8 +47,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getTTL()const;
 				void setTTL(const std::string& tTL);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string securityToken_;
@@ -57,7 +55,6 @@ namespace AlibabaCloud
 				std::string cacheContent_;
 				long ownerId_;
 				std::string tTL_;
-				std::string accessKeyId_;
 
 			};
 		}

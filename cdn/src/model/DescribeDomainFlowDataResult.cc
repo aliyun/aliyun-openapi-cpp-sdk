@@ -68,12 +68,12 @@ void DescribeDomainFlowDataResult::parse(const std::string &payload)
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
-	if(!value["DataInterval"].isNull())
-		dataInterval_ = value["DataInterval"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 
 }
 
@@ -92,13 +92,13 @@ std::vector<DescribeDomainFlowDataResult::DataModule> DescribeDomainFlowDataResu
 	return flowDataPerInterval_;
 }
 
-std::string DescribeDomainFlowDataResult::getDataInterval()const
-{
-	return dataInterval_;
-}
-
 std::string DescribeDomainFlowDataResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeDomainFlowDataResult::getDataInterval()const
+{
+	return dataInterval_;
 }
 

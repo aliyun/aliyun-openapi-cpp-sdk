@@ -102,17 +102,6 @@ void DescribeLiveSnapshotConfigRequest::setStreamName(const std::string& streamN
 	setParameter("StreamName", streamName);
 }
 
-std::string DescribeLiveSnapshotConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveSnapshotConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeLiveSnapshotConfigRequest::getOrder()const
 {
 	return order_;

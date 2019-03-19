@@ -69,14 +69,3 @@ void SetIpBlackListConfigRequest::setBlockIps(const std::string& blockIps)
 	setParameter("BlockIps", blockIps);
 }
 
-std::string SetIpBlackListConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetIpBlackListConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

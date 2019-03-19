@@ -58,14 +58,3 @@ void DescribeCdnCertificateDetailRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeCdnCertificateDetailRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeCdnCertificateDetailRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

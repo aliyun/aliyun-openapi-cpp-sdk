@@ -124,14 +124,3 @@ void UpdateLiveAppSnapshotConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string UpdateLiveAppSnapshotConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateLiveAppSnapshotConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

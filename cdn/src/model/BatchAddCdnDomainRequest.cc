@@ -135,14 +135,3 @@ void BatchAddCdnDomainRequest::setCheckUrl(const std::string& checkUrl)
 	setParameter("CheckUrl", checkUrl);
 }
 
-std::string BatchAddCdnDomainRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void BatchAddCdnDomainRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

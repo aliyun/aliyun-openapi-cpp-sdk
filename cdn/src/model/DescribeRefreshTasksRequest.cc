@@ -91,17 +91,6 @@ void DescribeRefreshTasksRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeRefreshTasksRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeRefreshTasksRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeRefreshTasksRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

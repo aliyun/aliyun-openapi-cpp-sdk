@@ -80,17 +80,6 @@ void DescribeDomainBpsDataByTimeStampRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeDomainBpsDataByTimeStampRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDomainBpsDataByTimeStampRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeDomainBpsDataByTimeStampRequest::getTimePoint()const
 {
 	return timePoint_;

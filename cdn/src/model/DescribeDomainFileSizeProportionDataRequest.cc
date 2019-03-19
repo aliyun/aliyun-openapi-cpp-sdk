@@ -80,14 +80,3 @@ void DescribeDomainFileSizeProportionDataRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeDomainFileSizeProportionDataRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDomainFileSizeProportionDataRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

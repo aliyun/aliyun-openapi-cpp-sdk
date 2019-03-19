@@ -69,14 +69,3 @@ void DeleteCdnDomainRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteCdnDomainRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteCdnDomainRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

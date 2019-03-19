@@ -102,14 +102,3 @@ void SetRefererConfigRequest::setAllowEmpty(const std::string& allowEmpty)
 	setParameter("AllowEmpty", allowEmpty);
 }
 
-std::string SetRefererConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetRefererConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

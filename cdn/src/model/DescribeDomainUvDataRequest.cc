@@ -80,14 +80,3 @@ void DescribeDomainUvDataRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeDomainUvDataRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDomainUvDataRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

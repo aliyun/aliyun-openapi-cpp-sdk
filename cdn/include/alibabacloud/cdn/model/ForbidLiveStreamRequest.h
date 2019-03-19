@@ -49,8 +49,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getStreamName()const;
 				void setStreamName(const std::string& streamName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string resumeTime_;
@@ -60,7 +58,6 @@ namespace AlibabaCloud
 				std::string domainName_;
 				long ownerId_;
 				std::string streamName_;
-				std::string accessKeyId_;
 
 			};
 		}

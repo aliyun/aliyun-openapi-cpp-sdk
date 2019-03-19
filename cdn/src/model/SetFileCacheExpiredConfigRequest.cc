@@ -91,14 +91,3 @@ void SetFileCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 	setParameter("TTL", tTL);
 }
 
-std::string SetFileCacheExpiredConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetFileCacheExpiredConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

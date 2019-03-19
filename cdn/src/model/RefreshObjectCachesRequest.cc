@@ -69,14 +69,3 @@ void RefreshObjectCachesRequest::setObjectType(const std::string& objectType)
 	setParameter("ObjectType", objectType);
 }
 
-std::string RefreshObjectCachesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RefreshObjectCachesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

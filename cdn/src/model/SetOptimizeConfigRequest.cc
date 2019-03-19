@@ -69,14 +69,3 @@ void SetOptimizeConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetOptimizeConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetOptimizeConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

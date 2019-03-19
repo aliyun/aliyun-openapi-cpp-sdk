@@ -45,13 +45,8 @@ namespace AlibabaCloud
 					std::string value;
 					std::string dynamicDomesticValue;
 					std::string domesticL2Value;
-					std::string dynamicValue;
 					std::string l2Value;
-				};
-				struct DataModule1
-				{
-					std::string value;
-					std::string timeStamp;
+					std::string dynamicValue;
 				};
 
 
@@ -62,10 +57,9 @@ namespace AlibabaCloud
 				std::string getIspName()const;
 				std::string getEndTime()const;
 				std::string getDomainName()const;
-				std::vector<DataModule1> getSupplyBpsDatas()const;
 				std::string getLocationNameEn()const;
-				std::string getDataInterval()const;
 				std::string getStartTime()const;
+				std::string getDataInterval()const;
 				std::vector<DataModule> getBpsDataPerInterval()const;
 				std::string getLocationName()const;
 
@@ -76,10 +70,9 @@ namespace AlibabaCloud
 				std::string ispName_;
 				std::string endTime_;
 				std::string domainName_;
-				std::vector<DataModule1> supplyBpsDatas_;
 				std::string locationNameEn_;
-				std::string dataInterval_;
 				std::string startTime_;
+				std::string dataInterval_;
 				std::vector<DataModule> bpsDataPerInterval_;
 				std::string locationName_;
 

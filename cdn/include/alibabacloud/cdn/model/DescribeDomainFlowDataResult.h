@@ -53,8 +53,8 @@ namespace AlibabaCloud
 				std::string getEndTime()const;
 				std::string getDomainName()const;
 				std::vector<DataModule> getFlowDataPerInterval()const;
-				std::string getDataInterval()const;
 				std::string getStartTime()const;
+				std::string getDataInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -62,8 +62,8 @@ namespace AlibabaCloud
 				std::string endTime_;
 				std::string domainName_;
 				std::vector<DataModule> flowDataPerInterval_;
-				std::string dataInterval_;
 				std::string startTime_;
+				std::string dataInterval_;
 
 			};
 		}

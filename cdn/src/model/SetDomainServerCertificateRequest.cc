@@ -135,14 +135,3 @@ void SetDomainServerCertificateRequest::setRegion(const std::string& region)
 	setParameter("Region", region);
 }
 
-std::string SetDomainServerCertificateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetDomainServerCertificateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

@@ -47,14 +47,3 @@ void DescribeRefreshQuotaRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeRefreshQuotaRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeRefreshQuotaRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

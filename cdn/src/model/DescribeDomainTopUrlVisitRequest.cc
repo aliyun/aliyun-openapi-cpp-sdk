@@ -80,14 +80,3 @@ void DescribeDomainTopUrlVisitRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeDomainTopUrlVisitRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDomainTopUrlVisitRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

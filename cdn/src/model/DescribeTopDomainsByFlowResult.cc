@@ -53,7 +53,7 @@ void DescribeTopDomainsByFlowResult::parse(const std::string &payload)
 		if(!value["TrafficPercent"].isNull())
 			topDomainsObject.trafficPercent = value["TrafficPercent"].asString();
 		if(!value["MaxBps"].isNull())
-			topDomainsObject.maxBps = std::stol(value["MaxBps"].asString());
+			topDomainsObject.maxBps = std::stof(value["MaxBps"].asString());
 		if(!value["MaxBpsTime"].isNull())
 			topDomainsObject.maxBpsTime = value["MaxBpsTime"].asString();
 		if(!value["TotalAccess"].isNull())

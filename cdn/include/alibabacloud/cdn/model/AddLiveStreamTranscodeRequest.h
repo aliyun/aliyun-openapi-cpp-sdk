@@ -51,8 +51,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getSnapshot()const;
 				void setSnapshot(const std::string& snapshot);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string _template_;
@@ -63,7 +61,6 @@ namespace AlibabaCloud
 				std::string record_;
 				long ownerId_;
 				std::string snapshot_;
-				std::string accessKeyId_;
 
 			};
 		}

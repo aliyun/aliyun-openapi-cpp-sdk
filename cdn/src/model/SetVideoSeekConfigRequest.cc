@@ -69,14 +69,3 @@ void SetVideoSeekConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetVideoSeekConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetVideoSeekConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

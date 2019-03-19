@@ -47,8 +47,6 @@ namespace AlibabaCloud
 				void setHeaderKey(const std::string& headerKey);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string headerValue_;
@@ -57,7 +55,6 @@ namespace AlibabaCloud
 				std::string domainName_;
 				std::string headerKey_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

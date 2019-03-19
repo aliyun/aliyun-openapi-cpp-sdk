@@ -135,14 +135,3 @@ void CreateLiveStreamRecordIndexFilesRequest::setOssObject(const std::string& os
 	setParameter("OssObject", ossObject);
 }
 
-std::string CreateLiveStreamRecordIndexFilesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateLiveStreamRecordIndexFilesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

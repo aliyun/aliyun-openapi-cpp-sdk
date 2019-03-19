@@ -77,7 +77,7 @@ bool DeleteUserUsageDataExportTaskRequest::getProxy_original_security_transport(
 void DeleteUserUsageDataExportTaskRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getCallerBid()const
@@ -154,7 +154,7 @@ bool DeleteUserUsageDataExportTaskRequest::getProxy_trust_transport_info()const
 void DeleteUserUsageDataExportTaskRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DeleteUserUsageDataExportTaskRequest::getAk_mfa_present()const
@@ -165,7 +165,7 @@ bool DeleteUserUsageDataExportTaskRequest::getAk_mfa_present()const
 void DeleteUserUsageDataExportTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getAccessKeyId()const
@@ -187,7 +187,7 @@ bool DeleteUserUsageDataExportTaskRequest::getSecurity_transport()const
 void DeleteUserUsageDataExportTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getSecurityToken()const

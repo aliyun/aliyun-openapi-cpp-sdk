@@ -55,8 +55,6 @@ namespace AlibabaCloud
 				void setMixAppName(const std::string& mixAppName);
 				std::string getMainStreamName()const;
 				void setMainStreamName(const std::string& mainStreamName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string mixType_;
@@ -69,7 +67,6 @@ namespace AlibabaCloud
 				std::string mainAppName_;
 				std::string mixAppName_;
 				std::string mainStreamName_;
-				std::string accessKeyId_;
 
 			};
 		}

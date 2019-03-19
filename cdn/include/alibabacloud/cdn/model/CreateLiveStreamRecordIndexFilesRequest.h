@@ -55,8 +55,6 @@ namespace AlibabaCloud
 				void setStreamName(const std::string& streamName);
 				std::string getOssObject()const;
 				void setOssObject(const std::string& ossObject);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string ossBucket_;
@@ -69,7 +67,6 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string streamName_;
 				std::string ossObject_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -80,17 +80,6 @@ void AddCdnDomainRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string AddCdnDomainRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddCdnDomainRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string AddCdnDomainRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

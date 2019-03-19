@@ -102,14 +102,3 @@ void DescribeLiveStreamRecordContentRequest::setStreamName(const std::string& st
 	setParameter("StreamName", streamName);
 }
 
-std::string DescribeLiveStreamRecordContentRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveStreamRecordContentRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

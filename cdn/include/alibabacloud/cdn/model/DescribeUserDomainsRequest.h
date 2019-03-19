@@ -49,8 +49,6 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getDomainStatus()const;
 				void setDomainStatus(const std::string& domainStatus);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDomainSearchType()const;
 				void setDomainSearchType(const std::string& domainSearchType);
 				bool getCheckDomainShow()const;
@@ -72,7 +70,6 @@ namespace AlibabaCloud
 				std::string funcId_;
 				int pageNumber_;
 				std::string domainStatus_;
-				std::string accessKeyId_;
 				std::string domainSearchType_;
 				bool checkDomainShow_;
 				std::string resourceGroupId_;

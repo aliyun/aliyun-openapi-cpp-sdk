@@ -49,8 +49,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getLogDay()const;
 				void setLogDay(const std::string& logDay);
 
@@ -62,7 +60,6 @@ namespace AlibabaCloud
 				std::string startTime_;
 				long ownerId_;
 				long pageNumber_;
-				std::string accessKeyId_;
 				std::string logDay_;
 
 			};

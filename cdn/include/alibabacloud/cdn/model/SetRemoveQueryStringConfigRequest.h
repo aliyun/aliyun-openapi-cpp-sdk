@@ -45,8 +45,6 @@ namespace AlibabaCloud
 				void setAliRemoveArgs(const std::string& aliRemoveArgs);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string keepOssArgs_;
@@ -54,7 +52,6 @@ namespace AlibabaCloud
 				std::string domainName_;
 				std::string aliRemoveArgs_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -69,14 +69,3 @@ void DescribeCdnDomainConfigsRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeCdnDomainConfigsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeCdnDomainConfigsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

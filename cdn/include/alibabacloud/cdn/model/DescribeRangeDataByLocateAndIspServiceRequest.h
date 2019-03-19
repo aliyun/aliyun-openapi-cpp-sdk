@@ -49,8 +49,6 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string ispNames_;
@@ -60,7 +58,6 @@ namespace AlibabaCloud
 				std::string endTime_;
 				std::string startTime_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

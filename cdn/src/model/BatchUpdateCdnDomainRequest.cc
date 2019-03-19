@@ -91,14 +91,3 @@ void BatchUpdateCdnDomainRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string BatchUpdateCdnDomainRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void BatchUpdateCdnDomainRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

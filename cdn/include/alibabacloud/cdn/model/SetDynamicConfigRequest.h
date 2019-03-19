@@ -51,8 +51,6 @@ namespace AlibabaCloud
 				void setDynamicCacheControl(const std::string& dynamicCacheControl);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string dynamicOrigin_;
@@ -63,7 +61,6 @@ namespace AlibabaCloud
 				std::string staticPath_;
 				std::string dynamicCacheControl_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

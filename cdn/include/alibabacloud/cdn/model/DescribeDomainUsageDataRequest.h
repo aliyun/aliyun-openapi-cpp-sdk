@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeDomainUsageDataRequest();
 				~DescribeDomainUsageDataRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
@@ -91,8 +93,11 @@ namespace AlibabaCloud
 				void setField(const std::string& field);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getInterval()const;
+				void setInterval(const std::string& interval);
 
             private:
+				long resourceOwnerId_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string startTime_;
@@ -121,6 +126,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string field_;
 				std::string requestId_;
+				std::string interval_;
 
 			};
 		}

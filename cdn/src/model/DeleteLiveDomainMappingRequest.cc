@@ -69,14 +69,3 @@ void DeleteLiveDomainMappingRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteLiveDomainMappingRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteLiveDomainMappingRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

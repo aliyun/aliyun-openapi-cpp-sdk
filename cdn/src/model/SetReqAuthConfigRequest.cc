@@ -102,17 +102,6 @@ void SetReqAuthConfigRequest::setTimeOut(const std::string& timeOut)
 	setParameter("TimeOut", timeOut);
 }
 
-std::string SetReqAuthConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetReqAuthConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SetReqAuthConfigRequest::getAuthType()const
 {
 	return authType_;

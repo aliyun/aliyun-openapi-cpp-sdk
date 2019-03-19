@@ -80,14 +80,3 @@ void SetSourceHostConfigRequest::setBackSrcDomain(const std::string& backSrcDoma
 	setParameter("BackSrcDomain", backSrcDomain);
 }
 
-std::string SetSourceHostConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetSourceHostConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

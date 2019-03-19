@@ -58,14 +58,3 @@ void DescribeLiveStreamTranscodeInfoRequest::setDomainTranscodeName(const std::s
 	setParameter("DomainTranscodeName", domainTranscodeName);
 }
 
-std::string DescribeLiveStreamTranscodeInfoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveStreamTranscodeInfoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

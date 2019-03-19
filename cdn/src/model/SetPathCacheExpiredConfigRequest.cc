@@ -91,14 +91,3 @@ void SetPathCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 	setParameter("TTL", tTL);
 }
 
-std::string SetPathCacheExpiredConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetPathCacheExpiredConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

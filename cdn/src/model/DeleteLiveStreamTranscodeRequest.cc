@@ -91,14 +91,3 @@ void DeleteLiveStreamTranscodeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteLiveStreamTranscodeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteLiveStreamTranscodeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

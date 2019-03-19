@@ -58,14 +58,3 @@ void DescribeDomainsBySourceRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeDomainsBySourceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDomainsBySourceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

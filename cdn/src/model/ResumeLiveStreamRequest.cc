@@ -91,14 +91,3 @@ void ResumeLiveStreamRequest::setStreamName(const std::string& streamName)
 	setParameter("StreamName", streamName);
 }
 
-std::string ResumeLiveStreamRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ResumeLiveStreamRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

@@ -45,8 +45,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getBlockIps()const;
 				void setBlockIps(const std::string& blockIps);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string allowIps_;
@@ -54,7 +52,6 @@ namespace AlibabaCloud
 				std::string domainName_;
 				long ownerId_;
 				std::string blockIps_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -80,14 +80,3 @@ void SetCcConfigRequest::setBlockIps(const std::string& blockIps)
 	setParameter("BlockIps", blockIps);
 }
 
-std::string SetCcConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetCcConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

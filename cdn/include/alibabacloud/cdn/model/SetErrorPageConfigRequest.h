@@ -45,8 +45,6 @@ namespace AlibabaCloud
 				void setCustomPageUrl(const std::string& customPageUrl);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string pageType_;
@@ -54,7 +52,6 @@ namespace AlibabaCloud
 				std::string domainName_;
 				std::string customPageUrl_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

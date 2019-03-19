@@ -43,15 +43,12 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getPrivateOssAuth()const;
 				void setPrivateOssAuth(const std::string& privateOssAuth);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string securityToken_;
 				std::string domainName_;
 				long ownerId_;
 				std::string privateOssAuth_;
-				std::string accessKeyId_;
 
 			};
 		}

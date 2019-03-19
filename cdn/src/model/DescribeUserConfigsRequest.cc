@@ -58,14 +58,3 @@ void DescribeUserConfigsRequest::setConfig(const std::string& config)
 	setParameter("Config", config);
 }
 
-std::string DescribeUserConfigsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeUserConfigsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

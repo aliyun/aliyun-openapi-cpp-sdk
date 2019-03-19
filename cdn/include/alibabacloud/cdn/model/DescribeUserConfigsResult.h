@@ -45,8 +45,13 @@ namespace AlibabaCloud
 						std::string quota;
 						std::string ratio;
 					};
+					struct WafConfig
+					{
+						std::string enable;
+					};
 					OssLogConfig ossLogConfig;
 					GreenManagerConfig greenManagerConfig;
+					WafConfig wafConfig;
 				};
 
 

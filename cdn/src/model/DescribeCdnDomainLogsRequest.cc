@@ -102,17 +102,6 @@ void DescribeCdnDomainLogsRequest::setPageNumber(long pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeCdnDomainLogsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeCdnDomainLogsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeCdnDomainLogsRequest::getLogDay()const
 {
 	return logDay_;

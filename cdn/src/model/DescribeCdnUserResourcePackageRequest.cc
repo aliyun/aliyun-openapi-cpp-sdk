@@ -47,14 +47,3 @@ void DescribeCdnUserResourcePackageRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeCdnUserResourcePackageRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeCdnUserResourcePackageRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

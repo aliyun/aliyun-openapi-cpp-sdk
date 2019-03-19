@@ -102,14 +102,3 @@ void AddLiveAppRecordConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string AddLiveAppRecordConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddLiveAppRecordConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

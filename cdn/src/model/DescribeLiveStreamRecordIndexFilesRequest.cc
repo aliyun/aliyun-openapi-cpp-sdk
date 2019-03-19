@@ -102,14 +102,3 @@ void DescribeLiveStreamRecordIndexFilesRequest::setStreamName(const std::string&
 	setParameter("StreamName", streamName);
 }
 
-std::string DescribeLiveStreamRecordIndexFilesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveStreamRecordIndexFilesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

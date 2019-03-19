@@ -113,14 +113,3 @@ void DescribeLiveStreamSnapshotInfoRequest::setStreamName(const std::string& str
 	setParameter("StreamName", streamName);
 }
 
-std::string DescribeLiveStreamSnapshotInfoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveStreamSnapshotInfoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

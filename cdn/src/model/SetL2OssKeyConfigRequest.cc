@@ -69,14 +69,3 @@ void SetL2OssKeyConfigRequest::setPrivateOssAuth(const std::string& privateOssAu
 	setParameter("PrivateOssAuth", privateOssAuth);
 }
 
-std::string SetL2OssKeyConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetL2OssKeyConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

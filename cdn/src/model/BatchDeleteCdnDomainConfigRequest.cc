@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::BatchDeleteCdnDomainConfigRequest;
 
 BatchDeleteCdnDomainConfigRequest::BatchDeleteCdnDomainConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "BatchDeleteCdnDomainConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "BatchDeleteCdnDomainConfig")
 {}
 
 BatchDeleteCdnDomainConfigRequest::~BatchDeleteCdnDomainConfigRequest()
@@ -78,16 +78,5 @@ void BatchDeleteCdnDomainConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string BatchDeleteCdnDomainConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void BatchDeleteCdnDomainConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

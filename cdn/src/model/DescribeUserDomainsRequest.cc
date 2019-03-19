@@ -102,17 +102,6 @@ void DescribeUserDomainsRequest::setDomainStatus(const std::string& domainStatus
 	setParameter("DomainStatus", domainStatus);
 }
 
-std::string DescribeUserDomainsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeUserDomainsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeUserDomainsRequest::getDomainSearchType()const
 {
 	return domainSearchType_;
@@ -132,7 +121,7 @@ bool DescribeUserDomainsRequest::getCheckDomainShow()const
 void DescribeUserDomainsRequest::setCheckDomainShow(bool checkDomainShow)
 {
 	checkDomainShow_ = checkDomainShow;
-	setParameter("CheckDomainShow", std::to_string(checkDomainShow));
+	setParameter("CheckDomainShow", checkDomainShow ? "true" : "false");
 }
 
 std::string DescribeUserDomainsRequest::getResourceGroupId()const

@@ -45,8 +45,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getErrorCode()const;
 				void setErrorCode(const std::string& errorCode);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string securityToken_;
@@ -54,7 +52,6 @@ namespace AlibabaCloud
 				std::string pageUrl_;
 				long ownerId_;
 				std::string errorCode_;
-				std::string accessKeyId_;
 
 			};
 		}

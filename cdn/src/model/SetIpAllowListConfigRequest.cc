@@ -69,14 +69,3 @@ void SetIpAllowListConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetIpAllowListConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetIpAllowListConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

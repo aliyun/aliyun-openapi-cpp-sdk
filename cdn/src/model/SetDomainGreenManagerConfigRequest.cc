@@ -19,11 +19,33 @@
 using AlibabaCloud::Cdn::Model::SetDomainGreenManagerConfigRequest;
 
 SetDomainGreenManagerConfigRequest::SetDomainGreenManagerConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetDomainGreenManagerConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetDomainGreenManagerConfig")
 {}
 
 SetDomainGreenManagerConfigRequest::~SetDomainGreenManagerConfigRequest()
 {}
+
+std::string SetDomainGreenManagerConfigRequest::getApp_ip()const
+{
+	return app_ip_;
+}
+
+void SetDomainGreenManagerConfigRequest::setApp_ip(const std::string& app_ip)
+{
+	app_ip_ = app_ip;
+	setParameter("App_ip", app_ip);
+}
+
+std::string SetDomainGreenManagerConfigRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void SetDomainGreenManagerConfigRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setParameter("PopProduct", popProduct);
+}
 
 long SetDomainGreenManagerConfigRequest::getCallerParentId()const
 {
@@ -36,6 +58,17 @@ void SetDomainGreenManagerConfigRequest::setCallerParentId(long callerParentId)
 	setParameter("CallerParentId", std::to_string(callerParentId));
 }
 
+std::string SetDomainGreenManagerConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void SetDomainGreenManagerConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
 bool SetDomainGreenManagerConfigRequest::getProxy_original_security_transport()const
 {
 	return proxy_original_security_transport_;
@@ -44,7 +77,29 @@ bool SetDomainGreenManagerConfigRequest::getProxy_original_security_transport()c
 void SetDomainGreenManagerConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+}
+
+std::string SetDomainGreenManagerConfigRequest::getCallerBid()const
+{
+	return callerBid_;
+}
+
+void SetDomainGreenManagerConfigRequest::setCallerBid(const std::string& callerBid)
+{
+	callerBid_ = callerBid;
+	setParameter("CallerBid", callerBid);
+}
+
+long SetDomainGreenManagerConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void SetDomainGreenManagerConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetDomainGreenManagerConfigRequest::getProxy_original_source_ip()const
@@ -56,6 +111,17 @@ void SetDomainGreenManagerConfigRequest::setProxy_original_source_ip(const std::
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
 	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+}
+
+std::string SetDomainGreenManagerConfigRequest::getVersion()const
+{
+	return version_;
+}
+
+void SetDomainGreenManagerConfigRequest::setVersion(const std::string& version)
+{
+	version_ = version;
+	setParameter("Version", version);
 }
 
 std::string SetDomainGreenManagerConfigRequest::getOwnerIdLoginEmail()const
@@ -80,6 +146,28 @@ void SetDomainGreenManagerConfigRequest::setCallerType(const std::string& caller
 	setParameter("CallerType", callerType);
 }
 
+bool SetDomainGreenManagerConfigRequest::getProxy_trust_transport_info()const
+{
+	return proxy_trust_transport_info_;
+}
+
+void SetDomainGreenManagerConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
+{
+	proxy_trust_transport_info_ = proxy_trust_transport_info;
+	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+}
+
+bool SetDomainGreenManagerConfigRequest::getAk_mfa_present()const
+{
+	return ak_mfa_present_;
+}
+
+void SetDomainGreenManagerConfigRequest::setAk_mfa_present(bool ak_mfa_present)
+{
+	ak_mfa_present_ = ak_mfa_present;
+	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+}
+
 std::string SetDomainGreenManagerConfigRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -91,6 +179,17 @@ void SetDomainGreenManagerConfigRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+bool SetDomainGreenManagerConfigRequest::getSecurity_transport()const
+{
+	return security_transport_;
+}
+
+void SetDomainGreenManagerConfigRequest::setSecurity_transport(bool security_transport)
+{
+	security_transport_ = security_transport;
+	setParameter("Security_transport", security_transport ? "true" : "false");
+}
+
 std::string SetDomainGreenManagerConfigRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -100,6 +199,17 @@ void SetDomainGreenManagerConfigRequest::setSecurityToken(const std::string& sec
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
+}
+
+std::string SetDomainGreenManagerConfigRequest::getRequestId()const
+{
+	return requestId_;
+}
+
+void SetDomainGreenManagerConfigRequest::setRequestId(const std::string& requestId)
+{
+	requestId_ = requestId;
+	setParameter("RequestId", requestId);
 }
 
 std::string SetDomainGreenManagerConfigRequest::getRequestContent()const
@@ -166,126 +276,5 @@ void SetDomainGreenManagerConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
 	setParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string SetDomainGreenManagerConfigRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void SetDomainGreenManagerConfigRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
-}
-
-std::string SetDomainGreenManagerConfigRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void SetDomainGreenManagerConfigRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
-}
-
-std::string SetDomainGreenManagerConfigRequest::getProduct()const
-{
-	return product_;
-}
-
-void SetDomainGreenManagerConfigRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
-}
-
-std::string SetDomainGreenManagerConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void SetDomainGreenManagerConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
-}
-
-std::string SetDomainGreenManagerConfigRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void SetDomainGreenManagerConfigRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
-}
-
-long SetDomainGreenManagerConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SetDomainGreenManagerConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string SetDomainGreenManagerConfigRequest::getVersion()const
-{
-	return version_;
-}
-
-void SetDomainGreenManagerConfigRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setParameter("Version", version);
-}
-
-bool SetDomainGreenManagerConfigRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void SetDomainGreenManagerConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
-}
-
-bool SetDomainGreenManagerConfigRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void SetDomainGreenManagerConfigRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
-}
-
-bool SetDomainGreenManagerConfigRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void SetDomainGreenManagerConfigRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
-}
-
-std::string SetDomainGreenManagerConfigRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void SetDomainGreenManagerConfigRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
 }
 

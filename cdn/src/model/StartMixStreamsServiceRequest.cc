@@ -135,14 +135,3 @@ void StartMixStreamsServiceRequest::setMainStreamName(const std::string& mainStr
 	setParameter("MainStreamName", mainStreamName);
 }
 
-std::string StartMixStreamsServiceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void StartMixStreamsServiceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-

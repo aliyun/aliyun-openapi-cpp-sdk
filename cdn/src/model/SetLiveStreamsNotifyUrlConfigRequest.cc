@@ -69,14 +69,3 @@ void SetLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetLiveStreamsNotifyUrlConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetLiveStreamsNotifyUrlConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
