@@ -114,7 +114,9 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryBillOverviewRequest.h
 	include/alibabacloud/bssopenapi/model/QueryBillOverviewResult.h
 	include/alibabacloud/bssopenapi/model/QuerySettlementBillRequest.h
-	include/alibabacloud/bssopenapi/model/QuerySettlementBillResult.h )
+	include/alibabacloud/bssopenapi/model/QuerySettlementBillResult.h
+	include/alibabacloud/bssopenapi/model/QueryUserOmsDataRequest.h
+	include/alibabacloud/bssopenapi/model/QueryUserOmsDataResult.h )
 
 set(bssopenapi_src 
 	src/BssOpenApiClient.cc
@@ -211,7 +213,9 @@ set(bssopenapi_src
 	src/model/QueryBillOverviewRequest.cc
 	src/model/QueryBillOverviewResult.cc
 	src/model/QuerySettlementBillRequest.cc
-	src/model/QuerySettlementBillResult.cc )
+	src/model/QuerySettlementBillResult.cc
+	src/model/QueryUserOmsDataRequest.cc
+	src/model/QueryUserOmsDataResult.cc )
 
 add_library(bssopenapi ${LIB_TYPE}
 	${bssopenapi_public_header}

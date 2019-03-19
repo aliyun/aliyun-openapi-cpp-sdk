@@ -116,6 +116,8 @@
 #include "model/QueryBillOverviewResult.h"
 #include "model/QuerySettlementBillRequest.h"
 #include "model/QuerySettlementBillResult.h"
+#include "model/QueryUserOmsDataRequest.h"
+#include "model/QueryUserOmsDataResult.h"
 
 
 namespace AlibabaCloud
@@ -266,6 +268,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QuerySettlementBillResult> QuerySettlementBillOutcome;
 			typedef std::future<QuerySettlementBillOutcome> QuerySettlementBillOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QuerySettlementBillRequest&, const QuerySettlementBillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySettlementBillAsyncHandler;
+			typedef Outcome<Error, Model::QueryUserOmsDataResult> QueryUserOmsDataOutcome;
+			typedef std::future<QueryUserOmsDataOutcome> QueryUserOmsDataOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QueryUserOmsDataRequest&, const QueryUserOmsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserOmsDataAsyncHandler;
 
 			BssOpenApiClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			BssOpenApiClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -412,6 +417,9 @@ namespace AlibabaCloud
 			QuerySettlementBillOutcome querySettlementBill(const Model::QuerySettlementBillRequest &request)const;
 			void querySettlementBillAsync(const Model::QuerySettlementBillRequest& request, const QuerySettlementBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySettlementBillOutcomeCallable querySettlementBillCallable(const Model::QuerySettlementBillRequest& request) const;
+			QueryUserOmsDataOutcome queryUserOmsData(const Model::QueryUserOmsDataRequest &request)const;
+			void queryUserOmsDataAsync(const Model::QueryUserOmsDataRequest& request, const QueryUserOmsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryUserOmsDataOutcomeCallable queryUserOmsDataCallable(const Model::QueryUserOmsDataRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

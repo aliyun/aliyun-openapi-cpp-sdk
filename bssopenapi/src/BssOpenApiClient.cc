@@ -1743,3 +1743,39 @@ BssOpenApiClient::QuerySettlementBillOutcomeCallable BssOpenApiClient::querySett
 	return task->get_future();
 }
 
+BssOpenApiClient::QueryUserOmsDataOutcome BssOpenApiClient::queryUserOmsData(const QueryUserOmsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryUserOmsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryUserOmsDataOutcome(QueryUserOmsDataResult(outcome.result()));
+	else
+		return QueryUserOmsDataOutcome(outcome.error());
+}
+
+void BssOpenApiClient::queryUserOmsDataAsync(const QueryUserOmsDataRequest& request, const QueryUserOmsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryUserOmsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QueryUserOmsDataOutcomeCallable BssOpenApiClient::queryUserOmsDataCallable(const QueryUserOmsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryUserOmsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->queryUserOmsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
