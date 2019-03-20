@@ -46,9 +46,8 @@ namespace {
     delReq.setForce(true);
 
     auto outcome = client.deleteInstance(delReq);
-
-    EXPECT_TRUE(outcome.error().errorCode() == "InvalidParameter");
-    EXPECT_TRUE(outcome.error().errorMessage() == "The specified parameter \"Force\" is not valid.");
+    EXPECT_TRUE(outcome.error().errorCode() == "InvalidInstanceId.NotFound");
+    EXPECT_TRUE(outcome.error().errorMessage() == "The specified InstanceId does not exist.");
     ShutdownSdk();
   }
 
