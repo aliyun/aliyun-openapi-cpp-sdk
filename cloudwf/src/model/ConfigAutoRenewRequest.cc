@@ -55,7 +55,7 @@ bool ConfigAutoRenewRequest::getAutoRenew()const
 void ConfigAutoRenewRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setParameter("AutoRenew", AutoRenew ? "true" : "false");
+	setParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::vector<std::string> ConfigAutoRenewRequest::getApList()const

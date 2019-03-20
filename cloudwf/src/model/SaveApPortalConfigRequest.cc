@@ -55,7 +55,7 @@ bool SaveApPortalConfigRequest::getPortalStatus()const
 void SaveApPortalConfigRequest::setPortalStatus(bool portalStatus)
 {
 	portalStatus_ = portalStatus;
-	setParameter("PortalStatus", PortalStatus ? "true" : "false");
+	setParameter("PortalStatus", portalStatus ? "true" : "false");
 }
 
 std::string SaveApPortalConfigRequest::getWhitelist()const
