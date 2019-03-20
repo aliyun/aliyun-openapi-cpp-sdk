@@ -68,6 +68,8 @@ void ListAlarmHistoryResult::parse(const std::string &payload)
 			alarmHistoryListObject.status = std::stoi(value["Status"].asString());
 		if(!value["ContactGroups"].isNull())
 			alarmHistoryListObject.contactGroups = value["ContactGroups"].asString();
+		if(!value["InstanceName"].isNull())
+			alarmHistoryListObject.instanceName = value["InstanceName"].asString();
 		alarmHistoryList_.push_back(alarmHistoryListObject);
 	}
 	if(!value["Success"].isNull())

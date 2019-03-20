@@ -35,17 +35,18 @@ namespace AlibabaCloud
 				struct AlarmHistory
 				{
 					int status;
-					std::string metricName;
 					std::string contactGroups;
+					int evaluationCount;
+					std::string _namespace;
+					std::string dimension;
+					std::string name;
+					std::string instanceName;
+					std::string metricName;
 					long alarmTime;
 					std::string state;
 					std::string value;
-					int evaluationCount;
-					std::string _namespace;
 					std::string id;
-					std::string dimension;
 					long lastTime;
-					std::string name;
 				};
 
 

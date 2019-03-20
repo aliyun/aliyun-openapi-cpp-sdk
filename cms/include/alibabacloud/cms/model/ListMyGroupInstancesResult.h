@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Resource
 				{
+					std::string instanceName;
 					std::string category;
 					std::string instanceId;
 					long id;

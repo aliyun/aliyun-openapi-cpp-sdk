@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				bool getIsEnable()const;
 				void setIsEnable(bool isEnable);
-				std::string getCallby_cms_owner()const;
-				void setCallby_cms_owner(const std::string& callby_cms_owner);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string get_Namespace()const;
@@ -56,7 +54,6 @@ namespace AlibabaCloud
 
             private:
 				bool isEnable_;
-				std::string callby_cms_owner_;
 				std::string name_;
 				std::string _namespace_;
 				int pageSize_;

@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::QuerySystemEventHistogramRequest;
 
 QuerySystemEventHistogramRequest::QuerySystemEventHistogramRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "QuerySystemEventHistogram")
+	RpcServiceRequest("cms", "2018-03-08", "QuerySystemEventHistogram")
 {}
 
 QuerySystemEventHistogramRequest::~QuerySystemEventHistogramRequest()

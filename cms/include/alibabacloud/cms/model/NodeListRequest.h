@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setHostName(const std::string& hostName);
 				std::string getInstanceIds()const;
 				void setInstanceIds(const std::string& instanceIds);
+				std::string getInstanceRegionId()const;
+				void setInstanceRegionId(const std::string& instanceRegionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getKeyWord()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
             private:
 				std::string hostName_;
 				std::string instanceIds_;
+				std::string instanceRegionId_;
 				int pageSize_;
 				std::string keyWord_;
 				long userId_;

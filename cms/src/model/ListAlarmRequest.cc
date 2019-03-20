@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::ListAlarmRequest;
 
 ListAlarmRequest::ListAlarmRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "ListAlarm")
+	RpcServiceRequest("cms", "2018-03-08", "ListAlarm")
 {}
 
 ListAlarmRequest::~ListAlarmRequest()
@@ -33,18 +33,7 @@ bool ListAlarmRequest::getIsEnable()const
 void ListAlarmRequest::setIsEnable(bool isEnable)
 {
 	isEnable_ = isEnable;
-	setParameter("IsEnable", std::to_string(isEnable));
-}
-
-std::string ListAlarmRequest::getCallby_cms_owner()const
-{
-	return callby_cms_owner_;
-}
-
-void ListAlarmRequest::setCallby_cms_owner(const std::string& callby_cms_owner)
-{
-	callby_cms_owner_ = callby_cms_owner;
-	setParameter("Callby_cms_owner", callby_cms_owner);
+	setParameter("IsEnable", isEnable ? "true" : "false");
 }
 
 std::string ListAlarmRequest::getName()const

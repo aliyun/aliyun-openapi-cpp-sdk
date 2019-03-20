@@ -44,14 +44,14 @@ void QueryMetricListResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Cursor"].isNull())
 		cursor_ = value["Cursor"].asString();
 	if(!value["Datapoints"].isNull())
 		datapoints_ = value["Datapoints"].asString();
 	if(!value["Period"].isNull())
 		period_ = value["Period"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 
 }
 
@@ -80,7 +80,7 @@ std::string QueryMetricListResult::getCode()const
 	return code_;
 }
 
-bool QueryMetricListResult::getSuccess()const
+std::string QueryMetricListResult::getSuccess()const
 {
 	return success_;
 }

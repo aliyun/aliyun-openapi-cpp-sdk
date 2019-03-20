@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::NodeUninstallRequest;
 
 NodeUninstallRequest::NodeUninstallRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "NodeUninstall")
+	RpcServiceRequest("cms", "2018-03-08", "NodeUninstall")
 {}
 
 NodeUninstallRequest::~NodeUninstallRequest()

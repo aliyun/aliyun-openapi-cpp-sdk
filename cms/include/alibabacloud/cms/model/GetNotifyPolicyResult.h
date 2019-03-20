@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					long startTime;
 					std::string dimensions;
 					std::string id;
+					std::string groupId;
 				};
 
 
@@ -47,19 +48,17 @@ namespace AlibabaCloud
 				explicit GetNotifyPolicyResult(const std::string &payload);
 				~GetNotifyPolicyResult();
 				std::string getMessage()const;
-				std::string getTraceId()const;
 				std::string getCode()const;
 				std::string getSuccess()const;
-				std::vector<Result> getResult()const;
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string traceId_;
 				std::string code_;
 				std::string success_;
-				std::vector<Result> result_;
+				Result result_;
 
 			};
 		}

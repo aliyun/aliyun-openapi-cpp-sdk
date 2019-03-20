@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string operatingSystem;
 					std::string tianjimonVersion;
 					std::string instanceId;
+					std::string instanceTypeFamily;
 					std::string natIp;
 					std::string serialNumber;
 					bool aliyunHost;

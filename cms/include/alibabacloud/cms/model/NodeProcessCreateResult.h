@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit NodeProcessCreateResult(const std::string &payload);
 				~NodeProcessCreateResult();
 				int getErrorCode()const;
+				long getId()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
 
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int errorCode_;
+				long id_;
 				std::string errorMessage_;
 				bool success_;
 

@@ -54,8 +54,9 @@ namespace AlibabaCloud
 					std::string category;
 					std::string instanceId;
 					std::string networkType;
-					std::vector<Vpc> vpc;
-					std::vector<Region> region;
+					Vpc vpc;
+					Region region;
+					std::string dimension;
 					std::vector<Resource::Tag> tags;
 					long aliUid;
 				};

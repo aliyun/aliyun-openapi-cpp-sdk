@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::DisableActiveAlertRequest;
 
 DisableActiveAlertRequest::DisableActiveAlertRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "DisableActiveAlert")
+	RpcServiceRequest("cms", "2018-03-08", "DisableActiveAlert")
 {}
 
 DisableActiveAlertRequest::~DisableActiveAlertRequest()

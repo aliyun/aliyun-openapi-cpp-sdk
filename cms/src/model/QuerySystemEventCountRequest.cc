@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::QuerySystemEventCountRequest;
 
 QuerySystemEventCountRequest::QuerySystemEventCountRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "QuerySystemEventCount")
+	RpcServiceRequest("cms", "2018-03-08", "QuerySystemEventCount")
 {}
 
 QuerySystemEventCountRequest::~QuerySystemEventCountRequest()

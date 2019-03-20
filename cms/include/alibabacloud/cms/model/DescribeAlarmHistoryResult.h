@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::vector<std::string> contactSmses;
 					long alertTime;
 					std::string groupId;
+					std::string instanceName;
 					std::string metricName;
 					std::vector<std::string> contacts;
 					std::string expression;

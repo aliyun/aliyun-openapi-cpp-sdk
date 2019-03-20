@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::PutCustomMetricRequest;
 
 PutCustomMetricRequest::PutCustomMetricRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "PutCustomMetric")
+	RpcServiceRequest("cms", "2018-03-08", "PutCustomMetric")
 {}
 
 PutCustomMetricRequest::~PutCustomMetricRequest()

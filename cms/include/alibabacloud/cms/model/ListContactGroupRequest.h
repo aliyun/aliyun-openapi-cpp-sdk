@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				ListContactGroupRequest();
 				~ListContactGroupRequest();
 
-				std::string getCallby_cms_owner()const;
-				void setCallby_cms_owner(const std::string& callby_cms_owner);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
             private:
-				std::string callby_cms_owner_;
 				int pageSize_;
 				int pageNumber_;
 

@@ -70,6 +70,8 @@ void NodeListResult::parse(const std::string &payload)
 			nodesObject.natIp = value["NatIp"].asString();
 		if(!value["NetworkType"].isNull())
 			nodesObject.networkType = value["NetworkType"].asString();
+		if(!value["InstanceTypeFamily"].isNull())
+			nodesObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
 		nodes_.push_back(nodesObject);
 	}
 	if(!value["ErrorCode"].isNull())

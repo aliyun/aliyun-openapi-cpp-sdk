@@ -40,23 +40,18 @@ void ListMyGroupCategoriesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allCategory = value["Category"];
-	for (auto value : allCategory)
+	auto categoryNode = value["Category"];
+	if(!categoryNode["GroupId"].isNull())
+		category_.groupId = std::stol(categoryNode["GroupId"].asString());
+	auto allCategoryItems = value["CategoryItems"]["CategoryItem"];
+	for (auto value : allCategoryItems)
 	{
-		Category categoryObject;
-		if(!value["GroupId"].isNull())
-			categoryObject.groupId = std::stol(value["GroupId"].asString());
-		auto allCategoryItems = value["CategoryItems"]["CategoryItem"];
-		for (auto value : allCategoryItems)
-		{
-			Category::CategoryItem categoryItemObject;
-			if(!value["Category"].isNull())
-				categoryItemObject.category = value["Category"].asString();
-			if(!value["Count"].isNull())
-				categoryItemObject.count = std::stoi(value["Count"].asString());
-			categoryObject.categoryItems.push_back(categoryItemObject);
-		}
-		category_.push_back(categoryObject);
+		Category::CategoryItem categoryItemObject;
+		if(!value["Category"].isNull())
+			categoryItemObject.category = value["Category"].asString();
+		if(!value["Count"].isNull())
+			categoryItemObject.count = std::stoi(value["Count"].asString());
+		category_.categoryItems.push_back(categoryItemObject);
 	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
@@ -67,7 +62,7 @@ void ListMyGroupCategoriesResult::parse(const std::string &payload)
 
 }
 
-std::vector<ListMyGroupCategoriesResult::Category> ListMyGroupCategoriesResult::getCategory()const
+ListMyGroupCategoriesResult::Category ListMyGroupCategoriesResult::getCategory()const
 {
 	return category_;
 }

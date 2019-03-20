@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::EnableActiveAlertRequest;
 
 EnableActiveAlertRequest::EnableActiveAlertRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "EnableActiveAlert")
+	RpcServiceRequest("cms", "2018-03-08", "EnableActiveAlert")
 {}
 
 EnableActiveAlertRequest::~EnableActiveAlertRequest()

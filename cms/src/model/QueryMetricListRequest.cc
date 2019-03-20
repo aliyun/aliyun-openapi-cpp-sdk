@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::QueryMetricListRequest;
 
 QueryMetricListRequest::QueryMetricListRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "QueryMetricList")
+	RpcServiceRequest("cms", "2018-03-08", "QueryMetricList")
 {}
 
 QueryMetricListRequest::~QueryMetricListRequest()
@@ -34,17 +34,6 @@ void QueryMetricListRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
 	setParameter("Cursor", cursor);
-}
-
-std::string QueryMetricListRequest::getCallby_cms_owner()const
-{
-	return callby_cms_owner_;
-}
-
-void QueryMetricListRequest::setCallby_cms_owner(const std::string& callby_cms_owner)
-{
-	callby_cms_owner_ = callby_cms_owner;
-	setParameter("Callby_cms_owner", callby_cms_owner);
 }
 
 long QueryMetricListRequest::getResourceOwnerId()const
@@ -67,6 +56,17 @@ void QueryMetricListRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
 	setParameter("Period", period);
+}
+
+std::string QueryMetricListRequest::getMetric()const
+{
+	return metric_;
+}
+
+void QueryMetricListRequest::setMetric(const std::string& metric)
+{
+	metric_ = metric;
+	setParameter("Metric", metric);
 }
 
 std::string QueryMetricListRequest::getLength()const
@@ -133,28 +133,6 @@ void QueryMetricListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string QueryMetricListRequest::getMetric()const
-{
-	return metric_;
-}
-
-void QueryMetricListRequest::setMetric(const std::string& metric)
-{
-	metric_ = metric;
-	setParameter("Metric", metric);
-}
-
-std::string QueryMetricListRequest::getPage()const
-{
-	return page_;
-}
-
-void QueryMetricListRequest::setPage(const std::string& page)
-{
-	page_ = page;
-	setParameter("Page", page);
 }
 
 std::string QueryMetricListRequest::getDimensions()const

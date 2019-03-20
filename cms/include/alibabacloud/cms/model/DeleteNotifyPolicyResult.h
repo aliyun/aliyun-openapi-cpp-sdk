@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit DeleteNotifyPolicyResult(const std::string &payload);
 				~DeleteNotifyPolicyResult();
 				std::string getMessage()const;
-				std::string getTraceId()const;
 				std::string getCode()const;
 				std::string getSuccess()const;
 				int getResult()const;
@@ -47,7 +46,6 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string traceId_;
 				std::string code_;
 				std::string success_;
 				int result_;

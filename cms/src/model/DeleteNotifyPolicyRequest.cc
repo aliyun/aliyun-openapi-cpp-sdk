@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::DeleteNotifyPolicyRequest;
 
 DeleteNotifyPolicyRequest::DeleteNotifyPolicyRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "DeleteNotifyPolicy")
+	RpcServiceRequest("cms", "2018-03-08", "DeleteNotifyPolicy")
 {}
 
 DeleteNotifyPolicyRequest::~DeleteNotifyPolicyRequest()
@@ -45,6 +45,17 @@ void DeleteNotifyPolicyRequest::setAlertName(const std::string& alertName)
 {
 	alertName_ = alertName;
 	setParameter("AlertName", alertName);
+}
+
+std::string DeleteNotifyPolicyRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DeleteNotifyPolicyRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
 }
 
 std::string DeleteNotifyPolicyRequest::getId()const

@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::ListActiveAlertRuleRequest;
 
 ListActiveAlertRuleRequest::ListActiveAlertRuleRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "ListActiveAlertRule")
+	RpcServiceRequest("cms", "2018-03-08", "ListActiveAlertRule")
 {}
 
 ListActiveAlertRuleRequest::~ListActiveAlertRuleRequest()

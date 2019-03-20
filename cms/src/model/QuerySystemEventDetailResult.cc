@@ -46,6 +46,8 @@ void QuerySystemEventDetailResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 
 }
 
@@ -62,5 +64,10 @@ std::string QuerySystemEventDetailResult::getData()const
 std::string QuerySystemEventDetailResult::getCode()const
 {
 	return code_;
+}
+
+std::string QuerySystemEventDetailResult::getSuccess()const
+{
+	return success_;
 }
 

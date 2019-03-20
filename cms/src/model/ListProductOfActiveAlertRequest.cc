@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::ListProductOfActiveAlertRequest;
 
 ListProductOfActiveAlertRequest::ListProductOfActiveAlertRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "ListProductOfActiveAlert")
+	RpcServiceRequest("cms", "2018-03-08", "ListProductOfActiveAlert")
 {}
 
 ListProductOfActiveAlertRequest::~ListProductOfActiveAlertRequest()

@@ -19,22 +19,11 @@
 using AlibabaCloud::Cms::Model::UpdateAlarmRequest;
 
 UpdateAlarmRequest::UpdateAlarmRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "UpdateAlarm")
+	RpcServiceRequest("cms", "2018-03-08", "UpdateAlarm")
 {}
 
 UpdateAlarmRequest::~UpdateAlarmRequest()
 {}
-
-std::string UpdateAlarmRequest::getCallby_cms_owner()const
-{
-	return callby_cms_owner_;
-}
-
-void UpdateAlarmRequest::setCallby_cms_owner(const std::string& callby_cms_owner)
-{
-	callby_cms_owner_ = callby_cms_owner;
-	setParameter("Callby_cms_owner", callby_cms_owner);
-}
 
 int UpdateAlarmRequest::getPeriod()const
 {
@@ -56,6 +45,17 @@ void UpdateAlarmRequest::setWebhook(const std::string& webhook)
 {
 	webhook_ = webhook;
 	setParameter("Webhook", webhook);
+}
+
+bool UpdateAlarmRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void UpdateAlarmRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string UpdateAlarmRequest::getContactGroups()const

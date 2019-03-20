@@ -37,12 +37,12 @@ namespace AlibabaCloud
 
 				std::string getCursor()const;
 				void setCursor(const std::string& cursor);
-				std::string getCallby_cms_owner()const;
-				void setCallby_cms_owner(const std::string& callby_cms_owner);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getPeriod()const;
 				void setPeriod(const std::string& period);
+				std::string getMetric()const;
+				void setMetric(const std::string& metric);
 				std::string getLength()const;
 				void setLength(const std::string& length);
 				std::string getProject()const;
@@ -55,26 +55,20 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getMetric()const;
-				void setMetric(const std::string& metric);
-				std::string getPage()const;
-				void setPage(const std::string& page);
 				std::string getDimensions()const;
 				void setDimensions(const std::string& dimensions);
 
             private:
 				std::string cursor_;
-				std::string callby_cms_owner_;
 				long resourceOwnerId_;
 				std::string period_;
+				std::string metric_;
 				std::string length_;
 				std::string project_;
 				std::string endTime_;
 				std::string express_;
 				std::string startTime_;
 				std::string accessKeyId_;
-				std::string metric_;
-				std::string page_;
 				std::string dimensions_;
 
 			};

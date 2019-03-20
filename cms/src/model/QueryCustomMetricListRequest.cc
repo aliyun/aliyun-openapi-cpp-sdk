@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::QueryCustomMetricListRequest;
 
 QueryCustomMetricListRequest::QueryCustomMetricListRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "QueryCustomMetricList")
+	RpcServiceRequest("cms", "2018-03-08", "QueryCustomMetricList")
 {}
 
 QueryCustomMetricListRequest::~QueryCustomMetricListRequest()
@@ -78,17 +78,6 @@ void QueryCustomMetricListRequest::setDimension(const std::string& dimension)
 {
 	dimension_ = dimension;
 	setParameter("Dimension", dimension);
-}
-
-std::string QueryCustomMetricListRequest::getUUID()const
-{
-	return uUID_;
-}
-
-void QueryCustomMetricListRequest::setUUID(const std::string& uUID)
-{
-	uUID_ = uUID;
-	setParameter("UUID", uUID);
 }
 
 std::string QueryCustomMetricListRequest::getAccessKeyId()const

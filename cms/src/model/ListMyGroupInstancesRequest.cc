@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::ListMyGroupInstancesRequest;
 
 ListMyGroupInstancesRequest::ListMyGroupInstancesRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "ListMyGroupInstances")
+	RpcServiceRequest("cms", "2018-03-08", "ListMyGroupInstances")
 {}
 
 ListMyGroupInstancesRequest::~ListMyGroupInstancesRequest()
@@ -33,7 +33,18 @@ bool ListMyGroupInstancesRequest::getTotal()const
 void ListMyGroupInstancesRequest::setTotal(bool total)
 {
 	total_ = total;
-	setParameter("Total", std::to_string(total));
+	setParameter("Total", total ? "true" : "false");
+}
+
+std::string ListMyGroupInstancesRequest::getInstanceIds()const
+{
+	return instanceIds_;
+}
+
+void ListMyGroupInstancesRequest::setInstanceIds(const std::string& instanceIds)
+{
+	instanceIds_ = instanceIds;
+	setParameter("InstanceIds", instanceIds);
 }
 
 long ListMyGroupInstancesRequest::getGroupId()const
@@ -67,6 +78,17 @@ void ListMyGroupInstancesRequest::setCategory(const std::string& category)
 {
 	category_ = category;
 	setParameter("Category", category);
+}
+
+std::string ListMyGroupInstancesRequest::getKeyword()const
+{
+	return keyword_;
+}
+
+void ListMyGroupInstancesRequest::setKeyword(const std::string& keyword)
+{
+	keyword_ = keyword;
+	setParameter("Keyword", keyword);
 }
 
 int ListMyGroupInstancesRequest::getPageNumber()const

@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::ProfileSetRequest;
 
 ProfileSetRequest::ProfileSetRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "ProfileSet")
+	RpcServiceRequest("cms", "2018-03-08", "ProfileSet")
 {}
 
 ProfileSetRequest::~ProfileSetRequest()
@@ -33,7 +33,7 @@ bool ProfileSetRequest::getEnableInstallAgentNewECS()const
 void ProfileSetRequest::setEnableInstallAgentNewECS(bool enableInstallAgentNewECS)
 {
 	enableInstallAgentNewECS_ = enableInstallAgentNewECS;
-	setParameter("EnableInstallAgentNewECS", std::to_string(enableInstallAgentNewECS));
+	setParameter("EnableInstallAgentNewECS", enableInstallAgentNewECS ? "true" : "false");
 }
 
 std::string ProfileSetRequest::getEnableActiveAlert()const
@@ -55,7 +55,7 @@ bool ProfileSetRequest::getAutoInstall()const
 void ProfileSetRequest::setAutoInstall(bool autoInstall)
 {
 	autoInstall_ = autoInstall;
-	setParameter("AutoInstall", std::to_string(autoInstall));
+	setParameter("AutoInstall", autoInstall ? "true" : "false");
 }
 
 long ProfileSetRequest::getUserId()const

@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setPolicyType(const std::string& policyType);
 				std::string getAlertName()const;
 				void setAlertName(const std::string& alertName);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getId()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
             private:
 				std::string policyType_;
 				std::string alertName_;
+				std::string groupId_;
 				int pageSize_;
 				std::string id_;
 				std::string dimensions_;

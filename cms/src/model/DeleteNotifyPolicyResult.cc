@@ -40,27 +40,20 @@ void DeleteNotifyPolicyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["code"].isNull())
-		code_ = value["code"].asString();
-	if(!value["message"].isNull())
-		message_ = value["message"].asString();
-	if(!value["success"].isNull())
-		success_ = value["success"].asString();
-	if(!value["traceId"].isNull())
-		traceId_ = value["traceId"].asString();
-	if(!value["result"].isNull())
-		result_ = std::stoi(value["result"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
+	if(!value["Result"].isNull())
+		result_ = std::stoi(value["Result"].asString());
 
 }
 
 std::string DeleteNotifyPolicyResult::getMessage()const
 {
 	return message_;
-}
-
-std::string DeleteNotifyPolicyResult::getTraceId()const
-{
-	return traceId_;
 }
 
 std::string DeleteNotifyPolicyResult::getCode()const

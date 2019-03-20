@@ -50,7 +50,7 @@ namespace AlibabaCloud
 				DeleteMyGroupsResult();
 				explicit DeleteMyGroupsResult(const std::string &payload);
 				~DeleteMyGroupsResult();
-				std::vector<Group> getGroup()const;
+				Group getGroup()const;
 				int getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -58,7 +58,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Group> group_;
+				Group group_;
 				int errorCode_;
 				std::string errorMessage_;
 				bool success_;

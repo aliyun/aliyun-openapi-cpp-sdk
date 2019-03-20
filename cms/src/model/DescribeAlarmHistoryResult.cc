@@ -70,8 +70,8 @@ void DescribeAlarmHistoryResult::parse(const std::string &payload)
 			alarmHistoryListObject.level = value["Level"].asString();
 		if(!value["PreLevel"].isNull())
 			alarmHistoryListObject.preLevel = value["PreLevel"].asString();
-		if(!value["ruleName"].isNull())
-			alarmHistoryListObject.ruleName = value["ruleName"].asString();
+		if(!value["RuleName"].isNull())
+			alarmHistoryListObject.ruleName = value["RuleName"].asString();
 		if(!value["State"].isNull())
 			alarmHistoryListObject.state = value["State"].asString();
 		if(!value["Status"].isNull())
@@ -80,6 +80,8 @@ void DescribeAlarmHistoryResult::parse(const std::string &payload)
 			alarmHistoryListObject.userId = value["UserId"].asString();
 		if(!value["Webhooks"].isNull())
 			alarmHistoryListObject.webhooks = value["Webhooks"].asString();
+		if(!value["InstanceName"].isNull())
+			alarmHistoryListObject.instanceName = value["InstanceName"].asString();
 		auto allContactGroups = value["ContactGroups"]["ContactGroup"];
 		for (auto value : allContactGroups)
 			alarmHistoryListObject.contactGroups.push_back(value.asString());

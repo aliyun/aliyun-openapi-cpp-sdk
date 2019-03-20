@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::PutEventRequest;
 
 PutEventRequest::PutEventRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "PutEvent")
+	RpcServiceRequest("cms", "2018-03-08", "PutEvent")
 {}
 
 PutEventRequest::~PutEventRequest()

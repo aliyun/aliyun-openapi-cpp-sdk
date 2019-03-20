@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::DescribeAlarmHistoryRequest;
 
 DescribeAlarmHistoryRequest::DescribeAlarmHistoryRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "DescribeAlarmHistory")
+	RpcServiceRequest("cms", "2018-03-08", "DescribeAlarmHistory")
 {}
 
 DescribeAlarmHistoryRequest::~DescribeAlarmHistoryRequest()
@@ -88,7 +88,7 @@ bool DescribeAlarmHistoryRequest::getAscending()const
 void DescribeAlarmHistoryRequest::setAscending(bool ascending)
 {
 	ascending_ = ascending;
-	setParameter("Ascending", std::to_string(ascending));
+	setParameter("Ascending", ascending ? "true" : "false");
 }
 
 std::string DescribeAlarmHistoryRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ bool DescribeAlarmHistoryRequest::getOnlyCount()const
 void DescribeAlarmHistoryRequest::setOnlyCount(bool onlyCount)
 {
 	onlyCount_ = onlyCount;
-	setParameter("OnlyCount", std::to_string(onlyCount));
+	setParameter("OnlyCount", onlyCount ? "true" : "false");
 }
 
 std::string DescribeAlarmHistoryRequest::get_Namespace()const

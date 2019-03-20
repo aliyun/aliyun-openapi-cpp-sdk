@@ -42,7 +42,7 @@ namespace AlibabaCloud
 				std::string getCursor()const;
 				std::string getDatapoints()const;
 				std::string getCode()const;
-				bool getSuccess()const;
+				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -52,7 +52,7 @@ namespace AlibabaCloud
 				std::string cursor_;
 				std::string datapoints_;
 				std::string code_;
-				bool success_;
+				std::string success_;
 
 			};
 		}

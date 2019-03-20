@@ -37,10 +37,12 @@ namespace AlibabaCloud
 
 				std::string getContactGroups()const;
 				void setContactGroups(const std::string& contactGroups);
-				long getServiceId()const;
-				void setServiceId(long serviceId);
+				std::string getOptions()const;
+				void setOptions(const std::string& options);
 				std::string getType()const;
 				void setType(const std::string& type);
+				long getServiceId()const;
+				void setServiceId(long serviceId);
 				std::string getGroupName()const;
 				void setGroupName(const std::string& groupName);
 				std::string getBindUrl()const;
@@ -48,8 +50,9 @@ namespace AlibabaCloud
 
             private:
 				std::string contactGroups_;
-				long serviceId_;
+				std::string options_;
 				std::string type_;
+				long serviceId_;
 				std::string groupName_;
 				std::string bindUrl_;
 

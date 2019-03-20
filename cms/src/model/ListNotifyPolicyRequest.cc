@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::ListNotifyPolicyRequest;
 
 ListNotifyPolicyRequest::ListNotifyPolicyRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "ListNotifyPolicy")
+	RpcServiceRequest("cms", "2018-03-08", "ListNotifyPolicy")
 {}
 
 ListNotifyPolicyRequest::~ListNotifyPolicyRequest()
@@ -45,6 +45,17 @@ void ListNotifyPolicyRequest::setAlertName(const std::string& alertName)
 {
 	alertName_ = alertName;
 	setParameter("AlertName", alertName);
+}
+
+std::string ListNotifyPolicyRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void ListNotifyPolicyRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
 }
 
 int ListNotifyPolicyRequest::getPageSize()const

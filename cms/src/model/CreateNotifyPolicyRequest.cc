@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::CreateNotifyPolicyRequest;
 
 CreateNotifyPolicyRequest::CreateNotifyPolicyRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "CreateNotifyPolicy")
+	RpcServiceRequest("cms", "2018-03-08", "CreateNotifyPolicy")
 {}
 
 CreateNotifyPolicyRequest::~CreateNotifyPolicyRequest()
@@ -45,6 +45,17 @@ void CreateNotifyPolicyRequest::setAlertName(const std::string& alertName)
 {
 	alertName_ = alertName;
 	setParameter("AlertName", alertName);
+}
+
+std::string CreateNotifyPolicyRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void CreateNotifyPolicyRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
 }
 
 long CreateNotifyPolicyRequest::getEndTime()const

@@ -56,6 +56,8 @@ void ListMyGroupInstancesDetailsResult::parse(const std::string &payload)
 			resourcesObject.networkType = value["NetworkType"].asString();
 		if(!value["Category"].isNull())
 			resourcesObject.category = value["Category"].asString();
+		if(!value["Dimension"].isNull())
+			resourcesObject.dimension = value["Dimension"].asString();
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{
@@ -66,26 +68,16 @@ void ListMyGroupInstancesDetailsResult::parse(const std::string &payload)
 				tagsObject.value = value["Value"].asString();
 			resourcesObject.tags.push_back(tagsObject);
 		}
-		auto allRegion = value["Region"];
-		for (auto value : allRegion)
-		{
-			Resource::Region regionObject;
-			if(!value["RegionId"].isNull())
-				regionObject.regionId = value["RegionId"].asString();
-			if(!value["AvailabilityZone"].isNull())
-				regionObject.availabilityZone = value["AvailabilityZone"].asString();
-			resourcesObject.region.push_back(regionObject);
-		}
-		auto allVpc = value["Vpc"];
-		for (auto value : allVpc)
-		{
-			Resource::Vpc vpcObject;
-			if(!value["VpcInstanceId"].isNull())
-				vpcObject.vpcInstanceId = value["VpcInstanceId"].asString();
-			if(!value["VswitchInstanceId"].isNull())
-				vpcObject.vswitchInstanceId = value["VswitchInstanceId"].asString();
-			resourcesObject.vpc.push_back(vpcObject);
-		}
+		auto regionNode = value["Region"];
+		if(!regionNode["RegionId"].isNull())
+			resourcesObject.region.regionId = regionNode["RegionId"].asString();
+		if(!regionNode["AvailabilityZone"].isNull())
+			resourcesObject.region.availabilityZone = regionNode["AvailabilityZone"].asString();
+		auto vpcNode = value["Vpc"];
+		if(!vpcNode["VpcInstanceId"].isNull())
+			resourcesObject.vpc.vpcInstanceId = vpcNode["VpcInstanceId"].asString();
+		if(!vpcNode["VswitchInstanceId"].isNull())
+			resourcesObject.vpc.vswitchInstanceId = vpcNode["VswitchInstanceId"].asString();
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["Success"].isNull())

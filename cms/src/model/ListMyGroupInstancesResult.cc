@@ -54,6 +54,8 @@ void ListMyGroupInstancesResult::parse(const std::string &payload)
 			resourcesObject.instanceId = value["InstanceId"].asString();
 		if(!value["Category"].isNull())
 			resourcesObject.category = value["Category"].asString();
+		if(!value["InstanceName"].isNull())
+			resourcesObject.instanceName = value["InstanceName"].asString();
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["Success"].isNull())

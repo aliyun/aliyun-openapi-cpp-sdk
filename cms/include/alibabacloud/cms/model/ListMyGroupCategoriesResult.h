@@ -47,7 +47,7 @@ namespace AlibabaCloud
 				ListMyGroupCategoriesResult();
 				explicit ListMyGroupCategoriesResult(const std::string &payload);
 				~ListMyGroupCategoriesResult();
-				std::vector<Category> getCategory()const;
+				Category getCategory()const;
 				int getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -55,7 +55,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Category> category_;
+				Category category_;
 				int errorCode_;
 				std::string errorMessage_;
 				bool success_;

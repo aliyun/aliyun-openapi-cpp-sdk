@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::ProfileGetRequest;
 
 ProfileGetRequest::ProfileGetRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "ProfileGet")
+	RpcServiceRequest("cms", "2018-03-08", "ProfileGet")
 {}
 
 ProfileGetRequest::~ProfileGetRequest()

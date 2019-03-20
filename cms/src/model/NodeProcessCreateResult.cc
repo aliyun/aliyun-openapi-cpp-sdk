@@ -46,12 +46,19 @@ void NodeProcessCreateResult::parse(const std::string &payload)
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Id"].isNull())
+		id_ = std::stol(value["Id"].asString());
 
 }
 
 int NodeProcessCreateResult::getErrorCode()const
 {
 	return errorCode_;
+}
+
+long NodeProcessCreateResult::getId()const
+{
+	return id_;
 }
 
 std::string NodeProcessCreateResult::getErrorMessage()const

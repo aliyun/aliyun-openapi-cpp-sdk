@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::QuerySystemEventDetailRequest;
 
 QuerySystemEventDetailRequest::QuerySystemEventDetailRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "QuerySystemEventDetail")
+	RpcServiceRequest("cms", "2018-03-08", "QuerySystemEventDetail")
 {}
 
 QuerySystemEventDetailRequest::~QuerySystemEventDetailRequest()

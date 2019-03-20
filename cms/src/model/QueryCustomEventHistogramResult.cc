@@ -46,6 +46,8 @@ void QueryCustomEventHistogramResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 
 }
 
@@ -62,5 +64,10 @@ std::string QueryCustomEventHistogramResult::getData()const
 std::string QueryCustomEventHistogramResult::getCode()const
 {
 	return code_;
+}
+
+std::string QueryCustomEventHistogramResult::getSuccess()const
+{
+	return success_;
 }
 

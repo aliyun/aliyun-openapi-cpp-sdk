@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				EnableAlarmRequest();
 				~EnableAlarmRequest();
 
-				std::string getCallby_cms_owner()const;
-				void setCallby_cms_owner(const std::string& callby_cms_owner);
 				std::string getId()const;
 				void setId(const std::string& id);
 
             private:
-				std::string callby_cms_owner_;
 				std::string id_;
 
 			};

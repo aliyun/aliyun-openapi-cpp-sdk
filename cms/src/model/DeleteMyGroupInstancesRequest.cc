@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::DeleteMyGroupInstancesRequest;
 
 DeleteMyGroupInstancesRequest::DeleteMyGroupInstancesRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "DeleteMyGroupInstances")
+	RpcServiceRequest("cms", "2018-03-08", "DeleteMyGroupInstances")
 {}
 
 DeleteMyGroupInstancesRequest::~DeleteMyGroupInstancesRequest()
@@ -36,6 +36,17 @@ void DeleteMyGroupInstancesRequest::setInstanceIds(const std::string& instanceId
 	setParameter("InstanceIds", instanceIds);
 }
 
+std::string DeleteMyGroupInstancesRequest::getInstanceIdList()const
+{
+	return instanceIdList_;
+}
+
+void DeleteMyGroupInstancesRequest::setInstanceIdList(const std::string& instanceIdList)
+{
+	instanceIdList_ = instanceIdList;
+	setParameter("InstanceIdList", instanceIdList);
+}
+
 long DeleteMyGroupInstancesRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,5 +56,16 @@ void DeleteMyGroupInstancesRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
 	setParameter("GroupId", std::to_string(groupId));
+}
+
+std::string DeleteMyGroupInstancesRequest::getCategory()const
+{
+	return category_;
+}
+
+void DeleteMyGroupInstancesRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
 }
 

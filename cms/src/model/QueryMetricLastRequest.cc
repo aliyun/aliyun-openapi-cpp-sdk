@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::QueryMetricLastRequest;
 
 QueryMetricLastRequest::QueryMetricLastRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "QueryMetricLast")
+	RpcServiceRequest("cms", "2018-03-08", "QueryMetricLast")
 {}
 
 QueryMetricLastRequest::~QueryMetricLastRequest()
@@ -34,17 +34,6 @@ void QueryMetricLastRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
 	setParameter("Cursor", cursor);
-}
-
-std::string QueryMetricLastRequest::getCallby_cms_owner()const
-{
-	return callby_cms_owner_;
-}
-
-void QueryMetricLastRequest::setCallby_cms_owner(const std::string& callby_cms_owner)
-{
-	callby_cms_owner_ = callby_cms_owner;
-	setParameter("Callby_cms_owner", callby_cms_owner);
 }
 
 long QueryMetricLastRequest::getResourceOwnerId()const

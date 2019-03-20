@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				UpdateAlarmRequest();
 				~UpdateAlarmRequest();
 
-				std::string getCallby_cms_owner()const;
-				void setCallby_cms_owner(const std::string& callby_cms_owner);
 				int getPeriod()const;
 				void setPeriod(int period);
 				std::string getWebhook()const;
 				void setWebhook(const std::string& webhook);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
 				std::string getContactGroups()const;
 				void setContactGroups(const std::string& contactGroups);
 				int getEndTime()const;
@@ -65,9 +65,9 @@ namespace AlibabaCloud
 				void setStatistics(const std::string& statistics);
 
             private:
-				std::string callby_cms_owner_;
 				int period_;
 				std::string webhook_;
+				bool dryRun_;
 				std::string contactGroups_;
 				int endTime_;
 				std::string threshold_;

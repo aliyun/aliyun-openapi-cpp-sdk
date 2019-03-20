@@ -56,18 +56,18 @@ void ListNotifyPolicyResult::parse(const std::string &payload)
 			notifyPolicyListObject.startTime = std::stol(value["StartTime"].asString());
 		if(!value["EndTime"].isNull())
 			notifyPolicyListObject.endTime = std::stol(value["EndTime"].asString());
+		if(!value["GroupId"].isNull())
+			notifyPolicyListObject.groupId = value["GroupId"].asString();
 		notifyPolicyList_.push_back(notifyPolicyListObject);
 	}
-	if(!value["code"].isNull())
-		code_ = value["code"].asString();
-	if(!value["message"].isNull())
-		message_ = value["message"].asString();
-	if(!value["success"].isNull())
-		success_ = value["success"].asString();
-	if(!value["traceId"].isNull())
-		traceId_ = value["traceId"].asString();
-	if(!value["total"].isNull())
-		total_ = std::stoi(value["total"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
 
 }
 
@@ -84,11 +84,6 @@ std::string ListNotifyPolicyResult::getMessage()const
 int ListNotifyPolicyResult::getTotal()const
 {
 	return total_;
-}
-
-std::string ListNotifyPolicyResult::getTraceId()const
-{
-	return traceId_;
 }
 
 std::string ListNotifyPolicyResult::getCode()const

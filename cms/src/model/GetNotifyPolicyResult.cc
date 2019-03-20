@@ -40,43 +40,33 @@ void GetNotifyPolicyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"];
-	for (auto value : allResult)
-	{
-		Result resultObject;
-		if(!value["AlertName"].isNull())
-			resultObject.alertName = value["AlertName"].asString();
-		if(!value["Dimensions"].isNull())
-			resultObject.dimensions = value["Dimensions"].asString();
-		if(!value["Type"].isNull())
-			resultObject.type = value["Type"].asString();
-		if(!value["Id"].isNull())
-			resultObject.id = value["Id"].asString();
-		if(!value["StartTime"].isNull())
-			resultObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["EndTime"].isNull())
-			resultObject.endTime = std::stol(value["EndTime"].asString());
-		result_.push_back(resultObject);
-	}
-	if(!value["code"].isNull())
-		code_ = value["code"].asString();
-	if(!value["message"].isNull())
-		message_ = value["message"].asString();
-	if(!value["success"].isNull())
-		success_ = value["success"].asString();
-	if(!value["traceId"].isNull())
-		traceId_ = value["traceId"].asString();
+	auto resultNode = value["Result"];
+	if(!resultNode["AlertName"].isNull())
+		result_.alertName = resultNode["AlertName"].asString();
+	if(!resultNode["Dimensions"].isNull())
+		result_.dimensions = resultNode["Dimensions"].asString();
+	if(!resultNode["Type"].isNull())
+		result_.type = resultNode["Type"].asString();
+	if(!resultNode["Id"].isNull())
+		result_.id = resultNode["Id"].asString();
+	if(!resultNode["StartTime"].isNull())
+		result_.startTime = std::stol(resultNode["StartTime"].asString());
+	if(!resultNode["EndTime"].isNull())
+		result_.endTime = std::stol(resultNode["EndTime"].asString());
+	if(!resultNode["GroupId"].isNull())
+		result_.groupId = resultNode["GroupId"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 
 }
 
 std::string GetNotifyPolicyResult::getMessage()const
 {
 	return message_;
-}
-
-std::string GetNotifyPolicyResult::getTraceId()const
-{
-	return traceId_;
 }
 
 std::string GetNotifyPolicyResult::getCode()const
@@ -89,7 +79,7 @@ std::string GetNotifyPolicyResult::getSuccess()const
 	return success_;
 }
 
-std::vector<GetNotifyPolicyResult::Result> GetNotifyPolicyResult::getResult()const
+GetNotifyPolicyResult::Result GetNotifyPolicyResult::getResult()const
 {
 	return result_;
 }

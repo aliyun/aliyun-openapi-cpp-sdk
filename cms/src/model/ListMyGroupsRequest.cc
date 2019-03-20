@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::ListMyGroupsRequest;
 
 ListMyGroupsRequest::ListMyGroupsRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "ListMyGroups")
+	RpcServiceRequest("cms", "2018-03-08", "ListMyGroups")
 {}
 
 ListMyGroupsRequest::~ListMyGroupsRequest()
@@ -33,7 +33,7 @@ bool ListMyGroupsRequest::getSelectContactGroups()const
 void ListMyGroupsRequest::setSelectContactGroups(bool selectContactGroups)
 {
 	selectContactGroups_ = selectContactGroups;
-	setParameter("SelectContactGroups", std::to_string(selectContactGroups));
+	setParameter("SelectContactGroups", selectContactGroups ? "true" : "false");
 }
 
 std::string ListMyGroupsRequest::getInstanceId()const
@@ -58,17 +58,6 @@ void ListMyGroupsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string ListMyGroupsRequest::getKeyword()const
-{
-	return keyword_;
-}
-
-void ListMyGroupsRequest::setKeyword(const std::string& keyword)
-{
-	keyword_ = keyword;
-	setParameter("Keyword", keyword);
-}
-
 std::string ListMyGroupsRequest::getType()const
 {
 	return type_;
@@ -78,6 +67,17 @@ void ListMyGroupsRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setParameter("Type", type);
+}
+
+std::string ListMyGroupsRequest::getKeyword()const
+{
+	return keyword_;
+}
+
+void ListMyGroupsRequest::setKeyword(const std::string& keyword)
+{
+	keyword_ = keyword;
+	setParameter("Keyword", keyword);
 }
 
 std::string ListMyGroupsRequest::getGroupName()const

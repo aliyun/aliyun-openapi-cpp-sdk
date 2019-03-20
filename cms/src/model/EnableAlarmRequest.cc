@@ -19,22 +19,11 @@
 using AlibabaCloud::Cms::Model::EnableAlarmRequest;
 
 EnableAlarmRequest::EnableAlarmRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "EnableAlarm")
+	RpcServiceRequest("cms", "2018-03-08", "EnableAlarm")
 {}
 
 EnableAlarmRequest::~EnableAlarmRequest()
 {}
-
-std::string EnableAlarmRequest::getCallby_cms_owner()const
-{
-	return callby_cms_owner_;
-}
-
-void EnableAlarmRequest::setCallby_cms_owner(const std::string& callby_cms_owner)
-{
-	callby_cms_owner_ = callby_cms_owner;
-	setParameter("Callby_cms_owner", callby_cms_owner);
-}
 
 std::string EnableAlarmRequest::getId()const
 {

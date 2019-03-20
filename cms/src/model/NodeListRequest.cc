@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::NodeListRequest;
 
 NodeListRequest::NodeListRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "NodeList")
+	RpcServiceRequest("cms", "2018-03-08", "NodeList")
 {}
 
 NodeListRequest::~NodeListRequest()
@@ -45,6 +45,17 @@ void NodeListRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
 	setParameter("InstanceIds", instanceIds);
+}
+
+std::string NodeListRequest::getInstanceRegionId()const
+{
+	return instanceRegionId_;
+}
+
+void NodeListRequest::setInstanceRegionId(const std::string& instanceRegionId)
+{
+	instanceRegionId_ = instanceRegionId;
+	setParameter("InstanceRegionId", instanceRegionId);
 }
 
 int NodeListRequest::getPageSize()const

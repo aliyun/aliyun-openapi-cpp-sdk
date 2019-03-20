@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::AccessKeyGetRequest;
 
 AccessKeyGetRequest::AccessKeyGetRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "AccessKeyGet")
+	RpcServiceRequest("cms", "2018-03-08", "AccessKeyGet")
 {}
 
 AccessKeyGetRequest::~AccessKeyGetRequest()

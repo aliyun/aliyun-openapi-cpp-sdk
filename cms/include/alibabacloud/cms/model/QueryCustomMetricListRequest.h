@@ -45,8 +45,6 @@ namespace AlibabaCloud
 				void setMetricName(const std::string& metricName);
 				std::string getDimension()const;
 				void setDimension(const std::string& dimension);
-				std::string getUUID()const;
-				void setUUID(const std::string& uUID);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getMd5()const;
@@ -58,7 +56,6 @@ namespace AlibabaCloud
 				std::string page_;
 				std::string metricName_;
 				std::string dimension_;
-				std::string uUID_;
 				std::string accessKeyId_;
 				std::string md5_;
 

@@ -41,6 +41,9 @@ namespace AlibabaCloud
 					std::string groupName;
 					std::vector<Resource::ContactGroup> contactGroups;
 					std::string type;
+					long gmtCreate;
+					std::string bindUrl;
+					long gmtModified;
 					std::string bindUrls;
 					long groupId;
 					std::string serviceId;

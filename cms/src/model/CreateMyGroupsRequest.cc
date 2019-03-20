@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::CreateMyGroupsRequest;
 
 CreateMyGroupsRequest::CreateMyGroupsRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "CreateMyGroups")
+	RpcServiceRequest("cms", "2018-03-08", "CreateMyGroups")
 {}
 
 CreateMyGroupsRequest::~CreateMyGroupsRequest()
@@ -36,15 +36,15 @@ void CreateMyGroupsRequest::setContactGroups(const std::string& contactGroups)
 	setParameter("ContactGroups", contactGroups);
 }
 
-long CreateMyGroupsRequest::getServiceId()const
+std::string CreateMyGroupsRequest::getOptions()const
 {
-	return serviceId_;
+	return options_;
 }
 
-void CreateMyGroupsRequest::setServiceId(long serviceId)
+void CreateMyGroupsRequest::setOptions(const std::string& options)
 {
-	serviceId_ = serviceId;
-	setParameter("ServiceId", std::to_string(serviceId));
+	options_ = options;
+	setParameter("Options", options);
 }
 
 std::string CreateMyGroupsRequest::getType()const
@@ -56,6 +56,17 @@ void CreateMyGroupsRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setParameter("Type", type);
+}
+
+long CreateMyGroupsRequest::getServiceId()const
+{
+	return serviceId_;
+}
+
+void CreateMyGroupsRequest::setServiceId(long serviceId)
+{
+	serviceId_ = serviceId;
+	setParameter("ServiceId", std::to_string(serviceId));
 }
 
 std::string CreateMyGroupsRequest::getGroupName()const

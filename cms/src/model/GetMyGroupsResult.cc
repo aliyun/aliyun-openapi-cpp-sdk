@@ -40,29 +40,24 @@ void GetMyGroupsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allGroup = value["Group"];
-	for (auto value : allGroup)
+	auto groupNode = value["Group"];
+	if(!groupNode["GroupId"].isNull())
+		group_.groupId = std::stol(groupNode["GroupId"].asString());
+	if(!groupNode["GroupName"].isNull())
+		group_.groupName = groupNode["GroupName"].asString();
+	if(!groupNode["ServiceId"].isNull())
+		group_.serviceId = std::stol(groupNode["ServiceId"].asString());
+	if(!groupNode["BindUrl"].isNull())
+		group_.bindUrl = groupNode["BindUrl"].asString();
+	if(!groupNode["Type"].isNull())
+		group_.type = groupNode["Type"].asString();
+	auto allContactGroups = value["ContactGroups"]["ContactGroup"];
+	for (auto value : allContactGroups)
 	{
-		Group groupObject;
-		if(!value["GroupId"].isNull())
-			groupObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["GroupName"].isNull())
-			groupObject.groupName = value["GroupName"].asString();
-		if(!value["ServiceId"].isNull())
-			groupObject.serviceId = std::stol(value["ServiceId"].asString());
-		if(!value["BindUrl"].isNull())
-			groupObject.bindUrl = value["BindUrl"].asString();
-		if(!value["Type"].isNull())
-			groupObject.type = value["Type"].asString();
-		auto allContactGroups = value["ContactGroups"]["ContactGroup"];
-		for (auto value : allContactGroups)
-		{
-			Group::ContactGroup contactGroupObject;
-			if(!value["Name"].isNull())
-				contactGroupObject.name = value["Name"].asString();
-			groupObject.contactGroups.push_back(contactGroupObject);
-		}
-		group_.push_back(groupObject);
+		Group::ContactGroup contactGroupObject;
+		if(!value["Name"].isNull())
+			contactGroupObject.name = value["Name"].asString();
+		group_.contactGroups.push_back(contactGroupObject);
 	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
@@ -73,7 +68,7 @@ void GetMyGroupsResult::parse(const std::string &payload)
 
 }
 
-std::vector<GetMyGroupsResult::Group> GetMyGroupsResult::getGroup()const
+GetMyGroupsResult::Group GetMyGroupsResult::getGroup()const
 {
 	return group_;
 }

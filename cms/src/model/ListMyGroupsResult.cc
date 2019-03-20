@@ -54,6 +54,12 @@ void ListMyGroupsResult::parse(const std::string &payload)
 			resourcesObject.bindUrls = value["BindUrls"].asString();
 		if(!value["Type"].isNull())
 			resourcesObject.type = value["Type"].asString();
+		if(!value["GmtModified"].isNull())
+			resourcesObject.gmtModified = std::stol(value["GmtModified"].asString());
+		if(!value["GmtCreate"].isNull())
+			resourcesObject.gmtCreate = std::stol(value["GmtCreate"].asString());
+		if(!value["BindUrl"].isNull())
+			resourcesObject.bindUrl = value["BindUrl"].asString();
 		auto allContactGroups = value["ContactGroups"]["ContactGroup"];
 		for (auto value : allContactGroups)
 		{

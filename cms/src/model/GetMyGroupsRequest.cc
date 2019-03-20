@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::GetMyGroupsRequest;
 
 GetMyGroupsRequest::GetMyGroupsRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "GetMyGroups")
+	RpcServiceRequest("cms", "2018-03-08", "GetMyGroups")
 {}
 
 GetMyGroupsRequest::~GetMyGroupsRequest()
@@ -33,7 +33,7 @@ bool GetMyGroupsRequest::getSelectContactGroups()const
 void GetMyGroupsRequest::setSelectContactGroups(bool selectContactGroups)
 {
 	selectContactGroups_ = selectContactGroups;
-	setParameter("SelectContactGroups", std::to_string(selectContactGroups));
+	setParameter("SelectContactGroups", selectContactGroups ? "true" : "false");
 }
 
 std::string GetMyGroupsRequest::getInstanceId()const

@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getCursor()const;
 				void setCursor(const std::string& cursor);
-				std::string getCallby_cms_owner()const;
-				void setCallby_cms_owner(const std::string& callby_cms_owner);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getPeriod()const;
@@ -64,7 +62,6 @@ namespace AlibabaCloud
 
             private:
 				std::string cursor_;
-				std::string callby_cms_owner_;
 				long resourceOwnerId_;
 				std::string period_;
 				std::string length_;

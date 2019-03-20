@@ -19,7 +19,7 @@
 using AlibabaCloud::Cms::Model::NodeInstallRequest;
 
 NodeInstallRequest::NodeInstallRequest() :
-	RpcServiceRequest("cms", "2017-03-01", "NodeInstall")
+	RpcServiceRequest("cms", "2018-03-08", "NodeInstall")
 {}
 
 NodeInstallRequest::~NodeInstallRequest()
@@ -44,7 +44,7 @@ bool NodeInstallRequest::getForce()const
 void NodeInstallRequest::setForce(bool force)
 {
 	force_ = force;
-	setParameter("Force", std::to_string(force));
+	setParameter("Force", force ? "true" : "false");
 }
 
 std::string NodeInstallRequest::getUserId()const
