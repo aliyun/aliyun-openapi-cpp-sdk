@@ -109,3 +109,4 @@ add_subdirectory(alidns)
 add_subdirectory(httpdns)
 
 add_subdirectory(crm)
+add_subdirectory(kms)
