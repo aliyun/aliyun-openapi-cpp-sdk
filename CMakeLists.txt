@@ -107,3 +107,5 @@ add_subdirectory(cas)
 add_subdirectory(cloudwf)
 add_subdirectory(alidns)
 add_subdirectory(httpdns)
+
+add_subdirectory(crm)
