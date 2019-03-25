@@ -16,7 +16,7 @@
 
 #include <alibabacloud/sas-api/model/DescribeAccountProfileByKeyWordRequest.h>
 
-using AlibabaCloud::Sas-api::Model::DescribeAccountProfileByKeyWordRequest;
+using AlibabaCloud::Sas_api::Model::DescribeAccountProfileByKeyWordRequest;
 
 DescribeAccountProfileByKeyWordRequest::DescribeAccountProfileByKeyWordRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeAccountProfileByKeyWord")

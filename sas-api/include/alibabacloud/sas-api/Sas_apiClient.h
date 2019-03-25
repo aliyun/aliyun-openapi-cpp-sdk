@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS-API_SAS-APICLIENT_H_
-#define ALIBABACLOUD_SAS-API_SAS-APICLIENT_H_
+#ifndef ALIBABACLOUD_SAS_API_SAS_APICLIENT_H_
+#define ALIBABACLOUD_SAS_API_SAS_APICLIENT_H_
 
 #include <future>
 #include <alibabacloud/core/AsyncCallerContext.h>
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
-#include "Sas-apiExport.h"
+#include "Sas_apiExport.h"
 #include "model/DescribeAccountProfileByKeyWordRequest.h"
 #include "model/DescribeAccountProfileByKeyWordResult.h"
 #include "model/DescribeThreatTypeLinesRequest.h"
@@ -50,52 +50,52 @@
 
 namespace AlibabaCloud
 {
-	namespace Sas-api
+	namespace Sas_api
 	{
-		class ALIBABACLOUD_SAS-API_EXPORT Sas-apiClient : public RpcServiceClient
+		class ALIBABACLOUD_SAS_API_EXPORT Sas_apiClient : public RpcServiceClient
 		{
 		public:
 			typedef Outcome<Error, Model::DescribeAccountProfileByKeyWordResult> DescribeAccountProfileByKeyWordOutcome;
 			typedef std::future<DescribeAccountProfileByKeyWordOutcome> DescribeAccountProfileByKeyWordOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::DescribeAccountProfileByKeyWordRequest&, const DescribeAccountProfileByKeyWordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountProfileByKeyWordAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::DescribeAccountProfileByKeyWordRequest&, const DescribeAccountProfileByKeyWordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountProfileByKeyWordAsyncHandler;
 			typedef Outcome<Error, Model::DescribeThreatTypeLinesResult> DescribeThreatTypeLinesOutcome;
 			typedef std::future<DescribeThreatTypeLinesOutcome> DescribeThreatTypeLinesOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::DescribeThreatTypeLinesRequest&, const DescribeThreatTypeLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThreatTypeLinesAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::DescribeThreatTypeLinesRequest&, const DescribeThreatTypeLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThreatTypeLinesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeThreatDistributeResult> DescribeThreatDistributeOutcome;
 			typedef std::future<DescribeThreatDistributeOutcome> DescribeThreatDistributeOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::DescribeThreatDistributeRequest&, const DescribeThreatDistributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThreatDistributeAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::DescribeThreatDistributeRequest&, const DescribeThreatDistributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThreatDistributeAsyncHandler;
 			typedef Outcome<Error, Model::GetPhoneProfileResult> GetPhoneProfileOutcome;
 			typedef std::future<GetPhoneProfileOutcome> GetPhoneProfileOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::GetPhoneProfileRequest&, const GetPhoneProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPhoneProfileAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::GetPhoneProfileRequest&, const GetPhoneProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPhoneProfileAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccountProfileByKeyResult> DescribeAccountProfileByKeyOutcome;
 			typedef std::future<DescribeAccountProfileByKeyOutcome> DescribeAccountProfileByKeyOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::DescribeAccountProfileByKeyRequest&, const DescribeAccountProfileByKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountProfileByKeyAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::DescribeAccountProfileByKeyRequest&, const DescribeAccountProfileByKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountProfileByKeyAsyncHandler;
 			typedef Outcome<Error, Model::GetInstanceCountResult> GetInstanceCountOutcome;
 			typedef std::future<GetInstanceCountOutcome> GetInstanceCountOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::GetInstanceCountRequest&, const GetInstanceCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceCountAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::GetInstanceCountRequest&, const GetInstanceCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceCountAsyncHandler;
 			typedef Outcome<Error, Model::DescribePerDateDataResult> DescribePerDateDataOutcome;
 			typedef std::future<DescribePerDateDataOutcome> DescribePerDateDataOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::DescribePerDateDataRequest&, const DescribePerDateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePerDateDataAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::DescribePerDateDataRequest&, const DescribePerDateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePerDateDataAsyncHandler;
 			typedef Outcome<Error, Model::GetAccountProfileResult> GetAccountProfileOutcome;
 			typedef std::future<GetAccountProfileOutcome> GetAccountProfileOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::GetAccountProfileRequest&, const GetAccountProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountProfileAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::GetAccountProfileRequest&, const GetAccountProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountProfileAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTotalAndRateLineResult> DescribeTotalAndRateLineOutcome;
 			typedef std::future<DescribeTotalAndRateLineOutcome> DescribeTotalAndRateLineOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::DescribeTotalAndRateLineRequest&, const DescribeTotalAndRateLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTotalAndRateLineAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::DescribeTotalAndRateLineRequest&, const DescribeTotalAndRateLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTotalAndRateLineAsyncHandler;
 			typedef Outcome<Error, Model::GetIpProfileResult> GetIpProfileOutcome;
 			typedef std::future<GetIpProfileOutcome> GetIpProfileOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::GetIpProfileRequest&, const GetIpProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetIpProfileAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::GetIpProfileRequest&, const GetIpProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetIpProfileAsyncHandler;
 			typedef Outcome<Error, Model::DescribeHitRateColumnResult> DescribeHitRateColumnOutcome;
 			typedef std::future<DescribeHitRateColumnOutcome> DescribeHitRateColumnOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::DescribeHitRateColumnRequest&, const DescribeHitRateColumnOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHitRateColumnAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::DescribeHitRateColumnRequest&, const DescribeHitRateColumnOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHitRateColumnAsyncHandler;
 			typedef Outcome<Error, Model::DescribeHitRatePieResult> DescribeHitRatePieOutcome;
 			typedef std::future<DescribeHitRatePieOutcome> DescribeHitRatePieOutcomeCallable;
-			typedef std::function<void(const Sas-apiClient*, const Model::DescribeHitRatePieRequest&, const DescribeHitRatePieOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHitRatePieAsyncHandler;
+			typedef std::function<void(const Sas_apiClient*, const Model::DescribeHitRatePieRequest&, const DescribeHitRatePieOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHitRatePieAsyncHandler;
 
-			Sas-apiClient(const Credentials &credentials, const ClientConfiguration &configuration);
-			Sas-apiClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
-			Sas-apiClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
-			~Sas-apiClient();
+			Sas_apiClient(const Credentials &credentials, const ClientConfiguration &configuration);
+			Sas_apiClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
+			Sas_apiClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
+			~Sas_apiClient();
 			DescribeAccountProfileByKeyWordOutcome describeAccountProfileByKeyWord(const Model::DescribeAccountProfileByKeyWordRequest &request)const;
 			void describeAccountProfileByKeyWordAsync(const Model::DescribeAccountProfileByKeyWordRequest& request, const DescribeAccountProfileByKeyWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountProfileByKeyWordOutcomeCallable describeAccountProfileByKeyWordCallable(const Model::DescribeAccountProfileByKeyWordRequest& request) const;
@@ -139,4 +139,4 @@ namespace AlibabaCloud
 	}
 }
 
-#endif // !ALIBABACLOUD_SAS-API_SAS-APICLIENT_H_
+#endif // !ALIBABACLOUD_SAS_API_SAS_APICLIENT_H_

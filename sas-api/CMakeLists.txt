@@ -17,8 +17,8 @@
 set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 set(sas-api_public_header 
-	include/alibabacloud/sas-api/Sas-apiClient.h
-	include/alibabacloud/sas-api/Sas-apiExport.h )
+	include/alibabacloud/sas-api/Sas_apiClient.h
+	include/alibabacloud/sas-api/Sas_apiExport.h )
 
 set(sas-api_public_header_model 
 	include/alibabacloud/sas-api/model/DescribeAccountProfileByKeyWordRequest.h
@@ -90,7 +90,7 @@ set_target_properties(sas-api
 if(${LIB_TYPE} STREQUAL "SHARED")
 	set_target_properties(sas-api
 		PROPERTIES
-		DEFINE_SYMBOL ALIBABACLOUD_SAS-API_LIBRARY)
+		DEFINE_SYMBOL ALIBABACLOUD_SAS_API_LIBRARY)
 endif()
 
 target_include_directories(sas-api

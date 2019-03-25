@@ -16,7 +16,7 @@
 
 #include <alibabacloud/sas-api/model/DescribeThreatDistributeRequest.h>
 
-using AlibabaCloud::Sas-api::Model::DescribeThreatDistributeRequest;
+using AlibabaCloud::Sas_api::Model::DescribeThreatDistributeRequest;
 
 DescribeThreatDistributeRequest::DescribeThreatDistributeRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeThreatDistribute")

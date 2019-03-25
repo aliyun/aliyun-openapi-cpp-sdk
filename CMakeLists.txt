@@ -110,3 +110,4 @@ add_subdirectory(httpdns)
 
 add_subdirectory(crm)
 add_subdirectory(kms)
+add_subdirectory(sas-api)

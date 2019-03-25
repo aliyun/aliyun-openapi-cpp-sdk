@@ -16,7 +16,7 @@
 
 #include <alibabacloud/sas-api/model/GetIpProfileRequest.h>
 
-using AlibabaCloud::Sas-api::Model::GetIpProfileRequest;
+using AlibabaCloud::Sas_api::Model::GetIpProfileRequest;
 
 GetIpProfileRequest::GetIpProfileRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "GetIpProfile")

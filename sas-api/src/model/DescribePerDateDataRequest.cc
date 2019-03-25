@@ -16,7 +16,7 @@
 
 #include <alibabacloud/sas-api/model/DescribePerDateDataRequest.h>
 
-using AlibabaCloud::Sas-api::Model::DescribePerDateDataRequest;
+using AlibabaCloud::Sas_api::Model::DescribePerDateDataRequest;
 
 DescribePerDateDataRequest::DescribePerDateDataRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribePerDateData")

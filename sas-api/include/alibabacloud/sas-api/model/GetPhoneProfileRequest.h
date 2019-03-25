@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS-API_MODEL_GETPHONEPROFILEREQUEST_H_
-#define ALIBABACLOUD_SAS-API_MODEL_GETPHONEPROFILEREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_API_MODEL_GETPHONEPROFILEREQUEST_H_
+#define ALIBABACLOUD_SAS_API_MODEL_GETPHONEPROFILEREQUEST_H_
 
 #include <string>
 #include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/sas-api/Sas-apiExport.h>
+#include <alibabacloud/sas-api/Sas_apiExport.h>
 
 namespace AlibabaCloud
 {
-	namespace Sas-api
+	namespace Sas_api
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS-API_EXPORT GetPhoneProfileRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SAS_API_EXPORT GetPhoneProfileRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -54,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS-API_MODEL_GETPHONEPROFILEREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_API_MODEL_GETPHONEPROFILEREQUEST_H_

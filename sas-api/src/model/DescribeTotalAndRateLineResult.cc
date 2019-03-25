@@ -17,8 +17,8 @@
 #include <alibabacloud/sas-api/model/DescribeTotalAndRateLineResult.h>
 #include <json/json.h>
 
-using namespace AlibabaCloud::Sas-api;
-using namespace AlibabaCloud::Sas-api::Model;
+using namespace AlibabaCloud::Sas_api;
+using namespace AlibabaCloud::Sas_api::Model;
 
 DescribeTotalAndRateLineResult::DescribeTotalAndRateLineResult() :
 	ServiceResult()

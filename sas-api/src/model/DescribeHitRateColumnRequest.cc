@@ -16,7 +16,7 @@
 
 #include <alibabacloud/sas-api/model/DescribeHitRateColumnRequest.h>
 
-using AlibabaCloud::Sas-api::Model::DescribeHitRateColumnRequest;
+using AlibabaCloud::Sas_api::Model::DescribeHitRateColumnRequest;
 
 DescribeHitRateColumnRequest::DescribeHitRateColumnRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeHitRateColumn")

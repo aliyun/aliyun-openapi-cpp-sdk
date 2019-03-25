@@ -16,7 +16,7 @@
 
 #include <alibabacloud/sas-api/model/DescribeHitRatePieRequest.h>
 
-using AlibabaCloud::Sas-api::Model::DescribeHitRatePieRequest;
+using AlibabaCloud::Sas_api::Model::DescribeHitRatePieRequest;
 
 DescribeHitRatePieRequest::DescribeHitRatePieRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeHitRatePie")

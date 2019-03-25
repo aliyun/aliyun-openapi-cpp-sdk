@@ -16,7 +16,7 @@
 
 #include <alibabacloud/sas-api/model/DescribeThreatTypeLinesRequest.h>
 
-using AlibabaCloud::Sas-api::Model::DescribeThreatTypeLinesRequest;
+using AlibabaCloud::Sas_api::Model::DescribeThreatTypeLinesRequest;
 
 DescribeThreatTypeLinesRequest::DescribeThreatTypeLinesRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeThreatTypeLines")

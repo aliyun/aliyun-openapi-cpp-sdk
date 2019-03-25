@@ -14,44 +14,44 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sas-api/Sas-apiClient.h>
+#include <alibabacloud/sas-api/Sas_apiClient.h>
 #include <alibabacloud/core/SimpleCredentialsProvider.h>
 
 using namespace AlibabaCloud;
 using namespace AlibabaCloud::Location;
-using namespace AlibabaCloud::Sas-api;
-using namespace AlibabaCloud::Sas-api::Model;
+using namespace AlibabaCloud::Sas_api;
+using namespace AlibabaCloud::Sas_api::Model;
 
 namespace
 {
 	const std::string SERVICE_NAME = "Sas-api";
 }
 
-Sas-apiClient::Sas-apiClient(const Credentials &credentials, const ClientConfiguration &configuration) :
+Sas_apiClient::Sas_apiClient(const Credentials &credentials, const ClientConfiguration &configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
 	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sas-api");
 }
 
-Sas-apiClient::Sas-apiClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
+Sas_apiClient::Sas_apiClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
 	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sas-api");
 }
 
-Sas-apiClient::Sas-apiClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
+Sas_apiClient::Sas_apiClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
 	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sas-api");
 }
 
-Sas-apiClient::~Sas-apiClient()
+Sas_apiClient::~Sas_apiClient()
 {}
 
-Sas-apiClient::DescribeAccountProfileByKeyWordOutcome Sas-apiClient::describeAccountProfileByKeyWord(const DescribeAccountProfileByKeyWordRequest &request) const
+Sas_apiClient::DescribeAccountProfileByKeyWordOutcome Sas_apiClient::describeAccountProfileByKeyWord(const DescribeAccountProfileByKeyWordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -65,7 +65,7 @@ Sas-apiClient::DescribeAccountProfileByKeyWordOutcome Sas-apiClient::describeAcc
 		return DescribeAccountProfileByKeyWordOutcome(outcome.error());
 }
 
-void Sas-apiClient::describeAccountProfileByKeyWordAsync(const DescribeAccountProfileByKeyWordRequest& request, const DescribeAccountProfileByKeyWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::describeAccountProfileByKeyWordAsync(const DescribeAccountProfileByKeyWordRequest& request, const DescribeAccountProfileByKeyWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -75,7 +75,7 @@ void Sas-apiClient::describeAccountProfileByKeyWordAsync(const DescribeAccountPr
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::DescribeAccountProfileByKeyWordOutcomeCallable Sas-apiClient::describeAccountProfileByKeyWordCallable(const DescribeAccountProfileByKeyWordRequest &request) const
+Sas_apiClient::DescribeAccountProfileByKeyWordOutcomeCallable Sas_apiClient::describeAccountProfileByKeyWordCallable(const DescribeAccountProfileByKeyWordRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<DescribeAccountProfileByKeyWordOutcome()>>(
 			[this, request]()
@@ -87,7 +87,7 @@ Sas-apiClient::DescribeAccountProfileByKeyWordOutcomeCallable Sas-apiClient::des
 	return task->get_future();
 }
 
-Sas-apiClient::DescribeThreatTypeLinesOutcome Sas-apiClient::describeThreatTypeLines(const DescribeThreatTypeLinesRequest &request) const
+Sas_apiClient::DescribeThreatTypeLinesOutcome Sas_apiClient::describeThreatTypeLines(const DescribeThreatTypeLinesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -101,7 +101,7 @@ Sas-apiClient::DescribeThreatTypeLinesOutcome Sas-apiClient::describeThreatTypeL
 		return DescribeThreatTypeLinesOutcome(outcome.error());
 }
 
-void Sas-apiClient::describeThreatTypeLinesAsync(const DescribeThreatTypeLinesRequest& request, const DescribeThreatTypeLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::describeThreatTypeLinesAsync(const DescribeThreatTypeLinesRequest& request, const DescribeThreatTypeLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -111,7 +111,7 @@ void Sas-apiClient::describeThreatTypeLinesAsync(const DescribeThreatTypeLinesRe
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::DescribeThreatTypeLinesOutcomeCallable Sas-apiClient::describeThreatTypeLinesCallable(const DescribeThreatTypeLinesRequest &request) const
+Sas_apiClient::DescribeThreatTypeLinesOutcomeCallable Sas_apiClient::describeThreatTypeLinesCallable(const DescribeThreatTypeLinesRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<DescribeThreatTypeLinesOutcome()>>(
 			[this, request]()
@@ -123,7 +123,7 @@ Sas-apiClient::DescribeThreatTypeLinesOutcomeCallable Sas-apiClient::describeThr
 	return task->get_future();
 }
 
-Sas-apiClient::DescribeThreatDistributeOutcome Sas-apiClient::describeThreatDistribute(const DescribeThreatDistributeRequest &request) const
+Sas_apiClient::DescribeThreatDistributeOutcome Sas_apiClient::describeThreatDistribute(const DescribeThreatDistributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -137,7 +137,7 @@ Sas-apiClient::DescribeThreatDistributeOutcome Sas-apiClient::describeThreatDist
 		return DescribeThreatDistributeOutcome(outcome.error());
 }
 
-void Sas-apiClient::describeThreatDistributeAsync(const DescribeThreatDistributeRequest& request, const DescribeThreatDistributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::describeThreatDistributeAsync(const DescribeThreatDistributeRequest& request, const DescribeThreatDistributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -147,7 +147,7 @@ void Sas-apiClient::describeThreatDistributeAsync(const DescribeThreatDistribute
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::DescribeThreatDistributeOutcomeCallable Sas-apiClient::describeThreatDistributeCallable(const DescribeThreatDistributeRequest &request) const
+Sas_apiClient::DescribeThreatDistributeOutcomeCallable Sas_apiClient::describeThreatDistributeCallable(const DescribeThreatDistributeRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<DescribeThreatDistributeOutcome()>>(
 			[this, request]()
@@ -159,7 +159,7 @@ Sas-apiClient::DescribeThreatDistributeOutcomeCallable Sas-apiClient::describeTh
 	return task->get_future();
 }
 
-Sas-apiClient::GetPhoneProfileOutcome Sas-apiClient::getPhoneProfile(const GetPhoneProfileRequest &request) const
+Sas_apiClient::GetPhoneProfileOutcome Sas_apiClient::getPhoneProfile(const GetPhoneProfileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -173,7 +173,7 @@ Sas-apiClient::GetPhoneProfileOutcome Sas-apiClient::getPhoneProfile(const GetPh
 		return GetPhoneProfileOutcome(outcome.error());
 }
 
-void Sas-apiClient::getPhoneProfileAsync(const GetPhoneProfileRequest& request, const GetPhoneProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::getPhoneProfileAsync(const GetPhoneProfileRequest& request, const GetPhoneProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -183,7 +183,7 @@ void Sas-apiClient::getPhoneProfileAsync(const GetPhoneProfileRequest& request, 
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::GetPhoneProfileOutcomeCallable Sas-apiClient::getPhoneProfileCallable(const GetPhoneProfileRequest &request) const
+Sas_apiClient::GetPhoneProfileOutcomeCallable Sas_apiClient::getPhoneProfileCallable(const GetPhoneProfileRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<GetPhoneProfileOutcome()>>(
 			[this, request]()
@@ -195,7 +195,7 @@ Sas-apiClient::GetPhoneProfileOutcomeCallable Sas-apiClient::getPhoneProfileCall
 	return task->get_future();
 }
 
-Sas-apiClient::DescribeAccountProfileByKeyOutcome Sas-apiClient::describeAccountProfileByKey(const DescribeAccountProfileByKeyRequest &request) const
+Sas_apiClient::DescribeAccountProfileByKeyOutcome Sas_apiClient::describeAccountProfileByKey(const DescribeAccountProfileByKeyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -209,7 +209,7 @@ Sas-apiClient::DescribeAccountProfileByKeyOutcome Sas-apiClient::describeAccount
 		return DescribeAccountProfileByKeyOutcome(outcome.error());
 }
 
-void Sas-apiClient::describeAccountProfileByKeyAsync(const DescribeAccountProfileByKeyRequest& request, const DescribeAccountProfileByKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::describeAccountProfileByKeyAsync(const DescribeAccountProfileByKeyRequest& request, const DescribeAccountProfileByKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -219,7 +219,7 @@ void Sas-apiClient::describeAccountProfileByKeyAsync(const DescribeAccountProfil
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::DescribeAccountProfileByKeyOutcomeCallable Sas-apiClient::describeAccountProfileByKeyCallable(const DescribeAccountProfileByKeyRequest &request) const
+Sas_apiClient::DescribeAccountProfileByKeyOutcomeCallable Sas_apiClient::describeAccountProfileByKeyCallable(const DescribeAccountProfileByKeyRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<DescribeAccountProfileByKeyOutcome()>>(
 			[this, request]()
@@ -231,7 +231,7 @@ Sas-apiClient::DescribeAccountProfileByKeyOutcomeCallable Sas-apiClient::describ
 	return task->get_future();
 }
 
-Sas-apiClient::GetInstanceCountOutcome Sas-apiClient::getInstanceCount(const GetInstanceCountRequest &request) const
+Sas_apiClient::GetInstanceCountOutcome Sas_apiClient::getInstanceCount(const GetInstanceCountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -245,7 +245,7 @@ Sas-apiClient::GetInstanceCountOutcome Sas-apiClient::getInstanceCount(const Get
 		return GetInstanceCountOutcome(outcome.error());
 }
 
-void Sas-apiClient::getInstanceCountAsync(const GetInstanceCountRequest& request, const GetInstanceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::getInstanceCountAsync(const GetInstanceCountRequest& request, const GetInstanceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -255,7 +255,7 @@ void Sas-apiClient::getInstanceCountAsync(const GetInstanceCountRequest& request
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::GetInstanceCountOutcomeCallable Sas-apiClient::getInstanceCountCallable(const GetInstanceCountRequest &request) const
+Sas_apiClient::GetInstanceCountOutcomeCallable Sas_apiClient::getInstanceCountCallable(const GetInstanceCountRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<GetInstanceCountOutcome()>>(
 			[this, request]()
@@ -267,7 +267,7 @@ Sas-apiClient::GetInstanceCountOutcomeCallable Sas-apiClient::getInstanceCountCa
 	return task->get_future();
 }
 
-Sas-apiClient::DescribePerDateDataOutcome Sas-apiClient::describePerDateData(const DescribePerDateDataRequest &request) const
+Sas_apiClient::DescribePerDateDataOutcome Sas_apiClient::describePerDateData(const DescribePerDateDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -281,7 +281,7 @@ Sas-apiClient::DescribePerDateDataOutcome Sas-apiClient::describePerDateData(con
 		return DescribePerDateDataOutcome(outcome.error());
 }
 
-void Sas-apiClient::describePerDateDataAsync(const DescribePerDateDataRequest& request, const DescribePerDateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::describePerDateDataAsync(const DescribePerDateDataRequest& request, const DescribePerDateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -291,7 +291,7 @@ void Sas-apiClient::describePerDateDataAsync(const DescribePerDateDataRequest& r
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::DescribePerDateDataOutcomeCallable Sas-apiClient::describePerDateDataCallable(const DescribePerDateDataRequest &request) const
+Sas_apiClient::DescribePerDateDataOutcomeCallable Sas_apiClient::describePerDateDataCallable(const DescribePerDateDataRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<DescribePerDateDataOutcome()>>(
 			[this, request]()
@@ -303,7 +303,7 @@ Sas-apiClient::DescribePerDateDataOutcomeCallable Sas-apiClient::describePerDate
 	return task->get_future();
 }
 
-Sas-apiClient::GetAccountProfileOutcome Sas-apiClient::getAccountProfile(const GetAccountProfileRequest &request) const
+Sas_apiClient::GetAccountProfileOutcome Sas_apiClient::getAccountProfile(const GetAccountProfileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -317,7 +317,7 @@ Sas-apiClient::GetAccountProfileOutcome Sas-apiClient::getAccountProfile(const G
 		return GetAccountProfileOutcome(outcome.error());
 }
 
-void Sas-apiClient::getAccountProfileAsync(const GetAccountProfileRequest& request, const GetAccountProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::getAccountProfileAsync(const GetAccountProfileRequest& request, const GetAccountProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -327,7 +327,7 @@ void Sas-apiClient::getAccountProfileAsync(const GetAccountProfileRequest& reque
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::GetAccountProfileOutcomeCallable Sas-apiClient::getAccountProfileCallable(const GetAccountProfileRequest &request) const
+Sas_apiClient::GetAccountProfileOutcomeCallable Sas_apiClient::getAccountProfileCallable(const GetAccountProfileRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<GetAccountProfileOutcome()>>(
 			[this, request]()
@@ -339,7 +339,7 @@ Sas-apiClient::GetAccountProfileOutcomeCallable Sas-apiClient::getAccountProfile
 	return task->get_future();
 }
 
-Sas-apiClient::DescribeTotalAndRateLineOutcome Sas-apiClient::describeTotalAndRateLine(const DescribeTotalAndRateLineRequest &request) const
+Sas_apiClient::DescribeTotalAndRateLineOutcome Sas_apiClient::describeTotalAndRateLine(const DescribeTotalAndRateLineRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -353,7 +353,7 @@ Sas-apiClient::DescribeTotalAndRateLineOutcome Sas-apiClient::describeTotalAndRa
 		return DescribeTotalAndRateLineOutcome(outcome.error());
 }
 
-void Sas-apiClient::describeTotalAndRateLineAsync(const DescribeTotalAndRateLineRequest& request, const DescribeTotalAndRateLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::describeTotalAndRateLineAsync(const DescribeTotalAndRateLineRequest& request, const DescribeTotalAndRateLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -363,7 +363,7 @@ void Sas-apiClient::describeTotalAndRateLineAsync(const DescribeTotalAndRateLine
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::DescribeTotalAndRateLineOutcomeCallable Sas-apiClient::describeTotalAndRateLineCallable(const DescribeTotalAndRateLineRequest &request) const
+Sas_apiClient::DescribeTotalAndRateLineOutcomeCallable Sas_apiClient::describeTotalAndRateLineCallable(const DescribeTotalAndRateLineRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<DescribeTotalAndRateLineOutcome()>>(
 			[this, request]()
@@ -375,7 +375,7 @@ Sas-apiClient::DescribeTotalAndRateLineOutcomeCallable Sas-apiClient::describeTo
 	return task->get_future();
 }
 
-Sas-apiClient::GetIpProfileOutcome Sas-apiClient::getIpProfile(const GetIpProfileRequest &request) const
+Sas_apiClient::GetIpProfileOutcome Sas_apiClient::getIpProfile(const GetIpProfileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -389,7 +389,7 @@ Sas-apiClient::GetIpProfileOutcome Sas-apiClient::getIpProfile(const GetIpProfil
 		return GetIpProfileOutcome(outcome.error());
 }
 
-void Sas-apiClient::getIpProfileAsync(const GetIpProfileRequest& request, const GetIpProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::getIpProfileAsync(const GetIpProfileRequest& request, const GetIpProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -399,7 +399,7 @@ void Sas-apiClient::getIpProfileAsync(const GetIpProfileRequest& request, const 
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::GetIpProfileOutcomeCallable Sas-apiClient::getIpProfileCallable(const GetIpProfileRequest &request) const
+Sas_apiClient::GetIpProfileOutcomeCallable Sas_apiClient::getIpProfileCallable(const GetIpProfileRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<GetIpProfileOutcome()>>(
 			[this, request]()
@@ -411,7 +411,7 @@ Sas-apiClient::GetIpProfileOutcomeCallable Sas-apiClient::getIpProfileCallable(c
 	return task->get_future();
 }
 
-Sas-apiClient::DescribeHitRateColumnOutcome Sas-apiClient::describeHitRateColumn(const DescribeHitRateColumnRequest &request) const
+Sas_apiClient::DescribeHitRateColumnOutcome Sas_apiClient::describeHitRateColumn(const DescribeHitRateColumnRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -425,7 +425,7 @@ Sas-apiClient::DescribeHitRateColumnOutcome Sas-apiClient::describeHitRateColumn
 		return DescribeHitRateColumnOutcome(outcome.error());
 }
 
-void Sas-apiClient::describeHitRateColumnAsync(const DescribeHitRateColumnRequest& request, const DescribeHitRateColumnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::describeHitRateColumnAsync(const DescribeHitRateColumnRequest& request, const DescribeHitRateColumnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -435,7 +435,7 @@ void Sas-apiClient::describeHitRateColumnAsync(const DescribeHitRateColumnReques
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::DescribeHitRateColumnOutcomeCallable Sas-apiClient::describeHitRateColumnCallable(const DescribeHitRateColumnRequest &request) const
+Sas_apiClient::DescribeHitRateColumnOutcomeCallable Sas_apiClient::describeHitRateColumnCallable(const DescribeHitRateColumnRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<DescribeHitRateColumnOutcome()>>(
 			[this, request]()
@@ -447,7 +447,7 @@ Sas-apiClient::DescribeHitRateColumnOutcomeCallable Sas-apiClient::describeHitRa
 	return task->get_future();
 }
 
-Sas-apiClient::DescribeHitRatePieOutcome Sas-apiClient::describeHitRatePie(const DescribeHitRatePieRequest &request) const
+Sas_apiClient::DescribeHitRatePieOutcome Sas_apiClient::describeHitRatePie(const DescribeHitRatePieRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
@@ -461,7 +461,7 @@ Sas-apiClient::DescribeHitRatePieOutcome Sas-apiClient::describeHitRatePie(const
 		return DescribeHitRatePieOutcome(outcome.error());
 }
 
-void Sas-apiClient::describeHitRatePieAsync(const DescribeHitRatePieRequest& request, const DescribeHitRatePieAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Sas_apiClient::describeHitRatePieAsync(const DescribeHitRatePieRequest& request, const DescribeHitRatePieAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
@@ -471,7 +471,7 @@ void Sas-apiClient::describeHitRatePieAsync(const DescribeHitRatePieRequest& req
 	asyncExecute(new Runnable(fn));
 }
 
-Sas-apiClient::DescribeHitRatePieOutcomeCallable Sas-apiClient::describeHitRatePieCallable(const DescribeHitRatePieRequest &request) const
+Sas_apiClient::DescribeHitRatePieOutcomeCallable Sas_apiClient::describeHitRatePieCallable(const DescribeHitRatePieRequest &request) const
 {
 	auto task = std::make_shared<std::packaged_task<DescribeHitRatePieOutcome()>>(
 			[this, request]()

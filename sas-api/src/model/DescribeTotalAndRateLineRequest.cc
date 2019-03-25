@@ -16,7 +16,7 @@
 
 #include <alibabacloud/sas-api/model/DescribeTotalAndRateLineRequest.h>
 
-using AlibabaCloud::Sas-api::Model::DescribeTotalAndRateLineRequest;
+using AlibabaCloud::Sas_api::Model::DescribeTotalAndRateLineRequest;
 
 DescribeTotalAndRateLineRequest::DescribeTotalAndRateLineRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeTotalAndRateLine")

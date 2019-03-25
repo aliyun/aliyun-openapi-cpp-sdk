@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS-API_MODEL_DESCRIBETHREATDISTRIBUTERESULT_H_
-#define ALIBABACLOUD_SAS-API_MODEL_DESCRIBETHREATDISTRIBUTERESULT_H_
+#ifndef ALIBABACLOUD_SAS_API_MODEL_DESCRIBETHREATDISTRIBUTERESULT_H_
+#define ALIBABACLOUD_SAS_API_MODEL_DESCRIBETHREATDISTRIBUTERESULT_H_
 
 #include <string>
 #include <vector>
 #include <utility>
 #include <alibabacloud/core/ServiceResult.h>
-#include <alibabacloud/sas-api/Sas-apiExport.h>
+#include <alibabacloud/sas-api/Sas_apiExport.h>
 
 namespace AlibabaCloud
 {
-	namespace Sas-api
+	namespace Sas_api
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS-API_EXPORT DescribeThreatDistributeResult : public ServiceResult
+			class ALIBABACLOUD_SAS_API_EXPORT DescribeThreatDistributeResult : public ServiceResult
 			{
 			public:
 				struct Item
@@ -56,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS-API_MODEL_DESCRIBETHREATDISTRIBUTERESULT_H_
+#endif // !ALIBABACLOUD_SAS_API_MODEL_DESCRIBETHREATDISTRIBUTERESULT_H_

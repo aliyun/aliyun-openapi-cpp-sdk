@@ -16,7 +16,7 @@
 
 #include <alibabacloud/sas-api/model/GetInstanceCountRequest.h>
 
-using AlibabaCloud::Sas-api::Model::GetInstanceCountRequest;
+using AlibabaCloud::Sas_api::Model::GetInstanceCountRequest;
 
 GetInstanceCountRequest::GetInstanceCountRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "GetInstanceCount")

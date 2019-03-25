@@ -16,7 +16,7 @@
 
 #include <alibabacloud/sas-api/model/GetPhoneProfileRequest.h>
 
-using AlibabaCloud::Sas-api::Model::GetPhoneProfileRequest;
+using AlibabaCloud::Sas_api::Model::GetPhoneProfileRequest;
 
 GetPhoneProfileRequest::GetPhoneProfileRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "GetPhoneProfile")

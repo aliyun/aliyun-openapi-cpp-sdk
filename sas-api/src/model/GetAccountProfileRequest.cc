@@ -16,7 +16,7 @@
 
 #include <alibabacloud/sas-api/model/GetAccountProfileRequest.h>
 
-using AlibabaCloud::Sas-api::Model::GetAccountProfileRequest;
+using AlibabaCloud::Sas_api::Model::GetAccountProfileRequest;
 
 GetAccountProfileRequest::GetAccountProfileRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "GetAccountProfile")
