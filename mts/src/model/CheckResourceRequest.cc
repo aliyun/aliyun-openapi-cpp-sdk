@@ -99,7 +99,7 @@ bool CheckResourceRequest::getSuccess()const
 void CheckResourceRequest::setSuccess(bool success)
 {
 	success_ = success;
-	setParameter("Success", std::to_string(success));
+	setParameter("Success", success ? "true" : "false");
 }
 
 bool CheckResourceRequest::getInterrupt()const
@@ -110,7 +110,7 @@ bool CheckResourceRequest::getInterrupt()const
 void CheckResourceRequest::setInterrupt(bool interrupt)
 {
 	interrupt_ = interrupt;
-	setParameter("Interrupt", std::to_string(interrupt));
+	setParameter("Interrupt", interrupt ? "true" : "false");
 }
 
 std::string CheckResourceRequest::getGmtWakeup()const

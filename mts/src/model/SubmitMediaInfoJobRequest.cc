@@ -55,7 +55,7 @@ bool SubmitMediaInfoJobRequest::getAsync()const
 void SubmitMediaInfoJobRequest::setAsync(bool async)
 {
 	async_ = async;
-	setParameter("Async", std::to_string(async));
+	setParameter("Async", async ? "true" : "false");
 }
 
 long SubmitMediaInfoJobRequest::getResourceOwnerId()const

@@ -110,7 +110,7 @@ bool AddMediaRequest::getInputUnbind()const
 void AddMediaRequest::setInputUnbind(bool inputUnbind)
 {
 	inputUnbind_ = inputUnbind;
-	setParameter("InputUnbind", std::to_string(inputUnbind));
+	setParameter("InputUnbind", inputUnbind ? "true" : "false");
 }
 
 std::string AddMediaRequest::getAccessKeyId()const

@@ -68,27 +68,6 @@ namespace AlibabaCloud
 							std::string primaryKey;
 							std::vector<FpShot::FpShotSlice> fpShotSlices;
 						};
-						struct FpShot
-						{
-							struct FpShotSlice
-							{
-								struct Input
-								{
-									std::string start;
-									std::string duration;
-								};
-								struct Duplication
-								{
-									std::string start;
-									std::string duration;
-								};
-								Input input;
-								Duplication duplication;
-							};
-							std::string similarity;
-							std::string primaryKey;
-							std::vector<FpShot::FpShotSlice> fpShotSlices;
-						};
 						std::vector<FpShot> audioFpShots;
 						std::vector<FpShot> fpShots;
 					};

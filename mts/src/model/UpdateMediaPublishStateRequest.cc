@@ -55,7 +55,7 @@ bool UpdateMediaPublishStateRequest::getPublish()const
 void UpdateMediaPublishStateRequest::setPublish(bool publish)
 {
 	publish_ = publish;
-	setParameter("Publish", std::to_string(publish));
+	setParameter("Publish", publish ? "true" : "false");
 }
 
 std::string UpdateMediaPublishStateRequest::getOwnerAccount()const

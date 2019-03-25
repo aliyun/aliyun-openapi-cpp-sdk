@@ -44,7 +44,7 @@ bool QueryMediaListByURLRequest::getIncludeSummaryList()const
 void QueryMediaListByURLRequest::setIncludeSummaryList(bool includeSummaryList)
 {
 	includeSummaryList_ = includeSummaryList;
-	setParameter("IncludeSummaryList", std::to_string(includeSummaryList));
+	setParameter("IncludeSummaryList", includeSummaryList ? "true" : "false");
 }
 
 std::string QueryMediaListByURLRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ bool QueryMediaListByURLRequest::getIncludeSnapshotList()const
 void QueryMediaListByURLRequest::setIncludeSnapshotList(bool includeSnapshotList)
 {
 	includeSnapshotList_ = includeSnapshotList;
-	setParameter("IncludeSnapshotList", std::to_string(includeSnapshotList));
+	setParameter("IncludeSnapshotList", includeSnapshotList ? "true" : "false");
 }
 
 std::string QueryMediaListByURLRequest::getFileURLs()const
@@ -110,7 +110,7 @@ bool QueryMediaListByURLRequest::getIncludePlayList()const
 void QueryMediaListByURLRequest::setIncludePlayList(bool includePlayList)
 {
 	includePlayList_ = includePlayList;
-	setParameter("IncludePlayList", std::to_string(includePlayList));
+	setParameter("IncludePlayList", includePlayList ? "true" : "false");
 }
 
 std::string QueryMediaListByURLRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ bool QueryMediaListByURLRequest::getIncludeMediaInfo()const
 void QueryMediaListByURLRequest::setIncludeMediaInfo(bool includeMediaInfo)
 {
 	includeMediaInfo_ = includeMediaInfo;
-	setParameter("IncludeMediaInfo", std::to_string(includeMediaInfo));
+	setParameter("IncludeMediaInfo", includeMediaInfo ? "true" : "false");
 }
 

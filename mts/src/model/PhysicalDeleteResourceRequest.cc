@@ -55,7 +55,7 @@ bool PhysicalDeleteResourceRequest::getSuccess()const
 void PhysicalDeleteResourceRequest::setSuccess(bool success)
 {
 	success_ = success;
-	setParameter("Success", std::to_string(success));
+	setParameter("Success", success ? "true" : "false");
 }
 
 bool PhysicalDeleteResourceRequest::getInterrupt()const
@@ -66,7 +66,7 @@ bool PhysicalDeleteResourceRequest::getInterrupt()const
 void PhysicalDeleteResourceRequest::setInterrupt(bool interrupt)
 {
 	interrupt_ = interrupt;
-	setParameter("Interrupt", std::to_string(interrupt));
+	setParameter("Interrupt", interrupt ? "true" : "false");
 }
 
 std::string PhysicalDeleteResourceRequest::getGmtWakeup()const
