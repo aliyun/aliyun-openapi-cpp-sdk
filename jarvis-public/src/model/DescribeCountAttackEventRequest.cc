@@ -16,7 +16,7 @@
 
 #include <alibabacloud/jarvis-public/model/DescribeCountAttackEventRequest.h>
 
-using AlibabaCloud::Jarvis-public::Model::DescribeCountAttackEventRequest;
+using AlibabaCloud::Jarvis_public::Model::DescribeCountAttackEventRequest;
 
 DescribeCountAttackEventRequest::DescribeCountAttackEventRequest() :
 	RpcServiceRequest("jarvis-public", "2018-06-21", "DescribeCountAttackEvent")

@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_JARVIS-PUBLIC_JARVIS-PUBLICCLIENT_H_
-#define ALIBABACLOUD_JARVIS-PUBLIC_JARVIS-PUBLICCLIENT_H_
+#ifndef ALIBABACLOUD_JARVIS_PUBLIC_JARVIS_PUBLICCLIENT_H_
+#define ALIBABACLOUD_JARVIS_PUBLIC_JARVIS_PUBLICCLIENT_H_
 
 #include <future>
 #include <alibabacloud/core/AsyncCallerContext.h>
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
-#include "Jarvis-publicExport.h"
+#include "Jarvis_publicExport.h"
 #include "model/DescribeCountAttackEventRequest.h"
 #include "model/DescribeCountAttackEventResult.h"
 #include "model/DescribeAttackEventRequest.h"
@@ -34,28 +34,28 @@
 
 namespace AlibabaCloud
 {
-	namespace Jarvis-public
+	namespace Jarvis_public
 	{
-		class ALIBABACLOUD_JARVIS-PUBLIC_EXPORT Jarvis-publicClient : public RpcServiceClient
+		class ALIBABACLOUD_JARVIS_PUBLIC_EXPORT Jarvis_publicClient : public RpcServiceClient
 		{
 		public:
 			typedef Outcome<Error, Model::DescribeCountAttackEventResult> DescribeCountAttackEventOutcome;
 			typedef std::future<DescribeCountAttackEventOutcome> DescribeCountAttackEventOutcomeCallable;
-			typedef std::function<void(const Jarvis-publicClient*, const Model::DescribeCountAttackEventRequest&, const DescribeCountAttackEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCountAttackEventAsyncHandler;
+			typedef std::function<void(const Jarvis_publicClient*, const Model::DescribeCountAttackEventRequest&, const DescribeCountAttackEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCountAttackEventAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAttackEventResult> DescribeAttackEventOutcome;
 			typedef std::future<DescribeAttackEventOutcome> DescribeAttackEventOutcomeCallable;
-			typedef std::function<void(const Jarvis-publicClient*, const Model::DescribeAttackEventRequest&, const DescribeAttackEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackEventAsyncHandler;
+			typedef std::function<void(const Jarvis_publicClient*, const Model::DescribeAttackEventRequest&, const DescribeAttackEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackEventAsyncHandler;
 			typedef Outcome<Error, Model::DescribePhoneInfoResult> DescribePhoneInfoOutcome;
 			typedef std::future<DescribePhoneInfoOutcome> DescribePhoneInfoOutcomeCallable;
-			typedef std::function<void(const Jarvis-publicClient*, const Model::DescribePhoneInfoRequest&, const DescribePhoneInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneInfoAsyncHandler;
+			typedef std::function<void(const Jarvis_publicClient*, const Model::DescribePhoneInfoRequest&, const DescribePhoneInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAttackedIpResult> DescribeAttackedIpOutcome;
 			typedef std::future<DescribeAttackedIpOutcome> DescribeAttackedIpOutcomeCallable;
-			typedef std::function<void(const Jarvis-publicClient*, const Model::DescribeAttackedIpRequest&, const DescribeAttackedIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackedIpAsyncHandler;
+			typedef std::function<void(const Jarvis_publicClient*, const Model::DescribeAttackedIpRequest&, const DescribeAttackedIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackedIpAsyncHandler;
 
-			Jarvis-publicClient(const Credentials &credentials, const ClientConfiguration &configuration);
-			Jarvis-publicClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
-			Jarvis-publicClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
-			~Jarvis-publicClient();
+			Jarvis_publicClient(const Credentials &credentials, const ClientConfiguration &configuration);
+			Jarvis_publicClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
+			Jarvis_publicClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
+			~Jarvis_publicClient();
 			DescribeCountAttackEventOutcome describeCountAttackEvent(const Model::DescribeCountAttackEventRequest &request)const;
 			void describeCountAttackEventAsync(const Model::DescribeCountAttackEventRequest& request, const DescribeCountAttackEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCountAttackEventOutcomeCallable describeCountAttackEventCallable(const Model::DescribeCountAttackEventRequest& request) const;
@@ -75,4 +75,4 @@ namespace AlibabaCloud
 	}
 }
 
-#endif // !ALIBABACLOUD_JARVIS-PUBLIC_JARVIS-PUBLICCLIENT_H_
+#endif // !ALIBABACLOUD_JARVIS_PUBLIC_JARVIS_PUBLICCLIENT_H_

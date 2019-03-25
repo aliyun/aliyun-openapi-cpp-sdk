@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_JARVIS-PUBLIC_MODEL_DESCRIBEATTACKEVENTRESULT_H_
-#define ALIBABACLOUD_JARVIS-PUBLIC_MODEL_DESCRIBEATTACKEVENTRESULT_H_
+#ifndef ALIBABACLOUD_JARVIS_PUBLIC_MODEL_DESCRIBEATTACKEVENTRESULT_H_
+#define ALIBABACLOUD_JARVIS_PUBLIC_MODEL_DESCRIBEATTACKEVENTRESULT_H_
 
 #include <string>
 #include <vector>
 #include <utility>
 #include <alibabacloud/core/ServiceResult.h>
-#include <alibabacloud/jarvis-public/Jarvis-publicExport.h>
+#include <alibabacloud/jarvis-public/Jarvis_publicExport.h>
 
 namespace AlibabaCloud
 {
-	namespace Jarvis-public
+	namespace Jarvis_public
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_JARVIS-PUBLIC_EXPORT DescribeAttackEventResult : public ServiceResult
+			class ALIBABACLOUD_JARVIS_PUBLIC_EXPORT DescribeAttackEventResult : public ServiceResult
 			{
 			public:
 				struct Event
@@ -60,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_JARVIS-PUBLIC_MODEL_DESCRIBEATTACKEVENTRESULT_H_
+#endif // !ALIBABACLOUD_JARVIS_PUBLIC_MODEL_DESCRIBEATTACKEVENTRESULT_H_

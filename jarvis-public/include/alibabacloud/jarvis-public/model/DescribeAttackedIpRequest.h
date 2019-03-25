@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_JARVIS-PUBLIC_MODEL_DESCRIBEATTACKEDIPREQUEST_H_
-#define ALIBABACLOUD_JARVIS-PUBLIC_MODEL_DESCRIBEATTACKEDIPREQUEST_H_
+#ifndef ALIBABACLOUD_JARVIS_PUBLIC_MODEL_DESCRIBEATTACKEDIPREQUEST_H_
+#define ALIBABACLOUD_JARVIS_PUBLIC_MODEL_DESCRIBEATTACKEDIPREQUEST_H_
 
 #include <string>
 #include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/jarvis-public/Jarvis-publicExport.h>
+#include <alibabacloud/jarvis-public/Jarvis_publicExport.h>
 
 namespace AlibabaCloud
 {
-	namespace Jarvis-public
+	namespace Jarvis_public
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_JARVIS-PUBLIC_EXPORT DescribeAttackedIpRequest : public RpcServiceRequest
+			class ALIBABACLOUD_JARVIS_PUBLIC_EXPORT DescribeAttackedIpRequest : public RpcServiceRequest
 			{
 
 			public:
@@ -69,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_JARVIS-PUBLIC_MODEL_DESCRIBEATTACKEDIPREQUEST_H_
+#endif // !ALIBABACLOUD_JARVIS_PUBLIC_MODEL_DESCRIBEATTACKEDIPREQUEST_H_

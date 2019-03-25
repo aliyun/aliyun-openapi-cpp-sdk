@@ -17,8 +17,8 @@
 set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 set(jarvis-public_public_header 
-	include/alibabacloud/jarvis-public/Jarvis-publicClient.h
-	include/alibabacloud/jarvis-public/Jarvis-publicExport.h )
+	include/alibabacloud/jarvis-public/Jarvis_publicClient.h
+	include/alibabacloud/jarvis-public/Jarvis_publicExport.h )
 
 set(jarvis-public_public_header_model 
 	include/alibabacloud/jarvis-public/model/DescribeCountAttackEventRequest.h
@@ -58,7 +58,7 @@ set_target_properties(jarvis-public
 if(${LIB_TYPE} STREQUAL "SHARED")
 	set_target_properties(jarvis-public
 		PROPERTIES
-		DEFINE_SYMBOL ALIBABACLOUD_JARVIS-PUBLIC_LIBRARY)
+		DEFINE_SYMBOL ALIBABACLOUD_JARVIS_PUBLIC_LIBRARY)
 endif()
 
 target_include_directories(jarvis-public

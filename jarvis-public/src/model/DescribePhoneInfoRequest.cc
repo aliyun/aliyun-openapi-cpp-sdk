@@ -16,7 +16,7 @@
 
 #include <alibabacloud/jarvis-public/model/DescribePhoneInfoRequest.h>
 
-using AlibabaCloud::Jarvis-public::Model::DescribePhoneInfoRequest;
+using AlibabaCloud::Jarvis_public::Model::DescribePhoneInfoRequest;
 
 DescribePhoneInfoRequest::DescribePhoneInfoRequest() :
 	RpcServiceRequest("jarvis-public", "2018-06-21", "DescribePhoneInfo")

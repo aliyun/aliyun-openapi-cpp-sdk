@@ -16,7 +16,7 @@
 
 #include <alibabacloud/jarvis-public/model/DescribeAttackedIpRequest.h>
 
-using AlibabaCloud::Jarvis-public::Model::DescribeAttackedIpRequest;
+using AlibabaCloud::Jarvis_public::Model::DescribeAttackedIpRequest;
 
 DescribeAttackedIpRequest::DescribeAttackedIpRequest() :
 	RpcServiceRequest("jarvis-public", "2018-06-21", "DescribeAttackedIp")

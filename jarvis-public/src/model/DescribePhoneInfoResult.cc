@@ -17,8 +17,8 @@
 #include <alibabacloud/jarvis-public/model/DescribePhoneInfoResult.h>
 #include <json/json.h>
 
-using namespace AlibabaCloud::Jarvis-public;
-using namespace AlibabaCloud::Jarvis-public::Model;
+using namespace AlibabaCloud::Jarvis_public;
+using namespace AlibabaCloud::Jarvis_public::Model;
 
 DescribePhoneInfoResult::DescribePhoneInfoResult() :
 	ServiceResult()
