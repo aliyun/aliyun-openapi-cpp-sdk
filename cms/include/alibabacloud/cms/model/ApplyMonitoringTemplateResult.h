@@ -43,15 +43,6 @@ namespace AlibabaCloud
 						long groupId;
 						std::string name;
 					};
-					struct Result
-					{
-						std::string message;
-						std::string displayName;
-						int code;
-						bool success;
-						long groupId;
-						std::string name;
-					};
 					std::vector<Result> eventResults;
 					std::vector<Result> alertResults;
 					long groupId;
