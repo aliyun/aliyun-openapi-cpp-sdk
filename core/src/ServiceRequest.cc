@@ -110,6 +110,12 @@ ServiceRequest::ParameterValueType ServiceRequest::parameter(
   return it->second;
 }
 
+
+ServiceRequest::ParameterValueType ServiceRequest::coreParameter(
+  const ParameterNameType &name)const {
+  return parameter(name);
+}
+
 ServiceRequest::ParameterCollection ServiceRequest::parameters() const {
   return params_;
 }
@@ -122,6 +128,12 @@ void ServiceRequest::setParameter(const ParameterNameType &name,
   const ParameterValueType &value) {
   params_[name] = value;
 }
+
+void ServiceRequest::setCoreParameter(const ParameterNameType &name,
+  const ParameterValueType &value) {
+  setParameter(name, value);
+}
+
 
 void ServiceRequest::setParameters(const ParameterCollection & params) {
   params_ = params;

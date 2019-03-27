@@ -31,7 +31,8 @@ namespace {
     using ServiceRequest::setResourcePath;
     using ServiceRequest::setProduct;
     using ServiceRequest::setVersion;
-
+    using ServiceRequest::setCoreParameter;
+    using ServiceRequest::coreParameter;
   };
 
   TEST(ServiceRequest, basic) {
@@ -54,8 +55,13 @@ namespace {
     sr1.removeParameter("k1");
     EXPECT_TRUE(sr1.parameters().size() == 1);
 
+    sr1.setCoreParameter("kcore1", "vcore1");
+    EXPECT_TRUE(sr1.parameter("kcore1") == "vcore1");
+    EXPECT_TRUE(sr1.coreParameter("kcore1") == "vcore1");
+
     sr1.setParameter("ka", "va");
     EXPECT_TRUE(sr1.parameter("ka") == "va");
+    EXPECT_TRUE(sr1.coreParameter("ka") == "va");
 
     sr1.setContent("123456", 6);
     EXPECT_TRUE(sr1.contentSize() == 6);
