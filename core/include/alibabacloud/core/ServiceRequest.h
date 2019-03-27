@@ -54,10 +54,16 @@ class ALIBABACLOUD_CORE_EXPORT ServiceRequest {
   void addParameter(const ParameterNameType &name,
     const ParameterValueType &value);
   ParameterValueType parameter(const ParameterNameType &name) const;
+  ParameterValueType coreParameter(const ParameterNameType &name) const;
   void removeParameter(const ParameterNameType &name);
   void setContent(const char *data, size_t size);
   void setParameter(const ParameterNameType &name,
       const ParameterValueType &value);
+
+  void setCoreParameter(const ParameterNameType &name,
+      const ParameterValueType &value);
+
+
   void setParameters(const ParameterCollection &params);
   void setResourcePath(const std::string &path);
   void setProduct(const std::string &product);
