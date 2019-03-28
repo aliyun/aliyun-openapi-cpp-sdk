@@ -74,6 +74,8 @@ namespace AlibabaCloud
 				void setTag(const std::vector<Tag>& tag);
 				std::string getKMSKeyId()const;
 				void setKMSKeyId(const std::string& kMSKeyId);
+				std::string getAdvancedFeatures()const;
+				void setAdvancedFeatures(const std::string& advancedFeatures);
 
             private:
 				long resourceOwnerId_;
@@ -93,6 +95,7 @@ namespace AlibabaCloud
 				std::string zoneId_;
 				std::vector<Tag> tag_;
 				std::string kMSKeyId_;
+				std::string advancedFeatures_;
 
 			};
 		}

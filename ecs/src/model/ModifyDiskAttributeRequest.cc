@@ -33,7 +33,7 @@ std::string ModifyDiskAttributeRequest::getDiskName()const
 void ModifyDiskAttributeRequest::setDiskName(const std::string& diskName)
 {
 	diskName_ = diskName;
-	setParameter("DiskName", diskName);
+	setCoreParameter("DiskName", diskName);
 }
 
 bool ModifyDiskAttributeRequest::getDeleteAutoSnapshot()const
@@ -44,7 +44,7 @@ bool ModifyDiskAttributeRequest::getDeleteAutoSnapshot()const
 void ModifyDiskAttributeRequest::setDeleteAutoSnapshot(bool deleteAutoSnapshot)
 {
 	deleteAutoSnapshot_ = deleteAutoSnapshot;
-	setParameter("DeleteAutoSnapshot", deleteAutoSnapshot ? "true" : "false");
+	setCoreParameter("DeleteAutoSnapshot", deleteAutoSnapshot ? "true" : "false");
 }
 
 long ModifyDiskAttributeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long ModifyDiskAttributeRequest::getResourceOwnerId()const
 void ModifyDiskAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool ModifyDiskAttributeRequest::getEnableAutoSnapshot()const
@@ -66,7 +66,7 @@ bool ModifyDiskAttributeRequest::getEnableAutoSnapshot()const
 void ModifyDiskAttributeRequest::setEnableAutoSnapshot(bool enableAutoSnapshot)
 {
 	enableAutoSnapshot_ = enableAutoSnapshot;
-	setParameter("EnableAutoSnapshot", enableAutoSnapshot ? "true" : "false");
+	setCoreParameter("EnableAutoSnapshot", enableAutoSnapshot ? "true" : "false");
 }
 
 std::string ModifyDiskAttributeRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyDiskAttributeRequest::getResourceOwnerAccount()const
 void ModifyDiskAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDiskAttributeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyDiskAttributeRequest::getOwnerAccount()const
 void ModifyDiskAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDiskAttributeRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string ModifyDiskAttributeRequest::getDescription()const
 void ModifyDiskAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyDiskAttributeRequest::getDiskId()const
@@ -110,7 +110,7 @@ std::string ModifyDiskAttributeRequest::getDiskId()const
 void ModifyDiskAttributeRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setParameter("DiskId", diskId);
+	setCoreParameter("DiskId", diskId);
 }
 
 long ModifyDiskAttributeRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long ModifyDiskAttributeRequest::getOwnerId()const
 void ModifyDiskAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool ModifyDiskAttributeRequest::getDeleteWithInstance()const
@@ -132,6 +132,6 @@ bool ModifyDiskAttributeRequest::getDeleteWithInstance()const
 void ModifyDiskAttributeRequest::setDeleteWithInstance(bool deleteWithInstance)
 {
 	deleteWithInstance_ = deleteWithInstance;
-	setParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
+	setCoreParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
 }
 

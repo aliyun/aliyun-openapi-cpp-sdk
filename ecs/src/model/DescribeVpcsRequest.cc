@@ -33,7 +33,7 @@ long DescribeVpcsRequest::getResourceOwnerId()const
 void DescribeVpcsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeVpcsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeVpcsRequest::getResourceOwnerAccount()const
 void DescribeVpcsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVpcsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeVpcsRequest::getRegionId()const
 void DescribeVpcsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVpcsRequest::getVpcId()const
@@ -66,7 +66,7 @@ std::string DescribeVpcsRequest::getVpcId()const
 void DescribeVpcsRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string DescribeVpcsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeVpcsRequest::getOwnerAccount()const
 void DescribeVpcsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeVpcsRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribeVpcsRequest::getPageSize()const
 void DescribeVpcsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 bool DescribeVpcsRequest::getIsDefault()const
@@ -99,7 +99,7 @@ bool DescribeVpcsRequest::getIsDefault()const
 void DescribeVpcsRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setParameter("IsDefault", isDefault ? "true" : "false");
+	setCoreParameter("IsDefault", isDefault ? "true" : "false");
 }
 
 long DescribeVpcsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeVpcsRequest::getOwnerId()const
 void DescribeVpcsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeVpcsRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int DescribeVpcsRequest::getPageNumber()const
 void DescribeVpcsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

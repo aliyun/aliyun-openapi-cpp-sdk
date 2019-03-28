@@ -33,7 +33,7 @@ long DeleteImageRequest::getResourceOwnerId()const
 void DeleteImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteImageRequest::getImageId()const
@@ -44,7 +44,7 @@ std::string DeleteImageRequest::getImageId()const
 void DeleteImageRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setParameter("ImageId", imageId);
+	setCoreParameter("ImageId", imageId);
 }
 
 std::string DeleteImageRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteImageRequest::getResourceOwnerAccount()const
 void DeleteImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteImageRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteImageRequest::getRegionId()const
 void DeleteImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteImageRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteImageRequest::getOwnerAccount()const
 void DeleteImageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 bool DeleteImageRequest::getForce()const
@@ -88,7 +88,7 @@ bool DeleteImageRequest::getForce()const
 void DeleteImageRequest::setForce(bool force)
 {
 	force_ = force;
-	setParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 long DeleteImageRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long DeleteImageRequest::getOwnerId()const
 void DeleteImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

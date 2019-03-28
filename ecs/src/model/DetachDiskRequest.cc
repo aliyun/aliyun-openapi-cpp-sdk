@@ -33,7 +33,7 @@ std::string DetachDiskRequest::getSourceRegionId()const
 void DetachDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long DetachDiskRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DetachDiskRequest::getResourceOwnerId()const
 void DetachDiskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DetachDiskRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string DetachDiskRequest::getInstanceId()const
 void DetachDiskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DetachDiskRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DetachDiskRequest::getResourceOwnerAccount()const
 void DetachDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DetachDiskRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DetachDiskRequest::getOwnerAccount()const
 void DetachDiskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DetachDiskRequest::getDiskId()const
@@ -88,7 +88,7 @@ std::string DetachDiskRequest::getDiskId()const
 void DetachDiskRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setParameter("DiskId", diskId);
+	setCoreParameter("DiskId", diskId);
 }
 
 long DetachDiskRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long DetachDiskRequest::getOwnerId()const
 void DetachDiskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ std::string StopInstanceRequest::getSourceRegionId()const
 void StopInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long StopInstanceRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long StopInstanceRequest::getResourceOwnerId()const
 void StopInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string StopInstanceRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string StopInstanceRequest::getInstanceId()const
 void StopInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 bool StopInstanceRequest::getDryRun()const
@@ -66,7 +66,7 @@ bool StopInstanceRequest::getDryRun()const
 void StopInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string StopInstanceRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string StopInstanceRequest::getResourceOwnerAccount()const
 void StopInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 bool StopInstanceRequest::getConfirmStop()const
@@ -88,7 +88,7 @@ bool StopInstanceRequest::getConfirmStop()const
 void StopInstanceRequest::setConfirmStop(bool confirmStop)
 {
 	confirmStop_ = confirmStop;
-	setParameter("ConfirmStop", confirmStop ? "true" : "false");
+	setCoreParameter("ConfirmStop", confirmStop ? "true" : "false");
 }
 
 std::string StopInstanceRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string StopInstanceRequest::getOwnerAccount()const
 void StopInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string StopInstanceRequest::getStoppedMode()const
@@ -110,7 +110,7 @@ std::string StopInstanceRequest::getStoppedMode()const
 void StopInstanceRequest::setStoppedMode(const std::string& stoppedMode)
 {
 	stoppedMode_ = stoppedMode;
-	setParameter("StoppedMode", stoppedMode);
+	setCoreParameter("StoppedMode", stoppedMode);
 }
 
 long StopInstanceRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long StopInstanceRequest::getOwnerId()const
 void StopInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool StopInstanceRequest::getHibernate()const
@@ -132,7 +132,7 @@ bool StopInstanceRequest::getHibernate()const
 void StopInstanceRequest::setHibernate(bool hibernate)
 {
 	hibernate_ = hibernate;
-	setParameter("Hibernate", hibernate ? "true" : "false");
+	setCoreParameter("Hibernate", hibernate ? "true" : "false");
 }
 
 bool StopInstanceRequest::getForceStop()const
@@ -143,6 +143,6 @@ bool StopInstanceRequest::getForceStop()const
 void StopInstanceRequest::setForceStop(bool forceStop)
 {
 	forceStop_ = forceStop;
-	setParameter("ForceStop", forceStop ? "true" : "false");
+	setCoreParameter("ForceStop", forceStop ? "true" : "false");
 }
 

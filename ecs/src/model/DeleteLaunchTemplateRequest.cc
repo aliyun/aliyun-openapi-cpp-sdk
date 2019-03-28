@@ -33,7 +33,7 @@ std::string DeleteLaunchTemplateRequest::getLaunchTemplateName()const
 void DeleteLaunchTemplateRequest::setLaunchTemplateName(const std::string& launchTemplateName)
 {
 	launchTemplateName_ = launchTemplateName;
-	setParameter("LaunchTemplateName", launchTemplateName);
+	setCoreParameter("LaunchTemplateName", launchTemplateName);
 }
 
 long DeleteLaunchTemplateRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DeleteLaunchTemplateRequest::getResourceOwnerId()const
 void DeleteLaunchTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DeleteLaunchTemplateRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DeleteLaunchTemplateRequest::getCallerParentId()const
 void DeleteLaunchTemplateRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteLaunchTemplateRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool DeleteLaunchTemplateRequest::getProxy_original_security_transport()const
 void DeleteLaunchTemplateRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DeleteLaunchTemplateRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DeleteLaunchTemplateRequest::getProxy_original_source_ip()const
 void DeleteLaunchTemplateRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteLaunchTemplateRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DeleteLaunchTemplateRequest::getOwnerIdLoginEmail()const
 void DeleteLaunchTemplateRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteLaunchTemplateRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DeleteLaunchTemplateRequest::getCallerType()const
 void DeleteLaunchTemplateRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteLaunchTemplateRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DeleteLaunchTemplateRequest::getAccessKeyId()const
 void DeleteLaunchTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteLaunchTemplateRequest::getSourceRegionId()const
@@ -121,7 +121,7 @@ std::string DeleteLaunchTemplateRequest::getSourceRegionId()const
 void DeleteLaunchTemplateRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DeleteLaunchTemplateRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DeleteLaunchTemplateRequest::getSecurityToken()const
 void DeleteLaunchTemplateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteLaunchTemplateRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DeleteLaunchTemplateRequest::getRegionId()const
 void DeleteLaunchTemplateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DeleteLaunchTemplateRequest::getEnable()const
@@ -154,7 +154,7 @@ bool DeleteLaunchTemplateRequest::getEnable()const
 void DeleteLaunchTemplateRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DeleteLaunchTemplateRequest::getRequestContent()const
@@ -165,7 +165,7 @@ std::string DeleteLaunchTemplateRequest::getRequestContent()const
 void DeleteLaunchTemplateRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteLaunchTemplateRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ std::string DeleteLaunchTemplateRequest::getCallerBidEmail()const
 void DeleteLaunchTemplateRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteLaunchTemplateRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DeleteLaunchTemplateRequest::getCallerUidEmail()const
 void DeleteLaunchTemplateRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteLaunchTemplateRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long DeleteLaunchTemplateRequest::getCallerUid()const
 void DeleteLaunchTemplateRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeleteLaunchTemplateRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DeleteLaunchTemplateRequest::getApp_ip()const
 void DeleteLaunchTemplateRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteLaunchTemplateRequest::getLaunchTemplateId()const
@@ -220,7 +220,7 @@ std::string DeleteLaunchTemplateRequest::getLaunchTemplateId()const
 void DeleteLaunchTemplateRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setParameter("LaunchTemplateId", launchTemplateId);
+	setCoreParameter("LaunchTemplateId", launchTemplateId);
 }
 
 std::string DeleteLaunchTemplateRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string DeleteLaunchTemplateRequest::getResourceOwnerAccount()const
 void DeleteLaunchTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteLaunchTemplateRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string DeleteLaunchTemplateRequest::getOwnerAccount()const
 void DeleteLaunchTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteLaunchTemplateRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DeleteLaunchTemplateRequest::getCallerBid()const
 void DeleteLaunchTemplateRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteLaunchTemplateRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DeleteLaunchTemplateRequest::getOwnerId()const
 void DeleteLaunchTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DeleteLaunchTemplateRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool DeleteLaunchTemplateRequest::getProxy_trust_transport_info()const
 void DeleteLaunchTemplateRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DeleteLaunchTemplateRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DeleteLaunchTemplateRequest::getAk_mfa_present()const
 void DeleteLaunchTemplateRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DeleteLaunchTemplateRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DeleteLaunchTemplateRequest::getSecurity_transport()const
 void DeleteLaunchTemplateRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DeleteLaunchTemplateRequest::getRequestId()const
@@ -308,6 +308,6 @@ std::string DeleteLaunchTemplateRequest::getRequestId()const
 void DeleteLaunchTemplateRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

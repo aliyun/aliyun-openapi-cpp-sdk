@@ -33,7 +33,7 @@ std::string CreateSnapshotRequest::getSourceRegionId()const
 void CreateSnapshotRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long CreateSnapshotRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateSnapshotRequest::getResourceOwnerId()const
 void CreateSnapshotRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateSnapshotRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateSnapshotRequest::getResourceOwnerAccount()const
 void CreateSnapshotRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateSnapshotRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CreateSnapshotRequest::getClientToken()const
 void CreateSnapshotRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateSnapshotRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateSnapshotRequest::getOwnerAccount()const
 void CreateSnapshotRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateSnapshotRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string CreateSnapshotRequest::getDescription()const
 void CreateSnapshotRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string CreateSnapshotRequest::getDiskId()const
@@ -99,7 +99,7 @@ std::string CreateSnapshotRequest::getDiskId()const
 void CreateSnapshotRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setParameter("DiskId", diskId);
+	setCoreParameter("DiskId", diskId);
 }
 
 std::string CreateSnapshotRequest::getSnapshotName()const
@@ -110,7 +110,7 @@ std::string CreateSnapshotRequest::getSnapshotName()const
 void CreateSnapshotRequest::setSnapshotName(const std::string& snapshotName)
 {
 	snapshotName_ = snapshotName;
-	setParameter("SnapshotName", snapshotName);
+	setCoreParameter("SnapshotName", snapshotName);
 }
 
 std::vector<CreateSnapshotRequest::Tag> CreateSnapshotRequest::getTag()const
@@ -125,8 +125,8 @@ void CreateSnapshotRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setParameter(str + ".Value", obj.value);
-		setParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -138,6 +138,6 @@ long CreateSnapshotRequest::getOwnerId()const
 void CreateSnapshotRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

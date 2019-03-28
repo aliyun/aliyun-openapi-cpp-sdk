@@ -33,7 +33,7 @@ std::string RevokeSecurityGroupRequest::getNicType()const
 void RevokeSecurityGroupRequest::setNicType(const std::string& nicType)
 {
 	nicType_ = nicType;
-	setParameter("NicType", nicType);
+	setCoreParameter("NicType", nicType);
 }
 
 long RevokeSecurityGroupRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long RevokeSecurityGroupRequest::getResourceOwnerId()const
 void RevokeSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RevokeSecurityGroupRequest::getSourcePortRange()const
@@ -55,7 +55,7 @@ std::string RevokeSecurityGroupRequest::getSourcePortRange()const
 void RevokeSecurityGroupRequest::setSourcePortRange(const std::string& sourcePortRange)
 {
 	sourcePortRange_ = sourcePortRange;
-	setParameter("SourcePortRange", sourcePortRange);
+	setCoreParameter("SourcePortRange", sourcePortRange);
 }
 
 std::string RevokeSecurityGroupRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string RevokeSecurityGroupRequest::getClientToken()const
 void RevokeSecurityGroupRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long RevokeSecurityGroupRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ long RevokeSecurityGroupRequest::getCallerParentId()const
 void RevokeSecurityGroupRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string RevokeSecurityGroupRequest::getSecurityGroupId()const
@@ -88,7 +88,7 @@ std::string RevokeSecurityGroupRequest::getSecurityGroupId()const
 void RevokeSecurityGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 bool RevokeSecurityGroupRequest::getProxy_original_security_transport()const
@@ -99,7 +99,7 @@ bool RevokeSecurityGroupRequest::getProxy_original_security_transport()const
 void RevokeSecurityGroupRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string RevokeSecurityGroupRequest::getDescription()const
@@ -110,7 +110,7 @@ std::string RevokeSecurityGroupRequest::getDescription()const
 void RevokeSecurityGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string RevokeSecurityGroupRequest::getProxy_original_source_ip()const
@@ -121,7 +121,7 @@ std::string RevokeSecurityGroupRequest::getProxy_original_source_ip()const
 void RevokeSecurityGroupRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string RevokeSecurityGroupRequest::getOwnerIdLoginEmail()const
@@ -132,7 +132,7 @@ std::string RevokeSecurityGroupRequest::getOwnerIdLoginEmail()const
 void RevokeSecurityGroupRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string RevokeSecurityGroupRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string RevokeSecurityGroupRequest::getCallerType()const
 void RevokeSecurityGroupRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string RevokeSecurityGroupRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ std::string RevokeSecurityGroupRequest::getAccessKeyId()const
 void RevokeSecurityGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long RevokeSecurityGroupRequest::getSourceGroupOwnerId()const
@@ -165,7 +165,7 @@ long RevokeSecurityGroupRequest::getSourceGroupOwnerId()const
 void RevokeSecurityGroupRequest::setSourceGroupOwnerId(long sourceGroupOwnerId)
 {
 	sourceGroupOwnerId_ = sourceGroupOwnerId;
-	setParameter("SourceGroupOwnerId", std::to_string(sourceGroupOwnerId));
+	setCoreParameter("SourceGroupOwnerId", std::to_string(sourceGroupOwnerId));
 }
 
 std::string RevokeSecurityGroupRequest::getSourceGroupOwnerAccount()const
@@ -176,7 +176,7 @@ std::string RevokeSecurityGroupRequest::getSourceGroupOwnerAccount()const
 void RevokeSecurityGroupRequest::setSourceGroupOwnerAccount(const std::string& sourceGroupOwnerAccount)
 {
 	sourceGroupOwnerAccount_ = sourceGroupOwnerAccount;
-	setParameter("SourceGroupOwnerAccount", sourceGroupOwnerAccount);
+	setCoreParameter("SourceGroupOwnerAccount", sourceGroupOwnerAccount);
 }
 
 std::string RevokeSecurityGroupRequest::getSecurityToken()const
@@ -187,7 +187,7 @@ std::string RevokeSecurityGroupRequest::getSecurityToken()const
 void RevokeSecurityGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RevokeSecurityGroupRequest::getRegionId()const
@@ -198,7 +198,7 @@ std::string RevokeSecurityGroupRequest::getRegionId()const
 void RevokeSecurityGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool RevokeSecurityGroupRequest::getEnable()const
@@ -209,7 +209,7 @@ bool RevokeSecurityGroupRequest::getEnable()const
 void RevokeSecurityGroupRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string RevokeSecurityGroupRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string RevokeSecurityGroupRequest::getRequestContent()const
 void RevokeSecurityGroupRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string RevokeSecurityGroupRequest::getCallerBidEmail()const
@@ -231,7 +231,7 @@ std::string RevokeSecurityGroupRequest::getCallerBidEmail()const
 void RevokeSecurityGroupRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string RevokeSecurityGroupRequest::getCallerUidEmail()const
@@ -242,7 +242,7 @@ std::string RevokeSecurityGroupRequest::getCallerUidEmail()const
 void RevokeSecurityGroupRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long RevokeSecurityGroupRequest::getCallerUid()const
@@ -253,7 +253,7 @@ long RevokeSecurityGroupRequest::getCallerUid()const
 void RevokeSecurityGroupRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string RevokeSecurityGroupRequest::getIpv6DestCidrIp()const
@@ -264,7 +264,7 @@ std::string RevokeSecurityGroupRequest::getIpv6DestCidrIp()const
 void RevokeSecurityGroupRequest::setIpv6DestCidrIp(const std::string& ipv6DestCidrIp)
 {
 	ipv6DestCidrIp_ = ipv6DestCidrIp;
-	setParameter("Ipv6DestCidrIp", ipv6DestCidrIp);
+	setCoreParameter("Ipv6DestCidrIp", ipv6DestCidrIp);
 }
 
 std::string RevokeSecurityGroupRequest::getIpv6SourceCidrIp()const
@@ -275,7 +275,7 @@ std::string RevokeSecurityGroupRequest::getIpv6SourceCidrIp()const
 void RevokeSecurityGroupRequest::setIpv6SourceCidrIp(const std::string& ipv6SourceCidrIp)
 {
 	ipv6SourceCidrIp_ = ipv6SourceCidrIp;
-	setParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
+	setCoreParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
 }
 
 std::string RevokeSecurityGroupRequest::getPolicy()const
@@ -286,7 +286,7 @@ std::string RevokeSecurityGroupRequest::getPolicy()const
 void RevokeSecurityGroupRequest::setPolicy(const std::string& policy)
 {
 	policy_ = policy;
-	setParameter("Policy", policy);
+	setCoreParameter("Policy", policy);
 }
 
 std::string RevokeSecurityGroupRequest::getApp_ip()const
@@ -297,7 +297,7 @@ std::string RevokeSecurityGroupRequest::getApp_ip()const
 void RevokeSecurityGroupRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string RevokeSecurityGroupRequest::getPortRange()const
@@ -308,7 +308,7 @@ std::string RevokeSecurityGroupRequest::getPortRange()const
 void RevokeSecurityGroupRequest::setPortRange(const std::string& portRange)
 {
 	portRange_ = portRange;
-	setParameter("PortRange", portRange);
+	setCoreParameter("PortRange", portRange);
 }
 
 std::string RevokeSecurityGroupRequest::getResourceOwnerAccount()const
@@ -319,7 +319,7 @@ std::string RevokeSecurityGroupRequest::getResourceOwnerAccount()const
 void RevokeSecurityGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RevokeSecurityGroupRequest::getIpProtocol()const
@@ -330,7 +330,7 @@ std::string RevokeSecurityGroupRequest::getIpProtocol()const
 void RevokeSecurityGroupRequest::setIpProtocol(const std::string& ipProtocol)
 {
 	ipProtocol_ = ipProtocol;
-	setParameter("IpProtocol", ipProtocol);
+	setCoreParameter("IpProtocol", ipProtocol);
 }
 
 std::string RevokeSecurityGroupRequest::getOwnerAccount()const
@@ -341,7 +341,7 @@ std::string RevokeSecurityGroupRequest::getOwnerAccount()const
 void RevokeSecurityGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RevokeSecurityGroupRequest::getSourceCidrIp()const
@@ -352,7 +352,7 @@ std::string RevokeSecurityGroupRequest::getSourceCidrIp()const
 void RevokeSecurityGroupRequest::setSourceCidrIp(const std::string& sourceCidrIp)
 {
 	sourceCidrIp_ = sourceCidrIp;
-	setParameter("SourceCidrIp", sourceCidrIp);
+	setCoreParameter("SourceCidrIp", sourceCidrIp);
 }
 
 std::string RevokeSecurityGroupRequest::getCallerBid()const
@@ -363,7 +363,7 @@ std::string RevokeSecurityGroupRequest::getCallerBid()const
 void RevokeSecurityGroupRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long RevokeSecurityGroupRequest::getOwnerId()const
@@ -374,7 +374,7 @@ long RevokeSecurityGroupRequest::getOwnerId()const
 void RevokeSecurityGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RevokeSecurityGroupRequest::getPriority()const
@@ -385,7 +385,7 @@ std::string RevokeSecurityGroupRequest::getPriority()const
 void RevokeSecurityGroupRequest::setPriority(const std::string& priority)
 {
 	priority_ = priority;
-	setParameter("Priority", priority);
+	setCoreParameter("Priority", priority);
 }
 
 std::string RevokeSecurityGroupRequest::getDestCidrIp()const
@@ -396,7 +396,7 @@ std::string RevokeSecurityGroupRequest::getDestCidrIp()const
 void RevokeSecurityGroupRequest::setDestCidrIp(const std::string& destCidrIp)
 {
 	destCidrIp_ = destCidrIp;
-	setParameter("DestCidrIp", destCidrIp);
+	setCoreParameter("DestCidrIp", destCidrIp);
 }
 
 bool RevokeSecurityGroupRequest::getProxy_trust_transport_info()const
@@ -407,7 +407,7 @@ bool RevokeSecurityGroupRequest::getProxy_trust_transport_info()const
 void RevokeSecurityGroupRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool RevokeSecurityGroupRequest::getAk_mfa_present()const
@@ -418,7 +418,7 @@ bool RevokeSecurityGroupRequest::getAk_mfa_present()const
 void RevokeSecurityGroupRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool RevokeSecurityGroupRequest::getSecurity_transport()const
@@ -429,7 +429,7 @@ bool RevokeSecurityGroupRequest::getSecurity_transport()const
 void RevokeSecurityGroupRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string RevokeSecurityGroupRequest::getRequestId()const
@@ -440,7 +440,7 @@ std::string RevokeSecurityGroupRequest::getRequestId()const
 void RevokeSecurityGroupRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string RevokeSecurityGroupRequest::getSourceGroupId()const
@@ -451,6 +451,6 @@ std::string RevokeSecurityGroupRequest::getSourceGroupId()const
 void RevokeSecurityGroupRequest::setSourceGroupId(const std::string& sourceGroupId)
 {
 	sourceGroupId_ = sourceGroupId;
-	setParameter("SourceGroupId", sourceGroupId);
+	setCoreParameter("SourceGroupId", sourceGroupId);
 }
 

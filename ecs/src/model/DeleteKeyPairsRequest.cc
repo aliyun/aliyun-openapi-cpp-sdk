@@ -33,7 +33,7 @@ std::string DeleteKeyPairsRequest::getSourceRegionId()const
 void DeleteKeyPairsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long DeleteKeyPairsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DeleteKeyPairsRequest::getResourceOwnerId()const
 void DeleteKeyPairsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteKeyPairsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteKeyPairsRequest::getResourceOwnerAccount()const
 void DeleteKeyPairsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteKeyPairsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteKeyPairsRequest::getRegionId()const
 void DeleteKeyPairsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteKeyPairsRequest::getKeyPairNames()const
@@ -77,7 +77,7 @@ std::string DeleteKeyPairsRequest::getKeyPairNames()const
 void DeleteKeyPairsRequest::setKeyPairNames(const std::string& keyPairNames)
 {
 	keyPairNames_ = keyPairNames;
-	setParameter("KeyPairNames", keyPairNames);
+	setCoreParameter("KeyPairNames", keyPairNames);
 }
 
 long DeleteKeyPairsRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DeleteKeyPairsRequest::getOwnerId()const
 void DeleteKeyPairsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

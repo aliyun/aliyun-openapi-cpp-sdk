@@ -33,7 +33,7 @@ long DescribeBandwidthLimitationRequest::getResourceOwnerId()const
 void DescribeBandwidthLimitationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeBandwidthLimitationRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeBandwidthLimitationRequest::getCallerParentId()const
 void DescribeBandwidthLimitationRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeBandwidthLimitationRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeBandwidthLimitationRequest::getProxy_original_security_transport()c
 void DescribeBandwidthLimitationRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeBandwidthLimitationRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeBandwidthLimitationRequest::getProxy_original_source_ip()con
 void DescribeBandwidthLimitationRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeBandwidthLimitationRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeBandwidthLimitationRequest::getOwnerIdLoginEmail()const
 void DescribeBandwidthLimitationRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeBandwidthLimitationRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeBandwidthLimitationRequest::getCallerType()const
 void DescribeBandwidthLimitationRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeBandwidthLimitationRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeBandwidthLimitationRequest::getAccessKeyId()const
 void DescribeBandwidthLimitationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeBandwidthLimitationRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeBandwidthLimitationRequest::getSecurityToken()const
 void DescribeBandwidthLimitationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeBandwidthLimitationRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeBandwidthLimitationRequest::getRegionId()const
 void DescribeBandwidthLimitationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DescribeBandwidthLimitationRequest::getEnable()const
@@ -132,7 +132,7 @@ bool DescribeBandwidthLimitationRequest::getEnable()const
 void DescribeBandwidthLimitationRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeBandwidthLimitationRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeBandwidthLimitationRequest::getRequestContent()const
 void DescribeBandwidthLimitationRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeBandwidthLimitationRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeBandwidthLimitationRequest::getCallerBidEmail()const
 void DescribeBandwidthLimitationRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeBandwidthLimitationRequest::getInstanceType()const
@@ -165,7 +165,7 @@ std::string DescribeBandwidthLimitationRequest::getInstanceType()const
 void DescribeBandwidthLimitationRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", instanceType);
 }
 
 std::string DescribeBandwidthLimitationRequest::getInstanceChargeType()const
@@ -176,7 +176,7 @@ std::string DescribeBandwidthLimitationRequest::getInstanceChargeType()const
 void DescribeBandwidthLimitationRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string DescribeBandwidthLimitationRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DescribeBandwidthLimitationRequest::getCallerUidEmail()const
 void DescribeBandwidthLimitationRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeBandwidthLimitationRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long DescribeBandwidthLimitationRequest::getCallerUid()const
 void DescribeBandwidthLimitationRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeBandwidthLimitationRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DescribeBandwidthLimitationRequest::getApp_ip()const
 void DescribeBandwidthLimitationRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeBandwidthLimitationRequest::getResourceId()const
@@ -220,7 +220,7 @@ std::string DescribeBandwidthLimitationRequest::getResourceId()const
 void DescribeBandwidthLimitationRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", resourceId);
 }
 
 std::string DescribeBandwidthLimitationRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string DescribeBandwidthLimitationRequest::getResourceOwnerAccount()const
 void DescribeBandwidthLimitationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeBandwidthLimitationRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string DescribeBandwidthLimitationRequest::getOwnerAccount()const
 void DescribeBandwidthLimitationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeBandwidthLimitationRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DescribeBandwidthLimitationRequest::getCallerBid()const
 void DescribeBandwidthLimitationRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string DescribeBandwidthLimitationRequest::getOperationType()const
@@ -264,7 +264,7 @@ std::string DescribeBandwidthLimitationRequest::getOperationType()const
 void DescribeBandwidthLimitationRequest::setOperationType(const std::string& operationType)
 {
 	operationType_ = operationType;
-	setParameter("OperationType", operationType);
+	setCoreParameter("OperationType", operationType);
 }
 
 long DescribeBandwidthLimitationRequest::getOwnerId()const
@@ -275,7 +275,7 @@ long DescribeBandwidthLimitationRequest::getOwnerId()const
 void DescribeBandwidthLimitationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeBandwidthLimitationRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ bool DescribeBandwidthLimitationRequest::getProxy_trust_transport_info()const
 void DescribeBandwidthLimitationRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeBandwidthLimitationRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool DescribeBandwidthLimitationRequest::getAk_mfa_present()const
 void DescribeBandwidthLimitationRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeBandwidthLimitationRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool DescribeBandwidthLimitationRequest::getSecurity_transport()const
 void DescribeBandwidthLimitationRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeBandwidthLimitationRequest::getSpotStrategy()const
@@ -319,7 +319,7 @@ std::string DescribeBandwidthLimitationRequest::getSpotStrategy()const
 void DescribeBandwidthLimitationRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setParameter("SpotStrategy", spotStrategy);
+	setCoreParameter("SpotStrategy", spotStrategy);
 }
 
 std::string DescribeBandwidthLimitationRequest::getRequestId()const
@@ -330,6 +330,6 @@ std::string DescribeBandwidthLimitationRequest::getRequestId()const
 void DescribeBandwidthLimitationRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

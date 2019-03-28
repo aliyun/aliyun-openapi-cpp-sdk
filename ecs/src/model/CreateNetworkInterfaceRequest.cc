@@ -33,7 +33,7 @@ long CreateNetworkInterfaceRequest::getResourceOwnerId()const
 void CreateNetworkInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateNetworkInterfaceRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string CreateNetworkInterfaceRequest::getClientToken()const
 void CreateNetworkInterfaceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long CreateNetworkInterfaceRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long CreateNetworkInterfaceRequest::getCallerParentId()const
 void CreateNetworkInterfaceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string CreateNetworkInterfaceRequest::getSecurityGroupId()const
@@ -66,7 +66,7 @@ std::string CreateNetworkInterfaceRequest::getSecurityGroupId()const
 void CreateNetworkInterfaceRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 bool CreateNetworkInterfaceRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool CreateNetworkInterfaceRequest::getProxy_original_security_transport()const
 void CreateNetworkInterfaceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateNetworkInterfaceRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string CreateNetworkInterfaceRequest::getDescription()const
 void CreateNetworkInterfaceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string CreateNetworkInterfaceRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string CreateNetworkInterfaceRequest::getProxy_original_source_ip()const
 void CreateNetworkInterfaceRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CreateNetworkInterfaceRequest::getOwnerIdLoginEmail()const
@@ -110,7 +110,7 @@ std::string CreateNetworkInterfaceRequest::getOwnerIdLoginEmail()const
 void CreateNetworkInterfaceRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CreateNetworkInterfaceRequest::getCallerType()const
@@ -121,7 +121,7 @@ std::string CreateNetworkInterfaceRequest::getCallerType()const
 void CreateNetworkInterfaceRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateNetworkInterfaceRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string CreateNetworkInterfaceRequest::getAccessKeyId()const
 void CreateNetworkInterfaceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateNetworkInterfaceRequest::getSourceRegionId()const
@@ -143,7 +143,7 @@ std::string CreateNetworkInterfaceRequest::getSourceRegionId()const
 void CreateNetworkInterfaceRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string CreateNetworkInterfaceRequest::getResourceGroupId()const
@@ -154,7 +154,7 @@ std::string CreateNetworkInterfaceRequest::getResourceGroupId()const
 void CreateNetworkInterfaceRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateNetworkInterfaceRequest::getSecurityToken()const
@@ -165,7 +165,7 @@ std::string CreateNetworkInterfaceRequest::getSecurityToken()const
 void CreateNetworkInterfaceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateNetworkInterfaceRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string CreateNetworkInterfaceRequest::getRegionId()const
 void CreateNetworkInterfaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool CreateNetworkInterfaceRequest::getEnable()const
@@ -187,7 +187,7 @@ bool CreateNetworkInterfaceRequest::getEnable()const
 void CreateNetworkInterfaceRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string CreateNetworkInterfaceRequest::getRequestContent()const
@@ -198,7 +198,7 @@ std::string CreateNetworkInterfaceRequest::getRequestContent()const
 void CreateNetworkInterfaceRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CreateNetworkInterfaceRequest::getCallerBidEmail()const
@@ -209,7 +209,7 @@ std::string CreateNetworkInterfaceRequest::getCallerBidEmail()const
 void CreateNetworkInterfaceRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::vector<CreateNetworkInterfaceRequest::Tag> CreateNetworkInterfaceRequest::getTag()const
@@ -224,8 +224,8 @@ void CreateNetworkInterfaceRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setParameter(str + ".Key", obj.key);
-		setParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", obj.value);
 	}
 }
 
@@ -237,7 +237,7 @@ std::string CreateNetworkInterfaceRequest::getCallerUidEmail()const
 void CreateNetworkInterfaceRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 std::string CreateNetworkInterfaceRequest::getNetworkInterfaceName()const
@@ -248,7 +248,7 @@ std::string CreateNetworkInterfaceRequest::getNetworkInterfaceName()const
 void CreateNetworkInterfaceRequest::setNetworkInterfaceName(const std::string& networkInterfaceName)
 {
 	networkInterfaceName_ = networkInterfaceName;
-	setParameter("NetworkInterfaceName", networkInterfaceName);
+	setCoreParameter("NetworkInterfaceName", networkInterfaceName);
 }
 
 long CreateNetworkInterfaceRequest::getCallerUid()const
@@ -259,7 +259,7 @@ long CreateNetworkInterfaceRequest::getCallerUid()const
 void CreateNetworkInterfaceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CreateNetworkInterfaceRequest::getApp_ip()const
@@ -270,7 +270,7 @@ std::string CreateNetworkInterfaceRequest::getApp_ip()const
 void CreateNetworkInterfaceRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CreateNetworkInterfaceRequest::getResourceOwnerAccount()const
@@ -281,7 +281,7 @@ std::string CreateNetworkInterfaceRequest::getResourceOwnerAccount()const
 void CreateNetworkInterfaceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateNetworkInterfaceRequest::getOwnerAccount()const
@@ -292,7 +292,7 @@ std::string CreateNetworkInterfaceRequest::getOwnerAccount()const
 void CreateNetworkInterfaceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateNetworkInterfaceRequest::getCallerBid()const
@@ -303,7 +303,7 @@ std::string CreateNetworkInterfaceRequest::getCallerBid()const
 void CreateNetworkInterfaceRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CreateNetworkInterfaceRequest::getOwnerId()const
@@ -314,7 +314,7 @@ long CreateNetworkInterfaceRequest::getOwnerId()const
 void CreateNetworkInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool CreateNetworkInterfaceRequest::getProxy_trust_transport_info()const
@@ -325,7 +325,7 @@ bool CreateNetworkInterfaceRequest::getProxy_trust_transport_info()const
 void CreateNetworkInterfaceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CreateNetworkInterfaceRequest::getAk_mfa_present()const
@@ -336,7 +336,7 @@ bool CreateNetworkInterfaceRequest::getAk_mfa_present()const
 void CreateNetworkInterfaceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateNetworkInterfaceRequest::getSecurity_transport()const
@@ -347,7 +347,7 @@ bool CreateNetworkInterfaceRequest::getSecurity_transport()const
 void CreateNetworkInterfaceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateNetworkInterfaceRequest::getVSwitchId()const
@@ -358,7 +358,7 @@ std::string CreateNetworkInterfaceRequest::getVSwitchId()const
 void CreateNetworkInterfaceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateNetworkInterfaceRequest::getRequestId()const
@@ -369,7 +369,7 @@ std::string CreateNetworkInterfaceRequest::getRequestId()const
 void CreateNetworkInterfaceRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string CreateNetworkInterfaceRequest::getPrimaryIpAddress()const
@@ -380,6 +380,6 @@ std::string CreateNetworkInterfaceRequest::getPrimaryIpAddress()const
 void CreateNetworkInterfaceRequest::setPrimaryIpAddress(const std::string& primaryIpAddress)
 {
 	primaryIpAddress_ = primaryIpAddress;
-	setParameter("PrimaryIpAddress", primaryIpAddress);
+	setCoreParameter("PrimaryIpAddress", primaryIpAddress);
 }
 

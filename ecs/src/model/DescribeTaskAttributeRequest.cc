@@ -33,7 +33,7 @@ long DescribeTaskAttributeRequest::getResourceOwnerId()const
 void DescribeTaskAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeTaskAttributeRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeTaskAttributeRequest::getResourceOwnerAccount()const
 void DescribeTaskAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeTaskAttributeRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeTaskAttributeRequest::getRegionId()const
 void DescribeTaskAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 long DescribeTaskAttributeRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DescribeTaskAttributeRequest::getOwnerId()const
 void DescribeTaskAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeTaskAttributeRequest::getTaskId()const
@@ -77,6 +77,6 @@ std::string DescribeTaskAttributeRequest::getTaskId()const
 void DescribeTaskAttributeRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 

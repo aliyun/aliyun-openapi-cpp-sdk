@@ -33,7 +33,7 @@ long DescribeAccountAttributesRequest::getResourceOwnerId()const
 void DescribeAccountAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeAccountAttributesRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeAccountAttributesRequest::getCallerParentId()const
 void DescribeAccountAttributesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeAccountAttributesRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeAccountAttributesRequest::getProxy_original_security_transport()con
 void DescribeAccountAttributesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::vector<std::string> DescribeAccountAttributesRequest::getAttributeName()const
@@ -67,7 +67,7 @@ void DescribeAccountAttributesRequest::setAttributeName(const std::vector<std::s
 {
 	attributeName_ = attributeName;
 	for(int i = 0; i!= attributeName.size(); i++)
-		setParameter("AttributeName."+ std::to_string(i), attributeName.at(i));
+		setCoreParameter("AttributeName."+ std::to_string(i), attributeName.at(i));
 }
 
 std::string DescribeAccountAttributesRequest::getProxy_original_source_ip()const
@@ -78,7 +78,7 @@ std::string DescribeAccountAttributesRequest::getProxy_original_source_ip()const
 void DescribeAccountAttributesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeAccountAttributesRequest::getOwnerIdLoginEmail()const
@@ -89,7 +89,7 @@ std::string DescribeAccountAttributesRequest::getOwnerIdLoginEmail()const
 void DescribeAccountAttributesRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeAccountAttributesRequest::getCallerType()const
@@ -100,7 +100,7 @@ std::string DescribeAccountAttributesRequest::getCallerType()const
 void DescribeAccountAttributesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeAccountAttributesRequest::getAccessKeyId()const
@@ -111,7 +111,7 @@ std::string DescribeAccountAttributesRequest::getAccessKeyId()const
 void DescribeAccountAttributesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAccountAttributesRequest::getSourceRegionId()const
@@ -122,7 +122,7 @@ std::string DescribeAccountAttributesRequest::getSourceRegionId()const
 void DescribeAccountAttributesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DescribeAccountAttributesRequest::getSecurityToken()const
@@ -133,7 +133,7 @@ std::string DescribeAccountAttributesRequest::getSecurityToken()const
 void DescribeAccountAttributesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeAccountAttributesRequest::getRegionId()const
@@ -144,7 +144,7 @@ std::string DescribeAccountAttributesRequest::getRegionId()const
 void DescribeAccountAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DescribeAccountAttributesRequest::getEnable()const
@@ -155,7 +155,7 @@ bool DescribeAccountAttributesRequest::getEnable()const
 void DescribeAccountAttributesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeAccountAttributesRequest::getRequestContent()const
@@ -166,7 +166,7 @@ std::string DescribeAccountAttributesRequest::getRequestContent()const
 void DescribeAccountAttributesRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeAccountAttributesRequest::getCallerBidEmail()const
@@ -177,7 +177,7 @@ std::string DescribeAccountAttributesRequest::getCallerBidEmail()const
 void DescribeAccountAttributesRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeAccountAttributesRequest::getCallerUidEmail()const
@@ -188,7 +188,7 @@ std::string DescribeAccountAttributesRequest::getCallerUidEmail()const
 void DescribeAccountAttributesRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeAccountAttributesRequest::getCallerUid()const
@@ -199,7 +199,7 @@ long DescribeAccountAttributesRequest::getCallerUid()const
 void DescribeAccountAttributesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeAccountAttributesRequest::getApp_ip()const
@@ -210,7 +210,7 @@ std::string DescribeAccountAttributesRequest::getApp_ip()const
 void DescribeAccountAttributesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeAccountAttributesRequest::getResourceOwnerAccount()const
@@ -221,7 +221,7 @@ std::string DescribeAccountAttributesRequest::getResourceOwnerAccount()const
 void DescribeAccountAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAccountAttributesRequest::getCallerBid()const
@@ -232,7 +232,7 @@ std::string DescribeAccountAttributesRequest::getCallerBid()const
 void DescribeAccountAttributesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeAccountAttributesRequest::getOwnerId()const
@@ -243,7 +243,7 @@ long DescribeAccountAttributesRequest::getOwnerId()const
 void DescribeAccountAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeAccountAttributesRequest::getProxy_trust_transport_info()const
@@ -254,7 +254,7 @@ bool DescribeAccountAttributesRequest::getProxy_trust_transport_info()const
 void DescribeAccountAttributesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeAccountAttributesRequest::getAk_mfa_present()const
@@ -265,7 +265,7 @@ bool DescribeAccountAttributesRequest::getAk_mfa_present()const
 void DescribeAccountAttributesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeAccountAttributesRequest::getSecurity_transport()const
@@ -276,7 +276,7 @@ bool DescribeAccountAttributesRequest::getSecurity_transport()const
 void DescribeAccountAttributesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeAccountAttributesRequest::getRequestId()const
@@ -287,7 +287,7 @@ std::string DescribeAccountAttributesRequest::getRequestId()const
 void DescribeAccountAttributesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeAccountAttributesRequest::getZoneId()const
@@ -298,6 +298,6 @@ std::string DescribeAccountAttributesRequest::getZoneId()const
 void DescribeAccountAttributesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 

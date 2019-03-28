@@ -33,7 +33,7 @@ std::string DescribeResourceByTagsRequest::getSourceRegionId()const
 void DescribeResourceByTagsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long DescribeResourceByTagsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeResourceByTagsRequest::getResourceOwnerId()const
 void DescribeResourceByTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeResourceByTagsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeResourceByTagsRequest::getResourceOwnerAccount()const
 void DescribeResourceByTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeResourceByTagsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeResourceByTagsRequest::getRegionId()const
 void DescribeResourceByTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeResourceByTagsRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeResourceByTagsRequest::getPageSize()const
 void DescribeResourceByTagsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeResourceByTagsRequest::Tag> DescribeResourceByTagsRequest::getTag()const
@@ -92,8 +92,8 @@ void DescribeResourceByTagsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setParameter(str + ".Value", obj.value);
-		setParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -105,7 +105,7 @@ long DescribeResourceByTagsRequest::getOwnerId()const
 void DescribeResourceByTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeResourceByTagsRequest::getResourceType()const
@@ -116,7 +116,7 @@ std::string DescribeResourceByTagsRequest::getResourceType()const
 void DescribeResourceByTagsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", resourceType);
 }
 
 int DescribeResourceByTagsRequest::getPageNumber()const
@@ -127,6 +127,6 @@ int DescribeResourceByTagsRequest::getPageNumber()const
 void DescribeResourceByTagsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

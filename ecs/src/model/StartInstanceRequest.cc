@@ -33,7 +33,7 @@ std::string StartInstanceRequest::getSourceRegionId()const
 void StartInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 bool StartInstanceRequest::getInitLocalDisk()const
@@ -44,7 +44,7 @@ bool StartInstanceRequest::getInitLocalDisk()const
 void StartInstanceRequest::setInitLocalDisk(bool initLocalDisk)
 {
 	initLocalDisk_ = initLocalDisk;
-	setParameter("InitLocalDisk", initLocalDisk ? "true" : "false");
+	setCoreParameter("InitLocalDisk", initLocalDisk ? "true" : "false");
 }
 
 long StartInstanceRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long StartInstanceRequest::getResourceOwnerId()const
 void StartInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string StartInstanceRequest::getInstanceId()const
@@ -66,7 +66,7 @@ std::string StartInstanceRequest::getInstanceId()const
 void StartInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 bool StartInstanceRequest::getDryRun()const
@@ -77,7 +77,7 @@ bool StartInstanceRequest::getDryRun()const
 void StartInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string StartInstanceRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string StartInstanceRequest::getResourceOwnerAccount()const
 void StartInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string StartInstanceRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string StartInstanceRequest::getOwnerAccount()const
 void StartInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long StartInstanceRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long StartInstanceRequest::getOwnerId()const
 void StartInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

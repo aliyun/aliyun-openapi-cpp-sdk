@@ -33,7 +33,7 @@ long DescribeDeploymentSetsRequest::getResourceOwnerId()const
 void DescribeDeploymentSetsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDeploymentSetsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeDeploymentSetsRequest::getResourceOwnerAccount()const
 void DescribeDeploymentSetsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDeploymentSetsRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeDeploymentSetsRequest::getOwnerAccount()const
 void DescribeDeploymentSetsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDeploymentSetsRequest::getNetworkType()const
@@ -66,7 +66,7 @@ std::string DescribeDeploymentSetsRequest::getNetworkType()const
 void DescribeDeploymentSetsRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setParameter("NetworkType", networkType);
+	setCoreParameter("NetworkType", networkType);
 }
 
 std::string DescribeDeploymentSetsRequest::getDeploymentSetName()const
@@ -77,7 +77,7 @@ std::string DescribeDeploymentSetsRequest::getDeploymentSetName()const
 void DescribeDeploymentSetsRequest::setDeploymentSetName(const std::string& deploymentSetName)
 {
 	deploymentSetName_ = deploymentSetName;
-	setParameter("DeploymentSetName", deploymentSetName);
+	setCoreParameter("DeploymentSetName", deploymentSetName);
 }
 
 long DescribeDeploymentSetsRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeDeploymentSetsRequest::getOwnerId()const
 void DescribeDeploymentSetsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeDeploymentSetsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeDeploymentSetsRequest::getPageNumber()const
 void DescribeDeploymentSetsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDeploymentSetsRequest::getDeploymentSetIds()const
@@ -110,7 +110,7 @@ std::string DescribeDeploymentSetsRequest::getDeploymentSetIds()const
 void DescribeDeploymentSetsRequest::setDeploymentSetIds(const std::string& deploymentSetIds)
 {
 	deploymentSetIds_ = deploymentSetIds;
-	setParameter("DeploymentSetIds", deploymentSetIds);
+	setCoreParameter("DeploymentSetIds", deploymentSetIds);
 }
 
 std::string DescribeDeploymentSetsRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeDeploymentSetsRequest::getRegionId()const
 void DescribeDeploymentSetsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeDeploymentSetsRequest::getGranularity()const
@@ -132,7 +132,7 @@ std::string DescribeDeploymentSetsRequest::getGranularity()const
 void DescribeDeploymentSetsRequest::setGranularity(const std::string& granularity)
 {
 	granularity_ = granularity;
-	setParameter("Granularity", granularity);
+	setCoreParameter("Granularity", granularity);
 }
 
 std::string DescribeDeploymentSetsRequest::getDomain()const
@@ -143,7 +143,7 @@ std::string DescribeDeploymentSetsRequest::getDomain()const
 void DescribeDeploymentSetsRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setParameter("Domain", domain);
+	setCoreParameter("Domain", domain);
 }
 
 int DescribeDeploymentSetsRequest::getPageSize()const
@@ -154,7 +154,7 @@ int DescribeDeploymentSetsRequest::getPageSize()const
 void DescribeDeploymentSetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDeploymentSetsRequest::getStrategy()const
@@ -165,6 +165,6 @@ std::string DescribeDeploymentSetsRequest::getStrategy()const
 void DescribeDeploymentSetsRequest::setStrategy(const std::string& strategy)
 {
 	strategy_ = strategy;
-	setParameter("Strategy", strategy);
+	setCoreParameter("Strategy", strategy);
 }
 

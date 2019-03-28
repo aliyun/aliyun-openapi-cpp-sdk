@@ -25,6 +25,17 @@ DeleteSecurityGroupRequest::DeleteSecurityGroupRequest() :
 DeleteSecurityGroupRequest::~DeleteSecurityGroupRequest()
 {}
 
+std::string DeleteSecurityGroupRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DeleteSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long DeleteSecurityGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -33,7 +44,7 @@ long DeleteSecurityGroupRequest::getResourceOwnerId()const
 void DeleteSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteSecurityGroupRequest::getResourceOwnerAccount()const
@@ -44,7 +55,7 @@ std::string DeleteSecurityGroupRequest::getResourceOwnerAccount()const
 void DeleteSecurityGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteSecurityGroupRequest::getRegionId()const
@@ -55,7 +66,7 @@ std::string DeleteSecurityGroupRequest::getRegionId()const
 void DeleteSecurityGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteSecurityGroupRequest::getOwnerAccount()const
@@ -66,7 +77,7 @@ std::string DeleteSecurityGroupRequest::getOwnerAccount()const
 void DeleteSecurityGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteSecurityGroupRequest::getSecurityGroupId()const
@@ -77,7 +88,7 @@ std::string DeleteSecurityGroupRequest::getSecurityGroupId()const
 void DeleteSecurityGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 long DeleteSecurityGroupRequest::getOwnerId()const
@@ -88,6 +99,6 @@ long DeleteSecurityGroupRequest::getOwnerId()const
 void DeleteSecurityGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

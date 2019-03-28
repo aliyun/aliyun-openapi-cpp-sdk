@@ -33,7 +33,7 @@ long DescribeRecommendInstanceTypeRequest::getResourceOwnerId()const
 void DescribeRecommendInstanceTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeRecommendInstanceTypeRequest::getResourceOwnerAccount()const
 void DescribeRecommendInstanceTypeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeRecommendInstanceTypeRequest::getOwnerAccount()const
 void DescribeRecommendInstanceTypeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getChannel()const
@@ -66,7 +66,7 @@ std::string DescribeRecommendInstanceTypeRequest::getChannel()const
 void DescribeRecommendInstanceTypeRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setParameter("Channel", channel);
+	setCoreParameter("Channel", channel);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getNetworkType()const
@@ -77,7 +77,7 @@ std::string DescribeRecommendInstanceTypeRequest::getNetworkType()const
 void DescribeRecommendInstanceTypeRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setParameter("NetworkType", networkType);
+	setCoreParameter("NetworkType", networkType);
 }
 
 long DescribeRecommendInstanceTypeRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeRecommendInstanceTypeRequest::getOwnerId()const
 void DescribeRecommendInstanceTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRecommendInstanceTypeRequest::get_Operator()const
@@ -99,7 +99,7 @@ std::string DescribeRecommendInstanceTypeRequest::get_Operator()const
 void DescribeRecommendInstanceTypeRequest::set_Operator(const std::string& _operator)
 {
 	_operator_ = _operator;
-	setParameter("_Operator", _operator);
+	setCoreParameter("_Operator", _operator);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getToken()const
@@ -110,7 +110,7 @@ std::string DescribeRecommendInstanceTypeRequest::getToken()const
 void DescribeRecommendInstanceTypeRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setParameter("Token", token);
+	setCoreParameter("Token", token);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getScene()const
@@ -121,7 +121,7 @@ std::string DescribeRecommendInstanceTypeRequest::getScene()const
 void DescribeRecommendInstanceTypeRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setParameter("Scene", scene);
+	setCoreParameter("Scene", scene);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getSourceRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeRecommendInstanceTypeRequest::getSourceRegionId()const
 void DescribeRecommendInstanceTypeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeRecommendInstanceTypeRequest::getRegionId()const
 void DescribeRecommendInstanceTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getInstanceType()const
@@ -154,7 +154,7 @@ std::string DescribeRecommendInstanceTypeRequest::getInstanceType()const
 void DescribeRecommendInstanceTypeRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", instanceType);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getProxyId()const
@@ -165,6 +165,6 @@ std::string DescribeRecommendInstanceTypeRequest::getProxyId()const
 void DescribeRecommendInstanceTypeRequest::setProxyId(const std::string& proxyId)
 {
 	proxyId_ = proxyId;
-	setParameter("ProxyId", proxyId);
+	setCoreParameter("ProxyId", proxyId);
 }
 

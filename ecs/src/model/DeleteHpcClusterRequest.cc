@@ -33,7 +33,7 @@ long DeleteHpcClusterRequest::getResourceOwnerId()const
 void DeleteHpcClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteHpcClusterRequest::getHpcClusterId()const
@@ -44,7 +44,7 @@ std::string DeleteHpcClusterRequest::getHpcClusterId()const
 void DeleteHpcClusterRequest::setHpcClusterId(const std::string& hpcClusterId)
 {
 	hpcClusterId_ = hpcClusterId;
-	setParameter("HpcClusterId", hpcClusterId);
+	setCoreParameter("HpcClusterId", hpcClusterId);
 }
 
 std::string DeleteHpcClusterRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string DeleteHpcClusterRequest::getClientToken()const
 void DeleteHpcClusterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long DeleteHpcClusterRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long DeleteHpcClusterRequest::getCallerParentId()const
 void DeleteHpcClusterRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteHpcClusterRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool DeleteHpcClusterRequest::getProxy_original_security_transport()const
 void DeleteHpcClusterRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DeleteHpcClusterRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DeleteHpcClusterRequest::getProxy_original_source_ip()const
 void DeleteHpcClusterRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteHpcClusterRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DeleteHpcClusterRequest::getOwnerIdLoginEmail()const
 void DeleteHpcClusterRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteHpcClusterRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DeleteHpcClusterRequest::getCallerType()const
 void DeleteHpcClusterRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteHpcClusterRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DeleteHpcClusterRequest::getAccessKeyId()const
 void DeleteHpcClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteHpcClusterRequest::getSourceRegionId()const
@@ -132,7 +132,7 @@ std::string DeleteHpcClusterRequest::getSourceRegionId()const
 void DeleteHpcClusterRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DeleteHpcClusterRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DeleteHpcClusterRequest::getRegionId()const
 void DeleteHpcClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteHpcClusterRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string DeleteHpcClusterRequest::getSecurityToken()const
 void DeleteHpcClusterRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool DeleteHpcClusterRequest::getEnable()const
@@ -165,7 +165,7 @@ bool DeleteHpcClusterRequest::getEnable()const
 void DeleteHpcClusterRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DeleteHpcClusterRequest::getRequestContent()const
@@ -176,7 +176,7 @@ std::string DeleteHpcClusterRequest::getRequestContent()const
 void DeleteHpcClusterRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteHpcClusterRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ std::string DeleteHpcClusterRequest::getCallerBidEmail()const
 void DeleteHpcClusterRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteHpcClusterRequest::getCallerUidEmail()const
@@ -198,7 +198,7 @@ std::string DeleteHpcClusterRequest::getCallerUidEmail()const
 void DeleteHpcClusterRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteHpcClusterRequest::getCallerUid()const
@@ -209,7 +209,7 @@ long DeleteHpcClusterRequest::getCallerUid()const
 void DeleteHpcClusterRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeleteHpcClusterRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string DeleteHpcClusterRequest::getApp_ip()const
 void DeleteHpcClusterRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteHpcClusterRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string DeleteHpcClusterRequest::getResourceOwnerAccount()const
 void DeleteHpcClusterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteHpcClusterRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string DeleteHpcClusterRequest::getOwnerAccount()const
 void DeleteHpcClusterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteHpcClusterRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DeleteHpcClusterRequest::getCallerBid()const
 void DeleteHpcClusterRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteHpcClusterRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DeleteHpcClusterRequest::getOwnerId()const
 void DeleteHpcClusterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DeleteHpcClusterRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool DeleteHpcClusterRequest::getProxy_trust_transport_info()const
 void DeleteHpcClusterRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DeleteHpcClusterRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DeleteHpcClusterRequest::getAk_mfa_present()const
 void DeleteHpcClusterRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DeleteHpcClusterRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DeleteHpcClusterRequest::getSecurity_transport()const
 void DeleteHpcClusterRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DeleteHpcClusterRequest::getRequestId()const
@@ -308,6 +308,6 @@ std::string DeleteHpcClusterRequest::getRequestId()const
 void DeleteHpcClusterRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

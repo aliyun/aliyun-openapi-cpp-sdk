@@ -33,7 +33,7 @@ long GetInstanceConsoleOutputRequest::getResourceOwnerId()const
 void GetInstanceConsoleOutputRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long GetInstanceConsoleOutputRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long GetInstanceConsoleOutputRequest::getCallerParentId()const
 void GetInstanceConsoleOutputRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool GetInstanceConsoleOutputRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool GetInstanceConsoleOutputRequest::getProxy_original_security_transport()cons
 void GetInstanceConsoleOutputRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string GetInstanceConsoleOutputRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string GetInstanceConsoleOutputRequest::getProxy_original_source_ip()const
 void GetInstanceConsoleOutputRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string GetInstanceConsoleOutputRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string GetInstanceConsoleOutputRequest::getOwnerIdLoginEmail()const
 void GetInstanceConsoleOutputRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string GetInstanceConsoleOutputRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string GetInstanceConsoleOutputRequest::getCallerType()const
 void GetInstanceConsoleOutputRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string GetInstanceConsoleOutputRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string GetInstanceConsoleOutputRequest::getAccessKeyId()const
 void GetInstanceConsoleOutputRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetInstanceConsoleOutputRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string GetInstanceConsoleOutputRequest::getSourceRegionId()const
 void GetInstanceConsoleOutputRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string GetInstanceConsoleOutputRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string GetInstanceConsoleOutputRequest::getSecurityToken()const
 void GetInstanceConsoleOutputRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string GetInstanceConsoleOutputRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string GetInstanceConsoleOutputRequest::getRegionId()const
 void GetInstanceConsoleOutputRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool GetInstanceConsoleOutputRequest::getEnable()const
@@ -143,7 +143,7 @@ bool GetInstanceConsoleOutputRequest::getEnable()const
 void GetInstanceConsoleOutputRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string GetInstanceConsoleOutputRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string GetInstanceConsoleOutputRequest::getRequestContent()const
 void GetInstanceConsoleOutputRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string GetInstanceConsoleOutputRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string GetInstanceConsoleOutputRequest::getCallerBidEmail()const
 void GetInstanceConsoleOutputRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string GetInstanceConsoleOutputRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string GetInstanceConsoleOutputRequest::getCallerUidEmail()const
 void GetInstanceConsoleOutputRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long GetInstanceConsoleOutputRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long GetInstanceConsoleOutputRequest::getCallerUid()const
 void GetInstanceConsoleOutputRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string GetInstanceConsoleOutputRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string GetInstanceConsoleOutputRequest::getApp_ip()const
 void GetInstanceConsoleOutputRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string GetInstanceConsoleOutputRequest::getResourceOwnerAccount()const
@@ -209,7 +209,7 @@ std::string GetInstanceConsoleOutputRequest::getResourceOwnerAccount()const
 void GetInstanceConsoleOutputRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetInstanceConsoleOutputRequest::getOwnerAccount()const
@@ -220,7 +220,7 @@ std::string GetInstanceConsoleOutputRequest::getOwnerAccount()const
 void GetInstanceConsoleOutputRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GetInstanceConsoleOutputRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string GetInstanceConsoleOutputRequest::getCallerBid()const
 void GetInstanceConsoleOutputRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long GetInstanceConsoleOutputRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long GetInstanceConsoleOutputRequest::getOwnerId()const
 void GetInstanceConsoleOutputRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool GetInstanceConsoleOutputRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool GetInstanceConsoleOutputRequest::getProxy_trust_transport_info()const
 void GetInstanceConsoleOutputRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool GetInstanceConsoleOutputRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool GetInstanceConsoleOutputRequest::getAk_mfa_present()const
 void GetInstanceConsoleOutputRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool GetInstanceConsoleOutputRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool GetInstanceConsoleOutputRequest::getSecurity_transport()const
 void GetInstanceConsoleOutputRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string GetInstanceConsoleOutputRequest::getInstanceId()const
@@ -286,7 +286,7 @@ std::string GetInstanceConsoleOutputRequest::getInstanceId()const
 void GetInstanceConsoleOutputRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string GetInstanceConsoleOutputRequest::getRequestId()const
@@ -297,6 +297,6 @@ std::string GetInstanceConsoleOutputRequest::getRequestId()const
 void GetInstanceConsoleOutputRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

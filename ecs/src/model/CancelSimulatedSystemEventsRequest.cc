@@ -34,7 +34,7 @@ void CancelSimulatedSystemEventsRequest::setEventId(const std::vector<std::strin
 {
 	eventId_ = eventId;
 	for(int i = 0; i!= eventId.size(); i++)
-		setParameter("EventId."+ std::to_string(i), eventId.at(i));
+		setCoreParameter("EventId."+ std::to_string(i), eventId.at(i));
 }
 
 long CancelSimulatedSystemEventsRequest::getResourceOwnerId()const
@@ -45,7 +45,7 @@ long CancelSimulatedSystemEventsRequest::getResourceOwnerId()const
 void CancelSimulatedSystemEventsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long CancelSimulatedSystemEventsRequest::getCallerParentId()const
@@ -56,7 +56,7 @@ long CancelSimulatedSystemEventsRequest::getCallerParentId()const
 void CancelSimulatedSystemEventsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool CancelSimulatedSystemEventsRequest::getProxy_original_security_transport()const
@@ -67,7 +67,7 @@ bool CancelSimulatedSystemEventsRequest::getProxy_original_security_transport()c
 void CancelSimulatedSystemEventsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CancelSimulatedSystemEventsRequest::getProxy_original_source_ip()const
@@ -78,7 +78,7 @@ std::string CancelSimulatedSystemEventsRequest::getProxy_original_source_ip()con
 void CancelSimulatedSystemEventsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CancelSimulatedSystemEventsRequest::getOwnerIdLoginEmail()const
@@ -89,7 +89,7 @@ std::string CancelSimulatedSystemEventsRequest::getOwnerIdLoginEmail()const
 void CancelSimulatedSystemEventsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CancelSimulatedSystemEventsRequest::getCallerType()const
@@ -100,7 +100,7 @@ std::string CancelSimulatedSystemEventsRequest::getCallerType()const
 void CancelSimulatedSystemEventsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CancelSimulatedSystemEventsRequest::getAccessKeyId()const
@@ -111,7 +111,7 @@ std::string CancelSimulatedSystemEventsRequest::getAccessKeyId()const
 void CancelSimulatedSystemEventsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CancelSimulatedSystemEventsRequest::getResourceGroupId()const
@@ -122,7 +122,7 @@ std::string CancelSimulatedSystemEventsRequest::getResourceGroupId()const
 void CancelSimulatedSystemEventsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CancelSimulatedSystemEventsRequest::getSecurityToken()const
@@ -133,7 +133,7 @@ std::string CancelSimulatedSystemEventsRequest::getSecurityToken()const
 void CancelSimulatedSystemEventsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CancelSimulatedSystemEventsRequest::getRegionId()const
@@ -144,7 +144,7 @@ std::string CancelSimulatedSystemEventsRequest::getRegionId()const
 void CancelSimulatedSystemEventsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool CancelSimulatedSystemEventsRequest::getEnable()const
@@ -155,7 +155,7 @@ bool CancelSimulatedSystemEventsRequest::getEnable()const
 void CancelSimulatedSystemEventsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string CancelSimulatedSystemEventsRequest::getRequestContent()const
@@ -166,7 +166,7 @@ std::string CancelSimulatedSystemEventsRequest::getRequestContent()const
 void CancelSimulatedSystemEventsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CancelSimulatedSystemEventsRequest::getCallerBidEmail()const
@@ -177,7 +177,7 @@ std::string CancelSimulatedSystemEventsRequest::getCallerBidEmail()const
 void CancelSimulatedSystemEventsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string CancelSimulatedSystemEventsRequest::getCallerUidEmail()const
@@ -188,7 +188,7 @@ std::string CancelSimulatedSystemEventsRequest::getCallerUidEmail()const
 void CancelSimulatedSystemEventsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long CancelSimulatedSystemEventsRequest::getCallerUid()const
@@ -199,7 +199,7 @@ long CancelSimulatedSystemEventsRequest::getCallerUid()const
 void CancelSimulatedSystemEventsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CancelSimulatedSystemEventsRequest::getApp_ip()const
@@ -210,7 +210,7 @@ std::string CancelSimulatedSystemEventsRequest::getApp_ip()const
 void CancelSimulatedSystemEventsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CancelSimulatedSystemEventsRequest::getResourceOwnerAccount()const
@@ -221,7 +221,7 @@ std::string CancelSimulatedSystemEventsRequest::getResourceOwnerAccount()const
 void CancelSimulatedSystemEventsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CancelSimulatedSystemEventsRequest::getOwnerAccount()const
@@ -232,7 +232,7 @@ std::string CancelSimulatedSystemEventsRequest::getOwnerAccount()const
 void CancelSimulatedSystemEventsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CancelSimulatedSystemEventsRequest::getCallerBid()const
@@ -243,7 +243,7 @@ std::string CancelSimulatedSystemEventsRequest::getCallerBid()const
 void CancelSimulatedSystemEventsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CancelSimulatedSystemEventsRequest::getOwnerId()const
@@ -254,7 +254,7 @@ long CancelSimulatedSystemEventsRequest::getOwnerId()const
 void CancelSimulatedSystemEventsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool CancelSimulatedSystemEventsRequest::getProxy_trust_transport_info()const
@@ -265,7 +265,7 @@ bool CancelSimulatedSystemEventsRequest::getProxy_trust_transport_info()const
 void CancelSimulatedSystemEventsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CancelSimulatedSystemEventsRequest::getAk_mfa_present()const
@@ -276,7 +276,7 @@ bool CancelSimulatedSystemEventsRequest::getAk_mfa_present()const
 void CancelSimulatedSystemEventsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CancelSimulatedSystemEventsRequest::getSecurity_transport()const
@@ -287,7 +287,7 @@ bool CancelSimulatedSystemEventsRequest::getSecurity_transport()const
 void CancelSimulatedSystemEventsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CancelSimulatedSystemEventsRequest::getRequestId()const
@@ -298,6 +298,6 @@ std::string CancelSimulatedSystemEventsRequest::getRequestId()const
 void CancelSimulatedSystemEventsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

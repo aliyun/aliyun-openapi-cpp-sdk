@@ -37,10 +37,10 @@ void CreateImageRequest::setDiskDeviceMapping(const std::vector<DiskDeviceMappin
 	for(int i = 0; i!= diskDeviceMapping.size(); i++)	{
 		auto obj = diskDeviceMapping.at(i);
 		std::string str ="DiskDeviceMapping."+ std::to_string(i);
-		setParameter(str + ".SnapshotId", obj.snapshotId);
-		setParameter(str + ".Size", std::to_string(obj.size));
-		setParameter(str + ".DiskType", obj.diskType);
-		setParameter(str + ".Device", obj.device);
+		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
+		setCoreParameter(str + ".Size", std::to_string(obj.size));
+		setCoreParameter(str + ".DiskType", obj.diskType);
+		setCoreParameter(str + ".Device", obj.device);
 	}
 }
 
@@ -52,7 +52,7 @@ long CreateImageRequest::getResourceOwnerId()const
 void CreateImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateImageRequest::getSnapshotId()const
@@ -63,7 +63,7 @@ std::string CreateImageRequest::getSnapshotId()const
 void CreateImageRequest::setSnapshotId(const std::string& snapshotId)
 {
 	snapshotId_ = snapshotId;
-	setParameter("SnapshotId", snapshotId);
+	setCoreParameter("SnapshotId", snapshotId);
 }
 
 std::string CreateImageRequest::getResourceOwnerAccount()const
@@ -74,7 +74,7 @@ std::string CreateImageRequest::getResourceOwnerAccount()const
 void CreateImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateImageRequest::getClientToken()const
@@ -85,7 +85,7 @@ std::string CreateImageRequest::getClientToken()const
 void CreateImageRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateImageRequest::getOwnerAccount()const
@@ -96,7 +96,7 @@ std::string CreateImageRequest::getOwnerAccount()const
 void CreateImageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateImageRequest::getDescription()const
@@ -107,7 +107,7 @@ std::string CreateImageRequest::getDescription()const
 void CreateImageRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 long CreateImageRequest::getOwnerId()const
@@ -118,7 +118,7 @@ long CreateImageRequest::getOwnerId()const
 void CreateImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateImageRequest::getPlatform()const
@@ -129,7 +129,7 @@ std::string CreateImageRequest::getPlatform()const
 void CreateImageRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
-	setParameter("Platform", platform);
+	setCoreParameter("Platform", platform);
 }
 
 std::string CreateImageRequest::getSourceRegionId()const
@@ -140,7 +140,7 @@ std::string CreateImageRequest::getSourceRegionId()const
 void CreateImageRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string CreateImageRequest::getResourceGroupId()const
@@ -151,7 +151,7 @@ std::string CreateImageRequest::getResourceGroupId()const
 void CreateImageRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateImageRequest::getInstanceId()const
@@ -162,7 +162,7 @@ std::string CreateImageRequest::getInstanceId()const
 void CreateImageRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string CreateImageRequest::getRegionId()const
@@ -173,7 +173,7 @@ std::string CreateImageRequest::getRegionId()const
 void CreateImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateImageRequest::getImageName()const
@@ -184,7 +184,7 @@ std::string CreateImageRequest::getImageName()const
 void CreateImageRequest::setImageName(const std::string& imageName)
 {
 	imageName_ = imageName;
-	setParameter("ImageName", imageName);
+	setCoreParameter("ImageName", imageName);
 }
 
 std::string CreateImageRequest::getImageVersion()const
@@ -195,7 +195,7 @@ std::string CreateImageRequest::getImageVersion()const
 void CreateImageRequest::setImageVersion(const std::string& imageVersion)
 {
 	imageVersion_ = imageVersion;
-	setParameter("ImageVersion", imageVersion);
+	setCoreParameter("ImageVersion", imageVersion);
 }
 
 std::vector<CreateImageRequest::Tag> CreateImageRequest::getTag()const
@@ -210,8 +210,8 @@ void CreateImageRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setParameter(str + ".Value", obj.value);
-		setParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -223,6 +223,6 @@ std::string CreateImageRequest::getArchitecture()const
 void CreateImageRequest::setArchitecture(const std::string& architecture)
 {
 	architecture_ = architecture;
-	setParameter("Architecture", architecture);
+	setCoreParameter("Architecture", architecture);
 }
 

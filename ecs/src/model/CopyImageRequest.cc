@@ -33,7 +33,7 @@ long CopyImageRequest::getResourceOwnerId()const
 void CopyImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CopyImageRequest::getImageId()const
@@ -44,7 +44,7 @@ std::string CopyImageRequest::getImageId()const
 void CopyImageRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setParameter("ImageId", imageId);
+	setCoreParameter("ImageId", imageId);
 }
 
 std::string CopyImageRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CopyImageRequest::getResourceOwnerAccount()const
 void CopyImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CopyImageRequest::getDestinationImageName()const
@@ -66,7 +66,7 @@ std::string CopyImageRequest::getDestinationImageName()const
 void CopyImageRequest::setDestinationImageName(const std::string& destinationImageName)
 {
 	destinationImageName_ = destinationImageName;
-	setParameter("DestinationImageName", destinationImageName);
+	setCoreParameter("DestinationImageName", destinationImageName);
 }
 
 std::string CopyImageRequest::getDestinationRegionId()const
@@ -77,7 +77,7 @@ std::string CopyImageRequest::getDestinationRegionId()const
 void CopyImageRequest::setDestinationRegionId(const std::string& destinationRegionId)
 {
 	destinationRegionId_ = destinationRegionId;
-	setParameter("DestinationRegionId", destinationRegionId);
+	setCoreParameter("DestinationRegionId", destinationRegionId);
 }
 
 std::string CopyImageRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CopyImageRequest::getOwnerAccount()const
 void CopyImageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CopyImageRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long CopyImageRequest::getOwnerId()const
 void CopyImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CopyImageRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string CopyImageRequest::getSourceRegionId()const
 void CopyImageRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 bool CopyImageRequest::getEncrypted()const
@@ -121,7 +121,7 @@ bool CopyImageRequest::getEncrypted()const
 void CopyImageRequest::setEncrypted(bool encrypted)
 {
 	encrypted_ = encrypted;
-	setParameter("Encrypted", encrypted ? "true" : "false");
+	setCoreParameter("Encrypted", encrypted ? "true" : "false");
 }
 
 std::string CopyImageRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string CopyImageRequest::getRegionId()const
 void CopyImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::vector<CopyImageRequest::Tag> CopyImageRequest::getTag()const
@@ -147,8 +147,8 @@ void CopyImageRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setParameter(str + ".Value", obj.value);
-		setParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -160,6 +160,6 @@ std::string CopyImageRequest::getDestinationDescription()const
 void CopyImageRequest::setDestinationDescription(const std::string& destinationDescription)
 {
 	destinationDescription_ = destinationDescription;
-	setParameter("DestinationDescription", destinationDescription);
+	setCoreParameter("DestinationDescription", destinationDescription);
 }
 

@@ -33,7 +33,7 @@ std::string ExportImageRequest::getSourceRegionId()const
 void ExportImageRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long ExportImageRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ExportImageRequest::getResourceOwnerId()const
 void ExportImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ExportImageRequest::getImageId()const
@@ -55,7 +55,7 @@ std::string ExportImageRequest::getImageId()const
 void ExportImageRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setParameter("ImageId", imageId);
+	setCoreParameter("ImageId", imageId);
 }
 
 std::string ExportImageRequest::getOSSBucket()const
@@ -66,7 +66,7 @@ std::string ExportImageRequest::getOSSBucket()const
 void ExportImageRequest::setOSSBucket(const std::string& oSSBucket)
 {
 	oSSBucket_ = oSSBucket;
-	setParameter("OSSBucket", oSSBucket);
+	setCoreParameter("OSSBucket", oSSBucket);
 }
 
 std::string ExportImageRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ExportImageRequest::getResourceOwnerAccount()const
 void ExportImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ExportImageRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string ExportImageRequest::getRegionId()const
 void ExportImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ExportImageRequest::getOSSPrefix()const
@@ -99,7 +99,7 @@ std::string ExportImageRequest::getOSSPrefix()const
 void ExportImageRequest::setOSSPrefix(const std::string& oSSPrefix)
 {
 	oSSPrefix_ = oSSPrefix;
-	setParameter("OSSPrefix", oSSPrefix);
+	setCoreParameter("OSSPrefix", oSSPrefix);
 }
 
 std::string ExportImageRequest::getRoleName()const
@@ -110,7 +110,7 @@ std::string ExportImageRequest::getRoleName()const
 void ExportImageRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setParameter("RoleName", roleName);
+	setCoreParameter("RoleName", roleName);
 }
 
 long ExportImageRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long ExportImageRequest::getOwnerId()const
 void ExportImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ExportImageRequest::getImageFormat()const
@@ -132,6 +132,6 @@ std::string ExportImageRequest::getImageFormat()const
 void ExportImageRequest::setImageFormat(const std::string& imageFormat)
 {
 	imageFormat_ = imageFormat;
-	setParameter("ImageFormat", imageFormat);
+	setCoreParameter("ImageFormat", imageFormat);
 }
 

@@ -33,7 +33,7 @@ std::string CancelAutoSnapshotPolicyRequest::getSourceRegionId()const
 void CancelAutoSnapshotPolicyRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long CancelAutoSnapshotPolicyRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CancelAutoSnapshotPolicyRequest::getResourceOwnerId()const
 void CancelAutoSnapshotPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CancelAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
 void CancelAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CancelAutoSnapshotPolicyRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string CancelAutoSnapshotPolicyRequest::getRegionId()const
 void CancelAutoSnapshotPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CancelAutoSnapshotPolicyRequest::getDiskIds()const
@@ -77,7 +77,7 @@ std::string CancelAutoSnapshotPolicyRequest::getDiskIds()const
 void CancelAutoSnapshotPolicyRequest::setDiskIds(const std::string& diskIds)
 {
 	diskIds_ = diskIds;
-	setParameter("DiskIds", diskIds);
+	setCoreParameter("DiskIds", diskIds);
 }
 
 long CancelAutoSnapshotPolicyRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long CancelAutoSnapshotPolicyRequest::getOwnerId()const
 void CancelAutoSnapshotPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

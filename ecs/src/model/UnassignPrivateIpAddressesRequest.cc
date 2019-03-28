@@ -33,7 +33,7 @@ long UnassignPrivateIpAddressesRequest::getResourceOwnerId()const
 void UnassignPrivateIpAddressesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long UnassignPrivateIpAddressesRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long UnassignPrivateIpAddressesRequest::getCallerParentId()const
 void UnassignPrivateIpAddressesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool UnassignPrivateIpAddressesRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool UnassignPrivateIpAddressesRequest::getProxy_original_security_transport()co
 void UnassignPrivateIpAddressesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string UnassignPrivateIpAddressesRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string UnassignPrivateIpAddressesRequest::getProxy_original_source_ip()cons
 void UnassignPrivateIpAddressesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string UnassignPrivateIpAddressesRequest::getOwnerIdLoginEmail()const
 void UnassignPrivateIpAddressesRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string UnassignPrivateIpAddressesRequest::getCallerType()const
 void UnassignPrivateIpAddressesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string UnassignPrivateIpAddressesRequest::getAccessKeyId()const
 void UnassignPrivateIpAddressesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string UnassignPrivateIpAddressesRequest::getSourceRegionId()const
 void UnassignPrivateIpAddressesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string UnassignPrivateIpAddressesRequest::getSecurityToken()const
 void UnassignPrivateIpAddressesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string UnassignPrivateIpAddressesRequest::getRegionId()const
 void UnassignPrivateIpAddressesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool UnassignPrivateIpAddressesRequest::getEnable()const
@@ -143,7 +143,7 @@ bool UnassignPrivateIpAddressesRequest::getEnable()const
 void UnassignPrivateIpAddressesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string UnassignPrivateIpAddressesRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string UnassignPrivateIpAddressesRequest::getRequestContent()const
 void UnassignPrivateIpAddressesRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string UnassignPrivateIpAddressesRequest::getCallerBidEmail()const
 void UnassignPrivateIpAddressesRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string UnassignPrivateIpAddressesRequest::getCallerUidEmail()const
 void UnassignPrivateIpAddressesRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long UnassignPrivateIpAddressesRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long UnassignPrivateIpAddressesRequest::getCallerUid()const
 void UnassignPrivateIpAddressesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string UnassignPrivateIpAddressesRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string UnassignPrivateIpAddressesRequest::getApp_ip()const
 void UnassignPrivateIpAddressesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getResourceOwnerAccount()const
@@ -209,7 +209,7 @@ std::string UnassignPrivateIpAddressesRequest::getResourceOwnerAccount()const
 void UnassignPrivateIpAddressesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getOwnerAccount()const
@@ -220,7 +220,7 @@ std::string UnassignPrivateIpAddressesRequest::getOwnerAccount()const
 void UnassignPrivateIpAddressesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string UnassignPrivateIpAddressesRequest::getCallerBid()const
 void UnassignPrivateIpAddressesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long UnassignPrivateIpAddressesRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long UnassignPrivateIpAddressesRequest::getOwnerId()const
 void UnassignPrivateIpAddressesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool UnassignPrivateIpAddressesRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool UnassignPrivateIpAddressesRequest::getProxy_trust_transport_info()const
 void UnassignPrivateIpAddressesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool UnassignPrivateIpAddressesRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool UnassignPrivateIpAddressesRequest::getAk_mfa_present()const
 void UnassignPrivateIpAddressesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool UnassignPrivateIpAddressesRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool UnassignPrivateIpAddressesRequest::getSecurity_transport()const
 void UnassignPrivateIpAddressesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::vector<std::string> UnassignPrivateIpAddressesRequest::getPrivateIpAddress()const
@@ -287,7 +287,7 @@ void UnassignPrivateIpAddressesRequest::setPrivateIpAddress(const std::vector<st
 {
 	privateIpAddress_ = privateIpAddress;
 	for(int i = 0; i!= privateIpAddress.size(); i++)
-		setParameter("PrivateIpAddress."+ std::to_string(i), privateIpAddress.at(i));
+		setCoreParameter("PrivateIpAddress."+ std::to_string(i), privateIpAddress.at(i));
 }
 
 std::string UnassignPrivateIpAddressesRequest::getRequestId()const
@@ -298,7 +298,7 @@ std::string UnassignPrivateIpAddressesRequest::getRequestId()const
 void UnassignPrivateIpAddressesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getNetworkInterfaceId()const
@@ -309,6 +309,6 @@ std::string UnassignPrivateIpAddressesRequest::getNetworkInterfaceId()const
 void UnassignPrivateIpAddressesRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	setParameter("NetworkInterfaceId", networkInterfaceId);
+	setCoreParameter("NetworkInterfaceId", networkInterfaceId);
 }
 

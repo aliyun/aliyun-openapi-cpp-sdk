@@ -33,7 +33,7 @@ long DescribeRouteTablesRequest::getResourceOwnerId()const
 void DescribeRouteTablesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRouteTablesRequest::getVRouterId()const
@@ -44,7 +44,7 @@ std::string DescribeRouteTablesRequest::getVRouterId()const
 void DescribeRouteTablesRequest::setVRouterId(const std::string& vRouterId)
 {
 	vRouterId_ = vRouterId;
-	setParameter("VRouterId", vRouterId);
+	setCoreParameter("VRouterId", vRouterId);
 }
 
 std::string DescribeRouteTablesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeRouteTablesRequest::getResourceOwnerAccount()const
 void DescribeRouteTablesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRouteTablesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeRouteTablesRequest::getOwnerAccount()const
 void DescribeRouteTablesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeRouteTablesRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeRouteTablesRequest::getOwnerId()const
 void DescribeRouteTablesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeRouteTablesRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeRouteTablesRequest::getPageNumber()const
 void DescribeRouteTablesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeRouteTablesRequest::getRouterType()const
@@ -99,7 +99,7 @@ std::string DescribeRouteTablesRequest::getRouterType()const
 void DescribeRouteTablesRequest::setRouterType(const std::string& routerType)
 {
 	routerType_ = routerType;
-	setParameter("RouterType", routerType);
+	setCoreParameter("RouterType", routerType);
 }
 
 std::string DescribeRouteTablesRequest::getRouteTableName()const
@@ -110,7 +110,7 @@ std::string DescribeRouteTablesRequest::getRouteTableName()const
 void DescribeRouteTablesRequest::setRouteTableName(const std::string& routeTableName)
 {
 	routeTableName_ = routeTableName;
-	setParameter("RouteTableName", routeTableName);
+	setCoreParameter("RouteTableName", routeTableName);
 }
 
 std::string DescribeRouteTablesRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeRouteTablesRequest::getRegionId()const
 void DescribeRouteTablesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeRouteTablesRequest::getRouterId()const
@@ -132,7 +132,7 @@ std::string DescribeRouteTablesRequest::getRouterId()const
 void DescribeRouteTablesRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setParameter("RouterId", routerId);
+	setCoreParameter("RouterId", routerId);
 }
 
 int DescribeRouteTablesRequest::getPageSize()const
@@ -143,7 +143,7 @@ int DescribeRouteTablesRequest::getPageSize()const
 void DescribeRouteTablesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRouteTablesRequest::getRouteTableId()const
@@ -154,6 +154,6 @@ std::string DescribeRouteTablesRequest::getRouteTableId()const
 void DescribeRouteTablesRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setParameter("RouteTableId", routeTableId);
+	setCoreParameter("RouteTableId", routeTableId);
 }
 

@@ -33,7 +33,7 @@ long DescribeInstanceMonitorDataRequest::getResourceOwnerId()const
 void DescribeInstanceMonitorDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeInstanceMonitorDataRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeInstanceMonitorDataRequest::getCallerParentId()const
 void DescribeInstanceMonitorDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeInstanceMonitorDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeInstanceMonitorDataRequest::getProxy_original_security_transport()c
 void DescribeInstanceMonitorDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeInstanceMonitorDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeInstanceMonitorDataRequest::getStartTime()const
 void DescribeInstanceMonitorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeInstanceMonitorDataRequest::getProxy_original_source_ip()con
 void DescribeInstanceMonitorDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeInstanceMonitorDataRequest::getOwnerIdLoginEmail()const
 void DescribeInstanceMonitorDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeInstanceMonitorDataRequest::getCallerType()const
 void DescribeInstanceMonitorDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeInstanceMonitorDataRequest::getAccessKeyId()const
 void DescribeInstanceMonitorDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getSourceRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeInstanceMonitorDataRequest::getSourceRegionId()const
 void DescribeInstanceMonitorDataRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeInstanceMonitorDataRequest::getSecurityToken()const
 void DescribeInstanceMonitorDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool DescribeInstanceMonitorDataRequest::getEnable()const
@@ -143,7 +143,7 @@ bool DescribeInstanceMonitorDataRequest::getEnable()const
 void DescribeInstanceMonitorDataRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeInstanceMonitorDataRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeInstanceMonitorDataRequest::getRequestContent()const
 void DescribeInstanceMonitorDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeInstanceMonitorDataRequest::getCallerBidEmail()const
 void DescribeInstanceMonitorDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeInstanceMonitorDataRequest::getCallerUidEmail()const
 void DescribeInstanceMonitorDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeInstanceMonitorDataRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeInstanceMonitorDataRequest::getCallerUid()const
 void DescribeInstanceMonitorDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeInstanceMonitorDataRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeInstanceMonitorDataRequest::getApp_ip()const
 void DescribeInstanceMonitorDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 int DescribeInstanceMonitorDataRequest::getPeriod()const
@@ -209,7 +209,7 @@ int DescribeInstanceMonitorDataRequest::getPeriod()const
 void DescribeInstanceMonitorDataRequest::setPeriod(int period)
 {
 	period_ = period;
-	setParameter("Period", std::to_string(period));
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string DescribeInstanceMonitorDataRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string DescribeInstanceMonitorDataRequest::getResourceOwnerAccount()const
 void DescribeInstanceMonitorDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getOwnerAccount()const
@@ -231,7 +231,7 @@ std::string DescribeInstanceMonitorDataRequest::getOwnerAccount()const
 void DescribeInstanceMonitorDataRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getEndTime()const
@@ -242,7 +242,7 @@ std::string DescribeInstanceMonitorDataRequest::getEndTime()const
 void DescribeInstanceMonitorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DescribeInstanceMonitorDataRequest::getCallerBid()const
 void DescribeInstanceMonitorDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeInstanceMonitorDataRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DescribeInstanceMonitorDataRequest::getOwnerId()const
 void DescribeInstanceMonitorDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeInstanceMonitorDataRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool DescribeInstanceMonitorDataRequest::getProxy_trust_transport_info()const
 void DescribeInstanceMonitorDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeInstanceMonitorDataRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DescribeInstanceMonitorDataRequest::getAk_mfa_present()const
 void DescribeInstanceMonitorDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeInstanceMonitorDataRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DescribeInstanceMonitorDataRequest::getSecurity_transport()const
 void DescribeInstanceMonitorDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeInstanceMonitorDataRequest::getInstanceId()const
@@ -308,7 +308,7 @@ std::string DescribeInstanceMonitorDataRequest::getInstanceId()const
 void DescribeInstanceMonitorDataRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getRequestId()const
@@ -319,6 +319,6 @@ std::string DescribeInstanceMonitorDataRequest::getRequestId()const
 void DescribeInstanceMonitorDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

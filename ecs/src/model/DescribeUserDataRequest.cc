@@ -33,7 +33,7 @@ std::string DescribeUserDataRequest::getSourceRegionId()const
 void DescribeUserDataRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long DescribeUserDataRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeUserDataRequest::getResourceOwnerId()const
 void DescribeUserDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUserDataRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string DescribeUserDataRequest::getInstanceId()const
 void DescribeUserDataRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeUserDataRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeUserDataRequest::getResourceOwnerAccount()const
 void DescribeUserDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeUserDataRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeUserDataRequest::getRegionId()const
 void DescribeUserDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 long DescribeUserDataRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DescribeUserDataRequest::getOwnerId()const
 void DescribeUserDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

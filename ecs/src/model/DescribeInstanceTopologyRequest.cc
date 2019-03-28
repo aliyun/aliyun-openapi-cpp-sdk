@@ -33,7 +33,7 @@ std::string DescribeInstanceTopologyRequest::getSourceRegionId()const
 void DescribeInstanceTopologyRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long DescribeInstanceTopologyRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeInstanceTopologyRequest::getResourceOwnerId()const
 void DescribeInstanceTopologyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeInstanceTopologyRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeInstanceTopologyRequest::getResourceOwnerAccount()const
 void DescribeInstanceTopologyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstanceTopologyRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeInstanceTopologyRequest::getRegionId()const
 void DescribeInstanceTopologyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeInstanceTopologyRequest::getInstanceIds()const
@@ -77,7 +77,7 @@ std::string DescribeInstanceTopologyRequest::getInstanceIds()const
 void DescribeInstanceTopologyRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 long DescribeInstanceTopologyRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DescribeInstanceTopologyRequest::getOwnerId()const
 void DescribeInstanceTopologyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

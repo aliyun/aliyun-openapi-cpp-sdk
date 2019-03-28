@@ -33,7 +33,7 @@ long EipFillParamsRequest::getResourceOwnerId()const
 void EipFillParamsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string EipFillParamsRequest::getData()const
@@ -44,7 +44,7 @@ std::string EipFillParamsRequest::getData()const
 void EipFillParamsRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setParameter("Data", data);
+	setCoreParameter("Data", data);
 }
 
 std::string EipFillParamsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string EipFillParamsRequest::getResourceOwnerAccount()const
 void EipFillParamsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string EipFillParamsRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string EipFillParamsRequest::getClientToken()const
 void EipFillParamsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string EipFillParamsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string EipFillParamsRequest::getOwnerAccount()const
 void EipFillParamsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string EipFillParamsRequest::getUserCidr()const
@@ -88,7 +88,7 @@ std::string EipFillParamsRequest::getUserCidr()const
 void EipFillParamsRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setParameter("UserCidr", userCidr);
+	setCoreParameter("UserCidr", userCidr);
 }
 
 long EipFillParamsRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long EipFillParamsRequest::getOwnerId()const
 void EipFillParamsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

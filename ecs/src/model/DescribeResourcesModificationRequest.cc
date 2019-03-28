@@ -33,7 +33,7 @@ long DescribeResourcesModificationRequest::getResourceOwnerId()const
 void DescribeResourcesModificationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 float DescribeResourcesModificationRequest::getMemory()const
@@ -44,7 +44,7 @@ float DescribeResourcesModificationRequest::getMemory()const
 void DescribeResourcesModificationRequest::setMemory(float memory)
 {
 	memory_ = memory;
-	setParameter("Memory", std::to_string(memory));
+	setCoreParameter("Memory", std::to_string(memory));
 }
 
 long DescribeResourcesModificationRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeResourcesModificationRequest::getCallerParentId()const
 void DescribeResourcesModificationRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeResourcesModificationRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool DescribeResourcesModificationRequest::getProxy_original_security_transport(
 void DescribeResourcesModificationRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeResourcesModificationRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeResourcesModificationRequest::getProxy_original_source_ip()c
 void DescribeResourcesModificationRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeResourcesModificationRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeResourcesModificationRequest::getOwnerIdLoginEmail()const
 void DescribeResourcesModificationRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeResourcesModificationRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeResourcesModificationRequest::getCallerType()const
 void DescribeResourcesModificationRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeResourcesModificationRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeResourcesModificationRequest::getAccessKeyId()const
 void DescribeResourcesModificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeResourcesModificationRequest::getSourceRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeResourcesModificationRequest::getSourceRegionId()const
 void DescribeResourcesModificationRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 int DescribeResourcesModificationRequest::getCores()const
@@ -132,7 +132,7 @@ int DescribeResourcesModificationRequest::getCores()const
 void DescribeResourcesModificationRequest::setCores(int cores)
 {
 	cores_ = cores;
-	setParameter("Cores", std::to_string(cores));
+	setCoreParameter("Cores", std::to_string(cores));
 }
 
 std::string DescribeResourcesModificationRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string DescribeResourcesModificationRequest::getSecurityToken()const
 void DescribeResourcesModificationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeResourcesModificationRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string DescribeResourcesModificationRequest::getRegionId()const
 void DescribeResourcesModificationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DescribeResourcesModificationRequest::getEnable()const
@@ -165,7 +165,7 @@ bool DescribeResourcesModificationRequest::getEnable()const
 void DescribeResourcesModificationRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeResourcesModificationRequest::getRequestContent()const
@@ -176,7 +176,7 @@ std::string DescribeResourcesModificationRequest::getRequestContent()const
 void DescribeResourcesModificationRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 bool DescribeResourcesModificationRequest::getMigrateAcrossZone()const
@@ -187,7 +187,7 @@ bool DescribeResourcesModificationRequest::getMigrateAcrossZone()const
 void DescribeResourcesModificationRequest::setMigrateAcrossZone(bool migrateAcrossZone)
 {
 	migrateAcrossZone_ = migrateAcrossZone;
-	setParameter("MigrateAcrossZone", migrateAcrossZone ? "true" : "false");
+	setCoreParameter("MigrateAcrossZone", migrateAcrossZone ? "true" : "false");
 }
 
 std::string DescribeResourcesModificationRequest::getCallerBidEmail()const
@@ -198,7 +198,7 @@ std::string DescribeResourcesModificationRequest::getCallerBidEmail()const
 void DescribeResourcesModificationRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeResourcesModificationRequest::getInstanceType()const
@@ -209,7 +209,7 @@ std::string DescribeResourcesModificationRequest::getInstanceType()const
 void DescribeResourcesModificationRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", instanceType);
 }
 
 std::string DescribeResourcesModificationRequest::getCallerUidEmail()const
@@ -220,7 +220,7 @@ std::string DescribeResourcesModificationRequest::getCallerUidEmail()const
 void DescribeResourcesModificationRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeResourcesModificationRequest::getCallerUid()const
@@ -231,7 +231,7 @@ long DescribeResourcesModificationRequest::getCallerUid()const
 void DescribeResourcesModificationRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeResourcesModificationRequest::getApp_ip()const
@@ -242,7 +242,7 @@ std::string DescribeResourcesModificationRequest::getApp_ip()const
 void DescribeResourcesModificationRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeResourcesModificationRequest::getResourceId()const
@@ -253,7 +253,7 @@ std::string DescribeResourcesModificationRequest::getResourceId()const
 void DescribeResourcesModificationRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", resourceId);
 }
 
 std::string DescribeResourcesModificationRequest::getResourceOwnerAccount()const
@@ -264,7 +264,7 @@ std::string DescribeResourcesModificationRequest::getResourceOwnerAccount()const
 void DescribeResourcesModificationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeResourcesModificationRequest::getOwnerAccount()const
@@ -275,7 +275,7 @@ std::string DescribeResourcesModificationRequest::getOwnerAccount()const
 void DescribeResourcesModificationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeResourcesModificationRequest::getCallerBid()const
@@ -286,7 +286,7 @@ std::string DescribeResourcesModificationRequest::getCallerBid()const
 void DescribeResourcesModificationRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string DescribeResourcesModificationRequest::getOperationType()const
@@ -297,7 +297,7 @@ std::string DescribeResourcesModificationRequest::getOperationType()const
 void DescribeResourcesModificationRequest::setOperationType(const std::string& operationType)
 {
 	operationType_ = operationType;
-	setParameter("OperationType", operationType);
+	setCoreParameter("OperationType", operationType);
 }
 
 long DescribeResourcesModificationRequest::getOwnerId()const
@@ -308,7 +308,7 @@ long DescribeResourcesModificationRequest::getOwnerId()const
 void DescribeResourcesModificationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeResourcesModificationRequest::getProxy_trust_transport_info()const
@@ -319,7 +319,7 @@ bool DescribeResourcesModificationRequest::getProxy_trust_transport_info()const
 void DescribeResourcesModificationRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeResourcesModificationRequest::getAk_mfa_present()const
@@ -330,7 +330,7 @@ bool DescribeResourcesModificationRequest::getAk_mfa_present()const
 void DescribeResourcesModificationRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeResourcesModificationRequest::getSecurity_transport()const
@@ -341,7 +341,7 @@ bool DescribeResourcesModificationRequest::getSecurity_transport()const
 void DescribeResourcesModificationRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeResourcesModificationRequest::getDestinationResource()const
@@ -352,7 +352,7 @@ std::string DescribeResourcesModificationRequest::getDestinationResource()const
 void DescribeResourcesModificationRequest::setDestinationResource(const std::string& destinationResource)
 {
 	destinationResource_ = destinationResource;
-	setParameter("DestinationResource", destinationResource);
+	setCoreParameter("DestinationResource", destinationResource);
 }
 
 std::string DescribeResourcesModificationRequest::getRequestId()const
@@ -363,6 +363,6 @@ std::string DescribeResourcesModificationRequest::getRequestId()const
 void DescribeResourcesModificationRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

@@ -33,7 +33,7 @@ std::string ResizeDiskRequest::getSourceRegionId()const
 void ResizeDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long ResizeDiskRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ResizeDiskRequest::getResourceOwnerId()const
 void ResizeDiskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ResizeDiskRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ResizeDiskRequest::getResourceOwnerAccount()const
 void ResizeDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ResizeDiskRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ResizeDiskRequest::getClientToken()const
 void ResizeDiskRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ResizeDiskRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ResizeDiskRequest::getOwnerAccount()const
 void ResizeDiskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int ResizeDiskRequest::getNewSize()const
@@ -88,7 +88,7 @@ int ResizeDiskRequest::getNewSize()const
 void ResizeDiskRequest::setNewSize(int newSize)
 {
 	newSize_ = newSize;
-	setParameter("NewSize", std::to_string(newSize));
+	setCoreParameter("NewSize", std::to_string(newSize));
 }
 
 std::string ResizeDiskRequest::getDiskId()const
@@ -99,7 +99,7 @@ std::string ResizeDiskRequest::getDiskId()const
 void ResizeDiskRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setParameter("DiskId", diskId);
+	setCoreParameter("DiskId", diskId);
 }
 
 long ResizeDiskRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ResizeDiskRequest::getOwnerId()const
 void ResizeDiskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ResizeDiskRequest::getType()const
@@ -121,6 +121,6 @@ std::string ResizeDiskRequest::getType()const
 void ResizeDiskRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 

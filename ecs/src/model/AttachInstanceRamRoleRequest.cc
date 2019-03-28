@@ -33,7 +33,7 @@ long AttachInstanceRamRoleRequest::getResourceOwnerId()const
 void AttachInstanceRamRoleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AttachInstanceRamRoleRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string AttachInstanceRamRoleRequest::getResourceOwnerAccount()const
 void AttachInstanceRamRoleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AttachInstanceRamRoleRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string AttachInstanceRamRoleRequest::getRegionId()const
 void AttachInstanceRamRoleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AttachInstanceRamRoleRequest::getInstanceIds()const
@@ -66,7 +66,7 @@ std::string AttachInstanceRamRoleRequest::getInstanceIds()const
 void AttachInstanceRamRoleRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 std::string AttachInstanceRamRoleRequest::getRamRoleName()const
@@ -77,7 +77,7 @@ std::string AttachInstanceRamRoleRequest::getRamRoleName()const
 void AttachInstanceRamRoleRequest::setRamRoleName(const std::string& ramRoleName)
 {
 	ramRoleName_ = ramRoleName;
-	setParameter("RamRoleName", ramRoleName);
+	setCoreParameter("RamRoleName", ramRoleName);
 }
 
 long AttachInstanceRamRoleRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long AttachInstanceRamRoleRequest::getOwnerId()const
 void AttachInstanceRamRoleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

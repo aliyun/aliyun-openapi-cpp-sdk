@@ -33,7 +33,7 @@ long DescribeCloudAssistantStatusRequest::getResourceOwnerId()const
 void DescribeCloudAssistantStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeCloudAssistantStatusRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeCloudAssistantStatusRequest::getCallerParentId()const
 void DescribeCloudAssistantStatusRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeCloudAssistantStatusRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeCloudAssistantStatusRequest::getProxy_original_security_transport()
 void DescribeCloudAssistantStatusRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeCloudAssistantStatusRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeCloudAssistantStatusRequest::getProxy_original_source_ip()co
 void DescribeCloudAssistantStatusRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeCloudAssistantStatusRequest::getOwnerIdLoginEmail()const
 void DescribeCloudAssistantStatusRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeCloudAssistantStatusRequest::getCallerType()const
 void DescribeCloudAssistantStatusRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeCloudAssistantStatusRequest::getAccessKeyId()const
 void DescribeCloudAssistantStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string DescribeCloudAssistantStatusRequest::getSourceRegionId()const
 void DescribeCloudAssistantStatusRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeCloudAssistantStatusRequest::getSecurityToken()const
 void DescribeCloudAssistantStatusRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeCloudAssistantStatusRequest::getRegionId()const
 void DescribeCloudAssistantStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DescribeCloudAssistantStatusRequest::getEnable()const
@@ -143,7 +143,7 @@ bool DescribeCloudAssistantStatusRequest::getEnable()const
 void DescribeCloudAssistantStatusRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeCloudAssistantStatusRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeCloudAssistantStatusRequest::getRequestContent()const
 void DescribeCloudAssistantStatusRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeCloudAssistantStatusRequest::getCallerBidEmail()const
 void DescribeCloudAssistantStatusRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeCloudAssistantStatusRequest::getCallerUidEmail()const
 void DescribeCloudAssistantStatusRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeCloudAssistantStatusRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeCloudAssistantStatusRequest::getCallerUid()const
 void DescribeCloudAssistantStatusRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeCloudAssistantStatusRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeCloudAssistantStatusRequest::getApp_ip()const
 void DescribeCloudAssistantStatusRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getResourceOwnerAccount()const
@@ -209,7 +209,7 @@ std::string DescribeCloudAssistantStatusRequest::getResourceOwnerAccount()const
 void DescribeCloudAssistantStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getOwnerAccount()const
@@ -220,7 +220,7 @@ std::string DescribeCloudAssistantStatusRequest::getOwnerAccount()const
 void DescribeCloudAssistantStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DescribeCloudAssistantStatusRequest::getCallerBid()const
 void DescribeCloudAssistantStatusRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeCloudAssistantStatusRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DescribeCloudAssistantStatusRequest::getOwnerId()const
 void DescribeCloudAssistantStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeCloudAssistantStatusRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DescribeCloudAssistantStatusRequest::getProxy_trust_transport_info()const
 void DescribeCloudAssistantStatusRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeCloudAssistantStatusRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeCloudAssistantStatusRequest::getAk_mfa_present()const
 void DescribeCloudAssistantStatusRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeCloudAssistantStatusRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeCloudAssistantStatusRequest::getSecurity_transport()const
 void DescribeCloudAssistantStatusRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::vector<std::string> DescribeCloudAssistantStatusRequest::getInstanceId()const
@@ -287,7 +287,7 @@ void DescribeCloudAssistantStatusRequest::setInstanceId(const std::vector<std::s
 {
 	instanceId_ = instanceId;
 	for(int i = 0; i!= instanceId.size(); i++)
-		setParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
 }
 
 std::string DescribeCloudAssistantStatusRequest::getRequestId()const
@@ -298,6 +298,6 @@ std::string DescribeCloudAssistantStatusRequest::getRequestId()const
 void DescribeCloudAssistantStatusRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

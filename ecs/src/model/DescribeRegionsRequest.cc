@@ -33,7 +33,7 @@ std::string DescribeRegionsRequest::getSourceRegionId()const
 void DescribeRegionsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long DescribeRegionsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeRegionsRequest::getResourceOwnerId()const
 void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRegionsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeRegionsRequest::getResourceOwnerAccount()const
 void DescribeRegionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRegionsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeRegionsRequest::getOwnerAccount()const
 void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeRegionsRequest::getAcceptLanguage()const
@@ -77,7 +77,7 @@ std::string DescribeRegionsRequest::getAcceptLanguage()const
 void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
 	acceptLanguage_ = acceptLanguage;
-	setParameter("AcceptLanguage", acceptLanguage);
+	setCoreParameter("AcceptLanguage", acceptLanguage);
 }
 
 long DescribeRegionsRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeRegionsRequest::getOwnerId()const
 void DescribeRegionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRegionsRequest::getInstanceChargeType()const
@@ -99,7 +99,7 @@ std::string DescribeRegionsRequest::getInstanceChargeType()const
 void DescribeRegionsRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string DescribeRegionsRequest::getResourceType()const
@@ -110,6 +110,6 @@ std::string DescribeRegionsRequest::getResourceType()const
 void DescribeRegionsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", resourceType);
 }
 

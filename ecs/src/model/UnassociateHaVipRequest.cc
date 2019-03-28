@@ -33,7 +33,7 @@ std::string UnassociateHaVipRequest::getHaVipId()const
 void UnassociateHaVipRequest::setHaVipId(const std::string& haVipId)
 {
 	haVipId_ = haVipId;
-	setParameter("HaVipId", haVipId);
+	setCoreParameter("HaVipId", haVipId);
 }
 
 long UnassociateHaVipRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UnassociateHaVipRequest::getResourceOwnerId()const
 void UnassociateHaVipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnassociateHaVipRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string UnassociateHaVipRequest::getInstanceId()const
 void UnassociateHaVipRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string UnassociateHaVipRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UnassociateHaVipRequest::getResourceOwnerAccount()const
 void UnassociateHaVipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnassociateHaVipRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string UnassociateHaVipRequest::getClientToken()const
 void UnassociateHaVipRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string UnassociateHaVipRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string UnassociateHaVipRequest::getRegionId()const
 void UnassociateHaVipRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UnassociateHaVipRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string UnassociateHaVipRequest::getOwnerAccount()const
 void UnassociateHaVipRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UnassociateHaVipRequest::getForce()const
@@ -110,7 +110,7 @@ std::string UnassociateHaVipRequest::getForce()const
 void UnassociateHaVipRequest::setForce(const std::string& force)
 {
 	force_ = force;
-	setParameter("Force", force);
+	setCoreParameter("Force", force);
 }
 
 long UnassociateHaVipRequest::getOwnerId()const
@@ -121,6 +121,6 @@ long UnassociateHaVipRequest::getOwnerId()const
 void UnassociateHaVipRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

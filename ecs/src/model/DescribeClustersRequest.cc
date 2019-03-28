@@ -33,7 +33,7 @@ std::string DescribeClustersRequest::getSourceRegionId()const
 void DescribeClustersRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long DescribeClustersRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeClustersRequest::getResourceOwnerId()const
 void DescribeClustersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClustersRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeClustersRequest::getResourceOwnerAccount()const
 void DescribeClustersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeClustersRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeClustersRequest::getRegionId()const
 void DescribeClustersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeClustersRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeClustersRequest::getOwnerAccount()const
 void DescribeClustersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeClustersRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DescribeClustersRequest::getOwnerId()const
 void DescribeClustersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

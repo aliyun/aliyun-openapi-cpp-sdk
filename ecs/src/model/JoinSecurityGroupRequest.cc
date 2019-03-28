@@ -33,7 +33,7 @@ std::string JoinSecurityGroupRequest::getSourceRegionId()const
 void JoinSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long JoinSecurityGroupRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long JoinSecurityGroupRequest::getResourceOwnerId()const
 void JoinSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string JoinSecurityGroupRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string JoinSecurityGroupRequest::getInstanceId()const
 void JoinSecurityGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string JoinSecurityGroupRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string JoinSecurityGroupRequest::getResourceOwnerAccount()const
 void JoinSecurityGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string JoinSecurityGroupRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string JoinSecurityGroupRequest::getOwnerAccount()const
 void JoinSecurityGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string JoinSecurityGroupRequest::getSecurityGroupId()const
@@ -88,7 +88,7 @@ std::string JoinSecurityGroupRequest::getSecurityGroupId()const
 void JoinSecurityGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 long JoinSecurityGroupRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long JoinSecurityGroupRequest::getOwnerId()const
 void JoinSecurityGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
