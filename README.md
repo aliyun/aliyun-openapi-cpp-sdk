@@ -1,24 +1,33 @@
-# Alibaba Cloud C++ Software Development Kit
-[中文文档](./README_zh.md)
+English | [简体中文](./README_zh.md)
 
-[![Build Status](https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk)
-[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk)
 
-The Alibaba Cloud C++ Software Development Kit (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
+<p align="center">
+<a href="https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg"></a>
+</p>
 
-This document introduces how to obtain and call Alibaba Cloud C++ SDK.
+<h1 align="center">Alibaba Cloud SDK for C++</h1>
+
+<p align="center">
+<a href="https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk"><img src="https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk.svg?branch=master" alt="Travis Build Status"></a>
+<a href="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk/branch/master/graph/badge.svg" alt="codecov"></a>
+</p>
+
+
+The SDK allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
+
+This document introduces how to obtain and call this SDK.
 
 If you have any problem while using C++ SDK, please submit an [issue](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new).
 
-## Prerequisites
+## Requirements
 
-- To use Alibaba Cloud C++ SDK, you must have an Alibaba Cloud account and an AccessKey.
+- To use this SDK, you must have an Alibaba Cloud account and an AccessKey.
 
 	The AccessKey is required when initializing the client. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak).
 
 	>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
 
-- To use Alibaba Cloud C++ SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
+- To use this SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
 - C++11 supported compiler installed
   - Windows: Visual Studio 2015 or newer
@@ -26,8 +35,7 @@ If you have any problem while using C++ SDK, please submit an [issue](https://gi
 - CMake 3.0 or newer
 - 4G memory or more
 
-## Install C++ SDK from source code
-
+## Installation
 
 ### Linux
 
@@ -106,9 +114,9 @@ If you have any problem while using C++ SDK, please submit an [issue](https://gi
 **SDK will be installed to `C:\Program File (x86)\alibabacloud-sdk`**
 
 
-## Use the C++ SDK
+## Quick Examples
 
-Before using C++ SDK, you must first configure the preprocessor to define `ALIBABACLOUD_SHARED` to achieve dynamic linking with Alibaba Cloud C++ SDK shared libraries. Then you must create a client instance, specify the region of cloud services and provide authentication parameters before sending API requests.
+Before using this SDK, you must first configure the preprocessor to define `ALIBABACLOUD_SHARED` to achieve dynamic linking with the SDK shared libraries. Then you must create a client instance, specify the region of cloud services and provide authentication parameters before sending API requests.
 
 The following code shows how to call the [DescribeInstances](~~25506~~) API of ECS to query detailed information of all ECS instances in a specific region.
 
@@ -222,9 +230,18 @@ int main(int argc, char** argv) {
 
 ```
 
-
-
 **More [examples](https://github.com/aliyun/aliyun-openapi-cpp-sdk/tree/master/examples)**
 
-## LICENSE
-Please refer to [LICENSE](https://github.com/aliyun/aliyun-openapi-cpp-sdk/blob/master/LICENSE) (Apache 2.0 LICENSE).
+## Issues
+[Opening an Issue](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new/choose), Issues not conforming to the guidelines may be closed immediately.
+
+## Changelog
+Detailed changes for each release are documented in the [release notes](CHANGELOG).
+
+## Contribution
+Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making a pull request.
+
+## License
+[Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+Copyright 1999-2019 Alibaba Group Holding Ltd.
