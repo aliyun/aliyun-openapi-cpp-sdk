@@ -33,7 +33,7 @@ int GetSubscriptionPriceRequest::getServicePeriodQuantity()const
 void GetSubscriptionPriceRequest::setServicePeriodQuantity(int servicePeriodQuantity)
 {
 	servicePeriodQuantity_ = servicePeriodQuantity;
-	setParameter("ServicePeriodQuantity", std::to_string(servicePeriodQuantity));
+	setCoreParameter("ServicePeriodQuantity", std::to_string(servicePeriodQuantity));
 }
 
 std::string GetSubscriptionPriceRequest::getProductCode()const
@@ -44,7 +44,7 @@ std::string GetSubscriptionPriceRequest::getProductCode()const
 void GetSubscriptionPriceRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", productCode);
 }
 
 std::string GetSubscriptionPriceRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string GetSubscriptionPriceRequest::getInstanceId()const
 void GetSubscriptionPriceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int GetSubscriptionPriceRequest::getQuantity()const
@@ -66,7 +66,7 @@ int GetSubscriptionPriceRequest::getQuantity()const
 void GetSubscriptionPriceRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setParameter("Quantity", std::to_string(quantity));
+	setCoreParameter("Quantity", std::to_string(quantity));
 }
 
 std::string GetSubscriptionPriceRequest::getServicePeriodUnit()const
@@ -77,7 +77,7 @@ std::string GetSubscriptionPriceRequest::getServicePeriodUnit()const
 void GetSubscriptionPriceRequest::setServicePeriodUnit(const std::string& servicePeriodUnit)
 {
 	servicePeriodUnit_ = servicePeriodUnit;
-	setParameter("ServicePeriodUnit", servicePeriodUnit);
+	setCoreParameter("ServicePeriodUnit", servicePeriodUnit);
 }
 
 std::string GetSubscriptionPriceRequest::getSubscriptionType()const
@@ -88,7 +88,7 @@ std::string GetSubscriptionPriceRequest::getSubscriptionType()const
 void GetSubscriptionPriceRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
 std::vector<GetSubscriptionPriceRequest::ModuleList> GetSubscriptionPriceRequest::getModuleList()const
@@ -103,10 +103,10 @@ void GetSubscriptionPriceRequest::setModuleList(const std::vector<ModuleList>& m
 	for(int i = 0; i!= moduleList.size(); i++)	{
 		auto obj = moduleList.at(i);
 		std::string str ="ModuleList."+ std::to_string(i);
-		setParameter(str + ".ModuleCode", obj.moduleCode);
-		setParameter(str + ".ModuleStatus", std::to_string(obj.moduleStatus));
-		setParameter(str + ".Tag", obj.tag);
-		setParameter(str + ".Config", obj.config);
+		setCoreParameter(str + ".ModuleCode", obj.moduleCode);
+		setCoreParameter(str + ".ModuleStatus", std::to_string(obj.moduleStatus));
+		setCoreParameter(str + ".Tag", obj.tag);
+		setCoreParameter(str + ".Config", obj.config);
 	}
 }
 
@@ -118,7 +118,7 @@ long GetSubscriptionPriceRequest::getOwnerId()const
 void GetSubscriptionPriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetSubscriptionPriceRequest::getRegion()const
@@ -129,7 +129,7 @@ std::string GetSubscriptionPriceRequest::getRegion()const
 void GetSubscriptionPriceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setParameter("Region", region);
+	setCoreParameter("Region", region);
 }
 
 std::string GetSubscriptionPriceRequest::getOrderType()const
@@ -140,7 +140,7 @@ std::string GetSubscriptionPriceRequest::getOrderType()const
 void GetSubscriptionPriceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setParameter("OrderType", orderType);
+	setCoreParameter("OrderType", orderType);
 }
 
 std::string GetSubscriptionPriceRequest::getProductType()const
@@ -151,6 +151,6 @@ std::string GetSubscriptionPriceRequest::getProductType()const
 void GetSubscriptionPriceRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setParameter("ProductType", productType);
+	setCoreParameter("ProductType", productType);
 }
 

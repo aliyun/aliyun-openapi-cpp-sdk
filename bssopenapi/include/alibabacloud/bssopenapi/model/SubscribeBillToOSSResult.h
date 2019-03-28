@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_SETENDUSERSTATUSRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_SETENDUSERSTATUSRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_SUBSCRIBEBILLTOOSSRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_SUBSCRIBEBILLTOOSSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,16 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT SetEnduserStatusResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT SubscribeBillToOSSResult : public ServiceResult
 			{
 			public:
 
 
-				SetEnduserStatusResult();
-				explicit SetEnduserStatusResult(const std::string &payload);
-				~SetEnduserStatusResult();
+				SubscribeBillToOSSResult();
+				explicit SubscribeBillToOSSResult(const std::string &payload);
+				~SubscribeBillToOSSResult();
 				std::string getMessage()const;
-				bool getData()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -46,7 +45,6 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				bool data_;
 				std::string code_;
 				bool success_;
 
@@ -54,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_SETENDUSERSTATUSRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_SUBSCRIBEBILLTOOSSRESULT_H_

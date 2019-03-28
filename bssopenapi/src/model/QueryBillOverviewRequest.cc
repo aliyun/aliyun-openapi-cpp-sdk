@@ -33,7 +33,7 @@ std::string QueryBillOverviewRequest::getProductCode()const
 void QueryBillOverviewRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", productCode);
 }
 
 std::string QueryBillOverviewRequest::getSubscriptionType()const
@@ -44,7 +44,7 @@ std::string QueryBillOverviewRequest::getSubscriptionType()const
 void QueryBillOverviewRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
 std::string QueryBillOverviewRequest::getBillingCycle()const
@@ -55,7 +55,7 @@ std::string QueryBillOverviewRequest::getBillingCycle()const
 void QueryBillOverviewRequest::setBillingCycle(const std::string& billingCycle)
 {
 	billingCycle_ = billingCycle;
-	setParameter("BillingCycle", billingCycle);
+	setCoreParameter("BillingCycle", billingCycle);
 }
 
 std::string QueryBillOverviewRequest::getProductType()const
@@ -66,6 +66,6 @@ std::string QueryBillOverviewRequest::getProductType()const
 void QueryBillOverviewRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setParameter("ProductType", productType);
+	setCoreParameter("ProductType", productType);
 }
 

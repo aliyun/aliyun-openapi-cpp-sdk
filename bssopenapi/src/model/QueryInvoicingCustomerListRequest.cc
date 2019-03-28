@@ -33,7 +33,7 @@ long QueryInvoicingCustomerListRequest::getCallerBid()const
 void QueryInvoicingCustomerListRequest::setCallerBid(long callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long QueryInvoicingCustomerListRequest::getOwnerId()const
@@ -44,7 +44,7 @@ long QueryInvoicingCustomerListRequest::getOwnerId()const
 void QueryInvoicingCustomerListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long QueryInvoicingCustomerListRequest::getCallerUid()const
@@ -55,6 +55,6 @@ long QueryInvoicingCustomerListRequest::getCallerUid()const
 void QueryInvoicingCustomerListRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

@@ -33,7 +33,7 @@ std::string QueryResourcePackageInstancesRequest::getExpiryTimeEnd()const
 void QueryResourcePackageInstancesRequest::setExpiryTimeEnd(const std::string& expiryTimeEnd)
 {
 	expiryTimeEnd_ = expiryTimeEnd;
-	setParameter("ExpiryTimeEnd", expiryTimeEnd);
+	setCoreParameter("ExpiryTimeEnd", expiryTimeEnd);
 }
 
 std::string QueryResourcePackageInstancesRequest::getProductCode()const
@@ -44,7 +44,7 @@ std::string QueryResourcePackageInstancesRequest::getProductCode()const
 void QueryResourcePackageInstancesRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", productCode);
 }
 
 int QueryResourcePackageInstancesRequest::getPageSize()const
@@ -55,7 +55,7 @@ int QueryResourcePackageInstancesRequest::getPageSize()const
 void QueryResourcePackageInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long QueryResourcePackageInstancesRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long QueryResourcePackageInstancesRequest::getOwnerId()const
 void QueryResourcePackageInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryResourcePackageInstancesRequest::getExpiryTimeStart()const
@@ -77,7 +77,7 @@ std::string QueryResourcePackageInstancesRequest::getExpiryTimeStart()const
 void QueryResourcePackageInstancesRequest::setExpiryTimeStart(const std::string& expiryTimeStart)
 {
 	expiryTimeStart_ = expiryTimeStart;
-	setParameter("ExpiryTimeStart", expiryTimeStart);
+	setCoreParameter("ExpiryTimeStart", expiryTimeStart);
 }
 
 int QueryResourcePackageInstancesRequest::getPageNum()const
@@ -88,6 +88,6 @@ int QueryResourcePackageInstancesRequest::getPageNum()const
 void QueryResourcePackageInstancesRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

@@ -33,7 +33,7 @@ std::string ModifyInstanceRequest::getProductCode()const
 void ModifyInstanceRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", productCode);
 }
 
 std::string ModifyInstanceRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ModifyInstanceRequest::getInstanceId()const
 void ModifyInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyInstanceRequest::getSubscriptionType()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceRequest::getSubscriptionType()const
 void ModifyInstanceRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
 std::string ModifyInstanceRequest::getModifyType()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceRequest::getModifyType()const
 void ModifyInstanceRequest::setModifyType(const std::string& modifyType)
 {
 	modifyType_ = modifyType;
-	setParameter("ModifyType", modifyType);
+	setCoreParameter("ModifyType", modifyType);
 }
 
 std::vector<ModifyInstanceRequest::Parameter> ModifyInstanceRequest::getParameter()const
@@ -81,8 +81,8 @@ void ModifyInstanceRequest::setParameter(const std::vector<Parameter>& parameter
 	for(int i = 0; i!= parameter.size(); i++)	{
 		auto obj = parameter.at(i);
 		std::string str ="Parameter."+ std::to_string(i);
-		setParameter(str + ".Code", obj.code);
-		setParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Code", obj.code);
+		setCoreParameter(str + ".Value", obj.value);
 	}
 }
 
@@ -94,7 +94,7 @@ long ModifyInstanceRequest::getOwnerId()const
 void ModifyInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyInstanceRequest::getProductType()const
@@ -105,6 +105,6 @@ std::string ModifyInstanceRequest::getProductType()const
 void ModifyInstanceRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setParameter("ProductType", productType);
+	setCoreParameter("ProductType", productType);
 }
 

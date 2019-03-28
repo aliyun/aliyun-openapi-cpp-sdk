@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/bssopenapi/model/UnsubscribeExportToOSSResult.h>
+#include <alibabacloud/bssopenapi/model/UnsubscribeBillToOSSResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::BssOpenApi;
 using namespace AlibabaCloud::BssOpenApi::Model;
 
-UnsubscribeExportToOSSResult::UnsubscribeExportToOSSResult() :
+UnsubscribeBillToOSSResult::UnsubscribeBillToOSSResult() :
 	ServiceResult()
 {}
 
-UnsubscribeExportToOSSResult::UnsubscribeExportToOSSResult(const std::string &payload) :
+UnsubscribeBillToOSSResult::UnsubscribeBillToOSSResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UnsubscribeExportToOSSResult::~UnsubscribeExportToOSSResult()
+UnsubscribeBillToOSSResult::~UnsubscribeBillToOSSResult()
 {}
 
-void UnsubscribeExportToOSSResult::parse(const std::string &payload)
+void UnsubscribeBillToOSSResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -49,17 +49,17 @@ void UnsubscribeExportToOSSResult::parse(const std::string &payload)
 
 }
 
-std::string UnsubscribeExportToOSSResult::getMessage()const
+std::string UnsubscribeBillToOSSResult::getMessage()const
 {
 	return message_;
 }
 
-std::string UnsubscribeExportToOSSResult::getCode()const
+std::string UnsubscribeBillToOSSResult::getCode()const
 {
 	return code_;
 }
 
-bool UnsubscribeExportToOSSResult::getSuccess()const
+bool UnsubscribeBillToOSSResult::getSuccess()const
 {
 	return success_;
 }

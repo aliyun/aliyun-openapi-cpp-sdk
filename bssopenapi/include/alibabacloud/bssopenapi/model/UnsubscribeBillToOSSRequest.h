@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTARESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTARESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_UNSUBSCRIBEBILLTOOSSREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_UNSUBSCRIBEBILLTOOSSREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/bssopenapi/BssOpenApiExport.h>
 
 namespace AlibabaCloud
@@ -29,29 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryAvaliableQuotaResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT UnsubscribeBillToOSSRequest : public RpcServiceRequest
 			{
+
 			public:
+				UnsubscribeBillToOSSRequest();
+				~UnsubscribeBillToOSSRequest();
 
+				std::string getSubscribeType()const;
+				void setSubscribeType(const std::string& subscribeType);
 
-				QueryAvaliableQuotaResult();
-				explicit QueryAvaliableQuotaResult(const std::string &payload);
-				~QueryAvaliableQuotaResult();
-				std::string getMessage()const;
-				std::string getData()const;
-				std::string getCode()const;
-				bool getSuccess()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string message_;
-				std::string data_;
-				std::string code_;
-				bool success_;
+            private:
+				std::string subscribeType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTARESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_UNSUBSCRIBEBILLTOOSSREQUEST_H_

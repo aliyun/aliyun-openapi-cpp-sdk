@@ -33,7 +33,7 @@ std::string QueryPrepaidCardsRequest::getExpiryTimeEnd()const
 void QueryPrepaidCardsRequest::setExpiryTimeEnd(const std::string& expiryTimeEnd)
 {
 	expiryTimeEnd_ = expiryTimeEnd;
-	setParameter("ExpiryTimeEnd", expiryTimeEnd);
+	setCoreParameter("ExpiryTimeEnd", expiryTimeEnd);
 }
 
 std::string QueryPrepaidCardsRequest::getExpiryTimeStart()const
@@ -44,7 +44,7 @@ std::string QueryPrepaidCardsRequest::getExpiryTimeStart()const
 void QueryPrepaidCardsRequest::setExpiryTimeStart(const std::string& expiryTimeStart)
 {
 	expiryTimeStart_ = expiryTimeStart;
-	setParameter("ExpiryTimeStart", expiryTimeStart);
+	setCoreParameter("ExpiryTimeStart", expiryTimeStart);
 }
 
 bool QueryPrepaidCardsRequest::getEffectiveOrNot()const
@@ -55,6 +55,6 @@ bool QueryPrepaidCardsRequest::getEffectiveOrNot()const
 void QueryPrepaidCardsRequest::setEffectiveOrNot(bool effectiveOrNot)
 {
 	effectiveOrNot_ = effectiveOrNot;
-	setParameter("EffectiveOrNot", effectiveOrNot ? "true" : "false");
+	setCoreParameter("EffectiveOrNot", effectiveOrNot ? "true" : "false");
 }
 

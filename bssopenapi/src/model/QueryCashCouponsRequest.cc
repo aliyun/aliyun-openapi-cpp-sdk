@@ -33,7 +33,7 @@ std::string QueryCashCouponsRequest::getExpiryTimeEnd()const
 void QueryCashCouponsRequest::setExpiryTimeEnd(const std::string& expiryTimeEnd)
 {
 	expiryTimeEnd_ = expiryTimeEnd;
-	setParameter("ExpiryTimeEnd", expiryTimeEnd);
+	setCoreParameter("ExpiryTimeEnd", expiryTimeEnd);
 }
 
 std::string QueryCashCouponsRequest::getExpiryTimeStart()const
@@ -44,7 +44,7 @@ std::string QueryCashCouponsRequest::getExpiryTimeStart()const
 void QueryCashCouponsRequest::setExpiryTimeStart(const std::string& expiryTimeStart)
 {
 	expiryTimeStart_ = expiryTimeStart;
-	setParameter("ExpiryTimeStart", expiryTimeStart);
+	setCoreParameter("ExpiryTimeStart", expiryTimeStart);
 }
 
 bool QueryCashCouponsRequest::getEffectiveOrNot()const
@@ -55,6 +55,6 @@ bool QueryCashCouponsRequest::getEffectiveOrNot()const
 void QueryCashCouponsRequest::setEffectiveOrNot(bool effectiveOrNot)
 {
 	effectiveOrNot_ = effectiveOrNot;
-	setParameter("EffectiveOrNot", effectiveOrNot ? "true" : "false");
+	setCoreParameter("EffectiveOrNot", effectiveOrNot ? "true" : "false");
 }
 

@@ -14,59 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/bssopenapi/model/SetUserAlarmThresholdResult.h>
+#include <alibabacloud/bssopenapi/model/SubscribeBillToOSSResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::BssOpenApi;
 using namespace AlibabaCloud::BssOpenApi::Model;
 
-SetUserAlarmThresholdResult::SetUserAlarmThresholdResult() :
+SubscribeBillToOSSResult::SubscribeBillToOSSResult() :
 	ServiceResult()
 {}
 
-SetUserAlarmThresholdResult::SetUserAlarmThresholdResult(const std::string &payload) :
+SubscribeBillToOSSResult::SubscribeBillToOSSResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetUserAlarmThresholdResult::~SetUserAlarmThresholdResult()
+SubscribeBillToOSSResult::~SubscribeBillToOSSResult()
 {}
 
-void SetUserAlarmThresholdResult::parse(const std::string &payload)
+void SubscribeBillToOSSResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString() == "true";
 
 }
 
-std::string SetUserAlarmThresholdResult::getMessage()const
+std::string SubscribeBillToOSSResult::getMessage()const
 {
 	return message_;
 }
 
-bool SetUserAlarmThresholdResult::getData()const
-{
-	return data_;
-}
-
-std::string SetUserAlarmThresholdResult::getCode()const
+std::string SubscribeBillToOSSResult::getCode()const
 {
 	return code_;
 }
 
-bool SetUserAlarmThresholdResult::getSuccess()const
+bool SubscribeBillToOSSResult::getSuccess()const
 {
 	return success_;
 }

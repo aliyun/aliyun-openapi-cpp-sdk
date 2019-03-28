@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/bssopenapi/model/QueryPriceRequest.h>
+#include <alibabacloud/bssopenapi/model/UnsubscribeBillToOSSRequest.h>
 
-using AlibabaCloud::BssOpenApi::Model::QueryPriceRequest;
+using AlibabaCloud::BssOpenApi::Model::UnsubscribeBillToOSSRequest;
 
-QueryPriceRequest::QueryPriceRequest() :
-	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryPrice")
+UnsubscribeBillToOSSRequest::UnsubscribeBillToOSSRequest() :
+	RpcServiceRequest("bssopenapi", "2017-12-14", "UnsubscribeBillToOSS")
 {}
 
-QueryPriceRequest::~QueryPriceRequest()
+UnsubscribeBillToOSSRequest::~UnsubscribeBillToOSSRequest()
 {}
 
-std::string QueryPriceRequest::getParamStr()const
+std::string UnsubscribeBillToOSSRequest::getSubscribeType()const
 {
-	return paramStr_;
+	return subscribeType_;
 }
 
-void QueryPriceRequest::setParamStr(const std::string& paramStr)
+void UnsubscribeBillToOSSRequest::setSubscribeType(const std::string& subscribeType)
 {
-	paramStr_ = paramStr;
-	setParameter("ParamStr", paramStr);
+	subscribeType_ = subscribeType;
+	setCoreParameter("SubscribeType", subscribeType);
 }
 

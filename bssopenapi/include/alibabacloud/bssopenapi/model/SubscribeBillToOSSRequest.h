@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTBOOKLISTREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTBOOKLISTREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_SUBSCRIBEBILLTOOSSREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_SUBSCRIBEBILLTOOSSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryAccountBookListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT SubscribeBillToOSSRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryAccountBookListRequest();
-				~QueryAccountBookListRequest();
+				SubscribeBillToOSSRequest();
+				~SubscribeBillToOSSRequest();
 
-				long getUid()const;
-				void setUid(long uid);
-				std::string getItemCodes()const;
-				void setItemCodes(const std::string& itemCodes);
-				std::string getBid()const;
-				void setBid(const std::string& bid);
+				std::string getSubscribeType()const;
+				void setSubscribeType(const std::string& subscribeType);
+				std::string getSubscribeBucket()const;
+				void setSubscribeBucket(const std::string& subscribeBucket);
 
             private:
-				long uid_;
-				std::string itemCodes_;
-				std::string bid_;
+				std::string subscribeType_;
+				std::string subscribeBucket_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTBOOKLISTREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_SUBSCRIBEBILLTOOSSREQUEST_H_

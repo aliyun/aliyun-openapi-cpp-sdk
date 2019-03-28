@@ -33,7 +33,7 @@ std::string QuerySettlementBillRequest::getProductCode()const
 void QuerySettlementBillRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", productCode);
 }
 
 bool QuerySettlementBillRequest::getIsHideZeroCharge()const
@@ -44,7 +44,7 @@ bool QuerySettlementBillRequest::getIsHideZeroCharge()const
 void QuerySettlementBillRequest::setIsHideZeroCharge(bool isHideZeroCharge)
 {
 	isHideZeroCharge_ = isHideZeroCharge;
-	setParameter("IsHideZeroCharge", isHideZeroCharge ? "true" : "false");
+	setCoreParameter("IsHideZeroCharge", isHideZeroCharge ? "true" : "false");
 }
 
 std::string QuerySettlementBillRequest::getSubscriptionType()const
@@ -55,7 +55,7 @@ std::string QuerySettlementBillRequest::getSubscriptionType()const
 void QuerySettlementBillRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
 int QuerySettlementBillRequest::getPageSize()const
@@ -66,7 +66,7 @@ int QuerySettlementBillRequest::getPageSize()const
 void QuerySettlementBillRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QuerySettlementBillRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string QuerySettlementBillRequest::getEndTime()const
 void QuerySettlementBillRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string QuerySettlementBillRequest::getBillingCycle()const
@@ -88,7 +88,7 @@ std::string QuerySettlementBillRequest::getBillingCycle()const
 void QuerySettlementBillRequest::setBillingCycle(const std::string& billingCycle)
 {
 	billingCycle_ = billingCycle;
-	setParameter("BillingCycle", billingCycle);
+	setCoreParameter("BillingCycle", billingCycle);
 }
 
 std::string QuerySettlementBillRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string QuerySettlementBillRequest::getStartTime()const
 void QuerySettlementBillRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long QuerySettlementBillRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long QuerySettlementBillRequest::getOwnerId()const
 void QuerySettlementBillRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int QuerySettlementBillRequest::getPageNum()const
@@ -121,7 +121,7 @@ int QuerySettlementBillRequest::getPageNum()const
 void QuerySettlementBillRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QuerySettlementBillRequest::getType()const
@@ -132,7 +132,7 @@ std::string QuerySettlementBillRequest::getType()const
 void QuerySettlementBillRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string QuerySettlementBillRequest::getProductType()const
@@ -143,6 +143,6 @@ std::string QuerySettlementBillRequest::getProductType()const
 void QuerySettlementBillRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setParameter("ProductType", productType);
+	setCoreParameter("ProductType", productType);
 }
 

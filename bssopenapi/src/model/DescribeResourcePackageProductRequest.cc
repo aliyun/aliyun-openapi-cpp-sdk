@@ -33,6 +33,6 @@ std::string DescribeResourcePackageProductRequest::getProductCode()const
 void DescribeResourcePackageProductRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", productCode);
 }
 
