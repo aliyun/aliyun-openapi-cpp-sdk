@@ -1,17 +1,24 @@
-# 阿里云开发者C++工具套件
+[English](./README.md) | 简体中文
 
-[![Build Status](https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk)
-[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk)
 
-欢迎使用阿里云开发者工具套件（SDK）。
+<p align="center">
+<a href="https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/Aliyun.svg"></a>
+</p>
 
-适用于阿里云的 C++ SDK 提供了一组现代化的 C++（C++ 11 或更高版本）接口，让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
+<h1 align="center">Alibaba Cloud SDK for C++</h1>
+
+<p align="center">
+<a href="https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk"><img src="https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk.svg?branch=master" alt="Travis Build Status"></a>
+<a href="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk/branch/master/graph/badge.svg" alt="codecov"></a>
+</p>
+
+
+欢迎使用阿里云开发者工具套件（SDK）。阿里云 C++ SDK 让您不用复杂编程即可访问云服务器、云监控等阿里云服务。这里向您介绍如何获取阿里云 C++ SDK 并开始调用。
 
 如果您在使用SDK的过程中遇到任何问题，欢迎前往[阿里云SDK问答社区](https://yq.aliyun.com/tags/type_ask-tagid_23350)提问，提问前请阅读[提问引导](https://help.aliyun.com/document_detail/93957.html)。亦可在当前 GitHub [提交 Issues](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new)。
 
-完成本文档中的操作开始使用 C++ SDK。
 
-## 前提条件
+## 环境要求
 
 在使用 C++ SDK 前，确保您已经：
 
@@ -28,7 +35,7 @@
 * 安装 CMake 3.0 或以上版本
 * 建议 4G 或以上内存
 
-## 从源代码构建 SDK
+## 安装 C++ SDK (从源代码构建)
 
 1. 从 GitHub 下载或 Git 克隆 [aliyun-openapi-cpp-sdk](https://github.com/aliyun/aliyun-openapi-cpp-sdk)
 
@@ -110,7 +117,7 @@ msbuild INSTALL.vcxproj
 
 **注意：请以管理员身份运行 Visual Studio，否则无法安装 SDK**
 
-## 如何使用 C++ SDK
+## 快速使用
 
 在调用 C++ SDK时，您首先需要配置预处理器定义 ALIBABACLOUD_SHARED 以引用阿里云 C++ SDK 的共享库，然后通过创建 Client 实例提供身份验证，并指定云服务的地域，然后发送API请求。
 
@@ -234,8 +241,18 @@ int main(int argc, char** argv) {
 ```
 
 
+**更多 [例程](https://github.com/aliyun/aliyun-openapi-cpp-sdk/tree/master/examples)**
 
-**更多 [例程](https://github.com/aliyun/aliyun-openapi-cpp-sdk/tree/master/examples) 请(参考)[https://github.com/aliyun/aliyun-openapi-cpp-sdk/blob/master/examples/README_zh.md]**
+## 问题
+[提交 Issue](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new/choose), 不符合指南的问题可能会立即关闭。
 
-## 许可协议
-请参阅 LICENSE 文件（Apache 2.0 许可证）。
+## 发行说明
+每个版本的详细更改记录在[发行说明](CHANGELOG)中。
+
+## 贡献
+提交 Pull Request 之前请阅读[贡献指南](CONTRIBUTING.md)。
+
+## 许可证
+[Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+版权所有 1999-2019 阿里巴巴集团
