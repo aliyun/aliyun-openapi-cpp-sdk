@@ -33,6 +33,6 @@ long OnsInstanceInServiceListRequest::getPreventCache()const
 void OnsInstanceInServiceListRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 

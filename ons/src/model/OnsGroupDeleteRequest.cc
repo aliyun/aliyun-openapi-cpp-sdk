@@ -33,7 +33,7 @@ long OnsGroupDeleteRequest::getPreventCache()const
 void OnsGroupDeleteRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsGroupDeleteRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsGroupDeleteRequest::getInstanceId()const
 void OnsGroupDeleteRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsGroupDeleteRequest::getGroupId()const
@@ -55,6 +55,6 @@ std::string OnsGroupDeleteRequest::getGroupId()const
 void OnsGroupDeleteRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 

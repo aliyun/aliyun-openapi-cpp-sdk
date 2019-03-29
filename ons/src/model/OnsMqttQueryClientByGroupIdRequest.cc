@@ -33,7 +33,7 @@ long OnsMqttQueryClientByGroupIdRequest::getPreventCache()const
 void OnsMqttQueryClientByGroupIdRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsMqttQueryClientByGroupIdRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsMqttQueryClientByGroupIdRequest::getInstanceId()const
 void OnsMqttQueryClientByGroupIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsMqttQueryClientByGroupIdRequest::getGroupId()const
@@ -55,6 +55,6 @@ std::string OnsMqttQueryClientByGroupIdRequest::getGroupId()const
 void OnsMqttQueryClientByGroupIdRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 

@@ -33,7 +33,7 @@ long OnsGroupConsumerUpdateRequest::getPreventCache()const
 void OnsGroupConsumerUpdateRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 bool OnsGroupConsumerUpdateRequest::getReadEnable()const
@@ -44,7 +44,7 @@ bool OnsGroupConsumerUpdateRequest::getReadEnable()const
 void OnsGroupConsumerUpdateRequest::setReadEnable(bool readEnable)
 {
 	readEnable_ = readEnable;
-	setParameter("ReadEnable", readEnable ? "true" : "false");
+	setCoreParameter("ReadEnable", readEnable ? "true" : "false");
 }
 
 std::string OnsGroupConsumerUpdateRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string OnsGroupConsumerUpdateRequest::getInstanceId()const
 void OnsGroupConsumerUpdateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsGroupConsumerUpdateRequest::getGroupId()const
@@ -66,6 +66,6 @@ std::string OnsGroupConsumerUpdateRequest::getGroupId()const
 void OnsGroupConsumerUpdateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 

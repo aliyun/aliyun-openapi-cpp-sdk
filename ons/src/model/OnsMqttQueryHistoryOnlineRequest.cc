@@ -33,7 +33,7 @@ long OnsMqttQueryHistoryOnlineRequest::getPreventCache()const
 void OnsMqttQueryHistoryOnlineRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsMqttQueryHistoryOnlineRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsMqttQueryHistoryOnlineRequest::getInstanceId()const
 void OnsMqttQueryHistoryOnlineRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsMqttQueryHistoryOnlineRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string OnsMqttQueryHistoryOnlineRequest::getGroupId()const
 void OnsMqttQueryHistoryOnlineRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 long OnsMqttQueryHistoryOnlineRequest::getEndTime()const
@@ -66,7 +66,7 @@ long OnsMqttQueryHistoryOnlineRequest::getEndTime()const
 void OnsMqttQueryHistoryOnlineRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsMqttQueryHistoryOnlineRequest::getBeginTime()const
@@ -77,6 +77,6 @@ long OnsMqttQueryHistoryOnlineRequest::getBeginTime()const
 void OnsMqttQueryHistoryOnlineRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setParameter("BeginTime", std::to_string(beginTime));
+	setCoreParameter("BeginTime", std::to_string(beginTime));
 }
 

@@ -33,7 +33,7 @@ long OnsConsumerAccumulateRequest::getPreventCache()const
 void OnsConsumerAccumulateRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsConsumerAccumulateRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsConsumerAccumulateRequest::getInstanceId()const
 void OnsConsumerAccumulateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsConsumerAccumulateRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string OnsConsumerAccumulateRequest::getGroupId()const
 void OnsConsumerAccumulateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 bool OnsConsumerAccumulateRequest::getDetail()const
@@ -66,6 +66,6 @@ bool OnsConsumerAccumulateRequest::getDetail()const
 void OnsConsumerAccumulateRequest::setDetail(bool detail)
 {
 	detail_ = detail;
-	setParameter("Detail", detail ? "true" : "false");
+	setCoreParameter("Detail", detail ? "true" : "false");
 }
 

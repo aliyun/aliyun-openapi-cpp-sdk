@@ -33,7 +33,7 @@ long OnsMessageSendRequest::getPreventCache()const
 void OnsMessageSendRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsMessageSendRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsMessageSendRequest::getInstanceId()const
 void OnsMessageSendRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsMessageSendRequest::getTopic()const
@@ -55,7 +55,7 @@ std::string OnsMessageSendRequest::getTopic()const
 void OnsMessageSendRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 
 std::string OnsMessageSendRequest::getTag()const
@@ -66,7 +66,7 @@ std::string OnsMessageSendRequest::getTag()const
 void OnsMessageSendRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setParameter("Tag", tag);
+	setCoreParameter("Tag", tag);
 }
 
 std::string OnsMessageSendRequest::getMessage()const
@@ -77,7 +77,7 @@ std::string OnsMessageSendRequest::getMessage()const
 void OnsMessageSendRequest::setMessage(const std::string& message)
 {
 	message_ = message;
-	setParameter("Message", message);
+	setCoreParameter("Message", message);
 }
 
 std::string OnsMessageSendRequest::getKey()const
@@ -88,6 +88,6 @@ std::string OnsMessageSendRequest::getKey()const
 void OnsMessageSendRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setParameter("Key", key);
+	setCoreParameter("Key", key);
 }
 

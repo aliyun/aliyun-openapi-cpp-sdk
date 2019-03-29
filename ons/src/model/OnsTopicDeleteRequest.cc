@@ -33,7 +33,7 @@ long OnsTopicDeleteRequest::getPreventCache()const
 void OnsTopicDeleteRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsTopicDeleteRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsTopicDeleteRequest::getInstanceId()const
 void OnsTopicDeleteRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsTopicDeleteRequest::getTopic()const
@@ -55,6 +55,6 @@ std::string OnsTopicDeleteRequest::getTopic()const
 void OnsTopicDeleteRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 

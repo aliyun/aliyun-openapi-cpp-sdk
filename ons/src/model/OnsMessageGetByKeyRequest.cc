@@ -33,7 +33,7 @@ long OnsMessageGetByKeyRequest::getPreventCache()const
 void OnsMessageGetByKeyRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsMessageGetByKeyRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsMessageGetByKeyRequest::getInstanceId()const
 void OnsMessageGetByKeyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsMessageGetByKeyRequest::getTopic()const
@@ -55,7 +55,7 @@ std::string OnsMessageGetByKeyRequest::getTopic()const
 void OnsMessageGetByKeyRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 
 std::string OnsMessageGetByKeyRequest::getKey()const
@@ -66,6 +66,6 @@ std::string OnsMessageGetByKeyRequest::getKey()const
 void OnsMessageGetByKeyRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setParameter("Key", key);
+	setCoreParameter("Key", key);
 }
 

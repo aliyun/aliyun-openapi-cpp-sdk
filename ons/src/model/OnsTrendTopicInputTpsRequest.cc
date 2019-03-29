@@ -33,7 +33,7 @@ long OnsTrendTopicInputTpsRequest::getPreventCache()const
 void OnsTrendTopicInputTpsRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 long OnsTrendTopicInputTpsRequest::getPeriod()const
@@ -44,7 +44,7 @@ long OnsTrendTopicInputTpsRequest::getPeriod()const
 void OnsTrendTopicInputTpsRequest::setPeriod(long period)
 {
 	period_ = period;
-	setParameter("Period", std::to_string(period));
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string OnsTrendTopicInputTpsRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string OnsTrendTopicInputTpsRequest::getInstanceId()const
 void OnsTrendTopicInputTpsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsTrendTopicInputTpsRequest::getTopic()const
@@ -66,7 +66,7 @@ std::string OnsTrendTopicInputTpsRequest::getTopic()const
 void OnsTrendTopicInputTpsRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 
 long OnsTrendTopicInputTpsRequest::getEndTime()const
@@ -77,7 +77,7 @@ long OnsTrendTopicInputTpsRequest::getEndTime()const
 void OnsTrendTopicInputTpsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsTrendTopicInputTpsRequest::getBeginTime()const
@@ -88,7 +88,7 @@ long OnsTrendTopicInputTpsRequest::getBeginTime()const
 void OnsTrendTopicInputTpsRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setParameter("BeginTime", std::to_string(beginTime));
+	setCoreParameter("BeginTime", std::to_string(beginTime));
 }
 
 int OnsTrendTopicInputTpsRequest::getType()const
@@ -99,6 +99,6 @@ int OnsTrendTopicInputTpsRequest::getType()const
 void OnsTrendTopicInputTpsRequest::setType(int type)
 {
 	type_ = type;
-	setParameter("Type", std::to_string(type));
+	setCoreParameter("Type", std::to_string(type));
 }
 

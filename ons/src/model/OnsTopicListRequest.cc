@@ -33,7 +33,7 @@ long OnsTopicListRequest::getPreventCache()const
 void OnsTopicListRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsTopicListRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsTopicListRequest::getInstanceId()const
 void OnsTopicListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsTopicListRequest::getTopic()const
@@ -55,6 +55,6 @@ std::string OnsTopicListRequest::getTopic()const
 void OnsTopicListRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 

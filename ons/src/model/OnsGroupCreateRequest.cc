@@ -33,7 +33,7 @@ long OnsGroupCreateRequest::getPreventCache()const
 void OnsGroupCreateRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsGroupCreateRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsGroupCreateRequest::getInstanceId()const
 void OnsGroupCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsGroupCreateRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string OnsGroupCreateRequest::getGroupId()const
 void OnsGroupCreateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsGroupCreateRequest::getRemark()const
@@ -66,6 +66,6 @@ std::string OnsGroupCreateRequest::getRemark()const
 void OnsGroupCreateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setParameter("Remark", remark);
+	setCoreParameter("Remark", remark);
 }
 

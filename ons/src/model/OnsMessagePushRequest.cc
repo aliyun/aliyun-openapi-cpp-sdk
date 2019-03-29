@@ -33,7 +33,7 @@ long OnsMessagePushRequest::getPreventCache()const
 void OnsMessagePushRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsMessagePushRequest::getClientId()const
@@ -44,7 +44,7 @@ std::string OnsMessagePushRequest::getClientId()const
 void OnsMessagePushRequest::setClientId(const std::string& clientId)
 {
 	clientId_ = clientId;
-	setParameter("ClientId", clientId);
+	setCoreParameter("ClientId", clientId);
 }
 
 std::string OnsMessagePushRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string OnsMessagePushRequest::getInstanceId()const
 void OnsMessagePushRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsMessagePushRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string OnsMessagePushRequest::getGroupId()const
 void OnsMessagePushRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsMessagePushRequest::getMsgId()const
@@ -77,7 +77,7 @@ std::string OnsMessagePushRequest::getMsgId()const
 void OnsMessagePushRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
-	setParameter("MsgId", msgId);
+	setCoreParameter("MsgId", msgId);
 }
 
 std::string OnsMessagePushRequest::getTopic()const
@@ -88,6 +88,6 @@ std::string OnsMessagePushRequest::getTopic()const
 void OnsMessagePushRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 

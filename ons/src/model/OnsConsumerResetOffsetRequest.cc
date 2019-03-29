@@ -33,7 +33,7 @@ long OnsConsumerResetOffsetRequest::getPreventCache()const
 void OnsConsumerResetOffsetRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsConsumerResetOffsetRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsConsumerResetOffsetRequest::getInstanceId()const
 void OnsConsumerResetOffsetRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsConsumerResetOffsetRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string OnsConsumerResetOffsetRequest::getGroupId()const
 void OnsConsumerResetOffsetRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsConsumerResetOffsetRequest::getTopic()const
@@ -66,7 +66,7 @@ std::string OnsConsumerResetOffsetRequest::getTopic()const
 void OnsConsumerResetOffsetRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 
 long OnsConsumerResetOffsetRequest::getResetTimestamp()const
@@ -77,7 +77,7 @@ long OnsConsumerResetOffsetRequest::getResetTimestamp()const
 void OnsConsumerResetOffsetRequest::setResetTimestamp(long resetTimestamp)
 {
 	resetTimestamp_ = resetTimestamp;
-	setParameter("ResetTimestamp", std::to_string(resetTimestamp));
+	setCoreParameter("ResetTimestamp", std::to_string(resetTimestamp));
 }
 
 int OnsConsumerResetOffsetRequest::getType()const
@@ -88,6 +88,6 @@ int OnsConsumerResetOffsetRequest::getType()const
 void OnsConsumerResetOffsetRequest::setType(int type)
 {
 	type_ = type;
-	setParameter("Type", std::to_string(type));
+	setCoreParameter("Type", std::to_string(type));
 }
 

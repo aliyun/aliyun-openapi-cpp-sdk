@@ -33,7 +33,7 @@ long OnsInstanceCreateRequest::getPreventCache()const
 void OnsInstanceCreateRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsInstanceCreateRequest::getInstanceName()const
@@ -44,7 +44,7 @@ std::string OnsInstanceCreateRequest::getInstanceName()const
 void OnsInstanceCreateRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", instanceName);
 }
 
 std::string OnsInstanceCreateRequest::getRemark()const
@@ -55,6 +55,6 @@ std::string OnsInstanceCreateRequest::getRemark()const
 void OnsInstanceCreateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setParameter("Remark", remark);
+	setCoreParameter("Remark", remark);
 }
 

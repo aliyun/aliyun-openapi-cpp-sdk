@@ -33,7 +33,7 @@ long OnsConsumerTimeSpanRequest::getPreventCache()const
 void OnsConsumerTimeSpanRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsConsumerTimeSpanRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsConsumerTimeSpanRequest::getInstanceId()const
 void OnsConsumerTimeSpanRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsConsumerTimeSpanRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string OnsConsumerTimeSpanRequest::getGroupId()const
 void OnsConsumerTimeSpanRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsConsumerTimeSpanRequest::getTopic()const
@@ -66,6 +66,6 @@ std::string OnsConsumerTimeSpanRequest::getTopic()const
 void OnsConsumerTimeSpanRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 

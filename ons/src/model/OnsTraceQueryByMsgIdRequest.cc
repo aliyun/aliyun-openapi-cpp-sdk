@@ -33,7 +33,7 @@ long OnsTraceQueryByMsgIdRequest::getPreventCache()const
 void OnsTraceQueryByMsgIdRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsTraceQueryByMsgIdRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsTraceQueryByMsgIdRequest::getInstanceId()const
 void OnsTraceQueryByMsgIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsTraceQueryByMsgIdRequest::getTopic()const
@@ -55,7 +55,7 @@ std::string OnsTraceQueryByMsgIdRequest::getTopic()const
 void OnsTraceQueryByMsgIdRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 
 std::string OnsTraceQueryByMsgIdRequest::getMsgId()const
@@ -66,7 +66,7 @@ std::string OnsTraceQueryByMsgIdRequest::getMsgId()const
 void OnsTraceQueryByMsgIdRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
-	setParameter("MsgId", msgId);
+	setCoreParameter("MsgId", msgId);
 }
 
 long OnsTraceQueryByMsgIdRequest::getEndTime()const
@@ -77,7 +77,7 @@ long OnsTraceQueryByMsgIdRequest::getEndTime()const
 void OnsTraceQueryByMsgIdRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsTraceQueryByMsgIdRequest::getBeginTime()const
@@ -88,6 +88,6 @@ long OnsTraceQueryByMsgIdRequest::getBeginTime()const
 void OnsTraceQueryByMsgIdRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setParameter("BeginTime", std::to_string(beginTime));
+	setCoreParameter("BeginTime", std::to_string(beginTime));
 }
 

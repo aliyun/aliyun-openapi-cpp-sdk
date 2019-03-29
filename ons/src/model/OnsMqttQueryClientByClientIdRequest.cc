@@ -33,7 +33,7 @@ long OnsMqttQueryClientByClientIdRequest::getPreventCache()const
 void OnsMqttQueryClientByClientIdRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsMqttQueryClientByClientIdRequest::getClientId()const
@@ -44,7 +44,7 @@ std::string OnsMqttQueryClientByClientIdRequest::getClientId()const
 void OnsMqttQueryClientByClientIdRequest::setClientId(const std::string& clientId)
 {
 	clientId_ = clientId;
-	setParameter("ClientId", clientId);
+	setCoreParameter("ClientId", clientId);
 }
 
 std::string OnsMqttQueryClientByClientIdRequest::getInstanceId()const
@@ -55,6 +55,6 @@ std::string OnsMqttQueryClientByClientIdRequest::getInstanceId()const
 void OnsMqttQueryClientByClientIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 

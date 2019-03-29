@@ -33,7 +33,7 @@ long OnsWarnCreateRequest::getPreventCache()const
 void OnsWarnCreateRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsWarnCreateRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsWarnCreateRequest::getInstanceId()const
 void OnsWarnCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsWarnCreateRequest::getBlockTime()const
@@ -55,7 +55,7 @@ std::string OnsWarnCreateRequest::getBlockTime()const
 void OnsWarnCreateRequest::setBlockTime(const std::string& blockTime)
 {
 	blockTime_ = blockTime;
-	setParameter("BlockTime", blockTime);
+	setCoreParameter("BlockTime", blockTime);
 }
 
 std::string OnsWarnCreateRequest::getLevel()const
@@ -66,7 +66,7 @@ std::string OnsWarnCreateRequest::getLevel()const
 void OnsWarnCreateRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setParameter("Level", level);
+	setCoreParameter("Level", level);
 }
 
 std::string OnsWarnCreateRequest::getGroupId()const
@@ -77,7 +77,7 @@ std::string OnsWarnCreateRequest::getGroupId()const
 void OnsWarnCreateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsWarnCreateRequest::getDelayTime()const
@@ -88,7 +88,7 @@ std::string OnsWarnCreateRequest::getDelayTime()const
 void OnsWarnCreateRequest::setDelayTime(const std::string& delayTime)
 {
 	delayTime_ = delayTime;
-	setParameter("DelayTime", delayTime);
+	setCoreParameter("DelayTime", delayTime);
 }
 
 std::string OnsWarnCreateRequest::getTopic()const
@@ -99,7 +99,7 @@ std::string OnsWarnCreateRequest::getTopic()const
 void OnsWarnCreateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 
 std::string OnsWarnCreateRequest::getThreshold()const
@@ -110,7 +110,7 @@ std::string OnsWarnCreateRequest::getThreshold()const
 void OnsWarnCreateRequest::setThreshold(const std::string& threshold)
 {
 	threshold_ = threshold;
-	setParameter("Threshold", threshold);
+	setCoreParameter("Threshold", threshold);
 }
 
 std::string OnsWarnCreateRequest::getAlertTime()const
@@ -121,7 +121,7 @@ std::string OnsWarnCreateRequest::getAlertTime()const
 void OnsWarnCreateRequest::setAlertTime(const std::string& alertTime)
 {
 	alertTime_ = alertTime;
-	setParameter("AlertTime", alertTime);
+	setCoreParameter("AlertTime", alertTime);
 }
 
 std::string OnsWarnCreateRequest::getContacts()const
@@ -132,6 +132,6 @@ std::string OnsWarnCreateRequest::getContacts()const
 void OnsWarnCreateRequest::setContacts(const std::string& contacts)
 {
 	contacts_ = contacts;
-	setParameter("Contacts", contacts);
+	setCoreParameter("Contacts", contacts);
 }
 

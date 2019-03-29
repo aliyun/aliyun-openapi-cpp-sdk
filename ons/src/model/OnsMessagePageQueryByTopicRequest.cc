@@ -33,7 +33,7 @@ long OnsMessagePageQueryByTopicRequest::getPreventCache()const
 void OnsMessagePageQueryByTopicRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsMessagePageQueryByTopicRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsMessagePageQueryByTopicRequest::getInstanceId()const
 void OnsMessagePageQueryByTopicRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int OnsMessagePageQueryByTopicRequest::getPageSize()const
@@ -55,7 +55,7 @@ int OnsMessagePageQueryByTopicRequest::getPageSize()const
 void OnsMessagePageQueryByTopicRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string OnsMessagePageQueryByTopicRequest::getTopic()const
@@ -66,7 +66,7 @@ std::string OnsMessagePageQueryByTopicRequest::getTopic()const
 void OnsMessagePageQueryByTopicRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 
 long OnsMessagePageQueryByTopicRequest::getEndTime()const
@@ -77,7 +77,7 @@ long OnsMessagePageQueryByTopicRequest::getEndTime()const
 void OnsMessagePageQueryByTopicRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsMessagePageQueryByTopicRequest::getBeginTime()const
@@ -88,7 +88,7 @@ long OnsMessagePageQueryByTopicRequest::getBeginTime()const
 void OnsMessagePageQueryByTopicRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setParameter("BeginTime", std::to_string(beginTime));
+	setCoreParameter("BeginTime", std::to_string(beginTime));
 }
 
 int OnsMessagePageQueryByTopicRequest::getCurrentPage()const
@@ -99,7 +99,7 @@ int OnsMessagePageQueryByTopicRequest::getCurrentPage()const
 void OnsMessagePageQueryByTopicRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string OnsMessagePageQueryByTopicRequest::getTaskId()const
@@ -110,6 +110,6 @@ std::string OnsMessagePageQueryByTopicRequest::getTaskId()const
 void OnsMessagePageQueryByTopicRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 

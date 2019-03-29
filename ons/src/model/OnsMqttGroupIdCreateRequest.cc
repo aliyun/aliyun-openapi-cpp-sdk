@@ -33,7 +33,7 @@ long OnsMqttGroupIdCreateRequest::getPreventCache()const
 void OnsMqttGroupIdCreateRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsMqttGroupIdCreateRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsMqttGroupIdCreateRequest::getInstanceId()const
 void OnsMqttGroupIdCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsMqttGroupIdCreateRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string OnsMqttGroupIdCreateRequest::getRegionId()const
 void OnsMqttGroupIdCreateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string OnsMqttGroupIdCreateRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string OnsMqttGroupIdCreateRequest::getGroupId()const
 void OnsMqttGroupIdCreateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsMqttGroupIdCreateRequest::getTopic()const
@@ -77,6 +77,6 @@ std::string OnsMqttGroupIdCreateRequest::getTopic()const
 void OnsMqttGroupIdCreateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 

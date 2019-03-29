@@ -33,7 +33,7 @@ long OnsTraceGetResultRequest::getPreventCache()const
 void OnsTraceGetResultRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsTraceGetResultRequest::getQueryId()const
@@ -44,6 +44,6 @@ std::string OnsTraceGetResultRequest::getQueryId()const
 void OnsTraceGetResultRequest::setQueryId(const std::string& queryId)
 {
 	queryId_ = queryId;
-	setParameter("QueryId", queryId);
+	setCoreParameter("QueryId", queryId);
 }
 

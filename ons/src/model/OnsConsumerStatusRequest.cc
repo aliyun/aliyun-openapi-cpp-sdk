@@ -33,7 +33,7 @@ long OnsConsumerStatusRequest::getPreventCache()const
 void OnsConsumerStatusRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsConsumerStatusRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsConsumerStatusRequest::getInstanceId()const
 void OnsConsumerStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 bool OnsConsumerStatusRequest::getNeedJstack()const
@@ -55,7 +55,7 @@ bool OnsConsumerStatusRequest::getNeedJstack()const
 void OnsConsumerStatusRequest::setNeedJstack(bool needJstack)
 {
 	needJstack_ = needJstack;
-	setParameter("NeedJstack", needJstack ? "true" : "false");
+	setCoreParameter("NeedJstack", needJstack ? "true" : "false");
 }
 
 std::string OnsConsumerStatusRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string OnsConsumerStatusRequest::getGroupId()const
 void OnsConsumerStatusRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 bool OnsConsumerStatusRequest::getDetail()const
@@ -77,6 +77,6 @@ bool OnsConsumerStatusRequest::getDetail()const
 void OnsConsumerStatusRequest::setDetail(bool detail)
 {
 	detail_ = detail;
-	setParameter("Detail", detail ? "true" : "false");
+	setCoreParameter("Detail", detail ? "true" : "false");
 }
 

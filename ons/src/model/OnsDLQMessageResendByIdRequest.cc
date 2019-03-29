@@ -33,7 +33,7 @@ long OnsDLQMessageResendByIdRequest::getPreventCache()const
 void OnsDLQMessageResendByIdRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsDLQMessageResendByIdRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsDLQMessageResendByIdRequest::getInstanceId()const
 void OnsDLQMessageResendByIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsDLQMessageResendByIdRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string OnsDLQMessageResendByIdRequest::getGroupId()const
 void OnsDLQMessageResendByIdRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsDLQMessageResendByIdRequest::getMsgId()const
@@ -66,6 +66,6 @@ std::string OnsDLQMessageResendByIdRequest::getMsgId()const
 void OnsDLQMessageResendByIdRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
-	setParameter("MsgId", msgId);
+	setCoreParameter("MsgId", msgId);
 }
 

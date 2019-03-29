@@ -33,7 +33,7 @@ long OnsTopicUpdateRequest::getPreventCache()const
 void OnsTopicUpdateRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsTopicUpdateRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsTopicUpdateRequest::getInstanceId()const
 void OnsTopicUpdateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int OnsTopicUpdateRequest::getPerm()const
@@ -55,7 +55,7 @@ int OnsTopicUpdateRequest::getPerm()const
 void OnsTopicUpdateRequest::setPerm(int perm)
 {
 	perm_ = perm;
-	setParameter("Perm", std::to_string(perm));
+	setCoreParameter("Perm", std::to_string(perm));
 }
 
 std::string OnsTopicUpdateRequest::getTopic()const
@@ -66,6 +66,6 @@ std::string OnsTopicUpdateRequest::getTopic()const
 void OnsTopicUpdateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 

@@ -33,7 +33,7 @@ long OnsMqttQueryMsgTransTrendRequest::getPreventCache()const
 void OnsMqttQueryMsgTransTrendRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsMqttQueryMsgTransTrendRequest::getInstanceId()const
 void OnsMqttQueryMsgTransTrendRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int OnsMqttQueryMsgTransTrendRequest::getQos()const
@@ -55,7 +55,7 @@ int OnsMqttQueryMsgTransTrendRequest::getQos()const
 void OnsMqttQueryMsgTransTrendRequest::setQos(int qos)
 {
 	qos_ = qos;
-	setParameter("Qos", std::to_string(qos));
+	setCoreParameter("Qos", std::to_string(qos));
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getTransType()const
@@ -66,7 +66,7 @@ std::string OnsMqttQueryMsgTransTrendRequest::getTransType()const
 void OnsMqttQueryMsgTransTrendRequest::setTransType(const std::string& transType)
 {
 	transType_ = transType;
-	setParameter("TransType", transType);
+	setCoreParameter("TransType", transType);
 }
 
 long OnsMqttQueryMsgTransTrendRequest::getEndTime()const
@@ -77,7 +77,7 @@ long OnsMqttQueryMsgTransTrendRequest::getEndTime()const
 void OnsMqttQueryMsgTransTrendRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsMqttQueryMsgTransTrendRequest::getBeginTime()const
@@ -88,7 +88,7 @@ long OnsMqttQueryMsgTransTrendRequest::getBeginTime()const
 void OnsMqttQueryMsgTransTrendRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setParameter("BeginTime", std::to_string(beginTime));
+	setCoreParameter("BeginTime", std::to_string(beginTime));
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getTpsType()const
@@ -99,7 +99,7 @@ std::string OnsMqttQueryMsgTransTrendRequest::getTpsType()const
 void OnsMqttQueryMsgTransTrendRequest::setTpsType(const std::string& tpsType)
 {
 	tpsType_ = tpsType;
-	setParameter("TpsType", tpsType);
+	setCoreParameter("TpsType", tpsType);
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getParentTopic()const
@@ -110,7 +110,7 @@ std::string OnsMqttQueryMsgTransTrendRequest::getParentTopic()const
 void OnsMqttQueryMsgTransTrendRequest::setParentTopic(const std::string& parentTopic)
 {
 	parentTopic_ = parentTopic;
-	setParameter("ParentTopic", parentTopic);
+	setCoreParameter("ParentTopic", parentTopic);
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getMsgType()const
@@ -121,7 +121,7 @@ std::string OnsMqttQueryMsgTransTrendRequest::getMsgType()const
 void OnsMqttQueryMsgTransTrendRequest::setMsgType(const std::string& msgType)
 {
 	msgType_ = msgType;
-	setParameter("MsgType", msgType);
+	setCoreParameter("MsgType", msgType);
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getSubTopic()const
@@ -132,6 +132,6 @@ std::string OnsMqttQueryMsgTransTrendRequest::getSubTopic()const
 void OnsMqttQueryMsgTransTrendRequest::setSubTopic(const std::string& subTopic)
 {
 	subTopic_ = subTopic;
-	setParameter("SubTopic", subTopic);
+	setCoreParameter("SubTopic", subTopic);
 }
 

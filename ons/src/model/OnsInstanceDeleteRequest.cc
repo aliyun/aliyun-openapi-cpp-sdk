@@ -33,7 +33,7 @@ long OnsInstanceDeleteRequest::getPreventCache()const
 void OnsInstanceDeleteRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsInstanceDeleteRequest::getInstanceId()const
@@ -44,6 +44,6 @@ std::string OnsInstanceDeleteRequest::getInstanceId()const
 void OnsInstanceDeleteRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 

@@ -33,7 +33,7 @@ long OnsWarnDeleteRequest::getPreventCache()const
 void OnsWarnDeleteRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsWarnDeleteRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsWarnDeleteRequest::getInstanceId()const
 void OnsWarnDeleteRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsWarnDeleteRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string OnsWarnDeleteRequest::getGroupId()const
 void OnsWarnDeleteRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsWarnDeleteRequest::getTopic()const
@@ -66,6 +66,6 @@ std::string OnsWarnDeleteRequest::getTopic()const
 void OnsWarnDeleteRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 

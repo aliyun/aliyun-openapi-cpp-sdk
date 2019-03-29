@@ -33,7 +33,7 @@ long OnsTrendGroupOutputTpsRequest::getPreventCache()const
 void OnsTrendGroupOutputTpsRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 long OnsTrendGroupOutputTpsRequest::getPeriod()const
@@ -44,7 +44,7 @@ long OnsTrendGroupOutputTpsRequest::getPeriod()const
 void OnsTrendGroupOutputTpsRequest::setPeriod(long period)
 {
 	period_ = period;
-	setParameter("Period", std::to_string(period));
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string OnsTrendGroupOutputTpsRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string OnsTrendGroupOutputTpsRequest::getInstanceId()const
 void OnsTrendGroupOutputTpsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsTrendGroupOutputTpsRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string OnsTrendGroupOutputTpsRequest::getGroupId()const
 void OnsTrendGroupOutputTpsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsTrendGroupOutputTpsRequest::getTopic()const
@@ -77,7 +77,7 @@ std::string OnsTrendGroupOutputTpsRequest::getTopic()const
 void OnsTrendGroupOutputTpsRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 
 long OnsTrendGroupOutputTpsRequest::getEndTime()const
@@ -88,7 +88,7 @@ long OnsTrendGroupOutputTpsRequest::getEndTime()const
 void OnsTrendGroupOutputTpsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsTrendGroupOutputTpsRequest::getBeginTime()const
@@ -99,7 +99,7 @@ long OnsTrendGroupOutputTpsRequest::getBeginTime()const
 void OnsTrendGroupOutputTpsRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setParameter("BeginTime", std::to_string(beginTime));
+	setCoreParameter("BeginTime", std::to_string(beginTime));
 }
 
 int OnsTrendGroupOutputTpsRequest::getType()const
@@ -110,6 +110,6 @@ int OnsTrendGroupOutputTpsRequest::getType()const
 void OnsTrendGroupOutputTpsRequest::setType(int type)
 {
 	type_ = type;
-	setParameter("Type", std::to_string(type));
+	setCoreParameter("Type", std::to_string(type));
 }
 

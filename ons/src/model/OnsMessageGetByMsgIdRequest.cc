@@ -33,7 +33,7 @@ long OnsMessageGetByMsgIdRequest::getPreventCache()const
 void OnsMessageGetByMsgIdRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsMessageGetByMsgIdRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsMessageGetByMsgIdRequest::getInstanceId()const
 void OnsMessageGetByMsgIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsMessageGetByMsgIdRequest::getMsgId()const
@@ -55,7 +55,7 @@ std::string OnsMessageGetByMsgIdRequest::getMsgId()const
 void OnsMessageGetByMsgIdRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
-	setParameter("MsgId", msgId);
+	setCoreParameter("MsgId", msgId);
 }
 
 std::string OnsMessageGetByMsgIdRequest::getTopic()const
@@ -66,6 +66,6 @@ std::string OnsMessageGetByMsgIdRequest::getTopic()const
 void OnsMessageGetByMsgIdRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 

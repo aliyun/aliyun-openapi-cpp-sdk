@@ -33,7 +33,7 @@ long OnsTopicCreateRequest::getPreventCache()const
 void OnsTopicCreateRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsTopicCreateRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsTopicCreateRequest::getInstanceId()const
 void OnsTopicCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int OnsTopicCreateRequest::getMessageType()const
@@ -55,7 +55,7 @@ int OnsTopicCreateRequest::getMessageType()const
 void OnsTopicCreateRequest::setMessageType(int messageType)
 {
 	messageType_ = messageType;
-	setParameter("MessageType", std::to_string(messageType));
+	setCoreParameter("MessageType", std::to_string(messageType));
 }
 
 std::string OnsTopicCreateRequest::getTopic()const
@@ -66,7 +66,7 @@ std::string OnsTopicCreateRequest::getTopic()const
 void OnsTopicCreateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 
 std::string OnsTopicCreateRequest::getRemark()const
@@ -77,6 +77,6 @@ std::string OnsTopicCreateRequest::getRemark()const
 void OnsTopicCreateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setParameter("Remark", remark);
+	setCoreParameter("Remark", remark);
 }
 

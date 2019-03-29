@@ -33,7 +33,7 @@ long OnsMessageTraceRequest::getPreventCache()const
 void OnsMessageTraceRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsMessageTraceRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsMessageTraceRequest::getInstanceId()const
 void OnsMessageTraceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsMessageTraceRequest::getTopic()const
@@ -55,7 +55,7 @@ std::string OnsMessageTraceRequest::getTopic()const
 void OnsMessageTraceRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 
 std::string OnsMessageTraceRequest::getMsgId()const
@@ -66,6 +66,6 @@ std::string OnsMessageTraceRequest::getMsgId()const
 void OnsMessageTraceRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
-	setParameter("MsgId", msgId);
+	setCoreParameter("MsgId", msgId);
 }
 

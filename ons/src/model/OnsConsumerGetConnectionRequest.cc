@@ -33,7 +33,7 @@ long OnsConsumerGetConnectionRequest::getPreventCache()const
 void OnsConsumerGetConnectionRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsConsumerGetConnectionRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsConsumerGetConnectionRequest::getInstanceId()const
 void OnsConsumerGetConnectionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsConsumerGetConnectionRequest::getGroupId()const
@@ -55,6 +55,6 @@ std::string OnsConsumerGetConnectionRequest::getGroupId()const
 void OnsConsumerGetConnectionRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 

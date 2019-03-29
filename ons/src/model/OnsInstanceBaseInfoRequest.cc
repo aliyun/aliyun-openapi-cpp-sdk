@@ -33,7 +33,7 @@ long OnsInstanceBaseInfoRequest::getPreventCache()const
 void OnsInstanceBaseInfoRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsInstanceBaseInfoRequest::getInstanceId()const
@@ -44,6 +44,6 @@ std::string OnsInstanceBaseInfoRequest::getInstanceId()const
 void OnsInstanceBaseInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 

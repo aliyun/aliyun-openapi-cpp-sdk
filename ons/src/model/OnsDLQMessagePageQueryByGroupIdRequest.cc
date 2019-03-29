@@ -33,7 +33,7 @@ long OnsDLQMessagePageQueryByGroupIdRequest::getPreventCache()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setPreventCache(long preventCache)
 {
 	preventCache_ = preventCache;
-	setParameter("PreventCache", std::to_string(preventCache));
+	setCoreParameter("PreventCache", std::to_string(preventCache));
 }
 
 std::string OnsDLQMessagePageQueryByGroupIdRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsDLQMessagePageQueryByGroupIdRequest::getInstanceId()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsDLQMessagePageQueryByGroupIdRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string OnsDLQMessagePageQueryByGroupIdRequest::getGroupId()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 int OnsDLQMessagePageQueryByGroupIdRequest::getPageSize()const
@@ -66,7 +66,7 @@ int OnsDLQMessagePageQueryByGroupIdRequest::getPageSize()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long OnsDLQMessagePageQueryByGroupIdRequest::getEndTime()const
@@ -77,7 +77,7 @@ long OnsDLQMessagePageQueryByGroupIdRequest::getEndTime()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsDLQMessagePageQueryByGroupIdRequest::getBeginTime()const
@@ -88,7 +88,7 @@ long OnsDLQMessagePageQueryByGroupIdRequest::getBeginTime()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setParameter("BeginTime", std::to_string(beginTime));
+	setCoreParameter("BeginTime", std::to_string(beginTime));
 }
 
 int OnsDLQMessagePageQueryByGroupIdRequest::getCurrentPage()const
@@ -99,7 +99,7 @@ int OnsDLQMessagePageQueryByGroupIdRequest::getCurrentPage()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string OnsDLQMessagePageQueryByGroupIdRequest::getTaskId()const
@@ -110,6 +110,6 @@ std::string OnsDLQMessagePageQueryByGroupIdRequest::getTaskId()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 
