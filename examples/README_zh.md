@@ -1,6 +1,6 @@
 # 如何运行例程
 
-## 1. 根据 [README](https://github.com/aliyun/aliyun-openapi-cpp-sdk/blob/master/README_zh.md) 安装 SDK
+## 1. 根据 [README](https://github.com/aliyun/aliyun-openapi-cpp-sdk/blob/master/README-CN.md) 安装 SDK
 
 ## 2. 构建例程
 
