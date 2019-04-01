@@ -13,14 +13,14 @@
 </p>
 
 
-欢迎使用阿里云开发者工具套件（SDK）。阿里云 C++ SDK 让您不用复杂编程即可访问云服务器、云监控等阿里云服务。这里向您介绍如何获取阿里云 C++ SDK 并开始调用。
+Alibaba Cloud SDK for C++ 让您不用复杂编程即可访问云服务器、负载均衡、云监控等阿里云服务。这里向您介绍如何获取 Alibaba Cloud SDK for C++ 并开始调用。
 
-如果您在使用SDK的过程中遇到任何问题，欢迎前往[阿里云SDK问答社区](https://yq.aliyun.com/tags/type_ask-tagid_23350)提问，提问前请阅读[提问引导](https://help.aliyun.com/document_detail/93957.html)。亦可在当前 GitHub [提交 Issues](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new)。
+如果您在使用的过程中遇到任何问题，欢迎前往[阿里云SDK问答社区](https://yq.aliyun.com/tags/type_ask-tagid_23350)提问，提问前请阅读[提问引导](https://help.aliyun.com/document_detail/93957.html)。亦可在当前 GitHub [提交 Issues](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new)。
 
 
 ## 环境要求
 
-在使用 C++ SDK 前，确保您已经：
+在使用 Alibaba Cloud SDK for C++ 前，确保您已经：
 
 * 注册了阿里云账号并获取了访问密钥（AccessKey）。
 
@@ -35,7 +35,7 @@
 * 安装 CMake 3.0 或以上版本
 * 建议 4G 或以上内存
 
-## 安装 C++ SDK (从源代码构建)
+## 安装 (从源代码构建)
 
 1. 从 GitHub 下载或 Git 克隆 [aliyun-openapi-cpp-sdk](https://github.com/aliyun/aliyun-openapi-cpp-sdk)
 
@@ -89,7 +89,7 @@ sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev
   sudo sh easyinstall.sh
 ```
 
-**C++ SDK 将被安装在 `/usr`.**
+**Alibaba Cloud SDK for C++ 将被安装在 `/usr`.**
 
 
 ### Windows
@@ -113,13 +113,13 @@ msbuild ALL_BUILD.vcxproj
 msbuild INSTALL.vcxproj
 ```
 
-**C++ SDK 将安装在 `C:\Program File (x86)\alibabacloud-sdk` 目录**
+**Alibaba Cloud SDK for C++ 将安装在 `C:\Program File (x86)\alibabacloud-sdk` 目录**
 
 **注意：请以管理员身份运行 Visual Studio，否则无法安装 SDK**
 
 ## 快速使用
 
-在调用 C++ SDK时，您首先需要配置预处理器定义 ALIBABACLOUD_SHARED 以引用阿里云 C++ SDK 的共享库，然后通过创建 Client 实例提供身份验证，并指定云服务的地域，然后发送API请求。
+在调用 Alibaba Cloud SDK for C++ 时，您首先需要配置预处理器定义 ALIBABACLOUD_SHARED 以引用阿里云 C++ SDK 的共享库，然后通过创建 Client 实例提供身份验证，并指定云服务的地域，然后发送API请求。
 
 以下代码展示了如何调用 DescribeInstancesAPI 查询指定地域所有 ECS 实例的详细信息。
 

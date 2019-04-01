@@ -1,4 +1,4 @@
-English | [简体中文](./README_zh.md)
+English | [简体中文](./README-CN.md)
 
 
 <p align="center">
@@ -13,11 +13,11 @@ English | [简体中文](./README_zh.md)
 </p>
 
 
-The SDK allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
+Alibaba Cloud SDK for C++ allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
 This document introduces how to obtain and call this SDK.
 
-If you have any problem while using C++ SDK, please submit an [issue](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new).
+If you have any problem while using Alibaba Cloud SDK for C++, please submit an [issue](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new).
 
 ## Requirements
 
@@ -75,9 +75,9 @@ If you have any problem while using C++ SDK, please submit an [issue](https://gi
     sudo sh easyinstall.sh
    ```
 
-**The C++ SDK will be installed to `/usr`.**
+**The Alibaba Cloud SDK for C++ will be installed to `/usr`.**
 
-### windows
+### Windows
 
 1. Install [perl](https://www.perl.org/get.html#win32).
 
@@ -111,7 +111,7 @@ If you have any problem while using C++ SDK, please submit an [issue](https://gi
 
 - Build->Build Solutions to build.
 
-**SDK will be installed to `C:\Program File (x86)\alibabacloud-sdk`**
+**Alibaba Cloud SDK for C++ will be installed to `C:\Program File (x86)\alibabacloud-sdk`**
 
 
 ## Quick Examples
