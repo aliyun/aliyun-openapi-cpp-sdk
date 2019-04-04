@@ -30,43 +30,67 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ESS_EXPORT ModifyScalingRuleRequest : public RpcServiceRequest
 			{
+				struct StepAdjustment
+				{
+					float metricIntervalLowerBound;
+					float metricIntervalUpperBound;
+					int scalingAdjustment;
+				};
 
 			public:
 				ModifyScalingRuleRequest();
 				~ModifyScalingRuleRequest();
 
-				std::string getScalingRuleName()const;
-				void setScalingRuleName(const std::string& scalingRuleName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getAdjustmentValue()const;
 				void setAdjustmentValue(int adjustmentValue);
+				std::vector<StepAdjustment> getStepAdjustment()const;
+				void setStepAdjustment(const std::vector<StepAdjustment>& stepAdjustment);
+				int getEstimatedInstanceWarmup()const;
+				void setEstimatedInstanceWarmup(int estimatedInstanceWarmup);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				int getCooldown()const;
-				void setCooldown(int cooldown);
 				std::string getAdjustmentType()const;
 				void setAdjustmentType(const std::string& adjustmentType);
+				bool getDisableScaleIn()const;
+				void setDisableScaleIn(bool disableScaleIn);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getScalingRuleId()const;
 				void setScalingRuleId(const std::string& scalingRuleId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getScalingRuleName()const;
+				void setScalingRuleName(const std::string& scalingRuleName);
+				int getCooldown()const;
+				void setCooldown(int cooldown);
+				int getMinAdjustmentMagnitude()const;
+				void setMinAdjustmentMagnitude(int minAdjustmentMagnitude);
+				float getTargetValue()const;
+				void setTargetValue(float targetValue);
+				std::string getMetricName()const;
+				void setMetricName(const std::string& metricName);
 
             private:
-				std::string scalingRuleName_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				int adjustmentValue_;
+				std::vector<StepAdjustment> stepAdjustment_;
+				int estimatedInstanceWarmup_;
 				std::string ownerAccount_;
-				int cooldown_;
 				std::string adjustmentType_;
+				bool disableScaleIn_;
 				long ownerId_;
 				std::string scalingRuleId_;
 				std::string accessKeyId_;
+				std::string scalingRuleName_;
+				int cooldown_;
+				int minAdjustmentMagnitude_;
+				float targetValue_;
+				std::string metricName_;
 
 			};
 		}

@@ -38,9 +38,13 @@ namespace AlibabaCloud
 					{
 						std::string snapshotId;
 						std::string category;
+						std::string kMSKeyId;
+						std::string description;
 						int size;
 						std::string device;
+						std::string encrypted;
 						bool deleteWithInstance;
+						std::string diskName;
 					};
 					struct Tag
 					{
@@ -54,11 +58,14 @@ namespace AlibabaCloud
 					};
 					std::string scalingConfigurationName;
 					std::vector<ScalingConfiguration::DataDisk> dataDisks;
+					std::string resourceGroupId;
 					int systemDiskSize;
+					std::string systemDiskDescription;
 					std::string userData;
 					int memory;
 					int cpu;
 					std::string lifecycleState;
+					std::string systemDiskName;
 					std::string ramRoleName;
 					std::string imageId;
 					std::vector<ScalingConfiguration::SpotPriceModel> spotPriceLimit;

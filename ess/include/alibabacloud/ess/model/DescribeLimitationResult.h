@@ -37,12 +37,15 @@ namespace AlibabaCloud
 				DescribeLimitationResult();
 				explicit DescribeLimitationResult(const std::string &payload);
 				~DescribeLimitationResult();
+				int getMaxNumberOfLifecycleHooks()const;
 				int getMaxNumberOfScalingRules()const;
 				int getMaxNumberOfScalingInstances()const;
 				int getMaxNumberOfScheduledTasks()const;
+				int getMaxNumberOfVServerGroups()const;
 				int getMaxNumberOfLoadBalancers()const;
 				int getMaxNumberOfMinSize()const;
 				int getMaxNumberOfScalingGroups()const;
+				int getMaxNumberOfNotificationConfigurations()const;
 				int getMaxNumberOfScalingConfigurations()const;
 				int getMaxNumberOfDBInstances()const;
 				int getMaxNumberOfMaxSize()const;
@@ -50,12 +53,15 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int maxNumberOfLifecycleHooks_;
 				int maxNumberOfScalingRules_;
 				int maxNumberOfScalingInstances_;
 				int maxNumberOfScheduledTasks_;
+				int maxNumberOfVServerGroups_;
 				int maxNumberOfLoadBalancers_;
 				int maxNumberOfMinSize_;
 				int maxNumberOfScalingGroups_;
+				int maxNumberOfNotificationConfigurations_;
 				int maxNumberOfScalingConfigurations_;
 				int maxNumberOfDBInstances_;
 				int maxNumberOfMaxSize_;

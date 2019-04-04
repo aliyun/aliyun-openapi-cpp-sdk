@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct ScalingInstance
 				{
 					int loadBalancerWeight;
+					std::string warmupState;
 					std::string instanceId;
 					std::string scalingGroupId;
 					std::string healthStatus;

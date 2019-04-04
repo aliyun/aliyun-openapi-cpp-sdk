@@ -33,7 +33,7 @@ std::string DeleteScalingGroupRequest::getResourceOwnerAccount()const
 void DeleteScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteScalingGroupRequest::getScalingGroupId()const
@@ -44,7 +44,7 @@ std::string DeleteScalingGroupRequest::getScalingGroupId()const
 void DeleteScalingGroupRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 bool DeleteScalingGroupRequest::getForceDelete()const
@@ -55,7 +55,7 @@ bool DeleteScalingGroupRequest::getForceDelete()const
 void DeleteScalingGroupRequest::setForceDelete(bool forceDelete)
 {
 	forceDelete_ = forceDelete;
-	setParameter("ForceDelete", std::to_string(forceDelete));
+	setCoreParameter("ForceDelete", forceDelete ? "true" : "false");
 }
 
 std::string DeleteScalingGroupRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteScalingGroupRequest::getOwnerAccount()const
 void DeleteScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteScalingGroupRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DeleteScalingGroupRequest::getOwnerId()const
 void DeleteScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteScalingGroupRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteScalingGroupRequest::getAccessKeyId()const
 void DeleteScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

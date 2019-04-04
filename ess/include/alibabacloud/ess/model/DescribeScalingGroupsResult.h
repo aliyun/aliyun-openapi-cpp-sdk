@@ -34,6 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct ScalingGroup
 				{
+					struct VServerGroup
+					{
+						struct VServerGroupAttribute
+						{
+							std::string vServerGroupId;
+							int port;
+							int weight;
+						};
+						std::string loadBalancerId;
+						std::vector<VServerGroup::VServerGroupAttribute> vServerGroupAttributes;
+					};
 					std::string activeScalingConfigurationId;
 					std::string lifecycleState;
 					std::string modificationTime;
@@ -61,6 +72,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string multiAZPolicy;
 					int stoppedCapacity;
+					std::vector<ScalingGroup::VServerGroup> vServerGroups;
 					std::string regionId;
 					std::vector<std::string> dBInstanceIds;
 					std::string healthCheckType;

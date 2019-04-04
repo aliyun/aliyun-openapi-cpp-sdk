@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setScalingGroupName(const std::string& scalingGroupName);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
+				std::vector<std::string> getVSwitchIds()const;
+				void setVSwitchIds(const std::vector<std::string>& vSwitchIds);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getActiveScalingConfigurationId()const;
@@ -75,6 +77,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string scalingGroupName_;
 				std::string scalingGroupId_;
+				std::vector<std::string> vSwitchIds_;
 				std::string ownerAccount_;
 				std::string activeScalingConfigurationId_;
 				int minSize_;

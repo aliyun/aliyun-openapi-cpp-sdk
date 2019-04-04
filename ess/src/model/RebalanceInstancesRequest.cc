@@ -33,7 +33,7 @@ long RebalanceInstancesRequest::getResourceOwnerId()const
 void RebalanceInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RebalanceInstancesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string RebalanceInstancesRequest::getResourceOwnerAccount()const
 void RebalanceInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RebalanceInstancesRequest::getScalingGroupId()const
@@ -55,7 +55,7 @@ std::string RebalanceInstancesRequest::getScalingGroupId()const
 void RebalanceInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string RebalanceInstancesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RebalanceInstancesRequest::getOwnerAccount()const
 void RebalanceInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long RebalanceInstancesRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long RebalanceInstancesRequest::getOwnerId()const
 void RebalanceInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RebalanceInstancesRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string RebalanceInstancesRequest::getAccessKeyId()const
 void RebalanceInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -34,7 +34,7 @@ void AttachLoadBalancersRequest::setLoadBalancer(const std::vector<std::string>&
 {
 	loadBalancer_ = loadBalancer;
 	for(int i = 0; i!= loadBalancer.size(); i++)
-		setParameter("LoadBalancer."+ std::to_string(i), loadBalancer.at(i));
+		setCoreParameter("LoadBalancer."+ std::to_string(i), loadBalancer.at(i));
 }
 
 std::string AttachLoadBalancersRequest::getResourceOwnerAccount()const
@@ -45,7 +45,7 @@ std::string AttachLoadBalancersRequest::getResourceOwnerAccount()const
 void AttachLoadBalancersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AttachLoadBalancersRequest::getScalingGroupId()const
@@ -56,7 +56,7 @@ std::string AttachLoadBalancersRequest::getScalingGroupId()const
 void AttachLoadBalancersRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 bool AttachLoadBalancersRequest::getForceAttach()const
@@ -67,7 +67,7 @@ bool AttachLoadBalancersRequest::getForceAttach()const
 void AttachLoadBalancersRequest::setForceAttach(bool forceAttach)
 {
 	forceAttach_ = forceAttach;
-	setParameter("ForceAttach", std::to_string(forceAttach));
+	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
 }
 
 long AttachLoadBalancersRequest::getOwnerId()const
@@ -78,7 +78,7 @@ long AttachLoadBalancersRequest::getOwnerId()const
 void AttachLoadBalancersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AttachLoadBalancersRequest::getAccessKeyId()const
@@ -89,6 +89,6 @@ std::string AttachLoadBalancersRequest::getAccessKeyId()const
 void AttachLoadBalancersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

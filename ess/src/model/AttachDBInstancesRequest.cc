@@ -33,7 +33,7 @@ std::string AttachDBInstancesRequest::getResourceOwnerAccount()const
 void AttachDBInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AttachDBInstancesRequest::getScalingGroupId()const
@@ -44,7 +44,7 @@ std::string AttachDBInstancesRequest::getScalingGroupId()const
 void AttachDBInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 bool AttachDBInstancesRequest::getForceAttach()const
@@ -55,7 +55,7 @@ bool AttachDBInstancesRequest::getForceAttach()const
 void AttachDBInstancesRequest::setForceAttach(bool forceAttach)
 {
 	forceAttach_ = forceAttach;
-	setParameter("ForceAttach", std::to_string(forceAttach));
+	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
 }
 
 std::vector<std::string> AttachDBInstancesRequest::getDBInstance()const
@@ -67,7 +67,7 @@ void AttachDBInstancesRequest::setDBInstance(const std::vector<std::string>& dBI
 {
 	dBInstance_ = dBInstance;
 	for(int i = 0; i!= dBInstance.size(); i++)
-		setParameter("DBInstance."+ std::to_string(i), dBInstance.at(i));
+		setCoreParameter("DBInstance."+ std::to_string(i), dBInstance.at(i));
 }
 
 long AttachDBInstancesRequest::getOwnerId()const
@@ -78,7 +78,7 @@ long AttachDBInstancesRequest::getOwnerId()const
 void AttachDBInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AttachDBInstancesRequest::getAccessKeyId()const
@@ -89,6 +89,6 @@ std::string AttachDBInstancesRequest::getAccessKeyId()const
 void AttachDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

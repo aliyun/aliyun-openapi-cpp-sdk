@@ -33,7 +33,7 @@ long DescribeScalingActivityDetailRequest::getResourceOwnerId()const
 void DescribeScalingActivityDetailRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeScalingActivityDetailRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeScalingActivityDetailRequest::getResourceOwnerAccount()const
 void DescribeScalingActivityDetailRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeScalingActivityDetailRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long DescribeScalingActivityDetailRequest::getOwnerId()const
 void DescribeScalingActivityDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScalingActivityDetailRequest::getScalingActivityId()const
@@ -66,7 +66,7 @@ std::string DescribeScalingActivityDetailRequest::getScalingActivityId()const
 void DescribeScalingActivityDetailRequest::setScalingActivityId(const std::string& scalingActivityId)
 {
 	scalingActivityId_ = scalingActivityId;
-	setParameter("ScalingActivityId", scalingActivityId);
+	setCoreParameter("ScalingActivityId", scalingActivityId);
 }
 
 std::string DescribeScalingActivityDetailRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeScalingActivityDetailRequest::getAccessKeyId()const
 void DescribeScalingActivityDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string CompleteLifecycleActionRequest::getLifecycleActionToken()const
 void CompleteLifecycleActionRequest::setLifecycleActionToken(const std::string& lifecycleActionToken)
 {
 	lifecycleActionToken_ = lifecycleActionToken;
-	setParameter("LifecycleActionToken", lifecycleActionToken);
+	setCoreParameter("LifecycleActionToken", lifecycleActionToken);
 }
 
 std::string CompleteLifecycleActionRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string CompleteLifecycleActionRequest::getResourceOwnerAccount()const
 void CompleteLifecycleActionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CompleteLifecycleActionRequest::getLifecycleHookId()const
@@ -55,7 +55,7 @@ std::string CompleteLifecycleActionRequest::getLifecycleHookId()const
 void CompleteLifecycleActionRequest::setLifecycleHookId(const std::string& lifecycleHookId)
 {
 	lifecycleHookId_ = lifecycleHookId;
-	setParameter("LifecycleHookId", lifecycleHookId);
+	setCoreParameter("LifecycleHookId", lifecycleHookId);
 }
 
 std::string CompleteLifecycleActionRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CompleteLifecycleActionRequest::getOwnerAccount()const
 void CompleteLifecycleActionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CompleteLifecycleActionRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long CompleteLifecycleActionRequest::getOwnerId()const
 void CompleteLifecycleActionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CompleteLifecycleActionRequest::getLifecycleActionResult()const
@@ -88,7 +88,7 @@ std::string CompleteLifecycleActionRequest::getLifecycleActionResult()const
 void CompleteLifecycleActionRequest::setLifecycleActionResult(const std::string& lifecycleActionResult)
 {
 	lifecycleActionResult_ = lifecycleActionResult;
-	setParameter("LifecycleActionResult", lifecycleActionResult);
+	setCoreParameter("LifecycleActionResult", lifecycleActionResult);
 }
 
 std::string CompleteLifecycleActionRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string CompleteLifecycleActionRequest::getAccessKeyId()const
 void CompleteLifecycleActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeNotificationConfigurationsRequest::getResourceOwnerAccount()
 void DescribeNotificationConfigurationsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeNotificationConfigurationsRequest::getScalingGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeNotificationConfigurationsRequest::getScalingGroupId()const
 void DescribeNotificationConfigurationsRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 long DescribeNotificationConfigurationsRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long DescribeNotificationConfigurationsRequest::getOwnerId()const
 void DescribeNotificationConfigurationsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeNotificationConfigurationsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeNotificationConfigurationsRequest::getAccessKeyId()const
 void DescribeNotificationConfigurationsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

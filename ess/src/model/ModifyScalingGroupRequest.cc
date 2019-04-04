@@ -33,7 +33,7 @@ long ModifyScalingGroupRequest::getResourceOwnerId()const
 void ModifyScalingGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyScalingGroupRequest::getHealthCheckType()const
@@ -44,7 +44,7 @@ std::string ModifyScalingGroupRequest::getHealthCheckType()const
 void ModifyScalingGroupRequest::setHealthCheckType(const std::string& healthCheckType)
 {
 	healthCheckType_ = healthCheckType;
-	setParameter("HealthCheckType", healthCheckType);
+	setCoreParameter("HealthCheckType", healthCheckType);
 }
 
 std::string ModifyScalingGroupRequest::getLaunchTemplateId()const
@@ -55,7 +55,7 @@ std::string ModifyScalingGroupRequest::getLaunchTemplateId()const
 void ModifyScalingGroupRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setParameter("LaunchTemplateId", launchTemplateId);
+	setCoreParameter("LaunchTemplateId", launchTemplateId);
 }
 
 std::string ModifyScalingGroupRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyScalingGroupRequest::getResourceOwnerAccount()const
 void ModifyScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyScalingGroupRequest::getScalingGroupName()const
@@ -77,7 +77,7 @@ std::string ModifyScalingGroupRequest::getScalingGroupName()const
 void ModifyScalingGroupRequest::setScalingGroupName(const std::string& scalingGroupName)
 {
 	scalingGroupName_ = scalingGroupName;
-	setParameter("ScalingGroupName", scalingGroupName);
+	setCoreParameter("ScalingGroupName", scalingGroupName);
 }
 
 std::string ModifyScalingGroupRequest::getScalingGroupId()const
@@ -88,7 +88,19 @@ std::string ModifyScalingGroupRequest::getScalingGroupId()const
 void ModifyScalingGroupRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", scalingGroupId);
+}
+
+std::vector<std::string> ModifyScalingGroupRequest::getVSwitchIds()const
+{
+	return vSwitchIds_;
+}
+
+void ModifyScalingGroupRequest::setVSwitchIds(const std::vector<std::string>& vSwitchIds)
+{
+	vSwitchIds_ = vSwitchIds;
+	for(int i = 0; i!= vSwitchIds.size(); i++)
+		setCoreParameter("VSwitchIds."+ std::to_string(i), vSwitchIds.at(i));
 }
 
 std::string ModifyScalingGroupRequest::getOwnerAccount()const
@@ -99,7 +111,7 @@ std::string ModifyScalingGroupRequest::getOwnerAccount()const
 void ModifyScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyScalingGroupRequest::getActiveScalingConfigurationId()const
@@ -110,7 +122,7 @@ std::string ModifyScalingGroupRequest::getActiveScalingConfigurationId()const
 void ModifyScalingGroupRequest::setActiveScalingConfigurationId(const std::string& activeScalingConfigurationId)
 {
 	activeScalingConfigurationId_ = activeScalingConfigurationId;
-	setParameter("ActiveScalingConfigurationId", activeScalingConfigurationId);
+	setCoreParameter("ActiveScalingConfigurationId", activeScalingConfigurationId);
 }
 
 int ModifyScalingGroupRequest::getMinSize()const
@@ -121,7 +133,7 @@ int ModifyScalingGroupRequest::getMinSize()const
 void ModifyScalingGroupRequest::setMinSize(int minSize)
 {
 	minSize_ = minSize;
-	setParameter("MinSize", std::to_string(minSize));
+	setCoreParameter("MinSize", std::to_string(minSize));
 }
 
 long ModifyScalingGroupRequest::getOwnerId()const
@@ -132,7 +144,7 @@ long ModifyScalingGroupRequest::getOwnerId()const
 void ModifyScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyScalingGroupRequest::getLaunchTemplateVersion()const
@@ -143,7 +155,7 @@ std::string ModifyScalingGroupRequest::getLaunchTemplateVersion()const
 void ModifyScalingGroupRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
 {
 	launchTemplateVersion_ = launchTemplateVersion;
-	setParameter("LaunchTemplateVersion", launchTemplateVersion);
+	setCoreParameter("LaunchTemplateVersion", launchTemplateVersion);
 }
 
 std::string ModifyScalingGroupRequest::getAccessKeyId()const
@@ -154,7 +166,7 @@ std::string ModifyScalingGroupRequest::getAccessKeyId()const
 void ModifyScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int ModifyScalingGroupRequest::getMaxSize()const
@@ -165,7 +177,7 @@ int ModifyScalingGroupRequest::getMaxSize()const
 void ModifyScalingGroupRequest::setMaxSize(int maxSize)
 {
 	maxSize_ = maxSize;
-	setParameter("MaxSize", std::to_string(maxSize));
+	setCoreParameter("MaxSize", std::to_string(maxSize));
 }
 
 int ModifyScalingGroupRequest::getDefaultCooldown()const
@@ -176,7 +188,7 @@ int ModifyScalingGroupRequest::getDefaultCooldown()const
 void ModifyScalingGroupRequest::setDefaultCooldown(int defaultCooldown)
 {
 	defaultCooldown_ = defaultCooldown;
-	setParameter("DefaultCooldown", std::to_string(defaultCooldown));
+	setCoreParameter("DefaultCooldown", std::to_string(defaultCooldown));
 }
 
 std::string ModifyScalingGroupRequest::getRemovalPolicy1()const
@@ -187,7 +199,7 @@ std::string ModifyScalingGroupRequest::getRemovalPolicy1()const
 void ModifyScalingGroupRequest::setRemovalPolicy1(const std::string& removalPolicy1)
 {
 	removalPolicy1_ = removalPolicy1;
-	setParameter("RemovalPolicy1", removalPolicy1);
+	setCoreParameter("RemovalPolicy1", removalPolicy1);
 }
 
 std::string ModifyScalingGroupRequest::getRemovalPolicy2()const
@@ -198,6 +210,6 @@ std::string ModifyScalingGroupRequest::getRemovalPolicy2()const
 void ModifyScalingGroupRequest::setRemovalPolicy2(const std::string& removalPolicy2)
 {
 	removalPolicy2_ = removalPolicy2;
-	setParameter("RemovalPolicy2", removalPolicy2);
+	setCoreParameter("RemovalPolicy2", removalPolicy2);
 }
 

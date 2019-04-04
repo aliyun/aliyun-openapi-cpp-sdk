@@ -80,6 +80,10 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.systemDiskCategory = value["SystemDiskCategory"].asString();
 		if(!value["SystemDiskSize"].isNull())
 			scalingConfigurationsObject.systemDiskSize = std::stoi(value["SystemDiskSize"].asString());
+		if(!value["SystemDiskName"].isNull())
+			scalingConfigurationsObject.systemDiskName = value["SystemDiskName"].asString();
+		if(!value["SystemDiskDescription"].isNull())
+			scalingConfigurationsObject.systemDiskDescription = value["SystemDiskDescription"].asString();
 		if(!value["LifecycleState"].isNull())
 			scalingConfigurationsObject.lifecycleState = value["LifecycleState"].asString();
 		if(!value["CreationTime"].isNull())
@@ -100,6 +104,8 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.spotStrategy = value["SpotStrategy"].asString();
 		if(!value["PasswordInherit"].isNull())
 			scalingConfigurationsObject.passwordInherit = value["PasswordInherit"].asString() == "true";
+		if(!value["ResourceGroupId"].isNull())
+			scalingConfigurationsObject.resourceGroupId = value["ResourceGroupId"].asString();
 		auto allDataDisks = value["DataDisks"]["DataDisk"];
 		for (auto value : allDataDisks)
 		{
@@ -114,6 +120,14 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 				dataDisksObject.device = value["Device"].asString();
 			if(!value["DeleteWithInstance"].isNull())
 				dataDisksObject.deleteWithInstance = value["DeleteWithInstance"].asString() == "true";
+			if(!value["Encrypted"].isNull())
+				dataDisksObject.encrypted = value["Encrypted"].asString();
+			if(!value["KMSKeyId"].isNull())
+				dataDisksObject.kMSKeyId = value["KMSKeyId"].asString();
+			if(!value["DiskName"].isNull())
+				dataDisksObject.diskName = value["DiskName"].asString();
+			if(!value["Description"].isNull())
+				dataDisksObject.description = value["Description"].asString();
 			scalingConfigurationsObject.dataDisks.push_back(dataDisksObject);
 		}
 		auto allTags = value["Tags"]["Tag"];

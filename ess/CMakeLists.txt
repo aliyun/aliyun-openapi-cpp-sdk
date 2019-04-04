@@ -23,6 +23,8 @@ set(ess_public_header
 set(ess_public_header_model 
 	include/alibabacloud/ess/model/EnterStandbyRequest.h
 	include/alibabacloud/ess/model/EnterStandbyResult.h
+	include/alibabacloud/ess/model/DetachVServerGroupsRequest.h
+	include/alibabacloud/ess/model/DetachVServerGroupsResult.h
 	include/alibabacloud/ess/model/ModifyScalingGroupRequest.h
 	include/alibabacloud/ess/model/ModifyScalingGroupResult.h
 	include/alibabacloud/ess/model/RebalanceInstancesRequest.h
@@ -33,6 +35,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/CreateScheduledTaskResult.h
 	include/alibabacloud/ess/model/DeleteScheduledTaskRequest.h
 	include/alibabacloud/ess/model/DeleteScheduledTaskResult.h
+	include/alibabacloud/ess/model/AttachVServerGroupsRequest.h
+	include/alibabacloud/ess/model/AttachVServerGroupsResult.h
 	include/alibabacloud/ess/model/ModifyNotificationConfigurationRequest.h
 	include/alibabacloud/ess/model/ModifyNotificationConfigurationResult.h
 	include/alibabacloud/ess/model/CreateScalingRuleRequest.h
@@ -49,16 +53,18 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/DescribeScalingInstancesResult.h
 	include/alibabacloud/ess/model/DescribeCapacityHistoryRequest.h
 	include/alibabacloud/ess/model/DescribeCapacityHistoryResult.h
-	include/alibabacloud/ess/model/DescribeScheduledTasksRequest.h
-	include/alibabacloud/ess/model/DescribeScheduledTasksResult.h
 	include/alibabacloud/ess/model/DeleteLifecycleHookRequest.h
 	include/alibabacloud/ess/model/DeleteLifecycleHookResult.h
+	include/alibabacloud/ess/model/DescribeScheduledTasksRequest.h
+	include/alibabacloud/ess/model/DescribeScheduledTasksResult.h
 	include/alibabacloud/ess/model/DeleteNotificationConfigurationRequest.h
 	include/alibabacloud/ess/model/DeleteNotificationConfigurationResult.h
 	include/alibabacloud/ess/model/DescribeLifecycleHooksRequest.h
 	include/alibabacloud/ess/model/DescribeLifecycleHooksResult.h
 	include/alibabacloud/ess/model/ModifyAlarmRequest.h
 	include/alibabacloud/ess/model/ModifyAlarmResult.h
+	include/alibabacloud/ess/model/DescribeAccountAttributesRequest.h
+	include/alibabacloud/ess/model/DescribeAccountAttributesResult.h
 	include/alibabacloud/ess/model/DeleteAlarmRequest.h
 	include/alibabacloud/ess/model/DeleteAlarmResult.h
 	include/alibabacloud/ess/model/DescribeScalingActivityDetailRequest.h
@@ -69,10 +75,10 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/VerifyUserResult.h
 	include/alibabacloud/ess/model/DescribeAlarmsRequest.h
 	include/alibabacloud/ess/model/DescribeAlarmsResult.h
-	include/alibabacloud/ess/model/AttachInstancesRequest.h
-	include/alibabacloud/ess/model/AttachInstancesResult.h
 	include/alibabacloud/ess/model/DescribeScalingGroupsRequest.h
 	include/alibabacloud/ess/model/DescribeScalingGroupsResult.h
+	include/alibabacloud/ess/model/AttachInstancesRequest.h
+	include/alibabacloud/ess/model/AttachInstancesResult.h
 	include/alibabacloud/ess/model/DescribeScalingActivitiesRequest.h
 	include/alibabacloud/ess/model/DescribeScalingActivitiesResult.h
 	include/alibabacloud/ess/model/ExitStandbyRequest.h
@@ -111,10 +117,10 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/AttachLoadBalancersResult.h
 	include/alibabacloud/ess/model/CompleteLifecycleActionRequest.h
 	include/alibabacloud/ess/model/CompleteLifecycleActionResult.h
-	include/alibabacloud/ess/model/ModifyScalingConfigurationRequest.h
-	include/alibabacloud/ess/model/ModifyScalingConfigurationResult.h
 	include/alibabacloud/ess/model/DetachInstancesRequest.h
 	include/alibabacloud/ess/model/DetachInstancesResult.h
+	include/alibabacloud/ess/model/ModifyScalingConfigurationRequest.h
+	include/alibabacloud/ess/model/ModifyScalingConfigurationResult.h
 	include/alibabacloud/ess/model/DescribeLimitationRequest.h
 	include/alibabacloud/ess/model/DescribeLimitationResult.h
 	include/alibabacloud/ess/model/DescribeAlertConfigRequest.h
@@ -142,6 +148,8 @@ set(ess_src
 	src/EssClient.cc
 	src/model/EnterStandbyRequest.cc
 	src/model/EnterStandbyResult.cc
+	src/model/DetachVServerGroupsRequest.cc
+	src/model/DetachVServerGroupsResult.cc
 	src/model/ModifyScalingGroupRequest.cc
 	src/model/ModifyScalingGroupResult.cc
 	src/model/RebalanceInstancesRequest.cc
@@ -152,6 +160,8 @@ set(ess_src
 	src/model/CreateScheduledTaskResult.cc
 	src/model/DeleteScheduledTaskRequest.cc
 	src/model/DeleteScheduledTaskResult.cc
+	src/model/AttachVServerGroupsRequest.cc
+	src/model/AttachVServerGroupsResult.cc
 	src/model/ModifyNotificationConfigurationRequest.cc
 	src/model/ModifyNotificationConfigurationResult.cc
 	src/model/CreateScalingRuleRequest.cc
@@ -168,16 +178,18 @@ set(ess_src
 	src/model/DescribeScalingInstancesResult.cc
 	src/model/DescribeCapacityHistoryRequest.cc
 	src/model/DescribeCapacityHistoryResult.cc
-	src/model/DescribeScheduledTasksRequest.cc
-	src/model/DescribeScheduledTasksResult.cc
 	src/model/DeleteLifecycleHookRequest.cc
 	src/model/DeleteLifecycleHookResult.cc
+	src/model/DescribeScheduledTasksRequest.cc
+	src/model/DescribeScheduledTasksResult.cc
 	src/model/DeleteNotificationConfigurationRequest.cc
 	src/model/DeleteNotificationConfigurationResult.cc
 	src/model/DescribeLifecycleHooksRequest.cc
 	src/model/DescribeLifecycleHooksResult.cc
 	src/model/ModifyAlarmRequest.cc
 	src/model/ModifyAlarmResult.cc
+	src/model/DescribeAccountAttributesRequest.cc
+	src/model/DescribeAccountAttributesResult.cc
 	src/model/DeleteAlarmRequest.cc
 	src/model/DeleteAlarmResult.cc
 	src/model/DescribeScalingActivityDetailRequest.cc
@@ -188,10 +200,10 @@ set(ess_src
 	src/model/VerifyUserResult.cc
 	src/model/DescribeAlarmsRequest.cc
 	src/model/DescribeAlarmsResult.cc
-	src/model/AttachInstancesRequest.cc
-	src/model/AttachInstancesResult.cc
 	src/model/DescribeScalingGroupsRequest.cc
 	src/model/DescribeScalingGroupsResult.cc
+	src/model/AttachInstancesRequest.cc
+	src/model/AttachInstancesResult.cc
 	src/model/DescribeScalingActivitiesRequest.cc
 	src/model/DescribeScalingActivitiesResult.cc
 	src/model/ExitStandbyRequest.cc
@@ -230,10 +242,10 @@ set(ess_src
 	src/model/AttachLoadBalancersResult.cc
 	src/model/CompleteLifecycleActionRequest.cc
 	src/model/CompleteLifecycleActionResult.cc
-	src/model/ModifyScalingConfigurationRequest.cc
-	src/model/ModifyScalingConfigurationResult.cc
 	src/model/DetachInstancesRequest.cc
 	src/model/DetachInstancesResult.cc
+	src/model/ModifyScalingConfigurationRequest.cc
+	src/model/ModifyScalingConfigurationResult.cc
 	src/model/DescribeLimitationRequest.cc
 	src/model/DescribeLimitationResult.cc
 	src/model/DescribeAlertConfigRequest.cc

@@ -64,6 +64,8 @@ void DescribeScalingInstancesResult::parse(const std::string &payload)
 			scalingInstancesObject.launchTemplateId = value["LaunchTemplateId"].asString();
 		if(!value["LaunchTemplateVersion"].isNull())
 			scalingInstancesObject.launchTemplateVersion = value["LaunchTemplateVersion"].asString();
+		if(!value["WarmupState"].isNull())
+			scalingInstancesObject.warmupState = value["WarmupState"].asString();
 		scalingInstances_.push_back(scalingInstancesObject);
 	}
 	if(!value["TotalCount"].isNull())

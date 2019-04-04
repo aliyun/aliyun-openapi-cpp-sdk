@@ -68,6 +68,8 @@ void DescribeScalingActivitiesResult::parse(const std::string &payload)
 			scalingActivitiesObject.attachedCapacity = value["AttachedCapacity"].asString();
 		if(!value["AutoCreatedCapacity"].isNull())
 			scalingActivitiesObject.autoCreatedCapacity = value["AutoCreatedCapacity"].asString();
+		if(!value["ScalingInstanceNumber"].isNull())
+			scalingActivitiesObject.scalingInstanceNumber = std::stoi(value["ScalingInstanceNumber"].asString());
 		scalingActivities_.push_back(scalingActivitiesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -43,10 +43,14 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				float getBreachThreshold()const;
+				void setBreachThreshold(float breachThreshold);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				float getMetricValue()const;
+				void setMetricValue(float metricValue);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
@@ -55,8 +59,10 @@ namespace AlibabaCloud
 				std::string scalingRuleAri_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
+				float breachThreshold_;
 				std::string ownerAccount_;
 				long ownerId_;
+				float metricValue_;
 				std::string accessKeyId_;
 
 			};

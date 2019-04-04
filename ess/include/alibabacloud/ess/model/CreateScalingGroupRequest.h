@@ -39,6 +39,11 @@ namespace AlibabaCloud
 					std::string notificationMetadata;
 					std::string lifecycleTransition;
 				};
+				struct VServerGroup
+				{
+					std::string loadBalancerId;
+					RepeatList vServerGroupAttribute;
+				};
 
 			public:
 				CreateScalingGroupRequest();
@@ -58,6 +63,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupName()const;
 				void setScalingGroupName(const std::string& scalingGroupName);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::vector<std::string> getVSwitchIds()const;
 				void setVSwitchIds(const std::vector<std::string>& vSwitchIds);
 				std::string getOwnerAccount()const;
@@ -84,6 +91,8 @@ namespace AlibabaCloud
 				void setDefaultCooldown(int defaultCooldown);
 				std::string getRemovalPolicy1()const;
 				void setRemovalPolicy1(const std::string& removalPolicy1);
+				std::vector<VServerGroup> getVServerGroup()const;
+				void setVServerGroup(const std::vector<VServerGroup>& vServerGroup);
 				std::string getRemovalPolicy2()const;
 				void setRemovalPolicy2(const std::string& removalPolicy2);
 
@@ -95,6 +104,7 @@ namespace AlibabaCloud
 				std::string healthCheckType_;
 				std::string resourceOwnerAccount_;
 				std::string scalingGroupName_;
+				std::string clientToken_;
 				std::vector<std::string> vSwitchIds_;
 				std::string ownerAccount_;
 				int minSize_;
@@ -108,6 +118,7 @@ namespace AlibabaCloud
 				std::vector<LifecycleHook> lifecycleHook_;
 				int defaultCooldown_;
 				std::string removalPolicy1_;
+				std::vector<VServerGroup> vServerGroup_;
 				std::string removalPolicy2_;
 
 			};

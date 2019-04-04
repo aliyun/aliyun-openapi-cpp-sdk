@@ -31,21 +31,21 @@ EssClient::EssClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
 }
 
 EssClient::EssClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
 }
 
 EssClient::EssClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ess");
 }
 
 EssClient::~EssClient()
@@ -81,6 +81,42 @@ EssClient::EnterStandbyOutcomeCallable EssClient::enterStandbyCallable(const Ent
 			[this, request]()
 			{
 			return this->enterStandby(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DetachVServerGroupsOutcome EssClient::detachVServerGroups(const DetachVServerGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachVServerGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachVServerGroupsOutcome(DetachVServerGroupsResult(outcome.result()));
+	else
+		return DetachVServerGroupsOutcome(outcome.error());
+}
+
+void EssClient::detachVServerGroupsAsync(const DetachVServerGroupsRequest& request, const DetachVServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachVServerGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DetachVServerGroupsOutcomeCallable EssClient::detachVServerGroupsCallable(const DetachVServerGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachVServerGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->detachVServerGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -261,6 +297,42 @@ EssClient::DeleteScheduledTaskOutcomeCallable EssClient::deleteScheduledTaskCall
 			[this, request]()
 			{
 			return this->deleteScheduledTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::AttachVServerGroupsOutcome EssClient::attachVServerGroups(const AttachVServerGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachVServerGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachVServerGroupsOutcome(AttachVServerGroupsResult(outcome.result()));
+	else
+		return AttachVServerGroupsOutcome(outcome.error());
+}
+
+void EssClient::attachVServerGroupsAsync(const AttachVServerGroupsRequest& request, const AttachVServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachVServerGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::AttachVServerGroupsOutcomeCallable EssClient::attachVServerGroupsCallable(const AttachVServerGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachVServerGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->attachVServerGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,42 +627,6 @@ EssClient::DescribeCapacityHistoryOutcomeCallable EssClient::describeCapacityHis
 	return task->get_future();
 }
 
-EssClient::DescribeScheduledTasksOutcome EssClient::describeScheduledTasks(const DescribeScheduledTasksRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeScheduledTasksOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeScheduledTasksOutcome(DescribeScheduledTasksResult(outcome.result()));
-	else
-		return DescribeScheduledTasksOutcome(outcome.error());
-}
-
-void EssClient::describeScheduledTasksAsync(const DescribeScheduledTasksRequest& request, const DescribeScheduledTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeScheduledTasks(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EssClient::DescribeScheduledTasksOutcomeCallable EssClient::describeScheduledTasksCallable(const DescribeScheduledTasksRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeScheduledTasksOutcome()>>(
-			[this, request]()
-			{
-			return this->describeScheduledTasks(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EssClient::DeleteLifecycleHookOutcome EssClient::deleteLifecycleHook(const DeleteLifecycleHookRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,6 +657,42 @@ EssClient::DeleteLifecycleHookOutcomeCallable EssClient::deleteLifecycleHookCall
 			[this, request]()
 			{
 			return this->deleteLifecycleHook(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DescribeScheduledTasksOutcome EssClient::describeScheduledTasks(const DescribeScheduledTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScheduledTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScheduledTasksOutcome(DescribeScheduledTasksResult(outcome.result()));
+	else
+		return DescribeScheduledTasksOutcome(outcome.error());
+}
+
+void EssClient::describeScheduledTasksAsync(const DescribeScheduledTasksRequest& request, const DescribeScheduledTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScheduledTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DescribeScheduledTasksOutcomeCallable EssClient::describeScheduledTasksCallable(const DescribeScheduledTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScheduledTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScheduledTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,6 +801,42 @@ EssClient::ModifyAlarmOutcomeCallable EssClient::modifyAlarmCallable(const Modif
 			[this, request]()
 			{
 			return this->modifyAlarm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DescribeAccountAttributesOutcome EssClient::describeAccountAttributes(const DescribeAccountAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccountAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccountAttributesOutcome(DescribeAccountAttributesResult(outcome.result()));
+	else
+		return DescribeAccountAttributesOutcome(outcome.error());
+}
+
+void EssClient::describeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccountAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DescribeAccountAttributesOutcomeCallable EssClient::describeAccountAttributesCallable(const DescribeAccountAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccountAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccountAttributes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -915,42 +1023,6 @@ EssClient::DescribeAlarmsOutcomeCallable EssClient::describeAlarmsCallable(const
 	return task->get_future();
 }
 
-EssClient::AttachInstancesOutcome EssClient::attachInstances(const AttachInstancesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AttachInstancesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AttachInstancesOutcome(AttachInstancesResult(outcome.result()));
-	else
-		return AttachInstancesOutcome(outcome.error());
-}
-
-void EssClient::attachInstancesAsync(const AttachInstancesRequest& request, const AttachInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, attachInstances(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EssClient::AttachInstancesOutcomeCallable EssClient::attachInstancesCallable(const AttachInstancesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AttachInstancesOutcome()>>(
-			[this, request]()
-			{
-			return this->attachInstances(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EssClient::DescribeScalingGroupsOutcome EssClient::describeScalingGroups(const DescribeScalingGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1053,42 @@ EssClient::DescribeScalingGroupsOutcomeCallable EssClient::describeScalingGroups
 			[this, request]()
 			{
 			return this->describeScalingGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::AttachInstancesOutcome EssClient::attachInstances(const AttachInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachInstancesOutcome(AttachInstancesResult(outcome.result()));
+	else
+		return AttachInstancesOutcome(outcome.error());
+}
+
+void EssClient::attachInstancesAsync(const AttachInstancesRequest& request, const AttachInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::AttachInstancesOutcomeCallable EssClient::attachInstancesCallable(const AttachInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->attachInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1671,42 +1779,6 @@ EssClient::CompleteLifecycleActionOutcomeCallable EssClient::completeLifecycleAc
 	return task->get_future();
 }
 
-EssClient::ModifyScalingConfigurationOutcome EssClient::modifyScalingConfiguration(const ModifyScalingConfigurationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyScalingConfigurationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyScalingConfigurationOutcome(ModifyScalingConfigurationResult(outcome.result()));
-	else
-		return ModifyScalingConfigurationOutcome(outcome.error());
-}
-
-void EssClient::modifyScalingConfigurationAsync(const ModifyScalingConfigurationRequest& request, const ModifyScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyScalingConfiguration(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EssClient::ModifyScalingConfigurationOutcomeCallable EssClient::modifyScalingConfigurationCallable(const ModifyScalingConfigurationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyScalingConfigurationOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyScalingConfiguration(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EssClient::DetachInstancesOutcome EssClient::detachInstances(const DetachInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1737,6 +1809,42 @@ EssClient::DetachInstancesOutcomeCallable EssClient::detachInstancesCallable(con
 			[this, request]()
 			{
 			return this->detachInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::ModifyScalingConfigurationOutcome EssClient::modifyScalingConfiguration(const ModifyScalingConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyScalingConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyScalingConfigurationOutcome(ModifyScalingConfigurationResult(outcome.result()));
+	else
+		return ModifyScalingConfigurationOutcome(outcome.error());
+}
+
+void EssClient::modifyScalingConfigurationAsync(const ModifyScalingConfigurationRequest& request, const ModifyScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyScalingConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::ModifyScalingConfigurationOutcomeCallable EssClient::modifyScalingConfigurationCallable(const ModifyScalingConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyScalingConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyScalingConfiguration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -37,9 +37,13 @@ namespace AlibabaCloud
 				};
 				struct DataDisk
 				{
+					std::string diskName;
 					std::string snapshotId;
 					int size;
+					std::string encrypted;
+					std::string description;
 					std::string category;
+					std::string kMSKeyId;
 					std::string device;
 					bool deleteWithInstance;
 				};
@@ -74,6 +78,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
 				std::string getPassword()const;
@@ -92,6 +98,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getCpu()const;
 				void setCpu(int cpu);
+				std::string getSystemDiskDiskName()const;
+				void setSystemDiskDiskName(const std::string& systemDiskDiskName);
 				std::string getRamRoleName()const;
 				void setRamRoleName(const std::string& ramRoleName);
 				long getOwnerId()const;
@@ -114,6 +122,8 @@ namespace AlibabaCloud
 				void setInternetChargeType(const std::string& internetChargeType);
 				int getInternetMaxBandwidthIn()const;
 				void setInternetMaxBandwidthIn(int internetMaxBandwidthIn);
+				std::string getSystemDiskDescription()const;
+				void setSystemDiskDescription(const std::string& systemDiskDescription);
 
             private:
 				std::string imageId_;
@@ -129,6 +139,7 @@ namespace AlibabaCloud
 				std::string systemDiskCategory_;
 				std::string accessKeyId_;
 				std::string userData_;
+				std::string resourceGroupId_;
 				std::string hostName_;
 				std::string password_;
 				bool passwordInherit_;
@@ -138,6 +149,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				int cpu_;
+				std::string systemDiskDiskName_;
 				std::string ramRoleName_;
 				long ownerId_;
 				std::vector<DataDisk> dataDisk_;
@@ -149,6 +161,7 @@ namespace AlibabaCloud
 				int systemDiskSize_;
 				std::string internetChargeType_;
 				int internetMaxBandwidthIn_;
+				std::string systemDiskDescription_;
 
 			};
 		}

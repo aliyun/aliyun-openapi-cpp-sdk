@@ -34,18 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct ScalingActivity
 				{
+					int scalingInstanceNumber;
 					int progress;
 					std::string description;
 					std::string endTime;
 					std::string attachedCapacity;
 					std::string scalingActivityId;
 					std::string scalingGroupId;
-					std::string cause;
 					std::string startTime;
-					std::string totalCapacity;
 					std::string statusCode;
 					std::string autoCreatedCapacity;
 					std::string statusMessage;
+					std::string cause;
+					std::string totalCapacity;
 				};
 
 

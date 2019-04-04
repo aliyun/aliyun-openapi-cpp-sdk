@@ -58,7 +58,18 @@ void DescribeLimitationResult::parse(const std::string &payload)
 		maxNumberOfMinSize_ = std::stoi(value["MaxNumberOfMinSize"].asString());
 	if(!value["MaxNumberOfMaxSize"].isNull())
 		maxNumberOfMaxSize_ = std::stoi(value["MaxNumberOfMaxSize"].asString());
+	if(!value["MaxNumberOfVServerGroups"].isNull())
+		maxNumberOfVServerGroups_ = std::stoi(value["MaxNumberOfVServerGroups"].asString());
+	if(!value["MaxNumberOfLifecycleHooks"].isNull())
+		maxNumberOfLifecycleHooks_ = std::stoi(value["MaxNumberOfLifecycleHooks"].asString());
+	if(!value["MaxNumberOfNotificationConfigurations"].isNull())
+		maxNumberOfNotificationConfigurations_ = std::stoi(value["MaxNumberOfNotificationConfigurations"].asString());
 
+}
+
+int DescribeLimitationResult::getMaxNumberOfLifecycleHooks()const
+{
+	return maxNumberOfLifecycleHooks_;
 }
 
 int DescribeLimitationResult::getMaxNumberOfScalingRules()const
@@ -76,6 +87,11 @@ int DescribeLimitationResult::getMaxNumberOfScheduledTasks()const
 	return maxNumberOfScheduledTasks_;
 }
 
+int DescribeLimitationResult::getMaxNumberOfVServerGroups()const
+{
+	return maxNumberOfVServerGroups_;
+}
+
 int DescribeLimitationResult::getMaxNumberOfLoadBalancers()const
 {
 	return maxNumberOfLoadBalancers_;
@@ -89,6 +105,11 @@ int DescribeLimitationResult::getMaxNumberOfMinSize()const
 int DescribeLimitationResult::getMaxNumberOfScalingGroups()const
 {
 	return maxNumberOfScalingGroups_;
+}
+
+int DescribeLimitationResult::getMaxNumberOfNotificationConfigurations()const
+{
+	return maxNumberOfNotificationConfigurations_;
 }
 
 int DescribeLimitationResult::getMaxNumberOfScalingConfigurations()const

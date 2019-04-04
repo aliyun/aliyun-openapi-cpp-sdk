@@ -33,7 +33,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getLifecycleActionToken()cons
 void RecordLifecycleActionHeartbeatRequest::setLifecycleActionToken(const std::string& lifecycleActionToken)
 {
 	lifecycleActionToken_ = lifecycleActionToken;
-	setParameter("LifecycleActionToken", lifecycleActionToken);
+	setCoreParameter("LifecycleActionToken", lifecycleActionToken);
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getResourceOwnerAccount()cons
 void RecordLifecycleActionHeartbeatRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int RecordLifecycleActionHeartbeatRequest::getHeartbeatTimeout()const
@@ -55,7 +55,7 @@ int RecordLifecycleActionHeartbeatRequest::getHeartbeatTimeout()const
 void RecordLifecycleActionHeartbeatRequest::setHeartbeatTimeout(int heartbeatTimeout)
 {
 	heartbeatTimeout_ = heartbeatTimeout;
-	setParameter("HeartbeatTimeout", std::to_string(heartbeatTimeout));
+	setCoreParameter("HeartbeatTimeout", std::to_string(heartbeatTimeout));
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getLifecycleHookId()const
@@ -66,7 +66,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getLifecycleHookId()const
 void RecordLifecycleActionHeartbeatRequest::setLifecycleHookId(const std::string& lifecycleHookId)
 {
 	lifecycleHookId_ = lifecycleHookId;
-	setParameter("LifecycleHookId", lifecycleHookId);
+	setCoreParameter("LifecycleHookId", lifecycleHookId);
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getOwnerAccount()const
 void RecordLifecycleActionHeartbeatRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long RecordLifecycleActionHeartbeatRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long RecordLifecycleActionHeartbeatRequest::getOwnerId()const
 void RecordLifecycleActionHeartbeatRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string RecordLifecycleActionHeartbeatRequest::getAccessKeyId()const
 void RecordLifecycleActionHeartbeatRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

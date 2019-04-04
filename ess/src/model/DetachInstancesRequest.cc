@@ -33,7 +33,7 @@ long DetachInstancesRequest::getResourceOwnerId()const
 void DetachInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<std::string> DetachInstancesRequest::getInstanceId()const
@@ -45,7 +45,7 @@ void DetachInstancesRequest::setInstanceId(const std::vector<std::string>& insta
 {
 	instanceId_ = instanceId;
 	for(int i = 0; i!= instanceId.size(); i++)
-		setParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
 }
 
 std::string DetachInstancesRequest::getResourceOwnerAccount()const
@@ -56,7 +56,7 @@ std::string DetachInstancesRequest::getResourceOwnerAccount()const
 void DetachInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DetachInstancesRequest::getScalingGroupId()const
@@ -67,7 +67,7 @@ std::string DetachInstancesRequest::getScalingGroupId()const
 void DetachInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string DetachInstancesRequest::getOwnerAccount()const
@@ -78,7 +78,7 @@ std::string DetachInstancesRequest::getOwnerAccount()const
 void DetachInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DetachInstancesRequest::getOwnerId()const
@@ -89,7 +89,7 @@ long DetachInstancesRequest::getOwnerId()const
 void DetachInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DetachInstancesRequest::getAccessKeyId()const
@@ -100,6 +100,6 @@ std::string DetachInstancesRequest::getAccessKeyId()const
 void DetachInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

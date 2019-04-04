@@ -33,7 +33,7 @@ std::string DeleteAlarmRequest::getResourceOwnerAccount()const
 void DeleteAlarmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteAlarmRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteAlarmRequest::getRegionId()const
 void DeleteAlarmRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 long DeleteAlarmRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long DeleteAlarmRequest::getOwnerId()const
 void DeleteAlarmRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteAlarmRequest::getAlarmTaskId()const
@@ -66,7 +66,7 @@ std::string DeleteAlarmRequest::getAlarmTaskId()const
 void DeleteAlarmRequest::setAlarmTaskId(const std::string& alarmTaskId)
 {
 	alarmTaskId_ = alarmTaskId;
-	setParameter("AlarmTaskId", alarmTaskId);
+	setCoreParameter("AlarmTaskId", alarmTaskId);
 }
 
 std::string DeleteAlarmRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteAlarmRequest::getAccessKeyId()const
 void DeleteAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

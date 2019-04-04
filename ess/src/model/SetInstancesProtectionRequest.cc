@@ -34,7 +34,7 @@ void SetInstancesProtectionRequest::setInstanceId(const std::vector<std::string>
 {
 	instanceId_ = instanceId;
 	for(int i = 0; i!= instanceId.size(); i++)
-		setParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
 }
 
 std::string SetInstancesProtectionRequest::getResourceOwnerAccount()const
@@ -45,7 +45,7 @@ std::string SetInstancesProtectionRequest::getResourceOwnerAccount()const
 void SetInstancesProtectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetInstancesProtectionRequest::getScalingGroupId()const
@@ -56,7 +56,7 @@ std::string SetInstancesProtectionRequest::getScalingGroupId()const
 void SetInstancesProtectionRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 long SetInstancesProtectionRequest::getOwnerId()const
@@ -67,7 +67,7 @@ long SetInstancesProtectionRequest::getOwnerId()const
 void SetInstancesProtectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetInstancesProtectionRequest::getAccessKeyId()const
@@ -78,7 +78,7 @@ std::string SetInstancesProtectionRequest::getAccessKeyId()const
 void SetInstancesProtectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool SetInstancesProtectionRequest::getProtectedFromScaleIn()const
@@ -89,6 +89,6 @@ bool SetInstancesProtectionRequest::getProtectedFromScaleIn()const
 void SetInstancesProtectionRequest::setProtectedFromScaleIn(bool protectedFromScaleIn)
 {
 	protectedFromScaleIn_ = protectedFromScaleIn;
-	setParameter("ProtectedFromScaleIn", std::to_string(protectedFromScaleIn));
+	setCoreParameter("ProtectedFromScaleIn", protectedFromScaleIn ? "true" : "false");
 }
 

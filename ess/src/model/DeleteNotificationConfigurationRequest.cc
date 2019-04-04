@@ -33,7 +33,7 @@ std::string DeleteNotificationConfigurationRequest::getResourceOwnerAccount()con
 void DeleteNotificationConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteNotificationConfigurationRequest::getScalingGroupId()const
@@ -44,7 +44,7 @@ std::string DeleteNotificationConfigurationRequest::getScalingGroupId()const
 void DeleteNotificationConfigurationRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string DeleteNotificationConfigurationRequest::getNotificationArn()const
@@ -55,7 +55,7 @@ std::string DeleteNotificationConfigurationRequest::getNotificationArn()const
 void DeleteNotificationConfigurationRequest::setNotificationArn(const std::string& notificationArn)
 {
 	notificationArn_ = notificationArn;
-	setParameter("NotificationArn", notificationArn);
+	setCoreParameter("NotificationArn", notificationArn);
 }
 
 long DeleteNotificationConfigurationRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DeleteNotificationConfigurationRequest::getOwnerId()const
 void DeleteNotificationConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteNotificationConfigurationRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteNotificationConfigurationRequest::getAccessKeyId()const
 void DeleteNotificationConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

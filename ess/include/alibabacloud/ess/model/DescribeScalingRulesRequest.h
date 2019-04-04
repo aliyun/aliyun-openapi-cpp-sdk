@@ -67,6 +67,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getScalingRuleType()const;
+				void setScalingRuleType(const std::string& scalingRuleType);
 				std::string getScalingRuleId10()const;
 				void setScalingRuleId10(const std::string& scalingRuleId10);
 				std::string getResourceOwnerAccount()const;
@@ -101,6 +103,8 @@ namespace AlibabaCloud
 				void setScalingRuleAri8(const std::string& scalingRuleAri8);
 				std::string getScalingRuleId4()const;
 				void setScalingRuleId4(const std::string& scalingRuleId4);
+				bool getShowAlarmRules()const;
+				void setShowAlarmRules(bool showAlarmRules);
 				std::string getScalingRuleId5()const;
 				void setScalingRuleId5(const std::string& scalingRuleId5);
 				std::string getScalingRuleId6()const;
@@ -131,6 +135,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string regionId_;
 				int pageSize_;
+				std::string scalingRuleType_;
 				std::string scalingRuleId10_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
@@ -148,6 +153,7 @@ namespace AlibabaCloud
 				std::string scalingRuleAri10_;
 				std::string scalingRuleAri8_;
 				std::string scalingRuleId4_;
+				bool showAlarmRules_;
 				std::string scalingRuleId5_;
 				std::string scalingRuleId6_;
 				std::string scalingRuleId7_;

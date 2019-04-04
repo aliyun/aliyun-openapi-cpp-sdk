@@ -96,6 +96,26 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.scalingPolicy = value["ScalingPolicy"].asString();
 		if(!value["StoppedCapacity"].isNull())
 			scalingGroupsObject.stoppedCapacity = std::stoi(value["StoppedCapacity"].asString());
+		auto allVServerGroups = value["VServerGroups"]["VServerGroup"];
+		for (auto value : allVServerGroups)
+		{
+			ScalingGroup::VServerGroup vServerGroupsObject;
+			if(!value["LoadBalancerId"].isNull())
+				vServerGroupsObject.loadBalancerId = value["LoadBalancerId"].asString();
+			auto allVServerGroupAttributes = value["VServerGroupAttributes"]["VServerGroupAttribute"];
+			for (auto value : allVServerGroupAttributes)
+			{
+				ScalingGroup::VServerGroup::VServerGroupAttribute vServerGroupAttributesObject;
+				if(!value["VServerGroupId"].isNull())
+					vServerGroupAttributesObject.vServerGroupId = value["VServerGroupId"].asString();
+				if(!value["Port"].isNull())
+					vServerGroupAttributesObject.port = std::stoi(value["Port"].asString());
+				if(!value["Weight"].isNull())
+					vServerGroupAttributesObject.weight = std::stoi(value["Weight"].asString());
+				vServerGroupsObject.vServerGroupAttributes.push_back(vServerGroupAttributesObject);
+			}
+			scalingGroupsObject.vServerGroups.push_back(vServerGroupsObject);
+		}
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			scalingGroupsObject.vSwitchIds.push_back(value.asString());

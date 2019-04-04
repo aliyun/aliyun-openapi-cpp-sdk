@@ -33,7 +33,7 @@ std::string CreateScheduledTaskRequest::getLaunchTime()const
 void CreateScheduledTaskRequest::setLaunchTime(const std::string& launchTime)
 {
 	launchTime_ = launchTime;
-	setParameter("LaunchTime", launchTime);
+	setCoreParameter("LaunchTime", launchTime);
 }
 
 std::string CreateScheduledTaskRequest::getScheduledAction()const
@@ -44,7 +44,7 @@ std::string CreateScheduledTaskRequest::getScheduledAction()const
 void CreateScheduledTaskRequest::setScheduledAction(const std::string& scheduledAction)
 {
 	scheduledAction_ = scheduledAction;
-	setParameter("ScheduledAction", scheduledAction);
+	setCoreParameter("ScheduledAction", scheduledAction);
 }
 
 std::string CreateScheduledTaskRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateScheduledTaskRequest::getResourceOwnerAccount()const
 void CreateScheduledTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateScheduledTaskRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateScheduledTaskRequest::getOwnerAccount()const
 void CreateScheduledTaskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateScheduledTaskRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string CreateScheduledTaskRequest::getDescription()const
 void CreateScheduledTaskRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 long CreateScheduledTaskRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long CreateScheduledTaskRequest::getOwnerId()const
 void CreateScheduledTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateScheduledTaskRequest::getRecurrenceValue()const
@@ -99,7 +99,7 @@ std::string CreateScheduledTaskRequest::getRecurrenceValue()const
 void CreateScheduledTaskRequest::setRecurrenceValue(const std::string& recurrenceValue)
 {
 	recurrenceValue_ = recurrenceValue;
-	setParameter("RecurrenceValue", recurrenceValue);
+	setCoreParameter("RecurrenceValue", recurrenceValue);
 }
 
 int CreateScheduledTaskRequest::getLaunchExpirationTime()const
@@ -110,7 +110,7 @@ int CreateScheduledTaskRequest::getLaunchExpirationTime()const
 void CreateScheduledTaskRequest::setLaunchExpirationTime(int launchExpirationTime)
 {
 	launchExpirationTime_ = launchExpirationTime;
-	setParameter("LaunchExpirationTime", std::to_string(launchExpirationTime));
+	setCoreParameter("LaunchExpirationTime", std::to_string(launchExpirationTime));
 }
 
 std::string CreateScheduledTaskRequest::getRecurrenceEndTime()const
@@ -121,7 +121,7 @@ std::string CreateScheduledTaskRequest::getRecurrenceEndTime()const
 void CreateScheduledTaskRequest::setRecurrenceEndTime(const std::string& recurrenceEndTime)
 {
 	recurrenceEndTime_ = recurrenceEndTime;
-	setParameter("RecurrenceEndTime", recurrenceEndTime);
+	setCoreParameter("RecurrenceEndTime", recurrenceEndTime);
 }
 
 std::string CreateScheduledTaskRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string CreateScheduledTaskRequest::getAccessKeyId()const
 void CreateScheduledTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateScheduledTaskRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string CreateScheduledTaskRequest::getRegionId()const
 void CreateScheduledTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateScheduledTaskRequest::getScheduledTaskName()const
@@ -154,7 +154,7 @@ std::string CreateScheduledTaskRequest::getScheduledTaskName()const
 void CreateScheduledTaskRequest::setScheduledTaskName(const std::string& scheduledTaskName)
 {
 	scheduledTaskName_ = scheduledTaskName;
-	setParameter("ScheduledTaskName", scheduledTaskName);
+	setCoreParameter("ScheduledTaskName", scheduledTaskName);
 }
 
 bool CreateScheduledTaskRequest::getTaskEnabled()const
@@ -165,7 +165,7 @@ bool CreateScheduledTaskRequest::getTaskEnabled()const
 void CreateScheduledTaskRequest::setTaskEnabled(bool taskEnabled)
 {
 	taskEnabled_ = taskEnabled;
-	setParameter("TaskEnabled", std::to_string(taskEnabled));
+	setCoreParameter("TaskEnabled", taskEnabled ? "true" : "false");
 }
 
 std::string CreateScheduledTaskRequest::getRecurrenceType()const
@@ -176,6 +176,6 @@ std::string CreateScheduledTaskRequest::getRecurrenceType()const
 void CreateScheduledTaskRequest::setRecurrenceType(const std::string& recurrenceType)
 {
 	recurrenceType_ = recurrenceType;
-	setParameter("RecurrenceType", recurrenceType);
+	setCoreParameter("RecurrenceType", recurrenceType);
 }
 

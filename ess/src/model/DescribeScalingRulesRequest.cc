@@ -33,7 +33,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleName1()const
 void DescribeScalingRulesRequest::setScalingRuleName1(const std::string& scalingRuleName1)
 {
 	scalingRuleName1_ = scalingRuleName1;
-	setParameter("ScalingRuleName1", scalingRuleName1);
+	setCoreParameter("ScalingRuleName1", scalingRuleName1);
 }
 
 long DescribeScalingRulesRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeScalingRulesRequest::getResourceOwnerId()const
 void DescribeScalingRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleName2()const
@@ -55,7 +55,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleName2()const
 void DescribeScalingRulesRequest::setScalingRuleName2(const std::string& scalingRuleName2)
 {
 	scalingRuleName2_ = scalingRuleName2;
-	setParameter("ScalingRuleName2", scalingRuleName2);
+	setCoreParameter("ScalingRuleName2", scalingRuleName2);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleName3()const
@@ -66,7 +66,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleName3()const
 void DescribeScalingRulesRequest::setScalingRuleName3(const std::string& scalingRuleName3)
 {
 	scalingRuleName3_ = scalingRuleName3;
-	setParameter("ScalingRuleName3", scalingRuleName3);
+	setCoreParameter("ScalingRuleName3", scalingRuleName3);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleName4()const
@@ -77,7 +77,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleName4()const
 void DescribeScalingRulesRequest::setScalingRuleName4(const std::string& scalingRuleName4)
 {
 	scalingRuleName4_ = scalingRuleName4;
-	setParameter("ScalingRuleName4", scalingRuleName4);
+	setCoreParameter("ScalingRuleName4", scalingRuleName4);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleName5()const
@@ -88,7 +88,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleName5()const
 void DescribeScalingRulesRequest::setScalingRuleName5(const std::string& scalingRuleName5)
 {
 	scalingRuleName5_ = scalingRuleName5;
-	setParameter("ScalingRuleName5", scalingRuleName5);
+	setCoreParameter("ScalingRuleName5", scalingRuleName5);
 }
 
 std::string DescribeScalingRulesRequest::getScalingGroupId()const
@@ -99,7 +99,7 @@ std::string DescribeScalingRulesRequest::getScalingGroupId()const
 void DescribeScalingRulesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleName6()const
@@ -110,7 +110,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleName6()const
 void DescribeScalingRulesRequest::setScalingRuleName6(const std::string& scalingRuleName6)
 {
 	scalingRuleName6_ = scalingRuleName6;
-	setParameter("ScalingRuleName6", scalingRuleName6);
+	setCoreParameter("ScalingRuleName6", scalingRuleName6);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleName7()const
@@ -121,7 +121,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleName7()const
 void DescribeScalingRulesRequest::setScalingRuleName7(const std::string& scalingRuleName7)
 {
 	scalingRuleName7_ = scalingRuleName7;
-	setParameter("ScalingRuleName7", scalingRuleName7);
+	setCoreParameter("ScalingRuleName7", scalingRuleName7);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleName8()const
@@ -132,7 +132,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleName8()const
 void DescribeScalingRulesRequest::setScalingRuleName8(const std::string& scalingRuleName8)
 {
 	scalingRuleName8_ = scalingRuleName8;
-	setParameter("ScalingRuleName8", scalingRuleName8);
+	setCoreParameter("ScalingRuleName8", scalingRuleName8);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleAri9()const
@@ -143,7 +143,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleAri9()const
 void DescribeScalingRulesRequest::setScalingRuleAri9(const std::string& scalingRuleAri9)
 {
 	scalingRuleAri9_ = scalingRuleAri9;
-	setParameter("ScalingRuleAri9", scalingRuleAri9);
+	setCoreParameter("ScalingRuleAri9", scalingRuleAri9);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleName9()const
@@ -154,7 +154,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleName9()const
 void DescribeScalingRulesRequest::setScalingRuleName9(const std::string& scalingRuleName9)
 {
 	scalingRuleName9_ = scalingRuleName9;
-	setParameter("ScalingRuleName9", scalingRuleName9);
+	setCoreParameter("ScalingRuleName9", scalingRuleName9);
 }
 
 int DescribeScalingRulesRequest::getPageNumber()const
@@ -165,7 +165,7 @@ int DescribeScalingRulesRequest::getPageNumber()const
 void DescribeScalingRulesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeScalingRulesRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ std::string DescribeScalingRulesRequest::getAccessKeyId()const
 void DescribeScalingRulesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeScalingRulesRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string DescribeScalingRulesRequest::getRegionId()const
 void DescribeScalingRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeScalingRulesRequest::getPageSize()const
@@ -198,7 +198,18 @@ int DescribeScalingRulesRequest::getPageSize()const
 void DescribeScalingRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeScalingRulesRequest::getScalingRuleType()const
+{
+	return scalingRuleType_;
+}
+
+void DescribeScalingRulesRequest::setScalingRuleType(const std::string& scalingRuleType)
+{
+	scalingRuleType_ = scalingRuleType;
+	setCoreParameter("ScalingRuleType", scalingRuleType);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleId10()const
@@ -209,7 +220,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleId10()const
 void DescribeScalingRulesRequest::setScalingRuleId10(const std::string& scalingRuleId10)
 {
 	scalingRuleId10_ = scalingRuleId10;
-	setParameter("ScalingRuleId10", scalingRuleId10);
+	setCoreParameter("ScalingRuleId10", scalingRuleId10);
 }
 
 std::string DescribeScalingRulesRequest::getResourceOwnerAccount()const
@@ -220,7 +231,7 @@ std::string DescribeScalingRulesRequest::getResourceOwnerAccount()const
 void DescribeScalingRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeScalingRulesRequest::getOwnerAccount()const
@@ -231,7 +242,7 @@ std::string DescribeScalingRulesRequest::getOwnerAccount()const
 void DescribeScalingRulesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeScalingRulesRequest::getOwnerId()const
@@ -242,7 +253,7 @@ long DescribeScalingRulesRequest::getOwnerId()const
 void DescribeScalingRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleAri1()const
@@ -253,7 +264,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleAri1()const
 void DescribeScalingRulesRequest::setScalingRuleAri1(const std::string& scalingRuleAri1)
 {
 	scalingRuleAri1_ = scalingRuleAri1;
-	setParameter("ScalingRuleAri1", scalingRuleAri1);
+	setCoreParameter("ScalingRuleAri1", scalingRuleAri1);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleAri2()const
@@ -264,7 +275,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleAri2()const
 void DescribeScalingRulesRequest::setScalingRuleAri2(const std::string& scalingRuleAri2)
 {
 	scalingRuleAri2_ = scalingRuleAri2;
-	setParameter("ScalingRuleAri2", scalingRuleAri2);
+	setCoreParameter("ScalingRuleAri2", scalingRuleAri2);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleName10()const
@@ -275,7 +286,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleName10()const
 void DescribeScalingRulesRequest::setScalingRuleName10(const std::string& scalingRuleName10)
 {
 	scalingRuleName10_ = scalingRuleName10;
-	setParameter("ScalingRuleName10", scalingRuleName10);
+	setCoreParameter("ScalingRuleName10", scalingRuleName10);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleAri3()const
@@ -286,7 +297,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleAri3()const
 void DescribeScalingRulesRequest::setScalingRuleAri3(const std::string& scalingRuleAri3)
 {
 	scalingRuleAri3_ = scalingRuleAri3;
-	setParameter("ScalingRuleAri3", scalingRuleAri3);
+	setCoreParameter("ScalingRuleAri3", scalingRuleAri3);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleAri4()const
@@ -297,7 +308,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleAri4()const
 void DescribeScalingRulesRequest::setScalingRuleAri4(const std::string& scalingRuleAri4)
 {
 	scalingRuleAri4_ = scalingRuleAri4;
-	setParameter("ScalingRuleAri4", scalingRuleAri4);
+	setCoreParameter("ScalingRuleAri4", scalingRuleAri4);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleId8()const
@@ -308,7 +319,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleId8()const
 void DescribeScalingRulesRequest::setScalingRuleId8(const std::string& scalingRuleId8)
 {
 	scalingRuleId8_ = scalingRuleId8;
-	setParameter("ScalingRuleId8", scalingRuleId8);
+	setCoreParameter("ScalingRuleId8", scalingRuleId8);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleAri5()const
@@ -319,7 +330,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleAri5()const
 void DescribeScalingRulesRequest::setScalingRuleAri5(const std::string& scalingRuleAri5)
 {
 	scalingRuleAri5_ = scalingRuleAri5;
-	setParameter("ScalingRuleAri5", scalingRuleAri5);
+	setCoreParameter("ScalingRuleAri5", scalingRuleAri5);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleId9()const
@@ -330,7 +341,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleId9()const
 void DescribeScalingRulesRequest::setScalingRuleId9(const std::string& scalingRuleId9)
 {
 	scalingRuleId9_ = scalingRuleId9;
-	setParameter("ScalingRuleId9", scalingRuleId9);
+	setCoreParameter("ScalingRuleId9", scalingRuleId9);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleAri6()const
@@ -341,7 +352,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleAri6()const
 void DescribeScalingRulesRequest::setScalingRuleAri6(const std::string& scalingRuleAri6)
 {
 	scalingRuleAri6_ = scalingRuleAri6;
-	setParameter("ScalingRuleAri6", scalingRuleAri6);
+	setCoreParameter("ScalingRuleAri6", scalingRuleAri6);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleAri7()const
@@ -352,7 +363,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleAri7()const
 void DescribeScalingRulesRequest::setScalingRuleAri7(const std::string& scalingRuleAri7)
 {
 	scalingRuleAri7_ = scalingRuleAri7;
-	setParameter("ScalingRuleAri7", scalingRuleAri7);
+	setCoreParameter("ScalingRuleAri7", scalingRuleAri7);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleAri10()const
@@ -363,7 +374,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleAri10()const
 void DescribeScalingRulesRequest::setScalingRuleAri10(const std::string& scalingRuleAri10)
 {
 	scalingRuleAri10_ = scalingRuleAri10;
-	setParameter("ScalingRuleAri10", scalingRuleAri10);
+	setCoreParameter("ScalingRuleAri10", scalingRuleAri10);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleAri8()const
@@ -374,7 +385,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleAri8()const
 void DescribeScalingRulesRequest::setScalingRuleAri8(const std::string& scalingRuleAri8)
 {
 	scalingRuleAri8_ = scalingRuleAri8;
-	setParameter("ScalingRuleAri8", scalingRuleAri8);
+	setCoreParameter("ScalingRuleAri8", scalingRuleAri8);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleId4()const
@@ -385,7 +396,18 @@ std::string DescribeScalingRulesRequest::getScalingRuleId4()const
 void DescribeScalingRulesRequest::setScalingRuleId4(const std::string& scalingRuleId4)
 {
 	scalingRuleId4_ = scalingRuleId4;
-	setParameter("ScalingRuleId4", scalingRuleId4);
+	setCoreParameter("ScalingRuleId4", scalingRuleId4);
+}
+
+bool DescribeScalingRulesRequest::getShowAlarmRules()const
+{
+	return showAlarmRules_;
+}
+
+void DescribeScalingRulesRequest::setShowAlarmRules(bool showAlarmRules)
+{
+	showAlarmRules_ = showAlarmRules;
+	setCoreParameter("ShowAlarmRules", showAlarmRules ? "true" : "false");
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleId5()const
@@ -396,7 +418,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleId5()const
 void DescribeScalingRulesRequest::setScalingRuleId5(const std::string& scalingRuleId5)
 {
 	scalingRuleId5_ = scalingRuleId5;
-	setParameter("ScalingRuleId5", scalingRuleId5);
+	setCoreParameter("ScalingRuleId5", scalingRuleId5);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleId6()const
@@ -407,7 +429,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleId6()const
 void DescribeScalingRulesRequest::setScalingRuleId6(const std::string& scalingRuleId6)
 {
 	scalingRuleId6_ = scalingRuleId6;
-	setParameter("ScalingRuleId6", scalingRuleId6);
+	setCoreParameter("ScalingRuleId6", scalingRuleId6);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleId7()const
@@ -418,7 +440,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleId7()const
 void DescribeScalingRulesRequest::setScalingRuleId7(const std::string& scalingRuleId7)
 {
 	scalingRuleId7_ = scalingRuleId7;
-	setParameter("ScalingRuleId7", scalingRuleId7);
+	setCoreParameter("ScalingRuleId7", scalingRuleId7);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleId1()const
@@ -429,7 +451,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleId1()const
 void DescribeScalingRulesRequest::setScalingRuleId1(const std::string& scalingRuleId1)
 {
 	scalingRuleId1_ = scalingRuleId1;
-	setParameter("ScalingRuleId1", scalingRuleId1);
+	setCoreParameter("ScalingRuleId1", scalingRuleId1);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleId2()const
@@ -440,7 +462,7 @@ std::string DescribeScalingRulesRequest::getScalingRuleId2()const
 void DescribeScalingRulesRequest::setScalingRuleId2(const std::string& scalingRuleId2)
 {
 	scalingRuleId2_ = scalingRuleId2;
-	setParameter("ScalingRuleId2", scalingRuleId2);
+	setCoreParameter("ScalingRuleId2", scalingRuleId2);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleId3()const
@@ -451,6 +473,6 @@ std::string DescribeScalingRulesRequest::getScalingRuleId3()const
 void DescribeScalingRulesRequest::setScalingRuleId3(const std::string& scalingRuleId3)
 {
 	scalingRuleId3_ = scalingRuleId3;
-	setParameter("ScalingRuleId3", scalingRuleId3);
+	setCoreParameter("ScalingRuleId3", scalingRuleId3);
 }
 

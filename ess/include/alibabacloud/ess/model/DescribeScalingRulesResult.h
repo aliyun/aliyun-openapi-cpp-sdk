@@ -34,15 +34,34 @@ namespace AlibabaCloud
 			public:
 				struct ScalingRule
 				{
-					std::string scalingRuleAri;
-					int minSize;
-					std::string scalingRuleName;
-					int adjustmentValue;
+					struct Alarm
+					{
+						std::string alarmTaskName;
+						std::string alarmTaskId;
+					};
+					struct StepAdjustment
+					{
+						float metricIntervalUpperBound;
+						float metricIntervalLowerBound;
+						int scalingAdjustment;
+					};
+					float targetValue;
+					std::vector<ScalingRule::StepAdjustment> stepAdjustments;
 					std::string scalingGroupId;
 					int cooldown;
+					std::vector<ScalingRule::Alarm> alarms;
 					std::string scalingRuleId;
+					int minAdjustmentMagnitude;
+					bool disableScaleIn;
 					int maxSize;
 					std::string adjustmentType;
+					std::string scalingRuleAri;
+					int minSize;
+					std::string metricName;
+					std::string scalingRuleName;
+					int adjustmentValue;
+					std::string scalingRuleType;
+					int estimatedInstanceWarmup;
 				};
 
 
