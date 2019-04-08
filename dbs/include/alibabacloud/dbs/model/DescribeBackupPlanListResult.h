@@ -32,6 +32,32 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DBS_EXPORT DescribeBackupPlanListResult : public ServiceResult
 			{
 			public:
+				struct BackupPlanDetail
+				{
+					std::string backupPlanName;
+					std::string backupMethod;
+					long backupPlanCreateTime;
+					std::string backupPeriod;
+					std::string backupObjects;
+					std::string sourceEndpointInstanceID;
+					std::string instanceClass;
+					std::string sourceEndpointDatabaseName;
+					std::string oSSBucketRegion;
+					std::string sourceEndpointRegion;
+					std::string sourceEndpointIpPort;
+					int duplicationArchivePeriod;
+					std::string oSSBucketName;
+					std::string backupPlanStatus;
+					std::string backupStartTime;
+					bool enableBackupLog;
+					std::string backupPlanId;
+					std::string sourceEndpointOracleSID;
+					int backupRetentionPeriod;
+					std::string sourceEndpointInstanceType;
+					long backupGatewayId;
+					std::string sourceEndpointUserName;
+					int duplicationInfrequentAccessPeriod;
+				};
 
 
 				DescribeBackupPlanListResult();
@@ -41,7 +67,7 @@ namespace AlibabaCloud
 				int getPageNum()const;
 				int getHttpStatusCode()const;
 				int getTotalElements()const;
-				std::vector<std::string> getItems()const;
+				std::vector<BackupPlanDetail> getItems()const;
 				int getTotalPages()const;
 				std::string getErrMessage()const;
 				bool getSuccess()const;
@@ -54,7 +80,7 @@ namespace AlibabaCloud
 				int pageNum_;
 				int httpStatusCode_;
 				int totalElements_;
-				std::vector<std::string> items_;
+				std::vector<BackupPlanDetail> items_;
 				int totalPages_;
 				std::string errMessage_;
 				bool success_;

@@ -41,8 +41,57 @@ void DescribeBackupPlanListResult::parse(const std::string &payload)
 
 	setRequestId(value["RequestId"].asString());
 	auto allItems = value["Items"]["BackupPlanDetail"];
-	for (const auto &item : allItems)
-		items_.push_back(item.asString());
+	for (auto value : allItems)
+	{
+		BackupPlanDetail itemsObject;
+		if(!value["BackupPlanId"].isNull())
+			itemsObject.backupPlanId = value["BackupPlanId"].asString();
+		if(!value["SourceEndpointInstanceType"].isNull())
+			itemsObject.sourceEndpointInstanceType = value["SourceEndpointInstanceType"].asString();
+		if(!value["SourceEndpointRegion"].isNull())
+			itemsObject.sourceEndpointRegion = value["SourceEndpointRegion"].asString();
+		if(!value["SourceEndpointInstanceID"].isNull())
+			itemsObject.sourceEndpointInstanceID = value["SourceEndpointInstanceID"].asString();
+		if(!value["SourceEndpointIpPort"].isNull())
+			itemsObject.sourceEndpointIpPort = value["SourceEndpointIpPort"].asString();
+		if(!value["SourceEndpointDatabaseName"].isNull())
+			itemsObject.sourceEndpointDatabaseName = value["SourceEndpointDatabaseName"].asString();
+		if(!value["SourceEndpointUserName"].isNull())
+			itemsObject.sourceEndpointUserName = value["SourceEndpointUserName"].asString();
+		if(!value["BackupObjects"].isNull())
+			itemsObject.backupObjects = value["BackupObjects"].asString();
+		if(!value["BackupGatewayId"].isNull())
+			itemsObject.backupGatewayId = std::stol(value["BackupGatewayId"].asString());
+		if(!value["OSSBucketRegion"].isNull())
+			itemsObject.oSSBucketRegion = value["OSSBucketRegion"].asString();
+		if(!value["OSSBucketName"].isNull())
+			itemsObject.oSSBucketName = value["OSSBucketName"].asString();
+		if(!value["BackupPeriod"].isNull())
+			itemsObject.backupPeriod = value["BackupPeriod"].asString();
+		if(!value["BackupStartTime"].isNull())
+			itemsObject.backupStartTime = value["BackupStartTime"].asString();
+		if(!value["EnableBackupLog"].isNull())
+			itemsObject.enableBackupLog = value["EnableBackupLog"].asString() == "true";
+		if(!value["BackupRetentionPeriod"].isNull())
+			itemsObject.backupRetentionPeriod = std::stoi(value["BackupRetentionPeriod"].asString());
+		if(!value["DuplicationInfrequentAccessPeriod"].isNull())
+			itemsObject.duplicationInfrequentAccessPeriod = std::stoi(value["DuplicationInfrequentAccessPeriod"].asString());
+		if(!value["DuplicationArchivePeriod"].isNull())
+			itemsObject.duplicationArchivePeriod = std::stoi(value["DuplicationArchivePeriod"].asString());
+		if(!value["BackupPlanName"].isNull())
+			itemsObject.backupPlanName = value["BackupPlanName"].asString();
+		if(!value["SourceEndpointOracleSID"].isNull())
+			itemsObject.sourceEndpointOracleSID = value["SourceEndpointOracleSID"].asString();
+		if(!value["InstanceClass"].isNull())
+			itemsObject.instanceClass = value["InstanceClass"].asString();
+		if(!value["BackupMethod"].isNull())
+			itemsObject.backupMethod = value["BackupMethod"].asString();
+		if(!value["BackupPlanCreateTime"].isNull())
+			itemsObject.backupPlanCreateTime = std::stol(value["BackupPlanCreateTime"].asString());
+		if(!value["BackupPlanStatus"].isNull())
+			itemsObject.backupPlanStatus = value["BackupPlanStatus"].asString();
+		items_.push_back(itemsObject);
+	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrCode"].isNull())
@@ -82,7 +131,7 @@ int DescribeBackupPlanListResult::getTotalElements()const
 	return totalElements_;
 }
 
-std::vector<std::string> DescribeBackupPlanListResult::getItems()const
+std::vector<DescribeBackupPlanListResult::BackupPlanDetail> DescribeBackupPlanListResult::getItems()const
 {
 	return items_;
 }

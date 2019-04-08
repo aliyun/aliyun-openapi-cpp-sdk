@@ -41,8 +41,31 @@ void DescribeBackupGatewayListResult::parse(const std::string &payload)
 
 	setRequestId(value["RequestId"].asString());
 	auto allItems = value["Items"]["BackupGateway"];
-	for (const auto &item : allItems)
-		items_.push_back(item.asString());
+	for (auto value : allItems)
+	{
+		BackupGateway itemsObject;
+		if(!value["BackupGatewayId"].isNull())
+			itemsObject.backupGatewayId = value["BackupGatewayId"].asString();
+		if(!value["SourceEndpointInternetIP"].isNull())
+			itemsObject.sourceEndpointInternetIP = value["SourceEndpointInternetIP"].asString();
+		if(!value["SourceEndpointIntranetIP"].isNull())
+			itemsObject.sourceEndpointIntranetIP = value["SourceEndpointIntranetIP"].asString();
+		if(!value["SourceEndpointHostname"].isNull())
+			itemsObject.sourceEndpointHostname = value["SourceEndpointHostname"].asString();
+		if(!value["BackupGatewayStatus"].isNull())
+			itemsObject.backupGatewayStatus = value["BackupGatewayStatus"].asString();
+		if(!value["LastHeartbeatTime"].isNull())
+			itemsObject.lastHeartbeatTime = std::stol(value["LastHeartbeatTime"].asString());
+		if(!value["BackupGatewayCreateTime"].isNull())
+			itemsObject.backupGatewayCreateTime = std::stol(value["BackupGatewayCreateTime"].asString());
+		if(!value["Region"].isNull())
+			itemsObject.region = value["Region"].asString();
+		if(!value["DisplayName"].isNull())
+			itemsObject.displayName = value["DisplayName"].asString();
+		if(!value["Identifier"].isNull())
+			itemsObject.identifier = value["Identifier"].asString();
+		items_.push_back(itemsObject);
+	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrCode"].isNull())
@@ -82,7 +105,7 @@ int DescribeBackupGatewayListResult::getTotalElements()const
 	return totalElements_;
 }
 
-std::vector<std::string> DescribeBackupGatewayListResult::getItems()const
+std::vector<DescribeBackupGatewayListResult::BackupGateway> DescribeBackupGatewayListResult::getItems()const
 {
 	return items_;
 }

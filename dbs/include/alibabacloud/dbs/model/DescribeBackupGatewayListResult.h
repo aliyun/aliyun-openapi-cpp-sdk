@@ -32,6 +32,19 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DBS_EXPORT DescribeBackupGatewayListResult : public ServiceResult
 			{
 			public:
+				struct BackupGateway
+				{
+					std::string sourceEndpointHostname;
+					std::string identifier;
+					long backupGatewayCreateTime;
+					std::string backupGatewayStatus;
+					std::string sourceEndpointInternetIP;
+					std::string sourceEndpointIntranetIP;
+					std::string displayName;
+					long lastHeartbeatTime;
+					std::string region;
+					std::string backupGatewayId;
+				};
 
 
 				DescribeBackupGatewayListResult();
@@ -41,7 +54,7 @@ namespace AlibabaCloud
 				int getPageNum()const;
 				int getHttpStatusCode()const;
 				int getTotalElements()const;
-				std::vector<std::string> getItems()const;
+				std::vector<BackupGateway> getItems()const;
 				int getTotalPages()const;
 				std::string getErrMessage()const;
 				bool getSuccess()const;
@@ -54,7 +67,7 @@ namespace AlibabaCloud
 				int pageNum_;
 				int httpStatusCode_;
 				int totalElements_;
-				std::vector<std::string> items_;
+				std::vector<BackupGateway> items_;
 				int totalPages_;
 				std::string errMessage_;
 				bool success_;

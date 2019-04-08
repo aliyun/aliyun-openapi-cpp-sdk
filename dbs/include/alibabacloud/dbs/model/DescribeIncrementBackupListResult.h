@@ -32,6 +32,17 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DBS_EXPORT DescribeIncrementBackupListResult : public ServiceResult
 			{
 			public:
+				struct IncrementBackupFile
+				{
+					std::string sourceEndpointIpPort;
+					std::string storageMethod;
+					long endTime;
+					long backupSize;
+					long startTime;
+					long backupSetExpiredTime;
+					std::string backupSetId;
+					std::string backupStatus;
+				};
 
 
 				DescribeIncrementBackupListResult();
@@ -41,7 +52,7 @@ namespace AlibabaCloud
 				int getPageNum()const;
 				int getHttpStatusCode()const;
 				int getTotalElements()const;
-				std::vector<std::string> getItems()const;
+				std::vector<IncrementBackupFile> getItems()const;
 				int getTotalPages()const;
 				std::string getErrMessage()const;
 				bool getSuccess()const;
@@ -54,7 +65,7 @@ namespace AlibabaCloud
 				int pageNum_;
 				int httpStatusCode_;
 				int totalElements_;
-				std::vector<std::string> items_;
+				std::vector<IncrementBackupFile> items_;
 				int totalPages_;
 				std::string errMessage_;
 				bool success_;
