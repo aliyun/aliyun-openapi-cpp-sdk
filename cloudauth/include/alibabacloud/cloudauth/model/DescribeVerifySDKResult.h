@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEVERIFYSDKRESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEVERIFYSDKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT GetStatusResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT DescribeVerifySDKResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::string auditConclusions;
-					float trustedScore;
-					float authorityComparisonScore;
-					float similarityScore;
-					int statusCode;
-				};
 
 
-				GetStatusResult();
-				explicit GetStatusResult(const std::string &payload);
-				~GetStatusResult();
-				std::string getMessage()const;
-				Data getData()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+				DescribeVerifySDKResult();
+				explicit DescribeVerifySDKResult(const std::string &payload);
+				~DescribeVerifySDKResult();
+				std::string getSdkUrl()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				Data data_;
-				std::string code_;
-				bool success_;
+				std::string sdkUrl_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEVERIFYSDKRESULT_H_

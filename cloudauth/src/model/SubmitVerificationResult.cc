@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/SubmitMaterialsResult.h>
+#include <alibabacloud/cloudauth/model/SubmitVerificationResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cloudauth;
 using namespace AlibabaCloud::Cloudauth::Model;
 
-SubmitMaterialsResult::SubmitMaterialsResult() :
+SubmitVerificationResult::SubmitVerificationResult() :
 	ServiceResult()
 {}
 
-SubmitMaterialsResult::SubmitMaterialsResult(const std::string &payload) :
+SubmitVerificationResult::SubmitVerificationResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SubmitMaterialsResult::~SubmitMaterialsResult()
+SubmitVerificationResult::~SubmitVerificationResult()
 {}
 
-void SubmitMaterialsResult::parse(const std::string &payload)
+void SubmitVerificationResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -61,22 +61,22 @@ void SubmitMaterialsResult::parse(const std::string &payload)
 
 }
 
-std::string SubmitMaterialsResult::getMessage()const
+std::string SubmitVerificationResult::getMessage()const
 {
 	return message_;
 }
 
-SubmitMaterialsResult::Data SubmitMaterialsResult::getData()const
+SubmitVerificationResult::Data SubmitVerificationResult::getData()const
 {
 	return data_;
 }
 
-std::string SubmitMaterialsResult::getCode()const
+std::string SubmitVerificationResult::getCode()const
 {
 	return code_;
 }
 
-bool SubmitMaterialsResult::getSuccess()const
+bool SubmitVerificationResult::getSuccess()const
 {
 	return success_;
 }

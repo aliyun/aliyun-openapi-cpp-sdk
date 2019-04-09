@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEDEVICEINFORESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEDEVICEINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT GetStatusResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT DescribeDeviceInfoResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct DeviceInfo
 				{
-					std::string auditConclusions;
-					float trustedScore;
-					float authorityComparisonScore;
-					float similarityScore;
-					int statusCode;
+					std::string expiredDay;
+					std::string beginDay;
+					std::string deviceId;
+					std::string bizType;
+					std::string userDeviceId;
 				};
 
 
-				GetStatusResult();
-				explicit GetStatusResult(const std::string &payload);
-				~GetStatusResult();
-				std::string getMessage()const;
-				Data getData()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+				DescribeDeviceInfoResult();
+				explicit DescribeDeviceInfoResult(const std::string &payload);
+				~DescribeDeviceInfoResult();
+				std::vector<DeviceInfo> getDeviceInfoList()const;
+				int getTotalCount()const;
+				int getPageSize()const;
+				int getCurrentPage()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				Data data_;
-				std::string code_;
-				bool success_;
+				std::vector<DeviceInfo> deviceInfoList_;
+				int totalCount_;
+				int pageSize_;
+				int currentPage_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEDEVICEINFORESULT_H_

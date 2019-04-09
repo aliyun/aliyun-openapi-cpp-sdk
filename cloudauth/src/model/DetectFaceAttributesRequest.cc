@@ -33,7 +33,7 @@ int DetectFaceAttributesRequest::getMaxNumPhotosPerCategory()const
 void DetectFaceAttributesRequest::setMaxNumPhotosPerCategory(int maxNumPhotosPerCategory)
 {
 	maxNumPhotosPerCategory_ = maxNumPhotosPerCategory;
-	setParameter("MaxNumPhotosPerCategory", std::to_string(maxNumPhotosPerCategory));
+	setCoreParameter("MaxNumPhotosPerCategory", std::to_string(maxNumPhotosPerCategory));
 }
 
 int DetectFaceAttributesRequest::getMaxFaceNum()const
@@ -44,7 +44,7 @@ int DetectFaceAttributesRequest::getMaxFaceNum()const
 void DetectFaceAttributesRequest::setMaxFaceNum(int maxFaceNum)
 {
 	maxFaceNum_ = maxFaceNum;
-	setParameter("MaxFaceNum", std::to_string(maxFaceNum));
+	setCoreParameter("MaxFaceNum", std::to_string(maxFaceNum));
 }
 
 long DetectFaceAttributesRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long DetectFaceAttributesRequest::getResourceOwnerId()const
 void DetectFaceAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DetectFaceAttributesRequest::getSourceIp()const
@@ -66,7 +66,7 @@ std::string DetectFaceAttributesRequest::getSourceIp()const
 void DetectFaceAttributesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DetectFaceAttributesRequest::getRetAttributes()const
@@ -77,7 +77,7 @@ std::string DetectFaceAttributesRequest::getRetAttributes()const
 void DetectFaceAttributesRequest::setRetAttributes(const std::string& retAttributes)
 {
 	retAttributes_ = retAttributes;
-	setParameter("RetAttributes", retAttributes);
+	setCoreParameter("RetAttributes", retAttributes);
 }
 
 std::string DetectFaceAttributesRequest::getMaterialValue()const
@@ -88,7 +88,7 @@ std::string DetectFaceAttributesRequest::getMaterialValue()const
 void DetectFaceAttributesRequest::setMaterialValue(const std::string& materialValue)
 {
 	materialValue_ = materialValue;
-	setParameter("MaterialValue", materialValue);
+	setCoreParameter("MaterialValue", materialValue);
 }
 
 bool DetectFaceAttributesRequest::getDontSaveDB()const
@@ -99,7 +99,7 @@ bool DetectFaceAttributesRequest::getDontSaveDB()const
 void DetectFaceAttributesRequest::setDontSaveDB(bool dontSaveDB)
 {
 	dontSaveDB_ = dontSaveDB;
-	setParameter("DontSaveDB", std::to_string(dontSaveDB));
+	setCoreParameter("DontSaveDB", dontSaveDB ? "true" : "false");
 }
 
 std::string DetectFaceAttributesRequest::getClientTag()const
@@ -110,6 +110,6 @@ std::string DetectFaceAttributesRequest::getClientTag()const
 void DetectFaceAttributesRequest::setClientTag(const std::string& clientTag)
 {
 	clientTag_ = clientTag;
-	setParameter("ClientTag", clientTag);
+	setCoreParameter("ClientTag", clientTag);
 }
 

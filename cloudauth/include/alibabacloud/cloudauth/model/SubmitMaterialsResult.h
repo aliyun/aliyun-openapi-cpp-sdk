@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string auditConclusions;
 						float trustedScore;
+						float authorityComparisonScore;
 						float similarityScore;
 						int statusCode;
 					};

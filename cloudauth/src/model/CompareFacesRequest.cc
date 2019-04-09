@@ -33,7 +33,7 @@ std::string CompareFacesRequest::getSourceImageType()const
 void CompareFacesRequest::setSourceImageType(const std::string& sourceImageType)
 {
 	sourceImageType_ = sourceImageType;
-	setParameter("SourceImageType", sourceImageType);
+	setCoreParameter("SourceImageType", sourceImageType);
 }
 
 long CompareFacesRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CompareFacesRequest::getResourceOwnerId()const
 void CompareFacesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CompareFacesRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string CompareFacesRequest::getSourceIp()const
 void CompareFacesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CompareFacesRequest::getTargetImageType()const
@@ -66,7 +66,7 @@ std::string CompareFacesRequest::getTargetImageType()const
 void CompareFacesRequest::setTargetImageType(const std::string& targetImageType)
 {
 	targetImageType_ = targetImageType;
-	setParameter("TargetImageType", targetImageType);
+	setCoreParameter("TargetImageType", targetImageType);
 }
 
 std::string CompareFacesRequest::getSourceImageValue()const
@@ -77,7 +77,7 @@ std::string CompareFacesRequest::getSourceImageValue()const
 void CompareFacesRequest::setSourceImageValue(const std::string& sourceImageValue)
 {
 	sourceImageValue_ = sourceImageValue;
-	setParameter("SourceImageValue", sourceImageValue);
+	setCoreParameter("SourceImageValue", sourceImageValue);
 }
 
 std::string CompareFacesRequest::getTargetImageValue()const
@@ -88,6 +88,6 @@ std::string CompareFacesRequest::getTargetImageValue()const
 void CompareFacesRequest::setTargetImageValue(const std::string& targetImageValue)
 {
 	targetImageValue_ = targetImageValue;
-	setParameter("TargetImageValue", targetImageValue);
+	setCoreParameter("TargetImageValue", targetImageValue);
 }
 

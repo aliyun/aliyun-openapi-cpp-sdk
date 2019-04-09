@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_MODIFYDEVICEINFORESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_MODIFYDEVICEINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT GetStatusResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT ModifyDeviceInfoResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::string auditConclusions;
-					float trustedScore;
-					float authorityComparisonScore;
-					float similarityScore;
-					int statusCode;
-				};
 
 
-				GetStatusResult();
-				explicit GetStatusResult(const std::string &payload);
-				~GetStatusResult();
-				std::string getMessage()const;
-				Data getData()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+				ModifyDeviceInfoResult();
+				explicit ModifyDeviceInfoResult(const std::string &payload);
+				~ModifyDeviceInfoResult();
+				std::string getExpiredDay()const;
+				std::string getBeginDay()const;
+				std::string getDeviceId()const;
+				std::string getBizType()const;
+				std::string getUserDeviceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				Data data_;
-				std::string code_;
-				bool success_;
+				std::string expiredDay_;
+				std::string beginDay_;
+				std::string deviceId_;
+				std::string bizType_;
+				std::string userDeviceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_MODIFYDEVICEINFORESULT_H_

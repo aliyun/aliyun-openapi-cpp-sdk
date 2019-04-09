@@ -49,6 +49,8 @@ void GetStatusResult::parse(const std::string &payload)
 		data_.similarityScore = std::stof(dataNode["SimilarityScore"].asString());
 	if(!dataNode["AuditConclusions"].isNull())
 		data_.auditConclusions = dataNode["AuditConclusions"].asString();
+	if(!dataNode["AuthorityComparisonScore"].isNull())
+		data_.authorityComparisonScore = std::stof(dataNode["AuthorityComparisonScore"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

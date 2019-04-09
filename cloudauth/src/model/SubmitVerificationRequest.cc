@@ -14,45 +14,56 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/SubmitMaterialsRequest.h>
+#include <alibabacloud/cloudauth/model/SubmitVerificationRequest.h>
 
-using AlibabaCloud::Cloudauth::Model::SubmitMaterialsRequest;
+using AlibabaCloud::Cloudauth::Model::SubmitVerificationRequest;
 
-SubmitMaterialsRequest::SubmitMaterialsRequest() :
-	RpcServiceRequest("cloudauth", "2018-09-16", "SubmitMaterials")
+SubmitVerificationRequest::SubmitVerificationRequest() :
+	RpcServiceRequest("cloudauth", "2018-09-16", "SubmitVerification")
 {}
 
-SubmitMaterialsRequest::~SubmitMaterialsRequest()
+SubmitVerificationRequest::~SubmitVerificationRequest()
 {}
 
-long SubmitMaterialsRequest::getResourceOwnerId()const
+long SubmitVerificationRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void SubmitMaterialsRequest::setResourceOwnerId(long resourceOwnerId)
+void SubmitVerificationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string SubmitMaterialsRequest::getSourceIp()const
+std::string SubmitVerificationRequest::getBiz()const
+{
+	return biz_;
+}
+
+void SubmitVerificationRequest::setBiz(const std::string& biz)
+{
+	biz_ = biz;
+	setCoreParameter("Biz", biz);
+}
+
+std::string SubmitVerificationRequest::getSourceIp()const
 {
 	return sourceIp_;
 }
 
-void SubmitMaterialsRequest::setSourceIp(const std::string& sourceIp)
+void SubmitVerificationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::vector<SubmitMaterialsRequest::Material> SubmitMaterialsRequest::getMaterial()const
+std::vector<SubmitVerificationRequest::Material> SubmitVerificationRequest::getMaterial()const
 {
 	return material_;
 }
 
-void SubmitMaterialsRequest::setMaterial(const std::vector<Material>& material)
+void SubmitVerificationRequest::setMaterial(const std::vector<Material>& material)
 {
 	material_ = material;
 	int i = 0;
@@ -64,14 +75,14 @@ void SubmitMaterialsRequest::setMaterial(const std::vector<Material>& material)
 	}
 }
 
-std::string SubmitMaterialsRequest::getVerifyToken()const
+std::string SubmitVerificationRequest::getTicketId()const
 {
-	return verifyToken_;
+	return ticketId_;
 }
 
-void SubmitMaterialsRequest::setVerifyToken(const std::string& verifyToken)
+void SubmitVerificationRequest::setTicketId(const std::string& ticketId)
 {
-	verifyToken_ = verifyToken;
-	setCoreParameter("VerifyToken", verifyToken);
+	ticketId_ = ticketId;
+	setCoreParameter("TicketId", ticketId);
 }
 

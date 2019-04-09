@@ -51,6 +51,42 @@ CloudauthClient::CloudauthClient(const std::string & accessKeyId, const std::str
 CloudauthClient::~CloudauthClient()
 {}
 
+CloudauthClient::DescribeDeviceInfoOutcome CloudauthClient::describeDeviceInfo(const DescribeDeviceInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDeviceInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDeviceInfoOutcome(DescribeDeviceInfoResult(outcome.result()));
+	else
+		return DescribeDeviceInfoOutcome(outcome.error());
+}
+
+void CloudauthClient::describeDeviceInfoAsync(const DescribeDeviceInfoRequest& request, const DescribeDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDeviceInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeDeviceInfoOutcomeCallable CloudauthClient::describeDeviceInfoCallable(const DescribeDeviceInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDeviceInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDeviceInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::GetMaterialsOutcome CloudauthClient::getMaterials(const GetMaterialsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -195,6 +231,42 @@ CloudauthClient::CompareFacesOutcomeCallable CloudauthClient::compareFacesCallab
 	return task->get_future();
 }
 
+CloudauthClient::CreateAuthKeyOutcome CloudauthClient::createAuthKey(const CreateAuthKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAuthKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAuthKeyOutcome(CreateAuthKeyResult(outcome.result()));
+	else
+		return CreateAuthKeyOutcome(outcome.error());
+}
+
+void CloudauthClient::createAuthKeyAsync(const CreateAuthKeyRequest& request, const CreateAuthKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAuthKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::CreateAuthKeyOutcomeCallable CloudauthClient::createAuthKeyCallable(const CreateAuthKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAuthKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->createAuthKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::SubmitMaterialsOutcome CloudauthClient::submitMaterials(const SubmitMaterialsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +297,150 @@ CloudauthClient::SubmitMaterialsOutcomeCallable CloudauthClient::submitMaterials
 			[this, request]()
 			{
 			return this->submitMaterials(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::SubmitVerificationOutcome CloudauthClient::submitVerification(const SubmitVerificationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitVerificationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitVerificationOutcome(SubmitVerificationResult(outcome.result()));
+	else
+		return SubmitVerificationOutcome(outcome.error());
+}
+
+void CloudauthClient::submitVerificationAsync(const SubmitVerificationRequest& request, const SubmitVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitVerification(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::SubmitVerificationOutcomeCallable CloudauthClient::submitVerificationCallable(const SubmitVerificationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitVerificationOutcome()>>(
+			[this, request]()
+			{
+			return this->submitVerification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::CreateVerifySDKOutcome CloudauthClient::createVerifySDK(const CreateVerifySDKRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVerifySDKOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVerifySDKOutcome(CreateVerifySDKResult(outcome.result()));
+	else
+		return CreateVerifySDKOutcome(outcome.error());
+}
+
+void CloudauthClient::createVerifySDKAsync(const CreateVerifySDKRequest& request, const CreateVerifySDKAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVerifySDK(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::CreateVerifySDKOutcomeCallable CloudauthClient::createVerifySDKCallable(const CreateVerifySDKRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVerifySDKOutcome()>>(
+			[this, request]()
+			{
+			return this->createVerifySDK(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::ModifyDeviceInfoOutcome CloudauthClient::modifyDeviceInfo(const ModifyDeviceInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDeviceInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDeviceInfoOutcome(ModifyDeviceInfoResult(outcome.result()));
+	else
+		return ModifyDeviceInfoOutcome(outcome.error());
+}
+
+void CloudauthClient::modifyDeviceInfoAsync(const ModifyDeviceInfoRequest& request, const ModifyDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDeviceInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::ModifyDeviceInfoOutcomeCallable CloudauthClient::modifyDeviceInfoCallable(const ModifyDeviceInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDeviceInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDeviceInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeVerifySDKOutcome CloudauthClient::describeVerifySDK(const DescribeVerifySDKRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVerifySDKOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVerifySDKOutcome(DescribeVerifySDKResult(outcome.result()));
+	else
+		return DescribeVerifySDKOutcome(outcome.error());
+}
+
+void CloudauthClient::describeVerifySDKAsync(const DescribeVerifySDKRequest& request, const DescribeVerifySDKAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVerifySDK(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeVerifySDKOutcomeCallable CloudauthClient::describeVerifySDKCallable(const DescribeVerifySDKRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVerifySDKOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVerifySDK(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

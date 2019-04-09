@@ -33,7 +33,7 @@ long GetStatusRequest::getResourceOwnerId()const
 void GetStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetStatusRequest::getBiz()const
@@ -44,7 +44,7 @@ std::string GetStatusRequest::getBiz()const
 void GetStatusRequest::setBiz(const std::string& biz)
 {
 	biz_ = biz;
-	setParameter("Biz", biz);
+	setCoreParameter("Biz", biz);
 }
 
 std::string GetStatusRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string GetStatusRequest::getSourceIp()const
 void GetStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string GetStatusRequest::getTicketId()const
@@ -66,6 +66,6 @@ std::string GetStatusRequest::getTicketId()const
 void GetStatusRequest::setTicketId(const std::string& ticketId)
 {
 	ticketId_ = ticketId;
-	setParameter("TicketId", ticketId);
+	setCoreParameter("TicketId", ticketId);
 }
 

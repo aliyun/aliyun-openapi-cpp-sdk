@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_SUBMITVERIFICATIONRESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_SUBMITVERIFICATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,22 +29,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT GetStatusResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT SubmitVerificationResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					std::string auditConclusions;
-					float trustedScore;
-					float authorityComparisonScore;
-					float similarityScore;
-					int statusCode;
+					struct VerifyStatus
+					{
+						std::string auditConclusions;
+						float trustedScore;
+						float authorityComparisonScore;
+						float similarityScore;
+						int statusCode;
+					};
+					VerifyStatus verifyStatus;
 				};
 
 
-				GetStatusResult();
-				explicit GetStatusResult(const std::string &payload);
-				~GetStatusResult();
+				SubmitVerificationResult();
+				explicit SubmitVerificationResult(const std::string &payload);
+				~SubmitVerificationResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -62,4 +66,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_SUBMITVERIFICATIONRESULT_H_

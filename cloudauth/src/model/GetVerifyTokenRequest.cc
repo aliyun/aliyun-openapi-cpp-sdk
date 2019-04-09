@@ -33,7 +33,7 @@ std::string GetVerifyTokenRequest::getUserData()const
 void GetVerifyTokenRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 long GetVerifyTokenRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long GetVerifyTokenRequest::getResourceOwnerId()const
 void GetVerifyTokenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetVerifyTokenRequest::getBiz()const
@@ -55,7 +55,7 @@ std::string GetVerifyTokenRequest::getBiz()const
 void GetVerifyTokenRequest::setBiz(const std::string& biz)
 {
 	biz_ = biz;
-	setParameter("Biz", biz);
+	setCoreParameter("Biz", biz);
 }
 
 std::string GetVerifyTokenRequest::getSourceIp()const
@@ -66,7 +66,7 @@ std::string GetVerifyTokenRequest::getSourceIp()const
 void GetVerifyTokenRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string GetVerifyTokenRequest::getBinding()const
@@ -77,7 +77,7 @@ std::string GetVerifyTokenRequest::getBinding()const
 void GetVerifyTokenRequest::setBinding(const std::string& binding)
 {
 	binding_ = binding;
-	setParameter("Binding", binding);
+	setCoreParameter("Binding", binding);
 }
 
 std::string GetVerifyTokenRequest::getVerifyConfigs()const
@@ -88,7 +88,7 @@ std::string GetVerifyTokenRequest::getVerifyConfigs()const
 void GetVerifyTokenRequest::setVerifyConfigs(const std::string& verifyConfigs)
 {
 	verifyConfigs_ = verifyConfigs;
-	setParameter("VerifyConfigs", verifyConfigs);
+	setCoreParameter("VerifyConfigs", verifyConfigs);
 }
 
 std::string GetVerifyTokenRequest::getTicketId()const
@@ -99,6 +99,6 @@ std::string GetVerifyTokenRequest::getTicketId()const
 void GetVerifyTokenRequest::setTicketId(const std::string& ticketId)
 {
 	ticketId_ = ticketId;
-	setParameter("TicketId", ticketId);
+	setCoreParameter("TicketId", ticketId);
 }
 
