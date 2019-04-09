@@ -42,6 +42,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				bool getServiceManaged()const;
+				void setServiceManaged(bool serviceManaged);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				std::string getSecurityGroupId()const;
@@ -115,6 +117,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				bool serviceManaged_;
 				long callerParentId_;
 				std::string securityGroupId_;
 				bool proxy_original_security_transport_;

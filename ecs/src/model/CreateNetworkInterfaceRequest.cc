@@ -135,6 +135,17 @@ void CreateNetworkInterfaceRequest::setAccessKeyId(const std::string& accessKeyI
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateNetworkInterfaceRequest::getBusinessType()const
+{
+	return businessType_;
+}
+
+void CreateNetworkInterfaceRequest::setBusinessType(const std::string& businessType)
+{
+	businessType_ = businessType;
+	setCoreParameter("BusinessType", businessType);
+}
+
 std::string CreateNetworkInterfaceRequest::getSourceRegionId()const
 {
 	return sourceRegionId_;
@@ -271,6 +282,17 @@ void CreateNetworkInterfaceRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
 	setCoreParameter("App_ip", app_ip);
+}
+
+bool CreateNetworkInterfaceRequest::getVisible()const
+{
+	return visible_;
+}
+
+void CreateNetworkInterfaceRequest::setVisible(bool visible)
+{
+	visible_ = visible;
+	setCoreParameter("Visible", visible ? "true" : "false");
 }
 
 std::string CreateNetworkInterfaceRequest::getResourceOwnerAccount()const

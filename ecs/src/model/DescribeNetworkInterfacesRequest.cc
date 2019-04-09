@@ -36,6 +36,17 @@ void DescribeNetworkInterfacesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool DescribeNetworkInterfacesRequest::getServiceManaged()const
+{
+	return serviceManaged_;
+}
+
+void DescribeNetworkInterfacesRequest::setServiceManaged(bool serviceManaged)
+{
+	serviceManaged_ = serviceManaged;
+	setCoreParameter("ServiceManaged", serviceManaged ? "true" : "false");
+}
+
 long DescribeNetworkInterfacesRequest::getCallerParentId()const
 {
 	return callerParentId_;

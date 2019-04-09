@@ -64,12 +64,14 @@ namespace AlibabaCloud
 					std::string description;
 					std::string zoneId;
 					std::string resourceGroupId;
+					bool serviceManaged;
 					std::string instanceId;
 					std::string vSwitchId;
 					std::string networkInterfaceName;
 					std::string networkInterfaceId;
 					std::string macAddress;
 					std::vector<std::string> securityGroupIds;
+					long serviceID;
 					std::string type;
 					std::vector<NetworkInterfaceSet::Ipv6Set> ipv6Sets;
 					std::string vpcId;

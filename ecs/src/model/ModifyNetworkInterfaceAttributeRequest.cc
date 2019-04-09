@@ -125,6 +125,17 @@ void ModifyNetworkInterfaceAttributeRequest::setAccessKeyId(const std::string& a
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyNetworkInterfaceAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyNetworkInterfaceAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyNetworkInterfaceAttributeRequest::getSecurityToken()const
 {
 	return securityToken_;

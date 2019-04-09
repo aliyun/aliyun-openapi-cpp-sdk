@@ -102,6 +102,17 @@ void AssignIpv6AddressesRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string AssignIpv6AddressesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void AssignIpv6AddressesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string AssignIpv6AddressesRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

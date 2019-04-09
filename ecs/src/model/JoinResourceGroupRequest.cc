@@ -25,6 +25,17 @@ JoinResourceGroupRequest::JoinResourceGroupRequest() :
 JoinResourceGroupRequest::~JoinResourceGroupRequest()
 {}
 
+std::string JoinResourceGroupRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void JoinResourceGroupRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string JoinResourceGroupRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

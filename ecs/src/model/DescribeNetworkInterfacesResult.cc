@@ -70,6 +70,10 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 			networkInterfaceSetsObject.creationTime = value["CreationTime"].asString();
 		if(!value["ResourceGroupId"].isNull())
 			networkInterfaceSetsObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["ServiceID"].isNull())
+			networkInterfaceSetsObject.serviceID = std::stol(value["ServiceID"].asString());
+		if(!value["ServiceManaged"].isNull())
+			networkInterfaceSetsObject.serviceManaged = value["ServiceManaged"].asString() == "true";
 		auto allPrivateIpSets = value["PrivateIpSets"]["PrivateIpSet"];
 		for (auto value : allPrivateIpSets)
 		{

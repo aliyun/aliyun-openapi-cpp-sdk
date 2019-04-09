@@ -60,6 +60,8 @@ namespace AlibabaCloud
 				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getBusinessType()const;
+				void setBusinessType(const std::string& businessType);
 				std::string getSourceRegionId()const;
 				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getResourceGroupId()const;
@@ -84,6 +86,8 @@ namespace AlibabaCloud
 				void setCallerUid(long callerUid);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
+				bool getVisible()const;
+				void setVisible(bool visible);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -116,6 +120,7 @@ namespace AlibabaCloud
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
+				std::string businessType_;
 				std::string sourceRegionId_;
 				std::string resourceGroupId_;
 				std::string securityToken_;
@@ -128,6 +133,7 @@ namespace AlibabaCloud
 				std::string networkInterfaceName_;
 				long callerUid_;
 				std::string app_ip_;
+				bool visible_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string callerBid_;
