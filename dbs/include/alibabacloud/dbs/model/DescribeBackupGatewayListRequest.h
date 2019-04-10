@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeBackupGatewayListRequest();
 				~DescribeBackupGatewayListRequest();
 
+				std::string getIdentifier()const;
+				void setIdentifier(const std::string& identifier);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
 				void setOwnerId(const std::string& ownerId);
 
             private:
+				std::string identifier_;
 				std::string regionId_;
 				std::string clientToken_;
 				int pageSize_;

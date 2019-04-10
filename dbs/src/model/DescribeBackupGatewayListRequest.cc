@@ -25,6 +25,17 @@ DescribeBackupGatewayListRequest::DescribeBackupGatewayListRequest() :
 DescribeBackupGatewayListRequest::~DescribeBackupGatewayListRequest()
 {}
 
+std::string DescribeBackupGatewayListRequest::getIdentifier()const
+{
+	return identifier_;
+}
+
+void DescribeBackupGatewayListRequest::setIdentifier(const std::string& identifier)
+{
+	identifier_ = identifier;
+	setCoreParameter("Identifier", identifier);
+}
+
 std::string DescribeBackupGatewayListRequest::getRegionId()const
 {
 	return regionId_;
