@@ -60,6 +60,30 @@ void ListVolumesResult::parse(const std::string &payload)
 			volumesObject.volumeMountpoint = value["VolumeMountpoint"].asString();
 		if(!value["RemoteDirectory"].isNull())
 			volumesObject.remoteDirectory = value["RemoteDirectory"].asString();
+		auto allAdditionalVolumes = value["AdditionalVolumes"]["VolumeInfo"];
+		for (auto value : allAdditionalVolumes)
+		{
+			VolumeInfo::VolumeInfo1 additionalVolumesObject;
+			if(!value["VolumeType"].isNull())
+				additionalVolumesObject.volumeType = value["VolumeType"].asString();
+			if(!value["VolumeId"].isNull())
+				additionalVolumesObject.volumeId = value["VolumeId"].asString();
+			if(!value["VolumeProtocol"].isNull())
+				additionalVolumesObject.volumeProtocol = value["VolumeProtocol"].asString();
+			if(!value["VolumeMountpoint"].isNull())
+				additionalVolumesObject.volumeMountpoint = value["VolumeMountpoint"].asString();
+			if(!value["RemoteDirectory"].isNull())
+				additionalVolumesObject.remoteDirectory = value["RemoteDirectory"].asString();
+			if(!value["LocalDirectory"].isNull())
+				additionalVolumesObject.localDirectory = value["LocalDirectory"].asString();
+			if(!value["Role"].isNull())
+				additionalVolumesObject.role = value["Role"].asString();
+			if(!value["Location"].isNull())
+				additionalVolumesObject.location = value["Location"].asString();
+			if(!value["JobQueue"].isNull())
+				additionalVolumesObject.jobQueue = value["JobQueue"].asString();
+			volumesObject.additionalVolumes.push_back(additionalVolumesObject);
+		}
 		volumes_.push_back(volumesObject);
 	}
 	if(!value["TotalCount"].isNull())

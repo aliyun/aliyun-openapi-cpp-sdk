@@ -37,7 +37,7 @@ void InvokeShellCommandRequest::setInstance(const std::vector<Instance>& instanc
 	for(int i = 0; i!= instance.size(); i++)	{
 		auto obj = instance.at(i);
 		std::string str ="Instance."+ std::to_string(i);
-		setParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Id", obj.id);
 	}
 }
 
@@ -49,7 +49,7 @@ std::string InvokeShellCommandRequest::getWorkingDir()const
 void InvokeShellCommandRequest::setWorkingDir(const std::string& workingDir)
 {
 	workingDir_ = workingDir;
-	setParameter("WorkingDir", workingDir);
+	setCoreParameter("WorkingDir", workingDir);
 }
 
 std::string InvokeShellCommandRequest::getClusterId()const
@@ -60,7 +60,7 @@ std::string InvokeShellCommandRequest::getClusterId()const
 void InvokeShellCommandRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string InvokeShellCommandRequest::getCommand()const
@@ -71,7 +71,7 @@ std::string InvokeShellCommandRequest::getCommand()const
 void InvokeShellCommandRequest::setCommand(const std::string& command)
 {
 	command_ = command;
-	setParameter("Command", command);
+	setCoreParameter("Command", command);
 }
 
 int InvokeShellCommandRequest::getTimeout()const
@@ -82,7 +82,7 @@ int InvokeShellCommandRequest::getTimeout()const
 void InvokeShellCommandRequest::setTimeout(int timeout)
 {
 	timeout_ = timeout;
-	setParameter("Timeout", std::to_string(timeout));
+	setCoreParameter("Timeout", std::to_string(timeout));
 }
 
 std::string InvokeShellCommandRequest::getAccessKeyId()const
@@ -93,6 +93,6 @@ std::string InvokeShellCommandRequest::getAccessKeyId()const
 void InvokeShellCommandRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

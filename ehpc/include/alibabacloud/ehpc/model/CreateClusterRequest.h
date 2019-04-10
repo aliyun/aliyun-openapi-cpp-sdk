@@ -30,6 +30,18 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT CreateClusterRequest : public RpcServiceRequest
 			{
+				struct AdditionalVolumes
+				{
+					std::string volumeType;
+					std::string volumeProtocol;
+					std::string localDirectory;
+					std::string remoteDirectory;
+					RepeatList roles;
+					std::string volumeId;
+					std::string volumeMountpoint;
+					std::string location;
+					std::string jobQueue;
+				};
 				struct PostInstallScript
 				{
 					std::string args;
@@ -48,6 +60,8 @@ namespace AlibabaCloud
 				void setSccClusterId(const std::string& sccClusterId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
+				std::vector<AdditionalVolumes> getAdditionalVolumes()const;
+				void setAdditionalVolumes(const std::vector<AdditionalVolumes>& additionalVolumes);
 				std::string getEcsOrderManagerInstanceType()const;
 				void setEcsOrderManagerInstanceType(const std::string& ecsOrderManagerInstanceType);
 				std::string getEhpcVersion()const;
@@ -76,10 +90,16 @@ namespace AlibabaCloud
 				void setDeployMode(const std::string& deployMode);
 				int getEcsOrderManagerCount()const;
 				void setEcsOrderManagerCount(int ecsOrderManagerCount);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
 				int getEcsOrderLoginCount()const;
 				void setEcsOrderLoginCount(int ecsOrderLoginCount);
+				std::string getRemoteVisEnable()const;
+				void setRemoteVisEnable(const std::string& remoteVisEnable);
+				int getSystemDiskSize()const;
+				void setSystemDiskSize(int systemDiskSize);
 				std::string getComputeSpotPriceLimit()const;
 				void setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit);
 				int getAutoRenewPeriod()const;
@@ -132,6 +152,7 @@ namespace AlibabaCloud
             private:
 				std::string sccClusterId_;
 				std::string imageId_;
+				std::vector<AdditionalVolumes> additionalVolumes_;
 				std::string ecsOrderManagerInstanceType_;
 				std::string ehpcVersion_;
 				std::string accountType_;
@@ -146,8 +167,11 @@ namespace AlibabaCloud
 				std::string volumeType_;
 				std::string deployMode_;
 				int ecsOrderManagerCount_;
+				std::string resourceGroupId_;
 				std::string password_;
 				int ecsOrderLoginCount_;
+				std::string remoteVisEnable_;
+				int systemDiskSize_;
 				std::string computeSpotPriceLimit_;
 				int autoRenewPeriod_;
 				int period_;

@@ -33,7 +33,7 @@ std::string ListAvailableEcsTypesRequest::getSpotStrategy()const
 void ListAvailableEcsTypesRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setParameter("SpotStrategy", spotStrategy);
+	setCoreParameter("SpotStrategy", spotStrategy);
 }
 
 std::string ListAvailableEcsTypesRequest::getZoneId()const
@@ -44,7 +44,7 @@ std::string ListAvailableEcsTypesRequest::getZoneId()const
 void ListAvailableEcsTypesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string ListAvailableEcsTypesRequest::getInstanceChargeType()const
@@ -55,7 +55,7 @@ std::string ListAvailableEcsTypesRequest::getInstanceChargeType()const
 void ListAvailableEcsTypesRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string ListAvailableEcsTypesRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ListAvailableEcsTypesRequest::getAccessKeyId()const
 void ListAvailableEcsTypesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

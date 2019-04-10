@@ -37,7 +37,7 @@ void DeleteContainerAppsRequest::setContainerApp(const std::vector<ContainerApp>
 	for(int i = 0; i!= containerApp.size(); i++)	{
 		auto obj = containerApp.at(i);
 		std::string str ="ContainerApp."+ std::to_string(i);
-		setParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Id", obj.id);
 	}
 }
 
@@ -49,6 +49,6 @@ std::string DeleteContainerAppsRequest::getAccessKeyId()const
 void DeleteContainerAppsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

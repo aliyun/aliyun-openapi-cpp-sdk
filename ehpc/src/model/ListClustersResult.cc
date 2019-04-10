@@ -50,6 +50,10 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.regionId = value["RegionId"].asString();
 		if(!value["ZoneId"].isNull())
 			clustersObject.zoneId = value["ZoneId"].asString();
+		if(!value["VSwitchId"].isNull())
+			clustersObject.vSwitchId = value["VSwitchId"].asString();
+		if(!value["VpcId"].isNull())
+			clustersObject.vpcId = value["VpcId"].asString();
 		if(!value["Name"].isNull())
 			clustersObject.name = value["Name"].asString();
 		if(!value["Description"].isNull())
@@ -78,6 +82,8 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.imageId = value["ImageId"].asString();
 		if(!value["Location"].isNull())
 			clustersObject.location = value["Location"].asString();
+		if(!value["EhpcVersion"].isNull())
+			clustersObject.ehpcVersion = value["EhpcVersion"].asString();
 		auto managersNode = value["Managers"];
 		if(!managersNode["Total"].isNull())
 			clustersObject.managers.total = std::stoi(managersNode["Total"].asString());

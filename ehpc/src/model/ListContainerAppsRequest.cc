@@ -33,7 +33,7 @@ int ListContainerAppsRequest::getPageSize()const
 void ListContainerAppsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListContainerAppsRequest::getPageNumber()const
@@ -44,7 +44,7 @@ int ListContainerAppsRequest::getPageNumber()const
 void ListContainerAppsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListContainerAppsRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListContainerAppsRequest::getAccessKeyId()const
 void ListContainerAppsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

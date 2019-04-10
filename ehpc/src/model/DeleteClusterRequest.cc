@@ -33,7 +33,7 @@ std::string DeleteClusterRequest::getReleaseInstance()const
 void DeleteClusterRequest::setReleaseInstance(const std::string& releaseInstance)
 {
 	releaseInstance_ = releaseInstance;
-	setParameter("ReleaseInstance", releaseInstance);
+	setCoreParameter("ReleaseInstance", releaseInstance);
 }
 
 std::string DeleteClusterRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string DeleteClusterRequest::getClusterId()const
 void DeleteClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DeleteClusterRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DeleteClusterRequest::getAccessKeyId()const
 void DeleteClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

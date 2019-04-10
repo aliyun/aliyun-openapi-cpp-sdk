@@ -33,7 +33,7 @@ std::string DescribeAutoScaleConfigRequest::getClusterId()const
 void DescribeAutoScaleConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DescribeAutoScaleConfigRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeAutoScaleConfigRequest::getAccessKeyId()const
 void DescribeAutoScaleConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

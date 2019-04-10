@@ -33,7 +33,7 @@ std::string ListCloudMetricProfilingsRequest::getRegionId()const
 void ListCloudMetricProfilingsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListCloudMetricProfilingsRequest::getPageSize()const
@@ -44,7 +44,7 @@ int ListCloudMetricProfilingsRequest::getPageSize()const
 void ListCloudMetricProfilingsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListCloudMetricProfilingsRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string ListCloudMetricProfilingsRequest::getClusterId()const
 void ListCloudMetricProfilingsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListCloudMetricProfilingsRequest::getPageNumber()const
@@ -66,7 +66,7 @@ int ListCloudMetricProfilingsRequest::getPageNumber()const
 void ListCloudMetricProfilingsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListCloudMetricProfilingsRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListCloudMetricProfilingsRequest::getAccessKeyId()const
 void ListCloudMetricProfilingsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

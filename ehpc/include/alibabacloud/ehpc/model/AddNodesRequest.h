@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getImageOwnerAlias()const;
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPeriodUnit()const;
 				void setPeriodUnit(const std::string& periodUnit);
 				std::string getAutoRenew()const;
@@ -61,8 +63,12 @@ namespace AlibabaCloud
 				void setEcsChargeType(const std::string& ecsChargeType);
 				std::string getCreateMode()const;
 				void setCreateMode(const std::string& createMode);
+				int getSystemDiskSize()const;
+				void setSystemDiskSize(int systemDiskSize);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 				std::string getComputeSpotPriceLimit()const;
 				void setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit);
 
@@ -76,11 +82,14 @@ namespace AlibabaCloud
 				std::string jobQueue_;
 				std::string accessKeyId_;
 				std::string imageOwnerAlias_;
+				std::string vSwitchId_;
 				std::string periodUnit_;
 				std::string autoRenew_;
 				std::string ecsChargeType_;
 				std::string createMode_;
+				int systemDiskSize_;
 				std::string instanceType_;
+				std::string zoneId_;
 				std::string computeSpotPriceLimit_;
 
 			};

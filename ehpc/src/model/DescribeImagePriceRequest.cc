@@ -33,7 +33,7 @@ int DescribeImagePriceRequest::getPeriod()const
 void DescribeImagePriceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setParameter("Period", std::to_string(period));
+	setCoreParameter("Period", std::to_string(period));
 }
 
 int DescribeImagePriceRequest::getAmount()const
@@ -44,7 +44,7 @@ int DescribeImagePriceRequest::getAmount()const
 void DescribeImagePriceRequest::setAmount(int amount)
 {
 	amount_ = amount;
-	setParameter("Amount", std::to_string(amount));
+	setCoreParameter("Amount", std::to_string(amount));
 }
 
 std::string DescribeImagePriceRequest::getImageId()const
@@ -55,7 +55,7 @@ std::string DescribeImagePriceRequest::getImageId()const
 void DescribeImagePriceRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setParameter("ImageId", imageId);
+	setCoreParameter("ImageId", imageId);
 }
 
 std::string DescribeImagePriceRequest::getPriceUnit()const
@@ -66,7 +66,7 @@ std::string DescribeImagePriceRequest::getPriceUnit()const
 void DescribeImagePriceRequest::setPriceUnit(const std::string& priceUnit)
 {
 	priceUnit_ = priceUnit;
-	setParameter("PriceUnit", priceUnit);
+	setCoreParameter("PriceUnit", priceUnit);
 }
 
 std::string DescribeImagePriceRequest::getSkuCode()const
@@ -77,7 +77,7 @@ std::string DescribeImagePriceRequest::getSkuCode()const
 void DescribeImagePriceRequest::setSkuCode(const std::string& skuCode)
 {
 	skuCode_ = skuCode;
-	setParameter("SkuCode", skuCode);
+	setCoreParameter("SkuCode", skuCode);
 }
 
 std::string DescribeImagePriceRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string DescribeImagePriceRequest::getAccessKeyId()const
 void DescribeImagePriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeImagePriceRequest::getOrderType()const
@@ -99,6 +99,6 @@ std::string DescribeImagePriceRequest::getOrderType()const
 void DescribeImagePriceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setParameter("OrderType", orderType);
+	setCoreParameter("OrderType", orderType);
 }
 

@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::string productCode;
 					std::string skuCode;
 					std::string pricingCycle;
+					int size;
 					std::string imageId;
 					BaseOsTag baseOsTag;
 				};

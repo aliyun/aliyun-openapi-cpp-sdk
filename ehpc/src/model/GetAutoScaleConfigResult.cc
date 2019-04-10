@@ -56,6 +56,18 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 			queuesObject.enableAutoGrow = value["EnableAutoGrow"].asString() == "true";
 		if(!value["EnableAutoShrink"].isNull())
 			queuesObject.enableAutoShrink = value["EnableAutoShrink"].asString() == "true";
+		auto allInstanceTypes = value["InstanceTypes"]["InstanceTypeInfo"];
+		for (auto value : allInstanceTypes)
+		{
+			QueueInfo::InstanceTypeInfo instanceTypesObject;
+			if(!value["InstanceType"].isNull())
+				instanceTypesObject.instanceType = value["InstanceType"].asString();
+			if(!value["SpotStrategy"].isNull())
+				instanceTypesObject.spotStrategy = value["SpotStrategy"].asString();
+			if(!value["SpotPriceLimit"].isNull())
+				instanceTypesObject.spotPriceLimit = std::stof(value["SpotPriceLimit"].asString());
+			queuesObject.instanceTypes.push_back(instanceTypesObject);
+		}
 		queues_.push_back(queuesObject);
 	}
 	if(!value["Uid"].isNull())

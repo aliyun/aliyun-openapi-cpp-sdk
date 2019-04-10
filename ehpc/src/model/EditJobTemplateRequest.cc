@@ -33,7 +33,7 @@ std::string EditJobTemplateRequest::getStderrRedirectPath()const
 void EditJobTemplateRequest::setStderrRedirectPath(const std::string& stderrRedirectPath)
 {
 	stderrRedirectPath_ = stderrRedirectPath;
-	setParameter("StderrRedirectPath", stderrRedirectPath);
+	setCoreParameter("StderrRedirectPath", stderrRedirectPath);
 }
 
 std::string EditJobTemplateRequest::getVariables()const
@@ -44,7 +44,7 @@ std::string EditJobTemplateRequest::getVariables()const
 void EditJobTemplateRequest::setVariables(const std::string& variables)
 {
 	variables_ = variables;
-	setParameter("Variables", variables);
+	setCoreParameter("Variables", variables);
 }
 
 std::string EditJobTemplateRequest::getRunasUser()const
@@ -55,7 +55,7 @@ std::string EditJobTemplateRequest::getRunasUser()const
 void EditJobTemplateRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
-	setParameter("RunasUser", runasUser);
+	setCoreParameter("RunasUser", runasUser);
 }
 
 bool EditJobTemplateRequest::getReRunable()const
@@ -66,7 +66,7 @@ bool EditJobTemplateRequest::getReRunable()const
 void EditJobTemplateRequest::setReRunable(bool reRunable)
 {
 	reRunable_ = reRunable;
-	setParameter("ReRunable", std::to_string(reRunable));
+	setCoreParameter("ReRunable", reRunable ? "true" : "false");
 }
 
 std::string EditJobTemplateRequest::getTemplateId()const
@@ -77,7 +77,7 @@ std::string EditJobTemplateRequest::getTemplateId()const
 void EditJobTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setParameter("TemplateId", templateId);
+	setCoreParameter("TemplateId", templateId);
 }
 
 int EditJobTemplateRequest::getPriority()const
@@ -88,7 +88,7 @@ int EditJobTemplateRequest::getPriority()const
 void EditJobTemplateRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", std::to_string(priority));
 }
 
 std::string EditJobTemplateRequest::getCommandLine()const
@@ -99,7 +99,7 @@ std::string EditJobTemplateRequest::getCommandLine()const
 void EditJobTemplateRequest::setCommandLine(const std::string& commandLine)
 {
 	commandLine_ = commandLine;
-	setParameter("CommandLine", commandLine);
+	setCoreParameter("CommandLine", commandLine);
 }
 
 std::string EditJobTemplateRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string EditJobTemplateRequest::getAccessKeyId()const
 void EditJobTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string EditJobTemplateRequest::getArrayRequest()const
@@ -121,7 +121,7 @@ std::string EditJobTemplateRequest::getArrayRequest()const
 void EditJobTemplateRequest::setArrayRequest(const std::string& arrayRequest)
 {
 	arrayRequest_ = arrayRequest;
-	setParameter("ArrayRequest", arrayRequest);
+	setCoreParameter("ArrayRequest", arrayRequest);
 }
 
 std::string EditJobTemplateRequest::getPackagePath()const
@@ -132,7 +132,7 @@ std::string EditJobTemplateRequest::getPackagePath()const
 void EditJobTemplateRequest::setPackagePath(const std::string& packagePath)
 {
 	packagePath_ = packagePath;
-	setParameter("PackagePath", packagePath);
+	setCoreParameter("PackagePath", packagePath);
 }
 
 std::string EditJobTemplateRequest::getName()const
@@ -143,7 +143,7 @@ std::string EditJobTemplateRequest::getName()const
 void EditJobTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string EditJobTemplateRequest::getStdoutRedirectPath()const
@@ -154,6 +154,6 @@ std::string EditJobTemplateRequest::getStdoutRedirectPath()const
 void EditJobTemplateRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
 {
 	stdoutRedirectPath_ = stdoutRedirectPath;
-	setParameter("StdoutRedirectPath", stdoutRedirectPath);
+	setCoreParameter("StdoutRedirectPath", stdoutRedirectPath);
 }
 

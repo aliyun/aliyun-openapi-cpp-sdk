@@ -33,7 +33,7 @@ std::string StartNodesRequest::getRole()const
 void StartNodesRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setParameter("Role", role);
+	setCoreParameter("Role", role);
 }
 
 std::vector<StartNodesRequest::Instance> StartNodesRequest::getInstance()const
@@ -48,7 +48,7 @@ void StartNodesRequest::setInstance(const std::vector<Instance>& instance)
 	for(int i = 0; i!= instance.size(); i++)	{
 		auto obj = instance.at(i);
 		std::string str ="Instance."+ std::to_string(i);
-		setParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Id", obj.id);
 	}
 }
 
@@ -60,7 +60,7 @@ std::string StartNodesRequest::getClusterId()const
 void StartNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string StartNodesRequest::getAccessKeyId()const
@@ -71,6 +71,6 @@ std::string StartNodesRequest::getAccessKeyId()const
 void StartNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

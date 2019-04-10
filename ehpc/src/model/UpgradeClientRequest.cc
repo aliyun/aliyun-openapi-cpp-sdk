@@ -33,7 +33,7 @@ std::string UpgradeClientRequest::getClientVersion()const
 void UpgradeClientRequest::setClientVersion(const std::string& clientVersion)
 {
 	clientVersion_ = clientVersion;
-	setParameter("ClientVersion", clientVersion);
+	setCoreParameter("ClientVersion", clientVersion);
 }
 
 std::string UpgradeClientRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string UpgradeClientRequest::getClusterId()const
 void UpgradeClientRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string UpgradeClientRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string UpgradeClientRequest::getAccessKeyId()const
 void UpgradeClientRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

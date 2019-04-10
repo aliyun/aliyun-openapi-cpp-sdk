@@ -33,7 +33,7 @@ bool DeleteNodesRequest::getReleaseInstance()const
 void DeleteNodesRequest::setReleaseInstance(bool releaseInstance)
 {
 	releaseInstance_ = releaseInstance;
-	setParameter("ReleaseInstance", std::to_string(releaseInstance));
+	setCoreParameter("ReleaseInstance", releaseInstance ? "true" : "false");
 }
 
 std::vector<DeleteNodesRequest::Instance> DeleteNodesRequest::getInstance()const
@@ -48,7 +48,7 @@ void DeleteNodesRequest::setInstance(const std::vector<Instance>& instance)
 	for(int i = 0; i!= instance.size(); i++)	{
 		auto obj = instance.at(i);
 		std::string str ="Instance."+ std::to_string(i);
-		setParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Id", obj.id);
 	}
 }
 
@@ -60,7 +60,7 @@ std::string DeleteNodesRequest::getClusterId()const
 void DeleteNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DeleteNodesRequest::getAccessKeyId()const
@@ -71,6 +71,6 @@ std::string DeleteNodesRequest::getAccessKeyId()const
 void DeleteNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

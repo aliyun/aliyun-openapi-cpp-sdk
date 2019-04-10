@@ -33,7 +33,7 @@ std::string ModifyClusterAttributesRequest::getName()const
 void ModifyClusterAttributesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyClusterAttributesRequest::getDescription()const
@@ -44,7 +44,7 @@ std::string ModifyClusterAttributesRequest::getDescription()const
 void ModifyClusterAttributesRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyClusterAttributesRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string ModifyClusterAttributesRequest::getClusterId()const
 void ModifyClusterAttributesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ModifyClusterAttributesRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ModifyClusterAttributesRequest::getAccessKeyId()const
 void ModifyClusterAttributesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string ListSoftwaresRequest::getEhpcVersion()const
 void ListSoftwaresRequest::setEhpcVersion(const std::string& ehpcVersion)
 {
 	ehpcVersion_ = ehpcVersion;
-	setParameter("EhpcVersion", ehpcVersion);
+	setCoreParameter("EhpcVersion", ehpcVersion);
 }
 
 std::string ListSoftwaresRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ListSoftwaresRequest::getAccessKeyId()const
 void ListSoftwaresRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

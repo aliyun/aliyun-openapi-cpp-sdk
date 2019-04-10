@@ -33,7 +33,7 @@ int AddNodesRequest::getAutoRenewPeriod()const
 void AddNodesRequest::setAutoRenewPeriod(int autoRenewPeriod)
 {
 	autoRenewPeriod_ = autoRenewPeriod;
-	setParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+	setCoreParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
 }
 
 int AddNodesRequest::getPeriod()const
@@ -44,7 +44,7 @@ int AddNodesRequest::getPeriod()const
 void AddNodesRequest::setPeriod(int period)
 {
 	period_ = period;
-	setParameter("Period", std::to_string(period));
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string AddNodesRequest::getImageId()const
@@ -55,7 +55,7 @@ std::string AddNodesRequest::getImageId()const
 void AddNodesRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setParameter("ImageId", imageId);
+	setCoreParameter("ImageId", imageId);
 }
 
 int AddNodesRequest::getCount()const
@@ -66,7 +66,7 @@ int AddNodesRequest::getCount()const
 void AddNodesRequest::setCount(int count)
 {
 	count_ = count;
-	setParameter("Count", std::to_string(count));
+	setCoreParameter("Count", std::to_string(count));
 }
 
 std::string AddNodesRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string AddNodesRequest::getClusterId()const
 void AddNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string AddNodesRequest::getComputeSpotStrategy()const
@@ -88,7 +88,7 @@ std::string AddNodesRequest::getComputeSpotStrategy()const
 void AddNodesRequest::setComputeSpotStrategy(const std::string& computeSpotStrategy)
 {
 	computeSpotStrategy_ = computeSpotStrategy;
-	setParameter("ComputeSpotStrategy", computeSpotStrategy);
+	setCoreParameter("ComputeSpotStrategy", computeSpotStrategy);
 }
 
 std::string AddNodesRequest::getJobQueue()const
@@ -99,7 +99,7 @@ std::string AddNodesRequest::getJobQueue()const
 void AddNodesRequest::setJobQueue(const std::string& jobQueue)
 {
 	jobQueue_ = jobQueue;
-	setParameter("JobQueue", jobQueue);
+	setCoreParameter("JobQueue", jobQueue);
 }
 
 std::string AddNodesRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string AddNodesRequest::getAccessKeyId()const
 void AddNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddNodesRequest::getImageOwnerAlias()const
@@ -121,7 +121,18 @@ std::string AddNodesRequest::getImageOwnerAlias()const
 void AddNodesRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
 {
 	imageOwnerAlias_ = imageOwnerAlias;
-	setParameter("ImageOwnerAlias", imageOwnerAlias);
+	setCoreParameter("ImageOwnerAlias", imageOwnerAlias);
+}
+
+std::string AddNodesRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void AddNodesRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string AddNodesRequest::getPeriodUnit()const
@@ -132,7 +143,7 @@ std::string AddNodesRequest::getPeriodUnit()const
 void AddNodesRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setParameter("PeriodUnit", periodUnit);
+	setCoreParameter("PeriodUnit", periodUnit);
 }
 
 std::string AddNodesRequest::getAutoRenew()const
@@ -143,7 +154,7 @@ std::string AddNodesRequest::getAutoRenew()const
 void AddNodesRequest::setAutoRenew(const std::string& autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setParameter("AutoRenew", autoRenew);
+	setCoreParameter("AutoRenew", autoRenew);
 }
 
 std::string AddNodesRequest::getEcsChargeType()const
@@ -154,7 +165,7 @@ std::string AddNodesRequest::getEcsChargeType()const
 void AddNodesRequest::setEcsChargeType(const std::string& ecsChargeType)
 {
 	ecsChargeType_ = ecsChargeType;
-	setParameter("EcsChargeType", ecsChargeType);
+	setCoreParameter("EcsChargeType", ecsChargeType);
 }
 
 std::string AddNodesRequest::getCreateMode()const
@@ -165,7 +176,18 @@ std::string AddNodesRequest::getCreateMode()const
 void AddNodesRequest::setCreateMode(const std::string& createMode)
 {
 	createMode_ = createMode;
-	setParameter("CreateMode", createMode);
+	setCoreParameter("CreateMode", createMode);
+}
+
+int AddNodesRequest::getSystemDiskSize()const
+{
+	return systemDiskSize_;
+}
+
+void AddNodesRequest::setSystemDiskSize(int systemDiskSize)
+{
+	systemDiskSize_ = systemDiskSize;
+	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
 }
 
 std::string AddNodesRequest::getInstanceType()const
@@ -176,7 +198,18 @@ std::string AddNodesRequest::getInstanceType()const
 void AddNodesRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", instanceType);
+}
+
+std::string AddNodesRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void AddNodesRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string AddNodesRequest::getComputeSpotPriceLimit()const
@@ -187,6 +220,6 @@ std::string AddNodesRequest::getComputeSpotPriceLimit()const
 void AddNodesRequest::setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit)
 {
 	computeSpotPriceLimit_ = computeSpotPriceLimit;
-	setParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
+	setCoreParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
 }
 

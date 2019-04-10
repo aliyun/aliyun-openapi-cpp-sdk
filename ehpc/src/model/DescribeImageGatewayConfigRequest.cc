@@ -33,7 +33,7 @@ std::string DescribeImageGatewayConfigRequest::getClusterId()const
 void DescribeImageGatewayConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DescribeImageGatewayConfigRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeImageGatewayConfigRequest::getAccessKeyId()const
 void DescribeImageGatewayConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

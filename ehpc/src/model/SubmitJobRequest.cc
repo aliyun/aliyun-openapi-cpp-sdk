@@ -33,7 +33,7 @@ std::string SubmitJobRequest::getStderrRedirectPath()const
 void SubmitJobRequest::setStderrRedirectPath(const std::string& stderrRedirectPath)
 {
 	stderrRedirectPath_ = stderrRedirectPath;
-	setParameter("StderrRedirectPath", stderrRedirectPath);
+	setCoreParameter("StderrRedirectPath", stderrRedirectPath);
 }
 
 std::string SubmitJobRequest::getVariables()const
@@ -44,7 +44,7 @@ std::string SubmitJobRequest::getVariables()const
 void SubmitJobRequest::setVariables(const std::string& variables)
 {
 	variables_ = variables;
-	setParameter("Variables", variables);
+	setCoreParameter("Variables", variables);
 }
 
 std::string SubmitJobRequest::getRunasUserPassword()const
@@ -55,7 +55,7 @@ std::string SubmitJobRequest::getRunasUserPassword()const
 void SubmitJobRequest::setRunasUserPassword(const std::string& runasUserPassword)
 {
 	runasUserPassword_ = runasUserPassword;
-	setParameter("RunasUserPassword", runasUserPassword);
+	setCoreParameter("RunasUserPassword", runasUserPassword);
 }
 
 std::string SubmitJobRequest::getPostCmdLine()const
@@ -66,7 +66,7 @@ std::string SubmitJobRequest::getPostCmdLine()const
 void SubmitJobRequest::setPostCmdLine(const std::string& postCmdLine)
 {
 	postCmdLine_ = postCmdLine;
-	setParameter("PostCmdLine", postCmdLine);
+	setCoreParameter("PostCmdLine", postCmdLine);
 }
 
 std::string SubmitJobRequest::getRunasUser()const
@@ -77,7 +77,7 @@ std::string SubmitJobRequest::getRunasUser()const
 void SubmitJobRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
-	setParameter("RunasUser", runasUser);
+	setCoreParameter("RunasUser", runasUser);
 }
 
 std::string SubmitJobRequest::getClusterId()const
@@ -88,7 +88,7 @@ std::string SubmitJobRequest::getClusterId()const
 void SubmitJobRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 bool SubmitJobRequest::getReRunable()const
@@ -99,7 +99,7 @@ bool SubmitJobRequest::getReRunable()const
 void SubmitJobRequest::setReRunable(bool reRunable)
 {
 	reRunable_ = reRunable;
-	setParameter("ReRunable", std::to_string(reRunable));
+	setCoreParameter("ReRunable", reRunable ? "true" : "false");
 }
 
 int SubmitJobRequest::getPriority()const
@@ -110,7 +110,7 @@ int SubmitJobRequest::getPriority()const
 void SubmitJobRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", std::to_string(priority));
 }
 
 std::string SubmitJobRequest::getCommandLine()const
@@ -121,7 +121,7 @@ std::string SubmitJobRequest::getCommandLine()const
 void SubmitJobRequest::setCommandLine(const std::string& commandLine)
 {
 	commandLine_ = commandLine;
-	setParameter("CommandLine", commandLine);
+	setCoreParameter("CommandLine", commandLine);
 }
 
 std::string SubmitJobRequest::getJobQueue()const
@@ -132,7 +132,7 @@ std::string SubmitJobRequest::getJobQueue()const
 void SubmitJobRequest::setJobQueue(const std::string& jobQueue)
 {
 	jobQueue_ = jobQueue;
-	setParameter("JobQueue", jobQueue);
+	setCoreParameter("JobQueue", jobQueue);
 }
 
 std::string SubmitJobRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ std::string SubmitJobRequest::getAccessKeyId()const
 void SubmitJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitJobRequest::getArrayRequest()const
@@ -154,7 +154,7 @@ std::string SubmitJobRequest::getArrayRequest()const
 void SubmitJobRequest::setArrayRequest(const std::string& arrayRequest)
 {
 	arrayRequest_ = arrayRequest;
-	setParameter("ArrayRequest", arrayRequest);
+	setCoreParameter("ArrayRequest", arrayRequest);
 }
 
 std::string SubmitJobRequest::getUnzipCmd()const
@@ -165,7 +165,7 @@ std::string SubmitJobRequest::getUnzipCmd()const
 void SubmitJobRequest::setUnzipCmd(const std::string& unzipCmd)
 {
 	unzipCmd_ = unzipCmd;
-	setParameter("UnzipCmd", unzipCmd);
+	setCoreParameter("UnzipCmd", unzipCmd);
 }
 
 std::string SubmitJobRequest::getPackagePath()const
@@ -176,7 +176,7 @@ std::string SubmitJobRequest::getPackagePath()const
 void SubmitJobRequest::setPackagePath(const std::string& packagePath)
 {
 	packagePath_ = packagePath;
-	setParameter("PackagePath", packagePath);
+	setCoreParameter("PackagePath", packagePath);
 }
 
 std::string SubmitJobRequest::getInputFileUrl()const
@@ -187,7 +187,7 @@ std::string SubmitJobRequest::getInputFileUrl()const
 void SubmitJobRequest::setInputFileUrl(const std::string& inputFileUrl)
 {
 	inputFileUrl_ = inputFileUrl;
-	setParameter("InputFileUrl", inputFileUrl);
+	setCoreParameter("InputFileUrl", inputFileUrl);
 }
 
 std::string SubmitJobRequest::getName()const
@@ -198,7 +198,7 @@ std::string SubmitJobRequest::getName()const
 void SubmitJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string SubmitJobRequest::getStdoutRedirectPath()const
@@ -209,7 +209,7 @@ std::string SubmitJobRequest::getStdoutRedirectPath()const
 void SubmitJobRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
 {
 	stdoutRedirectPath_ = stdoutRedirectPath;
-	setParameter("StdoutRedirectPath", stdoutRedirectPath);
+	setCoreParameter("StdoutRedirectPath", stdoutRedirectPath);
 }
 
 std::string SubmitJobRequest::getContainerId()const
@@ -220,6 +220,6 @@ std::string SubmitJobRequest::getContainerId()const
 void SubmitJobRequest::setContainerId(const std::string& containerId)
 {
 	containerId_ = containerId;
-	setParameter("ContainerId", containerId);
+	setCoreParameter("ContainerId", containerId);
 }
 

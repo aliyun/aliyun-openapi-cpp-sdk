@@ -33,7 +33,7 @@ std::string PullImageRequest::getContainerType()const
 void PullImageRequest::setContainerType(const std::string& containerType)
 {
 	containerType_ = containerType;
-	setParameter("ContainerType", containerType);
+	setCoreParameter("ContainerType", containerType);
 }
 
 std::string PullImageRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string PullImageRequest::getClusterId()const
 void PullImageRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string PullImageRequest::getRepository()const
@@ -55,7 +55,7 @@ std::string PullImageRequest::getRepository()const
 void PullImageRequest::setRepository(const std::string& repository)
 {
 	repository_ = repository;
-	setParameter("Repository", repository);
+	setCoreParameter("Repository", repository);
 }
 
 std::string PullImageRequest::getImageTag()const
@@ -66,7 +66,7 @@ std::string PullImageRequest::getImageTag()const
 void PullImageRequest::setImageTag(const std::string& imageTag)
 {
 	imageTag_ = imageTag;
-	setParameter("ImageTag", imageTag);
+	setCoreParameter("ImageTag", imageTag);
 }
 
 std::string PullImageRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string PullImageRequest::getAccessKeyId()const
 void PullImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

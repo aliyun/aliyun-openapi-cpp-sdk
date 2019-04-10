@@ -33,7 +33,7 @@ std::string ListQueuesRequest::getClusterId()const
 void ListQueuesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ListQueuesRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ListQueuesRequest::getAccessKeyId()const
 void ListQueuesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

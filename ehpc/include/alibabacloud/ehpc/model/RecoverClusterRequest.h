@@ -35,14 +35,32 @@ namespace AlibabaCloud
 				RecoverClusterRequest();
 				~RecoverClusterRequest();
 
+				std::string getImageId()const;
+				void setImageId(const std::string& imageId);
+				std::string getOsTag()const;
+				void setOsTag(const std::string& osTag);
+				std::string getClientVersion()const;
+				void setClientVersion(const std::string& clientVersion);
+				std::string getAccountType()const;
+				void setAccountType(const std::string& accountType);
+				std::string getSchedulerType()const;
+				void setSchedulerType(const std::string& schedulerType);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getImageOwnerAlias()const;
+				void setImageOwnerAlias(const std::string& imageOwnerAlias);
 
             private:
+				std::string imageId_;
+				std::string osTag_;
+				std::string clientVersion_;
+				std::string accountType_;
+				std::string schedulerType_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string imageOwnerAlias_;
 
 			};
 		}

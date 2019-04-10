@@ -66,12 +66,15 @@ namespace AlibabaCloud
 					std::string imageOwnerAlias;
 					std::string description;
 					std::string zoneId;
+					std::string vSwitchId;
 					std::string createTime;
 					std::string schedulerType;
 					int count;
 					std::string accountType;
+					std::string ehpcVersion;
 					std::string name;
 					UsedResources usedResources;
+					std::string vpcId;
 					std::string deployMode;
 					Managers managers;
 					TotalResources totalResources;

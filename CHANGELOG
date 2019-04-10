@@ -1,3 +1,8 @@
+2019-04-10 Version: 1.36.0
+1, New APIs for visual service (VNC).
+2, New APIs for software management.
+3, New APIs for CPFS filesystem.
+
 2019-04-09 Version: 1.35.9
 1, support service account management networkInterface function.
 

@@ -37,7 +37,7 @@ void ListInvocationResultsRequest::setInstance(const std::vector<Instance>& inst
 	for(int i = 0; i!= instance.size(); i++)	{
 		auto obj = instance.at(i);
 		std::string str ="Instance."+ std::to_string(i);
-		setParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Id", obj.id);
 	}
 }
 
@@ -49,7 +49,7 @@ std::string ListInvocationResultsRequest::getInvokeRecordStatus()const
 void ListInvocationResultsRequest::setInvokeRecordStatus(const std::string& invokeRecordStatus)
 {
 	invokeRecordStatus_ = invokeRecordStatus;
-	setParameter("InvokeRecordStatus", invokeRecordStatus);
+	setCoreParameter("InvokeRecordStatus", invokeRecordStatus);
 }
 
 int ListInvocationResultsRequest::getPageSize()const
@@ -60,7 +60,7 @@ int ListInvocationResultsRequest::getPageSize()const
 void ListInvocationResultsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListInvocationResultsRequest::getClusterId()const
@@ -71,7 +71,7 @@ std::string ListInvocationResultsRequest::getClusterId()const
 void ListInvocationResultsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ListInvocationResultsRequest::getCommandId()const
@@ -82,7 +82,7 @@ std::string ListInvocationResultsRequest::getCommandId()const
 void ListInvocationResultsRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setParameter("CommandId", commandId);
+	setCoreParameter("CommandId", commandId);
 }
 
 int ListInvocationResultsRequest::getPageNumber()const
@@ -93,7 +93,7 @@ int ListInvocationResultsRequest::getPageNumber()const
 void ListInvocationResultsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListInvocationResultsRequest::getAccessKeyId()const
@@ -104,6 +104,6 @@ std::string ListInvocationResultsRequest::getAccessKeyId()const
 void ListInvocationResultsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

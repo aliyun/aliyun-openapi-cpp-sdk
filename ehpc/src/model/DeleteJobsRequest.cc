@@ -33,7 +33,7 @@ std::string DeleteJobsRequest::getJobs()const
 void DeleteJobsRequest::setJobs(const std::string& jobs)
 {
 	jobs_ = jobs;
-	setParameter("Jobs", jobs);
+	setCoreParameter("Jobs", jobs);
 }
 
 std::string DeleteJobsRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string DeleteJobsRequest::getClusterId()const
 void DeleteJobsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DeleteJobsRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DeleteJobsRequest::getAccessKeyId()const
 void DeleteJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

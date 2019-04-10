@@ -33,7 +33,7 @@ std::string CreateClusterRequest::getSccClusterId()const
 void CreateClusterRequest::setSccClusterId(const std::string& sccClusterId)
 {
 	sccClusterId_ = sccClusterId;
-	setParameter("SccClusterId", sccClusterId);
+	setCoreParameter("SccClusterId", sccClusterId);
 }
 
 std::string CreateClusterRequest::getImageId()const
@@ -44,7 +44,31 @@ std::string CreateClusterRequest::getImageId()const
 void CreateClusterRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setParameter("ImageId", imageId);
+	setCoreParameter("ImageId", imageId);
+}
+
+std::vector<CreateClusterRequest::AdditionalVolumes> CreateClusterRequest::getAdditionalVolumes()const
+{
+	return additionalVolumes_;
+}
+
+void CreateClusterRequest::setAdditionalVolumes(const std::vector<AdditionalVolumes>& additionalVolumes)
+{
+	additionalVolumes_ = additionalVolumes;
+	int i = 0;
+	for(int i = 0; i!= additionalVolumes.size(); i++)	{
+		auto obj = additionalVolumes.at(i);
+		std::string str ="AdditionalVolumes."+ std::to_string(i);
+		setCoreParameter(str + ".VolumeType", obj.volumeType);
+		setCoreParameter(str + ".VolumeProtocol", obj.volumeProtocol);
+		setCoreParameter(str + ".LocalDirectory", obj.localDirectory);
+		setCoreParameter(str + ".RemoteDirectory", obj.remoteDirectory);
+		setCoreParameter(str + ".Roles", std::to_string(obj.roles));
+		setCoreParameter(str + ".VolumeId", obj.volumeId);
+		setCoreParameter(str + ".VolumeMountpoint", obj.volumeMountpoint);
+		setCoreParameter(str + ".Location", obj.location);
+		setCoreParameter(str + ".JobQueue", obj.jobQueue);
+	}
 }
 
 std::string CreateClusterRequest::getEcsOrderManagerInstanceType()const
@@ -55,7 +79,7 @@ std::string CreateClusterRequest::getEcsOrderManagerInstanceType()const
 void CreateClusterRequest::setEcsOrderManagerInstanceType(const std::string& ecsOrderManagerInstanceType)
 {
 	ecsOrderManagerInstanceType_ = ecsOrderManagerInstanceType;
-	setParameter("EcsOrderManagerInstanceType", ecsOrderManagerInstanceType);
+	setCoreParameter("EcsOrderManagerInstanceType", ecsOrderManagerInstanceType);
 }
 
 std::string CreateClusterRequest::getEhpcVersion()const
@@ -66,7 +90,7 @@ std::string CreateClusterRequest::getEhpcVersion()const
 void CreateClusterRequest::setEhpcVersion(const std::string& ehpcVersion)
 {
 	ehpcVersion_ = ehpcVersion;
-	setParameter("EhpcVersion", ehpcVersion);
+	setCoreParameter("EhpcVersion", ehpcVersion);
 }
 
 std::string CreateClusterRequest::getAccountType()const
@@ -77,7 +101,7 @@ std::string CreateClusterRequest::getAccountType()const
 void CreateClusterRequest::setAccountType(const std::string& accountType)
 {
 	accountType_ = accountType;
-	setParameter("AccountType", accountType);
+	setCoreParameter("AccountType", accountType);
 }
 
 std::string CreateClusterRequest::getSecurityGroupId()const
@@ -88,7 +112,7 @@ std::string CreateClusterRequest::getSecurityGroupId()const
 void CreateClusterRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 std::string CreateClusterRequest::getDescription()const
@@ -99,7 +123,7 @@ std::string CreateClusterRequest::getDescription()const
 void CreateClusterRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string CreateClusterRequest::getKeyPairName()const
@@ -110,7 +134,7 @@ std::string CreateClusterRequest::getKeyPairName()const
 void CreateClusterRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setParameter("KeyPairName", keyPairName);
+	setCoreParameter("KeyPairName", keyPairName);
 }
 
 std::string CreateClusterRequest::getSecurityGroupName()const
@@ -121,7 +145,7 @@ std::string CreateClusterRequest::getSecurityGroupName()const
 void CreateClusterRequest::setSecurityGroupName(const std::string& securityGroupName)
 {
 	securityGroupName_ = securityGroupName;
-	setParameter("SecurityGroupName", securityGroupName);
+	setCoreParameter("SecurityGroupName", securityGroupName);
 }
 
 std::string CreateClusterRequest::getEcsOrderComputeInstanceType()const
@@ -132,7 +156,7 @@ std::string CreateClusterRequest::getEcsOrderComputeInstanceType()const
 void CreateClusterRequest::setEcsOrderComputeInstanceType(const std::string& ecsOrderComputeInstanceType)
 {
 	ecsOrderComputeInstanceType_ = ecsOrderComputeInstanceType;
-	setParameter("EcsOrderComputeInstanceType", ecsOrderComputeInstanceType);
+	setCoreParameter("EcsOrderComputeInstanceType", ecsOrderComputeInstanceType);
 }
 
 std::string CreateClusterRequest::getJobQueue()const
@@ -143,7 +167,7 @@ std::string CreateClusterRequest::getJobQueue()const
 void CreateClusterRequest::setJobQueue(const std::string& jobQueue)
 {
 	jobQueue_ = jobQueue;
-	setParameter("JobQueue", jobQueue);
+	setCoreParameter("JobQueue", jobQueue);
 }
 
 std::string CreateClusterRequest::getAccessKeyId()const
@@ -154,7 +178,7 @@ std::string CreateClusterRequest::getAccessKeyId()const
 void CreateClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateClusterRequest::getImageOwnerAlias()const
@@ -165,7 +189,7 @@ std::string CreateClusterRequest::getImageOwnerAlias()const
 void CreateClusterRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
 {
 	imageOwnerAlias_ = imageOwnerAlias;
-	setParameter("ImageOwnerAlias", imageOwnerAlias);
+	setCoreParameter("ImageOwnerAlias", imageOwnerAlias);
 }
 
 std::string CreateClusterRequest::getVolumeType()const
@@ -176,7 +200,7 @@ std::string CreateClusterRequest::getVolumeType()const
 void CreateClusterRequest::setVolumeType(const std::string& volumeType)
 {
 	volumeType_ = volumeType;
-	setParameter("VolumeType", volumeType);
+	setCoreParameter("VolumeType", volumeType);
 }
 
 std::string CreateClusterRequest::getDeployMode()const
@@ -187,7 +211,7 @@ std::string CreateClusterRequest::getDeployMode()const
 void CreateClusterRequest::setDeployMode(const std::string& deployMode)
 {
 	deployMode_ = deployMode;
-	setParameter("DeployMode", deployMode);
+	setCoreParameter("DeployMode", deployMode);
 }
 
 int CreateClusterRequest::getEcsOrderManagerCount()const
@@ -198,7 +222,18 @@ int CreateClusterRequest::getEcsOrderManagerCount()const
 void CreateClusterRequest::setEcsOrderManagerCount(int ecsOrderManagerCount)
 {
 	ecsOrderManagerCount_ = ecsOrderManagerCount;
-	setParameter("EcsOrderManagerCount", std::to_string(ecsOrderManagerCount));
+	setCoreParameter("EcsOrderManagerCount", std::to_string(ecsOrderManagerCount));
+}
+
+std::string CreateClusterRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateClusterRequest::getPassword()const
@@ -209,7 +244,7 @@ std::string CreateClusterRequest::getPassword()const
 void CreateClusterRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setParameter("Password", password);
+	setCoreParameter("Password", password);
 }
 
 int CreateClusterRequest::getEcsOrderLoginCount()const
@@ -220,7 +255,29 @@ int CreateClusterRequest::getEcsOrderLoginCount()const
 void CreateClusterRequest::setEcsOrderLoginCount(int ecsOrderLoginCount)
 {
 	ecsOrderLoginCount_ = ecsOrderLoginCount;
-	setParameter("EcsOrderLoginCount", std::to_string(ecsOrderLoginCount));
+	setCoreParameter("EcsOrderLoginCount", std::to_string(ecsOrderLoginCount));
+}
+
+std::string CreateClusterRequest::getRemoteVisEnable()const
+{
+	return remoteVisEnable_;
+}
+
+void CreateClusterRequest::setRemoteVisEnable(const std::string& remoteVisEnable)
+{
+	remoteVisEnable_ = remoteVisEnable;
+	setCoreParameter("RemoteVisEnable", remoteVisEnable);
+}
+
+int CreateClusterRequest::getSystemDiskSize()const
+{
+	return systemDiskSize_;
+}
+
+void CreateClusterRequest::setSystemDiskSize(int systemDiskSize)
+{
+	systemDiskSize_ = systemDiskSize;
+	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
 }
 
 std::string CreateClusterRequest::getComputeSpotPriceLimit()const
@@ -231,7 +288,7 @@ std::string CreateClusterRequest::getComputeSpotPriceLimit()const
 void CreateClusterRequest::setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit)
 {
 	computeSpotPriceLimit_ = computeSpotPriceLimit;
-	setParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
+	setCoreParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
 }
 
 int CreateClusterRequest::getAutoRenewPeriod()const
@@ -242,7 +299,7 @@ int CreateClusterRequest::getAutoRenewPeriod()const
 void CreateClusterRequest::setAutoRenewPeriod(int autoRenewPeriod)
 {
 	autoRenewPeriod_ = autoRenewPeriod;
-	setParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+	setCoreParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
 }
 
 int CreateClusterRequest::getPeriod()const
@@ -253,7 +310,7 @@ int CreateClusterRequest::getPeriod()const
 void CreateClusterRequest::setPeriod(int period)
 {
 	period_ = period;
-	setParameter("Period", std::to_string(period));
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string CreateClusterRequest::getVolumeProtocol()const
@@ -264,7 +321,7 @@ std::string CreateClusterRequest::getVolumeProtocol()const
 void CreateClusterRequest::setVolumeProtocol(const std::string& volumeProtocol)
 {
 	volumeProtocol_ = volumeProtocol;
-	setParameter("VolumeProtocol", volumeProtocol);
+	setCoreParameter("VolumeProtocol", volumeProtocol);
 }
 
 std::string CreateClusterRequest::getClientVersion()const
@@ -275,7 +332,7 @@ std::string CreateClusterRequest::getClientVersion()const
 void CreateClusterRequest::setClientVersion(const std::string& clientVersion)
 {
 	clientVersion_ = clientVersion;
-	setParameter("ClientVersion", clientVersion);
+	setCoreParameter("ClientVersion", clientVersion);
 }
 
 std::string CreateClusterRequest::getOsTag()const
@@ -286,7 +343,7 @@ std::string CreateClusterRequest::getOsTag()const
 void CreateClusterRequest::setOsTag(const std::string& osTag)
 {
 	osTag_ = osTag;
-	setParameter("OsTag", osTag);
+	setCoreParameter("OsTag", osTag);
 }
 
 std::string CreateClusterRequest::getRemoteDirectory()const
@@ -297,7 +354,7 @@ std::string CreateClusterRequest::getRemoteDirectory()const
 void CreateClusterRequest::setRemoteDirectory(const std::string& remoteDirectory)
 {
 	remoteDirectory_ = remoteDirectory;
-	setParameter("RemoteDirectory", remoteDirectory);
+	setCoreParameter("RemoteDirectory", remoteDirectory);
 }
 
 int CreateClusterRequest::getEcsOrderComputeCount()const
@@ -308,7 +365,7 @@ int CreateClusterRequest::getEcsOrderComputeCount()const
 void CreateClusterRequest::setEcsOrderComputeCount(int ecsOrderComputeCount)
 {
 	ecsOrderComputeCount_ = ecsOrderComputeCount;
-	setParameter("EcsOrderComputeCount", std::to_string(ecsOrderComputeCount));
+	setCoreParameter("EcsOrderComputeCount", std::to_string(ecsOrderComputeCount));
 }
 
 std::string CreateClusterRequest::getComputeSpotStrategy()const
@@ -319,7 +376,7 @@ std::string CreateClusterRequest::getComputeSpotStrategy()const
 void CreateClusterRequest::setComputeSpotStrategy(const std::string& computeSpotStrategy)
 {
 	computeSpotStrategy_ = computeSpotStrategy;
-	setParameter("ComputeSpotStrategy", computeSpotStrategy);
+	setCoreParameter("ComputeSpotStrategy", computeSpotStrategy);
 }
 
 std::vector<CreateClusterRequest::PostInstallScript> CreateClusterRequest::getPostInstallScript()const
@@ -334,8 +391,8 @@ void CreateClusterRequest::setPostInstallScript(const std::vector<PostInstallScr
 	for(int i = 0; i!= postInstallScript.size(); i++)	{
 		auto obj = postInstallScript.at(i);
 		std::string str ="PostInstallScript."+ std::to_string(i);
-		setParameter(str + ".Args", obj.args);
-		setParameter(str + ".Url", obj.url);
+		setCoreParameter(str + ".Args", obj.args);
+		setCoreParameter(str + ".Url", obj.url);
 	}
 }
 
@@ -347,7 +404,7 @@ std::string CreateClusterRequest::getVSwitchId()const
 void CreateClusterRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateClusterRequest::getPeriodUnit()const
@@ -358,7 +415,7 @@ std::string CreateClusterRequest::getPeriodUnit()const
 void CreateClusterRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setParameter("PeriodUnit", periodUnit);
+	setCoreParameter("PeriodUnit", periodUnit);
 }
 
 std::vector<CreateClusterRequest::Application> CreateClusterRequest::getApplication()const
@@ -373,7 +430,7 @@ void CreateClusterRequest::setApplication(const std::vector<Application>& applic
 	for(int i = 0; i!= application.size(); i++)	{
 		auto obj = application.at(i);
 		std::string str ="Application."+ std::to_string(i);
-		setParameter(str + ".Tag", obj.tag);
+		setCoreParameter(str + ".Tag", obj.tag);
 	}
 }
 
@@ -385,7 +442,7 @@ std::string CreateClusterRequest::getAutoRenew()const
 void CreateClusterRequest::setAutoRenew(const std::string& autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setParameter("AutoRenew", autoRenew);
+	setCoreParameter("AutoRenew", autoRenew);
 }
 
 std::string CreateClusterRequest::getEcsChargeType()const
@@ -396,7 +453,7 @@ std::string CreateClusterRequest::getEcsChargeType()const
 void CreateClusterRequest::setEcsChargeType(const std::string& ecsChargeType)
 {
 	ecsChargeType_ = ecsChargeType;
-	setParameter("EcsChargeType", ecsChargeType);
+	setCoreParameter("EcsChargeType", ecsChargeType);
 }
 
 std::string CreateClusterRequest::getInputFileUrl()const
@@ -407,7 +464,7 @@ std::string CreateClusterRequest::getInputFileUrl()const
 void CreateClusterRequest::setInputFileUrl(const std::string& inputFileUrl)
 {
 	inputFileUrl_ = inputFileUrl;
-	setParameter("InputFileUrl", inputFileUrl);
+	setCoreParameter("InputFileUrl", inputFileUrl);
 }
 
 std::string CreateClusterRequest::getVpcId()const
@@ -418,7 +475,7 @@ std::string CreateClusterRequest::getVpcId()const
 void CreateClusterRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", vpcId);
 }
 
 bool CreateClusterRequest::getHaEnable()const
@@ -429,7 +486,7 @@ bool CreateClusterRequest::getHaEnable()const
 void CreateClusterRequest::setHaEnable(bool haEnable)
 {
 	haEnable_ = haEnable;
-	setParameter("HaEnable", std::to_string(haEnable));
+	setCoreParameter("HaEnable", haEnable ? "true" : "false");
 }
 
 std::string CreateClusterRequest::getName()const
@@ -440,7 +497,7 @@ std::string CreateClusterRequest::getName()const
 void CreateClusterRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string CreateClusterRequest::getSchedulerType()const
@@ -451,7 +508,7 @@ std::string CreateClusterRequest::getSchedulerType()const
 void CreateClusterRequest::setSchedulerType(const std::string& schedulerType)
 {
 	schedulerType_ = schedulerType;
-	setParameter("SchedulerType", schedulerType);
+	setCoreParameter("SchedulerType", schedulerType);
 }
 
 std::string CreateClusterRequest::getVolumeId()const
@@ -462,7 +519,7 @@ std::string CreateClusterRequest::getVolumeId()const
 void CreateClusterRequest::setVolumeId(const std::string& volumeId)
 {
 	volumeId_ = volumeId;
-	setParameter("VolumeId", volumeId);
+	setCoreParameter("VolumeId", volumeId);
 }
 
 std::string CreateClusterRequest::getVolumeMountpoint()const
@@ -473,7 +530,7 @@ std::string CreateClusterRequest::getVolumeMountpoint()const
 void CreateClusterRequest::setVolumeMountpoint(const std::string& volumeMountpoint)
 {
 	volumeMountpoint_ = volumeMountpoint;
-	setParameter("VolumeMountpoint", volumeMountpoint);
+	setCoreParameter("VolumeMountpoint", volumeMountpoint);
 }
 
 std::string CreateClusterRequest::getEcsOrderLoginInstanceType()const
@@ -484,7 +541,7 @@ std::string CreateClusterRequest::getEcsOrderLoginInstanceType()const
 void CreateClusterRequest::setEcsOrderLoginInstanceType(const std::string& ecsOrderLoginInstanceType)
 {
 	ecsOrderLoginInstanceType_ = ecsOrderLoginInstanceType;
-	setParameter("EcsOrderLoginInstanceType", ecsOrderLoginInstanceType);
+	setCoreParameter("EcsOrderLoginInstanceType", ecsOrderLoginInstanceType);
 }
 
 std::string CreateClusterRequest::getZoneId()const
@@ -495,6 +552,6 @@ std::string CreateClusterRequest::getZoneId()const
 void CreateClusterRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 

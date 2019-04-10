@@ -64,6 +64,8 @@ void ListCustomImagesResult::parse(const std::string &payload)
 			imagesObject.pricingCycle = value["PricingCycle"].asString();
 		if(!value["PostInstallScript"].isNull())
 			imagesObject.postInstallScript = value["PostInstallScript"].asString();
+		if(!value["Size"].isNull())
+			imagesObject.size = std::stoi(value["Size"].asString());
 		auto baseOsTagNode = value["BaseOsTag"];
 		if(!baseOsTagNode["OsTag"].isNull())
 			imagesObject.baseOsTag.osTag = baseOsTagNode["OsTag"].asString();

@@ -37,7 +37,7 @@ void ResetNodesRequest::setInstance(const std::vector<Instance>& instance)
 	for(int i = 0; i!= instance.size(); i++)	{
 		auto obj = instance.at(i);
 		std::string str ="Instance."+ std::to_string(i);
-		setParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Id", obj.id);
 	}
 }
 
@@ -49,7 +49,7 @@ std::string ResetNodesRequest::getClusterId()const
 void ResetNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ResetNodesRequest::getAccessKeyId()const
@@ -60,6 +60,6 @@ std::string ResetNodesRequest::getAccessKeyId()const
 void ResetNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

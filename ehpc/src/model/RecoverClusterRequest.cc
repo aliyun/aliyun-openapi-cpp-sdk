@@ -25,6 +25,61 @@ RecoverClusterRequest::RecoverClusterRequest() :
 RecoverClusterRequest::~RecoverClusterRequest()
 {}
 
+std::string RecoverClusterRequest::getImageId()const
+{
+	return imageId_;
+}
+
+void RecoverClusterRequest::setImageId(const std::string& imageId)
+{
+	imageId_ = imageId;
+	setCoreParameter("ImageId", imageId);
+}
+
+std::string RecoverClusterRequest::getOsTag()const
+{
+	return osTag_;
+}
+
+void RecoverClusterRequest::setOsTag(const std::string& osTag)
+{
+	osTag_ = osTag;
+	setCoreParameter("OsTag", osTag);
+}
+
+std::string RecoverClusterRequest::getClientVersion()const
+{
+	return clientVersion_;
+}
+
+void RecoverClusterRequest::setClientVersion(const std::string& clientVersion)
+{
+	clientVersion_ = clientVersion;
+	setCoreParameter("ClientVersion", clientVersion);
+}
+
+std::string RecoverClusterRequest::getAccountType()const
+{
+	return accountType_;
+}
+
+void RecoverClusterRequest::setAccountType(const std::string& accountType)
+{
+	accountType_ = accountType;
+	setCoreParameter("AccountType", accountType);
+}
+
+std::string RecoverClusterRequest::getSchedulerType()const
+{
+	return schedulerType_;
+}
+
+void RecoverClusterRequest::setSchedulerType(const std::string& schedulerType)
+{
+	schedulerType_ = schedulerType;
+	setCoreParameter("SchedulerType", schedulerType);
+}
+
 std::string RecoverClusterRequest::getClusterId()const
 {
 	return clusterId_;
@@ -33,7 +88,7 @@ std::string RecoverClusterRequest::getClusterId()const
 void RecoverClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string RecoverClusterRequest::getAccessKeyId()const
@@ -44,6 +99,17 @@ std::string RecoverClusterRequest::getAccessKeyId()const
 void RecoverClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RecoverClusterRequest::getImageOwnerAlias()const
+{
+	return imageOwnerAlias_;
+}
+
+void RecoverClusterRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
+{
+	imageOwnerAlias_ = imageOwnerAlias;
+	setCoreParameter("ImageOwnerAlias", imageOwnerAlias);
 }
 
