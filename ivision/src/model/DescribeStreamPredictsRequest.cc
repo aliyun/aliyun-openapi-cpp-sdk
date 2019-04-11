@@ -33,7 +33,7 @@ long DescribeStreamPredictsRequest::getResourceOwnerId()const
 void DescribeStreamPredictsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeStreamPredictsRequest::getNextPageToken()const
@@ -44,7 +44,7 @@ std::string DescribeStreamPredictsRequest::getNextPageToken()const
 void DescribeStreamPredictsRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setParameter("NextPageToken", nextPageToken);
+	setCoreParameter("NextPageToken", nextPageToken);
 }
 
 long DescribeStreamPredictsRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeStreamPredictsRequest::getCallerParentId()const
 void DescribeStreamPredictsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string DescribeStreamPredictsRequest::getPredictIds()const
@@ -66,7 +66,7 @@ std::string DescribeStreamPredictsRequest::getPredictIds()const
 void DescribeStreamPredictsRequest::setPredictIds(const std::string& predictIds)
 {
 	predictIds_ = predictIds;
-	setParameter("PredictIds", predictIds);
+	setCoreParameter("PredictIds", predictIds);
 }
 
 bool DescribeStreamPredictsRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool DescribeStreamPredictsRequest::getProxy_original_security_transport()const
 void DescribeStreamPredictsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeStreamPredictsRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribeStreamPredictsRequest::getProxy_original_source_ip()const
 void DescribeStreamPredictsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeStreamPredictsRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeStreamPredictsRequest::getOwnerIdLoginEmail()const
 void DescribeStreamPredictsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeStreamPredictsRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribeStreamPredictsRequest::getCallerType()const
 void DescribeStreamPredictsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeStreamPredictsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeStreamPredictsRequest::getAccessKeyId()const
 void DescribeStreamPredictsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeStreamPredictsRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeStreamPredictsRequest::getSecurityToken()const
 void DescribeStreamPredictsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeStreamPredictsRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeStreamPredictsRequest::getRegionId()const
 void DescribeStreamPredictsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeStreamPredictsRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeStreamPredictsRequest::getRequestContent()const
 void DescribeStreamPredictsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 long DescribeStreamPredictsRequest::getPageSize()const
@@ -165,7 +165,7 @@ long DescribeStreamPredictsRequest::getPageSize()const
 void DescribeStreamPredictsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeStreamPredictsRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeStreamPredictsRequest::getCallerBidEmail()const
 void DescribeStreamPredictsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeStreamPredictsRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DescribeStreamPredictsRequest::getCallerUidEmail()const
 void DescribeStreamPredictsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeStreamPredictsRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long DescribeStreamPredictsRequest::getCallerUid()const
 void DescribeStreamPredictsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeStreamPredictsRequest::getShowLog()const
@@ -209,7 +209,7 @@ std::string DescribeStreamPredictsRequest::getShowLog()const
 void DescribeStreamPredictsRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string DescribeStreamPredictsRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string DescribeStreamPredictsRequest::getApp_ip()const
 void DescribeStreamPredictsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeStreamPredictsRequest::getPopProduct()const
@@ -231,7 +231,7 @@ std::string DescribeStreamPredictsRequest::getPopProduct()const
 void DescribeStreamPredictsRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 long DescribeStreamPredictsRequest::getCurrentPage()const
@@ -242,7 +242,7 @@ long DescribeStreamPredictsRequest::getCurrentPage()const
 void DescribeStreamPredictsRequest::setCurrentPage(long currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeStreamPredictsRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DescribeStreamPredictsRequest::getCallerBid()const
 void DescribeStreamPredictsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeStreamPredictsRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DescribeStreamPredictsRequest::getOwnerId()const
 void DescribeStreamPredictsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeStreamPredictsRequest::getVersion()const
@@ -275,7 +275,7 @@ std::string DescribeStreamPredictsRequest::getVersion()const
 void DescribeStreamPredictsRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool DescribeStreamPredictsRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ bool DescribeStreamPredictsRequest::getProxy_trust_transport_info()const
 void DescribeStreamPredictsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeStreamPredictsRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool DescribeStreamPredictsRequest::getAk_mfa_present()const
 void DescribeStreamPredictsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeStreamPredictsRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool DescribeStreamPredictsRequest::getSecurity_transport()const
 void DescribeStreamPredictsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeStreamPredictsRequest::getRequestId()const
@@ -319,6 +319,6 @@ std::string DescribeStreamPredictsRequest::getRequestId()const
 void DescribeStreamPredictsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

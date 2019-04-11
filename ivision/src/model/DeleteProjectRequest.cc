@@ -33,7 +33,7 @@ long DeleteProjectRequest::getResourceOwnerId()const
 void DeleteProjectRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DeleteProjectRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DeleteProjectRequest::getCallerParentId()const
 void DeleteProjectRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteProjectRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DeleteProjectRequest::getProxy_original_security_transport()const
 void DeleteProjectRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DeleteProjectRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DeleteProjectRequest::getProxy_original_source_ip()const
 void DeleteProjectRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteProjectRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DeleteProjectRequest::getOwnerIdLoginEmail()const
 void DeleteProjectRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteProjectRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DeleteProjectRequest::getCallerType()const
 void DeleteProjectRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteProjectRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DeleteProjectRequest::getAccessKeyId()const
 void DeleteProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteProjectRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DeleteProjectRequest::getSecurityToken()const
 void DeleteProjectRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteProjectRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DeleteProjectRequest::getRegionId()const
 void DeleteProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteProjectRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string DeleteProjectRequest::getRequestContent()const
 void DeleteProjectRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteProjectRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string DeleteProjectRequest::getCallerBidEmail()const
 void DeleteProjectRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteProjectRequest::getProjectId()const
@@ -154,7 +154,7 @@ std::string DeleteProjectRequest::getProjectId()const
 void DeleteProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string DeleteProjectRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DeleteProjectRequest::getCallerUidEmail()const
 void DeleteProjectRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteProjectRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long DeleteProjectRequest::getCallerUid()const
 void DeleteProjectRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeleteProjectRequest::getShowLog()const
@@ -187,7 +187,7 @@ std::string DeleteProjectRequest::getShowLog()const
 void DeleteProjectRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string DeleteProjectRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DeleteProjectRequest::getApp_ip()const
 void DeleteProjectRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteProjectRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DeleteProjectRequest::getPopProduct()const
 void DeleteProjectRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DeleteProjectRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DeleteProjectRequest::getCallerBid()const
 void DeleteProjectRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteProjectRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long DeleteProjectRequest::getOwnerId()const
 void DeleteProjectRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteProjectRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string DeleteProjectRequest::getVersion()const
 void DeleteProjectRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool DeleteProjectRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DeleteProjectRequest::getProxy_trust_transport_info()const
 void DeleteProjectRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DeleteProjectRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DeleteProjectRequest::getAk_mfa_present()const
 void DeleteProjectRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DeleteProjectRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DeleteProjectRequest::getSecurity_transport()const
 void DeleteProjectRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DeleteProjectRequest::getRequestId()const
@@ -286,6 +286,6 @@ std::string DeleteProjectRequest::getRequestId()const
 void DeleteProjectRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

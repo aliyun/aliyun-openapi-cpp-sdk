@@ -33,7 +33,7 @@ long PredictImageRequest::getResourceOwnerId()const
 void PredictImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long PredictImageRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long PredictImageRequest::getCallerParentId()const
 void PredictImageRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool PredictImageRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool PredictImageRequest::getProxy_original_security_transport()const
 void PredictImageRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string PredictImageRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string PredictImageRequest::getProxy_original_source_ip()const
 void PredictImageRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string PredictImageRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string PredictImageRequest::getOwnerIdLoginEmail()const
 void PredictImageRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string PredictImageRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string PredictImageRequest::getCallerType()const
 void PredictImageRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string PredictImageRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string PredictImageRequest::getAccessKeyId()const
 void PredictImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PredictImageRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string PredictImageRequest::getSecurityToken()const
 void PredictImageRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string PredictImageRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string PredictImageRequest::getRegionId()const
 void PredictImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string PredictImageRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string PredictImageRequest::getRequestContent()const
 void PredictImageRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string PredictImageRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string PredictImageRequest::getCallerBidEmail()const
 void PredictImageRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string PredictImageRequest::getProjectId()const
@@ -154,7 +154,7 @@ std::string PredictImageRequest::getProjectId()const
 void PredictImageRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string PredictImageRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string PredictImageRequest::getCallerUidEmail()const
 void PredictImageRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long PredictImageRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long PredictImageRequest::getCallerUid()const
 void PredictImageRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string PredictImageRequest::getShowLog()const
@@ -187,7 +187,7 @@ std::string PredictImageRequest::getShowLog()const
 void PredictImageRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string PredictImageRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string PredictImageRequest::getApp_ip()const
 void PredictImageRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string PredictImageRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string PredictImageRequest::getPopProduct()const
 void PredictImageRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string PredictImageRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string PredictImageRequest::getCallerBid()const
 void PredictImageRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long PredictImageRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long PredictImageRequest::getOwnerId()const
 void PredictImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string PredictImageRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string PredictImageRequest::getVersion()const
 void PredictImageRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool PredictImageRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool PredictImageRequest::getProxy_trust_transport_info()const
 void PredictImageRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool PredictImageRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool PredictImageRequest::getAk_mfa_present()const
 void PredictImageRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool PredictImageRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool PredictImageRequest::getSecurity_transport()const
 void PredictImageRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string PredictImageRequest::getRequestId()const
@@ -286,7 +286,7 @@ std::string PredictImageRequest::getRequestId()const
 void PredictImageRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string PredictImageRequest::getIterationId()const
@@ -297,7 +297,7 @@ std::string PredictImageRequest::getIterationId()const
 void PredictImageRequest::setIterationId(const std::string& iterationId)
 {
 	iterationId_ = iterationId;
-	setParameter("IterationId", iterationId);
+	setCoreParameter("IterationId", iterationId);
 }
 
 std::string PredictImageRequest::getDataUrls()const
@@ -308,6 +308,6 @@ std::string PredictImageRequest::getDataUrls()const
 void PredictImageRequest::setDataUrls(const std::string& dataUrls)
 {
 	dataUrls_ = dataUrls;
-	setParameter("DataUrls", dataUrls);
+	setCoreParameter("DataUrls", dataUrls);
 }
 

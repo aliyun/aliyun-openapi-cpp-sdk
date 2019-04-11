@@ -33,7 +33,7 @@ long CreateStreamPredictRequest::getResourceOwnerId()const
 void CreateStreamPredictRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long CreateStreamPredictRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long CreateStreamPredictRequest::getCallerParentId()const
 void CreateStreamPredictRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool CreateStreamPredictRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool CreateStreamPredictRequest::getProxy_original_security_transport()const
 void CreateStreamPredictRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateStreamPredictRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string CreateStreamPredictRequest::getProxy_original_source_ip()const
 void CreateStreamPredictRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CreateStreamPredictRequest::getAutoStart()const
@@ -77,7 +77,7 @@ std::string CreateStreamPredictRequest::getAutoStart()const
 void CreateStreamPredictRequest::setAutoStart(const std::string& autoStart)
 {
 	autoStart_ = autoStart;
-	setParameter("AutoStart", autoStart);
+	setCoreParameter("AutoStart", autoStart);
 }
 
 std::string CreateStreamPredictRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string CreateStreamPredictRequest::getOwnerIdLoginEmail()const
 void CreateStreamPredictRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CreateStreamPredictRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string CreateStreamPredictRequest::getCallerType()const
 void CreateStreamPredictRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateStreamPredictRequest::getNotify()const
@@ -110,7 +110,7 @@ std::string CreateStreamPredictRequest::getNotify()const
 void CreateStreamPredictRequest::setNotify(const std::string& notify)
 {
 	notify_ = notify;
-	setParameter("Notify", notify);
+	setCoreParameter("Notify", notify);
 }
 
 std::string CreateStreamPredictRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string CreateStreamPredictRequest::getAccessKeyId()const
 void CreateStreamPredictRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateStreamPredictRequest::getOutput()const
@@ -132,7 +132,7 @@ std::string CreateStreamPredictRequest::getOutput()const
 void CreateStreamPredictRequest::setOutput(const std::string& output)
 {
 	output_ = output;
-	setParameter("Output", output);
+	setCoreParameter("Output", output);
 }
 
 std::string CreateStreamPredictRequest::getUserData()const
@@ -143,7 +143,7 @@ std::string CreateStreamPredictRequest::getUserData()const
 void CreateStreamPredictRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 std::string CreateStreamPredictRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string CreateStreamPredictRequest::getSecurityToken()const
 void CreateStreamPredictRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateStreamPredictRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string CreateStreamPredictRequest::getRegionId()const
 void CreateStreamPredictRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateStreamPredictRequest::getRequestContent()const
@@ -176,7 +176,7 @@ std::string CreateStreamPredictRequest::getRequestContent()const
 void CreateStreamPredictRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CreateStreamPredictRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ std::string CreateStreamPredictRequest::getCallerBidEmail()const
 void CreateStreamPredictRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string CreateStreamPredictRequest::getCallerUidEmail()const
@@ -198,7 +198,7 @@ std::string CreateStreamPredictRequest::getCallerUidEmail()const
 void CreateStreamPredictRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long CreateStreamPredictRequest::getCallerUid()const
@@ -209,7 +209,7 @@ long CreateStreamPredictRequest::getCallerUid()const
 void CreateStreamPredictRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CreateStreamPredictRequest::getShowLog()const
@@ -220,7 +220,7 @@ std::string CreateStreamPredictRequest::getShowLog()const
 void CreateStreamPredictRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string CreateStreamPredictRequest::getApp_ip()const
@@ -231,7 +231,7 @@ std::string CreateStreamPredictRequest::getApp_ip()const
 void CreateStreamPredictRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CreateStreamPredictRequest::getPopProduct()const
@@ -242,7 +242,7 @@ std::string CreateStreamPredictRequest::getPopProduct()const
 void CreateStreamPredictRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string CreateStreamPredictRequest::getStreamType()const
@@ -253,7 +253,7 @@ std::string CreateStreamPredictRequest::getStreamType()const
 void CreateStreamPredictRequest::setStreamType(const std::string& streamType)
 {
 	streamType_ = streamType;
-	setParameter("StreamType", streamType);
+	setCoreParameter("StreamType", streamType);
 }
 
 std::string CreateStreamPredictRequest::getStreamId()const
@@ -264,7 +264,7 @@ std::string CreateStreamPredictRequest::getStreamId()const
 void CreateStreamPredictRequest::setStreamId(const std::string& streamId)
 {
 	streamId_ = streamId;
-	setParameter("StreamId", streamId);
+	setCoreParameter("StreamId", streamId);
 }
 
 std::string CreateStreamPredictRequest::getCallerBid()const
@@ -275,7 +275,7 @@ std::string CreateStreamPredictRequest::getCallerBid()const
 void CreateStreamPredictRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CreateStreamPredictRequest::getOwnerId()const
@@ -286,7 +286,7 @@ long CreateStreamPredictRequest::getOwnerId()const
 void CreateStreamPredictRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateStreamPredictRequest::getVersion()const
@@ -297,7 +297,7 @@ std::string CreateStreamPredictRequest::getVersion()const
 void CreateStreamPredictRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool CreateStreamPredictRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ bool CreateStreamPredictRequest::getProxy_trust_transport_info()const
 void CreateStreamPredictRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CreateStreamPredictRequest::getAk_mfa_present()const
@@ -319,7 +319,7 @@ bool CreateStreamPredictRequest::getAk_mfa_present()const
 void CreateStreamPredictRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateStreamPredictRequest::getSecurity_transport()const
@@ -330,7 +330,7 @@ bool CreateStreamPredictRequest::getSecurity_transport()const
 void CreateStreamPredictRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateStreamPredictRequest::getProbabilityThresholds()const
@@ -341,7 +341,7 @@ std::string CreateStreamPredictRequest::getProbabilityThresholds()const
 void CreateStreamPredictRequest::setProbabilityThresholds(const std::string& probabilityThresholds)
 {
 	probabilityThresholds_ = probabilityThresholds;
-	setParameter("ProbabilityThresholds", probabilityThresholds);
+	setCoreParameter("ProbabilityThresholds", probabilityThresholds);
 }
 
 std::string CreateStreamPredictRequest::getModelIds()const
@@ -352,7 +352,7 @@ std::string CreateStreamPredictRequest::getModelIds()const
 void CreateStreamPredictRequest::setModelIds(const std::string& modelIds)
 {
 	modelIds_ = modelIds;
-	setParameter("ModelIds", modelIds);
+	setCoreParameter("ModelIds", modelIds);
 }
 
 std::string CreateStreamPredictRequest::getRequestId()const
@@ -363,6 +363,6 @@ std::string CreateStreamPredictRequest::getRequestId()const
 void CreateStreamPredictRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

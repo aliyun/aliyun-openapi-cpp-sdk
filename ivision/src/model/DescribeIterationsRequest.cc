@@ -33,7 +33,7 @@ long DescribeIterationsRequest::getResourceOwnerId()const
 void DescribeIterationsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeIterationsRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeIterationsRequest::getCallerParentId()const
 void DescribeIterationsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeIterationsRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeIterationsRequest::getProxy_original_security_transport()const
 void DescribeIterationsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeIterationsRequest::getThreshold()const
@@ -66,7 +66,7 @@ std::string DescribeIterationsRequest::getThreshold()const
 void DescribeIterationsRequest::setThreshold(const std::string& threshold)
 {
 	threshold_ = threshold;
-	setParameter("Threshold", threshold);
+	setCoreParameter("Threshold", threshold);
 }
 
 std::string DescribeIterationsRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeIterationsRequest::getProxy_original_source_ip()const
 void DescribeIterationsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeIterationsRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeIterationsRequest::getOwnerIdLoginEmail()const
 void DescribeIterationsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeIterationsRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeIterationsRequest::getCallerType()const
 void DescribeIterationsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeIterationsRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeIterationsRequest::getAccessKeyId()const
 void DescribeIterationsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeIterationsRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeIterationsRequest::getSecurityToken()const
 void DescribeIterationsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeIterationsRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeIterationsRequest::getRegionId()const
 void DescribeIterationsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeIterationsRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeIterationsRequest::getRequestContent()const
 void DescribeIterationsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeIterationsRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeIterationsRequest::getCallerBidEmail()const
 void DescribeIterationsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeIterationsRequest::getProjectId()const
@@ -165,7 +165,7 @@ std::string DescribeIterationsRequest::getProjectId()const
 void DescribeIterationsRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string DescribeIterationsRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeIterationsRequest::getCallerUidEmail()const
 void DescribeIterationsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeIterationsRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeIterationsRequest::getCallerUid()const
 void DescribeIterationsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeIterationsRequest::getShowLog()const
@@ -198,7 +198,7 @@ std::string DescribeIterationsRequest::getShowLog()const
 void DescribeIterationsRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string DescribeIterationsRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DescribeIterationsRequest::getApp_ip()const
 void DescribeIterationsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeIterationsRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string DescribeIterationsRequest::getPopProduct()const
 void DescribeIterationsRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeIterationsRequest::getIterationIds()const
@@ -231,7 +231,7 @@ std::string DescribeIterationsRequest::getIterationIds()const
 void DescribeIterationsRequest::setIterationIds(const std::string& iterationIds)
 {
 	iterationIds_ = iterationIds;
-	setParameter("IterationIds", iterationIds);
+	setCoreParameter("IterationIds", iterationIds);
 }
 
 std::string DescribeIterationsRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DescribeIterationsRequest::getCallerBid()const
 void DescribeIterationsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeIterationsRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long DescribeIterationsRequest::getOwnerId()const
 void DescribeIterationsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeIterationsRequest::getVersion()const
@@ -264,7 +264,7 @@ std::string DescribeIterationsRequest::getVersion()const
 void DescribeIterationsRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool DescribeIterationsRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool DescribeIterationsRequest::getProxy_trust_transport_info()const
 void DescribeIterationsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeIterationsRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DescribeIterationsRequest::getAk_mfa_present()const
 void DescribeIterationsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeIterationsRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DescribeIterationsRequest::getSecurity_transport()const
 void DescribeIterationsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeIterationsRequest::getRequestId()const
@@ -308,7 +308,7 @@ std::string DescribeIterationsRequest::getRequestId()const
 void DescribeIterationsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeIterationsRequest::getStatus()const
@@ -319,6 +319,6 @@ std::string DescribeIterationsRequest::getStatus()const
 void DescribeIterationsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

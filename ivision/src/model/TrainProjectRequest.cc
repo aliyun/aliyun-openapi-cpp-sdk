@@ -33,7 +33,7 @@ long TrainProjectRequest::getResourceOwnerId()const
 void TrainProjectRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long TrainProjectRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long TrainProjectRequest::getCallerParentId()const
 void TrainProjectRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool TrainProjectRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool TrainProjectRequest::getProxy_original_security_transport()const
 void TrainProjectRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string TrainProjectRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string TrainProjectRequest::getProxy_original_source_ip()const
 void TrainProjectRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string TrainProjectRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string TrainProjectRequest::getOwnerIdLoginEmail()const
 void TrainProjectRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string TrainProjectRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string TrainProjectRequest::getCallerType()const
 void TrainProjectRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string TrainProjectRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string TrainProjectRequest::getAccessKeyId()const
 void TrainProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string TrainProjectRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string TrainProjectRequest::getSecurityToken()const
 void TrainProjectRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string TrainProjectRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string TrainProjectRequest::getRegionId()const
 void TrainProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string TrainProjectRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string TrainProjectRequest::getRequestContent()const
 void TrainProjectRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string TrainProjectRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string TrainProjectRequest::getCallerBidEmail()const
 void TrainProjectRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string TrainProjectRequest::getProjectId()const
@@ -154,7 +154,7 @@ std::string TrainProjectRequest::getProjectId()const
 void TrainProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string TrainProjectRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string TrainProjectRequest::getCallerUidEmail()const
 void TrainProjectRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long TrainProjectRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long TrainProjectRequest::getCallerUid()const
 void TrainProjectRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string TrainProjectRequest::getShowLog()const
@@ -187,7 +187,7 @@ std::string TrainProjectRequest::getShowLog()const
 void TrainProjectRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string TrainProjectRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string TrainProjectRequest::getApp_ip()const
 void TrainProjectRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string TrainProjectRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string TrainProjectRequest::getPopProduct()const
 void TrainProjectRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string TrainProjectRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string TrainProjectRequest::getCallerBid()const
 void TrainProjectRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long TrainProjectRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long TrainProjectRequest::getOwnerId()const
 void TrainProjectRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string TrainProjectRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string TrainProjectRequest::getVersion()const
 void TrainProjectRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool TrainProjectRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool TrainProjectRequest::getProxy_trust_transport_info()const
 void TrainProjectRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool TrainProjectRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool TrainProjectRequest::getAk_mfa_present()const
 void TrainProjectRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool TrainProjectRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool TrainProjectRequest::getSecurity_transport()const
 void TrainProjectRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string TrainProjectRequest::getRequestId()const
@@ -286,6 +286,6 @@ std::string TrainProjectRequest::getRequestId()const
 void TrainProjectRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

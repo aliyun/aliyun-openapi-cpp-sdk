@@ -33,7 +33,7 @@ long ModifyTrainDataRegionTagAttributeRequest::getResourceOwnerId()const
 void ModifyTrainDataRegionTagAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ModifyTrainDataRegionTagAttributeRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long ModifyTrainDataRegionTagAttributeRequest::getCallerParentId()const
 void ModifyTrainDataRegionTagAttributeRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ModifyTrainDataRegionTagAttributeRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool ModifyTrainDataRegionTagAttributeRequest::getProxy_original_security_transp
 void ModifyTrainDataRegionTagAttributeRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getProxy_original_source_i
 void ModifyTrainDataRegionTagAttributeRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getOwnerIdLoginEmail()cons
 void ModifyTrainDataRegionTagAttributeRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getCallerType()const
 void ModifyTrainDataRegionTagAttributeRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getAccessKeyId()const
 void ModifyTrainDataRegionTagAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getSecurityToken()const
 void ModifyTrainDataRegionTagAttributeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getRegionId()const
 void ModifyTrainDataRegionTagAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getRequestContent()const
 void ModifyTrainDataRegionTagAttributeRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getCallerBidEmail()const
 void ModifyTrainDataRegionTagAttributeRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getProjectId()const
@@ -154,7 +154,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getProjectId()const
 void ModifyTrainDataRegionTagAttributeRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getCallerUidEmail()const
 void ModifyTrainDataRegionTagAttributeRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long ModifyTrainDataRegionTagAttributeRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long ModifyTrainDataRegionTagAttributeRequest::getCallerUid()const
 void ModifyTrainDataRegionTagAttributeRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getShowLog()const
@@ -187,7 +187,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getShowLog()const
 void ModifyTrainDataRegionTagAttributeRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getApp_ip()const
 void ModifyTrainDataRegionTagAttributeRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getPopProduct()const
 void ModifyTrainDataRegionTagAttributeRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getTagItems()const
@@ -220,7 +220,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getTagItems()const
 void ModifyTrainDataRegionTagAttributeRequest::setTagItems(const std::string& tagItems)
 {
 	tagItems_ = tagItems;
-	setParameter("TagItems", tagItems);
+	setCoreParameter("TagItems", tagItems);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getCallerBid()const
 void ModifyTrainDataRegionTagAttributeRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long ModifyTrainDataRegionTagAttributeRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long ModifyTrainDataRegionTagAttributeRequest::getOwnerId()const
 void ModifyTrainDataRegionTagAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getVersion()const
 void ModifyTrainDataRegionTagAttributeRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool ModifyTrainDataRegionTagAttributeRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool ModifyTrainDataRegionTagAttributeRequest::getProxy_trust_transport_info()co
 void ModifyTrainDataRegionTagAttributeRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ModifyTrainDataRegionTagAttributeRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool ModifyTrainDataRegionTagAttributeRequest::getAk_mfa_present()const
 void ModifyTrainDataRegionTagAttributeRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool ModifyTrainDataRegionTagAttributeRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool ModifyTrainDataRegionTagAttributeRequest::getSecurity_transport()const
 void ModifyTrainDataRegionTagAttributeRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getDataId()const
@@ -297,7 +297,7 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getDataId()const
 void ModifyTrainDataRegionTagAttributeRequest::setDataId(const std::string& dataId)
 {
 	dataId_ = dataId;
-	setParameter("DataId", dataId);
+	setCoreParameter("DataId", dataId);
 }
 
 std::string ModifyTrainDataRegionTagAttributeRequest::getRequestId()const
@@ -308,6 +308,6 @@ std::string ModifyTrainDataRegionTagAttributeRequest::getRequestId()const
 void ModifyTrainDataRegionTagAttributeRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

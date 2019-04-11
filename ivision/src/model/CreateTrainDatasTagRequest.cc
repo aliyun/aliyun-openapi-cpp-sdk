@@ -33,7 +33,7 @@ long CreateTrainDatasTagRequest::getResourceOwnerId()const
 void CreateTrainDatasTagRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long CreateTrainDatasTagRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long CreateTrainDatasTagRequest::getCallerParentId()const
 void CreateTrainDatasTagRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool CreateTrainDatasTagRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool CreateTrainDatasTagRequest::getProxy_original_security_transport()const
 void CreateTrainDatasTagRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateTrainDatasTagRequest::getDataIds()const
@@ -66,7 +66,7 @@ std::string CreateTrainDatasTagRequest::getDataIds()const
 void CreateTrainDatasTagRequest::setDataIds(const std::string& dataIds)
 {
 	dataIds_ = dataIds;
-	setParameter("DataIds", dataIds);
+	setCoreParameter("DataIds", dataIds);
 }
 
 std::string CreateTrainDatasTagRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string CreateTrainDatasTagRequest::getProxy_original_source_ip()const
 void CreateTrainDatasTagRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CreateTrainDatasTagRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string CreateTrainDatasTagRequest::getOwnerIdLoginEmail()const
 void CreateTrainDatasTagRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CreateTrainDatasTagRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string CreateTrainDatasTagRequest::getCallerType()const
 void CreateTrainDatasTagRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateTrainDatasTagRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string CreateTrainDatasTagRequest::getAccessKeyId()const
 void CreateTrainDatasTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateTrainDatasTagRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string CreateTrainDatasTagRequest::getSecurityToken()const
 void CreateTrainDatasTagRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateTrainDatasTagRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string CreateTrainDatasTagRequest::getRegionId()const
 void CreateTrainDatasTagRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateTrainDatasTagRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string CreateTrainDatasTagRequest::getRequestContent()const
 void CreateTrainDatasTagRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CreateTrainDatasTagRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string CreateTrainDatasTagRequest::getCallerBidEmail()const
 void CreateTrainDatasTagRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string CreateTrainDatasTagRequest::getProjectId()const
@@ -165,7 +165,7 @@ std::string CreateTrainDatasTagRequest::getProjectId()const
 void CreateTrainDatasTagRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string CreateTrainDatasTagRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string CreateTrainDatasTagRequest::getCallerUidEmail()const
 void CreateTrainDatasTagRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long CreateTrainDatasTagRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long CreateTrainDatasTagRequest::getCallerUid()const
 void CreateTrainDatasTagRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CreateTrainDatasTagRequest::getShowLog()const
@@ -198,7 +198,7 @@ std::string CreateTrainDatasTagRequest::getShowLog()const
 void CreateTrainDatasTagRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string CreateTrainDatasTagRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string CreateTrainDatasTagRequest::getApp_ip()const
 void CreateTrainDatasTagRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CreateTrainDatasTagRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string CreateTrainDatasTagRequest::getPopProduct()const
 void CreateTrainDatasTagRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string CreateTrainDatasTagRequest::getTagId()const
@@ -231,7 +231,7 @@ std::string CreateTrainDatasTagRequest::getTagId()const
 void CreateTrainDatasTagRequest::setTagId(const std::string& tagId)
 {
 	tagId_ = tagId;
-	setParameter("TagId", tagId);
+	setCoreParameter("TagId", tagId);
 }
 
 std::string CreateTrainDatasTagRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string CreateTrainDatasTagRequest::getCallerBid()const
 void CreateTrainDatasTagRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CreateTrainDatasTagRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long CreateTrainDatasTagRequest::getOwnerId()const
 void CreateTrainDatasTagRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateTrainDatasTagRequest::getVersion()const
@@ -264,7 +264,7 @@ std::string CreateTrainDatasTagRequest::getVersion()const
 void CreateTrainDatasTagRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool CreateTrainDatasTagRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool CreateTrainDatasTagRequest::getProxy_trust_transport_info()const
 void CreateTrainDatasTagRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CreateTrainDatasTagRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool CreateTrainDatasTagRequest::getAk_mfa_present()const
 void CreateTrainDatasTagRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateTrainDatasTagRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool CreateTrainDatasTagRequest::getSecurity_transport()const
 void CreateTrainDatasTagRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateTrainDatasTagRequest::getRequestId()const
@@ -308,6 +308,6 @@ std::string CreateTrainDatasTagRequest::getRequestId()const
 void CreateTrainDatasTagRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
