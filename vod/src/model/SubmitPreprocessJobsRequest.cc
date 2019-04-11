@@ -33,7 +33,7 @@ long SubmitPreprocessJobsRequest::getResourceOwnerId()const
 void SubmitPreprocessJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitPreprocessJobsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string SubmitPreprocessJobsRequest::getResourceOwnerAccount()const
 void SubmitPreprocessJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitPreprocessJobsRequest::getVideoId()const
@@ -55,7 +55,7 @@ std::string SubmitPreprocessJobsRequest::getVideoId()const
 void SubmitPreprocessJobsRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setParameter("VideoId", videoId);
+	setCoreParameter("VideoId", videoId);
 }
 
 long SubmitPreprocessJobsRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long SubmitPreprocessJobsRequest::getOwnerId()const
 void SubmitPreprocessJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitPreprocessJobsRequest::getPreprocessType()const
@@ -77,7 +77,7 @@ std::string SubmitPreprocessJobsRequest::getPreprocessType()const
 void SubmitPreprocessJobsRequest::setPreprocessType(const std::string& preprocessType)
 {
 	preprocessType_ = preprocessType;
-	setParameter("PreprocessType", preprocessType);
+	setCoreParameter("PreprocessType", preprocessType);
 }
 
 std::string SubmitPreprocessJobsRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string SubmitPreprocessJobsRequest::getAccessKeyId()const
 void SubmitPreprocessJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

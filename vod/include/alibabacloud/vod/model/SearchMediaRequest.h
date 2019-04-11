@@ -39,34 +39,40 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getMatch()const;
+				void setMatch(const std::string& match);
+				std::string getSessionId()const;
+				void setSessionId(const std::string& sessionId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getScrollToken()const;
+				void setScrollToken(const std::string& scrollToken);
 				int getPageNo()const;
 				void setPageNo(int pageNo);
 				std::string getSearchType()const;
 				void setSearchType(const std::string& searchType);
-				std::string getMatch()const;
-				void setMatch(const std::string& match);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getSortBy()const;
 				void setSortBy(const std::string& sortBy);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				std::string getResultTypes()const;
+				void setResultTypes(const std::string& resultTypes);
 				std::string getFields()const;
 				void setFields(const std::string& fields);
-				std::string getScrollToken()const;
-				void setScrollToken(const std::string& scrollToken);
 
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
+				std::string match_;
+				std::string sessionId_;
+				long ownerId_;
+				std::string scrollToken_;
 				int pageNo_;
 				std::string searchType_;
-				std::string match_;
 				int pageSize_;
 				std::string sortBy_;
-				long ownerId_;
+				std::string resultTypes_;
 				std::string fields_;
-				std::string scrollToken_;
 
 			};
 		}

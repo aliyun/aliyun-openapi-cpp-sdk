@@ -33,7 +33,7 @@ long ListWatermarkRequest::getResourceOwnerId()const
 void ListWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListWatermarkRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ListWatermarkRequest::getResourceOwnerAccount()const
 void ListWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ListWatermarkRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long ListWatermarkRequest::getOwnerId()const
 void ListWatermarkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListWatermarkRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ListWatermarkRequest::getAccessKeyId()const
 void ListWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,18 @@ std::string AddEditingProjectRequest::getCoverURL()const
 void AddEditingProjectRequest::setCoverURL(const std::string& coverURL)
 {
 	coverURL_ = coverURL;
-	setParameter("CoverURL", coverURL);
+	setCoreParameter("CoverURL", coverURL);
+}
+
+std::string AddEditingProjectRequest::getDivision()const
+{
+	return division_;
+}
+
+void AddEditingProjectRequest::setDivision(const std::string& division)
+{
+	division_ = division;
+	setCoreParameter("Division", division);
 }
 
 std::string AddEditingProjectRequest::getResourceOwnerId()const
@@ -44,7 +55,7 @@ std::string AddEditingProjectRequest::getResourceOwnerId()const
 void AddEditingProjectRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddEditingProjectRequest::getResourceOwnerAccount()const
@@ -55,7 +66,7 @@ std::string AddEditingProjectRequest::getResourceOwnerAccount()const
 void AddEditingProjectRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddEditingProjectRequest::getOwnerAccount()const
@@ -66,7 +77,7 @@ std::string AddEditingProjectRequest::getOwnerAccount()const
 void AddEditingProjectRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddEditingProjectRequest::getDescription()const
@@ -77,7 +88,7 @@ std::string AddEditingProjectRequest::getDescription()const
 void AddEditingProjectRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string AddEditingProjectRequest::getTimeline()const
@@ -88,7 +99,7 @@ std::string AddEditingProjectRequest::getTimeline()const
 void AddEditingProjectRequest::setTimeline(const std::string& timeline)
 {
 	timeline_ = timeline;
-	setParameter("Timeline", timeline);
+	setCoreParameter("Timeline", timeline);
 }
 
 std::string AddEditingProjectRequest::getOwnerId()const
@@ -99,7 +110,7 @@ std::string AddEditingProjectRequest::getOwnerId()const
 void AddEditingProjectRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddEditingProjectRequest::getTitle()const
@@ -110,7 +121,7 @@ std::string AddEditingProjectRequest::getTitle()const
 void AddEditingProjectRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setParameter("Title", title);
+	setCoreParameter("Title", title);
 }
 
 std::string AddEditingProjectRequest::getAccessKeyId()const
@@ -121,6 +132,6 @@ std::string AddEditingProjectRequest::getAccessKeyId()const
 void AddEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long CreateUploadVideoRequest::getResourceOwnerId()const
 void CreateUploadVideoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateUploadVideoRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string CreateUploadVideoRequest::getResourceOwnerAccount()const
 void CreateUploadVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateUploadVideoRequest::getTranscodeMode()const
@@ -55,7 +55,7 @@ std::string CreateUploadVideoRequest::getTranscodeMode()const
 void CreateUploadVideoRequest::setTranscodeMode(const std::string& transcodeMode)
 {
 	transcodeMode_ = transcodeMode;
-	setParameter("TranscodeMode", transcodeMode);
+	setCoreParameter("TranscodeMode", transcodeMode);
 }
 
 std::string CreateUploadVideoRequest::getIP()const
@@ -66,7 +66,7 @@ std::string CreateUploadVideoRequest::getIP()const
 void CreateUploadVideoRequest::setIP(const std::string& iP)
 {
 	iP_ = iP;
-	setParameter("IP", iP);
+	setCoreParameter("IP", iP);
 }
 
 std::string CreateUploadVideoRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string CreateUploadVideoRequest::getDescription()const
 void CreateUploadVideoRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 long CreateUploadVideoRequest::getFileSize()const
@@ -88,7 +88,7 @@ long CreateUploadVideoRequest::getFileSize()const
 void CreateUploadVideoRequest::setFileSize(long fileSize)
 {
 	fileSize_ = fileSize;
-	setParameter("FileSize", std::to_string(fileSize));
+	setCoreParameter("FileSize", std::to_string(fileSize));
 }
 
 long CreateUploadVideoRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long CreateUploadVideoRequest::getOwnerId()const
 void CreateUploadVideoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateUploadVideoRequest::getTitle()const
@@ -110,7 +110,7 @@ std::string CreateUploadVideoRequest::getTitle()const
 void CreateUploadVideoRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setParameter("Title", title);
+	setCoreParameter("Title", title);
 }
 
 std::string CreateUploadVideoRequest::getTags()const
@@ -121,7 +121,7 @@ std::string CreateUploadVideoRequest::getTags()const
 void CreateUploadVideoRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
 }
 
 std::string CreateUploadVideoRequest::getStorageLocation()const
@@ -132,7 +132,7 @@ std::string CreateUploadVideoRequest::getStorageLocation()const
 void CreateUploadVideoRequest::setStorageLocation(const std::string& storageLocation)
 {
 	storageLocation_ = storageLocation;
-	setParameter("StorageLocation", storageLocation);
+	setCoreParameter("StorageLocation", storageLocation);
 }
 
 std::string CreateUploadVideoRequest::getCoverURL()const
@@ -143,7 +143,7 @@ std::string CreateUploadVideoRequest::getCoverURL()const
 void CreateUploadVideoRequest::setCoverURL(const std::string& coverURL)
 {
 	coverURL_ = coverURL;
-	setParameter("CoverURL", coverURL);
+	setCoreParameter("CoverURL", coverURL);
 }
 
 std::string CreateUploadVideoRequest::getUserData()const
@@ -154,7 +154,7 @@ std::string CreateUploadVideoRequest::getUserData()const
 void CreateUploadVideoRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 std::string CreateUploadVideoRequest::getFileName()const
@@ -165,7 +165,7 @@ std::string CreateUploadVideoRequest::getFileName()const
 void CreateUploadVideoRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setParameter("FileName", fileName);
+	setCoreParameter("FileName", fileName);
 }
 
 std::string CreateUploadVideoRequest::getTemplateGroupId()const
@@ -176,7 +176,7 @@ std::string CreateUploadVideoRequest::getTemplateGroupId()const
 void CreateUploadVideoRequest::setTemplateGroupId(const std::string& templateGroupId)
 {
 	templateGroupId_ = templateGroupId;
-	setParameter("TemplateGroupId", templateGroupId);
+	setCoreParameter("TemplateGroupId", templateGroupId);
 }
 
 long CreateUploadVideoRequest::getCateId()const
@@ -187,6 +187,39 @@ long CreateUploadVideoRequest::getCateId()const
 void CreateUploadVideoRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setParameter("CateId", std::to_string(cateId));
+	setCoreParameter("CateId", std::to_string(cateId));
+}
+
+std::string CreateUploadVideoRequest::getAppId()const
+{
+	return appId_;
+}
+
+void CreateUploadVideoRequest::setAppId(const std::string& appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
+}
+
+std::string CreateUploadVideoRequest::getWorkflowId()const
+{
+	return workflowId_;
+}
+
+void CreateUploadVideoRequest::setWorkflowId(const std::string& workflowId)
+{
+	workflowId_ = workflowId;
+	setCoreParameter("WorkflowId", workflowId);
+}
+
+std::string CreateUploadVideoRequest::getCustomMediaInfo()const
+{
+	return customMediaInfo_;
+}
+
+void CreateUploadVideoRequest::setCustomMediaInfo(const std::string& customMediaInfo)
+{
+	customMediaInfo_ = customMediaInfo;
+	setCoreParameter("CustomMediaInfo", customMediaInfo);
 }
 

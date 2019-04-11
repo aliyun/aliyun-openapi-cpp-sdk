@@ -33,7 +33,7 @@ std::string GetCategoriesRequest::getResourceOwnerId()const
 void GetCategoriesRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetCategoriesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GetCategoriesRequest::getResourceOwnerAccount()const
 void GetCategoriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetCategoriesRequest::getCateId()const
@@ -55,7 +55,7 @@ long GetCategoriesRequest::getCateId()const
 void GetCategoriesRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setParameter("CateId", std::to_string(cateId));
+	setCoreParameter("CateId", std::to_string(cateId));
 }
 
 long GetCategoriesRequest::getPageNo()const
@@ -66,7 +66,7 @@ long GetCategoriesRequest::getPageNo()const
 void GetCategoriesRequest::setPageNo(long pageNo)
 {
 	pageNo_ = pageNo;
-	setParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 long GetCategoriesRequest::getPageSize()const
@@ -77,7 +77,7 @@ long GetCategoriesRequest::getPageSize()const
 void GetCategoriesRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetCategoriesRequest::getSortBy()const
@@ -88,7 +88,7 @@ std::string GetCategoriesRequest::getSortBy()const
 void GetCategoriesRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setParameter("SortBy", sortBy);
+	setCoreParameter("SortBy", sortBy);
 }
 
 std::string GetCategoriesRequest::getOwnerId()const
@@ -99,6 +99,17 @@ std::string GetCategoriesRequest::getOwnerId()const
 void GetCategoriesRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", ownerId);
+}
+
+std::string GetCategoriesRequest::getType()const
+{
+	return type_;
+}
+
+void GetCategoriesRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
 }
 

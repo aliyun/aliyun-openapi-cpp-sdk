@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getResourceOwnerId()const;
 				void setResourceOwnerId(const std::string& resourceOwnerId);
+				std::string getMaterialType()const;
+				void setMaterialType(const std::string& materialType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 
             private:
 				std::string resourceOwnerId_;
+				std::string materialType_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string ownerId_;

@@ -50,6 +50,8 @@ namespace AlibabaCloud
 					std::string cateName;
 					std::vector<Video::Thumbnail> thumbnailList;
 					std::string preprocessStatus;
+					std::string customMediaInfo;
+					std::string appId;
 					std::string creationTime;
 					std::string coverURL;
 					std::string regionId;

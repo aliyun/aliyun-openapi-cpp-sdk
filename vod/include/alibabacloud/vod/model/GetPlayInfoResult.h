@@ -67,6 +67,7 @@ namespace AlibabaCloud
 					std::string format;
 					std::string encryptType;
 					std::string playURL;
+					std::string narrowBandType;
 					std::string plaintext;
 					std::string creationTime;
 					long height;

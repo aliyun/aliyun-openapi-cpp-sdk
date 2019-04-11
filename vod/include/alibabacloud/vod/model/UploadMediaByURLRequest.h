@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				UploadMediaByURLRequest();
 				~UploadMediaByURLRequest();
 
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getTemplateGroupId()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setStorageLocation(const std::string& storageLocation);
 
             private:
+				std::string userData_;
 				long resourceOwnerId_;
 				std::string templateGroupId_;
 				std::string uploadMetadatas_;

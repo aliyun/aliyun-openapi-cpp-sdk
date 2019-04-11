@@ -153,6 +153,8 @@ void GetMezzanineInfoResult::parse(const std::string &payload)
 			videoStreamObject.numFrames = value["NumFrames"].asString();
 		if(!value["Lang"].isNull())
 			videoStreamObject.lang = value["Lang"].asString();
+		if(!value["Rotate"].isNull())
+			videoStreamObject.rotate = value["Rotate"].asString();
 		mezzanine_.videoStreamList.push_back(videoStreamObject);
 	}
 

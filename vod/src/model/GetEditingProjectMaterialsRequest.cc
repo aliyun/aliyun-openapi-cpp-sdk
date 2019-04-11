@@ -33,7 +33,18 @@ std::string GetEditingProjectMaterialsRequest::getResourceOwnerId()const
 void GetEditingProjectMaterialsRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+}
+
+std::string GetEditingProjectMaterialsRequest::getMaterialType()const
+{
+	return materialType_;
+}
+
+void GetEditingProjectMaterialsRequest::setMaterialType(const std::string& materialType)
+{
+	materialType_ = materialType;
+	setCoreParameter("MaterialType", materialType);
 }
 
 std::string GetEditingProjectMaterialsRequest::getResourceOwnerAccount()const
@@ -44,7 +55,7 @@ std::string GetEditingProjectMaterialsRequest::getResourceOwnerAccount()const
 void GetEditingProjectMaterialsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetEditingProjectMaterialsRequest::getOwnerAccount()const
@@ -55,7 +66,7 @@ std::string GetEditingProjectMaterialsRequest::getOwnerAccount()const
 void GetEditingProjectMaterialsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GetEditingProjectMaterialsRequest::getOwnerId()const
@@ -66,7 +77,7 @@ std::string GetEditingProjectMaterialsRequest::getOwnerId()const
 void GetEditingProjectMaterialsRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetEditingProjectMaterialsRequest::getType()const
@@ -77,7 +88,7 @@ std::string GetEditingProjectMaterialsRequest::getType()const
 void GetEditingProjectMaterialsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string GetEditingProjectMaterialsRequest::getProjectId()const
@@ -88,7 +99,7 @@ std::string GetEditingProjectMaterialsRequest::getProjectId()const
 void GetEditingProjectMaterialsRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string GetEditingProjectMaterialsRequest::getAccessKeyId()const
@@ -99,6 +110,6 @@ std::string GetEditingProjectMaterialsRequest::getAccessKeyId()const
 void GetEditingProjectMaterialsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

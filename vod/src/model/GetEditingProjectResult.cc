@@ -57,6 +57,10 @@ void GetEditingProjectResult::parse(const std::string &payload)
 		project_.timeline = projectNode["Timeline"].asString();
 	if(!projectNode["CoverURL"].isNull())
 		project_.coverURL = projectNode["CoverURL"].asString();
+	if(!projectNode["StorageLocation"].isNull())
+		project_.storageLocation = projectNode["StorageLocation"].asString();
+	if(!projectNode["RegionId"].isNull())
+		project_.regionId = projectNode["RegionId"].asString();
 
 }
 

@@ -33,7 +33,7 @@ long RefreshUploadVideoRequest::getResourceOwnerId()const
 void RefreshUploadVideoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RefreshUploadVideoRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string RefreshUploadVideoRequest::getResourceOwnerAccount()const
 void RefreshUploadVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RefreshUploadVideoRequest::getVideoId()const
@@ -55,7 +55,7 @@ std::string RefreshUploadVideoRequest::getVideoId()const
 void RefreshUploadVideoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setParameter("VideoId", videoId);
+	setCoreParameter("VideoId", videoId);
 }
 
 long RefreshUploadVideoRequest::getOwnerId()const
@@ -66,6 +66,6 @@ long RefreshUploadVideoRequest::getOwnerId()const
 void RefreshUploadVideoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

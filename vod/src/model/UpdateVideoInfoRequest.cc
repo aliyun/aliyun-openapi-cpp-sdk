@@ -25,17 +25,6 @@ UpdateVideoInfoRequest::UpdateVideoInfoRequest() :
 UpdateVideoInfoRequest::~UpdateVideoInfoRequest()
 {}
 
-std::string UpdateVideoInfoRequest::getCoverURL()const
-{
-	return coverURL_;
-}
-
-void UpdateVideoInfoRequest::setCoverURL(const std::string& coverURL)
-{
-	coverURL_ = coverURL;
-	setParameter("CoverURL", coverURL);
-}
-
 long UpdateVideoInfoRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -44,7 +33,7 @@ long UpdateVideoInfoRequest::getResourceOwnerId()const
 void UpdateVideoInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateVideoInfoRequest::getResourceOwnerAccount()const
@@ -55,18 +44,7 @@ std::string UpdateVideoInfoRequest::getResourceOwnerAccount()const
 void UpdateVideoInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long UpdateVideoInfoRequest::getCateId()const
-{
-	return cateId_;
-}
-
-void UpdateVideoInfoRequest::setCateId(long cateId)
-{
-	cateId_ = cateId;
-	setParameter("CateId", std::to_string(cateId));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateVideoInfoRequest::getDescription()const
@@ -77,7 +55,7 @@ std::string UpdateVideoInfoRequest::getDescription()const
 void UpdateVideoInfoRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string UpdateVideoInfoRequest::getVideoId()const
@@ -88,7 +66,7 @@ std::string UpdateVideoInfoRequest::getVideoId()const
 void UpdateVideoInfoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setParameter("VideoId", videoId);
+	setCoreParameter("VideoId", videoId);
 }
 
 long UpdateVideoInfoRequest::getOwnerId()const
@@ -99,7 +77,7 @@ long UpdateVideoInfoRequest::getOwnerId()const
 void UpdateVideoInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateVideoInfoRequest::getTitle()const
@@ -110,7 +88,7 @@ std::string UpdateVideoInfoRequest::getTitle()const
 void UpdateVideoInfoRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setParameter("Title", title);
+	setCoreParameter("Title", title);
 }
 
 std::string UpdateVideoInfoRequest::getTags()const
@@ -121,6 +99,61 @@ std::string UpdateVideoInfoRequest::getTags()const
 void UpdateVideoInfoRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
+}
+
+std::string UpdateVideoInfoRequest::getCoverURL()const
+{
+	return coverURL_;
+}
+
+void UpdateVideoInfoRequest::setCoverURL(const std::string& coverURL)
+{
+	coverURL_ = coverURL;
+	setCoreParameter("CoverURL", coverURL);
+}
+
+std::string UpdateVideoInfoRequest::getDownloadSwitch()const
+{
+	return downloadSwitch_;
+}
+
+void UpdateVideoInfoRequest::setDownloadSwitch(const std::string& downloadSwitch)
+{
+	downloadSwitch_ = downloadSwitch;
+	setCoreParameter("DownloadSwitch", downloadSwitch);
+}
+
+long UpdateVideoInfoRequest::getCateId()const
+{
+	return cateId_;
+}
+
+void UpdateVideoInfoRequest::setCateId(long cateId)
+{
+	cateId_ = cateId;
+	setCoreParameter("CateId", std::to_string(cateId));
+}
+
+std::string UpdateVideoInfoRequest::getCustomMediaInfo()const
+{
+	return customMediaInfo_;
+}
+
+void UpdateVideoInfoRequest::setCustomMediaInfo(const std::string& customMediaInfo)
+{
+	customMediaInfo_ = customMediaInfo;
+	setCoreParameter("CustomMediaInfo", customMediaInfo);
+}
+
+std::string UpdateVideoInfoRequest::getStatus()const
+{
+	return status_;
+}
+
+void UpdateVideoInfoRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setCoreParameter("Status", status);
 }
 

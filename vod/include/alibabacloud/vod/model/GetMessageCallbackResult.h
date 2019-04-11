@@ -34,12 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct MessageCallback
 				{
-					std::string callbackSwitch;
 					std::string callbackURL;
+					std::string mnsEndpoint;
 					std::string authSwitch;
 					std::string callbackType;
+					std::string appId;
 					std::string eventTypeList;
 					std::string authKey;
+					std::string mnsQueueName;
 				};
 
 

@@ -65,6 +65,12 @@ namespace AlibabaCloud
 				void setTemplateGroupId(const std::string& templateGroupId);
 				long getCateId()const;
 				void setCateId(long cateId);
+				std::string getAppId()const;
+				void setAppId(const std::string& appId);
+				std::string getWorkflowId()const;
+				void setWorkflowId(const std::string& workflowId);
+				std::string getCustomMediaInfo()const;
+				void setCustomMediaInfo(const std::string& customMediaInfo);
 
             private:
 				long resourceOwnerId_;
@@ -82,6 +88,9 @@ namespace AlibabaCloud
 				std::string fileName_;
 				std::string templateGroupId_;
 				long cateId_;
+				std::string appId_;
+				std::string workflowId_;
+				std::string customMediaInfo_;
 
 			};
 		}

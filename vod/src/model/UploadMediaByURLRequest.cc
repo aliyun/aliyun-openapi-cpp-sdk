@@ -25,6 +25,17 @@ UploadMediaByURLRequest::UploadMediaByURLRequest() :
 UploadMediaByURLRequest::~UploadMediaByURLRequest()
 {}
 
+std::string UploadMediaByURLRequest::getUserData()const
+{
+	return userData_;
+}
+
+void UploadMediaByURLRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
+}
+
 long UploadMediaByURLRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -33,7 +44,7 @@ long UploadMediaByURLRequest::getResourceOwnerId()const
 void UploadMediaByURLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UploadMediaByURLRequest::getTemplateGroupId()const
@@ -44,7 +55,7 @@ std::string UploadMediaByURLRequest::getTemplateGroupId()const
 void UploadMediaByURLRequest::setTemplateGroupId(const std::string& templateGroupId)
 {
 	templateGroupId_ = templateGroupId;
-	setParameter("TemplateGroupId", templateGroupId);
+	setCoreParameter("TemplateGroupId", templateGroupId);
 }
 
 std::string UploadMediaByURLRequest::getUploadMetadatas()const
@@ -55,7 +66,7 @@ std::string UploadMediaByURLRequest::getUploadMetadatas()const
 void UploadMediaByURLRequest::setUploadMetadatas(const std::string& uploadMetadatas)
 {
 	uploadMetadatas_ = uploadMetadatas;
-	setParameter("UploadMetadatas", uploadMetadatas);
+	setCoreParameter("UploadMetadatas", uploadMetadatas);
 }
 
 std::string UploadMediaByURLRequest::getResourceOwnerAccount()const
@@ -66,7 +77,7 @@ std::string UploadMediaByURLRequest::getResourceOwnerAccount()const
 void UploadMediaByURLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UploadMediaByURLRequest::getUploadURLs()const
@@ -77,7 +88,7 @@ std::string UploadMediaByURLRequest::getUploadURLs()const
 void UploadMediaByURLRequest::setUploadURLs(const std::string& uploadURLs)
 {
 	uploadURLs_ = uploadURLs;
-	setParameter("UploadURLs", uploadURLs);
+	setCoreParameter("UploadURLs", uploadURLs);
 }
 
 std::string UploadMediaByURLRequest::getMessageCallback()const
@@ -88,7 +99,7 @@ std::string UploadMediaByURLRequest::getMessageCallback()const
 void UploadMediaByURLRequest::setMessageCallback(const std::string& messageCallback)
 {
 	messageCallback_ = messageCallback;
-	setParameter("MessageCallback", messageCallback);
+	setCoreParameter("MessageCallback", messageCallback);
 }
 
 long UploadMediaByURLRequest::getOwnerId()const
@@ -99,7 +110,7 @@ long UploadMediaByURLRequest::getOwnerId()const
 void UploadMediaByURLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UploadMediaByURLRequest::getPriority()const
@@ -110,7 +121,7 @@ std::string UploadMediaByURLRequest::getPriority()const
 void UploadMediaByURLRequest::setPriority(const std::string& priority)
 {
 	priority_ = priority;
-	setParameter("Priority", priority);
+	setCoreParameter("Priority", priority);
 }
 
 std::string UploadMediaByURLRequest::getStorageLocation()const
@@ -121,6 +132,6 @@ std::string UploadMediaByURLRequest::getStorageLocation()const
 void UploadMediaByURLRequest::setStorageLocation(const std::string& storageLocation)
 {
 	storageLocation_ = storageLocation;
-	setParameter("StorageLocation", storageLocation);
+	setCoreParameter("StorageLocation", storageLocation);
 }
 

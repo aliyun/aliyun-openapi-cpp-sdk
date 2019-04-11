@@ -33,7 +33,7 @@ long GetAuditHistoryRequest::getPageNo()const
 void GetAuditHistoryRequest::setPageNo(long pageNo)
 {
 	pageNo_ = pageNo;
-	setParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 long GetAuditHistoryRequest::getPageSize()const
@@ -44,7 +44,7 @@ long GetAuditHistoryRequest::getPageSize()const
 void GetAuditHistoryRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetAuditHistoryRequest::getVideoId()const
@@ -55,7 +55,7 @@ std::string GetAuditHistoryRequest::getVideoId()const
 void GetAuditHistoryRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setParameter("VideoId", videoId);
+	setCoreParameter("VideoId", videoId);
 }
 
 std::string GetAuditHistoryRequest::getSortBy()const
@@ -66,6 +66,6 @@ std::string GetAuditHistoryRequest::getSortBy()const
 void GetAuditHistoryRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setParameter("SortBy", sortBy);
+	setCoreParameter("SortBy", sortBy);
 }
 

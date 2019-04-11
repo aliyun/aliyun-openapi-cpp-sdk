@@ -33,7 +33,7 @@ std::string UpdateWatermarkRequest::getWatermarkId()const
 void UpdateWatermarkRequest::setWatermarkId(const std::string& watermarkId)
 {
 	watermarkId_ = watermarkId;
-	setParameter("WatermarkId", watermarkId);
+	setCoreParameter("WatermarkId", watermarkId);
 }
 
 long UpdateWatermarkRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UpdateWatermarkRequest::getResourceOwnerId()const
 void UpdateWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateWatermarkRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateWatermarkRequest::getResourceOwnerAccount()const
 void UpdateWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateWatermarkRequest::getName()const
@@ -66,7 +66,7 @@ std::string UpdateWatermarkRequest::getName()const
 void UpdateWatermarkRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 long UpdateWatermarkRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long UpdateWatermarkRequest::getOwnerId()const
 void UpdateWatermarkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateWatermarkRequest::getWatermarkConfig()const
@@ -88,7 +88,7 @@ std::string UpdateWatermarkRequest::getWatermarkConfig()const
 void UpdateWatermarkRequest::setWatermarkConfig(const std::string& watermarkConfig)
 {
 	watermarkConfig_ = watermarkConfig;
-	setParameter("WatermarkConfig", watermarkConfig);
+	setCoreParameter("WatermarkConfig", watermarkConfig);
 }
 
 std::string UpdateWatermarkRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string UpdateWatermarkRequest::getAccessKeyId()const
 void UpdateWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

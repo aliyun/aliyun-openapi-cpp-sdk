@@ -58,6 +58,12 @@ void SearchEditingProjectResult::parse(const std::string &payload)
 			projectListObject.title = value["Title"].asString();
 		if(!value["CoverURL"].isNull())
 			projectListObject.coverURL = value["CoverURL"].asString();
+		if(!value["StorageLocation"].isNull())
+			projectListObject.storageLocation = value["StorageLocation"].asString();
+		if(!value["RegionId"].isNull())
+			projectListObject.regionId = value["RegionId"].asString();
+		if(!value["Duration"].isNull())
+			projectListObject.duration = std::stof(value["Duration"].asString());
 		projectList_.push_back(projectListObject);
 	}
 	if(!value["Total"].isNull())

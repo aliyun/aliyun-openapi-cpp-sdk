@@ -33,7 +33,7 @@ std::string AddCategoryRequest::getResourceOwnerId()const
 void AddCategoryRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddCategoryRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string AddCategoryRequest::getResourceOwnerAccount()const
 void AddCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddCategoryRequest::getOwnerId()const
@@ -55,7 +55,18 @@ std::string AddCategoryRequest::getOwnerId()const
 void AddCategoryRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", ownerId);
+}
+
+std::string AddCategoryRequest::getType()const
+{
+	return type_;
+}
+
+void AddCategoryRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
 }
 
 long AddCategoryRequest::getParentId()const
@@ -66,7 +77,7 @@ long AddCategoryRequest::getParentId()const
 void AddCategoryRequest::setParentId(long parentId)
 {
 	parentId_ = parentId;
-	setParameter("ParentId", std::to_string(parentId));
+	setCoreParameter("ParentId", std::to_string(parentId));
 }
 
 std::string AddCategoryRequest::getCateName()const
@@ -77,6 +88,6 @@ std::string AddCategoryRequest::getCateName()const
 void AddCategoryRequest::setCateName(const std::string& cateName)
 {
 	cateName_ = cateName;
-	setParameter("CateName", cateName);
+	setCoreParameter("CateName", cateName);
 }
 

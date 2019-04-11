@@ -79,6 +79,12 @@ void GetVideoInfoResult::parse(const std::string &payload)
 		video_.storageLocation = videoNode["StorageLocation"].asString();
 	if(!videoNode["RegionId"].isNull())
 		video_.regionId = videoNode["RegionId"].asString();
+	if(!videoNode["CustomMediaInfo"].isNull())
+		video_.customMediaInfo = videoNode["CustomMediaInfo"].asString();
+	if(!videoNode["AuditStatus"].isNull())
+		video_.auditStatus = videoNode["AuditStatus"].asString();
+	if(!videoNode["AppId"].isNull())
+		video_.appId = videoNode["AppId"].asString();
 	auto allThumbnailList = value["ThumbnailList"]["Thumbnail"];
 	for (auto value : allThumbnailList)
 	{

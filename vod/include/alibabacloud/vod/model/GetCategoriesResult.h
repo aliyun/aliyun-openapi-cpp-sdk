@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Category1
 				{
 					long parentId;
+					std::string type;
 					long level;
 					long cateId;
 					std::string cateName;
@@ -42,9 +43,11 @@ namespace AlibabaCloud
 				struct Category
 				{
 					long parentId;
+					std::string type;
 					long level;
 					long cateId;
 					std::string cateName;
+					long subTotal;
 				};
 
 

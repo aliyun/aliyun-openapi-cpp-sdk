@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getVideoId()const;
 				void setVideoId(const std::string& videoId);
+				std::string getAdditionType()const;
+				void setAdditionType(const std::string& additionType);
 				std::string getResultTypes()const;
 				void setResultTypes(const std::string& resultTypes);
 				long getOwnerId()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string videoId_;
+				std::string additionType_;
 				std::string resultTypes_;
 				long ownerId_;
 

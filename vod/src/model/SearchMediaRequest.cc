@@ -33,7 +33,7 @@ long SearchMediaRequest::getResourceOwnerId()const
 void SearchMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SearchMediaRequest::getResourceOwnerAccount()const
@@ -44,29 +44,7 @@ std::string SearchMediaRequest::getResourceOwnerAccount()const
 void SearchMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-int SearchMediaRequest::getPageNo()const
-{
-	return pageNo_;
-}
-
-void SearchMediaRequest::setPageNo(int pageNo)
-{
-	pageNo_ = pageNo;
-	setParameter("PageNo", std::to_string(pageNo));
-}
-
-std::string SearchMediaRequest::getSearchType()const
-{
-	return searchType_;
-}
-
-void SearchMediaRequest::setSearchType(const std::string& searchType)
-{
-	searchType_ = searchType;
-	setParameter("SearchType", searchType);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SearchMediaRequest::getMatch()const
@@ -77,29 +55,18 @@ std::string SearchMediaRequest::getMatch()const
 void SearchMediaRequest::setMatch(const std::string& match)
 {
 	match_ = match;
-	setParameter("Match", match);
+	setCoreParameter("Match", match);
 }
 
-int SearchMediaRequest::getPageSize()const
+std::string SearchMediaRequest::getSessionId()const
 {
-	return pageSize_;
+	return sessionId_;
 }
 
-void SearchMediaRequest::setPageSize(int pageSize)
+void SearchMediaRequest::setSessionId(const std::string& sessionId)
 {
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string SearchMediaRequest::getSortBy()const
-{
-	return sortBy_;
-}
-
-void SearchMediaRequest::setSortBy(const std::string& sortBy)
-{
-	sortBy_ = sortBy;
-	setParameter("SortBy", sortBy);
+	sessionId_ = sessionId;
+	setCoreParameter("SessionId", sessionId);
 }
 
 long SearchMediaRequest::getOwnerId()const
@@ -110,18 +77,7 @@ long SearchMediaRequest::getOwnerId()const
 void SearchMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string SearchMediaRequest::getFields()const
-{
-	return fields_;
-}
-
-void SearchMediaRequest::setFields(const std::string& fields)
-{
-	fields_ = fields;
-	setParameter("Fields", fields);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SearchMediaRequest::getScrollToken()const
@@ -132,6 +88,72 @@ std::string SearchMediaRequest::getScrollToken()const
 void SearchMediaRequest::setScrollToken(const std::string& scrollToken)
 {
 	scrollToken_ = scrollToken;
-	setParameter("ScrollToken", scrollToken);
+	setCoreParameter("ScrollToken", scrollToken);
+}
+
+int SearchMediaRequest::getPageNo()const
+{
+	return pageNo_;
+}
+
+void SearchMediaRequest::setPageNo(int pageNo)
+{
+	pageNo_ = pageNo;
+	setCoreParameter("PageNo", std::to_string(pageNo));
+}
+
+std::string SearchMediaRequest::getSearchType()const
+{
+	return searchType_;
+}
+
+void SearchMediaRequest::setSearchType(const std::string& searchType)
+{
+	searchType_ = searchType;
+	setCoreParameter("SearchType", searchType);
+}
+
+int SearchMediaRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void SearchMediaRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string SearchMediaRequest::getSortBy()const
+{
+	return sortBy_;
+}
+
+void SearchMediaRequest::setSortBy(const std::string& sortBy)
+{
+	sortBy_ = sortBy;
+	setCoreParameter("SortBy", sortBy);
+}
+
+std::string SearchMediaRequest::getResultTypes()const
+{
+	return resultTypes_;
+}
+
+void SearchMediaRequest::setResultTypes(const std::string& resultTypes)
+{
+	resultTypes_ = resultTypes;
+	setCoreParameter("ResultTypes", resultTypes);
+}
+
+std::string SearchMediaRequest::getFields()const
+{
+	return fields_;
+}
+
+void SearchMediaRequest::setFields(const std::string& fields)
+{
+	fields_ = fields;
+	setCoreParameter("Fields", fields);
 }
 

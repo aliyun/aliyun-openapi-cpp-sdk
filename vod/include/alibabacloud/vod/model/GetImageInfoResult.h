@@ -42,17 +42,19 @@ namespace AlibabaCloud
 						int width;
 						std::string fileSize;
 					};
+					std::string status;
 					std::string description;
 					Mezzanine mezzanine;
-					std::string imageId;
-					std::string creationTime;
 					std::string title;
 					long cateId;
 					std::string cateName;
-					std::string storageLocation;
-					std::string tags;
 					std::string uRL;
 					std::string imageType;
+					std::string appId;
+					std::string imageId;
+					std::string creationTime;
+					std::string storageLocation;
+					std::string tags;
 				};
 
 

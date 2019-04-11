@@ -33,7 +33,7 @@ long SubmitSnapshotJobRequest::getResourceOwnerId()const
 void SubmitSnapshotJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
 void SubmitSnapshotJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long SubmitSnapshotJobRequest::getCount()const
@@ -55,7 +55,7 @@ long SubmitSnapshotJobRequest::getCount()const
 void SubmitSnapshotJobRequest::setCount(long count)
 {
 	count_ = count;
-	setParameter("Count", std::to_string(count));
+	setCoreParameter("Count", std::to_string(count));
 }
 
 std::string SubmitSnapshotJobRequest::getVideoId()const
@@ -66,7 +66,7 @@ std::string SubmitSnapshotJobRequest::getVideoId()const
 void SubmitSnapshotJobRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setParameter("VideoId", videoId);
+	setCoreParameter("VideoId", videoId);
 }
 
 long SubmitSnapshotJobRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long SubmitSnapshotJobRequest::getOwnerId()const
 void SubmitSnapshotJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitSnapshotJobRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string SubmitSnapshotJobRequest::getAccessKeyId()const
 void SubmitSnapshotJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long SubmitSnapshotJobRequest::getSpecifiedOffsetTime()const
@@ -99,7 +99,7 @@ long SubmitSnapshotJobRequest::getSpecifiedOffsetTime()const
 void SubmitSnapshotJobRequest::setSpecifiedOffsetTime(long specifiedOffsetTime)
 {
 	specifiedOffsetTime_ = specifiedOffsetTime;
-	setParameter("SpecifiedOffsetTime", std::to_string(specifiedOffsetTime));
+	setCoreParameter("SpecifiedOffsetTime", std::to_string(specifiedOffsetTime));
 }
 
 std::string SubmitSnapshotJobRequest::getWidth()const
@@ -110,7 +110,7 @@ std::string SubmitSnapshotJobRequest::getWidth()const
 void SubmitSnapshotJobRequest::setWidth(const std::string& width)
 {
 	width_ = width;
-	setParameter("Width", width);
+	setCoreParameter("Width", width);
 }
 
 long SubmitSnapshotJobRequest::getInterval()const
@@ -121,7 +121,7 @@ long SubmitSnapshotJobRequest::getInterval()const
 void SubmitSnapshotJobRequest::setInterval(long interval)
 {
 	interval_ = interval;
-	setParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", std::to_string(interval));
 }
 
 std::string SubmitSnapshotJobRequest::getSpriteSnapshotConfig()const
@@ -132,7 +132,7 @@ std::string SubmitSnapshotJobRequest::getSpriteSnapshotConfig()const
 void SubmitSnapshotJobRequest::setSpriteSnapshotConfig(const std::string& spriteSnapshotConfig)
 {
 	spriteSnapshotConfig_ = spriteSnapshotConfig;
-	setParameter("SpriteSnapshotConfig", spriteSnapshotConfig);
+	setCoreParameter("SpriteSnapshotConfig", spriteSnapshotConfig);
 }
 
 std::string SubmitSnapshotJobRequest::getSnapshotTemplateId()const
@@ -143,7 +143,7 @@ std::string SubmitSnapshotJobRequest::getSnapshotTemplateId()const
 void SubmitSnapshotJobRequest::setSnapshotTemplateId(const std::string& snapshotTemplateId)
 {
 	snapshotTemplateId_ = snapshotTemplateId;
-	setParameter("SnapshotTemplateId", snapshotTemplateId);
+	setCoreParameter("SnapshotTemplateId", snapshotTemplateId);
 }
 
 std::string SubmitSnapshotJobRequest::getHeight()const
@@ -154,6 +154,6 @@ std::string SubmitSnapshotJobRequest::getHeight()const
 void SubmitSnapshotJobRequest::setHeight(const std::string& height)
 {
 	height_ = height;
-	setParameter("Height", height);
+	setCoreParameter("Height", height);
 }
 

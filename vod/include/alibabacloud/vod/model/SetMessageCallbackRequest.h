@@ -35,41 +35,53 @@ namespace AlibabaCloud
 				SetMessageCallbackRequest();
 				~SetMessageCallbackRequest();
 
-				std::string getCallbackType()const;
-				void setCallbackType(const std::string& callbackType);
 				std::string getAuthKey()const;
 				void setAuthKey(const std::string& authKey);
 				std::string getResourceOwnerId()const;
 				void setResourceOwnerId(const std::string& resourceOwnerId);
-				std::string getCallbackSwitch()const;
-				void setCallbackSwitch(const std::string& callbackSwitch);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getEventTypeList()const;
 				void setEventTypeList(const std::string& eventTypeList);
-				std::string getAuthSwitch()const;
-				void setAuthSwitch(const std::string& authSwitch);
-				std::string getCallbackURL()const;
-				void setCallbackURL(const std::string& callbackURL);
+				std::string getMnsQueueName()const;
+				void setMnsQueueName(const std::string& mnsQueueName);
+				long getResourceRealOwnerId()const;
+				void setResourceRealOwnerId(long resourceRealOwnerId);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCallbackType()const;
+				void setCallbackType(const std::string& callbackType);
+				std::string getCallbackSwitch()const;
+				void setCallbackSwitch(const std::string& callbackSwitch);
+				std::string getMnsEndpoint()const;
+				void setMnsEndpoint(const std::string& mnsEndpoint);
+				std::string getAppId()const;
+				void setAppId(const std::string& appId);
+				std::string getAuthSwitch()const;
+				void setAuthSwitch(const std::string& authSwitch);
+				std::string getCallbackURL()const;
+				void setCallbackURL(const std::string& callbackURL);
 
             private:
-				std::string callbackType_;
 				std::string authKey_;
 				std::string resourceOwnerId_;
-				std::string callbackSwitch_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string eventTypeList_;
-				std::string authSwitch_;
-				std::string callbackURL_;
+				std::string mnsQueueName_;
+				long resourceRealOwnerId_;
 				std::string ownerId_;
 				std::string accessKeyId_;
+				std::string callbackType_;
+				std::string callbackSwitch_;
+				std::string mnsEndpoint_;
+				std::string appId_;
+				std::string authSwitch_;
+				std::string callbackURL_;
 
 			};
 		}

@@ -40,6 +40,22 @@ void DeleteVideoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	auto allNonExistVideoIds = value["NonExistVideoIds"]["VideoId"];
+	for (const auto &item : allNonExistVideoIds)
+		nonExistVideoIds_.push_back(item.asString());
+	auto allForbiddenVideoIds = value["ForbiddenVideoIds"]["VideoId"];
+	for (const auto &item : allForbiddenVideoIds)
+		forbiddenVideoIds_.push_back(item.asString());
 
+}
+
+std::vector<std::string> DeleteVideoResult::getForbiddenVideoIds()const
+{
+	return forbiddenVideoIds_;
+}
+
+std::vector<std::string> DeleteVideoResult::getNonExistVideoIds()const
+{
+	return nonExistVideoIds_;
 }
 

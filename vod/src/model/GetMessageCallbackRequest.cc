@@ -33,7 +33,7 @@ std::string GetMessageCallbackRequest::getResourceOwnerId()const
 void GetMessageCallbackRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetMessageCallbackRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GetMessageCallbackRequest::getResourceOwnerAccount()const
 void GetMessageCallbackRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetMessageCallbackRequest::getOwnerAccount()const
@@ -55,7 +55,29 @@ std::string GetMessageCallbackRequest::getOwnerAccount()const
 void GetMessageCallbackRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string GetMessageCallbackRequest::getAppId()const
+{
+	return appId_;
+}
+
+void GetMessageCallbackRequest::setAppId(const std::string& appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
+}
+
+long GetMessageCallbackRequest::getResourceRealOwnerId()const
+{
+	return resourceRealOwnerId_;
+}
+
+void GetMessageCallbackRequest::setResourceRealOwnerId(long resourceRealOwnerId)
+{
+	resourceRealOwnerId_ = resourceRealOwnerId;
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string GetMessageCallbackRequest::getOwnerId()const
@@ -66,7 +88,7 @@ std::string GetMessageCallbackRequest::getOwnerId()const
 void GetMessageCallbackRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetMessageCallbackRequest::getAccessKeyId()const
@@ -77,6 +99,6 @@ std::string GetMessageCallbackRequest::getAccessKeyId()const
 void GetMessageCallbackRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

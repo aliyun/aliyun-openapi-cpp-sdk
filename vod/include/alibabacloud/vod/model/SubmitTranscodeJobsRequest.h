@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setOverrideParams(const std::string& overrideParams);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getPriority()const;
+				void setPriority(const std::string& priority);
 				std::string getEncryptConfig()const;
 				void setEncryptConfig(const std::string& encryptConfig);
 				std::string getAccessKeyId()const;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string videoId_;
 				std::string overrideParams_;
 				long ownerId_;
+				std::string priority_;
 				std::string encryptConfig_;
 				std::string accessKeyId_;
 				std::string pipelineId_;

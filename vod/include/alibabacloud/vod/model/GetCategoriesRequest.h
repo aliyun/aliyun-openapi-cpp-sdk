@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setSortBy(const std::string& sortBy);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
+				std::string getType()const;
+				void setType(const std::string& type);
 
             private:
 				std::string resourceOwnerId_;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				long pageSize_;
 				std::string sortBy_;
 				std::string ownerId_;
+				std::string type_;
 
 			};
 		}

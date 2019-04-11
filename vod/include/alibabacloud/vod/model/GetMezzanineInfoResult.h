@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					{
 						std::string codecTag;
 						std::string codecTimeBase;
+						std::string rotate;
 						std::string sar;
 						std::string fps;
 						std::string startTime;

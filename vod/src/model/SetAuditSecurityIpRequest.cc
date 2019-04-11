@@ -33,7 +33,7 @@ std::string SetAuditSecurityIpRequest::getOperateMode()const
 void SetAuditSecurityIpRequest::setOperateMode(const std::string& operateMode)
 {
 	operateMode_ = operateMode;
-	setParameter("OperateMode", operateMode);
+	setCoreParameter("OperateMode", operateMode);
 }
 
 std::string SetAuditSecurityIpRequest::getSecurityGroupName()const
@@ -44,7 +44,7 @@ std::string SetAuditSecurityIpRequest::getSecurityGroupName()const
 void SetAuditSecurityIpRequest::setSecurityGroupName(const std::string& securityGroupName)
 {
 	securityGroupName_ = securityGroupName;
-	setParameter("SecurityGroupName", securityGroupName);
+	setCoreParameter("SecurityGroupName", securityGroupName);
 }
 
 std::string SetAuditSecurityIpRequest::getIps()const
@@ -55,6 +55,6 @@ std::string SetAuditSecurityIpRequest::getIps()const
 void SetAuditSecurityIpRequest::setIps(const std::string& ips)
 {
 	ips_ = ips;
-	setParameter("Ips", ips);
+	setCoreParameter("Ips", ips);
 }
 

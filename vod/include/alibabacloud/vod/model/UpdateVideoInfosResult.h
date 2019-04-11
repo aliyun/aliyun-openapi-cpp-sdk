@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				UpdateVideoInfosResult();
 				explicit UpdateVideoInfosResult(const std::string &payload);
 				~UpdateVideoInfosResult();
+				std::vector<std::string> getForbiddenVideoIds()const;
 				std::vector<std::string> getNonExistVideoIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> forbiddenVideoIds_;
 				std::vector<std::string> nonExistVideoIds_;
 
 			};

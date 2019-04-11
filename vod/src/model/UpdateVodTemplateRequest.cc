@@ -33,7 +33,7 @@ long UpdateVodTemplateRequest::getResourceOwnerId()const
 void UpdateVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateVodTemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string UpdateVodTemplateRequest::getResourceOwnerAccount()const
 void UpdateVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateVodTemplateRequest::getTemplateConfig()const
@@ -55,7 +55,7 @@ std::string UpdateVodTemplateRequest::getTemplateConfig()const
 void UpdateVodTemplateRequest::setTemplateConfig(const std::string& templateConfig)
 {
 	templateConfig_ = templateConfig;
-	setParameter("TemplateConfig", templateConfig);
+	setCoreParameter("TemplateConfig", templateConfig);
 }
 
 std::string UpdateVodTemplateRequest::getName()const
@@ -66,7 +66,7 @@ std::string UpdateVodTemplateRequest::getName()const
 void UpdateVodTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string UpdateVodTemplateRequest::getVodTemplateId()const
@@ -77,7 +77,7 @@ std::string UpdateVodTemplateRequest::getVodTemplateId()const
 void UpdateVodTemplateRequest::setVodTemplateId(const std::string& vodTemplateId)
 {
 	vodTemplateId_ = vodTemplateId;
-	setParameter("VodTemplateId", vodTemplateId);
+	setCoreParameter("VodTemplateId", vodTemplateId);
 }
 
 long UpdateVodTemplateRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long UpdateVodTemplateRequest::getOwnerId()const
 void UpdateVodTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -39,6 +39,10 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getCateIds()const;
+				void setCateIds(const std::string& cateIds);
+				std::string getIcon()const;
+				void setIcon(const std::string& icon);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getFileSize()const;
@@ -55,16 +59,22 @@ namespace AlibabaCloud
 				void setTags(const std::string& tags);
 				std::string getStorageLocation()const;
 				void setStorageLocation(const std::string& storageLocation);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
 				std::string getMediaExt()const;
 				void setMediaExt(const std::string& mediaExt);
 				std::string getFileName()const;
 				void setFileName(const std::string& fileName);
-				int getCateId()const;
-				void setCateId(int cateId);
+				long getCateId()const;
+				void setCateId(long cateId);
+				std::string getAppId()const;
+				void setAppId(const std::string& appId);
 
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
+				std::string cateIds_;
+				std::string icon_;
 				std::string description_;
 				std::string fileSize_;
 				long ownerId_;
@@ -73,9 +83,11 @@ namespace AlibabaCloud
 				std::string businessType_;
 				std::string tags_;
 				std::string storageLocation_;
+				std::string userData_;
 				std::string mediaExt_;
 				std::string fileName_;
-				int cateId_;
+				long cateId_;
+				std::string appId_;
 
 			};
 		}

@@ -52,6 +52,10 @@ void GetCategoriesResult::parse(const std::string &payload)
 			subCategoriesObject.level = std::stol(value["Level"].asString());
 		if(!value["ParentId"].isNull())
 			subCategoriesObject.parentId = std::stol(value["ParentId"].asString());
+		if(!value["SubTotal"].isNull())
+			subCategoriesObject.subTotal = std::stol(value["SubTotal"].asString());
+		if(!value["Type"].isNull())
+			subCategoriesObject.type = value["Type"].asString();
 		subCategories_.push_back(subCategoriesObject);
 	}
 	auto category1Node = value["Category"];
@@ -63,6 +67,8 @@ void GetCategoriesResult::parse(const std::string &payload)
 		category1_.level = std::stol(category1Node["Level"].asString());
 	if(!category1Node["ParentId"].isNull())
 		category1_.parentId = std::stol(category1Node["ParentId"].asString());
+	if(!category1Node["Type"].isNull())
+		category1_.type = category1Node["Type"].asString();
 	if(!value["SubTotal"].isNull())
 		subTotal_ = std::stol(value["SubTotal"].asString());
 

@@ -33,6 +33,6 @@ std::string CreateAuditRequest::getAuditContent()const
 void CreateAuditRequest::setAuditContent(const std::string& auditContent)
 {
 	auditContent_ = auditContent;
-	setParameter("AuditContent", auditContent);
+	setCoreParameter("AuditContent", auditContent);
 }
 

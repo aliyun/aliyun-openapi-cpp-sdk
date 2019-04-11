@@ -61,6 +61,10 @@ void GetImageInfoResult::parse(const std::string &payload)
 		imageInfo_.description = imageInfoNode["Description"].asString();
 	if(!imageInfoNode["StorageLocation"].isNull())
 		imageInfo_.storageLocation = imageInfoNode["StorageLocation"].asString();
+	if(!imageInfoNode["Status"].isNull())
+		imageInfo_.status = imageInfoNode["Status"].asString();
+	if(!imageInfoNode["AppId"].isNull())
+		imageInfo_.appId = imageInfoNode["AppId"].asString();
 	auto mezzanineNode = imageInfoNode["Mezzanine"];
 	if(!mezzanineNode["OriginalFileName"].isNull())
 		imageInfo_.mezzanine.originalFileName = mezzanineNode["OriginalFileName"].asString();

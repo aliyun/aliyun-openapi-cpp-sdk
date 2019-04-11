@@ -39,14 +39,12 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageType()const;
 				void setImageType(const std::string& imageType);
-				std::string getOriginalFileName()const;
-				void setOriginalFileName(const std::string& originalFileName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getImageExt()const;
 				void setImageExt(const std::string& imageExt);
-				long getCateId()const;
-				void setCateId(long cateId);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getTitle()const;
@@ -57,19 +55,30 @@ namespace AlibabaCloud
 				void setTags(const std::string& tags);
 				std::string getStorageLocation()const;
 				void setStorageLocation(const std::string& storageLocation);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
+				std::string getOriginalFileName()const;
+				void setOriginalFileName(const std::string& originalFileName);
+				long getCateId()const;
+				void setCateId(long cateId);
+				std::string getAppId()const;
+				void setAppId(const std::string& appId);
 
             private:
 				long resourceOwnerId_;
 				std::string imageType_;
-				std::string originalFileName_;
 				std::string resourceOwnerAccount_;
 				std::string imageExt_;
-				long cateId_;
+				std::string description_;
 				long ownerId_;
 				std::string title_;
 				std::string accessKeyId_;
 				std::string tags_;
 				std::string storageLocation_;
+				std::string userData_;
+				std::string originalFileName_;
+				long cateId_;
+				std::string appId_;
 
 			};
 		}

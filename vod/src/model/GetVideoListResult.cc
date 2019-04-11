@@ -74,6 +74,8 @@ void GetVideoListResult::parse(const std::string &payload)
 			videoListObject.cateName = value["CateName"].asString();
 		if(!value["StorageLocation"].isNull())
 			videoListObject.storageLocation = value["StorageLocation"].asString();
+		if(!value["AppId"].isNull())
+			videoListObject.appId = value["AppId"].asString();
 		auto allSnapshots = value["Snapshots"]["Snapshot"];
 		for (auto value : allSnapshots)
 			videoListObject.snapshots.push_back(value.asString());

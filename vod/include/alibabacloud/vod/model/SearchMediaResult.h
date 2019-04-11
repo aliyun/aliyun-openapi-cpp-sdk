@@ -36,49 +36,101 @@ namespace AlibabaCloud
 				{
 					struct Video
 					{
-						std::string status;
-						std::string videoId;
+						struct PlayInfo
+						{
+							std::string streamType;
+							std::string rand;
+							std::string size;
+							std::string definition;
+							std::string fps;
+							std::string duration;
+							std::string bitrate;
+							long encrypt;
+							std::string complexity;
+							std::string format;
+							std::string playURL;
+							std::string plaintext;
+							std::string height;
+							std::string width;
+							std::string jobId;
+						};
 						std::string description;
 						std::vector<std::string> spriteSnapshots;
 						long size;
-						std::string downloadSwitch;
-						std::string title;
-						float duration;
+						std::string auditAIStatus;
 						std::string modificationTime;
 						long cateId;
 						std::string cateName;
 						std::string preprocessStatus;
-						std::string mediaSource;
-						std::string transcodeMode;
-						std::string creationTime;
+						std::string auditAIResult;
 						std::string mediaType;
-						std::string coverURL;
-						std::string regionId;
+						std::string auditManualStatus;
+						std::string auditTemplateId;
 						std::string storageLocation;
 						std::vector<std::string> snapshots;
 						std::string tags;
-					};
-					struct Audio
-					{
 						std::string status;
-						std::string description;
-						long size;
+						std::string videoId;
 						std::string downloadSwitch;
 						std::string title;
 						float duration;
-						std::string modificationTime;
-						long cateId;
-						std::string cateName;
-						std::vector<std::string> snapshots1;
-						std::string preprocessStatus;
+						std::string auditStatus;
 						std::string mediaSource;
+						std::string customMediaInfo;
+						std::string appId;
 						std::string transcodeMode;
 						std::string creationTime;
 						std::string coverURL;
-						std::vector<std::string> spriteSnapshots2;
 						std::string regionId;
+						std::vector<PlayInfo> playInfoList;
+					};
+					struct Audio
+					{
+						struct PlayInfo4
+						{
+							std::string streamType;
+							std::string rand;
+							std::string size;
+							std::string definition;
+							std::string fps;
+							std::string duration;
+							std::string bitrate;
+							long encrypt;
+							std::string complexity;
+							std::string format;
+							std::string playURL;
+							std::string plaintext;
+							std::string height;
+							std::string width;
+							std::string jobId;
+						};
+						std::string description;
+						long size;
+						std::string auditAIStatus;
+						std::string modificationTime;
+						long cateId;
+						std::string cateName;
+						std::string preprocessStatus;
+						std::string auditAIResult;
+						std::string auditManualStatus;
+						std::string auditTemplateId;
+						std::vector<std::string> spriteSnapshots2;
 						std::string storageLocation;
 						std::string tags;
+						std::vector<PlayInfo4> playInfoList3;
+						std::string status;
+						std::string downloadSwitch;
+						std::string title;
+						float duration;
+						std::vector<std::string> snapshots1;
+						std::string auditStatus;
+						std::string mediaSource;
+						std::string customMediaInfo;
+						std::string appId;
+						std::string transcodeMode;
+						std::string creationTime;
+						std::string coverURL;
+						std::string regionId;
 						std::string audioId;
 					};
 					struct Image
@@ -92,12 +144,38 @@ namespace AlibabaCloud
 						std::string cateName;
 						std::string uRL;
 						std::string type;
+						std::string appId;
 						std::string imageId;
 						std::string creationTime;
 						std::string regionId;
 						std::string storageLocation;
 						std::string tags;
 					};
+					struct AttachedMedia
+					{
+						struct Category
+						{
+							long parentId;
+							long level;
+							long cateId;
+							std::string cateName;
+						};
+						std::string ext;
+						std::string status;
+						std::string description;
+						std::vector<Category> categories;
+						std::string businessType;
+						std::string title;
+						std::string modificationTime;
+						std::string uRL;
+						std::string mediaId;
+						std::string appId;
+						std::string creationTime;
+						std::string regionId;
+						std::string storageLocation;
+						std::string tags;
+					};
+					AttachedMedia attachedMedia;
 					std::string mediaId;
 					Video video;
 					std::string creationTime;

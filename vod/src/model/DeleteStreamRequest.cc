@@ -33,7 +33,7 @@ long DeleteStreamRequest::getResourceOwnerId()const
 void DeleteStreamRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteStreamRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteStreamRequest::getResourceOwnerAccount()const
 void DeleteStreamRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteStreamRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string DeleteStreamRequest::getJobIds()const
 void DeleteStreamRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", jobIds);
 }
 
 std::string DeleteStreamRequest::getVideoId()const
@@ -66,7 +66,7 @@ std::string DeleteStreamRequest::getVideoId()const
 void DeleteStreamRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setParameter("VideoId", videoId);
+	setCoreParameter("VideoId", videoId);
 }
 
 long DeleteStreamRequest::getOwnerId()const
@@ -77,6 +77,6 @@ long DeleteStreamRequest::getOwnerId()const
 void DeleteStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

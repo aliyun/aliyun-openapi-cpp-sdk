@@ -49,6 +49,8 @@ void AddCategoryResult::parse(const std::string &payload)
 		category_.parentId = std::stol(categoryNode["ParentId"].asString());
 	if(!categoryNode["Level"].isNull())
 		category_.level = std::stol(categoryNode["Level"].asString());
+	if(!categoryNode["Type"].isNull())
+		category_.type = categoryNode["Type"].asString();
 
 }
 

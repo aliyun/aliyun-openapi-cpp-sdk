@@ -33,7 +33,7 @@ long AddVodTemplateRequest::getResourceOwnerId()const
 void AddVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddVodTemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string AddVodTemplateRequest::getResourceOwnerAccount()const
 void AddVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddVodTemplateRequest::getTemplateConfig()const
@@ -55,7 +55,7 @@ std::string AddVodTemplateRequest::getTemplateConfig()const
 void AddVodTemplateRequest::setTemplateConfig(const std::string& templateConfig)
 {
 	templateConfig_ = templateConfig;
-	setParameter("TemplateConfig", templateConfig);
+	setCoreParameter("TemplateConfig", templateConfig);
 }
 
 std::string AddVodTemplateRequest::getTemplateType()const
@@ -66,7 +66,7 @@ std::string AddVodTemplateRequest::getTemplateType()const
 void AddVodTemplateRequest::setTemplateType(const std::string& templateType)
 {
 	templateType_ = templateType;
-	setParameter("TemplateType", templateType);
+	setCoreParameter("TemplateType", templateType);
 }
 
 std::string AddVodTemplateRequest::getName()const
@@ -77,7 +77,7 @@ std::string AddVodTemplateRequest::getName()const
 void AddVodTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 long AddVodTemplateRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long AddVodTemplateRequest::getOwnerId()const
 void AddVodTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddVodTemplateRequest::getSubTemplateType()const
@@ -99,6 +99,6 @@ std::string AddVodTemplateRequest::getSubTemplateType()const
 void AddVodTemplateRequest::setSubTemplateType(const std::string& subTemplateType)
 {
 	subTemplateType_ = subTemplateType;
-	setParameter("SubTemplateType", subTemplateType);
+	setCoreParameter("SubTemplateType", subTemplateType);
 }
 
