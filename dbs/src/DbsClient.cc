@@ -231,6 +231,42 @@ DbsClient::DescribeBackupGatewayListOutcomeCallable DbsClient::describeBackupGat
 	return task->get_future();
 }
 
+DbsClient::CreateRestoreTaskOutcome DbsClient::createRestoreTask(const CreateRestoreTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRestoreTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRestoreTaskOutcome(CreateRestoreTaskResult(outcome.result()));
+	else
+		return CreateRestoreTaskOutcome(outcome.error());
+}
+
+void DbsClient::createRestoreTaskAsync(const CreateRestoreTaskRequest& request, const CreateRestoreTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRestoreTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::CreateRestoreTaskOutcomeCallable DbsClient::createRestoreTaskCallable(const CreateRestoreTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRestoreTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createRestoreTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DbsClient::DescribeIncrementBackupListOutcome DbsClient::describeIncrementBackupList(const DescribeIncrementBackupListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ DbsClient::DescribeFullBackupListOutcomeCallable DbsClient::describeFullBackupLi
 			[this, request]()
 			{
 			return this->describeFullBackupList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DbsClient::StartRestoreTaskOutcome DbsClient::startRestoreTask(const StartRestoreTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartRestoreTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartRestoreTaskOutcome(StartRestoreTaskResult(outcome.result()));
+	else
+		return StartRestoreTaskOutcome(outcome.error());
+}
+
+void DbsClient::startRestoreTaskAsync(const StartRestoreTaskRequest& request, const StartRestoreTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startRestoreTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::StartRestoreTaskOutcomeCallable DbsClient::startRestoreTaskCallable(const StartRestoreTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartRestoreTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->startRestoreTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
