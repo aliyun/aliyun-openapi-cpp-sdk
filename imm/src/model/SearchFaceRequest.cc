@@ -33,7 +33,7 @@ std::string SearchFaceRequest::getRegionId()const
 void SearchFaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int SearchFaceRequest::getResultNum()const
@@ -44,7 +44,7 @@ int SearchFaceRequest::getResultNum()const
 void SearchFaceRequest::setResultNum(int resultNum)
 {
 	resultNum_ = resultNum;
-	setParameter("ResultNum", std::to_string(resultNum));
+	setCoreParameter("ResultNum", std::to_string(resultNum));
 }
 
 std::string SearchFaceRequest::getProject()const
@@ -55,7 +55,7 @@ std::string SearchFaceRequest::getProject()const
 void SearchFaceRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string SearchFaceRequest::getSearchThresholdLevel()const
@@ -66,7 +66,7 @@ std::string SearchFaceRequest::getSearchThresholdLevel()const
 void SearchFaceRequest::setSearchThresholdLevel(const std::string& searchThresholdLevel)
 {
 	searchThresholdLevel_ = searchThresholdLevel;
-	setParameter("SearchThresholdLevel", searchThresholdLevel);
+	setCoreParameter("SearchThresholdLevel", searchThresholdLevel);
 }
 
 std::string SearchFaceRequest::getSrcUri()const
@@ -77,7 +77,7 @@ std::string SearchFaceRequest::getSrcUri()const
 void SearchFaceRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setParameter("SrcUri", srcUri);
+	setCoreParameter("SrcUri", srcUri);
 }
 
 bool SearchFaceRequest::getIsThreshold()const
@@ -88,7 +88,7 @@ bool SearchFaceRequest::getIsThreshold()const
 void SearchFaceRequest::setIsThreshold(bool isThreshold)
 {
 	isThreshold_ = isThreshold;
-	setParameter("IsThreshold", isThreshold ? "true" : "false");
+	setCoreParameter("IsThreshold", isThreshold ? "true" : "false");
 }
 
 std::string SearchFaceRequest::getGroupName()const
@@ -99,7 +99,7 @@ std::string SearchFaceRequest::getGroupName()const
 void SearchFaceRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string SearchFaceRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string SearchFaceRequest::getAccessKeyId()const
 void SearchFaceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

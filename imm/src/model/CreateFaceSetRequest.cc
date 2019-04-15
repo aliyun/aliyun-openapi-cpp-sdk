@@ -33,7 +33,7 @@ std::string CreateFaceSetRequest::getRegionId()const
 void CreateFaceSetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateFaceSetRequest::getProject()const
@@ -44,7 +44,7 @@ std::string CreateFaceSetRequest::getProject()const
 void CreateFaceSetRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string CreateFaceSetRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string CreateFaceSetRequest::getAccessKeyId()const
 void CreateFaceSetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string DetectImageFacesRequest::getImageUri()const
 void DetectImageFacesRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setParameter("ImageUri", imageUri);
+	setCoreParameter("ImageUri", imageUri);
 }
 
 std::string DetectImageFacesRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DetectImageFacesRequest::getRegionId()const
 void DetectImageFacesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DetectImageFacesRequest::getProject()const
@@ -55,7 +55,18 @@ std::string DetectImageFacesRequest::getProject()const
 void DetectImageFacesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
+}
+
+std::string DetectImageFacesRequest::getRealUid()const
+{
+	return realUid_;
+}
+
+void DetectImageFacesRequest::setRealUid(const std::string& realUid)
+{
+	realUid_ = realUid;
+	setCoreParameter("RealUid", realUid);
 }
 
 std::string DetectImageFacesRequest::getAccessKeyId()const
@@ -66,6 +77,6 @@ std::string DetectImageFacesRequest::getAccessKeyId()const
 void DetectImageFacesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

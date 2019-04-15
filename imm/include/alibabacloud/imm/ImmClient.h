@@ -112,6 +112,8 @@
 #include "model/GetTagSetResult.h"
 #include "model/ConvertOfficeFormatRequest.h"
 #include "model/ConvertOfficeFormatResult.h"
+#include "model/UpdateFaceGroupRequest.h"
+#include "model/UpdateFaceGroupResult.h"
 #include "model/ListTagPhotosRequest.h"
 #include "model/ListTagPhotosResult.h"
 #include "model/DeleteFaceSearchImageByIdRequest.h"
@@ -204,6 +206,8 @@
 #include "model/ListOfficeConversionTaskResult.h"
 #include "model/UpdateSetRequest.h"
 #include "model/UpdateSetResult.h"
+#include "model/ListFaceGroupsRequest.h"
+#include "model/ListFaceGroupsResult.h"
 
 
 namespace AlibabaCloud
@@ -348,6 +352,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ConvertOfficeFormatResult> ConvertOfficeFormatOutcome;
 			typedef std::future<ConvertOfficeFormatOutcome> ConvertOfficeFormatOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ConvertOfficeFormatRequest&, const ConvertOfficeFormatOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConvertOfficeFormatAsyncHandler;
+			typedef Outcome<Error, Model::UpdateFaceGroupResult> UpdateFaceGroupOutcome;
+			typedef std::future<UpdateFaceGroupOutcome> UpdateFaceGroupOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::UpdateFaceGroupRequest&, const UpdateFaceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFaceGroupAsyncHandler;
 			typedef Outcome<Error, Model::ListTagPhotosResult> ListTagPhotosOutcome;
 			typedef std::future<ListTagPhotosOutcome> ListTagPhotosOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ListTagPhotosRequest&, const ListTagPhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagPhotosAsyncHandler;
@@ -486,6 +493,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateSetResult> UpdateSetOutcome;
 			typedef std::future<UpdateSetOutcome> UpdateSetOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::UpdateSetRequest&, const UpdateSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSetAsyncHandler;
+			typedef Outcome<Error, Model::ListFaceGroupsResult> ListFaceGroupsOutcome;
+			typedef std::future<ListFaceGroupsOutcome> ListFaceGroupsOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::ListFaceGroupsRequest&, const ListFaceGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFaceGroupsAsyncHandler;
 
 			ImmClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			ImmClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -626,6 +636,9 @@ namespace AlibabaCloud
 			ConvertOfficeFormatOutcome convertOfficeFormat(const Model::ConvertOfficeFormatRequest &request)const;
 			void convertOfficeFormatAsync(const Model::ConvertOfficeFormatRequest& request, const ConvertOfficeFormatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConvertOfficeFormatOutcomeCallable convertOfficeFormatCallable(const Model::ConvertOfficeFormatRequest& request) const;
+			UpdateFaceGroupOutcome updateFaceGroup(const Model::UpdateFaceGroupRequest &request)const;
+			void updateFaceGroupAsync(const Model::UpdateFaceGroupRequest& request, const UpdateFaceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateFaceGroupOutcomeCallable updateFaceGroupCallable(const Model::UpdateFaceGroupRequest& request) const;
 			ListTagPhotosOutcome listTagPhotos(const Model::ListTagPhotosRequest &request)const;
 			void listTagPhotosAsync(const Model::ListTagPhotosRequest& request, const ListTagPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagPhotosOutcomeCallable listTagPhotosCallable(const Model::ListTagPhotosRequest& request) const;
@@ -764,6 +777,9 @@ namespace AlibabaCloud
 			UpdateSetOutcome updateSet(const Model::UpdateSetRequest &request)const;
 			void updateSetAsync(const Model::UpdateSetRequest& request, const UpdateSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSetOutcomeCallable updateSetCallable(const Model::UpdateSetRequest& request) const;
+			ListFaceGroupsOutcome listFaceGroups(const Model::ListFaceGroupsRequest &request)const;
+			void listFaceGroupsAsync(const Model::ListFaceGroupsRequest& request, const ListFaceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFaceGroupsOutcomeCallable listFaceGroupsCallable(const Model::ListFaceGroupsRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

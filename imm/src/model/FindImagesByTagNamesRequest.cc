@@ -33,7 +33,7 @@ std::string FindImagesByTagNamesRequest::getRegionId()const
 void FindImagesByTagNamesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string FindImagesByTagNamesRequest::getMarker()const
@@ -44,7 +44,7 @@ std::string FindImagesByTagNamesRequest::getMarker()const
 void FindImagesByTagNamesRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setParameter("Marker", marker);
+	setCoreParameter("Marker", marker);
 }
 
 int FindImagesByTagNamesRequest::getLimit()const
@@ -55,7 +55,7 @@ int FindImagesByTagNamesRequest::getLimit()const
 void FindImagesByTagNamesRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 std::string FindImagesByTagNamesRequest::getProject()const
@@ -66,7 +66,7 @@ std::string FindImagesByTagNamesRequest::getProject()const
 void FindImagesByTagNamesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string FindImagesByTagNamesRequest::getSetId()const
@@ -77,7 +77,7 @@ std::string FindImagesByTagNamesRequest::getSetId()const
 void FindImagesByTagNamesRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setParameter("SetId", setId);
+	setCoreParameter("SetId", setId);
 }
 
 std::string FindImagesByTagNamesRequest::getTagNames()const
@@ -88,7 +88,7 @@ std::string FindImagesByTagNamesRequest::getTagNames()const
 void FindImagesByTagNamesRequest::setTagNames(const std::string& tagNames)
 {
 	tagNames_ = tagNames;
-	setParameter("TagNames", tagNames);
+	setCoreParameter("TagNames", tagNames);
 }
 
 std::string FindImagesByTagNamesRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string FindImagesByTagNamesRequest::getAccessKeyId()const
 void FindImagesByTagNamesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

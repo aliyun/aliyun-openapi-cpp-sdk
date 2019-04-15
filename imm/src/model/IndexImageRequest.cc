@@ -33,7 +33,7 @@ std::string IndexImageRequest::getRemarksB()const
 void IndexImageRequest::setRemarksB(const std::string& remarksB)
 {
 	remarksB_ = remarksB;
-	setParameter("RemarksB", remarksB);
+	setCoreParameter("RemarksB", remarksB);
 }
 
 std::string IndexImageRequest::getProject()const
@@ -44,7 +44,7 @@ std::string IndexImageRequest::getProject()const
 void IndexImageRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string IndexImageRequest::getRemarksA()const
@@ -55,7 +55,7 @@ std::string IndexImageRequest::getRemarksA()const
 void IndexImageRequest::setRemarksA(const std::string& remarksA)
 {
 	remarksA_ = remarksA;
-	setParameter("RemarksA", remarksA);
+	setCoreParameter("RemarksA", remarksA);
 }
 
 std::string IndexImageRequest::getExternalId()const
@@ -66,7 +66,7 @@ std::string IndexImageRequest::getExternalId()const
 void IndexImageRequest::setExternalId(const std::string& externalId)
 {
 	externalId_ = externalId;
-	setParameter("ExternalId", externalId);
+	setCoreParameter("ExternalId", externalId);
 }
 
 std::string IndexImageRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string IndexImageRequest::getAccessKeyId()const
 void IndexImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string IndexImageRequest::getImageUri()const
@@ -88,7 +88,7 @@ std::string IndexImageRequest::getImageUri()const
 void IndexImageRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setParameter("ImageUri", imageUri);
+	setCoreParameter("ImageUri", imageUri);
 }
 
 std::string IndexImageRequest::getRegionId()const
@@ -99,7 +99,7 @@ std::string IndexImageRequest::getRegionId()const
 void IndexImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string IndexImageRequest::getSourceUri()const
@@ -110,7 +110,7 @@ std::string IndexImageRequest::getSourceUri()const
 void IndexImageRequest::setSourceUri(const std::string& sourceUri)
 {
 	sourceUri_ = sourceUri;
-	setParameter("SourceUri", sourceUri);
+	setCoreParameter("SourceUri", sourceUri);
 }
 
 std::string IndexImageRequest::getSourcePosition()const
@@ -121,7 +121,7 @@ std::string IndexImageRequest::getSourcePosition()const
 void IndexImageRequest::setSourcePosition(const std::string& sourcePosition)
 {
 	sourcePosition_ = sourcePosition;
-	setParameter("SourcePosition", sourcePosition);
+	setCoreParameter("SourcePosition", sourcePosition);
 }
 
 std::string IndexImageRequest::getRemarksD()const
@@ -132,7 +132,7 @@ std::string IndexImageRequest::getRemarksD()const
 void IndexImageRequest::setRemarksD(const std::string& remarksD)
 {
 	remarksD_ = remarksD;
-	setParameter("RemarksD", remarksD);
+	setCoreParameter("RemarksD", remarksD);
 }
 
 std::string IndexImageRequest::getRemarksC()const
@@ -143,7 +143,7 @@ std::string IndexImageRequest::getRemarksC()const
 void IndexImageRequest::setRemarksC(const std::string& remarksC)
 {
 	remarksC_ = remarksC;
-	setParameter("RemarksC", remarksC);
+	setCoreParameter("RemarksC", remarksC);
 }
 
 std::string IndexImageRequest::getSetId()const
@@ -154,7 +154,7 @@ std::string IndexImageRequest::getSetId()const
 void IndexImageRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setParameter("SetId", setId);
+	setCoreParameter("SetId", setId);
 }
 
 std::string IndexImageRequest::getSourceType()const
@@ -165,6 +165,17 @@ std::string IndexImageRequest::getSourceType()const
 void IndexImageRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setParameter("SourceType", sourceType);
+	setCoreParameter("SourceType", sourceType);
+}
+
+std::string IndexImageRequest::getRealUid()const
+{
+	return realUid_;
+}
+
+void IndexImageRequest::setRealUid(const std::string& realUid)
+{
+	realUid_ = realUid;
+	setCoreParameter("RealUid", realUid);
 }
 

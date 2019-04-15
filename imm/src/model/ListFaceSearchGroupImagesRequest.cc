@@ -33,7 +33,7 @@ int ListFaceSearchGroupImagesRequest::getMaxKeys()const
 void ListFaceSearchGroupImagesRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", std::to_string(maxKeys));
 }
 
 std::string ListFaceSearchGroupImagesRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListFaceSearchGroupImagesRequest::getRegionId()const
 void ListFaceSearchGroupImagesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListFaceSearchGroupImagesRequest::getMarker()const
@@ -55,7 +55,7 @@ std::string ListFaceSearchGroupImagesRequest::getMarker()const
 void ListFaceSearchGroupImagesRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setParameter("Marker", marker);
+	setCoreParameter("Marker", marker);
 }
 
 std::string ListFaceSearchGroupImagesRequest::getProject()const
@@ -66,7 +66,7 @@ std::string ListFaceSearchGroupImagesRequest::getProject()const
 void ListFaceSearchGroupImagesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string ListFaceSearchGroupImagesRequest::getGroupName()const
@@ -77,7 +77,7 @@ std::string ListFaceSearchGroupImagesRequest::getGroupName()const
 void ListFaceSearchGroupImagesRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string ListFaceSearchGroupImagesRequest::getUser()const
@@ -88,7 +88,7 @@ std::string ListFaceSearchGroupImagesRequest::getUser()const
 void ListFaceSearchGroupImagesRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setParameter("User", user);
+	setCoreParameter("User", user);
 }
 
 std::string ListFaceSearchGroupImagesRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListFaceSearchGroupImagesRequest::getAccessKeyId()const
 void ListFaceSearchGroupImagesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

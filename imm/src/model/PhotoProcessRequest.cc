@@ -33,7 +33,7 @@ std::string PhotoProcessRequest::getNotifyTopicName()const
 void PhotoProcessRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setParameter("NotifyTopicName", notifyTopicName);
+	setCoreParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string PhotoProcessRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string PhotoProcessRequest::getRegionId()const
 void PhotoProcessRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string PhotoProcessRequest::getNotifyEndpoint()const
@@ -55,7 +55,7 @@ std::string PhotoProcessRequest::getNotifyEndpoint()const
 void PhotoProcessRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setParameter("NotifyEndpoint", notifyEndpoint);
+	setCoreParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string PhotoProcessRequest::getProject()const
@@ -66,7 +66,7 @@ std::string PhotoProcessRequest::getProject()const
 void PhotoProcessRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string PhotoProcessRequest::getExternalID()const
@@ -77,7 +77,7 @@ std::string PhotoProcessRequest::getExternalID()const
 void PhotoProcessRequest::setExternalID(const std::string& externalID)
 {
 	externalID_ = externalID;
-	setParameter("ExternalID", externalID);
+	setCoreParameter("ExternalID", externalID);
 }
 
 std::string PhotoProcessRequest::getSrcUri()const
@@ -88,7 +88,7 @@ std::string PhotoProcessRequest::getSrcUri()const
 void PhotoProcessRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setParameter("SrcUri", srcUri);
+	setCoreParameter("SrcUri", srcUri);
 }
 
 std::string PhotoProcessRequest::getStyle()const
@@ -99,7 +99,7 @@ std::string PhotoProcessRequest::getStyle()const
 void PhotoProcessRequest::setStyle(const std::string& style)
 {
 	style_ = style;
-	setParameter("Style", style);
+	setCoreParameter("Style", style);
 }
 
 std::string PhotoProcessRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string PhotoProcessRequest::getAccessKeyId()const
 void PhotoProcessRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PhotoProcessRequest::getTgtUri()const
@@ -121,6 +121,6 @@ std::string PhotoProcessRequest::getTgtUri()const
 void PhotoProcessRequest::setTgtUri(const std::string& tgtUri)
 {
 	tgtUri_ = tgtUri;
-	setParameter("TgtUri", tgtUri);
+	setCoreParameter("TgtUri", tgtUri);
 }
 

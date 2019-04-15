@@ -33,7 +33,7 @@ std::string GetOfficeConversionTaskRequest::getRegionId()const
 void GetOfficeConversionTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetOfficeConversionTaskRequest::getProject()const
@@ -44,7 +44,7 @@ std::string GetOfficeConversionTaskRequest::getProject()const
 void GetOfficeConversionTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string GetOfficeConversionTaskRequest::getTaskId()const
@@ -55,7 +55,7 @@ std::string GetOfficeConversionTaskRequest::getTaskId()const
 void GetOfficeConversionTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string GetOfficeConversionTaskRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string GetOfficeConversionTaskRequest::getAccessKeyId()const
 void GetOfficeConversionTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

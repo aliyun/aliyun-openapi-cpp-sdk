@@ -33,7 +33,7 @@ std::string CreateVideoAnalyseTaskRequest::getNotifyTopicName()const
 void CreateVideoAnalyseTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setParameter("NotifyTopicName", notifyTopicName);
+	setCoreParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateVideoAnalyseTaskRequest::getGrabType()const
@@ -44,7 +44,7 @@ std::string CreateVideoAnalyseTaskRequest::getGrabType()const
 void CreateVideoAnalyseTaskRequest::setGrabType(const std::string& grabType)
 {
 	grabType_ = grabType;
-	setParameter("GrabType", grabType);
+	setCoreParameter("GrabType", grabType);
 }
 
 std::string CreateVideoAnalyseTaskRequest::getProject()const
@@ -55,7 +55,7 @@ std::string CreateVideoAnalyseTaskRequest::getProject()const
 void CreateVideoAnalyseTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string CreateVideoAnalyseTaskRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string CreateVideoAnalyseTaskRequest::getEndTime()const
 void CreateVideoAnalyseTaskRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string CreateVideoAnalyseTaskRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string CreateVideoAnalyseTaskRequest::getStartTime()const
 void CreateVideoAnalyseTaskRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string CreateVideoAnalyseTaskRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string CreateVideoAnalyseTaskRequest::getAccessKeyId()const
 void CreateVideoAnalyseTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateVideoAnalyseTaskRequest::getVideoUri()const
@@ -99,7 +99,7 @@ std::string CreateVideoAnalyseTaskRequest::getVideoUri()const
 void CreateVideoAnalyseTaskRequest::setVideoUri(const std::string& videoUri)
 {
 	videoUri_ = videoUri;
-	setParameter("VideoUri", videoUri);
+	setCoreParameter("VideoUri", videoUri);
 }
 
 bool CreateVideoAnalyseTaskRequest::getSaveType()const
@@ -110,7 +110,7 @@ bool CreateVideoAnalyseTaskRequest::getSaveType()const
 void CreateVideoAnalyseTaskRequest::setSaveType(bool saveType)
 {
 	saveType_ = saveType;
-	setParameter("SaveType", saveType ? "true" : "false");
+	setCoreParameter("SaveType", saveType ? "true" : "false");
 }
 
 std::string CreateVideoAnalyseTaskRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string CreateVideoAnalyseTaskRequest::getRegionId()const
 void CreateVideoAnalyseTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateVideoAnalyseTaskRequest::getNotifyEndpoint()const
@@ -132,7 +132,7 @@ std::string CreateVideoAnalyseTaskRequest::getNotifyEndpoint()const
 void CreateVideoAnalyseTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setParameter("NotifyEndpoint", notifyEndpoint);
+	setCoreParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string CreateVideoAnalyseTaskRequest::getInterval()const
@@ -143,7 +143,7 @@ std::string CreateVideoAnalyseTaskRequest::getInterval()const
 void CreateVideoAnalyseTaskRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setParameter("Interval", interval);
+	setCoreParameter("Interval", interval);
 }
 
 std::string CreateVideoAnalyseTaskRequest::getTgtUri()const
@@ -154,6 +154,6 @@ std::string CreateVideoAnalyseTaskRequest::getTgtUri()const
 void CreateVideoAnalyseTaskRequest::setTgtUri(const std::string& tgtUri)
 {
 	tgtUri_ = tgtUri;
-	setParameter("TgtUri", tgtUri);
+	setCoreParameter("TgtUri", tgtUri);
 }
 

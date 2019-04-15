@@ -33,7 +33,7 @@ int ListPhotoProcessTasksRequest::getMaxKeys()const
 void ListPhotoProcessTasksRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", std::to_string(maxKeys));
 }
 
 std::string ListPhotoProcessTasksRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListPhotoProcessTasksRequest::getRegionId()const
 void ListPhotoProcessTasksRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListPhotoProcessTasksRequest::getMarker()const
@@ -55,7 +55,7 @@ std::string ListPhotoProcessTasksRequest::getMarker()const
 void ListPhotoProcessTasksRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setParameter("Marker", marker);
+	setCoreParameter("Marker", marker);
 }
 
 std::string ListPhotoProcessTasksRequest::getProject()const
@@ -66,7 +66,7 @@ std::string ListPhotoProcessTasksRequest::getProject()const
 void ListPhotoProcessTasksRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string ListPhotoProcessTasksRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListPhotoProcessTasksRequest::getAccessKeyId()const
 void ListPhotoProcessTasksRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

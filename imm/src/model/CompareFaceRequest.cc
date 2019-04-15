@@ -33,7 +33,7 @@ std::string CompareFaceRequest::getRegionId()const
 void CompareFaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CompareFaceRequest::getSrcUriB()const
@@ -44,7 +44,7 @@ std::string CompareFaceRequest::getSrcUriB()const
 void CompareFaceRequest::setSrcUriB(const std::string& srcUriB)
 {
 	srcUriB_ = srcUriB;
-	setParameter("SrcUriB", srcUriB);
+	setCoreParameter("SrcUriB", srcUriB);
 }
 
 std::string CompareFaceRequest::getSrcUriA()const
@@ -55,7 +55,7 @@ std::string CompareFaceRequest::getSrcUriA()const
 void CompareFaceRequest::setSrcUriA(const std::string& srcUriA)
 {
 	srcUriA_ = srcUriA;
-	setParameter("SrcUriA", srcUriA);
+	setCoreParameter("SrcUriA", srcUriA);
 }
 
 std::string CompareFaceRequest::getProject()const
@@ -66,7 +66,7 @@ std::string CompareFaceRequest::getProject()const
 void CompareFaceRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string CompareFaceRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CompareFaceRequest::getAccessKeyId()const
 void CompareFaceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string DeleteFaceJobRequest::getJobId()const
 void DeleteFaceJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setParameter("JobId", jobId);
+	setCoreParameter("JobId", jobId);
 }
 
 std::string DeleteFaceJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteFaceJobRequest::getRegionId()const
 void DeleteFaceJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteFaceJobRequest::getProject()const
@@ -55,7 +55,7 @@ std::string DeleteFaceJobRequest::getProject()const
 void DeleteFaceJobRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string DeleteFaceJobRequest::getClearIndexData()const
@@ -66,7 +66,7 @@ std::string DeleteFaceJobRequest::getClearIndexData()const
 void DeleteFaceJobRequest::setClearIndexData(const std::string& clearIndexData)
 {
 	clearIndexData_ = clearIndexData;
-	setParameter("ClearIndexData", clearIndexData);
+	setCoreParameter("ClearIndexData", clearIndexData);
 }
 
 std::string DeleteFaceJobRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteFaceJobRequest::getAccessKeyId()const
 void DeleteFaceJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

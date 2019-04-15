@@ -33,7 +33,7 @@ int ListFaceSearchGroupUsersRequest::getMaxKeys()const
 void ListFaceSearchGroupUsersRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", std::to_string(maxKeys));
 }
 
 std::string ListFaceSearchGroupUsersRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListFaceSearchGroupUsersRequest::getRegionId()const
 void ListFaceSearchGroupUsersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListFaceSearchGroupUsersRequest::getMarker()const
@@ -55,7 +55,7 @@ std::string ListFaceSearchGroupUsersRequest::getMarker()const
 void ListFaceSearchGroupUsersRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setParameter("Marker", marker);
+	setCoreParameter("Marker", marker);
 }
 
 std::string ListFaceSearchGroupUsersRequest::getProject()const
@@ -66,7 +66,7 @@ std::string ListFaceSearchGroupUsersRequest::getProject()const
 void ListFaceSearchGroupUsersRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string ListFaceSearchGroupUsersRequest::getGroupName()const
@@ -77,7 +77,7 @@ std::string ListFaceSearchGroupUsersRequest::getGroupName()const
 void ListFaceSearchGroupUsersRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string ListFaceSearchGroupUsersRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListFaceSearchGroupUsersRequest::getAccessKeyId()const
 void ListFaceSearchGroupUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

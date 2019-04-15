@@ -33,7 +33,7 @@ std::string DeleteImageJobRequest::getJobId()const
 void DeleteImageJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setParameter("JobId", jobId);
+	setCoreParameter("JobId", jobId);
 }
 
 std::string DeleteImageJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteImageJobRequest::getRegionId()const
 void DeleteImageJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteImageJobRequest::getProject()const
@@ -55,7 +55,7 @@ std::string DeleteImageJobRequest::getProject()const
 void DeleteImageJobRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string DeleteImageJobRequest::getJobType()const
@@ -66,7 +66,7 @@ std::string DeleteImageJobRequest::getJobType()const
 void DeleteImageJobRequest::setJobType(const std::string& jobType)
 {
 	jobType_ = jobType;
-	setParameter("JobType", jobType);
+	setCoreParameter("JobType", jobType);
 }
 
 std::string DeleteImageJobRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteImageJobRequest::getAccessKeyId()const
 void DeleteImageJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

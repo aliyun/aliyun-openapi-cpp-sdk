@@ -33,7 +33,7 @@ std::string ListImagesRequest::getRegionId()const
 void ListImagesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListImagesRequest::getMarker()const
@@ -44,7 +44,7 @@ std::string ListImagesRequest::getMarker()const
 void ListImagesRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setParameter("Marker", marker);
+	setCoreParameter("Marker", marker);
 }
 
 int ListImagesRequest::getLimit()const
@@ -55,7 +55,7 @@ int ListImagesRequest::getLimit()const
 void ListImagesRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 std::string ListImagesRequest::getProject()const
@@ -66,7 +66,7 @@ std::string ListImagesRequest::getProject()const
 void ListImagesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string ListImagesRequest::getSetId()const
@@ -77,7 +77,7 @@ std::string ListImagesRequest::getSetId()const
 void ListImagesRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setParameter("SetId", setId);
+	setCoreParameter("SetId", setId);
 }
 
 std::string ListImagesRequest::getCreateTimeStart()const
@@ -88,7 +88,7 @@ std::string ListImagesRequest::getCreateTimeStart()const
 void ListImagesRequest::setCreateTimeStart(const std::string& createTimeStart)
 {
 	createTimeStart_ = createTimeStart;
-	setParameter("CreateTimeStart", createTimeStart);
+	setCoreParameter("CreateTimeStart", createTimeStart);
 }
 
 std::string ListImagesRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListImagesRequest::getAccessKeyId()const
 void ListImagesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

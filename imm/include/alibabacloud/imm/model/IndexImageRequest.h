@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setSetId(const std::string& setId);
 				std::string getSourceType()const;
 				void setSourceType(const std::string& sourceType);
+				std::string getRealUid()const;
+				void setRealUid(const std::string& realUid);
 
             private:
 				std::string remarksB_;
@@ -76,6 +78,7 @@ namespace AlibabaCloud
 				std::string remarksC_;
 				std::string setId_;
 				std::string sourceType_;
+				std::string realUid_;
 
 			};
 		}

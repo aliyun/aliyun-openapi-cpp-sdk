@@ -33,7 +33,7 @@ std::string FindSimilarFacesRequest::getImageUri()const
 void FindSimilarFacesRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setParameter("ImageUri", imageUri);
+	setCoreParameter("ImageUri", imageUri);
 }
 
 std::string FindSimilarFacesRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string FindSimilarFacesRequest::getRegionId()const
 void FindSimilarFacesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 float FindSimilarFacesRequest::getMinSimilarity()const
@@ -55,7 +55,7 @@ float FindSimilarFacesRequest::getMinSimilarity()const
 void FindSimilarFacesRequest::setMinSimilarity(float minSimilarity)
 {
 	minSimilarity_ = minSimilarity;
-	setParameter("MinSimilarity", std::to_string(minSimilarity));
+	setCoreParameter("MinSimilarity", std::to_string(minSimilarity));
 }
 
 int FindSimilarFacesRequest::getLimit()const
@@ -66,7 +66,7 @@ int FindSimilarFacesRequest::getLimit()const
 void FindSimilarFacesRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 std::string FindSimilarFacesRequest::getProject()const
@@ -77,7 +77,7 @@ std::string FindSimilarFacesRequest::getProject()const
 void FindSimilarFacesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string FindSimilarFacesRequest::getSetId()const
@@ -88,7 +88,7 @@ std::string FindSimilarFacesRequest::getSetId()const
 void FindSimilarFacesRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setParameter("SetId", setId);
+	setCoreParameter("SetId", setId);
 }
 
 std::string FindSimilarFacesRequest::getFaceId()const
@@ -99,7 +99,7 @@ std::string FindSimilarFacesRequest::getFaceId()const
 void FindSimilarFacesRequest::setFaceId(const std::string& faceId)
 {
 	faceId_ = faceId;
-	setParameter("FaceId", faceId);
+	setCoreParameter("FaceId", faceId);
 }
 
 std::string FindSimilarFacesRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string FindSimilarFacesRequest::getAccessKeyId()const
 void FindSimilarFacesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string CreateTagSetRequest::getRegionId()const
 void CreateTagSetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateTagSetRequest::getProject()const
@@ -44,7 +44,7 @@ std::string CreateTagSetRequest::getProject()const
 void CreateTagSetRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string CreateTagSetRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string CreateTagSetRequest::getAccessKeyId()const
 void CreateTagSetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

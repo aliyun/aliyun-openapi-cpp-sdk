@@ -33,7 +33,7 @@ std::string DeleteImageRequest::getImageUri()const
 void DeleteImageRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setParameter("ImageUri", imageUri);
+	setCoreParameter("ImageUri", imageUri);
 }
 
 std::string DeleteImageRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteImageRequest::getRegionId()const
 void DeleteImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteImageRequest::getProject()const
@@ -55,7 +55,7 @@ std::string DeleteImageRequest::getProject()const
 void DeleteImageRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string DeleteImageRequest::getSetId()const
@@ -66,7 +66,7 @@ std::string DeleteImageRequest::getSetId()const
 void DeleteImageRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setParameter("SetId", setId);
+	setCoreParameter("SetId", setId);
 }
 
 std::string DeleteImageRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteImageRequest::getAccessKeyId()const
 void DeleteImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
+				std::string getRealUid()const;
+				void setRealUid(const std::string& realUid);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 				std::string imageUri_;
 				std::string regionId_;
 				std::string project_;
+				std::string realUid_;
 				std::string accessKeyId_;
 
 			};

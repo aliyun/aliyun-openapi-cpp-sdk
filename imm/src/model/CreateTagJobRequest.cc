@@ -33,7 +33,7 @@ std::string CreateTagJobRequest::getNotifyTopicName()const
 void CreateTagJobRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setParameter("NotifyTopicName", notifyTopicName);
+	setCoreParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateTagJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CreateTagJobRequest::getRegionId()const
 void CreateTagJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateTagJobRequest::getNotifyEndpoint()const
@@ -55,7 +55,7 @@ std::string CreateTagJobRequest::getNotifyEndpoint()const
 void CreateTagJobRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setParameter("NotifyEndpoint", notifyEndpoint);
+	setCoreParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string CreateTagJobRequest::getProject()const
@@ -66,7 +66,7 @@ std::string CreateTagJobRequest::getProject()const
 void CreateTagJobRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string CreateTagJobRequest::getExternalID()const
@@ -77,7 +77,7 @@ std::string CreateTagJobRequest::getExternalID()const
 void CreateTagJobRequest::setExternalID(const std::string& externalID)
 {
 	externalID_ = externalID;
-	setParameter("ExternalID", externalID);
+	setCoreParameter("ExternalID", externalID);
 }
 
 std::string CreateTagJobRequest::getSrcUri()const
@@ -88,7 +88,7 @@ std::string CreateTagJobRequest::getSrcUri()const
 void CreateTagJobRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setParameter("SrcUri", srcUri);
+	setCoreParameter("SrcUri", srcUri);
 }
 
 std::string CreateTagJobRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string CreateTagJobRequest::getAccessKeyId()const
 void CreateTagJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

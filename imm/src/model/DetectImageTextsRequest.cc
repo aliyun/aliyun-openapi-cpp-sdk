@@ -33,7 +33,7 @@ std::string DetectImageTextsRequest::getImageUri()const
 void DetectImageTextsRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setParameter("ImageUri", imageUri);
+	setCoreParameter("ImageUri", imageUri);
 }
 
 std::string DetectImageTextsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DetectImageTextsRequest::getRegionId()const
 void DetectImageTextsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DetectImageTextsRequest::getProject()const
@@ -55,7 +55,7 @@ std::string DetectImageTextsRequest::getProject()const
 void DetectImageTextsRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string DetectImageTextsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DetectImageTextsRequest::getAccessKeyId()const
 void DetectImageTextsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

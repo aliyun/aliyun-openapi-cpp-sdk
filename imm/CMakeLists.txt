@@ -111,6 +111,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/GetTagSetResult.h
 	include/alibabacloud/imm/model/ConvertOfficeFormatRequest.h
 	include/alibabacloud/imm/model/ConvertOfficeFormatResult.h
+	include/alibabacloud/imm/model/UpdateFaceGroupRequest.h
+	include/alibabacloud/imm/model/UpdateFaceGroupResult.h
 	include/alibabacloud/imm/model/ListTagPhotosRequest.h
 	include/alibabacloud/imm/model/ListTagPhotosResult.h
 	include/alibabacloud/imm/model/DeleteFaceSearchImageByIdRequest.h
@@ -202,7 +204,9 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/ListOfficeConversionTaskRequest.h
 	include/alibabacloud/imm/model/ListOfficeConversionTaskResult.h
 	include/alibabacloud/imm/model/UpdateSetRequest.h
-	include/alibabacloud/imm/model/UpdateSetResult.h )
+	include/alibabacloud/imm/model/UpdateSetResult.h
+	include/alibabacloud/imm/model/ListFaceGroupsRequest.h
+	include/alibabacloud/imm/model/ListFaceGroupsResult.h )
 
 set(imm_src 
 	src/ImmClient.cc
@@ -296,6 +300,8 @@ set(imm_src
 	src/model/GetTagSetResult.cc
 	src/model/ConvertOfficeFormatRequest.cc
 	src/model/ConvertOfficeFormatResult.cc
+	src/model/UpdateFaceGroupRequest.cc
+	src/model/UpdateFaceGroupResult.cc
 	src/model/ListTagPhotosRequest.cc
 	src/model/ListTagPhotosResult.cc
 	src/model/DeleteFaceSearchImageByIdRequest.cc
@@ -387,7 +393,9 @@ set(imm_src
 	src/model/ListOfficeConversionTaskRequest.cc
 	src/model/ListOfficeConversionTaskResult.cc
 	src/model/UpdateSetRequest.cc
-	src/model/UpdateSetResult.cc )
+	src/model/UpdateSetResult.cc
+	src/model/ListFaceGroupsRequest.cc
+	src/model/ListFaceGroupsResult.cc )
 
 add_library(imm ${LIB_TYPE}
 	${imm_public_header}

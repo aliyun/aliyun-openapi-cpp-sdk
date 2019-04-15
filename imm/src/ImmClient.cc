@@ -1671,6 +1671,42 @@ ImmClient::ConvertOfficeFormatOutcomeCallable ImmClient::convertOfficeFormatCall
 	return task->get_future();
 }
 
+ImmClient::UpdateFaceGroupOutcome ImmClient::updateFaceGroup(const UpdateFaceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateFaceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateFaceGroupOutcome(UpdateFaceGroupResult(outcome.result()));
+	else
+		return UpdateFaceGroupOutcome(outcome.error());
+}
+
+void ImmClient::updateFaceGroupAsync(const UpdateFaceGroupRequest& request, const UpdateFaceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateFaceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::UpdateFaceGroupOutcomeCallable ImmClient::updateFaceGroupCallable(const UpdateFaceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateFaceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateFaceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::ListTagPhotosOutcome ImmClient::listTagPhotos(const ListTagPhotosRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3321,6 +3357,42 @@ ImmClient::UpdateSetOutcomeCallable ImmClient::updateSetCallable(const UpdateSet
 			[this, request]()
 			{
 			return this->updateSet(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::ListFaceGroupsOutcome ImmClient::listFaceGroups(const ListFaceGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFaceGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFaceGroupsOutcome(ListFaceGroupsResult(outcome.result()));
+	else
+		return ListFaceGroupsOutcome(outcome.error());
+}
+
+void ImmClient::listFaceGroupsAsync(const ListFaceGroupsRequest& request, const ListFaceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFaceGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::ListFaceGroupsOutcomeCallable ImmClient::listFaceGroupsCallable(const ListFaceGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFaceGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listFaceGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

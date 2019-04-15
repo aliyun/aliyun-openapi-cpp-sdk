@@ -33,7 +33,7 @@ std::string DetectTagRequest::getSrcUris()const
 void DetectTagRequest::setSrcUris(const std::string& srcUris)
 {
 	srcUris_ = srcUris;
-	setParameter("SrcUris", srcUris);
+	setCoreParameter("SrcUris", srcUris);
 }
 
 std::string DetectTagRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DetectTagRequest::getRegionId()const
 void DetectTagRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DetectTagRequest::getModelId()const
@@ -55,7 +55,7 @@ std::string DetectTagRequest::getModelId()const
 void DetectTagRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setParameter("ModelId", modelId);
+	setCoreParameter("ModelId", modelId);
 }
 
 std::string DetectTagRequest::getProject()const
@@ -66,7 +66,7 @@ std::string DetectTagRequest::getProject()const
 void DetectTagRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string DetectTagRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DetectTagRequest::getAccessKeyId()const
 void DetectTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string DetectQRCodesRequest::getSrcUris()const
 void DetectQRCodesRequest::setSrcUris(const std::string& srcUris)
 {
 	srcUris_ = srcUris;
-	setParameter("SrcUris", srcUris);
+	setCoreParameter("SrcUris", srcUris);
 }
 
 std::string DetectQRCodesRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DetectQRCodesRequest::getRegionId()const
 void DetectQRCodesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DetectQRCodesRequest::getProject()const
@@ -55,7 +55,7 @@ std::string DetectQRCodesRequest::getProject()const
 void DetectQRCodesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string DetectQRCodesRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DetectQRCodesRequest::getAccessKeyId()const
 void DetectQRCodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

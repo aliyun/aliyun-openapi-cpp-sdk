@@ -33,7 +33,7 @@ std::string GetTagJobRequest::getJobId()const
 void GetTagJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setParameter("JobId", jobId);
+	setCoreParameter("JobId", jobId);
 }
 
 std::string GetTagJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetTagJobRequest::getRegionId()const
 void GetTagJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetTagJobRequest::getProject()const
@@ -55,7 +55,7 @@ std::string GetTagJobRequest::getProject()const
 void GetTagJobRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 std::string GetTagJobRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string GetTagJobRequest::getAccessKeyId()const
 void GetTagJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
