@@ -32,6 +32,31 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_AEGIS_EXPORT DescribeWarningResult : public ServiceResult
 			{
 			public:
+				struct Warning
+				{
+					struct Detail
+					{
+						struct DetailItem
+						{
+							std::string type;
+							std::string value;
+							std::string name;
+						};
+						std::vector<Detail::DetailItem> detailItems;
+					};
+					std::string lastFoundTime;
+					int status;
+					std::string typeName;
+					std::vector<Warning::Detail> details;
+					std::string uuid;
+					std::string rirstFoundTime;
+					long riskWarningId;
+					std::string subTypeName;
+					std::string level;
+					std::string typeAlias;
+					std::string riskName;
+					std::string subTypeAlias;
+				};
 
 
 				DescribeWarningResult();
@@ -41,7 +66,7 @@ namespace AlibabaCloud
 				int getPageSize()const;
 				int getCurrentPage()const;
 				int getCount()const;
-				std::vector<std::string> getWarnings()const;
+				std::vector<Warning> getWarnings()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -50,7 +75,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				int currentPage_;
 				int count_;
-				std::vector<std::string> warnings_;
+				std::vector<Warning> warnings_;
 
 			};
 		}

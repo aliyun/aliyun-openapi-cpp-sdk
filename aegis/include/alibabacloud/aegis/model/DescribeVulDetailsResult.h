@@ -32,47 +32,46 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_AEGIS_EXPORT DescribeVulDetailsResult : public ServiceResult
 			{
 			public:
+				struct Cve
+				{
+					struct Classify
+					{
+						std::string demoVideoUrl;
+						std::string description;
+						std::string classify;
+					};
+					std::string cvssVector;
+					std::string cvssScore;
+					std::string classify;
+					std::string poc;
+					long pocDisclosureTime;
+					std::string reference;
+					std::vector<Cve::Classify> classifys;
+					std::string title;
+					std::string product;
+					std::string cveId;
+					std::string vendor;
+					std::string otherId;
+					std::string cnvdId;
+					std::string complexity;
+					long releaseTime;
+					long pocCreateTime;
+					std::string content;
+					std::string summary;
+					std::string solution;
+					std::string vulLevel;
+				};
 
 
 				DescribeVulDetailsResult();
 				explicit DescribeVulDetailsResult(const std::string &payload);
 				~DescribeVulDetailsResult();
-				int getPendingCount()const;
-				std::string getDescription()const;
-				std::vector<std::string> getCveLists()const;
-				std::string getCveIds()const;
-				long getVulPublishTs()const;
-				std::string getProduct()const;
-				bool getHasPatch()const;
-				std::string getName()const;
-				std::string getType()const;
-				std::string getCvss()const;
-				long getPatchPublishTs()const;
-				int getHandledCount()const;
-				std::string getAliasName()const;
-				std::string getLevel()const;
-				std::string getAdvice()const;
-				std::string getPatchSource()const;
+				std::vector<Cve> getCves()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pendingCount_;
-				std::string description_;
-				std::vector<std::string> cveLists_;
-				std::string cveIds_;
-				long vulPublishTs_;
-				std::string product_;
-				bool hasPatch_;
-				std::string name_;
-				std::string type_;
-				std::string cvss_;
-				long patchPublishTs_;
-				int handledCount_;
-				std::string aliasName_;
-				std::string level_;
-				std::string advice_;
-				std::string patchSource_;
+				std::vector<Cve> cves_;
 
 			};
 		}

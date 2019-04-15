@@ -36,14 +36,14 @@ namespace AlibabaCloud
 				{
 					struct RiskTypeWhiteListQueryResult
 					{
-						struct SubTyp
+						struct SubType
 						{
 							std::string typeName;
 							std::string alias;
 							bool on;
 						};
 						std::string typeName;
-						std::vector<RiskTypeWhiteListQueryResult::SubTyp> subTypes;
+						std::vector<RiskTypeWhiteListQueryResult::SubType> subTypes;
 						std::string alias;
 						bool on;
 					};
@@ -59,12 +59,12 @@ namespace AlibabaCloud
 				DescribeStratetyDetailResult();
 				explicit DescribeStratetyDetailResult(const std::string &payload);
 				~DescribeStratetyDetailResult();
-				std::vector<Strategy> getStrategy()const;
+				Strategy getStrategy()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Strategy> strategy_;
+				Strategy strategy_;
 
 			};
 		}

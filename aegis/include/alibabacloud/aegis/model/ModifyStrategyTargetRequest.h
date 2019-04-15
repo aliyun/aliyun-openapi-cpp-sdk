@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				ModifyStrategyTargetRequest();
 				~ModifyStrategyTargetRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getType()const;
@@ -47,7 +45,6 @@ namespace AlibabaCloud
 				void setTarget(const std::string& target);
 
             private:
-				long resourceOwnerId_;
 				std::string sourceIp_;
 				std::string type_;
 				std::string config_;

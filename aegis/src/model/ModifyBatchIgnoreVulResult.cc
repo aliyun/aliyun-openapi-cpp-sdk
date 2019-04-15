@@ -40,20 +40,6 @@ void ModifyBatchIgnoreVulResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 
-}
-
-int ModifyBatchIgnoreVulResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
-}
-
-bool ModifyBatchIgnoreVulResult::getSuccess()const
-{
-	return success_;
 }
 

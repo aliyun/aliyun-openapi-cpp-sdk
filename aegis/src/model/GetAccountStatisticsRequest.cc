@@ -33,7 +33,7 @@ std::string GetAccountStatisticsRequest::getEndTime()const
 void GetAccountStatisticsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string GetAccountStatisticsRequest::getStartTime()const
@@ -44,6 +44,6 @@ std::string GetAccountStatisticsRequest::getStartTime()const
 void GetAccountStatisticsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 

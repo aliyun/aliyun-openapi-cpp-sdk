@@ -33,7 +33,7 @@ int RenewInstanceRequest::getDuration()const
 void RenewInstanceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", std::to_string(duration));
 }
 
 std::string RenewInstanceRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string RenewInstanceRequest::getInstanceId()const
 void RenewInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string RenewInstanceRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string RenewInstanceRequest::getClientToken()const
 void RenewInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string RenewInstanceRequest::getVmNumber()const
@@ -66,7 +66,7 @@ std::string RenewInstanceRequest::getVmNumber()const
 void RenewInstanceRequest::setVmNumber(const std::string& vmNumber)
 {
 	vmNumber_ = vmNumber;
-	setParameter("VmNumber", vmNumber);
+	setCoreParameter("VmNumber", vmNumber);
 }
 
 long RenewInstanceRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long RenewInstanceRequest::getOwnerId()const
 void RenewInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RenewInstanceRequest::getPricingCycle()const
@@ -88,6 +88,6 @@ std::string RenewInstanceRequest::getPricingCycle()const
 void RenewInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", pricingCycle);
 }
 

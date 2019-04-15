@@ -25,17 +25,6 @@ DeleteStrategyRequest::DeleteStrategyRequest() :
 DeleteStrategyRequest::~DeleteStrategyRequest()
 {}
 
-long DeleteStrategyRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteStrategyRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DeleteStrategyRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -44,7 +33,7 @@ std::string DeleteStrategyRequest::getSourceIp()const
 void DeleteStrategyRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteStrategyRequest::getId()const
@@ -55,6 +44,6 @@ std::string DeleteStrategyRequest::getId()const
 void DeleteStrategyRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 

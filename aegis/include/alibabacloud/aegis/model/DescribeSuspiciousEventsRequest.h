@@ -35,14 +35,32 @@ namespace AlibabaCloud
 				DescribeSuspiciousEventsRequest();
 				~DescribeSuspiciousEventsRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getLevel()const;
+				void setLevel(const std::string& level);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getDealed()const;
+				void setDealed(const std::string& dealed);
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
+				std::string getEventType()const;
+				void setEventType(const std::string& eventType);
+				std::string getUuid()const;
+				void setUuid(const std::string& uuid);
 
             private:
-				long resourceOwnerId_;
 				std::string sourceIp_;
+				std::string level_;
+				int pageSize_;
+				int currentPage_;
+				std::string dealed_;
+				std::string remark_;
+				std::string eventType_;
+				std::string uuid_;
 
 			};
 		}

@@ -35,30 +35,24 @@ namespace AlibabaCloud
 				DescribeVulListRequest();
 				~DescribeVulListRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
 				std::string getStatusList()const;
 				void setStatusList(const std::string& statusList);
 				std::string getLevel()const;
 				void setLevel(const std::string& level);
 				std::string getResource()const;
 				void setResource(const std::string& resource);
-				std::string getOrderBy()const;
-				void setOrderBy(const std::string& orderBy);
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
 				std::string getDealed()const;
 				void setDealed(const std::string& dealed);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				std::string getType()const;
 				void setType(const std::string& type);
-				long getLastTsEnd()const;
-				void setLastTsEnd(long lastTsEnd);
+				long getCreateTsStart()const;
+				void setCreateTsStart(long createTsStart);
 				std::string getBatchName()const;
 				void setBatchName(const std::string& batchName);
-				long getPatchId()const;
-				void setPatchId(long patchId);
 				std::string getAliasName()const;
 				void setAliasName(const std::string& aliasName);
 				std::string getSourceIp()const;
@@ -69,37 +63,31 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				long getLastTsStart()const;
-				void setLastTsStart(long lastTsStart);
+				long getCreateTsEnd()const;
+				void setCreateTsEnd(long createTsEnd);
 				std::string getNecessity()const;
 				void setNecessity(const std::string& necessity);
 				std::string getUuids()const;
 				void setUuids(const std::string& uuids);
-				std::string getDirection()const;
-				void setDirection(const std::string& direction);
 
             private:
-				long resourceOwnerId_;
-				std::string product_;
 				std::string statusList_;
 				std::string level_;
 				std::string resource_;
-				std::string orderBy_;
+				std::string remark_;
 				std::string dealed_;
 				int currentPage_;
 				std::string type_;
-				long lastTsEnd_;
+				long createTsStart_;
 				std::string batchName_;
-				long patchId_;
 				std::string aliasName_;
 				std::string sourceIp_;
 				std::string name_;
 				int pageSize_;
 				std::string lang_;
-				long lastTsStart_;
+				long createTsEnd_;
 				std::string necessity_;
 				std::string uuids_;
-				std::string direction_;
 
 			};
 		}

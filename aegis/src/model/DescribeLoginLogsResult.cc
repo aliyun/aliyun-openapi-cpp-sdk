@@ -40,18 +40,58 @@ void DescribeLoginLogsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allLoginLogs = value["LoginLogs"]["StringItem"];
-	for (const auto &item : allLoginLogs)
-		loginLogs_.push_back(item.asString());
+	auto allLogList = value["LogList"]["LogListItem"];
+	for (auto value : allLogList)
+	{
+		LogListItem logListObject;
+		if(!value["LoginSourceIp"].isNull())
+			logListObject.loginSourceIp = value["LoginSourceIp"].asString();
+		if(!value["InstanceName"].isNull())
+			logListObject.instanceName = value["InstanceName"].asString();
+		if(!value["GroupId"].isNull())
+			logListObject.groupId = std::stol(value["GroupId"].asString());
+		if(!value["Ip"].isNull())
+			logListObject.ip = value["Ip"].asString();
+		if(!value["Type"].isNull())
+			logListObject.type = value["Type"].asString();
+		if(!value["UserName"].isNull())
+			logListObject.userName = value["UserName"].asString();
+		if(!value["Uuid"].isNull())
+			logListObject.uuid = value["Uuid"].asString();
+		if(!value["Protocol"].isNull())
+			logListObject.protocol = std::stoi(value["Protocol"].asString());
+		if(!value["LoginTime"].isNull())
+			logListObject.loginTime = std::stol(value["LoginTime"].asString());
+		if(!value["InstanceId"].isNull())
+			logListObject.instanceId = value["InstanceId"].asString();
+		if(!value["OsVersion"].isNull())
+			logListObject.osVersion = value["OsVersion"].asString();
+		if(!value["ProtocolName"].isNull())
+			logListObject.protocolName = value["ProtocolName"].asString();
+		if(!value["Online"].isNull())
+			logListObject.online = value["Online"].asString();
+		if(!value["Location"].isNull())
+			logListObject.location = value["Location"].asString();
+		if(!value["id"].isNull())
+			logListObject.id = std::stol(value["id"].asString());
+		if(!value["Region"].isNull())
+			logListObject.region = value["Region"].asString();
+		if(!value["Status"].isNull())
+			logListObject.status = std::stoi(value["Status"].asString());
+		logList_.push_back(logListObject);
+	}
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 
+}
+
+std::vector<DescribeLoginLogsResult::LogListItem> DescribeLoginLogsResult::getLogList()const
+{
+	return logList_;
 }
 
 int DescribeLoginLogsResult::getTotalCount()const
@@ -67,15 +107,5 @@ int DescribeLoginLogsResult::getPageSize()const
 int DescribeLoginLogsResult::getCurrentPage()const
 {
 	return currentPage_;
-}
-
-int DescribeLoginLogsResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
-}
-
-std::vector<std::string> DescribeLoginLogsResult::getLoginLogs()const
-{
-	return loginLogs_;
 }
 

@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getTypeNames()const;
 				void setTypeNames(const std::string& typeNames);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRiskName()const;
 				void setRiskName(const std::string& riskName);
 				std::string getStatusList()const;
@@ -49,6 +47,8 @@ namespace AlibabaCloud
 				void setRiskLevels(const std::string& riskLevels);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				long getStrategyId()const;
+				void setStrategyId(long strategyId);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				std::string getDealed()const;
@@ -60,12 +60,12 @@ namespace AlibabaCloud
 
             private:
 				std::string typeNames_;
-				long resourceOwnerId_;
 				std::string riskName_;
 				std::string statusList_;
 				std::string sourceIp_;
 				std::string riskLevels_;
 				int pageSize_;
+				long strategyId_;
 				int currentPage_;
 				std::string dealed_;
 				std::string subTypeNames_;

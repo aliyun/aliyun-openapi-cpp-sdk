@@ -33,7 +33,7 @@ int CreateInstanceRequest::getDuration()const
 void CreateInstanceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", std::to_string(duration));
 }
 
 bool CreateInstanceRequest::getIsAutoRenew()const
@@ -44,7 +44,7 @@ bool CreateInstanceRequest::getIsAutoRenew()const
 void CreateInstanceRequest::setIsAutoRenew(bool isAutoRenew)
 {
 	isAutoRenew_ = isAutoRenew;
-	setParameter("IsAutoRenew", std::to_string(isAutoRenew));
+	setCoreParameter("IsAutoRenew", isAutoRenew ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string CreateInstanceRequest::getClientToken()const
 void CreateInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 int CreateInstanceRequest::getVmNumber()const
@@ -66,7 +66,7 @@ int CreateInstanceRequest::getVmNumber()const
 void CreateInstanceRequest::setVmNumber(int vmNumber)
 {
 	vmNumber_ = vmNumber;
-	setParameter("VmNumber", std::to_string(vmNumber));
+	setCoreParameter("VmNumber", std::to_string(vmNumber));
 }
 
 long CreateInstanceRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long CreateInstanceRequest::getOwnerId()const
 void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int CreateInstanceRequest::getVersionCode()const
@@ -88,7 +88,7 @@ int CreateInstanceRequest::getVersionCode()const
 void CreateInstanceRequest::setVersionCode(int versionCode)
 {
 	versionCode_ = versionCode;
-	setParameter("VersionCode", std::to_string(versionCode));
+	setCoreParameter("VersionCode", std::to_string(versionCode));
 }
 
 std::string CreateInstanceRequest::getPricingCycle()const
@@ -99,7 +99,7 @@ std::string CreateInstanceRequest::getPricingCycle()const
 void CreateInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", pricingCycle);
 }
 
 int CreateInstanceRequest::getAutoRenewDuration()const
@@ -110,6 +110,6 @@ int CreateInstanceRequest::getAutoRenewDuration()const
 void CreateInstanceRequest::setAutoRenewDuration(int autoRenewDuration)
 {
 	autoRenewDuration_ = autoRenewDuration;
-	setParameter("AutoRenewDuration", std::to_string(autoRenewDuration));
+	setCoreParameter("AutoRenewDuration", std::to_string(autoRenewDuration));
 }
 

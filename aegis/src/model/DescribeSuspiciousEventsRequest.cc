@@ -25,17 +25,6 @@ DescribeSuspiciousEventsRequest::DescribeSuspiciousEventsRequest() :
 DescribeSuspiciousEventsRequest::~DescribeSuspiciousEventsRequest()
 {}
 
-long DescribeSuspiciousEventsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeSuspiciousEventsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DescribeSuspiciousEventsRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -44,6 +33,83 @@ std::string DescribeSuspiciousEventsRequest::getSourceIp()const
 void DescribeSuspiciousEventsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeSuspiciousEventsRequest::getLevel()const
+{
+	return level_;
+}
+
+void DescribeSuspiciousEventsRequest::setLevel(const std::string& level)
+{
+	level_ = level;
+	setCoreParameter("Level", level);
+}
+
+int DescribeSuspiciousEventsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeSuspiciousEventsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+int DescribeSuspiciousEventsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeSuspiciousEventsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeSuspiciousEventsRequest::getDealed()const
+{
+	return dealed_;
+}
+
+void DescribeSuspiciousEventsRequest::setDealed(const std::string& dealed)
+{
+	dealed_ = dealed;
+	setCoreParameter("Dealed", dealed);
+}
+
+std::string DescribeSuspiciousEventsRequest::getRemark()const
+{
+	return remark_;
+}
+
+void DescribeSuspiciousEventsRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
+std::string DescribeSuspiciousEventsRequest::getEventType()const
+{
+	return eventType_;
+}
+
+void DescribeSuspiciousEventsRequest::setEventType(const std::string& eventType)
+{
+	eventType_ = eventType;
+	setCoreParameter("EventType", eventType);
+}
+
+std::string DescribeSuspiciousEventsRequest::getUuid()const
+{
+	return uuid_;
+}
+
+void DescribeSuspiciousEventsRequest::setUuid(const std::string& uuid)
+{
+	uuid_ = uuid;
+	setCoreParameter("Uuid", uuid);
 }
 

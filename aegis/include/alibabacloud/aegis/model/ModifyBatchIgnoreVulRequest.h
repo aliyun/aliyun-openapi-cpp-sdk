@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getReason()const;
 				void setReason(const std::string& reason);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getInfo()const;
@@ -46,7 +44,6 @@ namespace AlibabaCloud
 
             private:
 				std::string reason_;
-				long resourceOwnerId_;
 				std::string sourceIp_;
 				std::string info_;
 

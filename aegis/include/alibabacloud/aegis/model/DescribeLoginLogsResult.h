@@ -32,25 +32,43 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_AEGIS_EXPORT DescribeLoginLogsResult : public ServiceResult
 			{
 			public:
+				struct LogListItem
+				{
+					int status;
+					long loginTime;
+					std::string protocolName;
+					std::string loginSourceIp;
+					std::string userName;
+					std::string instanceId;
+					std::string ip;
+					std::string osVersion;
+					long groupId;
+					std::string instanceName;
+					std::string type;
+					std::string uuid;
+					std::string region;
+					long id;
+					int protocol;
+					std::string online;
+					std::string location;
+				};
 
 
 				DescribeLoginLogsResult();
 				explicit DescribeLoginLogsResult(const std::string &payload);
 				~DescribeLoginLogsResult();
+				std::vector<LogListItem> getLogList()const;
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getCurrentPage()const;
-				int getHttpStatusCode()const;
-				std::vector<std::string> getLoginLogs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<LogListItem> logList_;
 				int totalCount_;
 				int pageSize_;
 				int currentPage_;
-				int httpStatusCode_;
-				std::vector<std::string> loginLogs_;
 
 			};
 		}

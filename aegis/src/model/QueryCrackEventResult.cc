@@ -40,66 +40,56 @@ void QueryCrackEventResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"];
-	for (auto value : allData)
+	auto dataNode = value["Data"];
+	auto allList = value["List"]["Entity"];
+	for (auto value : allList)
 	{
-		Data dataObject;
-		auto allList = value["List"]["Entity"];
-		for (auto value : allList)
-		{
-			Data::Entity entityObject;
-			if(!value["Uuid"].isNull())
-				entityObject.uuid = value["Uuid"].asString();
-			if(!value["AttackTime"].isNull())
-				entityObject.attackTime = value["AttackTime"].asString();
-			if(!value["AttackType"].isNull())
-				entityObject.attackType = std::stoi(value["AttackType"].asString());
-			if(!value["AttackTypeName"].isNull())
-				entityObject.attackTypeName = value["AttackTypeName"].asString();
-			if(!value["BuyVersion"].isNull())
-				entityObject.buyVersion = value["BuyVersion"].asString();
-			if(!value["CrackSourceIp"].isNull())
-				entityObject.crackSourceIp = value["CrackSourceIp"].asString();
-			if(!value["CrackTimes"].isNull())
-				entityObject.crackTimes = std::stoi(value["CrackTimes"].asString());
-			if(!value["GroupId"].isNull())
-				entityObject.groupId = std::stoi(value["GroupId"].asString());
-			if(!value["InstanceName"].isNull())
-				entityObject.instanceName = value["InstanceName"].asString();
-			if(!value["InstanceId"].isNull())
-				entityObject.instanceId = value["InstanceId"].asString();
-			if(!value["Ip"].isNull())
-				entityObject.ip = value["Ip"].asString();
-			if(!value["Region"].isNull())
-				entityObject.region = value["Region"].asString();
-			if(!value["Status"].isNull())
-				entityObject.status = std::stoi(value["Status"].asString());
-			if(!value["StatusName"].isNull())
-				entityObject.statusName = value["StatusName"].asString();
-			if(!value["Location"].isNull())
-				entityObject.location = value["Location"].asString();
-			if(!value["InWhite"].isNull())
-				entityObject.inWhite = std::stoi(value["InWhite"].asString());
-			if(!value["UserName"].isNull())
-				entityObject.userName = value["UserName"].asString();
-			dataObject.list.push_back(entityObject);
-		}
-		auto allPageInfo = value["PageInfo"];
-		for (auto value : allPageInfo)
-		{
-			Data::PageInfo pageInfoObject;
-			if(!value["CurrentPage"].isNull())
-				pageInfoObject.currentPage = std::stoi(value["CurrentPage"].asString());
-			if(!value["PageSize"].isNull())
-				pageInfoObject.pageSize = std::stoi(value["PageSize"].asString());
-			if(!value["TotalCount"].isNull())
-				pageInfoObject.totalCount = std::stoi(value["TotalCount"].asString());
-			if(!value["Count"].isNull())
-				pageInfoObject.count = std::stoi(value["Count"].asString());
-			dataObject.pageInfo.push_back(pageInfoObject);
-		}
-		data_.push_back(dataObject);
+		Data::Entity entityObject;
+		if(!value["Uuid"].isNull())
+			entityObject.uuid = value["Uuid"].asString();
+		if(!value["AttackTime"].isNull())
+			entityObject.attackTime = value["AttackTime"].asString();
+		if(!value["AttackType"].isNull())
+			entityObject.attackType = std::stoi(value["AttackType"].asString());
+		if(!value["AttackTypeName"].isNull())
+			entityObject.attackTypeName = value["AttackTypeName"].asString();
+		if(!value["BuyVersion"].isNull())
+			entityObject.buyVersion = value["BuyVersion"].asString();
+		if(!value["CrackSourceIp"].isNull())
+			entityObject.crackSourceIp = value["CrackSourceIp"].asString();
+		if(!value["CrackTimes"].isNull())
+			entityObject.crackTimes = std::stoi(value["CrackTimes"].asString());
+		if(!value["GroupId"].isNull())
+			entityObject.groupId = std::stoi(value["GroupId"].asString());
+		if(!value["InstanceName"].isNull())
+			entityObject.instanceName = value["InstanceName"].asString();
+		if(!value["InstanceId"].isNull())
+			entityObject.instanceId = value["InstanceId"].asString();
+		if(!value["Ip"].isNull())
+			entityObject.ip = value["Ip"].asString();
+		if(!value["Region"].isNull())
+			entityObject.region = value["Region"].asString();
+		if(!value["Status"].isNull())
+			entityObject.status = std::stoi(value["Status"].asString());
+		if(!value["StatusName"].isNull())
+			entityObject.statusName = value["StatusName"].asString();
+		if(!value["Location"].isNull())
+			entityObject.location = value["Location"].asString();
+		if(!value["InWhite"].isNull())
+			entityObject.inWhite = std::stoi(value["InWhite"].asString());
+		if(!value["UserName"].isNull())
+			entityObject.userName = value["UserName"].asString();
+		data_.list.push_back(entityObject);
 	}
+	auto pageInfoNode = dataNode["PageInfo"];
+	if(!pageInfoNode["CurrentPage"].isNull())
+		data_.pageInfo.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["PageSize"].isNull())
+		data_.pageInfo.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
+	if(!pageInfoNode["TotalCount"].isNull())
+		data_.pageInfo.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		data_.pageInfo.count = std::stoi(pageInfoNode["Count"].asString());
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 	if(!value["Code"].isNull())
@@ -121,7 +111,7 @@ std::string QueryCrackEventResult::getMessage()const
 	return message_;
 }
 
-std::vector<QueryCrackEventResult::Data> QueryCrackEventResult::getData()const
+QueryCrackEventResult::Data QueryCrackEventResult::getData()const
 {
 	return data_;
 }

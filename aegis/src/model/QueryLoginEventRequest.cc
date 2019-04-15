@@ -33,7 +33,7 @@ std::string QueryLoginEventRequest::getEndTime()const
 void QueryLoginEventRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 int QueryLoginEventRequest::getCurrentPage()const
@@ -44,7 +44,7 @@ int QueryLoginEventRequest::getCurrentPage()const
 void QueryLoginEventRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryLoginEventRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string QueryLoginEventRequest::getStartTime()const
 void QueryLoginEventRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string QueryLoginEventRequest::getUuid()const
@@ -66,7 +66,7 @@ std::string QueryLoginEventRequest::getUuid()const
 void QueryLoginEventRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setParameter("Uuid", uuid);
+	setCoreParameter("Uuid", uuid);
 }
 
 int QueryLoginEventRequest::getStatus()const
@@ -77,6 +77,6 @@ int QueryLoginEventRequest::getStatus()const
 void QueryLoginEventRequest::setStatus(int status)
 {
 	status_ = status;
-	setParameter("Status", std::to_string(status));
+	setCoreParameter("Status", std::to_string(status));
 }
 

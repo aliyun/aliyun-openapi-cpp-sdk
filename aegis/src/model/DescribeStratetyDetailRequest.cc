@@ -25,17 +25,6 @@ DescribeStratetyDetailRequest::DescribeStratetyDetailRequest() :
 DescribeStratetyDetailRequest::~DescribeStratetyDetailRequest()
 {}
 
-long DescribeStratetyDetailRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeStratetyDetailRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DescribeStratetyDetailRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -44,7 +33,7 @@ std::string DescribeStratetyDetailRequest::getSourceIp()const
 void DescribeStratetyDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeStratetyDetailRequest::getId()const
@@ -55,6 +44,17 @@ std::string DescribeStratetyDetailRequest::getId()const
 void DescribeStratetyDetailRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
+}
+
+std::string DescribeStratetyDetailRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeStratetyDetailRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

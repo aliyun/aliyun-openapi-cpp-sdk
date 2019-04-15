@@ -40,9 +40,52 @@ void DescribeWarningResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allWarnings = value["Warnings"]["warning"];
-	for (const auto &item : allWarnings)
-		warnings_.push_back(item.asString());
+	auto allWarnings = value["Warnings"]["Warning"];
+	for (auto value : allWarnings)
+	{
+		Warning warningsObject;
+		if(!value["RiskWarningId"].isNull())
+			warningsObject.riskWarningId = std::stol(value["RiskWarningId"].asString());
+		if(!value["RiskName"].isNull())
+			warningsObject.riskName = value["RiskName"].asString();
+		if(!value["Uuid"].isNull())
+			warningsObject.uuid = value["Uuid"].asString();
+		if(!value["RirstFoundTime"].isNull())
+			warningsObject.rirstFoundTime = value["RirstFoundTime"].asString();
+		if(!value["LastFoundTime"].isNull())
+			warningsObject.lastFoundTime = value["LastFoundTime"].asString();
+		if(!value["Level"].isNull())
+			warningsObject.level = value["Level"].asString();
+		if(!value["TypeName"].isNull())
+			warningsObject.typeName = value["TypeName"].asString();
+		if(!value["SubTypeName"].isNull())
+			warningsObject.subTypeName = value["SubTypeName"].asString();
+		if(!value["TypeAlias"].isNull())
+			warningsObject.typeAlias = value["TypeAlias"].asString();
+		if(!value["SubTypeAlias"].isNull())
+			warningsObject.subTypeAlias = value["SubTypeAlias"].asString();
+		if(!value["Status"].isNull())
+			warningsObject.status = std::stoi(value["Status"].asString());
+		auto allDetails = value["Details"]["Detail"];
+		for (auto value : allDetails)
+		{
+			Warning::Detail detailsObject;
+			auto allDetailItems = value["DetailItems"]["DetailItem"];
+			for (auto value : allDetailItems)
+			{
+				Warning::Detail::DetailItem detailItemsObject;
+				if(!value["name"].isNull())
+					detailItemsObject.name = value["name"].asString();
+				if(!value["value"].isNull())
+					detailItemsObject.value = value["value"].asString();
+				if(!value["type"].isNull())
+					detailItemsObject.type = value["type"].asString();
+				detailsObject.detailItems.push_back(detailItemsObject);
+			}
+			warningsObject.details.push_back(detailsObject);
+		}
+		warnings_.push_back(warningsObject);
+	}
 	if(!value["Count"].isNull())
 		count_ = std::stoi(value["Count"].asString());
 	if(!value["PageSize"].isNull())
@@ -74,7 +117,7 @@ int DescribeWarningResult::getCount()const
 	return count_;
 }
 
-std::vector<std::string> DescribeWarningResult::getWarnings()const
+std::vector<DescribeWarningResult::Warning> DescribeWarningResult::getWarnings()const
 {
 	return warnings_;
 }

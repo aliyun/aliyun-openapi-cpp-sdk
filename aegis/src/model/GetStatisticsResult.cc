@@ -40,20 +40,15 @@ void GetStatisticsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"];
-	for (auto value : allData)
-	{
-		Data dataObject;
-		if(!value["Account"].isNull())
-			dataObject.account = std::stoi(value["Account"].asString());
-		if(!value["Health"].isNull())
-			dataObject.health = std::stoi(value["Health"].asString());
-		if(!value["Patch"].isNull())
-			dataObject.patch = std::stoi(value["Patch"].asString());
-		if(!value["Trojan"].isNull())
-			dataObject.trojan = std::stoi(value["Trojan"].asString());
-		data_.push_back(dataObject);
-	}
+	auto dataNode = value["Data"];
+	if(!dataNode["Account"].isNull())
+		data_.account = std::stoi(dataNode["Account"].asString());
+	if(!dataNode["Health"].isNull())
+		data_.health = std::stoi(dataNode["Health"].asString());
+	if(!dataNode["Patch"].isNull())
+		data_.patch = std::stoi(dataNode["Patch"].asString());
+	if(!dataNode["Trojan"].isNull())
+		data_.trojan = std::stoi(dataNode["Trojan"].asString());
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 	if(!value["Code"].isNull())
@@ -75,7 +70,7 @@ std::string GetStatisticsResult::getMessage()const
 	return message_;
 }
 
-std::vector<GetStatisticsResult::Data> GetStatisticsResult::getData()const
+GetStatisticsResult::Data GetStatisticsResult::getData()const
 {
 	return data_;
 }

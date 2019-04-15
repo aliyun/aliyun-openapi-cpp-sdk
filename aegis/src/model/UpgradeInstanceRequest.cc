@@ -33,7 +33,7 @@ std::string UpgradeInstanceRequest::getInstanceId()const
 void UpgradeInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string UpgradeInstanceRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string UpgradeInstanceRequest::getClientToken()const
 void UpgradeInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 int UpgradeInstanceRequest::getVmNumber()const
@@ -55,7 +55,7 @@ int UpgradeInstanceRequest::getVmNumber()const
 void UpgradeInstanceRequest::setVmNumber(int vmNumber)
 {
 	vmNumber_ = vmNumber;
-	setParameter("VmNumber", std::to_string(vmNumber));
+	setCoreParameter("VmNumber", std::to_string(vmNumber));
 }
 
 long UpgradeInstanceRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long UpgradeInstanceRequest::getOwnerId()const
 void UpgradeInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int UpgradeInstanceRequest::getVersionCode()const
@@ -77,6 +77,6 @@ int UpgradeInstanceRequest::getVersionCode()const
 void UpgradeInstanceRequest::setVersionCode(int versionCode)
 {
 	versionCode_ = versionCode;
-	setParameter("VersionCode", std::to_string(versionCode));
+	setCoreParameter("VersionCode", std::to_string(versionCode));
 }
 

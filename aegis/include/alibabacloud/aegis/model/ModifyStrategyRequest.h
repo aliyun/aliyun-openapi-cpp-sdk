@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				ModifyStrategyRequest();
 				~ModifyStrategyRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRiskSubTypeName()const;
 				void setRiskSubTypeName(const std::string& riskSubTypeName);
 				std::string getSourceIp()const;
@@ -51,7 +49,6 @@ namespace AlibabaCloud
 				void setId(const std::string& id);
 
             private:
-				long resourceOwnerId_;
 				std::string riskSubTypeName_;
 				std::string sourceIp_;
 				std::string cycleStartTime_;

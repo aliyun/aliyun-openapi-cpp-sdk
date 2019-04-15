@@ -40,10 +40,10 @@ void DescribeStratetyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allStrategies = value["Strategies"]["Data"];
+	auto allStrategies = value["Strategies"]["Strategy"];
 	for (auto value : allStrategies)
 	{
-		Data strategiesObject;
+		Strategy strategiesObject;
 		if(!value["CycleDays"].isNull())
 			strategiesObject.cycleDays = std::stoi(value["CycleDays"].asString());
 		if(!value["Id"].isNull())
@@ -58,10 +58,16 @@ void DescribeStratetyResult::parse(const std::string &payload)
 			strategiesObject.riskCount = std::stoi(value["RiskCount"].asString());
 		if(!value["EcsCount"].isNull())
 			strategiesObject.ecsCount = std::stoi(value["EcsCount"].asString());
+		if(!value["ExecStatus"].isNull())
+			strategiesObject.execStatus = std::stoi(value["ExecStatus"].asString());
+		if(!value["ProcessRate"].isNull())
+			strategiesObject.processRate = std::stoi(value["ProcessRate"].asString());
+		if(!value["PassRate"].isNull())
+			strategiesObject.passRate = std::stoi(value["PassRate"].asString());
 		auto allConfigTargets = value["ConfigTargets"]["ConfigTarget"];
 		for (auto value : allConfigTargets)
 		{
-			Data::ConfigTarget configTargetsObject;
+			Strategy::ConfigTarget configTargetsObject;
 			if(!value["Flag"].isNull())
 				configTargetsObject.flag = value["Flag"].asString();
 			if(!value["TargetType"].isNull())
@@ -72,18 +78,11 @@ void DescribeStratetyResult::parse(const std::string &payload)
 		}
 		strategies_.push_back(strategiesObject);
 	}
-	if(!value["Count"].isNull())
-		count_ = std::stoi(value["Count"].asString());
 
 }
 
-std::vector<DescribeStratetyResult::Data> DescribeStratetyResult::getStrategies()const
+std::vector<DescribeStratetyResult::Strategy> DescribeStratetyResult::getStrategies()const
 {
 	return strategies_;
-}
-
-int DescribeStratetyResult::getCount()const
-{
-	return count_;
 }
 

@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_AEGIS_EXPORT DescribeStratetyResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct Strategy
 				{
 					struct ConfigTarget
 					{
@@ -43,9 +43,12 @@ namespace AlibabaCloud
 					int cycleStartTime;
 					int ecsCount;
 					int type;
+					int execStatus;
+					int passRate;
+					int processRate;
 					int cycleDays;
 					int id;
-					std::vector<Data::ConfigTarget> configTargets;
+					std::vector<Strategy::ConfigTarget> configTargets;
 					int riskCount;
 					std::string name;
 				};
@@ -54,14 +57,12 @@ namespace AlibabaCloud
 				DescribeStratetyResult();
 				explicit DescribeStratetyResult(const std::string &payload);
 				~DescribeStratetyResult();
-				std::vector<Data> getStrategies()const;
-				int getCount()const;
+				std::vector<Strategy> getStrategies()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Data> strategies_;
-				int count_;
+				std::vector<Strategy> strategies_;
 
 			};
 		}

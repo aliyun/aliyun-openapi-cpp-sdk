@@ -40,119 +40,67 @@ void DescribeVulDetailsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allCveLists = value["CveLists"]["cve"];
-	for (const auto &item : allCveLists)
-		cveLists_.push_back(item.asString());
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["AliasName"].isNull())
-		aliasName_ = value["AliasName"].asString();
-	if(!value["Level"].isNull())
-		level_ = value["Level"].asString();
-	if(!value["VulPublishTs"].isNull())
-		vulPublishTs_ = std::stol(value["VulPublishTs"].asString());
-	if(!value["Type"].isNull())
-		type_ = value["Type"].asString();
-	if(!value["Product"].isNull())
-		product_ = value["Product"].asString();
-	if(!value["HasPatch"].isNull())
-		hasPatch_ = value["HasPatch"].asString() == "true";
-	if(!value["PatchPublishTs"].isNull())
-		patchPublishTs_ = std::stol(value["PatchPublishTs"].asString());
-	if(!value["PatchSource"].isNull())
-		patchSource_ = value["PatchSource"].asString();
-	if(!value["Cvss"].isNull())
-		cvss_ = value["Cvss"].asString();
-	if(!value["CveIds"].isNull())
-		cveIds_ = value["CveIds"].asString();
-	if(!value["Advice"].isNull())
-		advice_ = value["Advice"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["PendingCount"].isNull())
-		pendingCount_ = std::stoi(value["PendingCount"].asString());
-	if(!value["HandledCount"].isNull())
-		handledCount_ = std::stoi(value["HandledCount"].asString());
+	auto allCves = value["Cves"]["Cve"];
+	for (auto value : allCves)
+	{
+		Cve cvesObject;
+		if(!value["CveId"].isNull())
+			cvesObject.cveId = value["CveId"].asString();
+		if(!value["CnvdId"].isNull())
+			cvesObject.cnvdId = value["CnvdId"].asString();
+		if(!value["OtherId"].isNull())
+			cvesObject.otherId = value["OtherId"].asString();
+		if(!value["Title"].isNull())
+			cvesObject.title = value["Title"].asString();
+		if(!value["CvssScore"].isNull())
+			cvesObject.cvssScore = value["CvssScore"].asString();
+		if(!value["CvssVector"].isNull())
+			cvesObject.cvssVector = value["CvssVector"].asString();
+		if(!value["ReleaseTime"].isNull())
+			cvesObject.releaseTime = std::stol(value["ReleaseTime"].asString());
+		if(!value["Complexity"].isNull())
+			cvesObject.complexity = value["Complexity"].asString();
+		if(!value["Poc"].isNull())
+			cvesObject.poc = value["Poc"].asString();
+		if(!value["PocCreateTime"].isNull())
+			cvesObject.pocCreateTime = std::stol(value["PocCreateTime"].asString());
+		if(!value["PocDisclosureTime"].isNull())
+			cvesObject.pocDisclosureTime = std::stol(value["PocDisclosureTime"].asString());
+		if(!value["Summary"].isNull())
+			cvesObject.summary = value["Summary"].asString();
+		if(!value["Solution"].isNull())
+			cvesObject.solution = value["Solution"].asString();
+		if(!value["Content"].isNull())
+			cvesObject.content = value["Content"].asString();
+		if(!value["Vendor"].isNull())
+			cvesObject.vendor = value["Vendor"].asString();
+		if(!value["Product"].isNull())
+			cvesObject.product = value["Product"].asString();
+		if(!value["VulLevel"].isNull())
+			cvesObject.vulLevel = value["VulLevel"].asString();
+		if(!value["Reference"].isNull())
+			cvesObject.reference = value["Reference"].asString();
+		if(!value["Classify"].isNull())
+			cvesObject.classify = value["Classify"].asString();
+		auto allClassifys = value["Classifys"]["Classify"];
+		for (auto value : allClassifys)
+		{
+			Cve::Classify classifysObject;
+			if(!value["Classify"].isNull())
+				classifysObject.classify = value["Classify"].asString();
+			if(!value["Description"].isNull())
+				classifysObject.description = value["Description"].asString();
+			if(!value["DemoVideoUrl"].isNull())
+				classifysObject.demoVideoUrl = value["DemoVideoUrl"].asString();
+			cvesObject.classifys.push_back(classifysObject);
+		}
+		cves_.push_back(cvesObject);
+	}
 
 }
 
-int DescribeVulDetailsResult::getPendingCount()const
+std::vector<DescribeVulDetailsResult::Cve> DescribeVulDetailsResult::getCves()const
 {
-	return pendingCount_;
-}
-
-std::string DescribeVulDetailsResult::getDescription()const
-{
-	return description_;
-}
-
-std::vector<std::string> DescribeVulDetailsResult::getCveLists()const
-{
-	return cveLists_;
-}
-
-std::string DescribeVulDetailsResult::getCveIds()const
-{
-	return cveIds_;
-}
-
-long DescribeVulDetailsResult::getVulPublishTs()const
-{
-	return vulPublishTs_;
-}
-
-std::string DescribeVulDetailsResult::getProduct()const
-{
-	return product_;
-}
-
-bool DescribeVulDetailsResult::getHasPatch()const
-{
-	return hasPatch_;
-}
-
-std::string DescribeVulDetailsResult::getName()const
-{
-	return name_;
-}
-
-std::string DescribeVulDetailsResult::getType()const
-{
-	return type_;
-}
-
-std::string DescribeVulDetailsResult::getCvss()const
-{
-	return cvss_;
-}
-
-long DescribeVulDetailsResult::getPatchPublishTs()const
-{
-	return patchPublishTs_;
-}
-
-int DescribeVulDetailsResult::getHandledCount()const
-{
-	return handledCount_;
-}
-
-std::string DescribeVulDetailsResult::getAliasName()const
-{
-	return aliasName_;
-}
-
-std::string DescribeVulDetailsResult::getLevel()const
-{
-	return level_;
-}
-
-std::string DescribeVulDetailsResult::getAdvice()const
-{
-	return advice_;
-}
-
-std::string DescribeVulDetailsResult::getPatchSource()const
-{
-	return patchSource_;
+	return cves_;
 }
 

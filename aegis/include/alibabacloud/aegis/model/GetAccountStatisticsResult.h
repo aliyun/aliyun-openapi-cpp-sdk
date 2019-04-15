@@ -44,7 +44,7 @@ namespace AlibabaCloud
 				~GetAccountStatisticsResult();
 				std::string getRequestId()const;
 				std::string getMessage()const;
-				std::vector<Data> getData()const;
+				Data getData()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -53,7 +53,7 @@ namespace AlibabaCloud
 			private:
 				std::string requestId_;
 				std::string message_;
-				std::vector<Data> data_;
+				Data data_;
 				std::string code_;
 				bool success_;
 

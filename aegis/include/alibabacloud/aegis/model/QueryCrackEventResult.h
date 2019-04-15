@@ -61,7 +61,7 @@ namespace AlibabaCloud
 						std::string attackTime;
 						std::string location;
 					};
-					std::vector<PageInfo> pageInfo;
+					PageInfo pageInfo;
 					std::vector<Entity> list;
 				};
 
@@ -71,7 +71,7 @@ namespace AlibabaCloud
 				~QueryCrackEventResult();
 				std::string getRequestId()const;
 				std::string getMessage()const;
-				std::vector<Data> getData()const;
+				Data getData()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -80,7 +80,7 @@ namespace AlibabaCloud
 			private:
 				std::string requestId_;
 				std::string message_;
-				std::vector<Data> data_;
+				Data data_;
 				std::string code_;
 				bool success_;
 

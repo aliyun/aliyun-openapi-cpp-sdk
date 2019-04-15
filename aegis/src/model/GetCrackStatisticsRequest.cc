@@ -33,7 +33,7 @@ std::string GetCrackStatisticsRequest::getEndTime()const
 void GetCrackStatisticsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string GetCrackStatisticsRequest::getStartTime()const
@@ -44,6 +44,6 @@ std::string GetCrackStatisticsRequest::getStartTime()const
 void GetCrackStatisticsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 

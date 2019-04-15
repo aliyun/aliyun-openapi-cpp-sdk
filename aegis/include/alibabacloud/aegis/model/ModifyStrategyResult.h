@@ -44,7 +44,7 @@ namespace AlibabaCloud
 				int getTotalCount()const;
 				int getHttpStatusCode()const;
 				bool getSuccess()const;
-				std::vector<Result> getResult()const;
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -52,7 +52,7 @@ namespace AlibabaCloud
 				int totalCount_;
 				int httpStatusCode_;
 				bool success_;
-				std::vector<Result> result_;
+				Result result_;
 
 			};
 		}

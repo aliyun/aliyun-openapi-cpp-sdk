@@ -40,18 +40,68 @@ void DescribeSuspiciousEventsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allSuspiciousEvents = value["SuspiciousEvents"]["StringItem"];
-	for (const auto &item : allSuspiciousEvents)
-		suspiciousEvents_.push_back(item.asString());
+	auto allLogList = value["LogList"]["LogListItem"];
+	for (auto value : allLogList)
+	{
+		LogListItem logListObject;
+		if(!value["AliasEventType"].isNull())
+			logListObject.aliasEventType = value["AliasEventType"].asString();
+		if(!value["LastTime"].isNull())
+			logListObject.lastTime = std::stol(value["LastTime"].asString());
+		if(!value["Level"].isNull())
+			logListObject.level = value["Level"].asString();
+		if(!value["InstanceName"].isNull())
+			logListObject.instanceName = value["InstanceName"].asString();
+		if(!value["GroupId"].isNull())
+			logListObject.groupId = std::stol(value["GroupId"].asString());
+		if(!value["Ip"].isNull())
+			logListObject.ip = value["Ip"].asString();
+		if(!value["EventType"].isNull())
+			logListObject.eventType = value["EventType"].asString();
+		if(!value["Uuid"].isNull())
+			logListObject.uuid = value["Uuid"].asString();
+		if(!value["FirstTime"].isNull())
+			logListObject.firstTime = std::stol(value["FirstTime"].asString());
+		if(!value["InstanceId"].isNull())
+			logListObject.instanceId = value["InstanceId"].asString();
+		if(!value["Tag"].isNull())
+			logListObject.tag = value["Tag"].asString();
+		if(!value["AliasEventName"].isNull())
+			logListObject.aliasEventName = value["AliasEventName"].asString();
+		if(!value["OsVersion"].isNull())
+			logListObject.osVersion = value["OsVersion"].asString();
+		if(!value["ClientIp"].isNull())
+			logListObject.clientIp = value["ClientIp"].asString();
+		if(!value["EventName"].isNull())
+			logListObject.eventName = value["EventName"].asString();
+		auto allDetailList = value["DetailList"]["DetailListItem"];
+		for (auto value : allDetailList)
+		{
+			LogListItem::DetailListItem detailListObject;
+			if(!value["Name"].isNull())
+				detailListObject.name = value["Name"].asString();
+			if(!value["Type"].isNull())
+				detailListObject.type = value["Type"].asString();
+			if(!value["Value"].isNull())
+				detailListObject.value = value["Value"].asString();
+			if(!value["InfoType"].isNull())
+				detailListObject.infoType = value["InfoType"].asString();
+			logListObject.detailList.push_back(detailListObject);
+		}
+		logList_.push_back(logListObject);
+	}
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 
+}
+
+std::vector<DescribeSuspiciousEventsResult::LogListItem> DescribeSuspiciousEventsResult::getLogList()const
+{
+	return logList_;
 }
 
 int DescribeSuspiciousEventsResult::getTotalCount()const
@@ -64,18 +114,8 @@ int DescribeSuspiciousEventsResult::getPageSize()const
 	return pageSize_;
 }
 
-std::vector<std::string> DescribeSuspiciousEventsResult::getSuspiciousEvents()const
-{
-	return suspiciousEvents_;
-}
-
 int DescribeSuspiciousEventsResult::getCurrentPage()const
 {
 	return currentPage_;
-}
-
-int DescribeSuspiciousEventsResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
 }
 

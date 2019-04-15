@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_AEGIS_EXPORT DescribeStrategyTargetResult : public ServiceResult
 			{
 			public:
-				struct StringItem
+				struct StrategyTarget
 				{
 					std::string target;
 					std::string targetType;
@@ -43,14 +43,12 @@ namespace AlibabaCloud
 				DescribeStrategyTargetResult();
 				explicit DescribeStrategyTargetResult(const std::string &payload);
 				~DescribeStrategyTargetResult();
-				std::vector<StringItem> getStrategyTargets()const;
-				int getCount()const;
+				std::vector<StrategyTarget> getStrategyTargets()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<StringItem> strategyTargets_;
-				int count_;
+				std::vector<StrategyTarget> strategyTargets_;
 
 			};
 		}

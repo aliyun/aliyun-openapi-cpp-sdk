@@ -40,27 +40,45 @@ void DescribeWebshellResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["CurrentPage"].isNull())
-		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	auto allWebshellList = value["WebshellList"]["WebshellListItem"];
+	for (auto value : allWebshellList)
+	{
+		WebshellListItem webshellListObject;
+		if(!value["Os"].isNull())
+			webshellListObject.os = value["Os"].asString();
+		if(!value["InstanceName"].isNull())
+			webshellListObject.instanceName = value["InstanceName"].asString();
+		if(!value["GroupId"].isNull())
+			webshellListObject.groupId = std::stol(value["GroupId"].asString());
+		if(!value["Ip"].isNull())
+			webshellListObject.ip = value["Ip"].asString();
+		if(!value["Uuid"].isNull())
+			webshellListObject.uuid = value["Uuid"].asString();
+		if(!value["FoundTime"].isNull())
+			webshellListObject.foundTime = value["FoundTime"].asString();
+		if(!value["InstanceId"].isNull())
+			webshellListObject.instanceId = value["InstanceId"].asString();
+		if(!value["TrojanType"].isNull())
+			webshellListObject.trojanType = value["TrojanType"].asString();
+		if(!value["FirstFoundTime"].isNull())
+			webshellListObject.firstFoundTime = value["FirstFoundTime"].asString();
+		if(!value["TrojanSize"].isNull())
+			webshellListObject.trojanSize = std::stol(value["TrojanSize"].asString());
+		if(!value["Domain"].isNull())
+			webshellListObject.domain = value["Domain"].asString();
+		if(!value["TrojanPath"].isNull())
+			webshellListObject.trojanPath = value["TrojanPath"].asString();
+		if(!value["Region"].isNull())
+			webshellListObject.region = value["Region"].asString();
+		if(!value["Status"].isNull())
+			webshellListObject.status = std::stoi(value["Status"].asString());
+		webshellList_.push_back(webshellListObject);
+	}
 
 }
 
-int DescribeWebshellResult::getTotalCount()const
+std::vector<DescribeWebshellResult::WebshellListItem> DescribeWebshellResult::getWebshellList()const
 {
-	return totalCount_;
-}
-
-int DescribeWebshellResult::getPageSize()const
-{
-	return pageSize_;
-}
-
-int DescribeWebshellResult::getCurrentPage()const
-{
-	return currentPage_;
+	return webshellList_;
 }
 

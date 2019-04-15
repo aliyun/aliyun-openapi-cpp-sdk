@@ -32,21 +32,34 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_AEGIS_EXPORT DescribeWebshellResult : public ServiceResult
 			{
 			public:
+				struct WebshellListItem
+				{
+					std::string foundTime;
+					int status;
+					long trojanSize;
+					std::string os;
+					std::string instanceId;
+					std::string trojanType;
+					std::string ip;
+					std::string trojanPath;
+					std::string firstFoundTime;
+					long groupId;
+					std::string instanceName;
+					std::string uuid;
+					std::string region;
+					std::string domain;
+				};
 
 
 				DescribeWebshellResult();
 				explicit DescribeWebshellResult(const std::string &payload);
 				~DescribeWebshellResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getCurrentPage()const;
+				std::vector<WebshellListItem> getWebshellList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				int currentPage_;
+				std::vector<WebshellListItem> webshellList_;
 
 			};
 		}

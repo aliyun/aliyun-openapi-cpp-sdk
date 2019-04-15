@@ -35,14 +35,17 @@ namespace AlibabaCloud
 				DescribeStratetyRequest();
 				~DescribeStratetyRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getStrategyIds()const;
+				void setStrategyIds(const std::string& strategyIds);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
-				long resourceOwnerId_;
 				std::string sourceIp_;
+				std::string strategyIds_;
+				std::string lang_;
 
 			};
 		}

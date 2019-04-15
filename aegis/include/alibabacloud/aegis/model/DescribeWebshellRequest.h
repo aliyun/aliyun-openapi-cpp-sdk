@@ -35,20 +35,23 @@ namespace AlibabaCloud
 				DescribeWebshellRequest();
 				~DescribeWebshellRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getGroupId()const;
 				void setGroupId(int groupId);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
+				std::string getDealed()const;
+				void setDealed(const std::string& dealed);
+				int getTag()const;
+				void setTag(int tag);
 
             private:
-				long resourceOwnerId_;
 				std::string sourceIp_;
 				int groupId_;
 				std::string remark_;
+				std::string dealed_;
+				int tag_;
 
 			};
 		}

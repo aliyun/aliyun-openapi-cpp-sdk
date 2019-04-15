@@ -35,20 +35,29 @@ namespace AlibabaCloud
 				DescribeLoginLogsRequest();
 				~DescribeLoginLogsRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
+				std::string getTypes()const;
+				void setTypes(const std::string& types);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getStatuses()const;
+				void setStatuses(const std::string& statuses);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
+				std::string getTag()const;
+				void setTag(const std::string& tag);
 
             private:
-				long resourceOwnerId_;
+				std::string types_;
 				std::string sourceIp_;
 				int pageSize_;
+				std::string statuses_;
 				int currentPage_;
+				std::string remark_;
+				std::string tag_;
 
 			};
 		}

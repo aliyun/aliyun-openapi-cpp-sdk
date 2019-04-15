@@ -37,14 +37,10 @@ namespace AlibabaCloud
 				ModifyBatchIgnoreVulResult();
 				explicit ModifyBatchIgnoreVulResult(const std::string &payload);
 				~ModifyBatchIgnoreVulResult();
-				int getHttpStatusCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int httpStatusCode_;
-				bool success_;
 
 			};
 		}

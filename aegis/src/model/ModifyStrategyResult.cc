@@ -40,14 +40,9 @@ void ModifyStrategyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"];
-	for (auto value : allResult)
-	{
-		Result resultObject;
-		if(!value["StrategyId"].isNull())
-			resultObject.strategyId = std::stoi(value["StrategyId"].asString());
-		result_.push_back(resultObject);
-	}
+	auto resultNode = value["Result"];
+	if(!resultNode["StrategyId"].isNull())
+		result_.strategyId = std::stoi(resultNode["StrategyId"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["TotalCount"].isNull())
@@ -72,7 +67,7 @@ bool ModifyStrategyResult::getSuccess()const
 	return success_;
 }
 
-std::vector<ModifyStrategyResult::Result> ModifyStrategyResult::getResult()const
+ModifyStrategyResult::Result ModifyStrategyResult::getResult()const
 {
 	return result_;
 }

@@ -25,17 +25,6 @@ DescribeWebshellRequest::DescribeWebshellRequest() :
 DescribeWebshellRequest::~DescribeWebshellRequest()
 {}
 
-long DescribeWebshellRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeWebshellRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DescribeWebshellRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -44,7 +33,7 @@ std::string DescribeWebshellRequest::getSourceIp()const
 void DescribeWebshellRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeWebshellRequest::getGroupId()const
@@ -55,7 +44,7 @@ int DescribeWebshellRequest::getGroupId()const
 void DescribeWebshellRequest::setGroupId(int groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeWebshellRequest::getRemark()const
@@ -66,6 +55,28 @@ std::string DescribeWebshellRequest::getRemark()const
 void DescribeWebshellRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setParameter("Remark", remark);
+	setCoreParameter("Remark", remark);
+}
+
+std::string DescribeWebshellRequest::getDealed()const
+{
+	return dealed_;
+}
+
+void DescribeWebshellRequest::setDealed(const std::string& dealed)
+{
+	dealed_ = dealed;
+	setCoreParameter("Dealed", dealed);
+}
+
+int DescribeWebshellRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeWebshellRequest::setTag(int tag)
+{
+	tag_ = tag;
+	setCoreParameter("Tag", std::to_string(tag));
 }
 

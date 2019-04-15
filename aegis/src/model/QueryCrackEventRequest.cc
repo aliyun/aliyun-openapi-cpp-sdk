@@ -33,7 +33,7 @@ std::string QueryCrackEventRequest::getEndTime()const
 void QueryCrackEventRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 int QueryCrackEventRequest::getCurrentPage()const
@@ -44,7 +44,7 @@ int QueryCrackEventRequest::getCurrentPage()const
 void QueryCrackEventRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryCrackEventRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string QueryCrackEventRequest::getStartTime()const
 void QueryCrackEventRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string QueryCrackEventRequest::getUuid()const
@@ -66,7 +66,7 @@ std::string QueryCrackEventRequest::getUuid()const
 void QueryCrackEventRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setParameter("Uuid", uuid);
+	setCoreParameter("Uuid", uuid);
 }
 
 int QueryCrackEventRequest::getStatus()const
@@ -77,6 +77,6 @@ int QueryCrackEventRequest::getStatus()const
 void QueryCrackEventRequest::setStatus(int status)
 {
 	status_ = status;
-	setParameter("Status", std::to_string(status));
+	setCoreParameter("Status", std::to_string(status));
 }
 

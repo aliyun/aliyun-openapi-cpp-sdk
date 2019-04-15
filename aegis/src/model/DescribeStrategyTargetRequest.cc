@@ -25,17 +25,6 @@ DescribeStrategyTargetRequest::DescribeStrategyTargetRequest() :
 DescribeStrategyTargetRequest::~DescribeStrategyTargetRequest()
 {}
 
-long DescribeStrategyTargetRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeStrategyTargetRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DescribeStrategyTargetRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -44,7 +33,7 @@ std::string DescribeStrategyTargetRequest::getSourceIp()const
 void DescribeStrategyTargetRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeStrategyTargetRequest::getType()const
@@ -55,7 +44,7 @@ std::string DescribeStrategyTargetRequest::getType()const
 void DescribeStrategyTargetRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string DescribeStrategyTargetRequest::getConfig()const
@@ -66,17 +55,6 @@ std::string DescribeStrategyTargetRequest::getConfig()const
 void DescribeStrategyTargetRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setParameter("Config", config);
-}
-
-std::string DescribeStrategyTargetRequest::getTarget()const
-{
-	return target_;
-}
-
-void DescribeStrategyTargetRequest::setTarget(const std::string& target)
-{
-	target_ = target;
-	setParameter("Target", target);
+	setCoreParameter("Config", config);
 }
 

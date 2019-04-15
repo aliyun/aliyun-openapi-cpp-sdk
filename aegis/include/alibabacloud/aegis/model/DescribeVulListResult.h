@@ -32,25 +32,91 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_AEGIS_EXPORT DescribeVulListResult : public ServiceResult
 			{
 			public:
+				struct VulRecord
+				{
+					struct ExtendContentJson
+					{
+						struct Necessity
+						{
+							std::string status;
+							std::string total_score;
+							std::string gmt_create;
+							std::string cvss_factor;
+							std::string time_factor;
+							std::string is_calc;
+							std::string enviroment_factor;
+							std::string assets_factor;
+						};
+						struct RpmEntityListItem
+						{
+							std::string path;
+							std::string updateCmd;
+							std::string version;
+							std::string fullVersion;
+							std::string matchDetail;
+							std::string name;
+						};
+						int status;
+						std::vector<std::string> cveList;
+						std::string os;
+						Necessity necessity;
+						long lastTs;
+						std::vector<RpmEntityListItem> rpmEntityList;
+						std::string absolutePath;
+						std::string reason;
+						std::string target;
+						std::string aliasName;
+						std::string proof;
+						std::string level;
+						std::string tag;
+						std::string osRelease;
+						long primaryId;
+					};
+					std::string ip;
+					std::string osVersion;
+					std::string product;
+					std::string intranetIp;
+					std::string name;
+					long repairTs;
+					long modifyTs;
+					std::string internetIp;
+					std::string aliasName;
+					long recordId;
+					ExtendContentJson extendContentJson;
+					int status;
+					std::string instanceId;
+					long lastTs;
+					std::string necessity;
+					std::string needReboot;
+					std::string resultMessage;
+					int groupId;
+					std::string instanceName;
+					std::string type;
+					long firstTs;
+					std::string uuid;
+					std::string related;
+					std::string level;
+					std::string tag;
+					long primaryId;
+					std::string resultCode;
+				};
 
 
 				DescribeVulListResult();
 				explicit DescribeVulListResult(const std::string &payload);
 				~DescribeVulListResult();
 				int getTotalCount()const;
-				std::vector<std::string> getVulRecords()const;
+				std::vector<VulRecord> getVulRecords()const;
 				int getPageSize()const;
 				int getCurrentPage()const;
-				int getCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				std::vector<std::string> vulRecords_;
+				std::vector<VulRecord> vulRecords_;
 				int pageSize_;
 				int currentPage_;
-				int count_;
 
 			};
 		}

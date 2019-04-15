@@ -25,15 +25,15 @@ DescribeLoginLogsRequest::DescribeLoginLogsRequest() :
 DescribeLoginLogsRequest::~DescribeLoginLogsRequest()
 {}
 
-long DescribeLoginLogsRequest::getResourceOwnerId()const
+std::string DescribeLoginLogsRequest::getTypes()const
 {
-	return resourceOwnerId_;
+	return types_;
 }
 
-void DescribeLoginLogsRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeLoginLogsRequest::setTypes(const std::string& types)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	types_ = types;
+	setCoreParameter("Types", types);
 }
 
 std::string DescribeLoginLogsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeLoginLogsRequest::getSourceIp()const
 void DescribeLoginLogsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeLoginLogsRequest::getPageSize()const
@@ -55,7 +55,18 @@ int DescribeLoginLogsRequest::getPageSize()const
 void DescribeLoginLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeLoginLogsRequest::getStatuses()const
+{
+	return statuses_;
+}
+
+void DescribeLoginLogsRequest::setStatuses(const std::string& statuses)
+{
+	statuses_ = statuses;
+	setCoreParameter("Statuses", statuses);
 }
 
 int DescribeLoginLogsRequest::getCurrentPage()const
@@ -66,6 +77,28 @@ int DescribeLoginLogsRequest::getCurrentPage()const
 void DescribeLoginLogsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeLoginLogsRequest::getRemark()const
+{
+	return remark_;
+}
+
+void DescribeLoginLogsRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
+std::string DescribeLoginLogsRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeLoginLogsRequest::setTag(const std::string& tag)
+{
+	tag_ = tag;
+	setCoreParameter("Tag", tag);
 }
 

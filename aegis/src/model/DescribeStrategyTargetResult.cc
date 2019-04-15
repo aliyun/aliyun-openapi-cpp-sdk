@@ -40,10 +40,10 @@ void DescribeStrategyTargetResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allStrategyTargets = value["StrategyTargets"]["StringItem"];
+	auto allStrategyTargets = value["StrategyTargets"]["StrategyTarget"];
 	for (auto value : allStrategyTargets)
 	{
-		StringItem strategyTargetsObject;
+		StrategyTarget strategyTargetsObject;
 		if(!value["Flag"].isNull())
 			strategyTargetsObject.flag = value["Flag"].asString();
 		if(!value["Target"].isNull())
@@ -52,18 +52,11 @@ void DescribeStrategyTargetResult::parse(const std::string &payload)
 			strategyTargetsObject.targetType = value["TargetType"].asString();
 		strategyTargets_.push_back(strategyTargetsObject);
 	}
-	if(!value["Count"].isNull())
-		count_ = std::stoi(value["Count"].asString());
 
 }
 
-std::vector<DescribeStrategyTargetResult::StringItem> DescribeStrategyTargetResult::getStrategyTargets()const
+std::vector<DescribeStrategyTargetResult::StrategyTarget> DescribeStrategyTargetResult::getStrategyTargets()const
 {
 	return strategyTargets_;
-}
-
-int DescribeStrategyTargetResult::getCount()const
-{
-	return count_;
 }
 

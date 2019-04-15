@@ -40,14 +40,9 @@ void GetCrackStatisticsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"];
-	for (auto value : allData)
-	{
-		Data dataObject;
-		if(!value["Intercepted"].isNull())
-			dataObject.intercepted = std::stoi(value["Intercepted"].asString());
-		data_.push_back(dataObject);
-	}
+	auto dataNode = value["Data"];
+	if(!dataNode["Intercepted"].isNull())
+		data_.intercepted = std::stoi(dataNode["Intercepted"].asString());
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 	if(!value["Code"].isNull())
@@ -69,7 +64,7 @@ std::string GetCrackStatisticsResult::getMessage()const
 	return message_;
 }
 
-std::vector<GetCrackStatisticsResult::Data> GetCrackStatisticsResult::getData()const
+GetCrackStatisticsResult::Data GetCrackStatisticsResult::getData()const
 {
 	return data_;
 }

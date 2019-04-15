@@ -32,25 +32,49 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_AEGIS_EXPORT DescribeSuspiciousEventsResult : public ServiceResult
 			{
 			public:
+				struct LogListItem
+				{
+					struct DetailListItem
+					{
+						std::string type;
+						std::string value;
+						std::string infoType;
+						std::string name;
+					};
+					long firstTime;
+					std::string eventType;
+					std::string instanceId;
+					std::vector<LogListItem::DetailListItem> detailList;
+					std::string ip;
+					std::string osVersion;
+					std::string eventName;
+					std::string clientIp;
+					std::string aliasEventType;
+					long groupId;
+					std::string instanceName;
+					std::string aliasEventName;
+					std::string uuid;
+					std::string level;
+					std::string tag;
+					long lastTime;
+				};
 
 
 				DescribeSuspiciousEventsResult();
 				explicit DescribeSuspiciousEventsResult(const std::string &payload);
 				~DescribeSuspiciousEventsResult();
+				std::vector<LogListItem> getLogList()const;
 				int getTotalCount()const;
 				int getPageSize()const;
-				std::vector<std::string> getSuspiciousEvents()const;
 				int getCurrentPage()const;
-				int getHttpStatusCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<LogListItem> logList_;
 				int totalCount_;
 				int pageSize_;
-				std::vector<std::string> suspiciousEvents_;
 				int currentPage_;
-				int httpStatusCode_;
 
 			};
 		}

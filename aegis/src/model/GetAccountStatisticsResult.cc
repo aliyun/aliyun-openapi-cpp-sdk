@@ -40,16 +40,11 @@ void GetAccountStatisticsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"];
-	for (auto value : allData)
-	{
-		Data dataObject;
-		if(!value["RemoteLogin"].isNull())
-			dataObject.remoteLogin = std::stoi(value["RemoteLogin"].asString());
-		if(!value["CrackSuccess"].isNull())
-			dataObject.crackSuccess = std::stoi(value["CrackSuccess"].asString());
-		data_.push_back(dataObject);
-	}
+	auto dataNode = value["Data"];
+	if(!dataNode["RemoteLogin"].isNull())
+		data_.remoteLogin = std::stoi(dataNode["RemoteLogin"].asString());
+	if(!dataNode["CrackSuccess"].isNull())
+		data_.crackSuccess = std::stoi(dataNode["CrackSuccess"].asString());
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 	if(!value["Code"].isNull())
@@ -71,7 +66,7 @@ std::string GetAccountStatisticsResult::getMessage()const
 	return message_;
 }
 
-std::vector<GetAccountStatisticsResult::Data> GetAccountStatisticsResult::getData()const
+GetAccountStatisticsResult::Data GetAccountStatisticsResult::getData()const
 {
 	return data_;
 }
