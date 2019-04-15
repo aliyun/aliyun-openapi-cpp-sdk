@@ -74,6 +74,7 @@ namespace AlibabaCloud
 					std::string imageId;
 					std::string creationTime;
 					std::vector<Image::Tag> tags;
+					std::string oSNameEn;
 				};
 
 

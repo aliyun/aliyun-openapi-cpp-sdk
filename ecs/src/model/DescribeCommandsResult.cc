@@ -58,6 +58,8 @@ void DescribeCommandsResult::parse(const std::string &payload)
 			commandsObject.workingDir = value["WorkingDir"].asString();
 		if(!value["Timeout"].isNull())
 			commandsObject.timeout = std::stol(value["Timeout"].asString());
+		if(!value["CreationTime"].isNull())
+			commandsObject.creationTime = value["CreationTime"].asString();
 		commands_.push_back(commandsObject);
 	}
 	if(!value["TotalCount"].isNull())

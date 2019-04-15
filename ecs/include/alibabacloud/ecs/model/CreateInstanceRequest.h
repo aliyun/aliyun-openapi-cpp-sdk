@@ -35,6 +35,12 @@ namespace AlibabaCloud
 					std::string value;
 					std::string key;
 				};
+				struct Arn
+				{
+					std::string rolearn;
+					std::string roleType;
+					long assumeRoleFor;
+				};
 				struct DataDisk
 				{
 					std::string diskName;
@@ -134,6 +140,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::vector<Arn> getArn()const;
+				void setArn(const std::vector<Arn>& arn);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
 				std::string getDeploymentSetId()const;
@@ -203,6 +211,7 @@ namespace AlibabaCloud
 				bool passwordInherit_;
 				std::string regionId_;
 				std::string instanceType_;
+				std::vector<Arn> arn_;
 				std::string instanceChargeType_;
 				std::string deploymentSetId_;
 				std::string innerIpAddress_;

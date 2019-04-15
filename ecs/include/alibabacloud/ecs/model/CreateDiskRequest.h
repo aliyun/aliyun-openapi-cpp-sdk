@@ -35,6 +35,12 @@ namespace AlibabaCloud
 					std::string value;
 					std::string key;
 				};
+				struct Arn
+				{
+					std::string rolearn;
+					std::string roleType;
+					long assumeRoleFor;
+				};
 
 			public:
 				CreateDiskRequest();
@@ -72,6 +78,8 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::vector<Arn> getArn()const;
+				void setArn(const std::vector<Arn>& arn);
 				std::string getKMSKeyId()const;
 				void setKMSKeyId(const std::string& kMSKeyId);
 				std::string getAdvancedFeatures()const;
@@ -94,6 +102,7 @@ namespace AlibabaCloud
 				std::string diskCategory_;
 				std::string zoneId_;
 				std::vector<Tag> tag_;
+				std::vector<Arn> arn_;
 				std::string kMSKeyId_;
 				std::string advancedFeatures_;
 

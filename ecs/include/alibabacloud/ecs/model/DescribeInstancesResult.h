@@ -114,6 +114,7 @@ namespace AlibabaCloud
 					std::string saleCycle;
 					bool deviceAvailable;
 					std::string instanceType;
+					std::string oSNameEn;
 					std::string spotStrategy;
 					std::string keyPairName;
 					bool ioOptimized;

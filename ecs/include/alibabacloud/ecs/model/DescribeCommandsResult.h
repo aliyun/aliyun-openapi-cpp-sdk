@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string type;
 					std::string description;
 					long timeout;
+					std::string creationTime;
 					std::string commandId;
 					std::string name;
 				};

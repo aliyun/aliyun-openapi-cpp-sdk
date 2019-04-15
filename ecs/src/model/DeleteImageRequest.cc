@@ -25,6 +25,17 @@ DeleteImageRequest::DeleteImageRequest() :
 DeleteImageRequest::~DeleteImageRequest()
 {}
 
+std::string DeleteImageRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DeleteImageRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long DeleteImageRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

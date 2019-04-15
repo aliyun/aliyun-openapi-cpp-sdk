@@ -482,6 +482,24 @@ void CreateInstanceRequest::setInstanceType(const std::string& instanceType)
 	setCoreParameter("InstanceType", instanceType);
 }
 
+std::vector<CreateInstanceRequest::Arn> CreateInstanceRequest::getArn()const
+{
+	return arn_;
+}
+
+void CreateInstanceRequest::setArn(const std::vector<Arn>& arn)
+{
+	arn_ = arn;
+	int i = 0;
+	for(int i = 0; i!= arn.size(); i++)	{
+		auto obj = arn.at(i);
+		std::string str ="Arn."+ std::to_string(i);
+		setCoreParameter(str + ".Rolearn", obj.rolearn);
+		setCoreParameter(str + ".RoleType", obj.roleType);
+		setCoreParameter(str + ".AssumeRoleFor", std::to_string(obj.assumeRoleFor));
+	}
+}
+
 std::string CreateInstanceRequest::getInstanceChargeType()const
 {
 	return instanceChargeType_;

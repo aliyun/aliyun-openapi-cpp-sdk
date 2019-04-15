@@ -64,6 +64,8 @@ void DescribeImagesResult::parse(const std::string &payload)
 			imagesObject.isSupportCloudinit = value["IsSupportCloudinit"].asString() == "true";
 		if(!value["OSName"].isNull())
 			imagesObject.oSName = value["OSName"].asString();
+		if(!value["OSNameEn"].isNull())
+			imagesObject.oSNameEn = value["OSNameEn"].asString();
 		if(!value["Architecture"].isNull())
 			imagesObject.architecture = value["Architecture"].asString();
 		if(!value["Status"].isNull())

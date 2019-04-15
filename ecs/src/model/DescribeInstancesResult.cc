@@ -54,6 +54,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.imageId = value["ImageId"].asString();
 		if(!value["OSName"].isNull())
 			instancesObject.oSName = value["OSName"].asString();
+		if(!value["OSNameEn"].isNull())
+			instancesObject.oSNameEn = value["OSNameEn"].asString();
 		if(!value["OSType"].isNull())
 			instancesObject.oSType = value["OSType"].asString();
 		if(!value["RegionId"].isNull())
