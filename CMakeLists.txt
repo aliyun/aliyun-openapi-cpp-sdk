@@ -120,3 +120,4 @@ add_subdirectory(bssopenapi)
 add_subdirectory(sas)
 
 add_subdirectory(dbs)
+add_subdirectory(r-kvstore)
