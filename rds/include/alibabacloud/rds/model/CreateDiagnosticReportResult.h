@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEBACKUPTASKSRESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEBACKUPTASKSRESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeBackupTasksResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT CreateDiagnosticReportResult : public ServiceResult
 			{
 			public:
-				struct BackupJob
-				{
-					std::string jobMode;
-					std::string taskAction;
-					std::string backupProgressStatus;
-					std::string backupId;
-					std::string process;
-					std::string backupJobId;
-					std::string backupStatus;
-				};
 
 
-				DescribeBackupTasksResult();
-				explicit DescribeBackupTasksResult(const std::string &payload);
-				~DescribeBackupTasksResult();
-				std::vector<BackupJob> getItems()const;
+				CreateDiagnosticReportResult();
+				explicit CreateDiagnosticReportResult(const std::string &payload);
+				~CreateDiagnosticReportResult();
+				std::string getReportId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<BackupJob> items_;
+				std::string reportId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEBACKUPTASKSRESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTRESULT_H_

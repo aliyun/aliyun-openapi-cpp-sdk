@@ -33,7 +33,7 @@ std::string DescribeDBInstanceAttributeRequest::getResourceGroupId()const
 void DescribeDBInstanceAttributeRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 long DescribeDBInstanceAttributeRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeDBInstanceAttributeRequest::getResourceOwnerId()const
 void DescribeDBInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstanceAttributeRequest::getExpired()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstanceAttributeRequest::getExpired()const
 void DescribeDBInstanceAttributeRequest::setExpired(const std::string& expired)
 {
 	expired_ = expired;
-	setParameter("Expired", expired);
+	setCoreParameter("Expired", expired);
 }
 
 std::string DescribeDBInstanceAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeDBInstanceAttributeRequest::getResourceOwnerAccount()const
 void DescribeDBInstanceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstanceAttributeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeDBInstanceAttributeRequest::getOwnerAccount()const
 void DescribeDBInstanceAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDBInstanceAttributeRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeDBInstanceAttributeRequest::getDBInstanceId()const
 void DescribeDBInstanceAttributeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeDBInstanceAttributeRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeDBInstanceAttributeRequest::getOwnerId()const
 void DescribeDBInstanceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstanceAttributeRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DescribeDBInstanceAttributeRequest::getAccessKeyId()const
 void DescribeDBInstanceAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

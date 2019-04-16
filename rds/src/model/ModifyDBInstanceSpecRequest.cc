@@ -33,7 +33,7 @@ long ModifyDBInstanceSpecRequest::getResourceOwnerId()const
 void ModifyDBInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int ModifyDBInstanceSpecRequest::getDBInstanceStorage()const
@@ -44,7 +44,7 @@ int ModifyDBInstanceSpecRequest::getDBInstanceStorage()const
 void ModifyDBInstanceSpecRequest::setDBInstanceStorage(int dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
 }
 
 std::string ModifyDBInstanceSpecRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceSpecRequest::getResourceOwnerAccount()const
 void ModifyDBInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBInstanceSpecRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ModifyDBInstanceSpecRequest::getClientToken()const
 void ModifyDBInstanceSpecRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ModifyDBInstanceSpecRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyDBInstanceSpecRequest::getOwnerAccount()const
 void ModifyDBInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDBInstanceSpecRequest::getEngineVersion()const
@@ -88,7 +88,7 @@ std::string ModifyDBInstanceSpecRequest::getEngineVersion()const
 void ModifyDBInstanceSpecRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", engineVersion);
 }
 
 long ModifyDBInstanceSpecRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifyDBInstanceSpecRequest::getOwnerId()const
 void ModifyDBInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBInstanceSpecRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string ModifyDBInstanceSpecRequest::getAccessKeyId()const
 void ModifyDBInstanceSpecRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceSpecRequest::getDBInstanceClass()const
@@ -121,7 +121,7 @@ std::string ModifyDBInstanceSpecRequest::getDBInstanceClass()const
 void ModifyDBInstanceSpecRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setParameter("DBInstanceClass", dBInstanceClass);
+	setCoreParameter("DBInstanceClass", dBInstanceClass);
 }
 
 std::string ModifyDBInstanceSpecRequest::getEffectiveTime()const
@@ -132,7 +132,7 @@ std::string ModifyDBInstanceSpecRequest::getEffectiveTime()const
 void ModifyDBInstanceSpecRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setParameter("EffectiveTime", effectiveTime);
+	setCoreParameter("EffectiveTime", effectiveTime);
 }
 
 std::string ModifyDBInstanceSpecRequest::getDBInstanceId()const
@@ -143,7 +143,7 @@ std::string ModifyDBInstanceSpecRequest::getDBInstanceId()const
 void ModifyDBInstanceSpecRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceSpecRequest::getPayType()const
@@ -154,6 +154,6 @@ std::string ModifyDBInstanceSpecRequest::getPayType()const
 void ModifyDBInstanceSpecRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setParameter("PayType", payType);
+	setCoreParameter("PayType", payType);
 }
 

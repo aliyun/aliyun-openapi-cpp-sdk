@@ -42,6 +42,7 @@ namespace AlibabaCloud
 				int getLocalLogRetentionHours()const;
 				std::string getLocalLogRetentionSpace()const;
 				std::string getHighSpaceUsageProtection()const;
+				std::string getCompressType()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -51,6 +52,7 @@ namespace AlibabaCloud
 				int localLogRetentionHours_;
 				std::string localLogRetentionSpace_;
 				std::string highSpaceUsageProtection_;
+				std::string compressType_;
 
 			};
 		}

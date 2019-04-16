@@ -33,7 +33,7 @@ std::string RequestServiceOfCloudDBExpertRequest::getServiceRequestParam()const
 void RequestServiceOfCloudDBExpertRequest::setServiceRequestParam(const std::string& serviceRequestParam)
 {
 	serviceRequestParam_ = serviceRequestParam;
-	setParameter("ServiceRequestParam", serviceRequestParam);
+	setCoreParameter("ServiceRequestParam", serviceRequestParam);
 }
 
 std::string RequestServiceOfCloudDBExpertRequest::getDBInstanceId()const
@@ -44,7 +44,7 @@ std::string RequestServiceOfCloudDBExpertRequest::getDBInstanceId()const
 void RequestServiceOfCloudDBExpertRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string RequestServiceOfCloudDBExpertRequest::getServiceRequestType()const
@@ -55,7 +55,7 @@ std::string RequestServiceOfCloudDBExpertRequest::getServiceRequestType()const
 void RequestServiceOfCloudDBExpertRequest::setServiceRequestType(const std::string& serviceRequestType)
 {
 	serviceRequestType_ = serviceRequestType;
-	setParameter("ServiceRequestType", serviceRequestType);
+	setCoreParameter("ServiceRequestType", serviceRequestType);
 }
 
 std::string RequestServiceOfCloudDBExpertRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string RequestServiceOfCloudDBExpertRequest::getAccessKeyId()const
 void RequestServiceOfCloudDBExpertRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

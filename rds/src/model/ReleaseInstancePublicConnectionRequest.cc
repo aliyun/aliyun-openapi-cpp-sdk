@@ -33,7 +33,7 @@ long ReleaseInstancePublicConnectionRequest::getResourceOwnerId()const
 void ReleaseInstancePublicConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ReleaseInstancePublicConnectionRequest::getResourceOwnerAccount()con
 void ReleaseInstancePublicConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ReleaseInstancePublicConnectionRequest::getOwnerAccount()const
 void ReleaseInstancePublicConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string ReleaseInstancePublicConnectionRequest::getDBInstanceId()const
 void ReleaseInstancePublicConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long ReleaseInstancePublicConnectionRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long ReleaseInstancePublicConnectionRequest::getOwnerId()const
 void ReleaseInstancePublicConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getCurrentConnectionString()const
@@ -88,7 +88,7 @@ std::string ReleaseInstancePublicConnectionRequest::getCurrentConnectionString()
 void ReleaseInstancePublicConnectionRequest::setCurrentConnectionString(const std::string& currentConnectionString)
 {
 	currentConnectionString_ = currentConnectionString;
-	setParameter("CurrentConnectionString", currentConnectionString);
+	setCoreParameter("CurrentConnectionString", currentConnectionString);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId()const
 void ReleaseInstancePublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

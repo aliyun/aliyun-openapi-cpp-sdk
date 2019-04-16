@@ -33,7 +33,7 @@ long ModifyDBInstanceDescriptionRequest::getResourceOwnerId()const
 void ModifyDBInstanceDescriptionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBInstanceDescriptionRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifyDBInstanceDescriptionRequest::getResourceOwnerAccount()const
 void ModifyDBInstanceDescriptionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBInstanceDescriptionRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceDescriptionRequest::getClientToken()const
 void ModifyDBInstanceDescriptionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ModifyDBInstanceDescriptionRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyDBInstanceDescriptionRequest::getOwnerAccount()const
 void ModifyDBInstanceDescriptionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDBInstanceDescriptionRequest::getDBInstanceId()const
@@ -77,7 +77,7 @@ std::string ModifyDBInstanceDescriptionRequest::getDBInstanceId()const
 void ModifyDBInstanceDescriptionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceDescriptionRequest::getDBInstanceDescription()const
@@ -88,7 +88,7 @@ std::string ModifyDBInstanceDescriptionRequest::getDBInstanceDescription()const
 void ModifyDBInstanceDescriptionRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
 {
 	dBInstanceDescription_ = dBInstanceDescription;
-	setParameter("DBInstanceDescription", dBInstanceDescription);
+	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
 long ModifyDBInstanceDescriptionRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifyDBInstanceDescriptionRequest::getOwnerId()const
 void ModifyDBInstanceDescriptionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBInstanceDescriptionRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ModifyDBInstanceDescriptionRequest::getAccessKeyId()const
 void ModifyDBInstanceDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

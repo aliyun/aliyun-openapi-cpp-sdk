@@ -33,7 +33,7 @@ long DescribeDBInstancesAsCsvRequest::getResourceOwnerId()const
 void DescribeDBInstancesAsCsvRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstancesAsCsvRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeDBInstancesAsCsvRequest::getResourceOwnerAccount()const
 void DescribeDBInstancesAsCsvRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstancesAsCsvRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstancesAsCsvRequest::getRegionId()const
 void DescribeDBInstancesAsCsvRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeDBInstancesAsCsvRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string DescribeDBInstancesAsCsvRequest::getDBInstanceId()const
 void DescribeDBInstancesAsCsvRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeDBInstancesAsCsvRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeDBInstancesAsCsvRequest::getOwnerId()const
 void DescribeDBInstancesAsCsvRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstancesAsCsvRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeDBInstancesAsCsvRequest::getAccessKeyId()const
 void DescribeDBInstancesAsCsvRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

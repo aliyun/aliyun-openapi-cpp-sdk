@@ -33,7 +33,7 @@ long DescribeDBInstanceIPArrayListRequest::getResourceOwnerId()const
 void DescribeDBInstanceIPArrayListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstanceIPArrayListRequest::getWhitelistNetworkType()const
@@ -44,7 +44,7 @@ std::string DescribeDBInstanceIPArrayListRequest::getWhitelistNetworkType()const
 void DescribeDBInstanceIPArrayListRequest::setWhitelistNetworkType(const std::string& whitelistNetworkType)
 {
 	whitelistNetworkType_ = whitelistNetworkType;
-	setParameter("WhitelistNetworkType", whitelistNetworkType);
+	setCoreParameter("WhitelistNetworkType", whitelistNetworkType);
 }
 
 std::string DescribeDBInstanceIPArrayListRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstanceIPArrayListRequest::getResourceOwnerAccount()const
 void DescribeDBInstanceIPArrayListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstanceIPArrayListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeDBInstanceIPArrayListRequest::getOwnerAccount()const
 void DescribeDBInstanceIPArrayListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId()const
@@ -77,7 +77,7 @@ std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId()const
 void DescribeDBInstanceIPArrayListRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeDBInstanceIPArrayListRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeDBInstanceIPArrayListRequest::getOwnerId()const
 void DescribeDBInstanceIPArrayListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstanceIPArrayListRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string DescribeDBInstanceIPArrayListRequest::getAccessKeyId()const
 void DescribeDBInstanceIPArrayListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

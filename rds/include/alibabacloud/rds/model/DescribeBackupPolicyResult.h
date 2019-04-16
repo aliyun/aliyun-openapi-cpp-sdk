@@ -53,6 +53,7 @@ namespace AlibabaCloud
 				DuplicationLocation getDuplicationLocation()const;
 				std::string getPreferredNextBackupTime()const;
 				std::string getHighSpaceUsageProtection()const;
+				std::string getCompressType()const;
 				std::string getLogBackupFrequency()const;
 				std::string getPreferredBackupPeriod()const;
 				int getLogBackupRetentionPeriod()const;
@@ -71,6 +72,7 @@ namespace AlibabaCloud
 				DuplicationLocation duplicationLocation_;
 				std::string preferredNextBackupTime_;
 				std::string highSpaceUsageProtection_;
+				std::string compressType_;
 				std::string logBackupFrequency_;
 				std::string preferredBackupPeriod_;
 				int logBackupRetentionPeriod_;

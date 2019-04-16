@@ -56,6 +56,8 @@ void DescribeBackupTasksResult::parse(const std::string &payload)
 			itemsObject.taskAction = value["TaskAction"].asString();
 		if(!value["BackupJobId"].isNull())
 			itemsObject.backupJobId = value["BackupJobId"].asString();
+		if(!value["BackupId"].isNull())
+			itemsObject.backupId = value["BackupId"].asString();
 		items_.push_back(itemsObject);
 	}
 

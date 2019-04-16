@@ -33,7 +33,7 @@ long MigrateToOtherRegionRequest::getResourceOwnerId()const
 void MigrateToOtherRegionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MigrateToOtherRegionRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string MigrateToOtherRegionRequest::getResourceOwnerAccount()const
 void MigrateToOtherRegionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string MigrateToOtherRegionRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string MigrateToOtherRegionRequest::getOwnerAccount()const
 void MigrateToOtherRegionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string MigrateToOtherRegionRequest::getTargetVSwitchId()const
@@ -66,7 +66,7 @@ std::string MigrateToOtherRegionRequest::getTargetVSwitchId()const
 void MigrateToOtherRegionRequest::setTargetVSwitchId(const std::string& targetVSwitchId)
 {
 	targetVSwitchId_ = targetVSwitchId;
-	setParameter("TargetVSwitchId", targetVSwitchId);
+	setCoreParameter("TargetVSwitchId", targetVSwitchId);
 }
 
 long MigrateToOtherRegionRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long MigrateToOtherRegionRequest::getOwnerId()const
 void MigrateToOtherRegionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MigrateToOtherRegionRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string MigrateToOtherRegionRequest::getAccessKeyId()const
 void MigrateToOtherRegionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string MigrateToOtherRegionRequest::getTargetVpcId()const
@@ -99,7 +99,7 @@ std::string MigrateToOtherRegionRequest::getTargetVpcId()const
 void MigrateToOtherRegionRequest::setTargetVpcId(const std::string& targetVpcId)
 {
 	targetVpcId_ = targetVpcId;
-	setParameter("TargetVpcId", targetVpcId);
+	setCoreParameter("TargetVpcId", targetVpcId);
 }
 
 std::string MigrateToOtherRegionRequest::getTargetZoneId()const
@@ -110,7 +110,7 @@ std::string MigrateToOtherRegionRequest::getTargetZoneId()const
 void MigrateToOtherRegionRequest::setTargetZoneId(const std::string& targetZoneId)
 {
 	targetZoneId_ = targetZoneId;
-	setParameter("TargetZoneId", targetZoneId);
+	setCoreParameter("TargetZoneId", targetZoneId);
 }
 
 std::string MigrateToOtherRegionRequest::getEffectiveTime()const
@@ -121,7 +121,7 @@ std::string MigrateToOtherRegionRequest::getEffectiveTime()const
 void MigrateToOtherRegionRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setParameter("EffectiveTime", effectiveTime);
+	setCoreParameter("EffectiveTime", effectiveTime);
 }
 
 std::string MigrateToOtherRegionRequest::getDBInstanceId()const
@@ -132,7 +132,7 @@ std::string MigrateToOtherRegionRequest::getDBInstanceId()const
 void MigrateToOtherRegionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string MigrateToOtherRegionRequest::getTargetRegionId()const
@@ -143,7 +143,7 @@ std::string MigrateToOtherRegionRequest::getTargetRegionId()const
 void MigrateToOtherRegionRequest::setTargetRegionId(const std::string& targetRegionId)
 {
 	targetRegionId_ = targetRegionId;
-	setParameter("TargetRegionId", targetRegionId);
+	setCoreParameter("TargetRegionId", targetRegionId);
 }
 
 std::string MigrateToOtherRegionRequest::getSwitchTime()const
@@ -154,6 +154,6 @@ std::string MigrateToOtherRegionRequest::getSwitchTime()const
 void MigrateToOtherRegionRequest::setSwitchTime(const std::string& switchTime)
 {
 	switchTime_ = switchTime;
-	setParameter("SwitchTime", switchTime);
+	setCoreParameter("SwitchTime", switchTime);
 }
 

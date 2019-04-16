@@ -33,7 +33,7 @@ std::string ModifyInstanceAutoRenewalAttributeRequest::getDuration()const
 void ModifyInstanceAutoRenewalAttributeRequest::setDuration(const std::string& duration)
 {
 	duration_ = duration;
-	setParameter("Duration", duration);
+	setCoreParameter("Duration", duration);
 }
 
 long ModifyInstanceAutoRenewalAttributeRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyInstanceAutoRenewalAttributeRequest::getResourceOwnerId()const
 void ModifyInstanceAutoRenewalAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyInstanceAutoRenewalAttributeRequest::getAutoRenew()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceAutoRenewalAttributeRequest::getAutoRenew()const
 void ModifyInstanceAutoRenewalAttributeRequest::setAutoRenew(const std::string& autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setParameter("AutoRenew", autoRenew);
+	setCoreParameter("AutoRenew", autoRenew);
 }
 
 std::string ModifyInstanceAutoRenewalAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceAutoRenewalAttributeRequest::getResourceOwnerAccount()
 void ModifyInstanceAutoRenewalAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceAutoRenewalAttributeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceAutoRenewalAttributeRequest::getRegionId()const
 void ModifyInstanceAutoRenewalAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyInstanceAutoRenewalAttributeRequest::getClientToken()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceAutoRenewalAttributeRequest::getClientToken()const
 void ModifyInstanceAutoRenewalAttributeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ModifyInstanceAutoRenewalAttributeRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyInstanceAutoRenewalAttributeRequest::getOwnerAccount()const
 void ModifyInstanceAutoRenewalAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyInstanceAutoRenewalAttributeRequest::getDBInstanceId()const
@@ -110,7 +110,7 @@ std::string ModifyInstanceAutoRenewalAttributeRequest::getDBInstanceId()const
 void ModifyInstanceAutoRenewalAttributeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long ModifyInstanceAutoRenewalAttributeRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long ModifyInstanceAutoRenewalAttributeRequest::getOwnerId()const
 void ModifyInstanceAutoRenewalAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyInstanceAutoRenewalAttributeRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ModifyInstanceAutoRenewalAttributeRequest::getAccessKeyId()const
 void ModifyInstanceAutoRenewalAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

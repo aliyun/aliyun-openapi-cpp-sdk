@@ -33,7 +33,7 @@ std::string GrantOperatorPermissionRequest::getPrivileges()const
 void GrantOperatorPermissionRequest::setPrivileges(const std::string& privileges)
 {
 	privileges_ = privileges;
-	setParameter("Privileges", privileges);
+	setCoreParameter("Privileges", privileges);
 }
 
 long GrantOperatorPermissionRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long GrantOperatorPermissionRequest::getResourceOwnerId()const
 void GrantOperatorPermissionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GrantOperatorPermissionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string GrantOperatorPermissionRequest::getResourceOwnerAccount()const
 void GrantOperatorPermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GrantOperatorPermissionRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string GrantOperatorPermissionRequest::getOwnerAccount()const
 void GrantOperatorPermissionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GrantOperatorPermissionRequest::getExpiredTime()const
@@ -77,7 +77,7 @@ std::string GrantOperatorPermissionRequest::getExpiredTime()const
 void GrantOperatorPermissionRequest::setExpiredTime(const std::string& expiredTime)
 {
 	expiredTime_ = expiredTime;
-	setParameter("ExpiredTime", expiredTime);
+	setCoreParameter("ExpiredTime", expiredTime);
 }
 
 std::string GrantOperatorPermissionRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string GrantOperatorPermissionRequest::getDBInstanceId()const
 void GrantOperatorPermissionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long GrantOperatorPermissionRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long GrantOperatorPermissionRequest::getOwnerId()const
 void GrantOperatorPermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GrantOperatorPermissionRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string GrantOperatorPermissionRequest::getAccessKeyId()const
 void GrantOperatorPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

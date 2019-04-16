@@ -33,7 +33,7 @@ std::string ModifyBackupPolicyRequest::getPreferredBackupPeriod()const
 void ModifyBackupPolicyRequest::setPreferredBackupPeriod(const std::string& preferredBackupPeriod)
 {
 	preferredBackupPeriod_ = preferredBackupPeriod;
-	setParameter("PreferredBackupPeriod", preferredBackupPeriod);
+	setCoreParameter("PreferredBackupPeriod", preferredBackupPeriod);
 }
 
 long ModifyBackupPolicyRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyBackupPolicyRequest::getResourceOwnerId()const
 void ModifyBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyBackupPolicyRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyBackupPolicyRequest::getResourceOwnerAccount()const
 void ModifyBackupPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyBackupPolicyRequest::getLocalLogRetentionHours()const
@@ -66,7 +66,7 @@ std::string ModifyBackupPolicyRequest::getLocalLogRetentionHours()const
 void ModifyBackupPolicyRequest::setLocalLogRetentionHours(const std::string& localLogRetentionHours)
 {
 	localLogRetentionHours_ = localLogRetentionHours;
-	setParameter("LocalLogRetentionHours", localLogRetentionHours);
+	setCoreParameter("LocalLogRetentionHours", localLogRetentionHours);
 }
 
 std::string ModifyBackupPolicyRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyBackupPolicyRequest::getOwnerAccount()const
 void ModifyBackupPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyBackupPolicyRequest::getLogBackupFrequency()const
@@ -88,7 +88,18 @@ std::string ModifyBackupPolicyRequest::getLogBackupFrequency()const
 void ModifyBackupPolicyRequest::setLogBackupFrequency(const std::string& logBackupFrequency)
 {
 	logBackupFrequency_ = logBackupFrequency;
-	setParameter("LogBackupFrequency", logBackupFrequency);
+	setCoreParameter("LogBackupFrequency", logBackupFrequency);
+}
+
+std::string ModifyBackupPolicyRequest::getCompressType()const
+{
+	return compressType_;
+}
+
+void ModifyBackupPolicyRequest::setCompressType(const std::string& compressType)
+{
+	compressType_ = compressType;
+	setCoreParameter("CompressType", compressType);
 }
 
 std::string ModifyBackupPolicyRequest::getBackupLog()const
@@ -99,7 +110,7 @@ std::string ModifyBackupPolicyRequest::getBackupLog()const
 void ModifyBackupPolicyRequest::setBackupLog(const std::string& backupLog)
 {
 	backupLog_ = backupLog;
-	setParameter("BackupLog", backupLog);
+	setCoreParameter("BackupLog", backupLog);
 }
 
 std::string ModifyBackupPolicyRequest::getLocalLogRetentionSpace()const
@@ -110,7 +121,7 @@ std::string ModifyBackupPolicyRequest::getLocalLogRetentionSpace()const
 void ModifyBackupPolicyRequest::setLocalLogRetentionSpace(const std::string& localLogRetentionSpace)
 {
 	localLogRetentionSpace_ = localLogRetentionSpace;
-	setParameter("LocalLogRetentionSpace", localLogRetentionSpace);
+	setCoreParameter("LocalLogRetentionSpace", localLogRetentionSpace);
 }
 
 long ModifyBackupPolicyRequest::getOwnerId()const
@@ -121,7 +132,7 @@ long ModifyBackupPolicyRequest::getOwnerId()const
 void ModifyBackupPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyBackupPolicyRequest::getAccessKeyId()const
@@ -132,7 +143,7 @@ std::string ModifyBackupPolicyRequest::getAccessKeyId()const
 void ModifyBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyBackupPolicyRequest::getDuplication()const
@@ -143,7 +154,7 @@ std::string ModifyBackupPolicyRequest::getDuplication()const
 void ModifyBackupPolicyRequest::setDuplication(const std::string& duplication)
 {
 	duplication_ = duplication;
-	setParameter("Duplication", duplication);
+	setCoreParameter("Duplication", duplication);
 }
 
 std::string ModifyBackupPolicyRequest::getPreferredBackupTime()const
@@ -154,7 +165,7 @@ std::string ModifyBackupPolicyRequest::getPreferredBackupTime()const
 void ModifyBackupPolicyRequest::setPreferredBackupTime(const std::string& preferredBackupTime)
 {
 	preferredBackupTime_ = preferredBackupTime;
-	setParameter("PreferredBackupTime", preferredBackupTime);
+	setCoreParameter("PreferredBackupTime", preferredBackupTime);
 }
 
 std::string ModifyBackupPolicyRequest::getBackupRetentionPeriod()const
@@ -165,7 +176,7 @@ std::string ModifyBackupPolicyRequest::getBackupRetentionPeriod()const
 void ModifyBackupPolicyRequest::setBackupRetentionPeriod(const std::string& backupRetentionPeriod)
 {
 	backupRetentionPeriod_ = backupRetentionPeriod;
-	setParameter("BackupRetentionPeriod", backupRetentionPeriod);
+	setCoreParameter("BackupRetentionPeriod", backupRetentionPeriod);
 }
 
 std::string ModifyBackupPolicyRequest::getDuplicationContent()const
@@ -176,7 +187,7 @@ std::string ModifyBackupPolicyRequest::getDuplicationContent()const
 void ModifyBackupPolicyRequest::setDuplicationContent(const std::string& duplicationContent)
 {
 	duplicationContent_ = duplicationContent;
-	setParameter("DuplicationContent", duplicationContent);
+	setCoreParameter("DuplicationContent", duplicationContent);
 }
 
 std::string ModifyBackupPolicyRequest::getHighSpaceUsageProtection()const
@@ -187,7 +198,7 @@ std::string ModifyBackupPolicyRequest::getHighSpaceUsageProtection()const
 void ModifyBackupPolicyRequest::setHighSpaceUsageProtection(const std::string& highSpaceUsageProtection)
 {
 	highSpaceUsageProtection_ = highSpaceUsageProtection;
-	setParameter("HighSpaceUsageProtection", highSpaceUsageProtection);
+	setCoreParameter("HighSpaceUsageProtection", highSpaceUsageProtection);
 }
 
 std::string ModifyBackupPolicyRequest::getDBInstanceId()const
@@ -198,7 +209,7 @@ std::string ModifyBackupPolicyRequest::getDBInstanceId()const
 void ModifyBackupPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyBackupPolicyRequest::getDuplicationLocation()const
@@ -209,7 +220,7 @@ std::string ModifyBackupPolicyRequest::getDuplicationLocation()const
 void ModifyBackupPolicyRequest::setDuplicationLocation(const std::string& duplicationLocation)
 {
 	duplicationLocation_ = duplicationLocation;
-	setParameter("DuplicationLocation", duplicationLocation);
+	setCoreParameter("DuplicationLocation", duplicationLocation);
 }
 
 std::string ModifyBackupPolicyRequest::getLogBackupRetentionPeriod()const
@@ -220,7 +231,7 @@ std::string ModifyBackupPolicyRequest::getLogBackupRetentionPeriod()const
 void ModifyBackupPolicyRequest::setLogBackupRetentionPeriod(const std::string& logBackupRetentionPeriod)
 {
 	logBackupRetentionPeriod_ = logBackupRetentionPeriod;
-	setParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod);
+	setCoreParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod);
 }
 
 std::string ModifyBackupPolicyRequest::getEnableBackupLog()const
@@ -231,7 +242,7 @@ std::string ModifyBackupPolicyRequest::getEnableBackupLog()const
 void ModifyBackupPolicyRequest::setEnableBackupLog(const std::string& enableBackupLog)
 {
 	enableBackupLog_ = enableBackupLog;
-	setParameter("EnableBackupLog", enableBackupLog);
+	setCoreParameter("EnableBackupLog", enableBackupLog);
 }
 
 std::string ModifyBackupPolicyRequest::getBackupPolicyMode()const
@@ -242,6 +253,6 @@ std::string ModifyBackupPolicyRequest::getBackupPolicyMode()const
 void ModifyBackupPolicyRequest::setBackupPolicyMode(const std::string& backupPolicyMode)
 {
 	backupPolicyMode_ = backupPolicyMode;
-	setParameter("BackupPolicyMode", backupPolicyMode);
+	setCoreParameter("BackupPolicyMode", backupPolicyMode);
 }
 

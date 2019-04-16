@@ -33,7 +33,7 @@ long CreateOnlineDatabaseTaskRequest::getResourceOwnerId()const
 void CreateOnlineDatabaseTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateOnlineDatabaseTaskRequest::getMigrateTaskId()const
@@ -44,7 +44,7 @@ std::string CreateOnlineDatabaseTaskRequest::getMigrateTaskId()const
 void CreateOnlineDatabaseTaskRequest::setMigrateTaskId(const std::string& migrateTaskId)
 {
 	migrateTaskId_ = migrateTaskId;
-	setParameter("MigrateTaskId", migrateTaskId);
+	setCoreParameter("MigrateTaskId", migrateTaskId);
 }
 
 std::string CreateOnlineDatabaseTaskRequest::getDBName()const
@@ -55,7 +55,7 @@ std::string CreateOnlineDatabaseTaskRequest::getDBName()const
 void CreateOnlineDatabaseTaskRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setParameter("DBName", dBName);
+	setCoreParameter("DBName", dBName);
 }
 
 std::string CreateOnlineDatabaseTaskRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateOnlineDatabaseTaskRequest::getResourceOwnerAccount()const
 void CreateOnlineDatabaseTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateOnlineDatabaseTaskRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string CreateOnlineDatabaseTaskRequest::getClientToken()const
 void CreateOnlineDatabaseTaskRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateOnlineDatabaseTaskRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateOnlineDatabaseTaskRequest::getOwnerAccount()const
 void CreateOnlineDatabaseTaskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateOnlineDatabaseTaskRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string CreateOnlineDatabaseTaskRequest::getDBInstanceId()const
 void CreateOnlineDatabaseTaskRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string CreateOnlineDatabaseTaskRequest::getCheckDBMode()const
@@ -110,7 +110,7 @@ std::string CreateOnlineDatabaseTaskRequest::getCheckDBMode()const
 void CreateOnlineDatabaseTaskRequest::setCheckDBMode(const std::string& checkDBMode)
 {
 	checkDBMode_ = checkDBMode;
-	setParameter("CheckDBMode", checkDBMode);
+	setCoreParameter("CheckDBMode", checkDBMode);
 }
 
 long CreateOnlineDatabaseTaskRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long CreateOnlineDatabaseTaskRequest::getOwnerId()const
 void CreateOnlineDatabaseTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateOnlineDatabaseTaskRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string CreateOnlineDatabaseTaskRequest::getAccessKeyId()const
 void CreateOnlineDatabaseTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long CreateMigrateTaskRequest::getResourceOwnerId()const
 void CreateMigrateTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateMigrateTaskRequest::getMigrateTaskId()const
@@ -44,7 +44,7 @@ std::string CreateMigrateTaskRequest::getMigrateTaskId()const
 void CreateMigrateTaskRequest::setMigrateTaskId(const std::string& migrateTaskId)
 {
 	migrateTaskId_ = migrateTaskId;
-	setParameter("MigrateTaskId", migrateTaskId);
+	setCoreParameter("MigrateTaskId", migrateTaskId);
 }
 
 std::string CreateMigrateTaskRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateMigrateTaskRequest::getResourceOwnerAccount()const
 void CreateMigrateTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateMigrateTaskRequest::getIsOnlineDB()const
@@ -66,7 +66,7 @@ std::string CreateMigrateTaskRequest::getIsOnlineDB()const
 void CreateMigrateTaskRequest::setIsOnlineDB(const std::string& isOnlineDB)
 {
 	isOnlineDB_ = isOnlineDB;
-	setParameter("IsOnlineDB", isOnlineDB);
+	setCoreParameter("IsOnlineDB", isOnlineDB);
 }
 
 long CreateMigrateTaskRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long CreateMigrateTaskRequest::getOwnerId()const
 void CreateMigrateTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateMigrateTaskRequest::getOssObjectPositions()const
@@ -88,7 +88,7 @@ std::string CreateMigrateTaskRequest::getOssObjectPositions()const
 void CreateMigrateTaskRequest::setOssObjectPositions(const std::string& ossObjectPositions)
 {
 	ossObjectPositions_ = ossObjectPositions;
-	setParameter("OssObjectPositions", ossObjectPositions);
+	setCoreParameter("OssObjectPositions", ossObjectPositions);
 }
 
 std::string CreateMigrateTaskRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string CreateMigrateTaskRequest::getAccessKeyId()const
 void CreateMigrateTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateMigrateTaskRequest::getOSSUrls()const
@@ -110,7 +110,7 @@ std::string CreateMigrateTaskRequest::getOSSUrls()const
 void CreateMigrateTaskRequest::setOSSUrls(const std::string& oSSUrls)
 {
 	oSSUrls_ = oSSUrls;
-	setParameter("OSSUrls", oSSUrls);
+	setCoreParameter("OSSUrls", oSSUrls);
 }
 
 std::string CreateMigrateTaskRequest::getDBName()const
@@ -121,7 +121,7 @@ std::string CreateMigrateTaskRequest::getDBName()const
 void CreateMigrateTaskRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setParameter("DBName", dBName);
+	setCoreParameter("DBName", dBName);
 }
 
 std::string CreateMigrateTaskRequest::getDBInstanceId()const
@@ -132,7 +132,7 @@ std::string CreateMigrateTaskRequest::getDBInstanceId()const
 void CreateMigrateTaskRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string CreateMigrateTaskRequest::getBackupMode()const
@@ -143,7 +143,7 @@ std::string CreateMigrateTaskRequest::getBackupMode()const
 void CreateMigrateTaskRequest::setBackupMode(const std::string& backupMode)
 {
 	backupMode_ = backupMode;
-	setParameter("BackupMode", backupMode);
+	setCoreParameter("BackupMode", backupMode);
 }
 
 std::string CreateMigrateTaskRequest::getCheckDBMode()const
@@ -154,6 +154,6 @@ std::string CreateMigrateTaskRequest::getCheckDBMode()const
 void CreateMigrateTaskRequest::setCheckDBMode(const std::string& checkDBMode)
 {
 	checkDBMode_ = checkDBMode;
-	setParameter("CheckDBMode", checkDBMode);
+	setCoreParameter("CheckDBMode", checkDBMode);
 }
 

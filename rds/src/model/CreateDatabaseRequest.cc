@@ -33,7 +33,7 @@ long CreateDatabaseRequest::getResourceOwnerId()const
 void CreateDatabaseRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateDatabaseRequest::getDBName()const
@@ -44,7 +44,7 @@ std::string CreateDatabaseRequest::getDBName()const
 void CreateDatabaseRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setParameter("DBName", dBName);
+	setCoreParameter("DBName", dBName);
 }
 
 std::string CreateDatabaseRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateDatabaseRequest::getResourceOwnerAccount()const
 void CreateDatabaseRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateDatabaseRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateDatabaseRequest::getOwnerAccount()const
 void CreateDatabaseRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateDatabaseRequest::getDBInstanceId()const
@@ -77,7 +77,7 @@ std::string CreateDatabaseRequest::getDBInstanceId()const
 void CreateDatabaseRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string CreateDatabaseRequest::getDBDescription()const
@@ -88,7 +88,7 @@ std::string CreateDatabaseRequest::getDBDescription()const
 void CreateDatabaseRequest::setDBDescription(const std::string& dBDescription)
 {
 	dBDescription_ = dBDescription;
-	setParameter("DBDescription", dBDescription);
+	setCoreParameter("DBDescription", dBDescription);
 }
 
 long CreateDatabaseRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long CreateDatabaseRequest::getOwnerId()const
 void CreateDatabaseRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateDatabaseRequest::getCharacterSetName()const
@@ -110,7 +110,7 @@ std::string CreateDatabaseRequest::getCharacterSetName()const
 void CreateDatabaseRequest::setCharacterSetName(const std::string& characterSetName)
 {
 	characterSetName_ = characterSetName;
-	setParameter("CharacterSetName", characterSetName);
+	setCoreParameter("CharacterSetName", characterSetName);
 }
 
 std::string CreateDatabaseRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string CreateDatabaseRequest::getAccessKeyId()const
 void CreateDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -50,6 +50,8 @@ void ModifyBackupPolicyResult::parse(const std::string &payload)
 		localLogRetentionSpace_ = value["LocalLogRetentionSpace"].asString();
 	if(!value["HighSpaceUsageProtection"].isNull())
 		highSpaceUsageProtection_ = value["HighSpaceUsageProtection"].asString();
+	if(!value["CompressType"].isNull())
+		compressType_ = value["CompressType"].asString();
 
 }
 
@@ -76,5 +78,10 @@ std::string ModifyBackupPolicyResult::getLocalLogRetentionSpace()const
 std::string ModifyBackupPolicyResult::getHighSpaceUsageProtection()const
 {
 	return highSpaceUsageProtection_;
+}
+
+std::string ModifyBackupPolicyResult::getCompressType()const
+{
+	return compressType_;
 }
 

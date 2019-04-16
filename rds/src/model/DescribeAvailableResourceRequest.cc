@@ -33,7 +33,7 @@ long DescribeAvailableResourceRequest::getResourceOwnerId()const
 void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
 void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAvailableResourceRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeAvailableResourceRequest::getOwnerAccount()const
 void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeAvailableResourceRequest::getEngineVersion()const
@@ -66,7 +66,7 @@ std::string DescribeAvailableResourceRequest::getEngineVersion()const
 void DescribeAvailableResourceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", engineVersion);
 }
 
 long DescribeAvailableResourceRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeAvailableResourceRequest::getOwnerId()const
 void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAvailableResourceRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string DescribeAvailableResourceRequest::getAccessKeyId()const
 void DescribeAvailableResourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAvailableResourceRequest::getRegionId()const
@@ -99,7 +99,7 @@ std::string DescribeAvailableResourceRequest::getRegionId()const
 void DescribeAvailableResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeAvailableResourceRequest::getEngine()const
@@ -110,7 +110,7 @@ std::string DescribeAvailableResourceRequest::getEngine()const
 void DescribeAvailableResourceRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setParameter("Engine", engine);
+	setCoreParameter("Engine", engine);
 }
 
 std::string DescribeAvailableResourceRequest::getZoneId()const
@@ -121,7 +121,7 @@ std::string DescribeAvailableResourceRequest::getZoneId()const
 void DescribeAvailableResourceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string DescribeAvailableResourceRequest::getDBInstanceId()const
@@ -132,7 +132,7 @@ std::string DescribeAvailableResourceRequest::getDBInstanceId()const
 void DescribeAvailableResourceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeAvailableResourceRequest::getInstanceChargeType()const
@@ -143,7 +143,7 @@ std::string DescribeAvailableResourceRequest::getInstanceChargeType()const
 void DescribeAvailableResourceRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string DescribeAvailableResourceRequest::getOrderType()const
@@ -154,6 +154,6 @@ std::string DescribeAvailableResourceRequest::getOrderType()const
 void DescribeAvailableResourceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setParameter("OrderType", orderType);
+	setCoreParameter("OrderType", orderType);
 }
 

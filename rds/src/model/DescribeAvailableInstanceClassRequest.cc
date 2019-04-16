@@ -33,7 +33,7 @@ long DescribeAvailableInstanceClassRequest::getResourceOwnerId()const
 void DescribeAvailableInstanceClassRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAvailableInstanceClassRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeAvailableInstanceClassRequest::getResourceOwnerAccount()cons
 void DescribeAvailableInstanceClassRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAvailableInstanceClassRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeAvailableInstanceClassRequest::getOwnerAccount()const
 void DescribeAvailableInstanceClassRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeAvailableInstanceClassRequest::getEngineVersion()const
@@ -66,7 +66,7 @@ std::string DescribeAvailableInstanceClassRequest::getEngineVersion()const
 void DescribeAvailableInstanceClassRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", engineVersion);
 }
 
 long DescribeAvailableInstanceClassRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeAvailableInstanceClassRequest::getOwnerId()const
 void DescribeAvailableInstanceClassRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAvailableInstanceClassRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string DescribeAvailableInstanceClassRequest::getAccessKeyId()const
 void DescribeAvailableInstanceClassRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAvailableInstanceClassRequest::getRegionId()const
@@ -99,7 +99,7 @@ std::string DescribeAvailableInstanceClassRequest::getRegionId()const
 void DescribeAvailableInstanceClassRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeAvailableInstanceClassRequest::getEngine()const
@@ -110,7 +110,7 @@ std::string DescribeAvailableInstanceClassRequest::getEngine()const
 void DescribeAvailableInstanceClassRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setParameter("Engine", engine);
+	setCoreParameter("Engine", engine);
 }
 
 std::string DescribeAvailableInstanceClassRequest::getZoneId()const
@@ -121,7 +121,7 @@ std::string DescribeAvailableInstanceClassRequest::getZoneId()const
 void DescribeAvailableInstanceClassRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string DescribeAvailableInstanceClassRequest::getDBInstanceId()const
@@ -132,7 +132,7 @@ std::string DescribeAvailableInstanceClassRequest::getDBInstanceId()const
 void DescribeAvailableInstanceClassRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeAvailableInstanceClassRequest::getInstanceChargeType()const
@@ -143,7 +143,7 @@ std::string DescribeAvailableInstanceClassRequest::getInstanceChargeType()const
 void DescribeAvailableInstanceClassRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string DescribeAvailableInstanceClassRequest::getOrderType()const
@@ -154,6 +154,6 @@ std::string DescribeAvailableInstanceClassRequest::getOrderType()const
 void DescribeAvailableInstanceClassRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setParameter("OrderType", orderType);
+	setCoreParameter("OrderType", orderType);
 }
 

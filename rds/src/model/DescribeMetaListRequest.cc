@@ -33,7 +33,7 @@ long DescribeMetaListRequest::getResourceOwnerId()const
 void DescribeMetaListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeMetaListRequest::getRestoreTime()const
@@ -44,7 +44,7 @@ std::string DescribeMetaListRequest::getRestoreTime()const
 void DescribeMetaListRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setParameter("RestoreTime", restoreTime);
+	setCoreParameter("RestoreTime", restoreTime);
 }
 
 std::string DescribeMetaListRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeMetaListRequest::getResourceOwnerAccount()const
 void DescribeMetaListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeMetaListRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DescribeMetaListRequest::getClientToken()const
 void DescribeMetaListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DescribeMetaListRequest::getPattern()const
@@ -77,7 +77,7 @@ std::string DescribeMetaListRequest::getPattern()const
 void DescribeMetaListRequest::setPattern(const std::string& pattern)
 {
 	pattern_ = pattern;
-	setParameter("Pattern", pattern);
+	setCoreParameter("Pattern", pattern);
 }
 
 std::string DescribeMetaListRequest::getBackupSetID()const
@@ -88,7 +88,7 @@ std::string DescribeMetaListRequest::getBackupSetID()const
 void DescribeMetaListRequest::setBackupSetID(const std::string& backupSetID)
 {
 	backupSetID_ = backupSetID;
-	setParameter("BackupSetID", backupSetID);
+	setCoreParameter("BackupSetID", backupSetID);
 }
 
 long DescribeMetaListRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeMetaListRequest::getOwnerId()const
 void DescribeMetaListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeMetaListRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeMetaListRequest::getAccessKeyId()const
 void DescribeMetaListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeMetaListRequest::getGetDbName()const
@@ -121,7 +121,7 @@ std::string DescribeMetaListRequest::getGetDbName()const
 void DescribeMetaListRequest::setGetDbName(const std::string& getDbName)
 {
 	getDbName_ = getDbName;
-	setParameter("GetDbName", getDbName);
+	setCoreParameter("GetDbName", getDbName);
 }
 
 std::string DescribeMetaListRequest::getRestoreType()const
@@ -132,7 +132,7 @@ std::string DescribeMetaListRequest::getRestoreType()const
 void DescribeMetaListRequest::setRestoreType(const std::string& restoreType)
 {
 	restoreType_ = restoreType;
-	setParameter("RestoreType", restoreType);
+	setCoreParameter("RestoreType", restoreType);
 }
 
 std::string DescribeMetaListRequest::getPageSize()const
@@ -143,7 +143,7 @@ std::string DescribeMetaListRequest::getPageSize()const
 void DescribeMetaListRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeMetaListRequest::getDBInstanceId()const
@@ -154,7 +154,7 @@ std::string DescribeMetaListRequest::getDBInstanceId()const
 void DescribeMetaListRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeMetaListRequest::getPageIndex()const
@@ -165,6 +165,6 @@ std::string DescribeMetaListRequest::getPageIndex()const
 void DescribeMetaListRequest::setPageIndex(const std::string& pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", pageIndex);
+	setCoreParameter("PageIndex", pageIndex);
 }
 

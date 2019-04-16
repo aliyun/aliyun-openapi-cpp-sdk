@@ -33,7 +33,7 @@ long ModifyReadWriteSplittingConnectionRequest::getResourceOwnerId()const
 void ModifyReadWriteSplittingConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyReadWriteSplittingConnectionRequest::getConnectionStringPrefix()const
@@ -44,7 +44,7 @@ std::string ModifyReadWriteSplittingConnectionRequest::getConnectionStringPrefix
 void ModifyReadWriteSplittingConnectionRequest::setConnectionStringPrefix(const std::string& connectionStringPrefix)
 {
 	connectionStringPrefix_ = connectionStringPrefix;
-	setParameter("ConnectionStringPrefix", connectionStringPrefix);
+	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
 std::string ModifyReadWriteSplittingConnectionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyReadWriteSplittingConnectionRequest::getResourceOwnerAccount()
 void ModifyReadWriteSplittingConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyReadWriteSplittingConnectionRequest::getPort()const
@@ -66,7 +66,7 @@ std::string ModifyReadWriteSplittingConnectionRequest::getPort()const
 void ModifyReadWriteSplittingConnectionRequest::setPort(const std::string& port)
 {
 	port_ = port;
-	setParameter("Port", port);
+	setCoreParameter("Port", port);
 }
 
 std::string ModifyReadWriteSplittingConnectionRequest::getDistributionType()const
@@ -77,7 +77,7 @@ std::string ModifyReadWriteSplittingConnectionRequest::getDistributionType()cons
 void ModifyReadWriteSplittingConnectionRequest::setDistributionType(const std::string& distributionType)
 {
 	distributionType_ = distributionType;
-	setParameter("DistributionType", distributionType);
+	setCoreParameter("DistributionType", distributionType);
 }
 
 std::string ModifyReadWriteSplittingConnectionRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyReadWriteSplittingConnectionRequest::getOwnerAccount()const
 void ModifyReadWriteSplittingConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyReadWriteSplittingConnectionRequest::getWeight()const
@@ -99,7 +99,7 @@ std::string ModifyReadWriteSplittingConnectionRequest::getWeight()const
 void ModifyReadWriteSplittingConnectionRequest::setWeight(const std::string& weight)
 {
 	weight_ = weight;
-	setParameter("Weight", weight);
+	setCoreParameter("Weight", weight);
 }
 
 std::string ModifyReadWriteSplittingConnectionRequest::getDBInstanceId()const
@@ -110,7 +110,7 @@ std::string ModifyReadWriteSplittingConnectionRequest::getDBInstanceId()const
 void ModifyReadWriteSplittingConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long ModifyReadWriteSplittingConnectionRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long ModifyReadWriteSplittingConnectionRequest::getOwnerId()const
 void ModifyReadWriteSplittingConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyReadWriteSplittingConnectionRequest::getMaxDelayTime()const
@@ -132,7 +132,7 @@ std::string ModifyReadWriteSplittingConnectionRequest::getMaxDelayTime()const
 void ModifyReadWriteSplittingConnectionRequest::setMaxDelayTime(const std::string& maxDelayTime)
 {
 	maxDelayTime_ = maxDelayTime;
-	setParameter("MaxDelayTime", maxDelayTime);
+	setCoreParameter("MaxDelayTime", maxDelayTime);
 }
 
 std::string ModifyReadWriteSplittingConnectionRequest::getAccessKeyId()const
@@ -143,6 +143,6 @@ std::string ModifyReadWriteSplittingConnectionRequest::getAccessKeyId()const
 void ModifyReadWriteSplittingConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

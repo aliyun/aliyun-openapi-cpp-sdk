@@ -33,7 +33,7 @@ long DescribeTasksRequest::getResourceOwnerId()const
 void DescribeTasksRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeTasksRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeTasksRequest::getResourceOwnerAccount()const
 void DescribeTasksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeTasksRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeTasksRequest::getOwnerAccount()const
 void DescribeTasksRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeTasksRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeTasksRequest::getEndTime()const
 void DescribeTasksRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeTasksRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeTasksRequest::getStartTime()const
 void DescribeTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeTasksRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeTasksRequest::getOwnerId()const
 void DescribeTasksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeTasksRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeTasksRequest::getPageNumber()const
 void DescribeTasksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeTasksRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeTasksRequest::getAccessKeyId()const
 void DescribeTasksRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeTasksRequest::getPageSize()const
@@ -121,7 +121,7 @@ int DescribeTasksRequest::getPageSize()const
 void DescribeTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeTasksRequest::getDBInstanceId()const
@@ -132,7 +132,7 @@ std::string DescribeTasksRequest::getDBInstanceId()const
 void DescribeTasksRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeTasksRequest::getTaskAction()const
@@ -143,7 +143,7 @@ std::string DescribeTasksRequest::getTaskAction()const
 void DescribeTasksRequest::setTaskAction(const std::string& taskAction)
 {
 	taskAction_ = taskAction;
-	setParameter("TaskAction", taskAction);
+	setCoreParameter("TaskAction", taskAction);
 }
 
 std::string DescribeTasksRequest::getStatus()const
@@ -154,6 +154,6 @@ std::string DescribeTasksRequest::getStatus()const
 void DescribeTasksRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

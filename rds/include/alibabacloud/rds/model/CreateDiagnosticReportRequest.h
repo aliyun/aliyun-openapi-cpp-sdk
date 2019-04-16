@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEBACKUPPOLICYREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEBACKUPPOLICYREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeBackupPolicyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT CreateDiagnosticReportRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeBackupPolicyRequest();
-				~DescribeBackupPolicyRequest();
+				CreateDiagnosticReportRequest();
+				~CreateDiagnosticReportRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getCompressType()const;
-				void setCompressType(const std::string& compressType);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getBackupPolicyMode()const;
-				void setBackupPolicyMode(const std::string& backupPolicyMode);
 
             private:
-				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				std::string compressType_;
+				std::string endTime_;
 				std::string dBInstanceId_;
-				long ownerId_;
+				std::string startTime_;
 				std::string accessKeyId_;
-				std::string backupPolicyMode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEBACKUPPOLICYREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTREQUEST_H_

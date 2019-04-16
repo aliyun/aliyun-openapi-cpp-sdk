@@ -33,7 +33,7 @@ long DescribeModifyParameterLogRequest::getResourceOwnerId()const
 void DescribeModifyParameterLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeModifyParameterLogRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeModifyParameterLogRequest::getResourceOwnerAccount()const
 void DescribeModifyParameterLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeModifyParameterLogRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeModifyParameterLogRequest::getOwnerAccount()const
 void DescribeModifyParameterLogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeModifyParameterLogRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeModifyParameterLogRequest::getPageSize()const
 void DescribeModifyParameterLogRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeModifyParameterLogRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string DescribeModifyParameterLogRequest::getEndTime()const
 void DescribeModifyParameterLogRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeModifyParameterLogRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeModifyParameterLogRequest::getDBInstanceId()const
 void DescribeModifyParameterLogRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeModifyParameterLogRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string DescribeModifyParameterLogRequest::getStartTime()const
 void DescribeModifyParameterLogRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeModifyParameterLogRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeModifyParameterLogRequest::getOwnerId()const
 void DescribeModifyParameterLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeModifyParameterLogRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int DescribeModifyParameterLogRequest::getPageNumber()const
 void DescribeModifyParameterLogRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeModifyParameterLogRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string DescribeModifyParameterLogRequest::getAccessKeyId()const
 void DescribeModifyParameterLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long ModifyDBInstanceHAConfigRequest::getResourceOwnerId()const
 void ModifyDBInstanceHAConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBInstanceHAConfigRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifyDBInstanceHAConfigRequest::getResourceOwnerAccount()const
 void ModifyDBInstanceHAConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBInstanceHAConfigRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceHAConfigRequest::getOwnerAccount()const
 void ModifyDBInstanceHAConfigRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDBInstanceHAConfigRequest::getSyncMode()const
@@ -66,7 +66,7 @@ std::string ModifyDBInstanceHAConfigRequest::getSyncMode()const
 void ModifyDBInstanceHAConfigRequest::setSyncMode(const std::string& syncMode)
 {
 	syncMode_ = syncMode;
-	setParameter("SyncMode", syncMode);
+	setCoreParameter("SyncMode", syncMode);
 }
 
 std::string ModifyDBInstanceHAConfigRequest::getDbInstanceId()const
@@ -77,7 +77,7 @@ std::string ModifyDBInstanceHAConfigRequest::getDbInstanceId()const
 void ModifyDBInstanceHAConfigRequest::setDbInstanceId(const std::string& dbInstanceId)
 {
 	dbInstanceId_ = dbInstanceId;
-	setParameter("DbInstanceId", dbInstanceId);
+	setCoreParameter("DbInstanceId", dbInstanceId);
 }
 
 long ModifyDBInstanceHAConfigRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ModifyDBInstanceHAConfigRequest::getOwnerId()const
 void ModifyDBInstanceHAConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBInstanceHAConfigRequest::getHAMode()const
@@ -99,7 +99,7 @@ std::string ModifyDBInstanceHAConfigRequest::getHAMode()const
 void ModifyDBInstanceHAConfigRequest::setHAMode(const std::string& hAMode)
 {
 	hAMode_ = hAMode;
-	setParameter("HAMode", hAMode);
+	setCoreParameter("HAMode", hAMode);
 }
 
 std::string ModifyDBInstanceHAConfigRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ModifyDBInstanceHAConfigRequest::getAccessKeyId()const
 void ModifyDBInstanceHAConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

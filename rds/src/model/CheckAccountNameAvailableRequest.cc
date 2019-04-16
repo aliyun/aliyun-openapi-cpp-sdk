@@ -33,7 +33,7 @@ long CheckAccountNameAvailableRequest::getResourceOwnerId()const
 void CheckAccountNameAvailableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CheckAccountNameAvailableRequest::getAccountName()const
@@ -44,7 +44,7 @@ std::string CheckAccountNameAvailableRequest::getAccountName()const
 void CheckAccountNameAvailableRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setParameter("AccountName", accountName);
+	setCoreParameter("AccountName", accountName);
 }
 
 std::string CheckAccountNameAvailableRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CheckAccountNameAvailableRequest::getResourceOwnerAccount()const
 void CheckAccountNameAvailableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CheckAccountNameAvailableRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CheckAccountNameAvailableRequest::getClientToken()const
 void CheckAccountNameAvailableRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CheckAccountNameAvailableRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CheckAccountNameAvailableRequest::getOwnerAccount()const
 void CheckAccountNameAvailableRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CheckAccountNameAvailableRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string CheckAccountNameAvailableRequest::getDBInstanceId()const
 void CheckAccountNameAvailableRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long CheckAccountNameAvailableRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long CheckAccountNameAvailableRequest::getOwnerId()const
 void CheckAccountNameAvailableRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CheckAccountNameAvailableRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string CheckAccountNameAvailableRequest::getAccessKeyId()const
 void CheckAccountNameAvailableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

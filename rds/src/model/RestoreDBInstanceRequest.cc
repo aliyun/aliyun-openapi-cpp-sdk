@@ -33,7 +33,7 @@ long RestoreDBInstanceRequest::getResourceOwnerId()const
 void RestoreDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RestoreDBInstanceRequest::getRestoreTime()const
@@ -44,7 +44,7 @@ std::string RestoreDBInstanceRequest::getRestoreTime()const
 void RestoreDBInstanceRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setParameter("RestoreTime", restoreTime);
+	setCoreParameter("RestoreTime", restoreTime);
 }
 
 std::string RestoreDBInstanceRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string RestoreDBInstanceRequest::getResourceOwnerAccount()const
 void RestoreDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RestoreDBInstanceRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string RestoreDBInstanceRequest::getClientToken()const
 void RestoreDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string RestoreDBInstanceRequest::getBackupId()const
@@ -77,7 +77,7 @@ std::string RestoreDBInstanceRequest::getBackupId()const
 void RestoreDBInstanceRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setParameter("BackupId", backupId);
+	setCoreParameter("BackupId", backupId);
 }
 
 std::string RestoreDBInstanceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RestoreDBInstanceRequest::getOwnerAccount()const
 void RestoreDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RestoreDBInstanceRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string RestoreDBInstanceRequest::getDBInstanceId()const
 void RestoreDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long RestoreDBInstanceRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long RestoreDBInstanceRequest::getOwnerId()const
 void RestoreDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RestoreDBInstanceRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string RestoreDBInstanceRequest::getAccessKeyId()const
 void RestoreDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

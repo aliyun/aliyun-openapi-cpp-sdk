@@ -33,7 +33,7 @@ long ResetAccountForPGRequest::getResourceOwnerId()const
 void ResetAccountForPGRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ResetAccountForPGRequest::getAccountPassword()const
@@ -44,7 +44,7 @@ std::string ResetAccountForPGRequest::getAccountPassword()const
 void ResetAccountForPGRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setParameter("AccountPassword", accountPassword);
+	setCoreParameter("AccountPassword", accountPassword);
 }
 
 std::string ResetAccountForPGRequest::getAccountName()const
@@ -55,7 +55,7 @@ std::string ResetAccountForPGRequest::getAccountName()const
 void ResetAccountForPGRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setParameter("AccountName", accountName);
+	setCoreParameter("AccountName", accountName);
 }
 
 std::string ResetAccountForPGRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ResetAccountForPGRequest::getResourceOwnerAccount()const
 void ResetAccountForPGRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ResetAccountForPGRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ResetAccountForPGRequest::getOwnerAccount()const
 void ResetAccountForPGRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ResetAccountForPGRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string ResetAccountForPGRequest::getDBInstanceId()const
 void ResetAccountForPGRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long ResetAccountForPGRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ResetAccountForPGRequest::getOwnerId()const
 void ResetAccountForPGRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ResetAccountForPGRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ResetAccountForPGRequest::getAccessKeyId()const
 void ResetAccountForPGRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

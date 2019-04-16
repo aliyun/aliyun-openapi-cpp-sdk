@@ -33,7 +33,7 @@ long DescribeLogBackupFilesRequest::getResourceOwnerId()const
 void DescribeLogBackupFilesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeLogBackupFilesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeLogBackupFilesRequest::getResourceOwnerAccount()const
 void DescribeLogBackupFilesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeLogBackupFilesRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeLogBackupFilesRequest::getOwnerAccount()const
 void DescribeLogBackupFilesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeLogBackupFilesRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeLogBackupFilesRequest::getPageSize()const
 void DescribeLogBackupFilesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeLogBackupFilesRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string DescribeLogBackupFilesRequest::getEndTime()const
 void DescribeLogBackupFilesRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLogBackupFilesRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeLogBackupFilesRequest::getDBInstanceId()const
 void DescribeLogBackupFilesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeLogBackupFilesRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string DescribeLogBackupFilesRequest::getStartTime()const
 void DescribeLogBackupFilesRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeLogBackupFilesRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeLogBackupFilesRequest::getOwnerId()const
 void DescribeLogBackupFilesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeLogBackupFilesRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int DescribeLogBackupFilesRequest::getPageNumber()const
 void DescribeLogBackupFilesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeLogBackupFilesRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string DescribeLogBackupFilesRequest::getAccessKeyId()const
 void DescribeLogBackupFilesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

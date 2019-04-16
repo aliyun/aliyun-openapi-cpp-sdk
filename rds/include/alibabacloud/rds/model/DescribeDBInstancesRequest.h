@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTag1value()const;
 				void setTag1value(const std::string& tag1value);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getExpired()const;
 				void setExpired(const std::string& expired);
 				std::string getEngine()const;
@@ -118,6 +120,7 @@ namespace AlibabaCloud
 				int pageNumber_;
 				std::string accessKeyId_;
 				std::string tag1value_;
+				std::string resourceGroupId_;
 				std::string expired_;
 				std::string engine_;
 				std::string regionId_;

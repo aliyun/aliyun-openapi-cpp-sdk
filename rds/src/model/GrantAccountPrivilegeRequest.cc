@@ -33,7 +33,7 @@ long GrantAccountPrivilegeRequest::getResourceOwnerId()const
 void GrantAccountPrivilegeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GrantAccountPrivilegeRequest::getAccountName()const
@@ -44,7 +44,7 @@ std::string GrantAccountPrivilegeRequest::getAccountName()const
 void GrantAccountPrivilegeRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setParameter("AccountName", accountName);
+	setCoreParameter("AccountName", accountName);
 }
 
 std::string GrantAccountPrivilegeRequest::getDBName()const
@@ -55,7 +55,7 @@ std::string GrantAccountPrivilegeRequest::getDBName()const
 void GrantAccountPrivilegeRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setParameter("DBName", dBName);
+	setCoreParameter("DBName", dBName);
 }
 
 std::string GrantAccountPrivilegeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string GrantAccountPrivilegeRequest::getResourceOwnerAccount()const
 void GrantAccountPrivilegeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GrantAccountPrivilegeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string GrantAccountPrivilegeRequest::getOwnerAccount()const
 void GrantAccountPrivilegeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GrantAccountPrivilegeRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string GrantAccountPrivilegeRequest::getDBInstanceId()const
 void GrantAccountPrivilegeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long GrantAccountPrivilegeRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long GrantAccountPrivilegeRequest::getOwnerId()const
 void GrantAccountPrivilegeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GrantAccountPrivilegeRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string GrantAccountPrivilegeRequest::getAccessKeyId()const
 void GrantAccountPrivilegeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GrantAccountPrivilegeRequest::getAccountPrivilege()const
@@ -121,6 +121,6 @@ std::string GrantAccountPrivilegeRequest::getAccountPrivilege()const
 void GrantAccountPrivilegeRequest::setAccountPrivilege(const std::string& accountPrivilege)
 {
 	accountPrivilege_ = accountPrivilege;
-	setParameter("AccountPrivilege", accountPrivilege);
+	setCoreParameter("AccountPrivilege", accountPrivilege);
 }
 

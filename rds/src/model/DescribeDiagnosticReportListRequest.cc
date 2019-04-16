@@ -33,7 +33,7 @@ std::string DescribeDiagnosticReportListRequest::getDBInstanceId()const
 void DescribeDiagnosticReportListRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDiagnosticReportListRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeDiagnosticReportListRequest::getAccessKeyId()const
 void DescribeDiagnosticReportListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

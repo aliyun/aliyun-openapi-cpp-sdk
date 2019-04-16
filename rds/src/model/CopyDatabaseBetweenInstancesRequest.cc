@@ -33,7 +33,7 @@ long CopyDatabaseBetweenInstancesRequest::getResourceOwnerId()const
 void CopyDatabaseBetweenInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getRestoreTime()const
@@ -44,7 +44,7 @@ std::string CopyDatabaseBetweenInstancesRequest::getRestoreTime()const
 void CopyDatabaseBetweenInstancesRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setParameter("RestoreTime", restoreTime);
+	setCoreParameter("RestoreTime", restoreTime);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CopyDatabaseBetweenInstancesRequest::getResourceOwnerAccount()const
 void CopyDatabaseBetweenInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CopyDatabaseBetweenInstancesRequest::getClientToken()const
 void CopyDatabaseBetweenInstancesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getBackupId()const
@@ -77,7 +77,7 @@ std::string CopyDatabaseBetweenInstancesRequest::getBackupId()const
 void CopyDatabaseBetweenInstancesRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setParameter("BackupId", backupId);
+	setCoreParameter("BackupId", backupId);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CopyDatabaseBetweenInstancesRequest::getOwnerAccount()const
 void CopyDatabaseBetweenInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CopyDatabaseBetweenInstancesRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long CopyDatabaseBetweenInstancesRequest::getOwnerId()const
 void CopyDatabaseBetweenInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getSyncUserPrivilege()const
@@ -110,7 +110,7 @@ std::string CopyDatabaseBetweenInstancesRequest::getSyncUserPrivilege()const
 void CopyDatabaseBetweenInstancesRequest::setSyncUserPrivilege(const std::string& syncUserPrivilege)
 {
 	syncUserPrivilege_ = syncUserPrivilege;
-	setParameter("SyncUserPrivilege", syncUserPrivilege);
+	setCoreParameter("SyncUserPrivilege", syncUserPrivilege);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string CopyDatabaseBetweenInstancesRequest::getAccessKeyId()const
 void CopyDatabaseBetweenInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getDbNames()const
@@ -132,7 +132,7 @@ std::string CopyDatabaseBetweenInstancesRequest::getDbNames()const
 void CopyDatabaseBetweenInstancesRequest::setDbNames(const std::string& dbNames)
 {
 	dbNames_ = dbNames;
-	setParameter("DbNames", dbNames);
+	setCoreParameter("DbNames", dbNames);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getResourceGroupId()const
@@ -143,7 +143,7 @@ std::string CopyDatabaseBetweenInstancesRequest::getResourceGroupId()const
 void CopyDatabaseBetweenInstancesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getTargetDBInstanceId()const
@@ -154,7 +154,7 @@ std::string CopyDatabaseBetweenInstancesRequest::getTargetDBInstanceId()const
 void CopyDatabaseBetweenInstancesRequest::setTargetDBInstanceId(const std::string& targetDBInstanceId)
 {
 	targetDBInstanceId_ = targetDBInstanceId;
-	setParameter("TargetDBInstanceId", targetDBInstanceId);
+	setCoreParameter("TargetDBInstanceId", targetDBInstanceId);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getDBInstanceId()const
@@ -165,7 +165,7 @@ std::string CopyDatabaseBetweenInstancesRequest::getDBInstanceId()const
 void CopyDatabaseBetweenInstancesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getPayType()const
@@ -176,6 +176,6 @@ std::string CopyDatabaseBetweenInstancesRequest::getPayType()const
 void CopyDatabaseBetweenInstancesRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setParameter("PayType", payType);
+	setCoreParameter("PayType", payType);
 }
 

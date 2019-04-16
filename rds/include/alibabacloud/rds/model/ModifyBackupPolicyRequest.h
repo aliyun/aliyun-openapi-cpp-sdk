@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getLogBackupFrequency()const;
 				void setLogBackupFrequency(const std::string& logBackupFrequency);
+				std::string getCompressType()const;
+				void setCompressType(const std::string& compressType);
 				std::string getBackupLog()const;
 				void setBackupLog(const std::string& backupLog);
 				std::string getLocalLogRetentionSpace()const;
@@ -83,6 +85,7 @@ namespace AlibabaCloud
 				std::string localLogRetentionHours_;
 				std::string ownerAccount_;
 				std::string logBackupFrequency_;
+				std::string compressType_;
 				std::string backupLog_;
 				std::string localLogRetentionSpace_;
 				long ownerId_;

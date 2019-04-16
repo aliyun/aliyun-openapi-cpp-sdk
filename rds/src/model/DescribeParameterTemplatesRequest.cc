@@ -33,7 +33,7 @@ long DescribeParameterTemplatesRequest::getResourceOwnerId()const
 void DescribeParameterTemplatesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeParameterTemplatesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeParameterTemplatesRequest::getResourceOwnerAccount()const
 void DescribeParameterTemplatesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeParameterTemplatesRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string DescribeParameterTemplatesRequest::getClientToken()const
 void DescribeParameterTemplatesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DescribeParameterTemplatesRequest::getEngine()const
@@ -66,7 +66,7 @@ std::string DescribeParameterTemplatesRequest::getEngine()const
 void DescribeParameterTemplatesRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setParameter("Engine", engine);
+	setCoreParameter("Engine", engine);
 }
 
 std::string DescribeParameterTemplatesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeParameterTemplatesRequest::getOwnerAccount()const
 void DescribeParameterTemplatesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeParameterTemplatesRequest::getEngineVersion()const
@@ -88,7 +88,7 @@ std::string DescribeParameterTemplatesRequest::getEngineVersion()const
 void DescribeParameterTemplatesRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", engineVersion);
 }
 
 long DescribeParameterTemplatesRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeParameterTemplatesRequest::getOwnerId()const
 void DescribeParameterTemplatesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeParameterTemplatesRequest::getCategory()const
@@ -110,7 +110,7 @@ std::string DescribeParameterTemplatesRequest::getCategory()const
 void DescribeParameterTemplatesRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setParameter("Category", category);
+	setCoreParameter("Category", category);
 }
 
 std::string DescribeParameterTemplatesRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string DescribeParameterTemplatesRequest::getAccessKeyId()const
 void DescribeParameterTemplatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

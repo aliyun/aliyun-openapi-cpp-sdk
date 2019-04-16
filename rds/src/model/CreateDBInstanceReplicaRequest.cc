@@ -33,7 +33,7 @@ std::string CreateDBInstanceReplicaRequest::getConnectionMode()const
 void CreateDBInstanceReplicaRequest::setConnectionMode(const std::string& connectionMode)
 {
 	connectionMode_ = connectionMode;
-	setParameter("ConnectionMode", connectionMode);
+	setCoreParameter("ConnectionMode", connectionMode);
 }
 
 std::string CreateDBInstanceReplicaRequest::getDomainMode()const
@@ -44,7 +44,7 @@ std::string CreateDBInstanceReplicaRequest::getDomainMode()const
 void CreateDBInstanceReplicaRequest::setDomainMode(const std::string& domainMode)
 {
 	domainMode_ = domainMode;
-	setParameter("DomainMode", domainMode);
+	setCoreParameter("DomainMode", domainMode);
 }
 
 std::string CreateDBInstanceReplicaRequest::getReplicaDescription()const
@@ -55,7 +55,7 @@ std::string CreateDBInstanceReplicaRequest::getReplicaDescription()const
 void CreateDBInstanceReplicaRequest::setReplicaDescription(const std::string& replicaDescription)
 {
 	replicaDescription_ = replicaDescription;
-	setParameter("ReplicaDescription", replicaDescription);
+	setCoreParameter("ReplicaDescription", replicaDescription);
 }
 
 long CreateDBInstanceReplicaRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ long CreateDBInstanceReplicaRequest::getResourceOwnerId()const
 void CreateDBInstanceReplicaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int CreateDBInstanceReplicaRequest::getDBInstanceStorage()const
@@ -77,7 +77,7 @@ int CreateDBInstanceReplicaRequest::getDBInstanceStorage()const
 void CreateDBInstanceReplicaRequest::setDBInstanceStorage(int dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
 }
 
 std::string CreateDBInstanceReplicaRequest::getSystemDBCharset()const
@@ -88,7 +88,7 @@ std::string CreateDBInstanceReplicaRequest::getSystemDBCharset()const
 void CreateDBInstanceReplicaRequest::setSystemDBCharset(const std::string& systemDBCharset)
 {
 	systemDBCharset_ = systemDBCharset;
-	setParameter("SystemDBCharset", systemDBCharset);
+	setCoreParameter("SystemDBCharset", systemDBCharset);
 }
 
 std::string CreateDBInstanceReplicaRequest::getClientToken()const
@@ -99,7 +99,7 @@ std::string CreateDBInstanceReplicaRequest::getClientToken()const
 void CreateDBInstanceReplicaRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateDBInstanceReplicaRequest::getEngineVersion()const
@@ -110,7 +110,7 @@ std::string CreateDBInstanceReplicaRequest::getEngineVersion()const
 void CreateDBInstanceReplicaRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", engineVersion);
 }
 
 std::string CreateDBInstanceReplicaRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string CreateDBInstanceReplicaRequest::getAccessKeyId()const
 void CreateDBInstanceReplicaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateDBInstanceReplicaRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string CreateDBInstanceReplicaRequest::getRegionId()const
 void CreateDBInstanceReplicaRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateDBInstanceReplicaRequest::getEngine()const
@@ -143,7 +143,7 @@ std::string CreateDBInstanceReplicaRequest::getEngine()const
 void CreateDBInstanceReplicaRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setParameter("Engine", engine);
+	setCoreParameter("Engine", engine);
 }
 
 std::string CreateDBInstanceReplicaRequest::getDBInstanceDescription()const
@@ -154,7 +154,7 @@ std::string CreateDBInstanceReplicaRequest::getDBInstanceDescription()const
 void CreateDBInstanceReplicaRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
 {
 	dBInstanceDescription_ = dBInstanceDescription;
-	setParameter("DBInstanceDescription", dBInstanceDescription);
+	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
 std::string CreateDBInstanceReplicaRequest::getDBInstanceNetType()const
@@ -165,7 +165,7 @@ std::string CreateDBInstanceReplicaRequest::getDBInstanceNetType()const
 void CreateDBInstanceReplicaRequest::setDBInstanceNetType(const std::string& dBInstanceNetType)
 {
 	dBInstanceNetType_ = dBInstanceNetType;
-	setParameter("DBInstanceNetType", dBInstanceNetType);
+	setCoreParameter("DBInstanceNetType", dBInstanceNetType);
 }
 
 std::string CreateDBInstanceReplicaRequest::getPeriod()const
@@ -176,7 +176,7 @@ std::string CreateDBInstanceReplicaRequest::getPeriod()const
 void CreateDBInstanceReplicaRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setParameter("Period", period);
+	setCoreParameter("Period", period);
 }
 
 std::string CreateDBInstanceReplicaRequest::getResourceOwnerAccount()const
@@ -187,7 +187,7 @@ std::string CreateDBInstanceReplicaRequest::getResourceOwnerAccount()const
 void CreateDBInstanceReplicaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateDBInstanceReplicaRequest::getOwnerAccount()const
@@ -198,7 +198,7 @@ std::string CreateDBInstanceReplicaRequest::getOwnerAccount()const
 void CreateDBInstanceReplicaRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateDBInstanceReplicaRequest::getOwnerId()const
@@ -209,7 +209,7 @@ long CreateDBInstanceReplicaRequest::getOwnerId()const
 void CreateDBInstanceReplicaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateDBInstanceReplicaRequest::getUsedTime()const
@@ -220,7 +220,7 @@ std::string CreateDBInstanceReplicaRequest::getUsedTime()const
 void CreateDBInstanceReplicaRequest::setUsedTime(const std::string& usedTime)
 {
 	usedTime_ = usedTime;
-	setParameter("UsedTime", usedTime);
+	setCoreParameter("UsedTime", usedTime);
 }
 
 std::string CreateDBInstanceReplicaRequest::getDBInstanceClass()const
@@ -231,7 +231,7 @@ std::string CreateDBInstanceReplicaRequest::getDBInstanceClass()const
 void CreateDBInstanceReplicaRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setParameter("DBInstanceClass", dBInstanceClass);
+	setCoreParameter("DBInstanceClass", dBInstanceClass);
 }
 
 std::string CreateDBInstanceReplicaRequest::getSecurityIPList()const
@@ -242,7 +242,7 @@ std::string CreateDBInstanceReplicaRequest::getSecurityIPList()const
 void CreateDBInstanceReplicaRequest::setSecurityIPList(const std::string& securityIPList)
 {
 	securityIPList_ = securityIPList;
-	setParameter("SecurityIPList", securityIPList);
+	setCoreParameter("SecurityIPList", securityIPList);
 }
 
 std::string CreateDBInstanceReplicaRequest::getVSwitchId()const
@@ -253,7 +253,7 @@ std::string CreateDBInstanceReplicaRequest::getVSwitchId()const
 void CreateDBInstanceReplicaRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateDBInstanceReplicaRequest::getPrivateIpAddress()const
@@ -264,7 +264,7 @@ std::string CreateDBInstanceReplicaRequest::getPrivateIpAddress()const
 void CreateDBInstanceReplicaRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setParameter("PrivateIpAddress", privateIpAddress);
+	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
 std::string CreateDBInstanceReplicaRequest::getSourceDBInstanceId()const
@@ -275,7 +275,7 @@ std::string CreateDBInstanceReplicaRequest::getSourceDBInstanceId()const
 void CreateDBInstanceReplicaRequest::setSourceDBInstanceId(const std::string& sourceDBInstanceId)
 {
 	sourceDBInstanceId_ = sourceDBInstanceId;
-	setParameter("SourceDBInstanceId", sourceDBInstanceId);
+	setCoreParameter("SourceDBInstanceId", sourceDBInstanceId);
 }
 
 std::string CreateDBInstanceReplicaRequest::getReplicaMode()const
@@ -286,7 +286,7 @@ std::string CreateDBInstanceReplicaRequest::getReplicaMode()const
 void CreateDBInstanceReplicaRequest::setReplicaMode(const std::string& replicaMode)
 {
 	replicaMode_ = replicaMode;
-	setParameter("ReplicaMode", replicaMode);
+	setCoreParameter("ReplicaMode", replicaMode);
 }
 
 std::string CreateDBInstanceReplicaRequest::getVPCId()const
@@ -297,7 +297,7 @@ std::string CreateDBInstanceReplicaRequest::getVPCId()const
 void CreateDBInstanceReplicaRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
-	setParameter("VPCId", vPCId);
+	setCoreParameter("VPCId", vPCId);
 }
 
 std::string CreateDBInstanceReplicaRequest::getZoneId()const
@@ -308,7 +308,7 @@ std::string CreateDBInstanceReplicaRequest::getZoneId()const
 void CreateDBInstanceReplicaRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string CreateDBInstanceReplicaRequest::getPayType()const
@@ -319,7 +319,7 @@ std::string CreateDBInstanceReplicaRequest::getPayType()const
 void CreateDBInstanceReplicaRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setParameter("PayType", payType);
+	setCoreParameter("PayType", payType);
 }
 
 std::string CreateDBInstanceReplicaRequest::getInstanceNetworkType()const
@@ -330,6 +330,6 @@ std::string CreateDBInstanceReplicaRequest::getInstanceNetworkType()const
 void CreateDBInstanceReplicaRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setParameter("InstanceNetworkType", instanceNetworkType);
+	setCoreParameter("InstanceNetworkType", instanceNetworkType);
 }
 

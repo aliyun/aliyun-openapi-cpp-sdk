@@ -33,7 +33,7 @@ long DescribeAccountsRequest::getResourceOwnerId()const
 void DescribeAccountsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAccountsRequest::getAccountName()const
@@ -44,7 +44,7 @@ std::string DescribeAccountsRequest::getAccountName()const
 void DescribeAccountsRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setParameter("AccountName", accountName);
+	setCoreParameter("AccountName", accountName);
 }
 
 std::string DescribeAccountsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeAccountsRequest::getResourceOwnerAccount()const
 void DescribeAccountsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAccountsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeAccountsRequest::getOwnerAccount()const
 void DescribeAccountsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeAccountsRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeAccountsRequest::getPageSize()const
 void DescribeAccountsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAccountsRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeAccountsRequest::getDBInstanceId()const
 void DescribeAccountsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeAccountsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeAccountsRequest::getOwnerId()const
 void DescribeAccountsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeAccountsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeAccountsRequest::getPageNumber()const
 void DescribeAccountsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAccountsRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string DescribeAccountsRequest::getAccessKeyId()const
 void DescribeAccountsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

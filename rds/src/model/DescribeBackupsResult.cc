@@ -82,6 +82,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.storeStatus = value["StoreStatus"].asString();
 		if(!value["MetaStatus"].isNull())
 			itemsObject.metaStatus = value["MetaStatus"].asString();
+		if(!value["SlaveStatus"].isNull())
+			itemsObject.slaveStatus = value["SlaveStatus"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

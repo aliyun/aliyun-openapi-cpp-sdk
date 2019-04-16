@@ -33,7 +33,7 @@ long ModifyMySQLDBInstanceDelayRequest::getResourceOwnerId()const
 void ModifyMySQLDBInstanceDelayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyMySQLDBInstanceDelayRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifyMySQLDBInstanceDelayRequest::getResourceOwnerAccount()const
 void ModifyMySQLDBInstanceDelayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyMySQLDBInstanceDelayRequest::getSqlDelay()const
@@ -55,7 +55,7 @@ std::string ModifyMySQLDBInstanceDelayRequest::getSqlDelay()const
 void ModifyMySQLDBInstanceDelayRequest::setSqlDelay(const std::string& sqlDelay)
 {
 	sqlDelay_ = sqlDelay;
-	setParameter("SqlDelay", sqlDelay);
+	setCoreParameter("SqlDelay", sqlDelay);
 }
 
 std::string ModifyMySQLDBInstanceDelayRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string ModifyMySQLDBInstanceDelayRequest::getDBInstanceId()const
 void ModifyMySQLDBInstanceDelayRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long ModifyMySQLDBInstanceDelayRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long ModifyMySQLDBInstanceDelayRequest::getOwnerId()const
 void ModifyMySQLDBInstanceDelayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyMySQLDBInstanceDelayRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ModifyMySQLDBInstanceDelayRequest::getAccessKeyId()const
 void ModifyMySQLDBInstanceDelayRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

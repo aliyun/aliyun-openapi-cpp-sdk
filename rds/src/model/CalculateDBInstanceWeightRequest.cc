@@ -33,7 +33,7 @@ long CalculateDBInstanceWeightRequest::getResourceOwnerId()const
 void CalculateDBInstanceWeightRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CalculateDBInstanceWeightRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string CalculateDBInstanceWeightRequest::getResourceOwnerAccount()const
 void CalculateDBInstanceWeightRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CalculateDBInstanceWeightRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CalculateDBInstanceWeightRequest::getOwnerAccount()const
 void CalculateDBInstanceWeightRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CalculateDBInstanceWeightRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string CalculateDBInstanceWeightRequest::getDBInstanceId()const
 void CalculateDBInstanceWeightRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long CalculateDBInstanceWeightRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long CalculateDBInstanceWeightRequest::getOwnerId()const
 void CalculateDBInstanceWeightRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CalculateDBInstanceWeightRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string CalculateDBInstanceWeightRequest::getAccessKeyId()const
 void CalculateDBInstanceWeightRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -74,6 +74,8 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		highSpaceUsageProtection_ = value["HighSpaceUsageProtection"].asString();
 	if(!value["LogBackupFrequency"].isNull())
 		logBackupFrequency_ = value["LogBackupFrequency"].asString();
+	if(!value["CompressType"].isNull())
+		compressType_ = value["CompressType"].asString();
 
 }
 
@@ -105,6 +107,11 @@ std::string DescribeBackupPolicyResult::getPreferredNextBackupTime()const
 std::string DescribeBackupPolicyResult::getHighSpaceUsageProtection()const
 {
 	return highSpaceUsageProtection_;
+}
+
+std::string DescribeBackupPolicyResult::getCompressType()const
+{
+	return compressType_;
 }
 
 std::string DescribeBackupPolicyResult::getLogBackupFrequency()const
