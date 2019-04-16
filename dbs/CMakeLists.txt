@@ -20,50 +20,10 @@ set(dbs_public_header
 	include/alibabacloud/dbs/DbsClient.h
 	include/alibabacloud/dbs/DbsExport.h )
 
-set(dbs_public_header_model 
-	include/alibabacloud/dbs/model/DescribeBackupPlanListRequest.h
-	include/alibabacloud/dbs/model/DescribeBackupPlanListResult.h
-	include/alibabacloud/dbs/model/StopBackupPlanRequest.h
-	include/alibabacloud/dbs/model/StopBackupPlanResult.h
-	include/alibabacloud/dbs/model/CreateBackupPlanRequest.h
-	include/alibabacloud/dbs/model/CreateBackupPlanResult.h
-	include/alibabacloud/dbs/model/StartBackupPlanRequest.h
-	include/alibabacloud/dbs/model/StartBackupPlanResult.h
-	include/alibabacloud/dbs/model/DescribeBackupGatewayListRequest.h
-	include/alibabacloud/dbs/model/DescribeBackupGatewayListResult.h
-	include/alibabacloud/dbs/model/CreateRestoreTaskRequest.h
-	include/alibabacloud/dbs/model/CreateRestoreTaskResult.h
-	include/alibabacloud/dbs/model/DescribeIncrementBackupListRequest.h
-	include/alibabacloud/dbs/model/DescribeIncrementBackupListResult.h
-	include/alibabacloud/dbs/model/ConfigureBackupPlanRequest.h
-	include/alibabacloud/dbs/model/ConfigureBackupPlanResult.h
-	include/alibabacloud/dbs/model/DescribeFullBackupListRequest.h
-	include/alibabacloud/dbs/model/DescribeFullBackupListResult.h
-	include/alibabacloud/dbs/model/StartRestoreTaskRequest.h
-	include/alibabacloud/dbs/model/StartRestoreTaskResult.h )
+set(dbs_public_header_model  )
 
 set(dbs_src 
-	src/DbsClient.cc
-	src/model/DescribeBackupPlanListRequest.cc
-	src/model/DescribeBackupPlanListResult.cc
-	src/model/StopBackupPlanRequest.cc
-	src/model/StopBackupPlanResult.cc
-	src/model/CreateBackupPlanRequest.cc
-	src/model/CreateBackupPlanResult.cc
-	src/model/StartBackupPlanRequest.cc
-	src/model/StartBackupPlanResult.cc
-	src/model/DescribeBackupGatewayListRequest.cc
-	src/model/DescribeBackupGatewayListResult.cc
-	src/model/CreateRestoreTaskRequest.cc
-	src/model/CreateRestoreTaskResult.cc
-	src/model/DescribeIncrementBackupListRequest.cc
-	src/model/DescribeIncrementBackupListResult.cc
-	src/model/ConfigureBackupPlanRequest.cc
-	src/model/ConfigureBackupPlanResult.cc
-	src/model/DescribeFullBackupListRequest.cc
-	src/model/DescribeFullBackupListResult.cc
-	src/model/StartRestoreTaskRequest.cc
-	src/model/StartRestoreTaskResult.cc )
+	src/DbsClient.cc )
 
 add_library(dbs ${LIB_TYPE}
 	${dbs_public_header}

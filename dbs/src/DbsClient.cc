@@ -411,3 +411,75 @@ DbsClient::StartRestoreTaskOutcomeCallable DbsClient::startRestoreTaskCallable(c
 	return task->get_future();
 }
 
+DbsClient::DescribeNodeCidrListOutcome DbsClient::describeNodeCidrList(const DescribeNodeCidrListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNodeCidrListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNodeCidrListOutcome(DescribeNodeCidrListResult(outcome.result()));
+	else
+		return DescribeNodeCidrListOutcome(outcome.error());
+}
+
+void DbsClient::describeNodeCidrListAsync(const DescribeNodeCidrListRequest& request, const DescribeNodeCidrListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNodeCidrList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::DescribeNodeCidrListOutcomeCallable DbsClient::describeNodeCidrListCallable(const DescribeNodeCidrListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNodeCidrListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNodeCidrList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DbsClient::DescribeRestoreTaskListOutcome DbsClient::describeRestoreTaskList(const DescribeRestoreTaskListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRestoreTaskListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRestoreTaskListOutcome(DescribeRestoreTaskListResult(outcome.result()));
+	else
+		return DescribeRestoreTaskListOutcome(outcome.error());
+}
+
+void DbsClient::describeRestoreTaskListAsync(const DescribeRestoreTaskListRequest& request, const DescribeRestoreTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRestoreTaskList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::DescribeRestoreTaskListOutcomeCallable DbsClient::describeRestoreTaskListCallable(const DescribeRestoreTaskListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRestoreTaskListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRestoreTaskList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

@@ -42,6 +42,10 @@
 #include "model/DescribeFullBackupListResult.h"
 #include "model/StartRestoreTaskRequest.h"
 #include "model/StartRestoreTaskResult.h"
+#include "model/DescribeNodeCidrListRequest.h"
+#include "model/DescribeNodeCidrListResult.h"
+#include "model/DescribeRestoreTaskListRequest.h"
+#include "model/DescribeRestoreTaskListResult.h"
 
 
 namespace AlibabaCloud
@@ -81,6 +85,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartRestoreTaskResult> StartRestoreTaskOutcome;
 			typedef std::future<StartRestoreTaskOutcome> StartRestoreTaskOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::StartRestoreTaskRequest&, const StartRestoreTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRestoreTaskAsyncHandler;
+			typedef Outcome<Error, Model::DescribeNodeCidrListResult> DescribeNodeCidrListOutcome;
+			typedef std::future<DescribeNodeCidrListOutcome> DescribeNodeCidrListOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::DescribeNodeCidrListRequest&, const DescribeNodeCidrListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeCidrListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRestoreTaskListResult> DescribeRestoreTaskListOutcome;
+			typedef std::future<DescribeRestoreTaskListOutcome> DescribeRestoreTaskListOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::DescribeRestoreTaskListRequest&, const DescribeRestoreTaskListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTaskListAsyncHandler;
 
 			DbsClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			DbsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -116,6 +126,12 @@ namespace AlibabaCloud
 			StartRestoreTaskOutcome startRestoreTask(const Model::StartRestoreTaskRequest &request)const;
 			void startRestoreTaskAsync(const Model::StartRestoreTaskRequest& request, const StartRestoreTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartRestoreTaskOutcomeCallable startRestoreTaskCallable(const Model::StartRestoreTaskRequest& request) const;
+			DescribeNodeCidrListOutcome describeNodeCidrList(const Model::DescribeNodeCidrListRequest &request)const;
+			void describeNodeCidrListAsync(const Model::DescribeNodeCidrListRequest& request, const DescribeNodeCidrListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeNodeCidrListOutcomeCallable describeNodeCidrListCallable(const Model::DescribeNodeCidrListRequest& request) const;
+			DescribeRestoreTaskListOutcome describeRestoreTaskList(const Model::DescribeRestoreTaskListRequest &request)const;
+			void describeRestoreTaskListAsync(const Model::DescribeRestoreTaskListRequest& request, const DescribeRestoreTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRestoreTaskListOutcomeCallable describeRestoreTaskListCallable(const Model::DescribeRestoreTaskListRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
