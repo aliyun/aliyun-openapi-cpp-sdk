@@ -107,23 +107,23 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.extendContentJson.primaryId = std::stol(extendContentJsonNode["PrimaryId"].asString());
 		if(!extendContentJsonNode["AbsolutePath"].isNull())
 			vulRecordsObject.extendContentJson.absolutePath = extendContentJsonNode["AbsolutePath"].asString();
-		auto allRpmEntityList = value["RpmEntityList"]["RpmEntityListItem"];
+		auto allRpmEntityList = value["RpmEntityList"]["RpmEntity"];
 		for (auto value : allRpmEntityList)
 		{
-			VulRecord::ExtendContentJson::RpmEntityListItem rpmEntityListItemObject;
+			VulRecord::ExtendContentJson::RpmEntity rpmEntityObject;
 			if(!value["FullVersion"].isNull())
-				rpmEntityListItemObject.fullVersion = value["FullVersion"].asString();
+				rpmEntityObject.fullVersion = value["FullVersion"].asString();
 			if(!value["MatchDetail"].isNull())
-				rpmEntityListItemObject.matchDetail = value["MatchDetail"].asString();
+				rpmEntityObject.matchDetail = value["MatchDetail"].asString();
 			if(!value["Name"].isNull())
-				rpmEntityListItemObject.name = value["Name"].asString();
+				rpmEntityObject.name = value["Name"].asString();
 			if(!value["Path"].isNull())
-				rpmEntityListItemObject.path = value["Path"].asString();
+				rpmEntityObject.path = value["Path"].asString();
 			if(!value["UpdateCmd"].isNull())
-				rpmEntityListItemObject.updateCmd = value["UpdateCmd"].asString();
+				rpmEntityObject.updateCmd = value["UpdateCmd"].asString();
 			if(!value["Version"].isNull())
-				rpmEntityListItemObject.version = value["Version"].asString();
-			vulRecordsObject.extendContentJson.rpmEntityList.push_back(rpmEntityListItemObject);
+				rpmEntityObject.version = value["Version"].asString();
+			vulRecordsObject.extendContentJson.rpmEntityList.push_back(rpmEntityObject);
 		}
 		auto necessityNode = extendContentJsonNode["Necessity"];
 		if(!necessityNode["Cvss_factor"].isNull())
@@ -142,7 +142,7 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.extendContentJson.necessity.total_score = necessityNode["Total_score"].asString();
 		if(!necessityNode["Time_factor"].isNull())
 			vulRecordsObject.extendContentJson.necessity.time_factor = necessityNode["Time_factor"].asString();
-			auto allCveList = extendContentJsonNode["cveList"]["CveList"];
+			auto allCveList = extendContentJsonNode["cveList"]["Cve"];
 			for (auto value : allCveList)
 				vulRecordsObject.extendContentJson.cveList.push_back(value.asString());
 		vulRecords_.push_back(vulRecordsObject);

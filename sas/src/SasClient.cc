@@ -231,6 +231,42 @@ SasClient::ModifySecurityCheckScheduleConfigOutcomeCallable SasClient::modifySec
 	return task->get_future();
 }
 
+SasClient::DescribeCheckWarningSummaryOutcome SasClient::describeCheckWarningSummary(const DescribeCheckWarningSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCheckWarningSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCheckWarningSummaryOutcome(DescribeCheckWarningSummaryResult(outcome.result()));
+	else
+		return DescribeCheckWarningSummaryOutcome(outcome.error());
+}
+
+void SasClient::describeCheckWarningSummaryAsync(const DescribeCheckWarningSummaryRequest& request, const DescribeCheckWarningSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCheckWarningSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeCheckWarningSummaryOutcomeCallable SasClient::describeCheckWarningSummaryCallable(const DescribeCheckWarningSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCheckWarningSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCheckWarningSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeEmgVulGroupOutcome SasClient::describeEmgVulGroup(const DescribeEmgVulGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,6 +519,42 @@ SasClient::StartBaselineSecurityCheckOutcomeCallable SasClient::startBaselineSec
 	return task->get_future();
 }
 
+SasClient::ModifyPushAllTaskOutcome SasClient::modifyPushAllTask(const ModifyPushAllTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyPushAllTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyPushAllTaskOutcome(ModifyPushAllTaskResult(outcome.result()));
+	else
+		return ModifyPushAllTaskOutcome(outcome.error());
+}
+
+void SasClient::modifyPushAllTaskAsync(const ModifyPushAllTaskRequest& request, const ModifyPushAllTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyPushAllTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ModifyPushAllTaskOutcomeCallable SasClient::modifyPushAllTaskCallable(const ModifyPushAllTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyPushAllTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyPushAllTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeRiskCheckResultOutcome SasClient::describeRiskCheckResult(const DescribeRiskCheckResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +591,42 @@ SasClient::DescribeRiskCheckResultOutcomeCallable SasClient::describeRiskCheckRe
 	return task->get_future();
 }
 
+SasClient::DescribeCheckWarningDetailOutcome SasClient::describeCheckWarningDetail(const DescribeCheckWarningDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCheckWarningDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCheckWarningDetailOutcome(DescribeCheckWarningDetailResult(outcome.result()));
+	else
+		return DescribeCheckWarningDetailOutcome(outcome.error());
+}
+
+void SasClient::describeCheckWarningDetailAsync(const DescribeCheckWarningDetailRequest& request, const DescribeCheckWarningDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCheckWarningDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeCheckWarningDetailOutcomeCallable SasClient::describeCheckWarningDetailCallable(const DescribeCheckWarningDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCheckWarningDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCheckWarningDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeSuspEventDetailOutcome SasClient::describeSuspEventDetail(const DescribeSuspEventDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +657,78 @@ SasClient::DescribeSuspEventDetailOutcomeCallable SasClient::describeSuspEventDe
 			[this, request]()
 			{
 			return this->describeSuspEventDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeStratetyOutcome SasClient::describeStratety(const DescribeStratetyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStratetyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStratetyOutcome(DescribeStratetyResult(outcome.result()));
+	else
+		return DescribeStratetyOutcome(outcome.error());
+}
+
+void SasClient::describeStratetyAsync(const DescribeStratetyRequest& request, const DescribeStratetyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStratety(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeStratetyOutcomeCallable SasClient::describeStratetyCallable(const DescribeStratetyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStratetyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStratety(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeWarningMachinesOutcome SasClient::describeWarningMachines(const DescribeWarningMachinesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWarningMachinesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWarningMachinesOutcome(DescribeWarningMachinesResult(outcome.result()));
+	else
+		return DescribeWarningMachinesOutcome(outcome.error());
+}
+
+void SasClient::describeWarningMachinesAsync(const DescribeWarningMachinesRequest& request, const DescribeWarningMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWarningMachines(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeWarningMachinesOutcomeCallable SasClient::describeWarningMachinesCallable(const DescribeWarningMachinesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWarningMachinesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWarningMachines(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -807,6 +987,42 @@ SasClient::ModifyDeleteVulWhitelistOutcomeCallable SasClient::modifyDeleteVulWhi
 	return task->get_future();
 }
 
+SasClient::DescribeStrategyExecDetailOutcome SasClient::describeStrategyExecDetail(const DescribeStrategyExecDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStrategyExecDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStrategyExecDetailOutcome(DescribeStrategyExecDetailResult(outcome.result()));
+	else
+		return DescribeStrategyExecDetailOutcome(outcome.error());
+}
+
+void SasClient::describeStrategyExecDetailAsync(const DescribeStrategyExecDetailRequest& request, const DescribeStrategyExecDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStrategyExecDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeStrategyExecDetailOutcomeCallable SasClient::describeStrategyExecDetailCallable(const DescribeStrategyExecDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStrategyExecDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStrategyExecDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeRiskCheckSummaryOutcome SasClient::describeRiskCheckSummary(const DescribeRiskCheckSummaryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +1161,42 @@ SasClient::DescribeUserBaselineAuthorizationOutcomeCallable SasClient::describeU
 			[this, request]()
 			{
 			return this->describeUserBaselineAuthorization(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeCheckWarningsOutcome SasClient::describeCheckWarnings(const DescribeCheckWarningsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCheckWarningsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCheckWarningsOutcome(DescribeCheckWarningsResult(outcome.result()));
+	else
+		return DescribeCheckWarningsOutcome(outcome.error());
+}
+
+void SasClient::describeCheckWarningsAsync(const DescribeCheckWarningsRequest& request, const DescribeCheckWarningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCheckWarnings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeCheckWarningsOutcomeCallable SasClient::describeCheckWarningsCallable(const DescribeCheckWarningsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCheckWarningsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCheckWarnings(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

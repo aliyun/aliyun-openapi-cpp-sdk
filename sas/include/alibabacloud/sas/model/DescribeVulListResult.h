@@ -47,7 +47,7 @@ namespace AlibabaCloud
 							std::string enviroment_factor;
 							std::string assets_factor;
 						};
-						struct RpmEntityListItem
+						struct RpmEntity
 						{
 							std::string path;
 							std::string updateCmd;
@@ -62,7 +62,7 @@ namespace AlibabaCloud
 						std::string aliasName;
 						Necessity necessity;
 						long lastTs;
-						std::vector<RpmEntityListItem> rpmEntityList;
+						std::vector<RpmEntity> rpmEntityList;
 						std::string tag;
 						std::string osRelease;
 						std::string absolutePath;
