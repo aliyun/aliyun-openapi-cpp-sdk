@@ -50,6 +50,8 @@
 #include "model/CreateHaVipResult.h"
 #include "model/ModifyAutoSnapshotPolicyRequest.h"
 #include "model/ModifyAutoSnapshotPolicyResult.h"
+#include "model/PurchaseReservedInstancesOfferingRequest.h"
+#include "model/PurchaseReservedInstancesOfferingResult.h"
 #include "model/AssociateEipAddressRequest.h"
 #include "model/AssociateEipAddressResult.h"
 #include "model/RevokeSecurityGroupEgressRequest.h"
@@ -96,6 +98,8 @@
 #include "model/ModifyDedicatedHostAutoRenewAttributeResult.h"
 #include "model/DescribeEipMonitorDataRequest.h"
 #include "model/DescribeEipMonitorDataResult.h"
+#include "model/ModifyReservedInstancesRequest.h"
+#include "model/ModifyReservedInstancesResult.h"
 #include "model/DescribeDisksFullStatusRequest.h"
 #include "model/DescribeDisksFullStatusResult.h"
 #include "model/CancelAutoSnapshotPolicyRequest.h"
@@ -410,6 +414,8 @@
 #include "model/CreateForwardEntryResult.h"
 #include "model/DescribeRouterInterfacesRequest.h"
 #include "model/DescribeRouterInterfacesResult.h"
+#include "model/DescribeReservedInstancesRequest.h"
+#include "model/DescribeReservedInstancesResult.h"
 #include "model/DescribeLaunchTemplatesRequest.h"
 #include "model/DescribeLaunchTemplatesResult.h"
 #include "model/EipNotifyPaidRequest.h"
@@ -571,6 +577,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyAutoSnapshotPolicyResult> ModifyAutoSnapshotPolicyOutcome;
 			typedef std::future<ModifyAutoSnapshotPolicyOutcome> ModifyAutoSnapshotPolicyOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyAutoSnapshotPolicyRequest&, const ModifyAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoSnapshotPolicyAsyncHandler;
+			typedef Outcome<Error, Model::PurchaseReservedInstancesOfferingResult> PurchaseReservedInstancesOfferingOutcome;
+			typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::PurchaseReservedInstancesOfferingRequest&, const PurchaseReservedInstancesOfferingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseReservedInstancesOfferingAsyncHandler;
 			typedef Outcome<Error, Model::AssociateEipAddressResult> AssociateEipAddressOutcome;
 			typedef std::future<AssociateEipAddressOutcome> AssociateEipAddressOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::AssociateEipAddressRequest&, const AssociateEipAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateEipAddressAsyncHandler;
@@ -640,6 +649,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEipMonitorDataResult> DescribeEipMonitorDataOutcome;
 			typedef std::future<DescribeEipMonitorDataOutcome> DescribeEipMonitorDataOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeEipMonitorDataRequest&, const DescribeEipMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEipMonitorDataAsyncHandler;
+			typedef Outcome<Error, Model::ModifyReservedInstancesResult> ModifyReservedInstancesOutcome;
+			typedef std::future<ModifyReservedInstancesOutcome> ModifyReservedInstancesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyReservedInstancesRequest&, const ModifyReservedInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReservedInstancesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDisksFullStatusResult> DescribeDisksFullStatusOutcome;
 			typedef std::future<DescribeDisksFullStatusOutcome> DescribeDisksFullStatusOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDisksFullStatusRequest&, const DescribeDisksFullStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisksFullStatusAsyncHandler;
@@ -1111,6 +1123,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRouterInterfacesResult> DescribeRouterInterfacesOutcome;
 			typedef std::future<DescribeRouterInterfacesOutcome> DescribeRouterInterfacesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeRouterInterfacesRequest&, const DescribeRouterInterfacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouterInterfacesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeReservedInstancesResult> DescribeReservedInstancesOutcome;
+			typedef std::future<DescribeReservedInstancesOutcome> DescribeReservedInstancesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeReservedInstancesRequest&, const DescribeReservedInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedInstancesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLaunchTemplatesResult> DescribeLaunchTemplatesOutcome;
 			typedef std::future<DescribeLaunchTemplatesOutcome> DescribeLaunchTemplatesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeLaunchTemplatesRequest&, const DescribeLaunchTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLaunchTemplatesAsyncHandler;
@@ -1323,6 +1338,9 @@ namespace AlibabaCloud
 			ModifyAutoSnapshotPolicyOutcome modifyAutoSnapshotPolicy(const Model::ModifyAutoSnapshotPolicyRequest &request)const;
 			void modifyAutoSnapshotPolicyAsync(const Model::ModifyAutoSnapshotPolicyRequest& request, const ModifyAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAutoSnapshotPolicyOutcomeCallable modifyAutoSnapshotPolicyCallable(const Model::ModifyAutoSnapshotPolicyRequest& request) const;
+			PurchaseReservedInstancesOfferingOutcome purchaseReservedInstancesOffering(const Model::PurchaseReservedInstancesOfferingRequest &request)const;
+			void purchaseReservedInstancesOfferingAsync(const Model::PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PurchaseReservedInstancesOfferingOutcomeCallable purchaseReservedInstancesOfferingCallable(const Model::PurchaseReservedInstancesOfferingRequest& request) const;
 			AssociateEipAddressOutcome associateEipAddress(const Model::AssociateEipAddressRequest &request)const;
 			void associateEipAddressAsync(const Model::AssociateEipAddressRequest& request, const AssociateEipAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssociateEipAddressOutcomeCallable associateEipAddressCallable(const Model::AssociateEipAddressRequest& request) const;
@@ -1392,6 +1410,9 @@ namespace AlibabaCloud
 			DescribeEipMonitorDataOutcome describeEipMonitorData(const Model::DescribeEipMonitorDataRequest &request)const;
 			void describeEipMonitorDataAsync(const Model::DescribeEipMonitorDataRequest& request, const DescribeEipMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEipMonitorDataOutcomeCallable describeEipMonitorDataCallable(const Model::DescribeEipMonitorDataRequest& request) const;
+			ModifyReservedInstancesOutcome modifyReservedInstances(const Model::ModifyReservedInstancesRequest &request)const;
+			void modifyReservedInstancesAsync(const Model::ModifyReservedInstancesRequest& request, const ModifyReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyReservedInstancesOutcomeCallable modifyReservedInstancesCallable(const Model::ModifyReservedInstancesRequest& request) const;
 			DescribeDisksFullStatusOutcome describeDisksFullStatus(const Model::DescribeDisksFullStatusRequest &request)const;
 			void describeDisksFullStatusAsync(const Model::DescribeDisksFullStatusRequest& request, const DescribeDisksFullStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDisksFullStatusOutcomeCallable describeDisksFullStatusCallable(const Model::DescribeDisksFullStatusRequest& request) const;
@@ -1863,6 +1884,9 @@ namespace AlibabaCloud
 			DescribeRouterInterfacesOutcome describeRouterInterfaces(const Model::DescribeRouterInterfacesRequest &request)const;
 			void describeRouterInterfacesAsync(const Model::DescribeRouterInterfacesRequest& request, const DescribeRouterInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRouterInterfacesOutcomeCallable describeRouterInterfacesCallable(const Model::DescribeRouterInterfacesRequest& request) const;
+			DescribeReservedInstancesOutcome describeReservedInstances(const Model::DescribeReservedInstancesRequest &request)const;
+			void describeReservedInstancesAsync(const Model::DescribeReservedInstancesRequest& request, const DescribeReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeReservedInstancesOutcomeCallable describeReservedInstancesCallable(const Model::DescribeReservedInstancesRequest& request) const;
 			DescribeLaunchTemplatesOutcome describeLaunchTemplates(const Model::DescribeLaunchTemplatesRequest &request)const;
 			void describeLaunchTemplatesAsync(const Model::DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLaunchTemplatesOutcomeCallable describeLaunchTemplatesCallable(const Model::DescribeLaunchTemplatesRequest& request) const;

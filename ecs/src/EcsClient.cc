@@ -555,6 +555,42 @@ EcsClient::ModifyAutoSnapshotPolicyOutcomeCallable EcsClient::modifyAutoSnapshot
 	return task->get_future();
 }
 
+EcsClient::PurchaseReservedInstancesOfferingOutcome EcsClient::purchaseReservedInstancesOffering(const PurchaseReservedInstancesOfferingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PurchaseReservedInstancesOfferingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PurchaseReservedInstancesOfferingOutcome(PurchaseReservedInstancesOfferingResult(outcome.result()));
+	else
+		return PurchaseReservedInstancesOfferingOutcome(outcome.error());
+}
+
+void EcsClient::purchaseReservedInstancesOfferingAsync(const PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, purchaseReservedInstancesOffering(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::PurchaseReservedInstancesOfferingOutcomeCallable EcsClient::purchaseReservedInstancesOfferingCallable(const PurchaseReservedInstancesOfferingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PurchaseReservedInstancesOfferingOutcome()>>(
+			[this, request]()
+			{
+			return this->purchaseReservedInstancesOffering(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::AssociateEipAddressOutcome EcsClient::associateEipAddress(const AssociateEipAddressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1377,6 +1413,42 @@ EcsClient::DescribeEipMonitorDataOutcomeCallable EcsClient::describeEipMonitorDa
 			[this, request]()
 			{
 			return this->describeEipMonitorData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyReservedInstancesOutcome EcsClient::modifyReservedInstances(const ModifyReservedInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyReservedInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyReservedInstancesOutcome(ModifyReservedInstancesResult(outcome.result()));
+	else
+		return ModifyReservedInstancesOutcome(outcome.error());
+}
+
+void EcsClient::modifyReservedInstancesAsync(const ModifyReservedInstancesRequest& request, const ModifyReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyReservedInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyReservedInstancesOutcomeCallable EcsClient::modifyReservedInstancesCallable(const ModifyReservedInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyReservedInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyReservedInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7029,6 +7101,42 @@ EcsClient::DescribeRouterInterfacesOutcomeCallable EcsClient::describeRouterInte
 			[this, request]()
 			{
 			return this->describeRouterInterfaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeReservedInstancesOutcome EcsClient::describeReservedInstances(const DescribeReservedInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeReservedInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeReservedInstancesOutcome(DescribeReservedInstancesResult(outcome.result()));
+	else
+		return DescribeReservedInstancesOutcome(outcome.error());
+}
+
+void EcsClient::describeReservedInstancesAsync(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeReservedInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeReservedInstancesOutcomeCallable EcsClient::describeReservedInstancesCallable(const DescribeReservedInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeReservedInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeReservedInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
