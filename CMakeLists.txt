@@ -121,3 +121,4 @@ add_subdirectory(sas)
 
 add_subdirectory(dbs)
 add_subdirectory(r-kvstore)
+add_subdirectory(dds)
