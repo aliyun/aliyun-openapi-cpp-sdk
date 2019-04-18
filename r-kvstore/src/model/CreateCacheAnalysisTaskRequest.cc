@@ -36,6 +36,17 @@ void CreateCacheAnalysisTaskRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateCacheAnalysisTaskRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateCacheAnalysisTaskRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
 std::string CreateCacheAnalysisTaskRequest::getSecurityToken()const
 {
 	return securityToken_;
