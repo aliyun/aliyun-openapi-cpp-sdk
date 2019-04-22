@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_UNSUBSCRIBEEXPORTTOOSSREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_UNSUBSCRIBEEXPORTTOOSSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryInvoicingCustomerListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT UnsubscribeExportToOSSRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryInvoicingCustomerListRequest();
-				~QueryInvoicingCustomerListRequest();
+				UnsubscribeExportToOSSRequest();
+				~UnsubscribeExportToOSSRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
             private:
-				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_UNSUBSCRIBEEXPORTTOOSSREQUEST_H_

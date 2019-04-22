@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/bssopenapi/model/QueryInvoicingCustomerListRequest.h>
+#include <alibabacloud/bssopenapi/model/QueryPriceRequest.h>
 
-using AlibabaCloud::BssOpenApi::Model::QueryInvoicingCustomerListRequest;
+using AlibabaCloud::BssOpenApi::Model::QueryPriceRequest;
 
-QueryInvoicingCustomerListRequest::QueryInvoicingCustomerListRequest() :
-	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryInvoicingCustomerList")
+QueryPriceRequest::QueryPriceRequest() :
+	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryPrice")
 {}
 
-QueryInvoicingCustomerListRequest::~QueryInvoicingCustomerListRequest()
+QueryPriceRequest::~QueryPriceRequest()
 {}
 
-long QueryInvoicingCustomerListRequest::getOwnerId()const
+std::string QueryPriceRequest::getParamStr()const
 {
-	return ownerId_;
+	return paramStr_;
 }
 
-void QueryInvoicingCustomerListRequest::setOwnerId(long ownerId)
+void QueryPriceRequest::setParamStr(const std::string& paramStr)
 {
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	paramStr_ = paramStr;
+	setCoreParameter("ParamStr", paramStr);
 }
 

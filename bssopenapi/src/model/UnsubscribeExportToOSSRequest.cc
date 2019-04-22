@@ -14,25 +14,14 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/bssopenapi/model/QueryInvoicingCustomerListRequest.h>
+#include <alibabacloud/bssopenapi/model/UnsubscribeExportToOSSRequest.h>
 
-using AlibabaCloud::BssOpenApi::Model::QueryInvoicingCustomerListRequest;
+using AlibabaCloud::BssOpenApi::Model::UnsubscribeExportToOSSRequest;
 
-QueryInvoicingCustomerListRequest::QueryInvoicingCustomerListRequest() :
-	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryInvoicingCustomerList")
+UnsubscribeExportToOSSRequest::UnsubscribeExportToOSSRequest() :
+	RpcServiceRequest("bssopenapi", "2017-12-14", "UnsubscribeExportToOSS")
 {}
 
-QueryInvoicingCustomerListRequest::~QueryInvoicingCustomerListRequest()
+UnsubscribeExportToOSSRequest::~UnsubscribeExportToOSSRequest()
 {}
-
-long QueryInvoicingCustomerListRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void QueryInvoicingCustomerListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
 

@@ -49,6 +49,10 @@ void QueryEvaluateListResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
+	if(!dataNode["TotalInvoiceAmount"].isNull())
+		data_.totalInvoiceAmount = std::stol(dataNode["TotalInvoiceAmount"].asString());
+	if(!dataNode["TotalUnAppliedInvoiceAmount"].isNull())
+		data_.totalUnAppliedInvoiceAmount = std::stol(dataNode["TotalUnAppliedInvoiceAmount"].asString());
 	auto allEvaluateList = value["EvaluateList"]["Evaluate"];
 	for (auto value : allEvaluateList)
 	{

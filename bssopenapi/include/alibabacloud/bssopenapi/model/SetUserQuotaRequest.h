@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_SETUSERQUOTAREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_SETUSERQUOTAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryInvoicingCustomerListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT SetUserQuotaRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryInvoicingCustomerListRequest();
-				~QueryInvoicingCustomerListRequest();
+				SetUserQuotaRequest();
+				~SetUserQuotaRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				long getUid()const;
+				void setUid(long uid);
+				std::string getAmount()const;
+				void setAmount(const std::string& amount);
+				std::string getOutBizId()const;
+				void setOutBizId(const std::string& outBizId);
+				std::string getCurrency()const;
+				void setCurrency(const std::string& currency);
+				std::string getBid()const;
+				void setBid(const std::string& bid);
 
             private:
-				long ownerId_;
+				long uid_;
+				std::string amount_;
+				std::string outBizId_;
+				std::string currency_;
+				std::string bid_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_SETUSERQUOTAREQUEST_H_

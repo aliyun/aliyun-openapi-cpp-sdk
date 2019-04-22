@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYENDUSERSTATUSREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYENDUSERSTATUSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryInvoicingCustomerListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryEnduserStatusRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryInvoicingCustomerListRequest();
-				~QueryInvoicingCustomerListRequest();
+				QueryEnduserStatusRequest();
+				~QueryEnduserStatusRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				long getUid()const;
+				void setUid(long uid);
+				std::string getPrimaryAccount()const;
+				void setPrimaryAccount(const std::string& primaryAccount);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
+				std::string getBusinessType()const;
+				void setBusinessType(const std::string& businessType);
 
             private:
-				long ownerId_;
+				long uid_;
+				std::string primaryAccount_;
+				std::string status_;
+				std::string businessType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYENDUSERSTATUSREQUEST_H_

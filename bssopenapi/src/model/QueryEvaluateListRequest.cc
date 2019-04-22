@@ -70,17 +70,6 @@ void QueryEvaluateListRequest::setBizTypeList(const std::vector<std::string>& bi
 		setCoreParameter("BizTypeList."+ std::to_string(i), bizTypeList.at(i));
 }
 
-long QueryEvaluateListRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void QueryEvaluateListRequest::setCallerBid(long callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
-}
-
 int QueryEvaluateListRequest::getType()const
 {
 	return type_;
@@ -189,16 +178,5 @@ void QueryEvaluateListRequest::setStartBizTime(const std::string& startBizTime)
 {
 	startBizTime_ = startBizTime;
 	setCoreParameter("StartBizTime", startBizTime);
-}
-
-long QueryEvaluateListRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void QueryEvaluateListRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

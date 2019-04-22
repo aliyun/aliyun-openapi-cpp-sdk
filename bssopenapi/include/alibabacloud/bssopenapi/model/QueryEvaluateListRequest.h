@@ -43,8 +43,6 @@ namespace AlibabaCloud
 				void setSortType(int sortType);
 				std::vector<std::string> getBizTypeList()const;
 				void setBizTypeList(const std::vector<std::string>& bizTypeList);
-				long getCallerBid()const;
-				void setCallerBid(long callerBid);
 				int getType()const;
 				void setType(int type);
 				long getOwnerId()const;
@@ -65,15 +63,12 @@ namespace AlibabaCloud
 				void setStartAmount(long startAmount);
 				std::string getStartBizTime()const;
 				void setStartBizTime(const std::string& startBizTime);
-				long getCallerUid()const;
-				void setCallerUid(long callerUid);
 
             private:
 				std::string endSearchTime_;
 				std::string outBizId_;
 				int sortType_;
 				std::vector<std::string> bizTypeList_;
-				long callerBid_;
 				int type_;
 				long ownerId_;
 				int pageNum_;
@@ -84,7 +79,6 @@ namespace AlibabaCloud
 				std::string billCycle_;
 				long startAmount_;
 				std::string startBizTime_;
-				long callerUid_;
 
 			};
 		}

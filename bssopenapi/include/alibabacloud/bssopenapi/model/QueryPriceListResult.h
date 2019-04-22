@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYEVALUATELISTRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYEVALUATELISTRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICELISTRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,48 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryEvaluateListResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryPriceListResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Evaluate
+					struct Module
 					{
-						int status;
-						long offsetCostAmount;
-						std::string bizTime;
-						std::string gmtModified;
-						std::string billCycle;
-						std::string bizType;
-						long presentAmount;
-						long itemId;
-						long originalAmount;
-						std::string name;
-						std::string gmtCreate;
-						int type;
-						long userId;
-						long billId;
-						long offsetAcceptAmount;
-						std::string opId;
-						long id;
-						std::string userNick;
-						std::string outBizId;
-						long invoicedAmount;
-						long canInvoiceAmount;
+						struct TierPrice
+						{
+							std::string endSymbol;
+							std::string tierType;
+							std::string tierStart;
+							std::string tierEnd;
+							std::string price;
+							std::string startSymbol;
+							std::string priceType;
+						};
+						std::string priceUnit;
+						std::string moduleCode;
+						std::string config;
+						std::string region;
+						std::string priceUnitQuantity;
+						std::vector<Module::TierPrice> tierPrices;
 					};
-					long totalInvoiceAmount;
-					int totalCount;
-					int pageNum;
-					int pageSize;
-					long totalUnAppliedInvoiceAmount;
-					std::string hostId;
-					std::vector<Evaluate> evaluateList;
+					std::vector<Module> modules;
+					std::string currency;
 				};
 
 
-				QueryEvaluateListResult();
-				explicit QueryEvaluateListResult(const std::string &payload);
-				~QueryEvaluateListResult();
+				QueryPriceListResult();
+				explicit QueryPriceListResult(const std::string &payload);
+				~QueryPriceListResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -88,4 +78,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYEVALUATELISTRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICELISTRESULT_H_

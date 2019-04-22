@@ -55,6 +55,7 @@ namespace AlibabaCloud
 						std::string registerNo;
 						long id;
 						std::string userNick;
+						std::string defaultRemark;
 						long taxpayerType;
 					};
 					std::vector<CustomerInvoice> customerInvoiceList;

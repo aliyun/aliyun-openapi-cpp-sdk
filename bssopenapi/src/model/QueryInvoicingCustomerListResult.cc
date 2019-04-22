@@ -85,6 +85,8 @@ void QueryInvoicingCustomerListResult::parse(const std::string &payload)
 			customerInvoiceObject.issueType = std::stol(value["IssueType"].asString());
 		if(!value["Type"].isNull())
 			customerInvoiceObject.type = std::stol(value["Type"].asString());
+		if(!value["DefaultRemark"].isNull())
+			customerInvoiceObject.defaultRemark = value["DefaultRemark"].asString();
 		data_.customerInvoiceList.push_back(customerInvoiceObject);
 	}
 	if(!value["Success"].isNull())

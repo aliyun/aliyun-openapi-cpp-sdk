@@ -23,6 +23,28 @@ set(bssopenapi_public_header
 set(bssopenapi_public_header_model 
 	include/alibabacloud/bssopenapi/model/QueryMonthlyBillRequest.h
 	include/alibabacloud/bssopenapi/model/QueryMonthlyBillResult.h
+	include/alibabacloud/bssopenapi/model/CreateUserQuotaRequest.h
+	include/alibabacloud/bssopenapi/model/CreateUserQuotaResult.h
+	include/alibabacloud/bssopenapi/model/CreateInstanceRequest.h
+	include/alibabacloud/bssopenapi/model/CreateInstanceResult.h
+	include/alibabacloud/bssopenapi/model/CancelOrderRequest.h
+	include/alibabacloud/bssopenapi/model/CancelOrderResult.h
+	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesRequest.h
+	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesResult.h
+	include/alibabacloud/bssopenapi/model/QueryUserAlarmThresholdRequest.h
+	include/alibabacloud/bssopenapi/model/QueryUserAlarmThresholdResult.h
+	include/alibabacloud/bssopenapi/model/SubscribeDetailRequest.h
+	include/alibabacloud/bssopenapi/model/SubscribeDetailResult.h
+	include/alibabacloud/bssopenapi/model/EnableBillGenerationRequest.h
+	include/alibabacloud/bssopenapi/model/EnableBillGenerationResult.h
+	include/alibabacloud/bssopenapi/model/SetEnduserStatusRequest.h
+	include/alibabacloud/bssopenapi/model/SetEnduserStatusResult.h
+	include/alibabacloud/bssopenapi/model/QueryInvoicingCustomerListRequest.h
+	include/alibabacloud/bssopenapi/model/QueryInvoicingCustomerListResult.h
+	include/alibabacloud/bssopenapi/model/QueryAccountBalanceRequest.h
+	include/alibabacloud/bssopenapi/model/QueryAccountBalanceResult.h
+	include/alibabacloud/bssopenapi/model/RenewInstanceRequest.h
+	include/alibabacloud/bssopenapi/model/RenewInstanceResult.h
 	include/alibabacloud/bssopenapi/model/QueryInstanceGaapCostRequest.h
 	include/alibabacloud/bssopenapi/model/QueryInstanceGaapCostResult.h
 	include/alibabacloud/bssopenapi/model/QueryMonthlyInstanceConsumptionRequest.h
@@ -31,18 +53,20 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryPrepaidCardsResult.h
 	include/alibabacloud/bssopenapi/model/QueryAvailableInstancesRequest.h
 	include/alibabacloud/bssopenapi/model/QueryAvailableInstancesResult.h
-	include/alibabacloud/bssopenapi/model/CreateInstanceRequest.h
-	include/alibabacloud/bssopenapi/model/CreateInstanceResult.h
 	include/alibabacloud/bssopenapi/model/GetOrderDetailRequest.h
 	include/alibabacloud/bssopenapi/model/GetOrderDetailResult.h
+	include/alibabacloud/bssopenapi/model/QueryEnduserStatusRequest.h
+	include/alibabacloud/bssopenapi/model/QueryEnduserStatusResult.h
 	include/alibabacloud/bssopenapi/model/ModifyInstanceRequest.h
 	include/alibabacloud/bssopenapi/model/ModifyInstanceResult.h
 	include/alibabacloud/bssopenapi/model/QueryCustomerAddressListRequest.h
 	include/alibabacloud/bssopenapi/model/QueryCustomerAddressListResult.h
-	include/alibabacloud/bssopenapi/model/CancelOrderRequest.h
-	include/alibabacloud/bssopenapi/model/CancelOrderResult.h
-	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesRequest.h
-	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesResult.h
+	include/alibabacloud/bssopenapi/model/SetUserQuotaRequest.h
+	include/alibabacloud/bssopenapi/model/SetUserQuotaResult.h
+	include/alibabacloud/bssopenapi/model/UnsubscribeExportToOSSRequest.h
+	include/alibabacloud/bssopenapi/model/UnsubscribeExportToOSSResult.h
+	include/alibabacloud/bssopenapi/model/QueryPriceListRequest.h
+	include/alibabacloud/bssopenapi/model/QueryPriceListResult.h
 	include/alibabacloud/bssopenapi/model/QueryRedeemRequest.h
 	include/alibabacloud/bssopenapi/model/QueryRedeemResult.h
 	include/alibabacloud/bssopenapi/model/SubscribeBillToOSSRequest.h
@@ -53,34 +77,38 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/GetResourcePackagePriceResult.h
 	include/alibabacloud/bssopenapi/model/UnsubscribeBillToOSSRequest.h
 	include/alibabacloud/bssopenapi/model/UnsubscribeBillToOSSResult.h
+	include/alibabacloud/bssopenapi/model/ChangeConsumeAmountRequest.h
+	include/alibabacloud/bssopenapi/model/ChangeConsumeAmountResult.h
 	include/alibabacloud/bssopenapi/model/ApplyInvoiceRequest.h
 	include/alibabacloud/bssopenapi/model/ApplyInvoiceResult.h
 	include/alibabacloud/bssopenapi/model/QueryProductListRequest.h
 	include/alibabacloud/bssopenapi/model/QueryProductListResult.h
+	include/alibabacloud/bssopenapi/model/SetUserAlarmThresholdRequest.h
+	include/alibabacloud/bssopenapi/model/SetUserAlarmThresholdResult.h
 	include/alibabacloud/bssopenapi/model/GetSubscriptionPriceRequest.h
 	include/alibabacloud/bssopenapi/model/GetSubscriptionPriceResult.h
-	include/alibabacloud/bssopenapi/model/EnableBillGenerationRequest.h
-	include/alibabacloud/bssopenapi/model/EnableBillGenerationResult.h
+	include/alibabacloud/bssopenapi/model/QueryAccountBookListRequest.h
+	include/alibabacloud/bssopenapi/model/QueryAccountBookListResult.h
 	include/alibabacloud/bssopenapi/model/QueryOrdersRequest.h
 	include/alibabacloud/bssopenapi/model/QueryOrdersResult.h
 	include/alibabacloud/bssopenapi/model/QueryCashCouponsRequest.h
 	include/alibabacloud/bssopenapi/model/QueryCashCouponsResult.h
-	include/alibabacloud/bssopenapi/model/QueryInvoicingCustomerListRequest.h
-	include/alibabacloud/bssopenapi/model/QueryInvoicingCustomerListResult.h
 	include/alibabacloud/bssopenapi/model/QueryEvaluateListRequest.h
 	include/alibabacloud/bssopenapi/model/QueryEvaluateListResult.h
 	include/alibabacloud/bssopenapi/model/DescribePricingModuleRequest.h
 	include/alibabacloud/bssopenapi/model/DescribePricingModuleResult.h
 	include/alibabacloud/bssopenapi/model/DescribeResourcePackageProductRequest.h
 	include/alibabacloud/bssopenapi/model/DescribeResourcePackageProductResult.h
-	include/alibabacloud/bssopenapi/model/QueryAccountBalanceRequest.h
-	include/alibabacloud/bssopenapi/model/QueryAccountBalanceResult.h
-	include/alibabacloud/bssopenapi/model/RenewInstanceRequest.h
-	include/alibabacloud/bssopenapi/model/RenewInstanceResult.h
 	include/alibabacloud/bssopenapi/model/CreateResourcePackageRequest.h
 	include/alibabacloud/bssopenapi/model/CreateResourcePackageResult.h
 	include/alibabacloud/bssopenapi/model/QueryInstanceBillRequest.h
 	include/alibabacloud/bssopenapi/model/QueryInstanceBillResult.h
+	include/alibabacloud/bssopenapi/model/SubscribeExportToOSSRequest.h
+	include/alibabacloud/bssopenapi/model/SubscribeExportToOSSResult.h
+	include/alibabacloud/bssopenapi/model/QueryAvaliableQuotaRequest.h
+	include/alibabacloud/bssopenapi/model/QueryAvaliableQuotaResult.h
+	include/alibabacloud/bssopenapi/model/QueryPriceRequest.h
+	include/alibabacloud/bssopenapi/model/QueryPriceResult.h
 	include/alibabacloud/bssopenapi/model/QueryBillRequest.h
 	include/alibabacloud/bssopenapi/model/QueryBillResult.h
 	include/alibabacloud/bssopenapi/model/SetRenewalRequest.h
@@ -98,6 +126,28 @@ set(bssopenapi_src
 	src/BssOpenApiClient.cc
 	src/model/QueryMonthlyBillRequest.cc
 	src/model/QueryMonthlyBillResult.cc
+	src/model/CreateUserQuotaRequest.cc
+	src/model/CreateUserQuotaResult.cc
+	src/model/CreateInstanceRequest.cc
+	src/model/CreateInstanceResult.cc
+	src/model/CancelOrderRequest.cc
+	src/model/CancelOrderResult.cc
+	src/model/QueryResourcePackageInstancesRequest.cc
+	src/model/QueryResourcePackageInstancesResult.cc
+	src/model/QueryUserAlarmThresholdRequest.cc
+	src/model/QueryUserAlarmThresholdResult.cc
+	src/model/SubscribeDetailRequest.cc
+	src/model/SubscribeDetailResult.cc
+	src/model/EnableBillGenerationRequest.cc
+	src/model/EnableBillGenerationResult.cc
+	src/model/SetEnduserStatusRequest.cc
+	src/model/SetEnduserStatusResult.cc
+	src/model/QueryInvoicingCustomerListRequest.cc
+	src/model/QueryInvoicingCustomerListResult.cc
+	src/model/QueryAccountBalanceRequest.cc
+	src/model/QueryAccountBalanceResult.cc
+	src/model/RenewInstanceRequest.cc
+	src/model/RenewInstanceResult.cc
 	src/model/QueryInstanceGaapCostRequest.cc
 	src/model/QueryInstanceGaapCostResult.cc
 	src/model/QueryMonthlyInstanceConsumptionRequest.cc
@@ -106,18 +156,20 @@ set(bssopenapi_src
 	src/model/QueryPrepaidCardsResult.cc
 	src/model/QueryAvailableInstancesRequest.cc
 	src/model/QueryAvailableInstancesResult.cc
-	src/model/CreateInstanceRequest.cc
-	src/model/CreateInstanceResult.cc
 	src/model/GetOrderDetailRequest.cc
 	src/model/GetOrderDetailResult.cc
+	src/model/QueryEnduserStatusRequest.cc
+	src/model/QueryEnduserStatusResult.cc
 	src/model/ModifyInstanceRequest.cc
 	src/model/ModifyInstanceResult.cc
 	src/model/QueryCustomerAddressListRequest.cc
 	src/model/QueryCustomerAddressListResult.cc
-	src/model/CancelOrderRequest.cc
-	src/model/CancelOrderResult.cc
-	src/model/QueryResourcePackageInstancesRequest.cc
-	src/model/QueryResourcePackageInstancesResult.cc
+	src/model/SetUserQuotaRequest.cc
+	src/model/SetUserQuotaResult.cc
+	src/model/UnsubscribeExportToOSSRequest.cc
+	src/model/UnsubscribeExportToOSSResult.cc
+	src/model/QueryPriceListRequest.cc
+	src/model/QueryPriceListResult.cc
 	src/model/QueryRedeemRequest.cc
 	src/model/QueryRedeemResult.cc
 	src/model/SubscribeBillToOSSRequest.cc
@@ -128,34 +180,38 @@ set(bssopenapi_src
 	src/model/GetResourcePackagePriceResult.cc
 	src/model/UnsubscribeBillToOSSRequest.cc
 	src/model/UnsubscribeBillToOSSResult.cc
+	src/model/ChangeConsumeAmountRequest.cc
+	src/model/ChangeConsumeAmountResult.cc
 	src/model/ApplyInvoiceRequest.cc
 	src/model/ApplyInvoiceResult.cc
 	src/model/QueryProductListRequest.cc
 	src/model/QueryProductListResult.cc
+	src/model/SetUserAlarmThresholdRequest.cc
+	src/model/SetUserAlarmThresholdResult.cc
 	src/model/GetSubscriptionPriceRequest.cc
 	src/model/GetSubscriptionPriceResult.cc
-	src/model/EnableBillGenerationRequest.cc
-	src/model/EnableBillGenerationResult.cc
+	src/model/QueryAccountBookListRequest.cc
+	src/model/QueryAccountBookListResult.cc
 	src/model/QueryOrdersRequest.cc
 	src/model/QueryOrdersResult.cc
 	src/model/QueryCashCouponsRequest.cc
 	src/model/QueryCashCouponsResult.cc
-	src/model/QueryInvoicingCustomerListRequest.cc
-	src/model/QueryInvoicingCustomerListResult.cc
 	src/model/QueryEvaluateListRequest.cc
 	src/model/QueryEvaluateListResult.cc
 	src/model/DescribePricingModuleRequest.cc
 	src/model/DescribePricingModuleResult.cc
 	src/model/DescribeResourcePackageProductRequest.cc
 	src/model/DescribeResourcePackageProductResult.cc
-	src/model/QueryAccountBalanceRequest.cc
-	src/model/QueryAccountBalanceResult.cc
-	src/model/RenewInstanceRequest.cc
-	src/model/RenewInstanceResult.cc
 	src/model/CreateResourcePackageRequest.cc
 	src/model/CreateResourcePackageResult.cc
 	src/model/QueryInstanceBillRequest.cc
 	src/model/QueryInstanceBillResult.cc
+	src/model/SubscribeExportToOSSRequest.cc
+	src/model/SubscribeExportToOSSResult.cc
+	src/model/QueryAvaliableQuotaRequest.cc
+	src/model/QueryAvaliableQuotaResult.cc
+	src/model/QueryPriceRequest.cc
+	src/model/QueryPriceResult.cc
 	src/model/QueryBillRequest.cc
 	src/model/QueryBillResult.cc
 	src/model/SetRenewalRequest.cc

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_SETUSERALARMTHRESHOLDREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_SETUSERALARMTHRESHOLDREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryInvoicingCustomerListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT SetUserAlarmThresholdRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryInvoicingCustomerListRequest();
-				~QueryInvoicingCustomerListRequest();
+				SetUserAlarmThresholdRequest();
+				~SetUserAlarmThresholdRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				long getUid()const;
+				void setUid(long uid);
+				std::string getAlarmType()const;
+				void setAlarmType(const std::string& alarmType);
+				std::string getAlarmThresholds()const;
+				void setAlarmThresholds(const std::string& alarmThresholds);
+				std::string getBid()const;
+				void setBid(const std::string& bid);
 
             private:
-				long ownerId_;
+				long uid_;
+				std::string alarmType_;
+				std::string alarmThresholds_;
+				std::string bid_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_SETUSERALARMTHRESHOLDREQUEST_H_

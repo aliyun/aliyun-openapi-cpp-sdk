@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTAREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryInvoicingCustomerListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryAvaliableQuotaRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryInvoicingCustomerListRequest();
-				~QueryInvoicingCustomerListRequest();
+				QueryAvaliableQuotaRequest();
+				~QueryAvaliableQuotaRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				long getUid()const;
+				void setUid(long uid);
+				std::string getItemCodes()const;
+				void setItemCodes(const std::string& itemCodes);
+				std::string getBid()const;
+				void setBid(const std::string& bid);
 
             private:
-				long ownerId_;
+				long uid_;
+				std::string itemCodes_;
+				std::string bid_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTAREQUEST_H_

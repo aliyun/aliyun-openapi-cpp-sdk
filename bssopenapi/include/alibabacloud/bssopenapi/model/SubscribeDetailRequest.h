@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_SUBSCRIBEDETAILREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_SUBSCRIBEDETAILREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryInvoicingCustomerListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT SubscribeDetailRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryInvoicingCustomerListRequest();
-				~QueryInvoicingCustomerListRequest();
+				SubscribeDetailRequest();
+				~SubscribeDetailRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				long getBucketOwnerId()const;
+				void setBucketOwnerId(long bucketOwnerId);
+				std::vector<std::string> getSubscribeType()const;
+				void setSubscribeType(const std::vector<std::string>& subscribeType);
+				std::string getSubscribeBucket()const;
+				void setSubscribeBucket(const std::string& subscribeBucket);
 
             private:
-				long ownerId_;
+				long bucketOwnerId_;
+				std::vector<std::string> subscribeType_;
+				std::string subscribeBucket_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_SUBSCRIBEDETAILREQUEST_H_

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTARESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTARESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/bssopenapi/BssOpenApiExport.h>
 
 namespace AlibabaCloud
@@ -28,21 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryInvoicingCustomerListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryAvaliableQuotaResult : public ServiceResult
 			{
-
 			public:
-				QueryInvoicingCustomerListRequest();
-				~QueryInvoicingCustomerListRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
-            private:
-				long ownerId_;
+				QueryAvaliableQuotaResult();
+				explicit QueryAvaliableQuotaResult(const std::string &payload);
+				~QueryAvaliableQuotaResult();
+				std::string getMessage()const;
+				std::string getData()const;
+				std::string getCode()const;
+				bool getSuccess()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				std::string data_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINVOICINGCUSTOMERLISTREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTARESULT_H_
