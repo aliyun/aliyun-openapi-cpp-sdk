@@ -66,6 +66,10 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 				instanceTypesObject.spotStrategy = value["SpotStrategy"].asString();
 			if(!value["SpotPriceLimit"].isNull())
 				instanceTypesObject.spotPriceLimit = std::stof(value["SpotPriceLimit"].asString());
+			if(!value["ZoneId"].isNull())
+				instanceTypesObject.zoneId = value["ZoneId"].asString();
+			if(!value["VSwitchId"].isNull())
+				instanceTypesObject.vSwitchId = value["VSwitchId"].asString();
 			queuesObject.instanceTypes.push_back(instanceTypesObject);
 		}
 		queues_.push_back(queuesObject);

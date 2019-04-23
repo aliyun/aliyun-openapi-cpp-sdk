@@ -1,3 +1,7 @@
+2019-04-23 Version: 1.36.21
+1, Support mounting multiple volumes using different protocol
+2, Support scaling out cross AZ
+
 2019-04-22 Version: 1.36.20
 1, This is an example of release-log.
 2, Please strictly follow this format to edit in English.

@@ -36,6 +36,8 @@ namespace AlibabaCloud
 				{
 					struct InstanceTypeInfo
 					{
+						std::string zoneId;
+						std::string vSwitchId;
 						float spotPriceLimit;
 						std::string instanceType;
 						std::string spotStrategy;

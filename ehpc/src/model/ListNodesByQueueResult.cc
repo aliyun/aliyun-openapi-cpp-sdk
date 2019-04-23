@@ -74,6 +74,12 @@ void ListNodesByQueueResult::parse(const std::string &payload)
 			nodesObject.location = value["Location"].asString();
 		if(!value["CreateMode"].isNull())
 			nodesObject.createMode = value["CreateMode"].asString();
+		if(!value["VpcId"].isNull())
+			nodesObject.vpcId = value["VpcId"].asString();
+		if(!value["ZoneId"].isNull())
+			nodesObject.zoneId = value["ZoneId"].asString();
+		if(!value["VSwitchId"].isNull())
+			nodesObject.vSwitchId = value["VSwitchId"].asString();
 		auto totalResourcesNode = value["TotalResources"];
 		if(!totalResourcesNode["Cpu"].isNull())
 			nodesObject.totalResources.cpu = std::stoi(totalResourcesNode["Cpu"].asString());

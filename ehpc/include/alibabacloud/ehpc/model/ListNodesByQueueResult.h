@@ -48,11 +48,14 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string imageOwnerAlias;
+					std::string zoneId;
+					std::string vSwitchId;
 					bool expired;
 					std::string addTime;
 					UsedResources usedResources;
 					bool createdByEhpc;
 					std::string createMode;
+					std::string vpcId;
 					std::string version;
 					TotalResources totalResources;
 					std::string expiredTime;
