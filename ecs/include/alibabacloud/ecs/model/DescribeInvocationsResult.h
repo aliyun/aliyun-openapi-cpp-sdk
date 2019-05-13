@@ -39,7 +39,9 @@ namespace AlibabaCloud
 						std::string instanceId;
 						std::string instanceInvokeStatus;
 					};
+					std::string commandContent;
 					std::string invokeStatus;
+					std::string parameters;
 					std::string commandType;
 					bool timed;
 					std::string frequency;

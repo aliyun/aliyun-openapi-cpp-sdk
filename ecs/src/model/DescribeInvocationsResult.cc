@@ -58,6 +58,10 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 			invocationsObject.timed = value["Timed"].asString() == "true";
 		if(!value["InvokeStatus"].isNull())
 			invocationsObject.invokeStatus = value["InvokeStatus"].asString();
+		if(!value["Parameters"].isNull())
+			invocationsObject.parameters = value["Parameters"].asString();
+		if(!value["CommandContent"].isNull())
+			invocationsObject.commandContent = value["CommandContent"].asString();
 		auto allInvokeInstances = value["InvokeInstances"]["InvokeInstance"];
 		for (auto value : allInvokeInstances)
 		{

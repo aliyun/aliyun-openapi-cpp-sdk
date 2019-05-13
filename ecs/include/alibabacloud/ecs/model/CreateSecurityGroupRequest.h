@@ -56,6 +56,8 @@ namespace AlibabaCloud
 				void setSecurityGroupName(const std::string& securityGroupName);
 				std::string getSourceRegionId()const;
 				void setSourceRegionId(const std::string& sourceRegionId);
+				std::string getSecurityGroupType()const;
+				void setSecurityGroupType(const std::string& securityGroupType);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
@@ -74,6 +76,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string securityGroupName_;
 				std::string sourceRegionId_;
+				std::string securityGroupType_;
 				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string vpcId_;

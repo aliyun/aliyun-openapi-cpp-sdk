@@ -102,6 +102,17 @@ void DescribeDedicatedHostsRequest::setPageNumber(int pageNumber)
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeDedicatedHostsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeDedicatedHostsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeDedicatedHostsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

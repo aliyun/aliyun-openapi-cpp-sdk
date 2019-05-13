@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
@@ -91,6 +93,8 @@ namespace AlibabaCloud
 				void setRequestId(const std::string& requestId);
 				int getNetworkAttributesSlbUdpTimeout()const;
 				void setNetworkAttributesSlbUdpTimeout(int networkAttributesSlbUdpTimeout);
+				std::string getAutoPlacement()const;
+				void setAutoPlacement(const std::string& autoPlacement);
 				int getNetworkAttributesUdpTimeout()const;
 				void setNetworkAttributesUdpTimeout(int networkAttributesUdpTimeout);
 
@@ -103,6 +107,7 @@ namespace AlibabaCloud
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
+				std::string sourceRegionId_;
 				std::string securityToken_;
 				std::string regionId_;
 				bool enable_;
@@ -123,6 +128,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string requestId_;
 				int networkAttributesSlbUdpTimeout_;
+				std::string autoPlacement_;
 				int networkAttributesUdpTimeout_;
 
 			};

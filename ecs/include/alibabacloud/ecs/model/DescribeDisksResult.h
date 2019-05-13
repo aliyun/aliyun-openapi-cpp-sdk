@@ -77,6 +77,7 @@ namespace AlibabaCloud
 					std::string autoSnapshotPolicyId;
 					std::string diskName;
 					std::vector<Disk::OperationLock> operationLocks;
+					std::string bdfId;
 					bool portable;
 					std::string type;
 					int mountInstanceNum;

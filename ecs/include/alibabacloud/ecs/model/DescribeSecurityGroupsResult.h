@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					std::string resourceGroupId;
 					std::string securityGroupId;
 					std::string creationTime;
+					std::string securityGroupType;
 					std::vector<SecurityGroup::Tag> tags;
 					int availableInstanceAmount;
 				};

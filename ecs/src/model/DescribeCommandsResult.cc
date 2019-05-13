@@ -60,6 +60,11 @@ void DescribeCommandsResult::parse(const std::string &payload)
 			commandsObject.timeout = std::stol(value["Timeout"].asString());
 		if(!value["CreationTime"].isNull())
 			commandsObject.creationTime = value["CreationTime"].asString();
+		if(!value["EnableParameter"].isNull())
+			commandsObject.enableParameter = value["EnableParameter"].asString() == "true";
+		auto allParameterNames = value["ParameterNames"]["ParameterName"];
+		for (auto value : allParameterNames)
+			commandsObject.parameterNames.push_back(value.asString());
 		commands_.push_back(commandsObject);
 	}
 	if(!value["TotalCount"].isNull())

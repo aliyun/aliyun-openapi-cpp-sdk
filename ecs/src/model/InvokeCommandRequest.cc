@@ -124,6 +124,17 @@ void InvokeCommandRequest::setFrequency(const std::string& frequency)
 	setCoreParameter("Frequency", frequency);
 }
 
+std::string InvokeCommandRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void InvokeCommandRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string InvokeCommandRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -321,5 +332,16 @@ void InvokeCommandRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
 	setCoreParameter("RequestId", requestId);
+}
+
+Json InvokeCommandRequest::getParameters()const
+{
+	return parameters_;
+}
+
+void InvokeCommandRequest::setParameters(const Json& parameters)
+{
+	parameters_ = parameters;
+	setCoreParameter("Parameters", std::to_string(parameters));
 }
 

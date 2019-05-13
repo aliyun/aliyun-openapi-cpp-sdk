@@ -113,6 +113,17 @@ void ModifyDedicatedHostAttributeRequest::setAccessKeyId(const std::string& acce
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyDedicatedHostAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyDedicatedHostAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyDedicatedHostAttributeRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -331,6 +342,17 @@ void ModifyDedicatedHostAttributeRequest::setNetworkAttributesSlbUdpTimeout(int 
 {
 	networkAttributesSlbUdpTimeout_ = networkAttributesSlbUdpTimeout;
 	setCoreParameter("NetworkAttributesSlbUdpTimeout", std::to_string(networkAttributesSlbUdpTimeout));
+}
+
+std::string ModifyDedicatedHostAttributeRequest::getAutoPlacement()const
+{
+	return autoPlacement_;
+}
+
+void ModifyDedicatedHostAttributeRequest::setAutoPlacement(const std::string& autoPlacement)
+{
+	autoPlacement_ = autoPlacement;
+	setCoreParameter("AutoPlacement", autoPlacement);
 }
 
 int ModifyDedicatedHostAttributeRequest::getNetworkAttributesUdpTimeout()const

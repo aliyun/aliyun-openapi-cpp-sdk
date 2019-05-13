@@ -78,6 +78,8 @@
 #include "model/DescribeTaskAttributeResult.h"
 #include "model/CreateAutoSnapshotPolicyRequest.h"
 #include "model/CreateAutoSnapshotPolicyResult.h"
+#include "model/ModifyReservedInstanceAttributeRequest.h"
+#include "model/ModifyReservedInstanceAttributeResult.h"
 #include "model/ReActivateInstancesRequest.h"
 #include "model/ReActivateInstancesResult.h"
 #include "model/DescribeForwardTableEntriesRequest.h"
@@ -619,6 +621,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateAutoSnapshotPolicyResult> CreateAutoSnapshotPolicyOutcome;
 			typedef std::future<CreateAutoSnapshotPolicyOutcome> CreateAutoSnapshotPolicyOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateAutoSnapshotPolicyRequest&, const CreateAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoSnapshotPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ModifyReservedInstanceAttributeResult> ModifyReservedInstanceAttributeOutcome;
+			typedef std::future<ModifyReservedInstanceAttributeOutcome> ModifyReservedInstanceAttributeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyReservedInstanceAttributeRequest&, const ModifyReservedInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReservedInstanceAttributeAsyncHandler;
 			typedef Outcome<Error, Model::ReActivateInstancesResult> ReActivateInstancesOutcome;
 			typedef std::future<ReActivateInstancesOutcome> ReActivateInstancesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ReActivateInstancesRequest&, const ReActivateInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReActivateInstancesAsyncHandler;
@@ -1380,6 +1385,9 @@ namespace AlibabaCloud
 			CreateAutoSnapshotPolicyOutcome createAutoSnapshotPolicy(const Model::CreateAutoSnapshotPolicyRequest &request)const;
 			void createAutoSnapshotPolicyAsync(const Model::CreateAutoSnapshotPolicyRequest& request, const CreateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAutoSnapshotPolicyOutcomeCallable createAutoSnapshotPolicyCallable(const Model::CreateAutoSnapshotPolicyRequest& request) const;
+			ModifyReservedInstanceAttributeOutcome modifyReservedInstanceAttribute(const Model::ModifyReservedInstanceAttributeRequest &request)const;
+			void modifyReservedInstanceAttributeAsync(const Model::ModifyReservedInstanceAttributeRequest& request, const ModifyReservedInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyReservedInstanceAttributeOutcomeCallable modifyReservedInstanceAttributeCallable(const Model::ModifyReservedInstanceAttributeRequest& request) const;
 			ReActivateInstancesOutcome reActivateInstances(const Model::ReActivateInstancesRequest &request)const;
 			void reActivateInstancesAsync(const Model::ReActivateInstancesRequest& request, const ReActivateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReActivateInstancesOutcomeCallable reActivateInstancesCallable(const Model::ReActivateInstancesRequest& request) const;

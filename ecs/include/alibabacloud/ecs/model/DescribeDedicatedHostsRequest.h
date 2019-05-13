@@ -54,6 +54,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getLockReason()const;
@@ -79,6 +81,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				int pageNumber_;
+				std::string sourceRegionId_;
 				std::string resourceGroupId_;
 				std::string lockReason_;
 				std::string regionId_;

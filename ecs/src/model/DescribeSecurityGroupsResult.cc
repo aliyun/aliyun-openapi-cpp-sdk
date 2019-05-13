@@ -54,6 +54,8 @@ void DescribeSecurityGroupsResult::parse(const std::string &payload)
 			securityGroupsObject.vpcId = value["VpcId"].asString();
 		if(!value["CreationTime"].isNull())
 			securityGroupsObject.creationTime = value["CreationTime"].asString();
+		if(!value["SecurityGroupType"].isNull())
+			securityGroupsObject.securityGroupType = value["SecurityGroupType"].asString();
 		if(!value["AvailableInstanceAmount"].isNull())
 			securityGroupsObject.availableInstanceAmount = std::stoi(value["AvailableInstanceAmount"].asString());
 		if(!value["EcsCount"].isNull())

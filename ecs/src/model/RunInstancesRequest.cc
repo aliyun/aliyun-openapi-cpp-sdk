@@ -844,6 +844,18 @@ void RunInstancesRequest::setCreditSpecification(const std::string& creditSpecif
 	setCoreParameter("CreditSpecification", creditSpecification);
 }
 
+std::vector<std::string> RunInstancesRequest::getSecurityGroupIds()const
+{
+	return securityGroupIds_;
+}
+
+void RunInstancesRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
+{
+	securityGroupIds_ = securityGroupIds;
+	for(int i = 0; i!= securityGroupIds.size(); i++)
+		setCoreParameter("SecurityGroupIds."+ std::to_string(i), securityGroupIds.at(i));
+}
+
 std::vector<RunInstancesRequest::DataDisk> RunInstancesRequest::getDataDisk()const
 {
 	return dataDisk_;

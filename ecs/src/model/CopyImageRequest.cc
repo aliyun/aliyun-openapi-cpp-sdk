@@ -152,6 +152,17 @@ void CopyImageRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+std::string CopyImageRequest::getKMSKeyId()const
+{
+	return kMSKeyId_;
+}
+
+void CopyImageRequest::setKMSKeyId(const std::string& kMSKeyId)
+{
+	kMSKeyId_ = kMSKeyId;
+	setCoreParameter("KMSKeyId", kMSKeyId);
+}
+
 std::string CopyImageRequest::getDestinationDescription()const
 {
 	return destinationDescription_;

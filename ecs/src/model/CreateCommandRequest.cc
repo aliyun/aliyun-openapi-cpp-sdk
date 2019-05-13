@@ -157,6 +157,17 @@ void CreateCommandRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateCommandRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateCommandRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string CreateCommandRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -342,5 +353,16 @@ void CreateCommandRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
+}
+
+bool CreateCommandRequest::getEnableParameter()const
+{
+	return enableParameter_;
+}
+
+void CreateCommandRequest::setEnableParameter(bool enableParameter)
+{
+	enableParameter_ = enableParameter;
+	setCoreParameter("EnableParameter", enableParameter ? "true" : "false");
 }
 

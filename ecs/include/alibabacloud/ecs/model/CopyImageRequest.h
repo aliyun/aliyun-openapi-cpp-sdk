@@ -62,6 +62,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getKMSKeyId()const;
+				void setKMSKeyId(const std::string& kMSKeyId);
 				std::string getDestinationDescription()const;
 				void setDestinationDescription(const std::string& destinationDescription);
 
@@ -77,6 +79,7 @@ namespace AlibabaCloud
 				bool encrypted_;
 				std::string regionId_;
 				std::vector<Tag> tag_;
+				std::string kMSKeyId_;
 				std::string destinationDescription_;
 
 			};

@@ -206,6 +206,8 @@ namespace AlibabaCloud
 				void setCallerBid(const std::string& callerBid);
 				std::string getCreditSpecification()const;
 				void setCreditSpecification(const std::string& creditSpecification);
+				std::vector<std::string> getSecurityGroupIds()const;
+				void setSecurityGroupIds(const std::vector<std::string>& securityGroupIds);
 				std::vector<DataDisk> getDataDisk()const;
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
 				long getLaunchTemplateVersion()const;
@@ -291,6 +293,7 @@ namespace AlibabaCloud
 				std::string dedicatedHostId_;
 				std::string callerBid_;
 				std::string creditSpecification_;
+				std::vector<std::string> securityGroupIds_;
 				std::vector<DataDisk> dataDisk_;
 				long launchTemplateVersion_;
 				bool proxy_trust_transport_info_;

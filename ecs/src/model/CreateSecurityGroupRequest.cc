@@ -113,6 +113,17 @@ void CreateSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegi
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
+std::string CreateSecurityGroupRequest::getSecurityGroupType()const
+{
+	return securityGroupType_;
+}
+
+void CreateSecurityGroupRequest::setSecurityGroupType(const std::string& securityGroupType)
+{
+	securityGroupType_ = securityGroupType;
+	setCoreParameter("SecurityGroupType", securityGroupType);
+}
+
 std::string CreateSecurityGroupRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

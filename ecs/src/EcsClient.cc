@@ -1059,6 +1059,42 @@ EcsClient::CreateAutoSnapshotPolicyOutcomeCallable EcsClient::createAutoSnapshot
 	return task->get_future();
 }
 
+EcsClient::ModifyReservedInstanceAttributeOutcome EcsClient::modifyReservedInstanceAttribute(const ModifyReservedInstanceAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyReservedInstanceAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyReservedInstanceAttributeOutcome(ModifyReservedInstanceAttributeResult(outcome.result()));
+	else
+		return ModifyReservedInstanceAttributeOutcome(outcome.error());
+}
+
+void EcsClient::modifyReservedInstanceAttributeAsync(const ModifyReservedInstanceAttributeRequest& request, const ModifyReservedInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyReservedInstanceAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyReservedInstanceAttributeOutcomeCallable EcsClient::modifyReservedInstanceAttributeCallable(const ModifyReservedInstanceAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyReservedInstanceAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyReservedInstanceAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ReActivateInstancesOutcome EcsClient::reActivateInstances(const ReActivateInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

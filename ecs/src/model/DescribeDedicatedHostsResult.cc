@@ -46,6 +46,8 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 		DedicatedHost dedicatedHostsObject;
 		if(!value["DedicatedHostId"].isNull())
 			dedicatedHostsObject.dedicatedHostId = value["DedicatedHostId"].asString();
+		if(!value["AutoPlacement"].isNull())
+			dedicatedHostsObject.autoPlacement = value["AutoPlacement"].asString();
 		if(!value["RegionId"].isNull())
 			dedicatedHostsObject.regionId = value["RegionId"].asString();
 		if(!value["ZoneId"].isNull())

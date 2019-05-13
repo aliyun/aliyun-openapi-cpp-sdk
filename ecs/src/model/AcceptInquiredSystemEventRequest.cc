@@ -113,6 +113,17 @@ void AcceptInquiredSystemEventRequest::setAccessKeyId(const std::string& accessK
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string AcceptInquiredSystemEventRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void AcceptInquiredSystemEventRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string AcceptInquiredSystemEventRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

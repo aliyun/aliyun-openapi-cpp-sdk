@@ -59,6 +59,11 @@ namespace AlibabaCloud
 						std::string capacityReservationPreference;
 						std::string capacityReservationId;
 					};
+					struct DedicatedInstanceAttribute
+					{
+						std::string tenancy;
+						std::string affinity;
+					};
 					struct NetworkInterface
 					{
 						std::string primaryIpAddress;
@@ -106,6 +111,7 @@ namespace AlibabaCloud
 					std::string description;
 					long localStorageCapacity;
 					std::string instanceTypeFamily;
+					DedicatedInstanceAttribute dedicatedInstanceAttribute;
 					int localStorageAmount;
 					std::vector<std::string> publicIpAddress;
 					std::string gPUSpec;

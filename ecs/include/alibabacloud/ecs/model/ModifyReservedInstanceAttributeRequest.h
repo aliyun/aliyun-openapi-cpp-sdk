@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_ALLOCATEDEDICATEDHOSTSREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_ALLOCATEDEDICATEDHOSTSREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYRESERVEDINSTANCEATTRIBUTEREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYRESERVEDINSTANCEATTRIBUTEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,22 +28,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT AllocateDedicatedHostsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT ModifyReservedInstanceAttributeRequest : public RpcServiceRequest
 			{
-				struct Tag
-				{
-					std::string key;
-					std::string value;
-				};
 
 			public:
-				AllocateDedicatedHostsRequest();
-				~AllocateDedicatedHostsRequest();
+				ModifyReservedInstanceAttributeRequest();
+				~ModifyReservedInstanceAttributeRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
@@ -58,10 +51,6 @@ namespace AlibabaCloud
 				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
@@ -70,34 +59,18 @@ namespace AlibabaCloud
 				void setEnable(bool enable);
 				std::string getRequestContent()const;
 				void setRequestContent(const std::string& requestContent);
-				std::string getActionOnMaintenance()const;
-				void setActionOnMaintenance(const std::string& actionOnMaintenance);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
-				std::string getDedicatedHostType()const;
-				void setDedicatedHostType(const std::string& dedicatedHostType);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
-				int getAutoRenewPeriod()const;
-				void setAutoRenewPeriod(int autoRenewPeriod);
-				int getPeriod()const;
-				void setPeriod(int period);
-				int getQuantity()const;
-				void setQuantity(int quantity);
-				std::string getDedicatedHostName()const;
-				void setDedicatedHostName(const std::string& dedicatedHostName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getAutoReleaseTime()const;
-				void setAutoReleaseTime(const std::string& autoReleaseTime);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
 				long getOwnerId()const;
@@ -108,26 +81,15 @@ namespace AlibabaCloud
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
-				std::string getPeriodUnit()const;
-				void setPeriodUnit(const std::string& periodUnit);
-				bool getAutoRenew()const;
-				void setAutoRenew(bool autoRenew);
+				std::string getReservedInstanceId()const;
+				void setReservedInstanceId(const std::string& reservedInstanceId);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
-				int getNetworkAttributesSlbUdpTimeout()const;
-				void setNetworkAttributesSlbUdpTimeout(int networkAttributesSlbUdpTimeout);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
-				std::string getAutoPlacement()const;
-				void setAutoPlacement(const std::string& autoPlacement);
-				std::string getChargeType()const;
-				void setChargeType(const std::string& chargeType);
-				int getNetworkAttributesUdpTimeout()const;
-				void setNetworkAttributesUdpTimeout(int networkAttributesUdpTimeout);
+				std::string getReservedInstanceName()const;
+				void setReservedInstanceName(const std::string& reservedInstanceName);
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string description_;
@@ -135,42 +97,27 @@ namespace AlibabaCloud
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
-				std::string sourceRegionId_;
-				std::string resourceGroupId_;
 				std::string securityToken_;
 				std::string regionId_;
 				bool enable_;
 				std::string requestContent_;
-				std::string actionOnMaintenance_;
 				std::string callerBidEmail_;
-				std::vector<Tag> tag_;
-				std::string dedicatedHostType_;
 				std::string callerUidEmail_;
 				long callerUid_;
 				std::string app_ip_;
-				int autoRenewPeriod_;
-				int period_;
-				int quantity_;
-				std::string dedicatedHostName_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string autoReleaseTime_;
 				std::string callerBid_;
 				long ownerId_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
-				std::string periodUnit_;
-				bool autoRenew_;
+				std::string reservedInstanceId_;
 				std::string requestId_;
-				int networkAttributesSlbUdpTimeout_;
-				std::string zoneId_;
-				std::string autoPlacement_;
-				std::string chargeType_;
-				int networkAttributesUdpTimeout_;
+				std::string reservedInstanceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_ALLOCATEDEDICATEDHOSTSREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYRESERVEDINSTANCEATTRIBUTEREQUEST_H_

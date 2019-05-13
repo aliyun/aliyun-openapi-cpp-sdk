@@ -195,6 +195,11 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.ecsCapacityReservationAttr.capacityReservationId = ecsCapacityReservationAttrNode["CapacityReservationId"].asString();
 		if(!ecsCapacityReservationAttrNode["CapacityReservationPreference"].isNull())
 			instancesObject.ecsCapacityReservationAttr.capacityReservationPreference = ecsCapacityReservationAttrNode["CapacityReservationPreference"].asString();
+		auto dedicatedInstanceAttributeNode = value["DedicatedInstanceAttribute"];
+		if(!dedicatedInstanceAttributeNode["Tenancy"].isNull())
+			instancesObject.dedicatedInstanceAttribute.tenancy = dedicatedInstanceAttributeNode["Tenancy"].asString();
+		if(!dedicatedInstanceAttributeNode["Affinity"].isNull())
+			instancesObject.dedicatedInstanceAttribute.affinity = dedicatedInstanceAttributeNode["Affinity"].asString();
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
 			instancesObject.securityGroupIds.push_back(value.asString());

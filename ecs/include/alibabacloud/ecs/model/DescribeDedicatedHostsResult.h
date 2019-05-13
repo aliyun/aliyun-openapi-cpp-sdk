@@ -79,6 +79,7 @@ namespace AlibabaCloud
 					std::vector<DedicatedHost::Tag> tags;
 					std::string status;
 					std::string zoneId;
+					std::string autoPlacement;
 					std::string dedicatedHostType;
 					std::vector<DedicatedHost::OperationLock> operationLocks;
 					std::vector<DedicatedHost::Instance> instances;

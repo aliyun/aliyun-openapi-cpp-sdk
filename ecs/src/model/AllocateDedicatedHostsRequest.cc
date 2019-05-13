@@ -460,6 +460,17 @@ void AllocateDedicatedHostsRequest::setZoneId(const std::string& zoneId)
 	setCoreParameter("ZoneId", zoneId);
 }
 
+std::string AllocateDedicatedHostsRequest::getAutoPlacement()const
+{
+	return autoPlacement_;
+}
+
+void AllocateDedicatedHostsRequest::setAutoPlacement(const std::string& autoPlacement)
+{
+	autoPlacement_ = autoPlacement;
+	setCoreParameter("AutoPlacement", autoPlacement);
+}
+
 std::string AllocateDedicatedHostsRequest::getChargeType()const
 {
 	return chargeType_;

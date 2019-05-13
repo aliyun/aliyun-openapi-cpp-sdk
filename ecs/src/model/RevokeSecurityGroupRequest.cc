@@ -157,6 +157,17 @@ void RevokeSecurityGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string RevokeSecurityGroupRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void RevokeSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long RevokeSecurityGroupRequest::getSourceGroupOwnerId()const
 {
 	return sourceGroupOwnerId_;

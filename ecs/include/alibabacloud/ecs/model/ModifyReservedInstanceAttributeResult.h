@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBECOMMANDSRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBECOMMANDSRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYRESERVEDINSTANCEATTRIBUTERESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYRESERVEDINSTANCEATTRIBUTERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeCommandsResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT ModifyReservedInstanceAttributeResult : public ServiceResult
 			{
 			public:
-				struct Command
-				{
-					std::string commandContent;
-					std::string workingDir;
-					std::string type;
-					std::string description;
-					std::vector<std::string> parameterNames;
-					long timeout;
-					std::string creationTime;
-					bool enableParameter;
-					std::string commandId;
-					std::string name;
-				};
 
 
-				DescribeCommandsResult();
-				explicit DescribeCommandsResult(const std::string &payload);
-				~DescribeCommandsResult();
-				long getTotalCount()const;
-				long getPageSize()const;
-				long getPageNumber()const;
-				std::vector<Command> getCommands()const;
+				ModifyReservedInstanceAttributeResult();
+				explicit ModifyReservedInstanceAttributeResult(const std::string &payload);
+				~ModifyReservedInstanceAttributeResult();
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				long pageSize_;
-				long pageNumber_;
-				std::vector<Command> commands_;
+				std::string message_;
+				int httpStatusCode_;
+				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBECOMMANDSRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYRESERVEDINSTANCEATTRIBUTERESULT_H_
