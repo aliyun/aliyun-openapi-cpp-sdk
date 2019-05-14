@@ -1743,6 +1743,42 @@ ImmClient::ListTagPhotosOutcomeCallable ImmClient::listTagPhotosCallable(const L
 	return task->get_future();
 }
 
+ImmClient::DetectImageBodiesOutcome ImmClient::detectImageBodies(const DetectImageBodiesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectImageBodiesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectImageBodiesOutcome(DetectImageBodiesResult(outcome.result()));
+	else
+		return DetectImageBodiesOutcome(outcome.error());
+}
+
+void ImmClient::detectImageBodiesAsync(const DetectImageBodiesRequest& request, const DetectImageBodiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectImageBodies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::DetectImageBodiesOutcomeCallable ImmClient::detectImageBodiesCallable(const DetectImageBodiesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectImageBodiesOutcome()>>(
+			[this, request]()
+			{
+			return this->detectImageBodies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::DeleteFaceSearchImageByIdOutcome ImmClient::deleteFaceSearchImageById(const DeleteFaceSearchImageByIdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1953,6 +1989,42 @@ ImmClient::ListVideoAudiosOutcomeCallable ImmClient::listVideoAudiosCallable(con
 			[this, request]()
 			{
 			return this->listVideoAudios(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::CreateMergeFaceGroupsJobOutcome ImmClient::createMergeFaceGroupsJob(const CreateMergeFaceGroupsJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMergeFaceGroupsJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMergeFaceGroupsJobOutcome(CreateMergeFaceGroupsJobResult(outcome.result()));
+	else
+		return CreateMergeFaceGroupsJobOutcome(outcome.error());
+}
+
+void ImmClient::createMergeFaceGroupsJobAsync(const CreateMergeFaceGroupsJobRequest& request, const CreateMergeFaceGroupsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMergeFaceGroupsJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::CreateMergeFaceGroupsJobOutcomeCallable ImmClient::createMergeFaceGroupsJobCallable(const CreateMergeFaceGroupsJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMergeFaceGroupsJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createMergeFaceGroupsJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
