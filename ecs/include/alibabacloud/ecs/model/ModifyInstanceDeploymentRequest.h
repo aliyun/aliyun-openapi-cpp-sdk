@@ -73,6 +73,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getTenancy()const;
+				void setTenancy(const std::string& tenancy);
 				std::string getDedicatedHostId()const;
 				void setDedicatedHostId(const std::string& dedicatedHostId);
 				std::string getCallerBid()const;
@@ -91,6 +93,8 @@ namespace AlibabaCloud
 				void setRequestId(const std::string& requestId);
 				bool getForce()const;
 				void setForce(bool force);
+				std::string getAffinity()const;
+				void setAffinity(const std::string& affinity);
 
             private:
 				long resourceOwnerId_;
@@ -112,6 +116,7 @@ namespace AlibabaCloud
 				std::string app_ip_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string tenancy_;
 				std::string dedicatedHostId_;
 				std::string callerBid_;
 				long ownerId_;
@@ -121,6 +126,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string requestId_;
 				bool force_;
+				std::string affinity_;
 
 			};
 		}

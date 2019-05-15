@@ -112,6 +112,8 @@ namespace AlibabaCloud
 				void setInternetMaxBandwidthIn(int internetMaxBandwidthIn);
 				bool getUseAdditionalService()const;
 				void setUseAdditionalService(bool useAdditionalService);
+				std::string getAffinity()const;
+				void setAffinity(const std::string& affinity);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
 				std::string getClientToken()const;
@@ -152,6 +154,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getTenancy()const;
+				void setTenancy(const std::string& tenancy);
 				std::string getSystemDiskDiskName()const;
 				void setSystemDiskDiskName(const std::string& systemDiskDiskName);
 				std::string getRamRoleName()const;
@@ -197,6 +201,7 @@ namespace AlibabaCloud
 				std::string zoneId_;
 				int internetMaxBandwidthIn_;
 				bool useAdditionalService_;
+				std::string affinity_;
 				std::string imageId_;
 				std::string clientToken_;
 				std::string vlanId_;
@@ -217,6 +222,7 @@ namespace AlibabaCloud
 				std::string innerIpAddress_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string tenancy_;
 				std::string systemDiskDiskName_;
 				std::string ramRoleName_;
 				std::string dedicatedHostId_;

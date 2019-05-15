@@ -494,6 +494,17 @@ void RunInstancesRequest::setInternetMaxBandwidthIn(int internetMaxBandwidthIn)
 	setCoreParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
 }
 
+std::string RunInstancesRequest::getAffinity()const
+{
+	return affinity_;
+}
+
+void RunInstancesRequest::setAffinity(const std::string& affinity)
+{
+	affinity_ = affinity;
+	setCoreParameter("Affinity", affinity);
+}
+
 std::string RunInstancesRequest::getImageId()const
 {
 	return imageId_;
@@ -776,6 +787,17 @@ void RunInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string RunInstancesRequest::getTenancy()const
+{
+	return tenancy_;
+}
+
+void RunInstancesRequest::setTenancy(const std::string& tenancy)
+{
+	tenancy_ = tenancy;
+	setCoreParameter("Tenancy", tenancy);
 }
 
 std::string RunInstancesRequest::getSystemDiskDiskName()const

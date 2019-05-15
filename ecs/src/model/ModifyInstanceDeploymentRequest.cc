@@ -234,6 +234,17 @@ void ModifyInstanceDeploymentRequest::setOwnerAccount(const std::string& ownerAc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
+std::string ModifyInstanceDeploymentRequest::getTenancy()const
+{
+	return tenancy_;
+}
+
+void ModifyInstanceDeploymentRequest::setTenancy(const std::string& tenancy)
+{
+	tenancy_ = tenancy;
+	setCoreParameter("Tenancy", tenancy);
+}
+
 std::string ModifyInstanceDeploymentRequest::getDedicatedHostId()const
 {
 	return dedicatedHostId_;
@@ -331,5 +342,16 @@ void ModifyInstanceDeploymentRequest::setForce(bool force)
 {
 	force_ = force;
 	setCoreParameter("Force", force ? "true" : "false");
+}
+
+std::string ModifyInstanceDeploymentRequest::getAffinity()const
+{
+	return affinity_;
+}
+
+void ModifyInstanceDeploymentRequest::setAffinity(const std::string& affinity)
+{
+	affinity_ = affinity;
+	setCoreParameter("Affinity", affinity);
 }
 

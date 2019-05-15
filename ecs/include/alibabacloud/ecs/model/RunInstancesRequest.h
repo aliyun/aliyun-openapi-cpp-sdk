@@ -144,6 +144,8 @@ namespace AlibabaCloud
 				void setIpv6Address(const std::vector<std::string>& ipv6Address);
 				int getInternetMaxBandwidthIn()const;
 				void setInternetMaxBandwidthIn(int internetMaxBandwidthIn);
+				std::string getAffinity()const;
+				void setAffinity(const std::string& affinity);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
 				std::string getSpotInterruptionBehavior()const;
@@ -194,6 +196,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getTenancy()const;
+				void setTenancy(const std::string& tenancy);
 				std::string getSystemDiskDiskName()const;
 				void setSystemDiskDiskName(const std::string& systemDiskDiskName);
 				std::string getRamRoleName()const;
@@ -262,6 +266,7 @@ namespace AlibabaCloud
 				std::string zoneId_;
 				std::vector<std::string> ipv6Address_;
 				int internetMaxBandwidthIn_;
+				std::string affinity_;
 				std::string imageId_;
 				std::string spotInterruptionBehavior_;
 				std::string clientToken_;
@@ -287,6 +292,7 @@ namespace AlibabaCloud
 				int amount_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string tenancy_;
 				std::string systemDiskDiskName_;
 				std::string ramRoleName_;
 				std::string autoReleaseTime_;

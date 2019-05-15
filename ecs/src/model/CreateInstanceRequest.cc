@@ -328,6 +328,17 @@ void CreateInstanceRequest::setUseAdditionalService(bool useAdditionalService)
 	setCoreParameter("UseAdditionalService", useAdditionalService ? "true" : "false");
 }
 
+std::string CreateInstanceRequest::getAffinity()const
+{
+	return affinity_;
+}
+
+void CreateInstanceRequest::setAffinity(const std::string& affinity)
+{
+	affinity_ = affinity;
+	setCoreParameter("Affinity", affinity);
+}
+
 std::string CreateInstanceRequest::getImageId()const
 {
 	return imageId_;
@@ -553,6 +564,17 @@ void CreateInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string CreateInstanceRequest::getTenancy()const
+{
+	return tenancy_;
+}
+
+void CreateInstanceRequest::setTenancy(const std::string& tenancy)
+{
+	tenancy_ = tenancy;
+	setCoreParameter("Tenancy", tenancy);
 }
 
 std::string CreateInstanceRequest::getSystemDiskDiskName()const

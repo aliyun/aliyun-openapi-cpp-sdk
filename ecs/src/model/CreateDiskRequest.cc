@@ -135,6 +135,17 @@ void CreateDiskRequest::setResourceGroupId(const std::string& resourceGroupId)
 	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
+std::string CreateDiskRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateDiskRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
 int CreateDiskRequest::getSize()const
 {
 	return size_;

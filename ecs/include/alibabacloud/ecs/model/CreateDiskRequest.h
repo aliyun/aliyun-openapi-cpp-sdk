@@ -66,6 +66,8 @@ namespace AlibabaCloud
 				void setDiskName(const std::string& diskName);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				int getSize()const;
 				void setSize(int size);
 				bool getEncrypted()const;
@@ -96,6 +98,7 @@ namespace AlibabaCloud
 				std::string sourceRegionId_;
 				std::string diskName_;
 				std::string resourceGroupId_;
+				std::string instanceId_;
 				int size_;
 				bool encrypted_;
 				std::string regionId_;
