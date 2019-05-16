@@ -92,44 +92,44 @@ void ListLiveRecordVideoResult::parse(const std::string &payload)
 				playInfoListObject.jobId = value["JobId"].asString();
 			liveRecordVideoListObject.playInfoList.push_back(playInfoListObject);
 		}
-		auto videoNode = value["Video"];
-		if(!videoNode["VideoId"].isNull())
-			liveRecordVideoListObject.video.videoId = videoNode["VideoId"].asString();
-		if(!videoNode["Title"].isNull())
-			liveRecordVideoListObject.video.title = videoNode["Title"].asString();
-		if(!videoNode["Tags"].isNull())
-			liveRecordVideoListObject.video.tags = videoNode["Tags"].asString();
-		if(!videoNode["Status"].isNull())
-			liveRecordVideoListObject.video.status = videoNode["Status"].asString();
-		if(!videoNode["Size"].isNull())
-			liveRecordVideoListObject.video.size = std::stol(videoNode["Size"].asString());
-		if(!videoNode["Privilege"].isNull())
-			liveRecordVideoListObject.video.privilege = std::stoi(videoNode["Privilege"].asString());
-		if(!videoNode["Duration"].isNull())
-			liveRecordVideoListObject.video.duration = std::stof(videoNode["Duration"].asString());
-		if(!videoNode["Description"].isNull())
-			liveRecordVideoListObject.video.description = videoNode["Description"].asString();
-		if(!videoNode["CustomerId"].isNull())
-			liveRecordVideoListObject.video.customerId = std::stol(videoNode["CustomerId"].asString());
-		if(!videoNode["CreateTime"].isNull())
-			liveRecordVideoListObject.video.createTime = videoNode["CreateTime"].asString();
-		if(!videoNode["CreationTime"].isNull())
-			liveRecordVideoListObject.video.creationTime = videoNode["CreationTime"].asString();
-		if(!videoNode["ModifyTime"].isNull())
-			liveRecordVideoListObject.video.modifyTime = videoNode["ModifyTime"].asString();
-		if(!videoNode["CoverURL"].isNull())
-			liveRecordVideoListObject.video.coverURL = videoNode["CoverURL"].asString();
-		if(!videoNode["CateId"].isNull())
-			liveRecordVideoListObject.video.cateId = std::stoi(videoNode["CateId"].asString());
-		if(!videoNode["CateName"].isNull())
-			liveRecordVideoListObject.video.cateName = videoNode["CateName"].asString();
-		if(!videoNode["DownloadSwitch"].isNull())
-			liveRecordVideoListObject.video.downloadSwitch = videoNode["DownloadSwitch"].asString();
-		if(!videoNode["TemplateGroupId"].isNull())
-			liveRecordVideoListObject.video.templateGroupId = videoNode["TemplateGroupId"].asString();
-			auto allSnapshots = videoNode["Snapshots"]["Snapshot"];
+		auto videoInListLiveRecordVideoNode = value["Video"];
+		if(!videoInListLiveRecordVideoNode["VideoId"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.videoId = videoInListLiveRecordVideoNode["VideoId"].asString();
+		if(!videoInListLiveRecordVideoNode["Title"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.title = videoInListLiveRecordVideoNode["Title"].asString();
+		if(!videoInListLiveRecordVideoNode["Tags"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.tags = videoInListLiveRecordVideoNode["Tags"].asString();
+		if(!videoInListLiveRecordVideoNode["Status"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.status = videoInListLiveRecordVideoNode["Status"].asString();
+		if(!videoInListLiveRecordVideoNode["Size"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.size = std::stol(videoInListLiveRecordVideoNode["Size"].asString());
+		if(!videoInListLiveRecordVideoNode["Privilege"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.privilege = std::stoi(videoInListLiveRecordVideoNode["Privilege"].asString());
+		if(!videoInListLiveRecordVideoNode["Duration"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.duration = std::stof(videoInListLiveRecordVideoNode["Duration"].asString());
+		if(!videoInListLiveRecordVideoNode["Description"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.description = videoInListLiveRecordVideoNode["Description"].asString();
+		if(!videoInListLiveRecordVideoNode["CustomerId"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.customerId = std::stol(videoInListLiveRecordVideoNode["CustomerId"].asString());
+		if(!videoInListLiveRecordVideoNode["CreateTime"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.createTime = videoInListLiveRecordVideoNode["CreateTime"].asString();
+		if(!videoInListLiveRecordVideoNode["CreationTime"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.creationTime = videoInListLiveRecordVideoNode["CreationTime"].asString();
+		if(!videoInListLiveRecordVideoNode["ModifyTime"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.modifyTime = videoInListLiveRecordVideoNode["ModifyTime"].asString();
+		if(!videoInListLiveRecordVideoNode["CoverURL"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.coverURL = videoInListLiveRecordVideoNode["CoverURL"].asString();
+		if(!videoInListLiveRecordVideoNode["CateId"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.cateId = std::stoi(videoInListLiveRecordVideoNode["CateId"].asString());
+		if(!videoInListLiveRecordVideoNode["CateName"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.cateName = videoInListLiveRecordVideoNode["CateName"].asString();
+		if(!videoInListLiveRecordVideoNode["DownloadSwitch"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.downloadSwitch = videoInListLiveRecordVideoNode["DownloadSwitch"].asString();
+		if(!videoInListLiveRecordVideoNode["TemplateGroupId"].isNull())
+			liveRecordVideoListObject.videoInListLiveRecordVideo.templateGroupId = videoInListLiveRecordVideoNode["TemplateGroupId"].asString();
+			auto allSnapshots = videoInListLiveRecordVideoNode["Snapshots"]["Snapshot"];
 			for (auto value : allSnapshots)
-				liveRecordVideoListObject.video.snapshots.push_back(value.asString());
+				liveRecordVideoListObject.videoInListLiveRecordVideo.snapshots.push_back(value.asString());
 		liveRecordVideoList_.push_back(liveRecordVideoListObject);
 	}
 	if(!value["Total"].isNull())

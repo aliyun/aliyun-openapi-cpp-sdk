@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_GETIMAGEINFORESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_GETIMAGEINFORESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_GETUPLOADDETAILSRESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_GETUPLOADDETAILSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,48 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT GetImageInfoResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT GetUploadDetailsResult : public ServiceResult
 			{
 			public:
-				struct ImageInfo
+				struct UploadDetail
 				{
-					struct Mezzanine
-					{
-						std::string fileURL;
-						std::string originalFileName;
-						int height;
-						int width;
-						std::string fileSize;
-					};
 					std::string status;
-					std::string description;
-					Mezzanine mezzanine;
+					std::string deviceModel;
 					std::string title;
-					long cateId;
-					std::string cateName;
-					std::string uRL;
-					std::string imageType;
-					std::string appId;
-					std::string imageId;
+					std::string modificationTime;
+					float uploadRatio;
+					std::string mediaId;
+					std::string uploadSource;
+					std::string uploadStatus;
+					std::string completionTime;
+					long uploadSize;
 					std::string creationTime;
-					std::string regionId;
-					std::string storageLocation;
-					std::string tags;
+					std::string uploadIP;
+					long fileSize;
 				};
 
 
-				GetImageInfoResult();
-				explicit GetImageInfoResult(const std::string &payload);
-				~GetImageInfoResult();
-				ImageInfo getImageInfo()const;
+				GetUploadDetailsResult();
+				explicit GetUploadDetailsResult(const std::string &payload);
+				~GetUploadDetailsResult();
+				std::vector<std::string> getNonExistMediaIds()const;
+				std::vector<UploadDetail> getUploadDetails()const;
+				std::vector<std::string> getForbiddenMediaIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				ImageInfo imageInfo_;
+				std::vector<std::string> nonExistMediaIds_;
+				std::vector<UploadDetail> uploadDetails_;
+				std::vector<std::string> forbiddenMediaIds_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_GETIMAGEINFORESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_GETUPLOADDETAILSRESULT_H_

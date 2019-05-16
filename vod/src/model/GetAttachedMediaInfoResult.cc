@@ -70,6 +70,10 @@ void GetAttachedMediaInfoResult::parse(const std::string &payload)
 			attachedMediaListObject.status = value["Status"].asString();
 		if(!value["OnlineStatus"].isNull())
 			attachedMediaListObject.onlineStatus = value["OnlineStatus"].asString();
+		if(!value["Icon"].isNull())
+			attachedMediaListObject.icon = value["Icon"].asString();
+		if(!value["RegionId"].isNull())
+			attachedMediaListObject.regionId = value["RegionId"].asString();
 		auto allCategories = value["Categories"]["Category"];
 		for (auto value : allCategories)
 		{

@@ -52,6 +52,8 @@ namespace AlibabaCloud
 					std::string mediaId;
 					std::string appId;
 					std::string creationTime;
+					std::string icon;
+					std::string regionId;
 					long storageLocation;
 					std::string tags;
 					long fileSize;

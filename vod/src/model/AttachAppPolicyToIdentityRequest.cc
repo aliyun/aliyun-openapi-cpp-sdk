@@ -91,6 +91,17 @@ void AttachAppPolicyToIdentityRequest::setPolicyNames(const std::string& policyN
 	setCoreParameter("PolicyNames", policyNames);
 }
 
+std::string AttachAppPolicyToIdentityRequest::getResourceRealOwnerId()const
+{
+	return resourceRealOwnerId_;
+}
+
+void AttachAppPolicyToIdentityRequest::setResourceRealOwnerId(const std::string& resourceRealOwnerId)
+{
+	resourceRealOwnerId_ = resourceRealOwnerId;
+	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
+}
+
 long AttachAppPolicyToIdentityRequest::getOwnerId()const
 {
 	return ownerId_;

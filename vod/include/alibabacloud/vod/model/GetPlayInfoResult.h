@@ -60,6 +60,7 @@ namespace AlibabaCloud
 					std::string fps;
 					std::string duration;
 					std::string modificationTime;
+					std::string specification;
 					std::string bitrate;
 					long encrypt;
 					std::string preprocessStatus;

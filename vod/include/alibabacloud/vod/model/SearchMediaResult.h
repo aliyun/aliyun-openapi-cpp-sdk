@@ -151,7 +151,7 @@ namespace AlibabaCloud
 						std::string storageLocation;
 						std::string tags;
 					};
-					struct AttachedMedia
+					struct AttachedMediaInSearchMedia
 					{
 						struct Category
 						{
@@ -165,6 +165,7 @@ namespace AlibabaCloud
 						std::string description;
 						std::vector<Category> categories;
 						std::string businessType;
+						std::string onlineStatus;
 						std::string title;
 						std::string modificationTime;
 						std::string uRL;
@@ -172,13 +173,14 @@ namespace AlibabaCloud
 						std::string appId;
 						std::string creationTime;
 						std::string regionId;
+						std::string icon;
 						std::string storageLocation;
 						std::string tags;
 					};
-					AttachedMedia attachedMedia;
 					std::string mediaId;
 					Video video;
 					std::string creationTime;
+					AttachedMediaInSearchMedia attachedMediaInSearchMedia;
 					std::string mediaType;
 					Audio audio;
 					Image image;

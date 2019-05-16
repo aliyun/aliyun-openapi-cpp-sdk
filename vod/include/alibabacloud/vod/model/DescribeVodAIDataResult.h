@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_CREATEUPLOADIMAGERESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_CREATEUPLOADIMAGERESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEVODAIDATARESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_DESCRIBEVODAIDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT CreateUploadImageResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT DescribeVodAIDataResult : public ServiceResult
 			{
 			public:
+				struct AIDataItem
+				{
+					struct DataItem
+					{
+						std::string value;
+						std::string name;
+					};
+					std::vector<AIDataItem::DataItem> data;
+					std::string timeStamp;
+				};
 
 
-				CreateUploadImageResult();
-				explicit CreateUploadImageResult(const std::string &payload);
-				~CreateUploadImageResult();
-				std::string getFileURL()const;
-				std::string getUploadAddress()const;
-				std::string getUploadAuth()const;
-				std::string getImageId()const;
-				std::string getImageURL()const;
+				DescribeVodAIDataResult();
+				explicit DescribeVodAIDataResult(const std::string &payload);
+				~DescribeVodAIDataResult();
+				std::vector<AIDataItem> getAIData()const;
+				std::string getDataInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string fileURL_;
-				std::string uploadAddress_;
-				std::string uploadAuth_;
-				std::string imageId_;
-				std::string imageURL_;
+				std::vector<AIDataItem> aIData_;
+				std::string dataInterval_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_CREATEUPLOADIMAGERESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEVODAIDATARESULT_H_

@@ -88,6 +88,8 @@ void GetPlayInfoResult::parse(const std::string &payload)
 			playInfoListObject.encryptType = value["EncryptType"].asString();
 		if(!value["NarrowBandType"].isNull())
 			playInfoListObject.narrowBandType = value["NarrowBandType"].asString();
+		if(!value["Specification"].isNull())
+			playInfoListObject.specification = value["Specification"].asString();
 		playInfoList_.push_back(playInfoListObject);
 	}
 	auto videoBaseNode = value["VideoBase"];

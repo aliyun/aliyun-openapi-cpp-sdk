@@ -40,74 +40,74 @@ void GetVideoInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto videoNode = value["Video"];
-	if(!videoNode["VideoId"].isNull())
-		video_.videoId = videoNode["VideoId"].asString();
-	if(!videoNode["Title"].isNull())
-		video_.title = videoNode["Title"].asString();
-	if(!videoNode["Tags"].isNull())
-		video_.tags = videoNode["Tags"].asString();
-	if(!videoNode["Status"].isNull())
-		video_.status = videoNode["Status"].asString();
-	if(!videoNode["Size"].isNull())
-		video_.size = std::stol(videoNode["Size"].asString());
-	if(!videoNode["Duration"].isNull())
-		video_.duration = std::stof(videoNode["Duration"].asString());
-	if(!videoNode["Description"].isNull())
-		video_.description = videoNode["Description"].asString();
-	if(!videoNode["CreateTime"].isNull())
-		video_.createTime = videoNode["CreateTime"].asString();
-	if(!videoNode["ModifyTime"].isNull())
-		video_.modifyTime = videoNode["ModifyTime"].asString();
-	if(!videoNode["ModificationTime"].isNull())
-		video_.modificationTime = videoNode["ModificationTime"].asString();
-	if(!videoNode["CreationTime"].isNull())
-		video_.creationTime = videoNode["CreationTime"].asString();
-	if(!videoNode["CoverURL"].isNull())
-		video_.coverURL = videoNode["CoverURL"].asString();
-	if(!videoNode["CateId"].isNull())
-		video_.cateId = std::stol(videoNode["CateId"].asString());
-	if(!videoNode["CateName"].isNull())
-		video_.cateName = videoNode["CateName"].asString();
-	if(!videoNode["DownloadSwitch"].isNull())
-		video_.downloadSwitch = videoNode["DownloadSwitch"].asString();
-	if(!videoNode["TemplateGroupId"].isNull())
-		video_.templateGroupId = videoNode["TemplateGroupId"].asString();
-	if(!videoNode["PreprocessStatus"].isNull())
-		video_.preprocessStatus = videoNode["PreprocessStatus"].asString();
-	if(!videoNode["StorageLocation"].isNull())
-		video_.storageLocation = videoNode["StorageLocation"].asString();
-	if(!videoNode["RegionId"].isNull())
-		video_.regionId = videoNode["RegionId"].asString();
-	if(!videoNode["CustomMediaInfo"].isNull())
-		video_.customMediaInfo = videoNode["CustomMediaInfo"].asString();
-	if(!videoNode["AuditStatus"].isNull())
-		video_.auditStatus = videoNode["AuditStatus"].asString();
-	if(!videoNode["AppId"].isNull())
-		video_.appId = videoNode["AppId"].asString();
+	auto videoInGetVideoInfoNode = value["Video"];
+	if(!videoInGetVideoInfoNode["VideoId"].isNull())
+		videoInGetVideoInfo_.videoId = videoInGetVideoInfoNode["VideoId"].asString();
+	if(!videoInGetVideoInfoNode["Title"].isNull())
+		videoInGetVideoInfo_.title = videoInGetVideoInfoNode["Title"].asString();
+	if(!videoInGetVideoInfoNode["Tags"].isNull())
+		videoInGetVideoInfo_.tags = videoInGetVideoInfoNode["Tags"].asString();
+	if(!videoInGetVideoInfoNode["Status"].isNull())
+		videoInGetVideoInfo_.status = videoInGetVideoInfoNode["Status"].asString();
+	if(!videoInGetVideoInfoNode["Size"].isNull())
+		videoInGetVideoInfo_.size = std::stol(videoInGetVideoInfoNode["Size"].asString());
+	if(!videoInGetVideoInfoNode["Duration"].isNull())
+		videoInGetVideoInfo_.duration = std::stof(videoInGetVideoInfoNode["Duration"].asString());
+	if(!videoInGetVideoInfoNode["Description"].isNull())
+		videoInGetVideoInfo_.description = videoInGetVideoInfoNode["Description"].asString();
+	if(!videoInGetVideoInfoNode["CreateTime"].isNull())
+		videoInGetVideoInfo_.createTime = videoInGetVideoInfoNode["CreateTime"].asString();
+	if(!videoInGetVideoInfoNode["ModifyTime"].isNull())
+		videoInGetVideoInfo_.modifyTime = videoInGetVideoInfoNode["ModifyTime"].asString();
+	if(!videoInGetVideoInfoNode["ModificationTime"].isNull())
+		videoInGetVideoInfo_.modificationTime = videoInGetVideoInfoNode["ModificationTime"].asString();
+	if(!videoInGetVideoInfoNode["CreationTime"].isNull())
+		videoInGetVideoInfo_.creationTime = videoInGetVideoInfoNode["CreationTime"].asString();
+	if(!videoInGetVideoInfoNode["CoverURL"].isNull())
+		videoInGetVideoInfo_.coverURL = videoInGetVideoInfoNode["CoverURL"].asString();
+	if(!videoInGetVideoInfoNode["CateId"].isNull())
+		videoInGetVideoInfo_.cateId = std::stol(videoInGetVideoInfoNode["CateId"].asString());
+	if(!videoInGetVideoInfoNode["CateName"].isNull())
+		videoInGetVideoInfo_.cateName = videoInGetVideoInfoNode["CateName"].asString();
+	if(!videoInGetVideoInfoNode["DownloadSwitch"].isNull())
+		videoInGetVideoInfo_.downloadSwitch = videoInGetVideoInfoNode["DownloadSwitch"].asString();
+	if(!videoInGetVideoInfoNode["TemplateGroupId"].isNull())
+		videoInGetVideoInfo_.templateGroupId = videoInGetVideoInfoNode["TemplateGroupId"].asString();
+	if(!videoInGetVideoInfoNode["PreprocessStatus"].isNull())
+		videoInGetVideoInfo_.preprocessStatus = videoInGetVideoInfoNode["PreprocessStatus"].asString();
+	if(!videoInGetVideoInfoNode["StorageLocation"].isNull())
+		videoInGetVideoInfo_.storageLocation = videoInGetVideoInfoNode["StorageLocation"].asString();
+	if(!videoInGetVideoInfoNode["RegionId"].isNull())
+		videoInGetVideoInfo_.regionId = videoInGetVideoInfoNode["RegionId"].asString();
+	if(!videoInGetVideoInfoNode["CustomMediaInfo"].isNull())
+		videoInGetVideoInfo_.customMediaInfo = videoInGetVideoInfoNode["CustomMediaInfo"].asString();
+	if(!videoInGetVideoInfoNode["AuditStatus"].isNull())
+		videoInGetVideoInfo_.auditStatus = videoInGetVideoInfoNode["AuditStatus"].asString();
+	if(!videoInGetVideoInfoNode["AppId"].isNull())
+		videoInGetVideoInfo_.appId = videoInGetVideoInfoNode["AppId"].asString();
 	auto allThumbnailList = value["ThumbnailList"]["Thumbnail"];
 	for (auto value : allThumbnailList)
 	{
-		Video::Thumbnail thumbnailObject;
+		VideoInGetVideoInfo::Thumbnail thumbnailObject;
 		if(!value["URL"].isNull())
 			thumbnailObject.uRL = value["URL"].asString();
-		video_.thumbnailList.push_back(thumbnailObject);
+		videoInGetVideoInfo_.thumbnailList.push_back(thumbnailObject);
 	}
-		auto allSnapshots = videoNode["Snapshots"]["Snapshot"];
+		auto allSnapshots = videoInGetVideoInfoNode["Snapshots"]["Snapshot"];
 		for (auto value : allSnapshots)
-			video_.snapshots.push_back(value.asString());
+			videoInGetVideoInfo_.snapshots.push_back(value.asString());
 	if(!value["AI"].isNull())
 		aI_ = value["AI"].asString();
 
 }
 
-GetVideoInfoResult::Video GetVideoInfoResult::getVideo()const
-{
-	return video_;
-}
-
 std::string GetVideoInfoResult::getAI()const
 {
 	return aI_;
+}
+
+GetVideoInfoResult::VideoInGetVideoInfo GetVideoInfoResult::getVideoInGetVideoInfo()const
+{
+	return videoInGetVideoInfo_;
 }
 

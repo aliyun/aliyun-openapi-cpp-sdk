@@ -91,6 +91,17 @@ void SubmitSnapshotJobRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string SubmitSnapshotJobRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitSnapshotJobRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
+}
+
 long SubmitSnapshotJobRequest::getSpecifiedOffsetTime()const
 {
 	return specifiedOffsetTime_;

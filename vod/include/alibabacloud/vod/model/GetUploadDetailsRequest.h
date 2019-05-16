@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_ATTACHAPPPOLICYTOIDENTITYREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_ATTACHAPPPOLICYTOIDENTITYREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_GETUPLOADDETAILSREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_GETUPLOADDETAILSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT AttachAppPolicyToIdentityRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOD_EXPORT GetUploadDetailsRequest : public RpcServiceRequest
 			{
 
 			public:
-				AttachAppPolicyToIdentityRequest();
-				~AttachAppPolicyToIdentityRequest();
+				GetUploadDetailsRequest();
+				~GetUploadDetailsRequest();
 
-				std::string getIdentityName()const;
-				void setIdentityName(const std::string& identityName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getIdentityType()const;
-				void setIdentityType(const std::string& identityType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getAppId()const;
-				void setAppId(const std::string& appId);
-				std::string getPolicyNames()const;
-				void setPolicyNames(const std::string& policyNames);
-				std::string getResourceRealOwnerId()const;
-				void setResourceRealOwnerId(const std::string& resourceRealOwnerId);
+				long getResourceRealOwnerId()const;
+				void setResourceRealOwnerId(long resourceRealOwnerId);
+				std::string getMediaIds()const;
+				void setMediaIds(const std::string& mediaIds);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getMediaType()const;
+				void setMediaType(const std::string& mediaType);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string identityName_;
 				long resourceOwnerId_;
-				std::string identityType_;
 				std::string resourceOwnerAccount_;
-				std::string appId_;
-				std::string policyNames_;
-				std::string resourceRealOwnerId_;
+				long resourceRealOwnerId_;
+				std::string mediaIds_;
 				long ownerId_;
+				std::string mediaType_;
+				std::string accessKeyId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_ATTACHAPPPOLICYTOIDENTITYREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_GETUPLOADDETAILSREQUEST_H_

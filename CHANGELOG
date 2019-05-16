@@ -1,3 +1,11 @@
+2019-05-16 Version: 1.36.29
+1, Add some new apis to fetch the usage data from VoD, such as DescribeVodDomainUsageData, DescribeVodStorageData, DescribeVodTranscodeData, DescribeVodAIData.
+2, Add a new api named GetUploadDetails to describe the upload detail, such as uploading time and uploading source.
+3, Add a new api named GetAIVideoTagResult to describe the result of AI tag.
+4, Add new field Icon and OnlineStatus to some apis to manage short video materials, such as SearchMedia, GetAttachedMediaInfo, CreateUploadAttachedMedia.
+5, Add a new field RegionId to the response of GetAttachedMediaInfo and GetImageInfo.
+6, Add the field named UserData to SubmitSnapshotJob api request.
+
 2019-05-15 Version: 1.36.28
 1, Add InstanceId parameter to api CreateDisk
 2, Add parameter Affinity and Tenancy in ECS instance DedicatedHost related apis.

@@ -40,39 +40,39 @@ void GetMezzanineInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	auto mezzanineNode = value["Mezzanine"];
-	if(!mezzanineNode["VideoId"].isNull())
-		mezzanine_.videoId = mezzanineNode["VideoId"].asString();
-	if(!mezzanineNode["Bitrate"].isNull())
-		mezzanine_.bitrate = mezzanineNode["Bitrate"].asString();
-	if(!mezzanineNode["CreationTime"].isNull())
-		mezzanine_.creationTime = mezzanineNode["CreationTime"].asString();
-	if(!mezzanineNode["Duration"].isNull())
-		mezzanine_.duration = mezzanineNode["Duration"].asString();
-	if(!mezzanineNode["Fps"].isNull())
-		mezzanine_.fps = mezzanineNode["Fps"].asString();
-	if(!mezzanineNode["Height"].isNull())
-		mezzanine_.height = std::stol(mezzanineNode["Height"].asString());
-	if(!mezzanineNode["Width"].isNull())
-		mezzanine_.width = std::stol(mezzanineNode["Width"].asString());
-	if(!mezzanineNode["Size"].isNull())
-		mezzanine_.size = std::stol(mezzanineNode["Size"].asString());
-	if(!mezzanineNode["Status"].isNull())
-		mezzanine_.status = mezzanineNode["Status"].asString();
-	if(!mezzanineNode["FileURL"].isNull())
-		mezzanine_.fileURL = mezzanineNode["FileURL"].asString();
-	if(!mezzanineNode["FileName"].isNull())
-		mezzanine_.fileName = mezzanineNode["FileName"].asString();
-	if(!mezzanineNode["CRC64"].isNull())
-		mezzanine_.cRC64 = mezzanineNode["CRC64"].asString();
-	if(!mezzanineNode["PreprocessStatus"].isNull())
-		mezzanine_.preprocessStatus = mezzanineNode["PreprocessStatus"].asString();
-	if(!mezzanineNode["OutputType"].isNull())
-		mezzanine_.outputType = mezzanineNode["OutputType"].asString();
+	auto mezzanineInGetMezzanineInfoNode = value["Mezzanine"];
+	if(!mezzanineInGetMezzanineInfoNode["VideoId"].isNull())
+		mezzanineInGetMezzanineInfo_.videoId = mezzanineInGetMezzanineInfoNode["VideoId"].asString();
+	if(!mezzanineInGetMezzanineInfoNode["Bitrate"].isNull())
+		mezzanineInGetMezzanineInfo_.bitrate = mezzanineInGetMezzanineInfoNode["Bitrate"].asString();
+	if(!mezzanineInGetMezzanineInfoNode["CreationTime"].isNull())
+		mezzanineInGetMezzanineInfo_.creationTime = mezzanineInGetMezzanineInfoNode["CreationTime"].asString();
+	if(!mezzanineInGetMezzanineInfoNode["Duration"].isNull())
+		mezzanineInGetMezzanineInfo_.duration = mezzanineInGetMezzanineInfoNode["Duration"].asString();
+	if(!mezzanineInGetMezzanineInfoNode["Fps"].isNull())
+		mezzanineInGetMezzanineInfo_.fps = mezzanineInGetMezzanineInfoNode["Fps"].asString();
+	if(!mezzanineInGetMezzanineInfoNode["Height"].isNull())
+		mezzanineInGetMezzanineInfo_.height = std::stol(mezzanineInGetMezzanineInfoNode["Height"].asString());
+	if(!mezzanineInGetMezzanineInfoNode["Width"].isNull())
+		mezzanineInGetMezzanineInfo_.width = std::stol(mezzanineInGetMezzanineInfoNode["Width"].asString());
+	if(!mezzanineInGetMezzanineInfoNode["Size"].isNull())
+		mezzanineInGetMezzanineInfo_.size = std::stol(mezzanineInGetMezzanineInfoNode["Size"].asString());
+	if(!mezzanineInGetMezzanineInfoNode["Status"].isNull())
+		mezzanineInGetMezzanineInfo_.status = mezzanineInGetMezzanineInfoNode["Status"].asString();
+	if(!mezzanineInGetMezzanineInfoNode["FileURL"].isNull())
+		mezzanineInGetMezzanineInfo_.fileURL = mezzanineInGetMezzanineInfoNode["FileURL"].asString();
+	if(!mezzanineInGetMezzanineInfoNode["FileName"].isNull())
+		mezzanineInGetMezzanineInfo_.fileName = mezzanineInGetMezzanineInfoNode["FileName"].asString();
+	if(!mezzanineInGetMezzanineInfoNode["CRC64"].isNull())
+		mezzanineInGetMezzanineInfo_.cRC64 = mezzanineInGetMezzanineInfoNode["CRC64"].asString();
+	if(!mezzanineInGetMezzanineInfoNode["PreprocessStatus"].isNull())
+		mezzanineInGetMezzanineInfo_.preprocessStatus = mezzanineInGetMezzanineInfoNode["PreprocessStatus"].asString();
+	if(!mezzanineInGetMezzanineInfoNode["OutputType"].isNull())
+		mezzanineInGetMezzanineInfo_.outputType = mezzanineInGetMezzanineInfoNode["OutputType"].asString();
 	auto allAudioStreamList = value["AudioStreamList"]["AudioStream"];
 	for (auto value : allAudioStreamList)
 	{
-		Mezzanine::AudioStream audioStreamObject;
+		MezzanineInGetMezzanineInfo::AudioStream audioStreamObject;
 		if(!value["Index"].isNull())
 			audioStreamObject.index = value["Index"].asString();
 		if(!value["CodecName"].isNull())
@@ -105,12 +105,12 @@ void GetMezzanineInfoResult::parse(const std::string &payload)
 			audioStreamObject.numFrames = value["NumFrames"].asString();
 		if(!value["Lang"].isNull())
 			audioStreamObject.lang = value["Lang"].asString();
-		mezzanine_.audioStreamList.push_back(audioStreamObject);
+		mezzanineInGetMezzanineInfo_.audioStreamList.push_back(audioStreamObject);
 	}
 	auto allVideoStreamList = value["VideoStreamList"]["VideoStream"];
 	for (auto value : allVideoStreamList)
 	{
-		Mezzanine::VideoStream videoStreamObject;
+		MezzanineInGetMezzanineInfo::VideoStream videoStreamObject;
 		if(!value["Index"].isNull())
 			videoStreamObject.index = value["Index"].asString();
 		if(!value["CodecName"].isNull())
@@ -155,13 +155,13 @@ void GetMezzanineInfoResult::parse(const std::string &payload)
 			videoStreamObject.lang = value["Lang"].asString();
 		if(!value["Rotate"].isNull())
 			videoStreamObject.rotate = value["Rotate"].asString();
-		mezzanine_.videoStreamList.push_back(videoStreamObject);
+		mezzanineInGetMezzanineInfo_.videoStreamList.push_back(videoStreamObject);
 	}
 
 }
 
-GetMezzanineInfoResult::Mezzanine GetMezzanineInfoResult::getMezzanine()const
+GetMezzanineInfoResult::MezzanineInGetMezzanineInfo GetMezzanineInfoResult::getMezzanineInGetMezzanineInfo()const
 {
-	return mezzanine_;
+	return mezzanineInGetMezzanineInfo_;
 }
 

@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
 				long getSpecifiedOffsetTime()const;
 				void setSpecifiedOffsetTime(long specifiedOffsetTime);
 				std::string getWidth()const;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				std::string videoId_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string userData_;
 				long specifiedOffsetTime_;
 				std::string width_;
 				long interval_;

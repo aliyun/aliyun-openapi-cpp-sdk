@@ -48,7 +48,14 @@ void CreateUploadImageResult::parse(const std::string &payload)
 		uploadAddress_ = value["UploadAddress"].asString();
 	if(!value["UploadAuth"].isNull())
 		uploadAuth_ = value["UploadAuth"].asString();
+	if(!value["FileURL"].isNull())
+		fileURL_ = value["FileURL"].asString();
 
+}
+
+std::string CreateUploadImageResult::getFileURL()const
+{
+	return fileURL_;
 }
 
 std::string CreateUploadImageResult::getUploadAddress()const
