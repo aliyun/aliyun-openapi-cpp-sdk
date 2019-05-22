@@ -25,6 +25,17 @@ DescribeRenewalPriceRequest::DescribeRenewalPriceRequest() :
 DescribeRenewalPriceRequest::~DescribeRenewalPriceRequest()
 {}
 
+std::string DescribeRenewalPriceRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeRenewalPriceRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeRenewalPriceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

@@ -25,6 +25,17 @@ DescribeTaskAttributeRequest::DescribeTaskAttributeRequest() :
 DescribeTaskAttributeRequest::~DescribeTaskAttributeRequest()
 {}
 
+std::string DescribeTaskAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeTaskAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeTaskAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

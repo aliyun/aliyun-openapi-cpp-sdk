@@ -25,6 +25,17 @@ DescribeTagsRequest::DescribeTagsRequest() :
 DescribeTagsRequest::~DescribeTagsRequest()
 {}
 
+std::string DescribeTagsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeTagsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long DescribeTagsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -106,6 +117,17 @@ void DescribeTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeTagsRequest::getCategory()const
+{
+	return category_;
+}
+
+void DescribeTagsRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setCoreParameter("Category", category);
 }
 
 std::string DescribeTagsRequest::getResourceType()const

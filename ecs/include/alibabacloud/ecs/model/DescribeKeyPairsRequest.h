@@ -40,6 +40,8 @@ namespace AlibabaCloud
 				DescribeKeyPairsRequest();
 				~DescribeKeyPairsRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				long getResourceOwnerId()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 
             private:
+				std::string sourceRegionId_;
 				std::string resourceGroupId_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;

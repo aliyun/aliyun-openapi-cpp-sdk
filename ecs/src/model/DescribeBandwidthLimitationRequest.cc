@@ -102,6 +102,17 @@ void DescribeBandwidthLimitationRequest::setAccessKeyId(const std::string& acces
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeBandwidthLimitationRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeBandwidthLimitationRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeBandwidthLimitationRequest::getSecurityToken()const
 {
 	return securityToken_;

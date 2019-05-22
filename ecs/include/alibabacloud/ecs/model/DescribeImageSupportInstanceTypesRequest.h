@@ -40,6 +40,8 @@ namespace AlibabaCloud
 				DescribeImageSupportInstanceTypesRequest();
 				~DescribeImageSupportInstanceTypesRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getActionType()const;
 				void setActionType(const std::string& actionType);
 				std::vector<Filter> getFilter()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string sourceRegionId_;
 				std::string actionType_;
 				std::vector<Filter> filter_;
 				long resourceOwnerId_;

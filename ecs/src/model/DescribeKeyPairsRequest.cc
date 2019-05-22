@@ -25,6 +25,17 @@ DescribeKeyPairsRequest::DescribeKeyPairsRequest() :
 DescribeKeyPairsRequest::~DescribeKeyPairsRequest()
 {}
 
+std::string DescribeKeyPairsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeKeyPairsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeKeyPairsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

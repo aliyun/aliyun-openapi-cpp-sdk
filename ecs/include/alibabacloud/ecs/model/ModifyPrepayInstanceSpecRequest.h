@@ -45,12 +45,16 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getOperatorType()const;
 				void setOperatorType(const std::string& operatorType);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
+				std::string getRebootTime()const;
+				void setRebootTime(const std::string& rebootTime);
 				std::string getSourceRegionId()const;
 				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getInstanceId()const;
@@ -68,9 +72,11 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string ownerAccount_;
+				std::string endTime_;
 				long ownerId_;
 				std::string operatorType_;
 				std::string systemDiskCategory_;
+				std::string rebootTime_;
 				std::string sourceRegionId_;
 				std::string instanceId_;
 				std::string regionId_;

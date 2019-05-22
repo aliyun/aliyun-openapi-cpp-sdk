@@ -80,6 +80,17 @@ void ModifyPrepayInstanceSpecRequest::setOwnerAccount(const std::string& ownerAc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
+std::string ModifyPrepayInstanceSpecRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void ModifyPrepayInstanceSpecRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
 long ModifyPrepayInstanceSpecRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,6 +122,17 @@ void ModifyPrepayInstanceSpecRequest::setSystemDiskCategory(const std::string& s
 {
 	systemDiskCategory_ = systemDiskCategory;
 	setCoreParameter("SystemDiskCategory", systemDiskCategory);
+}
+
+std::string ModifyPrepayInstanceSpecRequest::getRebootTime()const
+{
+	return rebootTime_;
+}
+
+void ModifyPrepayInstanceSpecRequest::setRebootTime(const std::string& rebootTime)
+{
+	rebootTime_ = rebootTime;
+	setCoreParameter("RebootTime", rebootTime);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getSourceRegionId()const

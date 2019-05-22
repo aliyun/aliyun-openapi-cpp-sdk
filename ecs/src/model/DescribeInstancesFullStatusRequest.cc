@@ -125,6 +125,17 @@ void DescribeInstancesFullStatusRequest::setAccessKeyId(const std::string& acces
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeInstancesFullStatusRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeInstancesFullStatusRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeInstancesFullStatusRequest::getSecurityToken()const
 {
 	return securityToken_;

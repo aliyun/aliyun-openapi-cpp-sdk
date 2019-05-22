@@ -2355,6 +2355,42 @@ EcsClient::CreateRouteEntryOutcomeCallable EcsClient::createRouteEntryCallable(c
 	return task->get_future();
 }
 
+EcsClient::ModifyFleetOutcome EcsClient::modifyFleet(const ModifyFleetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyFleetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyFleetOutcome(ModifyFleetResult(outcome.result()));
+	else
+		return ModifyFleetOutcome(outcome.error());
+}
+
+void EcsClient::modifyFleetAsync(const ModifyFleetRequest& request, const ModifyFleetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyFleet(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyFleetOutcomeCallable EcsClient::modifyFleetCallable(const ModifyFleetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyFleetOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyFleet(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::AttachKeyPairOutcome EcsClient::attachKeyPair(const AttachKeyPairRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2781,6 +2817,42 @@ EcsClient::CreateVSwitchOutcomeCallable EcsClient::createVSwitchCallable(const C
 			[this, request]()
 			{
 			return this->createVSwitch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeFleetsOutcome EcsClient::describeFleets(const DescribeFleetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFleetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFleetsOutcome(DescribeFleetsResult(outcome.result()));
+	else
+		return DescribeFleetsOutcome(outcome.error());
+}
+
+void EcsClient::describeFleetsAsync(const DescribeFleetsRequest& request, const DescribeFleetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFleets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeFleetsOutcomeCallable EcsClient::describeFleetsCallable(const DescribeFleetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFleetsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFleets(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3321,6 +3393,42 @@ EcsClient::DescribeDedicatedHostsOutcomeCallable EcsClient::describeDedicatedHos
 			[this, request]()
 			{
 			return this->describeDedicatedHosts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeFleetInstancesOutcome EcsClient::describeFleetInstances(const DescribeFleetInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFleetInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFleetInstancesOutcome(DescribeFleetInstancesResult(outcome.result()));
+	else
+		return DescribeFleetInstancesOutcome(outcome.error());
+}
+
+void EcsClient::describeFleetInstancesAsync(const DescribeFleetInstancesRequest& request, const DescribeFleetInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFleetInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeFleetInstancesOutcomeCallable EcsClient::describeFleetInstancesCallable(const DescribeFleetInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFleetInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFleetInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4581,6 +4689,42 @@ EcsClient::DeleteImageOutcomeCallable EcsClient::deleteImageCallable(const Delet
 			[this, request]()
 			{
 			return this->deleteImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::CreateFleetOutcome EcsClient::createFleet(const CreateFleetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFleetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFleetOutcome(CreateFleetResult(outcome.result()));
+	else
+		return CreateFleetOutcome(outcome.error());
+}
+
+void EcsClient::createFleetAsync(const CreateFleetRequest& request, const CreateFleetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFleet(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateFleetOutcomeCallable EcsClient::createFleetCallable(const CreateFleetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFleetOutcome()>>(
+			[this, request]()
+			{
+			return this->createFleet(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6387,6 +6531,42 @@ EcsClient::ModifyDiskChargeTypeOutcomeCallable EcsClient::modifyDiskChargeTypeCa
 	return task->get_future();
 }
 
+EcsClient::DeleteFleetOutcome EcsClient::deleteFleet(const DeleteFleetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFleetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFleetOutcome(DeleteFleetResult(outcome.result()));
+	else
+		return DeleteFleetOutcome(outcome.error());
+}
+
+void EcsClient::deleteFleetAsync(const DeleteFleetRequest& request, const DeleteFleetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFleet(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DeleteFleetOutcomeCallable EcsClient::deleteFleetCallable(const DeleteFleetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFleetOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFleet(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeBandwidthPackagesOutcome EcsClient::describeBandwidthPackages(const DescribeBandwidthPackagesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6417,6 +6597,42 @@ EcsClient::DescribeBandwidthPackagesOutcomeCallable EcsClient::describeBandwidth
 			[this, request]()
 			{
 			return this->describeBandwidthPackages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeFleetHistoryOutcome EcsClient::describeFleetHistory(const DescribeFleetHistoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFleetHistoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFleetHistoryOutcome(DescribeFleetHistoryResult(outcome.result()));
+	else
+		return DescribeFleetHistoryOutcome(outcome.error());
+}
+
+void EcsClient::describeFleetHistoryAsync(const DescribeFleetHistoryRequest& request, const DescribeFleetHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFleetHistory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeFleetHistoryOutcomeCallable EcsClient::describeFleetHistoryCallable(const DescribeFleetHistoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFleetHistoryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFleetHistory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7281,6 +7497,42 @@ EcsClient::ReleasePublicIpAddressOutcomeCallable EcsClient::releasePublicIpAddre
 			[this, request]()
 			{
 			return this->releasePublicIpAddress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ReportInstancesStatusOutcome EcsClient::reportInstancesStatus(const ReportInstancesStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReportInstancesStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReportInstancesStatusOutcome(ReportInstancesStatusResult(outcome.result()));
+	else
+		return ReportInstancesStatusOutcome(outcome.error());
+}
+
+void EcsClient::reportInstancesStatusAsync(const ReportInstancesStatusRequest& request, const ReportInstancesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reportInstancesStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ReportInstancesStatusOutcomeCallable EcsClient::reportInstancesStatusCallable(const ReportInstancesStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReportInstancesStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->reportInstancesStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

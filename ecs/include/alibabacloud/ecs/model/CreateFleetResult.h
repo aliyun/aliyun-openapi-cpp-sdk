@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_RUNINSTANCESRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_RUNINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_CREATEFLEETRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_CREATEFLEETRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT RunInstancesResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT CreateFleetResult : public ServiceResult
 			{
 			public:
 
 
-				RunInstancesResult();
-				explicit RunInstancesResult(const std::string &payload);
-				~RunInstancesResult();
-				std::vector<std::string> getInstanceIdSets()const;
-				float getTradePrice()const;
+				CreateFleetResult();
+				explicit CreateFleetResult(const std::string &payload);
+				~CreateFleetResult();
+				std::string getFleetId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<std::string> instanceIdSets_;
-				float tradePrice_;
+				std::string fleetId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_RUNINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_CREATEFLEETRESULT_H_

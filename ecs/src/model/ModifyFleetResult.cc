@@ -14,46 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/CreateInstanceResult.h>
+#include <alibabacloud/ecs/model/ModifyFleetResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-CreateInstanceResult::CreateInstanceResult() :
+ModifyFleetResult::ModifyFleetResult() :
 	ServiceResult()
 {}
 
-CreateInstanceResult::CreateInstanceResult(const std::string &payload) :
+ModifyFleetResult::ModifyFleetResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateInstanceResult::~CreateInstanceResult()
+ModifyFleetResult::~ModifyFleetResult()
 {}
 
-void CreateInstanceResult::parse(const std::string &payload)
+void ModifyFleetResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["TradePrice"].isNull())
-		tradePrice_ = std::stof(value["TradePrice"].asString());
 
-}
-
-std::string CreateInstanceResult::getInstanceId()const
-{
-	return instanceId_;
-}
-
-float CreateInstanceResult::getTradePrice()const
-{
-	return tradePrice_;
 }
 

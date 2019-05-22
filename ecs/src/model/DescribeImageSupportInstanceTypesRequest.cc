@@ -25,6 +25,17 @@ DescribeImageSupportInstanceTypesRequest::DescribeImageSupportInstanceTypesReque
 DescribeImageSupportInstanceTypesRequest::~DescribeImageSupportInstanceTypesRequest()
 {}
 
+std::string DescribeImageSupportInstanceTypesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeImageSupportInstanceTypesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeImageSupportInstanceTypesRequest::getActionType()const
 {
 	return actionType_;
