@@ -3291,6 +3291,42 @@ ImmClient::ListVideoTasksOutcomeCallable ImmClient::listVideoTasksCallable(const
 	return task->get_future();
 }
 
+ImmClient::CreateVideoCompressTaskOutcome ImmClient::createVideoCompressTask(const CreateVideoCompressTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVideoCompressTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVideoCompressTaskOutcome(CreateVideoCompressTaskResult(outcome.result()));
+	else
+		return CreateVideoCompressTaskOutcome(outcome.error());
+}
+
+void ImmClient::createVideoCompressTaskAsync(const CreateVideoCompressTaskRequest& request, const CreateVideoCompressTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVideoCompressTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::CreateVideoCompressTaskOutcomeCallable ImmClient::createVideoCompressTaskCallable(const CreateVideoCompressTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVideoCompressTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createVideoCompressTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::UpdateProjectOutcome ImmClient::updateProject(const UpdateProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

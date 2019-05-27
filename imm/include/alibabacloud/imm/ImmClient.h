@@ -202,6 +202,8 @@
 #include "model/UpdateImageResult.h"
 #include "model/ListVideoTasksRequest.h"
 #include "model/ListVideoTasksResult.h"
+#include "model/CreateVideoCompressTaskRequest.h"
+#include "model/CreateVideoCompressTaskResult.h"
 #include "model/UpdateProjectRequest.h"
 #include "model/UpdateProjectResult.h"
 #include "model/DeleteVideoRequest.h"
@@ -491,6 +493,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListVideoTasksResult> ListVideoTasksOutcome;
 			typedef std::future<ListVideoTasksOutcome> ListVideoTasksOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ListVideoTasksRequest&, const ListVideoTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVideoTasksAsyncHandler;
+			typedef Outcome<Error, Model::CreateVideoCompressTaskResult> CreateVideoCompressTaskOutcome;
+			typedef std::future<CreateVideoCompressTaskOutcome> CreateVideoCompressTaskOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::CreateVideoCompressTaskRequest&, const CreateVideoCompressTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoCompressTaskAsyncHandler;
 			typedef Outcome<Error, Model::UpdateProjectResult> UpdateProjectOutcome;
 			typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::UpdateProjectRequest&, const UpdateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectAsyncHandler;
@@ -781,6 +786,9 @@ namespace AlibabaCloud
 			ListVideoTasksOutcome listVideoTasks(const Model::ListVideoTasksRequest &request)const;
 			void listVideoTasksAsync(const Model::ListVideoTasksRequest& request, const ListVideoTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListVideoTasksOutcomeCallable listVideoTasksCallable(const Model::ListVideoTasksRequest& request) const;
+			CreateVideoCompressTaskOutcome createVideoCompressTask(const Model::CreateVideoCompressTaskRequest &request)const;
+			void createVideoCompressTaskAsync(const Model::CreateVideoCompressTaskRequest& request, const CreateVideoCompressTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateVideoCompressTaskOutcomeCallable createVideoCompressTaskCallable(const Model::CreateVideoCompressTaskRequest& request) const;
 			UpdateProjectOutcome updateProject(const Model::UpdateProjectRequest &request)const;
 			void updateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateProjectOutcomeCallable updateProjectCallable(const Model::UpdateProjectRequest& request) const;
