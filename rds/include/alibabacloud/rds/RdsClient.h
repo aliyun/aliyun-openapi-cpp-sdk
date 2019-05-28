@@ -214,6 +214,8 @@
 #include "model/AllocateReadWriteSplittingConnectionResult.h"
 #include "model/DescribeCloudDbExpertServiceRequest.h"
 #include "model/DescribeCloudDbExpertServiceResult.h"
+#include "model/EvaluateSupportByokShowRequest.h"
+#include "model/EvaluateSupportByokShowResult.h"
 #include "model/ReleaseInstancePublicConnectionRequest.h"
 #include "model/ReleaseInstancePublicConnectionResult.h"
 #include "model/CalculateDBInstanceWeightRequest.h"
@@ -599,6 +601,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCloudDbExpertServiceResult> DescribeCloudDbExpertServiceOutcome;
 			typedef std::future<DescribeCloudDbExpertServiceOutcome> DescribeCloudDbExpertServiceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeCloudDbExpertServiceRequest&, const DescribeCloudDbExpertServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudDbExpertServiceAsyncHandler;
+			typedef Outcome<Error, Model::EvaluateSupportByokShowResult> EvaluateSupportByokShowOutcome;
+			typedef std::future<EvaluateSupportByokShowOutcome> EvaluateSupportByokShowOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::EvaluateSupportByokShowRequest&, const EvaluateSupportByokShowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EvaluateSupportByokShowAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseInstancePublicConnectionResult> ReleaseInstancePublicConnectionOutcome;
 			typedef std::future<ReleaseInstancePublicConnectionOutcome> ReleaseInstancePublicConnectionOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ReleaseInstancePublicConnectionRequest&, const ReleaseInstancePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstancePublicConnectionAsyncHandler;
@@ -1024,6 +1029,9 @@ namespace AlibabaCloud
 			DescribeCloudDbExpertServiceOutcome describeCloudDbExpertService(const Model::DescribeCloudDbExpertServiceRequest &request)const;
 			void describeCloudDbExpertServiceAsync(const Model::DescribeCloudDbExpertServiceRequest& request, const DescribeCloudDbExpertServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudDbExpertServiceOutcomeCallable describeCloudDbExpertServiceCallable(const Model::DescribeCloudDbExpertServiceRequest& request) const;
+			EvaluateSupportByokShowOutcome evaluateSupportByokShow(const Model::EvaluateSupportByokShowRequest &request)const;
+			void evaluateSupportByokShowAsync(const Model::EvaluateSupportByokShowRequest& request, const EvaluateSupportByokShowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EvaluateSupportByokShowOutcomeCallable evaluateSupportByokShowCallable(const Model::EvaluateSupportByokShowRequest& request) const;
 			ReleaseInstancePublicConnectionOutcome releaseInstancePublicConnection(const Model::ReleaseInstancePublicConnectionRequest &request)const;
 			void releaseInstancePublicConnectionAsync(const Model::ReleaseInstancePublicConnectionRequest& request, const ReleaseInstancePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseInstancePublicConnectionOutcomeCallable releaseInstancePublicConnectionCallable(const Model::ReleaseInstancePublicConnectionRequest& request) const;

@@ -212,6 +212,17 @@ void CreateDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
+std::string CreateDBInstanceRequest::getEncryptionKey()const
+{
+	return encryptionKey_;
+}
+
+void CreateDBInstanceRequest::setEncryptionKey(const std::string& encryptionKey)
+{
+	encryptionKey_ = encryptionKey;
+	setCoreParameter("EncryptionKey", encryptionKey);
+}
+
 long CreateDBInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -276,6 +287,28 @@ void CreateDBInstanceRequest::setPrivateIpAddress(const std::string& privateIpAd
 {
 	privateIpAddress_ = privateIpAddress;
 	setCoreParameter("PrivateIpAddress", privateIpAddress);
+}
+
+std::string CreateDBInstanceRequest::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+void CreateDBInstanceRequest::setAutoRenew(const std::string& autoRenew)
+{
+	autoRenew_ = autoRenew;
+	setCoreParameter("AutoRenew", autoRenew);
+}
+
+std::string CreateDBInstanceRequest::getRoleARN()const
+{
+	return roleARN_;
+}
+
+void CreateDBInstanceRequest::setRoleARN(const std::string& roleARN)
+{
+	roleARN_ = roleARN;
+	setCoreParameter("RoleARN", roleARN);
 }
 
 std::string CreateDBInstanceRequest::getVPCId()const

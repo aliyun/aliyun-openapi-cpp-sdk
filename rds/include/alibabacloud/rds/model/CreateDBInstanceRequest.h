@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getEncryptionKey()const;
+				void setEncryptionKey(const std::string& encryptionKey);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getUsedTime()const;
@@ -81,6 +83,10 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPrivateIpAddress()const;
 				void setPrivateIpAddress(const std::string& privateIpAddress);
+				std::string getAutoRenew()const;
+				void setAutoRenew(const std::string& autoRenew);
+				std::string getRoleARN()const;
+				void setRoleARN(const std::string& roleARN);
 				std::string getVPCId()const;
 				void setVPCId(const std::string& vPCId);
 				std::string getTunnelId()const;
@@ -110,12 +116,15 @@ namespace AlibabaCloud
 				std::string period_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string encryptionKey_;
 				long ownerId_;
 				std::string usedTime_;
 				std::string dBInstanceClass_;
 				std::string securityIPList_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
+				std::string autoRenew_;
+				std::string roleARN_;
 				std::string vPCId_;
 				std::string tunnelId_;
 				std::string zoneId_;
