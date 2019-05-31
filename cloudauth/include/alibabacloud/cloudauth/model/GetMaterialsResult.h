@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string address;
 					std::string idCardFrontPic;
 					std::string ethnicGroup;
+					std::string authority;
 					std::string sex;
 					std::string idCardExpiry;
 					std::string idCardType;

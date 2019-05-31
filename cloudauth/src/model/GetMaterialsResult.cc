@@ -63,6 +63,8 @@ void GetMaterialsResult::parse(const std::string &payload)
 		data_.facePic = dataNode["FacePic"].asString();
 	if(!dataNode["EthnicGroup"].isNull())
 		data_.ethnicGroup = dataNode["EthnicGroup"].asString();
+	if(!dataNode["Authority"].isNull())
+		data_.authority = dataNode["Authority"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

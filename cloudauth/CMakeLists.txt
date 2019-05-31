@@ -20,58 +20,10 @@ set(cloudauth_public_header
 	include/alibabacloud/cloudauth/CloudauthClient.h
 	include/alibabacloud/cloudauth/CloudauthExport.h )
 
-set(cloudauth_public_header_model 
-	include/alibabacloud/cloudauth/model/DescribeDeviceInfoRequest.h
-	include/alibabacloud/cloudauth/model/DescribeDeviceInfoResult.h
-	include/alibabacloud/cloudauth/model/GetMaterialsRequest.h
-	include/alibabacloud/cloudauth/model/GetMaterialsResult.h
-	include/alibabacloud/cloudauth/model/GetVerifyTokenRequest.h
-	include/alibabacloud/cloudauth/model/GetVerifyTokenResult.h
-	include/alibabacloud/cloudauth/model/DetectFaceAttributesRequest.h
-	include/alibabacloud/cloudauth/model/DetectFaceAttributesResult.h
-	include/alibabacloud/cloudauth/model/CompareFacesRequest.h
-	include/alibabacloud/cloudauth/model/CompareFacesResult.h
-	include/alibabacloud/cloudauth/model/CreateAuthKeyRequest.h
-	include/alibabacloud/cloudauth/model/CreateAuthKeyResult.h
-	include/alibabacloud/cloudauth/model/SubmitMaterialsRequest.h
-	include/alibabacloud/cloudauth/model/SubmitMaterialsResult.h
-	include/alibabacloud/cloudauth/model/SubmitVerificationRequest.h
-	include/alibabacloud/cloudauth/model/SubmitVerificationResult.h
-	include/alibabacloud/cloudauth/model/CreateVerifySDKRequest.h
-	include/alibabacloud/cloudauth/model/CreateVerifySDKResult.h
-	include/alibabacloud/cloudauth/model/ModifyDeviceInfoRequest.h
-	include/alibabacloud/cloudauth/model/ModifyDeviceInfoResult.h
-	include/alibabacloud/cloudauth/model/DescribeVerifySDKRequest.h
-	include/alibabacloud/cloudauth/model/DescribeVerifySDKResult.h
-	include/alibabacloud/cloudauth/model/GetStatusRequest.h
-	include/alibabacloud/cloudauth/model/GetStatusResult.h )
+set(cloudauth_public_header_model  )
 
 set(cloudauth_src 
-	src/CloudauthClient.cc
-	src/model/DescribeDeviceInfoRequest.cc
-	src/model/DescribeDeviceInfoResult.cc
-	src/model/GetMaterialsRequest.cc
-	src/model/GetMaterialsResult.cc
-	src/model/GetVerifyTokenRequest.cc
-	src/model/GetVerifyTokenResult.cc
-	src/model/DetectFaceAttributesRequest.cc
-	src/model/DetectFaceAttributesResult.cc
-	src/model/CompareFacesRequest.cc
-	src/model/CompareFacesResult.cc
-	src/model/CreateAuthKeyRequest.cc
-	src/model/CreateAuthKeyResult.cc
-	src/model/SubmitMaterialsRequest.cc
-	src/model/SubmitMaterialsResult.cc
-	src/model/SubmitVerificationRequest.cc
-	src/model/SubmitVerificationResult.cc
-	src/model/CreateVerifySDKRequest.cc
-	src/model/CreateVerifySDKResult.cc
-	src/model/ModifyDeviceInfoRequest.cc
-	src/model/ModifyDeviceInfoResult.cc
-	src/model/DescribeVerifySDKRequest.cc
-	src/model/DescribeVerifySDKResult.cc
-	src/model/GetStatusRequest.cc
-	src/model/GetStatusResult.cc )
+	src/CloudauthClient.cc )
 
 add_library(cloudauth ${LIB_TYPE}
 	${cloudauth_public_header}
