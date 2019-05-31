@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
-#define ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_SEARCHTRACECOUNTRESULT_H_
+#define ALIBABACLOUD_ARMS_MODEL_SEARCHTRACECOUNTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT ARMSQueryDataSetResult : public ServiceResult
+			class ALIBABACLOUD_ARMS_EXPORT SearchTraceCountResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					long count;
+				};
 
 
-				ARMSQueryDataSetResult();
-				explicit ARMSQueryDataSetResult(const std::string &payload);
-				~ARMSQueryDataSetResult();
-				std::string getData()const;
+				SearchTraceCountResult();
+				explicit SearchTraceCountResult(const std::string &payload);
+				~SearchTraceCountResult();
+				Data getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string data_;
+				Data data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_SEARCHTRACECOUNTRESULT_H_

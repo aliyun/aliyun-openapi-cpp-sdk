@@ -51,6 +51,150 @@ ARMSClient::ARMSClient(const std::string & accessKeyId, const std::string & acce
 ARMSClient::~ARMSClient()
 {}
 
+ARMSClient::GetTraceOutcome ARMSClient::getTrace(const GetTraceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTraceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTraceOutcome(GetTraceResult(outcome.result()));
+	else
+		return GetTraceOutcome(outcome.error());
+}
+
+void ARMSClient::getTraceAsync(const GetTraceRequest& request, const GetTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTrace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetTraceOutcomeCallable ARMSClient::getTraceCallable(const GetTraceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTraceOutcome()>>(
+			[this, request]()
+			{
+			return this->getTrace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::SearchTracesOutcome ARMSClient::searchTraces(const SearchTracesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchTracesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchTracesOutcome(SearchTracesResult(outcome.result()));
+	else
+		return SearchTracesOutcome(outcome.error());
+}
+
+void ARMSClient::searchTracesAsync(const SearchTracesRequest& request, const SearchTracesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchTraces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::SearchTracesOutcomeCallable ARMSClient::searchTracesCallable(const SearchTracesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchTracesOutcome()>>(
+			[this, request]()
+			{
+			return this->searchTraces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::SearchTraceCountOutcome ARMSClient::searchTraceCount(const SearchTraceCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchTraceCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchTraceCountOutcome(SearchTraceCountResult(outcome.result()));
+	else
+		return SearchTraceCountOutcome(outcome.error());
+}
+
+void ARMSClient::searchTraceCountAsync(const SearchTraceCountRequest& request, const SearchTraceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchTraceCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::SearchTraceCountOutcomeCallable ARMSClient::searchTraceCountCallable(const SearchTraceCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchTraceCountOutcome()>>(
+			[this, request]()
+			{
+			return this->searchTraceCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetTagKeyOutcome ARMSClient::getTagKey(const GetTagKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTagKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTagKeyOutcome(GetTagKeyResult(outcome.result()));
+	else
+		return GetTagKeyOutcome(outcome.error());
+}
+
+void ARMSClient::getTagKeyAsync(const GetTagKeyRequest& request, const GetTagKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTagKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetTagKeyOutcomeCallable ARMSClient::getTagKeyCallable(const GetTagKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTagKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->getTagKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::ARMSQueryDataSetOutcome ARMSClient::aRMSQueryDataSet(const ARMSQueryDataSetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -87,6 +231,78 @@ ARMSClient::ARMSQueryDataSetOutcomeCallable ARMSClient::aRMSQueryDataSetCallable
 	return task->get_future();
 }
 
+ARMSClient::GetSpanNamesOutcome ARMSClient::getSpanNames(const GetSpanNamesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSpanNamesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSpanNamesOutcome(GetSpanNamesResult(outcome.result()));
+	else
+		return GetSpanNamesOutcome(outcome.error());
+}
+
+void ARMSClient::getSpanNamesAsync(const GetSpanNamesRequest& request, const GetSpanNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSpanNames(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetSpanNamesOutcomeCallable ARMSClient::getSpanNamesCallable(const GetSpanNamesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSpanNamesOutcome()>>(
+			[this, request]()
+			{
+			return this->getSpanNames(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetServicesOutcome ARMSClient::getServices(const GetServicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetServicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetServicesOutcome(GetServicesResult(outcome.result()));
+	else
+		return GetServicesOutcome(outcome.error());
+}
+
+void ARMSClient::getServicesAsync(const GetServicesRequest& request, const GetServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getServices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetServicesOutcomeCallable ARMSClient::getServicesCallable(const GetServicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetServicesOutcome()>>(
+			[this, request]()
+			{
+			return this->getServices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::MetricQueryOutcome ARMSClient::metricQuery(const MetricQueryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +333,42 @@ ARMSClient::MetricQueryOutcomeCallable ARMSClient::metricQueryCallable(const Met
 			[this, request]()
 			{
 			return this->metricQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetTagValOutcome ARMSClient::getTagVal(const GetTagValRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTagValOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTagValOutcome(GetTagValResult(outcome.result()));
+	else
+		return GetTagValOutcome(outcome.error());
+}
+
+void ARMSClient::getTagValAsync(const GetTagValRequest& request, const GetTagValAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTagVal(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetTagValOutcomeCallable ARMSClient::getTagValCallable(const GetTagValRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTagValOutcome()>>(
+			[this, request]()
+			{
+			return this->getTagVal(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

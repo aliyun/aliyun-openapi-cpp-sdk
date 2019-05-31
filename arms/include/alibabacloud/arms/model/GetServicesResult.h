@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
-#define ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_GETSERVICESRESULT_H_
+#define ALIBABACLOUD_ARMS_MODEL_GETSERVICESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT ARMSQueryDataSetResult : public ServiceResult
+			class ALIBABACLOUD_ARMS_EXPORT GetServicesResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					struct DetailsItem
+					{
+						std::string serviceName;
+						std::string pid;
+						std::string regionId;
+					};
+					std::vector<std::string> services;
+					std::vector<DetailsItem> details;
+				};
 
 
-				ARMSQueryDataSetResult();
-				explicit ARMSQueryDataSetResult(const std::string &payload);
-				~ARMSQueryDataSetResult();
-				std::string getData()const;
+				GetServicesResult();
+				explicit GetServicesResult(const std::string &payload);
+				~GetServicesResult();
+				Data getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string data_;
+				Data data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_GETSERVICESRESULT_H_

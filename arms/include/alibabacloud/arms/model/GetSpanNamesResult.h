@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
-#define ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_GETSPANNAMESRESULT_H_
+#define ALIBABACLOUD_ARMS_MODEL_GETSPANNAMESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT ARMSQueryDataSetResult : public ServiceResult
+			class ALIBABACLOUD_ARMS_EXPORT GetSpanNamesResult : public ServiceResult
 			{
 			public:
 
 
-				ARMSQueryDataSetResult();
-				explicit ARMSQueryDataSetResult(const std::string &payload);
-				~ARMSQueryDataSetResult();
-				std::string getData()const;
+				GetSpanNamesResult();
+				explicit GetSpanNamesResult(const std::string &payload);
+				~GetSpanNamesResult();
+				std::vector<std::string> getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string data_;
+				std::vector<std::string> data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_GETSPANNAMESRESULT_H_

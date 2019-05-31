@@ -14,38 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/arms/model/MetricQueryResult.h>
+#include <alibabacloud/arms/model/GetSpanNamesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::ARMS;
 using namespace AlibabaCloud::ARMS::Model;
 
-MetricQueryResult::MetricQueryResult() :
+GetSpanNamesResult::GetSpanNamesResult() :
 	ServiceResult()
 {}
 
-MetricQueryResult::MetricQueryResult(const std::string &payload) :
+GetSpanNamesResult::GetSpanNamesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-MetricQueryResult::~MetricQueryResult()
+GetSpanNamesResult::~GetSpanNamesResult()
 {}
 
-void MetricQueryResult::parse(const std::string &payload)
+void GetSpanNamesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
+	auto allData = value["Data"]["Data"];
+	for (const auto &item : allData)
+		data_.push_back(item.asString());
 
 }
 
-std::string MetricQueryResult::getData()const
+std::vector<std::string> GetSpanNamesResult::getData()const
 {
 	return data_;
 }

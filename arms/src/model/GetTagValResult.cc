@@ -14,38 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/arms/model/MetricQueryResult.h>
+#include <alibabacloud/arms/model/GetTagValResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::ARMS;
 using namespace AlibabaCloud::ARMS::Model;
 
-MetricQueryResult::MetricQueryResult() :
+GetTagValResult::GetTagValResult() :
 	ServiceResult()
 {}
 
-MetricQueryResult::MetricQueryResult(const std::string &payload) :
+GetTagValResult::GetTagValResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-MetricQueryResult::~MetricQueryResult()
+GetTagValResult::~GetTagValResult()
 {}
 
-void MetricQueryResult::parse(const std::string &payload)
+void GetTagValResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
+	auto allData = value["Data"]["Data"];
+	for (const auto &item : allData)
+		data_.push_back(item.asString());
 
 }
 
-std::string MetricQueryResult::getData()const
+std::vector<std::string> GetTagValResult::getData()const
 {
 	return data_;
 }

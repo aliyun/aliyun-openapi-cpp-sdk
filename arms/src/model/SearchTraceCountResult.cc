@@ -14,38 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/arms/model/MetricQueryResult.h>
+#include <alibabacloud/arms/model/SearchTraceCountResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::ARMS;
 using namespace AlibabaCloud::ARMS::Model;
 
-MetricQueryResult::MetricQueryResult() :
+SearchTraceCountResult::SearchTraceCountResult() :
 	ServiceResult()
 {}
 
-MetricQueryResult::MetricQueryResult(const std::string &payload) :
+SearchTraceCountResult::SearchTraceCountResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-MetricQueryResult::~MetricQueryResult()
+SearchTraceCountResult::~SearchTraceCountResult()
 {}
 
-void MetricQueryResult::parse(const std::string &payload)
+void SearchTraceCountResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
+	auto dataNode = value["Data"];
+	if(!dataNode["Count"].isNull())
+		data_.count = std::stol(dataNode["Count"].asString());
 
 }
 
-std::string MetricQueryResult::getData()const
+SearchTraceCountResult::Data SearchTraceCountResult::getData()const
 {
 	return data_;
 }

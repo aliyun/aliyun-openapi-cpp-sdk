@@ -40,6 +40,16 @@ namespace AlibabaCloud
 				MetricQueryRequest();
 				~MetricQueryRequest();
 
+				long getEndTime()const;
+				void setEndTime(long endTime);
+				std::string getOrderBy()const;
+				void setOrderBy(const std::string& orderBy);
+				std::vector<Filters> getFilters()const;
+				void setFilters(const std::vector<Filters>& filters);
+				long getStartTime()const;
+				void setStartTime(long startTime);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				int getIintervalInSec()const;
 				void setIintervalInSec(int iintervalInSec);
 				std::vector<std::string> getMeasures()const;
@@ -48,36 +58,29 @@ namespace AlibabaCloud
 				void setMetric(const std::string& metric);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				int getLimit()const;
 				void setLimit(int limit);
-				long getEndTime()const;
-				void setEndTime(long endTime);
-				std::string getOrderBy()const;
-				void setOrderBy(const std::string& orderBy);
-				long getStartTime()const;
-				void setStartTime(long startTime);
-				std::vector<Filters> getFilters()const;
-				void setFilters(const std::vector<Filters>& filters);
 				std::vector<std::string> getDimensions()const;
 				void setDimensions(const std::vector<std::string>& dimensions);
 				std::string getOrder()const;
 				void setOrder(const std::string& order);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				long endTime_;
+				std::string orderBy_;
+				std::vector<Filters> filters_;
+				long startTime_;
+				std::string accessKeyId_;
 				int iintervalInSec_;
 				std::vector<std::string> measures_;
 				std::string metric_;
 				std::string securityToken_;
+				std::string regionId_;
 				int limit_;
-				long endTime_;
-				std::string orderBy_;
-				long startTime_;
-				std::vector<Filters> filters_;
 				std::vector<std::string> dimensions_;
 				std::string order_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -20,18 +20,10 @@ set(arms_public_header
 	include/alibabacloud/arms/ARMSClient.h
 	include/alibabacloud/arms/ARMSExport.h )
 
-set(arms_public_header_model 
-	include/alibabacloud/arms/model/ARMSQueryDataSetRequest.h
-	include/alibabacloud/arms/model/ARMSQueryDataSetResult.h
-	include/alibabacloud/arms/model/MetricQueryRequest.h
-	include/alibabacloud/arms/model/MetricQueryResult.h )
+set(arms_public_header_model  )
 
 set(arms_src 
-	src/ARMSClient.cc
-	src/model/ARMSQueryDataSetRequest.cc
-	src/model/ARMSQueryDataSetResult.cc
-	src/model/MetricQueryRequest.cc
-	src/model/MetricQueryResult.cc )
+	src/ARMSClient.cc )
 
 add_library(arms ${LIB_TYPE}
 	${arms_public_header}

@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
-#define ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_GETSERVICESREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_GETSERVICESREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/arms/ARMSExport.h>
 
 namespace AlibabaCloud
@@ -29,23 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT ARMSQueryDataSetResult : public ServiceResult
+			class ALIBABACLOUD_ARMS_EXPORT GetServicesRequest : public RpcServiceRequest
 			{
+
 			public:
+				GetServicesRequest();
+				~GetServicesRequest();
 
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getAppType()const;
+				void setAppType(const std::string& appType);
 
-				ARMSQueryDataSetResult();
-				explicit ARMSQueryDataSetResult(const std::string &payload);
-				~ARMSQueryDataSetResult();
-				std::string getData()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string data_;
+            private:
+				std::string regionId_;
+				std::string appType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_ARMSQUERYDATASETRESULT_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_GETSERVICESREQUEST_H_

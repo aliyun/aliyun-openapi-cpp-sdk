@@ -14,38 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/arms/model/MetricQueryResult.h>
+#include <alibabacloud/arms/model/GetServicesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::ARMS;
 using namespace AlibabaCloud::ARMS::Model;
 
-MetricQueryResult::MetricQueryResult() :
+GetServicesResult::GetServicesResult() :
 	ServiceResult()
 {}
 
-MetricQueryResult::MetricQueryResult(const std::string &payload) :
+GetServicesResult::GetServicesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-MetricQueryResult::~MetricQueryResult()
+GetServicesResult::~GetServicesResult()
 {}
 
-void MetricQueryResult::parse(const std::string &payload)
+void GetServicesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
+	auto dataNode = value["Data"];
+	auto allDetails = value["Details"]["DetailsItem"];
+	for (auto value : allDetails)
+	{
+		Data::DetailsItem detailsItemObject;
+		if(!value["ServiceName"].isNull())
+			detailsItemObject.serviceName = value["ServiceName"].asString();
+		if(!value["Pid"].isNull())
+			detailsItemObject.pid = value["Pid"].asString();
+		if(!value["RegionId"].isNull())
+			detailsItemObject.regionId = value["RegionId"].asString();
+		data_.details.push_back(detailsItemObject);
+	}
+		auto allServices = dataNode["Services"]["Services"];
+		for (auto value : allServices)
+			data_.services.push_back(value.asString());
 
 }
 
-std::string MetricQueryResult::getData()const
+GetServicesResult::Data GetServicesResult::getData()const
 {
 	return data_;
 }
