@@ -33,7 +33,7 @@ long DeleteCloudConnectNetworkRequest::getResourceOwnerId()const
 void DeleteCloudConnectNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCloudConnectNetworkRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteCloudConnectNetworkRequest::getResourceOwnerAccount()const
 void DeleteCloudConnectNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCloudConnectNetworkRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteCloudConnectNetworkRequest::getRegionId()const
 void DeleteCloudConnectNetworkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteCloudConnectNetworkRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteCloudConnectNetworkRequest::getOwnerAccount()const
 void DeleteCloudConnectNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteCloudConnectNetworkRequest::getCcnId()const
@@ -77,7 +77,7 @@ std::string DeleteCloudConnectNetworkRequest::getCcnId()const
 void DeleteCloudConnectNetworkRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setParameter("CcnId", ccnId);
+	setCoreParameter("CcnId", ccnId);
 }
 
 long DeleteCloudConnectNetworkRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DeleteCloudConnectNetworkRequest::getOwnerId()const
 void DeleteCloudConnectNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

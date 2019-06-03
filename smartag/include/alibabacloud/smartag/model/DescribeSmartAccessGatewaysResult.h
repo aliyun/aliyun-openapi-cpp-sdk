@@ -34,12 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct SmartAccessGateway
 				{
+					struct SnatEntry
+					{
+						std::string cidrBlock;
+						std::string snatIp;
+					};
 					std::string status;
 					std::string description;
+					std::vector<SmartAccessGateway::SnatEntry> snatEntries;
 					long endTime;
+					int userCount;
 					std::string maxBandwidth;
 					std::string associatedCcnName;
 					long createTime;
+					long dataPlan;
 					std::string cidrBlock;
 					std::string city;
 					std::string hardwareVersion;
@@ -49,6 +57,7 @@ namespace AlibabaCloud
 					std::string associatedCcnId;
 					std::string smartAGId;
 					int securityLockThreshold;
+					std::string aclIds;
 				};
 
 

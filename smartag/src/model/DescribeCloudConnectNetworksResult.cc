@@ -62,6 +62,20 @@ void DescribeCloudConnectNetworksResult::parse(const std::string &payload)
 			cloudConnectNetworksObject.createTime = std::stol(value["CreateTime"].asString());
 		if(!value["IsDefault"].isNull())
 			cloudConnectNetworksObject.isDefault = value["IsDefault"].asString() == "true";
+		if(!value["CidrBlock"].isNull())
+			cloudConnectNetworksObject.cidrBlock = value["CidrBlock"].asString();
+		if(!value["SnatCidrBlock"].isNull())
+			cloudConnectNetworksObject.snatCidrBlock = value["SnatCidrBlock"].asString();
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+		{
+			CloudConnectNetwork::Tag tagsObject;
+			if(!value["Key"].isNull())
+				tagsObject.key = value["Key"].asString();
+			if(!value["Value"].isNull())
+				tagsObject.value = value["Value"].asString();
+			cloudConnectNetworksObject.tags.push_back(tagsObject);
+		}
 		cloudConnectNetworks_.push_back(cloudConnectNetworksObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -33,7 +33,7 @@ long CreateDedicatedLineBackupRequest::getResourceOwnerId()const
 void CreateDedicatedLineBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateDedicatedLineBackupRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string CreateDedicatedLineBackupRequest::getResourceOwnerAccount()const
 void CreateDedicatedLineBackupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateDedicatedLineBackupRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string CreateDedicatedLineBackupRequest::getRegionId()const
 void CreateDedicatedLineBackupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateDedicatedLineBackupRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateDedicatedLineBackupRequest::getOwnerAccount()const
 void CreateDedicatedLineBackupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateDedicatedLineBackupRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string CreateDedicatedLineBackupRequest::getSmartAGId()const
 void CreateDedicatedLineBackupRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long CreateDedicatedLineBackupRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long CreateDedicatedLineBackupRequest::getOwnerId()const
 void CreateDedicatedLineBackupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateDedicatedLineBackupRequest::getVbrId()const
@@ -99,7 +99,7 @@ std::string CreateDedicatedLineBackupRequest::getVbrId()const
 void CreateDedicatedLineBackupRequest::setVbrId(const std::string& vbrId)
 {
 	vbrId_ = vbrId;
-	setParameter("VbrId", vbrId);
+	setCoreParameter("VbrId", vbrId);
 }
 
 std::string CreateDedicatedLineBackupRequest::getVbrRegionId()const
@@ -110,6 +110,6 @@ std::string CreateDedicatedLineBackupRequest::getVbrRegionId()const
 void CreateDedicatedLineBackupRequest::setVbrRegionId(const std::string& vbrRegionId)
 {
 	vbrRegionId_ = vbrRegionId;
-	setParameter("VbrRegionId", vbrRegionId);
+	setCoreParameter("VbrRegionId", vbrRegionId);
 }
 

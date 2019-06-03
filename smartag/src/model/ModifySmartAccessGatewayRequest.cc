@@ -25,6 +25,23 @@ ModifySmartAccessGatewayRequest::ModifySmartAccessGatewayRequest() :
 ModifySmartAccessGatewayRequest::~ModifySmartAccessGatewayRequest()
 {}
 
+std::vector<ModifySmartAccessGatewayRequest::SnatEntries> ModifySmartAccessGatewayRequest::getSnatEntries()const
+{
+	return snatEntries_;
+}
+
+void ModifySmartAccessGatewayRequest::setSnatEntries(const std::vector<SnatEntries>& snatEntries)
+{
+	snatEntries_ = snatEntries;
+	int i = 0;
+	for(int i = 0; i!= snatEntries.size(); i++)	{
+		auto obj = snatEntries.at(i);
+		std::string str ="SnatEntries."+ std::to_string(i);
+		setCoreParameter(str + ".CidrBlock", obj.cidrBlock);
+		setCoreParameter(str + ".SnatIp", obj.snatIp);
+	}
+}
+
 long ModifySmartAccessGatewayRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -33,7 +50,7 @@ long ModifySmartAccessGatewayRequest::getResourceOwnerId()const
 void ModifySmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -44,7 +61,7 @@ std::string ModifySmartAccessGatewayRequest::getResourceOwnerAccount()const
 void ModifySmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifySmartAccessGatewayRequest::getCity()const
@@ -55,18 +72,7 @@ std::string ModifySmartAccessGatewayRequest::getCity()const
 void ModifySmartAccessGatewayRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setParameter("City", city);
-}
-
-std::string ModifySmartAccessGatewayRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifySmartAccessGatewayRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("City", city);
 }
 
 std::string ModifySmartAccessGatewayRequest::getOwnerAccount()const
@@ -77,40 +83,7 @@ std::string ModifySmartAccessGatewayRequest::getOwnerAccount()const
 void ModifySmartAccessGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifySmartAccessGatewayRequest::getName()const
-{
-	return name_;
-}
-
-void ModifySmartAccessGatewayRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
-}
-
-std::string ModifySmartAccessGatewayRequest::getCidrBlock()const
-{
-	return cidrBlock_;
-}
-
-void ModifySmartAccessGatewayRequest::setCidrBlock(const std::string& cidrBlock)
-{
-	cidrBlock_ = cidrBlock;
-	setParameter("CidrBlock", cidrBlock);
-}
-
-std::string ModifySmartAccessGatewayRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void ModifySmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setParameter("SmartAGId", smartAGId);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifySmartAccessGatewayRequest::getDescription()const
@@ -121,7 +94,7 @@ std::string ModifySmartAccessGatewayRequest::getDescription()const
 void ModifySmartAccessGatewayRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 long ModifySmartAccessGatewayRequest::getOwnerId()const
@@ -132,7 +105,7 @@ long ModifySmartAccessGatewayRequest::getOwnerId()const
 void ModifySmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ModifySmartAccessGatewayRequest::getSecurityLockThreshold()const
@@ -143,6 +116,50 @@ int ModifySmartAccessGatewayRequest::getSecurityLockThreshold()const
 void ModifySmartAccessGatewayRequest::setSecurityLockThreshold(int securityLockThreshold)
 {
 	securityLockThreshold_ = securityLockThreshold;
-	setParameter("SecurityLockThreshold", std::to_string(securityLockThreshold));
+	setCoreParameter("SecurityLockThreshold", std::to_string(securityLockThreshold));
+}
+
+std::string ModifySmartAccessGatewayRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifySmartAccessGatewayRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifySmartAccessGatewayRequest::getName()const
+{
+	return name_;
+}
+
+void ModifySmartAccessGatewayRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+std::string ModifySmartAccessGatewayRequest::getCidrBlock()const
+{
+	return cidrBlock_;
+}
+
+void ModifySmartAccessGatewayRequest::setCidrBlock(const std::string& cidrBlock)
+{
+	cidrBlock_ = cidrBlock;
+	setCoreParameter("CidrBlock", cidrBlock);
+}
+
+std::string ModifySmartAccessGatewayRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void ModifySmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 

@@ -34,13 +34,21 @@ namespace AlibabaCloud
 			public:
 				struct CloudConnectNetwork
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					bool isDefault;
 					std::string description;
 					std::string ccnId;
 					std::string availableCloudBoxCount;
 					long createTime;
 					std::string associatedCenOwnerId;
+					std::string cidrBlock;
 					std::string associatedCenId;
+					std::string snatCidrBlock;
+					std::vector<CloudConnectNetwork::Tag> tags;
 					std::string associatedCloudBoxCount;
 					std::string name;
 				};

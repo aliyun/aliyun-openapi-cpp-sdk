@@ -32,32 +32,35 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SMARTAG_EXPORT DescribeSmartAccessGatewayHaResult : public ServiceResult
 			{
 			public:
+				struct LinkBackupInfoListItem
+				{
+					std::string backupLinkState;
+					std::string mainLinkState;
+					std::string backupLinkId;
+					std::string linkLevelBackupType;
+					std::string mainLinkId;
+					std::string linkLevelBackupState;
+				};
 
 
 				DescribeSmartAccessGatewayHaResult();
 				explicit DescribeSmartAccessGatewayHaResult(const std::string &payload);
 				~DescribeSmartAccessGatewayHaResult();
 				std::string getDeviceLevelBackupState()const;
-				std::string getBackupLinkId()const;
+				std::vector<LinkBackupInfoListItem> getLinkBackupInfoList()const;
 				std::string getBackupDeviceId()const;
-				std::string getLinkLevelBackupType()const;
-				std::string getMainLinkId()const;
 				std::string getSmartAGId()const;
 				std::string getDeviceLevelBackupType()const;
-				std::string getLinkLevelBackupState()const;
 				std::string getMainDeviceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string deviceLevelBackupState_;
-				std::string backupLinkId_;
+				std::vector<LinkBackupInfoListItem> linkBackupInfoList_;
 				std::string backupDeviceId_;
-				std::string linkLevelBackupType_;
-				std::string mainLinkId_;
 				std::string smartAGId_;
 				std::string deviceLevelBackupType_;
-				std::string linkLevelBackupState_;
 				std::string mainDeviceId_;
 
 			};

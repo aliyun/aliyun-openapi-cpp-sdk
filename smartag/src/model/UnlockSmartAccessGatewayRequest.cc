@@ -33,7 +33,7 @@ long UnlockSmartAccessGatewayRequest::getResourceOwnerId()const
 void UnlockSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnlockSmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string UnlockSmartAccessGatewayRequest::getResourceOwnerAccount()const
 void UnlockSmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnlockSmartAccessGatewayRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string UnlockSmartAccessGatewayRequest::getRegionId()const
 void UnlockSmartAccessGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UnlockSmartAccessGatewayRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UnlockSmartAccessGatewayRequest::getOwnerAccount()const
 void UnlockSmartAccessGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UnlockSmartAccessGatewayRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string UnlockSmartAccessGatewayRequest::getSmartAGId()const
 void UnlockSmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long UnlockSmartAccessGatewayRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long UnlockSmartAccessGatewayRequest::getOwnerId()const
 void UnlockSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -40,6 +40,8 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				std::string getDescription()const;
 				std::string getCcnId()const;
+				std::string getCidrBlock()const;
+				std::string getSnatCidrBlock()const;
 				std::string getName()const;
 
 			protected:
@@ -48,6 +50,8 @@ namespace AlibabaCloud
 				std::string status_;
 				std::string description_;
 				std::string ccnId_;
+				std::string cidrBlock_;
+				std::string snatCidrBlock_;
 				std::string name_;
 
 			};

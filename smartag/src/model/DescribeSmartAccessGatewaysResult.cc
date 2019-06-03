@@ -74,6 +74,22 @@ void DescribeSmartAccessGatewaysResult::parse(const std::string &payload)
 			smartAccessGatewaysObject.serialNumber = value["SerialNumber"].asString();
 		if(!value["SecurityLockThreshold"].isNull())
 			smartAccessGatewaysObject.securityLockThreshold = std::stoi(value["SecurityLockThreshold"].asString());
+		if(!value["AclIds"].isNull())
+			smartAccessGatewaysObject.aclIds = value["AclIds"].asString();
+		if(!value["DataPlan"].isNull())
+			smartAccessGatewaysObject.dataPlan = std::stol(value["DataPlan"].asString());
+		if(!value["UserCount"].isNull())
+			smartAccessGatewaysObject.userCount = std::stoi(value["UserCount"].asString());
+		auto allSnatEntries = value["SnatEntries"]["SnatEntry"];
+		for (auto value : allSnatEntries)
+		{
+			SmartAccessGateway::SnatEntry snatEntriesObject;
+			if(!value["CidrBlock"].isNull())
+				snatEntriesObject.cidrBlock = value["CidrBlock"].asString();
+			if(!value["SnatIp"].isNull())
+				snatEntriesObject.snatIp = value["SnatIp"].asString();
+			smartAccessGatewaysObject.snatEntries.push_back(snatEntriesObject);
+		}
 		smartAccessGateways_.push_back(smartAccessGatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())

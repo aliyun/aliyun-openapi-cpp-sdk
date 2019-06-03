@@ -33,7 +33,7 @@ long DeleteDedicatedLineBackupRequest::getResourceOwnerId()const
 void DeleteDedicatedLineBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteDedicatedLineBackupRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteDedicatedLineBackupRequest::getResourceOwnerAccount()const
 void DeleteDedicatedLineBackupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteDedicatedLineBackupRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteDedicatedLineBackupRequest::getRegionId()const
 void DeleteDedicatedLineBackupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteDedicatedLineBackupRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteDedicatedLineBackupRequest::getOwnerAccount()const
 void DeleteDedicatedLineBackupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteDedicatedLineBackupRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string DeleteDedicatedLineBackupRequest::getSmartAGId()const
 void DeleteDedicatedLineBackupRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long DeleteDedicatedLineBackupRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DeleteDedicatedLineBackupRequest::getOwnerId()const
 void DeleteDedicatedLineBackupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

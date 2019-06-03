@@ -47,8 +47,12 @@ namespace AlibabaCloud
 				void setReceiverDistrict(const std::string& receiverDistrict);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				int getUserCount()const;
+				void setUserCount(int userCount);
 				std::string getReceiverAddress()const;
 				void setReceiverAddress(const std::string& receiverAddress);
+				std::string getInstanceType()const;
+				void setInstanceType(const std::string& instanceType);
 				std::string getBuyerMessage()const;
 				void setBuyerMessage(const std::string& buyerMessage);
 				std::string getHardWareSpec()const;
@@ -83,6 +87,8 @@ namespace AlibabaCloud
 				void setReceiverCountry(const std::string& receiverCountry);
 				std::string getChargeType()const;
 				void setChargeType(const std::string& chargeType);
+				long getDataPlan()const;
+				void setDataPlan(long dataPlan);
 				std::string getReceiverZip()const;
 				void setReceiverZip(const std::string& receiverZip);
 
@@ -93,7 +99,9 @@ namespace AlibabaCloud
 				std::string receiverTown_;
 				std::string receiverDistrict_;
 				std::string regionId_;
+				int userCount_;
 				std::string receiverAddress_;
+				std::string instanceType_;
 				std::string buyerMessage_;
 				std::string hardWareSpec_;
 				std::string receiverEmail_;
@@ -111,6 +119,7 @@ namespace AlibabaCloud
 				std::string name_;
 				std::string receiverCountry_;
 				std::string chargeType_;
+				long dataPlan_;
 				std::string receiverZip_;
 
 			};

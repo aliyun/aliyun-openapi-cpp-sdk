@@ -40,6 +40,24 @@ void DescribeSmartAccessGatewayHaResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	auto allLinkBackupInfoList = value["LinkBackupInfoList"]["LinkBackupInfoListItem"];
+	for (auto value : allLinkBackupInfoList)
+	{
+		LinkBackupInfoListItem linkBackupInfoListObject;
+		if(!value["LinkLevelBackupState"].isNull())
+			linkBackupInfoListObject.linkLevelBackupState = value["LinkLevelBackupState"].asString();
+		if(!value["LinkLevelBackupType"].isNull())
+			linkBackupInfoListObject.linkLevelBackupType = value["LinkLevelBackupType"].asString();
+		if(!value["MainLinkId"].isNull())
+			linkBackupInfoListObject.mainLinkId = value["MainLinkId"].asString();
+		if(!value["MainLinkState"].isNull())
+			linkBackupInfoListObject.mainLinkState = value["MainLinkState"].asString();
+		if(!value["BackupLinkId"].isNull())
+			linkBackupInfoListObject.backupLinkId = value["BackupLinkId"].asString();
+		if(!value["BackupLinkState"].isNull())
+			linkBackupInfoListObject.backupLinkState = value["BackupLinkState"].asString();
+		linkBackupInfoList_.push_back(linkBackupInfoListObject);
+	}
 	if(!value["DeviceLevelBackupState"].isNull())
 		deviceLevelBackupState_ = value["DeviceLevelBackupState"].asString();
 	if(!value["DeviceLevelBackupType"].isNull())
@@ -48,14 +66,6 @@ void DescribeSmartAccessGatewayHaResult::parse(const std::string &payload)
 		mainDeviceId_ = value["MainDeviceId"].asString();
 	if(!value["BackupDeviceId"].isNull())
 		backupDeviceId_ = value["BackupDeviceId"].asString();
-	if(!value["LinkLevelBackupState"].isNull())
-		linkLevelBackupState_ = value["LinkLevelBackupState"].asString();
-	if(!value["LinkLevelBackupType"].isNull())
-		linkLevelBackupType_ = value["LinkLevelBackupType"].asString();
-	if(!value["MainLinkId"].isNull())
-		mainLinkId_ = value["MainLinkId"].asString();
-	if(!value["BackupLinkId"].isNull())
-		backupLinkId_ = value["BackupLinkId"].asString();
 	if(!value["SmartAGId"].isNull())
 		smartAGId_ = value["SmartAGId"].asString();
 
@@ -66,24 +76,14 @@ std::string DescribeSmartAccessGatewayHaResult::getDeviceLevelBackupState()const
 	return deviceLevelBackupState_;
 }
 
-std::string DescribeSmartAccessGatewayHaResult::getBackupLinkId()const
+std::vector<DescribeSmartAccessGatewayHaResult::LinkBackupInfoListItem> DescribeSmartAccessGatewayHaResult::getLinkBackupInfoList()const
 {
-	return backupLinkId_;
+	return linkBackupInfoList_;
 }
 
 std::string DescribeSmartAccessGatewayHaResult::getBackupDeviceId()const
 {
 	return backupDeviceId_;
-}
-
-std::string DescribeSmartAccessGatewayHaResult::getLinkLevelBackupType()const
-{
-	return linkLevelBackupType_;
-}
-
-std::string DescribeSmartAccessGatewayHaResult::getMainLinkId()const
-{
-	return mainLinkId_;
 }
 
 std::string DescribeSmartAccessGatewayHaResult::getSmartAGId()const
@@ -94,11 +94,6 @@ std::string DescribeSmartAccessGatewayHaResult::getSmartAGId()const
 std::string DescribeSmartAccessGatewayHaResult::getDeviceLevelBackupType()const
 {
 	return deviceLevelBackupType_;
-}
-
-std::string DescribeSmartAccessGatewayHaResult::getLinkLevelBackupState()const
-{
-	return linkLevelBackupState_;
 }
 
 std::string DescribeSmartAccessGatewayHaResult::getMainDeviceId()const

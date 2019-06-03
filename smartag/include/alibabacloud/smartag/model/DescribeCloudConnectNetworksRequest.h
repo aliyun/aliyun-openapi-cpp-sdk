@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SMARTAG_EXPORT DescribeCloudConnectNetworksRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeCloudConnectNetworksRequest();
@@ -49,6 +54,8 @@ namespace AlibabaCloud
 				void setCcnId(const std::string& ccnId);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getPageNumber()const;
@@ -62,6 +69,7 @@ namespace AlibabaCloud
 				std::string name_;
 				std::string ccnId_;
 				std::string pageSize_;
+				std::vector<Tag> tag_;
 				long ownerId_;
 				std::string pageNumber_;
 
