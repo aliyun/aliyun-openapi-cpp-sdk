@@ -33,7 +33,7 @@ std::string DeleteCasterVideoResourceRequest::getResourceId()const
 void DeleteCasterVideoResourceRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", resourceId);
 }
 
 std::string DeleteCasterVideoResourceRequest::getCasterId()const
@@ -44,7 +44,7 @@ std::string DeleteCasterVideoResourceRequest::getCasterId()const
 void DeleteCasterVideoResourceRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setParameter("CasterId", casterId);
+	setCoreParameter("CasterId", casterId);
 }
 
 long DeleteCasterVideoResourceRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long DeleteCasterVideoResourceRequest::getOwnerId()const
 void DeleteCasterVideoResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

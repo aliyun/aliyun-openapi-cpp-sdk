@@ -33,7 +33,7 @@ std::string DescribeLiveDomainDetailRequest::getSecurityToken()const
 void DescribeLiveDomainDetailRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveDomainDetailRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveDomainDetailRequest::getDomainName()const
 void DescribeLiveDomainDetailRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeLiveDomainDetailRequest::getOwnerId()const
@@ -55,17 +55,6 @@ long DescribeLiveDomainDetailRequest::getOwnerId()const
 void DescribeLiveDomainDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeLiveDomainDetailRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveDomainDetailRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

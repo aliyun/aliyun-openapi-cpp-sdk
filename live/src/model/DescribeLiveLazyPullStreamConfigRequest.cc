@@ -25,28 +25,6 @@ DescribeLiveLazyPullStreamConfigRequest::DescribeLiveLazyPullStreamConfigRequest
 DescribeLiveLazyPullStreamConfigRequest::~DescribeLiveLazyPullStreamConfigRequest()
 {}
 
-std::string DescribeLiveLazyPullStreamConfigRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void DescribeLiveLazyPullStreamConfigRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
-}
-
-std::string DescribeLiveLazyPullStreamConfigRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void DescribeLiveLazyPullStreamConfigRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
-}
-
 long DescribeLiveLazyPullStreamConfigRequest::getCallerParentId()const
 {
 	return callerParentId_;
@@ -55,18 +33,7 @@ long DescribeLiveLazyPullStreamConfigRequest::getCallerParentId()const
 void DescribeLiveLazyPullStreamConfigRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-std::string DescribeLiveLazyPullStreamConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveLazyPullStreamConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeLiveLazyPullStreamConfigRequest::getProxy_original_security_transport()const
@@ -77,29 +44,7 @@ bool DescribeLiveLazyPullStreamConfigRequest::getProxy_original_security_transpo
 void DescribeLiveLazyPullStreamConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
-}
-
-std::string DescribeLiveLazyPullStreamConfigRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void DescribeLiveLazyPullStreamConfigRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
-}
-
-long DescribeLiveLazyPullStreamConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeLiveLazyPullStreamConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getProxy_original_source_ip()const
@@ -110,18 +55,7 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getProxy_original_source_ip
 void DescribeLiveLazyPullStreamConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DescribeLiveLazyPullStreamConfigRequest::getVersion()const
-{
-	return version_;
-}
-
-void DescribeLiveLazyPullStreamConfigRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getOwnerIdLoginEmail()const
@@ -132,7 +66,7 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getOwnerIdLoginEmail()const
 void DescribeLiveLazyPullStreamConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getCallerType()const
@@ -143,29 +77,18 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getCallerType()const
 void DescribeLiveLazyPullStreamConfigRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
-bool DescribeLiveLazyPullStreamConfigRequest::getProxy_trust_transport_info()const
+std::string DescribeLiveLazyPullStreamConfigRequest::getEagleEyeRpcId()const
 {
-	return proxy_trust_transport_info_;
+	return eagleEyeRpcId_;
 }
 
-void DescribeLiveLazyPullStreamConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
+void DescribeLiveLazyPullStreamConfigRequest::setEagleEyeRpcId(const std::string& eagleEyeRpcId)
 {
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
-}
-
-bool DescribeLiveLazyPullStreamConfigRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DescribeLiveLazyPullStreamConfigRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	eagleEyeRpcId_ = eagleEyeRpcId;
+	setCoreParameter("EagleEyeRpcId", eagleEyeRpcId);
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getAccessKeyId()const
@@ -176,18 +99,18 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getAccessKeyId()const
 void DescribeLiveLazyPullStreamConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-bool DescribeLiveLazyPullStreamConfigRequest::getSecurity_transport()const
+std::string DescribeLiveLazyPullStreamConfigRequest::getEagleEyeTraceId()const
 {
-	return security_transport_;
+	return eagleEyeTraceId_;
 }
 
-void DescribeLiveLazyPullStreamConfigRequest::setSecurity_transport(bool security_transport)
+void DescribeLiveLazyPullStreamConfigRequest::setEagleEyeTraceId(const std::string& eagleEyeTraceId)
 {
-	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	eagleEyeTraceId_ = eagleEyeTraceId;
+	setCoreParameter("EagleEyeTraceId", eagleEyeTraceId);
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getAppName()const
@@ -198,7 +121,7 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getAppName()const
 void DescribeLiveLazyPullStreamConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getSecurityToken()const
@@ -209,7 +132,7 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getSecurityToken()const
 void DescribeLiveLazyPullStreamConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getRegionId()const
@@ -220,18 +143,7 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getRegionId()const
 void DescribeLiveLazyPullStreamConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string DescribeLiveLazyPullStreamConfigRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DescribeLiveLazyPullStreamConfigRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getRequestContent()const
@@ -242,7 +154,7 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getRequestContent()const
 void DescribeLiveLazyPullStreamConfigRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getCallerBidEmail()const
@@ -253,7 +165,7 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getCallerBidEmail()const
 void DescribeLiveLazyPullStreamConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getCallerUidEmail()const
@@ -264,7 +176,7 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getCallerUidEmail()const
 void DescribeLiveLazyPullStreamConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeLiveLazyPullStreamConfigRequest::getCallerUid()const
@@ -275,6 +187,138 @@ long DescribeLiveLazyPullStreamConfigRequest::getCallerUid()const
 void DescribeLiveLazyPullStreamConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
+}
+
+std::string DescribeLiveLazyPullStreamConfigRequest::getApp_ip()const
+{
+	return app_ip_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setApp_ip(const std::string& app_ip)
+{
+	app_ip_ = app_ip;
+	setCoreParameter("App_ip", app_ip);
+}
+
+std::string DescribeLiveLazyPullStreamConfigRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setCoreParameter("PopProduct", popProduct);
+}
+
+std::string DescribeLiveLazyPullStreamConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeLiveLazyPullStreamConfigRequest::getCallerBid()const
+{
+	return callerBid_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setCallerBid(const std::string& callerBid)
+{
+	callerBid_ = callerBid;
+	setCoreParameter("CallerBid", callerBid);
+}
+
+long DescribeLiveLazyPullStreamConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeLiveLazyPullStreamConfigRequest::getVersion()const
+{
+	return version_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setVersion(const std::string& version)
+{
+	version_ = version;
+	setCoreParameter("Version", version);
+}
+
+bool DescribeLiveLazyPullStreamConfigRequest::getProxy_trust_transport_info()const
+{
+	return proxy_trust_transport_info_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
+{
+	proxy_trust_transport_info_ = proxy_trust_transport_info;
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+}
+
+bool DescribeLiveLazyPullStreamConfigRequest::getAk_mfa_present()const
+{
+	return ak_mfa_present_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setAk_mfa_present(bool ak_mfa_present)
+{
+	ak_mfa_present_ = ak_mfa_present;
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+}
+
+bool DescribeLiveLazyPullStreamConfigRequest::getSecurity_transport()const
+{
+	return security_transport_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setSecurity_transport(bool security_transport)
+{
+	security_transport_ = security_transport;
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+}
+
+std::string DescribeLiveLazyPullStreamConfigRequest::getServiceCode()const
+{
+	return serviceCode_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setServiceCode(const std::string& serviceCode)
+{
+	serviceCode_ = serviceCode;
+	setCoreParameter("ServiceCode", serviceCode);
+}
+
+std::string DescribeLiveLazyPullStreamConfigRequest::getRequestId()const
+{
+	return requestId_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setRequestId(const std::string& requestId)
+{
+	requestId_ = requestId;
+	setCoreParameter("RequestId", requestId);
+}
+
+std::string DescribeLiveLazyPullStreamConfigRequest::getEagleEyeUserData()const
+{
+	return eagleEyeUserData_;
+}
+
+void DescribeLiveLazyPullStreamConfigRequest::setEagleEyeUserData(const std::string& eagleEyeUserData)
+{
+	eagleEyeUserData_ = eagleEyeUserData;
+	setCoreParameter("EagleEyeUserData", eagleEyeUserData);
 }
 

@@ -47,8 +47,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				bool getNeedStatusNotify()const;
 				void setNeedStatusNotify(bool needStatusNotify);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string onDemandUrl_;
@@ -57,7 +55,6 @@ namespace AlibabaCloud
 				std::string notifyUrl_;
 				long ownerId_;
 				bool needStatusNotify_;
-				std::string accessKeyId_;
 
 			};
 		}

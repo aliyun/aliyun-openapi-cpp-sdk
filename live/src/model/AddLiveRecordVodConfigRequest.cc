@@ -33,7 +33,7 @@ std::string AddLiveRecordVodConfigRequest::getAppName()const
 void AddLiveRecordVodConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string AddLiveRecordVodConfigRequest::getAutoCompose()const
@@ -44,7 +44,7 @@ std::string AddLiveRecordVodConfigRequest::getAutoCompose()const
 void AddLiveRecordVodConfigRequest::setAutoCompose(const std::string& autoCompose)
 {
 	autoCompose_ = autoCompose;
-	setParameter("AutoCompose", autoCompose);
+	setCoreParameter("AutoCompose", autoCompose);
 }
 
 std::string AddLiveRecordVodConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string AddLiveRecordVodConfigRequest::getDomainName()const
 void AddLiveRecordVodConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 int AddLiveRecordVodConfigRequest::getCycleDuration()const
@@ -66,7 +66,7 @@ int AddLiveRecordVodConfigRequest::getCycleDuration()const
 void AddLiveRecordVodConfigRequest::setCycleDuration(int cycleDuration)
 {
 	cycleDuration_ = cycleDuration;
-	setParameter("CycleDuration", std::to_string(cycleDuration));
+	setCoreParameter("CycleDuration", std::to_string(cycleDuration));
 }
 
 long AddLiveRecordVodConfigRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long AddLiveRecordVodConfigRequest::getOwnerId()const
 void AddLiveRecordVodConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddLiveRecordVodConfigRequest::getComposeVodTranscodeGroupId()const
@@ -88,7 +88,7 @@ std::string AddLiveRecordVodConfigRequest::getComposeVodTranscodeGroupId()const
 void AddLiveRecordVodConfigRequest::setComposeVodTranscodeGroupId(const std::string& composeVodTranscodeGroupId)
 {
 	composeVodTranscodeGroupId_ = composeVodTranscodeGroupId;
-	setParameter("ComposeVodTranscodeGroupId", composeVodTranscodeGroupId);
+	setCoreParameter("ComposeVodTranscodeGroupId", composeVodTranscodeGroupId);
 }
 
 std::string AddLiveRecordVodConfigRequest::getStreamName()const
@@ -99,7 +99,7 @@ std::string AddLiveRecordVodConfigRequest::getStreamName()const
 void AddLiveRecordVodConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setParameter("StreamName", streamName);
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string AddLiveRecordVodConfigRequest::getVodTranscodeGroupId()const
@@ -110,6 +110,6 @@ std::string AddLiveRecordVodConfigRequest::getVodTranscodeGroupId()const
 void AddLiveRecordVodConfigRequest::setVodTranscodeGroupId(const std::string& vodTranscodeGroupId)
 {
 	vodTranscodeGroupId_ = vodTranscodeGroupId;
-	setParameter("VodTranscodeGroupId", vodTranscodeGroupId);
+	setCoreParameter("VodTranscodeGroupId", vodTranscodeGroupId);
 }
 

@@ -33,7 +33,7 @@ std::string DeleteBoardRequest::getApp_ip()const
 void DeleteBoardRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteBoardRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string DeleteBoardRequest::getPopProduct()const
 void DeleteBoardRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 long DeleteBoardRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DeleteBoardRequest::getCallerParentId()const
 void DeleteBoardRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteBoardRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool DeleteBoardRequest::getProxy_original_security_transport()const
 void DeleteBoardRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DeleteBoardRequest::getCallerBid()const
@@ -77,7 +77,7 @@ std::string DeleteBoardRequest::getCallerBid()const
 void DeleteBoardRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteBoardRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DeleteBoardRequest::getOwnerId()const
 void DeleteBoardRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteBoardRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string DeleteBoardRequest::getProxy_original_source_ip()const
 void DeleteBoardRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteBoardRequest::getVersion()const
@@ -110,7 +110,7 @@ std::string DeleteBoardRequest::getVersion()const
 void DeleteBoardRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 std::string DeleteBoardRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string DeleteBoardRequest::getOwnerIdLoginEmail()const
 void DeleteBoardRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteBoardRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string DeleteBoardRequest::getCallerType()const
 void DeleteBoardRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DeleteBoardRequest::getProxy_trust_transport_info()const
@@ -143,7 +143,7 @@ bool DeleteBoardRequest::getProxy_trust_transport_info()const
 void DeleteBoardRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DeleteBoardRequest::getAk_mfa_present()const
@@ -154,7 +154,7 @@ bool DeleteBoardRequest::getAk_mfa_present()const
 void DeleteBoardRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string DeleteBoardRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ std::string DeleteBoardRequest::getAccessKeyId()const
 void DeleteBoardRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DeleteBoardRequest::getSecurity_transport()const
@@ -176,7 +176,7 @@ bool DeleteBoardRequest::getSecurity_transport()const
 void DeleteBoardRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DeleteBoardRequest::getSecurityToken()const
@@ -187,7 +187,7 @@ std::string DeleteBoardRequest::getSecurityToken()const
 void DeleteBoardRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteBoardRequest::getRegionId()const
@@ -198,7 +198,7 @@ std::string DeleteBoardRequest::getRegionId()const
 void DeleteBoardRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteBoardRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string DeleteBoardRequest::getRequestId()const
 void DeleteBoardRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DeleteBoardRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string DeleteBoardRequest::getRequestContent()const
 void DeleteBoardRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteBoardRequest::getAppId()const
@@ -231,7 +231,7 @@ std::string DeleteBoardRequest::getAppId()const
 void DeleteBoardRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("AppId", appId);
 }
 
 std::string DeleteBoardRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string DeleteBoardRequest::getCallerBidEmail()const
 void DeleteBoardRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteBoardRequest::getBoardId()const
@@ -253,7 +253,7 @@ std::string DeleteBoardRequest::getBoardId()const
 void DeleteBoardRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setParameter("BoardId", boardId);
+	setCoreParameter("BoardId", boardId);
 }
 
 std::string DeleteBoardRequest::getCallerUidEmail()const
@@ -264,7 +264,7 @@ std::string DeleteBoardRequest::getCallerUidEmail()const
 void DeleteBoardRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteBoardRequest::getCallerUid()const
@@ -275,6 +275,6 @@ long DeleteBoardRequest::getCallerUid()const
 void DeleteBoardRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

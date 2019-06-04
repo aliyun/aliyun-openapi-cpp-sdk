@@ -33,7 +33,7 @@ std::string EffectCasterUrgentRequest::getCasterId()const
 void EffectCasterUrgentRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setParameter("CasterId", casterId);
+	setCoreParameter("CasterId", casterId);
 }
 
 std::string EffectCasterUrgentRequest::getSceneId()const
@@ -44,7 +44,7 @@ std::string EffectCasterUrgentRequest::getSceneId()const
 void EffectCasterUrgentRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setParameter("SceneId", sceneId);
+	setCoreParameter("SceneId", sceneId);
 }
 
 long EffectCasterUrgentRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long EffectCasterUrgentRequest::getOwnerId()const
 void EffectCasterUrgentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

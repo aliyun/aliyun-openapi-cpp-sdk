@@ -33,7 +33,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getStreamType()const
 void DescribeLiveStreamsOnlineListRequest::setStreamType(const std::string& streamType)
 {
 	streamType_ = streamType;
-	setParameter("StreamType", streamType);
+	setCoreParameter("StreamType", streamType);
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
 void DescribeLiveStreamsOnlineListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getEndTime()const
 void DescribeLiveStreamsOnlineListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getOrderBy()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getOrderBy()const
 void DescribeLiveStreamsOnlineListRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", orderBy);
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getStartTime()const
 void DescribeLiveStreamsOnlineListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeLiveStreamsOnlineListRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeLiveStreamsOnlineListRequest::getOwnerId()const
 void DescribeLiveStreamsOnlineListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeLiveStreamsOnlineListRequest::getPageNum()const
@@ -99,7 +99,7 @@ int DescribeLiveStreamsOnlineListRequest::getPageNum()const
 void DescribeLiveStreamsOnlineListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
@@ -110,7 +110,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
 void DescribeLiveStreamsOnlineListRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getRegionId()const
 void DescribeLiveStreamsOnlineListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeLiveStreamsOnlineListRequest::getPageSize()const
@@ -132,7 +132,7 @@ int DescribeLiveStreamsOnlineListRequest::getPageSize()const
 void DescribeLiveStreamsOnlineListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getStreamName()const
@@ -143,7 +143,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getStreamName()const
 void DescribeLiveStreamsOnlineListRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setParameter("StreamName", streamName);
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getQueryType()const
@@ -154,6 +154,6 @@ std::string DescribeLiveStreamsOnlineListRequest::getQueryType()const
 void DescribeLiveStreamsOnlineListRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setParameter("QueryType", queryType);
+	setCoreParameter("QueryType", queryType);
 }
 

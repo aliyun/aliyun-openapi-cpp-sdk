@@ -44,6 +44,12 @@ namespace AlibabaCloud
 
 				std::string getOssBucket()const;
 				void setOssBucket(const std::string& ossBucket);
+				std::string getAppName()const;
+				void setAppName(const std::string& appName);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::vector<RecordFormat> getRecordFormat()const;
+				void setRecordFormat(const std::vector<RecordFormat>& recordFormat);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getOssEndpoint()const;
@@ -54,14 +60,6 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::vector<RecordFormat> getRecordFormat()const;
-				void setRecordFormat(const std::vector<RecordFormat>& recordFormat);
 				int getOnDemand()const;
 				void setOnDemand(int onDemand);
 				std::string getStreamName()const;
@@ -69,15 +67,14 @@ namespace AlibabaCloud
 
             private:
 				std::string ossBucket_;
+				std::string appName_;
+				std::string securityToken_;
+				std::vector<RecordFormat> recordFormat_;
 				std::string domainName_;
 				std::string ossEndpoint_;
 				std::string endTime_;
 				std::string startTime_;
 				long ownerId_;
-				std::string accessKeyId_;
-				std::string appName_;
-				std::string securityToken_;
-				std::vector<RecordFormat> recordFormat_;
 				int onDemand_;
 				std::string streamName_;
 

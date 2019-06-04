@@ -62,6 +62,24 @@ void DescribeLiveStreamsOnlineListResult::parse(const std::string &payload)
 			onlineInfoObject.transcoded = value["Transcoded"].asString();
 		if(!value["TranscodeId"].isNull())
 			onlineInfoObject.transcodeId = value["TranscodeId"].asString();
+		if(!value["ServerIp"].isNull())
+			onlineInfoObject.serverIp = value["ServerIp"].asString();
+		if(!value["ClientIp"].isNull())
+			onlineInfoObject.clientIp = value["ClientIp"].asString();
+		if(!value["VideoCodecId"].isNull())
+			onlineInfoObject.videoCodecId = std::stoi(value["VideoCodecId"].asString());
+		if(!value["VideoDataRate"].isNull())
+			onlineInfoObject.videoDataRate = std::stoi(value["VideoDataRate"].asString());
+		if(!value["FrameRate"].isNull())
+			onlineInfoObject.frameRate = std::stoi(value["FrameRate"].asString());
+		if(!value["Width"].isNull())
+			onlineInfoObject.width = std::stoi(value["Width"].asString());
+		if(!value["Height"].isNull())
+			onlineInfoObject.height = std::stoi(value["Height"].asString());
+		if(!value["AudioCodecId"].isNull())
+			onlineInfoObject.audioCodecId = std::stoi(value["AudioCodecId"].asString());
+		if(!value["AudioDataRate"].isNull())
+			onlineInfoObject.audioDataRate = std::stoi(value["AudioDataRate"].asString());
 		onlineInfo_.push_back(onlineInfoObject);
 	}
 	if(!value["PageNum"].isNull())

@@ -33,7 +33,7 @@ std::string DeleteLiveRecordVodConfigRequest::getAppName()const
 void DeleteLiveRecordVodConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DeleteLiveRecordVodConfigRequest::getSecurityToken()const
 void DeleteLiveRecordVodConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DeleteLiveRecordVodConfigRequest::getDomainName()const
 void DeleteLiveRecordVodConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long DeleteLiveRecordVodConfigRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DeleteLiveRecordVodConfigRequest::getOwnerId()const
 void DeleteLiveRecordVodConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getStreamName()const
@@ -77,7 +77,7 @@ std::string DeleteLiveRecordVodConfigRequest::getStreamName()const
 void DeleteLiveRecordVodConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setParameter("StreamName", streamName);
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteLiveRecordVodConfigRequest::getAccessKeyId()const
 void DeleteLiveRecordVodConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -51,8 +51,6 @@ namespace AlibabaCloud
 				void setRegion(const std::string& region);
 				std::string getCheckUrl()const;
 				void setCheckUrl(const std::string& checkUrl);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getLiveDomainType()const;
 				void setLiveDomainType(const std::string& liveDomainType);
 
@@ -65,7 +63,6 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string region_;
 				std::string checkUrl_;
-				std::string accessKeyId_;
 				std::string liveDomainType_;
 
 			};

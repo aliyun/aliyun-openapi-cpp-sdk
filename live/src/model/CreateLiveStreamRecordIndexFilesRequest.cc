@@ -33,7 +33,7 @@ std::string CreateLiveStreamRecordIndexFilesRequest::getOssBucket()const
 void CreateLiveStreamRecordIndexFilesRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setParameter("OssBucket", ossBucket);
+	setCoreParameter("OssBucket", ossBucket);
 }
 
 std::string CreateLiveStreamRecordIndexFilesRequest::getAppName()const
@@ -44,7 +44,7 @@ std::string CreateLiveStreamRecordIndexFilesRequest::getAppName()const
 void CreateLiveStreamRecordIndexFilesRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string CreateLiveStreamRecordIndexFilesRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string CreateLiveStreamRecordIndexFilesRequest::getSecurityToken()const
 void CreateLiveStreamRecordIndexFilesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateLiveStreamRecordIndexFilesRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string CreateLiveStreamRecordIndexFilesRequest::getDomainName()const
 void CreateLiveStreamRecordIndexFilesRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string CreateLiveStreamRecordIndexFilesRequest::getOssEndpoint()const
@@ -77,7 +77,7 @@ std::string CreateLiveStreamRecordIndexFilesRequest::getOssEndpoint()const
 void CreateLiveStreamRecordIndexFilesRequest::setOssEndpoint(const std::string& ossEndpoint)
 {
 	ossEndpoint_ = ossEndpoint;
-	setParameter("OssEndpoint", ossEndpoint);
+	setCoreParameter("OssEndpoint", ossEndpoint);
 }
 
 std::string CreateLiveStreamRecordIndexFilesRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string CreateLiveStreamRecordIndexFilesRequest::getEndTime()const
 void CreateLiveStreamRecordIndexFilesRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string CreateLiveStreamRecordIndexFilesRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string CreateLiveStreamRecordIndexFilesRequest::getStartTime()const
 void CreateLiveStreamRecordIndexFilesRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long CreateLiveStreamRecordIndexFilesRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long CreateLiveStreamRecordIndexFilesRequest::getOwnerId()const
 void CreateLiveStreamRecordIndexFilesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateLiveStreamRecordIndexFilesRequest::getStreamName()const
@@ -121,7 +121,7 @@ std::string CreateLiveStreamRecordIndexFilesRequest::getStreamName()const
 void CreateLiveStreamRecordIndexFilesRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setParameter("StreamName", streamName);
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string CreateLiveStreamRecordIndexFilesRequest::getOssObject()const
@@ -132,17 +132,6 @@ std::string CreateLiveStreamRecordIndexFilesRequest::getOssObject()const
 void CreateLiveStreamRecordIndexFilesRequest::setOssObject(const std::string& ossObject)
 {
 	ossObject_ = ossObject;
-	setParameter("OssObject", ossObject);
-}
-
-std::string CreateLiveStreamRecordIndexFilesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateLiveStreamRecordIndexFilesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OssObject", ossObject);
 }
 

@@ -58,6 +58,8 @@ void DescribeLiveLazyPullStreamConfigResult::parse(const std::string &payload)
 			liveLazyPullConfigListObject.pullAuthType = value["PullAuthType"].asString();
 		if(!value["PullAuthKey"].isNull())
 			liveLazyPullConfigListObject.pullAuthKey = value["PullAuthKey"].asString();
+		if(!value["PullArgs"].isNull())
+			liveLazyPullConfigListObject.pullArgs = value["PullArgs"].asString();
 		liveLazyPullConfigList_.push_back(liveLazyPullConfigListObject);
 	}
 

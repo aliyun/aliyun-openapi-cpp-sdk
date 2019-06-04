@@ -33,7 +33,7 @@ std::string StartCasterSceneRequest::getCasterId()const
 void StartCasterSceneRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setParameter("CasterId", casterId);
+	setCoreParameter("CasterId", casterId);
 }
 
 std::string StartCasterSceneRequest::getSceneId()const
@@ -44,7 +44,7 @@ std::string StartCasterSceneRequest::getSceneId()const
 void StartCasterSceneRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setParameter("SceneId", sceneId);
+	setCoreParameter("SceneId", sceneId);
 }
 
 long StartCasterSceneRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long StartCasterSceneRequest::getOwnerId()const
 void StartCasterSceneRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

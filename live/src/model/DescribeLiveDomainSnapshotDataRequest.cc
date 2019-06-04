@@ -33,7 +33,7 @@ std::string DescribeLiveDomainSnapshotDataRequest::getRegionId()const
 void DescribeLiveDomainSnapshotDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLiveDomainSnapshotDataRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveDomainSnapshotDataRequest::getDomainName()const
 void DescribeLiveDomainSnapshotDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainSnapshotDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeLiveDomainSnapshotDataRequest::getEndTime()const
 void DescribeLiveDomainSnapshotDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLiveDomainSnapshotDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeLiveDomainSnapshotDataRequest::getStartTime()const
 void DescribeLiveDomainSnapshotDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeLiveDomainSnapshotDataRequest::getOwnerId()const
@@ -77,6 +77,6 @@ long DescribeLiveDomainSnapshotDataRequest::getOwnerId()const
 void DescribeLiveDomainSnapshotDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

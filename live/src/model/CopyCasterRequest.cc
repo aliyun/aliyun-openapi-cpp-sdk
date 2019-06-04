@@ -33,7 +33,7 @@ std::string CopyCasterRequest::getSrcCasterId()const
 void CopyCasterRequest::setSrcCasterId(const std::string& srcCasterId)
 {
 	srcCasterId_ = srcCasterId;
-	setParameter("SrcCasterId", srcCasterId);
+	setCoreParameter("SrcCasterId", srcCasterId);
 }
 
 std::string CopyCasterRequest::getCasterName()const
@@ -44,7 +44,7 @@ std::string CopyCasterRequest::getCasterName()const
 void CopyCasterRequest::setCasterName(const std::string& casterName)
 {
 	casterName_ = casterName;
-	setParameter("CasterName", casterName);
+	setCoreParameter("CasterName", casterName);
 }
 
 std::string CopyCasterRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string CopyCasterRequest::getClientToken()const
 void CopyCasterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long CopyCasterRequest::getOwnerId()const
@@ -66,6 +66,6 @@ long CopyCasterRequest::getOwnerId()const
 void CopyCasterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

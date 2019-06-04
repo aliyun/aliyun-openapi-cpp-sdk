@@ -33,7 +33,7 @@ std::string DescribeLiveDomainConfigsRequest::getFunctionNames()const
 void DescribeLiveDomainConfigsRequest::setFunctionNames(const std::string& functionNames)
 {
 	functionNames_ = functionNames;
-	setParameter("FunctionNames", functionNames);
+	setCoreParameter("FunctionNames", functionNames);
 }
 
 std::string DescribeLiveDomainConfigsRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveDomainConfigsRequest::getSecurityToken()const
 void DescribeLiveDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveDomainConfigsRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveDomainConfigsRequest::getDomainName()const
 void DescribeLiveDomainConfigsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeLiveDomainConfigsRequest::getOwnerId()const
@@ -66,17 +66,6 @@ long DescribeLiveDomainConfigsRequest::getOwnerId()const
 void DescribeLiveDomainConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeLiveDomainConfigsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveDomainConfigsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getApp()const
 void AddCustomLiveStreamTranscodeRequest::setApp(const std::string& app)
 {
 	app_ = app;
-	setParameter("App", app);
+	setCoreParameter("App", app);
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::get_Template()const
@@ -44,7 +44,7 @@ std::string AddCustomLiveStreamTranscodeRequest::get_Template()const
 void AddCustomLiveStreamTranscodeRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setParameter("_Template", _template);
+	setCoreParameter("_Template", _template);
 }
 
 int AddCustomLiveStreamTranscodeRequest::getProfile()const
@@ -55,7 +55,7 @@ int AddCustomLiveStreamTranscodeRequest::getProfile()const
 void AddCustomLiveStreamTranscodeRequest::setProfile(int profile)
 {
 	profile_ = profile;
-	setParameter("Profile", std::to_string(profile));
+	setCoreParameter("Profile", std::to_string(profile));
 }
 
 int AddCustomLiveStreamTranscodeRequest::getFPS()const
@@ -66,7 +66,7 @@ int AddCustomLiveStreamTranscodeRequest::getFPS()const
 void AddCustomLiveStreamTranscodeRequest::setFPS(int fPS)
 {
 	fPS_ = fPS;
-	setParameter("FPS", std::to_string(fPS));
+	setCoreParameter("FPS", std::to_string(fPS));
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getGop()const
@@ -77,7 +77,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getGop()const
 void AddCustomLiveStreamTranscodeRequest::setGop(const std::string& gop)
 {
 	gop_ = gop;
-	setParameter("Gop", gop);
+	setCoreParameter("Gop", gop);
 }
 
 long AddCustomLiveStreamTranscodeRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long AddCustomLiveStreamTranscodeRequest::getOwnerId()const
 void AddCustomLiveStreamTranscodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getRegionId()const
@@ -99,7 +99,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getRegionId()const
 void AddCustomLiveStreamTranscodeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getTemplateType()const
@@ -110,7 +110,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getTemplateType()const
 void AddCustomLiveStreamTranscodeRequest::setTemplateType(const std::string& templateType)
 {
 	templateType_ = templateType;
-	setParameter("TemplateType", templateType);
+	setCoreParameter("TemplateType", templateType);
 }
 
 int AddCustomLiveStreamTranscodeRequest::getAudioBitrate()const
@@ -121,7 +121,7 @@ int AddCustomLiveStreamTranscodeRequest::getAudioBitrate()const
 void AddCustomLiveStreamTranscodeRequest::setAudioBitrate(int audioBitrate)
 {
 	audioBitrate_ = audioBitrate;
-	setParameter("AudioBitrate", std::to_string(audioBitrate));
+	setCoreParameter("AudioBitrate", std::to_string(audioBitrate));
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getDomain()const
@@ -132,7 +132,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getDomain()const
 void AddCustomLiveStreamTranscodeRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setParameter("Domain", domain);
+	setCoreParameter("Domain", domain);
 }
 
 int AddCustomLiveStreamTranscodeRequest::getWidth()const
@@ -143,7 +143,7 @@ int AddCustomLiveStreamTranscodeRequest::getWidth()const
 void AddCustomLiveStreamTranscodeRequest::setWidth(int width)
 {
 	width_ = width;
-	setParameter("Width", std::to_string(width));
+	setCoreParameter("Width", std::to_string(width));
 }
 
 int AddCustomLiveStreamTranscodeRequest::getVideoBitrate()const
@@ -154,7 +154,7 @@ int AddCustomLiveStreamTranscodeRequest::getVideoBitrate()const
 void AddCustomLiveStreamTranscodeRequest::setVideoBitrate(int videoBitrate)
 {
 	videoBitrate_ = videoBitrate;
-	setParameter("VideoBitrate", std::to_string(videoBitrate));
+	setCoreParameter("VideoBitrate", std::to_string(videoBitrate));
 }
 
 int AddCustomLiveStreamTranscodeRequest::getHeight()const
@@ -165,6 +165,6 @@ int AddCustomLiveStreamTranscodeRequest::getHeight()const
 void AddCustomLiveStreamTranscodeRequest::setHeight(int height)
 {
 	height_ = height;
-	setParameter("Height", std::to_string(height));
+	setCoreParameter("Height", std::to_string(height));
 }
 

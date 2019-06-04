@@ -53,8 +53,6 @@ namespace AlibabaCloud
 				void setPageNum(int pageNum);
 				std::string getStreamName()const;
 				void setStreamName(const std::string& streamName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getOrder()const;
 				void setOrder(const std::string& order);
 
@@ -68,7 +66,6 @@ namespace AlibabaCloud
 				long ownerId_;
 				int pageNum_;
 				std::string streamName_;
-				std::string accessKeyId_;
 				std::string order_;
 
 			};

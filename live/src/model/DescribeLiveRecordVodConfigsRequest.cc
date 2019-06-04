@@ -33,7 +33,7 @@ std::string DescribeLiveRecordVodConfigsRequest::getAppName()const
 void DescribeLiveRecordVodConfigsRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeLiveRecordVodConfigsRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveRecordVodConfigsRequest::getDomainName()const
 void DescribeLiveRecordVodConfigsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeLiveRecordVodConfigsRequest::getPageSize()const
@@ -55,7 +55,7 @@ long DescribeLiveRecordVodConfigsRequest::getPageSize()const
 void DescribeLiveRecordVodConfigsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeLiveRecordVodConfigsRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DescribeLiveRecordVodConfigsRequest::getOwnerId()const
 void DescribeLiveRecordVodConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long DescribeLiveRecordVodConfigsRequest::getPageNum()const
@@ -77,7 +77,7 @@ long DescribeLiveRecordVodConfigsRequest::getPageNum()const
 void DescribeLiveRecordVodConfigsRequest::setPageNum(long pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeLiveRecordVodConfigsRequest::getStreamName()const
@@ -88,6 +88,6 @@ std::string DescribeLiveRecordVodConfigsRequest::getStreamName()const
 void DescribeLiveRecordVodConfigsRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setParameter("StreamName", streamName);
+	setCoreParameter("StreamName", streamName);
 }
 

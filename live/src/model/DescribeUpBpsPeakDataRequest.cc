@@ -33,7 +33,7 @@ std::string DescribeUpBpsPeakDataRequest::getRegionId()const
 void DescribeUpBpsPeakDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeUpBpsPeakDataRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeUpBpsPeakDataRequest::getDomainName()const
 void DescribeUpBpsPeakDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeUpBpsPeakDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeUpBpsPeakDataRequest::getEndTime()const
 void DescribeUpBpsPeakDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeUpBpsPeakDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeUpBpsPeakDataRequest::getStartTime()const
 void DescribeUpBpsPeakDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeUpBpsPeakDataRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeUpBpsPeakDataRequest::getOwnerId()const
 void DescribeUpBpsPeakDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUpBpsPeakDataRequest::getDomainSwitch()const
@@ -88,6 +88,6 @@ std::string DescribeUpBpsPeakDataRequest::getDomainSwitch()const
 void DescribeUpBpsPeakDataRequest::setDomainSwitch(const std::string& domainSwitch)
 {
 	domainSwitch_ = domainSwitch;
-	setParameter("DomainSwitch", domainSwitch);
+	setCoreParameter("DomainSwitch", domainSwitch);
 }
 

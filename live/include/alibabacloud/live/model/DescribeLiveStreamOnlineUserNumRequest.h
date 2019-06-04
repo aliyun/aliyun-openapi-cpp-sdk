@@ -39,8 +39,6 @@ namespace AlibabaCloud
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getHlsSwitch()const;
-				void setHlsSwitch(const std::string& hlsSwitch);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -51,19 +49,15 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getStreamName()const;
 				void setStreamName(const std::string& streamName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string appName_;
 				std::string securityToken_;
-				std::string hlsSwitch_;
 				std::string domainName_;
 				std::string endTime_;
 				std::string startTime_;
 				long ownerId_;
 				std::string streamName_;
-				std::string accessKeyId_;
 
 			};
 		}

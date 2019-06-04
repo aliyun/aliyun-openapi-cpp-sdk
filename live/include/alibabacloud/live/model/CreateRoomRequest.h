@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateRoomRequest();
 				~CreateRoomRequest();
 
+				std::string getTemplateIds()const;
+				void setTemplateIds(const std::string& templateIds);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
@@ -43,6 +45,8 @@ namespace AlibabaCloud
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
 				std::string getAnchorId()const;
 				void setAnchorId(const std::string& anchorId);
+				bool getUseAppTranscode()const;
+				void setUseAppTranscode(bool useAppTranscode);
 				std::string getOwnerIdLoginEmail()const;
 				void setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail);
 				std::string getCallerType()const;
@@ -65,8 +69,6 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
 				long getOwnerId()const;
@@ -87,10 +89,12 @@ namespace AlibabaCloud
 				void setAppId(const std::string& appId);
 
             private:
+				std::string templateIds_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string proxy_original_source_ip_;
 				std::string anchorId_;
+				bool useAppTranscode_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
@@ -102,7 +106,6 @@ namespace AlibabaCloud
 				long callerUid_;
 				std::string app_ip_;
 				std::string popProduct_;
-				std::string product_;
 				std::string callerBid_;
 				long ownerId_;
 				std::string version_;

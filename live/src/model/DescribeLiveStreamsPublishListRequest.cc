@@ -33,7 +33,7 @@ std::string DescribeLiveStreamsPublishListRequest::getStreamType()const
 void DescribeLiveStreamsPublishListRequest::setStreamType(const std::string& streamType)
 {
 	streamType_ = streamType;
-	setParameter("StreamType", streamType);
+	setCoreParameter("StreamType", streamType);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamsPublishListRequest::getDomainName()const
 void DescribeLiveStreamsPublishListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamsPublishListRequest::getEndTime()const
 void DescribeLiveStreamsPublishListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getOrderBy()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamsPublishListRequest::getOrderBy()const
 void DescribeLiveStreamsPublishListRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", orderBy);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamsPublishListRequest::getStartTime()const
 void DescribeLiveStreamsPublishListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeLiveStreamsPublishListRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeLiveStreamsPublishListRequest::getOwnerId()const
 void DescribeLiveStreamsPublishListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeLiveStreamsPublishListRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeLiveStreamsPublishListRequest::getPageNumber()const
 void DescribeLiveStreamsPublishListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getAppName()const
@@ -110,7 +110,7 @@ std::string DescribeLiveStreamsPublishListRequest::getAppName()const
 void DescribeLiveStreamsPublishListRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeLiveStreamsPublishListRequest::getRegionId()const
 void DescribeLiveStreamsPublishListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeLiveStreamsPublishListRequest::getPageSize()const
@@ -132,7 +132,7 @@ int DescribeLiveStreamsPublishListRequest::getPageSize()const
 void DescribeLiveStreamsPublishListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getStreamName()const
@@ -143,7 +143,7 @@ std::string DescribeLiveStreamsPublishListRequest::getStreamName()const
 void DescribeLiveStreamsPublishListRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setParameter("StreamName", streamName);
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getQueryType()const
@@ -154,6 +154,6 @@ std::string DescribeLiveStreamsPublishListRequest::getQueryType()const
 void DescribeLiveStreamsPublishListRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setParameter("QueryType", queryType);
+	setCoreParameter("QueryType", queryType);
 }
 

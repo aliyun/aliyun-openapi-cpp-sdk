@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				SetLiveLazyPullStreamInfoConfigRequest();
 				~SetLiveLazyPullStreamInfoConfigRequest();
 
+				std::string getPullArgs()const;
+				void setPullArgs(const std::string& pullArgs);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
@@ -45,8 +47,12 @@ namespace AlibabaCloud
 				void setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail);
 				std::string getCallerType()const;
 				void setCallerType(const std::string& callerType);
+				std::string getEagleEyeRpcId()const;
+				void setEagleEyeRpcId(const std::string& eagleEyeRpcId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getEagleEyeTraceId()const;
+				void setEagleEyeTraceId(const std::string& eagleEyeTraceId);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
@@ -87,18 +93,25 @@ namespace AlibabaCloud
 				void setSecurity_transport(bool security_transport);
 				std::string getPullAppName()const;
 				void setPullAppName(const std::string& pullAppName);
+				std::string getServiceCode()const;
+				void setServiceCode(const std::string& serviceCode);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getEagleEyeUserData()const;
+				void setEagleEyeUserData(const std::string& eagleEyeUserData);
 				std::string getPullProtocol()const;
 				void setPullProtocol(const std::string& pullProtocol);
 
             private:
+				std::string pullArgs_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
+				std::string eagleEyeRpcId_;
 				std::string accessKeyId_;
+				std::string eagleEyeTraceId_;
 				std::string appName_;
 				std::string securityToken_;
 				std::string regionId_;
@@ -119,7 +132,9 @@ namespace AlibabaCloud
 				bool ak_mfa_present_;
 				bool security_transport_;
 				std::string pullAppName_;
+				std::string serviceCode_;
 				std::string requestId_;
+				std::string eagleEyeUserData_;
 				std::string pullProtocol_;
 
 			};

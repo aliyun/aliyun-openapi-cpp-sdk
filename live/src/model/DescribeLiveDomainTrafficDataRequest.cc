@@ -33,7 +33,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getRegionId()const
 void DescribeLiveDomainTrafficDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLiveDomainTrafficDataRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getDomainName()const
 void DescribeLiveDomainTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainTrafficDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getEndTime()const
 void DescribeLiveDomainTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLiveDomainTrafficDataRequest::getInterval()const
@@ -66,7 +66,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getInterval()const
 void DescribeLiveDomainTrafficDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setParameter("Interval", interval);
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeLiveDomainTrafficDataRequest::getLocationNameEn()const
@@ -77,7 +77,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getLocationNameEn()const
 void DescribeLiveDomainTrafficDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setParameter("LocationNameEn", locationNameEn);
+	setCoreParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeLiveDomainTrafficDataRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getStartTime()const
 void DescribeLiveDomainTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDomainTrafficDataRequest::getIspNameEn()const
@@ -99,7 +99,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getIspNameEn()const
 void DescribeLiveDomainTrafficDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setParameter("IspNameEn", ispNameEn);
+	setCoreParameter("IspNameEn", ispNameEn);
 }
 
 long DescribeLiveDomainTrafficDataRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long DescribeLiveDomainTrafficDataRequest::getOwnerId()const
 void DescribeLiveDomainTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

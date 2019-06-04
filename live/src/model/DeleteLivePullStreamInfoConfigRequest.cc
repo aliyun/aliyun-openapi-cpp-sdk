@@ -33,7 +33,7 @@ std::string DeleteLivePullStreamInfoConfigRequest::getAppName()const
 void DeleteLivePullStreamInfoConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string DeleteLivePullStreamInfoConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DeleteLivePullStreamInfoConfigRequest::getSecurityToken()const
 void DeleteLivePullStreamInfoConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteLivePullStreamInfoConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DeleteLivePullStreamInfoConfigRequest::getDomainName()const
 void DeleteLivePullStreamInfoConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long DeleteLivePullStreamInfoConfigRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DeleteLivePullStreamInfoConfigRequest::getOwnerId()const
 void DeleteLivePullStreamInfoConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteLivePullStreamInfoConfigRequest::getStreamName()const
@@ -77,17 +77,6 @@ std::string DeleteLivePullStreamInfoConfigRequest::getStreamName()const
 void DeleteLivePullStreamInfoConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setParameter("StreamName", streamName);
-}
-
-std::string DeleteLivePullStreamInfoConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteLivePullStreamInfoConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("StreamName", streamName);
 }
 

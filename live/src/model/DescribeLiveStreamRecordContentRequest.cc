@@ -33,7 +33,7 @@ std::string DescribeLiveStreamRecordContentRequest::getAppName()const
 void DescribeLiveStreamRecordContentRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamRecordContentRequest::getSecurityToken()const
 void DescribeLiveStreamRecordContentRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamRecordContentRequest::getDomainName()const
 void DescribeLiveStreamRecordContentRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamRecordContentRequest::getEndTime()const
 void DescribeLiveStreamRecordContentRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamRecordContentRequest::getStartTime()const
 void DescribeLiveStreamRecordContentRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeLiveStreamRecordContentRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeLiveStreamRecordContentRequest::getOwnerId()const
 void DescribeLiveStreamRecordContentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getStreamName()const
@@ -99,17 +99,6 @@ std::string DescribeLiveStreamRecordContentRequest::getStreamName()const
 void DescribeLiveStreamRecordContentRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setParameter("StreamName", streamName);
-}
-
-std::string DescribeLiveStreamRecordContentRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveStreamRecordContentRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("StreamName", streamName);
 }
 

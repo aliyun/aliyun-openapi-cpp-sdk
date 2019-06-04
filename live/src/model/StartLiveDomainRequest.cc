@@ -33,7 +33,7 @@ std::string StartLiveDomainRequest::getSecurityToken()const
 void StartLiveDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string StartLiveDomainRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string StartLiveDomainRequest::getDomainName()const
 void StartLiveDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long StartLiveDomainRequest::getOwnerId()const
@@ -55,17 +55,6 @@ long StartLiveDomainRequest::getOwnerId()const
 void StartLiveDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string StartLiveDomainRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void StartLiveDomainRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

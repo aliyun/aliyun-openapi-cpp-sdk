@@ -53,8 +53,6 @@ namespace AlibabaCloud
 				void setOverwriteOssObject(const std::string& overwriteOssObject);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				int timeInterval_;
@@ -66,7 +64,6 @@ namespace AlibabaCloud
 				std::string sequenceOssObject_;
 				std::string overwriteOssObject_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

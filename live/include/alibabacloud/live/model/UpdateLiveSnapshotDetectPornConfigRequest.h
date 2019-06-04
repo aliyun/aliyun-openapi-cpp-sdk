@@ -51,8 +51,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getOssObject()const;
 				void setOssObject(const std::string& ossObject);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::vector<std::string> getScene()const;
 				void setScene(const std::vector<std::string>& scene);
 
@@ -65,7 +63,6 @@ namespace AlibabaCloud
 				int interval_;
 				long ownerId_;
 				std::string ossObject_;
-				std::string accessKeyId_;
 				std::vector<std::string> scene_;
 
 			};

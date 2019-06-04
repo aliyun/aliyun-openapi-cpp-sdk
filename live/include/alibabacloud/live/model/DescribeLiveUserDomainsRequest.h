@@ -49,8 +49,6 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getDomainStatus()const;
 				void setDomainStatus(const std::string& domainStatus);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getLiveDomainType()const;
 				void setLiveDomainType(const std::string& liveDomainType);
 				std::string getDomainSearchType()const;
@@ -64,7 +62,6 @@ namespace AlibabaCloud
 				long ownerId_;
 				int pageNumber_;
 				std::string domainStatus_;
-				std::string accessKeyId_;
 				std::string liveDomainType_;
 				std::string domainSearchType_;
 

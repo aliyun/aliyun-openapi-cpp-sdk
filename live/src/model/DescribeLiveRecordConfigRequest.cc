@@ -33,7 +33,7 @@ std::string DescribeLiveRecordConfigRequest::getAppName()const
 void DescribeLiveRecordConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeLiveRecordConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveRecordConfigRequest::getSecurityToken()const
 void DescribeLiveRecordConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveRecordConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveRecordConfigRequest::getDomainName()const
 void DescribeLiveRecordConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 int DescribeLiveRecordConfigRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeLiveRecordConfigRequest::getPageSize()const
 void DescribeLiveRecordConfigRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeLiveRecordConfigRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeLiveRecordConfigRequest::getOwnerId()const
 void DescribeLiveRecordConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeLiveRecordConfigRequest::getPageNum()const
@@ -88,7 +88,7 @@ int DescribeLiveRecordConfigRequest::getPageNum()const
 void DescribeLiveRecordConfigRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeLiveRecordConfigRequest::getStreamName()const
@@ -99,18 +99,7 @@ std::string DescribeLiveRecordConfigRequest::getStreamName()const
 void DescribeLiveRecordConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setParameter("StreamName", streamName);
-}
-
-std::string DescribeLiveRecordConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveRecordConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveRecordConfigRequest::getOrder()const
@@ -121,6 +110,6 @@ std::string DescribeLiveRecordConfigRequest::getOrder()const
 void DescribeLiveRecordConfigRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setParameter("Order", order);
+	setCoreParameter("Order", order);
 }
 

@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct LiveLazyPullConfig
 				{
+					std::string pullArgs;
 					std::string domainName;
 					std::string pullProtocol;
 					std::string pullAuthKey;

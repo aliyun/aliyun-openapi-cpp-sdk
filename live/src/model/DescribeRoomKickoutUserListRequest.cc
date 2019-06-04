@@ -33,7 +33,7 @@ long DescribeRoomKickoutUserListRequest::getCallerParentId()const
 void DescribeRoomKickoutUserListRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeRoomKickoutUserListRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeRoomKickoutUserListRequest::getProxy_original_security_transport()c
 void DescribeRoomKickoutUserListRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeRoomKickoutUserListRequest::getProxy_original_source_ip()const
@@ -55,7 +55,7 @@ std::string DescribeRoomKickoutUserListRequest::getProxy_original_source_ip()con
 void DescribeRoomKickoutUserListRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 int DescribeRoomKickoutUserListRequest::getPageNum()const
@@ -66,7 +66,7 @@ int DescribeRoomKickoutUserListRequest::getPageNum()const
 void DescribeRoomKickoutUserListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeRoomKickoutUserListRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeRoomKickoutUserListRequest::getOwnerIdLoginEmail()const
 void DescribeRoomKickoutUserListRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeRoomKickoutUserListRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeRoomKickoutUserListRequest::getCallerType()const
 void DescribeRoomKickoutUserListRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeRoomKickoutUserListRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeRoomKickoutUserListRequest::getAccessKeyId()const
 void DescribeRoomKickoutUserListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRoomKickoutUserListRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeRoomKickoutUserListRequest::getSecurityToken()const
 void DescribeRoomKickoutUserListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeRoomKickoutUserListRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeRoomKickoutUserListRequest::getRegionId()const
 void DescribeRoomKickoutUserListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeRoomKickoutUserListRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string DescribeRoomKickoutUserListRequest::getRequestContent()const
 void DescribeRoomKickoutUserListRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 int DescribeRoomKickoutUserListRequest::getPageSize()const
@@ -143,7 +143,7 @@ int DescribeRoomKickoutUserListRequest::getPageSize()const
 void DescribeRoomKickoutUserListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRoomKickoutUserListRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeRoomKickoutUserListRequest::getCallerBidEmail()const
 void DescribeRoomKickoutUserListRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeRoomKickoutUserListRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeRoomKickoutUserListRequest::getCallerUidEmail()const
 void DescribeRoomKickoutUserListRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeRoomKickoutUserListRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long DescribeRoomKickoutUserListRequest::getCallerUid()const
 void DescribeRoomKickoutUserListRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeRoomKickoutUserListRequest::getOrder()const
@@ -187,7 +187,7 @@ std::string DescribeRoomKickoutUserListRequest::getOrder()const
 void DescribeRoomKickoutUserListRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setParameter("Order", order);
+	setCoreParameter("Order", order);
 }
 
 std::string DescribeRoomKickoutUserListRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeRoomKickoutUserListRequest::getApp_ip()const
 void DescribeRoomKickoutUserListRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeRoomKickoutUserListRequest::getPopProduct()const
@@ -209,18 +209,7 @@ std::string DescribeRoomKickoutUserListRequest::getPopProduct()const
 void DescribeRoomKickoutUserListRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
-}
-
-std::string DescribeRoomKickoutUserListRequest::getProduct()const
-{
-	return product_;
-}
-
-void DescribeRoomKickoutUserListRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeRoomKickoutUserListRequest::getCallerBid()const
@@ -231,7 +220,7 @@ std::string DescribeRoomKickoutUserListRequest::getCallerBid()const
 void DescribeRoomKickoutUserListRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeRoomKickoutUserListRequest::getOwnerId()const
@@ -242,7 +231,7 @@ long DescribeRoomKickoutUserListRequest::getOwnerId()const
 void DescribeRoomKickoutUserListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRoomKickoutUserListRequest::getVersion()const
@@ -253,7 +242,7 @@ std::string DescribeRoomKickoutUserListRequest::getVersion()const
 void DescribeRoomKickoutUserListRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool DescribeRoomKickoutUserListRequest::getProxy_trust_transport_info()const
@@ -264,7 +253,7 @@ bool DescribeRoomKickoutUserListRequest::getProxy_trust_transport_info()const
 void DescribeRoomKickoutUserListRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeRoomKickoutUserListRequest::getAk_mfa_present()const
@@ -275,7 +264,7 @@ bool DescribeRoomKickoutUserListRequest::getAk_mfa_present()const
 void DescribeRoomKickoutUserListRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string DescribeRoomKickoutUserListRequest::getRoomId()const
@@ -286,7 +275,7 @@ std::string DescribeRoomKickoutUserListRequest::getRoomId()const
 void DescribeRoomKickoutUserListRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setParameter("RoomId", roomId);
+	setCoreParameter("RoomId", roomId);
 }
 
 bool DescribeRoomKickoutUserListRequest::getSecurity_transport()const
@@ -297,7 +286,7 @@ bool DescribeRoomKickoutUserListRequest::getSecurity_transport()const
 void DescribeRoomKickoutUserListRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeRoomKickoutUserListRequest::getRequestId()const
@@ -308,7 +297,7 @@ std::string DescribeRoomKickoutUserListRequest::getRequestId()const
 void DescribeRoomKickoutUserListRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeRoomKickoutUserListRequest::getAppId()const
@@ -319,6 +308,6 @@ std::string DescribeRoomKickoutUserListRequest::getAppId()const
 void DescribeRoomKickoutUserListRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("AppId", appId);
 }
 

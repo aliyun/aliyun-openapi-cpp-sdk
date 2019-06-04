@@ -25,6 +25,17 @@ DeleteCasterRequest::DeleteCasterRequest() :
 DeleteCasterRequest::~DeleteCasterRequest()
 {}
 
+std::string DeleteCasterRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteCasterRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
 std::string DeleteCasterRequest::getCasterId()const
 {
 	return casterId_;
@@ -33,7 +44,7 @@ std::string DeleteCasterRequest::getCasterId()const
 void DeleteCasterRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setParameter("CasterId", casterId);
+	setCoreParameter("CasterId", casterId);
 }
 
 long DeleteCasterRequest::getOwnerId()const
@@ -44,6 +55,6 @@ long DeleteCasterRequest::getOwnerId()const
 void DeleteCasterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -1,3 +1,6 @@
+2019-06-04 Version: 1.36.42
+1, Add new API: UpdateLivePullStreamInfoConfig
+
 2019-06-03 Version: 1.36.41
 1, Add openapi of ACL.
 

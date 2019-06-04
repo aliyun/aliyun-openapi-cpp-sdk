@@ -33,7 +33,7 @@ std::string DeleteLiveStreamTranscodeRequest::getApp()const
 void DeleteLiveStreamTranscodeRequest::setApp(const std::string& app)
 {
 	app_ = app;
-	setParameter("App", app);
+	setCoreParameter("App", app);
 }
 
 std::string DeleteLiveStreamTranscodeRequest::get_Template()const
@@ -44,7 +44,7 @@ std::string DeleteLiveStreamTranscodeRequest::get_Template()const
 void DeleteLiveStreamTranscodeRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setParameter("_Template", _template);
+	setCoreParameter("_Template", _template);
 }
 
 std::string DeleteLiveStreamTranscodeRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DeleteLiveStreamTranscodeRequest::getSecurityToken()const
 void DeleteLiveStreamTranscodeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteLiveStreamTranscodeRequest::getDomain()const
@@ -66,7 +66,7 @@ std::string DeleteLiveStreamTranscodeRequest::getDomain()const
 void DeleteLiveStreamTranscodeRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setParameter("Domain", domain);
+	setCoreParameter("Domain", domain);
 }
 
 long DeleteLiveStreamTranscodeRequest::getOwnerId()const
@@ -77,17 +77,6 @@ long DeleteLiveStreamTranscodeRequest::getOwnerId()const
 void DeleteLiveStreamTranscodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteLiveStreamTranscodeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteLiveStreamTranscodeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

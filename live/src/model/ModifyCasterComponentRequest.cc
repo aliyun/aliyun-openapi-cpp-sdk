@@ -33,7 +33,7 @@ std::string ModifyCasterComponentRequest::getComponentId()const
 void ModifyCasterComponentRequest::setComponentId(const std::string& componentId)
 {
 	componentId_ = componentId;
-	setParameter("ComponentId", componentId);
+	setCoreParameter("ComponentId", componentId);
 }
 
 std::string ModifyCasterComponentRequest::getComponentType()const
@@ -44,7 +44,7 @@ std::string ModifyCasterComponentRequest::getComponentType()const
 void ModifyCasterComponentRequest::setComponentType(const std::string& componentType)
 {
 	componentType_ = componentType;
-	setParameter("ComponentType", componentType);
+	setCoreParameter("ComponentType", componentType);
 }
 
 std::string ModifyCasterComponentRequest::getImageLayerContent()const
@@ -55,7 +55,7 @@ std::string ModifyCasterComponentRequest::getImageLayerContent()const
 void ModifyCasterComponentRequest::setImageLayerContent(const std::string& imageLayerContent)
 {
 	imageLayerContent_ = imageLayerContent;
-	setParameter("ImageLayerContent", imageLayerContent);
+	setCoreParameter("ImageLayerContent", imageLayerContent);
 }
 
 std::string ModifyCasterComponentRequest::getCasterId()const
@@ -66,7 +66,7 @@ std::string ModifyCasterComponentRequest::getCasterId()const
 void ModifyCasterComponentRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setParameter("CasterId", casterId);
+	setCoreParameter("CasterId", casterId);
 }
 
 std::string ModifyCasterComponentRequest::getEffect()const
@@ -77,7 +77,7 @@ std::string ModifyCasterComponentRequest::getEffect()const
 void ModifyCasterComponentRequest::setEffect(const std::string& effect)
 {
 	effect_ = effect;
-	setParameter("Effect", effect);
+	setCoreParameter("Effect", effect);
 }
 
 std::string ModifyCasterComponentRequest::getComponentLayer()const
@@ -88,7 +88,7 @@ std::string ModifyCasterComponentRequest::getComponentLayer()const
 void ModifyCasterComponentRequest::setComponentLayer(const std::string& componentLayer)
 {
 	componentLayer_ = componentLayer;
-	setParameter("ComponentLayer", componentLayer);
+	setCoreParameter("ComponentLayer", componentLayer);
 }
 
 std::string ModifyCasterComponentRequest::getCaptionLayerContent()const
@@ -99,7 +99,7 @@ std::string ModifyCasterComponentRequest::getCaptionLayerContent()const
 void ModifyCasterComponentRequest::setCaptionLayerContent(const std::string& captionLayerContent)
 {
 	captionLayerContent_ = captionLayerContent;
-	setParameter("CaptionLayerContent", captionLayerContent);
+	setCoreParameter("CaptionLayerContent", captionLayerContent);
 }
 
 std::string ModifyCasterComponentRequest::getComponentName()const
@@ -110,7 +110,7 @@ std::string ModifyCasterComponentRequest::getComponentName()const
 void ModifyCasterComponentRequest::setComponentName(const std::string& componentName)
 {
 	componentName_ = componentName;
-	setParameter("ComponentName", componentName);
+	setCoreParameter("ComponentName", componentName);
 }
 
 long ModifyCasterComponentRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long ModifyCasterComponentRequest::getOwnerId()const
 void ModifyCasterComponentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyCasterComponentRequest::getTextLayerContent()const
@@ -132,6 +132,6 @@ std::string ModifyCasterComponentRequest::getTextLayerContent()const
 void ModifyCasterComponentRequest::setTextLayerContent(const std::string& textLayerContent)
 {
 	textLayerContent_ = textLayerContent;
-	setParameter("TextLayerContent", textLayerContent);
+	setCoreParameter("TextLayerContent", textLayerContent);
 }
 

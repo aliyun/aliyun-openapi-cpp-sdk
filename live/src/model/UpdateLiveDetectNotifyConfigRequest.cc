@@ -33,7 +33,7 @@ std::string UpdateLiveDetectNotifyConfigRequest::getSecurityToken()const
 void UpdateLiveDetectNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateLiveDetectNotifyConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string UpdateLiveDetectNotifyConfigRequest::getDomainName()const
 void UpdateLiveDetectNotifyConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string UpdateLiveDetectNotifyConfigRequest::getNotifyUrl()const
@@ -55,7 +55,7 @@ std::string UpdateLiveDetectNotifyConfigRequest::getNotifyUrl()const
 void UpdateLiveDetectNotifyConfigRequest::setNotifyUrl(const std::string& notifyUrl)
 {
 	notifyUrl_ = notifyUrl;
-	setParameter("NotifyUrl", notifyUrl);
+	setCoreParameter("NotifyUrl", notifyUrl);
 }
 
 long UpdateLiveDetectNotifyConfigRequest::getOwnerId()const
@@ -66,17 +66,6 @@ long UpdateLiveDetectNotifyConfigRequest::getOwnerId()const
 void UpdateLiveDetectNotifyConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string UpdateLiveDetectNotifyConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateLiveDetectNotifyConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

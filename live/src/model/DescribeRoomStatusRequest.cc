@@ -25,138 +25,6 @@ DescribeRoomStatusRequest::DescribeRoomStatusRequest() :
 DescribeRoomStatusRequest::~DescribeRoomStatusRequest()
 {}
 
-long DescribeRoomStatusRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void DescribeRoomStatusRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool DescribeRoomStatusRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void DescribeRoomStatusRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
-}
-
-std::string DescribeRoomStatusRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void DescribeRoomStatusRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DescribeRoomStatusRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void DescribeRoomStatusRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string DescribeRoomStatusRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void DescribeRoomStatusRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setParameter("CallerType", callerType);
-}
-
-std::string DescribeRoomStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeRoomStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeRoomStatusRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeRoomStatusRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeRoomStatusRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeRoomStatusRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string DescribeRoomStatusRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void DescribeRoomStatusRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
-}
-
-std::string DescribeRoomStatusRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void DescribeRoomStatusRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string DescribeRoomStatusRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void DescribeRoomStatusRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
-}
-
-long DescribeRoomStatusRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void DescribeRoomStatusRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
-}
-
 std::string DescribeRoomStatusRequest::getApp_ip()const
 {
 	return app_ip_;
@@ -165,7 +33,7 @@ std::string DescribeRoomStatusRequest::getApp_ip()const
 void DescribeRoomStatusRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeRoomStatusRequest::getPopProduct()const
@@ -176,18 +44,29 @@ std::string DescribeRoomStatusRequest::getPopProduct()const
 void DescribeRoomStatusRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
-std::string DescribeRoomStatusRequest::getProduct()const
+long DescribeRoomStatusRequest::getCallerParentId()const
 {
-	return product_;
+	return callerParentId_;
 }
 
-void DescribeRoomStatusRequest::setProduct(const std::string& product)
+void DescribeRoomStatusRequest::setCallerParentId(long callerParentId)
 {
-	product_ = product;
-	setParameter("Product", product);
+	callerParentId_ = callerParentId;
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+}
+
+bool DescribeRoomStatusRequest::getProxy_original_security_transport()const
+{
+	return proxy_original_security_transport_;
+}
+
+void DescribeRoomStatusRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
+{
+	proxy_original_security_transport_ = proxy_original_security_transport;
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeRoomStatusRequest::getCallerBid()const
@@ -198,7 +77,7 @@ std::string DescribeRoomStatusRequest::getCallerBid()const
 void DescribeRoomStatusRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeRoomStatusRequest::getOwnerId()const
@@ -209,7 +88,18 @@ long DescribeRoomStatusRequest::getOwnerId()const
 void DescribeRoomStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeRoomStatusRequest::getProxy_original_source_ip()const
+{
+	return proxy_original_source_ip_;
+}
+
+void DescribeRoomStatusRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
+{
+	proxy_original_source_ip_ = proxy_original_source_ip;
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeRoomStatusRequest::getVersion()const
@@ -220,7 +110,29 @@ std::string DescribeRoomStatusRequest::getVersion()const
 void DescribeRoomStatusRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
+}
+
+std::string DescribeRoomStatusRequest::getOwnerIdLoginEmail()const
+{
+	return ownerIdLoginEmail_;
+}
+
+void DescribeRoomStatusRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
+{
+	ownerIdLoginEmail_ = ownerIdLoginEmail;
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+}
+
+std::string DescribeRoomStatusRequest::getCallerType()const
+{
+	return callerType_;
+}
+
+void DescribeRoomStatusRequest::setCallerType(const std::string& callerType)
+{
+	callerType_ = callerType;
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DescribeRoomStatusRequest::getProxy_trust_transport_info()const
@@ -231,7 +143,7 @@ bool DescribeRoomStatusRequest::getProxy_trust_transport_info()const
 void DescribeRoomStatusRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeRoomStatusRequest::getAk_mfa_present()const
@@ -242,7 +154,7 @@ bool DescribeRoomStatusRequest::getAk_mfa_present()const
 void DescribeRoomStatusRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string DescribeRoomStatusRequest::getRoomId()const
@@ -253,7 +165,18 @@ std::string DescribeRoomStatusRequest::getRoomId()const
 void DescribeRoomStatusRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setParameter("RoomId", roomId);
+	setCoreParameter("RoomId", roomId);
+}
+
+std::string DescribeRoomStatusRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeRoomStatusRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DescribeRoomStatusRequest::getSecurity_transport()const
@@ -264,7 +187,29 @@ bool DescribeRoomStatusRequest::getSecurity_transport()const
 void DescribeRoomStatusRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+}
+
+std::string DescribeRoomStatusRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeRoomStatusRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeRoomStatusRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeRoomStatusRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeRoomStatusRequest::getRequestId()const
@@ -275,7 +220,18 @@ std::string DescribeRoomStatusRequest::getRequestId()const
 void DescribeRoomStatusRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
+}
+
+std::string DescribeRoomStatusRequest::getRequestContent()const
+{
+	return requestContent_;
+}
+
+void DescribeRoomStatusRequest::setRequestContent(const std::string& requestContent)
+{
+	requestContent_ = requestContent;
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeRoomStatusRequest::getAppId()const
@@ -286,6 +242,39 @@ std::string DescribeRoomStatusRequest::getAppId()const
 void DescribeRoomStatusRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("AppId", appId);
+}
+
+std::string DescribeRoomStatusRequest::getCallerBidEmail()const
+{
+	return callerBidEmail_;
+}
+
+void DescribeRoomStatusRequest::setCallerBidEmail(const std::string& callerBidEmail)
+{
+	callerBidEmail_ = callerBidEmail;
+	setCoreParameter("CallerBidEmail", callerBidEmail);
+}
+
+std::string DescribeRoomStatusRequest::getCallerUidEmail()const
+{
+	return callerUidEmail_;
+}
+
+void DescribeRoomStatusRequest::setCallerUidEmail(const std::string& callerUidEmail)
+{
+	callerUidEmail_ = callerUidEmail;
+	setCoreParameter("CallerUidEmail", callerUidEmail);
+}
+
+long DescribeRoomStatusRequest::getCallerUid()const
+{
+	return callerUid_;
+}
+
+void DescribeRoomStatusRequest::setCallerUid(long callerUid)
+{
+	callerUid_ = callerUid;
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

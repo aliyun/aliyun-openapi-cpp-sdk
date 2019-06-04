@@ -33,7 +33,7 @@ std::string BatchDeleteLiveDomainConfigsRequest::getFunctionNames()const
 void BatchDeleteLiveDomainConfigsRequest::setFunctionNames(const std::string& functionNames)
 {
 	functionNames_ = functionNames;
-	setParameter("FunctionNames", functionNames);
+	setCoreParameter("FunctionNames", functionNames);
 }
 
 std::string BatchDeleteLiveDomainConfigsRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string BatchDeleteLiveDomainConfigsRequest::getSecurityToken()const
 void BatchDeleteLiveDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string BatchDeleteLiveDomainConfigsRequest::getDomainNames()const
@@ -55,7 +55,7 @@ std::string BatchDeleteLiveDomainConfigsRequest::getDomainNames()const
 void BatchDeleteLiveDomainConfigsRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setParameter("DomainNames", domainNames);
+	setCoreParameter("DomainNames", domainNames);
 }
 
 std::string BatchDeleteLiveDomainConfigsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string BatchDeleteLiveDomainConfigsRequest::getOwnerAccount()const
 void BatchDeleteLiveDomainConfigsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long BatchDeleteLiveDomainConfigsRequest::getOwnerId()const
@@ -77,17 +77,6 @@ long BatchDeleteLiveDomainConfigsRequest::getOwnerId()const
 void BatchDeleteLiveDomainConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string BatchDeleteLiveDomainConfigsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void BatchDeleteLiveDomainConfigsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

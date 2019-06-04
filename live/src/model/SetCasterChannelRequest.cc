@@ -33,7 +33,7 @@ std::string SetCasterChannelRequest::getResourceId()const
 void SetCasterChannelRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", resourceId);
 }
 
 int SetCasterChannelRequest::getPlayStatus()const
@@ -44,7 +44,7 @@ int SetCasterChannelRequest::getPlayStatus()const
 void SetCasterChannelRequest::setPlayStatus(int playStatus)
 {
 	playStatus_ = playStatus;
-	setParameter("PlayStatus", std::to_string(playStatus));
+	setCoreParameter("PlayStatus", std::to_string(playStatus));
 }
 
 std::string SetCasterChannelRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string SetCasterChannelRequest::getRegionId()const
 void SetCasterChannelRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SetCasterChannelRequest::getCasterId()const
@@ -66,7 +66,7 @@ std::string SetCasterChannelRequest::getCasterId()const
 void SetCasterChannelRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setParameter("CasterId", casterId);
+	setCoreParameter("CasterId", casterId);
 }
 
 long SetCasterChannelRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long SetCasterChannelRequest::getOwnerId()const
 void SetCasterChannelRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int SetCasterChannelRequest::getSeekOffset()const
@@ -88,7 +88,7 @@ int SetCasterChannelRequest::getSeekOffset()const
 void SetCasterChannelRequest::setSeekOffset(int seekOffset)
 {
 	seekOffset_ = seekOffset;
-	setParameter("SeekOffset", std::to_string(seekOffset));
+	setCoreParameter("SeekOffset", std::to_string(seekOffset));
 }
 
 std::string SetCasterChannelRequest::getChannelId()const
@@ -99,6 +99,6 @@ std::string SetCasterChannelRequest::getChannelId()const
 void SetCasterChannelRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setParameter("ChannelId", channelId);
+	setCoreParameter("ChannelId", channelId);
 }
 

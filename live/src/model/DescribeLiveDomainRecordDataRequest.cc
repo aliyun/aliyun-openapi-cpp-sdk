@@ -33,7 +33,7 @@ std::string DescribeLiveDomainRecordDataRequest::getRegionId()const
 void DescribeLiveDomainRecordDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLiveDomainRecordDataRequest::getRecordType()const
@@ -44,7 +44,7 @@ std::string DescribeLiveDomainRecordDataRequest::getRecordType()const
 void DescribeLiveDomainRecordDataRequest::setRecordType(const std::string& recordType)
 {
 	recordType_ = recordType;
-	setParameter("RecordType", recordType);
+	setCoreParameter("RecordType", recordType);
 }
 
 std::string DescribeLiveDomainRecordDataRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveDomainRecordDataRequest::getDomainName()const
 void DescribeLiveDomainRecordDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainRecordDataRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeLiveDomainRecordDataRequest::getEndTime()const
 void DescribeLiveDomainRecordDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLiveDomainRecordDataRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeLiveDomainRecordDataRequest::getStartTime()const
 void DescribeLiveDomainRecordDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeLiveDomainRecordDataRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DescribeLiveDomainRecordDataRequest::getOwnerId()const
 void DescribeLiveDomainRecordDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

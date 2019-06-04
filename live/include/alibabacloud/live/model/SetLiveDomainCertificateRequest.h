@@ -47,8 +47,6 @@ namespace AlibabaCloud
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSSLPri()const;
 				void setSSLPri(const std::string& sSLPri);
 
@@ -59,7 +57,6 @@ namespace AlibabaCloud
 				std::string sSLProtocol_;
 				std::string domainName_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string sSLPri_;
 
 			};

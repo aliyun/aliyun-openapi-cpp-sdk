@@ -33,7 +33,7 @@ std::string DescribeLiveSnapshotConfigRequest::getAppName()const
 void DescribeLiveSnapshotConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeLiveSnapshotConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveSnapshotConfigRequest::getSecurityToken()const
 void DescribeLiveSnapshotConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveSnapshotConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveSnapshotConfigRequest::getDomainName()const
 void DescribeLiveSnapshotConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 int DescribeLiveSnapshotConfigRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeLiveSnapshotConfigRequest::getPageSize()const
 void DescribeLiveSnapshotConfigRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeLiveSnapshotConfigRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeLiveSnapshotConfigRequest::getOwnerId()const
 void DescribeLiveSnapshotConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeLiveSnapshotConfigRequest::getPageNum()const
@@ -88,18 +88,7 @@ int DescribeLiveSnapshotConfigRequest::getPageNum()const
 void DescribeLiveSnapshotConfigRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
-}
-
-std::string DescribeLiveSnapshotConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveSnapshotConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeLiveSnapshotConfigRequest::getOrder()const
@@ -110,6 +99,6 @@ std::string DescribeLiveSnapshotConfigRequest::getOrder()const
 void DescribeLiveSnapshotConfigRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setParameter("Order", order);
+	setCoreParameter("Order", order);
 }
 

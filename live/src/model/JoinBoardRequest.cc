@@ -33,7 +33,7 @@ long JoinBoardRequest::getCallerParentId()const
 void JoinBoardRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool JoinBoardRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool JoinBoardRequest::getProxy_original_security_transport()const
 void JoinBoardRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string JoinBoardRequest::getProxy_original_source_ip()const
@@ -55,7 +55,7 @@ std::string JoinBoardRequest::getProxy_original_source_ip()const
 void JoinBoardRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string JoinBoardRequest::getOwnerIdLoginEmail()const
@@ -66,7 +66,7 @@ std::string JoinBoardRequest::getOwnerIdLoginEmail()const
 void JoinBoardRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string JoinBoardRequest::getCallerType()const
@@ -77,7 +77,7 @@ std::string JoinBoardRequest::getCallerType()const
 void JoinBoardRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string JoinBoardRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string JoinBoardRequest::getAccessKeyId()const
 void JoinBoardRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string JoinBoardRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ std::string JoinBoardRequest::getSecurityToken()const
 void JoinBoardRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string JoinBoardRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string JoinBoardRequest::getRegionId()const
 void JoinBoardRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string JoinBoardRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string JoinBoardRequest::getRequestContent()const
 void JoinBoardRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string JoinBoardRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string JoinBoardRequest::getCallerBidEmail()const
 void JoinBoardRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string JoinBoardRequest::getBoardId()const
@@ -143,7 +143,7 @@ std::string JoinBoardRequest::getBoardId()const
 void JoinBoardRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setParameter("BoardId", boardId);
+	setCoreParameter("BoardId", boardId);
 }
 
 std::string JoinBoardRequest::getCallerUidEmail()const
@@ -154,7 +154,7 @@ std::string JoinBoardRequest::getCallerUidEmail()const
 void JoinBoardRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long JoinBoardRequest::getCallerUid()const
@@ -165,7 +165,7 @@ long JoinBoardRequest::getCallerUid()const
 void JoinBoardRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string JoinBoardRequest::getApp_ip()const
@@ -176,7 +176,7 @@ std::string JoinBoardRequest::getApp_ip()const
 void JoinBoardRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string JoinBoardRequest::getPopProduct()const
@@ -187,7 +187,7 @@ std::string JoinBoardRequest::getPopProduct()const
 void JoinBoardRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string JoinBoardRequest::getAppUid()const
@@ -198,7 +198,7 @@ std::string JoinBoardRequest::getAppUid()const
 void JoinBoardRequest::setAppUid(const std::string& appUid)
 {
 	appUid_ = appUid;
-	setParameter("AppUid", appUid);
+	setCoreParameter("AppUid", appUid);
 }
 
 std::string JoinBoardRequest::getCallerBid()const
@@ -209,7 +209,7 @@ std::string JoinBoardRequest::getCallerBid()const
 void JoinBoardRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long JoinBoardRequest::getOwnerId()const
@@ -220,7 +220,7 @@ long JoinBoardRequest::getOwnerId()const
 void JoinBoardRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string JoinBoardRequest::getVersion()const
@@ -231,7 +231,7 @@ std::string JoinBoardRequest::getVersion()const
 void JoinBoardRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool JoinBoardRequest::getProxy_trust_transport_info()const
@@ -242,7 +242,7 @@ bool JoinBoardRequest::getProxy_trust_transport_info()const
 void JoinBoardRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool JoinBoardRequest::getAk_mfa_present()const
@@ -253,7 +253,7 @@ bool JoinBoardRequest::getAk_mfa_present()const
 void JoinBoardRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool JoinBoardRequest::getSecurity_transport()const
@@ -264,7 +264,7 @@ bool JoinBoardRequest::getSecurity_transport()const
 void JoinBoardRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string JoinBoardRequest::getRequestId()const
@@ -275,7 +275,7 @@ std::string JoinBoardRequest::getRequestId()const
 void JoinBoardRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string JoinBoardRequest::getAppId()const
@@ -286,6 +286,6 @@ std::string JoinBoardRequest::getAppId()const
 void JoinBoardRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("AppId", appId);
 }
 

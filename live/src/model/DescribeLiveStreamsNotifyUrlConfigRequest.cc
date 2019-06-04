@@ -25,37 +25,15 @@ DescribeLiveStreamsNotifyUrlConfigRequest::DescribeLiveStreamsNotifyUrlConfigReq
 DescribeLiveStreamsNotifyUrlConfigRequest::~DescribeLiveStreamsNotifyUrlConfigRequest()
 {}
 
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getApp_ip()const
+std::string DescribeLiveStreamsNotifyUrlConfigRequest::getRegionId()const
 {
-	return app_ip_;
+	return regionId_;
 }
 
-void DescribeLiveStreamsNotifyUrlConfigRequest::setApp_ip(const std::string& app_ip)
+void DescribeLiveStreamsNotifyUrlConfigRequest::setRegionId(const std::string& regionId)
 {
-	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
-}
-
-long DescribeLiveStreamsNotifyUrlConfigRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLiveStreamsNotifyUrlConfigRequest::getDomainName()const
@@ -66,29 +44,7 @@ std::string DescribeLiveStreamsNotifyUrlConfigRequest::getDomainName()const
 void DescribeLiveStreamsNotifyUrlConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
-}
-
-bool DescribeLiveStreamsNotifyUrlConfigRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
@@ -99,171 +55,6 @@ long DescribeLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
 void DescribeLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getVersion()const
-{
-	return version_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setParameter("Version", version);
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setParameter("CallerType", callerType);
-}
-
-bool DescribeLiveStreamsNotifyUrlConfigRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
-}
-
-bool DescribeLiveStreamsNotifyUrlConfigRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-bool DescribeLiveStreamsNotifyUrlConfigRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
-}
-
-long DescribeLiveStreamsNotifyUrlConfigRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

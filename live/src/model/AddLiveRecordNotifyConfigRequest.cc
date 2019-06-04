@@ -33,7 +33,7 @@ std::string AddLiveRecordNotifyConfigRequest::getOnDemandUrl()const
 void AddLiveRecordNotifyConfigRequest::setOnDemandUrl(const std::string& onDemandUrl)
 {
 	onDemandUrl_ = onDemandUrl;
-	setParameter("OnDemandUrl", onDemandUrl);
+	setCoreParameter("OnDemandUrl", onDemandUrl);
 }
 
 std::string AddLiveRecordNotifyConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string AddLiveRecordNotifyConfigRequest::getSecurityToken()const
 void AddLiveRecordNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AddLiveRecordNotifyConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string AddLiveRecordNotifyConfigRequest::getDomainName()const
 void AddLiveRecordNotifyConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string AddLiveRecordNotifyConfigRequest::getNotifyUrl()const
@@ -66,7 +66,7 @@ std::string AddLiveRecordNotifyConfigRequest::getNotifyUrl()const
 void AddLiveRecordNotifyConfigRequest::setNotifyUrl(const std::string& notifyUrl)
 {
 	notifyUrl_ = notifyUrl;
-	setParameter("NotifyUrl", notifyUrl);
+	setCoreParameter("NotifyUrl", notifyUrl);
 }
 
 long AddLiveRecordNotifyConfigRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long AddLiveRecordNotifyConfigRequest::getOwnerId()const
 void AddLiveRecordNotifyConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool AddLiveRecordNotifyConfigRequest::getNeedStatusNotify()const
@@ -88,17 +88,6 @@ bool AddLiveRecordNotifyConfigRequest::getNeedStatusNotify()const
 void AddLiveRecordNotifyConfigRequest::setNeedStatusNotify(bool needStatusNotify)
 {
 	needStatusNotify_ = needStatusNotify;
-	setParameter("NeedStatusNotify", std::to_string(needStatusNotify));
-}
-
-std::string AddLiveRecordNotifyConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddLiveRecordNotifyConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("NeedStatusNotify", needStatusNotify ? "true" : "false");
 }
 

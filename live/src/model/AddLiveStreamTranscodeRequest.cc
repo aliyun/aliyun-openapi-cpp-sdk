@@ -33,7 +33,7 @@ std::string AddLiveStreamTranscodeRequest::getApp()const
 void AddLiveStreamTranscodeRequest::setApp(const std::string& app)
 {
 	app_ = app;
-	setParameter("App", app);
+	setCoreParameter("App", app);
 }
 
 std::string AddLiveStreamTranscodeRequest::get_Template()const
@@ -44,7 +44,7 @@ std::string AddLiveStreamTranscodeRequest::get_Template()const
 void AddLiveStreamTranscodeRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setParameter("_Template", _template);
+	setCoreParameter("_Template", _template);
 }
 
 std::string AddLiveStreamTranscodeRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string AddLiveStreamTranscodeRequest::getSecurityToken()const
 void AddLiveStreamTranscodeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AddLiveStreamTranscodeRequest::getDomain()const
@@ -66,7 +66,7 @@ std::string AddLiveStreamTranscodeRequest::getDomain()const
 void AddLiveStreamTranscodeRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setParameter("Domain", domain);
+	setCoreParameter("Domain", domain);
 }
 
 long AddLiveStreamTranscodeRequest::getOwnerId()const
@@ -77,17 +77,6 @@ long AddLiveStreamTranscodeRequest::getOwnerId()const
 void AddLiveStreamTranscodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string AddLiveStreamTranscodeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddLiveStreamTranscodeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
