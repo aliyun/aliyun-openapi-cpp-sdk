@@ -51,6 +51,8 @@ void DescribeDataLimitDetailResult::parse(const std::string &payload)
 		dataLimit_.id = std::stol(dataLimitNode["Id"].asString());
 	if(!dataLimitNode["UserName"].isNull())
 		dataLimit_.userName = dataLimitNode["UserName"].asString();
+	if(!dataLimitNode["Password"].isNull())
+		dataLimit_.password = dataLimitNode["Password"].asString();
 	if(!dataLimitNode["GmtCreate"].isNull())
 		dataLimit_.gmtCreate = std::stol(dataLimitNode["GmtCreate"].asString());
 	if(!dataLimitNode["Connector"].isNull())

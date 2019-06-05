@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					long id;
 					std::string checkStatusName;
 					std::string localName;
+					std::string password;
 				};
 
 
