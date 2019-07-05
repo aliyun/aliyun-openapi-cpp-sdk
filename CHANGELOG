@@ -1,3 +1,6 @@
+2019-07-05 Version 1.36.60
+- Add TaskCancelStatus for QueryTaskList api.
+
 2019-07-04 Version 1.36.59
 - Supported API DescribeRecordStatisticsy for Query Volume.
 - Supported API DescribeDomainStatistics for Query Volume.
