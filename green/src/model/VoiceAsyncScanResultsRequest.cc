@@ -33,6 +33,6 @@ std::string VoiceAsyncScanResultsRequest::getClientInfo()const
 void VoiceAsyncScanResultsRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

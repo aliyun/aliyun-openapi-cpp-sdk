@@ -33,7 +33,7 @@ std::string DeleteGroupsRequest::getRegionId()const
 void DeleteGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteGroupsRequest::getClientInfo()const
@@ -44,6 +44,6 @@ std::string DeleteGroupsRequest::getClientInfo()const
 void DeleteGroupsRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

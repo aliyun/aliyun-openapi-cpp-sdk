@@ -33,6 +33,6 @@ std::string VideoFeedbackRequest::getClientInfo()const
 void VideoFeedbackRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

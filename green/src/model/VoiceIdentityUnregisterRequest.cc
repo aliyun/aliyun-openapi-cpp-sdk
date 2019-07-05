@@ -33,7 +33,7 @@ std::string VoiceIdentityUnregisterRequest::getRegionId()const
 void VoiceIdentityUnregisterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string VoiceIdentityUnregisterRequest::getClientInfo()const
@@ -44,6 +44,6 @@ std::string VoiceIdentityUnregisterRequest::getClientInfo()const
 void VoiceIdentityUnregisterRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

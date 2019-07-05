@@ -33,7 +33,7 @@ std::string VoiceIdentityStartCheckRequest::getRegionId()const
 void VoiceIdentityStartCheckRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string VoiceIdentityStartCheckRequest::getClientInfo()const
@@ -44,6 +44,6 @@ std::string VoiceIdentityStartCheckRequest::getClientInfo()const
 void VoiceIdentityStartCheckRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

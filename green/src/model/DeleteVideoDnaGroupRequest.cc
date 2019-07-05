@@ -33,6 +33,6 @@ std::string DeleteVideoDnaGroupRequest::getClientInfo()const
 void DeleteVideoDnaGroupRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

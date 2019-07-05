@@ -33,6 +33,6 @@ std::string FileAsyncScanResultsRequest::getClientInfo()const
 void FileAsyncScanResultsRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

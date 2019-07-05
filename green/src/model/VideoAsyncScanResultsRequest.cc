@@ -33,6 +33,6 @@ std::string VideoAsyncScanResultsRequest::getClientInfo()const
 void VideoAsyncScanResultsRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

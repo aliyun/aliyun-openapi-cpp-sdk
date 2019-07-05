@@ -33,7 +33,7 @@ std::string GetGroupsRequest::getRegionId()const
 void GetGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetGroupsRequest::getClientInfo()const
@@ -44,6 +44,6 @@ std::string GetGroupsRequest::getClientInfo()const
 void GetGroupsRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

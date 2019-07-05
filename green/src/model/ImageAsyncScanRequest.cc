@@ -33,6 +33,6 @@ std::string ImageAsyncScanRequest::getClientInfo()const
 void ImageAsyncScanRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

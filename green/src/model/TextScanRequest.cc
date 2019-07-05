@@ -33,6 +33,6 @@ std::string TextScanRequest::getClientInfo()const
 void TextScanRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

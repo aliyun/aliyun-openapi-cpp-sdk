@@ -33,6 +33,6 @@ std::string AddSimilarityImageRequest::getClientInfo()const
 void AddSimilarityImageRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

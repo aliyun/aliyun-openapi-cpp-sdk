@@ -33,6 +33,6 @@ std::string ImageScanFeedbackRequest::getClientInfo()const
 void ImageScanFeedbackRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

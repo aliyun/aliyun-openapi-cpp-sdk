@@ -33,6 +33,6 @@ std::string GetAddVideoDnaResultsRequest::getClientInfo()const
 void GetAddVideoDnaResultsRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

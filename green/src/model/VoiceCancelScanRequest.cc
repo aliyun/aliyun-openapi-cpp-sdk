@@ -33,6 +33,6 @@ std::string VoiceCancelScanRequest::getClientInfo()const
 void VoiceCancelScanRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

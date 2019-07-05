@@ -33,7 +33,7 @@ std::string AddPersonRequest::getRegionId()const
 void AddPersonRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddPersonRequest::getClientInfo()const
@@ -44,6 +44,6 @@ std::string AddPersonRequest::getClientInfo()const
 void AddPersonRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	setCoreParameter("ClientInfo", clientInfo);
 }
 
