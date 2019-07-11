@@ -74,6 +74,8 @@ void DescribeRestoreTaskListResult::parse(const std::string &payload)
 			itemsObject.restoreTime = std::stol(value["RestoreTime"].asString());
 		if(!value["RestoreTaskCreateTime"].isNull())
 			itemsObject.restoreTaskCreateTime = std::stol(value["RestoreTaskCreateTime"].asString());
+		if(!value["RestoreTaskFinishTime"].isNull())
+			itemsObject.restoreTaskFinishTime = std::stol(value["RestoreTaskFinishTime"].asString());
 		if(!value["RestoreStatus"].isNull())
 			itemsObject.restoreStatus = value["RestoreStatus"].asString();
 		if(!value["RestoreTaskId"].isNull())
@@ -86,6 +88,8 @@ void DescribeRestoreTaskListResult::parse(const std::string &payload)
 			itemsObject.continuousRestoreProgress = std::stoi(value["ContinuousRestoreProgress"].asString());
 		if(!value["FullStruAfterRestoreProgress"].isNull())
 			itemsObject.fullStruAfterRestoreProgress = std::stoi(value["FullStruAfterRestoreProgress"].asString());
+		if(!value["ErrMessage"].isNull())
+			itemsObject.errMessage = value["ErrMessage"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

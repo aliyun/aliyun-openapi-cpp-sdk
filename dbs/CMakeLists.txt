@@ -20,10 +20,62 @@ set(dbs_public_header
 	include/alibabacloud/dbs/DbsClient.h
 	include/alibabacloud/dbs/DbsExport.h )
 
-set(dbs_public_header_model  )
+set(dbs_public_header_model 
+	include/alibabacloud/dbs/model/DescribeBackupPlanListRequest.h
+	include/alibabacloud/dbs/model/DescribeBackupPlanListResult.h
+	include/alibabacloud/dbs/model/RenewBackupPlanRequest.h
+	include/alibabacloud/dbs/model/RenewBackupPlanResult.h
+	include/alibabacloud/dbs/model/DescribeFullBackupListRequest.h
+	include/alibabacloud/dbs/model/DescribeFullBackupListResult.h
+	include/alibabacloud/dbs/model/DescribeRestoreTaskListRequest.h
+	include/alibabacloud/dbs/model/DescribeRestoreTaskListResult.h
+	include/alibabacloud/dbs/model/ModifyBackupPlanNameRequest.h
+	include/alibabacloud/dbs/model/ModifyBackupPlanNameResult.h
+	include/alibabacloud/dbs/model/StopBackupPlanRequest.h
+	include/alibabacloud/dbs/model/StopBackupPlanResult.h
+	include/alibabacloud/dbs/model/ModifyBackupSourceEndpointRequest.h
+	include/alibabacloud/dbs/model/ModifyBackupSourceEndpointResult.h
+	include/alibabacloud/dbs/model/DescribeBackupGatewayListRequest.h
+	include/alibabacloud/dbs/model/DescribeBackupGatewayListResult.h
+	include/alibabacloud/dbs/model/ModifyBackupObjectsRequest.h
+	include/alibabacloud/dbs/model/ModifyBackupObjectsResult.h
+	include/alibabacloud/dbs/model/CreateRestoreTaskRequest.h
+	include/alibabacloud/dbs/model/CreateRestoreTaskResult.h
+	include/alibabacloud/dbs/model/ModifyBackupStrategyRequest.h
+	include/alibabacloud/dbs/model/ModifyBackupStrategyResult.h
+	include/alibabacloud/dbs/model/StartRestoreTaskRequest.h
+	include/alibabacloud/dbs/model/StartRestoreTaskResult.h
+	include/alibabacloud/dbs/model/DescribeNodeCidrListRequest.h
+	include/alibabacloud/dbs/model/DescribeNodeCidrListResult.h )
 
 set(dbs_src 
-	src/DbsClient.cc )
+	src/DbsClient.cc
+	src/model/DescribeBackupPlanListRequest.cc
+	src/model/DescribeBackupPlanListResult.cc
+	src/model/RenewBackupPlanRequest.cc
+	src/model/RenewBackupPlanResult.cc
+	src/model/DescribeFullBackupListRequest.cc
+	src/model/DescribeFullBackupListResult.cc
+	src/model/DescribeRestoreTaskListRequest.cc
+	src/model/DescribeRestoreTaskListResult.cc
+	src/model/ModifyBackupPlanNameRequest.cc
+	src/model/ModifyBackupPlanNameResult.cc
+	src/model/StopBackupPlanRequest.cc
+	src/model/StopBackupPlanResult.cc
+	src/model/ModifyBackupSourceEndpointRequest.cc
+	src/model/ModifyBackupSourceEndpointResult.cc
+	src/model/DescribeBackupGatewayListRequest.cc
+	src/model/DescribeBackupGatewayListResult.cc
+	src/model/ModifyBackupObjectsRequest.cc
+	src/model/ModifyBackupObjectsResult.cc
+	src/model/CreateRestoreTaskRequest.cc
+	src/model/CreateRestoreTaskResult.cc
+	src/model/ModifyBackupStrategyRequest.cc
+	src/model/ModifyBackupStrategyResult.cc
+	src/model/StartRestoreTaskRequest.cc
+	src/model/StartRestoreTaskResult.cc
+	src/model/DescribeNodeCidrListRequest.cc
+	src/model/DescribeNodeCidrListResult.cc )
 
 add_library(dbs ${LIB_TYPE}
 	${dbs_public_header}

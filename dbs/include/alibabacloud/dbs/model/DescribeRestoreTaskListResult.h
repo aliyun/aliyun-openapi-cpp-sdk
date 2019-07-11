@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string destinationEndpointOracleSID;
 					std::string backupSetId;
 					std::string restoreStatus;
+					std::string errMessage;
 					std::string destinationEndpointInstanceType;
 					long restoreTime;
 					std::string destinationEndpointRegion;
@@ -55,6 +56,7 @@ namespace AlibabaCloud
 					long restoreTaskCreateTime;
 					long backupGatewayId;
 					std::string destinationEndpointInstanceID;
+					long restoreTaskFinishTime;
 				};
 
 

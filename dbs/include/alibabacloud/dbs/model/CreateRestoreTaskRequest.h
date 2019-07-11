@@ -71,6 +71,8 @@ namespace AlibabaCloud
 				void setRestoreObjects(const std::string& restoreObjects);
 				std::string getRestoreTaskName()const;
 				void setRestoreTaskName(const std::string& restoreTaskName);
+				std::string getDuplicateConflict()const;
+				void setDuplicateConflict(const std::string& duplicateConflict);
 				std::string getDestinationEndpointPassword()const;
 				void setDestinationEndpointPassword(const std::string& destinationEndpointPassword);
 
@@ -93,6 +95,7 @@ namespace AlibabaCloud
 				std::string destinationEndpointUserName_;
 				std::string restoreObjects_;
 				std::string restoreTaskName_;
+				std::string duplicateConflict_;
 				std::string destinationEndpointPassword_;
 
 			};

@@ -223,6 +223,17 @@ void CreateRestoreTaskRequest::setRestoreTaskName(const std::string& restoreTask
 	setCoreParameter("RestoreTaskName", restoreTaskName);
 }
 
+std::string CreateRestoreTaskRequest::getDuplicateConflict()const
+{
+	return duplicateConflict_;
+}
+
+void CreateRestoreTaskRequest::setDuplicateConflict(const std::string& duplicateConflict)
+{
+	duplicateConflict_ = duplicateConflict;
+	setCoreParameter("DuplicateConflict", duplicateConflict);
+}
+
 std::string CreateRestoreTaskRequest::getDestinationEndpointPassword()const
 {
 	return destinationEndpointPassword_;

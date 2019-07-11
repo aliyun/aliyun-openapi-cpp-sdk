@@ -60,6 +60,10 @@ void DescribeFullBackupListResult::parse(const std::string &payload)
 			itemsObject.backupSize = std::stol(value["BackupSize"].asString());
 		if(!value["StorageMethod"].isNull())
 			itemsObject.storageMethod = value["StorageMethod"].asString();
+		if(!value["ErrMessage"].isNull())
+			itemsObject.errMessage = value["ErrMessage"].asString();
+		if(!value["BackupObjects"].isNull())
+			itemsObject.backupObjects = value["BackupObjects"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

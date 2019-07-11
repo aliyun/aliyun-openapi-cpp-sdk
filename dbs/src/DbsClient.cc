@@ -87,42 +87,6 @@ DbsClient::DescribeBackupPlanListOutcomeCallable DbsClient::describeBackupPlanLi
 	return task->get_future();
 }
 
-DbsClient::StopBackupPlanOutcome DbsClient::stopBackupPlan(const StopBackupPlanRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StopBackupPlanOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StopBackupPlanOutcome(StopBackupPlanResult(outcome.result()));
-	else
-		return StopBackupPlanOutcome(outcome.error());
-}
-
-void DbsClient::stopBackupPlanAsync(const StopBackupPlanRequest& request, const StopBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, stopBackupPlan(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DbsClient::StopBackupPlanOutcomeCallable DbsClient::stopBackupPlanCallable(const StopBackupPlanRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StopBackupPlanOutcome()>>(
-			[this, request]()
-			{
-			return this->stopBackupPlan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DbsClient::CreateBackupPlanOutcome DbsClient::createBackupPlan(const CreateBackupPlanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -195,6 +159,222 @@ DbsClient::StartBackupPlanOutcomeCallable DbsClient::startBackupPlanCallable(con
 	return task->get_future();
 }
 
+DbsClient::RenewBackupPlanOutcome DbsClient::renewBackupPlan(const RenewBackupPlanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RenewBackupPlanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RenewBackupPlanOutcome(RenewBackupPlanResult(outcome.result()));
+	else
+		return RenewBackupPlanOutcome(outcome.error());
+}
+
+void DbsClient::renewBackupPlanAsync(const RenewBackupPlanRequest& request, const RenewBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, renewBackupPlan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::RenewBackupPlanOutcomeCallable DbsClient::renewBackupPlanCallable(const RenewBackupPlanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RenewBackupPlanOutcome()>>(
+			[this, request]()
+			{
+			return this->renewBackupPlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DbsClient::DescribeFullBackupListOutcome DbsClient::describeFullBackupList(const DescribeFullBackupListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFullBackupListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFullBackupListOutcome(DescribeFullBackupListResult(outcome.result()));
+	else
+		return DescribeFullBackupListOutcome(outcome.error());
+}
+
+void DbsClient::describeFullBackupListAsync(const DescribeFullBackupListRequest& request, const DescribeFullBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFullBackupList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::DescribeFullBackupListOutcomeCallable DbsClient::describeFullBackupListCallable(const DescribeFullBackupListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFullBackupListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFullBackupList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DbsClient::DescribeRestoreTaskListOutcome DbsClient::describeRestoreTaskList(const DescribeRestoreTaskListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRestoreTaskListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRestoreTaskListOutcome(DescribeRestoreTaskListResult(outcome.result()));
+	else
+		return DescribeRestoreTaskListOutcome(outcome.error());
+}
+
+void DbsClient::describeRestoreTaskListAsync(const DescribeRestoreTaskListRequest& request, const DescribeRestoreTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRestoreTaskList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::DescribeRestoreTaskListOutcomeCallable DbsClient::describeRestoreTaskListCallable(const DescribeRestoreTaskListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRestoreTaskListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRestoreTaskList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DbsClient::ModifyBackupPlanNameOutcome DbsClient::modifyBackupPlanName(const ModifyBackupPlanNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBackupPlanNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBackupPlanNameOutcome(ModifyBackupPlanNameResult(outcome.result()));
+	else
+		return ModifyBackupPlanNameOutcome(outcome.error());
+}
+
+void DbsClient::modifyBackupPlanNameAsync(const ModifyBackupPlanNameRequest& request, const ModifyBackupPlanNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBackupPlanName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::ModifyBackupPlanNameOutcomeCallable DbsClient::modifyBackupPlanNameCallable(const ModifyBackupPlanNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBackupPlanNameOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBackupPlanName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DbsClient::StopBackupPlanOutcome DbsClient::stopBackupPlan(const StopBackupPlanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopBackupPlanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopBackupPlanOutcome(StopBackupPlanResult(outcome.result()));
+	else
+		return StopBackupPlanOutcome(outcome.error());
+}
+
+void DbsClient::stopBackupPlanAsync(const StopBackupPlanRequest& request, const StopBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopBackupPlan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::StopBackupPlanOutcomeCallable DbsClient::stopBackupPlanCallable(const StopBackupPlanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopBackupPlanOutcome()>>(
+			[this, request]()
+			{
+			return this->stopBackupPlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DbsClient::ModifyBackupSourceEndpointOutcome DbsClient::modifyBackupSourceEndpoint(const ModifyBackupSourceEndpointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBackupSourceEndpointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBackupSourceEndpointOutcome(ModifyBackupSourceEndpointResult(outcome.result()));
+	else
+		return ModifyBackupSourceEndpointOutcome(outcome.error());
+}
+
+void DbsClient::modifyBackupSourceEndpointAsync(const ModifyBackupSourceEndpointRequest& request, const ModifyBackupSourceEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBackupSourceEndpoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::ModifyBackupSourceEndpointOutcomeCallable DbsClient::modifyBackupSourceEndpointCallable(const ModifyBackupSourceEndpointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBackupSourceEndpointOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBackupSourceEndpoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DbsClient::DescribeBackupGatewayListOutcome DbsClient::describeBackupGatewayList(const DescribeBackupGatewayListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +405,42 @@ DbsClient::DescribeBackupGatewayListOutcomeCallable DbsClient::describeBackupGat
 			[this, request]()
 			{
 			return this->describeBackupGatewayList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DbsClient::ModifyBackupObjectsOutcome DbsClient::modifyBackupObjects(const ModifyBackupObjectsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBackupObjectsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBackupObjectsOutcome(ModifyBackupObjectsResult(outcome.result()));
+	else
+		return ModifyBackupObjectsOutcome(outcome.error());
+}
+
+void DbsClient::modifyBackupObjectsAsync(const ModifyBackupObjectsRequest& request, const ModifyBackupObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBackupObjects(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::ModifyBackupObjectsOutcomeCallable DbsClient::modifyBackupObjectsCallable(const ModifyBackupObjectsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBackupObjectsOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBackupObjects(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,36 +555,36 @@ DbsClient::ConfigureBackupPlanOutcomeCallable DbsClient::configureBackupPlanCall
 	return task->get_future();
 }
 
-DbsClient::DescribeFullBackupListOutcome DbsClient::describeFullBackupList(const DescribeFullBackupListRequest &request) const
+DbsClient::ModifyBackupStrategyOutcome DbsClient::modifyBackupStrategy(const ModifyBackupStrategyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeFullBackupListOutcome(endpointOutcome.error());
+		return ModifyBackupStrategyOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeFullBackupListOutcome(DescribeFullBackupListResult(outcome.result()));
+		return ModifyBackupStrategyOutcome(ModifyBackupStrategyResult(outcome.result()));
 	else
-		return DescribeFullBackupListOutcome(outcome.error());
+		return ModifyBackupStrategyOutcome(outcome.error());
 }
 
-void DbsClient::describeFullBackupListAsync(const DescribeFullBackupListRequest& request, const DescribeFullBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DbsClient::modifyBackupStrategyAsync(const ModifyBackupStrategyRequest& request, const ModifyBackupStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeFullBackupList(request), context);
+		handler(this, request, modifyBackupStrategy(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DbsClient::DescribeFullBackupListOutcomeCallable DbsClient::describeFullBackupListCallable(const DescribeFullBackupListRequest &request) const
+DbsClient::ModifyBackupStrategyOutcomeCallable DbsClient::modifyBackupStrategyCallable(const ModifyBackupStrategyRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeFullBackupListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyBackupStrategyOutcome()>>(
 			[this, request]()
 			{
-			return this->describeFullBackupList(request);
+			return this->modifyBackupStrategy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -441,42 +657,6 @@ DbsClient::DescribeNodeCidrListOutcomeCallable DbsClient::describeNodeCidrListCa
 			[this, request]()
 			{
 			return this->describeNodeCidrList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DbsClient::DescribeRestoreTaskListOutcome DbsClient::describeRestoreTaskList(const DescribeRestoreTaskListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRestoreTaskListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRestoreTaskListOutcome(DescribeRestoreTaskListResult(outcome.result()));
-	else
-		return DescribeRestoreTaskListOutcome(outcome.error());
-}
-
-void DbsClient::describeRestoreTaskListAsync(const DescribeRestoreTaskListRequest& request, const DescribeRestoreTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRestoreTaskList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DbsClient::DescribeRestoreTaskListOutcomeCallable DbsClient::describeRestoreTaskListCallable(const DescribeRestoreTaskListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRestoreTaskListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRestoreTaskList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

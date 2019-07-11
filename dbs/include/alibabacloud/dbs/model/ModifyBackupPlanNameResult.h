@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBS_MODEL_DESCRIBEFULLBACKUPLISTRESULT_H_
-#define ALIBABACLOUD_DBS_MODEL_DESCRIBEFULLBACKUPLISTRESULT_H_
+#ifndef ALIBABACLOUD_DBS_MODEL_MODIFYBACKUPPLANNAMERESULT_H_
+#define ALIBABACLOUD_DBS_MODEL_MODIFYBACKUPPLANNAMERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,16 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBS_EXPORT DescribeFullBackupListResult : public ServiceResult
+			class ALIBABACLOUD_DBS_EXPORT ModifyBackupPlanNameResult : public ServiceResult
 			{
 			public:
-				struct FullBackupFile
-				{
-					std::string sourceEndpointIpPort;
-					std::string storageMethod;
-					std::string backupObjects;
-					long endTime;
-					long backupSize;
-					long startTime;
-					long backupSetExpiredTime;
-					std::string backupSetId;
-					std::string errMessage;
-					std::string backupStatus;
-				};
 
 
-				DescribeFullBackupListResult();
-				explicit DescribeFullBackupListResult(const std::string &payload);
-				~DescribeFullBackupListResult();
-				int getPageSize()const;
-				int getPageNum()const;
+				ModifyBackupPlanNameResult();
+				explicit ModifyBackupPlanNameResult(const std::string &payload);
+				~ModifyBackupPlanNameResult();
 				int getHttpStatusCode()const;
-				int getTotalElements()const;
-				std::vector<FullBackupFile> getItems()const;
-				int getTotalPages()const;
+				std::string getBackupPlanId()const;
 				std::string getErrMessage()const;
 				bool getSuccess()const;
 				std::string getErrCode()const;
@@ -63,12 +46,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
-				int pageNum_;
 				int httpStatusCode_;
-				int totalElements_;
-				std::vector<FullBackupFile> items_;
-				int totalPages_;
+				std::string backupPlanId_;
 				std::string errMessage_;
 				bool success_;
 				std::string errCode_;
@@ -77,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBS_MODEL_DESCRIBEFULLBACKUPLISTRESULT_H_
+#endif // !ALIBABACLOUD_DBS_MODEL_MODIFYBACKUPPLANNAMERESULT_H_
