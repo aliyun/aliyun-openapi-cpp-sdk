@@ -54,6 +54,8 @@ namespace AlibabaCloud
 				void setBlendList(const std::vector<std::string>& blendList);
 				std::vector<AudioLayer> getAudioLayer()const;
 				void setAudioLayer(const std::vector<AudioLayer>& audioLayer);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::vector<VideoLayer> getVideoLayer()const;
 				void setVideoLayer(const std::vector<VideoLayer>& videoLayer);
 				std::string getCasterId()const;
@@ -68,6 +70,7 @@ namespace AlibabaCloud
             private:
 				std::vector<std::string> blendList_;
 				std::vector<AudioLayer> audioLayer_;
+				std::string regionId_;
 				std::vector<VideoLayer> videoLayer_;
 				std::string casterId_;
 				std::vector<std::string> mixList_;

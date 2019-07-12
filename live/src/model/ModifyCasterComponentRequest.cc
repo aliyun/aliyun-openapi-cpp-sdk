@@ -47,6 +47,17 @@ void ModifyCasterComponentRequest::setComponentType(const std::string& component
 	setCoreParameter("ComponentType", componentType);
 }
 
+std::string ModifyCasterComponentRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyCasterComponentRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string ModifyCasterComponentRequest::getImageLayerContent()const
 {
 	return imageLayerContent_;

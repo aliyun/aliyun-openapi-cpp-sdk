@@ -55,6 +55,17 @@ void AddCasterLayoutRequest::setAudioLayer(const std::vector<AudioLayer>& audioL
 	}
 }
 
+std::string AddCasterLayoutRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void AddCasterLayoutRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::vector<AddCasterLayoutRequest::VideoLayer> AddCasterLayoutRequest::getVideoLayer()const
 {
 	return videoLayer_;

@@ -61,6 +61,20 @@ void DescribeLiveStreamTranscodeInfoResult::parse(const std::string &payload)
 			domainTranscodeListObject.customTranscodeParameters.width = std::stoi(customTranscodeParametersNode["Width"].asString());
 		if(!customTranscodeParametersNode["TemplateType"].isNull())
 			domainTranscodeListObject.customTranscodeParameters.templateType = customTranscodeParametersNode["TemplateType"].asString();
+		if(!customTranscodeParametersNode["VideoProfile"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.videoProfile = customTranscodeParametersNode["VideoProfile"].asString();
+		if(!customTranscodeParametersNode["Gop"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.gop = customTranscodeParametersNode["Gop"].asString();
+		if(!customTranscodeParametersNode["AudioBitrate"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.audioBitrate = std::stoi(customTranscodeParametersNode["AudioBitrate"].asString());
+		if(!customTranscodeParametersNode["AudioProfile"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.audioProfile = customTranscodeParametersNode["AudioProfile"].asString();
+		if(!customTranscodeParametersNode["AudioCodec"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.audioCodec = customTranscodeParametersNode["AudioCodec"].asString();
+		if(!customTranscodeParametersNode["AudioRate"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.audioRate = std::stoi(customTranscodeParametersNode["AudioRate"].asString());
+		if(!customTranscodeParametersNode["AudioChannelNum"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.audioChannelNum = std::stoi(customTranscodeParametersNode["AudioChannelNum"].asString());
 		domainTranscodeList_.push_back(domainTranscodeListObject);
 	}
 

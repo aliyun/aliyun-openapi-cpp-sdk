@@ -25,6 +25,17 @@ EffectCasterUrgentRequest::EffectCasterUrgentRequest() :
 EffectCasterUrgentRequest::~EffectCasterUrgentRequest()
 {}
 
+std::string EffectCasterUrgentRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void EffectCasterUrgentRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string EffectCasterUrgentRequest::getCasterId()const
 {
 	return casterId_;

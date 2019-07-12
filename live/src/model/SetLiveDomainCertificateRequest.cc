@@ -25,6 +25,17 @@ SetLiveDomainCertificateRequest::SetLiveDomainCertificateRequest() :
 SetLiveDomainCertificateRequest::~SetLiveDomainCertificateRequest()
 {}
 
+std::string SetLiveDomainCertificateRequest::getForceSet()const
+{
+	return forceSet_;
+}
+
+void SetLiveDomainCertificateRequest::setForceSet(const std::string& forceSet)
+{
+	forceSet_ = forceSet;
+	setCoreParameter("ForceSet", forceSet);
+}
+
 std::string SetLiveDomainCertificateRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -34,6 +45,17 @@ void SetLiveDomainCertificateRequest::setSecurityToken(const std::string& securi
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetLiveDomainCertificateRequest::getCertType()const
+{
+	return certType_;
+}
+
+void SetLiveDomainCertificateRequest::setCertType(const std::string& certType)
+{
+	certType_ = certType;
+	setCoreParameter("CertType", certType);
 }
 
 std::string SetLiveDomainCertificateRequest::getSSLPub()const

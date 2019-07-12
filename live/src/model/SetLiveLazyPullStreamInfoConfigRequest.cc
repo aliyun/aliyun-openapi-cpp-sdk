@@ -179,6 +179,17 @@ void SetLiveLazyPullStreamInfoConfigRequest::setCallerBidEmail(const std::string
 	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
+std::string SetLiveLazyPullStreamInfoConfigRequest::getLiveapiRequestFrom()const
+{
+	return liveapiRequestFrom_;
+}
+
+void SetLiveLazyPullStreamInfoConfigRequest::setLiveapiRequestFrom(const std::string& liveapiRequestFrom)
+{
+	liveapiRequestFrom_ = liveapiRequestFrom;
+	setCoreParameter("LiveapiRequestFrom", liveapiRequestFrom);
+}
+
 std::string SetLiveLazyPullStreamInfoConfigRequest::getCallerUidEmail()const
 {
 	return callerUidEmail_;

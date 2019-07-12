@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getComponentType()const;
 				void setComponentType(const std::string& componentType);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getLocationId()const;
 				void setLocationId(const std::string& locationId);
 				std::string getImageLayerContent()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 
             private:
 				std::string componentType_;
+				std::string regionId_;
 				std::string locationId_;
 				std::string imageLayerContent_;
 				std::string casterId_;

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DeleteCasterLayoutRequest();
 				~DeleteCasterLayoutRequest();
 
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
 				long getOwnerId()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setLayoutId(const std::string& layoutId);
 
             private:
+				std::string regionId_;
 				std::string casterId_;
 				long ownerId_;
 				std::string layoutId_;

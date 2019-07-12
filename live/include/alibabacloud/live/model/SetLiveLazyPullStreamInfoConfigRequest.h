@@ -63,6 +63,8 @@ namespace AlibabaCloud
 				void setRequestContent(const std::string& requestContent);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
+				std::string getLiveapiRequestFrom()const;
+				void setLiveapiRequestFrom(const std::string& liveapiRequestFrom);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
 				long getCallerUid()const;
@@ -117,6 +119,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string requestContent_;
 				std::string callerBidEmail_;
+				std::string liveapiRequestFrom_;
 				std::string callerUidEmail_;
 				long callerUid_;
 				std::string app_ip_;

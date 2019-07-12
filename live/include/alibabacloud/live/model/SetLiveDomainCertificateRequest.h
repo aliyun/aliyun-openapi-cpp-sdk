@@ -35,8 +35,12 @@ namespace AlibabaCloud
 				SetLiveDomainCertificateRequest();
 				~SetLiveDomainCertificateRequest();
 
+				std::string getForceSet()const;
+				void setForceSet(const std::string& forceSet);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getCertType()const;
+				void setCertType(const std::string& certType);
 				std::string getSSLPub()const;
 				void setSSLPub(const std::string& sSLPub);
 				std::string getCertName()const;
@@ -51,7 +55,9 @@ namespace AlibabaCloud
 				void setSSLPri(const std::string& sSLPri);
 
             private:
+				std::string forceSet_;
 				std::string securityToken_;
+				std::string certType_;
 				std::string sSLPub_;
 				std::string certName_;
 				std::string sSLProtocol_;

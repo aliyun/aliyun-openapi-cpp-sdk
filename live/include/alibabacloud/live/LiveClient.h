@@ -46,10 +46,10 @@
 #include "model/CreateLiveStreamRecordIndexFilesResult.h"
 #include "model/UpdateCasterSceneConfigRequest.h"
 #include "model/UpdateCasterSceneConfigResult.h"
-#include "model/DescribeLiveStreamsOnlineListRequest.h"
-#include "model/DescribeLiveStreamsOnlineListResult.h"
 #include "model/DescribeLiveStreamTranscodeInfoRequest.h"
 #include "model/DescribeLiveStreamTranscodeInfoResult.h"
+#include "model/DescribeLiveStreamsOnlineListRequest.h"
+#include "model/DescribeLiveStreamsOnlineListResult.h"
 #include "model/DeleteLiveSnapshotDetectPornConfigRequest.h"
 #include "model/DeleteLiveSnapshotDetectPornConfigResult.h"
 #include "model/DescribeUpBpsPeakOfLineRequest.h"
@@ -64,10 +64,10 @@
 #include "model/DeleteCasterEpisodeResult.h"
 #include "model/DescribeCasterRtcInfoRequest.h"
 #include "model/DescribeCasterRtcInfoResult.h"
-#include "model/AddTrancodeSEIRequest.h"
-#include "model/AddTrancodeSEIResult.h"
 #include "model/SetCasterSceneConfigRequest.h"
 #include "model/SetCasterSceneConfigResult.h"
+#include "model/AddTrancodeSEIRequest.h"
+#include "model/AddTrancodeSEIResult.h"
 #include "model/DeleteBoardRequest.h"
 #include "model/DeleteBoardResult.h"
 #include "model/DescribeLiveStreamBitRateDataRequest.h"
@@ -86,28 +86,30 @@
 #include "model/AddCasterEpisodeGroupResult.h"
 #include "model/DescribeLiveStreamRecordIndexFileRequest.h"
 #include "model/DescribeLiveStreamRecordIndexFileResult.h"
+#include "model/DescribeLiveStreamTranscodeStreamNumRequest.h"
+#include "model/DescribeLiveStreamTranscodeStreamNumResult.h"
 #include "model/DescribeCasterConfigRequest.h"
 #include "model/DescribeCasterConfigResult.h"
 #include "model/CopyCasterRequest.h"
 #include "model/CopyCasterResult.h"
-#include "model/SetLiveLazyPullStreamInfoConfigRequest.h"
-#include "model/SetLiveLazyPullStreamInfoConfigResult.h"
 #include "model/AddCustomLiveStreamTranscodeRequest.h"
 #include "model/AddCustomLiveStreamTranscodeResult.h"
+#include "model/SetLiveLazyPullStreamInfoConfigRequest.h"
+#include "model/SetLiveLazyPullStreamInfoConfigResult.h"
 #include "model/AddCasterEpisodeRequest.h"
 #include "model/AddCasterEpisodeResult.h"
 #include "model/DescribeLiveDomainRealTimeBpsDataRequest.h"
 #include "model/DescribeLiveDomainRealTimeBpsDataResult.h"
 #include "model/AllowPushStreamRequest.h"
 #include "model/AllowPushStreamResult.h"
-#include "model/DescribeLiveRecordConfigRequest.h"
-#include "model/DescribeLiveRecordConfigResult.h"
 #include "model/ForbidPushStreamRequest.h"
 #include "model/ForbidPushStreamResult.h"
-#include "model/DescribeHlsLiveStreamRealTimeBpsDataRequest.h"
-#include "model/DescribeHlsLiveStreamRealTimeBpsDataResult.h"
+#include "model/DescribeLiveRecordConfigRequest.h"
+#include "model/DescribeLiveRecordConfigResult.h"
 #include "model/AddLiveRecordNotifyConfigRequest.h"
 #include "model/AddLiveRecordNotifyConfigResult.h"
+#include "model/DescribeHlsLiveStreamRealTimeBpsDataRequest.h"
+#include "model/DescribeHlsLiveStreamRealTimeBpsDataResult.h"
 #include "model/DeleteLiveRecordNotifyConfigRequest.h"
 #include "model/DeleteLiveRecordNotifyConfigResult.h"
 #include "model/CreateBoardRequest.h"
@@ -128,38 +130,42 @@
 #include "model/DescribeLiveCertificateListResult.h"
 #include "model/DeleteLiveAppSnapshotConfigRequest.h"
 #include "model/DeleteLiveAppSnapshotConfigResult.h"
-#include "model/DescribeLiveStreamsNotifyUrlConfigRequest.h"
-#include "model/DescribeLiveStreamsNotifyUrlConfigResult.h"
-#include "model/UpdateCasterSceneAudioRequest.h"
-#include "model/UpdateCasterSceneAudioResult.h"
 #include "model/ApplyRecordTokenRequest.h"
 #include "model/ApplyRecordTokenResult.h"
+#include "model/UpdateCasterSceneAudioRequest.h"
+#include "model/UpdateCasterSceneAudioResult.h"
+#include "model/DescribeLiveStreamsNotifyUrlConfigRequest.h"
+#include "model/DescribeLiveStreamsNotifyUrlConfigResult.h"
 #include "model/DescribeUpBpsPeakDataRequest.h"
 #include "model/DescribeUpBpsPeakDataResult.h"
+#include "model/UpdateLiveTopLevelDomainRequest.h"
+#include "model/UpdateLiveTopLevelDomainResult.h"
 #include "model/DeleteLivePullStreamInfoConfigRequest.h"
 #include "model/DeleteLivePullStreamInfoConfigResult.h"
 #include "model/ModifyLiveDomainSchdmByPropertyRequest.h"
 #include "model/ModifyLiveDomainSchdmByPropertyResult.h"
-#include "model/ModifyCasterProgramRequest.h"
-#include "model/ModifyCasterProgramResult.h"
 #include "model/DescribeBoardEventsRequest.h"
 #include "model/DescribeBoardEventsResult.h"
+#include "model/ModifyCasterProgramRequest.h"
+#include "model/ModifyCasterProgramResult.h"
 #include "model/DescribeLiveCertificateDetailRequest.h"
 #include "model/DescribeLiveCertificateDetailResult.h"
 #include "model/DescribeLivePullStreamConfigRequest.h"
 #include "model/DescribeLivePullStreamConfigResult.h"
 #include "model/SetLiveStreamsNotifyUrlConfigRequest.h"
 #include "model/SetLiveStreamsNotifyUrlConfigResult.h"
+#include "model/AddLivePullStreamInfoConfigRequest.h"
+#include "model/AddLivePullStreamInfoConfigResult.h"
 #include "model/StartLiveDomainRequest.h"
 #include "model/StartLiveDomainResult.h"
 #include "model/DescribeLiveStreamsBlockListRequest.h"
 #include "model/DescribeLiveStreamsBlockListResult.h"
 #include "model/DescribeCasterSceneAudioRequest.h"
 #include "model/DescribeCasterSceneAudioResult.h"
-#include "model/DescribeRoomKickoutUserListRequest.h"
-#include "model/DescribeRoomKickoutUserListResult.h"
 #include "model/AddCasterVideoResourceRequest.h"
 #include "model/AddCasterVideoResourceResult.h"
+#include "model/DescribeRoomKickoutUserListRequest.h"
+#include "model/DescribeRoomKickoutUserListResult.h"
 #include "model/AddLiveStreamTranscodeRequest.h"
 #include "model/AddLiveStreamTranscodeResult.h"
 #include "model/AddCasterEpisodeGroupContentRequest.h"
@@ -196,16 +202,16 @@
 #include "model/UpdateBoardCallbackResult.h"
 #include "model/DescribeLiveStreamsFrameRateAndBitRateDataRequest.h"
 #include "model/DescribeLiveStreamsFrameRateAndBitRateDataResult.h"
-#include "model/DescribeForbidPushStreamRoomListRequest.h"
-#include "model/DescribeForbidPushStreamRoomListResult.h"
 #include "model/DescribeLiveStreamRecordContentRequest.h"
 #include "model/DescribeLiveStreamRecordContentResult.h"
+#include "model/DescribeForbidPushStreamRoomListRequest.h"
+#include "model/DescribeForbidPushStreamRoomListResult.h"
 #include "model/CreateCasterRequest.h"
 #include "model/CreateCasterResult.h"
-#include "model/AddLiveSnapshotDetectPornConfigRequest.h"
-#include "model/AddLiveSnapshotDetectPornConfigResult.h"
 #include "model/DescribeCasterLayoutsRequest.h"
 #include "model/DescribeCasterLayoutsResult.h"
+#include "model/AddLiveSnapshotDetectPornConfigRequest.h"
+#include "model/AddLiveSnapshotDetectPornConfigResult.h"
 #include "model/SetCasterChannelRequest.h"
 #include "model/SetCasterChannelResult.h"
 #include "model/UpdateLiveRecordNotifyConfigRequest.h"
@@ -226,10 +232,10 @@
 #include "model/DescribeLiveStreamHistoryUserNumResult.h"
 #include "model/AddLiveAppRecordConfigRequest.h"
 #include "model/AddLiveAppRecordConfigResult.h"
-#include "model/AddLiveRecordVodConfigRequest.h"
-#include "model/AddLiveRecordVodConfigResult.h"
 #include "model/SendRoomUserNotificationRequest.h"
 #include "model/SendRoomUserNotificationResult.h"
+#include "model/AddLiveRecordVodConfigRequest.h"
+#include "model/AddLiveRecordVodConfigResult.h"
 #include "model/DeleteLiveDomainMappingRequest.h"
 #include "model/DeleteLiveDomainMappingResult.h"
 #include "model/BatchSetLiveDomainConfigsRequest.h"
@@ -264,20 +270,20 @@
 #include "model/DescribeRecordsResult.h"
 #include "model/SetLiveStreamDelayConfigRequest.h"
 #include "model/SetLiveStreamDelayConfigResult.h"
-#include "model/DeleteCasterEpisodeGroupRequest.h"
-#include "model/DeleteCasterEpisodeGroupResult.h"
 #include "model/DescribeLiveStreamOptimizedFeatureConfigRequest.h"
 #include "model/DescribeLiveStreamOptimizedFeatureConfigResult.h"
+#include "model/DeleteCasterEpisodeGroupRequest.h"
+#include "model/DeleteCasterEpisodeGroupResult.h"
 #include "model/DescribeCasterVideoResourcesRequest.h"
 #include "model/DescribeCasterVideoResourcesResult.h"
 #include "model/UpdateLiveAppSnapshotConfigRequest.h"
 #include "model/UpdateLiveAppSnapshotConfigResult.h"
 #include "model/DeleteLiveDetectNotifyConfigRequest.h"
 #include "model/DeleteLiveDetectNotifyConfigResult.h"
-#include "model/EffectCasterVideoResourceRequest.h"
-#include "model/EffectCasterVideoResourceResult.h"
 #include "model/RealTimeSnapshotCommandRequest.h"
 #include "model/RealTimeSnapshotCommandResult.h"
+#include "model/EffectCasterVideoResourceRequest.h"
+#include "model/EffectCasterVideoResourceResult.h"
 #include "model/DescribeUpPeakPublishStreamDataRequest.h"
 #include "model/DescribeUpPeakPublishStreamDataResult.h"
 #include "model/AddLiveAppSnapshotConfigRequest.h"
@@ -288,36 +294,36 @@
 #include "model/DeleteLiveDomainResult.h"
 #include "model/RealTimeRecordCommandRequest.h"
 #include "model/RealTimeRecordCommandResult.h"
-#include "model/AddLiveDomainMappingRequest.h"
-#include "model/AddLiveDomainMappingResult.h"
 #include "model/SetCasterConfigRequest.h"
 #include "model/SetCasterConfigResult.h"
+#include "model/AddLiveDomainMappingRequest.h"
+#include "model/AddLiveDomainMappingResult.h"
 #include "model/StartCasterRequest.h"
 #include "model/StartCasterResult.h"
-#include "model/ResumeLiveStreamRequest.h"
-#include "model/ResumeLiveStreamResult.h"
 #include "model/UpdateBoardRequest.h"
 #include "model/UpdateBoardResult.h"
+#include "model/ResumeLiveStreamRequest.h"
+#include "model/ResumeLiveStreamResult.h"
 #include "model/AddCasterLayoutRequest.h"
 #include "model/AddCasterLayoutResult.h"
 #include "model/JoinBoardRequest.h"
 #include "model/JoinBoardResult.h"
 #include "model/DescribeLiveUserDomainsRequest.h"
 #include "model/DescribeLiveUserDomainsResult.h"
-#include "model/StopCasterRequest.h"
-#include "model/StopCasterResult.h"
 #include "model/ModifyCasterLayoutRequest.h"
 #include "model/ModifyCasterLayoutResult.h"
+#include "model/StopCasterRequest.h"
+#include "model/StopCasterResult.h"
 #include "model/DescribeLiveStreamsPublishListRequest.h"
 #include "model/DescribeLiveStreamsPublishListResult.h"
 #include "model/DescribeLiveSnapshotDetectPornConfigRequest.h"
 #include "model/DescribeLiveSnapshotDetectPornConfigResult.h"
 #include "model/DeleteCasterSceneConfigRequest.h"
 #include "model/DeleteCasterSceneConfigResult.h"
-#include "model/AddLiveDomainRequest.h"
-#include "model/AddLiveDomainResult.h"
 #include "model/StopLiveIndexRequest.h"
 #include "model/StopLiveIndexResult.h"
+#include "model/AddLiveDomainRequest.h"
+#include "model/AddLiveDomainResult.h"
 #include "model/DeleteLiveAppRecordConfigRequest.h"
 #include "model/DeleteLiveAppRecordConfigResult.h"
 #include "model/DeleteCasterRequest.h"
@@ -336,10 +342,10 @@
 #include "model/DescribeCasterScenesResult.h"
 #include "model/SetBoardCallbackRequest.h"
 #include "model/SetBoardCallbackResult.h"
-#include "model/SendRoomNotificationRequest.h"
-#include "model/SendRoomNotificationResult.h"
 #include "model/DeleteLiveLazyPullStreamInfoConfigRequest.h"
 #include "model/DeleteLiveLazyPullStreamInfoConfigResult.h"
+#include "model/SendRoomNotificationRequest.h"
+#include "model/SendRoomNotificationResult.h"
 
 
 namespace AlibabaCloud
@@ -385,12 +391,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateCasterSceneConfigResult> UpdateCasterSceneConfigOutcome;
 			typedef std::future<UpdateCasterSceneConfigOutcome> UpdateCasterSceneConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateCasterSceneConfigRequest&, const UpdateCasterSceneConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCasterSceneConfigAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLiveStreamsOnlineListResult> DescribeLiveStreamsOnlineListOutcome;
-			typedef std::future<DescribeLiveStreamsOnlineListOutcome> DescribeLiveStreamsOnlineListOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsOnlineListRequest&, const DescribeLiveStreamsOnlineListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsOnlineListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveStreamTranscodeInfoResult> DescribeLiveStreamTranscodeInfoOutcome;
 			typedef std::future<DescribeLiveStreamTranscodeInfoOutcome> DescribeLiveStreamTranscodeInfoOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamTranscodeInfoRequest&, const DescribeLiveStreamTranscodeInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamTranscodeInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamsOnlineListResult> DescribeLiveStreamsOnlineListOutcome;
+			typedef std::future<DescribeLiveStreamsOnlineListOutcome> DescribeLiveStreamsOnlineListOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsOnlineListRequest&, const DescribeLiveStreamsOnlineListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsOnlineListAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLiveSnapshotDetectPornConfigResult> DeleteLiveSnapshotDetectPornConfigOutcome;
 			typedef std::future<DeleteLiveSnapshotDetectPornConfigOutcome> DeleteLiveSnapshotDetectPornConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveSnapshotDetectPornConfigRequest&, const DeleteLiveSnapshotDetectPornConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveSnapshotDetectPornConfigAsyncHandler;
@@ -412,12 +418,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCasterRtcInfoResult> DescribeCasterRtcInfoOutcome;
 			typedef std::future<DescribeCasterRtcInfoOutcome> DescribeCasterRtcInfoOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeCasterRtcInfoRequest&, const DescribeCasterRtcInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterRtcInfoAsyncHandler;
-			typedef Outcome<Error, Model::AddTrancodeSEIResult> AddTrancodeSEIOutcome;
-			typedef std::future<AddTrancodeSEIOutcome> AddTrancodeSEIOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::AddTrancodeSEIRequest&, const AddTrancodeSEIOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddTrancodeSEIAsyncHandler;
 			typedef Outcome<Error, Model::SetCasterSceneConfigResult> SetCasterSceneConfigOutcome;
 			typedef std::future<SetCasterSceneConfigOutcome> SetCasterSceneConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SetCasterSceneConfigRequest&, const SetCasterSceneConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetCasterSceneConfigAsyncHandler;
+			typedef Outcome<Error, Model::AddTrancodeSEIResult> AddTrancodeSEIOutcome;
+			typedef std::future<AddTrancodeSEIOutcome> AddTrancodeSEIOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddTrancodeSEIRequest&, const AddTrancodeSEIOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddTrancodeSEIAsyncHandler;
 			typedef Outcome<Error, Model::DeleteBoardResult> DeleteBoardOutcome;
 			typedef std::future<DeleteBoardOutcome> DeleteBoardOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteBoardRequest&, const DeleteBoardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBoardAsyncHandler;
@@ -445,18 +451,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveStreamRecordIndexFileResult> DescribeLiveStreamRecordIndexFileOutcome;
 			typedef std::future<DescribeLiveStreamRecordIndexFileOutcome> DescribeLiveStreamRecordIndexFileOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamRecordIndexFileRequest&, const DescribeLiveStreamRecordIndexFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamRecordIndexFileAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamTranscodeStreamNumResult> DescribeLiveStreamTranscodeStreamNumOutcome;
+			typedef std::future<DescribeLiveStreamTranscodeStreamNumOutcome> DescribeLiveStreamTranscodeStreamNumOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamTranscodeStreamNumRequest&, const DescribeLiveStreamTranscodeStreamNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamTranscodeStreamNumAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCasterConfigResult> DescribeCasterConfigOutcome;
 			typedef std::future<DescribeCasterConfigOutcome> DescribeCasterConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeCasterConfigRequest&, const DescribeCasterConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterConfigAsyncHandler;
 			typedef Outcome<Error, Model::CopyCasterResult> CopyCasterOutcome;
 			typedef std::future<CopyCasterOutcome> CopyCasterOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CopyCasterRequest&, const CopyCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyCasterAsyncHandler;
-			typedef Outcome<Error, Model::SetLiveLazyPullStreamInfoConfigResult> SetLiveLazyPullStreamInfoConfigOutcome;
-			typedef std::future<SetLiveLazyPullStreamInfoConfigOutcome> SetLiveLazyPullStreamInfoConfigOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::SetLiveLazyPullStreamInfoConfigRequest&, const SetLiveLazyPullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveLazyPullStreamInfoConfigAsyncHandler;
 			typedef Outcome<Error, Model::AddCustomLiveStreamTranscodeResult> AddCustomLiveStreamTranscodeOutcome;
 			typedef std::future<AddCustomLiveStreamTranscodeOutcome> AddCustomLiveStreamTranscodeOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddCustomLiveStreamTranscodeRequest&, const AddCustomLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomLiveStreamTranscodeAsyncHandler;
+			typedef Outcome<Error, Model::SetLiveLazyPullStreamInfoConfigResult> SetLiveLazyPullStreamInfoConfigOutcome;
+			typedef std::future<SetLiveLazyPullStreamInfoConfigOutcome> SetLiveLazyPullStreamInfoConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::SetLiveLazyPullStreamInfoConfigRequest&, const SetLiveLazyPullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveLazyPullStreamInfoConfigAsyncHandler;
 			typedef Outcome<Error, Model::AddCasterEpisodeResult> AddCasterEpisodeOutcome;
 			typedef std::future<AddCasterEpisodeOutcome> AddCasterEpisodeOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddCasterEpisodeRequest&, const AddCasterEpisodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterEpisodeAsyncHandler;
@@ -466,18 +475,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AllowPushStreamResult> AllowPushStreamOutcome;
 			typedef std::future<AllowPushStreamOutcome> AllowPushStreamOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AllowPushStreamRequest&, const AllowPushStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllowPushStreamAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLiveRecordConfigResult> DescribeLiveRecordConfigOutcome;
-			typedef std::future<DescribeLiveRecordConfigOutcome> DescribeLiveRecordConfigOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::DescribeLiveRecordConfigRequest&, const DescribeLiveRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordConfigAsyncHandler;
 			typedef Outcome<Error, Model::ForbidPushStreamResult> ForbidPushStreamOutcome;
 			typedef std::future<ForbidPushStreamOutcome> ForbidPushStreamOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ForbidPushStreamRequest&, const ForbidPushStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ForbidPushStreamAsyncHandler;
-			typedef Outcome<Error, Model::DescribeHlsLiveStreamRealTimeBpsDataResult> DescribeHlsLiveStreamRealTimeBpsDataOutcome;
-			typedef std::future<DescribeHlsLiveStreamRealTimeBpsDataOutcome> DescribeHlsLiveStreamRealTimeBpsDataOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest&, const DescribeHlsLiveStreamRealTimeBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHlsLiveStreamRealTimeBpsDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveRecordConfigResult> DescribeLiveRecordConfigOutcome;
+			typedef std::future<DescribeLiveRecordConfigOutcome> DescribeLiveRecordConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveRecordConfigRequest&, const DescribeLiveRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordConfigAsyncHandler;
 			typedef Outcome<Error, Model::AddLiveRecordNotifyConfigResult> AddLiveRecordNotifyConfigOutcome;
 			typedef std::future<AddLiveRecordNotifyConfigOutcome> AddLiveRecordNotifyConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddLiveRecordNotifyConfigRequest&, const AddLiveRecordNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveRecordNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeHlsLiveStreamRealTimeBpsDataResult> DescribeHlsLiveStreamRealTimeBpsDataOutcome;
+			typedef std::future<DescribeHlsLiveStreamRealTimeBpsDataOutcome> DescribeHlsLiveStreamRealTimeBpsDataOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest&, const DescribeHlsLiveStreamRealTimeBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHlsLiveStreamRealTimeBpsDataAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLiveRecordNotifyConfigResult> DeleteLiveRecordNotifyConfigOutcome;
 			typedef std::future<DeleteLiveRecordNotifyConfigOutcome> DeleteLiveRecordNotifyConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveRecordNotifyConfigRequest&, const DeleteLiveRecordNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveRecordNotifyConfigAsyncHandler;
@@ -508,30 +517,33 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteLiveAppSnapshotConfigResult> DeleteLiveAppSnapshotConfigOutcome;
 			typedef std::future<DeleteLiveAppSnapshotConfigOutcome> DeleteLiveAppSnapshotConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAppSnapshotConfigRequest&, const DeleteLiveAppSnapshotConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAppSnapshotConfigAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLiveStreamsNotifyUrlConfigResult> DescribeLiveStreamsNotifyUrlConfigOutcome;
-			typedef std::future<DescribeLiveStreamsNotifyUrlConfigOutcome> DescribeLiveStreamsNotifyUrlConfigOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsNotifyUrlConfigRequest&, const DescribeLiveStreamsNotifyUrlConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsNotifyUrlConfigAsyncHandler;
-			typedef Outcome<Error, Model::UpdateCasterSceneAudioResult> UpdateCasterSceneAudioOutcome;
-			typedef std::future<UpdateCasterSceneAudioOutcome> UpdateCasterSceneAudioOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::UpdateCasterSceneAudioRequest&, const UpdateCasterSceneAudioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCasterSceneAudioAsyncHandler;
 			typedef Outcome<Error, Model::ApplyRecordTokenResult> ApplyRecordTokenOutcome;
 			typedef std::future<ApplyRecordTokenOutcome> ApplyRecordTokenOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ApplyRecordTokenRequest&, const ApplyRecordTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyRecordTokenAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCasterSceneAudioResult> UpdateCasterSceneAudioOutcome;
+			typedef std::future<UpdateCasterSceneAudioOutcome> UpdateCasterSceneAudioOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateCasterSceneAudioRequest&, const UpdateCasterSceneAudioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCasterSceneAudioAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamsNotifyUrlConfigResult> DescribeLiveStreamsNotifyUrlConfigOutcome;
+			typedef std::future<DescribeLiveStreamsNotifyUrlConfigOutcome> DescribeLiveStreamsNotifyUrlConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsNotifyUrlConfigRequest&, const DescribeLiveStreamsNotifyUrlConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsNotifyUrlConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUpBpsPeakDataResult> DescribeUpBpsPeakDataOutcome;
 			typedef std::future<DescribeUpBpsPeakDataOutcome> DescribeUpBpsPeakDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeUpBpsPeakDataRequest&, const DescribeUpBpsPeakDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpBpsPeakDataAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveTopLevelDomainResult> UpdateLiveTopLevelDomainOutcome;
+			typedef std::future<UpdateLiveTopLevelDomainOutcome> UpdateLiveTopLevelDomainOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveTopLevelDomainRequest&, const UpdateLiveTopLevelDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveTopLevelDomainAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLivePullStreamInfoConfigResult> DeleteLivePullStreamInfoConfigOutcome;
 			typedef std::future<DeleteLivePullStreamInfoConfigOutcome> DeleteLivePullStreamInfoConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLivePullStreamInfoConfigRequest&, const DeleteLivePullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLivePullStreamInfoConfigAsyncHandler;
 			typedef Outcome<Error, Model::ModifyLiveDomainSchdmByPropertyResult> ModifyLiveDomainSchdmByPropertyOutcome;
 			typedef std::future<ModifyLiveDomainSchdmByPropertyOutcome> ModifyLiveDomainSchdmByPropertyOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ModifyLiveDomainSchdmByPropertyRequest&, const ModifyLiveDomainSchdmByPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveDomainSchdmByPropertyAsyncHandler;
-			typedef Outcome<Error, Model::ModifyCasterProgramResult> ModifyCasterProgramOutcome;
-			typedef std::future<ModifyCasterProgramOutcome> ModifyCasterProgramOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::ModifyCasterProgramRequest&, const ModifyCasterProgramOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterProgramAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBoardEventsResult> DescribeBoardEventsOutcome;
 			typedef std::future<DescribeBoardEventsOutcome> DescribeBoardEventsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeBoardEventsRequest&, const DescribeBoardEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBoardEventsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCasterProgramResult> ModifyCasterProgramOutcome;
+			typedef std::future<ModifyCasterProgramOutcome> ModifyCasterProgramOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ModifyCasterProgramRequest&, const ModifyCasterProgramOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterProgramAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveCertificateDetailResult> DescribeLiveCertificateDetailOutcome;
 			typedef std::future<DescribeLiveCertificateDetailOutcome> DescribeLiveCertificateDetailOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveCertificateDetailRequest&, const DescribeLiveCertificateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCertificateDetailAsyncHandler;
@@ -541,6 +553,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetLiveStreamsNotifyUrlConfigResult> SetLiveStreamsNotifyUrlConfigOutcome;
 			typedef std::future<SetLiveStreamsNotifyUrlConfigOutcome> SetLiveStreamsNotifyUrlConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SetLiveStreamsNotifyUrlConfigRequest&, const SetLiveStreamsNotifyUrlConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveStreamsNotifyUrlConfigAsyncHandler;
+			typedef Outcome<Error, Model::AddLivePullStreamInfoConfigResult> AddLivePullStreamInfoConfigOutcome;
+			typedef std::future<AddLivePullStreamInfoConfigOutcome> AddLivePullStreamInfoConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLivePullStreamInfoConfigRequest&, const AddLivePullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLivePullStreamInfoConfigAsyncHandler;
 			typedef Outcome<Error, Model::StartLiveDomainResult> StartLiveDomainOutcome;
 			typedef std::future<StartLiveDomainOutcome> StartLiveDomainOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::StartLiveDomainRequest&, const StartLiveDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartLiveDomainAsyncHandler;
@@ -550,12 +565,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCasterSceneAudioResult> DescribeCasterSceneAudioOutcome;
 			typedef std::future<DescribeCasterSceneAudioOutcome> DescribeCasterSceneAudioOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeCasterSceneAudioRequest&, const DescribeCasterSceneAudioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterSceneAudioAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRoomKickoutUserListResult> DescribeRoomKickoutUserListOutcome;
-			typedef std::future<DescribeRoomKickoutUserListOutcome> DescribeRoomKickoutUserListOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::DescribeRoomKickoutUserListRequest&, const DescribeRoomKickoutUserListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomKickoutUserListAsyncHandler;
 			typedef Outcome<Error, Model::AddCasterVideoResourceResult> AddCasterVideoResourceOutcome;
 			typedef std::future<AddCasterVideoResourceOutcome> AddCasterVideoResourceOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddCasterVideoResourceRequest&, const AddCasterVideoResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterVideoResourceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRoomKickoutUserListResult> DescribeRoomKickoutUserListOutcome;
+			typedef std::future<DescribeRoomKickoutUserListOutcome> DescribeRoomKickoutUserListOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeRoomKickoutUserListRequest&, const DescribeRoomKickoutUserListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomKickoutUserListAsyncHandler;
 			typedef Outcome<Error, Model::AddLiveStreamTranscodeResult> AddLiveStreamTranscodeOutcome;
 			typedef std::future<AddLiveStreamTranscodeOutcome> AddLiveStreamTranscodeOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddLiveStreamTranscodeRequest&, const AddLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveStreamTranscodeAsyncHandler;
@@ -610,21 +625,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveStreamsFrameRateAndBitRateDataResult> DescribeLiveStreamsFrameRateAndBitRateDataOutcome;
 			typedef std::future<DescribeLiveStreamsFrameRateAndBitRateDataOutcome> DescribeLiveStreamsFrameRateAndBitRateDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest&, const DescribeLiveStreamsFrameRateAndBitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsFrameRateAndBitRateDataAsyncHandler;
-			typedef Outcome<Error, Model::DescribeForbidPushStreamRoomListResult> DescribeForbidPushStreamRoomListOutcome;
-			typedef std::future<DescribeForbidPushStreamRoomListOutcome> DescribeForbidPushStreamRoomListOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::DescribeForbidPushStreamRoomListRequest&, const DescribeForbidPushStreamRoomListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForbidPushStreamRoomListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveStreamRecordContentResult> DescribeLiveStreamRecordContentOutcome;
 			typedef std::future<DescribeLiveStreamRecordContentOutcome> DescribeLiveStreamRecordContentOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamRecordContentRequest&, const DescribeLiveStreamRecordContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamRecordContentAsyncHandler;
+			typedef Outcome<Error, Model::DescribeForbidPushStreamRoomListResult> DescribeForbidPushStreamRoomListOutcome;
+			typedef std::future<DescribeForbidPushStreamRoomListOutcome> DescribeForbidPushStreamRoomListOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeForbidPushStreamRoomListRequest&, const DescribeForbidPushStreamRoomListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForbidPushStreamRoomListAsyncHandler;
 			typedef Outcome<Error, Model::CreateCasterResult> CreateCasterOutcome;
 			typedef std::future<CreateCasterOutcome> CreateCasterOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CreateCasterRequest&, const CreateCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterAsyncHandler;
-			typedef Outcome<Error, Model::AddLiveSnapshotDetectPornConfigResult> AddLiveSnapshotDetectPornConfigOutcome;
-			typedef std::future<AddLiveSnapshotDetectPornConfigOutcome> AddLiveSnapshotDetectPornConfigOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::AddLiveSnapshotDetectPornConfigRequest&, const AddLiveSnapshotDetectPornConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveSnapshotDetectPornConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCasterLayoutsResult> DescribeCasterLayoutsOutcome;
 			typedef std::future<DescribeCasterLayoutsOutcome> DescribeCasterLayoutsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeCasterLayoutsRequest&, const DescribeCasterLayoutsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterLayoutsAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveSnapshotDetectPornConfigResult> AddLiveSnapshotDetectPornConfigOutcome;
+			typedef std::future<AddLiveSnapshotDetectPornConfigOutcome> AddLiveSnapshotDetectPornConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveSnapshotDetectPornConfigRequest&, const AddLiveSnapshotDetectPornConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveSnapshotDetectPornConfigAsyncHandler;
 			typedef Outcome<Error, Model::SetCasterChannelResult> SetCasterChannelOutcome;
 			typedef std::future<SetCasterChannelOutcome> SetCasterChannelOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SetCasterChannelRequest&, const SetCasterChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetCasterChannelAsyncHandler;
@@ -655,12 +670,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddLiveAppRecordConfigResult> AddLiveAppRecordConfigOutcome;
 			typedef std::future<AddLiveAppRecordConfigOutcome> AddLiveAppRecordConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddLiveAppRecordConfigRequest&, const AddLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveAppRecordConfigAsyncHandler;
-			typedef Outcome<Error, Model::AddLiveRecordVodConfigResult> AddLiveRecordVodConfigOutcome;
-			typedef std::future<AddLiveRecordVodConfigOutcome> AddLiveRecordVodConfigOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::AddLiveRecordVodConfigRequest&, const AddLiveRecordVodConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveRecordVodConfigAsyncHandler;
 			typedef Outcome<Error, Model::SendRoomUserNotificationResult> SendRoomUserNotificationOutcome;
 			typedef std::future<SendRoomUserNotificationOutcome> SendRoomUserNotificationOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SendRoomUserNotificationRequest&, const SendRoomUserNotificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendRoomUserNotificationAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveRecordVodConfigResult> AddLiveRecordVodConfigOutcome;
+			typedef std::future<AddLiveRecordVodConfigOutcome> AddLiveRecordVodConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveRecordVodConfigRequest&, const AddLiveRecordVodConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveRecordVodConfigAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLiveDomainMappingResult> DeleteLiveDomainMappingOutcome;
 			typedef std::future<DeleteLiveDomainMappingOutcome> DeleteLiveDomainMappingOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveDomainMappingRequest&, const DeleteLiveDomainMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveDomainMappingAsyncHandler;
@@ -712,12 +727,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetLiveStreamDelayConfigResult> SetLiveStreamDelayConfigOutcome;
 			typedef std::future<SetLiveStreamDelayConfigOutcome> SetLiveStreamDelayConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SetLiveStreamDelayConfigRequest&, const SetLiveStreamDelayConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveStreamDelayConfigAsyncHandler;
-			typedef Outcome<Error, Model::DeleteCasterEpisodeGroupResult> DeleteCasterEpisodeGroupOutcome;
-			typedef std::future<DeleteCasterEpisodeGroupOutcome> DeleteCasterEpisodeGroupOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::DeleteCasterEpisodeGroupRequest&, const DeleteCasterEpisodeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterEpisodeGroupAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveStreamOptimizedFeatureConfigResult> DescribeLiveStreamOptimizedFeatureConfigOutcome;
 			typedef std::future<DescribeLiveStreamOptimizedFeatureConfigOutcome> DescribeLiveStreamOptimizedFeatureConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamOptimizedFeatureConfigRequest&, const DescribeLiveStreamOptimizedFeatureConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamOptimizedFeatureConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCasterEpisodeGroupResult> DeleteCasterEpisodeGroupOutcome;
+			typedef std::future<DeleteCasterEpisodeGroupOutcome> DeleteCasterEpisodeGroupOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteCasterEpisodeGroupRequest&, const DeleteCasterEpisodeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterEpisodeGroupAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCasterVideoResourcesResult> DescribeCasterVideoResourcesOutcome;
 			typedef std::future<DescribeCasterVideoResourcesOutcome> DescribeCasterVideoResourcesOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeCasterVideoResourcesRequest&, const DescribeCasterVideoResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterVideoResourcesAsyncHandler;
@@ -727,12 +742,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteLiveDetectNotifyConfigResult> DeleteLiveDetectNotifyConfigOutcome;
 			typedef std::future<DeleteLiveDetectNotifyConfigOutcome> DeleteLiveDetectNotifyConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveDetectNotifyConfigRequest&, const DeleteLiveDetectNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveDetectNotifyConfigAsyncHandler;
-			typedef Outcome<Error, Model::EffectCasterVideoResourceResult> EffectCasterVideoResourceOutcome;
-			typedef std::future<EffectCasterVideoResourceOutcome> EffectCasterVideoResourceOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::EffectCasterVideoResourceRequest&, const EffectCasterVideoResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EffectCasterVideoResourceAsyncHandler;
 			typedef Outcome<Error, Model::RealTimeSnapshotCommandResult> RealTimeSnapshotCommandOutcome;
 			typedef std::future<RealTimeSnapshotCommandOutcome> RealTimeSnapshotCommandOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::RealTimeSnapshotCommandRequest&, const RealTimeSnapshotCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RealTimeSnapshotCommandAsyncHandler;
+			typedef Outcome<Error, Model::EffectCasterVideoResourceResult> EffectCasterVideoResourceOutcome;
+			typedef std::future<EffectCasterVideoResourceOutcome> EffectCasterVideoResourceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::EffectCasterVideoResourceRequest&, const EffectCasterVideoResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EffectCasterVideoResourceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUpPeakPublishStreamDataResult> DescribeUpPeakPublishStreamDataOutcome;
 			typedef std::future<DescribeUpPeakPublishStreamDataOutcome> DescribeUpPeakPublishStreamDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeUpPeakPublishStreamDataRequest&, const DescribeUpPeakPublishStreamDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpPeakPublishStreamDataAsyncHandler;
@@ -748,21 +763,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RealTimeRecordCommandResult> RealTimeRecordCommandOutcome;
 			typedef std::future<RealTimeRecordCommandOutcome> RealTimeRecordCommandOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::RealTimeRecordCommandRequest&, const RealTimeRecordCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RealTimeRecordCommandAsyncHandler;
-			typedef Outcome<Error, Model::AddLiveDomainMappingResult> AddLiveDomainMappingOutcome;
-			typedef std::future<AddLiveDomainMappingOutcome> AddLiveDomainMappingOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::AddLiveDomainMappingRequest&, const AddLiveDomainMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveDomainMappingAsyncHandler;
 			typedef Outcome<Error, Model::SetCasterConfigResult> SetCasterConfigOutcome;
 			typedef std::future<SetCasterConfigOutcome> SetCasterConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SetCasterConfigRequest&, const SetCasterConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetCasterConfigAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveDomainMappingResult> AddLiveDomainMappingOutcome;
+			typedef std::future<AddLiveDomainMappingOutcome> AddLiveDomainMappingOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveDomainMappingRequest&, const AddLiveDomainMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveDomainMappingAsyncHandler;
 			typedef Outcome<Error, Model::StartCasterResult> StartCasterOutcome;
 			typedef std::future<StartCasterOutcome> StartCasterOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::StartCasterRequest&, const StartCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartCasterAsyncHandler;
-			typedef Outcome<Error, Model::ResumeLiveStreamResult> ResumeLiveStreamOutcome;
-			typedef std::future<ResumeLiveStreamOutcome> ResumeLiveStreamOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::ResumeLiveStreamRequest&, const ResumeLiveStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeLiveStreamAsyncHandler;
 			typedef Outcome<Error, Model::UpdateBoardResult> UpdateBoardOutcome;
 			typedef std::future<UpdateBoardOutcome> UpdateBoardOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateBoardRequest&, const UpdateBoardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBoardAsyncHandler;
+			typedef Outcome<Error, Model::ResumeLiveStreamResult> ResumeLiveStreamOutcome;
+			typedef std::future<ResumeLiveStreamOutcome> ResumeLiveStreamOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ResumeLiveStreamRequest&, const ResumeLiveStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeLiveStreamAsyncHandler;
 			typedef Outcome<Error, Model::AddCasterLayoutResult> AddCasterLayoutOutcome;
 			typedef std::future<AddCasterLayoutOutcome> AddCasterLayoutOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddCasterLayoutRequest&, const AddCasterLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterLayoutAsyncHandler;
@@ -772,12 +787,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveUserDomainsResult> DescribeLiveUserDomainsOutcome;
 			typedef std::future<DescribeLiveUserDomainsOutcome> DescribeLiveUserDomainsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUserDomainsRequest&, const DescribeLiveUserDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUserDomainsAsyncHandler;
-			typedef Outcome<Error, Model::StopCasterResult> StopCasterOutcome;
-			typedef std::future<StopCasterOutcome> StopCasterOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::StopCasterRequest&, const StopCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopCasterAsyncHandler;
 			typedef Outcome<Error, Model::ModifyCasterLayoutResult> ModifyCasterLayoutOutcome;
 			typedef std::future<ModifyCasterLayoutOutcome> ModifyCasterLayoutOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ModifyCasterLayoutRequest&, const ModifyCasterLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterLayoutAsyncHandler;
+			typedef Outcome<Error, Model::StopCasterResult> StopCasterOutcome;
+			typedef std::future<StopCasterOutcome> StopCasterOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::StopCasterRequest&, const StopCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopCasterAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveStreamsPublishListResult> DescribeLiveStreamsPublishListOutcome;
 			typedef std::future<DescribeLiveStreamsPublishListOutcome> DescribeLiveStreamsPublishListOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsPublishListRequest&, const DescribeLiveStreamsPublishListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsPublishListAsyncHandler;
@@ -787,12 +802,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCasterSceneConfigResult> DeleteCasterSceneConfigOutcome;
 			typedef std::future<DeleteCasterSceneConfigOutcome> DeleteCasterSceneConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteCasterSceneConfigRequest&, const DeleteCasterSceneConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterSceneConfigAsyncHandler;
-			typedef Outcome<Error, Model::AddLiveDomainResult> AddLiveDomainOutcome;
-			typedef std::future<AddLiveDomainOutcome> AddLiveDomainOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::AddLiveDomainRequest&, const AddLiveDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveDomainAsyncHandler;
 			typedef Outcome<Error, Model::StopLiveIndexResult> StopLiveIndexOutcome;
 			typedef std::future<StopLiveIndexOutcome> StopLiveIndexOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::StopLiveIndexRequest&, const StopLiveIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopLiveIndexAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveDomainResult> AddLiveDomainOutcome;
+			typedef std::future<AddLiveDomainOutcome> AddLiveDomainOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveDomainRequest&, const AddLiveDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveDomainAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLiveAppRecordConfigResult> DeleteLiveAppRecordConfigOutcome;
 			typedef std::future<DeleteLiveAppRecordConfigOutcome> DeleteLiveAppRecordConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAppRecordConfigRequest&, const DeleteLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAppRecordConfigAsyncHandler;
@@ -820,12 +835,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetBoardCallbackResult> SetBoardCallbackOutcome;
 			typedef std::future<SetBoardCallbackOutcome> SetBoardCallbackOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SetBoardCallbackRequest&, const SetBoardCallbackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetBoardCallbackAsyncHandler;
-			typedef Outcome<Error, Model::SendRoomNotificationResult> SendRoomNotificationOutcome;
-			typedef std::future<SendRoomNotificationOutcome> SendRoomNotificationOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::SendRoomNotificationRequest&, const SendRoomNotificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendRoomNotificationAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLiveLazyPullStreamInfoConfigResult> DeleteLiveLazyPullStreamInfoConfigOutcome;
 			typedef std::future<DeleteLiveLazyPullStreamInfoConfigOutcome> DeleteLiveLazyPullStreamInfoConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveLazyPullStreamInfoConfigRequest&, const DeleteLiveLazyPullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveLazyPullStreamInfoConfigAsyncHandler;
+			typedef Outcome<Error, Model::SendRoomNotificationResult> SendRoomNotificationOutcome;
+			typedef std::future<SendRoomNotificationOutcome> SendRoomNotificationOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::SendRoomNotificationRequest&, const SendRoomNotificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendRoomNotificationAsyncHandler;
 
 			LiveClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			LiveClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -867,12 +882,12 @@ namespace AlibabaCloud
 			UpdateCasterSceneConfigOutcome updateCasterSceneConfig(const Model::UpdateCasterSceneConfigRequest &request)const;
 			void updateCasterSceneConfigAsync(const Model::UpdateCasterSceneConfigRequest& request, const UpdateCasterSceneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCasterSceneConfigOutcomeCallable updateCasterSceneConfigCallable(const Model::UpdateCasterSceneConfigRequest& request) const;
-			DescribeLiveStreamsOnlineListOutcome describeLiveStreamsOnlineList(const Model::DescribeLiveStreamsOnlineListRequest &request)const;
-			void describeLiveStreamsOnlineListAsync(const Model::DescribeLiveStreamsOnlineListRequest& request, const DescribeLiveStreamsOnlineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLiveStreamsOnlineListOutcomeCallable describeLiveStreamsOnlineListCallable(const Model::DescribeLiveStreamsOnlineListRequest& request) const;
 			DescribeLiveStreamTranscodeInfoOutcome describeLiveStreamTranscodeInfo(const Model::DescribeLiveStreamTranscodeInfoRequest &request)const;
 			void describeLiveStreamTranscodeInfoAsync(const Model::DescribeLiveStreamTranscodeInfoRequest& request, const DescribeLiveStreamTranscodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamTranscodeInfoOutcomeCallable describeLiveStreamTranscodeInfoCallable(const Model::DescribeLiveStreamTranscodeInfoRequest& request) const;
+			DescribeLiveStreamsOnlineListOutcome describeLiveStreamsOnlineList(const Model::DescribeLiveStreamsOnlineListRequest &request)const;
+			void describeLiveStreamsOnlineListAsync(const Model::DescribeLiveStreamsOnlineListRequest& request, const DescribeLiveStreamsOnlineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamsOnlineListOutcomeCallable describeLiveStreamsOnlineListCallable(const Model::DescribeLiveStreamsOnlineListRequest& request) const;
 			DeleteLiveSnapshotDetectPornConfigOutcome deleteLiveSnapshotDetectPornConfig(const Model::DeleteLiveSnapshotDetectPornConfigRequest &request)const;
 			void deleteLiveSnapshotDetectPornConfigAsync(const Model::DeleteLiveSnapshotDetectPornConfigRequest& request, const DeleteLiveSnapshotDetectPornConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveSnapshotDetectPornConfigOutcomeCallable deleteLiveSnapshotDetectPornConfigCallable(const Model::DeleteLiveSnapshotDetectPornConfigRequest& request) const;
@@ -894,12 +909,12 @@ namespace AlibabaCloud
 			DescribeCasterRtcInfoOutcome describeCasterRtcInfo(const Model::DescribeCasterRtcInfoRequest &request)const;
 			void describeCasterRtcInfoAsync(const Model::DescribeCasterRtcInfoRequest& request, const DescribeCasterRtcInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCasterRtcInfoOutcomeCallable describeCasterRtcInfoCallable(const Model::DescribeCasterRtcInfoRequest& request) const;
-			AddTrancodeSEIOutcome addTrancodeSEI(const Model::AddTrancodeSEIRequest &request)const;
-			void addTrancodeSEIAsync(const Model::AddTrancodeSEIRequest& request, const AddTrancodeSEIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddTrancodeSEIOutcomeCallable addTrancodeSEICallable(const Model::AddTrancodeSEIRequest& request) const;
 			SetCasterSceneConfigOutcome setCasterSceneConfig(const Model::SetCasterSceneConfigRequest &request)const;
 			void setCasterSceneConfigAsync(const Model::SetCasterSceneConfigRequest& request, const SetCasterSceneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetCasterSceneConfigOutcomeCallable setCasterSceneConfigCallable(const Model::SetCasterSceneConfigRequest& request) const;
+			AddTrancodeSEIOutcome addTrancodeSEI(const Model::AddTrancodeSEIRequest &request)const;
+			void addTrancodeSEIAsync(const Model::AddTrancodeSEIRequest& request, const AddTrancodeSEIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddTrancodeSEIOutcomeCallable addTrancodeSEICallable(const Model::AddTrancodeSEIRequest& request) const;
 			DeleteBoardOutcome deleteBoard(const Model::DeleteBoardRequest &request)const;
 			void deleteBoardAsync(const Model::DeleteBoardRequest& request, const DeleteBoardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteBoardOutcomeCallable deleteBoardCallable(const Model::DeleteBoardRequest& request) const;
@@ -927,18 +942,21 @@ namespace AlibabaCloud
 			DescribeLiveStreamRecordIndexFileOutcome describeLiveStreamRecordIndexFile(const Model::DescribeLiveStreamRecordIndexFileRequest &request)const;
 			void describeLiveStreamRecordIndexFileAsync(const Model::DescribeLiveStreamRecordIndexFileRequest& request, const DescribeLiveStreamRecordIndexFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamRecordIndexFileOutcomeCallable describeLiveStreamRecordIndexFileCallable(const Model::DescribeLiveStreamRecordIndexFileRequest& request) const;
+			DescribeLiveStreamTranscodeStreamNumOutcome describeLiveStreamTranscodeStreamNum(const Model::DescribeLiveStreamTranscodeStreamNumRequest &request)const;
+			void describeLiveStreamTranscodeStreamNumAsync(const Model::DescribeLiveStreamTranscodeStreamNumRequest& request, const DescribeLiveStreamTranscodeStreamNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamTranscodeStreamNumOutcomeCallable describeLiveStreamTranscodeStreamNumCallable(const Model::DescribeLiveStreamTranscodeStreamNumRequest& request) const;
 			DescribeCasterConfigOutcome describeCasterConfig(const Model::DescribeCasterConfigRequest &request)const;
 			void describeCasterConfigAsync(const Model::DescribeCasterConfigRequest& request, const DescribeCasterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCasterConfigOutcomeCallable describeCasterConfigCallable(const Model::DescribeCasterConfigRequest& request) const;
 			CopyCasterOutcome copyCaster(const Model::CopyCasterRequest &request)const;
 			void copyCasterAsync(const Model::CopyCasterRequest& request, const CopyCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CopyCasterOutcomeCallable copyCasterCallable(const Model::CopyCasterRequest& request) const;
-			SetLiveLazyPullStreamInfoConfigOutcome setLiveLazyPullStreamInfoConfig(const Model::SetLiveLazyPullStreamInfoConfigRequest &request)const;
-			void setLiveLazyPullStreamInfoConfigAsync(const Model::SetLiveLazyPullStreamInfoConfigRequest& request, const SetLiveLazyPullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetLiveLazyPullStreamInfoConfigOutcomeCallable setLiveLazyPullStreamInfoConfigCallable(const Model::SetLiveLazyPullStreamInfoConfigRequest& request) const;
 			AddCustomLiveStreamTranscodeOutcome addCustomLiveStreamTranscode(const Model::AddCustomLiveStreamTranscodeRequest &request)const;
 			void addCustomLiveStreamTranscodeAsync(const Model::AddCustomLiveStreamTranscodeRequest& request, const AddCustomLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddCustomLiveStreamTranscodeOutcomeCallable addCustomLiveStreamTranscodeCallable(const Model::AddCustomLiveStreamTranscodeRequest& request) const;
+			SetLiveLazyPullStreamInfoConfigOutcome setLiveLazyPullStreamInfoConfig(const Model::SetLiveLazyPullStreamInfoConfigRequest &request)const;
+			void setLiveLazyPullStreamInfoConfigAsync(const Model::SetLiveLazyPullStreamInfoConfigRequest& request, const SetLiveLazyPullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetLiveLazyPullStreamInfoConfigOutcomeCallable setLiveLazyPullStreamInfoConfigCallable(const Model::SetLiveLazyPullStreamInfoConfigRequest& request) const;
 			AddCasterEpisodeOutcome addCasterEpisode(const Model::AddCasterEpisodeRequest &request)const;
 			void addCasterEpisodeAsync(const Model::AddCasterEpisodeRequest& request, const AddCasterEpisodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddCasterEpisodeOutcomeCallable addCasterEpisodeCallable(const Model::AddCasterEpisodeRequest& request) const;
@@ -948,18 +966,18 @@ namespace AlibabaCloud
 			AllowPushStreamOutcome allowPushStream(const Model::AllowPushStreamRequest &request)const;
 			void allowPushStreamAsync(const Model::AllowPushStreamRequest& request, const AllowPushStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllowPushStreamOutcomeCallable allowPushStreamCallable(const Model::AllowPushStreamRequest& request) const;
-			DescribeLiveRecordConfigOutcome describeLiveRecordConfig(const Model::DescribeLiveRecordConfigRequest &request)const;
-			void describeLiveRecordConfigAsync(const Model::DescribeLiveRecordConfigRequest& request, const DescribeLiveRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLiveRecordConfigOutcomeCallable describeLiveRecordConfigCallable(const Model::DescribeLiveRecordConfigRequest& request) const;
 			ForbidPushStreamOutcome forbidPushStream(const Model::ForbidPushStreamRequest &request)const;
 			void forbidPushStreamAsync(const Model::ForbidPushStreamRequest& request, const ForbidPushStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ForbidPushStreamOutcomeCallable forbidPushStreamCallable(const Model::ForbidPushStreamRequest& request) const;
-			DescribeHlsLiveStreamRealTimeBpsDataOutcome describeHlsLiveStreamRealTimeBpsData(const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest &request)const;
-			void describeHlsLiveStreamRealTimeBpsDataAsync(const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest& request, const DescribeHlsLiveStreamRealTimeBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeHlsLiveStreamRealTimeBpsDataOutcomeCallable describeHlsLiveStreamRealTimeBpsDataCallable(const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest& request) const;
+			DescribeLiveRecordConfigOutcome describeLiveRecordConfig(const Model::DescribeLiveRecordConfigRequest &request)const;
+			void describeLiveRecordConfigAsync(const Model::DescribeLiveRecordConfigRequest& request, const DescribeLiveRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveRecordConfigOutcomeCallable describeLiveRecordConfigCallable(const Model::DescribeLiveRecordConfigRequest& request) const;
 			AddLiveRecordNotifyConfigOutcome addLiveRecordNotifyConfig(const Model::AddLiveRecordNotifyConfigRequest &request)const;
 			void addLiveRecordNotifyConfigAsync(const Model::AddLiveRecordNotifyConfigRequest& request, const AddLiveRecordNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddLiveRecordNotifyConfigOutcomeCallable addLiveRecordNotifyConfigCallable(const Model::AddLiveRecordNotifyConfigRequest& request) const;
+			DescribeHlsLiveStreamRealTimeBpsDataOutcome describeHlsLiveStreamRealTimeBpsData(const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest &request)const;
+			void describeHlsLiveStreamRealTimeBpsDataAsync(const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest& request, const DescribeHlsLiveStreamRealTimeBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeHlsLiveStreamRealTimeBpsDataOutcomeCallable describeHlsLiveStreamRealTimeBpsDataCallable(const Model::DescribeHlsLiveStreamRealTimeBpsDataRequest& request) const;
 			DeleteLiveRecordNotifyConfigOutcome deleteLiveRecordNotifyConfig(const Model::DeleteLiveRecordNotifyConfigRequest &request)const;
 			void deleteLiveRecordNotifyConfigAsync(const Model::DeleteLiveRecordNotifyConfigRequest& request, const DeleteLiveRecordNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveRecordNotifyConfigOutcomeCallable deleteLiveRecordNotifyConfigCallable(const Model::DeleteLiveRecordNotifyConfigRequest& request) const;
@@ -990,30 +1008,33 @@ namespace AlibabaCloud
 			DeleteLiveAppSnapshotConfigOutcome deleteLiveAppSnapshotConfig(const Model::DeleteLiveAppSnapshotConfigRequest &request)const;
 			void deleteLiveAppSnapshotConfigAsync(const Model::DeleteLiveAppSnapshotConfigRequest& request, const DeleteLiveAppSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveAppSnapshotConfigOutcomeCallable deleteLiveAppSnapshotConfigCallable(const Model::DeleteLiveAppSnapshotConfigRequest& request) const;
-			DescribeLiveStreamsNotifyUrlConfigOutcome describeLiveStreamsNotifyUrlConfig(const Model::DescribeLiveStreamsNotifyUrlConfigRequest &request)const;
-			void describeLiveStreamsNotifyUrlConfigAsync(const Model::DescribeLiveStreamsNotifyUrlConfigRequest& request, const DescribeLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLiveStreamsNotifyUrlConfigOutcomeCallable describeLiveStreamsNotifyUrlConfigCallable(const Model::DescribeLiveStreamsNotifyUrlConfigRequest& request) const;
-			UpdateCasterSceneAudioOutcome updateCasterSceneAudio(const Model::UpdateCasterSceneAudioRequest &request)const;
-			void updateCasterSceneAudioAsync(const Model::UpdateCasterSceneAudioRequest& request, const UpdateCasterSceneAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateCasterSceneAudioOutcomeCallable updateCasterSceneAudioCallable(const Model::UpdateCasterSceneAudioRequest& request) const;
 			ApplyRecordTokenOutcome applyRecordToken(const Model::ApplyRecordTokenRequest &request)const;
 			void applyRecordTokenAsync(const Model::ApplyRecordTokenRequest& request, const ApplyRecordTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApplyRecordTokenOutcomeCallable applyRecordTokenCallable(const Model::ApplyRecordTokenRequest& request) const;
+			UpdateCasterSceneAudioOutcome updateCasterSceneAudio(const Model::UpdateCasterSceneAudioRequest &request)const;
+			void updateCasterSceneAudioAsync(const Model::UpdateCasterSceneAudioRequest& request, const UpdateCasterSceneAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCasterSceneAudioOutcomeCallable updateCasterSceneAudioCallable(const Model::UpdateCasterSceneAudioRequest& request) const;
+			DescribeLiveStreamsNotifyUrlConfigOutcome describeLiveStreamsNotifyUrlConfig(const Model::DescribeLiveStreamsNotifyUrlConfigRequest &request)const;
+			void describeLiveStreamsNotifyUrlConfigAsync(const Model::DescribeLiveStreamsNotifyUrlConfigRequest& request, const DescribeLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamsNotifyUrlConfigOutcomeCallable describeLiveStreamsNotifyUrlConfigCallable(const Model::DescribeLiveStreamsNotifyUrlConfigRequest& request) const;
 			DescribeUpBpsPeakDataOutcome describeUpBpsPeakData(const Model::DescribeUpBpsPeakDataRequest &request)const;
 			void describeUpBpsPeakDataAsync(const Model::DescribeUpBpsPeakDataRequest& request, const DescribeUpBpsPeakDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUpBpsPeakDataOutcomeCallable describeUpBpsPeakDataCallable(const Model::DescribeUpBpsPeakDataRequest& request) const;
+			UpdateLiveTopLevelDomainOutcome updateLiveTopLevelDomain(const Model::UpdateLiveTopLevelDomainRequest &request)const;
+			void updateLiveTopLevelDomainAsync(const Model::UpdateLiveTopLevelDomainRequest& request, const UpdateLiveTopLevelDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveTopLevelDomainOutcomeCallable updateLiveTopLevelDomainCallable(const Model::UpdateLiveTopLevelDomainRequest& request) const;
 			DeleteLivePullStreamInfoConfigOutcome deleteLivePullStreamInfoConfig(const Model::DeleteLivePullStreamInfoConfigRequest &request)const;
 			void deleteLivePullStreamInfoConfigAsync(const Model::DeleteLivePullStreamInfoConfigRequest& request, const DeleteLivePullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLivePullStreamInfoConfigOutcomeCallable deleteLivePullStreamInfoConfigCallable(const Model::DeleteLivePullStreamInfoConfigRequest& request) const;
 			ModifyLiveDomainSchdmByPropertyOutcome modifyLiveDomainSchdmByProperty(const Model::ModifyLiveDomainSchdmByPropertyRequest &request)const;
 			void modifyLiveDomainSchdmByPropertyAsync(const Model::ModifyLiveDomainSchdmByPropertyRequest& request, const ModifyLiveDomainSchdmByPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLiveDomainSchdmByPropertyOutcomeCallable modifyLiveDomainSchdmByPropertyCallable(const Model::ModifyLiveDomainSchdmByPropertyRequest& request) const;
-			ModifyCasterProgramOutcome modifyCasterProgram(const Model::ModifyCasterProgramRequest &request)const;
-			void modifyCasterProgramAsync(const Model::ModifyCasterProgramRequest& request, const ModifyCasterProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyCasterProgramOutcomeCallable modifyCasterProgramCallable(const Model::ModifyCasterProgramRequest& request) const;
 			DescribeBoardEventsOutcome describeBoardEvents(const Model::DescribeBoardEventsRequest &request)const;
 			void describeBoardEventsAsync(const Model::DescribeBoardEventsRequest& request, const DescribeBoardEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBoardEventsOutcomeCallable describeBoardEventsCallable(const Model::DescribeBoardEventsRequest& request) const;
+			ModifyCasterProgramOutcome modifyCasterProgram(const Model::ModifyCasterProgramRequest &request)const;
+			void modifyCasterProgramAsync(const Model::ModifyCasterProgramRequest& request, const ModifyCasterProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCasterProgramOutcomeCallable modifyCasterProgramCallable(const Model::ModifyCasterProgramRequest& request) const;
 			DescribeLiveCertificateDetailOutcome describeLiveCertificateDetail(const Model::DescribeLiveCertificateDetailRequest &request)const;
 			void describeLiveCertificateDetailAsync(const Model::DescribeLiveCertificateDetailRequest& request, const DescribeLiveCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveCertificateDetailOutcomeCallable describeLiveCertificateDetailCallable(const Model::DescribeLiveCertificateDetailRequest& request) const;
@@ -1023,6 +1044,9 @@ namespace AlibabaCloud
 			SetLiveStreamsNotifyUrlConfigOutcome setLiveStreamsNotifyUrlConfig(const Model::SetLiveStreamsNotifyUrlConfigRequest &request)const;
 			void setLiveStreamsNotifyUrlConfigAsync(const Model::SetLiveStreamsNotifyUrlConfigRequest& request, const SetLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLiveStreamsNotifyUrlConfigOutcomeCallable setLiveStreamsNotifyUrlConfigCallable(const Model::SetLiveStreamsNotifyUrlConfigRequest& request) const;
+			AddLivePullStreamInfoConfigOutcome addLivePullStreamInfoConfig(const Model::AddLivePullStreamInfoConfigRequest &request)const;
+			void addLivePullStreamInfoConfigAsync(const Model::AddLivePullStreamInfoConfigRequest& request, const AddLivePullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLivePullStreamInfoConfigOutcomeCallable addLivePullStreamInfoConfigCallable(const Model::AddLivePullStreamInfoConfigRequest& request) const;
 			StartLiveDomainOutcome startLiveDomain(const Model::StartLiveDomainRequest &request)const;
 			void startLiveDomainAsync(const Model::StartLiveDomainRequest& request, const StartLiveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartLiveDomainOutcomeCallable startLiveDomainCallable(const Model::StartLiveDomainRequest& request) const;
@@ -1032,12 +1056,12 @@ namespace AlibabaCloud
 			DescribeCasterSceneAudioOutcome describeCasterSceneAudio(const Model::DescribeCasterSceneAudioRequest &request)const;
 			void describeCasterSceneAudioAsync(const Model::DescribeCasterSceneAudioRequest& request, const DescribeCasterSceneAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCasterSceneAudioOutcomeCallable describeCasterSceneAudioCallable(const Model::DescribeCasterSceneAudioRequest& request) const;
-			DescribeRoomKickoutUserListOutcome describeRoomKickoutUserList(const Model::DescribeRoomKickoutUserListRequest &request)const;
-			void describeRoomKickoutUserListAsync(const Model::DescribeRoomKickoutUserListRequest& request, const DescribeRoomKickoutUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRoomKickoutUserListOutcomeCallable describeRoomKickoutUserListCallable(const Model::DescribeRoomKickoutUserListRequest& request) const;
 			AddCasterVideoResourceOutcome addCasterVideoResource(const Model::AddCasterVideoResourceRequest &request)const;
 			void addCasterVideoResourceAsync(const Model::AddCasterVideoResourceRequest& request, const AddCasterVideoResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddCasterVideoResourceOutcomeCallable addCasterVideoResourceCallable(const Model::AddCasterVideoResourceRequest& request) const;
+			DescribeRoomKickoutUserListOutcome describeRoomKickoutUserList(const Model::DescribeRoomKickoutUserListRequest &request)const;
+			void describeRoomKickoutUserListAsync(const Model::DescribeRoomKickoutUserListRequest& request, const DescribeRoomKickoutUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRoomKickoutUserListOutcomeCallable describeRoomKickoutUserListCallable(const Model::DescribeRoomKickoutUserListRequest& request) const;
 			AddLiveStreamTranscodeOutcome addLiveStreamTranscode(const Model::AddLiveStreamTranscodeRequest &request)const;
 			void addLiveStreamTranscodeAsync(const Model::AddLiveStreamTranscodeRequest& request, const AddLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddLiveStreamTranscodeOutcomeCallable addLiveStreamTranscodeCallable(const Model::AddLiveStreamTranscodeRequest& request) const;
@@ -1092,21 +1116,21 @@ namespace AlibabaCloud
 			DescribeLiveStreamsFrameRateAndBitRateDataOutcome describeLiveStreamsFrameRateAndBitRateData(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest &request)const;
 			void describeLiveStreamsFrameRateAndBitRateDataAsync(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest& request, const DescribeLiveStreamsFrameRateAndBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamsFrameRateAndBitRateDataOutcomeCallable describeLiveStreamsFrameRateAndBitRateDataCallable(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest& request) const;
-			DescribeForbidPushStreamRoomListOutcome describeForbidPushStreamRoomList(const Model::DescribeForbidPushStreamRoomListRequest &request)const;
-			void describeForbidPushStreamRoomListAsync(const Model::DescribeForbidPushStreamRoomListRequest& request, const DescribeForbidPushStreamRoomListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeForbidPushStreamRoomListOutcomeCallable describeForbidPushStreamRoomListCallable(const Model::DescribeForbidPushStreamRoomListRequest& request) const;
 			DescribeLiveStreamRecordContentOutcome describeLiveStreamRecordContent(const Model::DescribeLiveStreamRecordContentRequest &request)const;
 			void describeLiveStreamRecordContentAsync(const Model::DescribeLiveStreamRecordContentRequest& request, const DescribeLiveStreamRecordContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamRecordContentOutcomeCallable describeLiveStreamRecordContentCallable(const Model::DescribeLiveStreamRecordContentRequest& request) const;
+			DescribeForbidPushStreamRoomListOutcome describeForbidPushStreamRoomList(const Model::DescribeForbidPushStreamRoomListRequest &request)const;
+			void describeForbidPushStreamRoomListAsync(const Model::DescribeForbidPushStreamRoomListRequest& request, const DescribeForbidPushStreamRoomListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeForbidPushStreamRoomListOutcomeCallable describeForbidPushStreamRoomListCallable(const Model::DescribeForbidPushStreamRoomListRequest& request) const;
 			CreateCasterOutcome createCaster(const Model::CreateCasterRequest &request)const;
 			void createCasterAsync(const Model::CreateCasterRequest& request, const CreateCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCasterOutcomeCallable createCasterCallable(const Model::CreateCasterRequest& request) const;
-			AddLiveSnapshotDetectPornConfigOutcome addLiveSnapshotDetectPornConfig(const Model::AddLiveSnapshotDetectPornConfigRequest &request)const;
-			void addLiveSnapshotDetectPornConfigAsync(const Model::AddLiveSnapshotDetectPornConfigRequest& request, const AddLiveSnapshotDetectPornConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddLiveSnapshotDetectPornConfigOutcomeCallable addLiveSnapshotDetectPornConfigCallable(const Model::AddLiveSnapshotDetectPornConfigRequest& request) const;
 			DescribeCasterLayoutsOutcome describeCasterLayouts(const Model::DescribeCasterLayoutsRequest &request)const;
 			void describeCasterLayoutsAsync(const Model::DescribeCasterLayoutsRequest& request, const DescribeCasterLayoutsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCasterLayoutsOutcomeCallable describeCasterLayoutsCallable(const Model::DescribeCasterLayoutsRequest& request) const;
+			AddLiveSnapshotDetectPornConfigOutcome addLiveSnapshotDetectPornConfig(const Model::AddLiveSnapshotDetectPornConfigRequest &request)const;
+			void addLiveSnapshotDetectPornConfigAsync(const Model::AddLiveSnapshotDetectPornConfigRequest& request, const AddLiveSnapshotDetectPornConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveSnapshotDetectPornConfigOutcomeCallable addLiveSnapshotDetectPornConfigCallable(const Model::AddLiveSnapshotDetectPornConfigRequest& request) const;
 			SetCasterChannelOutcome setCasterChannel(const Model::SetCasterChannelRequest &request)const;
 			void setCasterChannelAsync(const Model::SetCasterChannelRequest& request, const SetCasterChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetCasterChannelOutcomeCallable setCasterChannelCallable(const Model::SetCasterChannelRequest& request) const;
@@ -1137,12 +1161,12 @@ namespace AlibabaCloud
 			AddLiveAppRecordConfigOutcome addLiveAppRecordConfig(const Model::AddLiveAppRecordConfigRequest &request)const;
 			void addLiveAppRecordConfigAsync(const Model::AddLiveAppRecordConfigRequest& request, const AddLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddLiveAppRecordConfigOutcomeCallable addLiveAppRecordConfigCallable(const Model::AddLiveAppRecordConfigRequest& request) const;
-			AddLiveRecordVodConfigOutcome addLiveRecordVodConfig(const Model::AddLiveRecordVodConfigRequest &request)const;
-			void addLiveRecordVodConfigAsync(const Model::AddLiveRecordVodConfigRequest& request, const AddLiveRecordVodConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddLiveRecordVodConfigOutcomeCallable addLiveRecordVodConfigCallable(const Model::AddLiveRecordVodConfigRequest& request) const;
 			SendRoomUserNotificationOutcome sendRoomUserNotification(const Model::SendRoomUserNotificationRequest &request)const;
 			void sendRoomUserNotificationAsync(const Model::SendRoomUserNotificationRequest& request, const SendRoomUserNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendRoomUserNotificationOutcomeCallable sendRoomUserNotificationCallable(const Model::SendRoomUserNotificationRequest& request) const;
+			AddLiveRecordVodConfigOutcome addLiveRecordVodConfig(const Model::AddLiveRecordVodConfigRequest &request)const;
+			void addLiveRecordVodConfigAsync(const Model::AddLiveRecordVodConfigRequest& request, const AddLiveRecordVodConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveRecordVodConfigOutcomeCallable addLiveRecordVodConfigCallable(const Model::AddLiveRecordVodConfigRequest& request) const;
 			DeleteLiveDomainMappingOutcome deleteLiveDomainMapping(const Model::DeleteLiveDomainMappingRequest &request)const;
 			void deleteLiveDomainMappingAsync(const Model::DeleteLiveDomainMappingRequest& request, const DeleteLiveDomainMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveDomainMappingOutcomeCallable deleteLiveDomainMappingCallable(const Model::DeleteLiveDomainMappingRequest& request) const;
@@ -1194,12 +1218,12 @@ namespace AlibabaCloud
 			SetLiveStreamDelayConfigOutcome setLiveStreamDelayConfig(const Model::SetLiveStreamDelayConfigRequest &request)const;
 			void setLiveStreamDelayConfigAsync(const Model::SetLiveStreamDelayConfigRequest& request, const SetLiveStreamDelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLiveStreamDelayConfigOutcomeCallable setLiveStreamDelayConfigCallable(const Model::SetLiveStreamDelayConfigRequest& request) const;
-			DeleteCasterEpisodeGroupOutcome deleteCasterEpisodeGroup(const Model::DeleteCasterEpisodeGroupRequest &request)const;
-			void deleteCasterEpisodeGroupAsync(const Model::DeleteCasterEpisodeGroupRequest& request, const DeleteCasterEpisodeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteCasterEpisodeGroupOutcomeCallable deleteCasterEpisodeGroupCallable(const Model::DeleteCasterEpisodeGroupRequest& request) const;
 			DescribeLiveStreamOptimizedFeatureConfigOutcome describeLiveStreamOptimizedFeatureConfig(const Model::DescribeLiveStreamOptimizedFeatureConfigRequest &request)const;
 			void describeLiveStreamOptimizedFeatureConfigAsync(const Model::DescribeLiveStreamOptimizedFeatureConfigRequest& request, const DescribeLiveStreamOptimizedFeatureConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamOptimizedFeatureConfigOutcomeCallable describeLiveStreamOptimizedFeatureConfigCallable(const Model::DescribeLiveStreamOptimizedFeatureConfigRequest& request) const;
+			DeleteCasterEpisodeGroupOutcome deleteCasterEpisodeGroup(const Model::DeleteCasterEpisodeGroupRequest &request)const;
+			void deleteCasterEpisodeGroupAsync(const Model::DeleteCasterEpisodeGroupRequest& request, const DeleteCasterEpisodeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCasterEpisodeGroupOutcomeCallable deleteCasterEpisodeGroupCallable(const Model::DeleteCasterEpisodeGroupRequest& request) const;
 			DescribeCasterVideoResourcesOutcome describeCasterVideoResources(const Model::DescribeCasterVideoResourcesRequest &request)const;
 			void describeCasterVideoResourcesAsync(const Model::DescribeCasterVideoResourcesRequest& request, const DescribeCasterVideoResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCasterVideoResourcesOutcomeCallable describeCasterVideoResourcesCallable(const Model::DescribeCasterVideoResourcesRequest& request) const;
@@ -1209,12 +1233,12 @@ namespace AlibabaCloud
 			DeleteLiveDetectNotifyConfigOutcome deleteLiveDetectNotifyConfig(const Model::DeleteLiveDetectNotifyConfigRequest &request)const;
 			void deleteLiveDetectNotifyConfigAsync(const Model::DeleteLiveDetectNotifyConfigRequest& request, const DeleteLiveDetectNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveDetectNotifyConfigOutcomeCallable deleteLiveDetectNotifyConfigCallable(const Model::DeleteLiveDetectNotifyConfigRequest& request) const;
-			EffectCasterVideoResourceOutcome effectCasterVideoResource(const Model::EffectCasterVideoResourceRequest &request)const;
-			void effectCasterVideoResourceAsync(const Model::EffectCasterVideoResourceRequest& request, const EffectCasterVideoResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			EffectCasterVideoResourceOutcomeCallable effectCasterVideoResourceCallable(const Model::EffectCasterVideoResourceRequest& request) const;
 			RealTimeSnapshotCommandOutcome realTimeSnapshotCommand(const Model::RealTimeSnapshotCommandRequest &request)const;
 			void realTimeSnapshotCommandAsync(const Model::RealTimeSnapshotCommandRequest& request, const RealTimeSnapshotCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RealTimeSnapshotCommandOutcomeCallable realTimeSnapshotCommandCallable(const Model::RealTimeSnapshotCommandRequest& request) const;
+			EffectCasterVideoResourceOutcome effectCasterVideoResource(const Model::EffectCasterVideoResourceRequest &request)const;
+			void effectCasterVideoResourceAsync(const Model::EffectCasterVideoResourceRequest& request, const EffectCasterVideoResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EffectCasterVideoResourceOutcomeCallable effectCasterVideoResourceCallable(const Model::EffectCasterVideoResourceRequest& request) const;
 			DescribeUpPeakPublishStreamDataOutcome describeUpPeakPublishStreamData(const Model::DescribeUpPeakPublishStreamDataRequest &request)const;
 			void describeUpPeakPublishStreamDataAsync(const Model::DescribeUpPeakPublishStreamDataRequest& request, const DescribeUpPeakPublishStreamDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUpPeakPublishStreamDataOutcomeCallable describeUpPeakPublishStreamDataCallable(const Model::DescribeUpPeakPublishStreamDataRequest& request) const;
@@ -1230,21 +1254,21 @@ namespace AlibabaCloud
 			RealTimeRecordCommandOutcome realTimeRecordCommand(const Model::RealTimeRecordCommandRequest &request)const;
 			void realTimeRecordCommandAsync(const Model::RealTimeRecordCommandRequest& request, const RealTimeRecordCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RealTimeRecordCommandOutcomeCallable realTimeRecordCommandCallable(const Model::RealTimeRecordCommandRequest& request) const;
-			AddLiveDomainMappingOutcome addLiveDomainMapping(const Model::AddLiveDomainMappingRequest &request)const;
-			void addLiveDomainMappingAsync(const Model::AddLiveDomainMappingRequest& request, const AddLiveDomainMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddLiveDomainMappingOutcomeCallable addLiveDomainMappingCallable(const Model::AddLiveDomainMappingRequest& request) const;
 			SetCasterConfigOutcome setCasterConfig(const Model::SetCasterConfigRequest &request)const;
 			void setCasterConfigAsync(const Model::SetCasterConfigRequest& request, const SetCasterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetCasterConfigOutcomeCallable setCasterConfigCallable(const Model::SetCasterConfigRequest& request) const;
+			AddLiveDomainMappingOutcome addLiveDomainMapping(const Model::AddLiveDomainMappingRequest &request)const;
+			void addLiveDomainMappingAsync(const Model::AddLiveDomainMappingRequest& request, const AddLiveDomainMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveDomainMappingOutcomeCallable addLiveDomainMappingCallable(const Model::AddLiveDomainMappingRequest& request) const;
 			StartCasterOutcome startCaster(const Model::StartCasterRequest &request)const;
 			void startCasterAsync(const Model::StartCasterRequest& request, const StartCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartCasterOutcomeCallable startCasterCallable(const Model::StartCasterRequest& request) const;
-			ResumeLiveStreamOutcome resumeLiveStream(const Model::ResumeLiveStreamRequest &request)const;
-			void resumeLiveStreamAsync(const Model::ResumeLiveStreamRequest& request, const ResumeLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ResumeLiveStreamOutcomeCallable resumeLiveStreamCallable(const Model::ResumeLiveStreamRequest& request) const;
 			UpdateBoardOutcome updateBoard(const Model::UpdateBoardRequest &request)const;
 			void updateBoardAsync(const Model::UpdateBoardRequest& request, const UpdateBoardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateBoardOutcomeCallable updateBoardCallable(const Model::UpdateBoardRequest& request) const;
+			ResumeLiveStreamOutcome resumeLiveStream(const Model::ResumeLiveStreamRequest &request)const;
+			void resumeLiveStreamAsync(const Model::ResumeLiveStreamRequest& request, const ResumeLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResumeLiveStreamOutcomeCallable resumeLiveStreamCallable(const Model::ResumeLiveStreamRequest& request) const;
 			AddCasterLayoutOutcome addCasterLayout(const Model::AddCasterLayoutRequest &request)const;
 			void addCasterLayoutAsync(const Model::AddCasterLayoutRequest& request, const AddCasterLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddCasterLayoutOutcomeCallable addCasterLayoutCallable(const Model::AddCasterLayoutRequest& request) const;
@@ -1254,12 +1278,12 @@ namespace AlibabaCloud
 			DescribeLiveUserDomainsOutcome describeLiveUserDomains(const Model::DescribeLiveUserDomainsRequest &request)const;
 			void describeLiveUserDomainsAsync(const Model::DescribeLiveUserDomainsRequest& request, const DescribeLiveUserDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveUserDomainsOutcomeCallable describeLiveUserDomainsCallable(const Model::DescribeLiveUserDomainsRequest& request) const;
-			StopCasterOutcome stopCaster(const Model::StopCasterRequest &request)const;
-			void stopCasterAsync(const Model::StopCasterRequest& request, const StopCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StopCasterOutcomeCallable stopCasterCallable(const Model::StopCasterRequest& request) const;
 			ModifyCasterLayoutOutcome modifyCasterLayout(const Model::ModifyCasterLayoutRequest &request)const;
 			void modifyCasterLayoutAsync(const Model::ModifyCasterLayoutRequest& request, const ModifyCasterLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCasterLayoutOutcomeCallable modifyCasterLayoutCallable(const Model::ModifyCasterLayoutRequest& request) const;
+			StopCasterOutcome stopCaster(const Model::StopCasterRequest &request)const;
+			void stopCasterAsync(const Model::StopCasterRequest& request, const StopCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopCasterOutcomeCallable stopCasterCallable(const Model::StopCasterRequest& request) const;
 			DescribeLiveStreamsPublishListOutcome describeLiveStreamsPublishList(const Model::DescribeLiveStreamsPublishListRequest &request)const;
 			void describeLiveStreamsPublishListAsync(const Model::DescribeLiveStreamsPublishListRequest& request, const DescribeLiveStreamsPublishListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamsPublishListOutcomeCallable describeLiveStreamsPublishListCallable(const Model::DescribeLiveStreamsPublishListRequest& request) const;
@@ -1269,12 +1293,12 @@ namespace AlibabaCloud
 			DeleteCasterSceneConfigOutcome deleteCasterSceneConfig(const Model::DeleteCasterSceneConfigRequest &request)const;
 			void deleteCasterSceneConfigAsync(const Model::DeleteCasterSceneConfigRequest& request, const DeleteCasterSceneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCasterSceneConfigOutcomeCallable deleteCasterSceneConfigCallable(const Model::DeleteCasterSceneConfigRequest& request) const;
-			AddLiveDomainOutcome addLiveDomain(const Model::AddLiveDomainRequest &request)const;
-			void addLiveDomainAsync(const Model::AddLiveDomainRequest& request, const AddLiveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddLiveDomainOutcomeCallable addLiveDomainCallable(const Model::AddLiveDomainRequest& request) const;
 			StopLiveIndexOutcome stopLiveIndex(const Model::StopLiveIndexRequest &request)const;
 			void stopLiveIndexAsync(const Model::StopLiveIndexRequest& request, const StopLiveIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopLiveIndexOutcomeCallable stopLiveIndexCallable(const Model::StopLiveIndexRequest& request) const;
+			AddLiveDomainOutcome addLiveDomain(const Model::AddLiveDomainRequest &request)const;
+			void addLiveDomainAsync(const Model::AddLiveDomainRequest& request, const AddLiveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveDomainOutcomeCallable addLiveDomainCallable(const Model::AddLiveDomainRequest& request) const;
 			DeleteLiveAppRecordConfigOutcome deleteLiveAppRecordConfig(const Model::DeleteLiveAppRecordConfigRequest &request)const;
 			void deleteLiveAppRecordConfigAsync(const Model::DeleteLiveAppRecordConfigRequest& request, const DeleteLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveAppRecordConfigOutcomeCallable deleteLiveAppRecordConfigCallable(const Model::DeleteLiveAppRecordConfigRequest& request) const;
@@ -1302,12 +1326,12 @@ namespace AlibabaCloud
 			SetBoardCallbackOutcome setBoardCallback(const Model::SetBoardCallbackRequest &request)const;
 			void setBoardCallbackAsync(const Model::SetBoardCallbackRequest& request, const SetBoardCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetBoardCallbackOutcomeCallable setBoardCallbackCallable(const Model::SetBoardCallbackRequest& request) const;
-			SendRoomNotificationOutcome sendRoomNotification(const Model::SendRoomNotificationRequest &request)const;
-			void sendRoomNotificationAsync(const Model::SendRoomNotificationRequest& request, const SendRoomNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SendRoomNotificationOutcomeCallable sendRoomNotificationCallable(const Model::SendRoomNotificationRequest& request) const;
 			DeleteLiveLazyPullStreamInfoConfigOutcome deleteLiveLazyPullStreamInfoConfig(const Model::DeleteLiveLazyPullStreamInfoConfigRequest &request)const;
 			void deleteLiveLazyPullStreamInfoConfigAsync(const Model::DeleteLiveLazyPullStreamInfoConfigRequest& request, const DeleteLiveLazyPullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveLazyPullStreamInfoConfigOutcomeCallable deleteLiveLazyPullStreamInfoConfigCallable(const Model::DeleteLiveLazyPullStreamInfoConfigRequest& request) const;
+			SendRoomNotificationOutcome sendRoomNotification(const Model::SendRoomNotificationRequest &request)const;
+			void sendRoomNotificationAsync(const Model::SendRoomNotificationRequest& request, const SendRoomNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SendRoomNotificationOutcomeCallable sendRoomNotificationCallable(const Model::SendRoomNotificationRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

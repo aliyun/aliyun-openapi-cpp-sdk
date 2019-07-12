@@ -36,6 +36,17 @@ void AddCasterComponentRequest::setComponentType(const std::string& componentTyp
 	setCoreParameter("ComponentType", componentType);
 }
 
+std::string AddCasterComponentRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void AddCasterComponentRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string AddCasterComponentRequest::getLocationId()const
 {
 	return locationId_;

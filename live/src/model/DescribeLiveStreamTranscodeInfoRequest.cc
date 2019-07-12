@@ -25,15 +25,15 @@ DescribeLiveStreamTranscodeInfoRequest::DescribeLiveStreamTranscodeInfoRequest()
 DescribeLiveStreamTranscodeInfoRequest::~DescribeLiveStreamTranscodeInfoRequest()
 {}
 
-std::string DescribeLiveStreamTranscodeInfoRequest::getSecurityToken()const
+std::string DescribeLiveStreamTranscodeInfoRequest::getRegionId()const
 {
-	return securityToken_;
+	return regionId_;
 }
 
-void DescribeLiveStreamTranscodeInfoRequest::setSecurityToken(const std::string& securityToken)
+void DescribeLiveStreamTranscodeInfoRequest::setRegionId(const std::string& regionId)
 {
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 long DescribeLiveStreamTranscodeInfoRequest::getOwnerId()const
