@@ -90,6 +90,10 @@ void DescribeBackupPlanListResult::parse(const std::string &payload)
 			itemsObject.backupPlanCreateTime = std::stol(value["BackupPlanCreateTime"].asString());
 		if(!value["BackupPlanStatus"].isNull())
 			itemsObject.backupPlanStatus = value["BackupPlanStatus"].asString();
+		if(!value["BeginTimestampForRestore"].isNull())
+			itemsObject.beginTimestampForRestore = std::stol(value["BeginTimestampForRestore"].asString());
+		if(!value["EndTimestampForRestore"].isNull())
+			itemsObject.endTimestampForRestore = std::stol(value["EndTimestampForRestore"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

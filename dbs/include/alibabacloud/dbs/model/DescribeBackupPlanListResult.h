@@ -35,28 +35,30 @@ namespace AlibabaCloud
 				struct BackupPlanDetail
 				{
 					std::string backupPlanName;
-					std::string backupMethod;
 					long backupPlanCreateTime;
-					std::string backupPeriod;
 					std::string backupObjects;
 					std::string sourceEndpointInstanceID;
-					std::string instanceClass;
 					std::string sourceEndpointDatabaseName;
 					std::string oSSBucketRegion;
+					long beginTimestampForRestore;
 					std::string sourceEndpointRegion;
 					std::string sourceEndpointIpPort;
+					std::string backupPlanId;
+					std::string sourceEndpointInstanceType;
+					long backupGatewayId;
+					std::string sourceEndpointUserName;
+					int duplicationInfrequentAccessPeriod;
+					std::string backupMethod;
+					std::string backupPeriod;
+					std::string instanceClass;
+					long endTimestampForRestore;
 					int duplicationArchivePeriod;
 					std::string oSSBucketName;
 					std::string backupPlanStatus;
 					std::string backupStartTime;
 					bool enableBackupLog;
-					std::string backupPlanId;
 					std::string sourceEndpointOracleSID;
 					int backupRetentionPeriod;
-					std::string sourceEndpointInstanceType;
-					long backupGatewayId;
-					std::string sourceEndpointUserName;
-					int duplicationInfrequentAccessPeriod;
 				};
 
 
