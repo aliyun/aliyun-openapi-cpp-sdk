@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct LiveRecordVideo
 				{
-					struct VideoInListLiveRecordVideo
+					struct Video
 					{
 						std::string status;
 						std::string modifyTime;
@@ -78,7 +78,7 @@ namespace AlibabaCloud
 					std::string recordStartTime;
 					std::string domainName;
 					std::string recordEndTime;
-					VideoInListLiveRecordVideo videoInListLiveRecordVideo;
+					Video video;
 					std::vector<LiveRecordVideo::PlayInfo> playInfoList;
 					std::string appName;
 				};

@@ -62,6 +62,8 @@ void ListVodTemplateResult::parse(const std::string &payload)
 			vodTemplateInfoListObject.creationTime = value["CreationTime"].asString();
 		if(!value["ModifyTime"].isNull())
 			vodTemplateInfoListObject.modifyTime = value["ModifyTime"].asString();
+		if(!value["AppId"].isNull())
+			vodTemplateInfoListObject.appId = value["AppId"].asString();
 		vodTemplateInfoList_.push_back(vodTemplateInfoListObject);
 	}
 

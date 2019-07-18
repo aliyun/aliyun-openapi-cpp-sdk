@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				SubmitTranscodeJobsRequest();
 				~SubmitTranscodeJobsRequest();
 
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getTemplateGroupId()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				void setPipelineId(const std::string& pipelineId);
 
             private:
+				std::string userData_;
 				long resourceOwnerId_;
 				std::string templateGroupId_;
 				std::string resourceOwnerAccount_;

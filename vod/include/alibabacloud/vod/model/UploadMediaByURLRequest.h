@@ -35,18 +35,10 @@ namespace AlibabaCloud
 				UploadMediaByURLRequest();
 				~UploadMediaByURLRequest();
 
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getTemplateGroupId()const;
-				void setTemplateGroupId(const std::string& templateGroupId);
-				std::string getUploadMetadatas()const;
-				void setUploadMetadatas(const std::string& uploadMetadatas);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getUploadURLs()const;
-				void setUploadURLs(const std::string& uploadURLs);
 				std::string getMessageCallback()const;
 				void setMessageCallback(const std::string& messageCallback);
 				long getOwnerId()const;
@@ -55,18 +47,32 @@ namespace AlibabaCloud
 				void setPriority(const std::string& priority);
 				std::string getStorageLocation()const;
 				void setStorageLocation(const std::string& storageLocation);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
+				std::string getTemplateGroupId()const;
+				void setTemplateGroupId(const std::string& templateGroupId);
+				std::string getUploadMetadatas()const;
+				void setUploadMetadatas(const std::string& uploadMetadatas);
+				std::string getUploadURLs()const;
+				void setUploadURLs(const std::string& uploadURLs);
+				std::string getAppId()const;
+				void setAppId(const std::string& appId);
+				std::string getWorkflowId()const;
+				void setWorkflowId(const std::string& workflowId);
 
             private:
-				std::string userData_;
 				long resourceOwnerId_;
-				std::string templateGroupId_;
-				std::string uploadMetadatas_;
 				std::string resourceOwnerAccount_;
-				std::string uploadURLs_;
 				std::string messageCallback_;
 				long ownerId_;
 				std::string priority_;
 				std::string storageLocation_;
+				std::string userData_;
+				std::string templateGroupId_;
+				std::string uploadMetadatas_;
+				std::string uploadURLs_;
+				std::string appId_;
+				std::string workflowId_;
 
 			};
 		}

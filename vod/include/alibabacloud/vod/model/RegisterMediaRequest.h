@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getRegisterMetadatas()const;
 				void setRegisterMetadatas(const std::string& registerMetadatas);
-				std::string getWorkFlowId()const;
-				void setWorkFlowId(const std::string& workFlowId);
+				std::string getWorkflowId()const;
+				void setWorkflowId(const std::string& workflowId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
@@ -59,7 +59,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				long ownerId_;
 				std::string registerMetadatas_;
-				std::string workFlowId_;
+				std::string workflowId_;
 				std::string accessKeyId_;
 
 			};

@@ -201,6 +201,17 @@ void DescribeVodAIDataRequest::setPopProduct(const std::string& popProduct)
 	setCoreParameter("PopProduct", popProduct);
 }
 
+std::string DescribeVodAIDataRequest::getAIType()const
+{
+	return aIType_;
+}
+
+void DescribeVodAIDataRequest::setAIType(const std::string& aIType)
+{
+	aIType_ = aIType;
+	setCoreParameter("AIType", aIType);
+}
+
 std::string DescribeVodAIDataRequest::getEndTime()const
 {
 	return endTime_;
@@ -276,6 +287,17 @@ void DescribeVodAIDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
 	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+}
+
+std::string DescribeVodAIDataRequest::getServiceCode()const
+{
+	return serviceCode_;
+}
+
+void DescribeVodAIDataRequest::setServiceCode(const std::string& serviceCode)
+{
+	serviceCode_ = serviceCode;
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeVodAIDataRequest::getRequestId()const

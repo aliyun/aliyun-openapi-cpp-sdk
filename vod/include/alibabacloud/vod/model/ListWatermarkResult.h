@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string isDefault;
 					std::string fileUrl;
 					std::string type;
+					std::string appId;
 					std::string watermarkId;
 					std::string creationTime;
 					std::string watermarkConfig;

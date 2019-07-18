@@ -42,11 +42,13 @@ namespace AlibabaCloud
 				explicit SubmitTranscodeJobsResult(const std::string &payload);
 				~SubmitTranscodeJobsResult();
 				std::vector<TranscodeJob> getTranscodeJobs()const;
+				std::string getTranscodeTaskId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<TranscodeJob> transcodeJobs_;
+				std::string transcodeTaskId_;
 
 			};
 		}

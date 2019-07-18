@@ -25,6 +25,17 @@ SubmitTranscodeJobsRequest::SubmitTranscodeJobsRequest() :
 SubmitTranscodeJobsRequest::~SubmitTranscodeJobsRequest()
 {}
 
+std::string SubmitTranscodeJobsRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitTranscodeJobsRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
+}
+
 long SubmitTranscodeJobsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

@@ -56,6 +56,10 @@ void ListTranscodeTemplateGroupResult::parse(const std::string &payload)
 			transcodeTemplateGroupListObject.locked = value["Locked"].asString();
 		if(!value["TranscodeTemplateGroupId"].isNull())
 			transcodeTemplateGroupListObject.transcodeTemplateGroupId = value["TranscodeTemplateGroupId"].asString();
+		if(!value["TranscodeMode"].isNull())
+			transcodeTemplateGroupListObject.transcodeMode = value["TranscodeMode"].asString();
+		if(!value["AppId"].isNull())
+			transcodeTemplateGroupListObject.appId = value["AppId"].asString();
 		transcodeTemplateGroupList_.push_back(transcodeTemplateGroupListObject);
 	}
 

@@ -37,7 +37,9 @@ namespace AlibabaCloud
 					std::string isDefault;
 					std::string modifyTime;
 					std::string locked;
+					std::string appId;
 					std::string transcodeTemplateGroupId;
+					std::string transcodeMode;
 					std::string creationTime;
 					std::string name;
 				};

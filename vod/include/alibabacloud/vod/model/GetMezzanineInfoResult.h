@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VOD_EXPORT GetMezzanineInfoResult : public ServiceResult
 			{
 			public:
-				struct MezzanineInGetMezzanineInfo
+				struct Mezzanine
 				{
 					struct AudioStream
 					{
@@ -100,12 +100,12 @@ namespace AlibabaCloud
 				GetMezzanineInfoResult();
 				explicit GetMezzanineInfoResult(const std::string &payload);
 				~GetMezzanineInfoResult();
-				MezzanineInGetMezzanineInfo getMezzanineInGetMezzanineInfo()const;
+				Mezzanine getMezzanine()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				MezzanineInGetMezzanineInfo mezzanineInGetMezzanineInfo_;
+				Mezzanine mezzanine_;
 
 			};
 		}

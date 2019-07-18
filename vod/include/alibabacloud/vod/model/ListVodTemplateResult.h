@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string isDefault;
 					std::string modifyTime;
+					std::string appId;
 					std::string creationTime;
 					std::string templateConfig;
 					std::string templateType;

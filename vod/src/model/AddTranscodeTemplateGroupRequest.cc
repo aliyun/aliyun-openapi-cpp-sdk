@@ -58,6 +58,17 @@ void AddTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string AddTranscodeTemplateGroupRequest::getAppId()const
+{
+	return appId_;
+}
+
+void AddTranscodeTemplateGroupRequest::setAppId(const std::string& appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
+}
+
 std::string AddTranscodeTemplateGroupRequest::getName()const
 {
 	return name_;

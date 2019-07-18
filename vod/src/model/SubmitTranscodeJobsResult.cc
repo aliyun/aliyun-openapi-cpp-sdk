@@ -48,11 +48,18 @@ void SubmitTranscodeJobsResult::parse(const std::string &payload)
 			transcodeJobsObject.jobId = value["JobId"].asString();
 		transcodeJobs_.push_back(transcodeJobsObject);
 	}
+	if(!value["TranscodeTaskId"].isNull())
+		transcodeTaskId_ = value["TranscodeTaskId"].asString();
 
 }
 
 std::vector<SubmitTranscodeJobsResult::TranscodeJob> SubmitTranscodeJobsResult::getTranscodeJobs()const
 {
 	return transcodeJobs_;
+}
+
+std::string SubmitTranscodeJobsResult::getTranscodeTaskId()const
+{
+	return transcodeTaskId_;
 }
 

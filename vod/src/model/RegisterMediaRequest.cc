@@ -91,15 +91,15 @@ void RegisterMediaRequest::setRegisterMetadatas(const std::string& registerMetad
 	setCoreParameter("RegisterMetadatas", registerMetadatas);
 }
 
-std::string RegisterMediaRequest::getWorkFlowId()const
+std::string RegisterMediaRequest::getWorkflowId()const
 {
-	return workFlowId_;
+	return workflowId_;
 }
 
-void RegisterMediaRequest::setWorkFlowId(const std::string& workFlowId)
+void RegisterMediaRequest::setWorkflowId(const std::string& workflowId)
 {
-	workFlowId_ = workFlowId;
-	setCoreParameter("WorkFlowId", workFlowId);
+	workflowId_ = workflowId;
+	setCoreParameter("WorkflowId", workflowId);
 }
 
 std::string RegisterMediaRequest::getAccessKeyId()const

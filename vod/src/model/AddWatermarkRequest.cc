@@ -47,6 +47,17 @@ void AddWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwn
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string AddWatermarkRequest::getAppId()const
+{
+	return appId_;
+}
+
+void AddWatermarkRequest::setAppId(const std::string& appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
+}
+
 std::string AddWatermarkRequest::getName()const
 {
 	return name_;

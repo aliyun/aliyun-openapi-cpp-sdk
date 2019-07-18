@@ -36,6 +36,17 @@ void SubmitAIJobRequest::setUserData(const std::string& userData)
 	setCoreParameter("UserData", userData);
 }
 
+std::string SubmitAIJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitAIJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
+}
+
 std::string SubmitAIJobRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
+				std::string getStorage()const;
+				void setStorage(const std::string& storage);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
 				std::string getOwnerIdLoginEmail()const;
@@ -83,6 +85,8 @@ namespace AlibabaCloud
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
+				std::string getServiceCode()const;
+				void setServiceCode(const std::string& serviceCode);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
 				std::string getRegion()const;
@@ -93,6 +97,7 @@ namespace AlibabaCloud
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string startTime_;
+				std::string storage_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
@@ -113,6 +118,7 @@ namespace AlibabaCloud
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
+				std::string serviceCode_;
 				std::string requestId_;
 				std::string region_;
 

@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VOD_EXPORT GetVideoInfoResult : public ServiceResult
 			{
 			public:
-				struct VideoInGetVideoInfo
+				struct Video
 				{
 					struct Thumbnail
 					{
@@ -68,14 +68,14 @@ namespace AlibabaCloud
 				GetVideoInfoResult();
 				explicit GetVideoInfoResult(const std::string &payload);
 				~GetVideoInfoResult();
+				Video getVideo()const;
 				std::string getAI()const;
-				VideoInGetVideoInfo getVideoInGetVideoInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				Video video_;
 				std::string aI_;
-				VideoInGetVideoInfo videoInGetVideoInfo_;
 
 			};
 		}

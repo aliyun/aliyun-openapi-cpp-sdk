@@ -55,6 +55,8 @@ void GetWatermarkResult::parse(const std::string &payload)
 		watermarkInfo_.fileUrl = watermarkInfoNode["FileUrl"].asString();
 	if(!watermarkInfoNode["WatermarkConfig"].isNull())
 		watermarkInfo_.watermarkConfig = watermarkInfoNode["WatermarkConfig"].asString();
+	if(!watermarkInfoNode["AppId"].isNull())
+		watermarkInfo_.appId = watermarkInfoNode["AppId"].asString();
 
 }
 

@@ -69,6 +69,17 @@ void DescribeVodTranscodeDataRequest::setStartTime(const std::string& startTime)
 	setCoreParameter("StartTime", startTime);
 }
 
+std::string DescribeVodTranscodeDataRequest::getStorage()const
+{
+	return storage_;
+}
+
+void DescribeVodTranscodeDataRequest::setStorage(const std::string& storage)
+{
+	storage_ = storage;
+	setCoreParameter("Storage", storage);
+}
+
 std::string DescribeVodTranscodeDataRequest::getProxy_original_source_ip()const
 {
 	return proxy_original_source_ip_;
@@ -212,6 +223,17 @@ void DescribeVodTranscodeDataRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
+std::string DescribeVodTranscodeDataRequest::getSpecification()const
+{
+	return specification_;
+}
+
+void DescribeVodTranscodeDataRequest::setSpecification(const std::string& specification)
+{
+	specification_ = specification;
+	setCoreParameter("Specification", specification);
+}
+
 std::string DescribeVodTranscodeDataRequest::getCallerBid()const
 {
 	return callerBid_;
@@ -276,6 +298,17 @@ void DescribeVodTranscodeDataRequest::setSecurity_transport(bool security_transp
 {
 	security_transport_ = security_transport;
 	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+}
+
+std::string DescribeVodTranscodeDataRequest::getServiceCode()const
+{
+	return serviceCode_;
+}
+
+void DescribeVodTranscodeDataRequest::setServiceCode(const std::string& serviceCode)
+{
+	serviceCode_ = serviceCode;
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeVodTranscodeDataRequest::getRequestId()const

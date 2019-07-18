@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
+				std::string getInput()const;
+				void setInput(const std::string& input);
 				std::string getResourceOwnerId()const;
 				void setResourceOwnerId(const std::string& resourceOwnerId);
 				std::string getTypes()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 
             private:
 				std::string userData_;
+				std::string input_;
 				std::string resourceOwnerId_;
 				std::string types_;
 				std::string resourceOwnerAccount_;

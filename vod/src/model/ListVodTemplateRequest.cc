@@ -58,6 +58,17 @@ void ListVodTemplateRequest::setTemplateType(const std::string& templateType)
 	setCoreParameter("TemplateType", templateType);
 }
 
+std::string ListVodTemplateRequest::getAppId()const
+{
+	return appId_;
+}
+
+void ListVodTemplateRequest::setAppId(const std::string& appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
+}
+
 long ListVodTemplateRequest::getOwnerId()const
 {
 	return ownerId_;

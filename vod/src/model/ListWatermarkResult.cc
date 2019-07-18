@@ -58,6 +58,8 @@ void ListWatermarkResult::parse(const std::string &payload)
 			watermarkInfosObject.fileUrl = value["FileUrl"].asString();
 		if(!value["WatermarkConfig"].isNull())
 			watermarkInfosObject.watermarkConfig = value["WatermarkConfig"].asString();
+		if(!value["AppId"].isNull())
+			watermarkInfosObject.appId = value["AppId"].asString();
 		watermarkInfos_.push_back(watermarkInfosObject);
 	}
 

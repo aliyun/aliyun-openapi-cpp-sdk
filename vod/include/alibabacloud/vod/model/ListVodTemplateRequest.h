@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getTemplateType()const;
 				void setTemplateType(const std::string& templateType);
+				std::string getAppId()const;
+				void setAppId(const std::string& appId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string templateType_;
+				std::string appId_;
 				long ownerId_;
 
 			};

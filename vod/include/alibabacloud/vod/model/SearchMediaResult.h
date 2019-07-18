@@ -151,7 +151,7 @@ namespace AlibabaCloud
 						std::string storageLocation;
 						std::string tags;
 					};
-					struct AttachedMediaInSearchMedia
+					struct AttachedMedia
 					{
 						struct Category
 						{
@@ -177,10 +177,10 @@ namespace AlibabaCloud
 						std::string storageLocation;
 						std::string tags;
 					};
+					AttachedMedia attachedMedia;
 					std::string mediaId;
 					Video video;
 					std::string creationTime;
-					AttachedMediaInSearchMedia attachedMediaInSearchMedia;
 					std::string mediaType;
 					Audio audio;
 					Image image;

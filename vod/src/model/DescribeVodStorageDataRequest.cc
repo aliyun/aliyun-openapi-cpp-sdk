@@ -69,6 +69,17 @@ void DescribeVodStorageDataRequest::setStartTime(const std::string& startTime)
 	setCoreParameter("StartTime", startTime);
 }
 
+std::string DescribeVodStorageDataRequest::getStorage()const
+{
+	return storage_;
+}
+
+void DescribeVodStorageDataRequest::setStorage(const std::string& storage)
+{
+	storage_ = storage;
+	setCoreParameter("Storage", storage);
+}
+
 std::string DescribeVodStorageDataRequest::getProxy_original_source_ip()const
 {
 	return proxy_original_source_ip_;
@@ -287,6 +298,17 @@ void DescribeVodStorageDataRequest::setSecurity_transport(bool security_transpor
 {
 	security_transport_ = security_transport;
 	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+}
+
+std::string DescribeVodStorageDataRequest::getServiceCode()const
+{
+	return serviceCode_;
+}
+
+void DescribeVodStorageDataRequest::setServiceCode(const std::string& serviceCode)
+{
+	serviceCode_ = serviceCode;
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeVodStorageDataRequest::getRequestId()const

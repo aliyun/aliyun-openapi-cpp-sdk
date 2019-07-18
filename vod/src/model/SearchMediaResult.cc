@@ -269,41 +269,41 @@ void SearchMediaResult::parse(const std::string &payload)
 			mediaListObject.image.regionId = imageNode["RegionId"].asString();
 		if(!imageNode["AppId"].isNull())
 			mediaListObject.image.appId = imageNode["AppId"].asString();
-		auto attachedMediaInSearchMediaNode = value["AttachedMedia"];
-		if(!attachedMediaInSearchMediaNode["Title"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.title = attachedMediaInSearchMediaNode["Title"].asString();
-		if(!attachedMediaInSearchMediaNode["MediaId"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.mediaId = attachedMediaInSearchMediaNode["MediaId"].asString();
-		if(!attachedMediaInSearchMediaNode["Ext"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.ext = attachedMediaInSearchMediaNode["Ext"].asString();
-		if(!attachedMediaInSearchMediaNode["CreationTime"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.creationTime = attachedMediaInSearchMediaNode["CreationTime"].asString();
-		if(!attachedMediaInSearchMediaNode["ModificationTime"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.modificationTime = attachedMediaInSearchMediaNode["ModificationTime"].asString();
-		if(!attachedMediaInSearchMediaNode["Tags"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.tags = attachedMediaInSearchMediaNode["Tags"].asString();
-		if(!attachedMediaInSearchMediaNode["BusinessType"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.businessType = attachedMediaInSearchMediaNode["BusinessType"].asString();
-		if(!attachedMediaInSearchMediaNode["URL"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.uRL = attachedMediaInSearchMediaNode["URL"].asString();
-		if(!attachedMediaInSearchMediaNode["Status"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.status = attachedMediaInSearchMediaNode["Status"].asString();
-		if(!attachedMediaInSearchMediaNode["Description"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.description = attachedMediaInSearchMediaNode["Description"].asString();
-		if(!attachedMediaInSearchMediaNode["StorageLocation"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.storageLocation = attachedMediaInSearchMediaNode["StorageLocation"].asString();
-		if(!attachedMediaInSearchMediaNode["RegionId"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.regionId = attachedMediaInSearchMediaNode["RegionId"].asString();
-		if(!attachedMediaInSearchMediaNode["AppId"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.appId = attachedMediaInSearchMediaNode["AppId"].asString();
-		if(!attachedMediaInSearchMediaNode["Icon"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.icon = attachedMediaInSearchMediaNode["Icon"].asString();
-		if(!attachedMediaInSearchMediaNode["OnlineStatus"].isNull())
-			mediaListObject.attachedMediaInSearchMedia.onlineStatus = attachedMediaInSearchMediaNode["OnlineStatus"].asString();
+		auto attachedMediaNode = value["AttachedMedia"];
+		if(!attachedMediaNode["Title"].isNull())
+			mediaListObject.attachedMedia.title = attachedMediaNode["Title"].asString();
+		if(!attachedMediaNode["MediaId"].isNull())
+			mediaListObject.attachedMedia.mediaId = attachedMediaNode["MediaId"].asString();
+		if(!attachedMediaNode["Ext"].isNull())
+			mediaListObject.attachedMedia.ext = attachedMediaNode["Ext"].asString();
+		if(!attachedMediaNode["CreationTime"].isNull())
+			mediaListObject.attachedMedia.creationTime = attachedMediaNode["CreationTime"].asString();
+		if(!attachedMediaNode["ModificationTime"].isNull())
+			mediaListObject.attachedMedia.modificationTime = attachedMediaNode["ModificationTime"].asString();
+		if(!attachedMediaNode["Tags"].isNull())
+			mediaListObject.attachedMedia.tags = attachedMediaNode["Tags"].asString();
+		if(!attachedMediaNode["BusinessType"].isNull())
+			mediaListObject.attachedMedia.businessType = attachedMediaNode["BusinessType"].asString();
+		if(!attachedMediaNode["URL"].isNull())
+			mediaListObject.attachedMedia.uRL = attachedMediaNode["URL"].asString();
+		if(!attachedMediaNode["Status"].isNull())
+			mediaListObject.attachedMedia.status = attachedMediaNode["Status"].asString();
+		if(!attachedMediaNode["Description"].isNull())
+			mediaListObject.attachedMedia.description = attachedMediaNode["Description"].asString();
+		if(!attachedMediaNode["StorageLocation"].isNull())
+			mediaListObject.attachedMedia.storageLocation = attachedMediaNode["StorageLocation"].asString();
+		if(!attachedMediaNode["RegionId"].isNull())
+			mediaListObject.attachedMedia.regionId = attachedMediaNode["RegionId"].asString();
+		if(!attachedMediaNode["AppId"].isNull())
+			mediaListObject.attachedMedia.appId = attachedMediaNode["AppId"].asString();
+		if(!attachedMediaNode["Icon"].isNull())
+			mediaListObject.attachedMedia.icon = attachedMediaNode["Icon"].asString();
+		if(!attachedMediaNode["OnlineStatus"].isNull())
+			mediaListObject.attachedMedia.onlineStatus = attachedMediaNode["OnlineStatus"].asString();
 		auto allCategories = value["Categories"]["Category"];
 		for (auto value : allCategories)
 		{
-			Media::AttachedMediaInSearchMedia::Category categoryObject;
+			Media::AttachedMedia::Category categoryObject;
 			if(!value["CateId"].isNull())
 				categoryObject.cateId = std::stol(value["CateId"].asString());
 			if(!value["CateName"].isNull())
@@ -312,7 +312,7 @@ void SearchMediaResult::parse(const std::string &payload)
 				categoryObject.level = std::stol(value["Level"].asString());
 			if(!value["ParentId"].isNull())
 				categoryObject.parentId = std::stol(value["ParentId"].asString());
-			mediaListObject.attachedMediaInSearchMedia.categories.push_back(categoryObject);
+			mediaListObject.attachedMedia.categories.push_back(categoryObject);
 		}
 		mediaList_.push_back(mediaListObject);
 	}

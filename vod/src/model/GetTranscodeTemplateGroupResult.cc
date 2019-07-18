@@ -51,6 +51,10 @@ void GetTranscodeTemplateGroupResult::parse(const std::string &payload)
 		transcodeTemplateGroup_.isDefault = transcodeTemplateGroupNode["IsDefault"].asString();
 	if(!transcodeTemplateGroupNode["Locked"].isNull())
 		transcodeTemplateGroup_.locked = transcodeTemplateGroupNode["Locked"].asString();
+	if(!transcodeTemplateGroupNode["TranscodeMode"].isNull())
+		transcodeTemplateGroup_.transcodeMode = transcodeTemplateGroupNode["TranscodeMode"].asString();
+	if(!transcodeTemplateGroupNode["AppId"].isNull())
+		transcodeTemplateGroup_.appId = transcodeTemplateGroupNode["AppId"].asString();
 	if(!transcodeTemplateGroupNode["TranscodeTemplateGroupId"].isNull())
 		transcodeTemplateGroup_.transcodeTemplateGroupId = transcodeTemplateGroupNode["TranscodeTemplateGroupId"].asString();
 	auto allTranscodeTemplateList = value["TranscodeTemplateList"]["TranscodeTemplate"];

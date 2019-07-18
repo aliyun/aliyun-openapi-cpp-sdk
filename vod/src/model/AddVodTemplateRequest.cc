@@ -69,6 +69,17 @@ void AddVodTemplateRequest::setTemplateType(const std::string& templateType)
 	setCoreParameter("TemplateType", templateType);
 }
 
+std::string AddVodTemplateRequest::getAppId()const
+{
+	return appId_;
+}
+
+void AddVodTemplateRequest::setAppId(const std::string& appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
+}
+
 std::string AddVodTemplateRequest::getName()const
 {
 	return name_;

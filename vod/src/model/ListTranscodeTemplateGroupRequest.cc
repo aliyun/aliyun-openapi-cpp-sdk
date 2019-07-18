@@ -47,6 +47,39 @@ void ListTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::strin
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+int ListTranscodeTemplateGroupRequest::getPageNo()const
+{
+	return pageNo_;
+}
+
+void ListTranscodeTemplateGroupRequest::setPageNo(int pageNo)
+{
+	pageNo_ = pageNo;
+	setCoreParameter("PageNo", std::to_string(pageNo));
+}
+
+std::string ListTranscodeTemplateGroupRequest::getAppId()const
+{
+	return appId_;
+}
+
+void ListTranscodeTemplateGroupRequest::setAppId(const std::string& appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
+}
+
+int ListTranscodeTemplateGroupRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListTranscodeTemplateGroupRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
 long ListTranscodeTemplateGroupRequest::getOwnerId()const
 {
 	return ownerId_;

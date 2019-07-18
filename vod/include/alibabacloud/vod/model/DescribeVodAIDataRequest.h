@@ -67,6 +67,8 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
+				std::string getAIType()const;
+				void setAIType(const std::string& aIType);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getCallerBid()const;
@@ -81,6 +83,8 @@ namespace AlibabaCloud
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
+				std::string getServiceCode()const;
+				void setServiceCode(const std::string& serviceCode);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
 				std::string getRegion()const;
@@ -103,6 +107,7 @@ namespace AlibabaCloud
 				long callerUid_;
 				std::string app_ip_;
 				std::string popProduct_;
+				std::string aIType_;
 				std::string endTime_;
 				std::string callerBid_;
 				long ownerId_;
@@ -110,6 +115,7 @@ namespace AlibabaCloud
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
+				std::string serviceCode_;
 				std::string requestId_;
 				std::string region_;
 

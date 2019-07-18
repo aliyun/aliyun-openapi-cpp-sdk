@@ -322,6 +322,17 @@ void DescribeVodDomainUsageDataRequest::setSecurity_transport(bool security_tran
 	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
+std::string DescribeVodDomainUsageDataRequest::getServiceCode()const
+{
+	return serviceCode_;
+}
+
+void DescribeVodDomainUsageDataRequest::setServiceCode(const std::string& serviceCode)
+{
+	serviceCode_ = serviceCode;
+	setCoreParameter("ServiceCode", serviceCode);
+}
+
 std::string DescribeVodDomainUsageDataRequest::getField()const
 {
 	return field_;
