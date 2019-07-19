@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYBILLRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYBILLRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTTRANSACTIONSRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTTRANSACTIONSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,54 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryBillResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryAccountTransactionsResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Item
+					struct AccountTransactionsListItem
 					{
-						float afterTaxAmount;
-						std::string productName;
-						float deductedByCashCoupons;
-						std::string paymentTime;
-						float tax;
-						std::string paymentCurrency;
-						float paymentAmount;
-						float deductedByPrepaidCard;
-						float invoiceDiscount;
-						std::string usageEndTime;
-						std::string item;
-						std::string subscriptionType;
-						float pretaxGrossAmount;
-						std::string currency;
-						std::string usageStartTime;
-						std::string status;
-						std::string paymentTransactionID;
-						float deductedByCoupons;
-						std::string roundDownDiscount;
-						std::string productDetail;
-						std::string productCode;
-						std::string productType;
-						float outstandingAmount;
-						std::string ownerID;
-						float pretaxAmount;
+						std::string transactionType;
+						std::string billingCycle;
+						std::string transactionNumber;
+						std::string amount;
+						std::string transactionAccount;
+						std::string transactionTime;
+						std::string transactionChannelSN;
+						std::string remarks;
+						std::string fundType;
+						std::string transactionFlow;
 						std::string recordID;
-						float pretaxAmountLocal;
+						std::string balance;
+						std::string transactionChannel;
 					};
-					std::string billingCycle;
 					int totalCount;
-					std::string accountID;
 					int pageNum;
 					int pageSize;
-					std::vector<Item> items;
+					std::vector<AccountTransactionsListItem> accountTransactionsList;
 					std::string accountName;
 				};
 
 
-				QueryBillResult();
-				explicit QueryBillResult(const std::string &payload);
-				~QueryBillResult();
+				QueryAccountTransactionsResult();
+				explicit QueryAccountTransactionsResult(const std::string &payload);
+				~QueryAccountTransactionsResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -94,4 +78,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYBILLRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTTRANSACTIONSRESULT_H_

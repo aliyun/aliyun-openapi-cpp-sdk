@@ -109,6 +109,8 @@ void QueryBillResult::parse(const std::string &payload)
 			itemObject.paymentCurrency = value["PaymentCurrency"].asString();
 		if(!value["PaymentTransactionID"].isNull())
 			itemObject.paymentTransactionID = value["PaymentTransactionID"].asString();
+		if(!value["RoundDownDiscount"].isNull())
+			itemObject.roundDownDiscount = value["RoundDownDiscount"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

@@ -47,6 +47,17 @@ void ModifyInstanceRequest::setInstanceId(const std::string& instanceId)
 	setCoreParameter("InstanceId", instanceId);
 }
 
+std::string ModifyInstanceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void ModifyInstanceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
 std::string ModifyInstanceRequest::getSubscriptionType()const
 {
 	return subscriptionType_;

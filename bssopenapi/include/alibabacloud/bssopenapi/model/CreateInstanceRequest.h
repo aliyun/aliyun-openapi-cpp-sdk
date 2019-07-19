@@ -44,6 +44,8 @@ namespace AlibabaCloud
 				void setProductCode(const std::string& productCode);
 				int getPeriod()const;
 				void setPeriod(int period);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
 				int getRenewPeriod()const;
@@ -60,6 +62,7 @@ namespace AlibabaCloud
             private:
 				std::string productCode_;
 				int period_;
+				std::string clientToken_;
 				std::string subscriptionType_;
 				int renewPeriod_;
 				std::vector<Parameter> parameter_;

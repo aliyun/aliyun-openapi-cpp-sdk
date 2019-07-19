@@ -83,6 +83,8 @@ void QueryOrdersResult::parse(const std::string &payload)
 			orderObject.afterTaxAmount = value["AfterTaxAmount"].asString();
 		if(!value["PaymentCurrency"].isNull())
 			orderObject.paymentCurrency = value["PaymentCurrency"].asString();
+		if(!value["RelatedOrderId"].isNull())
+			orderObject.relatedOrderId = value["RelatedOrderId"].asString();
 		data_.orderList.push_back(orderObject);
 	}
 	if(!value["Success"].isNull())

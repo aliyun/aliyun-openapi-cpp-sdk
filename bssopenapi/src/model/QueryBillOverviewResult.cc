@@ -89,6 +89,8 @@ void QueryBillOverviewResult::parse(const std::string &payload)
 			itemObject.afterTaxAmount = std::stof(value["AfterTaxAmount"].asString());
 		if(!value["PaymentCurrency"].isNull())
 			itemObject.paymentCurrency = value["PaymentCurrency"].asString();
+		if(!value["RoundDownDiscount"].isNull())
+			itemObject.roundDownDiscount = value["RoundDownDiscount"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

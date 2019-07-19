@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						float deductedByCoupons;
 						float afterTaxAmount;
+						std::string roundDownDiscount;
 						std::string productName;
 						std::string productDetail;
 						std::string productCode;

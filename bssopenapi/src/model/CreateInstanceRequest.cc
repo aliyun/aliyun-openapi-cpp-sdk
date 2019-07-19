@@ -47,6 +47,17 @@ void CreateInstanceRequest::setPeriod(int period)
 	setCoreParameter("Period", std::to_string(period));
 }
 
+std::string CreateInstanceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateInstanceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
 std::string CreateInstanceRequest::getSubscriptionType()const
 {
 	return subscriptionType_;

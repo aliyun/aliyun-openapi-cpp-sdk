@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYORDERSRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYORDERSRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_GETCUSTOMERLISTRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_GETCUSTOMERLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryOrdersResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT GetCustomerListResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Order
-					{
-						std::string afterTaxAmount;
-						std::string productCode;
-						std::string createTime;
-						std::string productType;
-						std::string relatedOrderId;
-						std::string paymentTime;
-						std::string tax;
-						std::string paymentCurrency;
-						std::string orderId;
-						std::string subscriptionType;
-						std::string pretaxGrossAmount;
-						std::string orderType;
-						std::string pretaxAmount;
-						std::string currency;
-						std::string paymentStatus;
-						std::string pretaxAmountLocal;
-					};
-					int totalCount;
-					int pageNum;
-					int pageSize;
-					std::vector<Order> orderList;
-					std::string hostName;
+					std::vector<std::string> uidList;
 				};
 
 
-				QueryOrdersResult();
-				explicit QueryOrdersResult(const std::string &payload);
-				~QueryOrdersResult();
+				GetCustomerListResult();
+				explicit GetCustomerListResult(const std::string &payload);
+				~GetCustomerListResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -81,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYORDERSRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_GETCUSTOMERLISTRESULT_H_

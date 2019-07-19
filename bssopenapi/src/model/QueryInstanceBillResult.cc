@@ -59,8 +59,6 @@ void QueryInstanceBillResult::parse(const std::string &payload)
 		Data::Item itemObject;
 		if(!value["InstanceID"].isNull())
 			itemObject.instanceID = value["InstanceID"].asString();
-		if(!value["ServicePeriod"].isNull())
-			itemObject.servicePeriod = std::stof(value["ServicePeriod"].asString());
 		if(!value["BillingType"].isNull())
 			itemObject.billingType = value["BillingType"].asString();
 		if(!value["CostUnit"].isNull())
@@ -107,6 +105,26 @@ void QueryInstanceBillResult::parse(const std::string &payload)
 			itemObject.outstandingAmount = std::stof(value["OutstandingAmount"].asString());
 		if(!value["Currency"].isNull())
 			itemObject.currency = value["Currency"].asString();
+		if(!value["NickName"].isNull())
+			itemObject.nickName = value["NickName"].asString();
+		if(!value["ResourceGroup"].isNull())
+			itemObject.resourceGroup = value["ResourceGroup"].asString();
+		if(!value["Tag"].isNull())
+			itemObject.tag = value["Tag"].asString();
+		if(!value["InstanceConfig"].isNull())
+			itemObject.instanceConfig = value["InstanceConfig"].asString();
+		if(!value["InstanceSpec"].isNull())
+			itemObject.instanceSpec = value["InstanceSpec"].asString();
+		if(!value["InternetIP"].isNull())
+			itemObject.internetIP = value["InternetIP"].asString();
+		if(!value["IntranetIP"].isNull())
+			itemObject.intranetIP = value["IntranetIP"].asString();
+		if(!value["Region"].isNull())
+			itemObject.region = value["Region"].asString();
+		if(!value["Zone"].isNull())
+			itemObject.zone = value["Zone"].asString();
+		if(!value["Item"].isNull())
+			itemObject.item = value["Item"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

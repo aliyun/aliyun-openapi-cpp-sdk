@@ -99,6 +99,8 @@ void GetOrderDetailResult::parse(const std::string &payload)
 			orderObject.paymentCurrency = value["PaymentCurrency"].asString();
 		if(!value["Operator"].isNull())
 			orderObject._operator = value["Operator"].asString();
+		if(!value["RelatedOrderId"].isNull())
+			orderObject.relatedOrderId = value["RelatedOrderId"].asString();
 		data_.orderList.push_back(orderObject);
 	}
 	if(!value["Success"].isNull())

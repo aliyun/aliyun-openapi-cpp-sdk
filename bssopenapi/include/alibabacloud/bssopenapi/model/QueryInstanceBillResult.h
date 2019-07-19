@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct Item
 					{
+						std::string instanceSpec;
 						std::string productName;
 						std::string instanceID;
 						float deductedByCashCoupons;
@@ -45,22 +46,30 @@ namespace AlibabaCloud
 						float deductedByPrepaidCard;
 						float invoiceDiscount;
 						std::string subscriptionType;
+						std::string item;
 						float pretaxGrossAmount;
+						std::string instanceConfig;
 						std::string currency;
 						std::string costUnit;
+						std::string resourceGroup;
 						std::string billingType;
 						float usage;
 						float deductedByCoupons;
 						std::string productDetail;
 						std::string productCode;
+						std::string zone;
 						std::string productType;
 						float outstandingAmount;
 						std::string billingItem;
-						float servicePeriod;
+						std::string nickName;
+						std::string intranetIP;
 						float deductedByResourcePackage;
 						std::string usageUnit;
 						long ownerID;
 						float pretaxAmount;
+						std::string internetIP;
+						std::string region;
+						std::string tag;
 					};
 					std::string billingCycle;
 					int totalCount;

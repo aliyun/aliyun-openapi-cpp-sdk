@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYORDERSRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYORDERSRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_CHANGERESELLERCONSUMEAMOUNTRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_CHANGERESELLERCONSUMEAMOUNTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,16 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryOrdersResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT ChangeResellerConsumeAmountResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct Order
-					{
-						std::string afterTaxAmount;
-						std::string productCode;
-						std::string createTime;
-						std::string productType;
-						std::string relatedOrderId;
-						std::string paymentTime;
-						std::string tax;
-						std::string paymentCurrency;
-						std::string orderId;
-						std::string subscriptionType;
-						std::string pretaxGrossAmount;
-						std::string orderType;
-						std::string pretaxAmount;
-						std::string currency;
-						std::string paymentStatus;
-						std::string pretaxAmountLocal;
-					};
-					int totalCount;
-					int pageNum;
-					int pageSize;
-					std::vector<Order> orderList;
-					std::string hostName;
-				};
 
 
-				QueryOrdersResult();
-				explicit QueryOrdersResult(const std::string &payload);
-				~QueryOrdersResult();
+				ChangeResellerConsumeAmountResult();
+				explicit ChangeResellerConsumeAmountResult(const std::string &payload);
+				~ChangeResellerConsumeAmountResult();
 				std::string getMessage()const;
-				Data getData()const;
+				std::string getData()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -73,7 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
+				std::string data_;
 				std::string code_;
 				bool success_;
 
@@ -81,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYORDERSRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_CHANGERESELLERCONSUMEAMOUNTRESULT_H_
