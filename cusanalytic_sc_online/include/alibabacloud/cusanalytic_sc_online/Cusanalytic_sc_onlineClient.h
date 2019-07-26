@@ -26,16 +26,16 @@
 #include "model/DescribeLocationsResult.h"
 #include "model/GetOverviewDataRequest.h"
 #include "model/GetOverviewDataResult.h"
+#include "model/GetSupportStoreRequest.h"
+#include "model/GetSupportStoreResult.h"
 #include "model/DescribeActionDataRequest.h"
 #include "model/DescribeActionDataResult.h"
 #include "model/GetLocationsRequest.h"
 #include "model/GetLocationsResult.h"
-#include "model/GetSupportStoreRequest.h"
-#include "model/GetSupportStoreResult.h"
-#include "model/GetHeatMapDataRequest.h"
-#include "model/GetHeatMapDataResult.h"
 #include "model/GetPortrayalRequest.h"
 #include "model/GetPortrayalResult.h"
+#include "model/GetHeatMapDataRequest.h"
+#include "model/GetHeatMapDataResult.h"
 #include "model/GetAnalyzeCommodityDataRequest.h"
 #include "model/GetAnalyzeCommodityDataResult.h"
 #include "model/ListVisitorsRequest.h"
@@ -61,21 +61,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetOverviewDataResult> GetOverviewDataOutcome;
 			typedef std::future<GetOverviewDataOutcome> GetOverviewDataOutcomeCallable;
 			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::GetOverviewDataRequest&, const GetOverviewDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOverviewDataAsyncHandler;
+			typedef Outcome<Error, Model::GetSupportStoreResult> GetSupportStoreOutcome;
+			typedef std::future<GetSupportStoreOutcome> GetSupportStoreOutcomeCallable;
+			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::GetSupportStoreRequest&, const GetSupportStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSupportStoreAsyncHandler;
 			typedef Outcome<Error, Model::DescribeActionDataResult> DescribeActionDataOutcome;
 			typedef std::future<DescribeActionDataOutcome> DescribeActionDataOutcomeCallable;
 			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::DescribeActionDataRequest&, const DescribeActionDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActionDataAsyncHandler;
 			typedef Outcome<Error, Model::GetLocationsResult> GetLocationsOutcome;
 			typedef std::future<GetLocationsOutcome> GetLocationsOutcomeCallable;
 			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::GetLocationsRequest&, const GetLocationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLocationsAsyncHandler;
-			typedef Outcome<Error, Model::GetSupportStoreResult> GetSupportStoreOutcome;
-			typedef std::future<GetSupportStoreOutcome> GetSupportStoreOutcomeCallable;
-			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::GetSupportStoreRequest&, const GetSupportStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSupportStoreAsyncHandler;
-			typedef Outcome<Error, Model::GetHeatMapDataResult> GetHeatMapDataOutcome;
-			typedef std::future<GetHeatMapDataOutcome> GetHeatMapDataOutcomeCallable;
-			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::GetHeatMapDataRequest&, const GetHeatMapDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetHeatMapDataAsyncHandler;
 			typedef Outcome<Error, Model::GetPortrayalResult> GetPortrayalOutcome;
 			typedef std::future<GetPortrayalOutcome> GetPortrayalOutcomeCallable;
 			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::GetPortrayalRequest&, const GetPortrayalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPortrayalAsyncHandler;
+			typedef Outcome<Error, Model::GetHeatMapDataResult> GetHeatMapDataOutcome;
+			typedef std::future<GetHeatMapDataOutcome> GetHeatMapDataOutcomeCallable;
+			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::GetHeatMapDataRequest&, const GetHeatMapDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetHeatMapDataAsyncHandler;
 			typedef Outcome<Error, Model::GetAnalyzeCommodityDataResult> GetAnalyzeCommodityDataOutcome;
 			typedef std::future<GetAnalyzeCommodityDataOutcome> GetAnalyzeCommodityDataOutcomeCallable;
 			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::GetAnalyzeCommodityDataRequest&, const GetAnalyzeCommodityDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAnalyzeCommodityDataAsyncHandler;
@@ -102,21 +102,21 @@ namespace AlibabaCloud
 			GetOverviewDataOutcome getOverviewData(const Model::GetOverviewDataRequest &request)const;
 			void getOverviewDataAsync(const Model::GetOverviewDataRequest& request, const GetOverviewDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOverviewDataOutcomeCallable getOverviewDataCallable(const Model::GetOverviewDataRequest& request) const;
+			GetSupportStoreOutcome getSupportStore(const Model::GetSupportStoreRequest &request)const;
+			void getSupportStoreAsync(const Model::GetSupportStoreRequest& request, const GetSupportStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSupportStoreOutcomeCallable getSupportStoreCallable(const Model::GetSupportStoreRequest& request) const;
 			DescribeActionDataOutcome describeActionData(const Model::DescribeActionDataRequest &request)const;
 			void describeActionDataAsync(const Model::DescribeActionDataRequest& request, const DescribeActionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeActionDataOutcomeCallable describeActionDataCallable(const Model::DescribeActionDataRequest& request) const;
 			GetLocationsOutcome getLocations(const Model::GetLocationsRequest &request)const;
 			void getLocationsAsync(const Model::GetLocationsRequest& request, const GetLocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLocationsOutcomeCallable getLocationsCallable(const Model::GetLocationsRequest& request) const;
-			GetSupportStoreOutcome getSupportStore(const Model::GetSupportStoreRequest &request)const;
-			void getSupportStoreAsync(const Model::GetSupportStoreRequest& request, const GetSupportStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetSupportStoreOutcomeCallable getSupportStoreCallable(const Model::GetSupportStoreRequest& request) const;
-			GetHeatMapDataOutcome getHeatMapData(const Model::GetHeatMapDataRequest &request)const;
-			void getHeatMapDataAsync(const Model::GetHeatMapDataRequest& request, const GetHeatMapDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetHeatMapDataOutcomeCallable getHeatMapDataCallable(const Model::GetHeatMapDataRequest& request) const;
 			GetPortrayalOutcome getPortrayal(const Model::GetPortrayalRequest &request)const;
 			void getPortrayalAsync(const Model::GetPortrayalRequest& request, const GetPortrayalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPortrayalOutcomeCallable getPortrayalCallable(const Model::GetPortrayalRequest& request) const;
+			GetHeatMapDataOutcome getHeatMapData(const Model::GetHeatMapDataRequest &request)const;
+			void getHeatMapDataAsync(const Model::GetHeatMapDataRequest& request, const GetHeatMapDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetHeatMapDataOutcomeCallable getHeatMapDataCallable(const Model::GetHeatMapDataRequest& request) const;
 			GetAnalyzeCommodityDataOutcome getAnalyzeCommodityData(const Model::GetAnalyzeCommodityDataRequest &request)const;
 			void getAnalyzeCommodityDataAsync(const Model::GetAnalyzeCommodityDataRequest& request, const GetAnalyzeCommodityDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAnalyzeCommodityDataOutcomeCallable getAnalyzeCommodityDataCallable(const Model::GetAnalyzeCommodityDataRequest& request) const;

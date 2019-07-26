@@ -123,6 +123,42 @@ Cusanalytic_sc_onlineClient::GetOverviewDataOutcomeCallable Cusanalytic_sc_onlin
 	return task->get_future();
 }
 
+Cusanalytic_sc_onlineClient::GetSupportStoreOutcome Cusanalytic_sc_onlineClient::getSupportStore(const GetSupportStoreRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSupportStoreOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSupportStoreOutcome(GetSupportStoreResult(outcome.result()));
+	else
+		return GetSupportStoreOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getSupportStoreAsync(const GetSupportStoreRequest& request, const GetSupportStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSupportStore(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetSupportStoreOutcomeCallable Cusanalytic_sc_onlineClient::getSupportStoreCallable(const GetSupportStoreRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSupportStoreOutcome()>>(
+			[this, request]()
+			{
+			return this->getSupportStore(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cusanalytic_sc_onlineClient::DescribeActionDataOutcome Cusanalytic_sc_onlineClient::describeActionData(const DescribeActionDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -195,36 +231,36 @@ Cusanalytic_sc_onlineClient::GetLocationsOutcomeCallable Cusanalytic_sc_onlineCl
 	return task->get_future();
 }
 
-Cusanalytic_sc_onlineClient::GetSupportStoreOutcome Cusanalytic_sc_onlineClient::getSupportStore(const GetSupportStoreRequest &request) const
+Cusanalytic_sc_onlineClient::GetPortrayalOutcome Cusanalytic_sc_onlineClient::getPortrayal(const GetPortrayalRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetSupportStoreOutcome(endpointOutcome.error());
+		return GetPortrayalOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetSupportStoreOutcome(GetSupportStoreResult(outcome.result()));
+		return GetPortrayalOutcome(GetPortrayalResult(outcome.result()));
 	else
-		return GetSupportStoreOutcome(outcome.error());
+		return GetPortrayalOutcome(outcome.error());
 }
 
-void Cusanalytic_sc_onlineClient::getSupportStoreAsync(const GetSupportStoreRequest& request, const GetSupportStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Cusanalytic_sc_onlineClient::getPortrayalAsync(const GetPortrayalRequest& request, const GetPortrayalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getSupportStore(request), context);
+		handler(this, request, getPortrayal(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-Cusanalytic_sc_onlineClient::GetSupportStoreOutcomeCallable Cusanalytic_sc_onlineClient::getSupportStoreCallable(const GetSupportStoreRequest &request) const
+Cusanalytic_sc_onlineClient::GetPortrayalOutcomeCallable Cusanalytic_sc_onlineClient::getPortrayalCallable(const GetPortrayalRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetSupportStoreOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetPortrayalOutcome()>>(
 			[this, request]()
 			{
-			return this->getSupportStore(request);
+			return this->getPortrayal(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -261,42 +297,6 @@ Cusanalytic_sc_onlineClient::GetHeatMapDataOutcomeCallable Cusanalytic_sc_online
 			[this, request]()
 			{
 			return this->getHeatMapData(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cusanalytic_sc_onlineClient::GetPortrayalOutcome Cusanalytic_sc_onlineClient::getPortrayal(const GetPortrayalRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetPortrayalOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetPortrayalOutcome(GetPortrayalResult(outcome.result()));
-	else
-		return GetPortrayalOutcome(outcome.error());
-}
-
-void Cusanalytic_sc_onlineClient::getPortrayalAsync(const GetPortrayalRequest& request, const GetPortrayalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getPortrayal(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cusanalytic_sc_onlineClient::GetPortrayalOutcomeCallable Cusanalytic_sc_onlineClient::getPortrayalCallable(const GetPortrayalRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetPortrayalOutcome()>>(
-			[this, request]()
-			{
-			return this->getPortrayal(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
