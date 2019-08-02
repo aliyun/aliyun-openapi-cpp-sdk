@@ -35,14 +35,20 @@ namespace AlibabaCloud
 				SubscribeBillToOSSRequest();
 				~SubscribeBillToOSSRequest();
 
+				long getBucketOwnerId()const;
+				void setBucketOwnerId(long bucketOwnerId);
 				std::string getSubscribeType()const;
 				void setSubscribeType(const std::string& subscribeType);
 				std::string getSubscribeBucket()const;
 				void setSubscribeBucket(const std::string& subscribeBucket);
+				std::string getMultAccountRelSubscribe()const;
+				void setMultAccountRelSubscribe(const std::string& multAccountRelSubscribe);
 
             private:
+				long bucketOwnerId_;
 				std::string subscribeType_;
 				std::string subscribeBucket_;
+				std::string multAccountRelSubscribe_;
 
 			};
 		}

@@ -36,3 +36,14 @@ void UnsubscribeBillToOSSRequest::setSubscribeType(const std::string& subscribeT
 	setCoreParameter("SubscribeType", subscribeType);
 }
 
+std::string UnsubscribeBillToOSSRequest::getMultAccountRelSubscribe()const
+{
+	return multAccountRelSubscribe_;
+}
+
+void UnsubscribeBillToOSSRequest::setMultAccountRelSubscribe(const std::string& multAccountRelSubscribe)
+{
+	multAccountRelSubscribe_ = multAccountRelSubscribe;
+	setCoreParameter("MultAccountRelSubscribe", multAccountRelSubscribe);
+}
+

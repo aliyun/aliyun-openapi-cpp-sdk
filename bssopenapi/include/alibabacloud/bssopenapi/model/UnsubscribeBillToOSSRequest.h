@@ -37,9 +37,12 @@ namespace AlibabaCloud
 
 				std::string getSubscribeType()const;
 				void setSubscribeType(const std::string& subscribeType);
+				std::string getMultAccountRelSubscribe()const;
+				void setMultAccountRelSubscribe(const std::string& multAccountRelSubscribe);
 
             private:
 				std::string subscribeType_;
+				std::string multAccountRelSubscribe_;
 
 			};
 		}
