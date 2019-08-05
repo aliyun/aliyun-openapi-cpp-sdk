@@ -38,7 +38,9 @@ namespace AlibabaCloud
 					std::string storageMethod;
 					std::string backupObjects;
 					long endTime;
+					long finishTime;
 					long backupSize;
+					long createTime;
 					long startTime;
 					long backupSetExpiredTime;
 					std::string backupSetId;

@@ -64,6 +64,10 @@ void DescribeFullBackupListResult::parse(const std::string &payload)
 			itemsObject.errMessage = value["ErrMessage"].asString();
 		if(!value["BackupObjects"].isNull())
 			itemsObject.backupObjects = value["BackupObjects"].asString();
+		if(!value["CreateTime"].isNull())
+			itemsObject.createTime = std::stol(value["CreateTime"].asString());
+		if(!value["FinishTime"].isNull())
+			itemsObject.finishTime = std::stol(value["FinishTime"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

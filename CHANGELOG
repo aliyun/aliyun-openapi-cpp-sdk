@@ -1,3 +1,6 @@
+2019-08-05 Version 1.36.74
+- Modify DBS API DescribeFullBackupList.
+
 2019-08-02 Version 1.36.73
 - SubscribeBillToOSSRequest add multAccountRelSubscribe, bucketOwnerId.
 - UnsubscribeBillToOSSRequest add multAccountRelSubscribe.
