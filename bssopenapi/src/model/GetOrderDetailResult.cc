@@ -101,6 +101,10 @@ void GetOrderDetailResult::parse(const std::string &payload)
 			orderObject._operator = value["Operator"].asString();
 		if(!value["RelatedOrderId"].isNull())
 			orderObject.relatedOrderId = value["RelatedOrderId"].asString();
+		if(!value["OrderSubType"].isNull())
+			orderObject.orderSubType = value["OrderSubType"].asString();
+		if(!value["OriginalConfig"].isNull())
+			orderObject.originalConfig = value["OriginalConfig"].asString();
 		data_.orderList.push_back(orderObject);
 	}
 	if(!value["Success"].isNull())
