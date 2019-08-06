@@ -45,9 +45,9 @@ void GetSetResult::parse(const std::string &payload)
 	if(!value["SetName"].isNull())
 		setName_ = value["SetName"].asString();
 	if(!value["CreateTime"].isNull())
-		createTime_ = std::stol(value["CreateTime"].asString());
+		createTime_ = value["CreateTime"].asString();
 	if(!value["ModifyTime"].isNull())
-		modifyTime_ = std::stol(value["ModifyTime"].asString());
+		modifyTime_ = value["ModifyTime"].asString();
 	if(!value["FaceCount"].isNull())
 		faceCount_ = std::stoi(value["FaceCount"].asString());
 	if(!value["ImageCount"].isNull())
@@ -59,7 +59,7 @@ void GetSetResult::parse(const std::string &payload)
 
 }
 
-long GetSetResult::getModifyTime()const
+std::string GetSetResult::getModifyTime()const
 {
 	return modifyTime_;
 }
@@ -74,7 +74,7 @@ int GetSetResult::getVideoCount()const
 	return videoCount_;
 }
 
-long GetSetResult::getCreateTime()const
+std::string GetSetResult::getCreateTime()const
 {
 	return createTime_;
 }

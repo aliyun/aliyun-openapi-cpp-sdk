@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMM_MODEL_GETSETRESULT_H_
-#define ALIBABACLOUD_IMM_MODEL_GETSETRESULT_H_
+#ifndef ALIBABACLOUD_IMM_MODEL_LISTPROJECTAPISRESULT_H_
+#define ALIBABACLOUD_IMM_MODEL_LISTPROJECTAPISRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMM_EXPORT GetSetResult : public ServiceResult
+			class ALIBABACLOUD_IMM_EXPORT ListProjectAPIsResult : public ServiceResult
 			{
 			public:
 
 
-				GetSetResult();
-				explicit GetSetResult(const std::string &payload);
-				~GetSetResult();
-				std::string getModifyTime()const;
-				int getImageCount()const;
-				int getVideoCount()const;
-				std::string getCreateTime()const;
-				std::string getSetName()const;
-				std::string getSetId()const;
-				int getFaceCount()const;
-				int getVideoLength()const;
+				ListProjectAPIsResult();
+				explicit ListProjectAPIsResult(const std::string &payload);
+				~ListProjectAPIsResult();
+				std::string getProject()const;
+				std::vector<std::string> getAPIs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string modifyTime_;
-				int imageCount_;
-				int videoCount_;
-				std::string createTime_;
-				std::string setName_;
-				std::string setId_;
-				int faceCount_;
-				int videoLength_;
+				std::string project_;
+				std::vector<std::string> aPIs_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMM_MODEL_GETSETRESULT_H_
+#endif // !ALIBABACLOUD_IMM_MODEL_LISTPROJECTAPISRESULT_H_
