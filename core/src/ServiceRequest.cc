@@ -16,6 +16,7 @@
 
 #include <alibabacloud/core/ServiceRequest.h>
 #include <alibabacloud/core/AlibabaCloud.h>
+#include "Utils.h"
 
 namespace AlibabaCloud {
 
@@ -110,7 +111,6 @@ ServiceRequest::ParameterValueType ServiceRequest::parameter(
   return it->second;
 }
 
-
 ServiceRequest::ParameterValueType ServiceRequest::coreParameter(
   const ParameterNameType &name)const {
   return parameter(name);
@@ -135,8 +135,10 @@ void ServiceRequest::setCoreParameter(const ParameterNameType &name,
 }
 
 
-void ServiceRequest::setParameters(const ParameterCollection & params) {
+void ServiceRequest::setJsonParameters(const ParameterNameType &name, const ParameterCollection &params)
+{
   params_ = params;
+  setCoreParameter(name, AlibabaCloud::MapToJson(params));
 }
 
 std::string ServiceRequest::version()const {

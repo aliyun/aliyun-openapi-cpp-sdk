@@ -34,5 +34,7 @@ std::string canonicalizedQuery(const std::map <std::string,
   std::string> &params);
 std::string canonicalizedHeaders(const HttpMessage::HeaderCollection &headers);
 std::string GetEnv(const std::string env);
-}  // namespace AlibabaCloud
-#endif  // CORE_SRC_UTILS_H_
+std::string MapToJson(const std::map<std::string, std::string> &maps);
+std::map<std::string, std::string> JsonToMap(const std::string &json);
+} // namespace AlibabaCloud
+#endif // CORE_SRC_UTILS_H_

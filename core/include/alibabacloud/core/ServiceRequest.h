@@ -63,8 +63,8 @@ class ALIBABACLOUD_CORE_EXPORT ServiceRequest {
   void setCoreParameter(const ParameterNameType &name,
       const ParameterValueType &value);
 
-
   void setParameters(const ParameterCollection &params);
+  void setJsonParameters(const ParameterNameType &name, const ParameterCollection &params);
   void setResourcePath(const std::string &path);
   void setProduct(const std::string &product);
   void setVersion(const std::string &version);
