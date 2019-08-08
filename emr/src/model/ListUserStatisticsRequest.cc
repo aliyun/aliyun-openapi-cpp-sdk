@@ -33,7 +33,7 @@ long ListUserStatisticsRequest::getResourceOwnerId()const
 void ListUserStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListUserStatisticsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListUserStatisticsRequest::getRegionId()const
 void ListUserStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListUserStatisticsRequest::getOrderMode()const
@@ -55,7 +55,7 @@ std::string ListUserStatisticsRequest::getOrderMode()const
 void ListUserStatisticsRequest::setOrderMode(const std::string& orderMode)
 {
 	orderMode_ = orderMode;
-	setParameter("OrderMode", orderMode);
+	setCoreParameter("OrderMode", orderMode);
 }
 
 int ListUserStatisticsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListUserStatisticsRequest::getPageSize()const
 void ListUserStatisticsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListUserStatisticsRequest::getOrderFieldName()const
@@ -77,7 +77,7 @@ std::string ListUserStatisticsRequest::getOrderFieldName()const
 void ListUserStatisticsRequest::setOrderFieldName(const std::string& orderFieldName)
 {
 	orderFieldName_ = orderFieldName;
-	setParameter("OrderFieldName", orderFieldName);
+	setCoreParameter("OrderFieldName", orderFieldName);
 }
 
 int ListUserStatisticsRequest::getCurrentSize()const
@@ -88,7 +88,7 @@ int ListUserStatisticsRequest::getCurrentSize()const
 void ListUserStatisticsRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setParameter("CurrentSize", std::to_string(currentSize));
+	setCoreParameter("CurrentSize", std::to_string(currentSize));
 }
 
 std::string ListUserStatisticsRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListUserStatisticsRequest::getAccessKeyId()const
 void ListUserStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

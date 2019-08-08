@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,55 +17,50 @@
 #ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMONITORDATARESULT_H_
 #define ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMONITORDATARESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/ecs/EcsExport.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Ecs
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeInstanceMonitorDataResult : public ServiceResult
-			{
-			public:
-				struct InstanceMonitorData
-				{
-					int iOPSRead;
-					int intranetBandwidth;
-					int iOPSWrite;
-					float cPUCreditUsage;
-					std::string instanceId;
-					int intranetTX;
-					int cPU;
-					float cPUAdvanceCreditBalance;
-					int bPSRead;
-					int intranetRX;
-					std::string timeStamp;
-					int internetBandwidth;
-					float cPUNotpaidSurplusCreditUsage;
-					float cPUCreditBalance;
-					int internetTX;
-					int internetRX;
-					int bPSWrite;
-				};
+namespace AlibabaCloud {
+namespace Ecs {
+namespace Model {
+class ALIBABACLOUD_ECS_EXPORT DescribeInstanceMonitorDataResult
+    : public ServiceResult {
+public:
+  struct InstanceMonitorData {
+    int iOPSRead;
+    int intranetBandwidth;
+    int iOPSWrite;
+    float cPUCreditUsage;
+    std::string instanceId;
+    int intranetTX;
+    int cPU;
+    float cPUAdvanceCreditBalance;
+    int bPSRead;
+    int intranetRX;
+    std::string timeStamp;
+    int internetBandwidth;
+    float cPUNotpaidSurplusCreditUsage;
+    float cPUCreditBalance;
+    int internetTX;
+    int internetRX;
+    int bPSWrite;
+  };
 
+  DescribeInstanceMonitorDataResult();
+  explicit DescribeInstanceMonitorDataResult(const std::string &payload);
+  ~DescribeInstanceMonitorDataResult();
+  std::vector<InstanceMonitorData> getMonitorData() const;
 
-				DescribeInstanceMonitorDataResult();
-				explicit DescribeInstanceMonitorDataResult(const std::string &payload);
-				~DescribeInstanceMonitorDataResult();
-				std::vector<InstanceMonitorData> getMonitorData()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::vector<InstanceMonitorData> monitorData_;
-
-			};
-		}
-	}
-}
+private:
+  std::vector<InstanceMonitorData> monitorData_;
+};
+} // namespace Model
+} // namespace Ecs
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMONITORDATARESULT_H_

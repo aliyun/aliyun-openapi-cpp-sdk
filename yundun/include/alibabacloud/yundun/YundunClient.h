@@ -26,12 +26,12 @@
 #include "model/TodayqpsByRegionResult.h"
 #include "model/TodayAllppsRequest.h"
 #include "model/TodayAllppsResult.h"
-#include "model/TodayBackdoorRequest.h"
-#include "model/TodayBackdoorResult.h"
-#include "model/TodayCrackInterceptRequest.h"
-#include "model/TodayCrackInterceptResult.h"
 #include "model/AllMalwareNumRequest.h"
 #include "model/AllMalwareNumResult.h"
+#include "model/TodayCrackInterceptRequest.h"
+#include "model/TodayCrackInterceptResult.h"
+#include "model/TodayBackdoorRequest.h"
+#include "model/TodayBackdoorResult.h"
 #include "model/TodayMalwareNumRequest.h"
 #include "model/TodayMalwareNumResult.h"
 #include "model/WebAttackNumRequest.h"
@@ -57,15 +57,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TodayAllppsResult> TodayAllppsOutcome;
 			typedef std::future<TodayAllppsOutcome> TodayAllppsOutcomeCallable;
 			typedef std::function<void(const YundunClient*, const Model::TodayAllppsRequest&, const TodayAllppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TodayAllppsAsyncHandler;
-			typedef Outcome<Error, Model::TodayBackdoorResult> TodayBackdoorOutcome;
-			typedef std::future<TodayBackdoorOutcome> TodayBackdoorOutcomeCallable;
-			typedef std::function<void(const YundunClient*, const Model::TodayBackdoorRequest&, const TodayBackdoorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TodayBackdoorAsyncHandler;
-			typedef Outcome<Error, Model::TodayCrackInterceptResult> TodayCrackInterceptOutcome;
-			typedef std::future<TodayCrackInterceptOutcome> TodayCrackInterceptOutcomeCallable;
-			typedef std::function<void(const YundunClient*, const Model::TodayCrackInterceptRequest&, const TodayCrackInterceptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TodayCrackInterceptAsyncHandler;
 			typedef Outcome<Error, Model::AllMalwareNumResult> AllMalwareNumOutcome;
 			typedef std::future<AllMalwareNumOutcome> AllMalwareNumOutcomeCallable;
 			typedef std::function<void(const YundunClient*, const Model::AllMalwareNumRequest&, const AllMalwareNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllMalwareNumAsyncHandler;
+			typedef Outcome<Error, Model::TodayCrackInterceptResult> TodayCrackInterceptOutcome;
+			typedef std::future<TodayCrackInterceptOutcome> TodayCrackInterceptOutcomeCallable;
+			typedef std::function<void(const YundunClient*, const Model::TodayCrackInterceptRequest&, const TodayCrackInterceptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TodayCrackInterceptAsyncHandler;
+			typedef Outcome<Error, Model::TodayBackdoorResult> TodayBackdoorOutcome;
+			typedef std::future<TodayBackdoorOutcome> TodayBackdoorOutcomeCallable;
+			typedef std::function<void(const YundunClient*, const Model::TodayBackdoorRequest&, const TodayBackdoorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TodayBackdoorAsyncHandler;
 			typedef Outcome<Error, Model::TodayMalwareNumResult> TodayMalwareNumOutcome;
 			typedef std::future<TodayMalwareNumOutcome> TodayMalwareNumOutcomeCallable;
 			typedef std::function<void(const YundunClient*, const Model::TodayMalwareNumRequest&, const TodayMalwareNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TodayMalwareNumAsyncHandler;
@@ -92,15 +92,15 @@ namespace AlibabaCloud
 			TodayAllppsOutcome todayAllpps(const Model::TodayAllppsRequest &request)const;
 			void todayAllppsAsync(const Model::TodayAllppsRequest& request, const TodayAllppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TodayAllppsOutcomeCallable todayAllppsCallable(const Model::TodayAllppsRequest& request) const;
-			TodayBackdoorOutcome todayBackdoor(const Model::TodayBackdoorRequest &request)const;
-			void todayBackdoorAsync(const Model::TodayBackdoorRequest& request, const TodayBackdoorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TodayBackdoorOutcomeCallable todayBackdoorCallable(const Model::TodayBackdoorRequest& request) const;
-			TodayCrackInterceptOutcome todayCrackIntercept(const Model::TodayCrackInterceptRequest &request)const;
-			void todayCrackInterceptAsync(const Model::TodayCrackInterceptRequest& request, const TodayCrackInterceptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TodayCrackInterceptOutcomeCallable todayCrackInterceptCallable(const Model::TodayCrackInterceptRequest& request) const;
 			AllMalwareNumOutcome allMalwareNum(const Model::AllMalwareNumRequest &request)const;
 			void allMalwareNumAsync(const Model::AllMalwareNumRequest& request, const AllMalwareNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllMalwareNumOutcomeCallable allMalwareNumCallable(const Model::AllMalwareNumRequest& request) const;
+			TodayCrackInterceptOutcome todayCrackIntercept(const Model::TodayCrackInterceptRequest &request)const;
+			void todayCrackInterceptAsync(const Model::TodayCrackInterceptRequest& request, const TodayCrackInterceptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TodayCrackInterceptOutcomeCallable todayCrackInterceptCallable(const Model::TodayCrackInterceptRequest& request) const;
+			TodayBackdoorOutcome todayBackdoor(const Model::TodayBackdoorRequest &request)const;
+			void todayBackdoorAsync(const Model::TodayBackdoorRequest& request, const TodayBackdoorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TodayBackdoorOutcomeCallable todayBackdoorCallable(const Model::TodayBackdoorRequest& request) const;
 			TodayMalwareNumOutcome todayMalwareNum(const Model::TodayMalwareNumRequest &request)const;
 			void todayMalwareNumAsync(const Model::TodayMalwareNumRequest& request, const TodayMalwareNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TodayMalwareNumOutcomeCallable todayMalwareNumCallable(const Model::TodayMalwareNumRequest& request) const;

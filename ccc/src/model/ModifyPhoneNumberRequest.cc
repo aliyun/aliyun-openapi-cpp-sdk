@@ -33,7 +33,7 @@ std::string ModifyPhoneNumberRequest::getContactFlowId()const
 void ModifyPhoneNumberRequest::setContactFlowId(const std::string& contactFlowId)
 {
 	contactFlowId_ = contactFlowId;
-	setParameter("ContactFlowId", contactFlowId);
+	setCoreParameter("ContactFlowId", contactFlowId);
 }
 
 std::string ModifyPhoneNumberRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ModifyPhoneNumberRequest::getInstanceId()const
 void ModifyPhoneNumberRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyPhoneNumberRequest::getPhoneNumberId()const
@@ -55,7 +55,7 @@ std::string ModifyPhoneNumberRequest::getPhoneNumberId()const
 void ModifyPhoneNumberRequest::setPhoneNumberId(const std::string& phoneNumberId)
 {
 	phoneNumberId_ = phoneNumberId;
-	setParameter("PhoneNumberId", phoneNumberId);
+	setCoreParameter("PhoneNumberId", phoneNumberId);
 }
 
 std::string ModifyPhoneNumberRequest::getUsage()const
@@ -66,7 +66,19 @@ std::string ModifyPhoneNumberRequest::getUsage()const
 void ModifyPhoneNumberRequest::setUsage(const std::string& usage)
 {
 	usage_ = usage;
-	setParameter("Usage", usage);
+	setCoreParameter("Usage", usage);
+}
+
+std::vector<std::string> ModifyPhoneNumberRequest::getSkillGroupId()const
+{
+	return skillGroupId_;
+}
+
+void ModifyPhoneNumberRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
+{
+	skillGroupId_ = skillGroupId;
+	for(int i = 0; i!= skillGroupId.size(); i++)
+		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
 }
 
 std::string ModifyPhoneNumberRequest::getAccessKeyId()const
@@ -77,6 +89,6 @@ std::string ModifyPhoneNumberRequest::getAccessKeyId()const
 void ModifyPhoneNumberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

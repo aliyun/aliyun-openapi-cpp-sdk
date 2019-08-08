@@ -301,6 +301,17 @@ void UnassignPrivateIpAddressesRequest::setRequestId(const std::string& requestI
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string UnassignPrivateIpAddressesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void UnassignPrivateIpAddressesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string UnassignPrivateIpAddressesRequest::getNetworkInterfaceId()const
 {
 	return networkInterfaceId_;

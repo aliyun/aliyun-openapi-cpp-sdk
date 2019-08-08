@@ -59,12 +59,16 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				int getBackgroundColor()const;
 				void setBackgroundColor(int backgroundColor);
+				int getCropMode()const;
+				void setCropMode(int cropMode);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRequestContent()const;
 				void setRequestContent(const std::string& requestContent);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
+				std::string getTaskProfile()const;
+				void setTaskProfile(const std::string& taskProfile);
 				std::vector<long> getLayoutIds()const;
 				void setLayoutIds(const std::vector<long>& layoutIds);
 				std::string getCallerUidEmail()const;
@@ -91,6 +95,8 @@ namespace AlibabaCloud
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
+				std::string getServiceCode()const;
+				void setServiceCode(const std::string& serviceCode);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
 				std::string getAppId()const;
@@ -110,9 +116,11 @@ namespace AlibabaCloud
 				std::string callerType_;
 				std::string accessKeyId_;
 				int backgroundColor_;
+				int cropMode_;
 				std::string securityToken_;
 				std::string requestContent_;
 				std::string callerBidEmail_;
+				std::string taskProfile_;
 				std::vector<long> layoutIds_;
 				std::string callerUidEmail_;
 				std::string taskId_;
@@ -126,6 +134,7 @@ namespace AlibabaCloud
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
+				std::string serviceCode_;
 				std::string requestId_;
 				std::string appId_;
 				int mediaEncode_;

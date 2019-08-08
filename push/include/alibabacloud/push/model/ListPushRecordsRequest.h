@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,50 +17,46 @@
 #ifndef ALIBABACLOUD_PUSH_MODEL_LISTPUSHRECORDSREQUEST_H_
 #define ALIBABACLOUD_PUSH_MODEL_LISTPUSHRECORDSREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/push/PushExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Push
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_PUSH_EXPORT ListPushRecordsRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Push {
+namespace Model {
+class ALIBABACLOUD_PUSH_EXPORT ListPushRecordsRequest
+    : public RpcServiceRequest {
 
-			public:
-				ListPushRecordsRequest();
-				~ListPushRecordsRequest();
+public:
+  ListPushRecordsRequest();
+  ~ListPushRecordsRequest();
 
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				long getAppKey()const;
-				void setAppKey(long appKey);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				int getPage()const;
-				void setPage(int page);
-				std::string getPushType()const;
-				void setPushType(const std::string& pushType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+  int getPageSize() const;
+  void setPageSize(int pageSize);
+  std::string getEndTime() const;
+  void setEndTime(const std::string &endTime);
+  long getAppKey() const;
+  void setAppKey(long appKey);
+  std::string getStartTime() const;
+  void setStartTime(const std::string &startTime);
+  int getPage() const;
+  void setPage(int page);
+  std::string getPushType() const;
+  void setPushType(const std::string &pushType);
+  std::string getAccessKeyId() const;
+  void setAccessKeyId(const std::string &accessKeyId);
 
-            private:
-				int pageSize_;
-				std::string endTime_;
-				long appKey_;
-				std::string startTime_;
-				int page_;
-				std::string pushType_;
-				std::string accessKeyId_;
-
-			};
-		}
-	}
-}
+private:
+  int pageSize_;
+  std::string endTime_;
+  long appKey_;
+  std::string startTime_;
+  int page_;
+  std::string pushType_;
+  std::string accessKeyId_;
+};
+} // namespace Model
+} // namespace Push
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_PUSH_MODEL_LISTPUSHRECORDSREQUEST_H_

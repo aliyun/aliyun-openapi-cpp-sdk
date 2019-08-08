@@ -33,7 +33,7 @@ long GetApgroupDetailedConfigRequest::getId()const
 void GetApgroupDetailedConfigRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetApgroupDetailedConfigRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetApgroupDetailedConfigRequest::getAccessKeyId()const
 void GetApgroupDetailedConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

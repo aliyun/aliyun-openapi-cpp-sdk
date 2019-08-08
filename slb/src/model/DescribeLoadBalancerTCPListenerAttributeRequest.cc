@@ -33,7 +33,7 @@ std::string DescribeLoadBalancerTCPListenerAttributeRequest::getAccess_key_id()c
 void DescribeLoadBalancerTCPListenerAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long DescribeLoadBalancerTCPListenerAttributeRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeLoadBalancerTCPListenerAttributeRequest::getResourceOwnerId()const
 void DescribeLoadBalancerTCPListenerAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeLoadBalancerTCPListenerAttributeRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int DescribeLoadBalancerTCPListenerAttributeRequest::getListenerPort()const
 void DescribeLoadBalancerTCPListenerAttributeRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string DescribeLoadBalancerTCPListenerAttributeRequest::getLoadBalancerId()const
@@ -66,7 +66,7 @@ std::string DescribeLoadBalancerTCPListenerAttributeRequest::getLoadBalancerId()
 void DescribeLoadBalancerTCPListenerAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string DescribeLoadBalancerTCPListenerAttributeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeLoadBalancerTCPListenerAttributeRequest::getRegionId()const
 void DescribeLoadBalancerTCPListenerAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLoadBalancerTCPListenerAttributeRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeLoadBalancerTCPListenerAttributeRequest::getResourceOwnerAcc
 void DescribeLoadBalancerTCPListenerAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeLoadBalancerTCPListenerAttributeRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string DescribeLoadBalancerTCPListenerAttributeRequest::getOwnerAccount()co
 void DescribeLoadBalancerTCPListenerAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeLoadBalancerTCPListenerAttributeRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeLoadBalancerTCPListenerAttributeRequest::getOwnerId()const
 void DescribeLoadBalancerTCPListenerAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLoadBalancerTCPListenerAttributeRequest::getTags()const
@@ -121,6 +121,6 @@ std::string DescribeLoadBalancerTCPListenerAttributeRequest::getTags()const
 void DescribeLoadBalancerTCPListenerAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
 }
 

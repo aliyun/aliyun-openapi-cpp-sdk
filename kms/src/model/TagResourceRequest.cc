@@ -33,18 +33,7 @@ std::string TagResourceRequest::getKeyId()const
 void TagResourceRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setParameter("KeyId", keyId);
-}
-
-std::string TagResourceRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void TagResourceRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("KeyId", keyId);
 }
 
 std::string TagResourceRequest::getTags()const
@@ -55,6 +44,6 @@ std::string TagResourceRequest::getTags()const
 void TagResourceRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
 }
 

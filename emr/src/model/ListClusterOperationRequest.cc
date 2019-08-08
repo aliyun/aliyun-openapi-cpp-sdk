@@ -33,7 +33,7 @@ long ListClusterOperationRequest::getResourceOwnerId()const
 void ListClusterOperationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListClusterOperationRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListClusterOperationRequest::getRegionId()const
 void ListClusterOperationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListClusterOperationRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListClusterOperationRequest::getPageSize()const
 void ListClusterOperationRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListClusterOperationRequest::getServiceName()const
@@ -66,7 +66,7 @@ std::string ListClusterOperationRequest::getServiceName()const
 void ListClusterOperationRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", serviceName);
 }
 
 std::string ListClusterOperationRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string ListClusterOperationRequest::getClusterId()const
 void ListClusterOperationRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListClusterOperationRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListClusterOperationRequest::getPageNumber()const
 void ListClusterOperationRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClusterOperationRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ListClusterOperationRequest::getAccessKeyId()const
 void ListClusterOperationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListClusterOperationRequest::getStatus()const
@@ -110,6 +110,6 @@ std::string ListClusterOperationRequest::getStatus()const
 void ListClusterOperationRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

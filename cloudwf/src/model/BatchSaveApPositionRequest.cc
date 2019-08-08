@@ -33,7 +33,7 @@ std::string BatchSaveApPositionRequest::getJsonData()const
 void BatchSaveApPositionRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setParameter("JsonData", jsonData);
+	setCoreParameter("JsonData", jsonData);
 }
 
 std::string BatchSaveApPositionRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string BatchSaveApPositionRequest::getAccessKeyId()const
 void BatchSaveApPositionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

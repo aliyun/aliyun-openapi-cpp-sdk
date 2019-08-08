@@ -123,36 +123,36 @@ YundunClient::TodayAllppsOutcomeCallable YundunClient::todayAllppsCallable(const
 	return task->get_future();
 }
 
-YundunClient::TodayBackdoorOutcome YundunClient::todayBackdoor(const TodayBackdoorRequest &request) const
+YundunClient::AllMalwareNumOutcome YundunClient::allMalwareNum(const AllMalwareNumRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return TodayBackdoorOutcome(endpointOutcome.error());
+		return AllMalwareNumOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return TodayBackdoorOutcome(TodayBackdoorResult(outcome.result()));
+		return AllMalwareNumOutcome(AllMalwareNumResult(outcome.result()));
 	else
-		return TodayBackdoorOutcome(outcome.error());
+		return AllMalwareNumOutcome(outcome.error());
 }
 
-void YundunClient::todayBackdoorAsync(const TodayBackdoorRequest& request, const TodayBackdoorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void YundunClient::allMalwareNumAsync(const AllMalwareNumRequest& request, const AllMalwareNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, todayBackdoor(request), context);
+		handler(this, request, allMalwareNum(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-YundunClient::TodayBackdoorOutcomeCallable YundunClient::todayBackdoorCallable(const TodayBackdoorRequest &request) const
+YundunClient::AllMalwareNumOutcomeCallable YundunClient::allMalwareNumCallable(const AllMalwareNumRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<TodayBackdoorOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AllMalwareNumOutcome()>>(
 			[this, request]()
 			{
-			return this->todayBackdoor(request);
+			return this->allMalwareNum(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -195,36 +195,36 @@ YundunClient::TodayCrackInterceptOutcomeCallable YundunClient::todayCrackInterce
 	return task->get_future();
 }
 
-YundunClient::AllMalwareNumOutcome YundunClient::allMalwareNum(const AllMalwareNumRequest &request) const
+YundunClient::TodayBackdoorOutcome YundunClient::todayBackdoor(const TodayBackdoorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AllMalwareNumOutcome(endpointOutcome.error());
+		return TodayBackdoorOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AllMalwareNumOutcome(AllMalwareNumResult(outcome.result()));
+		return TodayBackdoorOutcome(TodayBackdoorResult(outcome.result()));
 	else
-		return AllMalwareNumOutcome(outcome.error());
+		return TodayBackdoorOutcome(outcome.error());
 }
 
-void YundunClient::allMalwareNumAsync(const AllMalwareNumRequest& request, const AllMalwareNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void YundunClient::todayBackdoorAsync(const TodayBackdoorRequest& request, const TodayBackdoorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, allMalwareNum(request), context);
+		handler(this, request, todayBackdoor(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-YundunClient::AllMalwareNumOutcomeCallable YundunClient::allMalwareNumCallable(const AllMalwareNumRequest &request) const
+YundunClient::TodayBackdoorOutcomeCallable YundunClient::todayBackdoorCallable(const TodayBackdoorRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AllMalwareNumOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<TodayBackdoorOutcome()>>(
 			[this, request]()
 			{
-			return this->allMalwareNum(request);
+			return this->todayBackdoor(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

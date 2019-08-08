@@ -142,6 +142,17 @@ void MetricQueryRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string MetricQueryRequest::getCustomFilters()const
+{
+	return customFilters_;
+}
+
+void MetricQueryRequest::setCustomFilters(const std::string& customFilters)
+{
+	customFilters_ = customFilters;
+	setCoreParameter("CustomFilters", customFilters);
+}
+
 int MetricQueryRequest::getLimit()const
 {
 	return limit_;
@@ -151,6 +162,17 @@ void MetricQueryRequest::setLimit(int limit)
 {
 	limit_ = limit;
 	setCoreParameter("Limit", std::to_string(limit));
+}
+
+std::string MetricQueryRequest::getWhere()const
+{
+	return where_;
+}
+
+void MetricQueryRequest::setWhere(const std::string& where)
+{
+	where_ = where;
+	setCoreParameter("Where", where);
 }
 
 std::vector<std::string> MetricQueryRequest::getDimensions()const

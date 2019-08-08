@@ -33,7 +33,7 @@ long QueryTaskListRequest::getBeginCreateTime()const
 void QueryTaskListRequest::setBeginCreateTime(long beginCreateTime)
 {
 	beginCreateTime_ = beginCreateTime;
-	setParameter("BeginCreateTime", std::to_string(beginCreateTime));
+	setCoreParameter("BeginCreateTime", std::to_string(beginCreateTime));
 }
 
 long QueryTaskListRequest::getEndCreateTime()const
@@ -44,7 +44,7 @@ long QueryTaskListRequest::getEndCreateTime()const
 void QueryTaskListRequest::setEndCreateTime(long endCreateTime)
 {
 	endCreateTime_ = endCreateTime;
-	setParameter("EndCreateTime", std::to_string(endCreateTime));
+	setCoreParameter("EndCreateTime", std::to_string(endCreateTime));
 }
 
 std::string QueryTaskListRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string QueryTaskListRequest::getUserClientIp()const
 void QueryTaskListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int QueryTaskListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int QueryTaskListRequest::getPageSize()const
 void QueryTaskListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTaskListRequest::getLang()const
@@ -77,7 +77,7 @@ std::string QueryTaskListRequest::getLang()const
 void QueryTaskListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 int QueryTaskListRequest::getPageNum()const
@@ -88,6 +88,6 @@ int QueryTaskListRequest::getPageNum()const
 void QueryTaskListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

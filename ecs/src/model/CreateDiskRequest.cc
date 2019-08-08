@@ -69,6 +69,17 @@ void CreateDiskRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
+std::string CreateDiskRequest::getPerformanceLevel()const
+{
+	return performanceLevel_;
+}
+
+void CreateDiskRequest::setPerformanceLevel(const std::string& performanceLevel)
+{
+	performanceLevel_ = performanceLevel;
+	setCoreParameter("PerformanceLevel", performanceLevel);
+}
+
 std::string CreateDiskRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -146,6 +157,17 @@ void CreateDiskRequest::setInstanceId(const std::string& instanceId)
 	setCoreParameter("InstanceId", instanceId);
 }
 
+std::string CreateDiskRequest::getStorageSetId()const
+{
+	return storageSetId_;
+}
+
+void CreateDiskRequest::setStorageSetId(const std::string& storageSetId)
+{
+	storageSetId_ = storageSetId;
+	setCoreParameter("StorageSetId", storageSetId);
+}
+
 int CreateDiskRequest::getSize()const
 {
 	return size_;
@@ -199,6 +221,17 @@ void CreateDiskRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setCoreParameter("ZoneId", zoneId);
+}
+
+int CreateDiskRequest::getStorageSetPartitionNumber()const
+{
+	return storageSetPartitionNumber_;
+}
+
+void CreateDiskRequest::setStorageSetPartitionNumber(int storageSetPartitionNumber)
+{
+	storageSetPartitionNumber_ = storageSetPartitionNumber;
+	setCoreParameter("StorageSetPartitionNumber", std::to_string(storageSetPartitionNumber));
 }
 
 std::vector<CreateDiskRequest::Tag> CreateDiskRequest::getTag()const

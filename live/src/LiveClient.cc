@@ -87,42 +87,6 @@ LiveClient::StartBoardRecordOutcomeCallable LiveClient::startBoardRecordCallable
 	return task->get_future();
 }
 
-LiveClient::DescribeRoomListOutcome LiveClient::describeRoomList(const DescribeRoomListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRoomListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRoomListOutcome(DescribeRoomListResult(outcome.result()));
-	else
-		return DescribeRoomListOutcome(outcome.error());
-}
-
-void LiveClient::describeRoomListAsync(const DescribeRoomListRequest& request, const DescribeRoomListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRoomList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeRoomListOutcomeCallable LiveClient::describeRoomListCallable(const DescribeRoomListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRoomListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRoomList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DescribeLiveRecordNotifyConfigOutcome LiveClient::describeLiveRecordNotifyConfig(const DescribeLiveRecordNotifyConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +117,42 @@ LiveClient::DescribeLiveRecordNotifyConfigOutcomeCallable LiveClient::describeLi
 			[this, request]()
 			{
 			return this->describeLiveRecordNotifyConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeRoomListOutcome LiveClient::describeRoomList(const DescribeRoomListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRoomListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRoomListOutcome(DescribeRoomListResult(outcome.result()));
+	else
+		return DescribeRoomListOutcome(outcome.error());
+}
+
+void LiveClient::describeRoomListAsync(const DescribeRoomListRequest& request, const DescribeRoomListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRoomList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeRoomListOutcomeCallable LiveClient::describeRoomListCallable(const DescribeRoomListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRoomListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRoomList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -483,42 +483,6 @@ LiveClient::UpdateCasterSceneConfigOutcomeCallable LiveClient::updateCasterScene
 	return task->get_future();
 }
 
-LiveClient::DescribeLiveStreamTranscodeInfoOutcome LiveClient::describeLiveStreamTranscodeInfo(const DescribeLiveStreamTranscodeInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveStreamTranscodeInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveStreamTranscodeInfoOutcome(DescribeLiveStreamTranscodeInfoResult(outcome.result()));
-	else
-		return DescribeLiveStreamTranscodeInfoOutcome(outcome.error());
-}
-
-void LiveClient::describeLiveStreamTranscodeInfoAsync(const DescribeLiveStreamTranscodeInfoRequest& request, const DescribeLiveStreamTranscodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveStreamTranscodeInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveStreamTranscodeInfoOutcomeCallable LiveClient::describeLiveStreamTranscodeInfoCallable(const DescribeLiveStreamTranscodeInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamTranscodeInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveStreamTranscodeInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DescribeLiveStreamsOnlineListOutcome LiveClient::describeLiveStreamsOnlineList(const DescribeLiveStreamsOnlineListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +513,42 @@ LiveClient::DescribeLiveStreamsOnlineListOutcomeCallable LiveClient::describeLiv
 			[this, request]()
 			{
 			return this->describeLiveStreamsOnlineList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveStreamTranscodeInfoOutcome LiveClient::describeLiveStreamTranscodeInfo(const DescribeLiveStreamTranscodeInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamTranscodeInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamTranscodeInfoOutcome(DescribeLiveStreamTranscodeInfoResult(outcome.result()));
+	else
+		return DescribeLiveStreamTranscodeInfoOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamTranscodeInfoAsync(const DescribeLiveStreamTranscodeInfoRequest& request, const DescribeLiveStreamTranscodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamTranscodeInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamTranscodeInfoOutcomeCallable LiveClient::describeLiveStreamTranscodeInfoCallable(const DescribeLiveStreamTranscodeInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamTranscodeInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamTranscodeInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,42 +699,6 @@ LiveClient::DescribeLiveDomainTranscodeDataOutcomeCallable LiveClient::describeL
 	return task->get_future();
 }
 
-LiveClient::DeleteLiveStreamTranscodeOutcome LiveClient::deleteLiveStreamTranscode(const DeleteLiveStreamTranscodeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteLiveStreamTranscodeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteLiveStreamTranscodeOutcome(DeleteLiveStreamTranscodeResult(outcome.result()));
-	else
-		return DeleteLiveStreamTranscodeOutcome(outcome.error());
-}
-
-void LiveClient::deleteLiveStreamTranscodeAsync(const DeleteLiveStreamTranscodeRequest& request, const DeleteLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteLiveStreamTranscode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DeleteLiveStreamTranscodeOutcomeCallable LiveClient::deleteLiveStreamTranscodeCallable(const DeleteLiveStreamTranscodeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteLiveStreamTranscodeOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteLiveStreamTranscode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DeleteCasterEpisodeOutcome LiveClient::deleteCasterEpisode(const DeleteCasterEpisodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +729,42 @@ LiveClient::DeleteCasterEpisodeOutcomeCallable LiveClient::deleteCasterEpisodeCa
 			[this, request]()
 			{
 			return this->deleteCasterEpisode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteLiveStreamTranscodeOutcome LiveClient::deleteLiveStreamTranscode(const DeleteLiveStreamTranscodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveStreamTranscodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveStreamTranscodeOutcome(DeleteLiveStreamTranscodeResult(outcome.result()));
+	else
+		return DeleteLiveStreamTranscodeOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveStreamTranscodeAsync(const DeleteLiveStreamTranscodeRequest& request, const DeleteLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveStreamTranscode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveStreamTranscodeOutcomeCallable LiveClient::deleteLiveStreamTranscodeCallable(const DeleteLiveStreamTranscodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveStreamTranscodeOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveStreamTranscode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -807,42 +807,6 @@ LiveClient::DescribeCasterRtcInfoOutcomeCallable LiveClient::describeCasterRtcIn
 	return task->get_future();
 }
 
-LiveClient::SetCasterSceneConfigOutcome LiveClient::setCasterSceneConfig(const SetCasterSceneConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetCasterSceneConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetCasterSceneConfigOutcome(SetCasterSceneConfigResult(outcome.result()));
-	else
-		return SetCasterSceneConfigOutcome(outcome.error());
-}
-
-void LiveClient::setCasterSceneConfigAsync(const SetCasterSceneConfigRequest& request, const SetCasterSceneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setCasterSceneConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::SetCasterSceneConfigOutcomeCallable LiveClient::setCasterSceneConfigCallable(const SetCasterSceneConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetCasterSceneConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setCasterSceneConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::AddTrancodeSEIOutcome LiveClient::addTrancodeSEI(const AddTrancodeSEIRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +837,42 @@ LiveClient::AddTrancodeSEIOutcomeCallable LiveClient::addTrancodeSEICallable(con
 			[this, request]()
 			{
 			return this->addTrancodeSEI(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::SetCasterSceneConfigOutcome LiveClient::setCasterSceneConfig(const SetCasterSceneConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetCasterSceneConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetCasterSceneConfigOutcome(SetCasterSceneConfigResult(outcome.result()));
+	else
+		return SetCasterSceneConfigOutcome(outcome.error());
+}
+
+void LiveClient::setCasterSceneConfigAsync(const SetCasterSceneConfigRequest& request, const SetCasterSceneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setCasterSceneConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::SetCasterSceneConfigOutcomeCallable LiveClient::setCasterSceneConfigCallable(const SetCasterSceneConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetCasterSceneConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->setCasterSceneConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,42 +1095,6 @@ LiveClient::StartLiveIndexOutcomeCallable LiveClient::startLiveIndexCallable(con
 	return task->get_future();
 }
 
-LiveClient::DescribeLiveTopDomainsByFlowOutcome LiveClient::describeLiveTopDomainsByFlow(const DescribeLiveTopDomainsByFlowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveTopDomainsByFlowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveTopDomainsByFlowOutcome(DescribeLiveTopDomainsByFlowResult(outcome.result()));
-	else
-		return DescribeLiveTopDomainsByFlowOutcome(outcome.error());
-}
-
-void LiveClient::describeLiveTopDomainsByFlowAsync(const DescribeLiveTopDomainsByFlowRequest& request, const DescribeLiveTopDomainsByFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveTopDomainsByFlow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveTopDomainsByFlowOutcomeCallable LiveClient::describeLiveTopDomainsByFlowCallable(const DescribeLiveTopDomainsByFlowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveTopDomainsByFlowOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveTopDomainsByFlow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::AddCasterEpisodeGroupOutcome LiveClient::addCasterEpisodeGroup(const AddCasterEpisodeGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1203,36 +1167,36 @@ LiveClient::DescribeLiveStreamRecordIndexFileOutcomeCallable LiveClient::describ
 	return task->get_future();
 }
 
-LiveClient::DescribeLiveStreamTranscodeStreamNumOutcome LiveClient::describeLiveStreamTranscodeStreamNum(const DescribeLiveStreamTranscodeStreamNumRequest &request) const
+LiveClient::DescribeLiveTopDomainsByFlowOutcome LiveClient::describeLiveTopDomainsByFlow(const DescribeLiveTopDomainsByFlowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeLiveStreamTranscodeStreamNumOutcome(endpointOutcome.error());
+		return DescribeLiveTopDomainsByFlowOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeLiveStreamTranscodeStreamNumOutcome(DescribeLiveStreamTranscodeStreamNumResult(outcome.result()));
+		return DescribeLiveTopDomainsByFlowOutcome(DescribeLiveTopDomainsByFlowResult(outcome.result()));
 	else
-		return DescribeLiveStreamTranscodeStreamNumOutcome(outcome.error());
+		return DescribeLiveTopDomainsByFlowOutcome(outcome.error());
 }
 
-void LiveClient::describeLiveStreamTranscodeStreamNumAsync(const DescribeLiveStreamTranscodeStreamNumRequest& request, const DescribeLiveStreamTranscodeStreamNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void LiveClient::describeLiveTopDomainsByFlowAsync(const DescribeLiveTopDomainsByFlowRequest& request, const DescribeLiveTopDomainsByFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeLiveStreamTranscodeStreamNum(request), context);
+		handler(this, request, describeLiveTopDomainsByFlow(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-LiveClient::DescribeLiveStreamTranscodeStreamNumOutcomeCallable LiveClient::describeLiveStreamTranscodeStreamNumCallable(const DescribeLiveStreamTranscodeStreamNumRequest &request) const
+LiveClient::DescribeLiveTopDomainsByFlowOutcomeCallable LiveClient::describeLiveTopDomainsByFlowCallable(const DescribeLiveTopDomainsByFlowRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamTranscodeStreamNumOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeLiveTopDomainsByFlowOutcome()>>(
 			[this, request]()
 			{
-			return this->describeLiveStreamTranscodeStreamNum(request);
+			return this->describeLiveTopDomainsByFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1275,6 +1239,42 @@ LiveClient::DescribeCasterConfigOutcomeCallable LiveClient::describeCasterConfig
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveStreamTranscodeStreamNumOutcome LiveClient::describeLiveStreamTranscodeStreamNum(const DescribeLiveStreamTranscodeStreamNumRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamTranscodeStreamNumOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamTranscodeStreamNumOutcome(DescribeLiveStreamTranscodeStreamNumResult(outcome.result()));
+	else
+		return DescribeLiveStreamTranscodeStreamNumOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamTranscodeStreamNumAsync(const DescribeLiveStreamTranscodeStreamNumRequest& request, const DescribeLiveStreamTranscodeStreamNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamTranscodeStreamNum(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamTranscodeStreamNumOutcomeCallable LiveClient::describeLiveStreamTranscodeStreamNumCallable(const DescribeLiveStreamTranscodeStreamNumRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamTranscodeStreamNumOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamTranscodeStreamNum(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::CopyCasterOutcome LiveClient::copyCaster(const CopyCasterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1311,42 +1311,6 @@ LiveClient::CopyCasterOutcomeCallable LiveClient::copyCasterCallable(const CopyC
 	return task->get_future();
 }
 
-LiveClient::AddCustomLiveStreamTranscodeOutcome LiveClient::addCustomLiveStreamTranscode(const AddCustomLiveStreamTranscodeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddCustomLiveStreamTranscodeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddCustomLiveStreamTranscodeOutcome(AddCustomLiveStreamTranscodeResult(outcome.result()));
-	else
-		return AddCustomLiveStreamTranscodeOutcome(outcome.error());
-}
-
-void LiveClient::addCustomLiveStreamTranscodeAsync(const AddCustomLiveStreamTranscodeRequest& request, const AddCustomLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addCustomLiveStreamTranscode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::AddCustomLiveStreamTranscodeOutcomeCallable LiveClient::addCustomLiveStreamTranscodeCallable(const AddCustomLiveStreamTranscodeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddCustomLiveStreamTranscodeOutcome()>>(
-			[this, request]()
-			{
-			return this->addCustomLiveStreamTranscode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::SetLiveLazyPullStreamInfoConfigOutcome LiveClient::setLiveLazyPullStreamInfoConfig(const SetLiveLazyPullStreamInfoConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1377,6 +1341,42 @@ LiveClient::SetLiveLazyPullStreamInfoConfigOutcomeCallable LiveClient::setLiveLa
 			[this, request]()
 			{
 			return this->setLiveLazyPullStreamInfoConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::AddCustomLiveStreamTranscodeOutcome LiveClient::addCustomLiveStreamTranscode(const AddCustomLiveStreamTranscodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddCustomLiveStreamTranscodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddCustomLiveStreamTranscodeOutcome(AddCustomLiveStreamTranscodeResult(outcome.result()));
+	else
+		return AddCustomLiveStreamTranscodeOutcome(outcome.error());
+}
+
+void LiveClient::addCustomLiveStreamTranscodeAsync(const AddCustomLiveStreamTranscodeRequest& request, const AddCustomLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addCustomLiveStreamTranscode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::AddCustomLiveStreamTranscodeOutcomeCallable LiveClient::addCustomLiveStreamTranscodeCallable(const AddCustomLiveStreamTranscodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddCustomLiveStreamTranscodeOutcome()>>(
+			[this, request]()
+			{
+			return this->addCustomLiveStreamTranscode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1995,6 +1995,42 @@ LiveClient::DeleteLiveAppSnapshotConfigOutcomeCallable LiveClient::deleteLiveApp
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveStreamsNotifyUrlConfigOutcome LiveClient::describeLiveStreamsNotifyUrlConfig(const DescribeLiveStreamsNotifyUrlConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamsNotifyUrlConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamsNotifyUrlConfigOutcome(DescribeLiveStreamsNotifyUrlConfigResult(outcome.result()));
+	else
+		return DescribeLiveStreamsNotifyUrlConfigOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamsNotifyUrlConfigAsync(const DescribeLiveStreamsNotifyUrlConfigRequest& request, const DescribeLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamsNotifyUrlConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamsNotifyUrlConfigOutcomeCallable LiveClient::describeLiveStreamsNotifyUrlConfigCallable(const DescribeLiveStreamsNotifyUrlConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamsNotifyUrlConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamsNotifyUrlConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::ApplyRecordTokenOutcome LiveClient::applyRecordToken(const ApplyRecordTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2067,42 +2103,6 @@ LiveClient::UpdateCasterSceneAudioOutcomeCallable LiveClient::updateCasterSceneA
 	return task->get_future();
 }
 
-LiveClient::DescribeLiveStreamsNotifyUrlConfigOutcome LiveClient::describeLiveStreamsNotifyUrlConfig(const DescribeLiveStreamsNotifyUrlConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveStreamsNotifyUrlConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveStreamsNotifyUrlConfigOutcome(DescribeLiveStreamsNotifyUrlConfigResult(outcome.result()));
-	else
-		return DescribeLiveStreamsNotifyUrlConfigOutcome(outcome.error());
-}
-
-void LiveClient::describeLiveStreamsNotifyUrlConfigAsync(const DescribeLiveStreamsNotifyUrlConfigRequest& request, const DescribeLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveStreamsNotifyUrlConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveStreamsNotifyUrlConfigOutcomeCallable LiveClient::describeLiveStreamsNotifyUrlConfigCallable(const DescribeLiveStreamsNotifyUrlConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamsNotifyUrlConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveStreamsNotifyUrlConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DescribeUpBpsPeakDataOutcome LiveClient::describeUpBpsPeakData(const DescribeUpBpsPeakDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2139,72 +2139,36 @@ LiveClient::DescribeUpBpsPeakDataOutcomeCallable LiveClient::describeUpBpsPeakDa
 	return task->get_future();
 }
 
-LiveClient::UpdateLiveTopLevelDomainOutcome LiveClient::updateLiveTopLevelDomain(const UpdateLiveTopLevelDomainRequest &request) const
+LiveClient::DescribeLiveDomainFrameRateAndBitRateDataOutcome LiveClient::describeLiveDomainFrameRateAndBitRateData(const DescribeLiveDomainFrameRateAndBitRateDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UpdateLiveTopLevelDomainOutcome(endpointOutcome.error());
+		return DescribeLiveDomainFrameRateAndBitRateDataOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UpdateLiveTopLevelDomainOutcome(UpdateLiveTopLevelDomainResult(outcome.result()));
+		return DescribeLiveDomainFrameRateAndBitRateDataOutcome(DescribeLiveDomainFrameRateAndBitRateDataResult(outcome.result()));
 	else
-		return UpdateLiveTopLevelDomainOutcome(outcome.error());
+		return DescribeLiveDomainFrameRateAndBitRateDataOutcome(outcome.error());
 }
 
-void LiveClient::updateLiveTopLevelDomainAsync(const UpdateLiveTopLevelDomainRequest& request, const UpdateLiveTopLevelDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void LiveClient::describeLiveDomainFrameRateAndBitRateDataAsync(const DescribeLiveDomainFrameRateAndBitRateDataRequest& request, const DescribeLiveDomainFrameRateAndBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, updateLiveTopLevelDomain(request), context);
+		handler(this, request, describeLiveDomainFrameRateAndBitRateData(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-LiveClient::UpdateLiveTopLevelDomainOutcomeCallable LiveClient::updateLiveTopLevelDomainCallable(const UpdateLiveTopLevelDomainRequest &request) const
+LiveClient::DescribeLiveDomainFrameRateAndBitRateDataOutcomeCallable LiveClient::describeLiveDomainFrameRateAndBitRateDataCallable(const DescribeLiveDomainFrameRateAndBitRateDataRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UpdateLiveTopLevelDomainOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainFrameRateAndBitRateDataOutcome()>>(
 			[this, request]()
 			{
-			return this->updateLiveTopLevelDomain(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DeleteLivePullStreamInfoConfigOutcome LiveClient::deleteLivePullStreamInfoConfig(const DeleteLivePullStreamInfoConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteLivePullStreamInfoConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteLivePullStreamInfoConfigOutcome(DeleteLivePullStreamInfoConfigResult(outcome.result()));
-	else
-		return DeleteLivePullStreamInfoConfigOutcome(outcome.error());
-}
-
-void LiveClient::deleteLivePullStreamInfoConfigAsync(const DeleteLivePullStreamInfoConfigRequest& request, const DeleteLivePullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteLivePullStreamInfoConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DeleteLivePullStreamInfoConfigOutcomeCallable LiveClient::deleteLivePullStreamInfoConfigCallable(const DeleteLivePullStreamInfoConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteLivePullStreamInfoConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteLivePullStreamInfoConfig(request);
+			return this->describeLiveDomainFrameRateAndBitRateData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2247,36 +2211,72 @@ LiveClient::ModifyLiveDomainSchdmByPropertyOutcomeCallable LiveClient::modifyLiv
 	return task->get_future();
 }
 
-LiveClient::DescribeBoardEventsOutcome LiveClient::describeBoardEvents(const DescribeBoardEventsRequest &request) const
+LiveClient::DeleteLivePullStreamInfoConfigOutcome LiveClient::deleteLivePullStreamInfoConfig(const DeleteLivePullStreamInfoConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeBoardEventsOutcome(endpointOutcome.error());
+		return DeleteLivePullStreamInfoConfigOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeBoardEventsOutcome(DescribeBoardEventsResult(outcome.result()));
+		return DeleteLivePullStreamInfoConfigOutcome(DeleteLivePullStreamInfoConfigResult(outcome.result()));
 	else
-		return DescribeBoardEventsOutcome(outcome.error());
+		return DeleteLivePullStreamInfoConfigOutcome(outcome.error());
 }
 
-void LiveClient::describeBoardEventsAsync(const DescribeBoardEventsRequest& request, const DescribeBoardEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void LiveClient::deleteLivePullStreamInfoConfigAsync(const DeleteLivePullStreamInfoConfigRequest& request, const DeleteLivePullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeBoardEvents(request), context);
+		handler(this, request, deleteLivePullStreamInfoConfig(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-LiveClient::DescribeBoardEventsOutcomeCallable LiveClient::describeBoardEventsCallable(const DescribeBoardEventsRequest &request) const
+LiveClient::DeleteLivePullStreamInfoConfigOutcomeCallable LiveClient::deleteLivePullStreamInfoConfigCallable(const DeleteLivePullStreamInfoConfigRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeBoardEventsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteLivePullStreamInfoConfigOutcome()>>(
 			[this, request]()
 			{
-			return this->describeBoardEvents(request);
+			return this->deleteLivePullStreamInfoConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLiveTopLevelDomainOutcome LiveClient::updateLiveTopLevelDomain(const UpdateLiveTopLevelDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveTopLevelDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveTopLevelDomainOutcome(UpdateLiveTopLevelDomainResult(outcome.result()));
+	else
+		return UpdateLiveTopLevelDomainOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveTopLevelDomainAsync(const UpdateLiveTopLevelDomainRequest& request, const UpdateLiveTopLevelDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveTopLevelDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveTopLevelDomainOutcomeCallable LiveClient::updateLiveTopLevelDomainCallable(const UpdateLiveTopLevelDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveTopLevelDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveTopLevelDomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2313,6 +2313,42 @@ LiveClient::ModifyCasterProgramOutcomeCallable LiveClient::modifyCasterProgramCa
 			[this, request]()
 			{
 			return this->modifyCasterProgram(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeBoardEventsOutcome LiveClient::describeBoardEvents(const DescribeBoardEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBoardEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBoardEventsOutcome(DescribeBoardEventsResult(outcome.result()));
+	else
+		return DescribeBoardEventsOutcome(outcome.error());
+}
+
+void LiveClient::describeBoardEventsAsync(const DescribeBoardEventsRequest& request, const DescribeBoardEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBoardEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeBoardEventsOutcomeCallable LiveClient::describeBoardEventsCallable(const DescribeBoardEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBoardEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBoardEvents(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2499,6 +2535,42 @@ LiveClient::StartLiveDomainOutcomeCallable LiveClient::startLiveDomainCallable(c
 	return task->get_future();
 }
 
+LiveClient::DescribeCasterSceneAudioOutcome LiveClient::describeCasterSceneAudio(const DescribeCasterSceneAudioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCasterSceneAudioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCasterSceneAudioOutcome(DescribeCasterSceneAudioResult(outcome.result()));
+	else
+		return DescribeCasterSceneAudioOutcome(outcome.error());
+}
+
+void LiveClient::describeCasterSceneAudioAsync(const DescribeCasterSceneAudioRequest& request, const DescribeCasterSceneAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCasterSceneAudio(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeCasterSceneAudioOutcomeCallable LiveClient::describeCasterSceneAudioCallable(const DescribeCasterSceneAudioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCasterSceneAudioOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCasterSceneAudio(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveStreamsBlockListOutcome LiveClient::describeLiveStreamsBlockList(const DescribeLiveStreamsBlockListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2535,36 +2607,36 @@ LiveClient::DescribeLiveStreamsBlockListOutcomeCallable LiveClient::describeLive
 	return task->get_future();
 }
 
-LiveClient::DescribeCasterSceneAudioOutcome LiveClient::describeCasterSceneAudio(const DescribeCasterSceneAudioRequest &request) const
+LiveClient::AddLiveStreamTranscodeOutcome LiveClient::addLiveStreamTranscode(const AddLiveStreamTranscodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeCasterSceneAudioOutcome(endpointOutcome.error());
+		return AddLiveStreamTranscodeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeCasterSceneAudioOutcome(DescribeCasterSceneAudioResult(outcome.result()));
+		return AddLiveStreamTranscodeOutcome(AddLiveStreamTranscodeResult(outcome.result()));
 	else
-		return DescribeCasterSceneAudioOutcome(outcome.error());
+		return AddLiveStreamTranscodeOutcome(outcome.error());
 }
 
-void LiveClient::describeCasterSceneAudioAsync(const DescribeCasterSceneAudioRequest& request, const DescribeCasterSceneAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void LiveClient::addLiveStreamTranscodeAsync(const AddLiveStreamTranscodeRequest& request, const AddLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeCasterSceneAudio(request), context);
+		handler(this, request, addLiveStreamTranscode(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-LiveClient::DescribeCasterSceneAudioOutcomeCallable LiveClient::describeCasterSceneAudioCallable(const DescribeCasterSceneAudioRequest &request) const
+LiveClient::AddLiveStreamTranscodeOutcomeCallable LiveClient::addLiveStreamTranscodeCallable(const AddLiveStreamTranscodeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeCasterSceneAudioOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AddLiveStreamTranscodeOutcome()>>(
 			[this, request]()
 			{
-			return this->describeCasterSceneAudio(request);
+			return this->addLiveStreamTranscode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2637,42 +2709,6 @@ LiveClient::DescribeRoomKickoutUserListOutcomeCallable LiveClient::describeRoomK
 			[this, request]()
 			{
 			return this->describeRoomKickoutUserList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::AddLiveStreamTranscodeOutcome LiveClient::addLiveStreamTranscode(const AddLiveStreamTranscodeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddLiveStreamTranscodeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddLiveStreamTranscodeOutcome(AddLiveStreamTranscodeResult(outcome.result()));
-	else
-		return AddLiveStreamTranscodeOutcome(outcome.error());
-}
-
-void LiveClient::addLiveStreamTranscodeAsync(const AddLiveStreamTranscodeRequest& request, const AddLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addLiveStreamTranscode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::AddLiveStreamTranscodeOutcomeCallable LiveClient::addLiveStreamTranscodeCallable(const AddLiveStreamTranscodeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddLiveStreamTranscodeOutcome()>>(
-			[this, request]()
-			{
-			return this->addLiveStreamTranscode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3219,6 +3255,42 @@ LiveClient::DescribeLiveStreamSnapshotInfoOutcomeCallable LiveClient::describeLi
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveDomainBpsDataByTimeStampOutcome LiveClient::describeLiveDomainBpsDataByTimeStamp(const DescribeLiveDomainBpsDataByTimeStampRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainBpsDataByTimeStampOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainBpsDataByTimeStampOutcome(DescribeLiveDomainBpsDataByTimeStampResult(outcome.result()));
+	else
+		return DescribeLiveDomainBpsDataByTimeStampOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainBpsDataByTimeStampAsync(const DescribeLiveDomainBpsDataByTimeStampRequest& request, const DescribeLiveDomainBpsDataByTimeStampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainBpsDataByTimeStamp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainBpsDataByTimeStampOutcomeCallable LiveClient::describeLiveDomainBpsDataByTimeStampCallable(const DescribeLiveDomainBpsDataByTimeStampRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainBpsDataByTimeStampOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainBpsDataByTimeStamp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::UpdateBoardCallbackOutcome LiveClient::updateBoardCallback(const UpdateBoardCallbackRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3285,42 +3357,6 @@ LiveClient::DescribeLiveStreamsFrameRateAndBitRateDataOutcomeCallable LiveClient
 			[this, request]()
 			{
 			return this->describeLiveStreamsFrameRateAndBitRateData(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeLiveStreamRecordContentOutcome LiveClient::describeLiveStreamRecordContent(const DescribeLiveStreamRecordContentRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveStreamRecordContentOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveStreamRecordContentOutcome(DescribeLiveStreamRecordContentResult(outcome.result()));
-	else
-		return DescribeLiveStreamRecordContentOutcome(outcome.error());
-}
-
-void LiveClient::describeLiveStreamRecordContentAsync(const DescribeLiveStreamRecordContentRequest& request, const DescribeLiveStreamRecordContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveStreamRecordContent(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveStreamRecordContentOutcomeCallable LiveClient::describeLiveStreamRecordContentCallable(const DescribeLiveStreamRecordContentRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamRecordContentOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveStreamRecordContent(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3399,6 +3435,42 @@ LiveClient::CreateCasterOutcomeCallable LiveClient::createCasterCallable(const C
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveStreamRecordContentOutcome LiveClient::describeLiveStreamRecordContent(const DescribeLiveStreamRecordContentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamRecordContentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamRecordContentOutcome(DescribeLiveStreamRecordContentResult(outcome.result()));
+	else
+		return DescribeLiveStreamRecordContentOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamRecordContentAsync(const DescribeLiveStreamRecordContentRequest& request, const DescribeLiveStreamRecordContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamRecordContent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamRecordContentOutcomeCallable LiveClient::describeLiveStreamRecordContentCallable(const DescribeLiveStreamRecordContentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamRecordContentOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamRecordContent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeCasterLayoutsOutcome LiveClient::describeCasterLayouts(const DescribeCasterLayoutsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3471,42 +3543,6 @@ LiveClient::AddLiveSnapshotDetectPornConfigOutcomeCallable LiveClient::addLiveSn
 	return task->get_future();
 }
 
-LiveClient::SetCasterChannelOutcome LiveClient::setCasterChannel(const SetCasterChannelRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetCasterChannelOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetCasterChannelOutcome(SetCasterChannelResult(outcome.result()));
-	else
-		return SetCasterChannelOutcome(outcome.error());
-}
-
-void LiveClient::setCasterChannelAsync(const SetCasterChannelRequest& request, const SetCasterChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setCasterChannel(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::SetCasterChannelOutcomeCallable LiveClient::setCasterChannelCallable(const SetCasterChannelRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetCasterChannelOutcome()>>(
-			[this, request]()
-			{
-			return this->setCasterChannel(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::UpdateLiveRecordNotifyConfigOutcome LiveClient::updateLiveRecordNotifyConfig(const UpdateLiveRecordNotifyConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3537,6 +3573,42 @@ LiveClient::UpdateLiveRecordNotifyConfigOutcomeCallable LiveClient::updateLiveRe
 			[this, request]()
 			{
 			return this->updateLiveRecordNotifyConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::SetCasterChannelOutcome LiveClient::setCasterChannel(const SetCasterChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetCasterChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetCasterChannelOutcome(SetCasterChannelResult(outcome.result()));
+	else
+		return SetCasterChannelOutcome(outcome.error());
+}
+
+void LiveClient::setCasterChannelAsync(const SetCasterChannelRequest& request, const SetCasterChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setCasterChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::SetCasterChannelOutcomeCallable LiveClient::setCasterChannelCallable(const SetCasterChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetCasterChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->setCasterChannel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3687,42 +3759,6 @@ LiveClient::DescribeLiveDomainTrafficDataOutcomeCallable LiveClient::describeLiv
 	return task->get_future();
 }
 
-LiveClient::StopLiveDomainOutcome LiveClient::stopLiveDomain(const StopLiveDomainRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StopLiveDomainOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StopLiveDomainOutcome(StopLiveDomainResult(outcome.result()));
-	else
-		return StopLiveDomainOutcome(outcome.error());
-}
-
-void LiveClient::stopLiveDomainAsync(const StopLiveDomainRequest& request, const StopLiveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, stopLiveDomain(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::StopLiveDomainOutcomeCallable LiveClient::stopLiveDomainCallable(const StopLiveDomainRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StopLiveDomainOutcome()>>(
-			[this, request]()
-			{
-			return this->stopLiveDomain(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::ApplyBoardTokenOutcome LiveClient::applyBoardToken(const ApplyBoardTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3753,6 +3789,42 @@ LiveClient::ApplyBoardTokenOutcomeCallable LiveClient::applyBoardTokenCallable(c
 			[this, request]()
 			{
 			return this->applyBoardToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::StopLiveDomainOutcome LiveClient::stopLiveDomain(const StopLiveDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopLiveDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopLiveDomainOutcome(StopLiveDomainResult(outcome.result()));
+	else
+		return StopLiveDomainOutcome(outcome.error());
+}
+
+void LiveClient::stopLiveDomainAsync(const StopLiveDomainRequest& request, const StopLiveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopLiveDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::StopLiveDomainOutcomeCallable LiveClient::stopLiveDomainCallable(const StopLiveDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopLiveDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->stopLiveDomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4371,42 +4443,6 @@ LiveClient::DescribeBoardSnapshotOutcomeCallable LiveClient::describeBoardSnapsh
 	return task->get_future();
 }
 
-LiveClient::ForbidLiveStreamOutcome LiveClient::forbidLiveStream(const ForbidLiveStreamRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ForbidLiveStreamOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ForbidLiveStreamOutcome(ForbidLiveStreamResult(outcome.result()));
-	else
-		return ForbidLiveStreamOutcome(outcome.error());
-}
-
-void LiveClient::forbidLiveStreamAsync(const ForbidLiveStreamRequest& request, const ForbidLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, forbidLiveStream(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::ForbidLiveStreamOutcomeCallable LiveClient::forbidLiveStreamCallable(const ForbidLiveStreamRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ForbidLiveStreamOutcome()>>(
-			[this, request]()
-			{
-			return this->forbidLiveStream(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::SetLiveDomainCertificateOutcome LiveClient::setLiveDomainCertificate(const SetLiveDomainCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4443,36 +4479,36 @@ LiveClient::SetLiveDomainCertificateOutcomeCallable LiveClient::setLiveDomainCer
 	return task->get_future();
 }
 
-LiveClient::DescribeRecordsOutcome LiveClient::describeRecords(const DescribeRecordsRequest &request) const
+LiveClient::ForbidLiveStreamOutcome LiveClient::forbidLiveStream(const ForbidLiveStreamRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeRecordsOutcome(endpointOutcome.error());
+		return ForbidLiveStreamOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeRecordsOutcome(DescribeRecordsResult(outcome.result()));
+		return ForbidLiveStreamOutcome(ForbidLiveStreamResult(outcome.result()));
 	else
-		return DescribeRecordsOutcome(outcome.error());
+		return ForbidLiveStreamOutcome(outcome.error());
 }
 
-void LiveClient::describeRecordsAsync(const DescribeRecordsRequest& request, const DescribeRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void LiveClient::forbidLiveStreamAsync(const ForbidLiveStreamRequest& request, const ForbidLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeRecords(request), context);
+		handler(this, request, forbidLiveStream(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-LiveClient::DescribeRecordsOutcomeCallable LiveClient::describeRecordsCallable(const DescribeRecordsRequest &request) const
+LiveClient::ForbidLiveStreamOutcomeCallable LiveClient::forbidLiveStreamCallable(const ForbidLiveStreamRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeRecordsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ForbidLiveStreamOutcome()>>(
 			[this, request]()
 			{
-			return this->describeRecords(request);
+			return this->forbidLiveStream(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4515,36 +4551,36 @@ LiveClient::SetLiveStreamDelayConfigOutcomeCallable LiveClient::setLiveStreamDel
 	return task->get_future();
 }
 
-LiveClient::DescribeLiveStreamOptimizedFeatureConfigOutcome LiveClient::describeLiveStreamOptimizedFeatureConfig(const DescribeLiveStreamOptimizedFeatureConfigRequest &request) const
+LiveClient::DescribeRecordsOutcome LiveClient::describeRecords(const DescribeRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeLiveStreamOptimizedFeatureConfigOutcome(endpointOutcome.error());
+		return DescribeRecordsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeLiveStreamOptimizedFeatureConfigOutcome(DescribeLiveStreamOptimizedFeatureConfigResult(outcome.result()));
+		return DescribeRecordsOutcome(DescribeRecordsResult(outcome.result()));
 	else
-		return DescribeLiveStreamOptimizedFeatureConfigOutcome(outcome.error());
+		return DescribeRecordsOutcome(outcome.error());
 }
 
-void LiveClient::describeLiveStreamOptimizedFeatureConfigAsync(const DescribeLiveStreamOptimizedFeatureConfigRequest& request, const DescribeLiveStreamOptimizedFeatureConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void LiveClient::describeRecordsAsync(const DescribeRecordsRequest& request, const DescribeRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeLiveStreamOptimizedFeatureConfig(request), context);
+		handler(this, request, describeRecords(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-LiveClient::DescribeLiveStreamOptimizedFeatureConfigOutcomeCallable LiveClient::describeLiveStreamOptimizedFeatureConfigCallable(const DescribeLiveStreamOptimizedFeatureConfigRequest &request) const
+LiveClient::DescribeRecordsOutcomeCallable LiveClient::describeRecordsCallable(const DescribeRecordsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamOptimizedFeatureConfigOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeRecordsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeLiveStreamOptimizedFeatureConfig(request);
+			return this->describeRecords(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4581,6 +4617,42 @@ LiveClient::DeleteCasterEpisodeGroupOutcomeCallable LiveClient::deleteCasterEpis
 			[this, request]()
 			{
 			return this->deleteCasterEpisodeGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveStreamOptimizedFeatureConfigOutcome LiveClient::describeLiveStreamOptimizedFeatureConfig(const DescribeLiveStreamOptimizedFeatureConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamOptimizedFeatureConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamOptimizedFeatureConfigOutcome(DescribeLiveStreamOptimizedFeatureConfigResult(outcome.result()));
+	else
+		return DescribeLiveStreamOptimizedFeatureConfigOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamOptimizedFeatureConfigAsync(const DescribeLiveStreamOptimizedFeatureConfigRequest& request, const DescribeLiveStreamOptimizedFeatureConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamOptimizedFeatureConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamOptimizedFeatureConfigOutcomeCallable LiveClient::describeLiveStreamOptimizedFeatureConfigCallable(const DescribeLiveStreamOptimizedFeatureConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamOptimizedFeatureConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamOptimizedFeatureConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4767,42 +4839,6 @@ LiveClient::EffectCasterVideoResourceOutcomeCallable LiveClient::effectCasterVid
 	return task->get_future();
 }
 
-LiveClient::DescribeUpPeakPublishStreamDataOutcome LiveClient::describeUpPeakPublishStreamData(const DescribeUpPeakPublishStreamDataRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeUpPeakPublishStreamDataOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeUpPeakPublishStreamDataOutcome(DescribeUpPeakPublishStreamDataResult(outcome.result()));
-	else
-		return DescribeUpPeakPublishStreamDataOutcome(outcome.error());
-}
-
-void LiveClient::describeUpPeakPublishStreamDataAsync(const DescribeUpPeakPublishStreamDataRequest& request, const DescribeUpPeakPublishStreamDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeUpPeakPublishStreamData(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeUpPeakPublishStreamDataOutcomeCallable LiveClient::describeUpPeakPublishStreamDataCallable(const DescribeUpPeakPublishStreamDataRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeUpPeakPublishStreamDataOutcome()>>(
-			[this, request]()
-			{
-			return this->describeUpPeakPublishStreamData(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::AddLiveAppSnapshotConfigOutcome LiveClient::addLiveAppSnapshotConfig(const AddLiveAppSnapshotConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4833,6 +4869,42 @@ LiveClient::AddLiveAppSnapshotConfigOutcomeCallable LiveClient::addLiveAppSnapsh
 			[this, request]()
 			{
 			return this->addLiveAppSnapshotConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeUpPeakPublishStreamDataOutcome LiveClient::describeUpPeakPublishStreamData(const DescribeUpPeakPublishStreamDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUpPeakPublishStreamDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUpPeakPublishStreamDataOutcome(DescribeUpPeakPublishStreamDataResult(outcome.result()));
+	else
+		return DescribeUpPeakPublishStreamDataOutcome(outcome.error());
+}
+
+void LiveClient::describeUpPeakPublishStreamDataAsync(const DescribeUpPeakPublishStreamDataRequest& request, const DescribeUpPeakPublishStreamDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUpPeakPublishStreamData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeUpPeakPublishStreamDataOutcomeCallable LiveClient::describeUpPeakPublishStreamDataCallable(const DescribeUpPeakPublishStreamDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUpPeakPublishStreamDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUpPeakPublishStreamData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4911,6 +4983,42 @@ LiveClient::DeleteLiveDomainOutcomeCallable LiveClient::deleteLiveDomainCallable
 	return task->get_future();
 }
 
+LiveClient::AddLiveDomainMappingOutcome LiveClient::addLiveDomainMapping(const AddLiveDomainMappingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddLiveDomainMappingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddLiveDomainMappingOutcome(AddLiveDomainMappingResult(outcome.result()));
+	else
+		return AddLiveDomainMappingOutcome(outcome.error());
+}
+
+void LiveClient::addLiveDomainMappingAsync(const AddLiveDomainMappingRequest& request, const AddLiveDomainMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addLiveDomainMapping(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::AddLiveDomainMappingOutcomeCallable LiveClient::addLiveDomainMappingCallable(const AddLiveDomainMappingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddLiveDomainMappingOutcome()>>(
+			[this, request]()
+			{
+			return this->addLiveDomainMapping(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::RealTimeRecordCommandOutcome LiveClient::realTimeRecordCommand(const RealTimeRecordCommandRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4977,42 +5085,6 @@ LiveClient::SetCasterConfigOutcomeCallable LiveClient::setCasterConfigCallable(c
 			[this, request]()
 			{
 			return this->setCasterConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::AddLiveDomainMappingOutcome LiveClient::addLiveDomainMapping(const AddLiveDomainMappingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddLiveDomainMappingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddLiveDomainMappingOutcome(AddLiveDomainMappingResult(outcome.result()));
-	else
-		return AddLiveDomainMappingOutcome(outcome.error());
-}
-
-void LiveClient::addLiveDomainMappingAsync(const AddLiveDomainMappingRequest& request, const AddLiveDomainMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addLiveDomainMapping(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::AddLiveDomainMappingOutcomeCallable LiveClient::addLiveDomainMappingCallable(const AddLiveDomainMappingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddLiveDomainMappingOutcome()>>(
-			[this, request]()
-			{
-			return this->addLiveDomainMapping(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5091,42 +5163,6 @@ LiveClient::UpdateBoardOutcomeCallable LiveClient::updateBoardCallable(const Upd
 	return task->get_future();
 }
 
-LiveClient::ResumeLiveStreamOutcome LiveClient::resumeLiveStream(const ResumeLiveStreamRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ResumeLiveStreamOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ResumeLiveStreamOutcome(ResumeLiveStreamResult(outcome.result()));
-	else
-		return ResumeLiveStreamOutcome(outcome.error());
-}
-
-void LiveClient::resumeLiveStreamAsync(const ResumeLiveStreamRequest& request, const ResumeLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, resumeLiveStream(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::ResumeLiveStreamOutcomeCallable LiveClient::resumeLiveStreamCallable(const ResumeLiveStreamRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ResumeLiveStreamOutcome()>>(
-			[this, request]()
-			{
-			return this->resumeLiveStream(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::AddCasterLayoutOutcome LiveClient::addCasterLayout(const AddCasterLayoutRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5157,6 +5193,42 @@ LiveClient::AddCasterLayoutOutcomeCallable LiveClient::addCasterLayoutCallable(c
 			[this, request]()
 			{
 			return this->addCasterLayout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ResumeLiveStreamOutcome LiveClient::resumeLiveStream(const ResumeLiveStreamRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResumeLiveStreamOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResumeLiveStreamOutcome(ResumeLiveStreamResult(outcome.result()));
+	else
+		return ResumeLiveStreamOutcome(outcome.error());
+}
+
+void LiveClient::resumeLiveStreamAsync(const ResumeLiveStreamRequest& request, const ResumeLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resumeLiveStream(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ResumeLiveStreamOutcomeCallable LiveClient::resumeLiveStreamCallable(const ResumeLiveStreamRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResumeLiveStreamOutcome()>>(
+			[this, request]()
+			{
+			return this->resumeLiveStream(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5235,42 +5307,6 @@ LiveClient::DescribeLiveUserDomainsOutcomeCallable LiveClient::describeLiveUserD
 	return task->get_future();
 }
 
-LiveClient::ModifyCasterLayoutOutcome LiveClient::modifyCasterLayout(const ModifyCasterLayoutRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyCasterLayoutOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyCasterLayoutOutcome(ModifyCasterLayoutResult(outcome.result()));
-	else
-		return ModifyCasterLayoutOutcome(outcome.error());
-}
-
-void LiveClient::modifyCasterLayoutAsync(const ModifyCasterLayoutRequest& request, const ModifyCasterLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyCasterLayout(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::ModifyCasterLayoutOutcomeCallable LiveClient::modifyCasterLayoutCallable(const ModifyCasterLayoutRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyCasterLayoutOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyCasterLayout(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::StopCasterOutcome LiveClient::stopCaster(const StopCasterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5301,6 +5337,42 @@ LiveClient::StopCasterOutcomeCallable LiveClient::stopCasterCallable(const StopC
 			[this, request]()
 			{
 			return this->stopCaster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::ModifyCasterLayoutOutcome LiveClient::modifyCasterLayout(const ModifyCasterLayoutRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyCasterLayoutOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyCasterLayoutOutcome(ModifyCasterLayoutResult(outcome.result()));
+	else
+		return ModifyCasterLayoutOutcome(outcome.error());
+}
+
+void LiveClient::modifyCasterLayoutAsync(const ModifyCasterLayoutRequest& request, const ModifyCasterLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCasterLayout(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ModifyCasterLayoutOutcomeCallable LiveClient::modifyCasterLayoutCallable(const ModifyCasterLayoutRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyCasterLayoutOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCasterLayout(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5481,6 +5553,42 @@ LiveClient::AddLiveDomainOutcomeCallable LiveClient::addLiveDomainCallable(const
 			[this, request]()
 			{
 			return this->addLiveDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveDomainOnlineUserNumOutcome LiveClient::describeLiveDomainOnlineUserNum(const DescribeLiveDomainOnlineUserNumRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainOnlineUserNumOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainOnlineUserNumOutcome(DescribeLiveDomainOnlineUserNumResult(outcome.result()));
+	else
+		return DescribeLiveDomainOnlineUserNumOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainOnlineUserNumAsync(const DescribeLiveDomainOnlineUserNumRequest& request, const DescribeLiveDomainOnlineUserNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainOnlineUserNum(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainOnlineUserNumOutcomeCallable LiveClient::describeLiveDomainOnlineUserNumCallable(const DescribeLiveDomainOnlineUserNumRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainOnlineUserNumOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainOnlineUserNum(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

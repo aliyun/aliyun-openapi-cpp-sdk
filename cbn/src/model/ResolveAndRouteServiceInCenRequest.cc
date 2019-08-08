@@ -33,7 +33,19 @@ long ResolveAndRouteServiceInCenRequest::getResourceOwnerId()const
 void ResolveAndRouteServiceInCenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::vector<std::string> ResolveAndRouteServiceInCenRequest::getAccessRegionIds()const
+{
+	return accessRegionIds_;
+}
+
+void ResolveAndRouteServiceInCenRequest::setAccessRegionIds(const std::vector<std::string>& accessRegionIds)
+{
+	accessRegionIds_ = accessRegionIds;
+	for(int i = 0; i!= accessRegionIds.size(); i++)
+		setCoreParameter("AccessRegionIds."+ std::to_string(i), accessRegionIds.at(i));
 }
 
 std::string ResolveAndRouteServiceInCenRequest::getResourceOwnerAccount()const
@@ -44,7 +56,7 @@ std::string ResolveAndRouteServiceInCenRequest::getResourceOwnerAccount()const
 void ResolveAndRouteServiceInCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ResolveAndRouteServiceInCenRequest::getClientToken()const
@@ -55,7 +67,7 @@ std::string ResolveAndRouteServiceInCenRequest::getClientToken()const
 void ResolveAndRouteServiceInCenRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ResolveAndRouteServiceInCenRequest::getCenId()const
@@ -66,7 +78,7 @@ std::string ResolveAndRouteServiceInCenRequest::getCenId()const
 void ResolveAndRouteServiceInCenRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setParameter("CenId", cenId);
+	setCoreParameter("CenId", cenId);
 }
 
 std::string ResolveAndRouteServiceInCenRequest::getOwnerAccount()const
@@ -77,7 +89,7 @@ std::string ResolveAndRouteServiceInCenRequest::getOwnerAccount()const
 void ResolveAndRouteServiceInCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ResolveAndRouteServiceInCenRequest::getHost()const
@@ -88,7 +100,7 @@ std::string ResolveAndRouteServiceInCenRequest::getHost()const
 void ResolveAndRouteServiceInCenRequest::setHost(const std::string& host)
 {
 	host_ = host;
-	setParameter("Host", host);
+	setCoreParameter("Host", host);
 }
 
 std::string ResolveAndRouteServiceInCenRequest::getHostRegionId()const
@@ -99,18 +111,7 @@ std::string ResolveAndRouteServiceInCenRequest::getHostRegionId()const
 void ResolveAndRouteServiceInCenRequest::setHostRegionId(const std::string& hostRegionId)
 {
 	hostRegionId_ = hostRegionId;
-	setParameter("HostRegionId", hostRegionId);
-}
-
-std::string ResolveAndRouteServiceInCenRequest::getAccessRegionId()const
-{
-	return accessRegionId_;
-}
-
-void ResolveAndRouteServiceInCenRequest::setAccessRegionId(const std::string& accessRegionId)
-{
-	accessRegionId_ = accessRegionId;
-	setParameter("AccessRegionId", accessRegionId);
+	setCoreParameter("HostRegionId", hostRegionId);
 }
 
 long ResolveAndRouteServiceInCenRequest::getOwnerId()const
@@ -121,7 +122,7 @@ long ResolveAndRouteServiceInCenRequest::getOwnerId()const
 void ResolveAndRouteServiceInCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long ResolveAndRouteServiceInCenRequest::getUpdateInterval()const
@@ -132,6 +133,6 @@ long ResolveAndRouteServiceInCenRequest::getUpdateInterval()const
 void ResolveAndRouteServiceInCenRequest::setUpdateInterval(long updateInterval)
 {
 	updateInterval_ = updateInterval;
-	setParameter("UpdateInterval", std::to_string(updateInterval));
+	setCoreParameter("UpdateInterval", std::to_string(updateInterval));
 }
 

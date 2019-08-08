@@ -33,7 +33,7 @@ std::string UpdateConfigNameRequest::getSourceIp()const
 void UpdateConfigNameRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateConfigNameRequest::getConfigName()const
@@ -44,7 +44,7 @@ std::string UpdateConfigNameRequest::getConfigName()const
 void UpdateConfigNameRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setParameter("ConfigName", configName);
+	setCoreParameter("ConfigName", configName);
 }
 
 std::string UpdateConfigNameRequest::getRefExtId()const
@@ -55,7 +55,7 @@ std::string UpdateConfigNameRequest::getRefExtId()const
 void UpdateConfigNameRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setParameter("RefExtId", refExtId);
+	setCoreParameter("RefExtId", refExtId);
 }
 
 std::string UpdateConfigNameRequest::getLang()const
@@ -66,6 +66,6 @@ std::string UpdateConfigNameRequest::getLang()const
 void UpdateConfigNameRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

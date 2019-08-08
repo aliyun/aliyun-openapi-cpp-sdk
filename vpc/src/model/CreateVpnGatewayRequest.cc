@@ -33,7 +33,7 @@ long CreateVpnGatewayRequest::getResourceOwnerId()const
 void CreateVpnGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int CreateVpnGatewayRequest::getPeriod()const
@@ -44,7 +44,7 @@ int CreateVpnGatewayRequest::getPeriod()const
 void CreateVpnGatewayRequest::setPeriod(int period)
 {
 	period_ = period;
-	setParameter("Period", std::to_string(period));
+	setCoreParameter("Period", std::to_string(period));
 }
 
 bool CreateVpnGatewayRequest::getAutoPay()const
@@ -55,7 +55,7 @@ bool CreateVpnGatewayRequest::getAutoPay()const
 void CreateVpnGatewayRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setParameter("AutoPay", std::to_string(autoPay));
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateVpnGatewayRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateVpnGatewayRequest::getResourceOwnerAccount()const
 void CreateVpnGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int CreateVpnGatewayRequest::getBandwidth()const
@@ -77,7 +77,7 @@ int CreateVpnGatewayRequest::getBandwidth()const
 void CreateVpnGatewayRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 bool CreateVpnGatewayRequest::getEnableIpsec()const
@@ -88,7 +88,7 @@ bool CreateVpnGatewayRequest::getEnableIpsec()const
 void CreateVpnGatewayRequest::setEnableIpsec(bool enableIpsec)
 {
 	enableIpsec_ = enableIpsec;
-	setParameter("EnableIpsec", std::to_string(enableIpsec));
+	setCoreParameter("EnableIpsec", enableIpsec ? "true" : "false");
 }
 
 std::string CreateVpnGatewayRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string CreateVpnGatewayRequest::getOwnerAccount()const
 void CreateVpnGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateVpnGatewayRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long CreateVpnGatewayRequest::getOwnerId()const
 void CreateVpnGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool CreateVpnGatewayRequest::getEnableSsl()const
@@ -121,7 +121,7 @@ bool CreateVpnGatewayRequest::getEnableSsl()const
 void CreateVpnGatewayRequest::setEnableSsl(bool enableSsl)
 {
 	enableSsl_ = enableSsl;
-	setParameter("EnableSsl", std::to_string(enableSsl));
+	setCoreParameter("EnableSsl", enableSsl ? "true" : "false");
 }
 
 int CreateVpnGatewayRequest::getSslConnections()const
@@ -132,7 +132,7 @@ int CreateVpnGatewayRequest::getSslConnections()const
 void CreateVpnGatewayRequest::setSslConnections(int sslConnections)
 {
 	sslConnections_ = sslConnections;
-	setParameter("SslConnections", std::to_string(sslConnections));
+	setCoreParameter("SslConnections", std::to_string(sslConnections));
 }
 
 std::string CreateVpnGatewayRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string CreateVpnGatewayRequest::getRegionId()const
 void CreateVpnGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateVpnGatewayRequest::getVpcId()const
@@ -154,7 +154,7 @@ std::string CreateVpnGatewayRequest::getVpcId()const
 void CreateVpnGatewayRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string CreateVpnGatewayRequest::getName()const
@@ -165,7 +165,7 @@ std::string CreateVpnGatewayRequest::getName()const
 void CreateVpnGatewayRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string CreateVpnGatewayRequest::getInstanceChargeType()const
@@ -176,6 +176,6 @@ std::string CreateVpnGatewayRequest::getInstanceChargeType()const
 void CreateVpnGatewayRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", instanceChargeType);
 }
 

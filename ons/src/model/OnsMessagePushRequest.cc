@@ -25,17 +25,6 @@ OnsMessagePushRequest::OnsMessagePushRequest() :
 OnsMessagePushRequest::~OnsMessagePushRequest()
 {}
 
-long OnsMessagePushRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsMessagePushRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsMessagePushRequest::getClientId()const
 {
 	return clientId_;

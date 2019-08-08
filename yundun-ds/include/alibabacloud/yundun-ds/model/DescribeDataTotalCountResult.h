@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,118 +17,103 @@
 #ifndef ALIBABACLOUD_YUNDUN_DS_MODEL_DESCRIBEDATATOTALCOUNTRESULT_H_
 #define ALIBABACLOUD_YUNDUN_DS_MODEL_DESCRIBEDATATOTALCOUNTRESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/yundun-ds/Yundun_dsExport.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Yundun_ds
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_YUNDUN_DS_EXPORT DescribeDataTotalCountResult : public ServiceResult
-			{
-			public:
-				struct DataCount
-				{
-					struct Instance
-					{
-						struct RiskCount
-						{
-							long id;
-							long count;
-							std::string name;
-						};
-						long totalCount;
-						long count;
-						long lastSensitiveCount;
-						long sensitiveCount;
-						std::vector<RiskCount> riskCountList;
-						long lastCount;
-					};
-					struct Table
-					{
-						struct RiskCount2
-						{
-							long id;
-							long count;
-							std::string name;
-						};
-						long totalCount;
-						std::vector<RiskCount2> riskCountList1;
-						long count;
-						long lastSensitiveCount;
-						long sensitiveCount;
-						long lastCount;
-					};
-					struct PackageInDescribeDataTotalCount
-					{
-						struct RiskCount4
-						{
-							long id;
-							long count;
-							std::string name;
-						};
-						long totalCount;
-						long count;
-						long lastSensitiveCount;
-						long sensitiveCount;
-						std::vector<RiskCount4> riskCountList3;
-						long lastCount;
-					};
-					struct Column
-					{
-						struct RiskCount6
-						{
-							long id;
-							long count;
-							std::string name;
-						};
-						long totalCount;
-						long count;
-						long lastSensitiveCount;
-						long sensitiveCount;
-						std::vector<RiskCount6> riskCountList5;
-						long lastCount;
-					};
-					struct Oss
-					{
-						struct RiskCount8
-						{
-							long id;
-							long count;
-							std::string name;
-						};
-						long totalCount;
-						std::vector<RiskCount8> riskCountList7;
-						long count;
-						long lastSensitiveCount;
-						long sensitiveCount;
-						long lastCount;
-					};
-					Table table;
-					Instance instance;
-					Column column;
-					PackageInDescribeDataTotalCount packageInDescribeDataTotalCount;
-					Oss oss;
-				};
+namespace AlibabaCloud {
+namespace Yundun_ds {
+namespace Model {
+class ALIBABACLOUD_YUNDUN_DS_EXPORT DescribeDataTotalCountResult
+    : public ServiceResult {
+public:
+  struct DataCount {
+    struct Instance {
+      struct RiskCount {
+        long id;
+        long count;
+        std::string name;
+      };
+      long totalCount;
+      long count;
+      long lastSensitiveCount;
+      long sensitiveCount;
+      std::vector<RiskCount> riskCountList;
+      long lastCount;
+    };
+    struct Table {
+      struct RiskCount2 {
+        long id;
+        long count;
+        std::string name;
+      };
+      long totalCount;
+      std::vector<RiskCount2> riskCountList1;
+      long count;
+      long lastSensitiveCount;
+      long sensitiveCount;
+      long lastCount;
+    };
+    struct PackageInDescribeDataTotalCount {
+      struct RiskCount4 {
+        long id;
+        long count;
+        std::string name;
+      };
+      long totalCount;
+      long count;
+      long lastSensitiveCount;
+      long sensitiveCount;
+      std::vector<RiskCount4> riskCountList3;
+      long lastCount;
+    };
+    struct Column {
+      struct RiskCount6 {
+        long id;
+        long count;
+        std::string name;
+      };
+      long totalCount;
+      long count;
+      long lastSensitiveCount;
+      long sensitiveCount;
+      std::vector<RiskCount6> riskCountList5;
+      long lastCount;
+    };
+    struct Oss {
+      struct RiskCount8 {
+        long id;
+        long count;
+        std::string name;
+      };
+      long totalCount;
+      std::vector<RiskCount8> riskCountList7;
+      long count;
+      long lastSensitiveCount;
+      long sensitiveCount;
+      long lastCount;
+    };
+    Table table;
+    Instance instance;
+    Column column;
+    PackageInDescribeDataTotalCount packageInDescribeDataTotalCount;
+    Oss oss;
+  };
 
+  DescribeDataTotalCountResult();
+  explicit DescribeDataTotalCountResult(const std::string &payload);
+  ~DescribeDataTotalCountResult();
+  DataCount getDataCount() const;
 
-				DescribeDataTotalCountResult();
-				explicit DescribeDataTotalCountResult(const std::string &payload);
-				~DescribeDataTotalCountResult();
-				DataCount getDataCount()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				DataCount dataCount_;
-
-			};
-		}
-	}
-}
+private:
+  DataCount dataCount_;
+};
+} // namespace Model
+} // namespace Yundun_ds
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_YUNDUN_DS_MODEL_DESCRIBEDATATOTALCOUNTRESULT_H_

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,49 +17,44 @@
 #ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEPLAYTOPVIDEOSRESULT_H_
 #define ALIBABACLOUD_VOD_MODEL_DESCRIBEPLAYTOPVIDEOSRESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/vod/VodExport.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Vod
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_VOD_EXPORT DescribePlayTopVideosResult : public ServiceResult
-			{
-			public:
-				struct TopPlayVideoStatis
-				{
-					std::string vV;
-					std::string uV;
-					std::string playDuration;
-					std::string videoId;
-					std::string title;
-				};
+namespace AlibabaCloud {
+namespace Vod {
+namespace Model {
+class ALIBABACLOUD_VOD_EXPORT DescribePlayTopVideosResult
+    : public ServiceResult {
+public:
+  struct TopPlayVideoStatis {
+    std::string vV;
+    std::string uV;
+    std::string playDuration;
+    std::string videoId;
+    std::string title;
+  };
 
+  DescribePlayTopVideosResult();
+  explicit DescribePlayTopVideosResult(const std::string &payload);
+  ~DescribePlayTopVideosResult();
+  std::vector<TopPlayVideoStatis> getTopPlayVideos() const;
+  long getTotalNum() const;
+  long getPageSize() const;
+  long getPageNo() const;
 
-				DescribePlayTopVideosResult();
-				explicit DescribePlayTopVideosResult(const std::string &payload);
-				~DescribePlayTopVideosResult();
-				std::vector<TopPlayVideoStatis> getTopPlayVideos()const;
-				long getTotalNum()const;
-				long getPageSize()const;
-				long getPageNo()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::vector<TopPlayVideoStatis> topPlayVideos_;
-				long totalNum_;
-				long pageSize_;
-				long pageNo_;
-
-			};
-		}
-	}
-}
+private:
+  std::vector<TopPlayVideoStatis> topPlayVideos_;
+  long totalNum_;
+  long pageSize_;
+  long pageNo_;
+};
+} // namespace Model
+} // namespace Vod
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEPLAYTOPVIDEOSRESULT_H_

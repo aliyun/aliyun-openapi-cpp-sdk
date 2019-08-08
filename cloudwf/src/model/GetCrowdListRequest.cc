@@ -33,7 +33,7 @@ long GetCrowdListRequest::getGsid()const
 void GetCrowdListRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 
 int GetCrowdListRequest::getClassType()const
@@ -44,7 +44,7 @@ int GetCrowdListRequest::getClassType()const
 void GetCrowdListRequest::setClassType(int classType)
 {
 	classType_ = classType;
-	setParameter("ClassType", std::to_string(classType));
+	setCoreParameter("ClassType", std::to_string(classType));
 }
 
 std::string GetCrowdListRequest::getGsType()const
@@ -55,7 +55,7 @@ std::string GetCrowdListRequest::getGsType()const
 void GetCrowdListRequest::setGsType(const std::string& gsType)
 {
 	gsType_ = gsType;
-	setParameter("GsType", gsType);
+	setCoreParameter("GsType", gsType);
 }
 
 std::string GetCrowdListRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string GetCrowdListRequest::getEndTime()const
 void GetCrowdListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 int GetCrowdListRequest::getPage()const
@@ -77,7 +77,7 @@ int GetCrowdListRequest::getPage()const
 void GetCrowdListRequest::setPage(int page)
 {
 	page_ = page;
-	setParameter("Page", std::to_string(page));
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string GetCrowdListRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string GetCrowdListRequest::getStartTime()const
 void GetCrowdListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 int GetCrowdListRequest::getPer()const
@@ -99,7 +99,7 @@ int GetCrowdListRequest::getPer()const
 void GetCrowdListRequest::setPer(int per)
 {
 	per_ = per;
-	setParameter("Per", std::to_string(per));
+	setCoreParameter("Per", std::to_string(per));
 }
 
 long GetCrowdListRequest::getBid()const
@@ -110,7 +110,7 @@ long GetCrowdListRequest::getBid()const
 void GetCrowdListRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", std::to_string(bid));
 }
 
 std::string GetCrowdListRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string GetCrowdListRequest::getAccessKeyId()const
 void GetCrowdListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getUs
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getRegistrantProfileId()const
@@ -44,7 +44,7 @@ long SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getRegistran
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
 }
 
 std::vector<std::string> SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getDomainName()const
@@ -56,7 +56,7 @@ void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setDomainNam
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setParameter("DomainName."+ std::to_string(i), domainName.at(i));
+		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
 }
 
 bool SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getTransferOutProhibited()const
@@ -67,7 +67,7 @@ bool SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getTransferO
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setTransferOutProhibited(bool transferOutProhibited)
 {
 	transferOutProhibited_ = transferOutProhibited;
-	setParameter("TransferOutProhibited", std::to_string(transferOutProhibited));
+	setCoreParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
 }
 
 std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getLang()const
@@ -78,6 +78,6 @@ std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getLa
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

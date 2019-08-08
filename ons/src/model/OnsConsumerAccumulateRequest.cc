@@ -25,17 +25,6 @@ OnsConsumerAccumulateRequest::OnsConsumerAccumulateRequest() :
 OnsConsumerAccumulateRequest::~OnsConsumerAccumulateRequest()
 {}
 
-long OnsConsumerAccumulateRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsConsumerAccumulateRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsConsumerAccumulateRequest::getInstanceId()const
 {
 	return instanceId_;

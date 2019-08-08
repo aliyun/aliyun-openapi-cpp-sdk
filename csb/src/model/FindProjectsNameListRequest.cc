@@ -33,7 +33,7 @@ std::string FindProjectsNameListRequest::getOperationFlag()const
 void FindProjectsNameListRequest::setOperationFlag(const std::string& operationFlag)
 {
 	operationFlag_ = operationFlag;
-	setParameter("OperationFlag", operationFlag);
+	setCoreParameter("OperationFlag", operationFlag);
 }
 
 std::string FindProjectsNameListRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string FindProjectsNameListRequest::getRegionId()const
 void FindProjectsNameListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 long FindProjectsNameListRequest::getCsbId()const
@@ -55,6 +55,6 @@ long FindProjectsNameListRequest::getCsbId()const
 void FindProjectsNameListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", std::to_string(csbId));
 }
 

@@ -33,7 +33,7 @@ long QueryCoverJobListRequest::getResourceOwnerId()const
 void QueryCoverJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryCoverJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,29 @@ std::string QueryCoverJobListRequest::getResourceOwnerAccount()const
 void QueryCoverJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string QueryCoverJobListRequest::getNextPageToken()const
+{
+	return nextPageToken_;
+}
+
+void QueryCoverJobListRequest::setNextPageToken(const std::string& nextPageToken)
+{
+	nextPageToken_ = nextPageToken;
+	setCoreParameter("NextPageToken", nextPageToken);
+}
+
+std::string QueryCoverJobListRequest::getStartOfJobCreatedTimeRange()const
+{
+	return startOfJobCreatedTimeRange_;
+}
+
+void QueryCoverJobListRequest::setStartOfJobCreatedTimeRange(const std::string& startOfJobCreatedTimeRange)
+{
+	startOfJobCreatedTimeRange_ = startOfJobCreatedTimeRange;
+	setCoreParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
 }
 
 std::string QueryCoverJobListRequest::getOwnerAccount()const
@@ -55,7 +77,18 @@ std::string QueryCoverJobListRequest::getOwnerAccount()const
 void QueryCoverJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long QueryCoverJobListRequest::getMaximumPageSize()const
+{
+	return maximumPageSize_;
+}
+
+void QueryCoverJobListRequest::setMaximumPageSize(long maximumPageSize)
+{
+	maximumPageSize_ = maximumPageSize;
+	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
 }
 
 long QueryCoverJobListRequest::getOwnerId()const
@@ -66,7 +99,7 @@ long QueryCoverJobListRequest::getOwnerId()const
 void QueryCoverJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryCoverJobListRequest::getAccessKeyId()const
@@ -77,7 +110,7 @@ std::string QueryCoverJobListRequest::getAccessKeyId()const
 void QueryCoverJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryCoverJobListRequest::getCoverJobIds()const
@@ -88,6 +121,39 @@ std::string QueryCoverJobListRequest::getCoverJobIds()const
 void QueryCoverJobListRequest::setCoverJobIds(const std::string& coverJobIds)
 {
 	coverJobIds_ = coverJobIds;
-	setParameter("CoverJobIds", coverJobIds);
+	setCoreParameter("CoverJobIds", coverJobIds);
+}
+
+std::string QueryCoverJobListRequest::getPipelineId()const
+{
+	return pipelineId_;
+}
+
+void QueryCoverJobListRequest::setPipelineId(const std::string& pipelineId)
+{
+	pipelineId_ = pipelineId;
+	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string QueryCoverJobListRequest::getState()const
+{
+	return state_;
+}
+
+void QueryCoverJobListRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setCoreParameter("State", state);
+}
+
+std::string QueryCoverJobListRequest::getEndOfJobCreatedTimeRange()const
+{
+	return endOfJobCreatedTimeRange_;
+}
+
+void QueryCoverJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
+{
+	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
+	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
 }
 

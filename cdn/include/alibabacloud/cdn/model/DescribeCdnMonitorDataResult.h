@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,52 +17,47 @@
 #ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBECDNMONITORDATARESULT_H_
 #define ALIBABACLOUD_CDN_MODEL_DESCRIBECDNMONITORDATARESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/cdn/CdnExport.h>
+#include <alibabacloud/core/ServiceResult.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Cdn
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeCdnMonitorDataResult : public ServiceResult
-			{
-			public:
-				struct CDNMonitorData
-				{
-					std::string bytesHitRate;
-					std::string bytesPerSecond;
-					std::string requestHitRate;
-					std::string queryPerSecond;
-					std::string timeStamp;
-					std::string averageObjectSize;
-				};
+namespace AlibabaCloud {
+namespace Cdn {
+namespace Model {
+class ALIBABACLOUD_CDN_EXPORT DescribeCdnMonitorDataResult
+    : public ServiceResult {
+public:
+  struct CDNMonitorData {
+    std::string bytesHitRate;
+    std::string bytesPerSecond;
+    std::string requestHitRate;
+    std::string queryPerSecond;
+    std::string timeStamp;
+    std::string averageObjectSize;
+  };
 
+  DescribeCdnMonitorDataResult();
+  explicit DescribeCdnMonitorDataResult(const std::string &payload);
+  ~DescribeCdnMonitorDataResult();
+  std::string getMonitorInterval() const;
+  std::string getEndTime() const;
+  std::string getDomainName() const;
+  std::vector<CDNMonitorData> getMonitorDatas() const;
+  std::string getStartTime() const;
 
-				DescribeCdnMonitorDataResult();
-				explicit DescribeCdnMonitorDataResult(const std::string &payload);
-				~DescribeCdnMonitorDataResult();
-				std::string getMonitorInterval()const;
-				std::string getEndTime()const;
-				std::string getDomainName()const;
-				std::vector<CDNMonitorData> getMonitorDatas()const;
-				std::string getStartTime()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string monitorInterval_;
-				std::string endTime_;
-				std::string domainName_;
-				std::vector<CDNMonitorData> monitorDatas_;
-				std::string startTime_;
-
-			};
-		}
-	}
-}
+private:
+  std::string monitorInterval_;
+  std::string endTime_;
+  std::string domainName_;
+  std::vector<CDNMonitorData> monitorDatas_;
+  std::string startTime_;
+};
+} // namespace Model
+} // namespace Cdn
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBECDNMONITORDATARESULT_H_

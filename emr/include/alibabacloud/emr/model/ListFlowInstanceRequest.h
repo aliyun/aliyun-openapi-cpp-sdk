@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,68 +17,64 @@
 #ifndef ALIBABACLOUD_EMR_MODEL_LISTFLOWINSTANCEREQUEST_H_
 #define ALIBABACLOUD_EMR_MODEL_LISTFLOWINSTANCEREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/emr/EmrExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Emr
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_EMR_EXPORT ListFlowInstanceRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Emr {
+namespace Model {
+class ALIBABACLOUD_EMR_EXPORT ListFlowInstanceRequest
+    : public RpcServiceRequest {
 
-			public:
-				ListFlowInstanceRequest();
-				~ListFlowInstanceRequest();
+public:
+  ListFlowInstanceRequest();
+  ~ListFlowInstanceRequest();
 
-				std::string getOwner()const;
-				void setOwner(const std::string& owner);
-				std::string getTimeRange()const;
-				void setTimeRange(const std::string& timeRange);
-				std::vector<std::string> getStatusList()const;
-				void setStatusList(const std::vector<std::string>& statusList);
-				std::string getOrderBy()const;
-				void setOrderBy(const std::string& orderBy);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getFlowName()const;
-				void setFlowName(const std::string& flowName);
-				std::string getId()const;
-				void setId(const std::string& id);
-				std::string getFlowId()const;
-				void setFlowId(const std::string& flowId);
-				std::string getProjectId()const;
-				void setProjectId(const std::string& projectId);
-				std::string getOrderType()const;
-				void setOrderType(const std::string& orderType);
+  std::string getOwner() const;
+  void setOwner(const std::string &owner);
+  std::string getTimeRange() const;
+  void setTimeRange(const std::string &timeRange);
+  std::vector<std::string> getStatusList() const;
+  void setStatusList(const std::vector<std::string> &statusList);
+  std::string getOrderBy() const;
+  void setOrderBy(const std::string &orderBy);
+  int getPageNumber() const;
+  void setPageNumber(int pageNumber);
+  std::string getInstanceId() const;
+  void setInstanceId(const std::string &instanceId);
+  std::string getRegionId() const;
+  void setRegionId(const std::string &regionId);
+  int getPageSize() const;
+  void setPageSize(int pageSize);
+  std::string getFlowName() const;
+  void setFlowName(const std::string &flowName);
+  std::string getId() const;
+  void setId(const std::string &id);
+  std::string getFlowId() const;
+  void setFlowId(const std::string &flowId);
+  std::string getProjectId() const;
+  void setProjectId(const std::string &projectId);
+  std::string getOrderType() const;
+  void setOrderType(const std::string &orderType);
 
-            private:
-				std::string owner_;
-				std::string timeRange_;
-				std::vector<std::string> statusList_;
-				std::string orderBy_;
-				int pageNumber_;
-				std::string instanceId_;
-				std::string regionId_;
-				int pageSize_;
-				std::string flowName_;
-				std::string id_;
-				std::string flowId_;
-				std::string projectId_;
-				std::string orderType_;
-
-			};
-		}
-	}
-}
+private:
+  std::string owner_;
+  std::string timeRange_;
+  std::vector<std::string> statusList_;
+  std::string orderBy_;
+  int pageNumber_;
+  std::string instanceId_;
+  std::string regionId_;
+  int pageSize_;
+  std::string flowName_;
+  std::string id_;
+  std::string flowId_;
+  std::string projectId_;
+  std::string orderType_;
+};
+} // namespace Model
+} // namespace Emr
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_EMR_MODEL_LISTFLOWINSTANCEREQUEST_H_

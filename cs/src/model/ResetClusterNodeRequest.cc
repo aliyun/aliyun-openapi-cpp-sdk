@@ -33,7 +33,7 @@ std::string ResetClusterNodeRequest::getInstanceId()const
 void ResetClusterNodeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ResetClusterNodeRequest::getClusterId()const
@@ -44,6 +44,6 @@ std::string ResetClusterNodeRequest::getClusterId()const
 void ResetClusterNodeRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 

@@ -33,7 +33,7 @@ long QueryWaterMarkTemplateListRequest::getResourceOwnerId()const
 void QueryWaterMarkTemplateListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryWaterMarkTemplateListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryWaterMarkTemplateListRequest::getResourceOwnerAccount()const
 void QueryWaterMarkTemplateListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryWaterMarkTemplateListRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryWaterMarkTemplateListRequest::getOwnerAccount()const
 void QueryWaterMarkTemplateListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryWaterMarkTemplateListRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long QueryWaterMarkTemplateListRequest::getOwnerId()const
 void QueryWaterMarkTemplateListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryWaterMarkTemplateListRequest::getWaterMarkTemplateIds()const
@@ -77,7 +77,7 @@ std::string QueryWaterMarkTemplateListRequest::getWaterMarkTemplateIds()const
 void QueryWaterMarkTemplateListRequest::setWaterMarkTemplateIds(const std::string& waterMarkTemplateIds)
 {
 	waterMarkTemplateIds_ = waterMarkTemplateIds;
-	setParameter("WaterMarkTemplateIds", waterMarkTemplateIds);
+	setCoreParameter("WaterMarkTemplateIds", waterMarkTemplateIds);
 }
 
 std::string QueryWaterMarkTemplateListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryWaterMarkTemplateListRequest::getAccessKeyId()const
 void QueryWaterMarkTemplateListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

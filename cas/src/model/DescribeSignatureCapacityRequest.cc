@@ -33,7 +33,7 @@ std::string DescribeSignatureCapacityRequest::getSourceIp()const
 void DescribeSignatureCapacityRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSignatureCapacityRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeSignatureCapacityRequest::getLang()const
 void DescribeSignatureCapacityRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

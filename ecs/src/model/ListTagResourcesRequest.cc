@@ -329,3 +329,14 @@ void ListTagResourcesRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ListTagResourcesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ListTagResourcesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

@@ -33,7 +33,7 @@ std::string CreateSurveyRequest::getInstanceId()const
 void CreateSurveyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string CreateSurveyRequest::getRole()const
@@ -44,7 +44,7 @@ std::string CreateSurveyRequest::getRole()const
 void CreateSurveyRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setParameter("Role", role);
+	setCoreParameter("Role", role);
 }
 
 int CreateSurveyRequest::getRound()const
@@ -55,7 +55,7 @@ int CreateSurveyRequest::getRound()const
 void CreateSurveyRequest::setRound(int round)
 {
 	round_ = round;
-	setParameter("Round", std::to_string(round));
+	setCoreParameter("Round", std::to_string(round));
 }
 
 std::string CreateSurveyRequest::getFlowJson()const
@@ -66,7 +66,7 @@ std::string CreateSurveyRequest::getFlowJson()const
 void CreateSurveyRequest::setFlowJson(const std::string& flowJson)
 {
 	flowJson_ = flowJson;
-	setParameter("FlowJson", flowJson);
+	setCoreParameter("FlowJson", flowJson);
 }
 
 std::string CreateSurveyRequest::getName()const
@@ -77,7 +77,7 @@ std::string CreateSurveyRequest::getName()const
 void CreateSurveyRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string CreateSurveyRequest::getGlobalQuestions()const
@@ -88,7 +88,7 @@ std::string CreateSurveyRequest::getGlobalQuestions()const
 void CreateSurveyRequest::setGlobalQuestions(const std::string& globalQuestions)
 {
 	globalQuestions_ = globalQuestions;
-	setParameter("GlobalQuestions", globalQuestions);
+	setCoreParameter("GlobalQuestions", globalQuestions);
 }
 
 std::string CreateSurveyRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string CreateSurveyRequest::getDescription()const
 void CreateSurveyRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string CreateSurveyRequest::getCorpora()const
@@ -110,7 +110,7 @@ std::string CreateSurveyRequest::getCorpora()const
 void CreateSurveyRequest::setCorpora(const std::string& corpora)
 {
 	corpora_ = corpora;
-	setParameter("Corpora", corpora);
+	setCoreParameter("Corpora", corpora);
 }
 
 std::string CreateSurveyRequest::getSpeechOptimizationParam()const
@@ -121,7 +121,7 @@ std::string CreateSurveyRequest::getSpeechOptimizationParam()const
 void CreateSurveyRequest::setSpeechOptimizationParam(const std::string& speechOptimizationParam)
 {
 	speechOptimizationParam_ = speechOptimizationParam;
-	setParameter("SpeechOptimizationParam", speechOptimizationParam);
+	setCoreParameter("SpeechOptimizationParam", speechOptimizationParam);
 }
 
 std::string CreateSurveyRequest::getScenarioId()const
@@ -132,6 +132,6 @@ std::string CreateSurveyRequest::getScenarioId()const
 void CreateSurveyRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", scenarioId);
 }
 

@@ -33,7 +33,18 @@ std::string GetDeviceShadowRequest::getShadowMessage()const
 void GetDeviceShadowRequest::setShadowMessage(const std::string& shadowMessage)
 {
 	shadowMessage_ = shadowMessage;
-	setParameter("ShadowMessage", shadowMessage);
+	setCoreParameter("ShadowMessage", shadowMessage);
+}
+
+std::string GetDeviceShadowRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void GetDeviceShadowRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string GetDeviceShadowRequest::getDeviceName()const
@@ -44,7 +55,7 @@ std::string GetDeviceShadowRequest::getDeviceName()const
 void GetDeviceShadowRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string GetDeviceShadowRequest::getProductKey()const
@@ -55,7 +66,7 @@ std::string GetDeviceShadowRequest::getProductKey()const
 void GetDeviceShadowRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string GetDeviceShadowRequest::getAccessKeyId()const
@@ -66,6 +77,6 @@ std::string GetDeviceShadowRequest::getAccessKeyId()const
 void GetDeviceShadowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

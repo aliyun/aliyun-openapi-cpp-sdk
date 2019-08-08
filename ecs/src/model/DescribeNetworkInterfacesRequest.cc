@@ -383,6 +383,18 @@ void DescribeNetworkInterfacesRequest::setVSwitchId(const std::string& vSwitchId
 	setCoreParameter("VSwitchId", vSwitchId);
 }
 
+std::vector<std::string> DescribeNetworkInterfacesRequest::getPrivateIpAddress()const
+{
+	return privateIpAddress_;
+}
+
+void DescribeNetworkInterfacesRequest::setPrivateIpAddress(const std::vector<std::string>& privateIpAddress)
+{
+	privateIpAddress_ = privateIpAddress;
+	for(int i = 0; i!= privateIpAddress.size(); i++)
+		setCoreParameter("PrivateIpAddress."+ std::to_string(i), privateIpAddress.at(i));
+}
+
 std::string DescribeNetworkInterfacesRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -403,6 +415,17 @@ void DescribeNetworkInterfacesRequest::setRequestId(const std::string& requestId
 {
 	requestId_ = requestId;
 	setCoreParameter("RequestId", requestId);
+}
+
+std::string DescribeNetworkInterfacesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeNetworkInterfacesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
 }
 
 std::string DescribeNetworkInterfacesRequest::getVpcId()const

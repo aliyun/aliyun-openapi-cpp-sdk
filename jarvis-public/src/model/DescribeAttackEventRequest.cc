@@ -33,7 +33,7 @@ std::string DescribeAttackEventRequest::getSourceIp()const
 void DescribeAttackEventRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAttackEventRequest::getServerIpList()const
@@ -44,7 +44,7 @@ std::string DescribeAttackEventRequest::getServerIpList()const
 void DescribeAttackEventRequest::setServerIpList(const std::string& serverIpList)
 {
 	serverIpList_ = serverIpList;
-	setParameter("ServerIpList", serverIpList);
+	setCoreParameter("ServerIpList", serverIpList);
 }
 
 int DescribeAttackEventRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeAttackEventRequest::getPageSize()const
 void DescribeAttackEventRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeAttackEventRequest::getEndTime()const
@@ -66,7 +66,7 @@ int DescribeAttackEventRequest::getEndTime()const
 void DescribeAttackEventRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 int DescribeAttackEventRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeAttackEventRequest::getCurrentPage()const
 void DescribeAttackEventRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 int DescribeAttackEventRequest::getStartTime()const
@@ -88,7 +88,7 @@ int DescribeAttackEventRequest::getStartTime()const
 void DescribeAttackEventRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeAttackEventRequest::getLang()const
@@ -99,7 +99,7 @@ std::string DescribeAttackEventRequest::getLang()const
 void DescribeAttackEventRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeAttackEventRequest::getRegion()const
@@ -110,7 +110,7 @@ std::string DescribeAttackEventRequest::getRegion()const
 void DescribeAttackEventRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setParameter("Region", region);
+	setCoreParameter("Region", region);
 }
 
 std::string DescribeAttackEventRequest::getProductType()const
@@ -121,6 +121,6 @@ std::string DescribeAttackEventRequest::getProductType()const
 void DescribeAttackEventRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setParameter("ProductType", productType);
+	setCoreParameter("ProductType", productType);
 }
 

@@ -113,6 +113,17 @@ void CreateSimulatedSystemEventsRequest::setAccessKeyId(const std::string& acces
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateSimulatedSystemEventsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateSimulatedSystemEventsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string CreateSimulatedSystemEventsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -310,6 +321,17 @@ void CreateSimulatedSystemEventsRequest::setRequestId(const std::string& request
 {
 	requestId_ = requestId;
 	setCoreParameter("RequestId", requestId);
+}
+
+std::string CreateSimulatedSystemEventsRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void CreateSimulatedSystemEventsRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
 }
 
 std::string CreateSimulatedSystemEventsRequest::getEventType()const

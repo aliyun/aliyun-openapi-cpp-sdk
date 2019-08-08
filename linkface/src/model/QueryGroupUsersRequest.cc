@@ -33,7 +33,7 @@ std::string QueryGroupUsersRequest::getGroupId()const
 void QueryGroupUsersRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 int QueryGroupUsersRequest::getPageSize()const
@@ -44,7 +44,7 @@ int QueryGroupUsersRequest::getPageSize()const
 void QueryGroupUsersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryGroupUsersRequest::getCurrentPage()const
@@ -55,6 +55,6 @@ int QueryGroupUsersRequest::getCurrentPage()const
 void QueryGroupUsersRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

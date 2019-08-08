@@ -289,3 +289,14 @@ void ConvertNatPublicIpToEipRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ConvertNatPublicIpToEipRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ConvertNatPublicIpToEipRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

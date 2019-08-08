@@ -33,7 +33,7 @@ long StopParagraphRequest::getResourceOwnerId()const
 void StopParagraphRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string StopParagraphRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string StopParagraphRequest::getRegionId()const
 void StopParagraphRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string StopParagraphRequest::getNoteId()const
@@ -55,7 +55,7 @@ std::string StopParagraphRequest::getNoteId()const
 void StopParagraphRequest::setNoteId(const std::string& noteId)
 {
 	noteId_ = noteId;
-	setParameter("NoteId", noteId);
+	setCoreParameter("NoteId", noteId);
 }
 
 std::string StopParagraphRequest::getId()const
@@ -66,7 +66,7 @@ std::string StopParagraphRequest::getId()const
 void StopParagraphRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string StopParagraphRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string StopParagraphRequest::getAccessKeyId()const
 void StopParagraphRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

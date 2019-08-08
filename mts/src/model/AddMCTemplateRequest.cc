@@ -33,7 +33,7 @@ std::string AddMCTemplateRequest::getPolitics()const
 void AddMCTemplateRequest::setPolitics(const std::string& politics)
 {
 	politics_ = politics;
-	setParameter("Politics", politics);
+	setCoreParameter("Politics", politics);
 }
 
 long AddMCTemplateRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long AddMCTemplateRequest::getResourceOwnerId()const
 void AddMCTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddMCTemplateRequest::getContraband()const
@@ -55,7 +55,7 @@ std::string AddMCTemplateRequest::getContraband()const
 void AddMCTemplateRequest::setContraband(const std::string& contraband)
 {
 	contraband_ = contraband;
-	setParameter("Contraband", contraband);
+	setCoreParameter("Contraband", contraband);
 }
 
 std::string AddMCTemplateRequest::getAd()const
@@ -66,7 +66,7 @@ std::string AddMCTemplateRequest::getAd()const
 void AddMCTemplateRequest::setAd(const std::string& ad)
 {
 	ad_ = ad;
-	setParameter("Ad", ad);
+	setCoreParameter("Ad", ad);
 }
 
 std::string AddMCTemplateRequest::getAbuse()const
@@ -77,7 +77,7 @@ std::string AddMCTemplateRequest::getAbuse()const
 void AddMCTemplateRequest::setAbuse(const std::string& abuse)
 {
 	abuse_ = abuse;
-	setParameter("Abuse", abuse);
+	setCoreParameter("Abuse", abuse);
 }
 
 std::string AddMCTemplateRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string AddMCTemplateRequest::getResourceOwnerAccount()const
 void AddMCTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddMCTemplateRequest::getQrcode()const
@@ -99,7 +99,7 @@ std::string AddMCTemplateRequest::getQrcode()const
 void AddMCTemplateRequest::setQrcode(const std::string& qrcode)
 {
 	qrcode_ = qrcode;
-	setParameter("Qrcode", qrcode);
+	setCoreParameter("Qrcode", qrcode);
 }
 
 std::string AddMCTemplateRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string AddMCTemplateRequest::getOwnerAccount()const
 void AddMCTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long AddMCTemplateRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long AddMCTemplateRequest::getOwnerId()const
 void AddMCTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddMCTemplateRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string AddMCTemplateRequest::getAccessKeyId()const
 void AddMCTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddMCTemplateRequest::getPorn()const
@@ -143,7 +143,7 @@ std::string AddMCTemplateRequest::getPorn()const
 void AddMCTemplateRequest::setPorn(const std::string& porn)
 {
 	porn_ = porn;
-	setParameter("Porn", porn);
+	setCoreParameter("Porn", porn);
 }
 
 std::string AddMCTemplateRequest::getTerrorism()const
@@ -154,7 +154,7 @@ std::string AddMCTemplateRequest::getTerrorism()const
 void AddMCTemplateRequest::setTerrorism(const std::string& terrorism)
 {
 	terrorism_ = terrorism;
-	setParameter("Terrorism", terrorism);
+	setCoreParameter("Terrorism", terrorism);
 }
 
 std::string AddMCTemplateRequest::getName()const
@@ -165,7 +165,7 @@ std::string AddMCTemplateRequest::getName()const
 void AddMCTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string AddMCTemplateRequest::getLogo()const
@@ -176,7 +176,7 @@ std::string AddMCTemplateRequest::getLogo()const
 void AddMCTemplateRequest::setLogo(const std::string& logo)
 {
 	logo_ = logo;
-	setParameter("Logo", logo);
+	setCoreParameter("Logo", logo);
 }
 
 std::string AddMCTemplateRequest::getSpam()const
@@ -187,7 +187,7 @@ std::string AddMCTemplateRequest::getSpam()const
 void AddMCTemplateRequest::setSpam(const std::string& spam)
 {
 	spam_ = spam;
-	setParameter("Spam", spam);
+	setCoreParameter("Spam", spam);
 }
 
 std::string AddMCTemplateRequest::getLive()const
@@ -198,6 +198,6 @@ std::string AddMCTemplateRequest::getLive()const
 void AddMCTemplateRequest::setLive(const std::string& live)
 {
 	live_ = live;
-	setParameter("Live", live);
+	setCoreParameter("Live", live);
 }
 

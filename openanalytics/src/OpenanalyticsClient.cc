@@ -195,42 +195,6 @@ OpenanalyticsClient::OpenProductAccountOutcomeCallable OpenanalyticsClient::open
 	return task->get_future();
 }
 
-OpenanalyticsClient::CloseProductAccountOutcome OpenanalyticsClient::closeProductAccount(const CloseProductAccountRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CloseProductAccountOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CloseProductAccountOutcome(CloseProductAccountResult(outcome.result()));
-	else
-		return CloseProductAccountOutcome(outcome.error());
-}
-
-void OpenanalyticsClient::closeProductAccountAsync(const CloseProductAccountRequest& request, const CloseProductAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, closeProductAccount(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenanalyticsClient::CloseProductAccountOutcomeCallable OpenanalyticsClient::closeProductAccountCallable(const CloseProductAccountRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CloseProductAccountOutcome()>>(
-			[this, request]()
-			{
-			return this->closeProductAccount(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OpenanalyticsClient::GetEndPointByDomainOutcome OpenanalyticsClient::getEndPointByDomain(const GetEndPointByDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +225,42 @@ OpenanalyticsClient::GetEndPointByDomainOutcomeCallable OpenanalyticsClient::get
 			[this, request]()
 			{
 			return this->getEndPointByDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OpenanalyticsClient::CloseProductAccountOutcome OpenanalyticsClient::closeProductAccount(const CloseProductAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CloseProductAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CloseProductAccountOutcome(CloseProductAccountResult(outcome.result()));
+	else
+		return CloseProductAccountOutcome(outcome.error());
+}
+
+void OpenanalyticsClient::closeProductAccountAsync(const CloseProductAccountRequest& request, const CloseProductAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, closeProductAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OpenanalyticsClient::CloseProductAccountOutcomeCallable OpenanalyticsClient::closeProductAccountCallable(const CloseProductAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CloseProductAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->closeProductAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

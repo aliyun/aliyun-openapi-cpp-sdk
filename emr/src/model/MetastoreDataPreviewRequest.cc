@@ -33,7 +33,7 @@ long MetastoreDataPreviewRequest::getResourceOwnerId()const
 void MetastoreDataPreviewRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreDataPreviewRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string MetastoreDataPreviewRequest::getDbName()const
 void MetastoreDataPreviewRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string MetastoreDataPreviewRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreDataPreviewRequest::getRegionId()const
 void MetastoreDataPreviewRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreDataPreviewRequest::getTableName()const
@@ -66,7 +66,7 @@ std::string MetastoreDataPreviewRequest::getTableName()const
 void MetastoreDataPreviewRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setParameter("TableName", tableName);
+	setCoreParameter("TableName", tableName);
 }
 
 std::string MetastoreDataPreviewRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string MetastoreDataPreviewRequest::getAccessKeyId()const
 void MetastoreDataPreviewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

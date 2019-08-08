@@ -113,6 +113,17 @@ void DescribeDeploymentSetsRequest::setDeploymentSetIds(const std::string& deplo
 	setCoreParameter("DeploymentSetIds", deploymentSetIds);
 }
 
+std::string DescribeDeploymentSetsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeDeploymentSetsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeDeploymentSetsRequest::getRegionId()const
 {
 	return regionId_;

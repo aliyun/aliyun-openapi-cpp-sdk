@@ -114,6 +114,17 @@ void CancelSimulatedSystemEventsRequest::setAccessKeyId(const std::string& acces
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CancelSimulatedSystemEventsRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CancelSimulatedSystemEventsRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string CancelSimulatedSystemEventsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -299,5 +310,16 @@ void CancelSimulatedSystemEventsRequest::setRequestId(const std::string& request
 {
 	requestId_ = requestId;
 	setCoreParameter("RequestId", requestId);
+}
+
+std::string CancelSimulatedSystemEventsRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void CancelSimulatedSystemEventsRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
 }
 

@@ -25,6 +25,17 @@ ModifyImageSharePermissionRequest::ModifyImageSharePermissionRequest() :
 ModifyImageSharePermissionRequest::~ModifyImageSharePermissionRequest()
 {}
 
+std::string ModifyImageSharePermissionRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyImageSharePermissionRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long ModifyImageSharePermissionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

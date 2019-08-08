@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,36 @@
 #ifndef ALIBABACLOUD_R_KVSTORE_MODEL_CREATETEMPINSTANCERESULT_H_
 #define ALIBABACLOUD_R_KVSTORE_MODEL_CREATETEMPINSTANCERESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/r-kvstore/R_kvstoreExport.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace R_kvstore
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT CreateTempInstanceResult : public ServiceResult
-			{
-			public:
+namespace AlibabaCloud {
+namespace R_kvstore {
+namespace Model {
+class ALIBABACLOUD_R_KVSTORE_EXPORT CreateTempInstanceResult
+    : public ServiceResult {
+public:
+  CreateTempInstanceResult();
+  explicit CreateTempInstanceResult(const std::string &payload);
+  ~CreateTempInstanceResult();
+  std::string getStatus() const;
+  std::string getSnapshotId() const;
+  std::string getInstanceId() const;
+  std::string getTempInstanceId() const;
 
+protected:
+  void parse(const std::string &payload);
 
-				CreateTempInstanceResult();
-				explicit CreateTempInstanceResult(const std::string &payload);
-				~CreateTempInstanceResult();
-				std::string getStatus()const;
-				std::string getSnapshotId()const;
-				std::string getInstanceId()const;
-				std::string getTempInstanceId()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string status_;
-				std::string snapshotId_;
-				std::string instanceId_;
-				std::string tempInstanceId_;
-
-			};
-		}
-	}
-}
+private:
+  std::string status_;
+  std::string snapshotId_;
+  std::string instanceId_;
+  std::string tempInstanceId_;
+};
+} // namespace Model
+} // namespace R_kvstore
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_R_KVSTORE_MODEL_CREATETEMPINSTANCERESULT_H_

@@ -289,6 +289,17 @@ void DescribeUserBusinessBehaviorRequest::setRequestId(const std::string& reques
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeUserBusinessBehaviorRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeUserBusinessBehaviorRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string DescribeUserBusinessBehaviorRequest::getStatusKey()const
 {
 	return statusKey_;

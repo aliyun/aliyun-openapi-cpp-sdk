@@ -357,6 +357,17 @@ void DescribeDisksFullStatusRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeDisksFullStatusRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeDisksFullStatusRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string DescribeDisksFullStatusRequest::getHealthStatus()const
 {
 	return healthStatus_;

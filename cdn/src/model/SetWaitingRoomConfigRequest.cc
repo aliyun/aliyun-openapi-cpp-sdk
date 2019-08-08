@@ -33,7 +33,7 @@ long SetWaitingRoomConfigRequest::getCallerParentId()const
 void SetWaitingRoomConfigRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool SetWaitingRoomConfigRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool SetWaitingRoomConfigRequest::getProxy_original_security_transport()const
 void SetWaitingRoomConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string SetWaitingRoomConfigRequest::getProxy_original_source_ip()const
@@ -55,7 +55,7 @@ std::string SetWaitingRoomConfigRequest::getProxy_original_source_ip()const
 void SetWaitingRoomConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string SetWaitingRoomConfigRequest::getOwnerIdLoginEmail()const
@@ -66,7 +66,7 @@ std::string SetWaitingRoomConfigRequest::getOwnerIdLoginEmail()const
 void SetWaitingRoomConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string SetWaitingRoomConfigRequest::getCallerType()const
@@ -77,7 +77,7 @@ std::string SetWaitingRoomConfigRequest::getCallerType()const
 void SetWaitingRoomConfigRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string SetWaitingRoomConfigRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string SetWaitingRoomConfigRequest::getAccessKeyId()const
 void SetWaitingRoomConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetWaitingRoomConfigRequest::getWaitUrl()const
@@ -99,7 +99,7 @@ std::string SetWaitingRoomConfigRequest::getWaitUrl()const
 void SetWaitingRoomConfigRequest::setWaitUrl(const std::string& waitUrl)
 {
 	waitUrl_ = waitUrl;
-	setParameter("WaitUrl", waitUrl);
+	setCoreParameter("WaitUrl", waitUrl);
 }
 
 std::string SetWaitingRoomConfigRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string SetWaitingRoomConfigRequest::getSecurityToken()const
 void SetWaitingRoomConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetWaitingRoomConfigRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string SetWaitingRoomConfigRequest::getRequestContent()const
 void SetWaitingRoomConfigRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string SetWaitingRoomConfigRequest::getFunctionName()const
@@ -132,7 +132,7 @@ std::string SetWaitingRoomConfigRequest::getFunctionName()const
 void SetWaitingRoomConfigRequest::setFunctionName(const std::string& functionName)
 {
 	functionName_ = functionName;
-	setParameter("FunctionName", functionName);
+	setCoreParameter("FunctionName", functionName);
 }
 
 std::string SetWaitingRoomConfigRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string SetWaitingRoomConfigRequest::getCallerBidEmail()const
 void SetWaitingRoomConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string SetWaitingRoomConfigRequest::getCallerUidEmail()const
@@ -154,7 +154,7 @@ std::string SetWaitingRoomConfigRequest::getCallerUidEmail()const
 void SetWaitingRoomConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 std::string SetWaitingRoomConfigRequest::getWaitUri()const
@@ -165,7 +165,7 @@ std::string SetWaitingRoomConfigRequest::getWaitUri()const
 void SetWaitingRoomConfigRequest::setWaitUri(const std::string& waitUri)
 {
 	waitUri_ = waitUri;
-	setParameter("WaitUri", waitUri);
+	setCoreParameter("WaitUri", waitUri);
 }
 
 long SetWaitingRoomConfigRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long SetWaitingRoomConfigRequest::getCallerUid()const
 void SetWaitingRoomConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string SetWaitingRoomConfigRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string SetWaitingRoomConfigRequest::getApp_ip()const
 void SetWaitingRoomConfigRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string SetWaitingRoomConfigRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string SetWaitingRoomConfigRequest::getPopProduct()const
 void SetWaitingRoomConfigRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 int SetWaitingRoomConfigRequest::getMaxTimeWait()const
@@ -209,7 +209,7 @@ int SetWaitingRoomConfigRequest::getMaxTimeWait()const
 void SetWaitingRoomConfigRequest::setMaxTimeWait(int maxTimeWait)
 {
 	maxTimeWait_ = maxTimeWait;
-	setParameter("MaxTimeWait", std::to_string(maxTimeWait));
+	setCoreParameter("MaxTimeWait", std::to_string(maxTimeWait));
 }
 
 std::string SetWaitingRoomConfigRequest::getDomainName()const
@@ -220,7 +220,7 @@ std::string SetWaitingRoomConfigRequest::getDomainName()const
 void SetWaitingRoomConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 int SetWaitingRoomConfigRequest::getAllowPct()const
@@ -231,7 +231,7 @@ int SetWaitingRoomConfigRequest::getAllowPct()const
 void SetWaitingRoomConfigRequest::setAllowPct(int allowPct)
 {
 	allowPct_ = allowPct;
-	setParameter("AllowPct", std::to_string(allowPct));
+	setCoreParameter("AllowPct", std::to_string(allowPct));
 }
 
 std::string SetWaitingRoomConfigRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string SetWaitingRoomConfigRequest::getCallerBid()const
 void SetWaitingRoomConfigRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 int SetWaitingRoomConfigRequest::getGapTime()const
@@ -253,7 +253,7 @@ int SetWaitingRoomConfigRequest::getGapTime()const
 void SetWaitingRoomConfigRequest::setGapTime(int gapTime)
 {
 	gapTime_ = gapTime;
-	setParameter("GapTime", std::to_string(gapTime));
+	setCoreParameter("GapTime", std::to_string(gapTime));
 }
 
 long SetWaitingRoomConfigRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long SetWaitingRoomConfigRequest::getOwnerId()const
 void SetWaitingRoomConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetWaitingRoomConfigRequest::getVersion()const
@@ -275,7 +275,7 @@ std::string SetWaitingRoomConfigRequest::getVersion()const
 void SetWaitingRoomConfigRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool SetWaitingRoomConfigRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ bool SetWaitingRoomConfigRequest::getProxy_trust_transport_info()const
 void SetWaitingRoomConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool SetWaitingRoomConfigRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool SetWaitingRoomConfigRequest::getAk_mfa_present()const
 void SetWaitingRoomConfigRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool SetWaitingRoomConfigRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool SetWaitingRoomConfigRequest::getSecurity_transport()const
 void SetWaitingRoomConfigRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string SetWaitingRoomConfigRequest::getRequestId()const
@@ -319,6 +319,6 @@ std::string SetWaitingRoomConfigRequest::getRequestId()const
 void SetWaitingRoomConfigRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

@@ -25,6 +25,17 @@ CreateSignatureRequest::CreateSignatureRequest() :
 CreateSignatureRequest::~CreateSignatureRequest()
 {}
 
+std::string CreateSignatureRequest::getIconId()const
+{
+	return iconId_;
+}
+
+void CreateSignatureRequest::setIconId(const std::string& iconId)
+{
+	iconId_ = iconId;
+	setCoreParameter("IconId", iconId);
+}
+
 int CreateSignatureRequest::getQuantity()const
 {
 	return quantity_;
@@ -33,7 +44,7 @@ int CreateSignatureRequest::getQuantity()const
 void CreateSignatureRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setParameter("Quantity", std::to_string(quantity));
+	setCoreParameter("Quantity", std::to_string(quantity));
 }
 
 std::string CreateSignatureRequest::getHandSignImg()const
@@ -44,7 +55,7 @@ std::string CreateSignatureRequest::getHandSignImg()const
 void CreateSignatureRequest::setHandSignImg(const std::string& handSignImg)
 {
 	handSignImg_ = handSignImg;
-	setParameter("HandSignImg", handSignImg);
+	setCoreParameter("HandSignImg", handSignImg);
 }
 
 std::string CreateSignatureRequest::getDocId()const
@@ -55,7 +66,7 @@ std::string CreateSignatureRequest::getDocId()const
 void CreateSignatureRequest::setDocId(const std::string& docId)
 {
 	docId_ = docId;
-	setParameter("DocId", docId);
+	setCoreParameter("DocId", docId);
 }
 
 std::string CreateSignatureRequest::getCustomApi()const
@@ -66,7 +77,7 @@ std::string CreateSignatureRequest::getCustomApi()const
 void CreateSignatureRequest::setCustomApi(const std::string& customApi)
 {
 	customApi_ = customApi;
-	setParameter("CustomApi", customApi);
+	setCoreParameter("CustomApi", customApi);
 }
 
 int CreateSignatureRequest::getPositionPage()const
@@ -77,7 +88,7 @@ int CreateSignatureRequest::getPositionPage()const
 void CreateSignatureRequest::setPositionPage(int positionPage)
 {
 	positionPage_ = positionPage;
-	setParameter("PositionPage", std::to_string(positionPage));
+	setCoreParameter("PositionPage", std::to_string(positionPage));
 }
 
 std::string CreateSignatureRequest::getDocTitle()const
@@ -88,7 +99,7 @@ std::string CreateSignatureRequest::getDocTitle()const
 void CreateSignatureRequest::setDocTitle(const std::string& docTitle)
 {
 	docTitle_ = docTitle;
-	setParameter("DocTitle", docTitle);
+	setCoreParameter("DocTitle", docTitle);
 }
 
 int CreateSignatureRequest::getPositionX()const
@@ -99,7 +110,7 @@ int CreateSignatureRequest::getPositionX()const
 void CreateSignatureRequest::setPositionX(int positionX)
 {
 	positionX_ = positionX;
-	setParameter("PositionX", std::to_string(positionX));
+	setCoreParameter("PositionX", std::to_string(positionX));
 }
 
 int CreateSignatureRequest::getPositionY()const
@@ -110,7 +121,7 @@ int CreateSignatureRequest::getPositionY()const
 void CreateSignatureRequest::setPositionY(int positionY)
 {
 	positionY_ = positionY;
-	setParameter("PositionY", std::to_string(positionY));
+	setCoreParameter("PositionY", std::to_string(positionY));
 }
 
 std::string CreateSignatureRequest::getSourceIp()const
@@ -121,7 +132,7 @@ std::string CreateSignatureRequest::getSourceIp()const
 void CreateSignatureRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateSignatureRequest::getPeopleId()const
@@ -132,7 +143,7 @@ std::string CreateSignatureRequest::getPeopleId()const
 void CreateSignatureRequest::setPeopleId(const std::string& peopleId)
 {
 	peopleId_ = peopleId;
-	setParameter("PeopleId", peopleId);
+	setCoreParameter("PeopleId", peopleId);
 }
 
 int CreateSignatureRequest::getPositionType()const
@@ -143,7 +154,7 @@ int CreateSignatureRequest::getPositionType()const
 void CreateSignatureRequest::setPositionType(int positionType)
 {
 	positionType_ = positionType;
-	setParameter("PositionType", std::to_string(positionType));
+	setCoreParameter("PositionType", std::to_string(positionType));
 }
 
 std::string CreateSignatureRequest::getSignKeyword()const
@@ -154,7 +165,7 @@ std::string CreateSignatureRequest::getSignKeyword()const
 void CreateSignatureRequest::setSignKeyword(const std::string& signKeyword)
 {
 	signKeyword_ = signKeyword;
-	setParameter("SignKeyword", signKeyword);
+	setCoreParameter("SignKeyword", signKeyword);
 }
 
 std::string CreateSignatureRequest::getNotifyUrl()const
@@ -165,7 +176,7 @@ std::string CreateSignatureRequest::getNotifyUrl()const
 void CreateSignatureRequest::setNotifyUrl(const std::string& notifyUrl)
 {
 	notifyUrl_ = notifyUrl;
-	setParameter("NotifyUrl", notifyUrl);
+	setCoreParameter("NotifyUrl", notifyUrl);
 }
 
 int CreateSignatureRequest::getValidity()const
@@ -176,7 +187,7 @@ int CreateSignatureRequest::getValidity()const
 void CreateSignatureRequest::setValidity(int validity)
 {
 	validity_ = validity;
-	setParameter("Validity", std::to_string(validity));
+	setCoreParameter("Validity", std::to_string(validity));
 }
 
 std::string CreateSignatureRequest::getReturnUrl()const
@@ -187,7 +198,7 @@ std::string CreateSignatureRequest::getReturnUrl()const
 void CreateSignatureRequest::setReturnUrl(const std::string& returnUrl)
 {
 	returnUrl_ = returnUrl;
-	setParameter("ReturnUrl", returnUrl);
+	setCoreParameter("ReturnUrl", returnUrl);
 }
 
 std::string CreateSignatureRequest::getLang()const
@@ -198,7 +209,7 @@ std::string CreateSignatureRequest::getLang()const
 void CreateSignatureRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 int CreateSignatureRequest::getKeywordStrategy()const
@@ -209,6 +220,6 @@ int CreateSignatureRequest::getKeywordStrategy()const
 void CreateSignatureRequest::setKeywordStrategy(int keywordStrategy)
 {
 	keywordStrategy_ = keywordStrategy;
-	setParameter("KeywordStrategy", std::to_string(keywordStrategy));
+	setCoreParameter("KeywordStrategy", std::to_string(keywordStrategy));
 }
 

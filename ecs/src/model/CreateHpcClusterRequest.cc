@@ -311,6 +311,17 @@ void CreateHpcClusterRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string CreateHpcClusterRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void CreateHpcClusterRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string CreateHpcClusterRequest::getName()const
 {
 	return name_;

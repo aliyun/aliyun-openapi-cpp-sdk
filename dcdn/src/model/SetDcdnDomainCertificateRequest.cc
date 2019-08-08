@@ -33,7 +33,7 @@ std::string SetDcdnDomainCertificateRequest::getForceSet()const
 void SetDcdnDomainCertificateRequest::setForceSet(const std::string& forceSet)
 {
 	forceSet_ = forceSet;
-	setParameter("ForceSet", forceSet);
+	setCoreParameter("ForceSet", forceSet);
 }
 
 std::string SetDcdnDomainCertificateRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string SetDcdnDomainCertificateRequest::getSecurityToken()const
 void SetDcdnDomainCertificateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetDcdnDomainCertificateRequest::getCertType()const
@@ -55,7 +55,7 @@ std::string SetDcdnDomainCertificateRequest::getCertType()const
 void SetDcdnDomainCertificateRequest::setCertType(const std::string& certType)
 {
 	certType_ = certType;
-	setParameter("CertType", certType);
+	setCoreParameter("CertType", certType);
 }
 
 std::string SetDcdnDomainCertificateRequest::getSSLPub()const
@@ -66,7 +66,7 @@ std::string SetDcdnDomainCertificateRequest::getSSLPub()const
 void SetDcdnDomainCertificateRequest::setSSLPub(const std::string& sSLPub)
 {
 	sSLPub_ = sSLPub;
-	setParameter("SSLPub", sSLPub);
+	setCoreParameter("SSLPub", sSLPub);
 }
 
 std::string SetDcdnDomainCertificateRequest::getCertName()const
@@ -77,7 +77,7 @@ std::string SetDcdnDomainCertificateRequest::getCertName()const
 void SetDcdnDomainCertificateRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
-	setParameter("CertName", certName);
+	setCoreParameter("CertName", certName);
 }
 
 std::string SetDcdnDomainCertificateRequest::getSSLProtocol()const
@@ -88,7 +88,7 @@ std::string SetDcdnDomainCertificateRequest::getSSLProtocol()const
 void SetDcdnDomainCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
 {
 	sSLProtocol_ = sSLProtocol;
-	setParameter("SSLProtocol", sSLProtocol);
+	setCoreParameter("SSLProtocol", sSLProtocol);
 }
 
 std::string SetDcdnDomainCertificateRequest::getDomainName()const
@@ -99,7 +99,7 @@ std::string SetDcdnDomainCertificateRequest::getDomainName()const
 void SetDcdnDomainCertificateRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long SetDcdnDomainCertificateRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long SetDcdnDomainCertificateRequest::getOwnerId()const
 void SetDcdnDomainCertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetDcdnDomainCertificateRequest::getRegion()const
@@ -121,18 +121,7 @@ std::string SetDcdnDomainCertificateRequest::getRegion()const
 void SetDcdnDomainCertificateRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setParameter("Region", region);
-}
-
-std::string SetDcdnDomainCertificateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetDcdnDomainCertificateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("Region", region);
 }
 
 std::string SetDcdnDomainCertificateRequest::getSSLPri()const
@@ -143,6 +132,6 @@ std::string SetDcdnDomainCertificateRequest::getSSLPri()const
 void SetDcdnDomainCertificateRequest::setSSLPri(const std::string& sSLPri)
 {
 	sSLPri_ = sSLPri;
-	setParameter("SSLPri", sSLPri);
+	setCoreParameter("SSLPri", sSLPri);
 }
 

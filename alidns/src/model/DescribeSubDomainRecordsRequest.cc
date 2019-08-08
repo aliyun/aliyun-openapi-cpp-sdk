@@ -33,7 +33,7 @@ std::string DescribeSubDomainRecordsRequest::getLine()const
 void DescribeSubDomainRecordsRequest::setLine(const std::string& line)
 {
 	line_ = line;
-	setParameter("Line", line);
+	setCoreParameter("Line", line);
 }
 
 std::string DescribeSubDomainRecordsRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeSubDomainRecordsRequest::getUserClientIp()const
 void DescribeSubDomainRecordsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long DescribeSubDomainRecordsRequest::getPageSize()const
@@ -55,7 +55,18 @@ long DescribeSubDomainRecordsRequest::getPageSize()const
 void DescribeSubDomainRecordsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeSubDomainRecordsRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeSubDomainRecordsRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeSubDomainRecordsRequest::getSubDomain()const
@@ -66,7 +77,7 @@ std::string DescribeSubDomainRecordsRequest::getSubDomain()const
 void DescribeSubDomainRecordsRequest::setSubDomain(const std::string& subDomain)
 {
 	subDomain_ = subDomain;
-	setParameter("SubDomain", subDomain);
+	setCoreParameter("SubDomain", subDomain);
 }
 
 std::string DescribeSubDomainRecordsRequest::getLang()const
@@ -77,7 +88,7 @@ std::string DescribeSubDomainRecordsRequest::getLang()const
 void DescribeSubDomainRecordsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeSubDomainRecordsRequest::getType()const
@@ -88,7 +99,7 @@ std::string DescribeSubDomainRecordsRequest::getType()const
 void DescribeSubDomainRecordsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 long DescribeSubDomainRecordsRequest::getPageNumber()const
@@ -99,7 +110,7 @@ long DescribeSubDomainRecordsRequest::getPageNumber()const
 void DescribeSubDomainRecordsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSubDomainRecordsRequest::getAccessKeyId()const
@@ -110,6 +121,6 @@ std::string DescribeSubDomainRecordsRequest::getAccessKeyId()const
 void DescribeSubDomainRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

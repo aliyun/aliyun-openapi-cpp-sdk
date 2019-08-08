@@ -33,7 +33,7 @@ std::string RemoveParticipantsRequest::getApp_ip()const
 void RemoveParticipantsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string RemoveParticipantsRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string RemoveParticipantsRequest::getPopProduct()const
 void RemoveParticipantsRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::vector<std::string> RemoveParticipantsRequest::getParticipantIds()const
@@ -56,7 +56,7 @@ void RemoveParticipantsRequest::setParticipantIds(const std::vector<std::string>
 {
 	participantIds_ = participantIds;
 	for(int i = 0; i!= participantIds.size(); i++)
-		setParameter("ParticipantIds."+ std::to_string(i), participantIds.at(i));
+		setCoreParameter("ParticipantIds."+ std::to_string(i), participantIds.at(i));
 }
 
 long RemoveParticipantsRequest::getCallerParentId()const
@@ -67,7 +67,7 @@ long RemoveParticipantsRequest::getCallerParentId()const
 void RemoveParticipantsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool RemoveParticipantsRequest::getProxy_original_security_transport()const
@@ -78,7 +78,7 @@ bool RemoveParticipantsRequest::getProxy_original_security_transport()const
 void RemoveParticipantsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string RemoveParticipantsRequest::getCallerBid()const
@@ -89,7 +89,7 @@ std::string RemoveParticipantsRequest::getCallerBid()const
 void RemoveParticipantsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long RemoveParticipantsRequest::getOwnerId()const
@@ -100,7 +100,7 @@ long RemoveParticipantsRequest::getOwnerId()const
 void RemoveParticipantsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveParticipantsRequest::getProxy_original_source_ip()const
@@ -111,7 +111,7 @@ std::string RemoveParticipantsRequest::getProxy_original_source_ip()const
 void RemoveParticipantsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string RemoveParticipantsRequest::getVersion()const
@@ -122,7 +122,7 @@ std::string RemoveParticipantsRequest::getVersion()const
 void RemoveParticipantsRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 std::string RemoveParticipantsRequest::getOwnerIdLoginEmail()const
@@ -133,7 +133,7 @@ std::string RemoveParticipantsRequest::getOwnerIdLoginEmail()const
 void RemoveParticipantsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string RemoveParticipantsRequest::getCallerType()const
@@ -144,7 +144,7 @@ std::string RemoveParticipantsRequest::getCallerType()const
 void RemoveParticipantsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool RemoveParticipantsRequest::getProxy_trust_transport_info()const
@@ -155,7 +155,7 @@ bool RemoveParticipantsRequest::getProxy_trust_transport_info()const
 void RemoveParticipantsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool RemoveParticipantsRequest::getAk_mfa_present()const
@@ -166,7 +166,7 @@ bool RemoveParticipantsRequest::getAk_mfa_present()const
 void RemoveParticipantsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string RemoveParticipantsRequest::getAccessKeyId()const
@@ -177,7 +177,7 @@ std::string RemoveParticipantsRequest::getAccessKeyId()const
 void RemoveParticipantsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool RemoveParticipantsRequest::getSecurity_transport()const
@@ -188,7 +188,7 @@ bool RemoveParticipantsRequest::getSecurity_transport()const
 void RemoveParticipantsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string RemoveParticipantsRequest::getSecurityToken()const
@@ -199,7 +199,7 @@ std::string RemoveParticipantsRequest::getSecurityToken()const
 void RemoveParticipantsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RemoveParticipantsRequest::getConferenceId()const
@@ -210,7 +210,7 @@ std::string RemoveParticipantsRequest::getConferenceId()const
 void RemoveParticipantsRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
-	setParameter("ConferenceId", conferenceId);
+	setCoreParameter("ConferenceId", conferenceId);
 }
 
 std::string RemoveParticipantsRequest::getRequestId()const
@@ -221,7 +221,7 @@ std::string RemoveParticipantsRequest::getRequestId()const
 void RemoveParticipantsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string RemoveParticipantsRequest::getRequestContent()const
@@ -232,7 +232,7 @@ std::string RemoveParticipantsRequest::getRequestContent()const
 void RemoveParticipantsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string RemoveParticipantsRequest::getAppId()const
@@ -243,7 +243,7 @@ std::string RemoveParticipantsRequest::getAppId()const
 void RemoveParticipantsRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("AppId", appId);
 }
 
 std::string RemoveParticipantsRequest::getCallerBidEmail()const
@@ -254,7 +254,7 @@ std::string RemoveParticipantsRequest::getCallerBidEmail()const
 void RemoveParticipantsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string RemoveParticipantsRequest::getCallerUidEmail()const
@@ -265,7 +265,7 @@ std::string RemoveParticipantsRequest::getCallerUidEmail()const
 void RemoveParticipantsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long RemoveParticipantsRequest::getCallerUid()const
@@ -276,6 +276,6 @@ long RemoveParticipantsRequest::getCallerUid()const
 void RemoveParticipantsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

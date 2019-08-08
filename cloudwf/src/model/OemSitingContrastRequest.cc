@@ -33,7 +33,7 @@ long OemSitingContrastRequest::getBid()const
 void OemSitingContrastRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", std::to_string(bid));
 }
 
 std::string OemSitingContrastRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string OemSitingContrastRequest::getAccessKeyId()const
 void OemSitingContrastRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

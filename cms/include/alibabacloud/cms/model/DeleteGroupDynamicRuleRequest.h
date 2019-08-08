@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,35 +17,31 @@
 #ifndef ALIBABACLOUD_CMS_MODEL_DELETEGROUPDYNAMICRULEREQUEST_H_
 #define ALIBABACLOUD_CMS_MODEL_DELETEGROUPDYNAMICRULEREQUEST_H_
 
+#include <alibabacloud/cms/CmsExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/cms/CmsExport.h>
 
-namespace AlibabaCloud
-{
-	namespace Cms
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CMS_EXPORT DeleteGroupDynamicRuleRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Cms {
+namespace Model {
+class ALIBABACLOUD_CMS_EXPORT DeleteGroupDynamicRuleRequest
+    : public RpcServiceRequest {
 
-			public:
-				DeleteGroupDynamicRuleRequest();
-				~DeleteGroupDynamicRuleRequest();
+public:
+  DeleteGroupDynamicRuleRequest();
+  ~DeleteGroupDynamicRuleRequest();
 
-				long getGroupId()const;
-				void setGroupId(long groupId);
-				std::string getCategory()const;
-				void setCategory(const std::string& category);
+  long getGroupId() const;
+  void setGroupId(long groupId);
+  std::string getCategory() const;
+  void setCategory(const std::string &category);
 
-            private:
-				long groupId_;
-				std::string category_;
-
-			};
-		}
-	}
-}
+private:
+  long groupId_;
+  std::string category_;
+};
+} // namespace Model
+} // namespace Cms
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CMS_MODEL_DELETEGROUPDYNAMICRULEREQUEST_H_

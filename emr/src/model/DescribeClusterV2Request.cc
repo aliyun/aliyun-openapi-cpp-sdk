@@ -33,7 +33,7 @@ long DescribeClusterV2Request::getResourceOwnerId()const
 void DescribeClusterV2Request::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterV2Request::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeClusterV2Request::getRegionId()const
 void DescribeClusterV2Request::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterV2Request::getId()const
@@ -55,7 +55,7 @@ std::string DescribeClusterV2Request::getId()const
 void DescribeClusterV2Request::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string DescribeClusterV2Request::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeClusterV2Request::getAccessKeyId()const
 void DescribeClusterV2Request::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

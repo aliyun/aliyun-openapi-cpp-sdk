@@ -33,7 +33,7 @@ std::string ListGroupApBriefConfigRequest::getOrderCol()const
 void ListGroupApBriefConfigRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", orderCol);
 }
 
 std::string ListGroupApBriefConfigRequest::getSearchName()const
@@ -44,7 +44,7 @@ std::string ListGroupApBriefConfigRequest::getSearchName()const
 void ListGroupApBriefConfigRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setParameter("SearchName", searchName);
+	setCoreParameter("SearchName", searchName);
 }
 
 long ListGroupApBriefConfigRequest::getApgroupId()const
@@ -55,7 +55,7 @@ long ListGroupApBriefConfigRequest::getApgroupId()const
 void ListGroupApBriefConfigRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setParameter("ApgroupId", std::to_string(apgroupId));
+	setCoreParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 int ListGroupApBriefConfigRequest::getColCnt()const
@@ -66,7 +66,7 @@ int ListGroupApBriefConfigRequest::getColCnt()const
 void ListGroupApBriefConfigRequest::setColCnt(int colCnt)
 {
 	colCnt_ = colCnt;
-	setParameter("ColCnt", std::to_string(colCnt));
+	setCoreParameter("ColCnt", std::to_string(colCnt));
 }
 
 int ListGroupApBriefConfigRequest::getLength()const
@@ -77,7 +77,7 @@ int ListGroupApBriefConfigRequest::getLength()const
 void ListGroupApBriefConfigRequest::setLength(int length)
 {
 	length_ = length;
-	setParameter("Length", std::to_string(length));
+	setCoreParameter("Length", std::to_string(length));
 }
 
 int ListGroupApBriefConfigRequest::getPageIndex()const
@@ -88,7 +88,7 @@ int ListGroupApBriefConfigRequest::getPageIndex()const
 void ListGroupApBriefConfigRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListGroupApBriefConfigRequest::getSearchMac()const
@@ -99,7 +99,7 @@ std::string ListGroupApBriefConfigRequest::getSearchMac()const
 void ListGroupApBriefConfigRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setParameter("SearchMac", searchMac);
+	setCoreParameter("SearchMac", searchMac);
 }
 
 std::string ListGroupApBriefConfigRequest::getOrderDir()const
@@ -110,7 +110,7 @@ std::string ListGroupApBriefConfigRequest::getOrderDir()const
 void ListGroupApBriefConfigRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", orderDir);
 }
 
 std::string ListGroupApBriefConfigRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ListGroupApBriefConfigRequest::getAccessKeyId()const
 void ListGroupApBriefConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

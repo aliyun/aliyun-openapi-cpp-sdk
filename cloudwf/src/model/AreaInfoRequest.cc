@@ -33,7 +33,7 @@ long AreaInfoRequest::getAid()const
 void AreaInfoRequest::setAid(long aid)
 {
 	aid_ = aid;
-	setParameter("Aid", std::to_string(aid));
+	setCoreParameter("Aid", std::to_string(aid));
 }
 
 std::string AreaInfoRequest::getAccessKeyId()const
@@ -44,7 +44,7 @@ std::string AreaInfoRequest::getAccessKeyId()const
 void AreaInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long AreaInfoRequest::getSid()const
@@ -55,6 +55,6 @@ long AreaInfoRequest::getSid()const
 void AreaInfoRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", std::to_string(sid));
 }
 

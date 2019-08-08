@@ -33,7 +33,7 @@ std::string NodeInstallRequest::getInstanceId()const
 void NodeInstallRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 bool NodeInstallRequest::getForce()const
@@ -44,7 +44,7 @@ bool NodeInstallRequest::getForce()const
 void NodeInstallRequest::setForce(bool force)
 {
 	force_ = force;
-	setParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 std::string NodeInstallRequest::getUserId()const
@@ -55,6 +55,6 @@ std::string NodeInstallRequest::getUserId()const
 void NodeInstallRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setParameter("UserId", userId);
+	setCoreParameter("UserId", userId);
 }
 

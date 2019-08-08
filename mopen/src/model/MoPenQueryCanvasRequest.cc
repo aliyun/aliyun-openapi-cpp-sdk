@@ -33,7 +33,7 @@ std::string MoPenQueryCanvasRequest::getDeviceName()const
 void MoPenQueryCanvasRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string MoPenQueryCanvasRequest::getSessionId()const
@@ -44,7 +44,7 @@ std::string MoPenQueryCanvasRequest::getSessionId()const
 void MoPenQueryCanvasRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setParameter("SessionId", sessionId);
+	setCoreParameter("SessionId", sessionId);
 }
 
 int MoPenQueryCanvasRequest::getPageId()const
@@ -55,7 +55,7 @@ int MoPenQueryCanvasRequest::getPageId()const
 void MoPenQueryCanvasRequest::setPageId(int pageId)
 {
 	pageId_ = pageId;
-	setParameter("PageId", std::to_string(pageId));
+	setCoreParameter("PageId", std::to_string(pageId));
 }
 
 int MoPenQueryCanvasRequest::getStatus()const
@@ -66,6 +66,6 @@ int MoPenQueryCanvasRequest::getStatus()const
 void MoPenQueryCanvasRequest::setStatus(int status)
 {
 	status_ = status;
-	setParameter("Status", std::to_string(status));
+	setCoreParameter("Status", std::to_string(status));
 }
 

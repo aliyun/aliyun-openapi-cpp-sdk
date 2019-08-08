@@ -33,7 +33,7 @@ std::string AddTemplateRequest::getContainer()const
 void AddTemplateRequest::setContainer(const std::string& container)
 {
 	container_ = container;
-	setParameter("Container", container);
+	setCoreParameter("Container", container);
 }
 
 long AddTemplateRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long AddTemplateRequest::getResourceOwnerId()const
 void AddTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddTemplateRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AddTemplateRequest::getResourceOwnerAccount()const
 void AddTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddTemplateRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AddTemplateRequest::getOwnerAccount()const
 void AddTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddTemplateRequest::getName()const
@@ -77,7 +77,7 @@ std::string AddTemplateRequest::getName()const
 void AddTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string AddTemplateRequest::getTransConfig()const
@@ -88,7 +88,7 @@ std::string AddTemplateRequest::getTransConfig()const
 void AddTemplateRequest::setTransConfig(const std::string& transConfig)
 {
 	transConfig_ = transConfig;
-	setParameter("TransConfig", transConfig);
+	setCoreParameter("TransConfig", transConfig);
 }
 
 std::string AddTemplateRequest::getMuxConfig()const
@@ -99,7 +99,7 @@ std::string AddTemplateRequest::getMuxConfig()const
 void AddTemplateRequest::setMuxConfig(const std::string& muxConfig)
 {
 	muxConfig_ = muxConfig;
-	setParameter("MuxConfig", muxConfig);
+	setCoreParameter("MuxConfig", muxConfig);
 }
 
 std::string AddTemplateRequest::getVideo()const
@@ -110,7 +110,7 @@ std::string AddTemplateRequest::getVideo()const
 void AddTemplateRequest::setVideo(const std::string& video)
 {
 	video_ = video;
-	setParameter("Video", video);
+	setCoreParameter("Video", video);
 }
 
 std::string AddTemplateRequest::getAudio()const
@@ -121,7 +121,7 @@ std::string AddTemplateRequest::getAudio()const
 void AddTemplateRequest::setAudio(const std::string& audio)
 {
 	audio_ = audio;
-	setParameter("Audio", audio);
+	setCoreParameter("Audio", audio);
 }
 
 long AddTemplateRequest::getOwnerId()const
@@ -132,7 +132,7 @@ long AddTemplateRequest::getOwnerId()const
 void AddTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddTemplateRequest::getAccessKeyId()const
@@ -143,6 +143,6 @@ std::string AddTemplateRequest::getAccessKeyId()const
 void AddTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

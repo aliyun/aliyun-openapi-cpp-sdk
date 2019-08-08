@@ -310,3 +310,14 @@ void ModifyReservedInstancesRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ModifyReservedInstancesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ModifyReservedInstancesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

@@ -33,7 +33,7 @@ long CommonApiWhiteListRequest::getResourceOwnerId()const
 void CommonApiWhiteListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CommonApiWhiteListRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CommonApiWhiteListRequest::getRegionId()const
 void CommonApiWhiteListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CommonApiWhiteListRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string CommonApiWhiteListRequest::getAccessKeyId()const
 void CommonApiWhiteListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -47,6 +47,17 @@ void DescribeAlarmEventListRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
+std::string DescribeAlarmEventListRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeAlarmEventListRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
 std::string DescribeAlarmEventListRequest::getPageSize()const
 {
 	return pageSize_;

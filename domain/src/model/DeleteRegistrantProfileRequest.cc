@@ -33,7 +33,7 @@ std::string DeleteRegistrantProfileRequest::getUserClientIp()const
 void DeleteRegistrantProfileRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long DeleteRegistrantProfileRequest::getRegistrantProfileId()const
@@ -44,7 +44,7 @@ long DeleteRegistrantProfileRequest::getRegistrantProfileId()const
 void DeleteRegistrantProfileRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
 }
 
 std::string DeleteRegistrantProfileRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DeleteRegistrantProfileRequest::getLang()const
 void DeleteRegistrantProfileRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

@@ -367,6 +367,17 @@ void CreateLaunchTemplateRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string CreateLaunchTemplateRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void CreateLaunchTemplateRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string CreateLaunchTemplateRequest::getInternetChargeType()const
 {
 	return internetChargeType_;

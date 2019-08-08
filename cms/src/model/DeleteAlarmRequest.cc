@@ -33,6 +33,6 @@ std::string DeleteAlarmRequest::getId()const
 void DeleteAlarmRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 

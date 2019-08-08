@@ -33,7 +33,7 @@ std::string ListRealTimeAgentRequest::getInstanceId()const
 void ListRealTimeAgentRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListRealTimeAgentRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ListRealTimeAgentRequest::getAccessKeyId()const
 void ListRealTimeAgentRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -25,17 +25,6 @@ OnsMqttQueryMsgTransTrendRequest::OnsMqttQueryMsgTransTrendRequest() :
 OnsMqttQueryMsgTransTrendRequest::~OnsMqttQueryMsgTransTrendRequest()
 {}
 
-long OnsMqttQueryMsgTransTrendRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsMqttQueryMsgTransTrendRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsMqttQueryMsgTransTrendRequest::getInstanceId()const
 {
 	return instanceId_;

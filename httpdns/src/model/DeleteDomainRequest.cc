@@ -33,7 +33,7 @@ std::string DeleteDomainRequest::getAccountId()const
 void DeleteDomainRequest::setAccountId(const std::string& accountId)
 {
 	accountId_ = accountId;
-	setParameter("AccountId", accountId);
+	setCoreParameter("AccountId", accountId);
 }
 
 std::string DeleteDomainRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DeleteDomainRequest::getDomainName()const
 void DeleteDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DeleteDomainRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DeleteDomainRequest::getAccessKeyId()const
 void DeleteDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

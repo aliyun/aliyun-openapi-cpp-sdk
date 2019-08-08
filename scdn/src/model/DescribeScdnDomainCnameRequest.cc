@@ -33,7 +33,7 @@ std::string DescribeScdnDomainCnameRequest::getApp_ip()const
 void DescribeScdnDomainCnameRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeScdnDomainCnameRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string DescribeScdnDomainCnameRequest::getPopProduct()const
 void DescribeScdnDomainCnameRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeScdnDomainCnameRequest::getProduct()const
@@ -55,7 +55,7 @@ std::string DescribeScdnDomainCnameRequest::getProduct()const
 void DescribeScdnDomainCnameRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 long DescribeScdnDomainCnameRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long DescribeScdnDomainCnameRequest::getCallerParentId()const
 void DescribeScdnDomainCnameRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string DescribeScdnDomainCnameRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string DescribeScdnDomainCnameRequest::getDomainName()const
 void DescribeScdnDomainCnameRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 bool DescribeScdnDomainCnameRequest::getProxy_original_security_transport()const
@@ -88,7 +88,7 @@ bool DescribeScdnDomainCnameRequest::getProxy_original_security_transport()const
 void DescribeScdnDomainCnameRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeScdnDomainCnameRequest::getCallerBid()const
@@ -99,7 +99,7 @@ std::string DescribeScdnDomainCnameRequest::getCallerBid()const
 void DescribeScdnDomainCnameRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeScdnDomainCnameRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeScdnDomainCnameRequest::getOwnerId()const
 void DescribeScdnDomainCnameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScdnDomainCnameRequest::getProxy_original_source_ip()const
@@ -121,7 +121,7 @@ std::string DescribeScdnDomainCnameRequest::getProxy_original_source_ip()const
 void DescribeScdnDomainCnameRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeScdnDomainCnameRequest::getVersion()const
@@ -132,7 +132,7 @@ std::string DescribeScdnDomainCnameRequest::getVersion()const
 void DescribeScdnDomainCnameRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 std::string DescribeScdnDomainCnameRequest::getOwnerIdLoginEmail()const
@@ -143,7 +143,7 @@ std::string DescribeScdnDomainCnameRequest::getOwnerIdLoginEmail()const
 void DescribeScdnDomainCnameRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeScdnDomainCnameRequest::getCallerType()const
@@ -154,7 +154,7 @@ std::string DescribeScdnDomainCnameRequest::getCallerType()const
 void DescribeScdnDomainCnameRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DescribeScdnDomainCnameRequest::getProxy_trust_transport_info()const
@@ -165,7 +165,7 @@ bool DescribeScdnDomainCnameRequest::getProxy_trust_transport_info()const
 void DescribeScdnDomainCnameRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeScdnDomainCnameRequest::getAk_mfa_present()const
@@ -176,7 +176,7 @@ bool DescribeScdnDomainCnameRequest::getAk_mfa_present()const
 void DescribeScdnDomainCnameRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string DescribeScdnDomainCnameRequest::getAccessKeyId()const
@@ -187,7 +187,7 @@ std::string DescribeScdnDomainCnameRequest::getAccessKeyId()const
 void DescribeScdnDomainCnameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DescribeScdnDomainCnameRequest::getSecurity_transport()const
@@ -198,7 +198,7 @@ bool DescribeScdnDomainCnameRequest::getSecurity_transport()const
 void DescribeScdnDomainCnameRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeScdnDomainCnameRequest::getSecurityToken()const
@@ -209,7 +209,7 @@ std::string DescribeScdnDomainCnameRequest::getSecurityToken()const
 void DescribeScdnDomainCnameRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeScdnDomainCnameRequest::getRequestId()const
@@ -220,7 +220,7 @@ std::string DescribeScdnDomainCnameRequest::getRequestId()const
 void DescribeScdnDomainCnameRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeScdnDomainCnameRequest::getRequestContent()const
@@ -231,7 +231,7 @@ std::string DescribeScdnDomainCnameRequest::getRequestContent()const
 void DescribeScdnDomainCnameRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeScdnDomainCnameRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string DescribeScdnDomainCnameRequest::getCallerBidEmail()const
 void DescribeScdnDomainCnameRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeScdnDomainCnameRequest::getCallerUidEmail()const
@@ -253,7 +253,7 @@ std::string DescribeScdnDomainCnameRequest::getCallerUidEmail()const
 void DescribeScdnDomainCnameRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeScdnDomainCnameRequest::getCallerUid()const
@@ -264,6 +264,6 @@ long DescribeScdnDomainCnameRequest::getCallerUid()const
 void DescribeScdnDomainCnameRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

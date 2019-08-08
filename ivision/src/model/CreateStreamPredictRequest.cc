@@ -278,6 +278,17 @@ void CreateStreamPredictRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
+std::string CreateStreamPredictRequest::getDetectIntervals()const
+{
+	return detectIntervals_;
+}
+
+void CreateStreamPredictRequest::setDetectIntervals(const std::string& detectIntervals)
+{
+	detectIntervals_ = detectIntervals;
+	setCoreParameter("DetectIntervals", detectIntervals);
+}
+
 long CreateStreamPredictRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -331,6 +342,17 @@ void CreateStreamPredictRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
 	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+}
+
+std::string CreateStreamPredictRequest::getServiceCode()const
+{
+	return serviceCode_;
+}
+
+void CreateStreamPredictRequest::setServiceCode(const std::string& serviceCode)
+{
+	serviceCode_ = serviceCode;
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string CreateStreamPredictRequest::getProbabilityThresholds()const

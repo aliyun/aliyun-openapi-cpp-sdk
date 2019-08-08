@@ -69,6 +69,23 @@ void CreateApiGroupRequest::setSource(const std::string& source)
 	setCoreParameter("Source", source);
 }
 
+std::vector<CreateApiGroupRequest::Tag> CreateApiGroupRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateApiGroupRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
+}
+
 std::string CreateApiGroupRequest::getGroupName()const
 {
 	return groupName_;

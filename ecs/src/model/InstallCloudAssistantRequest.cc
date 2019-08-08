@@ -301,3 +301,14 @@ void InstallCloudAssistantRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string InstallCloudAssistantRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void InstallCloudAssistantRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

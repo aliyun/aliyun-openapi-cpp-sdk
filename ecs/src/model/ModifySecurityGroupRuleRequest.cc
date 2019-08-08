@@ -454,6 +454,17 @@ void ModifySecurityGroupRuleRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ModifySecurityGroupRuleRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ModifySecurityGroupRuleRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string ModifySecurityGroupRuleRequest::getSourceGroupId()const
 {
 	return sourceGroupId_;

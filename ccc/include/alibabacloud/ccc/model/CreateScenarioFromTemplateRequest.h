@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,44 +17,40 @@
 #ifndef ALIBABACLOUD_CCC_MODEL_CREATESCENARIOFROMTEMPLATEREQUEST_H_
 #define ALIBABACLOUD_CCC_MODEL_CREATESCENARIOFROMTEMPLATEREQUEST_H_
 
+#include <alibabacloud/ccc/CCCExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/ccc/CCCExport.h>
 
-namespace AlibabaCloud
-{
-	namespace CCC
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CCC_EXPORT CreateScenarioFromTemplateRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace CCC {
+namespace Model {
+class ALIBABACLOUD_CCC_EXPORT CreateScenarioFromTemplateRequest
+    : public RpcServiceRequest {
 
-			public:
-				CreateScenarioFromTemplateRequest();
-				~CreateScenarioFromTemplateRequest();
+public:
+  CreateScenarioFromTemplateRequest();
+  ~CreateScenarioFromTemplateRequest();
 
-				std::string getVariables()const;
-				void setVariables(const std::string& variables);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getTemplateId()const;
-				void setTemplateId(const std::string& templateId);
+  std::string getVariables() const;
+  void setVariables(const std::string &variables);
+  std::string getInstanceId() const;
+  void setInstanceId(const std::string &instanceId);
+  std::string getName() const;
+  void setName(const std::string &name);
+  std::string getDescription() const;
+  void setDescription(const std::string &description);
+  std::string getTemplateId() const;
+  void setTemplateId(const std::string &templateId);
 
-            private:
-				std::string variables_;
-				std::string instanceId_;
-				std::string name_;
-				std::string description_;
-				std::string templateId_;
-
-			};
-		}
-	}
-}
+private:
+  std::string variables_;
+  std::string instanceId_;
+  std::string name_;
+  std::string description_;
+  std::string templateId_;
+};
+} // namespace Model
+} // namespace CCC
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CCC_MODEL_CREATESCENARIOFROMTEMPLATEREQUEST_H_

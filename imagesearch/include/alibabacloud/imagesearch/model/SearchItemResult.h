@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,70 +17,61 @@
 #ifndef ALIBABACLOUD_IMAGESEARCH_MODEL_SEARCHITEMRESULT_H_
 #define ALIBABACLOUD_IMAGESEARCH_MODEL_SEARCHITEMRESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/imagesearch/ImageSearchExport.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace ImageSearch
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_IMAGESEARCH_EXPORT SearchItemResult : public ServiceResult
-			{
-			public:
-				struct Head
-				{
-					int docsFound;
-					int docsReturn;
-					int searchTime;
-				};
-				struct PicInfo
-				{
-					struct Category
-					{
-						std::string id;
-						std::string name;
-					};
-					std::string category;
-					std::vector<Category> allCategory;
-					std::string region;
-				};
-				struct Auction
-				{
-					std::string picName;
-					std::string custContent;
-					std::string catId;
-					std::string itemId;
-					std::string sortExprValues;
-				};
+namespace AlibabaCloud {
+namespace ImageSearch {
+namespace Model {
+class ALIBABACLOUD_IMAGESEARCH_EXPORT SearchItemResult : public ServiceResult {
+public:
+  struct Head {
+    int docsFound;
+    int docsReturn;
+    int searchTime;
+  };
+  struct PicInfo {
+    struct Category {
+      std::string id;
+      std::string name;
+    };
+    std::string category;
+    std::vector<Category> allCategory;
+    std::string region;
+  };
+  struct Auction {
+    std::string picName;
+    std::string custContent;
+    std::string catId;
+    std::string itemId;
+    std::string sortExprValues;
+  };
 
+  SearchItemResult();
+  explicit SearchItemResult(const std::string &payload);
+  ~SearchItemResult();
+  Head getHead() const;
+  std::string getMessage() const;
+  std::vector<Auction> getAuctions() const;
+  PicInfo getPicInfo() const;
+  int getCode() const;
+  bool getSuccess() const;
 
-				SearchItemResult();
-				explicit SearchItemResult(const std::string &payload);
-				~SearchItemResult();
-				Head getHead()const;
-				std::string getMessage()const;
-				std::vector<Auction> getAuctions()const;
-				PicInfo getPicInfo()const;
-				int getCode()const;
-				bool getSuccess()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				Head head_;
-				std::string message_;
-				std::vector<Auction> auctions_;
-				PicInfo picInfo_;
-				int code_;
-				bool success_;
-
-			};
-		}
-	}
-}
+private:
+  Head head_;
+  std::string message_;
+  std::vector<Auction> auctions_;
+  PicInfo picInfo_;
+  int code_;
+  bool success_;
+};
+} // namespace Model
+} // namespace ImageSearch
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_IMAGESEARCH_MODEL_SEARCHITEMRESULT_H_

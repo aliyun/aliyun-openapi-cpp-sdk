@@ -555,6 +555,42 @@ OnsClient::OnsGroupConsumerUpdateOutcomeCallable OnsClient::onsGroupConsumerUpda
 	return task->get_future();
 }
 
+OnsClient::OnsGroupListOutcome OnsClient::onsGroupList(const OnsGroupListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OnsGroupListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OnsGroupListOutcome(OnsGroupListResult(outcome.result()));
+	else
+		return OnsGroupListOutcome(outcome.error());
+}
+
+void OnsClient::onsGroupListAsync(const OnsGroupListRequest& request, const OnsGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, onsGroupList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OnsClient::OnsGroupListOutcomeCallable OnsClient::onsGroupListCallable(const OnsGroupListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OnsGroupListOutcome()>>(
+			[this, request]()
+			{
+			return this->onsGroupList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OnsClient::OnsMessageTraceOutcome OnsClient::onsMessageTrace(const OnsMessageTraceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,42 +657,6 @@ OnsClient::OnsConsumerTimeSpanOutcomeCallable OnsClient::onsConsumerTimeSpanCall
 			[this, request]()
 			{
 			return this->onsConsumerTimeSpan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OnsClient::OnsGroupListOutcome OnsClient::onsGroupList(const OnsGroupListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return OnsGroupListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return OnsGroupListOutcome(OnsGroupListResult(outcome.result()));
-	else
-		return OnsGroupListOutcome(outcome.error());
-}
-
-void OnsClient::onsGroupListAsync(const OnsGroupListRequest& request, const OnsGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, onsGroupList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OnsClient::OnsGroupListOutcomeCallable OnsClient::onsGroupListCallable(const OnsGroupListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<OnsGroupListOutcome()>>(
-			[this, request]()
-			{
-			return this->onsGroupList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -843,42 +843,6 @@ OnsClient::OnsGroupDeleteOutcomeCallable OnsClient::onsGroupDeleteCallable(const
 	return task->get_future();
 }
 
-OnsClient::OnsInstanceUpdateOutcome OnsClient::onsInstanceUpdate(const OnsInstanceUpdateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return OnsInstanceUpdateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return OnsInstanceUpdateOutcome(OnsInstanceUpdateResult(outcome.result()));
-	else
-		return OnsInstanceUpdateOutcome(outcome.error());
-}
-
-void OnsClient::onsInstanceUpdateAsync(const OnsInstanceUpdateRequest& request, const OnsInstanceUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, onsInstanceUpdate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OnsClient::OnsInstanceUpdateOutcomeCallable OnsClient::onsInstanceUpdateCallable(const OnsInstanceUpdateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<OnsInstanceUpdateOutcome()>>(
-			[this, request]()
-			{
-			return this->onsInstanceUpdate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OnsClient::OnsMessagePageQueryByTopicOutcome OnsClient::onsMessagePageQueryByTopic(const OnsMessagePageQueryByTopicRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -915,36 +879,36 @@ OnsClient::OnsMessagePageQueryByTopicOutcomeCallable OnsClient::onsMessagePageQu
 	return task->get_future();
 }
 
-OnsClient::OnsTrendTopicInputTpsOutcome OnsClient::onsTrendTopicInputTps(const OnsTrendTopicInputTpsRequest &request) const
+OnsClient::OnsInstanceUpdateOutcome OnsClient::onsInstanceUpdate(const OnsInstanceUpdateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return OnsTrendTopicInputTpsOutcome(endpointOutcome.error());
+		return OnsInstanceUpdateOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return OnsTrendTopicInputTpsOutcome(OnsTrendTopicInputTpsResult(outcome.result()));
+		return OnsInstanceUpdateOutcome(OnsInstanceUpdateResult(outcome.result()));
 	else
-		return OnsTrendTopicInputTpsOutcome(outcome.error());
+		return OnsInstanceUpdateOutcome(outcome.error());
 }
 
-void OnsClient::onsTrendTopicInputTpsAsync(const OnsTrendTopicInputTpsRequest& request, const OnsTrendTopicInputTpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void OnsClient::onsInstanceUpdateAsync(const OnsInstanceUpdateRequest& request, const OnsInstanceUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, onsTrendTopicInputTps(request), context);
+		handler(this, request, onsInstanceUpdate(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-OnsClient::OnsTrendTopicInputTpsOutcomeCallable OnsClient::onsTrendTopicInputTpsCallable(const OnsTrendTopicInputTpsRequest &request) const
+OnsClient::OnsInstanceUpdateOutcomeCallable OnsClient::onsInstanceUpdateCallable(const OnsInstanceUpdateRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<OnsTrendTopicInputTpsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<OnsInstanceUpdateOutcome()>>(
 			[this, request]()
 			{
-			return this->onsTrendTopicInputTps(request);
+			return this->onsInstanceUpdate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -981,6 +945,42 @@ OnsClient::OnsGroupCreateOutcomeCallable OnsClient::onsGroupCreateCallable(const
 			[this, request]()
 			{
 			return this->onsGroupCreate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OnsClient::OnsTrendTopicInputTpsOutcome OnsClient::onsTrendTopicInputTps(const OnsTrendTopicInputTpsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OnsTrendTopicInputTpsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OnsTrendTopicInputTpsOutcome(OnsTrendTopicInputTpsResult(outcome.result()));
+	else
+		return OnsTrendTopicInputTpsOutcome(outcome.error());
+}
+
+void OnsClient::onsTrendTopicInputTpsAsync(const OnsTrendTopicInputTpsRequest& request, const OnsTrendTopicInputTpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, onsTrendTopicInputTps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OnsClient::OnsTrendTopicInputTpsOutcomeCallable OnsClient::onsTrendTopicInputTpsCallable(const OnsTrendTopicInputTpsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OnsTrendTopicInputTpsOutcome()>>(
+			[this, request]()
+			{
+			return this->onsTrendTopicInputTps(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1491,42 +1491,6 @@ OnsClient::OnsDLQMessageGetByIdOutcomeCallable OnsClient::onsDLQMessageGetByIdCa
 	return task->get_future();
 }
 
-OnsClient::OnsInstanceCreateOutcome OnsClient::onsInstanceCreate(const OnsInstanceCreateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return OnsInstanceCreateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return OnsInstanceCreateOutcome(OnsInstanceCreateResult(outcome.result()));
-	else
-		return OnsInstanceCreateOutcome(outcome.error());
-}
-
-void OnsClient::onsInstanceCreateAsync(const OnsInstanceCreateRequest& request, const OnsInstanceCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, onsInstanceCreate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OnsClient::OnsInstanceCreateOutcomeCallable OnsClient::onsInstanceCreateCallable(const OnsInstanceCreateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<OnsInstanceCreateOutcome()>>(
-			[this, request]()
-			{
-			return this->onsInstanceCreate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OnsClient::OnsWarnCreateOutcome OnsClient::onsWarnCreate(const OnsWarnCreateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,6 +1521,42 @@ OnsClient::OnsWarnCreateOutcomeCallable OnsClient::onsWarnCreateCallable(const O
 			[this, request]()
 			{
 			return this->onsWarnCreate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OnsClient::OnsInstanceCreateOutcome OnsClient::onsInstanceCreate(const OnsInstanceCreateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OnsInstanceCreateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OnsInstanceCreateOutcome(OnsInstanceCreateResult(outcome.result()));
+	else
+		return OnsInstanceCreateOutcome(outcome.error());
+}
+
+void OnsClient::onsInstanceCreateAsync(const OnsInstanceCreateRequest& request, const OnsInstanceCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, onsInstanceCreate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OnsClient::OnsInstanceCreateOutcomeCallable OnsClient::onsInstanceCreateCallable(const OnsInstanceCreateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OnsInstanceCreateOutcome()>>(
+			[this, request]()
+			{
+			return this->onsInstanceCreate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

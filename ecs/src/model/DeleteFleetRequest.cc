@@ -300,3 +300,14 @@ void DeleteFleetRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DeleteFleetRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DeleteFleetRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

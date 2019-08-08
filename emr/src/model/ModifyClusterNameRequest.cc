@@ -33,7 +33,7 @@ long ModifyClusterNameRequest::getResourceOwnerId()const
 void ModifyClusterNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyClusterNameRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ModifyClusterNameRequest::getRegionId()const
 void ModifyClusterNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyClusterNameRequest::getName()const
@@ -55,7 +55,7 @@ std::string ModifyClusterNameRequest::getName()const
 void ModifyClusterNameRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyClusterNameRequest::getId()const
@@ -66,7 +66,7 @@ std::string ModifyClusterNameRequest::getId()const
 void ModifyClusterNameRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyClusterNameRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ModifyClusterNameRequest::getAccessKeyId()const
 void ModifyClusterNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string UpdateServiceQPSRequest::getRegionId()const
 void UpdateServiceQPSRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateServiceQPSRequest::getQps()const
@@ -44,7 +44,7 @@ std::string UpdateServiceQPSRequest::getQps()const
 void UpdateServiceQPSRequest::setQps(const std::string& qps)
 {
 	qps_ = qps;
-	setParameter("Qps", qps);
+	setCoreParameter("Qps", qps);
 }
 
 long UpdateServiceQPSRequest::getServiceId()const
@@ -55,6 +55,6 @@ long UpdateServiceQPSRequest::getServiceId()const
 void UpdateServiceQPSRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setParameter("ServiceId", std::to_string(serviceId));
+	setCoreParameter("ServiceId", std::to_string(serviceId));
 }
 

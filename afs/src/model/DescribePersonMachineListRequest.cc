@@ -33,6 +33,6 @@ std::string DescribePersonMachineListRequest::getSourceIp()const
 void DescribePersonMachineListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 

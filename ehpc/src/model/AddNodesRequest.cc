@@ -124,6 +124,17 @@ void AddNodesRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
 	setCoreParameter("ImageOwnerAlias", imageOwnerAlias);
 }
 
+std::string AddNodesRequest::getSystemDiskType()const
+{
+	return systemDiskType_;
+}
+
+void AddNodesRequest::setSystemDiskType(const std::string& systemDiskType)
+{
+	systemDiskType_ = systemDiskType;
+	setCoreParameter("SystemDiskType", systemDiskType);
+}
+
 std::string AddNodesRequest::getVSwitchId()const
 {
 	return vSwitchId_;

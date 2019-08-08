@@ -31,21 +31,21 @@ AegisClient::AegisClient(const Credentials &credentials, const ClientConfigurati
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vipaegis");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "aegis");
 }
 
 AegisClient::AegisClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vipaegis");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "aegis");
 }
 
 AegisClient::AegisClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vipaegis");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "aegis");
 }
 
 AegisClient::~AegisClient()
@@ -159,6 +159,78 @@ AegisClient::DescribeTraceInfoNodeOutcomeCallable AegisClient::describeTraceInfo
 	return task->get_future();
 }
 
+AegisClient::SaveCustomizeReportConfigOutcome AegisClient::saveCustomizeReportConfig(const SaveCustomizeReportConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveCustomizeReportConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveCustomizeReportConfigOutcome(SaveCustomizeReportConfigResult(outcome.result()));
+	else
+		return SaveCustomizeReportConfigOutcome(outcome.error());
+}
+
+void AegisClient::saveCustomizeReportConfigAsync(const SaveCustomizeReportConfigRequest& request, const SaveCustomizeReportConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveCustomizeReportConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::SaveCustomizeReportConfigOutcomeCallable AegisClient::saveCustomizeReportConfigCallable(const SaveCustomizeReportConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveCustomizeReportConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->saveCustomizeReportConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeScreenCloudHcRiskOutcome AegisClient::describeScreenCloudHcRisk(const DescribeScreenCloudHcRiskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScreenCloudHcRiskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScreenCloudHcRiskOutcome(DescribeScreenCloudHcRiskResult(outcome.result()));
+	else
+		return DescribeScreenCloudHcRiskOutcome(outcome.error());
+}
+
+void AegisClient::describeScreenCloudHcRiskAsync(const DescribeScreenCloudHcRiskRequest& request, const DescribeScreenCloudHcRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScreenCloudHcRisk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeScreenCloudHcRiskOutcomeCallable AegisClient::describeScreenCloudHcRiskCallable(const DescribeScreenCloudHcRiskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScreenCloudHcRiskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScreenCloudHcRisk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::DescribeScreenAttackAnalysisDataOutcome AegisClient::describeScreenAttackAnalysisData(const DescribeScreenAttackAnalysisDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -195,42 +267,6 @@ AegisClient::DescribeScreenAttackAnalysisDataOutcomeCallable AegisClient::descri
 	return task->get_future();
 }
 
-AegisClient::DescribeAutoDelConfigOutcome AegisClient::describeAutoDelConfig(const DescribeAutoDelConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAutoDelConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAutoDelConfigOutcome(DescribeAutoDelConfigResult(outcome.result()));
-	else
-		return DescribeAutoDelConfigOutcome(outcome.error());
-}
-
-void AegisClient::describeAutoDelConfigAsync(const DescribeAutoDelConfigRequest& request, const DescribeAutoDelConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAutoDelConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::DescribeAutoDelConfigOutcomeCallable AegisClient::describeAutoDelConfigCallable(const DescribeAutoDelConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAutoDelConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAutoDelConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::DescribeVulListOutcome AegisClient::describeVulList(const DescribeVulListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +297,42 @@ AegisClient::DescribeVulListOutcomeCallable AegisClient::describeVulListCallable
 			[this, request]()
 			{
 			return this->describeVulList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeAutoDelConfigOutcome AegisClient::describeAutoDelConfig(const DescribeAutoDelConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAutoDelConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAutoDelConfigOutcome(DescribeAutoDelConfigResult(outcome.result()));
+	else
+		return DescribeAutoDelConfigOutcome(outcome.error());
+}
+
+void AegisClient::describeAutoDelConfigAsync(const DescribeAutoDelConfigRequest& request, const DescribeAutoDelConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAutoDelConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeAutoDelConfigOutcomeCallable AegisClient::describeAutoDelConfigCallable(const DescribeAutoDelConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAutoDelConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAutoDelConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,6 +627,78 @@ AegisClient::DescribeEcsStsStatusOutcomeCallable AegisClient::describeEcsStsStat
 	return task->get_future();
 }
 
+AegisClient::DescribeCustomizeReportListOutcome AegisClient::describeCustomizeReportList(const DescribeCustomizeReportListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCustomizeReportListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCustomizeReportListOutcome(DescribeCustomizeReportListResult(outcome.result()));
+	else
+		return DescribeCustomizeReportListOutcome(outcome.error());
+}
+
+void AegisClient::describeCustomizeReportListAsync(const DescribeCustomizeReportListRequest& request, const DescribeCustomizeReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCustomizeReportList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeCustomizeReportListOutcomeCallable AegisClient::describeCustomizeReportListCallable(const DescribeCustomizeReportListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCustomizeReportListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCustomizeReportList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeSupervisonInfoOutcome AegisClient::describeSupervisonInfo(const DescribeSupervisonInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSupervisonInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSupervisonInfoOutcome(DescribeSupervisonInfoResult(outcome.result()));
+	else
+		return DescribeSupervisonInfoOutcome(outcome.error());
+}
+
+void AegisClient::describeSupervisonInfoAsync(const DescribeSupervisonInfoRequest& request, const DescribeSupervisonInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSupervisonInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeSupervisonInfoOutcomeCallable AegisClient::describeSupervisonInfoCallable(const DescribeSupervisonInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSupervisonInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSupervisonInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::UpdateWhiteListStrategyRelationOutcome AegisClient::updateWhiteListStrategyRelation(const UpdateWhiteListStrategyRelationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -735,6 +879,42 @@ AegisClient::ModifyVulLevelOutcomeCallable AegisClient::modifyVulLevelCallable(c
 	return task->get_future();
 }
 
+AegisClient::DescribeScreenOssUploadInfoOutcome AegisClient::describeScreenOssUploadInfo(const DescribeScreenOssUploadInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScreenOssUploadInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScreenOssUploadInfoOutcome(DescribeScreenOssUploadInfoResult(outcome.result()));
+	else
+		return DescribeScreenOssUploadInfoOutcome(outcome.error());
+}
+
+void AegisClient::describeScreenOssUploadInfoAsync(const DescribeScreenOssUploadInfoRequest& request, const DescribeScreenOssUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScreenOssUploadInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeScreenOssUploadInfoOutcomeCallable AegisClient::describeScreenOssUploadInfoCallable(const DescribeScreenOssUploadInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScreenOssUploadInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScreenOssUploadInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::ModifyVulTargetOutcome AegisClient::modifyVulTarget(const ModifyVulTargetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -807,42 +987,6 @@ AegisClient::ModifyBatchIgnoreVulOutcomeCallable AegisClient::modifyBatchIgnoreV
 	return task->get_future();
 }
 
-AegisClient::DescribeSummaryInfoOutcome AegisClient::describeSummaryInfo(const DescribeSummaryInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSummaryInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSummaryInfoOutcome(DescribeSummaryInfoResult(outcome.result()));
-	else
-		return DescribeSummaryInfoOutcome(outcome.error());
-}
-
-void AegisClient::describeSummaryInfoAsync(const DescribeSummaryInfoRequest& request, const DescribeSummaryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSummaryInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::DescribeSummaryInfoOutcomeCallable AegisClient::describeSummaryInfoCallable(const DescribeSummaryInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSummaryInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSummaryInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::DescribeStrategyProcessOutcome AegisClient::describeStrategyProcess(const DescribeStrategyProcessRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +1017,42 @@ AegisClient::DescribeStrategyProcessOutcomeCallable AegisClient::describeStrateg
 			[this, request]()
 			{
 			return this->describeStrategyProcess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeSummaryInfoOutcome AegisClient::describeSummaryInfo(const DescribeSummaryInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSummaryInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSummaryInfoOutcome(DescribeSummaryInfoResult(outcome.result()));
+	else
+		return DescribeSummaryInfoOutcome(outcome.error());
+}
+
+void AegisClient::describeSummaryInfoAsync(const DescribeSummaryInfoRequest& request, const DescribeSummaryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSummaryInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeSummaryInfoOutcomeCallable AegisClient::describeSummaryInfoCallable(const DescribeSummaryInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSummaryInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSummaryInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,6 +1167,114 @@ AegisClient::DescribeResultListOutcomeCallable AegisClient::describeResultListCa
 	return task->get_future();
 }
 
+AegisClient::DescribeGrayFuncOutcome AegisClient::describeGrayFunc(const DescribeGrayFuncRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGrayFuncOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGrayFuncOutcome(DescribeGrayFuncResult(outcome.result()));
+	else
+		return DescribeGrayFuncOutcome(outcome.error());
+}
+
+void AegisClient::describeGrayFuncAsync(const DescribeGrayFuncRequest& request, const DescribeGrayFuncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGrayFunc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeGrayFuncOutcomeCallable AegisClient::describeGrayFuncCallable(const DescribeGrayFuncRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGrayFuncOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGrayFunc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeCustomizeReportChartDataOutcome AegisClient::describeCustomizeReportChartData(const DescribeCustomizeReportChartDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCustomizeReportChartDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCustomizeReportChartDataOutcome(DescribeCustomizeReportChartDataResult(outcome.result()));
+	else
+		return DescribeCustomizeReportChartDataOutcome(outcome.error());
+}
+
+void AegisClient::describeCustomizeReportChartDataAsync(const DescribeCustomizeReportChartDataRequest& request, const DescribeCustomizeReportChartDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCustomizeReportChartData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeCustomizeReportChartDataOutcomeCallable AegisClient::describeCustomizeReportChartDataCallable(const DescribeCustomizeReportChartDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCustomizeReportChartDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCustomizeReportChartData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeScreenBizStatSimpleQueryResultOutcome AegisClient::describeScreenBizStatSimpleQueryResult(const DescribeScreenBizStatSimpleQueryResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScreenBizStatSimpleQueryResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScreenBizStatSimpleQueryResultOutcome(DescribeScreenBizStatSimpleQueryResultResult(outcome.result()));
+	else
+		return DescribeScreenBizStatSimpleQueryResultOutcome(outcome.error());
+}
+
+void AegisClient::describeScreenBizStatSimpleQueryResultAsync(const DescribeScreenBizStatSimpleQueryResultRequest& request, const DescribeScreenBizStatSimpleQueryResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScreenBizStatSimpleQueryResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeScreenBizStatSimpleQueryResultOutcomeCallable AegisClient::describeScreenBizStatSimpleQueryResultCallable(const DescribeScreenBizStatSimpleQueryResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScreenBizStatSimpleQueryResultOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScreenBizStatSimpleQueryResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::DownloadLogOutcome AegisClient::downloadLog(const DownloadLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1341,78 @@ AegisClient::DescribeTargetConfigOutcomeCallable AegisClient::describeTargetConf
 			[this, request]()
 			{
 			return this->describeTargetConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeAccesskeyRunInfoOutcome AegisClient::describeAccesskeyRunInfo(const DescribeAccesskeyRunInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccesskeyRunInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccesskeyRunInfoOutcome(DescribeAccesskeyRunInfoResult(outcome.result()));
+	else
+		return DescribeAccesskeyRunInfoOutcome(outcome.error());
+}
+
+void AegisClient::describeAccesskeyRunInfoAsync(const DescribeAccesskeyRunInfoRequest& request, const DescribeAccesskeyRunInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccesskeyRunInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeAccesskeyRunInfoOutcomeCallable AegisClient::describeAccesskeyRunInfoCallable(const DescribeAccesskeyRunInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccesskeyRunInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccesskeyRunInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeScreenFlowRequestCountOutcome AegisClient::describeScreenFlowRequestCount(const DescribeScreenFlowRequestCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScreenFlowRequestCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScreenFlowRequestCountOutcome(DescribeScreenFlowRequestCountResult(outcome.result()));
+	else
+		return DescribeScreenFlowRequestCountOutcome(outcome.error());
+}
+
+void AegisClient::describeScreenFlowRequestCountAsync(const DescribeScreenFlowRequestCountRequest& request, const DescribeScreenFlowRequestCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScreenFlowRequestCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeScreenFlowRequestCountOutcomeCallable AegisClient::describeScreenFlowRequestCountCallable(const DescribeScreenFlowRequestCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScreenFlowRequestCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScreenFlowRequestCount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1161,6 +1521,42 @@ AegisClient::GetAccountStatisticsOutcomeCallable AegisClient::getAccountStatisti
 			[this, request]()
 			{
 			return this->getAccountStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeScreenEmerRiskOutcome AegisClient::describeScreenEmerRisk(const DescribeScreenEmerRiskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScreenEmerRiskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScreenEmerRiskOutcome(DescribeScreenEmerRiskResult(outcome.result()));
+	else
+		return DescribeScreenEmerRiskOutcome(outcome.error());
+}
+
+void AegisClient::describeScreenEmerRiskAsync(const DescribeScreenEmerRiskRequest& request, const DescribeScreenEmerRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScreenEmerRisk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeScreenEmerRiskOutcomeCallable AegisClient::describeScreenEmerRiskCallable(const DescribeScreenEmerRiskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScreenEmerRiskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScreenEmerRisk(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1455,42 +1851,6 @@ AegisClient::DescribeTraceInfoNodeListOutcomeCallable AegisClient::describeTrace
 	return task->get_future();
 }
 
-AegisClient::DescribeAnalysisSlsIndexOutcome AegisClient::describeAnalysisSlsIndex(const DescribeAnalysisSlsIndexRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAnalysisSlsIndexOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAnalysisSlsIndexOutcome(DescribeAnalysisSlsIndexResult(outcome.result()));
-	else
-		return DescribeAnalysisSlsIndexOutcome(outcome.error());
-}
-
-void AegisClient::describeAnalysisSlsIndexAsync(const DescribeAnalysisSlsIndexRequest& request, const DescribeAnalysisSlsIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAnalysisSlsIndex(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::DescribeAnalysisSlsIndexOutcomeCallable AegisClient::describeAnalysisSlsIndexCallable(const DescribeAnalysisSlsIndexRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAnalysisSlsIndexOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAnalysisSlsIndex(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::ModifyWebLockCreateConfigOutcome AegisClient::modifyWebLockCreateConfig(const ModifyWebLockCreateConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1527,6 +1887,42 @@ AegisClient::ModifyWebLockCreateConfigOutcomeCallable AegisClient::modifyWebLock
 	return task->get_future();
 }
 
+AegisClient::DescribeAnalysisSlsIndexOutcome AegisClient::describeAnalysisSlsIndex(const DescribeAnalysisSlsIndexRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAnalysisSlsIndexOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAnalysisSlsIndexOutcome(DescribeAnalysisSlsIndexResult(outcome.result()));
+	else
+		return DescribeAnalysisSlsIndexOutcome(outcome.error());
+}
+
+void AegisClient::describeAnalysisSlsIndexAsync(const DescribeAnalysisSlsIndexRequest& request, const DescribeAnalysisSlsIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAnalysisSlsIndex(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeAnalysisSlsIndexOutcomeCallable AegisClient::describeAnalysisSlsIndexCallable(const DescribeAnalysisSlsIndexRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAnalysisSlsIndexOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAnalysisSlsIndex(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::DeleteRuleGroupOutcome AegisClient::deleteRuleGroup(const DeleteRuleGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,6 +1953,42 @@ AegisClient::DeleteRuleGroupOutcomeCallable AegisClient::deleteRuleGroupCallable
 			[this, request]()
 			{
 			return this->deleteRuleGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeScreenDataMapOutcome AegisClient::describeScreenDataMap(const DescribeScreenDataMapRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScreenDataMapOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScreenDataMapOutcome(DescribeScreenDataMapResult(outcome.result()));
+	else
+		return DescribeScreenDataMapOutcome(outcome.error());
+}
+
+void AegisClient::describeScreenDataMapAsync(const DescribeScreenDataMapRequest& request, const DescribeScreenDataMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScreenDataMap(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeScreenDataMapOutcomeCallable AegisClient::describeScreenDataMapCallable(const DescribeScreenDataMapRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScreenDataMapOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScreenDataMap(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1671,6 +2103,78 @@ AegisClient::CreateSuspiciousExportOutcomeCallable AegisClient::createSuspicious
 	return task->get_future();
 }
 
+AegisClient::DescribeWebshellListOutcome AegisClient::describeWebshellList(const DescribeWebshellListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWebshellListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWebshellListOutcome(DescribeWebshellListResult(outcome.result()));
+	else
+		return DescribeWebshellListOutcome(outcome.error());
+}
+
+void AegisClient::describeWebshellListAsync(const DescribeWebshellListRequest& request, const DescribeWebshellListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWebshellList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeWebshellListOutcomeCallable AegisClient::describeWebshellListCallable(const DescribeWebshellListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWebshellListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWebshellList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeBizStatSimpleQueryResultOutcome AegisClient::describeBizStatSimpleQueryResult(const DescribeBizStatSimpleQueryResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBizStatSimpleQueryResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBizStatSimpleQueryResultOutcome(DescribeBizStatSimpleQueryResultResult(outcome.result()));
+	else
+		return DescribeBizStatSimpleQueryResultOutcome(outcome.error());
+}
+
+void AegisClient::describeBizStatSimpleQueryResultAsync(const DescribeBizStatSimpleQueryResultRequest& request, const DescribeBizStatSimpleQueryResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBizStatSimpleQueryResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeBizStatSimpleQueryResultOutcomeCallable AegisClient::describeBizStatSimpleQueryResultCallable(const DescribeBizStatSimpleQueryResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBizStatSimpleQueryResultOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBizStatSimpleQueryResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::OperateVulOutcome AegisClient::operateVul(const OperateVulRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1743,42 +2247,6 @@ AegisClient::GetCrackStatisticsOutcomeCallable AegisClient::getCrackStatisticsCa
 	return task->get_future();
 }
 
-AegisClient::DescribeConcernNecessityOutcome AegisClient::describeConcernNecessity(const DescribeConcernNecessityRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeConcernNecessityOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeConcernNecessityOutcome(DescribeConcernNecessityResult(outcome.result()));
-	else
-		return DescribeConcernNecessityOutcome(outcome.error());
-}
-
-void AegisClient::describeConcernNecessityAsync(const DescribeConcernNecessityRequest& request, const DescribeConcernNecessityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeConcernNecessity(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::DescribeConcernNecessityOutcomeCallable AegisClient::describeConcernNecessityCallable(const DescribeConcernNecessityRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeConcernNecessityOutcome()>>(
-			[this, request]()
-			{
-			return this->describeConcernNecessity(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::OperateAgentClientInstallOutcome AegisClient::operateAgentClientInstall(const OperateAgentClientInstallRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1809,6 +2277,42 @@ AegisClient::OperateAgentClientInstallOutcomeCallable AegisClient::operateAgentC
 			[this, request]()
 			{
 			return this->operateAgentClientInstall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeConcernNecessityOutcome AegisClient::describeConcernNecessity(const DescribeConcernNecessityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeConcernNecessityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeConcernNecessityOutcome(DescribeConcernNecessityResult(outcome.result()));
+	else
+		return DescribeConcernNecessityOutcome(outcome.error());
+}
+
+void AegisClient::describeConcernNecessityAsync(const DescribeConcernNecessityRequest& request, const DescribeConcernNecessityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeConcernNecessity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeConcernNecessityOutcomeCallable AegisClient::describeConcernNecessityCallable(const DescribeConcernNecessityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeConcernNecessityOutcome()>>(
+			[this, request]()
+			{
+			return this->describeConcernNecessity(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1995,6 +2499,42 @@ AegisClient::DescribeTopicListOutcomeCallable AegisClient::describeTopicListCall
 	return task->get_future();
 }
 
+AegisClient::DescribeScreenVersionConfigOutcome AegisClient::describeScreenVersionConfig(const DescribeScreenVersionConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScreenVersionConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScreenVersionConfigOutcome(DescribeScreenVersionConfigResult(outcome.result()));
+	else
+		return DescribeScreenVersionConfigOutcome(outcome.error());
+}
+
+void AegisClient::describeScreenVersionConfigAsync(const DescribeScreenVersionConfigRequest& request, const DescribeScreenVersionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScreenVersionConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeScreenVersionConfigOutcomeCallable AegisClient::describeScreenVersionConfigCallable(const DescribeScreenVersionConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScreenVersionConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScreenVersionConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::DescribeAssetDetailByUuidOutcome AegisClient::describeAssetDetailByUuid(const DescribeAssetDetailByUuidRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2031,36 +2571,36 @@ AegisClient::DescribeAssetDetailByUuidOutcomeCallable AegisClient::describeAsset
 	return task->get_future();
 }
 
-AegisClient::DescribeScreenVersionConfigOutcome AegisClient::describeScreenVersionConfig(const DescribeScreenVersionConfigRequest &request) const
+AegisClient::CreateScreenSettingOutcome AegisClient::createScreenSetting(const CreateScreenSettingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeScreenVersionConfigOutcome(endpointOutcome.error());
+		return CreateScreenSettingOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeScreenVersionConfigOutcome(DescribeScreenVersionConfigResult(outcome.result()));
+		return CreateScreenSettingOutcome(CreateScreenSettingResult(outcome.result()));
 	else
-		return DescribeScreenVersionConfigOutcome(outcome.error());
+		return CreateScreenSettingOutcome(outcome.error());
 }
 
-void AegisClient::describeScreenVersionConfigAsync(const DescribeScreenVersionConfigRequest& request, const DescribeScreenVersionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AegisClient::createScreenSettingAsync(const CreateScreenSettingRequest& request, const CreateScreenSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeScreenVersionConfig(request), context);
+		handler(this, request, createScreenSetting(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AegisClient::DescribeScreenVersionConfigOutcomeCallable AegisClient::describeScreenVersionConfigCallable(const DescribeScreenVersionConfigRequest &request) const
+AegisClient::CreateScreenSettingOutcomeCallable AegisClient::createScreenSettingCallable(const CreateScreenSettingRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeScreenVersionConfigOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateScreenSettingOutcome()>>(
 			[this, request]()
 			{
-			return this->describeScreenVersionConfig(request);
+			return this->createScreenSetting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2133,6 +2673,42 @@ AegisClient::DeleteRuleOutcomeCallable AegisClient::deleteRuleCallable(const Del
 			[this, request]()
 			{
 			return this->deleteRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeChartListOutcome AegisClient::describeChartList(const DescribeChartListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeChartListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeChartListOutcome(DescribeChartListResult(outcome.result()));
+	else
+		return DescribeChartListOutcome(outcome.error());
+}
+
+void AegisClient::describeChartListAsync(const DescribeChartListRequest& request, const DescribeChartListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeChartList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeChartListOutcomeCallable AegisClient::describeChartListCallable(const DescribeChartListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeChartListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeChartList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2463,42 +3039,6 @@ AegisClient::DescribeLogItemsOutcomeCallable AegisClient::describeLogItemsCallab
 	return task->get_future();
 }
 
-AegisClient::DescribeWebLockEventsOutcome AegisClient::describeWebLockEvents(const DescribeWebLockEventsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeWebLockEventsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeWebLockEventsOutcome(DescribeWebLockEventsResult(outcome.result()));
-	else
-		return DescribeWebLockEventsOutcome(outcome.error());
-}
-
-void AegisClient::describeWebLockEventsAsync(const DescribeWebLockEventsRequest& request, const DescribeWebLockEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeWebLockEvents(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::DescribeWebLockEventsOutcomeCallable AegisClient::describeWebLockEventsCallable(const DescribeWebLockEventsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeWebLockEventsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeWebLockEvents(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::ExecStrategyOutcome AegisClient::execStrategy(const ExecStrategyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2529,6 +3069,42 @@ AegisClient::ExecStrategyOutcomeCallable AegisClient::execStrategyCallable(const
 			[this, request]()
 			{
 			return this->execStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeWebLockEventsOutcome AegisClient::describeWebLockEvents(const DescribeWebLockEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWebLockEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWebLockEventsOutcome(DescribeWebLockEventsResult(outcome.result()));
+	else
+		return DescribeWebLockEventsOutcome(outcome.error());
+}
+
+void AegisClient::describeWebLockEventsAsync(const DescribeWebLockEventsRequest& request, const DescribeWebLockEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWebLockEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeWebLockEventsOutcomeCallable AegisClient::describeWebLockEventsCallable(const DescribeWebLockEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWebLockEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWebLockEvents(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2643,6 +3219,42 @@ AegisClient::DescribeSasAssetStatisticsOutcomeCallable AegisClient::describeSasA
 	return task->get_future();
 }
 
+AegisClient::SendCustomizeReportOutcome AegisClient::sendCustomizeReport(const SendCustomizeReportRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendCustomizeReportOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendCustomizeReportOutcome(SendCustomizeReportResult(outcome.result()));
+	else
+		return SendCustomizeReportOutcome(outcome.error());
+}
+
+void AegisClient::sendCustomizeReportAsync(const SendCustomizeReportRequest& request, const SendCustomizeReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendCustomizeReport(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::SendCustomizeReportOutcomeCallable AegisClient::sendCustomizeReportCallable(const SendCustomizeReportRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendCustomizeReportOutcome()>>(
+			[this, request]()
+			{
+			return this->sendCustomizeReport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::DescribeDefenceThreadOutcome AegisClient::describeDefenceThread(const DescribeDefenceThreadRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2679,6 +3291,42 @@ AegisClient::DescribeDefenceThreadOutcomeCallable AegisClient::describeDefenceTh
 	return task->get_future();
 }
 
+AegisClient::DescribeScreenTopRequestAndFlowOutcome AegisClient::describeScreenTopRequestAndFlow(const DescribeScreenTopRequestAndFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScreenTopRequestAndFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScreenTopRequestAndFlowOutcome(DescribeScreenTopRequestAndFlowResult(outcome.result()));
+	else
+		return DescribeScreenTopRequestAndFlowOutcome(outcome.error());
+}
+
+void AegisClient::describeScreenTopRequestAndFlowAsync(const DescribeScreenTopRequestAndFlowRequest& request, const DescribeScreenTopRequestAndFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScreenTopRequestAndFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeScreenTopRequestAndFlowOutcomeCallable AegisClient::describeScreenTopRequestAndFlowCallable(const DescribeScreenTopRequestAndFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScreenTopRequestAndFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScreenTopRequestAndFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::CreateVulWhitelistOutcome AegisClient::createVulWhitelist(const CreateVulWhitelistRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2709,6 +3357,42 @@ AegisClient::CreateVulWhitelistOutcomeCallable AegisClient::createVulWhitelistCa
 			[this, request]()
 			{
 			return this->createVulWhitelist(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeLatestActionsOutcome AegisClient::describeLatestActions(const DescribeLatestActionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLatestActionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLatestActionsOutcome(DescribeLatestActionsResult(outcome.result()));
+	else
+		return DescribeLatestActionsOutcome(outcome.error());
+}
+
+void AegisClient::describeLatestActionsAsync(const DescribeLatestActionsRequest& request, const DescribeLatestActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLatestActions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeLatestActionsOutcomeCallable AegisClient::describeLatestActionsCallable(const DescribeLatestActionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLatestActionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLatestActions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2859,6 +3543,42 @@ AegisClient::GetStatisticsOutcomeCallable AegisClient::getStatisticsCallable(con
 	return task->get_future();
 }
 
+AegisClient::DescribeSuspEventsOutcome AegisClient::describeSuspEvents(const DescribeSuspEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSuspEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSuspEventsOutcome(DescribeSuspEventsResult(outcome.result()));
+	else
+		return DescribeSuspEventsOutcome(outcome.error());
+}
+
+void AegisClient::describeSuspEventsAsync(const DescribeSuspEventsRequest& request, const DescribeSuspEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSuspEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeSuspEventsOutcomeCallable AegisClient::describeSuspEventsCallable(const DescribeSuspEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSuspEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSuspEvents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::DescribesummaryOutcome AegisClient::describesummary(const DescribesummaryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2895,36 +3615,108 @@ AegisClient::DescribesummaryOutcomeCallable AegisClient::describesummaryCallable
 	return task->get_future();
 }
 
-AegisClient::DescribeSuspEventsOutcome AegisClient::describeSuspEvents(const DescribeSuspEventsRequest &request) const
+AegisClient::ModifyAccessKeyLeakDealOutcome AegisClient::modifyAccessKeyLeakDeal(const ModifyAccessKeyLeakDealRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeSuspEventsOutcome(endpointOutcome.error());
+		return ModifyAccessKeyLeakDealOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeSuspEventsOutcome(DescribeSuspEventsResult(outcome.result()));
+		return ModifyAccessKeyLeakDealOutcome(ModifyAccessKeyLeakDealResult(outcome.result()));
 	else
-		return DescribeSuspEventsOutcome(outcome.error());
+		return ModifyAccessKeyLeakDealOutcome(outcome.error());
 }
 
-void AegisClient::describeSuspEventsAsync(const DescribeSuspEventsRequest& request, const DescribeSuspEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AegisClient::modifyAccessKeyLeakDealAsync(const ModifyAccessKeyLeakDealRequest& request, const ModifyAccessKeyLeakDealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeSuspEvents(request), context);
+		handler(this, request, modifyAccessKeyLeakDeal(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AegisClient::DescribeSuspEventsOutcomeCallable AegisClient::describeSuspEventsCallable(const DescribeSuspEventsRequest &request) const
+AegisClient::ModifyAccessKeyLeakDealOutcomeCallable AegisClient::modifyAccessKeyLeakDealCallable(const ModifyAccessKeyLeakDealRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeSuspEventsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyAccessKeyLeakDealOutcome()>>(
 			[this, request]()
 			{
-			return this->describeSuspEvents(request);
+			return this->modifyAccessKeyLeakDeal(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeCheckWarningCountOutcome AegisClient::describeCheckWarningCount(const DescribeCheckWarningCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCheckWarningCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCheckWarningCountOutcome(DescribeCheckWarningCountResult(outcome.result()));
+	else
+		return DescribeCheckWarningCountOutcome(outcome.error());
+}
+
+void AegisClient::describeCheckWarningCountAsync(const DescribeCheckWarningCountRequest& request, const DescribeCheckWarningCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCheckWarningCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeCheckWarningCountOutcomeCallable AegisClient::describeCheckWarningCountCallable(const DescribeCheckWarningCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCheckWarningCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCheckWarningCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::CopyCustomizeReportConfigOutcome AegisClient::copyCustomizeReportConfig(const CopyCustomizeReportConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CopyCustomizeReportConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CopyCustomizeReportConfigOutcome(CopyCustomizeReportConfigResult(outcome.result()));
+	else
+		return CopyCustomizeReportConfigOutcome(outcome.error());
+}
+
+void AegisClient::copyCustomizeReportConfigAsync(const CopyCustomizeReportConfigRequest& request, const CopyCustomizeReportConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, copyCustomizeReportConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::CopyCustomizeReportConfigOutcomeCallable AegisClient::copyCustomizeReportConfigCallable(const CopyCustomizeReportConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CopyCustomizeReportConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->copyCustomizeReportConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3147,42 +3939,6 @@ AegisClient::DescribeTraceInfoDetailOutcomeCallable AegisClient::describeTraceIn
 	return task->get_future();
 }
 
-AegisClient::DescribeGroupListOutcome AegisClient::describeGroupList(const DescribeGroupListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeGroupListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeGroupListOutcome(DescribeGroupListResult(outcome.result()));
-	else
-		return DescribeGroupListOutcome(outcome.error());
-}
-
-void AegisClient::describeGroupListAsync(const DescribeGroupListRequest& request, const DescribeGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeGroupList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::DescribeGroupListOutcomeCallable AegisClient::describeGroupListCallable(const DescribeGroupListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeGroupListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeGroupList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::DescribeCanTrySasOutcome AegisClient::describeCanTrySas(const DescribeCanTrySasRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3213,6 +3969,42 @@ AegisClient::DescribeCanTrySasOutcomeCallable AegisClient::describeCanTrySasCall
 			[this, request]()
 			{
 			return this->describeCanTrySas(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeGroupListOutcome AegisClient::describeGroupList(const DescribeGroupListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGroupListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGroupListOutcome(DescribeGroupListResult(outcome.result()));
+	else
+		return DescribeGroupListOutcome(outcome.error());
+}
+
+void AegisClient::describeGroupListAsync(const DescribeGroupListRequest& request, const DescribeGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGroupList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeGroupListOutcomeCallable AegisClient::describeGroupListCallable(const DescribeGroupListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGroupListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGroupList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3471,6 +4263,42 @@ AegisClient::ModifySearchConditionOutcomeCallable AegisClient::modifySearchCondi
 	return task->get_future();
 }
 
+AegisClient::DescribeScreenTitlesOutcome AegisClient::describeScreenTitles(const DescribeScreenTitlesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScreenTitlesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScreenTitlesOutcome(DescribeScreenTitlesResult(outcome.result()));
+	else
+		return DescribeScreenTitlesOutcome(outcome.error());
+}
+
+void AegisClient::describeScreenTitlesAsync(const DescribeScreenTitlesRequest& request, const DescribeScreenTitlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScreenTitles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeScreenTitlesOutcomeCallable AegisClient::describeScreenTitlesCallable(const DescribeScreenTitlesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScreenTitlesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScreenTitles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::DescribeWhiteListStrategyUuidCountOutcome AegisClient::describeWhiteListStrategyUuidCount(const DescribeWhiteListStrategyUuidCountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3501,6 +4329,42 @@ AegisClient::DescribeWhiteListStrategyUuidCountOutcomeCallable AegisClient::desc
 			[this, request]()
 			{
 			return this->describeWhiteListStrategyUuidCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DeleteCustomizeReportOutcome AegisClient::deleteCustomizeReport(const DeleteCustomizeReportRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCustomizeReportOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCustomizeReportOutcome(DeleteCustomizeReportResult(outcome.result()));
+	else
+		return DeleteCustomizeReportOutcome(outcome.error());
+}
+
+void AegisClient::deleteCustomizeReportAsync(const DeleteCustomizeReportRequest& request, const DeleteCustomizeReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCustomizeReport(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DeleteCustomizeReportOutcomeCallable AegisClient::deleteCustomizeReportCallable(const DeleteCustomizeReportRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCustomizeReportOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCustomizeReport(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3579,6 +4443,78 @@ AegisClient::ModifyWebLockDeleteConfigOutcomeCallable AegisClient::modifyWebLock
 	return task->get_future();
 }
 
+AegisClient::ModifyAccessKeyLeakInstRunOutcome AegisClient::modifyAccessKeyLeakInstRun(const ModifyAccessKeyLeakInstRunRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAccessKeyLeakInstRunOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAccessKeyLeakInstRunOutcome(ModifyAccessKeyLeakInstRunResult(outcome.result()));
+	else
+		return ModifyAccessKeyLeakInstRunOutcome(outcome.error());
+}
+
+void AegisClient::modifyAccessKeyLeakInstRunAsync(const ModifyAccessKeyLeakInstRunRequest& request, const ModifyAccessKeyLeakInstRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAccessKeyLeakInstRun(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::ModifyAccessKeyLeakInstRunOutcomeCallable AegisClient::modifyAccessKeyLeakInstRunCallable(const ModifyAccessKeyLeakInstRunRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAccessKeyLeakInstRunOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAccessKeyLeakInstRun(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::CreateSuspEventNoteOutcome AegisClient::createSuspEventNote(const CreateSuspEventNoteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSuspEventNoteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSuspEventNoteOutcome(CreateSuspEventNoteResult(outcome.result()));
+	else
+		return CreateSuspEventNoteOutcome(outcome.error());
+}
+
+void AegisClient::createSuspEventNoteAsync(const CreateSuspEventNoteRequest& request, const CreateSuspEventNoteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSuspEventNote(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::CreateSuspEventNoteOutcomeCallable AegisClient::createSuspEventNoteCallable(const CreateSuspEventNoteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSuspEventNoteOutcome()>>(
+			[this, request]()
+			{
+			return this->createSuspEventNote(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::CreateUserWhiteListOutcome AegisClient::createUserWhiteList(const CreateUserWhiteListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3651,6 +4587,78 @@ AegisClient::DescribeSecureSuggestionOutcomeCallable AegisClient::describeSecure
 	return task->get_future();
 }
 
+AegisClient::DescribeCustomizeReportConfigDetailOutcome AegisClient::describeCustomizeReportConfigDetail(const DescribeCustomizeReportConfigDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCustomizeReportConfigDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCustomizeReportConfigDetailOutcome(DescribeCustomizeReportConfigDetailResult(outcome.result()));
+	else
+		return DescribeCustomizeReportConfigDetailOutcome(outcome.error());
+}
+
+void AegisClient::describeCustomizeReportConfigDetailAsync(const DescribeCustomizeReportConfigDetailRequest& request, const DescribeCustomizeReportConfigDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCustomizeReportConfigDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeCustomizeReportConfigDetailOutcomeCallable AegisClient::describeCustomizeReportConfigDetailCallable(const DescribeCustomizeReportConfigDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCustomizeReportConfigDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCustomizeReportConfigDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeScreenRequestTopTypeOutcome AegisClient::describeScreenRequestTopType(const DescribeScreenRequestTopTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScreenRequestTopTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScreenRequestTopTypeOutcome(DescribeScreenRequestTopTypeResult(outcome.result()));
+	else
+		return DescribeScreenRequestTopTypeOutcome(outcome.error());
+}
+
+void AegisClient::describeScreenRequestTopTypeAsync(const DescribeScreenRequestTopTypeRequest& request, const DescribeScreenRequestTopTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScreenRequestTopType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeScreenRequestTopTypeOutcomeCallable AegisClient::describeScreenRequestTopTypeCallable(const DescribeScreenRequestTopTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScreenRequestTopTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScreenRequestTopType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::DescribeSuspiciousOverallConfigOutcome AegisClient::describeSuspiciousOverallConfig(const DescribeSuspiciousOverallConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3687,36 +4695,36 @@ AegisClient::DescribeSuspiciousOverallConfigOutcomeCallable AegisClient::describ
 	return task->get_future();
 }
 
-AegisClient::DescribeAnalysisCurveOutcome AegisClient::describeAnalysisCurve(const DescribeAnalysisCurveRequest &request) const
+AegisClient::DescribeAccesskeyLeakListOutcome AegisClient::describeAccesskeyLeakList(const DescribeAccesskeyLeakListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeAnalysisCurveOutcome(endpointOutcome.error());
+		return DescribeAccesskeyLeakListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeAnalysisCurveOutcome(DescribeAnalysisCurveResult(outcome.result()));
+		return DescribeAccesskeyLeakListOutcome(DescribeAccesskeyLeakListResult(outcome.result()));
 	else
-		return DescribeAnalysisCurveOutcome(outcome.error());
+		return DescribeAccesskeyLeakListOutcome(outcome.error());
 }
 
-void AegisClient::describeAnalysisCurveAsync(const DescribeAnalysisCurveRequest& request, const DescribeAnalysisCurveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AegisClient::describeAccesskeyLeakListAsync(const DescribeAccesskeyLeakListRequest& request, const DescribeAccesskeyLeakListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeAnalysisCurve(request), context);
+		handler(this, request, describeAccesskeyLeakList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AegisClient::DescribeAnalysisCurveOutcomeCallable AegisClient::describeAnalysisCurveCallable(const DescribeAnalysisCurveRequest &request) const
+AegisClient::DescribeAccesskeyLeakListOutcomeCallable AegisClient::describeAccesskeyLeakListCallable(const DescribeAccesskeyLeakListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeAnalysisCurveOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeAccesskeyLeakListOutcome()>>(
 			[this, request]()
 			{
-			return this->describeAnalysisCurve(request);
+			return this->describeAccesskeyLeakList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3753,6 +4761,42 @@ AegisClient::DescribeScreenAlarmEventListOutcomeCallable AegisClient::describeSc
 			[this, request]()
 			{
 			return this->describeScreenAlarmEventList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeAnalysisCurveOutcome AegisClient::describeAnalysisCurve(const DescribeAnalysisCurveRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAnalysisCurveOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAnalysisCurveOutcome(DescribeAnalysisCurveResult(outcome.result()));
+	else
+		return DescribeAnalysisCurveOutcome(outcome.error());
+}
+
+void AegisClient::describeAnalysisCurveAsync(const DescribeAnalysisCurveRequest& request, const DescribeAnalysisCurveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAnalysisCurve(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeAnalysisCurveOutcomeCallable AegisClient::describeAnalysisCurveCallable(const DescribeAnalysisCurveRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAnalysisCurveOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAnalysisCurve(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4155,36 +5199,36 @@ AegisClient::DescribeQuaraFileOutcomeCallable AegisClient::describeQuaraFileCall
 	return task->get_future();
 }
 
-AegisClient::DescribeTotalStatisticsOutcome AegisClient::describeTotalStatistics(const DescribeTotalStatisticsRequest &request) const
+AegisClient::DescribeScreenCityMonitorDataOutcome AegisClient::describeScreenCityMonitorData(const DescribeScreenCityMonitorDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeTotalStatisticsOutcome(endpointOutcome.error());
+		return DescribeScreenCityMonitorDataOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeTotalStatisticsOutcome(DescribeTotalStatisticsResult(outcome.result()));
+		return DescribeScreenCityMonitorDataOutcome(DescribeScreenCityMonitorDataResult(outcome.result()));
 	else
-		return DescribeTotalStatisticsOutcome(outcome.error());
+		return DescribeScreenCityMonitorDataOutcome(outcome.error());
 }
 
-void AegisClient::describeTotalStatisticsAsync(const DescribeTotalStatisticsRequest& request, const DescribeTotalStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AegisClient::describeScreenCityMonitorDataAsync(const DescribeScreenCityMonitorDataRequest& request, const DescribeScreenCityMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeTotalStatistics(request), context);
+		handler(this, request, describeScreenCityMonitorData(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AegisClient::DescribeTotalStatisticsOutcomeCallable AegisClient::describeTotalStatisticsCallable(const DescribeTotalStatisticsRequest &request) const
+AegisClient::DescribeScreenCityMonitorDataOutcomeCallable AegisClient::describeScreenCityMonitorDataCallable(const DescribeScreenCityMonitorDataRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeTotalStatisticsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeScreenCityMonitorDataOutcome()>>(
 			[this, request]()
 			{
-			return this->describeTotalStatistics(request);
+			return this->describeScreenCityMonitorData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4221,6 +5265,42 @@ AegisClient::DescribeWhiteListStrategyStatisticsOutcomeCallable AegisClient::des
 			[this, request]()
 			{
 			return this->describeWhiteListStrategyStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeTotalStatisticsOutcome AegisClient::describeTotalStatistics(const DescribeTotalStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTotalStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTotalStatisticsOutcome(DescribeTotalStatisticsResult(outcome.result()));
+	else
+		return DescribeTotalStatisticsOutcome(outcome.error());
+}
+
+void AegisClient::describeTotalStatisticsAsync(const DescribeTotalStatisticsRequest& request, const DescribeTotalStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTotalStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeTotalStatisticsOutcomeCallable AegisClient::describeTotalStatisticsCallable(const DescribeTotalStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTotalStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTotalStatistics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4371,6 +5451,42 @@ AegisClient::DescribeWebLockConfigListOutcomeCallable AegisClient::describeWebLo
 	return task->get_future();
 }
 
+AegisClient::DescribeVulStatisticsOutcome AegisClient::describeVulStatistics(const DescribeVulStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVulStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVulStatisticsOutcome(DescribeVulStatisticsResult(outcome.result()));
+	else
+		return DescribeVulStatisticsOutcome(outcome.error());
+}
+
+void AegisClient::describeVulStatisticsAsync(const DescribeVulStatisticsRequest& request, const DescribeVulStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVulStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeVulStatisticsOutcomeCallable AegisClient::describeVulStatisticsCallable(const DescribeVulStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVulStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVulStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::ModifyAutoDelConfigOutcome AegisClient::modifyAutoDelConfig(const ModifyAutoDelConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4401,6 +5517,42 @@ AegisClient::ModifyAutoDelConfigOutcomeCallable AegisClient::modifyAutoDelConfig
 			[this, request]()
 			{
 			return this->modifyAutoDelConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeVulBatchOutcome AegisClient::describeVulBatch(const DescribeVulBatchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVulBatchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVulBatchOutcome(DescribeVulBatchResult(outcome.result()));
+	else
+		return DescribeVulBatchOutcome(outcome.error());
+}
+
+void AegisClient::describeVulBatchAsync(const DescribeVulBatchRequest& request, const DescribeVulBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVulBatch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeVulBatchOutcomeCallable AegisClient::describeVulBatchCallable(const DescribeVulBatchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVulBatchOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVulBatch(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4443,36 +5595,36 @@ AegisClient::DescribeUserSettingOutcomeCallable AegisClient::describeUserSetting
 	return task->get_future();
 }
 
-AegisClient::DescribeVulBatchOutcome AegisClient::describeVulBatch(const DescribeVulBatchRequest &request) const
+AegisClient::DescribeEntityListOutcome AegisClient::describeEntityList(const DescribeEntityListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeVulBatchOutcome(endpointOutcome.error());
+		return DescribeEntityListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeVulBatchOutcome(DescribeVulBatchResult(outcome.result()));
+		return DescribeEntityListOutcome(DescribeEntityListResult(outcome.result()));
 	else
-		return DescribeVulBatchOutcome(outcome.error());
+		return DescribeEntityListOutcome(outcome.error());
 }
 
-void AegisClient::describeVulBatchAsync(const DescribeVulBatchRequest& request, const DescribeVulBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AegisClient::describeEntityListAsync(const DescribeEntityListRequest& request, const DescribeEntityListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeVulBatch(request), context);
+		handler(this, request, describeEntityList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AegisClient::DescribeVulBatchOutcomeCallable AegisClient::describeVulBatchCallable(const DescribeVulBatchRequest &request) const
+AegisClient::DescribeEntityListOutcomeCallable AegisClient::describeEntityListCallable(const DescribeEntityListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeVulBatchOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeEntityListOutcome()>>(
 			[this, request]()
 			{
-			return this->describeVulBatch(request);
+			return this->describeEntityList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4725,6 +5877,42 @@ AegisClient::OperateResultOutcomeCallable AegisClient::operateResultCallable(con
 			[this, request]()
 			{
 			return this->operateResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeCustomizeReportChartListOutcome AegisClient::describeCustomizeReportChartList(const DescribeCustomizeReportChartListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCustomizeReportChartListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCustomizeReportChartListOutcome(DescribeCustomizeReportChartListResult(outcome.result()));
+	else
+		return DescribeCustomizeReportChartListOutcome(outcome.error());
+}
+
+void AegisClient::describeCustomizeReportChartListAsync(const DescribeCustomizeReportChartListRequest& request, const DescribeCustomizeReportChartListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCustomizeReportChartList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeCustomizeReportChartListOutcomeCallable AegisClient::describeCustomizeReportChartListCallable(const DescribeCustomizeReportChartListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCustomizeReportChartListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCustomizeReportChartList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5235,6 +6423,42 @@ AegisClient::DescribeRiskWhiteListOutcomeCallable AegisClient::describeRiskWhite
 	return task->get_future();
 }
 
+AegisClient::OperationCustomizeReportChartOutcome AegisClient::operationCustomizeReportChart(const OperationCustomizeReportChartRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OperationCustomizeReportChartOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OperationCustomizeReportChartOutcome(OperationCustomizeReportChartResult(outcome.result()));
+	else
+		return OperationCustomizeReportChartOutcome(outcome.error());
+}
+
+void AegisClient::operationCustomizeReportChartAsync(const OperationCustomizeReportChartRequest& request, const OperationCustomizeReportChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, operationCustomizeReportChart(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::OperationCustomizeReportChartOutcomeCallable AegisClient::operationCustomizeReportChartCallable(const OperationCustomizeReportChartRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OperationCustomizeReportChartOutcome()>>(
+			[this, request]()
+			{
+			return this->operationCustomizeReportChart(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::ModifyAssetGroupOutcome AegisClient::modifyAssetGroup(const ModifyAssetGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5265,6 +6489,42 @@ AegisClient::ModifyAssetGroupOutcomeCallable AegisClient::modifyAssetGroupCallab
 			[this, request]()
 			{
 			return this->modifyAssetGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeVulRelatedProcessOutcome AegisClient::describeVulRelatedProcess(const DescribeVulRelatedProcessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVulRelatedProcessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVulRelatedProcessOutcome(DescribeVulRelatedProcessResult(outcome.result()));
+	else
+		return DescribeVulRelatedProcessOutcome(outcome.error());
+}
+
+void AegisClient::describeVulRelatedProcessAsync(const DescribeVulRelatedProcessRequest& request, const DescribeVulRelatedProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVulRelatedProcess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeVulRelatedProcessOutcomeCallable AegisClient::describeVulRelatedProcessCallable(const DescribeVulRelatedProcessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVulRelatedProcessOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVulRelatedProcess(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5379,42 +6639,6 @@ AegisClient::CreateOrUpdateRuleOutcomeCallable AegisClient::createOrUpdateRuleCa
 	return task->get_future();
 }
 
-AegisClient::ModifyLogMetaStatusOutcome AegisClient::modifyLogMetaStatus(const ModifyLogMetaStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyLogMetaStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyLogMetaStatusOutcome(ModifyLogMetaStatusResult(outcome.result()));
-	else
-		return ModifyLogMetaStatusOutcome(outcome.error());
-}
-
-void AegisClient::modifyLogMetaStatusAsync(const ModifyLogMetaStatusRequest& request, const ModifyLogMetaStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyLogMetaStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::ModifyLogMetaStatusOutcomeCallable AegisClient::modifyLogMetaStatusCallable(const ModifyLogMetaStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyLogMetaStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyLogMetaStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::DescribeYesterdayStatisticsOutcome AegisClient::describeYesterdayStatistics(const DescribeYesterdayStatisticsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5445,6 +6669,42 @@ AegisClient::DescribeYesterdayStatisticsOutcomeCallable AegisClient::describeYes
 			[this, request]()
 			{
 			return this->describeYesterdayStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::ModifyLogMetaStatusOutcome AegisClient::modifyLogMetaStatus(const ModifyLogMetaStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLogMetaStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLogMetaStatusOutcome(ModifyLogMetaStatusResult(outcome.result()));
+	else
+		return ModifyLogMetaStatusOutcome(outcome.error());
+}
+
+void AegisClient::modifyLogMetaStatusAsync(const ModifyLogMetaStatusRequest& request, const ModifyLogMetaStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLogMetaStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::ModifyLogMetaStatusOutcomeCallable AegisClient::modifyLogMetaStatusCallable(const ModifyLogMetaStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLogMetaStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLogMetaStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5919,42 +7179,6 @@ AegisClient::DescribeAssetListOutcomeCallable AegisClient::describeAssetListCall
 	return task->get_future();
 }
 
-AegisClient::ModifyMachineConfigOutcome AegisClient::modifyMachineConfig(const ModifyMachineConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyMachineConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyMachineConfigOutcome(ModifyMachineConfigResult(outcome.result()));
-	else
-		return ModifyMachineConfigOutcome(outcome.error());
-}
-
-void AegisClient::modifyMachineConfigAsync(const ModifyMachineConfigRequest& request, const ModifyMachineConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyMachineConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::ModifyMachineConfigOutcomeCallable AegisClient::modifyMachineConfigCallable(const ModifyMachineConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyMachineConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyMachineConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::DescribeVersionConfigOutcome AegisClient::describeVersionConfig(const DescribeVersionConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5991,36 +7215,108 @@ AegisClient::DescribeVersionConfigOutcomeCallable AegisClient::describeVersionCo
 	return task->get_future();
 }
 
-AegisClient::DescribeMacConfigOutcome AegisClient::describeMacConfig(const DescribeMacConfigRequest &request) const
+AegisClient::ModifyMachineConfigOutcome AegisClient::modifyMachineConfig(const ModifyMachineConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeMacConfigOutcome(endpointOutcome.error());
+		return ModifyMachineConfigOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeMacConfigOutcome(DescribeMacConfigResult(outcome.result()));
+		return ModifyMachineConfigOutcome(ModifyMachineConfigResult(outcome.result()));
 	else
-		return DescribeMacConfigOutcome(outcome.error());
+		return ModifyMachineConfigOutcome(outcome.error());
 }
 
-void AegisClient::describeMacConfigAsync(const DescribeMacConfigRequest& request, const DescribeMacConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AegisClient::modifyMachineConfigAsync(const ModifyMachineConfigRequest& request, const ModifyMachineConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeMacConfig(request), context);
+		handler(this, request, modifyMachineConfig(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AegisClient::DescribeMacConfigOutcomeCallable AegisClient::describeMacConfigCallable(const DescribeMacConfigRequest &request) const
+AegisClient::ModifyMachineConfigOutcomeCallable AegisClient::modifyMachineConfigCallable(const ModifyMachineConfigRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeMacConfigOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyMachineConfigOutcome()>>(
 			[this, request]()
 			{
-			return this->describeMacConfig(request);
+			return this->modifyMachineConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::AddEventProcessOutcome AegisClient::addEventProcess(const AddEventProcessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddEventProcessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddEventProcessOutcome(AddEventProcessResult(outcome.result()));
+	else
+		return AddEventProcessOutcome(outcome.error());
+}
+
+void AegisClient::addEventProcessAsync(const AddEventProcessRequest& request, const AddEventProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addEventProcess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::AddEventProcessOutcomeCallable AegisClient::addEventProcessCallable(const AddEventProcessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddEventProcessOutcome()>>(
+			[this, request]()
+			{
+			return this->addEventProcess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeChartDataOutcome AegisClient::describeChartData(const DescribeChartDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeChartDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeChartDataOutcome(DescribeChartDataResult(outcome.result()));
+	else
+		return DescribeChartDataOutcome(outcome.error());
+}
+
+void AegisClient::describeChartDataAsync(const DescribeChartDataRequest& request, const DescribeChartDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeChartData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeChartDataOutcomeCallable AegisClient::describeChartDataCallable(const DescribeChartDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeChartDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeChartData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6063,6 +7359,42 @@ AegisClient::RollbackQuaraFileOutcomeCallable AegisClient::rollbackQuaraFileCall
 	return task->get_future();
 }
 
+AegisClient::DescribeMacConfigOutcome AegisClient::describeMacConfig(const DescribeMacConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMacConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMacConfigOutcome(DescribeMacConfigResult(outcome.result()));
+	else
+		return DescribeMacConfigOutcome(outcome.error());
+}
+
+void AegisClient::describeMacConfigAsync(const DescribeMacConfigRequest& request, const DescribeMacConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMacConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeMacConfigOutcomeCallable AegisClient::describeMacConfigCallable(const DescribeMacConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMacConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMacConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::DescribeApiBuySummaryOutcome AegisClient::describeApiBuySummary(const DescribeApiBuySummaryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6099,42 +7431,6 @@ AegisClient::DescribeApiBuySummaryOutcomeCallable AegisClient::describeApiBuySum
 	return task->get_future();
 }
 
-AegisClient::DescribeWebLockMachineListOutcome AegisClient::describeWebLockMachineList(const DescribeWebLockMachineListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeWebLockMachineListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeWebLockMachineListOutcome(DescribeWebLockMachineListResult(outcome.result()));
-	else
-		return DescribeWebLockMachineListOutcome(outcome.error());
-}
-
-void AegisClient::describeWebLockMachineListAsync(const DescribeWebLockMachineListRequest& request, const DescribeWebLockMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeWebLockMachineList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::DescribeWebLockMachineListOutcomeCallable AegisClient::describeWebLockMachineListCallable(const DescribeWebLockMachineListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeWebLockMachineListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeWebLockMachineList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::DeleteVulBatchOutcome AegisClient::deleteVulBatch(const DeleteVulBatchRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6165,6 +7461,42 @@ AegisClient::DeleteVulBatchOutcomeCallable AegisClient::deleteVulBatchCallable(c
 			[this, request]()
 			{
 			return this->deleteVulBatch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeWebLockMachineListOutcome AegisClient::describeWebLockMachineList(const DescribeWebLockMachineListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWebLockMachineListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWebLockMachineListOutcome(DescribeWebLockMachineListResult(outcome.result()));
+	else
+		return DescribeWebLockMachineListOutcome(outcome.error());
+}
+
+void AegisClient::describeWebLockMachineListAsync(const DescribeWebLockMachineListRequest& request, const DescribeWebLockMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWebLockMachineList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeWebLockMachineListOutcomeCallable AegisClient::describeWebLockMachineListCallable(const DescribeWebLockMachineListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWebLockMachineListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWebLockMachineList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6243,42 +7575,6 @@ AegisClient::UpdateWhiteListProcessStatusOutcomeCallable AegisClient::updateWhit
 	return task->get_future();
 }
 
-AegisClient::DescribeScreenSettingOutcome AegisClient::describeScreenSetting(const DescribeScreenSettingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeScreenSettingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeScreenSettingOutcome(DescribeScreenSettingResult(outcome.result()));
-	else
-		return DescribeScreenSettingOutcome(outcome.error());
-}
-
-void AegisClient::describeScreenSettingAsync(const DescribeScreenSettingRequest& request, const DescribeScreenSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeScreenSetting(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::DescribeScreenSettingOutcomeCallable AegisClient::describeScreenSettingCallable(const DescribeScreenSettingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeScreenSettingOutcome()>>(
-			[this, request]()
-			{
-			return this->describeScreenSetting(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::CreateLogQueryOutcome AegisClient::createLogQuery(const CreateLogQueryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6309,6 +7605,78 @@ AegisClient::CreateLogQueryOutcomeCallable AegisClient::createLogQueryCallable(c
 			[this, request]()
 			{
 			return this->createLogQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeAccessKeyLeakDetailOutcome AegisClient::describeAccessKeyLeakDetail(const DescribeAccessKeyLeakDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccessKeyLeakDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccessKeyLeakDetailOutcome(DescribeAccessKeyLeakDetailResult(outcome.result()));
+	else
+		return DescribeAccessKeyLeakDetailOutcome(outcome.error());
+}
+
+void AegisClient::describeAccessKeyLeakDetailAsync(const DescribeAccessKeyLeakDetailRequest& request, const DescribeAccessKeyLeakDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccessKeyLeakDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeAccessKeyLeakDetailOutcomeCallable AegisClient::describeAccessKeyLeakDetailCallable(const DescribeAccessKeyLeakDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccessKeyLeakDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccessKeyLeakDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeScreenSettingOutcome AegisClient::describeScreenSetting(const DescribeScreenSettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScreenSettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScreenSettingOutcome(DescribeScreenSettingResult(outcome.result()));
+	else
+		return DescribeScreenSettingOutcome(outcome.error());
+}
+
+void AegisClient::describeScreenSettingAsync(const DescribeScreenSettingRequest& request, const DescribeScreenSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScreenSetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeScreenSettingOutcomeCallable AegisClient::describeScreenSettingCallable(const DescribeScreenSettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScreenSettingOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScreenSetting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6783,42 +8151,6 @@ AegisClient::DescribeHistogramOutcomeCallable AegisClient::describeHistogramCall
 	return task->get_future();
 }
 
-AegisClient::DescribeDingTalkOutcome AegisClient::describeDingTalk(const DescribeDingTalkRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDingTalkOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDingTalkOutcome(DescribeDingTalkResult(outcome.result()));
-	else
-		return DescribeDingTalkOutcome(outcome.error());
-}
-
-void AegisClient::describeDingTalkAsync(const DescribeDingTalkRequest& request, const DescribeDingTalkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDingTalk(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::DescribeDingTalkOutcomeCallable AegisClient::describeDingTalkCallable(const DescribeDingTalkRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDingTalkOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDingTalk(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::DescribeLoginLogsOutcome AegisClient::describeLoginLogs(const DescribeLoginLogsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6849,6 +8181,42 @@ AegisClient::DescribeLoginLogsOutcomeCallable AegisClient::describeLoginLogsCall
 			[this, request]()
 			{
 			return this->describeLoginLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeDingTalkOutcome AegisClient::describeDingTalk(const DescribeDingTalkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDingTalkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDingTalkOutcome(DescribeDingTalkResult(outcome.result()));
+	else
+		return DescribeDingTalkOutcome(outcome.error());
+}
+
+void AegisClient::describeDingTalkAsync(const DescribeDingTalkRequest& request, const DescribeDingTalkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDingTalk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeDingTalkOutcomeCallable AegisClient::describeDingTalkCallable(const DescribeDingTalkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDingTalkOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDingTalk(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7035,42 +8403,6 @@ AegisClient::ModifyScreenSettingOutcomeCallable AegisClient::modifyScreenSetting
 	return task->get_future();
 }
 
-AegisClient::ModifyStrategyOutcome AegisClient::modifyStrategy(const ModifyStrategyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyStrategyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyStrategyOutcome(ModifyStrategyResult(outcome.result()));
-	else
-		return ModifyStrategyOutcome(outcome.error());
-}
-
-void AegisClient::modifyStrategyAsync(const ModifyStrategyRequest& request, const ModifyStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyStrategy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::ModifyStrategyOutcomeCallable AegisClient::modifyStrategyCallable(const ModifyStrategyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyStrategyOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyStrategy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::DescribeEmgNoticeOutcome AegisClient::describeEmgNotice(const DescribeEmgNoticeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7101,6 +8433,42 @@ AegisClient::DescribeEmgNoticeOutcomeCallable AegisClient::describeEmgNoticeCall
 			[this, request]()
 			{
 			return this->describeEmgNotice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::ModifyStrategyOutcome AegisClient::modifyStrategy(const ModifyStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyStrategyOutcome(ModifyStrategyResult(outcome.result()));
+	else
+		return ModifyStrategyOutcome(outcome.error());
+}
+
+void AegisClient::modifyStrategyAsync(const ModifyStrategyRequest& request, const ModifyStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::ModifyStrategyOutcomeCallable AegisClient::modifyStrategyCallable(const ModifyStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyStrategy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7215,42 +8583,6 @@ AegisClient::DescribeSuspEventQuaraFilesOutcomeCallable AegisClient::describeSus
 	return task->get_future();
 }
 
-AegisClient::ValidateHcWarningsOutcome AegisClient::validateHcWarnings(const ValidateHcWarningsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ValidateHcWarningsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ValidateHcWarningsOutcome(ValidateHcWarningsResult(outcome.result()));
-	else
-		return ValidateHcWarningsOutcome(outcome.error());
-}
-
-void AegisClient::validateHcWarningsAsync(const ValidateHcWarningsRequest& request, const ValidateHcWarningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, validateHcWarnings(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::ValidateHcWarningsOutcomeCallable AegisClient::validateHcWarningsCallable(const ValidateHcWarningsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ValidateHcWarningsOutcome()>>(
-			[this, request]()
-			{
-			return this->validateHcWarnings(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::CreateOrUpdateJoinRuleOutcome AegisClient::createOrUpdateJoinRule(const CreateOrUpdateJoinRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7281,6 +8613,42 @@ AegisClient::CreateOrUpdateJoinRuleOutcomeCallable AegisClient::createOrUpdateJo
 			[this, request]()
 			{
 			return this->createOrUpdateJoinRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::ValidateHcWarningsOutcome AegisClient::validateHcWarnings(const ValidateHcWarningsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ValidateHcWarningsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ValidateHcWarningsOutcome(ValidateHcWarningsResult(outcome.result()));
+	else
+		return ValidateHcWarningsOutcome(outcome.error());
+}
+
+void AegisClient::validateHcWarningsAsync(const ValidateHcWarningsRequest& request, const ValidateHcWarningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, validateHcWarnings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::ValidateHcWarningsOutcomeCallable AegisClient::validateHcWarningsCallable(const ValidateHcWarningsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ValidateHcWarningsOutcome()>>(
+			[this, request]()
+			{
+			return this->validateHcWarnings(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7323,6 +8691,42 @@ AegisClient::AutoUpgradeSasOutcomeCallable AegisClient::autoUpgradeSasCallable(c
 	return task->get_future();
 }
 
+AegisClient::ModifyRefreshProcessInfoOutcome AegisClient::modifyRefreshProcessInfo(const ModifyRefreshProcessInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyRefreshProcessInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyRefreshProcessInfoOutcome(ModifyRefreshProcessInfoResult(outcome.result()));
+	else
+		return ModifyRefreshProcessInfoOutcome(outcome.error());
+}
+
+void AegisClient::modifyRefreshProcessInfoAsync(const ModifyRefreshProcessInfoRequest& request, const ModifyRefreshProcessInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyRefreshProcessInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::ModifyRefreshProcessInfoOutcomeCallable AegisClient::modifyRefreshProcessInfoCallable(const ModifyRefreshProcessInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyRefreshProcessInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyRefreshProcessInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::DescribeEmgUserAgreementOutcome AegisClient::describeEmgUserAgreement(const DescribeEmgUserAgreementRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7353,42 +8757,6 @@ AegisClient::DescribeEmgUserAgreementOutcomeCallable AegisClient::describeEmgUse
 			[this, request]()
 			{
 			return this->describeEmgUserAgreement(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AegisClient::ModifyWebLockMachineListOutcome AegisClient::modifyWebLockMachineList(const ModifyWebLockMachineListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyWebLockMachineListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyWebLockMachineListOutcome(ModifyWebLockMachineListResult(outcome.result()));
-	else
-		return ModifyWebLockMachineListOutcome(outcome.error());
-}
-
-void AegisClient::modifyWebLockMachineListAsync(const ModifyWebLockMachineListRequest& request, const ModifyWebLockMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyWebLockMachineList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::ModifyWebLockMachineListOutcomeCallable AegisClient::modifyWebLockMachineListCallable(const ModifyWebLockMachineListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyWebLockMachineListOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyWebLockMachineList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7461,6 +8829,42 @@ AegisClient::DeleteLogQueryOutcomeCallable AegisClient::deleteLogQueryCallable(c
 			[this, request]()
 			{
 			return this->deleteLogQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::ModifyWebLockMachineListOutcome AegisClient::modifyWebLockMachineList(const ModifyWebLockMachineListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyWebLockMachineListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyWebLockMachineListOutcome(ModifyWebLockMachineListResult(outcome.result()));
+	else
+		return ModifyWebLockMachineListOutcome(outcome.error());
+}
+
+void AegisClient::modifyWebLockMachineListAsync(const ModifyWebLockMachineListRequest& request, const ModifyWebLockMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyWebLockMachineList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::ModifyWebLockMachineListOutcomeCallable AegisClient::modifyWebLockMachineListCallable(const ModifyWebLockMachineListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyWebLockMachineListOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyWebLockMachineList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7611,42 +9015,6 @@ AegisClient::DescribeSuspEventUserSettingOutcomeCallable AegisClient::describeSu
 	return task->get_future();
 }
 
-AegisClient::DescribeWhiteListStrategyCountOutcome AegisClient::describeWhiteListStrategyCount(const DescribeWhiteListStrategyCountRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeWhiteListStrategyCountOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeWhiteListStrategyCountOutcome(DescribeWhiteListStrategyCountResult(outcome.result()));
-	else
-		return DescribeWhiteListStrategyCountOutcome(outcome.error());
-}
-
-void AegisClient::describeWhiteListStrategyCountAsync(const DescribeWhiteListStrategyCountRequest& request, const DescribeWhiteListStrategyCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeWhiteListStrategyCount(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::DescribeWhiteListStrategyCountOutcomeCallable AegisClient::describeWhiteListStrategyCountCallable(const DescribeWhiteListStrategyCountRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeWhiteListStrategyCountOutcome()>>(
-			[this, request]()
-			{
-			return this->describeWhiteListStrategyCount(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AegisClient::DescribeVulConfigOutcome AegisClient::describeVulConfig(const DescribeVulConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7677,6 +9045,42 @@ AegisClient::DescribeVulConfigOutcomeCallable AegisClient::describeVulConfigCall
 			[this, request]()
 			{
 			return this->describeVulConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeWhiteListStrategyCountOutcome AegisClient::describeWhiteListStrategyCount(const DescribeWhiteListStrategyCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWhiteListStrategyCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWhiteListStrategyCountOutcome(DescribeWhiteListStrategyCountResult(outcome.result()));
+	else
+		return DescribeWhiteListStrategyCountOutcome(outcome.error());
+}
+
+void AegisClient::describeWhiteListStrategyCountAsync(const DescribeWhiteListStrategyCountRequest& request, const DescribeWhiteListStrategyCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWhiteListStrategyCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeWhiteListStrategyCountOutcomeCallable AegisClient::describeWhiteListStrategyCountCallable(const DescribeWhiteListStrategyCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWhiteListStrategyCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWhiteListStrategyCount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7791,6 +9195,42 @@ AegisClient::DescribeWhiteListAssetOutcomeCallable AegisClient::describeWhiteLis
 	return task->get_future();
 }
 
+AegisClient::UpdateCustomizeReportStatusOutcome AegisClient::updateCustomizeReportStatus(const UpdateCustomizeReportStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCustomizeReportStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCustomizeReportStatusOutcome(UpdateCustomizeReportStatusResult(outcome.result()));
+	else
+		return UpdateCustomizeReportStatusOutcome(outcome.error());
+}
+
+void AegisClient::updateCustomizeReportStatusAsync(const UpdateCustomizeReportStatusRequest& request, const UpdateCustomizeReportStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCustomizeReportStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::UpdateCustomizeReportStatusOutcomeCallable AegisClient::updateCustomizeReportStatusCallable(const UpdateCustomizeReportStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCustomizeReportStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCustomizeReportStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::ModifyClearLogstoreStorageOutcome AegisClient::modifyClearLogstoreStorage(const ModifyClearLogstoreStorageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7899,36 +9339,72 @@ AegisClient::DescribeCheckWarningsOutcomeCallable AegisClient::describeCheckWarn
 	return task->get_future();
 }
 
-AegisClient::DescribeSecurityStatInfoOutcome AegisClient::describeSecurityStatInfo(const DescribeSecurityStatInfoRequest &request) const
+AegisClient::DeleteSuspEventNodeOutcome AegisClient::deleteSuspEventNode(const DeleteSuspEventNodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeSecurityStatInfoOutcome(endpointOutcome.error());
+		return DeleteSuspEventNodeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeSecurityStatInfoOutcome(DescribeSecurityStatInfoResult(outcome.result()));
+		return DeleteSuspEventNodeOutcome(DeleteSuspEventNodeResult(outcome.result()));
 	else
-		return DescribeSecurityStatInfoOutcome(outcome.error());
+		return DeleteSuspEventNodeOutcome(outcome.error());
 }
 
-void AegisClient::describeSecurityStatInfoAsync(const DescribeSecurityStatInfoRequest& request, const DescribeSecurityStatInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AegisClient::deleteSuspEventNodeAsync(const DeleteSuspEventNodeRequest& request, const DeleteSuspEventNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeSecurityStatInfo(request), context);
+		handler(this, request, deleteSuspEventNode(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AegisClient::DescribeSecurityStatInfoOutcomeCallable AegisClient::describeSecurityStatInfoCallable(const DescribeSecurityStatInfoRequest &request) const
+AegisClient::DeleteSuspEventNodeOutcomeCallable AegisClient::deleteSuspEventNodeCallable(const DeleteSuspEventNodeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeSecurityStatInfoOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteSuspEventNodeOutcome()>>(
 			[this, request]()
 			{
-			return this->describeSecurityStatInfo(request);
+			return this->deleteSuspEventNode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeHostStatisticsOutcome AegisClient::describeHostStatistics(const DescribeHostStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHostStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHostStatisticsOutcome(DescribeHostStatisticsResult(outcome.result()));
+	else
+		return DescribeHostStatisticsOutcome(outcome.error());
+}
+
+void AegisClient::describeHostStatisticsAsync(const DescribeHostStatisticsRequest& request, const DescribeHostStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHostStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeHostStatisticsOutcomeCallable AegisClient::describeHostStatisticsCallable(const DescribeHostStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHostStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHostStatistics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7971,6 +9447,42 @@ AegisClient::SaveWhiteListStrategyOutcomeCallable AegisClient::saveWhiteListStra
 	return task->get_future();
 }
 
+AegisClient::DescribeSecurityStatInfoOutcome AegisClient::describeSecurityStatInfo(const DescribeSecurityStatInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSecurityStatInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSecurityStatInfoOutcome(DescribeSecurityStatInfoResult(outcome.result()));
+	else
+		return DescribeSecurityStatInfoOutcome(outcome.error());
+}
+
+void AegisClient::describeSecurityStatInfoAsync(const DescribeSecurityStatInfoRequest& request, const DescribeSecurityStatInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSecurityStatInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeSecurityStatInfoOutcomeCallable AegisClient::describeSecurityStatInfoCallable(const DescribeSecurityStatInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSecurityStatInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSecurityStatInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AegisClient::DescribeFilterFieldsOutcome AegisClient::describeFilterFields(const DescribeFilterFieldsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8001,6 +9513,42 @@ AegisClient::DescribeFilterFieldsOutcomeCallable AegisClient::describeFilterFiel
 			[this, request]()
 			{
 			return this->describeFilterFields(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AegisClient::DescribeInstanceStatisticsOutcome AegisClient::describeInstanceStatistics(const DescribeInstanceStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceStatisticsOutcome(DescribeInstanceStatisticsResult(outcome.result()));
+	else
+		return DescribeInstanceStatisticsOutcome(outcome.error());
+}
+
+void AegisClient::describeInstanceStatisticsAsync(const DescribeInstanceStatisticsRequest& request, const DescribeInstanceStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AegisClient::DescribeInstanceStatisticsOutcomeCallable AegisClient::describeInstanceStatisticsCallable(const DescribeInstanceStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceStatistics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8073,42 +9621,6 @@ AegisClient::OperateSuspiciousOverallConfigOutcomeCallable AegisClient::operateS
 			[this, request]()
 			{
 			return this->operateSuspiciousOverallConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AegisClient::DescribeInstanceStatisticsOutcome AegisClient::describeInstanceStatistics(const DescribeInstanceStatisticsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeInstanceStatisticsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeInstanceStatisticsOutcome(DescribeInstanceStatisticsResult(outcome.result()));
-	else
-		return DescribeInstanceStatisticsOutcome(outcome.error());
-}
-
-void AegisClient::describeInstanceStatisticsAsync(const DescribeInstanceStatisticsRequest& request, const DescribeInstanceStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeInstanceStatistics(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AegisClient::DescribeInstanceStatisticsOutcomeCallable AegisClient::describeInstanceStatisticsCallable(const DescribeInstanceStatisticsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeInstanceStatisticsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeInstanceStatistics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

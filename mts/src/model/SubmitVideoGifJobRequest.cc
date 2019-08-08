@@ -33,7 +33,7 @@ std::string SubmitVideoGifJobRequest::getInput()const
 void SubmitVideoGifJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setParameter("Input", input);
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitVideoGifJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitVideoGifJobRequest::getUserData()const
 void SubmitVideoGifJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitVideoGifJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SubmitVideoGifJobRequest::getResourceOwnerId()const
 void SubmitVideoGifJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitVideoGifJobRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitVideoGifJobRequest::getResourceOwnerAccount()const
 void SubmitVideoGifJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitVideoGifJobRequest::getVideoGifConfig()const
@@ -77,7 +77,7 @@ std::string SubmitVideoGifJobRequest::getVideoGifConfig()const
 void SubmitVideoGifJobRequest::setVideoGifConfig(const std::string& videoGifConfig)
 {
 	videoGifConfig_ = videoGifConfig;
-	setParameter("VideoGifConfig", videoGifConfig);
+	setCoreParameter("VideoGifConfig", videoGifConfig);
 }
 
 std::string SubmitVideoGifJobRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitVideoGifJobRequest::getOwnerAccount()const
 void SubmitVideoGifJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitVideoGifJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SubmitVideoGifJobRequest::getOwnerId()const
 void SubmitVideoGifJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitVideoGifJobRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SubmitVideoGifJobRequest::getAccessKeyId()const
 void SubmitVideoGifJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitVideoGifJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitVideoGifJobRequest::getPipelineId()const
 void SubmitVideoGifJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

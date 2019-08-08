@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,59 +17,54 @@
 #ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINQPSDATARESULT_H_
 #define ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINQPSDATARESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/cdn/CdnExport.h>
+#include <alibabacloud/core/ServiceResult.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Cdn
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeDomainQpsDataResult : public ServiceResult
-			{
-			public:
-				struct DataModule
-				{
-					std::string overseasValue;
-					std::string staticOverseasValue;
-					std::string staticValue;
-					std::string staticDomesticValue;
-					std::string timeStamp;
-					std::string domesticValue;
-					std::string dynamicOverseasValue;
-					std::string accDomesticValue;
-					std::string value;
-					std::string accOverseasValue;
-					std::string dynamicDomesticValue;
-					std::string accValue;
-					std::string dynamicValue;
-				};
+namespace AlibabaCloud {
+namespace Cdn {
+namespace Model {
+class ALIBABACLOUD_CDN_EXPORT DescribeDomainQpsDataResult
+    : public ServiceResult {
+public:
+  struct DataModule {
+    std::string overseasValue;
+    std::string staticOverseasValue;
+    std::string staticValue;
+    std::string staticDomesticValue;
+    std::string timeStamp;
+    std::string domesticValue;
+    std::string dynamicOverseasValue;
+    std::string accDomesticValue;
+    std::string value;
+    std::string accOverseasValue;
+    std::string dynamicDomesticValue;
+    std::string accValue;
+    std::string dynamicValue;
+  };
 
+  DescribeDomainQpsDataResult();
+  explicit DescribeDomainQpsDataResult(const std::string &payload);
+  ~DescribeDomainQpsDataResult();
+  std::string getEndTime() const;
+  std::string getDomainName() const;
+  std::string getStartTime() const;
+  std::string getDataInterval() const;
+  std::vector<DataModule> getQpsDataInterval() const;
 
-				DescribeDomainQpsDataResult();
-				explicit DescribeDomainQpsDataResult(const std::string &payload);
-				~DescribeDomainQpsDataResult();
-				std::string getEndTime()const;
-				std::string getDomainName()const;
-				std::string getStartTime()const;
-				std::string getDataInterval()const;
-				std::vector<DataModule> getQpsDataInterval()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string endTime_;
-				std::string domainName_;
-				std::string startTime_;
-				std::string dataInterval_;
-				std::vector<DataModule> qpsDataInterval_;
-
-			};
-		}
-	}
-}
+private:
+  std::string endTime_;
+  std::string domainName_;
+  std::string startTime_;
+  std::string dataInterval_;
+  std::vector<DataModule> qpsDataInterval_;
+};
+} // namespace Model
+} // namespace Cdn
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINQPSDATARESULT_H_

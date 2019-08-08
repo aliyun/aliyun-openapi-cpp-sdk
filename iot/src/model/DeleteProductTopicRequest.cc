@@ -33,7 +33,18 @@ std::string DeleteProductTopicRequest::getTopicId()const
 void DeleteProductTopicRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setParameter("TopicId", topicId);
+	setCoreParameter("TopicId", topicId);
+}
+
+std::string DeleteProductTopicRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void DeleteProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string DeleteProductTopicRequest::getAccessKeyId()const
@@ -44,6 +55,6 @@ std::string DeleteProductTopicRequest::getAccessKeyId()const
 void DeleteProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,6 +33,6 @@ std::string DescribeTaskDetailRequest::getTaskId()const
 void DescribeTaskDetailRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 

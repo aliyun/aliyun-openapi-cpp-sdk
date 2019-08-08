@@ -25,17 +25,6 @@ OnsTraceGetResultRequest::OnsTraceGetResultRequest() :
 OnsTraceGetResultRequest::~OnsTraceGetResultRequest()
 {}
 
-long OnsTraceGetResultRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsTraceGetResultRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsTraceGetResultRequest::getQueryId()const
 {
 	return queryId_;

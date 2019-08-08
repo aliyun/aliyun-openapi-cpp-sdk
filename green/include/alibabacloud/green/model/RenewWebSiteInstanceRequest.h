@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,53 +17,49 @@
 #ifndef ALIBABACLOUD_GREEN_MODEL_RENEWWEBSITEINSTANCEREQUEST_H_
 #define ALIBABACLOUD_GREEN_MODEL_RENEWWEBSITEINSTANCEREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/green/GreenExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Green
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_GREEN_EXPORT RenewWebSiteInstanceRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Green {
+namespace Model {
+class ALIBABACLOUD_GREEN_EXPORT RenewWebSiteInstanceRequest
+    : public RpcServiceRequest {
 
-			public:
-				RenewWebSiteInstanceRequest();
-				~RenewWebSiteInstanceRequest();
+public:
+  RenewWebSiteInstanceRequest();
+  ~RenewWebSiteInstanceRequest();
 
-				int getDuration()const;
-				void setDuration(int duration);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				int getOrderNum()const;
-				void setOrderNum(int orderNum);
-				std::string getCommodityCode()const;
-				void setCommodityCode(const std::string& commodityCode);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getPricingCycle()const;
-				void setPricingCycle(const std::string& pricingCycle);
-				std::string getOrderType()const;
-				void setOrderType(const std::string& orderType);
+  int getDuration() const;
+  void setDuration(int duration);
+  std::string getInstanceId() const;
+  void setInstanceId(const std::string &instanceId);
+  std::string getClientToken() const;
+  void setClientToken(const std::string &clientToken);
+  int getOrderNum() const;
+  void setOrderNum(int orderNum);
+  std::string getCommodityCode() const;
+  void setCommodityCode(const std::string &commodityCode);
+  long getOwnerId() const;
+  void setOwnerId(long ownerId);
+  std::string getPricingCycle() const;
+  void setPricingCycle(const std::string &pricingCycle);
+  std::string getOrderType() const;
+  void setOrderType(const std::string &orderType);
 
-            private:
-				int duration_;
-				std::string instanceId_;
-				std::string clientToken_;
-				int orderNum_;
-				std::string commodityCode_;
-				long ownerId_;
-				std::string pricingCycle_;
-				std::string orderType_;
-
-			};
-		}
-	}
-}
+private:
+  int duration_;
+  std::string instanceId_;
+  std::string clientToken_;
+  int orderNum_;
+  std::string commodityCode_;
+  long ownerId_;
+  std::string pricingCycle_;
+  std::string orderType_;
+};
+} // namespace Model
+} // namespace Green
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_GREEN_MODEL_RENEWWEBSITEINSTANCEREQUEST_H_

@@ -25,18 +25,18 @@ namespace Location {
 namespace Model {
 class ALIBABACLOUD_CORE_EXPORT DescribeEndpointsRequest
     : public LocationRequest {
- public:
+public:
   DescribeEndpointsRequest();
   ~DescribeEndpointsRequest();
 
-  std::string serviceCode()const;
-  void setServiceCode(const std::string& serviceCode);
-  std::string id()const;
-  void setId(const std::string& id);
-  std::string type()const;
-  void setType(const std::string& type);
+  std::string serviceCode() const;
+  void setServiceCode(const std::string &serviceCode);
+  std::string id() const;
+  void setId(const std::string &id);
+  std::string type() const;
+  void setType(const std::string &type);
 };
-}  // namespace Model
-}  // namespace Location
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSREQUEST_H_
+} // namespace Model
+} // namespace Location
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSREQUEST_H_

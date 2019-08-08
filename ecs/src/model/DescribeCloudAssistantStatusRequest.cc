@@ -301,3 +301,14 @@ void DescribeCloudAssistantStatusRequest::setRequestId(const std::string& reques
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeCloudAssistantStatusRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeCloudAssistantStatusRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

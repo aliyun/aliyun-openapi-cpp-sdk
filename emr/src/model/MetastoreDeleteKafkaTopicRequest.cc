@@ -33,7 +33,7 @@ long MetastoreDeleteKafkaTopicRequest::getResourceOwnerId()const
 void MetastoreDeleteKafkaTopicRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreDeleteKafkaTopicRequest::getTopicId()const
@@ -44,7 +44,7 @@ std::string MetastoreDeleteKafkaTopicRequest::getTopicId()const
 void MetastoreDeleteKafkaTopicRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setParameter("TopicId", topicId);
+	setCoreParameter("TopicId", topicId);
 }
 
 std::string MetastoreDeleteKafkaTopicRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreDeleteKafkaTopicRequest::getRegionId()const
 void MetastoreDeleteKafkaTopicRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreDeleteKafkaTopicRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string MetastoreDeleteKafkaTopicRequest::getAccessKeyId()const
 void MetastoreDeleteKafkaTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

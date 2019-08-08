@@ -33,7 +33,7 @@ std::string ListApgroupConfigRequest::getOrderCol()const
 void ListApgroupConfigRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", orderCol);
 }
 
 std::string ListApgroupConfigRequest::getSearchName()const
@@ -44,7 +44,7 @@ std::string ListApgroupConfigRequest::getSearchName()const
 void ListApgroupConfigRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setParameter("SearchName", searchName);
+	setCoreParameter("SearchName", searchName);
 }
 
 std::string ListApgroupConfigRequest::getSearchCompany()const
@@ -55,7 +55,7 @@ std::string ListApgroupConfigRequest::getSearchCompany()const
 void ListApgroupConfigRequest::setSearchCompany(const std::string& searchCompany)
 {
 	searchCompany_ = searchCompany;
-	setParameter("SearchCompany", searchCompany);
+	setCoreParameter("SearchCompany", searchCompany);
 }
 
 int ListApgroupConfigRequest::getLength()const
@@ -66,7 +66,7 @@ int ListApgroupConfigRequest::getLength()const
 void ListApgroupConfigRequest::setLength(int length)
 {
 	length_ = length;
-	setParameter("Length", std::to_string(length));
+	setCoreParameter("Length", std::to_string(length));
 }
 
 int ListApgroupConfigRequest::getPageIndex()const
@@ -77,7 +77,7 @@ int ListApgroupConfigRequest::getPageIndex()const
 void ListApgroupConfigRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListApgroupConfigRequest::getOrderDir()const
@@ -88,7 +88,7 @@ std::string ListApgroupConfigRequest::getOrderDir()const
 void ListApgroupConfigRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", orderDir);
 }
 
 std::string ListApgroupConfigRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListApgroupConfigRequest::getAccessKeyId()const
 void ListApgroupConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

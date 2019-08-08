@@ -123,42 +123,6 @@ TeslaMaxComputeClient::GetProjectInstanceOutcomeCallable TeslaMaxComputeClient::
 	return task->get_future();
 }
 
-TeslaMaxComputeClient::QueryResourceInventoryOutcome TeslaMaxComputeClient::queryResourceInventory(const QueryResourceInventoryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryResourceInventoryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryResourceInventoryOutcome(QueryResourceInventoryResult(outcome.result()));
-	else
-		return QueryResourceInventoryOutcome(outcome.error());
-}
-
-void TeslaMaxComputeClient::queryResourceInventoryAsync(const QueryResourceInventoryRequest& request, const QueryResourceInventoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryResourceInventory(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TeslaMaxComputeClient::QueryResourceInventoryOutcomeCallable TeslaMaxComputeClient::queryResourceInventoryCallable(const QueryResourceInventoryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryResourceInventoryOutcome()>>(
-			[this, request]()
-			{
-			return this->queryResourceInventory(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 TeslaMaxComputeClient::QueryTopologyOutcome TeslaMaxComputeClient::queryTopology(const QueryTopologyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +153,42 @@ TeslaMaxComputeClient::QueryTopologyOutcomeCallable TeslaMaxComputeClient::query
 			[this, request]()
 			{
 			return this->queryTopology(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TeslaMaxComputeClient::QueryResourceInventoryOutcome TeslaMaxComputeClient::queryResourceInventory(const QueryResourceInventoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryResourceInventoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryResourceInventoryOutcome(QueryResourceInventoryResult(outcome.result()));
+	else
+		return QueryResourceInventoryOutcome(outcome.error());
+}
+
+void TeslaMaxComputeClient::queryResourceInventoryAsync(const QueryResourceInventoryRequest& request, const QueryResourceInventoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryResourceInventory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TeslaMaxComputeClient::QueryResourceInventoryOutcomeCallable TeslaMaxComputeClient::queryResourceInventoryCallable(const QueryResourceInventoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryResourceInventoryOutcome()>>(
+			[this, request]()
+			{
+			return this->queryResourceInventory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

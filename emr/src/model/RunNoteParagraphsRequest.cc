@@ -33,7 +33,7 @@ long RunNoteParagraphsRequest::getResourceOwnerId()const
 void RunNoteParagraphsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RunNoteParagraphsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string RunNoteParagraphsRequest::getRegionId()const
 void RunNoteParagraphsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RunNoteParagraphsRequest::getNoteId()const
@@ -55,7 +55,7 @@ std::string RunNoteParagraphsRequest::getNoteId()const
 void RunNoteParagraphsRequest::setNoteId(const std::string& noteId)
 {
 	noteId_ = noteId;
-	setParameter("NoteId", noteId);
+	setCoreParameter("NoteId", noteId);
 }
 
 std::string RunNoteParagraphsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string RunNoteParagraphsRequest::getAccessKeyId()const
 void RunNoteParagraphsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -300,6 +300,17 @@ void AttachNetworkInterfaceRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string AttachNetworkInterfaceRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void AttachNetworkInterfaceRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string AttachNetworkInterfaceRequest::getNetworkInterfaceId()const
 {
 	return networkInterfaceId_;

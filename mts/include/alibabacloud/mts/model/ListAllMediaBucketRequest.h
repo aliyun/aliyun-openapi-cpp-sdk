@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,50 +17,46 @@
 #ifndef ALIBABACLOUD_MTS_MODEL_LISTALLMEDIABUCKETREQUEST_H_
 #define ALIBABACLOUD_MTS_MODEL_LISTALLMEDIABUCKETREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/mts/MtsExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Mts
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_MTS_EXPORT ListAllMediaBucketRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Mts {
+namespace Model {
+class ALIBABACLOUD_MTS_EXPORT ListAllMediaBucketRequest
+    : public RpcServiceRequest {
 
-			public:
-				ListAllMediaBucketRequest();
-				~ListAllMediaBucketRequest();
+public:
+  ListAllMediaBucketRequest();
+  ~ListAllMediaBucketRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getNextPageToken()const;
-				void setNextPageToken(const std::string& nextPageToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				int getMaximumPageSize()const;
-				void setMaximumPageSize(int maximumPageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+  long getResourceOwnerId() const;
+  void setResourceOwnerId(long resourceOwnerId);
+  std::string getResourceOwnerAccount() const;
+  void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+  std::string getNextPageToken() const;
+  void setNextPageToken(const std::string &nextPageToken);
+  std::string getOwnerAccount() const;
+  void setOwnerAccount(const std::string &ownerAccount);
+  int getMaximumPageSize() const;
+  void setMaximumPageSize(int maximumPageSize);
+  long getOwnerId() const;
+  void setOwnerId(long ownerId);
+  std::string getAccessKeyId() const;
+  void setAccessKeyId(const std::string &accessKeyId);
 
-            private:
-				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string nextPageToken_;
-				std::string ownerAccount_;
-				int maximumPageSize_;
-				long ownerId_;
-				std::string accessKeyId_;
-
-			};
-		}
-	}
-}
+private:
+  long resourceOwnerId_;
+  std::string resourceOwnerAccount_;
+  std::string nextPageToken_;
+  std::string ownerAccount_;
+  int maximumPageSize_;
+  long ownerId_;
+  std::string accessKeyId_;
+};
+} // namespace Model
+} // namespace Mts
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_MTS_MODEL_LISTALLMEDIABUCKETREQUEST_H_

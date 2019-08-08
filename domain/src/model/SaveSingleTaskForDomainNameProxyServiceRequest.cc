@@ -33,7 +33,7 @@ std::string SaveSingleTaskForDomainNameProxyServiceRequest::getUserClientIp()con
 void SaveSingleTaskForDomainNameProxyServiceRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForDomainNameProxyServiceRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForDomainNameProxyServiceRequest::getDomainName()const
 void SaveSingleTaskForDomainNameProxyServiceRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForDomainNameProxyServiceRequest::getLang()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForDomainNameProxyServiceRequest::getLang()const
 void SaveSingleTaskForDomainNameProxyServiceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 bool SaveSingleTaskForDomainNameProxyServiceRequest::getStatus()const
@@ -66,6 +66,6 @@ bool SaveSingleTaskForDomainNameProxyServiceRequest::getStatus()const
 void SaveSingleTaskForDomainNameProxyServiceRequest::setStatus(bool status)
 {
 	status_ = status;
-	setParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status ? "true" : "false");
 }
 

@@ -33,7 +33,7 @@ std::string CreateResourcePoolRequest::getNote()const
 void CreateResourcePoolRequest::setNote(const std::string& note)
 {
 	note_ = note;
-	setParameter("Note", note);
+	setCoreParameter("Note", note);
 }
 
 long CreateResourcePoolRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateResourcePoolRequest::getResourceOwnerId()const
 void CreateResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateResourcePoolRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string CreateResourcePoolRequest::getRegionId()const
 void CreateResourcePoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateResourcePoolRequest::getName()const
@@ -66,7 +66,7 @@ std::string CreateResourcePoolRequest::getName()const
 void CreateResourcePoolRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 bool CreateResourcePoolRequest::getActive()const
@@ -77,7 +77,7 @@ bool CreateResourcePoolRequest::getActive()const
 void CreateResourcePoolRequest::setActive(bool active)
 {
 	active_ = active;
-	setParameter("Active", std::to_string(active));
+	setCoreParameter("Active", active ? "true" : "false");
 }
 
 std::string CreateResourcePoolRequest::getClusterId()const
@@ -88,7 +88,7 @@ std::string CreateResourcePoolRequest::getClusterId()const
 void CreateResourcePoolRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string CreateResourcePoolRequest::getYarnSiteConfig()const
@@ -99,7 +99,7 @@ std::string CreateResourcePoolRequest::getYarnSiteConfig()const
 void CreateResourcePoolRequest::setYarnSiteConfig(const std::string& yarnSiteConfig)
 {
 	yarnSiteConfig_ = yarnSiteConfig;
-	setParameter("YarnSiteConfig", yarnSiteConfig);
+	setCoreParameter("YarnSiteConfig", yarnSiteConfig);
 }
 
 std::vector<CreateResourcePoolRequest::Config> CreateResourcePoolRequest::getConfig()const
@@ -114,12 +114,12 @@ void CreateResourcePoolRequest::setConfig(const std::vector<Config>& config)
 	for(int i = 0; i!= config.size(); i++)	{
 		auto obj = config.at(i);
 		std::string str ="Config."+ std::to_string(i);
-		setParameter(str + ".ConfigKey", obj.configKey);
-		setParameter(str + ".Note", obj.note);
-		setParameter(str + ".configType", obj.configType);
-		setParameter(str + ".TargetId", obj.targetId);
-		setParameter(str + ".ConfigValue", obj.configValue);
-		setParameter(str + ".Category", obj.category);
+		setCoreParameter(str + ".ConfigKey", obj.configKey);
+		setCoreParameter(str + ".Note", obj.note);
+		setCoreParameter(str + ".configType", obj.configType);
+		setCoreParameter(str + ".TargetId", obj.targetId);
+		setCoreParameter(str + ".ConfigValue", obj.configValue);
+		setCoreParameter(str + ".Category", obj.category);
 	}
 }
 
@@ -131,7 +131,7 @@ std::string CreateResourcePoolRequest::getAccessKeyId()const
 void CreateResourcePoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateResourcePoolRequest::getPoolType()const
@@ -142,6 +142,6 @@ std::string CreateResourcePoolRequest::getPoolType()const
 void CreateResourcePoolRequest::setPoolType(const std::string& poolType)
 {
 	poolType_ = poolType;
-	setParameter("PoolType", poolType);
+	setCoreParameter("PoolType", poolType);
 }
 

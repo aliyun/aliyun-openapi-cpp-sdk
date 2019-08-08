@@ -33,7 +33,7 @@ std::string ListRegisteredTagsRequest::getStoreName()const
 void ListRegisteredTagsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::vector<std::string> ListRegisteredTagsRequest::getLang()const
@@ -45,6 +45,6 @@ void ListRegisteredTagsRequest::setLang(const std::vector<std::string>& lang)
 {
 	lang_ = lang;
 	for(int i = 0; i!= lang.size(); i++)
-		setParameter("Lang."+ std::to_string(i), lang.at(i));
+		setCoreParameter("Lang."+ std::to_string(i), lang.at(i));
 }
 

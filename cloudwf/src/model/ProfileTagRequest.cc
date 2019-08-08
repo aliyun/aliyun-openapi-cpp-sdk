@@ -33,7 +33,7 @@ long ProfileTagRequest::getIdtype()const
 void ProfileTagRequest::setIdtype(long idtype)
 {
 	idtype_ = idtype;
-	setParameter("Idtype", std::to_string(idtype));
+	setCoreParameter("Idtype", std::to_string(idtype));
 }
 
 std::string ProfileTagRequest::getBeginDate()const
@@ -44,7 +44,7 @@ std::string ProfileTagRequest::getBeginDate()const
 void ProfileTagRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setParameter("BeginDate", beginDate);
+	setCoreParameter("BeginDate", beginDate);
 }
 
 std::string ProfileTagRequest::getEndDate()const
@@ -55,7 +55,7 @@ std::string ProfileTagRequest::getEndDate()const
 void ProfileTagRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setParameter("EndDate", endDate);
+	setCoreParameter("EndDate", endDate);
 }
 
 int ProfileTagRequest::getAppType()const
@@ -66,7 +66,7 @@ int ProfileTagRequest::getAppType()const
 void ProfileTagRequest::setAppType(int appType)
 {
 	appType_ = appType;
-	setParameter("AppType", std::to_string(appType));
+	setCoreParameter("AppType", std::to_string(appType));
 }
 
 std::string ProfileTagRequest::getTag()const
@@ -77,7 +77,7 @@ std::string ProfileTagRequest::getTag()const
 void ProfileTagRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setParameter("Tag", tag);
+	setCoreParameter("Tag", tag);
 }
 
 std::string ProfileTagRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string ProfileTagRequest::getAccessKeyId()const
 void ProfileTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long ProfileTagRequest::getAgsid()const
@@ -99,7 +99,7 @@ long ProfileTagRequest::getAgsid()const
 void ProfileTagRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setParameter("Agsid", std::to_string(agsid));
+	setCoreParameter("Agsid", std::to_string(agsid));
 }
 
 int ProfileTagRequest::getAreaNumber()const
@@ -110,6 +110,6 @@ int ProfileTagRequest::getAreaNumber()const
 void ProfileTagRequest::setAreaNumber(int areaNumber)
 {
 	areaNumber_ = areaNumber;
-	setParameter("AreaNumber", std::to_string(areaNumber));
+	setCoreParameter("AreaNumber", std::to_string(areaNumber));
 }
 

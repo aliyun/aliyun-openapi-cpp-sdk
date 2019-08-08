@@ -33,7 +33,7 @@ std::string ListSkillGroupsRequest::getInstanceId()const
 void ListSkillGroupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListSkillGroupsRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ListSkillGroupsRequest::getAccessKeyId()const
 void ListSkillGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

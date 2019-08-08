@@ -25,17 +25,6 @@ OnsMessagePageQueryByTopicRequest::OnsMessagePageQueryByTopicRequest() :
 OnsMessagePageQueryByTopicRequest::~OnsMessagePageQueryByTopicRequest()
 {}
 
-long OnsMessagePageQueryByTopicRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsMessagePageQueryByTopicRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsMessagePageQueryByTopicRequest::getInstanceId()const
 {
 	return instanceId_;

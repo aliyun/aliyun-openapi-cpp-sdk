@@ -33,7 +33,7 @@ std::string GetUserOutputStatisticInfoRequest::getFromDatetime()const
 void GetUserOutputStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setParameter("FromDatetime", fromDatetime);
+	setCoreParameter("FromDatetime", fromDatetime);
 }
 
 long GetUserOutputStatisticInfoRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long GetUserOutputStatisticInfoRequest::getResourceOwnerId()const
 void GetUserOutputStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetUserOutputStatisticInfoRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GetUserOutputStatisticInfoRequest::getRegionId()const
 void GetUserOutputStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetUserOutputStatisticInfoRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string GetUserOutputStatisticInfoRequest::getClusterId()const
 void GetUserOutputStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string GetUserOutputStatisticInfoRequest::getToDatetime()const
@@ -77,7 +77,7 @@ std::string GetUserOutputStatisticInfoRequest::getToDatetime()const
 void GetUserOutputStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setParameter("ToDatetime", toDatetime);
+	setCoreParameter("ToDatetime", toDatetime);
 }
 
 std::string GetUserOutputStatisticInfoRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string GetUserOutputStatisticInfoRequest::getAccessKeyId()const
 void GetUserOutputStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

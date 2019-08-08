@@ -333,3 +333,14 @@ void DescribeHpcClustersRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeHpcClustersRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeHpcClustersRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

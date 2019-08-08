@@ -51,42 +51,6 @@ UbsmsClient::UbsmsClient(const std::string & accessKeyId, const std::string & ac
 UbsmsClient::~UbsmsClient()
 {}
 
-UbsmsClient::NotifyUserBusinessCommandOutcome UbsmsClient::notifyUserBusinessCommand(const NotifyUserBusinessCommandRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return NotifyUserBusinessCommandOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return NotifyUserBusinessCommandOutcome(NotifyUserBusinessCommandResult(outcome.result()));
-	else
-		return NotifyUserBusinessCommandOutcome(outcome.error());
-}
-
-void UbsmsClient::notifyUserBusinessCommandAsync(const NotifyUserBusinessCommandRequest& request, const NotifyUserBusinessCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, notifyUserBusinessCommand(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-UbsmsClient::NotifyUserBusinessCommandOutcomeCallable UbsmsClient::notifyUserBusinessCommandCallable(const NotifyUserBusinessCommandRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<NotifyUserBusinessCommandOutcome()>>(
-			[this, request]()
-			{
-			return this->notifyUserBusinessCommand(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 UbsmsClient::DescribeBusinessStatusOutcome UbsmsClient::describeBusinessStatus(const DescribeBusinessStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +81,42 @@ UbsmsClient::DescribeBusinessStatusOutcomeCallable UbsmsClient::describeBusiness
 			[this, request]()
 			{
 			return this->describeBusinessStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+UbsmsClient::NotifyUserBusinessCommandOutcome UbsmsClient::notifyUserBusinessCommand(const NotifyUserBusinessCommandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return NotifyUserBusinessCommandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return NotifyUserBusinessCommandOutcome(NotifyUserBusinessCommandResult(outcome.result()));
+	else
+		return NotifyUserBusinessCommandOutcome(outcome.error());
+}
+
+void UbsmsClient::notifyUserBusinessCommandAsync(const NotifyUserBusinessCommandRequest& request, const NotifyUserBusinessCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, notifyUserBusinessCommand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+UbsmsClient::NotifyUserBusinessCommandOutcomeCallable UbsmsClient::notifyUserBusinessCommandCallable(const NotifyUserBusinessCommandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<NotifyUserBusinessCommandOutcome()>>(
+			[this, request]()
+			{
+			return this->notifyUserBusinessCommand(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

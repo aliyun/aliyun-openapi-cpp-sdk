@@ -33,7 +33,7 @@ long DescribeScdnDomainIspDataRequest::getCallerParentId()const
 void DescribeScdnDomainIspDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeScdnDomainIspDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeScdnDomainIspDataRequest::getProxy_original_security_transport()con
 void DescribeScdnDomainIspDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeScdnDomainIspDataRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string DescribeScdnDomainIspDataRequest::getStartTime()const
 void DescribeScdnDomainIspDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeScdnDomainIspDataRequest::getProxy_original_source_ip()const
 void DescribeScdnDomainIspDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeScdnDomainIspDataRequest::getOwnerIdLoginEmail()const
 void DescribeScdnDomainIspDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeScdnDomainIspDataRequest::getCallerType()const
 void DescribeScdnDomainIspDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeScdnDomainIspDataRequest::getAccessKeyId()const
 void DescribeScdnDomainIspDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeScdnDomainIspDataRequest::getSecurityToken()const
 void DescribeScdnDomainIspDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string DescribeScdnDomainIspDataRequest::getRequestContent()const
 void DescribeScdnDomainIspDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string DescribeScdnDomainIspDataRequest::getCallerBidEmail()const
 void DescribeScdnDomainIspDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getCallerUidEmail()const
@@ -143,7 +143,7 @@ std::string DescribeScdnDomainIspDataRequest::getCallerUidEmail()const
 void DescribeScdnDomainIspDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeScdnDomainIspDataRequest::getCallerUid()const
@@ -154,7 +154,7 @@ long DescribeScdnDomainIspDataRequest::getCallerUid()const
 void DescribeScdnDomainIspDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeScdnDomainIspDataRequest::getApp_ip()const
@@ -165,7 +165,7 @@ std::string DescribeScdnDomainIspDataRequest::getApp_ip()const
 void DescribeScdnDomainIspDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getPopProduct()const
@@ -176,7 +176,7 @@ std::string DescribeScdnDomainIspDataRequest::getPopProduct()const
 void DescribeScdnDomainIspDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getProduct()const
@@ -187,7 +187,7 @@ std::string DescribeScdnDomainIspDataRequest::getProduct()const
 void DescribeScdnDomainIspDataRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getDomainName()const
@@ -198,7 +198,7 @@ std::string DescribeScdnDomainIspDataRequest::getDomainName()const
 void DescribeScdnDomainIspDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getEndTime()const
@@ -209,7 +209,7 @@ std::string DescribeScdnDomainIspDataRequest::getEndTime()const
 void DescribeScdnDomainIspDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeScdnDomainIspDataRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DescribeScdnDomainIspDataRequest::getCallerBid()const
 void DescribeScdnDomainIspDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeScdnDomainIspDataRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long DescribeScdnDomainIspDataRequest::getOwnerId()const
 void DescribeScdnDomainIspDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScdnDomainIspDataRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string DescribeScdnDomainIspDataRequest::getVersion()const
 void DescribeScdnDomainIspDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool DescribeScdnDomainIspDataRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DescribeScdnDomainIspDataRequest::getProxy_trust_transport_info()const
 void DescribeScdnDomainIspDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeScdnDomainIspDataRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeScdnDomainIspDataRequest::getAk_mfa_present()const
 void DescribeScdnDomainIspDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeScdnDomainIspDataRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeScdnDomainIspDataRequest::getSecurity_transport()const
 void DescribeScdnDomainIspDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeScdnDomainIspDataRequest::getRequestId()const
@@ -286,6 +286,6 @@ std::string DescribeScdnDomainIspDataRequest::getRequestId()const
 void DescribeScdnDomainIspDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

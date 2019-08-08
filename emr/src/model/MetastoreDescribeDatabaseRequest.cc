@@ -33,7 +33,7 @@ long MetastoreDescribeDatabaseRequest::getResourceOwnerId()const
 void MetastoreDescribeDatabaseRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreDescribeDatabaseRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string MetastoreDescribeDatabaseRequest::getDbName()const
 void MetastoreDescribeDatabaseRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string MetastoreDescribeDatabaseRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreDescribeDatabaseRequest::getRegionId()const
 void MetastoreDescribeDatabaseRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreDescribeDatabaseRequest::getId()const
@@ -66,7 +66,7 @@ std::string MetastoreDescribeDatabaseRequest::getId()const
 void MetastoreDescribeDatabaseRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string MetastoreDescribeDatabaseRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string MetastoreDescribeDatabaseRequest::getAccessKeyId()const
 void MetastoreDescribeDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

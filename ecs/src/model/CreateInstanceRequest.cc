@@ -135,6 +135,17 @@ void CreateInstanceRequest::setPassword(const std::string& password)
 	setCoreParameter("Password", password);
 }
 
+int CreateInstanceRequest::getStorageSetPartitionNumber()const
+{
+	return storageSetPartitionNumber_;
+}
+
+void CreateInstanceRequest::setStorageSetPartitionNumber(int storageSetPartitionNumber)
+{
+	storageSetPartitionNumber_ = storageSetPartitionNumber;
+	setCoreParameter("StorageSetPartitionNumber", std::to_string(storageSetPartitionNumber));
+}
+
 std::vector<CreateInstanceRequest::Tag> CreateInstanceRequest::getTag()const
 {
 	return tag_;
@@ -449,6 +460,17 @@ void CreateInstanceRequest::setCapacityReservationId(const std::string& capacity
 	setCoreParameter("CapacityReservationId", capacityReservationId);
 }
 
+std::string CreateInstanceRequest::getSystemDiskPerformanceLevel()const
+{
+	return systemDiskPerformanceLevel_;
+}
+
+void CreateInstanceRequest::setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel)
+{
+	systemDiskPerformanceLevel_ = systemDiskPerformanceLevel;
+	setCoreParameter("SystemDiskPerformanceLevel", systemDiskPerformanceLevel);
+}
+
 std::string CreateInstanceRequest::getUserData()const
 {
 	return userData_;
@@ -648,12 +670,24 @@ void CreateInstanceRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
 		setCoreParameter(str + ".Size", std::to_string(obj.size));
 		setCoreParameter(str + ".Encrypted", obj.encrypted ? "true" : "false");
+		setCoreParameter(str + ".PerformanceLevel", obj.performanceLevel);
 		setCoreParameter(str + ".Description", obj.description);
 		setCoreParameter(str + ".Category", obj.category);
 		setCoreParameter(str + ".KMSKeyId", obj.kMSKeyId);
 		setCoreParameter(str + ".Device", obj.device);
 		setCoreParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
 	}
+}
+
+std::string CreateInstanceRequest::getStorageSetId()const
+{
+	return storageSetId_;
+}
+
+void CreateInstanceRequest::setStorageSetId(const std::string& storageSetId)
+{
+	storageSetId_ = storageSetId;
+	setCoreParameter("StorageSetId", storageSetId);
 }
 
 int CreateInstanceRequest::getSystemDiskSize()const

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,37 @@
 #ifndef ALIBABACLOUD_CDN_MODEL_SETL2OSSKEYCONFIGREQUEST_H_
 #define ALIBABACLOUD_CDN_MODEL_SETL2OSSKEYCONFIGREQUEST_H_
 
+#include <alibabacloud/cdn/CdnExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/cdn/CdnExport.h>
 
-namespace AlibabaCloud
-{
-	namespace Cdn
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CDN_EXPORT SetL2OssKeyConfigRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Cdn {
+namespace Model {
+class ALIBABACLOUD_CDN_EXPORT SetL2OssKeyConfigRequest
+    : public RpcServiceRequest {
 
-			public:
-				SetL2OssKeyConfigRequest();
-				~SetL2OssKeyConfigRequest();
+public:
+  SetL2OssKeyConfigRequest();
+  ~SetL2OssKeyConfigRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getPrivateOssAuth()const;
-				void setPrivateOssAuth(const std::string& privateOssAuth);
+  std::string getSecurityToken() const;
+  void setSecurityToken(const std::string &securityToken);
+  std::string getDomainName() const;
+  void setDomainName(const std::string &domainName);
+  long getOwnerId() const;
+  void setOwnerId(long ownerId);
+  std::string getPrivateOssAuth() const;
+  void setPrivateOssAuth(const std::string &privateOssAuth);
 
-            private:
-				std::string securityToken_;
-				std::string domainName_;
-				long ownerId_;
-				std::string privateOssAuth_;
-
-			};
-		}
-	}
-}
+private:
+  std::string securityToken_;
+  std::string domainName_;
+  long ownerId_;
+  std::string privateOssAuth_;
+};
+} // namespace Model
+} // namespace Cdn
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CDN_MODEL_SETL2OSSKEYCONFIGREQUEST_H_

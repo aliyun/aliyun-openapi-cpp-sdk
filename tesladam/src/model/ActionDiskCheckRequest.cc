@@ -33,7 +33,7 @@ std::string ActionDiskCheckRequest::getDiskMount()const
 void ActionDiskCheckRequest::setDiskMount(const std::string& diskMount)
 {
 	diskMount_ = diskMount;
-	setParameter("DiskMount", diskMount);
+	setCoreParameter("DiskMount", diskMount);
 }
 
 std::string ActionDiskCheckRequest::getIp()const
@@ -44,6 +44,6 @@ std::string ActionDiskCheckRequest::getIp()const
 void ActionDiskCheckRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
-	setParameter("Ip", ip);
+	setCoreParameter("Ip", ip);
 }
 

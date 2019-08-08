@@ -33,7 +33,7 @@ long ListExecutePlanMigrateInfoRequest::getResourceOwnerId()const
 void ListExecutePlanMigrateInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListExecutePlanMigrateInfoRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListExecutePlanMigrateInfoRequest::getRegionId()const
 void ListExecutePlanMigrateInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListExecutePlanMigrateInfoRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListExecutePlanMigrateInfoRequest::getPageSize()const
 void ListExecutePlanMigrateInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListExecutePlanMigrateInfoRequest::getUserId()const
@@ -66,7 +66,7 @@ std::string ListExecutePlanMigrateInfoRequest::getUserId()const
 void ListExecutePlanMigrateInfoRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setParameter("UserId", userId);
+	setCoreParameter("UserId", userId);
 }
 
 int ListExecutePlanMigrateInfoRequest::getCurrentSize()const
@@ -77,7 +77,7 @@ int ListExecutePlanMigrateInfoRequest::getCurrentSize()const
 void ListExecutePlanMigrateInfoRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setParameter("CurrentSize", std::to_string(currentSize));
+	setCoreParameter("CurrentSize", std::to_string(currentSize));
 }
 
 std::string ListExecutePlanMigrateInfoRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListExecutePlanMigrateInfoRequest::getAccessKeyId()const
 void ListExecutePlanMigrateInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

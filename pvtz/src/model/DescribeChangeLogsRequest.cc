@@ -33,7 +33,7 @@ std::string DescribeChangeLogsRequest::getEntityType()const
 void DescribeChangeLogsRequest::setEntityType(const std::string& entityType)
 {
 	entityType_ = entityType;
-	setParameter("EntityType", entityType);
+	setCoreParameter("EntityType", entityType);
 }
 
 int DescribeChangeLogsRequest::getPageSize()const
@@ -44,7 +44,7 @@ int DescribeChangeLogsRequest::getPageSize()const
 void DescribeChangeLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeChangeLogsRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string DescribeChangeLogsRequest::getUserClientIp()const
 void DescribeChangeLogsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeChangeLogsRequest::getZoneId()const
@@ -66,7 +66,7 @@ std::string DescribeChangeLogsRequest::getZoneId()const
 void DescribeChangeLogsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string DescribeChangeLogsRequest::getKeyword()const
@@ -77,7 +77,7 @@ std::string DescribeChangeLogsRequest::getKeyword()const
 void DescribeChangeLogsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setParameter("Keyword", keyword);
+	setCoreParameter("Keyword", keyword);
 }
 
 std::string DescribeChangeLogsRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeChangeLogsRequest::getLang()const
 void DescribeChangeLogsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeChangeLogsRequest::getStartTimestamp()const
@@ -99,7 +99,7 @@ long DescribeChangeLogsRequest::getStartTimestamp()const
 void DescribeChangeLogsRequest::setStartTimestamp(long startTimestamp)
 {
 	startTimestamp_ = startTimestamp;
-	setParameter("StartTimestamp", std::to_string(startTimestamp));
+	setCoreParameter("StartTimestamp", std::to_string(startTimestamp));
 }
 
 int DescribeChangeLogsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeChangeLogsRequest::getPageNumber()const
 void DescribeChangeLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 long DescribeChangeLogsRequest::getEndTimestamp()const
@@ -121,6 +121,6 @@ long DescribeChangeLogsRequest::getEndTimestamp()const
 void DescribeChangeLogsRequest::setEndTimestamp(long endTimestamp)
 {
 	endTimestamp_ = endTimestamp;
-	setParameter("EndTimestamp", std::to_string(endTimestamp));
+	setCoreParameter("EndTimestamp", std::to_string(endTimestamp));
 }
 

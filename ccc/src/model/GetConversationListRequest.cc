@@ -33,7 +33,7 @@ std::string GetConversationListRequest::getInstanceId()const
 void GetConversationListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string GetConversationListRequest::getTaskId()const
@@ -44,6 +44,6 @@ std::string GetConversationListRequest::getTaskId()const
 void GetConversationListRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 

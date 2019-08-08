@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,67 +17,61 @@
 #ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSRESULTITEMSRESULT_H_
 #define ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSRESULTITEMSRESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/green/GreenExport.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Green
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_GREEN_EXPORT DescribeOssResultItemsResult : public ServiceResult
-			{
-			public:
-				struct ScanResult
-				{
-					struct FrameResult
-					{
-						std::string thumbnail;
-						std::string url;
-						int offset;
-					};
-					std::string taskId;
-					std::string createTime;
-					std::string requestTime;
-					std::string thumbnail;
-					std::string newUrl;
-					std::string scanFinishedTime;
-					std::string suggestion;
-					std::string score;
-					std::string dataId;
-					std::vector<ScanResult::FrameResult> frameResults;
-					std::string bucket;
-					int handleStatus;
-					int resourceStatus;
-					std::string object;
-					long id;
-				};
+namespace AlibabaCloud {
+namespace Green {
+namespace Model {
+class ALIBABACLOUD_GREEN_EXPORT DescribeOssResultItemsResult
+    : public ServiceResult {
+public:
+  struct ScanResult {
+    struct FrameResult {
+      std::string thumbnail;
+      std::string url;
+      int offset;
+    };
+    std::string taskId;
+    std::string createTime;
+    std::string requestTime;
+    std::string thumbnail;
+    std::string newUrl;
+    std::string scanFinishedTime;
+    std::string suggestion;
+    std::string score;
+    std::string dataId;
+    std::vector<ScanResult::FrameResult> frameResults;
+    std::string bucket;
+    int handleStatus;
+    int resourceStatus;
+    std::string object;
+    long id;
+  };
 
+  DescribeOssResultItemsResult();
+  explicit DescribeOssResultItemsResult(const std::string &payload);
+  ~DescribeOssResultItemsResult();
+  int getTotalCount() const;
+  int getPageSize() const;
+  int getCurrentPage() const;
+  std::string getQueryId() const;
+  std::vector<ScanResult> getScanResultList() const;
 
-				DescribeOssResultItemsResult();
-				explicit DescribeOssResultItemsResult(const std::string &payload);
-				~DescribeOssResultItemsResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getCurrentPage()const;
-				std::string getQueryId()const;
-				std::vector<ScanResult> getScanResultList()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				int totalCount_;
-				int pageSize_;
-				int currentPage_;
-				std::string queryId_;
-				std::vector<ScanResult> scanResultList_;
-
-			};
-		}
-	}
-}
+private:
+  int totalCount_;
+  int pageSize_;
+  int currentPage_;
+  std::string queryId_;
+  std::vector<ScanResult> scanResultList_;
+};
+} // namespace Model
+} // namespace Green
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSRESULTITEMSRESULT_H_

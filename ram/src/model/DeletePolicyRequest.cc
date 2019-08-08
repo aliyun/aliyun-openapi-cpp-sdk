@@ -33,6 +33,6 @@ std::string DeletePolicyRequest::getPolicyName()const
 void DeletePolicyRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setParameter("PolicyName", policyName);
+	setCoreParameter("PolicyName", policyName);
 }
 

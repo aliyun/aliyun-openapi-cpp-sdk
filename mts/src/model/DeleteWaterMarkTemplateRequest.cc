@@ -33,7 +33,7 @@ long DeleteWaterMarkTemplateRequest::getResourceOwnerId()const
 void DeleteWaterMarkTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteWaterMarkTemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteWaterMarkTemplateRequest::getResourceOwnerAccount()const
 void DeleteWaterMarkTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteWaterMarkTemplateRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteWaterMarkTemplateRequest::getOwnerAccount()const
 void DeleteWaterMarkTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteWaterMarkTemplateRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DeleteWaterMarkTemplateRequest::getOwnerId()const
 void DeleteWaterMarkTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteWaterMarkTemplateRequest::getWaterMarkTemplateId()const
@@ -77,7 +77,7 @@ std::string DeleteWaterMarkTemplateRequest::getWaterMarkTemplateId()const
 void DeleteWaterMarkTemplateRequest::setWaterMarkTemplateId(const std::string& waterMarkTemplateId)
 {
 	waterMarkTemplateId_ = waterMarkTemplateId;
-	setParameter("WaterMarkTemplateId", waterMarkTemplateId);
+	setCoreParameter("WaterMarkTemplateId", waterMarkTemplateId);
 }
 
 std::string DeleteWaterMarkTemplateRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteWaterMarkTemplateRequest::getAccessKeyId()const
 void DeleteWaterMarkTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

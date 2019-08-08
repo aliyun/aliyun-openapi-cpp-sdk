@@ -33,7 +33,7 @@ std::string DescribeLiveStreamRecordIndexFileRequest::getRecordId()const
 void DescribeLiveStreamRecordIndexFileRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setParameter("RecordId", recordId);
+	setCoreParameter("RecordId", recordId);
 }
 
 std::string DescribeLiveStreamRecordIndexFileRequest::getAppName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamRecordIndexFileRequest::getAppName()const
 void DescribeLiveStreamRecordIndexFileRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeLiveStreamRecordIndexFileRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamRecordIndexFileRequest::getSecurityToken()const
 void DescribeLiveStreamRecordIndexFileRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveStreamRecordIndexFileRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamRecordIndexFileRequest::getDomainName()const
 void DescribeLiveStreamRecordIndexFileRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeLiveStreamRecordIndexFileRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeLiveStreamRecordIndexFileRequest::getOwnerId()const
 void DescribeLiveStreamRecordIndexFileRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamRecordIndexFileRequest::getStreamName()const
@@ -88,6 +88,6 @@ std::string DescribeLiveStreamRecordIndexFileRequest::getStreamName()const
 void DescribeLiveStreamRecordIndexFileRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setParameter("StreamName", streamName);
+	setCoreParameter("StreamName", streamName);
 }
 

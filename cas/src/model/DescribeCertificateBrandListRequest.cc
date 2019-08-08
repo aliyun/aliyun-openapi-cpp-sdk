@@ -33,7 +33,7 @@ std::string DescribeCertificateBrandListRequest::getSourceIp()const
 void DescribeCertificateBrandListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCertificateBrandListRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeCertificateBrandListRequest::getLang()const
 void DescribeCertificateBrandListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeDrdsInstanceRequest::getDrdsInstanceId()const
 void DescribeDrdsInstanceRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeDrdsInstanceRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeDrdsInstanceRequest::getAccessKeyId()const
 void DescribeDrdsInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

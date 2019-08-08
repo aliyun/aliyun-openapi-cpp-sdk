@@ -33,7 +33,7 @@ std::string DialogueRequest::getCallId()const
 void DialogueRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setParameter("CallId", callId);
+	setCoreParameter("CallId", callId);
 }
 
 std::string DialogueRequest::getCallingNumber()const
@@ -44,7 +44,7 @@ std::string DialogueRequest::getCallingNumber()const
 void DialogueRequest::setCallingNumber(const std::string& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	setParameter("CallingNumber", callingNumber);
+	setCoreParameter("CallingNumber", callingNumber);
 }
 
 std::string DialogueRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string DialogueRequest::getInstanceId()const
 void DialogueRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DialogueRequest::getCalledNumber()const
@@ -66,7 +66,18 @@ std::string DialogueRequest::getCalledNumber()const
 void DialogueRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setParameter("CalledNumber", calledNumber);
+	setCoreParameter("CalledNumber", calledNumber);
+}
+
+long DialogueRequest::getInstanceOwnerId()const
+{
+	return instanceOwnerId_;
+}
+
+void DialogueRequest::setInstanceOwnerId(long instanceOwnerId)
+{
+	instanceOwnerId_ = instanceOwnerId;
+	setCoreParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
 }
 
 std::string DialogueRequest::getActionKey()const
@@ -77,7 +88,7 @@ std::string DialogueRequest::getActionKey()const
 void DialogueRequest::setActionKey(const std::string& actionKey)
 {
 	actionKey_ = actionKey;
-	setParameter("ActionKey", actionKey);
+	setCoreParameter("ActionKey", actionKey);
 }
 
 std::string DialogueRequest::getActionParams()const
@@ -88,7 +99,7 @@ std::string DialogueRequest::getActionParams()const
 void DialogueRequest::setActionParams(const std::string& actionParams)
 {
 	actionParams_ = actionParams;
-	setParameter("ActionParams", actionParams);
+	setCoreParameter("ActionParams", actionParams);
 }
 
 std::string DialogueRequest::getCallType()const
@@ -99,7 +110,7 @@ std::string DialogueRequest::getCallType()const
 void DialogueRequest::setCallType(const std::string& callType)
 {
 	callType_ = callType;
-	setParameter("CallType", callType);
+	setCoreParameter("CallType", callType);
 }
 
 std::string DialogueRequest::getScenarioId()const
@@ -110,7 +121,7 @@ std::string DialogueRequest::getScenarioId()const
 void DialogueRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", scenarioId);
 }
 
 std::string DialogueRequest::getTaskId()const
@@ -121,7 +132,7 @@ std::string DialogueRequest::getTaskId()const
 void DialogueRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string DialogueRequest::getUtterance()const
@@ -132,6 +143,6 @@ std::string DialogueRequest::getUtterance()const
 void DialogueRequest::setUtterance(const std::string& utterance)
 {
 	utterance_ = utterance;
-	setParameter("Utterance", utterance);
+	setCoreParameter("Utterance", utterance);
 }
 

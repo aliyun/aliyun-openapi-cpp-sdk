@@ -33,7 +33,7 @@ std::string GenerateDataKeyRequest::getEncryptionContext()const
 void GenerateDataKeyRequest::setEncryptionContext(const std::string& encryptionContext)
 {
 	encryptionContext_ = encryptionContext;
-	setParameter("EncryptionContext", encryptionContext);
+	setCoreParameter("EncryptionContext", encryptionContext);
 }
 
 std::string GenerateDataKeyRequest::getKeyId()const
@@ -44,7 +44,7 @@ std::string GenerateDataKeyRequest::getKeyId()const
 void GenerateDataKeyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setParameter("KeyId", keyId);
+	setCoreParameter("KeyId", keyId);
 }
 
 std::string GenerateDataKeyRequest::getKeySpec()const
@@ -55,18 +55,7 @@ std::string GenerateDataKeyRequest::getKeySpec()const
 void GenerateDataKeyRequest::setKeySpec(const std::string& keySpec)
 {
 	keySpec_ = keySpec;
-	setParameter("KeySpec", keySpec);
-}
-
-std::string GenerateDataKeyRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void GenerateDataKeyRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("KeySpec", keySpec);
 }
 
 int GenerateDataKeyRequest::getNumberOfBytes()const
@@ -77,6 +66,6 @@ int GenerateDataKeyRequest::getNumberOfBytes()const
 void GenerateDataKeyRequest::setNumberOfBytes(int numberOfBytes)
 {
 	numberOfBytes_ = numberOfBytes;
-	setParameter("NumberOfBytes", std::to_string(numberOfBytes));
+	setCoreParameter("NumberOfBytes", std::to_string(numberOfBytes));
 }
 

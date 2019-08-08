@@ -33,6 +33,6 @@ std::string QuerySystemEventHistogramRequest::getQueryJson()const
 void QuerySystemEventHistogramRequest::setQueryJson(const std::string& queryJson)
 {
 	queryJson_ = queryJson;
-	setParameter("QueryJson", queryJson);
+	setCoreParameter("QueryJson", queryJson);
 }
 

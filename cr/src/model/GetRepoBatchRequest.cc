@@ -33,7 +33,7 @@ std::string GetRepoBatchRequest::getRegionId()const
 void GetRepoBatchRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetRepoBatchRequest::getRepoIds()const
@@ -44,6 +44,6 @@ std::string GetRepoBatchRequest::getRepoIds()const
 void GetRepoBatchRequest::setRepoIds(const std::string& repoIds)
 {
 	repoIds_ = repoIds;
-	setParameter("RepoIds", repoIds);
+	setCoreParameter("RepoIds", repoIds);
 }
 

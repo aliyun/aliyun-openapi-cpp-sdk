@@ -21,11 +21,11 @@
 
 namespace AlibabaCloud {
 class InstanceProfileCredentials : public BasicSessionCredentials {
- public:
+public:
   InstanceProfileCredentials();
   ~InstanceProfileCredentials();
 
- private:
+private:
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALS_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALS_H_

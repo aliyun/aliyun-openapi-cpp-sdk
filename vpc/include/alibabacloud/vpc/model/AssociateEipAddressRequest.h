@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getPrivateIpAddress()const;
 				void setPrivateIpAddress(const std::string& privateIpAddress);
+				std::string getMode()const;
+				void setMode(const std::string& mode);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 
             private:
 				std::string privateIpAddress_;
+				std::string mode_;
 				long resourceOwnerId_;
 				std::string instanceId_;
 				std::string resourceOwnerAccount_;

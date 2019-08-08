@@ -33,7 +33,7 @@ std::string ListJobsByGroupRequest::getInstanceId()const
 void ListJobsByGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListJobsByGroupRequest::getJobFailureReason()const
@@ -44,7 +44,7 @@ std::string ListJobsByGroupRequest::getJobFailureReason()const
 void ListJobsByGroupRequest::setJobFailureReason(const std::string& jobFailureReason)
 {
 	jobFailureReason_ = jobFailureReason;
-	setParameter("JobFailureReason", jobFailureReason);
+	setCoreParameter("JobFailureReason", jobFailureReason);
 }
 
 std::string ListJobsByGroupRequest::getJobStatus()const
@@ -55,7 +55,7 @@ std::string ListJobsByGroupRequest::getJobStatus()const
 void ListJobsByGroupRequest::setJobStatus(const std::string& jobStatus)
 {
 	jobStatus_ = jobStatus;
-	setParameter("JobStatus", jobStatus);
+	setCoreParameter("JobStatus", jobStatus);
 }
 
 std::string ListJobsByGroupRequest::getJobGroupId()const
@@ -66,7 +66,7 @@ std::string ListJobsByGroupRequest::getJobGroupId()const
 void ListJobsByGroupRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setParameter("JobGroupId", jobGroupId);
+	setCoreParameter("JobGroupId", jobGroupId);
 }
 
 int ListJobsByGroupRequest::getPageSize()const
@@ -77,7 +77,7 @@ int ListJobsByGroupRequest::getPageSize()const
 void ListJobsByGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListJobsByGroupRequest::getPageNumber()const
@@ -88,6 +88,6 @@ int ListJobsByGroupRequest::getPageNumber()const
 void ListJobsByGroupRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

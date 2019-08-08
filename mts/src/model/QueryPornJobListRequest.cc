@@ -33,7 +33,7 @@ long QueryPornJobListRequest::getResourceOwnerId()const
 void QueryPornJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryPornJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryPornJobListRequest::getResourceOwnerAccount()const
 void QueryPornJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryPornJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryPornJobListRequest::getJobIds()const
 void QueryPornJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", jobIds);
 }
 
 std::string QueryPornJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryPornJobListRequest::getOwnerAccount()const
 void QueryPornJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryPornJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryPornJobListRequest::getOwnerId()const
 void QueryPornJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryPornJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryPornJobListRequest::getAccessKeyId()const
 void QueryPornJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

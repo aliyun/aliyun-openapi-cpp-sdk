@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,58 +17,53 @@
 #ifndef ALIBABACLOUD_EMR_MODEL_METASTORECREATEKAFKATOPICREQUEST_H_
 #define ALIBABACLOUD_EMR_MODEL_METASTORECREATEKAFKATOPICREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/emr/EmrExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Emr
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_EMR_EXPORT MetastoreCreateKafkaTopicRequest : public RpcServiceRequest
-			{
-				struct AdvancedConfig
-				{
-					std::string value;
-					std::string key;
-				};
+namespace AlibabaCloud {
+namespace Emr {
+namespace Model {
+class ALIBABACLOUD_EMR_EXPORT MetastoreCreateKafkaTopicRequest
+    : public RpcServiceRequest {
+  struct AdvancedConfig {
+    std::string value;
+    std::string key;
+  };
 
-			public:
-				MetastoreCreateKafkaTopicRequest();
-				~MetastoreCreateKafkaTopicRequest();
+public:
+  MetastoreCreateKafkaTopicRequest();
+  ~MetastoreCreateKafkaTopicRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getDataSourceId()const;
-				void setDataSourceId(const std::string& dataSourceId);
-				std::string getTopicName()const;
-				void setTopicName(const std::string& topicName);
-				std::vector<AdvancedConfig> getAdvancedConfig()const;
-				void setAdvancedConfig(const std::vector<AdvancedConfig>& advancedConfig);
-				int getNumPartitions()const;
-				void setNumPartitions(int numPartitions);
-				int getReplicationFactor()const;
-				void setReplicationFactor(int replicationFactor);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+  long getResourceOwnerId() const;
+  void setResourceOwnerId(long resourceOwnerId);
+  std::string getRegionId() const;
+  void setRegionId(const std::string &regionId);
+  std::string getDataSourceId() const;
+  void setDataSourceId(const std::string &dataSourceId);
+  std::string getTopicName() const;
+  void setTopicName(const std::string &topicName);
+  std::vector<AdvancedConfig> getAdvancedConfig() const;
+  void setAdvancedConfig(const std::vector<AdvancedConfig> &advancedConfig);
+  int getNumPartitions() const;
+  void setNumPartitions(int numPartitions);
+  int getReplicationFactor() const;
+  void setReplicationFactor(int replicationFactor);
+  std::string getAccessKeyId() const;
+  void setAccessKeyId(const std::string &accessKeyId);
 
-            private:
-				long resourceOwnerId_;
-				std::string regionId_;
-				std::string dataSourceId_;
-				std::string topicName_;
-				std::vector<AdvancedConfig> advancedConfig_;
-				int numPartitions_;
-				int replicationFactor_;
-				std::string accessKeyId_;
-
-			};
-		}
-	}
-}
+private:
+  long resourceOwnerId_;
+  std::string regionId_;
+  std::string dataSourceId_;
+  std::string topicName_;
+  std::vector<AdvancedConfig> advancedConfig_;
+  int numPartitions_;
+  int replicationFactor_;
+  std::string accessKeyId_;
+};
+} // namespace Model
+} // namespace Emr
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_EMR_MODEL_METASTORECREATEKAFKATOPICREQUEST_H_

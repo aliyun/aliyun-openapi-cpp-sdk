@@ -33,6 +33,6 @@ std::string PutEventRequest::getEventInfo()const
 void PutEventRequest::setEventInfo(const std::string& eventInfo)
 {
 	eventInfo_ = eventInfo;
-	setParameter("EventInfo", eventInfo);
+	setCoreParameter("EventInfo", eventInfo);
 }
 

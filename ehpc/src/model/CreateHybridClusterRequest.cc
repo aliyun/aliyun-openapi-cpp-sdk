@@ -262,15 +262,24 @@ void CreateHybridClusterRequest::setVSwitchId(const std::string& vSwitchId)
 	setCoreParameter("VSwitchId", vSwitchId);
 }
 
-std::string CreateHybridClusterRequest::getNodes()const
+std::vector<CreateHybridClusterRequest::Nodes> CreateHybridClusterRequest::getNodes()const
 {
 	return nodes_;
 }
 
-void CreateHybridClusterRequest::setNodes(const std::string& nodes)
+void CreateHybridClusterRequest::setNodes(const std::vector<Nodes>& nodes)
 {
 	nodes_ = nodes;
-	setCoreParameter("Nodes", nodes);
+	int i = 0;
+	for(int i = 0; i!= nodes.size(); i++)	{
+		auto obj = nodes.at(i);
+		std::string str ="Nodes."+ std::to_string(i);
+		setCoreParameter(str + ".IpAddress", obj.ipAddress);
+		setCoreParameter(str + ".HostName", obj.hostName);
+		setCoreParameter(str + ".Role", obj.role);
+		setCoreParameter(str + ".AccountType", obj.accountType);
+		setCoreParameter(str + ".SchedulerType", obj.schedulerType);
+	}
 }
 
 std::vector<CreateHybridClusterRequest::Application> CreateHybridClusterRequest::getApplication()const
@@ -353,6 +362,17 @@ void CreateHybridClusterRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setCoreParameter("ZoneId", zoneId);
+}
+
+bool CreateHybridClusterRequest::getSchedulerPreInstall()const
+{
+	return schedulerPreInstall_;
+}
+
+void CreateHybridClusterRequest::setSchedulerPreInstall(bool schedulerPreInstall)
+{
+	schedulerPreInstall_ = schedulerPreInstall;
+	setCoreParameter("SchedulerPreInstall", schedulerPreInstall ? "true" : "false");
 }
 
 std::string CreateHybridClusterRequest::getLocation()const

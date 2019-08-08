@@ -25,6 +25,17 @@ DescribeGtmInstancesRequest::DescribeGtmInstancesRequest() :
 DescribeGtmInstancesRequest::~DescribeGtmInstancesRequest()
 {}
 
+std::string DescribeGtmInstancesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeGtmInstancesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeGtmInstancesRequest::getUserClientIp()const
 {
 	return userClientIp_;
@@ -33,7 +44,7 @@ std::string DescribeGtmInstancesRequest::getUserClientIp()const
 void DescribeGtmInstancesRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int DescribeGtmInstancesRequest::getPageSize()const
@@ -44,7 +55,7 @@ int DescribeGtmInstancesRequest::getPageSize()const
 void DescribeGtmInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGtmInstancesRequest::getLang()const
@@ -55,7 +66,7 @@ std::string DescribeGtmInstancesRequest::getLang()const
 void DescribeGtmInstancesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeGtmInstancesRequest::getKeyword()const
@@ -66,7 +77,7 @@ std::string DescribeGtmInstancesRequest::getKeyword()const
 void DescribeGtmInstancesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setParameter("Keyword", keyword);
+	setCoreParameter("Keyword", keyword);
 }
 
 int DescribeGtmInstancesRequest::getPageNumber()const
@@ -77,6 +88,6 @@ int DescribeGtmInstancesRequest::getPageNumber()const
 void DescribeGtmInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

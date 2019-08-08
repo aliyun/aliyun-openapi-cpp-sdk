@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,44 +17,40 @@
 #ifndef ALIBABACLOUD_EMR_MODEL_CREATEVERIFICATIONCODEREQUEST_H_
 #define ALIBABACLOUD_EMR_MODEL_CREATEVERIFICATIONCODEREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/emr/EmrExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Emr
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_EMR_EXPORT CreateVerificationCodeRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Emr {
+namespace Model {
+class ALIBABACLOUD_EMR_EXPORT CreateVerificationCodeRequest
+    : public RpcServiceRequest {
 
-			public:
-				CreateVerificationCodeRequest();
-				~CreateVerificationCodeRequest();
+public:
+  CreateVerificationCodeRequest();
+  ~CreateVerificationCodeRequest();
 
-				std::string getMode()const;
-				void setMode(const std::string& mode);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getTarget()const;
-				void setTarget(const std::string& target);
+  std::string getMode() const;
+  void setMode(const std::string &mode);
+  long getResourceOwnerId() const;
+  void setResourceOwnerId(long resourceOwnerId);
+  std::string getRegionId() const;
+  void setRegionId(const std::string &regionId);
+  std::string getAccessKeyId() const;
+  void setAccessKeyId(const std::string &accessKeyId);
+  std::string getTarget() const;
+  void setTarget(const std::string &target);
 
-            private:
-				std::string mode_;
-				long resourceOwnerId_;
-				std::string regionId_;
-				std::string accessKeyId_;
-				std::string target_;
-
-			};
-		}
-	}
-}
+private:
+  std::string mode_;
+  long resourceOwnerId_;
+  std::string regionId_;
+  std::string accessKeyId_;
+  std::string target_;
+};
+} // namespace Model
+} // namespace Emr
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_EMR_MODEL_CREATEVERIFICATIONCODEREQUEST_H_

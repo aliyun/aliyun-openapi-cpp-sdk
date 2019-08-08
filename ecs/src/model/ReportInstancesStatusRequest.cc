@@ -368,6 +368,17 @@ void ReportInstancesStatusRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ReportInstancesStatusRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ReportInstancesStatusRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::vector<std::string> ReportInstancesStatusRequest::getDevice()const
 {
 	return device_;

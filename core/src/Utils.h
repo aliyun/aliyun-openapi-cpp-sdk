@@ -17,22 +17,22 @@
 #ifndef CORE_SRC_UTILS_H_
 #define CORE_SRC_UTILS_H_
 
-#include <alibabacloud/core/HttpRequest.h>
 #include <alibabacloud/core/HttpMessage.h>
-#include <string>
+#include <alibabacloud/core/HttpRequest.h>
 #include <map>
+#include <string>
 
 namespace AlibabaCloud {
 std::string ComputeContentMD5(const char *data, size_t size);
 std::string GenerateUuid();
 std::string HttpMethodToString(HttpRequest::Method method);
-void StringReplace(std::string &src,
-  const std::string &s1, const std::string &s2);
+void StringReplace(std::string &src, const std::string &s1,
+                   const std::string &s2);
 std::string UrlEncode(const std::string &src);
 std::string UrlDecode(const std::string &src);
-std::string canonicalizedQuery(const std::map <std::string,
-  std::string> &params);
+std::string
+canonicalizedQuery(const std::map<std::string, std::string> &params);
 std::string canonicalizedHeaders(const HttpMessage::HeaderCollection &headers);
 std::string GetEnv(const std::string env);
-}  // namespace AlibabaCloud
-#endif  // CORE_SRC_UTILS_H_
+} // namespace AlibabaCloud
+#endif // CORE_SRC_UTILS_H_

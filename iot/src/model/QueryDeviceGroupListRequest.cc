@@ -25,6 +25,17 @@ QueryDeviceGroupListRequest::QueryDeviceGroupListRequest() :
 QueryDeviceGroupListRequest::~QueryDeviceGroupListRequest()
 {}
 
+std::string QueryDeviceGroupListRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceGroupListRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string QueryDeviceGroupListRequest::getSuperGroupId()const
 {
 	return superGroupId_;
@@ -33,7 +44,7 @@ std::string QueryDeviceGroupListRequest::getSuperGroupId()const
 void QueryDeviceGroupListRequest::setSuperGroupId(const std::string& superGroupId)
 {
 	superGroupId_ = superGroupId;
-	setParameter("SuperGroupId", superGroupId);
+	setCoreParameter("SuperGroupId", superGroupId);
 }
 
 int QueryDeviceGroupListRequest::getPageSize()const
@@ -44,7 +55,7 @@ int QueryDeviceGroupListRequest::getPageSize()const
 void QueryDeviceGroupListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryDeviceGroupListRequest::getCurrentPage()const
@@ -55,7 +66,7 @@ int QueryDeviceGroupListRequest::getCurrentPage()const
 void QueryDeviceGroupListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryDeviceGroupListRequest::getGroupName()const
@@ -66,7 +77,7 @@ std::string QueryDeviceGroupListRequest::getGroupName()const
 void QueryDeviceGroupListRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string QueryDeviceGroupListRequest::getAccessKeyId()const
@@ -77,6 +88,6 @@ std::string QueryDeviceGroupListRequest::getAccessKeyId()const
 void QueryDeviceGroupListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

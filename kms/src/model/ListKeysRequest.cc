@@ -33,18 +33,7 @@ int ListKeysRequest::getPageSize()const
 void ListKeysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string ListKeysRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void ListKeysRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListKeysRequest::getPageNumber()const
@@ -55,6 +44,6 @@ int ListKeysRequest::getPageNumber()const
 void ListKeysRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

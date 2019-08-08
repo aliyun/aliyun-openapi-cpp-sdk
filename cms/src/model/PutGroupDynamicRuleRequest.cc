@@ -33,7 +33,7 @@ long PutGroupDynamicRuleRequest::getGroupId()const
 void PutGroupDynamicRuleRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string PutGroupDynamicRuleRequest::getGroupRuleArrayJson()const
@@ -44,6 +44,6 @@ std::string PutGroupDynamicRuleRequest::getGroupRuleArrayJson()const
 void PutGroupDynamicRuleRequest::setGroupRuleArrayJson(const std::string& groupRuleArrayJson)
 {
 	groupRuleArrayJson_ = groupRuleArrayJson;
-	setParameter("GroupRuleArrayJson", groupRuleArrayJson);
+	setCoreParameter("GroupRuleArrayJson", groupRuleArrayJson);
 }
 

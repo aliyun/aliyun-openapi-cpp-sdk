@@ -33,7 +33,7 @@ std::string MobileStartSpeedUpRequest::getDuration()const
 void MobileStartSpeedUpRequest::setDuration(const std::string& duration)
 {
 	duration_ = duration;
-	setParameter("Duration", duration);
+	setCoreParameter("Duration", duration);
 }
 
 long MobileStartSpeedUpRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long MobileStartSpeedUpRequest::getResourceOwnerId()const
 void MobileStartSpeedUpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MobileStartSpeedUpRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string MobileStartSpeedUpRequest::getResourceOwnerAccount()const
 void MobileStartSpeedUpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string MobileStartSpeedUpRequest::getIp()const
@@ -66,7 +66,7 @@ std::string MobileStartSpeedUpRequest::getIp()const
 void MobileStartSpeedUpRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
-	setParameter("Ip", ip);
+	setCoreParameter("Ip", ip);
 }
 
 std::string MobileStartSpeedUpRequest::getDestinationIpAddress()const
@@ -77,7 +77,7 @@ std::string MobileStartSpeedUpRequest::getDestinationIpAddress()const
 void MobileStartSpeedUpRequest::setDestinationIpAddress(const std::string& destinationIpAddress)
 {
 	destinationIpAddress_ = destinationIpAddress;
-	setParameter("DestinationIpAddress", destinationIpAddress);
+	setCoreParameter("DestinationIpAddress", destinationIpAddress);
 }
 
 std::string MobileStartSpeedUpRequest::getPublicIp()const
@@ -88,7 +88,7 @@ std::string MobileStartSpeedUpRequest::getPublicIp()const
 void MobileStartSpeedUpRequest::setPublicIp(const std::string& publicIp)
 {
 	publicIp_ = publicIp;
-	setParameter("PublicIp", publicIp);
+	setCoreParameter("PublicIp", publicIp);
 }
 
 std::string MobileStartSpeedUpRequest::getPublicPort()const
@@ -99,7 +99,7 @@ std::string MobileStartSpeedUpRequest::getPublicPort()const
 void MobileStartSpeedUpRequest::setPublicPort(const std::string& publicPort)
 {
 	publicPort_ = publicPort;
-	setParameter("PublicPort", publicPort);
+	setCoreParameter("PublicPort", publicPort);
 }
 
 long MobileStartSpeedUpRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long MobileStartSpeedUpRequest::getOwnerId()const
 void MobileStartSpeedUpRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MobileStartSpeedUpRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string MobileStartSpeedUpRequest::getAccessKeyId()const
 void MobileStartSpeedUpRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string MobileStartSpeedUpRequest::getToken()const
@@ -132,6 +132,6 @@ std::string MobileStartSpeedUpRequest::getToken()const
 void MobileStartSpeedUpRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setParameter("Token", token);
+	setCoreParameter("Token", token);
 }
 

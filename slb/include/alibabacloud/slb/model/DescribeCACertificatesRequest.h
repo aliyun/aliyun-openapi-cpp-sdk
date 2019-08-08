@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,53 +17,56 @@
 #ifndef ALIBABACLOUD_SLB_MODEL_DESCRIBECACERTIFICATESREQUEST_H_
 #define ALIBABACLOUD_SLB_MODEL_DESCRIBECACERTIFICATESREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/slb/SlbExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Slb
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_SLB_EXPORT DescribeCACertificatesRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Slb {
+namespace Model {
+class ALIBABACLOUD_SLB_EXPORT DescribeCACertificatesRequest
+    : public RpcServiceRequest {
+  struct Tag {
+    std::string value;
+    std::string key;
+  };
 
-			public:
-				DescribeCACertificatesRequest();
-				~DescribeCACertificatesRequest();
+public:
+  DescribeCACertificatesRequest();
+  ~DescribeCACertificatesRequest();
 
-				std::string getAccess_key_id()const;
-				void setAccess_key_id(const std::string& access_key_id);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getCACertificateId()const;
-				void setCACertificateId(const std::string& cACertificateId);
+  std::string getAccess_key_id() const;
+  void setAccess_key_id(const std::string &access_key_id);
+  std::string getResourceGroupId() const;
+  void setResourceGroupId(const std::string &resourceGroupId);
+  long getResourceOwnerId() const;
+  void setResourceOwnerId(long resourceOwnerId);
+  std::string getResourceOwnerAccount() const;
+  void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+  std::string getRegionId() const;
+  void setRegionId(const std::string &regionId);
+  std::string getOwnerAccount() const;
+  void setOwnerAccount(const std::string &ownerAccount);
+  std::vector<Tag> getTag() const;
+  void setTag(const std::vector<Tag> &tag);
+  long getOwnerId() const;
+  void setOwnerId(long ownerId);
+  std::string getCACertificateId() const;
+  void setCACertificateId(const std::string &cACertificateId);
 
-            private:
-				std::string access_key_id_;
-				std::string resourceGroupId_;
-				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
-				long ownerId_;
-				std::string cACertificateId_;
-
-			};
-		}
-	}
-}
+private:
+  std::string access_key_id_;
+  std::string resourceGroupId_;
+  long resourceOwnerId_;
+  std::string resourceOwnerAccount_;
+  std::string regionId_;
+  std::string ownerAccount_;
+  std::vector<Tag> tag_;
+  long ownerId_;
+  std::string cACertificateId_;
+};
+} // namespace Model
+} // namespace Slb
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_SLB_MODEL_DESCRIBECACERTIFICATESREQUEST_H_

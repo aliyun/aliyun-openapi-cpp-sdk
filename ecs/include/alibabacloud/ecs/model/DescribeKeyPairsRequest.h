@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,67 +17,62 @@
 #ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEKEYPAIRSREQUEST_H_
 #define ALIBABACLOUD_ECS_MODEL_DESCRIBEKEYPAIRSREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/ecs/EcsExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Ecs
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeKeyPairsRequest : public RpcServiceRequest
-			{
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
+namespace AlibabaCloud {
+namespace Ecs {
+namespace Model {
+class ALIBABACLOUD_ECS_EXPORT DescribeKeyPairsRequest
+    : public RpcServiceRequest {
+  struct Tag {
+    std::string value;
+    std::string key;
+  };
 
-			public:
-				DescribeKeyPairsRequest();
-				~DescribeKeyPairsRequest();
+public:
+  DescribeKeyPairsRequest();
+  ~DescribeKeyPairsRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getKeyPairFingerPrint()const;
-				void setKeyPairFingerPrint(const std::string& keyPairFingerPrint);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getKeyPairName()const;
-				void setKeyPairName(const std::string& keyPairName);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+  std::string getSourceRegionId() const;
+  void setSourceRegionId(const std::string &sourceRegionId);
+  std::string getResourceGroupId() const;
+  void setResourceGroupId(const std::string &resourceGroupId);
+  long getResourceOwnerId() const;
+  void setResourceOwnerId(long resourceOwnerId);
+  std::string getResourceOwnerAccount() const;
+  void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+  std::string getRegionId() const;
+  void setRegionId(const std::string &regionId);
+  std::string getKeyPairFingerPrint() const;
+  void setKeyPairFingerPrint(const std::string &keyPairFingerPrint);
+  int getPageSize() const;
+  void setPageSize(int pageSize);
+  std::string getKeyPairName() const;
+  void setKeyPairName(const std::string &keyPairName);
+  std::vector<Tag> getTag() const;
+  void setTag(const std::vector<Tag> &tag);
+  long getOwnerId() const;
+  void setOwnerId(long ownerId);
+  int getPageNumber() const;
+  void setPageNumber(int pageNumber);
 
-            private:
-				std::string sourceRegionId_;
-				std::string resourceGroupId_;
-				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string keyPairFingerPrint_;
-				int pageSize_;
-				std::string keyPairName_;
-				std::vector<Tag> tag_;
-				long ownerId_;
-				int pageNumber_;
-
-			};
-		}
-	}
-}
+private:
+  std::string sourceRegionId_;
+  std::string resourceGroupId_;
+  long resourceOwnerId_;
+  std::string resourceOwnerAccount_;
+  std::string regionId_;
+  std::string keyPairFingerPrint_;
+  int pageSize_;
+  std::string keyPairName_;
+  std::vector<Tag> tag_;
+  long ownerId_;
+  int pageNumber_;
+};
+} // namespace Model
+} // namespace Ecs
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEKEYPAIRSREQUEST_H_

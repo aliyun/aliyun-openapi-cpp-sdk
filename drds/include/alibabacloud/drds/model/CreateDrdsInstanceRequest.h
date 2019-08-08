@@ -35,8 +35,12 @@ namespace AlibabaCloud
 				CreateDrdsInstanceRequest();
 				~CreateDrdsInstanceRequest();
 
+				bool getIsAutoRenew()const;
+				void setIsAutoRenew(bool isAutoRenew);
 				int getQuantity()const;
 				void setQuantity(int quantity);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getSpecification()const;
@@ -47,6 +51,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getVswitchId()const;
 				void setVswitchId(const std::string& vswitchId);
+				int getDuration()const;
+				void setDuration(int duration);
 				bool getIsHa()const;
 				void setIsHa(bool isHa);
 				std::string getRegionId()const;
@@ -59,20 +65,26 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
+				std::string getPricingCycle()const;
+				void setPricingCycle(const std::string& pricingCycle);
 
             private:
+				bool isAutoRenew_;
 				int quantity_;
+				std::string clientToken_;
 				std::string description_;
 				std::string specification_;
 				std::string type_;
 				std::string accessKeyId_;
 				std::string vswitchId_;
+				int duration_;
 				bool isHa_;
 				std::string regionId_;
 				std::string instanceSeries_;
 				std::string vpcId_;
 				std::string zoneId_;
 				std::string payType_;
+				std::string pricingCycle_;
 
 			};
 		}

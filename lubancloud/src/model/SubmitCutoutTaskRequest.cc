@@ -33,7 +33,7 @@ bool SubmitCutoutTaskRequest::getSecurity_transport()const
 void SubmitCutoutTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string SubmitCutoutTaskRequest::getApp_ip()const
@@ -44,7 +44,7 @@ std::string SubmitCutoutTaskRequest::getApp_ip()const
 void SubmitCutoutTaskRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string SubmitCutoutTaskRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string SubmitCutoutTaskRequest::getRegionId()const
 void SubmitCutoutTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 long SubmitCutoutTaskRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long SubmitCutoutTaskRequest::getCallerParentId()const
 void SubmitCutoutTaskRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string SubmitCutoutTaskRequest::getRequestId()const
@@ -77,7 +77,7 @@ std::string SubmitCutoutTaskRequest::getRequestId()const
 void SubmitCutoutTaskRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string SubmitCutoutTaskRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string SubmitCutoutTaskRequest::getCallerType()const
 void SubmitCutoutTaskRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool SubmitCutoutTaskRequest::getAk_mfa_present()const
@@ -99,7 +99,7 @@ bool SubmitCutoutTaskRequest::getAk_mfa_present()const
 void SubmitCutoutTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 long SubmitCutoutTaskRequest::getCallerUid()const
@@ -110,7 +110,7 @@ long SubmitCutoutTaskRequest::getCallerUid()const
 void SubmitCutoutTaskRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::vector<std::string> SubmitCutoutTaskRequest::getPictureUrl()const
@@ -122,6 +122,6 @@ void SubmitCutoutTaskRequest::setPictureUrl(const std::vector<std::string>& pict
 {
 	pictureUrl_ = pictureUrl;
 	for(int i = 0; i!= pictureUrl.size(); i++)
-		setParameter("PictureUrl."+ std::to_string(i), pictureUrl.at(i));
+		setCoreParameter("PictureUrl."+ std::to_string(i), pictureUrl.at(i));
 }
 

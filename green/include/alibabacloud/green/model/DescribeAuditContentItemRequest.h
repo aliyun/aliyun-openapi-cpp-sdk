@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,50 +17,46 @@
 #ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCONTENTITEMREQUEST_H_
 #define ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCONTENTITEMREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/green/GreenExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Green
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_GREEN_EXPORT DescribeAuditContentItemRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Green {
+namespace Model {
+class ALIBABACLOUD_GREEN_EXPORT DescribeAuditContentItemRequest
+    : public RpcServiceRequest {
 
-			public:
-				DescribeAuditContentItemRequest();
-				~DescribeAuditContentItemRequest();
+public:
+  DescribeAuditContentItemRequest();
+  ~DescribeAuditContentItemRequest();
 
-				int getTotalCount()const;
-				void setTotalCount(int totalCount);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
-				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
+  int getTotalCount() const;
+  void setTotalCount(int totalCount);
+  std::string getSourceIp() const;
+  void setSourceIp(const std::string &sourceIp);
+  int getPageSize() const;
+  void setPageSize(int pageSize);
+  int getCurrentPage() const;
+  void setCurrentPage(int currentPage);
+  std::string getLang() const;
+  void setLang(const std::string &lang);
+  std::string getResourceType() const;
+  void setResourceType(const std::string &resourceType);
+  std::string getTaskId() const;
+  void setTaskId(const std::string &taskId);
 
-            private:
-				int totalCount_;
-				std::string sourceIp_;
-				int pageSize_;
-				int currentPage_;
-				std::string lang_;
-				std::string resourceType_;
-				std::string taskId_;
-
-			};
-		}
-	}
-}
+private:
+  int totalCount_;
+  std::string sourceIp_;
+  int pageSize_;
+  int currentPage_;
+  std::string lang_;
+  std::string resourceType_;
+  std::string taskId_;
+};
+} // namespace Model
+} // namespace Green
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCONTENTITEMREQUEST_H_

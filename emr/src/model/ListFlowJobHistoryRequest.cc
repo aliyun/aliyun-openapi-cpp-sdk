@@ -25,6 +25,40 @@ ListFlowJobHistoryRequest::ListFlowJobHistoryRequest() :
 ListFlowJobHistoryRequest::~ListFlowJobHistoryRequest()
 {}
 
+std::string ListFlowJobHistoryRequest::getTimeRange()const
+{
+	return timeRange_;
+}
+
+void ListFlowJobHistoryRequest::setTimeRange(const std::string& timeRange)
+{
+	timeRange_ = timeRange;
+	setCoreParameter("TimeRange", timeRange);
+}
+
+std::vector<std::string> ListFlowJobHistoryRequest::getStatusList()const
+{
+	return statusList_;
+}
+
+void ListFlowJobHistoryRequest::setStatusList(const std::vector<std::string>& statusList)
+{
+	statusList_ = statusList;
+	for(int i = 0; i!= statusList.size(); i++)
+		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+}
+
+std::string ListFlowJobHistoryRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListFlowJobHistoryRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
 std::string ListFlowJobHistoryRequest::getRegionId()const
 {
 	return regionId_;
@@ -33,7 +67,7 @@ std::string ListFlowJobHistoryRequest::getRegionId()const
 void ListFlowJobHistoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListFlowJobHistoryRequest::getPageSize()const
@@ -44,7 +78,7 @@ int ListFlowJobHistoryRequest::getPageSize()const
 void ListFlowJobHistoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowJobHistoryRequest::getId()const
@@ -55,7 +89,7 @@ std::string ListFlowJobHistoryRequest::getId()const
 void ListFlowJobHistoryRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string ListFlowJobHistoryRequest::getProjectId()const
@@ -66,7 +100,18 @@ std::string ListFlowJobHistoryRequest::getProjectId()const
 void ListFlowJobHistoryRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
+}
+
+std::string ListFlowJobHistoryRequest::getJobType()const
+{
+	return jobType_;
+}
+
+void ListFlowJobHistoryRequest::setJobType(const std::string& jobType)
+{
+	jobType_ = jobType;
+	setCoreParameter("JobType", jobType);
 }
 
 int ListFlowJobHistoryRequest::getPageNumber()const
@@ -77,6 +122,6 @@ int ListFlowJobHistoryRequest::getPageNumber()const
 void ListFlowJobHistoryRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

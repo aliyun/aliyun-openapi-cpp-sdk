@@ -25,6 +25,17 @@ AllocateEipAddressRequest::AllocateEipAddressRequest() :
 AllocateEipAddressRequest::~AllocateEipAddressRequest()
 {}
 
+long AllocateEipAddressRequest::getActivityId()const
+{
+	return activityId_;
+}
+
+void AllocateEipAddressRequest::setActivityId(long activityId)
+{
+	activityId_ = activityId;
+	setCoreParameter("ActivityId", std::to_string(activityId));
+}
+
 long AllocateEipAddressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

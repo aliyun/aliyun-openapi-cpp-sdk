@@ -33,7 +33,7 @@ long GroupOverviewRequest::getGsid()const
 void GroupOverviewRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 
 std::string GroupOverviewRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GroupOverviewRequest::getAccessKeyId()const
 void GroupOverviewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

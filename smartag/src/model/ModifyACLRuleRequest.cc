@@ -135,6 +135,17 @@ void ModifyACLRuleRequest::setPriority(int priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
+std::string ModifyACLRuleRequest::getType()const
+{
+	return type_;
+}
+
+void ModifyACLRuleRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::string ModifyACLRuleRequest::getAcrId()const
 {
 	return acrId_;

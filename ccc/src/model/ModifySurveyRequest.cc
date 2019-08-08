@@ -33,7 +33,7 @@ std::string ModifySurveyRequest::getSurveyId()const
 void ModifySurveyRequest::setSurveyId(const std::string& surveyId)
 {
 	surveyId_ = surveyId;
-	setParameter("SurveyId", surveyId);
+	setCoreParameter("SurveyId", surveyId);
 }
 
 std::string ModifySurveyRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ModifySurveyRequest::getInstanceId()const
 void ModifySurveyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifySurveyRequest::getRole()const
@@ -55,7 +55,7 @@ std::string ModifySurveyRequest::getRole()const
 void ModifySurveyRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setParameter("Role", role);
+	setCoreParameter("Role", role);
 }
 
 int ModifySurveyRequest::getRound()const
@@ -66,7 +66,7 @@ int ModifySurveyRequest::getRound()const
 void ModifySurveyRequest::setRound(int round)
 {
 	round_ = round;
-	setParameter("Round", std::to_string(round));
+	setCoreParameter("Round", std::to_string(round));
 }
 
 std::string ModifySurveyRequest::getFlowJson()const
@@ -77,7 +77,7 @@ std::string ModifySurveyRequest::getFlowJson()const
 void ModifySurveyRequest::setFlowJson(const std::string& flowJson)
 {
 	flowJson_ = flowJson;
-	setParameter("FlowJson", flowJson);
+	setCoreParameter("FlowJson", flowJson);
 }
 
 std::string ModifySurveyRequest::getName()const
@@ -88,7 +88,7 @@ std::string ModifySurveyRequest::getName()const
 void ModifySurveyRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string ModifySurveyRequest::getGlobalQuestions()const
@@ -99,7 +99,7 @@ std::string ModifySurveyRequest::getGlobalQuestions()const
 void ModifySurveyRequest::setGlobalQuestions(const std::string& globalQuestions)
 {
 	globalQuestions_ = globalQuestions;
-	setParameter("GlobalQuestions", globalQuestions);
+	setCoreParameter("GlobalQuestions", globalQuestions);
 }
 
 std::string ModifySurveyRequest::getDescription()const
@@ -110,7 +110,7 @@ std::string ModifySurveyRequest::getDescription()const
 void ModifySurveyRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string ModifySurveyRequest::getCorpora()const
@@ -121,7 +121,7 @@ std::string ModifySurveyRequest::getCorpora()const
 void ModifySurveyRequest::setCorpora(const std::string& corpora)
 {
 	corpora_ = corpora;
-	setParameter("Corpora", corpora);
+	setCoreParameter("Corpora", corpora);
 }
 
 std::string ModifySurveyRequest::getSpeechOptimizationParam()const
@@ -132,7 +132,7 @@ std::string ModifySurveyRequest::getSpeechOptimizationParam()const
 void ModifySurveyRequest::setSpeechOptimizationParam(const std::string& speechOptimizationParam)
 {
 	speechOptimizationParam_ = speechOptimizationParam;
-	setParameter("SpeechOptimizationParam", speechOptimizationParam);
+	setCoreParameter("SpeechOptimizationParam", speechOptimizationParam);
 }
 
 std::string ModifySurveyRequest::getScenarioId()const
@@ -143,7 +143,7 @@ std::string ModifySurveyRequest::getScenarioId()const
 void ModifySurveyRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", scenarioId);
 }
 
 std::string ModifySurveyRequest::getFlowId()const
@@ -154,6 +154,6 @@ std::string ModifySurveyRequest::getFlowId()const
 void ModifySurveyRequest::setFlowId(const std::string& flowId)
 {
 	flowId_ = flowId;
-	setParameter("FlowId", flowId);
+	setCoreParameter("FlowId", flowId);
 }
 

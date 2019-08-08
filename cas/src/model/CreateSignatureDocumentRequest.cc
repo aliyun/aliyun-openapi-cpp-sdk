@@ -33,7 +33,7 @@ std::string CreateSignatureDocumentRequest::getSourceIp()const
 void CreateSignatureDocumentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateSignatureDocumentRequest::getDocContent()const
@@ -44,7 +44,7 @@ std::string CreateSignatureDocumentRequest::getDocContent()const
 void CreateSignatureDocumentRequest::setDocContent(const std::string& docContent)
 {
 	docContent_ = docContent;
-	setParameter("DocContent", docContent);
+	setCoreParameter("DocContent", docContent);
 }
 
 std::string CreateSignatureDocumentRequest::getLang()const
@@ -55,7 +55,7 @@ std::string CreateSignatureDocumentRequest::getLang()const
 void CreateSignatureDocumentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string CreateSignatureDocumentRequest::getDocTitle()const
@@ -66,6 +66,6 @@ std::string CreateSignatureDocumentRequest::getDocTitle()const
 void CreateSignatureDocumentRequest::setDocTitle(const std::string& docTitle)
 {
 	docTitle_ = docTitle;
-	setParameter("DocTitle", docTitle);
+	setCoreParameter("DocTitle", docTitle);
 }
 

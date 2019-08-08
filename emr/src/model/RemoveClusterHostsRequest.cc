@@ -33,7 +33,7 @@ long RemoveClusterHostsRequest::getResourceOwnerId()const
 void RemoveClusterHostsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RemoveClusterHostsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string RemoveClusterHostsRequest::getRegionId()const
 void RemoveClusterHostsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RemoveClusterHostsRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string RemoveClusterHostsRequest::getClusterId()const
 void RemoveClusterHostsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::vector<std::string> RemoveClusterHostsRequest::getHostIdList()const
@@ -67,7 +67,7 @@ void RemoveClusterHostsRequest::setHostIdList(const std::vector<std::string>& ho
 {
 	hostIdList_ = hostIdList;
 	for(int i = 0; i!= hostIdList.size(); i++)
-		setParameter("HostIdList."+ std::to_string(i), hostIdList.at(i));
+		setCoreParameter("HostIdList."+ std::to_string(i), hostIdList.at(i));
 }
 
 std::string RemoveClusterHostsRequest::getAccessKeyId()const
@@ -78,6 +78,6 @@ std::string RemoveClusterHostsRequest::getAccessKeyId()const
 void RemoveClusterHostsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

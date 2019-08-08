@@ -33,7 +33,7 @@ long DescribeIpv6GatewaysRequest::getResourceOwnerId()const
 void DescribeIpv6GatewaysRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeIpv6GatewaysRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeIpv6GatewaysRequest::getCallerParentId()const
 void DescribeIpv6GatewaysRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeIpv6GatewaysRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeIpv6GatewaysRequest::getProxy_original_security_transport()const
 void DescribeIpv6GatewaysRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeIpv6GatewaysRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeIpv6GatewaysRequest::getProxy_original_source_ip()const
 void DescribeIpv6GatewaysRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 int DescribeIpv6GatewaysRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int DescribeIpv6GatewaysRequest::getPageNumber()const
 void DescribeIpv6GatewaysRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeIpv6GatewaysRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeIpv6GatewaysRequest::getOwnerIdLoginEmail()const
 void DescribeIpv6GatewaysRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeIpv6GatewaysRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeIpv6GatewaysRequest::getCallerType()const
 void DescribeIpv6GatewaysRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeIpv6GatewaysRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeIpv6GatewaysRequest::getAccessKeyId()const
 void DescribeIpv6GatewaysRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeIpv6GatewaysRequest::getResourceGroupId()const
@@ -121,7 +121,7 @@ std::string DescribeIpv6GatewaysRequest::getResourceGroupId()const
 void DescribeIpv6GatewaysRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeIpv6GatewaysRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeIpv6GatewaysRequest::getRegionId()const
 void DescribeIpv6GatewaysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeIpv6GatewaysRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string DescribeIpv6GatewaysRequest::getSecurityToken()const
 void DescribeIpv6GatewaysRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool DescribeIpv6GatewaysRequest::getEnable()const
@@ -154,7 +154,7 @@ bool DescribeIpv6GatewaysRequest::getEnable()const
 void DescribeIpv6GatewaysRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", std::to_string(enable));
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeIpv6GatewaysRequest::getRequestContent()const
@@ -165,7 +165,7 @@ std::string DescribeIpv6GatewaysRequest::getRequestContent()const
 void DescribeIpv6GatewaysRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 int DescribeIpv6GatewaysRequest::getPageSize()const
@@ -176,7 +176,7 @@ int DescribeIpv6GatewaysRequest::getPageSize()const
 void DescribeIpv6GatewaysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeIpv6GatewaysRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ std::string DescribeIpv6GatewaysRequest::getCallerBidEmail()const
 void DescribeIpv6GatewaysRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeIpv6GatewaysRequest::getCallerUidEmail()const
@@ -198,7 +198,7 @@ std::string DescribeIpv6GatewaysRequest::getCallerUidEmail()const
 void DescribeIpv6GatewaysRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeIpv6GatewaysRequest::getCallerUid()const
@@ -209,7 +209,7 @@ long DescribeIpv6GatewaysRequest::getCallerUid()const
 void DescribeIpv6GatewaysRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeIpv6GatewaysRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string DescribeIpv6GatewaysRequest::getApp_ip()const
 void DescribeIpv6GatewaysRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeIpv6GatewaysRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string DescribeIpv6GatewaysRequest::getResourceOwnerAccount()const
 void DescribeIpv6GatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeIpv6GatewaysRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string DescribeIpv6GatewaysRequest::getOwnerAccount()const
 void DescribeIpv6GatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeIpv6GatewaysRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DescribeIpv6GatewaysRequest::getCallerBid()const
 void DescribeIpv6GatewaysRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeIpv6GatewaysRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DescribeIpv6GatewaysRequest::getOwnerId()const
 void DescribeIpv6GatewaysRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeIpv6GatewaysRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool DescribeIpv6GatewaysRequest::getProxy_trust_transport_info()const
 void DescribeIpv6GatewaysRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeIpv6GatewaysRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DescribeIpv6GatewaysRequest::getAk_mfa_present()const
 void DescribeIpv6GatewaysRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeIpv6GatewaysRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DescribeIpv6GatewaysRequest::getSecurity_transport()const
 void DescribeIpv6GatewaysRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeIpv6GatewaysRequest::getRequestId()const
@@ -308,7 +308,7 @@ std::string DescribeIpv6GatewaysRequest::getRequestId()const
 void DescribeIpv6GatewaysRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeIpv6GatewaysRequest::getVpcId()const
@@ -319,7 +319,7 @@ std::string DescribeIpv6GatewaysRequest::getVpcId()const
 void DescribeIpv6GatewaysRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string DescribeIpv6GatewaysRequest::getIpv6GatewayId()const
@@ -330,7 +330,7 @@ std::string DescribeIpv6GatewaysRequest::getIpv6GatewayId()const
 void DescribeIpv6GatewaysRequest::setIpv6GatewayId(const std::string& ipv6GatewayId)
 {
 	ipv6GatewayId_ = ipv6GatewayId;
-	setParameter("Ipv6GatewayId", ipv6GatewayId);
+	setCoreParameter("Ipv6GatewayId", ipv6GatewayId);
 }
 
 std::string DescribeIpv6GatewaysRequest::getName()const
@@ -341,6 +341,6 @@ std::string DescribeIpv6GatewaysRequest::getName()const
 void DescribeIpv6GatewaysRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 

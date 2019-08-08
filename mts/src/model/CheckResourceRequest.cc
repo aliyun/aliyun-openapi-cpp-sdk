@@ -33,7 +33,7 @@ std::string CheckResourceRequest::getCountry()const
 void CheckResourceRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setParameter("Country", country);
+	setCoreParameter("Country", country);
 }
 
 long CheckResourceRequest::getHid()const
@@ -44,7 +44,7 @@ long CheckResourceRequest::getHid()const
 void CheckResourceRequest::setHid(long hid)
 {
 	hid_ = hid;
-	setParameter("Hid", std::to_string(hid));
+	setCoreParameter("Hid", std::to_string(hid));
 }
 
 long CheckResourceRequest::getLevel()const
@@ -55,7 +55,7 @@ long CheckResourceRequest::getLevel()const
 void CheckResourceRequest::setLevel(long level)
 {
 	level_ = level;
-	setParameter("Level", std::to_string(level));
+	setCoreParameter("Level", std::to_string(level));
 }
 
 std::string CheckResourceRequest::getInvoker()const
@@ -66,7 +66,7 @@ std::string CheckResourceRequest::getInvoker()const
 void CheckResourceRequest::setInvoker(const std::string& invoker)
 {
 	invoker_ = invoker;
-	setParameter("Invoker", invoker);
+	setCoreParameter("Invoker", invoker);
 }
 
 std::string CheckResourceRequest::getMessage()const
@@ -77,7 +77,7 @@ std::string CheckResourceRequest::getMessage()const
 void CheckResourceRequest::setMessage(const std::string& message)
 {
 	message_ = message;
-	setParameter("Message", message);
+	setCoreParameter("Message", message);
 }
 
 std::string CheckResourceRequest::getUrl()const
@@ -88,7 +88,7 @@ std::string CheckResourceRequest::getUrl()const
 void CheckResourceRequest::setUrl(const std::string& url)
 {
 	url_ = url;
-	setParameter("Url", url);
+	setCoreParameter("Url", url);
 }
 
 bool CheckResourceRequest::getSuccess()const
@@ -99,7 +99,7 @@ bool CheckResourceRequest::getSuccess()const
 void CheckResourceRequest::setSuccess(bool success)
 {
 	success_ = success;
-	setParameter("Success", success ? "true" : "false");
+	setCoreParameter("Success", success ? "true" : "false");
 }
 
 bool CheckResourceRequest::getInterrupt()const
@@ -110,7 +110,7 @@ bool CheckResourceRequest::getInterrupt()const
 void CheckResourceRequest::setInterrupt(bool interrupt)
 {
 	interrupt_ = interrupt;
-	setParameter("Interrupt", interrupt ? "true" : "false");
+	setCoreParameter("Interrupt", interrupt ? "true" : "false");
 }
 
 std::string CheckResourceRequest::getGmtWakeup()const
@@ -121,7 +121,7 @@ std::string CheckResourceRequest::getGmtWakeup()const
 void CheckResourceRequest::setGmtWakeup(const std::string& gmtWakeup)
 {
 	gmtWakeup_ = gmtWakeup;
-	setParameter("GmtWakeup", gmtWakeup);
+	setCoreParameter("GmtWakeup", gmtWakeup);
 }
 
 std::string CheckResourceRequest::getPk()const
@@ -132,7 +132,7 @@ std::string CheckResourceRequest::getPk()const
 void CheckResourceRequest::setPk(const std::string& pk)
 {
 	pk_ = pk;
-	setParameter("Pk", pk);
+	setCoreParameter("Pk", pk);
 }
 
 std::string CheckResourceRequest::getBid()const
@@ -143,7 +143,7 @@ std::string CheckResourceRequest::getBid()const
 void CheckResourceRequest::setBid(const std::string& bid)
 {
 	bid_ = bid;
-	setParameter("Bid", bid);
+	setCoreParameter("Bid", bid);
 }
 
 std::string CheckResourceRequest::getPrompt()const
@@ -154,7 +154,7 @@ std::string CheckResourceRequest::getPrompt()const
 void CheckResourceRequest::setPrompt(const std::string& prompt)
 {
 	prompt_ = prompt;
-	setParameter("Prompt", prompt);
+	setCoreParameter("Prompt", prompt);
 }
 
 std::string CheckResourceRequest::getTaskExtraData()const
@@ -165,7 +165,7 @@ std::string CheckResourceRequest::getTaskExtraData()const
 void CheckResourceRequest::setTaskExtraData(const std::string& taskExtraData)
 {
 	taskExtraData_ = taskExtraData;
-	setParameter("TaskExtraData", taskExtraData);
+	setCoreParameter("TaskExtraData", taskExtraData);
 }
 
 std::string CheckResourceRequest::getTaskIdentifier()const
@@ -176,6 +176,6 @@ std::string CheckResourceRequest::getTaskIdentifier()const
 void CheckResourceRequest::setTaskIdentifier(const std::string& taskIdentifier)
 {
 	taskIdentifier_ = taskIdentifier;
-	setParameter("TaskIdentifier", taskIdentifier);
+	setCoreParameter("TaskIdentifier", taskIdentifier);
 }
 

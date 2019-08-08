@@ -91,6 +91,17 @@ void SwitchDBInstanceHARequest::setTargetInstanceId(int targetInstanceId)
 	setCoreParameter("TargetInstanceId", std::to_string(targetInstanceId));
 }
 
+std::string SwitchDBInstanceHARequest::getRoleIds()const
+{
+	return roleIds_;
+}
+
+void SwitchDBInstanceHARequest::setRoleIds(const std::string& roleIds)
+{
+	roleIds_ = roleIds;
+	setCoreParameter("RoleIds", roleIds);
+}
+
 std::string SwitchDBInstanceHARequest::getSecurityToken()const
 {
 	return securityToken_;

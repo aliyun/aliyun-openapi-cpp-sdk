@@ -33,7 +33,7 @@ long MetastoreRetryTaskRequest::getResourceOwnerId()const
 void MetastoreRetryTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreRetryTaskRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string MetastoreRetryTaskRequest::getRegionId()const
 void MetastoreRetryTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreRetryTaskRequest::getTaskId()const
@@ -55,7 +55,7 @@ std::string MetastoreRetryTaskRequest::getTaskId()const
 void MetastoreRetryTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string MetastoreRetryTaskRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string MetastoreRetryTaskRequest::getAccessKeyId()const
 void MetastoreRetryTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

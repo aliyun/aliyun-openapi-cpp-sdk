@@ -33,7 +33,7 @@ std::string StopMixStreamsServiceRequest::getSecurityToken()const
 void StopMixStreamsServiceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string StopMixStreamsServiceRequest::getMainDomainName()const
@@ -44,7 +44,7 @@ std::string StopMixStreamsServiceRequest::getMainDomainName()const
 void StopMixStreamsServiceRequest::setMainDomainName(const std::string& mainDomainName)
 {
 	mainDomainName_ = mainDomainName;
-	setParameter("MainDomainName", mainDomainName);
+	setCoreParameter("MainDomainName", mainDomainName);
 }
 
 std::string StopMixStreamsServiceRequest::getMixStreamName()const
@@ -55,7 +55,7 @@ std::string StopMixStreamsServiceRequest::getMixStreamName()const
 void StopMixStreamsServiceRequest::setMixStreamName(const std::string& mixStreamName)
 {
 	mixStreamName_ = mixStreamName;
-	setParameter("MixStreamName", mixStreamName);
+	setCoreParameter("MixStreamName", mixStreamName);
 }
 
 std::string StopMixStreamsServiceRequest::getMixDomainName()const
@@ -66,7 +66,7 @@ std::string StopMixStreamsServiceRequest::getMixDomainName()const
 void StopMixStreamsServiceRequest::setMixDomainName(const std::string& mixDomainName)
 {
 	mixDomainName_ = mixDomainName;
-	setParameter("MixDomainName", mixDomainName);
+	setCoreParameter("MixDomainName", mixDomainName);
 }
 
 long StopMixStreamsServiceRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long StopMixStreamsServiceRequest::getOwnerId()const
 void StopMixStreamsServiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string StopMixStreamsServiceRequest::getMainAppName()const
@@ -88,7 +88,7 @@ std::string StopMixStreamsServiceRequest::getMainAppName()const
 void StopMixStreamsServiceRequest::setMainAppName(const std::string& mainAppName)
 {
 	mainAppName_ = mainAppName;
-	setParameter("MainAppName", mainAppName);
+	setCoreParameter("MainAppName", mainAppName);
 }
 
 std::string StopMixStreamsServiceRequest::getMixAppName()const
@@ -99,7 +99,7 @@ std::string StopMixStreamsServiceRequest::getMixAppName()const
 void StopMixStreamsServiceRequest::setMixAppName(const std::string& mixAppName)
 {
 	mixAppName_ = mixAppName;
-	setParameter("MixAppName", mixAppName);
+	setCoreParameter("MixAppName", mixAppName);
 }
 
 std::string StopMixStreamsServiceRequest::getMainStreamName()const
@@ -110,6 +110,6 @@ std::string StopMixStreamsServiceRequest::getMainStreamName()const
 void StopMixStreamsServiceRequest::setMainStreamName(const std::string& mainStreamName)
 {
 	mainStreamName_ = mainStreamName;
-	setParameter("MainStreamName", mainStreamName);
+	setCoreParameter("MainStreamName", mainStreamName);
 }
 

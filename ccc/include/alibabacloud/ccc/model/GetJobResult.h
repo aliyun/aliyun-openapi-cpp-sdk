@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,121 +17,108 @@
 #ifndef ALIBABACLOUD_CCC_MODEL_GETJOBRESULT_H_
 #define ALIBABACLOUD_CCC_MODEL_GETJOBRESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/ccc/CCCExport.h>
+#include <alibabacloud/core/ServiceResult.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace CCC
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CCC_EXPORT GetJobResult : public ServiceResult
-			{
-			public:
-				struct Job
-				{
-					struct Contact
-					{
-						std::string role;
-						std::string honorific;
-						std::string referenceId;
-						std::string state;
-						std::string phoneNumber;
-						std::string contactId;
-						std::string contactName;
-					};
-					struct KeyValuePair
-					{
-						std::string value;
-						std::string key;
-					};
-					struct Task
-					{
-						struct Contact2
-						{
-							std::string role;
-							std::string honorific;
-							std::string referenceId;
-							std::string state;
-							std::string phoneNumber;
-							std::string contactId;
-							std::string contactName;
-						};
-						struct ConversationDetail
-						{
-							struct SummaryItem
-							{
-								std::string category;
-								std::string content;
-								std::string summaryName;
-							};
-							std::string script;
-							std::vector<ConversationDetail::SummaryItem> summary1;
-							long timestamp;
-							std::string speaker;
-						};
-						std::string status;
-						std::string chatbotId;
-						long planedTime;
-						std::string calledNumber;
-						std::string taskId;
-						std::string scenarioId;
-						long actualTime;
-						std::string callId;
-						std::vector<Task::ConversationDetail> conversation;
-						int duration;
-						std::string brief;
-						std::string callingNumber;
-						Contact2 contact2;
-						std::string jobId;
-					};
-					struct SummaryItem3
-					{
-						std::string category;
-						std::string content;
-						std::string summaryName;
-					};
-					std::string status;
-					std::vector<Task> tasks;
-					std::string scenarioId;
-					int priority;
-					std::string strategyId;
-					std::vector<KeyValuePair> extras;
-					std::string groupId;
-					std::vector<Contact> contacts;
-					std::string referenceId;
-					int systemPriority;
-					std::string failureReason;
-					std::vector<SummaryItem3> summary;
-					std::string jobId;
-					std::vector<std::string> callingNumbers;
-				};
+namespace AlibabaCloud {
+namespace CCC {
+namespace Model {
+class ALIBABACLOUD_CCC_EXPORT GetJobResult : public ServiceResult {
+public:
+  struct Job {
+    struct Contact {
+      std::string role;
+      std::string honorific;
+      std::string referenceId;
+      std::string state;
+      std::string phoneNumber;
+      std::string contactId;
+      std::string contactName;
+    };
+    struct KeyValuePair {
+      std::string value;
+      std::string key;
+    };
+    struct Task {
+      struct Contact2 {
+        std::string role;
+        std::string honorific;
+        std::string referenceId;
+        std::string state;
+        std::string phoneNumber;
+        std::string contactId;
+        std::string contactName;
+      };
+      struct ConversationDetail {
+        struct SummaryItem {
+          std::string category;
+          std::string content;
+          std::string summaryName;
+        };
+        std::string script;
+        std::vector<ConversationDetail::SummaryItem> summary1;
+        long timestamp;
+        std::string speaker;
+      };
+      std::string status;
+      std::string chatbotId;
+      long planedTime;
+      std::string calledNumber;
+      std::string taskId;
+      std::string scenarioId;
+      long actualTime;
+      std::string callId;
+      std::vector<Task::ConversationDetail> conversation;
+      int duration;
+      std::string brief;
+      std::string callingNumber;
+      Contact2 contact2;
+      std::string jobId;
+    };
+    struct SummaryItem3 {
+      std::string category;
+      std::string content;
+      std::string summaryName;
+    };
+    std::string status;
+    std::vector<Task> tasks;
+    std::string scenarioId;
+    int priority;
+    std::string strategyId;
+    std::vector<KeyValuePair> extras;
+    std::string groupId;
+    std::vector<Contact> contacts;
+    std::string referenceId;
+    int systemPriority;
+    std::string failureReason;
+    std::vector<SummaryItem3> summary;
+    std::string jobId;
+    std::vector<std::string> callingNumbers;
+  };
 
+  GetJobResult();
+  explicit GetJobResult(const std::string &payload);
+  ~GetJobResult();
+  std::string getMessage() const;
+  int getHttpStatusCode() const;
+  Job getJob() const;
+  std::string getCode() const;
+  bool getSuccess() const;
 
-				GetJobResult();
-				explicit GetJobResult(const std::string &payload);
-				~GetJobResult();
-				std::string getMessage()const;
-				int getHttpStatusCode()const;
-				Job getJob()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string message_;
-				int httpStatusCode_;
-				Job job_;
-				std::string code_;
-				bool success_;
-
-			};
-		}
-	}
-}
+private:
+  std::string message_;
+  int httpStatusCode_;
+  Job job_;
+  std::string code_;
+  bool success_;
+};
+} // namespace Model
+} // namespace CCC
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CCC_MODEL_GETJOBRESULT_H_

@@ -33,7 +33,7 @@ long DescribeServerRelatedGlobalAccelerationInstancesRequest::getResourceOwnerId
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getServerType()const
@@ -44,7 +44,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getServerTy
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setServerType(const std::string& serverType)
 {
 	serverType_ = serverType;
-	setParameter("ServerType", serverType);
+	setCoreParameter("ServerType", serverType);
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getResource
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getRegionId
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerAcc
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerId()const
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getServerId()const
@@ -99,6 +99,6 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getServerId
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setServerId(const std::string& serverId)
 {
 	serverId_ = serverId;
-	setParameter("ServerId", serverId);
+	setCoreParameter("ServerId", serverId);
 }
 

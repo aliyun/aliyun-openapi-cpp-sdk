@@ -31,38 +31,38 @@ set(green_public_header_model
 	include/alibabacloud/green/model/DescribeWebsiteScanResultResult.h
 	include/alibabacloud/green/model/UpdateAppPackageRequest.h
 	include/alibabacloud/green/model/UpdateAppPackageResult.h
-	include/alibabacloud/green/model/DeleteVideoDnaGroupRequest.h
-	include/alibabacloud/green/model/DeleteVideoDnaGroupResult.h
 	include/alibabacloud/green/model/UpdateOssCallbackSettingRequest.h
 	include/alibabacloud/green/model/UpdateOssCallbackSettingResult.h
+	include/alibabacloud/green/model/DeleteVideoDnaGroupRequest.h
+	include/alibabacloud/green/model/DeleteVideoDnaGroupResult.h
 	include/alibabacloud/green/model/DescribeWebsiteInstanceKeyUrlRequest.h
 	include/alibabacloud/green/model/DescribeWebsiteInstanceKeyUrlResult.h
-	include/alibabacloud/green/model/DeleteVideoDnaRequest.h
-	include/alibabacloud/green/model/DeleteVideoDnaResult.h
 	include/alibabacloud/green/model/RefundCdiBaseBagRequest.h
 	include/alibabacloud/green/model/RefundCdiBaseBagResult.h
+	include/alibabacloud/green/model/DeleteVideoDnaRequest.h
+	include/alibabacloud/green/model/DeleteVideoDnaResult.h
 	include/alibabacloud/green/model/UpdateBizTypeSettingRequest.h
 	include/alibabacloud/green/model/UpdateBizTypeSettingResult.h
 	include/alibabacloud/green/model/FileAsyncScanRequest.h
 	include/alibabacloud/green/model/FileAsyncScanResult.h
 	include/alibabacloud/green/model/DescribeOssResultItemsRequest.h
 	include/alibabacloud/green/model/DescribeOssResultItemsResult.h
-	include/alibabacloud/green/model/UpdateWebsiteInstanceStatusRequest.h
-	include/alibabacloud/green/model/UpdateWebsiteInstanceStatusResult.h
 	include/alibabacloud/green/model/DescribeBizTypesRequest.h
 	include/alibabacloud/green/model/DescribeBizTypesResult.h
+	include/alibabacloud/green/model/UpdateWebsiteInstanceStatusRequest.h
+	include/alibabacloud/green/model/UpdateWebsiteInstanceStatusResult.h
 	include/alibabacloud/green/model/RefundCdiBagRequest.h
 	include/alibabacloud/green/model/RefundCdiBagResult.h
 	include/alibabacloud/green/model/DeleteImageFromLibRequest.h
 	include/alibabacloud/green/model/DeleteImageFromLibResult.h
 	include/alibabacloud/green/model/CreateCdiBaseBagRequest.h
 	include/alibabacloud/green/model/CreateCdiBaseBagResult.h
+	include/alibabacloud/green/model/DeleteKeywordLibRequest.h
+	include/alibabacloud/green/model/DeleteKeywordLibResult.h
 	include/alibabacloud/green/model/VerifyPhoneRequest.h
 	include/alibabacloud/green/model/VerifyPhoneResult.h
 	include/alibabacloud/green/model/ImageDetectionRequest.h
 	include/alibabacloud/green/model/ImageDetectionResult.h
-	include/alibabacloud/green/model/DeleteKeywordLibRequest.h
-	include/alibabacloud/green/model/DeleteKeywordLibResult.h
 	include/alibabacloud/green/model/ImportKeywordsRequest.h
 	include/alibabacloud/green/model/ImportKeywordsResult.h
 	include/alibabacloud/green/model/VoiceCancelScanRequest.h
@@ -81,12 +81,14 @@ set(green_public_header_model
 	include/alibabacloud/green/model/DescribeWebsiteStatResult.h
 	include/alibabacloud/green/model/UpdateNotificationSettingRequest.h
 	include/alibabacloud/green/model/UpdateNotificationSettingResult.h
+	include/alibabacloud/green/model/DescribeUserBizTypesRequest.h
+	include/alibabacloud/green/model/DescribeUserBizTypesResult.h
 	include/alibabacloud/green/model/DescribeAuditContentItemRequest.h
 	include/alibabacloud/green/model/DescribeAuditContentItemResult.h
-	include/alibabacloud/green/model/SearchPersonRequest.h
-	include/alibabacloud/green/model/SearchPersonResult.h
 	include/alibabacloud/green/model/MarkOssResultRequest.h
 	include/alibabacloud/green/model/MarkOssResultResult.h
+	include/alibabacloud/green/model/SearchPersonRequest.h
+	include/alibabacloud/green/model/SearchPersonResult.h
 	include/alibabacloud/green/model/DescribeAppInfoRequest.h
 	include/alibabacloud/green/model/DescribeAppInfoResult.h
 	include/alibabacloud/green/model/AddSimilarityImageRequest.h
@@ -157,20 +159,20 @@ set(green_public_header_model
 	include/alibabacloud/green/model/DescribeImageLibResult.h
 	include/alibabacloud/green/model/UpgradeCdiBaseBagRequest.h
 	include/alibabacloud/green/model/UpgradeCdiBaseBagResult.h
-	include/alibabacloud/green/model/DescribeUserStatusRequest.h
-	include/alibabacloud/green/model/DescribeUserStatusResult.h
 	include/alibabacloud/green/model/GetAddVideoDnaResultsRequest.h
 	include/alibabacloud/green/model/GetAddVideoDnaResultsResult.h
+	include/alibabacloud/green/model/DescribeUserStatusRequest.h
+	include/alibabacloud/green/model/DescribeUserStatusResult.h
 	include/alibabacloud/green/model/DescribeKeywordRequest.h
 	include/alibabacloud/green/model/DescribeKeywordResult.h
-	include/alibabacloud/green/model/AddFacesRequest.h
-	include/alibabacloud/green/model/AddFacesResult.h
 	include/alibabacloud/green/model/DescribeAuditSettingRequest.h
 	include/alibabacloud/green/model/DescribeAuditSettingResult.h
-	include/alibabacloud/green/model/CreateKeywordLibRequest.h
-	include/alibabacloud/green/model/CreateKeywordLibResult.h
+	include/alibabacloud/green/model/AddFacesRequest.h
+	include/alibabacloud/green/model/AddFacesResult.h
 	include/alibabacloud/green/model/UpdateOssIncrementCheckSettingRequest.h
 	include/alibabacloud/green/model/UpdateOssIncrementCheckSettingResult.h
+	include/alibabacloud/green/model/CreateKeywordLibRequest.h
+	include/alibabacloud/green/model/CreateKeywordLibResult.h
 	include/alibabacloud/green/model/UploadCredentialsRequest.h
 	include/alibabacloud/green/model/UploadCredentialsResult.h
 	include/alibabacloud/green/model/CreateBizTypeRequest.h
@@ -235,10 +237,10 @@ set(green_public_header_model
 	include/alibabacloud/green/model/MarkAuditContentItemResult.h
 	include/alibabacloud/green/model/AddVideoDnaRequest.h
 	include/alibabacloud/green/model/AddVideoDnaResult.h
-	include/alibabacloud/green/model/VideoSyncScanRequest.h
-	include/alibabacloud/green/model/VideoSyncScanResult.h
 	include/alibabacloud/green/model/DeleteNotificationContactsRequest.h
 	include/alibabacloud/green/model/DeleteNotificationContactsResult.h
+	include/alibabacloud/green/model/VideoSyncScanRequest.h
+	include/alibabacloud/green/model/VideoSyncScanResult.h
 	include/alibabacloud/green/model/VideoAsyncScanResultsRequest.h
 	include/alibabacloud/green/model/VideoAsyncScanResultsResult.h
 	include/alibabacloud/green/model/DescribeOssStockStatusRequest.h
@@ -259,32 +261,32 @@ set(green_public_header_model
 	include/alibabacloud/green/model/DescribeWebsiteScanResultDetailResult.h
 	include/alibabacloud/green/model/AddSimilarityLibraryRequest.h
 	include/alibabacloud/green/model/AddSimilarityLibraryResult.h
-	include/alibabacloud/green/model/AddVideoDnaGroupRequest.h
-	include/alibabacloud/green/model/AddVideoDnaGroupResult.h
 	include/alibabacloud/green/model/CreateCdiBagRequest.h
 	include/alibabacloud/green/model/CreateCdiBagResult.h
-	include/alibabacloud/green/model/UpdateKeywordLibRequest.h
-	include/alibabacloud/green/model/UpdateKeywordLibResult.h
+	include/alibabacloud/green/model/AddVideoDnaGroupRequest.h
+	include/alibabacloud/green/model/AddVideoDnaGroupResult.h
 	include/alibabacloud/green/model/ImageAsyncScanRequest.h
 	include/alibabacloud/green/model/ImageAsyncScanResult.h
+	include/alibabacloud/green/model/UpdateKeywordLibRequest.h
+	include/alibabacloud/green/model/UpdateKeywordLibResult.h
 	include/alibabacloud/green/model/ImageAsyncScanResultsRequest.h
 	include/alibabacloud/green/model/ImageAsyncScanResultsResult.h
 	include/alibabacloud/green/model/VoiceAsyncScanResultsRequest.h
 	include/alibabacloud/green/model/VoiceAsyncScanResultsResult.h
 	include/alibabacloud/green/model/ImageResultsRequest.h
 	include/alibabacloud/green/model/ImageResultsResult.h
-	include/alibabacloud/green/model/VerifyWebsiteInstanceRequest.h
-	include/alibabacloud/green/model/VerifyWebsiteInstanceResult.h
 	include/alibabacloud/green/model/UpdateWebsiteInstanceKeyUrlRequest.h
 	include/alibabacloud/green/model/UpdateWebsiteInstanceKeyUrlResult.h
+	include/alibabacloud/green/model/VerifyWebsiteInstanceRequest.h
+	include/alibabacloud/green/model/VerifyWebsiteInstanceResult.h
 	include/alibabacloud/green/model/SendVerifyCodeToPhoneRequest.h
 	include/alibabacloud/green/model/SendVerifyCodeToPhoneResult.h
 	include/alibabacloud/green/model/DescribeOssIncrementOverviewRequest.h
 	include/alibabacloud/green/model/DescribeOssIncrementOverviewResult.h
-	include/alibabacloud/green/model/DescribeNotificationSettingRequest.h
-	include/alibabacloud/green/model/DescribeNotificationSettingResult.h
 	include/alibabacloud/green/model/DescribeAuditContentRequest.h
-	include/alibabacloud/green/model/DescribeAuditContentResult.h )
+	include/alibabacloud/green/model/DescribeAuditContentResult.h
+	include/alibabacloud/green/model/DescribeNotificationSettingRequest.h
+	include/alibabacloud/green/model/DescribeNotificationSettingResult.h )
 
 set(green_src 
 	src/GreenClient.cc
@@ -298,38 +300,38 @@ set(green_src
 	src/model/DescribeWebsiteScanResultResult.cc
 	src/model/UpdateAppPackageRequest.cc
 	src/model/UpdateAppPackageResult.cc
-	src/model/DeleteVideoDnaGroupRequest.cc
-	src/model/DeleteVideoDnaGroupResult.cc
 	src/model/UpdateOssCallbackSettingRequest.cc
 	src/model/UpdateOssCallbackSettingResult.cc
+	src/model/DeleteVideoDnaGroupRequest.cc
+	src/model/DeleteVideoDnaGroupResult.cc
 	src/model/DescribeWebsiteInstanceKeyUrlRequest.cc
 	src/model/DescribeWebsiteInstanceKeyUrlResult.cc
-	src/model/DeleteVideoDnaRequest.cc
-	src/model/DeleteVideoDnaResult.cc
 	src/model/RefundCdiBaseBagRequest.cc
 	src/model/RefundCdiBaseBagResult.cc
+	src/model/DeleteVideoDnaRequest.cc
+	src/model/DeleteVideoDnaResult.cc
 	src/model/UpdateBizTypeSettingRequest.cc
 	src/model/UpdateBizTypeSettingResult.cc
 	src/model/FileAsyncScanRequest.cc
 	src/model/FileAsyncScanResult.cc
 	src/model/DescribeOssResultItemsRequest.cc
 	src/model/DescribeOssResultItemsResult.cc
-	src/model/UpdateWebsiteInstanceStatusRequest.cc
-	src/model/UpdateWebsiteInstanceStatusResult.cc
 	src/model/DescribeBizTypesRequest.cc
 	src/model/DescribeBizTypesResult.cc
+	src/model/UpdateWebsiteInstanceStatusRequest.cc
+	src/model/UpdateWebsiteInstanceStatusResult.cc
 	src/model/RefundCdiBagRequest.cc
 	src/model/RefundCdiBagResult.cc
 	src/model/DeleteImageFromLibRequest.cc
 	src/model/DeleteImageFromLibResult.cc
 	src/model/CreateCdiBaseBagRequest.cc
 	src/model/CreateCdiBaseBagResult.cc
+	src/model/DeleteKeywordLibRequest.cc
+	src/model/DeleteKeywordLibResult.cc
 	src/model/VerifyPhoneRequest.cc
 	src/model/VerifyPhoneResult.cc
 	src/model/ImageDetectionRequest.cc
 	src/model/ImageDetectionResult.cc
-	src/model/DeleteKeywordLibRequest.cc
-	src/model/DeleteKeywordLibResult.cc
 	src/model/ImportKeywordsRequest.cc
 	src/model/ImportKeywordsResult.cc
 	src/model/VoiceCancelScanRequest.cc
@@ -348,12 +350,14 @@ set(green_src
 	src/model/DescribeWebsiteStatResult.cc
 	src/model/UpdateNotificationSettingRequest.cc
 	src/model/UpdateNotificationSettingResult.cc
+	src/model/DescribeUserBizTypesRequest.cc
+	src/model/DescribeUserBizTypesResult.cc
 	src/model/DescribeAuditContentItemRequest.cc
 	src/model/DescribeAuditContentItemResult.cc
-	src/model/SearchPersonRequest.cc
-	src/model/SearchPersonResult.cc
 	src/model/MarkOssResultRequest.cc
 	src/model/MarkOssResultResult.cc
+	src/model/SearchPersonRequest.cc
+	src/model/SearchPersonResult.cc
 	src/model/DescribeAppInfoRequest.cc
 	src/model/DescribeAppInfoResult.cc
 	src/model/AddSimilarityImageRequest.cc
@@ -424,20 +428,20 @@ set(green_src
 	src/model/DescribeImageLibResult.cc
 	src/model/UpgradeCdiBaseBagRequest.cc
 	src/model/UpgradeCdiBaseBagResult.cc
-	src/model/DescribeUserStatusRequest.cc
-	src/model/DescribeUserStatusResult.cc
 	src/model/GetAddVideoDnaResultsRequest.cc
 	src/model/GetAddVideoDnaResultsResult.cc
+	src/model/DescribeUserStatusRequest.cc
+	src/model/DescribeUserStatusResult.cc
 	src/model/DescribeKeywordRequest.cc
 	src/model/DescribeKeywordResult.cc
-	src/model/AddFacesRequest.cc
-	src/model/AddFacesResult.cc
 	src/model/DescribeAuditSettingRequest.cc
 	src/model/DescribeAuditSettingResult.cc
-	src/model/CreateKeywordLibRequest.cc
-	src/model/CreateKeywordLibResult.cc
+	src/model/AddFacesRequest.cc
+	src/model/AddFacesResult.cc
 	src/model/UpdateOssIncrementCheckSettingRequest.cc
 	src/model/UpdateOssIncrementCheckSettingResult.cc
+	src/model/CreateKeywordLibRequest.cc
+	src/model/CreateKeywordLibResult.cc
 	src/model/UploadCredentialsRequest.cc
 	src/model/UploadCredentialsResult.cc
 	src/model/CreateBizTypeRequest.cc
@@ -502,10 +506,10 @@ set(green_src
 	src/model/MarkAuditContentItemResult.cc
 	src/model/AddVideoDnaRequest.cc
 	src/model/AddVideoDnaResult.cc
-	src/model/VideoSyncScanRequest.cc
-	src/model/VideoSyncScanResult.cc
 	src/model/DeleteNotificationContactsRequest.cc
 	src/model/DeleteNotificationContactsResult.cc
+	src/model/VideoSyncScanRequest.cc
+	src/model/VideoSyncScanResult.cc
 	src/model/VideoAsyncScanResultsRequest.cc
 	src/model/VideoAsyncScanResultsResult.cc
 	src/model/DescribeOssStockStatusRequest.cc
@@ -526,32 +530,32 @@ set(green_src
 	src/model/DescribeWebsiteScanResultDetailResult.cc
 	src/model/AddSimilarityLibraryRequest.cc
 	src/model/AddSimilarityLibraryResult.cc
-	src/model/AddVideoDnaGroupRequest.cc
-	src/model/AddVideoDnaGroupResult.cc
 	src/model/CreateCdiBagRequest.cc
 	src/model/CreateCdiBagResult.cc
-	src/model/UpdateKeywordLibRequest.cc
-	src/model/UpdateKeywordLibResult.cc
+	src/model/AddVideoDnaGroupRequest.cc
+	src/model/AddVideoDnaGroupResult.cc
 	src/model/ImageAsyncScanRequest.cc
 	src/model/ImageAsyncScanResult.cc
+	src/model/UpdateKeywordLibRequest.cc
+	src/model/UpdateKeywordLibResult.cc
 	src/model/ImageAsyncScanResultsRequest.cc
 	src/model/ImageAsyncScanResultsResult.cc
 	src/model/VoiceAsyncScanResultsRequest.cc
 	src/model/VoiceAsyncScanResultsResult.cc
 	src/model/ImageResultsRequest.cc
 	src/model/ImageResultsResult.cc
-	src/model/VerifyWebsiteInstanceRequest.cc
-	src/model/VerifyWebsiteInstanceResult.cc
 	src/model/UpdateWebsiteInstanceKeyUrlRequest.cc
 	src/model/UpdateWebsiteInstanceKeyUrlResult.cc
+	src/model/VerifyWebsiteInstanceRequest.cc
+	src/model/VerifyWebsiteInstanceResult.cc
 	src/model/SendVerifyCodeToPhoneRequest.cc
 	src/model/SendVerifyCodeToPhoneResult.cc
 	src/model/DescribeOssIncrementOverviewRequest.cc
 	src/model/DescribeOssIncrementOverviewResult.cc
-	src/model/DescribeNotificationSettingRequest.cc
-	src/model/DescribeNotificationSettingResult.cc
 	src/model/DescribeAuditContentRequest.cc
-	src/model/DescribeAuditContentResult.cc )
+	src/model/DescribeAuditContentResult.cc
+	src/model/DescribeNotificationSettingRequest.cc
+	src/model/DescribeNotificationSettingResult.cc )
 
 add_library(green ${LIB_TYPE}
 	${green_public_header}

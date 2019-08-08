@@ -34,7 +34,7 @@ void CreateBatchJobsRequest::setCallingNumber(const std::vector<std::string>& ca
 {
 	callingNumber_ = callingNumber;
 	for(int i = 0; i!= callingNumber.size(); i++)
-		setParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
 }
 
 std::string CreateBatchJobsRequest::getInstanceId()const
@@ -45,7 +45,7 @@ std::string CreateBatchJobsRequest::getInstanceId()const
 void CreateBatchJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 bool CreateBatchJobsRequest::getSubmitted()const
@@ -56,7 +56,7 @@ bool CreateBatchJobsRequest::getSubmitted()const
 void CreateBatchJobsRequest::setSubmitted(bool submitted)
 {
 	submitted_ = submitted;
-	setParameter("Submitted", std::to_string(submitted));
+	setCoreParameter("Submitted", submitted ? "true" : "false");
 }
 
 std::string CreateBatchJobsRequest::getStrategyJson()const
@@ -67,7 +67,7 @@ std::string CreateBatchJobsRequest::getStrategyJson()const
 void CreateBatchJobsRequest::setStrategyJson(const std::string& strategyJson)
 {
 	strategyJson_ = strategyJson;
-	setParameter("StrategyJson", strategyJson);
+	setCoreParameter("StrategyJson", strategyJson);
 }
 
 std::string CreateBatchJobsRequest::getName()const
@@ -78,7 +78,7 @@ std::string CreateBatchJobsRequest::getName()const
 void CreateBatchJobsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string CreateBatchJobsRequest::getDescription()const
@@ -89,7 +89,7 @@ std::string CreateBatchJobsRequest::getDescription()const
 void CreateBatchJobsRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string CreateBatchJobsRequest::getScenarioId()const
@@ -100,7 +100,7 @@ std::string CreateBatchJobsRequest::getScenarioId()const
 void CreateBatchJobsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", scenarioId);
 }
 
 std::string CreateBatchJobsRequest::getJobFilePath()const
@@ -111,6 +111,6 @@ std::string CreateBatchJobsRequest::getJobFilePath()const
 void CreateBatchJobsRequest::setJobFilePath(const std::string& jobFilePath)
 {
 	jobFilePath_ = jobFilePath;
-	setParameter("JobFilePath", jobFilePath);
+	setCoreParameter("JobFilePath", jobFilePath);
 }
 

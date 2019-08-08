@@ -33,7 +33,7 @@ std::string ModifyClusterHostGroupRequest::getVswitchId()const
 void ModifyClusterHostGroupRequest::setVswitchId(const std::string& vswitchId)
 {
 	vswitchId_ = vswitchId;
-	setParameter("VswitchId", vswitchId);
+	setCoreParameter("VswitchId", vswitchId);
 }
 
 long ModifyClusterHostGroupRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyClusterHostGroupRequest::getResourceOwnerId()const
 void ModifyClusterHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyClusterHostGroupRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyClusterHostGroupRequest::getRegionId()const
 void ModifyClusterHostGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyClusterHostGroupRequest::getHostGroupId()const
@@ -66,7 +66,7 @@ std::string ModifyClusterHostGroupRequest::getHostGroupId()const
 void ModifyClusterHostGroupRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setParameter("HostGroupId", hostGroupId);
+	setCoreParameter("HostGroupId", hostGroupId);
 }
 
 std::string ModifyClusterHostGroupRequest::getSecurityGroupId()const
@@ -77,7 +77,7 @@ std::string ModifyClusterHostGroupRequest::getSecurityGroupId()const
 void ModifyClusterHostGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 std::string ModifyClusterHostGroupRequest::getComment()const
@@ -88,7 +88,7 @@ std::string ModifyClusterHostGroupRequest::getComment()const
 void ModifyClusterHostGroupRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setParameter("Comment", comment);
+	setCoreParameter("Comment", comment);
 }
 
 std::string ModifyClusterHostGroupRequest::getClusterId()const
@@ -99,7 +99,7 @@ std::string ModifyClusterHostGroupRequest::getClusterId()const
 void ModifyClusterHostGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ModifyClusterHostGroupRequest::getHostGroupName()const
@@ -110,7 +110,7 @@ std::string ModifyClusterHostGroupRequest::getHostGroupName()const
 void ModifyClusterHostGroupRequest::setHostGroupName(const std::string& hostGroupName)
 {
 	hostGroupName_ = hostGroupName;
-	setParameter("HostGroupName", hostGroupName);
+	setCoreParameter("HostGroupName", hostGroupName);
 }
 
 std::string ModifyClusterHostGroupRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ModifyClusterHostGroupRequest::getAccessKeyId()const
 void ModifyClusterHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

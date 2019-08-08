@@ -25,6 +25,17 @@ DescribeDataSourceRequest::DescribeDataSourceRequest() :
 DescribeDataSourceRequest::~DescribeDataSourceRequest()
 {}
 
+std::string DescribeDataSourceRequest::getConfigType()const
+{
+	return configType_;
+}
+
+void DescribeDataSourceRequest::setConfigType(const std::string& configType)
+{
+	configType_ = configType;
+	setCoreParameter("ConfigType", configType);
+}
+
 std::string DescribeDataSourceRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -36,28 +47,6 @@ void DescribeDataSourceRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeDataSourceRequest::getDescription()const
-{
-	return description_;
-}
-
-void DescribeDataSourceRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
-long DescribeDataSourceRequest::getId()const
-{
-	return id_;
-}
-
-void DescribeDataSourceRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string DescribeDataSourceRequest::getLang()const
 {
 	return lang_;
@@ -67,16 +56,5 @@ void DescribeDataSourceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeDataSourceRequest::getGroupName()const
-{
-	return groupName_;
-}
-
-void DescribeDataSourceRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
 }
 

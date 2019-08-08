@@ -33,7 +33,7 @@ long AttachClusterForNoteRequest::getResourceOwnerId()const
 void AttachClusterForNoteRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AttachClusterForNoteRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string AttachClusterForNoteRequest::getRegionId()const
 void AttachClusterForNoteRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AttachClusterForNoteRequest::getId()const
@@ -55,7 +55,7 @@ std::string AttachClusterForNoteRequest::getId()const
 void AttachClusterForNoteRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string AttachClusterForNoteRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string AttachClusterForNoteRequest::getClusterId()const
 void AttachClusterForNoteRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string AttachClusterForNoteRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string AttachClusterForNoteRequest::getAccessKeyId()const
 void AttachClusterForNoteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

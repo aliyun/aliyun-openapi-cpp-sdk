@@ -33,7 +33,7 @@ long GetRadioRunHistoryTimeSerRequest::getId()const
 void GetRadioRunHistoryTimeSerRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetRadioRunHistoryTimeSerRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetRadioRunHistoryTimeSerRequest::getAccessKeyId()const
 void GetRadioRunHistoryTimeSerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

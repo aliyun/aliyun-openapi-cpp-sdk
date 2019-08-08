@@ -33,7 +33,7 @@ std::string ApgroupBatchDeleteApRequest::getApAssetIds()const
 void ApgroupBatchDeleteApRequest::setApAssetIds(const std::string& apAssetIds)
 {
 	apAssetIds_ = apAssetIds;
-	setParameter("ApAssetIds", apAssetIds);
+	setCoreParameter("ApAssetIds", apAssetIds);
 }
 
 std::string ApgroupBatchDeleteApRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ApgroupBatchDeleteApRequest::getAccessKeyId()const
 void ApgroupBatchDeleteApRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -25,17 +25,6 @@ OnsWarnCreateRequest::OnsWarnCreateRequest() :
 OnsWarnCreateRequest::~OnsWarnCreateRequest()
 {}
 
-long OnsWarnCreateRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsWarnCreateRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsWarnCreateRequest::getInstanceId()const
 {
 	return instanceId_;

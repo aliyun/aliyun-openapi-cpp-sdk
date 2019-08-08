@@ -33,7 +33,7 @@ std::string ListFlowProjectUserRequest::getRegionId()const
 void ListFlowProjectUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListFlowProjectUserRequest::getPageSize()const
@@ -44,7 +44,7 @@ int ListFlowProjectUserRequest::getPageSize()const
 void ListFlowProjectUserRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowProjectUserRequest::getProjectId()const
@@ -55,7 +55,7 @@ std::string ListFlowProjectUserRequest::getProjectId()const
 void ListFlowProjectUserRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 int ListFlowProjectUserRequest::getPageNumber()const
@@ -66,6 +66,6 @@ int ListFlowProjectUserRequest::getPageNumber()const
 void ListFlowProjectUserRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

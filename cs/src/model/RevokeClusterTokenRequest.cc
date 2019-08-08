@@ -33,6 +33,6 @@ std::string RevokeClusterTokenRequest::getToken()const
 void RevokeClusterTokenRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setParameter("Token", token);
+	setCoreParameter("Token", token);
 }
 

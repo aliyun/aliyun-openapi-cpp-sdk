@@ -33,6 +33,6 @@ long ProfileGetRequest::getUserId()const
 void ProfileGetRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", std::to_string(userId));
 }
 

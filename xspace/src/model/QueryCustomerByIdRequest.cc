@@ -33,6 +33,6 @@ std::string QueryCustomerByIdRequest::getId()const
 void QueryCustomerByIdRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 

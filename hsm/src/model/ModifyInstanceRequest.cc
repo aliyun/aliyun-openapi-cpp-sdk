@@ -33,7 +33,7 @@ long ModifyInstanceRequest::getResourceOwnerId()const
 void ModifyInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyInstanceRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ModifyInstanceRequest::getInstanceId()const
 void ModifyInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyInstanceRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceRequest::getSourceIp()const
 void ModifyInstanceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyInstanceRequest::getRemark()const
@@ -66,6 +66,6 @@ std::string ModifyInstanceRequest::getRemark()const
 void ModifyInstanceRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setParameter("Remark", remark);
+	setCoreParameter("Remark", remark);
 }
 

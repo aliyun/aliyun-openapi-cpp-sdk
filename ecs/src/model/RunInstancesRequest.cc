@@ -113,17 +113,6 @@ void RunInstancesRequest::setProxy_original_source_ip(const std::string& proxy_o
 	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
-int RunInstancesRequest::getMinAmount()const
-{
-	return minAmount_;
-}
-
-void RunInstancesRequest::setMinAmount(int minAmount)
-{
-	minAmount_ = minAmount;
-	setCoreParameter("MinAmount", std::to_string(minAmount));
-}
-
 float RunInstancesRequest::getSpotPriceLimit()const
 {
 	return spotPriceLimit_;
@@ -245,6 +234,17 @@ void RunInstancesRequest::setCallerBidEmail(const std::string& callerBidEmail)
 	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
+int RunInstancesRequest::getStorageSetPartitionNumber()const
+{
+	return storageSetPartitionNumber_;
+}
+
+void RunInstancesRequest::setStorageSetPartitionNumber(int storageSetPartitionNumber)
+{
+	storageSetPartitionNumber_ = storageSetPartitionNumber;
+	setCoreParameter("StorageSetPartitionNumber", std::to_string(storageSetPartitionNumber));
+}
+
 std::vector<RunInstancesRequest::Tag> RunInstancesRequest::getTag()const
 {
 	return tag_;
@@ -282,6 +282,17 @@ void RunInstancesRequest::setAutoRenewPeriod(int autoRenewPeriod)
 {
 	autoRenewPeriod_ = autoRenewPeriod;
 	setCoreParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+}
+
+int RunInstancesRequest::getCpuOptionsCore()const
+{
+	return cpuOptionsCore_;
+}
+
+void RunInstancesRequest::setCpuOptionsCore(int cpuOptionsCore)
+{
+	cpuOptionsCore_ = cpuOptionsCore;
+	setCoreParameter("CpuOptionsCore", std::to_string(cpuOptionsCore));
 }
 
 int RunInstancesRequest::getPeriod()const
@@ -326,6 +337,17 @@ void RunInstancesRequest::setIpv6AddressCount(int ipv6AddressCount)
 {
 	ipv6AddressCount_ = ipv6AddressCount;
 	setCoreParameter("Ipv6AddressCount", std::to_string(ipv6AddressCount));
+}
+
+std::string RunInstancesRequest::getCpuOptionsNuma()const
+{
+	return cpuOptionsNuma_;
+}
+
+void RunInstancesRequest::setCpuOptionsNuma(const std::string& cpuOptionsNuma)
+{
+	cpuOptionsNuma_ = cpuOptionsNuma;
+	setCoreParameter("CpuOptionsNuma", cpuOptionsNuma);
 }
 
 long RunInstancesRequest::getOwnerId()const
@@ -447,6 +469,17 @@ void RunInstancesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
 	setCoreParameter("RequestId", requestId);
+}
+
+std::string RunInstancesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void RunInstancesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
 }
 
 std::string RunInstancesRequest::getInternetChargeType()const
@@ -593,6 +626,17 @@ void RunInstancesRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
+int RunInstancesRequest::getCpuOptionsThreadsPerCore()const
+{
+	return cpuOptionsThreadsPerCore_;
+}
+
+void RunInstancesRequest::setCpuOptionsThreadsPerCore(int cpuOptionsThreadsPerCore)
+{
+	cpuOptionsThreadsPerCore_ = cpuOptionsThreadsPerCore;
+	setCoreParameter("CpuOptionsThreadsPerCore", std::to_string(cpuOptionsThreadsPerCore));
+}
+
 std::string RunInstancesRequest::getSystemDiskCategory()const
 {
 	return systemDiskCategory_;
@@ -624,6 +668,17 @@ void RunInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RunInstancesRequest::getSystemDiskPerformanceLevel()const
+{
+	return systemDiskPerformanceLevel_;
+}
+
+void RunInstancesRequest::setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel)
+{
+	systemDiskPerformanceLevel_ = systemDiskPerformanceLevel;
+	setCoreParameter("SystemDiskPerformanceLevel", systemDiskPerformanceLevel);
 }
 
 std::string RunInstancesRequest::getUserData()const
@@ -878,6 +933,17 @@ void RunInstancesRequest::setSecurityGroupIds(const std::vector<std::string>& se
 		setCoreParameter("SecurityGroupIds."+ std::to_string(i), securityGroupIds.at(i));
 }
 
+int RunInstancesRequest::getSpotDuration()const
+{
+	return spotDuration_;
+}
+
+void RunInstancesRequest::setSpotDuration(int spotDuration)
+{
+	spotDuration_ = spotDuration;
+	setCoreParameter("SpotDuration", std::to_string(spotDuration));
+}
+
 std::vector<RunInstancesRequest::DataDisk> RunInstancesRequest::getDataDisk()const
 {
 	return dataDisk_;
@@ -899,6 +965,7 @@ void RunInstancesRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setCoreParameter(str + ".Description", obj.description);
 		setCoreParameter(str + ".Device", obj.device);
 		setCoreParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
+		setCoreParameter(str + ".PerformanceLevel", obj.performanceLevel);
 	}
 }
 
@@ -922,6 +989,17 @@ void RunInstancesRequest::setProxy_trust_transport_info(bool proxy_trust_transpo
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
 	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+}
+
+std::string RunInstancesRequest::getStorageSetId()const
+{
+	return storageSetId_;
+}
+
+void RunInstancesRequest::setStorageSetId(const std::string& storageSetId)
+{
+	storageSetId_ = storageSetId;
+	setCoreParameter("StorageSetId", storageSetId);
 }
 
 std::string RunInstancesRequest::getSystemDiskSize()const

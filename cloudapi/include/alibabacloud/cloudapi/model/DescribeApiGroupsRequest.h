@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CLOUDAPI_EXPORT DescribeApiGroupsRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeApiGroupsRequest();
@@ -41,6 +46,10 @@ namespace AlibabaCloud
 				void setGroupId(const std::string& groupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
+				bool getEnableTagAuth()const;
+				void setEnableTagAuth(bool enableTagAuth);
 				std::string getGroupName()const;
 				void setGroupName(const std::string& groupName);
 				int getPageNumber()const;
@@ -52,6 +61,8 @@ namespace AlibabaCloud
 				std::string securityToken_;
 				std::string groupId_;
 				int pageSize_;
+				std::vector<Tag> tag_;
+				bool enableTagAuth_;
 				std::string groupName_;
 				int pageNumber_;
 				std::string accessKeyId_;

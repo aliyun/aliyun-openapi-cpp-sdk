@@ -33,7 +33,7 @@ std::string ModifyAccessWhiteListAutoShareRequest::getSrcIP()const
 void ModifyAccessWhiteListAutoShareRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setParameter("SrcIP", srcIP);
+	setCoreParameter("SrcIP", srcIP);
 }
 
 std::string ModifyAccessWhiteListAutoShareRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ModifyAccessWhiteListAutoShareRequest::getSourceIp()const
 void ModifyAccessWhiteListAutoShareRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int ModifyAccessWhiteListAutoShareRequest::getAutoConfig()const
@@ -55,7 +55,7 @@ int ModifyAccessWhiteListAutoShareRequest::getAutoConfig()const
 void ModifyAccessWhiteListAutoShareRequest::setAutoConfig(int autoConfig)
 {
 	autoConfig_ = autoConfig;
-	setParameter("AutoConfig", std::to_string(autoConfig));
+	setCoreParameter("AutoConfig", std::to_string(autoConfig));
 }
 
 std::string ModifyAccessWhiteListAutoShareRequest::getProductName()const
@@ -66,7 +66,7 @@ std::string ModifyAccessWhiteListAutoShareRequest::getProductName()const
 void ModifyAccessWhiteListAutoShareRequest::setProductName(const std::string& productName)
 {
 	productName_ = productName;
-	setParameter("ProductName", productName);
+	setCoreParameter("ProductName", productName);
 }
 
 int ModifyAccessWhiteListAutoShareRequest::getWhiteListType()const
@@ -77,7 +77,7 @@ int ModifyAccessWhiteListAutoShareRequest::getWhiteListType()const
 void ModifyAccessWhiteListAutoShareRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setParameter("WhiteListType", std::to_string(whiteListType));
+	setCoreParameter("WhiteListType", std::to_string(whiteListType));
 }
 
 std::string ModifyAccessWhiteListAutoShareRequest::getLang()const
@@ -88,7 +88,7 @@ std::string ModifyAccessWhiteListAutoShareRequest::getLang()const
 void ModifyAccessWhiteListAutoShareRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string ModifyAccessWhiteListAutoShareRequest::getSourceCode()const
@@ -99,6 +99,6 @@ std::string ModifyAccessWhiteListAutoShareRequest::getSourceCode()const
 void ModifyAccessWhiteListAutoShareRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", sourceCode);
 }
 

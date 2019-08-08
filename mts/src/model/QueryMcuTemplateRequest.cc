@@ -33,7 +33,7 @@ long QueryMcuTemplateRequest::getResourceOwnerId()const
 void QueryMcuTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryMcuTemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryMcuTemplateRequest::getResourceOwnerAccount()const
 void QueryMcuTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryMcuTemplateRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryMcuTemplateRequest::getOwnerAccount()const
 void QueryMcuTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryMcuTemplateRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long QueryMcuTemplateRequest::getOwnerId()const
 void QueryMcuTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryMcuTemplateRequest::getTemplateId()const
@@ -77,7 +77,7 @@ std::string QueryMcuTemplateRequest::getTemplateId()const
 void QueryMcuTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setParameter("TemplateId", templateId);
+	setCoreParameter("TemplateId", templateId);
 }
 
 std::string QueryMcuTemplateRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryMcuTemplateRequest::getAccessKeyId()const
 void QueryMcuTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

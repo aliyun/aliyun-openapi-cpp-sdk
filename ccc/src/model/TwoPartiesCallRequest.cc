@@ -33,7 +33,7 @@ std::string TwoPartiesCallRequest::getCaller()const
 void TwoPartiesCallRequest::setCaller(const std::string& caller)
 {
 	caller_ = caller;
-	setParameter("Caller", caller);
+	setCoreParameter("Caller", caller);
 }
 
 std::string TwoPartiesCallRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string TwoPartiesCallRequest::getInstanceId()const
 void TwoPartiesCallRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string TwoPartiesCallRequest::getCalleeCustomer()const
@@ -55,7 +55,7 @@ std::string TwoPartiesCallRequest::getCalleeCustomer()const
 void TwoPartiesCallRequest::setCalleeCustomer(const std::string& calleeCustomer)
 {
 	calleeCustomer_ = calleeCustomer;
-	setParameter("CalleeCustomer", calleeCustomer);
+	setCoreParameter("CalleeCustomer", calleeCustomer);
 }
 
 std::string TwoPartiesCallRequest::getAccessKeyId()const
@@ -66,7 +66,7 @@ std::string TwoPartiesCallRequest::getAccessKeyId()const
 void TwoPartiesCallRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string TwoPartiesCallRequest::getCalleeAgent()const
@@ -77,6 +77,6 @@ std::string TwoPartiesCallRequest::getCalleeAgent()const
 void TwoPartiesCallRequest::setCalleeAgent(const std::string& calleeAgent)
 {
 	calleeAgent_ = calleeAgent;
-	setParameter("CalleeAgent", calleeAgent);
+	setCoreParameter("CalleeAgent", calleeAgent);
 }
 

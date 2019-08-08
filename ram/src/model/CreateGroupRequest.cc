@@ -33,7 +33,7 @@ std::string CreateGroupRequest::getComments()const
 void CreateGroupRequest::setComments(const std::string& comments)
 {
 	comments_ = comments;
-	setParameter("Comments", comments);
+	setCoreParameter("Comments", comments);
 }
 
 std::string CreateGroupRequest::getGroupName()const
@@ -44,6 +44,6 @@ std::string CreateGroupRequest::getGroupName()const
 void CreateGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 

@@ -33,6 +33,6 @@ std::string SearchItemRequest::getInstanceName()const
 void SearchItemRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", instanceName);
 }
 

@@ -25,6 +25,17 @@ DescribeDedicatedHostAutoRenewRequest::DescribeDedicatedHostAutoRenewRequest() :
 DescribeDedicatedHostAutoRenewRequest::~DescribeDedicatedHostAutoRenewRequest()
 {}
 
+std::string DescribeDedicatedHostAutoRenewRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeDedicatedHostAutoRenewRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeDedicatedHostAutoRenewRequest::getDedicatedHostIds()const
 {
 	return dedicatedHostIds_;

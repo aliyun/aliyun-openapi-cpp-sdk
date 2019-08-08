@@ -33,7 +33,7 @@ long DeleteJobRequest::getResourceOwnerId()const
 void DeleteJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteJobRequest::getRegionId()const
 void DeleteJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteJobRequest::getId()const
@@ -55,7 +55,7 @@ std::string DeleteJobRequest::getId()const
 void DeleteJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string DeleteJobRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteJobRequest::getAccessKeyId()const
 void DeleteJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

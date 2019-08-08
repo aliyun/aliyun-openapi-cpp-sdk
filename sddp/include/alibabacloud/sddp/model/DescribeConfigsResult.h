@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,43 +17,37 @@
 #ifndef ALIBABACLOUD_SDDP_MODEL_DESCRIBECONFIGSRESULT_H_
 #define ALIBABACLOUD_SDDP_MODEL_DESCRIBECONFIGSRESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/sddp/SddpExport.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Sddp
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_SDDP_EXPORT DescribeConfigsResult : public ServiceResult
-			{
-			public:
-				struct Config
-				{
-					std::string defaultValue;
-					std::string description;
-					long value;
-					long id;
-					int code;
-				};
+namespace AlibabaCloud {
+namespace Sddp {
+namespace Model {
+class ALIBABACLOUD_SDDP_EXPORT DescribeConfigsResult : public ServiceResult {
+public:
+  struct Config {
+    std::string defaultValue;
+    std::string description;
+    long value;
+    long id;
+    int code;
+  };
 
+  DescribeConfigsResult();
+  explicit DescribeConfigsResult(const std::string &payload);
+  ~DescribeConfigsResult();
+  std::vector<Config> getConfigList() const;
 
-				DescribeConfigsResult();
-				explicit DescribeConfigsResult(const std::string &payload);
-				~DescribeConfigsResult();
-				std::vector<Config> getConfigList()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::vector<Config> configList_;
-
-			};
-		}
-	}
-}
+private:
+  std::vector<Config> configList_;
+};
+} // namespace Model
+} // namespace Sddp
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_SDDP_MODEL_DESCRIBECONFIGSRESULT_H_

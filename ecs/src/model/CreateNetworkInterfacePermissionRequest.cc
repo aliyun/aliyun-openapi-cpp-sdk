@@ -311,6 +311,17 @@ void CreateNetworkInterfacePermissionRequest::setRequestId(const std::string& re
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string CreateNetworkInterfacePermissionRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void CreateNetworkInterfacePermissionRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string CreateNetworkInterfacePermissionRequest::getNetworkInterfaceId()const
 {
 	return networkInterfaceId_;

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,47 +17,42 @@
 #ifndef ALIBABACLOUD_EMR_MODEL_RUNPARAGRAPHREQUEST_H_
 #define ALIBABACLOUD_EMR_MODEL_RUNPARAGRAPHREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/emr/EmrExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Emr
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_EMR_EXPORT RunParagraphRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Emr {
+namespace Model {
+class ALIBABACLOUD_EMR_EXPORT RunParagraphRequest : public RpcServiceRequest {
 
-			public:
-				RunParagraphRequest();
-				~RunParagraphRequest();
+public:
+  RunParagraphRequest();
+  ~RunParagraphRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNoteId()const;
-				void setNoteId(const std::string& noteId);
-				std::string getId()const;
-				void setId(const std::string& id);
-				std::string getText()const;
-				void setText(const std::string& text);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+  long getResourceOwnerId() const;
+  void setResourceOwnerId(long resourceOwnerId);
+  std::string getRegionId() const;
+  void setRegionId(const std::string &regionId);
+  std::string getNoteId() const;
+  void setNoteId(const std::string &noteId);
+  std::string getId() const;
+  void setId(const std::string &id);
+  std::string getText() const;
+  void setText(const std::string &text);
+  std::string getAccessKeyId() const;
+  void setAccessKeyId(const std::string &accessKeyId);
 
-            private:
-				long resourceOwnerId_;
-				std::string regionId_;
-				std::string noteId_;
-				std::string id_;
-				std::string text_;
-				std::string accessKeyId_;
-
-			};
-		}
-	}
-}
+private:
+  long resourceOwnerId_;
+  std::string regionId_;
+  std::string noteId_;
+  std::string id_;
+  std::string text_;
+  std::string accessKeyId_;
+};
+} // namespace Model
+} // namespace Emr
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_EMR_MODEL_RUNPARAGRAPHREQUEST_H_

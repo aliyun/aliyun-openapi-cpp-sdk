@@ -311,3 +311,14 @@ void ImportSnapshotRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ImportSnapshotRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ImportSnapshotRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

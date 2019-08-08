@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,44 +17,39 @@
 #ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBELIVERECORDCONFIGRESULT_H_
 #define ALIBABACLOUD_CDN_MODEL_DESCRIBELIVERECORDCONFIGRESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/cdn/CdnExport.h>
+#include <alibabacloud/core/ServiceResult.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Cdn
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeLiveRecordConfigResult : public ServiceResult
-			{
-			public:
-				struct LiveAppRecord
-				{
-					std::string ossEndpoint;
-					std::string domainName;
-					std::string createTime;
-					std::string ossBucket;
-					std::string ossObjectPrefix;
-					std::string appName;
-				};
+namespace AlibabaCloud {
+namespace Cdn {
+namespace Model {
+class ALIBABACLOUD_CDN_EXPORT DescribeLiveRecordConfigResult
+    : public ServiceResult {
+public:
+  struct LiveAppRecord {
+    std::string ossEndpoint;
+    std::string domainName;
+    std::string createTime;
+    std::string ossBucket;
+    std::string ossObjectPrefix;
+    std::string appName;
+  };
 
+  DescribeLiveRecordConfigResult();
+  explicit DescribeLiveRecordConfigResult(const std::string &payload);
+  ~DescribeLiveRecordConfigResult();
+  std::vector<LiveAppRecord> getLiveAppRecordList() const;
 
-				DescribeLiveRecordConfigResult();
-				explicit DescribeLiveRecordConfigResult(const std::string &payload);
-				~DescribeLiveRecordConfigResult();
-				std::vector<LiveAppRecord> getLiveAppRecordList()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::vector<LiveAppRecord> liveAppRecordList_;
-
-			};
-		}
-	}
-}
+private:
+  std::vector<LiveAppRecord> liveAppRecordList_;
+};
+} // namespace Model
+} // namespace Cdn
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBELIVERECORDCONFIGRESULT_H_

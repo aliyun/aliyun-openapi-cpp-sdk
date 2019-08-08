@@ -33,7 +33,7 @@ long ResetApConfigRequest::getId()const
 void ResetApConfigRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ResetApConfigRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ResetApConfigRequest::getAccessKeyId()const
 void ResetApConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

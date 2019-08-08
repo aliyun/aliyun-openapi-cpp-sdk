@@ -214,6 +214,17 @@ void CreateClusterRequest::setDeployMode(const std::string& deployMode)
 	setCoreParameter("DeployMode", deployMode);
 }
 
+std::string CreateClusterRequest::getSystemDiskType()const
+{
+	return systemDiskType_;
+}
+
+void CreateClusterRequest::setSystemDiskType(const std::string& systemDiskType)
+{
+	systemDiskType_ = systemDiskType;
+	setCoreParameter("SystemDiskType", systemDiskType);
+}
+
 int CreateClusterRequest::getEcsOrderManagerCount()const
 {
 	return ecsOrderManagerCount_;

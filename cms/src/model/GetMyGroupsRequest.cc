@@ -33,7 +33,7 @@ bool GetMyGroupsRequest::getSelectContactGroups()const
 void GetMyGroupsRequest::setSelectContactGroups(bool selectContactGroups)
 {
 	selectContactGroups_ = selectContactGroups;
-	setParameter("SelectContactGroups", selectContactGroups ? "true" : "false");
+	setCoreParameter("SelectContactGroups", selectContactGroups ? "true" : "false");
 }
 
 std::string GetMyGroupsRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string GetMyGroupsRequest::getInstanceId()const
 void GetMyGroupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 long GetMyGroupsRequest::getGroupId()const
@@ -55,7 +55,7 @@ long GetMyGroupsRequest::getGroupId()const
 void GetMyGroupsRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string GetMyGroupsRequest::getType()const
@@ -66,7 +66,7 @@ std::string GetMyGroupsRequest::getType()const
 void GetMyGroupsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string GetMyGroupsRequest::getGroupName()const
@@ -77,7 +77,7 @@ std::string GetMyGroupsRequest::getGroupName()const
 void GetMyGroupsRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string GetMyGroupsRequest::getBindUrl()const
@@ -88,6 +88,6 @@ std::string GetMyGroupsRequest::getBindUrl()const
 void GetMyGroupsRequest::setBindUrl(const std::string& bindUrl)
 {
 	bindUrl_ = bindUrl;
-	setParameter("BindUrl", bindUrl);
+	setCoreParameter("BindUrl", bindUrl);
 }
 

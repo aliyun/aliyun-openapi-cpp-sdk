@@ -322,3 +322,14 @@ void DescribeInstanceMonitorDataRequest::setRequestId(const std::string& request
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeInstanceMonitorDataRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeInstanceMonitorDataRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

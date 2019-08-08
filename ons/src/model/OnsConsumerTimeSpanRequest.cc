@@ -25,17 +25,6 @@ OnsConsumerTimeSpanRequest::OnsConsumerTimeSpanRequest() :
 OnsConsumerTimeSpanRequest::~OnsConsumerTimeSpanRequest()
 {}
 
-long OnsConsumerTimeSpanRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsConsumerTimeSpanRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsConsumerTimeSpanRequest::getInstanceId()const
 {
 	return instanceId_;

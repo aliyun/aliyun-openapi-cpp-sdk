@@ -33,7 +33,7 @@ std::string DescribePunishListRequest::getSrcIP()const
 void DescribePunishListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setParameter("SrcIP", srcIP);
+	setCoreParameter("SrcIP", srcIP);
 }
 
 std::string DescribePunishListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribePunishListRequest::getSourceIp()const
 void DescribePunishListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribePunishListRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribePunishListRequest::getPageSize()const
 void DescribePunishListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribePunishListRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribePunishListRequest::getCurrentPage()const
 void DescribePunishListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribePunishListRequest::getPunishStatus()const
@@ -77,7 +77,7 @@ std::string DescribePunishListRequest::getPunishStatus()const
 void DescribePunishListRequest::setPunishStatus(const std::string& punishStatus)
 {
 	punishStatus_ = punishStatus;
-	setParameter("PunishStatus", punishStatus);
+	setCoreParameter("PunishStatus", punishStatus);
 }
 
 std::string DescribePunishListRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribePunishListRequest::getLang()const
 void DescribePunishListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 long DescribePunishListRequest::getSrcUid()const
@@ -99,7 +99,7 @@ long DescribePunishListRequest::getSrcUid()const
 void DescribePunishListRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setParameter("SrcUid", std::to_string(srcUid));
+	setCoreParameter("SrcUid", std::to_string(srcUid));
 }
 
 std::string DescribePunishListRequest::getSourceCode()const
@@ -110,6 +110,6 @@ std::string DescribePunishListRequest::getSourceCode()const
 void DescribePunishListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", sourceCode);
 }
 

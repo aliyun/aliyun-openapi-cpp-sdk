@@ -17,36 +17,37 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALSPROVIDER_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALSPROVIDER_H_
 
-#include <chrono>
-#include <mutex>
-#include <memory>
-#include <string>
-#include "CredentialsProvider.h"
-#include "Credentials.h"
 #include "../src/EcsMetadataFetcher.h"
+#include "Credentials.h"
+#include "CredentialsProvider.h"
+#include <chrono>
+#include <memory>
+#include <mutex>
+#include <string>
 
 namespace AlibabaCloud {
-class ALIBABACLOUD_CORE_EXPORT InstanceProfileCredentialsProvider :
-  public CredentialsProvider, public EcsMetadataFetcher {
- public:
+class ALIBABACLOUD_CORE_EXPORT InstanceProfileCredentialsProvider
+    : public CredentialsProvider,
+      public EcsMetadataFetcher {
+public:
   InstanceProfileCredentialsProvider(const std::string &roleName,
-    int durationSeconds = 3600);
+                                     int durationSeconds = 3600);
   ~InstanceProfileCredentialsProvider();
 
-  std::string roleName()const;
+  std::string roleName() const;
   Credentials getCredentials() override;
+  using EcsMetadataFetcher::getMetadata;
   using EcsMetadataFetcher::roleName;
   using EcsMetadataFetcher::setRoleName;
-  using EcsMetadataFetcher::getMetadata;
 
- private:
+private:
   void loadCredentials();
-  bool checkExpiry()const;
+  bool checkExpiry() const;
 
   std::mutex cachedMutex_;
   Credentials cachedCredentials_;
   int durationSeconds_;
   std::chrono::system_clock::time_point expiry_;
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALSPROVIDER_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_INSTANCEPROFILECREDENTIALSPROVIDER_H_

@@ -300,6 +300,17 @@ void ModifyReservedInstanceAttributeRequest::setRequestId(const std::string& req
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ModifyReservedInstanceAttributeRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ModifyReservedInstanceAttributeRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string ModifyReservedInstanceAttributeRequest::getReservedInstanceName()const
 {
 	return reservedInstanceName_;

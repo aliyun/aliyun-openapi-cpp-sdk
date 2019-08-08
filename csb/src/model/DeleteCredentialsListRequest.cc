@@ -33,7 +33,7 @@ std::string DeleteCredentialsListRequest::getData()const
 void DeleteCredentialsListRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setParameter("Data", data);
+	setCoreParameter("Data", data);
 }
 
 std::string DeleteCredentialsListRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteCredentialsListRequest::getRegionId()const
 void DeleteCredentialsListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DeleteCredentialsListRequest::getIgnoreDauth()const
@@ -55,7 +55,7 @@ bool DeleteCredentialsListRequest::getIgnoreDauth()const
 void DeleteCredentialsListRequest::setIgnoreDauth(bool ignoreDauth)
 {
 	ignoreDauth_ = ignoreDauth;
-	setParameter("IgnoreDauth", std::to_string(ignoreDauth));
+	setCoreParameter("IgnoreDauth", ignoreDauth ? "true" : "false");
 }
 
 bool DeleteCredentialsListRequest::getForce()const
@@ -66,6 +66,6 @@ bool DeleteCredentialsListRequest::getForce()const
 void DeleteCredentialsListRequest::setForce(bool force)
 {
 	force_ = force;
-	setParameter("Force", std::to_string(force));
+	setCoreParameter("Force", force ? "true" : "false");
 }
 

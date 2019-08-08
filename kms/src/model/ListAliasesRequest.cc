@@ -33,18 +33,7 @@ int ListAliasesRequest::getPageSize()const
 void ListAliasesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string ListAliasesRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void ListAliasesRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListAliasesRequest::getPageNumber()const
@@ -55,6 +44,6 @@ int ListAliasesRequest::getPageNumber()const
 void ListAliasesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

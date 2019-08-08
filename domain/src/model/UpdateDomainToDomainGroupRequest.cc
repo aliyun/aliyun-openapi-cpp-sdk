@@ -33,7 +33,7 @@ int UpdateDomainToDomainGroupRequest::getDataSource()const
 void UpdateDomainToDomainGroupRequest::setDataSource(int dataSource)
 {
 	dataSource_ = dataSource;
-	setParameter("DataSource", std::to_string(dataSource));
+	setCoreParameter("DataSource", std::to_string(dataSource));
 }
 
 std::string UpdateDomainToDomainGroupRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string UpdateDomainToDomainGroupRequest::getUserClientIp()const
 void UpdateDomainToDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string UpdateDomainToDomainGroupRequest::getFileToUpload()const
@@ -55,7 +55,7 @@ std::string UpdateDomainToDomainGroupRequest::getFileToUpload()const
 void UpdateDomainToDomainGroupRequest::setFileToUpload(const std::string& fileToUpload)
 {
 	fileToUpload_ = fileToUpload;
-	setParameter("FileToUpload", fileToUpload);
+	setCoreParameter("FileToUpload", fileToUpload);
 }
 
 std::vector<std::string> UpdateDomainToDomainGroupRequest::getDomainName()const
@@ -67,7 +67,7 @@ void UpdateDomainToDomainGroupRequest::setDomainName(const std::vector<std::stri
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setParameter("DomainName."+ std::to_string(i), domainName.at(i));
+		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
 }
 
 bool UpdateDomainToDomainGroupRequest::getReplace()const
@@ -78,7 +78,7 @@ bool UpdateDomainToDomainGroupRequest::getReplace()const
 void UpdateDomainToDomainGroupRequest::setReplace(bool replace)
 {
 	replace_ = replace;
-	setParameter("Replace", std::to_string(replace));
+	setCoreParameter("Replace", replace ? "true" : "false");
 }
 
 std::string UpdateDomainToDomainGroupRequest::getLang()const
@@ -89,7 +89,7 @@ std::string UpdateDomainToDomainGroupRequest::getLang()const
 void UpdateDomainToDomainGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 long UpdateDomainToDomainGroupRequest::getDomainGroupId()const
@@ -100,6 +100,6 @@ long UpdateDomainToDomainGroupRequest::getDomainGroupId()const
 void UpdateDomainToDomainGroupRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setParameter("DomainGroupId", std::to_string(domainGroupId));
+	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
 }
 

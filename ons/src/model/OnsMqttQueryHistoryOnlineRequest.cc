@@ -25,17 +25,6 @@ OnsMqttQueryHistoryOnlineRequest::OnsMqttQueryHistoryOnlineRequest() :
 OnsMqttQueryHistoryOnlineRequest::~OnsMqttQueryHistoryOnlineRequest()
 {}
 
-long OnsMqttQueryHistoryOnlineRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsMqttQueryHistoryOnlineRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsMqttQueryHistoryOnlineRequest::getInstanceId()const
 {
 	return instanceId_;

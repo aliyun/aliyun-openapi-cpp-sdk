@@ -33,7 +33,7 @@ long MetastoreDescribeTableRequest::getResourceOwnerId()const
 void MetastoreDescribeTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreDescribeTableRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string MetastoreDescribeTableRequest::getDbName()const
 void MetastoreDescribeTableRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string MetastoreDescribeTableRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreDescribeTableRequest::getRegionId()const
 void MetastoreDescribeTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreDescribeTableRequest::getId()const
@@ -66,7 +66,7 @@ std::string MetastoreDescribeTableRequest::getId()const
 void MetastoreDescribeTableRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string MetastoreDescribeTableRequest::getTableName()const
@@ -77,7 +77,7 @@ std::string MetastoreDescribeTableRequest::getTableName()const
 void MetastoreDescribeTableRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setParameter("TableName", tableName);
+	setCoreParameter("TableName", tableName);
 }
 
 std::string MetastoreDescribeTableRequest::getDatabaseId()const
@@ -88,7 +88,7 @@ std::string MetastoreDescribeTableRequest::getDatabaseId()const
 void MetastoreDescribeTableRequest::setDatabaseId(const std::string& databaseId)
 {
 	databaseId_ = databaseId;
-	setParameter("DatabaseId", databaseId);
+	setCoreParameter("DatabaseId", databaseId);
 }
 
 std::string MetastoreDescribeTableRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string MetastoreDescribeTableRequest::getAccessKeyId()const
 void MetastoreDescribeTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

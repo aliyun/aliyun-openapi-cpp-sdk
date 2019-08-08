@@ -33,7 +33,7 @@ std::string RemoveDrdsInstanceRequest::getDrdsInstanceId()const
 void RemoveDrdsInstanceRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string RemoveDrdsInstanceRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string RemoveDrdsInstanceRequest::getAccessKeyId()const
 void RemoveDrdsInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

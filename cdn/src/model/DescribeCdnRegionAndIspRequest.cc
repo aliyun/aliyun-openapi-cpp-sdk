@@ -33,7 +33,7 @@ std::string DescribeCdnRegionAndIspRequest::getSecurityToken()const
 void DescribeCdnRegionAndIspRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 long DescribeCdnRegionAndIspRequest::getOwnerId()const
@@ -44,6 +44,6 @@ long DescribeCdnRegionAndIspRequest::getOwnerId()const
 void DescribeCdnRegionAndIspRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

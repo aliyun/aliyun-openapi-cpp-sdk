@@ -334,12 +334,23 @@ void InvokeCommandRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
-Json InvokeCommandRequest::getParameters()const
+std::string InvokeCommandRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void InvokeCommandRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
+std::map<std::string, std::string> InvokeCommandRequest::getParameters()const
 {
 	return parameters_;
 }
 
-void InvokeCommandRequest::setParameters(const Json& parameters)
+void InvokeCommandRequest::setParameters(const std::map<std::string, std::string>& parameters)
 {
 	parameters_ = parameters;
 	setCoreParameter("Parameters", std::to_string(parameters));

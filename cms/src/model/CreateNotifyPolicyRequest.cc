@@ -33,7 +33,7 @@ std::string CreateNotifyPolicyRequest::getPolicyType()const
 void CreateNotifyPolicyRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setParameter("PolicyType", policyType);
+	setCoreParameter("PolicyType", policyType);
 }
 
 std::string CreateNotifyPolicyRequest::getAlertName()const
@@ -44,7 +44,7 @@ std::string CreateNotifyPolicyRequest::getAlertName()const
 void CreateNotifyPolicyRequest::setAlertName(const std::string& alertName)
 {
 	alertName_ = alertName;
-	setParameter("AlertName", alertName);
+	setCoreParameter("AlertName", alertName);
 }
 
 std::string CreateNotifyPolicyRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string CreateNotifyPolicyRequest::getGroupId()const
 void CreateNotifyPolicyRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 long CreateNotifyPolicyRequest::getEndTime()const
@@ -66,7 +66,7 @@ long CreateNotifyPolicyRequest::getEndTime()const
 void CreateNotifyPolicyRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long CreateNotifyPolicyRequest::getStartTime()const
@@ -77,7 +77,7 @@ long CreateNotifyPolicyRequest::getStartTime()const
 void CreateNotifyPolicyRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string CreateNotifyPolicyRequest::getDimensions()const
@@ -88,7 +88,7 @@ std::string CreateNotifyPolicyRequest::getDimensions()const
 void CreateNotifyPolicyRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setParameter("Dimensions", dimensions);
+	setCoreParameter("Dimensions", dimensions);
 }
 
 std::string CreateNotifyPolicyRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string CreateNotifyPolicyRequest::getAccessKeyId()const
 void CreateNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

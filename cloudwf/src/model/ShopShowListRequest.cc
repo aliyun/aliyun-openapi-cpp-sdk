@@ -33,7 +33,7 @@ long ShopShowListRequest::getGid()const
 void ShopShowListRequest::setGid(long gid)
 {
 	gid_ = gid;
-	setParameter("Gid", std::to_string(gid));
+	setCoreParameter("Gid", std::to_string(gid));
 }
 
 std::string ShopShowListRequest::getAddress()const
@@ -44,7 +44,7 @@ std::string ShopShowListRequest::getAddress()const
 void ShopShowListRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setParameter("Address", address);
+	setCoreParameter("Address", address);
 }
 
 std::string ShopShowListRequest::getName()const
@@ -55,7 +55,7 @@ std::string ShopShowListRequest::getName()const
 void ShopShowListRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string ShopShowListRequest::getDirc()const
@@ -66,7 +66,7 @@ std::string ShopShowListRequest::getDirc()const
 void ShopShowListRequest::setDirc(const std::string& dirc)
 {
 	dirc_ = dirc;
-	setParameter("Dirc", dirc);
+	setCoreParameter("Dirc", dirc);
 }
 
 int ShopShowListRequest::getPage()const
@@ -77,7 +77,7 @@ int ShopShowListRequest::getPage()const
 void ShopShowListRequest::setPage(int page)
 {
 	page_ = page;
-	setParameter("Page", std::to_string(page));
+	setCoreParameter("Page", std::to_string(page));
 }
 
 long ShopShowListRequest::getBid()const
@@ -88,7 +88,7 @@ long ShopShowListRequest::getBid()const
 void ShopShowListRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", std::to_string(bid));
 }
 
 int ShopShowListRequest::getPer()const
@@ -99,7 +99,7 @@ int ShopShowListRequest::getPer()const
 void ShopShowListRequest::setPer(int per)
 {
 	per_ = per;
-	setParameter("Per", std::to_string(per));
+	setCoreParameter("Per", std::to_string(per));
 }
 
 int ShopShowListRequest::getShopStatus()const
@@ -110,7 +110,7 @@ int ShopShowListRequest::getShopStatus()const
 void ShopShowListRequest::setShopStatus(int shopStatus)
 {
 	shopStatus_ = shopStatus;
-	setParameter("ShopStatus", std::to_string(shopStatus));
+	setCoreParameter("ShopStatus", std::to_string(shopStatus));
 }
 
 std::string ShopShowListRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ShopShowListRequest::getAccessKeyId()const
 void ShopShowListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

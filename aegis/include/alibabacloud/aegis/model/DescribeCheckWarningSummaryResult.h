@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,57 +17,52 @@
 #ifndef ALIBABACLOUD_AEGIS_MODEL_DESCRIBECHECKWARNINGSUMMARYRESULT_H_
 #define ALIBABACLOUD_AEGIS_MODEL_DESCRIBECHECKWARNINGSUMMARYRESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/aegis/AegisExport.h>
+#include <alibabacloud/core/ServiceResult.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Aegis
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_AEGIS_EXPORT DescribeCheckWarningSummaryResult : public ServiceResult
-			{
-			public:
-				struct WarningSummary
-				{
-					long riskId;
-					std::string lastFoundTime;
-					int mediumWarningCount;
-					int checkCount;
-					int warningMachineCount;
-					std::string typeAlias;
-					std::string level;
-					int highWarningCount;
-					std::string riskName;
-					std::string subTypeAlias;
-					int lowWarningCount;
-				};
+namespace AlibabaCloud {
+namespace Aegis {
+namespace Model {
+class ALIBABACLOUD_AEGIS_EXPORT DescribeCheckWarningSummaryResult
+    : public ServiceResult {
+public:
+  struct WarningSummary {
+    long riskId;
+    std::string lastFoundTime;
+    int mediumWarningCount;
+    int checkCount;
+    int warningMachineCount;
+    std::string typeAlias;
+    std::string level;
+    int highWarningCount;
+    std::string riskName;
+    std::string subTypeAlias;
+    int lowWarningCount;
+  };
 
+  DescribeCheckWarningSummaryResult();
+  explicit DescribeCheckWarningSummaryResult(const std::string &payload);
+  ~DescribeCheckWarningSummaryResult();
+  int getTotalCount() const;
+  int getPageSize() const;
+  int getCurrentPage() const;
+  int getCount() const;
+  std::vector<WarningSummary> getWarningSummarys() const;
 
-				DescribeCheckWarningSummaryResult();
-				explicit DescribeCheckWarningSummaryResult(const std::string &payload);
-				~DescribeCheckWarningSummaryResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getCurrentPage()const;
-				int getCount()const;
-				std::vector<WarningSummary> getWarningSummarys()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				int totalCount_;
-				int pageSize_;
-				int currentPage_;
-				int count_;
-				std::vector<WarningSummary> warningSummarys_;
-
-			};
-		}
-	}
-}
+private:
+  int totalCount_;
+  int pageSize_;
+  int currentPage_;
+  int count_;
+  std::vector<WarningSummary> warningSummarys_;
+};
+} // namespace Model
+} // namespace Aegis
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_AEGIS_MODEL_DESCRIBECHECKWARNINGSUMMARYRESULT_H_

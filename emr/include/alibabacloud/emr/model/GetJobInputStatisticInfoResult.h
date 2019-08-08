@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,53 +17,48 @@
 #ifndef ALIBABACLOUD_EMR_MODEL_GETJOBINPUTSTATISTICINFORESULT_H_
 #define ALIBABACLOUD_EMR_MODEL_GETJOBINPUTSTATISTICINFORESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/emr/EmrExport.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Emr
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_EMR_EXPORT GetJobInputStatisticInfoResult : public ServiceResult
-			{
-			public:
-				struct ClusterStatJobInput
-				{
-					std::string user;
-					long finishTime;
-					long bytesInput;
-					std::string state;
-					long startTime;
-					std::string applicationId;
-					std::string queue;
-					std::string jobId;
-					std::string name;
-				};
+namespace AlibabaCloud {
+namespace Emr {
+namespace Model {
+class ALIBABACLOUD_EMR_EXPORT GetJobInputStatisticInfoResult
+    : public ServiceResult {
+public:
+  struct ClusterStatJobInput {
+    std::string user;
+    long finishTime;
+    long bytesInput;
+    std::string state;
+    long startTime;
+    std::string applicationId;
+    std::string queue;
+    std::string jobId;
+    std::string name;
+  };
 
+  GetJobInputStatisticInfoResult();
+  explicit GetJobInputStatisticInfoResult(const std::string &payload);
+  ~GetJobInputStatisticInfoResult();
+  int getPageSize() const;
+  int getPageNumber() const;
+  std::vector<ClusterStatJobInput> getJobInputList() const;
+  int getTotal() const;
 
-				GetJobInputStatisticInfoResult();
-				explicit GetJobInputStatisticInfoResult(const std::string &payload);
-				~GetJobInputStatisticInfoResult();
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<ClusterStatJobInput> getJobInputList()const;
-				int getTotal()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				int pageSize_;
-				int pageNumber_;
-				std::vector<ClusterStatJobInput> jobInputList_;
-				int total_;
-
-			};
-		}
-	}
-}
+private:
+  int pageSize_;
+  int pageNumber_;
+  std::vector<ClusterStatJobInput> jobInputList_;
+  int total_;
+};
+} // namespace Model
+} // namespace Emr
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_EMR_MODEL_GETJOBINPUTSTATISTICINFORESULT_H_

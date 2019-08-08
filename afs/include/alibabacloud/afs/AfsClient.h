@@ -46,10 +46,10 @@
 #include "model/AuthenticateSigResult.h"
 #include "model/DescribeConfigNameRequest.h"
 #include "model/DescribeConfigNameResult.h"
-#include "model/DescribeCaptchaDayRequest.h"
-#include "model/DescribeCaptchaDayResult.h"
 #include "model/UpdateConfigNameRequest.h"
 #include "model/UpdateConfigNameResult.h"
+#include "model/DescribeCaptchaDayRequest.h"
+#include "model/DescribeCaptchaDayResult.h"
 #include "model/DescribePersonMachineListRequest.h"
 #include "model/DescribePersonMachineListResult.h"
 
@@ -97,12 +97,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeConfigNameResult> DescribeConfigNameOutcome;
 			typedef std::future<DescribeConfigNameOutcome> DescribeConfigNameOutcomeCallable;
 			typedef std::function<void(const AfsClient*, const Model::DescribeConfigNameRequest&, const DescribeConfigNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigNameAsyncHandler;
-			typedef Outcome<Error, Model::DescribeCaptchaDayResult> DescribeCaptchaDayOutcome;
-			typedef std::future<DescribeCaptchaDayOutcome> DescribeCaptchaDayOutcomeCallable;
-			typedef std::function<void(const AfsClient*, const Model::DescribeCaptchaDayRequest&, const DescribeCaptchaDayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaDayAsyncHandler;
 			typedef Outcome<Error, Model::UpdateConfigNameResult> UpdateConfigNameOutcome;
 			typedef std::future<UpdateConfigNameOutcome> UpdateConfigNameOutcomeCallable;
 			typedef std::function<void(const AfsClient*, const Model::UpdateConfigNameRequest&, const UpdateConfigNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConfigNameAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCaptchaDayResult> DescribeCaptchaDayOutcome;
+			typedef std::future<DescribeCaptchaDayOutcome> DescribeCaptchaDayOutcomeCallable;
+			typedef std::function<void(const AfsClient*, const Model::DescribeCaptchaDayRequest&, const DescribeCaptchaDayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaDayAsyncHandler;
 			typedef Outcome<Error, Model::DescribePersonMachineListResult> DescribePersonMachineListOutcome;
 			typedef std::future<DescribePersonMachineListOutcome> DescribePersonMachineListOutcomeCallable;
 			typedef std::function<void(const AfsClient*, const Model::DescribePersonMachineListRequest&, const DescribePersonMachineListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePersonMachineListAsyncHandler;
@@ -147,12 +147,12 @@ namespace AlibabaCloud
 			DescribeConfigNameOutcome describeConfigName(const Model::DescribeConfigNameRequest &request)const;
 			void describeConfigNameAsync(const Model::DescribeConfigNameRequest& request, const DescribeConfigNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConfigNameOutcomeCallable describeConfigNameCallable(const Model::DescribeConfigNameRequest& request) const;
-			DescribeCaptchaDayOutcome describeCaptchaDay(const Model::DescribeCaptchaDayRequest &request)const;
-			void describeCaptchaDayAsync(const Model::DescribeCaptchaDayRequest& request, const DescribeCaptchaDayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeCaptchaDayOutcomeCallable describeCaptchaDayCallable(const Model::DescribeCaptchaDayRequest& request) const;
 			UpdateConfigNameOutcome updateConfigName(const Model::UpdateConfigNameRequest &request)const;
 			void updateConfigNameAsync(const Model::UpdateConfigNameRequest& request, const UpdateConfigNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateConfigNameOutcomeCallable updateConfigNameCallable(const Model::UpdateConfigNameRequest& request) const;
+			DescribeCaptchaDayOutcome describeCaptchaDay(const Model::DescribeCaptchaDayRequest &request)const;
+			void describeCaptchaDayAsync(const Model::DescribeCaptchaDayRequest& request, const DescribeCaptchaDayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCaptchaDayOutcomeCallable describeCaptchaDayCallable(const Model::DescribeCaptchaDayRequest& request) const;
 			DescribePersonMachineListOutcome describePersonMachineList(const Model::DescribePersonMachineListRequest &request)const;
 			void describePersonMachineListAsync(const Model::DescribePersonMachineListRequest& request, const DescribePersonMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePersonMachineListOutcomeCallable describePersonMachineListCallable(const Model::DescribePersonMachineListRequest& request) const;

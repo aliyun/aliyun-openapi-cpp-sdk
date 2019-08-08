@@ -33,7 +33,7 @@ long MetastoreDropDatabaseRequest::getResourceOwnerId()const
 void MetastoreDropDatabaseRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreDropDatabaseRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string MetastoreDropDatabaseRequest::getDbName()const
 void MetastoreDropDatabaseRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string MetastoreDropDatabaseRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreDropDatabaseRequest::getRegionId()const
 void MetastoreDropDatabaseRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreDropDatabaseRequest::getDatabaseId()const
@@ -66,7 +66,7 @@ std::string MetastoreDropDatabaseRequest::getDatabaseId()const
 void MetastoreDropDatabaseRequest::setDatabaseId(const std::string& databaseId)
 {
 	databaseId_ = databaseId;
-	setParameter("DatabaseId", databaseId);
+	setCoreParameter("DatabaseId", databaseId);
 }
 
 std::string MetastoreDropDatabaseRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string MetastoreDropDatabaseRequest::getAccessKeyId()const
 void MetastoreDropDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

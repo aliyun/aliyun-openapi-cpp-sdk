@@ -311,3 +311,14 @@ void DescribeDedicatedHostTypesRequest::setRequestId(const std::string& requestI
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeDedicatedHostTypesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeDedicatedHostTypesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

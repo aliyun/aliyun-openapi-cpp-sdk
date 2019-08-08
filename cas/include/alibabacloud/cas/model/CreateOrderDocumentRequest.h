@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,47 +17,43 @@
 #ifndef ALIBABACLOUD_CAS_MODEL_CREATEORDERDOCUMENTREQUEST_H_
 #define ALIBABACLOUD_CAS_MODEL_CREATEORDERDOCUMENTREQUEST_H_
 
+#include <alibabacloud/cas/CasExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/cas/CasExport.h>
 
-namespace AlibabaCloud
-{
-	namespace Cas
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CAS_EXPORT CreateOrderDocumentRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Cas {
+namespace Model {
+class ALIBABACLOUD_CAS_EXPORT CreateOrderDocumentRequest
+    : public RpcServiceRequest {
 
-			public:
-				CreateOrderDocumentRequest();
-				~CreateOrderDocumentRequest();
+public:
+  CreateOrderDocumentRequest();
+  ~CreateOrderDocumentRequest();
 
-				std::string getOssKey()const;
-				void setOssKey(const std::string& ossKey);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				long getOrderId()const;
-				void setOrderId(long orderId);
-				int getDocumentType()const;
-				void setDocumentType(int documentType);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
-				std::string getExtName()const;
-				void setExtName(const std::string& extName);
+  std::string getOssKey() const;
+  void setOssKey(const std::string &ossKey);
+  std::string getSourceIp() const;
+  void setSourceIp(const std::string &sourceIp);
+  long getOrderId() const;
+  void setOrderId(long orderId);
+  int getDocumentType() const;
+  void setDocumentType(int documentType);
+  std::string getLang() const;
+  void setLang(const std::string &lang);
+  std::string getExtName() const;
+  void setExtName(const std::string &extName);
 
-            private:
-				std::string ossKey_;
-				std::string sourceIp_;
-				long orderId_;
-				int documentType_;
-				std::string lang_;
-				std::string extName_;
-
-			};
-		}
-	}
-}
+private:
+  std::string ossKey_;
+  std::string sourceIp_;
+  long orderId_;
+  int documentType_;
+  std::string lang_;
+  std::string extName_;
+};
+} // namespace Model
+} // namespace Cas
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CAS_MODEL_CREATEORDERDOCUMENTREQUEST_H_

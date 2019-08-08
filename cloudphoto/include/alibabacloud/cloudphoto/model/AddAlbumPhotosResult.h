@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,48 +17,43 @@
 #ifndef ALIBABACLOUD_CLOUDPHOTO_MODEL_ADDALBUMPHOTOSRESULT_H_
 #define ALIBABACLOUD_CLOUDPHOTO_MODEL_ADDALBUMPHOTOSRESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/cloudphoto/CloudPhotoExport.h>
+#include <alibabacloud/core/ServiceResult.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace CloudPhoto
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CLOUDPHOTO_EXPORT AddAlbumPhotosResult : public ServiceResult
-			{
-			public:
-				struct Result
-				{
-					std::string message;
-					std::string idStr;
-					long id;
-					std::string code;
-				};
+namespace AlibabaCloud {
+namespace CloudPhoto {
+namespace Model {
+class ALIBABACLOUD_CLOUDPHOTO_EXPORT AddAlbumPhotosResult
+    : public ServiceResult {
+public:
+  struct Result {
+    std::string message;
+    std::string idStr;
+    long id;
+    std::string code;
+  };
 
+  AddAlbumPhotosResult();
+  explicit AddAlbumPhotosResult(const std::string &payload);
+  ~AddAlbumPhotosResult();
+  std::string getAction() const;
+  std::string getMessage() const;
+  std::vector<Result> getResults() const;
+  std::string getCode() const;
 
-				AddAlbumPhotosResult();
-				explicit AddAlbumPhotosResult(const std::string &payload);
-				~AddAlbumPhotosResult();
-				std::string getAction()const;
-				std::string getMessage()const;
-				std::vector<Result> getResults()const;
-				std::string getCode()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string action_;
-				std::string message_;
-				std::vector<Result> results_;
-				std::string code_;
-
-			};
-		}
-	}
-}
+private:
+  std::string action_;
+  std::string message_;
+  std::vector<Result> results_;
+  std::string code_;
+};
+} // namespace Model
+} // namespace CloudPhoto
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CLOUDPHOTO_MODEL_ADDALBUMPHOTOSRESULT_H_

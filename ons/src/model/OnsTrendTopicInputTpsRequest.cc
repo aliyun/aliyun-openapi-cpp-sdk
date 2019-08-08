@@ -25,17 +25,6 @@ OnsTrendTopicInputTpsRequest::OnsTrendTopicInputTpsRequest() :
 OnsTrendTopicInputTpsRequest::~OnsTrendTopicInputTpsRequest()
 {}
 
-long OnsTrendTopicInputTpsRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsTrendTopicInputTpsRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 long OnsTrendTopicInputTpsRequest::getPeriod()const
 {
 	return period_;

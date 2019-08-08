@@ -322,3 +322,14 @@ void ModifyLaunchTemplateDefaultVersionRequest::setRequestId(const std::string& 
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ModifyLaunchTemplateDefaultVersionRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ModifyLaunchTemplateDefaultVersionRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

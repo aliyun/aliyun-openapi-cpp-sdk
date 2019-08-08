@@ -33,7 +33,7 @@ long ListJobExecutionInstanceTrendRequest::getResourceOwnerId()const
 void ListJobExecutionInstanceTrendRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListJobExecutionInstanceTrendRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListJobExecutionInstanceTrendRequest::getRegionId()const
 void ListJobExecutionInstanceTrendRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListJobExecutionInstanceTrendRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListJobExecutionInstanceTrendRequest::getAccessKeyId()const
 void ListJobExecutionInstanceTrendRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

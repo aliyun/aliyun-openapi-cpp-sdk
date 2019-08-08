@@ -33,7 +33,7 @@ int ModifyUserStatisticsRequest::getJobMigratedNum()const
 void ModifyUserStatisticsRequest::setJobMigratedNum(int jobMigratedNum)
 {
 	jobMigratedNum_ = jobMigratedNum;
-	setParameter("JobMigratedNum", std::to_string(jobMigratedNum));
+	setCoreParameter("JobMigratedNum", std::to_string(jobMigratedNum));
 }
 
 long ModifyUserStatisticsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyUserStatisticsRequest::getResourceOwnerId()const
 void ModifyUserStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int ModifyUserStatisticsRequest::getExecutePlanNum()const
@@ -55,7 +55,7 @@ int ModifyUserStatisticsRequest::getExecutePlanNum()const
 void ModifyUserStatisticsRequest::setExecutePlanNum(int executePlanNum)
 {
 	executePlanNum_ = executePlanNum;
-	setParameter("ExecutePlanNum", std::to_string(executePlanNum));
+	setCoreParameter("ExecutePlanNum", std::to_string(executePlanNum));
 }
 
 std::string ModifyUserStatisticsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyUserStatisticsRequest::getRegionId()const
 void ModifyUserStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int ModifyUserStatisticsRequest::getJobNum()const
@@ -77,7 +77,7 @@ int ModifyUserStatisticsRequest::getJobNum()const
 void ModifyUserStatisticsRequest::setJobNum(int jobNum)
 {
 	jobNum_ = jobNum;
-	setParameter("JobNum", std::to_string(jobNum));
+	setCoreParameter("JobNum", std::to_string(jobNum));
 }
 
 int ModifyUserStatisticsRequest::getExecutePlanMigratedNum()const
@@ -88,7 +88,7 @@ int ModifyUserStatisticsRequest::getExecutePlanMigratedNum()const
 void ModifyUserStatisticsRequest::setExecutePlanMigratedNum(int executePlanMigratedNum)
 {
 	executePlanMigratedNum_ = executePlanMigratedNum;
-	setParameter("ExecutePlanMigratedNum", std::to_string(executePlanMigratedNum));
+	setCoreParameter("ExecutePlanMigratedNum", std::to_string(executePlanMigratedNum));
 }
 
 int ModifyUserStatisticsRequest::getInteractionJobMigratedNum()const
@@ -99,7 +99,7 @@ int ModifyUserStatisticsRequest::getInteractionJobMigratedNum()const
 void ModifyUserStatisticsRequest::setInteractionJobMigratedNum(int interactionJobMigratedNum)
 {
 	interactionJobMigratedNum_ = interactionJobMigratedNum;
-	setParameter("InteractionJobMigratedNum", std::to_string(interactionJobMigratedNum));
+	setCoreParameter("InteractionJobMigratedNum", std::to_string(interactionJobMigratedNum));
 }
 
 std::string ModifyUserStatisticsRequest::getUserId()const
@@ -110,7 +110,7 @@ std::string ModifyUserStatisticsRequest::getUserId()const
 void ModifyUserStatisticsRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setParameter("UserId", userId);
+	setCoreParameter("UserId", userId);
 }
 
 std::string ModifyUserStatisticsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string ModifyUserStatisticsRequest::getAccessKeyId()const
 void ModifyUserStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int ModifyUserStatisticsRequest::getInteractionJobNum()const
@@ -132,6 +132,6 @@ int ModifyUserStatisticsRequest::getInteractionJobNum()const
 void ModifyUserStatisticsRequest::setInteractionJobNum(int interactionJobNum)
 {
 	interactionJobNum_ = interactionJobNum;
-	setParameter("InteractionJobNum", std::to_string(interactionJobNum));
+	setCoreParameter("InteractionJobNum", std::to_string(interactionJobNum));
 }
 

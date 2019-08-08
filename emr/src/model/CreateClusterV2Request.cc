@@ -33,7 +33,7 @@ bool CreateClusterV2Request::getAutoPayOrder()const
 void CreateClusterV2Request::setAutoPayOrder(bool autoPayOrder)
 {
 	autoPayOrder_ = autoPayOrder;
-	setParameter("AutoPayOrder", std::to_string(autoPayOrder));
+	setCoreParameter("AutoPayOrder", autoPayOrder ? "true" : "false");
 }
 
 long CreateClusterV2Request::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateClusterV2Request::getResourceOwnerId()const
 void CreateClusterV2Request::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateClusterV2Request::getLogPath()const
@@ -55,7 +55,7 @@ std::string CreateClusterV2Request::getLogPath()const
 void CreateClusterV2Request::setLogPath(const std::string& logPath)
 {
 	logPath_ = logPath;
-	setParameter("LogPath", logPath);
+	setCoreParameter("LogPath", logPath);
 }
 
 std::string CreateClusterV2Request::getMasterPwd()const
@@ -66,7 +66,7 @@ std::string CreateClusterV2Request::getMasterPwd()const
 void CreateClusterV2Request::setMasterPwd(const std::string& masterPwd)
 {
 	masterPwd_ = masterPwd;
-	setParameter("MasterPwd", masterPwd);
+	setCoreParameter("MasterPwd", masterPwd);
 }
 
 std::string CreateClusterV2Request::getConfigurations()const
@@ -77,7 +77,7 @@ std::string CreateClusterV2Request::getConfigurations()const
 void CreateClusterV2Request::setConfigurations(const std::string& configurations)
 {
 	configurations_ = configurations;
-	setParameter("Configurations", configurations);
+	setCoreParameter("Configurations", configurations);
 }
 
 bool CreateClusterV2Request::getIoOptimized()const
@@ -88,7 +88,7 @@ bool CreateClusterV2Request::getIoOptimized()const
 void CreateClusterV2Request::setIoOptimized(bool ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setParameter("IoOptimized", std::to_string(ioOptimized));
+	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
 }
 
 std::string CreateClusterV2Request::getSecurityGroupId()const
@@ -99,7 +99,7 @@ std::string CreateClusterV2Request::getSecurityGroupId()const
 void CreateClusterV2Request::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 bool CreateClusterV2Request::getSshEnable()const
@@ -110,7 +110,7 @@ bool CreateClusterV2Request::getSshEnable()const
 void CreateClusterV2Request::setSshEnable(bool sshEnable)
 {
 	sshEnable_ = sshEnable;
-	setParameter("SshEnable", std::to_string(sshEnable));
+	setCoreParameter("SshEnable", sshEnable ? "true" : "false");
 }
 
 bool CreateClusterV2Request::getEasEnable()const
@@ -121,7 +121,7 @@ bool CreateClusterV2Request::getEasEnable()const
 void CreateClusterV2Request::setEasEnable(bool easEnable)
 {
 	easEnable_ = easEnable;
-	setParameter("EasEnable", std::to_string(easEnable));
+	setCoreParameter("EasEnable", easEnable ? "true" : "false");
 }
 
 std::string CreateClusterV2Request::getKeyPairName()const
@@ -132,7 +132,18 @@ std::string CreateClusterV2Request::getKeyPairName()const
 void CreateClusterV2Request::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setParameter("KeyPairName", keyPairName);
+	setCoreParameter("KeyPairName", keyPairName);
+}
+
+std::string CreateClusterV2Request::getMetaStoreType()const
+{
+	return metaStoreType_;
+}
+
+void CreateClusterV2Request::setMetaStoreType(const std::string& metaStoreType)
+{
+	metaStoreType_ = metaStoreType;
+	setCoreParameter("MetaStoreType", metaStoreType);
 }
 
 std::string CreateClusterV2Request::getSecurityGroupName()const
@@ -143,7 +154,7 @@ std::string CreateClusterV2Request::getSecurityGroupName()const
 void CreateClusterV2Request::setSecurityGroupName(const std::string& securityGroupName)
 {
 	securityGroupName_ = securityGroupName;
-	setParameter("SecurityGroupName", securityGroupName);
+	setCoreParameter("SecurityGroupName", securityGroupName);
 }
 
 std::string CreateClusterV2Request::getDepositType()const
@@ -154,7 +165,7 @@ std::string CreateClusterV2Request::getDepositType()const
 void CreateClusterV2Request::setDepositType(const std::string& depositType)
 {
 	depositType_ = depositType;
-	setParameter("DepositType", depositType);
+	setCoreParameter("DepositType", depositType);
 }
 
 std::string CreateClusterV2Request::getAccessKeyId()const
@@ -165,7 +176,7 @@ std::string CreateClusterV2Request::getAccessKeyId()const
 void CreateClusterV2Request::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateClusterV2Request::getMachineType()const
@@ -176,7 +187,7 @@ std::string CreateClusterV2Request::getMachineType()const
 void CreateClusterV2Request::setMachineType(const std::string& machineType)
 {
 	machineType_ = machineType;
-	setParameter("MachineType", machineType);
+	setCoreParameter("MachineType", machineType);
 }
 
 std::vector<CreateClusterV2Request::HostComponentInfo> CreateClusterV2Request::getHostComponentInfo()const
@@ -191,9 +202,9 @@ void CreateClusterV2Request::setHostComponentInfo(const std::vector<HostComponen
 	for(int i = 0; i!= hostComponentInfo.size(); i++)	{
 		auto obj = hostComponentInfo.at(i);
 		std::string str ="HostComponentInfo."+ std::to_string(i);
-		setParameter(str + ".HostName", obj.hostName);
-		for(int i = 0; i!= obj.componentNameList.size(); i++)				setParameter(str + ".ComponentNameList."+ std::to_string(i), obj.componentNameList.at(i));
-		setParameter(str + ".ServiceName", obj.serviceName);
+		setCoreParameter(str + ".HostName", obj.hostName);
+		for(int i = 0; i!= obj.componentNameList.size(); i++)				setCoreParameter(str + ".ComponentNameList."+ std::to_string(i), obj.componentNameList.at(i));
+		setCoreParameter(str + ".ServiceName", obj.serviceName);
 	}
 }
 
@@ -209,9 +220,9 @@ void CreateClusterV2Request::setBootstrapAction(const std::vector<BootstrapActio
 	for(int i = 0; i!= bootstrapAction.size(); i++)	{
 		auto obj = bootstrapAction.at(i);
 		std::string str ="BootstrapAction."+ std::to_string(i);
-		setParameter(str + ".Path", obj.path);
-		setParameter(str + ".Arg", obj.arg);
-		setParameter(str + ".Name", obj.name);
+		setCoreParameter(str + ".Path", obj.path);
+		setCoreParameter(str + ".Arg", obj.arg);
+		setCoreParameter(str + ".Name", obj.name);
 	}
 }
 
@@ -223,7 +234,7 @@ std::string CreateClusterV2Request::getRegionId()const
 void CreateClusterV2Request::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool CreateClusterV2Request::getUseLocalMetaDb()const
@@ -234,7 +245,18 @@ bool CreateClusterV2Request::getUseLocalMetaDb()const
 void CreateClusterV2Request::setUseLocalMetaDb(bool useLocalMetaDb)
 {
 	useLocalMetaDb_ = useLocalMetaDb;
-	setParameter("UseLocalMetaDb", std::to_string(useLocalMetaDb));
+	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
+}
+
+std::string CreateClusterV2Request::getMetaStoreConf()const
+{
+	return metaStoreConf_;
+}
+
+void CreateClusterV2Request::setMetaStoreConf(const std::string& metaStoreConf)
+{
+	metaStoreConf_ = metaStoreConf;
+	setCoreParameter("MetaStoreConf", metaStoreConf);
 }
 
 std::string CreateClusterV2Request::getEmrVer()const
@@ -245,7 +267,7 @@ std::string CreateClusterV2Request::getEmrVer()const
 void CreateClusterV2Request::setEmrVer(const std::string& emrVer)
 {
 	emrVer_ = emrVer;
-	setParameter("EmrVer", emrVer);
+	setCoreParameter("EmrVer", emrVer);
 }
 
 std::vector<CreateClusterV2Request::UserInfo> CreateClusterV2Request::getUserInfo()const
@@ -260,9 +282,9 @@ void CreateClusterV2Request::setUserInfo(const std::vector<UserInfo>& userInfo)
 	for(int i = 0; i!= userInfo.size(); i++)	{
 		auto obj = userInfo.at(i);
 		std::string str ="UserInfo."+ std::to_string(i);
-		setParameter(str + ".Password", obj.password);
-		setParameter(str + ".UserId", obj.userId);
-		setParameter(str + ".UserName", obj.userName);
+		setCoreParameter(str + ".Password", obj.password);
+		setCoreParameter(str + ".UserId", obj.userId);
+		setCoreParameter(str + ".UserName", obj.userName);
 	}
 }
 
@@ -274,7 +296,7 @@ std::string CreateClusterV2Request::getUserDefinedEmrEcsRole()const
 void CreateClusterV2Request::setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole)
 {
 	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
-	setParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+	setCoreParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
 }
 
 std::string CreateClusterV2Request::getAuthorizeContent()const
@@ -285,7 +307,7 @@ std::string CreateClusterV2Request::getAuthorizeContent()const
 void CreateClusterV2Request::setAuthorizeContent(const std::string& authorizeContent)
 {
 	authorizeContent_ = authorizeContent;
-	setParameter("AuthorizeContent", authorizeContent);
+	setCoreParameter("AuthorizeContent", authorizeContent);
 }
 
 bool CreateClusterV2Request::getIsOpenPublicIp()const
@@ -296,7 +318,7 @@ bool CreateClusterV2Request::getIsOpenPublicIp()const
 void CreateClusterV2Request::setIsOpenPublicIp(bool isOpenPublicIp)
 {
 	isOpenPublicIp_ = isOpenPublicIp;
-	setParameter("IsOpenPublicIp", std::to_string(isOpenPublicIp));
+	setCoreParameter("IsOpenPublicIp", isOpenPublicIp ? "true" : "false");
 }
 
 int CreateClusterV2Request::getPeriod()const
@@ -307,7 +329,7 @@ int CreateClusterV2Request::getPeriod()const
 void CreateClusterV2Request::setPeriod(int period)
 {
 	period_ = period;
-	setParameter("Period", std::to_string(period));
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string CreateClusterV2Request::getWhiteListType()const
@@ -318,7 +340,7 @@ std::string CreateClusterV2Request::getWhiteListType()const
 void CreateClusterV2Request::setWhiteListType(const std::string& whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setParameter("WhiteListType", whiteListType);
+	setCoreParameter("WhiteListType", whiteListType);
 }
 
 std::string CreateClusterV2Request::getRelatedClusterId()const
@@ -329,7 +351,7 @@ std::string CreateClusterV2Request::getRelatedClusterId()const
 void CreateClusterV2Request::setRelatedClusterId(const std::string& relatedClusterId)
 {
 	relatedClusterId_ = relatedClusterId;
-	setParameter("RelatedClusterId", relatedClusterId);
+	setCoreParameter("RelatedClusterId", relatedClusterId);
 }
 
 std::string CreateClusterV2Request::getInstanceGeneration()const
@@ -340,7 +362,7 @@ std::string CreateClusterV2Request::getInstanceGeneration()const
 void CreateClusterV2Request::setInstanceGeneration(const std::string& instanceGeneration)
 {
 	instanceGeneration_ = instanceGeneration;
-	setParameter("InstanceGeneration", instanceGeneration);
+	setCoreParameter("InstanceGeneration", instanceGeneration);
 }
 
 std::string CreateClusterV2Request::getVSwitchId()const
@@ -351,7 +373,7 @@ std::string CreateClusterV2Request::getVSwitchId()const
 void CreateClusterV2Request::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateClusterV2Request::getClusterType()const
@@ -362,7 +384,7 @@ std::string CreateClusterV2Request::getClusterType()const
 void CreateClusterV2Request::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setParameter("ClusterType", clusterType);
+	setCoreParameter("ClusterType", clusterType);
 }
 
 bool CreateClusterV2Request::getAutoRenew()const
@@ -373,7 +395,7 @@ bool CreateClusterV2Request::getAutoRenew()const
 void CreateClusterV2Request::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setParameter("AutoRenew", std::to_string(autoRenew));
+	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::vector<std::string> CreateClusterV2Request::getOptionSoftWareList()const
@@ -385,7 +407,7 @@ void CreateClusterV2Request::setOptionSoftWareList(const std::vector<std::string
 {
 	optionSoftWareList_ = optionSoftWareList;
 	for(int i = 0; i!= optionSoftWareList.size(); i++)
-		setParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
+		setCoreParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
 }
 
 std::string CreateClusterV2Request::getVpcId()const
@@ -396,7 +418,7 @@ std::string CreateClusterV2Request::getVpcId()const
 void CreateClusterV2Request::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string CreateClusterV2Request::getNetType()const
@@ -407,7 +429,7 @@ std::string CreateClusterV2Request::getNetType()const
 void CreateClusterV2Request::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setParameter("NetType", netType);
+	setCoreParameter("NetType", netType);
 }
 
 std::string CreateClusterV2Request::getName()const
@@ -418,7 +440,7 @@ std::string CreateClusterV2Request::getName()const
 void CreateClusterV2Request::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::vector<CreateClusterV2Request::HostGroup> CreateClusterV2Request::getHostGroup()const
@@ -433,24 +455,24 @@ void CreateClusterV2Request::setHostGroup(const std::vector<HostGroup>& hostGrou
 	for(int i = 0; i!= hostGroup.size(); i++)	{
 		auto obj = hostGroup.at(i);
 		std::string str ="HostGroup."+ std::to_string(i);
-		setParameter(str + ".Period", std::to_string(obj.period));
-		setParameter(str + ".SysDiskCapacity", std::to_string(obj.sysDiskCapacity));
-		setParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
-		setParameter(str + ".SysDiskType", obj.sysDiskType);
-		setParameter(str + ".ClusterId", obj.clusterId);
-		setParameter(str + ".DiskType", obj.diskType);
-		setParameter(str + ".HostGroupName", obj.hostGroupName);
-		setParameter(str + ".VSwitchId", obj.vSwitchId);
-		setParameter(str + ".DiskCount", std::to_string(obj.diskCount));
-		setParameter(str + ".AutoRenew", std::to_string(obj.autoRenew));
-		setParameter(str + ".GpuDriver", obj.gpuDriver);
-		setParameter(str + ".HostGroupId", obj.hostGroupId);
-		setParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
-		setParameter(str + ".InstanceType", obj.instanceType);
-		setParameter(str + ".Comment", obj.comment);
-		setParameter(str + ".ChargeType", obj.chargeType);
-		setParameter(str + ".CreateType", obj.createType);
-		setParameter(str + ".HostGroupType", obj.hostGroupType);
+		setCoreParameter(str + ".Period", std::to_string(obj.period));
+		setCoreParameter(str + ".SysDiskCapacity", std::to_string(obj.sysDiskCapacity));
+		setCoreParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
+		setCoreParameter(str + ".SysDiskType", obj.sysDiskType);
+		setCoreParameter(str + ".ClusterId", obj.clusterId);
+		setCoreParameter(str + ".DiskType", obj.diskType);
+		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
+		setCoreParameter(str + ".VSwitchId", obj.vSwitchId);
+		setCoreParameter(str + ".DiskCount", std::to_string(obj.diskCount));
+		setCoreParameter(str + ".AutoRenew", obj.autoRenew ? "true" : "false");
+		setCoreParameter(str + ".GpuDriver", obj.gpuDriver);
+		setCoreParameter(str + ".HostGroupId", obj.hostGroupId);
+		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
+		setCoreParameter(str + ".InstanceType", obj.instanceType);
+		setCoreParameter(str + ".Comment", obj.comment);
+		setCoreParameter(str + ".ChargeType", obj.chargeType);
+		setCoreParameter(str + ".CreateType", obj.createType);
+		setCoreParameter(str + ".HostGroupType", obj.hostGroupType);
 	}
 }
 
@@ -462,7 +484,7 @@ std::string CreateClusterV2Request::getZoneId()const
 void CreateClusterV2Request::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string CreateClusterV2Request::getChargeType()const
@@ -473,7 +495,7 @@ std::string CreateClusterV2Request::getChargeType()const
 void CreateClusterV2Request::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setParameter("ChargeType", chargeType);
+	setCoreParameter("ChargeType", chargeType);
 }
 
 bool CreateClusterV2Request::getUseCustomHiveMetaDB()const
@@ -484,7 +506,7 @@ bool CreateClusterV2Request::getUseCustomHiveMetaDB()const
 void CreateClusterV2Request::setUseCustomHiveMetaDB(bool useCustomHiveMetaDB)
 {
 	useCustomHiveMetaDB_ = useCustomHiveMetaDB;
-	setParameter("UseCustomHiveMetaDB", std::to_string(useCustomHiveMetaDB));
+	setCoreParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB ? "true" : "false");
 }
 
 std::vector<CreateClusterV2Request::Config> CreateClusterV2Request::getConfig()const
@@ -499,12 +521,12 @@ void CreateClusterV2Request::setConfig(const std::vector<Config>& config)
 	for(int i = 0; i!= config.size(); i++)	{
 		auto obj = config.at(i);
 		std::string str ="Config."+ std::to_string(i);
-		setParameter(str + ".ConfigKey", obj.configKey);
-		setParameter(str + ".FileName", obj.fileName);
-		setParameter(str + ".Encrypt", obj.encrypt);
-		setParameter(str + ".Replace", obj.replace);
-		setParameter(str + ".ConfigValue", obj.configValue);
-		setParameter(str + ".ServiceName", obj.serviceName);
+		setCoreParameter(str + ".ConfigKey", obj.configKey);
+		setCoreParameter(str + ".FileName", obj.fileName);
+		setCoreParameter(str + ".Encrypt", obj.encrypt);
+		setCoreParameter(str + ".Replace", obj.replace);
+		setCoreParameter(str + ".ConfigValue", obj.configValue);
+		setCoreParameter(str + ".ServiceName", obj.serviceName);
 	}
 }
 
@@ -516,7 +538,7 @@ bool CreateClusterV2Request::getHighAvailabilityEnable()const
 void CreateClusterV2Request::setHighAvailabilityEnable(bool highAvailabilityEnable)
 {
 	highAvailabilityEnable_ = highAvailabilityEnable;
-	setParameter("HighAvailabilityEnable", std::to_string(highAvailabilityEnable));
+	setCoreParameter("HighAvailabilityEnable", highAvailabilityEnable ? "true" : "false");
 }
 
 bool CreateClusterV2Request::getInitCustomHiveMetaDB()const
@@ -527,6 +549,6 @@ bool CreateClusterV2Request::getInitCustomHiveMetaDB()const
 void CreateClusterV2Request::setInitCustomHiveMetaDB(bool initCustomHiveMetaDB)
 {
 	initCustomHiveMetaDB_ = initCustomHiveMetaDB;
-	setParameter("InitCustomHiveMetaDB", std::to_string(initCustomHiveMetaDB));
+	setCoreParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB ? "true" : "false");
 }
 

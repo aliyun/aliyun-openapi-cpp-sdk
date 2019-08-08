@@ -33,7 +33,7 @@ std::string ResetQualificationVerificationRequest::getInstanceId()const
 void ResetQualificationVerificationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ResetQualificationVerificationRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string ResetQualificationVerificationRequest::getUserClientIp()const
 void ResetQualificationVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string ResetQualificationVerificationRequest::getLang()const
@@ -55,7 +55,7 @@ std::string ResetQualificationVerificationRequest::getLang()const
 void ResetQualificationVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string ResetQualificationVerificationRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ResetQualificationVerificationRequest::getAccessKeyId()const
 void ResetQualificationVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

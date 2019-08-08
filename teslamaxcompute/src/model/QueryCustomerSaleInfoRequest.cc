@@ -33,6 +33,6 @@ std::string QueryCustomerSaleInfoRequest::getRegionName()const
 void QueryCustomerSaleInfoRequest::setRegionName(const std::string& regionName)
 {
 	regionName_ = regionName;
-	setParameter("RegionName", regionName);
+	setCoreParameter("RegionName", regionName);
 }
 

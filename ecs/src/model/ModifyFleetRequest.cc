@@ -333,6 +333,17 @@ void ModifyFleetRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ModifyFleetRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ModifyFleetRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string ModifyFleetRequest::getTotalTargetCapacity()const
 {
 	return totalTargetCapacity_;

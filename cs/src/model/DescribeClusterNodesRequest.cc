@@ -33,7 +33,7 @@ std::string DescribeClusterNodesRequest::getPageSize()const
 void DescribeClusterNodesRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeClusterNodesRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string DescribeClusterNodesRequest::getClusterId()const
 void DescribeClusterNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DescribeClusterNodesRequest::getPageNumber()const
@@ -55,6 +55,6 @@ std::string DescribeClusterNodesRequest::getPageNumber()const
 void DescribeClusterNodesRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", pageNumber);
 }
 

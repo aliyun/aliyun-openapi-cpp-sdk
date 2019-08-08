@@ -33,7 +33,7 @@ std::string QueryDomainSuffixRequest::getUserClientIp()const
 void QueryDomainSuffixRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDomainSuffixRequest::getLang()const
@@ -44,6 +44,6 @@ std::string QueryDomainSuffixRequest::getLang()const
 void QueryDomainSuffixRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

@@ -17,21 +17,21 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICEREQUEST_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICEREQUEST_H_
 
-#include <map>
 #include "CoreExport.h"
 #include "Url.h"
+#include <map>
 #include <string>
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT ServiceRequest {
- public:
+public:
   typedef std::string ParameterNameType;
   typedef std::string ParameterValueType;
   typedef std::map<ParameterNameType, ParameterValueType> ParameterCollection;
 
   virtual ~ServiceRequest();
 
-  const char* content() const;
+  const char *content() const;
   size_t contentSize() const;
   bool hasContent() const;
   ParameterCollection parameters() const;
@@ -44,25 +44,24 @@ class ALIBABACLOUD_CORE_EXPORT ServiceRequest {
   void setConnectTimeout(const long connectTimeout);
   void setReadTimeout(const long readTimeout);
 
- protected:
+protected:
   ServiceRequest(const std::string &product, const std::string &version);
   ServiceRequest(const ServiceRequest &other);
   ServiceRequest(ServiceRequest &&other);
-  ServiceRequest& operator=(const ServiceRequest &other);
-  ServiceRequest& operator=(ServiceRequest &&other);
+  ServiceRequest &operator=(const ServiceRequest &other);
+  ServiceRequest &operator=(ServiceRequest &&other);
 
   void addParameter(const ParameterNameType &name,
-    const ParameterValueType &value);
+                    const ParameterValueType &value);
   ParameterValueType parameter(const ParameterNameType &name) const;
   ParameterValueType coreParameter(const ParameterNameType &name) const;
   void removeParameter(const ParameterNameType &name);
   void setContent(const char *data, size_t size);
   void setParameter(const ParameterNameType &name,
-      const ParameterValueType &value);
+                    const ParameterValueType &value);
 
   void setCoreParameter(const ParameterNameType &name,
-      const ParameterValueType &value);
-
+                        const ParameterValueType &value);
 
   void setParameters(const ParameterCollection &params);
   void setResourcePath(const std::string &path);
@@ -70,7 +69,7 @@ class ALIBABACLOUD_CORE_EXPORT ServiceRequest {
   void setVersion(const std::string &version);
   void setScheme(const std::string scheme);
 
- private:
+private:
   char *content_;
   size_t contentSize_;
   ParameterCollection params_;
@@ -81,6 +80,6 @@ class ALIBABACLOUD_CORE_EXPORT ServiceRequest {
   long connectTimeout_;
   long readTimeout_;
 };
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud
 
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICEREQUEST_H_
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICEREQUEST_H_

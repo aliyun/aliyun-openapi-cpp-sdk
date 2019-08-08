@@ -33,7 +33,7 @@ std::string GetAlbumsByNamesRequest::getLibraryId()const
 void GetAlbumsByNamesRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::vector<std::string> GetAlbumsByNamesRequest::getName()const
@@ -45,7 +45,7 @@ void GetAlbumsByNamesRequest::setName(const std::vector<std::string>& name)
 {
 	name_ = name;
 	for(int i = 0; i!= name.size(); i++)
-		setParameter("Name."+ std::to_string(i), name.at(i));
+		setCoreParameter("Name."+ std::to_string(i), name.at(i));
 }
 
 std::string GetAlbumsByNamesRequest::getStoreName()const
@@ -56,6 +56,6 @@ std::string GetAlbumsByNamesRequest::getStoreName()const
 void GetAlbumsByNamesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 

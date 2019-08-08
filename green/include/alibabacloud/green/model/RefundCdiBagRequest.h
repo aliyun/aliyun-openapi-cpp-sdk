@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,35 +17,30 @@
 #ifndef ALIBABACLOUD_GREEN_MODEL_REFUNDCDIBAGREQUEST_H_
 #define ALIBABACLOUD_GREEN_MODEL_REFUNDCDIBAGREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/green/GreenExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Green
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_GREEN_EXPORT RefundCdiBagRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Green {
+namespace Model {
+class ALIBABACLOUD_GREEN_EXPORT RefundCdiBagRequest : public RpcServiceRequest {
 
-			public:
-				RefundCdiBagRequest();
-				~RefundCdiBagRequest();
+public:
+  RefundCdiBagRequest();
+  ~RefundCdiBagRequest();
 
-				std::string getResourceOwnerId()const;
-				void setResourceOwnerId(const std::string& resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
+  std::string getResourceOwnerId() const;
+  void setResourceOwnerId(const std::string &resourceOwnerId);
+  std::string getInstanceId() const;
+  void setInstanceId(const std::string &instanceId);
 
-            private:
-				std::string resourceOwnerId_;
-				std::string instanceId_;
-
-			};
-		}
-	}
-}
+private:
+  std::string resourceOwnerId_;
+  std::string instanceId_;
+};
+} // namespace Model
+} // namespace Green
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_GREEN_MODEL_REFUNDCDIBAGREQUEST_H_

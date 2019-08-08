@@ -33,7 +33,7 @@ int QueryCreateInstancePriceRequest::getMonth()const
 void QueryCreateInstancePriceRequest::setMonth(int month)
 {
 	month_ = month;
-	setParameter("Month", std::to_string(month));
+	setCoreParameter("Month", std::to_string(month));
 }
 
 std::string QueryCreateInstancePriceRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryCreateInstancePriceRequest::getUserClientIp()const
 void QueryCreateInstancePriceRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryCreateInstancePriceRequest::getLang()const
@@ -55,7 +55,7 @@ std::string QueryCreateInstancePriceRequest::getLang()const
 void QueryCreateInstancePriceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string QueryCreateInstancePriceRequest::getInstanceVersion()const
@@ -66,7 +66,7 @@ std::string QueryCreateInstancePriceRequest::getInstanceVersion()const
 void QueryCreateInstancePriceRequest::setInstanceVersion(const std::string& instanceVersion)
 {
 	instanceVersion_ = instanceVersion;
-	setParameter("InstanceVersion", instanceVersion);
+	setCoreParameter("InstanceVersion", instanceVersion);
 }
 
 long QueryCreateInstancePriceRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryCreateInstancePriceRequest::getOwnerId()const
 void QueryCreateInstancePriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryCreateInstancePriceRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryCreateInstancePriceRequest::getAccessKeyId()const
 void QueryCreateInstancePriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

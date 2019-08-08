@@ -33,7 +33,7 @@ std::string QueryTransferInByInstanceIdRequest::getInstanceId()const
 void QueryTransferInByInstanceIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string QueryTransferInByInstanceIdRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryTransferInByInstanceIdRequest::getUserClientIp()const
 void QueryTransferInByInstanceIdRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryTransferInByInstanceIdRequest::getLang()const
@@ -55,6 +55,6 @@ std::string QueryTransferInByInstanceIdRequest::getLang()const
 void QueryTransferInByInstanceIdRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

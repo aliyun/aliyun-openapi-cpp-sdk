@@ -26,7 +26,9 @@ set(sts_public_header_model
 	include/alibabacloud/sts/model/GenerateSessionAccessKeyRequest.h
 	include/alibabacloud/sts/model/GenerateSessionAccessKeyResult.h
 	include/alibabacloud/sts/model/AssumeRoleRequest.h
-	include/alibabacloud/sts/model/AssumeRoleResult.h )
+	include/alibabacloud/sts/model/AssumeRoleResult.h
+	include/alibabacloud/sts/model/AssumeRoleWithSAMLRequest.h
+	include/alibabacloud/sts/model/AssumeRoleWithSAMLResult.h )
 
 set(sts_src 
 	src/StsClient.cc
@@ -35,7 +37,9 @@ set(sts_src
 	src/model/GenerateSessionAccessKeyRequest.cc
 	src/model/GenerateSessionAccessKeyResult.cc
 	src/model/AssumeRoleRequest.cc
-	src/model/AssumeRoleResult.cc )
+	src/model/AssumeRoleResult.cc
+	src/model/AssumeRoleWithSAMLRequest.cc
+	src/model/AssumeRoleWithSAMLResult.cc )
 
 add_library(sts ${LIB_TYPE}
 	${sts_public_header}

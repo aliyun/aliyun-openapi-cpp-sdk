@@ -33,7 +33,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getLocalRegionId()const
 void SetCenInterRegionBandwidthLimitRequest::setLocalRegionId(const std::string& localRegionId)
 {
 	localRegionId_ = localRegionId;
-	setParameter("LocalRegionId", localRegionId);
+	setCoreParameter("LocalRegionId", localRegionId);
 }
 
 long SetCenInterRegionBandwidthLimitRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long SetCenInterRegionBandwidthLimitRequest::getResourceOwnerId()const
 void SetCenInterRegionBandwidthLimitRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getResourceOwnerAccount()con
 void SetCenInterRegionBandwidthLimitRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getCenId()const
@@ -66,7 +66,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getCenId()const
 void SetCenInterRegionBandwidthLimitRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setParameter("CenId", cenId);
+	setCoreParameter("CenId", cenId);
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getOwnerAccount()const
 void SetCenInterRegionBandwidthLimitRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getOppositeRegionId()const
@@ -88,7 +88,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getOppositeRegionId()const
 void SetCenInterRegionBandwidthLimitRequest::setOppositeRegionId(const std::string& oppositeRegionId)
 {
 	oppositeRegionId_ = oppositeRegionId;
-	setParameter("OppositeRegionId", oppositeRegionId);
+	setCoreParameter("OppositeRegionId", oppositeRegionId);
 }
 
 long SetCenInterRegionBandwidthLimitRequest::getBandwidthLimit()const
@@ -99,7 +99,7 @@ long SetCenInterRegionBandwidthLimitRequest::getBandwidthLimit()const
 void SetCenInterRegionBandwidthLimitRequest::setBandwidthLimit(long bandwidthLimit)
 {
 	bandwidthLimit_ = bandwidthLimit;
-	setParameter("BandwidthLimit", std::to_string(bandwidthLimit));
+	setCoreParameter("BandwidthLimit", std::to_string(bandwidthLimit));
 }
 
 long SetCenInterRegionBandwidthLimitRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long SetCenInterRegionBandwidthLimitRequest::getOwnerId()const
 void SetCenInterRegionBandwidthLimitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

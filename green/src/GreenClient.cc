@@ -231,42 +231,6 @@ GreenClient::UpdateAppPackageOutcomeCallable GreenClient::updateAppPackageCallab
 	return task->get_future();
 }
 
-GreenClient::DeleteVideoDnaGroupOutcome GreenClient::deleteVideoDnaGroup(const DeleteVideoDnaGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteVideoDnaGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteVideoDnaGroupOutcome(DeleteVideoDnaGroupResult(outcome.result()));
-	else
-		return DeleteVideoDnaGroupOutcome(outcome.error());
-}
-
-void GreenClient::deleteVideoDnaGroupAsync(const DeleteVideoDnaGroupRequest& request, const DeleteVideoDnaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteVideoDnaGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::DeleteVideoDnaGroupOutcomeCallable GreenClient::deleteVideoDnaGroupCallable(const DeleteVideoDnaGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteVideoDnaGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteVideoDnaGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GreenClient::UpdateOssCallbackSettingOutcome GreenClient::updateOssCallbackSetting(const UpdateOssCallbackSettingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +261,42 @@ GreenClient::UpdateOssCallbackSettingOutcomeCallable GreenClient::updateOssCallb
 			[this, request]()
 			{
 			return this->updateOssCallbackSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::DeleteVideoDnaGroupOutcome GreenClient::deleteVideoDnaGroup(const DeleteVideoDnaGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVideoDnaGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVideoDnaGroupOutcome(DeleteVideoDnaGroupResult(outcome.result()));
+	else
+		return DeleteVideoDnaGroupOutcome(outcome.error());
+}
+
+void GreenClient::deleteVideoDnaGroupAsync(const DeleteVideoDnaGroupRequest& request, const DeleteVideoDnaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVideoDnaGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DeleteVideoDnaGroupOutcomeCallable GreenClient::deleteVideoDnaGroupCallable(const DeleteVideoDnaGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVideoDnaGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVideoDnaGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,42 +339,6 @@ GreenClient::DescribeWebsiteInstanceKeyUrlOutcomeCallable GreenClient::describeW
 	return task->get_future();
 }
 
-GreenClient::DeleteVideoDnaOutcome GreenClient::deleteVideoDna(const DeleteVideoDnaRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteVideoDnaOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteVideoDnaOutcome(DeleteVideoDnaResult(outcome.result()));
-	else
-		return DeleteVideoDnaOutcome(outcome.error());
-}
-
-void GreenClient::deleteVideoDnaAsync(const DeleteVideoDnaRequest& request, const DeleteVideoDnaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteVideoDna(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::DeleteVideoDnaOutcomeCallable GreenClient::deleteVideoDnaCallable(const DeleteVideoDnaRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteVideoDnaOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteVideoDna(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GreenClient::RefundCdiBaseBagOutcome GreenClient::refundCdiBaseBag(const RefundCdiBaseBagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +369,42 @@ GreenClient::RefundCdiBaseBagOutcomeCallable GreenClient::refundCdiBaseBagCallab
 			[this, request]()
 			{
 			return this->refundCdiBaseBag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::DeleteVideoDnaOutcome GreenClient::deleteVideoDna(const DeleteVideoDnaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVideoDnaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVideoDnaOutcome(DeleteVideoDnaResult(outcome.result()));
+	else
+		return DeleteVideoDnaOutcome(outcome.error());
+}
+
+void GreenClient::deleteVideoDnaAsync(const DeleteVideoDnaRequest& request, const DeleteVideoDnaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVideoDna(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DeleteVideoDnaOutcomeCallable GreenClient::deleteVideoDnaCallable(const DeleteVideoDnaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVideoDnaOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVideoDna(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,42 +519,6 @@ GreenClient::DescribeOssResultItemsOutcomeCallable GreenClient::describeOssResul
 	return task->get_future();
 }
 
-GreenClient::UpdateWebsiteInstanceStatusOutcome GreenClient::updateWebsiteInstanceStatus(const UpdateWebsiteInstanceStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateWebsiteInstanceStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateWebsiteInstanceStatusOutcome(UpdateWebsiteInstanceStatusResult(outcome.result()));
-	else
-		return UpdateWebsiteInstanceStatusOutcome(outcome.error());
-}
-
-void GreenClient::updateWebsiteInstanceStatusAsync(const UpdateWebsiteInstanceStatusRequest& request, const UpdateWebsiteInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateWebsiteInstanceStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::UpdateWebsiteInstanceStatusOutcomeCallable GreenClient::updateWebsiteInstanceStatusCallable(const UpdateWebsiteInstanceStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateWebsiteInstanceStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->updateWebsiteInstanceStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GreenClient::DescribeBizTypesOutcome GreenClient::describeBizTypes(const DescribeBizTypesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +549,42 @@ GreenClient::DescribeBizTypesOutcomeCallable GreenClient::describeBizTypesCallab
 			[this, request]()
 			{
 			return this->describeBizTypes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::UpdateWebsiteInstanceStatusOutcome GreenClient::updateWebsiteInstanceStatus(const UpdateWebsiteInstanceStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateWebsiteInstanceStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateWebsiteInstanceStatusOutcome(UpdateWebsiteInstanceStatusResult(outcome.result()));
+	else
+		return UpdateWebsiteInstanceStatusOutcome(outcome.error());
+}
+
+void GreenClient::updateWebsiteInstanceStatusAsync(const UpdateWebsiteInstanceStatusRequest& request, const UpdateWebsiteInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateWebsiteInstanceStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::UpdateWebsiteInstanceStatusOutcomeCallable GreenClient::updateWebsiteInstanceStatusCallable(const UpdateWebsiteInstanceStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateWebsiteInstanceStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateWebsiteInstanceStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,6 +699,42 @@ GreenClient::CreateCdiBaseBagOutcomeCallable GreenClient::createCdiBaseBagCallab
 	return task->get_future();
 }
 
+GreenClient::DeleteKeywordLibOutcome GreenClient::deleteKeywordLib(const DeleteKeywordLibRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteKeywordLibOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteKeywordLibOutcome(DeleteKeywordLibResult(outcome.result()));
+	else
+		return DeleteKeywordLibOutcome(outcome.error());
+}
+
+void GreenClient::deleteKeywordLibAsync(const DeleteKeywordLibRequest& request, const DeleteKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteKeywordLib(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DeleteKeywordLibOutcomeCallable GreenClient::deleteKeywordLibCallable(const DeleteKeywordLibRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteKeywordLibOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteKeywordLib(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::VerifyPhoneOutcome GreenClient::verifyPhone(const VerifyPhoneRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,42 +801,6 @@ GreenClient::ImageDetectionOutcomeCallable GreenClient::imageDetectionCallable(c
 			[this, request]()
 			{
 			return this->imageDetection(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-GreenClient::DeleteKeywordLibOutcome GreenClient::deleteKeywordLib(const DeleteKeywordLibRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteKeywordLibOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteKeywordLibOutcome(DeleteKeywordLibResult(outcome.result()));
-	else
-		return DeleteKeywordLibOutcome(outcome.error());
-}
-
-void GreenClient::deleteKeywordLibAsync(const DeleteKeywordLibRequest& request, const DeleteKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteKeywordLib(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::DeleteKeywordLibOutcomeCallable GreenClient::deleteKeywordLibCallable(const DeleteKeywordLibRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteKeywordLibOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteKeywordLib(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1131,6 +1131,42 @@ GreenClient::UpdateNotificationSettingOutcomeCallable GreenClient::updateNotific
 	return task->get_future();
 }
 
+GreenClient::DescribeUserBizTypesOutcome GreenClient::describeUserBizTypes(const DescribeUserBizTypesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserBizTypesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserBizTypesOutcome(DescribeUserBizTypesResult(outcome.result()));
+	else
+		return DescribeUserBizTypesOutcome(outcome.error());
+}
+
+void GreenClient::describeUserBizTypesAsync(const DescribeUserBizTypesRequest& request, const DescribeUserBizTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserBizTypes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DescribeUserBizTypesOutcomeCallable GreenClient::describeUserBizTypesCallable(const DescribeUserBizTypesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserBizTypesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserBizTypes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::DescribeAuditContentItemOutcome GreenClient::describeAuditContentItem(const DescribeAuditContentItemRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1167,42 +1203,6 @@ GreenClient::DescribeAuditContentItemOutcomeCallable GreenClient::describeAuditC
 	return task->get_future();
 }
 
-GreenClient::SearchPersonOutcome GreenClient::searchPerson(const SearchPersonRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SearchPersonOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SearchPersonOutcome(SearchPersonResult(outcome.result()));
-	else
-		return SearchPersonOutcome(outcome.error());
-}
-
-void GreenClient::searchPersonAsync(const SearchPersonRequest& request, const SearchPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, searchPerson(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::SearchPersonOutcomeCallable GreenClient::searchPersonCallable(const SearchPersonRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SearchPersonOutcome()>>(
-			[this, request]()
-			{
-			return this->searchPerson(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GreenClient::MarkOssResultOutcome GreenClient::markOssResult(const MarkOssResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,6 +1233,42 @@ GreenClient::MarkOssResultOutcomeCallable GreenClient::markOssResultCallable(con
 			[this, request]()
 			{
 			return this->markOssResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::SearchPersonOutcome GreenClient::searchPerson(const SearchPersonRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchPersonOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchPersonOutcome(SearchPersonResult(outcome.result()));
+	else
+		return SearchPersonOutcome(outcome.error());
+}
+
+void GreenClient::searchPersonAsync(const SearchPersonRequest& request, const SearchPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchPerson(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::SearchPersonOutcomeCallable GreenClient::searchPersonCallable(const SearchPersonRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchPersonOutcome()>>(
+			[this, request]()
+			{
+			return this->searchPerson(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2499,42 +2535,6 @@ GreenClient::UpgradeCdiBaseBagOutcomeCallable GreenClient::upgradeCdiBaseBagCall
 	return task->get_future();
 }
 
-GreenClient::DescribeUserStatusOutcome GreenClient::describeUserStatus(const DescribeUserStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeUserStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeUserStatusOutcome(DescribeUserStatusResult(outcome.result()));
-	else
-		return DescribeUserStatusOutcome(outcome.error());
-}
-
-void GreenClient::describeUserStatusAsync(const DescribeUserStatusRequest& request, const DescribeUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeUserStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::DescribeUserStatusOutcomeCallable GreenClient::describeUserStatusCallable(const DescribeUserStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeUserStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeUserStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GreenClient::GetAddVideoDnaResultsOutcome GreenClient::getAddVideoDnaResults(const GetAddVideoDnaResultsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2565,6 +2565,42 @@ GreenClient::GetAddVideoDnaResultsOutcomeCallable GreenClient::getAddVideoDnaRes
 			[this, request]()
 			{
 			return this->getAddVideoDnaResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::DescribeUserStatusOutcome GreenClient::describeUserStatus(const DescribeUserStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserStatusOutcome(DescribeUserStatusResult(outcome.result()));
+	else
+		return DescribeUserStatusOutcome(outcome.error());
+}
+
+void GreenClient::describeUserStatusAsync(const DescribeUserStatusRequest& request, const DescribeUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DescribeUserStatusOutcomeCallable GreenClient::describeUserStatusCallable(const DescribeUserStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2607,42 +2643,6 @@ GreenClient::DescribeKeywordOutcomeCallable GreenClient::describeKeywordCallable
 	return task->get_future();
 }
 
-GreenClient::AddFacesOutcome GreenClient::addFaces(const AddFacesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddFacesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddFacesOutcome(AddFacesResult(outcome.result()));
-	else
-		return AddFacesOutcome(outcome.error());
-}
-
-void GreenClient::addFacesAsync(const AddFacesRequest& request, const AddFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addFaces(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::AddFacesOutcomeCallable GreenClient::addFacesCallable(const AddFacesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddFacesOutcome()>>(
-			[this, request]()
-			{
-			return this->addFaces(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GreenClient::DescribeAuditSettingOutcome GreenClient::describeAuditSetting(const DescribeAuditSettingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2679,36 +2679,36 @@ GreenClient::DescribeAuditSettingOutcomeCallable GreenClient::describeAuditSetti
 	return task->get_future();
 }
 
-GreenClient::CreateKeywordLibOutcome GreenClient::createKeywordLib(const CreateKeywordLibRequest &request) const
+GreenClient::AddFacesOutcome GreenClient::addFaces(const AddFacesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateKeywordLibOutcome(endpointOutcome.error());
+		return AddFacesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateKeywordLibOutcome(CreateKeywordLibResult(outcome.result()));
+		return AddFacesOutcome(AddFacesResult(outcome.result()));
 	else
-		return CreateKeywordLibOutcome(outcome.error());
+		return AddFacesOutcome(outcome.error());
 }
 
-void GreenClient::createKeywordLibAsync(const CreateKeywordLibRequest& request, const CreateKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void GreenClient::addFacesAsync(const AddFacesRequest& request, const AddFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createKeywordLib(request), context);
+		handler(this, request, addFaces(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-GreenClient::CreateKeywordLibOutcomeCallable GreenClient::createKeywordLibCallable(const CreateKeywordLibRequest &request) const
+GreenClient::AddFacesOutcomeCallable GreenClient::addFacesCallable(const AddFacesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateKeywordLibOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AddFacesOutcome()>>(
 			[this, request]()
 			{
-			return this->createKeywordLib(request);
+			return this->addFaces(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2745,6 +2745,42 @@ GreenClient::UpdateOssIncrementCheckSettingOutcomeCallable GreenClient::updateOs
 			[this, request]()
 			{
 			return this->updateOssIncrementCheckSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::CreateKeywordLibOutcome GreenClient::createKeywordLib(const CreateKeywordLibRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateKeywordLibOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateKeywordLibOutcome(CreateKeywordLibResult(outcome.result()));
+	else
+		return CreateKeywordLibOutcome(outcome.error());
+}
+
+void GreenClient::createKeywordLibAsync(const CreateKeywordLibRequest& request, const CreateKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createKeywordLib(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::CreateKeywordLibOutcomeCallable GreenClient::createKeywordLibCallable(const CreateKeywordLibRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateKeywordLibOutcome()>>(
+			[this, request]()
+			{
+			return this->createKeywordLib(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3903,42 +3939,6 @@ GreenClient::AddVideoDnaOutcomeCallable GreenClient::addVideoDnaCallable(const A
 	return task->get_future();
 }
 
-GreenClient::VideoSyncScanOutcome GreenClient::videoSyncScan(const VideoSyncScanRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return VideoSyncScanOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return VideoSyncScanOutcome(VideoSyncScanResult(outcome.result()));
-	else
-		return VideoSyncScanOutcome(outcome.error());
-}
-
-void GreenClient::videoSyncScanAsync(const VideoSyncScanRequest& request, const VideoSyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, videoSyncScan(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::VideoSyncScanOutcomeCallable GreenClient::videoSyncScanCallable(const VideoSyncScanRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<VideoSyncScanOutcome()>>(
-			[this, request]()
-			{
-			return this->videoSyncScan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GreenClient::DeleteNotificationContactsOutcome GreenClient::deleteNotificationContacts(const DeleteNotificationContactsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3969,6 +3969,42 @@ GreenClient::DeleteNotificationContactsOutcomeCallable GreenClient::deleteNotifi
 			[this, request]()
 			{
 			return this->deleteNotificationContacts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::VideoSyncScanOutcome GreenClient::videoSyncScan(const VideoSyncScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VideoSyncScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VideoSyncScanOutcome(VideoSyncScanResult(outcome.result()));
+	else
+		return VideoSyncScanOutcome(outcome.error());
+}
+
+void GreenClient::videoSyncScanAsync(const VideoSyncScanRequest& request, const VideoSyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, videoSyncScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VideoSyncScanOutcomeCallable GreenClient::videoSyncScanCallable(const VideoSyncScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VideoSyncScanOutcome()>>(
+			[this, request]()
+			{
+			return this->videoSyncScan(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4335,42 +4371,6 @@ GreenClient::AddSimilarityLibraryOutcomeCallable GreenClient::addSimilarityLibra
 	return task->get_future();
 }
 
-GreenClient::AddVideoDnaGroupOutcome GreenClient::addVideoDnaGroup(const AddVideoDnaGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddVideoDnaGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddVideoDnaGroupOutcome(AddVideoDnaGroupResult(outcome.result()));
-	else
-		return AddVideoDnaGroupOutcome(outcome.error());
-}
-
-void GreenClient::addVideoDnaGroupAsync(const AddVideoDnaGroupRequest& request, const AddVideoDnaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addVideoDnaGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::AddVideoDnaGroupOutcomeCallable GreenClient::addVideoDnaGroupCallable(const AddVideoDnaGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddVideoDnaGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->addVideoDnaGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GreenClient::CreateCdiBagOutcome GreenClient::createCdiBag(const CreateCdiBagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4407,36 +4407,36 @@ GreenClient::CreateCdiBagOutcomeCallable GreenClient::createCdiBagCallable(const
 	return task->get_future();
 }
 
-GreenClient::UpdateKeywordLibOutcome GreenClient::updateKeywordLib(const UpdateKeywordLibRequest &request) const
+GreenClient::AddVideoDnaGroupOutcome GreenClient::addVideoDnaGroup(const AddVideoDnaGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UpdateKeywordLibOutcome(endpointOutcome.error());
+		return AddVideoDnaGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UpdateKeywordLibOutcome(UpdateKeywordLibResult(outcome.result()));
+		return AddVideoDnaGroupOutcome(AddVideoDnaGroupResult(outcome.result()));
 	else
-		return UpdateKeywordLibOutcome(outcome.error());
+		return AddVideoDnaGroupOutcome(outcome.error());
 }
 
-void GreenClient::updateKeywordLibAsync(const UpdateKeywordLibRequest& request, const UpdateKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void GreenClient::addVideoDnaGroupAsync(const AddVideoDnaGroupRequest& request, const AddVideoDnaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, updateKeywordLib(request), context);
+		handler(this, request, addVideoDnaGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-GreenClient::UpdateKeywordLibOutcomeCallable GreenClient::updateKeywordLibCallable(const UpdateKeywordLibRequest &request) const
+GreenClient::AddVideoDnaGroupOutcomeCallable GreenClient::addVideoDnaGroupCallable(const AddVideoDnaGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UpdateKeywordLibOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AddVideoDnaGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->updateKeywordLib(request);
+			return this->addVideoDnaGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4473,6 +4473,42 @@ GreenClient::ImageAsyncScanOutcomeCallable GreenClient::imageAsyncScanCallable(c
 			[this, request]()
 			{
 			return this->imageAsyncScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::UpdateKeywordLibOutcome GreenClient::updateKeywordLib(const UpdateKeywordLibRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateKeywordLibOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateKeywordLibOutcome(UpdateKeywordLibResult(outcome.result()));
+	else
+		return UpdateKeywordLibOutcome(outcome.error());
+}
+
+void GreenClient::updateKeywordLibAsync(const UpdateKeywordLibRequest& request, const UpdateKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateKeywordLib(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::UpdateKeywordLibOutcomeCallable GreenClient::updateKeywordLibCallable(const UpdateKeywordLibRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateKeywordLibOutcome()>>(
+			[this, request]()
+			{
+			return this->updateKeywordLib(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4587,42 +4623,6 @@ GreenClient::ImageResultsOutcomeCallable GreenClient::imageResultsCallable(const
 	return task->get_future();
 }
 
-GreenClient::VerifyWebsiteInstanceOutcome GreenClient::verifyWebsiteInstance(const VerifyWebsiteInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return VerifyWebsiteInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return VerifyWebsiteInstanceOutcome(VerifyWebsiteInstanceResult(outcome.result()));
-	else
-		return VerifyWebsiteInstanceOutcome(outcome.error());
-}
-
-void GreenClient::verifyWebsiteInstanceAsync(const VerifyWebsiteInstanceRequest& request, const VerifyWebsiteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, verifyWebsiteInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::VerifyWebsiteInstanceOutcomeCallable GreenClient::verifyWebsiteInstanceCallable(const VerifyWebsiteInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<VerifyWebsiteInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->verifyWebsiteInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GreenClient::UpdateWebsiteInstanceKeyUrlOutcome GreenClient::updateWebsiteInstanceKeyUrl(const UpdateWebsiteInstanceKeyUrlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4653,6 +4653,42 @@ GreenClient::UpdateWebsiteInstanceKeyUrlOutcomeCallable GreenClient::updateWebsi
 			[this, request]()
 			{
 			return this->updateWebsiteInstanceKeyUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::VerifyWebsiteInstanceOutcome GreenClient::verifyWebsiteInstance(const VerifyWebsiteInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VerifyWebsiteInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VerifyWebsiteInstanceOutcome(VerifyWebsiteInstanceResult(outcome.result()));
+	else
+		return VerifyWebsiteInstanceOutcome(outcome.error());
+}
+
+void GreenClient::verifyWebsiteInstanceAsync(const VerifyWebsiteInstanceRequest& request, const VerifyWebsiteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, verifyWebsiteInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VerifyWebsiteInstanceOutcomeCallable GreenClient::verifyWebsiteInstanceCallable(const VerifyWebsiteInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VerifyWebsiteInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->verifyWebsiteInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4731,42 +4767,6 @@ GreenClient::DescribeOssIncrementOverviewOutcomeCallable GreenClient::describeOs
 	return task->get_future();
 }
 
-GreenClient::DescribeNotificationSettingOutcome GreenClient::describeNotificationSetting(const DescribeNotificationSettingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeNotificationSettingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeNotificationSettingOutcome(DescribeNotificationSettingResult(outcome.result()));
-	else
-		return DescribeNotificationSettingOutcome(outcome.error());
-}
-
-void GreenClient::describeNotificationSettingAsync(const DescribeNotificationSettingRequest& request, const DescribeNotificationSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeNotificationSetting(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::DescribeNotificationSettingOutcomeCallable GreenClient::describeNotificationSettingCallable(const DescribeNotificationSettingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeNotificationSettingOutcome()>>(
-			[this, request]()
-			{
-			return this->describeNotificationSetting(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GreenClient::DescribeAuditContentOutcome GreenClient::describeAuditContent(const DescribeAuditContentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4797,6 +4797,42 @@ GreenClient::DescribeAuditContentOutcomeCallable GreenClient::describeAuditConte
 			[this, request]()
 			{
 			return this->describeAuditContent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::DescribeNotificationSettingOutcome GreenClient::describeNotificationSetting(const DescribeNotificationSettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNotificationSettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNotificationSettingOutcome(DescribeNotificationSettingResult(outcome.result()));
+	else
+		return DescribeNotificationSettingOutcome(outcome.error());
+}
+
+void GreenClient::describeNotificationSettingAsync(const DescribeNotificationSettingRequest& request, const DescribeNotificationSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNotificationSetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DescribeNotificationSettingOutcomeCallable GreenClient::describeNotificationSettingCallable(const DescribeNotificationSettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNotificationSettingOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNotificationSetting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,39 +17,34 @@
 #ifndef ALIBABACLOUD_AEGIS_MODEL_DESCRIBEANALYSISSHIPPERSTATUSRESULT_H_
 #define ALIBABACLOUD_AEGIS_MODEL_DESCRIBEANALYSISSHIPPERSTATUSRESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/aegis/AegisExport.h>
+#include <alibabacloud/core/ServiceResult.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace Aegis
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_AEGIS_EXPORT DescribeAnalysisShipperStatusResult : public ServiceResult
-			{
-			public:
-				struct ShipperData
-				{
-					std::string authStatus;
-				};
+namespace AlibabaCloud {
+namespace Aegis {
+namespace Model {
+class ALIBABACLOUD_AEGIS_EXPORT DescribeAnalysisShipperStatusResult
+    : public ServiceResult {
+public:
+  struct ShipperData {
+    std::string authStatus;
+  };
 
+  DescribeAnalysisShipperStatusResult();
+  explicit DescribeAnalysisShipperStatusResult(const std::string &payload);
+  ~DescribeAnalysisShipperStatusResult();
+  ShipperData getShipperData() const;
 
-				DescribeAnalysisShipperStatusResult();
-				explicit DescribeAnalysisShipperStatusResult(const std::string &payload);
-				~DescribeAnalysisShipperStatusResult();
-				ShipperData getShipperData()const;
+protected:
+  void parse(const std::string &payload);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				ShipperData shipperData_;
-
-			};
-		}
-	}
-}
+private:
+  ShipperData shipperData_;
+};
+} // namespace Model
+} // namespace Aegis
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_AEGIS_MODEL_DESCRIBEANALYSISSHIPPERSTATUSRESULT_H_

@@ -33,7 +33,7 @@ std::string DeleteGtmAddressPoolRequest::getAddrPoolId()const
 void DeleteGtmAddressPoolRequest::setAddrPoolId(const std::string& addrPoolId)
 {
 	addrPoolId_ = addrPoolId;
-	setParameter("AddrPoolId", addrPoolId);
+	setCoreParameter("AddrPoolId", addrPoolId);
 }
 
 std::string DeleteGtmAddressPoolRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DeleteGtmAddressPoolRequest::getUserClientIp()const
 void DeleteGtmAddressPoolRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteGtmAddressPoolRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DeleteGtmAddressPoolRequest::getLang()const
 void DeleteGtmAddressPoolRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

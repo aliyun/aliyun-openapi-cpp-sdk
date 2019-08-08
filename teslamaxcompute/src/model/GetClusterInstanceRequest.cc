@@ -33,7 +33,7 @@ std::string GetClusterInstanceRequest::getCluster()const
 void GetClusterInstanceRequest::setCluster(const std::string& cluster)
 {
 	cluster_ = cluster;
-	setParameter("Cluster", cluster);
+	setCoreParameter("Cluster", cluster);
 }
 
 int GetClusterInstanceRequest::getPageSize()const
@@ -44,7 +44,7 @@ int GetClusterInstanceRequest::getPageSize()const
 void GetClusterInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetClusterInstanceRequest::getPageNum()const
@@ -55,7 +55,7 @@ int GetClusterInstanceRequest::getPageNum()const
 void GetClusterInstanceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string GetClusterInstanceRequest::getRegion()const
@@ -66,7 +66,7 @@ std::string GetClusterInstanceRequest::getRegion()const
 void GetClusterInstanceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setParameter("Region", region);
+	setCoreParameter("Region", region);
 }
 
 std::string GetClusterInstanceRequest::getStatus()const
@@ -77,6 +77,6 @@ std::string GetClusterInstanceRequest::getStatus()const
 void GetClusterInstanceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

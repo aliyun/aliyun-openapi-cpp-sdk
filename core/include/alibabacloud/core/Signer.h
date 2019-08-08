@@ -17,31 +17,31 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_SIGNER_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_SIGNER_H_
 
-#include <string>
 #include "CoreExport.h"
+#include <string>
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT Signer {
- public:
+public:
   enum Type {
     HmacSha1,
   };
   virtual ~Signer();
 
   virtual std::string generate(const std::string &src,
-    const std::string &secret)const = 0;
-  std::string name()const;
+                               const std::string &secret) const = 0;
+  std::string name() const;
   Type type() const;
-  std::string version()const;
+  std::string version() const;
 
- protected:
+protected:
   Signer(Type type, const std::string &name,
-    const std::string &version = "1.0");
+         const std::string &version = "1.0");
 
- private:
+private:
   std::string name_;
   std::string version_;
   Type type_;
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_SIGNER_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_SIGNER_H_

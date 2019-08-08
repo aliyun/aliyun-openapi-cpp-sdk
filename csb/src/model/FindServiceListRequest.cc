@@ -33,7 +33,7 @@ std::string FindServiceListRequest::getProjectName()const
 void FindServiceListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setParameter("ProjectName", projectName);
+	setCoreParameter("ProjectName", projectName);
 }
 
 bool FindServiceListRequest::getShowDelService()const
@@ -44,7 +44,7 @@ bool FindServiceListRequest::getShowDelService()const
 void FindServiceListRequest::setShowDelService(bool showDelService)
 {
 	showDelService_ = showDelService;
-	setParameter("ShowDelService", std::to_string(showDelService));
+	setCoreParameter("ShowDelService", showDelService ? "true" : "false");
 }
 
 int FindServiceListRequest::getCasShowType()const
@@ -55,7 +55,7 @@ int FindServiceListRequest::getCasShowType()const
 void FindServiceListRequest::setCasShowType(int casShowType)
 {
 	casShowType_ = casShowType;
-	setParameter("CasShowType", std::to_string(casShowType));
+	setCoreParameter("CasShowType", std::to_string(casShowType));
 }
 
 long FindServiceListRequest::getCsbId()const
@@ -66,7 +66,7 @@ long FindServiceListRequest::getCsbId()const
 void FindServiceListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
 std::string FindServiceListRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string FindServiceListRequest::getRegionId()const
 void FindServiceListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string FindServiceListRequest::getAlias()const
@@ -88,7 +88,7 @@ std::string FindServiceListRequest::getAlias()const
 void FindServiceListRequest::setAlias(const std::string& alias)
 {
 	alias_ = alias;
-	setParameter("Alias", alias);
+	setCoreParameter("Alias", alias);
 }
 
 std::string FindServiceListRequest::getServiceName()const
@@ -99,7 +99,7 @@ std::string FindServiceListRequest::getServiceName()const
 void FindServiceListRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", serviceName);
 }
 
 int FindServiceListRequest::getPageNum()const
@@ -110,6 +110,6 @@ int FindServiceListRequest::getPageNum()const
 void FindServiceListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

@@ -300,3 +300,14 @@ void RedeployInstanceRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string RedeployInstanceRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void RedeployInstanceRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

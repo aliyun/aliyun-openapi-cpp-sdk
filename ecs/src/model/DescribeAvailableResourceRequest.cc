@@ -432,6 +432,17 @@ void DescribeAvailableResourceRequest::setRequestId(const std::string& requestId
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeAvailableResourceRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeAvailableResourceRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string DescribeAvailableResourceRequest::getZoneId()const
 {
 	return zoneId_;

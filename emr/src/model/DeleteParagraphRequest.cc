@@ -33,7 +33,7 @@ long DeleteParagraphRequest::getResourceOwnerId()const
 void DeleteParagraphRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteParagraphRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteParagraphRequest::getRegionId()const
 void DeleteParagraphRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteParagraphRequest::getNoteId()const
@@ -55,7 +55,7 @@ std::string DeleteParagraphRequest::getNoteId()const
 void DeleteParagraphRequest::setNoteId(const std::string& noteId)
 {
 	noteId_ = noteId;
-	setParameter("NoteId", noteId);
+	setCoreParameter("NoteId", noteId);
 }
 
 std::string DeleteParagraphRequest::getId()const
@@ -66,7 +66,7 @@ std::string DeleteParagraphRequest::getId()const
 void DeleteParagraphRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string DeleteParagraphRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteParagraphRequest::getAccessKeyId()const
 void DeleteParagraphRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

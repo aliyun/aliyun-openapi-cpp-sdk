@@ -33,7 +33,7 @@ std::string SaveApConfigRequest::getCountry()const
 void SaveApConfigRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setParameter("Country", country);
+	setCoreParameter("Country", country);
 }
 
 long SaveApConfigRequest::getApAssetId()const
@@ -44,7 +44,7 @@ long SaveApConfigRequest::getApAssetId()const
 void SaveApConfigRequest::setApAssetId(long apAssetId)
 {
 	apAssetId_ = apAssetId;
-	setParameter("ApAssetId", std::to_string(apAssetId));
+	setCoreParameter("ApAssetId", std::to_string(apAssetId));
 }
 
 int SaveApConfigRequest::getLogLevel()const
@@ -55,7 +55,7 @@ int SaveApConfigRequest::getLogLevel()const
 void SaveApConfigRequest::setLogLevel(int logLevel)
 {
 	logLevel_ = logLevel;
-	setParameter("LogLevel", std::to_string(logLevel));
+	setCoreParameter("LogLevel", std::to_string(logLevel));
 }
 
 std::string SaveApConfigRequest::getName()const
@@ -66,7 +66,7 @@ std::string SaveApConfigRequest::getName()const
 void SaveApConfigRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 int SaveApConfigRequest::getEchoInt()const
@@ -77,7 +77,7 @@ int SaveApConfigRequest::getEchoInt()const
 void SaveApConfigRequest::setEchoInt(int echoInt)
 {
 	echoInt_ = echoInt;
-	setParameter("EchoInt", std::to_string(echoInt));
+	setCoreParameter("EchoInt", std::to_string(echoInt));
 }
 
 int SaveApConfigRequest::getScan()const
@@ -88,7 +88,7 @@ int SaveApConfigRequest::getScan()const
 void SaveApConfigRequest::setScan(int scan)
 {
 	scan_ = scan;
-	setParameter("Scan", std::to_string(scan));
+	setCoreParameter("Scan", std::to_string(scan));
 }
 
 std::string SaveApConfigRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string SaveApConfigRequest::getDescription()const
 void SaveApConfigRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 long SaveApConfigRequest::getId()const
@@ -110,7 +110,7 @@ long SaveApConfigRequest::getId()const
 void SaveApConfigRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string SaveApConfigRequest::getDai()const
@@ -121,7 +121,7 @@ std::string SaveApConfigRequest::getDai()const
 void SaveApConfigRequest::setDai(const std::string& dai)
 {
 	dai_ = dai;
-	setParameter("Dai", dai);
+	setCoreParameter("Dai", dai);
 }
 
 std::string SaveApConfigRequest::getLogIp()const
@@ -132,7 +132,7 @@ std::string SaveApConfigRequest::getLogIp()const
 void SaveApConfigRequest::setLogIp(const std::string& logIp)
 {
 	logIp_ = logIp;
-	setParameter("LogIp", logIp);
+	setCoreParameter("LogIp", logIp);
 }
 
 std::string SaveApConfigRequest::getMac()const
@@ -143,7 +143,7 @@ std::string SaveApConfigRequest::getMac()const
 void SaveApConfigRequest::setMac(const std::string& mac)
 {
 	mac_ = mac;
-	setParameter("Mac", mac);
+	setCoreParameter("Mac", mac);
 }
 
 std::string SaveApConfigRequest::getAccessKeyId()const
@@ -154,6 +154,6 @@ std::string SaveApConfigRequest::getAccessKeyId()const
 void SaveApConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

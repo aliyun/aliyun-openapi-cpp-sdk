@@ -33,17 +33,6 @@ std::string DescribeKeyRequest::getKeyId()const
 void DescribeKeyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setParameter("KeyId", keyId);
-}
-
-std::string DescribeKeyRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void DescribeKeyRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("KeyId", keyId);
 }
 

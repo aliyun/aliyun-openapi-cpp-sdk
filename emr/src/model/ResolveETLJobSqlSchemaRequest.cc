@@ -33,7 +33,7 @@ std::string ResolveETLJobSqlSchemaRequest::getStageName()const
 void ResolveETLJobSqlSchemaRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setParameter("StageName", stageName);
+	setCoreParameter("StageName", stageName);
 }
 
 long ResolveETLJobSqlSchemaRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ResolveETLJobSqlSchemaRequest::getResourceOwnerId()const
 void ResolveETLJobSqlSchemaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ResolveETLJobSqlSchemaRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ResolveETLJobSqlSchemaRequest::getRegionId()const
 void ResolveETLJobSqlSchemaRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ResolveETLJobSqlSchemaRequest::getEtlJobId()const
@@ -66,7 +66,7 @@ std::string ResolveETLJobSqlSchemaRequest::getEtlJobId()const
 void ResolveETLJobSqlSchemaRequest::setEtlJobId(const std::string& etlJobId)
 {
 	etlJobId_ = etlJobId;
-	setParameter("EtlJobId", etlJobId);
+	setCoreParameter("EtlJobId", etlJobId);
 }
 
 std::string ResolveETLJobSqlSchemaRequest::getDataSourceId()const
@@ -77,7 +77,7 @@ std::string ResolveETLJobSqlSchemaRequest::getDataSourceId()const
 void ResolveETLJobSqlSchemaRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", dataSourceId);
 }
 
 std::string ResolveETLJobSqlSchemaRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string ResolveETLJobSqlSchemaRequest::getAccessKeyId()const
 void ResolveETLJobSqlSchemaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ResolveETLJobSqlSchemaRequest::getSql()const
@@ -99,6 +99,6 @@ std::string ResolveETLJobSqlSchemaRequest::getSql()const
 void ResolveETLJobSqlSchemaRequest::setSql(const std::string& sql)
 {
 	sql_ = sql;
-	setParameter("Sql", sql);
+	setCoreParameter("Sql", sql);
 }
 

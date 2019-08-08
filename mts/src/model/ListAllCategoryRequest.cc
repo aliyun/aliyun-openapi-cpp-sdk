@@ -33,7 +33,7 @@ long ListAllCategoryRequest::getResourceOwnerId()const
 void ListAllCategoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListAllCategoryRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ListAllCategoryRequest::getResourceOwnerAccount()const
 void ListAllCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListAllCategoryRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ListAllCategoryRequest::getOwnerAccount()const
 void ListAllCategoryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ListAllCategoryRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long ListAllCategoryRequest::getOwnerId()const
 void ListAllCategoryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListAllCategoryRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListAllCategoryRequest::getAccessKeyId()const
 void ListAllCategoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

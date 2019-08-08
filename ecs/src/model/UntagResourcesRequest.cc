@@ -312,6 +312,17 @@ void UntagResourcesRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string UntagResourcesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void UntagResourcesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::vector<std::string> UntagResourcesRequest::getTagKey()const
 {
 	return tagKey_;

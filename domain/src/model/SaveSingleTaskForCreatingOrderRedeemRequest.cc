@@ -25,6 +25,17 @@ SaveSingleTaskForCreatingOrderRedeemRequest::SaveSingleTaskForCreatingOrderRedee
 SaveSingleTaskForCreatingOrderRedeemRequest::~SaveSingleTaskForCreatingOrderRedeemRequest()
 {}
 
+std::string SaveSingleTaskForCreatingOrderRedeemRequest::getPromotionNo()const
+{
+	return promotionNo_;
+}
+
+void SaveSingleTaskForCreatingOrderRedeemRequest::setPromotionNo(const std::string& promotionNo)
+{
+	promotionNo_ = promotionNo;
+	setCoreParameter("PromotionNo", promotionNo);
+}
+
 long SaveSingleTaskForCreatingOrderRedeemRequest::getCurrentExpirationDate()const
 {
 	return currentExpirationDate_;
@@ -33,7 +44,7 @@ long SaveSingleTaskForCreatingOrderRedeemRequest::getCurrentExpirationDate()cons
 void SaveSingleTaskForCreatingOrderRedeemRequest::setCurrentExpirationDate(long currentExpirationDate)
 {
 	currentExpirationDate_ = currentExpirationDate;
-	setParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
+	setCoreParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getUserClientIp()const
@@ -44,7 +55,7 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getUserClientIp()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getDomainName()const
@@ -55,7 +66,29 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getDomainName()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string SaveSingleTaskForCreatingOrderRedeemRequest::getCouponNo()const
+{
+	return couponNo_;
+}
+
+void SaveSingleTaskForCreatingOrderRedeemRequest::setCouponNo(const std::string& couponNo)
+{
+	couponNo_ = couponNo;
+	setCoreParameter("CouponNo", couponNo);
+}
+
+bool SaveSingleTaskForCreatingOrderRedeemRequest::getUseCoupon()const
+{
+	return useCoupon_;
+}
+
+void SaveSingleTaskForCreatingOrderRedeemRequest::setUseCoupon(bool useCoupon)
+{
+	useCoupon_ = useCoupon;
+	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getLang()const
@@ -66,6 +99,17 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getLang()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
+}
+
+bool SaveSingleTaskForCreatingOrderRedeemRequest::getUsePromotion()const
+{
+	return usePromotion_;
+}
+
+void SaveSingleTaskForCreatingOrderRedeemRequest::setUsePromotion(bool usePromotion)
+{
+	usePromotion_ = usePromotion;
+	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

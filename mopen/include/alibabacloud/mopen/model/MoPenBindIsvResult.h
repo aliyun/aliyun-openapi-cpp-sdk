@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,35 @@
 #ifndef ALIBABACLOUD_MOPEN_MODEL_MOPENBINDISVRESULT_H_
 #define ALIBABACLOUD_MOPEN_MODEL_MOPENBINDISVRESULT_H_
 
-#include <string>
-#include <vector>
-#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/mopen/MoPenExport.h>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace MoPen
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_MOPEN_EXPORT MoPenBindIsvResult : public ServiceResult
-			{
-			public:
+namespace AlibabaCloud {
+namespace MoPen {
+namespace Model {
+class ALIBABACLOUD_MOPEN_EXPORT MoPenBindIsvResult : public ServiceResult {
+public:
+  MoPenBindIsvResult();
+  explicit MoPenBindIsvResult(const std::string &payload);
+  ~MoPenBindIsvResult();
+  std::string getDescription() const;
+  std::string getMessage() const;
+  bool getCode() const;
+  bool getSuccess() const;
 
+protected:
+  void parse(const std::string &payload);
 
-				MoPenBindIsvResult();
-				explicit MoPenBindIsvResult(const std::string &payload);
-				~MoPenBindIsvResult();
-				std::string getDescription()const;
-				std::string getMessage()const;
-				bool getCode()const;
-				bool getSuccess()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string description_;
-				std::string message_;
-				bool code_;
-				bool success_;
-
-			};
-		}
-	}
-}
+private:
+  std::string description_;
+  std::string message_;
+  bool code_;
+  bool success_;
+};
+} // namespace Model
+} // namespace MoPen
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_MOPEN_MODEL_MOPENBINDISVRESULT_H_

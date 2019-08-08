@@ -33,7 +33,7 @@ std::string RegisterFaceRequest::getImage()const
 void RegisterFaceRequest::setImage(const std::string& image)
 {
 	image_ = image;
-	setParameter("Image", image);
+	setCoreParameter("Image", image);
 }
 
 std::string RegisterFaceRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string RegisterFaceRequest::getGroupId()const
 void RegisterFaceRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string RegisterFaceRequest::getUserId()const
@@ -55,7 +55,7 @@ std::string RegisterFaceRequest::getUserId()const
 void RegisterFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setParameter("UserId", userId);
+	setCoreParameter("UserId", userId);
 }
 
 std::string RegisterFaceRequest::getUserInfo()const
@@ -66,6 +66,6 @@ std::string RegisterFaceRequest::getUserInfo()const
 void RegisterFaceRequest::setUserInfo(const std::string& userInfo)
 {
 	userInfo_ = userInfo;
-	setParameter("UserInfo", userInfo);
+	setCoreParameter("UserInfo", userInfo);
 }
 

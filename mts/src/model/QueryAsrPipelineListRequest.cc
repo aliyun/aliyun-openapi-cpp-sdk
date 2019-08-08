@@ -33,7 +33,7 @@ long QueryAsrPipelineListRequest::getResourceOwnerId()const
 void QueryAsrPipelineListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryAsrPipelineListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryAsrPipelineListRequest::getResourceOwnerAccount()const
 void QueryAsrPipelineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryAsrPipelineListRequest::getPipelineIds()const
@@ -55,7 +55,7 @@ std::string QueryAsrPipelineListRequest::getPipelineIds()const
 void QueryAsrPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
 {
 	pipelineIds_ = pipelineIds;
-	setParameter("PipelineIds", pipelineIds);
+	setCoreParameter("PipelineIds", pipelineIds);
 }
 
 std::string QueryAsrPipelineListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryAsrPipelineListRequest::getOwnerAccount()const
 void QueryAsrPipelineListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryAsrPipelineListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryAsrPipelineListRequest::getOwnerId()const
 void QueryAsrPipelineListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryAsrPipelineListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryAsrPipelineListRequest::getAccessKeyId()const
 void QueryAsrPipelineListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

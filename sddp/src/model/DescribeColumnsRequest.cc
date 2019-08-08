@@ -25,6 +25,28 @@ DescribeColumnsRequest::DescribeColumnsRequest() :
 DescribeColumnsRequest::~DescribeColumnsRequest()
 {}
 
+std::string DescribeColumnsRequest::getProductCode()const
+{
+	return productCode_;
+}
+
+void DescribeColumnsRequest::setProductCode(const std::string& productCode)
+{
+	productCode_ = productCode;
+	setCoreParameter("ProductCode", productCode);
+}
+
+long DescribeColumnsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeColumnsRequest::setInstanceId(long instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", std::to_string(instanceId));
+}
+
 std::string DescribeColumnsRequest::getSourceIp()const
 {
 	return sourceIp_;

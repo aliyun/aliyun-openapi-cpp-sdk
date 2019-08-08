@@ -366,3 +366,14 @@ void DescribeResourcesModificationRequest::setRequestId(const std::string& reque
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeResourcesModificationRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeResourcesModificationRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

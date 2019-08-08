@@ -33,7 +33,7 @@ std::string ConfigurationStyleRequest::getSourceIp()const
 void ConfigurationStyleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ConfigurationStyleRequest::getConfigurationMethod()const
@@ -44,7 +44,7 @@ std::string ConfigurationStyleRequest::getConfigurationMethod()const
 void ConfigurationStyleRequest::setConfigurationMethod(const std::string& configurationMethod)
 {
 	configurationMethod_ = configurationMethod;
-	setParameter("ConfigurationMethod", configurationMethod);
+	setCoreParameter("ConfigurationMethod", configurationMethod);
 }
 
 std::string ConfigurationStyleRequest::getRefExtId()const
@@ -55,7 +55,7 @@ std::string ConfigurationStyleRequest::getRefExtId()const
 void ConfigurationStyleRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setParameter("RefExtId", refExtId);
+	setCoreParameter("RefExtId", refExtId);
 }
 
 std::string ConfigurationStyleRequest::getApplyType()const
@@ -66,7 +66,7 @@ std::string ConfigurationStyleRequest::getApplyType()const
 void ConfigurationStyleRequest::setApplyType(const std::string& applyType)
 {
 	applyType_ = applyType;
-	setParameter("ApplyType", applyType);
+	setCoreParameter("ApplyType", applyType);
 }
 
 std::string ConfigurationStyleRequest::getScene()const
@@ -77,6 +77,6 @@ std::string ConfigurationStyleRequest::getScene()const
 void ConfigurationStyleRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setParameter("Scene", scene);
+	setCoreParameter("Scene", scene);
 }
 

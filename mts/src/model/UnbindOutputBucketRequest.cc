@@ -33,7 +33,7 @@ std::string UnbindOutputBucketRequest::getBucket()const
 void UnbindOutputBucketRequest::setBucket(const std::string& bucket)
 {
 	bucket_ = bucket;
-	setParameter("Bucket", bucket);
+	setCoreParameter("Bucket", bucket);
 }
 
 long UnbindOutputBucketRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UnbindOutputBucketRequest::getResourceOwnerId()const
 void UnbindOutputBucketRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnbindOutputBucketRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UnbindOutputBucketRequest::getResourceOwnerAccount()const
 void UnbindOutputBucketRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnbindOutputBucketRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UnbindOutputBucketRequest::getOwnerAccount()const
 void UnbindOutputBucketRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long UnbindOutputBucketRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long UnbindOutputBucketRequest::getOwnerId()const
 void UnbindOutputBucketRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnbindOutputBucketRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string UnbindOutputBucketRequest::getAccessKeyId()const
 void UnbindOutputBucketRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

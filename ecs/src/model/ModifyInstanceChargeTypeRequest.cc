@@ -168,6 +168,17 @@ void ModifyInstanceChargeTypeRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+bool ModifyInstanceChargeTypeRequest::getIsDetailFee()const
+{
+	return isDetailFee_;
+}
+
+void ModifyInstanceChargeTypeRequest::setIsDetailFee(bool isDetailFee)
+{
+	isDetailFee_ = isDetailFee;
+	setCoreParameter("IsDetailFee", isDetailFee ? "true" : "false");
+}
+
 std::string ModifyInstanceChargeTypeRequest::getInstanceChargeType()const
 {
 	return instanceChargeType_;

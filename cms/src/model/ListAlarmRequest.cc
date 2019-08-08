@@ -33,7 +33,7 @@ bool ListAlarmRequest::getIsEnable()const
 void ListAlarmRequest::setIsEnable(bool isEnable)
 {
 	isEnable_ = isEnable;
-	setParameter("IsEnable", isEnable ? "true" : "false");
+	setCoreParameter("IsEnable", isEnable ? "true" : "false");
 }
 
 std::string ListAlarmRequest::getName()const
@@ -44,7 +44,7 @@ std::string ListAlarmRequest::getName()const
 void ListAlarmRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string ListAlarmRequest::get_Namespace()const
@@ -55,7 +55,7 @@ std::string ListAlarmRequest::get_Namespace()const
 void ListAlarmRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setParameter("_Namespace", _namespace);
+	setCoreParameter("_Namespace", _namespace);
 }
 
 int ListAlarmRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListAlarmRequest::getPageSize()const
 void ListAlarmRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListAlarmRequest::getId()const
@@ -77,7 +77,7 @@ std::string ListAlarmRequest::getId()const
 void ListAlarmRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string ListAlarmRequest::getState()const
@@ -88,7 +88,7 @@ std::string ListAlarmRequest::getState()const
 void ListAlarmRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setParameter("State", state);
+	setCoreParameter("State", state);
 }
 
 std::string ListAlarmRequest::getDimension()const
@@ -99,7 +99,7 @@ std::string ListAlarmRequest::getDimension()const
 void ListAlarmRequest::setDimension(const std::string& dimension)
 {
 	dimension_ = dimension;
-	setParameter("Dimension", dimension);
+	setCoreParameter("Dimension", dimension);
 }
 
 int ListAlarmRequest::getPageNumber()const
@@ -110,6 +110,6 @@ int ListAlarmRequest::getPageNumber()const
 void ListAlarmRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

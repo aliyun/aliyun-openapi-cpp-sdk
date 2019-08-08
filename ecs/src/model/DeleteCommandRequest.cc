@@ -113,6 +113,17 @@ void DeleteCommandRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DeleteCommandRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DeleteCommandRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DeleteCommandRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -287,5 +298,16 @@ void DeleteCommandRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
 	setCoreParameter("RequestId", requestId);
+}
+
+std::string DeleteCommandRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DeleteCommandRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
 }
 

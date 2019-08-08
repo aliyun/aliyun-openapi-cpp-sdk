@@ -33,18 +33,7 @@ std::string DecryptRequest::getEncryptionContext()const
 void DecryptRequest::setEncryptionContext(const std::string& encryptionContext)
 {
 	encryptionContext_ = encryptionContext;
-	setParameter("EncryptionContext", encryptionContext);
-}
-
-std::string DecryptRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void DecryptRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("EncryptionContext", encryptionContext);
 }
 
 std::string DecryptRequest::getCiphertextBlob()const
@@ -55,6 +44,6 @@ std::string DecryptRequest::getCiphertextBlob()const
 void DecryptRequest::setCiphertextBlob(const std::string& ciphertextBlob)
 {
 	ciphertextBlob_ = ciphertextBlob;
-	setParameter("CiphertextBlob", ciphertextBlob);
+	setCoreParameter("CiphertextBlob", ciphertextBlob);
 }
 

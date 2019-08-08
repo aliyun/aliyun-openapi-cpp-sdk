@@ -312,3 +312,14 @@ void StopInvocationRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string StopInvocationRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void StopInvocationRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

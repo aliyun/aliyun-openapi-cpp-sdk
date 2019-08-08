@@ -38,10 +38,10 @@
 #include "model/AddZoneResult.h"
 #include "model/BindZoneVpcRequest.h"
 #include "model/BindZoneVpcResult.h"
-#include "model/DescribeStatisticSummaryRequest.h"
-#include "model/DescribeStatisticSummaryResult.h"
 #include "model/DescribeRequestGraphRequest.h"
 #include "model/DescribeRequestGraphResult.h"
+#include "model/DescribeStatisticSummaryRequest.h"
+#include "model/DescribeStatisticSummaryResult.h"
 #include "model/SetProxyPatternRequest.h"
 #include "model/SetProxyPatternResult.h"
 #include "model/DescribeZoneVpcTreeRequest.h"
@@ -93,12 +93,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BindZoneVpcResult> BindZoneVpcOutcome;
 			typedef std::future<BindZoneVpcOutcome> BindZoneVpcOutcomeCallable;
 			typedef std::function<void(const PvtzClient*, const Model::BindZoneVpcRequest&, const BindZoneVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindZoneVpcAsyncHandler;
-			typedef Outcome<Error, Model::DescribeStatisticSummaryResult> DescribeStatisticSummaryOutcome;
-			typedef std::future<DescribeStatisticSummaryOutcome> DescribeStatisticSummaryOutcomeCallable;
-			typedef std::function<void(const PvtzClient*, const Model::DescribeStatisticSummaryRequest&, const DescribeStatisticSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStatisticSummaryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRequestGraphResult> DescribeRequestGraphOutcome;
 			typedef std::future<DescribeRequestGraphOutcome> DescribeRequestGraphOutcomeCallable;
 			typedef std::function<void(const PvtzClient*, const Model::DescribeRequestGraphRequest&, const DescribeRequestGraphOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRequestGraphAsyncHandler;
+			typedef Outcome<Error, Model::DescribeStatisticSummaryResult> DescribeStatisticSummaryOutcome;
+			typedef std::future<DescribeStatisticSummaryOutcome> DescribeStatisticSummaryOutcomeCallable;
+			typedef std::function<void(const PvtzClient*, const Model::DescribeStatisticSummaryRequest&, const DescribeStatisticSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStatisticSummaryAsyncHandler;
 			typedef Outcome<Error, Model::SetProxyPatternResult> SetProxyPatternOutcome;
 			typedef std::future<SetProxyPatternOutcome> SetProxyPatternOutcomeCallable;
 			typedef std::function<void(const PvtzClient*, const Model::SetProxyPatternRequest&, const SetProxyPatternOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetProxyPatternAsyncHandler;
@@ -155,12 +155,12 @@ namespace AlibabaCloud
 			BindZoneVpcOutcome bindZoneVpc(const Model::BindZoneVpcRequest &request)const;
 			void bindZoneVpcAsync(const Model::BindZoneVpcRequest& request, const BindZoneVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindZoneVpcOutcomeCallable bindZoneVpcCallable(const Model::BindZoneVpcRequest& request) const;
-			DescribeStatisticSummaryOutcome describeStatisticSummary(const Model::DescribeStatisticSummaryRequest &request)const;
-			void describeStatisticSummaryAsync(const Model::DescribeStatisticSummaryRequest& request, const DescribeStatisticSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeStatisticSummaryOutcomeCallable describeStatisticSummaryCallable(const Model::DescribeStatisticSummaryRequest& request) const;
 			DescribeRequestGraphOutcome describeRequestGraph(const Model::DescribeRequestGraphRequest &request)const;
 			void describeRequestGraphAsync(const Model::DescribeRequestGraphRequest& request, const DescribeRequestGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRequestGraphOutcomeCallable describeRequestGraphCallable(const Model::DescribeRequestGraphRequest& request) const;
+			DescribeStatisticSummaryOutcome describeStatisticSummary(const Model::DescribeStatisticSummaryRequest &request)const;
+			void describeStatisticSummaryAsync(const Model::DescribeStatisticSummaryRequest& request, const DescribeStatisticSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeStatisticSummaryOutcomeCallable describeStatisticSummaryCallable(const Model::DescribeStatisticSummaryRequest& request) const;
 			SetProxyPatternOutcome setProxyPattern(const Model::SetProxyPatternRequest &request)const;
 			void setProxyPatternAsync(const Model::SetProxyPatternRequest& request, const SetProxyPatternAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetProxyPatternOutcomeCallable setProxyPatternCallable(const Model::SetProxyPatternRequest& request) const;

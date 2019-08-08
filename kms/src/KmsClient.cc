@@ -195,42 +195,6 @@ KmsClient::DisableKeyOutcomeCallable KmsClient::disableKeyCallable(const Disable
 	return task->get_future();
 }
 
-KmsClient::DeleteAliasOutcome KmsClient::deleteAlias(const DeleteAliasRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteAliasOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteAliasOutcome(DeleteAliasResult(outcome.result()));
-	else
-		return DeleteAliasOutcome(outcome.error());
-}
-
-void KmsClient::deleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteAlias(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::DeleteAliasOutcomeCallable KmsClient::deleteAliasCallable(const DeleteAliasRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteAliasOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteAlias(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 KmsClient::DecryptOutcome KmsClient::decrypt(const DecryptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +225,42 @@ KmsClient::DecryptOutcomeCallable KmsClient::decryptCallable(const DecryptReques
 			[this, request]()
 			{
 			return this->decrypt(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::DeleteAliasOutcome KmsClient::deleteAlias(const DeleteAliasRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAliasOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAliasOutcome(DeleteAliasResult(outcome.result()));
+	else
+		return DeleteAliasOutcome(outcome.error());
+}
+
+void KmsClient::deleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAlias(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DeleteAliasOutcomeCallable KmsClient::deleteAliasCallable(const DeleteAliasRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAliasOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAlias(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,42 +519,6 @@ KmsClient::EncryptOutcomeCallable KmsClient::encryptCallable(const EncryptReques
 	return task->get_future();
 }
 
-KmsClient::UntagResourceOutcome KmsClient::untagResource(const UntagResourceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UntagResourceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UntagResourceOutcome(UntagResourceResult(outcome.result()));
-	else
-		return UntagResourceOutcome(outcome.error());
-}
-
-void KmsClient::untagResourceAsync(const UntagResourceRequest& request, const UntagResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, untagResource(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::UntagResourceOutcomeCallable KmsClient::untagResourceCallable(const UntagResourceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UntagResourceOutcome()>>(
-			[this, request]()
-			{
-			return this->untagResource(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 KmsClient::UpdateAliasOutcome KmsClient::updateAlias(const UpdateAliasRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +549,42 @@ KmsClient::UpdateAliasOutcomeCallable KmsClient::updateAliasCallable(const Updat
 			[this, request]()
 			{
 			return this->updateAlias(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UntagResourceOutcome KmsClient::untagResource(const UntagResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourceOutcome(UntagResourceResult(outcome.result()));
+	else
+		return UntagResourceOutcome(outcome.error());
+}
+
+void KmsClient::untagResourceAsync(const UntagResourceRequest& request, const UntagResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UntagResourceOutcomeCallable KmsClient::untagResourceCallable(const UntagResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -663,42 +663,6 @@ KmsClient::EnableKeyOutcomeCallable KmsClient::enableKeyCallable(const EnableKey
 	return task->get_future();
 }
 
-KmsClient::ScheduleKeyDeletionOutcome KmsClient::scheduleKeyDeletion(const ScheduleKeyDeletionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ScheduleKeyDeletionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ScheduleKeyDeletionOutcome(ScheduleKeyDeletionResult(outcome.result()));
-	else
-		return ScheduleKeyDeletionOutcome(outcome.error());
-}
-
-void KmsClient::scheduleKeyDeletionAsync(const ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, scheduleKeyDeletion(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::ScheduleKeyDeletionOutcomeCallable KmsClient::scheduleKeyDeletionCallable(const ScheduleKeyDeletionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ScheduleKeyDeletionOutcome()>>(
-			[this, request]()
-			{
-			return this->scheduleKeyDeletion(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 KmsClient::DescribeRegionsOutcome KmsClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -735,6 +699,42 @@ KmsClient::DescribeRegionsOutcomeCallable KmsClient::describeRegionsCallable(con
 	return task->get_future();
 }
 
+KmsClient::ScheduleKeyDeletionOutcome KmsClient::scheduleKeyDeletion(const ScheduleKeyDeletionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ScheduleKeyDeletionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ScheduleKeyDeletionOutcome(ScheduleKeyDeletionResult(outcome.result()));
+	else
+		return ScheduleKeyDeletionOutcome(outcome.error());
+}
+
+void KmsClient::scheduleKeyDeletionAsync(const ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, scheduleKeyDeletion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ScheduleKeyDeletionOutcomeCallable KmsClient::scheduleKeyDeletionCallable(const ScheduleKeyDeletionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ScheduleKeyDeletionOutcome()>>(
+			[this, request]()
+			{
+			return this->scheduleKeyDeletion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::ListKeysOutcome KmsClient::listKeys(const ListKeysRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +765,42 @@ KmsClient::ListKeysOutcomeCallable KmsClient::listKeysCallable(const ListKeysReq
 			[this, request]()
 			{
 			return this->listKeys(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::DescribeServiceOutcome KmsClient::describeService(const DescribeServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeServiceOutcome(DescribeServiceResult(outcome.result()));
+	else
+		return DescribeServiceOutcome(outcome.error());
+}
+
+void KmsClient::describeServiceAsync(const DescribeServiceRequest& request, const DescribeServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DescribeServiceOutcomeCallable KmsClient::describeServiceCallable(const DescribeServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

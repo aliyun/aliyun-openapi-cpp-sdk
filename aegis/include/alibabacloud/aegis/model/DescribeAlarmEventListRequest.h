@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,59 +17,58 @@
 #ifndef ALIBABACLOUD_AEGIS_MODEL_DESCRIBEALARMEVENTLISTREQUEST_H_
 #define ALIBABACLOUD_AEGIS_MODEL_DESCRIBEALARMEVENTLISTREQUEST_H_
 
+#include <alibabacloud/aegis/AegisExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/aegis/AegisExport.h>
 
-namespace AlibabaCloud
-{
-	namespace Aegis
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_AEGIS_EXPORT DescribeAlarmEventListRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Aegis {
+namespace Model {
+class ALIBABACLOUD_AEGIS_EXPORT DescribeAlarmEventListRequest
+    : public RpcServiceRequest {
 
-			public:
-				DescribeAlarmEventListRequest();
-				~DescribeAlarmEventListRequest();
+public:
+  DescribeAlarmEventListRequest();
+  ~DescribeAlarmEventListRequest();
 
-				std::string getAlarmEventName()const;
-				void setAlarmEventName(const std::string& alarmEventName);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getPageSize()const;
-				void setPageSize(const std::string& pageSize);
-				std::string getAlarmEventType()const;
-				void setAlarmEventType(const std::string& alarmEventType);
-				std::string getDealed()const;
-				void setDealed(const std::string& dealed);
-				std::string getFrom()const;
-				void setFrom(const std::string& from);
-				std::string getRemark()const;
-				void setRemark(const std::string& remark);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
-				std::string getLevels()const;
-				void setLevels(const std::string& levels);
+  std::string getAlarmEventName() const;
+  void setAlarmEventName(const std::string &alarmEventName);
+  std::string getSourceIp() const;
+  void setSourceIp(const std::string &sourceIp);
+  std::string getGroupId() const;
+  void setGroupId(const std::string &groupId);
+  std::string getPageSize() const;
+  void setPageSize(const std::string &pageSize);
+  std::string getAlarmEventType() const;
+  void setAlarmEventType(const std::string &alarmEventType);
+  std::string getDealed() const;
+  void setDealed(const std::string &dealed);
+  std::string getFrom() const;
+  void setFrom(const std::string &from);
+  std::string getRemark() const;
+  void setRemark(const std::string &remark);
+  int getCurrentPage() const;
+  void setCurrentPage(int currentPage);
+  std::string getLang() const;
+  void setLang(const std::string &lang);
+  std::string getLevels() const;
+  void setLevels(const std::string &levels);
 
-            private:
-				std::string alarmEventName_;
-				std::string sourceIp_;
-				std::string pageSize_;
-				std::string alarmEventType_;
-				std::string dealed_;
-				std::string from_;
-				std::string remark_;
-				int currentPage_;
-				std::string lang_;
-				std::string levels_;
-
-			};
-		}
-	}
-}
+private:
+  std::string alarmEventName_;
+  std::string sourceIp_;
+  std::string groupId_;
+  std::string pageSize_;
+  std::string alarmEventType_;
+  std::string dealed_;
+  std::string from_;
+  std::string remark_;
+  int currentPage_;
+  std::string lang_;
+  std::string levels_;
+};
+} // namespace Model
+} // namespace Aegis
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_AEGIS_MODEL_DESCRIBEALARMEVENTLISTREQUEST_H_

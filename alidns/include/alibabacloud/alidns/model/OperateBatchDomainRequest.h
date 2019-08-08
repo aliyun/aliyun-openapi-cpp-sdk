@@ -33,12 +33,15 @@ namespace AlibabaCloud
 				struct DomainRecordInfo
 				{
 					std::string rr;
+					std::string newType;
+					std::string newValue;
 					std::string line;
 					std::string domain;
 					std::string type;
 					int priority;
 					std::string value;
 					int ttl;
+					std::string newRr;
 				};
 
 			public:

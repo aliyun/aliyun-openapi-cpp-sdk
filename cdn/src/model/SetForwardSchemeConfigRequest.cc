@@ -33,7 +33,7 @@ std::string SetForwardSchemeConfigRequest::getSchemeOrigin()const
 void SetForwardSchemeConfigRequest::setSchemeOrigin(const std::string& schemeOrigin)
 {
 	schemeOrigin_ = schemeOrigin;
-	setParameter("SchemeOrigin", schemeOrigin);
+	setCoreParameter("SchemeOrigin", schemeOrigin);
 }
 
 std::string SetForwardSchemeConfigRequest::getSchemeOriginPort()const
@@ -44,7 +44,7 @@ std::string SetForwardSchemeConfigRequest::getSchemeOriginPort()const
 void SetForwardSchemeConfigRequest::setSchemeOriginPort(const std::string& schemeOriginPort)
 {
 	schemeOriginPort_ = schemeOriginPort;
-	setParameter("SchemeOriginPort", schemeOriginPort);
+	setCoreParameter("SchemeOriginPort", schemeOriginPort);
 }
 
 std::string SetForwardSchemeConfigRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string SetForwardSchemeConfigRequest::getSecurityToken()const
 void SetForwardSchemeConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetForwardSchemeConfigRequest::getEnable()const
@@ -66,7 +66,7 @@ std::string SetForwardSchemeConfigRequest::getEnable()const
 void SetForwardSchemeConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable);
+	setCoreParameter("Enable", enable);
 }
 
 std::string SetForwardSchemeConfigRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string SetForwardSchemeConfigRequest::getDomainName()const
 void SetForwardSchemeConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long SetForwardSchemeConfigRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long SetForwardSchemeConfigRequest::getOwnerId()const
 void SetForwardSchemeConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ std::string SaveBatchTaskForModifyingDomainDnsRequest::getUserClientIp()const
 void SaveBatchTaskForModifyingDomainDnsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::vector<std::string> SaveBatchTaskForModifyingDomainDnsRequest::getDomainName()const
@@ -45,7 +45,7 @@ void SaveBatchTaskForModifyingDomainDnsRequest::setDomainName(const std::vector<
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setParameter("DomainName."+ std::to_string(i), domainName.at(i));
+		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
 }
 
 std::vector<std::string> SaveBatchTaskForModifyingDomainDnsRequest::getDomainNameServer()const
@@ -57,7 +57,7 @@ void SaveBatchTaskForModifyingDomainDnsRequest::setDomainNameServer(const std::v
 {
 	domainNameServer_ = domainNameServer;
 	for(int i = 0; i!= domainNameServer.size(); i++)
-		setParameter("DomainNameServer."+ std::to_string(i), domainNameServer.at(i));
+		setCoreParameter("DomainNameServer."+ std::to_string(i), domainNameServer.at(i));
 }
 
 std::string SaveBatchTaskForModifyingDomainDnsRequest::getLang()const
@@ -68,7 +68,7 @@ std::string SaveBatchTaskForModifyingDomainDnsRequest::getLang()const
 void SaveBatchTaskForModifyingDomainDnsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 bool SaveBatchTaskForModifyingDomainDnsRequest::getAliyunDns()const
@@ -79,6 +79,6 @@ bool SaveBatchTaskForModifyingDomainDnsRequest::getAliyunDns()const
 void SaveBatchTaskForModifyingDomainDnsRequest::setAliyunDns(bool aliyunDns)
 {
 	aliyunDns_ = aliyunDns;
-	setParameter("AliyunDns", std::to_string(aliyunDns));
+	setCoreParameter("AliyunDns", aliyunDns ? "true" : "false");
 }
 

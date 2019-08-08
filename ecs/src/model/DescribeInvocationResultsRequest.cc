@@ -344,6 +344,17 @@ void DescribeInvocationResultsRequest::setRequestId(const std::string& requestId
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeInvocationResultsRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeInvocationResultsRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string DescribeInvocationResultsRequest::getInvokeRecordStatus()const
 {
 	return invokeRecordStatus_;
@@ -353,5 +364,16 @@ void DescribeInvocationResultsRequest::setInvokeRecordStatus(const std::string& 
 {
 	invokeRecordStatus_ = invokeRecordStatus;
 	setCoreParameter("InvokeRecordStatus", invokeRecordStatus);
+}
+
+bool DescribeInvocationResultsRequest::getIncludeHistory()const
+{
+	return includeHistory_;
+}
+
+void DescribeInvocationResultsRequest::setIncludeHistory(bool includeHistory)
+{
+	includeHistory_ = includeHistory;
+	setCoreParameter("IncludeHistory", includeHistory ? "true" : "false");
 }
 

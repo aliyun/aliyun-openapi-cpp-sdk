@@ -36,3 +36,36 @@ void QueryCommunicationLogsRequest::setBizId(const std::string& bizId)
 	setCoreParameter("BizId", bizId);
 }
 
+int QueryCommunicationLogsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryCommunicationLogsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryCommunicationLogsRequest::getType()const
+{
+	return type_;
+}
+
+void QueryCommunicationLogsRequest::setType(int type)
+{
+	type_ = type;
+	setCoreParameter("Type", std::to_string(type));
+}
+
+int QueryCommunicationLogsRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void QueryCommunicationLogsRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+

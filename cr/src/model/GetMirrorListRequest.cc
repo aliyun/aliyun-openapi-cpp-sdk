@@ -33,6 +33,6 @@ std::string GetMirrorListRequest::getRegionId()const
 void GetMirrorListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 

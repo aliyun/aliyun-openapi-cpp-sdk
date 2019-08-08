@@ -25,6 +25,17 @@ AttachKeyPairRequest::AttachKeyPairRequest() :
 AttachKeyPairRequest::~AttachKeyPairRequest()
 {}
 
+std::string AttachKeyPairRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void AttachKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long AttachKeyPairRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

@@ -33,7 +33,7 @@ std::string StartImageScanRequest::getRepoNamespace()const
 void StartImageScanRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", repoNamespace);
 }
 
 std::string StartImageScanRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string StartImageScanRequest::getRepoName()const
 void StartImageScanRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setParameter("RepoName", repoName);
+	setCoreParameter("RepoName", repoName);
 }
 
 std::string StartImageScanRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string StartImageScanRequest::getRegionId()const
 void StartImageScanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string StartImageScanRequest::getTag()const
@@ -66,6 +66,6 @@ std::string StartImageScanRequest::getTag()const
 void StartImageScanRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setParameter("Tag", tag);
+	setCoreParameter("Tag", tag);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeOrderListRequest::getSourceIp()const
 void DescribeOrderListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeOrderListRequest::getShowSize()const
@@ -44,7 +44,7 @@ int DescribeOrderListRequest::getShowSize()const
 void DescribeOrderListRequest::setShowSize(int showSize)
 {
 	showSize_ = showSize;
-	setParameter("ShowSize", std::to_string(showSize));
+	setCoreParameter("ShowSize", std::to_string(showSize));
 }
 
 long DescribeOrderListRequest::getBrandId()const
@@ -55,7 +55,7 @@ long DescribeOrderListRequest::getBrandId()const
 void DescribeOrderListRequest::setBrandId(long brandId)
 {
 	brandId_ = brandId;
-	setParameter("BrandId", std::to_string(brandId));
+	setCoreParameter("BrandId", std::to_string(brandId));
 }
 
 int DescribeOrderListRequest::getCurrentPage()const
@@ -66,7 +66,24 @@ int DescribeOrderListRequest::getCurrentPage()const
 void DescribeOrderListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::vector<DescribeOrderListRequest::Tag> DescribeOrderListRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeOrderListRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
 }
 
 std::string DescribeOrderListRequest::getKeyword()const
@@ -77,7 +94,7 @@ std::string DescribeOrderListRequest::getKeyword()const
 void DescribeOrderListRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setParameter("Keyword", keyword);
+	setCoreParameter("Keyword", keyword);
 }
 
 std::string DescribeOrderListRequest::getLang()const
@@ -88,7 +105,7 @@ std::string DescribeOrderListRequest::getLang()const
 void DescribeOrderListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeOrderListRequest::getStatus()const
@@ -99,6 +116,6 @@ std::string DescribeOrderListRequest::getStatus()const
 void DescribeOrderListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

@@ -413,6 +413,17 @@ void DescribeInstanceHistoryEventsRequest::setRequestId(const std::string& reque
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeInstanceHistoryEventsRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeInstanceHistoryEventsRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string DescribeInstanceHistoryEventsRequest::getEventType()const
 {
 	return eventType_;

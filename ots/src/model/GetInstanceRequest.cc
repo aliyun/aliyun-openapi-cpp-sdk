@@ -33,7 +33,7 @@ std::string GetInstanceRequest::getAccess_key_id()const
 void GetInstanceRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long GetInstanceRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long GetInstanceRequest::getResourceOwnerId()const
 void GetInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetInstanceRequest::getInstanceName()const
@@ -55,6 +55,6 @@ std::string GetInstanceRequest::getInstanceName()const
 void GetInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", instanceName);
 }
 

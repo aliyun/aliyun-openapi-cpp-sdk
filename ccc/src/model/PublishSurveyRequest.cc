@@ -33,7 +33,7 @@ std::string PublishSurveyRequest::getSurveyId()const
 void PublishSurveyRequest::setSurveyId(const std::string& surveyId)
 {
 	surveyId_ = surveyId;
-	setParameter("SurveyId", surveyId);
+	setCoreParameter("SurveyId", surveyId);
 }
 
 std::string PublishSurveyRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string PublishSurveyRequest::getInstanceId()const
 void PublishSurveyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string PublishSurveyRequest::getScenarioId()const
@@ -55,6 +55,6 @@ std::string PublishSurveyRequest::getScenarioId()const
 void PublishSurveyRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", scenarioId);
 }
 

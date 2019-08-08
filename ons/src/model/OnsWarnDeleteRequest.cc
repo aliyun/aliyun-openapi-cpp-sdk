@@ -25,17 +25,6 @@ OnsWarnDeleteRequest::OnsWarnDeleteRequest() :
 OnsWarnDeleteRequest::~OnsWarnDeleteRequest()
 {}
 
-long OnsWarnDeleteRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsWarnDeleteRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsWarnDeleteRequest::getInstanceId()const
 {
 	return instanceId_;

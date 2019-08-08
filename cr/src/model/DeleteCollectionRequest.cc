@@ -33,7 +33,7 @@ std::string DeleteCollectionRequest::getRegionId()const
 void DeleteCollectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 long DeleteCollectionRequest::getCollectionId()const
@@ -44,6 +44,6 @@ long DeleteCollectionRequest::getCollectionId()const
 void DeleteCollectionRequest::setCollectionId(long collectionId)
 {
 	collectionId_ = collectionId;
-	setParameter("CollectionId", std::to_string(collectionId));
+	setCoreParameter("CollectionId", std::to_string(collectionId));
 }
 

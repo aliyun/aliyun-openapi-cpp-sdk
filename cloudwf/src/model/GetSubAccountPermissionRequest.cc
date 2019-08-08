@@ -33,7 +33,7 @@ long GetSubAccountPermissionRequest::getId()const
 void GetSubAccountPermissionRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetSubAccountPermissionRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetSubAccountPermissionRequest::getAccessKeyId()const
 void GetSubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

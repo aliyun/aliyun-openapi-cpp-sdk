@@ -25,6 +25,17 @@ DescribePriceRequest::DescribePriceRequest() :
 DescribePriceRequest::~DescribePriceRequest()
 {}
 
+std::string DescribePriceRequest::getDataDisk3PerformanceLevel()const
+{
+	return dataDisk3PerformanceLevel_;
+}
+
+void DescribePriceRequest::setDataDisk3PerformanceLevel(const std::string& dataDisk3PerformanceLevel)
+{
+	dataDisk3PerformanceLevel_ = dataDisk3PerformanceLevel;
+	setCoreParameter("DataDisk3PerformanceLevel", dataDisk3PerformanceLevel);
+}
+
 int DescribePriceRequest::getDataDisk3Size()const
 {
 	return dataDisk3Size_;
@@ -113,6 +124,17 @@ void DescribePriceRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
+std::string DescribePriceRequest::getSystemDiskPerformanceLevel()const
+{
+	return systemDiskPerformanceLevel_;
+}
+
+void DescribePriceRequest::setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel)
+{
+	systemDiskPerformanceLevel_ = systemDiskPerformanceLevel;
+	setCoreParameter("SystemDiskPerformanceLevel", systemDiskPerformanceLevel);
+}
+
 std::string DescribePriceRequest::getDataDisk4Category()const
 {
 	return dataDisk4Category_;
@@ -122,6 +144,17 @@ void DescribePriceRequest::setDataDisk4Category(const std::string& dataDisk4Cate
 {
 	dataDisk4Category_ = dataDisk4Category;
 	setCoreParameter("DataDisk4Category", dataDisk4Category);
+}
+
+std::string DescribePriceRequest::getDataDisk4PerformanceLevel()const
+{
+	return dataDisk4PerformanceLevel_;
+}
+
+void DescribePriceRequest::setDataDisk4PerformanceLevel(const std::string& dataDisk4PerformanceLevel)
+{
+	dataDisk4PerformanceLevel_ = dataDisk4PerformanceLevel;
+	setCoreParameter("DataDisk4PerformanceLevel", dataDisk4PerformanceLevel);
 }
 
 std::string DescribePriceRequest::getRegionId()const
@@ -245,6 +278,17 @@ void DescribePriceRequest::setDataDisk2Size(int dataDisk2Size)
 	setCoreParameter("DataDisk2Size", std::to_string(dataDisk2Size));
 }
 
+std::string DescribePriceRequest::getDataDisk1PerformanceLevel()const
+{
+	return dataDisk1PerformanceLevel_;
+}
+
+void DescribePriceRequest::setDataDisk1PerformanceLevel(const std::string& dataDisk1PerformanceLevel)
+{
+	dataDisk1PerformanceLevel_ = dataDisk1PerformanceLevel;
+	setCoreParameter("DataDisk1PerformanceLevel", dataDisk1PerformanceLevel);
+}
+
 long DescribePriceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -276,6 +320,17 @@ void DescribePriceRequest::setDataDisk1Category(const std::string& dataDisk1Cate
 {
 	dataDisk1Category_ = dataDisk1Category;
 	setCoreParameter("DataDisk1Category", dataDisk1Category);
+}
+
+std::string DescribePriceRequest::getDataDisk2PerformanceLevel()const
+{
+	return dataDisk2PerformanceLevel_;
+}
+
+void DescribePriceRequest::setDataDisk2PerformanceLevel(const std::string& dataDisk2PerformanceLevel)
+{
+	dataDisk2PerformanceLevel_ = dataDisk2PerformanceLevel;
+	setCoreParameter("DataDisk2PerformanceLevel", dataDisk2PerformanceLevel);
 }
 
 int DescribePriceRequest::getSystemDiskSize()const

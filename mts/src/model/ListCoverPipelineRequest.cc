@@ -33,7 +33,7 @@ long ListCoverPipelineRequest::getResourceOwnerId()const
 void ListCoverPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListCoverPipelineRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ListCoverPipelineRequest::getResourceOwnerAccount()const
 void ListCoverPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListCoverPipelineRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ListCoverPipelineRequest::getOwnerAccount()const
 void ListCoverPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ListCoverPipelineRequest::getPageSize()const
@@ -66,7 +66,7 @@ long ListCoverPipelineRequest::getPageSize()const
 void ListCoverPipelineRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListCoverPipelineRequest::getState()const
@@ -77,7 +77,7 @@ std::string ListCoverPipelineRequest::getState()const
 void ListCoverPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setParameter("State", state);
+	setCoreParameter("State", state);
 }
 
 long ListCoverPipelineRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ListCoverPipelineRequest::getOwnerId()const
 void ListCoverPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long ListCoverPipelineRequest::getPageNumber()const
@@ -99,7 +99,7 @@ long ListCoverPipelineRequest::getPageNumber()const
 void ListCoverPipelineRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListCoverPipelineRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ListCoverPipelineRequest::getAccessKeyId()const
 void ListCoverPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

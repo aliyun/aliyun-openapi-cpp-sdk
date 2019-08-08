@@ -47,6 +47,8 @@ set(drds_public_header_model
 	include/alibabacloud/drds/model/ModifyRdsReadWeightResult.h
 	include/alibabacloud/drds/model/CreateDrdsInstanceRequest.h
 	include/alibabacloud/drds/model/CreateDrdsInstanceResult.h
+	include/alibabacloud/drds/model/DescribeDrdsInstanceMonitorRequest.h
+	include/alibabacloud/drds/model/DescribeDrdsInstanceMonitorResult.h
 	include/alibabacloud/drds/model/DescribeRegionsRequest.h
 	include/alibabacloud/drds/model/DescribeRegionsResult.h
 	include/alibabacloud/drds/model/DescribeDrdsDBIpWhiteListRequest.h
@@ -65,6 +67,8 @@ set(drds_public_header_model
 	include/alibabacloud/drds/model/ModifyDrdsDBPasswdResult.h
 	include/alibabacloud/drds/model/DeleteFailedDrdsDBRequest.h
 	include/alibabacloud/drds/model/DeleteFailedDrdsDBResult.h
+	include/alibabacloud/drds/model/DescribeDrdsInstanceDbMonitorRequest.h
+	include/alibabacloud/drds/model/DescribeDrdsInstanceDbMonitorResult.h
 	include/alibabacloud/drds/model/DescribeCreateDrdsInstanceStatusRequest.h
 	include/alibabacloud/drds/model/DescribeCreateDrdsInstanceStatusResult.h
 	include/alibabacloud/drds/model/DescribeDrdsDBsRequest.h
@@ -104,6 +108,8 @@ set(drds_src
 	src/model/ModifyRdsReadWeightResult.cc
 	src/model/CreateDrdsInstanceRequest.cc
 	src/model/CreateDrdsInstanceResult.cc
+	src/model/DescribeDrdsInstanceMonitorRequest.cc
+	src/model/DescribeDrdsInstanceMonitorResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeDrdsDBIpWhiteListRequest.cc
@@ -122,6 +128,8 @@ set(drds_src
 	src/model/ModifyDrdsDBPasswdResult.cc
 	src/model/DeleteFailedDrdsDBRequest.cc
 	src/model/DeleteFailedDrdsDBResult.cc
+	src/model/DescribeDrdsInstanceDbMonitorRequest.cc
+	src/model/DescribeDrdsInstanceDbMonitorResult.cc
 	src/model/DescribeCreateDrdsInstanceStatusRequest.cc
 	src/model/DescribeCreateDrdsInstanceStatusResult.cc
 	src/model/DescribeDrdsDBsRequest.cc

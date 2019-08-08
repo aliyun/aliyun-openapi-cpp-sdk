@@ -33,7 +33,7 @@ std::string UpdateDNSSLBWeightRequest::getRecordId()const
 void UpdateDNSSLBWeightRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setParameter("RecordId", recordId);
+	setCoreParameter("RecordId", recordId);
 }
 
 std::string UpdateDNSSLBWeightRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string UpdateDNSSLBWeightRequest::getUserClientIp()const
 void UpdateDNSSLBWeightRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int UpdateDNSSLBWeightRequest::getWeight()const
@@ -55,7 +55,7 @@ int UpdateDNSSLBWeightRequest::getWeight()const
 void UpdateDNSSLBWeightRequest::setWeight(int weight)
 {
 	weight_ = weight;
-	setParameter("Weight", std::to_string(weight));
+	setCoreParameter("Weight", std::to_string(weight));
 }
 
 std::string UpdateDNSSLBWeightRequest::getLang()const
@@ -66,7 +66,7 @@ std::string UpdateDNSSLBWeightRequest::getLang()const
 void UpdateDNSSLBWeightRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string UpdateDNSSLBWeightRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string UpdateDNSSLBWeightRequest::getAccessKeyId()const
 void UpdateDNSSLBWeightRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

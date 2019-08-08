@@ -58,6 +58,18 @@ void DescribeRiskCheckResultRequest::setGroupId(long groupId)
 	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
+std::vector<std::string> DescribeRiskCheckResultRequest::getItemIds()const
+{
+	return itemIds_;
+}
+
+void DescribeRiskCheckResultRequest::setItemIds(const std::vector<std::string>& itemIds)
+{
+	itemIds_ = itemIds;
+	for(int i = 0; i!= itemIds.size(); i++)
+		setCoreParameter("ItemIds."+ std::to_string(i), itemIds.at(i));
+}
+
 std::string DescribeRiskCheckResultRequest::getName()const
 {
 	return name_;
@@ -111,5 +123,16 @@ void DescribeRiskCheckResultRequest::setRiskLevel(const std::string& riskLevel)
 {
 	riskLevel_ = riskLevel;
 	setCoreParameter("RiskLevel", riskLevel);
+}
+
+std::string DescribeRiskCheckResultRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeRiskCheckResultRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setCoreParameter("Status", status);
 }
 

@@ -33,7 +33,7 @@ std::string CreateTaskRequest::getCaller()const
 void CreateTaskRequest::setCaller(const std::string& caller)
 {
 	caller_ = caller;
-	setParameter("Caller", caller);
+	setCoreParameter("Caller", caller);
 }
 
 std::string CreateTaskRequest::getAddress()const
@@ -44,7 +44,7 @@ std::string CreateTaskRequest::getAddress()const
 void CreateTaskRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setParameter("Address", address);
+	setCoreParameter("Address", address);
 }
 
 std::string CreateTaskRequest::getTaskType()const
@@ -55,7 +55,7 @@ std::string CreateTaskRequest::getTaskType()const
 void CreateTaskRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setParameter("TaskType", taskType);
+	setCoreParameter("TaskType", taskType);
 }
 
 std::string CreateTaskRequest::getIspCity()const
@@ -66,7 +66,7 @@ std::string CreateTaskRequest::getIspCity()const
 void CreateTaskRequest::setIspCity(const std::string& ispCity)
 {
 	ispCity_ = ispCity;
-	setParameter("IspCity", ispCity);
+	setCoreParameter("IspCity", ispCity);
 }
 
 std::string CreateTaskRequest::getAlertIds()const
@@ -77,7 +77,7 @@ std::string CreateTaskRequest::getAlertIds()const
 void CreateTaskRequest::setAlertIds(const std::string& alertIds)
 {
 	alertIds_ = alertIds;
-	setParameter("AlertIds", alertIds);
+	setCoreParameter("AlertIds", alertIds);
 }
 
 std::string CreateTaskRequest::getOptions()const
@@ -88,7 +88,7 @@ std::string CreateTaskRequest::getOptions()const
 void CreateTaskRequest::setOptions(const std::string& options)
 {
 	options_ = options;
-	setParameter("Options", options);
+	setCoreParameter("Options", options);
 }
 
 std::string CreateTaskRequest::getTaskName()const
@@ -99,7 +99,7 @@ std::string CreateTaskRequest::getTaskName()const
 void CreateTaskRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setParameter("TaskName", taskName);
+	setCoreParameter("TaskName", taskName);
 }
 
 std::string CreateTaskRequest::getInterval()const
@@ -110,7 +110,7 @@ std::string CreateTaskRequest::getInterval()const
 void CreateTaskRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setParameter("Interval", interval);
+	setCoreParameter("Interval", interval);
 }
 
 std::string CreateTaskRequest::getAlertRule()const
@@ -121,6 +121,6 @@ std::string CreateTaskRequest::getAlertRule()const
 void CreateTaskRequest::setAlertRule(const std::string& alertRule)
 {
 	alertRule_ = alertRule;
-	setParameter("AlertRule", alertRule);
+	setCoreParameter("AlertRule", alertRule);
 }
 

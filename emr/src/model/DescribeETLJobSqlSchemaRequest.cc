@@ -33,7 +33,7 @@ long DescribeETLJobSqlSchemaRequest::getResourceOwnerId()const
 void DescribeETLJobSqlSchemaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeETLJobSqlSchemaRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeETLJobSqlSchemaRequest::getRegionId()const
 void DescribeETLJobSqlSchemaRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeETLJobSqlSchemaRequest::getResolveId()const
@@ -55,7 +55,7 @@ std::string DescribeETLJobSqlSchemaRequest::getResolveId()const
 void DescribeETLJobSqlSchemaRequest::setResolveId(const std::string& resolveId)
 {
 	resolveId_ = resolveId;
-	setParameter("ResolveId", resolveId);
+	setCoreParameter("ResolveId", resolveId);
 }
 
 std::string DescribeETLJobSqlSchemaRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeETLJobSqlSchemaRequest::getAccessKeyId()const
 void DescribeETLJobSqlSchemaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

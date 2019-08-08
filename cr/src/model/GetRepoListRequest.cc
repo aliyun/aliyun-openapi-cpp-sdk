@@ -33,7 +33,7 @@ std::string GetRepoListRequest::getRegionId()const
 void GetRepoListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int GetRepoListRequest::getPageSize()const
@@ -44,7 +44,7 @@ int GetRepoListRequest::getPageSize()const
 void GetRepoListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetRepoListRequest::getPage()const
@@ -55,7 +55,7 @@ int GetRepoListRequest::getPage()const
 void GetRepoListRequest::setPage(int page)
 {
 	page_ = page;
-	setParameter("Page", std::to_string(page));
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string GetRepoListRequest::getStatus()const
@@ -66,6 +66,6 @@ std::string GetRepoListRequest::getStatus()const
 void GetRepoListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

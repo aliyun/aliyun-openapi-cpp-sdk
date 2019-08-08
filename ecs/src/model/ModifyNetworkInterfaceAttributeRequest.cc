@@ -323,6 +323,17 @@ void ModifyNetworkInterfaceAttributeRequest::setRequestId(const std::string& req
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ModifyNetworkInterfaceAttributeRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ModifyNetworkInterfaceAttributeRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string ModifyNetworkInterfaceAttributeRequest::getNetworkInterfaceId()const
 {
 	return networkInterfaceId_;

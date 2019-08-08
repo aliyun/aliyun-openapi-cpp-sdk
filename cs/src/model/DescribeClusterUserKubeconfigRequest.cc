@@ -25,6 +25,17 @@ DescribeClusterUserKubeconfigRequest::DescribeClusterUserKubeconfigRequest() :
 DescribeClusterUserKubeconfigRequest::~DescribeClusterUserKubeconfigRequest()
 {}
 
+bool DescribeClusterUserKubeconfigRequest::getPrivateIpAddress()const
+{
+	return privateIpAddress_;
+}
+
+void DescribeClusterUserKubeconfigRequest::setPrivateIpAddress(bool privateIpAddress)
+{
+	privateIpAddress_ = privateIpAddress;
+	setCoreParameter("PrivateIpAddress", privateIpAddress ? "true" : "false");
+}
+
 std::string DescribeClusterUserKubeconfigRequest::getClusterId()const
 {
 	return clusterId_;
@@ -33,6 +44,6 @@ std::string DescribeClusterUserKubeconfigRequest::getClusterId()const
 void DescribeClusterUserKubeconfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 

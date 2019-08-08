@@ -25,6 +25,17 @@ UpdateProductRequest::UpdateProductRequest() :
 UpdateProductRequest::~UpdateProductRequest()
 {}
 
+std::string UpdateProductRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateProductRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string UpdateProductRequest::getProductName()const
 {
 	return productName_;
@@ -33,7 +44,7 @@ std::string UpdateProductRequest::getProductName()const
 void UpdateProductRequest::setProductName(const std::string& productName)
 {
 	productName_ = productName;
-	setParameter("ProductName", productName);
+	setCoreParameter("ProductName", productName);
 }
 
 std::string UpdateProductRequest::getDescription()const
@@ -44,7 +55,7 @@ std::string UpdateProductRequest::getDescription()const
 void UpdateProductRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string UpdateProductRequest::getProductKey()const
@@ -55,7 +66,7 @@ std::string UpdateProductRequest::getProductKey()const
 void UpdateProductRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string UpdateProductRequest::getAccessKeyId()const
@@ -66,6 +77,6 @@ std::string UpdateProductRequest::getAccessKeyId()const
 void UpdateProductRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

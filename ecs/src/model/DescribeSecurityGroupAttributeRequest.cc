@@ -25,6 +25,17 @@ DescribeSecurityGroupAttributeRequest::DescribeSecurityGroupAttributeRequest() :
 DescribeSecurityGroupAttributeRequest::~DescribeSecurityGroupAttributeRequest()
 {}
 
+std::string DescribeSecurityGroupAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DescribeSecurityGroupAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DescribeSecurityGroupAttributeRequest::getNicType()const
 {
 	return nicType_;

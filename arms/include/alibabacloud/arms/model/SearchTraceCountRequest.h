@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				SearchTraceCountRequest();
 				~SearchTraceCountRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
+				std::string getServiceIp()const;
+				void setServiceIp(const std::string& serviceIp);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getOperationName()const;
@@ -60,7 +60,7 @@ namespace AlibabaCloud
 				void setMinDuration(long minDuration);
 
             private:
-				std::string instanceId_;
+				std::string serviceIp_;
 				std::string regionId_;
 				std::string operationName_;
 				std::string appType_;

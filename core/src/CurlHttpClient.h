@@ -22,15 +22,15 @@
 
 namespace AlibabaCloud {
 class CurlHttpClient : public HttpClient {
- public:
+public:
   CurlHttpClient();
   ~CurlHttpClient();
 
   HttpResponseOutcome makeRequest(const HttpRequest &request) override;
 
- private:
+private:
   CURL *curlHandle_;
 };
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud
 
-#endif  // CORE_SRC_CURLHTTPCLIENT_H_
+#endif // CORE_SRC_CURLHTTPCLIENT_H_

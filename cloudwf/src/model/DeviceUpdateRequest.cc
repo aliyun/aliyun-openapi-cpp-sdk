@@ -33,7 +33,7 @@ std::string DeviceUpdateRequest::getDevicePosition()const
 void DeviceUpdateRequest::setDevicePosition(const std::string& devicePosition)
 {
 	devicePosition_ = devicePosition;
-	setParameter("DevicePosition", devicePosition);
+	setCoreParameter("DevicePosition", devicePosition);
 }
 
 std::string DeviceUpdateRequest::getDeviceName()const
@@ -44,7 +44,7 @@ std::string DeviceUpdateRequest::getDeviceName()const
 void DeviceUpdateRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 
 long DeviceUpdateRequest::getDid()const
@@ -55,7 +55,7 @@ long DeviceUpdateRequest::getDid()const
 void DeviceUpdateRequest::setDid(long did)
 {
 	did_ = did;
-	setParameter("Did", std::to_string(did));
+	setCoreParameter("Did", std::to_string(did));
 }
 
 std::string DeviceUpdateRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeviceUpdateRequest::getAccessKeyId()const
 void DeviceUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

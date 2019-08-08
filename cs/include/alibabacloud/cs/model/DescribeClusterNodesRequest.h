@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,38 +17,34 @@
 #ifndef ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERNODESREQUEST_H_
 #define ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERNODESREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RoaServiceRequest.h>
 #include <alibabacloud/cs/CSExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace CS
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CS_EXPORT DescribeClusterNodesRequest : public RoaServiceRequest
-			{
+namespace AlibabaCloud {
+namespace CS {
+namespace Model {
+class ALIBABACLOUD_CS_EXPORT DescribeClusterNodesRequest
+    : public RoaServiceRequest {
 
-			public:
-				DescribeClusterNodesRequest();
-				~DescribeClusterNodesRequest();
+public:
+  DescribeClusterNodesRequest();
+  ~DescribeClusterNodesRequest();
 
-				std::string getPageSize()const;
-				void setPageSize(const std::string& pageSize);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getPageNumber()const;
-				void setPageNumber(const std::string& pageNumber);
+  std::string getPageSize() const;
+  void setPageSize(const std::string &pageSize);
+  std::string getClusterId() const;
+  void setClusterId(const std::string &clusterId);
+  std::string getPageNumber() const;
+  void setPageNumber(const std::string &pageNumber);
 
-            private:
-				std::string pageSize_;
-				std::string clusterId_;
-				std::string pageNumber_;
-
-			};
-		}
-	}
-}
+private:
+  std::string pageSize_;
+  std::string clusterId_;
+  std::string pageNumber_;
+};
+} // namespace Model
+} // namespace CS
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERNODESREQUEST_H_
