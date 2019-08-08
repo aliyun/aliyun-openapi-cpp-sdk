@@ -124,6 +124,8 @@ namespace AlibabaCloud
 				void setInstanceName(const std::string& instanceName);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getZoneId()const;
@@ -224,6 +226,7 @@ namespace AlibabaCloud
 				std::string spotStrategy_;
 				std::string instanceName_;
 				std::string requestId_;
+				std::string akProxy_;
 				std::string internetChargeType_;
 				std::string zoneId_;
 				int internetMaxBandwidthIn_;

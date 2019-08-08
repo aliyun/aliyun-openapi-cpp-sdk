@@ -311,6 +311,17 @@ void AssignIpv6AddressesRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string AssignIpv6AddressesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void AssignIpv6AddressesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string AssignIpv6AddressesRequest::getNetworkInterfaceId()const
 {
 	return networkInterfaceId_;

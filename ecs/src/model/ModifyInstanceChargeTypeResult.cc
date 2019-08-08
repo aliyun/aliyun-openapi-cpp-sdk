@@ -40,9 +40,26 @@ void ModifyInstanceChargeTypeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 
 	setRequestId(value["RequestId"].asString());
+	auto allFeeOfInstances = value["FeeOfInstances"]["FeeOfInstance"];
+	for (auto value : allFeeOfInstances)
+	{
+		FeeOfInstance feeOfInstancesObject;
+		if(!value["InstanceId"].isNull())
+			feeOfInstancesObject.instanceId = value["InstanceId"].asString();
+		if(!value["Fee"].isNull())
+			feeOfInstancesObject.fee = value["Fee"].asString();
+		if(!value["Currency"].isNull())
+			feeOfInstancesObject.currency = value["Currency"].asString();
+		feeOfInstances_.push_back(feeOfInstancesObject);
+	}
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
 
+}
+
+std::vector<ModifyInstanceChargeTypeResult::FeeOfInstance> ModifyInstanceChargeTypeResult::getFeeOfInstances()const
+{
+	return feeOfInstances_;
 }
 
 std::string ModifyInstanceChargeTypeResult::getOrderId()const

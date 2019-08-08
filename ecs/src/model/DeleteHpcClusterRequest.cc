@@ -311,3 +311,14 @@ void DeleteHpcClusterRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DeleteHpcClusterRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DeleteHpcClusterRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

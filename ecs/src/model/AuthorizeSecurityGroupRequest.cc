@@ -454,6 +454,17 @@ void AuthorizeSecurityGroupRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string AuthorizeSecurityGroupRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void AuthorizeSecurityGroupRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string AuthorizeSecurityGroupRequest::getSourceGroupId()const
 {
 	return sourceGroupId_;

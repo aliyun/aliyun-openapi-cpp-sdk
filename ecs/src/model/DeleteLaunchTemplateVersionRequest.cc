@@ -323,3 +323,14 @@ void DeleteLaunchTemplateVersionRequest::setRequestId(const std::string& request
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DeleteLaunchTemplateVersionRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DeleteLaunchTemplateVersionRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

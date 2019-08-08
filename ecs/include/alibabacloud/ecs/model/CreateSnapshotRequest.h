@@ -40,8 +40,6 @@ namespace AlibabaCloud
 				CreateSnapshotRequest();
 				~CreateSnapshotRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
@@ -52,26 +50,40 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getDiskId()const;
-				void setDiskId(const std::string& diskId);
 				std::string getSnapshotName()const;
 				void setSnapshotName(const std::string& snapshotName);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
+				std::string getSourceSnapshotId()const;
+				void setSourceSnapshotId(const std::string& sourceSnapshotId);
+				bool getRemoveSourceSnapshot()const;
+				void setRemoveSourceSnapshot(bool removeSourceSnapshot);
+				std::string getDiskId()const;
+				void setDiskId(const std::string& diskId);
+				int getRetentionDays()const;
+				void setRetentionDays(int retentionDays);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string ownerAccount_;
 				std::string description_;
-				std::string diskId_;
 				std::string snapshotName_;
-				std::vector<Tag> tag_;
 				long ownerId_;
+				std::string sourceRegionId_;
+				std::string sourceSnapshotId_;
+				bool removeSourceSnapshot_;
+				std::string diskId_;
+				int retentionDays_;
+				std::vector<Tag> tag_;
+				std::string category_;
 
 			};
 		}

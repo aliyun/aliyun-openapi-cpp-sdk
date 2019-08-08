@@ -363,3 +363,14 @@ void DescribeLaunchTemplatesRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeLaunchTemplatesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeLaunchTemplatesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

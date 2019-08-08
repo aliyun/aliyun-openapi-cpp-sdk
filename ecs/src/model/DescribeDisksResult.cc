@@ -98,6 +98,10 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.resourceGroupId = value["ResourceGroupId"].asString();
 		if(!value["Encrypted"].isNull())
 			disksObject.encrypted = value["Encrypted"].asString() == "true";
+		if(!value["StorageSetId"].isNull())
+			disksObject.storageSetId = value["StorageSetId"].asString();
+		if(!value["StorageSetPartitionNumber"].isNull())
+			disksObject.storageSetPartitionNumber = std::stoi(value["StorageSetPartitionNumber"].asString());
 		if(!value["MountInstanceNum"].isNull())
 			disksObject.mountInstanceNum = std::stoi(value["MountInstanceNum"].asString());
 		if(!value["IOPS"].isNull())
@@ -108,6 +112,8 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.iOPSWrite = std::stoi(value["IOPSWrite"].asString());
 		if(!value["KMSKeyId"].isNull())
 			disksObject.kMSKeyId = value["KMSKeyId"].asString();
+		if(!value["PerformanceLevel"].isNull())
+			disksObject.performanceLevel = value["PerformanceLevel"].asString();
 		if(!value["BdfId"].isNull())
 			disksObject.bdfId = value["BdfId"].asString();
 		auto allOperationLocks = value["OperationLocks"]["OperationLock"];

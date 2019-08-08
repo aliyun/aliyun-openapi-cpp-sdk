@@ -97,6 +97,8 @@ namespace AlibabaCloud
 				void setOfferingType(const std::string& offeringType);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
 				std::string getReservedInstanceName()const;
@@ -136,6 +138,7 @@ namespace AlibabaCloud
 				std::vector<std::string> reservedInstanceId_;
 				std::string offeringType_;
 				std::string requestId_;
+				std::string akProxy_;
 				std::string zoneId_;
 				std::string reservedInstanceName_;
 				std::vector<std::string> status_;

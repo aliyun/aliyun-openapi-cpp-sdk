@@ -25,6 +25,17 @@ DetachInstanceRamRoleRequest::DetachInstanceRamRoleRequest() :
 DetachInstanceRamRoleRequest::~DetachInstanceRamRoleRequest()
 {}
 
+std::string DetachInstanceRamRoleRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DetachInstanceRamRoleRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long DetachInstanceRamRoleRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

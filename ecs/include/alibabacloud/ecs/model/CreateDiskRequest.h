@@ -54,6 +54,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getPerformanceLevel()const;
+				void setPerformanceLevel(const std::string& performanceLevel);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
@@ -68,6 +70,8 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getStorageSetId()const;
+				void setStorageSetId(const std::string& storageSetId);
 				int getSize()const;
 				void setSize(int size);
 				bool getEncrypted()const;
@@ -78,6 +82,8 @@ namespace AlibabaCloud
 				void setDiskCategory(const std::string& diskCategory);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				int getStorageSetPartitionNumber()const;
+				void setStorageSetPartitionNumber(int storageSetPartitionNumber);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				std::vector<Arn> getArn()const;
@@ -92,6 +98,7 @@ namespace AlibabaCloud
 				std::string snapshotId_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
+				std::string performanceLevel_;
 				std::string ownerAccount_;
 				std::string description_;
 				long ownerId_;
@@ -99,11 +106,13 @@ namespace AlibabaCloud
 				std::string diskName_;
 				std::string resourceGroupId_;
 				std::string instanceId_;
+				std::string storageSetId_;
 				int size_;
 				bool encrypted_;
 				std::string regionId_;
 				std::string diskCategory_;
 				std::string zoneId_;
+				int storageSetPartitionNumber_;
 				std::vector<Tag> tag_;
 				std::vector<Arn> arn_;
 				std::string kMSKeyId_;

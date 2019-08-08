@@ -54,6 +54,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string device;
 					bool deleteWithInstance;
+					std::string performanceLevel;
 				};
 
 			public:
@@ -76,8 +77,6 @@ namespace AlibabaCloud
 				void setKeyPairName(const std::string& keyPairName);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
-				int getMinAmount()const;
-				void setMinAmount(int minAmount);
 				float getSpotPriceLimit()const;
 				void setSpotPriceLimit(float spotPriceLimit);
 				std::string getOwnerIdLoginEmail()const;
@@ -100,12 +99,16 @@ namespace AlibabaCloud
 				void setEnable(bool enable);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
+				int getStorageSetPartitionNumber()const;
+				void setStorageSetPartitionNumber(int storageSetPartitionNumber);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
 				int getAutoRenewPeriod()const;
 				void setAutoRenewPeriod(int autoRenewPeriod);
+				int getCpuOptionsCore()const;
+				void setCpuOptionsCore(int cpuOptionsCore);
 				int getPeriod()const;
 				void setPeriod(int period);
 				bool getDryRun()const;
@@ -114,6 +117,8 @@ namespace AlibabaCloud
 				void setLaunchTemplateId(const std::string& launchTemplateId);
 				int getIpv6AddressCount()const;
 				void setIpv6AddressCount(int ipv6AddressCount);
+				std::string getCpuOptionsNuma()const;
+				void setCpuOptionsNuma(const std::string& cpuOptionsNuma);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getCapacityReservationPreference()const;
@@ -136,6 +141,8 @@ namespace AlibabaCloud
 				void setAutoRenew(bool autoRenew);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getZoneId()const;
@@ -162,12 +169,16 @@ namespace AlibabaCloud
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				int getCpuOptionsThreadsPerCore()const;
+				void setCpuOptionsThreadsPerCore(int cpuOptionsThreadsPerCore);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
 				std::string getCapacityReservationId()const;
 				void setCapacityReservationId(const std::string& capacityReservationId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSystemDiskPerformanceLevel()const;
+				void setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
 				bool getPasswordInherit()const;
@@ -212,12 +223,16 @@ namespace AlibabaCloud
 				void setCreditSpecification(const std::string& creditSpecification);
 				std::vector<std::string> getSecurityGroupIds()const;
 				void setSecurityGroupIds(const std::vector<std::string>& securityGroupIds);
+				int getSpotDuration()const;
+				void setSpotDuration(int spotDuration);
 				std::vector<DataDisk> getDataDisk()const;
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
 				long getLaunchTemplateVersion()const;
 				void setLaunchTemplateVersion(long launchTemplateVersion);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
+				std::string getStorageSetId()const;
+				void setStorageSetId(const std::string& storageSetId);
 				std::string getSystemDiskSize()const;
 				void setSystemDiskSize(const std::string& systemDiskSize);
 				std::string getSystemDiskDescription()const;
@@ -232,7 +247,6 @@ namespace AlibabaCloud
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
 				std::string proxy_original_source_ip_;
-				int minAmount_;
 				float spotPriceLimit_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
@@ -244,13 +258,16 @@ namespace AlibabaCloud
 				std::string securityToken_;
 				bool enable_;
 				std::string callerBidEmail_;
+				int storageSetPartitionNumber_;
 				std::vector<Tag> tag_;
 				long callerUid_;
 				int autoRenewPeriod_;
+				int cpuOptionsCore_;
 				int period_;
 				bool dryRun_;
 				std::string launchTemplateId_;
 				int ipv6AddressCount_;
+				std::string cpuOptionsNuma_;
 				long ownerId_;
 				std::string capacityReservationPreference_;
 				bool ak_mfa_present_;
@@ -262,6 +279,7 @@ namespace AlibabaCloud
 				std::string instanceName_;
 				bool autoRenew_;
 				std::string requestId_;
+				std::string akProxy_;
 				std::string internetChargeType_;
 				std::string zoneId_;
 				std::vector<std::string> ipv6Address_;
@@ -275,9 +293,11 @@ namespace AlibabaCloud
 				int internetMaxBandwidthOut_;
 				bool proxy_original_security_transport_;
 				std::string description_;
+				int cpuOptionsThreadsPerCore_;
 				std::string systemDiskCategory_;
 				std::string capacityReservationId_;
 				std::string accessKeyId_;
+				std::string systemDiskPerformanceLevel_;
 				std::string userData_;
 				bool passwordInherit_;
 				std::string regionId_;
@@ -300,9 +320,11 @@ namespace AlibabaCloud
 				std::string callerBid_;
 				std::string creditSpecification_;
 				std::vector<std::string> securityGroupIds_;
+				int spotDuration_;
 				std::vector<DataDisk> dataDisk_;
 				long launchTemplateVersion_;
 				bool proxy_trust_transport_info_;
+				std::string storageSetId_;
 				std::string systemDiskSize_;
 				std::string systemDiskDescription_;
 

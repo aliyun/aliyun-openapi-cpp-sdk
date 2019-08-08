@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getDeploymentSetIds()const;
 				void setDeploymentSetIds(const std::string& deploymentSetIds);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getGranularity()const;
@@ -71,6 +73,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				int pageNumber_;
 				std::string deploymentSetIds_;
+				std::string sourceRegionId_;
 				std::string regionId_;
 				std::string granularity_;
 				std::string domain_;

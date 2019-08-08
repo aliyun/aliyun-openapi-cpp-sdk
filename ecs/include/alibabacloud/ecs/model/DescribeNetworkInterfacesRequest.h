@@ -104,10 +104,14 @@ namespace AlibabaCloud
 				void setSecurity_transport(bool security_transport);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
+				std::vector<std::string> getPrivateIpAddress()const;
+				void setPrivateIpAddress(const std::vector<std::string>& privateIpAddress);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getPrimaryIpAddress()const;
@@ -148,8 +152,10 @@ namespace AlibabaCloud
 				bool ak_mfa_present_;
 				bool security_transport_;
 				std::string vSwitchId_;
+				std::vector<std::string> privateIpAddress_;
 				std::string instanceId_;
 				std::string requestId_;
+				std::string akProxy_;
 				std::string vpcId_;
 				std::string primaryIpAddress_;
 				std::vector<std::string> networkInterfaceId_;

@@ -109,6 +109,8 @@ namespace AlibabaCloud
 				void setDestinationResource(const std::string& destinationResource);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
 
@@ -150,6 +152,7 @@ namespace AlibabaCloud
 				std::string spotStrategy_;
 				std::string destinationResource_;
 				std::string requestId_;
+				std::string akProxy_;
 				std::string zoneId_;
 
 			};

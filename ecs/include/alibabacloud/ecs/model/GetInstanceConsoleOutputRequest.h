@@ -85,6 +85,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 
             private:
 				long resourceOwnerId_;
@@ -112,6 +114,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string instanceId_;
 				std::string requestId_;
+				std::string akProxy_;
 
 			};
 		}

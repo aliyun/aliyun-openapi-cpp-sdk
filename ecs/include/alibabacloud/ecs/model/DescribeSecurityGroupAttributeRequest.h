@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeSecurityGroupAttributeRequest();
 				~DescribeSecurityGroupAttributeRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getNicType()const;
 				void setNicType(const std::string& nicType);
 				long getResourceOwnerId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				void setDirection(const std::string& direction);
 
             private:
+				std::string sourceRegionId_;
 				std::string nicType_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;

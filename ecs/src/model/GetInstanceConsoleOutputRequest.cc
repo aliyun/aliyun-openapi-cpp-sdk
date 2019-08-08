@@ -300,3 +300,14 @@ void GetInstanceConsoleOutputRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string GetInstanceConsoleOutputRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void GetInstanceConsoleOutputRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

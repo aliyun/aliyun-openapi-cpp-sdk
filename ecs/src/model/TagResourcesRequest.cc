@@ -102,6 +102,17 @@ void TagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string TagResourcesRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void TagResourcesRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string TagResourcesRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -316,5 +327,16 @@ void TagResourcesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
 	setCoreParameter("RequestId", requestId);
+}
+
+std::string TagResourcesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void TagResourcesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
 }
 

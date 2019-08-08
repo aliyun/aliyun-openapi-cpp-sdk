@@ -102,6 +102,17 @@ void ModifyUserBusinessBehaviorRequest::setAccessKeyId(const std::string& access
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyUserBusinessBehaviorRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyUserBusinessBehaviorRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyUserBusinessBehaviorRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -287,6 +298,17 @@ void ModifyUserBusinessBehaviorRequest::setRequestId(const std::string& requestI
 {
 	requestId_ = requestId;
 	setCoreParameter("RequestId", requestId);
+}
+
+std::string ModifyUserBusinessBehaviorRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ModifyUserBusinessBehaviorRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
 }
 
 std::string ModifyUserBusinessBehaviorRequest::getStatusKey()const

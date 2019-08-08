@@ -289,6 +289,17 @@ void DeleteNetworkInterfaceRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DeleteNetworkInterfaceRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DeleteNetworkInterfaceRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string DeleteNetworkInterfaceRequest::getNetworkInterfaceId()const
 {
 	return networkInterfaceId_;

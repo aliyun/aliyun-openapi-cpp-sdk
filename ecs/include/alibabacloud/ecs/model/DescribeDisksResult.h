@@ -58,9 +58,11 @@ namespace AlibabaCloud
 					bool encrypted;
 					bool deleteAutoSnapshot;
 					std::string diskChargeType;
+					int storageSetPartitionNumber;
 					int iOPS;
 					std::string expiredTime;
 					std::string imageId;
+					std::string storageSetId;
 					std::vector<Disk::Tag> tags;
 					std::string status;
 					std::string attachedTime;
@@ -71,6 +73,7 @@ namespace AlibabaCloud
 					std::string productCode;
 					std::string instanceId;
 					std::string device;
+					std::string performanceLevel;
 					bool deleteWithInstance;
 					bool enableAutomatedSnapshotPolicy;
 					bool enableAutoSnapshot;

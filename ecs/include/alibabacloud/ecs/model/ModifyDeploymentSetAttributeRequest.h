@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyDeploymentSetAttributeRequest();
 				~ModifyDeploymentSetAttributeRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getDeploymentSetId()const;
 				void setDeploymentSetId(const std::string& deploymentSetId);
 				long getResourceOwnerId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string sourceRegionId_;
 				std::string deploymentSetId_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;

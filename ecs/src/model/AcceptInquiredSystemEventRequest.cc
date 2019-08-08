@@ -311,3 +311,14 @@ void AcceptInquiredSystemEventRequest::setRequestId(const std::string& requestId
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string AcceptInquiredSystemEventRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void AcceptInquiredSystemEventRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

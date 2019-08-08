@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
@@ -83,6 +85,8 @@ namespace AlibabaCloud
 				void setSecurity_transport(bool security_transport);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 
             private:
 				long resourceOwnerId_;
@@ -93,6 +97,7 @@ namespace AlibabaCloud
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
+				std::string sourceRegionId_;
 				std::string securityToken_;
 				std::string regionId_;
 				bool enable_;
@@ -109,6 +114,7 @@ namespace AlibabaCloud
 				bool ak_mfa_present_;
 				bool security_transport_;
 				std::string requestId_;
+				std::string akProxy_;
 
 			};
 		}

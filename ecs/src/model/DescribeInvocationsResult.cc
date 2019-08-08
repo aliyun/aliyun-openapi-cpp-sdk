@@ -70,6 +70,12 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 				invokeInstancesObject.instanceId = value["InstanceId"].asString();
 			if(!value["InstanceInvokeStatus"].isNull())
 				invokeInstancesObject.instanceInvokeStatus = value["InstanceInvokeStatus"].asString();
+			if(!value["CreationTime"].isNull())
+				invokeInstancesObject.creationTime = value["CreationTime"].asString();
+			if(!value["StartTime"].isNull())
+				invokeInstancesObject.startTime = value["StartTime"].asString();
+			if(!value["FinishTime"].isNull())
+				invokeInstancesObject.finishTime = value["FinishTime"].asString();
 			invocationsObject.invokeInstances.push_back(invokeInstancesObject);
 		}
 		invocations_.push_back(invocationsObject);

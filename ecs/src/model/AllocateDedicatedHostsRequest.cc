@@ -438,6 +438,17 @@ void AllocateDedicatedHostsRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string AllocateDedicatedHostsRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void AllocateDedicatedHostsRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 int AllocateDedicatedHostsRequest::getNetworkAttributesSlbUdpTimeout()const
 {
 	return networkAttributesSlbUdpTimeout_;

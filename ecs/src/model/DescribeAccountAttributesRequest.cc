@@ -290,6 +290,17 @@ void DescribeAccountAttributesRequest::setRequestId(const std::string& requestId
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeAccountAttributesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeAccountAttributesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string DescribeAccountAttributesRequest::getZoneId()const
 {
 	return zoneId_;

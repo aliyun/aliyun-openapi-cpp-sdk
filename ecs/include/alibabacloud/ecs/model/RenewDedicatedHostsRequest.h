@@ -91,6 +91,8 @@ namespace AlibabaCloud
 				void setPeriodUnit(const std::string& periodUnit);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 
             private:
 				std::string dedicatedHostIds_;
@@ -121,6 +123,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string periodUnit_;
 				std::string requestId_;
+				std::string akProxy_;
 
 			};
 		}

@@ -97,6 +97,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::vector<std::string>& instanceId);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 				std::vector<std::string> getDevice()const;
 				void setDevice(const std::vector<std::string>& device);
 
@@ -132,6 +134,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::vector<std::string> instanceId_;
 				std::string requestId_;
+				std::string akProxy_;
 				std::vector<std::string> device_;
 
 			};

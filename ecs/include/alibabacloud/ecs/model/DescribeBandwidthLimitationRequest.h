@@ -93,6 +93,8 @@ namespace AlibabaCloud
 				void setSpotStrategy(const std::string& spotStrategy);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 
             private:
 				long resourceOwnerId_;
@@ -124,6 +126,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string spotStrategy_;
 				std::string requestId_;
+				std::string akProxy_;
 
 			};
 		}

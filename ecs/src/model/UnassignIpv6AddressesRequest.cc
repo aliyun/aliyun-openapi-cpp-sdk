@@ -300,6 +300,17 @@ void UnassignIpv6AddressesRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string UnassignIpv6AddressesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void UnassignIpv6AddressesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string UnassignIpv6AddressesRequest::getNetworkInterfaceId()const
 {
 	return networkInterfaceId_;

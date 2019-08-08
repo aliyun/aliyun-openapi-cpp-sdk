@@ -312,6 +312,17 @@ void AssignPrivateIpAddressesRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string AssignPrivateIpAddressesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void AssignPrivateIpAddressesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string AssignPrivateIpAddressesRequest::getNetworkInterfaceId()const
 {
 	return networkInterfaceId_;

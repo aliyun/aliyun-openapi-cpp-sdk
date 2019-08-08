@@ -25,17 +25,6 @@ CreateSnapshotRequest::CreateSnapshotRequest() :
 CreateSnapshotRequest::~CreateSnapshotRequest()
 {}
 
-std::string CreateSnapshotRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void CreateSnapshotRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long CreateSnapshotRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -91,6 +80,61 @@ void CreateSnapshotRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
+std::string CreateSnapshotRequest::getSnapshotName()const
+{
+	return snapshotName_;
+}
+
+void CreateSnapshotRequest::setSnapshotName(const std::string& snapshotName)
+{
+	snapshotName_ = snapshotName;
+	setCoreParameter("SnapshotName", snapshotName);
+}
+
+long CreateSnapshotRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateSnapshotRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateSnapshotRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void CreateSnapshotRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
+std::string CreateSnapshotRequest::getSourceSnapshotId()const
+{
+	return sourceSnapshotId_;
+}
+
+void CreateSnapshotRequest::setSourceSnapshotId(const std::string& sourceSnapshotId)
+{
+	sourceSnapshotId_ = sourceSnapshotId;
+	setCoreParameter("SourceSnapshotId", sourceSnapshotId);
+}
+
+bool CreateSnapshotRequest::getRemoveSourceSnapshot()const
+{
+	return removeSourceSnapshot_;
+}
+
+void CreateSnapshotRequest::setRemoveSourceSnapshot(bool removeSourceSnapshot)
+{
+	removeSourceSnapshot_ = removeSourceSnapshot;
+	setCoreParameter("RemoveSourceSnapshot", removeSourceSnapshot ? "true" : "false");
+}
+
 std::string CreateSnapshotRequest::getDiskId()const
 {
 	return diskId_;
@@ -102,15 +146,15 @@ void CreateSnapshotRequest::setDiskId(const std::string& diskId)
 	setCoreParameter("DiskId", diskId);
 }
 
-std::string CreateSnapshotRequest::getSnapshotName()const
+int CreateSnapshotRequest::getRetentionDays()const
 {
-	return snapshotName_;
+	return retentionDays_;
 }
 
-void CreateSnapshotRequest::setSnapshotName(const std::string& snapshotName)
+void CreateSnapshotRequest::setRetentionDays(int retentionDays)
 {
-	snapshotName_ = snapshotName;
-	setCoreParameter("SnapshotName", snapshotName);
+	retentionDays_ = retentionDays;
+	setCoreParameter("RetentionDays", std::to_string(retentionDays));
 }
 
 std::vector<CreateSnapshotRequest::Tag> CreateSnapshotRequest::getTag()const
@@ -130,14 +174,14 @@ void CreateSnapshotRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
-long CreateSnapshotRequest::getOwnerId()const
+std::string CreateSnapshotRequest::getCategory()const
 {
-	return ownerId_;
+	return category_;
 }
 
-void CreateSnapshotRequest::setOwnerId(long ownerId)
+void CreateSnapshotRequest::setCategory(const std::string& category)
 {
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	category_ = category;
+	setCoreParameter("Category", category);
 }
 

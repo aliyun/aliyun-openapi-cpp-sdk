@@ -333,6 +333,17 @@ void ModifyInstanceDeploymentRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ModifyInstanceDeploymentRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ModifyInstanceDeploymentRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 bool ModifyInstanceDeploymentRequest::getForce()const
 {
 	return force_;

@@ -366,6 +366,17 @@ void PurchaseReservedInstancesOfferingRequest::setRequestId(const std::string& r
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string PurchaseReservedInstancesOfferingRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void PurchaseReservedInstancesOfferingRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string PurchaseReservedInstancesOfferingRequest::getZoneId()const
 {
 	return zoneId_;

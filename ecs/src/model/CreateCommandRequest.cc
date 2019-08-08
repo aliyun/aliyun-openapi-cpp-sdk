@@ -344,6 +344,17 @@ void CreateCommandRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string CreateCommandRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void CreateCommandRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string CreateCommandRequest::getName()const
 {
 	return name_;

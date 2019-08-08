@@ -289,3 +289,14 @@ void DescribeFleetHistoryRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeFleetHistoryRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeFleetHistoryRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

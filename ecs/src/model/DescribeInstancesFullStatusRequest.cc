@@ -391,6 +391,17 @@ void DescribeInstancesFullStatusRequest::setRequestId(const std::string& request
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeInstancesFullStatusRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeInstancesFullStatusRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string DescribeInstancesFullStatusRequest::getHealthStatus()const
 {
 	return healthStatus_;

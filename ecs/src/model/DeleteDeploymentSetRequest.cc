@@ -25,6 +25,17 @@ DeleteDeploymentSetRequest::DeleteDeploymentSetRequest() :
 DeleteDeploymentSetRequest::~DeleteDeploymentSetRequest()
 {}
 
+std::string DeleteDeploymentSetRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DeleteDeploymentSetRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string DeleteDeploymentSetRequest::getDeploymentSetId()const
 {
 	return deploymentSetId_;

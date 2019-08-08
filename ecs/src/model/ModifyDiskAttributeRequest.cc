@@ -25,6 +25,17 @@ ModifyDiskAttributeRequest::ModifyDiskAttributeRequest() :
 ModifyDiskAttributeRequest::~ModifyDiskAttributeRequest()
 {}
 
+std::string ModifyDiskAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyDiskAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyDiskAttributeRequest::getDiskName()const
 {
 	return diskName_;

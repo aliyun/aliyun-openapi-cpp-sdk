@@ -394,6 +394,17 @@ void CreateNetworkInterfaceRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string CreateNetworkInterfaceRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void CreateNetworkInterfaceRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string CreateNetworkInterfaceRequest::getPrimaryIpAddress()const
 {
 	return primaryIpAddress_;

@@ -465,3 +465,14 @@ void ModifySecurityGroupEgressRuleRequest::setRequestId(const std::string& reque
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ModifySecurityGroupEgressRuleRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ModifySecurityGroupEgressRuleRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

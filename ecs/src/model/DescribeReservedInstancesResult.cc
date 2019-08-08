@@ -60,6 +60,8 @@ void DescribeReservedInstancesResult::parse(const std::string &payload)
 			reservedInstancesObject.scope = value["Scope"].asString();
 		if(!value["OfferingType"].isNull())
 			reservedInstancesObject.offeringType = value["OfferingType"].asString();
+		if(!value["Platform"].isNull())
+			reservedInstancesObject.platform = value["Platform"].asString();
 		if(!value["InstanceAmount"].isNull())
 			reservedInstancesObject.instanceAmount = std::stoi(value["InstanceAmount"].asString());
 		if(!value["Status"].isNull())

@@ -25,6 +25,17 @@ ModifyDedicatedHostAutoReleaseTimeRequest::ModifyDedicatedHostAutoReleaseTimeReq
 ModifyDedicatedHostAutoReleaseTimeRequest::~ModifyDedicatedHostAutoReleaseTimeRequest()
 {}
 
+std::string ModifyDedicatedHostAutoReleaseTimeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyDedicatedHostAutoReleaseTimeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long ModifyDedicatedHostAutoReleaseTimeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

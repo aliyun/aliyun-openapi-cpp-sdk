@@ -106,6 +106,8 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 				std::string getPrimaryIpAddress()const;
 				void setPrimaryIpAddress(const std::string& primaryIpAddress);
 
@@ -143,6 +145,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string vSwitchId_;
 				std::string requestId_;
+				std::string akProxy_;
 				std::string primaryIpAddress_;
 
 			};

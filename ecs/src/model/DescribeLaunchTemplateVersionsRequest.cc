@@ -378,6 +378,17 @@ void DescribeLaunchTemplateVersionsRequest::setRequestId(const std::string& requ
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeLaunchTemplateVersionsRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeLaunchTemplateVersionsRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 bool DescribeLaunchTemplateVersionsRequest::getDetailFlag()const
 {
 	return detailFlag_;

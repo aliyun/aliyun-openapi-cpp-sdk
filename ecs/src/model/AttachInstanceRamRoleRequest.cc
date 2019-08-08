@@ -25,6 +25,17 @@ AttachInstanceRamRoleRequest::AttachInstanceRamRoleRequest() :
 AttachInstanceRamRoleRequest::~AttachInstanceRamRoleRequest()
 {}
 
+std::string AttachInstanceRamRoleRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void AttachInstanceRamRoleRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long AttachInstanceRamRoleRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

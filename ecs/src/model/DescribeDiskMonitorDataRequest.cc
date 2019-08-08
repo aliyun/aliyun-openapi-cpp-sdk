@@ -322,3 +322,14 @@ void DescribeDiskMonitorDataRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeDiskMonitorDataRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeDiskMonitorDataRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

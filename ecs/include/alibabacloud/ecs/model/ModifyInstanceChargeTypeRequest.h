@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setInstanceIds(const std::string& instanceIds);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				bool getIsDetailFee()const;
+				void setIsDetailFee(bool isDetailFee);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
 
@@ -78,6 +80,7 @@ namespace AlibabaCloud
 				std::string periodUnit_;
 				std::string instanceIds_;
 				std::string regionId_;
+				bool isDetailFee_;
 				std::string instanceChargeType_;
 
 			};

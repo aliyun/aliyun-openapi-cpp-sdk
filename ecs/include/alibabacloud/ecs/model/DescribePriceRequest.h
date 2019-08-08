@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribePriceRequest();
 				~DescribePriceRequest();
 
+				std::string getDataDisk3PerformanceLevel()const;
+				void setDataDisk3PerformanceLevel(const std::string& dataDisk3PerformanceLevel);
 				int getDataDisk3Size()const;
 				void setDataDisk3Size(int dataDisk3Size);
 				long getResourceOwnerId()const;
@@ -51,8 +53,12 @@ namespace AlibabaCloud
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
 				std::string getSourceRegionId()const;
 				void setSourceRegionId(const std::string& sourceRegionId);
+				std::string getSystemDiskPerformanceLevel()const;
+				void setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel);
 				std::string getDataDisk4Category()const;
 				void setDataDisk4Category(const std::string& dataDisk4Category);
+				std::string getDataDisk4PerformanceLevel()const;
+				void setDataDisk4PerformanceLevel(const std::string& dataDisk4PerformanceLevel);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getDataDisk4Size()const;
@@ -75,12 +81,16 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getDataDisk2Size()const;
 				void setDataDisk2Size(int dataDisk2Size);
+				std::string getDataDisk1PerformanceLevel()const;
+				void setDataDisk1PerformanceLevel(const std::string& dataDisk1PerformanceLevel);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
 				std::string getDataDisk1Category()const;
 				void setDataDisk1Category(const std::string& dataDisk1Category);
+				std::string getDataDisk2PerformanceLevel()const;
+				void setDataDisk2PerformanceLevel(const std::string& dataDisk2PerformanceLevel);
 				int getSystemDiskSize()const;
 				void setSystemDiskSize(int systemDiskSize);
 				std::string getInternetChargeType()const;
@@ -89,6 +99,7 @@ namespace AlibabaCloud
 				void setInstanceNetworkType(const std::string& instanceNetworkType);
 
             private:
+				std::string dataDisk3PerformanceLevel_;
 				int dataDisk3Size_;
 				long resourceOwnerId_;
 				std::string imageId_;
@@ -97,7 +108,9 @@ namespace AlibabaCloud
 				int internetMaxBandwidthOut_;
 				std::string systemDiskCategory_;
 				std::string sourceRegionId_;
+				std::string systemDiskPerformanceLevel_;
 				std::string dataDisk4Category_;
+				std::string dataDisk4PerformanceLevel_;
 				std::string regionId_;
 				int dataDisk4Size_;
 				std::string priceUnit_;
@@ -109,9 +122,11 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				int dataDisk2Size_;
+				std::string dataDisk1PerformanceLevel_;
 				long ownerId_;
 				std::string resourceType_;
 				std::string dataDisk1Category_;
+				std::string dataDisk2PerformanceLevel_;
 				int systemDiskSize_;
 				std::string internetChargeType_;
 				std::string instanceNetworkType_;

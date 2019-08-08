@@ -89,6 +89,8 @@ namespace AlibabaCloud
 				void setDefaultVersionNumber(long defaultVersionNumber);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 
             private:
 				std::string launchTemplateName_;
@@ -118,6 +120,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				long defaultVersionNumber_;
 				std::string requestId_;
+				std::string akProxy_;
 
 			};
 		}

@@ -300,3 +300,14 @@ void ReleaseDedicatedHostRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ReleaseDedicatedHostRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ReleaseDedicatedHostRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

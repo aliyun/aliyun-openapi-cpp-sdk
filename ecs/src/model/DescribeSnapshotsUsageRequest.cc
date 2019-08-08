@@ -289,3 +289,14 @@ void DescribeSnapshotsUsageRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeSnapshotsUsageRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeSnapshotsUsageRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+

@@ -367,6 +367,17 @@ void DescribeReservedInstancesRequest::setRequestId(const std::string& requestId
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeReservedInstancesRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeReservedInstancesRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string DescribeReservedInstancesRequest::getZoneId()const
 {
 	return zoneId_;

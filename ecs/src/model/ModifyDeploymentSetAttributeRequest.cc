@@ -25,6 +25,17 @@ ModifyDeploymentSetAttributeRequest::ModifyDeploymentSetAttributeRequest() :
 ModifyDeploymentSetAttributeRequest::~ModifyDeploymentSetAttributeRequest()
 {}
 
+std::string ModifyDeploymentSetAttributeRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void ModifyDeploymentSetAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 std::string ModifyDeploymentSetAttributeRequest::getDeploymentSetId()const
 {
 	return deploymentSetId_;

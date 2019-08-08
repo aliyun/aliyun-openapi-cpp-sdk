@@ -114,6 +114,8 @@ namespace AlibabaCloud
 				void setAutoRenew(bool autoRenew);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 				int getNetworkAttributesSlbUdpTimeout()const;
 				void setNetworkAttributesSlbUdpTimeout(int networkAttributesSlbUdpTimeout);
 				std::string getZoneId()const;
@@ -163,6 +165,7 @@ namespace AlibabaCloud
 				std::string periodUnit_;
 				bool autoRenew_;
 				std::string requestId_;
+				std::string akProxy_;
 				int networkAttributesSlbUdpTimeout_;
 				std::string zoneId_;
 				std::string autoPlacement_;

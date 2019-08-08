@@ -101,6 +101,8 @@ namespace AlibabaCloud
 				void setNotBeforeEnd(const std::string& notBeforeEnd);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 				std::string getHealthStatus()const;
 				void setHealthStatus(const std::string& healthStatus);
 				std::string getEventType()const;
@@ -142,6 +144,7 @@ namespace AlibabaCloud
 				std::vector<std::string> instanceId_;
 				std::string notBeforeEnd_;
 				std::string requestId_;
+				std::string akProxy_;
 				std::string healthStatus_;
 				std::string eventType_;
 				std::string status_;

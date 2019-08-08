@@ -300,6 +300,17 @@ void DeleteNetworkInterfacePermissionRequest::setRequestId(const std::string& re
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DeleteNetworkInterfacePermissionRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DeleteNetworkInterfacePermissionRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 bool DeleteNetworkInterfacePermissionRequest::getForce()const
 {
 	return force_;

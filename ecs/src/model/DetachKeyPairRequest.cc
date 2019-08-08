@@ -25,6 +25,17 @@ DetachKeyPairRequest::DetachKeyPairRequest() :
 DetachKeyPairRequest::~DetachKeyPairRequest()
 {}
 
+std::string DetachKeyPairRequest::getSourceRegionId()const
+{
+	return sourceRegionId_;
+}
+
+void DetachKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
+{
+	sourceRegionId_ = sourceRegionId;
+	setCoreParameter("SourceRegionId", sourceRegionId);
+}
+
 long DetachKeyPairRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

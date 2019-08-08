@@ -66,6 +66,8 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.description = value["Description"].asString();
 		if(!value["CreationTime"].isNull())
 			snapshotsObject.creationTime = value["CreationTime"].asString();
+		if(!value["LastModifiedTime"].isNull())
+			snapshotsObject.lastModifiedTime = value["LastModifiedTime"].asString();
 		if(!value["Status"].isNull())
 			snapshotsObject.status = value["Status"].asString();
 		if(!value["Usage"].isNull())

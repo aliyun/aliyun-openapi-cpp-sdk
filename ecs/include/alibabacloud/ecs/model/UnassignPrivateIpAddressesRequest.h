@@ -85,6 +85,8 @@ namespace AlibabaCloud
 				void setPrivateIpAddress(const std::vector<std::string>& privateIpAddress);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 				std::string getNetworkInterfaceId()const;
 				void setNetworkInterfaceId(const std::string& networkInterfaceId);
 
@@ -114,6 +116,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::vector<std::string> privateIpAddress_;
 				std::string requestId_;
+				std::string akProxy_;
 				std::string networkInterfaceId_;
 
 			};

@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string snapshotId;
 					int size;
 					bool encrypted;
+					std::string performanceLevel;
 					std::string description;
 					std::string category;
 					std::string kMSKeyId;
@@ -78,6 +79,8 @@ namespace AlibabaCloud
 				void setHostName(const std::string& hostName);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
+				int getStorageSetPartitionNumber()const;
+				void setStorageSetPartitionNumber(int storageSetPartitionNumber);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				int getAutoRenewPeriod()const;
@@ -134,6 +137,8 @@ namespace AlibabaCloud
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
 				std::string getCapacityReservationId()const;
 				void setCapacityReservationId(const std::string& capacityReservationId);
+				std::string getSystemDiskPerformanceLevel()const;
+				void setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
 				bool getPasswordInherit()const;
@@ -168,6 +173,8 @@ namespace AlibabaCloud
 				void setCreditSpecification(const std::string& creditSpecification);
 				std::vector<DataDisk> getDataDisk()const;
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
+				std::string getStorageSetId()const;
+				void setStorageSetId(const std::string& storageSetId);
 				int getSystemDiskSize()const;
 				void setSystemDiskSize(int systemDiskSize);
 				std::string getSystemDiskDescription()const;
@@ -184,6 +191,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string hostName_;
 				std::string password_;
+				int storageSetPartitionNumber_;
 				std::vector<Tag> tag_;
 				int autoRenewPeriod_;
 				std::string nodeControllerId_;
@@ -212,6 +220,7 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string systemDiskCategory_;
 				std::string capacityReservationId_;
+				std::string systemDiskPerformanceLevel_;
 				std::string userData_;
 				bool passwordInherit_;
 				std::string regionId_;
@@ -229,6 +238,7 @@ namespace AlibabaCloud
 				std::string clusterId_;
 				std::string creditSpecification_;
 				std::vector<DataDisk> dataDisk_;
+				std::string storageSetId_;
 				int systemDiskSize_;
 				std::string systemDiskDescription_;
 

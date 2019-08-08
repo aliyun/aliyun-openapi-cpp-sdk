@@ -366,6 +366,17 @@ void DescribeSpotPriceHistoryRequest::setRequestId(const std::string& requestId)
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string DescribeSpotPriceHistoryRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void DescribeSpotPriceHistoryRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 std::string DescribeSpotPriceHistoryRequest::getZoneId()const
 {
 	return zoneId_;

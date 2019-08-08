@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyDiskAttributeRequest();
 				~ModifyDiskAttributeRequest();
 
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getDiskName()const;
 				void setDiskName(const std::string& diskName);
 				bool getDeleteAutoSnapshot()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				void setDeleteWithInstance(bool deleteWithInstance);
 
             private:
+				std::string sourceRegionId_;
 				std::string diskName_;
 				bool deleteAutoSnapshot_;
 				long resourceOwnerId_;

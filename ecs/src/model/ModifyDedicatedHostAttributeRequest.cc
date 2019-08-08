@@ -333,6 +333,17 @@ void ModifyDedicatedHostAttributeRequest::setRequestId(const std::string& reques
 	setCoreParameter("RequestId", requestId);
 }
 
+std::string ModifyDedicatedHostAttributeRequest::getAkProxy()const
+{
+	return akProxy_;
+}
+
+void ModifyDedicatedHostAttributeRequest::setAkProxy(const std::string& akProxy)
+{
+	akProxy_ = akProxy;
+	setCoreParameter("AkProxy", akProxy);
+}
+
 int ModifyDedicatedHostAttributeRequest::getNetworkAttributesSlbUdpTimeout()const
 {
 	return networkAttributesSlbUdpTimeout_;

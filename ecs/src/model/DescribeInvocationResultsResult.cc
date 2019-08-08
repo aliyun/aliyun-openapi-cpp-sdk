@@ -57,6 +57,8 @@ void DescribeInvocationResultsResult::parse(const std::string &payload)
 			invocationResultObject.invokeId = value["InvokeId"].asString();
 		if(!value["InstanceId"].isNull())
 			invocationResultObject.instanceId = value["InstanceId"].asString();
+		if(!value["StartTime"].isNull())
+			invocationResultObject.startTime = value["StartTime"].asString();
 		if(!value["FinishedTime"].isNull())
 			invocationResultObject.finishedTime = value["FinishedTime"].asString();
 		if(!value["Output"].isNull())

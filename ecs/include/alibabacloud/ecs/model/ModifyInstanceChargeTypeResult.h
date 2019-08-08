@@ -32,16 +32,24 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ECS_EXPORT ModifyInstanceChargeTypeResult : public ServiceResult
 			{
 			public:
+				struct FeeOfInstance
+				{
+					std::string instanceId;
+					std::string fee;
+					std::string currency;
+				};
 
 
 				ModifyInstanceChargeTypeResult();
 				explicit ModifyInstanceChargeTypeResult(const std::string &payload);
 				~ModifyInstanceChargeTypeResult();
+				std::vector<FeeOfInstance> getFeeOfInstances()const;
 				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<FeeOfInstance> feeOfInstances_;
 				std::string orderId_;
 
 			};

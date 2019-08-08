@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string instanceId;
 						std::string output;
 						long exitCode;
+						std::string startTime;
 						std::string commandId;
 						std::string invokeRecordStatus;
 						std::string finishedTime;

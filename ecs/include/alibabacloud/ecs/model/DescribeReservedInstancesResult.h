@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string description;
 					std::string zoneId;
+					std::string platform;
 					std::string resourceGroupId;
 					std::string startTime;
 					std::vector<ReservedInstance::OperationLock> operationLocks;

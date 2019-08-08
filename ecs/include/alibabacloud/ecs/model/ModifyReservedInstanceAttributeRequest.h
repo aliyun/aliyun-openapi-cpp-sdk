@@ -85,6 +85,8 @@ namespace AlibabaCloud
 				void setReservedInstanceId(const std::string& reservedInstanceId);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
+				std::string getAkProxy()const;
+				void setAkProxy(const std::string& akProxy);
 				std::string getReservedInstanceName()const;
 				void setReservedInstanceName(const std::string& reservedInstanceName);
 
@@ -114,6 +116,7 @@ namespace AlibabaCloud
 				bool security_transport_;
 				std::string reservedInstanceId_;
 				std::string requestId_;
+				std::string akProxy_;
 				std::string reservedInstanceName_;
 
 			};
