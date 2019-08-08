@@ -58,6 +58,34 @@ void DescribeApiGroupsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::vector<DescribeApiGroupsRequest::Tag> DescribeApiGroupsRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeApiGroupsRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
+}
+
+bool DescribeApiGroupsRequest::getEnableTagAuth()const
+{
+	return enableTagAuth_;
+}
+
+void DescribeApiGroupsRequest::setEnableTagAuth(bool enableTagAuth)
+{
+	enableTagAuth_ = enableTagAuth;
+	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
+}
+
 std::string DescribeApiGroupsRequest::getGroupName()const
 {
 	return groupName_;

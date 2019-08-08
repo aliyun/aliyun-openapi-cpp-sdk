@@ -58,6 +58,23 @@ void CreateAppRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
+std::vector<CreateAppRequest::Tag> CreateAppRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateAppRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
+}
+
 std::string CreateAppRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

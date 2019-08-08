@@ -80,6 +80,34 @@ void DescribeDeployedApisRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::vector<DescribeDeployedApisRequest::Tag> DescribeDeployedApisRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeDeployedApisRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
+}
+
+bool DescribeDeployedApisRequest::getEnableTagAuth()const
+{
+	return enableTagAuth_;
+}
+
+void DescribeDeployedApisRequest::setEnableTagAuth(bool enableTagAuth)
+{
+	enableTagAuth_ = enableTagAuth;
+	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
+}
+
 std::string DescribeDeployedApisRequest::getApiId()const
 {
 	return apiId_;

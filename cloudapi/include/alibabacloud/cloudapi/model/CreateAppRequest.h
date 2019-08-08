@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CLOUDAPI_EXPORT CreateAppRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				CreateAppRequest();
@@ -41,6 +46,8 @@ namespace AlibabaCloud
 				void setSecurityToken(const std::string& securityToken);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
@@ -48,6 +55,7 @@ namespace AlibabaCloud
 				std::string appName_;
 				std::string securityToken_;
 				std::string description_;
+				std::vector<Tag> tag_;
 				std::string accessKeyId_;
 
 			};

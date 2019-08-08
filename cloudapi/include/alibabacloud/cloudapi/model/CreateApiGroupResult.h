@@ -41,6 +41,7 @@ namespace AlibabaCloud
 				std::string getSubDomain()const;
 				std::string getDescription()const;
 				std::string getInstanceId()const;
+				bool getTagStatus()const;
 				std::string getInstanceType()const;
 				std::string getGroupId()const;
 
@@ -51,6 +52,7 @@ namespace AlibabaCloud
 				std::string subDomain_;
 				std::string description_;
 				std::string instanceId_;
+				bool tagStatus_;
 				std::string instanceType_;
 				std::string groupId_;
 

@@ -47,6 +47,23 @@ void DeleteApiGroupRequest::setGroupId(const std::string& groupId)
 	setCoreParameter("GroupId", groupId);
 }
 
+std::vector<DeleteApiGroupRequest::Tag> DeleteApiGroupRequest::getTag()const
+{
+	return tag_;
+}
+
+void DeleteApiGroupRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
+}
+
 std::string DeleteApiGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

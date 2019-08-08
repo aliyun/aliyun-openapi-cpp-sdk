@@ -42,11 +42,18 @@ void CreateAppResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["AppId"].isNull())
 		appId_ = std::stol(value["AppId"].asString());
+	if(!value["TagStatus"].isNull())
+		tagStatus_ = value["TagStatus"].asString() == "true";
 
 }
 
 long CreateAppResult::getAppId()const
 {
 	return appId_;
+}
+
+bool CreateAppResult::getTagStatus()const
+{
+	return tagStatus_;
 }
 

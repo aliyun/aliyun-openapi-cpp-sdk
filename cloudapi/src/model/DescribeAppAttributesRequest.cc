@@ -86,6 +86,17 @@ void DescribeAppAttributesRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+bool DescribeAppAttributesRequest::getEnableTagAuth()const
+{
+	return enableTagAuth_;
+}
+
+void DescribeAppAttributesRequest::setEnableTagAuth(bool enableTagAuth)
+{
+	enableTagAuth_ = enableTagAuth;
+	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
+}
+
 int DescribeAppAttributesRequest::getPageNumber()const
 {
 	return pageNumber_;
