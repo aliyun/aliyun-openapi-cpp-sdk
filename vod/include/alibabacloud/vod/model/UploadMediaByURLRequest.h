@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,61 +17,65 @@
 #ifndef ALIBABACLOUD_VOD_MODEL_UPLOADMEDIABYURLREQUEST_H_
 #define ALIBABACLOUD_VOD_MODEL_UPLOADMEDIABYURLREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/vod/VodExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/vod/VodExport.h>
 
-namespace AlibabaCloud {
-namespace Vod {
-namespace Model {
-class ALIBABACLOUD_VOD_EXPORT UploadMediaByURLRequest
-    : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Vod
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_VOD_EXPORT UploadMediaByURLRequest : public RpcServiceRequest
+			{
 
-public:
-  UploadMediaByURLRequest();
-  ~UploadMediaByURLRequest();
+			public:
+				UploadMediaByURLRequest();
+				~UploadMediaByURLRequest();
 
-  long getResourceOwnerId() const;
-  void setResourceOwnerId(long resourceOwnerId);
-  std::string getResourceOwnerAccount() const;
-  void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-  std::string getMessageCallback() const;
-  void setMessageCallback(const std::string &messageCallback);
-  long getOwnerId() const;
-  void setOwnerId(long ownerId);
-  std::string getPriority() const;
-  void setPriority(const std::string &priority);
-  std::string getStorageLocation() const;
-  void setStorageLocation(const std::string &storageLocation);
-  std::string getUserData() const;
-  void setUserData(const std::string &userData);
-  std::string getTemplateGroupId() const;
-  void setTemplateGroupId(const std::string &templateGroupId);
-  std::string getUploadMetadatas() const;
-  void setUploadMetadatas(const std::string &uploadMetadatas);
-  std::string getUploadURLs() const;
-  void setUploadURLs(const std::string &uploadURLs);
-  std::string getAppId() const;
-  void setAppId(const std::string &appId);
-  std::string getWorkflowId() const;
-  void setWorkflowId(const std::string &workflowId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getMessageCallback()const;
+				void setMessageCallback(const std::string& messageCallback);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getPriority()const;
+				void setPriority(const std::string& priority);
+				std::string getStorageLocation()const;
+				void setStorageLocation(const std::string& storageLocation);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
+				std::string getTemplateGroupId()const;
+				void setTemplateGroupId(const std::string& templateGroupId);
+				std::string getUploadMetadatas()const;
+				void setUploadMetadatas(const std::string& uploadMetadatas);
+				std::string getUploadURLs()const;
+				void setUploadURLs(const std::string& uploadURLs);
+				std::string getAppId()const;
+				void setAppId(const std::string& appId);
+				std::string getWorkflowId()const;
+				void setWorkflowId(const std::string& workflowId);
 
-private:
-  long resourceOwnerId_;
-  std::string resourceOwnerAccount_;
-  std::string messageCallback_;
-  long ownerId_;
-  std::string priority_;
-  std::string storageLocation_;
-  std::string userData_;
-  std::string templateGroupId_;
-  std::string uploadMetadatas_;
-  std::string uploadURLs_;
-  std::string appId_;
-  std::string workflowId_;
-};
-} // namespace Model
-} // namespace Vod
-} // namespace AlibabaCloud
+            private:
+				long resourceOwnerId_;
+				std::string resourceOwnerAccount_;
+				std::string messageCallback_;
+				long ownerId_;
+				std::string priority_;
+				std::string storageLocation_;
+				std::string userData_;
+				std::string templateGroupId_;
+				std::string uploadMetadatas_;
+				std::string uploadURLs_;
+				std::string appId_;
+				std::string workflowId_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_VOD_MODEL_UPLOADMEDIABYURLREQUEST_H_

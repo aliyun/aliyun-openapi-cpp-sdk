@@ -37,33 +37,35 @@ namespace AlibabaCloud
 				DescribeGtmInstanceResult();
 				explicit DescribeGtmInstanceResult(const std::string &payload);
 				~DescribeGtmInstanceResult();
-				std::string getInstanceName()const;
-				std::string getVersionCode()const;
 				long getExpireTimestamp()const;
 				std::string getUserDomainName()const;
-				std::string getAlertGroup()const;
 				std::string getLbaStrategy()const;
 				std::string getInstanceId()const;
 				std::string getCreateTime()const;
-				std::string getExpireTime()const;
+				std::string getCnameMode()const;
 				std::string getCname()const;
 				int getTtl()const;
+				std::string getInstanceName()const;
+				std::string getVersionCode()const;
+				std::string getAlertGroup()const;
+				std::string getExpireTime()const;
 				long getCreateTimestamp()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string instanceName_;
-				std::string versionCode_;
 				long expireTimestamp_;
 				std::string userDomainName_;
-				std::string alertGroup_;
 				std::string lbaStrategy_;
 				std::string instanceId_;
 				std::string createTime_;
-				std::string expireTime_;
+				std::string cnameMode_;
 				std::string cname_;
 				int ttl_;
+				std::string instanceName_;
+				std::string versionCode_;
+				std::string alertGroup_;
+				std::string expireTime_;
 				long createTimestamp_;
 
 			};

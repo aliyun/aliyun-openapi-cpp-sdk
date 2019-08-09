@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,48 +17,53 @@
 #ifndef ALIBABACLOUD_HSM_MODEL_CREATEINSTANCEREQUEST_H_
 #define ALIBABACLOUD_HSM_MODEL_CREATEINSTANCEREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/hsm/HsmExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/hsm/HsmExport.h>
 
-namespace AlibabaCloud {
-namespace Hsm {
-namespace Model {
-class ALIBABACLOUD_HSM_EXPORT CreateInstanceRequest : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Hsm
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_HSM_EXPORT CreateInstanceRequest : public RpcServiceRequest
+			{
 
-public:
-  CreateInstanceRequest();
-  ~CreateInstanceRequest();
+			public:
+				CreateInstanceRequest();
+				~CreateInstanceRequest();
 
-  int getPeriod() const;
-  void setPeriod(int period);
-  std::string getPeriodUnit() const;
-  void setPeriodUnit(const std::string &periodUnit);
-  std::string getResourceOwnerId() const;
-  void setResourceOwnerId(const std::string &resourceOwnerId);
-  int getQuantity() const;
-  void setQuantity(int quantity);
-  std::string getHsmDeviceType() const;
-  void setHsmDeviceType(const std::string &hsmDeviceType);
-  std::string getClientToken() const;
-  void setClientToken(const std::string &clientToken);
-  std::string getZoneId() const;
-  void setZoneId(const std::string &zoneId);
-  std::string getHsmOem() const;
-  void setHsmOem(const std::string &hsmOem);
+				int getPeriod()const;
+				void setPeriod(int period);
+				std::string getPeriodUnit()const;
+				void setPeriodUnit(const std::string& periodUnit);
+				std::string getResourceOwnerId()const;
+				void setResourceOwnerId(const std::string& resourceOwnerId);
+				int getQuantity()const;
+				void setQuantity(int quantity);
+				std::string getHsmDeviceType()const;
+				void setHsmDeviceType(const std::string& hsmDeviceType);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
+				std::string getHsmOem()const;
+				void setHsmOem(const std::string& hsmOem);
 
-private:
-  int period_;
-  std::string periodUnit_;
-  std::string resourceOwnerId_;
-  int quantity_;
-  std::string hsmDeviceType_;
-  std::string clientToken_;
-  std::string zoneId_;
-  std::string hsmOem_;
-};
-} // namespace Model
-} // namespace Hsm
-} // namespace AlibabaCloud
+            private:
+				int period_;
+				std::string periodUnit_;
+				std::string resourceOwnerId_;
+				int quantity_;
+				std::string hsmDeviceType_;
+				std::string clientToken_;
+				std::string zoneId_;
+				std::string hsmOem_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_HSM_MODEL_CREATEINSTANCEREQUEST_H_

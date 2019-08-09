@@ -35,11 +35,12 @@ DescribeDrdsInstancesResult::~DescribeDrdsInstancesResult()
 
 void DescribeDrdsInstancesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allData = value["Data"]["Instance"];
 	for (auto value : allData)
 	{
@@ -64,6 +65,10 @@ void DescribeDrdsInstancesResult::parse(const std::string &payload)
 			dataObject.version = std::stol(value["Version"].asString());
 		if(!value["VpcCloudInstanceId"].isNull())
 			dataObject.vpcCloudInstanceId = value["VpcCloudInstanceId"].asString();
+		if(!value["InstRole"].isNull())
+			dataObject.instRole = value["InstRole"].asString();
+		if(!value["MasterInstId"].isNull())
+			dataObject.masterInstId = value["MasterInstId"].asString();
 		auto allVips = value["Vips"]["Vip"];
 		for (auto value : allVips)
 		{
@@ -80,6 +85,9 @@ void DescribeDrdsInstancesResult::parse(const std::string &payload)
 				vipsObject.vswitchId = value["VswitchId"].asString();
 			dataObject.vips.push_back(vipsObject);
 		}
+		auto allSlaveInstId = value["SlaveInstId"]["instId"];
+		for (auto value : allSlaveInstId)
+			dataObject.slaveInstId.push_back(value.asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

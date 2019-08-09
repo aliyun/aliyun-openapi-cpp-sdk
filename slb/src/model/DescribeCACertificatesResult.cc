@@ -35,11 +35,12 @@ DescribeCACertificatesResult::~DescribeCACertificatesResult()
 
 void DescribeCACertificatesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allCACertificates = value["CACertificates"]["CACertificate"];
 	for (auto value : allCACertificates)
 	{
@@ -64,6 +65,16 @@ void DescribeCACertificatesResult::parse(const std::string &payload)
 			cACertificatesObject.expireTimeStamp = std::stol(value["ExpireTimeStamp"].asString());
 		if(!value["CommonName"].isNull())
 			cACertificatesObject.commonName = value["CommonName"].asString();
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+		{
+			CACertificate::Tag tagsObject;
+			if(!value["TagKey"].isNull())
+				tagsObject.tagKey = value["TagKey"].asString();
+			if(!value["TagValue"].isNull())
+				tagsObject.tagValue = value["TagValue"].asString();
+			cACertificatesObject.tags.push_back(tagsObject);
+		}
 		cACertificates_.push_back(cACertificatesObject);
 	}
 

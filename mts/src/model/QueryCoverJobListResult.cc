@@ -35,11 +35,12 @@ QueryCoverJobListResult::~QueryCoverJobListResult()
 
 void QueryCoverJobListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allCoverJobList = value["CoverJobList"]["CoverJob"];
 	for (auto value : allCoverJobList)
 	{
@@ -90,12 +91,19 @@ void QueryCoverJobListResult::parse(const std::string &payload)
 	auto allNonExistIds = value["NonExistIds"]["String"];
 	for (const auto &item : allNonExistIds)
 		nonExistIds_.push_back(item.asString());
+	if(!value["NextPageToken"].isNull())
+		nextPageToken_ = value["NextPageToken"].asString();
 
 }
 
 std::vector<QueryCoverJobListResult::CoverJob> QueryCoverJobListResult::getCoverJobList()const
 {
 	return coverJobList_;
+}
+
+std::string QueryCoverJobListResult::getNextPageToken()const
+{
+	return nextPageToken_;
 }
 
 std::vector<std::string> QueryCoverJobListResult::getNonExistIds()const

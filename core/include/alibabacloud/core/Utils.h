@@ -19,10 +19,12 @@
 
 #include <alibabacloud/core/HttpMessage.h>
 #include <alibabacloud/core/HttpRequest.h>
+#include <json/json.h>
 #include <map>
 #include <string>
 
-namespace AlibabaCloud {
+namespace AlibabaCloud
+{
 std::string ComputeContentMD5(const char *data, size_t size);
 std::string GenerateUuid();
 std::string HttpMethodToString(HttpRequest::Method method);
@@ -34,5 +36,6 @@ std::string
 canonicalizedQuery(const std::map<std::string, std::string> &params);
 std::string canonicalizedHeaders(const HttpMessage::HeaderCollection &headers);
 std::string GetEnv(const std::string env);
+Json::Value ReadJson(const std::string str);
 } // namespace AlibabaCloud
 #endif // CORE_SRC_UTILS_H_

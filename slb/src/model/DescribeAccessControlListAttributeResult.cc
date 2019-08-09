@@ -35,11 +35,12 @@ DescribeAccessControlListAttributeResult::~DescribeAccessControlListAttributeRes
 
 void DescribeAccessControlListAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allAclEntrys = value["AclEntrys"]["AclEntry"];
 	for (auto value : allAclEntrys)
 	{
@@ -70,12 +71,19 @@ void DescribeAccessControlListAttributeResult::parse(const std::string &payload)
 		aclName_ = value["AclName"].asString();
 	if(!value["AddressIPVersion"].isNull())
 		addressIPVersion_ = value["AddressIPVersion"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
 std::vector<DescribeAccessControlListAttributeResult::AclEntry> DescribeAccessControlListAttributeResult::getAclEntrys()const
 {
 	return aclEntrys_;
+}
+
+std::string DescribeAccessControlListAttributeResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string DescribeAccessControlListAttributeResult::getAclId()const

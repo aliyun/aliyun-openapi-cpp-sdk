@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,49 @@
 #ifndef ALIBABACLOUD_SDDP_MODEL_DESCRIBEDATALIMITSRESULT_H_
 #define ALIBABACLOUD_SDDP_MODEL_DESCRIBEDATALIMITSRESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/sddp/SddpExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace Sddp {
-namespace Model {
-class ALIBABACLOUD_SDDP_EXPORT DescribeDataLimitsResult : public ServiceResult {
-public:
-  struct DataLimit {
-    std::string parentId;
-    std::string connector;
-    long gmtCreate;
-    std::string userName;
-    int checkStatus;
-    std::string regionId;
-    long id;
-    std::string checkStatusName;
-    std::string localName;
-  };
+namespace AlibabaCloud
+{
+	namespace Sddp
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_SDDP_EXPORT DescribeDataLimitsResult : public ServiceResult
+			{
+			public:
+				struct DataLimit
+				{
+					std::string parentId;
+					std::string connector;
+					long gmtCreate;
+					std::string userName;
+					int checkStatus;
+					std::string resourceTypeCode;
+					long resourceType;
+					std::string regionId;
+					long id;
+					std::string checkStatusName;
+					std::string localName;
+				};
 
-  DescribeDataLimitsResult();
-  explicit DescribeDataLimitsResult(const std::string &payload);
-  ~DescribeDataLimitsResult();
-  std::vector<DataLimit> getDataLimitList() const;
 
-protected:
-  void parse(const std::string &payload);
+				DescribeDataLimitsResult();
+				explicit DescribeDataLimitsResult(const std::string &payload);
+				~DescribeDataLimitsResult();
+				std::vector<DataLimit> getDataLimitList()const;
 
-private:
-  std::vector<DataLimit> dataLimitList_;
-};
-} // namespace Model
-} // namespace Sddp
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<DataLimit> dataLimitList_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_SDDP_MODEL_DESCRIBEDATALIMITSRESULT_H_

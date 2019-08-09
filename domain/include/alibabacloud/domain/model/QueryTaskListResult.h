@@ -34,11 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct TaskInfo
 				{
+					int taskCancelStatusCode;
 					std::string taskNo;
 					int taskNum;
 					int taskStatusCode;
 					std::string taskType;
 					std::string createTime;
+					std::string taskCancelStatus;
 					std::string taskStatus;
 					std::string clientip;
 					std::string taskTypeDescription;

@@ -35,11 +35,12 @@ DescribeScreenOperateInfoResult::~DescribeScreenOperateInfoResult()
 
 void DescribeScreenOperateInfoResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allSuspEventValueArray = value["SuspEventValueArray"]["IntegerItem"];
 	for (const auto &item : allSuspEventValueArray)
 		suspEventValueArray_.push_back(item.asString());
@@ -60,12 +61,19 @@ void DescribeScreenOperateInfoResult::parse(const std::string &payload)
 		vulnerabilityDealedCount_ = std::stoi(value["VulnerabilityDealedCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["SuccessA"].isNull())
+		successA_ = value["SuccessA"].asString() == "true";
 
 }
 
 std::vector<std::string> DescribeScreenOperateInfoResult::getVulValueArray()const
 {
 	return vulValueArray_;
+}
+
+bool DescribeScreenOperateInfoResult::getSuccessA()const
+{
+	return successA_;
 }
 
 int DescribeScreenOperateInfoResult::getSecurityEventDealedCount()const

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,62 +17,69 @@
 #ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEVIEWCONTENTRESULT_H_
 #define ALIBABACLOUD_GREEN_MODEL_DESCRIBEVIEWCONTENTRESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/green/GreenExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace Green {
-namespace Model {
-class ALIBABACLOUD_GREEN_EXPORT DescribeViewContentResult
-    : public ServiceResult {
-public:
-  struct ViewContent {
-    struct Result {
-      std::string suggestion;
-      std::string label;
-      std::string scene;
-    };
-    struct FrameResult {
-      std::string url;
-      int offset;
-    };
-    std::string scanResult;
-    std::string taskId;
-    std::string bizType;
-    std::string requestTime;
-    std::string thumbnail;
-    std::string url;
-    std::string newUrl;
-    std::string scanFinishedTime;
-    std::string suggestion;
-    std::string dataId;
-    std::vector<ViewContent::Result> results;
-    std::vector<ViewContent::FrameResult> frameResults;
-    std::string content;
-    long id;
-  };
+namespace AlibabaCloud
+{
+	namespace Green
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_GREEN_EXPORT DescribeViewContentResult : public ServiceResult
+			{
+			public:
+				struct ViewContent
+				{
+					struct Result
+					{
+						std::string suggestion;
+						std::string label;
+						std::string scene;
+					};
+					struct FrameResult
+					{
+						std::string url;
+						int offset;
+					};
+					std::string scanResult;
+					std::string taskId;
+					std::string bizType;
+					std::string requestTime;
+					std::string thumbnail;
+					std::string url;
+					std::string newUrl;
+					std::string scanFinishedTime;
+					std::string suggestion;
+					std::string dataId;
+					std::vector<ViewContent::Result> results;
+					std::vector<ViewContent::FrameResult> frameResults;
+					std::string content;
+					long id;
+				};
 
-  DescribeViewContentResult();
-  explicit DescribeViewContentResult(const std::string &payload);
-  ~DescribeViewContentResult();
-  int getTotalCount() const;
-  std::vector<ViewContent> getViewContentList() const;
-  int getPageSize() const;
-  int getCurrentPage() const;
 
-protected:
-  void parse(const std::string &payload);
+				DescribeViewContentResult();
+				explicit DescribeViewContentResult(const std::string &payload);
+				~DescribeViewContentResult();
+				int getTotalCount()const;
+				std::vector<ViewContent> getViewContentList()const;
+				int getPageSize()const;
+				int getCurrentPage()const;
 
-private:
-  int totalCount_;
-  std::vector<ViewContent> viewContentList_;
-  int pageSize_;
-  int currentPage_;
-};
-} // namespace Model
-} // namespace Green
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				int totalCount_;
+				std::vector<ViewContent> viewContentList_;
+				int pageSize_;
+				int currentPage_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEVIEWCONTENTRESULT_H_

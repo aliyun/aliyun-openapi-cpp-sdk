@@ -35,11 +35,12 @@ DescribeRegionsResult::~DescribeRegionsResult()
 
 void DescribeRegionsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allRegions = value["Regions"]["Region"];
 	for (auto value : allRegions)
 	{
@@ -50,6 +51,10 @@ void DescribeRegionsResult::parse(const std::string &payload)
 			regionsObject.classicUnavailable = value["ClassicUnavailable"].asString() == "true";
 		if(!value["VpcUnavailable"].isNull())
 			regionsObject.vpcUnavailable = value["VpcUnavailable"].asString() == "true";
+		if(!value["RegionEndpoint"].isNull())
+			regionsObject.regionEndpoint = value["RegionEndpoint"].asString();
+		if(!value["LocalName"].isNull())
+			regionsObject.localName = value["LocalName"].asString();
 		regions_.push_back(regionsObject);
 	}
 

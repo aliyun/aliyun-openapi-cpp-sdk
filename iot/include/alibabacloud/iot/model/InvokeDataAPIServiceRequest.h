@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,40 +17,45 @@
 #ifndef ALIBABACLOUD_IOT_MODEL_INVOKEDATAAPISERVICEREQUEST_H_
 #define ALIBABACLOUD_IOT_MODEL_INVOKEDATAAPISERVICEREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/iot/IotExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/iot/IotExport.h>
 
-namespace AlibabaCloud {
-namespace Iot {
-namespace Model {
-class ALIBABACLOUD_IOT_EXPORT InvokeDataAPIServiceRequest
-    : public RpcServiceRequest {
-  struct Param {
-    std::string listParamType;
-    std::vector<std::string> listParamValue;
-    std::string paramValue;
-    std::string paramName;
-  };
+namespace AlibabaCloud
+{
+	namespace Iot
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_IOT_EXPORT InvokeDataAPIServiceRequest : public RpcServiceRequest
+			{
+				struct Param
+				{
+					std::string listParamType;
+					std::vector<std::string> listParamValue;
+					std::string paramValue;
+					std::string paramName;
+				};
 
-public:
-  InvokeDataAPIServiceRequest();
-  ~InvokeDataAPIServiceRequest();
+			public:
+				InvokeDataAPIServiceRequest();
+				~InvokeDataAPIServiceRequest();
 
-  std::string getApiSrn() const;
-  void setApiSrn(const std::string &apiSrn);
-  std::vector<Param> getParam() const;
-  void setParam(const std::vector<Param> &param);
-  std::string getAccessKeyId() const;
-  void setAccessKeyId(const std::string &accessKeyId);
+				std::string getApiSrn()const;
+				void setApiSrn(const std::string& apiSrn);
+				std::vector<Param> getParam()const;
+				void setParam(const std::vector<Param>& param);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 
-private:
-  std::string apiSrn_;
-  std::vector<Param> param_;
-  std::string accessKeyId_;
-};
-} // namespace Model
-} // namespace Iot
-} // namespace AlibabaCloud
+            private:
+				std::string apiSrn_;
+				std::vector<Param> param_;
+				std::string accessKeyId_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_IOT_MODEL_INVOKEDATAAPISERVICEREQUEST_H_

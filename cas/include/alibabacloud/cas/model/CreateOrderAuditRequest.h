@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,37 +17,41 @@
 #ifndef ALIBABACLOUD_CAS_MODEL_CREATEORDERAUDITREQUEST_H_
 #define ALIBABACLOUD_CAS_MODEL_CREATEORDERAUDITREQUEST_H_
 
-#include <alibabacloud/cas/CasExport.h>
-#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/cas/CasExport.h>
 
-namespace AlibabaCloud {
-namespace Cas {
-namespace Model {
-class ALIBABACLOUD_CAS_EXPORT CreateOrderAuditRequest
-    : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Cas
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_CAS_EXPORT CreateOrderAuditRequest : public RpcServiceRequest
+			{
 
-public:
-  CreateOrderAuditRequest();
-  ~CreateOrderAuditRequest();
+			public:
+				CreateOrderAuditRequest();
+				~CreateOrderAuditRequest();
 
-  std::string getSourceIp() const;
-  void setSourceIp(const std::string &sourceIp);
-  long getOrderId() const;
-  void setOrderId(long orderId);
-  std::string getLang() const;
-  void setLang(const std::string &lang);
-  std::string getType() const;
-  void setType(const std::string &type);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				long getOrderId()const;
+				void setOrderId(long orderId);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				std::string getType()const;
+				void setType(const std::string& type);
 
-private:
-  std::string sourceIp_;
-  long orderId_;
-  std::string lang_;
-  std::string type_;
-};
-} // namespace Model
-} // namespace Cas
-} // namespace AlibabaCloud
+            private:
+				std::string sourceIp_;
+				long orderId_;
+				std::string lang_;
+				std::string type_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_CAS_MODEL_CREATEORDERAUDITREQUEST_H_

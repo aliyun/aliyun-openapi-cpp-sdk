@@ -35,11 +35,12 @@ DescribeVulNumStatisticsResult::~DescribeVulNumStatisticsResult()
 
 void DescribeVulNumStatisticsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	if(!value["CveNum"].isNull())
 		cveNum_ = std::stoi(value["CveNum"].asString());
 	if(!value["EmgNum"].isNull())
@@ -48,6 +49,8 @@ void DescribeVulNumStatisticsResult::parse(const std::string &payload)
 		sysNum_ = std::stoi(value["SysNum"].asString());
 	if(!value["CmsNum"].isNull())
 		cmsNum_ = std::stoi(value["CmsNum"].asString());
+	if(!value["AppNum"].isNull())
+		appNum_ = std::stoi(value["AppNum"].asString());
 	if(!value["CmsDealedTotalNum"].isNull())
 		cmsDealedTotalNum_ = std::stoi(value["CmsDealedTotalNum"].asString());
 	if(!value["VulDealedTotalNum"].isNull())
@@ -58,7 +61,14 @@ void DescribeVulNumStatisticsResult::parse(const std::string &payload)
 		vulLaterSum_ = std::stoi(value["VulLaterSum"].asString());
 	if(!value["VulNntfSum"].isNull())
 		vulNntfSum_ = std::stoi(value["VulNntfSum"].asString());
+	if(!value["AppCnt"].isNull())
+		appCnt_ = std::stoi(value["AppCnt"].asString());
 
+}
+
+int DescribeVulNumStatisticsResult::getAppCnt()const
+{
+	return appCnt_;
 }
 
 int DescribeVulNumStatisticsResult::getVulDealedTotalNum()const
@@ -104,5 +114,10 @@ int DescribeVulNumStatisticsResult::getEmgNum()const
 int DescribeVulNumStatisticsResult::getSysNum()const
 {
 	return sysNum_;
+}
+
+int DescribeVulNumStatisticsResult::getAppNum()const
+{
+	return appNum_;
 }
 

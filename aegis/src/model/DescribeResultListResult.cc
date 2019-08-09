@@ -35,15 +35,16 @@ DescribeResultListResult::~DescribeResultListResult()
 
 void DescribeResultListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
-	auto allResultList = value["ResultList"]["ResultListItem"];
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
+	auto allResultList = value["ResultList"]["ResultListArr"];
 	for (auto value : allResultList)
 	{
-		ResultListItem resultListObject;
+		ResultListArr resultListObject;
 		if(!value["LastTimestamp"].isNull())
 			resultListObject.lastTimestamp = std::stol(value["LastTimestamp"].asString());
 		if(!value["ModifiedTimestamp"].isNull())
@@ -103,7 +104,7 @@ DescribeResultListResult::PageInfo DescribeResultListResult::getPageInfo()const
 	return pageInfo_;
 }
 
-std::vector<DescribeResultListResult::ResultListItem> DescribeResultListResult::getResultList()const
+std::vector<DescribeResultListResult::ResultListArr> DescribeResultListResult::getResultList()const
 {
 	return resultList_;
 }

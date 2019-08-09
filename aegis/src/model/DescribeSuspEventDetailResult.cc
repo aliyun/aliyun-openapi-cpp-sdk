@@ -35,11 +35,12 @@ DescribeSuspEventDetailResult::~DescribeSuspEventDetailResult()
 
 void DescribeSuspEventDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allDetails = value["Details"]["QuaraFile"];
 	for (auto value : allDetails)
 	{
@@ -53,6 +54,18 @@ void DescribeSuspEventDetailResult::parse(const std::string &payload)
 		if(!value["Value"].isNull())
 			detailsObject.value = value["Value"].asString();
 		details_.push_back(detailsObject);
+	}
+	auto allEventNotes = value["EventNotes"]["EventNote"];
+	for (auto value : allEventNotes)
+	{
+		EventNote eventNotesObject;
+		if(!value["NoteTime"].isNull())
+			eventNotesObject.noteTime = value["NoteTime"].asString();
+		if(!value["Note"].isNull())
+			eventNotesObject.note = value["Note"].asString();
+		if(!value["NoteId"].isNull())
+			eventNotesObject.noteId = std::stol(value["NoteId"].asString());
+		eventNotes_.push_back(eventNotesObject);
 	}
 	if(!value["LastTime"].isNull())
 		lastTime_ = value["LastTime"].asString();
@@ -88,6 +101,10 @@ void DescribeSuspEventDetailResult::parse(const std::string &payload)
 		eventName_ = value["EventName"].asString();
 	if(!value["CanBeDealOnLine"].isNull())
 		canBeDealOnLine_ = value["CanBeDealOnLine"].asString() == "true";
+	if(!value["AccessCode"].isNull())
+		accessCode_ = value["AccessCode"].asString();
+	if(!value["AlarmUniqueInfo"].isNull())
+		alarmUniqueInfo_ = value["AlarmUniqueInfo"].asString();
 
 }
 
@@ -104,6 +121,16 @@ std::string DescribeSuspEventDetailResult::getEventTypeDesc()const
 std::string DescribeSuspEventDetailResult::getEventStatus()const
 {
 	return eventStatus_;
+}
+
+std::string DescribeSuspEventDetailResult::getAccessCode()const
+{
+	return accessCode_;
+}
+
+std::vector<DescribeSuspEventDetailResult::EventNote> DescribeSuspEventDetailResult::getEventNotes()const
+{
+	return eventNotes_;
 }
 
 std::string DescribeSuspEventDetailResult::getEventName()const
@@ -159,6 +186,11 @@ std::string DescribeSuspEventDetailResult::getUuid()const
 std::string DescribeSuspEventDetailResult::getInternetIp()const
 {
 	return internetIp_;
+}
+
+std::string DescribeSuspEventDetailResult::getAlarmUniqueInfo()const
+{
+	return alarmUniqueInfo_;
 }
 
 std::string DescribeSuspEventDetailResult::getLevel()const

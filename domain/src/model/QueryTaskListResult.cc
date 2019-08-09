@@ -35,11 +35,12 @@ QueryTaskListResult::~QueryTaskListResult()
 
 void QueryTaskListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allData = value["Data"]["TaskInfo"];
 	for (auto value : allData)
 	{
@@ -60,6 +61,10 @@ void QueryTaskListResult::parse(const std::string &payload)
 			dataObject.taskStatusCode = std::stoi(value["TaskStatusCode"].asString());
 		if(!value["TaskTypeDescription"].isNull())
 			dataObject.taskTypeDescription = value["TaskTypeDescription"].asString();
+		if(!value["TaskCancelStatus"].isNull())
+			dataObject.taskCancelStatus = value["TaskCancelStatus"].asString();
+		if(!value["TaskCancelStatusCode"].isNull())
+			dataObject.taskCancelStatusCode = std::stoi(value["TaskCancelStatusCode"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

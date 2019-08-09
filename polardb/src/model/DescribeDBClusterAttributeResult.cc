@@ -35,11 +35,12 @@ DescribeDBClusterAttributeResult::~DescribeDBClusterAttributeResult()
 
 void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allTags = value["Tags"]["Tag"];
 	for (auto value : allTags)
 	{
@@ -109,7 +110,7 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 	if(!value["StorageUsed"].isNull())
 		storageUsed_ = std::stol(value["StorageUsed"].asString());
 	if(!value["StorageMax"].isNull())
-		storageMax_ = std::stoi(value["StorageMax"].asString());
+		storageMax_ = std::stol(value["StorageMax"].asString());
 	if(!value["ZoneIds"].isNull())
 		zoneIds_ = value["ZoneIds"].asString();
 	if(!value["SQLSize"].isNull())
@@ -189,7 +190,7 @@ std::string DescribeDBClusterAttributeResult::getDBVersion()const
 	return dBVersion_;
 }
 
-int DescribeDBClusterAttributeResult::getStorageMax()const
+long DescribeDBClusterAttributeResult::getStorageMax()const
 {
 	return storageMax_;
 }

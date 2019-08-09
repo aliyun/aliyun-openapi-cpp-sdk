@@ -35,11 +35,12 @@ DescribeActionDataResult::~DescribeActionDataResult()
 
 void DescribeActionDataResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allActionsMsgItems = value["ActionsMsgItems"]["ActionsMsgItem"];
 	for (auto value : allActionsMsgItems)
 	{
@@ -110,11 +111,20 @@ void DescribeActionDataResult::parse(const std::string &payload)
 		pageLimit_ = std::stoi(value["PageLimit"].asString());
 	if(!value["PageCount"].isNull())
 		pageCount_ = std::stoi(value["PageCount"].asString());
+	if(!value["IsSuccess"].isNull())
+		isSuccess_ = value["IsSuccess"].asString() == "true";
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["StoreId"].isNull())
 		storeId_ = value["StoreId"].asString();
 	if(!value["TsEnd"].isNull())
 		tsEnd_ = std::stol(value["TsEnd"].asString());
 
+}
+
+bool DescribeActionDataResult::getIsSuccess()const
+{
+	return isSuccess_;
 }
 
 long DescribeActionDataResult::getTsStart()const
@@ -130,6 +140,11 @@ int DescribeActionDataResult::getPageCount()const
 std::string DescribeActionDataResult::getStoreId()const
 {
 	return storeId_;
+}
+
+std::string DescribeActionDataResult::getErrorMsg()const
+{
+	return errorMsg_;
 }
 
 long DescribeActionDataResult::getTsEnd()const

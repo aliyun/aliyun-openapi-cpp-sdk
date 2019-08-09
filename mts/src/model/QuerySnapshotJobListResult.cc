@@ -35,11 +35,12 @@ QuerySnapshotJobListResult::~QuerySnapshotJobListResult()
 
 void QuerySnapshotJobListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allSnapshotJobList = value["SnapshotJobList"]["SnapshotJob"];
 	for (auto value : allSnapshotJobList)
 	{
@@ -133,6 +134,8 @@ void QuerySnapshotJobListResult::parse(const std::string &payload)
 	auto allNonExistSnapshotJobIds = value["NonExistSnapshotJobIds"]["String"];
 	for (const auto &item : allNonExistSnapshotJobIds)
 		nonExistSnapshotJobIds_.push_back(item.asString());
+	if(!value["NextPageToken"].isNull())
+		nextPageToken_ = value["NextPageToken"].asString();
 
 }
 
@@ -144,5 +147,10 @@ std::vector<QuerySnapshotJobListResult::SnapshotJob> QuerySnapshotJobListResult:
 std::vector<std::string> QuerySnapshotJobListResult::getNonExistSnapshotJobIds()const
 {
 	return nonExistSnapshotJobIds_;
+}
+
+std::string QuerySnapshotJobListResult::getNextPageToken()const
+{
+	return nextPageToken_;
 }
 

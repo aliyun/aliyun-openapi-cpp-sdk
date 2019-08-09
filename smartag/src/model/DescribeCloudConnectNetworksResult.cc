@@ -35,11 +35,12 @@ DescribeCloudConnectNetworksResult::~DescribeCloudConnectNetworksResult()
 
 void DescribeCloudConnectNetworksResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allCloudConnectNetworks = value["CloudConnectNetworks"]["CloudConnectNetwork"];
 	for (auto value : allCloudConnectNetworks)
 	{
@@ -66,6 +67,8 @@ void DescribeCloudConnectNetworksResult::parse(const std::string &payload)
 			cloudConnectNetworksObject.cidrBlock = value["CidrBlock"].asString();
 		if(!value["SnatCidrBlock"].isNull())
 			cloudConnectNetworksObject.snatCidrBlock = value["SnatCidrBlock"].asString();
+		if(!value["InterworkingStatus"].isNull())
+			cloudConnectNetworksObject.interworkingStatus = value["InterworkingStatus"].asString();
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{

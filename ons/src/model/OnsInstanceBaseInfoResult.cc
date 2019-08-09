@@ -35,11 +35,12 @@ OnsInstanceBaseInfoResult::~OnsInstanceBaseInfoResult()
 
 void OnsInstanceBaseInfoResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto instanceBaseInfoNode = value["InstanceBaseInfo"];
 	if(!instanceBaseInfoNode["InstanceId"].isNull())
 		instanceBaseInfo_.instanceId = instanceBaseInfoNode["InstanceId"].asString();
@@ -53,6 +54,8 @@ void OnsInstanceBaseInfoResult::parse(const std::string &payload)
 		instanceBaseInfo_.instanceName = instanceBaseInfoNode["InstanceName"].asString();
 	if(!instanceBaseInfoNode["IndependentNaming"].isNull())
 		instanceBaseInfo_.independentNaming = instanceBaseInfoNode["IndependentNaming"].asString() == "true";
+	if(!instanceBaseInfoNode["Remark"].isNull())
+		instanceBaseInfo_.remark = instanceBaseInfoNode["Remark"].asString();
 	auto endpointsNode = instanceBaseInfoNode["Endpoints"];
 	if(!endpointsNode["TcpEndpoint"].isNull())
 		instanceBaseInfo_.endpoints.tcpEndpoint = endpointsNode["TcpEndpoint"].asString();

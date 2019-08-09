@@ -35,11 +35,12 @@ DescribeZoneInfoResult::~DescribeZoneInfoResult()
 
 void DescribeZoneInfoResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allBindVpcs = value["BindVpcs"]["Vpc"];
 	for (auto value : allBindVpcs)
 	{
@@ -76,6 +77,8 @@ void DescribeZoneInfoResult::parse(const std::string &payload)
 		isPtr_ = value["IsPtr"].asString() == "true";
 	if(!value["ProxyPattern"].isNull())
 		proxyPattern_ = value["ProxyPattern"].asString();
+	if(!value["SlaveDns"].isNull())
+		slaveDns_ = value["SlaveDns"].asString() == "true";
 
 }
 
@@ -87,6 +90,11 @@ std::string DescribeZoneInfoResult::getZoneName()const
 std::string DescribeZoneInfoResult::getZoneId()const
 {
 	return zoneId_;
+}
+
+bool DescribeZoneInfoResult::getSlaveDns()const
+{
+	return slaveDns_;
 }
 
 std::string DescribeZoneInfoResult::getProxyPattern()const

@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string accountDescription;
 					std::string accountStatus;
 					std::string dBInstanceId;
+					std::string characterType;
 					std::string accountName;
 				};
 

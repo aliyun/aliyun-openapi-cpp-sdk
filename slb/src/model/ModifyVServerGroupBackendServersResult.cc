@@ -35,11 +35,12 @@ ModifyVServerGroupBackendServersResult::~ModifyVServerGroupBackendServersResult(
 
 void ModifyVServerGroupBackendServersResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allBackendServers = value["BackendServers"]["BackendServer"];
 	for (auto value : allBackendServers)
 	{
@@ -54,10 +55,10 @@ void ModifyVServerGroupBackendServersResult::parse(const std::string &payload)
 			backendServersObject.type = value["Type"].asString();
 		if(!value["ServerIp"].isNull())
 			backendServersObject.serverIp = value["ServerIp"].asString();
-		if(!value["EniHost"].isNull())
-			backendServersObject.eniHost = value["EniHost"].asString();
 		if(!value["VpcId"].isNull())
 			backendServersObject.vpcId = value["VpcId"].asString();
+		if(!value["Description"].isNull())
+			backendServersObject.description = value["Description"].asString();
 		backendServers_.push_back(backendServersObject);
 	}
 	if(!value["VServerGroupId"].isNull())

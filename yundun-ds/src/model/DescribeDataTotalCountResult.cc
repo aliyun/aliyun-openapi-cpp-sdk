@@ -35,11 +35,12 @@ DescribeDataTotalCountResult::~DescribeDataTotalCountResult()
 
 void DescribeDataTotalCountResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto dataCountNode = value["DataCount"];
 	auto instanceNode = dataCountNode["Instance"];
 	if(!instanceNode["TotalCount"].isNull())
@@ -87,28 +88,28 @@ void DescribeDataTotalCountResult::parse(const std::string &payload)
 			riskCount2Object.count = std::stol(value["Count"].asString());
 		dataCount_.table.riskCountList1.push_back(riskCount2Object);
 	}
-	auto packageInDescribeDataTotalCountNode = dataCountNode["Package"];
-	if(!packageInDescribeDataTotalCountNode["TotalCount"].isNull())
-		dataCount_.packageInDescribeDataTotalCount.totalCount = std::stol(packageInDescribeDataTotalCountNode["TotalCount"].asString());
-	if(!packageInDescribeDataTotalCountNode["Count"].isNull())
-		dataCount_.packageInDescribeDataTotalCount.count = std::stol(packageInDescribeDataTotalCountNode["Count"].asString());
-	if(!packageInDescribeDataTotalCountNode["SensitiveCount"].isNull())
-		dataCount_.packageInDescribeDataTotalCount.sensitiveCount = std::stol(packageInDescribeDataTotalCountNode["SensitiveCount"].asString());
-	if(!packageInDescribeDataTotalCountNode["LastCount"].isNull())
-		dataCount_.packageInDescribeDataTotalCount.lastCount = std::stol(packageInDescribeDataTotalCountNode["LastCount"].asString());
-	if(!packageInDescribeDataTotalCountNode["LastSensitiveCount"].isNull())
-		dataCount_.packageInDescribeDataTotalCount.lastSensitiveCount = std::stol(packageInDescribeDataTotalCountNode["LastSensitiveCount"].asString());
+	auto packageNode = dataCountNode["Package"];
+	if(!packageNode["TotalCount"].isNull())
+		dataCount_.package.totalCount = std::stol(packageNode["TotalCount"].asString());
+	if(!packageNode["Count"].isNull())
+		dataCount_.package.count = std::stol(packageNode["Count"].asString());
+	if(!packageNode["SensitiveCount"].isNull())
+		dataCount_.package.sensitiveCount = std::stol(packageNode["SensitiveCount"].asString());
+	if(!packageNode["LastCount"].isNull())
+		dataCount_.package.lastCount = std::stol(packageNode["LastCount"].asString());
+	if(!packageNode["LastSensitiveCount"].isNull())
+		dataCount_.package.lastSensitiveCount = std::stol(packageNode["LastSensitiveCount"].asString());
 	auto allRiskCountList3 = value["RiskCountList"]["RiskCount"];
 	for (auto value : allRiskCountList3)
 	{
-		DataCount::PackageInDescribeDataTotalCount::RiskCount4 riskCount4Object;
+		DataCount::Package::RiskCount4 riskCount4Object;
 		if(!value["Id"].isNull())
 			riskCount4Object.id = std::stol(value["Id"].asString());
 		if(!value["Name"].isNull())
 			riskCount4Object.name = value["Name"].asString();
 		if(!value["Count"].isNull())
 			riskCount4Object.count = std::stol(value["Count"].asString());
-		dataCount_.packageInDescribeDataTotalCount.riskCountList3.push_back(riskCount4Object);
+		dataCount_.package.riskCountList3.push_back(riskCount4Object);
 	}
 	auto columnNode = dataCountNode["Column"];
 	if(!columnNode["TotalCount"].isNull())

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,57 +17,64 @@
 #ifndef ALIBABACLOUD_CMS_MODEL_LISTEVENTRULESRESULT_H_
 #define ALIBABACLOUD_CMS_MODEL_LISTEVENTRULESRESULT_H_
 
-#include <alibabacloud/cms/CmsExport.h>
-#include <alibabacloud/core/ServiceResult.h>
 #include <string>
-#include <utility>
 #include <vector>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/cms/CmsExport.h>
 
-namespace AlibabaCloud {
-namespace Cms {
-namespace Model {
-class ALIBABACLOUD_CMS_EXPORT ListEventRulesResult : public ServiceResult {
-public:
-  struct EventRule {
-    struct EventPatternItem {
-      std::vector<std::string> nameList;
-      std::vector<std::string> levelList;
-      std::vector<std::string> statusList;
-      std::vector<std::string> eventTypeList;
-      std::string product;
-    };
-    std::vector<EventRule::EventPatternItem> eventPattern;
-    std::string description;
-    std::string eventType;
-    std::string state;
-    std::string name;
-    std::string groupId;
-  };
+namespace AlibabaCloud
+{
+	namespace Cms
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_CMS_EXPORT ListEventRulesResult : public ServiceResult
+			{
+			public:
+				struct EventRule
+				{
+					struct EventPatternItem
+					{
+						std::vector<std::string> nameList;
+						std::vector<std::string> levelList;
+						std::vector<std::string> statusList;
+						std::vector<std::string> eventTypeList;
+						std::string product;
+					};
+					std::vector<EventRule::EventPatternItem> eventPattern;
+					std::string description;
+					std::string eventType;
+					std::string state;
+					std::string name;
+					std::string groupId;
+				};
 
-  ListEventRulesResult();
-  explicit ListEventRulesResult(const std::string &payload);
-  ~ListEventRulesResult();
-  std::string getMessage() const;
-  std::string getNextToken() const;
-  int getCurrentPage() const;
-  int getTotal() const;
-  std::vector<EventRule> getDatapoints() const;
-  std::string getCode() const;
-  bool getSuccess() const;
 
-protected:
-  void parse(const std::string &payload);
+				ListEventRulesResult();
+				explicit ListEventRulesResult(const std::string &payload);
+				~ListEventRulesResult();
+				std::string getMessage()const;
+				std::string getNextToken()const;
+				int getCurrentPage()const;
+				int getTotal()const;
+				std::vector<EventRule> getDatapoints()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
-private:
-  std::string message_;
-  std::string nextToken_;
-  int currentPage_;
-  int total_;
-  std::vector<EventRule> datapoints_;
-  std::string code_;
-  bool success_;
-};
-} // namespace Model
-} // namespace Cms
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				std::string nextToken_;
+				int currentPage_;
+				int total_;
+				std::vector<EventRule> datapoints_;
+				std::string code_;
+				bool success_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_CMS_MODEL_LISTEVENTRULESRESULT_H_

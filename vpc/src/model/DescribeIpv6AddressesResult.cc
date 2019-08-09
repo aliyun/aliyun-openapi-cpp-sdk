@@ -35,11 +35,12 @@ DescribeIpv6AddressesResult::~DescribeIpv6AddressesResult()
 
 void DescribeIpv6AddressesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allIpv6Addresses = value["Ipv6Addresses"]["Ipv6Address"];
 	for (auto value : allIpv6Addresses)
 	{

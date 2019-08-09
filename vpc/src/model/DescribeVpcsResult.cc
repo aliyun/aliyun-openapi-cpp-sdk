@@ -35,11 +35,12 @@ DescribeVpcsResult::~DescribeVpcsResult()
 
 void DescribeVpcsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allVpcs = value["Vpcs"]["Vpc"];
 	for (auto value : allVpcs)
 	{
@@ -64,8 +65,12 @@ void DescribeVpcsResult::parse(const std::string &payload)
 			vpcsObject.description = value["Description"].asString();
 		if(!value["IsDefault"].isNull())
 			vpcsObject.isDefault = value["IsDefault"].asString() == "true";
+		if(!value["NetworkAclNum"].isNull())
+			vpcsObject.networkAclNum = value["NetworkAclNum"].asString();
 		if(!value["ResourceGroupId"].isNull())
 			vpcsObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["CenStatus"].isNull())
+			vpcsObject.cenStatus = value["CenStatus"].asString();
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{

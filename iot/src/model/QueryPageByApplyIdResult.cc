@@ -35,11 +35,12 @@ QueryPageByApplyIdResult::~QueryPageByApplyIdResult()
 
 void QueryPageByApplyIdResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allApplyDeviceList = value["ApplyDeviceList"]["ApplyDeviceInfo"];
 	for (auto value : allApplyDeviceList)
 	{
@@ -50,6 +51,8 @@ void QueryPageByApplyIdResult::parse(const std::string &payload)
 			applyDeviceListObject.deviceName = value["DeviceName"].asString();
 		if(!value["DeviceSecret"].isNull())
 			applyDeviceListObject.deviceSecret = value["DeviceSecret"].asString();
+		if(!value["IotId"].isNull())
+			applyDeviceListObject.iotId = value["IotId"].asString();
 		applyDeviceList_.push_back(applyDeviceListObject);
 	}
 	if(!value["Success"].isNull())

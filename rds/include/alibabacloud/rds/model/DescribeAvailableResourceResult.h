@@ -34,36 +34,43 @@ namespace AlibabaCloud
 			public:
 				struct AvailableZone
 				{
-					struct SupportedEngines
+					struct SupportedEngine
 					{
-						struct SupportedEngineVersions
+						struct SupportedEngineVersion
 						{
-							struct SupportedCategorys
+							struct SupportedCategory
 							{
-								struct SupportedStorageTypes
+								struct SupportedStorageType
 								{
-									struct AvailableResources
+									struct AvailableResource
 									{
+										struct DBInstanceStorageRange
+										{
+											int min;
+											int max;
+											int step;
+										};
 										std::string dBInstanceClass;
+										DBInstanceStorageRange dBInstanceStorageRange;
 										std::string storageRange;
 									};
 									std::string storageType;
-									std::vector<SupportedStorageTypes::AvailableResources> availableResource;
+									std::vector<SupportedStorageType::AvailableResource> availableResources;
 								};
 								std::string category;
-								std::vector<SupportedCategorys::SupportedStorageTypes> supportedStorageType;
+								std::vector<SupportedCategory::SupportedStorageType> supportedStorageTypes;
 							};
+							std::vector<SupportedEngineVersion::SupportedCategory> supportedCategorys;
 							std::string version;
-							std::vector<SupportedEngineVersions::SupportedCategorys> supportedCategory;
 						};
-						std::vector<SupportedEngines::SupportedEngineVersions> supportedEngineVersion;
+						std::vector<SupportedEngine::SupportedEngineVersion> supportedEngineVersions;
 						std::string engine;
 					};
 					std::string status;
 					std::string networkTypes;
 					std::string zoneId;
+					std::vector<AvailableZone::SupportedEngine> supportedEngines;
 					std::string regionId;
-					std::vector<AvailableZone::SupportedEngines> supportedEngine;
 				};
 
 

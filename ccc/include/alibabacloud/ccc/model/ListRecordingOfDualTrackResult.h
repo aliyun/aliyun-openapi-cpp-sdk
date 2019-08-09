@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,60 +17,66 @@
 #ifndef ALIBABACLOUD_CCC_MODEL_LISTRECORDINGOFDUALTRACKRESULT_H_
 #define ALIBABACLOUD_CCC_MODEL_LISTRECORDINGOFDUALTRACKRESULT_H_
 
-#include <alibabacloud/ccc/CCCExport.h>
-#include <alibabacloud/core/ServiceResult.h>
 #include <string>
-#include <utility>
 #include <vector>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/ccc/CCCExport.h>
 
-namespace AlibabaCloud {
-namespace CCC {
-namespace Model {
-class ALIBABACLOUD_CCC_EXPORT ListRecordingOfDualTrackResult
-    : public ServiceResult {
-public:
-  struct Recordings {
-    struct Recording {
-      std::string filePath;
-      std::string calledNumber;
-      std::string contactType;
-      std::string instanceId;
-      std::string fileName;
-      std::string channel;
-      long startTime;
-      int duration;
-      std::string contactId;
-      std::string callingNumber;
-      std::string fileDescription;
-      std::string agentId;
-      std::string agentName;
-    };
-    int totalCount;
-    int pageSize;
-    int pageNumber;
-    std::vector<Recording> list;
-  };
+namespace AlibabaCloud
+{
+	namespace CCC
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_CCC_EXPORT ListRecordingOfDualTrackResult : public ServiceResult
+			{
+			public:
+				struct Recordings
+				{
+					struct Recording
+					{
+						std::string filePath;
+						std::string calledNumber;
+						std::string contactType;
+						std::string instanceId;
+						std::string fileName;
+						std::string channel;
+						long startTime;
+						int duration;
+						std::string contactId;
+						std::string callingNumber;
+						std::string fileDescription;
+						std::string agentId;
+						std::string agentName;
+					};
+					int totalCount;
+					int pageSize;
+					int pageNumber;
+					std::vector<Recording> list;
+				};
 
-  ListRecordingOfDualTrackResult();
-  explicit ListRecordingOfDualTrackResult(const std::string &payload);
-  ~ListRecordingOfDualTrackResult();
-  std::string getMessage() const;
-  int getHttpStatusCode() const;
-  Recordings getRecordings() const;
-  std::string getCode() const;
-  bool getSuccess() const;
 
-protected:
-  void parse(const std::string &payload);
+				ListRecordingOfDualTrackResult();
+				explicit ListRecordingOfDualTrackResult(const std::string &payload);
+				~ListRecordingOfDualTrackResult();
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				Recordings getRecordings()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
-private:
-  std::string message_;
-  int httpStatusCode_;
-  Recordings recordings_;
-  std::string code_;
-  bool success_;
-};
-} // namespace Model
-} // namespace CCC
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				int httpStatusCode_;
+				Recordings recordings_;
+				std::string code_;
+				bool success_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_CCC_MODEL_LISTRECORDINGOFDUALTRACKRESULT_H_

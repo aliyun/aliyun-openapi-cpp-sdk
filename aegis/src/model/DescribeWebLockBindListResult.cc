@@ -35,11 +35,12 @@ DescribeWebLockBindListResult::~DescribeWebLockBindListResult()
 
 void DescribeWebLockBindListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allBindList = value["BindList"]["Bind"];
 	for (auto value : allBindList)
 	{
@@ -64,6 +65,8 @@ void DescribeWebLockBindListResult::parse(const std::string &payload)
 			bindListObject.serviceDetail = value["ServiceDetail"].asString();
 		if(!value["Status"].isNull())
 			bindListObject.status = value["Status"].asString();
+		if(!value["Percent"].isNull())
+			bindListObject.percent = std::stoi(value["Percent"].asString());
 		bindList_.push_back(bindListObject);
 	}
 	if(!value["PageSize"].isNull())

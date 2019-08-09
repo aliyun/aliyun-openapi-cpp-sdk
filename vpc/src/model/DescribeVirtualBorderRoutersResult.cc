@@ -35,11 +35,12 @@ DescribeVirtualBorderRoutersResult::~DescribeVirtualBorderRoutersResult()
 
 void DescribeVirtualBorderRoutersResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allVirtualBorderRouterSet = value["VirtualBorderRouterSet"]["VirtualBorderRouterType"];
 	for (auto value : allVirtualBorderRouterSet)
 	{
@@ -84,6 +85,16 @@ void DescribeVirtualBorderRoutersResult::parse(const std::string &payload)
 			virtualBorderRouterSetObject.name = value["Name"].asString();
 		if(!value["Description"].isNull())
 			virtualBorderRouterSetObject.description = value["Description"].asString();
+		if(!value["EccId"].isNull())
+			virtualBorderRouterSetObject.eccId = value["EccId"].asString();
+		if(!value["Type"].isNull())
+			virtualBorderRouterSetObject.type = value["Type"].asString();
+		if(!value["MinTxInterval"].isNull())
+			virtualBorderRouterSetObject.minTxInterval = std::stol(value["MinTxInterval"].asString());
+		if(!value["MinRxInterval"].isNull())
+			virtualBorderRouterSetObject.minRxInterval = std::stol(value["MinRxInterval"].asString());
+		if(!value["DetectMultiplier"].isNull())
+			virtualBorderRouterSetObject.detectMultiplier = std::stol(value["DetectMultiplier"].asString());
 		auto allAssociatedPhysicalConnections = value["AssociatedPhysicalConnections"]["AssociatedPhysicalConnection"];
 		for (auto value : allAssociatedPhysicalConnections)
 		{

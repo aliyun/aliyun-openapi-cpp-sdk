@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,57 +17,62 @@
 #ifndef ALIBABACLOUD_SLB_MODEL_DESCRIBETAGSREQUEST_H_
 #define ALIBABACLOUD_SLB_MODEL_DESCRIBETAGSREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/slb/SlbExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/slb/SlbExport.h>
 
-namespace AlibabaCloud {
-namespace Slb {
-namespace Model {
-class ALIBABACLOUD_SLB_EXPORT DescribeTagsRequest : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Slb
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_SLB_EXPORT DescribeTagsRequest : public RpcServiceRequest
+			{
 
-public:
-  DescribeTagsRequest();
-  ~DescribeTagsRequest();
+			public:
+				DescribeTagsRequest();
+				~DescribeTagsRequest();
 
-  std::string getAccess_key_id() const;
-  void setAccess_key_id(const std::string &access_key_id);
-  long getResourceOwnerId() const;
-  void setResourceOwnerId(long resourceOwnerId);
-  std::string getLoadBalancerId() const;
-  void setLoadBalancerId(const std::string &loadBalancerId);
-  std::string getResourceOwnerAccount() const;
-  void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-  std::string getRegionId() const;
-  void setRegionId(const std::string &regionId);
-  std::string getOwnerAccount() const;
-  void setOwnerAccount(const std::string &ownerAccount);
-  int getPageSize() const;
-  void setPageSize(int pageSize);
-  bool getDistinctKey() const;
-  void setDistinctKey(bool distinctKey);
-  long getOwnerId() const;
-  void setOwnerId(long ownerId);
-  int getPageNumber() const;
-  void setPageNumber(int pageNumber);
-  std::string getTags() const;
-  void setTags(const std::string &tags);
+				std::string getAccess_key_id()const;
+				void setAccess_key_id(const std::string& access_key_id);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getLoadBalancerId()const;
+				void setLoadBalancerId(const std::string& loadBalancerId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				bool getDistinctKey()const;
+				void setDistinctKey(bool distinctKey);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getTags()const;
+				void setTags(const std::string& tags);
 
-private:
-  std::string access_key_id_;
-  long resourceOwnerId_;
-  std::string loadBalancerId_;
-  std::string resourceOwnerAccount_;
-  std::string regionId_;
-  std::string ownerAccount_;
-  int pageSize_;
-  bool distinctKey_;
-  long ownerId_;
-  int pageNumber_;
-  std::string tags_;
-};
-} // namespace Model
-} // namespace Slb
-} // namespace AlibabaCloud
+            private:
+				std::string access_key_id_;
+				long resourceOwnerId_;
+				std::string loadBalancerId_;
+				std::string resourceOwnerAccount_;
+				std::string regionId_;
+				std::string ownerAccount_;
+				int pageSize_;
+				bool distinctKey_;
+				long ownerId_;
+				int pageNumber_;
+				std::string tags_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_SLB_MODEL_DESCRIBETAGSREQUEST_H_

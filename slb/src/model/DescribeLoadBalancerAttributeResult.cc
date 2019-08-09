@@ -35,11 +35,12 @@ DescribeLoadBalancerAttributeResult::~DescribeLoadBalancerAttributeResult()
 
 void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allListenerPortsAndProtocal = value["ListenerPortsAndProtocal"]["ListenerPortAndProtocal"];
 	for (auto value : allListenerPortsAndProtocal)
 	{
@@ -62,6 +63,8 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 			listenerPortsAndProtocolObject.listenerForward = value["ListenerForward"].asString();
 		if(!value["ForwardPort"].isNull())
 			listenerPortsAndProtocolObject.forwardPort = std::stoi(value["ForwardPort"].asString());
+		if(!value["Description"].isNull())
+			listenerPortsAndProtocolObject.description = value["Description"].asString();
 		listenerPortsAndProtocol_.push_back(listenerPortsAndProtocolObject);
 	}
 	auto allBackendServers = value["BackendServers"]["BackendServer"];
@@ -76,10 +79,10 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 			backendServersObject.type = value["Type"].asString();
 		if(!value["ServerIp"].isNull())
 			backendServersObject.serverIp = value["ServerIp"].asString();
-		if(!value["EniHost"].isNull())
-			backendServersObject.eniHost = value["EniHost"].asString();
 		if(!value["VpcId"].isNull())
 			backendServersObject.vpcId = value["VpcId"].asString();
+		if(!value["Description"].isNull())
+			backendServersObject.description = value["Description"].asString();
 		backendServers_.push_back(backendServersObject);
 	}
 	auto allListenerPorts = value["ListenerPorts"]["ListenerPort"];
@@ -139,6 +142,18 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 		renewalStatus_ = value["RenewalStatus"].asString();
 	if(!value["RenewalCycUnit"].isNull())
 		renewalCycUnit_ = value["RenewalCycUnit"].asString();
+	if(!value["HasReservedInfo"].isNull())
+		hasReservedInfo_ = value["HasReservedInfo"].asString();
+	if(!value["ReservedInfoOrderType"].isNull())
+		reservedInfoOrderType_ = value["ReservedInfoOrderType"].asString();
+	if(!value["ReservedInfoInternetChargeType"].isNull())
+		reservedInfoInternetChargeType_ = value["ReservedInfoInternetChargeType"].asString();
+	if(!value["ReservedInfoBandwidth"].isNull())
+		reservedInfoBandwidth_ = value["ReservedInfoBandwidth"].asString();
+	if(!value["ReservedInfoActiveTime"].isNull())
+		reservedInfoActiveTime_ = value["ReservedInfoActiveTime"].asString();
+	if(!value["DeleteProtection"].isNull())
+		deleteProtection_ = value["DeleteProtection"].asString();
 
 }
 
@@ -185,6 +200,16 @@ std::string DescribeLoadBalancerAttributeResult::getLoadBalancerId()const
 std::vector<DescribeLoadBalancerAttributeResult::BackendServer> DescribeLoadBalancerAttributeResult::getBackendServers()const
 {
 	return backendServers_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getHasReservedInfo()const
+{
+	return hasReservedInfo_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getReservedInfoBandwidth()const
+{
+	return reservedInfoBandwidth_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getLoadBalancerSpec()const
@@ -242,6 +267,11 @@ std::string DescribeLoadBalancerAttributeResult::getPayType()const
 	return payType_;
 }
 
+std::string DescribeLoadBalancerAttributeResult::getReservedInfoActiveTime()const
+{
+	return reservedInfoActiveTime_;
+}
+
 std::string DescribeLoadBalancerAttributeResult::getSlaveZoneId()const
 {
 	return slaveZoneId_;
@@ -257,6 +287,11 @@ std::string DescribeLoadBalancerAttributeResult::getRegionIdAlias()const
 	return regionIdAlias_;
 }
 
+std::string DescribeLoadBalancerAttributeResult::getReservedInfoInternetChargeType()const
+{
+	return reservedInfoInternetChargeType_;
+}
+
 std::string DescribeLoadBalancerAttributeResult::getLoadBalancerName()const
 {
 	return loadBalancerName_;
@@ -267,6 +302,11 @@ std::string DescribeLoadBalancerAttributeResult::getVpcId()const
 	return vpcId_;
 }
 
+std::string DescribeLoadBalancerAttributeResult::getDeleteProtection()const
+{
+	return deleteProtection_;
+}
+
 long DescribeLoadBalancerAttributeResult::getEndTimeStamp()const
 {
 	return endTimeStamp_;
@@ -275,6 +315,11 @@ long DescribeLoadBalancerAttributeResult::getEndTimeStamp()const
 std::string DescribeLoadBalancerAttributeResult::getRegionId()const
 {
 	return regionId_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getReservedInfoOrderType()const
+{
+	return reservedInfoOrderType_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getAddressType()const

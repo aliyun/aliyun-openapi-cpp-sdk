@@ -35,11 +35,12 @@ ModifyPhoneNumberResult::~ModifyPhoneNumberResult()
 
 void ModifyPhoneNumberResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto phoneNumberNode = value["PhoneNumber"];
 	if(!phoneNumberNode["PhoneNumberId"].isNull())
 		phoneNumber_.phoneNumberId = phoneNumberNode["PhoneNumberId"].asString();
@@ -59,6 +60,16 @@ void ModifyPhoneNumberResult::parse(const std::string &payload)
 		phoneNumber_.usage = phoneNumberNode["Usage"].asString();
 	if(!phoneNumberNode["Trunks"].isNull())
 		phoneNumber_.trunks = std::stoi(phoneNumberNode["Trunks"].asString());
+	auto allSkillGroups = value["SkillGroups"]["SkillGroup"];
+	for (auto value : allSkillGroups)
+	{
+		PhoneNumber::SkillGroup skillGroupObject;
+		if(!value["SkillGroupId"].isNull())
+			skillGroupObject.skillGroupId = value["SkillGroupId"].asString();
+		if(!value["SkillGroupName"].isNull())
+			skillGroupObject.skillGroupName = value["SkillGroupName"].asString();
+		phoneNumber_.skillGroups.push_back(skillGroupObject);
+	}
 	auto contactFlowNode = phoneNumberNode["ContactFlow"];
 	if(!contactFlowNode["ContactFlowId"].isNull())
 		phoneNumber_.contactFlow.contactFlowId = contactFlowNode["ContactFlowId"].asString();

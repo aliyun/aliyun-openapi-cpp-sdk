@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,49 +17,55 @@
 #ifndef ALIBABACLOUD_CMS_MODEL_PUTEVENTRULEREQUEST_H_
 #define ALIBABACLOUD_CMS_MODEL_PUTEVENTRULEREQUEST_H_
 
-#include <alibabacloud/cms/CmsExport.h>
-#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/cms/CmsExport.h>
 
-namespace AlibabaCloud {
-namespace Cms {
-namespace Model {
-class ALIBABACLOUD_CMS_EXPORT PutEventRuleRequest : public RpcServiceRequest {
-  struct EventPattern {
-    std::vector<std::string> levelList;
-    std::string product;
-    std::vector<std::string> statusList;
-    std::vector<std::string> nameList;
-    std::vector<std::string> eventTypeList;
-  };
+namespace AlibabaCloud
+{
+	namespace Cms
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_CMS_EXPORT PutEventRuleRequest : public RpcServiceRequest
+			{
+				struct EventPattern
+				{
+					std::vector<std::string> levelList;
+					std::string product;
+					std::vector<std::string> statusList;
+					std::vector<std::string> nameList;
+					std::vector<std::string> eventTypeList;
+				};
 
-public:
-  PutEventRuleRequest();
-  ~PutEventRuleRequest();
+			public:
+				PutEventRuleRequest();
+				~PutEventRuleRequest();
 
-  std::vector<EventPattern> getEventPattern() const;
-  void setEventPattern(const std::vector<EventPattern> &eventPattern);
-  std::string getGroupId() const;
-  void setGroupId(const std::string &groupId);
-  std::string getName() const;
-  void setName(const std::string &name);
-  std::string getDescription() const;
-  void setDescription(const std::string &description);
-  std::string getEventType() const;
-  void setEventType(const std::string &eventType);
-  std::string getState() const;
-  void setState(const std::string &state);
+				std::vector<EventPattern> getEventPattern()const;
+				void setEventPattern(const std::vector<EventPattern>& eventPattern);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getEventType()const;
+				void setEventType(const std::string& eventType);
+				std::string getState()const;
+				void setState(const std::string& state);
 
-private:
-  std::vector<EventPattern> eventPattern_;
-  std::string groupId_;
-  std::string name_;
-  std::string description_;
-  std::string eventType_;
-  std::string state_;
-};
-} // namespace Model
-} // namespace Cms
-} // namespace AlibabaCloud
+            private:
+				std::vector<EventPattern> eventPattern_;
+				std::string groupId_;
+				std::string name_;
+				std::string description_;
+				std::string eventType_;
+				std::string state_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_CMS_MODEL_PUTEVENTRULEREQUEST_H_

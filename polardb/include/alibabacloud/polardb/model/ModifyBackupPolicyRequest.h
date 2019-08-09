@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,52 +17,56 @@
 #ifndef ALIBABACLOUD_POLARDB_MODEL_MODIFYBACKUPPOLICYREQUEST_H_
 #define ALIBABACLOUD_POLARDB_MODEL_MODIFYBACKUPPOLICYREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/polardb/PolardbExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/polardb/PolardbExport.h>
 
-namespace AlibabaCloud {
-namespace Polardb {
-namespace Model {
-class ALIBABACLOUD_POLARDB_EXPORT ModifyBackupPolicyRequest
-    : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Polardb
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_POLARDB_EXPORT ModifyBackupPolicyRequest : public RpcServiceRequest
+			{
 
-public:
-  ModifyBackupPolicyRequest();
-  ~ModifyBackupPolicyRequest();
+			public:
+				ModifyBackupPolicyRequest();
+				~ModifyBackupPolicyRequest();
 
-  std::string getPreferredBackupTime() const;
-  void setPreferredBackupTime(const std::string &preferredBackupTime);
-  std::string getPreferredBackupPeriod() const;
-  void setPreferredBackupPeriod(const std::string &preferredBackupPeriod);
-  std::string getBackupRetentionPeriod() const;
-  void setBackupRetentionPeriod(const std::string &backupRetentionPeriod);
-  long getResourceOwnerId() const;
-  void setResourceOwnerId(long resourceOwnerId);
-  std::string getResourceOwnerAccount() const;
-  void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-  std::string getDBClusterId() const;
-  void setDBClusterId(const std::string &dBClusterId);
-  std::string getOwnerAccount() const;
-  void setOwnerAccount(const std::string &ownerAccount);
-  long getOwnerId() const;
-  void setOwnerId(long ownerId);
-  std::string getAccessKeyId() const;
-  void setAccessKeyId(const std::string &accessKeyId);
+				std::string getPreferredBackupTime()const;
+				void setPreferredBackupTime(const std::string& preferredBackupTime);
+				std::string getPreferredBackupPeriod()const;
+				void setPreferredBackupPeriod(const std::string& preferredBackupPeriod);
+				std::string getBackupRetentionPeriod()const;
+				void setBackupRetentionPeriod(const std::string& backupRetentionPeriod);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getDBClusterId()const;
+				void setDBClusterId(const std::string& dBClusterId);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 
-private:
-  std::string preferredBackupTime_;
-  std::string preferredBackupPeriod_;
-  std::string backupRetentionPeriod_;
-  long resourceOwnerId_;
-  std::string resourceOwnerAccount_;
-  std::string dBClusterId_;
-  std::string ownerAccount_;
-  long ownerId_;
-  std::string accessKeyId_;
-};
-} // namespace Model
-} // namespace Polardb
-} // namespace AlibabaCloud
+            private:
+				std::string preferredBackupTime_;
+				std::string preferredBackupPeriod_;
+				std::string backupRetentionPeriod_;
+				long resourceOwnerId_;
+				std::string resourceOwnerAccount_;
+				std::string dBClusterId_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string accessKeyId_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_POLARDB_MODEL_MODIFYBACKUPPOLICYREQUEST_H_

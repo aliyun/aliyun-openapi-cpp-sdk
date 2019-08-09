@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,31 +17,35 @@
 #ifndef ALIBABACLOUD_CS_MODEL_DESCRIBEEDGECLUSTERATTACHSCRIPTSREQUEST_H_
 #define ALIBABACLOUD_CS_MODEL_DESCRIBEEDGECLUSTERATTACHSCRIPTSREQUEST_H_
 
-#include <alibabacloud/core/RoaServiceRequest.h>
-#include <alibabacloud/cs/CSExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RoaServiceRequest.h>
+#include <alibabacloud/cs/CSExport.h>
 
-namespace AlibabaCloud {
-namespace CS {
-namespace Model {
-class ALIBABACLOUD_CS_EXPORT DescribeEdgeClusterAttachScriptsRequest
-    : public RoaServiceRequest {
+namespace AlibabaCloud
+{
+	namespace CS
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_CS_EXPORT DescribeEdgeClusterAttachScriptsRequest : public RoaServiceRequest
+			{
 
-public:
-  DescribeEdgeClusterAttachScriptsRequest();
-  ~DescribeEdgeClusterAttachScriptsRequest();
+			public:
+				DescribeEdgeClusterAttachScriptsRequest();
+				~DescribeEdgeClusterAttachScriptsRequest();
 
-  std::string getClusterId() const;
-  void setClusterId(const std::string &clusterId);
-  std::string getNamePrefix() const;
-  void setNamePrefix(const std::string &namePrefix);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getNamePrefix()const;
+				void setNamePrefix(const std::string& namePrefix);
 
-private:
-  std::string clusterId_;
-  std::string namePrefix_;
-};
-} // namespace Model
-} // namespace CS
-} // namespace AlibabaCloud
+            private:
+				std::string clusterId_;
+				std::string namePrefix_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_CS_MODEL_DESCRIBEEDGECLUSTERATTACHSCRIPTSREQUEST_H_

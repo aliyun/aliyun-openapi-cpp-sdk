@@ -35,11 +35,12 @@ DescribeEipAddressesResult::~DescribeEipAddressesResult()
 
 void DescribeEipAddressesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allEipAddresses = value["EipAddresses"]["EipAddress"];
 	for (auto value : allEipAddresses)
 	{
@@ -84,6 +85,8 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.bandwidthPackageId = value["BandwidthPackageId"].asString();
 		if(!value["BandwidthPackageType"].isNull())
 			eipAddressesObject.bandwidthPackageType = value["BandwidthPackageType"].asString();
+		if(!value["BandwidthPackageBandwidth"].isNull())
+			eipAddressesObject.bandwidthPackageBandwidth = value["BandwidthPackageBandwidth"].asString();
 		if(!value["ResourceGroupId"].isNull())
 			eipAddressesObject.resourceGroupId = value["ResourceGroupId"].asString();
 		if(!value["HasReservationData"].isNull())
@@ -98,6 +101,8 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.reservationOrderType = value["ReservationOrderType"].asString();
 		if(!value["Mode"].isNull())
 			eipAddressesObject.mode = value["Mode"].asString();
+		if(!value["SecondLimited"].isNull())
+			eipAddressesObject.secondLimited = value["SecondLimited"].asString() == "true";
 		auto allOperationLocks = value["OperationLocks"]["LockReason"];
 		for (auto value : allOperationLocks)
 		{

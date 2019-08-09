@@ -41,16 +41,17 @@ namespace AlibabaCloud
 					};
 					bool isDefault;
 					std::string description;
-					std::string ccnId;
+					std::string interworkingStatus;
 					std::string availableCloudBoxCount;
 					long createTime;
 					std::string associatedCenOwnerId;
 					std::string cidrBlock;
+					std::string name;
+					std::string ccnId;
 					std::string associatedCenId;
 					std::string snatCidrBlock;
 					std::vector<CloudConnectNetwork::Tag> tags;
 					std::string associatedCloudBoxCount;
-					std::string name;
 				};
 
 

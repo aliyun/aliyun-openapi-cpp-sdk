@@ -35,11 +35,12 @@ QueryProductResult::~QueryProductResult()
 
 void QueryProductResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto dataNode = value["Data"];
 	if(!dataNode["GmtCreate"].isNull())
 		data_.gmtCreate = std::stol(dataNode["GmtCreate"].asString());
@@ -71,6 +72,8 @@ void QueryProductResult::parse(const std::string &payload)
 		data_.productStatus = dataNode["ProductStatus"].asString();
 	if(!dataNode["Owner"].isNull())
 		data_.owner = dataNode["Owner"].asString() == "true";
+	if(!dataNode["NetType"].isNull())
+		data_.netType = std::stoi(dataNode["NetType"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

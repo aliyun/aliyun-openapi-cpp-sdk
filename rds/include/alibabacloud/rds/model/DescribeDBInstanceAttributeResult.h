@@ -61,6 +61,7 @@ namespace AlibabaCloud
 					std::string tempUpgradeRecoveryMaxIOPS;
 					std::string replicateId;
 					std::string dBInstanceId;
+					std::string autoUpgradeMinorVersion;
 					int dBInstanceStorage;
 					std::string lockReason;
 					std::string availabilityValue;

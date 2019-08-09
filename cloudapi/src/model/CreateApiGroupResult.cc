@@ -35,11 +35,12 @@ CreateApiGroupResult::~CreateApiGroupResult()
 
 void CreateApiGroupResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	if(!value["GroupId"].isNull())
 		groupId_ = value["GroupId"].asString();
 	if(!value["GroupName"].isNull())
@@ -52,6 +53,8 @@ void CreateApiGroupResult::parse(const std::string &payload)
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["InstanceType"].isNull())
 		instanceType_ = value["InstanceType"].asString();
+	if(!value["TagStatus"].isNull())
+		tagStatus_ = value["TagStatus"].asString() == "true";
 
 }
 
@@ -73,6 +76,11 @@ std::string CreateApiGroupResult::getDescription()const
 std::string CreateApiGroupResult::getInstanceId()const
 {
 	return instanceId_;
+}
+
+bool CreateApiGroupResult::getTagStatus()const
+{
+	return tagStatus_;
 }
 
 std::string CreateApiGroupResult::getInstanceType()const

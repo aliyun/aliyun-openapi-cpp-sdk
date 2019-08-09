@@ -35,17 +35,20 @@ GetAutoScaleConfigResult::~GetAutoScaleConfigResult()
 
 void GetAutoScaleConfigResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allQueues = value["Queues"]["QueueInfo"];
 	for (auto value : allQueues)
 	{
 		QueueInfo queuesObject;
 		if(!value["QueueName"].isNull())
 			queuesObject.queueName = value["QueueName"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			queuesObject.resourceGroupId = value["ResourceGroupId"].asString();
 		if(!value["InstanceType"].isNull())
 			queuesObject.instanceType = value["InstanceType"].asString();
 		if(!value["SpotStrategy"].isNull())

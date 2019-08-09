@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,35 +17,40 @@
 #ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCETYPEFAMILIESRESULT_H_
 #define ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCETYPEFAMILIESRESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/ecs/EcsExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace Ecs {
-namespace Model {
-class ALIBABACLOUD_ECS_EXPORT DescribeInstanceTypeFamiliesResult
-    : public ServiceResult {
-public:
-  struct InstanceTypeFamily {
-    std::string instanceTypeFamilyId;
-    std::string generation;
-  };
+namespace AlibabaCloud
+{
+	namespace Ecs
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_ECS_EXPORT DescribeInstanceTypeFamiliesResult : public ServiceResult
+			{
+			public:
+				struct InstanceTypeFamily
+				{
+					std::string instanceTypeFamilyId;
+					std::string generation;
+				};
 
-  DescribeInstanceTypeFamiliesResult();
-  explicit DescribeInstanceTypeFamiliesResult(const std::string &payload);
-  ~DescribeInstanceTypeFamiliesResult();
-  std::vector<InstanceTypeFamily> getInstanceTypeFamilies() const;
 
-protected:
-  void parse(const std::string &payload);
+				DescribeInstanceTypeFamiliesResult();
+				explicit DescribeInstanceTypeFamiliesResult(const std::string &payload);
+				~DescribeInstanceTypeFamiliesResult();
+				std::vector<InstanceTypeFamily> getInstanceTypeFamilies()const;
 
-private:
-  std::vector<InstanceTypeFamily> instanceTypeFamilies_;
-};
-} // namespace Model
-} // namespace Ecs
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<InstanceTypeFamily> instanceTypeFamilies_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCETYPEFAMILIESRESULT_H_

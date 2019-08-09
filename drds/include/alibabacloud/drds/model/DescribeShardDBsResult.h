@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct DbIntancePair
 				{
 					std::string instanceName;
+					std::string groupName;
 					std::string subDbName;
 				};
 

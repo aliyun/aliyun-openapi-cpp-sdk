@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,61 +17,67 @@
 #ifndef ALIBABACLOUD_EMR_MODEL_DESCRIBEHPHOSTRESULT_H_
 #define ALIBABACLOUD_EMR_MODEL_DESCRIBEHPHOSTRESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/emr/EmrExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace Emr {
-namespace Model {
-class ALIBABACLOUD_EMR_EXPORT DescribeHpHostResult : public ServiceResult {
-public:
-  struct Disk {
-    std::string mountPath;
-    std::string diskDevice;
-    int diskSize;
-  };
+namespace AlibabaCloud
+{
+	namespace Emr
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_EMR_EXPORT DescribeHpHostResult : public ServiceResult
+			{
+			public:
+				struct Disk
+				{
+					std::string mountPath;
+					std::string diskDevice;
+					int diskSize;
+				};
 
-  DescribeHpHostResult();
-  explicit DescribeHpHostResult(const std::string &payload);
-  ~DescribeHpHostResult();
-  std::string getStatus() const;
-  std::string getInnerIp() const;
-  std::string getSecurityGroupId() const;
-  std::vector<std::string> getInstalledComponents() const;
-  std::string getVswitchId() const;
-  std::string getRole() const;
-  std::string getExternalIp() const;
-  std::string getVpcId() const;
-  int getCpuCore() const;
-  int getMemSize() const;
-  std::vector<Disk> getDiskList() const;
-  std::string getExternalKey() const;
-  std::string getBizId() const;
-  std::string getHostName() const;
 
-protected:
-  void parse(const std::string &payload);
+				DescribeHpHostResult();
+				explicit DescribeHpHostResult(const std::string &payload);
+				~DescribeHpHostResult();
+				std::string getStatus()const;
+				std::string getInnerIp()const;
+				std::string getSecurityGroupId()const;
+				std::vector<std::string> getInstalledComponents()const;
+				std::string getVswitchId()const;
+				std::string getRole()const;
+				std::string getExternalIp()const;
+				std::string getVpcId()const;
+				int getCpuCore()const;
+				int getMemSize()const;
+				std::vector<Disk> getDiskList()const;
+				std::string getExternalKey()const;
+				std::string getBizId()const;
+				std::string getHostName()const;
 
-private:
-  std::string status_;
-  std::string innerIp_;
-  std::string securityGroupId_;
-  std::vector<std::string> installedComponents_;
-  std::string vswitchId_;
-  std::string role_;
-  std::string externalIp_;
-  std::string vpcId_;
-  int cpuCore_;
-  int memSize_;
-  std::vector<Disk> diskList_;
-  std::string externalKey_;
-  std::string bizId_;
-  std::string hostName_;
-};
-} // namespace Model
-} // namespace Emr
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string status_;
+				std::string innerIp_;
+				std::string securityGroupId_;
+				std::vector<std::string> installedComponents_;
+				std::string vswitchId_;
+				std::string role_;
+				std::string externalIp_;
+				std::string vpcId_;
+				int cpuCore_;
+				int memSize_;
+				std::vector<Disk> diskList_;
+				std::string externalKey_;
+				std::string bizId_;
+				std::string hostName_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_EMR_MODEL_DESCRIBEHPHOSTRESULT_H_

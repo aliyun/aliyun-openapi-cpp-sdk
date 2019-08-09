@@ -35,11 +35,12 @@ DescribeDataCountsResult::~DescribeDataCountsResult()
 
 void DescribeDataCountsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allDataCountList = value["DataCountList"]["DataCount"];
 	for (auto value : allDataCountList)
 	{
@@ -70,17 +71,17 @@ void DescribeDataCountsResult::parse(const std::string &payload)
 			dataCountListObject.table.lastCount = std::stol(tableNode["LastCount"].asString());
 		if(!tableNode["LastSensitiveCount"].isNull())
 			dataCountListObject.table.lastSensitiveCount = std::stol(tableNode["LastSensitiveCount"].asString());
-		auto packageInDescribeDataCountsNode = value["Package"];
-		if(!packageInDescribeDataCountsNode["TotalCount"].isNull())
-			dataCountListObject.packageInDescribeDataCounts.totalCount = std::stol(packageInDescribeDataCountsNode["TotalCount"].asString());
-		if(!packageInDescribeDataCountsNode["Count"].isNull())
-			dataCountListObject.packageInDescribeDataCounts.count = std::stol(packageInDescribeDataCountsNode["Count"].asString());
-		if(!packageInDescribeDataCountsNode["SensitiveCount"].isNull())
-			dataCountListObject.packageInDescribeDataCounts.sensitiveCount = std::stol(packageInDescribeDataCountsNode["SensitiveCount"].asString());
-		if(!packageInDescribeDataCountsNode["LastCount"].isNull())
-			dataCountListObject.packageInDescribeDataCounts.lastCount = std::stol(packageInDescribeDataCountsNode["LastCount"].asString());
-		if(!packageInDescribeDataCountsNode["LastSensitiveCount"].isNull())
-			dataCountListObject.packageInDescribeDataCounts.lastSensitiveCount = std::stol(packageInDescribeDataCountsNode["LastSensitiveCount"].asString());
+		auto packageNode = value["Package"];
+		if(!packageNode["TotalCount"].isNull())
+			dataCountListObject.package.totalCount = std::stol(packageNode["TotalCount"].asString());
+		if(!packageNode["Count"].isNull())
+			dataCountListObject.package.count = std::stol(packageNode["Count"].asString());
+		if(!packageNode["SensitiveCount"].isNull())
+			dataCountListObject.package.sensitiveCount = std::stol(packageNode["SensitiveCount"].asString());
+		if(!packageNode["LastCount"].isNull())
+			dataCountListObject.package.lastCount = std::stol(packageNode["LastCount"].asString());
+		if(!packageNode["LastSensitiveCount"].isNull())
+			dataCountListObject.package.lastSensitiveCount = std::stol(packageNode["LastSensitiveCount"].asString());
 		auto columnNode = value["Column"];
 		if(!columnNode["TotalCount"].isNull())
 			dataCountListObject.column.totalCount = std::stol(columnNode["TotalCount"].asString());

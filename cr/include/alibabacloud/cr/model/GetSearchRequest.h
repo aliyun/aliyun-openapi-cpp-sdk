@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,39 +17,44 @@
 #ifndef ALIBABACLOUD_CR_MODEL_GETSEARCHREQUEST_H_
 #define ALIBABACLOUD_CR_MODEL_GETSEARCHREQUEST_H_
 
-#include <alibabacloud/core/RoaServiceRequest.h>
-#include <alibabacloud/cr/CrExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RoaServiceRequest.h>
+#include <alibabacloud/cr/CrExport.h>
 
-namespace AlibabaCloud {
-namespace Cr {
-namespace Model {
-class ALIBABACLOUD_CR_EXPORT GetSearchRequest : public RoaServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Cr
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_CR_EXPORT GetSearchRequest : public RoaServiceRequest
+			{
 
-public:
-  GetSearchRequest();
-  ~GetSearchRequest();
+			public:
+				GetSearchRequest();
+				~GetSearchRequest();
 
-  std::string getRegionId() const;
-  void setRegionId(const std::string &regionId);
-  std::string getOrigin() const;
-  void setOrigin(const std::string &origin);
-  int getPageSize() const;
-  void setPageSize(int pageSize);
-  int getPage() const;
-  void setPage(int page);
-  std::string getKeyword() const;
-  void setKeyword(const std::string &keyword);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getOrigin()const;
+				void setOrigin(const std::string& origin);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				int getPage()const;
+				void setPage(int page);
+				std::string getKeyword()const;
+				void setKeyword(const std::string& keyword);
 
-private:
-  std::string regionId_;
-  std::string origin_;
-  int pageSize_;
-  int page_;
-  std::string keyword_;
-};
-} // namespace Model
-} // namespace Cr
-} // namespace AlibabaCloud
+            private:
+				std::string regionId_;
+				std::string origin_;
+				int pageSize_;
+				int page_;
+				std::string keyword_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_CR_MODEL_GETSEARCHREQUEST_H_

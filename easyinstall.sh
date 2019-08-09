@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MAKE=make
-if command -v python > /dev/null ; then
+if command -v python >/dev/null; then
   MAKE="make -j $(python -c 'import multiprocessing as mp; print(int(mp.cpu_count()))')"
 fi
 

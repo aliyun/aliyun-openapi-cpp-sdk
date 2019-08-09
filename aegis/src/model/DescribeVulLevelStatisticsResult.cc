@@ -35,11 +35,12 @@ DescribeVulLevelStatisticsResult::~DescribeVulLevelStatisticsResult()
 
 void DescribeVulLevelStatisticsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allLevelStatistics = value["LevelStatistics"]["LevelStatistic"];
 	for (auto value : allLevelStatistics)
 	{
@@ -54,6 +55,8 @@ void DescribeVulLevelStatisticsResult::parse(const std::string &payload)
 			levelStatisticsObject.sysNum = std::stoi(value["SysNum"].asString());
 		if(!value["CmsNum"].isNull())
 			levelStatisticsObject.cmsNum = std::stoi(value["CmsNum"].asString());
+		if(!value["AppNum"].isNull())
+			levelStatisticsObject.appNum = std::stoi(value["AppNum"].asString());
 		if(!value["CmsDealedTotalNum"].isNull())
 			levelStatisticsObject.cmsDealedTotalNum = std::stoi(value["CmsDealedTotalNum"].asString());
 		if(!value["VulDealedTotalNum"].isNull())

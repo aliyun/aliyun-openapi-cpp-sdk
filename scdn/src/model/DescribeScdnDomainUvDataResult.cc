@@ -35,29 +35,26 @@ DescribeScdnDomainUvDataResult::~DescribeScdnDomainUvDataResult()
 
 void DescribeScdnDomainUvDataResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allUvDataInterval = value["UvDataInterval"]["UsageData"];
 	for (auto value : allUvDataInterval)
 	{
 		UsageData uvDataIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			uvDataIntervalObject.timeStamp = value["TimeStamp"].asString();
 		if(!value["Value"].isNull())
 			uvDataIntervalObject.value = value["Value"].asString();
+		if(!value["TimeStamp"].isNull())
+			uvDataIntervalObject.timeStamp = value["TimeStamp"].asString();
 		uvDataInterval_.push_back(uvDataIntervalObject);
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
-	if(!value["DataInterval"].isNull())
-		dataInterval_ = value["DataInterval"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -66,19 +63,9 @@ std::vector<DescribeScdnDomainUvDataResult::UsageData> DescribeScdnDomainUvDataR
 	return uvDataInterval_;
 }
 
-std::string DescribeScdnDomainUvDataResult::getEndTime()const
-{
-	return endTime_;
-}
-
 std::string DescribeScdnDomainUvDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-std::string DescribeScdnDomainUvDataResult::getDataInterval()const
-{
-	return dataInterval_;
 }
 
 std::string DescribeScdnDomainUvDataResult::getStartTime()const

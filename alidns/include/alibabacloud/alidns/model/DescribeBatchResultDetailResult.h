@@ -37,9 +37,9 @@ namespace AlibabaCloud
 					std::string rr;
 					bool status;
 					std::string operateDateStr;
-					int priority;
+					std::string priority;
 					std::string rrStatus;
-					int ttl;
+					std::string ttl;
 					std::string reason;
 					std::string batchType;
 					std::string remark;

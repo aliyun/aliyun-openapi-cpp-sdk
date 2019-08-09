@@ -35,11 +35,12 @@ DescribeGroupedVulResult::~DescribeGroupedVulResult()
 
 void DescribeGroupedVulResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allGroupedVulItems = value["GroupedVulItems"]["GroupedVulItem"];
 	for (auto value : allGroupedVulItems)
 	{
@@ -62,6 +63,8 @@ void DescribeGroupedVulResult::parse(const std::string &payload)
 			groupedVulItemsObject.nntfCount = std::stoi(value["NntfCount"].asString());
 		if(!value["HandledCount"].isNull())
 			groupedVulItemsObject.handledCount = std::stoi(value["HandledCount"].asString());
+		if(!value["Tags"].isNull())
+			groupedVulItemsObject.tags = value["Tags"].asString();
 		groupedVulItems_.push_back(groupedVulItemsObject);
 	}
 	if(!value["PageSize"].isNull())

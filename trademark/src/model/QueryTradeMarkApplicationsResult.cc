@@ -35,11 +35,12 @@ QueryTradeMarkApplicationsResult::~QueryTradeMarkApplicationsResult()
 
 void QueryTradeMarkApplicationsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allData = value["Data"]["TmProduces"];
 	for (auto value : allData)
 	{
@@ -78,6 +79,10 @@ void QueryTradeMarkApplicationsResult::parse(const std::string &payload)
 			dataObject.supplementStatus = std::stoi(value["SupplementStatus"].asString());
 		if(!value["SupplementId"].isNull())
 			dataObject.supplementId = std::stol(value["SupplementId"].asString());
+		if(!value["TotalPrice"].isNull())
+			dataObject.totalPrice = std::stof(value["TotalPrice"].asString());
+		if(!value["ServicePrice"].isNull())
+			dataObject.servicePrice = std::stof(value["ServicePrice"].asString());
 		auto allThirdClassification = value["ThirdClassification"]["ThirdClassifications"];
 		for (auto value : allThirdClassification)
 		{

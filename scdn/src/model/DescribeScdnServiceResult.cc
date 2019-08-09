@@ -35,11 +35,12 @@ DescribeScdnServiceResult::~DescribeScdnServiceResult()
 
 void DescribeScdnServiceResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allOperationLocks = value["OperationLocks"]["LockReason"];
 	for (auto value : allOperationLocks)
 	{
@@ -48,6 +49,12 @@ void DescribeScdnServiceResult::parse(const std::string &payload)
 			operationLocksObject.lockReason = value["LockReason"].asString();
 		operationLocks_.push_back(operationLocksObject);
 	}
+	if(!value["ChangingAffectTime"].isNull())
+		changingAffectTime_ = value["ChangingAffectTime"].asString();
+	if(!value["InternetChargeType"].isNull())
+		internetChargeType_ = value["InternetChargeType"].asString();
+	if(!value["ChangingChargeType"].isNull())
+		changingChargeType_ = value["ChangingChargeType"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["OpenTime"].isNull())
@@ -78,11 +85,42 @@ void DescribeScdnServiceResult::parse(const std::string &payload)
 		domainCountValue_ = value["DomainCountValue"].asString();
 	if(!value["ElasticProtectionValue"].isNull())
 		elasticProtectionValue_ = value["ElasticProtectionValue"].asString();
+	if(!value["CurrentProtectType"].isNull())
+		currentProtectType_ = value["CurrentProtectType"].asString();
+	if(!value["CurrentProtectTypeValue"].isNull())
+		currentProtectTypeValue_ = value["CurrentProtectTypeValue"].asString();
+	if(!value["CurrentBandwidth"].isNull())
+		currentBandwidth_ = value["CurrentBandwidth"].asString();
+	if(!value["CurrentCcProtection"].isNull())
+		currentCcProtection_ = value["CurrentCcProtection"].asString();
+	if(!value["CurrentDDoSBasic"].isNull())
+		currentDDoSBasic_ = value["CurrentDDoSBasic"].asString();
+	if(!value["CurrentDomainCount"].isNull())
+		currentDomainCount_ = value["CurrentDomainCount"].asString();
+	if(!value["CurrentElasticProtection"].isNull())
+		currentElasticProtection_ = value["CurrentElasticProtection"].asString();
+	if(!value["CurrentBandwidthValue"].isNull())
+		currentBandwidthValue_ = value["CurrentBandwidthValue"].asString();
+	if(!value["CurrentCcProtectionValue"].isNull())
+		currentCcProtectionValue_ = value["CurrentCcProtectionValue"].asString();
+	if(!value["CurrentDDoSBasicValue"].isNull())
+		currentDDoSBasicValue_ = value["CurrentDDoSBasicValue"].asString();
+	if(!value["CurrentDomainCountValue"].isNull())
+		currentDomainCountValue_ = value["CurrentDomainCountValue"].asString();
+	if(!value["CurrentElasticProtectionValue"].isNull())
+		currentElasticProtectionValue_ = value["CurrentElasticProtectionValue"].asString();
 	if(!value["PriceType"].isNull())
 		priceType_ = value["PriceType"].asString();
 	if(!value["PricingCycle"].isNull())
 		pricingCycle_ = value["PricingCycle"].asString();
+	if(!value["ChangingChargeType"].isNull())
+		changingChargeType1_ = value["ChangingChargeType"].asString();
 
+}
+
+std::string DescribeScdnServiceResult::getCurrentDDoSBasicValue()const
+{
+	return currentDDoSBasicValue_;
 }
 
 std::string DescribeScdnServiceResult::getEndTime()const
@@ -90,9 +128,9 @@ std::string DescribeScdnServiceResult::getEndTime()const
 	return endTime_;
 }
 
-std::string DescribeScdnServiceResult::getInstanceId()const
+std::string DescribeScdnServiceResult::getCurrentElasticProtectionValue()const
 {
-	return instanceId_;
+	return currentElasticProtectionValue_;
 }
 
 std::string DescribeScdnServiceResult::getPricingCycle()const
@@ -115,24 +153,14 @@ std::string DescribeScdnServiceResult::getDomainCountValue()const
 	return domainCountValue_;
 }
 
-std::string DescribeScdnServiceResult::getProtectTypeValue()const
+std::string DescribeScdnServiceResult::getCurrentDomainCount()const
 {
-	return protectTypeValue_;
+	return currentDomainCount_;
 }
 
 std::string DescribeScdnServiceResult::getCcProtectionValue()const
 {
 	return ccProtectionValue_;
-}
-
-std::string DescribeScdnServiceResult::getCcProtection()const
-{
-	return ccProtection_;
-}
-
-std::vector<DescribeScdnServiceResult::LockReason> DescribeScdnServiceResult::getOperationLocks()const
-{
-	return operationLocks_;
 }
 
 std::string DescribeScdnServiceResult::getElasticProtectionValue()const
@@ -145,9 +173,94 @@ std::string DescribeScdnServiceResult::getOpenTime()const
 	return openTime_;
 }
 
+std::string DescribeScdnServiceResult::getChangingChargeType()const
+{
+	return changingChargeType_;
+}
+
 std::string DescribeScdnServiceResult::getBandwidth()const
 {
 	return bandwidth_;
+}
+
+std::string DescribeScdnServiceResult::getDomainCount()const
+{
+	return domainCount_;
+}
+
+std::string DescribeScdnServiceResult::getCurrentBandwidth()const
+{
+	return currentBandwidth_;
+}
+
+std::string DescribeScdnServiceResult::getCurrentElasticProtection()const
+{
+	return currentElasticProtection_;
+}
+
+std::string DescribeScdnServiceResult::getInstanceId()const
+{
+	return instanceId_;
+}
+
+std::string DescribeScdnServiceResult::getCurrentCcProtectionValue()const
+{
+	return currentCcProtectionValue_;
+}
+
+std::string DescribeScdnServiceResult::getCurrentProtectType()const
+{
+	return currentProtectType_;
+}
+
+std::string DescribeScdnServiceResult::getCurrentDDoSBasic()const
+{
+	return currentDDoSBasic_;
+}
+
+std::string DescribeScdnServiceResult::getCurrentDomainCountValue()const
+{
+	return currentDomainCountValue_;
+}
+
+std::string DescribeScdnServiceResult::getCurrentBandwidthValue()const
+{
+	return currentBandwidthValue_;
+}
+
+std::string DescribeScdnServiceResult::getProtectTypeValue()const
+{
+	return protectTypeValue_;
+}
+
+std::string DescribeScdnServiceResult::getCurrentProtectTypeValue()const
+{
+	return currentProtectTypeValue_;
+}
+
+std::string DescribeScdnServiceResult::getCcProtection()const
+{
+	return ccProtection_;
+}
+
+std::vector<DescribeScdnServiceResult::LockReason> DescribeScdnServiceResult::getOperationLocks()const
+{
+	return operationLocks_;
+}
+
+std::string DescribeScdnServiceResult::getChangingAffectTime()const
+{
+	return changingAffectTime_;
+}
+
+std::string DescribeScdnServiceResult::getInternetChargeType()const
+{
+	return internetChargeType_;
+}
+
+std::string DescribeScdnServiceResult::getChangingChargeType1()const
+{
+	return changingChargeType1_;
 }
 
 std::string DescribeScdnServiceResult::getDDoSBasicValue()const
@@ -160,6 +273,11 @@ std::string DescribeScdnServiceResult::getProtectType()const
 	return protectType_;
 }
 
+std::string DescribeScdnServiceResult::getCurrentCcProtection()const
+{
+	return currentCcProtection_;
+}
+
 std::string DescribeScdnServiceResult::getBandwidthValue()const
 {
 	return bandwidthValue_;
@@ -168,10 +286,5 @@ std::string DescribeScdnServiceResult::getBandwidthValue()const
 std::string DescribeScdnServiceResult::getPriceType()const
 {
 	return priceType_;
-}
-
-std::string DescribeScdnServiceResult::getDomainCount()const
-{
-	return domainCount_;
 }
 

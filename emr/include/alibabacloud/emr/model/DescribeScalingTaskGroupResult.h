@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,62 +17,68 @@
 #ifndef ALIBABACLOUD_EMR_MODEL_DESCRIBESCALINGTASKGROUPRESULT_H_
 #define ALIBABACLOUD_EMR_MODEL_DESCRIBESCALINGTASKGROUPRESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/emr/EmrExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace Emr {
-namespace Model {
-class ALIBABACLOUD_EMR_EXPORT DescribeScalingTaskGroupResult
-    : public ServiceResult {
-public:
-  struct ScalingConfig {
-    struct SpotPriceLimit {
-      float priceLimit;
-      std::string instanceType;
-    };
-    std::vector<SpotPriceLimit> spotPriceLimits;
-    int cpuCount;
-    int memSize;
-    int dataDiskCount;
-    std::string payType;
-    int dataDiskSize;
-    int sysDiskSize;
-    std::string dataDiskCategory;
-    std::string sysDiskCategory;
-    std::string spotStrategy;
-    std::vector<std::string> instanceTypeList;
-  };
+namespace AlibabaCloud
+{
+	namespace Emr
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_EMR_EXPORT DescribeScalingTaskGroupResult : public ServiceResult
+			{
+			public:
+				struct ScalingConfig
+				{
+					struct SpotPriceLimit
+					{
+						float priceLimit;
+						std::string instanceType;
+					};
+					std::vector<SpotPriceLimit> spotPriceLimits;
+					int cpuCount;
+					int memSize;
+					int dataDiskCount;
+					std::string payType;
+					int dataDiskSize;
+					int sysDiskSize;
+					std::string dataDiskCategory;
+					std::string sysDiskCategory;
+					std::string spotStrategy;
+					std::vector<std::string> instanceTypeList;
+				};
 
-  DescribeScalingTaskGroupResult();
-  explicit DescribeScalingTaskGroupResult(const std::string &payload);
-  ~DescribeScalingTaskGroupResult();
-  std::string getStatus() const;
-  int getMinSize() const;
-  int getDefaultCooldown() const;
-  ScalingConfig getScalingConfig() const;
-  std::string getHostGroupId() const;
-  std::string getActiveRuleCategory() const;
-  std::string getScalingGroupId() const;
-  int getMaxSize() const;
 
-protected:
-  void parse(const std::string &payload);
+				DescribeScalingTaskGroupResult();
+				explicit DescribeScalingTaskGroupResult(const std::string &payload);
+				~DescribeScalingTaskGroupResult();
+				std::string getStatus()const;
+				int getMinSize()const;
+				int getDefaultCooldown()const;
+				ScalingConfig getScalingConfig()const;
+				std::string getHostGroupId()const;
+				std::string getActiveRuleCategory()const;
+				std::string getScalingGroupId()const;
+				int getMaxSize()const;
 
-private:
-  std::string status_;
-  int minSize_;
-  int defaultCooldown_;
-  ScalingConfig scalingConfig_;
-  std::string hostGroupId_;
-  std::string activeRuleCategory_;
-  std::string scalingGroupId_;
-  int maxSize_;
-};
-} // namespace Model
-} // namespace Emr
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string status_;
+				int minSize_;
+				int defaultCooldown_;
+				ScalingConfig scalingConfig_;
+				std::string hostGroupId_;
+				std::string activeRuleCategory_;
+				std::string scalingGroupId_;
+				int maxSize_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_EMR_MODEL_DESCRIBESCALINGTASKGROUPRESULT_H_

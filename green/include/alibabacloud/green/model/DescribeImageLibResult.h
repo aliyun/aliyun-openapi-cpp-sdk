@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,45 +17,51 @@
 #ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEIMAGELIBRESULT_H_
 #define ALIBABACLOUD_GREEN_MODEL_DESCRIBEIMAGELIBRESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/green/GreenExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace Green {
-namespace Model {
-class ALIBABACLOUD_GREEN_EXPORT DescribeImageLibResult : public ServiceResult {
-public:
-  struct ImageLib {
-    int imageCount;
-    std::string category;
-    std::string modifiedTime;
-    std::vector<std::string> bizTypes;
-    std::string enable;
-    int id;
-    std::string scene;
-    std::string code;
-    std::string source;
-    std::string name;
-    std::string serviceModule;
-  };
+namespace AlibabaCloud
+{
+	namespace Green
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_GREEN_EXPORT DescribeImageLibResult : public ServiceResult
+			{
+			public:
+				struct ImageLib
+				{
+					int imageCount;
+					std::string category;
+					std::string modifiedTime;
+					std::vector<std::string> bizTypes;
+					std::string enable;
+					int id;
+					std::string scene;
+					std::string code;
+					std::string source;
+					std::string name;
+					std::string serviceModule;
+				};
 
-  DescribeImageLibResult();
-  explicit DescribeImageLibResult(const std::string &payload);
-  ~DescribeImageLibResult();
-  int getTotalCount() const;
-  std::vector<ImageLib> getImageLibList() const;
 
-protected:
-  void parse(const std::string &payload);
+				DescribeImageLibResult();
+				explicit DescribeImageLibResult(const std::string &payload);
+				~DescribeImageLibResult();
+				int getTotalCount()const;
+				std::vector<ImageLib> getImageLibList()const;
 
-private:
-  int totalCount_;
-  std::vector<ImageLib> imageLibList_;
-};
-} // namespace Model
-} // namespace Green
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				int totalCount_;
+				std::vector<ImageLib> imageLibList_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEIMAGELIBRESULT_H_

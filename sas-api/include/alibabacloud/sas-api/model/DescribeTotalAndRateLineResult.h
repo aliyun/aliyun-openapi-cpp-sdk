@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,38 +17,43 @@
 #ifndef ALIBABACLOUD_SAS_API_MODEL_DESCRIBETOTALANDRATELINERESULT_H_
 #define ALIBABACLOUD_SAS_API_MODEL_DESCRIBETOTALANDRATELINERESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/sas-api/Sas_apiExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace Sas_api {
-namespace Model {
-class ALIBABACLOUD_SAS_API_EXPORT DescribeTotalAndRateLineResult
-    : public ServiceResult {
-public:
-  struct Item {
-    float data;
-    std::string id;
-    std::string name;
-  };
+namespace AlibabaCloud
+{
+	namespace Sas_api
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_SAS_API_EXPORT DescribeTotalAndRateLineResult : public ServiceResult
+			{
+			public:
+				struct Item
+				{
+					float data;
+					std::string id;
+					std::string name;
+				};
 
-  DescribeTotalAndRateLineResult();
-  explicit DescribeTotalAndRateLineResult(const std::string &payload);
-  ~DescribeTotalAndRateLineResult();
-  std::vector<std::string> getCategories() const;
-  std::vector<Item> getItems() const;
 
-protected:
-  void parse(const std::string &payload);
+				DescribeTotalAndRateLineResult();
+				explicit DescribeTotalAndRateLineResult(const std::string &payload);
+				~DescribeTotalAndRateLineResult();
+				std::vector<std::string> getCategories()const;
+				std::vector<Item> getItems()const;
 
-private:
-  std::vector<std::string> categories_;
-  std::vector<Item> items_;
-};
-} // namespace Model
-} // namespace Sas_api
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<std::string> categories_;
+				std::vector<Item> items_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_SAS_API_MODEL_DESCRIBETOTALANDRATELINERESULT_H_

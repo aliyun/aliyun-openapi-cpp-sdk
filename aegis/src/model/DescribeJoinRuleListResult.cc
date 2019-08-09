@@ -35,15 +35,16 @@ DescribeJoinRuleListResult::~DescribeJoinRuleListResult()
 
 void DescribeJoinRuleListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
-	auto allJoinRuleList = value["JoinRuleList"]["JoinRuleListItem"];
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
+	auto allJoinRuleList = value["JoinRuleList"]["JoinRuleListArr"];
 	for (auto value : allJoinRuleList)
 	{
-		JoinRuleListItem joinRuleListObject;
+		JoinRuleListArr joinRuleListObject;
 		if(!value["TimeWindow"].isNull())
 			joinRuleListObject.timeWindow = std::stoi(value["TimeWindow"].asString());
 		if(!value["WarnLevel"].isNull())
@@ -91,7 +92,7 @@ DescribeJoinRuleListResult::PageInfo DescribeJoinRuleListResult::getPageInfo()co
 	return pageInfo_;
 }
 
-std::vector<DescribeJoinRuleListResult::JoinRuleListItem> DescribeJoinRuleListResult::getJoinRuleList()const
+std::vector<DescribeJoinRuleListResult::JoinRuleListArr> DescribeJoinRuleListResult::getJoinRuleList()const
 {
 	return joinRuleList_;
 }

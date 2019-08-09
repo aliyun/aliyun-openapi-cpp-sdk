@@ -35,11 +35,12 @@ OnsDLQMessagePageQueryByGroupIdResult::~OnsDLQMessagePageQueryByGroupIdResult()
 
 void OnsDLQMessagePageQueryByGroupIdResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto msgFoundDoNode = value["MsgFoundDo"];
 	if(!msgFoundDoNode["TaskId"].isNull())
 		msgFoundDo_.taskId = msgFoundDoNode["TaskId"].asString();

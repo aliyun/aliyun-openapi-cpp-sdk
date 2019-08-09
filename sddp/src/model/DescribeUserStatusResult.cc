@@ -35,11 +35,12 @@ DescribeUserStatusResult::~DescribeUserStatusResult()
 
 void DescribeUserStatusResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto userStatusNode = value["UserStatus"];
 	if(!userStatusNode["Authed"].isNull())
 		userStatus_.authed = userStatusNode["Authed"].asString() == "true";
@@ -53,6 +54,24 @@ void DescribeUserStatusResult::parse(const std::string &payload)
 		userStatus_.rdsSet = userStatusNode["RdsSet"].asString() == "true";
 	if(!userStatusNode["AccessKeyId"].isNull())
 		userStatus_.accessKeyId = userStatusNode["AccessKeyId"].asString();
+	if(!userStatusNode["Trail"].isNull())
+		userStatus_.trail = userStatusNode["Trail"].asString() == "true";
+	if(!userStatusNode["InstanceStatus"].isNull())
+		userStatus_.instanceStatus = std::stoi(userStatusNode["InstanceStatus"].asString());
+	if(!userStatusNode["InstanceId"].isNull())
+		userStatus_.instanceId = userStatusNode["InstanceId"].asString();
+	if(!userStatusNode["RemainDays"].isNull())
+		userStatus_.remainDays = std::stoi(userStatusNode["RemainDays"].asString());
+	if(!userStatusNode["RenewStatus"].isNull())
+		userStatus_.renewStatus = userStatusNode["RenewStatus"].asString() == "true";
+	if(!userStatusNode["InstanceNum"].isNull())
+		userStatus_.instanceNum = std::stoi(userStatusNode["InstanceNum"].asString());
+	if(!userStatusNode["UseInstanceNum"].isNull())
+		userStatus_.useInstanceNum = std::stoi(userStatusNode["UseInstanceNum"].asString());
+	if(!userStatusNode["OssSize"].isNull())
+		userStatus_.ossSize = std::stol(userStatusNode["OssSize"].asString());
+	if(!userStatusNode["UseOssSize"].isNull())
+		userStatus_.useOssSize = std::stol(userStatusNode["UseOssSize"].asString());
 
 }
 

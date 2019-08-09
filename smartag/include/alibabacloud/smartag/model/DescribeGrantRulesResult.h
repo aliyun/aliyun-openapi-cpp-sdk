@@ -38,9 +38,9 @@ namespace AlibabaCloud
 					long cenUid;
 					std::string ccnInstanceId;
 					std::string grantRuleId;
-					long ccnId;
 					std::string cenInstanceId;
 					long gmtModified;
+					long ccnUid;
 					std::string regionId;
 				};
 

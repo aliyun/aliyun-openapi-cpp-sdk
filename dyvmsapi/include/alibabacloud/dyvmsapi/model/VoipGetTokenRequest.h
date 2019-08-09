@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,46 +17,50 @@
 #ifndef ALIBABACLOUD_DYVMSAPI_MODEL_VOIPGETTOKENREQUEST_H_
 #define ALIBABACLOUD_DYVMSAPI_MODEL_VOIPGETTOKENREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/dyvmsapi/DyvmsapiExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/dyvmsapi/DyvmsapiExport.h>
 
-namespace AlibabaCloud {
-namespace Dyvmsapi {
-namespace Model {
-class ALIBABACLOUD_DYVMSAPI_EXPORT VoipGetTokenRequest
-    : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Dyvmsapi
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_DYVMSAPI_EXPORT VoipGetTokenRequest : public RpcServiceRequest
+			{
 
-public:
-  VoipGetTokenRequest();
-  ~VoipGetTokenRequest();
+			public:
+				VoipGetTokenRequest();
+				~VoipGetTokenRequest();
 
-  long getResourceOwnerId() const;
-  void setResourceOwnerId(long resourceOwnerId);
-  std::string getVoipId() const;
-  void setVoipId(const std::string &voipId);
-  std::string getResourceOwnerAccount() const;
-  void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-  long getOwnerId() const;
-  void setOwnerId(long ownerId);
-  std::string getDeviceId() const;
-  void setDeviceId(const std::string &deviceId);
-  bool getIsCustomAccount() const;
-  void setIsCustomAccount(bool isCustomAccount);
-  std::string getAccessKeyId() const;
-  void setAccessKeyId(const std::string &accessKeyId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getVoipId()const;
+				void setVoipId(const std::string& voipId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getDeviceId()const;
+				void setDeviceId(const std::string& deviceId);
+				bool getIsCustomAccount()const;
+				void setIsCustomAccount(bool isCustomAccount);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 
-private:
-  long resourceOwnerId_;
-  std::string voipId_;
-  std::string resourceOwnerAccount_;
-  long ownerId_;
-  std::string deviceId_;
-  bool isCustomAccount_;
-  std::string accessKeyId_;
-};
-} // namespace Model
-} // namespace Dyvmsapi
-} // namespace AlibabaCloud
+            private:
+				long resourceOwnerId_;
+				std::string voipId_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
+				std::string deviceId_;
+				bool isCustomAccount_;
+				std::string accessKeyId_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_DYVMSAPI_MODEL_VOIPGETTOKENREQUEST_H_

@@ -35,11 +35,12 @@ RequestLoginInfoResult::~RequestLoginInfoResult()
 
 void RequestLoginInfoResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto loginInfoNode = value["LoginInfo"];
 	if(!loginInfoNode["UserName"].isNull())
 		loginInfo_.userName = loginInfoNode["UserName"].asString();
@@ -61,6 +62,20 @@ void RequestLoginInfoResult::parse(const std::string &payload)
 		loginInfo_.signature = loginInfoNode["Signature"].asString();
 	if(!loginInfoNode["SignData"].isNull())
 		loginInfo_.signData = loginInfoNode["SignData"].asString();
+	auto allRoles = value["Roles"]["Role"];
+	for (auto value : allRoles)
+	{
+		LoginInfo::Role roleObject;
+		if(!value["RoleId"].isNull())
+			roleObject.roleId = value["RoleId"].asString();
+		if(!value["InstanceId"].isNull())
+			roleObject.instanceId = value["InstanceId"].asString();
+		if(!value["RoleName"].isNull())
+			roleObject.roleName = value["RoleName"].asString();
+		if(!value["RoleDescription"].isNull())
+			roleObject.roleDescription = value["RoleDescription"].asString();
+		loginInfo_.roles.push_back(roleObject);
+	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

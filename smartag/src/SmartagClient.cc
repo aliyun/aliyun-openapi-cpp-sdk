@@ -3903,3 +3903,39 @@ SmartagClient::UnbindVbrOutcomeCallable SmartagClient::unbindVbrCallable(const U
 	return task->get_future();
 }
 
+SmartagClient::DescribeBindableSmartAccessGatewaysOutcome SmartagClient::describeBindableSmartAccessGateways(const DescribeBindableSmartAccessGatewaysRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBindableSmartAccessGatewaysOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBindableSmartAccessGatewaysOutcome(DescribeBindableSmartAccessGatewaysResult(outcome.result()));
+	else
+		return DescribeBindableSmartAccessGatewaysOutcome(outcome.error());
+}
+
+void SmartagClient::describeBindableSmartAccessGatewaysAsync(const DescribeBindableSmartAccessGatewaysRequest& request, const DescribeBindableSmartAccessGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBindableSmartAccessGateways(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DescribeBindableSmartAccessGatewaysOutcomeCallable SmartagClient::describeBindableSmartAccessGatewaysCallable(const DescribeBindableSmartAccessGatewaysRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBindableSmartAccessGatewaysOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBindableSmartAccessGateways(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

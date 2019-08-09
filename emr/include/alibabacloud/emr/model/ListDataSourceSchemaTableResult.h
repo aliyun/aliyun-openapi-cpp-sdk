@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,48 +17,56 @@
 #ifndef ALIBABACLOUD_EMR_MODEL_LISTDATASOURCESCHEMATABLERESULT_H_
 #define ALIBABACLOUD_EMR_MODEL_LISTDATASOURCESCHEMATABLERESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/emr/EmrExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace Emr {
-namespace Model {
-class ALIBABACLOUD_EMR_EXPORT ListDataSourceSchemaTableResult
-    : public ServiceResult {
-public:
-  struct Schema {
-    struct Field {
-      std::string type;
-      int index;
-      std::string rawType;
-      std::string assignType;
-      std::string assignValue;
-      std::string name;
-    };
-    std::string tableName;
-    std::vector<Schema::Field> fields;
-    std::string dbVersion;
-    std::string dbName;
-    std::string dbType;
-  };
+namespace AlibabaCloud
+{
+	namespace Emr
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_EMR_EXPORT ListDataSourceSchemaTableResult : public ServiceResult
+			{
+			public:
+				struct Schema
+				{
+					struct Field
+					{
+						std::string type;
+						std::string length;
+						bool partitionKey;
+						int index;
+						std::string rawType;
+						std::string assignType;
+						std::string assignValue;
+						std::string name;
+					};
+					std::string tableName;
+					std::vector<Schema::Field> fields;
+					std::string dbVersion;
+					std::string dbName;
+					std::string dbType;
+				};
 
-  ListDataSourceSchemaTableResult();
-  explicit ListDataSourceSchemaTableResult(const std::string &payload);
-  ~ListDataSourceSchemaTableResult();
-  std::vector<Schema> getSchemaList() const;
-  std::string getDataSourceId() const;
 
-protected:
-  void parse(const std::string &payload);
+				ListDataSourceSchemaTableResult();
+				explicit ListDataSourceSchemaTableResult(const std::string &payload);
+				~ListDataSourceSchemaTableResult();
+				std::vector<Schema> getSchemaList()const;
+				std::string getDataSourceId()const;
 
-private:
-  std::vector<Schema> schemaList_;
-  std::string dataSourceId_;
-};
-} // namespace Model
-} // namespace Emr
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<Schema> schemaList_;
+				std::string dataSourceId_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_EMR_MODEL_LISTDATASOURCESCHEMATABLERESULT_H_

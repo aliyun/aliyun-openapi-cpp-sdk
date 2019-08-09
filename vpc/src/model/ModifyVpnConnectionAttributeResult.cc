@@ -35,11 +35,12 @@ ModifyVpnConnectionAttributeResult::~ModifyVpnConnectionAttributeResult()
 
 void ModifyVpnConnectionAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto ikeConfigNode = value["IkeConfig"];
 	if(!ikeConfigNode["Psk"].isNull())
 		ikeConfig_.psk = ikeConfigNode["Psk"].asString();
@@ -68,6 +69,17 @@ void ModifyVpnConnectionAttributeResult::parse(const std::string &payload)
 		ipsecConfig_.ipsecPfs = ipsecConfigNode["IpsecPfs"].asString();
 	if(!ipsecConfigNode["IpsecLifetime"].isNull())
 		ipsecConfig_.ipsecLifetime = std::stol(ipsecConfigNode["IpsecLifetime"].asString());
+	auto vcoHealthCheckNode = value["VcoHealthCheck"];
+	if(!vcoHealthCheckNode["Enable"].isNull())
+		vcoHealthCheck_.enable = vcoHealthCheckNode["Enable"].asString();
+	if(!vcoHealthCheckNode["Sip"].isNull())
+		vcoHealthCheck_.sip = vcoHealthCheckNode["Sip"].asString();
+	if(!vcoHealthCheckNode["Dip"].isNull())
+		vcoHealthCheck_.dip = vcoHealthCheckNode["Dip"].asString();
+	if(!vcoHealthCheckNode["Interval"].isNull())
+		vcoHealthCheck_.interval = std::stoi(vcoHealthCheckNode["Interval"].asString());
+	if(!vcoHealthCheckNode["Retry"].isNull())
+		vcoHealthCheck_.retry = std::stoi(vcoHealthCheckNode["Retry"].asString());
 	if(!value["VpnConnectionId"].isNull())
 		vpnConnectionId_ = value["VpnConnectionId"].asString();
 	if(!value["CustomerGatewayId"].isNull())
@@ -97,6 +109,11 @@ std::string ModifyVpnConnectionAttributeResult::getLocalSubnet()const
 bool ModifyVpnConnectionAttributeResult::getEffectImmediately()const
 {
 	return effectImmediately_;
+}
+
+ModifyVpnConnectionAttributeResult::VcoHealthCheck ModifyVpnConnectionAttributeResult::getVcoHealthCheck()const
+{
+	return vcoHealthCheck_;
 }
 
 std::string ModifyVpnConnectionAttributeResult::getRemoteSubnet()const

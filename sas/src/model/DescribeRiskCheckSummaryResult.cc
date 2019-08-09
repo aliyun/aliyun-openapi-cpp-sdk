@@ -35,11 +35,12 @@ DescribeRiskCheckSummaryResult::~DescribeRiskCheckSummaryResult()
 
 void DescribeRiskCheckSummaryResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto riskCheckSummaryNode = value["RiskCheckSummary"];
 	if(!riskCheckSummaryNode["RiskCount"].isNull())
 		riskCheckSummary_.riskCount = std::stoi(riskCheckSummaryNode["RiskCount"].asString());
@@ -53,6 +54,10 @@ void DescribeRiskCheckSummaryResult::parse(const std::string &payload)
 		riskCheckSummary_.affectedAssetCount = std::stoi(riskCheckSummaryNode["AffectedAssetCount"].asString());
 	if(!riskCheckSummaryNode["PreviousTime"].isNull())
 		riskCheckSummary_.previousTime = std::stol(riskCheckSummaryNode["PreviousTime"].asString());
+	if(!riskCheckSummaryNode["EnabledRiskCount"].isNull())
+		riskCheckSummary_.enabledRiskCount = std::stoi(riskCheckSummaryNode["EnabledRiskCount"].asString());
+	if(!riskCheckSummaryNode["DisabledRiskCount"].isNull())
+		riskCheckSummary_.disabledRiskCount = std::stoi(riskCheckSummaryNode["DisabledRiskCount"].asString());
 	auto allRiskLevelCount = value["RiskLevelCount"]["levelCount"];
 	for (auto value : allRiskLevelCount)
 	{

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,40 +17,44 @@
 #ifndef ALIBABACLOUD_YUNDUN_DS_MODEL_DESCRIBEEVENTTOTALCOUNTREQUEST_H_
 #define ALIBABACLOUD_YUNDUN_DS_MODEL_DESCRIBEEVENTTOTALCOUNTREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/yundun-ds/Yundun_dsExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/yundun-ds/Yundun_dsExport.h>
 
-namespace AlibabaCloud {
-namespace Yundun_ds {
-namespace Model {
-class ALIBABACLOUD_YUNDUN_DS_EXPORT DescribeEventTotalCountRequest
-    : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Yundun_ds
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_YUNDUN_DS_EXPORT DescribeEventTotalCountRequest : public RpcServiceRequest
+			{
 
-public:
-  DescribeEventTotalCountRequest();
-  ~DescribeEventTotalCountRequest();
+			public:
+				DescribeEventTotalCountRequest();
+				~DescribeEventTotalCountRequest();
 
-  std::string getTypeCode() const;
-  void setTypeCode(const std::string &typeCode);
-  std::string getSourceIp() const;
-  void setSourceIp(const std::string &sourceIp);
-  int getFeatureType() const;
-  void setFeatureType(int featureType);
-  int getCountType() const;
-  void setCountType(int countType);
-  std::string getLang() const;
-  void setLang(const std::string &lang);
+				std::string getTypeCode()const;
+				void setTypeCode(const std::string& typeCode);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
+				int getCountType()const;
+				void setCountType(int countType);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
-private:
-  std::string typeCode_;
-  std::string sourceIp_;
-  int featureType_;
-  int countType_;
-  std::string lang_;
-};
-} // namespace Model
-} // namespace Yundun_ds
-} // namespace AlibabaCloud
+            private:
+				std::string typeCode_;
+				std::string sourceIp_;
+				int featureType_;
+				int countType_;
+				std::string lang_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_YUNDUN_DS_MODEL_DESCRIBEEVENTTOTALCOUNTREQUEST_H_

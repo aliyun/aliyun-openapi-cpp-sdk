@@ -35,11 +35,12 @@ DescribeStreamPredictResultResult::~DescribeStreamPredictResultResult()
 
 void DescribeStreamPredictResultResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allStreamPredictDatas = value["StreamPredictDatas"]["StreamPredictData"];
 	for (auto value : allStreamPredictDatas)
 	{
@@ -50,54 +51,14 @@ void DescribeStreamPredictResultResult::parse(const std::string &payload)
 			streamPredictDatasObject.modelId = value["ModelId"].asString();
 		if(!value["DataUrl"].isNull())
 			streamPredictDatasObject.dataUrl = value["DataUrl"].asString();
-		if(!value["StreamTimestamp"].isNull())
-			streamPredictDatasObject.streamTimestamp = value["StreamTimestamp"].asString();
+		if(!value["Timestamp"].isNull())
+			streamPredictDatasObject.timestamp = std::stol(value["Timestamp"].asString());
 		if(!value["PredictTime"].isNull())
 			streamPredictDatasObject.predictTime = value["PredictTime"].asString();
 		if(!value["Status"].isNull())
 			streamPredictDatasObject.status = value["Status"].asString();
-		auto allResultStatistics = value["ResultStatistics"]["ResultStatisticsItem"];
-		for (auto value : allResultStatistics)
-		{
-			StreamPredictData::ResultStatisticsItem resultStatisticsObject;
-			if(!value["TagId"].isNull())
-				resultStatisticsObject.tagId = value["TagId"].asString();
-			if(!value["TagName"].isNull())
-				resultStatisticsObject.tagName = value["TagName"].asString();
-			if(!value["Count"].isNull())
-				resultStatisticsObject.count = std::stol(value["Count"].asString());
-			streamPredictDatasObject.resultStatistics.push_back(resultStatisticsObject);
-		}
-		auto allPredictionResults = value["PredictionResults"]["PredictionResult"];
-		for (auto value : allPredictionResults)
-		{
-			StreamPredictData::PredictionResult predictionResultsObject;
-			if(!value["TagId"].isNull())
-				predictionResultsObject.tagId = value["TagId"].asString();
-			if(!value["TagName"].isNull())
-				predictionResultsObject.tagName = value["TagName"].asString();
-			if(!value["Probability"].isNull())
-				predictionResultsObject.probability = value["Probability"].asString();
-			if(!value["Overlap"].isNull())
-				predictionResultsObject.overlap = value["Overlap"].asString();
-			if(!value["RegionType"].isNull())
-				predictionResultsObject.regionType = value["RegionType"].asString();
-			auto regionNode = value["Region"];
-			if(!regionNode["Left"].isNull())
-				predictionResultsObject.region.left = regionNode["Left"].asString();
-			if(!regionNode["Top"].isNull())
-				predictionResultsObject.region.top = regionNode["Top"].asString();
-			if(!regionNode["Width"].isNull())
-				predictionResultsObject.region.width = regionNode["Width"].asString();
-			if(!regionNode["Height"].isNull())
-				predictionResultsObject.region.height = regionNode["Height"].asString();
-			auto propertiesNode = value["Properties"];
-			if(!propertiesNode["WithGloves"].isNull())
-				predictionResultsObject.properties.withGloves = propertiesNode["WithGloves"].asString();
-			if(!propertiesNode["WithGlovesProbability"].isNull())
-				predictionResultsObject.properties.withGlovesProbability = propertiesNode["WithGlovesProbability"].asString();
-			streamPredictDatasObject.predictionResults.push_back(predictionResultsObject);
-		}
+		if(!value["PredictResult"].isNull())
+			streamPredictDatasObject.predictResult = value["PredictResult"].asString();
 		streamPredictDatas_.push_back(streamPredictDatasObject);
 	}
 	if(!value["TotalNum"].isNull())

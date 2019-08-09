@@ -35,11 +35,12 @@ ListRecordingsByContactIdResult::~ListRecordingsByContactIdResult()
 
 void ListRecordingsByContactIdResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allRecordings = value["Recordings"]["Recording"];
 	for (auto value : allRecordings)
 	{
@@ -70,6 +71,10 @@ void ListRecordingsByContactIdResult::parse(const std::string &payload)
 			recordingsObject.channel = value["Channel"].asString();
 		if(!value["InstanceId"].isNull())
 			recordingsObject.instanceId = value["InstanceId"].asString();
+		if(!value["QualityCheckTid"].isNull())
+			recordingsObject.qualityCheckTid = value["QualityCheckTid"].asString();
+		if(!value["QualityCheckTaskId"].isNull())
+			recordingsObject.qualityCheckTaskId = value["QualityCheckTaskId"].asString();
 		recordings_.push_back(recordingsObject);
 	}
 	if(!value["Success"].isNull())

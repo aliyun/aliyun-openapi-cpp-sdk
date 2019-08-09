@@ -35,11 +35,12 @@ QueryCustomerByIdResult::~QueryCustomerByIdResult()
 
 void QueryCustomerByIdResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto dataNode = value["Data"];
 	if(!dataNode["Id"].isNull())
 		data_.id = dataNode["Id"].asString();
@@ -62,6 +63,14 @@ void QueryCustomerByIdResult::parse(const std::string &payload)
 		data_.customizeFields.cid = customizeFieldsNode["Cid"].asString();
 	if(!customizeFieldsNode["AbcUrl"].isNull())
 		data_.customizeFields.abcUrl = customizeFieldsNode["AbcUrl"].asString();
+	if(!customizeFieldsNode["DistributionLevel"].isNull())
+		data_.customizeFields.distributionLevel = customizeFieldsNode["DistributionLevel"].asString();
+	if(!customizeFieldsNode["MainAccountUid"].isNull())
+		data_.customizeFields.mainAccountUid = customizeFieldsNode["MainAccountUid"].asString();
+	if(!customizeFieldsNode["AssociatePerson"].isNull())
+		data_.customizeFields.associatePerson = customizeFieldsNode["AssociatePerson"].asString();
+	if(!customizeFieldsNode["Tag"].isNull())
+		data_.customizeFields.tag = customizeFieldsNode["Tag"].asString();
 		auto allAssociatePersonList = customizeFieldsNode["AssociatePersonList"]["AssociatePersonList"];
 		for (auto value : allAssociatePersonList)
 			data_.customizeFields.associatePersonList.push_back(value.asString());

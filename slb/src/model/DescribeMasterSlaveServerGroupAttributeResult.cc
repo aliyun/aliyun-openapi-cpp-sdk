@@ -35,11 +35,12 @@ DescribeMasterSlaveServerGroupAttributeResult::~DescribeMasterSlaveServerGroupAt
 
 void DescribeMasterSlaveServerGroupAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allMasterSlaveBackendServers = value["MasterSlaveBackendServers"]["MasterSlaveBackendServer"];
 	for (auto value : allMasterSlaveBackendServers)
 	{
@@ -56,12 +57,14 @@ void DescribeMasterSlaveServerGroupAttributeResult::parse(const std::string &pay
 			masterSlaveBackendServersObject.type = value["Type"].asString();
 		if(!value["ServerIp"].isNull())
 			masterSlaveBackendServersObject.serverIp = value["ServerIp"].asString();
-		if(!value["EniHost"].isNull())
-			masterSlaveBackendServersObject.eniHost = value["EniHost"].asString();
 		if(!value["VpcId"].isNull())
 			masterSlaveBackendServersObject.vpcId = value["VpcId"].asString();
+		if(!value["Description"].isNull())
+			masterSlaveBackendServersObject.description = value["Description"].asString();
 		masterSlaveBackendServers_.push_back(masterSlaveBackendServersObject);
 	}
+	if(!value["LoadBalancerId"].isNull())
+		loadBalancerId_ = value["LoadBalancerId"].asString();
 	if(!value["MasterSlaveServerGroupId"].isNull())
 		masterSlaveServerGroupId_ = value["MasterSlaveServerGroupId"].asString();
 	if(!value["MasterSlaveServerGroupName"].isNull())
@@ -72,6 +75,11 @@ void DescribeMasterSlaveServerGroupAttributeResult::parse(const std::string &pay
 std::string DescribeMasterSlaveServerGroupAttributeResult::getMasterSlaveServerGroupId()const
 {
 	return masterSlaveServerGroupId_;
+}
+
+std::string DescribeMasterSlaveServerGroupAttributeResult::getLoadBalancerId()const
+{
+	return loadBalancerId_;
 }
 
 std::string DescribeMasterSlaveServerGroupAttributeResult::getMasterSlaveServerGroupName()const

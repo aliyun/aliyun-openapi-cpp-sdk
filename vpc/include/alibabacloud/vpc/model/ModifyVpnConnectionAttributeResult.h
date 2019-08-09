@@ -51,6 +51,14 @@ namespace AlibabaCloud
 					std::string ipsecAuthAlg;
 					long ipsecLifetime;
 				};
+				struct VcoHealthCheck
+				{
+					std::string enable;
+					std::string dip;
+					std::string sip;
+					int retry;
+					int interval;
+				};
 
 
 				ModifyVpnConnectionAttributeResult();
@@ -58,6 +66,7 @@ namespace AlibabaCloud
 				~ModifyVpnConnectionAttributeResult();
 				std::string getLocalSubnet()const;
 				bool getEffectImmediately()const;
+				VcoHealthCheck getVcoHealthCheck()const;
 				std::string getRemoteSubnet()const;
 				std::string getDescription()const;
 				std::string getCustomerGatewayId()const;
@@ -73,6 +82,7 @@ namespace AlibabaCloud
 			private:
 				std::string localSubnet_;
 				bool effectImmediately_;
+				VcoHealthCheck vcoHealthCheck_;
 				std::string remoteSubnet_;
 				std::string description_;
 				std::string customerGatewayId_;

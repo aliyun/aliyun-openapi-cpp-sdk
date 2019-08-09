@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,28 +17,33 @@
 #ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYREPLICADESCRIPTIONRESULT_H_
 #define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYREPLICADESCRIPTIONRESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/r-kvstore/R_kvstoreExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace R_kvstore {
-namespace Model {
-class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyReplicaDescriptionResult
-    : public ServiceResult {
-public:
-  ModifyReplicaDescriptionResult();
-  explicit ModifyReplicaDescriptionResult(const std::string &payload);
-  ~ModifyReplicaDescriptionResult();
+namespace AlibabaCloud
+{
+	namespace R_kvstore
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyReplicaDescriptionResult : public ServiceResult
+			{
+			public:
 
-protected:
-  void parse(const std::string &payload);
 
-private:
-};
-} // namespace Model
-} // namespace R_kvstore
-} // namespace AlibabaCloud
+				ModifyReplicaDescriptionResult();
+				explicit ModifyReplicaDescriptionResult(const std::string &payload);
+				~ModifyReplicaDescriptionResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYREPLICADESCRIPTIONRESULT_H_

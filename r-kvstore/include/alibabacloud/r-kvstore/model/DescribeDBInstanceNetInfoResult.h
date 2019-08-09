@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,45 +17,50 @@
 #ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDBINSTANCENETINFORESULT_H_
 #define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDBINSTANCENETINFORESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/r-kvstore/R_kvstoreExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace R_kvstore {
-namespace Model {
-class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeDBInstanceNetInfoResult
-    : public ServiceResult {
-public:
-  struct InstanceNetInfo {
-    std::string iPType;
-    std::string vPCInstanceId;
-    std::string vPCId;
-    std::string dBInstanceNetType;
-    std::string port;
-    std::string vSwitchId;
-    std::string expiredTime;
-    std::string upgradeable;
-    std::string connectionString;
-    std::string iPAddress;
-  };
+namespace AlibabaCloud
+{
+	namespace R_kvstore
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeDBInstanceNetInfoResult : public ServiceResult
+			{
+			public:
+				struct InstanceNetInfo
+				{
+					std::string iPType;
+					std::string vPCInstanceId;
+					std::string vPCId;
+					std::string dBInstanceNetType;
+					std::string port;
+					std::string vSwitchId;
+					std::string expiredTime;
+					std::string upgradeable;
+					std::string connectionString;
+					std::string iPAddress;
+				};
 
-  DescribeDBInstanceNetInfoResult();
-  explicit DescribeDBInstanceNetInfoResult(const std::string &payload);
-  ~DescribeDBInstanceNetInfoResult();
-  std::vector<InstanceNetInfo> getNetInfoItems() const;
-  std::string getInstanceNetworkType() const;
 
-protected:
-  void parse(const std::string &payload);
+				DescribeDBInstanceNetInfoResult();
+				explicit DescribeDBInstanceNetInfoResult(const std::string &payload);
+				~DescribeDBInstanceNetInfoResult();
+				std::vector<InstanceNetInfo> getNetInfoItems()const;
+				std::string getInstanceNetworkType()const;
 
-private:
-  std::vector<InstanceNetInfo> netInfoItems_;
-  std::string instanceNetworkType_;
-};
-} // namespace Model
-} // namespace R_kvstore
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<InstanceNetInfo> netInfoItems_;
+				std::string instanceNetworkType_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDBINSTANCENETINFORESULT_H_

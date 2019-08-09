@@ -35,11 +35,12 @@ DescribeDataLimitDetailResult::~DescribeDataLimitDetailResult()
 
 void DescribeDataLimitDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto dataLimitNode = value["DataLimit"];
 	if(!dataLimitNode["RegionId"].isNull())
 		dataLimit_.regionId = dataLimitNode["RegionId"].asString();
@@ -51,8 +52,6 @@ void DescribeDataLimitDetailResult::parse(const std::string &payload)
 		dataLimit_.id = std::stol(dataLimitNode["Id"].asString());
 	if(!dataLimitNode["UserName"].isNull())
 		dataLimit_.userName = dataLimitNode["UserName"].asString();
-	if(!dataLimitNode["Password"].isNull())
-		dataLimit_.password = dataLimitNode["Password"].asString();
 	if(!dataLimitNode["GmtCreate"].isNull())
 		dataLimit_.gmtCreate = std::stol(dataLimitNode["GmtCreate"].asString());
 	if(!dataLimitNode["Connector"].isNull())
@@ -61,6 +60,10 @@ void DescribeDataLimitDetailResult::parse(const std::string &payload)
 		dataLimit_.checkStatus = std::stoi(dataLimitNode["CheckStatus"].asString());
 	if(!dataLimitNode["CheckStatusName"].isNull())
 		dataLimit_.checkStatusName = dataLimitNode["CheckStatusName"].asString();
+	if(!dataLimitNode["ResourceType"].isNull())
+		dataLimit_.resourceType = std::stol(dataLimitNode["ResourceType"].asString());
+	if(!dataLimitNode["ResourceTypeCode"].isNull())
+		dataLimit_.resourceTypeCode = dataLimitNode["ResourceTypeCode"].asString();
 
 }
 

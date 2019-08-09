@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,33 +17,38 @@
 #ifndef ALIBABACLOUD_CCC_MODEL_PUBLISHSURVEYREQUEST_H_
 #define ALIBABACLOUD_CCC_MODEL_PUBLISHSURVEYREQUEST_H_
 
-#include <alibabacloud/ccc/CCCExport.h>
-#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/ccc/CCCExport.h>
 
-namespace AlibabaCloud {
-namespace CCC {
-namespace Model {
-class ALIBABACLOUD_CCC_EXPORT PublishSurveyRequest : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace CCC
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_CCC_EXPORT PublishSurveyRequest : public RpcServiceRequest
+			{
 
-public:
-  PublishSurveyRequest();
-  ~PublishSurveyRequest();
+			public:
+				PublishSurveyRequest();
+				~PublishSurveyRequest();
 
-  std::string getSurveyId() const;
-  void setSurveyId(const std::string &surveyId);
-  std::string getInstanceId() const;
-  void setInstanceId(const std::string &instanceId);
-  std::string getScenarioId() const;
-  void setScenarioId(const std::string &scenarioId);
+				std::string getSurveyId()const;
+				void setSurveyId(const std::string& surveyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getScenarioId()const;
+				void setScenarioId(const std::string& scenarioId);
 
-private:
-  std::string surveyId_;
-  std::string instanceId_;
-  std::string scenarioId_;
-};
-} // namespace Model
-} // namespace CCC
-} // namespace AlibabaCloud
+            private:
+				std::string surveyId_;
+				std::string instanceId_;
+				std::string scenarioId_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_CCC_MODEL_PUBLISHSURVEYREQUEST_H_

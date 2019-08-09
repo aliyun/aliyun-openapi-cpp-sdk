@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,42 +17,47 @@
 #ifndef ALIBABACLOUD_VOD_MODEL_ADDAITEMPLATEREQUEST_H_
 #define ALIBABACLOUD_VOD_MODEL_ADDAITEMPLATEREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/vod/VodExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/vod/VodExport.h>
 
-namespace AlibabaCloud {
-namespace Vod {
-namespace Model {
-class ALIBABACLOUD_VOD_EXPORT AddAITemplateRequest : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Vod
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_VOD_EXPORT AddAITemplateRequest : public RpcServiceRequest
+			{
 
-public:
-  AddAITemplateRequest();
-  ~AddAITemplateRequest();
+			public:
+				AddAITemplateRequest();
+				~AddAITemplateRequest();
 
-  long getResourceOwnerId() const;
-  void setResourceOwnerId(long resourceOwnerId);
-  std::string getResourceOwnerAccount() const;
-  void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-  std::string getTemplateConfig() const;
-  void setTemplateConfig(const std::string &templateConfig);
-  std::string getTemplateType() const;
-  void setTemplateType(const std::string &templateType);
-  std::string getTemplateName() const;
-  void setTemplateName(const std::string &templateName);
-  long getOwnerId() const;
-  void setOwnerId(long ownerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getTemplateConfig()const;
+				void setTemplateConfig(const std::string& templateConfig);
+				std::string getTemplateType()const;
+				void setTemplateType(const std::string& templateType);
+				std::string getTemplateName()const;
+				void setTemplateName(const std::string& templateName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
-private:
-  long resourceOwnerId_;
-  std::string resourceOwnerAccount_;
-  std::string templateConfig_;
-  std::string templateType_;
-  std::string templateName_;
-  long ownerId_;
-};
-} // namespace Model
-} // namespace Vod
-} // namespace AlibabaCloud
+            private:
+				long resourceOwnerId_;
+				std::string resourceOwnerAccount_;
+				std::string templateConfig_;
+				std::string templateType_;
+				std::string templateName_;
+				long ownerId_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_VOD_MODEL_ADDAITEMPLATEREQUEST_H_

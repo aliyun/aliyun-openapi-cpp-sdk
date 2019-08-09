@@ -35,11 +35,26 @@ CreateSignatureResult::~CreateSignatureResult()
 
 void CreateSignatureResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
+	if(!value["TransactionId"].isNull())
+		transactionId_ = value["TransactionId"].asString();
+	if(!value["DocContent"].isNull())
+		docContent_ = value["DocContent"].asString();
 
-	setRequestId(value["RequestId"].asString());
+}
 
+std::string CreateSignatureResult::getDocContent()const
+{
+	return docContent_;
+}
+
+std::string CreateSignatureResult::getTransactionId()const
+{
+	return transactionId_;
 }
 

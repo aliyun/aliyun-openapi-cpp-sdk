@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,29 +17,35 @@
 #ifndef ALIBABACLOUD_HSM_MODEL_CREATEINSTANCERESULT_H_
 #define ALIBABACLOUD_HSM_MODEL_CREATEINSTANCERESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/hsm/HsmExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace Hsm {
-namespace Model {
-class ALIBABACLOUD_HSM_EXPORT CreateInstanceResult : public ServiceResult {
-public:
-  CreateInstanceResult();
-  explicit CreateInstanceResult(const std::string &payload);
-  ~CreateInstanceResult();
-  std::vector<std::string> getInstanceIds() const;
+namespace AlibabaCloud
+{
+	namespace Hsm
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_HSM_EXPORT CreateInstanceResult : public ServiceResult
+			{
+			public:
 
-protected:
-  void parse(const std::string &payload);
 
-private:
-  std::vector<std::string> instanceIds_;
-};
-} // namespace Model
-} // namespace Hsm
-} // namespace AlibabaCloud
+				CreateInstanceResult();
+				explicit CreateInstanceResult(const std::string &payload);
+				~CreateInstanceResult();
+				std::vector<std::string> getInstanceIds()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<std::string> instanceIds_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_HSM_MODEL_CREATEINSTANCERESULT_H_

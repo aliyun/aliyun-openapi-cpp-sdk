@@ -35,54 +35,73 @@ DescribeOrderDetailResult::~DescribeOrderDetailResult()
 
 void DescribeOrderDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	if(!value["Id"].isNull())
-		id_ = std::stoi(value["Id"].asString());
+		id_ = std::stol(value["Id"].asString());
 	if(!value["SourceType"].isNull())
 		sourceType_ = value["SourceType"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
-	if(!value["Year"].isNull())
-		year_ = std::stoi(value["Year"].asString());
-	if(!value["BuyDate"].isNull())
-		buyDate_ = std::stoi(value["BuyDate"].asString());
-	if(!value["Domain"].isNull())
-		domain_ = value["Domain"].asString();
-	if(!value["StatusCode"].isNull())
-		statusCode_ = std::stoi(value["StatusCode"].asString());
-	if(!value["BrandName"].isNull())
-		brandName_ = value["BrandName"].asString();
-	if(!value["ProductAliasName"].isNull())
-		productAliasName_ = value["ProductAliasName"].asString();
 	if(!value["CertType"].isNull())
 		certType_ = value["CertType"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["Year"].isNull())
+		year_ = std::stol(value["Year"].asString());
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["OrderType"].isNull())
+		orderType_ = value["OrderType"].asString();
+	if(!value["BrandName"].isNull())
+		brandName_ = value["BrandName"].asString();
+	if(!value["BuyDate"].isNull())
+		buyDate_ = std::stol(value["BuyDate"].asString());
+	if(!value["StatusCode"].isNull())
+		statusCode_ = value["StatusCode"].asString();
+	if(!value["Domain"].isNull())
+		domain_ = value["Domain"].asString();
+	if(!value["ProductAliasName"].isNull())
+		productAliasName_ = value["ProductAliasName"].asString();
+	if(!value["DomainCount"].isNull())
+		domainCount_ = std::stoi(value["DomainCount"].asString());
+	if(!value["WildDomainCount"].isNull())
+		wildDomainCount_ = std::stoi(value["WildDomainCount"].asString());
+	if(!value["VerifyStatus"].isNull())
+		verifyStatus_ = std::stoi(value["VerifyStatus"].asString());
+	if(!value["MaybeIssueDate"].isNull())
+		maybeIssueDate_ = std::stol(value["MaybeIssueDate"].asString());
+	if(!value["BeforeDate"].isNull())
+		beforeDate_ = std::stol(value["BeforeDate"].asString());
+	if(!value["AfterDate"].isNull())
+		afterDate_ = std::stol(value["AfterDate"].asString());
+	if(!value["ShowCancel"].isNull())
+		showCancel_ = value["ShowCancel"].asString() == "true";
+	if(!value["ShowRefund"].isNull())
+		showRefund_ = value["ShowRefund"].asString() == "true";
 
 }
 
-std::string DescribeOrderDetailResult::getBrandName()const
+int DescribeOrderDetailResult::getVerifyStatus()const
 {
-	return brandName_;
+	return verifyStatus_;
 }
 
-int DescribeOrderDetailResult::getYear()const
+long DescribeOrderDetailResult::getAfterDate()const
 {
-	return year_;
+	return afterDate_;
+}
+
+bool DescribeOrderDetailResult::getShowRefund()const
+{
+	return showRefund_;
 }
 
 std::string DescribeOrderDetailResult::getInstanceId()const
 {
 	return instanceId_;
-}
-
-std::string DescribeOrderDetailResult::getProductAliasName()const
-{
-	return productAliasName_;
 }
 
 std::string DescribeOrderDetailResult::getSourceType()const
@@ -95,9 +114,9 @@ std::string DescribeOrderDetailResult::getCertType()const
 	return certType_;
 }
 
-int DescribeOrderDetailResult::getId()const
+int DescribeOrderDetailResult::getWildDomainCount()const
 {
-	return id_;
+	return wildDomainCount_;
 }
 
 long DescribeOrderDetailResult::getOrderId()const
@@ -105,18 +124,63 @@ long DescribeOrderDetailResult::getOrderId()const
 	return orderId_;
 }
 
+std::string DescribeOrderDetailResult::getStatusCode()const
+{
+	return statusCode_;
+}
+
+std::string DescribeOrderDetailResult::getBrandName()const
+{
+	return brandName_;
+}
+
+std::string DescribeOrderDetailResult::getOrderType()const
+{
+	return orderType_;
+}
+
+long DescribeOrderDetailResult::getYear()const
+{
+	return year_;
+}
+
+bool DescribeOrderDetailResult::getShowCancel()const
+{
+	return showCancel_;
+}
+
+std::string DescribeOrderDetailResult::getProductAliasName()const
+{
+	return productAliasName_;
+}
+
+long DescribeOrderDetailResult::getMaybeIssueDate()const
+{
+	return maybeIssueDate_;
+}
+
+long DescribeOrderDetailResult::getId()const
+{
+	return id_;
+}
+
 std::string DescribeOrderDetailResult::getDomain()const
 {
 	return domain_;
 }
 
-int DescribeOrderDetailResult::getStatusCode()const
-{
-	return statusCode_;
-}
-
-int DescribeOrderDetailResult::getBuyDate()const
+long DescribeOrderDetailResult::getBuyDate()const
 {
 	return buyDate_;
+}
+
+int DescribeOrderDetailResult::getDomainCount()const
+{
+	return domainCount_;
+}
+
+long DescribeOrderDetailResult::getBeforeDate()const
+{
+	return beforeDate_;
 }
 

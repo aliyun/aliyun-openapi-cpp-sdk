@@ -35,11 +35,12 @@ DescribeReservedInstancesResult::~DescribeReservedInstancesResult()
 
 void DescribeReservedInstancesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allReservedInstances = value["ReservedInstances"]["ReservedInstance"];
 	for (auto value : allReservedInstances)
 	{
@@ -60,6 +61,8 @@ void DescribeReservedInstancesResult::parse(const std::string &payload)
 			reservedInstancesObject.scope = value["Scope"].asString();
 		if(!value["OfferingType"].isNull())
 			reservedInstancesObject.offeringType = value["OfferingType"].asString();
+		if(!value["Platform"].isNull())
+			reservedInstancesObject.platform = value["Platform"].asString();
 		if(!value["InstanceAmount"].isNull())
 			reservedInstancesObject.instanceAmount = std::stoi(value["InstanceAmount"].asString());
 		if(!value["Status"].isNull())

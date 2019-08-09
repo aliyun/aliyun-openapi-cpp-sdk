@@ -38,33 +38,35 @@ namespace AlibabaCloud
 				explicit AddACLRuleResult(const std::string &payload);
 				~AddACLRuleResult();
 				std::string getPolicy()const;
-				long getGmtCreate()const;
 				std::string getDescription()const;
-				std::string getDestCidr()const;
 				std::string getSourcePortRange()const;
 				std::string getSourceCidr()const;
 				int getPriority()const;
 				std::string getAclId()const;
 				std::string getAcrId()const;
-				std::string getIpProtocol()const;
 				std::string getDestPortRange()const;
 				std::string getDirection()const;
+				long getGmtCreate()const;
+				std::string getType()const;
+				std::string getDestCidr()const;
+				std::string getIpProtocol()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string policy_;
-				long gmtCreate_;
 				std::string description_;
-				std::string destCidr_;
 				std::string sourcePortRange_;
 				std::string sourceCidr_;
 				int priority_;
 				std::string aclId_;
 				std::string acrId_;
-				std::string ipProtocol_;
 				std::string destPortRange_;
 				std::string direction_;
+				long gmtCreate_;
+				std::string type_;
+				std::string destCidr_;
+				std::string ipProtocol_;
 
 			};
 		}

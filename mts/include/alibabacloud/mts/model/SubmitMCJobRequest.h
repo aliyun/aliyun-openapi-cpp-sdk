@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,57 +17,62 @@
 #ifndef ALIBABACLOUD_MTS_MODEL_SUBMITMCJOBREQUEST_H_
 #define ALIBABACLOUD_MTS_MODEL_SUBMITMCJOBREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/mts/MtsExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/mts/MtsExport.h>
 
-namespace AlibabaCloud {
-namespace Mts {
-namespace Model {
-class ALIBABACLOUD_MTS_EXPORT SubmitMCJobRequest : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Mts
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_MTS_EXPORT SubmitMCJobRequest : public RpcServiceRequest
+			{
 
-public:
-  SubmitMCJobRequest();
-  ~SubmitMCJobRequest();
+			public:
+				SubmitMCJobRequest();
+				~SubmitMCJobRequest();
 
-  std::string getUserData() const;
-  void setUserData(const std::string &userData);
-  long getResourceOwnerId() const;
-  void setResourceOwnerId(long resourceOwnerId);
-  std::string getImages() const;
-  void setImages(const std::string &images);
-  std::string getTexts() const;
-  void setTexts(const std::string &texts);
-  std::string getResourceOwnerAccount() const;
-  void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-  std::string getOwnerAccount() const;
-  void setOwnerAccount(const std::string &ownerAccount);
-  std::string getVideo() const;
-  void setVideo(const std::string &video);
-  long getOwnerId() const;
-  void setOwnerId(long ownerId);
-  std::string getCensorConfig() const;
-  void setCensorConfig(const std::string &censorConfig);
-  std::string getAccessKeyId() const;
-  void setAccessKeyId(const std::string &accessKeyId);
-  std::string getPipelineId() const;
-  void setPipelineId(const std::string &pipelineId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getImages()const;
+				void setImages(const std::string& images);
+				std::string getTexts()const;
+				void setTexts(const std::string& texts);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getVideo()const;
+				void setVideo(const std::string& video);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getCensorConfig()const;
+				void setCensorConfig(const std::string& censorConfig);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPipelineId()const;
+				void setPipelineId(const std::string& pipelineId);
 
-private:
-  std::string userData_;
-  long resourceOwnerId_;
-  std::string images_;
-  std::string texts_;
-  std::string resourceOwnerAccount_;
-  std::string ownerAccount_;
-  std::string video_;
-  long ownerId_;
-  std::string censorConfig_;
-  std::string accessKeyId_;
-  std::string pipelineId_;
-};
-} // namespace Model
-} // namespace Mts
-} // namespace AlibabaCloud
+            private:
+				std::string userData_;
+				long resourceOwnerId_;
+				std::string images_;
+				std::string texts_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string video_;
+				long ownerId_;
+				std::string censorConfig_;
+				std::string accessKeyId_;
+				std::string pipelineId_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_MTS_MODEL_SUBMITMCJOBREQUEST_H_

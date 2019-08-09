@@ -35,11 +35,12 @@ DescribeGtmInstanceResult::~DescribeGtmInstanceResult()
 
 void DescribeGtmInstanceResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["InstanceName"].isNull())
@@ -64,17 +65,9 @@ void DescribeGtmInstanceResult::parse(const std::string &payload)
 		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
 	if(!value["AlertGroup"].isNull())
 		alertGroup_ = value["AlertGroup"].asString();
+	if(!value["CnameMode"].isNull())
+		cnameMode_ = value["CnameMode"].asString();
 
-}
-
-std::string DescribeGtmInstanceResult::getInstanceName()const
-{
-	return instanceName_;
-}
-
-std::string DescribeGtmInstanceResult::getVersionCode()const
-{
-	return versionCode_;
 }
 
 long DescribeGtmInstanceResult::getExpireTimestamp()const
@@ -85,11 +78,6 @@ long DescribeGtmInstanceResult::getExpireTimestamp()const
 std::string DescribeGtmInstanceResult::getUserDomainName()const
 {
 	return userDomainName_;
-}
-
-std::string DescribeGtmInstanceResult::getAlertGroup()const
-{
-	return alertGroup_;
 }
 
 std::string DescribeGtmInstanceResult::getLbaStrategy()const
@@ -107,9 +95,9 @@ std::string DescribeGtmInstanceResult::getCreateTime()const
 	return createTime_;
 }
 
-std::string DescribeGtmInstanceResult::getExpireTime()const
+std::string DescribeGtmInstanceResult::getCnameMode()const
 {
-	return expireTime_;
+	return cnameMode_;
 }
 
 std::string DescribeGtmInstanceResult::getCname()const
@@ -120,6 +108,26 @@ std::string DescribeGtmInstanceResult::getCname()const
 int DescribeGtmInstanceResult::getTtl()const
 {
 	return ttl_;
+}
+
+std::string DescribeGtmInstanceResult::getInstanceName()const
+{
+	return instanceName_;
+}
+
+std::string DescribeGtmInstanceResult::getVersionCode()const
+{
+	return versionCode_;
+}
+
+std::string DescribeGtmInstanceResult::getAlertGroup()const
+{
+	return alertGroup_;
+}
+
+std::string DescribeGtmInstanceResult::getExpireTime()const
+{
+	return expireTime_;
 }
 
 long DescribeGtmInstanceResult::getCreateTimestamp()const

@@ -35,11 +35,12 @@ DescribeDcdnUserResourcePackageResult::~DescribeDcdnUserResourcePackageResult()
 
 void DescribeDcdnUserResourcePackageResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allResourcePackageInfos = value["ResourcePackageInfos"]["ResourcePackageInfo"];
 	for (auto value : allResourcePackageInfos)
 	{
@@ -52,6 +53,8 @@ void DescribeDcdnUserResourcePackageResult::parse(const std::string &payload)
 			resourcePackageInfosObject.commodityCode = value["CommodityCode"].asString();
 		if(!value["DisplayName"].isNull())
 			resourcePackageInfosObject.displayName = value["DisplayName"].asString();
+		if(!value["TemplateName"].isNull())
+			resourcePackageInfosObject.templateName = value["TemplateName"].asString();
 		if(!value["InstanceId"].isNull())
 			resourcePackageInfosObject.instanceId = value["InstanceId"].asString();
 		if(!value["Status"].isNull())

@@ -35,17 +35,18 @@ namespace AlibabaCloud
 				struct Acr
 				{
 					std::string policy;
-					long gmtCreate;
 					std::string description;
-					std::string destCidr;
 					std::string sourcePortRange;
 					std::string sourceCidr;
 					int priority;
 					std::string aclId;
 					std::string acrId;
-					std::string ipProtocol;
 					std::string destPortRange;
 					std::string direction;
+					long gmtCreate;
+					std::string type;
+					std::string destCidr;
+					std::string ipProtocol;
 				};
 
 

@@ -35,11 +35,12 @@ DescribeInvocationsResult::~DescribeInvocationsResult()
 
 void DescribeInvocationsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allInvocations = value["Invocations"]["Invocation"];
 	for (auto value : allInvocations)
 	{
@@ -70,6 +71,12 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 				invokeInstancesObject.instanceId = value["InstanceId"].asString();
 			if(!value["InstanceInvokeStatus"].isNull())
 				invokeInstancesObject.instanceInvokeStatus = value["InstanceInvokeStatus"].asString();
+			if(!value["CreationTime"].isNull())
+				invokeInstancesObject.creationTime = value["CreationTime"].asString();
+			if(!value["StartTime"].isNull())
+				invokeInstancesObject.startTime = value["StartTime"].asString();
+			if(!value["FinishTime"].isNull())
+				invokeInstancesObject.finishTime = value["FinishTime"].asString();
 			invocationsObject.invokeInstances.push_back(invokeInstancesObject);
 		}
 		invocations_.push_back(invocationsObject);

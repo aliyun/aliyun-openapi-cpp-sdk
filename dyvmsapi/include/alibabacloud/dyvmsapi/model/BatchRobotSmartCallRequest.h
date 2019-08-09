@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,70 +17,74 @@
 #ifndef ALIBABACLOUD_DYVMSAPI_MODEL_BATCHROBOTSMARTCALLREQUEST_H_
 #define ALIBABACLOUD_DYVMSAPI_MODEL_BATCHROBOTSMARTCALLREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/dyvmsapi/DyvmsapiExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/dyvmsapi/DyvmsapiExport.h>
 
-namespace AlibabaCloud {
-namespace Dyvmsapi {
-namespace Model {
-class ALIBABACLOUD_DYVMSAPI_EXPORT BatchRobotSmartCallRequest
-    : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Dyvmsapi
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_DYVMSAPI_EXPORT BatchRobotSmartCallRequest : public RpcServiceRequest
+			{
 
-public:
-  BatchRobotSmartCallRequest();
-  ~BatchRobotSmartCallRequest();
+			public:
+				BatchRobotSmartCallRequest();
+				~BatchRobotSmartCallRequest();
 
-  long getResourceOwnerId() const;
-  void setResourceOwnerId(long resourceOwnerId);
-  bool getEarlyMediaAsr() const;
-  void setEarlyMediaAsr(bool earlyMediaAsr);
-  std::string getResourceOwnerAccount() const;
-  void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-  std::string getTtsParamHead() const;
-  void setTtsParamHead(const std::string &ttsParamHead);
-  std::string getTaskName() const;
-  void setTaskName(const std::string &taskName);
-  std::string getTtsParam() const;
-  void setTtsParam(const std::string &ttsParam);
-  long getOwnerId() const;
-  void setOwnerId(long ownerId);
-  std::string getDialogId() const;
-  void setDialogId(const std::string &dialogId);
-  std::string getAccessKeyId() const;
-  void setAccessKeyId(const std::string &accessKeyId);
-  std::string getCalledNumber() const;
-  void setCalledNumber(const std::string &calledNumber);
-  long getScheduleTime() const;
-  void setScheduleTime(long scheduleTime);
-  std::string getCalledShowNumber() const;
-  void setCalledShowNumber(const std::string &calledShowNumber);
-  std::string getCorpName() const;
-  void setCorpName(const std::string &corpName);
-  bool getScheduleCall() const;
-  void setScheduleCall(bool scheduleCall);
-  bool getIsSelfLine() const;
-  void setIsSelfLine(bool isSelfLine);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				bool getEarlyMediaAsr()const;
+				void setEarlyMediaAsr(bool earlyMediaAsr);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getTtsParamHead()const;
+				void setTtsParamHead(const std::string& ttsParamHead);
+				std::string getTaskName()const;
+				void setTaskName(const std::string& taskName);
+				std::string getTtsParam()const;
+				void setTtsParam(const std::string& ttsParam);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getDialogId()const;
+				void setDialogId(const std::string& dialogId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCalledNumber()const;
+				void setCalledNumber(const std::string& calledNumber);
+				long getScheduleTime()const;
+				void setScheduleTime(long scheduleTime);
+				std::string getCalledShowNumber()const;
+				void setCalledShowNumber(const std::string& calledShowNumber);
+				std::string getCorpName()const;
+				void setCorpName(const std::string& corpName);
+				bool getScheduleCall()const;
+				void setScheduleCall(bool scheduleCall);
+				bool getIsSelfLine()const;
+				void setIsSelfLine(bool isSelfLine);
 
-private:
-  long resourceOwnerId_;
-  bool earlyMediaAsr_;
-  std::string resourceOwnerAccount_;
-  std::string ttsParamHead_;
-  std::string taskName_;
-  std::string ttsParam_;
-  long ownerId_;
-  std::string dialogId_;
-  std::string accessKeyId_;
-  std::string calledNumber_;
-  long scheduleTime_;
-  std::string calledShowNumber_;
-  std::string corpName_;
-  bool scheduleCall_;
-  bool isSelfLine_;
-};
-} // namespace Model
-} // namespace Dyvmsapi
-} // namespace AlibabaCloud
+            private:
+				long resourceOwnerId_;
+				bool earlyMediaAsr_;
+				std::string resourceOwnerAccount_;
+				std::string ttsParamHead_;
+				std::string taskName_;
+				std::string ttsParam_;
+				long ownerId_;
+				std::string dialogId_;
+				std::string accessKeyId_;
+				std::string calledNumber_;
+				long scheduleTime_;
+				std::string calledShowNumber_;
+				std::string corpName_;
+				bool scheduleCall_;
+				bool isSelfLine_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_DYVMSAPI_MODEL_BATCHROBOTSMARTCALLREQUEST_H_

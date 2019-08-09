@@ -35,11 +35,12 @@ DescribeVpcAttributeResult::~DescribeVpcAttributeResult()
 
 void DescribeVpcAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allAssociatedCens = value["AssociatedCens"]["AssociatedCen"];
 	for (auto value : allAssociatedCens)
 	{
@@ -92,6 +93,8 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 		classicLinkEnabled_ = value["ClassicLinkEnabled"].asString() == "true";
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["NetworkAclNum"].isNull())
+		networkAclNum_ = value["NetworkAclNum"].asString();
 
 }
 
@@ -133,6 +136,11 @@ std::string DescribeVpcAttributeResult::getCidrBlock()const
 std::vector<std::string> DescribeVpcAttributeResult::getUserCidrs()const
 {
 	return userCidrs_;
+}
+
+std::string DescribeVpcAttributeResult::getNetworkAclNum()const
+{
+	return networkAclNum_;
 }
 
 std::string DescribeVpcAttributeResult::getVRouterId()const

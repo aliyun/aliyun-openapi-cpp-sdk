@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,52 +17,56 @@
 #ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBESNAPSHOTMONITORDATAREQUEST_H_
 #define ALIBABACLOUD_ECS_MODEL_DESCRIBESNAPSHOTMONITORDATAREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/ecs/EcsExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/ecs/EcsExport.h>
 
-namespace AlibabaCloud {
-namespace Ecs {
-namespace Model {
-class ALIBABACLOUD_ECS_EXPORT DescribeSnapshotMonitorDataRequest
-    : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Ecs
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_ECS_EXPORT DescribeSnapshotMonitorDataRequest : public RpcServiceRequest
+			{
 
-public:
-  DescribeSnapshotMonitorDataRequest();
-  ~DescribeSnapshotMonitorDataRequest();
+			public:
+				DescribeSnapshotMonitorDataRequest();
+				~DescribeSnapshotMonitorDataRequest();
 
-  std::string getSourceRegionId() const;
-  void setSourceRegionId(const std::string &sourceRegionId);
-  long getResourceOwnerId() const;
-  void setResourceOwnerId(long resourceOwnerId);
-  int getPeriod() const;
-  void setPeriod(int period);
-  std::string getResourceOwnerAccount() const;
-  void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-  std::string getRegionId() const;
-  void setRegionId(const std::string &regionId);
-  std::string getOwnerAccount() const;
-  void setOwnerAccount(const std::string &ownerAccount);
-  std::string getEndTime() const;
-  void setEndTime(const std::string &endTime);
-  std::string getStartTime() const;
-  void setStartTime(const std::string &startTime);
-  long getOwnerId() const;
-  void setOwnerId(long ownerId);
+				std::string getSourceRegionId()const;
+				void setSourceRegionId(const std::string& sourceRegionId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				int getPeriod()const;
+				void setPeriod(int period);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
-private:
-  std::string sourceRegionId_;
-  long resourceOwnerId_;
-  int period_;
-  std::string resourceOwnerAccount_;
-  std::string regionId_;
-  std::string ownerAccount_;
-  std::string endTime_;
-  std::string startTime_;
-  long ownerId_;
-};
-} // namespace Model
-} // namespace Ecs
-} // namespace AlibabaCloud
+            private:
+				std::string sourceRegionId_;
+				long resourceOwnerId_;
+				int period_;
+				std::string resourceOwnerAccount_;
+				std::string regionId_;
+				std::string ownerAccount_;
+				std::string endTime_;
+				std::string startTime_;
+				long ownerId_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBESNAPSHOTMONITORDATAREQUEST_H_

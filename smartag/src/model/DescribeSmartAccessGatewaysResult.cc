@@ -35,11 +35,12 @@ DescribeSmartAccessGatewaysResult::~DescribeSmartAccessGatewaysResult()
 
 void DescribeSmartAccessGatewaysResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allSmartAccessGateways = value["SmartAccessGateways"]["SmartAccessGateway"];
 	for (auto value : allSmartAccessGateways)
 	{
@@ -80,15 +81,39 @@ void DescribeSmartAccessGatewaysResult::parse(const std::string &payload)
 			smartAccessGatewaysObject.dataPlan = std::stol(value["DataPlan"].asString());
 		if(!value["UserCount"].isNull())
 			smartAccessGatewaysObject.userCount = std::stoi(value["UserCount"].asString());
-		auto allSnatEntries = value["SnatEntries"]["SnatEntry"];
-		for (auto value : allSnatEntries)
+		if(!value["RoutingStrategy"].isNull())
+			smartAccessGatewaysObject.routingStrategy = value["RoutingStrategy"].asString();
+		if(!value["UpBandwidthWan"].isNull())
+			smartAccessGatewaysObject.upBandwidthWan = std::stoi(value["UpBandwidthWan"].asString());
+		if(!value["UpBandwidth4G"].isNull())
+			smartAccessGatewaysObject.upBandwidth4G = std::stoi(value["UpBandwidth4G"].asString());
+		if(!value["QosIds"].isNull())
+			smartAccessGatewaysObject.qosIds = value["QosIds"].asString();
+		if(!value["BackupSoftwareVersion"].isNull())
+			smartAccessGatewaysObject.backupSoftwareVersion = value["BackupSoftwareVersion"].asString();
+		if(!value["SmartAGUid"].isNull())
+			smartAccessGatewaysObject.smartAGUid = std::stol(value["SmartAGUid"].asString());
+		auto allLinks = value["Links"]["Link"];
+		for (auto value : allLinks)
 		{
-			SmartAccessGateway::SnatEntry snatEntriesObject;
-			if(!value["CidrBlock"].isNull())
-				snatEntriesObject.cidrBlock = value["CidrBlock"].asString();
-			if(!value["SnatIp"].isNull())
-				snatEntriesObject.snatIp = value["SnatIp"].asString();
-			smartAccessGatewaysObject.snatEntries.push_back(snatEntriesObject);
+			SmartAccessGateway::Link linksObject;
+			if(!value["InstanceId"].isNull())
+				linksObject.instanceId = value["InstanceId"].asString();
+			if(!value["Type"].isNull())
+				linksObject.type = value["Type"].asString();
+			if(!value["Status"].isNull())
+				linksObject.status = value["Status"].asString();
+			if(!value["EndTime"].isNull())
+				linksObject.endTime = std::stol(value["EndTime"].asString());
+			if(!value["Bandwidth"].isNull())
+				linksObject.bandwidth = value["Bandwidth"].asString();
+			if(!value["RelateInstanceId"].isNull())
+				linksObject.relateInstanceId = value["RelateInstanceId"].asString();
+			if(!value["RelateInstanceRegionId"].isNull())
+				linksObject.relateInstanceRegionId = value["RelateInstanceRegionId"].asString();
+			if(!value["CommodityType"].isNull())
+				linksObject.commodityType = value["CommodityType"].asString();
+			smartAccessGatewaysObject.links.push_back(linksObject);
 		}
 		smartAccessGateways_.push_back(smartAccessGatewaysObject);
 	}

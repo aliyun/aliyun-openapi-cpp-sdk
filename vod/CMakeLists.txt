@@ -1,588 +1,582 @@
 #
-#Copyright 2009 - 2017 Alibaba Cloud All rights reserved.
+# Copyright 2009-2017 Alibaba Cloud All rights reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 #
-#Licensed under the Apache License, Version 2.0(the "License");
-#you may not use this file except in compliance with the License.
-#You may obtain a copy of the License at
-#
-#http: // www.apache.org/licenses/LICENSE-2.0
-#
-#Unless required by applicable law or agreed to in writing, software
-#distributed under the License is distributed on an "AS IS" BASIS,
-#WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#See the License for the specific language governing permissions and
-#limitations under the License.
-#
 
-set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR} /../ include)
+set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
-    set(vod_public_header include / alibabacloud / vod / VodClient.h include /
-        alibabacloud / vod / VodExport.h)
+set(vod_public_header 
+	include/alibabacloud/vod/VodClient.h
+	include/alibabacloud/vod/VodExport.h )
 
-        set(vod_public_header_model include / alibabacloud / vod / model /
-            SetDefaultAITemplateRequest.h include / alibabacloud / vod / model /
-            SetDefaultAITemplateResult.h include / alibabacloud / vod / model /
-            DeleteImageRequest.h include / alibabacloud / vod / model /
-            DeleteImageResult.h include / alibabacloud / vod / model /
-            AttachAppPolicyToIdentityRequest.h include / alibabacloud / vod /
-            model / AttachAppPolicyToIdentityResult.h include / alibabacloud /
-            vod / model / DeleteCategoryRequest.h include / alibabacloud / vod /
-            model / DeleteCategoryResult.h include / alibabacloud / vod /
-            model / DescribeVodDomainDetailRequest.h include / alibabacloud /
-            vod / model / DescribeVodDomainDetailResult.h include /
-            alibabacloud / vod / model /
-            SetDefaultTranscodeTemplateGroupRequest.h include / alibabacloud /
-            vod / model / SetDefaultTranscodeTemplateGroupResult.h include /
-            alibabacloud / vod / model /
-            BatchSetVodDomainConfigsRequest.h include / alibabacloud / vod /
-            model / BatchSetVodDomainConfigsResult.h include / alibabacloud /
-            vod / model / UpdateVideoInfosRequest.h include / alibabacloud /
-            vod / model / UpdateVideoInfosResult.h include / alibabacloud /
-            vod / model / UpdateEditingProjectRequest.h include / alibabacloud /
-            vod / model / UpdateEditingProjectResult.h include / alibabacloud /
-            vod / model / GetMediaAuditResultRequest.h include / alibabacloud /
-            vod / model / GetMediaAuditResultResult.h include / alibabacloud /
-            vod / model / GetMediaAuditResultTimelineRequest.h include /
-            alibabacloud / vod / model /
-            GetMediaAuditResultTimelineResult.h include / alibabacloud / vod /
-            model / ListAuditSecurityIpRequest.h include / alibabacloud / vod /
-            model / ListAuditSecurityIpResult.h include / alibabacloud / vod /
-            model / GetAuditHistoryRequest.h include / alibabacloud / vod /
-            model / GetAuditHistoryResult.h include / alibabacloud / vod /
-            model / GetMediaDNAResultRequest.h include / alibabacloud / vod /
-            model / GetMediaDNAResultResult.h include / alibabacloud / vod /
-            model / SetVodDomainCertificateRequest.h include / alibabacloud /
-            vod / model / SetVodDomainCertificateResult.h include /
-            alibabacloud / vod / model / UpdateCategoryRequest.h include /
-            alibabacloud / vod / model / UpdateCategoryResult.h include /
-            alibabacloud / vod / model / RegisterMediaRequest.h include /
-            alibabacloud / vod / model / RegisterMediaResult.h include /
-            alibabacloud / vod / model /
-            GetTranscodeTemplateGroupRequest.h include / alibabacloud / vod /
-            model / GetTranscodeTemplateGroupResult.h include / alibabacloud /
-            vod / model / GetDefaultAITemplateRequest.h include / alibabacloud /
-            vod / model / GetDefaultAITemplateResult.h include / alibabacloud /
-            vod / model / ProduceEditingProjectVideoRequest.h include /
-            alibabacloud / vod / model /
-            ProduceEditingProjectVideoResult.h include / alibabacloud / vod /
-            model / GetVideoPlayAuthRequest.h include / alibabacloud / vod /
-            model / GetVideoPlayAuthResult.h include / alibabacloud / vod /
-            model / DeleteVodTemplateRequest.h include / alibabacloud / vod /
-            model / DeleteVodTemplateResult.h include / alibabacloud / vod /
-            model / GetAITemplateRequest.h include / alibabacloud / vod /
-            model / GetAITemplateResult.h include / alibabacloud / vod / model /
-            ListVodTemplateRequest.h include / alibabacloud / vod / model /
-            ListVodTemplateResult.h include / alibabacloud / vod / model /
-            DeleteAppInfoRequest.h include / alibabacloud / vod / model /
-            DeleteAppInfoResult.h include / alibabacloud / vod / model /
-            ListWatermarkRequest.h include / alibabacloud / vod / model /
-            ListWatermarkResult.h include / alibabacloud / vod / model /
-            AddWatermarkRequest.h include / alibabacloud / vod / model /
-            AddWatermarkResult.h include / alibabacloud / vod / model /
-            CreateUploadImageRequest.h include / alibabacloud / vod / model /
-            CreateUploadImageResult.h include / alibabacloud / vod / model /
-            DescribeVodDomainLogRequest.h include / alibabacloud / vod / model /
-            DescribeVodDomainLogResult.h include / alibabacloud / vod / model /
-            UpdateVideoInfoRequest.h include / alibabacloud / vod / model /
-            UpdateVideoInfoResult.h include / alibabacloud / vod / model /
-            AddAITemplateRequest.h include / alibabacloud / vod / model /
-            AddAITemplateResult.h include / alibabacloud / vod / model /
-            DescribePlayTopVideosRequest.h include / alibabacloud / vod /
-            model / DescribePlayTopVideosResult.h include / alibabacloud / vod /
-            model / RefreshVodObjectCachesRequest.h include / alibabacloud /
-            vod / model / RefreshVodObjectCachesResult.h include /
-            alibabacloud / vod / model / ListTranscodeTaskRequest.h include /
-            alibabacloud / vod / model / ListTranscodeTaskResult.h include /
-            alibabacloud / vod / model / SetDefaultWatermarkRequest.h include /
-            alibabacloud / vod / model / SetDefaultWatermarkResult.h include /
-            alibabacloud / vod / model / ListAITemplateRequest.h include /
-            alibabacloud / vod / model / ListAITemplateResult.h include /
-            alibabacloud / vod / model /
-            DeleteMessageCallbackRequest.h include / alibabacloud / vod /
-            model / DeleteMessageCallbackResult.h include / alibabacloud / vod /
-            model / RefreshUploadVideoRequest.h include / alibabacloud / vod /
-            model / RefreshUploadVideoResult.h include / alibabacloud / vod /
-            model / GetEditingProjectRequest.h include / alibabacloud / vod /
-            model / GetEditingProjectResult.h include / alibabacloud / vod /
-            model / DeleteAITemplateRequest.h include / alibabacloud / vod /
-            model / DeleteAITemplateResult.h include / alibabacloud / vod /
-            model / CreateAuditRequest.h include / alibabacloud / vod / model /
-            CreateAuditResult.h include / alibabacloud / vod / model /
-            DeleteVodDomainRequest.h include / alibabacloud / vod / model /
-            DeleteVodDomainResult.h include / alibabacloud / vod / model /
-            DescribeVodDomainCertificateInfoRequest.h include / alibabacloud /
-            vod / model / DescribeVodDomainCertificateInfoResult.h include /
-            alibabacloud / vod / model / GetWatermarkRequest.h include /
-            alibabacloud / vod / model / GetWatermarkResult.h include /
-            alibabacloud / vod / model / UpdateVodTemplateRequest.h include /
-            alibabacloud / vod / model / UpdateVodTemplateResult.h include /
-            alibabacloud / vod / model / ListLiveRecordVideoRequest.h include /
-            alibabacloud / vod / model / ListLiveRecordVideoResult.h include /
-            alibabacloud / vod / model /
-            UpdateAttachedMediaInfosRequest.h include / alibabacloud / vod /
-            model / UpdateAttachedMediaInfosResult.h include / alibabacloud /
-            vod / model / DescribePlayVideoStatisRequest.h include /
-            alibabacloud / vod / model /
-            DescribePlayVideoStatisResult.h include / alibabacloud / vod /
-            model / GetMediaAuditResultDetailRequest.h include / alibabacloud /
-            vod / model / GetMediaAuditResultDetailResult.h include /
-            alibabacloud / vod / model / DeleteStreamRequest.h include /
-            alibabacloud / vod / model / DeleteStreamResult.h include /
-            alibabacloud / vod / model / UpdateAppInfoRequest.h include /
-            alibabacloud / vod / model / UpdateAppInfoResult.h include /
-            alibabacloud / vod / model / UploadMediaByURLRequest.h include /
-            alibabacloud / vod / model / UploadMediaByURLResult.h include /
-            alibabacloud / vod / model /
-            DescribeVodDomainBpsDataRequest.h include / alibabacloud / vod /
-            model / DescribeVodDomainBpsDataResult.h include / alibabacloud /
-            vod / model / GetPlayInfoRequest.h include / alibabacloud / vod /
-            model / GetPlayInfoResult.h include / alibabacloud / vod / model /
-            UpdateVodDomainRequest.h include / alibabacloud / vod / model /
-            UpdateVodDomainResult.h include / alibabacloud / vod / model /
-            DeleteMezzaninesRequest.h include / alibabacloud / vod / model /
-            DeleteMezzaninesResult.h include / alibabacloud / vod / model /
-            AddEditingProjectRequest.h include / alibabacloud / vod / model /
-            AddEditingProjectResult.h include / alibabacloud / vod / model /
-            GetUploadDetailsRequest.h include / alibabacloud / vod / model /
-            GetUploadDetailsResult.h include / alibabacloud / vod / model /
-            GetAttachedMediaInfoRequest.h include / alibabacloud / vod / model /
-            GetAttachedMediaInfoResult.h include / alibabacloud / vod / model /
-            DeleteTranscodeTemplateGroupRequest.h include / alibabacloud / vod /
-            model / DeleteTranscodeTemplateGroupResult.h include /
-            alibabacloud / vod / model /
-            DeleteVodSpecificConfigRequest.h include / alibabacloud / vod /
-            model / DeleteVodSpecificConfigResult.h include / alibabacloud /
-            vod / model / AddTranscodeTemplateGroupRequest.h include /
-            alibabacloud / vod / model /
-            AddTranscodeTemplateGroupResult.h include / alibabacloud / vod /
-            model / DescribeVodCertificateListRequest.h include / alibabacloud /
-            vod / model / DescribeVodCertificateListResult.h include /
-            alibabacloud / vod / model /
-            SetEditingProjectMaterialsRequest.h include / alibabacloud / vod /
-            model / SetEditingProjectMaterialsResult.h include / alibabacloud /
-            vod / model / DeleteVideoRequest.h include / alibabacloud / vod /
-            model / DeleteVideoResult.h include / alibabacloud / vod / model /
-            ListAppInfoRequest.h include / alibabacloud / vod / model /
-            ListAppInfoResult.h include / alibabacloud / vod / model /
-            AddVodTemplateRequest.h include / alibabacloud / vod / model /
-            AddVodTemplateResult.h include / alibabacloud / vod / model /
-            GetVodTemplateRequest.h include / alibabacloud / vod / model /
-            GetVodTemplateResult.h include / alibabacloud / vod / model /
-            GetTranscodeSummaryRequest.h include / alibabacloud / vod / model /
-            GetTranscodeSummaryResult.h include / alibabacloud / vod / model /
-            DescribePlayUserTotalRequest.h include / alibabacloud / vod /
-            model / DescribePlayUserTotalResult.h include / alibabacloud / vod /
-            model / DescribeVodStorageDataRequest.h include / alibabacloud /
-            vod / model / DescribeVodStorageDataResult.h include /
-            alibabacloud / vod / model /
-            CreateUploadAttachedMediaRequest.h include / alibabacloud / vod /
-            model / CreateUploadAttachedMediaResult.h include / alibabacloud /
-            vod / model / DescribeVodRefreshQuotaRequest.h include /
-            alibabacloud / vod / model /
-            DescribeVodRefreshQuotaResult.h include / alibabacloud / vod /
-            model / DescribeVodDomainTrafficDataRequest.h include /
-            alibabacloud / vod / model /
-            DescribeVodDomainTrafficDataResult.h include / alibabacloud / vod /
-            model / ListSnapshotsRequest.h include / alibabacloud / vod /
-            model / ListSnapshotsResult.h include / alibabacloud / vod / model /
-            DescribeVodAIDataRequest.h include / alibabacloud / vod / model /
-            DescribeVodAIDataResult.h include / alibabacloud / vod / model /
-            DescribeVodRefreshTasksRequest.h include / alibabacloud / vod /
-            model / DescribeVodRefreshTasksResult.h include / alibabacloud /
-            vod / model / GetVideoListRequest.h include / alibabacloud / vod /
-            model / GetVideoListResult.h include / alibabacloud / vod / model /
-            GetVideoInfoRequest.h include / alibabacloud / vod / model /
-            GetVideoInfoResult.h include / alibabacloud / vod / model /
-            DeleteAttachedMediaRequest.h include / alibabacloud / vod / model /
-            DeleteAttachedMediaResult.h include / alibabacloud / vod / model /
-            SetMessageCallbackRequest.h include / alibabacloud / vod / model /
-            SetMessageCallbackResult.h include / alibabacloud / vod / model /
-            GetVideoInfosRequest.h include / alibabacloud / vod / model /
-            GetVideoInfosResult.h include / alibabacloud / vod / model /
-            GetEditingProjectMaterialsRequest.h include / alibabacloud / vod /
-            model / GetEditingProjectMaterialsResult.h include / alibabacloud /
-            vod / model / GetAppInfosRequest.h include / alibabacloud / vod /
-            model / GetAppInfosResult.h include / alibabacloud / vod / model /
-            CreateAppInfoRequest.h include / alibabacloud / vod / model /
-            CreateAppInfoResult.h include / alibabacloud / vod / model /
-            DescribeVodDomainConfigsRequest.h include / alibabacloud / vod /
-            model / DescribeVodDomainConfigsResult.h include / alibabacloud /
-            vod / model / DeleteWatermarkRequest.h include / alibabacloud /
-            vod / model / DeleteWatermarkResult.h include / alibabacloud / vod /
-            model / BatchStopVodDomainRequest.h include / alibabacloud / vod /
-            model / BatchStopVodDomainResult.h include / alibabacloud / vod /
-            model / ModifyVodDomainSchdmByPropertyRequest.h include /
-            alibabacloud / vod / model /
-            ModifyVodDomainSchdmByPropertyResult.h include / alibabacloud /
-            vod / model / ListTranscodeTemplateGroupRequest.h include /
-            alibabacloud / vod / model /
-            ListTranscodeTemplateGroupResult.h include / alibabacloud / vod /
-            model / ListAppPoliciesForIdentityRequest.h include / alibabacloud /
-            vod / model / ListAppPoliciesForIdentityResult.h include /
-            alibabacloud / vod / model / GetAIVideoTagResultRequest.h include /
-            alibabacloud / vod / model / GetAIVideoTagResultResult.h include /
-            alibabacloud / vod / model / BatchStartVodDomainRequest.h include /
-            alibabacloud / vod / model / BatchStartVodDomainResult.h include /
-            alibabacloud / vod / model / SubmitPreprocessJobsRequest.h include /
-            alibabacloud / vod / model / SubmitPreprocessJobsResult.h include /
-            alibabacloud / vod / model / ListAIJobRequest.h include /
-            alibabacloud / vod / model / ListAIJobResult.h include /
-            alibabacloud / vod / model / UpdateImageInfosRequest.h include /
-            alibabacloud / vod / model / UpdateImageInfosResult.h include /
-            alibabacloud / vod / model /
-            DescribeVodDomainUsageDataRequest.h include / alibabacloud / vod /
-            model / DescribeVodDomainUsageDataResult.h include / alibabacloud /
-            vod / model / SearchMediaRequest.h include / alibabacloud / vod /
-            model / SearchMediaResult.h include / alibabacloud / vod / model /
-            PreloadVodObjectCachesRequest.h include / alibabacloud / vod /
-            model / PreloadVodObjectCachesResult.h include / alibabacloud /
-            vod / model / UpdateTranscodeTemplateGroupRequest.h include /
-            alibabacloud / vod / model /
-            UpdateTranscodeTemplateGroupResult.h include / alibabacloud / vod /
-            model / AddCategoryRequest.h include / alibabacloud / vod / model /
-            AddCategoryResult.h include / alibabacloud / vod / model /
-            SubmitSnapshotJobRequest.h include / alibabacloud / vod / model /
-            SubmitSnapshotJobResult.h include / alibabacloud / vod / model /
-            UpdateAITemplateRequest.h include / alibabacloud / vod / model /
-            UpdateAITemplateResult.h include / alibabacloud / vod / model /
-            DeleteEditingProjectRequest.h include / alibabacloud / vod / model /
-            DeleteEditingProjectResult.h include / alibabacloud / vod / model /
-            DescribeVodTranscodeDataRequest.h include / alibabacloud / vod /
-            model / DescribeVodTranscodeDataResult.h include / alibabacloud /
-            vod / model / SearchEditingProjectRequest.h include / alibabacloud /
-            vod / model / SearchEditingProjectResult.h include / alibabacloud /
-            vod / model / DescribeVodUserDomainsRequest.h include /
-            alibabacloud / vod / model /
-            DescribeVodUserDomainsResult.h include / alibabacloud / vod /
-            model / GetImageInfoRequest.h include / alibabacloud / vod / model /
-            GetImageInfoResult.h include / alibabacloud / vod / model /
-            UpdateWatermarkRequest.h include / alibabacloud / vod / model /
-            UpdateWatermarkResult.h include / alibabacloud / vod / model /
-            MoveAppResourceRequest.h include / alibabacloud / vod / model /
-            MoveAppResourceResult.h include / alibabacloud / vod / model /
-            GetMessageCallbackRequest.h include / alibabacloud / vod / model /
-            GetMessageCallbackResult.h include / alibabacloud / vod / model /
-            GetCategoriesRequest.h include / alibabacloud / vod / model /
-            GetCategoriesResult.h include / alibabacloud / vod / model /
-            GetAIMediaAuditJobRequest.h include / alibabacloud / vod / model /
-            GetAIMediaAuditJobResult.h include / alibabacloud / vod / model /
-            SubmitAIJobRequest.h include / alibabacloud / vod / model /
-            SubmitAIJobResult.h include / alibabacloud / vod / model /
-            SubmitTranscodeJobsRequest.h include / alibabacloud / vod / model /
-            SubmitTranscodeJobsResult.h include / alibabacloud / vod / model /
-            AddVodDomainRequest.h include / alibabacloud / vod / model /
-            AddVodDomainResult.h include / alibabacloud / vod / model /
-            CreateUploadVideoRequest.h include / alibabacloud / vod / model /
-            CreateUploadVideoResult.h include / alibabacloud / vod / model /
-            SetAuditSecurityIpRequest.h include / alibabacloud / vod / model /
-            SetAuditSecurityIpResult.h include / alibabacloud / vod / model /
-            DeleteMultipartUploadRequest.h include / alibabacloud / vod /
-            model / DeleteMultipartUploadResult.h include / alibabacloud / vod /
-            model / SubmitAIMediaAuditJobRequest.h include / alibabacloud /
-            vod / model / SubmitAIMediaAuditJobResult.h include / alibabacloud /
-            vod / model / GetTranscodeTaskRequest.h include / alibabacloud /
-            vod / model / GetTranscodeTaskResult.h include / alibabacloud /
-            vod / model / GetURLUploadInfosRequest.h include / alibabacloud /
-            vod / model / GetURLUploadInfosResult.h include / alibabacloud /
-            vod / model / GetMezzanineInfoRequest.h include / alibabacloud /
-            vod / model / GetMezzanineInfoResult.h include / alibabacloud /
-            vod / model / DetachAppPolicyFromIdentityRequest.h include /
-            alibabacloud / vod / model /
-            DetachAppPolicyFromIdentityResult.h include / alibabacloud / vod /
-            model / DescribePlayUserAvgRequest.h include / alibabacloud / vod /
-            model / DescribePlayUserAvgResult.h)
+set(vod_public_header_model 
+	include/alibabacloud/vod/model/SetDefaultAITemplateRequest.h
+	include/alibabacloud/vod/model/SetDefaultAITemplateResult.h
+	include/alibabacloud/vod/model/DeleteImageRequest.h
+	include/alibabacloud/vod/model/DeleteImageResult.h
+	include/alibabacloud/vod/model/AttachAppPolicyToIdentityRequest.h
+	include/alibabacloud/vod/model/AttachAppPolicyToIdentityResult.h
+	include/alibabacloud/vod/model/DeleteCategoryRequest.h
+	include/alibabacloud/vod/model/DeleteCategoryResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainDetailRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainDetailResult.h
+	include/alibabacloud/vod/model/SetDefaultTranscodeTemplateGroupRequest.h
+	include/alibabacloud/vod/model/SetDefaultTranscodeTemplateGroupResult.h
+	include/alibabacloud/vod/model/BatchSetVodDomainConfigsRequest.h
+	include/alibabacloud/vod/model/BatchSetVodDomainConfigsResult.h
+	include/alibabacloud/vod/model/UpdateVideoInfosRequest.h
+	include/alibabacloud/vod/model/UpdateVideoInfosResult.h
+	include/alibabacloud/vod/model/UpdateEditingProjectRequest.h
+	include/alibabacloud/vod/model/UpdateEditingProjectResult.h
+	include/alibabacloud/vod/model/GetMediaAuditResultRequest.h
+	include/alibabacloud/vod/model/GetMediaAuditResultResult.h
+	include/alibabacloud/vod/model/GetMediaAuditResultTimelineRequest.h
+	include/alibabacloud/vod/model/GetMediaAuditResultTimelineResult.h
+	include/alibabacloud/vod/model/ListAuditSecurityIpRequest.h
+	include/alibabacloud/vod/model/ListAuditSecurityIpResult.h
+	include/alibabacloud/vod/model/GetAuditHistoryRequest.h
+	include/alibabacloud/vod/model/GetAuditHistoryResult.h
+	include/alibabacloud/vod/model/GetMediaDNAResultRequest.h
+	include/alibabacloud/vod/model/GetMediaDNAResultResult.h
+	include/alibabacloud/vod/model/SetVodDomainCertificateRequest.h
+	include/alibabacloud/vod/model/SetVodDomainCertificateResult.h
+	include/alibabacloud/vod/model/UpdateCategoryRequest.h
+	include/alibabacloud/vod/model/UpdateCategoryResult.h
+	include/alibabacloud/vod/model/RegisterMediaRequest.h
+	include/alibabacloud/vod/model/RegisterMediaResult.h
+	include/alibabacloud/vod/model/GetTranscodeTemplateGroupRequest.h
+	include/alibabacloud/vod/model/GetTranscodeTemplateGroupResult.h
+	include/alibabacloud/vod/model/GetDefaultAITemplateRequest.h
+	include/alibabacloud/vod/model/GetDefaultAITemplateResult.h
+	include/alibabacloud/vod/model/ProduceEditingProjectVideoRequest.h
+	include/alibabacloud/vod/model/ProduceEditingProjectVideoResult.h
+	include/alibabacloud/vod/model/GetVideoPlayAuthRequest.h
+	include/alibabacloud/vod/model/GetVideoPlayAuthResult.h
+	include/alibabacloud/vod/model/DeleteVodTemplateRequest.h
+	include/alibabacloud/vod/model/DeleteVodTemplateResult.h
+	include/alibabacloud/vod/model/GetAITemplateRequest.h
+	include/alibabacloud/vod/model/GetAITemplateResult.h
+	include/alibabacloud/vod/model/ListVodTemplateRequest.h
+	include/alibabacloud/vod/model/ListVodTemplateResult.h
+	include/alibabacloud/vod/model/DeleteAppInfoRequest.h
+	include/alibabacloud/vod/model/DeleteAppInfoResult.h
+	include/alibabacloud/vod/model/ListWatermarkRequest.h
+	include/alibabacloud/vod/model/ListWatermarkResult.h
+	include/alibabacloud/vod/model/AddWatermarkRequest.h
+	include/alibabacloud/vod/model/AddWatermarkResult.h
+	include/alibabacloud/vod/model/CreateUploadImageRequest.h
+	include/alibabacloud/vod/model/CreateUploadImageResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainLogRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainLogResult.h
+	include/alibabacloud/vod/model/UpdateVideoInfoRequest.h
+	include/alibabacloud/vod/model/UpdateVideoInfoResult.h
+	include/alibabacloud/vod/model/AddAITemplateRequest.h
+	include/alibabacloud/vod/model/AddAITemplateResult.h
+	include/alibabacloud/vod/model/DescribePlayTopVideosRequest.h
+	include/alibabacloud/vod/model/DescribePlayTopVideosResult.h
+	include/alibabacloud/vod/model/RefreshVodObjectCachesRequest.h
+	include/alibabacloud/vod/model/RefreshVodObjectCachesResult.h
+	include/alibabacloud/vod/model/ListTranscodeTaskRequest.h
+	include/alibabacloud/vod/model/ListTranscodeTaskResult.h
+	include/alibabacloud/vod/model/SetDefaultWatermarkRequest.h
+	include/alibabacloud/vod/model/SetDefaultWatermarkResult.h
+	include/alibabacloud/vod/model/ListAITemplateRequest.h
+	include/alibabacloud/vod/model/ListAITemplateResult.h
+	include/alibabacloud/vod/model/DeleteMessageCallbackRequest.h
+	include/alibabacloud/vod/model/DeleteMessageCallbackResult.h
+	include/alibabacloud/vod/model/RefreshUploadVideoRequest.h
+	include/alibabacloud/vod/model/RefreshUploadVideoResult.h
+	include/alibabacloud/vod/model/GetEditingProjectRequest.h
+	include/alibabacloud/vod/model/GetEditingProjectResult.h
+	include/alibabacloud/vod/model/DeleteAITemplateRequest.h
+	include/alibabacloud/vod/model/DeleteAITemplateResult.h
+	include/alibabacloud/vod/model/CreateAuditRequest.h
+	include/alibabacloud/vod/model/CreateAuditResult.h
+	include/alibabacloud/vod/model/DeleteVodDomainRequest.h
+	include/alibabacloud/vod/model/DeleteVodDomainResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainCertificateInfoRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainCertificateInfoResult.h
+	include/alibabacloud/vod/model/GetWatermarkRequest.h
+	include/alibabacloud/vod/model/GetWatermarkResult.h
+	include/alibabacloud/vod/model/UpdateVodTemplateRequest.h
+	include/alibabacloud/vod/model/UpdateVodTemplateResult.h
+	include/alibabacloud/vod/model/ListLiveRecordVideoRequest.h
+	include/alibabacloud/vod/model/ListLiveRecordVideoResult.h
+	include/alibabacloud/vod/model/UpdateAttachedMediaInfosRequest.h
+	include/alibabacloud/vod/model/UpdateAttachedMediaInfosResult.h
+	include/alibabacloud/vod/model/DescribePlayVideoStatisRequest.h
+	include/alibabacloud/vod/model/DescribePlayVideoStatisResult.h
+	include/alibabacloud/vod/model/GetMediaAuditResultDetailRequest.h
+	include/alibabacloud/vod/model/GetMediaAuditResultDetailResult.h
+	include/alibabacloud/vod/model/DeleteStreamRequest.h
+	include/alibabacloud/vod/model/DeleteStreamResult.h
+	include/alibabacloud/vod/model/UpdateAppInfoRequest.h
+	include/alibabacloud/vod/model/UpdateAppInfoResult.h
+	include/alibabacloud/vod/model/UploadMediaByURLRequest.h
+	include/alibabacloud/vod/model/UploadMediaByURLResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainBpsDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainBpsDataResult.h
+	include/alibabacloud/vod/model/GetPlayInfoRequest.h
+	include/alibabacloud/vod/model/GetPlayInfoResult.h
+	include/alibabacloud/vod/model/UpdateVodDomainRequest.h
+	include/alibabacloud/vod/model/UpdateVodDomainResult.h
+	include/alibabacloud/vod/model/DeleteMezzaninesRequest.h
+	include/alibabacloud/vod/model/DeleteMezzaninesResult.h
+	include/alibabacloud/vod/model/AddEditingProjectRequest.h
+	include/alibabacloud/vod/model/AddEditingProjectResult.h
+	include/alibabacloud/vod/model/GetUploadDetailsRequest.h
+	include/alibabacloud/vod/model/GetUploadDetailsResult.h
+	include/alibabacloud/vod/model/GetAttachedMediaInfoRequest.h
+	include/alibabacloud/vod/model/GetAttachedMediaInfoResult.h
+	include/alibabacloud/vod/model/DeleteTranscodeTemplateGroupRequest.h
+	include/alibabacloud/vod/model/DeleteTranscodeTemplateGroupResult.h
+	include/alibabacloud/vod/model/DeleteVodSpecificConfigRequest.h
+	include/alibabacloud/vod/model/DeleteVodSpecificConfigResult.h
+	include/alibabacloud/vod/model/AddTranscodeTemplateGroupRequest.h
+	include/alibabacloud/vod/model/AddTranscodeTemplateGroupResult.h
+	include/alibabacloud/vod/model/DescribeVodCertificateListRequest.h
+	include/alibabacloud/vod/model/DescribeVodCertificateListResult.h
+	include/alibabacloud/vod/model/SetEditingProjectMaterialsRequest.h
+	include/alibabacloud/vod/model/SetEditingProjectMaterialsResult.h
+	include/alibabacloud/vod/model/DeleteVideoRequest.h
+	include/alibabacloud/vod/model/DeleteVideoResult.h
+	include/alibabacloud/vod/model/ListAppInfoRequest.h
+	include/alibabacloud/vod/model/ListAppInfoResult.h
+	include/alibabacloud/vod/model/AddVodTemplateRequest.h
+	include/alibabacloud/vod/model/AddVodTemplateResult.h
+	include/alibabacloud/vod/model/GetVodTemplateRequest.h
+	include/alibabacloud/vod/model/GetVodTemplateResult.h
+	include/alibabacloud/vod/model/GetTranscodeSummaryRequest.h
+	include/alibabacloud/vod/model/GetTranscodeSummaryResult.h
+	include/alibabacloud/vod/model/DescribePlayUserTotalRequest.h
+	include/alibabacloud/vod/model/DescribePlayUserTotalResult.h
+	include/alibabacloud/vod/model/DescribeVodStorageDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodStorageDataResult.h
+	include/alibabacloud/vod/model/CreateUploadAttachedMediaRequest.h
+	include/alibabacloud/vod/model/CreateUploadAttachedMediaResult.h
+	include/alibabacloud/vod/model/DescribeVodRefreshQuotaRequest.h
+	include/alibabacloud/vod/model/DescribeVodRefreshQuotaResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainTrafficDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainTrafficDataResult.h
+	include/alibabacloud/vod/model/ListSnapshotsRequest.h
+	include/alibabacloud/vod/model/ListSnapshotsResult.h
+	include/alibabacloud/vod/model/DescribeVodAIDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodAIDataResult.h
+	include/alibabacloud/vod/model/DescribeVodRefreshTasksRequest.h
+	include/alibabacloud/vod/model/DescribeVodRefreshTasksResult.h
+	include/alibabacloud/vod/model/GetVideoListRequest.h
+	include/alibabacloud/vod/model/GetVideoListResult.h
+	include/alibabacloud/vod/model/GetVideoInfoRequest.h
+	include/alibabacloud/vod/model/GetVideoInfoResult.h
+	include/alibabacloud/vod/model/DeleteAttachedMediaRequest.h
+	include/alibabacloud/vod/model/DeleteAttachedMediaResult.h
+	include/alibabacloud/vod/model/SetMessageCallbackRequest.h
+	include/alibabacloud/vod/model/SetMessageCallbackResult.h
+	include/alibabacloud/vod/model/GetVideoInfosRequest.h
+	include/alibabacloud/vod/model/GetVideoInfosResult.h
+	include/alibabacloud/vod/model/GetEditingProjectMaterialsRequest.h
+	include/alibabacloud/vod/model/GetEditingProjectMaterialsResult.h
+	include/alibabacloud/vod/model/GetAppInfosRequest.h
+	include/alibabacloud/vod/model/GetAppInfosResult.h
+	include/alibabacloud/vod/model/CreateAppInfoRequest.h
+	include/alibabacloud/vod/model/CreateAppInfoResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainConfigsRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainConfigsResult.h
+	include/alibabacloud/vod/model/DeleteWatermarkRequest.h
+	include/alibabacloud/vod/model/DeleteWatermarkResult.h
+	include/alibabacloud/vod/model/BatchStopVodDomainRequest.h
+	include/alibabacloud/vod/model/BatchStopVodDomainResult.h
+	include/alibabacloud/vod/model/ModifyVodDomainSchdmByPropertyRequest.h
+	include/alibabacloud/vod/model/ModifyVodDomainSchdmByPropertyResult.h
+	include/alibabacloud/vod/model/ListTranscodeTemplateGroupRequest.h
+	include/alibabacloud/vod/model/ListTranscodeTemplateGroupResult.h
+	include/alibabacloud/vod/model/ListAppPoliciesForIdentityRequest.h
+	include/alibabacloud/vod/model/ListAppPoliciesForIdentityResult.h
+	include/alibabacloud/vod/model/GetAIVideoTagResultRequest.h
+	include/alibabacloud/vod/model/GetAIVideoTagResultResult.h
+	include/alibabacloud/vod/model/BatchStartVodDomainRequest.h
+	include/alibabacloud/vod/model/BatchStartVodDomainResult.h
+	include/alibabacloud/vod/model/SubmitPreprocessJobsRequest.h
+	include/alibabacloud/vod/model/SubmitPreprocessJobsResult.h
+	include/alibabacloud/vod/model/ListAIJobRequest.h
+	include/alibabacloud/vod/model/ListAIJobResult.h
+	include/alibabacloud/vod/model/UpdateImageInfosRequest.h
+	include/alibabacloud/vod/model/UpdateImageInfosResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainUsageDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainUsageDataResult.h
+	include/alibabacloud/vod/model/SearchMediaRequest.h
+	include/alibabacloud/vod/model/SearchMediaResult.h
+	include/alibabacloud/vod/model/PreloadVodObjectCachesRequest.h
+	include/alibabacloud/vod/model/PreloadVodObjectCachesResult.h
+	include/alibabacloud/vod/model/UpdateTranscodeTemplateGroupRequest.h
+	include/alibabacloud/vod/model/UpdateTranscodeTemplateGroupResult.h
+	include/alibabacloud/vod/model/AddCategoryRequest.h
+	include/alibabacloud/vod/model/AddCategoryResult.h
+	include/alibabacloud/vod/model/SubmitSnapshotJobRequest.h
+	include/alibabacloud/vod/model/SubmitSnapshotJobResult.h
+	include/alibabacloud/vod/model/UpdateAITemplateRequest.h
+	include/alibabacloud/vod/model/UpdateAITemplateResult.h
+	include/alibabacloud/vod/model/DeleteEditingProjectRequest.h
+	include/alibabacloud/vod/model/DeleteEditingProjectResult.h
+	include/alibabacloud/vod/model/DescribeVodTranscodeDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodTranscodeDataResult.h
+	include/alibabacloud/vod/model/SearchEditingProjectRequest.h
+	include/alibabacloud/vod/model/SearchEditingProjectResult.h
+	include/alibabacloud/vod/model/DescribeVodUserDomainsRequest.h
+	include/alibabacloud/vod/model/DescribeVodUserDomainsResult.h
+	include/alibabacloud/vod/model/GetImageInfoRequest.h
+	include/alibabacloud/vod/model/GetImageInfoResult.h
+	include/alibabacloud/vod/model/UpdateWatermarkRequest.h
+	include/alibabacloud/vod/model/UpdateWatermarkResult.h
+	include/alibabacloud/vod/model/MoveAppResourceRequest.h
+	include/alibabacloud/vod/model/MoveAppResourceResult.h
+	include/alibabacloud/vod/model/GetMessageCallbackRequest.h
+	include/alibabacloud/vod/model/GetMessageCallbackResult.h
+	include/alibabacloud/vod/model/GetCategoriesRequest.h
+	include/alibabacloud/vod/model/GetCategoriesResult.h
+	include/alibabacloud/vod/model/GetAIMediaAuditJobRequest.h
+	include/alibabacloud/vod/model/GetAIMediaAuditJobResult.h
+	include/alibabacloud/vod/model/SubmitAIJobRequest.h
+	include/alibabacloud/vod/model/SubmitAIJobResult.h
+	include/alibabacloud/vod/model/SubmitTranscodeJobsRequest.h
+	include/alibabacloud/vod/model/SubmitTranscodeJobsResult.h
+	include/alibabacloud/vod/model/AddVodDomainRequest.h
+	include/alibabacloud/vod/model/AddVodDomainResult.h
+	include/alibabacloud/vod/model/CreateUploadVideoRequest.h
+	include/alibabacloud/vod/model/CreateUploadVideoResult.h
+	include/alibabacloud/vod/model/SetAuditSecurityIpRequest.h
+	include/alibabacloud/vod/model/SetAuditSecurityIpResult.h
+	include/alibabacloud/vod/model/DeleteMultipartUploadRequest.h
+	include/alibabacloud/vod/model/DeleteMultipartUploadResult.h
+	include/alibabacloud/vod/model/SubmitAIMediaAuditJobRequest.h
+	include/alibabacloud/vod/model/SubmitAIMediaAuditJobResult.h
+	include/alibabacloud/vod/model/GetTranscodeTaskRequest.h
+	include/alibabacloud/vod/model/GetTranscodeTaskResult.h
+	include/alibabacloud/vod/model/GetURLUploadInfosRequest.h
+	include/alibabacloud/vod/model/GetURLUploadInfosResult.h
+	include/alibabacloud/vod/model/GetMezzanineInfoRequest.h
+	include/alibabacloud/vod/model/GetMezzanineInfoResult.h
+	include/alibabacloud/vod/model/DetachAppPolicyFromIdentityRequest.h
+	include/alibabacloud/vod/model/DetachAppPolicyFromIdentityResult.h
+	include/alibabacloud/vod/model/DescribePlayUserAvgRequest.h
+	include/alibabacloud/vod/model/DescribePlayUserAvgResult.h )
 
-            set(vod_src src / VodClient.cc src / model /
-                SetDefaultAITemplateRequest.cc src / model /
-                SetDefaultAITemplateResult.cc src / model /
-                DeleteImageRequest.cc src / model / DeleteImageResult.cc src /
-                model / AttachAppPolicyToIdentityRequest.cc src / model /
-                AttachAppPolicyToIdentityResult.cc src / model /
-                DeleteCategoryRequest.cc src / model /
-                DeleteCategoryResult.cc src / model /
-                DescribeVodDomainDetailRequest.cc src / model /
-                DescribeVodDomainDetailResult.cc src / model /
-                SetDefaultTranscodeTemplateGroupRequest.cc src / model /
-                SetDefaultTranscodeTemplateGroupResult.cc src / model /
-                BatchSetVodDomainConfigsRequest.cc src / model /
-                BatchSetVodDomainConfigsResult.cc src / model /
-                UpdateVideoInfosRequest.cc src / model /
-                UpdateVideoInfosResult.cc src / model /
-                UpdateEditingProjectRequest.cc src / model /
-                UpdateEditingProjectResult.cc src / model /
-                GetMediaAuditResultRequest.cc src / model /
-                GetMediaAuditResultResult.cc src / model /
-                GetMediaAuditResultTimelineRequest.cc src / model /
-                GetMediaAuditResultTimelineResult.cc src / model /
-                ListAuditSecurityIpRequest.cc src / model /
-                ListAuditSecurityIpResult.cc src / model /
-                GetAuditHistoryRequest.cc src / model /
-                GetAuditHistoryResult.cc src / model /
-                GetMediaDNAResultRequest.cc src / model /
-                GetMediaDNAResultResult.cc src / model /
-                SetVodDomainCertificateRequest.cc src / model /
-                SetVodDomainCertificateResult.cc src / model /
-                UpdateCategoryRequest.cc src / model /
-                UpdateCategoryResult.cc src / model /
-                RegisterMediaRequest.cc src / model /
-                RegisterMediaResult.cc src / model /
-                GetTranscodeTemplateGroupRequest.cc src / model /
-                GetTranscodeTemplateGroupResult.cc src / model /
-                GetDefaultAITemplateRequest.cc src / model /
-                GetDefaultAITemplateResult.cc src / model /
-                ProduceEditingProjectVideoRequest.cc src / model /
-                ProduceEditingProjectVideoResult.cc src / model /
-                GetVideoPlayAuthRequest.cc src / model /
-                GetVideoPlayAuthResult.cc src / model /
-                DeleteVodTemplateRequest.cc src / model /
-                DeleteVodTemplateResult.cc src / model /
-                GetAITemplateRequest.cc src / model /
-                GetAITemplateResult.cc src / model /
-                ListVodTemplateRequest.cc src / model /
-                ListVodTemplateResult.cc src / model /
-                DeleteAppInfoRequest.cc src / model /
-                DeleteAppInfoResult.cc src / model /
-                ListWatermarkRequest.cc src / model /
-                ListWatermarkResult.cc src / model /
-                AddWatermarkRequest.cc src / model / AddWatermarkResult.cc src /
-                model / CreateUploadImageRequest.cc src / model /
-                CreateUploadImageResult.cc src / model /
-                DescribeVodDomainLogRequest.cc src / model /
-                DescribeVodDomainLogResult.cc src / model /
-                UpdateVideoInfoRequest.cc src / model /
-                UpdateVideoInfoResult.cc src / model /
-                AddAITemplateRequest.cc src / model /
-                AddAITemplateResult.cc src / model /
-                DescribePlayTopVideosRequest.cc src / model /
-                DescribePlayTopVideosResult.cc src / model /
-                RefreshVodObjectCachesRequest.cc src / model /
-                RefreshVodObjectCachesResult.cc src / model /
-                ListTranscodeTaskRequest.cc src / model /
-                ListTranscodeTaskResult.cc src / model /
-                SetDefaultWatermarkRequest.cc src / model /
-                SetDefaultWatermarkResult.cc src / model /
-                ListAITemplateRequest.cc src / model /
-                ListAITemplateResult.cc src / model /
-                DeleteMessageCallbackRequest.cc src / model /
-                DeleteMessageCallbackResult.cc src / model /
-                RefreshUploadVideoRequest.cc src / model /
-                RefreshUploadVideoResult.cc src / model /
-                GetEditingProjectRequest.cc src / model /
-                GetEditingProjectResult.cc src / model /
-                DeleteAITemplateRequest.cc src / model /
-                DeleteAITemplateResult.cc src / model /
-                CreateAuditRequest.cc src / model / CreateAuditResult.cc src /
-                model / DeleteVodDomainRequest.cc src / model /
-                DeleteVodDomainResult.cc src / model /
-                DescribeVodDomainCertificateInfoRequest.cc src / model /
-                DescribeVodDomainCertificateInfoResult.cc src / model /
-                GetWatermarkRequest.cc src / model / GetWatermarkResult.cc src /
-                model / UpdateVodTemplateRequest.cc src / model /
-                UpdateVodTemplateResult.cc src / model /
-                ListLiveRecordVideoRequest.cc src / model /
-                ListLiveRecordVideoResult.cc src / model /
-                UpdateAttachedMediaInfosRequest.cc src / model /
-                UpdateAttachedMediaInfosResult.cc src / model /
-                DescribePlayVideoStatisRequest.cc src / model /
-                DescribePlayVideoStatisResult.cc src / model /
-                GetMediaAuditResultDetailRequest.cc src / model /
-                GetMediaAuditResultDetailResult.cc src / model /
-                DeleteStreamRequest.cc src / model / DeleteStreamResult.cc src /
-                model / UpdateAppInfoRequest.cc src / model /
-                UpdateAppInfoResult.cc src / model /
-                UploadMediaByURLRequest.cc src / model /
-                UploadMediaByURLResult.cc src / model /
-                DescribeVodDomainBpsDataRequest.cc src / model /
-                DescribeVodDomainBpsDataResult.cc src / model /
-                GetPlayInfoRequest.cc src / model / GetPlayInfoResult.cc src /
-                model / UpdateVodDomainRequest.cc src / model /
-                UpdateVodDomainResult.cc src / model /
-                DeleteMezzaninesRequest.cc src / model /
-                DeleteMezzaninesResult.cc src / model /
-                AddEditingProjectRequest.cc src / model /
-                AddEditingProjectResult.cc src / model /
-                GetUploadDetailsRequest.cc src / model /
-                GetUploadDetailsResult.cc src / model /
-                GetAttachedMediaInfoRequest.cc src / model /
-                GetAttachedMediaInfoResult.cc src / model /
-                DeleteTranscodeTemplateGroupRequest.cc src / model /
-                DeleteTranscodeTemplateGroupResult.cc src / model /
-                DeleteVodSpecificConfigRequest.cc src / model /
-                DeleteVodSpecificConfigResult.cc src / model /
-                AddTranscodeTemplateGroupRequest.cc src / model /
-                AddTranscodeTemplateGroupResult.cc src / model /
-                DescribeVodCertificateListRequest.cc src / model /
-                DescribeVodCertificateListResult.cc src / model /
-                SetEditingProjectMaterialsRequest.cc src / model /
-                SetEditingProjectMaterialsResult.cc src / model /
-                DeleteVideoRequest.cc src / model / DeleteVideoResult.cc src /
-                model / ListAppInfoRequest.cc src / model /
-                ListAppInfoResult.cc src / model /
-                AddVodTemplateRequest.cc src / model /
-                AddVodTemplateResult.cc src / model /
-                GetVodTemplateRequest.cc src / model /
-                GetVodTemplateResult.cc src / model /
-                GetTranscodeSummaryRequest.cc src / model /
-                GetTranscodeSummaryResult.cc src / model /
-                DescribePlayUserTotalRequest.cc src / model /
-                DescribePlayUserTotalResult.cc src / model /
-                DescribeVodStorageDataRequest.cc src / model /
-                DescribeVodStorageDataResult.cc src / model /
-                CreateUploadAttachedMediaRequest.cc src / model /
-                CreateUploadAttachedMediaResult.cc src / model /
-                DescribeVodRefreshQuotaRequest.cc src / model /
-                DescribeVodRefreshQuotaResult.cc src / model /
-                DescribeVodDomainTrafficDataRequest.cc src / model /
-                DescribeVodDomainTrafficDataResult.cc src / model /
-                ListSnapshotsRequest.cc src / model /
-                ListSnapshotsResult.cc src / model /
-                DescribeVodAIDataRequest.cc src / model /
-                DescribeVodAIDataResult.cc src / model /
-                DescribeVodRefreshTasksRequest.cc src / model /
-                DescribeVodRefreshTasksResult.cc src / model /
-                GetVideoListRequest.cc src / model / GetVideoListResult.cc src /
-                model / GetVideoInfoRequest.cc src / model /
-                GetVideoInfoResult.cc src / model /
-                DeleteAttachedMediaRequest.cc src / model /
-                DeleteAttachedMediaResult.cc src / model /
-                SetMessageCallbackRequest.cc src / model /
-                SetMessageCallbackResult.cc src / model /
-                GetVideoInfosRequest.cc src / model /
-                GetVideoInfosResult.cc src / model /
-                GetEditingProjectMaterialsRequest.cc src / model /
-                GetEditingProjectMaterialsResult.cc src / model /
-                GetAppInfosRequest.cc src / model / GetAppInfosResult.cc src /
-                model / CreateAppInfoRequest.cc src / model /
-                CreateAppInfoResult.cc src / model /
-                DescribeVodDomainConfigsRequest.cc src / model /
-                DescribeVodDomainConfigsResult.cc src / model /
-                DeleteWatermarkRequest.cc src / model /
-                DeleteWatermarkResult.cc src / model /
-                BatchStopVodDomainRequest.cc src / model /
-                BatchStopVodDomainResult.cc src / model /
-                ModifyVodDomainSchdmByPropertyRequest.cc src / model /
-                ModifyVodDomainSchdmByPropertyResult.cc src / model /
-                ListTranscodeTemplateGroupRequest.cc src / model /
-                ListTranscodeTemplateGroupResult.cc src / model /
-                ListAppPoliciesForIdentityRequest.cc src / model /
-                ListAppPoliciesForIdentityResult.cc src / model /
-                GetAIVideoTagResultRequest.cc src / model /
-                GetAIVideoTagResultResult.cc src / model /
-                BatchStartVodDomainRequest.cc src / model /
-                BatchStartVodDomainResult.cc src / model /
-                SubmitPreprocessJobsRequest.cc src / model /
-                SubmitPreprocessJobsResult.cc src / model /
-                ListAIJobRequest.cc src / model / ListAIJobResult.cc src /
-                model / UpdateImageInfosRequest.cc src / model /
-                UpdateImageInfosResult.cc src / model /
-                DescribeVodDomainUsageDataRequest.cc src / model /
-                DescribeVodDomainUsageDataResult.cc src / model /
-                SearchMediaRequest.cc src / model / SearchMediaResult.cc src /
-                model / PreloadVodObjectCachesRequest.cc src / model /
-                PreloadVodObjectCachesResult.cc src / model /
-                UpdateTranscodeTemplateGroupRequest.cc src / model /
-                UpdateTranscodeTemplateGroupResult.cc src / model /
-                AddCategoryRequest.cc src / model / AddCategoryResult.cc src /
-                model / SubmitSnapshotJobRequest.cc src / model /
-                SubmitSnapshotJobResult.cc src / model /
-                UpdateAITemplateRequest.cc src / model /
-                UpdateAITemplateResult.cc src / model /
-                DeleteEditingProjectRequest.cc src / model /
-                DeleteEditingProjectResult.cc src / model /
-                DescribeVodTranscodeDataRequest.cc src / model /
-                DescribeVodTranscodeDataResult.cc src / model /
-                SearchEditingProjectRequest.cc src / model /
-                SearchEditingProjectResult.cc src / model /
-                DescribeVodUserDomainsRequest.cc src / model /
-                DescribeVodUserDomainsResult.cc src / model /
-                GetImageInfoRequest.cc src / model / GetImageInfoResult.cc src /
-                model / UpdateWatermarkRequest.cc src / model /
-                UpdateWatermarkResult.cc src / model /
-                MoveAppResourceRequest.cc src / model /
-                MoveAppResourceResult.cc src / model /
-                GetMessageCallbackRequest.cc src / model /
-                GetMessageCallbackResult.cc src / model /
-                GetCategoriesRequest.cc src / model /
-                GetCategoriesResult.cc src / model /
-                GetAIMediaAuditJobRequest.cc src / model /
-                GetAIMediaAuditJobResult.cc src / model /
-                SubmitAIJobRequest.cc src / model / SubmitAIJobResult.cc src /
-                model / SubmitTranscodeJobsRequest.cc src / model /
-                SubmitTranscodeJobsResult.cc src / model /
-                AddVodDomainRequest.cc src / model / AddVodDomainResult.cc src /
-                model / CreateUploadVideoRequest.cc src / model /
-                CreateUploadVideoResult.cc src / model /
-                SetAuditSecurityIpRequest.cc src / model /
-                SetAuditSecurityIpResult.cc src / model /
-                DeleteMultipartUploadRequest.cc src / model /
-                DeleteMultipartUploadResult.cc src / model /
-                SubmitAIMediaAuditJobRequest.cc src / model /
-                SubmitAIMediaAuditJobResult.cc src / model /
-                GetTranscodeTaskRequest.cc src / model /
-                GetTranscodeTaskResult.cc src / model /
-                GetURLUploadInfosRequest.cc src / model /
-                GetURLUploadInfosResult.cc src / model /
-                GetMezzanineInfoRequest.cc src / model /
-                GetMezzanineInfoResult.cc src / model /
-                DetachAppPolicyFromIdentityRequest.cc src / model /
-                DetachAppPolicyFromIdentityResult.cc src / model /
-                DescribePlayUserAvgRequest.cc src / model /
-                DescribePlayUserAvgResult.cc)
+set(vod_src 
+	src/VodClient.cc
+	src/model/SetDefaultAITemplateRequest.cc
+	src/model/SetDefaultAITemplateResult.cc
+	src/model/DeleteImageRequest.cc
+	src/model/DeleteImageResult.cc
+	src/model/AttachAppPolicyToIdentityRequest.cc
+	src/model/AttachAppPolicyToIdentityResult.cc
+	src/model/DeleteCategoryRequest.cc
+	src/model/DeleteCategoryResult.cc
+	src/model/DescribeVodDomainDetailRequest.cc
+	src/model/DescribeVodDomainDetailResult.cc
+	src/model/SetDefaultTranscodeTemplateGroupRequest.cc
+	src/model/SetDefaultTranscodeTemplateGroupResult.cc
+	src/model/BatchSetVodDomainConfigsRequest.cc
+	src/model/BatchSetVodDomainConfigsResult.cc
+	src/model/UpdateVideoInfosRequest.cc
+	src/model/UpdateVideoInfosResult.cc
+	src/model/UpdateEditingProjectRequest.cc
+	src/model/UpdateEditingProjectResult.cc
+	src/model/GetMediaAuditResultRequest.cc
+	src/model/GetMediaAuditResultResult.cc
+	src/model/GetMediaAuditResultTimelineRequest.cc
+	src/model/GetMediaAuditResultTimelineResult.cc
+	src/model/ListAuditSecurityIpRequest.cc
+	src/model/ListAuditSecurityIpResult.cc
+	src/model/GetAuditHistoryRequest.cc
+	src/model/GetAuditHistoryResult.cc
+	src/model/GetMediaDNAResultRequest.cc
+	src/model/GetMediaDNAResultResult.cc
+	src/model/SetVodDomainCertificateRequest.cc
+	src/model/SetVodDomainCertificateResult.cc
+	src/model/UpdateCategoryRequest.cc
+	src/model/UpdateCategoryResult.cc
+	src/model/RegisterMediaRequest.cc
+	src/model/RegisterMediaResult.cc
+	src/model/GetTranscodeTemplateGroupRequest.cc
+	src/model/GetTranscodeTemplateGroupResult.cc
+	src/model/GetDefaultAITemplateRequest.cc
+	src/model/GetDefaultAITemplateResult.cc
+	src/model/ProduceEditingProjectVideoRequest.cc
+	src/model/ProduceEditingProjectVideoResult.cc
+	src/model/GetVideoPlayAuthRequest.cc
+	src/model/GetVideoPlayAuthResult.cc
+	src/model/DeleteVodTemplateRequest.cc
+	src/model/DeleteVodTemplateResult.cc
+	src/model/GetAITemplateRequest.cc
+	src/model/GetAITemplateResult.cc
+	src/model/ListVodTemplateRequest.cc
+	src/model/ListVodTemplateResult.cc
+	src/model/DeleteAppInfoRequest.cc
+	src/model/DeleteAppInfoResult.cc
+	src/model/ListWatermarkRequest.cc
+	src/model/ListWatermarkResult.cc
+	src/model/AddWatermarkRequest.cc
+	src/model/AddWatermarkResult.cc
+	src/model/CreateUploadImageRequest.cc
+	src/model/CreateUploadImageResult.cc
+	src/model/DescribeVodDomainLogRequest.cc
+	src/model/DescribeVodDomainLogResult.cc
+	src/model/UpdateVideoInfoRequest.cc
+	src/model/UpdateVideoInfoResult.cc
+	src/model/AddAITemplateRequest.cc
+	src/model/AddAITemplateResult.cc
+	src/model/DescribePlayTopVideosRequest.cc
+	src/model/DescribePlayTopVideosResult.cc
+	src/model/RefreshVodObjectCachesRequest.cc
+	src/model/RefreshVodObjectCachesResult.cc
+	src/model/ListTranscodeTaskRequest.cc
+	src/model/ListTranscodeTaskResult.cc
+	src/model/SetDefaultWatermarkRequest.cc
+	src/model/SetDefaultWatermarkResult.cc
+	src/model/ListAITemplateRequest.cc
+	src/model/ListAITemplateResult.cc
+	src/model/DeleteMessageCallbackRequest.cc
+	src/model/DeleteMessageCallbackResult.cc
+	src/model/RefreshUploadVideoRequest.cc
+	src/model/RefreshUploadVideoResult.cc
+	src/model/GetEditingProjectRequest.cc
+	src/model/GetEditingProjectResult.cc
+	src/model/DeleteAITemplateRequest.cc
+	src/model/DeleteAITemplateResult.cc
+	src/model/CreateAuditRequest.cc
+	src/model/CreateAuditResult.cc
+	src/model/DeleteVodDomainRequest.cc
+	src/model/DeleteVodDomainResult.cc
+	src/model/DescribeVodDomainCertificateInfoRequest.cc
+	src/model/DescribeVodDomainCertificateInfoResult.cc
+	src/model/GetWatermarkRequest.cc
+	src/model/GetWatermarkResult.cc
+	src/model/UpdateVodTemplateRequest.cc
+	src/model/UpdateVodTemplateResult.cc
+	src/model/ListLiveRecordVideoRequest.cc
+	src/model/ListLiveRecordVideoResult.cc
+	src/model/UpdateAttachedMediaInfosRequest.cc
+	src/model/UpdateAttachedMediaInfosResult.cc
+	src/model/DescribePlayVideoStatisRequest.cc
+	src/model/DescribePlayVideoStatisResult.cc
+	src/model/GetMediaAuditResultDetailRequest.cc
+	src/model/GetMediaAuditResultDetailResult.cc
+	src/model/DeleteStreamRequest.cc
+	src/model/DeleteStreamResult.cc
+	src/model/UpdateAppInfoRequest.cc
+	src/model/UpdateAppInfoResult.cc
+	src/model/UploadMediaByURLRequest.cc
+	src/model/UploadMediaByURLResult.cc
+	src/model/DescribeVodDomainBpsDataRequest.cc
+	src/model/DescribeVodDomainBpsDataResult.cc
+	src/model/GetPlayInfoRequest.cc
+	src/model/GetPlayInfoResult.cc
+	src/model/UpdateVodDomainRequest.cc
+	src/model/UpdateVodDomainResult.cc
+	src/model/DeleteMezzaninesRequest.cc
+	src/model/DeleteMezzaninesResult.cc
+	src/model/AddEditingProjectRequest.cc
+	src/model/AddEditingProjectResult.cc
+	src/model/GetUploadDetailsRequest.cc
+	src/model/GetUploadDetailsResult.cc
+	src/model/GetAttachedMediaInfoRequest.cc
+	src/model/GetAttachedMediaInfoResult.cc
+	src/model/DeleteTranscodeTemplateGroupRequest.cc
+	src/model/DeleteTranscodeTemplateGroupResult.cc
+	src/model/DeleteVodSpecificConfigRequest.cc
+	src/model/DeleteVodSpecificConfigResult.cc
+	src/model/AddTranscodeTemplateGroupRequest.cc
+	src/model/AddTranscodeTemplateGroupResult.cc
+	src/model/DescribeVodCertificateListRequest.cc
+	src/model/DescribeVodCertificateListResult.cc
+	src/model/SetEditingProjectMaterialsRequest.cc
+	src/model/SetEditingProjectMaterialsResult.cc
+	src/model/DeleteVideoRequest.cc
+	src/model/DeleteVideoResult.cc
+	src/model/ListAppInfoRequest.cc
+	src/model/ListAppInfoResult.cc
+	src/model/AddVodTemplateRequest.cc
+	src/model/AddVodTemplateResult.cc
+	src/model/GetVodTemplateRequest.cc
+	src/model/GetVodTemplateResult.cc
+	src/model/GetTranscodeSummaryRequest.cc
+	src/model/GetTranscodeSummaryResult.cc
+	src/model/DescribePlayUserTotalRequest.cc
+	src/model/DescribePlayUserTotalResult.cc
+	src/model/DescribeVodStorageDataRequest.cc
+	src/model/DescribeVodStorageDataResult.cc
+	src/model/CreateUploadAttachedMediaRequest.cc
+	src/model/CreateUploadAttachedMediaResult.cc
+	src/model/DescribeVodRefreshQuotaRequest.cc
+	src/model/DescribeVodRefreshQuotaResult.cc
+	src/model/DescribeVodDomainTrafficDataRequest.cc
+	src/model/DescribeVodDomainTrafficDataResult.cc
+	src/model/ListSnapshotsRequest.cc
+	src/model/ListSnapshotsResult.cc
+	src/model/DescribeVodAIDataRequest.cc
+	src/model/DescribeVodAIDataResult.cc
+	src/model/DescribeVodRefreshTasksRequest.cc
+	src/model/DescribeVodRefreshTasksResult.cc
+	src/model/GetVideoListRequest.cc
+	src/model/GetVideoListResult.cc
+	src/model/GetVideoInfoRequest.cc
+	src/model/GetVideoInfoResult.cc
+	src/model/DeleteAttachedMediaRequest.cc
+	src/model/DeleteAttachedMediaResult.cc
+	src/model/SetMessageCallbackRequest.cc
+	src/model/SetMessageCallbackResult.cc
+	src/model/GetVideoInfosRequest.cc
+	src/model/GetVideoInfosResult.cc
+	src/model/GetEditingProjectMaterialsRequest.cc
+	src/model/GetEditingProjectMaterialsResult.cc
+	src/model/GetAppInfosRequest.cc
+	src/model/GetAppInfosResult.cc
+	src/model/CreateAppInfoRequest.cc
+	src/model/CreateAppInfoResult.cc
+	src/model/DescribeVodDomainConfigsRequest.cc
+	src/model/DescribeVodDomainConfigsResult.cc
+	src/model/DeleteWatermarkRequest.cc
+	src/model/DeleteWatermarkResult.cc
+	src/model/BatchStopVodDomainRequest.cc
+	src/model/BatchStopVodDomainResult.cc
+	src/model/ModifyVodDomainSchdmByPropertyRequest.cc
+	src/model/ModifyVodDomainSchdmByPropertyResult.cc
+	src/model/ListTranscodeTemplateGroupRequest.cc
+	src/model/ListTranscodeTemplateGroupResult.cc
+	src/model/ListAppPoliciesForIdentityRequest.cc
+	src/model/ListAppPoliciesForIdentityResult.cc
+	src/model/GetAIVideoTagResultRequest.cc
+	src/model/GetAIVideoTagResultResult.cc
+	src/model/BatchStartVodDomainRequest.cc
+	src/model/BatchStartVodDomainResult.cc
+	src/model/SubmitPreprocessJobsRequest.cc
+	src/model/SubmitPreprocessJobsResult.cc
+	src/model/ListAIJobRequest.cc
+	src/model/ListAIJobResult.cc
+	src/model/UpdateImageInfosRequest.cc
+	src/model/UpdateImageInfosResult.cc
+	src/model/DescribeVodDomainUsageDataRequest.cc
+	src/model/DescribeVodDomainUsageDataResult.cc
+	src/model/SearchMediaRequest.cc
+	src/model/SearchMediaResult.cc
+	src/model/PreloadVodObjectCachesRequest.cc
+	src/model/PreloadVodObjectCachesResult.cc
+	src/model/UpdateTranscodeTemplateGroupRequest.cc
+	src/model/UpdateTranscodeTemplateGroupResult.cc
+	src/model/AddCategoryRequest.cc
+	src/model/AddCategoryResult.cc
+	src/model/SubmitSnapshotJobRequest.cc
+	src/model/SubmitSnapshotJobResult.cc
+	src/model/UpdateAITemplateRequest.cc
+	src/model/UpdateAITemplateResult.cc
+	src/model/DeleteEditingProjectRequest.cc
+	src/model/DeleteEditingProjectResult.cc
+	src/model/DescribeVodTranscodeDataRequest.cc
+	src/model/DescribeVodTranscodeDataResult.cc
+	src/model/SearchEditingProjectRequest.cc
+	src/model/SearchEditingProjectResult.cc
+	src/model/DescribeVodUserDomainsRequest.cc
+	src/model/DescribeVodUserDomainsResult.cc
+	src/model/GetImageInfoRequest.cc
+	src/model/GetImageInfoResult.cc
+	src/model/UpdateWatermarkRequest.cc
+	src/model/UpdateWatermarkResult.cc
+	src/model/MoveAppResourceRequest.cc
+	src/model/MoveAppResourceResult.cc
+	src/model/GetMessageCallbackRequest.cc
+	src/model/GetMessageCallbackResult.cc
+	src/model/GetCategoriesRequest.cc
+	src/model/GetCategoriesResult.cc
+	src/model/GetAIMediaAuditJobRequest.cc
+	src/model/GetAIMediaAuditJobResult.cc
+	src/model/SubmitAIJobRequest.cc
+	src/model/SubmitAIJobResult.cc
+	src/model/SubmitTranscodeJobsRequest.cc
+	src/model/SubmitTranscodeJobsResult.cc
+	src/model/AddVodDomainRequest.cc
+	src/model/AddVodDomainResult.cc
+	src/model/CreateUploadVideoRequest.cc
+	src/model/CreateUploadVideoResult.cc
+	src/model/SetAuditSecurityIpRequest.cc
+	src/model/SetAuditSecurityIpResult.cc
+	src/model/DeleteMultipartUploadRequest.cc
+	src/model/DeleteMultipartUploadResult.cc
+	src/model/SubmitAIMediaAuditJobRequest.cc
+	src/model/SubmitAIMediaAuditJobResult.cc
+	src/model/GetTranscodeTaskRequest.cc
+	src/model/GetTranscodeTaskResult.cc
+	src/model/GetURLUploadInfosRequest.cc
+	src/model/GetURLUploadInfosResult.cc
+	src/model/GetMezzanineInfoRequest.cc
+	src/model/GetMezzanineInfoResult.cc
+	src/model/DetachAppPolicyFromIdentityRequest.cc
+	src/model/DetachAppPolicyFromIdentityResult.cc
+	src/model/DescribePlayUserAvgRequest.cc
+	src/model/DescribePlayUserAvgResult.cc )
 
-                add_library(vod ${LIB_TYPE} ${vod_public_header} ${
-                    vod_public_header_model} ${vod_src})
+add_library(vod ${LIB_TYPE}
+	${vod_public_header}
+	${vod_public_header_model}
+	${vod_src})
 
-                    set_target_properties(
-                        vod PROPERTIES LINKER_LANGUAGE CXX
-                            ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR} /
-                        lib LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR} /
-                        lib RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR} /
-                        bin OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX} vod)
+set_target_properties(vod
+	PROPERTIES
+	LINKER_LANGUAGE CXX
+	ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}vod
+	)
 
-                        if (${LIB_TYPE} STREQUAL "SHARED") set_target_properties(
-                            vod PROPERTIES DEFINE_SYMBOL
-                                ALIBABACLOUD_VOD_LIBRARY) endif()
+if(${LIB_TYPE} STREQUAL "SHARED")
+	set_target_properties(vod
+		PROPERTIES
+		DEFINE_SYMBOL ALIBABACLOUD_VOD_LIBRARY)
+endif()
 
-                            target_include_directories(vod PRIVATE include ${
-                                                           CMAKE_SOURCE_DIR} /
-                                                       core /
-                                                       include) target_link_libraries(vod core)
+target_include_directories(vod
+	PRIVATE include
+		${CMAKE_SOURCE_DIR}/core/include
+	)
+target_link_libraries(vod
+	core)
 
-                                if (CMAKE_HOST_WIN32) ExternalProject_Get_Property(
-                                    jsoncpp
-                                        INSTALL_DIR) set(jsoncpp_install_dir ${
-                                    INSTALL_DIR}) add_dependencies(vod jsoncpp)
-                                    target_include_directories(
-                                        vod PRIVATE
-                                            ${jsoncpp_install_dir} /
-                                        include)
-                                        target_link_libraries(
-                                            vod ${jsoncpp_install_dir} / lib /
-                                            jsoncpp.lib)
-                                            set_target_properties(
-                                                vod PROPERTIES COMPILE_OPTIONS
-                                                "/bigobj") else()
-                                                target_include_directories(
-                                                    vod PRIVATE / usr /
-                                                    include / jsoncpp)
-                                                    target_link_libraries(
-                                                        vod jsoncpp) endif()
+if(CMAKE_HOST_WIN32)
+	ExternalProject_Get_Property(jsoncpp INSTALL_DIR)
+	set(jsoncpp_install_dir ${INSTALL_DIR})
+	add_dependencies(vod
+		jsoncpp)
+	target_include_directories(vod
+		PRIVATE	${jsoncpp_install_dir}/include)
+	target_link_libraries(vod
+		${jsoncpp_install_dir}/lib/jsoncpp.lib)
+	set_target_properties(vod
+    	PROPERTIES
+    		COMPILE_OPTIONS "/bigobj")
+else()
+	target_include_directories(vod
+		PRIVATE /usr/include/jsoncpp)
+	target_link_libraries(vod
+		jsoncpp)
+endif()
 
-                                                        install(
-                                                            FILES ${
-                                                                vod_public_header} DESTINATION
-                                                                ${CMAKE_INSTALL_INCLUDEDIR} /
-                                                            alibabacloud / vod)
-                                                            install(
-                                                                FILES ${
-                                                                    vod_public_header_model} DESTINATION
-                                                                    ${CMAKE_INSTALL_INCLUDEDIR} /
-                                                                alibabacloud /
-                                                                vod / model)
-                                                                install(
-                                                                    TARGETS vod ARCHIVE DESTINATION
-                                                                        ${CMAKE_INSTALL_LIBDIR} LIBRARY
-                                                                            DESTINATION ${
-                                                                                CMAKE_INSTALL_LIBDIR} RUNTIME
-                                                                                DESTINATION
-                                                                                    ${CMAKE_INSTALL_BINDIR})
+install(FILES ${vod_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/vod)
+install(FILES ${vod_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/vod/model)
+install(TARGETS vod
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)

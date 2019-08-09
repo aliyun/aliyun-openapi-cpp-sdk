@@ -34,17 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct GtmInstance
 				{
-					std::string instanceName;
-					std::string versionCode;
 					long expireTimestamp;
 					std::string userDomainName;
-					std::string alertGroup;
 					std::string lbaStrategy;
 					std::string instanceId;
 					std::string createTime;
-					std::string expireTime;
+					std::string cnameMode;
 					std::string cname;
 					int ttl;
+					std::string instanceName;
+					std::string versionCode;
+					std::string alertGroup;
+					std::string expireTime;
 					long createTimestamp;
 				};
 

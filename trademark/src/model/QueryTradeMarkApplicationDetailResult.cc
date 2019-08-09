@@ -35,11 +35,12 @@ QueryTradeMarkApplicationDetailResult::~QueryTradeMarkApplicationDetailResult()
 
 void QueryTradeMarkApplicationDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allThirdClassification = value["ThirdClassification"]["ThirdClassifications"];
 	for (auto value : allThirdClassification)
 	{
@@ -168,7 +169,7 @@ void QueryTradeMarkApplicationDetailResult::parse(const std::string &payload)
 	if(!value["LoaUrl"].isNull())
 		loaUrl_ = value["LoaUrl"].asString();
 	if(!value["OrderPrice"].isNull())
-		orderPrice_ = std::stoi(value["OrderPrice"].asString());
+		orderPrice_ = std::stof(value["OrderPrice"].asString());
 	if(!value["TmIcon"].isNull())
 		tmIcon_ = value["TmIcon"].asString();
 	if(!value["OrderId"].isNull())
@@ -203,6 +204,10 @@ void QueryTradeMarkApplicationDetailResult::parse(const std::string &payload)
 		recvUserLogistics_ = value["RecvUserLogistics"].asString();
 	if(!value["MaterialId"].isNull())
 		materialId_ = std::stol(value["MaterialId"].asString());
+	if(!value["TotalPrice"].isNull())
+		totalPrice_ = std::stof(value["TotalPrice"].asString());
+	if(!value["ServicePrice"].isNull())
+		servicePrice_ = std::stof(value["ServicePrice"].asString());
 
 }
 
@@ -256,6 +261,11 @@ std::string QueryTradeMarkApplicationDetailResult::getGrayIconUrl()const
 	return grayIconUrl_;
 }
 
+float QueryTradeMarkApplicationDetailResult::getServicePrice()const
+{
+	return servicePrice_;
+}
+
 QueryTradeMarkApplicationDetailResult::AdminUploads QueryTradeMarkApplicationDetailResult::getAdminUploads()const
 {
 	return adminUploads_;
@@ -301,7 +311,7 @@ long QueryTradeMarkApplicationDetailResult::getCreateTime()const
 	return createTime_;
 }
 
-int QueryTradeMarkApplicationDetailResult::getOrderPrice()const
+float QueryTradeMarkApplicationDetailResult::getOrderPrice()const
 {
 	return orderPrice_;
 }
@@ -329,6 +339,11 @@ std::string QueryTradeMarkApplicationDetailResult::getRecvUserLogistics()const
 std::string QueryTradeMarkApplicationDetailResult::getNote()const
 {
 	return note_;
+}
+
+float QueryTradeMarkApplicationDetailResult::getTotalPrice()const
+{
+	return totalPrice_;
 }
 
 std::string QueryTradeMarkApplicationDetailResult::getTmName()const

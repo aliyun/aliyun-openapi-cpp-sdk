@@ -35,11 +35,12 @@ DescribeAccessControlListsResult::~DescribeAccessControlListsResult()
 
 void DescribeAccessControlListsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allAcls = value["Acls"]["Acl"];
 	for (auto value : allAcls)
 	{
@@ -50,6 +51,18 @@ void DescribeAccessControlListsResult::parse(const std::string &payload)
 			aclsObject.aclName = value["AclName"].asString();
 		if(!value["AddressIPVersion"].isNull())
 			aclsObject.addressIPVersion = value["AddressIPVersion"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			aclsObject.resourceGroupId = value["ResourceGroupId"].asString();
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+		{
+			Acl::Tag tagsObject;
+			if(!value["TagKey"].isNull())
+				tagsObject.tagKey = value["TagKey"].asString();
+			if(!value["TagValue"].isNull())
+				tagsObject.tagValue = value["TagValue"].asString();
+			aclsObject.tags.push_back(tagsObject);
+		}
 		acls_.push_back(aclsObject);
 	}
 

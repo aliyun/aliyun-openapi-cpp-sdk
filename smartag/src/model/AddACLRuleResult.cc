@@ -35,11 +35,12 @@ AddACLRuleResult::~AddACLRuleResult()
 
 void AddACLRuleResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	if(!value["AcrId"].isNull())
 		acrId_ = value["AcrId"].asString();
 	if(!value["AclId"].isNull())
@@ -64,6 +65,8 @@ void AddACLRuleResult::parse(const std::string &payload)
 		priority_ = std::stoi(value["Priority"].asString());
 	if(!value["GmtCreate"].isNull())
 		gmtCreate_ = std::stol(value["GmtCreate"].asString());
+	if(!value["Type"].isNull())
+		type_ = value["Type"].asString();
 
 }
 
@@ -72,19 +75,9 @@ std::string AddACLRuleResult::getPolicy()const
 	return policy_;
 }
 
-long AddACLRuleResult::getGmtCreate()const
-{
-	return gmtCreate_;
-}
-
 std::string AddACLRuleResult::getDescription()const
 {
 	return description_;
-}
-
-std::string AddACLRuleResult::getDestCidr()const
-{
-	return destCidr_;
 }
 
 std::string AddACLRuleResult::getSourcePortRange()const
@@ -112,11 +105,6 @@ std::string AddACLRuleResult::getAcrId()const
 	return acrId_;
 }
 
-std::string AddACLRuleResult::getIpProtocol()const
-{
-	return ipProtocol_;
-}
-
 std::string AddACLRuleResult::getDestPortRange()const
 {
 	return destPortRange_;
@@ -125,5 +113,25 @@ std::string AddACLRuleResult::getDestPortRange()const
 std::string AddACLRuleResult::getDirection()const
 {
 	return direction_;
+}
+
+long AddACLRuleResult::getGmtCreate()const
+{
+	return gmtCreate_;
+}
+
+std::string AddACLRuleResult::getType()const
+{
+	return type_;
+}
+
+std::string AddACLRuleResult::getDestCidr()const
+{
+	return destCidr_;
+}
+
+std::string AddACLRuleResult::getIpProtocol()const
+{
+	return ipProtocol_;
 }
 

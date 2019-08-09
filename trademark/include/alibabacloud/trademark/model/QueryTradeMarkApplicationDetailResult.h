@@ -115,6 +115,7 @@ namespace AlibabaCloud
 				int getTmNameType()const;
 				std::string getSendUserLogistics()const;
 				std::string getGrayIconUrl()const;
+				float getServicePrice()const;
 				AdminUploads getAdminUploads()const;
 				std::vector<ThirdClassifications> getThirdClassification()const;
 				std::string getExtendInfo()const;
@@ -124,12 +125,13 @@ namespace AlibabaCloud
 				MaterialDetail getMaterialDetail()const;
 				std::string getTmNumber()const;
 				long getCreateTime()const;
-				int getOrderPrice()const;
+				float getOrderPrice()const;
 				std::string getOrderId()const;
 				std::vector<SupplementsItem> getSupplements()const;
 				int getType()const;
 				std::string getRecvUserLogistics()const;
 				std::string getNote()const;
+				float getTotalPrice()const;
 				std::string getTmName()const;
 				long getUpdateTime()const;
 				std::string getBizId()const;
@@ -147,6 +149,7 @@ namespace AlibabaCloud
 				int tmNameType_;
 				std::string sendUserLogistics_;
 				std::string grayIconUrl_;
+				float servicePrice_;
 				AdminUploads adminUploads_;
 				std::vector<ThirdClassifications> thirdClassification_;
 				std::string extendInfo_;
@@ -156,12 +159,13 @@ namespace AlibabaCloud
 				MaterialDetail materialDetail_;
 				std::string tmNumber_;
 				long createTime_;
-				int orderPrice_;
+				float orderPrice_;
 				std::string orderId_;
 				std::vector<SupplementsItem> supplements_;
 				int type_;
 				std::string recvUserLogistics_;
 				std::string note_;
+				float totalPrice_;
 				std::string tmName_;
 				long updateTime_;
 				std::string bizId_;

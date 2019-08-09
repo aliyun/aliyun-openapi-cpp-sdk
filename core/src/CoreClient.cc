@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/core/CoreClient.h>
-#include <json/json.h>
-#include <alibabacloud/core/Signer.h>
 #include "CurlHttpClient.h"
 #include "Executor.h"
+#include <alibabacloud/core/Utils.h>
+#include <alibabacloud/core/CoreClient.h>
+#include <alibabacloud/core/Signer.h>
+#include <json/json.h>
 
 /*!
  * \class AlibabaCloud::CoreClient CoreClient.h <alibabacloud/core/CoreClient.h>
@@ -27,33 +28,27 @@
 
 namespace AlibabaCloud {
 
-CoreClient::CoreClient(const std::string & servicename,
-  const ClientConfiguration &configuration) :
-  serviceName_(servicename),
-  configuration_(configuration),
-  httpClient_(new CurlHttpClient) {
+CoreClient::CoreClient(const std::string &servicename,
+                       const ClientConfiguration &configuration)
+    : serviceName_(servicename), configuration_(configuration),
+      httpClient_(new CurlHttpClient) {
   httpClient_->setProxy(configuration.proxy());
 }
 
-CoreClient::~CoreClient() {
-  delete httpClient_;
-}
+CoreClient::~CoreClient() { delete httpClient_; }
 
-ClientConfiguration CoreClient::configuration()const {
-  return configuration_;
-}
+ClientConfiguration CoreClient::configuration() const { return configuration_; }
 
-std::string CoreClient::serviceName()const {
-  return serviceName_;
-}
+std::string CoreClient::serviceName() const { return serviceName_; }
 
-void CoreClient::asyncExecute(Runnable * r)const {
+void CoreClient::asyncExecute(Runnable *r) const {
   Executor::instance()->execute(r);
 }
 
-HttpClient::HttpResponseOutcome CoreClient::AttemptRequest(
-  const std::string & endpoint,
-  const ServiceRequest & request, HttpRequest::Method method) const {
+HttpClient::HttpResponseOutcome
+CoreClient::AttemptRequest(const std::string &endpoint,
+                           const ServiceRequest &request,
+                           HttpRequest::Method method) const {
   auto r = buildHttpRequest(endpoint, request, method);
   auto outcome = httpClient_->makeRequest(r);
   if (!outcome.isSuccess())
@@ -64,30 +59,31 @@ HttpClient::HttpResponseOutcome CoreClient::AttemptRequest(
     return outcome;
 }
 
-Error CoreClient::buildCoreError(const HttpResponse &response)const {
-  Json::Reader reader;
-  Json::Value value;
-  if (!reader.parse(std::string(response.body(), response.bodySize()), value)) {
+Error CoreClient::buildCoreError(const HttpResponse &response) const {
+  try {
+    Json::Value value;
+    value = ReadJson(response.body());
+    Error error;
+    error.setErrorCode(value["Code"].asString());
+    error.setErrorMessage(value["Message"].asString());
+    error.setHost(value["HostId"].asString());
+    error.setRequestId(value["RequestId"].asString());
+    if (value["Code"].asString().empty() ||
+        value["Message"].asString().empty()) {
+      error.setDetail(std::string(response.body()));
+    }
+    return error;
+  } catch (JSONCPP_STRING errs) {
     if (response.bodySize() > 0) {
       return Error("InvalidResponse", response.body());
     } else {
       return Error("InvalidResponse", "body is empty");
     }
   }
-
-  Error error;
-  error.setErrorCode(value["Code"].asString());
-  error.setErrorMessage(value["Message"].asString());
-  error.setHost(value["HostId"].asString());
-  error.setRequestId(value["RequestId"].asString());
-  if (value["Code"].asString().empty() || value["Message"].asString().empty()) {
-    error.setDetail(std::string(response.body()));
-  }
-  return error;
 }
 
-bool CoreClient::hasResponseError(const HttpResponse &response)const {
+bool CoreClient::hasResponseError(const HttpResponse &response) const {
   return response.statusCode() < 200 || response.statusCode() > 299;
 }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

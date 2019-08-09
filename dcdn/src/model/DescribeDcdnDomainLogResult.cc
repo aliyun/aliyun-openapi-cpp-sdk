@@ -35,29 +35,18 @@ DescribeDcdnDomainLogResult::~DescribeDcdnDomainLogResult()
 
 void DescribeDcdnDomainLogResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allDomainLogDetails = value["DomainLogDetails"]["DomainLogDetail"];
 	for (auto value : allDomainLogDetails)
 	{
 		DomainLogDetail domainLogDetailsObject;
 		if(!value["LogCount"].isNull())
 			domainLogDetailsObject.logCount = std::stol(value["LogCount"].asString());
-		auto allPageInfos = value["PageInfos"]["PageInfoDetail"];
-		for (auto value : allPageInfos)
-		{
-			DomainLogDetail::PageInfoDetail pageInfosObject;
-			if(!value["PageIndex"].isNull())
-				pageInfosObject.pageIndex = std::stol(value["PageIndex"].asString());
-			if(!value["PageSize"].isNull())
-				pageInfosObject.pageSize = std::stol(value["PageSize"].asString());
-			if(!value["Total"].isNull())
-				pageInfosObject.total = std::stol(value["Total"].asString());
-			domainLogDetailsObject.pageInfos.push_back(pageInfosObject);
-		}
 		auto allLogInfos = value["LogInfos"]["LogInfoDetail"];
 		for (auto value : allLogInfos)
 		{
@@ -74,6 +63,13 @@ void DescribeDcdnDomainLogResult::parse(const std::string &payload)
 				logInfosObject.endTime = value["EndTime"].asString();
 			domainLogDetailsObject.logInfos.push_back(logInfosObject);
 		}
+		auto pageInfosNode = value["PageInfos"];
+		if(!pageInfosNode["PageIndex"].isNull())
+			domainLogDetailsObject.pageInfos.pageIndex = std::stol(pageInfosNode["PageIndex"].asString());
+		if(!pageInfosNode["PageSize"].isNull())
+			domainLogDetailsObject.pageInfos.pageSize = std::stol(pageInfosNode["PageSize"].asString());
+		if(!pageInfosNode["Total"].isNull())
+			domainLogDetailsObject.pageInfos.total = std::stol(pageInfosNode["Total"].asString());
 		domainLogDetails_.push_back(domainLogDetailsObject);
 	}
 	if(!value["DomainName"].isNull())

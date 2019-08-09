@@ -35,11 +35,12 @@ DescribeLoadBalancerHTTPListenerAttributeResult::~DescribeLoadBalancerHTTPListen
 
 void DescribeLoadBalancerHTTPListenerAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allRules = value["Rules"]["Rule"];
 	for (auto value : allRules)
 	{
@@ -80,6 +81,8 @@ void DescribeLoadBalancerHTTPListenerAttributeResult::parse(const std::string &p
 		cookie_ = value["Cookie"].asString();
 	if(!value["HealthCheck"].isNull())
 		healthCheck_ = value["HealthCheck"].asString();
+	if(!value["HealthCheckType"].isNull())
+		healthCheckType_ = value["HealthCheckType"].asString();
 	if(!value["HealthCheckDomain"].isNull())
 		healthCheckDomain_ = value["HealthCheckDomain"].asString();
 	if(!value["HealthCheckURI"].isNull())
@@ -96,6 +99,8 @@ void DescribeLoadBalancerHTTPListenerAttributeResult::parse(const std::string &p
 		healthCheckConnectPort_ = std::stoi(value["HealthCheckConnectPort"].asString());
 	if(!value["HealthCheckHttpCode"].isNull())
 		healthCheckHttpCode_ = value["HealthCheckHttpCode"].asString();
+	if(!value["HealthCheckMethod"].isNull())
+		healthCheckMethod_ = value["HealthCheckMethod"].asString();
 	if(!value["MaxConnection"].isNull())
 		maxConnection_ = std::stoi(value["MaxConnection"].asString());
 	if(!value["VServerGroupId"].isNull())
@@ -187,6 +192,11 @@ std::string DescribeLoadBalancerHTTPListenerAttributeResult::getXForwardedFor_SL
 int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckConnectPort()const
 {
 	return healthCheckConnectPort_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckMethod()const
+{
+	return healthCheckMethod_;
 }
 
 int DescribeLoadBalancerHTTPListenerAttributeResult::getBandwidth()const
@@ -307,5 +317,10 @@ std::string DescribeLoadBalancerHTTPListenerAttributeResult::getXForwardedFor_pr
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getAclType()const
 {
 	return aclType_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckType()const
+{
+	return healthCheckType_;
 }
 

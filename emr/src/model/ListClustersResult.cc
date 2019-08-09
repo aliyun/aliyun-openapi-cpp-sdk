@@ -35,11 +35,12 @@ ListClustersResult::~ListClustersResult()
 
 void ListClustersResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allClusters = value["Clusters"]["ClusterInfo"];
 	for (auto value : allClusters)
 	{
@@ -48,6 +49,8 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.id = value["Id"].asString();
 		if(!value["Name"].isNull())
 			clustersObject.name = value["Name"].asString();
+		if(!value["MachineType"].isNull())
+			clustersObject.machineType = value["MachineType"].asString();
 		if(!value["Type"].isNull())
 			clustersObject.type = value["Type"].asString();
 		if(!value["CreateTime"].isNull())
@@ -70,6 +73,8 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.createResource = value["CreateResource"].asString();
 		if(!value["DepositType"].isNull())
 			clustersObject.depositType = value["DepositType"].asString();
+		if(!value["MetaStoreType"].isNull())
+			clustersObject.metaStoreType = value["MetaStoreType"].asString();
 		auto orderTaskInfoNode = value["OrderTaskInfo"];
 		if(!orderTaskInfoNode["TargetCount"].isNull())
 			clustersObject.orderTaskInfo.targetCount = std::stoi(orderTaskInfoNode["TargetCount"].asString());

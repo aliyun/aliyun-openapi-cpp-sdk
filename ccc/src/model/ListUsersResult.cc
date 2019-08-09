@@ -35,11 +35,12 @@ ListUsersResult::~ListUsersResult()
 
 void ListUsersResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto usersNode = value["Users"];
 	if(!usersNode["TotalCount"].isNull())
 		users_.totalCount = std::stoi(usersNode["TotalCount"].asString());
@@ -59,6 +60,8 @@ void ListUsersResult::parse(const std::string &payload)
 			userObject.instanceId = value["InstanceId"].asString();
 		if(!value["Primary"].isNull())
 			userObject.primary = value["Primary"].asString() == "true";
+		if(!value["PrivateOutboundNumberId"].isNull())
+			userObject.privateOutboundNumberId = value["PrivateOutboundNumberId"].asString();
 		auto allRoles = value["Roles"]["Role"];
 		for (auto value : allRoles)
 		{

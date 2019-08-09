@@ -236,6 +236,8 @@
 #include "model/ModifyQosResult.h"
 #include "model/UnbindVbrRequest.h"
 #include "model/UnbindVbrResult.h"
+#include "model/DescribeBindableSmartAccessGatewaysRequest.h"
+#include "model/DescribeBindableSmartAccessGatewaysResult.h"
 
 
 namespace AlibabaCloud
@@ -566,6 +568,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnbindVbrResult> UnbindVbrOutcome;
 			typedef std::future<UnbindVbrOutcome> UnbindVbrOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::UnbindVbrRequest&, const UnbindVbrOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindVbrAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBindableSmartAccessGatewaysResult> DescribeBindableSmartAccessGatewaysOutcome;
+			typedef std::future<DescribeBindableSmartAccessGatewaysOutcome> DescribeBindableSmartAccessGatewaysOutcomeCallable;
+			typedef std::function<void(const SmartagClient*, const Model::DescribeBindableSmartAccessGatewaysRequest&, const DescribeBindableSmartAccessGatewaysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindableSmartAccessGatewaysAsyncHandler;
 
 			SmartagClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			SmartagClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -892,6 +897,9 @@ namespace AlibabaCloud
 			UnbindVbrOutcome unbindVbr(const Model::UnbindVbrRequest &request)const;
 			void unbindVbrAsync(const Model::UnbindVbrRequest& request, const UnbindVbrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindVbrOutcomeCallable unbindVbrCallable(const Model::UnbindVbrRequest& request) const;
+			DescribeBindableSmartAccessGatewaysOutcome describeBindableSmartAccessGateways(const Model::DescribeBindableSmartAccessGatewaysRequest &request)const;
+			void describeBindableSmartAccessGatewaysAsync(const Model::DescribeBindableSmartAccessGatewaysRequest& request, const DescribeBindableSmartAccessGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBindableSmartAccessGatewaysOutcomeCallable describeBindableSmartAccessGatewaysCallable(const Model::DescribeBindableSmartAccessGatewaysRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

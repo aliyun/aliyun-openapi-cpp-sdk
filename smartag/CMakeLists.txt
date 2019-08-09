@@ -234,7 +234,9 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/ModifyQosRequest.h
 	include/alibabacloud/smartag/model/ModifyQosResult.h
 	include/alibabacloud/smartag/model/UnbindVbrRequest.h
-	include/alibabacloud/smartag/model/UnbindVbrResult.h )
+	include/alibabacloud/smartag/model/UnbindVbrResult.h
+	include/alibabacloud/smartag/model/DescribeBindableSmartAccessGatewaysRequest.h
+	include/alibabacloud/smartag/model/DescribeBindableSmartAccessGatewaysResult.h )
 
 set(smartag_src 
 	src/SmartagClient.cc
@@ -451,7 +453,9 @@ set(smartag_src
 	src/model/ModifyQosRequest.cc
 	src/model/ModifyQosResult.cc
 	src/model/UnbindVbrRequest.cc
-	src/model/UnbindVbrResult.cc )
+	src/model/UnbindVbrResult.cc
+	src/model/DescribeBindableSmartAccessGatewaysRequest.cc
+	src/model/DescribeBindableSmartAccessGatewaysResult.cc )
 
 add_library(smartag ${LIB_TYPE}
 	${smartag_public_header}

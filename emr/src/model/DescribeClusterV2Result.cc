@@ -35,11 +35,12 @@ DescribeClusterV2Result::~DescribeClusterV2Result()
 
 void DescribeClusterV2Result::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto clusterInfoNode = value["ClusterInfo"];
 	if(!clusterInfoNode["Id"].isNull())
 		clusterInfo_.id = clusterInfoNode["Id"].asString();
@@ -47,6 +48,8 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 		clusterInfo_.regionId = clusterInfoNode["RegionId"].asString();
 	if(!clusterInfoNode["DepositType"].isNull())
 		clusterInfo_.depositType = clusterInfoNode["DepositType"].asString();
+	if(!clusterInfoNode["MachineType"].isNull())
+		clusterInfo_.machineType = clusterInfoNode["MachineType"].asString();
 	if(!clusterInfoNode["ZoneId"].isNull())
 		clusterInfo_.zoneId = clusterInfoNode["ZoneId"].asString();
 	if(!clusterInfoNode["Name"].isNull())
@@ -131,6 +134,8 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 		clusterInfo_.autoScalingByLoadAllowed = clusterInfoNode["AutoScalingByLoadAllowed"].asString() == "true";
 	if(!clusterInfoNode["ResizeDiskEnable"].isNull())
 		clusterInfo_.resizeDiskEnable = clusterInfoNode["ResizeDiskEnable"].asString() == "true";
+	if(!clusterInfoNode["MetaStoreType"].isNull())
+		clusterInfo_.metaStoreType = clusterInfoNode["MetaStoreType"].asString();
 	auto allGatewayClusterInfoList = value["GatewayClusterInfoList"]["GatewayClusterInfo"];
 	for (auto value : allGatewayClusterInfoList)
 	{
@@ -252,6 +257,11 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 		clusterInfo_.relateClusterInfo.clusterName = relateClusterInfoNode["ClusterName"].asString();
 	if(!relateClusterInfoNode["Status"].isNull())
 		clusterInfo_.relateClusterInfo.status = relateClusterInfoNode["Status"].asString();
+	auto hostPoolInfoNode = clusterInfoNode["HostPoolInfo"];
+	if(!hostPoolInfoNode["HpBizId"].isNull())
+		clusterInfo_.hostPoolInfo.hpBizId = hostPoolInfoNode["HpBizId"].asString();
+	if(!hostPoolInfoNode["HpName"].isNull())
+		clusterInfo_.hostPoolInfo.hpName = hostPoolInfoNode["HpName"].asString();
 	auto failReasonNode = clusterInfoNode["FailReason"];
 	if(!failReasonNode["ErrorCode"].isNull())
 		clusterInfo_.failReason.errorCode = failReasonNode["ErrorCode"].asString();

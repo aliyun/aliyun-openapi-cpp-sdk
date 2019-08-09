@@ -35,11 +35,12 @@ DescribeShardingNetworkAddressResult::~DescribeShardingNetworkAddressResult()
 
 void DescribeShardingNetworkAddressResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allNetworkAddresses = value["NetworkAddresses"]["NetworkAddress"];
 	for (auto value : allNetworkAddresses)
 	{
@@ -60,6 +61,8 @@ void DescribeShardingNetworkAddressResult::parse(const std::string &payload)
 			networkAddressesObject.nodeId = value["NodeId"].asString();
 		if(!value["ExpiredTime"].isNull())
 			networkAddressesObject.expiredTime = value["ExpiredTime"].asString();
+		if(!value["NodeType"].isNull())
+			networkAddressesObject.nodeType = value["NodeType"].asString();
 		networkAddresses_.push_back(networkAddressesObject);
 	}
 

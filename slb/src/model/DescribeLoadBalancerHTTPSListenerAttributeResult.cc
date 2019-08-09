@@ -35,11 +35,12 @@ DescribeLoadBalancerHTTPSListenerAttributeResult::~DescribeLoadBalancerHTTPSList
 
 void DescribeLoadBalancerHTTPSListenerAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allRules = value["Rules"]["Rule"];
 	for (auto value : allRules)
 	{
@@ -72,6 +73,8 @@ void DescribeLoadBalancerHTTPSListenerAttributeResult::parse(const std::string &
 		listenerPort_ = std::stoi(value["ListenerPort"].asString());
 	if(!value["BackendServerPort"].isNull())
 		backendServerPort_ = std::stoi(value["BackendServerPort"].asString());
+	if(!value["BackendProtocol"].isNull())
+		backendProtocol_ = std::stoi(value["BackendProtocol"].asString());
 	if(!value["Bandwidth"].isNull())
 		bandwidth_ = std::stoi(value["Bandwidth"].asString());
 	if(!value["Status"].isNull())
@@ -92,6 +95,8 @@ void DescribeLoadBalancerHTTPSListenerAttributeResult::parse(const std::string &
 		cookie_ = value["Cookie"].asString();
 	if(!value["HealthCheck"].isNull())
 		healthCheck_ = value["HealthCheck"].asString();
+	if(!value["HealthCheckType"].isNull())
+		healthCheckType_ = value["HealthCheckType"].asString();
 	if(!value["HealthCheckDomain"].isNull())
 		healthCheckDomain_ = value["HealthCheckDomain"].asString();
 	if(!value["HealthCheckURI"].isNull())
@@ -112,6 +117,8 @@ void DescribeLoadBalancerHTTPSListenerAttributeResult::parse(const std::string &
 		serverCertificateId_ = value["ServerCertificateId"].asString();
 	if(!value["CACertificateId"].isNull())
 		cACertificateId_ = value["CACertificateId"].asString();
+	if(!value["HealthCheckMethod"].isNull())
+		healthCheckMethod_ = value["HealthCheckMethod"].asString();
 	if(!value["MaxConnection"].isNull())
 		maxConnection_ = std::stoi(value["MaxConnection"].asString());
 	if(!value["VServerGroupId"].isNull())
@@ -158,6 +165,11 @@ int DescribeLoadBalancerHTTPSListenerAttributeResult::getMaxConnection()const
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getVServerGroupId()const
 {
 	return vServerGroupId_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getBackendProtocol()const
+{
+	return backendProtocol_;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getDescription()const
@@ -208,6 +220,11 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_S
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckConnectPort()const
 {
 	return healthCheckConnectPort_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckMethod()const
+{
+	return healthCheckMethod_;
 }
 
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getBandwidth()const
@@ -338,5 +355,10 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getAclType()const
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getEnableHttp2()const
 {
 	return enableHttp2_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckType()const
+{
+	return healthCheckType_;
 }
 

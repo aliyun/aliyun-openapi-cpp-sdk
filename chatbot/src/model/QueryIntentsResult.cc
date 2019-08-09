@@ -35,11 +35,12 @@ QueryIntentsResult::~QueryIntentsResult()
 
 void QueryIntentsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allIntents = value["Intents"]["Intent"];
 	for (auto value : allIntents)
 	{
@@ -66,6 +67,8 @@ void QueryIntentsResult::parse(const std::string &payload)
 			Intent::UserSayItem userSayObject;
 			if(!value["Strict"].isNull())
 				userSayObject.strict = value["Strict"].asString() == "true";
+			if(!value["UserSayId"].isNull())
+				userSayObject.userSayId = value["UserSayId"].asString();
 			auto allData = value["Data"]["DataItem"];
 			for (auto value : allData)
 			{
@@ -108,6 +111,8 @@ void QueryIntentsResult::parse(const std::string &payload)
 				slotObject.isArray = value["IsArray"].asString() == "true";
 			if(!value["LifeSpan"].isNull())
 				slotObject.lifeSpan = std::stoi(value["LifeSpan"].asString());
+			if(!value["SlotId"].isNull())
+				slotObject.slotId = value["SlotId"].asString();
 			auto allTags = value["Tags"]["TagsItem"];
 			for (auto value : allTags)
 			{

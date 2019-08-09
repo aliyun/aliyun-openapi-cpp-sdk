@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,107 +17,122 @@
 #ifndef ALIBABACLOUD_MTS_MODEL_UPDATETEMPLATERESULT_H_
 #define ALIBABACLOUD_MTS_MODEL_UPDATETEMPLATERESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/mts/MtsExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace Mts {
-namespace Model {
-class ALIBABACLOUD_MTS_EXPORT UpdateTemplateResult : public ServiceResult {
-public:
-  struct _Template {
-    struct Container {
-      std::string format;
-    };
-    struct Video {
-      struct BitrateBnd {
-        std::string min;
-        std::string max;
-      };
-      std::string bufsize;
-      std::string qscale;
-      std::string scanMode;
-      std::string preset;
-      std::string longShortMode;
-      std::string fps;
-      std::string gop;
-      std::string remove;
-      BitrateBnd bitrateBnd;
-      std::string pixFmt;
-      std::string bitrate;
-      std::string profile;
-      std::string crop;
-      std::string codec;
-      std::string maxrate;
-      std::string pad;
-      std::string crf;
-      std::string maxFps;
-      std::string height;
-      std::string degrain;
-      std::string width;
-      std::string resoPriority;
-    };
-    struct Audio {
-      std::string codec;
-      std::string qscale;
-      std::string remove;
-      std::string samplerate;
-      std::string bitrate;
-      std::string profile;
-      std::string channels;
-    };
-    struct TransConfig {
-      std::string isCheckAudioBitrate;
-      std::string adjDarMethod;
-      std::string isCheckAudioBitrateFail;
-      std::string isCheckVideoBitrateFail;
-      std::string isCheckReso;
-      std::string isCheckVideoBitrate;
-      std::string transMode;
-      std::string isCheckResoFail;
-    };
-    struct MuxConfig {
-      struct Segment {
-        std::string duration;
-      };
-      struct Gif {
-        std::string loop;
-        std::string finalDelay;
-        std::string ditherMode;
-        std::string isCustomPalette;
-      };
-      struct Webp {
-        std::string loop;
-      };
-      Gif gif;
-      Webp webp;
-      Segment segment;
-    };
-    Container container;
-    TransConfig transConfig;
-    Video video;
-    std::string state;
-    std::string id;
-    Audio audio;
-    MuxConfig muxConfig;
-    std::string name;
-  };
+namespace AlibabaCloud
+{
+	namespace Mts
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_MTS_EXPORT UpdateTemplateResult : public ServiceResult
+			{
+			public:
+				struct _Template
+				{
+					struct Container
+					{
+						std::string format;
+					};
+					struct Video
+					{
+						struct BitrateBnd
+						{
+							std::string min;
+							std::string max;
+						};
+						std::string bufsize;
+						std::string qscale;
+						std::string scanMode;
+						std::string preset;
+						std::string longShortMode;
+						std::string fps;
+						std::string gop;
+						std::string remove;
+						BitrateBnd bitrateBnd;
+						std::string pixFmt;
+						std::string bitrate;
+						std::string profile;
+						std::string crop;
+						std::string codec;
+						std::string maxrate;
+						std::string pad;
+						std::string crf;
+						std::string maxFps;
+						std::string height;
+						std::string degrain;
+						std::string width;
+						std::string resoPriority;
+					};
+					struct Audio
+					{
+						std::string codec;
+						std::string qscale;
+						std::string remove;
+						std::string samplerate;
+						std::string bitrate;
+						std::string profile;
+						std::string channels;
+					};
+					struct TransConfig
+					{
+						std::string isCheckAudioBitrate;
+						std::string adjDarMethod;
+						std::string isCheckAudioBitrateFail;
+						std::string isCheckVideoBitrateFail;
+						std::string isCheckReso;
+						std::string isCheckVideoBitrate;
+						std::string transMode;
+						std::string isCheckResoFail;
+					};
+					struct MuxConfig
+					{
+						struct Segment
+						{
+							std::string duration;
+						};
+						struct Gif
+						{
+							std::string loop;
+							std::string finalDelay;
+							std::string ditherMode;
+							std::string isCustomPalette;
+						};
+						struct Webp
+						{
+							std::string loop;
+						};
+						Gif gif;
+						Webp webp;
+						Segment segment;
+					};
+					Container container;
+					TransConfig transConfig;
+					Video video;
+					std::string state;
+					std::string id;
+					Audio audio;
+					MuxConfig muxConfig;
+					std::string name;
+				};
 
-  UpdateTemplateResult();
-  explicit UpdateTemplateResult(const std::string &payload);
-  ~UpdateTemplateResult();
-  _Template get_Template() const;
 
-protected:
-  void parse(const std::string &payload);
+				UpdateTemplateResult();
+				explicit UpdateTemplateResult(const std::string &payload);
+				~UpdateTemplateResult();
+				_Template get_Template()const;
 
-private:
-  _Template _template_;
-};
-} // namespace Model
-} // namespace Mts
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				_Template _template_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_MTS_MODEL_UPDATETEMPLATERESULT_H_

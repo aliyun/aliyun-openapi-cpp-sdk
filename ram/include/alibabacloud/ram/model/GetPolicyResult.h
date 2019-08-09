@@ -43,17 +43,26 @@ namespace AlibabaCloud
 					std::string policyDocument;
 					std::string createDate;
 				};
+				struct DefaultPolicyVersion
+				{
+					std::string versionId;
+					bool isDefaultVersion;
+					std::string policyDocument;
+					std::string createDate;
+				};
 
 
 				GetPolicyResult();
 				explicit GetPolicyResult(const std::string &payload);
 				~GetPolicyResult();
 				Policy getPolicy()const;
+				DefaultPolicyVersion getDefaultPolicyVersion()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				Policy policy_;
+				DefaultPolicyVersion defaultPolicyVersion_;
 
 			};
 		}

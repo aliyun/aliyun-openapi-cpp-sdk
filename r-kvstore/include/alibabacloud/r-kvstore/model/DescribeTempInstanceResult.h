@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,46 @@
 #ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETEMPINSTANCERESULT_H_
 #define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETEMPINSTANCERESULT_H_
 
+#include <string>
+#include <vector>
+#include <utility>
 #include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/r-kvstore/R_kvstoreExport.h>
-#include <string>
-#include <utility>
-#include <vector>
 
-namespace AlibabaCloud {
-namespace R_kvstore {
-namespace Model {
-class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeTempInstanceResult
-    : public ServiceResult {
-public:
-  struct TempInstance {
-    std::string status;
-    std::string snapshotId;
-    std::string instanceId;
-    long memory;
-    std::string createTime;
-    std::string tempInstanceId;
-    std::string domain;
-    std::string expireTime;
-  };
+namespace AlibabaCloud
+{
+	namespace R_kvstore
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeTempInstanceResult : public ServiceResult
+			{
+			public:
+				struct TempInstance
+				{
+					std::string status;
+					std::string snapshotId;
+					std::string instanceId;
+					long memory;
+					std::string createTime;
+					std::string tempInstanceId;
+					std::string domain;
+					std::string expireTime;
+				};
 
-  DescribeTempInstanceResult();
-  explicit DescribeTempInstanceResult(const std::string &payload);
-  ~DescribeTempInstanceResult();
-  std::vector<TempInstance> getTempInstances() const;
 
-protected:
-  void parse(const std::string &payload);
+				DescribeTempInstanceResult();
+				explicit DescribeTempInstanceResult(const std::string &payload);
+				~DescribeTempInstanceResult();
+				std::vector<TempInstance> getTempInstances()const;
 
-private:
-  std::vector<TempInstance> tempInstances_;
-};
-} // namespace Model
-} // namespace R_kvstore
-} // namespace AlibabaCloud
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<TempInstance> tempInstances_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETEMPINSTANCERESULT_H_

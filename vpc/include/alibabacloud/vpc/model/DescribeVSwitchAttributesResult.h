@@ -52,6 +52,7 @@ namespace AlibabaCloud
 				std::string getDescription()const;
 				std::string getZoneId()const;
 				std::string getResourceGroupId()const;
+				std::string getNetworkAclId()const;
 				std::string getVSwitchId()const;
 				long getAvailableIpAddressCount()const;
 				std::string getCidrBlock()const;
@@ -70,6 +71,7 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string zoneId_;
 				std::string resourceGroupId_;
+				std::string networkAclId_;
 				std::string vSwitchId_;
 				long availableIpAddressCount_;
 				std::string cidrBlock_;

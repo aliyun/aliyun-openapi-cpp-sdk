@@ -35,11 +35,12 @@ DescribeCenRegionDomainRouteEntriesResult::~DescribeCenRegionDomainRouteEntriesR
 
 void DescribeCenRegionDomainRouteEntriesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allCenRouteEntries = value["CenRouteEntries"]["CenRouteEntry"];
 	for (auto value : allCenRouteEntries)
 	{
@@ -54,6 +55,38 @@ void DescribeCenRegionDomainRouteEntriesResult::parse(const std::string &payload
 			cenRouteEntriesObject.nextHopType = value["NextHopType"].asString();
 		if(!value["NextHopRegionId"].isNull())
 			cenRouteEntriesObject.nextHopRegionId = value["NextHopRegionId"].asString();
+		if(!value["Status"].isNull())
+			cenRouteEntriesObject.status = value["Status"].asString();
+		if(!value["ToOtherRegionStatus"].isNull())
+			cenRouteEntriesObject.toOtherRegionStatus = value["ToOtherRegionStatus"].asString();
+		if(!value["Preference"].isNull())
+			cenRouteEntriesObject.preference = std::stoi(value["Preference"].asString());
+		auto allCenRouteMapRecords = value["CenRouteMapRecords"]["CenRouteMapRecord"];
+		for (auto value : allCenRouteMapRecords)
+		{
+			CenRouteEntry::CenRouteMapRecord cenRouteMapRecordsObject;
+			if(!value["RegionId"].isNull())
+				cenRouteMapRecordsObject.regionId = value["RegionId"].asString();
+			if(!value["RouteMapId"].isNull())
+				cenRouteMapRecordsObject.routeMapId = value["RouteMapId"].asString();
+			cenRouteEntriesObject.cenRouteMapRecords.push_back(cenRouteMapRecordsObject);
+		}
+		auto allCenOutRouteMapRecords = value["CenOutRouteMapRecords"]["CenOutRouteMapRecord"];
+		for (auto value : allCenOutRouteMapRecords)
+		{
+			CenRouteEntry::CenOutRouteMapRecord cenOutRouteMapRecordsObject;
+			if(!value["RegionId"].isNull())
+				cenOutRouteMapRecordsObject.regionId = value["RegionId"].asString();
+			if(!value["RouteMapId"].isNull())
+				cenOutRouteMapRecordsObject.routeMapId = value["RouteMapId"].asString();
+			cenRouteEntriesObject.cenOutRouteMapRecords.push_back(cenOutRouteMapRecordsObject);
+		}
+		auto allAsPaths = value["AsPaths"]["AsPath"];
+		for (auto value : allAsPaths)
+			cenRouteEntriesObject.asPaths.push_back(value.asString());
+		auto allCommunities = value["Communities"]["Community"];
+		for (auto value : allCommunities)
+			cenRouteEntriesObject.communities.push_back(value.asString());
 		cenRouteEntries_.push_back(cenRouteEntriesObject);
 	}
 	if(!value["PageNumber"].isNull())

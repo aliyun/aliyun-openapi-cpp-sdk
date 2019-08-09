@@ -35,11 +35,12 @@ OnsConsumerStatusResult::~OnsConsumerStatusResult()
 
 void OnsConsumerStatusResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto dataNode = value["Data"];
 	if(!dataNode["Online"].isNull())
 		data_.online = dataNode["Online"].asString() == "true";
@@ -71,6 +72,8 @@ void OnsConsumerStatusResult::parse(const std::string &payload)
 			connectionDoObject.language = value["Language"].asString();
 		if(!value["Version"].isNull())
 			connectionDoObject.version = value["Version"].asString();
+		if(!value["RemoteIP"].isNull())
+			connectionDoObject.remoteIP = value["RemoteIP"].asString();
 		data_.connectionSet.push_back(connectionDoObject);
 	}
 	auto allDetailInTopicList = value["DetailInTopicList"]["DetailInTopicDo"];

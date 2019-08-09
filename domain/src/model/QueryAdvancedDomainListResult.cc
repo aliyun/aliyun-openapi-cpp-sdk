@@ -35,11 +35,12 @@ QueryAdvancedDomainListResult::~QueryAdvancedDomainListResult()
 
 void QueryAdvancedDomainListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto allData = value["Data"]["Domain"];
 	for (auto value : allData)
 	{
@@ -78,6 +79,15 @@ void QueryAdvancedDomainListResult::parse(const std::string &payload)
 			dataObject.domainGroupName = value["DomainGroupName"].asString();
 		if(!value["ExpirationCurrDateDiff"].isNull())
 			dataObject.expirationCurrDateDiff = std::stoi(value["ExpirationCurrDateDiff"].asString());
+		if(!value["Email"].isNull())
+			dataObject.email = value["Email"].asString();
+		if(!value["ZhRegistrantOrganization"].isNull())
+			dataObject.zhRegistrantOrganization = value["ZhRegistrantOrganization"].asString();
+		if(!value["RegistrantOrganization"].isNull())
+			dataObject.registrantOrganization = value["RegistrantOrganization"].asString();
+		auto allDnsList = value["DnsList"]["Dns"];
+		for (auto value : allDnsList)
+			dataObject.dnsList.push_back(value.asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

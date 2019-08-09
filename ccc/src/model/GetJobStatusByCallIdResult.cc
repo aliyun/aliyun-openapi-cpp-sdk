@@ -35,11 +35,12 @@ GetJobStatusByCallIdResult::~GetJobStatusByCallIdResult()
 
 void GetJobStatusByCallIdResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *value;
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
+	setRequestId((*value)["RequestId"].asString());
 	auto jobNode = value["Job"];
 	if(!jobNode["JobId"].isNull())
 		job_.jobId = jobNode["JobId"].asString();
@@ -105,6 +106,8 @@ void GetJobStatusByCallIdResult::parse(const std::string &payload)
 			taskObject.planedTime = std::stol(value["PlanedTime"].asString());
 		if(!value["ActualTime"].isNull())
 			taskObject.actualTime = std::stol(value["ActualTime"].asString());
+		if(!value["EndTime"].isNull())
+			taskObject.endTime = std::stol(value["EndTime"].asString());
 		if(!value["CallingNumber"].isNull())
 			taskObject.callingNumber = value["CallingNumber"].asString();
 		if(!value["CalledNumber"].isNull())

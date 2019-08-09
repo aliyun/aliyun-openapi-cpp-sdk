@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,28 +17,32 @@
 #ifndef ALIBABACLOUD_LUBANCLOUD_MODEL_GETSTYLESREQUEST_H_
 #define ALIBABACLOUD_LUBANCLOUD_MODEL_GETSTYLESREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/lubancloud/LubancloudExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/lubancloud/LubancloudExport.h>
 
-namespace AlibabaCloud {
-namespace Lubancloud {
-namespace Model {
-class ALIBABACLOUD_LUBANCLOUD_EXPORT GetStylesRequest
-    : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Lubancloud
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_LUBANCLOUD_EXPORT GetStylesRequest : public RpcServiceRequest
+			{
 
-public:
-  GetStylesRequest();
-  ~GetStylesRequest();
+			public:
+				GetStylesRequest();
+				~GetStylesRequest();
 
-  std::string getRegionId() const;
-  void setRegionId(const std::string &regionId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 
-private:
-  std::string regionId_;
-};
-} // namespace Model
-} // namespace Lubancloud
-} // namespace AlibabaCloud
+            private:
+				std::string regionId_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_LUBANCLOUD_MODEL_GETSTYLESREQUEST_H_

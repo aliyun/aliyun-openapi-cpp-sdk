@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,43 +17,47 @@
 #ifndef ALIBABACLOUD_EMR_MODEL_AUTHORIZESECURITYGROUPREQUEST_H_
 #define ALIBABACLOUD_EMR_MODEL_AUTHORIZESECURITYGROUPREQUEST_H_
 
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/emr/EmrExport.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/emr/EmrExport.h>
 
-namespace AlibabaCloud {
-namespace Emr {
-namespace Model {
-class ALIBABACLOUD_EMR_EXPORT AuthorizeSecurityGroupRequest
-    : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Emr
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_EMR_EXPORT AuthorizeSecurityGroupRequest : public RpcServiceRequest
+			{
 
-public:
-  AuthorizeSecurityGroupRequest();
-  ~AuthorizeSecurityGroupRequest();
+			public:
+				AuthorizeSecurityGroupRequest();
+				~AuthorizeSecurityGroupRequest();
 
-  std::string getBizType() const;
-  void setBizType(const std::string &bizType);
-  long getResourceOwnerId() const;
-  void setResourceOwnerId(long resourceOwnerId);
-  std::string getBizContent() const;
-  void setBizContent(const std::string &bizContent);
-  std::string getRegionId() const;
-  void setRegionId(const std::string &regionId);
-  std::string getClusterId() const;
-  void setClusterId(const std::string &clusterId);
-  std::string getAccessKeyId() const;
-  void setAccessKeyId(const std::string &accessKeyId);
+				std::string getBizType()const;
+				void setBizType(const std::string& bizType);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getBizContent()const;
+				void setBizContent(const std::string& bizContent);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 
-private:
-  std::string bizType_;
-  long resourceOwnerId_;
-  std::string bizContent_;
-  std::string regionId_;
-  std::string clusterId_;
-  std::string accessKeyId_;
-};
-} // namespace Model
-} // namespace Emr
-} // namespace AlibabaCloud
+            private:
+				std::string bizType_;
+				long resourceOwnerId_;
+				std::string bizContent_;
+				std::string regionId_;
+				std::string clusterId_;
+				std::string accessKeyId_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_EMR_MODEL_AUTHORIZESECURITYGROUPREQUEST_H_

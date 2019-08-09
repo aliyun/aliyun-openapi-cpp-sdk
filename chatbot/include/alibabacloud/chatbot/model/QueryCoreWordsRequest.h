@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,37 +17,41 @@
 #ifndef ALIBABACLOUD_CHATBOT_MODEL_QUERYCOREWORDSREQUEST_H_
 #define ALIBABACLOUD_CHATBOT_MODEL_QUERYCOREWORDSREQUEST_H_
 
-#include <alibabacloud/chatbot/ChatbotExport.h>
-#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/chatbot/ChatbotExport.h>
 
-namespace AlibabaCloud {
-namespace Chatbot {
-namespace Model {
-class ALIBABACLOUD_CHATBOT_EXPORT QueryCoreWordsRequest
-    : public RpcServiceRequest {
+namespace AlibabaCloud
+{
+	namespace Chatbot
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_CHATBOT_EXPORT QueryCoreWordsRequest : public RpcServiceRequest
+			{
 
-public:
-  QueryCoreWordsRequest();
-  ~QueryCoreWordsRequest();
+			public:
+				QueryCoreWordsRequest();
+				~QueryCoreWordsRequest();
 
-  std::string getSynonym() const;
-  void setSynonym(const std::string &synonym);
-  int getPageSize() const;
-  void setPageSize(int pageSize);
-  std::string getCoreWordName() const;
-  void setCoreWordName(const std::string &coreWordName);
-  int getPageNumber() const;
-  void setPageNumber(int pageNumber);
+				std::string getSynonym()const;
+				void setSynonym(const std::string& synonym);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getCoreWordName()const;
+				void setCoreWordName(const std::string& coreWordName);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 
-private:
-  std::string synonym_;
-  int pageSize_;
-  std::string coreWordName_;
-  int pageNumber_;
-};
-} // namespace Model
-} // namespace Chatbot
-} // namespace AlibabaCloud
+            private:
+				std::string synonym_;
+				int pageSize_;
+				std::string coreWordName_;
+				int pageNumber_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_CHATBOT_MODEL_QUERYCOREWORDSREQUEST_H_
