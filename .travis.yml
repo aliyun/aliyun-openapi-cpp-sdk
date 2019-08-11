@@ -5,7 +5,12 @@ compiler: gcc
 
 install:
   - sudo apt-get install lcov libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev nodejs npm
+  - ln -s /usr/include/jsoncpp/json/ /usr/include/json
+  - cd /usr/include/ && ls
+  - cd /usr/local/include/ && ls
 
+env:
+  - CPLUS_INCLUDE_PATH="/usr/local/include/:/usr/local/opt/openssl/include:/usr/lib/"
 script:
   - ./unit_test.sh
   - ./generate_code_cov.sh
