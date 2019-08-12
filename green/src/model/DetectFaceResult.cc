@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/green/model/ImageScanFeedbackResult.h>
+#include <alibabacloud/green/model/DetectFaceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Green;
 using namespace AlibabaCloud::Green::Model;
 
-ImageScanFeedbackResult::ImageScanFeedbackResult() :
+DetectFaceResult::DetectFaceResult() :
 	ServiceResult()
 {}
 
-ImageScanFeedbackResult::ImageScanFeedbackResult(const std::string &payload) :
+DetectFaceResult::DetectFaceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ImageScanFeedbackResult::~ImageScanFeedbackResult()
+DetectFaceResult::~DetectFaceResult()
 {}
 
-void ImageScanFeedbackResult::parse(const std::string &payload)
+void DetectFaceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

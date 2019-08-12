@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_DELETEFACESRESULT_H_
-#define ALIBABACLOUD_GREEN_MODEL_DELETEFACESRESULT_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_DETECTFACEREQUEST_H_
+#define ALIBABACLOUD_GREEN_MODEL_DETECTFACEREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <alibabacloud/green/GreenExport.h>
 
 namespace AlibabaCloud
@@ -29,21 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT DeleteFacesResult : public ServiceResult
+			class ALIBABACLOUD_GREEN_EXPORT DetectFaceRequest : public RoaServiceRequest
 			{
+
 			public:
+				DetectFaceRequest();
+				~DetectFaceRequest();
 
+				std::string getClientInfo()const;
+				void setClientInfo(const std::string& clientInfo);
 
-				DeleteFacesResult();
-				explicit DeleteFacesResult(const std::string &payload);
-				~DeleteFacesResult();
-
-			protected:
-				void parse(const std::string &payload);
-			private:
+            private:
+				std::string clientInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_DELETEFACESRESULT_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_DETECTFACEREQUEST_H_

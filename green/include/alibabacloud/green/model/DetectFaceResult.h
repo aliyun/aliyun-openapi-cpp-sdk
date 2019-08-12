@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_DELETEFACESRESULT_H_
-#define ALIBABACLOUD_GREEN_MODEL_DELETEFACESRESULT_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_DETECTFACERESULT_H_
+#define ALIBABACLOUD_GREEN_MODEL_DETECTFACERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT DeleteFacesResult : public ServiceResult
+			class ALIBABACLOUD_GREEN_EXPORT DetectFaceResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteFacesResult();
-				explicit DeleteFacesResult(const std::string &payload);
-				~DeleteFacesResult();
+				DetectFaceResult();
+				explicit DetectFaceResult(const std::string &payload);
+				~DetectFaceResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_DELETEFACESRESULT_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_DETECTFACERESULT_H_
