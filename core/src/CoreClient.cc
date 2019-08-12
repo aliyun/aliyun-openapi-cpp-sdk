@@ -60,6 +60,10 @@ CoreClient::AttemptRequest(const std::string &endpoint,
 }
 
 Error CoreClient::buildCoreError(const HttpResponse &response) const {
+  if (response.bodySize() <= 0)
+  {
+    return Error("InvalidResponse", "body is empty");
+  }
   try {
     Json::Value value;
     value = ReadJson(response.body());
@@ -74,11 +78,7 @@ Error CoreClient::buildCoreError(const HttpResponse &response) const {
     }
     return error;
   } catch (JSONCPP_STRING errs) {
-    if (response.bodySize() > 0) {
-      return Error("InvalidResponse", response.body());
-    } else {
-      return Error("InvalidResponse", "body is empty");
-    }
+    return Error("InvalidResponse", response.body());
   }
 }
 
