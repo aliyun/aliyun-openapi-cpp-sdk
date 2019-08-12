@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getSpotStrategy()const;
 				void setSpotStrategy(const std::string& spotStrategy);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getAcceptLanguage()const;
 				void setAcceptLanguage(const std::string& acceptLanguage);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
 				bool getVerbose()const;
@@ -59,12 +59,12 @@ namespace AlibabaCloud
             private:
 				std::string sourceRegionId_;
 				std::string spotStrategy_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string ownerAccount_;
 				std::string acceptLanguage_;
-				bool ownerId_;
+				long ownerId_;
 				std::string instanceChargeType_;
 				bool verbose_;
 

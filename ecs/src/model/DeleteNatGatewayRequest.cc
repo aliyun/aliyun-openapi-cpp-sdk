@@ -25,15 +25,15 @@ DeleteNatGatewayRequest::DeleteNatGatewayRequest() :
 DeleteNatGatewayRequest::~DeleteNatGatewayRequest()
 {}
 
-bool DeleteNatGatewayRequest::getResourceOwnerId()const
+long DeleteNatGatewayRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteNatGatewayRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteNatGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteNatGatewayRequest::getResourceOwnerAccount()const
@@ -80,14 +80,14 @@ void DeleteNatGatewayRequest::setNatGatewayId(const std::string& natGatewayId)
 	setCoreParameter("NatGatewayId", natGatewayId);
 }
 
-bool DeleteNatGatewayRequest::getOwnerId()const
+long DeleteNatGatewayRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteNatGatewayRequest::setOwnerId(bool ownerId)
+void DeleteNatGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

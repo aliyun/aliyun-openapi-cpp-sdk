@@ -25,15 +25,15 @@ DescribeSnapshotsRequest::DescribeSnapshotsRequest() :
 DescribeSnapshotsRequest::~DescribeSnapshotsRequest()
 {}
 
-bool DescribeSnapshotsRequest::getResourceOwnerId()const
+long DescribeSnapshotsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeSnapshotsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeSnapshotsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSnapshotsRequest::getFilter2Value()const
@@ -99,7 +99,7 @@ int DescribeSnapshotsRequest::getPageNumber()const
 void DescribeSnapshotsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeSnapshotsRequest::getSourceRegionId()const
@@ -154,7 +154,7 @@ int DescribeSnapshotsRequest::getPageSize()const
 void DescribeSnapshotsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeSnapshotsRequest::getDiskId()const
@@ -180,8 +180,8 @@ void DescribeSnapshotsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -193,7 +193,7 @@ bool DescribeSnapshotsRequest::getDryRun()const
 void DescribeSnapshotsRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun);
 }
 
 std::string DescribeSnapshotsRequest::getResourceOwnerAccount()const
@@ -251,15 +251,15 @@ void DescribeSnapshotsRequest::setFilter2Key(const std::string& filter2Key)
 	setCoreParameter("Filter2Key", filter2Key);
 }
 
-bool DescribeSnapshotsRequest::getOwnerId()const
+long DescribeSnapshotsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeSnapshotsRequest::setOwnerId(bool ownerId)
+void DescribeSnapshotsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeSnapshotsRequest::getInstanceId()const
@@ -281,7 +281,7 @@ bool DescribeSnapshotsRequest::getEncrypted()const
 void DescribeSnapshotsRequest::setEncrypted(bool encrypted)
 {
 	encrypted_ = encrypted;
-	setCoreParameter("Encrypted", encrypted ? "true" : "false");
+	setCoreParameter("Encrypted", encrypted);
 }
 
 std::string DescribeSnapshotsRequest::getSnapshotType()const

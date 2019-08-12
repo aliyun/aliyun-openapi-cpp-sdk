@@ -25,15 +25,15 @@ ModifyForwardEntryRequest::ModifyForwardEntryRequest() :
 ModifyForwardEntryRequest::~ModifyForwardEntryRequest()
 {}
 
-bool ModifyForwardEntryRequest::getResourceOwnerId()const
+long ModifyForwardEntryRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyForwardEntryRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyForwardEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyForwardEntryRequest::getResourceOwnerAccount()const
@@ -80,15 +80,15 @@ void ModifyForwardEntryRequest::setForwardTableId(const std::string& forwardTabl
 	setCoreParameter("ForwardTableId", forwardTableId);
 }
 
-bool ModifyForwardEntryRequest::getOwnerId()const
+long ModifyForwardEntryRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyForwardEntryRequest::setOwnerId(bool ownerId)
+void ModifyForwardEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyForwardEntryRequest::getInternalIp()const

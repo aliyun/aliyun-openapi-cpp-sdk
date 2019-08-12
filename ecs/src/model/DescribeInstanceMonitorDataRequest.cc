@@ -25,26 +25,26 @@ DescribeInstanceMonitorDataRequest::DescribeInstanceMonitorDataRequest() :
 DescribeInstanceMonitorDataRequest::~DescribeInstanceMonitorDataRequest()
 {}
 
-bool DescribeInstanceMonitorDataRequest::getResourceOwnerId()const
+long DescribeInstanceMonitorDataRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeInstanceMonitorDataRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeInstanceMonitorDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool DescribeInstanceMonitorDataRequest::getCallerParentId()const
+long DescribeInstanceMonitorDataRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeInstanceMonitorDataRequest::setCallerParentId(bool callerParentId)
+void DescribeInstanceMonitorDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeInstanceMonitorDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeInstanceMonitorDataRequest::getProxy_original_security_transport()c
 void DescribeInstanceMonitorDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getStartTime()const
@@ -143,7 +143,7 @@ bool DescribeInstanceMonitorDataRequest::getEnable()const
 void DescribeInstanceMonitorDataRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void DescribeInstanceMonitorDataRequest::setCallerUidEmail(const std::string& ca
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DescribeInstanceMonitorDataRequest::getCallerUid()const
+long DescribeInstanceMonitorDataRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeInstanceMonitorDataRequest::setCallerUid(bool callerUid)
+void DescribeInstanceMonitorDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getApp_ip()const
@@ -209,7 +209,7 @@ int DescribeInstanceMonitorDataRequest::getPeriod()const
 void DescribeInstanceMonitorDataRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getResourceOwnerAccount()const
@@ -256,15 +256,15 @@ void DescribeInstanceMonitorDataRequest::setCallerBid(const std::string& callerB
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DescribeInstanceMonitorDataRequest::getOwnerId()const
+long DescribeInstanceMonitorDataRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeInstanceMonitorDataRequest::setOwnerId(bool ownerId)
+void DescribeInstanceMonitorDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeInstanceMonitorDataRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool DescribeInstanceMonitorDataRequest::getProxy_trust_transport_info()const
 void DescribeInstanceMonitorDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeInstanceMonitorDataRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DescribeInstanceMonitorDataRequest::getAk_mfa_present()const
 void DescribeInstanceMonitorDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeInstanceMonitorDataRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DescribeInstanceMonitorDataRequest::getSecurity_transport()const
 void DescribeInstanceMonitorDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getInstanceId()const

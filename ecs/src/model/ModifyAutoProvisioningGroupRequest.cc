@@ -25,26 +25,26 @@ ModifyAutoProvisioningGroupRequest::ModifyAutoProvisioningGroupRequest() :
 ModifyAutoProvisioningGroupRequest::~ModifyAutoProvisioningGroupRequest()
 {}
 
-bool ModifyAutoProvisioningGroupRequest::getResourceOwnerId()const
+long ModifyAutoProvisioningGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyAutoProvisioningGroupRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyAutoProvisioningGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ModifyAutoProvisioningGroupRequest::getCallerParentId()const
+long ModifyAutoProvisioningGroupRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ModifyAutoProvisioningGroupRequest::setCallerParentId(bool callerParentId)
+void ModifyAutoProvisioningGroupRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ModifyAutoProvisioningGroupRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool ModifyAutoProvisioningGroupRequest::getProxy_original_security_transport()c
 void ModifyAutoProvisioningGroupRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ bool ModifyAutoProvisioningGroupRequest::getTerminateInstancesWithExpiration()co
 void ModifyAutoProvisioningGroupRequest::setTerminateInstancesWithExpiration(bool terminateInstancesWithExpiration)
 {
 	terminateInstancesWithExpiration_ = terminateInstancesWithExpiration;
-	setCoreParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration ? "true" : "false");
+	setCoreParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getOwnerIdLoginEmail()const
@@ -143,7 +143,7 @@ bool ModifyAutoProvisioningGroupRequest::getEnable()const
 void ModifyAutoProvisioningGroupRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getRequestContent()const
@@ -201,15 +201,15 @@ void ModifyAutoProvisioningGroupRequest::setCallerUidEmail(const std::string& ca
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ModifyAutoProvisioningGroupRequest::getCallerUid()const
+long ModifyAutoProvisioningGroupRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ModifyAutoProvisioningGroupRequest::setCallerUid(bool callerUid)
+void ModifyAutoProvisioningGroupRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getApp_ip()const
@@ -256,15 +256,15 @@ void ModifyAutoProvisioningGroupRequest::setCallerBid(const std::string& callerB
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ModifyAutoProvisioningGroupRequest::getOwnerId()const
+long ModifyAutoProvisioningGroupRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyAutoProvisioningGroupRequest::setOwnerId(bool ownerId)
+void ModifyAutoProvisioningGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ModifyAutoProvisioningGroupRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool ModifyAutoProvisioningGroupRequest::getProxy_trust_transport_info()const
 void ModifyAutoProvisioningGroupRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifyAutoProvisioningGroupRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool ModifyAutoProvisioningGroupRequest::getAk_mfa_present()const
 void ModifyAutoProvisioningGroupRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getAutoProvisioningGroupId()const
@@ -308,7 +308,7 @@ bool ModifyAutoProvisioningGroupRequest::getSecurity_transport()const
 void ModifyAutoProvisioningGroupRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getPayAsYouGoTargetCapacity()const
@@ -374,7 +374,7 @@ float ModifyAutoProvisioningGroupRequest::getMaxSpotPrice()const
 void ModifyAutoProvisioningGroupRequest::setMaxSpotPrice(float maxSpotPrice)
 {
 	maxSpotPrice_ = maxSpotPrice;
-	setCoreParameter("MaxSpotPrice", std::to_string(maxSpotPrice));
+	setCoreParameter("MaxSpotPrice", maxSpotPrice);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getAutoProvisioningGroupName()const

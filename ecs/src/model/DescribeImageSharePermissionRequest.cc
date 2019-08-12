@@ -36,15 +36,15 @@ void DescribeImageSharePermissionRequest::setSourceRegionId(const std::string& s
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeImageSharePermissionRequest::getResourceOwnerId()const
+long DescribeImageSharePermissionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeImageSharePermissionRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeImageSharePermissionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeImageSharePermissionRequest::getImageId()const
@@ -99,18 +99,18 @@ int DescribeImageSharePermissionRequest::getPageSize()const
 void DescribeImageSharePermissionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
-bool DescribeImageSharePermissionRequest::getOwnerId()const
+long DescribeImageSharePermissionRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeImageSharePermissionRequest::setOwnerId(bool ownerId)
+void DescribeImageSharePermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeImageSharePermissionRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int DescribeImageSharePermissionRequest::getPageNumber()const
 void DescribeImageSharePermissionRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

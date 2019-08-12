@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getLimitation()const;
 				void setLimitation(const std::string& limitation);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				std::string limitation_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

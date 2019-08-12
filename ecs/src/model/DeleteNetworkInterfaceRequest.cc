@@ -25,26 +25,26 @@ DeleteNetworkInterfaceRequest::DeleteNetworkInterfaceRequest() :
 DeleteNetworkInterfaceRequest::~DeleteNetworkInterfaceRequest()
 {}
 
-bool DeleteNetworkInterfaceRequest::getResourceOwnerId()const
+long DeleteNetworkInterfaceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteNetworkInterfaceRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteNetworkInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool DeleteNetworkInterfaceRequest::getCallerParentId()const
+long DeleteNetworkInterfaceRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DeleteNetworkInterfaceRequest::setCallerParentId(bool callerParentId)
+void DeleteNetworkInterfaceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DeleteNetworkInterfaceRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DeleteNetworkInterfaceRequest::getProxy_original_security_transport()const
 void DeleteNetworkInterfaceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DeleteNetworkInterfaceRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool DeleteNetworkInterfaceRequest::getEnable()const
 void DeleteNetworkInterfaceRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DeleteNetworkInterfaceRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void DeleteNetworkInterfaceRequest::setCallerUidEmail(const std::string& callerU
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DeleteNetworkInterfaceRequest::getCallerUid()const
+long DeleteNetworkInterfaceRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DeleteNetworkInterfaceRequest::setCallerUid(bool callerUid)
+void DeleteNetworkInterfaceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DeleteNetworkInterfaceRequest::getApp_ip()const
@@ -234,15 +234,15 @@ void DeleteNetworkInterfaceRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DeleteNetworkInterfaceRequest::getOwnerId()const
+long DeleteNetworkInterfaceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteNetworkInterfaceRequest::setOwnerId(bool ownerId)
+void DeleteNetworkInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DeleteNetworkInterfaceRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DeleteNetworkInterfaceRequest::getProxy_trust_transport_info()const
 void DeleteNetworkInterfaceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DeleteNetworkInterfaceRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DeleteNetworkInterfaceRequest::getAk_mfa_present()const
 void DeleteNetworkInterfaceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DeleteNetworkInterfaceRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DeleteNetworkInterfaceRequest::getSecurity_transport()const
 void DeleteNetworkInterfaceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DeleteNetworkInterfaceRequest::getRequestId()const

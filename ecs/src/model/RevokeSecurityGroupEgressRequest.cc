@@ -36,15 +36,15 @@ void RevokeSecurityGroupEgressRequest::setNicType(const std::string& nicType)
 	setCoreParameter("NicType", nicType);
 }
 
-bool RevokeSecurityGroupEgressRequest::getResourceOwnerId()const
+long RevokeSecurityGroupEgressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void RevokeSecurityGroupEgressRequest::setResourceOwnerId(bool resourceOwnerId)
+void RevokeSecurityGroupEgressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RevokeSecurityGroupEgressRequest::getSourcePortRange()const
@@ -69,15 +69,15 @@ void RevokeSecurityGroupEgressRequest::setClientToken(const std::string& clientT
 	setCoreParameter("ClientToken", clientToken);
 }
 
-bool RevokeSecurityGroupEgressRequest::getCallerParentId()const
+long RevokeSecurityGroupEgressRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void RevokeSecurityGroupEgressRequest::setCallerParentId(bool callerParentId)
+void RevokeSecurityGroupEgressRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string RevokeSecurityGroupEgressRequest::getSecurityGroupId()const
@@ -99,7 +99,7 @@ bool RevokeSecurityGroupEgressRequest::getProxy_original_security_transport()con
 void RevokeSecurityGroupEgressRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string RevokeSecurityGroupEgressRequest::getDescription()const
@@ -198,7 +198,7 @@ bool RevokeSecurityGroupEgressRequest::getEnable()const
 void RevokeSecurityGroupEgressRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string RevokeSecurityGroupEgressRequest::getRequestContent()const
@@ -234,15 +234,15 @@ void RevokeSecurityGroupEgressRequest::setCallerUidEmail(const std::string& call
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool RevokeSecurityGroupEgressRequest::getCallerUid()const
+long RevokeSecurityGroupEgressRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void RevokeSecurityGroupEgressRequest::setCallerUid(bool callerUid)
+void RevokeSecurityGroupEgressRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string RevokeSecurityGroupEgressRequest::getIpv6DestCidrIp()const
@@ -366,15 +366,15 @@ void RevokeSecurityGroupEgressRequest::setDestGroupId(const std::string& destGro
 	setCoreParameter("DestGroupId", destGroupId);
 }
 
-bool RevokeSecurityGroupEgressRequest::getOwnerId()const
+long RevokeSecurityGroupEgressRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void RevokeSecurityGroupEgressRequest::setOwnerId(bool ownerId)
+void RevokeSecurityGroupEgressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RevokeSecurityGroupEgressRequest::getDestGroupOwnerAccount()const
@@ -418,7 +418,7 @@ bool RevokeSecurityGroupEgressRequest::getProxy_trust_transport_info()const
 void RevokeSecurityGroupEgressRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool RevokeSecurityGroupEgressRequest::getAk_mfa_present()const
@@ -429,7 +429,7 @@ bool RevokeSecurityGroupEgressRequest::getAk_mfa_present()const
 void RevokeSecurityGroupEgressRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool RevokeSecurityGroupEgressRequest::getSecurity_transport()const
@@ -440,18 +440,18 @@ bool RevokeSecurityGroupEgressRequest::getSecurity_transport()const
 void RevokeSecurityGroupEgressRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
-bool RevokeSecurityGroupEgressRequest::getDestGroupOwnerId()const
+long RevokeSecurityGroupEgressRequest::getDestGroupOwnerId()const
 {
 	return destGroupOwnerId_;
 }
 
-void RevokeSecurityGroupEgressRequest::setDestGroupOwnerId(bool destGroupOwnerId)
+void RevokeSecurityGroupEgressRequest::setDestGroupOwnerId(long destGroupOwnerId)
 {
 	destGroupOwnerId_ = destGroupOwnerId;
-	setCoreParameter("DestGroupOwnerId", destGroupOwnerId ? "true" : "false");
+	setCoreParameter("DestGroupOwnerId", destGroupOwnerId);
 }
 
 std::string RevokeSecurityGroupEgressRequest::getRequestId()const

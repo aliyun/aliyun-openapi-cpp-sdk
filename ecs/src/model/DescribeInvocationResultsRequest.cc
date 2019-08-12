@@ -25,26 +25,26 @@ DescribeInvocationResultsRequest::DescribeInvocationResultsRequest() :
 DescribeInvocationResultsRequest::~DescribeInvocationResultsRequest()
 {}
 
-bool DescribeInvocationResultsRequest::getResourceOwnerId()const
+long DescribeInvocationResultsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeInvocationResultsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeInvocationResultsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool DescribeInvocationResultsRequest::getCallerParentId()const
+long DescribeInvocationResultsRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeInvocationResultsRequest::setCallerParentId(bool callerParentId)
+void DescribeInvocationResultsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeInvocationResultsRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeInvocationResultsRequest::getProxy_original_security_transport()con
 void DescribeInvocationResultsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeInvocationResultsRequest::getProxy_original_source_ip()const
@@ -102,15 +102,15 @@ void DescribeInvocationResultsRequest::setCallerType(const std::string& callerTy
 	setCoreParameter("CallerType", callerType);
 }
 
-bool DescribeInvocationResultsRequest::getPageNumber()const
+long DescribeInvocationResultsRequest::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeInvocationResultsRequest::setPageNumber(bool pageNumber)
+void DescribeInvocationResultsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber ? "true" : "false");
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeInvocationResultsRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ bool DescribeInvocationResultsRequest::getEnable()const
 void DescribeInvocationResultsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeInvocationResultsRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void DescribeInvocationResultsRequest::setRequestContent(const std::string& requ
 	setCoreParameter("RequestContent", requestContent);
 }
 
-bool DescribeInvocationResultsRequest::getPageSize()const
+long DescribeInvocationResultsRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeInvocationResultsRequest::setPageSize(bool pageSize)
+void DescribeInvocationResultsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize ? "true" : "false");
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeInvocationResultsRequest::getCallerBidEmail()const
@@ -212,15 +212,15 @@ void DescribeInvocationResultsRequest::setCallerUidEmail(const std::string& call
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DescribeInvocationResultsRequest::getCallerUid()const
+long DescribeInvocationResultsRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeInvocationResultsRequest::setCallerUid(bool callerUid)
+void DescribeInvocationResultsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeInvocationResultsRequest::getInvokeId()const
@@ -278,15 +278,15 @@ void DescribeInvocationResultsRequest::setCallerBid(const std::string& callerBid
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DescribeInvocationResultsRequest::getOwnerId()const
+long DescribeInvocationResultsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeInvocationResultsRequest::setOwnerId(bool ownerId)
+void DescribeInvocationResultsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeInvocationResultsRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ bool DescribeInvocationResultsRequest::getProxy_trust_transport_info()const
 void DescribeInvocationResultsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeInvocationResultsRequest::getAk_mfa_present()const
@@ -308,7 +308,7 @@ bool DescribeInvocationResultsRequest::getAk_mfa_present()const
 void DescribeInvocationResultsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeInvocationResultsRequest::getSecurity_transport()const
@@ -319,7 +319,7 @@ bool DescribeInvocationResultsRequest::getSecurity_transport()const
 void DescribeInvocationResultsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeInvocationResultsRequest::getInstanceId()const
@@ -374,6 +374,6 @@ bool DescribeInvocationResultsRequest::getIncludeHistory()const
 void DescribeInvocationResultsRequest::setIncludeHistory(bool includeHistory)
 {
 	includeHistory_ = includeHistory;
-	setCoreParameter("IncludeHistory", includeHistory ? "true" : "false");
+	setCoreParameter("IncludeHistory", includeHistory);
 }
 

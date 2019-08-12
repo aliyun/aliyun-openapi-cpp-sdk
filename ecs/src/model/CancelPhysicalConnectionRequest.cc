@@ -25,15 +25,15 @@ CancelPhysicalConnectionRequest::CancelPhysicalConnectionRequest() :
 CancelPhysicalConnectionRequest::~CancelPhysicalConnectionRequest()
 {}
 
-bool CancelPhysicalConnectionRequest::getResourceOwnerId()const
+long CancelPhysicalConnectionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CancelPhysicalConnectionRequest::setResourceOwnerId(bool resourceOwnerId)
+void CancelPhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CancelPhysicalConnectionRequest::getRegionId()const
@@ -102,14 +102,14 @@ void CancelPhysicalConnectionRequest::setUserCidr(const std::string& userCidr)
 	setCoreParameter("UserCidr", userCidr);
 }
 
-bool CancelPhysicalConnectionRequest::getOwnerId()const
+long CancelPhysicalConnectionRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CancelPhysicalConnectionRequest::setOwnerId(bool ownerId)
+void CancelPhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

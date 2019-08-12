@@ -37,24 +37,24 @@ void ImportImageRequest::setDiskDeviceMapping(const std::vector<DiskDeviceMappin
 	for(int i = 0; i!= diskDeviceMapping.size(); i++)	{
 		auto obj = diskDeviceMapping.at(i);
 		std::string str ="DiskDeviceMapping."+ std::to_string(i);
-		setCoreParameter(str + ".OSSBucket", obj.oSSBucket);
-		setCoreParameter(str + ".DiskImSize", std::to_string(obj.diskImSize));
-		setCoreParameter(str + ".Format", obj.format);
-		setCoreParameter(str + ".Device", obj.device);
-		setCoreParameter(str + ".OSSObject", obj.oSSObject);
-		setCoreParameter(str + ".DiskImageSize", std::to_string(obj.diskImageSize));
+		setCoreParameter(str + ".OSSBucket", std::to_string(obj.oSSBucket));
+		setCoreParameter(str + ".DiskImSize", obj.diskImSize);
+		setCoreParameter(str + ".Format", std::to_string(obj.format));
+		setCoreParameter(str + ".Device", std::to_string(obj.device));
+		setCoreParameter(str + ".OSSObject", std::to_string(obj.oSSObject));
+		setCoreParameter(str + ".DiskImageSize", obj.diskImageSize);
 	}
 }
 
-bool ImportImageRequest::getResourceOwnerId()const
+long ImportImageRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ImportImageRequest::setResourceOwnerId(bool resourceOwnerId)
+void ImportImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ImportImageRequest::getResourceOwnerAccount()const
@@ -101,15 +101,15 @@ void ImportImageRequest::setOSType(const std::string& oSType)
 	setCoreParameter("OSType", oSType);
 }
 
-bool ImportImageRequest::getOwnerId()const
+long ImportImageRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ImportImageRequest::setOwnerId(bool ownerId)
+void ImportImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ImportImageRequest::getPlatform()const

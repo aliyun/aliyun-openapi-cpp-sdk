@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				ModifyVirtualBorderRouterAttributeRequest();
 				~ModifyVirtualBorderRouterAttributeRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getCircuitCode()const;
 				void setCircuitCode(const std::string& circuitCode);
 				int getVlanId()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getVbrId()const;
 				void setVbrId(const std::string& vbrId);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getPeerGatewayIp()const;
 				void setPeerGatewayIp(const std::string& peerGatewayIp);
 				std::string getPeeringSubnetMask()const;
@@ -67,7 +67,7 @@ namespace AlibabaCloud
 				void setUserCidr(const std::string& userCidr);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string circuitCode_;
 				int vlanId_;
 				std::string resourceOwnerAccount_;
@@ -75,7 +75,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string description_;
 				std::string vbrId_;
-				bool ownerId_;
+				long ownerId_;
 				std::string peerGatewayIp_;
 				std::string peeringSubnetMask_;
 				std::string regionId_;

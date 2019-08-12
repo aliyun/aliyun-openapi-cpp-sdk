@@ -39,7 +39,7 @@ namespace AlibabaCloud
 				{
 					std::string rolearn;
 					std::string roleType;
-					bool assumeRoleFor;
+					long assumeRoleFor;
 				};
 				struct DataDisk
 				{
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 				CreateInstanceRequest();
 				~CreateInstanceRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getHpcClusterId()const;
 				void setHpcClusterId(const std::string& hpcClusterId);
 				std::string getSecurityEnhancementStrategy()const;
@@ -91,8 +91,8 @@ namespace AlibabaCloud
 				void setPeriod(int period);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getCapacityReservationPreference()const;
 				void setCapacityReservationPreference(const std::string& capacityReservationPreference);
 				std::string getVSwitchId()const;
@@ -181,7 +181,7 @@ namespace AlibabaCloud
 				void setSystemDiskDescription(const std::string& systemDiskDescription);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string hpcClusterId_;
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
@@ -197,7 +197,7 @@ namespace AlibabaCloud
 				std::string nodeControllerId_;
 				int period_;
 				bool dryRun_;
-				bool ownerId_;
+				long ownerId_;
 				std::string capacityReservationPreference_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;

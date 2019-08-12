@@ -36,15 +36,15 @@ void ModifyDedicatedHostAutoReleaseTimeRequest::setSourceRegionId(const std::str
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ModifyDedicatedHostAutoReleaseTimeRequest::getResourceOwnerId()const
+long ModifyDedicatedHostAutoReleaseTimeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyDedicatedHostAutoReleaseTimeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyDedicatedHostAutoReleaseTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDedicatedHostAutoReleaseTimeRequest::getResourceOwnerAccount()const
@@ -102,14 +102,14 @@ void ModifyDedicatedHostAutoReleaseTimeRequest::setDedicatedHostId(const std::st
 	setCoreParameter("DedicatedHostId", dedicatedHostId);
 }
 
-bool ModifyDedicatedHostAutoReleaseTimeRequest::getOwnerId()const
+long ModifyDedicatedHostAutoReleaseTimeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyDedicatedHostAutoReleaseTimeRequest::setOwnerId(bool ownerId)
+void ModifyDedicatedHostAutoReleaseTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

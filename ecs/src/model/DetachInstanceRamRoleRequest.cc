@@ -36,15 +36,15 @@ void DetachInstanceRamRoleRequest::setSourceRegionId(const std::string& sourceRe
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DetachInstanceRamRoleRequest::getResourceOwnerId()const
+long DetachInstanceRamRoleRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DetachInstanceRamRoleRequest::setResourceOwnerId(bool resourceOwnerId)
+void DetachInstanceRamRoleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DetachInstanceRamRoleRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void DetachInstanceRamRoleRequest::setRamRoleName(const std::string& ramRoleName
 	setCoreParameter("RamRoleName", ramRoleName);
 }
 
-bool DetachInstanceRamRoleRequest::getOwnerId()const
+long DetachInstanceRamRoleRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DetachInstanceRamRoleRequest::setOwnerId(bool ownerId)
+void DetachInstanceRamRoleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

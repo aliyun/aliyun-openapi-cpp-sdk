@@ -36,15 +36,15 @@ void ReleasePublicIpAddressRequest::setSourceRegionId(const std::string& sourceR
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ReleasePublicIpAddressRequest::getResourceOwnerId()const
+long ReleasePublicIpAddressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ReleasePublicIpAddressRequest::setResourceOwnerId(bool resourceOwnerId)
+void ReleasePublicIpAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReleasePublicIpAddressRequest::getPublicIpAddress()const
@@ -91,14 +91,14 @@ void ReleasePublicIpAddressRequest::setOwnerAccount(const std::string& ownerAcco
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool ReleasePublicIpAddressRequest::getOwnerId()const
+long ReleasePublicIpAddressRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ReleasePublicIpAddressRequest::setOwnerId(bool ownerId)
+void ReleasePublicIpAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

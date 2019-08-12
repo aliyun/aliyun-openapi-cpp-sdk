@@ -37,8 +37,8 @@ namespace AlibabaCloud
 
 				std::string getSourceRegionId()const;
 				void setSourceRegionId(const std::string& sourceRegionId);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
 				std::string getResourceOwnerAccount()const;
@@ -53,12 +53,12 @@ namespace AlibabaCloud
 				void setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy);
 				std::string getKeyPairName()const;
 				void setKeyPairName(const std::string& keyPairName);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				std::string sourceRegionId_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string password_;
 				std::string resourceOwnerAccount_;
 				bool autoStartInstance_;
@@ -66,7 +66,7 @@ namespace AlibabaCloud
 				std::string diskId_;
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

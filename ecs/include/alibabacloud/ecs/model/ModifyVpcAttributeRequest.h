@@ -37,8 +37,8 @@ namespace AlibabaCloud
 
 				std::string getVpcName()const;
 				void setVpcName(const std::string& vpcName);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
@@ -53,12 +53,12 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getUserCidr()const;
 				void setUserCidr(const std::string& userCidr);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				std::string vpcName_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string vpcId_;
@@ -66,7 +66,7 @@ namespace AlibabaCloud
 				std::string cidrBlock_;
 				std::string description_;
 				std::string userCidr_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

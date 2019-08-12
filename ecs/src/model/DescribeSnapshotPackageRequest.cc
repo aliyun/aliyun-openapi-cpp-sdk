@@ -36,15 +36,15 @@ void DescribeSnapshotPackageRequest::setSourceRegionId(const std::string& source
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeSnapshotPackageRequest::getResourceOwnerId()const
+long DescribeSnapshotPackageRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeSnapshotPackageRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeSnapshotPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSnapshotPackageRequest::getResourceOwnerAccount()const
@@ -88,18 +88,18 @@ int DescribeSnapshotPackageRequest::getPageSize()const
 void DescribeSnapshotPackageRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
-bool DescribeSnapshotPackageRequest::getOwnerId()const
+long DescribeSnapshotPackageRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeSnapshotPackageRequest::setOwnerId(bool ownerId)
+void DescribeSnapshotPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeSnapshotPackageRequest::getPageNumber()const
@@ -110,6 +110,6 @@ int DescribeSnapshotPackageRequest::getPageNumber()const
 void DescribeSnapshotPackageRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

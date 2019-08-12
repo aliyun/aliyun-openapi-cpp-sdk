@@ -47,15 +47,15 @@ void CreateKeyPairRequest::setResourceGroupId(const std::string& resourceGroupId
 	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
-bool CreateKeyPairRequest::getResourceOwnerId()const
+long CreateKeyPairRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateKeyPairRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateKeyPairRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateKeyPairRequest::getResourceOwnerAccount()const
@@ -103,19 +103,19 @@ void CreateKeyPairRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
-bool CreateKeyPairRequest::getOwnerId()const
+long CreateKeyPairRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateKeyPairRequest::setOwnerId(bool ownerId)
+void CreateKeyPairRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

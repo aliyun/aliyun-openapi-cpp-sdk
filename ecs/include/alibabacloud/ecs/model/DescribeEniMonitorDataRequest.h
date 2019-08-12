@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				DescribeEniMonitorDataRequest();
 				~DescribeEniMonitorDataRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
-				bool getCallerParentId()const;
-				void setCallerParentId(bool callerParentId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				long getCallerParentId()const;
+				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
 				std::string getStartTime()const;
@@ -65,8 +65,8 @@ namespace AlibabaCloud
 				void setCallerBidEmail(const std::string& callerBidEmail);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
-				bool getCallerUid()const;
-				void setCallerUid(bool callerUid);
+				long getCallerUid()const;
+				void setCallerUid(long callerUid);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
 				int getPeriod()const;
@@ -79,8 +79,8 @@ namespace AlibabaCloud
 				void setEndTime(const std::string& endTime);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
 				bool getAk_mfa_present()const;
@@ -95,8 +95,8 @@ namespace AlibabaCloud
 				void setEniId(const std::string& eniId);
 
             private:
-				bool resourceOwnerId_;
-				bool callerParentId_;
+				long resourceOwnerId_;
+				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string startTime_;
 				std::string proxy_original_source_ip_;
@@ -110,14 +110,14 @@ namespace AlibabaCloud
 				std::string requestContent_;
 				std::string callerBidEmail_;
 				std::string callerUidEmail_;
-				bool callerUid_;
+				long callerUid_;
 				std::string app_ip_;
 				int period_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string endTime_;
 				std::string callerBid_;
-				bool ownerId_;
+				long ownerId_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;

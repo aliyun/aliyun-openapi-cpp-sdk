@@ -25,15 +25,15 @@ CreateVSwitchRequest::CreateVSwitchRequest() :
 CreateVSwitchRequest::~CreateVSwitchRequest()
 {}
 
-bool CreateVSwitchRequest::getResourceOwnerId()const
+long CreateVSwitchRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateVSwitchRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateVSwitchRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateVSwitchRequest::getResourceOwnerAccount()const
@@ -135,14 +135,14 @@ void CreateVSwitchRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-bool CreateVSwitchRequest::getOwnerId()const
+long CreateVSwitchRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateVSwitchRequest::setOwnerId(bool ownerId)
+void CreateVSwitchRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				ModifyPrepayInstanceSpecRequest();
 				~ModifyPrepayInstanceSpecRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getOperatorType()const;
 				void setOperatorType(const std::string& operatorType);
 				std::string getSystemDiskCategory()const;
@@ -67,13 +67,13 @@ namespace AlibabaCloud
 				void setInstanceType(const std::string& instanceType);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string ownerAccount_;
 				std::string endTime_;
-				bool ownerId_;
+				long ownerId_;
 				std::string operatorType_;
 				std::string systemDiskCategory_;
 				std::string rebootTime_;

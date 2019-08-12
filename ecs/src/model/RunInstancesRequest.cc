@@ -36,15 +36,15 @@ void RunInstancesRequest::setLaunchTemplateName(const std::string& launchTemplat
 	setCoreParameter("LaunchTemplateName", launchTemplateName);
 }
 
-bool RunInstancesRequest::getResourceOwnerId()const
+long RunInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void RunInstancesRequest::setResourceOwnerId(bool resourceOwnerId)
+void RunInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool RunInstancesRequest::getUniqueSuffix()const
@@ -55,7 +55,7 @@ bool RunInstancesRequest::getUniqueSuffix()const
 void RunInstancesRequest::setUniqueSuffix(bool uniqueSuffix)
 {
 	uniqueSuffix_ = uniqueSuffix;
-	setCoreParameter("UniqueSuffix", uniqueSuffix ? "true" : "false");
+	setCoreParameter("UniqueSuffix", uniqueSuffix);
 }
 
 std::string RunInstancesRequest::getHpcClusterId()const
@@ -69,15 +69,15 @@ void RunInstancesRequest::setHpcClusterId(const std::string& hpcClusterId)
 	setCoreParameter("HpcClusterId", hpcClusterId);
 }
 
-bool RunInstancesRequest::getCallerParentId()const
+long RunInstancesRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void RunInstancesRequest::setCallerParentId(bool callerParentId)
+void RunInstancesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string RunInstancesRequest::getSecurityEnhancementStrategy()const
@@ -121,7 +121,7 @@ float RunInstancesRequest::getSpotPriceLimit()const
 void RunInstancesRequest::setSpotPriceLimit(float spotPriceLimit)
 {
 	spotPriceLimit_ = spotPriceLimit;
-	setCoreParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
+	setCoreParameter("SpotPriceLimit", spotPriceLimit);
 }
 
 std::string RunInstancesRequest::getOwnerIdLoginEmail()const
@@ -165,7 +165,7 @@ bool RunInstancesRequest::getDeletionProtection()const
 void RunInstancesRequest::setDeletionProtection(bool deletionProtection)
 {
 	deletionProtection_ = deletionProtection;
-	setCoreParameter("DeletionProtection", deletionProtection ? "true" : "false");
+	setCoreParameter("DeletionProtection", deletionProtection);
 }
 
 std::string RunInstancesRequest::getResourceGroupId()const
@@ -220,7 +220,7 @@ bool RunInstancesRequest::getEnable()const
 void RunInstancesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string RunInstancesRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ int RunInstancesRequest::getStorageSetPartitionNumber()const
 void RunInstancesRequest::setStorageSetPartitionNumber(int storageSetPartitionNumber)
 {
 	storageSetPartitionNumber_ = storageSetPartitionNumber;
-	setCoreParameter("StorageSetPartitionNumber", std::to_string(storageSetPartitionNumber));
+	setCoreParameter("StorageSetPartitionNumber", storageSetPartitionNumber);
 }
 
 std::vector<RunInstancesRequest::Tag> RunInstancesRequest::getTag()const
@@ -257,20 +257,20 @@ void RunInstancesRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
 	}
 }
 
-bool RunInstancesRequest::getCallerUid()const
+long RunInstancesRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void RunInstancesRequest::setCallerUid(bool callerUid)
+void RunInstancesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 int RunInstancesRequest::getAutoRenewPeriod()const
@@ -281,7 +281,7 @@ int RunInstancesRequest::getAutoRenewPeriod()const
 void RunInstancesRequest::setAutoRenewPeriod(int autoRenewPeriod)
 {
 	autoRenewPeriod_ = autoRenewPeriod;
-	setCoreParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+	setCoreParameter("AutoRenewPeriod", autoRenewPeriod);
 }
 
 int RunInstancesRequest::getCpuOptionsCore()const
@@ -292,7 +292,7 @@ int RunInstancesRequest::getCpuOptionsCore()const
 void RunInstancesRequest::setCpuOptionsCore(int cpuOptionsCore)
 {
 	cpuOptionsCore_ = cpuOptionsCore;
-	setCoreParameter("CpuOptionsCore", std::to_string(cpuOptionsCore));
+	setCoreParameter("CpuOptionsCore", cpuOptionsCore);
 }
 
 int RunInstancesRequest::getPeriod()const
@@ -303,7 +303,7 @@ int RunInstancesRequest::getPeriod()const
 void RunInstancesRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 bool RunInstancesRequest::getDryRun()const
@@ -314,7 +314,7 @@ bool RunInstancesRequest::getDryRun()const
 void RunInstancesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun);
 }
 
 std::string RunInstancesRequest::getLaunchTemplateId()const
@@ -336,7 +336,7 @@ int RunInstancesRequest::getIpv6AddressCount()const
 void RunInstancesRequest::setIpv6AddressCount(int ipv6AddressCount)
 {
 	ipv6AddressCount_ = ipv6AddressCount;
-	setCoreParameter("Ipv6AddressCount", std::to_string(ipv6AddressCount));
+	setCoreParameter("Ipv6AddressCount", ipv6AddressCount);
 }
 
 std::string RunInstancesRequest::getCpuOptionsNuma()const
@@ -350,15 +350,15 @@ void RunInstancesRequest::setCpuOptionsNuma(const std::string& cpuOptionsNuma)
 	setCoreParameter("CpuOptionsNuma", cpuOptionsNuma);
 }
 
-bool RunInstancesRequest::getOwnerId()const
+long RunInstancesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void RunInstancesRequest::setOwnerId(bool ownerId)
+void RunInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RunInstancesRequest::getCapacityReservationPreference()const
@@ -380,7 +380,7 @@ bool RunInstancesRequest::getAk_mfa_present()const
 void RunInstancesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool RunInstancesRequest::getSecurity_transport()const
@@ -391,7 +391,7 @@ bool RunInstancesRequest::getSecurity_transport()const
 void RunInstancesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string RunInstancesRequest::getVSwitchId()const
@@ -457,7 +457,7 @@ bool RunInstancesRequest::getAutoRenew()const
 void RunInstancesRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
+	setCoreParameter("AutoRenew", autoRenew);
 }
 
 std::string RunInstancesRequest::getRequestId()const
@@ -513,7 +513,7 @@ void RunInstancesRequest::setIpv6Address(const std::vector<std::string>& ipv6Add
 {
 	ipv6Address_ = ipv6Address;
 	for(int i = 0; i!= ipv6Address.size(); i++)
-		setCoreParameter("Ipv6Address."+ std::to_string(i), ipv6Address.at(i));
+		setCoreParameter("Ipv6Address."+ std::to_string(i), std::to_string(ipv6Address.at(i)));
 }
 
 int RunInstancesRequest::getInternetMaxBandwidthIn()const
@@ -524,7 +524,7 @@ int RunInstancesRequest::getInternetMaxBandwidthIn()const
 void RunInstancesRequest::setInternetMaxBandwidthIn(int internetMaxBandwidthIn)
 {
 	internetMaxBandwidthIn_ = internetMaxBandwidthIn;
-	setCoreParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
+	setCoreParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn);
 }
 
 std::string RunInstancesRequest::getAffinity()const
@@ -601,7 +601,7 @@ int RunInstancesRequest::getInternetMaxBandwidthOut()const
 void RunInstancesRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
 {
 	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
-	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
+	setCoreParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut);
 }
 
 bool RunInstancesRequest::getProxy_original_security_transport()const
@@ -612,7 +612,7 @@ bool RunInstancesRequest::getProxy_original_security_transport()const
 void RunInstancesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string RunInstancesRequest::getDescription()const
@@ -634,7 +634,7 @@ int RunInstancesRequest::getCpuOptionsThreadsPerCore()const
 void RunInstancesRequest::setCpuOptionsThreadsPerCore(int cpuOptionsThreadsPerCore)
 {
 	cpuOptionsThreadsPerCore_ = cpuOptionsThreadsPerCore;
-	setCoreParameter("CpuOptionsThreadsPerCore", std::to_string(cpuOptionsThreadsPerCore));
+	setCoreParameter("CpuOptionsThreadsPerCore", cpuOptionsThreadsPerCore);
 }
 
 std::string RunInstancesRequest::getSystemDiskCategory()const
@@ -700,7 +700,7 @@ bool RunInstancesRequest::getPasswordInherit()const
 void RunInstancesRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setCoreParameter("PasswordInherit", passwordInherit ? "true" : "false");
+	setCoreParameter("PasswordInherit", passwordInherit);
 }
 
 std::string RunInstancesRequest::getRegionId()const
@@ -744,7 +744,7 @@ bool RunInstancesRequest::getHibernationConfigured()const
 void RunInstancesRequest::setHibernationConfigured(bool hibernationConfigured)
 {
 	hibernationConfigured_ = hibernationConfigured;
-	setCoreParameter("HibernationConfigured", hibernationConfigured ? "true" : "false");
+	setCoreParameter("HibernationConfigured", hibernationConfigured);
 }
 
 std::string RunInstancesRequest::getInstanceChargeType()const
@@ -781,11 +781,11 @@ void RunInstancesRequest::setNetworkInterface(const std::vector<NetworkInterface
 	for(int i = 0; i!= networkInterface.size(); i++)	{
 		auto obj = networkInterface.at(i);
 		std::string str ="NetworkInterface."+ std::to_string(i);
-		setCoreParameter(str + ".PrimaryIpAddress", obj.primaryIpAddress);
-		setCoreParameter(str + ".VSwitchId", obj.vSwitchId);
-		setCoreParameter(str + ".SecurityGroupId", obj.securityGroupId);
-		setCoreParameter(str + ".NetworkInterfaceName", obj.networkInterfaceName);
-		setCoreParameter(str + ".Description", obj.description);
+		setCoreParameter(str + ".PrimaryIpAddress", std::to_string(obj.primaryIpAddress));
+		setCoreParameter(str + ".VSwitchId", std::to_string(obj.vSwitchId));
+		setCoreParameter(str + ".SecurityGroupId", std::to_string(obj.securityGroupId));
+		setCoreParameter(str + ".NetworkInterfaceName", std::to_string(obj.networkInterfaceName));
+		setCoreParameter(str + ".Description", std::to_string(obj.description));
 	}
 }
 
@@ -819,7 +819,7 @@ int RunInstancesRequest::getAmount()const
 void RunInstancesRequest::setAmount(int amount)
 {
 	amount_ = amount;
-	setCoreParameter("Amount", std::to_string(amount));
+	setCoreParameter("Amount", amount);
 }
 
 std::string RunInstancesRequest::getResourceOwnerAccount()const
@@ -930,7 +930,7 @@ void RunInstancesRequest::setSecurityGroupIds(const std::vector<std::string>& se
 {
 	securityGroupIds_ = securityGroupIds;
 	for(int i = 0; i!= securityGroupIds.size(); i++)
-		setCoreParameter("SecurityGroupIds."+ std::to_string(i), securityGroupIds.at(i));
+		setCoreParameter("SecurityGroupIds."+ std::to_string(i), std::to_string(securityGroupIds.at(i)));
 }
 
 int RunInstancesRequest::getSpotDuration()const
@@ -941,7 +941,7 @@ int RunInstancesRequest::getSpotDuration()const
 void RunInstancesRequest::setSpotDuration(int spotDuration)
 {
 	spotDuration_ = spotDuration;
-	setCoreParameter("SpotDuration", std::to_string(spotDuration));
+	setCoreParameter("SpotDuration", spotDuration);
 }
 
 std::vector<RunInstancesRequest::DataDisk> RunInstancesRequest::getDataDisk()const
@@ -956,28 +956,28 @@ void RunInstancesRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 	for(int i = 0; i!= dataDisk.size(); i++)	{
 		auto obj = dataDisk.at(i);
 		std::string str ="DataDisk."+ std::to_string(i);
-		setCoreParameter(str + ".Size", std::to_string(obj.size));
-		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
-		setCoreParameter(str + ".Category", obj.category);
-		setCoreParameter(str + ".Encrypted", obj.encrypted);
-		setCoreParameter(str + ".KMSKeyId", obj.kMSKeyId);
-		setCoreParameter(str + ".DiskName", obj.diskName);
-		setCoreParameter(str + ".Description", obj.description);
-		setCoreParameter(str + ".Device", obj.device);
+		setCoreParameter(str + ".Size", obj.size);
+		setCoreParameter(str + ".SnapshotId", std::to_string(obj.snapshotId));
+		setCoreParameter(str + ".Category", std::to_string(obj.category));
+		setCoreParameter(str + ".Encrypted", std::to_string(obj.encrypted));
+		setCoreParameter(str + ".KMSKeyId", std::to_string(obj.kMSKeyId));
+		setCoreParameter(str + ".DiskName", std::to_string(obj.diskName));
+		setCoreParameter(str + ".Description", std::to_string(obj.description));
+		setCoreParameter(str + ".Device", std::to_string(obj.device));
 		setCoreParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
-		setCoreParameter(str + ".PerformanceLevel", obj.performanceLevel);
+		setCoreParameter(str + ".PerformanceLevel", std::to_string(obj.performanceLevel));
 	}
 }
 
-bool RunInstancesRequest::getLaunchTemplateVersion()const
+long RunInstancesRequest::getLaunchTemplateVersion()const
 {
 	return launchTemplateVersion_;
 }
 
-void RunInstancesRequest::setLaunchTemplateVersion(bool launchTemplateVersion)
+void RunInstancesRequest::setLaunchTemplateVersion(long launchTemplateVersion)
 {
 	launchTemplateVersion_ = launchTemplateVersion;
-	setCoreParameter("LaunchTemplateVersion", launchTemplateVersion ? "true" : "false");
+	setCoreParameter("LaunchTemplateVersion", launchTemplateVersion);
 }
 
 bool RunInstancesRequest::getProxy_trust_transport_info()const
@@ -988,7 +988,7 @@ bool RunInstancesRequest::getProxy_trust_transport_info()const
 void RunInstancesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 std::string RunInstancesRequest::getStorageSetId()const

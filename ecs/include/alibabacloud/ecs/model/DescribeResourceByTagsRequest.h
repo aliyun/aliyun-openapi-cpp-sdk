@@ -42,8 +42,8 @@ namespace AlibabaCloud
 
 				std::string getSourceRegionId()const;
 				void setSourceRegionId(const std::string& sourceRegionId);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
@@ -52,8 +52,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
 				int getPageNumber()const;
@@ -61,12 +61,12 @@ namespace AlibabaCloud
 
             private:
 				std::string sourceRegionId_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				int pageSize_;
 				std::vector<Tag> tag_;
-				bool ownerId_;
+				long ownerId_;
 				std::string resourceType_;
 				int pageNumber_;
 

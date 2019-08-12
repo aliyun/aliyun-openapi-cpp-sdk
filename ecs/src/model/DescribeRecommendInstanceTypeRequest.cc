@@ -25,15 +25,15 @@ DescribeRecommendInstanceTypeRequest::DescribeRecommendInstanceTypeRequest() :
 DescribeRecommendInstanceTypeRequest::~DescribeRecommendInstanceTypeRequest()
 {}
 
-bool DescribeRecommendInstanceTypeRequest::getResourceOwnerId()const
+long DescribeRecommendInstanceTypeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeRecommendInstanceTypeRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeRecommendInstanceTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getResourceOwnerAccount()const
@@ -80,15 +80,15 @@ void DescribeRecommendInstanceTypeRequest::setNetworkType(const std::string& net
 	setCoreParameter("NetworkType", networkType);
 }
 
-bool DescribeRecommendInstanceTypeRequest::getOwnerId()const
+long DescribeRecommendInstanceTypeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeRecommendInstanceTypeRequest::setOwnerId(bool ownerId)
+void DescribeRecommendInstanceTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::get_Operator()const

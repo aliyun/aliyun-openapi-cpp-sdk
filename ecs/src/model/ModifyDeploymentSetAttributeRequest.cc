@@ -47,15 +47,15 @@ void ModifyDeploymentSetAttributeRequest::setDeploymentSetId(const std::string& 
 	setCoreParameter("DeploymentSetId", deploymentSetId);
 }
 
-bool ModifyDeploymentSetAttributeRequest::getResourceOwnerId()const
+long ModifyDeploymentSetAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyDeploymentSetAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyDeploymentSetAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getResourceOwnerAccount()const
@@ -113,14 +113,14 @@ void ModifyDeploymentSetAttributeRequest::setDeploymentSetName(const std::string
 	setCoreParameter("DeploymentSetName", deploymentSetName);
 }
 
-bool ModifyDeploymentSetAttributeRequest::getOwnerId()const
+long ModifyDeploymentSetAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyDeploymentSetAttributeRequest::setOwnerId(bool ownerId)
+void ModifyDeploymentSetAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

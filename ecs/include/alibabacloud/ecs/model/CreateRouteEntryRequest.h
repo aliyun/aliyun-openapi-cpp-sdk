@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				CreateRouteEntryRequest();
 				~CreateRouteEntryRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
@@ -54,8 +54,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getNextHopId()const;
 				void setNextHopId(const std::string& nextHopId);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getNextHopType()const;
 				void setNextHopType(const std::string& nextHopType);
 				std::vector<NextHopList> getNextHopList()const;
@@ -64,14 +64,14 @@ namespace AlibabaCloud
 				void setRouteTableId(const std::string& routeTableId);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string clientToken_;
 				std::string destinationCidrBlock_;
 				std::string ownerAccount_;
 				std::string nextHopId_;
-				bool ownerId_;
+				long ownerId_;
 				std::string nextHopType_;
 				std::vector<NextHopList> nextHopList_;
 				std::string routeTableId_;

@@ -25,15 +25,15 @@ DeleteVirtualBorderRouterRequest::DeleteVirtualBorderRouterRequest() :
 DeleteVirtualBorderRouterRequest::~DeleteVirtualBorderRouterRequest()
 {}
 
-bool DeleteVirtualBorderRouterRequest::getResourceOwnerId()const
+long DeleteVirtualBorderRouterRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteVirtualBorderRouterRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteVirtualBorderRouterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteVirtualBorderRouterRequest::getRegionId()const
@@ -102,14 +102,14 @@ void DeleteVirtualBorderRouterRequest::setVbrId(const std::string& vbrId)
 	setCoreParameter("VbrId", vbrId);
 }
 
-bool DeleteVirtualBorderRouterRequest::getOwnerId()const
+long DeleteVirtualBorderRouterRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteVirtualBorderRouterRequest::setOwnerId(bool ownerId)
+void DeleteVirtualBorderRouterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -36,15 +36,15 @@ void CreateVpcRequest::setVpcName(const std::string& vpcName)
 	setCoreParameter("VpcName", vpcName);
 }
 
-bool CreateVpcRequest::getResourceOwnerId()const
+long CreateVpcRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateVpcRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateVpcRequest::getResourceOwnerAccount()const
@@ -124,14 +124,14 @@ void CreateVpcRequest::setUserCidr(const std::string& userCidr)
 	setCoreParameter("UserCidr", userCidr);
 }
 
-bool CreateVpcRequest::getOwnerId()const
+long CreateVpcRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateVpcRequest::setOwnerId(bool ownerId)
+void CreateVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DeletePhysicalConnectionRequest();
 				~DeletePhysicalConnectionRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
@@ -47,17 +47,17 @@ namespace AlibabaCloud
 				void setPhysicalConnectionId(const std::string& physicalConnectionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string physicalConnectionId_;
 				std::string ownerAccount_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

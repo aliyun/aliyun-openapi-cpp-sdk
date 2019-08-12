@@ -47,15 +47,15 @@ void AllocatePublicIpAddressRequest::setIpAddress(const std::string& ipAddress)
 	setCoreParameter("IpAddress", ipAddress);
 }
 
-bool AllocatePublicIpAddressRequest::getResourceOwnerId()const
+long AllocatePublicIpAddressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void AllocatePublicIpAddressRequest::setResourceOwnerId(bool resourceOwnerId)
+void AllocatePublicIpAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AllocatePublicIpAddressRequest::getInstanceId()const
@@ -102,14 +102,14 @@ void AllocatePublicIpAddressRequest::setOwnerAccount(const std::string& ownerAcc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool AllocatePublicIpAddressRequest::getOwnerId()const
+long AllocatePublicIpAddressRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void AllocatePublicIpAddressRequest::setOwnerId(bool ownerId)
+void AllocatePublicIpAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

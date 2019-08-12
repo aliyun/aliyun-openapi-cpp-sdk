@@ -25,26 +25,26 @@ DescribeFleetInstancesRequest::DescribeFleetInstancesRequest() :
 DescribeFleetInstancesRequest::~DescribeFleetInstancesRequest()
 {}
 
-bool DescribeFleetInstancesRequest::getResourceOwnerId()const
+long DescribeFleetInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeFleetInstancesRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeFleetInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool DescribeFleetInstancesRequest::getCallerParentId()const
+long DescribeFleetInstancesRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeFleetInstancesRequest::setCallerParentId(bool callerParentId)
+void DescribeFleetInstancesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeFleetInstancesRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeFleetInstancesRequest::getProxy_original_security_transport()const
 void DescribeFleetInstancesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeFleetInstancesRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ int DescribeFleetInstancesRequest::getPageNumber()const
 void DescribeFleetInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeFleetInstancesRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ bool DescribeFleetInstancesRequest::getEnable()const
 void DescribeFleetInstancesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeFleetInstancesRequest::getRequestContent()const
@@ -165,7 +165,7 @@ int DescribeFleetInstancesRequest::getPageSize()const
 void DescribeFleetInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeFleetInstancesRequest::getCallerBidEmail()const
@@ -190,15 +190,15 @@ void DescribeFleetInstancesRequest::setCallerUidEmail(const std::string& callerU
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DescribeFleetInstancesRequest::getCallerUid()const
+long DescribeFleetInstancesRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeFleetInstancesRequest::setCallerUid(bool callerUid)
+void DescribeFleetInstancesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeFleetInstancesRequest::getApp_ip()const
@@ -245,15 +245,15 @@ void DescribeFleetInstancesRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DescribeFleetInstancesRequest::getOwnerId()const
+long DescribeFleetInstancesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeFleetInstancesRequest::setOwnerId(bool ownerId)
+void DescribeFleetInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeFleetInstancesRequest::getFleetId()const
@@ -275,7 +275,7 @@ bool DescribeFleetInstancesRequest::getProxy_trust_transport_info()const
 void DescribeFleetInstancesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeFleetInstancesRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DescribeFleetInstancesRequest::getAk_mfa_present()const
 void DescribeFleetInstancesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeFleetInstancesRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DescribeFleetInstancesRequest::getSecurity_transport()const
 void DescribeFleetInstancesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeFleetInstancesRequest::getRequestId()const

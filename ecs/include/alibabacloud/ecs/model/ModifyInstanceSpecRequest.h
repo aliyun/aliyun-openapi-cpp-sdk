@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				ModifyInstanceSpecRequest();
 				~ModifyInstanceSpecRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getInternetMaxBandwidthOut()const;
 				void setInternetMaxBandwidthOut(int internetMaxBandwidthOut);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				int getTemporaryInternetMaxBandwidthOut()const;
 				void setTemporaryInternetMaxBandwidthOut(int temporaryInternetMaxBandwidthOut);
 				std::string getSystemDiskCategory()const;
@@ -69,13 +69,13 @@ namespace AlibabaCloud
 				void setInternetMaxBandwidthIn(int internetMaxBandwidthIn);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				bool allowMigrateAcrossZone_;
 				std::string ownerAccount_;
 				int internetMaxBandwidthOut_;
-				bool ownerId_;
+				long ownerId_;
 				int temporaryInternetMaxBandwidthOut_;
 				std::string systemDiskCategory_;
 				std::string temporaryStartTime_;

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				ModifyForwardEntryRequest();
 				~ModifyForwardEntryRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getIpProtocol()const;
@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getForwardTableId()const;
 				void setForwardTableId(const std::string& forwardTableId);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getInternalIp()const;
 				void setInternalIp(const std::string& internalIp);
 				std::string getRegionId()const;
@@ -61,12 +61,12 @@ namespace AlibabaCloud
 				void setExternalPort(const std::string& externalPort);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string ipProtocol_;
 				std::string ownerAccount_;
 				std::string forwardTableId_;
-				bool ownerId_;
+				long ownerId_;
 				std::string internalIp_;
 				std::string regionId_;
 				std::string forwardEntryId_;

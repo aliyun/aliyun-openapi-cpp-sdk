@@ -47,15 +47,15 @@ void JoinResourceGroupRequest::setResourceGroupId(const std::string& resourceGro
 	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
-bool JoinResourceGroupRequest::getResourceOwnerId()const
+long JoinResourceGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void JoinResourceGroupRequest::setResourceOwnerId(bool resourceOwnerId)
+void JoinResourceGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string JoinResourceGroupRequest::getResourceId()const
@@ -102,15 +102,15 @@ void JoinResourceGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool JoinResourceGroupRequest::getOwnerId()const
+long JoinResourceGroupRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void JoinResourceGroupRequest::setOwnerId(bool ownerId)
+void JoinResourceGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string JoinResourceGroupRequest::getResourceType()const

@@ -25,15 +25,15 @@ ModifyBandwidthPackageSpecRequest::ModifyBandwidthPackageSpecRequest() :
 ModifyBandwidthPackageSpecRequest::~ModifyBandwidthPackageSpecRequest()
 {}
 
-bool ModifyBandwidthPackageSpecRequest::getResourceOwnerId()const
+long ModifyBandwidthPackageSpecRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyBandwidthPackageSpecRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyBandwidthPackageSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyBandwidthPackageSpecRequest::getBandwidthPackageId()const
@@ -91,14 +91,14 @@ void ModifyBandwidthPackageSpecRequest::setOwnerAccount(const std::string& owner
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool ModifyBandwidthPackageSpecRequest::getOwnerId()const
+long ModifyBandwidthPackageSpecRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyBandwidthPackageSpecRequest::setOwnerId(bool ownerId)
+void ModifyBandwidthPackageSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

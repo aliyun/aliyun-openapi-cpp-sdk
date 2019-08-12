@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				ModifyInstanceChargeTypeRequest();
 				~ModifyInstanceChargeTypeRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				int getPeriod()const;
 				void setPeriod(int period);
 				bool getDryRun()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getSourceRegionId()const;
 				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getPeriodUnit()const;
@@ -67,7 +67,7 @@ namespace AlibabaCloud
 				void setInstanceChargeType(const std::string& instanceChargeType);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				int period_;
 				bool dryRun_;
 				bool autoPay_;
@@ -75,7 +75,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string ownerAccount_;
-				bool ownerId_;
+				long ownerId_;
 				std::string sourceRegionId_;
 				std::string periodUnit_;
 				std::string instanceIds_;

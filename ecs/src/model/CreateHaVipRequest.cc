@@ -47,15 +47,15 @@ void CreateHaVipRequest::setIpAddress(const std::string& ipAddress)
 	setCoreParameter("IpAddress", ipAddress);
 }
 
-bool CreateHaVipRequest::getResourceOwnerId()const
+long CreateHaVipRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateHaVipRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateHaVipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateHaVipRequest::getResourceOwnerAccount()const
@@ -113,14 +113,14 @@ void CreateHaVipRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-bool CreateHaVipRequest::getOwnerId()const
+long CreateHaVipRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateHaVipRequest::setOwnerId(bool ownerId)
+void CreateHaVipRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

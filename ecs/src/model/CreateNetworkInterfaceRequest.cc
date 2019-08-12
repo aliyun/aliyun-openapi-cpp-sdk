@@ -25,15 +25,15 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
 CreateNetworkInterfaceRequest::~CreateNetworkInterfaceRequest()
 {}
 
-bool CreateNetworkInterfaceRequest::getResourceOwnerId()const
+long CreateNetworkInterfaceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateNetworkInterfaceRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateNetworkInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateNetworkInterfaceRequest::getClientToken()const
@@ -47,15 +47,15 @@ void CreateNetworkInterfaceRequest::setClientToken(const std::string& clientToke
 	setCoreParameter("ClientToken", clientToken);
 }
 
-bool CreateNetworkInterfaceRequest::getCallerParentId()const
+long CreateNetworkInterfaceRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void CreateNetworkInterfaceRequest::setCallerParentId(bool callerParentId)
+void CreateNetworkInterfaceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string CreateNetworkInterfaceRequest::getSecurityGroupId()const
@@ -77,7 +77,7 @@ bool CreateNetworkInterfaceRequest::getProxy_original_security_transport()const
 void CreateNetworkInterfaceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string CreateNetworkInterfaceRequest::getDescription()const
@@ -198,7 +198,7 @@ bool CreateNetworkInterfaceRequest::getEnable()const
 void CreateNetworkInterfaceRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string CreateNetworkInterfaceRequest::getRequestContent()const
@@ -235,8 +235,8 @@ void CreateNetworkInterfaceRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
 	}
 }
 
@@ -262,15 +262,15 @@ void CreateNetworkInterfaceRequest::setNetworkInterfaceName(const std::string& n
 	setCoreParameter("NetworkInterfaceName", networkInterfaceName);
 }
 
-bool CreateNetworkInterfaceRequest::getCallerUid()const
+long CreateNetworkInterfaceRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void CreateNetworkInterfaceRequest::setCallerUid(bool callerUid)
+void CreateNetworkInterfaceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string CreateNetworkInterfaceRequest::getApp_ip()const
@@ -292,7 +292,7 @@ bool CreateNetworkInterfaceRequest::getVisible()const
 void CreateNetworkInterfaceRequest::setVisible(bool visible)
 {
 	visible_ = visible;
-	setCoreParameter("Visible", visible ? "true" : "false");
+	setCoreParameter("Visible", visible);
 }
 
 std::string CreateNetworkInterfaceRequest::getResourceOwnerAccount()const
@@ -328,15 +328,15 @@ void CreateNetworkInterfaceRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool CreateNetworkInterfaceRequest::getOwnerId()const
+long CreateNetworkInterfaceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateNetworkInterfaceRequest::setOwnerId(bool ownerId)
+void CreateNetworkInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool CreateNetworkInterfaceRequest::getProxy_trust_transport_info()const
@@ -347,7 +347,7 @@ bool CreateNetworkInterfaceRequest::getProxy_trust_transport_info()const
 void CreateNetworkInterfaceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool CreateNetworkInterfaceRequest::getAk_mfa_present()const
@@ -358,7 +358,7 @@ bool CreateNetworkInterfaceRequest::getAk_mfa_present()const
 void CreateNetworkInterfaceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool CreateNetworkInterfaceRequest::getSecurity_transport()const
@@ -369,7 +369,7 @@ bool CreateNetworkInterfaceRequest::getSecurity_transport()const
 void CreateNetworkInterfaceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string CreateNetworkInterfaceRequest::getVSwitchId()const

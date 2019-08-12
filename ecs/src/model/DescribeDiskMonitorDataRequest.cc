@@ -25,26 +25,26 @@ DescribeDiskMonitorDataRequest::DescribeDiskMonitorDataRequest() :
 DescribeDiskMonitorDataRequest::~DescribeDiskMonitorDataRequest()
 {}
 
-bool DescribeDiskMonitorDataRequest::getResourceOwnerId()const
+long DescribeDiskMonitorDataRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeDiskMonitorDataRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeDiskMonitorDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool DescribeDiskMonitorDataRequest::getCallerParentId()const
+long DescribeDiskMonitorDataRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeDiskMonitorDataRequest::setCallerParentId(bool callerParentId)
+void DescribeDiskMonitorDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeDiskMonitorDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeDiskMonitorDataRequest::getProxy_original_security_transport()const
 void DescribeDiskMonitorDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDiskMonitorDataRequest::getStartTime()const
@@ -143,7 +143,7 @@ bool DescribeDiskMonitorDataRequest::getEnable()const
 void DescribeDiskMonitorDataRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeDiskMonitorDataRequest::getRequestContent()const
@@ -190,15 +190,15 @@ void DescribeDiskMonitorDataRequest::setCallerUidEmail(const std::string& caller
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DescribeDiskMonitorDataRequest::getCallerUid()const
+long DescribeDiskMonitorDataRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeDiskMonitorDataRequest::setCallerUid(bool callerUid)
+void DescribeDiskMonitorDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeDiskMonitorDataRequest::getApp_ip()const
@@ -220,7 +220,7 @@ int DescribeDiskMonitorDataRequest::getPeriod()const
 void DescribeDiskMonitorDataRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string DescribeDiskMonitorDataRequest::getResourceOwnerAccount()const
@@ -267,15 +267,15 @@ void DescribeDiskMonitorDataRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DescribeDiskMonitorDataRequest::getOwnerId()const
+long DescribeDiskMonitorDataRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeDiskMonitorDataRequest::setOwnerId(bool ownerId)
+void DescribeDiskMonitorDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeDiskMonitorDataRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ bool DescribeDiskMonitorDataRequest::getProxy_trust_transport_info()const
 void DescribeDiskMonitorDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDiskMonitorDataRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool DescribeDiskMonitorDataRequest::getAk_mfa_present()const
 void DescribeDiskMonitorDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeDiskMonitorDataRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool DescribeDiskMonitorDataRequest::getSecurity_transport()const
 void DescribeDiskMonitorDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDiskMonitorDataRequest::getRequestId()const

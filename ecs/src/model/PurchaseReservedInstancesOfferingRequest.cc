@@ -25,15 +25,15 @@ PurchaseReservedInstancesOfferingRequest::PurchaseReservedInstancesOfferingReque
 PurchaseReservedInstancesOfferingRequest::~PurchaseReservedInstancesOfferingRequest()
 {}
 
-bool PurchaseReservedInstancesOfferingRequest::getResourceOwnerId()const
+long PurchaseReservedInstancesOfferingRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void PurchaseReservedInstancesOfferingRequest::setResourceOwnerId(bool resourceOwnerId)
+void PurchaseReservedInstancesOfferingRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getClientToken()const
@@ -47,15 +47,15 @@ void PurchaseReservedInstancesOfferingRequest::setClientToken(const std::string&
 	setCoreParameter("ClientToken", clientToken);
 }
 
-bool PurchaseReservedInstancesOfferingRequest::getCallerParentId()const
+long PurchaseReservedInstancesOfferingRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void PurchaseReservedInstancesOfferingRequest::setCallerParentId(bool callerParentId)
+void PurchaseReservedInstancesOfferingRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool PurchaseReservedInstancesOfferingRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool PurchaseReservedInstancesOfferingRequest::getProxy_original_security_transp
 void PurchaseReservedInstancesOfferingRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getDescription()const
@@ -165,7 +165,7 @@ bool PurchaseReservedInstancesOfferingRequest::getEnable()const
 void PurchaseReservedInstancesOfferingRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getRequestContent()const
@@ -223,15 +223,15 @@ void PurchaseReservedInstancesOfferingRequest::setCallerUidEmail(const std::stri
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool PurchaseReservedInstancesOfferingRequest::getCallerUid()const
+long PurchaseReservedInstancesOfferingRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void PurchaseReservedInstancesOfferingRequest::setCallerUid(bool callerUid)
+void PurchaseReservedInstancesOfferingRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getApp_ip()const
@@ -253,7 +253,7 @@ int PurchaseReservedInstancesOfferingRequest::getPeriod()const
 void PurchaseReservedInstancesOfferingRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getResourceOwnerAccount()const
@@ -289,15 +289,15 @@ void PurchaseReservedInstancesOfferingRequest::setCallerBid(const std::string& c
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool PurchaseReservedInstancesOfferingRequest::getOwnerId()const
+long PurchaseReservedInstancesOfferingRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void PurchaseReservedInstancesOfferingRequest::setOwnerId(bool ownerId)
+void PurchaseReservedInstancesOfferingRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool PurchaseReservedInstancesOfferingRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ bool PurchaseReservedInstancesOfferingRequest::getProxy_trust_transport_info()co
 void PurchaseReservedInstancesOfferingRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool PurchaseReservedInstancesOfferingRequest::getAk_mfa_present()const
@@ -319,7 +319,7 @@ bool PurchaseReservedInstancesOfferingRequest::getAk_mfa_present()const
 void PurchaseReservedInstancesOfferingRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool PurchaseReservedInstancesOfferingRequest::getSecurity_transport()const
@@ -330,7 +330,7 @@ bool PurchaseReservedInstancesOfferingRequest::getSecurity_transport()const
 void PurchaseReservedInstancesOfferingRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getPeriodUnit()const
@@ -407,6 +407,6 @@ int PurchaseReservedInstancesOfferingRequest::getInstanceAmount()const
 void PurchaseReservedInstancesOfferingRequest::setInstanceAmount(int instanceAmount)
 {
 	instanceAmount_ = instanceAmount;
-	setCoreParameter("InstanceAmount", std::to_string(instanceAmount));
+	setCoreParameter("InstanceAmount", instanceAmount);
 }
 

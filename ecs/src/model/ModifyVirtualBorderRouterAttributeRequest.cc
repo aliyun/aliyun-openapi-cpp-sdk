@@ -25,15 +25,15 @@ ModifyVirtualBorderRouterAttributeRequest::ModifyVirtualBorderRouterAttributeReq
 ModifyVirtualBorderRouterAttributeRequest::~ModifyVirtualBorderRouterAttributeRequest()
 {}
 
-bool ModifyVirtualBorderRouterAttributeRequest::getResourceOwnerId()const
+long ModifyVirtualBorderRouterAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyVirtualBorderRouterAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyVirtualBorderRouterAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getCircuitCode()const
@@ -55,7 +55,7 @@ int ModifyVirtualBorderRouterAttributeRequest::getVlanId()const
 void ModifyVirtualBorderRouterAttributeRequest::setVlanId(int vlanId)
 {
 	vlanId_ = vlanId;
-	setCoreParameter("VlanId", std::to_string(vlanId));
+	setCoreParameter("VlanId", vlanId);
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getResourceOwnerAccount()const
@@ -113,15 +113,15 @@ void ModifyVirtualBorderRouterAttributeRequest::setVbrId(const std::string& vbrI
 	setCoreParameter("VbrId", vbrId);
 }
 
-bool ModifyVirtualBorderRouterAttributeRequest::getOwnerId()const
+long ModifyVirtualBorderRouterAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyVirtualBorderRouterAttributeRequest::setOwnerId(bool ownerId)
+void ModifyVirtualBorderRouterAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getPeerGatewayIp()const

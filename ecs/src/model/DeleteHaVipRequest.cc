@@ -36,15 +36,15 @@ void DeleteHaVipRequest::setHaVipId(const std::string& haVipId)
 	setCoreParameter("HaVipId", haVipId);
 }
 
-bool DeleteHaVipRequest::getResourceOwnerId()const
+long DeleteHaVipRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteHaVipRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteHaVipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteHaVipRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void DeleteHaVipRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DeleteHaVipRequest::getOwnerId()const
+long DeleteHaVipRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteHaVipRequest::setOwnerId(bool ownerId)
+void DeleteHaVipRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

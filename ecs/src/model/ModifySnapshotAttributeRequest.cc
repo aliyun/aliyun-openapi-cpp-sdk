@@ -36,15 +36,15 @@ void ModifySnapshotAttributeRequest::setSourceRegionId(const std::string& source
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ModifySnapshotAttributeRequest::getResourceOwnerId()const
+long ModifySnapshotAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifySnapshotAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifySnapshotAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifySnapshotAttributeRequest::getSnapshotId()const
@@ -102,14 +102,14 @@ void ModifySnapshotAttributeRequest::setSnapshotName(const std::string& snapshot
 	setCoreParameter("SnapshotName", snapshotName);
 }
 
-bool ModifySnapshotAttributeRequest::getOwnerId()const
+long ModifySnapshotAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifySnapshotAttributeRequest::setOwnerId(bool ownerId)
+void ModifySnapshotAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

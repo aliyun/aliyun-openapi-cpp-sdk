@@ -46,26 +46,26 @@ namespace AlibabaCloud
 				void setActionType(const std::string& actionType);
 				std::vector<Filter> getFilter()const;
 				void setFilter(const std::vector<Filter>& filter);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				std::string sourceRegionId_;
 				std::string actionType_;
 				std::vector<Filter> filter_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string imageId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

@@ -47,15 +47,15 @@ void DescribeDedicatedHostAutoRenewRequest::setDedicatedHostIds(const std::strin
 	setCoreParameter("DedicatedHostIds", dedicatedHostIds);
 }
 
-bool DescribeDedicatedHostAutoRenewRequest::getResourceOwnerId()const
+long DescribeDedicatedHostAutoRenewRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeDedicatedHostAutoRenewRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeDedicatedHostAutoRenewRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeDedicatedHostAutoRenewRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void DescribeDedicatedHostAutoRenewRequest::setOwnerAccount(const std::string& o
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DescribeDedicatedHostAutoRenewRequest::getOwnerId()const
+long DescribeDedicatedHostAutoRenewRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeDedicatedHostAutoRenewRequest::setOwnerId(bool ownerId)
+void DescribeDedicatedHostAutoRenewRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

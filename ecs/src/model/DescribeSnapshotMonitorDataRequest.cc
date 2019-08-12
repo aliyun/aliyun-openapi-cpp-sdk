@@ -36,15 +36,15 @@ void DescribeSnapshotMonitorDataRequest::setSourceRegionId(const std::string& so
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeSnapshotMonitorDataRequest::getResourceOwnerId()const
+long DescribeSnapshotMonitorDataRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeSnapshotMonitorDataRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeSnapshotMonitorDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int DescribeSnapshotMonitorDataRequest::getPeriod()const
@@ -55,7 +55,7 @@ int DescribeSnapshotMonitorDataRequest::getPeriod()const
 void DescribeSnapshotMonitorDataRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string DescribeSnapshotMonitorDataRequest::getResourceOwnerAccount()const
@@ -113,14 +113,14 @@ void DescribeSnapshotMonitorDataRequest::setStartTime(const std::string& startTi
 	setCoreParameter("StartTime", startTime);
 }
 
-bool DescribeSnapshotMonitorDataRequest::getOwnerId()const
+long DescribeSnapshotMonitorDataRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeSnapshotMonitorDataRequest::setOwnerId(bool ownerId)
+void DescribeSnapshotMonitorDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

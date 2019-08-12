@@ -36,15 +36,15 @@ void ReActivateInstancesRequest::setSourceRegionId(const std::string& sourceRegi
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ReActivateInstancesRequest::getResourceOwnerId()const
+long ReActivateInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ReActivateInstancesRequest::setResourceOwnerId(bool resourceOwnerId)
+void ReActivateInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReActivateInstancesRequest::getInstanceId()const
@@ -91,14 +91,14 @@ void ReActivateInstancesRequest::setOwnerAccount(const std::string& ownerAccount
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool ReActivateInstancesRequest::getOwnerId()const
+long ReActivateInstancesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ReActivateInstancesRequest::setOwnerId(bool ownerId)
+void ReActivateInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

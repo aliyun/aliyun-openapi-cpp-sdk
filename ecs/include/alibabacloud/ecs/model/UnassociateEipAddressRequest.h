@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				UnassociateEipAddressRequest();
 				~UnassociateEipAddressRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getResourceOwnerAccount()const;
@@ -49,18 +49,18 @@ namespace AlibabaCloud
 				void setInstanceType(const std::string& instanceType);
 				std::string getAllocationId()const;
 				void setAllocationId(const std::string& allocationId);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string instanceId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string ownerAccount_;
 				std::string instanceType_;
 				std::string allocationId_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

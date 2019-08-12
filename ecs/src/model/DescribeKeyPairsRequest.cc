@@ -47,15 +47,15 @@ void DescribeKeyPairsRequest::setResourceGroupId(const std::string& resourceGrou
 	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
-bool DescribeKeyPairsRequest::getResourceOwnerId()const
+long DescribeKeyPairsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeKeyPairsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeKeyPairsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeKeyPairsRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ int DescribeKeyPairsRequest::getPageSize()const
 void DescribeKeyPairsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeKeyPairsRequest::getKeyPairName()const
@@ -125,20 +125,20 @@ void DescribeKeyPairsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
-bool DescribeKeyPairsRequest::getOwnerId()const
+long DescribeKeyPairsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeKeyPairsRequest::setOwnerId(bool ownerId)
+void DescribeKeyPairsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeKeyPairsRequest::getPageNumber()const
@@ -149,6 +149,6 @@ int DescribeKeyPairsRequest::getPageNumber()const
 void DescribeKeyPairsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

@@ -25,15 +25,15 @@ AssociateEipAddressRequest::AssociateEipAddressRequest() :
 AssociateEipAddressRequest::~AssociateEipAddressRequest()
 {}
 
-bool AssociateEipAddressRequest::getResourceOwnerId()const
+long AssociateEipAddressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void AssociateEipAddressRequest::setResourceOwnerId(bool resourceOwnerId)
+void AssociateEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AssociateEipAddressRequest::getInstanceId()const
@@ -102,14 +102,14 @@ void AssociateEipAddressRequest::setAllocationId(const std::string& allocationId
 	setCoreParameter("AllocationId", allocationId);
 }
 
-bool AssociateEipAddressRequest::getOwnerId()const
+long AssociateEipAddressRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void AssociateEipAddressRequest::setOwnerId(bool ownerId)
+void AssociateEipAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

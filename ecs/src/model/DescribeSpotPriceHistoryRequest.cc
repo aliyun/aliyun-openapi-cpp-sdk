@@ -25,26 +25,26 @@ DescribeSpotPriceHistoryRequest::DescribeSpotPriceHistoryRequest() :
 DescribeSpotPriceHistoryRequest::~DescribeSpotPriceHistoryRequest()
 {}
 
-bool DescribeSpotPriceHistoryRequest::getResourceOwnerId()const
+long DescribeSpotPriceHistoryRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeSpotPriceHistoryRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeSpotPriceHistoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool DescribeSpotPriceHistoryRequest::getCallerParentId()const
+long DescribeSpotPriceHistoryRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeSpotPriceHistoryRequest::setCallerParentId(bool callerParentId)
+void DescribeSpotPriceHistoryRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getIoOptimized()const
@@ -66,7 +66,7 @@ bool DescribeSpotPriceHistoryRequest::getProxy_original_security_transport()cons
 void DescribeSpotPriceHistoryRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getNetworkType()const
@@ -176,7 +176,7 @@ bool DescribeSpotPriceHistoryRequest::getEnable()const
 void DescribeSpotPriceHistoryRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getRequestContent()const
@@ -223,15 +223,15 @@ void DescribeSpotPriceHistoryRequest::setCallerUidEmail(const std::string& calle
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DescribeSpotPriceHistoryRequest::getCallerUid()const
+long DescribeSpotPriceHistoryRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeSpotPriceHistoryRequest::setCallerUid(bool callerUid)
+void DescribeSpotPriceHistoryRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getApp_ip()const
@@ -253,7 +253,7 @@ int DescribeSpotPriceHistoryRequest::getOffset()const
 void DescribeSpotPriceHistoryRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", std::to_string(offset));
+	setCoreParameter("Offset", offset);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getResourceOwnerAccount()const
@@ -311,15 +311,15 @@ void DescribeSpotPriceHistoryRequest::setOSType(const std::string& oSType)
 	setCoreParameter("OSType", oSType);
 }
 
-bool DescribeSpotPriceHistoryRequest::getOwnerId()const
+long DescribeSpotPriceHistoryRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeSpotPriceHistoryRequest::setOwnerId(bool ownerId)
+void DescribeSpotPriceHistoryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeSpotPriceHistoryRequest::getProxy_trust_transport_info()const
@@ -330,7 +330,7 @@ bool DescribeSpotPriceHistoryRequest::getProxy_trust_transport_info()const
 void DescribeSpotPriceHistoryRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeSpotPriceHistoryRequest::getAk_mfa_present()const
@@ -341,7 +341,7 @@ bool DescribeSpotPriceHistoryRequest::getAk_mfa_present()const
 void DescribeSpotPriceHistoryRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeSpotPriceHistoryRequest::getSecurity_transport()const
@@ -352,7 +352,7 @@ bool DescribeSpotPriceHistoryRequest::getSecurity_transport()const
 void DescribeSpotPriceHistoryRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getRequestId()const

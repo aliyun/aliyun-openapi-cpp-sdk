@@ -25,15 +25,15 @@ CreateDiskRequest::CreateDiskRequest() :
 CreateDiskRequest::~CreateDiskRequest()
 {}
 
-bool CreateDiskRequest::getResourceOwnerId()const
+long CreateDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateDiskRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateDiskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateDiskRequest::getSnapshotId()const
@@ -102,15 +102,15 @@ void CreateDiskRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-bool CreateDiskRequest::getOwnerId()const
+long CreateDiskRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateDiskRequest::setOwnerId(bool ownerId)
+void CreateDiskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateDiskRequest::getSourceRegionId()const
@@ -176,7 +176,7 @@ int CreateDiskRequest::getSize()const
 void CreateDiskRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 bool CreateDiskRequest::getEncrypted()const
@@ -187,7 +187,7 @@ bool CreateDiskRequest::getEncrypted()const
 void CreateDiskRequest::setEncrypted(bool encrypted)
 {
 	encrypted_ = encrypted;
-	setCoreParameter("Encrypted", encrypted ? "true" : "false");
+	setCoreParameter("Encrypted", encrypted);
 }
 
 std::string CreateDiskRequest::getRegionId()const
@@ -231,7 +231,7 @@ int CreateDiskRequest::getStorageSetPartitionNumber()const
 void CreateDiskRequest::setStorageSetPartitionNumber(int storageSetPartitionNumber)
 {
 	storageSetPartitionNumber_ = storageSetPartitionNumber;
-	setCoreParameter("StorageSetPartitionNumber", std::to_string(storageSetPartitionNumber));
+	setCoreParameter("StorageSetPartitionNumber", storageSetPartitionNumber);
 }
 
 std::vector<CreateDiskRequest::Tag> CreateDiskRequest::getTag()const
@@ -246,8 +246,8 @@ void CreateDiskRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -263,9 +263,9 @@ void CreateDiskRequest::setArn(const std::vector<Arn>& arn)
 	for(int i = 0; i!= arn.size(); i++)	{
 		auto obj = arn.at(i);
 		std::string str ="Arn."+ std::to_string(i);
-		setCoreParameter(str + ".Rolearn", obj.rolearn);
-		setCoreParameter(str + ".RoleType", obj.roleType);
-		setCoreParameter(str + ".AssumeRoleFor", obj.assumeRoleFor ? "true" : "false");
+		setCoreParameter(str + ".Rolearn", std::to_string(obj.rolearn));
+		setCoreParameter(str + ".RoleType", std::to_string(obj.roleType));
+		setCoreParameter(str + ".AssumeRoleFor", obj.assumeRoleFor);
 	}
 }
 

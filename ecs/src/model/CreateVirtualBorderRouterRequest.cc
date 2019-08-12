@@ -25,15 +25,15 @@ CreateVirtualBorderRouterRequest::CreateVirtualBorderRouterRequest() :
 CreateVirtualBorderRouterRequest::~CreateVirtualBorderRouterRequest()
 {}
 
-bool CreateVirtualBorderRouterRequest::getResourceOwnerId()const
+long CreateVirtualBorderRouterRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateVirtualBorderRouterRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateVirtualBorderRouterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateVirtualBorderRouterRequest::getCircuitCode()const
@@ -55,7 +55,7 @@ int CreateVirtualBorderRouterRequest::getVlanId()const
 void CreateVirtualBorderRouterRequest::setVlanId(int vlanId)
 {
 	vlanId_ = vlanId;
-	setCoreParameter("VlanId", std::to_string(vlanId));
+	setCoreParameter("VlanId", vlanId);
 }
 
 std::string CreateVirtualBorderRouterRequest::getClientToken()const
@@ -102,15 +102,15 @@ void CreateVirtualBorderRouterRequest::setDescription(const std::string& descrip
 	setCoreParameter("Description", description);
 }
 
-bool CreateVirtualBorderRouterRequest::getOwnerId()const
+long CreateVirtualBorderRouterRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateVirtualBorderRouterRequest::setOwnerId(bool ownerId)
+void CreateVirtualBorderRouterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateVirtualBorderRouterRequest::getPeerGatewayIp()const
@@ -190,14 +190,14 @@ void CreateVirtualBorderRouterRequest::setUserCidr(const std::string& userCidr)
 	setCoreParameter("UserCidr", userCidr);
 }
 
-bool CreateVirtualBorderRouterRequest::getVbrOwnerId()const
+long CreateVirtualBorderRouterRequest::getVbrOwnerId()const
 {
 	return vbrOwnerId_;
 }
 
-void CreateVirtualBorderRouterRequest::setVbrOwnerId(bool vbrOwnerId)
+void CreateVirtualBorderRouterRequest::setVbrOwnerId(long vbrOwnerId)
 {
 	vbrOwnerId_ = vbrOwnerId;
-	setCoreParameter("VbrOwnerId", vbrOwnerId ? "true" : "false");
+	setCoreParameter("VbrOwnerId", vbrOwnerId);
 }
 

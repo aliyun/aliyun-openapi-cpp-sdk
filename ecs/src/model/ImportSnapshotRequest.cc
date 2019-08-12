@@ -25,26 +25,26 @@ ImportSnapshotRequest::ImportSnapshotRequest() :
 ImportSnapshotRequest::~ImportSnapshotRequest()
 {}
 
-bool ImportSnapshotRequest::getResourceOwnerId()const
+long ImportSnapshotRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ImportSnapshotRequest::setResourceOwnerId(bool resourceOwnerId)
+void ImportSnapshotRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ImportSnapshotRequest::getCallerParentId()const
+long ImportSnapshotRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ImportSnapshotRequest::setCallerParentId(bool callerParentId)
+void ImportSnapshotRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ImportSnapshotRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool ImportSnapshotRequest::getProxy_original_security_transport()const
 void ImportSnapshotRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ImportSnapshotRequest::getSnapshotName()const
@@ -154,7 +154,7 @@ bool ImportSnapshotRequest::getEnable()const
 void ImportSnapshotRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ImportSnapshotRequest::getRequestContent()const
@@ -190,15 +190,15 @@ void ImportSnapshotRequest::setCallerUidEmail(const std::string& callerUidEmail)
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ImportSnapshotRequest::getCallerUid()const
+long ImportSnapshotRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ImportSnapshotRequest::setCallerUid(bool callerUid)
+void ImportSnapshotRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ImportSnapshotRequest::getApp_ip()const
@@ -256,15 +256,15 @@ void ImportSnapshotRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ImportSnapshotRequest::getOwnerId()const
+long ImportSnapshotRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ImportSnapshotRequest::setOwnerId(bool ownerId)
+void ImportSnapshotRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ImportSnapshotRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool ImportSnapshotRequest::getProxy_trust_transport_info()const
 void ImportSnapshotRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ImportSnapshotRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool ImportSnapshotRequest::getAk_mfa_present()const
 void ImportSnapshotRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ImportSnapshotRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool ImportSnapshotRequest::getSecurity_transport()const
 void ImportSnapshotRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ImportSnapshotRequest::getRequestId()const

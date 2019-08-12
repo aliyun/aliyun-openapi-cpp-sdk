@@ -25,15 +25,15 @@ CreateInstanceRequest::CreateInstanceRequest() :
 CreateInstanceRequest::~CreateInstanceRequest()
 {}
 
-bool CreateInstanceRequest::getResourceOwnerId()const
+long CreateInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateInstanceRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateInstanceRequest::getHpcClusterId()const
@@ -77,7 +77,7 @@ float CreateInstanceRequest::getSpotPriceLimit()const
 void CreateInstanceRequest::setSpotPriceLimit(float spotPriceLimit)
 {
 	spotPriceLimit_ = spotPriceLimit;
-	setCoreParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
+	setCoreParameter("SpotPriceLimit", spotPriceLimit);
 }
 
 std::string CreateInstanceRequest::getSourceRegionId()const
@@ -99,7 +99,7 @@ bool CreateInstanceRequest::getDeletionProtection()const
 void CreateInstanceRequest::setDeletionProtection(bool deletionProtection)
 {
 	deletionProtection_ = deletionProtection;
-	setCoreParameter("DeletionProtection", deletionProtection ? "true" : "false");
+	setCoreParameter("DeletionProtection", deletionProtection);
 }
 
 std::string CreateInstanceRequest::getResourceGroupId()const
@@ -143,7 +143,7 @@ int CreateInstanceRequest::getStorageSetPartitionNumber()const
 void CreateInstanceRequest::setStorageSetPartitionNumber(int storageSetPartitionNumber)
 {
 	storageSetPartitionNumber_ = storageSetPartitionNumber;
-	setCoreParameter("StorageSetPartitionNumber", std::to_string(storageSetPartitionNumber));
+	setCoreParameter("StorageSetPartitionNumber", storageSetPartitionNumber);
 }
 
 std::vector<CreateInstanceRequest::Tag> CreateInstanceRequest::getTag()const
@@ -158,8 +158,8 @@ void CreateInstanceRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -171,7 +171,7 @@ int CreateInstanceRequest::getAutoRenewPeriod()const
 void CreateInstanceRequest::setAutoRenewPeriod(int autoRenewPeriod)
 {
 	autoRenewPeriod_ = autoRenewPeriod;
-	setCoreParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+	setCoreParameter("AutoRenewPeriod", autoRenewPeriod);
 }
 
 std::string CreateInstanceRequest::getNodeControllerId()const
@@ -193,7 +193,7 @@ int CreateInstanceRequest::getPeriod()const
 void CreateInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 bool CreateInstanceRequest::getDryRun()const
@@ -204,18 +204,18 @@ bool CreateInstanceRequest::getDryRun()const
 void CreateInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun);
 }
 
-bool CreateInstanceRequest::getOwnerId()const
+long CreateInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateInstanceRequest::setOwnerId(bool ownerId)
+void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateInstanceRequest::getCapacityReservationPreference()const
@@ -292,7 +292,7 @@ bool CreateInstanceRequest::getAutoRenew()const
 void CreateInstanceRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
+	setCoreParameter("AutoRenew", autoRenew);
 }
 
 std::string CreateInstanceRequest::getInternetChargeType()const
@@ -325,7 +325,7 @@ int CreateInstanceRequest::getInternetMaxBandwidthIn()const
 void CreateInstanceRequest::setInternetMaxBandwidthIn(int internetMaxBandwidthIn)
 {
 	internetMaxBandwidthIn_ = internetMaxBandwidthIn;
-	setCoreParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
+	setCoreParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn);
 }
 
 bool CreateInstanceRequest::getUseAdditionalService()const
@@ -336,7 +336,7 @@ bool CreateInstanceRequest::getUseAdditionalService()const
 void CreateInstanceRequest::setUseAdditionalService(bool useAdditionalService)
 {
 	useAdditionalService_ = useAdditionalService;
-	setCoreParameter("UseAdditionalService", useAdditionalService ? "true" : "false");
+	setCoreParameter("UseAdditionalService", useAdditionalService);
 }
 
 std::string CreateInstanceRequest::getAffinity()const
@@ -424,7 +424,7 @@ int CreateInstanceRequest::getInternetMaxBandwidthOut()const
 void CreateInstanceRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
 {
 	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
-	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
+	setCoreParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut);
 }
 
 std::string CreateInstanceRequest::getDescription()const
@@ -490,7 +490,7 @@ bool CreateInstanceRequest::getPasswordInherit()const
 void CreateInstanceRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setCoreParameter("PasswordInherit", passwordInherit ? "true" : "false");
+	setCoreParameter("PasswordInherit", passwordInherit);
 }
 
 std::string CreateInstanceRequest::getRegionId()const
@@ -527,9 +527,9 @@ void CreateInstanceRequest::setArn(const std::vector<Arn>& arn)
 	for(int i = 0; i!= arn.size(); i++)	{
 		auto obj = arn.at(i);
 		std::string str ="Arn."+ std::to_string(i);
-		setCoreParameter(str + ".Rolearn", obj.rolearn);
-		setCoreParameter(str + ".RoleType", obj.roleType);
-		setCoreParameter(str + ".AssumeRoleFor", obj.assumeRoleFor ? "true" : "false");
+		setCoreParameter(str + ".Rolearn", std::to_string(obj.rolearn));
+		setCoreParameter(str + ".RoleType", std::to_string(obj.roleType));
+		setCoreParameter(str + ".AssumeRoleFor", obj.assumeRoleFor);
 	}
 }
 
@@ -666,15 +666,15 @@ void CreateInstanceRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 	for(int i = 0; i!= dataDisk.size(); i++)	{
 		auto obj = dataDisk.at(i);
 		std::string str ="DataDisk."+ std::to_string(i);
-		setCoreParameter(str + ".DiskName", obj.diskName);
-		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
-		setCoreParameter(str + ".Size", std::to_string(obj.size));
+		setCoreParameter(str + ".DiskName", std::to_string(obj.diskName));
+		setCoreParameter(str + ".SnapshotId", std::to_string(obj.snapshotId));
+		setCoreParameter(str + ".Size", obj.size);
 		setCoreParameter(str + ".Encrypted", obj.encrypted ? "true" : "false");
-		setCoreParameter(str + ".PerformanceLevel", obj.performanceLevel);
-		setCoreParameter(str + ".Description", obj.description);
-		setCoreParameter(str + ".Category", obj.category);
-		setCoreParameter(str + ".KMSKeyId", obj.kMSKeyId);
-		setCoreParameter(str + ".Device", obj.device);
+		setCoreParameter(str + ".PerformanceLevel", std::to_string(obj.performanceLevel));
+		setCoreParameter(str + ".Description", std::to_string(obj.description));
+		setCoreParameter(str + ".Category", std::to_string(obj.category));
+		setCoreParameter(str + ".KMSKeyId", std::to_string(obj.kMSKeyId));
+		setCoreParameter(str + ".Device", std::to_string(obj.device));
 		setCoreParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
 	}
 }
@@ -698,7 +698,7 @@ int CreateInstanceRequest::getSystemDiskSize()const
 void CreateInstanceRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+	setCoreParameter("SystemDiskSize", systemDiskSize);
 }
 
 std::string CreateInstanceRequest::getSystemDiskDescription()const

@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getLaunchTemplateName()const;
 				void setLaunchTemplateName(const std::string& launchTemplateName);
-				bool getMaxVersion()const;
-				void setMaxVersion(bool maxVersion);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
-				bool getCallerParentId()const;
-				void setCallerParentId(bool callerParentId);
+				long getMaxVersion()const;
+				void setMaxVersion(long maxVersion);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				long getCallerParentId()const;
+				void setCallerParentId(long callerParentId);
 				bool getDefaultVersion()const;
 				void setDefaultVersion(bool defaultVersion);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
-				bool getMinVersion()const;
-				void setMinVersion(bool minVersion);
+				long getMinVersion()const;
+				void setMinVersion(long minVersion);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
 				std::string getOwnerIdLoginEmail()const;
@@ -75,8 +75,8 @@ namespace AlibabaCloud
 				void setCallerBidEmail(const std::string& callerBidEmail);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
-				bool getCallerUid()const;
-				void setCallerUid(bool callerUid);
+				long getCallerUid()const;
+				void setCallerUid(long callerUid);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
 				std::string getLaunchTemplateId()const;
@@ -87,10 +87,10 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
-				std::vector<bool> getLaunchTemplateVersion()const;
-				void setLaunchTemplateVersion(const std::vector<bool>& launchTemplateVersion);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::vector<long> getLaunchTemplateVersion()const;
+				void setLaunchTemplateVersion(const std::vector<long>& launchTemplateVersion);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
 				bool getAk_mfa_present()const;
@@ -106,12 +106,12 @@ namespace AlibabaCloud
 
             private:
 				std::string launchTemplateName_;
-				bool maxVersion_;
-				bool resourceOwnerId_;
-				bool callerParentId_;
+				long maxVersion_;
+				long resourceOwnerId_;
+				long callerParentId_;
 				bool defaultVersion_;
 				bool proxy_original_security_transport_;
-				bool minVersion_;
+				long minVersion_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
@@ -125,14 +125,14 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::string callerBidEmail_;
 				std::string callerUidEmail_;
-				bool callerUid_;
+				long callerUid_;
 				std::string app_ip_;
 				std::string launchTemplateId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string callerBid_;
-				bool ownerId_;
-				std::vector<bool> launchTemplateVersion_;
+				long ownerId_;
+				std::vector<long> launchTemplateVersion_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;

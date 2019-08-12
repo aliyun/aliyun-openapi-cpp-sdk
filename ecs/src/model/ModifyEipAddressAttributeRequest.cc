@@ -25,15 +25,15 @@ ModifyEipAddressAttributeRequest::ModifyEipAddressAttributeRequest() :
 ModifyEipAddressAttributeRequest::~ModifyEipAddressAttributeRequest()
 {}
 
-bool ModifyEipAddressAttributeRequest::getResourceOwnerId()const
+long ModifyEipAddressAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyEipAddressAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyEipAddressAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyEipAddressAttributeRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void ModifyEipAddressAttributeRequest::setAllocationId(const std::string& alloca
 	setCoreParameter("AllocationId", allocationId);
 }
 
-bool ModifyEipAddressAttributeRequest::getOwnerId()const
+long ModifyEipAddressAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyEipAddressAttributeRequest::setOwnerId(bool ownerId)
+void ModifyEipAddressAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

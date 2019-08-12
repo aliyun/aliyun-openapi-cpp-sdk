@@ -36,15 +36,15 @@ void DetachDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DetachDiskRequest::getResourceOwnerId()const
+long DetachDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DetachDiskRequest::setResourceOwnerId(bool resourceOwnerId)
+void DetachDiskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DetachDiskRequest::getInstanceId()const
@@ -91,14 +91,14 @@ void DetachDiskRequest::setDiskId(const std::string& diskId)
 	setCoreParameter("DiskId", diskId);
 }
 
-bool DetachDiskRequest::getOwnerId()const
+long DetachDiskRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DetachDiskRequest::setOwnerId(bool ownerId)
+void DetachDiskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

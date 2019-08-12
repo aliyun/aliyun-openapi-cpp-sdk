@@ -47,15 +47,15 @@ void DescribeInstanceTypeFamiliesRequest::setGeneration(const std::string& gener
 	setCoreParameter("Generation", generation);
 }
 
-bool DescribeInstanceTypeFamiliesRequest::getResourceOwnerId()const
+long DescribeInstanceTypeFamiliesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeInstanceTypeFamiliesRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeInstanceTypeFamiliesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInstanceTypeFamiliesRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void DescribeInstanceTypeFamiliesRequest::setOwnerAccount(const std::string& own
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DescribeInstanceTypeFamiliesRequest::getOwnerId()const
+long DescribeInstanceTypeFamiliesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeInstanceTypeFamiliesRequest::setOwnerId(bool ownerId)
+void DescribeInstanceTypeFamiliesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

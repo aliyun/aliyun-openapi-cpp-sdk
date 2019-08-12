@@ -36,15 +36,15 @@ void RebootInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool RebootInstanceRequest::getResourceOwnerId()const
+long RebootInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void RebootInstanceRequest::setResourceOwnerId(bool resourceOwnerId)
+void RebootInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RebootInstanceRequest::getInstanceId()const
@@ -66,7 +66,7 @@ bool RebootInstanceRequest::getDryRun()const
 void RebootInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun);
 }
 
 std::string RebootInstanceRequest::getResourceOwnerAccount()const
@@ -91,15 +91,15 @@ void RebootInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool RebootInstanceRequest::getOwnerId()const
+long RebootInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void RebootInstanceRequest::setOwnerId(bool ownerId)
+void RebootInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool RebootInstanceRequest::getForceStop()const
@@ -110,6 +110,6 @@ bool RebootInstanceRequest::getForceStop()const
 void RebootInstanceRequest::setForceStop(bool forceStop)
 {
 	forceStop_ = forceStop;
-	setCoreParameter("ForceStop", forceStop ? "true" : "false");
+	setCoreParameter("ForceStop", forceStop);
 }
 

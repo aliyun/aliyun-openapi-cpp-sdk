@@ -25,15 +25,15 @@ DescribeForwardTableEntriesRequest::DescribeForwardTableEntriesRequest() :
 DescribeForwardTableEntriesRequest::~DescribeForwardTableEntriesRequest()
 {}
 
-bool DescribeForwardTableEntriesRequest::getResourceOwnerId()const
+long DescribeForwardTableEntriesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeForwardTableEntriesRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeForwardTableEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeForwardTableEntriesRequest::getResourceOwnerAccount()const
@@ -99,18 +99,18 @@ int DescribeForwardTableEntriesRequest::getPageSize()const
 void DescribeForwardTableEntriesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
-bool DescribeForwardTableEntriesRequest::getOwnerId()const
+long DescribeForwardTableEntriesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeForwardTableEntriesRequest::setOwnerId(bool ownerId)
+void DescribeForwardTableEntriesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeForwardTableEntriesRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int DescribeForwardTableEntriesRequest::getPageNumber()const
 void DescribeForwardTableEntriesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

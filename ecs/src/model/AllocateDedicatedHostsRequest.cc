@@ -25,15 +25,15 @@ AllocateDedicatedHostsRequest::AllocateDedicatedHostsRequest() :
 AllocateDedicatedHostsRequest::~AllocateDedicatedHostsRequest()
 {}
 
-bool AllocateDedicatedHostsRequest::getResourceOwnerId()const
+long AllocateDedicatedHostsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void AllocateDedicatedHostsRequest::setResourceOwnerId(bool resourceOwnerId)
+void AllocateDedicatedHostsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AllocateDedicatedHostsRequest::getClientToken()const
@@ -47,15 +47,15 @@ void AllocateDedicatedHostsRequest::setClientToken(const std::string& clientToke
 	setCoreParameter("ClientToken", clientToken);
 }
 
-bool AllocateDedicatedHostsRequest::getCallerParentId()const
+long AllocateDedicatedHostsRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void AllocateDedicatedHostsRequest::setCallerParentId(bool callerParentId)
+void AllocateDedicatedHostsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool AllocateDedicatedHostsRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool AllocateDedicatedHostsRequest::getProxy_original_security_transport()const
 void AllocateDedicatedHostsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string AllocateDedicatedHostsRequest::getDescription()const
@@ -176,7 +176,7 @@ bool AllocateDedicatedHostsRequest::getEnable()const
 void AllocateDedicatedHostsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string AllocateDedicatedHostsRequest::getRequestContent()const
@@ -224,8 +224,8 @@ void AllocateDedicatedHostsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
 	}
 }
 
@@ -251,15 +251,15 @@ void AllocateDedicatedHostsRequest::setCallerUidEmail(const std::string& callerU
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool AllocateDedicatedHostsRequest::getCallerUid()const
+long AllocateDedicatedHostsRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void AllocateDedicatedHostsRequest::setCallerUid(bool callerUid)
+void AllocateDedicatedHostsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string AllocateDedicatedHostsRequest::getApp_ip()const
@@ -281,7 +281,7 @@ int AllocateDedicatedHostsRequest::getAutoRenewPeriod()const
 void AllocateDedicatedHostsRequest::setAutoRenewPeriod(int autoRenewPeriod)
 {
 	autoRenewPeriod_ = autoRenewPeriod;
-	setCoreParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+	setCoreParameter("AutoRenewPeriod", autoRenewPeriod);
 }
 
 int AllocateDedicatedHostsRequest::getPeriod()const
@@ -292,7 +292,7 @@ int AllocateDedicatedHostsRequest::getPeriod()const
 void AllocateDedicatedHostsRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 int AllocateDedicatedHostsRequest::getQuantity()const
@@ -303,7 +303,7 @@ int AllocateDedicatedHostsRequest::getQuantity()const
 void AllocateDedicatedHostsRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setCoreParameter("Quantity", std::to_string(quantity));
+	setCoreParameter("Quantity", quantity);
 }
 
 std::string AllocateDedicatedHostsRequest::getDedicatedHostName()const
@@ -361,15 +361,15 @@ void AllocateDedicatedHostsRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool AllocateDedicatedHostsRequest::getOwnerId()const
+long AllocateDedicatedHostsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void AllocateDedicatedHostsRequest::setOwnerId(bool ownerId)
+void AllocateDedicatedHostsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool AllocateDedicatedHostsRequest::getProxy_trust_transport_info()const
@@ -380,7 +380,7 @@ bool AllocateDedicatedHostsRequest::getProxy_trust_transport_info()const
 void AllocateDedicatedHostsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool AllocateDedicatedHostsRequest::getAk_mfa_present()const
@@ -391,7 +391,7 @@ bool AllocateDedicatedHostsRequest::getAk_mfa_present()const
 void AllocateDedicatedHostsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool AllocateDedicatedHostsRequest::getSecurity_transport()const
@@ -402,7 +402,7 @@ bool AllocateDedicatedHostsRequest::getSecurity_transport()const
 void AllocateDedicatedHostsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string AllocateDedicatedHostsRequest::getPeriodUnit()const
@@ -424,7 +424,7 @@ bool AllocateDedicatedHostsRequest::getAutoRenew()const
 void AllocateDedicatedHostsRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
+	setCoreParameter("AutoRenew", autoRenew);
 }
 
 std::string AllocateDedicatedHostsRequest::getRequestId()const
@@ -457,7 +457,7 @@ int AllocateDedicatedHostsRequest::getNetworkAttributesSlbUdpTimeout()const
 void AllocateDedicatedHostsRequest::setNetworkAttributesSlbUdpTimeout(int networkAttributesSlbUdpTimeout)
 {
 	networkAttributesSlbUdpTimeout_ = networkAttributesSlbUdpTimeout;
-	setCoreParameter("NetworkAttributesSlbUdpTimeout", std::to_string(networkAttributesSlbUdpTimeout));
+	setCoreParameter("NetworkAttributesSlbUdpTimeout", networkAttributesSlbUdpTimeout);
 }
 
 std::string AllocateDedicatedHostsRequest::getZoneId()const
@@ -501,6 +501,6 @@ int AllocateDedicatedHostsRequest::getNetworkAttributesUdpTimeout()const
 void AllocateDedicatedHostsRequest::setNetworkAttributesUdpTimeout(int networkAttributesUdpTimeout)
 {
 	networkAttributesUdpTimeout_ = networkAttributesUdpTimeout;
-	setCoreParameter("NetworkAttributesUdpTimeout", std::to_string(networkAttributesUdpTimeout));
+	setCoreParameter("NetworkAttributesUdpTimeout", networkAttributesUdpTimeout);
 }
 

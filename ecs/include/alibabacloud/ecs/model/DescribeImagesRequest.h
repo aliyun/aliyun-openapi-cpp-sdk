@@ -47,8 +47,8 @@ namespace AlibabaCloud
 
 				std::string getActionType()const;
 				void setActionType(const std::string& actionType);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
 				std::string getSnapshotId()const;
@@ -89,8 +89,8 @@ namespace AlibabaCloud
 				void setShowExpired(bool showExpired);
 				std::string getOSType()const;
 				void setOSType(const std::string& oSType);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::vector<Filter> getFilter()const;
 				void setFilter(const std::vector<Filter>& filter);
 				std::string getStatus()const;
@@ -98,7 +98,7 @@ namespace AlibabaCloud
 
             private:
 				std::string actionType_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string imageId_;
 				std::string snapshotId_;
 				std::string usage_;
@@ -119,7 +119,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				bool showExpired_;
 				std::string oSType_;
-				bool ownerId_;
+				long ownerId_;
 				std::vector<Filter> filter_;
 				std::string status_;
 

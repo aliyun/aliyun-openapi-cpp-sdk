@@ -36,26 +36,26 @@ void ReportInstancesStatusRequest::setReason(const std::string& reason)
 	setCoreParameter("Reason", reason);
 }
 
-bool ReportInstancesStatusRequest::getResourceOwnerId()const
+long ReportInstancesStatusRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ReportInstancesStatusRequest::setResourceOwnerId(bool resourceOwnerId)
+void ReportInstancesStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ReportInstancesStatusRequest::getCallerParentId()const
+long ReportInstancesStatusRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ReportInstancesStatusRequest::setCallerParentId(bool callerParentId)
+void ReportInstancesStatusRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ReportInstancesStatusRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool ReportInstancesStatusRequest::getProxy_original_security_transport()const
 void ReportInstancesStatusRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ReportInstancesStatusRequest::getDescription()const
@@ -187,7 +187,7 @@ bool ReportInstancesStatusRequest::getEnable()const
 void ReportInstancesStatusRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ReportInstancesStatusRequest::getRequestContent()const
@@ -221,7 +221,7 @@ void ReportInstancesStatusRequest::setDiskId(const std::vector<std::string>& dis
 {
 	diskId_ = diskId;
 	for(int i = 0; i!= diskId.size(); i++)
-		setCoreParameter("DiskId."+ std::to_string(i), diskId.at(i));
+		setCoreParameter("DiskId."+ std::to_string(i), std::to_string(diskId.at(i)));
 }
 
 std::string ReportInstancesStatusRequest::getCallerUidEmail()const
@@ -235,15 +235,15 @@ void ReportInstancesStatusRequest::setCallerUidEmail(const std::string& callerUi
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ReportInstancesStatusRequest::getCallerUid()const
+long ReportInstancesStatusRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ReportInstancesStatusRequest::setCallerUid(bool callerUid)
+void ReportInstancesStatusRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ReportInstancesStatusRequest::getApp_ip()const
@@ -301,15 +301,15 @@ void ReportInstancesStatusRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ReportInstancesStatusRequest::getOwnerId()const
+long ReportInstancesStatusRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ReportInstancesStatusRequest::setOwnerId(bool ownerId)
+void ReportInstancesStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ReportInstancesStatusRequest::getProxy_trust_transport_info()const
@@ -320,7 +320,7 @@ bool ReportInstancesStatusRequest::getProxy_trust_transport_info()const
 void ReportInstancesStatusRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ReportInstancesStatusRequest::getAk_mfa_present()const
@@ -331,7 +331,7 @@ bool ReportInstancesStatusRequest::getAk_mfa_present()const
 void ReportInstancesStatusRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ReportInstancesStatusRequest::getSecurity_transport()const
@@ -342,7 +342,7 @@ bool ReportInstancesStatusRequest::getSecurity_transport()const
 void ReportInstancesStatusRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::vector<std::string> ReportInstancesStatusRequest::getInstanceId()const
@@ -354,7 +354,7 @@ void ReportInstancesStatusRequest::setInstanceId(const std::vector<std::string>&
 {
 	instanceId_ = instanceId;
 	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+		setCoreParameter("InstanceId."+ std::to_string(i), std::to_string(instanceId.at(i)));
 }
 
 std::string ReportInstancesStatusRequest::getRequestId()const
@@ -388,6 +388,6 @@ void ReportInstancesStatusRequest::setDevice(const std::vector<std::string>& dev
 {
 	device_ = device;
 	for(int i = 0; i!= device.size(); i++)
-		setCoreParameter("Device."+ std::to_string(i), device.at(i));
+		setCoreParameter("Device."+ std::to_string(i), std::to_string(device.at(i)));
 }
 

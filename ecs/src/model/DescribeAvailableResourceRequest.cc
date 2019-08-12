@@ -25,15 +25,15 @@ DescribeAvailableResourceRequest::DescribeAvailableResourceRequest() :
 DescribeAvailableResourceRequest::~DescribeAvailableResourceRequest()
 {}
 
-bool DescribeAvailableResourceRequest::getResourceOwnerId()const
+long DescribeAvailableResourceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeAvailableResourceRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 float DescribeAvailableResourceRequest::getMemory()const
@@ -44,18 +44,18 @@ float DescribeAvailableResourceRequest::getMemory()const
 void DescribeAvailableResourceRequest::setMemory(float memory)
 {
 	memory_ = memory;
-	setCoreParameter("Memory", std::to_string(memory));
+	setCoreParameter("Memory", memory);
 }
 
-bool DescribeAvailableResourceRequest::getCallerParentId()const
+long DescribeAvailableResourceRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeAvailableResourceRequest::setCallerParentId(bool callerParentId)
+void DescribeAvailableResourceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string DescribeAvailableResourceRequest::getIoOptimized()const
@@ -77,7 +77,7 @@ bool DescribeAvailableResourceRequest::getProxy_original_security_transport()con
 void DescribeAvailableResourceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeAvailableResourceRequest::getDataDiskCategory()const
@@ -154,7 +154,7 @@ int DescribeAvailableResourceRequest::getCores()const
 void DescribeAvailableResourceRequest::setCores(int cores)
 {
 	cores_ = cores;
-	setCoreParameter("Cores", std::to_string(cores));
+	setCoreParameter("Cores", cores);
 }
 
 std::string DescribeAvailableResourceRequest::getSecurityToken()const
@@ -187,7 +187,7 @@ bool DescribeAvailableResourceRequest::getEnable()const
 void DescribeAvailableResourceRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeAvailableResourceRequest::getRequestContent()const
@@ -278,15 +278,15 @@ void DescribeAvailableResourceRequest::setCallerUidEmail(const std::string& call
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DescribeAvailableResourceRequest::getCallerUid()const
+long DescribeAvailableResourceRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeAvailableResourceRequest::setCallerUid(bool callerUid)
+void DescribeAvailableResourceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeAvailableResourceRequest::getApp_ip()const
@@ -344,15 +344,15 @@ void DescribeAvailableResourceRequest::setCallerBid(const std::string& callerBid
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DescribeAvailableResourceRequest::getOwnerId()const
+long DescribeAvailableResourceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeAvailableResourceRequest::setOwnerId(bool ownerId)
+void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeAvailableResourceRequest::getResourceType()const
@@ -374,7 +374,7 @@ bool DescribeAvailableResourceRequest::getProxy_trust_transport_info()const
 void DescribeAvailableResourceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeAvailableResourceRequest::getAk_mfa_present()const
@@ -385,7 +385,7 @@ bool DescribeAvailableResourceRequest::getAk_mfa_present()const
 void DescribeAvailableResourceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeAvailableResourceRequest::getSecurity_transport()const
@@ -396,7 +396,7 @@ bool DescribeAvailableResourceRequest::getSecurity_transport()const
 void DescribeAvailableResourceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeAvailableResourceRequest::getSpotStrategy()const

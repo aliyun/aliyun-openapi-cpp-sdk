@@ -25,15 +25,15 @@ DeleteBandwidthPackageRequest::DeleteBandwidthPackageRequest() :
 DeleteBandwidthPackageRequest::~DeleteBandwidthPackageRequest()
 {}
 
-bool DeleteBandwidthPackageRequest::getResourceOwnerId()const
+long DeleteBandwidthPackageRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteBandwidthPackageRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteBandwidthPackageRequest::getBandwidthPackageId()const
@@ -80,14 +80,14 @@ void DeleteBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAcco
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DeleteBandwidthPackageRequest::getOwnerId()const
+long DeleteBandwidthPackageRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteBandwidthPackageRequest::setOwnerId(bool ownerId)
+void DeleteBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

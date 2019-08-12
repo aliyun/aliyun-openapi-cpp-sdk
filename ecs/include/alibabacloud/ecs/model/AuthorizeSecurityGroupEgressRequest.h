@@ -37,14 +37,14 @@ namespace AlibabaCloud
 
 				std::string getNicType()const;
 				void setNicType(const std::string& nicType);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourcePortRange()const;
 				void setSourcePortRange(const std::string& sourcePortRange);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				bool getCallerParentId()const;
-				void setCallerParentId(bool callerParentId);
+				long getCallerParentId()const;
+				void setCallerParentId(long callerParentId);
 				std::string getSecurityGroupId()const;
 				void setSecurityGroupId(const std::string& securityGroupId);
 				bool getProxy_original_security_transport()const;
@@ -73,8 +73,8 @@ namespace AlibabaCloud
 				void setCallerBidEmail(const std::string& callerBidEmail);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
-				bool getCallerUid()const;
-				void setCallerUid(bool callerUid);
+				long getCallerUid()const;
+				void setCallerUid(long callerUid);
 				std::string getIpv6DestCidrIp()const;
 				void setIpv6DestCidrIp(const std::string& ipv6DestCidrIp);
 				std::string getIpv6SourceCidrIp()const;
@@ -97,8 +97,8 @@ namespace AlibabaCloud
 				void setCallerBid(const std::string& callerBid);
 				std::string getDestGroupId()const;
 				void setDestGroupId(const std::string& destGroupId);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getDestGroupOwnerAccount()const;
 				void setDestGroupOwnerAccount(const std::string& destGroupOwnerAccount);
 				std::string getPriority()const;
@@ -111,8 +111,8 @@ namespace AlibabaCloud
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
-				bool getDestGroupOwnerId()const;
-				void setDestGroupOwnerId(bool destGroupOwnerId);
+				long getDestGroupOwnerId()const;
+				void setDestGroupOwnerId(long destGroupOwnerId);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
 				std::string getAkProxy()const;
@@ -120,10 +120,10 @@ namespace AlibabaCloud
 
             private:
 				std::string nicType_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string sourcePortRange_;
 				std::string clientToken_;
-				bool callerParentId_;
+				long callerParentId_;
 				std::string securityGroupId_;
 				bool proxy_original_security_transport_;
 				std::string description_;
@@ -138,7 +138,7 @@ namespace AlibabaCloud
 				std::string requestContent_;
 				std::string callerBidEmail_;
 				std::string callerUidEmail_;
-				bool callerUid_;
+				long callerUid_;
 				std::string ipv6DestCidrIp_;
 				std::string ipv6SourceCidrIp_;
 				std::string policy_;
@@ -150,14 +150,14 @@ namespace AlibabaCloud
 				std::string sourceCidrIp_;
 				std::string callerBid_;
 				std::string destGroupId_;
-				bool ownerId_;
+				long ownerId_;
 				std::string destGroupOwnerAccount_;
 				std::string priority_;
 				std::string destCidrIp_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
-				bool destGroupOwnerId_;
+				long destGroupOwnerId_;
 				std::string requestId_;
 				std::string akProxy_;
 

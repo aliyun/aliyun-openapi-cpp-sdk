@@ -25,26 +25,26 @@ GetInstanceScreenshotRequest::GetInstanceScreenshotRequest() :
 GetInstanceScreenshotRequest::~GetInstanceScreenshotRequest()
 {}
 
-bool GetInstanceScreenshotRequest::getResourceOwnerId()const
+long GetInstanceScreenshotRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void GetInstanceScreenshotRequest::setResourceOwnerId(bool resourceOwnerId)
+void GetInstanceScreenshotRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool GetInstanceScreenshotRequest::getCallerParentId()const
+long GetInstanceScreenshotRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void GetInstanceScreenshotRequest::setCallerParentId(bool callerParentId)
+void GetInstanceScreenshotRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool GetInstanceScreenshotRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool GetInstanceScreenshotRequest::getProxy_original_security_transport()const
 void GetInstanceScreenshotRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string GetInstanceScreenshotRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool GetInstanceScreenshotRequest::getEnable()const
 void GetInstanceScreenshotRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string GetInstanceScreenshotRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void GetInstanceScreenshotRequest::setCallerUidEmail(const std::string& callerUi
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool GetInstanceScreenshotRequest::getCallerUid()const
+long GetInstanceScreenshotRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void GetInstanceScreenshotRequest::setCallerUid(bool callerUid)
+void GetInstanceScreenshotRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string GetInstanceScreenshotRequest::getApp_ip()const
@@ -220,7 +220,7 @@ bool GetInstanceScreenshotRequest::getWakeUp()const
 void GetInstanceScreenshotRequest::setWakeUp(bool wakeUp)
 {
 	wakeUp_ = wakeUp;
-	setCoreParameter("WakeUp", wakeUp ? "true" : "false");
+	setCoreParameter("WakeUp", wakeUp);
 }
 
 std::string GetInstanceScreenshotRequest::getOwnerAccount()const
@@ -245,15 +245,15 @@ void GetInstanceScreenshotRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool GetInstanceScreenshotRequest::getOwnerId()const
+long GetInstanceScreenshotRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void GetInstanceScreenshotRequest::setOwnerId(bool ownerId)
+void GetInstanceScreenshotRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool GetInstanceScreenshotRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool GetInstanceScreenshotRequest::getProxy_trust_transport_info()const
 void GetInstanceScreenshotRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool GetInstanceScreenshotRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool GetInstanceScreenshotRequest::getAk_mfa_present()const
 void GetInstanceScreenshotRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool GetInstanceScreenshotRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool GetInstanceScreenshotRequest::getSecurity_transport()const
 void GetInstanceScreenshotRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string GetInstanceScreenshotRequest::getInstanceId()const

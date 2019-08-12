@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				DescribeResourcesModificationRequest();
 				~DescribeResourcesModificationRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				float getMemory()const;
 				void setMemory(float memory);
-				bool getCallerParentId()const;
-				void setCallerParentId(bool callerParentId);
+				long getCallerParentId()const;
+				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
 				std::string getProxy_original_source_ip()const;
@@ -71,8 +71,8 @@ namespace AlibabaCloud
 				void setInstanceType(const std::string& instanceType);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
-				bool getCallerUid()const;
-				void setCallerUid(bool callerUid);
+				long getCallerUid()const;
+				void setCallerUid(long callerUid);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
 				std::string getResourceId()const;
@@ -85,8 +85,8 @@ namespace AlibabaCloud
 				void setCallerBid(const std::string& callerBid);
 				std::string getOperationType()const;
 				void setOperationType(const std::string& operationType);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
 				bool getAk_mfa_present()const;
@@ -101,9 +101,9 @@ namespace AlibabaCloud
 				void setAkProxy(const std::string& akProxy);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				float memory_;
-				bool callerParentId_;
+				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
@@ -119,14 +119,14 @@ namespace AlibabaCloud
 				std::string callerBidEmail_;
 				std::string instanceType_;
 				std::string callerUidEmail_;
-				bool callerUid_;
+				long callerUid_;
 				std::string app_ip_;
 				std::string resourceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string callerBid_;
 				std::string operationType_;
-				bool ownerId_;
+				long ownerId_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;

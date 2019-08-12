@@ -36,15 +36,15 @@ void RemoveTagsRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool RemoveTagsRequest::getResourceOwnerId()const
+long RemoveTagsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void RemoveTagsRequest::setResourceOwnerId(bool resourceOwnerId)
+void RemoveTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RemoveTagsRequest::getResourceId()const
@@ -92,20 +92,20 @@ void RemoveTagsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
-bool RemoveTagsRequest::getOwnerId()const
+long RemoveTagsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void RemoveTagsRequest::setOwnerId(bool ownerId)
+void RemoveTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RemoveTagsRequest::getResourceType()const

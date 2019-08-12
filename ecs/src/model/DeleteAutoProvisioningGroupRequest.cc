@@ -25,26 +25,26 @@ DeleteAutoProvisioningGroupRequest::DeleteAutoProvisioningGroupRequest() :
 DeleteAutoProvisioningGroupRequest::~DeleteAutoProvisioningGroupRequest()
 {}
 
-bool DeleteAutoProvisioningGroupRequest::getResourceOwnerId()const
+long DeleteAutoProvisioningGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteAutoProvisioningGroupRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteAutoProvisioningGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool DeleteAutoProvisioningGroupRequest::getCallerParentId()const
+long DeleteAutoProvisioningGroupRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DeleteAutoProvisioningGroupRequest::setCallerParentId(bool callerParentId)
+void DeleteAutoProvisioningGroupRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DeleteAutoProvisioningGroupRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DeleteAutoProvisioningGroupRequest::getProxy_original_security_transport()c
 void DeleteAutoProvisioningGroupRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DeleteAutoProvisioningGroupRequest::getProxy_original_source_ip()const
@@ -132,7 +132,7 @@ bool DeleteAutoProvisioningGroupRequest::getEnable()const
 void DeleteAutoProvisioningGroupRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DeleteAutoProvisioningGroupRequest::getRequestContent()const
@@ -154,7 +154,7 @@ bool DeleteAutoProvisioningGroupRequest::getTerminateInstances()const
 void DeleteAutoProvisioningGroupRequest::setTerminateInstances(bool terminateInstances)
 {
 	terminateInstances_ = terminateInstances;
-	setCoreParameter("TerminateInstances", terminateInstances ? "true" : "false");
+	setCoreParameter("TerminateInstances", terminateInstances);
 }
 
 std::string DeleteAutoProvisioningGroupRequest::getCallerBidEmail()const
@@ -179,15 +179,15 @@ void DeleteAutoProvisioningGroupRequest::setCallerUidEmail(const std::string& ca
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DeleteAutoProvisioningGroupRequest::getCallerUid()const
+long DeleteAutoProvisioningGroupRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DeleteAutoProvisioningGroupRequest::setCallerUid(bool callerUid)
+void DeleteAutoProvisioningGroupRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DeleteAutoProvisioningGroupRequest::getApp_ip()const
@@ -234,15 +234,15 @@ void DeleteAutoProvisioningGroupRequest::setCallerBid(const std::string& callerB
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DeleteAutoProvisioningGroupRequest::getOwnerId()const
+long DeleteAutoProvisioningGroupRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteAutoProvisioningGroupRequest::setOwnerId(bool ownerId)
+void DeleteAutoProvisioningGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DeleteAutoProvisioningGroupRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DeleteAutoProvisioningGroupRequest::getProxy_trust_transport_info()const
 void DeleteAutoProvisioningGroupRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DeleteAutoProvisioningGroupRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DeleteAutoProvisioningGroupRequest::getAk_mfa_present()const
 void DeleteAutoProvisioningGroupRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 std::string DeleteAutoProvisioningGroupRequest::getAutoProvisioningGroupId()const
@@ -286,7 +286,7 @@ bool DeleteAutoProvisioningGroupRequest::getSecurity_transport()const
 void DeleteAutoProvisioningGroupRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DeleteAutoProvisioningGroupRequest::getRequestId()const

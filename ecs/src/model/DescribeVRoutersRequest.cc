@@ -25,15 +25,15 @@ DescribeVRoutersRequest::DescribeVRoutersRequest() :
 DescribeVRoutersRequest::~DescribeVRoutersRequest()
 {}
 
-bool DescribeVRoutersRequest::getResourceOwnerId()const
+long DescribeVRoutersRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeVRoutersRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeVRoutersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeVRoutersRequest::getVRouterId()const
@@ -88,18 +88,18 @@ int DescribeVRoutersRequest::getPageSize()const
 void DescribeVRoutersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
-bool DescribeVRoutersRequest::getOwnerId()const
+long DescribeVRoutersRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeVRoutersRequest::setOwnerId(bool ownerId)
+void DescribeVRoutersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeVRoutersRequest::getPageNumber()const
@@ -110,6 +110,6 @@ int DescribeVRoutersRequest::getPageNumber()const
 void DescribeVRoutersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

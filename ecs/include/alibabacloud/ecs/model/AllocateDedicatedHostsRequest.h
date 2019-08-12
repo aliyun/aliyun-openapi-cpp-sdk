@@ -40,12 +40,12 @@ namespace AlibabaCloud
 				AllocateDedicatedHostsRequest();
 				~AllocateDedicatedHostsRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				bool getCallerParentId()const;
-				void setCallerParentId(bool callerParentId);
+				long getCallerParentId()const;
+				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
 				std::string getDescription()const;
@@ -80,8 +80,8 @@ namespace AlibabaCloud
 				void setDedicatedHostType(const std::string& dedicatedHostType);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
-				bool getCallerUid()const;
-				void setCallerUid(bool callerUid);
+				long getCallerUid()const;
+				void setCallerUid(long callerUid);
 				std::string getApp_ip()const;
 				void setApp_ip(const std::string& app_ip);
 				int getAutoRenewPeriod()const;
@@ -100,8 +100,8 @@ namespace AlibabaCloud
 				void setAutoReleaseTime(const std::string& autoReleaseTime);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
 				bool getAk_mfa_present()const;
@@ -128,9 +128,9 @@ namespace AlibabaCloud
 				void setNetworkAttributesUdpTimeout(int networkAttributesUdpTimeout);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string clientToken_;
-				bool callerParentId_;
+				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string description_;
 				std::string proxy_original_source_ip_;
@@ -148,7 +148,7 @@ namespace AlibabaCloud
 				std::vector<Tag> tag_;
 				std::string dedicatedHostType_;
 				std::string callerUidEmail_;
-				bool callerUid_;
+				long callerUid_;
 				std::string app_ip_;
 				int autoRenewPeriod_;
 				int period_;
@@ -158,7 +158,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string autoReleaseTime_;
 				std::string callerBid_;
-				bool ownerId_;
+				long ownerId_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;

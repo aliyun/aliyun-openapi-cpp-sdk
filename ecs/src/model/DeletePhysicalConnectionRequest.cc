@@ -25,15 +25,15 @@ DeletePhysicalConnectionRequest::DeletePhysicalConnectionRequest() :
 DeletePhysicalConnectionRequest::~DeletePhysicalConnectionRequest()
 {}
 
-bool DeletePhysicalConnectionRequest::getResourceOwnerId()const
+long DeletePhysicalConnectionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeletePhysicalConnectionRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeletePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeletePhysicalConnectionRequest::getRegionId()const
@@ -91,14 +91,14 @@ void DeletePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DeletePhysicalConnectionRequest::getOwnerId()const
+long DeletePhysicalConnectionRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeletePhysicalConnectionRequest::setOwnerId(bool ownerId)
+void DeletePhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

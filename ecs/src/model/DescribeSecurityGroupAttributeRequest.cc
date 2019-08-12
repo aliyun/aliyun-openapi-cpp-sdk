@@ -47,15 +47,15 @@ void DescribeSecurityGroupAttributeRequest::setNicType(const std::string& nicTyp
 	setCoreParameter("NicType", nicType);
 }
 
-bool DescribeSecurityGroupAttributeRequest::getResourceOwnerId()const
+long DescribeSecurityGroupAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeSecurityGroupAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeSecurityGroupAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSecurityGroupAttributeRequest::getResourceOwnerAccount()const
@@ -102,15 +102,15 @@ void DescribeSecurityGroupAttributeRequest::setSecurityGroupId(const std::string
 	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
-bool DescribeSecurityGroupAttributeRequest::getOwnerId()const
+long DescribeSecurityGroupAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeSecurityGroupAttributeRequest::setOwnerId(bool ownerId)
+void DescribeSecurityGroupAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeSecurityGroupAttributeRequest::getDirection()const

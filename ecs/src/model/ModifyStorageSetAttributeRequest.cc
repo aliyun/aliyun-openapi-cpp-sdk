@@ -25,15 +25,15 @@ ModifyStorageSetAttributeRequest::ModifyStorageSetAttributeRequest() :
 ModifyStorageSetAttributeRequest::~ModifyStorageSetAttributeRequest()
 {}
 
-bool ModifyStorageSetAttributeRequest::getResourceOwnerId()const
+long ModifyStorageSetAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyStorageSetAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyStorageSetAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyStorageSetAttributeRequest::getClientToken()const
@@ -47,15 +47,15 @@ void ModifyStorageSetAttributeRequest::setClientToken(const std::string& clientT
 	setCoreParameter("ClientToken", clientToken);
 }
 
-bool ModifyStorageSetAttributeRequest::getCallerParentId()const
+long ModifyStorageSetAttributeRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ModifyStorageSetAttributeRequest::setCallerParentId(bool callerParentId)
+void ModifyStorageSetAttributeRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ModifyStorageSetAttributeRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool ModifyStorageSetAttributeRequest::getProxy_original_security_transport()con
 void ModifyStorageSetAttributeRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifyStorageSetAttributeRequest::getDescription()const
@@ -165,7 +165,7 @@ bool ModifyStorageSetAttributeRequest::getEnable()const
 void ModifyStorageSetAttributeRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ModifyStorageSetAttributeRequest::getRequestContent()const
@@ -201,15 +201,15 @@ void ModifyStorageSetAttributeRequest::setCallerUidEmail(const std::string& call
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ModifyStorageSetAttributeRequest::getCallerUid()const
+long ModifyStorageSetAttributeRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ModifyStorageSetAttributeRequest::setCallerUid(bool callerUid)
+void ModifyStorageSetAttributeRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifyStorageSetAttributeRequest::getApp_ip()const
@@ -256,15 +256,15 @@ void ModifyStorageSetAttributeRequest::setCallerBid(const std::string& callerBid
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ModifyStorageSetAttributeRequest::getOwnerId()const
+long ModifyStorageSetAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyStorageSetAttributeRequest::setOwnerId(bool ownerId)
+void ModifyStorageSetAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ModifyStorageSetAttributeRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool ModifyStorageSetAttributeRequest::getProxy_trust_transport_info()const
 void ModifyStorageSetAttributeRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifyStorageSetAttributeRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool ModifyStorageSetAttributeRequest::getAk_mfa_present()const
 void ModifyStorageSetAttributeRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ModifyStorageSetAttributeRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool ModifyStorageSetAttributeRequest::getSecurity_transport()const
 void ModifyStorageSetAttributeRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ModifyStorageSetAttributeRequest::getStorageSetId()const

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 
 				bool getDataDiskPolicyEnabled()const;
 				void setDataDiskPolicyEnabled(bool dataDiskPolicyEnabled);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				int getDataDiskPolicyRetentionDays()const;
 				void setDataDiskPolicyRetentionDays(int dataDiskPolicyRetentionDays);
 				std::string getResourceOwnerAccount()const;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getSystemDiskPolicyTimePeriod()const;
 				void setSystemDiskPolicyTimePeriod(int systemDiskPolicyTimePeriod);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				bool getDataDiskPolicyRetentionLastWeek()const;
 				void setDataDiskPolicyRetentionLastWeek(bool dataDiskPolicyRetentionLastWeek);
 				int getSystemDiskPolicyRetentionDays()const;
@@ -62,13 +62,13 @@ namespace AlibabaCloud
 
             private:
 				bool dataDiskPolicyEnabled_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				int dataDiskPolicyRetentionDays_;
 				std::string resourceOwnerAccount_;
 				bool systemDiskPolicyRetentionLastWeek_;
 				std::string ownerAccount_;
 				int systemDiskPolicyTimePeriod_;
-				bool ownerId_;
+				long ownerId_;
 				bool dataDiskPolicyRetentionLastWeek_;
 				int systemDiskPolicyRetentionDays_;
 				int dataDiskPolicyTimePeriod_;

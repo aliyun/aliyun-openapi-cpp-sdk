@@ -25,15 +25,15 @@ CreateRouteEntryRequest::CreateRouteEntryRequest() :
 CreateRouteEntryRequest::~CreateRouteEntryRequest()
 {}
 
-bool CreateRouteEntryRequest::getResourceOwnerId()const
+long CreateRouteEntryRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateRouteEntryRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateRouteEntryRequest::getResourceOwnerAccount()const
@@ -102,15 +102,15 @@ void CreateRouteEntryRequest::setNextHopId(const std::string& nextHopId)
 	setCoreParameter("NextHopId", nextHopId);
 }
 
-bool CreateRouteEntryRequest::getOwnerId()const
+long CreateRouteEntryRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateRouteEntryRequest::setOwnerId(bool ownerId)
+void CreateRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateRouteEntryRequest::getNextHopType()const
@@ -136,8 +136,8 @@ void CreateRouteEntryRequest::setNextHopList(const std::vector<NextHopList>& nex
 	for(int i = 0; i!= nextHopList.size(); i++)	{
 		auto obj = nextHopList.at(i);
 		std::string str ="NextHopList."+ std::to_string(i);
-		setCoreParameter(str + ".NextHopId", obj.nextHopId);
-		setCoreParameter(str + ".NextHopType", obj.nextHopType);
+		setCoreParameter(str + ".NextHopId", std::to_string(obj.nextHopId));
+		setCoreParameter(str + ".NextHopType", std::to_string(obj.nextHopType));
 	}
 }
 

@@ -25,26 +25,26 @@ UnassignPrivateIpAddressesRequest::UnassignPrivateIpAddressesRequest() :
 UnassignPrivateIpAddressesRequest::~UnassignPrivateIpAddressesRequest()
 {}
 
-bool UnassignPrivateIpAddressesRequest::getResourceOwnerId()const
+long UnassignPrivateIpAddressesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void UnassignPrivateIpAddressesRequest::setResourceOwnerId(bool resourceOwnerId)
+void UnassignPrivateIpAddressesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool UnassignPrivateIpAddressesRequest::getCallerParentId()const
+long UnassignPrivateIpAddressesRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void UnassignPrivateIpAddressesRequest::setCallerParentId(bool callerParentId)
+void UnassignPrivateIpAddressesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool UnassignPrivateIpAddressesRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool UnassignPrivateIpAddressesRequest::getProxy_original_security_transport()co
 void UnassignPrivateIpAddressesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool UnassignPrivateIpAddressesRequest::getEnable()const
 void UnassignPrivateIpAddressesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void UnassignPrivateIpAddressesRequest::setCallerUidEmail(const std::string& cal
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool UnassignPrivateIpAddressesRequest::getCallerUid()const
+long UnassignPrivateIpAddressesRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void UnassignPrivateIpAddressesRequest::setCallerUid(bool callerUid)
+void UnassignPrivateIpAddressesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getApp_ip()const
@@ -234,15 +234,15 @@ void UnassignPrivateIpAddressesRequest::setCallerBid(const std::string& callerBi
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool UnassignPrivateIpAddressesRequest::getOwnerId()const
+long UnassignPrivateIpAddressesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void UnassignPrivateIpAddressesRequest::setOwnerId(bool ownerId)
+void UnassignPrivateIpAddressesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool UnassignPrivateIpAddressesRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool UnassignPrivateIpAddressesRequest::getProxy_trust_transport_info()const
 void UnassignPrivateIpAddressesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool UnassignPrivateIpAddressesRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool UnassignPrivateIpAddressesRequest::getAk_mfa_present()const
 void UnassignPrivateIpAddressesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool UnassignPrivateIpAddressesRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool UnassignPrivateIpAddressesRequest::getSecurity_transport()const
 void UnassignPrivateIpAddressesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::vector<std::string> UnassignPrivateIpAddressesRequest::getPrivateIpAddress()const
@@ -287,7 +287,7 @@ void UnassignPrivateIpAddressesRequest::setPrivateIpAddress(const std::vector<st
 {
 	privateIpAddress_ = privateIpAddress;
 	for(int i = 0; i!= privateIpAddress.size(); i++)
-		setCoreParameter("PrivateIpAddress."+ std::to_string(i), privateIpAddress.at(i));
+		setCoreParameter("PrivateIpAddress."+ std::to_string(i), std::to_string(privateIpAddress.at(i)));
 }
 
 std::string UnassignPrivateIpAddressesRequest::getRequestId()const

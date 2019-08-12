@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				DescribeInvocationsRequest();
 				~DescribeInvocationsRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInvokeStatus()const;
 				void setInvokeStatus(const std::string& invokeStatus);
-				bool getCallerParentId()const;
-				void setCallerParentId(bool callerParentId);
+				long getCallerParentId()const;
+				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
 				std::string getProxy_original_source_ip()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				void setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail);
 				std::string getCallerType()const;
 				void setCallerType(const std::string& callerType);
-				bool getPageNumber()const;
-				void setPageNumber(bool pageNumber);
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSourceRegionId()const;
@@ -65,14 +65,14 @@ namespace AlibabaCloud
 				void setEnable(bool enable);
 				std::string getRequestContent()const;
 				void setRequestContent(const std::string& requestContent);
-				bool getPageSize()const;
-				void setPageSize(bool pageSize);
+				long getPageSize()const;
+				void setPageSize(long pageSize);
 				std::string getCallerBidEmail()const;
 				void setCallerBidEmail(const std::string& callerBidEmail);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
-				bool getCallerUid()const;
-				void setCallerUid(bool callerUid);
+				long getCallerUid()const;
+				void setCallerUid(long callerUid);
 				std::string getInvokeId()const;
 				void setInvokeId(const std::string& invokeId);
 				std::string getApp_ip()const;
@@ -87,8 +87,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				bool getProxy_trust_transport_info()const;
 				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
 				bool getAk_mfa_present()const;
@@ -103,25 +103,25 @@ namespace AlibabaCloud
 				void setRequestId(const std::string& requestId);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string invokeStatus_;
-				bool callerParentId_;
+				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string proxy_original_source_ip_;
 				std::string commandId_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
-				bool pageNumber_;
+				long pageNumber_;
 				std::string accessKeyId_;
 				std::string sourceRegionId_;
 				std::string securityToken_;
 				std::string regionId_;
 				bool enable_;
 				std::string requestContent_;
-				bool pageSize_;
+				long pageSize_;
 				std::string callerBidEmail_;
 				std::string callerUidEmail_;
-				bool callerUid_;
+				long callerUid_;
 				std::string invokeId_;
 				std::string app_ip_;
 				bool timed_;
@@ -129,7 +129,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string callerBid_;
-				bool ownerId_;
+				long ownerId_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;

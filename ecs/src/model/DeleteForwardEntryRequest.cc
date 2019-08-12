@@ -25,15 +25,15 @@ DeleteForwardEntryRequest::DeleteForwardEntryRequest() :
 DeleteForwardEntryRequest::~DeleteForwardEntryRequest()
 {}
 
-bool DeleteForwardEntryRequest::getResourceOwnerId()const
+long DeleteForwardEntryRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteForwardEntryRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteForwardEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteForwardEntryRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void DeleteForwardEntryRequest::setForwardTableId(const std::string& forwardTabl
 	setCoreParameter("ForwardTableId", forwardTableId);
 }
 
-bool DeleteForwardEntryRequest::getOwnerId()const
+long DeleteForwardEntryRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteForwardEntryRequest::setOwnerId(bool ownerId)
+void DeleteForwardEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

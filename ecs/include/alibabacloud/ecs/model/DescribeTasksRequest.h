@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DescribeTasksRequest();
 				~DescribeTasksRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getTaskIds()const;
 				void setTaskIds(const std::string& taskIds);
 				int getPageNumber()const;
@@ -63,12 +63,12 @@ namespace AlibabaCloud
 				void setTaskAction(const std::string& taskAction);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string endTime_;
 				std::string startTime_;
-				bool ownerId_;
+				long ownerId_;
 				std::string taskIds_;
 				int pageNumber_;
 				std::string sourceRegionId_;

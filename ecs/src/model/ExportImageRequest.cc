@@ -36,15 +36,15 @@ void ExportImageRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ExportImageRequest::getResourceOwnerId()const
+long ExportImageRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ExportImageRequest::setResourceOwnerId(bool resourceOwnerId)
+void ExportImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ExportImageRequest::getImageId()const
@@ -113,15 +113,15 @@ void ExportImageRequest::setRoleName(const std::string& roleName)
 	setCoreParameter("RoleName", roleName);
 }
 
-bool ExportImageRequest::getOwnerId()const
+long ExportImageRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ExportImageRequest::setOwnerId(bool ownerId)
+void ExportImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ExportImageRequest::getImageFormat()const

@@ -25,15 +25,15 @@ CreateDeploymentSetRequest::CreateDeploymentSetRequest() :
 CreateDeploymentSetRequest::~CreateDeploymentSetRequest()
 {}
 
-bool CreateDeploymentSetRequest::getResourceOwnerId()const
+long CreateDeploymentSetRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateDeploymentSetRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateDeploymentSetRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateDeploymentSetRequest::getResourceOwnerAccount()const
@@ -91,15 +91,15 @@ void CreateDeploymentSetRequest::setDeploymentSetName(const std::string& deploym
 	setCoreParameter("DeploymentSetName", deploymentSetName);
 }
 
-bool CreateDeploymentSetRequest::getOwnerId()const
+long CreateDeploymentSetRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateDeploymentSetRequest::setOwnerId(bool ownerId)
+void CreateDeploymentSetRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateDeploymentSetRequest::getSourceRegionId()const

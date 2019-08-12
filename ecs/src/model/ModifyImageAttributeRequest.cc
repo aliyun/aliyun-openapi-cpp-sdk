@@ -36,15 +36,15 @@ void ModifyImageAttributeRequest::setSourceRegionId(const std::string& sourceReg
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ModifyImageAttributeRequest::getResourceOwnerId()const
+long ModifyImageAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyImageAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyImageAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyImageAttributeRequest::getImageId()const
@@ -113,14 +113,14 @@ void ModifyImageAttributeRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-bool ModifyImageAttributeRequest::getOwnerId()const
+long ModifyImageAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyImageAttributeRequest::setOwnerId(bool ownerId)
+void ModifyImageAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

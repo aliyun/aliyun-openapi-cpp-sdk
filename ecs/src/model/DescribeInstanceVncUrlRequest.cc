@@ -36,15 +36,15 @@ void DescribeInstanceVncUrlRequest::setSourceRegionId(const std::string& sourceR
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeInstanceVncUrlRequest::getResourceOwnerId()const
+long DescribeInstanceVncUrlRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeInstanceVncUrlRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeInstanceVncUrlRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInstanceVncUrlRequest::getInstanceId()const
@@ -91,14 +91,14 @@ void DescribeInstanceVncUrlRequest::setOwnerAccount(const std::string& ownerAcco
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DescribeInstanceVncUrlRequest::getOwnerId()const
+long DescribeInstanceVncUrlRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeInstanceVncUrlRequest::setOwnerId(bool ownerId)
+void DescribeInstanceVncUrlRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				AddBandwidthPackageIpsRequest();
 				~AddBandwidthPackageIpsRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getBandwidthPackageId()const;
 				void setBandwidthPackageId(const std::string& bandwidthPackageId);
 				std::string getResourceOwnerAccount()const;
@@ -47,19 +47,19 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getIpCount()const;
 				void setIpCount(const std::string& ipCount);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string bandwidthPackageId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string clientToken_;
 				std::string ownerAccount_;
-				bool ownerId_;
+				long ownerId_;
 				std::string ipCount_;
 
 			};

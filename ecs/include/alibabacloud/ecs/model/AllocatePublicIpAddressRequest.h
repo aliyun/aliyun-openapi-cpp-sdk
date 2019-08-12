@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getIpAddress()const;
 				void setIpAddress(const std::string& ipAddress);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getResourceOwnerAccount()const;
@@ -49,18 +49,18 @@ namespace AlibabaCloud
 				void setVlanId(const std::string& vlanId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				std::string sourceRegionId_;
 				std::string ipAddress_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string instanceId_;
 				std::string resourceOwnerAccount_;
 				std::string vlanId_;
 				std::string ownerAccount_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

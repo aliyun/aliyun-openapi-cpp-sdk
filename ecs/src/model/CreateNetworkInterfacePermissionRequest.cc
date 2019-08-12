@@ -25,26 +25,26 @@ CreateNetworkInterfacePermissionRequest::CreateNetworkInterfacePermissionRequest
 CreateNetworkInterfacePermissionRequest::~CreateNetworkInterfacePermissionRequest()
 {}
 
-bool CreateNetworkInterfacePermissionRequest::getResourceOwnerId()const
+long CreateNetworkInterfacePermissionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateNetworkInterfacePermissionRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateNetworkInterfacePermissionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool CreateNetworkInterfacePermissionRequest::getCallerParentId()const
+long CreateNetworkInterfacePermissionRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void CreateNetworkInterfacePermissionRequest::setCallerParentId(bool callerParentId)
+void CreateNetworkInterfacePermissionRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool CreateNetworkInterfacePermissionRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool CreateNetworkInterfacePermissionRequest::getProxy_original_security_transpo
 void CreateNetworkInterfacePermissionRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string CreateNetworkInterfacePermissionRequest::getProxy_original_source_ip()const
@@ -113,15 +113,15 @@ void CreateNetworkInterfacePermissionRequest::setSourceRegionId(const std::strin
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool CreateNetworkInterfacePermissionRequest::getAccountId()const
+long CreateNetworkInterfacePermissionRequest::getAccountId()const
 {
 	return accountId_;
 }
 
-void CreateNetworkInterfacePermissionRequest::setAccountId(bool accountId)
+void CreateNetworkInterfacePermissionRequest::setAccountId(long accountId)
 {
 	accountId_ = accountId;
-	setCoreParameter("AccountId", accountId ? "true" : "false");
+	setCoreParameter("AccountId", accountId);
 }
 
 std::string CreateNetworkInterfacePermissionRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ bool CreateNetworkInterfacePermissionRequest::getEnable()const
 void CreateNetworkInterfacePermissionRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string CreateNetworkInterfacePermissionRequest::getRequestContent()const
@@ -190,15 +190,15 @@ void CreateNetworkInterfacePermissionRequest::setCallerUidEmail(const std::strin
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool CreateNetworkInterfacePermissionRequest::getCallerUid()const
+long CreateNetworkInterfacePermissionRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void CreateNetworkInterfacePermissionRequest::setCallerUid(bool callerUid)
+void CreateNetworkInterfacePermissionRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string CreateNetworkInterfacePermissionRequest::getApp_ip()const
@@ -256,15 +256,15 @@ void CreateNetworkInterfacePermissionRequest::setCallerBid(const std::string& ca
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool CreateNetworkInterfacePermissionRequest::getOwnerId()const
+long CreateNetworkInterfacePermissionRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateNetworkInterfacePermissionRequest::setOwnerId(bool ownerId)
+void CreateNetworkInterfacePermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool CreateNetworkInterfacePermissionRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool CreateNetworkInterfacePermissionRequest::getProxy_trust_transport_info()con
 void CreateNetworkInterfacePermissionRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool CreateNetworkInterfacePermissionRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool CreateNetworkInterfacePermissionRequest::getAk_mfa_present()const
 void CreateNetworkInterfacePermissionRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool CreateNetworkInterfacePermissionRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool CreateNetworkInterfacePermissionRequest::getSecurity_transport()const
 void CreateNetworkInterfacePermissionRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string CreateNetworkInterfacePermissionRequest::getRequestId()const

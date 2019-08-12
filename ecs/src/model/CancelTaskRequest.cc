@@ -36,15 +36,15 @@ void CancelTaskRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool CancelTaskRequest::getResourceOwnerId()const
+long CancelTaskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CancelTaskRequest::setResourceOwnerId(bool resourceOwnerId)
+void CancelTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CancelTaskRequest::getResourceOwnerAccount()const
@@ -69,15 +69,15 @@ void CancelTaskRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-bool CancelTaskRequest::getOwnerId()const
+long CancelTaskRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CancelTaskRequest::setOwnerId(bool ownerId)
+void CancelTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CancelTaskRequest::getTaskId()const

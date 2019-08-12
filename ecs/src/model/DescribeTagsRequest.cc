@@ -36,15 +36,15 @@ void DescribeTagsRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeTagsRequest::getResourceOwnerId()const
+long DescribeTagsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeTagsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeTagsRequest::getResourceId()const
@@ -88,7 +88,7 @@ int DescribeTagsRequest::getPageSize()const
 void DescribeTagsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::vector<DescribeTagsRequest::Tag> DescribeTagsRequest::getTag()const
@@ -103,20 +103,20 @@ void DescribeTagsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
-bool DescribeTagsRequest::getOwnerId()const
+long DescribeTagsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeTagsRequest::setOwnerId(bool ownerId)
+void DescribeTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeTagsRequest::getCategory()const
@@ -149,6 +149,6 @@ int DescribeTagsRequest::getPageNumber()const
 void DescribeTagsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

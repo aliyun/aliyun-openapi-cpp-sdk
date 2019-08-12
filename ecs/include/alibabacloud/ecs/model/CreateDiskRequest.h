@@ -39,15 +39,15 @@ namespace AlibabaCloud
 				{
 					std::string rolearn;
 					std::string roleType;
-					bool assumeRoleFor;
+					long assumeRoleFor;
 				};
 
 			public:
 				CreateDiskRequest();
 				~CreateDiskRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSnapshotId()const;
 				void setSnapshotId(const std::string& snapshotId);
 				std::string getResourceOwnerAccount()const;
@@ -60,8 +60,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getSourceRegionId()const;
 				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getDiskName()const;
@@ -94,14 +94,14 @@ namespace AlibabaCloud
 				void setAdvancedFeatures(const std::string& advancedFeatures);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string snapshotId_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string performanceLevel_;
 				std::string ownerAccount_;
 				std::string description_;
-				bool ownerId_;
+				long ownerId_;
 				std::string sourceRegionId_;
 				std::string diskName_;
 				std::string resourceGroupId_;

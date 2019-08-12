@@ -25,26 +25,26 @@ ModifyInstanceDeploymentRequest::ModifyInstanceDeploymentRequest() :
 ModifyInstanceDeploymentRequest::~ModifyInstanceDeploymentRequest()
 {}
 
-bool ModifyInstanceDeploymentRequest::getResourceOwnerId()const
+long ModifyInstanceDeploymentRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyInstanceDeploymentRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyInstanceDeploymentRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ModifyInstanceDeploymentRequest::getCallerParentId()const
+long ModifyInstanceDeploymentRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ModifyInstanceDeploymentRequest::setCallerParentId(bool callerParentId)
+void ModifyInstanceDeploymentRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ModifyInstanceDeploymentRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool ModifyInstanceDeploymentRequest::getProxy_original_security_transport()cons
 void ModifyInstanceDeploymentRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifyInstanceDeploymentRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool ModifyInstanceDeploymentRequest::getEnable()const
 void ModifyInstanceDeploymentRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ModifyInstanceDeploymentRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void ModifyInstanceDeploymentRequest::setCallerUidEmail(const std::string& calle
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ModifyInstanceDeploymentRequest::getCallerUid()const
+long ModifyInstanceDeploymentRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ModifyInstanceDeploymentRequest::setCallerUid(bool callerUid)
+void ModifyInstanceDeploymentRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifyInstanceDeploymentRequest::getDeploymentSetId()const
@@ -267,15 +267,15 @@ void ModifyInstanceDeploymentRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ModifyInstanceDeploymentRequest::getOwnerId()const
+long ModifyInstanceDeploymentRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyInstanceDeploymentRequest::setOwnerId(bool ownerId)
+void ModifyInstanceDeploymentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ModifyInstanceDeploymentRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ bool ModifyInstanceDeploymentRequest::getProxy_trust_transport_info()const
 void ModifyInstanceDeploymentRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifyInstanceDeploymentRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool ModifyInstanceDeploymentRequest::getAk_mfa_present()const
 void ModifyInstanceDeploymentRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ModifyInstanceDeploymentRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool ModifyInstanceDeploymentRequest::getSecurity_transport()const
 void ModifyInstanceDeploymentRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ModifyInstanceDeploymentRequest::getInstanceId()const
@@ -352,7 +352,7 @@ bool ModifyInstanceDeploymentRequest::getForce()const
 void ModifyInstanceDeploymentRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force);
 }
 
 std::string ModifyInstanceDeploymentRequest::getAffinity()const

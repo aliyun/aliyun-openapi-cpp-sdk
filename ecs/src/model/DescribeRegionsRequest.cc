@@ -36,15 +36,15 @@ void DescribeRegionsRequest::setSourceRegionId(const std::string& sourceRegionId
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeRegionsRequest::getResourceOwnerId()const
+long DescribeRegionsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeRegionsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeRegionsRequest::getResourceOwnerAccount()const
@@ -80,15 +80,15 @@ void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage
 	setCoreParameter("AcceptLanguage", acceptLanguage);
 }
 
-bool DescribeRegionsRequest::getOwnerId()const
+long DescribeRegionsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeRegionsRequest::setOwnerId(bool ownerId)
+void DescribeRegionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeRegionsRequest::getInstanceChargeType()const

@@ -42,8 +42,8 @@ namespace AlibabaCloud
 
 				std::vector<Filter> getFilter()const;
 				void setFilter(const std::vector<Filter>& filter);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
@@ -56,21 +56,21 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getUserCidr()const;
 				void setUserCidr(const std::string& userCidr);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
             private:
 				std::vector<Filter> filter_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string ownerAccount_;
 				int pageSize_;
 				std::string userCidr_;
-				bool ownerId_;
+				long ownerId_;
 				int pageNumber_;
 
 			};

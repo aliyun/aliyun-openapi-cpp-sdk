@@ -37,20 +37,20 @@ namespace AlibabaCloud
 
 				std::string getOppositeRouterId()const;
 				void setOppositeRouterId(const std::string& oppositeRouterId);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getHealthCheckTargetIp()const;
 				void setHealthCheckTargetIp(const std::string& healthCheckTargetIp);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getRouterInterfaceId()const;
 				void setRouterInterfaceId(const std::string& routerInterfaceId);
-				bool getOppositeInterfaceOwnerId()const;
-				void setOppositeInterfaceOwnerId(bool oppositeInterfaceOwnerId);
+				long getOppositeInterfaceOwnerId()const;
+				void setOppositeInterfaceOwnerId(long oppositeInterfaceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getHealthCheckSourceIp()const;
@@ -64,13 +64,13 @@ namespace AlibabaCloud
 
             private:
 				std::string oppositeRouterId_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string description_;
 				std::string healthCheckTargetIp_;
-				bool ownerId_;
+				long ownerId_;
 				std::string routerInterfaceId_;
-				bool oppositeInterfaceOwnerId_;
+				long oppositeInterfaceOwnerId_;
 				std::string regionId_;
 				std::string healthCheckSourceIp_;
 				std::string name_;

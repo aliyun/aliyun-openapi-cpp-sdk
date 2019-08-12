@@ -25,15 +25,15 @@ CreateSimulatedSystemEventsRequest::CreateSimulatedSystemEventsRequest() :
 CreateSimulatedSystemEventsRequest::~CreateSimulatedSystemEventsRequest()
 {}
 
-bool CreateSimulatedSystemEventsRequest::getResourceOwnerId()const
+long CreateSimulatedSystemEventsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateSimulatedSystemEventsRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateSimulatedSystemEventsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateSimulatedSystemEventsRequest::getNotBefore()const
@@ -47,15 +47,15 @@ void CreateSimulatedSystemEventsRequest::setNotBefore(const std::string& notBefo
 	setCoreParameter("NotBefore", notBefore);
 }
 
-bool CreateSimulatedSystemEventsRequest::getCallerParentId()const
+long CreateSimulatedSystemEventsRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void CreateSimulatedSystemEventsRequest::setCallerParentId(bool callerParentId)
+void CreateSimulatedSystemEventsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool CreateSimulatedSystemEventsRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool CreateSimulatedSystemEventsRequest::getProxy_original_security_transport()c
 void CreateSimulatedSystemEventsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string CreateSimulatedSystemEventsRequest::getProxy_original_source_ip()const
@@ -165,7 +165,7 @@ bool CreateSimulatedSystemEventsRequest::getEnable()const
 void CreateSimulatedSystemEventsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string CreateSimulatedSystemEventsRequest::getRequestContent()const
@@ -201,15 +201,15 @@ void CreateSimulatedSystemEventsRequest::setCallerUidEmail(const std::string& ca
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool CreateSimulatedSystemEventsRequest::getCallerUid()const
+long CreateSimulatedSystemEventsRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void CreateSimulatedSystemEventsRequest::setCallerUid(bool callerUid)
+void CreateSimulatedSystemEventsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string CreateSimulatedSystemEventsRequest::getApp_ip()const
@@ -256,15 +256,15 @@ void CreateSimulatedSystemEventsRequest::setCallerBid(const std::string& callerB
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool CreateSimulatedSystemEventsRequest::getOwnerId()const
+long CreateSimulatedSystemEventsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateSimulatedSystemEventsRequest::setOwnerId(bool ownerId)
+void CreateSimulatedSystemEventsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool CreateSimulatedSystemEventsRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool CreateSimulatedSystemEventsRequest::getProxy_trust_transport_info()const
 void CreateSimulatedSystemEventsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool CreateSimulatedSystemEventsRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool CreateSimulatedSystemEventsRequest::getAk_mfa_present()const
 void CreateSimulatedSystemEventsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool CreateSimulatedSystemEventsRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool CreateSimulatedSystemEventsRequest::getSecurity_transport()const
 void CreateSimulatedSystemEventsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::vector<std::string> CreateSimulatedSystemEventsRequest::getInstanceId()const
@@ -309,7 +309,7 @@ void CreateSimulatedSystemEventsRequest::setInstanceId(const std::vector<std::st
 {
 	instanceId_ = instanceId;
 	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+		setCoreParameter("InstanceId."+ std::to_string(i), std::to_string(instanceId.at(i)));
 }
 
 std::string CreateSimulatedSystemEventsRequest::getRequestId()const

@@ -25,15 +25,15 @@ DescribeRouteTablesRequest::DescribeRouteTablesRequest() :
 DescribeRouteTablesRequest::~DescribeRouteTablesRequest()
 {}
 
-bool DescribeRouteTablesRequest::getResourceOwnerId()const
+long DescribeRouteTablesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeRouteTablesRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeRouteTablesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeRouteTablesRequest::getVRouterId()const
@@ -69,15 +69,15 @@ void DescribeRouteTablesRequest::setOwnerAccount(const std::string& ownerAccount
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DescribeRouteTablesRequest::getOwnerId()const
+long DescribeRouteTablesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeRouteTablesRequest::setOwnerId(bool ownerId)
+void DescribeRouteTablesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeRouteTablesRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeRouteTablesRequest::getPageNumber()const
 void DescribeRouteTablesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeRouteTablesRequest::getRouterType()const
@@ -143,7 +143,7 @@ int DescribeRouteTablesRequest::getPageSize()const
 void DescribeRouteTablesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeRouteTablesRequest::getRouteTableId()const

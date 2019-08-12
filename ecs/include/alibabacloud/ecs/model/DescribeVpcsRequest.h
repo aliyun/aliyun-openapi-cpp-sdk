@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DescribeVpcsRequest();
 				~DescribeVpcsRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
@@ -49,20 +49,20 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				bool getIsDefault()const;
 				void setIsDefault(bool isDefault);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string vpcId_;
 				std::string ownerAccount_;
 				int pageSize_;
 				bool isDefault_;
-				bool ownerId_;
+				long ownerId_;
 				int pageNumber_;
 
 			};

@@ -25,15 +25,15 @@ DeleteRouterInterfaceRequest::DeleteRouterInterfaceRequest() :
 DeleteRouterInterfaceRequest::~DeleteRouterInterfaceRequest()
 {}
 
-bool DeleteRouterInterfaceRequest::getResourceOwnerId()const
+long DeleteRouterInterfaceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteRouterInterfaceRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteRouterInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteRouterInterfaceRequest::getRegionId()const
@@ -102,14 +102,14 @@ void DeleteRouterInterfaceRequest::setRouterInterfaceId(const std::string& route
 	setCoreParameter("RouterInterfaceId", routerInterfaceId);
 }
 
-bool DeleteRouterInterfaceRequest::getOwnerId()const
+long DeleteRouterInterfaceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteRouterInterfaceRequest::setOwnerId(bool ownerId)
+void DeleteRouterInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

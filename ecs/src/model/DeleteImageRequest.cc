@@ -36,15 +36,15 @@ void DeleteImageRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DeleteImageRequest::getResourceOwnerId()const
+long DeleteImageRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteImageRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteImageRequest::getImageId()const
@@ -99,17 +99,17 @@ bool DeleteImageRequest::getForce()const
 void DeleteImageRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force);
 }
 
-bool DeleteImageRequest::getOwnerId()const
+long DeleteImageRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteImageRequest::setOwnerId(bool ownerId)
+void DeleteImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

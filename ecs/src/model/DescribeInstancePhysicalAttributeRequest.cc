@@ -36,15 +36,15 @@ void DescribeInstancePhysicalAttributeRequest::setSourceRegionId(const std::stri
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeInstancePhysicalAttributeRequest::getResourceOwnerId()const
+long DescribeInstancePhysicalAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeInstancePhysicalAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeInstancePhysicalAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInstancePhysicalAttributeRequest::getInstanceId()const
@@ -80,14 +80,14 @@ void DescribeInstancePhysicalAttributeRequest::setOwnerAccount(const std::string
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DescribeInstancePhysicalAttributeRequest::getOwnerId()const
+long DescribeInstancePhysicalAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeInstancePhysicalAttributeRequest::setOwnerId(bool ownerId)
+void DescribeInstancePhysicalAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

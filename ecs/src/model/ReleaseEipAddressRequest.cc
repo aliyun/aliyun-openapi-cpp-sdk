@@ -25,15 +25,15 @@ ReleaseEipAddressRequest::ReleaseEipAddressRequest() :
 ReleaseEipAddressRequest::~ReleaseEipAddressRequest()
 {}
 
-bool ReleaseEipAddressRequest::getResourceOwnerId()const
+long ReleaseEipAddressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ReleaseEipAddressRequest::setResourceOwnerId(bool resourceOwnerId)
+void ReleaseEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReleaseEipAddressRequest::getResourceOwnerAccount()const
@@ -80,14 +80,14 @@ void ReleaseEipAddressRequest::setAllocationId(const std::string& allocationId)
 	setCoreParameter("AllocationId", allocationId);
 }
 
-bool ReleaseEipAddressRequest::getOwnerId()const
+long ReleaseEipAddressRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ReleaseEipAddressRequest::setOwnerId(bool ownerId)
+void ReleaseEipAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

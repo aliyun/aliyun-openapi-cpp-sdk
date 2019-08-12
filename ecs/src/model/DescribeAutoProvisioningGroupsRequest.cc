@@ -25,26 +25,26 @@ DescribeAutoProvisioningGroupsRequest::DescribeAutoProvisioningGroupsRequest() :
 DescribeAutoProvisioningGroupsRequest::~DescribeAutoProvisioningGroupsRequest()
 {}
 
-bool DescribeAutoProvisioningGroupsRequest::getResourceOwnerId()const
+long DescribeAutoProvisioningGroupsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeAutoProvisioningGroupsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeAutoProvisioningGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool DescribeAutoProvisioningGroupsRequest::getCallerParentId()const
+long DescribeAutoProvisioningGroupsRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeAutoProvisioningGroupsRequest::setCallerParentId(bool callerParentId)
+void DescribeAutoProvisioningGroupsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeAutoProvisioningGroupsRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeAutoProvisioningGroupsRequest::getProxy_original_security_transport
 void DescribeAutoProvisioningGroupsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ int DescribeAutoProvisioningGroupsRequest::getPageNumber()const
 void DescribeAutoProvisioningGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ bool DescribeAutoProvisioningGroupsRequest::getEnable()const
 void DescribeAutoProvisioningGroupsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getRequestContent()const
@@ -165,7 +165,7 @@ int DescribeAutoProvisioningGroupsRequest::getPageSize()const
 void DescribeAutoProvisioningGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getCallerBidEmail()const
@@ -190,15 +190,15 @@ void DescribeAutoProvisioningGroupsRequest::setCallerUidEmail(const std::string&
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DescribeAutoProvisioningGroupsRequest::getCallerUid()const
+long DescribeAutoProvisioningGroupsRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeAutoProvisioningGroupsRequest::setCallerUid(bool callerUid)
+void DescribeAutoProvisioningGroupsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getApp_ip()const
@@ -221,7 +221,7 @@ void DescribeAutoProvisioningGroupsRequest::setAutoProvisioningGroupStatus(const
 {
 	autoProvisioningGroupStatus_ = autoProvisioningGroupStatus;
 	for(int i = 0; i!= autoProvisioningGroupStatus.size(); i++)
-		setCoreParameter("AutoProvisioningGroupStatus."+ std::to_string(i), autoProvisioningGroupStatus.at(i));
+		setCoreParameter("AutoProvisioningGroupStatus."+ std::to_string(i), std::to_string(autoProvisioningGroupStatus.at(i)));
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getResourceOwnerAccount()const
@@ -257,15 +257,15 @@ void DescribeAutoProvisioningGroupsRequest::setCallerBid(const std::string& call
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DescribeAutoProvisioningGroupsRequest::getOwnerId()const
+long DescribeAutoProvisioningGroupsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeAutoProvisioningGroupsRequest::setOwnerId(bool ownerId)
+void DescribeAutoProvisioningGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeAutoProvisioningGroupsRequest::getProxy_trust_transport_info()const
@@ -276,7 +276,7 @@ bool DescribeAutoProvisioningGroupsRequest::getProxy_trust_transport_info()const
 void DescribeAutoProvisioningGroupsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeAutoProvisioningGroupsRequest::getAk_mfa_present()const
@@ -287,7 +287,7 @@ bool DescribeAutoProvisioningGroupsRequest::getAk_mfa_present()const
 void DescribeAutoProvisioningGroupsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 std::vector<std::string> DescribeAutoProvisioningGroupsRequest::getAutoProvisioningGroupId()const
@@ -299,7 +299,7 @@ void DescribeAutoProvisioningGroupsRequest::setAutoProvisioningGroupId(const std
 {
 	autoProvisioningGroupId_ = autoProvisioningGroupId;
 	for(int i = 0; i!= autoProvisioningGroupId.size(); i++)
-		setCoreParameter("AutoProvisioningGroupId."+ std::to_string(i), autoProvisioningGroupId.at(i));
+		setCoreParameter("AutoProvisioningGroupId."+ std::to_string(i), std::to_string(autoProvisioningGroupId.at(i)));
 }
 
 bool DescribeAutoProvisioningGroupsRequest::getSecurity_transport()const
@@ -310,7 +310,7 @@ bool DescribeAutoProvisioningGroupsRequest::getSecurity_transport()const
 void DescribeAutoProvisioningGroupsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getRequestId()const

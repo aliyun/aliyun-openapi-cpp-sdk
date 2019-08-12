@@ -25,15 +25,15 @@ CreateSnapshotRequest::CreateSnapshotRequest() :
 CreateSnapshotRequest::~CreateSnapshotRequest()
 {}
 
-bool CreateSnapshotRequest::getResourceOwnerId()const
+long CreateSnapshotRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateSnapshotRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateSnapshotRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateSnapshotRequest::getResourceOwnerAccount()const
@@ -91,15 +91,15 @@ void CreateSnapshotRequest::setSnapshotName(const std::string& snapshotName)
 	setCoreParameter("SnapshotName", snapshotName);
 }
 
-bool CreateSnapshotRequest::getOwnerId()const
+long CreateSnapshotRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateSnapshotRequest::setOwnerId(bool ownerId)
+void CreateSnapshotRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateSnapshotRequest::getSourceRegionId()const
@@ -132,7 +132,7 @@ bool CreateSnapshotRequest::getRemoveSourceSnapshot()const
 void CreateSnapshotRequest::setRemoveSourceSnapshot(bool removeSourceSnapshot)
 {
 	removeSourceSnapshot_ = removeSourceSnapshot;
-	setCoreParameter("RemoveSourceSnapshot", removeSourceSnapshot ? "true" : "false");
+	setCoreParameter("RemoveSourceSnapshot", removeSourceSnapshot);
 }
 
 std::string CreateSnapshotRequest::getDiskId()const
@@ -154,7 +154,7 @@ int CreateSnapshotRequest::getRetentionDays()const
 void CreateSnapshotRequest::setRetentionDays(int retentionDays)
 {
 	retentionDays_ = retentionDays;
-	setCoreParameter("RetentionDays", std::to_string(retentionDays));
+	setCoreParameter("RetentionDays", retentionDays);
 }
 
 std::vector<CreateSnapshotRequest::Tag> CreateSnapshotRequest::getTag()const
@@ -169,8 +169,8 @@ void CreateSnapshotRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 

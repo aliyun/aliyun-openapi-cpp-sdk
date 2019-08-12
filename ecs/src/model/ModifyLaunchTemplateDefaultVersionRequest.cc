@@ -36,26 +36,26 @@ void ModifyLaunchTemplateDefaultVersionRequest::setLaunchTemplateName(const std:
 	setCoreParameter("LaunchTemplateName", launchTemplateName);
 }
 
-bool ModifyLaunchTemplateDefaultVersionRequest::getResourceOwnerId()const
+long ModifyLaunchTemplateDefaultVersionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyLaunchTemplateDefaultVersionRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyLaunchTemplateDefaultVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ModifyLaunchTemplateDefaultVersionRequest::getCallerParentId()const
+long ModifyLaunchTemplateDefaultVersionRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ModifyLaunchTemplateDefaultVersionRequest::setCallerParentId(bool callerParentId)
+void ModifyLaunchTemplateDefaultVersionRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ModifyLaunchTemplateDefaultVersionRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool ModifyLaunchTemplateDefaultVersionRequest::getProxy_original_security_trans
 void ModifyLaunchTemplateDefaultVersionRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getProxy_original_source_ip()const
@@ -154,7 +154,7 @@ bool ModifyLaunchTemplateDefaultVersionRequest::getEnable()const
 void ModifyLaunchTemplateDefaultVersionRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getRequestContent()const
@@ -190,15 +190,15 @@ void ModifyLaunchTemplateDefaultVersionRequest::setCallerUidEmail(const std::str
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ModifyLaunchTemplateDefaultVersionRequest::getCallerUid()const
+long ModifyLaunchTemplateDefaultVersionRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ModifyLaunchTemplateDefaultVersionRequest::setCallerUid(bool callerUid)
+void ModifyLaunchTemplateDefaultVersionRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getApp_ip()const
@@ -256,15 +256,15 @@ void ModifyLaunchTemplateDefaultVersionRequest::setCallerBid(const std::string& 
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ModifyLaunchTemplateDefaultVersionRequest::getOwnerId()const
+long ModifyLaunchTemplateDefaultVersionRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyLaunchTemplateDefaultVersionRequest::setOwnerId(bool ownerId)
+void ModifyLaunchTemplateDefaultVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ModifyLaunchTemplateDefaultVersionRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool ModifyLaunchTemplateDefaultVersionRequest::getProxy_trust_transport_info()c
 void ModifyLaunchTemplateDefaultVersionRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifyLaunchTemplateDefaultVersionRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool ModifyLaunchTemplateDefaultVersionRequest::getAk_mfa_present()const
 void ModifyLaunchTemplateDefaultVersionRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ModifyLaunchTemplateDefaultVersionRequest::getSecurity_transport()const
@@ -297,18 +297,18 @@ bool ModifyLaunchTemplateDefaultVersionRequest::getSecurity_transport()const
 void ModifyLaunchTemplateDefaultVersionRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
-bool ModifyLaunchTemplateDefaultVersionRequest::getDefaultVersionNumber()const
+long ModifyLaunchTemplateDefaultVersionRequest::getDefaultVersionNumber()const
 {
 	return defaultVersionNumber_;
 }
 
-void ModifyLaunchTemplateDefaultVersionRequest::setDefaultVersionNumber(bool defaultVersionNumber)
+void ModifyLaunchTemplateDefaultVersionRequest::setDefaultVersionNumber(long defaultVersionNumber)
 {
 	defaultVersionNumber_ = defaultVersionNumber;
-	setCoreParameter("DefaultVersionNumber", defaultVersionNumber ? "true" : "false");
+	setCoreParameter("DefaultVersionNumber", defaultVersionNumber);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getRequestId()const

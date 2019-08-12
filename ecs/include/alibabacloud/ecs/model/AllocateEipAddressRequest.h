@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				AllocateEipAddressRequest();
 				~AllocateEipAddressRequest();
 
-				bool getActivityId()const;
-				void setActivityId(bool activityId);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getActivityId()const;
+				void setActivityId(long activityId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
@@ -53,12 +53,12 @@ namespace AlibabaCloud
 				void setISP(const std::string& iSP);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				bool activityId_;
-				bool resourceOwnerId_;
+				long activityId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string bandwidth_;
@@ -66,7 +66,7 @@ namespace AlibabaCloud
 				std::string internetChargeType_;
 				std::string iSP_;
 				std::string ownerAccount_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

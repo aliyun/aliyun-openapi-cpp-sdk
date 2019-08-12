@@ -25,15 +25,15 @@ DescribeVpcsRequest::DescribeVpcsRequest() :
 DescribeVpcsRequest::~DescribeVpcsRequest()
 {}
 
-bool DescribeVpcsRequest::getResourceOwnerId()const
+long DescribeVpcsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeVpcsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeVpcsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeVpcsRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ int DescribeVpcsRequest::getPageSize()const
 void DescribeVpcsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 bool DescribeVpcsRequest::getIsDefault()const
@@ -99,18 +99,18 @@ bool DescribeVpcsRequest::getIsDefault()const
 void DescribeVpcsRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault ? "true" : "false");
+	setCoreParameter("IsDefault", isDefault);
 }
 
-bool DescribeVpcsRequest::getOwnerId()const
+long DescribeVpcsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeVpcsRequest::setOwnerId(bool ownerId)
+void DescribeVpcsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeVpcsRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int DescribeVpcsRequest::getPageNumber()const
 void DescribeVpcsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

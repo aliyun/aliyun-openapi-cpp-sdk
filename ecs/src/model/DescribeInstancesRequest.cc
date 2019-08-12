@@ -36,15 +36,15 @@ void DescribeInstancesRequest::setInnerIpAddresses(const std::string& innerIpAdd
 	setCoreParameter("InnerIpAddresses", innerIpAddresses);
 }
 
-bool DescribeInstancesRequest::getResourceOwnerId()const
+long DescribeInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeInstancesRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInstancesRequest::getImageId()const
@@ -110,7 +110,7 @@ bool DescribeInstancesRequest::getIoOptimized()const
 void DescribeInstancesRequest::setIoOptimized(bool ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
+	setCoreParameter("IoOptimized", ioOptimized);
 }
 
 std::string DescribeInstancesRequest::getSecurityGroupId()const
@@ -154,7 +154,7 @@ int DescribeInstancesRequest::getPageNumber()const
 void DescribeInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeInstancesRequest::getSourceRegionId()const
@@ -231,7 +231,7 @@ bool DescribeInstancesRequest::getDeviceAvailable()const
 void DescribeInstancesRequest::setDeviceAvailable(bool deviceAvailable)
 {
 	deviceAvailable_ = deviceAvailable;
-	setCoreParameter("DeviceAvailable", deviceAvailable ? "true" : "false");
+	setCoreParameter("DeviceAvailable", deviceAvailable);
 }
 
 int DescribeInstancesRequest::getPageSize()const
@@ -242,7 +242,7 @@ int DescribeInstancesRequest::getPageSize()const
 void DescribeInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeInstancesRequest::getPublicIpAddresses()const
@@ -279,8 +279,8 @@ void DescribeInstancesRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -314,7 +314,7 @@ bool DescribeInstancesRequest::getDryRun()const
 void DescribeInstancesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun);
 }
 
 std::string DescribeInstancesRequest::getResourceOwnerAccount()const
@@ -369,7 +369,7 @@ bool DescribeInstancesRequest::getNeedSaleCycle()const
 void DescribeInstancesRequest::setNeedSaleCycle(bool needSaleCycle)
 {
 	needSaleCycle_ = needSaleCycle;
-	setCoreParameter("NeedSaleCycle", needSaleCycle ? "true" : "false");
+	setCoreParameter("NeedSaleCycle", needSaleCycle);
 }
 
 std::string DescribeInstancesRequest::getFilter2Key()const
@@ -383,15 +383,15 @@ void DescribeInstancesRequest::setFilter2Key(const std::string& filter2Key)
 	setCoreParameter("Filter2Key", filter2Key);
 }
 
-bool DescribeInstancesRequest::getOwnerId()const
+long DescribeInstancesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeInstancesRequest::setOwnerId(bool ownerId)
+void DescribeInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeInstancesRequest::getVSwitchId()const

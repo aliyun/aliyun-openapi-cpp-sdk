@@ -42,8 +42,8 @@ namespace AlibabaCloud
 
 				std::string getInnerIpAddresses()const;
 				void setInnerIpAddresses(const std::string& innerIpAddresses);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
 				std::string getPrivateIpAddresses()const;
@@ -104,8 +104,8 @@ namespace AlibabaCloud
 				void setNeedSaleCycle(bool needSaleCycle);
 				std::string getFilter2Key()const;
 				void setFilter2Key(const std::string& filter2Key);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getEipAddresses()const;
@@ -129,7 +129,7 @@ namespace AlibabaCloud
 
             private:
 				std::string innerIpAddresses_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string imageId_;
 				std::string privateIpAddresses_;
 				std::string hpcClusterId_;
@@ -160,7 +160,7 @@ namespace AlibabaCloud
 				std::string filter1Value_;
 				bool needSaleCycle_;
 				std::string filter2Key_;
-				bool ownerId_;
+				long ownerId_;
 				std::string vSwitchId_;
 				std::string eipAddresses_;
 				std::string instanceName_;

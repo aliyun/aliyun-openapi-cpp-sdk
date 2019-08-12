@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				EipFillParamsRequest();
 				~EipFillParamsRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getData()const;
 				void setData(const std::string& data);
 				std::string getResourceOwnerAccount()const;
@@ -47,17 +47,17 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getUserCidr()const;
 				void setUserCidr(const std::string& userCidr);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string data_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string ownerAccount_;
 				std::string userCidr_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

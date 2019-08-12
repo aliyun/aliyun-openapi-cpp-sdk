@@ -36,15 +36,15 @@ void DetachKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DetachKeyPairRequest::getResourceOwnerId()const
+long DetachKeyPairRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DetachKeyPairRequest::setResourceOwnerId(bool resourceOwnerId)
+void DetachKeyPairRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DetachKeyPairRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void DetachKeyPairRequest::setKeyPairName(const std::string& keyPairName)
 	setCoreParameter("KeyPairName", keyPairName);
 }
 
-bool DetachKeyPairRequest::getOwnerId()const
+long DetachKeyPairRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DetachKeyPairRequest::setOwnerId(bool ownerId)
+void DetachKeyPairRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

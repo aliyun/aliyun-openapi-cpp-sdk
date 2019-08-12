@@ -25,15 +25,15 @@ ModifyRouterInterfaceSpecRequest::ModifyRouterInterfaceSpecRequest() :
 ModifyRouterInterfaceSpecRequest::~ModifyRouterInterfaceSpecRequest()
 {}
 
-bool ModifyRouterInterfaceSpecRequest::getResourceOwnerId()const
+long ModifyRouterInterfaceSpecRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyRouterInterfaceSpecRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyRouterInterfaceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyRouterInterfaceSpecRequest::getRegionId()const
@@ -102,15 +102,15 @@ void ModifyRouterInterfaceSpecRequest::setRouterInterfaceId(const std::string& r
 	setCoreParameter("RouterInterfaceId", routerInterfaceId);
 }
 
-bool ModifyRouterInterfaceSpecRequest::getOwnerId()const
+long ModifyRouterInterfaceSpecRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyRouterInterfaceSpecRequest::setOwnerId(bool ownerId)
+void ModifyRouterInterfaceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyRouterInterfaceSpecRequest::getSpec()const

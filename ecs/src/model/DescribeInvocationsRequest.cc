@@ -25,15 +25,15 @@ DescribeInvocationsRequest::DescribeInvocationsRequest() :
 DescribeInvocationsRequest::~DescribeInvocationsRequest()
 {}
 
-bool DescribeInvocationsRequest::getResourceOwnerId()const
+long DescribeInvocationsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeInvocationsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeInvocationsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInvocationsRequest::getInvokeStatus()const
@@ -47,15 +47,15 @@ void DescribeInvocationsRequest::setInvokeStatus(const std::string& invokeStatus
 	setCoreParameter("InvokeStatus", invokeStatus);
 }
 
-bool DescribeInvocationsRequest::getCallerParentId()const
+long DescribeInvocationsRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeInvocationsRequest::setCallerParentId(bool callerParentId)
+void DescribeInvocationsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeInvocationsRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool DescribeInvocationsRequest::getProxy_original_security_transport()const
 void DescribeInvocationsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeInvocationsRequest::getProxy_original_source_ip()const
@@ -113,15 +113,15 @@ void DescribeInvocationsRequest::setCallerType(const std::string& callerType)
 	setCoreParameter("CallerType", callerType);
 }
 
-bool DescribeInvocationsRequest::getPageNumber()const
+long DescribeInvocationsRequest::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeInvocationsRequest::setPageNumber(bool pageNumber)
+void DescribeInvocationsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber ? "true" : "false");
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeInvocationsRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ bool DescribeInvocationsRequest::getEnable()const
 void DescribeInvocationsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeInvocationsRequest::getRequestContent()const
@@ -190,15 +190,15 @@ void DescribeInvocationsRequest::setRequestContent(const std::string& requestCon
 	setCoreParameter("RequestContent", requestContent);
 }
 
-bool DescribeInvocationsRequest::getPageSize()const
+long DescribeInvocationsRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeInvocationsRequest::setPageSize(bool pageSize)
+void DescribeInvocationsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize ? "true" : "false");
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeInvocationsRequest::getCallerBidEmail()const
@@ -223,15 +223,15 @@ void DescribeInvocationsRequest::setCallerUidEmail(const std::string& callerUidE
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DescribeInvocationsRequest::getCallerUid()const
+long DescribeInvocationsRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeInvocationsRequest::setCallerUid(bool callerUid)
+void DescribeInvocationsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeInvocationsRequest::getInvokeId()const
@@ -264,7 +264,7 @@ bool DescribeInvocationsRequest::getTimed()const
 void DescribeInvocationsRequest::setTimed(bool timed)
 {
 	timed_ = timed;
-	setCoreParameter("Timed", timed ? "true" : "false");
+	setCoreParameter("Timed", timed);
 }
 
 std::string DescribeInvocationsRequest::getCommandName()const
@@ -311,15 +311,15 @@ void DescribeInvocationsRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DescribeInvocationsRequest::getOwnerId()const
+long DescribeInvocationsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeInvocationsRequest::setOwnerId(bool ownerId)
+void DescribeInvocationsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeInvocationsRequest::getProxy_trust_transport_info()const
@@ -330,7 +330,7 @@ bool DescribeInvocationsRequest::getProxy_trust_transport_info()const
 void DescribeInvocationsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeInvocationsRequest::getAk_mfa_present()const
@@ -341,7 +341,7 @@ bool DescribeInvocationsRequest::getAk_mfa_present()const
 void DescribeInvocationsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeInvocationsRequest::getSecurity_transport()const
@@ -352,7 +352,7 @@ bool DescribeInvocationsRequest::getSecurity_transport()const
 void DescribeInvocationsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeInvocationsRequest::getCommandType()const

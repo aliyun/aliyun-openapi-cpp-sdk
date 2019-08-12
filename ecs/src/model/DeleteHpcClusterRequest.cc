@@ -25,15 +25,15 @@ DeleteHpcClusterRequest::DeleteHpcClusterRequest() :
 DeleteHpcClusterRequest::~DeleteHpcClusterRequest()
 {}
 
-bool DeleteHpcClusterRequest::getResourceOwnerId()const
+long DeleteHpcClusterRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteHpcClusterRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteHpcClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteHpcClusterRequest::getHpcClusterId()const
@@ -58,15 +58,15 @@ void DeleteHpcClusterRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-bool DeleteHpcClusterRequest::getCallerParentId()const
+long DeleteHpcClusterRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DeleteHpcClusterRequest::setCallerParentId(bool callerParentId)
+void DeleteHpcClusterRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DeleteHpcClusterRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool DeleteHpcClusterRequest::getProxy_original_security_transport()const
 void DeleteHpcClusterRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DeleteHpcClusterRequest::getProxy_original_source_ip()const
@@ -165,7 +165,7 @@ bool DeleteHpcClusterRequest::getEnable()const
 void DeleteHpcClusterRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DeleteHpcClusterRequest::getRequestContent()const
@@ -201,15 +201,15 @@ void DeleteHpcClusterRequest::setCallerUidEmail(const std::string& callerUidEmai
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DeleteHpcClusterRequest::getCallerUid()const
+long DeleteHpcClusterRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DeleteHpcClusterRequest::setCallerUid(bool callerUid)
+void DeleteHpcClusterRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DeleteHpcClusterRequest::getApp_ip()const
@@ -256,15 +256,15 @@ void DeleteHpcClusterRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DeleteHpcClusterRequest::getOwnerId()const
+long DeleteHpcClusterRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteHpcClusterRequest::setOwnerId(bool ownerId)
+void DeleteHpcClusterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DeleteHpcClusterRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool DeleteHpcClusterRequest::getProxy_trust_transport_info()const
 void DeleteHpcClusterRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DeleteHpcClusterRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DeleteHpcClusterRequest::getAk_mfa_present()const
 void DeleteHpcClusterRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DeleteHpcClusterRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DeleteHpcClusterRequest::getSecurity_transport()const
 void DeleteHpcClusterRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DeleteHpcClusterRequest::getRequestId()const

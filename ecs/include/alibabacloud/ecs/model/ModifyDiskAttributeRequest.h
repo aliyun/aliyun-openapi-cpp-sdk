@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				void setDiskName(const std::string& diskName);
 				bool getDeleteAutoSnapshot()const;
 				void setDeleteAutoSnapshot(bool deleteAutoSnapshot);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				bool getEnableAutoSnapshot()const;
 				void setEnableAutoSnapshot(bool enableAutoSnapshot);
 				std::string getResourceOwnerAccount()const;
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getDiskId()const;
 				void setDiskId(const std::string& diskId);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				bool getDeleteWithInstance()const;
 				void setDeleteWithInstance(bool deleteWithInstance);
 
@@ -62,13 +62,13 @@ namespace AlibabaCloud
 				std::string sourceRegionId_;
 				std::string diskName_;
 				bool deleteAutoSnapshot_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				bool enableAutoSnapshot_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string description_;
 				std::string diskId_;
-				bool ownerId_;
+				long ownerId_;
 				bool deleteWithInstance_;
 
 			};

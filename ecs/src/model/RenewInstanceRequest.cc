@@ -36,15 +36,15 @@ void RenewInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool RenewInstanceRequest::getResourceOwnerId()const
+long RenewInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void RenewInstanceRequest::setResourceOwnerId(bool resourceOwnerId)
+void RenewInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int RenewInstanceRequest::getPeriod()const
@@ -55,7 +55,7 @@ int RenewInstanceRequest::getPeriod()const
 void RenewInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string RenewInstanceRequest::getPeriodUnit()const
@@ -113,14 +113,14 @@ void RenewInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool RenewInstanceRequest::getOwnerId()const
+long RenewInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void RenewInstanceRequest::setOwnerId(bool ownerId)
+void RenewInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

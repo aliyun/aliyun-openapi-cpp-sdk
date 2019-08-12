@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DescribeEipAddressesRequest();
 				~DescribeEipAddressesRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getFilter2Value()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				void setFilter1Value(const std::string& filter1Value);
 				std::string getFilter2Key()const;
 				void setFilter2Key(const std::string& filter2Key);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getEipAddress()const;
 				void setEipAddress(const std::string& eipAddress);
 				int getPageNumber()const;
@@ -75,7 +75,7 @@ namespace AlibabaCloud
 				void setStatus(const std::string& status);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string filter2Value_;
 				std::string iSP_;
@@ -83,7 +83,7 @@ namespace AlibabaCloud
 				std::string allocationId_;
 				std::string filter1Value_;
 				std::string filter2Key_;
-				bool ownerId_;
+				long ownerId_;
 				std::string eipAddress_;
 				int pageNumber_;
 				std::string lockReason_;

@@ -58,15 +58,15 @@ void ModifyInstanceVpcAttributeRequest::setPrivateIpAddress(const std::string& p
 	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
-bool ModifyInstanceVpcAttributeRequest::getResourceOwnerId()const
+long ModifyInstanceVpcAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyInstanceVpcAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyInstanceVpcAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyInstanceVpcAttributeRequest::getInstanceId()const
@@ -102,14 +102,14 @@ void ModifyInstanceVpcAttributeRequest::setOwnerAccount(const std::string& owner
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool ModifyInstanceVpcAttributeRequest::getOwnerId()const
+long ModifyInstanceVpcAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyInstanceVpcAttributeRequest::setOwnerId(bool ownerId)
+void ModifyInstanceVpcAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

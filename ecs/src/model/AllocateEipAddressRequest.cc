@@ -25,26 +25,26 @@ AllocateEipAddressRequest::AllocateEipAddressRequest() :
 AllocateEipAddressRequest::~AllocateEipAddressRequest()
 {}
 
-bool AllocateEipAddressRequest::getActivityId()const
+long AllocateEipAddressRequest::getActivityId()const
 {
 	return activityId_;
 }
 
-void AllocateEipAddressRequest::setActivityId(bool activityId)
+void AllocateEipAddressRequest::setActivityId(long activityId)
 {
 	activityId_ = activityId;
-	setCoreParameter("ActivityId", activityId ? "true" : "false");
+	setCoreParameter("ActivityId", activityId);
 }
 
-bool AllocateEipAddressRequest::getResourceOwnerId()const
+long AllocateEipAddressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void AllocateEipAddressRequest::setResourceOwnerId(bool resourceOwnerId)
+void AllocateEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AllocateEipAddressRequest::getResourceOwnerAccount()const
@@ -124,14 +124,14 @@ void AllocateEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool AllocateEipAddressRequest::getOwnerId()const
+long AllocateEipAddressRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void AllocateEipAddressRequest::setOwnerId(bool ownerId)
+void AllocateEipAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

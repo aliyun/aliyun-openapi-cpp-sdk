@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DescribeEipMonitorDataRequest();
 				~DescribeEipMonitorDataRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				int getPeriod()const;
 				void setPeriod(int period);
 				std::string getResourceOwnerAccount()const;
@@ -51,11 +51,11 @@ namespace AlibabaCloud
 				void setAllocationId(const std::string& allocationId);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				int period_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
@@ -63,7 +63,7 @@ namespace AlibabaCloud
 				std::string endTime_;
 				std::string allocationId_;
 				std::string startTime_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

@@ -43,12 +43,12 @@ namespace AlibabaCloud
 				CreateFleetRequest();
 				~CreateFleetRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getFleetType()const;
 				void setFleetType(const std::string& fleetType);
-				bool getCallerParentId()const;
-				void setCallerParentId(bool callerParentId);
+				long getCallerParentId()const;
+				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
 				std::string getDescription()const;
@@ -91,8 +91,8 @@ namespace AlibabaCloud
 				void setValidUntil(const std::string& validUntil);
 				std::string getCallerUidEmail()const;
 				void setCallerUidEmail(const std::string& callerUidEmail);
-				bool getCallerUid()const;
-				void setCallerUid(bool callerUid);
+				long getCallerUid()const;
+				void setCallerUid(long callerUid);
 				std::string getFillGapWithOnDemand()const;
 				void setFillGapWithOnDemand(const std::string& fillGapWithOnDemand);
 				std::string getApp_ip()const;
@@ -109,8 +109,8 @@ namespace AlibabaCloud
 				void setSpotInstancePoolsToUseCount(int spotInstancePoolsToUseCount);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getLaunchTemplateVersion()const;
 				void setLaunchTemplateVersion(const std::string& launchTemplateVersion);
 				bool getProxy_trust_transport_info()const;
@@ -135,9 +135,9 @@ namespace AlibabaCloud
 				void setMaxSpotPrice(float maxSpotPrice);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string fleetType_;
-				bool callerParentId_;
+				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string description_;
 				std::string proxy_original_source_ip_;
@@ -159,7 +159,7 @@ namespace AlibabaCloud
 				std::vector<LaunchTemplateConfig> launchTemplateConfig_;
 				std::string validUntil_;
 				std::string callerUidEmail_;
-				bool callerUid_;
+				long callerUid_;
 				std::string fillGapWithOnDemand_;
 				std::string app_ip_;
 				std::string spotInstanceInterruptionBehavior_;
@@ -168,7 +168,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				int spotInstancePoolsToUseCount_;
 				std::string callerBid_;
-				bool ownerId_;
+				long ownerId_;
 				std::string launchTemplateVersion_;
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;

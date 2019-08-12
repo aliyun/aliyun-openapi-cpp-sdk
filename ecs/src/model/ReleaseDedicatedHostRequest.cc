@@ -25,26 +25,26 @@ ReleaseDedicatedHostRequest::ReleaseDedicatedHostRequest() :
 ReleaseDedicatedHostRequest::~ReleaseDedicatedHostRequest()
 {}
 
-bool ReleaseDedicatedHostRequest::getResourceOwnerId()const
+long ReleaseDedicatedHostRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ReleaseDedicatedHostRequest::setResourceOwnerId(bool resourceOwnerId)
+void ReleaseDedicatedHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ReleaseDedicatedHostRequest::getCallerParentId()const
+long ReleaseDedicatedHostRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ReleaseDedicatedHostRequest::setCallerParentId(bool callerParentId)
+void ReleaseDedicatedHostRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ReleaseDedicatedHostRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool ReleaseDedicatedHostRequest::getProxy_original_security_transport()const
 void ReleaseDedicatedHostRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ReleaseDedicatedHostRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool ReleaseDedicatedHostRequest::getEnable()const
 void ReleaseDedicatedHostRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ReleaseDedicatedHostRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void ReleaseDedicatedHostRequest::setCallerUidEmail(const std::string& callerUid
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ReleaseDedicatedHostRequest::getCallerUid()const
+long ReleaseDedicatedHostRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ReleaseDedicatedHostRequest::setCallerUid(bool callerUid)
+void ReleaseDedicatedHostRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ReleaseDedicatedHostRequest::getApp_ip()const
@@ -245,15 +245,15 @@ void ReleaseDedicatedHostRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ReleaseDedicatedHostRequest::getOwnerId()const
+long ReleaseDedicatedHostRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ReleaseDedicatedHostRequest::setOwnerId(bool ownerId)
+void ReleaseDedicatedHostRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ReleaseDedicatedHostRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool ReleaseDedicatedHostRequest::getProxy_trust_transport_info()const
 void ReleaseDedicatedHostRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ReleaseDedicatedHostRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool ReleaseDedicatedHostRequest::getAk_mfa_present()const
 void ReleaseDedicatedHostRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ReleaseDedicatedHostRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool ReleaseDedicatedHostRequest::getSecurity_transport()const
 void ReleaseDedicatedHostRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ReleaseDedicatedHostRequest::getRequestId()const

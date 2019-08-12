@@ -44,7 +44,7 @@ int ModifyDedicatedHostAutoRenewAttributeRequest::getDuration()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", duration);
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getDedicatedHostIds()const
@@ -58,15 +58,15 @@ void ModifyDedicatedHostAutoRenewAttributeRequest::setDedicatedHostIds(const std
 	setCoreParameter("DedicatedHostIds", dedicatedHostIds);
 }
 
-bool ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerId()const
+long ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyDedicatedHostAutoRenewAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyDedicatedHostAutoRenewAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getPeriodUnit()const
@@ -88,7 +88,7 @@ bool ModifyDedicatedHostAutoRenewAttributeRequest::getAutoRenew()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
+	setCoreParameter("AutoRenew", autoRenew);
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerAccount()const
@@ -135,14 +135,14 @@ void ModifyDedicatedHostAutoRenewAttributeRequest::setRenewalStatus(const std::s
 	setCoreParameter("RenewalStatus", renewalStatus);
 }
 
-bool ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerId()const
+long ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyDedicatedHostAutoRenewAttributeRequest::setOwnerId(bool ownerId)
+void ModifyDedicatedHostAutoRenewAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

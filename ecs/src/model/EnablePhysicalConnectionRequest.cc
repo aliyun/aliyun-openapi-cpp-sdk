@@ -25,15 +25,15 @@ EnablePhysicalConnectionRequest::EnablePhysicalConnectionRequest() :
 EnablePhysicalConnectionRequest::~EnablePhysicalConnectionRequest()
 {}
 
-bool EnablePhysicalConnectionRequest::getResourceOwnerId()const
+long EnablePhysicalConnectionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void EnablePhysicalConnectionRequest::setResourceOwnerId(bool resourceOwnerId)
+void EnablePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string EnablePhysicalConnectionRequest::getRegionId()const
@@ -102,14 +102,14 @@ void EnablePhysicalConnectionRequest::setUserCidr(const std::string& userCidr)
 	setCoreParameter("UserCidr", userCidr);
 }
 
-bool EnablePhysicalConnectionRequest::getOwnerId()const
+long EnablePhysicalConnectionRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void EnablePhysicalConnectionRequest::setOwnerId(bool ownerId)
+void EnablePhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

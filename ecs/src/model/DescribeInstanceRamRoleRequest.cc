@@ -36,15 +36,15 @@ void DescribeInstanceRamRoleRequest::setSourceRegionId(const std::string& source
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeInstanceRamRoleRequest::getResourceOwnerId()const
+long DescribeInstanceRamRoleRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeInstanceRamRoleRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeInstanceRamRoleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInstanceRamRoleRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ int DescribeInstanceRamRoleRequest::getPageSize()const
 void DescribeInstanceRamRoleRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeInstanceRamRoleRequest::getRamRoleName()const
@@ -102,15 +102,15 @@ void DescribeInstanceRamRoleRequest::setRamRoleName(const std::string& ramRoleNa
 	setCoreParameter("RamRoleName", ramRoleName);
 }
 
-bool DescribeInstanceRamRoleRequest::getOwnerId()const
+long DescribeInstanceRamRoleRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeInstanceRamRoleRequest::setOwnerId(bool ownerId)
+void DescribeInstanceRamRoleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeInstanceRamRoleRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int DescribeInstanceRamRoleRequest::getPageNumber()const
 void DescribeInstanceRamRoleRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

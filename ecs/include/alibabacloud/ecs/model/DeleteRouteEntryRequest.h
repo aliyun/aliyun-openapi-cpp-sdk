@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				DeleteRouteEntryRequest();
 				~DeleteRouteEntryRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
@@ -52,21 +52,21 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getNextHopId()const;
 				void setNextHopId(const std::string& nextHopId);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::vector<NextHopList> getNextHopList()const;
 				void setNextHopList(const std::vector<NextHopList>& nextHopList);
 				std::string getRouteTableId()const;
 				void setRouteTableId(const std::string& routeTableId);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string destinationCidrBlock_;
 				std::string ownerAccount_;
 				std::string nextHopId_;
-				bool ownerId_;
+				long ownerId_;
 				std::vector<NextHopList> nextHopList_;
 				std::string routeTableId_;
 

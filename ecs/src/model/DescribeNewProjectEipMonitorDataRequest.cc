@@ -25,15 +25,15 @@ DescribeNewProjectEipMonitorDataRequest::DescribeNewProjectEipMonitorDataRequest
 DescribeNewProjectEipMonitorDataRequest::~DescribeNewProjectEipMonitorDataRequest()
 {}
 
-bool DescribeNewProjectEipMonitorDataRequest::getResourceOwnerId()const
+long DescribeNewProjectEipMonitorDataRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeNewProjectEipMonitorDataRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeNewProjectEipMonitorDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int DescribeNewProjectEipMonitorDataRequest::getPeriod()const
@@ -44,7 +44,7 @@ int DescribeNewProjectEipMonitorDataRequest::getPeriod()const
 void DescribeNewProjectEipMonitorDataRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string DescribeNewProjectEipMonitorDataRequest::getResourceOwnerAccount()const
@@ -113,14 +113,14 @@ void DescribeNewProjectEipMonitorDataRequest::setStartTime(const std::string& st
 	setCoreParameter("StartTime", startTime);
 }
 
-bool DescribeNewProjectEipMonitorDataRequest::getOwnerId()const
+long DescribeNewProjectEipMonitorDataRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeNewProjectEipMonitorDataRequest::setOwnerId(bool ownerId)
+void DescribeNewProjectEipMonitorDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

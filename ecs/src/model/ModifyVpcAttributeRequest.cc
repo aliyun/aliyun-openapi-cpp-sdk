@@ -36,15 +36,15 @@ void ModifyVpcAttributeRequest::setVpcName(const std::string& vpcName)
 	setCoreParameter("VpcName", vpcName);
 }
 
-bool ModifyVpcAttributeRequest::getResourceOwnerId()const
+long ModifyVpcAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyVpcAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyVpcAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyVpcAttributeRequest::getResourceOwnerAccount()const
@@ -124,14 +124,14 @@ void ModifyVpcAttributeRequest::setUserCidr(const std::string& userCidr)
 	setCoreParameter("UserCidr", userCidr);
 }
 
-bool ModifyVpcAttributeRequest::getOwnerId()const
+long ModifyVpcAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyVpcAttributeRequest::setOwnerId(bool ownerId)
+void ModifyVpcAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

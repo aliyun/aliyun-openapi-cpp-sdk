@@ -36,15 +36,15 @@ void DescribeInstanceAutoRenewAttributeRequest::setSourceRegionId(const std::str
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeInstanceAutoRenewAttributeRequest::getResourceOwnerId()const
+long DescribeInstanceAutoRenewAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeInstanceAutoRenewAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeInstanceAutoRenewAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInstanceAutoRenewAttributeRequest::getInstanceId()const
@@ -113,15 +113,15 @@ void DescribeInstanceAutoRenewAttributeRequest::setPageSize(const std::string& p
 	setCoreParameter("PageSize", pageSize);
 }
 
-bool DescribeInstanceAutoRenewAttributeRequest::getOwnerId()const
+long DescribeInstanceAutoRenewAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeInstanceAutoRenewAttributeRequest::setOwnerId(bool ownerId)
+void DescribeInstanceAutoRenewAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeInstanceAutoRenewAttributeRequest::getPageNumber()const

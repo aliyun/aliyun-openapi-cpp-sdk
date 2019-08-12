@@ -25,15 +25,15 @@ DescribeEipAddressesRequest::DescribeEipAddressesRequest() :
 DescribeEipAddressesRequest::~DescribeEipAddressesRequest()
 {}
 
-bool DescribeEipAddressesRequest::getResourceOwnerId()const
+long DescribeEipAddressesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeEipAddressesRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeEipAddressesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeEipAddressesRequest::getResourceOwnerAccount()const
@@ -113,15 +113,15 @@ void DescribeEipAddressesRequest::setFilter2Key(const std::string& filter2Key)
 	setCoreParameter("Filter2Key", filter2Key);
 }
 
-bool DescribeEipAddressesRequest::getOwnerId()const
+long DescribeEipAddressesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeEipAddressesRequest::setOwnerId(bool ownerId)
+void DescribeEipAddressesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeEipAddressesRequest::getEipAddress()const
@@ -143,7 +143,7 @@ int DescribeEipAddressesRequest::getPageNumber()const
 void DescribeEipAddressesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeEipAddressesRequest::getLockReason()const
@@ -198,7 +198,7 @@ int DescribeEipAddressesRequest::getPageSize()const
 void DescribeEipAddressesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeEipAddressesRequest::getChargeType()const

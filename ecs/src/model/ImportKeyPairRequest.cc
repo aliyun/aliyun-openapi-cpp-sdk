@@ -36,15 +36,15 @@ void ImportKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ImportKeyPairRequest::getResourceOwnerId()const
+long ImportKeyPairRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ImportKeyPairRequest::setResourceOwnerId(bool resourceOwnerId)
+void ImportKeyPairRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ImportKeyPairRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void ImportKeyPairRequest::setKeyPairName(const std::string& keyPairName)
 	setCoreParameter("KeyPairName", keyPairName);
 }
 
-bool ImportKeyPairRequest::getOwnerId()const
+long ImportKeyPairRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ImportKeyPairRequest::setOwnerId(bool ownerId)
+void ImportKeyPairRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

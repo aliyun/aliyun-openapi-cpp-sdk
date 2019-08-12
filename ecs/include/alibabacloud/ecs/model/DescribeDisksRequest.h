@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				DescribeDisksRequest();
 				~DescribeDisksRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSnapshotId()const;
 				void setSnapshotId(const std::string& snapshotId);
 				std::string getFilter2Value()const;
@@ -90,8 +90,8 @@ namespace AlibabaCloud
 				void setEnableAutomatedSnapshotPolicy(bool enableAutomatedSnapshotPolicy);
 				std::string getFilter2Key()const;
 				void setFilter2Key(const std::string& filter2Key);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getDiskType()const;
 				void setDiskType(const std::string& diskType);
 				std::vector<std::string> getAdditionalAttributes()const;
@@ -112,7 +112,7 @@ namespace AlibabaCloud
 				void setStatus(const std::string& status);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string snapshotId_;
 				std::string filter2Value_;
 				std::string autoSnapshotPolicyId_;
@@ -137,7 +137,7 @@ namespace AlibabaCloud
 				bool portable_;
 				bool enableAutomatedSnapshotPolicy_;
 				std::string filter2Key_;
-				bool ownerId_;
+				long ownerId_;
 				std::string diskType_;
 				std::vector<std::string> additionalAttributes_;
 				bool enableShared_;

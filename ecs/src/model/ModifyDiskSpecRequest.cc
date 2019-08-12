@@ -25,26 +25,26 @@ ModifyDiskSpecRequest::ModifyDiskSpecRequest() :
 ModifyDiskSpecRequest::~ModifyDiskSpecRequest()
 {}
 
-bool ModifyDiskSpecRequest::getResourceOwnerId()const
+long ModifyDiskSpecRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyDiskSpecRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyDiskSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ModifyDiskSpecRequest::getCallerParentId()const
+long ModifyDiskSpecRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ModifyDiskSpecRequest::setCallerParentId(bool callerParentId)
+void ModifyDiskSpecRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ModifyDiskSpecRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool ModifyDiskSpecRequest::getProxy_original_security_transport()const
 void ModifyDiskSpecRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifyDiskSpecRequest::getProxy_original_source_ip()const
@@ -132,7 +132,7 @@ bool ModifyDiskSpecRequest::getEnable()const
 void ModifyDiskSpecRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ModifyDiskSpecRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void ModifyDiskSpecRequest::setCallerUidEmail(const std::string& callerUidEmail)
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ModifyDiskSpecRequest::getCallerUid()const
+long ModifyDiskSpecRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ModifyDiskSpecRequest::setCallerUid(bool callerUid)
+void ModifyDiskSpecRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifyDiskSpecRequest::getApp_ip()const
@@ -245,15 +245,15 @@ void ModifyDiskSpecRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ModifyDiskSpecRequest::getOwnerId()const
+long ModifyDiskSpecRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyDiskSpecRequest::setOwnerId(bool ownerId)
+void ModifyDiskSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ModifyDiskSpecRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool ModifyDiskSpecRequest::getProxy_trust_transport_info()const
 void ModifyDiskSpecRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifyDiskSpecRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool ModifyDiskSpecRequest::getAk_mfa_present()const
 void ModifyDiskSpecRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ModifyDiskSpecRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool ModifyDiskSpecRequest::getSecurity_transport()const
 void ModifyDiskSpecRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ModifyDiskSpecRequest::getRequestId()const

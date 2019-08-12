@@ -36,15 +36,15 @@ void ModifyImageSharePermissionRequest::setSourceRegionId(const std::string& sou
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ModifyImageSharePermissionRequest::getResourceOwnerId()const
+long ModifyImageSharePermissionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyImageSharePermissionRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyImageSharePermissionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyImageSharePermissionRequest::getImageId()const
@@ -67,7 +67,7 @@ void ModifyImageSharePermissionRequest::setAddAccount(const std::vector<std::str
 {
 	addAccount_ = addAccount;
 	for(int i = 0; i!= addAccount.size(); i++)
-		setCoreParameter("AddAccount."+ std::to_string(i), addAccount.at(i));
+		setCoreParameter("AddAccount."+ std::to_string(i), std::to_string(addAccount.at(i)));
 }
 
 std::string ModifyImageSharePermissionRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ void ModifyImageSharePermissionRequest::setRemoveAccount(const std::vector<std::
 {
 	removeAccount_ = removeAccount;
 	for(int i = 0; i!= removeAccount.size(); i++)
-		setCoreParameter("RemoveAccount."+ std::to_string(i), removeAccount.at(i));
+		setCoreParameter("RemoveAccount."+ std::to_string(i), std::to_string(removeAccount.at(i)));
 }
 
 std::string ModifyImageSharePermissionRequest::getOwnerAccount()const
@@ -115,14 +115,14 @@ void ModifyImageSharePermissionRequest::setOwnerAccount(const std::string& owner
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool ModifyImageSharePermissionRequest::getOwnerId()const
+long ModifyImageSharePermissionRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyImageSharePermissionRequest::setOwnerId(bool ownerId)
+void ModifyImageSharePermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

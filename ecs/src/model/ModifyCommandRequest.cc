@@ -25,26 +25,26 @@ ModifyCommandRequest::ModifyCommandRequest() :
 ModifyCommandRequest::~ModifyCommandRequest()
 {}
 
-bool ModifyCommandRequest::getResourceOwnerId()const
+long ModifyCommandRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyCommandRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ModifyCommandRequest::getCallerParentId()const
+long ModifyCommandRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ModifyCommandRequest::setCallerParentId(bool callerParentId)
+void ModifyCommandRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string ModifyCommandRequest::getWorkingDir()const
@@ -66,7 +66,7 @@ bool ModifyCommandRequest::getProxy_original_security_transport()const
 void ModifyCommandRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifyCommandRequest::getDescription()const
@@ -135,15 +135,15 @@ void ModifyCommandRequest::setCommandContent(const std::string& commandContent)
 	setCoreParameter("CommandContent", commandContent);
 }
 
-bool ModifyCommandRequest::getTimeout()const
+long ModifyCommandRequest::getTimeout()const
 {
 	return timeout_;
 }
 
-void ModifyCommandRequest::setTimeout(bool timeout)
+void ModifyCommandRequest::setTimeout(long timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", timeout ? "true" : "false");
+	setCoreParameter("Timeout", timeout);
 }
 
 std::string ModifyCommandRequest::getAccessKeyId()const
@@ -198,7 +198,7 @@ bool ModifyCommandRequest::getEnable()const
 void ModifyCommandRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ModifyCommandRequest::getRequestContent()const
@@ -234,15 +234,15 @@ void ModifyCommandRequest::setCallerUidEmail(const std::string& callerUidEmail)
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ModifyCommandRequest::getCallerUid()const
+long ModifyCommandRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ModifyCommandRequest::setCallerUid(bool callerUid)
+void ModifyCommandRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifyCommandRequest::getApp_ip()const
@@ -289,15 +289,15 @@ void ModifyCommandRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ModifyCommandRequest::getOwnerId()const
+long ModifyCommandRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyCommandRequest::setOwnerId(bool ownerId)
+void ModifyCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ModifyCommandRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ bool ModifyCommandRequest::getProxy_trust_transport_info()const
 void ModifyCommandRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifyCommandRequest::getAk_mfa_present()const
@@ -319,7 +319,7 @@ bool ModifyCommandRequest::getAk_mfa_present()const
 void ModifyCommandRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ModifyCommandRequest::getSecurity_transport()const
@@ -330,7 +330,7 @@ bool ModifyCommandRequest::getSecurity_transport()const
 void ModifyCommandRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ModifyCommandRequest::getRequestId()const

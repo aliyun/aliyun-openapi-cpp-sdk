@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				CreateNatGatewayRequest();
 				~CreateNatGatewayRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
@@ -57,13 +57,13 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::vector<BandwidthPackage> getBandwidthPackage()const;
 				void setBandwidthPackage(const std::vector<BandwidthPackage>& bandwidthPackage);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string clientToken_;
@@ -71,7 +71,7 @@ namespace AlibabaCloud
 				std::string vpcId_;
 				std::string name_;
 				std::string description_;
-				bool ownerId_;
+				long ownerId_;
 				std::vector<BandwidthPackage> bandwidthPackage_;
 
 			};

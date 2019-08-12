@@ -36,15 +36,15 @@ void DescribeUserDataRequest::setSourceRegionId(const std::string& sourceRegionI
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeUserDataRequest::getResourceOwnerId()const
+long DescribeUserDataRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeUserDataRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeUserDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeUserDataRequest::getInstanceId()const
@@ -80,14 +80,14 @@ void DescribeUserDataRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-bool DescribeUserDataRequest::getOwnerId()const
+long DescribeUserDataRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeUserDataRequest::setOwnerId(bool ownerId)
+void DescribeUserDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

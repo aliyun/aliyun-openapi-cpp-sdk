@@ -25,26 +25,26 @@ ModifyDedicatedHostAttributeRequest::ModifyDedicatedHostAttributeRequest() :
 ModifyDedicatedHostAttributeRequest::~ModifyDedicatedHostAttributeRequest()
 {}
 
-bool ModifyDedicatedHostAttributeRequest::getResourceOwnerId()const
+long ModifyDedicatedHostAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyDedicatedHostAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyDedicatedHostAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ModifyDedicatedHostAttributeRequest::getCallerParentId()const
+long ModifyDedicatedHostAttributeRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ModifyDedicatedHostAttributeRequest::setCallerParentId(bool callerParentId)
+void ModifyDedicatedHostAttributeRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ModifyDedicatedHostAttributeRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool ModifyDedicatedHostAttributeRequest::getProxy_original_security_transport()
 void ModifyDedicatedHostAttributeRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getDescription()const
@@ -154,7 +154,7 @@ bool ModifyDedicatedHostAttributeRequest::getEnable()const
 void ModifyDedicatedHostAttributeRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getRequestContent()const
@@ -201,15 +201,15 @@ void ModifyDedicatedHostAttributeRequest::setCallerUidEmail(const std::string& c
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ModifyDedicatedHostAttributeRequest::getCallerUid()const
+long ModifyDedicatedHostAttributeRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ModifyDedicatedHostAttributeRequest::setCallerUid(bool callerUid)
+void ModifyDedicatedHostAttributeRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getApp_ip()const
@@ -278,15 +278,15 @@ void ModifyDedicatedHostAttributeRequest::setCallerBid(const std::string& caller
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ModifyDedicatedHostAttributeRequest::getOwnerId()const
+long ModifyDedicatedHostAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyDedicatedHostAttributeRequest::setOwnerId(bool ownerId)
+void ModifyDedicatedHostAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ModifyDedicatedHostAttributeRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ bool ModifyDedicatedHostAttributeRequest::getProxy_trust_transport_info()const
 void ModifyDedicatedHostAttributeRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifyDedicatedHostAttributeRequest::getAk_mfa_present()const
@@ -308,7 +308,7 @@ bool ModifyDedicatedHostAttributeRequest::getAk_mfa_present()const
 void ModifyDedicatedHostAttributeRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ModifyDedicatedHostAttributeRequest::getSecurity_transport()const
@@ -319,7 +319,7 @@ bool ModifyDedicatedHostAttributeRequest::getSecurity_transport()const
 void ModifyDedicatedHostAttributeRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getRequestId()const
@@ -352,7 +352,7 @@ int ModifyDedicatedHostAttributeRequest::getNetworkAttributesSlbUdpTimeout()cons
 void ModifyDedicatedHostAttributeRequest::setNetworkAttributesSlbUdpTimeout(int networkAttributesSlbUdpTimeout)
 {
 	networkAttributesSlbUdpTimeout_ = networkAttributesSlbUdpTimeout;
-	setCoreParameter("NetworkAttributesSlbUdpTimeout", std::to_string(networkAttributesSlbUdpTimeout));
+	setCoreParameter("NetworkAttributesSlbUdpTimeout", networkAttributesSlbUdpTimeout);
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getAutoPlacement()const
@@ -374,6 +374,6 @@ int ModifyDedicatedHostAttributeRequest::getNetworkAttributesUdpTimeout()const
 void ModifyDedicatedHostAttributeRequest::setNetworkAttributesUdpTimeout(int networkAttributesUdpTimeout)
 {
 	networkAttributesUdpTimeout_ = networkAttributesUdpTimeout;
-	setCoreParameter("NetworkAttributesUdpTimeout", std::to_string(networkAttributesUdpTimeout));
+	setCoreParameter("NetworkAttributesUdpTimeout", networkAttributesUdpTimeout);
 }
 

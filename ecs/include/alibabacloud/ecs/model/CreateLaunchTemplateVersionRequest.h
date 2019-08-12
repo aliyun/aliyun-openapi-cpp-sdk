@@ -61,10 +61,10 @@ namespace AlibabaCloud
 
 				std::string getLaunchTemplateName()const;
 				void setLaunchTemplateName(const std::string& launchTemplateName);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
-				bool getCallerParentId()const;
-				void setCallerParentId(bool callerParentId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				long getCallerParentId()const;
+				void setCallerParentId(long callerParentId);
 				std::string getSecurityEnhancementStrategy()const;
 				void setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy);
 				std::string getNetworkType()const;
@@ -97,14 +97,14 @@ namespace AlibabaCloud
 				void setCallerBidEmail(const std::string& callerBidEmail);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
-				bool getCallerUid()const;
-				void setCallerUid(bool callerUid);
+				long getCallerUid()const;
+				void setCallerUid(long callerUid);
 				int getPeriod()const;
 				void setPeriod(int period);
 				std::string getLaunchTemplateId()const;
 				void setLaunchTemplateId(const std::string& launchTemplateId);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				bool getAk_mfa_present()const;
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
@@ -190,8 +190,8 @@ namespace AlibabaCloud
 
             private:
 				std::string launchTemplateName_;
-				bool resourceOwnerId_;
-				bool callerParentId_;
+				long resourceOwnerId_;
+				long callerParentId_;
 				std::string securityEnhancementStrategy_;
 				std::string networkType_;
 				std::string keyPairName_;
@@ -208,10 +208,10 @@ namespace AlibabaCloud
 				int systemDiskIops_;
 				std::string callerBidEmail_;
 				std::vector<Tag> tag_;
-				bool callerUid_;
+				long callerUid_;
 				int period_;
 				std::string launchTemplateId_;
-				bool ownerId_;
+				long ownerId_;
 				bool ak_mfa_present_;
 				bool security_transport_;
 				std::string vSwitchId_;

@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				CreateSecurityGroupRequest();
 				~CreateSecurityGroupRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
@@ -50,8 +50,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getSecurityGroupName()const;
 				void setSecurityGroupName(const std::string& securityGroupName);
 				std::string getSourceRegionId()const;
@@ -68,12 +68,12 @@ namespace AlibabaCloud
 				void setTag(const std::vector<Tag>& tag);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string ownerAccount_;
 				std::string description_;
-				bool ownerId_;
+				long ownerId_;
 				std::string securityGroupName_;
 				std::string sourceRegionId_;
 				std::string securityGroupType_;

@@ -25,26 +25,26 @@ UntagResourcesRequest::UntagResourcesRequest() :
 UntagResourcesRequest::~UntagResourcesRequest()
 {}
 
-bool UntagResourcesRequest::getResourceOwnerId()const
+long UntagResourcesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void UntagResourcesRequest::setResourceOwnerId(bool resourceOwnerId)
+void UntagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool UntagResourcesRequest::getCallerParentId()const
+long UntagResourcesRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void UntagResourcesRequest::setCallerParentId(bool callerParentId)
+void UntagResourcesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool UntagResourcesRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool UntagResourcesRequest::getProxy_original_security_transport()const
 void UntagResourcesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string UntagResourcesRequest::getProxy_original_source_ip()const
@@ -132,7 +132,7 @@ bool UntagResourcesRequest::getEnable()const
 void UntagResourcesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string UntagResourcesRequest::getRequestContent()const
@@ -168,15 +168,15 @@ void UntagResourcesRequest::setCallerUidEmail(const std::string& callerUidEmail)
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool UntagResourcesRequest::getCallerUid()const
+long UntagResourcesRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void UntagResourcesRequest::setCallerUid(bool callerUid)
+void UntagResourcesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 bool UntagResourcesRequest::getAll()const
@@ -187,7 +187,7 @@ bool UntagResourcesRequest::getAll()const
 void UntagResourcesRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all ? "true" : "false");
+	setCoreParameter("All", all);
 }
 
 std::string UntagResourcesRequest::getApp_ip()const
@@ -210,7 +210,7 @@ void UntagResourcesRequest::setResourceId(const std::vector<std::string>& resour
 {
 	resourceId_ = resourceId;
 	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+		setCoreParameter("ResourceId."+ std::to_string(i), std::to_string(resourceId.at(i)));
 }
 
 std::string UntagResourcesRequest::getResourceOwnerAccount()const
@@ -246,15 +246,15 @@ void UntagResourcesRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool UntagResourcesRequest::getOwnerId()const
+long UntagResourcesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void UntagResourcesRequest::setOwnerId(bool ownerId)
+void UntagResourcesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UntagResourcesRequest::getResourceType()const
@@ -276,7 +276,7 @@ bool UntagResourcesRequest::getProxy_trust_transport_info()const
 void UntagResourcesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool UntagResourcesRequest::getAk_mfa_present()const
@@ -287,7 +287,7 @@ bool UntagResourcesRequest::getAk_mfa_present()const
 void UntagResourcesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool UntagResourcesRequest::getSecurity_transport()const
@@ -298,7 +298,7 @@ bool UntagResourcesRequest::getSecurity_transport()const
 void UntagResourcesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string UntagResourcesRequest::getRequestId()const
@@ -332,6 +332,6 @@ void UntagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
 	for(int i = 0; i!= tagKey.size(); i++)
-		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
+		setCoreParameter("TagKey."+ std::to_string(i), std::to_string(tagKey.at(i)));
 }
 

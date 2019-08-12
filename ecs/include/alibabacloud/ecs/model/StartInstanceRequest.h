@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				void setSourceRegionId(const std::string& sourceRegionId);
 				bool getInitLocalDisk()const;
 				void setInitLocalDisk(bool initLocalDisk);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				bool getDryRun()const;
@@ -49,18 +49,18 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				std::string sourceRegionId_;
 				bool initLocalDisk_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string instanceId_;
 				bool dryRun_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

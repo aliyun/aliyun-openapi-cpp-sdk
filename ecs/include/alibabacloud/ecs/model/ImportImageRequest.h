@@ -46,8 +46,8 @@ namespace AlibabaCloud
 
 				std::vector<DiskDeviceMapping> getDiskDeviceMapping()const;
 				void setDiskDeviceMapping(const std::vector<DiskDeviceMapping>& diskDeviceMapping);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRoleName()const;
@@ -56,8 +56,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getOSType()const;
 				void setOSType(const std::string& oSType);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getPlatform()const;
 				void setPlatform(const std::string& platform);
 				std::string getSourceRegionId()const;
@@ -71,12 +71,12 @@ namespace AlibabaCloud
 
             private:
 				std::vector<DiskDeviceMapping> diskDeviceMapping_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string roleName_;
 				std::string description_;
 				std::string oSType_;
-				bool ownerId_;
+				long ownerId_;
 				std::string platform_;
 				std::string sourceRegionId_;
 				std::string regionId_;

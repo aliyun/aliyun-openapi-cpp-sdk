@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				DescribeSecurityGroupsRequest();
 				~DescribeSecurityGroupsRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
 				bool getFuzzyQuery()const;
@@ -56,8 +56,8 @@ namespace AlibabaCloud
 				void setIsQueryEcsCount(bool isQueryEcsCount);
 				std::string getNetworkType()const;
 				void setNetworkType(const std::string& networkType);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getSecurityGroupIds()const;
 				void setSecurityGroupIds(const std::string& securityGroupIds);
 				std::string getSecurityGroupName()const;
@@ -78,7 +78,7 @@ namespace AlibabaCloud
 				void setTag(const std::vector<Tag>& tag);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				bool dryRun_;
 				bool fuzzyQuery_;
 				std::string resourceOwnerAccount_;
@@ -86,7 +86,7 @@ namespace AlibabaCloud
 				std::string securityGroupId_;
 				bool isQueryEcsCount_;
 				std::string networkType_;
-				bool ownerId_;
+				long ownerId_;
 				std::string securityGroupIds_;
 				std::string securityGroupName_;
 				int pageNumber_;

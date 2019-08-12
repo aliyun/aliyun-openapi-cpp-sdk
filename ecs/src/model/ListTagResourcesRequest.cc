@@ -25,26 +25,26 @@ ListTagResourcesRequest::ListTagResourcesRequest() :
 ListTagResourcesRequest::~ListTagResourcesRequest()
 {}
 
-bool ListTagResourcesRequest::getResourceOwnerId()const
+long ListTagResourcesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ListTagResourcesRequest::setResourceOwnerId(bool resourceOwnerId)
+void ListTagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ListTagResourcesRequest::getCallerParentId()const
+long ListTagResourcesRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ListTagResourcesRequest::setCallerParentId(bool callerParentId)
+void ListTagResourcesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ListTagResourcesRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool ListTagResourcesRequest::getProxy_original_security_transport()const
 void ListTagResourcesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ListTagResourcesRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool ListTagResourcesRequest::getEnable()const
 void ListTagResourcesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ListTagResourcesRequest::getRequestContent()const
@@ -180,8 +180,8 @@ void ListTagResourcesRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
 	}
 }
 
@@ -196,15 +196,15 @@ void ListTagResourcesRequest::setCallerUidEmail(const std::string& callerUidEmai
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ListTagResourcesRequest::getCallerUid()const
+long ListTagResourcesRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ListTagResourcesRequest::setCallerUid(bool callerUid)
+void ListTagResourcesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ListTagResourcesRequest::getApp_ip()const
@@ -227,7 +227,7 @@ void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& reso
 {
 	resourceId_ = resourceId;
 	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+		setCoreParameter("ResourceId."+ std::to_string(i), std::to_string(resourceId.at(i)));
 }
 
 std::string ListTagResourcesRequest::getResourceOwnerAccount()const
@@ -263,15 +263,15 @@ void ListTagResourcesRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ListTagResourcesRequest::getOwnerId()const
+long ListTagResourcesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ListTagResourcesRequest::setOwnerId(bool ownerId)
+void ListTagResourcesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ListTagResourcesRequest::getResourceType()const
@@ -293,7 +293,7 @@ bool ListTagResourcesRequest::getProxy_trust_transport_info()const
 void ListTagResourcesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ListTagResourcesRequest::getAk_mfa_present()const
@@ -304,7 +304,7 @@ bool ListTagResourcesRequest::getAk_mfa_present()const
 void ListTagResourcesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ListTagResourcesRequest::getSecurity_transport()const
@@ -315,7 +315,7 @@ bool ListTagResourcesRequest::getSecurity_transport()const
 void ListTagResourcesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ListTagResourcesRequest::getRequestId()const

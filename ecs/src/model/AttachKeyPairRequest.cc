@@ -36,15 +36,15 @@ void AttachKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool AttachKeyPairRequest::getResourceOwnerId()const
+long AttachKeyPairRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void AttachKeyPairRequest::setResourceOwnerId(bool resourceOwnerId)
+void AttachKeyPairRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AttachKeyPairRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void AttachKeyPairRequest::setKeyPairName(const std::string& keyPairName)
 	setCoreParameter("KeyPairName", keyPairName);
 }
 
-bool AttachKeyPairRequest::getOwnerId()const
+long AttachKeyPairRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void AttachKeyPairRequest::setOwnerId(bool ownerId)
+void AttachKeyPairRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

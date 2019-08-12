@@ -36,15 +36,15 @@ void DescribeRenewalPriceRequest::setSourceRegionId(const std::string& sourceReg
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeRenewalPriceRequest::getResourceOwnerId()const
+long DescribeRenewalPriceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeRenewalPriceRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeRenewalPriceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeRenewalPriceRequest::getResourceId()const
@@ -66,7 +66,7 @@ int DescribeRenewalPriceRequest::getPeriod()const
 void DescribeRenewalPriceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string DescribeRenewalPriceRequest::getResourceOwnerAccount()const
@@ -113,15 +113,15 @@ void DescribeRenewalPriceRequest::setPriceUnit(const std::string& priceUnit)
 	setCoreParameter("PriceUnit", priceUnit);
 }
 
-bool DescribeRenewalPriceRequest::getOwnerId()const
+long DescribeRenewalPriceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeRenewalPriceRequest::setOwnerId(bool ownerId)
+void DescribeRenewalPriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeRenewalPriceRequest::getResourceType()const

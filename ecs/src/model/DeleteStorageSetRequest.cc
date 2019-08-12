@@ -25,15 +25,15 @@ DeleteStorageSetRequest::DeleteStorageSetRequest() :
 DeleteStorageSetRequest::~DeleteStorageSetRequest()
 {}
 
-bool DeleteStorageSetRequest::getResourceOwnerId()const
+long DeleteStorageSetRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteStorageSetRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteStorageSetRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteStorageSetRequest::getClientToken()const
@@ -47,15 +47,15 @@ void DeleteStorageSetRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-bool DeleteStorageSetRequest::getCallerParentId()const
+long DeleteStorageSetRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DeleteStorageSetRequest::setCallerParentId(bool callerParentId)
+void DeleteStorageSetRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DeleteStorageSetRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool DeleteStorageSetRequest::getProxy_original_security_transport()const
 void DeleteStorageSetRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DeleteStorageSetRequest::getProxy_original_source_ip()const
@@ -154,7 +154,7 @@ bool DeleteStorageSetRequest::getEnable()const
 void DeleteStorageSetRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DeleteStorageSetRequest::getRequestContent()const
@@ -190,15 +190,15 @@ void DeleteStorageSetRequest::setCallerUidEmail(const std::string& callerUidEmai
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DeleteStorageSetRequest::getCallerUid()const
+long DeleteStorageSetRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DeleteStorageSetRequest::setCallerUid(bool callerUid)
+void DeleteStorageSetRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DeleteStorageSetRequest::getApp_ip()const
@@ -245,15 +245,15 @@ void DeleteStorageSetRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DeleteStorageSetRequest::getOwnerId()const
+long DeleteStorageSetRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteStorageSetRequest::setOwnerId(bool ownerId)
+void DeleteStorageSetRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DeleteStorageSetRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool DeleteStorageSetRequest::getProxy_trust_transport_info()const
 void DeleteStorageSetRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DeleteStorageSetRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool DeleteStorageSetRequest::getAk_mfa_present()const
 void DeleteStorageSetRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DeleteStorageSetRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool DeleteStorageSetRequest::getSecurity_transport()const
 void DeleteStorageSetRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DeleteStorageSetRequest::getStorageSetId()const

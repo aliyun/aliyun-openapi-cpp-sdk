@@ -36,15 +36,15 @@ void ModifyInstanceVncPasswdRequest::setSourceRegionId(const std::string& source
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ModifyInstanceVncPasswdRequest::getResourceOwnerId()const
+long ModifyInstanceVncPasswdRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyInstanceVncPasswdRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyInstanceVncPasswdRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyInstanceVncPasswdRequest::getInstanceId()const
@@ -91,15 +91,15 @@ void ModifyInstanceVncPasswdRequest::setOwnerAccount(const std::string& ownerAcc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool ModifyInstanceVncPasswdRequest::getOwnerId()const
+long ModifyInstanceVncPasswdRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyInstanceVncPasswdRequest::setOwnerId(bool ownerId)
+void ModifyInstanceVncPasswdRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyInstanceVncPasswdRequest::getVncPassword()const

@@ -25,26 +25,26 @@ InvokeCommandRequest::InvokeCommandRequest() :
 InvokeCommandRequest::~InvokeCommandRequest()
 {}
 
-bool InvokeCommandRequest::getResourceOwnerId()const
+long InvokeCommandRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void InvokeCommandRequest::setResourceOwnerId(bool resourceOwnerId)
+void InvokeCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool InvokeCommandRequest::getCallerParentId()const
+long InvokeCommandRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void InvokeCommandRequest::setCallerParentId(bool callerParentId)
+void InvokeCommandRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool InvokeCommandRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool InvokeCommandRequest::getProxy_original_security_transport()const
 void InvokeCommandRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string InvokeCommandRequest::getProxy_original_source_ip()const
@@ -165,7 +165,7 @@ bool InvokeCommandRequest::getEnable()const
 void InvokeCommandRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string InvokeCommandRequest::getRequestContent()const
@@ -201,15 +201,15 @@ void InvokeCommandRequest::setCallerUidEmail(const std::string& callerUidEmail)
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool InvokeCommandRequest::getCallerUid()const
+long InvokeCommandRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void InvokeCommandRequest::setCallerUid(bool callerUid)
+void InvokeCommandRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string InvokeCommandRequest::getApp_ip()const
@@ -231,7 +231,7 @@ bool InvokeCommandRequest::getTimed()const
 void InvokeCommandRequest::setTimed(bool timed)
 {
 	timed_ = timed;
-	setCoreParameter("Timed", timed ? "true" : "false");
+	setCoreParameter("Timed", timed);
 }
 
 std::string InvokeCommandRequest::getResourceOwnerAccount()const
@@ -267,15 +267,15 @@ void InvokeCommandRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool InvokeCommandRequest::getOwnerId()const
+long InvokeCommandRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void InvokeCommandRequest::setOwnerId(bool ownerId)
+void InvokeCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool InvokeCommandRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ bool InvokeCommandRequest::getProxy_trust_transport_info()const
 void InvokeCommandRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool InvokeCommandRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool InvokeCommandRequest::getAk_mfa_present()const
 void InvokeCommandRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool InvokeCommandRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool InvokeCommandRequest::getSecurity_transport()const
 void InvokeCommandRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::vector<std::string> InvokeCommandRequest::getInstanceId()const
@@ -320,7 +320,7 @@ void InvokeCommandRequest::setInstanceId(const std::vector<std::string>& instanc
 {
 	instanceId_ = instanceId;
 	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+		setCoreParameter("InstanceId."+ std::to_string(i), std::to_string(instanceId.at(i)));
 }
 
 std::string InvokeCommandRequest::getRequestId()const
@@ -353,6 +353,6 @@ std::map<std::string, std::string> InvokeCommandRequest::getParameters()const
 void InvokeCommandRequest::setParameters(const std::map<std::string, std::string>& parameters)
 {
 	parameters_ = parameters;
-	setCoreParameter("Parameters", std::to_string(parameters));
+	setJsonParameters("Parameters", parameters);
 }
 

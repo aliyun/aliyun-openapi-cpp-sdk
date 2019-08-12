@@ -25,26 +25,26 @@ DescribeDedicatedHostTypesRequest::DescribeDedicatedHostTypesRequest() :
 DescribeDedicatedHostTypesRequest::~DescribeDedicatedHostTypesRequest()
 {}
 
-bool DescribeDedicatedHostTypesRequest::getResourceOwnerId()const
+long DescribeDedicatedHostTypesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeDedicatedHostTypesRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeDedicatedHostTypesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool DescribeDedicatedHostTypesRequest::getCallerParentId()const
+long DescribeDedicatedHostTypesRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeDedicatedHostTypesRequest::setCallerParentId(bool callerParentId)
+void DescribeDedicatedHostTypesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeDedicatedHostTypesRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeDedicatedHostTypesRequest::getProxy_original_security_transport()co
 void DescribeDedicatedHostTypesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getProxy_original_source_ip()const
@@ -154,7 +154,7 @@ bool DescribeDedicatedHostTypesRequest::getEnable()const
 void DescribeDedicatedHostTypesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getRequestContent()const
@@ -201,15 +201,15 @@ void DescribeDedicatedHostTypesRequest::setCallerUidEmail(const std::string& cal
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DescribeDedicatedHostTypesRequest::getCallerUid()const
+long DescribeDedicatedHostTypesRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeDedicatedHostTypesRequest::setCallerUid(bool callerUid)
+void DescribeDedicatedHostTypesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getApp_ip()const
@@ -256,15 +256,15 @@ void DescribeDedicatedHostTypesRequest::setCallerBid(const std::string& callerBi
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DescribeDedicatedHostTypesRequest::getOwnerId()const
+long DescribeDedicatedHostTypesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeDedicatedHostTypesRequest::setOwnerId(bool ownerId)
+void DescribeDedicatedHostTypesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeDedicatedHostTypesRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool DescribeDedicatedHostTypesRequest::getProxy_trust_transport_info()const
 void DescribeDedicatedHostTypesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDedicatedHostTypesRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DescribeDedicatedHostTypesRequest::getAk_mfa_present()const
 void DescribeDedicatedHostTypesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeDedicatedHostTypesRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DescribeDedicatedHostTypesRequest::getSecurity_transport()const
 void DescribeDedicatedHostTypesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getRequestId()const

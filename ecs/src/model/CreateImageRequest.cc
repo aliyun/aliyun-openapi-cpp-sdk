@@ -37,22 +37,22 @@ void CreateImageRequest::setDiskDeviceMapping(const std::vector<DiskDeviceMappin
 	for(int i = 0; i!= diskDeviceMapping.size(); i++)	{
 		auto obj = diskDeviceMapping.at(i);
 		std::string str ="DiskDeviceMapping."+ std::to_string(i);
-		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
-		setCoreParameter(str + ".Size", std::to_string(obj.size));
-		setCoreParameter(str + ".DiskType", obj.diskType);
-		setCoreParameter(str + ".Device", obj.device);
+		setCoreParameter(str + ".SnapshotId", std::to_string(obj.snapshotId));
+		setCoreParameter(str + ".Size", obj.size);
+		setCoreParameter(str + ".DiskType", std::to_string(obj.diskType));
+		setCoreParameter(str + ".Device", std::to_string(obj.device));
 	}
 }
 
-bool CreateImageRequest::getResourceOwnerId()const
+long CreateImageRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateImageRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateImageRequest::getSnapshotId()const
@@ -110,15 +110,15 @@ void CreateImageRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-bool CreateImageRequest::getOwnerId()const
+long CreateImageRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateImageRequest::setOwnerId(bool ownerId)
+void CreateImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateImageRequest::getPlatform()const
@@ -210,8 +210,8 @@ void CreateImageRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 

@@ -25,26 +25,26 @@ CreateCommandRequest::CreateCommandRequest() :
 CreateCommandRequest::~CreateCommandRequest()
 {}
 
-bool CreateCommandRequest::getResourceOwnerId()const
+long CreateCommandRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateCommandRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool CreateCommandRequest::getCallerParentId()const
+long CreateCommandRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void CreateCommandRequest::setCallerParentId(bool callerParentId)
+void CreateCommandRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string CreateCommandRequest::getWorkingDir()const
@@ -66,7 +66,7 @@ bool CreateCommandRequest::getProxy_original_security_transport()const
 void CreateCommandRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string CreateCommandRequest::getDescription()const
@@ -135,15 +135,15 @@ void CreateCommandRequest::setCommandContent(const std::string& commandContent)
 	setCoreParameter("CommandContent", commandContent);
 }
 
-bool CreateCommandRequest::getTimeout()const
+long CreateCommandRequest::getTimeout()const
 {
 	return timeout_;
 }
 
-void CreateCommandRequest::setTimeout(bool timeout)
+void CreateCommandRequest::setTimeout(long timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", timeout ? "true" : "false");
+	setCoreParameter("Timeout", timeout);
 }
 
 std::string CreateCommandRequest::getAccessKeyId()const
@@ -198,7 +198,7 @@ bool CreateCommandRequest::getEnable()const
 void CreateCommandRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string CreateCommandRequest::getRequestContent()const
@@ -234,15 +234,15 @@ void CreateCommandRequest::setCallerUidEmail(const std::string& callerUidEmail)
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool CreateCommandRequest::getCallerUid()const
+long CreateCommandRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void CreateCommandRequest::setCallerUid(bool callerUid)
+void CreateCommandRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string CreateCommandRequest::getApp_ip()const
@@ -289,15 +289,15 @@ void CreateCommandRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool CreateCommandRequest::getOwnerId()const
+long CreateCommandRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateCommandRequest::setOwnerId(bool ownerId)
+void CreateCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool CreateCommandRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ bool CreateCommandRequest::getProxy_trust_transport_info()const
 void CreateCommandRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool CreateCommandRequest::getAk_mfa_present()const
@@ -319,7 +319,7 @@ bool CreateCommandRequest::getAk_mfa_present()const
 void CreateCommandRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool CreateCommandRequest::getSecurity_transport()const
@@ -330,7 +330,7 @@ bool CreateCommandRequest::getSecurity_transport()const
 void CreateCommandRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string CreateCommandRequest::getRequestId()const
@@ -374,6 +374,6 @@ bool CreateCommandRequest::getEnableParameter()const
 void CreateCommandRequest::setEnableParameter(bool enableParameter)
 {
 	enableParameter_ = enableParameter;
-	setCoreParameter("EnableParameter", enableParameter ? "true" : "false");
+	setCoreParameter("EnableParameter", enableParameter);
 }
 

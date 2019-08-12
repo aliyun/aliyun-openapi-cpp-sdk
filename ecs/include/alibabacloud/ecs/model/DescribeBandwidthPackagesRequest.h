@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DescribeBandwidthPackagesRequest();
 				~DescribeBandwidthPackagesRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getBandwidthPackageId()const;
 				void setBandwidthPackageId(const std::string& bandwidthPackageId);
 				std::string getResourceOwnerAccount()const;
@@ -49,20 +49,20 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getNatGatewayId()const;
 				void setNatGatewayId(const std::string& natGatewayId);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string bandwidthPackageId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string ownerAccount_;
 				int pageSize_;
 				std::string natGatewayId_;
-				bool ownerId_;
+				long ownerId_;
 				int pageNumber_;
 
 			};

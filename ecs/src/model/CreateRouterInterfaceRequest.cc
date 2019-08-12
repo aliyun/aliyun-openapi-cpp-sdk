@@ -58,15 +58,15 @@ void CreateRouterInterfaceRequest::setOppositeAccessPointId(const std::string& o
 	setCoreParameter("OppositeAccessPointId", oppositeAccessPointId);
 }
 
-bool CreateRouterInterfaceRequest::getResourceOwnerId()const
+long CreateRouterInterfaceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateRouterInterfaceRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateRouterInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateRouterInterfaceRequest::getRole()const
@@ -176,7 +176,7 @@ int CreateRouterInterfaceRequest::getPeriod()const
 void CreateRouterInterfaceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 bool CreateRouterInterfaceRequest::getAutoPay()const
@@ -187,7 +187,7 @@ bool CreateRouterInterfaceRequest::getAutoPay()const
 void CreateRouterInterfaceRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string CreateRouterInterfaceRequest::getResourceOwnerAccount()const
@@ -223,15 +223,15 @@ void CreateRouterInterfaceRequest::setOwnerAccount(const std::string& ownerAccou
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool CreateRouterInterfaceRequest::getOwnerId()const
+long CreateRouterInterfaceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateRouterInterfaceRequest::setOwnerId(bool ownerId)
+void CreateRouterInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateRouterInterfaceRequest::getOppositeInterfaceOwnerId()const

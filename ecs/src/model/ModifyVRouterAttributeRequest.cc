@@ -36,15 +36,15 @@ void ModifyVRouterAttributeRequest::setVRouterName(const std::string& vRouterNam
 	setCoreParameter("VRouterName", vRouterName);
 }
 
-bool ModifyVRouterAttributeRequest::getResourceOwnerId()const
+long ModifyVRouterAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyVRouterAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyVRouterAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyVRouterAttributeRequest::getVRouterId()const
@@ -102,14 +102,14 @@ void ModifyVRouterAttributeRequest::setDescription(const std::string& descriptio
 	setCoreParameter("Description", description);
 }
 
-bool ModifyVRouterAttributeRequest::getOwnerId()const
+long ModifyVRouterAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyVRouterAttributeRequest::setOwnerId(bool ownerId)
+void ModifyVRouterAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

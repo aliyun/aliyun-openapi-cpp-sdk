@@ -25,26 +25,26 @@ DetachNetworkInterfaceRequest::DetachNetworkInterfaceRequest() :
 DetachNetworkInterfaceRequest::~DetachNetworkInterfaceRequest()
 {}
 
-bool DetachNetworkInterfaceRequest::getResourceOwnerId()const
+long DetachNetworkInterfaceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DetachNetworkInterfaceRequest::setResourceOwnerId(bool resourceOwnerId)
+void DetachNetworkInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool DetachNetworkInterfaceRequest::getCallerParentId()const
+long DetachNetworkInterfaceRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DetachNetworkInterfaceRequest::setCallerParentId(bool callerParentId)
+void DetachNetworkInterfaceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DetachNetworkInterfaceRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DetachNetworkInterfaceRequest::getProxy_original_security_transport()const
 void DetachNetworkInterfaceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DetachNetworkInterfaceRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool DetachNetworkInterfaceRequest::getEnable()const
 void DetachNetworkInterfaceRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DetachNetworkInterfaceRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void DetachNetworkInterfaceRequest::setCallerUidEmail(const std::string& callerU
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DetachNetworkInterfaceRequest::getCallerUid()const
+long DetachNetworkInterfaceRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DetachNetworkInterfaceRequest::setCallerUid(bool callerUid)
+void DetachNetworkInterfaceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DetachNetworkInterfaceRequest::getApp_ip()const
@@ -234,15 +234,15 @@ void DetachNetworkInterfaceRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DetachNetworkInterfaceRequest::getOwnerId()const
+long DetachNetworkInterfaceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DetachNetworkInterfaceRequest::setOwnerId(bool ownerId)
+void DetachNetworkInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DetachNetworkInterfaceRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DetachNetworkInterfaceRequest::getProxy_trust_transport_info()const
 void DetachNetworkInterfaceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DetachNetworkInterfaceRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DetachNetworkInterfaceRequest::getAk_mfa_present()const
 void DetachNetworkInterfaceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DetachNetworkInterfaceRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DetachNetworkInterfaceRequest::getSecurity_transport()const
 void DetachNetworkInterfaceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DetachNetworkInterfaceRequest::getInstanceId()const

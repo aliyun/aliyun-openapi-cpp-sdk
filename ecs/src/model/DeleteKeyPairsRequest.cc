@@ -36,15 +36,15 @@ void DeleteKeyPairsRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DeleteKeyPairsRequest::getResourceOwnerId()const
+long DeleteKeyPairsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteKeyPairsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteKeyPairsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteKeyPairsRequest::getResourceOwnerAccount()const
@@ -80,14 +80,14 @@ void DeleteKeyPairsRequest::setKeyPairNames(const std::string& keyPairNames)
 	setCoreParameter("KeyPairNames", keyPairNames);
 }
 
-bool DeleteKeyPairsRequest::getOwnerId()const
+long DeleteKeyPairsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteKeyPairsRequest::setOwnerId(bool ownerId)
+void DeleteKeyPairsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				CopyImageRequest();
 				~CopyImageRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
 				std::string getResourceOwnerAccount()const;
@@ -52,8 +52,8 @@ namespace AlibabaCloud
 				void setDestinationRegionId(const std::string& destinationRegionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getSourceRegionId()const;
 				void setSourceRegionId(const std::string& sourceRegionId);
 				bool getEncrypted()const;
@@ -68,13 +68,13 @@ namespace AlibabaCloud
 				void setDestinationDescription(const std::string& destinationDescription);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string imageId_;
 				std::string resourceOwnerAccount_;
 				std::string destinationImageName_;
 				std::string destinationRegionId_;
 				std::string ownerAccount_;
-				bool ownerId_;
+				long ownerId_;
 				std::string sourceRegionId_;
 				bool encrypted_;
 				std::string regionId_;

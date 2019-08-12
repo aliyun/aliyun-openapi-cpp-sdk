@@ -25,26 +25,26 @@ ModifyFleetRequest::ModifyFleetRequest() :
 ModifyFleetRequest::~ModifyFleetRequest()
 {}
 
-bool ModifyFleetRequest::getResourceOwnerId()const
+long ModifyFleetRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyFleetRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyFleetRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ModifyFleetRequest::getCallerParentId()const
+long ModifyFleetRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ModifyFleetRequest::setCallerParentId(bool callerParentId)
+void ModifyFleetRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ModifyFleetRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool ModifyFleetRequest::getProxy_original_security_transport()const
 void ModifyFleetRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifyFleetRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ bool ModifyFleetRequest::getTerminateInstancesWithExpiration()const
 void ModifyFleetRequest::setTerminateInstancesWithExpiration(bool terminateInstancesWithExpiration)
 {
 	terminateInstancesWithExpiration_ = terminateInstancesWithExpiration;
-	setCoreParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration ? "true" : "false");
+	setCoreParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration);
 }
 
 std::string ModifyFleetRequest::getOnDemandTargetCapacity()const
@@ -154,7 +154,7 @@ bool ModifyFleetRequest::getEnable()const
 void ModifyFleetRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ModifyFleetRequest::getRequestContent()const
@@ -212,15 +212,15 @@ void ModifyFleetRequest::setCallerUidEmail(const std::string& callerUidEmail)
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ModifyFleetRequest::getCallerUid()const
+long ModifyFleetRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ModifyFleetRequest::setCallerUid(bool callerUid)
+void ModifyFleetRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifyFleetRequest::getApp_ip()const
@@ -267,15 +267,15 @@ void ModifyFleetRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ModifyFleetRequest::getOwnerId()const
+long ModifyFleetRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyFleetRequest::setOwnerId(bool ownerId)
+void ModifyFleetRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyFleetRequest::getFleetId()const
@@ -297,7 +297,7 @@ bool ModifyFleetRequest::getProxy_trust_transport_info()const
 void ModifyFleetRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifyFleetRequest::getAk_mfa_present()const
@@ -308,7 +308,7 @@ bool ModifyFleetRequest::getAk_mfa_present()const
 void ModifyFleetRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ModifyFleetRequest::getSecurity_transport()const
@@ -319,7 +319,7 @@ bool ModifyFleetRequest::getSecurity_transport()const
 void ModifyFleetRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ModifyFleetRequest::getRequestId()const
@@ -374,6 +374,6 @@ float ModifyFleetRequest::getMaxSpotPrice()const
 void ModifyFleetRequest::setMaxSpotPrice(float maxSpotPrice)
 {
 	maxSpotPrice_ = maxSpotPrice;
-	setCoreParameter("MaxSpotPrice", std::to_string(maxSpotPrice));
+	setCoreParameter("MaxSpotPrice", maxSpotPrice);
 }
 

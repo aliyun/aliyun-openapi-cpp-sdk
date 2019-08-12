@@ -25,15 +25,15 @@ CreateStorageSetRequest::CreateStorageSetRequest() :
 CreateStorageSetRequest::~CreateStorageSetRequest()
 {}
 
-bool CreateStorageSetRequest::getResourceOwnerId()const
+long CreateStorageSetRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateStorageSetRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateStorageSetRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateStorageSetRequest::getClientToken()const
@@ -47,15 +47,15 @@ void CreateStorageSetRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-bool CreateStorageSetRequest::getCallerParentId()const
+long CreateStorageSetRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void CreateStorageSetRequest::setCallerParentId(bool callerParentId)
+void CreateStorageSetRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 int CreateStorageSetRequest::getMaxPartitionNumber()const
@@ -66,7 +66,7 @@ int CreateStorageSetRequest::getMaxPartitionNumber()const
 void CreateStorageSetRequest::setMaxPartitionNumber(int maxPartitionNumber)
 {
 	maxPartitionNumber_ = maxPartitionNumber;
-	setCoreParameter("MaxPartitionNumber", std::to_string(maxPartitionNumber));
+	setCoreParameter("MaxPartitionNumber", maxPartitionNumber);
 }
 
 bool CreateStorageSetRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool CreateStorageSetRequest::getProxy_original_security_transport()const
 void CreateStorageSetRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string CreateStorageSetRequest::getDescription()const
@@ -176,7 +176,7 @@ bool CreateStorageSetRequest::getEnable()const
 void CreateStorageSetRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string CreateStorageSetRequest::getRequestContent()const
@@ -212,15 +212,15 @@ void CreateStorageSetRequest::setCallerUidEmail(const std::string& callerUidEmai
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool CreateStorageSetRequest::getCallerUid()const
+long CreateStorageSetRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void CreateStorageSetRequest::setCallerUid(bool callerUid)
+void CreateStorageSetRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string CreateStorageSetRequest::getApp_ip()const
@@ -267,15 +267,15 @@ void CreateStorageSetRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool CreateStorageSetRequest::getOwnerId()const
+long CreateStorageSetRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateStorageSetRequest::setOwnerId(bool ownerId)
+void CreateStorageSetRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool CreateStorageSetRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ bool CreateStorageSetRequest::getProxy_trust_transport_info()const
 void CreateStorageSetRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool CreateStorageSetRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool CreateStorageSetRequest::getAk_mfa_present()const
 void CreateStorageSetRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool CreateStorageSetRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool CreateStorageSetRequest::getSecurity_transport()const
 void CreateStorageSetRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string CreateStorageSetRequest::getRequestId()const

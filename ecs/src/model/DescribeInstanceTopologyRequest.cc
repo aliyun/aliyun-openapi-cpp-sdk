@@ -36,15 +36,15 @@ void DescribeInstanceTopologyRequest::setSourceRegionId(const std::string& sourc
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeInstanceTopologyRequest::getResourceOwnerId()const
+long DescribeInstanceTopologyRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeInstanceTopologyRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeInstanceTopologyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInstanceTopologyRequest::getResourceOwnerAccount()const
@@ -80,14 +80,14 @@ void DescribeInstanceTopologyRequest::setInstanceIds(const std::string& instance
 	setCoreParameter("InstanceIds", instanceIds);
 }
 
-bool DescribeInstanceTopologyRequest::getOwnerId()const
+long DescribeInstanceTopologyRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeInstanceTopologyRequest::setOwnerId(bool ownerId)
+void DescribeInstanceTopologyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

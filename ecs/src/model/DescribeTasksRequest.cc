@@ -25,15 +25,15 @@ DescribeTasksRequest::DescribeTasksRequest() :
 DescribeTasksRequest::~DescribeTasksRequest()
 {}
 
-bool DescribeTasksRequest::getResourceOwnerId()const
+long DescribeTasksRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeTasksRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeTasksRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeTasksRequest::getResourceOwnerAccount()const
@@ -80,15 +80,15 @@ void DescribeTasksRequest::setStartTime(const std::string& startTime)
 	setCoreParameter("StartTime", startTime);
 }
 
-bool DescribeTasksRequest::getOwnerId()const
+long DescribeTasksRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeTasksRequest::setOwnerId(bool ownerId)
+void DescribeTasksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeTasksRequest::getTaskIds()const
@@ -110,7 +110,7 @@ int DescribeTasksRequest::getPageNumber()const
 void DescribeTasksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeTasksRequest::getSourceRegionId()const
@@ -154,7 +154,7 @@ int DescribeTasksRequest::getPageSize()const
 void DescribeTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeTasksRequest::getTaskAction()const

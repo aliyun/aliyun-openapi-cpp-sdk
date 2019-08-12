@@ -36,15 +36,15 @@ void ModifyImageShareGroupPermissionRequest::setSourceRegionId(const std::string
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ModifyImageShareGroupPermissionRequest::getResourceOwnerId()const
+long ModifyImageShareGroupPermissionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyImageShareGroupPermissionRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyImageShareGroupPermissionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyImageShareGroupPermissionRequest::getImageId()const
@@ -113,14 +113,14 @@ void ModifyImageShareGroupPermissionRequest::setRemoveGroup1(const std::string& 
 	setCoreParameter("RemoveGroup1", removeGroup1);
 }
 
-bool ModifyImageShareGroupPermissionRequest::getOwnerId()const
+long ModifyImageShareGroupPermissionRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyImageShareGroupPermissionRequest::setOwnerId(bool ownerId)
+void ModifyImageShareGroupPermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

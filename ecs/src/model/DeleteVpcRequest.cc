@@ -25,15 +25,15 @@ DeleteVpcRequest::DeleteVpcRequest() :
 DeleteVpcRequest::~DeleteVpcRequest()
 {}
 
-bool DeleteVpcRequest::getResourceOwnerId()const
+long DeleteVpcRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteVpcRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteVpcRequest::getResourceOwnerAccount()const
@@ -80,14 +80,14 @@ void DeleteVpcRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DeleteVpcRequest::getOwnerId()const
+long DeleteVpcRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteVpcRequest::setOwnerId(bool ownerId)
+void DeleteVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

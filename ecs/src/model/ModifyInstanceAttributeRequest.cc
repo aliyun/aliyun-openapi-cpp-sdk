@@ -25,15 +25,15 @@ ModifyInstanceAttributeRequest::ModifyInstanceAttributeRequest() :
 ModifyInstanceAttributeRequest::~ModifyInstanceAttributeRequest()
 {}
 
-bool ModifyInstanceAttributeRequest::getResourceOwnerId()const
+long ModifyInstanceAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyInstanceAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyInstanceAttributeRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ bool ModifyInstanceAttributeRequest::getRecyclable()const
 void ModifyInstanceAttributeRequest::setRecyclable(bool recyclable)
 {
 	recyclable_ = recyclable;
-	setCoreParameter("Recyclable", recyclable ? "true" : "false");
+	setCoreParameter("Recyclable", recyclable);
 }
 
 std::string ModifyInstanceAttributeRequest::getOwnerAccount()const
@@ -91,15 +91,15 @@ void ModifyInstanceAttributeRequest::setCreditSpecification(const std::string& c
 	setCoreParameter("CreditSpecification", creditSpecification);
 }
 
-bool ModifyInstanceAttributeRequest::getOwnerId()const
+long ModifyInstanceAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyInstanceAttributeRequest::setOwnerId(bool ownerId)
+void ModifyInstanceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyInstanceAttributeRequest::getSourceRegionId()const
@@ -121,7 +121,7 @@ bool ModifyInstanceAttributeRequest::getDeletionProtection()const
 void ModifyInstanceAttributeRequest::setDeletionProtection(bool deletionProtection)
 {
 	deletionProtection_ = deletionProtection;
-	setCoreParameter("DeletionProtection", deletionProtection ? "true" : "false");
+	setCoreParameter("DeletionProtection", deletionProtection);
 }
 
 std::string ModifyInstanceAttributeRequest::getUserData()const

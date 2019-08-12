@@ -25,15 +25,15 @@ CreateForwardEntryRequest::CreateForwardEntryRequest() :
 CreateForwardEntryRequest::~CreateForwardEntryRequest()
 {}
 
-bool CreateForwardEntryRequest::getResourceOwnerId()const
+long CreateForwardEntryRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateForwardEntryRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateForwardEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateForwardEntryRequest::getResourceOwnerAccount()const
@@ -102,15 +102,15 @@ void CreateForwardEntryRequest::setForwardTableId(const std::string& forwardTabl
 	setCoreParameter("ForwardTableId", forwardTableId);
 }
 
-bool CreateForwardEntryRequest::getOwnerId()const
+long CreateForwardEntryRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateForwardEntryRequest::setOwnerId(bool ownerId)
+void CreateForwardEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateForwardEntryRequest::getExternalIp()const

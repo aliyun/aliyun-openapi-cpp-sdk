@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				RecoverVirtualBorderRouterRequest();
 				~RecoverVirtualBorderRouterRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
@@ -49,18 +49,18 @@ namespace AlibabaCloud
 				void setUserCidr(const std::string& userCidr);
 				std::string getVbrId()const;
 				void setVbrId(const std::string& vbrId);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string ownerAccount_;
 				std::string userCidr_;
 				std::string vbrId_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

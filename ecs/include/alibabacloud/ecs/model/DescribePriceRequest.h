@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				void setDataDisk3PerformanceLevel(const std::string& dataDisk3PerformanceLevel);
 				int getDataDisk3Size()const;
 				void setDataDisk3Size(int dataDisk3Size);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
 				std::string getDataDisk3Category()const;
@@ -83,8 +83,8 @@ namespace AlibabaCloud
 				void setDataDisk2Size(int dataDisk2Size);
 				std::string getDataDisk1PerformanceLevel()const;
 				void setDataDisk1PerformanceLevel(const std::string& dataDisk1PerformanceLevel);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
 				std::string getDataDisk1Category()const;
@@ -101,7 +101,7 @@ namespace AlibabaCloud
             private:
 				std::string dataDisk3PerformanceLevel_;
 				int dataDisk3Size_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string imageId_;
 				std::string dataDisk3Category_;
 				std::string ioOptimized_;
@@ -123,7 +123,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				int dataDisk2Size_;
 				std::string dataDisk1PerformanceLevel_;
-				bool ownerId_;
+				long ownerId_;
 				std::string resourceType_;
 				std::string dataDisk1Category_;
 				std::string dataDisk2PerformanceLevel_;

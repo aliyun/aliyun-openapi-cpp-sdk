@@ -36,15 +36,15 @@ void DeleteSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegi
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DeleteSecurityGroupRequest::getResourceOwnerId()const
+long DeleteSecurityGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteSecurityGroupRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteSecurityGroupRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void DeleteSecurityGroupRequest::setSecurityGroupId(const std::string& securityG
 	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
-bool DeleteSecurityGroupRequest::getOwnerId()const
+long DeleteSecurityGroupRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteSecurityGroupRequest::setOwnerId(bool ownerId)
+void DeleteSecurityGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

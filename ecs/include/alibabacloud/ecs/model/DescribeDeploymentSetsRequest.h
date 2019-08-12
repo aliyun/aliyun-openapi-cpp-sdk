@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DescribeDeploymentSetsRequest();
 				~DescribeDeploymentSetsRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				void setNetworkType(const std::string& networkType);
 				std::string getDeploymentSetName()const;
 				void setDeploymentSetName(const std::string& deploymentSetName);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getDeploymentSetIds()const;
@@ -65,12 +65,12 @@ namespace AlibabaCloud
 				void setStrategy(const std::string& strategy);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string networkType_;
 				std::string deploymentSetName_;
-				bool ownerId_;
+				long ownerId_;
 				int pageNumber_;
 				std::string deploymentSetIds_;
 				std::string sourceRegionId_;

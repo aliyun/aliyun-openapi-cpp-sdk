@@ -25,15 +25,15 @@ ReplaceSystemDiskRequest::ReplaceSystemDiskRequest() :
 ReplaceSystemDiskRequest::~ReplaceSystemDiskRequest()
 {}
 
-bool ReplaceSystemDiskRequest::getResourceOwnerId()const
+long ReplaceSystemDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ReplaceSystemDiskRequest::setResourceOwnerId(bool resourceOwnerId)
+void ReplaceSystemDiskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReplaceSystemDiskRequest::getImageId()const
@@ -102,15 +102,15 @@ void ReplaceSystemDiskRequest::setKeyPairName(const std::string& keyPairName)
 	setCoreParameter("KeyPairName", keyPairName);
 }
 
-bool ReplaceSystemDiskRequest::getOwnerId()const
+long ReplaceSystemDiskRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ReplaceSystemDiskRequest::setOwnerId(bool ownerId)
+void ReplaceSystemDiskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ReplaceSystemDiskRequest::getPlatform()const
@@ -165,7 +165,7 @@ bool ReplaceSystemDiskRequest::getPasswordInherit()const
 void ReplaceSystemDiskRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setCoreParameter("PasswordInherit", passwordInherit ? "true" : "false");
+	setCoreParameter("PasswordInherit", passwordInherit);
 }
 
 int ReplaceSystemDiskRequest::getSystemDiskSize()const
@@ -176,7 +176,7 @@ int ReplaceSystemDiskRequest::getSystemDiskSize()const
 void ReplaceSystemDiskRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+	setCoreParameter("SystemDiskSize", systemDiskSize);
 }
 
 std::string ReplaceSystemDiskRequest::getDiskId()const
@@ -198,7 +198,7 @@ bool ReplaceSystemDiskRequest::getUseAdditionalService()const
 void ReplaceSystemDiskRequest::setUseAdditionalService(bool useAdditionalService)
 {
 	useAdditionalService_ = useAdditionalService;
-	setCoreParameter("UseAdditionalService", useAdditionalService ? "true" : "false");
+	setCoreParameter("UseAdditionalService", useAdditionalService);
 }
 
 std::string ReplaceSystemDiskRequest::getArchitecture()const

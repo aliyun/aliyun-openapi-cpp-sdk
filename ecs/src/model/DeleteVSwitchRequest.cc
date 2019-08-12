@@ -36,15 +36,15 @@ void DeleteVSwitchRequest::setVSwitchId(const std::string& vSwitchId)
 	setCoreParameter("VSwitchId", vSwitchId);
 }
 
-bool DeleteVSwitchRequest::getResourceOwnerId()const
+long DeleteVSwitchRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteVSwitchRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteVSwitchRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteVSwitchRequest::getResourceOwnerAccount()const
@@ -80,14 +80,14 @@ void DeleteVSwitchRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DeleteVSwitchRequest::getOwnerId()const
+long DeleteVSwitchRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteVSwitchRequest::setOwnerId(bool ownerId)
+void DeleteVSwitchRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

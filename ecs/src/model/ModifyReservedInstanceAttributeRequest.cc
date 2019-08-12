@@ -25,26 +25,26 @@ ModifyReservedInstanceAttributeRequest::ModifyReservedInstanceAttributeRequest()
 ModifyReservedInstanceAttributeRequest::~ModifyReservedInstanceAttributeRequest()
 {}
 
-bool ModifyReservedInstanceAttributeRequest::getResourceOwnerId()const
+long ModifyReservedInstanceAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyReservedInstanceAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyReservedInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool ModifyReservedInstanceAttributeRequest::getCallerParentId()const
+long ModifyReservedInstanceAttributeRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ModifyReservedInstanceAttributeRequest::setCallerParentId(bool callerParentId)
+void ModifyReservedInstanceAttributeRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ModifyReservedInstanceAttributeRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool ModifyReservedInstanceAttributeRequest::getProxy_original_security_transpor
 void ModifyReservedInstanceAttributeRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getDescription()const
@@ -143,7 +143,7 @@ bool ModifyReservedInstanceAttributeRequest::getEnable()const
 void ModifyReservedInstanceAttributeRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void ModifyReservedInstanceAttributeRequest::setCallerUidEmail(const std::string
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ModifyReservedInstanceAttributeRequest::getCallerUid()const
+long ModifyReservedInstanceAttributeRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ModifyReservedInstanceAttributeRequest::setCallerUid(bool callerUid)
+void ModifyReservedInstanceAttributeRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getApp_ip()const
@@ -234,15 +234,15 @@ void ModifyReservedInstanceAttributeRequest::setCallerBid(const std::string& cal
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ModifyReservedInstanceAttributeRequest::getOwnerId()const
+long ModifyReservedInstanceAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyReservedInstanceAttributeRequest::setOwnerId(bool ownerId)
+void ModifyReservedInstanceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ModifyReservedInstanceAttributeRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool ModifyReservedInstanceAttributeRequest::getProxy_trust_transport_info()cons
 void ModifyReservedInstanceAttributeRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifyReservedInstanceAttributeRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool ModifyReservedInstanceAttributeRequest::getAk_mfa_present()const
 void ModifyReservedInstanceAttributeRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ModifyReservedInstanceAttributeRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool ModifyReservedInstanceAttributeRequest::getSecurity_transport()const
 void ModifyReservedInstanceAttributeRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getReservedInstanceId()const

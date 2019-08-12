@@ -25,15 +25,15 @@ ModifyPrepayInstanceSpecRequest::ModifyPrepayInstanceSpecRequest() :
 ModifyPrepayInstanceSpecRequest::~ModifyPrepayInstanceSpecRequest()
 {}
 
-bool ModifyPrepayInstanceSpecRequest::getResourceOwnerId()const
+long ModifyPrepayInstanceSpecRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyPrepayInstanceSpecRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyPrepayInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool ModifyPrepayInstanceSpecRequest::getAutoPay()const
@@ -44,7 +44,7 @@ bool ModifyPrepayInstanceSpecRequest::getAutoPay()const
 void ModifyPrepayInstanceSpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getResourceOwnerAccount()const
@@ -91,15 +91,15 @@ void ModifyPrepayInstanceSpecRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-bool ModifyPrepayInstanceSpecRequest::getOwnerId()const
+long ModifyPrepayInstanceSpecRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyPrepayInstanceSpecRequest::setOwnerId(bool ownerId)
+void ModifyPrepayInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getOperatorType()const
@@ -176,7 +176,7 @@ bool ModifyPrepayInstanceSpecRequest::getMigrateAcrossZone()const
 void ModifyPrepayInstanceSpecRequest::setMigrateAcrossZone(bool migrateAcrossZone)
 {
 	migrateAcrossZone_ = migrateAcrossZone;
-	setCoreParameter("MigrateAcrossZone", migrateAcrossZone ? "true" : "false");
+	setCoreParameter("MigrateAcrossZone", migrateAcrossZone);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getInstanceType()const

@@ -25,26 +25,26 @@ InstallCloudAssistantRequest::InstallCloudAssistantRequest() :
 InstallCloudAssistantRequest::~InstallCloudAssistantRequest()
 {}
 
-bool InstallCloudAssistantRequest::getResourceOwnerId()const
+long InstallCloudAssistantRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void InstallCloudAssistantRequest::setResourceOwnerId(bool resourceOwnerId)
+void InstallCloudAssistantRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool InstallCloudAssistantRequest::getCallerParentId()const
+long InstallCloudAssistantRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void InstallCloudAssistantRequest::setCallerParentId(bool callerParentId)
+void InstallCloudAssistantRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool InstallCloudAssistantRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool InstallCloudAssistantRequest::getProxy_original_security_transport()const
 void InstallCloudAssistantRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string InstallCloudAssistantRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool InstallCloudAssistantRequest::getEnable()const
 void InstallCloudAssistantRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string InstallCloudAssistantRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void InstallCloudAssistantRequest::setCallerUidEmail(const std::string& callerUi
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool InstallCloudAssistantRequest::getCallerUid()const
+long InstallCloudAssistantRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void InstallCloudAssistantRequest::setCallerUid(bool callerUid)
+void InstallCloudAssistantRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string InstallCloudAssistantRequest::getApp_ip()const
@@ -234,15 +234,15 @@ void InstallCloudAssistantRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool InstallCloudAssistantRequest::getOwnerId()const
+long InstallCloudAssistantRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void InstallCloudAssistantRequest::setOwnerId(bool ownerId)
+void InstallCloudAssistantRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool InstallCloudAssistantRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool InstallCloudAssistantRequest::getProxy_trust_transport_info()const
 void InstallCloudAssistantRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool InstallCloudAssistantRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool InstallCloudAssistantRequest::getAk_mfa_present()const
 void InstallCloudAssistantRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool InstallCloudAssistantRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool InstallCloudAssistantRequest::getSecurity_transport()const
 void InstallCloudAssistantRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::vector<std::string> InstallCloudAssistantRequest::getInstanceId()const
@@ -287,7 +287,7 @@ void InstallCloudAssistantRequest::setInstanceId(const std::vector<std::string>&
 {
 	instanceId_ = instanceId;
 	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+		setCoreParameter("InstanceId."+ std::to_string(i), std::to_string(instanceId.at(i)));
 }
 
 std::string InstallCloudAssistantRequest::getRequestId()const

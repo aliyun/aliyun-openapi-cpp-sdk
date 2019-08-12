@@ -25,15 +25,15 @@ CreateSecurityGroupRequest::CreateSecurityGroupRequest() :
 CreateSecurityGroupRequest::~CreateSecurityGroupRequest()
 {}
 
-bool CreateSecurityGroupRequest::getResourceOwnerId()const
+long CreateSecurityGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateSecurityGroupRequest::setResourceOwnerId(bool resourceOwnerId)
+void CreateSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateSecurityGroupRequest::getResourceOwnerAccount()const
@@ -80,15 +80,15 @@ void CreateSecurityGroupRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-bool CreateSecurityGroupRequest::getOwnerId()const
+long CreateSecurityGroupRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateSecurityGroupRequest::setOwnerId(bool ownerId)
+void CreateSecurityGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateSecurityGroupRequest::getSecurityGroupName()const
@@ -169,8 +169,8 @@ void CreateSecurityGroupRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 

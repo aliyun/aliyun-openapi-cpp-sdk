@@ -25,15 +25,15 @@ DescribeDeploymentSetsRequest::DescribeDeploymentSetsRequest() :
 DescribeDeploymentSetsRequest::~DescribeDeploymentSetsRequest()
 {}
 
-bool DescribeDeploymentSetsRequest::getResourceOwnerId()const
+long DescribeDeploymentSetsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeDeploymentSetsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeDeploymentSetsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeDeploymentSetsRequest::getResourceOwnerAccount()const
@@ -80,15 +80,15 @@ void DescribeDeploymentSetsRequest::setDeploymentSetName(const std::string& depl
 	setCoreParameter("DeploymentSetName", deploymentSetName);
 }
 
-bool DescribeDeploymentSetsRequest::getOwnerId()const
+long DescribeDeploymentSetsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeDeploymentSetsRequest::setOwnerId(bool ownerId)
+void DescribeDeploymentSetsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeDeploymentSetsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeDeploymentSetsRequest::getPageNumber()const
 void DescribeDeploymentSetsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDeploymentSetsRequest::getDeploymentSetIds()const
@@ -165,7 +165,7 @@ int DescribeDeploymentSetsRequest::getPageSize()const
 void DescribeDeploymentSetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDeploymentSetsRequest::getStrategy()const

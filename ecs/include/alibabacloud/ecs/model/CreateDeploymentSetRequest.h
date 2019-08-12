@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				CreateDeploymentSetRequest();
 				~CreateDeploymentSetRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getDeploymentSetName()const;
 				void setDeploymentSetName(const std::string& deploymentSetName);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getSourceRegionId()const;
 				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getRegionId()const;
@@ -63,13 +63,13 @@ namespace AlibabaCloud
 				void setStrategy(const std::string& strategy);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string ownerAccount_;
 				std::string description_;
 				std::string deploymentSetName_;
-				bool ownerId_;
+				long ownerId_;
 				std::string sourceRegionId_;
 				std::string regionId_;
 				std::string onUnableToRedeployFailedInstance_;

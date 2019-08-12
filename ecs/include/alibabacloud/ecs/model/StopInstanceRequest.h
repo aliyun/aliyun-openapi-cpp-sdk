@@ -37,8 +37,8 @@ namespace AlibabaCloud
 
 				std::string getSourceRegionId()const;
 				void setSourceRegionId(const std::string& sourceRegionId);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				bool getDryRun()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getStoppedMode()const;
 				void setStoppedMode(const std::string& stoppedMode);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				bool getHibernate()const;
 				void setHibernate(bool hibernate);
 				bool getForceStop()const;
@@ -60,14 +60,14 @@ namespace AlibabaCloud
 
             private:
 				std::string sourceRegionId_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string instanceId_;
 				bool dryRun_;
 				std::string resourceOwnerAccount_;
 				bool confirmStop_;
 				std::string ownerAccount_;
 				std::string stoppedMode_;
-				bool ownerId_;
+				long ownerId_;
 				bool hibernate_;
 				bool forceStop_;
 

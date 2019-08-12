@@ -25,26 +25,26 @@ UnassignIpv6AddressesRequest::UnassignIpv6AddressesRequest() :
 UnassignIpv6AddressesRequest::~UnassignIpv6AddressesRequest()
 {}
 
-bool UnassignIpv6AddressesRequest::getResourceOwnerId()const
+long UnassignIpv6AddressesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void UnassignIpv6AddressesRequest::setResourceOwnerId(bool resourceOwnerId)
+void UnassignIpv6AddressesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool UnassignIpv6AddressesRequest::getCallerParentId()const
+long UnassignIpv6AddressesRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void UnassignIpv6AddressesRequest::setCallerParentId(bool callerParentId)
+void UnassignIpv6AddressesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool UnassignIpv6AddressesRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool UnassignIpv6AddressesRequest::getProxy_original_security_transport()const
 void UnassignIpv6AddressesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string UnassignIpv6AddressesRequest::getProxy_original_source_ip()const
@@ -154,7 +154,7 @@ bool UnassignIpv6AddressesRequest::getEnable()const
 void UnassignIpv6AddressesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string UnassignIpv6AddressesRequest::getRequestContent()const
@@ -190,15 +190,15 @@ void UnassignIpv6AddressesRequest::setCallerUidEmail(const std::string& callerUi
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool UnassignIpv6AddressesRequest::getCallerUid()const
+long UnassignIpv6AddressesRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void UnassignIpv6AddressesRequest::setCallerUid(bool callerUid)
+void UnassignIpv6AddressesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string UnassignIpv6AddressesRequest::getApp_ip()const
@@ -245,15 +245,15 @@ void UnassignIpv6AddressesRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool UnassignIpv6AddressesRequest::getOwnerId()const
+long UnassignIpv6AddressesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void UnassignIpv6AddressesRequest::setOwnerId(bool ownerId)
+void UnassignIpv6AddressesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool UnassignIpv6AddressesRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool UnassignIpv6AddressesRequest::getProxy_trust_transport_info()const
 void UnassignIpv6AddressesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool UnassignIpv6AddressesRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool UnassignIpv6AddressesRequest::getAk_mfa_present()const
 void UnassignIpv6AddressesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool UnassignIpv6AddressesRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool UnassignIpv6AddressesRequest::getSecurity_transport()const
 void UnassignIpv6AddressesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string UnassignIpv6AddressesRequest::getRequestId()const
@@ -331,6 +331,6 @@ void UnassignIpv6AddressesRequest::setIpv6Address(const std::vector<std::string>
 {
 	ipv6Address_ = ipv6Address;
 	for(int i = 0; i!= ipv6Address.size(); i++)
-		setCoreParameter("Ipv6Address."+ std::to_string(i), ipv6Address.at(i));
+		setCoreParameter("Ipv6Address."+ std::to_string(i), std::to_string(ipv6Address.at(i)));
 }
 

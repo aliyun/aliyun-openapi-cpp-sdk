@@ -36,15 +36,15 @@ void DeleteInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DeleteInstanceRequest::getResourceOwnerId()const
+long DeleteInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteInstanceRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteInstanceRequest::getInstanceId()const
@@ -88,7 +88,7 @@ bool DeleteInstanceRequest::getTerminateSubscription()const
 void DeleteInstanceRequest::setTerminateSubscription(bool terminateSubscription)
 {
 	terminateSubscription_ = terminateSubscription;
-	setCoreParameter("TerminateSubscription", terminateSubscription ? "true" : "false");
+	setCoreParameter("TerminateSubscription", terminateSubscription);
 }
 
 bool DeleteInstanceRequest::getForce()const
@@ -99,17 +99,17 @@ bool DeleteInstanceRequest::getForce()const
 void DeleteInstanceRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force);
 }
 
-bool DeleteInstanceRequest::getOwnerId()const
+long DeleteInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteInstanceRequest::setOwnerId(bool ownerId)
+void DeleteInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

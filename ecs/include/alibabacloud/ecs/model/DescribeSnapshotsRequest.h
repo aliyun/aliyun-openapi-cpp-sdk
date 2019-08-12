@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				DescribeSnapshotsRequest();
 				~DescribeSnapshotsRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getFilter2Value()const;
 				void setFilter2Value(const std::string& filter2Value);
 				std::string getSnapshotIds()const;
@@ -80,8 +80,8 @@ namespace AlibabaCloud
 				void setFilter1Value(const std::string& filter1Value);
 				std::string getFilter2Key()const;
 				void setFilter2Key(const std::string& filter2Key);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				bool getEncrypted()const;
@@ -94,7 +94,7 @@ namespace AlibabaCloud
 				void setStatus(const std::string& status);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string filter2Value_;
 				std::string snapshotIds_;
 				std::string usage_;
@@ -114,7 +114,7 @@ namespace AlibabaCloud
 				std::string sourceDiskType_;
 				std::string filter1Value_;
 				std::string filter2Key_;
-				bool ownerId_;
+				long ownerId_;
 				std::string instanceId_;
 				bool encrypted_;
 				std::string snapshotType_;

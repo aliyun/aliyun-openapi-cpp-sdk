@@ -36,15 +36,15 @@ void DescribeSnapshotLinksRequest::setSourceRegionId(const std::string& sourceRe
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool DescribeSnapshotLinksRequest::getResourceOwnerId()const
+long DescribeSnapshotLinksRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeSnapshotLinksRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeSnapshotLinksRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSnapshotLinksRequest::getInstanceId()const
@@ -99,7 +99,7 @@ int DescribeSnapshotLinksRequest::getPageSize()const
 void DescribeSnapshotLinksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeSnapshotLinksRequest::getDiskIds()const
@@ -124,15 +124,15 @@ void DescribeSnapshotLinksRequest::setSnapshotLinkIds(const std::string& snapsho
 	setCoreParameter("SnapshotLinkIds", snapshotLinkIds);
 }
 
-bool DescribeSnapshotLinksRequest::getOwnerId()const
+long DescribeSnapshotLinksRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeSnapshotLinksRequest::setOwnerId(bool ownerId)
+void DescribeSnapshotLinksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeSnapshotLinksRequest::getPageNumber()const
@@ -143,6 +143,6 @@ int DescribeSnapshotLinksRequest::getPageNumber()const
 void DescribeSnapshotLinksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

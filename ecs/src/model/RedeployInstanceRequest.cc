@@ -25,26 +25,26 @@ RedeployInstanceRequest::RedeployInstanceRequest() :
 RedeployInstanceRequest::~RedeployInstanceRequest()
 {}
 
-bool RedeployInstanceRequest::getResourceOwnerId()const
+long RedeployInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void RedeployInstanceRequest::setResourceOwnerId(bool resourceOwnerId)
+void RedeployInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool RedeployInstanceRequest::getCallerParentId()const
+long RedeployInstanceRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void RedeployInstanceRequest::setCallerParentId(bool callerParentId)
+void RedeployInstanceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool RedeployInstanceRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool RedeployInstanceRequest::getProxy_original_security_transport()const
 void RedeployInstanceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string RedeployInstanceRequest::getProxy_original_source_ip()const
@@ -110,7 +110,7 @@ bool RedeployInstanceRequest::getForceStop()const
 void RedeployInstanceRequest::setForceStop(bool forceStop)
 {
 	forceStop_ = forceStop;
-	setCoreParameter("ForceStop", forceStop ? "true" : "false");
+	setCoreParameter("ForceStop", forceStop);
 }
 
 std::string RedeployInstanceRequest::getSourceRegionId()const
@@ -143,7 +143,7 @@ bool RedeployInstanceRequest::getEnable()const
 void RedeployInstanceRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string RedeployInstanceRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void RedeployInstanceRequest::setCallerUidEmail(const std::string& callerUidEmai
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool RedeployInstanceRequest::getCallerUid()const
+long RedeployInstanceRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void RedeployInstanceRequest::setCallerUid(bool callerUid)
+void RedeployInstanceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string RedeployInstanceRequest::getApp_ip()const
@@ -234,15 +234,15 @@ void RedeployInstanceRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool RedeployInstanceRequest::getOwnerId()const
+long RedeployInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void RedeployInstanceRequest::setOwnerId(bool ownerId)
+void RedeployInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool RedeployInstanceRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool RedeployInstanceRequest::getProxy_trust_transport_info()const
 void RedeployInstanceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool RedeployInstanceRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool RedeployInstanceRequest::getAk_mfa_present()const
 void RedeployInstanceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool RedeployInstanceRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool RedeployInstanceRequest::getSecurity_transport()const
 void RedeployInstanceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string RedeployInstanceRequest::getInstanceId()const

@@ -36,15 +36,15 @@ void ModifySecurityGroupRuleRequest::setNicType(const std::string& nicType)
 	setCoreParameter("NicType", nicType);
 }
 
-bool ModifySecurityGroupRuleRequest::getResourceOwnerId()const
+long ModifySecurityGroupRuleRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifySecurityGroupRuleRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifySecurityGroupRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifySecurityGroupRuleRequest::getSourcePortRange()const
@@ -69,15 +69,15 @@ void ModifySecurityGroupRuleRequest::setClientToken(const std::string& clientTok
 	setCoreParameter("ClientToken", clientToken);
 }
 
-bool ModifySecurityGroupRuleRequest::getCallerParentId()const
+long ModifySecurityGroupRuleRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void ModifySecurityGroupRuleRequest::setCallerParentId(bool callerParentId)
+void ModifySecurityGroupRuleRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string ModifySecurityGroupRuleRequest::getSecurityGroupId()const
@@ -99,7 +99,7 @@ bool ModifySecurityGroupRuleRequest::getProxy_original_security_transport()const
 void ModifySecurityGroupRuleRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifySecurityGroupRuleRequest::getDescription()const
@@ -168,15 +168,15 @@ void ModifySecurityGroupRuleRequest::setSourceRegionId(const std::string& source
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ModifySecurityGroupRuleRequest::getSourceGroupOwnerId()const
+long ModifySecurityGroupRuleRequest::getSourceGroupOwnerId()const
 {
 	return sourceGroupOwnerId_;
 }
 
-void ModifySecurityGroupRuleRequest::setSourceGroupOwnerId(bool sourceGroupOwnerId)
+void ModifySecurityGroupRuleRequest::setSourceGroupOwnerId(long sourceGroupOwnerId)
 {
 	sourceGroupOwnerId_ = sourceGroupOwnerId;
-	setCoreParameter("SourceGroupOwnerId", sourceGroupOwnerId ? "true" : "false");
+	setCoreParameter("SourceGroupOwnerId", sourceGroupOwnerId);
 }
 
 std::string ModifySecurityGroupRuleRequest::getSourceGroupOwnerAccount()const
@@ -220,7 +220,7 @@ bool ModifySecurityGroupRuleRequest::getEnable()const
 void ModifySecurityGroupRuleRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ModifySecurityGroupRuleRequest::getRequestContent()const
@@ -256,15 +256,15 @@ void ModifySecurityGroupRuleRequest::setCallerUidEmail(const std::string& caller
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool ModifySecurityGroupRuleRequest::getCallerUid()const
+long ModifySecurityGroupRuleRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void ModifySecurityGroupRuleRequest::setCallerUid(bool callerUid)
+void ModifySecurityGroupRuleRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifySecurityGroupRuleRequest::getIpv6SourceCidrIp()const
@@ -377,15 +377,15 @@ void ModifySecurityGroupRuleRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool ModifySecurityGroupRuleRequest::getOwnerId()const
+long ModifySecurityGroupRuleRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifySecurityGroupRuleRequest::setOwnerId(bool ownerId)
+void ModifySecurityGroupRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifySecurityGroupRuleRequest::getPriority()const
@@ -418,7 +418,7 @@ bool ModifySecurityGroupRuleRequest::getProxy_trust_transport_info()const
 void ModifySecurityGroupRuleRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifySecurityGroupRuleRequest::getAk_mfa_present()const
@@ -429,7 +429,7 @@ bool ModifySecurityGroupRuleRequest::getAk_mfa_present()const
 void ModifySecurityGroupRuleRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ModifySecurityGroupRuleRequest::getSecurity_transport()const
@@ -440,7 +440,7 @@ bool ModifySecurityGroupRuleRequest::getSecurity_transport()const
 void ModifySecurityGroupRuleRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ModifySecurityGroupRuleRequest::getRequestId()const

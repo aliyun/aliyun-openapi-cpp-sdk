@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DescribeRecommendInstanceTypeRequest();
 				~DescribeRecommendInstanceTypeRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				void setChannel(const std::string& channel);
 				std::string getNetworkType()const;
 				void setNetworkType(const std::string& networkType);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string get_Operator()const;
 				void set_Operator(const std::string& _operator);
 				std::string getToken()const;
@@ -63,12 +63,12 @@ namespace AlibabaCloud
 				void setProxyId(const std::string& proxyId);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string channel_;
 				std::string networkType_;
-				bool ownerId_;
+				long ownerId_;
 				std::string _operator_;
 				std::string token_;
 				std::string scene_;

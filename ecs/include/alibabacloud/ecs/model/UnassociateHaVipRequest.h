@@ -37,8 +37,8 @@ namespace AlibabaCloud
 
 				std::string getHaVipId()const;
 				void setHaVipId(const std::string& haVipId);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getResourceOwnerAccount()const;
@@ -51,19 +51,19 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getForce()const;
 				void setForce(const std::string& force);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				std::string haVipId_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string instanceId_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string regionId_;
 				std::string ownerAccount_;
 				std::string force_;
-				bool ownerId_;
+				long ownerId_;
 
 			};
 		}

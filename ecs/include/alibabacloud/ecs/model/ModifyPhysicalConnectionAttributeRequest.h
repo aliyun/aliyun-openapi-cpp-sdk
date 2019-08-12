@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				void setRedundantPhysicalConnectionId(const std::string& redundantPhysicalConnectionId);
 				std::string getPeerLocation()const;
 				void setPeerLocation(const std::string& peerLocation);
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getPortType()const;
 				void setPortType(const std::string& portType);
 				std::string getCircuitCode()const;
@@ -55,8 +55,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getLineOperator()const;
 				void setLineOperator(const std::string& lineOperator);
 				std::string getRegionId()const;
@@ -71,7 +71,7 @@ namespace AlibabaCloud
             private:
 				std::string redundantPhysicalConnectionId_;
 				std::string peerLocation_;
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string portType_;
 				std::string circuitCode_;
 				int bandwidth_;
@@ -79,7 +79,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string description_;
-				bool ownerId_;
+				long ownerId_;
 				std::string lineOperator_;
 				std::string regionId_;
 				std::string physicalConnectionId_;

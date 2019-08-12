@@ -36,15 +36,15 @@ void StopInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool StopInstanceRequest::getResourceOwnerId()const
+long StopInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void StopInstanceRequest::setResourceOwnerId(bool resourceOwnerId)
+void StopInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string StopInstanceRequest::getInstanceId()const
@@ -66,7 +66,7 @@ bool StopInstanceRequest::getDryRun()const
 void StopInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun);
 }
 
 std::string StopInstanceRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ bool StopInstanceRequest::getConfirmStop()const
 void StopInstanceRequest::setConfirmStop(bool confirmStop)
 {
 	confirmStop_ = confirmStop;
-	setCoreParameter("ConfirmStop", confirmStop ? "true" : "false");
+	setCoreParameter("ConfirmStop", confirmStop);
 }
 
 std::string StopInstanceRequest::getOwnerAccount()const
@@ -113,15 +113,15 @@ void StopInstanceRequest::setStoppedMode(const std::string& stoppedMode)
 	setCoreParameter("StoppedMode", stoppedMode);
 }
 
-bool StopInstanceRequest::getOwnerId()const
+long StopInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void StopInstanceRequest::setOwnerId(bool ownerId)
+void StopInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool StopInstanceRequest::getHibernate()const
@@ -132,7 +132,7 @@ bool StopInstanceRequest::getHibernate()const
 void StopInstanceRequest::setHibernate(bool hibernate)
 {
 	hibernate_ = hibernate;
-	setCoreParameter("Hibernate", hibernate ? "true" : "false");
+	setCoreParameter("Hibernate", hibernate);
 }
 
 bool StopInstanceRequest::getForceStop()const
@@ -143,6 +143,6 @@ bool StopInstanceRequest::getForceStop()const
 void StopInstanceRequest::setForceStop(bool forceStop)
 {
 	forceStop_ = forceStop;
-	setCoreParameter("ForceStop", forceStop ? "true" : "false");
+	setCoreParameter("ForceStop", forceStop);
 }
 

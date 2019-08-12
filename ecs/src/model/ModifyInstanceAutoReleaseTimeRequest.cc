@@ -36,15 +36,15 @@ void ModifyInstanceAutoReleaseTimeRequest::setSourceRegionId(const std::string& 
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool ModifyInstanceAutoReleaseTimeRequest::getResourceOwnerId()const
+long ModifyInstanceAutoReleaseTimeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyInstanceAutoReleaseTimeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyInstanceAutoReleaseTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyInstanceAutoReleaseTimeRequest::getInstanceId()const
@@ -102,14 +102,14 @@ void ModifyInstanceAutoReleaseTimeRequest::setAutoReleaseTime(const std::string&
 	setCoreParameter("AutoReleaseTime", autoReleaseTime);
 }
 
-bool ModifyInstanceAutoReleaseTimeRequest::getOwnerId()const
+long ModifyInstanceAutoReleaseTimeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyInstanceAutoReleaseTimeRequest::setOwnerId(bool ownerId)
+void ModifyInstanceAutoReleaseTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

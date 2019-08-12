@@ -36,15 +36,15 @@ void LeaveSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegio
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-bool LeaveSecurityGroupRequest::getResourceOwnerId()const
+long LeaveSecurityGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void LeaveSecurityGroupRequest::setResourceOwnerId(bool resourceOwnerId)
+void LeaveSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string LeaveSecurityGroupRequest::getInstanceId()const
@@ -91,14 +91,14 @@ void LeaveSecurityGroupRequest::setSecurityGroupId(const std::string& securityGr
 	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
-bool LeaveSecurityGroupRequest::getOwnerId()const
+long LeaveSecurityGroupRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void LeaveSecurityGroupRequest::setOwnerId(bool ownerId)
+void LeaveSecurityGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

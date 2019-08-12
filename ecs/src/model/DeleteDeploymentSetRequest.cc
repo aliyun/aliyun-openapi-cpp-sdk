@@ -47,15 +47,15 @@ void DeleteDeploymentSetRequest::setDeploymentSetId(const std::string& deploymen
 	setCoreParameter("DeploymentSetId", deploymentSetId);
 }
 
-bool DeleteDeploymentSetRequest::getResourceOwnerId()const
+long DeleteDeploymentSetRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteDeploymentSetRequest::setResourceOwnerId(bool resourceOwnerId)
+void DeleteDeploymentSetRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteDeploymentSetRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void DeleteDeploymentSetRequest::setOwnerAccount(const std::string& ownerAccount
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DeleteDeploymentSetRequest::getOwnerId()const
+long DeleteDeploymentSetRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteDeploymentSetRequest::setOwnerId(bool ownerId)
+void DeleteDeploymentSetRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -25,15 +25,15 @@ TerminatePhysicalConnectionRequest::TerminatePhysicalConnectionRequest() :
 TerminatePhysicalConnectionRequest::~TerminatePhysicalConnectionRequest()
 {}
 
-bool TerminatePhysicalConnectionRequest::getResourceOwnerId()const
+long TerminatePhysicalConnectionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void TerminatePhysicalConnectionRequest::setResourceOwnerId(bool resourceOwnerId)
+void TerminatePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string TerminatePhysicalConnectionRequest::getRegionId()const
@@ -102,14 +102,14 @@ void TerminatePhysicalConnectionRequest::setUserCidr(const std::string& userCidr
 	setCoreParameter("UserCidr", userCidr);
 }
 
-bool TerminatePhysicalConnectionRequest::getOwnerId()const
+long TerminatePhysicalConnectionRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void TerminatePhysicalConnectionRequest::setOwnerId(bool ownerId)
+void TerminatePhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

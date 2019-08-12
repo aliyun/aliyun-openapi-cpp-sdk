@@ -25,15 +25,15 @@ DescribeStorageSetDetailsRequest::DescribeStorageSetDetailsRequest() :
 DescribeStorageSetDetailsRequest::~DescribeStorageSetDetailsRequest()
 {}
 
-bool DescribeStorageSetDetailsRequest::getResourceOwnerId()const
+long DescribeStorageSetDetailsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeStorageSetDetailsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeStorageSetDetailsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeStorageSetDetailsRequest::getClientToken()const
@@ -47,15 +47,15 @@ void DescribeStorageSetDetailsRequest::setClientToken(const std::string& clientT
 	setCoreParameter("ClientToken", clientToken);
 }
 
-bool DescribeStorageSetDetailsRequest::getCallerParentId()const
+long DescribeStorageSetDetailsRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeStorageSetDetailsRequest::setCallerParentId(bool callerParentId)
+void DescribeStorageSetDetailsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeStorageSetDetailsRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool DescribeStorageSetDetailsRequest::getProxy_original_security_transport()con
 void DescribeStorageSetDetailsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeStorageSetDetailsRequest::getProxy_original_source_ip()const
@@ -110,7 +110,7 @@ int DescribeStorageSetDetailsRequest::getPageNumber()const
 void DescribeStorageSetDetailsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeStorageSetDetailsRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ bool DescribeStorageSetDetailsRequest::getEnable()const
 void DescribeStorageSetDetailsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeStorageSetDetailsRequest::getRequestContent()const
@@ -187,7 +187,7 @@ int DescribeStorageSetDetailsRequest::getPageSize()const
 void DescribeStorageSetDetailsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeStorageSetDetailsRequest::getCallerBidEmail()const
@@ -209,7 +209,7 @@ int DescribeStorageSetDetailsRequest::getStorageSetPartitionNumber()const
 void DescribeStorageSetDetailsRequest::setStorageSetPartitionNumber(int storageSetPartitionNumber)
 {
 	storageSetPartitionNumber_ = storageSetPartitionNumber;
-	setCoreParameter("StorageSetPartitionNumber", std::to_string(storageSetPartitionNumber));
+	setCoreParameter("StorageSetPartitionNumber", storageSetPartitionNumber);
 }
 
 std::string DescribeStorageSetDetailsRequest::getDiskIds()const
@@ -234,15 +234,15 @@ void DescribeStorageSetDetailsRequest::setCallerUidEmail(const std::string& call
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DescribeStorageSetDetailsRequest::getCallerUid()const
+long DescribeStorageSetDetailsRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeStorageSetDetailsRequest::setCallerUid(bool callerUid)
+void DescribeStorageSetDetailsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeStorageSetDetailsRequest::getApp_ip()const
@@ -289,15 +289,15 @@ void DescribeStorageSetDetailsRequest::setCallerBid(const std::string& callerBid
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DescribeStorageSetDetailsRequest::getOwnerId()const
+long DescribeStorageSetDetailsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeStorageSetDetailsRequest::setOwnerId(bool ownerId)
+void DescribeStorageSetDetailsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeStorageSetDetailsRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ bool DescribeStorageSetDetailsRequest::getProxy_trust_transport_info()const
 void DescribeStorageSetDetailsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeStorageSetDetailsRequest::getAk_mfa_present()const
@@ -319,7 +319,7 @@ bool DescribeStorageSetDetailsRequest::getAk_mfa_present()const
 void DescribeStorageSetDetailsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeStorageSetDetailsRequest::getSecurity_transport()const
@@ -330,7 +330,7 @@ bool DescribeStorageSetDetailsRequest::getSecurity_transport()const
 void DescribeStorageSetDetailsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeStorageSetDetailsRequest::getStorageSetId()const

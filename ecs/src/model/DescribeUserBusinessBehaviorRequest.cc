@@ -25,26 +25,26 @@ DescribeUserBusinessBehaviorRequest::DescribeUserBusinessBehaviorRequest() :
 DescribeUserBusinessBehaviorRequest::~DescribeUserBusinessBehaviorRequest()
 {}
 
-bool DescribeUserBusinessBehaviorRequest::getResourceOwnerId()const
+long DescribeUserBusinessBehaviorRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeUserBusinessBehaviorRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeUserBusinessBehaviorRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool DescribeUserBusinessBehaviorRequest::getCallerParentId()const
+long DescribeUserBusinessBehaviorRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeUserBusinessBehaviorRequest::setCallerParentId(bool callerParentId)
+void DescribeUserBusinessBehaviorRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeUserBusinessBehaviorRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeUserBusinessBehaviorRequest::getProxy_original_security_transport()
 void DescribeUserBusinessBehaviorRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool DescribeUserBusinessBehaviorRequest::getEnable()const
 void DescribeUserBusinessBehaviorRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void DescribeUserBusinessBehaviorRequest::setCallerUidEmail(const std::string& c
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool DescribeUserBusinessBehaviorRequest::getCallerUid()const
+long DescribeUserBusinessBehaviorRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeUserBusinessBehaviorRequest::setCallerUid(bool callerUid)
+void DescribeUserBusinessBehaviorRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getApp_ip()const
@@ -234,15 +234,15 @@ void DescribeUserBusinessBehaviorRequest::setCallerBid(const std::string& caller
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DescribeUserBusinessBehaviorRequest::getOwnerId()const
+long DescribeUserBusinessBehaviorRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeUserBusinessBehaviorRequest::setOwnerId(bool ownerId)
+void DescribeUserBusinessBehaviorRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeUserBusinessBehaviorRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DescribeUserBusinessBehaviorRequest::getProxy_trust_transport_info()const
 void DescribeUserBusinessBehaviorRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeUserBusinessBehaviorRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeUserBusinessBehaviorRequest::getAk_mfa_present()const
 void DescribeUserBusinessBehaviorRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeUserBusinessBehaviorRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeUserBusinessBehaviorRequest::getSecurity_transport()const
 void DescribeUserBusinessBehaviorRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getRequestId()const

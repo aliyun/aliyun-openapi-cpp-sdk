@@ -25,15 +25,15 @@ EipFillParamsRequest::EipFillParamsRequest() :
 EipFillParamsRequest::~EipFillParamsRequest()
 {}
 
-bool EipFillParamsRequest::getResourceOwnerId()const
+long EipFillParamsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void EipFillParamsRequest::setResourceOwnerId(bool resourceOwnerId)
+void EipFillParamsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string EipFillParamsRequest::getData()const
@@ -91,14 +91,14 @@ void EipFillParamsRequest::setUserCidr(const std::string& userCidr)
 	setCoreParameter("UserCidr", userCidr);
 }
 
-bool EipFillParamsRequest::getOwnerId()const
+long EipFillParamsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void EipFillParamsRequest::setOwnerId(bool ownerId)
+void EipFillParamsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

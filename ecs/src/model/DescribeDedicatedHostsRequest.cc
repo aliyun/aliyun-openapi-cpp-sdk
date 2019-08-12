@@ -36,15 +36,15 @@ void DescribeDedicatedHostsRequest::setDedicatedHostIds(const std::string& dedic
 	setCoreParameter("DedicatedHostIds", dedicatedHostIds);
 }
 
-bool DescribeDedicatedHostsRequest::getResourceOwnerId()const
+long DescribeDedicatedHostsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeDedicatedHostsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeDedicatedHostsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeDedicatedHostsRequest::getDedicatedHostName()const
@@ -80,15 +80,15 @@ void DescribeDedicatedHostsRequest::setOwnerAccount(const std::string& ownerAcco
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DescribeDedicatedHostsRequest::getOwnerId()const
+long DescribeDedicatedHostsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeDedicatedHostsRequest::setOwnerId(bool ownerId)
+void DescribeDedicatedHostsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeDedicatedHostsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeDedicatedHostsRequest::getPageNumber()const
 void DescribeDedicatedHostsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDedicatedHostsRequest::getSourceRegionId()const
@@ -154,7 +154,7 @@ int DescribeDedicatedHostsRequest::getPageSize()const
 void DescribeDedicatedHostsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDedicatedHostsRequest::getZoneId()const
@@ -191,8 +191,8 @@ void DescribeDedicatedHostsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 

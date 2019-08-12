@@ -25,26 +25,26 @@ AttachNetworkInterfaceRequest::AttachNetworkInterfaceRequest() :
 AttachNetworkInterfaceRequest::~AttachNetworkInterfaceRequest()
 {}
 
-bool AttachNetworkInterfaceRequest::getResourceOwnerId()const
+long AttachNetworkInterfaceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void AttachNetworkInterfaceRequest::setResourceOwnerId(bool resourceOwnerId)
+void AttachNetworkInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool AttachNetworkInterfaceRequest::getCallerParentId()const
+long AttachNetworkInterfaceRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void AttachNetworkInterfaceRequest::setCallerParentId(bool callerParentId)
+void AttachNetworkInterfaceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool AttachNetworkInterfaceRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool AttachNetworkInterfaceRequest::getProxy_original_security_transport()const
 void AttachNetworkInterfaceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string AttachNetworkInterfaceRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool AttachNetworkInterfaceRequest::getEnable()const
 void AttachNetworkInterfaceRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string AttachNetworkInterfaceRequest::getRequestContent()const
@@ -179,15 +179,15 @@ void AttachNetworkInterfaceRequest::setCallerUidEmail(const std::string& callerU
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool AttachNetworkInterfaceRequest::getCallerUid()const
+long AttachNetworkInterfaceRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void AttachNetworkInterfaceRequest::setCallerUid(bool callerUid)
+void AttachNetworkInterfaceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string AttachNetworkInterfaceRequest::getApp_ip()const
@@ -234,15 +234,15 @@ void AttachNetworkInterfaceRequest::setCallerBid(const std::string& callerBid)
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool AttachNetworkInterfaceRequest::getOwnerId()const
+long AttachNetworkInterfaceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void AttachNetworkInterfaceRequest::setOwnerId(bool ownerId)
+void AttachNetworkInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool AttachNetworkInterfaceRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool AttachNetworkInterfaceRequest::getProxy_trust_transport_info()const
 void AttachNetworkInterfaceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool AttachNetworkInterfaceRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool AttachNetworkInterfaceRequest::getAk_mfa_present()const
 void AttachNetworkInterfaceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool AttachNetworkInterfaceRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool AttachNetworkInterfaceRequest::getSecurity_transport()const
 void AttachNetworkInterfaceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string AttachNetworkInterfaceRequest::getInstanceId()const

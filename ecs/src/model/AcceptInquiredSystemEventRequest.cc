@@ -36,26 +36,26 @@ void AcceptInquiredSystemEventRequest::setEventId(const std::string& eventId)
 	setCoreParameter("EventId", eventId);
 }
 
-bool AcceptInquiredSystemEventRequest::getResourceOwnerId()const
+long AcceptInquiredSystemEventRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void AcceptInquiredSystemEventRequest::setResourceOwnerId(bool resourceOwnerId)
+void AcceptInquiredSystemEventRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-bool AcceptInquiredSystemEventRequest::getCallerParentId()const
+long AcceptInquiredSystemEventRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void AcceptInquiredSystemEventRequest::setCallerParentId(bool callerParentId)
+void AcceptInquiredSystemEventRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool AcceptInquiredSystemEventRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool AcceptInquiredSystemEventRequest::getProxy_original_security_transport()con
 void AcceptInquiredSystemEventRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string AcceptInquiredSystemEventRequest::getProxy_original_source_ip()const
@@ -165,7 +165,7 @@ bool AcceptInquiredSystemEventRequest::getEnable()const
 void AcceptInquiredSystemEventRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string AcceptInquiredSystemEventRequest::getRequestContent()const
@@ -201,15 +201,15 @@ void AcceptInquiredSystemEventRequest::setCallerUidEmail(const std::string& call
 	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
-bool AcceptInquiredSystemEventRequest::getCallerUid()const
+long AcceptInquiredSystemEventRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void AcceptInquiredSystemEventRequest::setCallerUid(bool callerUid)
+void AcceptInquiredSystemEventRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string AcceptInquiredSystemEventRequest::getApp_ip()const
@@ -256,15 +256,15 @@ void AcceptInquiredSystemEventRequest::setCallerBid(const std::string& callerBid
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool AcceptInquiredSystemEventRequest::getOwnerId()const
+long AcceptInquiredSystemEventRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void AcceptInquiredSystemEventRequest::setOwnerId(bool ownerId)
+void AcceptInquiredSystemEventRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool AcceptInquiredSystemEventRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool AcceptInquiredSystemEventRequest::getProxy_trust_transport_info()const
 void AcceptInquiredSystemEventRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool AcceptInquiredSystemEventRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool AcceptInquiredSystemEventRequest::getAk_mfa_present()const
 void AcceptInquiredSystemEventRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool AcceptInquiredSystemEventRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool AcceptInquiredSystemEventRequest::getSecurity_transport()const
 void AcceptInquiredSystemEventRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string AcceptInquiredSystemEventRequest::getRequestId()const

@@ -25,15 +25,15 @@ EipNotifyPaidRequest::EipNotifyPaidRequest() :
 EipNotifyPaidRequest::~EipNotifyPaidRequest()
 {}
 
-bool EipNotifyPaidRequest::getResourceOwnerId()const
+long EipNotifyPaidRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void EipNotifyPaidRequest::setResourceOwnerId(bool resourceOwnerId)
+void EipNotifyPaidRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string EipNotifyPaidRequest::getData()const
@@ -91,14 +91,14 @@ void EipNotifyPaidRequest::setUserCidr(const std::string& userCidr)
 	setCoreParameter("UserCidr", userCidr);
 }
 
-bool EipNotifyPaidRequest::getOwnerId()const
+long EipNotifyPaidRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void EipNotifyPaidRequest::setOwnerId(bool ownerId)
+void EipNotifyPaidRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 

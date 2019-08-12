@@ -55,18 +55,18 @@ bool ModifyDiskAttributeRequest::getDeleteAutoSnapshot()const
 void ModifyDiskAttributeRequest::setDeleteAutoSnapshot(bool deleteAutoSnapshot)
 {
 	deleteAutoSnapshot_ = deleteAutoSnapshot;
-	setCoreParameter("DeleteAutoSnapshot", deleteAutoSnapshot ? "true" : "false");
+	setCoreParameter("DeleteAutoSnapshot", deleteAutoSnapshot);
 }
 
-bool ModifyDiskAttributeRequest::getResourceOwnerId()const
+long ModifyDiskAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyDiskAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
+void ModifyDiskAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool ModifyDiskAttributeRequest::getEnableAutoSnapshot()const
@@ -77,7 +77,7 @@ bool ModifyDiskAttributeRequest::getEnableAutoSnapshot()const
 void ModifyDiskAttributeRequest::setEnableAutoSnapshot(bool enableAutoSnapshot)
 {
 	enableAutoSnapshot_ = enableAutoSnapshot;
-	setCoreParameter("EnableAutoSnapshot", enableAutoSnapshot ? "true" : "false");
+	setCoreParameter("EnableAutoSnapshot", enableAutoSnapshot);
 }
 
 std::string ModifyDiskAttributeRequest::getResourceOwnerAccount()const
@@ -124,15 +124,15 @@ void ModifyDiskAttributeRequest::setDiskId(const std::string& diskId)
 	setCoreParameter("DiskId", diskId);
 }
 
-bool ModifyDiskAttributeRequest::getOwnerId()const
+long ModifyDiskAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyDiskAttributeRequest::setOwnerId(bool ownerId)
+void ModifyDiskAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ModifyDiskAttributeRequest::getDeleteWithInstance()const
@@ -143,6 +143,6 @@ bool ModifyDiskAttributeRequest::getDeleteWithInstance()const
 void ModifyDiskAttributeRequest::setDeleteWithInstance(bool deleteWithInstance)
 {
 	deleteWithInstance_ = deleteWithInstance;
-	setCoreParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
+	setCoreParameter("DeleteWithInstance", deleteWithInstance);
 }
 

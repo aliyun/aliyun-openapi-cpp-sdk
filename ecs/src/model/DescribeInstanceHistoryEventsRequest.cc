@@ -34,18 +34,18 @@ void DescribeInstanceHistoryEventsRequest::setEventId(const std::vector<std::str
 {
 	eventId_ = eventId;
 	for(int i = 0; i!= eventId.size(); i++)
-		setCoreParameter("EventId."+ std::to_string(i), eventId.at(i));
+		setCoreParameter("EventId."+ std::to_string(i), std::to_string(eventId.at(i)));
 }
 
-bool DescribeInstanceHistoryEventsRequest::getResourceOwnerId()const
+long DescribeInstanceHistoryEventsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeInstanceHistoryEventsRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeInstanceHistoryEventsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getEventCycleStatus()const
@@ -59,15 +59,15 @@ void DescribeInstanceHistoryEventsRequest::setEventCycleStatus(const std::string
 	setCoreParameter("EventCycleStatus", eventCycleStatus);
 }
 
-bool DescribeInstanceHistoryEventsRequest::getCallerParentId()const
+long DescribeInstanceHistoryEventsRequest::getCallerParentId()const
 {
 	return callerParentId_;
 }
 
-void DescribeInstanceHistoryEventsRequest::setCallerParentId(bool callerParentId)
+void DescribeInstanceHistoryEventsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId ? "true" : "false");
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeInstanceHistoryEventsRequest::getProxy_original_security_transport()const
@@ -78,7 +78,7 @@ bool DescribeInstanceHistoryEventsRequest::getProxy_original_security_transport(
 void DescribeInstanceHistoryEventsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getProxy_original_source_ip()const
@@ -122,7 +122,7 @@ int DescribeInstanceHistoryEventsRequest::getPageNumber()const
 void DescribeInstanceHistoryEventsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getAccessKeyId()const
@@ -177,7 +177,7 @@ bool DescribeInstanceHistoryEventsRequest::getEnable()const
 void DescribeInstanceHistoryEventsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getRequestContent()const
@@ -199,7 +199,7 @@ int DescribeInstanceHistoryEventsRequest::getPageSize()const
 void DescribeInstanceHistoryEventsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getCallerBidEmail()const
@@ -222,7 +222,7 @@ void DescribeInstanceHistoryEventsRequest::setInstanceEventCycleStatus(const std
 {
 	instanceEventCycleStatus_ = instanceEventCycleStatus;
 	for(int i = 0; i!= instanceEventCycleStatus.size(); i++)
-		setCoreParameter("InstanceEventCycleStatus."+ std::to_string(i), instanceEventCycleStatus.at(i));
+		setCoreParameter("InstanceEventCycleStatus."+ std::to_string(i), std::to_string(instanceEventCycleStatus.at(i)));
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getCallerUidEmail()const
@@ -247,15 +247,15 @@ void DescribeInstanceHistoryEventsRequest::setEventPublishTimeEnd(const std::str
 	setCoreParameter("EventPublishTimeEnd", eventPublishTimeEnd);
 }
 
-bool DescribeInstanceHistoryEventsRequest::getCallerUid()const
+long DescribeInstanceHistoryEventsRequest::getCallerUid()const
 {
 	return callerUid_;
 }
 
-void DescribeInstanceHistoryEventsRequest::setCallerUid(bool callerUid)
+void DescribeInstanceHistoryEventsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid ? "true" : "false");
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getApp_ip()const
@@ -278,7 +278,7 @@ void DescribeInstanceHistoryEventsRequest::setInstanceEventType(const std::vecto
 {
 	instanceEventType_ = instanceEventType;
 	for(int i = 0; i!= instanceEventType.size(); i++)
-		setCoreParameter("InstanceEventType."+ std::to_string(i), instanceEventType.at(i));
+		setCoreParameter("InstanceEventType."+ std::to_string(i), std::to_string(instanceEventType.at(i)));
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getResourceOwnerAccount()const
@@ -325,15 +325,15 @@ void DescribeInstanceHistoryEventsRequest::setCallerBid(const std::string& calle
 	setCoreParameter("CallerBid", callerBid);
 }
 
-bool DescribeInstanceHistoryEventsRequest::getOwnerId()const
+long DescribeInstanceHistoryEventsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeInstanceHistoryEventsRequest::setOwnerId(bool ownerId)
+void DescribeInstanceHistoryEventsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeInstanceHistoryEventsRequest::getProxy_trust_transport_info()const
@@ -344,7 +344,7 @@ bool DescribeInstanceHistoryEventsRequest::getProxy_trust_transport_info()const
 void DescribeInstanceHistoryEventsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeInstanceHistoryEventsRequest::getAk_mfa_present()const
@@ -355,7 +355,7 @@ bool DescribeInstanceHistoryEventsRequest::getAk_mfa_present()const
 void DescribeInstanceHistoryEventsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeInstanceHistoryEventsRequest::getSecurity_transport()const
@@ -366,7 +366,7 @@ bool DescribeInstanceHistoryEventsRequest::getSecurity_transport()const
 void DescribeInstanceHistoryEventsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getEventPublishTimeStart()const

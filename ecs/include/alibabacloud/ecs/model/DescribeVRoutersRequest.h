@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DescribeVRoutersRequest();
 				~DescribeVRoutersRequest();
 
-				bool getResourceOwnerId()const;
-				void setResourceOwnerId(bool resourceOwnerId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getVRouterId()const;
 				void setVRouterId(const std::string& vRouterId);
 				std::string getResourceOwnerAccount()const;
@@ -47,19 +47,19 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				bool getOwnerId()const;
-				void setOwnerId(bool ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
             private:
-				bool resourceOwnerId_;
+				long resourceOwnerId_;
 				std::string vRouterId_;
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string ownerAccount_;
 				int pageSize_;
-				bool ownerId_;
+				long ownerId_;
 				int pageNumber_;
 
 			};

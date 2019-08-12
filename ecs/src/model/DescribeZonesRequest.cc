@@ -47,15 +47,15 @@ void DescribeZonesRequest::setSpotStrategy(const std::string& spotStrategy)
 	setCoreParameter("SpotStrategy", spotStrategy);
 }
 
-bool DescribeZonesRequest::getResourceOwnerId()const
+long DescribeZonesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeZonesRequest::setResourceOwnerId(bool resourceOwnerId)
+void DescribeZonesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeZonesRequest::getResourceOwnerAccount()const
@@ -102,15 +102,15 @@ void DescribeZonesRequest::setAcceptLanguage(const std::string& acceptLanguage)
 	setCoreParameter("AcceptLanguage", acceptLanguage);
 }
 
-bool DescribeZonesRequest::getOwnerId()const
+long DescribeZonesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeZonesRequest::setOwnerId(bool ownerId)
+void DescribeZonesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId ? "true" : "false");
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeZonesRequest::getInstanceChargeType()const
@@ -132,6 +132,6 @@ bool DescribeZonesRequest::getVerbose()const
 void DescribeZonesRequest::setVerbose(bool verbose)
 {
 	verbose_ = verbose;
-	setCoreParameter("Verbose", verbose ? "true" : "false");
+	setCoreParameter("Verbose", verbose);
 }
 
