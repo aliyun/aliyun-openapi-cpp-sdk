@@ -14,32 +14,25 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/green/model/ImageScanFeedbackResult.h>
-#include <json/json.h>
+#include <alibabacloud/green/model/DetectFaceRequest.h>
 
-using namespace AlibabaCloud::Green;
-using namespace AlibabaCloud::Green::Model;
+using AlibabaCloud::Green::Model::DetectFaceRequest;
 
-ImageScanFeedbackResult::ImageScanFeedbackResult() :
-	ServiceResult()
+DetectFaceRequest::DetectFaceRequest() :
+	RoaServiceRequest("green", "2018-05-09")
 {}
 
-ImageScanFeedbackResult::ImageScanFeedbackResult(const std::string &payload) :
-	ServiceResult()
+DetectFaceRequest::~DetectFaceRequest()
+{}
+
+std::string DetectFaceRequest::getClientInfo()const
 {
-	parse(payload);
+	return clientInfo_;
 }
 
-ImageScanFeedbackResult::~ImageScanFeedbackResult()
-{}
-
-void ImageScanFeedbackResult::parse(const std::string &payload)
+void DetectFaceRequest::setClientInfo(const std::string& clientInfo)
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-
-	setRequestId(value["RequestId"].asString());
-
+	clientInfo_ = clientInfo;
+	setCoreParameter("ClientInfo", clientInfo);
 }
 

@@ -1,3 +1,6 @@
+2019-08-12 Version 1.36.84
+- Support Defect Face API.
+
 2019-08-08 Version 1.36.83
 - Add CreateStorageSet api to support storageSet.
 - Add DeleteStorageSet api to support storageSet.
