@@ -21,14 +21,14 @@ TEST(cdn, describeCdnService)
   CdnClient client(key, secret, configuration);
   Model::DescribeCdnServiceRequest request;
   CdnClient::DescribeCdnServiceOutcome outcome = client.describeCdnService(request);
-  fputs(outcome.isSuccess() ? "true" : "false", stdout);
+  printf("\n-----\n%s\n-----\n", outcome.error().errorMessage());
+
   EXPECT_TRUE(outcome.isSuccess());
   EXPECT_TRUE(outcome.error().errorCode().empty());
-  EXPECT_TRUE(outcome.result().getChangingChargeType() == "PayByTraffic");
-  EXPECT_TRUE(outcome.result().getInternetChargeType() == "PayByTraffic");
-  EXPECT_TRUE(outcome.result().getInstanceId() == uid);
-  EXPECT_TRUE(outcome.result().getOpeningTime() == "2019-01-02T09:16:34Z");
-  EXPECT_TRUE(outcome.result().getChangingAffectTime() == "2019-01-02T09:16:33Z");
+  EXPECT_EQ(outcome.result().getChangingChargeType(), "PayByTraffic");
+  EXPECT_EQ(outcome.result().getInstanceId(), uid);
+  EXPECT_EQ(outcome.result().getOpeningTime(), "2019-01-02T09:16:34Z");
+  EXPECT_EQ(outcome.result().getChangingAffectTime(), "2019-01-02T09:16:33Z");
   ShutdownSdk();
 }
 } // namespace
