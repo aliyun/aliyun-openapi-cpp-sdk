@@ -31,9 +31,8 @@ public:
 
 TEST(CoreClient, basic)
 {
-  ClientConfiguration configuration;
-  configuration.setEndpoint("test.aliyuncs.com");
-  TestCoreClient client("test-service", configuration);
+  ClientConfiguration* configuration = new ClientConfiguration();
+  TestCoreClient client("test-service", *configuration);
 
   HttpResponse res;
   Error e1 = client.buildCoreError(res);
