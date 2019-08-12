@@ -31,15 +31,16 @@ public:
 
 TEST(CoreClient, basic)
 {
-  ClientConfiguration* configuration = new ClientConfiguration();
-  TestCoreClient client("test-service", *configuration);
+  ClientConfiguration configuration;
+  TestCoreClient client("test-service", configuration);
 
   HttpResponse res;
+
   Error e1 = client.buildCoreError(res);
   EXPECT_TRUE(e1.errorCode() == ("InvalidResponse"));
   EXPECT_TRUE(e1.errorMessage() == ("body is empty"));
-  string body = "{\"Code\":\"any-error-code\",\"Message\":\"any-error-message\",\"HostId\":\"any-host-id\",\"RequestId\":\"any-request-id\"}";
-  res.setBody(body.c_str(), body.size());
+  // string body = "{\"Code\":\"any-error-code\",\"Message\":\"any-error-message\",\"HostId\":\"any-host-id\",\"RequestId\":\"any-request-id\"}";
+  res.setBody("aaa", 3);
   Error e2 = client.buildCoreError(res);
   EXPECT_TRUE(e2.errorCode() == ("any-error-code"));
   EXPECT_TRUE(e2.errorMessage() == ("any-error-message"));
