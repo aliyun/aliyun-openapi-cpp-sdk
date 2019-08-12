@@ -247,3 +247,67 @@ std::string AlibabaCloud::GetEnv(const std::string env)
   return std::string();
 #endif
 }
+
+std::string AlibabaCloud::MapToJson(const std::map<std::string, std::string> &maps)
+{
+  Json::Value jsonObject;
+  for (std::map<std::string, std::string>::const_iterator iter = maps.begin(); iter != maps.end(); ++iter)
+  {
+    jsonObject[iter->first] = iter->second;
+  }
+  return jsonObject.toStyledString();
+}
+
+std::map<std::string, std::string> AlibabaCloud::JsonToMap(const std::string &json)
+{
+  Json::Reader reader;
+  Json::Value value;
+  std::map<std::string, std::string> maps;
+
+  if (json.length() > 0)
+  {
+    if (reader.parse(json, value))
+    {
+      Json::Value::Members members = value.getMemberNames();
+      for (Json::Value::Members::iterator it = members.begin(); it != members.end(); it++)
+      {
+        Json::ValueType vt = value[*it].type();
+        switch (vt)
+        {
+        case Json::stringValue:
+        {
+          maps.insert(std::pair<std::string, std::string>(*it, value[*it].asString()));
+          break;
+        }
+        case Json::intValue:
+        {
+          int inttmp = value[*it].asInt();
+          maps.insert(std::pair<std::string, std::string>(*it, std::to_string(inttmp)));
+          break;
+        }
+        case Json::arrayValue:
+        {
+          std::string strid;
+          for (unsigned int i = 0; i < value[*it].size(); i++)
+          {
+            strid += value[*it][i].asString();
+            strid += ",";
+          }
+          if (!strid.empty())
+          {
+            strid = strid.substr(0, strid.size() - 1);
+          }
+          maps.insert(std::pair<std::string, std::string>(*it, strid));
+          break;
+        }
+        default:
+        {
+          break;
+        }
+        }
+      }
+    }
+  }
+
+  return maps;
+}

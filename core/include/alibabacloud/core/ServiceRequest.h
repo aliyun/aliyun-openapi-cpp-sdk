@@ -64,6 +64,7 @@ protected:
                         const ParameterValueType &value);
 
   void setParameters(const ParameterCollection &params);
+  void setJsonParameters(const ParameterNameType &name, const ParameterCollection &params);
   void setResourcePath(const std::string &path);
   void setProduct(const std::string &product);
   void setVersion(const std::string &version);

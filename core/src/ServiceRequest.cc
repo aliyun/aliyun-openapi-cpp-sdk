@@ -16,41 +16,46 @@
 
 #include <alibabacloud/core/ServiceRequest.h>
 #include <alibabacloud/core/AlibabaCloud.h>
+#include <alibabacloud/core/Utils.h>
 
-namespace AlibabaCloud {
+namespace AlibabaCloud
+{
 
 ServiceRequest::ServiceRequest(const std::string &product,
-  const std::string &version) :
-  content_(nullptr),
-  contentSize_(0),
-  params_(),
-  product_(product),
-  resourcePath_("/"),
-  version_(version),
-  scheme_("https"),
-  connectTimeout_(kInvalidTimeout),
-  readTimeout_(kInvalidTimeout) {
+                               const std::string &version) : content_(nullptr),
+                                                             contentSize_(0),
+                                                             params_(),
+                                                             product_(product),
+                                                             resourcePath_("/"),
+                                                             version_(version),
+                                                             scheme_("https"),
+                                                             connectTimeout_(kInvalidTimeout),
+                                                             readTimeout_(kInvalidTimeout)
+{
 }
 
-ServiceRequest::ServiceRequest(const ServiceRequest &other) :
-  content_(nullptr),
-  contentSize_(other.contentSize_),
-  params_(other.params_),
-  product_(other.product_),
-  resourcePath_(other.resourcePath_),
-  version_(other.version_),
-  scheme_(other.scheme_),
-  connectTimeout_(other.connectTimeout_),
-  readTimeout_(other.readTimeout_) {
+ServiceRequest::ServiceRequest(const ServiceRequest &other) : content_(nullptr),
+                                                              contentSize_(other.contentSize_),
+                                                              params_(other.params_),
+                                                              product_(other.product_),
+                                                              resourcePath_(other.resourcePath_),
+                                                              version_(other.version_),
+                                                              scheme_(other.scheme_),
+                                                              connectTimeout_(other.connectTimeout_),
+                                                              readTimeout_(other.readTimeout_)
+{
   setContent(other.content_, other.contentSize_);
 }
 
-ServiceRequest::ServiceRequest(ServiceRequest &&other) {
+ServiceRequest::ServiceRequest(ServiceRequest &&other)
+{
   *this = std::move(other);
 }
 
-ServiceRequest& ServiceRequest::operator=(const ServiceRequest &other) {
-  if (this != &other) {
+ServiceRequest &ServiceRequest::operator=(const ServiceRequest &other)
+{
+  if (this != &other)
+  {
     content_ = nullptr;
     contentSize_ = 0;
     params_ = other.params_;
@@ -61,130 +66,162 @@ ServiceRequest& ServiceRequest::operator=(const ServiceRequest &other) {
   return *this;
 }
 
-ServiceRequest& ServiceRequest::operator=(ServiceRequest &&other) {
+ServiceRequest &ServiceRequest::operator=(ServiceRequest &&other)
+{
   if (this != &other)
     *this = std::move(other);
   return *this;
 }
 
-ServiceRequest::~ServiceRequest() {
+ServiceRequest::~ServiceRequest()
+{
   if (content_)
     delete content_;
 }
 
-const char * ServiceRequest::content() const {
+const char *ServiceRequest::content() const
+{
   return content_;
 }
 
-size_t ServiceRequest::contentSize() const {
+size_t ServiceRequest::contentSize() const
+{
   return contentSize_;
 }
 
-bool ServiceRequest::hasContent() const {
+bool ServiceRequest::hasContent() const
+{
   return (contentSize_ != 0);
 }
 
-void ServiceRequest::setContent(const char * data, size_t size) {
+void ServiceRequest::setContent(const char *data, size_t size)
+{
   if (content_)
     delete content_;
   content_ = nullptr;
   contentSize_ = 0;
-  if (size) {
+  if (size)
+  {
     contentSize_ = size;
     content_ = new char[size];
     std::copy(data, data + size, content_);
   }
 }
 
-void ServiceRequest::addParameter(const ParameterNameType & name,
-  const ParameterValueType & value) {
+void ServiceRequest::addParameter(const ParameterNameType &name,
+                                  const ParameterValueType &value)
+{
   setParameter(name, value);
 }
 
 ServiceRequest::ParameterValueType ServiceRequest::parameter(
-  const ParameterNameType &name)const {
+    const ParameterNameType &name) const
+{
   ParameterCollection::const_iterator it = params_.find(name);
-  if (it == params_.end()) {
+  if (it == params_.end())
+  {
     return ParameterValueType("");
   }
   return it->second;
 }
 
-
 ServiceRequest::ParameterValueType ServiceRequest::coreParameter(
-  const ParameterNameType &name)const {
+    const ParameterNameType &name) const
+{
   return parameter(name);
 }
 
-ServiceRequest::ParameterCollection ServiceRequest::parameters() const {
+ServiceRequest::ParameterCollection ServiceRequest::parameters() const
+{
   return params_;
 }
 
-void ServiceRequest::removeParameter(const ParameterNameType & name) {
+void ServiceRequest::removeParameter(const ParameterNameType &name)
+{
   params_.erase(name);
 }
 
 void ServiceRequest::setParameter(const ParameterNameType &name,
-  const ParameterValueType &value) {
+                                  const ParameterValueType &value)
+{
   params_[name] = value;
 }
 
-void ServiceRequest::setCoreParameter(const ParameterNameType &name,
-  const ParameterValueType &value) {
+void ServiceRequest::setCoreParameter(const ParameterNameType &name, const ParameterValueType &value)
+{
   setParameter(name, value);
 }
 
-
-void ServiceRequest::setParameters(const ParameterCollection & params) {
+void ServiceRequest::setParameters(const ParameterCollection &params)
+{
   params_ = params;
 }
 
-std::string ServiceRequest::version()const {
+void ServiceRequest::setJsonParameters(const ParameterNameType &name, const ParameterCollection &params)
+{
+  params_ = params;
+  params_ = params;
+  setCoreParameter(name, AlibabaCloud::MapToJson(params));
+}
+
+std::string ServiceRequest::version() const
+{
   return version_;
 }
 
-void ServiceRequest::setVersion(const std::string &version) {
+void ServiceRequest::setVersion(const std::string &version)
+{
   version_ = version;
 }
 
-std::string ServiceRequest::product() const {
+std::string ServiceRequest::product() const
+{
   return product_;
 }
 
-void ServiceRequest::setProduct(const std::string & product) {
+void ServiceRequest::setProduct(const std::string &product)
+{
   product_ = product;
 }
 
-std::string ServiceRequest::resourcePath() const {
+std::string ServiceRequest::resourcePath() const
+{
   return resourcePath_;
 }
 
-void ServiceRequest::setResourcePath(const std::string & path) {
+void ServiceRequest::setResourcePath(const std::string &path)
+{
   resourcePath_ = path;
 }
 
-void ServiceRequest::setScheme(const std::string scheme) {
+void ServiceRequest::setScheme(const std::string scheme)
+{
   scheme_ = scheme;
 }
 
-std::string ServiceRequest::scheme() const {
+std::string ServiceRequest::scheme() const
+{
   return scheme_;
 }
 
-long ServiceRequest::connectTimeout() const{
+long ServiceRequest::connectTimeout() const
+{
   return connectTimeout_;
 }
 
-long ServiceRequest::readTimeout() const{
+long ServiceRequest::readTimeout() const
+{
   return readTimeout_;
 }
 
-void ServiceRequest::setConnectTimeout(const long connectTimeout) {
+void ServiceRequest::setConnectTimeout(const long connectTimeout)
+{
   connectTimeout_ = connectTimeout;
 }
 
-void ServiceRequest::setReadTimeout(const long readTimeout) {
+void ServiceRequest::setReadTimeout(const long readTimeout)
+{
   readTimeout_ = readTimeout;
 }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud
