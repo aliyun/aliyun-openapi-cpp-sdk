@@ -9,7 +9,7 @@ project(alibabacloud-sdk VERSION ${version})
 message(STATUS "Project version: ${PROJECT_VERSION}")
 
 set(TARGET_OUTPUT_NAME_PREFIX "alibabacloud-sdk-" CACHE STRING "The target's output name prefix")
-option(BUILD_SHARED_LIBS  "Enable shared library" OFF)
+option(BUILD_SHARED_LIBS  "Enable shared library" ON)
 option(BUILD_UNIT_TESTS "Enable unit tests" OFF)
 option(BUILD_FUNCTION_TESTS "Enable function test" OFF)
 
