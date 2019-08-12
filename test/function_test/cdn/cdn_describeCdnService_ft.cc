@@ -21,7 +21,8 @@ TEST(cdn, describeCdnService)
   CdnClient client(key, secret, configuration);
   Model::DescribeCdnServiceRequest request;
   CdnClient::DescribeCdnServiceOutcome outcome = client.describeCdnService(request);
-  printf("%s", outcome.isSuccess() ? 'true' : 'false');
+  printf("%s", outcome.isSuccess());
+  printf("%s", outcome.error().errorMessage());
   EXPECT_TRUE(outcome.isSuccess());
   EXPECT_TRUE(outcome.error().errorCode().empty());
   EXPECT_TRUE(outcome.result().getChangingChargeType() == "PayByTraffic");
